@@ -12,6 +12,46 @@ import java.util.zip.ZipOutputStream;
  */
 public class FileUtil {
 
+  public static File createTmpDir() {
+    File tmp = getTempDir();
+    int i = 0;
+    while (true) {
+
+      if (!new File(tmp, "mpstemp" + i).exists()) {
+        break;
+      }
+      i++;
+    }
+
+    File result = new File(tmp, "mpstemp" + i);
+    result.mkdir();
+    return result;
+  }
+
+  public static File createTmpFile() {
+    File tmp = getTempDir();
+    int i = 0;
+    while (true) {
+
+      if (!new File(tmp, "mpstemp" + i).exists()) {
+        break;
+      }
+      i++;
+    }
+
+    File result = new File(tmp, "mpstemp" + i);
+    try {
+      result.createNewFile();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    return result;
+  }
+  
+  public static File getTempDir() {
+    return new File(System.getProperty("java.io.tmpdir"));
+  }
+
   public static void jar(File dir, Manifest mf, File to) {
     try {
       FileOutputStream fos = new FileOutputStream(to);
@@ -86,12 +126,21 @@ public class FileUtil {
 
   }
 
-  public static void copyFile(File f, File toDir) {
+  public static void copyFile(File f, File to) {
     try {
       byte[] bytes = new byte[(int) f.length()];
 
       FileInputStream is = new FileInputStream(f);
-      OutputStream os = new FileOutputStream(new File(toDir, f.getName()));
+
+
+      File target;
+      if (to.isDirectory()) {
+        target = new File(to, f.getName());
+      } else {
+        target = to;        
+      }
+
+      OutputStream os = new FileOutputStream(target);
 
       ReadUtil.read(bytes, is);
       os.write(bytes);

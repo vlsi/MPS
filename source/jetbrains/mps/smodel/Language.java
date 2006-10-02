@@ -316,7 +316,7 @@ public class Language extends AbstractModule {
       SModelUID modelUID = SModelUID.fromString(getLanguageDescriptor().getTypeSystem().getName());
       SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
       if (modelDescriptor == null) {
-        LOG.errorWithTrace("Couldn't get typesystem model \"" + modelUID + "\"");
+        LOG.error("Couldn't get typesystem model \"" + modelUID + "\"");
       }
       return modelDescriptor;
     }
