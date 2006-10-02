@@ -33,6 +33,9 @@ public interface IProjectHandler extends Remote {
 
   void moveClass(String classFQName, String targetPackageNamespace, File targetSourceRoot) throws RemoteException;
   void renameClass(String oldClassFQName, String newClassName) throws RemoteException;
+  void renameConceptClass(String oldClassFQName, String newClassName, String sourceLangSourcePath) throws RemoteException;
+  void moveConceptClass(String oldClassFQName, String newPackageName, File targetLangSourceRoot) throws RemoteException;
+
 
   void addIdeHandler(IMPSIDEHandler handler) throws RemoteException;
 

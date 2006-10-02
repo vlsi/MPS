@@ -28,6 +28,7 @@ import com.intellij.util.IncorrectOperationException;
 import com.intellij.refactoring.RefactoringFactory;
 import com.intellij.refactoring.MoveClassesOrPackagesRefactoring;
 import com.intellij.refactoring.RenameRefactoring;
+import com.intellij.usageView.UsageInfo;
 
 import javax.swing.*;
 import java.awt.*;
@@ -36,6 +37,7 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Arrays;
 import java.rmi.server.UnicastRemoteObject;
 import java.rmi.RemoteException;
 
@@ -683,12 +685,54 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
       public void run() {
         PsiClass psiClass = PsiManager.getInstance(myProject).findClass(oldClassFQName, GlobalSearchScope.allScope(myProject));
         RenameRefactoring refactoring = RefactoringFactory.getInstance(myProject).createRename(psiClass, newClassName);
+        refactoring.setPreviewUsages(false);
+        refactoring.setSearchInComments(false);
+        refactoring.setSearchInNonJavaFiles(false);
+        refactoring.setShouldRenameInheritors(false);
+        refactoring.setShouldRenameVariables(false);
         refactoring.run();
       }
     });
   }
 
+
+  public void renameConceptClass(String oldClassFQName, String newClassName, String sourceLangSourcePath) throws RemoteException {
+    renameClass(oldClassFQName, newClassName);
+    renameClass(packageName(oldClassFQName)+".editor."+shortName(oldClassFQName),
+            newClassName+"_Editor");
+    buildModule(sourceLangSourcePath);
+  }
+
+  public void moveConceptClass(String oldClassFQName, String newPackageName, File targetLangSourceRoot) throws RemoteException {
+    moveClass(oldClassFQName, newPackageName, targetLangSourceRoot);
+    moveClass(packageName(oldClassFQName)+".editor."+shortName(oldClassFQName)+"_Editor",
+            newPackageName+".editor", targetLangSourceRoot);
+    buildModule(targetLangSourceRoot.getAbsolutePath());
+  }
+
   private PsiElementFactory getPsiElementFactory() {
     return PsiManager.getInstance(myProject).getElementFactory();
+  }
+
+  private static String packageName(String fqName) {
+    if (fqName == null) {
+      return fqName;
+    }
+    int offset = fqName.lastIndexOf('.');
+    if (offset < 0) {
+      return "";
+    }
+    return fqName.substring(0, offset);
+  }
+
+  private static String shortName(String fqName) {
+    if (fqName == null) {
+      return fqName;
+    }
+    int offset = fqName.lastIndexOf('.');
+    if (offset < 0) {
+      return fqName;
+    }
+    return fqName.substring(offset + 1);
   }
 }

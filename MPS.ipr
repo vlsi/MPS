@@ -89,9 +89,7 @@
   <component name="DependenciesAnalyzeManager">
     <option name="myForwardDirection" value="false" />
   </component>
-  <component name="DependencyValidationManager">
-    <scope name="Generated Code" pattern="" />
-  </component>
+  <component name="DependencyValidationManager" />
   <component name="EclipseCompilerSettings">
     <option name="DEBUGGING_INFO" value="true" />
     <option name="GENERATE_NO_WARNINGS" value="true" />
@@ -368,6 +366,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/projects/BLFeatures/BLFeatures.iml" filepath="$PROJECT_DIR$/projects/BLFeatures/BLFeatures.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/MPS.iml" filepath="$PROJECT_DIR$/MPS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MPSPlugin/MPSPlugin.iml" filepath="$PROJECT_DIR$/MPSPlugin/MPSPlugin.iml" />
       <module fileurl="file://$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" filepath="$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/NaturalLanguage/NaturalLanguage.iml" filepath="$PROJECT_DIR$/projects/NaturalLanguage/NaturalLanguage.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/SemanticWeb/editor/OWLEditor.iml" filepath="$PROJECT_DIR$/projects/SemanticWeb/editor/OWLEditor.iml" group="SemanticWeb" />
