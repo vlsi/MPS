@@ -1,16 +1,38 @@
 package jetbrains.mps.util;
 
 
+import sun.misc.Launcher;
+
 import java.io.*;
 import java.util.jar.JarOutputStream;
 import java.util.jar.Manifest;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
+import java.net.URL;
+import java.net.URISyntaxException;
 
 /**
  * @author Kostik
  */
 public class FileUtil {
+
+  public static File getJREHome() {
+    return getRTJar().getParentFile().getParentFile();
+  }
+
+  public static File getRTJar() {
+    for (URL url : Launcher.getBootstrapClassPath().getURLs()) {
+      if (url.getPath().endsWith("rt.jar")) {
+        try {
+          return new File(url.toURI());
+        } catch (URISyntaxException e) {
+          e.printStackTrace();
+        }
+        return null;
+      }
+    }
+    return null;
+  }
 
   public static File createTmpDir() {
     File tmp = getTempDir();
@@ -192,6 +214,6 @@ public class FileUtil {
 
 
   public static void main(String[] args) {
-    jar(new File("C:/temp"), new Manifest(), new File("C:/temp/zzz.jar"));
+    System.out.println(getJREHome());
   }
 }
