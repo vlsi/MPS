@@ -291,6 +291,10 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     myComponents.put(interfaceClass, instance);
   }
 
+  public void removeComponent(Class interfaceClass) {
+    myComponents.remove(interfaceClass);
+  }
+
   public File getClassGenPath() {
     return new File(myProjectFile.getParentFile(), "classes_gen");
   }
