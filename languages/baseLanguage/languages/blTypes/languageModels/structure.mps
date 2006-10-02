@@ -6,7 +6,7 @@
   <import index="2" modelUID="jetbrains.mps.baseLanguage.blTypes.structure" />
   <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1159268361238">
-    <property name="name" value="HelginsArrayType" />
+    <property name="name" value="BLArrayType" />
     <link role="extends" targetNodeId="1.1078489098625" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1159268361240">
       <property name="value" value="array" />

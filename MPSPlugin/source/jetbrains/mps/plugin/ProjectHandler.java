@@ -2,7 +2,9 @@ package jetbrains.mps.plugin;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.application.Result;
 import com.intellij.openapi.command.CommandProcessor;
+import com.intellij.openapi.command.WriteCommandAction;
 import com.intellij.openapi.compiler.CompileStatusNotification;
 import com.intellij.openapi.compiler.CompilerManager;
 import com.intellij.openapi.compiler.CompileContext;
@@ -34,6 +36,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
@@ -683,24 +687,48 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
   public void renameClass(final String oldClassFQName, final String newClassName) {
     executeWriteAction(new Runnable() {
       public void run() {
-        PsiClass psiClass = PsiManager.getInstance(myProject).findClass(oldClassFQName, GlobalSearchScope.allScope(myProject));
-        RenameRefactoring refactoring = RefactoringFactory.getInstance(myProject).createRename(psiClass, newClassName);
-        refactoring.setPreviewUsages(false);
-        refactoring.setSearchInComments(false);
-        refactoring.setSearchInNonJavaFiles(false);
-        refactoring.setShouldRenameInheritors(false);
-        refactoring.setShouldRenameVariables(false);
-        refactoring.run();
+        doRename(oldClassFQName, newClassName);
       }
     });
   }
 
+  private void doRename(String oldClassFQName, String newClassName) {
+    PsiClass psiClass = PsiManager.getInstance(myProject).findClass(oldClassFQName, GlobalSearchScope.allScope(myProject));
+    RenameRefactoring refactoring = RefactoringFactory.getInstance(myProject).createRename(psiClass, newClassName);
+    refactoring.setPreviewUsages(false);
+    refactoring.setSearchInComments(false);
+    refactoring.setSearchInNonJavaFiles(false);
+    refactoring.setShouldRenameInheritors(false);
+    refactoring.setShouldRenameVariables(false);
+    refactoring.run();
+  }
 
-  public void renameConceptClass(String oldClassFQName, String newClassName, String sourceLangSourcePath) throws RemoteException {
+
+  public void renameConceptClass(final String oldClassFQName, final String newClassName, String sourceLangSourcePath) throws RemoteException {
+    try {
+      new WriteCommandAction(myProject) {
+        protected void run(Result result) throws Throwable {
+          doRename(oldClassFQName, newClassName);
+          doRename(packageName(oldClassFQName) + ".editor." + shortName(oldClassFQName)+"_Editor",
+                  newClassName + "_Editor");
+        }
+      }.execute();
+
+/*
     renameClass(oldClassFQName, newClassName);
-    renameClass(packageName(oldClassFQName)+".editor."+shortName(oldClassFQName),
-            newClassName+"_Editor");
-    buildModule(sourceLangSourcePath);
+    renameClass(packageName(oldClassFQName) + ".editor." + shortName(oldClassFQName),
+            newClassName + "_Editor");
+*/
+      buildModule(sourceLangSourcePath);
+    } catch (Throwable e) {
+      e.printStackTrace();
+      /*try {
+        FileOutputStream fileOutputStream = new FileOutputStream("C:/Cthulhu.txt");
+        e.printStackTrace(new PrintStream(fileOutputStream));
+        fileOutputStream.close();
+      } catch (IOException e1) {
+      }*/
+    }
   }
 
   public void moveConceptClass(String oldClassFQName, String newPackageName, File targetLangSourceRoot) throws RemoteException {
