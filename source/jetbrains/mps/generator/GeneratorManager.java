@@ -196,10 +196,10 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     generateModelsWithProgressWindow(sourceModels, targetLanguage, invocationContext, generationType, new Runnable() {
       public void run() {
       }
-    });
+    }, true, null);
   }
 
-  public void generateModelsWithProgressWindow(final List<SModel> sourceModels, final Language targetLanguage, final IOperationContext invocationContext, final IGenerationType generationType) {
+  public void generateModelsWithProgressWindow(final List<SModel> sourceModels, final Language targetLanguage, final IOperationContext invocationContext, final IGenerationType generationType, boolean finishAnyway, IAdaptiveProgressMonitor monitor) {
     final Object lock = new Object();
     generateModelsWithProgressWindow(sourceModels, targetLanguage, invocationContext, generationType, new Runnable() {
       public void run() {
@@ -207,7 +207,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           lock.notifyAll();
         }
       }
-    });
+    }, finishAnyway, monitor);
 
     synchronized(lock) {
       try {
@@ -218,13 +218,16 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     }
   }
 
-  public void generateModelsWithProgressWindow(final List<SModel> sourceModels, final Language targetLanguage, final IOperationContext invocationContext, final IGenerationType generationType, final Runnable continuation) {
-    final IAdaptiveProgressMonitor progress = new AdaptiveProgressMonitor(invocationContext.getComponent(IDEProjectFrame.class), false);
+  public void generateModelsWithProgressWindow(final List<SModel> sourceModels, final Language targetLanguage, final IOperationContext invocationContext, final IGenerationType generationType, final Runnable continuation, final boolean finishAnyway, IAdaptiveProgressMonitor monitor) {
+    final IAdaptiveProgressMonitor progress = monitor != null ? monitor : new AdaptiveProgressMonitor(invocationContext.getComponent(IDEProjectFrame.class), false);
     Thread generationThread = new Thread("Generation") {
       public void run() {
         CommandProcessor.instance().executeCommand(new Runnable() {
           public void run() {
             generateModels(sourceModels, targetLanguage, invocationContext, generationType, progress);
+            if (finishAnyway) {
+              progress.finishAnyway();
+            }
             ThreadUtils.runInUIThreadNoWait(continuation);
           }
         });
@@ -275,7 +278,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
     long totalJob = ModelsProgressUtil.estimateTotalGenerationJobMillis(compile, sourceModels);
 
-    progress.start("generating", totalJob);
+    progress.startTaskAnyway("generating", null, totalJob);
 
     try {
       boolean reloadClasses = true;
@@ -373,20 +376,20 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           }
         }
         addProgressMessage(MessageKind.INFORMATION, "generation completed successfully", progress);
-        progress.finish();
+        progress.finishSomehow();
       } else if (status.isError()) {
         addProgressMessage(MessageKind.WARNING, "generation finished with errors", progress);
-        progress.finishAnyway();
+        progress.finishSomehow();
       }
     } catch (GenerationCanceledException gce) {
       addProgressMessage(MessageKind.WARNING, "generation canceled", progress);
-      progress.finishAnyway();
+      progress.finishSomehow();
       showMessageView();
     } catch (Throwable t) {
       LOG.error(t);
       addProgressMessage(MessageKind.ERROR, t.toString(), progress);
+      progress.finishSomehow();
     } finally {
-      progress.finishAnyway();
       System.gc();
     }
   }
