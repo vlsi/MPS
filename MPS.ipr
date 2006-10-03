@@ -89,7 +89,9 @@
   <component name="DependenciesAnalyzeManager">
     <option name="myForwardDirection" value="false" />
   </component>
-  <component name="DependencyValidationManager" />
+  <component name="DependencyValidationManager">
+    <scope name="Unnamed" pattern="file:*/source_gen/**/*.*" />
+  </component>
   <component name="EclipseCompilerSettings">
     <option name="DEBUGGING_INFO" value="true" />
     <option name="GENERATE_NO_WARNINGS" value="true" />
@@ -117,7 +119,9 @@
   <component name="InspectionProjectProfileManager">
     <option name="PROJECT_PROFILE" value="For TeamCity" />
     <option name="USE_PROJECT_LEVEL_SETTINGS" value="true" />
-    <scopes />
+    <scopes>
+      <scope profile="For TeamCity" name="Unnamed" />
+    </scopes>
     <profiles>
       <profile version="1.0" is_locked="false">
         <option name="myName" value="For TeamCity" />
@@ -366,7 +370,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/projects/BLFeatures/BLFeatures.iml" filepath="$PROJECT_DIR$/projects/BLFeatures/BLFeatures.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/MPS.iml" filepath="$PROJECT_DIR$/MPS.iml" />
-      <module fileurl="file://$PROJECT_DIR$/MPSPlugin/MPSPlugin.iml" filepath="$PROJECT_DIR$/MPSPlugin/MPSPlugin.iml" />
       <module fileurl="file://$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" filepath="$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/NaturalLanguage/NaturalLanguage.iml" filepath="$PROJECT_DIR$/projects/NaturalLanguage/NaturalLanguage.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/SemanticWeb/editor/OWLEditor.iml" filepath="$PROJECT_DIR$/projects/SemanticWeb/editor/OWLEditor.iml" group="SemanticWeb" />

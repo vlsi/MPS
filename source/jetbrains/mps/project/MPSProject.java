@@ -53,6 +53,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
   private PluginManager myPluginManager = new PluginManager(this);
 
   public MPSProject(final File projectFile) {
+    addComponent(PluginManager.class, myPluginManager);
+
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
         myProjectFile = projectFile;
