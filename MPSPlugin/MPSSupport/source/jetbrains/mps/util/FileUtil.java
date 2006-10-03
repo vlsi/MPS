@@ -14,8 +14,7 @@ import java.net.URISyntaxException;
 /**
  * @author Kostik
  */
-public class FileUtil {
-
+public class FileUtil {  
   public static File getJREHome() {
     return getRTJar().getParentFile().getParentFile();
   }
