@@ -19,7 +19,6 @@ import jetbrains.mps.plugin.CompilationResult;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.generator.generationTypes.TextGenerationUtil;
 import org.jdom.Element;
 
 import java.io.File;
@@ -274,7 +273,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     addMessage(MessageKind.INFORMATION, "    target root folder: \"" + outputFolder + "\"");
 
     boolean ideaPresent = myProject.getProjectHandler() != null;
-    boolean compile = myCompileOnGeneration && ideaPresent && generationType.requiresCompilationInIDEA();
+    boolean compile = myCompileOnGeneration && ideaPresent && generationType.requiresCompilationInIDEAfterGeneration();
 
     long totalJob = ModelsProgressUtil.estimateTotalGenerationJobMillis(compile, sourceModels);
 
@@ -283,8 +282,9 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     try {
       boolean reloadClasses = true;
 
-      if (!myCompileOnGeneration) {
-        progress.addText("compilation in IntelliJ IDEA on generation is turned off");
+      if (!myCompileOnGeneration || !generationType.requiresCompilationInIDEABeforeGeneration()) {
+        progress.addText("compilation in IntelliJ IDEA on generation is turned off or not needed");
+        reloadClasses = false;
       } else if (!ideaPresent) {
         progress.addText("IntelliJ IDEA with installed MPS is not present");
       } else {
@@ -338,7 +338,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         }
       }
       //-- generation
-
 
       if (isSaveTransientModels()) {
         File solutionDescriptorFile = generationSession.saveTransientModels();
