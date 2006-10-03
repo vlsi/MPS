@@ -393,6 +393,10 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     }
   }
 
+  public boolean willCompile(boolean ideaPresent, IGenerationType generationType) {
+    return myCompileOnGeneration && ideaPresent && generationType.requiresCompilationInIDEABeforeGeneration();
+  }
+
   private void updateLanguagesGenerationRequiredStatus(IOperationContext context) {
     IModule module = context.getModule();
     if (module instanceof Language) {
