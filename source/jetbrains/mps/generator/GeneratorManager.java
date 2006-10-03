@@ -1,8 +1,6 @@
 package jetbrains.mps.generator;
 
-import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.components.IExternalizableComponent;
-import jetbrains.mps.execution.ExecutionManager;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
@@ -21,12 +19,10 @@ import jetbrains.mps.plugin.CompilationResult;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.textGen.TextGenManager;
-import jetbrains.mps.textPresentation.TextPresentationManager;
+import jetbrains.mps.generator.generationTypes.TextGenerationUtil;
 import org.jdom.Element;
 
 import java.io.File;
-import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.*;
 
@@ -118,52 +114,11 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 //    return outputRootPath + File.separator + packageName.replace('.', File.separatorChar);
 //  }
 
-  private void generateFiles(String outputRootPath, SModel sourceModel, SModel outputModel, TraceMap traceMap) {
-    if (outputRootPath == null) throw new RuntimeException("Unspecified output path. Please specify one.");
-//    File outputDirectory = new File(getOutputFolderPath(outputPath, sourceModel));
-    File outputRootDirectory = new File(outputRootPath);
 
-//    if (!outputRootDirectory.exists()) {
-//      outputRootDirectory.mkdirs();
-//    }
-
-//    // todo : refactor it...
-//    XmlFileGenerator xmlFileGenerator = new XmlFileGenerator(outputPathFile);
-//    JavaFileGenerator javaFileGenerator = new JavaFileGenerator(outputPathFile);
-//    for (SNode root : targetModel.getRoots()) {
-//      String content = generateText(root);
-//      if (root instanceof Classifier) {
-//        javaFileGenerator.generateJavaFile((Classifier) root, content);
-//      } else if (root instanceof Document) {
-//        xmlFileGenerator.generateXmlFile((Document) root, content);
-//      }
-//    }
-
-    for (SNode outputNode : outputModel.getRoots()) {
-      SNode sourceNode = null;
-      if (traceMap != null) {
-        sourceNode = traceMap.getSourceNode(outputNode);
-      }
-      IFileGenerator fileGenerator = chooseFileGenerator(outputNode, sourceNode);
-      if (fileGenerator == null) {
-        LOG.error("Couldn't find file generator for output node: " + outputNode.getDebugText());
-        continue;
-      }
-
-      try {
-        String content = generateText(outputNode);
-        fileGenerator.generateFile(outputNode, sourceNode, sourceModel, content, outputRootDirectory);
-      } catch (IOException e) {
-        LOG.error("Error while file generation", e);
-      } finally {
-        // todo: get rid of this.
-        TextGenManager.reset();
-      }
-    }
-  }
-
-  private IFileGenerator chooseFileGenerator(SNode outputNode, SNode sourceNode) {
-
+  /**
+   * todo Move it to a better place
+   */
+  public IFileGenerator chooseFileGenerator(SNode outputNode, SNode sourceNode) {
     for (IFileGenerator fileGenerator : myFileGenerators) {
       if (sourceNode != null &&
               fileGenerator.overridesDefault(outputNode, sourceNode)) {
@@ -179,55 +134,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     return null;
   }
 
-  private void generateText(SModel targetModel, IOperationContext operationContext) {
-    OutputView view = operationContext.getComponent(OutputView.class);
-    view.clear();
-
-    for (SNode root : targetModel.getRoots()) {
-      String nodeText = generateText(root);
-      view.append(nodeText);
-      view.append("\n");
-      view.append("\r\n-------------------------------------------------------------------------------\n");
-    }
-
-    view.activate();
-  }
-
-  private void generateTextAndExecute(SModel sourceModel, SModel targetModel, IOperationContext context, IAdaptiveProgressMonitor progress, boolean execute) {
-    JavaCompiler compiler = compile(targetModel, progress);
-
-    ClassLoader classLoader = compiler.getClassLoader();
-    String modelNamespace = targetModel.getUID().getLongName();
-
-    ExecutionManager.getExecutionManager().put(sourceModel.getModelDescriptor(), compiler.getClassLoader());
-
-    if (execute) {
-      progress.addText("Executing...");
-      execute(modelNamespace, classLoader, context);
-    }
-  }
-
-  private JavaCompiler compile(SModel targetModel, IAdaptiveProgressMonitor progress) {
-    JavaCompiler compiler = new JavaCompiler();
-
-    for (SNode root : targetModel.getRoots()) {
-      compiler.addSource(generateText(root),
-              JavaNameUtil.packageNameForModelUID(targetModel.getUID()) + "." + root.getName());
-    }
-    progress.addText("Compiling...");
-    compiler.compile();
-    progress.addText("Compilation finished.");
-    return compiler;
-  }
-
-  private void generateAndCompile(SModel sourceModel, SModel targetModel, IOperationContext context, IAdaptiveProgressMonitor progress) {
-    JavaCompiler compiler = compile(targetModel, progress);
-    String namespace = JavaNameUtil.packageNameForModelUID(sourceModel.getUID());
-    compiler.putResultToDir(namespace, context.getProject().getClassGenPath());
-
-    progress.addText("reloading MPS classes...");
-    ReloadUtils.reloadAll(false);
-  }
 
   private static void execute(String modelNamespace, ClassLoader classLoader, IOperationContext context) {
     OutputView view = context.getComponent(OutputView.class);
@@ -240,16 +146,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     } catch (Exception e) {
       e.printStackTrace();
     }
-  }
-
-  private String generateText(SNode node) {
-    String nodeText;
-    if (TextGenManager.instance().canGenerateTextFor(node)) {
-      nodeText = TextGenManager.instance().generateText(node);
-    } else {
-      nodeText = TextPresentationManager.generateTextPresentation(node);
-    }
-    return nodeText;
   }
 
   public static List<Language> getPossibleTargetLanguages(List<SModel> sourceModels, IScope scope) {
@@ -296,14 +192,14 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   }
 
 
-  public void generateModelsWithProgressWindowAsync(final List<SModel> sourceModels, final Language targetLanguage, final IOperationContext invocationContext, final GenerationType generationType) {
+  public void generateModelsWithProgressWindowAsync(final List<SModel> sourceModels, final Language targetLanguage, final IOperationContext invocationContext, final IGenerationType generationType) {
     generateModelsWithProgressWindow(sourceModels, targetLanguage, invocationContext, generationType, new Runnable() {
       public void run() {
       }
     });
   }
 
-  public void generateModelsWithProgressWindow(final List<SModel> sourceModels, final Language targetLanguage, final IOperationContext invocationContext, final GenerationType generationType) {
+  public void generateModelsWithProgressWindow(final List<SModel> sourceModels, final Language targetLanguage, final IOperationContext invocationContext, final IGenerationType generationType) {
     final Object lock = new Object();
     generateModelsWithProgressWindow(sourceModels, targetLanguage, invocationContext, generationType, new Runnable() {
       public void run() {
@@ -322,7 +218,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     }
   }
 
-  public void generateModelsWithProgressWindow(final List<SModel> sourceModels, final Language targetLanguage, final IOperationContext invocationContext, final GenerationType generationType, final Runnable continuation) {
+  public void generateModelsWithProgressWindow(final List<SModel> sourceModels, final Language targetLanguage, final IOperationContext invocationContext, final IGenerationType generationType, final Runnable continuation) {
     final IAdaptiveProgressMonitor progress = new AdaptiveProgressMonitor(invocationContext.getComponent(IDEProjectFrame.class), false);
     Thread generationThread = new Thread("Generation") {
       public void run() {
@@ -345,7 +241,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     if (progressMonitor.isCanceled()) throw new GenerationCanceledException();
   }
 
-  public void generateModels(List<SModel> _sourceModels, Language targetLanguage, IOperationContext invocationContext, GenerationType generationType, IAdaptiveProgressMonitor progress) {
+  public void generateModels(List<SModel> _sourceModels, Language targetLanguage, IOperationContext invocationContext, IGenerationType generationType, IAdaptiveProgressMonitor progress) {
 
     showMessageView();
 
@@ -357,23 +253,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     clearMessages();
 
 
-    switch (generationType) {
-      case GENERATE_AND_EXECUTE:
-        addMessage(MessageKind.INFORMATION, "generating and executing");
-        break;
-      case GENERATE_IN_MEMORY:
-        addMessage(MessageKind.INFORMATION, "generating in memory");
-        break;
-      case GENERATE_FILES:
-        addMessage(MessageKind.INFORMATION, "generating files");
-        break;
-      case GENERATE_TEXT:
-        addMessage(MessageKind.INFORMATION, "generating text");
-        break;
-      case GENERATE_CLASSES:
-        addMessage(MessageKind.INFORMATION, "generating classes");
-        break;
-    }
+    addMessage(MessageKind.INFORMATION, generationType.getStartText());
 
     addMessage(MessageKind.INFORMATION, "    target language: \"" + targetLanguage.getNamespace() + "\"");
     String outputFolder = invocationContext.getModule().getGeneratorOutputPath();
@@ -388,31 +268,16 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       }
     }
 
-    if (generationType == GenerationType.GENERATE_FILES) {
-      addMessage(MessageKind.INFORMATION, "    target root folder: \"" + outputFolder + "\"");
-    }
+    addMessage(MessageKind.INFORMATION, "    target root folder: \"" + outputFolder + "\"");
 
     boolean ideaPresent = myProject.getProjectHandler() != null;
-    boolean compile = myCompileOnGeneration && ideaPresent;
+    boolean compile = myCompileOnGeneration && ideaPresent && generationType.requiresCompilationInIDEA();
 
-    //todo accomodate 3 types of generation in estimation
-    long totalJob = ModelsProgressUtil.estimateTotalGenerationJobMillis(compile, (generationType == GenerationType.GENERATE_TEXT), sourceModels);
+    long totalJob = ModelsProgressUtil.estimateTotalGenerationJobMillis(compile, sourceModels);
 
     progress.start("generating", totalJob);
 
     try {
-
-      if (_sourceModels.size() == 1 && generationType == GenerationType.GENERATE_AND_EXECUTE) {
-        SModelDescriptor source = _sourceModels.get(0).getModelDescriptor();
-
-        ClassLoader cachedClassLoader = ExecutionManager.getExecutionManager().get(source);
-        if (cachedClassLoader != null) {
-          execute(source.getLongName(), cachedClassLoader, invocationContext);
-          return;
-        }
-      }
-
-
       boolean reloadClasses = true;
 
       if (!myCompileOnGeneration) {
@@ -461,25 +326,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         status = generationSession.generateModel(sourceModelDescriptor);
         checkMonitorCanceled(progress);
         if (status.getOutputModel() != null) {
-          switch (generationType) {
-            case GENERATE_TEXT:
-              progress.addText("generate text to Output view");
-              generateText(status.getOutputModel(), invocationContext);
-              break;
-            case GENERATE_FILES:
-              addProgressMessage(MessageKind.INFORMATION, "generate files to folder: \"" + outputFolder + "\"", progress);
-              generateFiles(outputFolder, sourceModel, status.getOutputModel(), status.getTraceMap());
-              break;
-            case GENERATE_AND_EXECUTE:
-            case GENERATE_IN_MEMORY:
-              progress.addText("compiling generated code in memory...");
-              generateTextAndExecute(sourceModel, status.getOutputModel(), invocationContext, progress, generationType == GenerationType.GENERATE_AND_EXECUTE);
-              break;
-            case GENERATE_CLASSES:
-              progress.addText("compiling classes...");
-              generateAndCompile(sourceModel, status.getOutputModel(), invocationContext, progress);
-              break;
-          }
+          generationType.handleOutput(invocationContext, status, progress, outputFolder);
         }
         generationSession.discardTransients();
         progress.finishTask(taskName);
@@ -502,7 +349,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       checkMonitorCanceled(progress);
       progress.addText("");
       if (status.isOk()) {
-        if (compile && generationType == GenerationType.GENERATE_FILES) {
+        if (compile) {
           // -- compile after generation
           progress.addText("compiling in IntelliJ IDEA...");
 

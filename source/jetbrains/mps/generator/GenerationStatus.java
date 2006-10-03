@@ -12,13 +12,15 @@ import jetbrains.mps.smodel.SModel;
  */
 public class GenerationStatus extends Status {
   private SModel myOutputModel;
+  private SModel mySourceModel;
   private boolean myCanceled;
   private TraceMap myTraceMap;
 
-  public GenerationStatus(SModel outputModel, TraceMap traceMap, boolean errors, boolean canceled) {
+  public GenerationStatus(SModel sourceModel, SModel outputModel, TraceMap traceMap, boolean errors, boolean canceled) {
     super(errors ? Code.ERROR : Code.OK, null);
     myCanceled = canceled;
     myOutputModel = outputModel;
+    mySourceModel = sourceModel;
     myTraceMap = traceMap;
   }
 
@@ -38,9 +40,13 @@ public class GenerationStatus extends Status {
     return myTraceMap;
   }
 
+  public SModel getSourceModel() {
+    return mySourceModel;
+  }
+
   public static class ERROR extends GenerationStatus {
-    public ERROR() {
-      super(null, null, true, false);
+    public ERROR(SModel sourceModel) {
+      super(sourceModel, null, null, true, false);
     }
   }
 }

@@ -82,7 +82,9 @@ public class ModelsProgressUtil {
     return getInstance().getModelsProgressHelper(TASK_KIND_FIND_INSTANCES).estimateModelsTaskTimeMillis(models);
   }
 
-  public static long estimateTotalGenerationJobMillis(boolean compile, boolean generateText, Collection<SModelDescriptor> models) {
+  public static long estimateTotalGenerationJobMillis(boolean compile, Collection<SModelDescriptor> models) {
+    boolean generateText = true;
+
     long generationTime = estimateGenerationTimeMillis(models);
     long compilationTime = estimateCompileOnGenerationTimeMillis();
     long reloadingTime = estimateReloadAllTimeMillis();

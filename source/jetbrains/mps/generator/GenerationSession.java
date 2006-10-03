@@ -71,24 +71,6 @@ public class GenerationSession {
   public GenerationStatus generateModel(SModelDescriptor sourceModel) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
     GenerationStatus status = null;
 
-    // todo: temporarily disable preliminary re-writing
-    // todo: where are problems with generation of multy-language models.
-//    // need to re-write model ?
-//    List<Language> sourceModelLanguages = sourceModel.getSModel().getLanguages(myInvocationContext.getScope());
-//    for (Language language : sourceModelLanguages) {
-//      if (language == myTargetLanguage) continue;
-//      if (GeneratorManager.isPossibleTargetLanguage(language)) {
-//        // do re-write model
-//        status = generateModel_internal(sourceModel, language, true);
-//        if (status.isError()) {
-//          break;
-//        }
-//
-//        // replace source model with re-written model
-//        sourceModel = status.getOutputModel().getModelDescriptor();
-//      }
-//    }
-
     // do model mapping
     if (status == null || status.isOk()) {
       status = generateModel_internal(sourceModel, myTargetLanguage, false);
@@ -112,7 +94,7 @@ public class GenerationSession {
     List<Generator> generators = context.getGeneratorModules();
     if (generators.isEmpty()) {
       addProgressMessage(MessageKind.WARNING, "skip model \"" + sourceModel.getUID() + "\" : no generator avalable");
-      return new GenerationStatus(null, null, false, false);
+      return new GenerationStatus(sourceModel, null, null, false, false);
     }
     setGenerationSessionContext(context);
 
@@ -131,7 +113,7 @@ public class GenerationSession {
         } else if (!generatorClass.isAssignableFrom(currentGeneratorClass)) {
           addProgressMessage(MessageKind.ERROR, "couldn't choose generator class");
           addMessage(MessageKind.ERROR, "generator classes \"" + currentGeneratorClass.getName() + "\" and " + generatorClass.getName() + " are not compatible");
-          return new GenerationStatus.ERROR();
+          return new GenerationStatus.ERROR(sourceModel);
         }
       }
     }
@@ -139,7 +121,7 @@ public class GenerationSession {
     if (currentGeneratorClass == null) {
       if (defaultGeneratorClass == null) {
         addProgressMessage(MessageKind.ERROR, "generator class is not defined");
-        return new GenerationStatus.ERROR();
+        return new GenerationStatus.ERROR(sourceModel);
       }
       currentGeneratorClass = defaultGeneratorClass;
     }
@@ -150,7 +132,7 @@ public class GenerationSession {
       IModelGenerator handCodedGenerator = currentGeneratorClass.getConstructor(IOperationContext.class).newInstance(context);
       SModelDescriptor outputModel = createTransientModel(sourceModel, context.getModule());
       handCodedGenerator.generate(sourceModel, outputModel.getSModel());
-      return new GenerationStatus(outputModel.getSModel(), null, false, false);
+      return new GenerationStatus(sourceModel, outputModel.getSModel(), null, false, false);
     }
 
     // templates generator
@@ -159,7 +141,7 @@ public class GenerationSession {
     try {
       SModel outputModel = generateModel(sourceModel, targetLanguage, generator, primaryMappingOnly);
       boolean wasErrors = generator.getErrorCount() > 0;
-      status = new GenerationStatus(outputModel, context.getTraceMap(), wasErrors, false);
+      status = new GenerationStatus(sourceModel, outputModel, context.getTraceMap(), wasErrors, false);
       addMessage(status.isError() ? MessageKind.WARNING : MessageKind.INFORMATION, "model \"" + sourceModel.getUID() + "\" has been generated " + (status.isError() ? "with errors" : "successfully"));
       generator.reset();
     } catch (GenerationCanceledException gce) {
@@ -174,12 +156,12 @@ public class GenerationSession {
         }
       }
       addMessage(MessageKind.ERROR, "model \"" + sourceModel.getUID() + "\" generation failed : " + gfe);
-      status = new GenerationStatus.ERROR();
+      status = new GenerationStatus.ERROR(sourceModel);
     } catch (Exception e) {
       LOG.error(e);
       myProgressMonitor.addText(e.toString());
       addMessage(MessageKind.ERROR, "model \"" + sourceModel.getUID() + "\" generation failed : " + e);
-      status = new GenerationStatus.ERROR();
+      status = new GenerationStatus.ERROR(sourceModel);
     }
 
     return status;
