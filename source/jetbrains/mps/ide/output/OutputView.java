@@ -95,6 +95,14 @@ public class OutputView extends DefaultTool implements IExternalizableComponent,
 
     myComponent.setLayout(new BorderLayout());
     myComponent.add(new JScrollPane(myTextArea), BorderLayout.CENTER);
+
+    if (getTopComponent() != null) {
+      myComponent.add(getTopComponent(), BorderLayout.NORTH);      
+    }
+  }
+
+  protected JComponent getTopComponent() {
+    return null;
   }
 
   public void read(Element element, MPSProject project) {
