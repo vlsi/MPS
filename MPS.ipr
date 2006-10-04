@@ -90,7 +90,7 @@
     <option name="myForwardDirection" value="false" />
   </component>
   <component name="DependencyValidationManager">
-    <scope name="Unnamed" pattern="file:*/source_gen/**/*.*" />
+    <scope name="Generated Files" pattern="file:*/source_gen/**/*.*" />
   </component>
   <component name="EclipseCompilerSettings">
     <option name="DEBUGGING_INFO" value="true" />
@@ -117,14 +117,14 @@
   <component name="GUI Designer component loader factory" />
   <component name="IdProvider" IDEtalkID="13400C80EA822F0B5CAF10171834B2C5" />
   <component name="InspectionProjectProfileManager">
-    <option name="PROJECT_PROFILE" value="For TeamCity" />
+    <option name="PROJECT_PROFILE" value="For Regular Code" />
     <option name="USE_PROJECT_LEVEL_SETTINGS" value="true" />
     <scopes>
-      <scope profile="For TeamCity" name="Unnamed" />
+      <scope profile="For Generated Code" name="Generated Files" />
     </scopes>
     <profiles>
       <profile version="1.0" is_locked="false">
-        <option name="myName" value="For TeamCity" />
+        <option name="myName" value="For Generated Code" />
         <option name="myLocal" value="false" />
         <used_levels>
           <error>
@@ -165,45 +165,6 @@
         <inspection_tool class="StrutsInspection" level="ERROR" enabled="false" />
         <inspection_tool class="StrutsTilesInspection" level="ERROR" enabled="false" />
         <inspection_tool class="StrutsValidatorInspection" level="ERROR" enabled="false" />
-      </profile>
-      <profile version="1.0" is_locked="false">
-        <option name="myName" value="Project Default" />
-        <option name="myLocal" value="false" />
-        <used_levels>
-          <error>
-            <option name="myName" value="ERROR" />
-            <option name="myVal" value="400" />
-          </error>
-          <warning>
-            <option name="myName" value="WARNING" />
-            <option name="myVal" value="300" />
-          </warning>
-          <information>
-            <option name="myName" value="INFO" />
-            <option name="myVal" value="200" />
-          </information>
-          <server>
-            <option name="myName" value="SERVER PROBLEM" />
-            <option name="myVal" value="100" />
-          </server>
-        </used_levels>
-        <inspection_tool class="UnnecessaryLocalVariable" level="WARNING" enabled="false">
-          <option name="m_ignoreImmediatelyReturnedVariables" value="false" />
-          <option name="m_ignoreAnnotatedVariables" value="false" />
-        </inspection_tool>
-        <inspection_tool class="UNUSED_SYMBOL" level="WARNING" enabled="false">
-          <option name="LOCAL_VARIABLE" value="true" />
-          <option name="FIELD" value="true" />
-          <option name="METHOD" value="true" />
-          <option name="CLASS" value="true" />
-          <option name="PARAMETER" value="true" />
-          <option name="INJECTION_ANNOS">
-            <value>
-              <list size="0" />
-            </value>
-          </option>
-        </inspection_tool>
-        <inspection_tool class="FieldCanBeLocal" level="WARNING" enabled="false" />
       </profile>
     </profiles>
   </component>
