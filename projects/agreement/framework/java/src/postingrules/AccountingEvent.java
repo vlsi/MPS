@@ -88,17 +88,16 @@ public class AccountingEvent {
     public void reverse() {
         assert isProcessed();
         Entry[] entries = (Entry[]) getResultingEntries().toArray(new Entry[0]);
-        for (int i = 0; i < entries.length; i++) {
-            subject.reverseEntry(entries[i]);
-        }
-        reverseSecondaryEvents();
+      for (Entry entry : entries) {
+        subject.reverseEntry(entry);
+      }
+      reverseSecondaryEvents();
     }
     private void reverseSecondaryEvents() {
-        Iterator it = getSecondaryEvents().iterator();
-        while (it.hasNext()) {
-            AccountingEvent each = (AccountingEvent) it.next();
-            each.reverse();
-        }
+      for (Object o : getSecondaryEvents()) {
+        AccountingEvent each = (AccountingEvent) o;
+        each.reverse();
+      }
     }
     void setIsProcessed(boolean newIsProcessed) {
         isProcessed = newIsProcessed;

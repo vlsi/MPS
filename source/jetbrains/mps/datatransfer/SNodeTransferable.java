@@ -57,8 +57,8 @@ public class SNodeTransferable implements Transferable {
   }
 
   public boolean isDataFlavorSupported(DataFlavor flavor) {
-    for (int i = 0; i < flavors.length; i++) {
-      if (flavor.equals(flavors[i])) {
+    for (DataFlavor flavor1 : flavors) {
+      if (flavor.equals(flavor1)) {
         return true;
       }
     }

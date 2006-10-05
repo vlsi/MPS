@@ -136,8 +136,8 @@ public class ModelPersistence {
 
     // languages
     List languages = rootElement.getChildren(LANGUAGE);
-    for (Iterator iterator = languages.iterator(); iterator.hasNext();) {
-      Element element = (Element) iterator.next();
+    for (Object language : languages) {
+      Element element = (Element) language;
       String languageNamespace = element.getAttributeValue(NAMESPACE);
       model.addLanguage(languageNamespace);
     }
@@ -145,8 +145,8 @@ public class ModelPersistence {
     // imports
     Map<Integer, SModelUID> importedUIDtoIndex = new HashMap<Integer, SModelUID>();
     List imports = rootElement.getChildren(IMPORT_ELEMENT);
-    for (Iterator iterator = imports.iterator(); iterator.hasNext();) {
-      Element element = (Element) iterator.next();
+    for (Object anImport : imports) {
+      Element element = (Element) anImport;
       String indexValue = element.getAttributeValue(MODEL_IMPORT_INDEX, element.getAttributeValue("referenceID"));
       int importIndex = Integer.parseInt(indexValue);
       String importedModelUIDString = element.getAttributeValue(MODEL_UID);
@@ -223,8 +223,8 @@ public class ModelPersistence {
     }
 
     List properties = nodeElement.getChildren(PROPERTY);
-    for (Iterator iterator = properties.iterator(); iterator.hasNext();) {
-      Element propertyElement = (Element) iterator.next();
+    for (Object property : properties) {
+      Element propertyElement = (Element) property;
       String propertyName = propertyElement.getAttributeValue(NAME);
       String propertyValue = propertyElement.getAttributeValue(VALUE);
       if (propertyValue != null) {
@@ -233,14 +233,14 @@ public class ModelPersistence {
     }
 
     List links = nodeElement.getChildren(LINK);
-    for (Iterator iterator = links.iterator(); iterator.hasNext();) {
-      Element linkElement = (Element) iterator.next();
+    for (Object link : links) {
+      Element linkElement = (Element) link;
       referenceDescriptors.add(ReferencePersister.readReferencePersister(linkElement, node, useUIDs));
     }
 
     List childNodes = nodeElement.getChildren(NODE);
-    for (Iterator iterator = childNodes.iterator(); iterator.hasNext();) {
-      Element childNodeElement = (Element) iterator.next();
+    for (Object childNode1 : childNodes) {
+      Element childNodeElement = (Element) childNode1;
       String role = childNodeElement.getAttributeValue(ROLE);
       SNode childNode = readNode(childNodeElement, model, referenceDescriptors, useUIDs);
       if (childNode != null) {
@@ -388,8 +388,7 @@ public class ModelPersistence {
     // properties ...
     Map<String, String> properties = node.getProperties();
     Set<String> keys = properties.keySet();
-    for (Iterator<String> iterator = keys.iterator(); iterator.hasNext();) {
-      String propertyName = iterator.next();
+    for (String propertyName : keys) {
       Element propertyElement = new Element(PROPERTY);
       element.addContent(propertyElement);
       propertyElement.setAttribute(NAME, propertyName);
@@ -398,11 +397,9 @@ public class ModelPersistence {
 
     // references ...
     List<SReference> references = node.getReferences();
-    for (Iterator<SReference> iterator = references.iterator(); iterator.hasNext();) {
-      SReference reference = iterator.next();
+    for (SReference reference : references) {
       Element linkElement = ReferencePersister.saveReference(element, reference, useUIDs);
     }
-
 
     // children ...
     List<SNode> children = node.getChildren();

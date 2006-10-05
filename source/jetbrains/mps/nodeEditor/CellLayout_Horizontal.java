@@ -71,8 +71,8 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
     boolean isFirst = true;
     EditorCell prevCell = null;
     EditorCell cell = null;
-    for (Iterator iterator = editorCells.iterator(); iterator.hasNext();) {
-      EditorCell editorCell = (EditorCell) iterator.next();
+    for (Object editorCell1 : editorCells) {
+      EditorCell editorCell = (EditorCell) editorCell1;
       cell = editorCell.findNearestCell(x, y, true);
       if (cell == null) {
         continue;

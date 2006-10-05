@@ -30,8 +30,8 @@ public class CellAction_CopyNode extends EditorCellAction {
     if (nodeRangeSelection.isActive()) {
       nodeList.addAll(nodeRangeSelection.getNodes());
       LOG.debug("Copy " + nodeList.size() + " nodes : ");
-      for (int i = 0; i < nodeList.size(); i++) {
-        LOG.debug("    " + nodeList.get(i).getDebugText());
+      for (SNode aNodeList : nodeList) {
+        LOG.debug("    " + aNodeList.getDebugText());
       }
     } else {
       nodeList.add(editorComponent.getSelectedCell().getSNode());

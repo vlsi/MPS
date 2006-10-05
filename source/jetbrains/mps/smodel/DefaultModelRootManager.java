@@ -80,11 +80,10 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
         return name.endsWith(".mps");
       }
     });
-    for (int i = 0; i < files.length; i++) {
-      File file = files[i];
-     /* String modelFQName = PathManager.getModelFQName(file, new File(modelRoot.getPath()), modelRoot.getPrefix());
+    for (File file : files) {
+      /* String modelFQName = PathManager.getModelFQName(file, new File(modelRoot.getPath()), modelRoot.getPrefix());
       String stereotype = PathManager.getModelStereotype(file, new File(modelRoot.getPath()), modelRoot.getPrefix());*/
- /*     if (modelFQName.equals("jetbrains.mps.baseLanguage.generator.java")) {
+      /*     if (modelFQName.equals("jetbrains.mps.baseLanguage.generator.java")) {
         System.out.println();
       }*/
       SModelUID modelUID = PathManager.getModelUID(file, new File(modelRoot.getPath()), modelRoot.getPrefix());//new SModelUID(modelFQName, stereotype);
@@ -93,8 +92,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       modelDescriptors.add(modelDescriptor);
     }
     File[] dirs = dir.listFiles();
-    for (int i = 0; i < dirs.length; i++) {
-      File childDir = dirs[i];
+    for (File childDir : dirs) {
       if (childDir.isDirectory()) {
         readModelDescriptors(modelDescriptors, childDir, modelRoot, owner);
       }

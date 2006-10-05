@@ -41,8 +41,7 @@ public class EditorCellKeyMap {
 
   static {
     Field[] declaredFields = KeyEvent.class.getDeclaredFields();
-    for (int i = 0; i < declaredFields.length; i++) {
-      Field field = declaredFields[i];
+    for (Field field : declaredFields) {
       String name = field.getName();
       if (name.startsWith("VK_")) {
         if (name.equals("VK_CONTROL") ||
@@ -52,7 +51,7 @@ public class EditorCellKeyMap {
         }
         try {
           int value = field.getInt(null);
-          ourJavaKeycodesMap.put(new Integer(value), name);
+          ourJavaKeycodesMap.put(value, name);
         } catch (IllegalAccessException e) {
           LOG.error(e);
         }
@@ -178,12 +177,9 @@ public class EditorCellKeyMap {
     List<String> modifiers = modifiersForEvent(event);
     List<String> keyCodes = keyCodesForEvent(event);
     if (modifiers.size() > 0 && keyCodes.size() > 0) {
-      for (int iMod = 0; iMod < modifiers.size(); iMod++) {
-        String modifier = modifiers.get(iMod);
-        for (int iKey = 0; iKey < keyCodes.size(); iKey++) {
-          String keyKode = keyCodes.get(iKey);
+      for (String modifier : modifiers) {
+        for (String keyKode : keyCodes) {
           ActionKey actionKey = new ActionKey(modifier, keyKode);
-//          System.out.println("key map add action key: " + actionKey);
           keys.add(actionKey);
         }
       }
@@ -285,8 +281,7 @@ public class EditorCellKeyMap {
     if (ourModifiers == null) {
       ourModifiers = new LinkedList<String>();
       Field[] fields = EditorCellKeyMap.class.getFields();
-      for (int i = 0; i < fields.length; i++) {
-        Field field = fields[i];
+      for (Field field : fields) {
         String name = field.getName();
         if (name.startsWith("KEY_MODIFIERS_")) {
           try {
@@ -305,8 +300,7 @@ public class EditorCellKeyMap {
     if (ourKeycodeCategories == null) {
       ourKeycodeCategories = new LinkedList<String>();
       Field[] fields = EditorCellKeyMap.class.getFields();
-      for (int i = 0; i < fields.length; i++) {
-        Field field = fields[i];
+      for (Field field : fields) {
         String name = field.getName();
         if (name.startsWith("KEY_CODE_")) {
           try {

@@ -842,8 +842,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     }
     // tmp check
 
-    for (Iterator<SReference> iterator = myReferences.iterator(); iterator.hasNext();) {
-      SReference semanticReference = iterator.next();
+    for (SReference semanticReference : myReferences) {
       if (semanticReference.getRole().equals(role)) {
         return semanticReference.getTargetNode();
       }
@@ -860,8 +859,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     }
     // tmp check
 
-    for (Iterator<SReference> iterator = myReferences.iterator(); iterator.hasNext();) {
-      SReference semanticReference = iterator.next();
+    for (SReference semanticReference : myReferences) {
       if (semanticReference.getRole().equals(role)) {
         return semanticReference;
       }
@@ -915,8 +913,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   public int getReferentCount(String role) {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
     int count = 0;
-    for (Iterator<SReference> iterator = myReferences.iterator(); iterator.hasNext();) {
-      SReference reference = iterator.next();
+    for (SReference reference : myReferences) {
       if (reference.getRole().equals(role)) {
         count++;
       }
@@ -939,8 +936,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   public <T extends SNode> Iterator<T> referents(String role) {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
     List<T> list = new LinkedList<T>();
-    for (Iterator<SReference> iterator = myReferences.iterator(); iterator.hasNext();) {
-      SReference reference = iterator.next();
+    for (SReference reference : myReferences) {
       if (reference.getRole().equals(role)) {
         list.add((T) reference.getTargetNode());
       }
@@ -1053,8 +1049,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   private void putAggregationTree2List(SNode semanticNode, List<SNode> allChildren) {
     List<SNode> list = semanticNode.getChildren();
-    for (Iterator<SNode> i = list.iterator(); i.hasNext();) {
-      SNode child = i.next();
+    for (SNode child : list) {
       allChildren.add(child);
       putAggregationTree2List(child, allChildren);
     }

@@ -117,8 +117,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
       LOG.debug("Plugin isn't present using reflection");
       conditionsList = getAvailableIdsUsingReflection();
     }
-    for (Iterator<String> iterator = conditionsList.iterator(); iterator.hasNext();) {
-      final String queryMethodId = iterator.next();
+    for (final String queryMethodId : conditionsList) {
       actions.add(new AbstractNodeSubstituteItem() {
         public String getMatchingText(String pattern) {
           return queryMethodId;
