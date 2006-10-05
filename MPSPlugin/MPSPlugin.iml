@@ -8,9 +8,18 @@
     <content url="file://$MODULE_DIR$/source/jetbrains/mps/plugin">
       <sourceFolder url="file://$MODULE_DIR$/source/jetbrains/mps/plugin" isTestSource="false" packagePrefix="jetbrains.mps.plugin" />
     </content>
-    <orderEntry type="jdk" jdkName="IDEA 5748" jdkType="IDEA JDK" />
+    <orderEntry type="jdk" jdkName="IDEA 5766" jdkType="IDEA JDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPSSupport" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../lib/idea/idea.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
     <orderEntryProperties />
   </component>
   <component name="org.mevenide.idea.module.ModuleSettings">
