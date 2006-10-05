@@ -290,6 +290,7 @@
           <option name="IGNORE_JAVADOC_PERIOD" value="true" />
           <option name="myAdditionalJavadocTags" value="" />
         </inspection_tool>
+        <inspection_tool class="TrivialIf" level="WARNING" enabled="false" />
       </profile>
       <profile version="1.0" is_locked="false">
         <option name="myName" value="For Generated Code" />
@@ -640,6 +641,7 @@
             </value>
           </option>
         </inspection_tool>
+        <inspection_tool class="TrivialIf" level="WARNING" enabled="false" />
       </profile>
     </profiles>
   </component>
