@@ -177,6 +177,8 @@
           <option name="m_ignoreForAbstractMethods" value="false" />
         </inspection_tool>
         <inspection_tool class="TypeParameterHidesVisibleType" level="WARNING" enabled="true" />
+        <inspection_tool class="CloneCallsSuperClone" level="WARNING" enabled="false" />
+        <inspection_tool class="CloneDeclaresCloneNotSupported" level="WARNING" enabled="false" />
       </profile>
       <profile version="1.0" is_locked="false">
         <option name="myName" value="For Generated Code" />
