@@ -36,8 +36,7 @@ public class ModelsProgressHelper {
     long timeMillis = 0;
     TaskProgressSettings settings = TaskProgressSettings.getInstance();
     for (SModelDescriptor model : models) {
-      long estimated = settings.getEstimatedTimeMillis(modelTaskName(model));
-      timeMillis += estimated;
+      timeMillis += settings.getEstimatedTimeMillis(modelTaskName(model));
     }
     return timeMillis;
   }

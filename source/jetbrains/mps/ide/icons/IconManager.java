@@ -38,8 +38,7 @@ public class IconManager {
       try {
         Class icons = Class.forName(iconsClass, true, ClassLoaderManager.getInstance().getClassLoader());
         try {
-          Icon icon = (Icon) icons.getMethod("getIconFor" + className, SNode.class).invoke(null, node);
-          return icon;
+          return (Icon) icons.getMethod("getIconFor" + className, SNode.class).invoke(null, node);
         } catch (NoSuchMethodException e) {
           try {
             Icon icon = (Icon) icons.getMethod("getIconFor" + className).invoke(null);

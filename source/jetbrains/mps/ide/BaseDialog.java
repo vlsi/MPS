@@ -106,9 +106,8 @@ public abstract class BaseDialog extends JDialog {
     buttonsPanel.add(myErrorLabel, BorderLayout.WEST);
     buttonsPanel.add(innerButtonsPanel, getButtonsPosition());
     panel1.add(buttonsPanel, BorderLayout.SOUTH);
-    JPanel panel = panel1;
 
-    add(panel, BorderLayout.CENTER);
+    add(panel1, BorderLayout.CENTER);
 
     ((JComponent) getContentPane()).registerKeyboardAction(new AbstractAction("Dispose dialog") {
       public void actionPerformed(ActionEvent e) {

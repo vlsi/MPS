@@ -162,8 +162,7 @@ public abstract class MPSTree extends JTree {
   private MPSTreeCellRenderer getLabelFor(TreePath path) {
     Object object = path.getLastPathComponent();
     int row = getRowForPath(path);
-    MPSTreeCellRenderer label = ((MPSTreeCellRenderer) getCellRenderer().getTreeCellRendererComponent(this, object, this.isPathSelected(path), false, false, row, false));
-    return label;
+    return ((MPSTreeCellRenderer) getCellRenderer().getTreeCellRendererComponent(this, object, this.isPathSelected(path), false, false, row, false));
   }
 
   public Point getToolTipLocation(MouseEvent event) {

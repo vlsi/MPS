@@ -100,10 +100,9 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
   public void init() {
     removeAllChildren();
-    SModel model;
     /*  CommandProcessor.instance().executeCommand(new Runnable() {
  public void run() {*/
-    model = myModelDescriptor.getSModel();
+    SModel model = myModelDescriptor.getSModel();
     /*    }
 }, "loading model in project pane");*/
 
