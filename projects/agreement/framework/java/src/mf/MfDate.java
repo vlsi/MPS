@@ -22,12 +22,11 @@ public class MfDate implements Comparable {
         _base = trimToDays(arg);
     }
     private GregorianCalendar trimToDays(GregorianCalendar arg) {
-        GregorianCalendar result = arg;
-        result.set(Calendar.HOUR_OF_DAY,0);
-        result.set(Calendar.MINUTE, 0);
-        result.set(Calendar.SECOND, 0);
-        result.set(Calendar.MILLISECOND, 0);
-        return result;
+        arg.set(Calendar.HOUR_OF_DAY,0);
+        arg.set(Calendar.MINUTE, 0);
+        arg.set(Calendar.SECOND, 0);
+        arg.set(Calendar.MILLISECOND, 0);
+        return arg;
     }
 //</codeFragment>
 

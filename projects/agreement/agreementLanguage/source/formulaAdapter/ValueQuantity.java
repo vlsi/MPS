@@ -21,7 +21,6 @@ public class ValueQuantity implements Function <Quantity> {
 
   public Quantity compute(Object parm) {
     AccountingEvent event = (AccountingEvent) parm;
-    Quantity value = (Quantity) event.getAgreement().getValue(myValueName, event.getWhenOccurred());
-    return value;
+    return (Quantity) event.getAgreement().getValue(myValueName, event.getWhenOccurred());
   }
 }
