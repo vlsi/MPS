@@ -470,6 +470,7 @@
           <option name="ADD_SERVLET_TO_ENTRIES" value="true" />
           <option name="ADD_NONJAVA_TO_ENTRIES" value="true" />
         </inspection_tool>
+        <inspection_tool class="UnusedParameters" level="WARNING" enabled="false" />
       </profile>
       <profile version="1.0" is_locked="false">
         <option name="myName" value="Query methods" />
