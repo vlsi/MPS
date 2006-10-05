@@ -117,7 +117,7 @@
   <component name="GUI Designer component loader factory" />
   <component name="IdProvider" IDEtalkID="13400C80EA822F0B5CAF10171834B2C5" />
   <component name="InspectionProjectProfileManager">
-    <option name="PROJECT_PROFILE" value="For Regular Code" />
+    <option name="PROJECT_PROFILE" value="For Generated Code" />
     <option name="USE_PROJECT_LEVEL_SETTINGS" value="true" />
     <scopes>
       <scope profile="For Generated Code" name="Generated Files" />
