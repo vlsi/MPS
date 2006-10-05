@@ -82,8 +82,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
 
     if (getSNode() == null) return;
 
-    List<SNode> children = getSNode().getChildren();
-    for (SNode childNode : children) {
+    for (SNode childNode : getSNode().getChildren()) {
       add(new SNodeTreeNode(childNode, childNode.getRole_(), getOperationContext()));
     }
     IDEProjectFrame projectFrame = (IDEProjectFrame) getOperationContext().getComponent(AbstractProjectFrame.class);

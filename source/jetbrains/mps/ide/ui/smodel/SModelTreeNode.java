@@ -136,9 +136,8 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     String newName = rootNode.toString();
     if (newName == null) return true;
     boolean result = false;
-    DefaultMutableTreeNode parent = this; //(DefaultMutableTreeNode) rootNode.getParent();
-    MPSTreeNode prevNode = (MPSTreeNode) parent.getChildBefore(rootNode);
-    MPSTreeNode nextNode = (MPSTreeNode) parent.getChildAfter(rootNode);
+    MPSTreeNode prevNode = (MPSTreeNode) getChildBefore(rootNode);
+    MPSTreeNode nextNode = (MPSTreeNode) getChildAfter(rootNode);
     String prevName = prevNode == null ? null : prevNode.toString();
     String nextName = nextNode == null ? null : nextNode.toString();
     if (prevName != null) {
