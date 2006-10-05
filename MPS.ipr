@@ -179,6 +179,63 @@
         <inspection_tool class="TypeParameterHidesVisibleType" level="WARNING" enabled="true" />
         <inspection_tool class="CloneCallsSuperClone" level="WARNING" enabled="false" />
         <inspection_tool class="CloneDeclaresCloneNotSupported" level="WARNING" enabled="false" />
+        <inspection_tool class="UnnecessaryLocalVariableJS" level="WARNING" enabled="false">
+          <option name="m_ignoreImmediatelyReturnedVariables" value="false" />
+          <option name="m_ignoreAnnotatedVariables" value="false" />
+        </inspection_tool>
+        <inspection_tool class="ConstantConditionalExpressionJS" level="WARNING" enabled="false" />
+        <inspection_tool class="ConstantIfStatementJS" level="WARNING" enabled="false" />
+        <inspection_tool class="FallthroughInSwitchStatementJS" level="WARNING" enabled="false" />
+        <inspection_tool class="LoopStatementThatDoesntLoopJS" level="WARNING" enabled="false" />
+        <inspection_tool class="PointlessBooleanExpressionJS" level="WARNING" enabled="false" />
+        <inspection_tool class="TrivialIfJS" level="WARNING" enabled="false" />
+        <inspection_tool class="TrivialConditionalJS" level="WARNING" enabled="false" />
+        <inspection_tool class="UnnecessaryContinueJS" level="WARNING" enabled="false" />
+        <inspection_tool class="UnnecessaryReturnJS" level="WARNING" enabled="false" />
+        <inspection_tool class="UnnecessaryLabelJS" level="WARNING" enabled="false" />
+        <inspection_tool class="UnnecessaryLabelOnBreakStatementJS" level="WARNING" enabled="false" />
+        <inspection_tool class="UnnecessaryLabelOnContinueStatementJS" level="WARNING" enabled="false" />
+        <inspection_tool class="ContinueOrBreakFromFinallyBlockJS" level="WARNING" enabled="false" />
+        <inspection_tool class="ExceptionCaughtLocallyJS" level="WARNING" enabled="false" />
+        <inspection_tool class="ReturnFromFinallyBlockJS" level="WARNING" enabled="false" />
+        <inspection_tool class="ThrowFromFinallyBlockJS" level="WARNING" enabled="false" />
+        <inspection_tool class="FacesModelInspection" level="ERROR" enabled="false" />
+        <inspection_tool class="NonJREEmulationClassesInClientCode" level="ERROR" enabled="false" />
+        <inspection_tool class="GwtServiceNotRegistered" level="ERROR" enabled="false" />
+        <inspection_tool class="GWTRemoteServiceAsyncCheck" level="ERROR" enabled="false" />
+        <inspection_tool class="NonSerializableServiceParameters" level="ERROR" enabled="false" />
+        <inspection_tool class="GWTStyleCheck" level="ERROR" enabled="false" />
+        <inspection_tool class="GwtToHtmlReferences" level="ERROR" enabled="false" />
+        <inspection_tool class="CheckEmptyScriptTag" level="WARNING" enabled="false" />
+        <inspection_tool class="HTML" level="WARNING" enabled="false">
+          <option name="myAdditionalHtmlTags" value="embed,nobr" />
+          <option name="myAdditionalHtmlAttributes" value="type,wmode,src,width,height" />
+          <option name="myCheckHtmlTags" value="true" />
+          <option name="myCheckHtmlAttributes" value="true" />
+        </inspection_tool>
+        <inspection_tool class="CheckImageSize" level="WARNING" enabled="false" />
+        <inspection_tool class="RequiredAttributes" level="WARNING" enabled="false">
+          <option name="myAdditionalRequiredHtmlAttributes" value="" />
+        </inspection_tool>
+        <inspection_tool class="CheckValidXmlInScriptTagBody" level="ERROR" enabled="false" />
+        <inspection_tool class="SimplifiableIfStatement" level="WARNING" enabled="false" />
+        <inspection_tool class="JSUndeclaredVariable" level="INFO" enabled="false" />
+        <inspection_tool class="JSUnresolvedFunction" level="INFO" enabled="false" />
+        <inspection_tool class="JSUnresolvedVariable" level="INFO" enabled="false" />
+        <inspection_tool class="DuplicateCaseLabelJS" level="WARNING" enabled="false" />
+        <inspection_tool class="DuplicatePropertyOnObjectJS" level="WARNING" enabled="false" />
+        <inspection_tool class="BadExpressionStatementJS" level="WARNING" enabled="false" />
+        <inspection_tool class="FunctionWithInconsistentReturnsJS" level="WARNING" enabled="false" />
+        <inspection_tool class="ReservedWordUsedAsNameJS" level="WARNING" enabled="false" />
+        <inspection_tool class="ThisExpressionReferencesGlobalObjectJS" level="WARNING" enabled="false" />
+        <inspection_tool class="UnreachableCodeJS" level="WARNING" enabled="false" />
+        <inspection_tool class="CheckJsfComponentUnderViewTag" level="INFO" enabled="false" />
+        <inspection_tool class="PointlessArithmeticExpressionJS" level="WARNING" enabled="false" />
+        <inspection_tool class="EmptyStatementBodyJS" level="WARNING" enabled="false">
+          <option name="m_reportEmptyBlocks" value="false" />
+        </inspection_tool>
+        <inspection_tool class="InfiniteLoopJS" level="WARNING" enabled="false" />
+        <inspection_tool class="InfiniteRecursionJS" level="WARNING" enabled="false" />
       </profile>
       <profile version="1.0" is_locked="false">
         <option name="myName" value="For Generated Code" />
@@ -224,6 +281,69 @@
         <inspection_tool class="StrutsValidatorInspection" level="ERROR" enabled="false" />
         <inspection_tool class="TrivialIf" level="WARNING" enabled="false" />
         <inspection_tool class="UnnecessaryConditionalExpression" level="WARNING" enabled="false" />
+        <inspection_tool class="SillyAssignmentJS" level="WARNING" enabled="false" />
+        <inspection_tool class="IncompatibleMaskJS" level="WARNING" enabled="false" />
+        <inspection_tool class="PointlessBitwiseExpressionJS" level="WARNING" enabled="false">
+          <option name="m_ignoreExpressionsContainingConstants" value="false" />
+        </inspection_tool>
+        <inspection_tool class="ShiftOutOfRangeJS" level="WARNING" enabled="false" />
+        <inspection_tool class="ConstantConditionalExpressionJS" level="WARNING" enabled="false" />
+        <inspection_tool class="ConstantIfStatementJS" level="WARNING" enabled="false" />
+        <inspection_tool class="FallthroughInSwitchStatementJS" level="WARNING" enabled="false" />
+        <inspection_tool class="LoopStatementThatDoesntLoopJS" level="WARNING" enabled="false" />
+        <inspection_tool class="PointlessBooleanExpressionJS" level="WARNING" enabled="false" />
+        <inspection_tool class="TrivialIfJS" level="WARNING" enabled="false" />
+        <inspection_tool class="TrivialConditionalJS" level="WARNING" enabled="false" />
+        <inspection_tool class="UnnecessaryContinueJS" level="WARNING" enabled="false" />
+        <inspection_tool class="UnnecessaryReturnJS" level="WARNING" enabled="false" />
+        <inspection_tool class="UnnecessaryLabelJS" level="WARNING" enabled="false" />
+        <inspection_tool class="UnnecessaryLabelOnBreakStatementJS" level="WARNING" enabled="false" />
+        <inspection_tool class="UnnecessaryLabelOnContinueStatementJS" level="WARNING" enabled="false" />
+        <inspection_tool class="UnnecessaryLocalVariableJS" level="WARNING" enabled="false">
+          <option name="m_ignoreImmediatelyReturnedVariables" value="false" />
+          <option name="m_ignoreAnnotatedVariables" value="false" />
+        </inspection_tool>
+        <inspection_tool class="ContinueOrBreakFromFinallyBlockJS" level="WARNING" enabled="false" />
+        <inspection_tool class="ExceptionCaughtLocallyJS" level="WARNING" enabled="false" />
+        <inspection_tool class="ReturnFromFinallyBlockJS" level="WARNING" enabled="false" />
+        <inspection_tool class="ThrowFromFinallyBlockJS" level="WARNING" enabled="false" />
+        <inspection_tool class="CheckEmptyScriptTag" level="WARNING" enabled="false" />
+        <inspection_tool class="HTML" level="WARNING" enabled="false">
+          <option name="myAdditionalHtmlTags" value="embed,nobr" />
+          <option name="myAdditionalHtmlAttributes" value="type,wmode,src,width,height" />
+          <option name="myCheckHtmlTags" value="true" />
+          <option name="myCheckHtmlAttributes" value="true" />
+        </inspection_tool>
+        <inspection_tool class="CheckImageSize" level="WARNING" enabled="false" />
+        <inspection_tool class="RequiredAttributes" level="WARNING" enabled="false">
+          <option name="myAdditionalRequiredHtmlAttributes" value="" />
+        </inspection_tool>
+        <inspection_tool class="CheckValidXmlInScriptTagBody" level="ERROR" enabled="false" />
+        <inspection_tool class="NonJREEmulationClassesInClientCode" level="ERROR" enabled="false" />
+        <inspection_tool class="GwtServiceNotRegistered" level="ERROR" enabled="false" />
+        <inspection_tool class="GWTRemoteServiceAsyncCheck" level="ERROR" enabled="false" />
+        <inspection_tool class="NonSerializableServiceParameters" level="ERROR" enabled="false" />
+        <inspection_tool class="GWTStyleCheck" level="ERROR" enabled="false" />
+        <inspection_tool class="GwtToHtmlReferences" level="ERROR" enabled="false" />
+        <inspection_tool class="FacesModelInspection" level="ERROR" enabled="false" />
+        <inspection_tool class="SimplifiableIfStatement" level="WARNING" enabled="false" />
+        <inspection_tool class="JSUndeclaredVariable" level="INFO" enabled="false" />
+        <inspection_tool class="JSUnresolvedFunction" level="INFO" enabled="false" />
+        <inspection_tool class="JSUnresolvedVariable" level="INFO" enabled="false" />
+        <inspection_tool class="DuplicateCaseLabelJS" level="WARNING" enabled="false" />
+        <inspection_tool class="DuplicatePropertyOnObjectJS" level="WARNING" enabled="false" />
+        <inspection_tool class="BadExpressionStatementJS" level="WARNING" enabled="false" />
+        <inspection_tool class="FunctionWithInconsistentReturnsJS" level="WARNING" enabled="false" />
+        <inspection_tool class="ReservedWordUsedAsNameJS" level="WARNING" enabled="false" />
+        <inspection_tool class="ThisExpressionReferencesGlobalObjectJS" level="WARNING" enabled="false" />
+        <inspection_tool class="UnreachableCodeJS" level="WARNING" enabled="false" />
+        <inspection_tool class="CheckJsfComponentUnderViewTag" level="INFO" enabled="false" />
+        <inspection_tool class="PointlessArithmeticExpressionJS" level="WARNING" enabled="false" />
+        <inspection_tool class="EmptyStatementBodyJS" level="WARNING" enabled="false">
+          <option name="m_reportEmptyBlocks" value="false" />
+        </inspection_tool>
+        <inspection_tool class="InfiniteLoopJS" level="WARNING" enabled="false" />
+        <inspection_tool class="InfiniteRecursionJS" level="WARNING" enabled="false" />
       </profile>
     </profiles>
   </component>
