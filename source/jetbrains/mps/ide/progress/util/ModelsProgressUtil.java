@@ -1,11 +1,12 @@
 package jetbrains.mps.ide.progress.util;
 
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.ide.progress.TaskProgressSettings;
-import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -83,19 +84,13 @@ public class ModelsProgressUtil {
   }
 
   public static long estimateTotalGenerationJobMillis(boolean compile, Collection<SModelDescriptor> models) {
-    boolean generateText = true;
-
     long generationTime = estimateGenerationTimeMillis(models);
     long compilationTime = estimateCompileOnGenerationTimeMillis();
     long reloadingTime = estimateReloadAllTimeMillis();
     long refreshingFSTime = estimateRefreshIDEAFileSystemTimeMillis();
     long totalCompilationTime = compilationTime + refreshingFSTime + reloadingTime;
     if (compile) {
-      if (generateText) {
-        generationTime = generationTime + totalCompilationTime;
-      } else {
-        generationTime = generationTime + totalCompilationTime + totalCompilationTime;
-      }
+      generationTime = generationTime + totalCompilationTime;
     } else {
       generationTime = generationTime + reloadingTime; // only re-load classes
     }

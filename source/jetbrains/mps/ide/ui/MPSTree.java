@@ -378,7 +378,7 @@ public abstract class MPSTree extends JTree {
     for (String path : paths) {
       treePaths.add(stringToPath(path));
     }
-    setSelectionPaths((TreePath[]) treePaths.toArray(new TreePath[treePaths.size()]));
+    setSelectionPaths(treePaths.toArray(new TreePath[treePaths.size()]));
   }
 
   private List<String> getExpandedPaths() {

@@ -144,9 +144,8 @@ public class HierarchyView extends DefaultTool {
 
       if (myConceptDeclaration == null) return new RootTextTreeNode("(no concept)");
 
-      MPSTreeNode rootNode = rebuildParentHierarchy();
       //rebuildChildrenHierarchy();
-      return rootNode;
+      return rebuildParentHierarchy();
     }
 
 
