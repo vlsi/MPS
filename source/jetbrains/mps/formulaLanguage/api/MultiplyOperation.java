@@ -19,6 +19,6 @@ public class MultiplyOperation implements Function <Double> {
   public Double compute(Object parm) {
     Double num1 = myLeftOperand.compute(parm);
     Double num2 = myRightOperand.compute(parm);
-    return num1.doubleValue() * num2.doubleValue();
+    return num1 * num2;
   }
 }

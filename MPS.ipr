@@ -236,6 +236,9 @@
         </inspection_tool>
         <inspection_tool class="InfiniteLoopJS" level="WARNING" enabled="false" />
         <inspection_tool class="InfiniteRecursionJS" level="WARNING" enabled="false" />
+        <inspection_tool class="CssNoGenericFontName" level="WARNING" enabled="false" />
+        <inspection_tool class="CssOverwrittenProperties" level="WARNING" enabled="false" />
+        <inspection_tool class="CssUnitlessNumber" level="WARNING" enabled="false" />
       </profile>
       <profile version="1.0" is_locked="false">
         <option name="myName" value="For Generated Code" />
@@ -344,6 +347,9 @@
         </inspection_tool>
         <inspection_tool class="InfiniteLoopJS" level="WARNING" enabled="false" />
         <inspection_tool class="InfiniteRecursionJS" level="WARNING" enabled="false" />
+        <inspection_tool class="CssNoGenericFontName" level="WARNING" enabled="false" />
+        <inspection_tool class="CssOverwrittenProperties" level="WARNING" enabled="false" />
+        <inspection_tool class="CssUnitlessNumber" level="WARNING" enabled="false" />
       </profile>
     </profiles>
   </component>

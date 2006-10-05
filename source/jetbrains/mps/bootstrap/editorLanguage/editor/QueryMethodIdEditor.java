@@ -164,6 +164,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
     try {
       result = handler.getAspectMethodIds(getNamespace(), getQueryMethodPrefix());
     } catch (IOException e) {
+      e.printStackTrace();
     } 
     return result;
   }

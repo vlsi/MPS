@@ -48,10 +48,13 @@ public class IconManager {
               ourIcons.put(cls, icon);
               return icon;
             }
-          } catch (Exception ex) {}
+          } catch (Exception ex) {
+            e.printStackTrace();
+          }
         }
 
       } catch (Exception e) {
+        e.printStackTrace();
       }
 
       cls = (Class<? extends SNode>) cls.getSuperclass();
@@ -92,8 +95,10 @@ public class IconManager {
           }
         }
         catch (Exception e) {
+          e.printStackTrace();
         }
       } catch (Exception e) {
+        e.printStackTrace();
       }
 
       nodeClass = (Class<? extends SNode>) nodeClass.getSuperclass();
@@ -109,7 +114,8 @@ public class IconManager {
       Class icons = Class.forName(className, true, ClassLoaderManager.getInstance().getClassLoader());
       Icon icon = (Icon) icons.getMethod("getLanguageIcon").invoke(null);
       if (icon != null) return icon;
-    } catch (Exception e){
+    } catch (Exception e) {
+      e.printStackTrace();
     }
 
     return MPSAction.EMPTY_ICON;

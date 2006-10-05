@@ -341,6 +341,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
               ((IExternalizableComponent) getComponent(cls)).read(component, this);
             }
           } catch (ClassNotFoundException e) {
+            LOG.error(e);
           }
         }
       }

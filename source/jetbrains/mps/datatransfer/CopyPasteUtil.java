@@ -311,9 +311,9 @@ public class CopyPasteUtil {
         nodeTransferable = (SNodeTransferable) content.getTransferData(SModelDataFlavor.sNode);
         hasNodes = nodeTransferable.containsNodes();
       } catch (UnsupportedFlavorException e) {
-
+        e.printStackTrace();
       } catch (IOException e) {
-
+        e.printStackTrace();
       }
     }
 

@@ -66,7 +66,7 @@ public class Substitution {
   }
 
   private int getCurrentLoopIndex() {
-    return myIsUsedInsideListIterating.peek().o2.intValue();
+    return myIsUsedInsideListIterating.peek().o2;
   }
 
   public void increaseCurrentLoopIndex() {

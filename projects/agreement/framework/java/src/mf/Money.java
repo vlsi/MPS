@@ -57,7 +57,6 @@ public class Money implements Comparable{
 // <codeFragment name="compare">
 	public int compareTo (Object arg) {
 		Money moneyArg = null;
-		moneyArg = (Money) moneyArg;
 		return amount.compareTo(moneyArg.amount);
 	}
 	public int compareTo (Money arg) {

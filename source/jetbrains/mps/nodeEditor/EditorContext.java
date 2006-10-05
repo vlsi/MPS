@@ -158,7 +158,7 @@ public class EditorContext {
 //                myNodeEditorComponent.relayout();
 //              }
 //            }
-            deepestSelectedCell.setCaretX(memento.caretX.intValue());
+            deepestSelectedCell.setCaretX(memento.caretX);
           } 
         }
         return true;

@@ -75,8 +75,8 @@ public abstract class PropertySupport {
     PropertySupport propertySupport = null;
     try {
       Class propertySupportClass = Class.forName(propertySupportClassName, true, ClassLoaderManager.getInstance().getClassLoader());
-      Constructor constructor = propertySupportClass.getConstructor(new Class[0]);
-      propertySupport = (PropertySupport) constructor.newInstance(new Object[0]);
+      Constructor constructor = propertySupportClass.getConstructor();
+      propertySupport = (PropertySupport) constructor.newInstance();
     } catch (ClassNotFoundException e) {
       LOG.error(e);
     } catch (NoSuchMethodException e) {
@@ -120,6 +120,7 @@ public abstract class PropertySupport {
         Integer.parseInt(value);
         return true;
       } catch (NumberFormatException e) {
+        e.printStackTrace();
       }
       return false;
     }

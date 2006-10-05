@@ -258,8 +258,8 @@ public class ModelPersistence {
   public static SNode createNodeInstance(String type, SModel model) {
     try {
       Class nodeClass = Class.forName(type, true, ClassLoaderManager.getInstance().getClassLoader());
-      Method method = nodeClass.getMethod("newInstance", new Class[]{SModel.class});
-      return (SNode) method.invoke(nodeClass, new Object[]{model});
+      Method method = nodeClass.getMethod("newInstance", SModel.class);
+      return (SNode) method.invoke(nodeClass, model);
     } catch (ClassNotFoundException e) {
       System.out.println("can't find class " + type);
 
