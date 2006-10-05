@@ -307,7 +307,7 @@ public class EquationManager {
     }
 
     //4. {}->c->{S} => c = lcs({S})
-    outer: for (SNode node : subtypingGraphVertices()) {
+    for (SNode node : subtypingGraphVertices()) {
       if (node instanceof RuntimeTypeVariable) {
         Map<SNode,SNode> subtypes = mySupertypesToSubtypesMap.get(node);
         if (subtypes == null) continue;
@@ -315,7 +315,7 @@ public class EquationManager {
         Set<SNode> nodesToCheck = new HashSet<SNode>();
         for (SNode subtype : new HashSet<SNode>(subtypes.keySet())) {
           if (subtype instanceof RuntimeTypeVariable) {
-            continue; // outer;
+            continue; 
           }
           concreteSubtypes.add(subtype);
           nodesToCheck.add(subtypes.get(subtype));
