@@ -70,13 +70,13 @@ public class Customer extends NamedObject implements Subject {
     public String toString() {
         StringBuffer result = new StringBuffer();
         AccountType[] types = accountTypes();
-        for (int i = 0; i < types.length; i++) {
-            result.append(types[i]);
-            result.append(": ");
-            result.append(accountFor(types[i]).balance());
-            result.append("\n");
-        }
-        return result.toString();
+      for (AccountType type : types) {
+        result.append(type);
+        result.append(": ");
+        result.append(accountFor(type).balance());
+        result.append("\n");
+      }
+      return result.toString();
     }
     AccountType[] accountTypes() {
         return (AccountType[]) accounts.keySet().toArray(new AccountType[0]);
