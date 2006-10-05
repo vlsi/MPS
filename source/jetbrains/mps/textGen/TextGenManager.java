@@ -60,7 +60,7 @@ public class TextGenManager {
         SNodeTextGen textGenerator = (SNodeTextGen) textgenClass.newInstance();
         return textGenerator;
       } catch (ClassNotFoundException e) {
-        LOG.error(e);
+        //this is ok
       } catch (InstantiationException e) {
         LOG.error(e);
       } catch (IllegalAccessException e) {

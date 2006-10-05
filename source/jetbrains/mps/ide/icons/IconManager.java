@@ -40,19 +40,21 @@ public class IconManager {
         try {
           Icon icon = (Icon) icons.getMethod("getIconFor" + className, SNode.class).invoke(null, node);
           return icon;
-        }
-        catch (Exception e) {
+        } catch (NoSuchMethodException e) {
           try {
             Icon icon = (Icon) icons.getMethod("getIconFor" + className).invoke(null);
             if (icon != null) {
               ourIcons.put(cls, icon);
               return icon;
             }
+          } catch(NoSuchMethodException ex) {
+            //this is ok
           } catch (Exception ex) {
             e.printStackTrace();
           }
         }
-
+      } catch (ClassNotFoundException e) {
+        //this is ok
       } catch (Exception e) {
         e.printStackTrace();
       }

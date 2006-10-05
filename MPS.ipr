@@ -251,8 +251,6 @@
           <option name="CHECK_TRY_CATCH_SECTION" value="true" />
           <option name="CHECK_METHOD_BODY" value="true" />
         </inspection_tool>
-        <inspection_tool class="EjbErrors" level="ERROR" enabled="false" />
-        <inspection_tool class="EjbWarnings" level="WARNING" enabled="false" />
         <inspection_tool class="EjbDomInspection" level="ERROR" enabled="false" />
         <inspection_tool class="EjbQlInspection" level="ERROR" enabled="false" />
         <inspection_tool class="PersistenceDomInspection" level="ERROR" enabled="false" />
@@ -263,6 +261,35 @@
         <inspection_tool class="ReferencesToClassesFromDefaultPackagesInJSPFile" level="ERROR" enabled="false" />
         <inspection_tool class="SelfIncludingJspFiles" level="ERROR" enabled="false" />
         <inspection_tool class="WebProperties" level="ERROR" enabled="false" />
+        <inspection_tool class="JavaDoc" level="WARNING" enabled="false">
+          <option name="TOP_LEVEL_CLASS_OPTIONS">
+            <value>
+              <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
+              <option name="REQUIRED_TAGS" value="" />
+            </value>
+          </option>
+          <option name="INNER_CLASS_OPTIONS">
+            <value>
+              <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
+              <option name="REQUIRED_TAGS" value="" />
+            </value>
+          </option>
+          <option name="METHOD_OPTIONS">
+            <value>
+              <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
+              <option name="REQUIRED_TAGS" value="@return@param@throws or @exception" />
+            </value>
+          </option>
+          <option name="FIELD_OPTIONS">
+            <value>
+              <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
+              <option name="REQUIRED_TAGS" value="" />
+            </value>
+          </option>
+          <option name="IGNORE_DEPRECATED" value="false" />
+          <option name="IGNORE_JAVADOC_PERIOD" value="true" />
+          <option name="myAdditionalJavadocTags" value="" />
+        </inspection_tool>
       </profile>
       <profile version="1.0" is_locked="false">
         <option name="myName" value="For Generated Code" />
@@ -391,8 +418,6 @@
           <option name="CHECK_TRY_CATCH_SECTION" value="true" />
           <option name="CHECK_METHOD_BODY" value="true" />
         </inspection_tool>
-        <inspection_tool class="EjbErrors" level="ERROR" enabled="false" />
-        <inspection_tool class="EjbWarnings" level="WARNING" enabled="false" />
         <inspection_tool class="EjbDomInspection" level="ERROR" enabled="false" />
         <inspection_tool class="EjbQlInspection" level="ERROR" enabled="false" />
         <inspection_tool class="PersistenceDomInspection" level="ERROR" enabled="false" />
@@ -403,6 +428,35 @@
         <inspection_tool class="ReferencesToClassesFromDefaultPackagesInJSPFile" level="ERROR" enabled="false" />
         <inspection_tool class="SelfIncludingJspFiles" level="ERROR" enabled="false" />
         <inspection_tool class="WebProperties" level="ERROR" enabled="false" />
+        <inspection_tool class="JavaDoc" level="WARNING" enabled="false">
+          <option name="TOP_LEVEL_CLASS_OPTIONS">
+            <value>
+              <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
+              <option name="REQUIRED_TAGS" value="" />
+            </value>
+          </option>
+          <option name="INNER_CLASS_OPTIONS">
+            <value>
+              <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
+              <option name="REQUIRED_TAGS" value="" />
+            </value>
+          </option>
+          <option name="METHOD_OPTIONS">
+            <value>
+              <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
+              <option name="REQUIRED_TAGS" value="@return@param@throws or @exception" />
+            </value>
+          </option>
+          <option name="FIELD_OPTIONS">
+            <value>
+              <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
+              <option name="REQUIRED_TAGS" value="" />
+            </value>
+          </option>
+          <option name="IGNORE_DEPRECATED" value="false" />
+          <option name="IGNORE_JAVADOC_PERIOD" value="true" />
+          <option name="myAdditionalJavadocTags" value="" />
+        </inspection_tool>
       </profile>
       <profile version="1.0" is_locked="false">
         <option name="myName" value="Query methods" />
@@ -530,8 +584,6 @@
           <option name="CHECK_TRY_CATCH_SECTION" value="true" />
           <option name="CHECK_METHOD_BODY" value="true" />
         </inspection_tool>
-        <inspection_tool class="EjbErrors" level="ERROR" enabled="false" />
-        <inspection_tool class="EjbWarnings" level="WARNING" enabled="false" />
         <inspection_tool class="EjbDomInspection" level="ERROR" enabled="false" />
         <inspection_tool class="EjbQlInspection" level="ERROR" enabled="false" />
         <inspection_tool class="PersistenceDomInspection" level="ERROR" enabled="false" />
@@ -543,6 +595,35 @@
         <inspection_tool class="SelfIncludingJspFiles" level="ERROR" enabled="false" />
         <inspection_tool class="WebProperties" level="ERROR" enabled="false" />
         <inspection_tool class="UnusedParameters" level="WARNING" enabled="false" />
+        <inspection_tool class="JavaDoc" level="WARNING" enabled="false">
+          <option name="TOP_LEVEL_CLASS_OPTIONS">
+            <value>
+              <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
+              <option name="REQUIRED_TAGS" value="" />
+            </value>
+          </option>
+          <option name="INNER_CLASS_OPTIONS">
+            <value>
+              <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
+              <option name="REQUIRED_TAGS" value="" />
+            </value>
+          </option>
+          <option name="METHOD_OPTIONS">
+            <value>
+              <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
+              <option name="REQUIRED_TAGS" value="@return@param@throws or @exception" />
+            </value>
+          </option>
+          <option name="FIELD_OPTIONS">
+            <value>
+              <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
+              <option name="REQUIRED_TAGS" value="" />
+            </value>
+          </option>
+          <option name="IGNORE_DEPRECATED" value="false" />
+          <option name="IGNORE_JAVADOC_PERIOD" value="true" />
+          <option name="myAdditionalJavadocTags" value="" />
+        </inspection_tool>
       </profile>
     </profiles>
   </component>

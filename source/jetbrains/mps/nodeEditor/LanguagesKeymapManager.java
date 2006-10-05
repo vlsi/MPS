@@ -66,7 +66,9 @@ public class LanguagesKeymapManager {
     for (SNode node : editorModel.getRoots(CellKeyMapDeclaration.class)) {
       try {
         Class<EditorCellKeyMap> keyMapClass = EditorUtil.findKeyMapClassByDeclaration((CellKeyMapDeclaration) node);
-        registerKeyMap(keyMapClass.newInstance(), language.getNamespace());
+        if (keyMapClass != null) {
+          registerKeyMap(keyMapClass.newInstance(), language.getNamespace());
+        }
       } catch(Throwable t) {
         t.printStackTrace();        
       }
