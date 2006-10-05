@@ -15,7 +15,7 @@ public class MfDateTester extends TestCase {
 		return new GregorianCalendar(1999, 0,1,0,0,0);
 	}
 	public static void main(String args[]) {
-		new junit.textui.TestRunner().run(new TestSuite(MfDateTester.class));
+		junit.textui.TestRunner.run(new TestSuite(MfDateTester.class));
 	}
 	public void setUp() {
 		jan1 = new MfDate(jan1());
