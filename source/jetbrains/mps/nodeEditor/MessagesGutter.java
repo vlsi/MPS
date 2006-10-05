@@ -55,10 +55,6 @@ public class MessagesGutter extends JPanel {
     }
   }
 
-  public void updateTypesystem() {
-  }
-
-
   public void add(IGutterMessage message, IGutterMessageOwner owner) {
     myMessages.add(message);
     myOwners.put(message, owner);
