@@ -91,7 +91,7 @@ public class FindUsagesManager {
       progress.finishTask(ModelsProgressUtil.TASK_KIND_FIND_USAGES);
       return result;
     } finally {
-      progress.finishSomehow();
+      // progress.finishSomehow();
     }
   }
 
@@ -102,8 +102,8 @@ public class FindUsagesManager {
       List<SModelDescriptor> models = scope.getModelDescriptors();
       long estimatedTime = ModelsProgressUtil.estimateFindInstancesTimeMillis(models);
 
-      progress.start("Finding Instances...", estimatedTime);
-      progress.startTask(ModelsProgressUtil.TASK_KIND_FIND_INSTANCES, estimatedTime);
+      progress.startTaskAnyway(ModelsProgressUtil.TASK_KIND_FIND_INSTANCES, null, estimatedTime);
+      progress.addText("Finding Instances...");
 
       for (SModelDescriptor model : models) {
         String taskName = ModelsProgressUtil.findInstancesModelTaskName(model);
@@ -118,7 +118,7 @@ public class FindUsagesManager {
       progress.finishTask(ModelsProgressUtil.TASK_KIND_FIND_INSTANCES);
       return result;
     } finally {
-      progress.finish();
+     // progress.finishSomehow();
     }
   }
 
