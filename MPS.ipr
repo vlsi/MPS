@@ -239,6 +239,11 @@
         <inspection_tool class="CssNoGenericFontName" level="WARNING" enabled="false" />
         <inspection_tool class="CssOverwrittenProperties" level="WARNING" enabled="false" />
         <inspection_tool class="CssUnitlessNumber" level="WARNING" enabled="false" />
+        <inspection_tool class="WeakerAccess" level="WARNING" enabled="false">
+          <option name="SUGGEST_PACKAGE_LOCAL_FOR_MEMBERS" value="true" />
+          <option name="SUGGEST_PACKAGE_LOCAL_FOR_TOP_CLASSES" value="true" />
+          <option name="SUGGEST_PRIVATE_FOR_INNERS" value="false" />
+        </inspection_tool>
       </profile>
       <profile version="1.0" is_locked="false">
         <option name="myName" value="For Generated Code" />
@@ -356,6 +361,11 @@
               <list size="0" />
             </value>
           </option>
+        </inspection_tool>
+        <inspection_tool class="WeakerAccess" level="WARNING" enabled="false">
+          <option name="SUGGEST_PACKAGE_LOCAL_FOR_MEMBERS" value="true" />
+          <option name="SUGGEST_PACKAGE_LOCAL_FOR_TOP_CLASSES" value="true" />
+          <option name="SUGGEST_PRIVATE_FOR_INNERS" value="false" />
         </inspection_tool>
       </profile>
     </profiles>
