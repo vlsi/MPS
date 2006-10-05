@@ -244,6 +244,11 @@
           <option name="SUGGEST_PACKAGE_LOCAL_FOR_TOP_CLASSES" value="true" />
           <option name="SUGGEST_PRIVATE_FOR_INNERS" value="false" />
         </inspection_tool>
+        <inspection_tool class="DefaultFileTemplate" level="WARNING" enabled="false">
+          <option name="CHECK_FILE_HEADER" value="true" />
+          <option name="CHECK_TRY_CATCH_SECTION" value="true" />
+          <option name="CHECK_METHOD_BODY" value="true" />
+        </inspection_tool>
       </profile>
       <profile version="1.0" is_locked="false">
         <option name="myName" value="For Generated Code" />
@@ -366,6 +371,11 @@
           <option name="SUGGEST_PACKAGE_LOCAL_FOR_MEMBERS" value="true" />
           <option name="SUGGEST_PACKAGE_LOCAL_FOR_TOP_CLASSES" value="true" />
           <option name="SUGGEST_PRIVATE_FOR_INNERS" value="false" />
+        </inspection_tool>
+        <inspection_tool class="DefaultFileTemplate" level="WARNING" enabled="false">
+          <option name="CHECK_FILE_HEADER" value="true" />
+          <option name="CHECK_TRY_CATCH_SECTION" value="true" />
+          <option name="CHECK_METHOD_BODY" value="true" />
         </inspection_tool>
       </profile>
     </profiles>
