@@ -10,10 +10,10 @@ public class Quantity {
 		_unit = unit;
 	}
 	public Quantity (int amount, Unit unit) {
-		this (new Double(amount).doubleValue(), unit);
+		this ((double) amount, unit);
 	}
 	public Quantity (String amountString, Unit unit)	{
-		this (new Double(amountString).doubleValue(), unit);
+		this (new Double(amountString), unit);
 	}
 	public Quantity abs() {
 		return (isPositive()) ?
