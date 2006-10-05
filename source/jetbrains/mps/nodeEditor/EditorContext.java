@@ -1,13 +1,16 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.annotations.LinkAttributeConcept;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.event.SModelEvent;
 
-import java.awt.*;
-import java.util.*;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 
 /**
@@ -190,7 +193,6 @@ public class EditorContext {
     private Stack<CellInfo> selectedStack = new Stack<CellInfo>();
     private List<CellInfo> collectionsWithEnabledBraces = new ArrayList<CellInfo>();
     private Integer caretX;
-    private String errorCellText = null;
 
     public Memento(EditorContext context) {
       nodeEditor = context.getNodeEditorComponent();
@@ -198,9 +200,8 @@ public class EditorContext {
       EditorCell deepestSelectedCell = nodeEditor.getDeepestSelectedCell();
       if (selectedCell != null) {
     //    selectionPosition = new Point(selectedCell.getX(), selectedCell.getY());
-        if (deepestSelectedCell != null) caretX = new Integer(deepestSelectedCell.getCaretX());
+        if (deepestSelectedCell != null) caretX = deepestSelectedCell.getCaretX();
         if (deepestSelectedCell instanceof EditorCell_Label && deepestSelectedCell.isErrorState()) {
-          errorCellText = ((EditorCell_Label)deepestSelectedCell).getRenderedText();
         }
         cellInfo = selectedCell.getCellInfo();
         selectedStack = nodeEditor.getSelectedStackForMemento();
