@@ -2,6 +2,8 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 
+import java.util.Iterator;
+
 /**
  * User: Sergey Dmitriev
  * Date: Jan 19, 2005
@@ -147,11 +149,11 @@ public class CellLayout_Vertical extends AbstractCellLayout {
 
 
   public int getAscent(EditorCell_Collection editorCells) {
-    int ascent = 0;
-    for (EditorCell cell : editorCells) {
-      return cell.getAscent();
+    Iterator<EditorCell> it = editorCells.iterator();
+    if (it.hasNext()) {
+      return it.next().getAscent();
     }
-    return ascent;
+    return 0;
   }
 
   public EditorCell findNearestRow(EditorCell_Collection editorCells, int y) {

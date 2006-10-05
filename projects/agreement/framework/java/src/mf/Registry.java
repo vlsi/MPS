@@ -16,7 +16,7 @@ public class Registry		{
 		if (theEntryPoint == null)	{
 			theEntryPoint = new Hashtable();
 			 _entryPoints.put(entryPointName, theEntryPoint);
-		};
+		}
 		theEntryPoint.put(newObject.name(), newObject);
 	}
 	private void assertNonNull(Object arg, String message) {

@@ -1339,7 +1339,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     // all other processing should be performed inside command
     CommandProcessor.instance().executeCommand(getEditorContext(), new Runnable() {
       public void run() {
-        if (peekKeyboardHandler().processKeyPressed(getEditorContext(), keyEvent) == true) {
+        if (peekKeyboardHandler().processKeyPressed(getEditorContext(), keyEvent)) {
           keyEvent.consume();
         }
       }

@@ -76,6 +76,7 @@ public class CaretBlinker extends DefaultExternalizableComponent {
 
 
   private class MyRunnable implements Runnable {
+    @SuppressWarnings({"InfiniteLoopStatement"})
     public void run() {
       while (true) {
         synchronized(REGISTRATION_LOCK) {
@@ -93,7 +94,9 @@ public class CaretBlinker extends DefaultExternalizableComponent {
           synchronized(this) {
             wait(getCaretBlinkingRateTimeMillis());
           }
-        } catch (InterruptedException e) {}
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
       }
     }
   }

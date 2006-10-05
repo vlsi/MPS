@@ -222,6 +222,8 @@
         <inspection_tool class="StrutsInspection" level="ERROR" enabled="false" />
         <inspection_tool class="StrutsTilesInspection" level="ERROR" enabled="false" />
         <inspection_tool class="StrutsValidatorInspection" level="ERROR" enabled="false" />
+        <inspection_tool class="TrivialIf" level="WARNING" enabled="false" />
+        <inspection_tool class="UnnecessaryConditionalExpression" level="WARNING" enabled="false" />
       </profile>
     </profiles>
   </component>
