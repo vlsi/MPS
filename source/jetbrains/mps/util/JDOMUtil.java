@@ -92,7 +92,7 @@ public class JDOMUtil {
   }
 
 
-  public static byte[] printDocument(Document document) throws UnsupportedEncodingException, IOException {
+  public static byte[] printDocument(Document document) throws IOException {
     CharArrayWriter writer = new CharArrayWriter();
     writeDocument(document, writer);
     return new String(writer.toCharArray()).getBytes(ENCODING);
