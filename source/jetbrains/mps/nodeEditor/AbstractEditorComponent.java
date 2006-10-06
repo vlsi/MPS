@@ -1281,11 +1281,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     // hardcoded undo/redo action
     if (keyEvent.getKeyCode() == KeyEvent.VK_Z && keyEvent.isControlDown()) {
       if (keyEvent.isShiftDown()) {
-        if (UndoManager.instance().isRedoAvailable(getEditorContext())) {
+        if (UndoManager.instance().isRedoAvailable()) {
           UndoManager.instance().redo(getEditorContext());
         }
       } else {
-        if (UndoManager.instance().isUndoAvailable(getEditorContext())) {
+        if (UndoManager.instance().isUndoAvailable()) {
           UndoManager.instance().undo(getEditorContext());
         }
       }

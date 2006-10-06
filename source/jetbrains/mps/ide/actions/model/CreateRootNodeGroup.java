@@ -34,7 +34,7 @@ public class CreateRootNodeGroup extends ActionGroup {
     List<Language> modelLanguages = modelDescriptor.getSModel().getLanguages(operationContext.getScope());
     if (modelLanguages.size() == 0) {
       add(new MPSAction("<NO LANGUAGES>") {
-        public void execute(ActionContext context) {
+        public void execute(ActionContext c) {
         }
       });
     }
@@ -54,7 +54,7 @@ public class CreateRootNodeGroup extends ActionGroup {
             langRootsGroup.add(newRootNodeAction(conceptDeclaration, nodeClass, modelDescriptor.getSModel(), ide));
           } catch (ClassNotFoundException e) {
             langRootsGroup.add(new MPSAction("class not found: " + nodeClassName) {
-              public void execute(ActionContext context) {
+              public void execute(ActionContext c) {
               }
             });
           }

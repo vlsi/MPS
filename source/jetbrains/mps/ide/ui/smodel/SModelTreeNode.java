@@ -68,10 +68,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return myModelDescriptor.getModelUID().toString();
   }
 
-  public String getLabel() {
-    return myLabel;
-  }
-
   public String toString() {
     String fqName = myModelDescriptor.getModelUID().toString();
 

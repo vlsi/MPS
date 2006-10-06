@@ -324,7 +324,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         SModel sourceModel = sourceModelDescriptor.getSModel();
         progress.addText("");
         String taskName = ModelsProgressUtil.generationModelTaskName(sourceModelDescriptor);
-        progress.startLeafTask(taskName, ModelsProgressUtil.generationModelTaskKind());
+        progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_GENERATION);
 
         status = generationSession.generateModel(sourceModelDescriptor);
         checkMonitorCanceled(progress);

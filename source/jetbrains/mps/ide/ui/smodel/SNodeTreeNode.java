@@ -64,10 +64,6 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     return getSNode().getId();
   }
 
-  protected SModel getSModel() {
-    return getSNode().getModel();
-  }
-
   public void update() {
     this.removeAllChildren();
     myInitialized = false;

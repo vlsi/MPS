@@ -51,10 +51,6 @@ public class ModelsProgressUtil {
     return getInstance().getModelsProgressHelper(TASK_KIND_GENERATION).modelTaskName(modelDescriptor);
   }
 
-  public static String generationModelTaskKind() {
-    return TASK_KIND_GENERATION;
-  }
-
   public static long estimateGenerationTimeMillis(Collection<SModelDescriptor> models) {
     return getInstance().getModelsProgressHelper(TASK_KIND_GENERATION).estimateModelsTaskTimeMillis(models);
   }
@@ -63,20 +59,12 @@ public class ModelsProgressUtil {
     return getInstance().getModelsProgressHelper(TASK_KIND_FIND_USAGES).modelTaskName(modelDescriptor);
   }
 
-  public static String findUsagesModelTaskKind() {
-    return TASK_KIND_FIND_USAGES;
-  }
-
   public static long estimateFindUsagesTimeMillis(Collection<SModelDescriptor> models) {
     return getInstance().getModelsProgressHelper(TASK_KIND_FIND_USAGES).estimateModelsTaskTimeMillis(models);
   }
 
   public static String findInstancesModelTaskName(SModelDescriptor modelDescriptor) {
     return getInstance().getModelsProgressHelper(TASK_KIND_FIND_INSTANCES).modelTaskName(modelDescriptor);
-  }
-
-  public static String findInstancesModelTaskKind() {
-    return TASK_KIND_FIND_INSTANCES;
   }
 
   public static long estimateFindInstancesTimeMillis(Collection<SModelDescriptor> models) {

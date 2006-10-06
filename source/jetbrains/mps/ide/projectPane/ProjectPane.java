@@ -1,37 +1,40 @@
 package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.IDEProjectFrame;
-import jetbrains.mps.ide.IProjectPane;
-import jetbrains.mps.ide.components.ComponentsUtil;
-import jetbrains.mps.ide.actions.model.DeleteModelAction;
-import jetbrains.mps.ide.actions.nodes.DeleteNodeAction;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.IActionDataProvider;
+import jetbrains.mps.ide.actions.model.DeleteModelAction;
+import jetbrains.mps.ide.actions.nodes.DeleteNodeAction;
+import jetbrains.mps.ide.components.ComponentsUtil;
 import jetbrains.mps.ide.ui.*;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.*;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.event.SModelsAdapter;
 import jetbrains.mps.smodel.event.SModelsMulticaster;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.components.IExternalizableComponent;
+import org.jdom.Element;
 
-import javax.swing.*;
-import javax.swing.event.TreeSelectionListener;
-import javax.swing.event.TreeSelectionEvent;
+import javax.swing.JComponent;
+import javax.swing.JScrollPane;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
-import java.awt.*;
+import java.awt.BorderLayout;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
-
-import org.jdom.Element;
 
 /**
  * Author: Sergey Dmitriev
@@ -54,7 +57,6 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
 
   private MyTree myTree = new MyTree();
   private IDEProjectFrame myIDE;
-  private boolean myRebuildEnabled = true;
 
   public ProjectPane(IDEProjectFrame ide) {
 
@@ -136,17 +138,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     return null;
   }
 
-  public void enableRebuild() {
-    myRebuildEnabled = true;
-    rebuildTree();
-  }
-
-  public void disableRebuild() {
-    myRebuildEnabled = false;
-  }
-
   public void rebuildTree() {
-    if (!myRebuildEnabled) return;
     getTree().rebuildTree();
     invalidate();
     validate();
@@ -162,19 +154,6 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     }
     myTree.setSelectionPaths(treePaths.toArray(new TreePath[treePaths.size()]));
     myTree.scrollPathToVisible(treePaths.get(0));
-  }
-
-  public void selectAllSiblingNodes(SNode node) {
-    DefaultTreeModel model = (DefaultTreeModel) myTree.getModel();
-    MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
-    SModelDescriptor sModel = node.getModel().getModelDescriptor();
-    SModelTreeNode sModelNode = findSModelTreeNode(rootNode, sModel);
-    if (sModelNode == null) return;
-    MPSTreeNodeEx foundNode = findTreeNode(sModelNode, node);
-    if (foundNode != null) {
-      MPSTreeNode parentNode = (MPSTreeNode) foundNode.getParent();
-      selectTreeNodes(parentNode);
-    }
   }
 
   public void selectNode(SNode node, IOperationContext context) {

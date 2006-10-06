@@ -25,7 +25,6 @@ import java.util.List;
 class ProjectLanguageTreeNode extends MPSTreeNode {
   private Language myLanguage;
   private MPSProject myProject;
-  private TextTreeNode myGeneratorsTreeNode;
 
   public ProjectLanguageTreeNode(Language language, MPSProject project) {
     super(new ModuleContext(language, project));
@@ -127,7 +126,7 @@ class ProjectLanguageTreeNode extends MPSTreeNode {
     }
 
     // language myGeneratorsTreeNode
-    myGeneratorsTreeNode = new TextTreeNode("generators", operationContext) {
+    TextTreeNode generatorsTreeNode = new TextTreeNode("generators", operationContext) {
       public Icon getIcon(boolean expanded) {
         return Icons.GENERATORS_ICON;
       }
@@ -139,19 +138,12 @@ class ProjectLanguageTreeNode extends MPSTreeNode {
         return result;
       }
     };
-    this.add(myGeneratorsTreeNode);
+    this.add(generatorsTreeNode);
 
 
     for (Generator generator : myLanguage.getGenerators()) {
       MPSTreeNode generatorNode = new GeneratorTreeNode(generator, myProject);
-      myGeneratorsTreeNode.add(generatorNode);
+      generatorsTreeNode.add(generatorNode);
     }
-  }
-
-  public MPSTreeNode getGeneratorTreeNode(Generator generator) {
-    for (MPSTreeNode generatorTreeNode : myGeneratorsTreeNode) {
-      if (generatorTreeNode.getOperationContext().getModule() == generator) return generatorTreeNode;
-    }
-    return null;
   }
 }

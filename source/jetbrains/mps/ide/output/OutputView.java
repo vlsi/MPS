@@ -80,7 +80,7 @@ public class OutputView extends DefaultTool implements IExternalizableComponent,
         if (e.isPopupTrigger()) {
           JPopupMenu menu = new JPopupMenu();
           menu.add(new AbstractActionWithEmptyIcon("Clear") {
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent event) {
               clear();
             }
           });
