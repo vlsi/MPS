@@ -13,11 +13,10 @@ public class SModelEventVisitorAdapter implements SModelEventVisitor {
 
   }
 
+
   public void visitReferenceEvent(SModelReferenceEvent event) {
 
   }
-
-  public void visitAttributeEvent(SModelAttributeEvent event) {
-
-  }
 }
+
+

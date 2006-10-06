@@ -184,8 +184,6 @@ public class EditorManager {
           eventNode = ((SModelReferenceEvent) event).getReference().getSourceNode();
         } else if (event instanceof SModelPropertyEvent) {
           eventNode = ((SModelPropertyEvent) event).getNode();
-        } else if (event instanceof SModelAttributeEvent) {
-          eventNode = ((SModelAttributeEvent) event).getAttributedNode();
         } else continue;
         if (nodeEditorComponent.doesCellDependOnNode(oldCell, eventNode)) {
           nodeChanged = true;

@@ -26,12 +26,6 @@ import java.util.*;
 /*package*/ class ReferentSubstituteActionsHelper {
   private static final Logger LOG = Logger.getLogger(ReferentSubstituteActionsHelper.class);
 
-  public static final Condition<SNode> TRUE_CONDITION = new Condition<SNode>() {
-    public boolean met(SNode object) {
-      return true;
-    }
-  };
-
   public static List<INodeSubstituteAction> createActions(SNode referenceNode, SNode currentReferent, LinkDeclaration linkDeclaration, IOperationContext context) {
     IScope scope = context.getScope();
     List<INodeSubstituteAction> resultActions = new LinkedList<INodeSubstituteAction>();

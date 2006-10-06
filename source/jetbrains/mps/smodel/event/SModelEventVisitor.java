@@ -8,5 +8,4 @@ public interface SModelEventVisitor {
   void visitChildEvent(SModelChildEvent event);
   void visitPropertyEvent(SModelPropertyEvent event);
   void visitReferenceEvent(SModelReferenceEvent event);
-  void visitAttributeEvent(SModelAttributeEvent event);
 }

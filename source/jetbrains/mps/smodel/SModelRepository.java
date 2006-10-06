@@ -77,16 +77,6 @@ public class SModelRepository extends SModelAdapter {
     return result;
   }
 
-  public List<SModelDescriptor> getModelDescriptorsByStereotype(String stereotype) {
-    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
-    for (SModelDescriptor d : getAllModelDescriptors()) {
-      if (stereotype.equals(d.getStereotype())) {
-        result.add(d);
-      }
-    }
-    return result;
-  }
-
   public void addOwnerForDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
     HashSet<ModelOwner> owners = myModelToOwnerMap.get(modelDescriptor);
     if (owners == null) {
@@ -365,11 +355,6 @@ public class SModelRepository extends SModelAdapter {
       LOG.error(e);
       return IModelRootManager.NULL_MANAGER;
     }
-  }
-
-  public boolean hasOwners(SModelDescriptor modelDescriptor) {
-    HashSet<ModelOwner> owners = myModelToOwnerMap.get(modelDescriptor);
-    return owners.size() > 0;
   }
 
   public Set<ModelOwner> getOwners(SModelDescriptor modelDescriptor) {

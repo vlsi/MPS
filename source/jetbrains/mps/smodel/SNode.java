@@ -30,7 +30,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   public static final Object STATUS = new Object();
   public static final Object LAST_UPDATE = new Object();
   public static final Object ERROR_STATUS = new Object();
-  public static final Object BAD_REFERENT_STATUS = new Object();
 
   public static final String NAME = "name";
   public static final String RIGHT_TRANSFORM_HINT = "right_transfrom_hint";
@@ -68,18 +67,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
     for (SNode child : myChildren) {
       child.changeModel(newModel);
-    }
-  }
-
-  public SNode getChildWhichIsAncestorOf(SNode node) {
-    while (true) {
-      if (node == null) {
-        return null;
-      }
-      if (getChildren().contains(node)) {
-        return node;
-      }
-      node = node.getParent();
     }
   }
 
@@ -231,17 +218,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return myRoleInParent;
   }
 
-
-  public SNode getChildById(String id) {
-    NodeReadAccessCaster.fireNodeReadAccessed(this);
-    if (id.equals(getId())) return this;
-    for (SNode child : getChildren()) {
-      SNode result = child.getChildById(id);
-      if (result != null) return result;
-    }
-    return null;
-  }
-
   //
   //----- attributes
   //
@@ -264,12 +240,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   public void setAttribute(SNode attributeConcept) {
     setAttribute_new(attributeConcept);
-  }
-
-  //--new
-  public Iterator<SNode> attributes_new(String role) {
-    String attributeRole = AttributesRolesUtil.childRoleFromAttributeRole(role);
-    return children(attributeRole);
   }
 
   public List<SNode> getNodeAttributes() {
@@ -392,34 +362,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return linkAttribute;
   }
 
-  //-- for node refactoring
-  public boolean refactorAttributes() {
-    boolean changed = false;
-    AttributeConcept attribute = getAttribute_internal();
-    if (attribute != null) {
-      changed = true;
-      setAttribute_internal(null);
-      setAttribute_new(attribute);
-    }
-    for (String propertyName : getPropertyNames()) {
-      PropertyAttributeConcept propertyAttribute = getPropertyAttribute_internal(propertyName);
-      if (propertyAttribute != null) {
-        changed = true;
-        setPropertyAttribute_internal(propertyName, null);
-        setPropertyAttribute_new(propertyName, propertyAttribute);
-      }
-    }
-    for (String linkRole : getReferenceRoles()) {
-      LinkAttributeConcept linkAttribute = getLinkAttribute_internal(linkRole);
-      if (linkAttribute != null) {
-        changed = true;
-        setLinkAttribute_internal(linkRole, null);
-        setLinkAttribute_new(linkRole, linkAttribute);
-      }
-    }
-    return changed;
-  }
-
   //
   // ----- properties -----
   //
@@ -505,12 +447,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   private boolean isEmptyPropertyValue(String s) {
     return s == null || s.equals("");
-  }
-
-  public boolean hasNonEmptyProperty(String propertyName) {
-    NodeReadAccessCaster.fireNodeReadAccessed(this);
-    String propertyValue = myProperties.get(propertyName);
-    return !isEmptyPropertyValue(propertyValue);
   }
 
   public void setProperty(final String propertyName, String propertyValue) {
@@ -904,11 +840,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     }
   }
 
-  public int getReferentCount() {
-    NodeReadAccessCaster.fireNodeReadAccessed(this);
-    return myReferences.size();
-  }
-
   public int getReferentCount(String role) {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
     int count = 0;
@@ -930,17 +861,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       }
     }
     return result;
-  }
-
-  public <T extends SNode> Iterator<T> referents(String role) {
-    NodeReadAccessCaster.fireNodeReadAccessed(this);
-    List<T> list = new LinkedList<T>();
-    for (SReference reference : myReferences) {
-      if (reference.getRole().equals(role)) {
-        list.add((T) reference.getTargetNode());
-      }
-    }
-    return list.iterator();
   }
 
   private void insertReferenceAt(final int i, final SReference reference) {
@@ -1095,10 +1015,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return "" + id;
   }
 
-  public void justSetId(String id) {
-    myId = id;
-  }
-
   public void setId(String id) {
     if (id == null) {
       if (myId != null) {
@@ -1140,16 +1056,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       return false;
     }
     return myModel.isDisposed();
-  }
-
-  public boolean isReachable() {
-    SNode prevParent = this;
-    SNode parent = this.getParent();
-    while (parent != null) {
-      prevParent = parent;
-      parent = parent.getParent();
-    }
-    return prevParent.getModel() != null && prevParent.getModel().isRoot(prevParent);
   }
 
   public <E extends SNode> List<E> getSubnodes(Condition<SNode> condition) {

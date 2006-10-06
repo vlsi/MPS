@@ -60,10 +60,6 @@ public class SReference {
     return mySourceNode;
   }
 
-  /*package*/ @Deprecated void setRole(String role) {
-    myRole = role;
-  }
-
 
   public static SReference getUnresolvedExternalReference(String role, SNode sourceNode, SModelDescriptor modelDescriptor, String extResolveInfo) {
     LOG.assertLog(sourceNode.getModel().getModelDescriptor() != modelDescriptor);

@@ -752,14 +752,6 @@ public class SModel implements Iterable<SNode> {
       myEvents.add(event);
     }
 
-    public void attributeAdded(SModelAttributeEvent event) {
-      myEvents.add(event);
-    }
-
-    public void attributeRemoved(SModelAttributeEvent event) {
-      myEvents.add(event);
-    }
-
     public void beforeCommandFinished(CommandEvent event) {
     }
 

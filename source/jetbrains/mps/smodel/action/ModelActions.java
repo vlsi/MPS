@@ -16,13 +16,6 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class ModelActions {
-
-  public static final Condition<SNode> TRUE_CONDITION = new Condition<SNode>() {
-    public boolean met(SNode object) {
-      return true;
-    }
-  };
-
   //-------------------
   // child substitute
   //-------------------

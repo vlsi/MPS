@@ -16,6 +16,7 @@ public class SModeImportEvent extends SModelEvent {
   }
 
   public void accept(SModelEventVisitor visitor) {
+    //todo add method to the Visitor class
 //    visitor.visitRootEvent(this);
   }
 }

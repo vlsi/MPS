@@ -11,7 +11,6 @@ public class EventUtil {
        if (e instanceof SModelChildEvent) return true;
        if (e instanceof SModelRootEvent) return true;
        if (e instanceof SModelReferenceEvent) return true;
-       if (e instanceof SModelAttributeEvent) return true;
      }
     return false;
   }

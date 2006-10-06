@@ -27,10 +27,6 @@ public class ModelConstraintsUtil {
     return getReferentSearchScope(model, enclosingNode, referenceNode, referenceNodeConcept, referenceLinkDeclaration, scope);
   }
 
-  public static IStatus getReferentSearchScope(SModel model, ConceptDeclaration referenceNodeConcept, LinkDeclaration referenceLinkDeclaration, IScope scope) {
-    return getReferentSearchScope(model, null, null, referenceNodeConcept, referenceLinkDeclaration, scope);
-  }
-
   public static IStatus getReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, ConceptDeclaration referenceNodeConcept, LinkDeclaration referenceLinkDeclaration, IScope scope) {
     String genuineReferenceRole = SModelUtil.getGenuineLinkRole(referenceLinkDeclaration);
     INodeReferentSearchScopeProvider scopeProvider = ModelConstraintsManager.getInstance().getNodeReferentSearchScopeProvider(referenceNodeConcept, genuineReferenceRole);

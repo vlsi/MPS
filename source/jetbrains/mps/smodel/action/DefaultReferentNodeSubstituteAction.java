@@ -29,10 +29,6 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
     }
   }
 
-  public IScope getScope() {
-    return myScope;
-  }
-
   public String getMatchingText(String pattern) {
     return NodePresentationUtil.matchingText(getParameterNode(), true);
   }
