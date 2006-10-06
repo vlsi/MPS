@@ -30,10 +30,6 @@ public abstract class AbstractCellLayout implements CellLayout {
     editorCells.paintSelectionAsIfNotCollection(g, c);
   }
 
-  public TextBuilder doLayoutText(EditorCell_Collection editorCells) {
-    return TextBuilder.getEmptyTextBuilder();
-  }
-
   public int getRightInternalInset(EditorCell_Collection editorCell_collection) {
     EditorCell editorCell = editorCell_collection.lastCell();
     if (editorCell == null) return 0;

@@ -11,8 +11,6 @@ import java.util.Iterator;
 public class CellLayout_Horizontal extends AbstractCellLayout {
   public void doLayout(EditorCell_Collection editorCells) {
     int width = 0;
-    int ascent = 0;
-    int descent = 0;
     final int x = editorCells.getX();
     final int y = editorCells.getY();
     if (editorCells.isDrawBrackets()) {
@@ -20,11 +18,12 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
     }
     Iterator<EditorCell> lookAhead = editorCells.iterator();
     if (lookAhead.hasNext()) lookAhead.next();
+    int ascent = 0;
+    int descent = 0;
     for (EditorCell editorCell : editorCells) {
       editorCell.setX(x + width);
       editorCell.relayout();
-      int cellWidth = editorCell.getWidth();
-      width += cellWidth;
+      width += editorCell.getWidth();
       //++ punctuation support
       if (lookAhead.hasNext()) {
         EditorCell nextCell = lookAhead.next();

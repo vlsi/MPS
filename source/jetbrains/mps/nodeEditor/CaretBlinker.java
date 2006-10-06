@@ -21,8 +21,6 @@ public class CaretBlinker extends DefaultExternalizableComponent {
   public static final int MAX_BLINKING_PERIOD = 1000;
   public static final int DEFAULT_BLINKING_PERIOD = 500;
 
-  private Thread myThread;
-  private IOperationContext myOperationContext;
   private boolean myStarted = false;
   private @Externalizable int myCaretBlinkingRateMillis = -1;
 
@@ -46,12 +44,7 @@ public class CaretBlinker extends DefaultExternalizableComponent {
     t.setDaemon(true);
     t.setPriority(3);
     t.start();
-    myThread = t;
     myStarted = true;
-  }
-
-  public void setOperationContext(IOperationContext operationContext) {
-    myOperationContext = operationContext;
   }
 
   public int getCaretBlinkingRateTimeMillis() {

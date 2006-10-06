@@ -15,7 +15,7 @@ import java.awt.event.KeyEvent;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class AbstractCellListHandler implements IKeyboardHandler {
-  public static Object ELEMENT_CELL_ACTIONS_SET = new Object();
+  public static final Object ELEMENT_CELL_ACTIONS_SET = new Object();
 
   protected SNode myOwnerNode;
   protected EditorContext myEditorContext;
@@ -166,6 +166,7 @@ public abstract class AbstractCellListHandler implements IKeyboardHandler {
 
 
   // important: create such a method in every descendant of this class, it will be invoked via reflection
+  @SuppressWarnings({"UnusedDeclaration"})
   public static String getRoleByRelationDeclaration(BaseConcept relationDeclaration) {
     return null;
   }

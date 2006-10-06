@@ -20,7 +20,6 @@ public class NodeReadAccessCaster {
   private static CellBuildNodeAccessListener myReadAccessListener;
   private static PropertyCellCreationNodeReadAccessListener myPropertyCellCreationAccessListener;
   private static PropertyAccessor myPropertyAccessor;
-  private static Logger LOG = Logger.getLogger(NodeReadAccessCaster.class);
   private static Thread myThread;
 
   private static final Object READ_LOCK = new Object();

@@ -88,8 +88,7 @@ public class TextBuilder {
     result.myX = leftmost.myX;
     int width1 = leftmost.myWidth;
     int width2 = rightmost.myWidth + indent;
-    int width = Math.max(width1, width2);
-    result.myWidth = width;
+    result.myWidth = Math.max(width1, width2);
     result.myFirstLine = new StringBuffer(this.myFirstLine);
     for (StringBuffer sb : this.myLines) {
       result.myLines.add(new StringBuffer(sb));

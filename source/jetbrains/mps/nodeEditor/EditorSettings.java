@@ -265,12 +265,11 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
       int intMin = (int) (SLIDER_RATIO / CaretBlinker.MAX_BLINKING_PERIOD);
       int intMax = (int) (SLIDER_RATIO / CaretBlinker.MIN_BLINKING_PERIOD);
       int intValue = (int) (SLIDER_RATIO / value);
-      JSlider slider = new JSlider(intMin, intMax, intValue);
-      return slider;
+      return new JSlider(intMin, intMax, intValue);
     }
 
     private AbstractEditorComponent createBlinkingDemo() {
-      AbstractEditorComponent result = new AbstractEditorComponent(null) {
+      return new AbstractEditorComponent(null) {
         {
           myEditorContext = new EditorContext(this, null, null);
           CaretBlinker.getInstance().unregisterEditor(this);
@@ -284,7 +283,6 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
           return createRootCell();
         }
       };
-      return result;
     }
 
     public String getName() {
@@ -325,8 +323,7 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
 
     private int getBlinkingPeriod() {
       int sliderValue = myBlinkingRateSlider.getValue();
-      int blinkingPeriod = SLIDER_RATIO / sliderValue;
-      return blinkingPeriod;
+      return SLIDER_RATIO / sliderValue;
     }
   }
 

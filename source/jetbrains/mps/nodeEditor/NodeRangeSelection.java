@@ -34,14 +34,11 @@ public class NodeRangeSelection implements IKeyboardHandler {
   }
 
   public boolean isSelectionKeystroke(KeyEvent keyEvent) {
-    // multiple selection...
-    boolean selectionKeystroke = keyEvent.isShiftDown() && keyEvent.isControlDown() && !(keyEvent.isAltDown()) &&
+    return keyEvent.isShiftDown() && keyEvent.isControlDown() && !(keyEvent.isAltDown()) &&
             (keyEvent.getKeyCode() == KeyEvent.VK_UP ||
                     keyEvent.getKeyCode() == KeyEvent.VK_DOWN ||
                     keyEvent.getKeyCode() == KeyEvent.VK_LEFT ||
                     keyEvent.getKeyCode() == KeyEvent.VK_RIGHT);
-//    System.out.println("isSelectionKeystroke: " + selectionKeystroke);
-    return selectionKeystroke;
   }
 
   public boolean isActive() {

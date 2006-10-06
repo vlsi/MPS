@@ -86,6 +86,7 @@ public abstract class CellProviderWithRole extends AbstractCellProvider {
   }
 
   // important: create such a method in every descendant of this class, it will be invoked via reflection
+  @SuppressWarnings({"UnusedDeclaration"})
   public static String getRoleByRelationDeclaration(BaseConcept relationDeclaration) {
     return null;
   }

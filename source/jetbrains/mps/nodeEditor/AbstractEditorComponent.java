@@ -1032,6 +1032,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myCellSynchronizationListeners.remove(listener);
   }
 
+  private void fireCellSynchronized(EditorCell cell) {
+    for (CellSynchronizationWithModelListener listener : myCellSynchronizationListeners) {
+      listener.cellSynchronizedWithModel(cell);
+    }
+  }
+
 
   public EditorCell findNearestCell(int x, int y) {
     EditorCell cell = myRootCell.findCell(x, y);
@@ -1380,7 +1386,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (trySubstituteNow) {
       List<INodeSubstituteItem> matchingActions = substituteInfo.getMatchingItems(pattern, false);
       if (matchingActions.size() == 1 && pattern.length() > 0) {
-        EditorUtil.substituteNode(matchingActions.get(0), pattern, substituteInfo, this.getEditorContext());
+        EditorUtil.substituteNode(matchingActions.get(0), pattern, this.getEditorContext());
         return true;
       }
     }
@@ -1609,6 +1615,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           } else if (editorCell_properties != null) {
             for (EditorCell_Property cell : editorCell_properties) {
               cell.synchronizeViewWithModel();
+              fireCellSynchronized(cell);
             }
             relayout();
           }

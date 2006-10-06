@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.logging.Logger;
 
 import javax.swing.*;
+import javax.swing.tree.DefaultTreeModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.util.*;
@@ -52,6 +53,7 @@ public class CellExplorerView extends DefaultTool {
       }
       if (cellTreeNode == null) return;
       cellTreeNode.init();
+      ((DefaultTreeModel) myTree.getModel()).nodeChanged(cellTreeNode);
       myTree.repaint();
     }
   };
@@ -99,7 +101,10 @@ public class CellExplorerView extends DefaultTool {
     }
 
     myCurrentEditor = currentEditor.getCurrentEditorComponent();
-    if (myCurrentEditor != null) myCurrentEditor.addRebuildListener(myRebuildListener);
+    if (myCurrentEditor != null) {
+      myCurrentEditor.addRebuildListener(myRebuildListener);
+      myCurrentEditor.addSynchronizationListener(mySynchronizationListener);
+    }
     myTree.rebuildTree();
   }
 

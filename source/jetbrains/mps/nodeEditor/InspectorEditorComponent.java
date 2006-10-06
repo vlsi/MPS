@@ -38,9 +38,6 @@ public class InspectorEditorComponent extends AbstractEditorComponent implements
     }
   }
 
-  protected void updateCellExplorerIfNeeded() {
-  }
-
   public void addChangeListener(ChangeListener listener) {
   }
 

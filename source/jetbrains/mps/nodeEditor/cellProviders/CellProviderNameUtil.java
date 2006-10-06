@@ -18,8 +18,7 @@ public class CellProviderNameUtil {
     String prefix = cellModelClassName.substring(0, index+1);
     String name = cellModelClassName.substring(index+1);
     if (!name.startsWith(CELL_MODEL_PREFIX)) return null;
-    String result = prefix + CELL_PROVIDERS_PACKAGE + "." + name.substring(CELL_MODEL_PREFIX.length()) + CELL_PROVIDER_POSTFIX;
-    return result;
+    return prefix + CELL_PROVIDERS_PACKAGE + "." + name.substring(CELL_MODEL_PREFIX.length()) + CELL_PROVIDER_POSTFIX;
   }
 
   public static String getHandlerClassName(String cellModelClassName) {
@@ -27,8 +26,7 @@ public class CellProviderNameUtil {
     String prefix = cellModelClassName.substring(0, index+1);
     String name = cellModelClassName.substring(index+1);
     if (!name.startsWith(CELL_MODEL_PREFIX)) return null;
-    String result = prefix + CELL_PROVIDERS_PACKAGE + "." + name.substring(CELL_MODEL_PREFIX.length()) + CELL_LIST_HANDLER_POSTFIX;
-    return result;
+    return prefix + CELL_PROVIDERS_PACKAGE + "." + name.substring(CELL_MODEL_PREFIX.length()) + CELL_LIST_HANDLER_POSTFIX;
   }
 
 

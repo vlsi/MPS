@@ -16,8 +16,6 @@ public class CellLayout_Vertical extends AbstractCellLayout {
   }
 
   public void doLayout(EditorCell_Collection editorCells) {
-    int width = 0;
-    int height = 0;
 
     EditorCell closingBrace = editorCells.getClosingBrace();
     EditorCell openingBrace = editorCells.getOpeningBrace();
@@ -33,6 +31,8 @@ public class CellLayout_Vertical extends AbstractCellLayout {
     final int y = editorCells.getY();
     int lastCellWidth = 0;
     int braceIndent = 0;
+    int width = 0;
+    int height = 0;
     if (editorCells.isDrawBrackets()) {
       width += EditorCell_Collection.BRACKET_WIDTH * 2;
     }

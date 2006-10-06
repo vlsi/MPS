@@ -52,7 +52,6 @@ public class IntelligentInputUtil {
       return;
     }
 
-    EditorCell foundCell;
     EditorCellAction rtAction = EditorUtil.getCellAction(cellForNewNode, EditorCellAction.RIGHT_TRANSFORM, editorContext);
     if (rtAction == null) {
       return;
@@ -60,7 +59,7 @@ public class IntelligentInputUtil {
     rtAction.execute(editorContext);
     CellFounder cellFounder = new CellFounder(editorContext, newNode, tail);
     cellFounder.run(editorContext.createNodeCell(newNode));
-    foundCell = cellFounder.getFoundCell();
+    EditorCell foundCell = cellFounder.getFoundCell();
 
     if (foundCell != null) {
       INodeSubstituteInfo rtSubstituteInfo = foundCell.getSubstituteInfo();
@@ -121,8 +120,7 @@ public class IntelligentInputUtil {
       if (newNodeCell == null) {
         newNodeCell = nodeEditorComponent.findNodeCell(myNode);
       }
-      EditorCell_Label nextCell_;
-      nextCell_ = EditorUtil.findRTHintCell(newNodeCell);
+      EditorCell_Label nextCell_ = EditorUtil.findRTHintCell(newNodeCell);
 
       myFoundCell = nextCell_;
       if (nextCell_ == null) {

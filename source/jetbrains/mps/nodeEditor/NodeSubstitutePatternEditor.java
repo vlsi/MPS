@@ -59,8 +59,7 @@ public class NodeSubstitutePatternEditor {
       TextLine textLine = myEditorWindow.myTextLine;
       int caretPosition = textLine.getCaretPosition();
       String text = textLine.getText();
-      String substring = text.substring(0, caretPosition);
-      return substring;
+      return text.substring(0, caretPosition);
     }
 
     if(myCachedText == null) {
@@ -125,8 +124,6 @@ public class NodeSubstitutePatternEditor {
       g.drawRect(bounds.x, bounds.y, bounds.width - 1, bounds.height - 1);
 
       TextLine textLine = myTextLine;
-      textLine.setSelectedBackgroundColor(Color.blue);
-      textLine.setSelectedTextColor(Color.white);
       textLine.setTextColor(Color.black);
       textLine.setSelectedBorderColor(null);
       textLine.setBorderColor(null);
