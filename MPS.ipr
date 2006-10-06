@@ -291,6 +291,7 @@
           <option name="myAdditionalJavadocTags" value="" />
         </inspection_tool>
         <inspection_tool class="TrivialIf" level="WARNING" enabled="false" />
+        <inspection_tool class="SameReturnValue" level="WARNING" enabled="false" />
       </profile>
       <profile version="1.0" is_locked="false">
         <option name="myName" value="For Generated Code" />
@@ -471,6 +472,7 @@
           <option name="ADD_NONJAVA_TO_ENTRIES" value="true" />
         </inspection_tool>
         <inspection_tool class="UnusedParameters" level="WARNING" enabled="false" />
+        <inspection_tool class="SameReturnValue" level="WARNING" enabled="false" />
       </profile>
       <profile version="1.0" is_locked="false">
         <option name="myName" value="Query methods" />
@@ -651,6 +653,7 @@
           </option>
         </inspection_tool>
         <inspection_tool class="TrivialIf" level="WARNING" enabled="false" />
+        <inspection_tool class="SameReturnValue" level="WARNING" enabled="false" />
       </profile>
     </profiles>
   </component>

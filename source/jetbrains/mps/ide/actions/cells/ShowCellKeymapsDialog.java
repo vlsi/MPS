@@ -75,10 +75,6 @@ public class ShowCellKeymapsDialog extends JDialog {
       return false;
     }
 
-    public int getRowCount() {
-      return super.getRowCount();
-    }
-
     public Object getValueAt(int row, int column) {
       if(column == 0) return myDescriptionList.get(row);
       return myKeystrokeList.get(row);
