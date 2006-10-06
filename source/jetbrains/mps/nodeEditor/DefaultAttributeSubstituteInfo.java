@@ -13,9 +13,6 @@ import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
  * To change this template use File | Settings | File Templates.
  */
 public class DefaultAttributeSubstituteInfo extends DefaultChildSubstituteInfo {
-  public DefaultAttributeSubstituteInfo(SNode sourceNode, LinkDeclaration linkDeclaration, EditorContext editorContext) {
-    super(sourceNode, linkDeclaration, editorContext);
-  }
 
   public DefaultAttributeSubstituteInfo(SNode parentNode, SNode currChildNode, LinkDeclaration linkDeclaration, EditorContext editorContext) {
     super(parentNode, currChildNode, linkDeclaration, editorContext);    

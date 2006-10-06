@@ -15,10 +15,6 @@ public class CellAction_Insert extends EditorCellAction {
     myInsertBefore = insertBefore;
   }
 
-  protected AbstractCellListHandler getListHandler() {
-    return listHandler;
-  }
-
   public boolean canExecute(EditorContext context) {
     return true;
   }

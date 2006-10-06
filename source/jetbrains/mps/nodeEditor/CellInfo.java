@@ -14,7 +14,6 @@ import jetbrains.mps.logging.Logger;
  * To change this template use File | Settings | File Templates.
  */
 public class CellInfo {
-  public static final Logger LOG = Logger.getLogger(CellInfo.class);
 
   private SNodeProxy myNodeProxy;
   private String myCellId;

@@ -203,9 +203,7 @@ public class NodeRangeSelection implements IKeyboardHandler {
   }
 
   private void doDeleteNodes(EditorContext editorContext) {
-    Iterator<SNode> iterator = getNodes().iterator();
-    while (iterator.hasNext()) {
-      SNode semanticNode = iterator.next();
+    for (SNode semanticNode : getNodes()) {
       EditorCell nodeCell = myEditorComponent.findNodeCell(semanticNode);
       EditorCellAction action = nodeCell.getAction(EditorCellAction.DELETE);
       if (action != null && action.canExecute(editorContext)) {
@@ -216,9 +214,8 @@ public class NodeRangeSelection implements IKeyboardHandler {
 
   public void paint(Graphics g) {
     // g.setColor(new Color(255, 0, 255, 30));
-    Iterator<SNode> nodes = getNodes().iterator();
-    while (nodes.hasNext()) {
-      EditorCell cell = myEditorComponent.findNodeCell(nodes.next());
+    for (SNode sNode : getNodes()) {
+      EditorCell cell = myEditorComponent.findNodeCell(sNode);
       if (cell != null) { // the paint may happen when the editor content is aldeary changed
         cell.paintSelection(g, EditorCell_Basic.getRangeSelectionColor());
       }

@@ -296,7 +296,6 @@ public class EditorManager {
 
     // decide position of the hint cell
     EditorCell resultCell;
-    CellInfo rtHintCellInfo;
     Object anchorId = node.getUserObject(RIGHT_TRANSFORM_HINT_ANCHOR_CELL_ID);
     EditorCell anchorCell = anchorId == null ? null : context.getNodeEditorComponent().findCellWithId(nodeCell, anchorId.toString());
     if (anchorCell != null && anchorCell != nodeCell) {

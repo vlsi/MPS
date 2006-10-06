@@ -268,9 +268,7 @@ public class EditorCellKeyMap {
   public static List<String> getVirtualKeycodes() {
     if (ourVirtualKeycodes == null) {
       ourVirtualKeycodes = new LinkedList<String>();
-      Iterator<Integer> iterator = ourJavaKeycodesMap.keySet().iterator();
-      while (iterator.hasNext()) {
-        Integer keyCode = iterator.next();
+      for (Integer keyCode : ourJavaKeycodesMap.keySet()) {
         ourVirtualKeycodes.add(ourJavaKeycodesMap.get(keyCode));
       }
     }

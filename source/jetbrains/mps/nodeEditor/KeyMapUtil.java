@@ -171,7 +171,6 @@ public class KeyMapUtil {
     // choose appropriate actions from keymaps
     int caretPosition = getCaretPositionCode(selectedCell);
     List<Pair<EditorCellKeyMapAction, ActionKey>> result = new LinkedList<Pair<EditorCellKeyMapAction, ActionKey>>();
-    List<Pair<EditorCellKeyMapAction, EditorCell>> actionsAndCells = new LinkedList<Pair<EditorCellKeyMapAction, EditorCell>>();
     for (Pair<EditorCellKeyMap, EditorCell> keymapAndCell : keymapsAndCells) {
       EditorCellKeyMap keymap = keymapAndCell.o1;
       EditorCell keymapOwnerCell = keymapAndCell.o2;

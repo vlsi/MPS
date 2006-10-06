@@ -21,7 +21,6 @@ public class CellAction_DeleteReference extends EditorCellAction {
   }
 
   public void execute(EditorContext context) {
-    SModel semanticModel = mySource.getModel();
     SNode referent = mySource.getReferent(myRole);
     if (referent != null) {
       mySource.removeReferent(myRole, referent);

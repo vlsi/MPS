@@ -262,8 +262,8 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
 
     private JSlider createBlinkingRateSlider() {
       long value = CaretBlinker.getInstance().getCaretBlinkingRateTimeMillis();
-      int intMin = (int) (SLIDER_RATIO / CaretBlinker.MAX_BLINKING_PERIOD);
-      int intMax = (int) (SLIDER_RATIO / CaretBlinker.MIN_BLINKING_PERIOD);
+      int intMin = (SLIDER_RATIO / CaretBlinker.MAX_BLINKING_PERIOD);
+      int intMax = (SLIDER_RATIO / CaretBlinker.MIN_BLINKING_PERIOD);
       int intValue = (int) (SLIDER_RATIO / value);
       return new JSlider(intMin, intMax, intValue);
     }
