@@ -19,14 +19,6 @@ public class SimpleSearchScope extends AbstractSearchScope {
     myNodes = (List) nodes;
   }
 
-  public SimpleSearchScope(Iterator<? extends SNode> nodes) {
-    List<SNode> list = new LinkedList<SNode>();
-    while (nodes.hasNext()) {
-      list.add(nodes.next());
-    }
-    myNodes = list;
-  }
-
   public SimpleSearchScope(SNode node) {
     myNodes = new LinkedList<SNode>();
     if (node != null) {

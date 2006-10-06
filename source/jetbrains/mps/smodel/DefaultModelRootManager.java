@@ -76,7 +76,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       return;
     }
     File[] files = dir.listFiles(new FilenameFilter() {
-      public boolean accept(File dir, String name) {
+      public boolean accept(File d, String name) {
         return name.endsWith(".mps");
       }
     });

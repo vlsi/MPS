@@ -420,11 +420,8 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     setProperty(propertyName, "" + value);
   }
 
-  public final String getProperty(String propertyName) {
-    return getProperty(propertyName, true);
-  }
 
-  public final String getProperty(String propertyName, boolean useGetter) {
+  public final String getProperty(String propertyName) {
     NodeReadAccessCaster.firePropertyReadAccessed(this, propertyName);
     NodeSecurityManager.getInstance().checkPropertyAvailable(this, propertyName, false);
 

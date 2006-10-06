@@ -73,7 +73,7 @@ public class SReference {
   }
 
   protected SNode getTargetNode_impl() {
-    SModel model = null;
+    SModel model;
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(myTargetModelUID);
     if (modelDescriptor == null) {
       logGetTargetNodeErrors(GetTargetNodeErrorState.NO_MODEL_DESCRIPTOR);

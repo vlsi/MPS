@@ -568,7 +568,6 @@ public class SModel implements Iterable<SNode> {
       SModelRepository.getInstance().markChanged(this, true);
       return;
     }
-    return;
   }
 
 

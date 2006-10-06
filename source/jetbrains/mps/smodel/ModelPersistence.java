@@ -143,7 +143,6 @@ public class ModelPersistence {
     }
 
     // imports
-    Map<Integer, SModelUID> importedUIDtoIndex = new HashMap<Integer, SModelUID>();
     List imports = rootElement.getChildren(IMPORT_ELEMENT);
     for (Object anImport : imports) {
       Element element = (Element) anImport;
@@ -168,7 +167,6 @@ public class ModelPersistence {
 
       SModelUID importedModelUID = SModelUID.fromString(importedModelUIDString);
       model.addImportElement(importedModelUID, importIndex);
-      importedUIDtoIndex.put(importIndex, importedModelUID);
     }
 
     ArrayList<ReferencePersister> referenceDescriptors = new ArrayList<ReferencePersister>();
@@ -394,7 +392,7 @@ public class ModelPersistence {
     // references ...
     List<SReference> references = node.getReferences();
     for (SReference reference : references) {
-      Element linkElement = ReferencePersister.saveReference(element, reference, useUIDs);
+      ReferencePersister.saveReference(element, reference, useUIDs);
     }
 
     // children ...

@@ -146,7 +146,7 @@ public class ReferencePersister {
 
 
   //-- save reference
-  public static Element saveReference(Element parentElement, SReference reference, boolean useUIDs) {
+  public static void saveReference(Element parentElement, SReference reference, boolean useUIDs) {
     SNode node = reference.getSourceNode(); 
     Element linkElement = new Element(ModelPersistence.LINK);
     parentElement.addContent(linkElement);
@@ -182,8 +182,6 @@ public class ReferencePersister {
       String resolveInfo = reference.getResolveInfo();
       if (resolveInfo != null) linkElement.setAttribute(ModelPersistence.RESOLVE_INFO, resolveInfo);
     }
-
-    return linkElement;
   }
 
   public int getImportIndex() {

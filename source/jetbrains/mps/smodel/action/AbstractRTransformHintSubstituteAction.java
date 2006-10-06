@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SNode;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class AbstractRTransformHintSubstituteAction extends AbstractNodeSubstituteAction {
-  public AbstractRTransformHintSubstituteAction(SNode parameterNode, SNode sourceNode, IScope scope) {
+  public AbstractRTransformHintSubstituteAction(SNode parameterNode, SNode sourceNode) {
     super(parameterNode, sourceNode);
   }
 
