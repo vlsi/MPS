@@ -3,7 +3,6 @@ package jetbrains.mps.ide.actions.tools;
 import jetbrains.mps.baseLanguage.*;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSAction;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -11,15 +10,14 @@ import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
 
-import java.util.*;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * serves as template: just loads all models from MPSFileModelDescriptor and "process" them.
  */
 public class InternalRefactoringAction extends MPSAction {
   public static boolean SHOW = false;
-
-  private static final Logger LOG = Logger.getLogger(InternalRefactoringAction.class);
 
   public InternalRefactoringAction() {
     super("... refactor static members ...");
@@ -152,6 +150,7 @@ public class InternalRefactoringAction extends MPSAction {
   }
 
 
+  @SuppressWarnings({"UnusedDeclaration"})
   private void _checkUsageOfSomeDeprecatedFeatures(SModel model) {
     SModelUtil.allNodes(model, new Condition<SNode>() {
       public boolean met(SNode object) {

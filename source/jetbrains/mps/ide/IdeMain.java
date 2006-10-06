@@ -1,13 +1,17 @@
 package jetbrains.mps.ide;
 
-import javax.swing.*;
-import java.util.Date;
-import java.awt.*;
-
-import jetbrains.mps.project.ApplicationComponents;
-import jetbrains.mps.logging.LoggerUtil;
 import jetbrains.mps.ide.action.MPSIdeActions;
+import jetbrains.mps.logging.LoggerUtil;
 import jetbrains.mps.plugin.MPSPlugin;
+import jetbrains.mps.project.ApplicationComponents;
+
+import javax.swing.JOptionPane;
+import javax.swing.UIDefaults;
+import javax.swing.UIManager;
+import java.awt.Font;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class IdeMain {
   private static boolean ourTestMode = false;
@@ -69,7 +73,8 @@ public class IdeMain {
   }
 
   public static Date expirationDate() {
-    return new Date(107, 0, 31);
+    GregorianCalendar calendar = new GregorianCalendar(2007, Calendar.JANUARY, 31);
+    return new Date(calendar.getTimeInMillis());
   }
 
   public static boolean isTestMode() {

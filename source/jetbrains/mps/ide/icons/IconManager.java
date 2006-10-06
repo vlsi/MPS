@@ -19,7 +19,7 @@ public class IconManager {
 
   public static final Logger LOG = Logger.getLogger(IconManager.class);
 
-  private static Map<Class, Icon> ourIcons = new HashMap<Class, Icon>();
+  private static Map<Class<? extends SNode>, Icon> ourIcons = new HashMap<Class<? extends SNode>, Icon>();
 
   public static Icon getIconFor(SNode node) {
     if (node == null) return Icons.DEFAULT_ICON;
@@ -66,9 +66,9 @@ public class IconManager {
   }
 
   public static Icon getIconForConceptFQName(String conceptFQName) {
-    Class cls;
+    Class<? extends SNode> cls;
     try {
-      cls = Class.forName(conceptFQName, true, ClassLoaderManager.getInstance().getClassLoader());
+      cls = (Class<? extends SNode>) Class.forName(conceptFQName, true, ClassLoaderManager.getInstance().getClassLoader());
     } catch (ClassNotFoundException e) {
       return Icons.DEFAULT_ICON;
     }
