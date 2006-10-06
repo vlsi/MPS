@@ -15,39 +15,36 @@ public class ReferencePersister {
 
   private static Logger LOG = Logger.getLogger(ReferenceDescriptor.class);
 
-  protected SNode sourceNode;
-  protected String role;
-  protected String targetId;
-  protected String resolveInfo;
-  protected String targetClassResolveInfo;
-  protected String extResolveInfo;
-  protected String importedModelInfo = "-1";
-  protected boolean isUseUIDs;
+  protected SNode mySourceNode;
+  protected String myRole;
+  protected String myTargetId;
+  protected String myResolveInfo;
+  protected String myTargetClassResolveInfo;
+  protected String myExtResolveInfo;
+  protected String myImportedModelInfo = "-1";
+  protected boolean myUseUIDs;
 
-
-  public ReferencePersister() {
-  }
 
   protected ReferencePersister(ReferenceDescriptor rd, boolean useUIDs) {
     this(rd.sourceNode, rd.role, rd.attTargetNodeId, rd.attExtResolveInfo, rd.resolveInfo, rd.targetClassResolveInfo, useUIDs);
   }
 
   protected ReferencePersister(SNode sourceNode, String role, String attTargetNodeId, String attExtResolveInfo, String resolveInfo, String targetClassResolveInfo, boolean useUIDs) {
-    this.isUseUIDs = useUIDs;
-    this.sourceNode = sourceNode;
-    this.role = role;
+    this.myUseUIDs = useUIDs;
+    this.mySourceNode = sourceNode;
+    this.myRole = role;
     if (attTargetNodeId != null) {
       ReferenceTargetDescriptor targetDescriptor = parseAttTargetNodeId(attTargetNodeId, useUIDs);
-      this.targetId = targetDescriptor.targetInfo;
-      this.importedModelInfo = targetDescriptor.importedModelInfo;
+      this.myTargetId = targetDescriptor.targetInfo;
+      this.myImportedModelInfo = targetDescriptor.importedModelInfo;
     }
     if (attExtResolveInfo != null) {
       ReferenceTargetDescriptor targetDescriptor = parseAttExtResolveInfo(attExtResolveInfo, useUIDs);
-      this.extResolveInfo = targetDescriptor.targetInfo;
-      this.importedModelInfo = targetDescriptor.importedModelInfo;
+      this.myExtResolveInfo = targetDescriptor.targetInfo;
+      this.myImportedModelInfo = targetDescriptor.importedModelInfo;
     }
-    this.resolveInfo = resolveInfo;
-    this.targetClassResolveInfo = targetClassResolveInfo;
+    this.myResolveInfo = resolveInfo;
+    this.myTargetClassResolveInfo = targetClassResolveInfo;
   }
 
 
@@ -75,36 +72,31 @@ public class ReferencePersister {
 
 
   public SNode getSourceNode() {
-    return sourceNode;
+    return mySourceNode;
   }
 
   public String getRole() {
-    return role;
+    return myRole;
   }
 
   public String getTargetId() {
-    return targetId;
+    return myTargetId;
   }
 
   public String getResolveInfo() {
-    return resolveInfo;
-  }
-
-  public String getTargetClassResolveInfo() {
-    return targetClassResolveInfo;
+    return myResolveInfo;
   }
 
   public String getExtResolveInfo() {
-    return extResolveInfo;
+    return myExtResolveInfo;
   }
-
 
   // -- create reference
   SReference createReferenceInModelDoNotAddToSourceNode(SModel model) {
     SModelUID importedModelUID = model.getUID();
-    if (isUseUIDs) {
-      if (!importedModelInfo.equals("-1")) {
-        importedModelUID = SModelUID.fromString(importedModelInfo);
+    if (myUseUIDs) {
+      if (!myImportedModelInfo.equals("-1")) {
+        importedModelUID = SModelUID.fromString(myImportedModelInfo);
       }
     } else if (getImportIndex() > -1) {
       importedModelUID = model.getImportedModelUID(getImportIndex());
@@ -113,14 +105,13 @@ public class ReferencePersister {
         return null;
       }
     }
-    SReference reference = SReference.newInstance(this.getRole(),
+    return SReference.newInstance(this.getRole(),
             this.getSourceNode(),
             this.getTargetId(),
             this.getExtResolveInfo(),
             importedModelUID,
             this.getResolveInfo()
     );
-    return reference;
   }
 
   public void createReferenceInModel(SModel model) {
@@ -162,23 +153,22 @@ public class ReferencePersister {
     linkElement.setAttribute(ModelPersistence.ROLE, reference.getRole());
 
     if (reference.isExternal()) {//external reference
-      SReference sReference = reference;
-      SModelUID targetModelUID = sReference.getTargetModelUID();
+      SModelUID targetModelUID = reference.getTargetModelUID();
       String targetModelInfo = "";
       if (!useUIDs) {
         SModel.ImportElement importElement = node.getModel().getImportElement(targetModelUID);
-        int importIndex = -1;
         if (importElement != null) {
+          int importIndex = -1;
           importIndex = importElement.getReferenceID();
           targetModelInfo = importIndex + ".";
         } else {
-          LOG.error("Couldn't save reference \"" + sReference.getRole() + "\" in " + node.getDebugText() +
+          LOG.error("Couldn't save reference \"" + reference.getRole() + "\" in " + node.getDebugText() +
                   "\n -- importz element for model \"" + targetModelUID + "\" not found");
         }
       } else {
         targetModelInfo = targetModelUID.toString() + "#";
       }
-      String extResolveInfo = sReference.getExtResolveInfo();
+      String extResolveInfo = reference.getExtResolveInfo();
       if (ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
         // no external info - save target node id
         linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, targetModelInfo + reference.getTargetNodeId());
@@ -198,7 +188,7 @@ public class ReferencePersister {
 
   public int getImportIndex() {
     try {
-      return Integer.parseInt(importedModelInfo);
+      return Integer.parseInt(myImportedModelInfo);
     } catch( NumberFormatException e) {
       return -1;
     }

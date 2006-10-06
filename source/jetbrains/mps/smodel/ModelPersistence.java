@@ -187,10 +187,6 @@ public class ModelPersistence {
     return model;
   }
 
-  public static SNode readNode(Element nodeElement, SModel model) {
-    return readNode(nodeElement, model, false);
-  }
-
   public static SNode readNode(Element nodeElement, SModel model, boolean useUIDs) {
     List<ReferencePersister> referenceDescriptors = new ArrayList<ReferencePersister>();
     SNode result = readNode(nodeElement, model, referenceDescriptors, useUIDs);

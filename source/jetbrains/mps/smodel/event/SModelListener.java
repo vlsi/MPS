@@ -22,7 +22,4 @@ public interface SModelListener {
 
   void referenceAdded(SModelReferenceEvent event);
   void referenceRemoved(SModelReferenceEvent event);
-
-  void attributeAdded(SModelAttributeEvent event);
-  void attributeRemoved(SModelAttributeEvent event);
 }

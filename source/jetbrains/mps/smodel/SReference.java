@@ -20,7 +20,7 @@ public class SReference {
   protected SModelUID myTargetModelUID;
   protected String myResolveInfo;
 
-  private SReference(String role, SNode sourceNode, String targetNodeId, String resolveInfo, String extResolveInfo, SModelUID targetModelUID, boolean resolved) {
+  private SReference(String role, SNode sourceNode, String targetNodeId, String resolveInfo, String extResolveInfo, SModelUID targetModelUID) {
     this(role, sourceNode, targetModelUID, extResolveInfo);
     myTargetNodeId = targetNodeId;
     myResolveInfo = resolveInfo;
@@ -67,7 +67,7 @@ public class SReference {
 
   public static SReference getUnresolvedExternalReference(String role, SNode sourceNode, SModelDescriptor modelDescriptor, String extResolveInfo) {
     LOG.assertLog(sourceNode.getModel().getModelDescriptor() != modelDescriptor);
-    return new SReference(role, sourceNode, null, null, extResolveInfo, modelDescriptor.getModelUID(), false);
+    return new SReference(role, sourceNode, null, null, extResolveInfo, modelDescriptor.getModelUID());
   }
 
 
@@ -163,7 +163,7 @@ public class SReference {
     SModel targetModel = targetNode == null ? null : targetNode.getModel();
     if (sourceModel == targetModel || targetModel == null) {
       String id = targetNode == null ? null : targetNode.getId();
-      SReference sReference = new SReference(role, sourceNode, id, null, null, sourceModel.getUID(), false);
+      SReference sReference = new SReference(role, sourceNode, id, null, null, sourceModel.getUID());
       sReference.setResolveInfo(resolveInfo);
       return sReference;
     } else {
@@ -173,7 +173,7 @@ public class SReference {
       if (targetModel.isExternallyResolvable()) {
         extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(targetNode);
       }
-      SReference sReference = new SReference(role, sourceNode, targetNode.getId(), null, extResolveInfo, targetModel.getUID(), false);
+      SReference sReference = new SReference(role, sourceNode, targetNode.getId(), null, extResolveInfo, targetModel.getUID());
       sReference.setResolveInfo(resolveInfo);
       return sReference;
     }
@@ -200,7 +200,7 @@ public class SReference {
   //reference created by specifying all info
   public static SReference newInstance(String role, SNode sourceNode, String targetNodeId, String extResolveInfo,
                                        SModelUID targetModelUID, String resolveInfo) {
-    return new SReference(role, sourceNode, targetNodeId, resolveInfo, extResolveInfo, targetModelUID, false);
+    return new SReference(role, sourceNode, targetNodeId, resolveInfo, extResolveInfo, targetModelUID);
 
   }
 

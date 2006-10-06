@@ -113,7 +113,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public void addPrevSibling(SNode newSibling) {
-    getParent().insertChild(this, getRole_(), this, true);
+    getParent().insertChild(this, getRole_(), newSibling, true);
   }
 
   public SModel getModel() {
@@ -462,7 +462,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public void setBooleanProperty(String propertyName, boolean value) {
-    setProperty(propertyName, value ? "" + value : (String) null);
+    setProperty(propertyName, value ? "" + value : null);
   }
 
   public int getIntegerProperty(String propertyName) {
@@ -718,7 +718,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   private void insertChildAt(final int index, String role, SNode child) {
     LOG.assertLog(child != null, "Child is null");
-//    LOG.assertLog(child.getModel() == getModel(), "Can't add child with different model");
 
     if (child.getParent() != null) {
       throw new RuntimeException(child.getDebugText() + " already has parent: " + child.getParent().getDebugText() + "\n" +
@@ -1061,7 +1060,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   public String getDebugText() {
     String roleText = getRole_() == null ? "[root]" : "[" + getRole_() + "]";
-    String nameText = null;
+    String nameText;
     try {
       if (this instanceof LinkDeclaration) {
         String role = ((LinkDeclaration) this).getRole();
@@ -1093,7 +1092,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   public static String generateUniqueId() {
     long id = System.currentTimeMillis() + counter;
     counter++;
-    return (new Long(id)).toString();
+    return "" + id;
   }
 
   public void justSetId(String id) {

@@ -28,7 +28,8 @@ public class MPSModuleRepository {
 
   private List<ModuleRepositoryListener> myModuleListeners = new ArrayList<ModuleRepositoryListener>();
   private List<RepositoryListener> myListeners = new ArrayList<RepositoryListener>();
-  private CommandAdapter myListenerToRemoveUnusedModules;
+  @SuppressWarnings({"FieldCanBeLocal"})
+  private final CommandAdapter myListenerToRemoveUnusedModules;
 
   private Map<String, Class<? extends IModule>> myExtensionsToModuleTypes = new HashMap<String, Class<? extends IModule>>();
   private static final String LANGUAGE_EXT = ".mpl";
@@ -257,11 +258,6 @@ public class MPSModuleRepository {
         e.printStackTrace();
       }
     }
-
-  }
-
-  public void readModuleDescriptors(Iterable<? extends Root> roots, MPSModuleOwner owner) {
-    readModuleDescriptors(roots.iterator(), owner);
   }
 
   public void readModuleDescriptors(Iterator<? extends Root> roots, MPSModuleOwner owner) {

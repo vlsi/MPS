@@ -54,13 +54,6 @@ public class SModelAdapter implements SModelListener {
     modelChangedDramatically(event.getModel());
   }
 
-  public void attributeAdded(SModelAttributeEvent event) {
-    modelChangedDramatically(event.getModel());
-  }
-
-  public void attributeRemoved(SModelAttributeEvent event) {
-    modelChangedDramatically(event.getModel());
-  }
 
   public void modelChanged(SModel model) {
   }

@@ -9,7 +9,6 @@ import jetbrains.mps.ide.command.undo.IUndoableAction;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
@@ -131,31 +130,6 @@ public class SModel implements Iterable<SNode> {
       node.unRegisterFromModel();
       if (!isLoading()) UndoManager.instance().undoableActionPerformed(new UndoRootAddOrDelete(node, id, true));
       fireRootRemovedEvent(node);
-    }
-  }
-
-  /*package*/ @Deprecated void removeRootDontUnregister(SNode node) {  //for model refactoring scripts
-    if (myRoots.contains(node)) {
-      myRoots.remove(node);
-      fireRootRemovedEvent(node);
-    }
-  }
-
-  public void deleteAllRoots() {
-    if (isLoading()) {
-      for (SNode root : myRoots) {
-        root.unRegisterFromModel();
-      }
-      myRoots.clear();
-    } else {
-      List<SNode> roots = new ArrayList<SNode>(myRoots);
-      for (SNode root : roots) {
-        myRoots.remove(root);
-        root.unRegisterFromModel();
-        String id = root.getId();
-        UndoManager.instance().undoableActionPerformed(new UndoRootAddOrDelete(root, id, true));
-        fireRootRemovedEvent(root);
-      }
     }
   }
 
@@ -298,26 +272,11 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  void fireAttributeAddedEvent(SNode attributedNode, AttributeConcept attributeConcept) {
-    if (!canFireEvent()) return;
-    for (SModelListener sModelListener : copyListeners()) {
-      sModelListener.attributeAdded(new SModelAttributeEvent(this, attributedNode, attributeConcept));
-    }
-  }
-
-  void fireAttributeRemovedEvent(SNode attributedNode) {
-    if (!canFireEvent()) return;
-    for (SModelListener sModelListener : copyListeners()) {
-      sModelListener.attributeRemoved(new SModelAttributeEvent(this, attributedNode, null));
-    }
-  }
-
-  private void fireSModelChangedInCommandEvent(List<SModelEvent> events, EditorContext editorContext) {
+  private void fireSModelChangedInCommandEvent(List<SModelEvent> events) {
     for (SModelCommandListener l : copyCommandListeners()) {
       l.modelChangedInCommand(events);
     }
   }
-
 
   private List<SModelListener> copyListeners() {
     List<SModelListener> result = new ArrayList<SModelListener>();
@@ -463,21 +422,19 @@ public class SModel implements Iterable<SNode> {
   }
 
   /*package*/
-  ImportElement addImportElement(SModelUID modelUID) {
+  void addImportElement(SModelUID modelUID) {
     ImportElement importElement = getImportElement(modelUID);
-    if (importElement != null) return importElement;
+    if (importElement != null) return;
     importElement = new ImportElement(modelUID, ++myMaxImportIndex);
     myImports.add(importElement);
     fireImportAddedEvent(modelUID);
-    return importElement;
   }
 
   /*package*/
-  ImportElement addImportElement(SModelUID modelUID, int referenceId) {
+  void addImportElement(SModelUID modelUID, int referenceId) {
     ImportElement importElement = new ImportElement(modelUID, referenceId);
     myImports.add(importElement);
     fireImportAddedEvent(modelUID);
-    return importElement;
   }
 
   /*package*/
@@ -517,9 +474,7 @@ public class SModel implements Iterable<SNode> {
 
   /*package*/
   SModelUID getImportedModelUID(int referenceID) {
-    Iterator<ImportElement> iterator = myImports.iterator();
-    while (iterator.hasNext()) {
-      ImportElement importElement = iterator.next();
+    for (ImportElement importElement : myImports) {
       if (importElement.getReferenceID() == referenceID) {
         return importElement.getModelUID();
       }
@@ -529,9 +484,7 @@ public class SModel implements Iterable<SNode> {
 
   public Iterator<SModelDescriptor> importedModels(IScope scope) {
     List<SModelDescriptor> modelsList = new LinkedList<SModelDescriptor>();
-    Iterator<ImportElement> iterator = myImports.iterator();
-    while (iterator.hasNext()) {
-      ImportElement importElement = iterator.next();
+    for (ImportElement importElement : myImports) {
       SModelUID modelUID = importElement.getModelUID();
       if (!myDescriptorNotFoundReportedModelUIDs.contains(modelUID)) {
         SModelDescriptor modelDescriptor = scope.getModelDescriptor(modelUID);
@@ -568,8 +521,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public SNode getNodeById(String nodeId) {
-    SNode node = myIdToNodeMap.get(nodeId);
-    return node;
+    return myIdToNodeMap.get(nodeId);
   }
 
   public boolean containsNode(String id) {
@@ -603,20 +555,20 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  public String setNodeExtResolveInfo(SNode node, String extResolveInfo) {
+  public void setNodeExtResolveInfo(SNode node, String extResolveInfo) {
     if (!isExternallyResolvable()) {
-      return null;
+      return;
     }
     if (node.getModel() != this) {
       LOG.error("trying to cache in model" + this + "ext resolve info for node from another model, namely " + node.getModel());
-      return null;
+      return;
     }
     if (!ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
       myExternalResolveInfoToNodeMap.put(extResolveInfo, node);
       SModelRepository.getInstance().markChanged(this, true);
-      return extResolveInfo;
+      return;
     }
-    return null;
+    return;
   }
 
 
@@ -813,8 +765,7 @@ public class SModel implements Iterable<SNode> {
 
     public void commandFinished(CommandEvent event) {
       if (myEvents.size() > 0) {
-        EditorContext editorContext = event.getEditorContext();
-        fireSModelChangedInCommandEvent(new ArrayList<SModelEvent>(myEvents), editorContext);
+        fireSModelChangedInCommandEvent(new ArrayList<SModelEvent>(myEvents));
       }
     }
   }

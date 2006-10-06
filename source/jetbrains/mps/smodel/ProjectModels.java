@@ -20,11 +20,7 @@ public class ProjectModels {
       return result;
     }
 
-    public void updateAfterLoad(SModelDescriptor modelDescriptor) {
-    }
-
     public void saveModel(SModelDescriptor modelDescriptor) {
-
     }
 
     public boolean isFindUsagesSupported() {
