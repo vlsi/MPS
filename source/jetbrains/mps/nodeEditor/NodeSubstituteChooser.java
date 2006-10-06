@@ -1,7 +1,6 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.WindowsUtil;
@@ -245,7 +244,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
     if (matchingActions.size() == 1) {
       setVisible(false);
-      CommandUtil.substituteNode(matchingActions.get(0), pattern, myNodeSubstituteInfo, myEditorComponent.getEditorContext());
+      EditorUtil.substituteNode(matchingActions.get(0), pattern, myNodeSubstituteInfo, myEditorComponent.getEditorContext());
     }
     return true;
   }
@@ -301,7 +300,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     String pattern = getPatternEditor().getPattern();
     INodeSubstituteItem entry = mySubstituteItems.get(myPopupWindow.getSelectionIndex());
     setVisible(false);
-    CommandUtil.substituteNode(entry, pattern, myNodeSubstituteInfo, myEditorComponent.getEditorContext());
+    EditorUtil.substituteNode(entry, pattern, myNodeSubstituteInfo, myEditorComponent.getEditorContext());
   }
 
   private void updatePatternEditor() {

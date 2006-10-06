@@ -5,7 +5,6 @@ import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IOperationContext;
@@ -142,11 +141,11 @@ public class PasteNodeUtil {
           Cardinality cardinality = linkDeclaration.getSourceCardinality();
           boolean uniqueChild = (cardinality == Cardinality._0_1 || cardinality == Cardinality._1);
           if (linkDeclaration.getMetaClass() == LinkMetaclass.aggregation) {
-            if (uniqueChild) CommandUtil.setChild(pasteTarget, anchorNode, linkDeclaration.getRole(), pasteNode, pasteBefore);
-            else CommandUtil.insertChild(pasteTarget, anchorNode, linkDeclaration.getRole(), pasteNode, pasteBefore);
+            if (uniqueChild) pasteTarget.setChild(linkDeclaration.getRole(), pasteNode);
+            else pasteTarget.insertChild(anchorNode, linkDeclaration.getRole(), pasteNode, pasteBefore);
           } else {
-            if (uniqueChild) CommandUtil.insertReferent(pasteTarget, anchorNode, linkDeclaration.getRole(), pasteNode, pasteBefore);
-            else CommandUtil.setReferent(pasteTarget, anchorNode, linkDeclaration.getRole(), pasteNode, pasteBefore);
+            if (uniqueChild) pasteTarget.insertReferent(anchorNode, linkDeclaration.getRole(), pasteNode, pasteBefore);
+            else pasteTarget.setReferent(linkDeclaration.getRole(), pasteNode);
           }
         //Add resolving here!
 

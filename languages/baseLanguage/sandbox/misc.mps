@@ -243,21 +243,6 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1158146800775">
-              <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1159379323427">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1159396136813">
-                  <property name="value" value="1" />
-                </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1159396227508">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1159396267076">
-                    <property name="value" value="10" />
-                  </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1159379306167">
-                    <property name="value" value="3" />
-                  </node>
-                </node>
-              </node>
-            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1158667568760">
               <node role="expression" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1158667570277">
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1158667572108">

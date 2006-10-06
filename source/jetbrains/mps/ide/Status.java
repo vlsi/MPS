@@ -7,7 +7,7 @@
 package jetbrains.mps.ide;
 
 public class Status implements IStatus {
-  public static Status NO_ERRORS = new OK();
+  public static final Status NO_ERRORS = new OK();
 
   private Code myCode;
   private String myMessage;

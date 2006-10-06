@@ -5,7 +5,6 @@ import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.action.*;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.navigation.*;
 import jetbrains.mps.ide.ui.JMultiLineToolTip;
@@ -1381,7 +1380,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (trySubstituteNow) {
       List<INodeSubstituteItem> matchingActions = substituteInfo.getMatchingItems(pattern, false);
       if (matchingActions.size() == 1 && pattern.length() > 0) {
-        CommandUtil.substituteNode(matchingActions.get(0), pattern, substituteInfo, this.getEditorContext());
+        EditorUtil.substituteNode(matchingActions.get(0), pattern, substituteInfo, this.getEditorContext());
         return true;
       }
     }

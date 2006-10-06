@@ -60,10 +60,6 @@ public abstract class MPSTree extends JTree {
         myMousePressed(e);
       }
 
-      public void mouseClicked(MouseEvent e) {
-        myMouseClicked(e);
-      }
-
       public void mouseReleased(MouseEvent e) {
         myMouseReleased(e);
       }
@@ -118,9 +114,6 @@ public abstract class MPSTree extends JTree {
     };
     registerKeyboardAction(openNodeAction, KeyStroke.getKeyStroke("ENTER"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     registerKeyboardAction(openNodeAction, KeyStroke.getKeyStroke("F4"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-  }
-
-  void myMouseClicked(MouseEvent e) {
   }
 
   void myMouseReleased(MouseEvent e) {
@@ -197,22 +190,22 @@ public abstract class MPSTree extends JTree {
   }
 
   private static class Pair {
-    KeyStroke keyStroke;
-    Class<? extends MPSTreeNode> nodeClass;
+    KeyStroke myKeyStroke;
+    Class<? extends MPSTreeNode> myNodeClass;
 
     public Pair(KeyStroke keyStroke, Class<? extends MPSTreeNode> nodeClass) {
-      this.keyStroke = keyStroke;
-      this.nodeClass = nodeClass;
+      myKeyStroke = keyStroke;
+      myNodeClass = nodeClass;
     }
 
     public int hashCode() {
-      return keyStroke.hashCode() + nodeClass.hashCode();
+      return myKeyStroke.hashCode() + myNodeClass.hashCode();
     }
 
     public boolean equals(Object o) {
       if (!(o instanceof Pair)) return false;
       Pair pair = ((Pair) o);
-      return pair.keyStroke.equals(keyStroke) && pair.nodeClass.equals(nodeClass);
+      return pair.myKeyStroke.equals(myKeyStroke) && pair.myNodeClass.equals(myNodeClass);
     }
   }
 
@@ -225,7 +218,6 @@ public abstract class MPSTree extends JTree {
   }
 
   protected ActionContext getActionContext(MPSTreeNode node, List<MPSTreeNode> nodes) {
-    IDEProjectFrame ide = node.getOperationContext().getComponent(IDEProjectFrame.class);
     return new ActionContext(node.getOperationContext());
   }
 
@@ -457,10 +449,6 @@ public abstract class MPSTree extends JTree {
       }
       expandPaths(expansionPaths);
     }
-  }
-
-  public void setExpandedState(TreePath path, boolean state) {
-    super.setExpandedState(path, state);
   }
 
   public JToolTip createToolTip() {

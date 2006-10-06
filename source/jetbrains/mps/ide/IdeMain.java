@@ -12,8 +12,6 @@ import jetbrains.mps.plugin.MPSPlugin;
 public class IdeMain {
   private static boolean ourTestMode = false;
 
-  private static int ourFramesCount = 0;
-
   public static void initFonts() {
     UIDefaults defaults = UIManager.getDefaults();
 
