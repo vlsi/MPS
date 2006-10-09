@@ -1,16 +1,17 @@
 package jetbrains.mps.ide.icons;
 
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.action.MPSAction;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SNode;
 
-import javax.swing.*;
-
-
-import java.util.Map;
+import javax.swing.Icon;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Kostik
@@ -94,8 +95,9 @@ public class IconManager {
             ourIcons.put(nodeClass, icon);
             return icon;
           }
-        }
-        catch (Exception e) {
+        } catch (NoSuchMethodException e) {
+          //it's ok
+        } catch (Exception e) {
           e.printStackTrace();
         }
       } catch (Exception e) {
