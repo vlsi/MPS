@@ -1,6 +1,5 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.annotations.AttributeConcept;
 import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.ide.command.CommandEvent;
 import jetbrains.mps.ide.command.CommandProcessor;
@@ -14,6 +13,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.ForDebug;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
@@ -45,7 +45,7 @@ public class SModel implements Iterable<SNode> {
 
   private SModelEventTranslator myEventTranslator = new SModelEventTranslator();
 
-  private Set<SModelUID> myDescriptorNotFoundReportedModelUIDs = new HashSet<SModelUID>();  
+  private Set<SModelUID> myDescriptorNotFoundReportedModelUIDs = new HashSet<SModelUID>();
 
   public SModel(SModelUID modelUID) {
     this();
@@ -699,7 +699,7 @@ public class SModel implements Iterable<SNode> {
   private class SModelEventTranslator implements ICommandListener, SModelListener {
     private List<SModelEvent> myEvents = new ArrayList<SModelEvent>();
 
-    public void commandStarted(CommandEvent event) {
+    public void commandStarted(@NotNull CommandEvent event) {
       myEvents.clear();
     }
 
@@ -751,10 +751,10 @@ public class SModel implements Iterable<SNode> {
       myEvents.add(event);
     }
 
-    public void beforeCommandFinished(CommandEvent event) {
+    public void beforeCommandFinished(@NotNull CommandEvent event) {
     }
 
-    public void commandFinished(CommandEvent event) {
+    public void commandFinished(@NotNull CommandEvent event) {
       if (myEvents.size() > 0) {
         fireSModelChangedInCommandEvent(new ArrayList<SModelEvent>(myEvents));
       }

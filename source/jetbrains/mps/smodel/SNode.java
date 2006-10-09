@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
@@ -51,7 +52,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   private Set<String> myPropertySettersInProgress = new HashSet<String>();
   private Set<String> myPropertyGettersInProgress = new HashSet<String>();
 
-  protected SNode(SModel model) {
+  protected SNode(@NotNull SModel model) {
     myModel = model;
   }
 
@@ -103,6 +104,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     getParent().insertChild(this, getRole_(), newSibling, true);
   }
 
+  @NotNull
   public SModel getModel() {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
     return myModel;
@@ -224,10 +226,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   //node attributes
 
-  private void setAttribute_internal(AttributeConcept attributeConcept) {
-    setChild(AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.ATTRIBUTE_STEREOTYPE, attributeConcept);
-  }
-
   private AttributeConcept getAttribute_internal() {
     return (AttributeConcept) getChild(AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.ATTRIBUTE_STEREOTYPE);
   }
@@ -271,10 +269,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   ///--property attributes
 
-  private void setPropertyAttribute_internal(String propertyName, PropertyAttributeConcept propertyAttribute) {
-    setChild(propertyName + AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.PROPERTY_ATTRIBUTE_STEREOTYPE, propertyAttribute);
-  }
-
   private PropertyAttributeConcept getPropertyAttribute_internal(String propertyName) {
     return (PropertyAttributeConcept) getChild(propertyName + AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.PROPERTY_ATTRIBUTE_STEREOTYPE);
   }
@@ -317,10 +311,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   ///-- link attributes
-
-  private void setLinkAttribute_internal(String role, LinkAttributeConcept linkAttribute) {
-    setChild(role + AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.LINK_ATTRIBUTE_STEREOTYPE, linkAttribute);
-  }
 
   private LinkAttributeConcept getLinkAttribute_internal(String role) {
     return (LinkAttributeConcept) getChild(role + AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.LINK_ATTRIBUTE_STEREOTYPE);

@@ -3,8 +3,6 @@ package jetbrains.mps.ide;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.ide.BaseDialog;
-import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.nodeEditor.InspectorEditorComponent;
 import jetbrains.mps.nodeEditor.UIEditorComponent;
 import jetbrains.mps.smodel.IOperationContext;
@@ -12,8 +10,11 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.JSplitPaneWithoutBorders;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.Icon;
+import javax.swing.JComponent;
+import javax.swing.JOptionPane;
+import javax.swing.JSplitPane;
+import java.awt.HeadlessException;
 
 /**
  * @author Kostik
