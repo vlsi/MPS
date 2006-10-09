@@ -1,24 +1,24 @@
 package jetbrains.mps.ide;
 
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.ApplicationComponents;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.lang.reflect.Method;
-import java.lang.reflect.Modifier;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.annotation.Target;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.HashMap;
-
-import jetbrains.mps.project.ApplicationComponents;
-import jetbrains.mps.logging.Logger;
 
 /**
  * @author Kostik
@@ -53,8 +53,8 @@ public abstract class BaseDialog extends JDialog {
     });
 
     updateDimensionSettings();
-    setLocation(myDialogDimensions.left, myDialogDimensions.top);
-    setSize(myDialogDimensions.width, myDialogDimensions.height);
+    setLocation(myDialogDimensions.myLeft, myDialogDimensions.myTop);
+    setSize(myDialogDimensions.myWidth, myDialogDimensions.myHeight);
   }
 
   public void setDefaultButton(JButton button) {
@@ -70,11 +70,11 @@ public abstract class BaseDialog extends JDialog {
   protected void saveMyDimensionSettings() {
     Point p = getLocation();
     Dimension d = getSize();
-    myDialogDimensions.top = (int) p.getY();
-    myDialogDimensions.left = (int) p.getX();
-    myDialogDimensions.width = (int) d.getWidth();
-    myDialogDimensions.height = (int) d.getHeight();
-    saveDimensionSettings(myDialogDimensions.left, myDialogDimensions.top, myDialogDimensions.width, myDialogDimensions.height, this.getClass());
+    myDialogDimensions.myTop = (int) p.getY();
+    myDialogDimensions.myLeft = (int) p.getX();
+    myDialogDimensions.myWidth = (int) d.getWidth();
+    myDialogDimensions.myHeight = (int) d.getHeight();
+    saveDimensionSettings(myDialogDimensions.myLeft, myDialogDimensions.myTop, myDialogDimensions.myWidth, myDialogDimensions.myHeight, this.getClass());
   }
 
   public abstract DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings();
