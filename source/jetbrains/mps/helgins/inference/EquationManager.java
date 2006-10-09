@@ -323,7 +323,7 @@ public class EquationManager {
           mySubtypesToSupertypesMap.get(subtype).remove(node);
         }
         SNode nodeToCheck = nodesToCheck.isEmpty() ? null : nodesToCheck.iterator().next(); //todo nodeToCheck is chosen randomly
-        Set<SNode> lcs = SubtypingManager.lowestCommonSupertypes(concreteSubtypes);
+        Set<SNode> lcs = SubtypingManager.leastCommonSupertypes(concreteSubtypes);
         if (lcs.isEmpty()) {
           TypeChecker.reportTypeError(nodeToCheck,"can't find common supertype"); //todo show subtypes
         } else {

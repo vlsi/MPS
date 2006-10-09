@@ -36,7 +36,7 @@ public class Queries {
     SModel typesModel = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.baseLanguage.helgins")).getSModel();
     SModel runtimeTypesModel = Interpretator.getRuntimeTypesModel(typesModel);
     Set<? extends SNode> types = CollectionUtil.asSet(leftType, rightType);
-    Set<SNode> lowestCommonSupertypes = SubtypingManager.lowestCommonSupertypes(types);
+    Set<SNode> lowestCommonSupertypes = SubtypingManager.leastCommonSupertypes(types);
 
     if (mayBeString) {
       SModel javaLang = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("java.lang@java_stub")).getSModel();
