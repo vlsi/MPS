@@ -12,14 +12,14 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.TreeTextUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.AbstractEditorComponent;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.smodel.*;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultTreeModel;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.Set;
@@ -227,10 +227,10 @@ public class HierarchyView extends DefaultTool {
 
   private class ChildConceptHierarchyTreeNode extends ConceptHierarchyTreeNode {
 
-    private boolean isInitialized = false;
+    private boolean myInitialized = false;
 
     public boolean isInitialized() {
-      return isInitialized;
+      return myInitialized;
     }
 
     public void init() {
@@ -241,12 +241,12 @@ public class HierarchyView extends DefaultTool {
        // rebuildChildrenHierarchy_internal(childHierarchyTreeNode);
       }
 
-      isInitialized = true;
+      myInitialized = true;
     }
 
     public void update() {
       this.removeAllChildren();
-      isInitialized = false;
+      myInitialized = false;
     }
 
     public ChildConceptHierarchyTreeNode(ConceptDeclaration declaration, IOperationContext operationContext) {

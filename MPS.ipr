@@ -150,30 +150,9 @@
         <inspection_tool class="StrutsInspection" level="ERROR" enabled="false" />
         <inspection_tool class="StrutsTilesInspection" level="ERROR" enabled="false" />
         <inspection_tool class="StrutsValidatorInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="AnonymousClassVariableHidesContainingMethodVariable" level="WARNING" enabled="true" />
         <inspection_tool class="ClassEscapesItsScope" level="WARNING" enabled="true" />
-        <inspection_tool class="FieldHidesSuperclassField" level="WARNING" enabled="true">
-          <option name="m_ignoreInvisibleFields" value="true" />
-        </inspection_tool>
-        <inspection_tool class="InnerClassVariableHidesOuterClassVariable" level="WARNING" enabled="true">
-          <option name="m_ignoreInvisibleFields" value="true" />
-        </inspection_tool>
-        <inspection_tool class="LocalVariableHidingMemberVariable" level="WARNING" enabled="true">
-          <option name="m_ignoreInvisibleFields" value="true" />
-          <option name="m_ignoreStaticMethods" value="true" />
-        </inspection_tool>
-        <inspection_tool class="MethodOverloadsParentMethod" level="WARNING" enabled="true" />
         <inspection_tool class="MethodOverridesPackageLocalMethod" level="WARNING" enabled="true" />
         <inspection_tool class="MethodOverridesPrivateMethod" level="WARNING" enabled="true" />
-        <inspection_tool class="MethodOverridesStaticMethod" level="WARNING" enabled="true" />
-        <inspection_tool class="ParameterHidingMemberVariable" level="WARNING" enabled="true">
-          <option name="m_ignoreInvisibleFields" value="true" />
-          <option name="m_ignoreStaticMethodParametersHidingInstanceFields" value="false" />
-          <option name="m_ignoreForConstructors" value="false" />
-          <option name="m_ignoreForPropertySetters" value="false" />
-          <option name="m_ignoreForAbstractMethods" value="false" />
-        </inspection_tool>
-        <inspection_tool class="TypeParameterHidesVisibleType" level="WARNING" enabled="true" />
         <inspection_tool class="CloneCallsSuperClone" level="WARNING" enabled="false" />
         <inspection_tool class="CloneDeclaresCloneNotSupported" level="WARNING" enabled="false" />
         <inspection_tool class="UnnecessaryLocalVariableJS" level="WARNING" enabled="false">
@@ -297,6 +276,29 @@
         <inspection_tool class="UNCHECKED_WARNING" level="WARNING" enabled="false" />
         <inspection_tool class="RedundantCast" level="WARNING" enabled="false" />
         <inspection_tool class="UnnecessaryReturn" level="WARNING" enabled="false" />
+        <inspection_tool class="InstanceVariableNamingConvention" level="WARNING" enabled="true">
+          <option name="m_regex" value="my[A-Z][A-Za-z\d]*" />
+          <option name="m_minLength" value="4" />
+          <option name="m_maxLength" value="99" />
+        </inspection_tool>
+        <inspection_tool class="StaticVariableNamingConvention" level="WARNING" enabled="true">
+          <option name="m_regex" value="our[A-Z][A-Za-z\d]*" />
+          <option name="m_minLength" value="5" />
+          <option name="m_maxLength" value="99" />
+        </inspection_tool>
+        <inspection_tool class="EmptyMethod" level="WARNING" enabled="false">
+          <option name="EXCLUDE_ANNOS">
+            <value>
+              <list size="0" />
+            </value>
+          </option>
+        </inspection_tool>
+        <inspection_tool class="UnusedParameters" level="WARNING" enabled="false" />
+        <inspection_tool class="CanBeFinal" level="WARNING" enabled="false">
+          <option name="REPORT_CLASSES" value="false" />
+          <option name="REPORT_METHODS" value="false" />
+          <option name="REPORT_FIELDS" value="true" />
+        </inspection_tool>
       </profile>
       <profile version="1.0" is_locked="false">
         <option name="myName" value="For Generated Code" />
@@ -488,6 +490,11 @@
         <inspection_tool class="UNCHECKED_WARNING" level="WARNING" enabled="false" />
         <inspection_tool class="RedundantCast" level="WARNING" enabled="false" />
         <inspection_tool class="UnnecessaryReturn" level="WARNING" enabled="false" />
+        <inspection_tool class="CanBeFinal" level="WARNING" enabled="false">
+          <option name="REPORT_CLASSES" value="false" />
+          <option name="REPORT_METHODS" value="false" />
+          <option name="REPORT_FIELDS" value="true" />
+        </inspection_tool>
       </profile>
       <profile version="1.0" is_locked="false">
         <option name="myName" value="Query methods" />
@@ -514,30 +521,9 @@
         <inspection_tool class="StrutsInspection" level="ERROR" enabled="false" />
         <inspection_tool class="StrutsTilesInspection" level="ERROR" enabled="false" />
         <inspection_tool class="StrutsValidatorInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="AnonymousClassVariableHidesContainingMethodVariable" level="WARNING" enabled="true" />
         <inspection_tool class="ClassEscapesItsScope" level="WARNING" enabled="true" />
-        <inspection_tool class="FieldHidesSuperclassField" level="WARNING" enabled="true">
-          <option name="m_ignoreInvisibleFields" value="true" />
-        </inspection_tool>
-        <inspection_tool class="InnerClassVariableHidesOuterClassVariable" level="WARNING" enabled="true">
-          <option name="m_ignoreInvisibleFields" value="true" />
-        </inspection_tool>
-        <inspection_tool class="LocalVariableHidingMemberVariable" level="WARNING" enabled="true">
-          <option name="m_ignoreInvisibleFields" value="true" />
-          <option name="m_ignoreStaticMethods" value="true" />
-        </inspection_tool>
-        <inspection_tool class="MethodOverloadsParentMethod" level="WARNING" enabled="true" />
         <inspection_tool class="MethodOverridesPackageLocalMethod" level="WARNING" enabled="true" />
         <inspection_tool class="MethodOverridesPrivateMethod" level="WARNING" enabled="true" />
-        <inspection_tool class="MethodOverridesStaticMethod" level="WARNING" enabled="true" />
-        <inspection_tool class="ParameterHidingMemberVariable" level="WARNING" enabled="true">
-          <option name="m_ignoreInvisibleFields" value="true" />
-          <option name="m_ignoreStaticMethodParametersHidingInstanceFields" value="false" />
-          <option name="m_ignoreForConstructors" value="false" />
-          <option name="m_ignoreForPropertySetters" value="false" />
-          <option name="m_ignoreForAbstractMethods" value="false" />
-        </inspection_tool>
-        <inspection_tool class="TypeParameterHidesVisibleType" level="WARNING" enabled="true" />
         <inspection_tool class="CloneCallsSuperClone" level="WARNING" enabled="false" />
         <inspection_tool class="CloneDeclaresCloneNotSupported" level="WARNING" enabled="false" />
         <inspection_tool class="UnnecessaryLocalVariableJS" level="WARNING" enabled="false">
@@ -674,6 +660,28 @@
         <inspection_tool class="UNCHECKED_WARNING" level="WARNING" enabled="false" />
         <inspection_tool class="RedundantCast" level="WARNING" enabled="false" />
         <inspection_tool class="UnnecessaryReturn" level="WARNING" enabled="false" />
+        <inspection_tool class="InstanceVariableNamingConvention" level="WARNING" enabled="true">
+          <option name="m_regex" value="my[A-Z][A-Za-z\d]*" />
+          <option name="m_minLength" value="4" />
+          <option name="m_maxLength" value="99" />
+        </inspection_tool>
+        <inspection_tool class="StaticVariableNamingConvention" level="WARNING" enabled="true">
+          <option name="m_regex" value="our[A-Z][A-Za-z\d]*" />
+          <option name="m_minLength" value="5" />
+          <option name="m_maxLength" value="99" />
+        </inspection_tool>
+        <inspection_tool class="EmptyMethod" level="WARNING" enabled="false">
+          <option name="EXCLUDE_ANNOS">
+            <value>
+              <list size="0" />
+            </value>
+          </option>
+        </inspection_tool>
+        <inspection_tool class="CanBeFinal" level="WARNING" enabled="false">
+          <option name="REPORT_CLASSES" value="false" />
+          <option name="REPORT_METHODS" value="false" />
+          <option name="REPORT_FIELDS" value="true" />
+        </inspection_tool>
       </profile>
     </profiles>
   </component>

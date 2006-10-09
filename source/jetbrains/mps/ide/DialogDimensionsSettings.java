@@ -25,15 +25,16 @@ public class DialogDimensionsSettings extends DefaultExternalizableComponent {
   }
 
   public static class DialogDimensions {
-    public int top;
-    public int left;
-    public int width;
-    public int height;
+    public int myTop;
+    public int myLeft;
+    public int myWidth;
+    public int myHeight;
+
     public DialogDimensions(int left, int top, int width, int height) {
-      this.height = height;
-      this.width = width;
-      this.left = left;
-      this.top = top;
+      myHeight = height;
+      myWidth = width;
+      myLeft = left;
+      myTop = top;
     }
   }
 }

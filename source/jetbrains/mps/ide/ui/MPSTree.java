@@ -1,6 +1,5 @@
 package jetbrains.mps.ide.ui;
 
-import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.command.CommandProcessor;

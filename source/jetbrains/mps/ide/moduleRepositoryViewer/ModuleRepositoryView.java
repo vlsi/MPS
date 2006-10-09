@@ -11,12 +11,16 @@ import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
+import org.jetbrains.annotations.NotNull;
 
-import javax.swing.*;
+import javax.swing.Icon;
+import javax.swing.JComponent;
+import javax.swing.JPopupMenu;
+import javax.swing.JScrollPane;
 import java.awt.event.ActionEvent;
 
 /**
@@ -139,7 +143,7 @@ public class ModuleRepositoryView extends DefaultTool {
   }
 
   private class DeferringEventHandler implements ICommandListener, RepositoryListener {
-    private boolean deferredUpdate = false;
+    private boolean myDeferredUpdate = false;
 
     public void installListeners() {
       CommandProcessor.instance().addCommandListener(this);
@@ -153,23 +157,23 @@ public class ModuleRepositoryView extends DefaultTool {
 
     public void repositoryChanged() {
       if (CommandProcessor.instance().isInsideCommand()) {
-        deferredUpdate = true;
+        myDeferredUpdate = true;
       } else {
         myTree.rebuildTree();
       }
     }
 
-    public void beforeCommandFinished(CommandEvent event) {
+    public void beforeCommandFinished(@NotNull CommandEvent event) {
     }
 
-    public void commandFinished(CommandEvent event) {
-      if (deferredUpdate) {
-        deferredUpdate = false;
+    public void commandFinished(@NotNull CommandEvent event) {
+      if (myDeferredUpdate) {
+        myDeferredUpdate = false;
         myTree.rebuildTree();
       }
     }
 
-    public void commandStarted(CommandEvent event) {
+    public void commandStarted(@NotNull CommandEvent event) {
     }
   }
 

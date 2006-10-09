@@ -1,27 +1,26 @@
 package jetbrains.mps.ide.ui.smodel;
 
-import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.annotations.AttributeConcept;
 import jetbrains.mps.ide.AbstractProjectFrame;
-import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.ide.projectPane.SortUtil;
-//import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
+import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.ide.projectPane.SortUtil;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.annotations.AttributeConcept;
 
-import javax.swing.*;
+import javax.swing.Icon;
+import javax.swing.JPopupMenu;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
-import javax.swing.tree.DefaultMutableTreeNode;
-import java.util.*;
 import java.awt.Color;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -33,7 +32,7 @@ import java.awt.Color;
 public class SModelTreeNode extends MPSTreeNodeEx {
   private SModelDescriptor myModelDescriptor;
   private String myLabel;
-  private boolean isInitialized = false;
+  private boolean myInitialized = false;
   private MyModelListener myModelListener = new MyModelListener();
 
   public SModelTreeNode(SModelDescriptor modelDescriptor, String label, IOperationContext operationContext) {
@@ -86,11 +85,11 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   public boolean isInitialized() {
-    return isInitialized;
+    return myInitialized;
   }
 
   public void update() {
-    isInitialized = false;
+    myInitialized = false;
     this.removeAllChildren();
   }
 
@@ -118,7 +117,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     IDEProjectFrame projectFrame = (IDEProjectFrame) getOperationContext().getComponent(AbstractProjectFrame.class);
     DefaultTreeModel treeModel = (DefaultTreeModel) projectFrame.getProjectPane().getTree().getModel();
     treeModel.nodeStructureChanged(this);
-    isInitialized = true;
+    myInitialized = true;
   }
 
   protected void dispose() {
