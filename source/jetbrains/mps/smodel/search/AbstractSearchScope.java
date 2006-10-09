@@ -7,6 +7,9 @@ import jetbrains.mps.smodel.SNode;
 
 import java.util.*;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Igoor
@@ -22,16 +25,19 @@ public abstract class AbstractSearchScope implements ISearchScope {
     }
   };
 
+  @NotNull
   public final List<SNode> getNodes() {
     return getNodes(TRUE_CONDITION);
   }
 
+  @NotNull
   public final List<SNode> getNodes(Condition<SNode> condition) {
     List<SNode> list = getOwnNodes(condition);
     list.addAll(getNodesFromAppendedScopes(condition));
     return list;
   }
 
+  @Nullable
   public final SNode findNode(Condition<SNode> condition) {
     List<SNode> list = getOwnNodes(condition);
     if(list.size() > 0) return list.get(0);
@@ -42,7 +48,7 @@ public abstract class AbstractSearchScope implements ISearchScope {
 
   public abstract List<SNode> getOwnNodes(Condition<SNode> condition);
 
-  public void append(ISearchScope scope) {
+  public void append(@NotNull ISearchScope scope) {
     if (myAppendedScopes == null) {
       myAppendedScopes = new LinkedList<ISearchScope>();
     }

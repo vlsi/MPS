@@ -5,6 +5,9 @@ import jetbrains.mps.smodel.SNode;
 
 import java.util.*;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Igoor
@@ -13,12 +16,11 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public interface ISearchScope {
-  List<SNode> getNodes(Condition<SNode> condition);
+  @NotNull List<SNode> getNodes(Condition<SNode> condition);
 
-  SNode findNode(Condition<SNode> condition);
+  @Nullable SNode findNode(Condition<SNode> condition);
 
-  List<SNode> getNodes();
+  @NotNull List<SNode> getNodes();
 
-  void append(ISearchScope scope);
-
+  void append(@NotNull ISearchScope scope);
 }
