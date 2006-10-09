@@ -283,7 +283,7 @@
         </inspection_tool>
         <inspection_tool class="StaticVariableNamingConvention" level="WARNING" enabled="true">
           <option name="m_regex" value="our[A-Z][A-Za-z\d]*" />
-          <option name="m_minLength" value="5" />
+          <option name="m_minLength" value="2" />
           <option name="m_maxLength" value="99" />
         </inspection_tool>
         <inspection_tool class="EmptyMethod" level="WARNING" enabled="false">
@@ -667,7 +667,7 @@
         </inspection_tool>
         <inspection_tool class="StaticVariableNamingConvention" level="WARNING" enabled="true">
           <option name="m_regex" value="our[A-Z][A-Za-z\d]*" />
-          <option name="m_minLength" value="5" />
+          <option name="m_minLength" value="2" />
           <option name="m_maxLength" value="99" />
         </inspection_tool>
         <inspection_tool class="EmptyMethod" level="WARNING" enabled="false">

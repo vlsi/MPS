@@ -17,7 +17,7 @@ import java.util.List;
  * serves as template: just loads all models from MPSFileModelDescriptor and "process" them.
  */
 public class InternalRefactoringAction extends MPSAction {
-  public static boolean SHOW = false;
+  public static final boolean SHOW = false;
 
   public InternalRefactoringAction() {
     super("... refactor static members ...");

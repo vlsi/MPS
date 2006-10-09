@@ -1,12 +1,12 @@
 package jetbrains.mps.ide.components;
 
+import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.externalResolve.ExternalResolver;
 import org.jdom.DataConversionException;
 import org.jdom.Element;
 
-import java.awt.*;
+import java.awt.Rectangle;
 
 /**
  * @author Kostik
@@ -18,11 +18,11 @@ public class ComponentsUtil {
   public static final String MODEL = "model";
   public static final String ID = "id";
   public static final String ERI = "extResolveInfo";
-  public static String RECTANGLE = "rectangle";
-  private static String X = "x";
-  private static String Y = "y";
-  private static String WIDTH = "width";
-  private static String HEIGHT = "height";
+  public static final String RECTANGLE = "rectangle";
+  private static final String X = "x";
+  private static final String Y = "y";
+  private static final String WIDTH = "width";
+  private static final String HEIGHT = "height";
 
   public static Element nodeToElement(SNode node) {
     Element nodeElement = new Element(NODE);
