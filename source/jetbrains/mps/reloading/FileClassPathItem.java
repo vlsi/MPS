@@ -10,6 +10,8 @@ import java.util.HashSet;
 import java.net.URL;
 import java.net.MalformedURLException;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * @author Kostik
  */
@@ -46,6 +48,7 @@ public class FileClassPathItem extends AbstractClassPathItem{
     }
   }
 
+  @NotNull
   public Set<String> getAvailableClasses(String namespace) {
     Set<String> result = new HashSet<String>();
     File dir = getModelDir(namespace);
@@ -60,6 +63,7 @@ public class FileClassPathItem extends AbstractClassPathItem{
     return result;
   }
 
+  @NotNull
   public Set<String> getSubpackages(String namespace) {
     Set<String> result = new HashSet<String>();
     File dir = getModelDir(namespace);

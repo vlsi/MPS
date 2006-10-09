@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * @author Kostik
  */
@@ -40,6 +42,7 @@ public class CompositeClassPathItem implements IClassPathItem {
     return null;
   }
 
+  @NotNull
   public Set<String> getAvailableClasses(String namespace) {
     Set<String> result = new HashSet<String>();
     for (IClassPathItem item : myChildren) {
@@ -48,6 +51,7 @@ public class CompositeClassPathItem implements IClassPathItem {
     return result;
   }
 
+  @NotNull
   public Set<String> getSubpackages(String namespace) {
     Set<String> result = new HashSet<String>();
 

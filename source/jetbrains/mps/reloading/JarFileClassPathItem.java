@@ -12,6 +12,8 @@ import java.util.*;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * @author Kostik
  */
@@ -75,10 +77,12 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
     }
   }
 
+  @NotNull
   public Set<String> getAvailableClasses(String namespace) {
     return new HashSet<String>(getClassesSetFor(namespace));
   }
 
+  @NotNull
   public Set<String> getSubpackages(String namespace) {
     return new HashSet<String>(getSubpackagesSetFor(namespace));
   }
