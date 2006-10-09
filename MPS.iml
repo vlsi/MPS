@@ -23,6 +23,7 @@
     <orderEntry type="library" name="Log4j" level="project" />
     <orderEntry type="module" module-name="MPSSupport" exported="" />
     <orderEntry type="library" name="Eclipse-compiler" level="project" />
+    <orderEntry type="library" name="Annotations" level="project" />
     <orderEntryProperties />
   </component>
   <component name="org.mevenide.idea.module.ModuleSettings">

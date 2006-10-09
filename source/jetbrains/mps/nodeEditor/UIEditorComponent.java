@@ -16,6 +16,8 @@ import javax.swing.border.LineBorder;
 import java.util.List;
 import java.awt.*;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * @author Kostik
  */
@@ -109,10 +111,10 @@ public class UIEditorComponent extends AbstractEditorComponent implements IEdito
   }
 
   private class MyEditor implements IEditor {
-    public void addChangeListener(ChangeListener listener) {
+    public void addChangeListener(@NotNull ChangeListener listener) {
     }
 
-    public void removeChangeListener(ChangeListener listener) {
+    public void removeChangeListener(@NotNull ChangeListener listener) {
     }
 
     public JComponent getComponent() {
@@ -127,14 +129,15 @@ public class UIEditorComponent extends AbstractEditorComponent implements IEdito
       UIEditorComponent.this.relayout();
     }
 
-    public void addCellSelectionListener(ICellSelectionListener listener) {
+    public void addCellSelectionListener(@NotNull ICellSelectionListener listener) {
       UIEditorComponent.this.addCellSelectionListener(listener);
     }
 
-    public void removeCellSelectionListener(ICellSelectionListener listener) {
+    public void removeCellSelectionListener(@NotNull ICellSelectionListener listener) {
       UIEditorComponent.this.removeCellSelectionListener(listener);
     }
 
+    @NotNull
     public IOperationContext getOperationContext() {
       return UIEditorComponent.this.getOperationContext();
     }

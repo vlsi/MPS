@@ -9,6 +9,8 @@ import jetbrains.mps.ide.navigation.IHistoryItem;
 import javax.swing.*;
 import javax.swing.event.ChangeListener;
 
+import org.jetbrains.annotations.NotNull;
+
 public class NodeEditor implements IEditor {
 
   private AbstractEditorComponent myEditorComponent;
@@ -31,20 +33,21 @@ public class NodeEditor implements IEditor {
     myEditorComponent.relayout();
   }
 
-  public void addChangeListener(ChangeListener listener) {
+  public void addChangeListener(@NotNull ChangeListener listener) {
   }
 
-  public void removeChangeListener(ChangeListener listener) {
+  public void removeChangeListener(@NotNull ChangeListener listener) {
   }
 
-  public void addCellSelectionListener(ICellSelectionListener listener) {
+  public void addCellSelectionListener(@NotNull ICellSelectionListener listener) {
     myEditorComponent.addCellSelectionListener(listener);
   }
 
-  public void removeCellSelectionListener(ICellSelectionListener listener) {
+  public void removeCellSelectionListener(@NotNull ICellSelectionListener listener) {
     myEditorComponent.removeCellSelectionListener(listener);
   }
 
+  @NotNull
   public IOperationContext getOperationContext() {
     return myEditorComponent.getOperationContext();
   }

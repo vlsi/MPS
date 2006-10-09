@@ -12,20 +12,23 @@ import jetbrains.mps.ide.navigation.IHistoryItem;
 import javax.swing.*;
 import javax.swing.event.ChangeListener;
 
+import org.jetbrains.annotations.NotNull;
+
 public interface IEditor {
   JComponent getComponent();
 
   void rebuildEditorContent();
   void relayout();
 
-  void addCellSelectionListener(ICellSelectionListener listener);
-  void removeCellSelectionListener(ICellSelectionListener listener);
+  void addCellSelectionListener(@NotNull ICellSelectionListener listener);
+  void removeCellSelectionListener(@NotNull ICellSelectionListener listener);
 
-  void addChangeListener(ChangeListener listener);
-  void removeChangeListener(ChangeListener listener);
+  void addChangeListener(@NotNull ChangeListener listener);
+  void removeChangeListener(@NotNull ChangeListener listener);
 
+  @NotNull
   IOperationContext getOperationContext();
-
+  
   EditorContext getEditorContext();
 
   EditorCell getSelectedCell();

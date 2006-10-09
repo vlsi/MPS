@@ -288,6 +288,12 @@
         <inspection_tool class="TrivialIf" level="WARNING" enabled="false" />
         <inspection_tool class="SameReturnValue" level="WARNING" enabled="false" />
         <inspection_tool class="SameParameterValue" level="WARNING" enabled="false" />
+        <inspection_tool class="NullableProblems" level="ERROR" enabled="true">
+          <option name="REPORT_NULLABLE_METHOD_OVERRIDES_NOTNULL" value="true" />
+          <option name="REPORT_NOT_ANNOTATED_METHOD_OVERRIDES_NOTNULL" value="true" />
+          <option name="REPORT_NOTNULL_PARAMETER_OVERRIDES_NULLABLE" value="true" />
+          <option name="REPORT_NOT_ANNOTATED_PARAMETER_OVERRIDES_NOTNULL" value="true" />
+        </inspection_tool>
       </profile>
       <profile version="1.0" is_locked="false">
         <option name="myName" value="For Generated Code" />
@@ -470,6 +476,12 @@
         <inspection_tool class="UnusedParameters" level="WARNING" enabled="false" />
         <inspection_tool class="SameReturnValue" level="WARNING" enabled="false" />
         <inspection_tool class="SameParameterValue" level="WARNING" enabled="false" />
+        <inspection_tool class="NullableProblems" level="ERROR" enabled="true">
+          <option name="REPORT_NULLABLE_METHOD_OVERRIDES_NOTNULL" value="true" />
+          <option name="REPORT_NOT_ANNOTATED_METHOD_OVERRIDES_NOTNULL" value="true" />
+          <option name="REPORT_NOTNULL_PARAMETER_OVERRIDES_NULLABLE" value="true" />
+          <option name="REPORT_NOT_ANNOTATED_PARAMETER_OVERRIDES_NOTNULL" value="true" />
+        </inspection_tool>
       </profile>
       <profile version="1.0" is_locked="false">
         <option name="myName" value="Query methods" />
@@ -647,6 +659,12 @@
         <inspection_tool class="TrivialIf" level="WARNING" enabled="false" />
         <inspection_tool class="SameReturnValue" level="WARNING" enabled="false" />
         <inspection_tool class="SameParameterValue" level="WARNING" enabled="false" />
+        <inspection_tool class="NullableProblems" level="ERROR" enabled="true">
+          <option name="REPORT_NULLABLE_METHOD_OVERRIDES_NOTNULL" value="true" />
+          <option name="REPORT_NOT_ANNOTATED_METHOD_OVERRIDES_NOTNULL" value="true" />
+          <option name="REPORT_NOTNULL_PARAMETER_OVERRIDES_NULLABLE" value="true" />
+          <option name="REPORT_NOT_ANNOTATED_PARAMETER_OVERRIDES_NOTNULL" value="true" />
+        </inspection_tool>
       </profile>
     </profiles>
   </component>
@@ -1028,6 +1046,13 @@
     <library name="freemarker">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/freemarker/freemarker-2.3.8.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Annotations">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/annotations/annotations.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
