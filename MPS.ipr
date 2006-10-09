@@ -108,7 +108,9 @@
     <option name="MAXIMUM_HEAP_SIZE" value="128" />
   </component>
   <component name="EntryPointsManager">
-    <entry_points />
+    <entry_points>
+      <entry_point TYPE="field" FQNAME="jetbrains.mps.ide.icons.IconManager.LOG" />
+    </entry_points>
   </component>
   <component name="ExportToHTMLSettings">
     <option name="PRINT_LINE_NUMBERS" value="false" />
@@ -151,8 +153,6 @@
         <inspection_tool class="StrutsTilesInspection" level="ERROR" enabled="false" />
         <inspection_tool class="StrutsValidatorInspection" level="ERROR" enabled="false" />
         <inspection_tool class="ClassEscapesItsScope" level="WARNING" enabled="true" />
-        <inspection_tool class="MethodOverridesPackageLocalMethod" level="WARNING" enabled="true" />
-        <inspection_tool class="MethodOverridesPrivateMethod" level="WARNING" enabled="true" />
         <inspection_tool class="CloneCallsSuperClone" level="WARNING" enabled="false" />
         <inspection_tool class="CloneDeclaresCloneNotSupported" level="WARNING" enabled="false" />
         <inspection_tool class="UnnecessaryLocalVariableJS" level="WARNING" enabled="false">
@@ -278,7 +278,7 @@
         <inspection_tool class="UnnecessaryReturn" level="WARNING" enabled="false" />
         <inspection_tool class="InstanceVariableNamingConvention" level="WARNING" enabled="true">
           <option name="m_regex" value="my[A-Z][A-Za-z\d]*" />
-          <option name="m_minLength" value="4" />
+          <option name="m_minLength" value="3" />
           <option name="m_maxLength" value="99" />
         </inspection_tool>
         <inspection_tool class="StaticVariableNamingConvention" level="WARNING" enabled="true">
@@ -298,6 +298,10 @@
           <option name="REPORT_CLASSES" value="false" />
           <option name="REPORT_METHODS" value="false" />
           <option name="REPORT_FIELDS" value="true" />
+        </inspection_tool>
+        <inspection_tool class="FieldCanBeLocal" level="WARNING" enabled="false" />
+        <inspection_tool class="PointlessArithmeticExpression" level="WARNING" enabled="false">
+          <option name="m_ignoreExpressionsContainingConstants" value="false" />
         </inspection_tool>
       </profile>
       <profile version="1.0" is_locked="false">
@@ -495,6 +499,9 @@
           <option name="REPORT_METHODS" value="false" />
           <option name="REPORT_FIELDS" value="true" />
         </inspection_tool>
+        <inspection_tool class="PointlessArithmeticExpression" level="WARNING" enabled="false">
+          <option name="m_ignoreExpressionsContainingConstants" value="false" />
+        </inspection_tool>
       </profile>
       <profile version="1.0" is_locked="false">
         <option name="myName" value="Query methods" />
@@ -522,8 +529,6 @@
         <inspection_tool class="StrutsTilesInspection" level="ERROR" enabled="false" />
         <inspection_tool class="StrutsValidatorInspection" level="ERROR" enabled="false" />
         <inspection_tool class="ClassEscapesItsScope" level="WARNING" enabled="true" />
-        <inspection_tool class="MethodOverridesPackageLocalMethod" level="WARNING" enabled="true" />
-        <inspection_tool class="MethodOverridesPrivateMethod" level="WARNING" enabled="true" />
         <inspection_tool class="CloneCallsSuperClone" level="WARNING" enabled="false" />
         <inspection_tool class="CloneDeclaresCloneNotSupported" level="WARNING" enabled="false" />
         <inspection_tool class="UnnecessaryLocalVariableJS" level="WARNING" enabled="false">
@@ -662,7 +667,7 @@
         <inspection_tool class="UnnecessaryReturn" level="WARNING" enabled="false" />
         <inspection_tool class="InstanceVariableNamingConvention" level="WARNING" enabled="true">
           <option name="m_regex" value="my[A-Z][A-Za-z\d]*" />
-          <option name="m_minLength" value="4" />
+          <option name="m_minLength" value="3" />
           <option name="m_maxLength" value="99" />
         </inspection_tool>
         <inspection_tool class="StaticVariableNamingConvention" level="WARNING" enabled="true">
@@ -682,6 +687,7 @@
           <option name="REPORT_METHODS" value="false" />
           <option name="REPORT_FIELDS" value="true" />
         </inspection_tool>
+        <inspection_tool class="FieldCanBeLocal" level="WARNING" enabled="false" />
       </profile>
     </profiles>
   </component>

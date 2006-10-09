@@ -1,7 +1,6 @@
 package jetbrains.chemistry.formulae.editor.graph;
 
 import jetbrains.mps.util.Pair;
-import jetbrains.chemistry.formulae.editor.AtomVertex;
 
 import java.util.*;
 
