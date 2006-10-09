@@ -13,6 +13,7 @@ import javax.swing.*;
 import javax.swing.event.ChangeListener;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public interface IEditor {
   JComponent getComponent();
@@ -26,24 +27,24 @@ public interface IEditor {
   void addChangeListener(@NotNull ChangeListener listener);
   void removeChangeListener(@NotNull ChangeListener listener);
 
-  @NotNull
-  IOperationContext getOperationContext();
-  
-  EditorContext getEditorContext();
+  @NotNull IOperationContext getOperationContext();
 
-  EditorCell getSelectedCell();
-  EditorCell getRootCell();
+  @Nullable EditorContext getEditorContext();
 
-  SNode getSNode();
-  SNodeProxy getSNodeProxy();
+  @Nullable EditorCell getSelectedCell();
+
+  @Nullable EditorCell getRootCell();
+
+  @Nullable SNode getSNode();
+  @Nullable SNodeProxy getSNodeProxy();
 
   void selectNode(SNode node);
 
-  IHistoryItem getHistoryItemFromEditor();
+  @Nullable IHistoryItem getHistoryItemFromEditor();
 
   void requestFocus();
 
   void clear();
 
-  AbstractEditorComponent getCurrentEditorComponent();
+  @Nullable AbstractEditorComponent getCurrentEditorComponent();
 }
