@@ -4,14 +4,16 @@ import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.util.Macros;
 
 import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import java.util.HashMap;
 import java.util.Map;
+import java.io.File;
 
 /**
  * @author Kostik
@@ -21,10 +23,32 @@ public class IconManager {
   public static final Logger LOG = Logger.getLogger(IconManager.class);
 
   private static Map<Class<? extends SNode>, Icon> ourIcons = new HashMap<Class<? extends SNode>, Icon>();
+  private static Map<String, Icon> ourPathsToIcons = new HashMap<String, Icon>();
 
   public static Icon getIconFor(SNode node) {
     if (node == null) return Icons.DEFAULT_ICON;
 
+    // new style
+    GlobalScope scope = GlobalScope.getInstance();
+    ConceptDeclaration conceptDeclaration = SModelUtil.getConceptDeclaration(node, scope);
+    if (conceptDeclaration != null) {
+      Language language = SModelUtil.getDeclaringLanguage(conceptDeclaration, scope);
+      if (language != null) {
+        String iconPath = Macros.languageDescriptor().expandPath(conceptDeclaration.getIconPath(), language.getDescriptorFile());
+        if (iconPath != null) {
+          Icon icon = ourPathsToIcons.get(iconPath);
+          if (icon != null) return icon;
+          File file = new File(iconPath);
+          if (file.exists()) {
+            icon = new ImageIcon(iconPath);
+            ourPathsToIcons.put(iconPath, icon);
+            return icon;
+          }
+        }
+      }
+    }
+
+    // legacy
     Class<? extends SNode> cls = node.getClass();
 
     if (ourIcons.get(cls) != null) {

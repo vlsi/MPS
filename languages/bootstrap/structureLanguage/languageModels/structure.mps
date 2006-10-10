@@ -4,6 +4,7 @@
   <maxImportIndex value="3" />
   <import index="1" modelUID="jetbrains.mps.core.structure" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1071489090640">
+    <property name="iconPath" value="${mps_home}\source\jetbrains\mps\bootstrap\structureLanguage\icons\structure.png" />
     <property name="rootable" value="true" />
     <property name="name" value="ConceptDeclaration" />
     <link role="extends" targetNodeId="1.1078489098625" />

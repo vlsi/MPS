@@ -13,6 +13,7 @@
   <import index="33" modelUID="jetbrains.mps.smodel@java_stub" />
   <import index="34" modelUID="jetbrains.mps.annotations.structure" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1071666914219">
+    <property name="iconPath" value="${mps_home}\source\jetbrains\mps\bootstrap\editorLanguage\icons\editor.png" />
     <property name="rootable" value="true" />
     <property name="name" value="ConceptEditorDeclaration" />
     <link role="extends" targetNodeId="1080736578640" />
@@ -450,6 +451,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1078938745671">
+    <property name="iconPath" value="${mps_home}\source\jetbrains\mps\bootstrap\editorLanguage\icons\editorComponent.png" />
     <property name="rootable" value="true" />
     <property name="name" value="EditorComponentDeclaration" />
     <link role="extends" targetNodeId="1080736578640" />
@@ -543,6 +545,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1081293058843">
+    <property name="iconPath" value="${mps_home}\source\jetbrains\mps\bootstrap\editorLanguage\icons\keyMap.png" />
     <property name="rootable" value="true" />
     <property name="name" value="CellKeyMapDeclaration" />
     <link role="extends" targetNodeId="3.1078489098625" />
