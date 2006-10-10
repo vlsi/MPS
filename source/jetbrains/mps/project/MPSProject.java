@@ -285,8 +285,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
       IDEProjectFrame projectFrame = getComponent(IDEProjectFrame.class);
       if (projectFrame != null) return (T) projectFrame.getEditorsPane();
     }
-    T result = (T) myComponents.get(clazz);
-    return result;
+    return (T) myComponents.get(clazz);
   }
 
   public void addComponent(Class interfaceClass, Object instance) {

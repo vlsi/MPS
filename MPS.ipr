@@ -277,7 +277,7 @@
         <inspection_tool class="RedundantCast" level="WARNING" enabled="false" />
         <inspection_tool class="UnnecessaryReturn" level="WARNING" enabled="false" />
         <inspection_tool class="InstanceVariableNamingConvention" level="WARNING" enabled="true">
-          <option name="m_regex" value="my[A-Z][A-Za-z\d]*" />
+          <option name="m_regex" value="my[A-Z][A-Za-z_\d]*" />
           <option name="m_minLength" value="3" />
           <option name="m_maxLength" value="99" />
         </inspection_tool>
@@ -302,6 +302,9 @@
         <inspection_tool class="FieldCanBeLocal" level="WARNING" enabled="false" />
         <inspection_tool class="PointlessArithmeticExpression" level="WARNING" enabled="false">
           <option name="m_ignoreExpressionsContainingConstants" value="false" />
+        </inspection_tool>
+        <inspection_tool class="ConstantConditions" level="WARNING" enabled="true">
+          <option name="SUGGEST_NULLABLE_ANNOTATIONS" value="true" />
         </inspection_tool>
       </profile>
       <profile version="1.0" is_locked="false">
@@ -666,7 +669,7 @@
         <inspection_tool class="RedundantCast" level="WARNING" enabled="false" />
         <inspection_tool class="UnnecessaryReturn" level="WARNING" enabled="false" />
         <inspection_tool class="InstanceVariableNamingConvention" level="WARNING" enabled="true">
-          <option name="m_regex" value="my[A-Z][A-Za-z\d]*" />
+          <option name="m_regex" value="my[A-Z][A-Za-z_\d]*" />
           <option name="m_minLength" value="3" />
           <option name="m_maxLength" value="99" />
         </inspection_tool>
@@ -688,6 +691,9 @@
           <option name="REPORT_FIELDS" value="true" />
         </inspection_tool>
         <inspection_tool class="FieldCanBeLocal" level="WARNING" enabled="false" />
+        <inspection_tool class="ConstantConditions" level="WARNING" enabled="true">
+          <option name="SUGGEST_NULLABLE_ANNOTATIONS" value="true" />
+        </inspection_tool>
       </profile>
     </profiles>
   </component>

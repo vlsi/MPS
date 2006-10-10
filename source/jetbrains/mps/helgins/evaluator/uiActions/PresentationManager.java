@@ -21,8 +21,7 @@ public class PresentationManager {
       return ((SNode)type).getName();
     }
     if (type instanceof String) {
-      String errorString = (String) type;
-      return errorString;
+      return (String) type;
     }
     if (type instanceof SNode) {
       return toString_1((SNode) type);

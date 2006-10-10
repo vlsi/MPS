@@ -52,7 +52,6 @@ public class JavaNameUtil {
   public static String className(ConceptDeclaration conceptDeclaration) {
     SModel languageModel = conceptDeclaration.getModel();
     String packageName = JavaNameUtil.packageNameForModelUID(languageModel.getUID());
-    String className = packageName + "." + conceptDeclaration.getName();
-    return className;
+    return packageName + "." + conceptDeclaration.getName();
   }
 }

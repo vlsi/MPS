@@ -310,9 +310,7 @@ public class TemplateGenUtil {
   private static void createChildBuilders(INodeBuilder parentNodeBuilder) {
     SNode parentSourceNode = parentNodeBuilder.getSourceNode();
     SNode parentTemplateNode = parentNodeBuilder.getTemplateNode();
-    Iterator<SNode> templateChildNodes = parentTemplateNode.getChildren().iterator();
-    while (templateChildNodes.hasNext()) {
-      SNode templateChildNode = templateChildNodes.next();
+    for (SNode templateChildNode : parentTemplateNode.getChildren()) {
       if (!isTemplateLanguageElement(templateChildNode)) {
         List<INodeBuilder> childNodeBuilders = createNodeBuildersForTemplateNode(parentSourceNode, templateChildNode, null, parentNodeBuilder.getGenerator());
         for (INodeBuilder childNodeBuilder : childNodeBuilders) {

@@ -116,7 +116,7 @@ public class ReferencePersister {
 
   public void createReferenceInModel(SModel model) {
     SReference reference = createReferenceInModelDoNotAddToSourceNode(model);
-    if (reference != null) this.getSourceNode().addSemanticReference(reference);
+    if (reference != null) this.getSourceNode().addSReference(reference);
   }
   //--
 
@@ -158,8 +158,7 @@ public class ReferencePersister {
       if (!useUIDs) {
         SModel.ImportElement importElement = node.getModel().getImportElement(targetModelUID);
         if (importElement != null) {
-          int importIndex = -1;
-          importIndex = importElement.getReferenceID();
+          int importIndex = importElement.getReferenceID();
           targetModelInfo = importIndex + ".";
         } else {
           LOG.error("Couldn't save reference \"" + reference.getRole() + "\" in " + node.getDebugText() +

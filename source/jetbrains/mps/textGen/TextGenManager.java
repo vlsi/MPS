@@ -57,8 +57,7 @@ public class TextGenManager {
 
       try {
         Class textgenClass = Class.forName(textgenClassname, true, ClassLoaderManager.getInstance().getClassLoader());
-        SNodeTextGen textGenerator = (SNodeTextGen) textgenClass.newInstance();
-        return textGenerator;
+        return (SNodeTextGen) textgenClass.newInstance();
       } catch (ClassNotFoundException e) {
         //this is ok
       } catch (InstantiationException e) {

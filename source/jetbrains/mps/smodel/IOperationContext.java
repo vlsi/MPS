@@ -3,7 +3,6 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.IModule;
 
-import java.util.List;
 import java.awt.*;
 
 /**

@@ -15,6 +15,8 @@ import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.*;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * User: Sergey Dmitriev
  * Date: Apr 11, 2005
@@ -45,7 +47,7 @@ public class MPSModuleRepository {
     // otherwise this listener will be collected very quickly
     // (myListeners in CommandProcessor is a WeakSet)
     myListenerToRemoveUnusedModules = new CommandAdapter() {
-      public void beforeCommandFinished(CommandEvent event) {
+      public void beforeCommandFinished(@NotNull CommandEvent event) {
         removeUnusedModules();
         SModelRepository.getInstance().removeUnusedDescriptors();
       }

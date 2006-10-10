@@ -119,8 +119,7 @@ public class TypeChecker {
 
   private static SNode expandType(SNode node, SModel typesModel) {
     SNode representator = EquationManager.getInstance().getRepresentator(node);
-    SNode newNode = expandNode(representator, representator, 0, new HashSet<RuntimeTypeVariable>(), typesModel);
-    return newNode;
+    return expandNode(representator, representator, 0, new HashSet<RuntimeTypeVariable>(), typesModel);
   }
 
   private static SNode expandNode(SNode node, SNode representator, int depth, Set<RuntimeTypeVariable> variablesMet, SModel typesModel) {

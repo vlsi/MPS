@@ -34,7 +34,7 @@ public class SModel implements Iterable<SNode> {
   Throwable myStackTrace;
 
   private boolean myDisposed;
-  private boolean isLoading;
+  private boolean myLoading;
 
   private int myMaxImportIndex;
   private List<String> myLanguages = new ArrayList<String>();
@@ -152,13 +152,13 @@ public class SModel implements Iterable<SNode> {
   }
 
   public boolean setLoading(boolean loading) {
-    boolean wasLoading = isLoading;
-    isLoading = loading;
+    boolean wasLoading = myLoading;
+    myLoading = loading;
     return wasLoading;
   }
 
   public boolean isLoading() {
-    return isLoading;
+    return myLoading;
   }
 
   public
@@ -186,7 +186,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   private boolean canFireEvent() {
-    return !isLoading /*&& !UndoManager.instance().isUndoOrRedoInProgress() */;
+    return !myLoading /*&& !UndoManager.instance().isUndoOrRedoInProgress() */;
   }
 
   void fireLanguageAddedEvent(String languageNamespace) {

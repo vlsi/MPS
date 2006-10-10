@@ -69,8 +69,7 @@ public class CopyPasteUtil {
     }
     for (SReference ref : allReferences) {
       if (ref.isExternal()) {
-        SReference extRef = ref;
-          SModelUID targetModelUID = extRef.getTargetModelUID();
+        SModelUID targetModelUID = ref.getTargetModelUID();
           necessaryImports.add(targetModelUID);
       }
     }
@@ -164,7 +163,7 @@ public class CopyPasteUtil {
       SNode newTargetNode = sourceNodesToNewNodes.get(oldTargetNode);
 
       if (newTargetNode != null) {//if our reference points inside our node's subtree
-        newSourceNode.addSemanticReference(SReference.newInstance(sourceReference.getRole(), newSourceNode, newTargetNode));
+        newSourceNode.addSReference(SReference.newInstance(sourceReference.getRole(), newSourceNode, newTargetNode));
       } else {//otherwise it points out of our node's subtree
         SReference newReference;
         if (!sourceReference.isExternal()) {
@@ -173,7 +172,7 @@ public class CopyPasteUtil {
         }  else  {
           newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, sourceReference);
         }
-        newSourceNode.addSemanticReference(newReference);
+        newSourceNode.addSReference(newReference);
       }
     }
   }
@@ -187,7 +186,7 @@ public class CopyPasteUtil {
       SNode oldTargetNode = sourceReference.getTargetNode();
       SNode newTargetNode = sourceNodesToNewNodes.get(oldTargetNode);
       if (newTargetNode != null) {//if our reference points inside our node's subtree
-        newSourceNode.addSemanticReference(SReference.newInstance(sourceReference.getRole(), newSourceNode, newTargetNode));
+        newSourceNode.addSReference(SReference.newInstance(sourceReference.getRole(), newSourceNode, newTargetNode));
       } else {//otherwise it points out of our node's subtree
         //internal resolve info has a higher priority than target node id here
         SReference newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, sourceReference, true);
@@ -195,7 +194,7 @@ public class CopyPasteUtil {
         if (newReference.getResolveInfo() != null) {
           referencesRequireResolve.add(newReference);
         }
-        newSourceNode.addSemanticReference(newReference);
+        newSourceNode.addSReference(newReference);
       }
 
     }

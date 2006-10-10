@@ -35,7 +35,6 @@ public class ColorAndGraphicsUtil {
 
   public static BasicStroke dashedStroke() {
     float[] dash = new float[]{3.0f};
-    BasicStroke stroke = new BasicStroke(1.0f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER, 1.0f, dash, 0.0f);
-    return stroke;
+    return new BasicStroke(1.0f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER, 1.0f, dash, 0.0f);
   }
 }
