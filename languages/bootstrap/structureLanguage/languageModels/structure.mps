@@ -11,6 +11,10 @@
       <property name="name" value="rootable" />
       <link role="dataType" targetNodeId="1.1082983657063" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1160488491229">
+      <property name="name" value="iconPath" />
+      <link role="dataType" targetNodeId="1.1082983041843" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1071489389519">
       <property name="sourceCardinality" value="0..1" />
       <property name="targetCardinality" value="0..n" />

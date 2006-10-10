@@ -3,7 +3,7 @@
   <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
-  <maxImportIndex value="8" />
+  <maxImportIndex value="9" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <import index="2" modelUID="jetbrains.mps.core.structure" />
   <import index="4" modelUID="jetbrains.mps.nodeEditor@java_stub" />
@@ -452,6 +452,23 @@
           <property name="textBgColorSelected" value="cyan" />
           <link role="relationDeclaration" targetNodeId="2.1078489098626" />
         </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Image" id="1160488724770">
+          <property name="imageQueryId" value="ConceptIcon" />
+          <property name="drawBorder" value="false" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1160488687203">
+        <property name="drawBorder" value="false" />
+        <property name="selectable" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1160488786367">
+          <property name="text" value="icon" />
+          <property name="drawBorder" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1160488803681">
+          <property name="drawBorder" value="false" />
+          <property name="noTargetText" value="&lt;no icon&gt;" />
+          <link role="relationDeclaration" targetNodeId="1.1160488491229" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1105741360137">
         <property name="drawBorder" value="false" />
@@ -536,7 +553,7 @@
             <property name="drawBorder" value="false" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1105726767734">
-            <property name="drawBorder" value="false" />
+            <property name="drawBorder" value="true" />
             <property name="vertical" value="true" />
             <property name="selectable" value="false" />
             <property name="gridLayout" value="true" />
