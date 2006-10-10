@@ -63,19 +63,15 @@ public class IconManager {
       try {
         Class icons = Class.forName(iconsClass, true, ClassLoaderManager.getInstance().getClassLoader());
         try {
-          return (Icon) icons.getMethod("getIconFor" + className, SNode.class).invoke(null, node);
-        } catch (NoSuchMethodException e) {
-          try {
-            Icon icon = (Icon) icons.getMethod("getIconFor" + className).invoke(null);
-            if (icon != null) {
-              ourIcons.put(cls, icon);
-              return icon;
-            }
-          } catch(NoSuchMethodException ex) {
-            //this is ok
-          } catch (Exception ex) {
-            e.printStackTrace();
+          Icon icon = (Icon) icons.getMethod("getIconFor" + className).invoke(null);
+          if (icon != null) {
+            ourIcons.put(cls, icon);
+            return icon;
           }
+        } catch(NoSuchMethodException ex) {
+          //this is ok
+        } catch (Exception ex) {
+          ex.printStackTrace();
         }
       } catch (ClassNotFoundException e) {
         //this is ok
@@ -146,32 +142,32 @@ public class IconManager {
     }
 
     return MPSAction.EMPTY_ICON;
-        
+
   }
 
   public static Icon getIconFor(SModelDescriptor modelDescriptor) {
     Language.LanguageAspectStatus languageAspectStatus = Language.getLanguageAspectStatus(modelDescriptor);
-        if (languageAspectStatus.isLanguageAspect()) {
-          if (languageAspectStatus.isEditor()) {
-            return Icons.EDITOR_MODEL_ICON;
-          } else if (languageAspectStatus.isStructure()) {
-            return Icons.STRUCTURE_MODEL_ICON;
-          } else if (languageAspectStatus.isActions()) {
-            return Icons.ACTIONS_MODEL_ICON;
-          } else if (languageAspectStatus.isTypesystem()) {
-            return Icons.TYPESYSTEM_MODEL_ICON;
-          } else if (languageAspectStatus.isHelginsTypesystem()) {
-            return Icons.TYPESYSTEM_MODEL_ICON;
-          } else if (languageAspectStatus.isConstraintsModel()) {
-            return Icons.CONSTRAINTS_MODEL_ICON;
-          }
-        } else if (modelDescriptor.getStereotype() != null &&
-                modelDescriptor.getStereotype().equals(SModelStereotype.TEMPLATES)) {
-          return Icons.TEMPLATES_MODEL_ICON;
-        } else if (languageAspectStatus.isAccessoryModel()) {
-          return Icons.ACCESSORY_MODEL_ICON;
-        }
-        return Icons.MODEL_ICON;  
+    if (languageAspectStatus.isLanguageAspect()) {
+      if (languageAspectStatus.isEditor()) {
+        return Icons.EDITOR_MODEL_ICON;
+      } else if (languageAspectStatus.isStructure()) {
+        return Icons.STRUCTURE_MODEL_ICON;
+      } else if (languageAspectStatus.isActions()) {
+        return Icons.ACTIONS_MODEL_ICON;
+      } else if (languageAspectStatus.isTypesystem()) {
+        return Icons.TYPESYSTEM_MODEL_ICON;
+      } else if (languageAspectStatus.isHelginsTypesystem()) {
+        return Icons.TYPESYSTEM_MODEL_ICON;
+      } else if (languageAspectStatus.isConstraintsModel()) {
+        return Icons.CONSTRAINTS_MODEL_ICON;
+      }
+    } else if (modelDescriptor.getStereotype() != null &&
+            modelDescriptor.getStereotype().equals(SModelStereotype.TEMPLATES)) {
+      return Icons.TEMPLATES_MODEL_ICON;
+    } else if (languageAspectStatus.isAccessoryModel()) {
+      return Icons.ACCESSORY_MODEL_ICON;
+    }
+    return Icons.MODEL_ICON;
   }
 
 }
