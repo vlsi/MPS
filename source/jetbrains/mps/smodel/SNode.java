@@ -1080,11 +1080,11 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     myId = id;
   }
 
-  @NotNull
-  public String getPath() {
-    if (myParent == null) return getId();
-    return myParent.getPath() + "/" + getId();
-  }
+//  @NotNull
+//  public String getPath() {
+//    if (myParent == null) return getId();
+//    return myParent.getPath() + "/" + getId();
+//  }
 
   @NotNull
   public String getConceptName() {

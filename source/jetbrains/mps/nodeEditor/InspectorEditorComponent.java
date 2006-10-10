@@ -20,6 +20,8 @@ import javax.swing.*;
 import javax.swing.event.ChangeListener;
 import java.util.List;
 
+import org.jetbrains.annotations.NotNull;
+
 public class InspectorEditorComponent extends AbstractEditorComponent implements IEditor {
 
   public InspectorEditorComponent() {
@@ -38,10 +40,10 @@ public class InspectorEditorComponent extends AbstractEditorComponent implements
     }
   }
 
-  public void addChangeListener(ChangeListener listener) {
+  public void addChangeListener(@NotNull ChangeListener listener) {
   }
 
-  public void removeChangeListener(ChangeListener listener) {
+  public void removeChangeListener(@NotNull ChangeListener listener) {
   }
 
   public void editNode(SNode semanticNode, IOperationContext operationContext) {

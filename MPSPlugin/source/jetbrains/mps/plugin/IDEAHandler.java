@@ -24,6 +24,8 @@ import java.rmi.server.UnicastRemoteObject;
 import java.rmi.RemoteException;
 import java.util.*;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * @author Kostik
  */
@@ -41,6 +43,7 @@ public class IDEAHandler extends UnicastRemoteObject implements ApplicationCompo
     myProjectManager = projectManager;
   }
 
+  @NotNull
   public String getComponentName() {
     return "Project Creator";
   }

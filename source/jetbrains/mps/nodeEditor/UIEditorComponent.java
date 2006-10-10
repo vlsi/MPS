@@ -82,6 +82,7 @@ public class UIEditorComponent extends AbstractEditorComponent implements IEdito
     return myInspector;
   }
 
+  @NotNull
   public IEditor openEditor(SNode semanticNode, IOperationContext operationContext) {
     return new MyEditor();
   }

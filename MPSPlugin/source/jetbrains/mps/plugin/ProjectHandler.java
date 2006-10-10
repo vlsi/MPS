@@ -45,13 +45,15 @@ import java.util.Arrays;
 import java.rmi.server.UnicastRemoteObject;
 import java.rmi.RemoteException;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * @author Kostik
  */
 public class ProjectHandler extends UnicastRemoteObject implements ProjectComponent, IProjectHandler {
   public static final int REGISTRY_PORT = 2390;
 
-  public final String MPS_SUPPORT_HANDLER_NAME = "MPSSupport";
+  public static final String MPS_SUPPORT_HANDLER_NAME = "MPSSupport";
 
   private Project myProject;
   private List<IMPSIDEHandler> myIDEHandlers = new ArrayList<IMPSIDEHandler>();
@@ -67,6 +69,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
   public void projectClosed() {
   }
 
+  @NotNull
   public String getComponentName() {
     return "MPSSupport Handler";
   }
