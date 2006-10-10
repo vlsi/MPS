@@ -13,10 +13,8 @@ public class PluginUtil {
   public static PsiElement getCurrentElement(AnActionEvent e) {
     Editor editor = (Editor) e.getDataContext().getData(DataConstants.EDITOR);
     Project project = (Project) e.getDataContext().getData(DataConstants.PROJECT);
-    int offset = editor.getCaretModel().getOffset();
     PsiFile file = PsiDocumentManager.getInstance(project).getCachedPsiFile(editor.getDocument());
-    PsiElement element = file.findElementAt(offset);
-    return element;
+    return file.findElementAt(editor.getCaretModel().getOffset());
   }
 
   public static<PE extends PsiElement> PE getElement(PsiElement current, Class<PE> elementClass) {

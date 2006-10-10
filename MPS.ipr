@@ -90,7 +90,7 @@
     <option name="myForwardDirection" value="false" />
   </component>
   <component name="DependencyValidationManager">
-    <scope name="Generated Files" pattern="file:*/source_gen/**/*.*" />
+    <scope name="Generated Files" pattern="file:*source_gen/**/*.java" />
     <scope name="Query Methods" pattern="file:*/Queries.java" />
   </component>
   <component name="EclipseCompilerSettings">

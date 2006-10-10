@@ -5,9 +5,9 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.application.Result;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.command.WriteCommandAction;
+import com.intellij.openapi.compiler.CompileContext;
 import com.intellij.openapi.compiler.CompileStatusNotification;
 import com.intellij.openapi.compiler.CompilerManager;
-import com.intellij.openapi.compiler.CompileContext;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
@@ -26,26 +26,22 @@ import com.intellij.openapi.wm.WindowManager;
 import com.intellij.psi.*;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.search.PsiSearchHelper;
-import com.intellij.util.IncorrectOperationException;
-import com.intellij.refactoring.RefactoringFactory;
 import com.intellij.refactoring.MoveClassesOrPackagesRefactoring;
+import com.intellij.refactoring.RefactoringFactory;
 import com.intellij.refactoring.RenameRefactoring;
-import com.intellij.usageView.UsageInfo;
+import com.intellij.util.IncorrectOperationException;
+import org.jetbrains.annotations.NotNull;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+import java.awt.Frame;
 import java.io.File;
 import java.io.IOException;
-import java.io.FileOutputStream;
-import java.io.PrintStream;
 import java.lang.reflect.InvocationTargetException;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Arrays;
-import java.rmi.server.UnicastRemoteObject;
-import java.rmi.RemoteException;
-
-import org.jetbrains.annotations.NotNull;
 
 /**
  * @author Kostik
@@ -501,7 +497,6 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
   public void addLanguageRoot(String path) {
     executeWriteAction(new Runnable() {
       public void run() {
-        ModuleManager manager = ModuleManager.getInstance(myProject);
       }
     });
   }
@@ -511,7 +506,6 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
       public void run() {
         final PsiManager psiManager = PsiManager.getInstance(myProject);
         VirtualFile sourceDir = null;
-        ModuleManager manager = ModuleManager.getInstance(myProject);
 
         Module module = findModule(path);
         if (module == null) {
@@ -523,8 +517,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
 
 
         VirtualFile[] sourceRoots = rootManager.getSourceRoots();
-        for (int i = 0; i < sourceRoots.length; i++) {
-          VirtualFile file = sourceRoots[i];
+        for (VirtualFile file : sourceRoots) {
           if (file.getName().equals("source")) sourceDir = file;
           if (file.getName().equals("src")) sourceDir = file;
         }
@@ -556,8 +549,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     PsiDirectory current = dir;
     try {
       String[] elements = namespace.split("\\.");
-      for (int i = 0; i < elements.length; i++) {
-        String el = elements[i];
+      for (String el : elements) {
         PsiDirectory next = current.findSubdirectory(el);
         if (next == null) {
           next = current.createSubdirectory(el);
