@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -23,7 +24,7 @@ public class InternalRefactoringAction extends MPSAction {
     super("... refactor static members ...");
   }
 
-  public void execute(ActionContext context) {
+  public void execute(@NotNull ActionContext context) {
     System.out.println(" -- load models -- ");
     List<SModel> models = loadAllModels();
 

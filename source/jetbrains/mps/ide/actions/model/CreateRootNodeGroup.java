@@ -12,6 +12,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import java.util.List;
@@ -34,7 +35,7 @@ public class CreateRootNodeGroup extends ActionGroup {
     List<Language> modelLanguages = modelDescriptor.getSModel().getLanguages(operationContext.getScope());
     if (modelLanguages.size() == 0) {
       add(new MPSAction("<NO LANGUAGES>") {
-        public void execute(ActionContext c) {
+        public void execute(@NotNull ActionContext c) {
         }
       });
     }
@@ -54,7 +55,7 @@ public class CreateRootNodeGroup extends ActionGroup {
             langRootsGroup.add(newRootNodeAction(conceptDeclaration, nodeClass, modelDescriptor.getSModel(), ide));
           } catch (ClassNotFoundException e) {
             langRootsGroup.add(new MPSAction("class not found: " + nodeClassName) {
-              public void execute(ActionContext c) {
+              public void execute(@NotNull ActionContext c) {
               }
             });
           }
@@ -77,7 +78,7 @@ public class CreateRootNodeGroup extends ActionGroup {
         return false;
       }
 
-      public void execute(ActionContext context) {
+      public void execute(@NotNull ActionContext context) {
         final SNode[] node = new SNode[1];
 
         CommandProcessor.instance().executeCommand(new Runnable() {

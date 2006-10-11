@@ -18,6 +18,7 @@ import jetbrains.mps.projectLanguage.Model;
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import javax.swing.JOptionPane;
@@ -32,6 +33,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     super("Go To Concept Editor Declaration");
   }
 
+  @NotNull
   public String getKeyStroke() {
     return "control shift E";
   }
@@ -40,7 +42,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     return jetbrains.mps.bootstrap.editorLanguage.icons.Icons.EDITOR_ICON;
   }
 
-  public void update(ActionContext context) {
+  public void update(@NotNull ActionContext context) {
     super.update(context);
     setVisible(context.get(SNode.class) instanceof ConceptDeclaration);
   }
@@ -49,7 +51,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     return false;
   }
 
-  public void execute(ActionContext context) {
+  public void execute(@NotNull ActionContext context) {
     final SNode node = context.get(SNode.class);
     if (!(node instanceof ConceptDeclaration)) return;
 
