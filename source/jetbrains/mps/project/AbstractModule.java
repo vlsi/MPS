@@ -41,8 +41,8 @@ public abstract class AbstractModule implements IModule {
   }
 
   @Nullable
-  public Language getLanguage(String languageNamespace, Set<IModule> modulesToSkip) {
-    if (languageNamespace == null) return null;
+  public Language getLanguage(@NotNull String languageNamespace, @NotNull Set<IModule> modulesToSkip) {
+//    if (languageNamespace == null) return null;
     Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, BootstrapLanguages.getInstance());
     if (language != null) return language;
     Set<IModule> processedModules = new HashSet<IModule>(modulesToSkip);
