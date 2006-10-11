@@ -104,7 +104,6 @@ public abstract class PropertySupport {
   }
 
 
-
   private static class DefaultPropertySupport extends PropertySupport {
     public boolean canSetValue(String value) {
       return true;
@@ -120,7 +119,7 @@ public abstract class PropertySupport {
         Integer.parseInt(value);
         return true;
       } catch (NumberFormatException e) {
-        e.printStackTrace();
+        // it is OK
       }
       return false;
     }
