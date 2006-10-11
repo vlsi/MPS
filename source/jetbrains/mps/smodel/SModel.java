@@ -14,6 +14,7 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.ForDebug;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
@@ -29,9 +30,9 @@ public class SModel implements Iterable<SNode> {
 
   private List<SNode> myRoots = new ArrayList<SNode>();
   private SModelUID myUID = new SModelUID("unnamed", "");
-  private
+
   @ForDebug
-  Throwable myStackTrace;
+  private Throwable myStackTrace;
 
   private boolean myDisposed;
   private boolean myLoading;
@@ -47,26 +48,27 @@ public class SModel implements Iterable<SNode> {
 
   private Set<SModelUID> myDescriptorNotFoundReportedModelUIDs = new HashSet<SModelUID>();
 
-  public SModel(SModelUID modelUID) {
-    this();
+  public SModel(@NotNull SModelUID modelUID) {
+    addSModelListener(myEventTranslator);
+    CommandProcessor.instance().addCommandListener(myEventTranslator);
     myUID = modelUID;
   }
 
   public SModel() {
-    addSModelListener(myEventTranslator);
-    CommandProcessor.instance().addCommandListener(myEventTranslator);
+    this(SModelUID.fromString("test.model"));
   }
 
+  @NotNull
   public SModelUID getUID() {
     return myUID;
   }
 
-
+  @NotNull
   public String getShortName() {
     return myUID.getShortName();
   }
 
-  public void runLoadingAction(Runnable runnable) {
+  public void runLoadingAction(@NotNull Runnable runnable) {
     boolean wasLoading = isLoading();
     if (!wasLoading) setLoading(true);
     try {
@@ -76,27 +78,33 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
+  @NotNull
   public Iterator<SNode> iterator() {
     return roots();
   }
 
+  @NotNull
   public String getStereotype() {
     return myUID.getStereotype();
   }
 
+  @NotNull
   public String getLongName() {
     return myUID.getLongName();
   }
 
+  @NotNull
   public Iterator<SNode> roots() {
     return myRoots.iterator();
   }
 
+  @NotNull
   public List<SNode> getRoots() {
     return new ArrayList<SNode>(myRoots);
   }
 
-  public List<SNode> getRoots(Condition<SNode> condition) {
+  @NotNull
+  public List<SNode> getRoots(@NotNull Condition<SNode> condition) {
     List<SNode> list = new LinkedList<SNode>();
     for (SNode node : myRoots) {
       if (condition.met(node)) list.add(node);
@@ -104,17 +112,20 @@ public class SModel implements Iterable<SNode> {
     return list;
   }
 
-  public <N extends SNode> List<N> getRoots(Class<N> cls) {
+  @NotNull
+  public <N extends SNode> List<N> getRoots(@NotNull Class<N> cls) {
     return CollectionUtil.filter(cls, getRoots());
   }
 
-  public void addRoot(SNode node) {
-    if (node == null) return;
+  public void addRoot(@NotNull SNode node) {
     if (myRoots.contains(node)) return;
     if (node.getModel() != this && node.getModel().isRoot(node)) {
       node.getModel().removeRoot(node);
-    } else if (node.getParent() != null) {
-      node.getParent().removeChild(node);
+    } else {
+      SNode parent = node.getParent();
+      if (parent != null) {
+        parent.removeChild(node);
+      }
     }
 
     myRoots.add(node);
@@ -123,7 +134,7 @@ public class SModel implements Iterable<SNode> {
     fireRootAddedEvent(node);
   }
 
-  public void removeRoot(SNode node) {
+  public void removeRoot(@NotNull SNode node) {
     if (myRoots.contains(node)) {
       String id = node.getId();
       myRoots.remove(node);
@@ -133,21 +144,20 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  public void addSModelListener(SModelListener listener) {
-    LOG.assertLog(listener != null, "Listener must be not null");
+  public void addSModelListener(@NotNull SModelListener listener) {
     LOG.assertLog(!myListeners.contains(listener), "Duplicated listener");
     myListeners.add(listener);
   }
 
-  public boolean hasSModelListener(SModelListener listener) {
+  public boolean hasSModelListener(@NotNull SModelListener listener) {
     return myListeners.contains(listener);
   }
 
-  public boolean hasSModelCommandListener(SModelCommandListener listener) {
+  public boolean hasSModelCommandListener(@NotNull SModelCommandListener listener) {
     return myCommandListeners.contains(listener);
   }
 
-  public void removeSModelListener(SModelListener listener) {
+  public void removeSModelListener(@NotNull SModelListener listener) {
     myListeners.remove(listener);
   }
 
@@ -161,27 +171,21 @@ public class SModel implements Iterable<SNode> {
     return myLoading;
   }
 
-  public
   @ForDebug
-  Throwable getCreationStackTrace() {
+  @NotNull
+  public Throwable getCreationStackTrace() {
     return myStackTrace;
   }
 
-  public
   @ForDebug
-  void fillInStackTrace(Throwable t) {
+  public void fillInStackTrace(Throwable t) {
     myStackTrace = t;
   }
 
-
+  @NotNull
   public SModelDescriptor getModelDescriptor() {
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(this);
-    if (modelDescriptor == null) {
-      LOG.warning("model " + getUID() + " is not registered in model repository. Failed to found model's descriptor");
-      if (myStackTrace != null) {
-        LOG.warning("descriptor creation stack trace is: ", myStackTrace);
-      }
-    }
+    assert modelDescriptor != null : "Can't find model descriptor " + getUID();
     return modelDescriptor;
   }
 
@@ -189,49 +193,54 @@ public class SModel implements Iterable<SNode> {
     return !myLoading /*&& !UndoManager.instance().isUndoOrRedoInProgress() */;
   }
 
-  void fireLanguageAddedEvent(String languageNamespace) {
+  void fireLanguageAddedEvent(@NotNull String languageNamespace) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
       sModelListener.languageAdded(new SModeLanguageEvent(this, languageNamespace));
     }
   }
 
-  void fireLanguageRemovedEvent(String languageNamespace) {
+  void fireLanguageRemovedEvent(@NotNull String languageNamespace) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
       sModelListener.languageRemoved(new SModeLanguageEvent(this, languageNamespace));
     }
   }
 
-  void fireImportAddedEvent(SModelUID modelUID) {
+  void fireImportAddedEvent(@NotNull SModelUID modelUID) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
       sModelListener.importAdded(new SModeImportEvent(this, modelUID));
     }
   }
 
-  void fireImportRemovedEvent(SModelUID modelUID) {
+  void fireImportRemovedEvent(@NotNull SModelUID modelUID) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
       sModelListener.importAdded(new SModeImportEvent(this, modelUID));
     }
   }
 
-  void fireRootAddedEvent(SNode root) {
+  void fireRootAddedEvent(@NotNull SNode root) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
       sModelListener.rootAdded(new SModelRootEvent(this, root, true));
     }
   }
 
-  void fireRootRemovedEvent(SNode root) {
+  void fireRootRemovedEvent(@NotNull SNode root) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
       sModelListener.rootRemoved(new SModelRootEvent(this, root, false));
     }
   }
 
-  void firePropertyChangedEvent(SNode node, String property, String oldValue, String newValue, boolean addedOrRemoved, boolean isRemoved) {
+  void firePropertyChangedEvent(@NotNull SNode node,
+                                @NotNull String property,
+                                @Nullable String oldValue,
+                                @Nullable String newValue,
+                                boolean addedOrRemoved,
+                                boolean isRemoved) {
     if (!canFireEvent()) return;
     if (addedOrRemoved) {
       for (SModelListener sModelListener : copyListeners()) {
@@ -244,40 +253,47 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  void fireChildAddedEvent(SNode parent, String role, SNode child, int childIndex) {
+  void fireChildAddedEvent(@NotNull SNode parent,
+                           @NotNull String role,
+                           @NotNull SNode child,
+                           int childIndex) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
       sModelListener.childAdded(new SModelChildEvent(this, true, parent, role, childIndex, child));
     }
   }
 
-  void fireChildRemovedEvent(SNode parent, String role, SNode child, int childIndex) {
+  void fireChildRemovedEvent(@NotNull SNode parent,
+                             @NotNull String role,
+                             @NotNull SNode child,
+                             int childIndex) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
       sModelListener.childRemoved(new SModelChildEvent(this, false, parent, role, childIndex, child));
     }
   }
 
-  void fireReferenceAddedEvent(SReference reference) {
+  void fireReferenceAddedEvent(@NotNull SReference reference) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
       sModelListener.referenceAdded(new SModelReferenceEvent(this, reference, true));
     }
   }
 
-  void fireReferenceRemovedEvent(SReference reference) {
+  void fireReferenceRemovedEvent(@NotNull SReference reference) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
       sModelListener.referenceRemoved(new SModelReferenceEvent(this, reference, false));
     }
   }
 
-  private void fireSModelChangedInCommandEvent(List<SModelEvent> events) {
+  private void fireSModelChangedInCommandEvent(@NotNull List<SModelEvent> events) {
     for (SModelCommandListener l : copyCommandListeners()) {
       l.modelChangedInCommand(events);
     }
   }
 
+  @NotNull
   private List<SModelListener> copyListeners() {
     List<SModelListener> result = new ArrayList<SModelListener>();
     for (SModelListener l : myListeners) {
@@ -286,80 +302,60 @@ public class SModel implements Iterable<SNode> {
     return result;
   }
 
+  @NotNull
   private List<SModelCommandListener> copyCommandListeners() {
     return new LinkedList<SModelCommandListener>(myCommandListeners);
   }
 
-  public void addSModelCommandListener(SModelCommandListener listener) {
+  public void addSModelCommandListener(@NotNull SModelCommandListener listener) {
     LOG.assertLog(!myCommandListeners.contains(listener), "Duplicated listener");
     myCommandListeners.add(listener);
   }
 
-  public void removeSModelCommandListener(SModelCommandListener listener) {
+  public void removeSModelCommandListener(@NotNull SModelCommandListener listener) {
     myCommandListeners.remove(listener);
   }
 
+  @NotNull
   List<SModelListener> getListeners() {
     return new ArrayList<SModelListener>(myListeners);
   }
 
+  @NotNull
   List<SModelCommandListener> getCommandListeners() {
     return new ArrayList<SModelCommandListener>(myCommandListeners);
   }
 
-  public boolean isRoot(SNode node) {
+  public boolean isRoot(@Nullable SNode node) {
     return myRoots.contains(node);
   }
 
-  public boolean hasLanguage(String languageNamespace) {
+  public boolean hasLanguage(@NotNull String languageNamespace) {
     for (String languageNamespase : myLanguages) {
       if (languageNamespase.equals(languageNamespace)) return true;
     }
     return false;
   }
 
-  public void addLanguage(Language language) {
-    assert language != null;
+  public void addLanguage(@NotNull Language language) {
     addLanguage(language.getModuleUID());
   }
 
-  public void addLanguage(String languageNamespace) {
-    assert languageNamespace != null;
+  public void addLanguage(@NotNull String languageNamespace) {
     if (!myLanguages.contains(languageNamespace)) {
       myLanguages.add(languageNamespace);
       fireLanguageAddedEvent(languageNamespace);
     }
   }
 
-//  public SNode getNode(String path) {
-//    String[] pathElements = path.split("/");
-//    String first = pathElements[0];
-//    SNode current = null;
-//    for (SNode root : myRoots) {
-//      if (root.getId().equals(first)) {
-//        current = root;
-//        break;
-//      }
-//    }
-//    if (current == null) return null;
-//    for (int i = 1; i < pathElements.length; i++) {
-//      for (SNode node : current.getChildren()) {
-//        if (node.getId().equals(pathElements[i])) {
-//          current = node;
-//          break;
-//        }
-//      }
-//      if (current == null) return null;
-//    }
-//    return current;
-//  }
-
-  public void deleteLanguage(String languageNamespace) {
+  public void deleteLanguage(@NotNull String languageNamespace) {
     myLanguages.remove(languageNamespace);
     fireLanguageRemovedEvent(languageNamespace);
   }
 
-  public List<Language> getLanguages(IScope scope) { //don't remove
+  @NotNull
+  public List<Language> getLanguages(@NotNull IScope scope) {
+//don't remove
 //    Set<Language> result = new HashSet<Language>(getUserDefinedLanguages(scope));
 //    Set<Language> additionalLanguages = new HashSet<Language>();
 //    Set<Language> visibleLanguages = new HashSet<Language>(scope.getVisibleLanguages());
@@ -372,11 +368,13 @@ public class SModel implements Iterable<SNode> {
     return getUserDefinedLanguages(scope);
   }
 
+  @NotNull
   public List<String> getLanguageNamespaces() {
     return new ArrayList<String>(myLanguages);
   }
 
-  public List<Language> getUserDefinedLanguages(IScope scope) {
+  @NotNull
+  public List<Language> getUserDefinedLanguages(@NotNull IScope scope) {
     ArrayList<Language> languages = new ArrayList<Language>();
     for (String languageNamespace : myLanguages) {
       Language language = scope.getLanguage(languageNamespace);
@@ -393,36 +391,29 @@ public class SModel implements Iterable<SNode> {
     return languages;
   }
 
-  public SNode getRootByName(String name) {
+  @Nullable
+  public SNode getRootByName(@NotNull String name) {
     for (SNode root : getRoots()) {
       if (name.equals(root.getName())) return root;
     }
     return null;
   }
 
+  @NotNull
   public List<String> getUserDefinedLanguageNamespaces() {
     return new ArrayList<String>(myLanguages);
   }
 
-//  public List<String> getVisibleLanguageNamespaces(IScope scope) {       //don't remove
-//    List<Language> languages = getLanguages(scope);
-//    List<String> result = new ArrayList<String>(languages.size());
-//    for (Language l : languages) {
-//      result.add(l.getModuleUID());
-//    }
-//    return result;
-//  }
 
-  public boolean hasImportedModel(SModelUID modelUID) {
+  public boolean hasImportedModel(@NotNull SModelUID modelUID) {
     return getImportElement(modelUID) != null;
   }
 
-  public void addImportedModel(SModelUID modelUID) {
+  public void addImportedModel(@NotNull SModelUID modelUID) {
     addImportElement(modelUID);
   }
 
-  /*package*/
-  void addImportElement(SModelUID modelUID) {
+  void addImportElement(@NotNull SModelUID modelUID) {
     ImportElement importElement = getImportElement(modelUID);
     if (importElement != null) return;
     importElement = new ImportElement(modelUID, ++myMaxImportIndex);
@@ -430,15 +421,14 @@ public class SModel implements Iterable<SNode> {
     fireImportAddedEvent(modelUID);
   }
 
-  /*package*/
-  void addImportElement(SModelUID modelUID, int referenceId) {
+  void addImportElement(@NotNull SModelUID modelUID, int referenceId) {
     ImportElement importElement = new ImportElement(modelUID, referenceId);
     myImports.add(importElement);
     fireImportAddedEvent(modelUID);
   }
 
-  /*package*/
-  ImportElement getImportElement(SModelUID modelUID) {
+  @Nullable
+  ImportElement getImportElement(@NotNull SModelUID modelUID) {
     for (ImportElement importElement : myImports) {
       if (importElement.getModelUID().equals(modelUID)) {
         return importElement;
@@ -448,7 +438,7 @@ public class SModel implements Iterable<SNode> {
   }
 
 
-  public void deleteImportedModel(SModelUID modelUID) {
+  public void deleteImportedModel(@NotNull SModelUID modelUID) {
     ImportElement importElement = getImportElement(modelUID);
     if (importElement != null) {
       myImports.remove(importElement);
@@ -456,7 +446,7 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  public void deleteImportedModel(SModel model) {
+  public void deleteImportedModel(@NotNull SModel model) {
     ImportElement importElement = getImportElement(model.getUID());
     if (importElement != null) {
       myImports.remove(importElement);
@@ -464,6 +454,7 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
+  @NotNull
   public List<SModelUID> getImportedModelUIDs() {
     List<SModelUID> uids = new LinkedList<SModelUID>();
     for (ImportElement importElement : myImports) {
@@ -472,7 +463,7 @@ public class SModel implements Iterable<SNode> {
     return Collections.unmodifiableList(uids);
   }
 
-  /*package*/
+  @Nullable
   SModelUID getImportedModelUID(int referenceID) {
     for (ImportElement importElement : myImports) {
       if (importElement.getReferenceID() == referenceID) {
@@ -482,7 +473,8 @@ public class SModel implements Iterable<SNode> {
     return null;
   }
 
-  public Iterator<SModelDescriptor> importedModels(IScope scope) {
+  @NotNull
+  public Iterator<SModelDescriptor> importedModels(@NotNull IScope scope) {
     List<SModelDescriptor> modelsList = new LinkedList<SModelDescriptor>();
     for (ImportElement importElement : myImports) {
       SModelUID modelUID = importElement.getModelUID();
@@ -499,11 +491,12 @@ public class SModel implements Iterable<SNode> {
     return modelsList.iterator();
   }
 
-  /*package*/ Iterator<ImportElement> importElements() {
+  @NotNull
+  Iterator<ImportElement> importElements() {
     return myImports.iterator();
   }
 
-  public boolean isImported(SModel model) {
+  public boolean isImported(@NotNull SModel model) {
     return getImportElement(model.getUID()) != null;
   }
 
@@ -515,33 +508,38 @@ public class SModel implements Iterable<SNode> {
     return myMaxImportIndex;
   }
 
+  @NotNull
   public String toString() {
-    if (getUID() == null) return "";
     return this.getUID().toString();
   }
 
-  public SNode getNodeById(String nodeId) {
+  @Nullable
+  public SNode getNodeById(@NotNull String nodeId) {
     return myIdToNodeMap.get(nodeId);
   }
 
-  public boolean containsNode(String id) {
+  public boolean containsNode(@NotNull String id) {
     return myIdToNodeMap.containsKey(id);
   }
 
-  public SNode getNodeByExtResolveInfo(String extResolveInfo) {
+  @Nullable
+  public SNode getNodeByExtResolveInfo(@NotNull String extResolveInfo) {
     if (!isExternallyResolvable()) return null;
     if (ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) return null;
     SNode node = myExternalResolveInfoToNodeMap.get(extResolveInfo);
     if (node != null) {
-      if (ExternalResolver.doesNodeMatchERI(extResolveInfo, node)) return node;
-      else
+      if (ExternalResolver.doesNodeMatchERI(extResolveInfo, node)) {
+        return node;
+      } else {
         return findNodeWithExtResolveInfo(extResolveInfo);
+      }
     } else {
       return findNodeWithExtResolveInfo(extResolveInfo);
     }
   }
 
-  private SNode findNodeWithExtResolveInfo(String extResolveInfo) {
+  @Nullable
+  private SNode findNodeWithExtResolveInfo(@NotNull String extResolveInfo) {
     SNode targetNode = ExternalResolver.findTargetNode(this, extResolveInfo);
     if (targetNode != null) {
       myExternalResolveInfoToNodeMap.put(extResolveInfo, targetNode);
@@ -549,13 +547,13 @@ public class SModel implements Iterable<SNode> {
     return targetNode;
   }
 
-  public void loadCachedNodeExtResolveInfo(SNode node, String extResolveInfo) {
+  public void loadCachedNodeExtResolveInfo(@NotNull SNode node, @NotNull String extResolveInfo) {
     if (!ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
       myExternalResolveInfoToNodeMap.put(extResolveInfo, node);
     }
   }
 
-  public void setNodeExtResolveInfo(SNode node, String extResolveInfo) {
+  public void setNodeExtResolveInfo(@NotNull SNode node, @NotNull String extResolveInfo) {
     if (!isExternallyResolvable()) {
       return;
     }
@@ -571,10 +569,7 @@ public class SModel implements Iterable<SNode> {
   }
 
 
-  public void setNodeId(String id, SNode node) {
-    if (id == null) {
-      throw new IllegalArgumentException("try to set NULL id to node: " + node.getDebugText());
-    }
+  public void setNodeId(@NotNull String id, @NotNull SNode node) {
     SNode existingNode = myIdToNodeMap.get(id);
     if (existingNode != null && existingNode != node) {
       LOG.errorWithTrace("couldn't set id=" + id + " to node: " + node.getDebugText() + "\nnode with this id exists: " + existingNode.getDebugText());
@@ -583,12 +578,11 @@ public class SModel implements Iterable<SNode> {
     myIdToNodeMap.put(id, node);
   }
 
-  public void removeNodeId(String id) {
-    if (id != null) {
-      myIdToNodeMap.remove(id);
-    }
+  public void removeNodeId(@NotNull String id) {
+    myIdToNodeMap.remove(id);
   }
 
+  @NotNull
   public Collection<? extends SNode> getAllNodesWithIds() {
     Collection<SNode> nodes = myIdToNodeMap.values();
     return Collections.unmodifiableCollection(nodes);
@@ -596,14 +590,12 @@ public class SModel implements Iterable<SNode> {
 
   public boolean isExternallyResolvable() {
     SModelDescriptor modelDescriptor = getModelDescriptor();
-    if (modelDescriptor == null) return false;
     return modelDescriptor.isExternallyResolvable();
   }
 
   public boolean isNotEditable() {
     SModelDescriptor modelDescriptor = getModelDescriptor();
-    if (modelDescriptor == null) return false;
-    return getModelDescriptor().isNotEditable();
+    return modelDescriptor.isNotEditable();
   }
 
   public void clear() {

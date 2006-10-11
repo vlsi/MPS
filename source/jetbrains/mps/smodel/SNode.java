@@ -60,7 +60,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public void changeModel(SModel newModel) {
-
     LOG.assertLog(myParent == null || myParent.myModel == newModel, "CHANGE MODEL: parent must be NULL or must have the same model as your destination model");
 
     myModel.removeNodeId(myId);
@@ -677,6 +676,9 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     final SNode wasChild = myChildren.get(index);
     final String wasId = myChildren.get(index).getId();
     final String wasRole = wasChild.getRole_();
+
+    assert wasRole != null;
+
     myChildren.remove(wasChild);
     wasChild.myParent = null;
     wasChild.myRoleInParent = null;
