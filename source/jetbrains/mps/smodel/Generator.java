@@ -8,6 +8,7 @@ import jetbrains.mps.projectLanguage.ModuleDescriptor;
 import java.util.*;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * @author Kostik
@@ -57,22 +58,29 @@ public class Generator extends AbstractModule {
     return myGeneratorDescriptor.getGeneratorUID();
   }
 
+  @NotNull
   public static String generateGeneratorUID(Language sourceLanguage) {
     return sourceLanguage.getModuleUID() + "#" + SNode.generateUniqueId();
   }
 
+  @NotNull
   public Language getSourceLanguage() {
     return mySourceLanguage;
   }
 
+  @Nullable
   public Language getTargetLanguage() {
     jetbrains.mps.projectLanguage.Language targetLanguage = myGeneratorDescriptor.getTargetLanguage();
     if (targetLanguage != null) {
-      return getLanguage(targetLanguage.getName());
+      String targetLanguageName = targetLanguage.getName();
+      if (targetLanguageName != null) {
+        return getLanguage(targetLanguageName);
+      }
     }
     return null;
   }
 
+  @Nullable
   public String getTargetLanguageName() {
     jetbrains.mps.projectLanguage.Language targetLanguage = myGeneratorDescriptor.getTargetLanguage();
     if (targetLanguage != null) {
@@ -81,10 +89,12 @@ public class Generator extends AbstractModule {
     return null;
   }
 
+  @Nullable
   public String getGeneratorClass() {
     return myGeneratorDescriptor.getGeneratorClass();
   }
 
+  @NotNull
   public String toString() {
     StringBuffer sb = new StringBuffer(this.getClass().getName());
     sb.append('(').append(mySourceLanguage.getModuleUID()).append(')');
@@ -92,10 +102,12 @@ public class Generator extends AbstractModule {
     return sb.toString();
   }
 
+  @NotNull
   public GeneratorDescriptor getGeneratorDescriptor() {
     return myGeneratorDescriptor;
   }
 
+  @Nullable
   public Language getLanguage(@NotNull String languageNamespace) {
     if (mySourceLanguage.getModuleUID().equals(languageNamespace)) {
       return mySourceLanguage;
@@ -119,6 +131,7 @@ public class Generator extends AbstractModule {
     return result;
   }
 
+  @Nullable
   public String getGeneratorOutputPath() {
     return mySourceLanguage.getGeneratorOutputPath();
   }
