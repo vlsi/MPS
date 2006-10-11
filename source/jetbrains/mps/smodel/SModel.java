@@ -182,10 +182,9 @@ public class SModel implements Iterable<SNode> {
     myStackTrace = t;
   }
 
-  @NotNull
+  @Nullable
   public SModelDescriptor getModelDescriptor() {
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(this);
-    assert modelDescriptor != null : "Can't find model descriptor " + getUID();
     return modelDescriptor;
   }
 
