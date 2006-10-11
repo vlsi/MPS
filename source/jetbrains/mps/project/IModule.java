@@ -43,7 +43,7 @@ public interface IModule extends IScope, ModelOwner, MPSModuleOwner {
 
   @NotNull SModelDescriptor createModel(@NotNull SModelUID uid, @NotNull ModelRoot root);
 
-  @NotNull File getDescriptorFile();
+  @Nullable File getDescriptorFile();
 
   @NotNull ModuleDescriptor getModuleDescriptor();
 

@@ -300,7 +300,7 @@ public abstract class AbstractModule implements IModule {
     return new ArrayList<SModelDescriptor>(modelDescriptors);
   }
 
-  @NotNull
+  @Nullable
   public File getDescriptorFile() {
     return myDescriptorFile;
   }
