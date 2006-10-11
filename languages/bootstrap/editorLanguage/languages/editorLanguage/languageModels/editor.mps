@@ -4,7 +4,8 @@
   <language namespace="jetbrains.mps.core" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
-  <maxImportIndex value="17" />
+  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
+  <maxImportIndex value="18" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" />
   <import index="3" modelUID="jetbrains.mps.core.structure" />
   <import index="8" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
@@ -17,6 +18,7 @@
   <import index="15" modelUID="jetbrains.mps.bootstrap.editorLanguage@java_stub" />
   <import index="16" modelUID="jetbrains.mps.nodeEditor@java_stub" />
   <import index="17" modelUID="jetbrains.mps.smodel@java_stub" />
+  <import index="18" modelUID="java.util@java_stub" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1078153915535">
     <property name="name" value="ConceptEditorDeclaration_Editor" />
     <link role="conceptDeclaration" targetNodeId="2.1071666914219" />
@@ -6362,6 +6364,32 @@
         <property name="noTargetText" value="&lt;keycode&gt;" />
         <property name="textBgColorSelected" value="cyan" />
         <link role="relationDeclaration" targetNodeId="2.1136923970224" />
+        <node role="cellMenu" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_SetProperty" id="1160599304995">
+          <node role="valuesFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_SetProperty_GetValues" id="1160599304996">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1160599304997">
+              <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1160599507900">
+                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1160599507901">
+                  <property name="name" value="values" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListType" id="1160599507902">
+                    <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1160599512482">
+                      <link role="classifier" extResolveInfo="14.[Classifier]String" />
+                    </node>
+                  </node>
+                  <node role="initializer" type="jetbrains.mps.baseLanguage.NewExpression" id="1160599536236">
+                    <link role="baseMethodDeclaration" extResolveInfo="18.constructor [Classifier]LinkedList[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Collection, &lt;any_&gt;]))" />
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1160599671393">
+                <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1160599673036">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1160599671394">
+                    <link role="variableDeclaration" targetNodeId="1160599507901" resolveInfo="values" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1136923542666">
         <property name="text" value=" &gt;" />

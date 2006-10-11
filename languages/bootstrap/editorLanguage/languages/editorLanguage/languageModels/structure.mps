@@ -1571,9 +1571,8 @@
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1160500373903">
       <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" />
-      <node role="target" type="jetbrains.mps.baseLanguage.ClassifierType" id="1160500428796">
-        <link role="classifier" extResolveInfo="35.[Classifier]List" />
-        <node role="parameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1160500452155">
+      <node role="target" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceType" id="1160599188898">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1160599207463">
           <link role="classifier" extResolveInfo="36.[Classifier]String" />
         </node>
       </node>
