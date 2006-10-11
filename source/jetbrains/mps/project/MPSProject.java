@@ -294,14 +294,14 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     return myComponents.containsKey(cls);
   }
 
-  @NotNull
+  @Nullable
   public <T> T getComponent(Class<T> clazz) {
     if (clazz == EditorsPane.class) {
       IDEProjectFrame projectFrame = getComponent(IDEProjectFrame.class);
       return (T) projectFrame.getEditorsPane();
     }
     T result = (T) myComponents.get(clazz);
-    assert result != null;
+//    assert result != null;
     return result;
   }
 
