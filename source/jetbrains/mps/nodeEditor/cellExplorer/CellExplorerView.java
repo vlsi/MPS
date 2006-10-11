@@ -1,26 +1,26 @@
 package jetbrains.mps.nodeEditor.cellExplorer;
 
-import jetbrains.mps.ide.toolsPane.DefaultTool;
-import jetbrains.mps.ide.toolsPane.ToolsPane;
 import jetbrains.mps.ide.*;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.toolsPane.DefaultTool;
+import jetbrains.mps.ide.toolsPane.ToolsPane;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.TreeTextUtil;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.nodeEditor.*;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.ide.ui.TreeTextUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.NameUtil;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultTreeModel;
-import java.awt.*;
+import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.util.*;
-import java.util.List;
 
 /**
  * @author Kostik
@@ -64,17 +64,17 @@ public class CellExplorerView extends DefaultTool {
     myComponent.add(new JScrollPane(myTree), BorderLayout.CENTER);
     update();
     getEditorsPane().addListener(new EditorsPane.IEditorsPaneListener() {
-      public void editorOpened(IEditor e) {
+      public void editorOpened(@NotNull IEditor e) {
         update();
       }
-      public void editorClosed(IEditor e) {
+      public void editorClosed(@NotNull IEditor e) {
         update();
       }
-      public void editorSelected(IEditor e) {
+      public void editorSelected(@NotNull IEditor e) {
         update();
       }
 
-      public void editorStateChanged(IEditor e) {
+      public void editorStateChanged(@NotNull IEditor e) {
         update();
       }
     });
