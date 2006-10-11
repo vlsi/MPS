@@ -14,9 +14,11 @@ public class FindAspectMethodUsages extends AnAction {
     super.update(e);
     e.getPresentation().setVisible(false);
     Editor editor = (Editor) e.getDataContext().getData(DataConstants.EDITOR);
+    if (editor == null) return;
     Project project = (Project) e.getDataContext().getData(DataConstants.PROJECT);
     int offset = editor.getCaretModel().getOffset();
     PsiFile file = PsiDocumentManager.getInstance(project).getCachedPsiFile(editor.getDocument());
+    if (file == null) return;
     PsiElement element = file.findElementAt(offset);
     if (getMethod(element) != null) {
       e.getPresentation().setVisible(true);
@@ -31,9 +33,11 @@ public class FindAspectMethodUsages extends AnAction {
 
   public void actionPerformed(AnActionEvent e) {
     Editor editor = (Editor) e.getDataContext().getData(DataConstants.EDITOR);
+    if (editor == null) return;
     Project project = (Project) e.getDataContext().getData(DataConstants.PROJECT);
     int offset = editor.getCaretModel().getOffset();
     PsiFile file = PsiDocumentManager.getInstance(project).getCachedPsiFile(editor.getDocument());
+    if (file == null) return;
     PsiElement element = file.findElementAt(offset);
     PsiMethod method = getMethod(element);
     String prefixedName = method.getName();

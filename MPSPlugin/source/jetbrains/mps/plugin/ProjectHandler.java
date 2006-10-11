@@ -89,12 +89,15 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
             ModifiableRootModel model = module.getComponent(ModuleRootManager.class).getModifiableModel();
             ContentEntry entry = model.getContentEntries()[0];
             LocalFileSystem lfs = LocalFileSystem.getInstance();
-            entry.addSourceFolder(lfs.refreshAndFindFileByIoFile(new File(path)), false);
+            VirtualFile sourceFolderFile = lfs.refreshAndFindFileByIoFile(new File(path));
+            if (sourceFolderFile != null) {
+              entry.addSourceFolder(sourceFolderFile, false);
+            }
             model.commit();
           }
         });
       }
-    }, ModalityState.NON_MMODAL);
+    }, ModalityState.NON_MODAL);
   }
 
   public void addMPSJar(final String mpsHome) {
@@ -144,6 +147,9 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
         try {
           ProjectLevelVcsManager manager = myProject.getComponent(ProjectLevelVcsManager.class);
           VirtualFile file = LocalFileSystem.getInstance().findFileByIoFile(new File(path));
+          if (file == null) {
+            return;
+          }
           AbstractVcs vcs = manager.getVcsFor(file);
           VcsHistorySession session = vcs.getVcsHistoryProvider().createSessionFor(new FilePathImpl(file));
           List<VcsFileRevision> revisions = session.getRevisionList();
@@ -181,6 +187,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
         try {
           ProjectLevelVcsManager manager = myProject.getComponent(ProjectLevelVcsManager.class);
           VirtualFile file = LocalFileSystem.getInstance().findFileByIoFile(new File(path));
+          if (file == null) return;
           AbstractVcs vcs = manager.getVcsFor(file);
           VcsHistorySession session = vcs.getVcsHistoryProvider().createSessionFor(new FilePathImpl(file));
           result[0] = session.getCurrentRevisionNumber().asString();
@@ -200,10 +207,9 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
           VirtualFile file = LocalFileSystem.getInstance().findFileByIoFile(new File(path));
           AbstractVcs vcs = manager.getVcsFor(file);
 
-          Object ta = comment;
-          vcs.getTransactionProvider().startTransaction(ta);
+          vcs.getTransactionProvider().startTransaction(comment);
           vcs.getStandardOperationsProvider().checkinFile(path, null, null);
-          vcs.getTransactionProvider().commitTransaction(ta);
+          vcs.getTransactionProvider().commitTransaction(comment);
         } catch (VcsException e) {
           e.printStackTrace();
         }
@@ -219,6 +225,9 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
         try {
           ProjectLevelVcsManager manager = myProject.getComponent(ProjectLevelVcsManager.class);
           VirtualFile file = LocalFileSystem.getInstance().findFileByIoFile(new File(path));
+          if (file == null) {
+            return;
+          }
           AbstractVcs vcs = manager.getVcsFor(file);
           VcsHistorySession session = vcs.getVcsHistoryProvider().createSessionFor(new FilePathImpl(file));
 
@@ -245,8 +254,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
           ApplicationManager.getApplication().runWriteAction(new Runnable() {
             public void run() {
               VirtualFile[] contentRoots = ProjectRootManager.getInstance(myProject).getContentRoots();
-              for (int i = 0; i < contentRoots.length; i++) {
-                VirtualFile contentRoot = contentRoots[i];
+              for (VirtualFile contentRoot : contentRoots) {
                 contentRoot.refresh(false, true);
               }
             }
@@ -313,9 +321,9 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
         final PsiManager psiManager = PsiManager.getInstance(myProject);
         if (!isQueriesClassExist(namespace)) return;
         PsiClass aspects = psiManager.findClass(namespace + ".Queries", GlobalSearchScope.projectScope(myProject));
+        if (aspects == null) return;
         PsiMethod[] methods = aspects.getAllMethods();
-        for (int i = 0; i < methods.length; i++) {
-          PsiMethod method = methods[i];
+        for (PsiMethod method : methods) {
           if (!method.hasModifierProperty(PsiModifier.STATIC)) continue;
           if (!method.getName().startsWith(prefix)) continue;
           list.add(method.getName().substring(prefix.length()));
@@ -334,9 +342,9 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
         if (cls == null) return;
         PsiSearchHelper helper = manager.getSearchHelper();
         PsiClass[] result = helper.findInheritors(cls, GlobalSearchScope.allScope(myProject), true);
-        for (int i = 0; i < result.length; i++) {
-          if (result[i].getQualifiedName() != null) {  //i.e anonymous class
-            list.add(result[i].getQualifiedName());
+        for (PsiClass aResult : result) {
+          if (aResult.getQualifiedName() != null) {  //i.e anonymous class
+            list.add(aResult.getQualifiedName());
           }
         }
       }
@@ -365,10 +373,12 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
         PsiClass aspectClass = getQueriesClass(namespace);
         PsiJavaFile file = (PsiJavaFile) aspectClass.getContainingFile();
         try {
-          if (file.getImportList().findSingleClassImportStatement(fqName) != null) return;
+          PsiImportList importList = file.getImportList();
+          if (importList == null) return;
+          if (importList.findSingleClassImportStatement(fqName) != null) return;
           PsiClass cls = manager.findClass(fqName, GlobalSearchScope.allScope(myProject));
           PsiImportStatement importStatement = getPsiElementFactory().createImportStatement(cls);
-          file.getImportList().add(importStatement);
+          importList.add(importStatement);
         } catch (IncorrectOperationException e) {
           e.printStackTrace();
         }
@@ -382,8 +392,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
       public void run() {
         PsiClass queries = getQueriesClass(namespace);
         PsiMethod[] methods = queries.getAllMethods();
-        for (int i = 0; i < methods.length; i++) {
-          PsiMethod method = methods[i];
+        for (PsiMethod method : methods) {
           if (method.getName().equals(name)) {
             method.navigate(true);
             activateProjectWindow();
@@ -400,8 +409,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
       public void run() {
         PsiClass cls = findClass(className);
         PsiMethod[] methods = cls.getAllMethods();
-        for (int i = 0; i < methods.length; i++) {
-          PsiMethod method = methods[i];
+        for (PsiMethod method : methods) {
           if (method.getName().equals(name)) {
             if (parameterCount != -1 && method.getParameterList().getParameters().length != parameterCount) {
               continue;
@@ -421,9 +429,8 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
       public void run() {
         PsiClass cls = findClass(className);
         PsiField[] fields = cls.getAllFields();
-        for (int i = 0; i < fields.length; i++) {
-          PsiField field = fields[i];
-          if (field.getName().equals(name)) {
+        for (PsiField field : fields) {
+          if (name.equals(field.getName())) {
             field.navigate(true);
             activateProjectWindow();
             return;
@@ -439,8 +446,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
       public void run() {
         PsiClass cls = findClass(className);
         PsiMethod[] methods = cls.getConstructors();
-        for (int i = 0; i < methods.length; i++) {
-          PsiMethod method = methods[i];
+        for (PsiMethod method : methods) {
           if (parameterCount != -1 && method.getParameterList().getParameters().length != parameterCount) {
             continue;
           }
@@ -591,7 +597,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
         }, "command", "MPSPlugin");
 
       }
-    }, ModalityState.NON_MMODAL);
+    }, ModalityState.NON_MODAL);
   }
 
   private Module findModule(final String path) {

@@ -12,6 +12,8 @@ import jetbrains.mps.smodel.*;
 
 import java.util.*;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Igoor
@@ -61,7 +63,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     }
   }
 
-  public <T> T getComponent(Class<T> clazz) {
+  public <T> T getComponent(@NotNull Class<T> clazz) {
     return myInvocationContext.getComponent(clazz);
   }
 
@@ -69,10 +71,12 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return myTransientModule;
   }
 
+  @NotNull
   public MPSProject getProject() {
     return myInvocationContext.getProject();
   }
 
+  @NotNull
   public IScope getScope() {
     return myTransientModule;
   }
@@ -154,19 +158,22 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       }
     }
 
+    @NotNull
     public List<ModelRoot> getNonDefaultModelRoots() {
       return Collections.emptyList();
     }
 
+    @NotNull
     public ModuleDescriptor getModuleDescriptor() {
       return myModuleDescriptor;
     }
 
+    @NotNull
     public List<IModule> getDependOnModules() {
       return myDependOnModules;
     }
 
-    public Language getLanguage(String languageNamespace) {
+    public Language getLanguage(@NotNull String languageNamespace) {
       if (myInvocationModule instanceof Language) {
         if (languageNamespace.equals(myInvocationModule.getModuleUID())) {
           return (Language) myInvocationModule;
@@ -216,6 +223,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       return myInvocationModule.getGeneratorOutputPath();
     }
 
+    @NotNull
     public List<IModule> getExplicitlyDependOnModules() {
       return new LinkedList<IModule>(myDependOnModules);
     }

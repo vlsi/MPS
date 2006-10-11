@@ -1,16 +1,14 @@
 package jetbrains.mps.plugin;
 
-import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
+import jetbrains.mps.util.FileUtil;
 
+import java.net.InetAddress;
 import java.rmi.RemoteException;
-import java.rmi.server.UnicastRemoteObject;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
-import java.net.InetAddress;
-import java.util.*;
-
-import jetbrains.mps.util.FileUtil;
+import java.rmi.server.UnicastRemoteObject;
 
 public class RMIHandler {
   public static final int REGISTRY_PORT = 2390;
@@ -36,7 +34,7 @@ public class RMIHandler {
     }
   }
 
-  static class MyMPSPlugin extends UnicastRemoteObject implements IMPSPlugin {
+  public static class MyMPSPlugin extends UnicastRemoteObject implements IMPSPlugin {
 
     public MyMPSPlugin() throws RemoteException {
     }

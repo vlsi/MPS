@@ -17,6 +17,7 @@ public class GoToConceptDeclaration extends AnAction {
     if (cls != null) {
       PsiManager manager = cls.getManager();
       PsiClass snodeClass = manager.findClass("jetbrains.mps.smodel.SNode", GlobalSearchScope.allScope(manager.getProject()));
+      if (snodeClass == null) return;
 
       if (cls.isInheritor(snodeClass, true)) {
         e.getPresentation().setVisible(true);

@@ -5,6 +5,9 @@ import jetbrains.mps.project.IModule;
 
 import java.awt.*;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Igoor
@@ -14,13 +17,13 @@ import java.awt.*;
  */
 public interface IOperationContext {
 
-  MPSProject getProject();
+  @NotNull MPSProject getProject();
 
-  IModule getModule();
+  @Nullable IModule getModule();
 
-  IScope getScope();
+  @NotNull IScope getScope();
 
-  Frame getMainFrame();
+  @NotNull Frame getMainFrame();
 
-  <T> T getComponent(Class<T> clazz);
+  <T> T getComponent(@NotNull Class<T> clazz);
 }

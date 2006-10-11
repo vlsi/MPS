@@ -210,6 +210,7 @@ public class Language extends AbstractModule {
     return myLanguageDescriptor;
   }
 
+  @NotNull
   public ModuleDescriptor getModuleDescriptor() {
     return myLanguageDescriptor;
   }

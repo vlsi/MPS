@@ -10,6 +10,8 @@ import jetbrains.mps.ide.toolsPane.ITool;
 
 import java.util.Set;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Igoor
@@ -28,7 +30,7 @@ public class ModuleContext extends StandaloneMPSContext {
     myProject = project;
   }
 
-  public <T> T getComponent(Class<T> clazz) {
+  public <T> T getComponent(@NotNull Class<T> clazz) {
     T component = myProject.getComponent(clazz);
     if (component == null && ApplicationComponents.getInstance().containsComponent(clazz)) {
       component = ApplicationComponents.getInstance().getComponent(clazz);
@@ -54,14 +56,17 @@ public class ModuleContext extends StandaloneMPSContext {
     return component;
   }
 
+  @NotNull
   public IModule getModule() {
     return myModule;
   }
 
+  @NotNull
   public MPSProject getProject() {
     return myProject;
   }
 
+  @NotNull
   public IScope getScope() {
     return myModule;
   }

@@ -1,6 +1,8 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.smodel.IScope;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Created by IntelliJ IDEA.
@@ -16,7 +18,7 @@ public class ProjectOperationContext extends StandaloneMPSContext {
     myProject = project;
   }
 
-  public <T> T getComponent(Class<T> clazz) {
+  public <T> T getComponent(@NotNull Class<T> clazz) {
     T component = myProject.getComponent(clazz);
     if(component == null && ApplicationComponents.getInstance().containsComponent(clazz)) {
       component = ApplicationComponents.getInstance().getComponent(clazz);
@@ -24,14 +26,17 @@ public class ProjectOperationContext extends StandaloneMPSContext {
     return component;
   }
 
+  @Nullable
   public IModule getModule() {
     return null;
   }
 
+  @NotNull
   public MPSProject getProject() {
     return myProject;
   }
 
+  @NotNull
   public IScope getScope() {
     return myProject;
   }

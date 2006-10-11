@@ -59,7 +59,7 @@ public class IDEAHandler extends UnicastRemoteObject implements ApplicationCompo
           }
         });
       }
-    }, ModalityState.NON_MMODAL);
+    }, ModalityState.NON_MODAL);
   }
 
   public void ping() {
@@ -97,6 +97,9 @@ public class IDEAHandler extends UnicastRemoteObject implements ApplicationCompo
 
 
             VirtualFile contentRootFile = lfs.refreshAndFindFileByIoFile(new File(path));
+
+            if (contentRootFile == null) return;
+
             rootModel.addContentEntry(contentRootFile);
             try {
               if (contentRootFile.findChild("classes") == null) {
@@ -116,7 +119,7 @@ public class IDEAHandler extends UnicastRemoteObject implements ApplicationCompo
           }
         });
       }
-    }, ModalityState.NON_MMODAL);
+    }, ModalityState.NON_MODAL);
 
     return result[0];
   }

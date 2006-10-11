@@ -33,6 +33,7 @@ public class FindClassUsagesInMPS extends AnAction {
     PsiElement element = PluginUtil.getCurrentElement(anActionEvent);
 
     Project project = (Project) anActionEvent.getDataContext().getData(DataConstants.PROJECT);
+    if (project == null) return;
     ProjectHandler projectHandler = project.getComponent(ProjectHandler.class);
     PsiClass cls = getPsiClass(element);
     projectHandler.showClassUsages(cls.getQualifiedName());
