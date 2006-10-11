@@ -1,8 +1,11 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.nodeEditor.text.TextBuilder;
+import jetbrains.mps.project.ApplicationComponents;
 
 import java.util.Iterator;
+import java.awt.FontMetrics;
+import java.awt.Font;
 
 /**
  * User: Sergey Dmitriev
@@ -13,6 +16,10 @@ public class CellLayout_Vertical extends AbstractCellLayout {
 
   public void setGridLayout(boolean gridLayout) {
     isGridLayout = gridLayout;
+  }
+
+  public boolean canBeFolded() {
+    return true;
   }
 
   public void doLayout(EditorCell_Collection editorCells) {
@@ -130,7 +137,20 @@ public class CellLayout_Vertical extends AbstractCellLayout {
       width += openingBrace.getWidth();
     }
     editorCells.setWidth(width);
-    editorCells.setHeight(height);
+
+    if (editorCells.isFolded()) {
+      Font font = ApplicationComponents.getInstance().getComponent(EditorSettings.class).getDefaultEditorFont();
+      FontMetrics metrics = editorCells.getEditor().getFontMetrics(font);
+      editorCells.setHeight(metrics.getHeight());
+      for (EditorCell cell : editorCells) {
+        cell.setX(editorCells.getX());
+        cell.setY(editorCells.getY());
+        cell.setWidth(0);
+        cell.setHeight(0);
+      }
+    } else {
+      editorCells.setHeight(height);
+    }
   }
 
   public int getRightInternalInset(EditorCell_Collection editorCell_collection) {
@@ -187,6 +207,8 @@ public class CellLayout_Vertical extends AbstractCellLayout {
           editorCells.getY() <= y && y < editorCells.getY() + editorCells.getHeight())) {
       return null;
     }
+
+    if (editorCells.isFolded()) return editorCells;
    /* for (EditorCell editorCell : editorCells) {
       EditorCell cell = editorCell.findCell(x, y);
       if (cell != null) {

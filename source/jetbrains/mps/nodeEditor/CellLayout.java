@@ -22,4 +22,6 @@ public interface CellLayout {
 
   public int getRightInternalInset(EditorCell_Collection editorCell_collection);
   public int getLeftInternalInset(EditorCell_Collection editorCell_collection);
+
+  public boolean canBeFolded();
 }

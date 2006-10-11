@@ -41,4 +41,8 @@ public abstract class AbstractCellLayout implements CellLayout {
     if (editorCell == null) return 0;
     return editorCell.getLeftInternalInset();
   }
+
+  public boolean canBeFolded() {
+    return false;
+  }
 }

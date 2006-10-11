@@ -10,13 +10,13 @@ import java.awt.*;
 public class NodeEditorActions {
 
   private static EditorCell_Collection findHorizontalCollection(EditorCell cell) {
-    EditorCell_Collection parentCell = (cell instanceof EditorCell_Collection) ? (EditorCell_Collection) cell : cell.getParent();
+    EditorCell_Collection parentCell = (EditorUtil.isCollection(cell)) ? (EditorCell_Collection) cell : cell.getParent();
 
     if (parentCell == null) return null;
 
     while (!(parentCell.getCellLayout() instanceof CellLayout_Horizontal || parentCell.getCellLayout() instanceof CellLayout_Flow)) {
       EditorCell firstCell = parentCell.firstCell();
-      if (firstCell instanceof EditorCell_Collection) parentCell = (EditorCell_Collection) firstCell;
+      if (EditorUtil.isCollection(firstCell)) parentCell = (EditorCell_Collection) firstCell;
       //else return firstCell;
     }
 
@@ -60,7 +60,7 @@ public class NodeEditorActions {
     private EditorCell findTarget(EditorCell cell) {
       EditorCell_Collection parent = cell.getParent();
       if (parent == null) /*{
-        return (cell instanceof EditorCell_Collection)?findTarget((EditorCell_Collection) cell):null;
+        return (EditorUtil.isCollection(cell))?findTarget((EditorCell_Collection) cell):null;
       }*/  return null;
       EditorCell nextToLeft = parent.findNextToLeft(cell);
       if (nextToLeft != null) return nextToLeft;
@@ -69,21 +69,21 @@ public class NodeEditorActions {
       EditorCell_Collection parentCollection = parent.getParent();
       if (parentCollection == null) return null;
       EditorCell target = parentCollection.getPrevCell(parent);
-      while (target != null && !(target instanceof EditorCell_Collection || target.isSelectable())) {
+      while (target != null && !(EditorUtil.isCollection(target) || target.isSelectable())) {
           target = parentCollection.getPrevCell(target);
       }
 
-      while (target == null || !(target instanceof EditorCell_Collection || target.isSelectable())) {
+      while (target == null || !(EditorUtil.isCollection(target) || target.isSelectable())) {
         parent = parentCollection;
         parentCollection = parentCollection.getParent();
         if (parentCollection == null) return null;
         target = parentCollection.getPrevCell(parent);
-        while (target != null && !(target instanceof EditorCell_Collection || target.isSelectable())) {
+        while (target != null && !(EditorUtil.isCollection(target) || target.isSelectable())) {
           target = parentCollection.getPrevCell(target);
         }
       }
 
-      if (!(target instanceof EditorCell_Collection)) return target;
+      if (!(EditorUtil.isCollection(target))) return target;
 
       return EditorUtil.findLastSelectableCell((EditorCell_Collection) target);
       //---
@@ -104,7 +104,7 @@ public class NodeEditorActions {
     }
 
     private EditorCell findTarget(EditorCell cell) {
-      EditorCell_Collection rootCell = cell instanceof EditorCell_Collection?(EditorCell_Collection) cell : cell.getParent();
+      EditorCell_Collection rootCell = EditorUtil.isCollection(cell)?(EditorCell_Collection) cell : cell.getParent();
       while (rootCell != null && rootCell.getParent() != null) {
         rootCell = rootCell.getParent();
       }
@@ -128,7 +128,7 @@ public class NodeEditorActions {
     }
 
     private EditorCell findTarget(EditorCell cell) {
-      EditorCell_Collection rootCell = cell instanceof EditorCell_Collection?(EditorCell_Collection) cell : cell.getParent();
+      EditorCell_Collection rootCell = EditorUtil.isCollection(cell)?(EditorCell_Collection) cell : cell.getParent();
       while (rootCell != null && rootCell.getParent() != null) {
         rootCell = rootCell.getParent();
       }
@@ -211,7 +211,7 @@ public class NodeEditorActions {
     private EditorCell findTarget(EditorCell cell) {
       EditorCell_Collection parent = cell.getParent();
       if (parent == null) {
-        return (cell instanceof EditorCell_Collection)?EditorUtil.findFirstSelectableCell((EditorCell_Collection) cell) :null;
+        return (EditorUtil.isCollection(cell))?EditorUtil.findFirstSelectableCell((EditorCell_Collection) cell) :null;
       }
 
       EditorCell nextToRight = parent.findNextToRight(cell);
@@ -221,21 +221,21 @@ public class NodeEditorActions {
       EditorCell_Collection parentCollection = parent.getParent();
       if (parentCollection == null) return null;
       EditorCell target = parentCollection.getNextCell(parent);
-      while (target != null && !(target instanceof EditorCell_Collection || target.isSelectable())) {
+      while (target != null && !(EditorUtil.isCollection(target) || target.isSelectable())) {
           target = parentCollection.getNextCell(target);
       }
 
-      while (target == null || !(target instanceof EditorCell_Collection || target.isSelectable())) {
+      while (target == null || !(EditorUtil.isCollection(target) || target.isSelectable())) {
         parent = parentCollection;
         parentCollection = parentCollection.getParent();
         if (parentCollection == null) return null;
         target = parentCollection.getNextCell(parent);
-        while (target != null && !(target instanceof EditorCell_Collection || target.isSelectable())) {
+        while (target != null && !(EditorUtil.isCollection(target) || target.isSelectable())) {
           target = parentCollection.getNextCell(target);
         }
       }
 
-      if (!(target instanceof EditorCell_Collection)) return target;
+      if (!(EditorUtil.isCollection(target))) return target;
 
       return EditorUtil.findFirstSelectableCell((EditorCell_Collection) target);
       //---
@@ -283,7 +283,7 @@ public class NodeEditorActions {
 
     private EditorCell findTarget(EditorCell cell, int caretX) {
        if (cell.getParent() == null) {
-        return (cell instanceof EditorCell_Collection)?findTarget((EditorCell_Collection) cell, caretX):null;
+        return (EditorUtil.isCollection(cell))?findTarget((EditorCell_Collection) cell, caretX):null;
       }
       return cell.getParent().findNextToDown(caretX, cell.getY() + cell.getHeight());
     }
@@ -292,7 +292,7 @@ public class NodeEditorActions {
     private EditorCell findTarget(EditorCell_Collection collection, int caretX) {
       EditorCell target = collection.firstCell();
       while (target != null) {
-        if (target instanceof EditorCell_Collection) {
+        if (EditorUtil.isCollection(target)) {
           EditorCell childTarget = findTarget((EditorCell_Collection) target, caretX);
           if (childTarget != null) {
             return childTarget;

@@ -11,6 +11,9 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.TreeTextUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
@@ -222,6 +225,16 @@ public class CellExplorerView extends DefaultTool {
     }
 
     private void showCell() {
+      Stack<EditorCell_Collection> foldedParents = new Stack<EditorCell_Collection>();
+      for (EditorCell_Collection collection : CollectionUtil.iteratorAsIterable(myCell.parents())) {
+        if (collection.isFolded()) {
+          foldedParents.push(collection);
+        }
+      }
+      while(!foldedParents.isEmpty()) {
+        EditorCell_Collection collection = foldedParents.pop();
+        collection.unfold();
+      }
       getEditorsPane().getCurrentEditor().getCurrentEditorComponent().changeSelection(myCell);
     }
 
@@ -255,7 +268,7 @@ public class CellExplorerView extends DefaultTool {
 
         if (myCell.getAvailableActions().size() > 0) {
           add(new CellActionsTreeNode(myCell, getOperationContext()));
-        }                     
+        }
       } else {
         add(new TextTreeNode("No Node"));
       }
@@ -288,7 +301,7 @@ public class CellExplorerView extends DefaultTool {
         if (text == null || text.length() == 0) {
           text = ((EditorCell_Label) myCell).getNullText();
         }
-        result += " text = \"" + TreeTextUtil.toHtml(text) + "\"";
+        result += " text = \"" + text + "\"";
       }
       if (myCell.isErrorState() ) {
         result += " (error state)";

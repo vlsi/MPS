@@ -7,10 +7,9 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.ide.command.CommandProcessor;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 
 /**
@@ -152,6 +151,11 @@ public class EditorContext {
             if (!(collection instanceof EditorCell_Collection)) continue;
             ((EditorCell_Collection)collection).enableBraces();
           }
+          for (CellInfo collectionInfo : memento.folded) {
+            EditorCell collection = collectionInfo.findCell(myNodeEditorComponent);
+            if (!(collection instanceof EditorCell_Collection)) continue;
+            ((EditorCell_Collection)collection).fold(true);
+          }
           EditorCell deepestSelectedCell = myNodeEditorComponent.getDeepestSelectedCell();
           if (deepestSelectedCell != null) {
 //            if (deepestSelectedCell instanceof EditorCell_Label && memento.errorCellText != null) {
@@ -164,6 +168,11 @@ public class EditorContext {
             deepestSelectedCell.setCaretX(memento.caretX);
           } 
         }
+        CommandProcessor.instance().invokeNowOrLater(new Runnable() {
+          public void run() {
+            myNodeEditorComponent.relayout();
+          }
+        });
         return true;
       }
     }
@@ -192,6 +201,7 @@ public class EditorContext {
     private CellInfo cellInfo;
     private Stack<CellInfo> selectedStack = new Stack<CellInfo>();
     private List<CellInfo> collectionsWithEnabledBraces = new ArrayList<CellInfo>();
+    private Set<CellInfo> folded = new HashSet<CellInfo>();
     private Integer caretX;
 
     public Memento(EditorContext context) {
@@ -206,14 +216,15 @@ public class EditorContext {
         cellInfo = selectedCell.getCellInfo();
         selectedStack = nodeEditor.getSelectedStackForMemento();
         EditorCell rootCell = nodeEditor.getRootCell();
-        if (rootCell instanceof EditorCell_Collection) fillBracesInfo((EditorCell_Collection) rootCell);
+        if (rootCell instanceof EditorCell_Collection) fillBracesAndFoldedInfo((EditorCell_Collection) rootCell);
       }
     }
 
-    private void fillBracesInfo(EditorCell_Collection cell) {
+    private void fillBracesAndFoldedInfo(EditorCell_Collection cell) {
       if (cell.areBracesEnabled()) collectionsWithEnabledBraces.add(cell.getCellInfo());
+      if (cell.isFolded()) folded.add(cell.getCellInfo());
       for (EditorCell child : cell) {
-        if (child instanceof EditorCell_Collection) fillBracesInfo((EditorCell_Collection) child);
+        if (child instanceof EditorCell_Collection) fillBracesAndFoldedInfo((EditorCell_Collection) child);
       }
     }
 

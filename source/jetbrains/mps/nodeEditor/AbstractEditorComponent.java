@@ -16,6 +16,7 @@ import jetbrains.mps.typesystem.TypeCheckerAccess;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.NodesParetoFrontier;
+import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.ThinkTwice;
 
 import javax.swing.*;
@@ -441,7 +442,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   public void setOperationContext(IOperationContext operationContext) {
     myOperationContext = operationContext;
   }
-
 
   public void addNotify() {
     super.addNotify();
