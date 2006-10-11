@@ -3,6 +3,7 @@
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
+  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <maxImportIndex value="36" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <import index="3" modelUID="jetbrains.mps.core.structure" />

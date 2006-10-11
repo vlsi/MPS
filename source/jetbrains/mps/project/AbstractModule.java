@@ -177,6 +177,7 @@ public abstract class AbstractModule implements IModule {
       for (Language language : languages) {
         if (!modules.contains(language)) {
           modules.add((T) language);
+          collectAllExplicitlyDependOnModules(language, modules, cls);
         }
       }
     }
