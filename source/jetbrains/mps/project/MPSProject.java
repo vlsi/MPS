@@ -9,18 +9,18 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.preferences.IComponentWithPreferences;
 import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugin.IProjectHandler;
+import jetbrains.mps.plugin.MPSPlugin;
+import jetbrains.mps.plugins.PluginManager;
 import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IDisposable;
+import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vcs.VersionControlManager;
 import jetbrains.mps.vcs.model.IVersionControl;
-import jetbrains.mps.plugin.IProjectHandler;
-import jetbrains.mps.plugin.MPSPlugin;
-import jetbrains.mps.plugins.PluginManager;
 import org.jdom.Document;
 import org.jdom.Element;
 
@@ -206,7 +206,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
   public String toString() {
     return "MPSProject file: " + (myProjectFile == null ? "<none>" : myProjectFile.toString());
   }
-
+  
   public File getProjectFile() {
     return myProjectFile;
   }
