@@ -13,8 +13,6 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class GlobalScope implements IScope {
-  private final Logger LOG = Logger.getLogger(GlobalScope.class);
-
   private static GlobalScope myInstance;
 
   public static GlobalScope getInstance() {
@@ -29,9 +27,7 @@ public class GlobalScope implements IScope {
 
   public Language getLanguage(String languageNamespace) {
     Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
-    if (language == null) {
-      LOG.error("Couldn't find language for namespace: \"" + languageNamespace + "\" in: " + this);
-    }
+    assert language != null;
     return language;
   }
 
@@ -41,9 +37,7 @@ public class GlobalScope implements IScope {
 
   public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
-    if (modelDescriptor == null) {
-      LOG.warning("Couldn't find model descriptor for uid: \"" + modelUID + "\" in: " + this);
-    }
+    assert modelDescriptor != null;
     return modelDescriptor;
   }
 

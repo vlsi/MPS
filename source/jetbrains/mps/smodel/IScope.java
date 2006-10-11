@@ -11,7 +11,7 @@ import java.util.List;
  */
 public interface IScope {
   SModelDescriptor getModelDescriptor(SModelUID modelUID);
-
+  
   List<SModelDescriptor> getModelDescriptors(String modelName);
 
   List<SModelDescriptor> getModelDescriptors();

@@ -97,18 +97,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
   }
 
   private void readModules(File projectFile, final SModel projectModel) {
-    // convert legacy project to new solution
-    final File solutionDescriptorFile = Solution.createSolutionDescriptorFromLegacyProjectFile(projectFile);
-    if (solutionDescriptorFile != null) {
-      projectModel.runLoadingAction(new Runnable() {
-        public void run() {
-          SolutionPath solutionPath = SolutionPath.newInstance(projectModel);
-          solutionPath.setPath(solutionDescriptorFile.getAbsolutePath());
-          myProjectDescriptor.addProjectSolution(solutionPath);
-        }
-      });
-    }
-
     // load solutions
     mySolutions = new LinkedList<Solution>();
     for (SolutionPath solutionPath : CollectionUtil.iteratorAsIterable(myProjectDescriptor.projectSolutions())) {

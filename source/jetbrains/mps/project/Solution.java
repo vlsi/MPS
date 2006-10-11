@@ -9,8 +9,10 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
 
 import java.io.File;
-import java.io.IOException;
-import java.util.*;
+import java.util.LinkedList;
+import java.util.List;
+
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Created by IntelliJ IDEA.
@@ -20,53 +22,17 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class Solution extends AbstractModule {
-  private SolutionDescriptor mySolutionDescriptor;
-  private List<SolutionCommandListener> myCommandListeners = new LinkedList<SolutionCommandListener>();
-  private SolutionEventTranslator myEventTranslator = new SolutionEventTranslator();
-
-  /**
-   * tmp: to create solution from legacy projects
-   */
-  public static File createSolutionDescriptorFromLegacyProjectFile(File projectFile) {
-    if (!projectFile.exists()) return null;
-
-    ModelOwner tmpModelOwner = new ModelOwner() {
-    };
-    SModel model = ProjectModels.createDescriptorFor(tmpModelOwner).getSModel();
-    SolutionDescriptor solutionDescriptor = PersistenceUtil.loadSolutionDescriptorFormOldMPR(projectFile, model);
-
-    if (solutionDescriptor == null ||
-            (solutionDescriptor.getModelRootsCount() == 0 && solutionDescriptor.getModuleRootsCount() == 0)) {
-      SModelRepository.getInstance().unRegisterModelDescriptors(tmpModelOwner);
-      return null;
-    }
-
-    String solutionPathname = projectFile.getAbsolutePath();
-    solutionPathname = solutionPathname.substring(0, solutionPathname.lastIndexOf('.')) + ".msd";
-    File solutionDescriptorFile = new File(solutionPathname);
-    if (solutionDescriptorFile.exists()) {
-      SModelRepository.getInstance().unRegisterModelDescriptors(tmpModelOwner);
-      return null;
-    }
-
-    try {
-      solutionDescriptorFile.createNewFile();
-      PersistenceUtil.saveSolutionDescriptor(solutionDescriptorFile, solutionDescriptor);
-      SModelRepository.getInstance().unRegisterModelDescriptors(tmpModelOwner);
-    } catch (IOException e) {
-      e.printStackTrace();
-      return null;
-    }
-
-    return solutionDescriptorFile;
-  }
+  private @NotNull SolutionDescriptor mySolutionDescriptor;
+  private @NotNull List<SolutionCommandListener> myCommandListeners = new LinkedList<SolutionCommandListener>();
+  private @NotNull SolutionEventTranslator myEventTranslator = new SolutionEventTranslator();
 
   // -------------------------------------------------------------------
 
   private Solution() {
   }
 
-  public static Solution newInstance(File descriptorFile, MPSModuleOwner moduleOwner) {
+  public static Solution newInstance(@NotNull File descriptorFile,
+                                     @NotNull MPSModuleOwner moduleOwner) {
     Solution solution = new Solution();
     SModel model = ProjectModels.createDescriptorFor(solution).getSModel();
     model.setLoading(true);
@@ -82,13 +48,6 @@ public class Solution extends AbstractModule {
     solution.readDependOnModules();
     return solution;
   }
-
-//  private void init() {
-//    // read languages and models
-//    readDependOnModules();
-////    CommandProcessor.instance().addCommandListener(myEventTranslator);
-////    fireModuleInitialized();
-//  }
 
 
   protected void readDependOnModules() {
@@ -107,7 +66,7 @@ public class Solution extends AbstractModule {
     }
   }
 
-  public void setSolutionDescriptor(SolutionDescriptor newDescriptor) {
+  public void setSolutionDescriptor(@NotNull SolutionDescriptor newDescriptor) {
     // release languages and models (except descriptor model)
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), Solution.this);
     MPSModuleRepository.getInstance().unRegisterModules(Solution.this);
@@ -134,20 +93,21 @@ public class Solution extends AbstractModule {
     PersistenceUtil.saveSolutionDescriptor(myDescriptorFile, getSolutionDescriptor());
   }
 
+  @NotNull
   public SolutionDescriptor getSolutionDescriptor() {
     return mySolutionDescriptor;
   }
 
-
+  @NotNull
   public ModuleDescriptor getModuleDescriptor() {
     return mySolutionDescriptor;
   }
 
-  public void addSolutionCommandListener(SolutionCommandListener listener) {
+  public void addSolutionCommandListener(@NotNull SolutionCommandListener listener) {
     myCommandListeners.add(listener);
   }
 
-  public void removeSolutionCommandListener(SolutionCommandListener listener) {
+  public void removeSolutionCommandListener(@NotNull SolutionCommandListener listener) {
     myCommandListeners.remove(listener);
   }
 
@@ -164,6 +124,7 @@ public class Solution extends AbstractModule {
     }
   }
 
+  @NotNull
   public String toString() {
     String text = mySolutionDescriptor.getName();
     if (text == null || text.length() == 0) {
@@ -172,6 +133,7 @@ public class Solution extends AbstractModule {
     return text;
   }
 
+  @NotNull
   public String getModuleUID() {
     return myDescriptorFile.getAbsolutePath();
   }

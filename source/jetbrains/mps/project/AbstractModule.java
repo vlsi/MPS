@@ -3,9 +3,10 @@ package jetbrains.mps.project;
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.ModelRoot;
-import jetbrains.mps.projectLanguage.SolutionDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.util.*;
@@ -29,14 +30,17 @@ public abstract class AbstractModule implements IModule {
   // IScope
   //
 
+  @NotNull
   public String getModuleUID() {
     return toString();
   }
 
+  @Nullable
   public Language getLanguage(String languageNamespace) {
     return getLanguage(languageNamespace, new HashSet<IModule>());
   }
 
+  @Nullable
   public Language getLanguage(String languageNamespace, Set<IModule> modulesToSkip) {
     if (languageNamespace == null) return null;
     Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, BootstrapLanguages.getInstance());
@@ -49,6 +53,7 @@ public abstract class AbstractModule implements IModule {
     return language;
   }
 
+  @Nullable
   private static Language getLanguage_internal(String languageNamespace, Set<IModule> processedModules, IModule dependentModule) {
     if (dependentModule instanceof Language && dependentModule.getModuleUID().equals(languageNamespace)) {
       return (Language) dependentModule;
@@ -67,20 +72,24 @@ public abstract class AbstractModule implements IModule {
     return language;
   }
 
+  @NotNull
   public List<Language> getOwnLanguages() {
     return new LinkedList<Language>(MPSModuleRepository.getInstance().getLanguages(this));
   }
 
+  @NotNull
   public List<Language> getVisibleLanguages() {
     return new ArrayList<Language>(getAllDependOnModules(Language.class));
   }
 
+  @NotNull
   public final List<IModule> getOwnModules() {
     return new LinkedList<IModule>(MPSModuleRepository.getInstance().getModules(this));
   }
 
 
-  public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
+  @Nullable
+  public SModelDescriptor getModelDescriptor(@NotNull SModelUID modelUID) {
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
     if (modelDescriptor != null) {
       return modelDescriptor;
@@ -95,7 +104,11 @@ public abstract class AbstractModule implements IModule {
     return null;
   }
 
-  private static SModelDescriptor getModelDescriptorFromDependOnModules(SModelUID modelUID, IModule dependentModule, Set<IModule> ignoreModules) {
+  @Nullable
+  private static SModelDescriptor getModelDescriptorFromDependOnModules(
+          @NotNull SModelUID modelUID,
+          @NotNull IModule dependentModule,
+          @NotNull Set<IModule> ignoreModules) {
     ignoreModules.add(dependentModule);
 
     List<IModule> dependOnModules = dependentModule.getDependOnModules();
@@ -118,7 +131,8 @@ public abstract class AbstractModule implements IModule {
     return null;
   }
 
-  public List<SModelDescriptor> getModelDescriptors(String modelName) {
+  @NotNull
+  public List<SModelDescriptor> getModelDescriptors(@NotNull String modelName) {
     Set<SModelDescriptor> set = new HashSet<SModelDescriptor>();
     {
       List<SModelDescriptor> list = SModelRepository.getInstance().getModelDescriptors(modelName, this);
@@ -147,7 +161,8 @@ public abstract class AbstractModule implements IModule {
   /**
    * @return all depends-on modules recursively + bootstrap languages
    */
-  private <T extends IModule> Set<T> getAllDependOnModules(Class<T> cls) {
+  @NotNull
+  private <T extends IModule> Set<T> getAllDependOnModules(@NotNull Class<T> cls) {
     Set<T> modules = new HashSet<T>();
     collectAllExplicitlyDependOnModules(this, modules, cls);
 
@@ -164,7 +179,10 @@ public abstract class AbstractModule implements IModule {
     return modules;
   }
 
-  private static <T extends IModule> void collectAllExplicitlyDependOnModules(IModule dependentModule, Set<T> modules, Class<T> cls) {
+  private static <T extends IModule> void collectAllExplicitlyDependOnModules(
+          @NotNull IModule dependentModule,
+          @NotNull Set<T> modules,
+          @NotNull Class<T> cls) {
     List<IModule> dependOnModules = dependentModule.getExplicitlyDependOnModules();
     for (IModule dependOnModule : dependOnModules) {
       if (cls.isInstance(dependOnModule) && !modules.contains(dependOnModule)) {
@@ -174,6 +192,7 @@ public abstract class AbstractModule implements IModule {
     }
   }
 
+  @NotNull
   public List<SModelDescriptor> getOwnModelDescriptors() {
     List<SModelDescriptor> modelDescriptors = SModelRepository.getInstance().getModelDescriptors(this);
     Iterator<SModelDescriptor> iterator = modelDescriptors.iterator();
@@ -189,11 +208,12 @@ public abstract class AbstractModule implements IModule {
   //
   // AbstractModule
   //
-
+  @NotNull
   private SModelDescriptor getModuleDescriptorModel() {
     return getModuleDescriptor().getModel().getModelDescriptor();
   }
 
+  @NotNull
   public List<ModelRoot> getDefaultModelRoots() {
     List<ModelRoot> result = new ArrayList<ModelRoot>();
     if (myClassPathModelRoot == null) {
@@ -209,6 +229,7 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
+  @NotNull
   public final List<ModelRoot> getModelRoots() {
     List<ModelRoot> result = new ArrayList<ModelRoot>();
 
@@ -218,6 +239,7 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
+  @NotNull
   public List<ModelRoot> getNonDefaultModelRoots() {
     return CollectionUtil.iteratorAsList(getModuleDescriptor().modelRoots());
   }
@@ -226,6 +248,7 @@ public abstract class AbstractModule implements IModule {
    * @return all modules which this explicitly and immediately depends on,
    *         i.e. without bootstrap languages, if such a dependency is not explicitly set in module roots
    */
+  @NotNull
   public List<IModule> getExplicitlyDependOnModules() {
     return new LinkedList<IModule>(getOwnModules());
   }
@@ -233,11 +256,13 @@ public abstract class AbstractModule implements IModule {
   /**
    * @return all modules which this immediately depends on, bootstrap languages in their number.
    */
+  @NotNull
   public List<IModule> getDependOnModules() {
     return appendBootstrapLanguages(getExplicitlyDependOnModules());
   }
 
-  protected static List<IModule> appendBootstrapLanguages(List<IModule> list) {
+  @NotNull
+  protected static List<IModule> appendBootstrapLanguages(@NotNull List<IModule> list) {
     List<Language> languages = BootstrapLanguages.getInstance().getLanguages();
     for (Language language : languages) {
       if (!list.contains(language)) {
@@ -247,15 +272,16 @@ public abstract class AbstractModule implements IModule {
     return list;
   }
 
-  public void registerModelDescriptor(SModelDescriptor modelDescriptor) {
+  public void registerModelDescriptor(@NotNull SModelDescriptor modelDescriptor) {
     SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, this);
   }
 
-  public void unRegisterModelDescriptor(SModelDescriptor modelDescriptor) {
+  public void unRegisterModelDescriptor(@NotNull SModelDescriptor modelDescriptor) {
     SModelRepository.getInstance().unRegisterModelDescriptor(modelDescriptor, this);
   }
 
-  public SModelDescriptor createModel(SModelUID uid, ModelRoot root) {
+  @NotNull
+  public SModelDescriptor createModel(@NotNull SModelUID uid, @NotNull ModelRoot root) {
     IModelRootManager manager = SModelRepository.getInstance().getManagerFor(root);
 
     if (!manager.isNewModelsSupported()) {
@@ -265,6 +291,7 @@ public abstract class AbstractModule implements IModule {
     return manager.createNewModel(root, uid, this);
   }
 
+  @NotNull
   public List<SModelDescriptor> getModelDescriptors() {
     Set<SModelDescriptor> modelDescriptors = new HashSet<SModelDescriptor>(getOwnModelDescriptors());
     for (IModule module : getAllDependOnModules(IModule.class)) {
@@ -273,6 +300,7 @@ public abstract class AbstractModule implements IModule {
     return new ArrayList<SModelDescriptor>(modelDescriptors);
   }
 
+  @NotNull
   public File getDescriptorFile() {
     return myDescriptorFile;
   }
@@ -292,6 +320,7 @@ public abstract class AbstractModule implements IModule {
     }
   }
 
+  @NotNull
   public List<String> getClassPathItems() {
     return new ArrayList<String>();
   }
