@@ -5,6 +5,8 @@ import jetbrains.mps.smodel.*;
 
 import java.util.List;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Igoor
@@ -14,7 +16,7 @@ import java.util.List;
  */
 public class GlobalScope implements IScope {
   private static GlobalScope myInstance;
-
+  
   public static GlobalScope getInstance() {
     if (myInstance == null) {
       myInstance = new GlobalScope();

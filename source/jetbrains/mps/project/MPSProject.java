@@ -23,6 +23,8 @@ import jetbrains.mps.vcs.VersionControlManager;
 import jetbrains.mps.vcs.model.IVersionControl;
 import org.jdom.Document;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.util.*;
@@ -52,7 +54,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
   private ProjectEventTranslator myEventTranslator;
   private PluginManager myPluginManager = new PluginManager(this);
 
-  public MPSProject(final File projectFile) {
+  public MPSProject(final @NotNull File projectFile) {
     addComponent(PluginManager.class, myPluginManager);
 
     CommandProcessor.instance().executeCommand(new Runnable() {
@@ -67,7 +69,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
 
         LOG.assertLog(myProjectDescriptor.isRoot(), "Project descriptor has to be root");
 
-        readModules(projectFile, model);
+        readModules();
         ReloadUtils.reloadAll(true, false);
         readModelsFromModules();
 
@@ -92,11 +94,12 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     myPluginManager.reloadPlugins();
   }
 
+  @NotNull
   public List<SModelDescriptor> getModelDescriptors() {
     return SModelRepository.getInstance().getAllModelDescriptors();
   }
 
-  private void readModules(File projectFile, final SModel projectModel) {
+  private void readModules() {
     // load solutions
     mySolutions = new LinkedList<Solution>();
     for (SolutionPath solutionPath : CollectionUtil.iteratorAsIterable(myProjectDescriptor.projectSolutions())) {
@@ -125,6 +128,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     }
   }
 
+  @NotNull
   public List<IModule> getModules() {
     List<IModule> result = new ArrayList<IModule>();
     result.addAll(myLanguages);
@@ -138,11 +142,12 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     }
   }
 
-  public IVersionControl getVCSFor(SModelDescriptor model) {
+  @NotNull
+  public IVersionControl getVCSFor(@NotNull SModelDescriptor model) {
     return getComponent(VersionControlManager.class).createVCSFor(model, this);
   }
 
-  public void setProjectDescriptor(final ProjectDescriptor newDescriptor) {
+  public void setProjectDescriptor(final @NotNull ProjectDescriptor newDescriptor) {
     // release languages/solutions and models (except descriptor model)
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), (ModelOwner) MPSProject.this);
     MPSModuleRepository.getInstance().unRegisterModules(MPSProject.this);
@@ -153,14 +158,14 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
 
     LOG.assertLog(myProjectDescriptor.isRoot(), "Project descriptor has to be root");
 
-    readModules(myProjectFile, newDescriptor.getModel());
+    readModules();
     ReloadUtils.reloadAll(true);
     readModelsFromModules();
 
     myEventTranslator.projectChanged();
   }
 
-  public void addProjectLanguage(Language language) {
+  public void addProjectLanguage(@NotNull Language language) {
     ProjectDescriptor projectDescriptor = getProjectDescriptor();
     SModel model = projectDescriptor.getModel();
     model.setLoading(true);
@@ -171,7 +176,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     myEventTranslator.projectChanged();
   }
 
-  public Solution addProjectSolution(File solutionDescriptionFile) {
+  @NotNull
+  public Solution addProjectSolution(@NotNull File solutionDescriptionFile) {
     ProjectDescriptor projectDescriptor = getProjectDescriptor();
     SModel model = projectDescriptor.getModel();
     model.setLoading(true);
@@ -188,13 +194,15 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
       }
     }
 
-    return null;
+    throw new RuntimeException("it can't happen");
   }
 
+  @NotNull
   public String toString() {
     return "MPSProject file: " + (myProjectFile == null ? "<none>" : myProjectFile.toString());
   }
-  
+
+  @NotNull
   public File getProjectFile() {
     return myProjectFile;
   }
@@ -203,17 +211,21 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     return getProjectHandler() != null;
   }
 
+  @Nullable
   public IProjectHandler getProjectHandler() {
-    if (getIDEAProjectFile() == null) return null;
-    String projectPath = getIDEAProjectFile().getAbsolutePath();
+    File ideaProjectFile = getIDEAProjectFile();
+    if (ideaProjectFile == null) return null;
+    String projectPath = ideaProjectFile.getAbsolutePath();
     return MPSPlugin.getInstance().getProjectHandler(projectPath);
   }
 
+  @Nullable
   public File getIDEAProjectFile() {
     return findIDEAProject(getProjectFile().getParentFile());
   }
 
-  private File findIDEAProject(File directory) {
+  @Nullable
+  private File findIDEAProject(@NotNull File directory) {
     if (directory.listFiles() == null) return null;
 
     for (File file : directory.listFiles()) {
@@ -231,17 +243,18 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     return null;
   }
 
-  public void addLanguageRoot(String languagePath) {
+  public void addLanguageRoot(@NotNull String languagePath) {
     LanguagePath path = LanguagePath.newInstance(getProjectDescriptor().getModel());
     path.setPath(languagePath);
     getProjectDescriptor().addProjectLanguage(path);
   }
 
+  @NotNull
   public ProjectDescriptor getProjectDescriptor() {
     return myProjectDescriptor;
   }
 
-  public void addClassPathItem(String path) {
+  public void addClassPathItem(@NotNull String path) {
     for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(myProjectDescriptor.classPathEntriess())) {
       if (path.equals(entry.getPath())) return;
     }
@@ -252,42 +265,60 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     myProjectDescriptor.addClassPathEntries(entry);
   }
 
+  @NotNull
   public List<Language> getProjectLanguages() {
     return Collections.unmodifiableList(myLanguages);
   }
 
+  @NotNull
   public List<Solution> getProjectSolutions() {
     return Collections.unmodifiableList(mySolutions);
   }
 
-  public boolean isProjectModule(IModule module) {
-    return myLanguages.contains(module) || mySolutions.contains(module);
+  public boolean isProjectModule(@NotNull IModule module) {
+    if (module instanceof Language) {
+      return myLanguages.contains((Language) module); 
+    }
+    if (module instanceof Solution) {
+     return mySolutions.contains((Solution) module);
+    }
+    return false;
   }
 
+  @NotNull
   public List<Object> getComponents() {
     return new ArrayList<Object>(myComponents.values());
   }
 
+  public boolean containsComponent(Class<?> cls) {
+    return myComponents.containsKey(cls);
+  }
+
+  @NotNull
   public <T> T getComponent(Class<T> clazz) {
     if (clazz == EditorsPane.class) {
       IDEProjectFrame projectFrame = getComponent(IDEProjectFrame.class);
-      if (projectFrame != null) return (T) projectFrame.getEditorsPane();
+      return (T) projectFrame.getEditorsPane();
     }
-    return (T) myComponents.get(clazz);
+    T result = (T) myComponents.get(clazz);
+    assert result != null;
+    return result;
   }
 
-  public void addComponent(Class interfaceClass, Object instance) {
+  public void addComponent(@NotNull Class interfaceClass, @NotNull Object instance) {
     myComponents.put(interfaceClass, instance);
   }
 
-  public void removeComponent(Class interfaceClass) {
+  public void removeComponent(@NotNull Class interfaceClass) {
     myComponents.remove(interfaceClass);
   }
 
+  @NotNull
   public File getClassGenPath() {
     return new File(myProjectFile.getParentFile(), "classes_gen");
   }
 
+  @NotNull
   public List<String> getClassPath() {
     List<String> classpath = new LinkedList<String>();
 
@@ -324,7 +355,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
           try {
             String className = component.getAttributeValue(CLASS);
             Class cls = Class.forName(className);
-            if (getComponent(cls) != null && getComponent(cls) instanceof IExternalizableComponent) {
+
+            if (containsComponent(cls) && getComponent(cls) instanceof IExternalizableComponent) {
               ((IExternalizableComponent) getComponent(cls)).read(component, this);
             }
           } catch (ClassNotFoundException e) {
@@ -389,7 +421,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
   }
 
 
-  public Solution getSolutionForModel(SModelDescriptor md) {
+  @Nullable
+  public Solution getSolutionForModel(@NotNull SModelDescriptor md) {
     Set<Solution> owners = SModelRepository.getInstance().getOwners(md, Solution.class);
     for (Solution s : mySolutions) {
       if (owners.contains(s)) return s;
@@ -397,7 +430,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     return null;
   }
 
-  public Language getLanguageForModel(SModelDescriptor md) {
+  @Nullable
+  public Language getLanguageForModel(@NotNull SModelDescriptor md) {
     Set<Language> owners = SModelRepository.getInstance().getOwners(md, Language.class);
     for (Language l : myLanguages) {
       if (owners.contains(l)) return l;
@@ -406,7 +440,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
   }
 
 
-  public Language getLanguage(String languageNamespace) {
+  @Nullable
+  public Language getLanguage(@NotNull String languageNamespace) {
     Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, this);
     if (language == null) {
       language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, BootstrapLanguages.getInstance());
@@ -417,13 +452,15 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     return language;
   }
 
+  @NotNull
   public List<Language> getVisibleLanguages() {
     List<Language> list = new LinkedList<Language>(MPSModuleRepository.getInstance().getLanguages(this));
     list.addAll(MPSModuleRepository.getInstance().getLanguages(BootstrapLanguages.getInstance()));
     return list;
   }
 
-  public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
+  @Nullable
+  public SModelDescriptor getModelDescriptor(@NotNull SModelUID modelUID) {
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
     if (modelDescriptor != null) {
       return modelDescriptor;
@@ -445,7 +482,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     return null;
   }
 
-  public List<SModelDescriptor> getModelDescriptors(String modelName) {
+  @NotNull
+  public List<SModelDescriptor> getModelDescriptors(@NotNull String modelName) {
     HashSet<SModelDescriptor> set = new HashSet<SModelDescriptor>();
     {
       List<SModelDescriptor> list = SModelRepository.getInstance().getModelDescriptors(modelName, this);
@@ -478,11 +516,11 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     return result;
   }
 
-  public void addMPSProjectCommandListener(IMPSProjectCommandListener listener) {
+  public void addMPSProjectCommandListener(@NotNull IMPSProjectCommandListener listener) {
     myProjectCommandListeners.add(listener);
   }
 
-  public void removeMPSProjectCommandListener(IMPSProjectCommandListener listener) {
+  public void removeMPSProjectCommandListener(@NotNull IMPSProjectCommandListener listener) {
     myProjectCommandListeners.remove(listener);
   }
 
@@ -492,6 +530,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     }
   }
 
+  @NotNull
   public IPreferencesPage createPreferencesPage() {
     return new ProjectPathsDialog(getComponent(AbstractProjectFrame.class), this, new ProjectOperationContext(this)).createPreferencesPage();
   }
