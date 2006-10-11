@@ -277,10 +277,10 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
 
   public boolean isProjectModule(@NotNull IModule module) {
     if (module instanceof Language) {
-      return myLanguages.contains((Language) module); 
+      return myLanguages.contains((Language) module);
     }
     if (module instanceof Solution) {
-     return mySolutions.contains((Solution) module);
+      return mySolutions.contains((Solution) module);
     }
     return false;
   }
@@ -442,14 +442,23 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
 
   @Nullable
   public Language getLanguage(@NotNull String languageNamespace) {
+    return getLanguage(languageNamespace, false);
+  }
+
+  @Nullable
+  private Language getLanguage(@NotNull String languageNamespace, boolean suppressWarnings) {
     Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, this);
     if (language == null) {
       language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, BootstrapLanguages.getInstance());
     }
-    if (language == null) {
+    if (language == null && !suppressWarnings) {
       LOG.error("Couldn't find language for namespace: \"" + languageNamespace + "\" in: " + this);
     }
     return language;
+  }
+
+  public boolean isVisibleLanguage(@NotNull String languageNamespace) {
+    return getLanguage(languageNamespace, true) != null;
   }
 
   @NotNull

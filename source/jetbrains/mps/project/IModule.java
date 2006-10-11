@@ -1,15 +1,13 @@
 package jetbrains.mps.project;
 
-import jetbrains.mps.smodel.*;
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.projectLanguage.ModuleDescriptor;
-
-import java.util.Set;
-import java.util.List;
-import java.io.File;
-
+import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.io.File;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -20,8 +18,6 @@ import org.jetbrains.annotations.Nullable;
  */
 public interface IModule extends IScope, ModelOwner, MPSModuleOwner {
   @NotNull String getModuleUID();
-
-  @Nullable Language getLanguage(@NotNull String languageNamespace, @NotNull Set<IModule> modulesToSkip);
 
   @NotNull List<Language> getOwnLanguages();
 

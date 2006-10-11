@@ -21,5 +21,7 @@ public interface IScope {
 
   @Nullable Language getLanguage(@NotNull String languageNamespace);
 
+  boolean isVisibleLanguage(@NotNull String languageNamespace);
+
   @NotNull List<Language> getVisibleLanguages();
 }

@@ -36,18 +36,23 @@ public abstract class AbstractModule implements IModule {
   }
 
   @Nullable
-  public Language getLanguage(@NotNull String languageNamespace) {
-    return getLanguage(languageNamespace, new HashSet<IModule>());
+  public final Language getLanguage(@NotNull String languageNamespace) {
+    return getLanguage(languageNamespace, new HashSet<IModule>(), false);
+  }
+
+
+  public boolean isVisibleLanguage(@NotNull String languageNamespace) {
+    return getLanguage(languageNamespace, new HashSet<IModule>(), true) != null;
   }
 
   @Nullable
-  public Language getLanguage(@NotNull String languageNamespace, @NotNull Set<IModule> modulesToSkip) {
+  protected Language getLanguage(@NotNull String languageNamespace, @NotNull Set<IModule> modulesToSkip, boolean suppressWarnings) {
 //    if (languageNamespace == null) return null;
     Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, BootstrapLanguages.getInstance());
     if (language != null) return language;
     Set<IModule> processedModules = new HashSet<IModule>(modulesToSkip);
     language = getLanguage_internal(languageNamespace, processedModules, this);
-    if (language == null) {
+    if (language == null && !suppressWarnings) {
       LOG.errorWithTrace("Couldn't find language: \"" + languageNamespace + "\" in scope: " + this);
     }
     return language;

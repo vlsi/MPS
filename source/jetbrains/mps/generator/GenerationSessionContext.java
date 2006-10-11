@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.*;
 import java.util.*;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Created by IntelliJ IDEA.
@@ -173,7 +174,32 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       return myDependOnModules;
     }
 
-    public Language getLanguage(@NotNull String languageNamespace) {
+//    public Language getLanguage(@NotNull String languageNamespace) {
+//      if (myInvocationModule instanceof Language) {
+//        if (languageNamespace.equals(myInvocationModule.getModuleUID())) {
+//          return (Language) myInvocationModule;
+//        }
+//      }
+//
+//      Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, BootstrapLanguages.getInstance());
+//      if (language == null) {
+//        for (Generator generator : GenerationSessionContext.this.getGeneratorModules()) {
+//          language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, generator);
+//          if (language != null) return language;
+//        }
+//      }
+//      if (language == null) {
+//        language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, myInvocationModule);
+//      }
+//      if (language == null) {
+//        LOG.error("Couldn't find language: \"" + languageNamespace + "\" in scope: " + this);
+//      }
+//      return language;
+//    }
+
+    @Nullable
+    @Override
+    protected Language getLanguage(@NotNull String languageNamespace, @NotNull Set<IModule> modulesToSkip, boolean suppressWarnings) {
       if (myInvocationModule instanceof Language) {
         if (languageNamespace.equals(myInvocationModule.getModuleUID())) {
           return (Language) myInvocationModule;
@@ -190,7 +216,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       if (language == null) {
         language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, myInvocationModule);
       }
-      if (language == null) {
+      if (language == null && !suppressWarnings) {
         LOG.error("Couldn't find language: \"" + languageNamespace + "\" in scope: " + this);
       }
       return language;

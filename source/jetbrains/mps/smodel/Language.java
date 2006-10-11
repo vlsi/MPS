@@ -23,6 +23,7 @@ import java.io.File;
 import java.util.*;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 
 /**
@@ -525,11 +526,20 @@ public class Language extends AbstractModule {
     return languages;
   }
 
-  public Language getLanguage(@NotNull String languageNamespace) {
+//  public Language getLanguage(@NotNull String languageNamespace) {
+//    if (getModuleUID().equals(languageNamespace)) {
+//      return this;
+//    }
+//    return super.getLanguage(languageNamespace);
+//  }
+
+  @Nullable
+  @Override
+  protected Language getLanguage(@NotNull String languageNamespace, @NotNull Set<IModule> modulesToSkip, boolean suppressWarnings) {
     if (getModuleUID().equals(languageNamespace)) {
       return this;
     }
-    return super.getLanguage(languageNamespace);
+    return super.getLanguage(languageNamespace, modulesToSkip, suppressWarnings);
   }
 
   @NotNull

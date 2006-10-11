@@ -107,14 +107,24 @@ public class Generator extends AbstractModule {
     return myGeneratorDescriptor;
   }
 
+//  @Nullable
+//  public Language getLanguage(@NotNull String languageNamespace) {
+//    if (mySourceLanguage.getModuleUID().equals(languageNamespace)) {
+//      return mySourceLanguage;
+//    }
+//    Set<IModule> modulesToSkip = new HashSet<IModule>();
+//    modulesToSkip.add(this);
+//    return super.getLanguage(languageNamespace, modulesToSkip, false);
+//  }
+
   @Nullable
-  public Language getLanguage(@NotNull String languageNamespace) {
+  @Override
+  protected Language getLanguage(@NotNull String languageNamespace, @NotNull Set<IModule> modulesToSkip, boolean suppressWarnings) {
     if (mySourceLanguage.getModuleUID().equals(languageNamespace)) {
       return mySourceLanguage;
     }
-    Set<IModule> modulesToSkip = new HashSet<IModule>();
     modulesToSkip.add(this);
-    return super.getLanguage(languageNamespace, modulesToSkip);
+    return super.getLanguage(languageNamespace, modulesToSkip, suppressWarnings);
   }
 
   @NotNull

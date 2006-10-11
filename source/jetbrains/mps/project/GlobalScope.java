@@ -1,11 +1,9 @@
 package jetbrains.mps.project;
 
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
-
-import org.jetbrains.annotations.NotNull;
 
 /**
  * Created by IntelliJ IDEA.
@@ -16,7 +14,7 @@ import org.jetbrains.annotations.NotNull;
  */
 public class GlobalScope implements IScope {
   private static GlobalScope myInstance;
-  
+
   public static GlobalScope getInstance() {
     if (myInstance == null) {
       myInstance = new GlobalScope();
@@ -31,6 +29,11 @@ public class GlobalScope implements IScope {
     Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
     assert language != null;
     return language;
+  }
+
+
+  public boolean isVisibleLanguage(@NotNull String languageNamespace) {
+    return getLanguage(languageNamespace) != null;
   }
 
   @NotNull
