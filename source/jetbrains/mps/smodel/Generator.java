@@ -7,6 +7,8 @@ import jetbrains.mps.projectLanguage.ModuleDescriptor;
 
 import java.util.*;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * @author Kostik
  */
@@ -35,6 +37,7 @@ public class Generator extends AbstractModule {
     MPSModuleRepository.getInstance().unRegisterModules(Generator.this);
   }
 
+  @NotNull
   public ModuleDescriptor getModuleDescriptor() {
     return myGeneratorDescriptor;
   }
@@ -43,6 +46,7 @@ public class Generator extends AbstractModule {
     return myGeneratorDescriptor.getName();
   }
 
+  @NotNull
   public String getModuleUID() {
     // return mySourceLanguage.getNamespace() + "->" + getTargetLanguageName();//this wannabe key is mutable!!!
     String namespace = myGeneratorDescriptor.getGeneratorUID();
@@ -92,7 +96,7 @@ public class Generator extends AbstractModule {
     return myGeneratorDescriptor;
   }
 
-  public Language getLanguage(String languageNamespace) {
+  public Language getLanguage(@NotNull String languageNamespace) {
     if (mySourceLanguage.getModuleUID().equals(languageNamespace)) {
       return mySourceLanguage;
     }
@@ -101,6 +105,7 @@ public class Generator extends AbstractModule {
     return super.getLanguage(languageNamespace, modulesToSkip);
   }
 
+  @NotNull
   public List<IModule> getExplicitlyDependOnModules() {
     // depends on source/target language and all owned modules
     List<IModule> result = new LinkedList<IModule>(getOwnModules());

@@ -1,5 +1,8 @@
 package jetbrains.mps.smodel;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
 import java.util.List;
 
 /**
@@ -10,13 +13,13 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public interface IScope {
-  SModelDescriptor getModelDescriptor(SModelUID modelUID);
+  @Nullable SModelDescriptor getModelDescriptor(@NotNull SModelUID modelUID);
   
-  List<SModelDescriptor> getModelDescriptors(String modelName);
+  @NotNull List<SModelDescriptor> getModelDescriptors(@NotNull String modelName);
 
-  List<SModelDescriptor> getModelDescriptors();
+  @NotNull List<SModelDescriptor> getModelDescriptors();
 
-  Language getLanguage(String languageNamespace);
+  @Nullable Language getLanguage(@NotNull String languageNamespace);
 
-  List<Language> getVisibleLanguages();
+  @NotNull List<Language> getVisibleLanguages();
 }

@@ -36,7 +36,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   @Nullable
-  public Language getLanguage(String languageNamespace) {
+  public Language getLanguage(@NotNull String languageNamespace) {
     return getLanguage(languageNamespace, new HashSet<IModule>());
   }
 

@@ -8,6 +8,9 @@ import java.util.Set;
 import java.util.List;
 import java.io.File;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
@@ -16,39 +19,39 @@ import java.io.File;
  * To change this template use File | Settings | File Templates.
  */
 public interface IModule extends IScope, ModelOwner, MPSModuleOwner {
-  String getModuleUID();
+  @NotNull String getModuleUID();
 
-  Language getLanguage(String languageNamespace, Set<IModule> modulesToSkip);
+  @Nullable Language getLanguage(@NotNull String languageNamespace, @NotNull Set<IModule> modulesToSkip);
 
-  List<Language> getOwnLanguages();
+  @NotNull List<Language> getOwnLanguages();
 
-  List<IModule> getOwnModules();
+  @NotNull List<IModule> getOwnModules();
 
-  List<SModelDescriptor> getOwnModelDescriptors();
+  @NotNull List<SModelDescriptor> getOwnModelDescriptors();
 
-  List<ModelRoot> getModelRoots();
+  @NotNull List<ModelRoot> getModelRoots();
 
-  List<ModelRoot> getNonDefaultModelRoots();
+  @NotNull List<ModelRoot> getNonDefaultModelRoots();
 
-  List<IModule> getExplicitlyDependOnModules();
+  @NotNull List<IModule> getExplicitlyDependOnModules();
 
-  List<IModule> getDependOnModules();
+  @NotNull List<IModule> getDependOnModules();
 
-  void registerModelDescriptor(SModelDescriptor modelDescriptor);
+  void registerModelDescriptor(@NotNull SModelDescriptor modelDescriptor);
 
-  void unRegisterModelDescriptor(SModelDescriptor modelDescriptor);
+  void unRegisterModelDescriptor(@NotNull SModelDescriptor modelDescriptor);
 
-  SModelDescriptor createModel(SModelUID uid, ModelRoot root);
+  @NotNull SModelDescriptor createModel(@NotNull SModelUID uid, @NotNull ModelRoot root);
 
-  File getDescriptorFile();
+  @NotNull File getDescriptorFile();
 
-  ModuleDescriptor getModuleDescriptor();
+  @NotNull ModuleDescriptor getModuleDescriptor();
 
-  String getGeneratorOutputPath();
+  @Nullable String getGeneratorOutputPath();
 
   void dispose();
 
   void readModels();
 
-  List<String> getClassPathItems();
+  @NotNull List<String> getClassPathItems();
 }

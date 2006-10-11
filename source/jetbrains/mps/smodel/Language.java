@@ -22,6 +22,8 @@ import jetbrains.mps.util.annotation.Hack;
 import java.io.File;
 import java.util.*;
 
+import org.jetbrains.annotations.NotNull;
+
 
 /**
  * Author: Sergey Dmitriev
@@ -216,6 +218,7 @@ public class Language extends AbstractModule {
     return getLanguageDescriptor().getLanguagePluginClass();
   }
 
+  @NotNull
   public List<IModule> getExplicitlyDependOnModules() {
     // depends of other languages and solutions, but not on generators
     List<IModule> result = new LinkedList<IModule>();
@@ -239,6 +242,7 @@ public class Language extends AbstractModule {
     return myGenerators;
   }
 
+  @NotNull
   public String getModuleUID() {
     return getNamespace();
   }
@@ -502,6 +506,7 @@ public class Language extends AbstractModule {
     }
   }
 
+  @NotNull
   public List<Language> getOwnLanguages() {
     List<Language> languages = super.getOwnLanguages();
     if (!languages.contains(this)) {
@@ -510,6 +515,7 @@ public class Language extends AbstractModule {
     return languages;
   }
 
+  @NotNull
   public List<Language> getVisibleLanguages() {
     List<Language> languages = super.getVisibleLanguages();
     if (!languages.contains(this)) {
@@ -518,13 +524,14 @@ public class Language extends AbstractModule {
     return languages;
   }
 
-  public Language getLanguage(String languageNamespace) {
+  public Language getLanguage(@NotNull String languageNamespace) {
     if (getModuleUID().equals(languageNamespace)) {
       return this;
     }
     return super.getLanguage(languageNamespace);
   }
 
+  @NotNull
   public List<String> getClassPathItems() {
     List<String> result = new ArrayList<String>();
     for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(myLanguageDescriptor.classPathEntrys())) {

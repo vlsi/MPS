@@ -27,26 +27,29 @@ public class GlobalScope implements IScope {
   private GlobalScope() {
   }
 
-  public Language getLanguage(String languageNamespace) {
+  public Language getLanguage(@NotNull String languageNamespace) {
     Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
     assert language != null;
     return language;
   }
 
+  @NotNull
   public List<Language> getVisibleLanguages() {
     return MPSModuleRepository.getInstance().getAllLanguages();
   }
 
-  public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
+  public SModelDescriptor getModelDescriptor(@NotNull SModelUID modelUID) {
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
     assert modelDescriptor != null;
     return modelDescriptor;
   }
 
-  public List<SModelDescriptor> getModelDescriptors(String modelName) {
+  @NotNull
+  public List<SModelDescriptor> getModelDescriptors(@NotNull String modelName) {
     return SModelRepository.getInstance().getModelDescriptorsByModelName(modelName);
   }
 
+  @NotNull
   public List<SModelDescriptor> getModelDescriptors() {
     return SModelRepository.getInstance().getAllModelDescriptors();
   }
