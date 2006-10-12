@@ -166,6 +166,9 @@ public class Language extends AbstractModule {
     // release modules and models (except descriptor model)
     unRegisterAspectListener();
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), Language.this);
+
+    assert modelDescriptor != null;
+
     MPSModuleRepository.getInstance().unRegisterModules(Language.this);
     SModelRepository.getInstance().unRegisterModelDescriptors(Language.this);
     SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, Language.this);
@@ -285,10 +288,24 @@ public class Language extends AbstractModule {
     long result = 0;
     SModelRepository repository = SModelRepository.getInstance();
     result = Math.max(result, repository.getLastChangeTime(getStructureModelDescriptor()));
-    result = Math.max(result, repository.getLastChangeTime(getEditorModelDescriptor()));
-    result = Math.max(result, repository.getLastChangeTime(getActionsModelDescriptor()));
-    result = Math.max(result, repository.getLastChangeTime(getConstraintsModelDescriptor()));
-    result = Math.max(result, repository.getLastChangeTime(getTypesystemModelDescriptor()));
+
+
+    if (getEditorModelDescriptor() != null) {
+      result = Math.max(result, repository.getLastChangeTime(getEditorModelDescriptor()));
+    }
+
+    if (getActionsModelDescriptor() != null) {
+      result = Math.max(result, repository.getLastChangeTime(getActionsModelDescriptor()));
+    }
+
+    if (getConstraintsModelDescriptor() != null) {
+      result = Math.max(result, repository.getLastChangeTime(getConstraintsModelDescriptor()));
+    }
+
+    if (getTypesystemModelDescriptor() != null) {
+      result = Math.max(result, repository.getLastChangeTime(getTypesystemModelDescriptor()));
+    }
+
     return result;
   }
 
@@ -300,20 +317,23 @@ public class Language extends AbstractModule {
     });
   }
 
+  @NotNull
   public SModelDescriptor getStructureModelDescriptor() {
-    if (getLanguageDescriptor().getStructureModel() != null) {
-      SModelUID modelUID = SModelUID.fromString(getLanguageDescriptor().getStructureModel().getName());
-      SModelDescriptor structureModelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
-      if (structureModelDescriptor == null) {
-        LOG.error("Couldn't get structure model \"" + modelUID + "\"");
-      } else if (!myRegisteredInFindUsagesManager) {
-        myRegisteredInFindUsagesManager = true;
-        //register cache invalidation
-        FindUsagesManager.registerStructureModel(structureModelDescriptor);
-      }
-      return structureModelDescriptor;
+    Model structureModel = getLanguageDescriptor().getStructureModel();
+
+    assert structureModel != null;
+
+    SModelUID modelUID = SModelUID.fromString(structureModel.getName());
+    SModelDescriptor structureModelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
+    if (structureModelDescriptor == null) {
+      LOG.error("Couldn't get structure model \"" + modelUID + "\"");
+    } else if (!myRegisteredInFindUsagesManager) {
+      myRegisteredInFindUsagesManager = true;
+      //register cache invalidation
+      FindUsagesManager.registerStructureModel(structureModelDescriptor);
     }
-    return null;
+    assert structureModelDescriptor != null;
+    return structureModelDescriptor;
   }
 
   public SModelDescriptor getTypesystemModelDescriptor() {
@@ -398,7 +418,7 @@ public class Language extends AbstractModule {
   public Set<SModelDescriptor> getAspectModelDescriptors() {
     Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
     SModelDescriptor structureModelDescriptor = getStructureModelDescriptor();
-    if (structureModelDescriptor != null) result.add(structureModelDescriptor);
+    result.add(structureModelDescriptor);
     result.addAll(getEditorDescriptors());
     SModelDescriptor typesystemModelDescriptor = getTypesystemModelDescriptor();
     if (typesystemModelDescriptor != null) result.add(typesystemModelDescriptor);
@@ -436,7 +456,6 @@ public class Language extends AbstractModule {
   public ConceptDeclaration findConceptDeclaration(String conceptName) {
     if (myNameToConceptCache.isEmpty()) {
       SModelDescriptor structureModelDescriptor = getStructureModelDescriptor();
-      if (structureModelDescriptor == null) return null;
       SModel structureModel = structureModelDescriptor.getSModel();
       SModelUtil.allNodes(structureModel, new Condition<SNode>() {
         public boolean met(SNode node) {
