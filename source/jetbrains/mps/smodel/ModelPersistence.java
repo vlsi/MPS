@@ -52,7 +52,6 @@ public class ModelPersistence {
   public static final String PROPERTY_ATTRIBUTE = "propertyAttribute";
   public static final String LINK_ATTRIBUTE = "linkAttribute";
 
-
   @NotNull
   private static Document loadModelDocument(@NotNull File file) {
     Document document;

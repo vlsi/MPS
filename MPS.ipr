@@ -108,9 +108,6 @@
     <option name="MAXIMUM_HEAP_SIZE" value="128" />
   </component>
   <component name="EntryPointsManager">
-    <entry_points>
-      <entry_point TYPE="field" FQNAME="jetbrains.mps.ide.icons.IconManager.LOG" />
-    </entry_points>
   </component>
   <component name="ExportToHTMLSettings">
     <option name="PRINT_LINE_NUMBERS" value="false" />

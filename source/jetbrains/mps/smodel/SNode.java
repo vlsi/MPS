@@ -815,7 +815,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   @Nullable
-  public SNode getReferent(@NotNull String role) {
+  public SNode getReferent(String role) {
     // tmp check
     int count = getReferentCount(role);
     if (count > 1) {
