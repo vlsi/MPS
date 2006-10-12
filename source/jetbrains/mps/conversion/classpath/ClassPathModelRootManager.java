@@ -10,6 +10,8 @@ import jetbrains.mps.ide.BootstrapLanguages;
 
 import java.util.*;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * @author Kostik
  */
@@ -19,7 +21,8 @@ public class ClassPathModelRootManager extends AbstractModelRootManager  {
   private ModelOwner myOwner;
   private IConverter myConverter;
 
-  public Set<SModelDescriptor> read(ModelRoot root, ModelOwner owner) {
+  @NotNull
+  public Set<SModelDescriptor> read(@NotNull ModelRoot root, @NotNull ModelOwner owner) {
     try {
       myOwner = owner;
       myConverter = ConverterFactory.createClassPathConverter(this, root, myOwner);
@@ -32,14 +35,15 @@ public class ClassPathModelRootManager extends AbstractModelRootManager  {
     }
   }
 
-  public SModel loadModel(SModelDescriptor modelDescriptor) {
+  @NotNull
+  public SModel loadModel(@NotNull SModelDescriptor modelDescriptor) {
     SModel model = new SModel(modelDescriptor.getModelUID());
     ourTimestamps.put(model.getUID(), timestamp(modelDescriptor));
     model.addLanguage(BootstrapLanguages.getInstance().getBaseLanguage());
     return model;
   }
 
-  public void updateAfterLoad(SModelDescriptor modelDescriptor) {
+  public void updateAfterLoad(@NotNull SModelDescriptor modelDescriptor) {
     SModel model = modelDescriptor.getSModel();
     model.setLoading(true);
     try {
@@ -49,15 +53,16 @@ public class ClassPathModelRootManager extends AbstractModelRootManager  {
     }
   }
 
-  public long timestamp(SModelDescriptor modelDescriptor) {
+  public long timestamp(@NotNull SModelDescriptor modelDescriptor) {
     return getClassPathItem().getClassesTimestamp(modelDescriptor.getModelUID().getLongName());
   }
 
 
-  public void saveModel(SModelDescriptor modelDescriptor) {
+  public void saveModel(@NotNull SModelDescriptor modelDescriptor) {
   }
 
-  public SModel refresh(SModelDescriptor modelDescriptor) {
+  @NotNull
+  public SModel refresh(@NotNull SModelDescriptor modelDescriptor) {
     SModel smodel = modelDescriptor.getSModel();
     if (smodel != null) {
       long timestamp = timestamp(modelDescriptor);
@@ -88,6 +93,9 @@ public class ClassPathModelRootManager extends AbstractModelRootManager  {
         SModelUID modelUID = SModelUID.fromString(subpackage + "@" + SModelStereotype.JAVA_STUB);
         if (SModelRepository.getInstance().getModelDescriptor(modelUID) != null) {
           SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(subpackage + "@" + SModelStereotype.JAVA_STUB));
+
+          assert descriptor != null;
+          
           SModelRepository.getInstance().addOwnerForDescriptor(descriptor, myOwner);
           descriptors.add(descriptor);
         } else {

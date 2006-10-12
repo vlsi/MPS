@@ -9,19 +9,23 @@ import jetbrains.mps.smodel.event.SModelsMulticaster;
 import java.util.*;
 import java.io.*;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * @author Kostik
  */
 public class DefaultModelRootManager extends AbstractModelRootManager {
   private static final Logger LOG = Logger.getLogger(DefaultModelRootManager.class);
 
-  public Set<SModelDescriptor> read(ModelRoot root, ModelOwner owner) {
+  @NotNull
+  public Set<SModelDescriptor> read(@NotNull ModelRoot root, @NotNull ModelOwner owner) {
     Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
     readModelDescriptors(result, new File(root.getPath()), root, owner);
     return result;
   }
 
-  public SModel loadModel(SModelDescriptor modelDescriptor) {
+  @NotNull
+  public SModel loadModel(@NotNull SModelDescriptor modelDescriptor) {
     File file = modelDescriptor.getModelFile();
     if (!file.exists()) {
       return new SModel(modelDescriptor.getModelUID());
@@ -38,7 +42,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
   }
 
 
-  public boolean containsSomeString(SModelDescriptor modelDescriptor, Set<String> strings) {    
+  public boolean containsSomeString(@NotNull SModelDescriptor modelDescriptor, @NotNull Set<String> strings) {
     if (SModelRepository.getInstance().isChanged(modelDescriptor)) return true;
     if (modelDescriptor.getModelFile() == null || !modelDescriptor.getModelFile().exists()) return true;
     try {
@@ -62,12 +66,12 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 
   }
 
-  public boolean containsString(SModelDescriptor modelDescriptor, String string) {
+  public boolean containsString(@NotNull SModelDescriptor modelDescriptor, @NotNull String string) {
     return containsSomeString(modelDescriptor, CollectionUtil.asSet(string));
   }
 
 
-  public void saveModel(SModelDescriptor modelDescriptor) {
+  public void saveModel(@NotNull SModelDescriptor modelDescriptor) {
     ModelPersistence.saveModel(modelDescriptor.getSModel(), modelDescriptor.getModelFile());
   }
 
@@ -103,7 +107,8 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     return true;
   }
 
-  public SModelDescriptor createNewModel(ModelRoot root, SModelUID uid, ModelOwner owner) {
+  @NotNull
+  public SModelDescriptor createNewModel(@NotNull ModelRoot root, @NotNull SModelUID uid, @NotNull ModelOwner owner) {
     String pathPrefix = root.getPrefix();
     String path = root.getPath();
 
