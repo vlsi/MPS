@@ -58,7 +58,9 @@ public class Language extends AbstractModule {
 
   private boolean myRegisteredInFindUsagesManager;
 
-  public static Language newInstance(File descriptorFile, MPSModuleOwner moduleOwner) {
+  @NotNull
+  public static Language newInstance(@NotNull File descriptorFile,
+                                     @NotNull MPSModuleOwner moduleOwner) {
     Language language = new Language();
     SModel model = ProjectModels.createDescriptorFor(language).getSModel();
     model.setLoading(true);
@@ -70,7 +72,9 @@ public class Language extends AbstractModule {
     return language;
   }
 
-  public static Language newInstance(LanguageDescriptor languageDescriptor, MPSModuleOwner owner) {
+  @NotNull
+  public static Language newInstance(@NotNull LanguageDescriptor languageDescriptor,
+                                     @NotNull MPSModuleOwner owner) {
     Language language = new Language();
     SModel model = ProjectModels.createDescriptorFor(language).getSModel();
     model.setLoading(true);
@@ -82,7 +86,10 @@ public class Language extends AbstractModule {
   }
 
 
-  public static Language createLanguage(String languageNamespace, File descriptorFile, MPSModuleOwner moduleOwner) {
+  @NotNull
+  public static Language createLanguage(@NotNull String languageNamespace,
+                                        @NotNull File descriptorFile,
+                                        @NotNull MPSModuleOwner moduleOwner) {
     Language language = new Language();
     SModel descriptorModel = ProjectModels.createDescriptorFor(language).getSModel();
     descriptorModel.setLoading(true);
@@ -162,7 +169,7 @@ public class Language extends AbstractModule {
 
   }
 
-  public void setLanguageDescriptor(final LanguageDescriptor newDescriptor) {
+  public void setLanguageDescriptor(final @NotNull LanguageDescriptor newDescriptor) {
     // release modules and models (except descriptor model)
     unRegisterAspectListener();
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), Language.this);
@@ -210,6 +217,7 @@ public class Language extends AbstractModule {
     }
   }
 
+  @NotNull
   public LanguageDescriptor getLanguageDescriptor() {
     return myLanguageDescriptor;
   }
@@ -219,6 +227,7 @@ public class Language extends AbstractModule {
     return myLanguageDescriptor;
   }
 
+  @Nullable
   public String getLanguagePluginClass() {
     return getLanguageDescriptor().getLanguagePluginClass();
   }
@@ -243,19 +252,24 @@ public class Language extends AbstractModule {
     myUpdateLastGenerationTimeCalled = true;
   }
 
+  @NotNull
   public List<Generator> getGenerators() {
-    return myGenerators;
+    return new ArrayList<Generator>(myGenerators);
   }
 
   @NotNull
-  public String getModuleUID() {
+  public String getModuleUID() {        
     return getNamespace();
   }
 
+  @NotNull
   public String getNamespace() {
-    return getLanguageDescriptor().getNamespace();
+    String result = getLanguageDescriptor().getNamespace();
+    assert result != null;
+    return result;
   }
 
+  @NotNull
   public File getSourceDir() {
     File sourceDir = new File(myDescriptorFile.getParent(), "source_gen");
     if (getLanguageDescriptor().getLanguageGenPath() != null) {
@@ -267,6 +281,7 @@ public class Language extends AbstractModule {
     return sourceDir;
   }
 
+  @Nullable
   public String getGeneratorOutputPath() {
     String generatorOutputPath = myLanguageDescriptor.getLanguageGenPath();
     if (generatorOutputPath == null) {
@@ -290,25 +305,30 @@ public class Language extends AbstractModule {
     result = Math.max(result, repository.getLastChangeTime(getStructureModelDescriptor()));
 
 
-    if (getEditorModelDescriptor() != null) {
-      result = Math.max(result, repository.getLastChangeTime(getEditorModelDescriptor()));
+    SModelDescriptor editorModel = getEditorModelDescriptor();
+    if (editorModel != null) {
+      result = Math.max(result, repository.getLastChangeTime(editorModel));
     }
 
-    if (getActionsModelDescriptor() != null) {
-      result = Math.max(result, repository.getLastChangeTime(getActionsModelDescriptor()));
+    SModelDescriptor actionsModel = getActionsModelDescriptor();
+    if (actionsModel != null) {
+      result = Math.max(result, repository.getLastChangeTime(actionsModel));
     }
 
-    if (getConstraintsModelDescriptor() != null) {
-      result = Math.max(result, repository.getLastChangeTime(getConstraintsModelDescriptor()));
+    SModelDescriptor constraintsModel = getConstraintsModelDescriptor();
+    if (constraintsModel != null) {
+      result = Math.max(result, repository.getLastChangeTime(constraintsModel));
     }
 
-    if (getTypesystemModelDescriptor() != null) {
-      result = Math.max(result, repository.getLastChangeTime(getTypesystemModelDescriptor()));
+    SModelDescriptor typesystemModel = getTypesystemModelDescriptor();
+    if (typesystemModel != null) {
+      result = Math.max(result, repository.getLastChangeTime(typesystemModel));
     }
 
     return result;
   }
 
+  @NotNull
   public List<ConceptDeclaration> getConceptDeclarations() {
     return SModelUtil.allNodes(getStructureModelDescriptor().getSModel(), new Condition<SNode>() {
       public boolean met(SNode object) {
@@ -336,6 +356,7 @@ public class Language extends AbstractModule {
     return structureModelDescriptor;
   }
 
+  @Nullable
   public SModelDescriptor getTypesystemModelDescriptor() {
     if (getLanguageDescriptor().getTypeSystem() != null) {
       SModelUID modelUID = SModelUID.fromString(getLanguageDescriptor().getTypeSystem().getName());
@@ -348,6 +369,7 @@ public class Language extends AbstractModule {
     return null;
   }
 
+  @Nullable
   public SModelDescriptor getHelginsTypesystemModelDescriptor() {
     if (getLanguageDescriptor().getHelginsTypesystemModel() != null) {
       SModelUID modelUID = SModelUID.fromString(getLanguageDescriptor().getHelginsTypesystemModel().getName());
@@ -360,6 +382,7 @@ public class Language extends AbstractModule {
     return null;
   }
 
+  @Nullable
   public SModelDescriptor getActionsModelDescriptor() {
     if (getLanguageDescriptor().getActionsModel() != null) {
       SModelUID modelUID = SModelUID.fromString(getLanguageDescriptor().getActionsModel().getName());
@@ -372,6 +395,7 @@ public class Language extends AbstractModule {
     return null;
   }
 
+  @Nullable
   public SModelDescriptor getConstraintsModelDescriptor() {
     if (getLanguageDescriptor().getConstraintsModel() != null) {
       SModelUID modelUID = SModelUID.fromString(getLanguageDescriptor().getConstraintsModel().getName());
@@ -384,14 +408,17 @@ public class Language extends AbstractModule {
     return null;
   }
 
+  @Nullable
   public SModelDescriptor getEditorModelDescriptor() {
     return getEditorModelDescriptor(null);
   }
 
+  @Nullable
   public String getEditorUID() {
     return getEditorUID(null);
   }
 
+  @Nullable
   public SModelDescriptor getEditorModelDescriptor(String stereotype) {
     if (stereotype == null) stereotype = SModelStereotype.NONE;
     String editorUID = getEditorUID(stereotype);
@@ -405,6 +432,7 @@ public class Language extends AbstractModule {
     return modelDescriptor;
   }
 
+  @NotNull
   public Set<SModelDescriptor> getEditorDescriptors() {
     Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
     Iterator<Editor> editors = getLanguageDescriptor().editors();
@@ -415,6 +443,7 @@ public class Language extends AbstractModule {
     return result;
   }
 
+  @NotNull
   public Set<SModelDescriptor> getAspectModelDescriptors() {
     Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
     SModelDescriptor structureModelDescriptor = getStructureModelDescriptor();
@@ -429,6 +458,7 @@ public class Language extends AbstractModule {
     return result;
   }
 
+  @Nullable
   public String getEditorUID(String stereotype) {
     if (stereotype == null) stereotype = SModelStereotype.NONE;
     Iterator<Editor> editors = getLanguageDescriptor().editors();
@@ -441,6 +471,7 @@ public class Language extends AbstractModule {
     return null;
   }
 
+  @Nullable
   public String getEditorStereotype(SModelDescriptor modelDescriptor) {
     String anUID = modelDescriptor.getModelUID().toString();
     for (Editor editor : CollectionUtil.iteratorAsIterable(getLanguageDescriptor().editors())) {
@@ -453,7 +484,8 @@ public class Language extends AbstractModule {
     myNameToConceptCache.clear();
   }
 
-  public ConceptDeclaration findConceptDeclaration(String conceptName) {
+  @Nullable
+  public ConceptDeclaration findConceptDeclaration(@NotNull String conceptName) {
     if (myNameToConceptCache.isEmpty()) {
       SModelDescriptor structureModelDescriptor = getStructureModelDescriptor();
       SModel structureModel = structureModelDescriptor.getSModel();
@@ -473,6 +505,7 @@ public class Language extends AbstractModule {
     PersistenceUtil.saveLanguageDescriptor(myDescriptorFile, getLanguageDescriptor());
   }
 
+  @NotNull
   public List<SModelDescriptor> getAccessoryModels() {
     List<SModelDescriptor> result = new LinkedList<SModelDescriptor>();
     Iterator<Model> accessoryModels = getLanguageDescriptor().accessoryModels();
@@ -486,7 +519,7 @@ public class Language extends AbstractModule {
     return result;
   }
 
-  public boolean isAccessoryModel(SModelUID modelUID) {
+  public boolean isAccessoryModel(@NotNull SModelUID modelUID) {
     Iterator<Model> accessoryModels = getLanguageDescriptor().accessoryModels();
     while (accessoryModels.hasNext()) {
       Model model = accessoryModels.next();
@@ -502,11 +535,11 @@ public class Language extends AbstractModule {
     return getLanguageDescriptor().getNamespace();
   }
 
-  public void addLanguageCommandListener(LanguageCommandListener listener) {
+  public void addLanguageCommandListener(@NotNull LanguageCommandListener listener) {
     myCommandListeners.add(listener);
   }
 
-  public void removeLanguageCommandListener(LanguageCommandListener listener) {
+  public void removeLanguageCommandListener(@NotNull LanguageCommandListener listener) {
     myCommandListeners.remove(listener);
   }
 
@@ -573,7 +606,6 @@ public class Language extends AbstractModule {
   // ----------------------------
   // language - related utilities
   // ----------------------------
-
   public static Language getLanguageForLanguageAspect(SModelDescriptor modelDescriptor) {
     LanguageAspectStatus status = getLanguageAspectStatus(modelDescriptor);
     if (status.isError()) {
