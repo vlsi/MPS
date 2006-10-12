@@ -69,6 +69,9 @@ public class Solution extends AbstractModule {
   public void setSolutionDescriptor(@NotNull SolutionDescriptor newDescriptor) {
     // release languages and models (except descriptor model)
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), Solution.this);
+
+    assert modelDescriptor != null;
+
     MPSModuleRepository.getInstance().unRegisterModules(Solution.this);
     SModelRepository.getInstance().unRegisterModelDescriptors(Solution.this);
     SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, Solution.this);
