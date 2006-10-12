@@ -175,6 +175,7 @@ public abstract class AbstractModule implements IModule {
     if (Language.class.isAssignableFrom(cls)) {
       List<Language> languages = BootstrapLanguages.getInstance().getLanguages();
       for (Language language : languages) {
+        //noinspection SuspiciousMethodCalls
         if (!modules.contains(language)) {
           modules.add((T) language);
           collectAllExplicitlyDependOnModules(language, modules, cls);
@@ -191,6 +192,7 @@ public abstract class AbstractModule implements IModule {
           @NotNull Class<T> cls) {
     List<IModule> dependOnModules = dependentModule.getExplicitlyDependOnModules();
     for (IModule dependOnModule : dependOnModules) {
+      //noinspection SuspiciousMethodCalls
       if (cls.isInstance(dependOnModule) && !modules.contains(dependOnModule)) {
         modules.add((T) dependOnModule);
         collectAllExplicitlyDependOnModules(dependOnModule, modules, cls);
@@ -216,7 +218,10 @@ public abstract class AbstractModule implements IModule {
   //
   @NotNull
   private SModelDescriptor getModuleDescriptorModel() {
-    return getModuleDescriptor().getModel().getModelDescriptor();
+    SModel model = getModuleDescriptor().getModel();
+    SModelDescriptor result = model.getModelDescriptor();
+    assert result != null;
+    return result;
   }
 
   @NotNull

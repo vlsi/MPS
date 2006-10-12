@@ -20,7 +20,7 @@ public class TemplateSwitchGraph {
     for (SModelDescriptor templateModel : templateModels) {
       for (SNode root : templateModel.getSModel().getRoots()) {
         if (root instanceof TemplateSwitch) {
-          if (myTemplateSwitchToGraphNodeMap.get(root) == null) {
+          if (myTemplateSwitchToGraphNodeMap.get((TemplateSwitch) root) == null) {
             addSwitch((TemplateSwitch) root);
           }
         }
