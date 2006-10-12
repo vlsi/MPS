@@ -50,6 +50,7 @@ public class GoToConceptDeclaration extends AnAction {
   public void actionPerformed(AnActionEvent e) {
     PsiClass cls = getConceptClass(PluginUtil.getCurrentElement(e));
     Project project = (Project) e.getDataContext().getData(DataConstants.PROJECT);
+    if (project == null) return;
     ProjectHandler projectHandler = project.getComponent(ProjectHandler.class);
     projectHandler.showConceptDeclaration(cls.getQualifiedName());
   }

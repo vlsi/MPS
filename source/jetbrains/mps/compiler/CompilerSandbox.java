@@ -5,8 +5,6 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 public class CompilerSandbox {
 
   public static void main(String[] args) throws Exception {
-
-
     JavaCompiler jc = new JavaCompiler(ClassLoaderManager.getInstance().getRTJar());
 
     jc.addSource("package x.y.z; public class A { B b; public static void a() { System.out.println(239); } } ", "x.y.z.A");

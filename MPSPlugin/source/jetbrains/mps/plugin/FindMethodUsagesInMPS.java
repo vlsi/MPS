@@ -28,7 +28,7 @@ public class FindMethodUsagesInMPS extends AnAction {
     PsiMethod method = PluginUtil.getElement(element, PsiMethod.class);
     PsiClass cls = PluginUtil.getElement(element, PsiClass.class);
     Project project = (Project) anActionEvent.getDataContext().getData(DataConstants.PROJECT);
-    if (project != null) return;
+    if (project == null) return;
     ProjectHandler projectHandler = project.getComponent(ProjectHandler.class);
     projectHandler.showMethodUsages(cls.getQualifiedName(), method.getName(), method.getParameterList().getParameters().length);
   }
