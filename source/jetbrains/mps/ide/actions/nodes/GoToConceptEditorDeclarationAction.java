@@ -12,6 +12,7 @@ import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.Editor;
 import jetbrains.mps.projectLanguage.LanguageDescriptor;
 import jetbrains.mps.projectLanguage.Model;
@@ -61,10 +62,11 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     final IEditor currentEditor = ide.getEditorsPane().getCurrentEditor();
 
     Language language = null;
-    if (invocationContext.getModule() instanceof Language) {
-      Language contextLanguage = (Language) invocationContext.getModule();
+    IModule module = invocationContext.getModule();
+    if (module instanceof Language) {
+      Language contextLanguage = (Language) module;
       SModelDescriptor testStructureModel = contextLanguage.getStructureModelDescriptor();
-      if (testStructureModel != null && node.getModel().getUID().equals(testStructureModel.getModelUID())) {
+      if (node.getModel().getUID().equals(testStructureModel.getModelUID())) {
         language = contextLanguage;
       }
     }
