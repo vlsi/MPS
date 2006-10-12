@@ -21,26 +21,27 @@ public class WeakValueHashMap<K,V> implements Map<K,V> {
   private ReferenceQueue<V> myQueue = new ReferenceQueue<V>();
 
   private static class MyReference<K,T> extends WeakReference<T> {
-    final K key;
+    final K myKey;
 
     public MyReference(K key, T referent, ReferenceQueue<? super T> q) {
       super(referent, q);
-      this.key = key;
+      this.myKey = key;
     }
   }
 
+  @SuppressWarnings({"UnusedDeclaration"})
   public WeakValueHashMap() {
     myMap = new HashMap<K, MyReference<K,V>>();
   }
 
   private void processQueue() {
     while(true){
-      MyReference ref = (MyReference)myQueue.poll();
+      MyReference<K, V> ref = (MyReference<K, V>)myQueue.poll();
       if (ref == null) {
         return;
       }
-      if (myMap.get(ref.key) == ref){
-        myMap.remove(ref.key);
+      if (myMap.get(ref.myKey) == ref){
+        myMap.remove(ref.myKey);
       }
     }
   }
