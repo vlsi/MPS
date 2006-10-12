@@ -63,13 +63,13 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
       if (!EditorUtil.isValidCell(selectedCell)) {
         if (endEditKeystroke ||
-                actionType.equals(EditorCellAction.INSERT) ||
-                actionType.equals(EditorCellAction.INSERT_BEFORE)) {
+                EditorCellAction.INSERT.equals(actionType) ||
+                EditorCellAction.INSERT_BEFORE.equals(actionType)) {
           EditorUtil.validateCell(selectedCell, editorContext, strictMatching);
           return true;
         }
 
-        if (actionType.equals(EditorCellAction.RIGHT_TRANSFORM)) {
+        if (EditorCellAction.RIGHT_TRANSFORM.equals(actionType)) {
           // !side effect: can change selection!
           if (!EditorUtil.validateCell(selectedCell, editorContext, strictMatching)) {
             return true;
@@ -135,8 +135,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
       if (!keyEvent.isConsumed()) {
         // auto-completion (AKA node substitution)
         if ((keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown() && !(keyEvent.isAltDown() || keyEvent.isShiftDown())) ||
-                (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && keyEvent.isAltDown() && !(keyEvent.isControlDown() || keyEvent.isShiftDown())))
-        {
+                (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && keyEvent.isAltDown() && !(keyEvent.isControlDown() || keyEvent.isShiftDown()))) {
           if (editor.activateNodeSubstituteChooser(selectedCell, keyEvent.getKeyCode() == KeyEvent.VK_ENTER)) {
             LOG.debug("SUBSTITUTE");
             return true;
