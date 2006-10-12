@@ -10,7 +10,6 @@ import java.util.List;
  * Date: Mar 24, 2005
  */
 public class MPSProjects {
-  private static final Logger LOG = Logger.getLogger(MPSProjects.class);
   private ArrayList<MPSProject> myProjects = new ArrayList<MPSProject>();
   private ArrayList<IMPSProjectsListener> myMPSProjectsListeners = new ArrayList<IMPSProjectsListener>();
 
@@ -19,11 +18,6 @@ public class MPSProjects {
     for(IMPSProjectsListener listener : myMPSProjectsListeners) {
       listener.projectAdded(mpsProject);
     }
-  }
-
-  public MPSProject getFirstProject() {
-    if (myProjects.size() == 0) return null;
-    return myProjects.get(0);
   }
 
   public List<MPSProject> getProjects() {
@@ -37,14 +31,12 @@ public class MPSProjects {
     }
   }
 
-  public void reloadProject(MPSProject project) {
-    LOG.errorWithTrace("Not implemented");
-  }
-  
+  @SuppressWarnings({"UnusedDeclaration"})
   public void addMPSProjectsListener(IMPSProjectsListener listener) {
     myMPSProjectsListeners.add(listener);
   }
 
+  @SuppressWarnings({"UnusedDeclaration"})
   public void removeMPSProjectsListener(IMPSProjectsListener listener) {
     myMPSProjectsListeners.remove(listener);
   }
