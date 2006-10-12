@@ -903,9 +903,6 @@
           <option name="REPORT_FIELDS" value="true" />
         </inspection_tool>
         <inspection_tool class="FieldCanBeLocal" level="WARNING" enabled="false" />
-        <inspection_tool class="ConstantConditions" level="WARNING" enabled="true">
-          <option name="SUGGEST_NULLABLE_ANNOTATIONS" value="true" />
-        </inspection_tool>
         <inspection_tool class="UnusedDeclaration" level="WARNING" enabled="false">
           <option name="ADD_MAINS_TO_ENTRIES" value="true" />
           <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
