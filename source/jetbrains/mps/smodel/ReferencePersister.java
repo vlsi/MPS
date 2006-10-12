@@ -19,32 +19,30 @@ public class ReferencePersister {
   protected String myRole;
   protected String myTargetId;
   protected String myResolveInfo;
-  protected String myTargetClassResolveInfo;
   protected String myExtResolveInfo;
   protected String myImportedModelInfo = "-1";
   protected boolean myUseUIDs;
 
 
   protected ReferencePersister(ReferenceDescriptor rd, boolean useUIDs) {
-    this(rd.sourceNode, rd.role, rd.attTargetNodeId, rd.attExtResolveInfo, rd.resolveInfo, rd.targetClassResolveInfo, useUIDs);
+    this(rd.sourceNode, rd.role, rd.attTargetNodeId, rd.attExtResolveInfo, rd.resolveInfo, useUIDs);
   }
 
-  protected ReferencePersister(SNode sourceNode, String role, String attTargetNodeId, String attExtResolveInfo, String resolveInfo, String targetClassResolveInfo, boolean useUIDs) {
+  protected ReferencePersister(SNode sourceNode, String role, String attTargetNodeId, String attExtResolveInfo, String resolveInfo, boolean useUIDs) {
     this.myUseUIDs = useUIDs;
     this.mySourceNode = sourceNode;
     this.myRole = role;
     if (attTargetNodeId != null) {
       ReferenceTargetDescriptor targetDescriptor = parseAttTargetNodeId(attTargetNodeId, useUIDs);
-      this.myTargetId = targetDescriptor.targetInfo;
-      this.myImportedModelInfo = targetDescriptor.importedModelInfo;
+      this.myTargetId = targetDescriptor.myTargetInfo;
+      this.myImportedModelInfo = targetDescriptor.myImportedModelInfo;
     }
     if (attExtResolveInfo != null) {
       ReferenceTargetDescriptor targetDescriptor = parseAttExtResolveInfo(attExtResolveInfo, useUIDs);
-      this.myExtResolveInfo = targetDescriptor.targetInfo;
-      this.myImportedModelInfo = targetDescriptor.importedModelInfo;
+      this.myExtResolveInfo = targetDescriptor.myTargetInfo;
+      this.myImportedModelInfo = targetDescriptor.myImportedModelInfo;
     }
     this.myResolveInfo = resolveInfo;
-    this.myTargetClassResolveInfo = targetClassResolveInfo;
   }
 
 
@@ -61,11 +59,11 @@ public class ReferencePersister {
       i = attTargetNodeId.indexOf('.');
     }
     if (i > 0) {
-      referenceTargetDescriptor.importedModelInfo = attTargetNodeId.substring(0, i);
-      referenceTargetDescriptor.targetInfo = attTargetNodeId.substring(i + 1);
+      referenceTargetDescriptor.myImportedModelInfo = attTargetNodeId.substring(0, i);
+      referenceTargetDescriptor.myTargetInfo = attTargetNodeId.substring(i + 1);
     } else {
-      referenceTargetDescriptor.importedModelInfo = "-1";
-      referenceTargetDescriptor.targetInfo = attTargetNodeId;
+      referenceTargetDescriptor.myImportedModelInfo = "-1";
+      referenceTargetDescriptor.myTargetInfo = attTargetNodeId;
     }
     return referenceTargetDescriptor;
   }
@@ -197,10 +195,11 @@ public class ReferencePersister {
     public ReferenceTargetDescriptor() {
 
     }
-    public String targetInfo;
-    public String importedModelInfo;
+    public String myTargetInfo;
+    public String myImportedModelInfo;
   }
 
+  @SuppressWarnings({"InstanceVariableNamingConvention"})
   protected static class ReferenceDescriptor {
     public ReferenceDescriptor() {
 
