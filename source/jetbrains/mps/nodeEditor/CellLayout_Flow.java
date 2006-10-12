@@ -30,14 +30,14 @@ public class CellLayout_Flow extends AbstractCellLayout {
   private int myWStart = 0;
   private int myWEnd = 0;
   private int myRowCount = 1;
-  private int maxDescent = 0;
-  private int maxAscent = 0;
+  private int myMaxDescent = 0;
+  private int myMaxAscent = 0;
   private int myFirstLineHeight = -1;
 
   private CellLayout_Flow myBossLayout = null;
 
-  private Set<CellLayout_Flow> currentLineLayouts = new HashSet<CellLayout_Flow>();
-  private java.util.List<EditorCell> currentLine = new ArrayList<EditorCell>();
+  private Set<CellLayout_Flow> myCurrentLineLayouts = new HashSet<CellLayout_Flow>();
+  private java.util.List<EditorCell> myCurrentLine = new ArrayList<EditorCell>();
 
 
   private void setWStart(int WStart) {
@@ -67,15 +67,15 @@ public class CellLayout_Flow extends AbstractCellLayout {
   }
 
   private void setMaxDescent(int maxDescent) {
-    this.maxDescent = maxDescent;
+    this.myMaxDescent = maxDescent;
   }
 
   private void setMaxAscent(int maxAscent) {
-    this.maxAscent = maxAscent;
+    this.myMaxAscent = maxAscent;
   }
 
   private java.util.List<EditorCell> getCurrentLine() {
-    return currentLine;
+    return myCurrentLine;
   }
 
   private CellLayout_Flow getFlowLayout(EditorCell editorCell) {
@@ -94,7 +94,7 @@ public class CellLayout_Flow extends AbstractCellLayout {
   }
 
   private Set<CellLayout_Flow> getCurrentLineLayouts() {
-    return currentLineLayouts;
+    return myCurrentLineLayouts;
   }
 
   //----------------
@@ -102,17 +102,17 @@ public class CellLayout_Flow extends AbstractCellLayout {
   //----------------
 
   private class FlowLayouter {
-    private int x;
-    private int y;
-    private int maxRightX;
-    private EditorCell_Collection editorCells;
+    private int myX;
+    private int myY;
+    private int myMaxRightX;
+    private EditorCell_Collection myEditorCells;
     private boolean myNextIsPunctuation;
 
     public FlowLayouter(EditorCell_Collection editorCells) {
-      this.editorCells = editorCells;
-      x = editorCells.getX() + myWStart;
-      y = editorCells.getY();
-      maxRightX = x;
+      this.myEditorCells = editorCells;
+      myX = editorCells.getX() + myWStart;
+      myY = editorCells.getY();
+      myMaxRightX = myX;
     }
 
     public void doLayout() {
@@ -121,10 +121,10 @@ public class CellLayout_Flow extends AbstractCellLayout {
         getCurrentLineLayouts().clear();
       }
 
-      Iterator<EditorCell> lookAhead = editorCells.iterator();
+      Iterator<EditorCell> lookAhead = myEditorCells.iterator();
       if (lookAhead.hasNext()) lookAhead.next();
 
-      for (EditorCell cell : editorCells) {
+      for (EditorCell cell : myEditorCells) {
         //testing the next cell
         EditorCell nextCell = null;
         myNextIsPunctuation = false;
@@ -142,52 +142,53 @@ public class CellLayout_Flow extends AbstractCellLayout {
             nextLine();
           }
           cell.relayout();
-          cell.moveTo(editorCells.getX(), y);
-          y += cell.getHeight();
-          maxRightX = Math.max(maxRightX, cell.getX() + cell.getWidth());
+          cell.moveTo(myEditorCells.getX(), myY);
+          myY += cell.getHeight();
+          myMaxRightX = Math.max(myMaxRightX, cell.getX() + cell.getWidth());
         } else
           //if flow layout
           if (getFlowLayout(cell) != null) {
 
             CellLayout_Flow cellLayout_flow = getFlowLayout(cell);
-            cellLayout_flow.setMaxAscent(maxAscent);
-            cellLayout_flow.setMaxDescent(maxDescent);
-            cellLayout_flow.setWStart(x - editorCells.getX());
+            cellLayout_flow.setMaxAscent(myMaxAscent);
+            cellLayout_flow.setMaxDescent(myMaxDescent);
+            cellLayout_flow.setWStart(myX - myEditorCells.getX());
             cellLayout_flow.getCurrentLine().clear();
             cellLayout_flow.getCurrentLine().addAll(CellLayout_Flow.this.getCurrentLine());
             cellLayout_flow.getCurrentLineLayouts().clear();
             cellLayout_flow.getCurrentLineLayouts().addAll(CellLayout_Flow.this.getCurrentLineLayouts());
-            cell.setX(editorCells.getX());
-            cell.setY(y);
+            cell.setX(myEditorCells.getX());
+            cell.setY(myY);
 
             cellLayout_flow.setBossLayout(CellLayout_Flow.this);
             cell.relayout();
 
-            maxRightX = Math.max(maxRightX, cell.getX() + cell.getWidth());
-            setMaxAscent(Math.max(maxAscent, cellLayout_flow.maxAscent));
-            setMaxDescent(Math.max(maxDescent, cellLayout_flow.maxDescent));
+            myMaxRightX = Math.max(myMaxRightX, cell.getX() + cell.getWidth());
+            setMaxAscent(Math.max(myMaxAscent, cellLayout_flow.myMaxAscent));
+            setMaxDescent(Math.max(myMaxDescent, cellLayout_flow.myMaxDescent));
             CellLayout_Flow.this.getCurrentLine().clear();
             CellLayout_Flow.this.getCurrentLine().addAll(cellLayout_flow.getCurrentLine());
             CellLayout_Flow.this.getCurrentLineLayouts().clear();
             CellLayout_Flow.this.getCurrentLineLayouts().addAll(cellLayout_flow.getCurrentLineLayouts());
 
             if(cellLayout_flow.myRowCount >= 2) {
-              x = cell.getX() + cellLayout_flow.myWEnd;
-              y = cell.getY() + cell.getHeight() - cellLayout_flow.maxAscent - cellLayout_flow.maxDescent;
+              myX = cell.getX() + cellLayout_flow.myWEnd;
+              myY = cell.getY() + cell.getHeight() - cellLayout_flow.myMaxAscent - cellLayout_flow.myMaxDescent;
               myRowCount += cellLayout_flow.myRowCount - 1;
             }
             else {
-              x += cell.getWidth();
+              myX += cell.getWidth();
             }
 
           } else {
             //punctuation must be at the same line as previous cell
             int allocatedWidth = cell.getWidth();
             if (myNextIsPunctuation) {
+              assert nextCell != null;
               allocatedWidth += nextCell.getWidth();
             }
             //if end-of-line
-            if (allocatedWidth + x >= getMaxX()) {
+            if (allocatedWidth + myX >= getMaxX()) {
               alignLine();
               nextLine();
               addCell(cell);
@@ -198,16 +199,16 @@ public class CellLayout_Flow extends AbstractCellLayout {
       }
       boolean currentLineIsEmpty = CellLayout_Flow.this.getCurrentLine().isEmpty();
       if (!currentLineIsEmpty) alignLine();
-      int lastLineHeight = maxAscent + maxDescent;
-      editorCells.setHeight((y + lastLineHeight) - editorCells.getY());
-      editorCells.setWidth(maxRightX - editorCells.getX());
-      myWEnd = x - editorCells.getX();
+      int lastLineHeight = myMaxAscent + myMaxDescent;
+      myEditorCells.setHeight((myY + lastLineHeight) - myEditorCells.getY());
+      myEditorCells.setWidth(myMaxRightX - myEditorCells.getX());
+      myWEnd = myX - myEditorCells.getX();
     }
 
 
     private void nextLine() {
-      y += maxAscent + maxDescent;
-      x = editorCells.getX();
+      myY += myMaxAscent + myMaxDescent;
+      myX = myEditorCells.getX();
       setMaxAscent(0);
       setMaxDescent(0);
       getCurrentLine().clear();
@@ -216,28 +217,28 @@ public class CellLayout_Flow extends AbstractCellLayout {
 
     private void alignLine() {
       for (EditorCell cell : CellLayout_Flow.this.getCurrentLine()) {
-        cell.setBaseline(y + maxAscent);
+        cell.setBaseline(myY + myMaxAscent);
       }
       for (CellLayout_Flow layout_flow : getCurrentLineLayouts()) {
-        layout_flow.setMaxAscent(maxAscent);
-        layout_flow.setMaxDescent(maxDescent);
-        if (layout_flow.myFirstLineHeight == -1) layout_flow.setFirstLineHeight(maxAscent + maxDescent);
+        layout_flow.setMaxAscent(myMaxAscent);
+        layout_flow.setMaxDescent(myMaxDescent);
+        if (layout_flow.myFirstLineHeight == -1) layout_flow.setFirstLineHeight(myMaxAscent + myMaxDescent);
       }
-      if (myFirstLineHeight == -1) myFirstLineHeight = maxAscent + maxDescent;
-      maxRightX = Math.max(x, maxRightX);
+      if (myFirstLineHeight == -1) myFirstLineHeight = myMaxAscent + myMaxDescent;
+      myMaxRightX = Math.max(myX, myMaxRightX);
       myRowCount++;
     }
 
     private void addCell(EditorCell cell) {
-      cell.setX(x);
+      cell.setX(myX);
       cell.relayout();
-      x+=cell.getWidth();
+      myX +=cell.getWidth();
       if (myNextIsPunctuation) {
-        x-=cell.getRightInternalInset();
+        myX -=cell.getRightInternalInset();
         cell.setNextIsPunctuation();
       }
-      setMaxAscent(Math.max(maxAscent, cell.getAscent()));
-      setMaxDescent(Math.max(maxDescent, cell.getDescent()));
+      setMaxAscent(Math.max(myMaxAscent, cell.getAscent()));
+      setMaxDescent(Math.max(myMaxDescent, cell.getDescent()));
       CellLayout_Flow.this.getCurrentLine().add(cell);
     }
 

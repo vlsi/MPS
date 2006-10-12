@@ -20,14 +20,13 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   private static final Logger LOG = Logger.getLogger(NodeSubstituteChooser.class);
 
   static final int MAX_MENU_LEN = 30;
-  static final int SCROLLER_WIDTH = 7;
 
   public static final int PREFERRED_WIDTH = 300;
   public static final int PREFERRED_HEIGHT = 200;
 
   private PopupWindow myPopupWindow = null;
-  private boolean isChooserActivated = false;
-  private boolean isPopupActivated;
+  private boolean myChooserActivated = false;
+  private boolean myPopupActivated;
 
   private Point myPatternEditorLocation = new Point(10, 10);
   private Dimension myPatternEditorSize = new Dimension(50, 50);
@@ -89,11 +88,11 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   }
 
   public boolean isVisible() {
-    return isChooserActivated;
+    return myChooserActivated;
   }
 
   public void setVisible(boolean b) {
-    if (isChooserActivated != b) {
+    if (myChooserActivated != b) {
       if (b) {
         myEditorComponent.pushKeyboardHandler(this);
         getPatternEditor().activate(getEditorWindow(), myPatternEditorLocation, myPatternEditorSize);
@@ -102,15 +101,15 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
         getPopupWindow().relayout();
         getPopupWindow().setSelectionIndex(0);
         getPopupWindow().setVisible(true);
-        isPopupActivated = true;
+        myPopupActivated = true;
       } else {
         getPopupWindow().setVisible(false);
         getPatternEditor().done();
-        isPopupActivated = false;
+        myPopupActivated = false;
         myEditorComponent.popKeyboardHandler();
       }
     }
-    isChooserActivated = b;
+    myChooserActivated = b;
   }
 
   private void rebuildMenuEntries() {
@@ -210,7 +209,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
   public boolean processKeyPressed(EditorContext editorContext, KeyEvent keyEvent) {
     if (getPatternEditor().processKeyPressed(keyEvent)) {
-      if (isPopupActivated) {
+      if (myPopupActivated) {
         rebuildMenuEntries();
         repaintPopupMenu();
       }
@@ -222,7 +221,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       return true;
     }
 
-    if (isPopupActivated) {
+    if (myPopupActivated) {
       return menu_processKeyPressed(keyEvent);
     }
 
@@ -313,7 +312,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   }
 
   private void repaintPopupMenu() {
-    if (isPopupActivated) {
+    if (myPopupActivated) {
       getPopupWindow().relayout();
       getPopupWindow().repaint();
     }

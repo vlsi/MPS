@@ -133,7 +133,7 @@ public class EditorContext {
 
   public boolean isMementoApplicable(Object o) {
     if (o instanceof Memento) {
-      return myNodeEditorComponent == ((Memento) o).nodeEditor;
+      return myNodeEditorComponent == ((Memento) o).myNodeEditor;
     }
     return false;
   }
@@ -141,17 +141,17 @@ public class EditorContext {
   public boolean setMemento(Object o) {
     if (o instanceof Memento) {
       Memento memento = (Memento) o;
-      if (myNodeEditorComponent == memento.nodeEditor) {
-        if (memento.cellInfo != null) {
-          EditorCell cellToSelect = memento.cellInfo.findCell(myNodeEditorComponent);
+      if (myNodeEditorComponent == memento.myNodeEditor) {
+        if (memento.myCellInfo != null) {
+          EditorCell cellToSelect = memento.myCellInfo.findCell(myNodeEditorComponent);
           myNodeEditorComponent.changeSelection(cellToSelect);
-          myNodeEditorComponent.setSelectedStackFromMemento(memento.selectedStack);
-          for (CellInfo collectionInfo : memento.collectionsWithEnabledBraces) {
+          myNodeEditorComponent.setSelectedStackFromMemento(memento.mySelectedStack);
+          for (CellInfo collectionInfo : memento.myCollectionsWithEnabledBraces) {
             EditorCell collection = collectionInfo.findCell(myNodeEditorComponent);
             if (!(collection instanceof EditorCell_Collection)) continue;
             ((EditorCell_Collection)collection).enableBraces();
           }
-          for (CellInfo collectionInfo : memento.folded) {
+          for (CellInfo collectionInfo : memento.myFolded) {
             EditorCell collection = collectionInfo.findCell(myNodeEditorComponent);
             if (!(collection instanceof EditorCell_Collection)) continue;
             ((EditorCell_Collection)collection).fold(true);
@@ -165,7 +165,7 @@ public class EditorContext {
 //                myNodeEditorComponent.relayout();
 //              }
 //            }
-            deepestSelectedCell.setCaretX(memento.caretX);
+            deepestSelectedCell.setCaretX(memento.myCaretX);
           } 
         }
         CommandProcessor.instance().invokeNowOrLater(new Runnable() {
@@ -196,33 +196,33 @@ public class EditorContext {
   }
 
   private static class Memento {
-    private AbstractEditorComponent nodeEditor;
+    private AbstractEditorComponent myNodeEditor;
    // private Point selectionPosition;
-    private CellInfo cellInfo;
-    private Stack<CellInfo> selectedStack = new Stack<CellInfo>();
-    private List<CellInfo> collectionsWithEnabledBraces = new ArrayList<CellInfo>();
-    private Set<CellInfo> folded = new HashSet<CellInfo>();
-    private Integer caretX;
+    private CellInfo myCellInfo;
+    private Stack<CellInfo> mySelectedStack = new Stack<CellInfo>();
+    private List<CellInfo> myCollectionsWithEnabledBraces = new ArrayList<CellInfo>();
+    private Set<CellInfo> myFolded = new HashSet<CellInfo>();
+    private Integer myCaretX;
 
     public Memento(EditorContext context) {
-      nodeEditor = context.getNodeEditorComponent();
-      EditorCell selectedCell = nodeEditor.getSelectedCell();
-      EditorCell deepestSelectedCell = nodeEditor.getDeepestSelectedCell();
+      myNodeEditor = context.getNodeEditorComponent();
+      EditorCell selectedCell = myNodeEditor.getSelectedCell();
+      EditorCell deepestSelectedCell = myNodeEditor.getDeepestSelectedCell();
       if (selectedCell != null) {
     //    selectionPosition = new Point(selectedCell.getX(), selectedCell.getY());
-        if (deepestSelectedCell != null) caretX = deepestSelectedCell.getCaretX();
+        if (deepestSelectedCell != null) myCaretX = deepestSelectedCell.getCaretX();
         if (deepestSelectedCell instanceof EditorCell_Label && deepestSelectedCell.isErrorState()) {
         }
-        cellInfo = selectedCell.getCellInfo();
-        selectedStack = nodeEditor.getSelectedStackForMemento();
-        EditorCell rootCell = nodeEditor.getRootCell();
+        myCellInfo = selectedCell.getCellInfo();
+        mySelectedStack = myNodeEditor.getSelectedStackForMemento();
+        EditorCell rootCell = myNodeEditor.getRootCell();
         if (rootCell instanceof EditorCell_Collection) fillBracesAndFoldedInfo((EditorCell_Collection) rootCell);
       }
     }
 
     private void fillBracesAndFoldedInfo(EditorCell_Collection cell) {
-      if (cell.areBracesEnabled()) collectionsWithEnabledBraces.add(cell.getCellInfo());
-      if (cell.isFolded()) folded.add(cell.getCellInfo());
+      if (cell.areBracesEnabled()) myCollectionsWithEnabledBraces.add(cell.getCellInfo());
+      if (cell.isFolded()) myFolded.add(cell.getCellInfo());
       for (EditorCell child : cell) {
         if (child instanceof EditorCell_Collection) fillBracesAndFoldedInfo((EditorCell_Collection) child);
       }
@@ -238,9 +238,9 @@ public class EditorContext {
     }
 
     public int hashCode() {
-      return nodeEditor.hashCode() +
-              (cellInfo != null ? cellInfo.hashCode() : 0) +
-              (caretX != null ? caretX.hashCode() : 0);
+      return myNodeEditor.hashCode() +
+              (myCellInfo != null ? myCellInfo.hashCode() : 0) +
+              (myCaretX != null ? myCaretX.hashCode() : 0);
     }
   } // private static class Memento
 }

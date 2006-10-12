@@ -1,23 +1,21 @@
 package mf;
 
-import mf.*;
-import java.text.*;
 import java.math.*;
 
 // <codeFragment name="rep">
 public class Money implements Comparable{
-	private BigInteger amount;
-	private Currency currency;
+	private BigInteger myAmount;
+	private Currency myCurrency;
 //</codeFragment>
 
 // <codeFragment name="simpleConstructors">
 	public Money (double amount, Currency currency) {
-		this.amount = BigInteger.valueOf(Math.round (amount * 100));
-		this.currency = currency;
+		this.myAmount = BigInteger.valueOf(Math.round (amount * 100));
+		this.myCurrency = currency;
 	}
 	public Money (long amount, Currency currency) {
-		this.amount = BigInteger.valueOf(amount * 100);
-		this.currency = currency;
+		this.myAmount = BigInteger.valueOf(amount * 100);
+		this.myCurrency = currency;
 	}
 
 //</codeFragment>
@@ -25,43 +23,43 @@ public class Money implements Comparable{
 // <codeFragment name="addition">
 	public Money add (Money arg) {
 		checkSameCurrencies(arg);
-		return new Money (amount.add(arg.amount), currency, true);
+		return new Money (myAmount.add(arg.myAmount), myCurrency, true);
 	}
 	public Money subtract (Money arg) {
 		return this.add(arg.negate());
 	}
 	void checkSameCurrencies(Money arg) {
-        if (!currency.equals(arg.currency))
+        if (!myCurrency.equals(arg.myCurrency))
             throw new IllegalArgumentException("currency mismatch");
 	}
 	private Money (BigInteger amountInPennies, Currency currency, boolean privacyMarker) {
 		assert amountInPennies != null;
         assert currency != null;
-		this.amount = amountInPennies;
-		this.currency = currency;
+		this.myAmount = amountInPennies;
+		this.myCurrency = currency;
 	}
 	public Money negate() {
-		return new Money (amount.negate(), currency, true);
+		return new Money (myAmount.negate(), myCurrency, true);
 	}
 //</codeFragment>
 
 // <codeFragment name="getters">
 	double amount() {
-		return amount.doubleValue() / 100;
+		return myAmount.doubleValue() / 100;
 	}
 	public Currency currency() {
-		return currency;
+		return myCurrency;
 	}
 //</codeFragment>
 
 // <codeFragment name="compare">
 	public int compareTo (Object arg) {
 		Money moneyArg = null;
-		return amount.compareTo(moneyArg.amount);
+		return myAmount.compareTo(moneyArg.myAmount);
 	}
 	public int compareTo (Money arg) {
 		checkSameCurrencies(arg);
-		return amount.compareTo(arg.amount);
+		return myAmount.compareTo(arg.myAmount);
 	}
 //</codeFragment>
 
@@ -75,11 +73,11 @@ public class Money implements Comparable{
 	public boolean equals(Object arg) {
 		if (!(arg instanceof Money)) return false;
 		Money other = (Money) arg;
-		return (currency.equals(other.currency) && (amount.equals(other.amount)));
+		return (myCurrency.equals(other.myCurrency) && (myAmount.equals(other.myAmount)));
 	}
 //</codeFragment>
 	public String formatString() {
-		return currency.formatString(amount());
+		return myCurrency.formatString(amount());
 	}
 
 // <codeFragment name="greaterThan">
@@ -93,41 +91,41 @@ public class Money implements Comparable{
 
 // <codeFragment name="hash">
 	public int hashCode() {
-		return amount.hashCode();
+		return myAmount.hashCode();
 	}
 //</codeFragment>
 	public boolean isNegative() {
-	return (amount.compareTo(BigInteger.ZERO) == -1);
+	return (myAmount.compareTo(BigInteger.ZERO) == -1);
 	}
 	public boolean isPositive() {
-	return (amount.compareTo(BigInteger.ZERO) == 1);
+	return (myAmount.compareTo(BigInteger.ZERO) == 1);
 	}
 	public boolean isZero() {
-	return amount.signum() == 0;
+	return myAmount.signum() == 0;
 	}
 	public String localString() {
-	return currency.getFormat().format(amount());
+	return myCurrency.getFormat().format(amount());
 	}
 
 // <codeFragment name="multiply">
 	public Money multiply (double arg) {
-		return new Money (amount() * arg, currency);
+		return new Money (amount() * arg, myCurrency);
 	}
 //</codeFragment>
 	public String toString() {
-		return currency.toString() + " " + amount();
+		return myCurrency.toString() + " " + amount();
 	}
 // <codeFragment name="divide">
 	public Money[] divide(int denominator) {
 		BigInteger bigDenominator = BigInteger.valueOf(denominator);
 		Money[] result = new Money[denominator];
-		BigInteger simpleResult = amount.divide(bigDenominator);
+		BigInteger simpleResult = myAmount.divide(bigDenominator);
 		for (int i = 0; i < denominator ; i++) {
-			result[i] = new Money(simpleResult, currency, true);
+			result[i] = new Money(simpleResult, myCurrency, true);
 		}
-		int remainder = amount.subtract(simpleResult.multiply(bigDenominator)).intValue();
+		int remainder = myAmount.subtract(simpleResult.multiply(bigDenominator)).intValue();
 		for (int i=0; i < remainder; i++) {
-			result[i] = result[i].add(new Money(BigInteger.valueOf(1), currency, true));
+			result[i] = result[i].add(new Money(BigInteger.valueOf(1), myCurrency, true));
 		}
 		return result;
   	}

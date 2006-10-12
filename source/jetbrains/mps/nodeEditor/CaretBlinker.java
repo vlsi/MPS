@@ -1,12 +1,8 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.ide.EditorsPane;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.components.DefaultExternalizableComponent;
 import jetbrains.mps.components.Externalizable;
 import jetbrains.mps.util.WeakSet;
-
-import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -24,7 +20,7 @@ public class CaretBlinker extends DefaultExternalizableComponent {
   private boolean myStarted = false;
   private @Externalizable int myCaretBlinkingRateMillis = -1;
 
-  private final Object REGISTRATION_LOCK = new Object();
+  private final Object myRegistrationLock = new Object();
 
   private WeakSet<AbstractEditorComponent> myEditors = new WeakSet<AbstractEditorComponent>();
 
@@ -56,13 +52,13 @@ public class CaretBlinker extends DefaultExternalizableComponent {
   }
 
   public void registerEditor(AbstractEditorComponent editorComponent) {
-    synchronized(REGISTRATION_LOCK) {
+    synchronized(myRegistrationLock) {
       myEditors.add(editorComponent);
     }
   }
 
   public void unregisterEditor(AbstractEditorComponent editorComponent) {
-    synchronized(REGISTRATION_LOCK) {
+    synchronized(myRegistrationLock) {
       myEditors.remove(editorComponent);
     }
   }
@@ -72,7 +68,7 @@ public class CaretBlinker extends DefaultExternalizableComponent {
     @SuppressWarnings({"InfiniteLoopStatement"})
     public void run() {
       while (true) {
-        synchronized(REGISTRATION_LOCK) {
+        synchronized(myRegistrationLock) {
           for (AbstractEditorComponent editor : myEditors) {
             if (editor.hasFocus()) {
               EditorCell selectedCell = editor.getDeepestSelectedCell();

@@ -148,7 +148,7 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
   }
 
   private class MyPreferencesPage implements IPreferencesPage {
-    private final int SLIDER_RATIO = 10000;
+    private static final int SLIDER_RATIO = 10000;
     private JPanel myEditorSettingsPanel = new JPanel(new BorderLayout());
     private JComboBox myFontsComboBox = createFontsComboBox();
     private JComboBox myFontSizesComboBox = createSizeComboBox();

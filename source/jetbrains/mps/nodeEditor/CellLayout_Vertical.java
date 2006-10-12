@@ -12,10 +12,10 @@ import java.awt.Font;
  * Date: Jan 19, 2005
  */
 public class CellLayout_Vertical extends AbstractCellLayout {
-  private boolean isGridLayout = false;
+  private boolean myGridLayout = false;
 
   public void setGridLayout(boolean gridLayout) {
-    isGridLayout = gridLayout;
+    myGridLayout = gridLayout;
   }
 
   public boolean canBeFolded() {
@@ -74,7 +74,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
       if (newCellX != cellX) editorCell.moveTo(newCellX, cellY);
     }
 
-    if (isGridLayout) {
+    if (myGridLayout) {
       int x0 = x;
       for (int i = 0; ; i++) {
         int maxWidth = -1;
@@ -123,7 +123,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
     }
     if (usesBraces) {
       closingBrace.setY(y + height - closingBrace.getHeight());
-      if (isGridLayout) {
+      if (myGridLayout) {
         closingBrace.setX(x + width);
         width += closingBrace.getWidth();
       } else {
