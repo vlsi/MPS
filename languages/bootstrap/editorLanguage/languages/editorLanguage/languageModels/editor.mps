@@ -849,6 +849,15 @@
             <link role="relationDeclaration" targetNodeId="2.1139416841293" />
           </node>
         </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1160590439793">
+          <property name="selectable" value="false" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1160590455842">
+            <property name="text" value="uses folding" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1160590466391">
+            <link role="relationDeclaration" targetNodeId="2.1160590353935" />
+          </node>
+        </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1139313460678">
           <property name="drawBorder" value="true" />
           <link role="editorComponent" targetNodeId="1139313041650" />
@@ -4061,6 +4070,15 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1139416951713">
             <property name="drawBorder" value="true" />
             <link role="relationDeclaration" targetNodeId="2.1140524450556" />
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1160590150777">
+          <property name="selectable" value="false" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1160590215482">
+            <property name="text" value="uses folding" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1160590250312">
+            <link role="relationDeclaration" targetNodeId="2.1160590307797" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1129573418833">

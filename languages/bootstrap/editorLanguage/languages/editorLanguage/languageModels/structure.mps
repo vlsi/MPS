@@ -162,6 +162,10 @@
       <property name="name" value="usesBraces" />
       <link role="dataType" targetNodeId="3.1082983657063" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1160590353935">
+      <property name="name" value="usesFolding" />
+      <link role="dataType" targetNodeId="3.1082983657063" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107223377702">
       <property name="value" value="collection" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
@@ -1271,6 +1275,10 @@
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1140524450556">
       <property name="name" value="usesBraces" />
+      <link role="dataType" targetNodeId="3.1082983657063" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1160590307797">
+      <property name="name" value="usesFolding" />
       <link role="dataType" targetNodeId="3.1082983657063" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1140524450557">
