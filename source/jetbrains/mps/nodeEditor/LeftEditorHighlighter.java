@@ -5,6 +5,8 @@ import jetbrains.mps.logging.Logger;
 import java.util.*;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 /**
  * Created by IntelliJ IDEA.
@@ -28,15 +30,22 @@ public class LeftEditorHighlighter {
   private int myCurrentBracketsWidth = BRACKETS_WIDTH;
   private Set<HighlighterBracket> myUnresolvedBrackets = new HashSet<HighlighterBracket>();
 
+  private Map<CellInfo, FoldingButton> myFoldingButtons = new HashMap<CellInfo, FoldingButton>();
+  private Set<FoldingButton> myUnresolvedFoldingButtons = new HashSet<FoldingButton>();
+
 
   public LeftEditorHighlighter(AbstractEditorComponent abstractEditorComponent) {
     myEditorComponent = abstractEditorComponent;
+    abstractEditorComponent.addMouseListener(new MyMouseListener());
   }
 
 
   public void paint(Graphics g) {
     for (HighlighterBracket bracket : myBrackets.values()) {
       bracket.paint(g);
+    }
+    for (FoldingButton button : myFoldingButtons.values()) {
+      button.paint(g);
     }
   }
 
@@ -50,6 +59,15 @@ public class LeftEditorHighlighter {
     myBrackets.put(cell.getCellInfo(), new HighlighterBracket(cell, c, myEditorComponent));
   }
 
+  public void unMarkFoldable(EditorCell cell) {
+    myFoldingButtons.remove(cell.getCellInfo());
+  }
+
+  public void markFoldable(EditorCell cell) {
+    if (cell.getEditor() != myEditorComponent) throw new IllegalArgumentException("cell must be from my editor");
+    myFoldingButtons.put(cell.getCellInfo(), new FoldingButton(cell));
+  }
+
   public void setWidth(int width) {
     myWidth = width;
   }
@@ -59,7 +77,12 @@ public class LeftEditorHighlighter {
       bracket.relayout();
        bracket.setX(myWidth);
     }
-    deleteUnresolvedBrackets(); 
+    deleteUnresolvedBrackets();
+    for (FoldingButton button : myFoldingButtons.values()) {
+      button.relayout();
+      button.setX(myWidth);
+    }
+    deleteUnresolvedFoldingButtons();
     myBracketEdges.clear();
     myBracketsLayoutStack.clear();
     // from top to bottom
@@ -114,6 +137,13 @@ public class LeftEditorHighlighter {
       myBrackets.remove(bracket.myEditorCellInfo);
     }
     myUnresolvedBrackets.clear();
+  }
+
+  private void deleteUnresolvedFoldingButtons() {
+    for (FoldingButton button : myUnresolvedFoldingButtons) {
+      myFoldingButtons.remove(button.myCellInfo);
+    }
+    myUnresolvedFoldingButtons.clear();
   }
 
 
@@ -241,6 +271,82 @@ public class LeftEditorHighlighter {
         }
       }
       return myY - o.myY;
+    }
+  }
+
+  private class FoldingButton {
+    private CellInfo myCellInfo;
+    private AbstractEditorComponent myEditor;
+    private int myY1;
+    private int myY2;
+    private int myX;
+    public static final int WIDTH = 5;
+
+    public FoldingButton(EditorCell cell) {
+      myCellInfo = cell.getCellInfo();
+      myEditor = cell.getEditor();
+    }
+
+    public void relayout() {
+      if (myCellInfo == null) return;
+      EditorCell cell = getCell();
+      if (cell instanceof EditorCell_Collection) {
+        myY1 = cell.getY();
+        myY2 = cell.getY() + cell.getHeight();
+      } else {
+        LeftEditorHighlighter.this.myUnresolvedFoldingButtons.add(this);
+        //debug
+        cell = getCell();
+      }
+    }
+
+    public void paint(Graphics g) {
+      g.setColor(Color.LIGHT_GRAY);
+      g.fillRect(myX - WIDTH, myY1, WIDTH, WIDTH);
+      int[] xpoints1 = {myX-WIDTH, myX, myX};
+      int[] ypoints1 = {myY1+WIDTH, myY1+WIDTH, myY1+2*WIDTH};
+      g.fillPolygon(xpoints1, ypoints1, 3);
+      g.fillRect(myX - WIDTH, myY2 - WIDTH, WIDTH, WIDTH);
+      int[] xpoints2 = {myX-WIDTH, myX, myX};
+      int[] ypoints2 = {myY2-WIDTH, myY2-WIDTH, myY2-2*WIDTH};
+      g.fillPolygon(xpoints2, ypoints2, 3);
+      g.drawLine(myX, myY1, myX, myY2-1);
+    }
+
+    private EditorCell getCell() {
+      return myCellInfo.findCell(myEditor);
+    }
+
+    public void setX(int x) {
+      myX = x;
+    }
+
+    public void activate() {
+      EditorCell cell = getCell();
+      if (cell instanceof EditorCell_Collection) {
+        EditorCell_Collection collection = (EditorCell_Collection) cell;
+        if (collection.isFolded()) {
+          collection.unfold();
+        } else {
+          collection.fold();
+        }
+      } else {
+        LeftEditorHighlighter.this.myUnresolvedFoldingButtons.add(this);
+      }
+    }
+  }
+
+  private class MyMouseListener extends MouseAdapter {
+
+    public void mouseClicked(MouseEvent e) {
+      if (e.getX() > myWidth || e.getX() < myWidth - FoldingButton.WIDTH) return;
+      for (FoldingButton button : myFoldingButtons.values()) {
+        if ((e.getY() >= button.myY1 && e.getY() <= button.myY1 + FoldingButton.WIDTH)
+                || (e.getY() <= button.myY2 && e.getY() >= button.myY2 - FoldingButton.WIDTH)) {
+          button.activate();
+          break;
+        }
+      }
     }
   }
 }

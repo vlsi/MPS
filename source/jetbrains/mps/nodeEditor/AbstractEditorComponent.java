@@ -836,7 +836,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     }
     SelectNodeCondition condition = new SelectNodeCondition();
-    cellCollection.iterateTreeUntilCondition(condition);
+    cellCollection.iterateTreeUntilCondition(condition, true);
     return condition.getFoundCell();
   }
 
