@@ -5,6 +5,7 @@ import java.rmi.RemoteException;
 import java.util.*;
 import java.io.File;
 
+@SuppressWarnings({"RedundantThrows", "UnusedDeclaration"})
 public interface IProjectHandler extends Remote {
   void addSourceRoot(final String path) throws RemoteException;
   void addMPSJar(final String mpsHome) throws RemoteException;

@@ -47,10 +47,6 @@ import java.util.List;
  * @author Kostik
  */
 public class ProjectHandler extends UnicastRemoteObject implements ProjectComponent, IProjectHandler {
-  public static final int REGISTRY_PORT = 2390;
-
-  public static final String MPS_SUPPORT_HANDLER_NAME = "MPSSupport";
-
   private Project myProject;
   private List<IMPSIDEHandler> myIDEHandlers = new ArrayList<IMPSIDEHandler>();
 
@@ -286,10 +282,6 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
 
                 CompilerManager compilerManager = myProject.getComponent(CompilerManager.class);
                 compilerManager.make(module, new CompileStatusNotification() {
-                  public void finished(boolean aborted, int errors, int warnings) {
-                    compilationFinished(aborted, errors, warnings);
-                  }
-
                   public void finished(boolean aborted, int errors, int warnings, CompileContext compileContext) {
                     compilationFinished(aborted, errors, warnings);
                   }

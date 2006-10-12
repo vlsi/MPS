@@ -85,6 +85,7 @@ public class FileUtil {
     }
   }
 
+  @SuppressWarnings({"UnusedDeclaration"})
   public static void zip(File dir, File to) {
     try {
       FileOutputStream fos = new FileOutputStream(to);

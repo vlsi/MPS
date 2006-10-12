@@ -34,8 +34,6 @@ public class IDEAHandler extends UnicastRemoteObject implements ApplicationCompo
     RMIHandler.class.getClassLoader();
   }
 
-  public static final String PROJECT_CREATOR_NAME = "IDEAHandler";
-
   private ProjectManagerEx myProjectManager;
 
   public IDEAHandler(ProjectManagerEx projectManager) throws RemoteException {

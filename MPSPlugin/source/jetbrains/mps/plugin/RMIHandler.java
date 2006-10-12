@@ -37,6 +37,7 @@ public class RMIHandler {
   public static class MyMPSPlugin extends UnicastRemoteObject implements IMPSPlugin {
 
     public MyMPSPlugin() throws RemoteException {
+      super();
     }
 
     private void checkAccess() {
