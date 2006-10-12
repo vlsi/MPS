@@ -6,7 +6,10 @@ import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.action.*;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.undo.UndoManager;
-import jetbrains.mps.ide.navigation.*;
+import jetbrains.mps.ide.navigation.FocusPolicy;
+import jetbrains.mps.ide.navigation.HistoryItem;
+import jetbrains.mps.ide.navigation.IHistoryItem;
+import jetbrains.mps.ide.navigation.RecentEditorsMenu;
 import jetbrains.mps.ide.ui.JMultiLineToolTip;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.text.CellAction_RenderText;
@@ -14,9 +17,8 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.typesystem.TypeCheckerAccess;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.NodesParetoFrontier;
-import jetbrains.mps.util.WeakSet;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.annotation.ThinkTwice;
 
 import javax.swing.*;
@@ -1623,20 +1625,15 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           rebuildEditorContent(events);
         }
       } else {// "dramatical" change
-        String cellRole = null;
-        EditorCell selectedCell = AbstractEditorComponent.this.getSelectedCell();
-        if (selectedCell != null) {
-          cellRole = (String) selectedCell.getUserObject(EditorCell.ROLE);
-        }
         rebuildEditorContent(events);
         if (!hasFocus()) return;
 
-        updateSelection(events, cellRole);
+        updateSelection(events);
       }
     }
 
 
-    private void updateSelection(List<SModelEvent> events, String cellRole) {
+    private void updateSelection(List<SModelEvent> events) {
 
       SModelEvent lastAdd = null;
       SModelEvent lastRemove = null;

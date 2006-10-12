@@ -42,8 +42,8 @@ public class TemplateSwitchGraph {
       if (modifiedSwitchNode == null) {
         modifiedSwitchNode = addSwitch(modifiedSwitch);
       }
-      switchNode.modifiedSwitchNode = modifiedSwitchNode;
-      modifiedSwitchNode.modifierSwitchNodes.add(switchNode);
+      switchNode.myModifiedSwitchNode = modifiedSwitchNode;
+      modifiedSwitchNode.myModifierSwitchNodes.add(switchNode);
     }
 
     return switchNode;
@@ -51,8 +51,8 @@ public class TemplateSwitchGraph {
 
   public List<TemplateSwitch> getSubgraphAsList(TemplateSwitch baseSwitch) {
     TemplateSwitchGraphNode bottomSwitchNode = myTemplateSwitchToGraphNodeMap.get(baseSwitch);
-    while (bottomSwitchNode.modifiedSwitchNode != null) {
-      bottomSwitchNode = bottomSwitchNode.modifiedSwitchNode;
+    while (bottomSwitchNode.myModifiedSwitchNode != null) {
+      bottomSwitchNode = bottomSwitchNode.myModifiedSwitchNode;
     }
     List<TemplateSwitchGraphNode> graphNodes = new LinkedList<TemplateSwitchGraphNode>();
     modifierSwitchesToList(bottomSwitchNode, graphNodes);
@@ -60,15 +60,15 @@ public class TemplateSwitchGraph {
 
     List<TemplateSwitch> switches = new LinkedList<TemplateSwitch>();
     for (TemplateSwitchGraphNode switchGraphNode : graphNodes) {
-      switches.add(switchGraphNode.templateSwitch);
+      switches.add(switchGraphNode.myTemplateSwitch);
     }
     return switches;
   }
 
   private void modifierSwitchesToList(TemplateSwitchGraphNode switchNode, List<TemplateSwitchGraphNode> list) {
-    if (!switchNode.modifierSwitchNodes.isEmpty()) {
-      list.addAll(switchNode.modifierSwitchNodes);
-      for (TemplateSwitchGraphNode modifierSwitchNode : switchNode.modifierSwitchNodes) {
+    if (!switchNode.myModifierSwitchNodes.isEmpty()) {
+      list.addAll(switchNode.myModifierSwitchNodes);
+      for (TemplateSwitchGraphNode modifierSwitchNode : switchNode.myModifierSwitchNodes) {
         modifierSwitchesToList(modifierSwitchNode, list);
       }
     }
