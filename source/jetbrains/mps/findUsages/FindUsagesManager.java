@@ -69,6 +69,7 @@ public class FindUsagesManager {
 
   public Set<SReference> findUsages(Set<SNode> nodes, IScope scope, IAdaptiveProgressMonitor progress) {
     Set<SReference> result = new HashSet<SReference>();
+    //noinspection EmptyFinallyBlock
     try {
 
       if (progress == null) progress = IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR;
@@ -97,6 +98,7 @@ public class FindUsagesManager {
 
   public Set<SNode> findInstances(ConceptDeclaration concept, IScope scope, IAdaptiveProgressMonitor progress) {
     Set<SNode> result = new HashSet<SNode>();
+    //noinspection EmptyFinallyBlock
     try {
       if (progress == null) progress = IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR;
       List<SModelDescriptor> models = scope.getModelDescriptors();
