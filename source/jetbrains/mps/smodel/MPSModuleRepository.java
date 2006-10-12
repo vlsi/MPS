@@ -340,7 +340,7 @@ public class MPSModuleRepository {
     return null;
   }
 
-  @NotNull
+  @Nullable
   public IModule getModule(@NotNull String namespace) {
     return myUIDToModuleMap.get(namespace);
   }
