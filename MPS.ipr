@@ -336,6 +336,7 @@
           <group names="x,width,left,right" />
           <group names="y,height,top,bottom" />
         </inspection_tool>
+        <inspection_tool class="UnusedReturnValue" level="WARNING" enabled="false" />
       </profile>
       <profile version="1.0" is_locked="false">
         <option name="myName" value="Default" />
@@ -521,6 +522,7 @@
           <group names="x,width,left,right" />
           <group names="y,height,top,bottom" />
         </inspection_tool>
+        <inspection_tool class="UnusedReturnValue" level="WARNING" enabled="false" />
       </profile>
       <profile version="1.0" is_locked="false">
         <option name="myName" value="For Generated Code" />
@@ -729,6 +731,7 @@
           <group names="x,width,left,right" />
           <group names="y,height,top,bottom" />
         </inspection_tool>
+        <inspection_tool class="UnusedReturnValue" level="WARNING" enabled="false" />
       </profile>
       <profile version="1.0" is_locked="false">
         <option name="myName" value="Query methods" />
@@ -931,6 +934,7 @@
           <group names="x,width,left,right" />
           <group names="y,height,top,bottom" />
         </inspection_tool>
+        <inspection_tool class="UnusedReturnValue" level="WARNING" enabled="false" />
       </profile>
     </profiles>
   </component>
