@@ -137,19 +137,19 @@ public class NodeRangeSelection implements IKeyboardHandler {
     }
     // only DELETE and COPY and CUT and RENDER_TEXT are supported in this mode
     if (actionType != null) {
-      if (actionType == EditorCellAction.DELETE) {
+      if (actionType.equals(EditorCellAction.DELETE)) {
         doDeleteNodes(editorContext);
         return true;
       }
-      if (actionType == EditorCellAction.COPY) {
+      if (actionType.equals(EditorCellAction.COPY)) {
         myEditorComponent.executeComponentAction(EditorCellAction.COPY);
         return true;
       }
-      if (actionType == EditorCellAction.CUT) {
+      if (actionType.equals(EditorCellAction.CUT)) {
         myEditorComponent.executeComponentAction(EditorCellAction.CUT);
         return true;
       }
-      if (actionType == EditorCellAction.RENDER_TEXT) {
+      if (actionType.equals(EditorCellAction.RENDER_TEXT)) {
         myEditorComponent.executeComponentAction(EditorCellAction.RENDER_TEXT);
         return true;
       }
