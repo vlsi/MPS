@@ -337,6 +337,7 @@
           <group names="y,height,top,bottom" />
         </inspection_tool>
         <inspection_tool class="UnusedReturnValue" level="WARNING" enabled="false" />
+        <inspection_tool class="RedundantThrows" level="WARNING" enabled="false" />
       </profile>
       <profile version="1.0" is_locked="false">
         <option name="myName" value="Default" />
@@ -523,6 +524,7 @@
           <group names="y,height,top,bottom" />
         </inspection_tool>
         <inspection_tool class="UnusedReturnValue" level="WARNING" enabled="false" />
+        <inspection_tool class="RedundantThrows" level="WARNING" enabled="false" />
       </profile>
       <profile version="1.0" is_locked="false">
         <option name="myName" value="For Generated Code" />
@@ -732,6 +734,7 @@
           <group names="y,height,top,bottom" />
         </inspection_tool>
         <inspection_tool class="UnusedReturnValue" level="WARNING" enabled="false" />
+        <inspection_tool class="RedundantThrows" level="WARNING" enabled="false" />
       </profile>
       <profile version="1.0" is_locked="false">
         <option name="myName" value="Query methods" />
@@ -935,6 +938,7 @@
           <group names="y,height,top,bottom" />
         </inspection_tool>
         <inspection_tool class="UnusedReturnValue" level="WARNING" enabled="false" />
+        <inspection_tool class="RedundantThrows" level="WARNING" enabled="false" />
       </profile>
     </profiles>
   </component>
