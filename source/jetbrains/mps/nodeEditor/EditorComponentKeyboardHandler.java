@@ -58,18 +58,18 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
       boolean deleteKeystroke = isDeleteKeystroke(keyEvent);
       boolean backspaceKeystroke = isBackspaceKeystroke(keyEvent);
 
-      boolean strictMatching = endEditKeystroke || actionType == EditorCellAction.RIGHT_TRANSFORM;
+      boolean strictMatching = endEditKeystroke || actionType.equals(EditorCellAction.RIGHT_TRANSFORM);
 
 
       if (!EditorUtil.isValidCell(selectedCell)) {
         if (endEditKeystroke ||
-                actionType == EditorCellAction.INSERT ||
-                actionType == EditorCellAction.INSERT_BEFORE) {
+                actionType.equals(EditorCellAction.INSERT) ||
+                actionType.equals(EditorCellAction.INSERT_BEFORE)) {
           EditorUtil.validateCell(selectedCell, editorContext, strictMatching);
           return true;
         }
 
-        if (actionType == EditorCellAction.RIGHT_TRANSFORM) {
+        if (actionType.equals(EditorCellAction.RIGHT_TRANSFORM)) {
           // !side effect: can change selection!
           if (!EditorUtil.validateCell(selectedCell, editorContext, strictMatching)) {
             return true;
@@ -99,7 +99,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
           keyEvent.consume();
         }
 
-      } else if (actionType == EditorCellAction.RIGHT_TRANSFORM) {
+      } else if (actionType.equals(EditorCellAction.RIGHT_TRANSFORM)) {
         if (selectedCell instanceof EditorCell_Label && selectedCell.isErrorState()) {
           // stop here
           return true;
@@ -126,7 +126,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
     if (selectedCell != null) {
 
-      if (actionType != null && actionType != EditorCellAction.DELETE) {
+      if (actionType != null && !actionType.equals(EditorCellAction.DELETE)) {
         if (EditorUtil.executeCellAction(selectedCell, actionType, editorContext)) {
           return true;
         }
@@ -157,7 +157,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
         if (allowCellToProcessEvent(selectedCell, keyEvent, editorContext)) return true;
       }// if (!keyEvent.isConsumed())
 
-      if (actionType == EditorCellAction.DELETE) {
+      if (EditorCellAction.DELETE.equals(actionType)) {
         if (EditorUtil.executeCellAction(selectedCell, actionType, editorContext)) {
           return true;
         }

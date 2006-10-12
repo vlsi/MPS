@@ -100,7 +100,7 @@ public class LeftEditorHighlighter {
       for (int i = 0; i < myBracketEdges.size(); i++) {
         BracketEdge edge = myBracketEdges.get(i);
         HighlighterBracket bracket = edge.myHighlighterBracket;
-        if (edge.isBeginning) {
+        if (edge.myBeginning) {
           myBracketsLayoutStack.push(bracket);
         } else {
           HighlighterBracket poppedBracket = myBracketsLayoutStack.pop();
@@ -171,15 +171,6 @@ public class LeftEditorHighlighter {
       relayout();
     }
 
-    public  HighlighterBracket(int y1, int y2, Color c, AbstractEditorComponent editorComponent) {
-      if (y1 > y2) throw new IllegalArgumentException("y2 must be at least y1, while y1 = " + y1 + ", y2 = " + y2);
-      myColor = c;
-      myEditor = editorComponent;
-      myEditorCellInfo = null;
-      setY1(y1);
-      setY2(y2);
-    }
-
     public void relayout() {
       if (myEditorCellInfo == null) return;
       EditorCell cell = getCell();
@@ -207,16 +198,9 @@ public class LeftEditorHighlighter {
       myX = x;
     }
 
+    @SuppressWarnings({"UnusedDeclaration"})
     public int getCurrentWidth() {
       return myCurrentWidth;
-    }
-
-    private boolean isInside(HighlighterBracket bracket) {
-      return bracket.getY1() <= getY1() && bracket.getY2() >= getY2();
-    }
-
-    private boolean isOutside(HighlighterBracket bracket) {
-      return bracket.getY1() >= getY1() && bracket.getY2() <= getY2();
     }
 
     public void paint(Graphics g) {
@@ -248,25 +232,25 @@ public class LeftEditorHighlighter {
 
   private static class BracketEdge implements Comparable<BracketEdge> {
     public int myY;
-    public boolean isBeginning;
+    public boolean myBeginning;
     public HighlighterBracket myHighlighterBracket;
 
     public BracketEdge(int y, boolean beginning, HighlighterBracket bracket) {
       myY = y;
-      isBeginning = beginning;
+      myBeginning = beginning;
       myHighlighterBracket = bracket;
     }
 
 
     public int compareTo(BracketEdge o) {
       if (myY == o.myY) {
-        if (isBeginning && !o.isBeginning) {
+        if (myBeginning && !o.myBeginning) {
           return 1;
-        } else if (isBeginning && o.isBeginning) {
+        } else if (myBeginning && o.myBeginning) {
           return o.myHighlighterBracket.getY2() - myHighlighterBracket.getY2();
-        } else if (!isBeginning && o.isBeginning) {
+        } else if (!myBeginning && o.myBeginning) {
           return -1;
-        } else if (!isBeginning && !o.isBeginning) {
+        } else if (!myBeginning && !o.myBeginning) {
           return o.myHighlighterBracket.getY1() - myHighlighterBracket.getY1();
         }
       }
@@ -296,16 +280,18 @@ public class LeftEditorHighlighter {
       } else {
         LeftEditorHighlighter.this.myUnresolvedFoldingButtons.add(this);
         //debug
-        cell = getCell();
+//        cell = getCell();
       }
     }
 
     public void paint(Graphics g) {
       g.setColor(Color.LIGHT_GRAY);
+      //noinspection SuspiciousNameCombination
       g.fillRect(myX - WIDTH, myY1, WIDTH, WIDTH);
       int[] xpoints1 = {myX-WIDTH, myX, myX};
       int[] ypoints1 = {myY1+WIDTH, myY1+WIDTH, myY1+2*WIDTH};
       g.fillPolygon(xpoints1, ypoints1, 3);
+      //noinspection SuspiciousNameCombination
       g.fillRect(myX - WIDTH, myY2 - WIDTH, WIDTH, WIDTH);
       int[] xpoints2 = {myX-WIDTH, myX, myX};
       int[] ypoints2 = {myY2-WIDTH, myY2-WIDTH, myY2-2*WIDTH};

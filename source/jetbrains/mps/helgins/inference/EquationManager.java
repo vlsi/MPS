@@ -1,13 +1,10 @@
 package jetbrains.mps.helgins.inference;
 
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.helgins.RuntimeTypeVariable;
 import jetbrains.mps.helgins.RuntimeErrorType;
+import jetbrains.mps.helgins.RuntimeTypeVariable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 
 import java.util.*;
 
@@ -19,9 +16,6 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class EquationManager {
-
-  private static Logger LOG = Logger.getLogger(EquationManager.class);
-
   private static EquationManager ourInstance = new EquationManager();
 
   private EquationManager() {
@@ -32,8 +26,6 @@ public class EquationManager {
   private Map<SNode, Map<SNode, SNode>> mySupertypesToSubtypesMap = new HashMap<SNode, Map<SNode, SNode>>();
   private Map<SNode, SNode> myEquations = new HashMap<SNode, SNode>();
 
-  private Map<SNode, SNode> myTypesToSmartTypes = new HashMap<SNode, SNode>();
-  private Map<ConceptDeclaration, LinkDeclaration> myConceptsToSmartLinks = new HashMap<ConceptDeclaration, LinkDeclaration>();
 
   public static EquationManager getInstance() {
     return ourInstance;
@@ -165,8 +157,6 @@ public class EquationManager {
     mySubtypesToSupertypesMap.clear();
     mySupertypesToSubtypesMap.clear();
     myEquations.clear();
-    myConceptsToSmartLinks.clear();
-    myTypesToSmartTypes.clear();
   }
 
   public static boolean compareNodes(SNode node1, SNode node2) {
@@ -240,17 +230,17 @@ public class EquationManager {
     subtypes.put(subtype, nodeToCheck);
   }
 
-  private void removeSubtyping(SNode subtype, SNode supertype) {
-    Map<SNode,SNode> supertypes = mySubtypesToSupertypesMap.get(subtype);
-    if (supertypes != null) {
-      supertypes.remove(supertype);
-    }
-
-    Map<SNode,SNode> subtypes = mySupertypesToSubtypesMap.get(supertype);
-    if (subtypes != null) {
-      subtypes.remove(subtype);
-    }
-  }
+//  private void removeSubtyping(SNode subtype, SNode supertype) {
+//    Map<SNode,SNode> supertypes = mySubtypesToSupertypesMap.get(subtype);
+//    if (supertypes != null) {
+//      supertypes.remove(supertype);
+//    }
+//
+//    Map<SNode,SNode> subtypes = mySupertypesToSubtypesMap.get(supertype);
+//    if (subtypes != null) {
+//      subtypes.remove(subtype);
+//    }
+//  }
 
   private Set<SNode> subtypingGraphVertices() {
     Set<SNode> nodes = new HashSet<SNode>(mySubtypesToSupertypesMap.keySet());
