@@ -6,31 +6,31 @@ import java.util.*;
 
 public class AccountingEvent {
   //<codeFragment name = "data">
-  private EventType type;
-  private MfDate whenOccurred;
-  private MfDate whenNoticed;
-  private Subject subject;
+  private EventType myType;
+  private MfDate myWhenOccurred;
+  private MfDate myWhenNoticed;
+  private Subject mySubject;
 //</codeFragment>
 
-  protected List secondaryEvents = new ArrayList();
-  protected Collection<Entry> resultingEntries = new HashSet<Entry>();
-  protected boolean isProcessed = false;
-  private AccountingEvent replacementEvent;
+  protected List mySecondaryEvents = new ArrayList();
+  protected Collection<Entry> myResultingEntries = new HashSet<Entry>();
+  protected boolean myProcessed = false;
+  private AccountingEvent myReplacementEvent;
 
   public AccountingEvent(EventType type, MfDate whenOccurred, MfDate whenNoticed, Subject subject) {
-    this.type = type;
-    this.whenOccurred = whenOccurred;
-    this.whenNoticed = whenNoticed;
-    this.subject = subject;
+    this.myType = type;
+    this.myWhenOccurred = whenOccurred;
+    this.myWhenNoticed = whenNoticed;
+    this.mySubject = subject;
   }
 
   void addResultingEntry(Entry arg) {
-    resultingEntries.add(arg);
+    myResultingEntries.add(arg);
   }
 
   void friendAddSecondaryEvent(AccountingEvent arg) {
     // only to be called by the secondary event's setting method
-    secondaryEvents.add(arg);
+    mySecondaryEvents.add(arg);
   }
 
   /**
@@ -39,8 +39,8 @@ public class AccountingEvent {
    */
   public Set<Entry> getAllResultingEntries() {
     Set<Entry> result = new HashSet<Entry>();
-    result.addAll(resultingEntries);
-    for (Object secondaryEvent : secondaryEvents) {
+    result.addAll(myResultingEntries);
+    for (Object secondaryEvent : mySecondaryEvents) {
       AccountingEvent each = (AccountingEvent) secondaryEvent;
       result.addAll(each.getAllResultingEntries());
     }
@@ -48,53 +48,53 @@ public class AccountingEvent {
   }
 
   EventType getEventType() {
-    return type;
+    return myType;
   }
 
   AccountingEvent getReplacementEvent() {
-    return replacementEvent;
+    return myReplacementEvent;
   }
 
   /**
    * entries caused directly by this event.
    */
   public Collection<Entry> getResultingEntries() {
-    return Collections.unmodifiableCollection(resultingEntries);
+    return Collections.unmodifiableCollection(myResultingEntries);
   }
 
   List getSecondaryEvents() {
-    return Collections.unmodifiableList(secondaryEvents);
+    return Collections.unmodifiableList(mySecondaryEvents);
   }
 
   public Subject getSubject() {
-    return subject;
+    return mySubject;
   }
 
   public MfDate getWhenNoticed() {
-    return whenNoticed;
+    return myWhenNoticed;
   }
 
   public MfDate getWhenOccurred() {
-    return whenOccurred;
+    return myWhenOccurred;
   }
 
   public boolean hasBeenAdjusted() {
-    return (replacementEvent != null);
+    return (myReplacementEvent != null);
   }
 
   public boolean isProcessed() {
-    return isProcessed;
+    return myProcessed;
   }
 
   public void markProcessed() {
-    isProcessed = true;
+    myProcessed = true;
   }
 
   //<codeFragment name = "process">
   public void process() {
-    assert!isProcessed;
-    if (adjustedEvent != null) adjustedEvent.reverse();
-    subject.process(this);
+    assert!myProcessed;
+    if (myAdjustedEvent != null) myAdjustedEvent.reverse();
+    mySubject.process(this);
     markProcessed();
   }
 //</codeFragment>
@@ -103,7 +103,7 @@ public class AccountingEvent {
     assert isProcessed();
     Entry[] entries = (Entry[]) getResultingEntries().toArray(new Entry[0]);
     for (Entry entry : entries) {
-      subject.reverseEntry(entry);
+      mySubject.reverseEntry(entry);
     }
     reverseSecondaryEvents();
   }
@@ -116,19 +116,19 @@ public class AccountingEvent {
   }
 
   void setIsProcessed(boolean newIsProcessed) {
-    isProcessed = newIsProcessed;
+    myProcessed = newIsProcessed;
   }
 
   public void setReplacementEvent(AccountingEvent newReplacementEvent) {
-    replacementEvent = newReplacementEvent;
+    myReplacementEvent = newReplacementEvent;
   }
 
   //    --------------------- direct reversing example support --------------------------------
-  private AccountingEvent adjustedEvent;
+  private AccountingEvent myAdjustedEvent;
 
   public AccountingEvent(EventType type, MfDate whenOccurred, MfDate whenNoticed, Subject subject, AccountingEvent adjustedEvent) {
     this(type, whenOccurred, whenNoticed, subject);
-    this.adjustedEvent = adjustedEvent;
+    this.myAdjustedEvent = adjustedEvent;
     adjustedEvent.setReplacementEvent(this);
   }
 
