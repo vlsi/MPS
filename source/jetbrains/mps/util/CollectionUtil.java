@@ -165,14 +165,14 @@ public class CollectionUtil {
 
   public static<T> Iterator<T> concatenate(final Iterator<? extends T> it1, final Iterator<? extends T> it2) {
     return new Iterator<T>() {
-      public boolean isFirstActive = true;
+      public boolean myFirstActive = true;
 
       public boolean hasNext() {
-        if (isFirstActive) {
+        if (myFirstActive) {
           if (it1.hasNext()) {
             return true;
           } else {
-            isFirstActive = false;
+            myFirstActive = false;
             return it2.hasNext();
           }
         } else {
@@ -181,11 +181,11 @@ public class CollectionUtil {
       }
 
       public T next() {
-        if (isFirstActive) {
+        if (myFirstActive) {
           if (it1.hasNext()) {
             return it1.next();
           } else {
-            isFirstActive = false;
+            myFirstActive = false;
             return it2.next();
           }
         } else {

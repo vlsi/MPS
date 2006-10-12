@@ -43,15 +43,15 @@ public class NodesParetoFrontier {
     }
     public Iterator<NodeBox> iterator() {
       return new Iterator<NodeBox>() {
-        private NodeBox current = NodeBox.this;
+        private NodeBox myCurrent = NodeBox.this;
         public boolean hasNext() {
-          return current != null;
+          return myCurrent != null;
         }
 
         public NodeBox next() {
           if (!hasNext()) throw new NoSuchElementException();
-          NodeBox result = current;
-          current = current.getNext();
+          NodeBox result = myCurrent;
+          myCurrent = myCurrent.getNext();
           return result;
         }
 

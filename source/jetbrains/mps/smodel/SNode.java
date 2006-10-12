@@ -1163,7 +1163,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       });
     }
   }
-
+  
   private int getChildInRoleCount(@NotNull String role) {
     if (myChildInRoleCount.get(role) == null) return 0;
     return myChildInRoleCount.get(role);
