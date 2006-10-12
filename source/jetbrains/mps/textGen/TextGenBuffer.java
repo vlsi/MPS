@@ -9,8 +9,8 @@ import java.util.HashMap;
  */
 /*package*/
 public class TextGenBuffer {
-  public static int TOP = 0;
-  public static int DEFAULT = 1;
+  public static final int TOP = 0;
+  public static final int DEFAULT = 1;
   private StringBuffer[] myBuffers = new StringBuffer[]{
     new StringBuffer(256),
     new StringBuffer(256)
