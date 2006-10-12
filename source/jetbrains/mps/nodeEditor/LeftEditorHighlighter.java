@@ -278,7 +278,7 @@ public class LeftEditorHighlighter {
     private int myY2;
     private int myX;
     private boolean myIsHidden = false;
-    public static final int WIDTH = 6;
+    public static final int WIDTH = 9;
     private boolean myIsFolded;
 
     public FoldingButton(EditorCell cell) {
@@ -303,30 +303,55 @@ public class LeftEditorHighlighter {
     public void paint(Graphics g) {
       if (myIsHidden) return;
       if (!myIsFolded) {
-        g.setColor(Color.LIGHT_GRAY);
-        //noinspection SuspiciousNameCombination
-        g.fillRect(myX - WIDTH, myY1, WIDTH, WIDTH);
-        int[] xpoints1 = {myX-WIDTH, myX, myX};
-        int[] ypoints1 = {myY1+WIDTH, myY1+WIDTH, myY1+2*WIDTH};
-        g.fillPolygon(xpoints1, ypoints1, 3);
-        g.drawPolygon(xpoints1, ypoints1, 3);
-        g.setColor(Color.LIGHT_GRAY);
-        //noinspection SuspiciousNameCombination
-        g.fillRect(myX - WIDTH, myY2 - WIDTH, WIDTH, WIDTH);
-        int[] xpoints2 = {myX-WIDTH, myX, myX};
-        int[] ypoints2 = {myY2-WIDTH, myY2-WIDTH, myY2-2*WIDTH};
-        g.fillPolygon(xpoints2, ypoints2, 3);
-        g.drawLine(myX, myY1, myX, myY2-1);
-        g.setColor(Color.BLACK);
-        g.drawLine(myX - WIDTH + 1, myY1 + WIDTH/2, myX - 1, myY1 + WIDTH/2);
-        g.drawLine(myX - WIDTH + 1, myY2 - WIDTH/2, myX - 1, myY2 - WIDTH/2);
-      } else {
-        g.setColor(Color.DARK_GRAY);
-        //noinspection SuspiciousNameCombination
-        g.fillRect(myX - 1 - WIDTH, (myY1 + myY2 - WIDTH)/2, WIDTH + 1, WIDTH + 1);
+
+
+
+        int xs[] = { myX,  myX - WIDTH / 2,  myX - WIDTH / 2,   myX - WIDTH *  3 / 8,  myX         , myX + WIDTH *  3 / 8,  myX + WIDTH / 2, myX + WIDTH / 2     };
+        int ys[] = { myY1, myY1,            myY1 + WIDTH / 2,   myY1 + WIDTH * 7 / 8,  myY1 + WIDTH, myY1 + WIDTH * 7 / 8,  myY1 + WIDTH / 2, myY1            };
+
         g.setColor(Color.WHITE);
-        g.drawLine(myX - WIDTH, (myY1 + myY2)/2, myX - 2, (myY1 + myY2)/2);
-        g.drawLine(myX - (WIDTH)/2 - 1, (myY1 + myY2 - WIDTH)/2 + 1, myX - (WIDTH)/2 - 1, (myY1 + myY2 + WIDTH)/2 - 1);
+        g.fillPolygon(xs, ys, xs.length);
+        g.setColor(Color.DARK_GRAY);
+        g.drawPolygon(xs, ys, xs.length);
+
+        for (int i = 0; i < xs.length; i++) {
+          ys[i] = myY2 - (ys[i] - myY1);
+        }
+
+        g.setColor(Color.WHITE);
+        g.fillPolygon(xs, ys, xs.length);
+        g.setColor(Color.DARK_GRAY);
+        g.drawPolygon(xs, ys, xs.length);
+
+        g.setColor(Color.DARK_GRAY);
+        g.drawLine(myX - WIDTH / 4, myY1 + WIDTH / 2, myX + WIDTH / 4, myY1 + WIDTH / 2);
+        g.drawLine(myX - WIDTH / 4, myY2 - WIDTH / 2, myX + WIDTH / 4, myY2 - WIDTH / 2);
+
+
+//        g.setColor(Color.LIGHT_GRAY);
+//        g.fillRect(myX - WIDTH, myY1, WIDTH, WIDTH);
+//        int[] xpoints1 = {myX-WIDTH, myX, myX};
+//        int[] ypoints1 = {myY1+WIDTH, myY1+WIDTH, myY1+2*WIDTH};
+//        g.fillPolygon(xpoints1, ypoints1, 3);
+//        g.drawPolygon(xpoints1, ypoints1, 3);
+//        g.setColor(Color.LIGHT_GRAY);
+//        g.fillRect(myX - WIDTH, myY2 - WIDTH, WIDTH, WIDTH);
+//        int[] xpoints2 = {myX-WIDTH, myX, myX};
+//        int[] ypoints2 = {myY2-WIDTH, myY2-WIDTH, myY2-2*WIDTH};
+//        g.fillPolygon(xpoints2, ypoints2, 3);
+//        g.drawLine(myX, myY1, myX, myY2-1);
+//        g.setColor(Color.BLACK);
+//        g.drawLine(myX - WIDTH + 1, myY1 + WIDTH/2, myX - 1, myY1 + WIDTH/2);
+//        g.drawLine(myX - WIDTH + 1, myY2 - WIDTH/2, myX - 1, myY2 - WIDTH/2);
+      } else {
+        g.setColor(Color.LIGHT_GRAY);
+        //noinspection SuspiciousNameCombination
+        g.fillOval(myX - WIDTH/2 - 1, (myY1 + myY2 - WIDTH - 1)/2, WIDTH + 1, WIDTH + 1);
+        g.setColor(Color.DARK_GRAY);
+        g.drawOval(myX - WIDTH/2 - 1, (myY1 + myY2 - WIDTH - 1)/2, WIDTH + 1, WIDTH + 1);
+        g.setColor(Color.WHITE);
+        g.drawLine(myX - (WIDTH+1) / 4, (myY1 + myY2)/2, myX + (WIDTH+1) / 4, (myY1 + myY2)/2);
+        g.drawLine(myX, (myY1 + myY2 - WIDTH - 1)/2 + WIDTH / 4, myX, (myY1 + myY2 + WIDTH + 1)/2 - WIDTH /4);
       }
     }
 
@@ -357,10 +382,10 @@ public class LeftEditorHighlighter {
   private class MyMouseListener extends MouseAdapter {
 
     public void mouseClicked(MouseEvent e) {
-      if (e.getX() > myWidth || e.getX() < myWidth - FoldingButton.WIDTH) return;
+      if (e.getX() > myWidth + FoldingButton.WIDTH/2 || e.getX() < myWidth - FoldingButton.WIDTH/2) return;
       for (FoldingButton button : myFoldingButtons.values()) {
-        if (!button.myIsFolded && ((e.getY() >= button.myY1 && e.getY() <= button.myY1 + 2 * FoldingButton.WIDTH)
-                || (e.getY() <= button.myY2 && e.getY() >= button.myY2 - 2 * FoldingButton.WIDTH))) {
+        if (!button.myIsFolded && ((e.getY() >= button.myY1 && e.getY() <= button.myY1 + FoldingButton.WIDTH)
+                || (e.getY() <= button.myY2 && e.getY() >= button.myY2 - FoldingButton.WIDTH))) {
           button.activate();
           break;
         }
