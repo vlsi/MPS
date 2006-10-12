@@ -18,14 +18,14 @@ import java.util.HashSet;
  * To change this template use File | Settings | File Templates.
  */
 public class PasteNodeData {
-  private List<SNode> nodes;
+  private List<SNode> myNodes;
   private Set<SReference> myRequireResolveReferences;
   private Set<String> myNecessaryLanguages;
   private Set<SModelUID> myNecessaryImports;
   private SModel myModelProperties;
 
   public PasteNodeData(List<SNode> nodes, Set<SReference> references, SModel modelProperties, Set<String> necessaryLanguages, Set<SModelUID> necessaryImports) {
-    this.nodes = nodes;
+    this.myNodes = nodes;
     this.myRequireResolveReferences = references;
     myNecessaryLanguages = necessaryLanguages;
     myNecessaryImports = necessaryImports;
@@ -33,7 +33,7 @@ public class PasteNodeData {
   }
 
   public List<SNode> getNodes() {
-    return nodes;
+    return myNodes;
   }
 
   public Set<SReference> getRequireResolveReferences() {
