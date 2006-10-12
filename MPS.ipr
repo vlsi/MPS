@@ -95,6 +95,7 @@
     <scope name="Icons Java Files" pattern="file:*/Icons.java" />
     <scope name="Node Builders Java Files" pattern="file:*/*_NodeBuilder.java" />
     <scope name="TextGen Java Files" pattern="file:*/*_TextGen.java" />
+    <scope name="Reference Resolvers Java Files" pattern="file:*/*_ReferenceResolver.java" />
   </component>
   <component name="EclipseCompilerSettings">
     <option name="DEBUGGING_INFO" value="true" />
@@ -129,6 +130,7 @@
       <scope profile="Code Called Through Reflection" name="Icons Java Files" />
       <scope profile="Code Called Through Reflection" name="Node Builders Java Files" />
       <scope profile="Query methods" name="Query Methods" />
+      <scope profile="Code Called Through Reflection" name="Reference Resolvers Java Files" />
       <scope profile="Code Called Through Reflection" name="TextGen Java Files" />
     </scopes>
     <profiles>
