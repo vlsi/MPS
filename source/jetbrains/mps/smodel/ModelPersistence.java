@@ -9,6 +9,8 @@ import jetbrains.mps.util.NameUtil;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.*;
 import java.lang.reflect.InvocationTargetException;
@@ -51,36 +53,40 @@ public class ModelPersistence {
   public static final String LINK_ATTRIBUTE = "linkAttribute";
 
 
-  private static Document loadModelDocument(File file) {
-    Document document = null;
+  @NotNull
+  private static Document loadModelDocument(@NotNull File file) {
+    Document document;
     try {
       document = JDOMUtil.loadDocument(file);
     } catch (JDOMException e) {
-      LOG.error(e);
+      throw new RuntimeException(e);
     } catch (IOException e) {
-      LOG.error(e);
+      throw new RuntimeException(e);
     }
     return document;
   }
 
-  private static Document loadModelDocument(byte[] bytes) {
-    Document document = null;
+  @NotNull
+  private static Document loadModelDocument(@NotNull byte[] bytes) {
+    Document document;
     try {
       document = JDOMUtil.loadDocument(new ByteArrayInputStream(bytes));
     } catch (JDOMException e) {
-      LOG.error(e);
+      throw new RuntimeException(e);
     } catch (IOException e) {
-      LOG.error(e);
+      throw new RuntimeException(e);
     }
     return document;
   }
 
-  public static SModel readModel(byte[] bytes) {
+  @NotNull
+  public static SModel readModel(@NotNull byte[] bytes) {
     Document document = loadModelDocument(bytes);
     return readModel(document, "", "");
   }
 
-  public static SModel readModel(File file) {
+  @NotNull
+  public static SModel readModel(@NotNull File file) {
     LOG.debug("ModelPersistence readModel from :" + file.getAbsolutePath());
 
     // the model FQ name ...
@@ -95,22 +101,21 @@ public class ModelPersistence {
       modelStereotype = rawModelName.substring(index1 + 1);
     }
 
-
     Document document = loadModelDocument(file);
-
-    if (document == null) {
-      LOG.debug("Couldn't load model file:" + file.getAbsolutePath());
-      return null;
-    }
 
     return readModel(document, modelName, modelStereotype);
   }
 
-  public static SModel copyModel(SModel model) {
+  @NotNull
+  public static SModel copyModel(@NotNull SModel model) {
     return readModel(saveModel(model), model.getShortName(), model.getStereotype());
   }
 
-  public static SModel readModel(Document document, String modelName, String stereotype) {
+  @NotNull
+  public static SModel readModel(
+          @NotNull Document document,
+          @NotNull String modelName,
+          @NotNull String stereotype) {
     Element rootElement = document.getRootElement();
 
     String modelLongName = rootElement.getAttributeValue(NAME);
@@ -174,7 +179,9 @@ public class ModelPersistence {
     for (Object child : children) {
       Element element = (Element) child;
       SNode snode = readNode(element, model, referenceDescriptors, false);
-      model.addRoot(snode);
+      if (snode != null) {
+        model.addRoot(snode);
+      }
     }
 
     for (ReferencePersister referencePersister : referenceDescriptors) {
@@ -185,7 +192,11 @@ public class ModelPersistence {
     return model;
   }
 
-  public static SNode readNode(Element nodeElement, SModel model, boolean useUIDs) {
+  @Nullable
+  public static SNode readNode(
+          @NotNull Element nodeElement,
+          @NotNull SModel model,
+          boolean useUIDs) {
     List<ReferencePersister> referenceDescriptors = new ArrayList<ReferencePersister>();
     SNode result = readNode(nodeElement, model, referenceDescriptors, useUIDs);
     for (ReferencePersister referencePersister : referenceDescriptors) {
@@ -194,9 +205,12 @@ public class ModelPersistence {
     return result;
   }
 
-
-  private static SNode readNode(Element nodeElement,
-                                SModel model, List<ReferencePersister> referenceDescriptors, boolean useUIDs
+  @Nullable
+  private static SNode readNode(
+          @NotNull Element nodeElement,
+          @NotNull SModel model,
+          @NotNull List<ReferencePersister> referenceDescriptors,
+          boolean useUIDs
   ) {
     String type = nodeElement.getAttributeValue(TYPE);
     SNode node = createNodeInstance(type, model);
@@ -249,7 +263,9 @@ public class ModelPersistence {
   }
 
 
-  public static SNode createNodeInstance(String type, SModel model) {
+  @Nullable
+  public static SNode createNodeInstance(@NotNull String type,
+                                         @NotNull SModel model) {
     try {
       Class nodeClass = Class.forName(type, true, ClassLoaderManager.getInstance().getClassLoader());
       Method method = nodeClass.getMethod("newInstance", SModel.class);
@@ -278,12 +294,13 @@ public class ModelPersistence {
     return null;
   }
 
-  public static SModel refreshModel(SModel model) {
+  @NotNull
+  public static SModel refreshModel(@NotNull SModel model) {
     String name = model.getShortName();
     return readModel(saveModel(model), name, model.getStereotype());
   }
 
-  public static void saveModel(SModel model, File file) {
+  public static void saveModel(@NotNull SModel model, @NotNull File file) {
     LOG.debug("Save model " + model.getUID() + " to file " + file.getAbsolutePath());
     Document document = saveModel(model);
 
@@ -295,7 +312,7 @@ public class ModelPersistence {
     }
   }
 
-  public static void saveModel(SModel model, OutputStream output) {
+  public static void saveModel(@NotNull SModel model, @NotNull OutputStream output) {
     Document document = saveModel(model);
     try {
       JDOMUtil.writeDocument(document, output);
@@ -306,18 +323,21 @@ public class ModelPersistence {
     }
   }
 
-  public static byte[] saveModelToBytes(SModel model) {
+  @NotNull
+  public static byte[] saveModelToBytes(@NotNull SModel model) {
     ByteArrayOutputStream output = new ByteArrayOutputStream();
     saveModel(model, output);
     return output.toByteArray();
   }
 
-  public static SModel modelFromBytes(byte[] bytes) {
+  @NotNull
+  public static SModel modelFromBytes(@NotNull byte[] bytes) {
     return readModel(bytes);
   }
 
 
-  public static Document saveModel(SModel sourceModel) {
+  @NotNull
+  public static Document saveModel(@NotNull SModel sourceModel) {
     Element rootElement = new Element(MODEL);
 
     rootElement.setAttribute(NAME, sourceModel.getLongName());
@@ -358,11 +378,11 @@ public class ModelPersistence {
     return document;
   }
 
-  public static void saveNode(Element parentElement, SNode node) {
+  public static void saveNode(@NotNull Element parentElement, @NotNull SNode node) {
     saveNode(parentElement, node, false);
   }
 
-  public static void saveNode(Element parentElement, SNode node, boolean useUIDs) {
+  public static void saveNode(@NotNull Element parentElement, @NotNull SNode node, boolean useUIDs) {
     Element element = new Element(NODE);
     setNotNullAttribute(element, ROLE, node.getRole_());
     element.setAttribute(TYPE, node.getClass().getName());
@@ -405,19 +425,24 @@ public class ModelPersistence {
   }
 
 
-  private static void setNotNullAttribute(Element element, String attrName, String attrValue) {
+  private static void setNotNullAttribute(
+          @NotNull Element element,
+          @NotNull String attrName,
+          @Nullable String attrValue) {
     if (attrValue != null) {
       element.setAttribute(attrName, attrValue);
     }
   }
 
-  private static int readIntAttributeValue(Element element, String attrName) throws NumberFormatException {
+  private static int readIntAttributeValue(
+          @NotNull Element element,
+          @NotNull String attrName) throws NumberFormatException {
     return Integer.parseInt(element.getAttributeValue(attrName));
   }
 
   private static List<PersistenceErrorListener> ourListeners = new ArrayList<PersistenceErrorListener>();
 
-  public static void addPersistenceListener(PersistenceErrorListener listener) {
+  public static void addPersistenceListener(@NotNull PersistenceErrorListener listener) {
     ourListeners.add(listener);
   }
 
@@ -434,6 +459,10 @@ public class ModelPersistence {
   public static class UnknownSNode extends SNode {
     public UnknownSNode(SModel model) {
       super(model);
+    }
+
+    public static UnknownSNode newInstance(SModel model) {
+      return new UnknownSNode(model);
     }
   }
 }
