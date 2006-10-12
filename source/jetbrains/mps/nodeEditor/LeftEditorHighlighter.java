@@ -1,10 +1,11 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.util.ColorAndGraphicsUtil;
 
 import java.util.*;
-import java.awt.Color;
-import java.awt.Graphics;
+import java.util.List;
+import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -41,12 +42,24 @@ public class LeftEditorHighlighter {
 
 
   public void paint(Graphics g) {
+    g.setColor(Color.DARK_GRAY);
+    Stroke s = null;
+    if (g instanceof Graphics2D) {
+      Graphics2D g2d = (Graphics2D) g;
+      s = g2d.getStroke();
+      g2d.setStroke(ColorAndGraphicsUtil.dottedStroke());
+    }
+    g.drawLine(myWidth, 0, myWidth, myEditorComponent.getHeight());
+    if (g instanceof Graphics2D) {
+      ((Graphics2D)g).setStroke(s);
+    }
     for (HighlighterBracket bracket : myBrackets.values()) {
       bracket.paint(g);
     }
     for (FoldingButton button : myFoldingButtons.values()) {
       button.paint(g);
     }
+
   }
 
 
@@ -75,7 +88,7 @@ public class LeftEditorHighlighter {
   public void relayout() {
     for (HighlighterBracket bracket : myBrackets.values()) {
       bracket.relayout();
-       bracket.setX(myWidth);
+      bracket.setX(myWidth);
     }
     deleteUnresolvedBrackets();
     for (FoldingButton button : myFoldingButtons.values()) {
@@ -264,7 +277,9 @@ public class LeftEditorHighlighter {
     private int myY1;
     private int myY2;
     private int myX;
-    public static final int WIDTH = 5;
+    private boolean myIsHidden = false;
+    public static final int WIDTH = 6;
+    private boolean myIsFolded;
 
     public FoldingButton(EditorCell cell) {
       myCellInfo = cell.getCellInfo();
@@ -275,28 +290,44 @@ public class LeftEditorHighlighter {
       if (myCellInfo == null) return;
       EditorCell cell = getCell();
       if (cell instanceof EditorCell_Collection) {
+        myIsHidden = cell.isUnderFolded();
+        myIsFolded = ((EditorCell_Collection)cell).isFolded();
+        if (myIsHidden) return;
         myY1 = cell.getY();
         myY2 = cell.getY() + cell.getHeight();
       } else {
         LeftEditorHighlighter.this.myUnresolvedFoldingButtons.add(this);
-        //debug
-//        cell = getCell();
       }
     }
 
     public void paint(Graphics g) {
-      g.setColor(Color.LIGHT_GRAY);
-      //noinspection SuspiciousNameCombination
-      g.fillRect(myX - WIDTH, myY1, WIDTH, WIDTH);
-      int[] xpoints1 = {myX-WIDTH, myX, myX};
-      int[] ypoints1 = {myY1+WIDTH, myY1+WIDTH, myY1+2*WIDTH};
-      g.fillPolygon(xpoints1, ypoints1, 3);
-      //noinspection SuspiciousNameCombination
-      g.fillRect(myX - WIDTH, myY2 - WIDTH, WIDTH, WIDTH);
-      int[] xpoints2 = {myX-WIDTH, myX, myX};
-      int[] ypoints2 = {myY2-WIDTH, myY2-WIDTH, myY2-2*WIDTH};
-      g.fillPolygon(xpoints2, ypoints2, 3);
-      g.drawLine(myX, myY1, myX, myY2-1);
+      if (myIsHidden) return;
+      if (!myIsFolded) {
+        g.setColor(Color.LIGHT_GRAY);
+        //noinspection SuspiciousNameCombination
+        g.fillRect(myX - WIDTH, myY1, WIDTH, WIDTH);
+        int[] xpoints1 = {myX-WIDTH, myX, myX};
+        int[] ypoints1 = {myY1+WIDTH, myY1+WIDTH, myY1+2*WIDTH};
+        g.fillPolygon(xpoints1, ypoints1, 3);
+        g.drawPolygon(xpoints1, ypoints1, 3);
+        g.setColor(Color.LIGHT_GRAY);
+        //noinspection SuspiciousNameCombination
+        g.fillRect(myX - WIDTH, myY2 - WIDTH, WIDTH, WIDTH);
+        int[] xpoints2 = {myX-WIDTH, myX, myX};
+        int[] ypoints2 = {myY2-WIDTH, myY2-WIDTH, myY2-2*WIDTH};
+        g.fillPolygon(xpoints2, ypoints2, 3);
+        g.drawLine(myX, myY1, myX, myY2-1);
+        g.setColor(Color.BLACK);
+        g.drawLine(myX - WIDTH + 1, myY1 + WIDTH/2, myX - 1, myY1 + WIDTH/2);
+        g.drawLine(myX - WIDTH + 1, myY2 - WIDTH/2, myX - 1, myY2 - WIDTH/2);
+      } else {
+        g.setColor(Color.DARK_GRAY);
+        //noinspection SuspiciousNameCombination
+        g.fillRect(myX - 1 - WIDTH, (myY1 + myY2 - WIDTH)/2, WIDTH + 1, WIDTH + 1);
+        g.setColor(Color.WHITE);
+        g.drawLine(myX - WIDTH, (myY1 + myY2)/2, myX - 2, (myY1 + myY2)/2);
+        g.drawLine(myX - (WIDTH)/2 - 1, (myY1 + myY2 - WIDTH)/2 + 1, myX - (WIDTH)/2 - 1, (myY1 + myY2 + WIDTH)/2 - 1);
+      }
     }
 
     private EditorCell getCell() {
@@ -311,6 +342,7 @@ public class LeftEditorHighlighter {
       EditorCell cell = getCell();
       if (cell instanceof EditorCell_Collection) {
         EditorCell_Collection collection = (EditorCell_Collection) cell;
+        if (collection.isUnderFolded()) return;
         if (collection.isFolded()) {
           collection.unfold();
         } else {
@@ -327,8 +359,13 @@ public class LeftEditorHighlighter {
     public void mouseClicked(MouseEvent e) {
       if (e.getX() > myWidth || e.getX() < myWidth - FoldingButton.WIDTH) return;
       for (FoldingButton button : myFoldingButtons.values()) {
-        if ((e.getY() >= button.myY1 && e.getY() <= button.myY1 + FoldingButton.WIDTH)
-                || (e.getY() <= button.myY2 && e.getY() >= button.myY2 - FoldingButton.WIDTH)) {
+        if (!button.myIsFolded && ((e.getY() >= button.myY1 && e.getY() <= button.myY1 + 2 * FoldingButton.WIDTH)
+                || (e.getY() <= button.myY2 && e.getY() >= button.myY2 - 2 * FoldingButton.WIDTH))) {
+          button.activate();
+          break;
+        }
+        if (button.myIsFolded && e.getY() >= (button.myY1 + button.myY2 - FoldingButton.WIDTH)/2 && 
+                e.getY() <= (button.myY1 + button.myY2 + FoldingButton.WIDTH)/2) {
           button.activate();
           break;
         }

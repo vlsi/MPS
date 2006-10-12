@@ -37,4 +37,9 @@ public class ColorAndGraphicsUtil {
     float[] dash = new float[]{3.0f};
     return new BasicStroke(1.0f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER, 1.0f, dash, 0.0f);
   }
+
+  public static BasicStroke dottedStroke() {
+    float[] dash = new float[]{1.0f,3.0f};
+    return new BasicStroke(1.0f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER, 1.0f, dash, 0.0f);
+  }
 }

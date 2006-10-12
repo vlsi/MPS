@@ -58,8 +58,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   protected EditorCell myRootCell;
   protected EditorCell mySelectedCell;
-  private static final int MIN_SHIFT_X = 10;
-  private int myShiftX = MIN_SHIFT_X;
+  private static final int MIN_SHIFT_X = 30;
+  private static final int ADDITIONAL_SHIFT_X = 10;
+  private int myShiftX = MIN_SHIFT_X + ADDITIONAL_SHIFT_X;
   private int myShiftY = 10;
 
   private NodeRangeSelection myNodeRangeSelection;
@@ -775,7 +776,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myRootCell.setX(myShiftX);
     myRootCell.setY(myShiftY);
     myRootCell.relayout();
-    myLeftHighlighter.setWidth(myShiftX);
+    myLeftHighlighter.setWidth(myShiftX - ADDITIONAL_SHIFT_X);
     myLeftHighlighter.relayout();
   }
 
