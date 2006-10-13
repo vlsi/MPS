@@ -10,8 +10,8 @@ import jetbrains.mps.ide.navigation.FocusPolicy;
 import jetbrains.mps.ide.navigation.HistoryItem;
 import jetbrains.mps.ide.navigation.IHistoryItem;
 import jetbrains.mps.ide.navigation.RecentEditorsMenu;
-import jetbrains.mps.ide.ui.JMultiLineToolTip;
 import jetbrains.mps.ide.ui.CellSpeedSearch;
+import jetbrains.mps.ide.ui.JMultiLineToolTip;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.text.CellAction_RenderText;
 import jetbrains.mps.smodel.*;
@@ -199,14 +199,18 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         if (getSelectedCell() != null) {
           SNode node = getSelectedCell().getSNode();
 
-          Set<SReference> usages = node.getModel().getModelDescriptor().findUsages(node);
+          SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
+          assert modelDescriptor != null;
+          Set<SReference> usages = modelDescriptor.findUsages(node);
           if (usages.size() > 0) {
             getHighlightManager().mark(node, myNodeColor, "source node", myOwner);
           }
 
           if (usages.size() == 0) {
             for (SReference ref : node.getReferences()) {
-              usages = node.getModel().getModelDescriptor().findUsages(ref.getTargetNode());
+              SModelDescriptor sModelDescriptor = node.getModel().getModelDescriptor();
+              assert sModelDescriptor != null;
+              usages = sModelDescriptor.findUsages(ref.getTargetNode());
               if (usages.size() > 0) {
                 getHighlightManager().mark(ref.getTargetNode(), myNodeColor, "source node", myOwner);
                 break;
@@ -362,7 +366,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     final SNode parent = current.getParent();
     final String role = current.getRole_();
-    assert parent != null;
+    assert parent != null && role != null;
     int index = parent.getChildren(role).indexOf(current);
     if (index == 0) return;
 
@@ -385,7 +389,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     final SNode parent = current.getParent();
     final String role = current.getRole_();
-    assert parent != null;
+    assert parent != null && role != null;
     List<SNode> siblings = parent.getChildren(role);
     int index = siblings.indexOf(current);
     if (index == siblings.size() - 1) return;
@@ -1687,11 +1691,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           EditorCell cell = findNodeCell(addedChild);
           changeSelectionWRTFocusPolicy(cell);
           return;
-        }
-        if (lastAdd instanceof SModelReferenceEvent) {
+        } else if (lastAdd instanceof SModelReferenceEvent) {
           SModelReferenceEvent re = (SModelReferenceEvent) lastAdd;
           selectRefCell(re.getReference());
           return;
+        } else {
+          //
         }
       }
 
@@ -1704,7 +1709,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
           if (parent.getChildCount() > index) {
             SNode child = parent.getChildAt(index);
-            if (child.getRole_().equals(role)) {
+            if (role.equals(child.getRole_())) {
               changeSelectionWRTFocusPolicy(findNodeCell(child));
               return;
             }
@@ -1712,7 +1717,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
           if (index != 0) {
             SNode child = parent.getChildAt(index - 1);
-            if (child.getRole_().equals(role)) {
+            if (role.equals(child.getRole_())) {
               changeSelectionWRTFocusPolicy(findNodeCell(child));
               return;
             }
