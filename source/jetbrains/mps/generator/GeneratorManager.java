@@ -8,7 +8,6 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessageView;
-import jetbrains.mps.ide.output.OutputView;
 import jetbrains.mps.ide.preferences.IComponentWithPreferences;
 import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.progress.AdaptiveProgressMonitor;
@@ -22,8 +21,9 @@ import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 
 import java.io.File;
-import java.lang.reflect.Method;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 
 /**
@@ -131,20 +131,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       }
     }
     return null;
-  }
-
-
-  private static void execute(String modelNamespace, ClassLoader classLoader, IOperationContext context) {
-    OutputView view = context.getComponent(OutputView.class);
-    view.clear();
-    try {
-      String mainClassName = modelNamespace + ".Main";
-      Class mainClass = Class.forName(mainClassName, false, classLoader);
-      Method mainMethod = mainClass.getMethod("main", IOperationContext.class);
-      mainMethod.invoke(null, context);
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
   }
 
   public static List<Language> getPossibleTargetLanguages(List<SModel> sourceModels, IScope scope) {

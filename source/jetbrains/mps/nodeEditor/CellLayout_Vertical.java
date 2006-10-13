@@ -3,9 +3,9 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.project.ApplicationComponents;
 
-import java.util.Iterator;
-import java.awt.FontMetrics;
 import java.awt.Font;
+import java.awt.FontMetrics;
+import java.util.Iterator;
 
 /**
  * User: Sergey Dmitriev
@@ -49,7 +49,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
 
     final int x = usesBraces ? editorCells.getX() + openingBrace.getWidth() : editorCells.getX();
     final int y = editorCells.getY();
-    int lastCellWidth = 0;
+    int lastCellWidth;
     int braceIndent = 0;
     int width = 0;
     int height = 0;

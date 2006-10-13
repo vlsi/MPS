@@ -148,7 +148,9 @@ public class CopyPasteUtil {
     List<SNode> children = sourceNode.getChildren();
     for(SNode sourceChild : children) {
       SNode targetChild = copyNode_internal(sourceChild, sourceNodesToNewNodes, allReferences);
-      targetNode.addChild(sourceChild.getRole_(), targetChild);
+      String role = sourceChild.getRole_();
+      assert role != null;
+      targetNode.addChild(role, targetChild);
     }
 
     return targetNode;
@@ -245,7 +247,7 @@ public class CopyPasteUtil {
     if (content == null) return PasteNodeData.emptyPasteNodeData(model);
 
     if (content.isDataFlavorSupported(SModelDataFlavor.sNode)) {
-      SNodeTransferable nodeTransferable = null;
+      SNodeTransferable nodeTransferable;
       try {
         nodeTransferable = (SNodeTransferable) content.getTransferData(SModelDataFlavor.sNode);
         return nodeTransferable.createNodeData(model);
@@ -305,7 +307,7 @@ public class CopyPasteUtil {
     Transferable content = cb.getContents(null);
     boolean hasNodes = false;
      if (content.isDataFlavorSupported(SModelDataFlavor.sNode)) {
-      SNodeTransferable nodeTransferable = null;
+      SNodeTransferable nodeTransferable;
       try {
         nodeTransferable = (SNodeTransferable) content.getTransferData(SModelDataFlavor.sNode);
         hasNodes = nodeTransferable.containsNodes();

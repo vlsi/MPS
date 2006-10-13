@@ -1,8 +1,8 @@
 package jetbrains.mps.util;
 
 import java.io.*;
-import java.util.zip.ZipInputStream;
 import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
 
 /**
  * @author Kostik
@@ -12,7 +12,7 @@ public class UnzipUtil {
   public static void unzip(File zipFile, File outputDir) throws IOException {
     InputStream input = new BufferedInputStream(new FileInputStream(zipFile));
     ZipInputStream zipInput = new ZipInputStream(input);
-    ZipEntry entry = null;
+    ZipEntry entry;
     while ((entry = zipInput.getNextEntry()) != null) {
       File entryFile = new File(outputDir.getPath() + File.separatorChar + entry.getName());
       if (entry.isDirectory()) {

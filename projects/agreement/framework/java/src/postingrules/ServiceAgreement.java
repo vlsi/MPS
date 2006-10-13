@@ -35,11 +35,11 @@ public class ServiceAgreement {
     }
     private PostingRule getPostingRule(AccountingEvent event) {
         final TemporalCollection rules = getRulesTemporalCollectionFor(event.getEventType());
-        if (rules == null) throw new MissingPostingRuleException(this, event);
+        if (rules == null) throw new MissingPostingRuleException();
         try {
             return (PostingRule) rules.get(event.getWhenOccurred());
         } catch(IllegalArgumentException e) {
-            throw new MissingPostingRuleException(this, event);
+            throw new MissingPostingRuleException();
         }
     }
 //</codeFragment>

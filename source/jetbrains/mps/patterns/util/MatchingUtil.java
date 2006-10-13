@@ -1,12 +1,15 @@
 package jetbrains.mps.patterns.util;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.patterns.*;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.core.BaseConcept;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.patterns.*;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.EqualUtil;
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+import java.util.Stack;
 
 /**
  * Created by IntelliJ IDEA.
@@ -59,7 +62,6 @@ public class MatchingUtil {
     if (node.getClass() != patternNode.getClass()) return false;
 
     //-- matching properties
-    Set<String> propertyNames = node.getPropertyNames();
     for (String propertyName : patternNode.getPropertyNames()) {
       //if property pattern var
       SNode propertyAttribute = patternNode.getPropertyAttribute(propertyName);
@@ -163,6 +165,7 @@ public class MatchingUtil {
     boolean stillMatches = true;
     for (SNode node : nodes) {
       boolean matchesNow = matchNodes(node, patternNode, substitution);
+      //noinspection ConstantConditions
       stillMatches = stillMatches && matchesNow;
       if (!stillMatches) break;
       substitution.addNodeToListBindedWithVar(currentListPattern, node);

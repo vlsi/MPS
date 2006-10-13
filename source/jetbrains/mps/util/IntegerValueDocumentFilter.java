@@ -1,8 +1,8 @@
 package jetbrains.mps.util;
 
-import javax.swing.text.DocumentFilter;
-import javax.swing.text.BadLocationException;
 import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.DocumentFilter;
 
 /**
  * @author Kostik
@@ -52,7 +52,7 @@ public class IntegerValueDocumentFilter extends DocumentFilter {
 
   protected boolean isValidText(String text) {
     try {
-      Integer i = Integer.parseInt(text);
+      Integer.parseInt(text);
       return true;
     } catch (NumberFormatException e) {
       return false;
