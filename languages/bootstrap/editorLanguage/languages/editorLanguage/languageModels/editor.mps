@@ -6377,7 +6377,6 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1136923542665">
         <property name="textBgColor" value="yellow" />
-        <property name="substituteActionsFactoryId" value="Keystroke_Keycodes_Menu" />
         <property name="drawBorder" value="false" />
         <property name="noTargetText" value="&lt;keycode&gt;" />
         <property name="textBgColorSelected" value="cyan" />
@@ -7791,6 +7790,7 @@
           <property name="text" value="(oldNode, newNode)" />
           <property name="fontStyle" value="ITALIC" />
           <property name="drawBorder" value="false" />
+          <property name="textBgColorSelected" value="lightGray" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1158590921222">
@@ -8169,6 +8169,7 @@
           <property name="text" value="(node, scope, operationContext)-&gt;list&lt;String&gt;" />
           <property name="fontStyle" value="ITALIC" />
           <property name="drawBorder" value="false" />
+          <property name="textBgColorSelected" value="lightGray" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1160494441805">
