@@ -1,29 +1,33 @@
 package jetbrains.mps.plugin;
 
-import jetbrains.mps.project.*;
+import jetbrains.mps.baseLanguage.BaseMethodDeclaration;
+import jetbrains.mps.baseLanguage.Classifier;
+import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.usageView.UsagesModel_AspectMethods;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.util.FrameUtil;
 import jetbrains.mps.util.IDisposable;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.baseLanguage.Classifier;
-import jetbrains.mps.baseLanguage.BaseMethodDeclaration;
 
-import java.rmi.server.UnicastRemoteObject;
-import java.rmi.RemoteException;
 import java.awt.Frame;
-import java.util.*;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+import java.util.List;
 
 public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDEHandler, IDisposable {
   private MPSProject myProject;
 
   public MPSProjectIDEHandler(MPSProject project) throws RemoteException {
     myProject = project;
-    myProject.getProjectHandler().addIdeHandler(this);
+    IProjectHandler handler = myProject.getProjectHandler();
+    assert handler != null;
+    handler.addIdeHandler(this);
   }
 
   private IDEProjectFrame getProjectWindow() {
@@ -81,9 +85,10 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   }
 
   public void dispose() {
-    if (myProject.getProjectHandler() != null) {
+    IProjectHandler handler = myProject.getProjectHandler();
+    if (handler != null) {
       try {
-        myProject.getProjectHandler().removeIdeHandler(this);
+        handler.removeIdeHandler(this);
       } catch (RemoteException e) {
         e.printStackTrace();
       }

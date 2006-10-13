@@ -1,16 +1,17 @@
 package jetbrains.mps.project;
 
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.IDEProjectFrame;
-import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.AbstractProjectFrame;
-import jetbrains.mps.ide.toolsPane.ToolsPane;
+import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.toolsPane.ITool;
+import jetbrains.mps.ide.toolsPane.ToolsPane;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;
-
-import org.jetbrains.annotations.NotNull;
 
 /**
  * Created by IntelliJ IDEA.
@@ -77,6 +78,7 @@ public class ModuleContext extends StandaloneMPSContext {
 
   public static ModuleContext create(SNode node, MPSProject project) {
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(node.getModel());
+    assert modelDescriptor != null;
     Set<IModule> owningModules = SModelRepository.getInstance().getOwners(modelDescriptor, IModule.class);
     if (owningModules.isEmpty()) {
       LOG.errorWithTrace("Couldn't create module context for node: " + node.getDebugText() +

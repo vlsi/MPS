@@ -7,7 +7,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjects;
 import jetbrains.mps.util.NameUtil;
 
-import javax.swing.*;
+import javax.swing.SwingUtilities;
 
 public abstract class GenericEditorUpdater {
   private boolean myStopThread = false;
@@ -59,7 +59,7 @@ public abstract class GenericEditorUpdater {
             for (MPSProject project : projects.getProjects()) {
               if (project.getComponent(IDEProjectFrame.class) == null) continue;
 
-              EditorsPane editorsPane = project.getComponent(AbstractProjectFrame.class).getEditorsPane();
+              EditorsPane editorsPane = project.getComponentSafe(AbstractProjectFrame.class).getEditorsPane();
               boolean isUpdated = false;
               for (IEditor editor : editorsPane.getEditors()) {
                 if (editor.getCurrentEditorComponent() != null && updateEditor(editor.getCurrentEditorComponent())) {

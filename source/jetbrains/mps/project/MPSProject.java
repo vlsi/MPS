@@ -144,12 +144,13 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
 
   @NotNull
   public IVersionControl getVCSFor(@NotNull SModelDescriptor model) {
-    return getComponent(VersionControlManager.class).createVCSFor(model, this);
+    return getComponentSafe(VersionControlManager.class).createVCSFor(model, this);
   }
 
   public void setProjectDescriptor(final @NotNull ProjectDescriptor newDescriptor) {
     // release languages/solutions and models (except descriptor model)
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), (ModelOwner) MPSProject.this);
+    assert modelDescriptor != null;
     MPSModuleRepository.getInstance().unRegisterModules(MPSProject.this);
     SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
     SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, MPSProject.this);
@@ -170,7 +171,9 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     SModel model = projectDescriptor.getModel();
     model.setLoading(true);
     LanguagePath languagePath = new LanguagePath(model);
-    languagePath.setPath(language.getDescriptorFile().getAbsolutePath());
+    File descriptorFile = language.getDescriptorFile();
+    assert descriptorFile != null;
+    languagePath.setPath(descriptorFile.getAbsolutePath());
     projectDescriptor.addProjectLanguage(languagePath);
     setProjectDescriptor(projectDescriptor);
     myEventTranslator.projectChanged();
@@ -189,7 +192,9 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
 
 
     for (Solution s : getProjectSolutions()) {
-      if (s.getDescriptorFile().getAbsolutePath().equals(solutionDescriptionFile.getAbsolutePath())) {
+      File descriptorFile = s.getDescriptorFile();
+      assert descriptorFile != null;
+      if (descriptorFile.getAbsolutePath().equals(solutionDescriptionFile.getAbsolutePath())) {
         return s;
       }
     }
@@ -297,7 +302,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
   @Nullable
   public <T> T getComponent(Class<T> clazz) {
     if (clazz == EditorsPane.class) {
-      IDEProjectFrame projectFrame = getComponent(IDEProjectFrame.class);
+      IDEProjectFrame projectFrame = getComponentSafe(IDEProjectFrame.class);
       return (T) projectFrame.getEditorsPane();
     }
     T result = (T) myComponents.get(clazz);
@@ -364,7 +369,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
             Class cls = Class.forName(className);
 
             if (containsComponent(cls) && getComponent(cls) instanceof IExternalizableComponent) {
-              ((IExternalizableComponent) getComponent(cls)).read(component, this);
+              ((IExternalizableComponent) getComponentSafe(cls)).read(component, this);
             }
           } catch (ClassNotFoundException e) {
             LOG.error(e);
