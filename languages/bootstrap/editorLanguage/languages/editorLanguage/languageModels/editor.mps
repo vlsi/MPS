@@ -4484,42 +4484,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1081202690937">
-    <property name="name" value="ActionModel_RightTransform_Editor" />
-    <link role="conceptDeclaration" targetNodeId="2.1075820815758" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1081202690940">
-      <property name="drawBorder" value="false" />
-      <property name="name" value="nodeBox" />
-      <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1081202690941">
-        <property name="text" value="R.TRANSFORM" />
-        <property name="drawBorder" value="false" />
-        <property name="selectable" value="true" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Error" id="1140734114711">
-        <property name="text" value="deprecated" />
-        <property name="drawBorder" value="false" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1081202690942">
-        <property name="text" value="(" />
-        <property name="drawBorder" value="false" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_ModelAccess" id="1081202690943">
-        <property name="editable" value="false" />
-        <property name="modelAccessorId" value="ActionModel_EffectiveNodeName" />
-        <property name="drawBorder" value="false" />
-        <property name="selectable" value="false" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1081202690944">
-        <property name="text" value=")" />
-        <property name="drawBorder" value="false" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1081202690945">
-        <property name="drawBorder" value="false" />
-        <property name="cellProviderId" value="RTransformActionProviderAspect" />
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1081207707015">
     <property name="name" value="CellActionModel_Editor" />
     <link role="conceptDeclaration" targetNodeId="2.1075814781157" />

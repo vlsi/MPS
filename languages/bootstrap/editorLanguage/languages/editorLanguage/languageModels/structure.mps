@@ -422,23 +422,6 @@
       <link role="dataType" targetNodeId="3.1082983041843" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1075820815758">
-    <property name="name" value="ActionModel_RightTransform" />
-    <link role="extends" targetNodeId="1075814781157" />
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1076677580767">
-      <property name="propertyType" value="string" />
-      <property name="name" value="actionProviderId" />
-      <link role="dataType" targetNodeId="3.1082983041843" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107223377716">
-      <property name="value" value="right transform" />
-      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1146864338165">
-      <property name="value" value="remove after next buid" />
-      <link role="conceptPropertyDeclaration" targetNodeId="3.1146864206911" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1078308402140">
     <property name="name" value="CellModel_Custom" />
     <link role="extends" targetNodeId="1073389214265" />
