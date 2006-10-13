@@ -6,8 +6,11 @@
  */
 package jetbrains.mps.util;
 
+@SuppressWarnings({"InstanceVariableNamingConvention"})
 public class Pair<T1, T2> {
+  @SuppressWarnings({"ClassEscapesDefinedScope"})
   public T1 o1;
+  @SuppressWarnings({"ClassEscapesDefinedScope"})
   public T2 o2;
 
   public Pair(T1 o1, T2 o2) {

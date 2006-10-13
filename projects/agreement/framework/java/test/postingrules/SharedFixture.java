@@ -1,46 +1,47 @@
 package postingrules;
 
-import mf.*;
+import mf.MfDate;
+import mf.Unit;
 
 public class SharedFixture {
     public SharedFixture() {
         prepareEventList();
     }
-    private EventList eventList = new EventList();
-    private Usage usageEvent;
-    private Customer watson, reggie;
+    private EventList myEventList = new EventList();
+    private Usage myUsageEvent;
+    private Customer myWatson, myReggie;
     public void prepareEventList() {
         setupCustomers();
-        usageEvent = new Usage(Unit.KWH.amount(50),
+        myUsageEvent = new Usage(Unit.KWH.amount(50),
                      new MfDate(1999, 10, 1),
                      new MfDate(1999, 10, 15),
-                     watson);
-        eventList.add(usageEvent);
-        eventList.process();
+                myWatson);
+        myEventList.add(myUsageEvent);
+        myEventList.process();
     }
 
     private void setupCustomers() {
-        reggie = new Customer("Reginald Perrin");
-        watson = new Customer("Dr Watson");
+        myReggie = new Customer("Reginald Perrin");
+        myWatson = new Customer("Dr Watson");
         AgreementRegistryBuilder agreementRegistryBuilder = new AgreementRegistryBuilder();
 
         AgreementRegistry registry = new AgreementRegistry();
         agreementRegistryBuilder.setUp(registry);
-        reggie.setServiceAgreement(registry.getAgreement("lowPay"));
-        watson.setServiceAgreement(registry.getAgreement("regular"));
+        myReggie.setServiceAgreement(registry.getAgreement("lowPay"));
+        myWatson.setServiceAgreement(registry.getAgreement("regular"));
     }
 
 
     public EventList getEventList() {
-        return eventList;
+        return myEventList;
     }
     public Usage getUsageEvent() {
-        return usageEvent;
+        return myUsageEvent;
     }
     public Customer getWatson() {
-        return watson;
+        return myWatson;
     }
     public Customer getReggie() {
-        return reggie;
+        return myReggie;
     }
 }

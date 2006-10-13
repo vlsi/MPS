@@ -941,11 +941,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
     EditorCell_Collection cellCollection = (EditorCell_Collection) myRootCell;
     class SelectNodeCondition extends NodeCondition {
-      private boolean toStart = false;
+      private boolean myToStart = false;
 
       public boolean checkNotLeafCell(EditorCell editorCell) {
         if (editorCell == cell) {
-          toStart = true;
+          myToStart = true;
           return false;
         }
         return true;
@@ -953,10 +953,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
       public void checkLeafCell(EditorCell editorCell) {
         if (editorCell == cell) {
-          toStart = true;
+          myToStart = true;
           return;
         }
-        if (toStart && editorCell.isSelectable()) {
+        if (myToStart && editorCell.isSelectable()) {
           setFoundCell(editorCell);
           setToStop(true);
         }

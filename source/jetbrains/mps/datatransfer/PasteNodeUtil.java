@@ -7,13 +7,13 @@ import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelUtil;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.NameUtil;
 
 import java.util.Iterator;
 
@@ -167,11 +167,11 @@ public class PasteNodeUtil {
   }
 
   private static class NodeAndRole {
-    public String role;
-    public SNode node;
+    public String myRole;
+    public SNode myNode;
     public NodeAndRole (SNode node, String role) {
-      this.role = role;
-      this.node = node;
+      this.myRole = role;
+      this.myNode = node;
     }
   }
 
@@ -179,10 +179,10 @@ public class PasteNodeUtil {
     SNode actualPasteTarget;
     NodeAndRole nodeAndRole = defineActualAnchorNode(anchorNode, pasteNode, role, operationContext);
     if (!reallyPaste) {
-      return (nodeAndRole != null && nodeAndRole.node != null);
+      return (nodeAndRole != null && nodeAndRole.myNode != null);
     }
-    SNode actualAnchorNode = nodeAndRole.node;
-    String actualRole = nodeAndRole.role;
+    SNode actualAnchorNode = nodeAndRole.myNode;
+    String actualRole = nodeAndRole.myRole;
     actualPasteTarget = actualAnchorNode.getParent();
     if (actualPasteTarget == null) {
       return false;

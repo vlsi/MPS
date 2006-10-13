@@ -1,10 +1,8 @@
 package jetbrains.mps.nodeEditor;
 
-import javax.swing.*;
+import javax.swing.JWindow;
 import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
 
 /**
  * Author: Sergey Dmitriev.
@@ -12,13 +10,13 @@ import java.awt.event.ComponentEvent;
  */
 public class NodeSubstitutePatternEditor {
   private EditorWindow myEditorWindow;
-  private boolean isEditorActivated;
+  private boolean myEditorActivated;
 
   private String myCachedText = "";
   private int myCachedCaretPosition;
 
   public void setText(String text) {
-    if(isEditorActivated) {
+    if(myEditorActivated) {
       myEditorWindow.myTextLine.setText(text);
       myEditorWindow.relayout();
       myEditorWindow.repaint();
@@ -28,14 +26,14 @@ public class NodeSubstitutePatternEditor {
   }
 
   public String getText() {
-    if(isEditorActivated) {
+    if(myEditorActivated) {
       return myEditorWindow.myTextLine.getText();
     }
     return myCachedText;
   }
 
   public void setCaretPosition(int caretPosition) {
-    if(isEditorActivated) {
+    if(myEditorActivated) {
       myEditorWindow.myTextLine.setCaretPosition(caretPosition);
       myEditorWindow.repaint();
     } else {
@@ -48,14 +46,14 @@ public class NodeSubstitutePatternEditor {
   }
 
   public boolean processKeyPressed(KeyEvent keyEvent) {
-    if(isEditorActivated) {
+    if(myEditorActivated) {
       return myEditorWindow.processKeyPressed(keyEvent);
     }
     return false;
   }
 
   public String getPattern() {
-    if(isEditorActivated) {
+    if(myEditorActivated) {
       TextLine textLine = myEditorWindow.myTextLine;
       int caretPosition = textLine.getCaretPosition();
       String text = textLine.getText();
@@ -71,8 +69,8 @@ public class NodeSubstitutePatternEditor {
 
   // ------------------
   public void activate(Window owner, Point location, Dimension size) {
-    if(!isEditorActivated) {
-      isEditorActivated = true;
+    if(!myEditorActivated) {
+      myEditorActivated = true;
       myEditorWindow = new EditorWindow(owner);
       myEditorWindow.setLocation(location);
       myEditorWindow.setMinimalSize(size);
@@ -89,9 +87,9 @@ public class NodeSubstitutePatternEditor {
   }
 
   public void done() {
-    if(isEditorActivated) {
+    if(myEditorActivated) {
       myEditorWindow.dispose();
-      isEditorActivated = false;
+      myEditorActivated = false;
     }
   }
 

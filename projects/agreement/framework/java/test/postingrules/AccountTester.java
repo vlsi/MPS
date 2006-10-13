@@ -1,26 +1,29 @@
 package postingrules;
 
-import mf.*;
 import mf.Currency;
+import mf.DateRange;
+import mf.MfDate;
+import mf.Money;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AccountTester extends junit.framework.TestCase {
-    private Account receivables = new Account(Currency.USD);
-    private Account revenue = new Account(Currency.USD);
-    private Account deferred = new Account(Currency.USD);
+    private Account myReceivables = new Account(Currency.USD);
+    private Account myRevenue = new Account(Currency.USD);
+    private Account myDeferred = new Account(Currency.USD);
 
     public AccountTester(String name) {
         super(name);
     }
     public void setUp() {
         MfDate.setToday(2001,1,1);
-        receivables.addEntry(Money.dollars(500), new MfDate(1999, 12, 4));
-        receivables.addEntry(Money.dollars(300), new MfDate(2000, 1, 4));
-        receivables.addEntry(new Entry(Money.dollars(-400), new MfDate(2000, 2, 15)));
+        myReceivables.addEntry(Money.dollars(500), new MfDate(1999, 12, 4));
+        myReceivables.addEntry(Money.dollars(300), new MfDate(2000, 1, 4));
+        myReceivables.addEntry(new Entry(Money.dollars(-400), new MfDate(2000, 2, 15)));
     }
     public void testNewAccountIsValid() {
-        assertTrue(receivables.isValid());
+        assertTrue(myReceivables.isValid());
     }
     public void testEntriesAreAddedCorrectly() { //condsider ditching this one
         List<Entry> entries = new ArrayList<Entry>();
@@ -31,40 +34,40 @@ public class AccountTester extends junit.framework.TestCase {
     }
     public void testAddingOtherCurrencyCausesException() {
         try {
-            receivables.addEntry(new Money(10, Currency.DEM), new MfDate(1999, 12, 4));
+            myReceivables.addEntry(new Money(10, Currency.DEM), new MfDate(1999, 12, 4));
             fail();
         } catch (IllegalArgumentException correctReponse) {
         }
-        assertEquals(Money.dollars(400), receivables.balance());
+        assertEquals(Money.dollars(400), myReceivables.balance());
     }
     public void testBalanceOfEmptyAccountIsZero() {
         Account empty = new Account(Currency.USD);
         assertEquals(Money.dollars(0), empty.balance());
     }
     public void testBalanceIsSumOfEntries() {
-        assertEquals(Money.dollars(400), receivables.balance());
-        assertEquals(Money.dollars(800), receivables.balance(new MfDate(2000, 2, 1)));
-        assertEquals(Money.dollars(-100), receivables.balance(new DateRange(new MfDate(2000, 1, 1), new MfDate(2000, 12, 31))));
+        assertEquals(Money.dollars(400), myReceivables.balance());
+        assertEquals(Money.dollars(800), myReceivables.balance(new MfDate(2000, 2, 1)));
+        assertEquals(Money.dollars(-100), myReceivables.balance(new DateRange(new MfDate(2000, 1, 1), new MfDate(2000, 12, 31))));
     }
     public void testBalanceWorksUsingTransactions() {
-        receivables = new Account(Currency.USD);
-        revenue.withdraw(Money.dollars(500), receivables, new MfDate(1, 4, 99));
-        revenue.withdraw(Money.dollars(200), deferred, new MfDate(1, 4, 99));
-        assertEquals(Money.dollars(500), receivables.balance());
-        assertEquals(Money.dollars(200), deferred.balance());
-        assertEquals(Money.dollars(-700), revenue.balance());
+        myReceivables = new Account(Currency.USD);
+        myRevenue.withdraw(Money.dollars(500), myReceivables, new MfDate(1, 4, 99));
+        myRevenue.withdraw(Money.dollars(200), myDeferred, new MfDate(1, 4, 99));
+        assertEquals(Money.dollars(500), myReceivables.balance());
+        assertEquals(Money.dollars(200), myDeferred.balance());
+        assertEquals(Money.dollars(-700), myRevenue.balance());
     }
     public void testCopyMakesCopiesOfEntriesInNewAccount() {
-        Account copy = receivables.copy();
+        Account copy = myReceivables.copy();
         assertEquals(Money.dollars(400), copy.balance());
         copy.addEntry(Money.dollars(200), MfDate.today());
         assertEquals(Money.dollars(600), copy.balance());
-        assertEquals(Money.dollars(400), receivables.balance());
+        assertEquals(Money.dollars(400), myReceivables.balance());
         assertTrue(copy.isValid());
 
     }
     public void testDepositsSumsPositiveEntries() {
-        assertEquals(Money.dollars(300), receivables.deposits(new DateRange(new MfDate(2000, 1, 1), new MfDate(2000, 12, 31))));
+        assertEquals(Money.dollars(300), myReceivables.deposits(new DateRange(new MfDate(2000, 1, 1), new MfDate(2000, 12, 31))));
     }
     public void testBalanceSumsCorrectlyWithNonDollars() { //consider remove
         Account newAccount = new Account(Currency.DEM);
@@ -75,7 +78,7 @@ public class AccountTester extends junit.framework.TestCase {
         assertEquals(new Money(0, Currency.DEM), newAccount.withdrawels(range));
     }
     public void testWithdrawelsSumsNegativeEntries() {
-        assertEquals(Money.dollars(-400), receivables.withdrawels(new DateRange(new MfDate(2000, 1, 1), new MfDate(2000, 12, 31))));
-        assertEquals(Money.dollars(0), receivables.withdrawels(new DateRange(new MfDate(1999, 1, 1), new MfDate(1999, 12, 31))));
+        assertEquals(Money.dollars(-400), myReceivables.withdrawels(new DateRange(new MfDate(2000, 1, 1), new MfDate(2000, 12, 31))));
+        assertEquals(Money.dollars(0), myReceivables.withdrawels(new DateRange(new MfDate(1999, 1, 1), new MfDate(1999, 12, 31))));
     }
 }

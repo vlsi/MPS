@@ -7,11 +7,11 @@ import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
  * Time: Nov 5, 2003 1:03:02 PM
  */
 public class CellAction_Insert extends EditorCellAction {
-  private AbstractCellListHandler listHandler;
+  private AbstractCellListHandler myListHandler;
   private boolean myInsertBefore;
 
   public CellAction_Insert(AbstractCellListHandler listHandler, boolean insertBefore) {
-    this.listHandler = listHandler;
+    this.myListHandler = listHandler;
     myInsertBefore = insertBefore;
   }
 
@@ -20,6 +20,6 @@ public class CellAction_Insert extends EditorCellAction {
   }
 
   public void execute(EditorContext context) {
-    listHandler.startInsertMode(context, context.getContextCell(), myInsertBefore);
+    myListHandler.startInsertMode(context, context.getContextCell(), myInsertBefore);
   }
 }
