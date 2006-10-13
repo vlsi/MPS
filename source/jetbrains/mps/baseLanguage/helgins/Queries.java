@@ -1,17 +1,15 @@
 package jetbrains.mps.baseLanguage.helgins;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.baseLanguage.Classifier;
+import jetbrains.mps.baseLanguage.ClassifierType;
+import jetbrains.mps.formulaLanguage.evaluator.Omega;
+import jetbrains.mps.helgins.RuntimeErrorType;
 import jetbrains.mps.helgins.inference.Interpretator;
 import jetbrains.mps.helgins.inference.SubtypingManager;
-import jetbrains.mps.helgins.RuntimeErrorType;
-import jetbrains.mps.baseLanguage.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.formulaLanguage.evaluator.Omega;
 
-import java.util.*;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -33,13 +31,17 @@ public class Queries {
     if (args.length >= 3) {
       mayBeString = (Boolean) args[2];
     }
-    SModel typesModel = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.baseLanguage.helgins")).getSModel();
+    SModelDescriptor helginsModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.baseLanguage.helgins"));
+    assert helginsModelDescriptor != null;
+    SModel typesModel = helginsModelDescriptor.getSModel();
     SModel runtimeTypesModel = Interpretator.getRuntimeTypesModel(typesModel);
     Set<? extends SNode> types = CollectionUtil.asSet(leftType, rightType);
     Set<SNode> lowestCommonSupertypes = SubtypingManager.leastCommonSupertypes(types);
 
     if (mayBeString) {
-      SModel javaLang = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("java.lang@java_stub")).getSModel();
+      SModelDescriptor javaLangJavaStubModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("java.lang@java_stub"));
+      assert javaLangJavaStubModelDescriptor != null;
+      SModel javaLang = javaLangJavaStubModelDescriptor.getSModel();
       SNode stringClass = javaLang.getRootByName("String");
       if (leftType instanceof ClassifierType && ((ClassifierType)leftType).getClassifier() == stringClass
               || rightType instanceof ClassifierType && ((ClassifierType)rightType).getClassifier() == stringClass) {
