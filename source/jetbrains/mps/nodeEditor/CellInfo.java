@@ -43,9 +43,9 @@ public class CellInfo {
   public CellInfo(Element cellElement, IScope scope) {
     Element nodeElement = cellElement.getChild(ComponentsUtil.NODE);
     Element parentInfoElement = cellElement.getChild(ComponentsUtil.CELL_INFO);
-    String cellId = nodeElement.getAttributeValue(ComponentsUtil.ID);
-    String cellNumber = nodeElement.getAttributeValue(ComponentsUtil.NUMBER);
-    String isInList = nodeElement.getAttributeValue(ComponentsUtil.IS_IN_LIST);
+    String cellId = cellElement.getAttributeValue(ComponentsUtil.ID);
+    String cellNumber = cellElement.getAttributeValue(ComponentsUtil.NUMBER);
+    String isInList = cellElement.getAttributeValue(ComponentsUtil.IS_IN_LIST);
     myNodeProxy =  new SNodeProxy(ComponentsUtil.nodeFromElement(nodeElement, scope));
     myCellId = cellId;
     if (parentInfoElement != null) {
