@@ -4492,35 +4492,6 @@
       <property name="drawBorder" value="true" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1081208413660">
-    <property name="name" value="SubstituteItem_Simple_Editor" />
-    <link role="conceptDeclaration" targetNodeId="2.1075818232399" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1081208413663">
-      <property name="drawBorder" value="true" />
-      <property name="name" value="nodeBox" />
-      <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1081208413664">
-        <property name="text" value="simple" />
-        <property name="drawBorder" value="true" />
-        <property name="selectable" value="true" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1081208413665">
-        <property name="textBgColor" value="yellow" />
-        <property name="drawBorder" value="true" />
-        <property name="noTargetText" value="&lt;no text&gt;" />
-        <property name="textBgColorSelected" value="cyan" />
-        <link role="relationDeclaration" targetNodeId="2.1075896204171" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1081209176970">
-        <property name="drawBorder" value="true" />
-        <property name="cellProviderId" value="SubstituteItem_MatcherAspect" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1081209176971">
-        <property name="drawBorder" value="true" />
-        <property name="cellProviderId" value="SubstituteItem_HandlerAspect" />
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1081210447328">
     <property name="name" value="SubstituteItem_ItemGroup_Editor" />
     <link role="conceptDeclaration" targetNodeId="2.1075818070959" />
@@ -5846,20 +5817,6 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1112254728574">
     <property name="name" value="ActionModel_SubstituteNode_Editor" />
     <link role="conceptDeclaration" targetNodeId="2.1075817715188" />
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1112254732108">
-      <property name="name" value="ItemActions" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1112254770852">
-        <property name="substituteHandlerId" value="SubstituteItem_ReplaceInList" />
-        <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_Simple" id="1112254770853">
-          <property name="text" value="simple item" />
-          <property name="handlerId" value="SimpleSubstituteItemFactory" />
-        </node>
-        <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_Simple" id="1112254770854">
-          <property name="text" value="items group" />
-          <property name="handlerId" value="SubstituteItemGroupFactory" />
-        </node>
-      </node>
-    </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1112254732109">
       <property name="drawBorder" value="true" />
       <property name="name" value="nodeBox" />
@@ -5894,7 +5851,6 @@
           <property name="vertical" value="true" />
           <property name="gridLayout" value="true" />
           <link role="relationDeclaration" targetNodeId="2.1075820624646" />
-          <link role="elementActionSet" targetNodeId="1112254732108" />
         </node>
       </node>
     </node>

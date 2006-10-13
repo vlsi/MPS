@@ -409,19 +409,6 @@
       <link role="dataType" targetNodeId="3.1082983041843" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1075818232399">
-    <property name="name" value="SubstituteItem_Simple" />
-    <link role="extends" targetNodeId="1075817880986" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1146864523984">
-      <property name="value" value="remove after next buid" />
-      <link role="conceptPropertyDeclaration" targetNodeId="3.1146864206911" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1075896204171">
-      <property name="propertyType" value="string" />
-      <property name="name" value="text" />
-      <link role="dataType" targetNodeId="3.1082983041843" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1078308402140">
     <property name="name" value="CellModel_Custom" />
     <link role="extends" targetNodeId="1073389214265" />
