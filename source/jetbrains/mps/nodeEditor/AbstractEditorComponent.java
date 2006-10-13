@@ -10,7 +10,6 @@ import jetbrains.mps.ide.navigation.FocusPolicy;
 import jetbrains.mps.ide.navigation.HistoryItem;
 import jetbrains.mps.ide.navigation.IHistoryItem;
 import jetbrains.mps.ide.navigation.RecentEditorsMenu;
-import jetbrains.mps.ide.ui.CellSpeedSearch;
 import jetbrains.mps.ide.ui.JMultiLineToolTip;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.text.CellAction_RenderText;
@@ -92,7 +91,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private final IGutterMessageOwner myOwner = new IGutterMessageOwner() {
   };
-  private CellSpeedSearch myCellSpeedSearch;
 
   public AbstractEditorComponent(IOperationContext operationContext) {
     this(operationContext, false);
@@ -290,7 +288,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     });
 
-    myCellSpeedSearch = new CellSpeedSearch(this);
     addKeyListener(new KeyAdapter() {
       public void keyPressed(final KeyEvent e) {
         processKeyPressed(e);
