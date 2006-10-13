@@ -105,9 +105,12 @@ public class MessagesGutter extends JPanel {
       Graphics2D g = (Graphics2D) graphics;
       List<IGutterMessage> messagesToRemove = new ArrayList<IGutterMessage>();
       for (IGutterMessage msg : myMessages) {
-        if (!msg.isValid()) continue;
+        if (!msg.isValid()) {
+          continue;
+        }
         int start = getMessageStart(msg);
         int length = getMessageHeight(msg);
+
         int messageY = start + (length / 2);
 
         g.setColor(new Color(80, 80, 80, 70));

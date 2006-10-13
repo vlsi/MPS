@@ -23,6 +23,19 @@ public class CellLayout_Vertical extends AbstractCellLayout {
   }
 
   public void doLayout(EditorCell_Collection editorCells) {
+    if (editorCells.isFolded()) {
+      Font font = ApplicationComponents.getInstance().getComponent(EditorSettings.class).getDefaultEditorFont();
+      FontMetrics metrics = editorCells.getEditor().getFontMetrics(font);
+      editorCells.setHeight(metrics.getHeight());
+      editorCells.setWidth(metrics.stringWidth(EditorCell_Collection.FOLDED_TEXT));
+      for (EditorCell cell : editorCells.dfsCells()) {
+        cell.setX(editorCells.getX());
+        cell.setY(editorCells.getY());
+        cell.setWidth(0);
+        cell.setHeight(0);
+      }
+      return;
+    }
 
     EditorCell closingBrace = editorCells.getClosingBrace();
     EditorCell openingBrace = editorCells.getOpeningBrace();
@@ -137,20 +150,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
       width += openingBrace.getWidth();
     }
     editorCells.setWidth(width);
-
-    if (editorCells.isFolded()) {
-      Font font = ApplicationComponents.getInstance().getComponent(EditorSettings.class).getDefaultEditorFont();
-      FontMetrics metrics = editorCells.getEditor().getFontMetrics(font);
-      editorCells.setHeight(metrics.getHeight());
-      for (EditorCell cell : editorCells) {
-        cell.setX(editorCells.getX());
-        cell.setY(editorCells.getY());
-        cell.setWidth(0);
-        cell.setHeight(0);
-      }
-    } else {
-      editorCells.setHeight(height);
-    }
+    editorCells.setHeight(height);
   }
 
   public int getRightInternalInset(EditorCell_Collection editorCell_collection) {

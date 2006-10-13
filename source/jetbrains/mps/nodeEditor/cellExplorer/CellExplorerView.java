@@ -225,16 +225,6 @@ public class CellExplorerView extends DefaultTool {
     }
 
     private void showCell() {
-      Stack<EditorCell_Collection> foldedParents = new Stack<EditorCell_Collection>();
-      for (EditorCell_Collection collection : CollectionUtil.iteratorAsIterable(myCell.parents())) {
-        if (collection.isFolded()) {
-          foldedParents.push(collection);
-        }
-      }
-      while(!foldedParents.isEmpty()) {
-        EditorCell_Collection collection = foldedParents.pop();
-        collection.unfold();
-      }
       getEditorsPane().getCurrentEditor().getCurrentEditorComponent().changeSelection(myCell);
     }
 

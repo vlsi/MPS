@@ -764,6 +764,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     doRelayout();
     revalidate();
     repaint();
+    myMessagesGutter.repaint();
   }
 
   public void revalidateAndRepaint() {
@@ -1128,6 +1129,20 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   void changeSelection(EditorCell newSelectedCell, boolean resetLastCaretX) {
     clearSelectionStack();
+    Stack<EditorCell_Collection> foldedParents = new Stack<EditorCell_Collection>();
+    if (newSelectedCell != null) {
+      for (EditorCell_Collection collection : CollectionUtil.iteratorAsIterable(newSelectedCell.parents())) {
+        if (collection.isFolded()) {
+          foldedParents.push(collection);
+        }
+      }
+      boolean toRelayout = !foldedParents.isEmpty();
+      while(!foldedParents.isEmpty()) {
+        EditorCell_Collection collection = foldedParents.pop();
+        collection.unfold(true);
+      }
+      if (toRelayout) relayout();
+    }
     setSelectionDontClearStack(newSelectedCell, resetLastCaretX);
   }
 

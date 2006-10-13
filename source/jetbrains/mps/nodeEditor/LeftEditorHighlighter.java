@@ -8,6 +8,7 @@ import java.util.List;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
 
 /**
  * Created by IntelliJ IDEA.
@@ -38,6 +39,7 @@ public class LeftEditorHighlighter {
   public LeftEditorHighlighter(AbstractEditorComponent abstractEditorComponent) {
     myEditorComponent = abstractEditorComponent;
     abstractEditorComponent.addMouseListener(new MyMouseListener());
+    abstractEditorComponent.addMouseMotionListener(new MyMouseEnterListener());
   }
 
 
@@ -52,6 +54,12 @@ public class LeftEditorHighlighter {
     g.drawLine(myWidth, 0, myWidth, myEditorComponent.getHeight());
     if (g instanceof Graphics2D) {
       ((Graphics2D)g).setStroke(s);
+    }
+    for (FoldingButton button : myFoldingButtons.values()) {
+      if (button.myMouseOver && !button.myIsFolded) {
+        g.setColor(button.getBorderColor());
+        g.drawLine(button.myX, button.myY1 + FoldingButton.WIDTH, button.myX, button.myY2 - FoldingButton.WIDTH);
+      }
     }
     for (HighlighterBracket bracket : myBrackets.values()) {
       bracket.paint(g);
@@ -279,7 +287,8 @@ public class LeftEditorHighlighter {
     private int myX;
     private boolean myIsHidden = false;
     public static final int WIDTH = 9;
-    private boolean myIsFolded;
+    private boolean myIsFolded = false;
+    private boolean myMouseOver = false;
 
     public FoldingButton(EditorCell cell) {
       myCellInfo = cell.getCellInfo();
@@ -300,18 +309,20 @@ public class LeftEditorHighlighter {
       }
     }
 
+    public Color getBorderColor() {
+      return myMouseOver ? Color.BLUE : Color.DARK_GRAY;
+    }
+
     public void paint(Graphics g) {
       if (myIsHidden) return;
+      Color borderColor = getBorderColor();
       if (!myIsFolded) {
-
-
-
         int xs[] = { myX,  myX - WIDTH / 2,  myX - WIDTH / 2,   myX - WIDTH *  3 / 8,  myX         , myX + WIDTH *  3 / 8,  myX + WIDTH / 2, myX + WIDTH / 2     };
         int ys[] = { myY1, myY1,            myY1 + WIDTH / 2,   myY1 + WIDTH * 7 / 8,  myY1 + WIDTH, myY1 + WIDTH * 7 / 8,  myY1 + WIDTH / 2, myY1            };
 
         g.setColor(Color.WHITE);
         g.fillPolygon(xs, ys, xs.length);
-        g.setColor(Color.DARK_GRAY);
+        g.setColor(borderColor);
         g.drawPolygon(xs, ys, xs.length);
 
         for (int i = 0; i < xs.length; i++) {
@@ -320,34 +331,18 @@ public class LeftEditorHighlighter {
 
         g.setColor(Color.WHITE);
         g.fillPolygon(xs, ys, xs.length);
-        g.setColor(Color.DARK_GRAY);
+        g.setColor(borderColor);
         g.drawPolygon(xs, ys, xs.length);
 
         g.setColor(Color.DARK_GRAY);
         g.drawLine(myX - WIDTH / 4, myY1 + WIDTH / 2, myX + WIDTH / 4, myY1 + WIDTH / 2);
         g.drawLine(myX - WIDTH / 4, myY2 - WIDTH / 2, myX + WIDTH / 4, myY2 - WIDTH / 2);
 
-
-//        g.setColor(Color.LIGHT_GRAY);
-//        g.fillRect(myX - WIDTH, myY1, WIDTH, WIDTH);
-//        int[] xpoints1 = {myX-WIDTH, myX, myX};
-//        int[] ypoints1 = {myY1+WIDTH, myY1+WIDTH, myY1+2*WIDTH};
-//        g.fillPolygon(xpoints1, ypoints1, 3);
-//        g.drawPolygon(xpoints1, ypoints1, 3);
-//        g.setColor(Color.LIGHT_GRAY);
-//        g.fillRect(myX - WIDTH, myY2 - WIDTH, WIDTH, WIDTH);
-//        int[] xpoints2 = {myX-WIDTH, myX, myX};
-//        int[] ypoints2 = {myY2-WIDTH, myY2-WIDTH, myY2-2*WIDTH};
-//        g.fillPolygon(xpoints2, ypoints2, 3);
-//        g.drawLine(myX, myY1, myX, myY2-1);
-//        g.setColor(Color.BLACK);
-//        g.drawLine(myX - WIDTH + 1, myY1 + WIDTH/2, myX - 1, myY1 + WIDTH/2);
-//        g.drawLine(myX - WIDTH + 1, myY2 - WIDTH/2, myX - 1, myY2 - WIDTH/2);
       } else {
         g.setColor(Color.LIGHT_GRAY);
         //noinspection SuspiciousNameCombination
         g.fillOval(myX - WIDTH/2 - 1, (myY1 + myY2 - WIDTH - 1)/2, WIDTH + 1, WIDTH + 1);
-        g.setColor(Color.DARK_GRAY);
+        g.setColor(borderColor);
         g.drawOval(myX - WIDTH/2 - 1, (myY1 + myY2 - WIDTH - 1)/2, WIDTH + 1, WIDTH + 1);
         g.setColor(Color.WHITE);
         g.drawLine(myX - (WIDTH+1) / 4, (myY1 + myY2)/2, myX + (WIDTH+1) / 4, (myY1 + myY2)/2);
@@ -377,6 +372,29 @@ public class LeftEditorHighlighter {
         LeftEditorHighlighter.this.myUnresolvedFoldingButtons.add(this);
       }
     }
+
+    public void mouseEntered() {
+      myMouseOver = true;
+      myEditor.repaint(myX - 1 - WIDTH/2, myY1, WIDTH + 2, myY2 - myY1);
+    }
+
+    public void mouseExited() {
+      myMouseOver = false;
+      myEditor.repaint(myX - 1 - WIDTH/2, myY1, WIDTH + 2, myY2 - myY1);
+    }
+
+    public boolean isInside(MouseEvent e) {
+      if (e.getX() > myX + FoldingButton.WIDTH/2 || e.getX() < myX - FoldingButton.WIDTH/2) return false;
+      if (!myIsFolded && ((e.getY() >= myY1 && e.getY() <= myY1 + FoldingButton.WIDTH)
+              || (e.getY() <= myY2 && e.getY() >= myY2 - FoldingButton.WIDTH))) {
+        return true;
+      }
+      if (myIsFolded && e.getY() >= (myY1 + myY2 - FoldingButton.WIDTH)/2 &&
+              e.getY() <= (myY1 + myY2 + FoldingButton.WIDTH)/2) {
+        return true;
+      }
+      return false;
+    }
   }
 
   private class MyMouseListener extends MouseAdapter {
@@ -384,17 +402,29 @@ public class LeftEditorHighlighter {
     public void mouseClicked(MouseEvent e) {
       if (e.getX() > myWidth + FoldingButton.WIDTH/2 || e.getX() < myWidth - FoldingButton.WIDTH/2) return;
       for (FoldingButton button : myFoldingButtons.values()) {
-        if (!button.myIsFolded && ((e.getY() >= button.myY1 && e.getY() <= button.myY1 + FoldingButton.WIDTH)
-                || (e.getY() <= button.myY2 && e.getY() >= button.myY2 - FoldingButton.WIDTH))) {
-          button.activate();
-          break;
-        }
-        if (button.myIsFolded && e.getY() >= (button.myY1 + button.myY2 - FoldingButton.WIDTH)/2 && 
-                e.getY() <= (button.myY1 + button.myY2 + FoldingButton.WIDTH)/2) {
+        if (button.isInside(e)) {
           button.activate();
           break;
         }
       }
     }
   }
+
+  private class MyMouseEnterListener extends MouseMotionAdapter {
+
+    public void mouseMoved(MouseEvent e) {
+      for (FoldingButton button : myFoldingButtons.values()) {
+        if (button.isInside(e)) {
+          if (!button.myMouseOver) {
+            button.mouseEntered();
+          }
+        } else {
+          if (button.myMouseOver) {
+            button.mouseExited();
+          }
+        }
+      }
+    }
+  }
+
 }
