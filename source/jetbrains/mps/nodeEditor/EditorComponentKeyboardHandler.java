@@ -23,6 +23,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
   }
 
   public boolean processKeyPressed(final EditorContext editorContext, final KeyEvent keyEvent) {
+    if (keyEvent.isConsumed()) return false;
     AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
     SNodeProxy sNodeProxy = editor.getRootCell().getSNodeProxy();
     boolean notEditable = sNodeProxy != null && sNodeProxy.getModel().isNotEditable();

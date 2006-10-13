@@ -11,6 +11,7 @@ import jetbrains.mps.ide.navigation.HistoryItem;
 import jetbrains.mps.ide.navigation.IHistoryItem;
 import jetbrains.mps.ide.navigation.RecentEditorsMenu;
 import jetbrains.mps.ide.ui.JMultiLineToolTip;
+import jetbrains.mps.ide.ui.CellSpeedSearch;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.text.CellAction_RenderText;
 import jetbrains.mps.smodel.*;
@@ -91,6 +92,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private final IGutterMessageOwner myOwner = new IGutterMessageOwner() {
   };
+  private CellSpeedSearch myCellSpeedSearch;
 
   public AbstractEditorComponent(IOperationContext operationContext) {
     this(operationContext, false);
@@ -284,6 +286,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     });
 
+    myCellSpeedSearch = new CellSpeedSearch(this);
     addKeyListener(new KeyAdapter() {
       public void keyPressed(final KeyEvent e) {
         processKeyPressed(e);
@@ -484,7 +487,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           if (!action.isVisible() || !action.isEnabled()) {
             return;
           }
-          
+
           if (action.executeInsideCommand()) {
             CommandProcessor.instance().executeCommand(new Runnable() {
               public void run() {
@@ -1304,6 +1307,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
 
   public void processKeyPressed(final KeyEvent keyEvent) {
+    if (keyEvent.isConsumed()) return;
+
     // hardcoded undo/redo action
     if (keyEvent.getKeyCode() == KeyEvent.VK_Z && keyEvent.isControlDown()) {
       if (keyEvent.isShiftDown()) {
