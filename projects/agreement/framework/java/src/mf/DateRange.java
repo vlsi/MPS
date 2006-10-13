@@ -1,9 +1,10 @@
 package mf;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Date;
 
 public class DateRange implements Comparable {
-	private MfDate start, end;
+	private MfDate myStart, myEnd;
 
  //----------- Constructors --------------------------------------
 // <codeFragment name="simpleConstructors">
@@ -11,8 +12,8 @@ public class DateRange implements Comparable {
 		this (new MfDate(start), new MfDate(end));
 	}
 	public DateRange (MfDate start, MfDate end) {
-		this.start = start;
-		this.end = end;
+		this.myStart = start;
+		this.myEnd = end;
 	}
 //</codeFragment>
 
@@ -31,24 +32,24 @@ public class DateRange implements Comparable {
 
 // <codeFragment name="accessors">
 	public MfDate end(){
-		return end;
+		return myEnd;
 	}
 	public MfDate start() {
-		return start;
+		return myStart;
 	}
 	public String toString() {
 		if (isEmpty()) return "Empty Date Range";
-		return start.toString() + " - " + end.toString();
+		return myStart.toString() + " - " + myEnd.toString();
 	}
 	public boolean isEmpty() {
-		return start.after(end);
+		return myStart.after(myEnd);
 	}
 
 //</codeFragment>
 
 // <codeFragment name="includes">
 	public boolean includes (MfDate arg) {
-		return !arg.before(start) && !arg.after(end);
+		return !arg.before(myStart) && !arg.after(myEnd);
 	}
 
 //</codeFragment>
@@ -59,16 +60,16 @@ public class DateRange implements Comparable {
 	public boolean equals (Object arg) {
 		if (! (arg instanceof DateRange)) return false;
 		DateRange other = (DateRange) arg;
-		return start.equals(other.start) && end.equals(other.end);
+		return myStart.equals(other.myStart) && myEnd.equals(other.myEnd);
 	}
 	public int hashCode() {
-		return start.hashCode();
+		return myStart.hashCode();
 	}
 	public boolean overlaps(DateRange arg) {
-	 	return arg.includes(start) || arg.includes(end) || this.includes(arg);
+	 	return arg.includes(myStart) || arg.includes(myEnd) || this.includes(arg);
  	}
 	public boolean includes(DateRange arg) {
-		return this.includes(arg.start) && this.includes(arg.end);
+		return this.includes(arg.myStart) && this.includes(arg.myEnd);
 	}
 
 //</codeFragment>
@@ -85,12 +86,12 @@ public class DateRange implements Comparable {
 			lower = arg;
 			higher = this;
 		}
-		return new DateRange(lower.end.addDays(1), higher.start.addDays(-1));
+		return new DateRange(lower.myEnd.addDays(1), higher.myStart.addDays(-1));
 	}
 	public int compareTo(Object arg) {
 		DateRange other = (DateRange) arg;
-		if (!start.equals(other.start)) return start.compareTo(other.start);
-		return end.compareTo(other.end);
+		if (!myStart.equals(other.myStart)) return myStart.compareTo(other.myStart);
+		return myEnd.compareTo(other.myEnd);
 	}
 //</codeFragment>
 
@@ -109,7 +110,7 @@ public class DateRange implements Comparable {
 	public static DateRange combination(DateRange[] args) {
 		Arrays.sort(args);
 		if (!isContiguous(args)) throw new IllegalArgumentException("Unable to combine date ranges");
-		return new DateRange(args[0].start, args[args.length -1].end);
+		return new DateRange(args[0].myStart, args[args.length -1].myEnd);
 	}
 	public static boolean isContiguous(DateRange[] args) {
 		Arrays.sort(args);

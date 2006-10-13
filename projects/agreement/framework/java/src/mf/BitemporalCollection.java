@@ -9,15 +9,15 @@ public class BitemporalCollection implements TemporalCollection {
 
 
 // <codeFragment name="currentAccess">
-	private SingleTemporalCollection contents = new SingleTemporalCollection();
+	private SingleTemporalCollection myContents = new SingleTemporalCollection();
 	public BitemporalCollection() {
-		contents.put(MfDate.today(), new SingleTemporalCollection());
+		myContents.put(MfDate.today(), new SingleTemporalCollection());
 	}
 	public Object get(MfDate when) {
 		return currentValidHistory().get(when);
 	}
 	private SingleTemporalCollection currentValidHistory() {
-		return (SingleTemporalCollection) contents.get();
+		return (SingleTemporalCollection) myContents.get();
 	}
 //</codeFragment>
 
@@ -26,13 +26,13 @@ public class BitemporalCollection implements TemporalCollection {
 		return validHistoryAt(transactionDate).get(validDate);
 	}
 	private TemporalCollection validHistoryAt(MfDate transactionDate) {
-		return (TemporalCollection) contents.get(transactionDate);
+		return (TemporalCollection) myContents.get(transactionDate);
 	}
 //</codeFragment>
 
 // <codeFragment name="updateTypesystem">
 	public void put(MfDate validDate, Object item) {
-		contents.put(MfDate.today(), currentValidHistory().copy());
+		myContents.put(MfDate.today(), currentValidHistory().copy());
 		currentValidHistory().put(validDate,item);
 	}
 	public void put(Object item) {

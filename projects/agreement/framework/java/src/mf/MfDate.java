@@ -1,17 +1,20 @@
 package mf;
 
-import java.util.*;
-import java.text.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class MfDate implements Comparable {
-	private SimpleDateFormat _formatter = (SimpleDateFormat) DateFormat.getDateInstance();
-	private static MfDate today;
+	private SimpleDateFormat myFormatter = (SimpleDateFormat) DateFormat.getDateInstance();
+	private static MfDate myToday;
 
-	public static MfDate PAST = new MfDate(new GregorianCalendar(0,1,1));
-	public static MfDate FUTURE = new MfDate(new GregorianCalendar(10000,1,1));
+	public static final MfDate PAST = new MfDate(new GregorianCalendar(0,1,1));
+	public static final MfDate FUTURE = new MfDate(new GregorianCalendar(10000,1,1));
 
 //<codeFragment name = "data">
-    private GregorianCalendar _base;
+    private GregorianCalendar myBase;
 	public MfDate() {
 		this(new GregorianCalendar());
 	}
@@ -19,7 +22,7 @@ public class MfDate implements Comparable {
 		initialize (new GregorianCalendar(year, month - 1, day));
 	}
     private void initialize (GregorianCalendar arg) {
-        _base = trimToDays(arg);
+        myBase = trimToDays(arg);
     }
     private GregorianCalendar trimToDays(GregorianCalendar arg) {
         arg.set(Calendar.HOUR_OF_DAY,0);
@@ -61,55 +64,55 @@ public class MfDate implements Comparable {
 	public boolean equals(Object arg) {
 		if (! (arg instanceof MfDate)) return false;
 		MfDate other = (MfDate) arg;
-		return (_base.equals(other._base));
+		return (myBase.equals(other.myBase));
 	}
     public Date getTime() {
-        return _base.getTime();
+        return myBase.getTime();
     }
 //</codeFragment>
 	public String formattedString() {
-		return _formatter.format(getTime());
+		return myFormatter.format(getTime());
 	}
 	public GregorianCalendar getCalendar() {
-		return _base;
+		return myBase;
 	}
 	public int getDayOfMonth() {
-		return _base.get(Calendar.DAY_OF_MONTH);
+		return myBase.get(Calendar.DAY_OF_MONTH);
 	}
 	public String getMediumString() {
 		DateFormat df = DateFormat.getDateInstance(DateFormat.MEDIUM);
 		return df.format(getTime());
 	}
 	public int getMonth() {
-		return _base.get(Calendar.MONTH);
+		return myBase.get(Calendar.MONTH);
 	}
 	public String getSqlString() {
-		_formatter.applyPattern("#M/d/yyyy#");
-		return  _formatter.format(getTime());
+		myFormatter.applyPattern("#M/d/yyyy#");
+		return  myFormatter.format(getTime());
 	}
 	public int getYear() {
-		return _base.get(Calendar.YEAR);
+		return myBase.get(Calendar.YEAR);
 	}
 	public int hashCode() {
-		return _base.hashCode();
+		return myBase.hashCode();
 	}
 public static MfDate past() {
 	GregorianCalendar greg = new GregorianCalendar(0,1,1);
 	return new MfDate(greg);
 }
 	public String rawString() {
-		return _base.getTime().toString();
+		return myBase.getTime().toString();
 	}
 public static void setToday(int year, int month, int day) {
 	setToday(new MfDate(year, month, day));
 }
 public static void setToday(MfDate arg) {
-	today = arg;
+	myToday = arg;
 }
 public static MfDate today() {
-	return (today == null) ?
+	return (myToday == null) ?
 		new MfDate():
-		today;
+                myToday;
 }
 	public String toString() {
 		return formattedString();

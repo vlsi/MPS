@@ -1,13 +1,13 @@
 package mf;
 
 public class Quantity {
-	protected double _amount;
-	protected Unit _unit;
+	protected double myAmount;
+	protected Unit myUnit;
 	protected Quantity () {}	//to be used by NullQuantity
 	public Quantity (double amount, Unit unit) {
 		requireNonNull(unit);
-		_amount = amount;
-		_unit = unit;
+		myAmount = amount;
+		myUnit = unit;
 	}
 	public Quantity (int amount, Unit unit) {
 		this ((double) amount, unit);
@@ -18,25 +18,25 @@ public class Quantity {
 	public Quantity abs() {
 		return (isPositive()) ?
 			this :
-			newObject(Math.abs(getAmount()), _unit);
+			newObject(Math.abs(getAmount()), myUnit);
 	}
 	public Quantity add (Quantity arg) {
 	    requireSameUnitsAs(arg);
-	    return newObject (getAmount() + arg.getAmount(), _unit);
+	    return newObject (getAmount() + arg.getAmount(), myUnit);
 	}
 	public String amountString() {
 	    return String.valueOf(getAmount());    
 	}
 	public Quantity divide (double arg) {
-		return newObject (getAmount() / arg, _unit);
+		return newObject (getAmount() / arg, myUnit);
 	}
 	public boolean equals(Object arg) {
 	    if (!(arg instanceof Quantity)) return false;
 	    Quantity other = (Quantity) arg;
-		return (_unit.equals(other._unit) && (getAmount() == other.getAmount()));
+		return (myUnit.equals(other.myUnit) && (getAmount() == other.getAmount()));
 	}
 	public double getAmount() {
-		return _amount;
+		return myAmount;
 	}
 	public boolean isGreaterThan(Quantity arg) {
 		requireSameUnitsAs(arg);
@@ -76,7 +76,7 @@ public class Quantity {
 			arg;
 	}
 	public Quantity multiply (double arg) {
-		return newObject (getAmount() * arg, _unit);
+		return newObject (getAmount() * arg, myUnit);
 	}
 protected Quantity newObject (double amount, Unit unit) {
 	return new Quantity (amount, unit);
@@ -88,16 +88,16 @@ protected Quantity newObject (double amount, Unit unit) {
 		if (arg == null) throw new NullPointerException(toString() + " ran into nil");
 	}
 	protected void requireSameUnitsAs(Quantity arg) {
-		if (!_unit.equals(arg.unit())) throw new IllegalArgumentException();
+		if (!myUnit.equals(arg.unit())) throw new IllegalArgumentException();
 	}
 	public Quantity subtract (Quantity arg) {
 	    requireSameUnitsAs (arg);
-	    return newObject (getAmount() - arg.getAmount(), _unit);
+	    return newObject (getAmount() - arg.getAmount(), myUnit);
 	}
 	public String toString () {
-	    return String.valueOf(getAmount()) + " " + _unit.toString();
+	    return String.valueOf(getAmount()) + " " + myUnit.toString();
 	}
 	public Unit unit()	{
-		return _unit;
+		return myUnit;
 	}
 }

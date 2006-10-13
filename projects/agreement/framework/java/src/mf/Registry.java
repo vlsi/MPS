@@ -6,16 +6,16 @@ import java.util.Hashtable;
 
 public class Registry		{
 
-	private static Registry _soleInstance = new Registry();
-	private Dictionary _entryPoints = new Hashtable();
+	private static Registry ourSoleInstance = new Registry();
+	private Dictionary myEntryPoints = new Hashtable();
 	public static void add (String entryPoint, NamedObject newObject)	{
-		_soleInstance.addObj(entryPoint, newObject);
+		ourSoleInstance.addObj(entryPoint, newObject);
 	}
 	private void addObj (String entryPointName, NamedObject newObject)	{
-		Dictionary theEntryPoint = (Dictionary) _entryPoints.get(entryPointName);
+		Dictionary theEntryPoint = (Dictionary) myEntryPoints.get(entryPointName);
 		if (theEntryPoint == null)	{
 			theEntryPoint = new Hashtable();
-			 _entryPoints.put(entryPointName, theEntryPoint);
+			 myEntryPoints.put(entryPointName, theEntryPoint);
 		}
 		theEntryPoint.put(newObject.name(), newObject);
 	}
@@ -23,10 +23,10 @@ public class Registry		{
 		if (arg == null) throw new NullPointerException(message);
 	}
 	public static NamedObject get (String entryPointName, String objectName)	{
-		return _soleInstance.getObj(entryPointName, objectName);
+		return ourSoleInstance.getObj(entryPointName, objectName);
 	}
 	private NamedObject getObj (String entryPointName, String objectName)	{
-		Dictionary theEntryPoint = (Dictionary) _entryPoints.get(entryPointName);
+		Dictionary theEntryPoint = (Dictionary) myEntryPoints.get(entryPointName);
 		assertNonNull (theEntryPoint, "No entry point present for " + entryPointName);
 		NamedObject answer = (NamedObject) theEntryPoint.get(objectName);
 		assertNonNull (answer, "There is no " + entryPointName + " called " + objectName);

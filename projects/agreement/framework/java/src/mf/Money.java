@@ -1,6 +1,6 @@
 package mf;
 
-import java.math.*;
+import java.math.BigInteger;
 
 // <codeFragment name="rep">
 public class Money implements Comparable{
@@ -23,7 +23,7 @@ public class Money implements Comparable{
 // <codeFragment name="addition">
 	public Money add (Money arg) {
 		checkSameCurrencies(arg);
-		return new Money (myAmount.add(arg.myAmount), myCurrency, true);
+		return new Money (myAmount.add(arg.myAmount), myCurrency);
 	}
 	public Money subtract (Money arg) {
 		return this.add(arg.negate());
@@ -32,14 +32,14 @@ public class Money implements Comparable{
         if (!myCurrency.equals(arg.myCurrency))
             throw new IllegalArgumentException("currency mismatch");
 	}
-	private Money (BigInteger amountInPennies, Currency currency, boolean privacyMarker) {
+	private Money (BigInteger amountInPennies, Currency currency) {
 		assert amountInPennies != null;
         assert currency != null;
 		this.myAmount = amountInPennies;
 		this.myCurrency = currency;
 	}
 	public Money negate() {
-		return new Money (myAmount.negate(), myCurrency, true);
+		return new Money (myAmount.negate(), myCurrency);
 	}
 //</codeFragment>
 
@@ -54,10 +54,11 @@ public class Money implements Comparable{
 
 // <codeFragment name="compare">
 	public int compareTo (Object arg) {
-		Money moneyArg = null;
-		return myAmount.compareTo(moneyArg.myAmount);
-	}
-	public int compareTo (Money arg) {
+//		Money moneyArg = null;
+//		return myAmount.compareTo(moneyArg.myAmount);
+                throw new RuntimeException("??");
+        }
+	public int compareTo(Money arg) {
 		checkSameCurrencies(arg);
 		return myAmount.compareTo(arg.myAmount);
 	}
@@ -121,11 +122,11 @@ public class Money implements Comparable{
 		Money[] result = new Money[denominator];
 		BigInteger simpleResult = myAmount.divide(bigDenominator);
 		for (int i = 0; i < denominator ; i++) {
-			result[i] = new Money(simpleResult, myCurrency, true);
+			result[i] = new Money(simpleResult, myCurrency);
 		}
 		int remainder = myAmount.subtract(simpleResult.multiply(bigDenominator)).intValue();
 		for (int i=0; i < remainder; i++) {
-			result[i] = result[i].add(new Money(BigInteger.valueOf(1), myCurrency, true));
+			result[i] = result[i].add(new Money(BigInteger.valueOf(1), myCurrency));
 		}
 		return result;
   	}

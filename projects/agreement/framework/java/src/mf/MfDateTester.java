@@ -1,12 +1,15 @@
 package mf;
 
-import java.util.*;
-import junit.framework.*;
+import junit.framework.TestCase;
+import junit.framework.TestSuite;
+
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 public class MfDateTester extends TestCase {
 
-	private MfDate jan1, jan1a, jan1b, jan10, justBefore, justAfter;
-	private DateRange jan1To10;
+	private MfDate myJan1, myJan1a, myJan1b, myJan10, myJustBefore, myJustAfter;
+	private DateRange myJan1To10;
 
 	public MfDateTester(String arg) {
 		super(arg);
@@ -18,50 +21,50 @@ public class MfDateTester extends TestCase {
 		junit.textui.TestRunner.run(new TestSuite(MfDateTester.class));
 	}
 	public void setUp() {
-		jan1 = new MfDate(jan1());
+		myJan1 = new MfDate(jan1());
 		GregorianCalendar gc = jan1();
 		gc.add(Calendar.SECOND, -1);
-		justBefore = new MfDate(gc);
+		myJustBefore = new MfDate(gc);
 		gc = jan1();
 		gc.add(Calendar.SECOND, 1);
-		justAfter = new MfDate(gc);
-		jan1a = new MfDate(new GregorianCalendar(1999,0,1,7,6,34));
+		myJustAfter = new MfDate(gc);
+		myJan1a = new MfDate(new GregorianCalendar(1999,0,1,7,6,34));
 		gc = new GregorianCalendar(1999, 0, 2, 0,0,0);
 		gc.add(Calendar.SECOND, -1);
-		jan1b = new MfDate(gc);
-		jan10 = new MfDate(new GregorianCalendar(1999,0,10,7,8,9));
-		jan1To10 = new DateRange(jan1, jan10);
+		myJan1b = new MfDate(gc);
+		myJan10 = new MfDate(new GregorianCalendar(1999,0,10,7,8,9));
+		myJan1To10 = new DateRange(myJan1, myJan10);
 	}
 	public void testAfter() {
-		assertTrue (jan1.after(justBefore));
-		assertTrue (justBefore.before(jan1));
-		assertTrue (!jan1.after(jan1));
-		assertTrue (justAfter.after(justBefore));
-		assertTrue (!jan1.before(jan1));
+		assertTrue (myJan1.after(myJustBefore));
+		assertTrue (myJustBefore.before(myJan1));
+		assertTrue (!myJan1.after(myJan1));
+		assertTrue (myJustAfter.after(myJustBefore));
+		assertTrue (!myJan1.before(myJan1));
 	}
 	public void testDateRange() {
-		assertTrue (jan1To10.includes(jan1));
-		assertTrue (jan1To10.includes(jan10));
-		assertTrue (!jan1To10.includes(justBefore));
+		assertTrue (myJan1To10.includes(myJan1));
+		assertTrue (myJan1To10.includes(myJan10));
+		assertTrue (!myJan1To10.includes(myJustBefore));
 	}
 	public void testEquals() {
-		assertEquals (jan1, jan1a);
-		assertEquals ("next day -1s", jan1, jan1b);
+		assertEquals (myJan1, myJan1a);
+		assertEquals ("next day -1s", myJan1, myJan1b);
 	}
 	public void testJustBefore() {
-		assertTrue(jan1 != justBefore);
+		assertTrue(myJan1 != myJustBefore);
 	}
 	public void testSimple() {
 		assertEquals (new MfDate(), new MfDate());
-		assertEquals (jan1, justAfter);
+		assertEquals (myJan1, myJustAfter);
 	}
 	public void testToday() {
 		MfDate.setToday(1999,12,1);
 		assertEquals (new MfDate(1999,12,1), MfDate.today());
 	}
  	public void testCompare() {
-    assertTrue (jan1.compareTo(jan10) < 0);
-    assertTrue (jan10.compareTo(jan1) > 0);
-    assertTrue (jan1.compareTo(jan1) == 0);
+    assertTrue (myJan1.compareTo(myJan10) < 0);
+    assertTrue (myJan10.compareTo(myJan1) > 0);
+    assertTrue (myJan1.compareTo(myJan1) == 0);
   }
 }

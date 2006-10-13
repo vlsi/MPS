@@ -1,9 +1,11 @@
 package postingrules;
 
-import mf.*;
 import mf.Currency;
+import mf.Money;
+import mf.NamedObject;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Customer extends NamedObject implements Subject {
 //<codeFragment name = "serviceAgreement">
@@ -13,7 +15,7 @@ public class Customer extends NamedObject implements Subject {
 //<codeFragment name = "accounts">
     private Map<AccountType, Account> accounts;
     public Customer(String name) {
-        _name = name;
+        myName = name;
         setUpAccounts();
     }
     void setUpAccounts() {

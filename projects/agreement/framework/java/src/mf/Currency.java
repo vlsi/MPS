@@ -1,14 +1,14 @@
 package mf;
 
-import mf.*;
-import java.util.*;
-import java.text.*;
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class Currency extends mf.Unit {
 	public static Currency USD = new Currency("USD", Locale.US, "$");
 	public static Currency DEM = new Currency("DEM",  Locale.GERMANY, "DM");
 	public static Currency GBP = new Currency("GBP", Locale.UK, "#");
-	private Locale _locale;
-	private String _symbol;
+	private Locale myLocale;
+	private String mySymbol;
 	public Currency(String name)
 	{
 		super(name);
@@ -16,23 +16,23 @@ public class Currency extends mf.Unit {
 	public Currency(String name, String symbol)
 	{
 		super(name);
-		_symbol = symbol;
+		mySymbol = symbol;
 	}
 	public Currency(String name, Locale locale)
 	{
 		super(name);
-		_locale = locale;
+		myLocale = locale;
 	}
 	public Currency(String name, Locale locale, String symbol)
 	{
 		super(name);
-		_locale = locale;
-		_symbol = symbol;
+		myLocale = locale;
+		mySymbol = symbol;
 	}
 public String formatString(double amount) {
-	return _symbol + String.valueOf(amount);
+	return mySymbol + String.valueOf(amount);
 }
 public NumberFormat getFormat() {
-	return NumberFormat.getCurrencyInstance(_locale);
+	return NumberFormat.getCurrencyInstance(myLocale);
 }
 }

@@ -4,11 +4,12 @@ public class NamedObject {
 
 
 // <codeFragment name="usual">
-	protected String _name = "no name";
+	protected String myName = "no name";
 	public NamedObject ()	{}
-	public NamedObject (String name)	{_name = name;}
-	public String name ()	{return _name;}
-	public String toString() {return _name;}
+	public NamedObject (String name)	{
+          myName = name;}
+	public String name ()	{return myName;}
+	public String toString() {return myName;}
 //</codeFragment>
 	protected void assertNonNull(Object arg) {
 		if (arg == null) throw new NullPointerException();
