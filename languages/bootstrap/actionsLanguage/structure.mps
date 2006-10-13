@@ -169,10 +169,6 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1141170287031">
     <property name="name" value="ReferentSubstituteActionsBuilder" />
     <link role="extends" targetNodeId="1.1133920641626" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1149109568103">
-      <property name="value" value="the 'searchScopeProviderAspectId' link is obsolete. now - see model constraints" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1146864220741" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1154722837456">
       <property name="value" value="'preconditionAspectId' property is replaced with 'precondition block'" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1154621836409" />
@@ -197,10 +193,6 @@
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1158952169349">
       <property name="name" value="description" />
-      <link role="dataType" targetNodeId="1.1082983041843" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1141170329792">
-      <property name="name" value="searchScopeProviderAspectId" />
       <link role="dataType" targetNodeId="1.1082983041843" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1141170324056">

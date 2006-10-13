@@ -542,38 +542,6 @@
             </node>
           </node>
         </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1144963298353">
-          <property name="drawBorder" value="false" />
-          <property name="selectable" value="false" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1144963312474">
-            <property name="text" value="search scope (deprecated)" />
-            <property name="drawBorder" value="false" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1144963325134">
-            <property name="text" value=":" />
-            <property name="drawBorder" value="false" />
-            <property name="selectable" value="false" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1144963312475">
-            <property name="drawBorder" value="false" />
-            <property name="cellProviderId" value="ReferentSubstituteActionsBuilder_SearchScope" />
-          </node>
-          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1149109714476">
-            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1149109714477">
-              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1149109987659">
-                <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1149110555001">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1149110559191" />
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1149110529108">
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1149110275786" />
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1149110550312">
-                      <link role="property" targetNodeId="1.1141170329792" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1154724066943">
           <property name="drawBorder" value="false" />
           <property name="selectable" value="false" />
