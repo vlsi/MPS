@@ -1,12 +1,12 @@
 package mf;
 
-import junit.framework.*;
+import junit.framework.TestCase;
 
 
 public class MoneyTester extends TestCase{
-	private Money d15;
-	private Money d2_51;
-	private Money m2_51;
+	private Money myD15;
+	private Money myD2_51;
+	private Money myM2_51;
 public MoneyTester(String name) {
 	super(name);
 }
@@ -32,16 +32,16 @@ public void testDivideAllButOne() {
 }
 
 public void setUp() {
-	d15 = Money.dollars(15);
-	d2_51 = Money.dollars(2.51);
-	m2_51 = new Money (2.51, Currency.DEM);
+	myD15 = Money.dollars(15);
+	myD2_51 = Money.dollars(2.51);
+	myM2_51 = new Money (2.51, Currency.DEM);
 }
 public void testAamount() {
-	assertEquals (2.51, d2_51.amount(), 1e-3);
+	assertEquals (2.51, myD2_51.amount(), 1e-3);
 }
 public void testAdditionOfDifferentCurrencies() {
 	try {
-		d15.add(m2_51);
+		myD15.add(myM2_51);
 		fail("added different currencies");
 	} catch (Exception ignore) {}
 }
@@ -51,54 +51,54 @@ public void testCloseNumbersNotEqual() {
 	assertTrue(! d2_51a.equals(d2_51b));
 }
 public void testCompare() {
-	assertTrue(d15.greaterThan(d2_51));
-	assertTrue(d2_51.lessThan(d15));
-	assertTrue(!d15.greaterThan(d15));
-	assertTrue(!d15.lessThan(d15));
+	assertTrue(myD15.greaterThan(myD2_51));
+	assertTrue(myD2_51.lessThan(myD15));
+	assertTrue(!myD15.greaterThan(myD15));
+	assertTrue(!myD15.lessThan(myD15));
 	try {
-		assertTrue(d15.greaterThan(m2_51));
+		assertTrue(myD15.greaterThan(myM2_51));
 		fail();
 	} catch (Exception ignore) {}
 }
 public void testDifferentCurrencyNotEqual() {
-	assertTrue(! d2_51.equals(m2_51));
+	assertTrue(! myD2_51.equals(myM2_51));
 }
 public void testEquals() {
 	Money d2_51a = Money.dollars (2.51);
-	assertEquals (d2_51a, d2_51);
+	assertEquals (d2_51a, myD2_51);
 }
 public void xtestFormatPrinting() {
   // *** TBD **
-	assertEquals("$15.00", d15.formatString());
-	assertEquals("DM 2.51", m2_51.formatString());
+	assertEquals("$15.00", myD15.formatString());
+	assertEquals("DM 2.51", myM2_51.formatString());
 }
 public void testHash() {
 	Money d2_51a = Money.dollars (2.51);
-	assertEquals (d2_51a.hashCode(), d2_51.hashCode());
+	assertEquals (d2_51a.hashCode(), myD2_51.hashCode());
 }
 public void xtestLocalPrinting() {
     //disabled due to problem with euro symbol on linux
-	assertEquals("$15.00", d15.localString());
-	assertEquals("2,51 ?", m2_51.localString());
+	assertEquals("$15.00", myD15.localString());
+	assertEquals("2,51 ?", myM2_51.localString());
 }
 public void testNegate() {
-	assertEquals(Money.dollars(-15), d15.negate());
-	assertEquals(m2_51, m2_51.negate().negate());
+	assertEquals(Money.dollars(-15), myD15.negate());
+	assertEquals(myM2_51, myM2_51.negate().negate());
 }
 public void testPositiveNegative() {
-	assertTrue(d15.isPositive());
+	assertTrue(myD15.isPositive());
 	assertTrue(Money.dollars(-10).isNegative());
 	assertTrue(!Money.dollars(0).isPositive());
 	assertTrue(!Money.dollars(0).isNegative());
 }
 public void testPrint() {
-	assertEquals("USD 15.0", d15.toString());
+	assertEquals("USD 15.0", myD15.toString());
 }
 public void testRound() {
 	Money dRounded = Money.dollars (1.2350);
 	assertEquals (Money.dollars(1.24), dRounded);
 }
 public void testSubtraction() {
-	assertEquals (Money.dollars (12.49), d15.subtract(d2_51));
+	assertEquals (Money.dollars (12.49), myD15.subtract(myD2_51));
 }
 }
