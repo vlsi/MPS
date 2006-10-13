@@ -4783,35 +4783,6 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1081310191421">
     <property name="name" value="CellKeyMapEntry_Editor" />
     <link role="conceptDeclaration" targetNodeId="2.1081293058845" />
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1081310361722">
-      <property name="name" value="ModifiersPropActions" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1081310659607">
-        <property name="substituteHandlerId" value="KeyMapEntry_SetModifiers" />
-        <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1081310659608">
-          <property name="name" value="modifiers" />
-          <property name="queryId" value="KeyMapKeystroke_Modifiers" />
-        </node>
-      </node>
-    </node>
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1081310511588">
-      <property name="name" value="KeycodePropActions" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1081310753563">
-        <property name="substituteHandlerId" value="KeyMapEntry_SetKeycode" />
-        <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1081310752937">
-          <property name="name" value="keycodeCategories" />
-          <property name="queryId" value="KeyMapKeystroke_KeycodeCategories" />
-        </node>
-        <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1081310918846">
-          <property name="name" value="virtualKeycodes" />
-          <property name="queryId" value="KeyMapKeystroke_VirtualKeycodes" />
-        </node>
-        <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_Simple" id="1081310918847">
-          <property name="matcherId" value="KeyMapKeystroke_KeycharMatcher" />
-          <property name="text" value="character" />
-          <property name="handlerId" value="KeyMapKeystroke_KeycharAsString" />
-        </node>
-      </node>
-    </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1081310191422">
       <property name="drawBorder" value="true" />
       <property name="name" value="nodeBox" />
@@ -4826,7 +4797,6 @@
         <property name="drawBorder" value="true" />
         <property name="noTargetText" value="any" />
         <property name="textBgColorSelected" value="cyan" />
-        <link role="actionSet" targetNodeId="1081310361722" />
         <link role="relationDeclaration" targetNodeId="2.1081293058846" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1081310422023">
@@ -4837,7 +4807,6 @@
         <property name="textBgColor" value="yellow" />
         <property name="drawBorder" value="true" />
         <property name="textBgColorSelected" value="cyan" />
-        <link role="actionSet" targetNodeId="1081310511588" />
         <link role="relationDeclaration" targetNodeId="2.1081293058847" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1081310511590">
