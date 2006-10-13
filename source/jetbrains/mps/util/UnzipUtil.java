@@ -21,7 +21,7 @@ public class UnzipUtil {
         entryFile.getParentFile().mkdirs();
         FileOutputStream output = new FileOutputStream(entryFile, false);
         byte[] b = new byte[512];
-        int len = 0;
+        int len;
         while ((len=zipInput.read(b))!= -1) {
           output.write(b,0,len);
         }
