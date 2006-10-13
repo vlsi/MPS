@@ -2,8 +2,11 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNodeProxy;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.ide.components.ComponentsUtil;
+import org.jdom.Element;
 
 
 /**
@@ -37,6 +40,48 @@ public class CellInfo {
     }
   }
 
+  public CellInfo(Element cellElement, IScope scope) {
+    Element nodeElement = cellElement.getChild(ComponentsUtil.NODE);
+    Element parentInfoElement = cellElement.getChild(ComponentsUtil.CELL_INFO);
+    String cellId = nodeElement.getAttributeValue(ComponentsUtil.ID);
+    String cellNumber = nodeElement.getAttributeValue(ComponentsUtil.NUMBER);
+    String isInList = nodeElement.getAttributeValue(ComponentsUtil.IS_IN_LIST);
+    myNodeProxy =  new SNodeProxy(ComponentsUtil.nodeFromElement(nodeElement, scope));
+    myCellId = cellId;
+    if (parentInfoElement != null) {
+      if (cellNumber != null) {
+        myCellNumber = Integer.parseInt(cellNumber);
+      }
+      if (isInList != null) {
+        myIsInList = "true".equals(isInList);
+      }
+      myParentInfo = new CellInfo(parentInfoElement, scope);
+    }
+  }
+
+  public Element marshallCellInfo() {
+    Element cellElement = new Element(ComponentsUtil.CELL_INFO);
+    if (myCellId != null) {
+      cellElement.setAttribute(ComponentsUtil.ID, myCellId);
+    }
+    SNode node = myNodeProxy.getNode();
+    if (node != null) {
+      Element nodeElement = ComponentsUtil.nodeToElement(node);
+      cellElement.addContent(nodeElement);
+    }
+    if (myParentInfo != null) {
+      Element parentInfoElement = myParentInfo.marshallCellInfo();
+      cellElement.addContent(parentInfoElement);
+      if (myIsInList) {
+        cellElement.setAttribute(ComponentsUtil.IS_IN_LIST, "true");
+      }
+      if (myIsInList || myCellId == null) {
+        cellElement.setAttribute(ComponentsUtil.NUMBER, myCellNumber+"");
+      }
+    }
+    return cellElement;
+  }
+
 
   private SNode getSNode() {
     if (myNodeProxy == null) {
@@ -53,7 +98,7 @@ public class CellInfo {
   public EditorCell findCell(AbstractEditorComponent editorComponent) {
     if (myParentInfo == null) return editorComponent.findNodeCell(getSNode());
     EditorCell parentCell = myParentInfo.findCell(editorComponent);
-    if (!(parentCell instanceof EditorCell_Collection)) return null;
+    if (!(parentCell instanceof EditorCell_Collection)) return editorComponent.findNodeCell(getSNode());
     EditorCell_Collection collection = (EditorCell_Collection) parentCell;
     if (myIsInList || myCellId == null) {
       return collection.getCellAt(myCellNumber);

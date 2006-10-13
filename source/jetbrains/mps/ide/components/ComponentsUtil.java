@@ -3,6 +3,7 @@ package jetbrains.mps.ide.components;
 import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.nodeEditor.CellInfo;
 import org.jdom.DataConversionException;
 import org.jdom.Element;
 
@@ -23,6 +24,9 @@ public class ComponentsUtil {
   private static final String Y = "y";
   private static final String WIDTH = "width";
   private static final String HEIGHT = "height";
+  public static final String NUMBER = "number";
+  public static final String IS_IN_LIST = "isInList";
+  public static final String CELL_INFO = "cellInfo";
 
   public static Element nodeToElement(SNode node) {
     Element nodeElement = new Element(NODE);
@@ -54,6 +58,13 @@ public class ComponentsUtil {
     }
   }
 
+  public static CellInfo cellInfoFromElement(Element cellElement, IScope scope) {
+    return new CellInfo(cellElement, scope);
+  }
+
+  public static Element cellInfoToElement(CellInfo cellInfo) {
+    return cellInfo.marshallCellInfo();
+  }
 
   public static Element rectangleToElement(Rectangle rect) {
     Element result = new Element(RECTANGLE);
