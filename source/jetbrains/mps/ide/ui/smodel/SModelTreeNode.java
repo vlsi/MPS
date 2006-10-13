@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import javax.swing.JPopupMenu;
@@ -35,7 +36,9 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   private boolean myInitialized = false;
   private MyModelListener myModelListener = new MyModelListener();
 
-  public SModelTreeNode(SModelDescriptor modelDescriptor, String label, IOperationContext operationContext) {
+  public SModelTreeNode(@NotNull SModelDescriptor modelDescriptor,
+                        String label,
+                        IOperationContext operationContext) {
     super(operationContext);
     myModelDescriptor = modelDescriptor;
     myLabel = label;
