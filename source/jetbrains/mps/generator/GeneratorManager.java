@@ -92,27 +92,29 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   }
 
   private void addMessage(final MessageKind kind, final String text) {
-    myProject.getComponent(MessageView.class).add(new Message(kind, text));
+    MessageView messageView = myProject.getComponent(MessageView.class);
+    assert messageView != null;
+    messageView.add(new Message(kind, text));
   }
 
   private void addProgressMessage(final MessageKind kind, final String text, final IAdaptiveProgressMonitor progress) {
     progress.addText(text);
-    myProject.getComponent(MessageView.class).add(new Message(kind, text));
+    MessageView messageView = myProject.getComponent(MessageView.class);
+    assert messageView != null;
+    messageView.add(new Message(kind, text));
   }
 
   private void clearMessages() {
-    myProject.getComponent(MessageView.class).clear();
+    MessageView messageView = myProject.getComponent(MessageView.class);
+    assert messageView != null;
+    messageView.clear();
   }
 
   private void showMessageView() {
-    myProject.getComponent(MessageView.class).show(true);
+    MessageView messageView = myProject.getComponent(MessageView.class);
+    assert messageView != null;
+    messageView.show(true);
   }
-
-//  private String getOutputFolderPath(String outputRootPath, SModel sourceModel) {
-//    String packageName = JavaNameUtil.packageNameForModelUID(sourceModel.getUID());
-//    return outputRootPath + File.separator + packageName.replace('.', File.separatorChar);
-//  }
-
 
   /**
    * todo Move it to a better place
@@ -307,7 +309,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       GenerationSession generationSession = new GenerationSession(targetLanguage, invocationContext, isSaveTransientModels(), progress);
       GenerationStatus status = null;
       for (SModelDescriptor sourceModelDescriptor : sourceModels) {
-        SModel sourceModel = sourceModelDescriptor.getSModel();
         progress.addText("");
         String taskName = ModelsProgressUtil.generationModelTaskName(sourceModelDescriptor);
         progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_GENERATION);
