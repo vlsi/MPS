@@ -9,10 +9,11 @@ import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
 
-import javax.swing.*;
+import javax.swing.JOptionPane;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -97,6 +98,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
           public void execute(KeyEvent keyEvent, EditorContext context) {
             try {
               IProjectHandler handler = context.getOperationContext().getProject().getProjectHandler();
+              assert handler != null;
               handler.openQueryMethod(getNamespace(), getQueryMethodPrefix() + getQueryMethodId());
             } catch (IOException e) {
               e.printStackTrace();
@@ -140,7 +142,10 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
         if (id == null) return null;
         try {
           IProjectHandler projectHandler = project.getProjectHandler();
-          String modelPath = getSNode().getModel().getModelDescriptor().getModelFile().getAbsolutePath();
+          SModelDescriptor modelDescriptor = getSNode().getModel().getModelDescriptor();
+          assert modelDescriptor != null;
+          String modelPath = modelDescriptor.getModelFile().getAbsolutePath();
+          assert projectHandler != null;
           projectHandler.createAspectMethod(modelPath, getNamespace(), getQueryMethodPrefix() + id, getQueryMethodReturnType(), getQueryMethodParameterList());
           for (Class cls : getImportedClasses()) {
             projectHandler.addImport(getNamespace(), cls.getName());
@@ -161,6 +166,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
     IProjectHandler handler = context.getOperationContext().getProject().getProjectHandler();
     List<String> result = null;
     try {
+      assert handler != null;
       result = handler.getAspectMethodIds(getNamespace(), getQueryMethodPrefix());
     } catch (IOException e) {
       e.printStackTrace();
@@ -178,7 +184,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
       while (iterator.hasNext()) {
         StaticMethodDeclaration methodDeclaration = iterator.next();
         String name = methodDeclaration.getName();
-        if (name.startsWith(queryMetodPrefix)) {
+        if (name != null && name.startsWith(queryMetodPrefix)) {
           availableIds.add(name.substring(queryMetodPrefix.length()));
         }
       }
