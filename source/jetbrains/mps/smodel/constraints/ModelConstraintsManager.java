@@ -10,8 +10,11 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.helgins.RuntimeTypeVariable;
 
 import java.util.*;
+
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Created by IntelliJ IDEA.
@@ -113,13 +116,17 @@ public class ModelConstraintsManager {
     return (INodePropertySetter) getNodePropertyGetterOrSetter(node, propertyName, true);
   }
 
-  public IModelConstraints getNodePropertyGetterOrSetter(SNode node, String propertyName, boolean isSetter) {
+  public IModelConstraints getNodePropertyGetterOrSetter(@NotNull SNode node, @NotNull String propertyName, boolean isSetter) {
     String namespace = NameUtil.nodeLanguageNamespace(node);
     // 'bootstrap' properties
     if (namespace.equals("jetbrains.mps.bootstrap.structureLanguage") && propertyName.equals(BaseConcept.NAME)) {
       return null;
     }
     if (namespace.equals("jetbrains.mps.projectLanguage")) {
+      return null;
+    }
+    if (node instanceof RuntimeTypeVariable) {
+      // helgins ku-ku
       return null;
     }
 
