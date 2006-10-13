@@ -1,31 +1,33 @@
 package postingrules;
 
-import mf.*;
+import mf.MfDate;
+import mf.SingleTemporalCollection;
+import mf.TemporalCollection;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ServiceAgreement {
-    private TemporalCollection rates = new SingleTemporalCollection();
-    private Map<String, TemporalCollection> values = new HashMap<String, TemporalCollection>();
+    private Map<String, TemporalCollection> myValues = new HashMap<String, TemporalCollection>();
      public void registerValue(String key) {
-        values.put(key, new SingleTemporalCollection());
+        myValues.put(key, new SingleTemporalCollection());
     }
 //<codeFragment name = "postingRules">
-    private Map postingRules = new HashMap();
+    private Map myPostingRules = new HashMap();
     public void addPostingRule(EventType eventType, PostingRule rule, MfDate date) {
-        if (postingRules.get(eventType) == null)
-            postingRules.put(eventType, new SingleTemporalCollection());
+        if (myPostingRules.get(eventType) == null)
+            myPostingRules.put(eventType, new SingleTemporalCollection());
         getRulesTemporalCollectionFor(eventType).put(date, rule);
     }
     private TemporalCollection getRulesTemporalCollectionFor(EventType eventType) {
-        TemporalCollection result = (TemporalCollection) postingRules.get(eventType);
+        TemporalCollection result = (TemporalCollection) myPostingRules.get(eventType);
         assert result != null;
         return result;
     }
 //</codeFragment>
 
     public double getRate(MfDate at) {
-        return (Double) values.get("base_rate").get(at);
+        return (Double) myValues.get("base_rate").get(at);
     }
  //<codeFragment name = "process">
     public void process(AccountingEvent e) {
@@ -43,10 +45,10 @@ public class ServiceAgreement {
 //</codeFragment>
 
     public void setValue(String key, Object value, MfDate effectiveDate) {
-        values.get(key).put(effectiveDate, value);
+        myValues.get(key).put(effectiveDate, value);
     }
     public Object getValue(String key, MfDate at) {
-        return values.get(key).get(at);
+        return myValues.get(key).get(at);
     }
 
 }

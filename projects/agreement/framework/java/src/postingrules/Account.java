@@ -1,23 +1,26 @@
 package postingrules;
 
-import mf.*;
+import mf.DateRange;
+import mf.MfDate;
+import mf.Money;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Account {
-    private List<Entry> entries = new ArrayList<Entry>();
-    private mf.Currency currency;
-    private AccountType type;
+    private List<Entry> myEntries = new ArrayList<Entry>();
+    private mf.Currency myCurrency;
+    private AccountType myType;
     public Account(mf.Currency currency) {
         this(currency, null);
     }
     public Account(mf.Currency currency, AccountType type) {
-        this.currency = currency;
-        this.type = type;
+        this.myCurrency = currency;
+        this.myType = type;
     }
     public void addEntry(Entry arg) {
         ensureSameCurrency(arg.getAmount());
-        entries.add(arg);
+        myEntries.add(arg);
         arg.setAccount(this);
     }
     void addEntry(Money amount, MfDate date) {
@@ -25,15 +28,15 @@ public class Account {
         addEntry(e);
     }
     private void ensureSameCurrency (Money arg) {
-        if (!arg.currency().equals(currency))
+        if (!arg.currency().equals(myCurrency))
             throw new IllegalArgumentException("New item has incompatable currency");
     }
     public Money balance() {
         return balance(MfDate.today());
     }
     Money balance(DateRange period) {
-        Money result = new Money(0, currency);
-        for (Entry e : entries)
+        Money result = new Money(0, myCurrency);
+        for (Entry e : myEntries)
             if (period.includes(e.getDate())) result = result.add(e.getAmount());
         return result;
     }
@@ -41,42 +44,42 @@ public class Account {
         return balance(DateRange.upTo(date));
     }
     public Account copy() {
-        Account result = new Account(currency, type);
-        for (Entry e : entries)
+        Account result = new Account(myCurrency, myType);
+        for (Entry e : myEntries)
             result.addEntry(e.copy());
         return result;
     }
     Money deposits(DateRange period) {
-        Money result = new Money(0, currency);
-        for (Entry each : entries) {
+        Money result = new Money(0, myCurrency);
+        for (Entry each : myEntries) {
             if (period.includes(each.getDate()) && each.getAmount().isPositive())
                 result = result.add(each.getAmount());
         }
         return result;
     }
     public Entry[] entries() {
-        return entries.toArray(new Entry[0]);
+        return myEntries.toArray(new Entry[0]);
     }
     boolean isValid() {
         return allMyEntriesReferToMe();
     }
     boolean allMyEntriesReferToMe() {
-        for (Entry e : entries)
+        for (Entry e : myEntries)
             if (e.getAccount() != this) return false;
         return true;
     }
     public String toString() {
-        return "Acc: " + type;
+        return "Acc: " + myType;
     }
     AccountType type() {
-        return type;
+        return myType;
     }
     void withdraw(Money amount, Account target, MfDate date) {
         new AccountingTransaction(amount, this, target, date);
     }
     Money withdrawels(DateRange period) {
-        Money result = new Money(0, currency);
-        for (Entry each : entries) {
+        Money result = new Money(0, myCurrency);
+        for (Entry each : myEntries) {
             if (period.includes(each.getDate()) && each.getAmount().isNegative())
                 result = result.add(each.getAmount());
         }

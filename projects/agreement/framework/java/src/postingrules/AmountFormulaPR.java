@@ -1,19 +1,19 @@
 package postingrules;
 
-import mf.*;
+import mf.Money;
 
 //<codeFragment name = "all">
 public class AmountFormulaPR extends PostingRule {
-    private double multiplier;
-    private Money fixedFee;
+    private double myMultiplier;
+    private Money myFixedFee;
     public AmountFormulaPR(double multiplier, Money fixedFee, AccountType type, boolean isTaxable) {
         super(type, isTaxable);
-        this.multiplier = multiplier;
-        this.fixedFee = fixedFee;
+        this.myMultiplier = multiplier;
+        this.myFixedFee = fixedFee;
     }
     protected Money calculateAmount(AccountingEvent evt) {
         Money eventAmount = ((MonetaryEvent) evt).getAmount();
-        return (Money) eventAmount.multiply(multiplier).add(fixedFee);
+        return (Money) eventAmount.multiply(myMultiplier).add(myFixedFee);
     }
 }
 //</codeFragment>

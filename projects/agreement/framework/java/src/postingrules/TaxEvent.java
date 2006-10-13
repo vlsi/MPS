@@ -1,13 +1,11 @@
 package postingrules;
 
-import mf.*;
+import mf.Money;
 
 public class TaxEvent extends MonetaryEvent {
-    private AccountingEvent base;
-    public TaxEvent(AccountingEvent base, Money taxableAmount) {
+  public TaxEvent(AccountingEvent base, Money taxableAmount) {
         super(taxableAmount, EventType.TAX, base.getWhenOccurred(), base.getWhenNoticed(), base.getSubject());
-        this.base = base;
-        base.friendAddSecondaryEvent(this);
+    base.friendAddSecondaryEvent(this);
         assert base.getEventType() != getEventType(): "Probable endless recursion";
     }
 

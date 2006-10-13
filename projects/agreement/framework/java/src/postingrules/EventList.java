@@ -1,26 +1,27 @@
 package postingrules;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class EventList {
     //todo consider separate processed/unprocessed lists
-    private List<AccountingEvent> events = new ArrayList<AccountingEvent>();
-    private List<AccountingEvent> processingErrors = new ArrayList<AccountingEvent>();
+    private List<AccountingEvent> myEvents = new ArrayList<AccountingEvent>();
+    private List<AccountingEvent> myProcessingErrors = new ArrayList<AccountingEvent>();
     public void add(AccountingEvent arg) {
-        events.add(arg);
+        myEvents.add(arg);
     }
     private List<AccountingEvent> unprocessedEvents() {
         List<AccountingEvent> result = new ArrayList<AccountingEvent>();
-        for (AccountingEvent e : events)
+        for (AccountingEvent e : myEvents)
             if (!e.isProcessed()) result.add(e);
         return result;
     }
     private void logProcessingError(AccountingEvent event, Exception exception) {
-        processingErrors.add(event);
+        myProcessingErrors.add(event);
         throw new RuntimeException(exception);
     }
     boolean hasProcessingErrors() {
-        return !processingErrors.isEmpty();
+        return !myProcessingErrors.isEmpty();
     }
 //<codeFragment name = "process">
     public void process() {

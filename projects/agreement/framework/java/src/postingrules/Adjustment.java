@@ -1,12 +1,13 @@
 package postingrules;
 
-import mf.*;
+import mf.MfDate;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 abstract public class Adjustment extends AccountingEvent{
-    protected List<AccountingEvent> newEvents = new ArrayList<AccountingEvent>();
-    protected List<AccountingEvent> oldEvents = new ArrayList<AccountingEvent>();
+    protected List<AccountingEvent> myNewEvents = new ArrayList<AccountingEvent>();
+    protected List<AccountingEvent> myOldEvents = new ArrayList<AccountingEvent>();
 
     public Adjustment(AccountingEvent replacement, AccountingEvent adjustedEvent) {
         this(replacement.getWhenNoticed(), replacement.getWhenNoticed(), replacement.getSubject());
@@ -17,12 +18,12 @@ abstract public class Adjustment extends AccountingEvent{
         super(null, whenOccurred, whenNoticed, subject);
     }
     public void addNew(AccountingEvent arg) {
-        newEvents.add(arg);
+        myNewEvents.add(arg);
     }
     public void addOld(AccountingEvent arg) {
         if (arg.hasBeenAdjusted())
             throw new IllegalArgumentException("Cannot create " + this + ". " + arg + " is already adjusted");
-        oldEvents.add(arg);
+        myOldEvents.add(arg);
         arg.setReplacementEvent(this);
     }
 }

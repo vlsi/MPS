@@ -1,35 +1,36 @@
 package postingrules;
 
-import mf.*;
+import mf.MfDate;
+import mf.Money;
 
-import java.util.*;
+import java.util.Collection;
 
 public class Entry {
-    private MfDate date;
-    private Account account;
-    private Money amount;
+    private MfDate myDate;
+    private Account myAccount;
+    private Money myAmount;
     public Entry(Money amount, MfDate date) {
-        this.amount = amount;
-        this.date = date;
+        this.myAmount = amount;
+        this.myDate = date;
     }
     Entry copy() {
-        return new Entry(amount, date);
+        return new Entry(myAmount, myDate);
     }
     public Account getAccount() {
-        return account;
+        return myAccount;
     }
     public mf.Money getAmount() {
-        return amount;
+        return myAmount;
     }
     public mf.MfDate getDate() {
-        return date;
+        return myDate;
     }
     public void setAccount(Account arg) {
-        assert account == null: "account cannot be changed once set";
-        account = arg;
+        assert myAccount == null: "account cannot be changed once set";
+        myAccount = arg;
     }
     public String toString() {
-        return account.toString() + ": " + amount.toString();
+        return myAccount.toString() + ": " + myAmount.toString();
     }
     public static Money total(Collection<Entry> entries) {
         if (entries.isEmpty()) return null; //should be a NullMoney

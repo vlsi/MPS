@@ -1,16 +1,14 @@
 package postingrules;
 
-import postingrules.ServiceAgreement;
-
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 public class AgreementRegistry {
-  Map agreements = new HashMap();
+  Map myAgreements = new HashMap();
   public void register(String name, ServiceAgreement agreement) {
-    agreements.put(name, agreement);
+    myAgreements.put(name, agreement);
   }
   public ServiceAgreement getAgreement(String name) {
-    return (ServiceAgreement) agreements.get(name);
+    return (ServiceAgreement) myAgreements.get(name);
   }
 }
