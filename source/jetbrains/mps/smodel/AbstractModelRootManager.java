@@ -1,13 +1,13 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.projectLanguage.ModelRoot;
-
-import java.util.*;
-
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.Set;
 
 public abstract class AbstractModelRootManager implements IModelRootManager {
-  @NotNull
+  @Nullable
   public SModel refresh(@NotNull SModelDescriptor modelDescriptor) {
     return ModelPersistence.refreshModel(modelDescriptor.getSModel());
   }

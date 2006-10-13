@@ -1,10 +1,10 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.projectLanguage.ModelRoot;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Set;
-
-import org.jetbrains.annotations.NotNull;
 
 /**
  * @author Kostik
@@ -20,7 +20,7 @@ public interface IModelRootManager {
 
   void saveModel(@NotNull SModelDescriptor modelDescriptor);
 
-  @NotNull SModel refresh(@NotNull SModelDescriptor modelDescriptor);
+  @Nullable SModel refresh(@NotNull SModelDescriptor modelDescriptor);
 
   boolean isFindUsagesSupported();
 

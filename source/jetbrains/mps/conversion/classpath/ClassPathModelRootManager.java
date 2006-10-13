@@ -1,16 +1,19 @@
 package jetbrains.mps.conversion.classpath;
 
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.conversion.ConverterFactory;
+import jetbrains.mps.conversion.IConverter;
+import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.conversion.IConverter;
-import jetbrains.mps.conversion.ConverterFactory;
-import jetbrains.mps.ide.BootstrapLanguages;
-
-import java.util.*;
-
+import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * @author Kostik
@@ -61,7 +64,7 @@ public class ClassPathModelRootManager extends AbstractModelRootManager  {
   public void saveModel(@NotNull SModelDescriptor modelDescriptor) {
   }
 
-  @NotNull
+  @Nullable
   public SModel refresh(@NotNull SModelDescriptor modelDescriptor) {
     SModel smodel = modelDescriptor.getSModel();
     if (smodel != null) {
