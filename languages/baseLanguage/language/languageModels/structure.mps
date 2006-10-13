@@ -1288,7 +1288,7 @@
     <property name="name" value="ClassifierClassExpression" />
     <link role="extends" targetNodeId="1068431790191" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1137986169635">
-      <property name="value" value=".class" />
+      <property name="value" value="&lt;{classifier}&gt;.class" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1137986190996">
