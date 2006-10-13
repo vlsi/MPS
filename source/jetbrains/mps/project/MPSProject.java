@@ -305,6 +305,13 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     return result;
   }
 
+  @NotNull
+  public <T> T getComponentSafe(Class<T> clz) {
+    T result = getComponent(clz);
+    if (result == null) throw new RuntimeException("Can't find a component " + clz.getName());
+    return result;
+  }
+
   public void addComponent(@NotNull Class interfaceClass, @NotNull Object instance) {
     myComponents.put(interfaceClass, instance);
   }

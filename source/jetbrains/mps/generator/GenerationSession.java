@@ -55,7 +55,9 @@ public class GenerationSession {
     setGenerationSessionContext(null);
     if (myDiscardTransients) {
       for (GenerationSessionContext savedContext : mySavedContexts) {
-        savedContext.getModule().dispose(); // unregister transient models and module
+        IModule module = savedContext.getModule();
+        assert module != null;
+        module.dispose(); // unregister transient models and module
       }
       mySavedContexts.clear();
     }
@@ -69,12 +71,10 @@ public class GenerationSession {
   }
 
   public GenerationStatus generateModel(SModelDescriptor sourceModel) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-    GenerationStatus status = null;
+    GenerationStatus status;
 
     // do model mapping
-    if (status == null || status.isOk()) {
-      status = generateModel_internal(sourceModel, myTargetLanguage, false);
-    }
+    status = generateModel_internal(sourceModel, myTargetLanguage);
 
     if (status.isError()) {
       // if ERROR - keep transient models: we need them to navigate to from error messages
@@ -83,7 +83,7 @@ public class GenerationSession {
     return status;
   }
 
-  private GenerationStatus generateModel_internal(SModelDescriptor sourceModelDescriptor, Language targetLanguage, boolean primaryMappingOnly) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+  private GenerationStatus generateModel_internal(SModelDescriptor sourceModelDescriptor, Language targetLanguage) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
     SModel sourceModel = sourceModelDescriptor.getSModel();
     addProgressMessage(MessageKind.INFORMATION, "generating model \"" + sourceModel.getUID() + "\"");
     Class<? extends IModelGenerator> defaultGeneratorClass = getDefaultGeneratorClass(targetLanguage);
@@ -139,7 +139,7 @@ public class GenerationSession {
     ITemplateGenerator generator = (ITemplateGenerator) currentGeneratorClass.getConstructor(GenerationSessionContext.class, IAdaptiveProgressMonitor.class).newInstance(context, myProgressMonitor);
     GenerationStatus status;
     try {
-      SModel outputModel = generateModel(sourceModel, targetLanguage, generator, primaryMappingOnly);
+      SModel outputModel = generateModel(sourceModel, targetLanguage, generator);
       boolean wasErrors = generator.getErrorCount() > 0;
       status = new GenerationStatus(sourceModel, outputModel, context.getTraceMap(), wasErrors, false);
       addMessage(status.isError() ? MessageKind.WARNING : MessageKind.INFORMATION, "model \"" + sourceModel.getUID() + "\" has been generated " + (status.isError() ? "with errors" : "successfully"));
@@ -167,9 +167,11 @@ public class GenerationSession {
     return status;
   }
 
-  private SModel generateModel(SModel inputModel, Language targetLanguage, ITemplateGenerator generator, boolean primaryMappingOnly) {
+  private SModel generateModel(SModel inputModel, Language targetLanguage, ITemplateGenerator generator) {
     GenerationSessionContext generationContext = generator.getGeneratorSessionContext();
-    SModelDescriptor currentOutputModel = createTransientModel(inputModel, generationContext.getModule());
+    IModule module = generationContext.getModule();
+    assert module != null;
+    SModelDescriptor currentOutputModel = createTransientModel(inputModel, module);
 
     // primary mapping
     boolean somethingHasBeenGenerated = generator.doPrimaryMapping(inputModel, currentOutputModel.getSModel());
@@ -196,9 +198,9 @@ public class GenerationSession {
       // apply mapping to the output model
       myCurrentContext.replaceInputModel(currentOutputModel);
       SModelDescriptor currentInputModel = currentOutputModel;
-      SModelDescriptor transientModel = createTransientModel(inputModel, generationContext.getModule());
+      SModelDescriptor transientModel = createTransientModel(inputModel, module);
       if (!generator.doSecondaryMapping(currentInputModel.getSModel(), transientModel.getSModel(), repeatCount)) {
-        SModelRepository.getInstance().unRegisterModelDescriptor(transientModel, generationContext.getModule());
+        SModelRepository.getInstance().unRegisterModelDescriptor(transientModel, module);
         break;
       }
 
@@ -240,16 +242,16 @@ public class GenerationSession {
   }
 
   private void addMessage(final Message message) {
-    myInvocationContext.getProject().getComponent(MessageView.class).add(message);
+    myInvocationContext.getProject().getComponentSafe(MessageView.class).add(message);
   }
 
   private void addMessage(final MessageKind kind, final String text) {
-    myInvocationContext.getProject().getComponent(MessageView.class).add(new Message(kind, text));
+    myInvocationContext.getProject().getComponentSafe(MessageView.class).add(new Message(kind, text));
   }
 
   private void addProgressMessage(final MessageKind kind, final String text) {
     myProgressMonitor.addText(text);
-    myInvocationContext.getProject().getComponent(MessageView.class).add(new Message(kind, text));
+    myInvocationContext.getProject().getComponentSafe(MessageView.class).add(new Message(kind, text));
   }
 
 
@@ -292,6 +294,7 @@ public class GenerationSession {
     ModelOwner tmpOwner = new ModelOwner() {
     };
     SModel solutionDescriptorModel = ProjectModels.createDescriptorFor(tmpOwner).getSModel();
+    assert solutionDescriptorModel != null;
     SolutionDescriptor solutionDescriptor = new SolutionDescriptor(solutionDescriptorModel);
     solutionDescriptorModel.setLoading(true);
     solutionDescriptor.setName(getSessionModuleName());
@@ -306,7 +309,9 @@ public class GenerationSession {
         if (!usedLang.contains(language)) {
           usedLang.add(language);
           LanguageRoot languageRoot = new LanguageRoot(solutionDescriptor.getModel());
-          languageRoot.setPath(language.getDescriptorFile().getParentFile().getAbsolutePath());
+          File descriptorFile = language.getDescriptorFile();
+          assert descriptorFile != null;
+          languageRoot.setPath(descriptorFile.getParentFile().getAbsolutePath());
           solutionDescriptor.addLanguageRoot(languageRoot);
         }
       }
@@ -325,6 +330,7 @@ public class GenerationSession {
 
     // add models accessible from the invokation contextshould be accessible from our solution - add all model roots
     IModule invocationModule = myInvocationContext.getModule();
+    assert invocationModule != null;
     List<ModelRoot> modelRoots = invocationModule.getNonDefaultModelRoots();
     for (ModelRoot modelRoot : modelRoots) {
       addModelRoot(modelRoot.getPrefix(), modelRoot.getPath(), solutionDescriptor);
@@ -339,7 +345,9 @@ public class GenerationSession {
     // save, add to project and reload all
     File solutionDescriptorFile = new File(solutionDir, getSessionModuleName() + ".msd");
     PersistenceUtil.saveSolutionDescriptor(solutionDescriptorFile, solutionDescriptor);
-    SModelRepository.getInstance().unRegisterModelDescriptor(solutionDescriptorModel.getModelDescriptor(), tmpOwner);
+    SModelDescriptor modelDescriptor = solutionDescriptorModel.getModelDescriptor();
+    assert modelDescriptor != null;
+    SModelRepository.getInstance().unRegisterModelDescriptor(modelDescriptor, tmpOwner);
 
     return solutionDescriptorFile;
   }
