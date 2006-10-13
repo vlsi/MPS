@@ -190,8 +190,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     }, KeyStroke.getKeyStroke("ESCAPE"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     registerKeyboardAction(new AbstractAction() {
-      public final Color NODE_COLOR = Color.PINK;
-      public final Color USAGE_COLOR = Color.MAGENTA;
+      public final Color myNodeColor = Color.PINK;
+      public final Color myUsageColor = Color.MAGENTA;
 
       public void actionPerformed(ActionEvent e) {
         if (getSelectedCell() != null) {
@@ -199,14 +199,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
           Set<SReference> usages = node.getModel().getModelDescriptor().findUsages(node);
           if (usages.size() > 0) {
-            getHighlightManager().mark(node, NODE_COLOR, "source node", myOwner);
+            getHighlightManager().mark(node, myNodeColor, "source node", myOwner);
           }
 
           if (usages.size() == 0) {
             for (SReference ref : node.getReferences()) {
               usages = node.getModel().getModelDescriptor().findUsages(ref.getTargetNode());
               if (usages.size() > 0) {
-                getHighlightManager().mark(ref.getTargetNode(), NODE_COLOR, "source node", myOwner);
+                getHighlightManager().mark(ref.getTargetNode(), myNodeColor, "source node", myOwner);
                 break;
               }
             }
@@ -214,7 +214,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
           for (SReference ref : usages) {
             if (ref.getSourceNode().getContainingRoot() == getRootCell().getSNode()) {
-              getHighlightManager().mark(ref.getSourceNode(), USAGE_COLOR, "usage", myOwner);
+              getHighlightManager().mark(ref.getSourceNode(), myUsageColor, "usage", myOwner);
             }
           }
         }
@@ -359,6 +359,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     final SNode parent = current.getParent();
     final String role = current.getRole_();
+    assert parent != null;
     int index = parent.getChildren(role).indexOf(current);
     if (index == 0) return;
 
@@ -381,6 +382,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     final SNode parent = current.getParent();
     final String role = current.getRole_();
+    assert parent != null;
     List<SNode> siblings = parent.getChildren(role);
     int index = siblings.indexOf(current);
     if (index == siblings.size() - 1) return;
