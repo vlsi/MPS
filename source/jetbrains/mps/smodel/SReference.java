@@ -87,6 +87,10 @@ public class SReference {
       return null;
     }
     if (ExternalResolver.isEmptyExtResolveInfo(myExtResolveInfo)) {
+      if (myTargetNodeId == null) {
+        logGetTargetNodeErrors(GetTargetNodeErrorState.CANT_RESOLVE_BY_ID);
+        return null;
+      }
       SNode nodeById = model.getNodeById(myTargetNodeId);
       if (nodeById == null) {
         logGetTargetNodeErrors(GetTargetNodeErrorState.CANT_RESOLVE_BY_ID);
