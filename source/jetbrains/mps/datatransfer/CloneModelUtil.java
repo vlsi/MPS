@@ -1,8 +1,9 @@
 package jetbrains.mps.datatransfer;
 
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.refactoring.CopyUtil;
+import jetbrains.mps.smodel.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -14,7 +15,9 @@ import jetbrains.mps.refactoring.CopyUtil;
 public class CloneModelUtil {
 
   public static SModel cloneModel(SModel model, IOperationContext operationContext, SModelUID modelUID, ModelRoot modelRoot) {
-    SModelDescriptor modelCopyDescriptor = operationContext.getModule().createModel(modelUID, modelRoot);
+    IModule module = operationContext.getModule();
+    assert module != null;
+    SModelDescriptor modelCopyDescriptor = module.createModel(modelUID, modelRoot);
     SModel modelCopy = modelCopyDescriptor.getSModel();
     return cloneModel(model, modelCopy);
   }

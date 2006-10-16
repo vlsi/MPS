@@ -51,11 +51,11 @@ public class PasteNodeUtil {
     paste_internal(pasteTarget, pasteNode, operationContext, role_, invoker);
   }
 
-  public static void pasteAsRoot(SNode pasteNode, SModel model, IOperationContext operationContext, Object invoker) {
+  public static void pasteAsRoot(SNode pasteNode, SModel model) {
       model.addRoot(pasteNode);
   }
 
-  public static boolean canPasteAsRoot(SNode pasteNode, SModel model, IOperationContext operationContext, Object invoker) {
+  public static boolean canPasteAsRoot(SNode pasteNode, IOperationContext operationContext) {
     final ConceptDeclaration conceptDeclaration = SModelUtil.findConceptDeclaration(NameUtil.nodeConceptFQName(pasteNode), operationContext.getScope());
     return conceptDeclaration.getRootable();
   }
@@ -206,25 +206,6 @@ public class PasteNodeUtil {
     }
     return null;
   }
-
-  private static LinkDeclaration findListlikeMetalink(ConceptDeclaration sourceMetatype, ConceptDeclaration targetMetatype) {
-    Iterator<LinkDeclaration> metalinks = sourceMetatype.linkDeclarations();
-    while (metalinks.hasNext()) {
-      LinkDeclaration metalink = metalinks.next();
-      if (SModelUtil.isAssignableConcept(targetMetatype, metalink.getTarget())) {
-  //      Cardinality sourceCardinality = metalink.getSourceCardinality();
- //       if (sourceCardinality == Cardinality._0_n || sourceCardinality == Cardinality._1_n) {
-          return metalink;
-//        }
-      }
-    }
-    ConceptDeclaration anExtends = sourceMetatype.getExtends();
-    if (anExtends != null) {
-      return findListlikeMetalink(anExtends, targetMetatype);
-    }
-    return null;
-  }
-
 
   private static LinkDeclaration findMetalink(ConceptDeclaration sourceMetatype, ConceptDeclaration targetMetatype, String role) {
     Iterator<LinkDeclaration> metalinks = sourceMetatype.linkDeclarations();
