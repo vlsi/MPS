@@ -22,6 +22,11 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.AssertStatement" id="1161001710731">
+          <node role="condition" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1161001716733">
+            <property name="value" value="true" />
+          </node>
+        </node>
       </node>
     </node>
     <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1144367869245">

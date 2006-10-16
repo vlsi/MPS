@@ -4072,6 +4072,10 @@
           </node>
         </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1161001754075">
+        <property name="text" value=";" />
+        <property name="drawBorder" value="false" />
+      </node>
     </node>
     <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1160998960176">
       <property name="drawBorder" value="false" />
