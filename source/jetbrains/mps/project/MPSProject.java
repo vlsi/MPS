@@ -64,7 +64,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
         model.setLoading(true);
         myProjectDescriptor = PersistenceUtil.loadProjectDescriptor(projectFile, model);
 
-        MPSProjects projects = ApplicationComponents.getInstance().getComponent(MPSProjects.class);
+        MPSProjects projects = ApplicationComponents.getInstance().getComponentSafe(MPSProjects.class);
         projects.addProject(MPSProject.this);
 
         LOG.assertLog(myProjectDescriptor.isRoot(), "Project descriptor has to be root");
@@ -382,7 +382,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
   }
 
   public void saveModels() {
-    ApplicationComponents.getInstance().getComponent(SModelRepository.class).saveAll();
+    ApplicationComponents.getInstance().getComponentSafe(SModelRepository.class).saveAll();
   }
 
   public void save() {

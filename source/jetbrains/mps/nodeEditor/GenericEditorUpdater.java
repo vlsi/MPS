@@ -55,7 +55,7 @@ public abstract class GenericEditorUpdater {
         }
         commandProcessor.executeCommand(new Runnable() {
           public void run() {
-            MPSProjects projects = ApplicationComponents.getInstance().getComponent(MPSProjects.class);
+            MPSProjects projects = ApplicationComponents.getInstance().getComponentSafe(MPSProjects.class);
             for (MPSProject project : projects.getProjects()) {
               if (project.getComponent(IDEProjectFrame.class) == null) continue;
 
