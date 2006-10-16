@@ -64,7 +64,7 @@ public abstract class BaseDialog extends JDialog {
   protected DialogDimensionsSettings.DialogDimensions myDialogDimensions;
 
   protected static void saveDimensionSettings(int left, int top, int width, int height, Class<? extends BaseDialog> cls) {
-    ApplicationComponents.getInstance().getComponent(DialogDimensionsSettings.class).saveDimensionSettings(left, top, width, height, cls);
+    ApplicationComponents.getInstance().getComponentSafe(DialogDimensionsSettings.class).saveDimensionSettings(left, top, width, height, cls);
   }
 
   protected void saveMyDimensionSettings() {
@@ -80,7 +80,7 @@ public abstract class BaseDialog extends JDialog {
   public abstract DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings();
 
   protected static DialogDimensionsSettings.DialogDimensions getDimensionSettings(Class <? extends BaseDialog> cls) {
-    return ApplicationComponents.getInstance().getComponent(DialogDimensionsSettings.class).getDimensionSettings(cls);
+    return ApplicationComponents.getInstance().getComponentSafe(DialogDimensionsSettings.class).getDimensionSettings(cls);
   }
 
   protected void updateDimensionSettings() {
