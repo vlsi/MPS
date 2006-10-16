@@ -42,9 +42,9 @@ public abstract class PropertySupport {
         String dataTypeName = dataType.getName();
         if (Primitives.STRING_TYPE.equals(dataTypeName)) {
           propertySupport = new DefaultPropertySupport();
-        } else if (dataTypeName.equals(Primitives.INTEGER_TYPE)) {
+        } else if (Primitives.INTEGER_TYPE.equals(dataTypeName)) {
           propertySupport = new IntegerPropertySupport();
-        } else if (dataTypeName.equals(Primitives.BOOLEAN_TYPE)) {
+        } else if (Primitives.BOOLEAN_TYPE.equals(dataTypeName)) {
           propertySupport = new BooleanPropertySupport();
         } else {
           throw new RuntimeException("Unknown primitive type: " + dataTypeName);

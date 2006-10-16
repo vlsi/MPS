@@ -1,8 +1,8 @@
 package jetbrains.mps.textGen;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.smodel.SNode;
 
 /**
  * User: Dmitriev.
@@ -42,6 +42,9 @@ public class TextGenManager {
 
     SNodeTextGen nodeTextGen = loadNodeTextGen(node);
     LOG.assertLog(nodeTextGen != null, "Couldn't find text generator for " + node.getDebugText());
+    
+    assert nodeTextGen != null;
+
     nodeTextGen.setBuffer(buffer);
     nodeTextGen.doGenerateText(node);
   }
