@@ -19,7 +19,7 @@ import jetbrains.mps.typesystem.TypeCheckerAccess;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NodesParetoFrontier;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.annotation.ThinkTwice;
+import jetbrains.mps.util.annotation.UseCarefully;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -1152,7 +1152,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     setSelectionDontClearStack(newSelectedCell, resetLastCaretX);
   }
 
-  @ThinkTwice
+  @UseCarefully
   public void setSelectionDontClearStack(EditorCell newSelectedCell, boolean resetLastCaretX) {
     if (resetLastCaretX) {
       resetLastCaretX();
@@ -1173,8 +1173,17 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       mySelectedCell.setSelected(true);
     }
     if (mySelectedCell != null) {
-      Rectangle selectionRect = new Rectangle(newSelectedCell.getX(), newSelectedCell.getY(), newSelectedCell.getWidth()+30, newSelectedCell.getHeight());
-      Rectangle fakeRect = new Rectangle(0, newSelectedCell.getY(), newSelectedCell.getWidth(), newSelectedCell.getHeight());
+      EditorCell cell = getDeepestSelectedCell();
+      Rectangle selectionRect;
+      if (cell instanceof EditorCell_Label) {
+        EditorCell_Label cellLabel = (EditorCell_Label) cell;
+        int caretX = cellLabel.getCaretX();
+        int charWidth = cellLabel.getCharWidth();
+        selectionRect = new Rectangle(caretX-2*charWidth, cellLabel.getY(), 4*charWidth, cellLabel.getHeight());
+      } else {
+        selectionRect = new Rectangle(cell.getX(), cell.getY(), 30, cell.getHeight());
+      }
+      Rectangle fakeRect = new Rectangle(0,cell.getY(), 30, cell.getHeight());
       scrollRectToVisible(fakeRect);
       scrollRectToVisible(selectionRect);
     }

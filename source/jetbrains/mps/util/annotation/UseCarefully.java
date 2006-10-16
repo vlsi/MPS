@@ -11,5 +11,5 @@ import java.lang.annotation.RetentionPolicy;
  * To change this template use File | Settings | File Templates.
  */
 @Retention(RetentionPolicy.SOURCE)
-public @interface ThinkTwice {
+public @interface UseCarefully {
 }
