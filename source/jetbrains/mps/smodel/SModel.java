@@ -589,11 +589,13 @@ public class SModel implements Iterable<SNode> {
 
   public boolean isExternallyResolvable() {
     SModelDescriptor modelDescriptor = getModelDescriptor();
+    assert modelDescriptor != null;
     return modelDescriptor.isExternallyResolvable();
   }
 
   public boolean isNotEditable() {
     SModelDescriptor modelDescriptor = getModelDescriptor();
+    assert modelDescriptor != null;
     return modelDescriptor.isNotEditable();
   }
 

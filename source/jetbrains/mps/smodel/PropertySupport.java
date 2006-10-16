@@ -40,7 +40,7 @@ public abstract class PropertySupport {
       }
       if (dataType instanceof PrimitiveDataTypeDeclaration) {
         String dataTypeName = dataType.getName();
-        if (dataTypeName.equals(Primitives.STRING_TYPE)) {
+        if (Primitives.STRING_TYPE.equals(dataTypeName)) {
           propertySupport = new DefaultPropertySupport();
         } else if (dataTypeName.equals(Primitives.INTEGER_TYPE)) {
           propertySupport = new IntegerPropertySupport();
@@ -92,15 +92,15 @@ public abstract class PropertySupport {
   }
 
   public static boolean isString(PrimitiveDataTypeDeclaration datatype) {
-    return datatype.getName().equals(Primitives.STRING_TYPE);
+    return Primitives.STRING_TYPE.equals(datatype.getName());
   }
 
   public static boolean isInteger(PrimitiveDataTypeDeclaration datatype) {
-    return datatype.getName().equals(Primitives.INTEGER_TYPE);
+    return Primitives.INTEGER_TYPE.equals(datatype.getName());
   }
 
   public static boolean isBoolean(PrimitiveDataTypeDeclaration datatype) {
-    return datatype.getName().equals(Primitives.BOOLEAN_TYPE);
+    return Primitives.BOOLEAN_TYPE.equals(datatype.getName());
   }
 
 

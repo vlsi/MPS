@@ -1688,7 +1688,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           EditorCell cell = findNodeCell(addedChild);
           changeSelectionWRTFocusPolicy(cell);
           return;
-        } else if (lastAdd instanceof SModelReferenceEvent) {
+        } else //noinspection ConstantConditions
+          if (lastAdd instanceof SModelReferenceEvent) {
           SModelReferenceEvent re = (SModelReferenceEvent) lastAdd;
           selectRefCell(re.getReference());
           return;
@@ -1731,6 +1732,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           return;
         }
 
+        //noinspection ConstantConditions
         if (lastRemove instanceof SModelReferenceEvent) {
           SModelReferenceEvent re = (SModelReferenceEvent) lastRemove;
           SReference ref = re.getReference();

@@ -1,13 +1,15 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
-import jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.EnumerationDataTypeDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 
 public class EnumPropertySubstituteInfo extends AbstractNodeSubstituteInfo {
 
@@ -32,7 +34,9 @@ public class EnumPropertySubstituteInfo extends AbstractNodeSubstituteInfo {
         }
 
         public SNode doSubstitute(String pattern) {
-          getSourceNode().setProperty(myPropertyDeclaration.getName(), ((EnumerationMemberDeclaration) getParameterNode()).getInternalValue());
+          String propertyName = myPropertyDeclaration.getName();
+          assert propertyName != null;
+          getSourceNode().setProperty(propertyName, ((EnumerationMemberDeclaration) getParameterNode()).getInternalValue());
           return null;
         }
       });

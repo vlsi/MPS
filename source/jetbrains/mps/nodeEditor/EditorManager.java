@@ -1,21 +1,23 @@
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.annotations.AttributeConcept;
 import jetbrains.mps.annotations.LinkAttributeConcept;
 import jetbrains.mps.annotations.PropertyAttributeConcept;
-import jetbrains.mps.annotations.AttributeConcept;
+import jetbrains.mps.bootstrap.structureLanguage.AnnotationLinkDeclaration;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeProxy;
-import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
-import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.AnnotationLinkDeclaration;
+import jetbrains.mps.smodel.event.SModelChildEvent;
+import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.smodel.event.SModelPropertyEvent;
+import jetbrains.mps.smodel.event.SModelReferenceEvent;
 
 import java.awt.Color;
 import java.awt.event.KeyEvent;
@@ -246,6 +248,7 @@ public class EditorManager {
       return nodeCell;
     }
 
+    assert nodeCell != null;
     nodeCell.setInspectorCell(isInspectorCell);
     return nodeCell;
   }

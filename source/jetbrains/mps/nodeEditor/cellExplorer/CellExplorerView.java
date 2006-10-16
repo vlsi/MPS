@@ -11,9 +11,6 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.TreeTextUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.*;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
@@ -225,7 +222,13 @@ public class CellExplorerView extends DefaultTool {
     }
 
     private void showCell() {
-      getEditorsPane().getCurrentEditor().getCurrentEditorComponent().changeSelection(myCell);
+      IEditor currentEditor = getEditorsPane().getCurrentEditor();
+      if (currentEditor != null) {
+        AbstractEditorComponent currentComponent = currentEditor.getCurrentEditorComponent();
+        if (currentComponent != null) {
+          currentComponent.changeSelection(myCell);
+        }
+      }
     }
 
     public void doubleClick() {

@@ -1,14 +1,15 @@
 package jetbrains.mps.resolve;
 
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.smodel.action.DefaultReferentNodeSubstituteAction;
-import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
-import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.EditorsPane;
-import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.ide.EditorsPane;
+import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
+import jetbrains.mps.smodel.action.DefaultReferentNodeSubstituteAction;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.util.CollectionUtil;
 
 import java.util.*;
@@ -48,7 +49,11 @@ public class Resolver {
 
   public static void resolve(final SReference reference, final IOperationContext operationContext){
     EditorsPane editorsPane = operationContext.getComponent(EditorsPane.class);
-    EditorContext editorContext = editorsPane.getEditorFor(reference.getSourceNode().getContainingRoot()).getEditorContext();
+    SNode containingRoot = reference.getSourceNode().getContainingRoot();
+    assert containingRoot != null;
+    IEditor editorFor = editorsPane.getEditorFor(containingRoot);
+    assert editorFor != null;
+    EditorContext editorContext = editorFor.getEditorContext();
     final List<INodeSubstituteAction> matchingActions = createResolveActions(reference, operationContext, editorContext);
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
@@ -86,9 +91,13 @@ public class Resolver {
 
     ConceptDeclaration sourceConcept = SModelUtil.getConceptDeclaration(sourceNode, operationContext.getScope());
     LinkDeclaration refLinkDeclaration = SModelUtil.findLinkDeclaration(sourceConcept, role);
-    LinkDeclaration childLinkDeclaration = SModelUtil.findLinkDeclaration(SModelUtil.getConceptDeclaration(sourceNode.getParent(), operationContext.getScope()), sourceNode.getRole_());
+    SNode sourceParent = sourceNode.getParent();
 
-    EditorCell editorCell = sourceNode.getParent() == null ? editorContext.createNodeCell(sourceNode) : editorContext.createNodeCell(sourceNode.getParent());
+    assert sourceParent != null;
+
+    LinkDeclaration childLinkDeclaration = SModelUtil.findLinkDeclaration(SModelUtil.getConceptDeclaration(sourceParent, operationContext.getScope()), sourceNode.getRole_());
+
+    EditorCell editorCell = editorContext.createNodeCell(sourceParent);
     EditorCell inspectedCell = editorContext.createInspectedCell(sourceNode, null);
 
     EditorCell refCell = searchForRefCell(editorCell, sourceNode, refLinkDeclaration, childLinkDeclaration);

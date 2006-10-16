@@ -6,21 +6,20 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodeProxy;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.EditorsPane;
+import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.ide.navigation.HistoryItem;
 import jetbrains.mps.ide.navigation.IHistoryItem;
 import jetbrains.mps.ide.navigation.InspectorHistoryItem;
-import jetbrains.mps.ide.navigation.HistoryItem;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeProxy;
+import jetbrains.mps.smodel.event.SModelEvent;
+import org.jetbrains.annotations.NotNull;
 
-import javax.swing.*;
+import javax.swing.JComponent;
 import javax.swing.event.ChangeListener;
 import java.util.List;
-
-import org.jetbrains.annotations.NotNull;
 
 public class InspectorEditorComponent extends AbstractEditorComponent implements IEditor {
 
@@ -110,7 +109,10 @@ public class InspectorEditorComponent extends AbstractEditorComponent implements
     IHistoryItem inspectorItem = super.getHistoryItemFromEditor();
     if (!(inspectorItem instanceof HistoryItem)) return inspectorItem;
 
-    AbstractEditorComponent outer = getOperationContext().getComponent(EditorsPane.class).getCurrentEditor().getCurrentEditorComponent(); 
+    IEditor currentEditor = getOperationContext().getComponent(EditorsPane.class).getCurrentEditor();
+    assert currentEditor != null;
+    AbstractEditorComponent outer = currentEditor.getCurrentEditorComponent();
+    assert outer != null;
     IHistoryItem outerItem = outer.getHistoryItemFromEditor();
     return new InspectorHistoryItem((HistoryItem) inspectorItem, outerItem);
   }

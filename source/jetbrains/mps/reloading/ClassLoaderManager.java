@@ -1,18 +1,16 @@
 package jetbrains.mps.reloading;
 
+import jetbrains.mps.conversion.classpath.ClassPathModelRootManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
-import jetbrains.mps.util.PathManager;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.projectLanguage.ModelRoot;
-import jetbrains.mps.conversion.classpath.ClassPathModelRootManager;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.util.PathManager;
+import sun.misc.Launcher;
 
 import java.io.File;
-import java.net.URL;
 import java.net.URISyntaxException;
-
-import sun.misc.Launcher;
+import java.net.URL;
 
 /**
  * @author Kostik
@@ -82,7 +80,7 @@ public class ClassLoaderManager {
     }
 
     if (ApplicationComponents.getInstance().getComponent(MPSProjects.class) != null) {
-      for (MPSProject project : ApplicationComponents.getInstance().getComponent(MPSProjects.class).getProjects()) {
+      for (MPSProject project : ApplicationComponents.getInstance().getComponentSafe(MPSProjects.class).getProjects()) {
         for (String s : project.getClassPath()) {
           addClassPathItem(s);
         }
@@ -97,7 +95,7 @@ public class ClassLoaderManager {
 
     myClassLoader = new MPSClassLoader(myItems);
 
-    for (MPSProject project : ApplicationComponents.getInstance().getComponent(MPSProjects.class).getProjects()) {
+    for (MPSProject project : ApplicationComponents.getInstance().getComponentSafe(MPSProjects.class).getProjects()) {
       for (IModule module : project.getModules()) {
         AbstractModule am = (AbstractModule) module;
 

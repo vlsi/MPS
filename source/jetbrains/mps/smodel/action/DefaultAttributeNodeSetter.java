@@ -1,11 +1,8 @@
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
-import jetbrains.mps.smodel.SModelUtil;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.AnnotationLinkDeclaration;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SNode;
 
 /**
  * Created by IntelliJ IDEA.
@@ -22,6 +19,7 @@ public class DefaultAttributeNodeSetter extends DefaultChildNodeSetter {
   public void execute(SNode parenNode, SNode oldChild, SNode newChild, IScope scope) {
     if (oldChild != null) {
       String role = oldChild.getRole_();
+      assert role != null;
       parenNode.insertChild(oldChild, role, newChild);
       oldChild.delete();
     }

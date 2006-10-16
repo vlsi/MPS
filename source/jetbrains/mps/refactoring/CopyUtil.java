@@ -1,9 +1,12 @@
 package jetbrains.mps.refactoring;
 
-import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.*;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 public class CopyUtil {
@@ -33,6 +36,7 @@ public class CopyUtil {
 
   private static SNode clone(SNode node, SModel targetModel, Map<SNode, SNode> mapping) {
     SNode result = ModelPersistence.createNodeInstance(node.getClass().getName(), targetModel);
+    assert result != null;
     mapping.put(node, result);
 
     targetModel.addLanguage(SModelUtil.getLanguage(node, GlobalScope.getInstance()));
