@@ -145,17 +145,6 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     repaint();
   }
 
-  private void selectTreeNodes(Iterable<MPSTreeNode> nodes) {
-    if (!nodes.iterator().hasNext()) return;
-    ArrayList<TreePath> treePaths = new ArrayList<TreePath>();
-    for (MPSTreeNode node : nodes) {
-      TreePath treePath = new TreePath(node.getPath());
-      treePaths.add(treePath);
-    }
-    myTree.setSelectionPaths(treePaths.toArray(new TreePath[treePaths.size()]));
-    myTree.scrollPathToVisible(treePaths.get(0));
-  }
-
   public void selectNode(SNode node, IOperationContext context) {
     IModule module = context.getModule();
     if (module == null) {
@@ -218,6 +207,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     DefaultTreeModel model = (DefaultTreeModel) myTree.getModel();
     MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
     SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
+    assert modelDescriptor != null;
     SModelTreeNode modelTreeNode = findSModelTreeNode(rootNode, modelDescriptor);
     if (modelTreeNode == null) {
       LOG.warning("Couldn't select node " + node.getDebugText() + " : tree node for model \"" + modelDescriptor.getModelUID() + "\" not found.");

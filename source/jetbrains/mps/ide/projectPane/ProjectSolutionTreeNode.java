@@ -7,7 +7,9 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Solution;
 
-import javax.swing.*;
+import javax.swing.Icon;
+import javax.swing.JPopupMenu;
+import java.io.File;
 
 /**
  * Created by IntelliJ IDEA.
@@ -29,7 +31,9 @@ class ProjectSolutionTreeNode extends MPSTreeNode {
   }
 
   public String getNodeIdentifier() {
-    return mySolution.getDescriptorFile().getAbsolutePath();
+    File descriptorFile = mySolution.getDescriptorFile();
+    assert descriptorFile != null;
+    return descriptorFile.getAbsolutePath();
   }
 
   public JPopupMenu getPopupMenu() {

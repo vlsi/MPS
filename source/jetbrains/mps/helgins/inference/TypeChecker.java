@@ -1,13 +1,13 @@
 package jetbrains.mps.helgins.inference;
 
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Mapper;
 import jetbrains.mps.helgins.*;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.refactoring.CopyUtil;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.refactoring.CopyUtil;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Mapper;
+import jetbrains.mps.util.Pair;
 
 import java.util.*;
 
@@ -158,7 +158,9 @@ public class TypeChecker {
         return error;
       }
       SNode parent = child.getParent();
+      assert parent != null;
       String roleInParent = child.getRole_();
+      assert roleInParent != null;
       parent.removeChild(child);
       SNode childReplacement = childrenReplacement.get(child);
       childReplacement = CopyUtil.copy(childReplacement, parent.getModel());

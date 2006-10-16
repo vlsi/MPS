@@ -20,7 +20,10 @@ import jetbrains.mps.util.QueryMethod;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 
 public class TemplateGenUtil {
   private static final Logger LOG = Logger.getLogger(TemplateGenUtil.class);
@@ -92,8 +95,10 @@ public class TemplateGenUtil {
       generator.showErrorMessage(sourceNode, templateNode, "unacceptable referent: " + targetReferentNode.getDebugText() + " for role \"" + role + "\" in " + targetNode.getDebugText());
       return false;
     }
+    SModelDescriptor modelDescriptor = targetReferentNode.getModel().getModelDescriptor();
+    assert modelDescriptor != null;
     if (targetReferentNode.getModel() != targetNode.getModel() &&
-            targetReferentNode.getModel().getModelDescriptor().isTransient()) {
+            modelDescriptor.isTransient()) {
       // references on transient nodes are not acceptable
       generator.showErrorMessage(sourceNode, templateNode, "unacceptable referent (transient): " + targetReferentNode.getDebugText() + " for role \"" + role + "\" in " + targetNode.getDebugText());
       return false;
@@ -216,6 +221,7 @@ public class TemplateGenUtil {
     if (templateFragments.size() == 1) {
       TemplateFragment templateFragment = templateFragments.get(0);
       SNode templateFragmentNode = templateFragment.getParent();
+      assert templateFragmentNode != null;
       if (TemplateDeclaration.CONTENT_NODE.equals(templateFragmentNode.getRole_())) {
         return true;
       }
@@ -301,8 +307,8 @@ public class TemplateGenUtil {
     role.equals(ITemplateGenerator.ROLE_TEMPLATE_FRAGMENT) ||
     role.startsWith(ITemplateGenerator.ROLE_PREFIX_PROPERTY_MAKRO) ||
     role.startsWith(ITemplateGenerator.ROLE_PREFIX_REFEENCE_MAKRO);*/
-    return role.equals(AttributesRolesUtil.childRoleFromAttributeRole(NodeMacro_AnnotationLink.NODE_MACRO)) ||
-            role.equals(AttributesRolesUtil.childRoleFromAttributeRole(TemplateFragment_AnnotationLink.TEMPLATE_FRAGMENT)) ||
+    return AttributesRolesUtil.childRoleFromAttributeRole(NodeMacro_AnnotationLink.NODE_MACRO).equals(role) ||
+            AttributesRolesUtil.childRoleFromAttributeRole(TemplateFragment_AnnotationLink.TEMPLATE_FRAGMENT).equals(role) ||
             AttributesRolesUtil.isChildRoleOfLinkAttributeRole(ReferenceMacro_AnnotationLink.REFERENCE_MACRO, role) ||
             AttributesRolesUtil.isChildRoleOfPropertyAttributeRole(PropertyMacro_AnnotationLink.PROPERTY_MACRO, role);
   }
@@ -417,6 +423,7 @@ public class TemplateGenUtil {
     }
   }
 
+  @SuppressWarnings({"UnusedDeclaration"})
   private static void checkNodesFromQuery(List<SNode> queryNodes, SNode templateNode, ITemplateGenerator generator) {
 //    if (!queryNodes.isEmpty()) {
 //      Iterator<SNode> iterator = queryNodes.iterator();

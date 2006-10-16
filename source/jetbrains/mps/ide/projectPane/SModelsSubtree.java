@@ -1,17 +1,18 @@
 package jetbrains.mps.ide.projectPane;
 
+import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.ActionManager;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.IModule;
 
-import javax.swing.*;
+import javax.swing.Icon;
+import javax.swing.JPopupMenu;
 import java.util.*;
 
 /**
@@ -28,7 +29,9 @@ class SModelsSubtree {
     list.add(new ModelsGroupTreeNode("<.>", operationContext)); // default
 
     Map<String, List<SModelDescriptor>> stereotypes = new HashMap<String, List<SModelDescriptor>>();
-    for (SModelDescriptor modelDescriptor : operationContext.getModule().getOwnModelDescriptors()) {
+    IModule module = operationContext.getModule();
+    assert module != null;
+    for (SModelDescriptor modelDescriptor : module.getOwnModelDescriptors()) {
       String stereotype = modelDescriptor.getStereotype();
       if (stereotype == null || stereotype.length() == 0) {
         list.get(0).add(new SModelTreeNode(modelDescriptor, null, operationContext));

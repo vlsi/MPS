@@ -1,10 +1,13 @@
 package jetbrains.mps.ide.projectPane;
 
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.project.IModule;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -39,9 +42,7 @@ public class SortUtil {
           return 0;
         }
         String name1 = ((IModule) o1).getModuleUID();
-        String name2 = ((IModule) o2).getModuleUID();
-        if (name1 == null) name1 = "";
-        if (name2 == null) name2 = "";
+        String name2 = ((IModule) o2).getModuleUID();        
         return name1.compareTo(name2);
       }
     }

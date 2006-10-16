@@ -121,7 +121,7 @@ public class HierarchyView extends DefaultTool {
         parentTreeNode = hierarchyTreeNode;
       }
       myTreeNode = hierarchyTreeNode;
-      TextTreeNode textRootNode = new RootTextTreeNode("<html>Hierarchy for concept <font color=\"#400090\"><b>" + TreeTextUtil.toHtml(((ConceptDeclaration)myTreeNode.getUserObject()).getName()) + "</b></font>");
+      TextTreeNode textRootNode = new RootTextTreeNode("<html>Hierarchy for concept <font color=\"#400090\"><b>" + TreeTextUtil.toHtml(((ConceptDeclaration) myTreeNode.getUserObject()).getName()) + "</b></font>");
       textRootNode.add(rootNode);
       return textRootNode;
     }

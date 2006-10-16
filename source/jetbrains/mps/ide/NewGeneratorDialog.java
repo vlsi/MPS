@@ -4,9 +4,11 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.ui.SmartFileChooser;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.projectLanguage.*;
+import jetbrains.mps.projectLanguage.GeneratorDescriptor;
+import jetbrains.mps.projectLanguage.LanguageDescriptor;
+import jetbrains.mps.projectLanguage.ModelRoot;
+import jetbrains.mps.projectLanguage.ModuleRoot;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.transformation.TLBase.MappingConfiguration;
 import jetbrains.mps.util.NameUtil;
 
@@ -17,7 +19,7 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.io.File;
 import java.io.IOException;
-import java.util.*;
+import java.util.Arrays;
 import java.util.List;
 
 public class NewGeneratorDialog extends BaseDialog {
@@ -104,7 +106,9 @@ public class NewGeneratorDialog extends BaseDialog {
   private void updateTemplateModelsDir() {
     String targetLanguageName = (String) myTargetLanguageName.getSelectedItem();
     try {
-      String path = mySourceLanguage.getDescriptorFile().getParentFile().getCanonicalPath();
+      File descriptorFile = mySourceLanguage.getDescriptorFile();
+      assert descriptorFile != null;
+      String path = descriptorFile.getParentFile().getCanonicalPath();
       String modelsDir = path +
               File.separatorChar + "generators" +
               File.separatorChar + NameUtil.shortNameFromLongName(targetLanguageName) +
@@ -176,7 +180,9 @@ public class NewGeneratorDialog extends BaseDialog {
 
     // add target language module to module roots
     ModuleRoot targetLanguageModuleRoot = new ModuleRoot(model);
-    targetLanguageModuleRoot.setPath(targetLanguage.getDescriptorFile().getParentFile().getAbsolutePath());
+    File descriptorFile = targetLanguage.getDescriptorFile();
+    assert descriptorFile != null;
+    targetLanguageModuleRoot.setPath(descriptorFile.getParentFile().getAbsolutePath());
     generatorDescriptor.addModuleRoot(targetLanguageModuleRoot);
 
     // add new generator to language

@@ -11,8 +11,8 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.projectLanguage.Editor;
 import jetbrains.mps.projectLanguage.LanguageDescriptor;
 import jetbrains.mps.projectLanguage.Model;
@@ -118,7 +118,9 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
       }
     });
 
-    editorDeclaration = SModelUtil.findEditorDeclaration(language.getEditorModelDescriptor().getSModel(), (ConceptDeclaration) node);
+    SModelDescriptor editorModelDescriptor = language.getEditorModelDescriptor();
+    assert editorModelDescriptor != null;
+    editorDeclaration = SModelUtil.findEditorDeclaration(editorModelDescriptor.getSModel(), (ConceptDeclaration) node);
     navigateToEditorDeclaration(editorDeclaration, languageContext, currentEditor, ide);
   }
 
@@ -148,6 +150,8 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
         break;
       }
     }
+
+    assert modelRoot != null;
 
     SModelDescriptor editorModelDescriptor = language.createModel(new SModelUID(language.getModuleUID(), "editor", ""), modelRoot);
     SModel editorModel = editorModelDescriptor.getSModel();

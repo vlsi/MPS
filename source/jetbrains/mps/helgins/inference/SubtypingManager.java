@@ -1,17 +1,16 @@
 package jetbrains.mps.helgins.inference;
 
-import jetbrains.mps.helgins.inference.EquationManager;
-import jetbrains.mps.helgins.*;
-import jetbrains.mps.patterns.util.MatchingUtil;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
-import jetbrains.mps.formulaLanguage.evaluator.ExpressionContext;
-import jetbrains.mps.formulaLanguage.evaluator.ExpressionEvaluatorManager;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.formulaLanguage.evaluator.ExpressionContext;
+import jetbrains.mps.formulaLanguage.evaluator.ExpressionEvaluatorManager;
+import jetbrains.mps.helgins.*;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.patterns.util.MatchingUtil;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mpswiki.queryLanguage.VariableCondition;
