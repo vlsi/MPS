@@ -207,6 +207,19 @@
                 </node>
               </node>
             </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.AssertStatement" id="1161000497288">
+              <node role="condition" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1161000501618">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1161000511716">
+                  <property name="value" value="3" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1161000507262">
+                  <property name="value" value="2" />
+                </node>
+              </node>
+              <node role="message" type="jetbrains.mps.baseLanguage.StringLiteral" id="1161000519748">
+                <property name="value" value=":-(" />
+              </node>
+            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1158161066431">
               <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1158161068808">
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1158161113273">
