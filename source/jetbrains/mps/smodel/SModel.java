@@ -589,7 +589,7 @@ public class SModel implements Iterable<SNode> {
 
   public boolean isExternallyResolvable() {
     SModelDescriptor modelDescriptor = getModelDescriptor();
-    assert modelDescriptor != null;
+    if (modelDescriptor == null) return false;
     return modelDescriptor.isExternallyResolvable();
   }
 
