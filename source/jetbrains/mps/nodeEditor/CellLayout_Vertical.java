@@ -70,10 +70,10 @@ public class CellLayout_Vertical extends AbstractCellLayout {
       height += cellHeight;
     }
     for (EditorCell editorCell : editorCells.contentCells()) {
-       lastCellWidth = editorCell.getWidth();
-       int indent = EditorUtil.getBracesIndent(editorCell);
-       int delta = braceIndent - indent;
-       width = Math.max(width, lastCellWidth + delta);
+      lastCellWidth = editorCell.getWidth();
+      int indent = EditorUtil.getBracesIndent(editorCell);
+      int delta = braceIndent - indent;
+      width = Math.max(width, lastCellWidth + delta);
     }
     if (editorCells.isDrawBrackets()) {
       width += EditorCell_Collection.BRACKET_WIDTH * 2;
@@ -89,17 +89,35 @@ public class CellLayout_Vertical extends AbstractCellLayout {
 
     if (myGridLayout) {
       int x0 = x;
+      int size = editorCells.getContentCellsCount();
+      int[] maxHeights = new int[size];
+      for (int j = 0; j < maxHeights.length; j++) {
+        maxHeights[j] = 0;
+      }
       for (int i = 0; ; i++) {
         int maxWidth = -1;
+        int j = 0;
         for (EditorCell editorCell : editorCells.contentCells()) {
           if (editorCell instanceof EditorCell_Collection) {
             EditorCell_Collection editorCellCollection = (EditorCell_Collection) editorCell;
             CellLayout cellLayout = editorCellCollection.getCellLayout();
-            if (cellLayout instanceof CellLayout_Horizontal && i < editorCellCollection.getChildCount()) {
-              EditorCell cell = editorCellCollection.getChildAt(i);
-              maxWidth = Math.max(maxWidth, cell.getWidth());
+            if (cellLayout instanceof CellLayout_Horizontal) {
+              if (i < editorCellCollection.getChildCount()) {
+                EditorCell cell = editorCellCollection.getChildAt(i);
+                cell.setX(x0);
+                cell.relayout();
+                maxWidth = Math.max(maxWidth, cell.getWidth());
+                maxHeights[j] = Math.max(maxHeights[j], cell.getHeight());
+              }
+            } else {
+              editorCellCollection.relayout();
+              maxHeights[j] = Math.max(maxHeights[j], editorCell.getHeight());
             }
+          } else {
+            editorCell.relayout();
+            maxHeights[j] = Math.max(maxHeights[j], editorCell.getHeight());
           }
+          j++;
         }
         for (EditorCell editorCell : editorCells.contentCells()) {
           if (editorCell instanceof EditorCell_Collection) {
@@ -107,8 +125,6 @@ public class CellLayout_Vertical extends AbstractCellLayout {
             CellLayout cellLayout = editorCellCollection.getCellLayout();
             if (cellLayout instanceof CellLayout_Horizontal && i < editorCellCollection.getChildCount()) {
               EditorCell cell = editorCellCollection.getChildAt(i);
-              cell.setX(x0);
-              cell.relayout();
               cell.setWidth(maxWidth);
             }
           }
@@ -118,14 +134,22 @@ public class CellLayout_Vertical extends AbstractCellLayout {
         }
         x0 += maxWidth;
       }
+      int j = 0;
+      height = 0;
+      for (EditorCell editorCell : editorCells.contentCells()) {
+        editorCell.moveTo(editorCell.getX(), y + height);
+        int deltaHeight = maxHeights[j];
+        editorCell.setHeight(deltaHeight);
+        height += deltaHeight;
+        j++;
+      }
       for (EditorCell editorCell : editorCells.contentCells()) {
         if (editorCell instanceof EditorCell_Collection) {
           EditorCell_Collection editorCellCollection = (EditorCell_Collection) editorCell;
           CellLayout cellLayout = editorCellCollection.getCellLayout();
           if (cellLayout instanceof CellLayout_Horizontal) {
             int width0 = 0;
-            for (Object aEditorCellCollection : editorCellCollection) {
-              EditorCell cell = (EditorCell) aEditorCellCollection;
+            for (EditorCell cell : editorCellCollection) {
               width0 += cell.getWidth();
             }
             editorCellCollection.setWidth(width0);
@@ -133,6 +157,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
           }
         }
       }
+
     }
     if (usesBraces) {
       closingBrace.setY(y + height - closingBrace.getHeight());
@@ -204,19 +229,19 @@ public class CellLayout_Vertical extends AbstractCellLayout {
 
   public EditorCell findCell(EditorCell_Collection editorCells, int x, int y) {
     if (!(editorCells.getX() <= x && x < editorCells.getX() + editorCells.getWidth() &&
-          editorCells.getY() <= y && y < editorCells.getY() + editorCells.getHeight())) {
+            editorCells.getY() <= y && y < editorCells.getY() + editorCells.getHeight())) {
       return null;
     }
 
     if (editorCells.isFolded()) return editorCells;
-   /* for (EditorCell editorCell : editorCells) {
+    /* for (EditorCell editorCell : editorCells) {
       EditorCell cell = editorCell.findCell(x, y);
       if (cell != null) {
         return cell;
       }
     }*/
     EditorCell editorCell = null;
-     for (EditorCell editorCell1 : editorCells) {
+    for (EditorCell editorCell1 : editorCells) {
       editorCell = editorCell1;
       y = Math.max(editorCell.getY(), y);
       EditorCell cell = editorCell.findCell(x, y);
@@ -229,7 +254,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
     } else {
       return null;
     }
-   // return null;
+    // return null;
   }
 
 }

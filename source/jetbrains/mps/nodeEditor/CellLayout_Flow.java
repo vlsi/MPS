@@ -27,6 +27,18 @@ public class CellLayout_Flow extends AbstractCellLayout {
        <---- wEnd------>
   */
 
+  private void init() {
+    myWStart = 0;
+    myWEnd = 0;
+    myRowCount = 1;
+    myMaxDescent = 0;
+    myMaxAscent = 0;
+    myFirstLineHeight = -1;
+    myBossLayout = null;
+    myCurrentLineLayouts = new HashSet<CellLayout_Flow>();
+    myCurrentLine = new ArrayList<EditorCell>();
+  }
+
   private int myWStart = 0;
   private int myWEnd = 0;
   private int myRowCount = 1;
@@ -63,6 +75,7 @@ public class CellLayout_Flow extends AbstractCellLayout {
 
 
   public void doLayout(EditorCell_Collection editorCells) {
+    if (myBossLayout == null) init();
     new FlowLayouter(editorCells).doLayout();
   }
 
@@ -107,6 +120,7 @@ public class CellLayout_Flow extends AbstractCellLayout {
     private int myMaxRightX;
     private EditorCell_Collection myEditorCells;
     private boolean myNextIsPunctuation;
+    private boolean myToSkip;
 
     public FlowLayouter(EditorCell_Collection editorCells) {
       this.myEditorCells = editorCells;
@@ -125,6 +139,12 @@ public class CellLayout_Flow extends AbstractCellLayout {
       if (lookAhead.hasNext()) lookAhead.next();
 
       for (EditorCell cell : myEditorCells) {
+        if (myToSkip) {
+          myToSkip = false;
+          myNextIsPunctuation = false;
+          continue;
+        }
+
         //testing the next cell
         EditorCell nextCell = null;
         myNextIsPunctuation = false;
@@ -182,9 +202,11 @@ public class CellLayout_Flow extends AbstractCellLayout {
 
           } else {
             //punctuation must be at the same line as previous cell
+            cell.relayout();
             int allocatedWidth = cell.getWidth();
             if (myNextIsPunctuation) {
               assert nextCell != null;
+              nextCell.relayout();
               allocatedWidth += nextCell.getWidth();
             }
             //if end-of-line
@@ -192,6 +214,10 @@ public class CellLayout_Flow extends AbstractCellLayout {
               alignLine();
               nextLine();
               addCell(cell);
+             /* if (myNextIsPunctuation) {
+                addCell(nextCell);
+                myToSkip = true;
+              }*/
             } else {//default
               addCell(cell);
             }
@@ -231,11 +257,13 @@ public class CellLayout_Flow extends AbstractCellLayout {
 
     private void addCell(EditorCell cell) {
       cell.setX(myX);
+      if (myNextIsPunctuation) {
+        cell.setNextIsPunctuation();
+      }
       cell.relayout();
       myX +=cell.getWidth();
       if (myNextIsPunctuation) {
         myX -=cell.getRightInternalInset();
-        cell.setNextIsPunctuation();
       }
       setMaxAscent(Math.max(myMaxAscent, cell.getAscent()));
       setMaxDescent(Math.max(myMaxDescent, cell.getDescent()));
