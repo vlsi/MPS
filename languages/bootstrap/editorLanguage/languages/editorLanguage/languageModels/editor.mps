@@ -8185,7 +8185,7 @@
           <property name="textFgColor" value="blue" />
           <property name="fontStyle" value="ITALIC" />
           <property name="drawBorder" value="false" />
-          <property name="nullText" value="&lt;press Ctrl-Enter to add menu part&gt;" />
+          <property name="nullText" value="&lt;press Ctrl-Space to add menu part&gt;" />
         </node>
       </node>
     </node>
@@ -8194,6 +8194,7 @@
     <link role="conceptDeclaration" targetNodeId="2.1161038138599" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1161039611185">
       <property name="drawBorder" value="false" />
+      <property name="usesBraces" value="true" />
       <property name="vertical" value="true" />
       <property name="gridLayout" value="true" />
       <property name="drawBrackets" value="true" />
@@ -8208,7 +8209,6 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1161039672026">
         <property name="usesFolding" value="true" />
         <property name="drawBorder" value="false" />
-        <property name="usesBraces" value="true" />
         <property name="vertical" value="true" />
         <property name="selectable" value="false" />
         <property name="gridLayout" value="true" />
@@ -8306,6 +8306,14 @@
           <link role="relationDeclaration" targetNodeId="12.1137022507850" />
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1161102454722">
+    <link role="conceptDeclaration" targetNodeId="2.1161037819249" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1161102554449">
+      <property name="fontStyle" value="ITALIC" />
+      <property name="drawBorder" value="false" />
+      <property name="nullText" value="press Ctrl-Space to choose menu part" />
     </node>
   </node>
 </model>
