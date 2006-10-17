@@ -1243,8 +1243,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (myRootCell == null) {
       return new Dimension(viewRect.width, viewRect.height);
     }
-    return new Dimension(Math.max(viewRect.width, myRootCell.getWidth() + 10),
-            Math.max(viewRect.height, myRootCell.getHeight() + 10));
+    return new Dimension(Math.max(viewRect.width, myRootCell.getWidth() + myShiftX + 10),
+            Math.max(viewRect.height, myRootCell.getHeight() + myShiftY + 10));
   }
 
   public Dimension getPreferredScrollableViewportSize() {
