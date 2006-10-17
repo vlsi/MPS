@@ -252,6 +252,11 @@
       <link role="target" targetNodeId="1.1071489288298" />
       <link role="specializedLink" targetNodeId="1140103550593" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1161043038588">
+      <property name="role" value="elementCellMenu" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1161037552905" resolveInfo="CellMenu_ReplaceChild_Composite" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107223377710">
       <property name="value" value="list" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
@@ -1607,6 +1612,147 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1160493189132">
       <property name="value" value="property values" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1161037552905">
+    <property name="name" value="CellMenu_ReplaceChild_Composite" />
+    <link role="extends" targetNodeId="3.1133920641626" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1161037596031">
+      <property name="role" value="menuPart" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1161037819249" resolveInfo="CellMenu_ReplaceChildNode_Part" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1161037894673">
+      <property name="value" value="replace child node menu" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1161037819249">
+    <property name="name" value="CellMenu_ReplaceChild_Part" />
+    <link role="extends" targetNodeId="3.1133920641626" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1161037851375">
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1161038138599">
+    <property name="name" value="CellMenu_ReplaceChild_FromStrings" />
+    <link role="extends" targetNodeId="1161037819249" resolveInfo="CellMenu_ReplaceChildNode_Part" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1161038359635">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="parametersFunction" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1161039193230" resolveInfo="CellMenu_ReplaceChildNode_GetStrings" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1161038349853">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="setupFunction" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1161039393950" resolveInfo="CellMenu_ReplaceChild_Setup" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1161044262686">
+      <property name="value" value="replace child using strings as parameters" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1161039193230">
+    <property name="name" value="CellMenu_ReplaceChild_GetStrings" />
+    <link role="extends" targetNodeId="4.1137021947720" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1161039893663">
+      <property name="value" value="get strings" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1161042251550">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" />
+      <node role="target" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListType" id="1161042256958">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1161042261491">
+          <link role="classifier" extResolveInfo="36.[Classifier]String" />
+        </node>
+      </node>
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1161042400151">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1137546998352" />
+      <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1161042400152">
+        <property name="name" value="CellMenu_ReplaceChild_GetStrings_CurrentChild" />
+        <link role="extends" targetNodeId="4.1107135704075" />
+        <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1161042400153">
+          <property name="value" value="currentChild" />
+          <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+        </node>
+        <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1161042400154">
+          <link role="conceptLinkDeclaration" targetNodeId="4.1137545963098" />
+          <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1161042400155" />
+        </node>
+      </node>
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1161042533572">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1137546998352" />
+      <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1161042533573">
+        <property name="name" value="CellMenu_ReplaceChild_GetStrings_Scope" />
+        <link role="extends" targetNodeId="4.1107135704075" />
+        <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1161042533574">
+          <property name="value" value="scope" />
+          <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+        </node>
+        <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1161042533575">
+          <link role="conceptLinkDeclaration" targetNodeId="4.1137545963098" />
+          <node role="target" type="jetbrains.mps.baseLanguage.ClassifierType" id="1161042565811">
+            <link role="classifier" extResolveInfo="33.[Classifier]IScope" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1161042580541">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1137546998352" />
+      <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1161042580542">
+        <property name="name" value="CellMenu_ReplaceChild_GetStrings_OperationContext" />
+        <link role="extends" targetNodeId="4.1107135704075" />
+        <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1161042580559">
+          <property name="value" value="operationContext" />
+          <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+        </node>
+        <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1161042580560">
+          <link role="conceptLinkDeclaration" targetNodeId="4.1137545963098" />
+          <node role="target" type="jetbrains.mps.baseLanguage.ClassifierType" id="1161042616702">
+            <link role="classifier" extResolveInfo="33.[Classifier]IOperationContext" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1161039393950">
+    <property name="name" value="CellMenu_ReplaceChild_SetupFromString" />
+    <link role="extends" targetNodeId="4.1137021947720" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1161042853542">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1137546998352" />
+      <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1161042853543">
+        <property name="name" value="CellMenu_ReplaceChild_GetStrings_NewChild" />
+        <link role="extends" targetNodeId="4.1107135704075" />
+        <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1161042853544">
+          <property name="value" value="newChild" />
+          <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+        </node>
+        <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1161042853545">
+          <link role="conceptLinkDeclaration" targetNodeId="4.1137545963098" />
+          <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1161042853546" />
+        </node>
+      </node>
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1161042892385">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1137546998352" />
+      <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1161042892386">
+        <property name="name" value="CellMenu_ReplaceChild_GetStrings_Value" />
+        <link role="extends" targetNodeId="4.1107135704075" />
+        <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1161042892387">
+          <property name="value" value="value" />
+          <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+        </node>
+        <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1161042892388">
+          <link role="conceptLinkDeclaration" targetNodeId="4.1137545963098" />
+          <node role="target" type="jetbrains.mps.baseLanguage.ClassifierType" id="1161042916952">
+            <link role="classifier" extResolveInfo="36.[Classifier]String" />
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>
