@@ -1319,13 +1319,17 @@
       <property name="value" value="embedded block of code" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
+    <node role="conceptLinkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLinkDeclaration" id="1137545148427">
+      <property name="name" value="conceptFunctionReturnType" />
+      <link role="targetType" targetNodeId="1068431790189" />
+    </node>
     <node role="conceptLinkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLinkDeclaration" id="1137546998352">
       <property name="name" value="conceptFunctionParameter" />
       <link role="targetType" targetNodeId="37.1071489090640" />
     </node>
-    <node role="conceptLinkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLinkDeclaration" id="1137545148427">
-      <property name="name" value="conceptFunctionReturnType" />
-      <link role="targetType" targetNodeId="1068431790189" />
+    <node role="conceptLinkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLinkDeclaration" id="1161119487665">
+      <property name="name" value="applicableConceptFunctionParameter" />
+      <link role="targetType" targetNodeId="37.1071489090640" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1144226303539">

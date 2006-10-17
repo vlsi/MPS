@@ -666,6 +666,30 @@
             <property name="drawBorder" value="true" />
             <property name="vertical" value="true" />
             <link role="relationDeclaration" targetNodeId="2.1073389446424" />
+            <node role="elementCellMenu" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceChild_Composite" id="1161121125628">
+              <node role="menuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceChild_FromStrings" id="1161121127051">
+                <node role="parametersFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceChild_GetStrings" id="1161121127052">
+                  <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1161121127053">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1161121604976">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.MinusExpression" id="1161121604977">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.MinusExpression" id="1161121698513">
+                          <node role="rightExpression" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_editorContext" id="1161121715923" />
+                          <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_operationContext" id="1161121604978" />
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_scope" id="1161121604979" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="setupFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceChild_SetupFromString" id="1161121127054">
+                  <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1161121127055">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1161121682683">
+                      <node role="expression" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_scope" id="1161121682684" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1080900876423">
