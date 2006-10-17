@@ -120,6 +120,8 @@ public class IconManager {
         } catch (Exception e) {
           e.printStackTrace();
         }
+      } catch (ClassNotFoundException e) {
+        //it's also ok
       } catch (Exception e) {
         e.printStackTrace();
       }
