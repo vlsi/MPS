@@ -213,7 +213,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public void putUserObject(@NotNull Object key,
-                            @NotNull Object value) {
+                            @Nullable Object value) {
     myUserObjects.put(key, value);
   }
 

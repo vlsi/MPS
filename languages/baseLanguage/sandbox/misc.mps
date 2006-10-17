@@ -659,6 +659,35 @@
             <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1158939106812" />
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1161083717022">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1161083717023">
+            <property name="name" value="s" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1161083717024">
+              <link role="classifier" extResolveInfo="1.[Classifier]String" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1161083726886">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1161083726887">
+            <property name="name" value="t" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1161083726888">
+              <link role="classifier" extResolveInfo="1.[Classifier]String" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.AssertStatement" id="1161083686264">
+          <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1161083698080">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1161083700848">
+              <link role="variableDeclaration" targetNodeId="1158874525581" resolveInfo="i" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1161083696297">
+              <link role="variableDeclaration" targetNodeId="1158874525581" resolveInfo="i" />
+            </node>
+          </node>
+          <node role="message" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1161083747113">
+            <property name="value" value="1" />
+          </node>
+        </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1158874525597" />
     </node>

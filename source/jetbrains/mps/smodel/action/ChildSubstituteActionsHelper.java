@@ -217,6 +217,9 @@ public class ChildSubstituteActionsHelper {
     String referenceAlias = SModelUtil.getConceptProperty(referenceNodeConcept, "alias", scope);
     // handle pattern 'xxx <{_referent_role_}> yyy'
     if (referenceAlias == null || !referenceAlias.matches(".*<\\{.+\\}>.*")) {
+
+
+      
       return referentMatchingText;
     }
     String[] matches = referenceAlias.split("<\\{|\\}>");

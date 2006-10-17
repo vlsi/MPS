@@ -34,7 +34,7 @@ public class IntelligentInputUtil {
       substituteInfo = new NullSubstituteInfo();
     }
 
-    List<INodeSubstituteItem> matchingActions = substituteInfo.getMatchingItems(smallPattern, true);
+
 
     EditorCell cellForNewNode;
     SNode newNode;
@@ -42,6 +42,7 @@ public class IntelligentInputUtil {
       newNode = cell.getSNode();
       cellForNewNode = cell;
     } else if (uniqueAction(substituteInfo, smallPattern, tail)) {
+      List<INodeSubstituteItem> matchingActions = substituteInfo.getMatchingItems(smallPattern, true);
       INodeSubstituteItem item = matchingActions.get(0);
       newNode = item.doSubstitute(smallPattern);
       if (newNode == null) {
