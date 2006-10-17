@@ -21,4 +21,6 @@ public interface INodeSubstituteInfo {
   void setOriginalText(String text);
 
   String getOriginalText();
+
+  boolean hasExactlyNItems(String pattern, boolean strictMatching, int n);
 }

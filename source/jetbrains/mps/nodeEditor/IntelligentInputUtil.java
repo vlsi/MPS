@@ -89,8 +89,10 @@ public class IntelligentInputUtil {
   }
 
   private static boolean uniqueAction(INodeSubstituteInfo info, String smallPattern, String tail) {
-    if ("".equals(tail)) return info.getMatchingItems(smallPattern, true).size() == 1 && info.getMatchingItems(smallPattern, false).size() == 1;
-    return info.getMatchingItems(smallPattern, true).size() == 1 && info.getMatchingItems(smallPattern+tail, false).size() == 0;
+    if ("".equals(tail)) {
+      return info.hasExactlyNItems(smallPattern, true, 1) && info.hasExactlyNItems(smallPattern, false, 1);
+    }
+    return info.hasExactlyNItems(smallPattern, true, 1) && info.hasExactlyNItems(smallPattern+tail, false, 0);
   }
 
   private static class CellFounder implements Runnable {

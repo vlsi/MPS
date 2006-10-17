@@ -35,4 +35,9 @@ public class NullSubstituteInfo implements INodeSubstituteInfo {
   public String getOriginalText() {
     return null;
   }
+
+
+  public boolean hasExactlyNItems(String pattern, boolean strictMatching, int n) {
+    return false;  //To change body of implemented methods use File | Settings | File Templates.
+  }
 }
