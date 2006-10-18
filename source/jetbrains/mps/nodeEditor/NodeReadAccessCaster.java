@@ -1,11 +1,12 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeProxy;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.util.annotation.Hack;
 
-import java.util.*;
+import java.util.Set;
+import java.util.Stack;
 
 /**
  * Created by IntelliJ IDEA.
@@ -130,12 +131,6 @@ public class NodeReadAccessCaster {
       } catch (InterruptedException e) {
         throw new RuntimeException(e);
       }
-    }
-  }
-
-  private static void ensureNotDisposed(SNode node) {
-    if (node.isDisposed()) {
-      throw new RuntimeException("Try to access node from disposed model: " + node.getDebugText());
     }
   }
 }

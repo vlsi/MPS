@@ -301,6 +301,11 @@ public class MPSModuleRepository {
           @NotNull MPSModuleOwner owner,
           @NotNull final String extension) {
 
+
+    if (dir.getName().endsWith(extension) && dir.isFile()) {
+      readModuleDescriptor_internal(dir, owner, extension);
+    }
+
     File[] files = dir.listFiles(new FilenameFilter() {
       public boolean accept(File d, String name) {
         return name.endsWith(extension);
@@ -308,9 +313,6 @@ public class MPSModuleRepository {
     });
 
     if (files == null) { //i.e it isn't a directory
-      if (dir.getName().endsWith(extension)) {
-        readModuleDescriptor_internal(dir, owner, extension);
-      }
       return;
     }
 
