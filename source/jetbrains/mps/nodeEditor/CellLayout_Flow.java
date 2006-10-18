@@ -142,6 +142,7 @@ public class CellLayout_Flow extends AbstractCellLayout {
         if (myToSkip) {
           myToSkip = false;
           myNextIsPunctuation = false;
+          if (lookAhead.hasNext()) lookAhead.next();
           continue;
         }
 
@@ -214,10 +215,10 @@ public class CellLayout_Flow extends AbstractCellLayout {
               alignLine();
               nextLine();
               addCell(cell);
-             /* if (myNextIsPunctuation) {
+              if (myNextIsPunctuation) {
                 addCell(nextCell);
                 myToSkip = true;
-              }*/
+              }
             } else {//default
               addCell(cell);
             }
