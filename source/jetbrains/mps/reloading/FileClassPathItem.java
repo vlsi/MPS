@@ -1,22 +1,26 @@
 package jetbrains.mps.reloading;
 
 import jetbrains.mps.util.ReadUtil;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Set;
-import java.util.HashSet;
-import java.net.URL;
 import java.net.MalformedURLException;
-
-import org.jetbrains.annotations.NotNull;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * @author Kostik
  */
 public class FileClassPathItem extends AbstractClassPathItem{
   private String myClassPath;
+
+  private Map<String, Set<String>> mySubpackagesCache = new HashMap<String, Set<String>>();
+  private Map<String, Set<String>> myAvailableClassesCache = new HashMap<String, Set<String>>();
 
   public FileClassPathItem(String classPath) {
     myClassPath = classPath;
@@ -49,38 +53,48 @@ public class FileClassPathItem extends AbstractClassPathItem{
   }
 
   @NotNull
-  public Set<String> getAvailableClasses(String namespace) {
-    Set<String> result = new HashSet<String>();
-    File dir = getModelDir(namespace);
-    String[] paths = dir.list();
-    if (paths != null) {
-      for (String path : paths) {
-        if (path.endsWith(".class") && !path.contains("$")) {
-          result.add(path.substring(0, path.length() - ".class".length()));
-        }
-      }
+  public Set<String> getAvailableClasses(String namespace) {    
+    if (!myAvailableClassesCache.containsKey(namespace)) {
+      buildCacheFor(namespace);
     }
-    return result;
+
+    return new HashSet<String>(myAvailableClassesCache.get(namespace));
   }
 
   @NotNull
   public Set<String> getSubpackages(String namespace) {
-    Set<String> result = new HashSet<String>();
+    if (!mySubpackagesCache.containsKey(namespace)) {
+      buildCacheFor(namespace);
+    }
+
+    return new HashSet<String>(mySubpackagesCache.get(namespace));
+  }
+
+  private void buildCacheFor(String namespace) {
+    Set<String> subpacks = new HashSet<String>();
+    Set<String> classes = new HashSet<String>();
     File dir = getModelDir(namespace);
 
     File[] files = dir.listFiles();
     if (files != null) {
       for (File file : files) {
-        if (!file.getName().endsWith(".class") && file.isDirectory()) { //isDirectory is quite expensive operation
+        String name = file.getName();
+        if (!name.endsWith(".class") && file.isDirectory()) { //isDirectory is quite expensive operation
           if (namespace.length() > 0) {
-            result.add(namespace + "." + file.getName());
+            subpacks.add(namespace + "." + name);
           } else {
-            result.add(namespace + file.getName());
+            subpacks.add(namespace + name);
           }
+        }
+
+        if (name.endsWith(".class") && !name.contains("$")) {
+          classes.add(name.substring(0, name.length() - ".class".length()));
         }
       }
     }
-    return result;
+
+    mySubpackagesCache.put(namespace, subpacks);
+    myAvailableClassesCache.put(namespace, classes);
   }
 
   public long getClassesTimestamp(String namespace) {
