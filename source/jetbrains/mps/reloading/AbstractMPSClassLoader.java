@@ -2,7 +2,8 @@ package jetbrains.mps.reloading;
 
 import jetbrains.mps.util.NodeNameUtil;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public abstract class AbstractMPSClassLoader extends ClassLoader {
   private Map<String, Class> myCache = new HashMap<String, Class>();
@@ -17,11 +18,21 @@ public abstract class AbstractMPSClassLoader extends ClassLoader {
 
   protected synchronized Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
     Class c = myCache.get(name);
+
+    if (myCache.containsKey(name) && c == null) {
+      throw new ClassNotFoundException(name);
+    }
+
     if (c == null) {
       byte[] bytes = findClassBytes(name);
-
+      
       if (bytes == null || isExcluded(name)) {
-        c = getParent().loadClass(name);
+        try {
+          c = getParent().loadClass(name);
+        } catch (ClassNotFoundException e) {
+          myCache.put(name, null);
+          throw e;
+        }
         if (resolve) {
           resolveClass(c);
         }
