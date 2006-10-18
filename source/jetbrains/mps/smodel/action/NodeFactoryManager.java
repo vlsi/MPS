@@ -27,14 +27,18 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
 
   public static SNode createNode(ConceptDeclaration nodeConcept, SNode sampleNode, SNode enclosingNode, SModel model) {
     SNode node = SModelUtil.instantiateConceptDeclaration(nodeConcept, model);
-    boolean done = setupNode(nodeConcept, node, sampleNode, enclosingNode, model);
-    if (!done) {
-      setupNode_deprecated(nodeConcept, node, sampleNode);
-    }
+    setupNode(nodeConcept, node, sampleNode, enclosingNode, model);
     return node;
   }
 
-  private static boolean setupNode(ConceptDeclaration nodeConcept, SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
+  public static void setupNode(ConceptDeclaration nodeConcept, SNode node, SNode sampleNode, SNode enclosingNode, SModel model) {
+    boolean done = setupNode_internal(nodeConcept, node, sampleNode, enclosingNode, model);
+    if (!done) {
+      setupNode_deprecated(nodeConcept, node, sampleNode);
+    }
+  }
+
+  private static boolean setupNode_internal(ConceptDeclaration nodeConcept, SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
 
     // find node factory
     List<NodeFactory> nodeFactories = new LinkedList<NodeFactory>();

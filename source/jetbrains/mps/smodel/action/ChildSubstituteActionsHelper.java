@@ -132,7 +132,7 @@ public class ChildSubstituteActionsHelper {
     return actions;
   }
 
-  private static List<INodeSubstituteAction> createSmartReferenceActions(final ConceptDeclaration referenceNodeConcept, LinkDeclaration smartReference, SNode parentNode, SNode currentChild, IChildNodeSetter childSetter, final IScope scope) {
+  private static List<INodeSubstituteAction> createSmartReferenceActions(final ConceptDeclaration referenceNodeConcept, LinkDeclaration smartReference, final SNode parentNode, final SNode currentChild, IChildNodeSetter childSetter, final IScope scope) {
     // try to create referent-search-scope
     IStatus status = ModelConstraintsUtil.getReferentSearchScope(parentNode, null, referenceNodeConcept, smartReference, scope);
     if (status.isError()) return null;
@@ -160,9 +160,11 @@ public class ChildSubstituteActionsHelper {
           }
 
           public SNode createChildNode(SNode parameterNode, SModel model, String pattern) {
-            SNode childNode = super.createChildNode(referenceNodeConcept, model, pattern);
+//            SNode childNode = super.createChildNode(referenceNodeConcept, model, pattern);
+            SNode childNode = SModelUtil.instantiateConceptDeclaration(referenceNodeConcept, model);
             String referentRole = SModelUtil.getGenuineLinkRole(referenceLink_final);
             childNode.setReferent(referentRole, parameterNode);
+            NodeFactoryManager.setupNode(referenceNodeConcept, childNode, currentChild, parentNode, model);
             return childNode;
           }
         });
@@ -217,7 +219,7 @@ public class ChildSubstituteActionsHelper {
     String referenceAlias = SModelUtil.getConceptProperty(referenceNodeConcept, "alias", scope);
     // handle pattern 'xxx <{_referent_role_}> yyy'
     if (referenceAlias == null || !referenceAlias.matches(".*<\\{.+\\}>.*")) {
-      
+
       return referentMatchingText;
     }
     String[] matches = referenceAlias.split("<\\{|\\}>");
