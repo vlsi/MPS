@@ -1,19 +1,18 @@
 package jetbrains.mps.ide;
 
+import jetbrains.mps.ide.navigation.IHistoryItem;
+import jetbrains.mps.nodeEditor.AbstractEditorComponent;
+import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.ICellSelectionListener;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeProxy;
-import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.AbstractEditorComponent;
-import jetbrains.mps.nodeEditor.ICellSelectionListener;
-import jetbrains.mps.ide.navigation.IHistoryItem;
-
-import javax.swing.*;
-import javax.swing.event.ChangeListener;
-
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import javax.swing.JComponent;
+import javax.swing.event.ChangeListener;
 
 public interface IEditor {
   JComponent getComponent();
@@ -45,6 +44,8 @@ public interface IEditor {
   void requestFocus();
 
   void clear();
+
+  void repaint();
 
   @Nullable AbstractEditorComponent getCurrentEditorComponent();
 }

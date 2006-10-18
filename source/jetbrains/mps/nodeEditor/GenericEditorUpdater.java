@@ -67,7 +67,10 @@ public abstract class GenericEditorUpdater {
                 }
               }
               if (isUpdated) {
-                editorsPane.repaint();
+                IEditor currentEditor = editorsPane.getCurrentEditor();
+                if (currentEditor != null) {
+                  currentEditor.repaint();
+                }
               }
             }
           }

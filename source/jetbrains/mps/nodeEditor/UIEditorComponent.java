@@ -1,22 +1,22 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.ide.navigation.EditorsHistory;
+import jetbrains.mps.ide.navigation.EditorsNavigationAdapter;
+import jetbrains.mps.ide.navigation.EditorsNavigationMulticaster;
+import jetbrains.mps.ide.navigation.IHistoryItem;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeProxy;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.ide.navigation.EditorsHistory;
-import jetbrains.mps.ide.navigation.EditorsNavigationMulticaster;
-import jetbrains.mps.ide.navigation.EditorsNavigationAdapter;
-import jetbrains.mps.ide.navigation.IHistoryItem;
-import jetbrains.mps.ide.IEditor;
-
-import javax.swing.*;
-import javax.swing.event.ChangeListener;
-import javax.swing.border.LineBorder;
-import java.util.List;
-import java.awt.*;
-
 import org.jetbrains.annotations.NotNull;
+
+import javax.swing.JComponent;
+import javax.swing.KeyStroke;
+import javax.swing.border.LineBorder;
+import javax.swing.event.ChangeListener;
+import java.awt.Color;
+import java.util.List;
 
 /**
  * @author Kostik
@@ -169,6 +169,13 @@ public class UIEditorComponent extends AbstractEditorComponent implements IEdito
 
     public void clear() {
       UIEditorComponent.this.clear();
+    }
+
+    public void repaint() {
+      AbstractEditorComponent currentEditor = getCurrentEditorComponent();
+      if (currentEditor != null) {
+        currentEditor.repaint();
+      }      
     }
 
     public AbstractEditorComponent getCurrentEditorComponent() {

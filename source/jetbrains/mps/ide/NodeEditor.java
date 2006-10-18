@@ -82,6 +82,10 @@ public class NodeEditor implements IEditor {
     myEditorComponent.clear();
   }
 
+  public void repaint() {
+    myEditorComponent.repaint();
+  }
+
   public AbstractEditorComponent getCurrentEditorComponent() {
     return myEditorComponent;
   }
