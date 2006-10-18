@@ -1,19 +1,19 @@
 package jetbrains.mps.ide.icons;
 
+import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.util.Macros;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
-import java.io.File;
 
 /**
  * @author Kostik
@@ -55,6 +55,8 @@ public class IconManager {
       return ourIcons.get(cls);
     }
 
+    Class sourceClass = cls;
+
     while (cls != SNode.class) {
       String className = cls.getName();
       className = className.substring(className.lastIndexOf('.') + 1);
@@ -65,7 +67,7 @@ public class IconManager {
         try {
           Icon icon = (Icon) icons.getMethod("getIconFor" + className).invoke(null);
           if (icon != null) {
-            ourIcons.put(cls, icon);
+            ourIcons.put(sourceClass, icon);
             return icon;
           }
         } catch(NoSuchMethodException ex) {
@@ -82,7 +84,7 @@ public class IconManager {
       cls = (Class<? extends SNode>) cls.getSuperclass();
     }
 
-    ourIcons.put(cls, Icons.DEFAULT_ICON);
+    ourIcons.put(sourceClass, Icons.DEFAULT_ICON);
     return Icons.DEFAULT_ICON;
   }
 
