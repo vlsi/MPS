@@ -27,10 +27,14 @@ public class IconManager {
 
   public static Icon getIconFor(SNode node) {
     if (node == null) return Icons.DEFAULT_ICON;
+    Class<? extends SNode> cls = node.getClass();
+    return getIconFor(cls);
+  }
 
+  public static Icon getIconFor(Class<? extends SNode> cls) {
     // new style
     GlobalScope scope = GlobalScope.getInstance();
-    ConceptDeclaration conceptDeclaration = SModelUtil.getConceptDeclaration(node, scope);
+    ConceptDeclaration conceptDeclaration = SModelUtil.findConceptDeclaration(cls, scope);
     if (conceptDeclaration != null) {
       Language language = SModelUtil.getDeclaringLanguage(conceptDeclaration, scope);
       if (language != null) {
@@ -49,8 +53,6 @@ public class IconManager {
     }
 
     // legacy
-    Class<? extends SNode> cls = node.getClass();
-
     if (ourIcons.get(cls) != null) {
       return ourIcons.get(cls);
     }
@@ -97,42 +99,6 @@ public class IconManager {
     }
     if (!SNode.class.isAssignableFrom(cls)) return Icons.DEFAULT_ICON;
     return getIconFor(cls);
-  }
-
-  public static Icon getIconFor(Class<? extends SNode> nodeClass) {
-    if (ourIcons.get(nodeClass) != null) {
-      return ourIcons.get(nodeClass);
-    }
-
-    while (nodeClass != SNode.class) {
-      String className = nodeClass.getName();
-      className = className.substring(className.lastIndexOf('.') + 1);
-      String packageName = nodeClass.getPackage().getName();
-      String iconsClass = packageName + ".icons.Icons";
-      try {
-        Class icons = Class.forName(iconsClass, true, ClassLoaderManager.getInstance().getClassLoader());
-        try {
-          Icon icon = (Icon) icons.getMethod("getIconFor" + className).invoke(null);
-          if (icon != null) {
-            ourIcons.put(nodeClass, icon);
-            return icon;
-          }
-        } catch (NoSuchMethodException e) {
-          //it's ok
-        } catch (Exception e) {
-          e.printStackTrace();
-        }
-      } catch (ClassNotFoundException e) {
-        //it's also ok
-      } catch (Exception e) {
-        e.printStackTrace();
-      }
-
-      nodeClass = (Class<? extends SNode>) nodeClass.getSuperclass();
-    }
-
-    ourIcons.put(nodeClass, Icons.DEFAULT_ICON);
-    return Icons.DEFAULT_ICON;
   }
 
   public static Icon getIconFor(String namespace) {
