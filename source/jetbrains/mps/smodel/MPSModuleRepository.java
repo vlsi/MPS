@@ -4,19 +4,19 @@ import jetbrains.mps.ide.command.CommandAdapter;
 import jetbrains.mps.ide.command.CommandEvent;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.LanguagesKeymapManager;
+import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.*;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.projectLanguage.Root;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.nodeEditor.LanguagesKeymapManager;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.*;
-
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 /**
  * User: Sergey Dmitriev
@@ -300,17 +300,20 @@ public class MPSModuleRepository {
           @NotNull File dir,
           @NotNull MPSModuleOwner owner,
           @NotNull final String extension) {
-    if (!dir.isDirectory()) {
-      if (dir.getName().endsWith(extension)) {
-        readModuleDescriptor_internal(dir, owner, extension);
-      }
-      return;
-    }
+
     File[] files = dir.listFiles(new FilenameFilter() {
       public boolean accept(File d, String name) {
         return name.endsWith(extension);
       }
     });
+
+    if (files == null) { //i.e it isn't a directory
+      if (dir.getName().endsWith(extension)) {
+        readModuleDescriptor_internal(dir, owner, extension);
+      }
+      return;
+    }
+
     for (File file : files) {
       readModuleDescriptor_internal(file, owner, extension);
     }
