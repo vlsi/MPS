@@ -146,8 +146,13 @@ public class ChildSubstituteActionsHelper {
     for (final SNode referentNode : referentNodes) {
       if (SModelUtil.isInstanceOfConcept(referentNode, targetConcept, scope)) {
         actions.add(new DefaultChildNodeSubstituteAction(referentNode, parentNode, currentChild, childSetter, scope) {
+          String myMatchingText = null;
+
           public String getMatchingText(String pattern) {
-            return getSmartMatchingText(referenceNodeConcept, getParameterNode(), getScope());
+            if (myMatchingText == null) {
+              myMatchingText = getSmartMatchingText(referenceNodeConcept, getParameterNode(), getScope());
+            }
+            return myMatchingText;
           }
 
           public String getDescriptionText(String pattern) {

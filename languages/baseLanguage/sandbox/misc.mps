@@ -436,6 +436,31 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1161265750737">
+          <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1161265752645">
+            <link role="baseMethodDeclaration" extResolveInfo="1.static method ([Classifier]StringCoding).([StaticMethodDeclaration]access$000((jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int), (jetbrains.mps.baseLanguage.types.float/jetbrains.mps.baseLanguage.types.float)) : (jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int))" />
+            <link role="classConcept" extResolveInfo="1.[Classifier]StringCoding" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1161265755069">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1161265755070">
+            <property name="name" value="a" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1161265755071" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.PlusExpression" id="1161265757559">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.MinusExpression" id="1161265759078">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1161265759785">
+                  <property name="value" value="40" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1161265758671">
+                  <property name="value" value="23" />
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1161265756573">
+                <property name="value" value="239" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1154544745892">
         <property name="name" value="val" />
