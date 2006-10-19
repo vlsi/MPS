@@ -266,6 +266,14 @@
                   </node>
                 </node>
               </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.AssertStatement" id="1161261913346">
+                <node role="condition" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1161261917852">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1161261919183" />
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1161261914754">
+                    <link role="variableDeclaration" targetNodeId="1150896840130" resolveInfo="attributedNode" />
+                  </node>
+                </node>
+              </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1150896948316">
                 <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1150896954741">
                   <link role="baseMethodDeclaration" extResolveInfo="5.method ([Classifier]SNode).([InstanceMethodDeclaration]setAttribute((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode])) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
@@ -496,6 +504,14 @@
                         <link role="variableDeclaration" targetNodeId="1155904410515" resolveInfo="contextNode" />
                       </node>
                     </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.AssertStatement" id="1161261947077">
+                <node role="condition" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1161261949455">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1161261950443" />
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1161261948329">
+                    <link role="variableDeclaration" targetNodeId="1155904410532" resolveInfo="attributedNode" />
                   </node>
                 </node>
               </node>
