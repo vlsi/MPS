@@ -338,6 +338,9 @@
         </inspection_tool>
         <inspection_tool class="UnusedReturnValue" level="WARNING" enabled="false" />
         <inspection_tool class="RedundantThrows" level="WARNING" enabled="false" />
+        <inspection_tool class="ConstantConditions" level="ERROR" enabled="true">
+          <option name="SUGGEST_NULLABLE_ANNOTATIONS" value="false" />
+        </inspection_tool>
       </profile>
       <profile version="1.0" is_locked="false">
         <option name="myName" value="Default" />
@@ -532,6 +535,9 @@
           <option name="ADD_APPLET_TO_ENTRIES" value="true" />
           <option name="ADD_SERVLET_TO_ENTRIES" value="true" />
           <option name="ADD_NONJAVA_TO_ENTRIES" value="true" />
+        </inspection_tool>
+        <inspection_tool class="ConstantConditions" level="ERROR" enabled="true">
+          <option name="SUGGEST_NULLABLE_ANNOTATIONS" value="false" />
         </inspection_tool>
       </profile>
       <profile version="1.0" is_locked="false">
@@ -743,6 +749,9 @@
         </inspection_tool>
         <inspection_tool class="UnusedReturnValue" level="WARNING" enabled="false" />
         <inspection_tool class="RedundantThrows" level="WARNING" enabled="false" />
+        <inspection_tool class="ConstantConditions" level="ERROR" enabled="true">
+          <option name="SUGGEST_NULLABLE_ANNOTATIONS" value="false" />
+        </inspection_tool>
       </profile>
       <profile version="1.0" is_locked="false">
         <option name="myName" value="Query methods" />
@@ -947,6 +956,9 @@
         </inspection_tool>
         <inspection_tool class="UnusedReturnValue" level="WARNING" enabled="false" />
         <inspection_tool class="RedundantThrows" level="WARNING" enabled="false" />
+        <inspection_tool class="ConstantConditions" level="ERROR" enabled="true">
+          <option name="SUGGEST_NULLABLE_ANNOTATIONS" value="false" />
+        </inspection_tool>
       </profile>
     </profiles>
   </component>
