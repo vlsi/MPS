@@ -442,6 +442,34 @@
             <link role="classConcept" extResolveInfo="1.[Classifier]StringCoding" />
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1161266730978">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1161266730979">
+            <property name="name" value="aaa" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1161266730980">
+              <link role="classifier" extResolveInfo="1.[Classifier]String" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.PlusExpression" id="1161266736343">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1161266737517">
+                <property name="value" value="23" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1161266735076">
+                <property name="value" value="23" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.Statement" id="1161267160605" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1161266743379">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1161266743380">
+            <property name="name" value="a" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1161266743381">
+              <link role="classifier" extResolveInfo="1.[Classifier]String" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1161266745695">
+              <property name="value" value="239" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1161265755069">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1161265755070">
             <property name="name" value="a" />

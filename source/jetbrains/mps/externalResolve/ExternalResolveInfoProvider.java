@@ -34,6 +34,7 @@ public class ExternalResolveInfoProvider {
 
 
   private static Map<String, String> ourPrimitiveAdaptationNames = new HashMap<String, String>();
+  private static Map<String, String> ourTypeNames = new HashMap<String, String>();
 
   static {
     ourPrimitiveAdaptationNames.put(VoidType.class.getName(), void_);
@@ -47,41 +48,25 @@ public class ExternalResolveInfoProvider {
     ourPrimitiveAdaptationNames.put(FloatType.class.getName(), float_);
     ourPrimitiveAdaptationNames.put(VariableType.class.getName(), any_);
     ourPrimitiveAdaptationNames.put(TypeVariableReference.class.getName(), any_);
+
+    ourTypeNames.put(VoidType.class.getName(), "void_");
+    ourTypeNames.put(BooleanType.class.getName(), "boolean_");
+    ourTypeNames.put(CharType.class.getName(), "char_");
+    ourTypeNames.put(ByteType.class.getName(), "byte_");
+    ourTypeNames.put(ShortType.class.getName(), "short_");
+    ourTypeNames.put(IntegerType.class.getName(), "int_");
+    ourTypeNames.put(LongType.class.getName(), "long_");
+    ourTypeNames.put(DoubleType.class.getName(), "double_");
+    ourTypeNames.put(FloatType.class.getName(), "float_");
+    ourTypeNames.put(VariableType.class.getName(), "any_");
+    ourTypeNames.put(TypeVariableReference.class.getName(), "any_");
+
   }
 
   private static String toString(Type t) {
-    if (t instanceof VoidType) {
-      return "void_";
-    }
-    if (t instanceof BooleanType) {
-      return "boolean_";
-    }
-    if (t instanceof CharType) {
-      return "char_";
-    }
-    if (t instanceof ByteType) {
-      return "byte_";
-    }
-    if (t instanceof ShortType) {
-      return "short_";
-    }
-    if (t instanceof IntegerType) {
-      return "int_";
-    }
-    if (t instanceof LongType) {
-      return "long_";
-    }
-    if (t instanceof DoubleType) {
-      return "double_";
-    }
-    if (t instanceof FloatType) {
-      return "float_";
-    }
-    if (t instanceof VariableType) {
-      return "any_";
-    }
-    if (t instanceof TypeVariableReference) {
-      return "any_";
+    String result = ourTypeNames.get(t.getClass().getName());    
+    if (result != null) {
+      return result;
     }
     return adaptType(t).o2;
   }
@@ -112,7 +97,7 @@ public class ExternalResolveInfoProvider {
         sb.append(componentString);
         i++;
       }
-      if (classifierType.parameters().hasNext()) {
+      if (classifierType.getParametersCount() > 0) {
         sb.append(">");
       }
       sb.append("]");
