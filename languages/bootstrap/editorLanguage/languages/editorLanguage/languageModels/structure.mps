@@ -233,6 +233,12 @@
       <link role="target" targetNodeId="1.1071489288298" />
       <link role="specializedLink" targetNodeId="1140103550593" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1161279404128">
+      <property name="sourceCardinality" value="0..1" />
+      <property name="role" value="cellMenu" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1161037552905" resolveInfo="CellMenu_ReplaceChild_Composite" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107223377708">
       <property name="value" value="ref.node" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />

@@ -3617,12 +3617,26 @@
           <property name="vertical" value="false" />
           <property name="selectable" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1141859728699">
-            <property name="text" value="auto-completion" />
+            <property name="text" value="menu (old)" />
             <property name="drawBorder" value="true" />
             <property name="selectable" value="false" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1141859728700">
             <property name="cellProviderId" value="CellSubstituteActionsFactoryAspectId" />
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1161279512198">
+          <property name="drawBorder" value="true" />
+          <property name="vertical" value="false" />
+          <property name="selectable" value="false" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1161279512199">
+            <property name="text" value="menu" />
+            <property name="drawBorder" value="true" />
+            <property name="selectable" value="false" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1161279512200">
+            <property name="noTargetText" value="&lt;default&gt;" />
+            <link role="relationDeclaration" targetNodeId="2.1161279404128" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1138332005658">
