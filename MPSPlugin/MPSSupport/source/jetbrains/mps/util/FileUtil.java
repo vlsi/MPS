@@ -200,14 +200,13 @@ public class FileUtil {
   }
 
   public static long getNewestFileTime(File dir) {
-    if (!dir.exists()) return 0;
+    File[] files = dir.listFiles();
+    if (files == null) {
+      return dir.lastModified();
+    }
     long result = dir.lastModified();
-    for (File file : dir.listFiles()) {
-      if (file.isFile()) {
-        result = Math.max(result, file.lastModified());
-      } else {
-        result = Math.max(result, getNewestFileTime(file));
-      }
+    for (File file : files) {
+      result = Math.max(result, getNewestFileTime(file));
     }
     return result;
   }

@@ -52,6 +52,8 @@ public class IdeMain {
   }
 
   public static void main(String[] args) {
+    long start = System.currentTimeMillis();
+
     SplashScreen.getInstance().showSplashScreen();
     MPSPlugin.getInstance();
 
@@ -70,6 +72,10 @@ public class IdeMain {
     projectWindow.loadLastProjectIfAny();
     SplashScreen.getInstance().hideSplashScreen();
     projectWindow.show();
+
+    long end = System.currentTimeMillis();
+
+    System.out.println("MPS Started in " + (end - start) + " ms");
   }
 
   public static Date expirationDate() {
