@@ -28,7 +28,9 @@ public class ModelConstraintsManager {
 
   private Map<String, List<IModelConstraints>> myAddedLanguageNamespaces = new HashMap<String, List<IModelConstraints>>();
   private Map<String, INodePropertyGetter> myNodePropertyGettersMap = new HashMap<String, INodePropertyGetter>();
+  private Map<String, INodePropertyGetter> myNodePropertyGettersCache = new HashMap<String, INodePropertyGetter>();
   private Map<String, INodePropertySetter> myNodePropertySettersMap = new HashMap<String, INodePropertySetter>();
+  private Map<String, INodePropertySetter> myNodePropertySettersCache = new HashMap<String,INodePropertySetter>();
   private Map<String, INodeReferentSearchScopeProvider> myNodeReferentSearchScopeProvidersMap = new HashMap<String, INodeReferentSearchScopeProvider>();
   private Map<String, INodeReferentSearchScopeProvider> myNodeDefaultSearchScopeProvidersMap = new HashMap<String, INodeReferentSearchScopeProvider>();
 
@@ -63,10 +65,14 @@ public class ModelConstraintsManager {
     } else {
       LOG.error("property getter is alredy registered for key '" + key + "' : " + myNodePropertyGettersMap.get(key));
     }
+
+    myNodePropertyGettersCache.clear();
   }
 
   public void unRegisterNodePropertyGetter(String conceptFqName, String propertyName) {
     myNodePropertyGettersMap.remove(conceptFqName + "#" + propertyName);
+
+    myNodePropertyGettersCache.clear();
   }
 
   public void registerNodePropertySetter(String conceptFqName, String propertyName, INodePropertySetter setter) {
@@ -76,12 +82,15 @@ public class ModelConstraintsManager {
     } else {
       LOG.error("property setter is alredy registered for key '" + key + "' : " + myNodePropertySettersMap.get(key));
     }
+
+    myNodePropertySettersCache.clear();
   }
 
   public void unRegisterNodePropertySetter(String conceptFqName, String propertyName) {
     myNodePropertySettersMap.remove(conceptFqName + "#" + propertyName);
-  }
 
+    myNodePropertyGettersCache.clear();
+  }
 
   public void registerNodeReferentSearchScopeProvider(String conceptFqName, String referenceRole, INodeReferentSearchScopeProvider provider) {
     String key = conceptFqName + "#" + referenceRole;
@@ -126,7 +135,7 @@ public class ModelConstraintsManager {
       return null;
     }
     if (node instanceof RuntimeTypeVariable) {
-      // helgins ku-ku
+      // helgins fhtagn!
       return null;
     }
 
@@ -138,6 +147,17 @@ public class ModelConstraintsManager {
 //    System.out.println("find getter for <" + propertyName + "> in " + node.getDebugText());
 
     ConceptDeclaration concept = SModelUtil.getConceptDeclaration(node, GlobalScope.getInstance());
+    ConceptDeclaration sourceConcept = concept;
+    String sourceConceptFqName = NameUtil.nodeFQName(sourceConcept);
+
+    if (isSetter) {
+      INodePropertySetter setter = myNodePropertySettersCache.get(sourceConceptFqName);
+      if (setter != null || myNodePropertySettersCache.containsKey(sourceConceptFqName)) return setter;
+    } else {
+      INodePropertyGetter getter = myNodePropertyGettersCache.get(sourceConceptFqName);
+      if (getter != null || myNodePropertyGettersCache.containsKey(sourceConceptFqName)) return getter;
+    }
+
     while (concept != null) {
       String conceptFqName = NameUtil.nodeFQName(concept);
       IModelConstraints result;
@@ -146,10 +166,26 @@ public class ModelConstraintsManager {
       } else {
         result = myNodePropertyGettersMap.get(conceptFqName + "#" + propertyName);
       }
-      if (result != null) return result;
+      if (result != null) {
+        if (isSetter) {
+          myNodePropertySettersCache.put(sourceConceptFqName, (INodePropertySetter) result);
+        } else {
+          myNodePropertyGettersCache.put(sourceConceptFqName, (INodePropertyGetter) result);
+        }
+
+        return result;
+      }
 
       concept = concept.getExtends();
     }
+
+
+    if (isSetter) {
+      myNodePropertySettersCache.put(sourceConceptFqName, null);
+    } else {
+      myNodePropertyGettersCache.put(sourceConceptFqName, null);
+    }
+
     return null;
   }
 
