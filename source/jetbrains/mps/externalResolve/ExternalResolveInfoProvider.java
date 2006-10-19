@@ -5,6 +5,8 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.CollectionUtil;
 
 import java.util.Iterator;
+import java.util.Map;
+import java.util.HashMap;
 
 /**
  * Created by IntelliJ IDEA.
@@ -29,6 +31,23 @@ public class ExternalResolveInfoProvider {
   public static final String null_ = "jetbrains.mps.baseLanguage.types.null";
   public static final String classifier_ = "jetbrains.mps.baseLanguage.types.classifier";
   public static final String array_ = "jetbrains.mps.baseLanguage.types.array";
+
+
+  private static Map<String, String> ourPrimitiveAdaptationNames = new HashMap<String, String>();
+
+  static {
+    ourPrimitiveAdaptationNames.put(VoidType.class.getName(), void_);
+    ourPrimitiveAdaptationNames.put(BooleanType.class.getName(), boolean_);
+    ourPrimitiveAdaptationNames.put(CharType.class.getName(), char_);
+    ourPrimitiveAdaptationNames.put(ByteType.class.getName(), byte_);
+    ourPrimitiveAdaptationNames.put(ShortType.class.getName(), short_);
+    ourPrimitiveAdaptationNames.put(IntegerType.class.getName(), int_);
+    ourPrimitiveAdaptationNames.put(LongType.class.getName(), long_);
+    ourPrimitiveAdaptationNames.put(DoubleType.class.getName(), double_);
+    ourPrimitiveAdaptationNames.put(FloatType.class.getName(), float_);
+    ourPrimitiveAdaptationNames.put(VariableType.class.getName(), any_);
+    ourPrimitiveAdaptationNames.put(TypeVariableReference.class.getName(), any_);
+  }
 
   private static String toString(Type t) {
     if (t instanceof VoidType) {
@@ -68,38 +87,9 @@ public class ExternalResolveInfoProvider {
   }
 
   private static Pair<String,String> adaptType(Type t) {
-    if (t instanceof VoidType) {
-      return new Pair<String, String>(void_,void_);
-    }
-    if (t instanceof BooleanType) {
-      return new Pair<String, String>(boolean_,boolean_);
-    }
-    if (t instanceof CharType) {
-      return new Pair<String, String>(char_, char_);
-    }
-    if (t instanceof ByteType) {
-      return new Pair<String, String>(byte_, byte_);
-    }
-    if (t instanceof ShortType) {
-      return new Pair<String, String>(short_,short_);
-    }
-    if (t instanceof IntegerType) {
-      return new Pair<String, String>(int_,int_);
-    }
-    if (t instanceof LongType) {
-      return new Pair<String, String>(long_, long_);
-    }
-    if (t instanceof DoubleType) {
-      return new Pair<String, String>(double_,double_);
-    }
-    if (t instanceof FloatType) {
-      return new Pair<String, String>(float_,float_);
-    }
-    if (t instanceof VariableType) {
-      return new Pair<String, String>(any_,any_);
-    }
-    if (t instanceof TypeVariableReference) {
-      return new Pair<String, String>(any_, any_);
+    String s = ourPrimitiveAdaptationNames.get(t.getClass().getName());
+    if (s != null) {
+      return new Pair<String, String>(s, s);
     }
     if (t instanceof ClassifierType) {
       StringBuffer sb = new StringBuffer(classifier_);
