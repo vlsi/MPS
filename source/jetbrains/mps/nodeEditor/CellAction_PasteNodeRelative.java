@@ -40,6 +40,8 @@ public class CellAction_PasteNodeRelative extends EditorCellAction {
       return false;
     }
 
+    if (pasteNodes.isEmpty()) return false;
+
     if (!PasteNodeUtil.canPasteRelative(anchorNode, pasteNodes.get(0), operationContext)) {
       LOG.debug("Couldn't paste node relative");
       return false;
