@@ -24,9 +24,13 @@ public abstract class AbstractMPSClassLoader extends ClassLoader {
     }
 
     if (c == null) {
-      byte[] bytes = findClassBytes(name);
+      byte[] bytes = null;
+
+      if (!isExcluded(name)) {
+        bytes = findClassBytes(name);
+      }
       
-      if (bytes == null || isExcluded(name)) {
+      if (bytes == null) {
         try {
           c = getParent().loadClass(name);
         } catch (ClassNotFoundException e) {
