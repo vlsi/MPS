@@ -446,15 +446,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1124810732329">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1124810732330">
-            <property name="name" value="ch" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1124880034789">
-              <link role="variableDeclaration" targetNodeId="1124880034707" />
-            </node>
-            <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1124810761631" />
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1124810796149">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1124810796150">
             <property name="name" value="guu" />

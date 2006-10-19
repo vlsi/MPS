@@ -566,14 +566,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1070475354124">
-    <property name="name" value="ThisExpression" />
-    <link role="extends" targetNodeId="1068431790191" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107217864430">
-      <property name="value" value="this" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1070475587102">
     <property name="name" value="SuperConstructorInvocation" />
     <link role="extends" targetNodeId="1068580123157" />
@@ -819,21 +811,6 @@
       <property name="role" value="expression" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1068431790191" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1079352774609">
-    <property name="name" value="StringType" />
-    <link role="extends" targetNodeId="1068431790189" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107217727387">
-      <property name="value" value="String" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107217742357">
-      <property name="value" value="string type" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1149801539364">
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1080120340718">
@@ -1577,6 +1554,14 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1160998888500">
       <property name="value" value="assert" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1070475354124">
+    <property name="name" value="ThisExpression" />
+    <link role="extends" targetNodeId="1068431790191" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107217864430">
+      <property name="value" value="this" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
   </node>

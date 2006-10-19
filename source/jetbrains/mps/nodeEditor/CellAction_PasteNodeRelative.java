@@ -50,6 +50,7 @@ public class CellAction_PasteNodeRelative extends EditorCellAction {
   public void execute(EditorContext context) {
     LOG.assertInCommand();
     IOperationContext operationContext = context.getOperationContext();
+    assert operationContext != null : "operation context in \"paste node relative\" is null";
     EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
     SNode anchorNode = selectedCell.getSNode();
 
