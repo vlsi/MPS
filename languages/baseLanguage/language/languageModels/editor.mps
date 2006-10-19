@@ -2965,6 +2965,14 @@
               </node>
             </node>
           </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.AssertStatement" id="1161261440449">
+            <node role="condition" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1161261445187">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1161261447096" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1161261442498">
+                <link role="variableDeclaration" targetNodeId="1144407113380" resolveInfo="modelDescriptor" />
+              </node>
+            </node>
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1144407189794">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1144407189795">
               <property name="name" value="usages" />
