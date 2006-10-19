@@ -3,6 +3,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.generator.ContextUtil;
+import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.ide.command.CommandEventTranslator;
@@ -13,10 +14,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.Hack;
 
 import java.io.File;
@@ -42,6 +40,7 @@ public class Language extends AbstractModule {
   private SModelsListener myModelsListener = new LanguageModelsAdapter();
   private boolean myUpToDate = true;
   private boolean myUpdateLastGenerationTimeCalled = false;
+  private Map<String, Set<String>> myParentsNamesMap = new HashMap<String, Set<String>>();
 
   private SModelCommandListener myAspectModelsListener = new SModelCommandListener() {
     public void modelChangedInCommand(List<SModelEvent> events) {
@@ -482,6 +481,7 @@ public class Language extends AbstractModule {
 
   public void invalidateCaches() {
     myNameToConceptCache.clear();
+    myParentsNamesMap.clear();
   }
 
   @Nullable
@@ -499,6 +499,29 @@ public class Language extends AbstractModule {
       });
     }
     return myNameToConceptCache.get(conceptName);
+  }
+
+  @NotNull
+  public Set<String> getParentNames(String className) {
+    if (myParentsNamesMap.containsKey(className)) {
+      return new HashSet<String>(myParentsNamesMap.get(className));
+    } else {
+      Set<String> result = new HashSet<String>();
+      ConceptDeclaration declaration = findConceptDeclaration(NameUtil.shortNameFromLongName(className));
+      if (declaration == null) {
+        return result;
+      }
+
+      result.add(className);
+      ConceptDeclaration conceptDeclaration = declaration.getExtends();
+      if (conceptDeclaration != null) {
+        result.addAll(SModelUtil.getDeclaringLanguage(
+                declaration.getExtends(), GlobalScope.getInstance()).getParentNames(
+                JavaNameUtil.className(conceptDeclaration)));
+      }
+      myParentsNamesMap.put(className, result);
+      return new HashSet<String>(result);
+    }
   }
 
   public void save() {

@@ -115,6 +115,10 @@ public class NameUtil {
 
   public static String conceptFQNameByClass(Class<? extends SNode> cls) {
     String className = cls.getName();
+    return conceptFQNameByClassName(className);
+  }
+
+  public static String conceptFQNameByClassName(String className) {
     String conceptName = NameUtil.shortNameFromLongName(className);
     String languageNamespace = NameUtil.namespaceFromLongName(className);
     return languageNamespace + ".structure." + conceptName;
