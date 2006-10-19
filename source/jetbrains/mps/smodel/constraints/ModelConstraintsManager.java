@@ -2,6 +2,7 @@ package jetbrains.mps.smodel.constraints;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.core.BaseConcept;
+import jetbrains.mps.helgins.RuntimeTypeVariable;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.GlobalScope;
@@ -10,12 +11,10 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.helgins.RuntimeTypeVariable;
-import jetbrains.mps.baseLanguage.ClassConcept;
+import jetbrains.mps.baseLanguage.Classifier;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
-
-import org.jetbrains.annotations.NotNull;
 
 /**
  * Created by IntelliJ IDEA.
@@ -126,8 +125,9 @@ public class ModelConstraintsManager {
     return (INodePropertySetter) getNodePropertyGetterOrSetter(node, propertyName, true);
   }
 
-  public IModelConstraints getNodePropertyGetterOrSetter(@NotNull SNode node, @NotNull String propertyName, boolean isSetter) {
+  public IModelConstraints getNodePropertyGetterOrSetter(@NotNull SNode node, @NotNull String propertyName, boolean isSetter) {    
     String namespace = NameUtil.nodeLanguageNamespace(node);
+
     // 'bootstrap' properties
     if (namespace.equals("jetbrains.mps.bootstrap.structureLanguage") && propertyName.equals(BaseConcept.NAME)) {
       return null;
@@ -145,24 +145,20 @@ public class ModelConstraintsManager {
       return null;
     }
 
-    if (node instanceof ClassConcept) {
-      return null;
-    }
-
 //    System.out.println("find getter for <" + propertyName + "> in " + node.getDebugText());
 
-    ConceptDeclaration concept = SModelUtil.getConceptDeclaration(node, GlobalScope.getInstance());
-    ConceptDeclaration sourceConcept = concept;
-    String sourceConceptFqName = NameUtil.nodeFQName(sourceConcept);
+    String sourceConceptFqName = NameUtil.nodeConceptFQName(node);
+    String sourceKey = sourceConceptFqName + "#" + propertyName;
 
     if (isSetter) {
-      INodePropertySetter setter = myNodePropertySettersCache.get(sourceConceptFqName + "#" + propertyName);
-      if (setter != null || myNodePropertySettersCache.containsKey(sourceConceptFqName + "#" + propertyName)) return setter;
+      INodePropertySetter setter = myNodePropertySettersCache.get(sourceKey);
+      if (setter != null || myNodePropertySettersCache.containsKey(sourceKey)) return setter;
     } else {
-      INodePropertyGetter getter = myNodePropertyGettersCache.get(sourceConceptFqName + "#" + propertyName);
-      if (getter != null || myNodePropertyGettersCache.containsKey(sourceConceptFqName + "#" + propertyName)) return getter;
+      INodePropertyGetter getter = myNodePropertyGettersCache.get(sourceKey);
+      if (getter != null || myNodePropertyGettersCache.containsKey(sourceKey)) return getter;
     }
 
+    ConceptDeclaration concept = SModelUtil.getConceptDeclaration(node, GlobalScope.getInstance());
     while (concept != null) {
       String conceptFqName = NameUtil.nodeFQName(concept);
       IModelConstraints result;
@@ -173,22 +169,20 @@ public class ModelConstraintsManager {
       }
       if (result != null) {
         if (isSetter) {
-          myNodePropertySettersCache.put(sourceConceptFqName + "#" + propertyName, (INodePropertySetter) result);
+          myNodePropertySettersCache.put(sourceKey, (INodePropertySetter) result);
         } else {
-          myNodePropertyGettersCache.put(sourceConceptFqName + "#" + propertyName, (INodePropertyGetter) result);
+          myNodePropertyGettersCache.put(sourceKey, (INodePropertyGetter) result);
         }
 
         return result;
       }
-
       concept = concept.getExtends();
     }
 
-
     if (isSetter) {
-      myNodePropertySettersCache.put(sourceConceptFqName + "#" + propertyName, null);
+      myNodePropertySettersCache.put(sourceKey, null);
     } else {
-      myNodePropertyGettersCache.put(sourceConceptFqName + "#" + propertyName, null);
+      myNodePropertyGettersCache.put(sourceKey, null);
     }
 
     return null;
