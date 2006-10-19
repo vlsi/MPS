@@ -11,6 +11,7 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.helgins.RuntimeTypeVariable;
+import jetbrains.mps.baseLanguage.ClassConcept;
 
 import java.util.*;
 
@@ -144,6 +145,10 @@ public class ModelConstraintsManager {
       return null;
     }
 
+    if (node instanceof ClassConcept) {
+      return null;
+    }
+
 //    System.out.println("find getter for <" + propertyName + "> in " + node.getDebugText());
 
     ConceptDeclaration concept = SModelUtil.getConceptDeclaration(node, GlobalScope.getInstance());
@@ -151,11 +156,11 @@ public class ModelConstraintsManager {
     String sourceConceptFqName = NameUtil.nodeFQName(sourceConcept);
 
     if (isSetter) {
-      INodePropertySetter setter = myNodePropertySettersCache.get(sourceConceptFqName);
-      if (setter != null || myNodePropertySettersCache.containsKey(sourceConceptFqName)) return setter;
+      INodePropertySetter setter = myNodePropertySettersCache.get(sourceConceptFqName + "#" + propertyName);
+      if (setter != null || myNodePropertySettersCache.containsKey(sourceConceptFqName + "#" + propertyName)) return setter;
     } else {
-      INodePropertyGetter getter = myNodePropertyGettersCache.get(sourceConceptFqName);
-      if (getter != null || myNodePropertyGettersCache.containsKey(sourceConceptFqName)) return getter;
+      INodePropertyGetter getter = myNodePropertyGettersCache.get(sourceConceptFqName + "#" + propertyName);
+      if (getter != null || myNodePropertyGettersCache.containsKey(sourceConceptFqName + "#" + propertyName)) return getter;
     }
 
     while (concept != null) {
@@ -168,9 +173,9 @@ public class ModelConstraintsManager {
       }
       if (result != null) {
         if (isSetter) {
-          myNodePropertySettersCache.put(sourceConceptFqName, (INodePropertySetter) result);
+          myNodePropertySettersCache.put(sourceConceptFqName + "#" + propertyName, (INodePropertySetter) result);
         } else {
-          myNodePropertyGettersCache.put(sourceConceptFqName, (INodePropertyGetter) result);
+          myNodePropertyGettersCache.put(sourceConceptFqName + "#" + propertyName, (INodePropertyGetter) result);
         }
 
         return result;
@@ -181,9 +186,9 @@ public class ModelConstraintsManager {
 
 
     if (isSetter) {
-      myNodePropertySettersCache.put(sourceConceptFqName, null);
+      myNodePropertySettersCache.put(sourceConceptFqName + "#" + propertyName, null);
     } else {
-      myNodePropertyGettersCache.put(sourceConceptFqName, null);
+      myNodePropertyGettersCache.put(sourceConceptFqName + "#" + propertyName, null);
     }
 
     return null;
@@ -270,5 +275,13 @@ public class ModelConstraintsManager {
         LOG.error(t);
       }
     }
+  }
+
+  public static void main(String[] args) {
+    Map<String, String> m = new HashMap<String, String>();
+    m.put("a", "b");
+    m.clear();
+
+    System.out.println(m.containsKey("a"));
   }
 }
