@@ -672,6 +672,9 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
         PsiClass psiClass = PsiManager.getInstance(myProject).findClass(classFQName, GlobalSearchScope.allScope(myProject));
         MoveClassesOrPackagesRefactoring refactoring = refactoringFactory.createMoveClassesOrPackages(new PsiElement[]{psiClass},
                 refactoringFactory.createSourceRootMoveDestination(targetPackageNamespace, targetRoot));
+        refactoring.setSearchInComments(false);
+        refactoring.setSearchInNonJavaFiles(false);
+        refactoring.setPreviewUsages(false);
         refactoring.run();
       }
     });

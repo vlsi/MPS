@@ -3,7 +3,6 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <maxImportIndex value="105" />
   <import index="1" modelUID="java.lang@java_stub" />
-  <import index="2" modelUID="java.io@java_stub" />
   <import index="3" modelUID="java.util@java_stub" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1144230421203">
     <property name="name" value="Test" />
