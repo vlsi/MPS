@@ -1618,6 +1618,7 @@
     <property name="name" value="CellMenu_ReplaceChild_Composite" />
     <link role="extends" targetNodeId="3.1133920641626" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1161037596031">
+      <property name="sourceCardinality" value="0..n" />
       <property name="role" value="menuPart" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1161037819249" resolveInfo="CellMenu_ReplaceChildNode_Part" />
@@ -1717,7 +1718,7 @@
         <property name="name" value="CellMenu_ReplaceChild_SetupFromString_Value" />
         <link role="extends" targetNodeId="4.1107135704075" />
         <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1161042892387">
-          <property name="value" value="value" />
+          <property name="value" value="parameterString" />
           <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
         </node>
         <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1161042892388">

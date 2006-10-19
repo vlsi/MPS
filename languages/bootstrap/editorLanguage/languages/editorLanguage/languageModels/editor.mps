@@ -8279,7 +8279,7 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1161042722939">
           <property name="textFgColor" value="DARK_BLUE" />
           <property name="textBgColor" value="lightGray" />
-          <property name="text" value="(newChild, value:String)" />
+          <property name="text" value="(newChild, parameterString)" />
           <property name="fontStyle" value="ITALIC" />
           <property name="drawBorder" value="false" />
           <property name="textBgColorSelected" value="lightGray" />
