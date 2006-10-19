@@ -1,0 +1,5 @@
+Plugin has to be packaged like this:
+
+plugin.zip
+ +classes
+ +META-INF

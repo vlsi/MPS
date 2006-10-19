@@ -132,7 +132,13 @@ public class ChildSubstituteActionsHelper {
     return actions;
   }
 
-  private static List<INodeSubstituteAction> createSmartReferenceActions(final ConceptDeclaration referenceNodeConcept, LinkDeclaration smartReference, final SNode parentNode, final SNode currentChild, IChildNodeSetter childSetter, final IScope scope) {
+  private static List<INodeSubstituteAction> createSmartReferenceActions(
+          final ConceptDeclaration referenceNodeConcept,
+          LinkDeclaration smartReference,
+          final SNode parentNode,
+          final SNode currentChild,
+          IChildNodeSetter childSetter,
+          final IScope scope) {
     // try to create referent-search-scope
     IStatus status = ModelConstraintsUtil.getReferentSearchScope(parentNode, null, referenceNodeConcept, smartReference, scope);
     if (status.isError()) return null;
