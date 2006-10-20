@@ -81,21 +81,21 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1161333860203">
-    <link role="conceptDeclaration" targetNodeId="1.1161333859870" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1161333860204">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1161342260189">
+    <link role="conceptDeclaration" targetNodeId="1.1161342259888" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1161342260190">
       <property name="drawBorder" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1161333860205">
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1161342260191">
         <property name="drawBorder" value="false" />
-        <link role="relationDeclaration" targetNodeId="1.1161333859873" />
-        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1161333860206">
+        <link role="relationDeclaration" targetNodeId="1.1161342259891" />
+        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1161342260192">
           <link role="conceptDeclaration" targetNodeId="2.1078489098625" />
-          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1161333860207">
+          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1161342260193">
             <link role="relationDeclaration" targetNodeId="2.1078489098626" />
           </node>
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1161333860208">
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1161342260194">
         <property name="textFgColor" value="DARK_BLUE" />
         <property name="text" value="[]" />
         <property name="drawBorder" value="false" />

@@ -45,18 +45,18 @@
       <link role="target" targetNodeId="1.1133920641626" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1161333859870">
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1161342259888">
     <property name="name" value="BLArrayType" />
     <link role="extends" targetNodeId="1.1078489098625" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1161333859871">
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1161342259889">
       <property name="value" value="array" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1161333859872">
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1161342259890">
       <property name="value" value="internal array type" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1161333859873">
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1161342259891">
       <property name="sourceCardinality" value="0..1" />
       <property name="role" value="componentType" />
       <link role="target" targetNodeId="1.1078489098625" />
