@@ -63,8 +63,6 @@ public class IDEAHandler extends UnicastRemoteObject implements ApplicationCompo
   public void ping() {
   }
 
-
-
   public String createNewProject(final String path, final String name) {
     final String[] result = { "OK" };
 

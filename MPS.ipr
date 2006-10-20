@@ -1231,60 +1231,9 @@
         <root url="jar://$PROJECT_DIR$/lib/log4j/log4j-1.2.9-src.zip!/" />
       </SOURCES>
     </library>
-    <library name="Commons-Email">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/commons-email/smtp.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/commons-email/mailapi.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/commons-email/activation.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/commons-email/mail.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/commons-email/imap.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/commons-email/pop3.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/commons-email/commons-email.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/commons-email/commons-email.zip!/" />
-      </SOURCES>
-    </library>
     <library name="Servlet-API">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/servlet-api/servlet-api.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
-    <library name="MyFaces">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/myfaces/commons-beanutils.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/myfaces/commons-codec.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/myfaces/commons-collections.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/myfaces/commons-digester.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/myfaces/commons-el.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/myfaces/commons-fileupload.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/myfaces/commons-lang.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/myfaces/commons-logging.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/myfaces/commons-validator.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/myfaces/jakarta-oro.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/myfaces/jstl.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/myfaces/myfaces-all.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
-    <library name="Sitemesh">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/sitemesh/sitemesh.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/sitemesh/sitemesh-src.zip!/" />
-      </SOURCES>
-    </library>
-    <library name="JSTL">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/jstl/jsp-api.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/jstl/jstl.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/jstl/standard.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
@@ -1317,13 +1266,6 @@
       <SOURCES>
         <root url="jar://$PROJECT_DIR$/lib/eclipse-compiler/ecjsrc.zip!/" />
       </SOURCES>
-    </library>
-    <library name="Java Web Start">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/javaws/javaws.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
     </library>
     <library name="WordNetLibrary">
       <CLASSES>

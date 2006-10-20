@@ -125,7 +125,7 @@ public class ModelConstraintsManager {
     return (INodePropertySetter) getNodePropertyGetterOrSetter(node, propertyName, true);
   }
 
-  public IModelConstraints getNodePropertyGetterOrSetter(@NotNull SNode node, @NotNull String propertyName, boolean isSetter) {    
+  public IModelConstraints getNodePropertyGetterOrSetter(@NotNull SNode node, @NotNull String propertyName, boolean isSetter) {
     String namespace = NameUtil.nodeLanguageNamespace(node);
 
     // 'bootstrap' properties

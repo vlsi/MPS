@@ -12,6 +12,7 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.module.ModuleType;
+import com.intellij.openapi.module.ModuleUtil;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.*;
 import com.intellij.openapi.roots.libraries.Library;
@@ -81,14 +82,14 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
       public void run() {
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
           public void run() {
-            Module module = myProject.getComponent(ModuleManager.class).getModules()[0];
-            ModifiableRootModel model = module.getComponent(ModuleRootManager.class).getModifiableModel();
-            ContentEntry entry = model.getContentEntries()[0];
             LocalFileSystem lfs = LocalFileSystem.getInstance();
             VirtualFile sourceFolderFile = lfs.refreshAndFindFileByIoFile(new File(path));
-            if (sourceFolderFile != null) {
-              entry.addSourceFolder(sourceFolderFile, false);
-            }
+            if (sourceFolderFile == null) return;
+            Module module = ModuleUtil.findModuleForFile(sourceFolderFile, myProject);
+            assert module != null;
+            ModifiableRootModel model = module.getComponent(ModuleRootManager.class).getModifiableModel();
+            ContentEntry entry = model.getContentEntries()[0];
+            entry.addSourceFolder(sourceFolderFile, false);
             model.commit();
           }
         });
