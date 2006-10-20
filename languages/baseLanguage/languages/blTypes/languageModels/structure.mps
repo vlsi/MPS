@@ -5,23 +5,6 @@
   <import index="1" modelUID="jetbrains.mps.core.structure" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.blTypes.structure" />
   <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" />
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1159268361238">
-    <property name="name" value="BLArrayType" />
-    <link role="extends" targetNodeId="1.1078489098625" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1159268361240">
-      <property name="value" value="array" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1159268361241">
-      <property name="value" value="internal array type" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1159268361239">
-      <property name="sourceCardinality" value="0..1" />
-      <property name="role" value="componentType" />
-      <link role="target" targetNodeId="1.1078489098625" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1159268590033">
     <property name="rootable" value="true" />
     <property name="name" value="PrimitiveTypeDescriptor" />
@@ -60,6 +43,23 @@
       <property name="role" value="param" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1.1133920641626" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1161333859870">
+    <property name="name" value="BLArrayType" />
+    <link role="extends" targetNodeId="1.1078489098625" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1161333859871">
+      <property name="value" value="array" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1161333859872">
+      <property name="value" value="internal array type" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1161333859873">
+      <property name="sourceCardinality" value="0..1" />
+      <property name="role" value="componentType" />
+      <link role="target" targetNodeId="1.1078489098625" />
     </node>
   </node>
 </model>

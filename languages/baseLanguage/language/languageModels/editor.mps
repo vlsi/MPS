@@ -3,7 +3,7 @@
   <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
-  <maxImportIndex value="42" />
+  <maxImportIndex value="43" />
   <import index="17" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="18" modelUID="jetbrains.mps.core.structure" />
   <import index="19" modelUID="java.util@java_stub" />
@@ -14,6 +14,7 @@
   <import index="24" modelUID="java.lang@java_stub" />
   <import index="27" modelUID="jetbrains.mps.baseLanguage.actions" />
   <import index="29" modelUID="jetbrains.mps.baseLanguage.blTypes.structure" />
+  <import index="43" modelUID="jetbrains.mps.baseLanguage.editor" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1073416106125">
     <property name="name" value="StatementList_Editor" />
     <link role="conceptDeclaration" targetNodeId="17.1068580123136" />
