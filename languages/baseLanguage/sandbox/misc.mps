@@ -317,6 +317,18 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.Expression" id="1160997021322" />
               </node>
             </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1161341717968">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1161341717969">
+                <property name="name" value="s" />
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1161341717970">
+                  <link role="classifier" extResolveInfo="1.[Classifier]String" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1161341724394">
+              <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1161341724395" />
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.Statement" id="1161341726303" />
             <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1158667574907">
               <node role="expression" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1158667575815">
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1159394975153">

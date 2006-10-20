@@ -17,6 +17,9 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.util.QueryMethodGenerated;
+import jetbrains.mps.generator.JavaModelUtil;
+import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.reloading.ClassLoaderManager;
 
 import java.util.Collections;
 import java.util.Iterator;
@@ -98,7 +101,14 @@ public class ChildSubstituteActionsHelper {
     return resultActions;
   }
 
-  public static List<INodeSubstituteAction> createPrimaryChildSubstituteActions(SNode parentNode, SNode currentChild, final ConceptDeclaration childConcept, IChildNodeSetter childSetter, final Condition<SNode> filter, IOperationContext context) {
+  public static List<INodeSubstituteAction> createPrimaryChildSubstituteActions(
+          SNode parentNode,
+          SNode currentChild,
+          final ConceptDeclaration childConcept,
+          IChildNodeSetter childSetter,
+          final Condition<SNode> filter,
+          IOperationContext context) {
+
     if (childConcept == null) {
       return Collections.emptyList();
     }
@@ -140,6 +150,7 @@ public class ChildSubstituteActionsHelper {
           IChildNodeSetter childSetter,
           final IScope scope) {
     // try to create referent-search-scope
+    
     IStatus status = ModelConstraintsUtil.getReferentSearchScope(parentNode, null, referenceNodeConcept, smartReference, scope);
     if (status.isError()) return null;
 
@@ -148,15 +159,30 @@ public class ChildSubstituteActionsHelper {
     final LinkDeclaration referenceLink_final = smartReference;
     ISearchScope searchScope = (ISearchScope) status.getUserObject();
     final ConceptDeclaration targetConcept = smartReference.getTarget();
+
+
+    Class targetConceptClass;
+    try {
+      targetConceptClass = Class.forName(
+              JavaNameUtil.className(targetConcept),
+              true, ClassLoaderManager.getInstance().
+              getClassLoader());
+    } catch(ClassNotFoundException ex) {
+      throw new RuntimeException(ex);
+    }
+
     List<SNode> referentNodes = searchScope.getNodes();
     for (final SNode referentNode : referentNodes) {
-      if (SModelUtil.isInstanceOfConcept(referentNode, targetConcept, scope)) {
+      if (targetConceptClass.isInstance(referentNode)) {
         actions.add(new DefaultChildNodeSubstituteAction(referentNode, parentNode, currentChild, childSetter, scope) {
           String myMatchingText = null;
 
           public String getMatchingText(String pattern) {
             if (myMatchingText == null) {
-              myMatchingText = getSmartMatchingText(referenceNodeConcept, getParameterNode(), getScope());
+              myMatchingText = getSmartMatchingText(
+                      referenceNodeConcept,
+                      getParameterNode(),
+                      getScope());
             }
             return myMatchingText;
           }
