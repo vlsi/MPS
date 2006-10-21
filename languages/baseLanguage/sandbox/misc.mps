@@ -672,6 +672,17 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1161431965921">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1161431965922">
+            <property name="name" value="m" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1161431965923">
+              <link role="classifier" targetNodeId="1149153108889" resolveInfo="Main" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.NewExpression" id="1161431974302">
+              <link role="baseMethodDeclaration" targetNodeId="1159200669329" resolveInfo="Main" />
+            </node>
+          </node>
+        </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1158180144528" />
     </node>
