@@ -421,6 +421,15 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1154543408784">
     <property name="name" value="Arraysss" />
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1161433327946">
+      <property name="name" value="oldArray" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1161433327947" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1161433327948" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1161433360347">
+        <property name="name" value="d" />
+        <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1161433360348" />
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1154543420692">
       <property name="name" value="newArray" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1154543422788" />
