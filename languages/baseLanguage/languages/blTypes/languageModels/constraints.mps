@@ -12,7 +12,7 @@
     <property name="name" value="BlTypesProperty" />
     <node role="nodePropertyConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraint" id="1159269119376">
       <link role="applicableProperty" targetNodeId="2.1078489098626" />
-      <link role="applicableConcept" targetNodeId="1.1161342259888" />
+      <link role="applicableConcept" targetNodeId="1.1161435147385" />
       <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_PropertyGetter" id="1159269119377">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1159269119378">
           <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1159269119379">
@@ -24,7 +24,7 @@
                 <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1159269119383">
                   <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.PropertyGetter_FunctionParm_node" id="1159269119384" />
                   <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1159269119385">
-                    <link role="link" targetNodeId="1.1161342259891" />
+                    <link role="link" targetNodeId="1.1161435147388" />
                   </node>
                 </node>
                 <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1159269119386">
