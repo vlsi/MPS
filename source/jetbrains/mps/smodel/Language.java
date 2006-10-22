@@ -245,7 +245,8 @@ public class Language extends AbstractModule {
   }
 
   public void updateLastGenerationTime() {
-    long lastGenerationTime = FileUtil.getNewestFileTime(getSourceDir());
+    long lastGenerationTime = FileUtil.getNewestFileTime(
+            new File(getSourceDir().getAbsolutePath() + File.separator + getNamespace().replace('.', File.separatorChar)));
     long lastChangeTime = getLastChangeTime();
     myUpToDate = lastGenerationTime >= lastChangeTime;
     myUpdateLastGenerationTimeCalled = true;
