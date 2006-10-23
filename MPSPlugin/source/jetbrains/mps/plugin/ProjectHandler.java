@@ -108,8 +108,10 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
         Library.ModifiableModel libraryModel = library.getModifiableModel();
         try {
           File mpsJar = new File(mpsHome + File.separatorChar + "lib" + File.separatorChar + "mps.jar");
+          File srcZip = new File(mpsHome + File.separatorChar + "src.zip");
 
           libraryModel.addRoot("jar://" + mpsJar.getCanonicalPath() + "!/", OrderRootType.CLASSES);
+          libraryModel.addRoot("jar://" + srcZip + "!/", OrderRootType.SOURCES);
           libraryModel.commit();
 
           rootModel.addLibraryEntry(library);
