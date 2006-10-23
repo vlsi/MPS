@@ -135,13 +135,12 @@ public class TemplateGenUtil {
     String buildersPackageName = targetLanguage.getNamespace() + ".builder";
     String builderClassName = buildersPackageName + "." + conceptName + "_NodeBuilder";
     try {
-      Class builderClass = Class.forName(builderClassName, true, ClassLoaderManager.getInstance().getClassLoader());
-      Constructor[] constructors = builderClass.getDeclaredConstructors();
+      Constructor constructor = QueryMethod.getNodeBuilderConstructor(builderClassName);
+      if (constructor == null) return null;
+
       // should be 1 constructor with parameters:
       // SNode sourceNode, SNode templateNode, String mappingName, boolean isCopying, ITemplateGenerator generator
-      return (INodeBuilder) constructors[0].newInstance(sourceNode, templateNode, mappingName, isCopying, generator);
-    } catch (ClassNotFoundException e) {
-      // ok
+      return (INodeBuilder) constructor.newInstance(sourceNode, templateNode, mappingName, isCopying, generator);
     } catch (IllegalAccessException e) {
       LOG.error(builderClassName);
       throw new RuntimeException(e);
@@ -157,9 +156,7 @@ public class TemplateGenUtil {
     } catch (RuntimeException e) {
       LOG.error(builderClassName);
       throw e;
-    }
-
-    return null;
+    }    
   }
 
   public static IReferenceResolver loadReferenceResolver(SNode templateNode, IScope scope) {
