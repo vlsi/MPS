@@ -643,11 +643,11 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   @NotNull
-  public List<SNode> getChildren(@NotNull String role) {
+  public<T extends SNode> List<T> getChildren(@NotNull String role) {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
-    List<SNode> result = new ArrayList<SNode>();
+    List<T> result = new ArrayList<T>();
     for (SNode child : myChildren) {
-      if (role.equals(child.getRole_())) result.add(child);
+      if (role.equals(child.getRole_())) result.add((T) child);
     }
     return result;
   }
