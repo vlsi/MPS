@@ -47,31 +47,31 @@ public abstract class AbstractModule implements IModule {
 
   @Nullable
   protected Language getLanguage(@NotNull String languageNamespace, @NotNull Set<IModule> modulesToSkip, boolean suppressWarnings) {
-//    if (languageNamespace == null) return null;
     Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, BootstrapLanguages.getInstance());
     if (language != null) return language;
-    Set<IModule> processedModules = new HashSet<IModule>(modulesToSkip);
-    language = getLanguage_internal(languageNamespace, processedModules, this);
+    language = getLanguage_internal(languageNamespace, modulesToSkip, this);
     if (language == null && !suppressWarnings) {
-      LOG.errorWithTrace("Couldn't find language: \"" + languageNamespace + "\" in scope: " + this);
+      LOG.errorWithTrace("couldn't find language: \"" + languageNamespace + "\" in scope: " + this);
     }
     return language;
   }
 
   @Nullable
   private static Language getLanguage_internal(String languageNamespace, Set<IModule> processedModules, IModule dependentModule) {
+    processedModules.add(dependentModule);
     if (dependentModule instanceof Language && dependentModule.getModuleUID().equals(languageNamespace)) {
       return (Language) dependentModule;
     }
     Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, dependentModule);
-    processedModules.add(dependentModule);
-    if (language == null) {
-      List<IModule> dependOnModules = dependentModule.getDependOnModules();
-      for (IModule module : dependOnModules) {
-        if (!(processedModules.contains(module))) {
-          language = getLanguage_internal(languageNamespace, processedModules, module);
-          if (language != null) break;
-        }
+    if (language != null) {
+      return language;
+    }
+
+    List<IModule> dependOnModules = dependentModule.getDependOnModules();
+    for (IModule module : dependOnModules) {
+      if (!(processedModules.contains(module))) {
+        language = getLanguage_internal(languageNamespace, processedModules, module);
+        if (language != null) break;
       }
     }
     return language;
@@ -268,7 +268,7 @@ public abstract class AbstractModule implements IModule {
    * @return all modules which this immediately depends on, bootstrap languages in their number.
    */
   @NotNull
-  public List<IModule> getDependOnModules() {
+  public final List<IModule> getDependOnModules() {
     return appendBootstrapLanguages(getExplicitlyDependOnModules());
   }
 

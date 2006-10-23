@@ -1097,26 +1097,9 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1139535439104">
     <property name="name" value="CellActionMap_ExecuteFunction" />
     <link role="extends" targetNodeId="4.1137021947720" />
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1139535439105">
-      <link role="conceptLinkDeclaration" targetNodeId="4.1137546998352" />
-      <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1139535439106">
-        <property name="name" value="CellActionMap_FunctionParm_editorContext" />
-        <link role="extends" targetNodeId="4.1107135704075" />
-        <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1139535439107">
-          <link role="conceptLinkDeclaration" targetNodeId="4.1137545963098" />
-          <node role="target" type="jetbrains.mps.baseLanguage.ClassifierType" id="1139535439108">
-            <link role="classifier" extResolveInfo="29.[Classifier]EditorContext" />
-          </node>
-        </node>
-        <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1139535439109">
-          <property name="value" value="editorContext" />
-          <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
-        </node>
-        <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1139535439110">
-          <property name="value" value="editor context (action map function parameter)" />
-          <link role="conceptPropertyDeclaration" targetNodeId="3.1137473914776" />
-        </node>
-      </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1161630496596">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
+      <link role="target" targetNodeId="1161622981231" resolveInfo="ConceptFunctionParameter_editorContext" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1139535439111">
       <link role="conceptLinkDeclaration" targetNodeId="4.1137546998352" />

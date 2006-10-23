@@ -1,19 +1,16 @@
 package jetbrains.mps.generator;
 
-import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.StandaloneMPSContext;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.projectLanguage.ModuleDescriptor;
 import jetbrains.mps.smodel.*;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
-
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 /**
  * Created by IntelliJ IDEA.
@@ -38,7 +35,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     myTargetLanguage = targetLanguage;
     myInvocationContext = invocationContext;
     myGeneratorModules = getGeneratorModules(sourceModel);
-    myTransientModule = new TransientModule(invocationContext.getModule());
+    myTransientModule = new TransientModule(invocationContext.getModule(), myGeneratorModules);
     initTemplateModels();
   }
 
@@ -145,9 +142,9 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     private SModelDescriptor myProjectModelDescriptor = ProjectModels.createDescriptorFor(this);
     private ModuleDescriptor myModuleDescriptor = new ModuleDescriptor(myProjectModelDescriptor.getSModel());
 
-    TransientModule(IModule invocationModule) {
+    TransientModule(IModule invocationModule, List<Generator> generatorModules) {
       myInvocationModule = invocationModule;
-      myDependOnModules.addAll(GenerationSessionContext.this.getGeneratorModules());
+      myDependOnModules.addAll(generatorModules);
       myDependOnModules.add(invocationModule);
     }
 
@@ -169,12 +166,14 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       return myModuleDescriptor;
     }
 
-    @NotNull
-    public List<IModule> getDependOnModules() {
-      return myDependOnModules;
-    }
+//    @NotNull
+//    public List<IModule> getDependOnModules() {
+//      return myDependOnModules;
+//    }
 
-//    public Language getLanguage(@NotNull String languageNamespace) {
+//    @Nullable
+//    @Override
+//    protected Language getLanguage(@NotNull String languageNamespace, @NotNull Set<IModule> modulesToSkip, boolean suppressWarnings) {
 //      if (myInvocationModule instanceof Language) {
 //        if (languageNamespace.equals(myInvocationModule.getModuleUID())) {
 //          return (Language) myInvocationModule;
@@ -191,36 +190,11 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 //      if (language == null) {
 //        language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, myInvocationModule);
 //      }
-//      if (language == null) {
+//      if (language == null && !suppressWarnings) {
 //        LOG.error("Couldn't find language: \"" + languageNamespace + "\" in scope: " + this);
 //      }
 //      return language;
 //    }
-
-    @Nullable
-    @Override
-    protected Language getLanguage(@NotNull String languageNamespace, @NotNull Set<IModule> modulesToSkip, boolean suppressWarnings) {
-      if (myInvocationModule instanceof Language) {
-        if (languageNamespace.equals(myInvocationModule.getModuleUID())) {
-          return (Language) myInvocationModule;
-        }
-      }
-
-      Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, BootstrapLanguages.getInstance());
-      if (language == null) {
-        for (Generator generator : GenerationSessionContext.this.getGeneratorModules()) {
-          language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, generator);
-          if (language != null) return language;
-        }
-      }
-      if (language == null) {
-        language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, myInvocationModule);
-      }
-      if (language == null && !suppressWarnings) {
-        LOG.error("Couldn't find language: \"" + languageNamespace + "\" in scope: " + this);
-      }
-      return language;
-    }
 
     public void dispose() {
       MPSModuleRepository.getInstance().unRegisterModules(this);
