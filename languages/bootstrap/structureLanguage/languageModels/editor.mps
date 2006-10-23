@@ -3,6 +3,7 @@
   <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
   <maxImportIndex value="16" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <import index="2" modelUID="jetbrains.mps.core.structure" />
@@ -652,7 +653,7 @@
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1161165984259">
                     <link role="variableDeclaration" targetNodeId="1161165847202" resolveInfo="decl" />
                   </node>
-                  <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_scope" id="1161166418851" />
+                  <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_scope" id="1161628902013" />
                 </node>
               </node>
             </node>
