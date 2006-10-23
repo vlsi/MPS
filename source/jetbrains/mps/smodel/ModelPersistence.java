@@ -267,17 +267,11 @@ public class ModelPersistence {
   public static SNode createNodeInstance(@NotNull String type,
                                          @NotNull SModel model) {
     try {
-      Class nodeClass = Class.forName(type, true, ClassLoaderManager.getInstance().getClassLoader());
       Method method = QueryMethod.getNewInstanceMethod(type);
-      return (SNode) method.invoke(nodeClass, model);
-    } catch (ClassNotFoundException e) {
-      System.out.println("can't find class " + type);
-      LOG.warning("Couldn't find class for node type " + type + " in model " + model.getUID());
-      if (type.endsWith(".ClassType") || type.endsWith(".InterfaceType")) { // these classes have been removed
-        SModelRepository.getInstance().markChanged(model, true);
-        return new ClassifierType(model);
+      if (method == null) {
+        return new UnknownSNode(model);
       }
-      return new UnknownSNode(model); //this hack is required to make diff work correctly even if no such class
+      return (SNode) method.invoke(null, model);
     } catch (SecurityException e) {
       LOG.error(e);
     } catch (IllegalAccessException e) {
