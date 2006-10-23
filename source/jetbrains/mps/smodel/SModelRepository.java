@@ -161,10 +161,12 @@ public class SModelRepository extends SModelAdapter {
 
   public void removeUnusedDescriptors() {
     List<SModelDescriptor> descriptorsToRemove = new LinkedList<SModelDescriptor>();
-    for (SModelDescriptor descriptor : myModelsWithNoOwners) {
+    for (SModelDescriptor descriptor : new ArrayList<SModelDescriptor>(myModelsWithNoOwners)) {
       HashSet<ModelOwner> modelOwners = myModelToOwnerMap.get(descriptor);
       if (modelOwners == null || modelOwners.isEmpty()) {
         descriptorsToRemove.add(descriptor);
+      } else {
+        myModelsWithNoOwners.remove(descriptor);
       }
     }
 

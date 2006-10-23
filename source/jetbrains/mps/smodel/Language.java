@@ -179,7 +179,6 @@ public class Language extends AbstractModule {
     SModelRepository.getInstance().unRegisterModelDescriptors(Language.this);
     SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, Language.this);
 
-
     for (Generator generator : getGenerators()) {
       generator.dispose();
     }
@@ -187,11 +186,11 @@ public class Language extends AbstractModule {
     myLanguageDescriptor = newDescriptor;
     //read modules and models
     readDependOnModules();
+    revalidateGenerators();
 
     ReloadUtils.reloadAll(true, true, false);
 
     rereadModels();
-    revalidateGenerators();
 
     registerAspectListener();
     updateLastGenerationTime();
