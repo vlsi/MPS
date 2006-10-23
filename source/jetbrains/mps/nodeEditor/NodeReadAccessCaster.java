@@ -26,7 +26,7 @@ public class NodeReadAccessCaster {
   private static boolean ourCanFirePropertyReadAccessedEvent = true;
 
   public static void setNodeReadAccessListener(CellBuildNodeAccessListener listener) {
-    ensureNoConcurrentAccess();
+//    ensureNoConcurrentAccess();
     if (myReadAccessListener == null) {
       myThread = Thread.currentThread();
     } else {
@@ -36,7 +36,7 @@ public class NodeReadAccessCaster {
   }
 
   public static void removeNodeAccessListener() {
-    ensureNoConcurrentAccess();
+//    ensureNoConcurrentAccess();
     if (myReadAccessListenerStack.isEmpty()) {
       myReadAccessListener = null;
       myThread = null;
@@ -78,7 +78,7 @@ public class NodeReadAccessCaster {
   }
 
   public static void fireNodeReadAccessed(SNode node) {
-    ensureNoConcurrentAccess();
+//    ensureNoConcurrentAccess();
   //  ensureNotDisposed(node);
     if (myReadAccessListener != null) myReadAccessListener.readAccess(node);
   }
@@ -94,7 +94,7 @@ public class NodeReadAccessCaster {
   }
 
   public static void firePropertyReadAccessed(SNode node, String propertyName) {
-    ensureNoConcurrentAccess();
+//    ensureNoConcurrentAccess();
   //  ensureNotDisposed(node);
     if (!ourCanFirePropertyReadAccessedEvent) return;
     if (myPropertyAccessor != null) {
@@ -112,25 +112,25 @@ public class NodeReadAccessCaster {
   }
 
   public static void fireReferenceTargetReadAccessed(SReference reference) {
-    ensureNoConcurrentAccess();
+//    ensureNoConcurrentAccess();
   //  ensureNotDisposed(reference.getSourceNode());
     if (myReadAccessListener != null) myReadAccessListener.readAccess(reference);
   }
 
-  private static void ensureNoConcurrentAccess() {
-    if (myThread != null) {
-      if (myThread == Thread.currentThread()) return;
-      try {
-        synchronized (READ_LOCK) {
-          while (myThread != null) {
+//  private static void ensureNoConcurrentAccess() {
+//    if (myThread != null) {
+//      if (myThread == Thread.currentThread()) return;
+//      try {
+//        synchronized (READ_LOCK) {
+//          while (myThread != null) {
 //            System.out.println(">> in trap " + Thread.currentThread().getName());
-            READ_LOCK.wait();
+//            READ_LOCK.wait();
 //            System.out.println(">> out trap " + Thread.currentThread().getName());
-          }
-        }
-      } catch (InterruptedException e) {
-        throw new RuntimeException(e);
-      }
-    }
-  }
+//          }
+//        }
+//      } catch (InterruptedException e) {
+//        throw new RuntimeException(e);
+//      }
+//    }
+//  }
 }
