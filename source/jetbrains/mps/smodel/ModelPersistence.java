@@ -6,6 +6,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.QueryMethod;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
@@ -267,20 +268,16 @@ public class ModelPersistence {
                                          @NotNull SModel model) {
     try {
       Class nodeClass = Class.forName(type, true, ClassLoaderManager.getInstance().getClassLoader());
-      Method method = nodeClass.getMethod("newInstance", SModel.class);
+      Method method = QueryMethod.getNewInstanceMethod(type);
       return (SNode) method.invoke(nodeClass, model);
     } catch (ClassNotFoundException e) {
       System.out.println("can't find class " + type);
-
       LOG.warning("Couldn't find class for node type " + type + " in model " + model.getUID());
       if (type.endsWith(".ClassType") || type.endsWith(".InterfaceType")) { // these classes have been removed
         SModelRepository.getInstance().markChanged(model, true);
         return new ClassifierType(model);
       }
-      return new UnknownSNode(model); //this hack is required to make diff work correctly event if no such class
-    } catch (NoSuchMethodException e) {
-
-      LOG.error("Couldn't find method newInstance for node type " + type + " in model " + model.getUID(), e);
+      return new UnknownSNode(model); //this hack is required to make diff work correctly even if no such class
     } catch (SecurityException e) {
       LOG.error(e);
     } catch (IllegalAccessException e) {
