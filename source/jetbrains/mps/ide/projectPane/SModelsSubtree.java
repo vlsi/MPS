@@ -10,6 +10,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.ProjectModels;
 
 import javax.swing.Icon;
 import javax.swing.JPopupMenu;
@@ -32,6 +33,8 @@ class SModelsSubtree {
     IModule module = operationContext.getModule();
     assert module != null;
     for (SModelDescriptor modelDescriptor : module.getOwnModelDescriptors()) {
+      if (ProjectModels.isProjectModel(modelDescriptor.getModelUID())) continue;
+
       String stereotype = modelDescriptor.getStereotype();
       if (stereotype == null || stereotype.length() == 0) {
         list.get(0).add(new SModelTreeNode(modelDescriptor, null, operationContext));
