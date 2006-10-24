@@ -212,23 +212,6 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1154464638507">
     <property name="name" value="BaseActionFunction" />
     <link role="extends" targetNodeId="3.1137021947720" />
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1154464847014">
-      <link role="conceptLinkDeclaration" targetNodeId="3.1137546998352" />
-      <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1154464849297">
-        <property name="name" value="BaseActionFunctionParm_operationContext" />
-        <link role="extends" targetNodeId="3.1107135704075" />
-        <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1154465012361">
-          <property name="value" value="operationContext" />
-          <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-        </node>
-        <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1154465034237">
-          <link role="conceptLinkDeclaration" targetNodeId="3.1137545963098" />
-          <node role="target" type="jetbrains.mps.baseLanguage.ClassifierType" id="1154465062645">
-            <link role="classifier" extResolveInfo="4.[Classifier]IOperationContext" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1154464696664">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
     </node>
@@ -297,10 +280,18 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1154722711862">
     <property name="name" value="ReferentSubstitutePreconditionFunction" />
-    <link role="extends" targetNodeId="1154464638507" />
+    <link role="extends" targetNodeId="3.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1154722711863">
       <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" />
       <node role="target" type="jetbrains.mps.baseLanguage.BooleanType" id="1154722711864" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1161706063363">
+      <link role="target" targetNodeId="5.1161622878565" />
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1161706063364">
+      <link role="target" targetNodeId="5.1161622753914" />
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1154722711865">
       <link role="conceptLinkDeclaration" targetNodeId="3.1137546998352" />

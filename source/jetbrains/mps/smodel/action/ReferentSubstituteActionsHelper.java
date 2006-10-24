@@ -158,7 +158,7 @@ import java.util.*;
     // precondition is optional
     if (precondition != null) {
       String methodName = ActionQueryMethodName.referentSubstituteActionsBuilder_Precondition(actionsBuilder);
-      Object[] args = new Object[]{sourceNode, context};
+      Object[] args = new Object[]{sourceNode, context.getScope(), context};
       SModel model = actionsBuilder.getModel();
       try {
         return (Boolean) QueryMethodGenerated.invoke(methodName, args, model, true);
@@ -166,19 +166,20 @@ import java.util.*;
         return false;
       }
     }
+    return true;
 
-    // try old query method
-    String preconditionQueryMethodId = actionsBuilder.getPreconditionAspectId();
-    // precondition is optional
-    if (preconditionQueryMethodId == null) {
-      return true;
-    }
-
-    Object[] args1 = new Object[]{sourceNode, context};
-    Object[] args2 = new Object[]{sourceNode, context.getScope()};
-    String methodName = "referentSubstituteActionsBuilder_Precondition_" + preconditionQueryMethodId;
-    SModel model = actionsBuilder.getModel();
-    return (Boolean) QueryMethod.invoke_alternativeArguments(methodName, args1, args2, model);
+//    // try old query method
+//    String preconditionQueryMethodId = actionsBuilder.getPreconditionAspectId();
+//    // precondition is optional
+//    if (preconditionQueryMethodId == null) {
+//      return true;
+//    }
+//
+//    Object[] args1 = new Object[]{sourceNode, context};
+//    Object[] args2 = new Object[]{sourceNode, context.getScope()};
+//    String methodName = "referentSubstituteActionsBuilder_Precondition_" + preconditionQueryMethodId;
+//    SModel model = actionsBuilder.getModel();
+//    return (Boolean) QueryMethod.invoke_alternativeArguments(methodName, args1, args2, model);
   }
 
   private static List<INodeSubstituteAction> applyActionFilter(ReferentSubstituteActionsBuilder builder, List<INodeSubstituteAction> actions, IOperationContext context) {

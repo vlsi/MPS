@@ -163,10 +163,7 @@
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1154653138641">
                   <property name="value" value="true" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1154653173567">
-                  <link role="baseMethodDeclaration" extResolveInfo="7.method ([Classifier]IOperationContext).([InstanceMethodDeclaration]getScope() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IScope]))" />
-                  <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.BaseActionFunctionParm_operationContext" id="1154653167472" />
-                </node>
+                <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_scope" id="1161705645008" />
               </node>
             </node>
           </node>
