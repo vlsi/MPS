@@ -84,7 +84,7 @@ public class FindUsagesManager {
         progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_FIND_USAGES);
         result.addAll(model.findUsages(nodes));
         if (progress.isCanceled()) {
-          progress.finishTask(taskName);
+          progress.finishAnyway();
           return result;
         }
         progress.finishTask(taskName);
@@ -112,7 +112,7 @@ public class FindUsagesManager {
         progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_FIND_INSTANCES);
         result.addAll(model.findInstances(concept, GlobalScope.getInstance()));
         if (progress.isCanceled()) {
-          progress.finishTask(taskName);
+          progress.finishAnyway();
           return result;
         }
         progress.finishTask(taskName);

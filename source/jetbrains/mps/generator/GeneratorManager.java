@@ -369,7 +369,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       }
     } catch (GenerationCanceledException gce) {
       addProgressMessage(MessageKind.WARNING, "generation canceled", progress);
-      progress.finishSomehow();
+      progress.finishAnyway();
       showMessageView();
     } catch (Throwable t) {
       LOG.error(t);
