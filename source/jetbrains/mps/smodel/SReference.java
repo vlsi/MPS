@@ -94,6 +94,9 @@ public class SReference {
       SNode nodeById = model.getNodeById(myTargetNodeId);
       if (nodeById == null) {
         logGetTargetNodeErrors(GetTargetNodeErrorState.CANT_RESOLVE_BY_ID);
+        if (model.isExternallyResolvable() && model != sourceModel) {
+           LOG.warning("reference is resolved by ID, while should be resolved by ERI");
+        }
       } else {
         if (model.isExternallyResolvable() && model != sourceModel) {
           String extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(nodeById);

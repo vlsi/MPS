@@ -11,6 +11,7 @@ import jetbrains.mps.ide.navigation.HistoryItem;
 import jetbrains.mps.ide.navigation.IHistoryItem;
 import jetbrains.mps.ide.navigation.RecentEditorsMenu;
 import jetbrains.mps.ide.ui.JMultiLineToolTip;
+import jetbrains.mps.ide.ui.CellSpeedSearch;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.text.CellAction_RenderText;
 import jetbrains.mps.smodel.*;
@@ -91,6 +92,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private final IGutterMessageOwner myOwner = new IGutterMessageOwner() {
   };
+  private CellSpeedSearch myCellSpeedSearch;
 
   public AbstractEditorComponent(IOperationContext operationContext) {
     this(operationContext, false);
@@ -288,6 +290,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     });
 
+    myCellSpeedSearch = new CellSpeedSearch(this);
     addKeyListener(new KeyAdapter() {
       public void keyPressed(final KeyEvent e) {
         processKeyPressed(e);
@@ -823,7 +826,13 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public EditorCell findNodeCell(final SNode node) {
-    if (myRootCell == null) return null;
+    if (myRootCell.getSNode() == node) {
+      return myRootCell;
+    }
+     if (node == null || !(myRootCell instanceof EditorCell_Collection)) {
+      return null;
+    }
+   /* if (myRootCell == null) return null;
     if (myRootCell.getSNode() == node) {
       return myRootCell;
     }
@@ -846,7 +855,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
     SelectNodeCondition condition = new SelectNodeCondition();
     cellCollection.iterateTreeUntilCondition(condition, true);
-    return condition.getFoundCell();
+    return condition.getFoundCell();*/
+    return myRefNodeContextsToBigCellsMap.get(ReferencedNodeContext.createNodeContext(node));
   }
 
   public EditorCell findNodeCell(final SNode node, String id) {

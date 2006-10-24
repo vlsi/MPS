@@ -93,7 +93,6 @@ public class EditorContext {
 
   public EditorCell createNodeCell(SNode node) {
     if (myCurrentRefNodeContext == null) {
-      LOG.warning("ref context not initialized");
       initializeRefContext(node);
     }
     ReferencedNodeContext oldNodeContext = myCurrentRefNodeContext;
@@ -106,7 +105,6 @@ public class EditorContext {
   public EditorCell createReferentCell(SNode sourceNode, SNode targetNode, String role) {
     if (myCurrentRefNodeContext == null) {
       initializeRefContext(targetNode);
-      LOG.warning("ref context not initialized");
     }
     ReferencedNodeContext oldNodeContext = myCurrentRefNodeContext;
     myCurrentRefNodeContext = myCurrentRefNodeContext.contextWithOneMoreReference(targetNode, sourceNode, role);
@@ -118,7 +116,6 @@ public class EditorContext {
   public EditorCell createReferentCell(AbstractCellProvider inlineComponent, SNode sourceNode, SNode targetNode, String role) {
     if (myCurrentRefNodeContext == null) {
       initializeRefContext(targetNode);
-      LOG.warning("ref context not initialized");
     }
     ReferencedNodeContext oldNodeContext = myCurrentRefNodeContext;
     myCurrentRefNodeContext = myCurrentRefNodeContext.contextWithOneMoreReference(targetNode, sourceNode, role);
