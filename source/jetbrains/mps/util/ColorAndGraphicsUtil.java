@@ -2,6 +2,7 @@ package jetbrains.mps.util;
 
 import java.awt.Color;
 import java.awt.BasicStroke;
+import java.awt.Graphics;
 
 /**
  * Created by IntelliJ IDEA.
@@ -11,6 +12,9 @@ import java.awt.BasicStroke;
  * To change this template use File | Settings | File Templates.
  */
 public class ColorAndGraphicsUtil {
+  public static final int WAVE_HEIGHT = 2;
+  public static final int WAVE_SEGMENT_LENGTH = 4;
+
   public static Color saturateColor(Color c, float factor) {
     float[] hsb = new float[3];
     Color.RGBtoHSB(c.getRed(), c.getGreen(), c.getBlue(), hsb);
@@ -41,5 +45,22 @@ public class ColorAndGraphicsUtil {
   public static BasicStroke dottedStroke() {
     float[] dash = new float[]{1.0f,3.0f};
     return new BasicStroke(1.0f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER, 1.0f, dash, 0.0f);
+  }
+
+
+  public static void drawWave(Graphics g, int xStart, int xEnd, int y) {
+    int startSegment = xStart / WAVE_SEGMENT_LENGTH;
+    int endSegment = xEnd / WAVE_SEGMENT_LENGTH;
+    for (int i = startSegment; i < endSegment; i++) {
+      drawWaveSegment(g, WAVE_SEGMENT_LENGTH * i, y);
+    }
+
+    int x = WAVE_SEGMENT_LENGTH * endSegment;
+    g.drawLine(x, y + WAVE_HEIGHT, x + WAVE_SEGMENT_LENGTH / 2, y);
+  }
+
+  public static void drawWaveSegment(Graphics g, int x, int y) {
+    g.drawLine(x, y + WAVE_HEIGHT, x + WAVE_SEGMENT_LENGTH / 2, y);
+    g.drawLine(x + WAVE_SEGMENT_LENGTH / 2, y, x + WAVE_SEGMENT_LENGTH, y + WAVE_HEIGHT);
   }
 }
