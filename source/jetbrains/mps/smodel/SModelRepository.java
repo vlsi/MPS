@@ -184,11 +184,7 @@ public class SModelRepository extends SModelAdapter {
 
   @Nullable
   public SModelDescriptor getModelDescriptor(@NotNull SModelUID modelUID) {
-    SModelDescriptor descriptor = myUIDToModelDescriptorMap.get(modelUID);
-    if (descriptor != null) {
-      return descriptor;
-    }
-    return null;
+    return myUIDToModelDescriptorMap.get(modelUID);    
   }
 
   @Nullable

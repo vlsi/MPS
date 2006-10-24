@@ -79,7 +79,7 @@ public class SReference {
       logGetTargetNodeErrors(GetTargetNodeErrorState.NO_MODEL_DESCRIPTOR);
       model = mySourceNode.getModel();
     } else {
-   model = modelDescriptor.getSModel();
+      model = modelDescriptor.getSModel();
     }
     SModel sourceModel = mySourceNode.getModel();
     if (model == null) {
