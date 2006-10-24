@@ -294,7 +294,7 @@
               <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1149284209960">
                 <link role="baseMethodDeclaration" extResolveInfo="5.static method ([Classifier]SModelSearchUtil).([StaticMethodDeclaration]createModelAndImportedModelsScope((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SModel]), (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IScope])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ISearchScope]))" />
                 <link role="classConcept" extResolveInfo="5.[Classifier]SModelSearchUtil" />
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptParameter_ReferentSearchScope_model" id="1149284212586" />
+                <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_model" id="1149284212586" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1149284218572">
                   <property name="value" value="true" />
                 </node>
@@ -384,7 +384,7 @@
               <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1149284513452">
                 <link role="classConcept" extResolveInfo="5.[Classifier]SModelSearchUtil" />
                 <link role="baseMethodDeclaration" extResolveInfo="5.static method ([Classifier]SModelSearchUtil).([StaticMethodDeclaration]createModelAndImportedModelsScope((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SModel]), (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IScope])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ISearchScope]))" />
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptParameter_ReferentSearchScope_model" id="1149284513453" />
+                <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_model" id="1149284513453" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1149284513454">
                   <property name="value" value="true" />
                 </node>

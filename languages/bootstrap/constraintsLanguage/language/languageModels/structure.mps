@@ -195,6 +195,10 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1148934493876">
     <property name="name" value="ConstraintFunction_ReferentSearchScope_AbstractBase" />
     <link role="extends" targetNodeId="3.1137021947720" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1161721561937">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" />
+      <link role="target" targetNodeId="11.1161622665029" />
+    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1148934636678">
       <link role="conceptLinkDeclaration" targetNodeId="3.1137546998352" />
       <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1148934636679">
@@ -224,25 +228,6 @@
           <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
         </node>
         <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1148934636687">
-          <property name="value" value="function parameter" />
-          <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
-        </node>
-      </node>
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1148934636688">
-      <link role="conceptLinkDeclaration" targetNodeId="3.1137546998352" />
-      <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1148934636689">
-        <property name="name" value="ConceptParameter_ReferentSearchScope_model" />
-        <link role="extends" targetNodeId="3.1107135704075" />
-        <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1148934636690">
-          <link role="conceptLinkDeclaration" targetNodeId="3.1137545963098" />
-          <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.SModelType" id="1148934636691" />
-        </node>
-        <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1148934636692">
-          <property name="value" value="model" />
-          <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-        </node>
-        <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1148934636693">
           <property name="value" value="function parameter" />
           <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
         </node>

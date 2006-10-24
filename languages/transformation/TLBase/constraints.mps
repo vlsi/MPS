@@ -16,7 +16,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1149121392230">
             <node role="expression" type="jetbrains.mps.baseLanguage.NewExpression" id="1149121395653">
               <link role="baseMethodDeclaration" extResolveInfo="2.constructor [Classifier]MappingRuleTemplateNodeSearchScope[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SModel]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IScope]))" />
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptParameter_ReferentSearchScope_model" id="1149121444280" />
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_model" id="1149121444280" />
               <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptParameter_ReferentSearchScope_scope" id="1149121464329" />
             </node>
           </node>
