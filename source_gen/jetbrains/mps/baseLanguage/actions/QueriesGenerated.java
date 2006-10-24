@@ -10,6 +10,7 @@ import jetbrains.mps.baseLanguage.types.BaseLanguageTypesUtil;
 import jetbrains.mps.baseLanguage.Expression;
 import jetbrains.mps.typesystem.TypeCheckerAccess;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.IScope;
 
 public class QueriesGenerated {
 
@@ -17,17 +18,17 @@ public class QueriesGenerated {
     SNode parent = SNodeOperations.getParentWhereConceptInList(parentNode, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement","jetbrains.mps.baseLanguage.structure.Closure"}, false, false);
     return SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement");
   }
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_GenericDeclaration_1159200256287(SNode sourceNode, IOperationContext operationContext) {
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_GenericDeclaration_1159200256287(SNode sourceNode, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getCount(sourceNode, "typeVariableDeclaration") == 0;
   }
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_ClassifierType_1158972050511(SNode sourceNode, IOperationContext operationContext) {
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_ClassifierType_1158972050511(SNode sourceNode, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getCount(sourceNode, "parameter") == 0;
   }
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1158965431412(SNode sourceNode, IOperationContext operationContext) {
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1158965431412(SNode sourceNode, IScope scope, IOperationContext operationContext) {
     Object ct = BaseLanguageTypesUtil.tryObtain_Classifier_type((Expression)sourceNode, TypeCheckerAccess.getTypeChecker());
     return ct != null;
   }
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_VariableDeclaration_1158969943216(SNode sourceNode, IOperationContext operationContext) {
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_VariableDeclaration_1158969943216(SNode sourceNode, IScope scope, IOperationContext operationContext) {
     if(SLinkOperations.getTarget(sourceNode, "initializer", true) != null) {
       return false;
     }
@@ -42,7 +43,7 @@ public class QueriesGenerated {
     }
     return false;
   }
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_NewExpression_1159200493867(SNode sourceNode, IOperationContext operationContext) {
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_NewExpression_1159200493867(SNode sourceNode, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getCount(sourceNode, "typeParameter") == 0;
   }
   public static void nodeFactory_NodeSetup_InstanceMethodDeclaration_1158793299786(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {

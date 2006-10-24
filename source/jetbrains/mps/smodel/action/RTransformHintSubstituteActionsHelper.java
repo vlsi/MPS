@@ -96,7 +96,7 @@ import java.util.List;
     // precondition is optional
     if (precondition != null) {
       String methodName = ActionQueryMethodName.rTransformHintSubstituteActionsBuilder_Precondition(actionsBuilder);
-      Object[] args = new Object[]{sourceNode, context};
+      Object[] args = new Object[]{sourceNode, context.getScope(), context};
       SModel model = actionsBuilder.getModel();
       try {
         return (Boolean) QueryMethodGenerated.invoke(methodName, args, model, true);

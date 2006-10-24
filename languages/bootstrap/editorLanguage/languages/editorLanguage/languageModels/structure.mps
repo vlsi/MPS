@@ -1309,7 +1309,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1142886221719">
     <property name="name" value="QueryFunction_NodeCondition" />
-    <link role="extends" targetNodeId="1145653581024" />
+    <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1145652669910">
       <property name="value" value="condition" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
@@ -1414,13 +1414,6 @@
       <property name="role" value="rightErrorToken" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="3.1133920641626" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1145653581024">
-    <property name="name" value="BaseQueryFunction" />
-    <link role="extends" targetNodeId="4.1137021947720" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1145653581025">
-      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1149850725784">

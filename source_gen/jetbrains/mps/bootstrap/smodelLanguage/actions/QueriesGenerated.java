@@ -12,20 +12,21 @@ import jetbrains.mps.bootstrap.smodelLanguage.types.Slink_TypeObject;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.IScope;
 
 public class QueriesGenerated {
 
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1154624855279(SNode sourceNode, IOperationContext operationContext) {
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1154624855279(SNode sourceNode, IScope scope, IOperationContext operationContext) {
     return ActionsUtil_mpsLoadable.isExpressionOfOurType(sourceNode);
   }
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1154634535241(SNode sourceNode, IOperationContext operationContext) {
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1154634535241(SNode sourceNode, IScope scope, IOperationContext operationContext) {
     ITypeObject type = TypeCheckerAccess.getTypeChecker().getNodeType(sourceNode);
     return (type instanceof Snode_TypeObject) || (type instanceof Slink_TypeObject);
   }
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1154636612745(SNode sourceNode, IOperationContext operationContext) {
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1154636612745(SNode sourceNode, IScope scope, IOperationContext operationContext) {
     return ActionsUtil_mpsLoadable.isExpressionOfOurType(sourceNode);
   }
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_SNodeOperation_1154637518825(SNode sourceNode, IOperationContext operationContext) {
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_SNodeOperation_1154637518825(SNode sourceNode, IScope scope, IOperationContext operationContext) {
     boolean alreadyHasParms = SLinkOperations.getCount(sourceNode, "parameter") > 0;
     if(alreadyHasParms) {
       return false;

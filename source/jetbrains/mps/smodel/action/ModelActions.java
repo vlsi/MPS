@@ -44,12 +44,12 @@ public class ModelActions {
             context);
   }
 
-  /**
-   * helper method
-   */
-  public static boolean isDefaultSubstitutableConcept(ConceptDeclaration concept, ConceptDeclaration expectedConcept, IScope scope) {
-    return ChildSubstituteActionsHelper.isDefaultSubstitutableConcept(concept, expectedConcept, scope);
-  }
+//  /**
+//   * helper method
+//   */
+//  public static boolean isDefaultSubstitutableConcept(ConceptDeclaration concept, ConceptDeclaration expectedConcept, IScope scope) {
+//    return ChildSubstituteActionsHelper.isDefaultSubstitutableConcept(concept, expectedConcept, scope);
+//  }
 
 
   /**
@@ -58,7 +58,7 @@ public class ModelActions {
   public static List<ConceptDeclaration> getDefaultSubstitutableConcepts(SModel sourceModel, final ConceptDeclaration targetConcept, final IScope scope) {
     return SModelUtil.conceptsFromModelLanguages(sourceModel, new Condition<ConceptDeclaration>() {
       public boolean met(ConceptDeclaration node) {
-        return isDefaultSubstitutableConcept(node, targetConcept, scope);
+        return ChildSubstituteActionsHelper.isDefaultSubstitutableConcept(node, targetConcept, scope);
       }
     }, scope);
   }
