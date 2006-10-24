@@ -93,17 +93,21 @@ public class LeftEditorHighlighter {
     myWidth = width;
   }
 
-  public void relayout() {
+  public void relayout(boolean updateFolding) {
     for (HighlighterBracket bracket : myBrackets.values()) {
       bracket.relayout();
       bracket.setX(myWidth);
     }
     deleteUnresolvedBrackets();
-    for (FoldingButton button : myFoldingButtons.values()) {
-      button.relayout();
-      button.setX(myWidth);
+
+    if (updateFolding) {
+      for (FoldingButton button : myFoldingButtons.values()) {
+        button.relayout();
+        button.setX(myWidth);
+      }
+      deleteUnresolvedFoldingButtons();
     }
-    deleteUnresolvedFoldingButtons();
+    
     myBracketEdges.clear();
     myBracketsLayoutStack.clear();
     // from top to bottom

@@ -773,9 +773,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myMessagesGutter.repaint();
   }
 
-  public void revalidateAndRepaint() {
-    myLeftHighlighter.relayout();
-    revalidate();
+  public void revalidateAndRepaint(boolean updateFolding) {
+    myLeftHighlighter.relayout(updateFolding);
     repaint();
   }
 
@@ -784,7 +783,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myRootCell.setY(myShiftY);
     myRootCell.relayout();
     myLeftHighlighter.setWidth(myShiftX - ADDITIONAL_SHIFT_X);
-    myLeftHighlighter.relayout();
+    myLeftHighlighter.relayout(true);
   }
 
 
@@ -1094,7 +1093,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (newSelectedCell != null && newSelectedCell.isSelectable()) {
       changeSelection(newSelectedCell);
       mySelectedCell.processMousePressed(mouseEvent);
-      revalidateAndRepaint();
+      revalidateAndRepaint(false);
     }
   }
 
@@ -1312,7 +1311,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   public void processKeyReleased(KeyEvent keyEvent) {
     peekKeyboardHandler().processKeyReleased(getEditorContext(), keyEvent);
-    revalidateAndRepaint();
+    revalidateAndRepaint(false);
   }
 
 
@@ -1384,7 +1383,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         }
       }
     });
-    revalidateAndRepaint();
+    revalidateAndRepaint(false);
   }
 
   boolean activateNodeSubstituteChooser(EditorCell editorCell, boolean resetPattern) {
