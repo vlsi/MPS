@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.IScope;
 
 public class QueriesGenerated {
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_1154539862600(SNode parentNode, IOperationContext operationContext) {
+  public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_1154539862600(SNode parentNode, IScope scope, IOperationContext operationContext) {
     SNode parent = SNodeOperations.getParentWhereConceptInList(parentNode, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement","jetbrains.mps.baseLanguage.structure.Closure"}, false, false);
     return SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement");
   }

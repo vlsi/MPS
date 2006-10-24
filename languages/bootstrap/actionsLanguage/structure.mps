@@ -209,19 +209,20 @@
       <link role="dataType" targetNodeId="1.1082983041843" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1154464638507">
-    <property name="name" value="BaseActionFunction" />
-    <link role="extends" targetNodeId="3.1137021947720" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1154464696664">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1154465102724">
     <property name="name" value="NodeSubstitutePreconditionFunction" />
-    <link role="extends" targetNodeId="1154464638507" />
+    <link role="extends" targetNodeId="3.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1154465140647">
       <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" />
       <node role="target" type="jetbrains.mps.baseLanguage.BooleanType" id="1154465191258" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1161714127510">
+      <link role="target" targetNodeId="5.1161622878565" />
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1161714127511">
+      <link role="target" targetNodeId="5.1161622753914" />
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1154465272104">
       <link role="conceptLinkDeclaration" targetNodeId="3.1137546998352" />

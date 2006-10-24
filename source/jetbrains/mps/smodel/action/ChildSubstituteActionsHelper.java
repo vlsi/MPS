@@ -303,7 +303,7 @@ public class ChildSubstituteActionsHelper {
     // precondition is optional
     if (precondition != null) {
       String methodName = ActionQueryMethodName.nodeSubstituteActionsBuilder_Precondition(actionsBuilder);
-      Object[] args = new Object[]{parentNode, context};
+      Object[] args = new Object[]{parentNode, context.getScope(), context};
       SModel model = actionsBuilder.getModel();
       try {
         return (Boolean) QueryMethodGenerated.invoke(methodName, args, model, true);

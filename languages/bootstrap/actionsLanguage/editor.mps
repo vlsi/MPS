@@ -980,15 +980,28 @@
             <property name="drawBorder" value="false" />
           </node>
         </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1158949138425">
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1161714151197">
           <property name="drawBorder" value="false" />
           <property name="selectable" value="false" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1158949138426">
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1161714151198">
+            <property name="text" value="scope" />
+            <property name="drawBorder" value="false" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1161714151199">
+            <property name="text" value="context (jetbrains.mps.smodel.IScope)" />
+            <property name="fontStyle" value="PLAIN" />
+            <property name="drawBorder" value="false" />
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1161714151200">
+          <property name="drawBorder" value="false" />
+          <property name="selectable" value="false" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1161714151201">
             <property name="text" value="operationContext" />
             <property name="drawBorder" value="false" />
           </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1158949138427">
-            <property name="text" value="jetbrains.mps.smodel.IOperationContext" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1161714151202">
+            <property name="text" value="context (jetbrains.mps.smodel.IOperationContext)" />
             <property name="fontStyle" value="PLAIN" />
             <property name="drawBorder" value="false" />
           </node>
