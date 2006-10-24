@@ -298,7 +298,7 @@
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1149284218572">
                   <property name="value" value="true" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptParameter_ReferentSearchScope_scope" id="1149284229231" />
+                <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_scope" id="1149284229231" />
               </node>
             </node>
           </node>
@@ -388,7 +388,7 @@
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1149284513454">
                   <property name="value" value="true" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptParameter_ReferentSearchScope_scope" id="1149284513455" />
+                <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_scope" id="1149284513455" />
               </node>
             </node>
           </node>

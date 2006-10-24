@@ -684,6 +684,19 @@
                 </node>
               </node>
             </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1161722900535">
+              <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1161722908711">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1161722911542" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1161722905163">
+                  <link role="variableDeclaration" targetNodeId="1161166135929" resolveInfo="s" />
+                </node>
+              </node>
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1161722900537">
+                <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1161722913887">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1161722917123" />
+                </node>
+              </node>
+            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1161166287878">
               <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1161166407178">
                 <link role="baseMethodDeclaration" extResolveInfo="16.method ([Classifier]File).([InstanceMethodDeclaration]exists() : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
@@ -956,6 +969,7 @@
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1141943896681">
           <link role="conceptDeclaration" targetNodeId="2.1078489098625" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1141945365974">
+            <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="2.1078489098626" />
           </node>
         </node>

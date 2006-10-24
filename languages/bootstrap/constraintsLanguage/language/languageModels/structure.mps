@@ -199,6 +199,10 @@
       <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" />
       <link role="target" targetNodeId="11.1161622665029" />
     </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1161722213778">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" />
+      <link role="target" targetNodeId="11.1161622878565" />
+    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1148934636678">
       <link role="conceptLinkDeclaration" targetNodeId="3.1137546998352" />
       <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1148934636679">
@@ -228,27 +232,6 @@
           <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
         </node>
         <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1148934636687">
-          <property name="value" value="function parameter" />
-          <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
-        </node>
-      </node>
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1148934760097">
-      <link role="conceptLinkDeclaration" targetNodeId="3.1137546998352" />
-      <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1148934760098">
-        <property name="name" value="ConceptParameter_ReferentSearchScope_scope" />
-        <link role="extends" targetNodeId="3.1107135704075" />
-        <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1148934760099">
-          <link role="conceptLinkDeclaration" targetNodeId="3.1137545963098" />
-          <node role="target" type="jetbrains.mps.baseLanguage.ClassifierType" id="1148934760100">
-            <link role="classifier" extResolveInfo="6.[Classifier]IScope" />
-          </node>
-        </node>
-        <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1148934760101">
-          <property name="value" value="scope" />
-          <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-        </node>
-        <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1148934760102">
           <property name="value" value="function parameter" />
           <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
         </node>
