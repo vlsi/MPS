@@ -260,7 +260,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
   }
 
   public void addClassPathItem(@NotNull String path) {
-    for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(myProjectDescriptor.classPathEntriess())) {
+    for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(myProjectDescriptor.classPathEntrieses())) {
       if (path.equals(entry.getPath())) return;
     }
 
@@ -343,7 +343,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
       classpath.add(FileUtil.getCanonicalPath(getClassGenPath()));
     }
 
-    for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(myProjectDescriptor.classPathEntriess())) {
+    for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(myProjectDescriptor.classPathEntrieses())) {
       if (entry.getPath() == null) continue;
       classpath.add(entry.getPath());
     }
