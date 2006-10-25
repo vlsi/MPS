@@ -57,5 +57,19 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.EnumerationDataTypeDeclaration" id="1161807239261">
+    <property name="name" value="Options_DefaultCustom" />
+    <link role="memberDataType" targetNodeId="1.1082983041843" />
+    <link role="defaultMember" targetNodeId="1161807239262" resolveInfo="default_" />
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1161807239262">
+      <property name="externalValue" value="default" />
+      <property name="name" value="default_" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1161807432013">
+      <property name="externalValue" value="custom" />
+      <property name="internalValue" value="custom" />
+      <property name="name" value="custom_" />
+    </node>
+  </node>
 </model>
 
