@@ -107,15 +107,20 @@ public class Generator extends AbstractModule {
     return myGeneratorDescriptor;
   }
 
-//  @Nullable
-//  @Override
-//  protected Language getLanguage(@NotNull String languageNamespace, @NotNull Set<IModule> modulesToSkip, boolean suppressWarnings) {
-//    if (mySourceLanguage.getModuleUID().equals(languageNamespace)) {
-//      return mySourceLanguage;
-//    }
-//    modulesToSkip.add(this);
-//    return super.getLanguage(languageNamespace, modulesToSkip, suppressWarnings);
-//  }
+
+  /**
+   * DO NOT comment out this code. If you comment it out, stack overflow will
+   * sometimes happen. 
+   */
+  @Nullable
+  @Override
+  protected Language getLanguage(@NotNull String languageNamespace, @NotNull Set<IModule> modulesToSkip, boolean suppressWarnings) {
+    if (mySourceLanguage.getModuleUID().equals(languageNamespace)) {
+      return mySourceLanguage;
+    }
+    modulesToSkip.add(this);
+    return super.getLanguage(languageNamespace, modulesToSkip, suppressWarnings);
+  }
 
   @NotNull
   public List<IModule> getExplicitlyDependOnModules() {
