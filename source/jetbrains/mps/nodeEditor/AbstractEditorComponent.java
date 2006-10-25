@@ -82,10 +82,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private IOperationContext myOperationContext;
 
   private MessagesGutter myMessagesGutter = new MessagesGutter(this);
-  private LeftEditorHighlighter myLeftHighlighter = new LeftEditorHighlighter(this);
+  private LeftEditorHighlighter myLeftHighlighter;
   protected SNodeProxy myNodeProxy;
   protected EditorContext myEditorContext;
-  private List<RebuildListener> myRebuildListeners = new ArrayList<RebuildListener>();
+  private List<RebuildListener> myRebuildListeners;
   private List<CellSynchronizationWithModelListener> myCellSynchronizationListeners = new ArrayList<CellSynchronizationWithModelListener>();
   private CellInfo myRecentlySelectedCellInfo = null;
 //  private Color myBackground = Color.white;
@@ -300,6 +300,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         processKeyReleased(e);
       }
     });
+
+    myRebuildListeners = new ArrayList<RebuildListener>();
+    myLeftHighlighter = new LeftEditorHighlighter(this);
 
     addFocusListener(new FocusListener() {
       public void focusGained(FocusEvent e) {
@@ -593,7 +596,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
 
     myRootCell = rootCell;
-    doRelayout();
+    doRelayout(false);
 
     Set<SNode> nodesWhichEditorDependsOn = myCellsToNodesToDependOnMap.get(myRootCell);
     if (nodesWhichEditorDependsOn != null) {
@@ -770,7 +773,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public void relayout() {
-    doRelayout();
+    doRelayout(true);
     revalidate();
     repaint();
     myMessagesGutter.repaint();
@@ -781,12 +784,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     repaint();
   }
 
-  private void doRelayout() {
+  private void doRelayout(boolean updateFolding) {
     myRootCell.setX(myShiftX);
     myRootCell.setY(myShiftY);
     myRootCell.relayout();
     myLeftHighlighter.setWidth(myShiftX - ADDITIONAL_SHIFT_X);
-    myLeftHighlighter.relayout(true);
+    myLeftHighlighter.relayout(updateFolding);
   }
 
 

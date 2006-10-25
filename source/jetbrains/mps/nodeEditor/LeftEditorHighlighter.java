@@ -2,6 +2,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
+import jetbrains.mps.ide.command.CommandProcessor;
 
 import java.util.*;
 import java.util.List;
@@ -40,8 +41,36 @@ public class LeftEditorHighlighter {
     myEditorComponent = abstractEditorComponent;
     abstractEditorComponent.addMouseListener(new MyMouseListener());
     abstractEditorComponent.addMouseMotionListener(new MyMouseEnterListener());
+    abstractEditorComponent.addRebuildListener(new AbstractEditorComponent.RebuildListener() {
+      public void editorRebuilt(AbstractEditorComponent editor) {
+        doUpdateCellInfos();
+      }
+    });
   }
 
+  private void doUpdateCellInfos() {
+    myFoldingButtons.clear();
+    EditorCell rootCell = myEditorComponent.getRootCell();
+    if (rootCell instanceof EditorCell_Collection) {
+      EditorCell_Collection collection = (EditorCell_Collection) rootCell;
+      List<EditorCell> cells = new ArrayList<EditorCell>();
+      cells.addAll(collection.dfsCells());
+      cells.add(collection);
+      for (EditorCell cell : cells) {
+        if (cell instanceof EditorCell_Collection) {
+          EditorCell_Collection collectionToAdd = (EditorCell_Collection) cell;
+          if (collectionToAdd.getContentCellsCount() > 1 && collectionToAdd.canBePossiblyFolded()) {
+            markFoldable(collectionToAdd);
+          }
+        }
+      }
+    }
+    CommandProcessor.instance().invokeNowOrLater(new Runnable() {
+      public void run() {
+        relayout(true, false);
+      }
+    });
+  }
 
   public void paint(Graphics g) {
     g.setColor(Color.DARK_GRAY);
@@ -80,10 +109,6 @@ public class LeftEditorHighlighter {
     myBrackets.put(cell.getCellInfo(), new HighlighterBracket(cell, c, myEditorComponent));
   }
 
-  public void unMarkFoldable(EditorCell cell) {
-    myFoldingButtons.remove(cell.getCellInfo());
-  }
-
   public void markFoldable(EditorCell cell) {
     if (cell.getEditor() != myEditorComponent) throw new IllegalArgumentException("cell must be from my editor");
     myFoldingButtons.put(cell.getCellInfo(), new FoldingButton(cell));
@@ -94,9 +119,15 @@ public class LeftEditorHighlighter {
   }
 
   public void relayout(boolean updateFolding) {
-    for (HighlighterBracket bracket : myBrackets.values()) {
-      bracket.relayout();
-      bracket.setX(myWidth);
+    relayout(updateFolding, true);
+  }
+
+  private void relayout(boolean updateFolding, boolean updateBraces) {
+    if (updateBraces) {
+      for (HighlighterBracket bracket : myBrackets.values()) {
+        bracket.relayout();
+        bracket.setX(myWidth);
+      }
     }
     deleteUnresolvedBrackets();
 
@@ -107,7 +138,7 @@ public class LeftEditorHighlighter {
       }
       deleteUnresolvedFoldingButtons();
     }
-    
+
     myBracketEdges.clear();
     myBracketsLayoutStack.clear();
     // from top to bottom
