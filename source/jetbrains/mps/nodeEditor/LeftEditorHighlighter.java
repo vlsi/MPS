@@ -59,7 +59,7 @@ public class LeftEditorHighlighter {
       for (EditorCell cell : cells) {
         if (cell instanceof EditorCell_Collection) {
           EditorCell_Collection collectionToAdd = (EditorCell_Collection) cell;
-          if (collectionToAdd.getContentCellsCount() > 1 && collectionToAdd.canBePossiblyFolded()) {
+          if (collectionToAdd.canBePossiblyFolded()) {
             markFoldable(collectionToAdd);
           }
         }

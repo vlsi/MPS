@@ -11,7 +11,6 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.baseLanguage.Classifier;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
