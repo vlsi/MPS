@@ -686,12 +686,60 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
   public void renameClass(final String oldClassFQName, final String newClassName) {
     executeWriteAction(new Runnable() {
       public void run() {
-        doRename(oldClassFQName, newClassName);
+        doRenameClass(oldClassFQName, newClassName);
       }
     });
   }
 
-  private void doRename(String oldClassFQName, String newClassName) {
+
+  public void renameMethod(final String classFQName, final String oldMethodName, final String newMethodName) {
+    executeWriteAction(new Runnable() {
+      public void run() {
+        doRenameMethod(classFQName, oldMethodName, newMethodName);
+      }
+    });
+
+  }
+
+  public void renameField(final String classFQName, final String oldFieldName, final String newFieldName) {
+    executeWriteAction(new Runnable() {
+      public void run() {
+        doRenameField(classFQName, oldFieldName, newFieldName);
+      }
+    });
+  }
+
+
+  private void doRenameMethod(String classFQName, String oldMethodName, String newMethodName) {
+    PsiClass psiClass = PsiManager.getInstance(myProject).findClass(classFQName, GlobalSearchScope.allScope(myProject));
+    if (psiClass == null) return;
+    PsiMethod[] psiMethods = psiClass.findMethodsByName(oldMethodName, false);
+    if (psiMethods.length < 1) return;
+    PsiMethod psiMethod = psiMethods[0];
+    RenameRefactoring refactoring = RefactoringFactory.getInstance(myProject).createRename(psiMethod, newMethodName);
+    refactoring.setPreviewUsages(false);
+    refactoring.setSearchInComments(false);
+    refactoring.setSearchInNonJavaFiles(false);
+    refactoring.setShouldRenameInheritors(false);
+    refactoring.setShouldRenameVariables(false);
+    refactoring.run();
+  }
+
+  private void doRenameField(String classFQName, String oldFieldName, String newFieldName) {
+    PsiClass psiClass = PsiManager.getInstance(myProject).findClass(classFQName, GlobalSearchScope.allScope(myProject));
+    if (psiClass == null) return;
+    PsiField psiField = psiClass.findFieldByName(oldFieldName, false);
+    if (psiField == null) return;
+    RenameRefactoring refactoring = RefactoringFactory.getInstance(myProject).createRename(psiField, newFieldName);
+    refactoring.setPreviewUsages(false);
+    refactoring.setSearchInComments(false);
+    refactoring.setSearchInNonJavaFiles(false);
+    refactoring.setShouldRenameInheritors(false);
+    refactoring.setShouldRenameVariables(false);
+    refactoring.run();
+  }
+
+  private void doRenameClass(String oldClassFQName, String newClassName) {
     PsiClass psiClass = PsiManager.getInstance(myProject).findClass(oldClassFQName, GlobalSearchScope.allScope(myProject));
     RenameRefactoring refactoring = RefactoringFactory.getInstance(myProject).createRename(psiClass, newClassName);
     refactoring.setPreviewUsages(false);
@@ -707,26 +755,14 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     try {
       new WriteCommandAction(myProject) {
         protected void run(Result result) throws Throwable {
-          doRename(oldClassFQName, newClassName);
-          doRename(packageName(oldClassFQName) + ".editor." + shortName(oldClassFQName)+"_Editor",
+          doRenameClass(oldClassFQName, newClassName);
+          doRenameClass(packageName(oldClassFQName) + ".editor." + shortName(oldClassFQName)+"_Editor",
                   newClassName + "_Editor");
         }
       }.execute();
-
-/*
-    renameClass(oldClassFQName, newClassName);
-    renameClass(packageName(oldClassFQName) + ".editor." + shortName(oldClassFQName),
-            newClassName + "_Editor");
-*/
       buildModule(sourceLangSourcePath);
     } catch (Throwable e) {
       e.printStackTrace();
-      /*try {
-        FileOutputStream fileOutputStream = new FileOutputStream("C:/Cthulhu.txt");
-        e.printStackTrace(new PrintStream(fileOutputStream));
-        fileOutputStream.close();
-      } catch (IOException e1) {
-      }*/
     }
   }
 
