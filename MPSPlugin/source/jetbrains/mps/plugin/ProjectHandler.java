@@ -701,10 +701,10 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
 
   }
 
-  public void renameField(final String classFQName, final String oldFieldName, final String newFieldName) {
+  public void renameFieldAndInitializer(final String classFQName, final String oldFieldName, final String newFieldName, final String initializer) {
     executeWriteAction(new Runnable() {
       public void run() {
-        doRenameField(classFQName, oldFieldName, newFieldName);
+        doRenameFieldAndInitializer(classFQName, oldFieldName, newFieldName, initializer);
       }
     });
   }
@@ -725,11 +725,22 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     refactoring.run();
   }
 
-  private void doRenameField(String classFQName, String oldFieldName, String newFieldName) {
+  private void doRenameFieldAndInitializer(String classFQName, String oldFieldName, String newFieldName, String initializer) {
     PsiClass psiClass = PsiManager.getInstance(myProject).findClass(classFQName, GlobalSearchScope.allScope(myProject));
     if (psiClass == null) return;
     PsiField psiField = psiClass.findFieldByName(oldFieldName, false);
     if (psiField == null) return;
+    try {
+      PsiExpression psiExpression = psiField.getInitializer();
+      PsiExpression text = getPsiElementFactory().createExpressionFromText("\"" + initializer + "\"", psiField);
+      if (psiExpression == null) {
+        psiField.setInitializer(text);
+      } else {
+        psiExpression.replace(text);
+      }
+    } catch(IncorrectOperationException ex) {
+      //ok
+    }
     RenameRefactoring refactoring = RefactoringFactory.getInstance(myProject).createRename(psiField, newFieldName);
     refactoring.setPreviewUsages(false);
     refactoring.setSearchInComments(false);
