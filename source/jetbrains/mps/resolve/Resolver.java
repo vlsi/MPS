@@ -147,12 +147,18 @@ public class Resolver {
   private static EditorCell searchForRefCell(EditorCell editorCell, SNode sourceNode, LinkDeclaration refLinkDeclaration, LinkDeclaration childLinkDeclaration) {
     Set<EditorCell> frontier = new HashSet<EditorCell>();
     Set<EditorCell> newFrontier = new HashSet<EditorCell>();
+    EditorCell foundCell = null;
     frontier.add(editorCell);
     while (!frontier.isEmpty()) {
       for (EditorCell cell : frontier) {
         Object userObject = cell.getUserObject(EditorCell.METAINFO_LINK_DECLARATION);
-        if (cell.getSNode() == sourceNode && (userObject == refLinkDeclaration || userObject == childLinkDeclaration)) {
-          return cell;
+        if (cell.getSNode() == sourceNode) {
+          if  (userObject == refLinkDeclaration) {
+            return cell;
+          }
+          if (userObject == childLinkDeclaration) {
+            if (foundCell == null) foundCell = cell;
+          }
         }
         if (cell instanceof EditorCell_Collection) {
           newFrontier.addAll(CollectionUtil.iteratorAsList(((EditorCell_Collection)cell).cells()));
@@ -161,7 +167,7 @@ public class Resolver {
       frontier = newFrontier;
       newFrontier = new HashSet<EditorCell>();
     }
-    return null;
+    return foundCell;
   }
 
 }

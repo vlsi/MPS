@@ -32,32 +32,6 @@ public class CopyPasteUtil {
     return ourModelOwner;
   }
 
-  //for model cloning and stuff : copying node within one model
-  public static SNode copyNodeIn(SNode sourceNode) {
-    SModel model = sourceNode.getModel();
-    model.setLoading(true);
-    Map<SNode, SNode> sourceNodesToNewNodes = new HashMap<SNode, SNode>();
-    Set<SReference> allReferences = new HashSet<SReference>();
-    SNode targetNode = copyNode_internal(sourceNode, sourceNodesToNewNodes, allReferences);
-    processReferencesIn(sourceNodesToNewNodes, allReferences);
-    model.setLoading(false);
-    return targetNode;
-  }
-
-  public static SNode copyNodeOut(SNode node, SModel model) {
-    model.setLoading(true);
-    Map<SNode, SNode> sourceNodesToNewNodes = new HashMap<SNode, SNode>();
-    Set<SReference> allReferences = new HashSet<SReference>();
-    SModel fakeModel = node.getModel();
-    fakeModel.setLoading(true);
-    SNode nodeToPaste = copyNode_internal(node, sourceNodesToNewNodes, allReferences);
-    processReferencesOut(sourceNodesToNewNodes, allReferences, new HashSet<SReference>());
-    nodeToPaste.changeModel(model);
-    model.setLoading(false);
-    fakeModel.setLoading(false);
-    return nodeToPaste;
-  }
-
 
   private static void processImportsAndLanguages(HashSet<SModelUID> necessaryImports, HashSet<String> necessaryLanguages, Set<SNode> sourceNodes, Set<SReference> allReferences) {
     necessaryImports.clear();
@@ -76,8 +50,6 @@ public class CopyPasteUtil {
     necessaryImports.add(sourceModel.getUID());
   }
 
-
-  //for nodes' copying and pasting : behaviour differs from behaviour of methods above
   public static PasteNodeData createNodeDataIn(List<SNode> sourceNodes) {
     if (sourceNodes.isEmpty()) return new PasteNodeData(new ArrayList<SNode>(), null, null, null, null);
     SModel model = sourceNodes.get(0).getModel();
