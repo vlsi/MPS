@@ -32,10 +32,6 @@ import java.util.*;
 
     // proceed with custom builders
     ConceptDeclaration referenceNodeConcept = SModelUtil.getConceptDeclaration(referenceNode, scope);
-    if (referenceNodeConcept == null) {
-      LOG.error("Couldn't build actions : couldn't get concept for reference node" + referenceNode.getDebugText());
-      return resultActions;
-    }
     Language primaryLanguage = SModelUtil.getDeclaringLanguage(referenceNodeConcept, scope);
     if (primaryLanguage == null) {
       LOG.error("Couldn't build actions : couldn't get declaring language for concept " + referenceNodeConcept.getDebugText());
