@@ -1636,7 +1636,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1161798723563">
-    <property name="name" value="CellMenu_ReplaceChild_FromSNodes" />
+    <property name="name" value="CellMenu_ReplaceChild_FromNodes" />
     <link role="extends" targetNodeId="1161037819249" resolveInfo="CellMenu_ReplaceChild_Part" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1161799216443">
       <property name="role" value="parameterNodeConcept" />
@@ -1674,7 +1674,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1161798918189">
-    <property name="name" value="CellMenu_ReplaceChild_FromSNodes_Query" />
+    <property name="name" value="CellMenu_ReplaceChild_FromNodes_Query" />
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1161798918190">
       <property name="value" value="get nodes" />
@@ -1702,7 +1702,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1161799093791">
-    <property name="name" value="CellMenu_ReplaceChild_FromSNodes_Setup" />
+    <property name="name" value="CellMenu_ReplaceChild_FromNodes_Setup" />
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1161802789219">
       <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
@@ -1744,7 +1744,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1161804672571">
-    <property name="name" value="CellMenu_ReplaceChild_FromSNodes_ParameterNode" />
+    <property name="name" value="CellMenu_ReplaceChild_FromNodes_ParameterNode" />
     <link role="extends" targetNodeId="4.1107135704075" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1161804672572">
       <property name="value" value="parameterNode" />
@@ -1778,7 +1778,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1161808698972">
-    <property name="name" value="CellMenu_ReplaceChild_FromSNodes_MatchingText" />
+    <property name="name" value="CellMenu_ReplaceChild_FromNodes_MatchingText" />
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1161808698973">
       <property name="value" value="matching text" />
@@ -1796,7 +1796,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1161808871360">
-    <property name="name" value="CellMenu_ReplaceChild_FromSNodes_DescriptionText" />
+    <property name="name" value="CellMenu_ReplaceChild_FromNodes_DescriptionText" />
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1161808871361">
       <property name="value" value="description text" />
