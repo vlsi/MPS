@@ -48,10 +48,6 @@ public class ModelPersistence {
   public static final String LANGUAGE = "language";
   public static final String STEREOTYPE = "stereotype";
   public static final String MODEL_UID = "modelUID";
-  public static final String REFERENCE_DESCRIPTOR_CLASS = "referenceDescriptorClass";
-  public static final String ATTRIBUTE = "attribute";
-  public static final String PROPERTY_ATTRIBUTE = "propertyAttribute";
-  public static final String LINK_ATTRIBUTE = "linkAttribute";
 
   @NotNull
   private static Document loadModelDocument(@NotNull File file) {
