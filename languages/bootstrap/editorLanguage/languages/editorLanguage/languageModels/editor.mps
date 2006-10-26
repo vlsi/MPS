@@ -8388,7 +8388,7 @@
               <property name="drawBorder" value="false" />
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1161809069323">
-              <property name="noTargetText" value="&lt;no matching text&gt;" />
+              <property name="noTargetText" value="&lt;default&gt;" />
               <link role="relationDeclaration" targetNodeId="2.1161808974210" />
             </node>
             <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1161807935203">
@@ -8420,7 +8420,7 @@
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1161809077105">
               <property name="drawBorder" value="false" />
-              <property name="noTargetText" value="&lt;no description text&gt;" />
+              <property name="noTargetText" value="&lt;default&gt;" />
               <link role="relationDeclaration" targetNodeId="2.1161809029838" />
             </node>
             <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1161808033361">
