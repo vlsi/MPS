@@ -74,7 +74,8 @@ public class Generator extends AbstractModule {
     if (targetLanguage != null) {
       String targetLanguageName = targetLanguage.getName();
       if (targetLanguageName != null) {
-        return getLanguage(targetLanguageName);
+        //todo this is hack
+        return MPSModuleRepository.getInstance().getLanguage(targetLanguageName);
       }
     }
     return null;
