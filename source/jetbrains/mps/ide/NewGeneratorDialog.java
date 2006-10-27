@@ -178,11 +178,11 @@ public class NewGeneratorDialog extends BaseDialog {
     templateModelsRoot.setPath(templateModelsDir.getAbsolutePath());
     generatorDescriptor.addModelRoot(templateModelsRoot);
 
-    // add target language module to module roots
+    // add 'target language module' to 'module roots'
     ModuleRoot targetLanguageModuleRoot = new ModuleRoot(model);
     File descriptorFile = targetLanguage.getDescriptorFile();
     assert descriptorFile != null;
-    targetLanguageModuleRoot.setPath(descriptorFile.getParentFile().getAbsolutePath());
+    targetLanguageModuleRoot.setPath(descriptorFile/*.getParentFile()*/.getAbsolutePath());
     generatorDescriptor.addModuleRoot(targetLanguageModuleRoot);
 
     // add new generator to language

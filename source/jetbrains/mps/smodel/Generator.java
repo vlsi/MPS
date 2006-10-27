@@ -74,8 +74,7 @@ public class Generator extends AbstractModule {
     if (targetLanguage != null) {
       String targetLanguageName = targetLanguage.getName();
       if (targetLanguageName != null) {
-        //todo this is hack
-        return MPSModuleRepository.getInstance().getLanguage(targetLanguageName);
+        return getLanguage(targetLanguageName);
       }
     }
     return null;
@@ -125,14 +124,10 @@ public class Generator extends AbstractModule {
 
   @NotNull
   public List<IModule> getExplicitlyDependOnModules() {
-    // depends on source/target language and all owned modules
+    // depends on source language and all owned modules (target language etc.)
     List<IModule> result = new LinkedList<IModule>(getOwnModules());
     if (!result.contains(mySourceLanguage)) {
       result.add(mySourceLanguage);
-    }
-    Language targetLanguage = getTargetLanguage();
-    if (targetLanguage != null && !result.contains(targetLanguage)) {
-      result.add(targetLanguage);
     }
     return result;
   }
