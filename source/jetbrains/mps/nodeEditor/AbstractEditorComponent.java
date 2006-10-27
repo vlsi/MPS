@@ -238,7 +238,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         SwingUtilities.convertPointToScreen(point, AbstractEditorComponent.this);
 
         new NodeInformationDialog(frame, point, cell.getSNode()).setVisible(true);
-
       }
     }, KeyStroke.getKeyStroke("control Q"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
