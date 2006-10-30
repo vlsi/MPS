@@ -2,9 +2,12 @@ package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
+import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.ide.actions.model.NewModelAction;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.IOperationContext;
@@ -14,7 +17,10 @@ import jetbrains.mps.smodel.ProjectModels;
 
 import javax.swing.Icon;
 import javax.swing.JPopupMenu;
+import javax.swing.JOptionPane;
 import java.util.*;
+import java.awt.event.KeyEvent;
+import java.awt.Rectangle;
 
 /**
  * Created by IntelliJ IDEA.
@@ -91,6 +97,25 @@ class SModelsSubtree {
       }
 
       myInitialized = true;
+    }
+
+
+    public void keyPressed(KeyEvent keyEvent) {
+      if (keyEvent.isAltDown() && keyEvent.getKeyCode() == KeyEvent.VK_INSERT) {
+        IModule module = getOperationContext().getModule();
+        if (module instanceof Solution && !toString().equals("<" + SModelStereotype.JAVA_STUB + ">")) {
+          Solution solution = (Solution) module;
+          ActionContext context = new ActionContext(getOperationContext());
+          context.put(Solution.class, solution);
+          JPopupMenu popupMenu = new JPopupMenu();
+          MPSAction action = new NewModelAction();
+          action.update(context);
+          action.add(popupMenu, context);
+          MPSTree mpsTree = getTree();
+          Rectangle rect = mpsTree.getPathBounds(mpsTree.getSelectionPath());
+          popupMenu.show(mpsTree, rect.x + rect.width/2, rect.y);
+        }
+      }
     }
 
     public JPopupMenu getPopupMenu() {

@@ -88,7 +88,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       MPSTree mpsTree = getTree();
       if (mpsTree == null) return;
       Rectangle rectangle = mpsTree.getPathBounds(mpsTree.getSelectionPath());
-      popupMenu.show(mpsTree, rectangle.x, rectangle.y);
+      popupMenu.show(mpsTree, rectangle.x + rectangle.width/2, rectangle.y);
     }
   }
 
