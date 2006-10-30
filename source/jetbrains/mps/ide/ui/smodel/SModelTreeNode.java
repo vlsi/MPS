@@ -3,13 +3,16 @@ package jetbrains.mps.ide.ui.smodel;
 import jetbrains.mps.annotations.AttributeConcept;
 import jetbrains.mps.ide.AbstractProjectFrame;
 import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.actions.model.CreateRootNodeGroup;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
+import jetbrains.mps.ide.action.ActionGroup;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.SortUtil;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
+import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;
@@ -21,6 +24,8 @@ import javax.swing.JPopupMenu;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import java.awt.Color;
+import java.awt.Rectangle;
+import java.awt.event.KeyEvent;
 import java.util.List;
 
 /**
@@ -49,21 +54,42 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   public JPopupMenu getPopupMenu() {
-    JPopupMenu result = new JPopupMenu();
-    SModelDescriptor model = getSModelDescriptor();
     ProjectPane pane = getOperationContext().getComponent(ProjectPane.class);
     if (pane == null) return null;
-    List<SModelDescriptor> models = pane.getSelectedModels();
-
-    ActionContext context = new ActionContext(getOperationContext());
-    context.put(SModelDescriptor.class, model);
-    context.put(List.class, models);
+    JPopupMenu result = new JPopupMenu();
+    ActionContext context = getActionContext(pane);
     ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_MODEL_ACTIONS).add(result, context);
     return result;
   }
 
+  private ActionContext getActionContext(ProjectPane pane) {
+    SModelDescriptor model = getSModelDescriptor();
+    List<SModelDescriptor> models = pane.getSelectedModels();
+    ActionContext context = new ActionContext(getOperationContext());
+    context.put(SModelDescriptor.class, model);
+    context.put(List.class, models);
+    return context;
+  }
+
   public SModelDescriptor getSModelDescriptor() {
     return myModelDescriptor;
+  }
+
+
+  public void keyPressed(KeyEvent keyEvent) {
+    if (keyEvent.isAltDown() && keyEvent.getKeyCode() == KeyEvent.VK_INSERT) {
+      ProjectPane pane = getOperationContext().getComponent(ProjectPane.class);
+      if (pane == null) return;
+      ActionContext context = getActionContext(pane);
+      JPopupMenu popupMenu = new JPopupMenu();
+      ActionGroup group = new CreateRootNodeGroup();
+      group.update(context);
+      group.add(popupMenu, context);
+      MPSTree mpsTree = getTree();
+      if (mpsTree == null) return;
+      Rectangle rectangle = mpsTree.getPathBounds(mpsTree.getSelectionPath());
+      popupMenu.show(mpsTree, rectangle.x, rectangle.y);
+    }
   }
 
   public String getNodeIdentifier() {

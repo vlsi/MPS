@@ -312,6 +312,13 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
   }
 
   public SModelDescriptor getSelectedModel() {
+    TreeNode selectedTreeNode = getSelectedModelTreeNode();
+    if (selectedTreeNode == null) return null;
+    return ((SModelTreeNode) selectedTreeNode).getSModelDescriptor();
+  }
+
+  public TreeNode getSelectedModelTreeNode() {
+    TreeNode selectedTreeNode = null;
     TreePath selectionPath = myTree.getSelectionPath();
     if (selectionPath == null) {
       return null;
@@ -320,14 +327,14 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     if (!(selectedNode instanceof TreeNode)) {
       return null;
     }
-    TreeNode selectedTreeNode = (TreeNode) selectedNode;
+    selectedTreeNode = (TreeNode) selectedNode;
     while (selectedTreeNode != null && !(selectedTreeNode instanceof SModelTreeNode)) {
       selectedTreeNode = selectedTreeNode.getParent();
     }
     if (selectedTreeNode == null) {
       return null;
     }
-    return ((SModelTreeNode) selectedTreeNode).getSModelDescriptor();
+    return selectedTreeNode;
   }
 
   public List<SModelDescriptor> getSelectedModels() {
