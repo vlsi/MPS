@@ -356,6 +356,14 @@ public class Language extends AbstractModule {
   }
 
   @Nullable
+  public SModelDescriptor getLogModelDescriptor() {
+    Model logModel = getLanguageDescriptor().getStructureModel();
+    SModelUID modelUID = SModelUID.fromString(logModel.getName());
+    SModelDescriptor logModelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
+    return logModelDescriptor;
+  }
+
+  @Nullable
   public SModelDescriptor getTypesystemModelDescriptor() {
     if (getLanguageDescriptor().getTypeSystem() != null) {
       SModelUID modelUID = SModelUID.fromString(getLanguageDescriptor().getTypeSystem().getName());
