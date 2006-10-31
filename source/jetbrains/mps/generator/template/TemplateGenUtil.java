@@ -156,7 +156,7 @@ public class TemplateGenUtil {
     } catch (RuntimeException e) {
       LOG.error(builderClassName);
       throw e;
-    }    
+    }
   }
 
   public static IReferenceResolver loadReferenceResolver(SNode templateNode, IScope scope) {
@@ -295,6 +295,9 @@ public class TemplateGenUtil {
       builders.add(nodeBuilder);
     }
 
+    if (builders.isEmpty()) {
+      builders.add(new Void_NodeBuilder(parentSourceNode, templateNode, mappingName, generator));
+    }
     return builders;
   }
 
