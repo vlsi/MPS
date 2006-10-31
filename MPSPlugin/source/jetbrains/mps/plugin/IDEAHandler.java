@@ -72,7 +72,6 @@ public class IDEAHandler extends UnicastRemoteObject implements ApplicationCompo
           public void run() {
             LocalFileSystem lfs = LocalFileSystem.getInstance();
 
-
             Project project = myProjectManager.newProject(path + File.separator + name + ".ipr", true, false);
 
             ProjectRootManagerEx projectRootManager = (ProjectRootManagerEx) ProjectRootManagerEx.getInstance(project);

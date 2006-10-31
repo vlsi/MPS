@@ -39,6 +39,7 @@ public interface IProjectHandler extends Remote {
   void renameMethod(String classFQName, String oldMethodName, String newMethodName) throws RemoteException;
   void renameFieldAndInitializer(String classFQName, String oldFieldName, String newFieldName, String initializer) throws RemoteException;
 
+  public void createNewModule(final String moduleName, final String path) throws RemoteException;
 
   void addIdeHandler(IMPSIDEHandler handler) throws RemoteException;
 

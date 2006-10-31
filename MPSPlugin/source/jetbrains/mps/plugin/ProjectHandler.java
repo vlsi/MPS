@@ -790,6 +790,68 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     return PsiManager.getInstance(myProject).getElementFactory();
   }
 
+  public void createNewModule(final String moduleName, final String path) {
+    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+      public void run() {
+        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+          public void run() {
+            LocalFileSystem lfs = LocalFileSystem.getInstance();
+            Project project = myProject;
+
+            ModuleManager moduleManager = project.getComponent(ModuleManager.class);
+
+            Module module = moduleManager.newModule(path + File.separator + moduleName + ".iml", ModuleType.JAVA);
+
+            ModuleRootManager rootManager = module.getComponent(ModuleRootManager.class);
+            ModifiableRootModel rootModel = rootManager.getModifiableModel();
+
+            Module mpsModule = moduleManager.findModuleByName("MPS");
+            if (mpsModule != null) {
+              rootModel.addModuleOrderEntry(mpsModule);
+            } else {
+              LibraryTable table = LibraryTablesRegistrar.getInstance().getLibraryTable(myProject);
+              Library l = table.getLibraryByName("MPS");
+              if (l != null) {
+                rootModel.addLibraryEntry(l);
+              }
+            }
+
+            File contentRoot = new File(path);
+
+            if (!contentRoot.exists()) {
+              contentRoot.mkdirs();
+            }
+
+            File sourceFolder = new File(contentRoot, "source");
+            if (!sourceFolder.exists()) {
+              sourceFolder.mkdirs();
+            }
+
+            VirtualFile contentRootFile = lfs.refreshAndFindFileByIoFile(contentRoot);
+            if (contentRootFile == null) return;
+
+            VirtualFile sourceRootFile = lfs.refreshAndFindFileByIoFile(sourceFolder);
+            if (sourceRootFile == null) return;
+
+            try {
+              if (contentRootFile.findChild("classes") == null) {
+                contentRootFile.createChildDirectory(this, "classes");
+              }
+              rootModel.setCompilerOutputPath(contentRootFile.findChild("classes"));
+              rootModel.setExcludeOutput(true);
+            } catch (IOException e) {
+              e.printStackTrace();
+            }
+
+            rootModel.addContentEntry(contentRootFile).addSourceFolder(sourceRootFile, false);
+            rootModel.commit();
+            project.save();
+          }
+        });
+      }
+    }, ModalityState.NON_MODAL);
+  }
+
   private static String packageName(String fqName) {
     if (fqName == null) {
       return fqName;
