@@ -1155,6 +1155,7 @@
   </component>
   <component name="StarteamVcsAdapter" />
   <component name="VssVcs">
+    <SourceSafePersistencyRemovedFolder>$PROJECT_DIR$/projects/ResourceStore/source/jetbrains/resourceStore</SourceSafePersistencyRemovedFolder>
     <SourceSafePersistencyRemovedFolder>$PROJECT_DIR$/projects/SemanticFunctions/source/jetbrains/naturalLanguageDescription/scope</SourceSafePersistencyRemovedFolder>
     <SourceSafePersistencyRemovedFolder>$PROJECT_DIR$/source/jetbrains/mps/generator/types</SourceSafePersistencyRemovedFolder>
   </component>

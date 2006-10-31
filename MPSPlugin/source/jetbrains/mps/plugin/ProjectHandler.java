@@ -454,7 +454,9 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
   }
 
   public void createAspectMethod(final String path, final String namespace, final String name, final String returnType, final String params) {
-    if (!isQueriesClassExist(namespace)) createAspectClass(path, namespace);
+    if (!isQueriesClassExist(namespace)) {
+      createAspectClass(path, namespace);
+    }
 
     executeWriteAction(new Runnable() {
       public void run() {
