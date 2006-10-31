@@ -141,15 +141,15 @@
         <used_levels>
           <error>
             <option name="myName" value="ERROR" />
-            <option name="myVal" value="400" />
+            <option name="myVal" value="300" />
           </error>
           <warning>
             <option name="myName" value="WARNING" />
-            <option name="myVal" value="300" />
+            <option name="myVal" value="200" />
           </warning>
           <information>
             <option name="myName" value="INFO" />
-            <option name="myVal" value="200" />
+            <option name="myVal" value="100" />
           </information>
           <server>
             <option name="myName" value="SERVER PROBLEM" />
@@ -347,15 +347,15 @@
         <used_levels>
           <error>
             <option name="myName" value="ERROR" />
-            <option name="myVal" value="400" />
+            <option name="myVal" value="300" />
           </error>
           <warning>
             <option name="myName" value="WARNING" />
-            <option name="myVal" value="300" />
+            <option name="myVal" value="200" />
           </warning>
           <information>
             <option name="myName" value="INFO" />
-            <option name="myVal" value="200" />
+            <option name="myVal" value="100" />
           </information>
           <server>
             <option name="myName" value="SERVER PROBLEM" />
@@ -544,15 +544,15 @@
         <used_levels>
           <error>
             <option name="myName" value="ERROR" />
-            <option name="myVal" value="400" />
+            <option name="myVal" value="300" />
           </error>
           <warning>
             <option name="myName" value="WARNING" />
-            <option name="myVal" value="300" />
+            <option name="myVal" value="200" />
           </warning>
           <information>
             <option name="myName" value="INFO" />
-            <option name="myVal" value="200" />
+            <option name="myVal" value="100" />
           </information>
           <server>
             <option name="myName" value="SERVER PROBLEM" />
@@ -756,15 +756,15 @@
         <used_levels>
           <error>
             <option name="myName" value="ERROR" />
-            <option name="myVal" value="400" />
+            <option name="myVal" value="300" />
           </error>
           <warning>
             <option name="myName" value="WARNING" />
-            <option name="myVal" value="300" />
+            <option name="myVal" value="200" />
           </warning>
           <information>
             <option name="myName" value="INFO" />
-            <option name="myVal" value="200" />
+            <option name="myVal" value="100" />
           </information>
           <server>
             <option name="myName" value="SERVER PROBLEM" />
@@ -1127,6 +1127,7 @@
       <module fileurl="file://$PROJECT_DIR$/projects/SemanticWeb/editor/OWLEditor.iml" filepath="$PROJECT_DIR$/projects/SemanticWeb/editor/OWLEditor.iml" group="SemanticWeb" />
       <module fileurl="file://$PROJECT_DIR$/projects/ProjectHalo/ProjectHalo.iml" filepath="$PROJECT_DIR$/projects/ProjectHalo/ProjectHalo.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/Remoting/Remoting.iml" filepath="$PROJECT_DIR$/Remoting/Remoting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/projects/ResourceStore/ResourceStore.iml" filepath="$PROJECT_DIR$/projects/ResourceStore/ResourceStore.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/SemanticFunctions/SemanticFunctions.iml" filepath="$PROJECT_DIR$/projects/SemanticFunctions/SemanticFunctions.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/SemanticWeb/SemanticWebIDE/SemanticWebIDE.iml" filepath="$PROJECT_DIR$/projects/SemanticWeb/SemanticWebIDE/SemanticWebIDE.iml" group="SemanticWeb" />
       <module fileurl="file://$PROJECT_DIR$/projects/textLanguage/TextLanguage.iml" filepath="$PROJECT_DIR$/projects/textLanguage/TextLanguage.iml" group="DataLanguages" />
@@ -1154,8 +1155,8 @@
   </component>
   <component name="StarteamVcsAdapter" />
   <component name="VssVcs">
-    <SourceSafePersistencyRemovedFolder>$PROJECT_DIR$/source/jetbrains/mps/generator/types</SourceSafePersistencyRemovedFolder>
     <SourceSafePersistencyRemovedFolder>$PROJECT_DIR$/projects/SemanticFunctions/source/jetbrains/naturalLanguageDescription/scope</SourceSafePersistencyRemovedFolder>
+    <SourceSafePersistencyRemovedFolder>$PROJECT_DIR$/source/jetbrains/mps/generator/types</SourceSafePersistencyRemovedFolder>
   </component>
   <component name="com.intellij.jsf.UserDefinedFacesConfigs">
     <option name="USER_DEFINED_CONFIGS">
@@ -1163,6 +1164,11 @@
         <list size="0" />
       </value>
     </option>
+  </component>
+  <component name="copyright">
+    <Base>
+      <setting name="state" value="2" />
+    </Base>
   </component>
   <component name="libraryTable">
     <library name="XMLRPC">
