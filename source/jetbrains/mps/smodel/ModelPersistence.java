@@ -7,6 +7,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.QueryMethod;
+import jetbrains.mps.project.GlobalScope;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
@@ -263,6 +264,11 @@ public class ModelPersistence {
   public static SNode createNodeInstance(@NotNull String type,
                                          @NotNull SModel model) {
     try {
+      if (!model.getUID().toString().startsWith(NameUtil.namespaceFromLongName(type)) &&
+              SModelUtil.findConceptDeclaration(NameUtil.conceptFQNameByClassName(type), GlobalScope.getInstance()) == null) {
+        return new UnknownSNode(model);
+      }
+
       Method method = QueryMethod.getNewInstanceMethod(type);
       if (method == null) {
         return new UnknownSNode(model);
