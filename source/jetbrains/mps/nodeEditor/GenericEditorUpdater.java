@@ -74,7 +74,7 @@ public abstract class GenericEditorUpdater {
               }
             }
           }
-        }, commandName);
+        }, commandName, false);
       }
     });
   }
