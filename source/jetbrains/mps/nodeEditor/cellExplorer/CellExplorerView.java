@@ -96,7 +96,9 @@ public class CellExplorerView extends DefaultTool {
     removeListeners();
 
     IEditor currentEditor = getEditorsPane().getCurrentEditor();
+
     if (!(currentEditor instanceof NodeEditor || currentEditor instanceof ConceptDeclarationEditor)) {
+      myTree.rebuildTree();
       return;
     }
 
