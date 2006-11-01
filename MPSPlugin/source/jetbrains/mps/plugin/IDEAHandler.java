@@ -32,7 +32,7 @@ import org.jetbrains.annotations.NotNull;
 public class IDEAHandler extends UnicastRemoteObject implements ApplicationComponent, IIDEAHandler {
   static {
     RMIHandler.class.getClassLoader();
-  }
+  } 
 
   private ProjectManagerEx myProjectManager;
 
@@ -77,7 +77,8 @@ public class IDEAHandler extends UnicastRemoteObject implements ApplicationCompo
             ProjectRootManagerEx projectRootManager = (ProjectRootManagerEx) ProjectRootManagerEx.getInstance(project);
             projectRootManager.setLanguageLevel(LanguageLevel.JDK_1_5);
 
-            ModuleManager moduleManager = project.getComponent(ModuleManager.class);
+            ModuleManager moduleManager = project.getComponent(ModuleManager.class);                        
+
             Module module = moduleManager.newModule(path + File.separator + name + ".iml", ModuleType.JAVA);
             ModuleRootManager rootManager = module.getComponent(ModuleRootManager.class);
             ModifiableRootModel rootModel = rootManager.getModifiableModel();

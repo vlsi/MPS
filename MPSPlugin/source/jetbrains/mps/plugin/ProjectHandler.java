@@ -211,7 +211,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
           vcs.getTransactionProvider().commitTransaction(comment);
         } catch (VcsException e) {
           e.printStackTrace();
-        }
+        }        
       }
     });
     return "OK";
@@ -490,6 +490,9 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
 
         ModuleRootManager rootManager = ModuleRootManager.getInstance(module);
         LocalFileSystem localFileSystem = LocalFileSystem.getInstance();
+
+        ProjectRootManager projectRootManager = myProject.getComponent(ProjectRootManager.class);                        
+        rootManager.getModifiableModel().setJdk(projectRootManager.getProjectJdk());
 
         rootManager.getModifiableModel().addContentEntry(localFileSystem.findFileByIoFile(new File(path, "source")));
         rootManager.getModifiableModel().addContentEntry(localFileSystem.findFileByIoFile(new File(path, "source_gen")));
