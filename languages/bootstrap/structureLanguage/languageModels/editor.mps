@@ -1003,9 +1003,29 @@
         <property name="drawBorder" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1105987989392">
-        <property name="substituteActionsFactoryId" value="AggregationConceptLink_Target" />
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1105736901241" />
+        <node role="cellMenu" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceChild_Composite" id="1162422880270">
+          <node role="menuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceChild_CustomChildConcept" id="1162422883162">
+            <node role="childConceptFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceChild_CustomChildConcept_Query" id="1162422883163">
+              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1162422883164">
+                <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1162422905692">
+                  <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1162423015943">
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1162423006191">
+                      <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceChild_Macro_ParentNode" id="1162423004456" />
+                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1162423009770">
+                        <link role="link" targetNodeId="1.1105742417828" />
+                      </node>
+                    </node>
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1162423025866">
+                      <link role="link" targetNodeId="1.1105736621938" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
