@@ -7,6 +7,7 @@
   <import index="2" modelUID="java.util@java_stub" />
   <node type="jetbrains.mps.transformation.TLBase.TemplateDeclaration" id="1162432838732">
     <property name="name" value="test_template" />
+    <node role="contentNode" type="jetbrains.mps.baseLanguage.ClassConcept" id="1162504838139" />
   </node>
 </model>
 
