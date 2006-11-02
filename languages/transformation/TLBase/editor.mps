@@ -635,7 +635,6 @@
         <property name="selectable" value="true" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1092135992437">
-        <property name="substituteActionsFactoryId" value="TemplateDeclaration_ContentNode" />
         <property name="drawBorder" value="false" />
         <property name="noTargetText" value="&lt;no content node&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1092060348987" />
