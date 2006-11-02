@@ -1866,8 +1866,13 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1162335220098" resolveInfo="CellMenu_ReplaceChild_FromObjects_Query" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1162426955201">
+      <property name="role" value="createFunction" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1162426166527" resolveInfo="CellMenu_ReplaceChild_CustomChildConcept_Create" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1162335016669">
-      <property name="sourceCardinality" value="1" />
+      <property name="sourceCardinality" value="0..1" />
       <property name="role" value="setupFunction" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1162335323874" resolveInfo="CellMenu_ReplaceChild_FromObjects_Setup" />
@@ -1914,6 +1919,10 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1162335323874">
     <property name="name" value="CellMenu_ReplaceChild_FromObjects_Setup" />
     <link role="extends" targetNodeId="4.1137021947720" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1162431243060">
+      <property name="value" value="setup new child" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1162335323875">
       <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
       <link role="target" targetNodeId="1161802072916" resolveInfo="CellMenu_ReplaceChild_Macro_NewChild" />
@@ -2008,6 +2017,34 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1162419571678">
       <link role="target" targetNodeId="37.1161622753914" />
       <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1162426166527">
+    <property name="name" value="CellMenu_ReplaceChild_FromObjects_Create" />
+    <link role="extends" targetNodeId="4.1137021947720" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1162427685205">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
+      <link role="target" targetNodeId="1162335359382" resolveInfo="CellMenu_ReplaceChild_FromObjects_ParameterObject" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1162426166528">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
+      <link role="target" targetNodeId="1161799319495" resolveInfo="CellMenu_ReplaceChild_Macro_ParentNode" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1162426166529">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
+      <link role="target" targetNodeId="37.1161622665029" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1162426166530">
+      <link role="target" targetNodeId="37.1161622878565" />
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1162426166531">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
+      <link role="target" targetNodeId="37.1161622753914" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1162431217992">
+      <property name="value" value="create new child" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
   </node>
 </model>
