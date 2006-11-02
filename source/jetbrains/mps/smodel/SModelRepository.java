@@ -34,10 +34,16 @@ public class SModelRepository extends SModelAdapter {
     return ApplicationComponents.getInstance().getComponent(SModelRepository.class);
   }
 
-  public void refreshModels() {
+  public void refreshModels(Set<SModelDescriptor> skip) {
     for (SModelDescriptor m : new LinkedList<SModelDescriptor>(myUIDToModelDescriptorMap.values())) {
-      m.refresh();
+      if (!skip.contains(m)) {
+        m.refresh();
+      }
     }
+  }
+
+  public void refreshModels() {
+    refreshModels(new HashSet<SModelDescriptor>());
   }
 
   public boolean containsModelWithFile(@NotNull File modelFile) {
