@@ -8874,7 +8874,7 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1162335822598">
           <property name="textFgColor" value="DARK_BLUE" />
           <property name="textBgColor" value="lightGray" />
-          <property name="text" value="(parentNode, scope, operationContext)-&gt;list&lt;parameter object&gt;" />
+          <property name="text" value="(parentNode, currentChild, defaultConceptOfChild, scope, operationContext)-&gt;list&lt;parameter object&gt;" />
           <property name="fontStyle" value="ITALIC" />
           <property name="drawBorder" value="false" />
           <property name="textBgColorSelected" value="lightGray" />
@@ -8908,7 +8908,7 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1162335870802">
           <property name="textFgColor" value="DARK_BLUE" />
           <property name="textBgColor" value="lightGray" />
-          <property name="text" value="(newChild, parameterObject)" />
+          <property name="text" value="(newChild, currentChild, parameterObject)" />
           <property name="fontStyle" value="ITALIC" />
           <property name="drawBorder" value="false" />
           <property name="textBgColorSelected" value="lightGray" />
@@ -9054,7 +9054,7 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1162420260654">
           <property name="textFgColor" value="DARK_BLUE" />
           <property name="textBgColor" value="lightGray" />
-          <property name="text" value="(parentNode, scope, operationContext)-&gt;node&lt;ConceptDeclaration&gt;" />
+          <property name="text" value="(parentNode, currentChild, defaultConceptOfChild, scope, operationContext)-&gt;node&lt;ConceptDeclaration&gt;" />
           <property name="fontStyle" value="ITALIC" />
           <property name="drawBorder" value="false" />
           <property name="textBgColorSelected" value="lightGray" />
@@ -9088,7 +9088,7 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1162426231575">
           <property name="textFgColor" value="DARK_BLUE" />
           <property name="textBgColor" value="lightGray" />
-          <property name="text" value="(parameterObject, parentNode, model, scope, operationContext)-&gt;new child node" />
+          <property name="text" value="(parameterObject, parentNode, currentChild, defaultConceptOfChild, model, scope, operationContext)-&gt;new child node" />
           <property name="fontStyle" value="ITALIC" />
           <property name="drawBorder" value="false" />
           <property name="textBgColorSelected" value="lightGray" />
