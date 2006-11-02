@@ -266,7 +266,7 @@ public class ModelPersistence {
     try {
       if (!model.getUID().toString().startsWith(NameUtil.namespaceFromLongName(type)) &&
               SModelUtil.findConceptDeclaration(NameUtil.conceptFQNameByClassName(type), GlobalScope.getInstance()) == null) {
-        return new UnknownSNode(model);
+        return new UnknownSNode(model);                
       }
 
       Method method = QueryMethod.getNewInstanceMethod(type);
