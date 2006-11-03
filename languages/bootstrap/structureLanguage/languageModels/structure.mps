@@ -126,7 +126,7 @@
       <link role="target" targetNodeId="1083243159079" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1083241965437">
-      <property name="sourceCardinality" value="1" />
+      <property name="sourceCardinality" value="0..1" />
       <property name="targetCardinality" value="0..1" />
       <property name="role" value="defaultMember" />
       <link role="target" targetNodeId="1083171877298" />
@@ -169,8 +169,8 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.EnumerationDataTypeDeclaration" id="1084197782722">
     <property name="name" value="Cardinality" />
-    <link role="defaultMember" targetNodeId="1084197782723" />
     <link role="memberDataType" targetNodeId="1.1082983041843" />
+    <link role="defaultMember" targetNodeId="1084197782723" resolveInfo="_0_1" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1084197782723">
       <property name="externalValue" value="0..1" />
       <property name="internalValue" value="0..1" />

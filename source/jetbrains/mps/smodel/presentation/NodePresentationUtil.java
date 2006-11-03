@@ -1,7 +1,6 @@
 package jetbrains.mps.smodel.presentation;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.core.BaseConcept;
 import jetbrains.mps.core.NamedConcept;
@@ -40,9 +39,9 @@ public class NodePresentationUtil {
       return ((LinkDeclaration) node).getRole();
     }
 
-    if (node instanceof EnumerationMemberDeclaration) {
-      return ((EnumerationMemberDeclaration) node).getExternalValue();
-    }
+//    if (node instanceof EnumerationMemberDeclaration) {
+//      return ((EnumerationMemberDeclaration) node).getExternalValue();
+//    }
 
     if (node instanceof BaseConcept) {
       String customAlias = ((BaseConcept) node).getAlias();
