@@ -27,7 +27,6 @@ public class GlobalScope implements IScope {
 
   public Language getLanguage(@NotNull String languageNamespace) {            
     Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
-    assert language != null : "can't find a language " + languageNamespace;
     return language;
   }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.baseLanguage.blTypes" generatorOutputPath="${mps_home}\source_gen">
+<language namespace="jetbrains.mps.baseLanguage.blTypes" loggingEnabled="true" generatorOutputPath="${mps_home}\source_gen">
   <structure>
     <model modelUID="jetbrains.mps.baseLanguage.blTypes.structure" />
   </structure>

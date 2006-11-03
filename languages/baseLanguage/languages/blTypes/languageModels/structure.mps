@@ -66,7 +66,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1162556266355">
-    <property name="name" value="FooConcept" />
+    <property name="name" value="BarConcept" />
     <link role="extends" targetNodeId="1.1133920641626" />
   </node>
 </model>
