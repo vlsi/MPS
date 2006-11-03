@@ -76,7 +76,7 @@ public class ExternalResolveInfoProvider {
     if (s != null) {
       return new Pair<String, String>(s, s);
     }
-    if (t instanceof ClassifierType) {
+    if (t instanceof ClassifierType && ((ClassifierType) t).getClassifier() != null) {
       StringBuffer sb = new StringBuffer(classifier_);
       sb.append(" [");
       ClassifierType classifierType = (ClassifierType) t;
