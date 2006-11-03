@@ -14,6 +14,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.smodel.languageLog.LanguageLogger;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.Hack;
 
@@ -56,6 +57,7 @@ public class Language extends AbstractModule {
   };
 
   private boolean myRegisteredInFindUsagesManager;
+  private LanguageLogger myLanguageLogger = new LanguageLogger(this);
 
   @NotNull
   public static Language newInstance(@NotNull File descriptorFile,
@@ -357,7 +359,8 @@ public class Language extends AbstractModule {
 
   @Nullable
   public SModelDescriptor getLogModelDescriptor() {
-    Model logModel = getLanguageDescriptor().getStructureModel();
+    Model logModel = getLanguageDescriptor().getLogModel();
+    if (logModel == null) return null;
     SModelUID modelUID = SModelUID.fromString(logModel.getName());
     SModelDescriptor logModelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
     return logModelDescriptor;
@@ -530,6 +533,10 @@ public class Language extends AbstractModule {
       myParentsNamesMap.put(className, result);
       return new HashSet<String>(result);
     }
+  }
+
+  public LanguageLogger getLanguageLogger() {
+    return myLanguageLogger;
   }
 
   public void save() {

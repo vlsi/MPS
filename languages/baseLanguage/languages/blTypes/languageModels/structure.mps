@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.blTypes.structure">
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
-  <maxImportIndex value="3" />
+  <language namespace="jetbrains.mps.bootstrap.refactoringLanguage" />
+  <language namespace="jetbrains.mps.baseLanguage" />
+  <maxImportIndex value="4" />
   <import index="1" modelUID="jetbrains.mps.core.structure" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.blTypes.structure" />
   <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" />
+  <import index="4" modelUID="jetbrains.mps.refactoring.common.rename@java_stub" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1159268590033">
     <property name="rootable" value="true" />
     <property name="name" value="PrimitiveTypeDescriptor" />
@@ -61,6 +64,10 @@
       <property name="role" value="componentType" />
       <link role="target" targetNodeId="1.1078489098625" />
     </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1162556266355">
+    <property name="name" value="FooConcept" />
+    <link role="extends" targetNodeId="1.1133920641626" />
   </node>
 </model>
 

@@ -102,5 +102,11 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1162556281717">
+    <link role="conceptDeclaration" targetNodeId="1.1162556266355" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1162556285281">
+      <property name="text" value="FOO" />
+    </node>
+  </node>
 </model>
 

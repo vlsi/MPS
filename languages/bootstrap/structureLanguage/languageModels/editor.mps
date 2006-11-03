@@ -657,6 +657,19 @@
                 </node>
               </node>
             </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1162559216418">
+              <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1162559219406">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1162559220877" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1162559217842">
+                  <link role="variableDeclaration" targetNodeId="1161165897339" resolveInfo="l" />
+                </node>
+              </node>
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1162559216420">
+                <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1162559222378">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1162559225098" />
+                </node>
+              </node>
+            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1161166135928">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1161166135929">
                 <property name="name" value="s" />

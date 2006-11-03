@@ -6,6 +6,9 @@
   <constraints>
     <model modelUID="jetbrains.mps.baseLanguage.blTypes.constraints" />
   </constraints>
+  <languageLog>
+    <model modelUID="jetbrains.mps.baseLanguage.blTypes.log@language_log" />
+  </languageLog>
   <editor>
     <model modelUID="jetbrains.mps.baseLanguage.blTypes.editor" />
   </editor>
