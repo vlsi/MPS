@@ -62,7 +62,7 @@ public class ModelConstraintsManager {
     if (!myNodePropertyGettersMap.containsKey(key)) {
       myNodePropertyGettersMap.put(key, getter);
     } else {
-      LOG.error("property getter is alredy registered for key '" + key + "' : " + myNodePropertyGettersMap.get(key));
+      LOG.error("property getter is already registered for key '" + key + "' : " + myNodePropertyGettersMap.get(key));
     }
 
     myNodePropertyGettersCache.clear();
@@ -79,7 +79,7 @@ public class ModelConstraintsManager {
     if (!myNodePropertySettersMap.containsKey(key)) {
       myNodePropertySettersMap.put(key, setter);
     } else {
-      LOG.error("property setter is alredy registered for key '" + key + "' : " + myNodePropertySettersMap.get(key));
+      LOG.error("property setter is already registered for key '" + key + "' : " + myNodePropertySettersMap.get(key));
     }
 
     myNodePropertySettersCache.clear();
@@ -96,7 +96,7 @@ public class ModelConstraintsManager {
     if (!myNodeReferentSearchScopeProvidersMap.containsKey(key)) {
       myNodeReferentSearchScopeProvidersMap.put(key, provider);
     } else {
-      LOG.error("search scope provider is alredy registered for key '" + key + "' : " + myNodeReferentSearchScopeProvidersMap.get(key));
+      LOG.error("search scope provider is already registered for key '" + key + "' : " + myNodeReferentSearchScopeProvidersMap.get(key));
     }
   }
 
@@ -108,7 +108,7 @@ public class ModelConstraintsManager {
     if (!myNodeDefaultSearchScopeProvidersMap.containsKey(conceptFqName)) {
       myNodeDefaultSearchScopeProvidersMap.put(conceptFqName, provider);
     } else {
-      LOG.error("default search scope provider is alredy registered for concept '" + conceptFqName + "' : " + myNodeDefaultSearchScopeProvidersMap.get(conceptFqName));
+      LOG.error("default search scope provider is already registered for concept '" + conceptFqName + "' : " + myNodeDefaultSearchScopeProvidersMap.get(conceptFqName));
     }
   }
 
