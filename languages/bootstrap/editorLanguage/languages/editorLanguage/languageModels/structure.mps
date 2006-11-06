@@ -39,6 +39,10 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1119645550923">
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1162839219692">
+      <property name="value" value="substituteActionsFactoryId - deprecated" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1162838948922" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1142887637401">
       <property name="sourceCardinality" value="0..1" />
       <property name="role" value="renderingCondition" />
