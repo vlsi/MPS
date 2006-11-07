@@ -257,7 +257,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         }
         m.show(AbstractEditorComponent.this, x, y);
       }
-    }, KeyStroke.getKeyStroke("control E"), WHEN_FOCUSED);
+    }, KeyStroke.getKeyStroke("control E"), WHEN_IN_FOCUSED_WINDOW);
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
