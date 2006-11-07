@@ -1132,6 +1132,7 @@
       <module fileurl="file://$PROJECT_DIR$/projects/SemanticWeb/SemanticWebIDE/SemanticWebIDE.iml" filepath="$PROJECT_DIR$/projects/SemanticWeb/SemanticWebIDE/SemanticWebIDE.iml" group="SemanticWeb" />
       <module fileurl="file://$PROJECT_DIR$/projects/textLanguage/TextLanguage.iml" filepath="$PROJECT_DIR$/projects/textLanguage/TextLanguage.iml" group="DataLanguages" />
       <module fileurl="file://$PROJECT_DIR$/projects/TheSimplestLanguage/TheSimplestLanguage.iml" filepath="$PROJECT_DIR$/projects/TheSimplestLanguage/TheSimplestLanguage.iml" group="Projects" />
+      <module fileurl="file://$PROJECT_DIR$/projects/TinyStateMachine/TinyStateMachine.iml" filepath="$PROJECT_DIR$/projects/TinyStateMachine/TinyStateMachine.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/agreement/agreement.iml" filepath="$PROJECT_DIR$/projects/agreement/agreement.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/SemanticWeb/core/core.iml" filepath="$PROJECT_DIR$/projects/SemanticWeb/core/core.iml" group="SemanticWeb" />
       <module fileurl="file://$PROJECT_DIR$/projects/fixedLengthReader/fixedLengthReader.iml" filepath="$PROJECT_DIR$/projects/fixedLengthReader/fixedLengthReader.iml" group="Projects" />
@@ -1155,8 +1156,8 @@
   </component>
   <component name="StarteamVcsAdapter" />
   <component name="VssVcs">
-    <SourceSafePersistencyRemovedFolder>$PROJECT_DIR$/source/jetbrains/mps/generator/types</SourceSafePersistencyRemovedFolder>
     <SourceSafePersistencyRemovedFolder>$PROJECT_DIR$/projects/SemanticFunctions/source/jetbrains/naturalLanguageDescription/scope</SourceSafePersistencyRemovedFolder>
+    <SourceSafePersistencyRemovedFolder>$PROJECT_DIR$/source/jetbrains/mps/generator/types</SourceSafePersistencyRemovedFolder>
   </component>
   <component name="com.intellij.jsf.UserDefinedFacesConfigs">
     <option name="USER_DEFINED_CONFIGS">
