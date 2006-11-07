@@ -4,6 +4,7 @@ import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.util.Pair;
 import org.jdom.Element;
 
 import javax.swing.*;
@@ -86,7 +87,8 @@ public abstract class MPSTree extends JTree {
           nodes.add(node);
           node.keyPressed(e);
         }
-        Pair pair = new Pair(KeyStroke.getKeyStrokeForEvent(e), selNode.getClass());
+        KeyStroke eventKeyStroke = KeyStroke.getKeyStrokeForEvent(e);
+        Pair pair = new Pair(eventKeyStroke, selNode.getClass());
         final MPSAction action = myKeyStrokesToActionsMap.get(pair);
         if (action != null) {
           final ActionContext context = getActionContext(selNode, nodes);
@@ -98,6 +100,21 @@ public abstract class MPSTree extends JTree {
             });
           } else {
             action.execute(context);
+          }
+        } else {
+          for (TreePath p : paths) {
+            MPSTreeNode lastNode = (MPSTreeNode) p.getLastPathComponent();
+            JPopupMenu menu = lastNode.getPopupMenu();
+
+            for (int i = 0; i < menu.getComponentCount(); i++) {
+              if (menu.getComponent(i) instanceof JMenuItem) {
+                JMenuItem item = (JMenuItem) menu.getComponent(i);
+                KeyStroke keyStroke = item.getAccelerator();
+                if (eventKeyStroke.equals(keyStroke)) {
+                  item.getAction().actionPerformed(new ActionEvent(this, 0, ""));                  
+                }
+              }
+            }
           }
         }
       }
