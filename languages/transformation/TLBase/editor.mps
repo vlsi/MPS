@@ -717,9 +717,7 @@
                             <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1162425451928">
                               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1162425451929">
                                 <property name="name" value="roots" />
-                                <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListType" id="1162425479548">
-                                  <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1162425483519" />
-                                </node>
+                                <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1162939374316" />
                                 <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1162431078686">
                                   <link role="baseMethodDeclaration" extResolveInfo="10.method ([Classifier]SModel).([InstanceMethodDeclaration]getRoots() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [SNode]&gt;]))" />
                                   <node role="instance" type="jetbrains.mps.baseLanguage.ClosureParameterReference" id="1162431078687">
