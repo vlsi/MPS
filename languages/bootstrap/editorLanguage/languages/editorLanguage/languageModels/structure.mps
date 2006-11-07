@@ -717,6 +717,12 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1088185857835" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1162923704838">
+      <property name="sourceCardinality" value="0..1" />
+      <property name="role" value="cellMenu" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1158589789017" resolveInfo="CellMenu_ReplaceNode" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107223377724">
       <property name="value" value="ref.cell" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />

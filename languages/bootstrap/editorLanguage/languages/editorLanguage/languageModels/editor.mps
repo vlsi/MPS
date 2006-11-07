@@ -5316,6 +5316,21 @@
             </node>
           </node>
         </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1162923782381">
+          <property name="drawBorder" value="false" />
+          <property name="vertical" value="false" />
+          <property name="selectable" value="false" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1162923782382">
+            <property name="text" value="menu" />
+            <property name="drawBorder" value="true" />
+            <property name="selectable" value="false" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1162923782383">
+            <property name="drawBorder" value="true" />
+            <property name="noTargetText" value="&lt;none&gt;" />
+            <link role="relationDeclaration" targetNodeId="2.1162923704838" />
+          </node>
+        </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1138332647811">
           <property name="drawBorder" value="true" />
           <property name="selectable" value="false" />
