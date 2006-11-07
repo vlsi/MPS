@@ -50,10 +50,7 @@ public abstract class GenericEditorUpdater {
       public void run() {
         String commandName = "update editor [" + NameUtil.shortNameFromLongName(GenericEditorUpdater.this.getClass().getName()) + "]";
         CommandProcessor commandProcessor = CommandProcessor.instance();
-        if (commandProcessor.isInsideCommand()) {
-          return;
-        }
-        commandProcessor.executeCommand(new Runnable() {
+        commandProcessor.tryToExecuteCommand(new Runnable() {
           public void run() {
             MPSProjects projects = ApplicationComponents.getInstance().getComponentSafe(MPSProjects.class);
             for (MPSProject project : projects.getProjects()) {
