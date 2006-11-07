@@ -67,6 +67,10 @@ public abstract class GenericEditorUpdater {
                 IEditor currentEditor = editorsPane.getCurrentEditor();
                 if (currentEditor != null) {
                   currentEditor.repaint();
+                  AbstractEditorComponent component = currentEditor.getCurrentEditorComponent();
+                  if (component != null) {
+                    component.getMessagesGutter().repaint();
+                  }
                 }
               }
             }
