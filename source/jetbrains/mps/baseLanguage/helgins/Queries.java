@@ -33,8 +33,7 @@ public class Queries {
     }
     SModelDescriptor helginsModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.baseLanguage.helgins"));
     assert helginsModelDescriptor != null;
-    SModel typesModel = helginsModelDescriptor.getSModel();
-    SModel runtimeTypesModel = Interpretator.getRuntimeTypesModel(typesModel);
+    SModel runtimeTypesModel = Interpretator.getRuntimeTypesModel();
     Set<? extends SNode> types = CollectionUtil.asSet(leftType, rightType);
     Set<SNode> lowestCommonSupertypes = SubtypingManager.leastCommonSupertypes(types);
 

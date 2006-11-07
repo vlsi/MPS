@@ -11,6 +11,8 @@ import jetbrains.mps.util.Pair;
 
 import java.util.*;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
@@ -32,11 +34,11 @@ public class TypeChecker {
   public static final String JETBRAINS_MPS = "jetbrains.mps.";
   public static final String JETBRAINS = "jetbrains.";
 
-  public static void clearForTypesModel(SModel typesModel) {
+  public static void clear() {
     ContextsManager.getInstance().clear();
     EquationManager.getInstance().clear();
     TypeVariablesManager.getInstance().clearVariables();
-    Interpretator.clearForTypesModel(typesModel);
+    Interpretator.clear();
     SubtypingManager.getInstance().clear();
     AdaptationManager.getInstance().clear();
     ourRules.clear();
@@ -44,35 +46,49 @@ public class TypeChecker {
     ourNodesWithErrors.clear();
   }
 
-  public static void checkTypes(SNode root, SModel typesModel) {
+  public static void checkTypes(SNode root) {
     //clear
-    clearForTypesModel(typesModel);
-
-    //register contexts
-    for (ContextDeclaration contextDeclaration : typesModel.getRoots(ContextDeclaration.class)) {
-      if (contextDeclaration.getMain()) {
-        ContextsManager.getInstance().registerMainContext(contextDeclaration.getName());
-      } else {
-        ContextsManager.getInstance().registerNewContext(contextDeclaration.getName());
+    clear();
+    List<Language> languages = root.getModel().getLanguages(GlobalScope.getInstance());
+    Set<SModel> typesModels = new HashSet<SModel>();
+    for (Language language : languages) {
+      SModelDescriptor helginsModelDescriptor = language.getHelginsTypesystemModelDescriptor();
+      if (helginsModelDescriptor != null) {
+        typesModels.add(helginsModelDescriptor.getSModel());
       }
     }
+    if (typesModels.isEmpty()) return;
 
-    //register global varsets
-    for (VariableSetDeclaration varset : typesModel.getRoots(VariableSetDeclaration.class)) {
-      TypeVariablesManager.getInstance().registerNewVarset(varset);
-    }
-
-    // load rules
+    //loading typesystems
     ourRules = new ArrayList<Rule>();
-    for (Rule rule : typesModel.getRoots(Rule.class)) {
-      ourRules.add(rule);
+    for (SModel typesModel : typesModels) {
+
+      //register contexts
+      for (ContextDeclaration contextDeclaration : typesModel.getRoots(ContextDeclaration.class)) {
+        if (contextDeclaration.getMain()) {
+          if (ContextsManager.getInstance().isMainContextRegistered()) continue;
+          ContextsManager.getInstance().registerMainContext(contextDeclaration.getName());
+        } else {
+          ContextsManager.getInstance().registerNewContext(contextDeclaration.getName());
+        }
+      }
+
+      //register global varsets
+      for (VariableSetDeclaration varset : typesModel.getRoots(VariableSetDeclaration.class)) {
+        TypeVariablesManager.getInstance().registerNewVarset(varset);
+      }
+
+      // load rules
+      for (Rule rule : typesModel.getRoots(Rule.class)) {
+        ourRules.add(rule);
+      }
+
+      // load subtyping rules
+      SubtypingManager.getInstance().initiate(typesModel);
+
+      // load adaptation rules
+      AdaptationManager.getInstance().initiate(typesModel);
     }
-
-    // load subtyping rules
-    SubtypingManager.getInstance().initiate(typesModel);
-
-    // load adaptation rules
-    AdaptationManager.getInstance().initiate(typesModel);
 
     // check types
     doCheckTypes(root);
@@ -87,7 +103,7 @@ public class TypeChecker {
     for (Pair<SNode, SNode> contextEntry : mainContext) {
       SNode term = contextEntry.o1;
       if (term == null) continue;
-      SNode type = expandType(contextEntry.o2, Interpretator.getRuntimeTypesModel(typesModel));
+      SNode type = expandType(contextEntry.o2, Interpretator.getRuntimeTypesModel());
       if (type instanceof RuntimeErrorType) {
         reportTypeError(term, ((RuntimeErrorType)type).getErrorText());
       }
@@ -200,16 +216,17 @@ public class TypeChecker {
     return null;
   }
 
-
-  public static SModelDescriptor getTypesModel(SNode node) {
-    Language language = SModelUtil.getLanguage(node, GlobalScope.getInstance());
-    return language.getHelginsTypesystemModelDescriptor();
+  @NotNull
+  public static List<SModelDescriptor> getTypesModels(SNode node) {
+    List<Language> languages = node.getModel().getLanguages(GlobalScope.getInstance());
+    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
+    for (Language l : languages) {
+      SModelDescriptor modelDescriptor = l.getHelginsTypesystemModelDescriptor();
+      if (modelDescriptor != null) {
+        result.add(modelDescriptor);
+      }
+    }
+    return result;
   }
 
-  public static void checkNode(SNode node) {
-    SModelDescriptor modelDescriptor = getTypesModel(node);
-    if (modelDescriptor == null) return;
-    SModel typesModel = modelDescriptor.getSModel();
-    checkTypes(node, typesModel);
-  }
 }
