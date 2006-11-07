@@ -333,6 +333,7 @@
     <link role="target" targetNodeId="1087833241328" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.AnnotationLinkDeclaration" id="1149694500506">
+    <property name="sourceCardinality" value="0..n" />
     <property name="role" value="nodeMacro" />
     <link role="source" targetNodeId="2.1133920641626" />
     <link role="target" targetNodeId="1087833466690" />

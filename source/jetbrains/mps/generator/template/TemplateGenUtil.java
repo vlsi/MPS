@@ -346,7 +346,8 @@ public class TemplateGenUtil {
 
   private static List<SNode> createSourceNodeListForTemplateNode(SNode parentSourceNode, SNode templateNode, ITemplateGenerator generator) {
     try {
-      NodeMacro nodeMacro = NodeMacro_AnnotationLink.getNodeMacro((BaseConcept) templateNode); //(NodeMacro) templateNode.getChild(ITemplateGenerator.ROLE_NODE_MAKRO);
+      List<NodeMacro> nodeMacros = NodeMacro_AnnotationLink.getNodeMacros((BaseConcept) templateNode); //(NodeMacro) templateNode.getChild(ITemplateGenerator.ROLE_NODE_MAKRO);
+      NodeMacro nodeMacro = nodeMacros.isEmpty() ? null : nodeMacros.get(0); //TODO
 
       List<SNode> result = new LinkedList<SNode>();
       if (nodeMacro instanceof CopySrcNodeMacro) {
@@ -440,7 +441,8 @@ public class TemplateGenUtil {
   private static INodeBuilder createNodeBuilder(SNode sourceNode, SNode templateNode, String mappingName, ITemplateGenerator generator) {
     INodeBuilder builder = null;
     boolean needCreateChildBuilders = true;
-    NodeMacro nodeMacro = NodeMacro_AnnotationLink.getNodeMacro((BaseConcept) templateNode);// (NodeMacro) templateNode.getChild(ITemplateGenerator.ROLE_NODE_MAKRO);
+    List<NodeMacro> nodeMacros = NodeMacro_AnnotationLink.getNodeMacros((BaseConcept) templateNode);
+    NodeMacro nodeMacro = nodeMacros.isEmpty() ? null : nodeMacros.get(0); //TODO
     if (nodeMacro != null) {
       if (nodeMacro.getMappingId() != null) {
         mappingName = nodeMacro.getMappingId();

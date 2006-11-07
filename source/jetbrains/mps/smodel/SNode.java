@@ -278,6 +278,12 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return getChild(attributeRole);
   }
 
+  @NotNull
+  public List<? extends SNode> getAttributes(String role) {
+    String attributeRole = AttributesRolesUtil.childRoleFromAttributeRole(role);
+    return getChildren(attributeRole);
+  }
+
   @Nullable
   public SNode getAttribute_new() {
     return getAttribute(null);
@@ -289,6 +295,10 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   public void setAttribute(String role, SNode attributeConcept) {
     setChild(AttributesRolesUtil.childRoleFromAttributeRole(role), attributeConcept);
+  }
+
+  public void addAttribute(String role, SNode attributeConcept) {
+    addChild(AttributesRolesUtil.childRoleFromAttributeRole(role), attributeConcept);
   }
 
   ///--property attributes
@@ -319,9 +329,18 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     setChild(AttributesRolesUtil.childRoleFromPropertyAttributeRole(role, propertyName), propertyAttribute);
   }
 
+  public void addPropertyAttribute(String role, String propertyName, SNode propertyAttribute) {
+    addChild(AttributesRolesUtil.childRoleFromPropertyAttributeRole(role, propertyName), propertyAttribute);
+  }
+
   @Nullable
   public SNode getPropertyAttribute(String role, String propertyName) {
     return getChild(AttributesRolesUtil.childRoleFromPropertyAttributeRole(role, propertyName));
+  }
+
+  @NotNull
+  public List<? extends SNode> getPropertyAttributes(String role, String propertyName) {
+    return getChildren(AttributesRolesUtil.childRoleFromPropertyAttributeRole(role, propertyName));
   }
 
   @Nullable
@@ -365,9 +384,18 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     setChild(AttributesRolesUtil.childRoleFromLinkAttributeRole(role, linkRole), linkAttribute);
   }
 
+  public void addLinkAttribute(String role, String linkRole, SNode linkAttribute) {
+    addChild(AttributesRolesUtil.childRoleFromLinkAttributeRole(role, linkRole), linkAttribute);
+  }
+
   @Nullable
   public SNode getLinkAttribute(String role, String linkRole) {
     return getChild(AttributesRolesUtil.childRoleFromLinkAttributeRole(role, linkRole));
+  }
+
+  @NotNull
+  public List<? extends SNode> getLinkAttributes(String role, String linkRole) {
+    return getChildren(AttributesRolesUtil.childRoleFromLinkAttributeRole(role, linkRole));
   }
 
   @Nullable
