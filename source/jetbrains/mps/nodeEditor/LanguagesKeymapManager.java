@@ -108,7 +108,7 @@ public class LanguagesKeymapManager {
     private List<Language> myLanguagesToRegister = new LinkedList<Language>();
     private List<Language> myLanguagesToUnRegister = new LinkedList<Language>();
 
-    public void moduleInitialized(IModule module) {
+    public void moduleInitialized(IModule module) {         
       if (module instanceof Language) {
         myLanguagesToRegister.add((Language) module);
         myLanguagesToUnRegister.remove((Language) module);

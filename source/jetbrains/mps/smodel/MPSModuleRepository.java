@@ -31,8 +31,6 @@ public class MPSModuleRepository {
 
   private List<ModuleRepositoryListener> myModuleListeners = new ArrayList<ModuleRepositoryListener>();
   private List<RepositoryListener> myListeners = new ArrayList<RepositoryListener>();
-  @SuppressWarnings({"FieldCanBeLocal"})
-  private final CommandAdapter myListenerToRemoveUnusedModules;
 
   private Map<String, Class<? extends IModule>> myExtensionsToModuleTypes = new HashMap<String, Class<? extends IModule>>();
   private static final String LANGUAGE_EXT = ".mpl";
@@ -44,15 +42,6 @@ public class MPSModuleRepository {
 
   public MPSModuleRepository() {
     initializeExtensionsToModuleTypesMap();
-    // DO NOT CONVERT this FIELD into a LOCAL VARIABLE -
-    // otherwise this listener will be collected very quickly
-    // (myListeners in CommandProcessor is a WeakSet)
-    myListenerToRemoveUnusedModules = new CommandAdapter() {
-      public void beforeCommandFinished(@NotNull CommandEvent event) {
-        removeUnusedModules();
-      }
-    };
-    CommandProcessor.instance().addCommandListener(myListenerToRemoveUnusedModules);
     LanguagesKeymapManager.getInstance().addMyListener(this);
   }
 

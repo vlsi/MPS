@@ -439,6 +439,7 @@ public class Language extends AbstractModule {
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(editorUID), this);
     if (modelDescriptor == null) {
       LOG.error("Couldn't get editor model \"" + editorUID + "\"");
+      SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(editorUID), this);
     }
     return modelDescriptor;
   }
