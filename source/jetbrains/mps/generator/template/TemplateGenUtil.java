@@ -192,7 +192,7 @@ public class TemplateGenUtil {
     }
     List<SNode> sourceNodes = createSourceNodeListForMappingRule(mappingRule, generator);
     for (SNode sourceNode : sourceNodes) {
-      INodeBuilder nodeBuilder = createNodeBuilder(sourceNode, templateNode, ruleName, generator);
+      INodeBuilder nodeBuilder = createNodeBuilder(sourceNode, templateNode, ruleName, 0, generator);
       nodeBuilder.setRuleNode(mappingRule);
       builders.add(nodeBuilder);
     }
@@ -237,7 +237,7 @@ public class TemplateGenUtil {
     for (TemplateFragment templateFragment : templateFragments) {
       SNode templateFragmentNode = templateFragment.getParent();
       String mappingName = templateFragment.getName();
-      List<INodeBuilder> fragmentNodeBuilders = createNodeBuildersForTemplateNode(sourceNode, templateFragmentNode, mappingName, generator);
+      List<INodeBuilder> fragmentNodeBuilders = createNodeBuildersForTemplateNode(sourceNode, templateFragmentNode, mappingName, 0, generator);
       for (INodeBuilder fragmentBuilder : fragmentNodeBuilders) {
         fragmentBuilder.setRuleNode(ruleNode);
         // add our "fragmant builder" to context builder
@@ -287,11 +287,11 @@ public class TemplateGenUtil {
     }
   }
 
-  public static List<INodeBuilder> createNodeBuildersForTemplateNode(SNode parentSourceNode, SNode templateNode, String mappingName, ITemplateGenerator generator) {
+  public static List<INodeBuilder> createNodeBuildersForTemplateNode(SNode parentSourceNode, SNode templateNode, String mappingName, int currentMacroIndex, ITemplateGenerator generator) {
     List<INodeBuilder> builders = new LinkedList<INodeBuilder>();
-    List<SNode> sourceNodes = createSourceNodeListForTemplateNode(parentSourceNode, templateNode, generator);
+    List<SNode> sourceNodes = createSourceNodeListForTemplateNode(parentSourceNode, templateNode, currentMacroIndex, generator);
     for (SNode sourceNode : sourceNodes) {
-      INodeBuilder nodeBuilder = createNodeBuilder(sourceNode, templateNode, mappingName, generator);
+      INodeBuilder nodeBuilder = createNodeBuilder(sourceNode, templateNode, mappingName, currentMacroIndex, generator);
       builders.add(nodeBuilder);
     }
 
@@ -303,10 +303,6 @@ public class TemplateGenUtil {
 
   public static boolean isTemplateLanguageElement(SNode templateNode) {
     String role = templateNode.getRole_();
-    /* return role.equals(ITemplateGenerator.ROLE_NODE_MAKRO) ||
-    role.equals(ITemplateGenerator.ROLE_TEMPLATE_FRAGMENT) ||
-    role.startsWith(ITemplateGenerator.ROLE_PREFIX_PROPERTY_MAKRO) ||
-    role.startsWith(ITemplateGenerator.ROLE_PREFIX_REFEENCE_MAKRO);*/
     return AttributesRolesUtil.childRoleFromAttributeRole(NodeMacro_AnnotationLink.NODE_MACRO).equals(role) ||
             AttributesRolesUtil.childRoleFromAttributeRole(TemplateFragment_AnnotationLink.TEMPLATE_FRAGMENT).equals(role) ||
             AttributesRolesUtil.isChildRoleOfLinkAttributeRole(ReferenceMacro_AnnotationLink.REFERENCE_MACRO, role) ||
@@ -318,7 +314,7 @@ public class TemplateGenUtil {
     SNode parentTemplateNode = parentNodeBuilder.getTemplateNode();
     for (SNode templateChildNode : parentTemplateNode.getChildren()) {
       if (!isTemplateLanguageElement(templateChildNode)) {
-        List<INodeBuilder> childNodeBuilders = createNodeBuildersForTemplateNode(parentSourceNode, templateChildNode, null, parentNodeBuilder.getGenerator());
+        List<INodeBuilder> childNodeBuilders = createNodeBuildersForTemplateNode(parentSourceNode, templateChildNode, null, 0, parentNodeBuilder.getGenerator());
         for (INodeBuilder childNodeBuilder : childNodeBuilders) {
           parentNodeBuilder.addChildBuilder(childNodeBuilder);
         }
@@ -344,10 +340,14 @@ public class TemplateGenUtil {
     return sourceNodes;
   }
 
-  private static List<SNode> createSourceNodeListForTemplateNode(SNode parentSourceNode, SNode templateNode, ITemplateGenerator generator) {
+  private static List<SNode> createSourceNodeListForTemplateNode(SNode parentSourceNode, SNode templateNode, int currentMacroIndex, ITemplateGenerator generator) {
     try {
-      List<NodeMacro> nodeMacros = NodeMacro_AnnotationLink.getNodeMacros((BaseConcept) templateNode); //(NodeMacro) templateNode.getChild(ITemplateGenerator.ROLE_NODE_MAKRO);
-      NodeMacro nodeMacro = nodeMacros.isEmpty() ? null : nodeMacros.get(0); //TODO
+      List<NodeMacro> nodeMacros = NodeMacro_AnnotationLink.getNodeMacros((BaseConcept) templateNode);
+//      NodeMacro nodeMacro = nodeMacros.isEmpty() ? null : nodeMacros.get(0); //TODO
+      NodeMacro nodeMacro = null;
+      if (nodeMacros.size() > currentMacroIndex) {
+        nodeMacro = nodeMacros.get(currentMacroIndex);
+      }
 
       List<SNode> result = new LinkedList<SNode>();
       if (nodeMacro instanceof CopySrcNodeMacro) {
@@ -438,11 +438,16 @@ public class TemplateGenUtil {
 //    }
   }
 
-  private static INodeBuilder createNodeBuilder(SNode sourceNode, SNode templateNode, String mappingName, ITemplateGenerator generator) {
+  private static INodeBuilder createNodeBuilder(SNode sourceNode, SNode templateNode, String mappingName, int currentMacroIndex, ITemplateGenerator generator) {
     INodeBuilder builder = null;
-    boolean needCreateChildBuilders = true;
+    boolean builderComplete = false;
     List<NodeMacro> nodeMacros = NodeMacro_AnnotationLink.getNodeMacros((BaseConcept) templateNode);
-    NodeMacro nodeMacro = nodeMacros.isEmpty() ? null : nodeMacros.get(0); //TODO
+//    NodeMacro nodeMacro = nodeMacros.isEmpty() ? null : nodeMacros.get(0); //TODO
+    NodeMacro nodeMacro = null;
+    if (nodeMacros.size() > currentMacroIndex) {
+      nodeMacro = nodeMacros.get(currentMacroIndex);
+    }
+
     if (nodeMacro != null) {
       if (nodeMacro.getMappingId() != null) {
         mappingName = nodeMacro.getMappingId();
@@ -452,28 +457,28 @@ public class TemplateGenUtil {
         builder = createNodeBuilderForSwitch(sourceNode, templateSwitch, mappingName, generator);
         if (builder != null) {
           builder.setRoleInParent(templateNode.getRole_());
-          needCreateChildBuilders = false;
+          builderComplete = true;
         }
 
       } else if (nodeMacro instanceof CopySrcNodeMacro) {
         builder = generator.createCopyingNodeBuilder(sourceNode, templateNode);
-        needCreateChildBuilders = false;
+        builderComplete = true;
       } else if (nodeMacro instanceof CopySrcListMacro) {
         builder = generator.createCopyingNodeBuilder(sourceNode, templateNode);
-        needCreateChildBuilders = false;
+        builderComplete = true;
       } else if (nodeMacro instanceof MapSrcNodeMacro) {
         MapSrcNodeMacro mapSrcNodeMacro = (MapSrcNodeMacro) nodeMacro;
         String sourceNodeMapperId = mapSrcNodeMacro.getSourceNodeMapperId();
         if (sourceNodeMapperId != null) {
           builder = new QueryMethodMapperNodeBuilder(sourceNode, templateNode, mapSrcNodeMacro, generator);
-          needCreateChildBuilders = false;
+          builderComplete = true;
         }
       } else if (nodeMacro instanceof MapSrcListMacro) {
         MapSrcListMacro mapSrcListMacro = (MapSrcListMacro) nodeMacro;
         String sourceNodeMapperId = mapSrcListMacro.getSourceNodeMapperId();
         if (sourceNodeMapperId != null) {
           builder = new QueryMethodMapperNodeBuilder(sourceNode, templateNode, mapSrcListMacro, generator);
-          needCreateChildBuilders = false;
+          builderComplete = true;
         }
       } else {
         // use user-defined node builder ?
@@ -486,10 +491,27 @@ public class TemplateGenUtil {
       }
     }
 
-    if (builder == null) {
-      builder = createDefaultNodeBuilder(sourceNode, templateNode, mappingName, false, generator);
+    if (builderComplete) {
+      return builder;
     }
-    if (needCreateChildBuilders) {
+
+    // template node has multiple 'nested' macros?
+    if (nodeMacros.size() > currentMacroIndex + 1) {
+      // continue processing macros of the current template node
+      currentMacroIndex = currentMacroIndex + 1;
+      List<INodeBuilder> nestedBuilders = createNodeBuildersForTemplateNode(sourceNode, templateNode, mappingName, currentMacroIndex, generator);
+      if (builder == null) {
+        builder = new DefaultNodeBuilderList(nestedBuilders);
+      } else {
+        for (INodeBuilder nestedBuilder : nestedBuilders) {
+          builder.addChildBuilder(nestedBuilder);
+        }
+      }
+    } else {
+      // proceed with children
+      if (builder == null) {
+        builder = createDefaultNodeBuilder(sourceNode, templateNode, mappingName, false, generator);
+      }
       createChildBuilders(builder);
     }
     return builder;
@@ -516,26 +538,25 @@ public class TemplateGenUtil {
     List<TemplateFragment> templateFragments = getTemplateFragments(templateDeclarationForCase);
     if (templateFragments.isEmpty()) {
       generator.showErrorMessage(sourceNode, templateDeclarationForCase, templateSwitch, "Couldn't create builder for switch: no template fragments found");
-      return null;
+      return new Void_NodeBuilder(sourceNode, templateSwitchCase, null, generator);
     }
     if (templateFragments.size() > 1) {
       generator.showErrorMessage(sourceNode, templateDeclarationForCase, templateSwitch, "Couldn't create builder for switch: more than one (" + templateFragments.size() + ") fragments found");
-      return null;
+      return new Void_NodeBuilder(sourceNode, templateSwitchCase, null, generator);
     }
 
     TemplateFragment templateFragment = templateFragments.get(0);
     SNode templateNodeForCase = templateFragment.getParent();
 
-    List<SNode> sourceNodes2 = createSourceNodeListForTemplateNode(sourceNode, templateNodeForCase, generator);
-    if (sourceNodes2.size() > 1) {
-      generator.showErrorMessage(sourceNode, templateDeclarationForCase, templateSwitch, "Couldn't create builder for switch case: more than one (" + sourceNodes2.size() + ") source nodes are returned by query");
-      return null;
-    }
-    if (sourceNodes2.isEmpty()) {
-      return null;
+    List<SNode> sourceNodes2 = createSourceNodeListForTemplateNode(sourceNode, templateNodeForCase, 0, generator);
+    if (sourceNodes2.size() == 1) {
+      return createNodeBuilder(sourceNodes2.get(0), templateNodeForCase, mappingName, 0, generator);
     }
 
-    return createNodeBuilder(sourceNodes2.get(0), templateNodeForCase, mappingName, generator);
+    if (sourceNodes2.size() > 1) {
+      generator.showErrorMessage(sourceNode, templateDeclarationForCase, templateSwitch, "Couldn't create builder for switch case: more than one (" + sourceNodes2.size() + ") source nodes are returned by query");
+    }
+    return new Void_NodeBuilder(sourceNode, templateSwitchCase, null, generator);
   }
 
   public static void printBuildersTree(INodeBuilder builder, int depth) {
