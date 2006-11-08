@@ -4,7 +4,6 @@ import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.util.Pair;
 import org.jdom.Element;
 
 import javax.swing.*;
@@ -130,6 +129,17 @@ public abstract class MPSTree extends JTree {
     };
     registerKeyboardAction(openNodeAction, KeyStroke.getKeyStroke("ENTER"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     registerKeyboardAction(openNodeAction, KeyStroke.getKeyStroke("F4"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
+
+    registerKeyboardAction(new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
+        TreePath path = getSelectionPath();
+        if (path == null) return;
+        int rowNum = getRowForPath(path);
+        Rectangle r = getRowBounds(rowNum);
+        showPopup(r.x, r.y);
+      }
+    }, KeyStroke.getKeyStroke("CONTEXT_MENU"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
   }
 
   void myMouseReleased(MouseEvent e) {
@@ -242,7 +252,11 @@ public abstract class MPSTree extends JTree {
   }
 
   private void showPopup(MouseEvent e) {
-    TreePath path = getPathForLocation(e.getX(), e.getY());
+    showPopup(e.getX(), e.getY());
+  }
+
+  private void showPopup(int x, int y) {
+    TreePath path = getPathForLocation(x, y);
     if (path != null && path.getLastPathComponent() instanceof MPSTreeNode) {
       MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
       JPopupMenu menu = node.getPopupMenu();
@@ -250,13 +264,13 @@ public abstract class MPSTree extends JTree {
       if (!getSelectedPaths().contains(pathToString(path))) {
         setSelectionPath(path);
       }
-      menu.show(this, e.getX(), e.getY());
+      menu.show(this, x, y);
       return;
     }
 
     JPopupMenu defaultMenu = createDefaultPopupMenu();
     if (defaultMenu == null) return;
-    defaultMenu.show(this, e.getX(), e.getY());
+    defaultMenu.show(this, x, y);
   }
 
   protected abstract MPSTreeNode rebuild();
