@@ -343,7 +343,6 @@ public class TemplateGenUtil {
   private static List<SNode> createSourceNodeListForTemplateNode(SNode parentSourceNode, SNode templateNode, int currentMacroIndex, ITemplateGenerator generator) {
     try {
       List<NodeMacro> nodeMacros = NodeMacro_AnnotationLink.getNodeMacros((BaseConcept) templateNode);
-//      NodeMacro nodeMacro = nodeMacros.isEmpty() ? null : nodeMacros.get(0); //TODO
       NodeMacro nodeMacro = null;
       if (nodeMacros.size() > currentMacroIndex) {
         nodeMacro = nodeMacros.get(currentMacroIndex);
@@ -442,7 +441,6 @@ public class TemplateGenUtil {
     INodeBuilder builder = null;
     boolean builderComplete = false;
     List<NodeMacro> nodeMacros = NodeMacro_AnnotationLink.getNodeMacros((BaseConcept) templateNode);
-//    NodeMacro nodeMacro = nodeMacros.isEmpty() ? null : nodeMacros.get(0); //TODO
     NodeMacro nodeMacro = null;
     if (nodeMacros.size() > currentMacroIndex) {
       nodeMacro = nodeMacros.get(currentMacroIndex);
