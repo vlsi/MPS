@@ -23,6 +23,7 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.annotation.UseCarefully;
 
 import javax.swing.*;
+import javax.swing.tree.TreePath;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.*;
@@ -270,6 +271,15 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         moveCurrentDown();
       }
     }, KeyStroke.getKeyStroke("alt DOWN"), WHEN_FOCUSED);
+
+    registerKeyboardAction(new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {                
+        EditorCell cell = getSelectedCell();
+        if (cell == null) return;
+        showPopupMenu(cell.getX(), cell.getY());
+      }
+    }, KeyStroke.getKeyStroke("CONTEXT_MENU"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
 
 
     addMouseListener(new MouseAdapter() {
@@ -534,6 +544,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private void showPopupMenu(MouseEvent e) {
+    showPopupMenu(e.getX(), e.getY());
+  }
+
+  private void showPopupMenu(int x, int y) {
     final SNode selectedNode = getSelectedCell().getSNode();
     if (selectedNode == null) return;
     //    doChoose(selectedNode);
@@ -546,7 +560,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     context.put(EditorContext.class, new EditorContext(this, null, getOperationContext()));
     group.add(popupMenu, context);
 
-    popupMenu.show(AbstractEditorComponent.this, e.getX(), e.getY());
+    popupMenu.show(AbstractEditorComponent.this, x, y);
   }
 
   private void selectComponentCell(Component component) {
