@@ -245,17 +245,6 @@ public class MPSModuleRepository {
     return releasedModules;
   }
 
-  private Set<IModule> getOwnedModules(ModelOwner m) {
-    Set<IModule> result = new HashSet<IModule>();
-    for (IModule owned : myModuleToOwnersMap.keySet()) {
-      if (myModuleToOwnersMap.get(owned).contains(m)) {
-        result.add(owned);
-      }
-    }
-
-    return result;
-  }
-
   public void removeUnusedModules() {
     Set<MPSModuleOwner> rootOwners = new HashSet<MPSModuleOwner>();
     for (IModule m : myModuleToOwnersMap.keySet()) {
