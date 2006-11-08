@@ -50,7 +50,6 @@ public class MPSModuleRepository {
     myListenerToRemoveUnusedModules = new CommandAdapter() {
       public void beforeCommandFinished(@NotNull CommandEvent event) {
         removeUnusedModules();
-        SModelRepository.getInstance().removeUnusedDescriptors();
       }
     };
     CommandProcessor.instance().addCommandListener(myListenerToRemoveUnusedModules);

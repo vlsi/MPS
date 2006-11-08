@@ -425,8 +425,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
         }
 
         CommandProcessor.instance().removeCommandListener(myEventTranslator);
-        SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
         MPSModuleRepository.getInstance().unRegisterModules(MPSProject.this);
+        SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
       }
     }, "disposing project");
 
