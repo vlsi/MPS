@@ -245,21 +245,59 @@ public class MPSModuleRepository {
     return releasedModules;
   }
 
-  public void removeUnusedModules() {
-    List<IModule> modulesToRemove = new LinkedList<IModule>();
-    for (IModule module : myModuleToOwnersMap.keySet()) {
-      Set<MPSModuleOwner> languageOwners = myModuleToOwnersMap.get(module);
-      if (languageOwners == null || languageOwners.isEmpty()) {
-        modulesToRemove.add(module);
+  private Set<IModule> getOwnedModules(ModelOwner m) {
+    Set<IModule> result = new HashSet<IModule>();
+    for (IModule owned : myModuleToOwnersMap.keySet()) {
+      if (myModuleToOwnersMap.get(owned).contains(m)) {
+        result.add(owned);
       }
     }
 
-    if (modulesToRemove.size() > 0) {
-      for (IModule module : modulesToRemove) {
-        removeModule(module);
-        module.dispose();
+    return result;
+  }
+
+  public void removeUnusedModules() {
+    Set<MPSModuleOwner> rootOwners = new HashSet<MPSModuleOwner>();
+    for (IModule m : myModuleToOwnersMap.keySet()) {
+      for (MPSModuleOwner owner : myModuleToOwnersMap.get(m)) {
+        if (!(owner instanceof IModule)) {
+          rootOwners.add(owner);
+        }
       }
     }
+
+    Set<IModule> visibleModules = new HashSet<IModule>();
+    for (IModule m : myModuleToOwnersMap.keySet()) {
+      for (MPSModuleOwner r : rootOwners) {
+        if (myModuleToOwnersMap.get(m).contains(r)) {
+          visibleModules.add(m);
+        }
+      }
+    }
+
+    boolean hasModulesToProcess = true;
+    while (hasModulesToProcess) {
+      Set<IModule> toAdd = new HashSet<IModule>();
+      for (IModule m : myModuleToOwnersMap.keySet()) {
+        if (visibleModules.contains(m)) continue;
+        for (IModule v : visibleModules) {
+          if (myModuleToOwnersMap.get(m).contains(v)) {
+            toAdd.add(m);
+          }
+        }
+      }
+
+      hasModulesToProcess = !toAdd.isEmpty();
+      visibleModules.addAll(toAdd);
+    }
+
+    for (IModule m : new HashSet<IModule>(myModuleToOwnersMap.keySet())) {
+      if (!visibleModules.contains(m)) {
+        removeModule(m);
+        m.dispose();
+      }
+    }
+
   }
 
   private void removeModule(@NotNull IModule module) {
