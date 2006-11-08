@@ -42,7 +42,6 @@ public class GlobalScope implements IScope {
 
   public SModelDescriptor getModelDescriptor(@NotNull SModelUID modelUID) {
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
-    assert modelDescriptor != null;
     return modelDescriptor;
   }
 

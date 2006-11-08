@@ -43,7 +43,7 @@ public class EditorsFinderManager {
       Class cls = Class.forName("jetbrains.semanticweb.editorLanguage.OWLInstanceGEFinder", true, ClassLoaderManager.getInstance().getMPSClassLoader());
       registerEditorJavaClassesFinder("jetbrains.semanticweb.core", (IGeneralizingEntityEditorFinder) cls.newInstance());
     } catch (ClassNotFoundException cnfe) {
-      LOG.error(cnfe.getMessage());
+      //it's ok if we didn't find it we're not editing OWL 
     } catch (Throwable t) {
       t.printStackTrace();
     }
