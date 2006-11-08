@@ -155,7 +155,8 @@ public class Language extends AbstractModule {
   }
 
   public void dispose() {
-    LOG.assertLog(!MPSModuleRepository.getInstance().hasOwners(this));
+    //Call this method before you remove it and its models from repositories
+    //To unregister it correctly from different services we need it and its models    
     CommandProcessor.instance().removeCommandListener(myEventTranslator);
     SModelsMulticaster.getInstance().removeSModelsListener(myModelsListener);
     unRegisterAspectListener();

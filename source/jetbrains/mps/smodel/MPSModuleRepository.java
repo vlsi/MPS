@@ -282,8 +282,8 @@ public class MPSModuleRepository {
 
     for (IModule m : new HashSet<IModule>(myModuleToOwnersMap.keySet())) {
       if (!visibleModules.contains(m)) {
-        removeModule(m);
         m.dispose();
+        removeModule(m);
       }
     }
 
