@@ -5,13 +5,17 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.refactoring.CopyUtil;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.WeakSet;
+import jetbrains.mps.ide.command.CommandProcessor;
 
 import java.util.*;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Created by IntelliJ IDEA.
@@ -23,30 +27,37 @@ import org.jetbrains.annotations.NotNull;
 public class TypeChecker {
   private static final Logger LOG = Logger.getLogger(TypeChecker.class);
 
-  public static final Object TYPE_OF_TERM = new Object();
+  private static final Object TYPE_OF_TERM = new Object();
 
-  private static List<Rule> ourRules = new ArrayList<Rule>();
-  private static Set<SNode> ourCheckedNodes = new HashSet<SNode>();
-  private static WeakHashMap<SNode, String> ourNodesWithErrors = new WeakHashMap<SNode, String>();
+  Set<SNode> myCheckedRoots = new WeakSet<SNode>();
+  private MySModelCommandListener myListener = new MySModelCommandListener();
 
-  public static final String TYPESYSYTEM_MODEL_PREFIX = "jetbrains.mps.helgins.typeSystems.";
-  public static final String JETBRAINS_MPS_TYPES_LANGUAGE = "jetbrains.mps.helgins.";
-  public static final String JETBRAINS_MPS = "jetbrains.mps.";
-  public static final String JETBRAINS = "jetbrains.";
+  private List<Rule> myRules = new ArrayList<Rule>();
+  private Set<SNode> myCheckedNodes = new HashSet<SNode>();
+  private WeakHashMap<SNode, String> myNodesWithErrors = new WeakHashMap<SNode, String>();
 
-  public static void clear() {
+  private TypeChecker() {
+  }
+
+  private static TypeChecker ourInstance = new TypeChecker();
+
+  public static TypeChecker getInstance() {
+    return ourInstance;
+  }
+
+  public void clear() {
     ContextsManager.getInstance().clear();
     EquationManager.getInstance().clear();
     TypeVariablesManager.getInstance().clearVariables();
     Interpretator.clear();
     SubtypingManager.getInstance().clear();
     AdaptationManager.getInstance().clear();
-    ourRules.clear();
-    ourCheckedNodes.clear();
-    ourNodesWithErrors.clear();
+    myRules.clear();
+    myCheckedNodes.clear();
+    myNodesWithErrors.clear();
   }
 
-  public static void checkTypes(SNode root) {
+  public void checkTypes(SNode root) {
     //clear
     clear();
     List<Language> languages = root.getModel().getLanguages(GlobalScope.getInstance());
@@ -60,7 +71,7 @@ public class TypeChecker {
     if (typesModels.isEmpty()) return;
 
     //loading typesystems
-    ourRules = new ArrayList<Rule>();
+    myRules = new ArrayList<Rule>();
     for (SModel typesModel : typesModels) {
 
       //register contexts
@@ -80,7 +91,7 @@ public class TypeChecker {
 
       // load rules
       for (Rule rule : typesModel.getRoots(Rule.class)) {
-        ourRules.add(rule);
+        myRules.add(rule);
       }
 
       // load subtyping rules
@@ -111,34 +122,34 @@ public class TypeChecker {
     }
 
     // setting errors
-    for (SNode node : ourNodesWithErrors.keySet()) {
-      String errorString = ourNodesWithErrors.get(node);
+    for (SNode node : myNodesWithErrors.keySet()) {
+      String errorString = myNodesWithErrors.get(node);
       node.putUserObject(TYPE_OF_TERM, errorString);
     }
   }
 
-  public static Set<Pair<SNode, String>> getNodesWithErrors() {
-    return CollectionUtil.map(ourNodesWithErrors.keySet(), new Mapper<SNode, Pair<SNode, String>>() {
+  public Set<Pair<SNode, String>> getNodesWithErrors() {
+    return CollectionUtil.map(myNodesWithErrors.keySet(), new Mapper<SNode, Pair<SNode, String>>() {
       public Pair<SNode, String> map(SNode p) {
-        return new Pair<SNode, String>(p, ourNodesWithErrors.get(p));
+        return new Pair<SNode, String>(p, myNodesWithErrors.get(p));
       }
     });
   }
 
-  public static void reportTypeError(SNode nodeWithError, String errorString) {
+  public void reportTypeError(SNode nodeWithError, String errorString) {
     if (nodeWithError != null) {
-      ourNodesWithErrors.put(nodeWithError, errorString);
+      myNodesWithErrors.put(nodeWithError, errorString);
     } else {
       LOG.warning("can't report error: error has no related node");
     }
   }
 
-  private static SNode expandType(SNode node, SModel typesModel) {
+  private SNode expandType(SNode node, SModel typesModel) {
     SNode representator = EquationManager.getInstance().getRepresentator(node);
     return expandNode(representator, representator, 0, new HashSet<RuntimeTypeVariable>(), typesModel);
   }
 
-  private static SNode expandNode(SNode node, SNode representator, int depth, Set<RuntimeTypeVariable> variablesMet, SModel typesModel) {
+  private SNode expandNode(SNode node, SNode representator, int depth, Set<RuntimeTypeVariable> variablesMet, SModel typesModel) {
     if (node == null) return null;
     if (node instanceof RuntimeTypeVariable) {
       RuntimeTypeVariable var = (RuntimeTypeVariable) node;
@@ -186,16 +197,16 @@ public class TypeChecker {
   }
 
 
-  private static void doCheckTypes(SNode root) {
+  private void doCheckTypes(SNode root) {
     // bfs from root
     List<SNode> frontier = new ArrayList<SNode>();
     List<SNode> newFrontier = new ArrayList<SNode>();
     frontier.add(root);
     while (!(frontier.isEmpty())) {
       for (SNode node : frontier) {
-        if (ourCheckedNodes.contains(node)) continue;
+        if (myCheckedNodes.contains(node)) continue;
         newFrontier.addAll(node.getChildren());
-        for (Rule rule : ourRules) {
+        for (Rule rule : myRules) {
           Interpretator.interpretate(node, rule);
         }
       }
@@ -204,12 +215,12 @@ public class TypeChecker {
     }
   }
 
-  public static void checkTypesForNode(SNode node) {
+  public void checkTypesForNode(SNode node) {
     doCheckTypes(node);
-    ourCheckedNodes.add(node); // for not to check it again
+    myCheckedNodes.add(node); // for not to check it again
   }
 
-  public static SNode getType(Object o) {
+  public static SNode asType(Object o) {
     if (o instanceof SNode) {
       return (SNode) o;
     }
@@ -227,6 +238,70 @@ public class TypeChecker {
       }
     }
     return result;
+  }
+
+  public boolean isCheckedRoot(SNode node) {
+    return myCheckedRoots.contains(node);
+  }
+
+  public void doCheckRoot(SNode node) {
+    checkTypes(node);
+    myCheckedRoots.add(node);
+    SModel model = node.getModel();
+    model.removeSModelCommandListener(myListener);
+    model.removeSModelListener(myListener);
+    model.addSModelCommandListener(myListener);
+    model.addSModelListener(myListener);
+  }
+
+  @Nullable
+  public SNode getTypeOf(SNode node) {
+    if (node == null) return null;
+    SNode containingRoot = node.getContainingRoot();
+    if (containingRoot == null) return null;
+    if (!myCheckedRoots.contains(containingRoot)) {
+      doCheckRoot(containingRoot);
+    }
+    return getTypeDontCheck(node);
+  }
+
+  @Nullable
+  public SNode getTypeDontCheck(SNode node) {
+    if (node == null) return null;
+    Object typeObject = node.getUserObject(TYPE_OF_TERM);
+    if (typeObject instanceof SNode) return (SNode) typeObject;
+    return null;
+  }
+
+  private class MySModelCommandListener extends SModelAdapter implements SModelCommandListener {
+    private SModelEventVisitor myVisitor = new SModelEventVisitor() {
+      public void visitRootEvent(SModelRootEvent event) {
+        myCheckedRoots.remove(event.getRoot());
+      }
+
+      public void visitChildEvent(SModelChildEvent event) {
+        myCheckedRoots.remove(event.getParent().getContainingRoot());
+      }
+
+      public void visitPropertyEvent(SModelPropertyEvent event) {
+        myCheckedRoots.remove(event.getNode().getContainingRoot());
+      }
+
+      public void visitReferenceEvent(SModelReferenceEvent event) {
+        myCheckedRoots.remove(event.getReference().getSourceNode().getContainingRoot());
+      }
+    };
+
+    public void modelChangedInCommand(List<SModelEvent> events) {
+      for (SModelEvent event : events) {
+        event.accept(myVisitor);
+      }
+    }
+
+    public void eventFired(SModelEvent event) {
+      if (CommandProcessor.instance().isInsideCommand()) return;
+      event.accept(myVisitor);
+    }
   }
 
 }

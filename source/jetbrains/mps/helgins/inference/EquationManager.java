@@ -78,7 +78,7 @@ public class EquationManager {
     }
 
     String errorText = "type "+ subtypeRepresentator+" should be a subtype of "+supertypeRepresentator;
-    TypeChecker.reportTypeError(nodeToCheck, errorText);
+    TypeChecker.getInstance().reportTypeError(nodeToCheck, errorText);
   }
 
 
@@ -120,7 +120,7 @@ public class EquationManager {
     TypeVariablesManager.getInstance().addAllVarSetsOfSourceAndRemoveSourceFromThem(type, var);
     RuntimeTypeVariable typeVar = TypeVariablesManager.getTypeVar(var);
     if (typeVar instanceof RuntimeErrorType) {
-      TypeChecker.reportTypeError(nodeToCheck,((RuntimeErrorType)typeVar).getErrorText());
+      TypeChecker.getInstance().reportTypeError(nodeToCheck,((RuntimeErrorType)typeVar).getErrorText());
     }
   }
 
@@ -150,7 +150,7 @@ public class EquationManager {
   private void processErrorEquation(SNode type, SNode error, String errorText, SNode nodeToCheck) {
     setParent(error, type); //type
     TypeVariablesManager.getInstance().addAllVarSetsOfSourceAndRemoveSourceFromThem(type, error);
-    TypeChecker.reportTypeError(nodeToCheck, errorText);
+    TypeChecker.getInstance().reportTypeError(nodeToCheck, errorText);
   }
 
   public void clear() {
@@ -315,7 +315,7 @@ public class EquationManager {
         SNode nodeToCheck = nodesToCheck.isEmpty() ? null : nodesToCheck.iterator().next(); //todo nodeToCheck is chosen randomly
         Set<SNode> lcs = SubtypingManager.leastCommonSupertypes(concreteSubtypes);
         if (lcs.isEmpty()) {
-          TypeChecker.reportTypeError(nodeToCheck,"can't find common supertype"); //todo show subtypes
+          TypeChecker.getInstance().reportTypeError(nodeToCheck,"can't find common supertype"); //todo show subtypes
         } else {
           addEquation(node, lcs.iterator().next(), nodeToCheck); // todo not just first type but intersection
         }
