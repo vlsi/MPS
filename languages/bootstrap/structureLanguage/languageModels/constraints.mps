@@ -15,6 +15,32 @@
   <import index="11" modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints@java_stub" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraintSet" id="1149032510735">
     <property name="name" value="STRL_reference" />
+    <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1163113692990">
+      <property name="description" value="don't allow cycling" />
+      <link role="applicableConcept" targetNodeId="1.1071489090640" />
+      <link role="applicableLink" targetNodeId="1.1071489389519" />
+      <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Factory" id="1163113692991">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1163113692992">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1163114050999">
+            <node role="expression" type="jetbrains.mps.baseLanguage.NewExpression" id="1163114055157">
+              <link role="baseMethodDeclaration" extResolveInfo="11.constructor [Classifier]ConceptDeclarationExtendedConceptSearchScope[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IScope]))" />
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptParameter_ReferentSearchScope_referenceNode" id="1163114075342" />
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_scope" id="1163114081547" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="searchScopeCanCreate" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_CanCreate" id="1163113788493">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1163113788494">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1163113792276">
+            <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1163113797529">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1163113799704" />
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptParameter_ReferentSearchScope_referenceNode" id="1163113794747" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1149109145749">
       <property name="description" value="links declared in hierarchy of enclosing concept. only applicable to reference links" />
       <link role="applicableConcept" targetNodeId="1.1071489288298" />

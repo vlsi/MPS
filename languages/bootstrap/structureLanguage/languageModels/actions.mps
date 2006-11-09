@@ -6,14 +6,6 @@
   <maxImportIndex value="2" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <import index="2" modelUID="jetbrains.mps.smodel@java_stub" />
-  <node type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActions" id="1141871382787">
-    <property name="name" value="STRL_referent_substitute" />
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1146701476978">
-      <property name="actionsFactoryAspectId" value="ConceptDeclaration_ExtendedConcept" />
-      <link role="applicableSourceConcept" targetNodeId="1.1071489090640" />
-      <link role="applicableLink" targetNodeId="1.1071489389519" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeFactories" id="1163111159679">
     <property name="name" value="STRL_node_factories" />
     <node role="nodeFactory" type="jetbrains.mps.bootstrap.actionsLanguage.NodeFactory" id="1163111194508">
