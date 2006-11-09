@@ -90,13 +90,12 @@ public class LeftEditorHighlighter {
         g.drawLine(button.myX, button.myY1 + FoldingButton.WIDTH, button.myX, button.myY2 - FoldingButton.WIDTH);
       }
     }
-    for (HighlighterBracket bracket : myBrackets.values()) {
+    for (HighlighterBracket bracket : new HashSet<HighlighterBracket>(myBrackets.values())) {
       bracket.paint(g);
     }
-    for (FoldingButton button : myFoldingButtons.values()) {
+    for (FoldingButton button : new HashSet<FoldingButton>(myFoldingButtons.values())) {
       button.paint(g);
     }
-
   }
 
 
