@@ -4,6 +4,7 @@ import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.IActionDataProvider;
 import jetbrains.mps.ide.actions.model.DeleteModelAction;
+import jetbrains.mps.ide.actions.model.DeleteModelsAction;
 import jetbrains.mps.ide.actions.nodes.DeleteNodeAction;
 import jetbrains.mps.ide.components.ComponentsUtil;
 import jetbrains.mps.ide.ui.*;
@@ -114,7 +115,8 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     if (cls == SModelDescriptor.class) return (T) getSelectedModel();
     if (cls == List.class) {
       List result = new ArrayList();
-      result.add(getSelectedModel());
+      result.addAll(getSelectedModels());
+      result.addAll(getSelectedNodes());
       return (T) result;
     }
     if (cls == IOperationContext.class) return (T) getContextForSelection();
@@ -366,7 +368,6 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     return result;
   }
 
-
   public List<SNode> getNormalizedSelectedNodes() {
     List<SNode> selectedNodes = new ArrayList<SNode>(getSelectedNodes());
     HashSet<SNode> unselectedNodes = new HashSet<SNode>();
@@ -414,6 +415,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
 
     private void registerActions() {
       registerMPSAction(new DeleteModelAction(), SModelTreeNode.class);
+      registerMPSAction(new DeleteModelsAction(), SModelTreeNode.class);
       registerMPSAction(new DeleteNodeAction(), SNodeTreeNode.class);
     }
 

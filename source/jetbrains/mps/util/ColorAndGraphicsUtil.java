@@ -1,8 +1,6 @@
 package jetbrains.mps.util;
 
-import java.awt.Color;
-import java.awt.BasicStroke;
-import java.awt.Graphics;
+import java.awt.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -62,5 +60,10 @@ public class ColorAndGraphicsUtil {
   public static void drawWaveSegment(Graphics g, int x, int y) {
     g.drawLine(x, y + WAVE_HEIGHT, x + WAVE_SEGMENT_LENGTH / 2, y);
     g.drawLine(x + WAVE_SEGMENT_LENGTH / 2, y, x + WAVE_SEGMENT_LENGTH, y + WAVE_HEIGHT);
+  }
+
+  public static Point getCentralPosition(Component parent, Component component) {
+    return new Point(parent.getX() + (parent.getWidth() - component.getWidth()) / 2,
+             parent.getY() + (parent.getHeight() - component.getHeight()) / 2);
   }
 }

@@ -737,6 +737,10 @@ public class Language extends AbstractModule {
       return myLanguage;
     }
 
+    public AspectKind getAspectKind() {
+      return myAspectKind;
+    }
+
     public boolean isLanguageAspect() {
       return myAspectKind != LanguageAspectStatus.AspectKind.NONE && myAspectKind != LanguageAspectStatus.AspectKind.ACCESSORY;
     }
