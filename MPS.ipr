@@ -68,6 +68,13 @@
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="Javac" />
     <option name="DEPLOY_AFTER_MAKE" value="2" />
+    <excludeFromCompile>
+      <directory url="file://$PROJECT_DIR$/projects/TinyStateMachine/languages/stateMachine/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/projects/TinyStateMachine/solutions/sandbox2/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/projects/TinyStateMachine/solutions/sandbox2/source_gen/test" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/projects/TinyStateMachine/solutions/sna/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/projects/TinyStateMachine/source" includeSubdirectories="true" />
+    </excludeFromCompile>
     <resourceExtensions>
       <entry name=".+\.(properties|xml|html|dtd|tld)" />
       <entry name=".+\.(gif|png|jpeg|jpg)" />
