@@ -3,7 +3,8 @@
   <language namespace="jetbrains.mps.bootstrap.constraintsLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
-  <maxImportIndex value="10" />
+  <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
+  <maxImportIndex value="11" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <import index="2" modelUID="jetbrains.mps.smodel.search@java_stub" />
   <import index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage@java_stub" />
@@ -11,6 +12,7 @@
   <import index="5" modelUID="jetbrains.mps.smodel@java_stub" />
   <import index="8" modelUID="jetbrains.mps.core.structure" />
   <import index="9" modelUID="java.lang@java_stub" />
+  <import index="11" modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints@java_stub" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraintSet" id="1149032510735">
     <property name="name" value="STRL_reference" />
     <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1149109145749">
@@ -198,6 +200,42 @@
                 </node>
                 <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1149108862028">
                   <link role="classifier" extResolveInfo="3.[Classifier]ConceptDeclaration" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1163107872173">
+      <property name="description" value="only nodes assignable to target type specified in concept link declaration" />
+      <link role="applicableConcept" targetNodeId="1.1105736778597" />
+      <link role="applicableLink" targetNodeId="1.1105736807942" />
+      <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Factory" id="1163107872174">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1163107872175">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1163108488409">
+            <node role="expression" type="jetbrains.mps.baseLanguage.NewExpression" id="1163108492645">
+              <link role="baseMethodDeclaration" extResolveInfo="11.constructor [Classifier]ReferenceConceptLinkTargetSearchScope[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IScope]))" />
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptParameter_ReferentSearchScope_referenceNode" id="1163109799494" />
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_scope" id="1163109809449" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="searchScopeCanCreate" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_CanCreate" id="1163108293754">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1163108293755">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1163108314803">
+            <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1163108386092">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1163108390829" />
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1163108368184">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1163108352775">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptParameter_ReferentSearchScope_referenceNode" id="1163108350555" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1163108365948">
+                    <link role="link" targetNodeId="1.1105742372452" />
+                  </node>
+                </node>
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1163108381950">
+                  <link role="link" targetNodeId="1.1105736621938" />
                 </node>
               </node>
             </node>

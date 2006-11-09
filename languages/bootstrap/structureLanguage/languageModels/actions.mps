@@ -10,11 +10,6 @@
       <link role="applicableSourceConcept" targetNodeId="1.1071489090640" />
       <link role="applicableLink" targetNodeId="1.1071489389519" />
     </node>
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141936376504">
-      <property name="actionsFactoryAspectId" value="ReferenceConceptLink_target" />
-      <link role="applicableSourceConcept" targetNodeId="1.1105736778597" />
-      <link role="applicableLink" targetNodeId="1.1105736807942" />
-    </node>
   </node>
 </model>
 
