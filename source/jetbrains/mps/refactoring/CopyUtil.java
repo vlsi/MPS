@@ -9,9 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 
-public class CopyUtil {
-
-
+public class CopyUtil  {
   public static<SN extends SNode> List<SN> copy(List<SN> nodes, SModel targetModel) {
     return copy(nodes, targetModel, new HashMap<SNode, SNode>());
   }
