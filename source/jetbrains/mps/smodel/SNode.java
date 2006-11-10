@@ -41,11 +41,11 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   private String myRoleInParent;
   private SNode myParent;
 
-
   private Map<String, Integer> myChildInRoleCount = new HashMap<String, Integer>();
   private List<SNode> myChildren = new ArrayList<SNode>();
   private List<SReference> myReferences = new ArrayList<SReference>();
   private HashMap<String, String> myProperties = new HashMap<String, String>();
+
 
   private boolean myRegisteredInModelFlag;
   private SModel myModel;

@@ -13,6 +13,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.ForDebug;
+import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -23,6 +24,8 @@ import java.util.*;
  * Created Sep 16, 2003
  */
 public class SModel implements Iterable<SNode> {
+  public static final String TMP_MODEL = "tmpModel";
+
   private static final Logger LOG = Logger.getLogger(SModel.class);
 
   private Set<SModelListener> myListeners = new WeakSet<SModelListener>();
@@ -47,6 +50,8 @@ public class SModel implements Iterable<SNode> {
   private SModelEventTranslator myEventTranslator = new SModelEventTranslator();
 
   private Set<SModelUID> myDescriptorNotFoundReportedModelUIDs = new HashSet<SModelUID>();
+
+  private HashMap<Object, Object> myUserObjects = new HashMap<Object, Object>();
 
   public SModel(@NotNull SModelUID modelUID) {
     addSModelListener(myEventTranslator);
@@ -752,5 +757,23 @@ public class SModel implements Iterable<SNode> {
         fireSModelChangedInCommandEvent(new ArrayList<SModelEvent>(myEvents));
       }
     }
+  }
+
+  @Nullable
+  public Object getUserObject(@NotNull Object key) {
+    return myUserObjects.get(key);
+  }
+
+  public void putUserObject(@NotNull Object key,
+                            @Nullable Object value) {
+    myUserObjects.put(key, value);
+  }
+
+  public void removeUserObject(@NotNull Object key) {
+    myUserObjects.remove(key);
+  }
+
+  public void removeAllUserObjects() {
+    myUserObjects.clear();
   }
 }

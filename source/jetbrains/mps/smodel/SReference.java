@@ -218,6 +218,7 @@ public class SReference {
     //skip errors in java stubs because they can have reference to classes that doesn't present
     //in class path
     if (mySourceNode.getModel().getStereotype().endsWith(SModelStereotype.JAVA_STUB)) return;
+    if (mySourceNode.getModel().getUserObject(SModel.TMP_MODEL) != null) return;    
 
     if (SNodeProxy.getOurSourceNode() == mySourceNode) return;
     if (errorState == GetTargetNodeErrorState.NO_MODEL_DESCRIPTOR) {
