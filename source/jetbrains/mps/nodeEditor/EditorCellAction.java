@@ -36,6 +36,10 @@ public abstract class EditorCellAction {
 
   //--
   public static final String RENDER_TEXT = "RENDER_TEXT";
+  public static final String FOLD = "FOLD";
+  public static final String UNFOLD = "UNFOLD";
+  public static final String FOLD_ALL = "FOLD_ALL";
+  public static final String UNFOLD_ALL = "UNFOLD_ALL";
 
 
   public String getDescriptionText() {

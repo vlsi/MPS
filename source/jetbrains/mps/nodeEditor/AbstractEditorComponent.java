@@ -14,6 +14,10 @@ import jetbrains.mps.ide.ui.JMultiLineToolTip;
 import jetbrains.mps.ide.ui.CellSpeedSearch;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.text.CellAction_RenderText;
+import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
+import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
+import jetbrains.mps.nodeEditor.folding.CellAction_FoldAll;
+import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.typesystem.TypeCheckerAccess;
@@ -184,6 +188,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     // ----
     myActionMap.put(EditorCellAction.RENDER_TEXT, new CellAction_RenderText());
     // ----
+    myActionMap.put(EditorCellAction.FOLD, new CellAction_FoldCell());
+    myActionMap.put(EditorCellAction.UNFOLD, new CellAction_UnfoldCell());
+    myActionMap.put(EditorCellAction.FOLD_ALL, new CellAction_FoldAll());
+    myActionMap.put(EditorCellAction.UNFOLD_ALL, new CellAction_UnfoldAll());
 
     updateMPSActionsWithKeyStrokes();
 
@@ -751,6 +759,27 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         if (((EditorCell_Label) selectedCell).getText().length() == 0) {
           return EditorCellAction.DELETE;
         }
+      }
+    }
+
+    if (keyEvent.getKeyCode() == KeyEvent.VK_EQUALS && keyEvent.isControlDown()) {
+      if (!keyEvent.isShiftDown()) {
+        return EditorCellAction.UNFOLD;
+      }
+    }
+    if (keyEvent.getKeyCode() == KeyEvent.VK_EQUALS && keyEvent.isControlDown()) {
+      if (keyEvent.isShiftDown()) {
+        return EditorCellAction.UNFOLD_ALL;
+      }
+    }
+    if (keyEvent.getKeyCode() == KeyEvent.VK_MINUS && keyEvent.isControlDown()) {
+      if (!keyEvent.isShiftDown()) {
+        return EditorCellAction.FOLD;
+      }
+    }
+    if (keyEvent.getKeyCode() == KeyEvent.VK_MINUS && keyEvent.isControlDown()) {
+      if (keyEvent.isShiftDown()) {
+        return EditorCellAction.FOLD_ALL;
       }
     }
 
