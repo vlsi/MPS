@@ -10,7 +10,6 @@ import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.security.NodeSecurityManager;
 import jetbrains.mps.smodel.constraints.INodePropertyGetter;
 import jetbrains.mps.smodel.constraints.INodePropertySetter;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
@@ -475,7 +474,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   public final String getProperty(@NotNull String propertyName) {
     NodeReadAccessCaster.firePropertyReadAccessed(this, propertyName);
-    NodeSecurityManager.getInstance().checkPropertyAvailable(this, propertyName, false);
 
     if (!myPropertyGettersInProgress.contains(propertyName)) {
       INodePropertyGetter getter = ModelConstraintsManager.getInstance().getNodePropertyGetter(this, propertyName);
@@ -515,7 +513,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
         }
       }
     }
-    NodeSecurityManager.getInstance().checkPropertyAvailable(this, propertyName, true);
     final String oldValue = myProperties.get(propertyName);
     if (propertyValue == null) {
       myProperties.remove(propertyName);
