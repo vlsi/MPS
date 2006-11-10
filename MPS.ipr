@@ -68,13 +68,6 @@
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="Javac" />
     <option name="DEPLOY_AFTER_MAKE" value="2" />
-    <excludeFromCompile>
-      <directory url="file://$PROJECT_DIR$/projects/TinyStateMachine/languages/stateMachine/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/projects/TinyStateMachine/solutions/sandbox2/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/projects/TinyStateMachine/solutions/sandbox2/source_gen/test" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/projects/TinyStateMachine/solutions/sna/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/projects/TinyStateMachine/source" includeSubdirectories="true" />
-    </excludeFromCompile>
     <resourceExtensions>
       <entry name=".+\.(properties|xml|html|dtd|tld)" />
       <entry name=".+\.(gif|png|jpeg|jpg)" />
@@ -1117,10 +1110,8 @@
       <module fileurl="file://$PROJECT_DIR$/projects/SemanticWeb/sandbox/SemanticWeb.sandbox.iml" filepath="$PROJECT_DIR$/projects/SemanticWeb/sandbox/SemanticWeb.sandbox.iml" group="SemanticWeb" />
       <module fileurl="file://$PROJECT_DIR$/projects/textLanguage/TextLanguage.iml" filepath="$PROJECT_DIR$/projects/textLanguage/TextLanguage.iml" group="DataLanguages" />
       <module fileurl="file://$PROJECT_DIR$/projects/TheSimplestLanguage/TheSimplestLanguage.iml" filepath="$PROJECT_DIR$/projects/TheSimplestLanguage/TheSimplestLanguage.iml" group="Projects" />
-      <module fileurl="file://$PROJECT_DIR$/projects/TinyStateMachine/TinyStateMachine.iml" filepath="$PROJECT_DIR$/projects/TinyStateMachine/TinyStateMachine.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/agreement/agreement.iml" filepath="$PROJECT_DIR$/projects/agreement/agreement.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/fixedLengthReader/fixedLengthReader.iml" filepath="$PROJECT_DIR$/projects/fixedLengthReader/fixedLengthReader.iml" group="Projects" />
-      <module fileurl="file://$PROJECT_DIR$/projects/stateMachine/stateMachine.iml" filepath="$PROJECT_DIR$/projects/stateMachine/stateMachine.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/teamSys/teamSys.iml" filepath="$PROJECT_DIR$/projects/teamSys/teamSys.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/teamSys/teamSysWebApp/teamSysWebApp.iml" filepath="$PROJECT_DIR$/projects/teamSys/teamSysWebApp/teamSysWebApp.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/webr/webr.iml" filepath="$PROJECT_DIR$/projects/webr/webr.iml" group="Projects" />
@@ -1139,8 +1130,8 @@
   </component>
   <component name="StarteamVcsAdapter" />
   <component name="VssVcs">
-    <SourceSafePersistencyRemovedFolder>$PROJECT_DIR$/projects/SemanticFunctions/source/jetbrains/naturalLanguageDescription/scope</SourceSafePersistencyRemovedFolder>
     <SourceSafePersistencyRemovedFolder>$PROJECT_DIR$/source/jetbrains/mps/generator/types</SourceSafePersistencyRemovedFolder>
+    <SourceSafePersistencyRemovedFolder>$PROJECT_DIR$/projects/SemanticFunctions/source/jetbrains/naturalLanguageDescription/scope</SourceSafePersistencyRemovedFolder>
   </component>
   <component name="com.intellij.jsf.UserDefinedFacesConfigs">
     <option name="USER_DEFINED_CONFIGS">
@@ -1284,7 +1275,7 @@
   </component>
   <component name="org.tmatesoft.tmate.projectComponent" />
   <component name="uidesigner-configuration">
-    <option name="INSTRUMENT_CLASSES" value="true" />
+    <option name="INSTRUMENT_CLASSES" value="false" />
     <option name="COPY_FORMS_RUNTIME_TO_OUTPUT" value="true" />
     <option name="DEFAULT_LAYOUT_MANAGER" value="GridLayoutManager" />
   </component>
