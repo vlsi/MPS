@@ -313,13 +313,7 @@
           <option name="m_minLength" value="2" />
           <option name="m_maxLength" value="99" />
         </inspection_tool>
-        <inspection_tool class="EmptyMethod" level="WARNING" enabled="false">
-          <option name="EXCLUDE_ANNOS">
-            <value>
-              <list size="0" />
-            </value>
-          </option>
-        </inspection_tool>
+        <inspection_tool class="EmptyMethod" level="WARNING" enabled="false" />
         <inspection_tool class="CanBeFinal" level="WARNING" enabled="false">
           <option name="REPORT_CLASSES" value="false" />
           <option name="REPORT_METHODS" value="false" />
@@ -506,13 +500,7 @@
           <option name="m_minLength" value="2" />
           <option name="m_maxLength" value="99" />
         </inspection_tool>
-        <inspection_tool class="EmptyMethod" level="WARNING" enabled="false">
-          <option name="EXCLUDE_ANNOS">
-            <value>
-              <list size="0" />
-            </value>
-          </option>
-        </inspection_tool>
+        <inspection_tool class="EmptyMethod" level="WARNING" enabled="false" />
         <inspection_tool class="UnusedParameters" level="WARNING" enabled="false" />
         <inspection_tool class="CanBeFinal" level="WARNING" enabled="false">
           <option name="REPORT_CLASSES" value="false" />
@@ -655,13 +643,7 @@
         <inspection_tool class="CssNoGenericFontName" level="WARNING" enabled="false" />
         <inspection_tool class="CssOverwrittenProperties" level="WARNING" enabled="false" />
         <inspection_tool class="CssUnitlessNumber" level="WARNING" enabled="false" />
-        <inspection_tool class="EmptyMethod" level="WARNING" enabled="false">
-          <option name="EXCLUDE_ANNOS">
-            <value>
-              <list size="0" />
-            </value>
-          </option>
-        </inspection_tool>
+        <inspection_tool class="EmptyMethod" level="WARNING" enabled="false" />
         <inspection_tool class="WeakerAccess" level="WARNING" enabled="false">
           <option name="SUGGEST_PACKAGE_LOCAL_FOR_MEMBERS" value="true" />
           <option name="SUGGEST_PACKAGE_LOCAL_FOR_TOP_CLASSES" value="true" />
@@ -928,13 +910,7 @@
           <option name="m_minLength" value="2" />
           <option name="m_maxLength" value="99" />
         </inspection_tool>
-        <inspection_tool class="EmptyMethod" level="WARNING" enabled="false">
-          <option name="EXCLUDE_ANNOS">
-            <value>
-              <list size="0" />
-            </value>
-          </option>
-        </inspection_tool>
+        <inspection_tool class="EmptyMethod" level="WARNING" enabled="false" />
         <inspection_tool class="CanBeFinal" level="WARNING" enabled="false">
           <option name="REPORT_CLASSES" value="false" />
           <option name="REPORT_METHODS" value="false" />
@@ -1163,8 +1139,8 @@
   </component>
   <component name="StarteamVcsAdapter" />
   <component name="VssVcs">
-    <SourceSafePersistencyRemovedFolder>$PROJECT_DIR$/projects/SemanticFunctions/source/jetbrains/naturalLanguageDescription/scope</SourceSafePersistencyRemovedFolder>
     <SourceSafePersistencyRemovedFolder>$PROJECT_DIR$/source/jetbrains/mps/generator/types</SourceSafePersistencyRemovedFolder>
+    <SourceSafePersistencyRemovedFolder>$PROJECT_DIR$/projects/SemanticFunctions/source/jetbrains/naturalLanguageDescription/scope</SourceSafePersistencyRemovedFolder>
   </component>
   <component name="com.intellij.jsf.UserDefinedFacesConfigs">
     <option name="USER_DEFINED_CONFIGS">
