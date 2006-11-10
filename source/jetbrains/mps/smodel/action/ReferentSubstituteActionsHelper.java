@@ -163,19 +163,6 @@ import java.util.*;
       }
     }
     return true;
-
-//    // try old query method
-//    String preconditionQueryMethodId = actionsBuilder.getPreconditionAspectId();
-//    // precondition is optional
-//    if (preconditionQueryMethodId == null) {
-//      return true;
-//    }
-//
-//    Object[] args1 = new Object[]{sourceNode, context};
-//    Object[] args2 = new Object[]{sourceNode, context.getScope()};
-//    String methodName = "referentSubstituteActionsBuilder_Precondition_" + preconditionQueryMethodId;
-//    SModel model = actionsBuilder.getModel();
-//    return (Boolean) QueryMethod.invoke_alternativeArguments(methodName, args1, args2, model);
   }
 
   private static List<INodeSubstituteAction> applyActionFilter(ReferentSubstituteActionsBuilder builder, List<INodeSubstituteAction> actions, IOperationContext context) {

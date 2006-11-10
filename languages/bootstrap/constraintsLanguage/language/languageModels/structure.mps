@@ -203,20 +203,9 @@
       <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" />
       <link role="target" targetNodeId="11.1161622878565" />
     </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1148934636678">
-      <link role="conceptLinkDeclaration" targetNodeId="3.1137546998352" />
-      <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1148934636679">
-        <property name="name" value="ConceptParameter_ReferentSearchScope_referenceNode" />
-        <link role="extends" targetNodeId="3.1107135704075" />
-        <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1148934636680">
-          <property name="value" value="referenceNode" />
-          <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-        </node>
-        <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1148934636681">
-          <property name="value" value="function parameter" />
-          <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
-        </node>
-      </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1163201886037">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" />
+      <link role="target" targetNodeId="1163200647017" resolveInfo="ConstraintFunctionParameter_referenceNode" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1148934636682">
       <link role="conceptLinkDeclaration" targetNodeId="3.1137546998352" />
@@ -328,6 +317,22 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1159286042853">
       <property name="value" value="default search scope" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1163200368514">
+    <property name="name" value="ConstraintFunction_ReferentSetHandler" />
+    <link role="extends" targetNodeId="3.1137021947720" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1163200477016">
+      <property name="value" value="'referent set' event handler" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1163200647017">
+    <property name="name" value="ConstraintFunctionParameter_referenceNode" />
+    <link role="extends" targetNodeId="3.1107135704075" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1163201234487">
+      <property name="value" value="referenceNode" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>
