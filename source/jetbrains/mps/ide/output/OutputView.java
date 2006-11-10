@@ -197,4 +197,8 @@ public class OutputView extends DefaultTool implements IExternalizableComponent,
     };
   }
 
+
+  public int getNumber() {
+    return 4;
+  }
 }

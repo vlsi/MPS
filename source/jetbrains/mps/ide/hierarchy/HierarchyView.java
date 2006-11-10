@@ -282,4 +282,8 @@ public class HierarchyView extends DefaultTool {
     return myComponent;
   }
 
+
+  public int getNumber() {
+    return 8;
+  }
 }
