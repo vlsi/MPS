@@ -1112,6 +1112,7 @@
       <module fileurl="file://$PROJECT_DIR$/projects/TheSimplestLanguage/TheSimplestLanguage.iml" filepath="$PROJECT_DIR$/projects/TheSimplestLanguage/TheSimplestLanguage.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/agreement/agreement.iml" filepath="$PROJECT_DIR$/projects/agreement/agreement.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/fixedLengthReader/fixedLengthReader.iml" filepath="$PROJECT_DIR$/projects/fixedLengthReader/fixedLengthReader.iml" group="Projects" />
+      <module fileurl="file://$PROJECT_DIR$/projects/stateMachine/stateMachine.iml" filepath="$PROJECT_DIR$/projects/stateMachine/stateMachine.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/teamSys/teamSys.iml" filepath="$PROJECT_DIR$/projects/teamSys/teamSys.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/teamSys/teamSysWebApp/teamSysWebApp.iml" filepath="$PROJECT_DIR$/projects/teamSys/teamSysWebApp/teamSysWebApp.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/webr/webr.iml" filepath="$PROJECT_DIR$/projects/webr/webr.iml" group="Projects" />
