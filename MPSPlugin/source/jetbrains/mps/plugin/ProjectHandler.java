@@ -524,8 +524,15 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
 
         VirtualFile[] sourceRoots = rootManager.getSourceRoots();
         for (VirtualFile file : sourceRoots) {
-          if (file.getName().equals("source")) sourceDir = file;
-          if (file.getName().equals("src")) sourceDir = file;
+          if (file.getName().equals("source")) {
+            sourceDir = file;
+            break;
+          }
+          if (file.getName().equals("src")) {
+            sourceDir = file;
+            break;
+          }
+          sourceDir = file;
         }
         if (sourceDir == null) {
           System.out.println("I can't find directory with sources.");
