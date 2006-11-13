@@ -105,6 +105,8 @@ public abstract class MPSTree extends JTree {
             MPSTreeNode lastNode = (MPSTreeNode) p.getLastPathComponent();
             JPopupMenu menu = lastNode.getPopupMenu();
 
+            if (menu == null) return;
+
             for (int i = 0; i < menu.getComponentCount(); i++) {
               if (menu.getComponent(i) instanceof JMenuItem) {
                 JMenuItem item = (JMenuItem) menu.getComponent(i);
