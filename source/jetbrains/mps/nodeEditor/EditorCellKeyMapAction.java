@@ -15,6 +15,7 @@ public abstract class EditorCellKeyMapAction {
   public static final int CARET_AT_INTERMEDIATE_POSITION = 3;
 
   private int myCaretPolicy;
+  private boolean myShownInPopupMenu = false;
 
   public boolean canExecute(KeyEvent keyEvent, EditorContext context) {
     return true;
@@ -32,5 +33,13 @@ public abstract class EditorCellKeyMapAction {
 
   public void setCaretPolicy(int policy) {
     myCaretPolicy = policy;
+  }
+
+  public boolean isShownInPopupMenu() {
+    return myShownInPopupMenu;
+  }
+
+  public void setShownInPopupMenu(boolean toShow) {
+    myShownInPopupMenu = toShow;
   }
 }
