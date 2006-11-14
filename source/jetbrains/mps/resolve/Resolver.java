@@ -93,7 +93,7 @@ public class Resolver {
     LinkDeclaration refLinkDeclaration = SModelUtil.findLinkDeclaration(sourceConcept, role);
     SNode sourceParent = sourceNode.getParent();
 
-    assert sourceParent != null;
+    if (sourceParent == null) sourceParent = sourceNode;
 
     LinkDeclaration childLinkDeclaration = SModelUtil.findLinkDeclaration(SModelUtil.getConceptDeclaration(sourceParent, operationContext.getScope()), sourceNode.getRole_());
 

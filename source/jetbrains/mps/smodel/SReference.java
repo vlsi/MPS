@@ -222,16 +222,16 @@ public class SReference {
 
     if (SNodeProxy.getOurSourceNode() == mySourceNode) return;
     if (errorState == GetTargetNodeErrorState.NO_MODEL_DESCRIPTOR) {
-      LOG.error("\nCouldn't resolve reference " + (myExtResolveInfo != null ? myExtResolveInfo : myTargetNodeId) + " from " + getSourceNode().getDebugText());
+      LOG.error("\nCouldn't resolve reference " + myRole + " from " + getSourceNode().getDebugText());
       LOG.error("Path to the target model " + myTargetModelUID + " is not specified");
     } else if (errorState == GetTargetNodeErrorState.NO_MODEL) {
-      LOG.error("\nCouldn't resolve reference " + myTargetNodeId + " from " + getSourceNode().getDebugText());
+      LOG.error("\nCouldn't resolve reference " + myRole + " from " + getSourceNode().getDebugText());
       LOG.error("The modelDescriptor.getSModel() failed to load model");
     } else if (errorState == GetTargetNodeErrorState.CANT_RESOLVE_BY_ID) {
-      LOG.error("\nCouldn't resolve reference " + myTargetNodeId + " from " + getSourceNode().getDebugText());
+      LOG.error("\nCouldn't resolve reference " + myRole + " from " + getSourceNode().getDebugText());
       LOG.error("The target model " + myTargetModelUID + " doesn't contain node with id=" + myTargetNodeId);
     } else if (errorState == GetTargetNodeErrorState.CANT_RESOLVE_BY_ERI) {
-      LOG.error("\nCouldn't resolve reference " + myExtResolveInfo + " from " + getSourceNode().getDebugText());
+      LOG.error("\nCouldn't resolve reference " + myRole + " from " + getSourceNode().getDebugText());
       LOG.error("The target model " + myTargetModelUID + " doesn't contain node with ERI=" + myExtResolveInfo);
     }
   }
