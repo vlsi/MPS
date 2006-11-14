@@ -29,7 +29,8 @@ public class ModelConstraintsManager {
   private Map<String, INodePropertyGetter> myNodePropertyGettersMap = new HashMap<String, INodePropertyGetter>();
   private Map<String, INodePropertyGetter> myNodePropertyGettersCache = new HashMap<String, INodePropertyGetter>();
   private Map<String, INodePropertySetter> myNodePropertySettersMap = new HashMap<String, INodePropertySetter>();
-  private Map<String, INodePropertySetter> myNodePropertySettersCache = new HashMap<String,INodePropertySetter>();
+  private Map<String, INodePropertySetter> myNodePropertySettersCache = new HashMap<String, INodePropertySetter>();
+  private Map<String, INodeReferentSetEventHandler> myNodeReferentSetEventHandlersMap = new HashMap<String, INodeReferentSetEventHandler>();
   private Map<String, INodeReferentSearchScopeProvider> myNodeReferentSearchScopeProvidersMap = new HashMap<String, INodeReferentSearchScopeProvider>();
   private Map<String, INodeReferentSearchScopeProvider> myNodeDefaultSearchScopeProvidersMap = new HashMap<String, INodeReferentSearchScopeProvider>();
 
@@ -89,6 +90,19 @@ public class ModelConstraintsManager {
     myNodePropertySettersMap.remove(conceptFqName + "#" + propertyName);
 
     myNodePropertyGettersCache.clear();
+  }
+
+  public void registerNodeReferentSetEventHandler(String conceptFqName, String referenceRole, INodeReferentSetEventHandler eventHandler) {
+    String key = conceptFqName + "#" + referenceRole;
+    if (!myNodeReferentSetEventHandlersMap.containsKey(key)) {
+      myNodeReferentSetEventHandlersMap.put(key, eventHandler);
+    } else {
+      LOG.error("'set referent' event handler is already registered for key '" + key + "' : " + myNodeReferentSetEventHandlersMap.get(key));
+    }
+  }
+
+  public void unRegisterNodeReferentSetEventHandlersMap(String conceptFqName, String referenceRole) {
+    myNodeReferentSetEventHandlersMap.remove(conceptFqName + "#" + referenceRole);
   }
 
   public void registerNodeReferentSearchScopeProvider(String conceptFqName, String referenceRole, INodeReferentSearchScopeProvider provider) {

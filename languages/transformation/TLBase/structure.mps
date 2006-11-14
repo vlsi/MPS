@@ -105,6 +105,10 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1114456532170" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1163452921864">
+      <property name="value" value="mapping configuration" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1095416572297">
     <property name="name" value="MappingRule" />

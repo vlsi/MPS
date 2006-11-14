@@ -543,7 +543,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   // children
   // ---------------------------------
 
-  @Nullable
   final public SNode getParent() {
     return myParent;
   }

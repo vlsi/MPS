@@ -229,8 +229,30 @@ public class TemplateGenUtil {
   private static void weaveTemplateDeclaration(SNode sourceNode, TemplateDeclaration templateDeclaration, INodeBuilder contextBuilder, ITemplateGenerator generator, SNode ruleNode) {
     List<TemplateFragment> templateFragments = getTemplateFragments(templateDeclaration);
     if (templateFragments.isEmpty()) {
-      LOG.warning("WARN: no template fragments found in " + templateDeclaration.getDebugText());
+      generator.showErrorMessage(sourceNode, templateDeclaration, ruleNode, "nothing to weave: no template fragments found in template");
       return;
+    }
+
+    // check fragments: all fragments with <default context> should have the same parent
+    boolean allFragmentsWhichUseDefaultContextHaveSameParent = true;
+    SNode defaultContext = null;
+    for (TemplateFragment templateFragment : templateFragments) {
+      if (templateFragment.getContextProviderAspectId() == null) { // uses <default context>
+        SNode contextNode = templateFragment.getParent().getParent();
+        if (defaultContext == null) {
+          defaultContext = contextNode;
+        } else if (defaultContext != contextNode) {
+          allFragmentsWhichUseDefaultContextHaveSameParent = false;
+          break;
+        }
+      }
+    }
+    if (!allFragmentsWhichUseDefaultContextHaveSameParent) {
+      for (TemplateFragment templateFragment : templateFragments) {
+        if (templateFragment.getContextProviderAspectId() == null) { // uses <default context>
+          generator.showErrorMessage(null, templateFragment, null, "template fragment uses <default context>: conflicts with other fragments which use <default context>");
+        }
+      }
     }
 
     // for each template fragment create node builder
@@ -242,7 +264,11 @@ public class TemplateGenUtil {
         fragmentBuilder.setRuleNode(ruleNode);
         // add our "fragmant builder" to context builder
         INodeBuilder fragmentContextBuilder = getContextBuilderForTemplateFragment(templateFragmentNode, contextBuilder, generator);
-        fragmentContextBuilder.addChildBuilder(fragmentBuilder);
+        if (fragmentContextBuilder != null) {
+          fragmentContextBuilder.addChildBuilder(fragmentBuilder);
+        } else {
+          generator.showErrorMessage(sourceNode, templateFragment, ruleNode, "couldn't define 'context' for template fragment");
+        }
       }
     }
   }
