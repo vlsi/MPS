@@ -17,6 +17,8 @@ import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.languageLog.LanguageLogger;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.Hack;
+import jetbrains.mps.util.annotation.UseCarefully;
+import jetbrains.mps.refactoring.logging.Marshallable;
 
 import java.io.File;
 import java.util.*;
@@ -29,7 +31,7 @@ import org.jetbrains.annotations.Nullable;
  * Author: Sergey Dmitriev
  * Created Jan 30, 2004
  */
-public class Language extends AbstractModule {
+public class Language extends AbstractModule implements Marshallable<Language> {
   private static final Logger LOG = Logger.getLogger(Language.class);
 
   private LanguageDescriptor myLanguageDescriptor;
@@ -58,6 +60,16 @@ public class Language extends AbstractModule {
 
   private boolean myRegisteredInFindUsagesManager;
   private LanguageLogger myLanguageLogger = new LanguageLogger(this);
+
+
+
+  public String marshall() {
+    return getNamespace();
+  }
+
+  public Language unmarshall(String s, IOperationContext operationContext) {
+    return MPSModuleRepository.getInstance().getLanguage(s);
+  }
 
   @NotNull
   public static Language newInstance(@NotNull File descriptorFile,
@@ -115,7 +127,10 @@ public class Language extends AbstractModule {
     return language;
   }
 
-  private Language() {
+  // made public for unmarshalling purposes, invoked via reflection
+  // do not use directly.
+  @UseCarefully
+  public Language() {
   }
 
   private void updateDependenciesAndGenerators() {
