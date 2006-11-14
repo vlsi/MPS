@@ -92,8 +92,8 @@ public class ModelConstraintsManager {
     myNodePropertyGettersCache.clear();
   }
 
-  public void registerNodeReferentSetEventHandler(String conceptFqName, String referenceRole, INodeReferentSetEventHandler eventHandler) {
-    String key = conceptFqName + "#" + referenceRole;
+  public void registerNodeReferentSetEventHandler(String conceptFqName, String referentRole, INodeReferentSetEventHandler eventHandler) {
+    String key = conceptFqName + "#" + referentRole;
     if (!myNodeReferentSetEventHandlersMap.containsKey(key)) {
       myNodeReferentSetEventHandlersMap.put(key, eventHandler);
     } else {
@@ -101,8 +101,28 @@ public class ModelConstraintsManager {
     }
   }
 
-  public void unRegisterNodeReferentSetEventHandlersMap(String conceptFqName, String referenceRole) {
-    myNodeReferentSetEventHandlersMap.remove(conceptFqName + "#" + referenceRole);
+  public void unRegisterNodeReferentSetEventHandlersMap(String conceptFqName, String referentRole) {
+    myNodeReferentSetEventHandlersMap.remove(conceptFqName + "#" + referentRole);
+  }
+
+  public INodeReferentSetEventHandler getNodeReferentSetEventHandler(SNode node, String referentRole) {
+//    String namespace = NameUtil.nodeLanguageNamespace(node);
+//    //language is not loaded yet (bootstrap)?
+//    if (!myAddedLanguageNamespaces.containsKey(namespace)) {
+//      return null;
+//    }
+
+//    System.out.println("find ReferentSetEventHandler for <" + referentRole + "> in " + node.getDebugText());
+
+    // todo: optimization needed?
+    ConceptDeclaration nodeConcept = node.getNodeConcept();
+    while (nodeConcept != null) {
+      String conceptFqName = NameUtil.nodeFQName(nodeConcept);
+      INodeReferentSetEventHandler handler = myNodeReferentSetEventHandlersMap.get(conceptFqName + "#" + referentRole);
+      if (handler != null) return handler;
+      nodeConcept = nodeConcept.getExtends();
+    }
+    return null;
   }
 
   public void registerNodeReferentSearchScopeProvider(String conceptFqName, String referenceRole, INodeReferentSearchScopeProvider provider) {
@@ -212,6 +232,7 @@ public class ModelConstraintsManager {
   }
 
   public INodeReferentSearchScopeProvider getNodeReferentSearchScopeProvider(ConceptDeclaration nodeConcept, String referentRole) {
+
     while (nodeConcept != null) {
       String conceptFqName = NameUtil.nodeFQName(nodeConcept);
       INodeReferentSearchScopeProvider provider = myNodeReferentSearchScopeProvidersMap.get(conceptFqName + "#" + referentRole);

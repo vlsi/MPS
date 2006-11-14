@@ -4,6 +4,7 @@ import jetbrains.mps.annotations.AttributeConcept;
 import jetbrains.mps.annotations.LinkAttributeConcept;
 import jetbrains.mps.annotations.PropertyAttributeConcept;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.ide.command.undo.IUndoableAction;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
@@ -13,6 +14,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.constraints.INodePropertyGetter;
 import jetbrains.mps.smodel.constraints.INodePropertySetter;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.smodel.constraints.INodeReferentSetEventHandler;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
@@ -53,6 +55,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   private HashMap<Object, Object> myUserObjects = new HashMap<Object, Object>();
   private Set<String> myPropertySettersInProgress = new HashSet<String>();
   private Set<String> myPropertyGettersInProgress = new HashSet<String>();
+  private Set<String> mySetReferentEventHandlersInProgress = new HashSet<String>();
 
   protected SNode(@NotNull SModel model) {
     myModel = model;
@@ -76,7 +79,9 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return getModel().getRoots().contains(this);
   }
 
-  public @NotNull SNode cloneProperties() {//doesn't copy children, references and back references
+  public
+  @NotNull
+  SNode cloneProperties() {//doesn't copy children, references and back references
     SNode newNode;
     try {
       newNode = (SNode) super.clone();
@@ -667,7 +672,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   @NotNull
-  public<T extends SNode> List<T> getChildren(@NotNull String role) {
+  public <T extends SNode> List<T> getChildren(@NotNull String role) {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
     List<T> result = new ArrayList<T>();
     for (SNode child : myChildren) {
@@ -817,13 +822,17 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   @Nullable
-  public SReference setReferent(@NotNull String role, SNode target) {
+  public SReference setReferent(@NotNull String role, SNode newReferent) {
     // remove old references
     List<SReference> toDelete = new LinkedList<SReference>();
     for (SReference reference : myReferences) {
       if (reference.getRole().equals(role)) {
         toDelete.add(reference);
       }
+    }
+    SNode oldReferent = null;
+    if (!toDelete.isEmpty()) {
+      oldReferent = toDelete.get(0).getTargetNode();
     }
     if (toDelete.size() > 1) {
       LOG.errorWithTrace("ERROR! " + toDelete.size() + " references found for role: " + role + " node: " + this.getDebugText());
@@ -833,9 +842,28 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       removeReferenceAt(index);
     }
 
-    if (target != null) {
-      return addReferent(role, target);
-    } else return null;
+    SReference resultReference = null;
+    if (newReferent != null) {
+      resultReference = addReferent(role, newReferent);
+    }
+
+    if (!getModel().isLoading()) {
+      // invoke custom referent set event handler
+      // todo: using of the 'role' as a lock is not reliable
+      if (!mySetReferentEventHandlersInProgress.contains(role)) {
+        INodeReferentSetEventHandler handler = ModelConstraintsManager.getInstance().getNodeReferentSetEventHandler(this, role);
+        if (handler != null) {
+          mySetReferentEventHandlersInProgress.add(role);
+          try {
+            handler.processReferentSetEvent(this, oldReferent, newReferent, GlobalScope.getInstance());
+          } finally {
+            mySetReferentEventHandlersInProgress.remove(role);
+          }
+        }
+      }
+    }
+
+    return resultReference;
   }
 
   @Nullable
@@ -946,6 +974,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
         }
       });
     }
+
     getModel().fireReferenceAddedEvent(reference);
   }
 
@@ -1187,7 +1216,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       });
     }
   }
-  
+
   private int getChildInRoleCount(@NotNull String role) {
     if (myChildInRoleCount.get(role) == null) return 0;
     return myChildInRoleCount.get(role);
@@ -1217,5 +1246,10 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   @Nullable
   public String getPersistentProperty(@NotNull String propertyName) {
     return myProperties.get(propertyName);
+  }
+
+  @NotNull
+  public ConceptDeclaration getNodeConcept() {
+    return SModelUtil.getConceptDeclaration(this, GlobalScope.getInstance());
   }
 }
