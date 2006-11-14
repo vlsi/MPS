@@ -81,6 +81,14 @@ public class KeyMapUtil {
     return keyMapsAndCells;
   }
 
+  public static Set<EditorCellKeyMapAction> getRegisteredActions(EditorCell selectedCell, EditorContext context) {
+    Set<EditorCellKeyMapAction> result = new HashSet<EditorCellKeyMapAction>();
+    for (Pair<EditorCellKeyMap, EditorCell> pair : getRegisteredKeymaps(selectedCell, context)) {
+      result.addAll(pair.o1.getActions(null));
+    }
+    return result;
+  }
+
   /**
    * @param keyEvent        !!! can be null
    * @param keymapsAndCells - List of pairs keymap/ownerCell

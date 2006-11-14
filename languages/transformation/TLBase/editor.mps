@@ -2126,6 +2126,7 @@
     <property name="everyModel" value="true" />
     <property name="name" value="_MacrosSwitch_KeyMap" />
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1149868396494">
+      <property name="showInPopup" value="true" />
       <property name="description" value="convert to/from 'template fragmet'" />
       <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1149868396495">
         <property name="modifiers" value="ctrl+shift" />
@@ -2207,7 +2208,8 @@
       </node>
     </node>
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1149868396517">
-      <property name="description" value="add/remove node macro" />
+      <property name="showInPopup" value="true" />
+      <property name="description" value="add node macro" />
       <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1149868396518">
         <property name="modifiers" value="ctrl+shift" />
         <property name="keycode" value="VK_M" />
@@ -2249,6 +2251,7 @@
       </node>
     </node>
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1149868414143">
+      <property name="showInPopup" value="true" />
       <property name="description" value="add/remove property macro" />
       <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1149868414144">
         <property name="modifiers" value="ctrl+shift" />
@@ -2313,6 +2316,7 @@
       </node>
     </node>
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1149868455481">
+      <property name="showInPopup" value="true" />
       <property name="description" value="add/remove reference macro" />
       <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1149868455482">
         <property name="modifiers" value="ctrl+shift" />

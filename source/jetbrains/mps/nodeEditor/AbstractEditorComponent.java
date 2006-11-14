@@ -36,6 +36,8 @@ import java.beans.PropertyChangeListener;
 import java.util.*;
 import java.util.List;
 
+import org.jetbrains.annotations.NotNull;
+
 
 /**
  * Author: Sergey Dmitriev
@@ -281,7 +283,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }, KeyStroke.getKeyStroke("alt DOWN"), WHEN_FOCUSED);
 
     registerKeyboardAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {                
+      public void actionPerformed(ActionEvent e) {
         EditorCell cell = getSelectedCell();
         if (cell == null) return;
         showPopupMenu(cell.getX(), cell.getY());
@@ -556,17 +558,41 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private void showPopupMenu(int x, int y) {
-    final SNode selectedNode = getSelectedCell().getSNode();
+    EditorCell cell = getSelectedCell();
+    final SNode selectedNode = cell.getSNode();
     if (selectedNode == null) return;
-    //    doChoose(selectedNode);
-    JPopupMenu popupMenu = new JPopupMenu();
     ActionGroup group = ActionManager.instance().getGroup(EDITOR_POPUP_MENU_ACTIONS);
     if (group == null) return;
-
+    final EditorContext editorContext = new EditorContext(this, null, getOperationContext());
+    JPopupMenu popupMenu = new JPopupMenu();
     List<SNode> selectedNodes = myNodeRangeSelection.getNodes();
     ActionContext context = new ActionContext(getOperationContext(), selectedNode, selectedNodes);
-    context.put(EditorContext.class, new EditorContext(this, null, getOperationContext()));
+    context.put(EditorContext.class, editorContext);
+    context.put(EditorCell.class, cell);
     group.add(popupMenu, context);
+
+    { // keymaps
+      List<EditorCellKeyMapAction> actions = new ArrayList<EditorCellKeyMapAction>();
+        for (EditorCellKeyMapAction action  : KeyMapUtil.getRegisteredActions(cell, editorContext)) {
+          try {
+            if (action.canExecute(null, editorContext)) {
+              actions.add(action);
+            }
+          } catch(Throwable t) {
+            LOG.error(t);
+          }
+        }
+        if (!actions.isEmpty()) popupMenu.addSeparator();
+        for (final EditorCellKeyMapAction action : actions) {
+          MPSAction mpsAction = new MPSAction(action.getDescriptionText()) {
+            private EditorCellKeyMapAction myAction = action;
+            public void execute(@NotNull ActionContext context) {
+              myAction.execute(null, editorContext);
+            }
+          };
+          mpsAction.add(popupMenu, context);
+        }
+    } // ~keymaps
 
     popupMenu.show(AbstractEditorComponent.this, x, y);
   }
@@ -870,7 +896,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (myRootCell.getSNode() == node) {
       return myRootCell;
     }
-     if (node == null || !(myRootCell instanceof EditorCell_Collection)) {
+    if (node == null || !(myRootCell instanceof EditorCell_Collection)) {
       return null;
     }
     EditorCell foundCell = myRefNodeContextsToBigCellsMap.get(ReferencedNodeContext.createNodeContext(node));
@@ -934,7 +960,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return null;
   }
 
-   public EditorCell findCellWithId(final EditorCell root, String id, SNode node) {
+  public EditorCell findCellWithId(final EditorCell root, String id, SNode node) {
     if (id == null) return null;
     if (id.equals(root.getUserObject(EditorCell.CELL_ID)) && root.getSNode() == node) return root;
     if (root instanceof EditorCell_Collection) {
@@ -1379,19 +1405,19 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
 
     //ctrl-alt-arrows
-      if (keyEvent.isControlDown() && keyEvent.isAltDown()) {
-        if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT) {
-          getEditorOpener().openPrevEditorInHistory();
-          keyEvent.consume();
-          return;
-        }
-
-        if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT) {
-          getEditorOpener().openNextEditorInHistory();
-          keyEvent.consume();
-          return;
-        }
+    if (keyEvent.isControlDown() && keyEvent.isAltDown()) {
+      if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT) {
+        getEditorOpener().openPrevEditorInHistory();
+        keyEvent.consume();
+        return;
       }
+
+      if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT) {
+        getEditorOpener().openNextEditorInHistory();
+        keyEvent.consume();
+        return;
+      }
+    }
 
     // hardcoded "updateTypesystem" action
     if (keyEvent.getKeyCode() == KeyEvent.VK_F5) {
@@ -1646,18 +1672,18 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       if (cell == null) break;
       temp.push(cell);
     }
-     while (temp.size() > 0) {
+    while (temp.size() > 0) {
       mySelectedStack.push(temp.pop());
     }
   }
 
-   /*package*/ Stack<CellInfo> getSelectedStackForMemento() {
-     Stack<CellInfo> result = new Stack<CellInfo>();
-     for (EditorCell cell : mySelectedStack) {
-       result.push(cell.getCellInfo());
-     }
-     return result;
-   }
+  /*package*/ Stack<CellInfo> getSelectedStackForMemento() {
+    Stack<CellInfo> result = new Stack<CellInfo>();
+    for (EditorCell cell : mySelectedStack) {
+      result.push(cell.getCellInfo());
+    }
+    return result;
+  }
 
 
 
@@ -1743,12 +1769,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           return;
         } else //noinspection ConstantConditions
           if (lastAdd instanceof SModelReferenceEvent) {
-          SModelReferenceEvent re = (SModelReferenceEvent) lastAdd;
-          selectRefCell(re.getReference());
-          return;
-        } else {
-          //
-        }
+            SModelReferenceEvent re = (SModelReferenceEvent) lastAdd;
+            selectRefCell(re.getReference());
+            return;
+          } else {
+            //
+          }
       }
 
       if (lastRemove != null) {

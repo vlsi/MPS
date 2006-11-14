@@ -143,6 +143,7 @@ public class EditorCellKeyMap {
   }
 
   private static List<EditorCellKeyMapAction> findActions(EditorCellKeyMap keyMap, KeyEvent event) {
+    if (event == null) return findAllActions(keyMap);
     List<EditorCellKeyMapAction> result = null;
     List<ActionKey> actionKeies = keyEvent2ActionKey(event);
     for (ActionKey actionKey : actionKeies) {
@@ -169,6 +170,30 @@ public class EditorCellKeyMap {
     }
 
     if (result == null) return Collections.emptyList();
+    return result;
+  }
+
+  private static List<EditorCellKeyMapAction> findAllActions(EditorCellKeyMap keyMap) {
+    List<EditorCellKeyMapAction> result = new ArrayList<EditorCellKeyMapAction>();
+    for (EditorCellKeyMapAction action : keyMap.myActionMap.values()) {
+        if (!result.contains(action)) {
+          result.add(action);
+        }
+    }
+
+    /*  List<EditorCellKeyMapAction> extraActions = lookupDuplicatedActions(actionKey, keyMap.myDuplicatedActionList);
+      if (extraActions.size() > 0) {
+        LOG.debug("keymap action found [" + extraActions.size() + "] extra actions for key: " + actionKey);
+        if (result == null) result = new LinkedList<EditorCellKeyMapAction>();
+        // only add actions which are different
+        for (EditorCellKeyMapAction extraAction : extraActions) {
+          if (!result.contains(extraAction)) {
+            result.add(extraAction);
+          }
+        }
+      }
+    }*/
+
     return result;
   }
 
