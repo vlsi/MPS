@@ -279,25 +279,25 @@
               <link role="relationDeclaration" targetNodeId="1.1163203787401" />
             </node>
           </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1158955175611">
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1163537292094">
             <property name="drawBorder" value="false" />
             <property name="selectable" value="false" />
-            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1158955175612">
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1163537292095">
               <property name="text" value="search scope" />
               <property name="drawBorder" value="false" />
               <property name="selectable" value="false" />
             </node>
-            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1158955175613">
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1163537292096">
               <property name="text" value=":" />
               <property name="drawBorder" value="false" />
               <property name="selectable" value="false" />
             </node>
-            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1158955175614">
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1163537292098">
               <property name="allowEmptyText" value="true" />
               <property name="textFgColor" value="DARK_GREEN" />
               <property name="drawBorder" value="false" />
               <property name="noTargetText" value="&lt;no description&gt;" />
-              <link role="relationDeclaration" targetNodeId="1.1158954327242" />
+              <link role="relationDeclaration" targetNodeId="1.1163536952540" />
             </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1158955175615">

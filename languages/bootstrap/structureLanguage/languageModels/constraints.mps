@@ -16,7 +16,7 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraintSet" id="1149032510735">
     <property name="name" value="STRL_reference" />
     <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1163113692990">
-      <property name="description" value="don't allow cycling" />
+      <property name="searchScopeDescription" value="don't allow cycling" />
       <link role="applicableConcept" targetNodeId="1.1071489090640" />
       <link role="applicableLink" targetNodeId="1.1071489389519" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Factory" id="1163113692991">
@@ -42,7 +42,7 @@
       </node>
     </node>
     <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1149109145749">
-      <property name="description" value="links declared in hierarchy of enclosing concept. only applicable to reference links" />
+      <property name="searchScopeDescription" value="links declared in hierarchy of enclosing concept. only applicable to reference links" />
       <link role="applicableConcept" targetNodeId="1.1071489288298" />
       <link role="applicableLink" targetNodeId="1.1071599698500" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Factory" id="1149109145750">
@@ -154,7 +154,7 @@
       </node>
     </node>
     <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1149032538127">
-      <property name="description" value="concept properties declared in hierarchy of enclosing concept" />
+      <property name="searchScopeDescription" value="concept properties declared in hierarchy of enclosing concept" />
       <link role="applicableConcept" targetNodeId="1.1105725413739" />
       <link role="applicableLink" targetNodeId="1.1105725439818" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Factory" id="1149032538128">
@@ -194,7 +194,7 @@
       </node>
     </node>
     <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1149108742675">
-      <property name="description" value="concept links declared in hierarchy of enclosing concept" />
+      <property name="searchScopeDescription" value="concept links declared in hierarchy of enclosing concept" />
       <link role="applicableConcept" targetNodeId="1.1105736674127" />
       <link role="applicableLink" targetNodeId="1.1105736734721" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Factory" id="1149108742676">
@@ -234,7 +234,7 @@
       </node>
     </node>
     <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1163107872173">
-      <property name="description" value="only nodes assignable to target type specified in concept link declaration" />
+      <property name="searchScopeDescription" value="only nodes assignable to target type specified in concept link declaration" />
       <link role="applicableConcept" targetNodeId="1.1105736778597" />
       <link role="applicableLink" targetNodeId="1.1105736807942" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Factory" id="1163107872174">
@@ -270,7 +270,7 @@
       </node>
     </node>
     <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1162583286837">
-      <property name="description" value="members declared here" />
+      <property name="searchScopeDescription" value="members declared here" />
       <link role="applicableConcept" targetNodeId="1.1082978164219" />
       <link role="applicableLink" targetNodeId="1.1083241965437" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Factory" id="1162583286838">

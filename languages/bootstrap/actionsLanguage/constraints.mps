@@ -15,7 +15,7 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraintSet" id="1149011699843">
     <property name="name" value="ACTL_reference" />
     <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1149011735501">
-      <property name="description" value="links declared in hierarchy of specified concept" />
+      <property name="searchScopeDescription" value="links declared in hierarchy of specified concept" />
       <link role="applicableConcept" targetNodeId="1.1141170287031" />
       <link role="applicableLink" targetNodeId="1.1141256287231" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Factory" id="1149011735502">
@@ -89,7 +89,7 @@
       </node>
     </node>
     <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1158791522696">
-      <property name="description" value="concepts from this language" />
+      <property name="searchScopeDescription" value="concepts from this language" />
       <link role="applicableConcept" targetNodeId="1.1158700725281" />
       <link role="applicableLink" targetNodeId="1.1158700943156" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Factory" id="1158791522697">

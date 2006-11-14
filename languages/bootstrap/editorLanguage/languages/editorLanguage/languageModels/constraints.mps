@@ -3,6 +3,7 @@
   <language namespace="jetbrains.mps.bootstrap.constraintsLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
   <maxImportIndex value="10" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" />
   <import index="2" modelUID="jetbrains.mps.core.structure" />
@@ -72,7 +73,7 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraintSet" id="1148925938735">
     <property name="name" value="EDTL_reference" />
     <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1148937952591">
-      <property name="description" value="relations (links,properties etc.) declared in hierarchy of edited concept" />
+      <property name="searchScopeDescription" value="relations (links,properties etc.) declared in hierarchy of edited concept" />
       <link role="applicableConcept" targetNodeId="1.1139848536355" />
       <link role="applicableLink" targetNodeId="1.1140103550593" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Factory" id="1148937952592">
@@ -151,7 +152,7 @@
       </node>
     </node>
     <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1158689838067">
-      <property name="description" value="super- and sub-concepts of the edited concept" />
+      <property name="searchScopeDescription" value="super- and sub-concepts of the edited concept" />
       <link role="applicableConcept" targetNodeId="1.1158589789017" />
       <link role="applicableLink" targetNodeId="1.1158589865362" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Factory" id="1158689838068">

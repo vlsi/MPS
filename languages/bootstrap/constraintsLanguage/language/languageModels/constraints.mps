@@ -17,7 +17,7 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraintSet" id="1148948177828">
     <property name="name" value="CSTRL_reference" />
     <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1159220719661">
-      <property name="description" value="concepts from this language" />
+      <property name="searchScopeDescription" value="concepts from this language" />
       <link role="applicableConcept" targetNodeId="1.1147467115080" />
       <link role="applicableLink" targetNodeId="1.1147467194506" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Factory" id="1159220719662">
@@ -69,7 +69,7 @@
       </node>
     </node>
     <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1149009760360">
-      <property name="description" value="properties declared in specified concept" />
+      <property name="searchScopeDescription" value="properties declared in specified concept" />
       <link role="applicableConcept" targetNodeId="1.1147467115080" />
       <link role="applicableLink" targetNodeId="1.1147467295099" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Factory" id="1149009760361">
@@ -143,7 +143,7 @@
       </node>
     </node>
     <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1159220836373">
-      <property name="description" value="concepts from this language" />
+      <property name="searchScopeDescription" value="concepts from this language" />
       <link role="applicableConcept" targetNodeId="1.1148687176410" />
       <link role="applicableLink" targetNodeId="1.1148687201775" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Factory" id="1159220836374">
@@ -195,7 +195,7 @@
       </node>
     </node>
     <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1148948222063">
-      <property name="description" value="links declared in specified concept" />
+      <property name="searchScopeDescription" value="links declared in specified concept" />
       <link role="applicableConcept" targetNodeId="1.1148687176410" />
       <link role="applicableLink" targetNodeId="1.1148687202698" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Factory" id="1148948222064">
@@ -269,7 +269,7 @@
       </node>
     </node>
     <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1159294259636">
-      <property name="description" value="concepts from this language" />
+      <property name="searchScopeDescription" value="concepts from this language" />
       <link role="applicableConcept" targetNodeId="1.1159285995602" />
       <link role="applicableLink" targetNodeId="1.1159286114223" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Factory" id="1159294259637">
