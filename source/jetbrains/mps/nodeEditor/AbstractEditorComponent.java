@@ -575,7 +575,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       List<EditorCellKeyMapAction> actions = new ArrayList<EditorCellKeyMapAction>();
         for (EditorCellKeyMapAction action  : KeyMapUtil.getRegisteredActions(cell, editorContext)) {
           try {
-            if (action.canExecute(null, editorContext)) {
+            if (action.isShownInPopupMenu() && action.canExecute(null, editorContext)) {
               actions.add(action);
             }
           } catch(Throwable t) {

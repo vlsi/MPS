@@ -9,6 +9,8 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Mapper;
 
 import java.awt.event.KeyEvent;
 import java.lang.reflect.Field;
@@ -176,15 +178,18 @@ public class EditorCellKeyMap {
   private static List<EditorCellKeyMapAction> findAllActions(EditorCellKeyMap keyMap) {
     List<EditorCellKeyMapAction> result = new ArrayList<EditorCellKeyMapAction>();
     for (EditorCellKeyMapAction action : keyMap.myActionMap.values()) {
-        if (!result.contains(action)) {
-          result.add(action);
-        }
+      if (!result.contains(action)) {
+        result.add(action);
+      }
     }
 
-    /*  List<EditorCellKeyMapAction> extraActions = lookupDuplicatedActions(actionKey, keyMap.myDuplicatedActionList);
+    if (keyMap.myDuplicatedActionList != null) {
+      List<EditorCellKeyMapAction> extraActions = CollectionUtil.map(keyMap.myDuplicatedActionList, new Mapper<Pair<ActionKey, EditorCellKeyMapAction>, EditorCellKeyMapAction>() {
+        public EditorCellKeyMapAction map(Pair<ActionKey, EditorCellKeyMapAction> pair) {
+          return pair.o2;
+        }
+      });
       if (extraActions.size() > 0) {
-        LOG.debug("keymap action found [" + extraActions.size() + "] extra actions for key: " + actionKey);
-        if (result == null) result = new LinkedList<EditorCellKeyMapAction>();
         // only add actions which are different
         for (EditorCellKeyMapAction extraAction : extraActions) {
           if (!result.contains(extraAction)) {
@@ -192,7 +197,7 @@ public class EditorCellKeyMap {
           }
         }
       }
-    }*/
+    }
 
     return result;
   }
