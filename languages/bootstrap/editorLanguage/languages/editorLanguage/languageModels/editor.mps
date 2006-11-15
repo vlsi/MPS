@@ -8703,13 +8703,13 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1162335822596">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="true" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1162335822597">
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1163626014542">
         <property name="drawBorder" value="false" />
         <property name="selectable" value="false" />
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1162335822598">
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1163626014543">
           <property name="textFgColor" value="DARK_BLUE" />
           <property name="textBgColor" value="lightGray" />
-          <property name="text" value="(currentReferenceNode, scope, operationContext)-&gt;list&lt;parameter object&gt;" />
+          <property name="text" value="(parentNode, currentChild, defaultConceptOfChild, scope, operationContext)-&gt;list&lt;parameter object&gt;" />
           <property name="fontStyle" value="ITALIC" />
           <property name="drawBorder" value="false" />
           <property name="textBgColorSelected" value="lightGray" />
@@ -9048,7 +9048,7 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1163613663019">
           <property name="textFgColor" value="DARK_BLUE" />
           <property name="textBgColor" value="lightGray" />
-          <property name="text" value="(parameterObject, currentReferenceNode, model, scope, operationContext)-&gt;new node: replacement for current reference node" />
+          <property name="text" value="(parameterObject, currentReferenceNode, model, scope, operationContext)-&gt;new node (replacement for current reference node) or converted current reference node" />
           <property name="fontStyle" value="ITALIC" />
           <property name="drawBorder" value="false" />
           <property name="textBgColorSelected" value="lightGray" />
@@ -9076,13 +9076,13 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1163614109833">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="true" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1163614109834">
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1163626006349">
         <property name="drawBorder" value="false" />
         <property name="selectable" value="false" />
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1163614109835">
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1163626006350">
           <property name="textFgColor" value="DARK_BLUE" />
           <property name="textBgColor" value="lightGray" />
-          <property name="text" value="(parentNode, currentChild, defaultConceptOfChild, scope, operationContext)-&gt;list&lt;parameter object&gt;" />
+          <property name="text" value="(currentReferenceNode, scope, operationContext)-&gt;list&lt;parameter object&gt;" />
           <property name="fontStyle" value="ITALIC" />
           <property name="drawBorder" value="false" />
           <property name="textBgColorSelected" value="lightGray" />

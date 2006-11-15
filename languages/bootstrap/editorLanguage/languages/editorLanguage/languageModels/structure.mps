@@ -1977,7 +1977,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1163613131943">
-    <property name="name" value="CellMenu_RefCell_FromObjects_Create" />
+    <property name="name" value="CellMenu_RefCell_FromObjects_Convert" />
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1163613131944">
       <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
@@ -2000,7 +2000,7 @@
       <link role="target" targetNodeId="37.1161622753914" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1163613131951">
-      <property name="value" value="create new node (replacement for current reference node)" />
+      <property name="value" value="convert reference node" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
   </node>
