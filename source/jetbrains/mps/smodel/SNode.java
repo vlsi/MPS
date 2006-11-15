@@ -3,8 +3,8 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.annotations.AttributeConcept;
 import jetbrains.mps.annotations.LinkAttributeConcept;
 import jetbrains.mps.annotations.PropertyAttributeConcept;
-import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.ide.command.undo.IUndoableAction;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
@@ -13,8 +13,8 @@ import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.constraints.INodePropertyGetter;
 import jetbrains.mps.smodel.constraints.INodePropertySetter;
-import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.constraints.INodeReferentSetEventHandler;
+import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
@@ -53,6 +53,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   private String myId;
 
   private HashMap<Object, Object> myUserObjects = new HashMap<Object, Object>();
+
   private Set<String> myPropertySettersInProgress = new HashSet<String>();
   private Set<String> myPropertyGettersInProgress = new HashSet<String>();
   private Set<String> mySetReferentEventHandlersInProgress = new HashSet<String>();
@@ -851,7 +852,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
     if (!getModel().isLoading()) {
       // invoke custom referent set event handler
-      // todo: using of the 'role' as a lock is not reliable
       if (!mySetReferentEventHandlersInProgress.contains(role)) {
         INodeReferentSetEventHandler handler = ModelConstraintsManager.getInstance().getNodeReferentSetEventHandler(this, role);
         if (handler != null) {

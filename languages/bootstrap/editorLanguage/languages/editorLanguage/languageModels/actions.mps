@@ -15,11 +15,6 @@
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActions" id="1146862199775">
     <property name="name" value="EDTL_referent_substitute" />
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1146865094917">
-      <property name="actionsFactoryAspectId" value="InlineComponent_SubstituteLink" />
-      <link role="applicableSourceConcept" targetNodeId="1.1088013125922" />
-      <link role="applicableLink" targetNodeId="1.1088013239202" />
-    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeFactories" id="1158947431096">
     <property name="name" value="EDTL_node_factories" />

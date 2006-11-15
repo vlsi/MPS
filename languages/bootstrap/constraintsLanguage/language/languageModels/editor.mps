@@ -275,7 +275,7 @@
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1163204059619">
               <property name="drawBorder" value="false" />
-              <property name="noTargetText" value="&lt;don't use - its not implemented yet&gt;" />
+              <property name="noTargetText" value="&lt;none&gt;" />
               <link role="relationDeclaration" targetNodeId="1.1163203787401" />
             </node>
           </node>
