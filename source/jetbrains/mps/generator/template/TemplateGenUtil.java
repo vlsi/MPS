@@ -464,6 +464,15 @@ public class TemplateGenUtil {
   }
 
   private static INodeBuilder createNodeBuilder(SNode sourceNode, SNode templateNode, String mappingName, int currentMacroIndex, ITemplateGenerator generator) {
+    try {
+      return createNodeBuilder_impl(sourceNode, templateNode, mappingName, currentMacroIndex, generator);
+    } catch (Exception e) {
+      generator.showErrorMessage(sourceNode, templateNode, "node builde creation failure: " + e.getClass().getName() + " " + e.getMessage());
+    }
+    return new Void_NodeBuilder(sourceNode, templateNode, mappingName, generator);
+  }
+
+  private static INodeBuilder createNodeBuilder_impl(SNode sourceNode, SNode templateNode, String mappingName, int currentMacroIndex, ITemplateGenerator generator) {
     INodeBuilder builder = null;
     boolean builderComplete = false;
     List<NodeMacro> nodeMacros = NodeMacro_AnnotationLink.getNodeMacros((BaseConcept) templateNode);

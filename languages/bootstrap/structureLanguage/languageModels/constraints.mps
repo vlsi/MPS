@@ -356,61 +356,6 @@
         </node>
       </node>
     </node>
-    <node role="nodePropertyConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraint" id="1163511122708">
-      <link role="applicableConcept" targetNodeId="1.1083171877298" />
-      <link role="applicableProperty" targetNodeId="1.1083923523171" />
-      <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_PropertyGetter" id="1163511190452">
-        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1163511190453">
-          <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1163511214413">
-            <node role="condition" type="jetbrains.mps.baseLanguage.AndExpression" id="1163511673300">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParenthesizedExpression" id="1163511669013">
-                <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1163511669014">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1163511669015" />
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1163511669016">
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.PropertyGetter_FunctionParm_node" id="1163511669017" />
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1163511669018">
-                      <link role="property" targetNodeId="1.1083923523171" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.NotExpression" id="1163511677855">
-                <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1163511677856">
-                  <link role="baseMethodDeclaration" extResolveInfo="9.method ([Classifier]String).([InstanceMethodDeclaration]equals((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
-                  <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.SemanticDowncastExpression" id="1163511677857">
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1163511677858">
-                      <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.PropertyGetter_FunctionParm_node" id="1163511677859" />
-                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1163511677860">
-                        <link role="property" targetNodeId="1.1083923523171" />
-                      </node>
-                    </node>
-                  </node>
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1163511677861" />
-                </node>
-              </node>
-            </node>
-            <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1163511214415">
-              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1163511242091">
-                <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1163511261733">
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.PropertyGetter_FunctionParm_node" id="1163511260560" />
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1163511262515">
-                    <link role="property" targetNodeId="1.1083923523171" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1163511267860">
-            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1163511271207">
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.PropertyGetter_FunctionParm_node" id="1163511270377" />
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1163511272239">
-                <link role="property" targetNodeId="8.1078489098626" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
   </node>
 </model>
 
