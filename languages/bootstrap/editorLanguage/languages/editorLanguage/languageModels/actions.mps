@@ -13,9 +13,6 @@
       <link role="applicableConcept" targetNodeId="1.1073389214265" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActions" id="1146862199775">
-    <property name="name" value="EDTL_referent_substitute" />
-  </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeFactories" id="1158947431096">
     <property name="name" value="EDTL_node_factories" />
     <node role="nodeFactory" type="jetbrains.mps.bootstrap.actionsLanguage.NodeFactory" id="1158947460472">
