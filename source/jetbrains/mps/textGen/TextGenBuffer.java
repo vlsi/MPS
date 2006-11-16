@@ -20,9 +20,18 @@ public class TextGenBuffer {
 
   private int myIndent = 2;
   private int myDepth = 0;
+  private boolean myContainsErrors = false;
 
   public String getText() {
     return myBuffers[TOP].toString() + "\n\n" + myBuffers[DEFAULT].toString();
+  }
+
+  public boolean isContainsErrors() {
+    return myContainsErrors;
+  }
+
+  public void foundError() {
+    myContainsErrors = true;
   }
 
   protected void increaseDepth() {

@@ -37,6 +37,7 @@ public class TextGenManager {
   protected void appendNodeText(TextGenBuffer buffer, SNode node) {
     if(node == null) {
       buffer.append("???");
+      buffer.foundError();
       return;
     }
 
