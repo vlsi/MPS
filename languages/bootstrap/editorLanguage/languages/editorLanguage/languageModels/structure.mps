@@ -1925,6 +1925,10 @@
       <property name="value" value="reference menu" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1163715777996">
+      <property name="name" value="includeDefaultReferentActions" />
+      <link role="dataType" targetNodeId="3.1082983657063" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1163612625143">
     <property name="name" value="CellMenu_RefCell_ConvertReference" />

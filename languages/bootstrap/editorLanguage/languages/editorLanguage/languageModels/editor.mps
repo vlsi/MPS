@@ -8948,22 +8948,42 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1163613262971">
     <link role="conceptDeclaration" targetNodeId="2.1163611648374" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1163613264751">
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1163613264752">
-        <property name="textFgColor" value="blue" />
-        <property name="text" value="&gt;" />
-        <property name="fontStyle" value="PLAIN" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1163715976188">
+      <property name="drawBorder" value="false" />
+      <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1163716058070">
         <property name="drawBorder" value="false" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1163613264753">
-        <property name="vertical" value="true" />
-        <link role="relationDeclaration" targetNodeId="2.1163611648375" />
-        <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1163613264754">
-          <property name="editable" value="true" />
-          <property name="textFgColor" value="blue" />
-          <property name="fontStyle" value="ITALIC" />
+        <property name="selectable" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1163716089338">
+          <property name="text" value="show default actions:" />
           <property name="drawBorder" value="false" />
-          <property name="nullText" value="&lt;press Ctrl-Space to add menu part&gt;" />
+          <property name="selectable" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1163716115840">
+          <property name="drawBorder" value="false" />
+          <link role="relationDeclaration" targetNodeId="2.1163715777996" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1163715976189">
+        <property name="drawBorder" value="false" />
+        <property name="selectable" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1163715976190">
+          <property name="textFgColor" value="blue" />
+          <property name="text" value="&gt;" />
+          <property name="fontStyle" value="PLAIN" />
+          <property name="drawBorder" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1163715976191">
+          <property name="drawBorder" value="false" />
+          <property name="vertical" value="true" />
+          <link role="relationDeclaration" targetNodeId="2.1163611648375" />
+          <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1163715976192">
+            <property name="editable" value="true" />
+            <property name="textFgColor" value="blue" />
+            <property name="fontStyle" value="ITALIC" />
+            <property name="drawBorder" value="false" />
+            <property name="nullText" value="&lt;press Ctrl-Space to add menu part&gt;" />
+          </node>
         </node>
       </node>
     </node>

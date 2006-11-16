@@ -352,11 +352,6 @@
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActions" id="1141180990973">
     <property name="name" value="BL_static_member_reference" />
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141261668233">
-      <property name="actionsFactoryAspectId" value="StaticFieldReference_default_and_extra" />
-      <link role="applicableLink" targetNodeId="1.1070568178160" />
-      <link role="applicableSourceConcept" targetNodeId="1.1070533707846" />
-    </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141262055243">
       <property name="actionsFactoryAspectId" value="StaticMethodCall_default_and_extra" />
       <link role="applicableSourceConcept" targetNodeId="1.1081236700937" />

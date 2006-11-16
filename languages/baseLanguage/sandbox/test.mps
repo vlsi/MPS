@@ -437,8 +437,8 @@
       <property name="name" value="ccc" />
       <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1137994208443" />
       <node role="initializer" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1149271022534">
-        <link role="variableDeclaration" extResolveInfo="1.static field ([Classifier]Integer).([StaticFieldDeclaration]MAX_VALUE : (jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int))" />
         <link role="classifier" extResolveInfo="1.[Classifier]Integer" />
+        <link role="variableDeclaration" extResolveInfo="1.static field ([Classifier]Integer).([StaticFieldDeclaration]MAX_VALUE : (jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int))" />
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1115766338748">
