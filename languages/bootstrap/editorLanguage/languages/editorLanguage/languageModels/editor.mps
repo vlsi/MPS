@@ -8981,7 +8981,7 @@
           <property name="drawBorder" value="false" />
           <property name="selectable" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1163613325802">
-            <property name="text" value="replace reference node (group of custom actions):" />
+            <property name="text" value="convert reference node (group of custom actions):" />
             <property name="drawBorder" value="false" />
           </node>
         </node>
