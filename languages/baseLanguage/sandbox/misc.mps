@@ -343,10 +343,31 @@
               <property name="value" value="239" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1163671649859">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1163673635011">
+                <node role="expression" type="jetbrains.mps.baseLanguage.AssignmentExpression" id="1163673635326">
+                  <node role="lValue" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1163673635012">
+                    <link role="variableDeclaration" targetNodeId="1163670138480" resolveInfo="i" />
+                  </node>
+                  <node role="rValue" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1163673636202">
+                    <property name="value" value="23" />
+                  </node>
+                </node>
+              </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.BreakStatement" id="1163671651922" />
             </node>
           </node>
-          <node role="defaultBlock" type="jetbrains.mps.baseLanguage.StatementList" id="1163671135198" />
+          <node role="defaultBlock" type="jetbrains.mps.baseLanguage.StatementList" id="1163671135198">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1163673638469">
+              <node role="expression" type="jetbrains.mps.baseLanguage.AssignmentExpression" id="1163673638830">
+                <node role="lValue" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1163673638470">
+                  <link role="variableDeclaration" targetNodeId="1163670138480" resolveInfo="i" />
+                </node>
+                <node role="rValue" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1163673639706">
+                  <property name="value" value="23" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node role="expression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1163673051514">
             <property name="value" value="2" />
           </node>
