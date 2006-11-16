@@ -1927,7 +1927,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1163612625143">
-    <property name="name" value="CellMenu_RefCell_FromObjects" />
+    <property name="name" value="CellMenu_RefCell_ConvertReference" />
     <link role="extends" targetNodeId="3.1133920641626" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1163613087462">
       <property name="sourceCardinality" value="1" />
@@ -1943,12 +1943,12 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1163613087464">
       <property name="sourceCardinality" value="1" />
-      <property name="role" value="createFunction" />
+      <property name="role" value="convertFunction" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1163613131943" resolveInfo="CellMenu_RefCell_FromObjects_Create" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1163612730589">
-      <property name="value" value="replace reference node (group of custom actions)" />
+      <property name="value" value="convert reference node (group of custom actions)" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1163612730590">
@@ -1957,7 +1957,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1163613035599">
-    <property name="name" value="CellMenu_RefCell_FromObjects_Query" />
+    <property name="name" value="CellMenu_RefCell_ConvertReference_Query" />
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1163613035600">
       <property name="value" value="get objects" />
@@ -1977,7 +1977,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1163613131943">
-    <property name="name" value="CellMenu_RefCell_FromObjects_Convert" />
+    <property name="name" value="CellMenu_RefCell_ConvertReference_Convert" />
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1163613131944">
       <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
@@ -2005,7 +2005,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1163613549566">
-    <property name="name" value="CellMenu_RefCell_FromObjects_parameterObject" />
+    <property name="name" value="CellMenu_RefCell_ConvertReference_parameterObject" />
     <link role="extends" targetNodeId="4.1107135704075" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1163613549567">
       <property name="value" value="parameterObject" />
@@ -2016,7 +2016,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1163613822479">
-    <property name="name" value="CellMenu_RefCell_FromObjects_currentReferenceNode" />
+    <property name="name" value="CellMenu_RefCell_ConvertReference_currentReferenceNode" />
     <link role="extends" targetNodeId="4.1107135704075" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1163613822480">
       <property name="value" value="currentReferenceNode" />

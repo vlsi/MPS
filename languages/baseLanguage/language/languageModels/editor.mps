@@ -1660,19 +1660,6 @@
             <link role="relationDeclaration" targetNodeId="17.1083152972671" />
           </node>
         </node>
-        <node role="cellMenu" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_RefCell_Composite" id="1163625592432">
-          <node role="menuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_RefCell_FromObjects" id="1163625601121">
-            <node role="parameterObjectType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1163625809235">
-              <link role="concept" targetNodeId="17.1081236700938" />
-            </node>
-            <node role="parametersFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_RefCell_FromObjects_Query" id="1163625601123">
-              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1163625601124" />
-            </node>
-            <node role="createFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_RefCell_FromObjects_Convert" id="1163625601125">
-              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1163625601126" />
-            </node>
-          </node>
-        </node>
       </node>
     </node>
   </node>
