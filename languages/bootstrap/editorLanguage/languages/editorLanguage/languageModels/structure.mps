@@ -1979,6 +1979,10 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1163613131943">
     <property name="name" value="CellMenu_RefCell_ConvertReference_Convert" />
     <link role="extends" targetNodeId="4.1137021947720" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1163711457917">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" />
+      <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1163711460075" />
+    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1163613131944">
       <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
       <link role="target" targetNodeId="1163613549566" resolveInfo="CellMenu_RefCell_FromObjects_ParameterObject" />
