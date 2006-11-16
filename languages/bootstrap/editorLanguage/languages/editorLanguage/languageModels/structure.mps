@@ -1922,7 +1922,7 @@
       <link role="target" targetNodeId="1163612625143" resolveInfo="CellMenu_RefCell_ConvertFromObjects" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1163611648376">
-      <property name="value" value="complex menu" />
+      <property name="value" value="reference menu" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
   </node>

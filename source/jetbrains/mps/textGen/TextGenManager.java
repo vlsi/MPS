@@ -71,6 +71,8 @@ public class TextGenManager {
       }
       aClass = (Class<? extends SNode>) aClass.getSuperclass();
     }
+    //test
+    loadNodeTextGen(node);
     return new DefaultTextGen();
   }
 }
