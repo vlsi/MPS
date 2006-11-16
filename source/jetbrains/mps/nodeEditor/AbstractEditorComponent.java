@@ -368,6 +368,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
     myMPSActionsWithShortcuts.clear();
     ActionGroup group = ActionManager.instance().getGroup(EDITOR_POPUP_MENU_ACTIONS);
+    registerKeyStrokes(group);
+  }
+
+  private void registerKeyStrokes(ActionGroup group) {
     if (group != null) {
       for (ActionGroupElement e : group.getElements()) {
         if (e instanceof MPSAction) {
@@ -376,6 +380,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
             registerNodeAction(action, action.getKeyStroke());
             myMPSActionsWithShortcuts.add(action);
           }
+        }
+        if (e instanceof ActionGroup) {
+          registerKeyStrokes((ActionGroup) e);
         }
       }
     }
