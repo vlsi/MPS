@@ -49,15 +49,59 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1154539941645">
-            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1154567893299">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1154567890767">
-                <link role="variableDeclaration" targetNodeId="1154567871794" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1163671523326">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1163671523328">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1163671529202">
+                <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1163671529891">
+                  <property name="value" value="true" />
+                </node>
               </node>
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1154567900144">
+            </node>
+            <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1163671525323">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1163671528232">
+                <link role="variableDeclaration" targetNodeId="1154567871794" resolveInfo="parent" />
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1163671525325">
                 <link role="concept" targetNodeId="1.1154032098014" />
               </node>
             </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1163671541075">
+            <node role="expression" type="jetbrains.mps.baseLanguage.AssignmentExpression" id="1163671541358">
+              <node role="lValue" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1163671541076">
+                <link role="variableDeclaration" targetNodeId="1154567871794" resolveInfo="parent" />
+              </node>
+              <node role="rValue" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1163671547798">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionParm_parentNode" id="1163671547281" />
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetParentOperation" id="1163671549814">
+                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_ConceptList" id="1163671555270">
+                    <node role="concept" type="jetbrains.mps.bootstrap.smodelLanguage.ConceptReference" id="1163671558053">
+                      <link role="concept" targetNodeId="1.1163670490218" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1163671567071">
+            <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1163671570450">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1163671569980">
+                <link role="variableDeclaration" targetNodeId="1154567871794" resolveInfo="parent" />
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1163671572138">
+                <link role="concept" targetNodeId="1.1163670490218" />
+              </node>
+            </node>
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1163671567073">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1163671578390">
+                <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1163671579095">
+                  <property name="value" value="true" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1163671537133">
+            <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1163671538885" />
           </node>
         </node>
       </node>

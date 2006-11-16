@@ -1595,5 +1595,47 @@
       <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1163670490218">
+    <property name="name" value="SwitchStatement" />
+    <link role="extends" targetNodeId="1068580123157" resolveInfo="Statement" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1163670766145">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="expression" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1163670772911">
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="case" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1163670641947" resolveInfo="SwitchCase" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1163670592366">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="defaultBlock" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1068580123136" resolveInfo="StatementList" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1163670501655">
+      <property name="value" value="switch" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1163670641947">
+    <property name="name" value="SwitchCase" />
+    <link role="extends" targetNodeId="4.1133920641626" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1163670677455">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="expression" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1163670683720">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="body" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1068580123136" resolveInfo="StatementList" />
+    </node>
+  </node>
 </model>
 

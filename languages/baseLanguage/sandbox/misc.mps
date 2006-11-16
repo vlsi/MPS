@@ -326,10 +326,29 @@
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1163670147774">
                 <property name="value" value="2" />
               </node>
-              <node role="ifFalse" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1163670148885">
-                <property name="value" value="3" />
+              <node role="ifFalse" type="jetbrains.mps.baseLanguage.PlusExpression" id="1163673047119">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1163673047856">
+                  <property name="value" value="2" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1163670148885">
+                  <property name="value" value="3" />
+                </node>
               </node>
             </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.SwitchStatement" id="1163671135196">
+          <node role="case" type="jetbrains.mps.baseLanguage.SwitchCase" id="1163671649857">
+            <node role="expression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1163672215627">
+              <property name="value" value="239" />
+            </node>
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1163671649859">
+              <node role="statement" type="jetbrains.mps.baseLanguage.BreakStatement" id="1163671651922" />
+            </node>
+          </node>
+          <node role="defaultBlock" type="jetbrains.mps.baseLanguage.StatementList" id="1163671135198" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1163673051514">
+            <property name="value" value="2" />
           </node>
         </node>
       </node>
