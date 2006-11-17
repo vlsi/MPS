@@ -1,6 +1,7 @@
 package jetbrains.mps.util;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModel;
 
 import java.util.*;
 
@@ -132,6 +133,18 @@ public class CollectionUtil {
     }
     return result;
   }
+
+  public static <A,B> B foldLeft(List<A> list, Folder<A,B> folder, B initial) {
+    return fold(list, folder, initial);
+  }
+
+  public static <A,B> B fold(Iterable<A> iterable, Folder<A,B> folder, B initial) {
+    B current = initial;
+    for (A element : iterable) {
+      current = folder.foldOnce(current, element);
+    }
+    return current;
+  }
   
   public static<Node extends SNode> Node getByName(
           Class<Node> cls,
@@ -201,6 +214,12 @@ public class CollectionUtil {
         throw new UnsupportedOperationException();
       }
     };
+  }
+
+  public static<T> List<T> setAsList(Set<T> set) {
+    List<T> result = new ArrayList<T>();
+    result.addAll(set);
+    return result;
   }
 
   public interface CollectionBlock<E> {
