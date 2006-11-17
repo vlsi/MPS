@@ -25,6 +25,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NodesParetoFrontier;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.annotation.UseCarefully;
+import jetbrains.mps.util.annotation.ForDebug;
 
 import javax.swing.*;
 import javax.swing.tree.TreePath;
@@ -370,6 +371,27 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     ActionGroup group = ActionManager.instance().getGroup(EDITOR_POPUP_MENU_ACTIONS);
     registerKeyStrokes(group);
   }
+
+ /* @ForDebug
+  protected boolean processKeyBinding(KeyStroke ks, KeyEvent e,
+					int condition, boolean pressed) {
+    System.err.println("");
+    return super.processKeyBinding(ks, e, condition, pressed);
+        *//*InputMap map = getInputMap(condition, false);
+	ActionMap am = getActionMap(false);
+
+        if(map != null && am != null && isEnabled()) {
+	    Object binding = map.get(ks);
+	    Action action = (binding == null) ? null : am.get(binding);
+	    if (action != null) {
+		return SwingUtilities.notifyAction(action, ks, e, this,
+						   e.getModifiers());
+	    }
+	}
+        return false;*//*
+    }*/
+
+
 
   private void registerKeyStrokes(ActionGroup group) {
     if (group != null) {
@@ -1427,14 +1449,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
 
     // hardcoded "updateTypesystem" action
-    if (keyEvent.getKeyCode() == KeyEvent.VK_F5) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_F5 && keyEvent.getModifiers() == 0) {
       TypeCheckerAccess.getTypeChecker().checkNodeType(getRootCell().getSNode(), true);
       rebuildEditorContent();
       keyEvent.consume();
       return;
     }
 
-    if (keyEvent.getKeyCode() == KeyEvent.VK_F6) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_F12 && keyEvent.getModifiers() == 0) {
       relayout();
       keyEvent.consume();
       return;
