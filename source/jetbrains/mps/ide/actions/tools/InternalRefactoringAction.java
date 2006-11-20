@@ -80,17 +80,18 @@ public class InternalRefactoringAction extends MPSAction {
     System.out.println("// ---- static field ref.:" + staticFieldReferences.size());
     for (SNode node : staticFieldReferences) {
       StaticFieldReference staticFieldReference = (StaticFieldReference) node;
-      ClassifierType classifierType = staticFieldReference.getClassifierType();
-      if (classifierType != null) {
-        if (classifierType.getChildCount() > 0) {
-          System.out.println("   !!!! do not replace !!! in " + SModelUtil.getRootParent(classifierType).getDebugText());
+      // todo: the 'classifierType' has been deprecated - now removed
+//      ClassifierType classifierType = staticFieldReference.getClassifierType();
+//      if (classifierType != null) {
+//        if (classifierType.getChildCount() > 0) {
+//          System.out.println("   !!!! do not replace !!! in " + SModelUtil.getRootParent(classifierType).getDebugText());
+////          staticFieldReference.setClassifier(classifierType.getClassifier());
+//        } else {
+//          System.out.println("    *** replace ***");
+//          staticFieldReference.setClassifierType(null);
 //          staticFieldReference.setClassifier(classifierType.getClassifier());
-        } else {
-          System.out.println("    *** replace ***");
-          staticFieldReference.setClassifierType(null);
-          staticFieldReference.setClassifier(classifierType.getClassifier());
-        }
-      }
+//        }
+//      }
     }
 
     // ---- static method call.
@@ -101,24 +102,25 @@ public class InternalRefactoringAction extends MPSAction {
     });
     System.out.println("// ---- static method call:" + staticMethodCalls.size());
     for (SNode node : staticMethodCalls) {
-      StaticMethodCall staticMethodCall = (StaticMethodCall) node;
-      ClassifierType classifierType = staticMethodCall.getClassType();
-      if (classifierType != null) {
-        if (classifierType.getChildCount() > 0) {
-          System.out.println("   !!!! do not replace !!! in " + SModelUtil.getRootParent(classifierType).getDebugText());
+      // todo: the 'classType' has been deprecated - now removed
+//      StaticMethodCall staticMethodCall = (StaticMethodCall) node;
+//      ClassifierType classifierType = staticMethodCall.getClassType();
+//      if (classifierType != null) {
+//        if (classifierType.getChildCount() > 0) {
+//          System.out.println("   !!!! do not replace !!! in " + SModelUtil.getRootParent(classifierType).getDebugText());
+////          Classifier classifier = classifierType.getClassifier();
+////          if (classifier instanceof ClassConcept) {
+////            staticMethodCall.setClassConcept((ClassConcept) classifier);
+////          }
+//        } else {
+//          System.out.println("    *** replace ***");
+//          staticMethodCall.setClassType(null);
 //          Classifier classifier = classifierType.getClassifier();
 //          if (classifier instanceof ClassConcept) {
 //            staticMethodCall.setClassConcept((ClassConcept) classifier);
 //          }
-        } else {
-          System.out.println("    *** replace ***");
-          staticMethodCall.setClassType(null);
-          Classifier classifier = classifierType.getClassifier();
-          if (classifier instanceof ClassConcept) {
-            staticMethodCall.setClassConcept((ClassConcept) classifier);
-          }
-        }
-      }
+//        }
+//      }
     }
 
     // ---- enum const ref.
@@ -129,24 +131,25 @@ public class InternalRefactoringAction extends MPSAction {
     });
     System.out.println("// ---- enum const ref:" + enumConstantRefs.size());
     for (SNode node : enumConstantRefs) {
-      EnumConstantReference enumConstantReference = (EnumConstantReference) node;
-      ClassifierType classifierType = enumConstantReference.getClassType();
-      if (classifierType != null) {
-        if (classifierType.getChildCount() > 0) {
-          System.out.println("   !!!! do not replace !!! in " + SModelUtil.getRootParent(classifierType).getDebugText());
+      // todo: the 'classType' has been deprecated - now removed
+//      EnumConstantReference enumConstantReference = (EnumConstantReference) node;
+//      ClassifierType classifierType = enumConstantReference.getClassType();
+//      if (classifierType != null) {
+//        if (classifierType.getChildCount() > 0) {
+//          System.out.println("   !!!! do not replace !!! in " + SModelUtil.getRootParent(classifierType).getDebugText());
+////          Classifier classifier = classifierType.getClassifier();
+////          if (classifier instanceof EnumClass) {
+////            enumConstantReference.setEnumClass((EnumClass) classifier);
+////          }
+//        } else {
+//          System.out.println("    *** replace ***");
+//          enumConstantReference.setClassType(null);
 //          Classifier classifier = classifierType.getClassifier();
 //          if (classifier instanceof EnumClass) {
 //            enumConstantReference.setEnumClass((EnumClass) classifier);
 //          }
-        } else {
-          System.out.println("    *** replace ***");
-          enumConstantReference.setClassType(null);
-          Classifier classifier = classifierType.getClassifier();
-          if (classifier instanceof EnumClass) {
-            enumConstantReference.setEnumClass((EnumClass) classifier);
-          }
-        }
-      }
+//        }
+//      }
     }
   }
 

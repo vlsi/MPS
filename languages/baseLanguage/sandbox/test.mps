@@ -378,25 +378,14 @@
             <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1137714177492" />
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1137714185730">
-          <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1137896350182">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1149804462336">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1149804821454">
-                <link role="variableDeclaration" targetNodeId="1137714177490" />
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1137995142342">
-                <link role="baseMethodDeclaration" targetNodeId="1137896398465" />
-                <link role="classConcept" targetNodeId="1115766267843" />
-              </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1164042302991">
+          <node role="expression" type="jetbrains.mps.baseLanguage.AssignmentExpression" id="1164042307337">
+            <node role="lValue" type="jetbrains.mps.baseLanguage.ParameterReference" id="1164042302992">
+              <link role="variableDeclaration" targetNodeId="1136027173099" resolveInfo="fffff" />
             </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.AssignmentExpression" id="1137714188232">
-              <node role="lValue" type="jetbrains.mps.baseLanguage.ParameterReference" id="1137714259018">
-                <link role="variableDeclaration" targetNodeId="1136027173099" />
-              </node>
-              <node role="rValue" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1149278860101">
-                <link role="enumConstantDeclaration" targetNodeId="1137816485867" />
-                <link role="enumClass" targetNodeId="1137816471209" />
-              </node>
+            <node role="rValue" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1164043423254">
+              <link role="enumConstantDeclaration" targetNodeId="1137816485867" resolveInfo="EC2" />
+              <link role="enumClass" targetNodeId="1137816471209" resolveInfo="EnumClass" />
             </node>
           </node>
         </node>
@@ -436,9 +425,9 @@
     <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1137994194082">
       <property name="name" value="ccc" />
       <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1137994208443" />
-      <node role="initializer" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1149271022534">
-        <link role="classifier" extResolveInfo="1.[Classifier]Integer" />
+      <node role="initializer" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1164041756998">
         <link role="variableDeclaration" extResolveInfo="1.static field ([Classifier]Integer).([StaticFieldDeclaration]MAX_VALUE : (jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int))" />
+        <link role="classifier" extResolveInfo="1.[Classifier]Integer" />
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1115766338748">
