@@ -1933,6 +1933,10 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1163612625143">
     <property name="name" value="CellMenu_RefCell_ConvertReference" />
     <link role="extends" targetNodeId="3.1133920641626" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1164052201576">
+      <property name="name" value="presentation" />
+      <link role="dataType" targetNodeId="37.1161807239261" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1163613087462">
       <property name="sourceCardinality" value="1" />
       <property name="role" value="parameterObjectType" />
@@ -1950,6 +1954,16 @@
       <property name="role" value="convertFunction" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1163613131943" resolveInfo="CellMenu_RefCell_FromObjects_Create" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1164052560310">
+      <property name="role" value="matchingTextFunction" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1164052439493" resolveInfo="CellMenu_RefCell_ConvertReference_MatchingText" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1164052560311">
+      <property name="role" value="descriptionTextFunction" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1164052588708" resolveInfo="CellMenu_RefCell_ConvertReference_DescriptionText" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1163612730589">
       <property name="value" value="convert reference node (group of custom actions)" />
@@ -2032,6 +2046,42 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1163613822481">
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473994950" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1164052439493">
+    <property name="name" value="CellMenu_RefCell_ConvertReference_MatchingText" />
+    <link role="extends" targetNodeId="4.1137021947720" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1164052439494">
+      <property name="value" value="matching text" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1164052439495">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" />
+      <node role="target" type="jetbrains.mps.baseLanguage.ClassifierType" id="1164052439496">
+        <link role="classifier" extResolveInfo="36.[Classifier]String" />
+      </node>
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1164052439497">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
+      <link role="target" targetNodeId="1163613549566" resolveInfo="CellMenu_RefCell_ConvertReference_parameterObject" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1164052588708">
+    <property name="name" value="CellMenu_RefCell_ConvertReference_DescriptionText" />
+    <link role="extends" targetNodeId="4.1137021947720" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1164052588709">
+      <property name="value" value="description text" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1164052588710">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" />
+      <node role="target" type="jetbrains.mps.baseLanguage.ClassifierType" id="1164052588711">
+        <link role="classifier" extResolveInfo="36.[Classifier]String" />
+      </node>
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1164052588712">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
+      <link role="target" targetNodeId="1163613549566" resolveInfo="CellMenu_RefCell_ConvertReference_parameterObject" />
     </node>
   </node>
 </model>
