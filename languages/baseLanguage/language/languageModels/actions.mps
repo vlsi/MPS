@@ -350,19 +350,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActions" id="1144964668383">
-    <property name="name" value="BL_instance_member_reference" />
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1144964865874">
-      <property name="actionsFactoryAspectId" value="FieldReference_default_and_extra" />
-      <link role="applicableLink" targetNodeId="1.1070568237987" />
-      <link role="applicableSourceConcept" targetNodeId="1.1068580123158" />
-    </node>
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1144964865876">
-      <property name="actionsFactoryAspectId" value="InstanceMethodCall_default_and_extra" />
-      <link role="applicableSourceConcept" targetNodeId="1.1068580123163" />
-      <link role="applicableLink" targetNodeId="1.1070568044740" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeFactories" id="1158793282643">
     <property name="name" value="BL_node_factories" />
     <node role="nodeFactory" type="jetbrains.mps.bootstrap.actionsLanguage.NodeFactory" id="1158793299785">

@@ -452,8 +452,8 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1127094882893">
           <node role="expression" type="jetbrains.mps.baseLanguage.AssignmentExpression" id="1140550332727">
-            <node role="lValue" type="jetbrains.mps.baseLanguage.FieldReference" id="1127098709768">
-              <link role="variableDeclaration" targetNodeId="1127094836077" />
+            <node role="lValue" type="jetbrains.mps.baseLanguage.FieldReference" id="1164050809368">
+              <link role="variableDeclaration" targetNodeId="1127094836077" resolveInfo="aaa" />
               <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1127094882894">
                 <link role="variableDeclaration" targetNodeId="1126142422092" />
               </node>
