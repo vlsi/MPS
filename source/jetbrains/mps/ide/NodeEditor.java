@@ -12,11 +12,15 @@ import javax.swing.event.ChangeListener;
 
 public class NodeEditor implements IEditor {
 
-  private AbstractEditorComponent myEditorComponent;
+  protected AbstractEditorComponent myEditorComponent;
 
   public NodeEditor(IOperationContext context, SNode node) {
     myEditorComponent = new NodeEditorComponent(context);
     myEditorComponent.editNode(node, context);
+  }
+
+  protected NodeEditor() {
+    
   }
 
   public JComponent getComponent() {

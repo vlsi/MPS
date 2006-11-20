@@ -479,7 +479,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   protected void editNode(SNode semanticNode) {
     IOperationContext operationContext = getOperationContext();
     myNodeProxy = new SNodeProxy(semanticNode);
-    myEditorContext = new EditorContext(this, semanticNode.getModel(), operationContext);
+    SModel model = semanticNode == null ? null : semanticNode.getModel();
+    myEditorContext = new EditorContext(this, model, operationContext);
     rebuildEditorContent();
   }
 
@@ -1368,6 +1369,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   public boolean getScrollableTracksViewportHeight() {
     return false;
+  }
+
+  public JScrollPane getScrollPane() {
+    return myScrollPane;
   }
 
   public EditorCell getDeepestSelectedCell() {
