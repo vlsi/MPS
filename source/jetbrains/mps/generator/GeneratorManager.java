@@ -178,6 +178,13 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     return super.clone();
   }
 
+  public void generateModelsWithProgressWindowAsync(final List<SModel> sourceModels, final Language targetLanguage, final IOperationContext invocationContext, final IGenerationType generationType, boolean closeOnExit) {
+    AdaptiveProgressMonitor adaptiveProgressMonitor = new AdaptiveProgressMonitor(invocationContext.getComponent(IDEProjectFrame.class), closeOnExit);
+    generateModelsWithProgressWindow(sourceModels, targetLanguage, invocationContext, generationType, new Runnable() {
+      public void run() {
+      }
+    }, true, adaptiveProgressMonitor);
+  }
 
   public void generateModelsWithProgressWindowAsync(final List<SModel> sourceModels, final Language targetLanguage, final IOperationContext invocationContext, final IGenerationType generationType) {
     generateModelsWithProgressWindow(sourceModels, targetLanguage, invocationContext, generationType, new Runnable() {
