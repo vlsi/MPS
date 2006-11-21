@@ -11,5 +11,11 @@
       <node role="instance" type="jetbrains.mps.baseLanguage.Expression" id="1162505622727" />
     </node>
   </node>
+  <node type="jetbrains.mps.transformation.TLBase.PreliminaryRewritingRules" id="1164129913631">
+    <property name="name" value="kjhkjkjkjkjh" />
+    <node role="rewritingRule" type="jetbrains.mps.transformation.TLBase.ReductionRule" id="1164129922006">
+      <link role="template" targetNodeId="1162432838732" resolveInfo="test_template" />
+    </node>
+  </node>
 </model>
 

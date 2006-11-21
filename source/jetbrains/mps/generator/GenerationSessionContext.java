@@ -1,6 +1,5 @@
 package jetbrains.mps.generator;
 
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
@@ -13,14 +12,10 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Sep 19, 2005
- * Time: 7:20:19 PM
- * To change this template use File | Settings | File Templates.
+ * Igor Alshannikov
+ * Sep 19, 2005
  */
 public class GenerationSessionContext extends StandaloneMPSContext {
-  private static final Logger LOG = Logger.getLogger(GenerationSessionContext.class);
 
   private List<Generator> myGeneratorModules;
   private List<SModelDescriptor> myTemplateModels;
@@ -65,6 +60,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return myInvocationContext.getComponent(clazz);
   }
 
+  @NotNull
   public IModule getModule() {
     return myTransientModule;
   }
@@ -165,36 +161,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     public ModuleDescriptor getModuleDescriptor() {
       return myModuleDescriptor;
     }
-
-//    @NotNull
-//    public List<IModule> getDependOnModules() {
-//      return myDependOnModules;
-//    }
-
-//    @Nullable
-//    @Override
-//    protected Language getLanguage(@NotNull String languageNamespace, @NotNull Set<IModule> modulesToSkip, boolean suppressWarnings) {
-//      if (myInvocationModule instanceof Language) {
-//        if (languageNamespace.equals(myInvocationModule.getModuleUID())) {
-//          return (Language) myInvocationModule;
-//        }
-//      }
-//
-//      Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, BootstrapLanguages.getInstance());
-//      if (language == null) {
-//        for (Generator generator : GenerationSessionContext.this.getGeneratorModules()) {
-//          language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, generator);
-//          if (language != null) return language;
-//        }
-//      }
-//      if (language == null) {
-//        language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, myInvocationModule);
-//      }
-//      if (language == null && !suppressWarnings) {
-//        LOG.error("Couldn't find language: \"" + languageNamespace + "\" in scope: " + this);
-//      }
-//      return language;
-//    }
 
     public void dispose() {
       MPSModuleRepository.getInstance().unRegisterModules(this);

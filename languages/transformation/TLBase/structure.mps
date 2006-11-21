@@ -353,5 +353,21 @@
     <link role="source" targetNodeId="2.1133920641626" />
     <link role="target" targetNodeId="1095672379244" />
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1164129274099">
+    <property name="rootable" value="true" />
+    <property name="name" value="PreliminaryRewritingRules" />
+    <link role="extends" targetNodeId="2.1078489098625" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1164129352445">
+      <property name="sourceCardinality" value="0..n" />
+      <property name="targetCardinality" value="1" />
+      <property name="role" value="rewritingRule" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1114456532170" resolveInfo="ReductionRule" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1164129311848">
+      <property name="value" value="preliminary rewriting" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
+    </node>
+  </node>
 </model>
 

@@ -56,7 +56,6 @@ public class GenerationSession {
     if (myDiscardTransients) {
       for (GenerationSessionContext savedContext : mySavedContexts) {
         IModule module = savedContext.getModule();
-        assert module != null;
         module.dispose(); // unregister transient models and module
       }
       mySavedContexts.clear();
@@ -170,19 +169,38 @@ public class GenerationSession {
   private SModel generateModel(SModel inputModel, Language targetLanguage, ITemplateGenerator generator) {
     GenerationSessionContext generationContext = generator.getGeneratorSessionContext();
     IModule module = generationContext.getModule();
-    assert module != null;
+    SModelDescriptor currentInputModel = inputModel.getModelDescriptor();
     SModelDescriptor currentOutputModel = createTransientModel(inputModel, module);
 
+    // -----------------------
+    // preliminary rewriting
+    // -----------------------
+    int preliminaryRewritingRepeatCount = 1;
+    while (generator.doPreliminaryRewriting(currentInputModel.getSModel(), currentOutputModel.getSModel())) {
+      if (++preliminaryRewritingRepeatCount > 10) {
+        generator.showErrorMessage(null, "Failed to rewrite input after 10 repeated preliminari rewritings");
+        throw new GenerationFailedException("Failed to rewrite input after 10 repeated preliminari rewritings");
+      }
+      currentOutputModel.getSModel().validateLanguagesAndImports();
+      currentInputModel = currentOutputModel;
+      myCurrentContext.replaceInputModel(currentInputModel);
+      currentOutputModel = createTransientModel(currentInputModel.getSModel(), module);
+    }
+
+    // -----------------------
     // primary mapping
-    boolean somethingHasBeenGenerated = generator.doPrimaryMapping(inputModel, currentOutputModel.getSModel());
-    if (!somethingHasBeenGenerated /*|| primaryMappingOnly*/) {
+    // -----------------------
+    boolean somethingHasBeenGenerated = generator.doPrimaryMapping(currentInputModel.getSModel(), currentOutputModel.getSModel());
+    if (!somethingHasBeenGenerated) {
       SModel model = currentOutputModel.getSModel();
       model.validateLanguagesAndImports();
       return model;
     }
 
+    // -----------------------
     // secondary mapping (infinite cycle untill 'exit condition' is true)
-    int repeatCount = 1;
+    // -----------------------
+    int secondaryMappingRepeatCount = 1;
     while (true) {
       currentOutputModel.getSModel().validateLanguagesAndImports();
       // optimization trick:
@@ -197,14 +215,14 @@ public class GenerationSession {
 
       // apply mapping to the output model
       myCurrentContext.replaceInputModel(currentOutputModel);
-      SModelDescriptor currentInputModel = currentOutputModel;
-      SModelDescriptor transientModel = createTransientModel(inputModel, module);
-      if (!generator.doSecondaryMapping(currentInputModel.getSModel(), transientModel.getSModel(), repeatCount)) {
+      SModelDescriptor transientModel = createTransientModel(currentInputModel.getSModel(), module);
+      currentInputModel = currentOutputModel;
+      if (!generator.doSecondaryMapping(currentInputModel.getSModel(), transientModel.getSModel())) {
         SModelRepository.getInstance().unRegisterModelDescriptor(transientModel, module);
         break;
       }
 
-      if (++repeatCount > 10) {
+      if (++secondaryMappingRepeatCount > 10) {
         generator.showErrorMessage(null, "Failed to generate output after 10 repeated mappings");
         throw new GenerationFailedException("Failed to generate output after 10 repeated mappings");
       }

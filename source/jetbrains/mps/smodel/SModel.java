@@ -187,7 +187,6 @@ public class SModel implements Iterable<SNode> {
     myStackTrace = t;
   }
 
-  @Nullable
   public SModelDescriptor getModelDescriptor() {
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(this);
     return modelDescriptor;
