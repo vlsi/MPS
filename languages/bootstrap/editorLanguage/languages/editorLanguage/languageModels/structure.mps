@@ -1919,7 +1919,7 @@
       <property name="sourceCardinality" value="0..n" />
       <property name="role" value="menuPart" />
       <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1163612625143" resolveInfo="CellMenu_RefCell_ConvertFromObjects" />
+      <link role="target" targetNodeId="1164057185837" resolveInfo="CellMenu_RefCell_Part" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1163611648376">
       <property name="value" value="reference menu" />
@@ -1932,7 +1932,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1163612625143">
     <property name="name" value="CellMenu_RefCell_ConvertReference" />
-    <link role="extends" targetNodeId="3.1133920641626" />
+    <link role="extends" targetNodeId="1164057185837" resolveInfo="CellMenu_RefCell_Part" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1164052201576">
       <property name="name" value="presentation" />
       <link role="dataType" targetNodeId="37.1161807239261" />
@@ -2082,6 +2082,51 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1164052588712">
       <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
       <link role="target" targetNodeId="1163613549566" resolveInfo="CellMenu_RefCell_ConvertReference_parameterObject" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1164057041347">
+    <property name="name" value="CellMenu_RefCell_Simple" />
+    <link role="extends" targetNodeId="1164057185837" resolveInfo="CellMenu_RefCell_Part" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1164057041348">
+      <property name="value" value="set referent (single action)" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1164057041349">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="getReferentFunction" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1164057368735" resolveInfo="CellMenu_RefCell_Simple_GetReferent" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1164057041350">
+      <property name="name" value="matchingText" />
+      <link role="dataType" targetNodeId="3.1082983041843" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1164057185837">
+    <property name="name" value="CellMenu_RefCell_Part" />
+    <link role="extends" targetNodeId="3.1133920641626" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1164057185838">
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1164057368735">
+    <property name="name" value="CellMenu_RefCell_Simple_GetReferent" />
+    <link role="extends" targetNodeId="4.1137021947720" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1164057368736">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
+      <link role="target" targetNodeId="1163613822479" resolveInfo="CellMenu_RefCell_ConvertReference_currentReferenceNode" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1164057368737">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
+      <link role="target" targetNodeId="37.1161622665029" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1164057368738">
+      <link role="target" targetNodeId="37.1161622878565" />
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1164057368739">
+      <link role="target" targetNodeId="37.1161622753914" />
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
     </node>
   </node>
 </model>
