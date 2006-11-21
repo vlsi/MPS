@@ -74,9 +74,9 @@ public class ModelActions {
   /**
    * helper method
    */
-  public static List<INodeSubstituteAction> createPrimaryReferentSubstituteActions(SNode referenceNode, SNode currentReferent, LinkDeclaration linkDeclaration, ISearchScope searchScope, IOperationContext context) {
-    return ReferentSubstituteActionsHelper.createPrimaryReferentSubstituteActions(referenceNode, currentReferent, linkDeclaration, searchScope, context.getScope());
-  }
+//  public static List<INodeSubstituteAction> createPrimaryReferentSubstituteActions(SNode referenceNode, SNode currentReferent, LinkDeclaration linkDeclaration, ISearchScope searchScope, IOperationContext context) {
+//    return ReferentSubstituteActionsHelper.createPrimaryReferentSubstituteActions(referenceNode, currentReferent, linkDeclaration, searchScope, context.getScope());
+//  }
 
   //-------------------
   // right-transform hint substitute
