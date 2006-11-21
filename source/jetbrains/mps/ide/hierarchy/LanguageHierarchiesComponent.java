@@ -5,20 +5,20 @@ import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.nodeEditor.EditorSettings;
-import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.IDEProjectFrame;
-import jetbrains.mps.util.Pair;
 
-import javax.swing.JComponent;
-import javax.swing.JViewport;
-import javax.swing.JScrollPane;
+import javax.swing.*;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseAdapter;
+import java.awt.event.ActionEvent;
 import java.util.*;
 import java.util.List;
+
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Created by IntelliJ IDEA.
@@ -27,14 +27,18 @@ import java.util.List;
  * Time: 15:56:56
  * To change this template use File | Settings | File Templates.
  */
-public class LanguageHierarchiesComponent extends JComponent {
+public class LanguageHierarchiesComponent extends JComponent implements Scrollable {
   private static final int SPACING = 10;
   private static final int PADDING_X = 5;
   private static final int PADDING_Y = 5;
 
+  private JPanel myPanel = new JPanel();
+
   private Language myLanguage;
   private IOperationContext myOperationContext;
   private List<ConceptContainer> myRoots = new ArrayList<ConceptContainer>();
+  private int myScale = 1;
+  private boolean mySkipAncestors = true;
   private int myWidth = 0;
   private int myHeight = 0;
 
@@ -48,6 +52,48 @@ public class LanguageHierarchiesComponent extends JComponent {
         }
       }
     });
+    myPanel.setLayout(new BorderLayout());
+    myPanel.setBackground(Color.WHITE);
+
+    final JPanel toolsPane = new JPanel();
+    toolsPane.setLayout(new FlowLayout(FlowLayout.LEFT));
+    toolsPane.add(new JButton(new AbstractAction("+") {
+      public void actionPerformed(ActionEvent e) {
+        if (myScale < 6) {
+          myScale++;
+          relayout();
+          LanguageHierarchiesComponent.this.invalidate();
+          getExternalComponent().revalidate();
+          getExternalComponent().repaint();
+        }
+      }
+    }));
+    toolsPane.add(new JButton(new AbstractAction("-") {
+      public void actionPerformed(ActionEvent e) {
+        if (myScale > 1) {
+          myScale--;
+          relayout();
+          LanguageHierarchiesComponent.this.invalidate();
+          getExternalComponent().revalidate();
+          getExternalComponent().repaint();
+        }
+      }
+    }));
+    myPanel.add(toolsPane, BorderLayout.NORTH);
+
+    JScrollPane scrollPane = new JScrollPane();
+    scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+    scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+    scrollPane.setViewportView(this);
+    scrollPane.setBorder(new LineBorder(Color.LIGHT_GRAY));
+    scrollPane.setBackground(Color.WHITE);
+    myPanel.add(scrollPane, BorderLayout.CENTER);
+
+    setBackground(Color.WHITE);
+  }
+
+  public JComponent getExternalComponent() {
+    return myPanel;
   }
 
   public java.util.List<ConceptContainer> createHierarchyForest() {
@@ -57,7 +103,8 @@ public class LanguageHierarchiesComponent extends JComponent {
     outer : for (ConceptDeclaration concept : structureModel.getRoots(ConceptDeclaration.class)) {
       ConceptDeclaration parentConcept = concept;
       ConceptContainer prevConceptContainer = null;
-      while (parentConcept != null && parentConcept != SModelUtil.getBaseConcept() && parentConcept.getModel() == structureModel) {
+      while (parentConcept != null && parentConcept != SModelUtil.getBaseConcept() &&
+              !(mySkipAncestors && parentConcept.getModel() != structureModel)) {
         ConceptContainer newConceptContainer = processed.get(parentConcept);
         if (newConceptContainer == null) {
           newConceptContainer = new ConceptContainer(parentConcept, this);
@@ -116,31 +163,39 @@ public class LanguageHierarchiesComponent extends JComponent {
   }
 
   public Dimension getPreferredSize() {
-    JScrollPane scrollPane = getScrollPane();
-    if (scrollPane != null) {
-      JViewport viewport = scrollPane.getViewport();
-      Rectangle viewRect = viewport.getViewRect();
-      return new Dimension(Math.max(viewRect.width, myWidth),
-              Math.max(viewRect.height, myHeight));
-    } else {
-      return new Dimension(myWidth, myHeight);
-    }
+    return new Dimension(myWidth, myHeight);
   }
-
-  private JScrollPane getScrollPane() {
-    Container container = getParent();
-    if (container instanceof AbstractEditorComponent) {
-      return ((AbstractEditorComponent)container).getScrollPane();
-    } else {
-      return null;
-    }
-  }
-
 
   protected void paintComponent(Graphics g) {
+    g.setColor(Color.WHITE);
+    g.fillRect(0, 0, myWidth, myHeight);
     for (ConceptContainer root : myRoots) {
       root.paintTree(g);
     }
+  }
+
+  public Dimension getPreferredScrollableViewportSize() {
+    return getPreferredSize();
+  }
+
+  public int getScrollableUnitIncrement(Rectangle visibleRect, int orientation, int direction) {
+    if (orientation == SwingConstants.VERTICAL) {
+      return 20;
+    } else { // if orientation == SwingConstants.HORIZONTAL
+      return 20;
+    }
+  }
+
+  public int getScrollableBlockIncrement(Rectangle visibleRect, int orientation, int direction) {
+    return visibleRect.height;
+  }
+
+  public boolean getScrollableTracksViewportWidth() {
+    return false;
+  }
+
+  public boolean getScrollableTracksViewportHeight() {
+    return false;
   }
 
   public static class ConceptContainer {
@@ -161,7 +216,10 @@ public class LanguageHierarchiesComponent extends JComponent {
     private java.util.List<MouseListener> myMouseListeners = new ArrayList<MouseListener>();
     private IOperationContext myOperationContext;
 
-    public ConceptContainer(ConceptDeclaration conceptDeclaration, LanguageHierarchiesComponent component) {
+    public ConceptContainer(@NotNull ConceptDeclaration conceptDeclaration, LanguageHierarchiesComponent component) {
+      if (conceptDeclaration.getRootable()) {
+        myColor = Color.PINK;
+      }
       myNodeProxy = new SNodeProxy(conceptDeclaration);
       myComponent = component;
       myOperationContext = myComponent.myOperationContext;
@@ -182,14 +240,15 @@ public class LanguageHierarchiesComponent extends JComponent {
       g.fillRect(myX, myY, myWidth, myHeight);
       g.setColor(Color.black);
       g.drawRect(myX, myY, myWidth, myHeight);
-      FontMetrics metrics =  myComponent.getFontMetrics(myFont);
+      Font font = myFont.deriveFont(myFont.getSize() * myComponent.myScale);
+      FontMetrics metrics =  myComponent.getFontMetrics(font);
       String text = getText();
-      int x = myX + PADDING_X;
+      int x = myX + PADDING_X * myComponent.myScale;
       int y = myY + (myHeight - metrics.getHeight())/2;
-      Font font = g.getFont();
-      g.setFont(myFont);
-      g.drawString(text, x, y + metrics.getAscent());
+      Font oldfont = g.getFont();
       g.setFont(font);
+      g.drawString(text, x, y + metrics.getAscent());
+      g.setFont(oldfont);
     }
 
     public String getText() {
@@ -230,7 +289,7 @@ public class LanguageHierarchiesComponent extends JComponent {
         conceptContainer.updateSubtreeWidth();
         sum += conceptContainer.mySubtreeWidth;
       }
-      mySubtreeWidth = Math.max(sum, myWidth + 2* SPACING);
+      mySubtreeWidth = Math.max(sum, (myWidth + 2* SPACING)*myComponent.myScale);
       if (sum < mySubtreeWidth) {
         Map<ConceptContainer, Integer> sizes = new HashMap<ConceptContainer, Integer>();
         computeSubtreeSizes(sizes);
@@ -264,8 +323,8 @@ public class LanguageHierarchiesComponent extends JComponent {
       String text = getText();
       int charsWidth = metrics.charsWidth(text.toCharArray(), 0, text.length());
       int charsHeight = metrics.getHeight();
-      myHeight = 2 * PADDING_Y + charsHeight;
-      myWidth = 2 * PADDING_X + charsWidth;
+      myHeight = (2 * PADDING_Y + charsHeight) * myComponent.myScale;
+      myWidth = (2 * PADDING_X + charsWidth) * myComponent.myScale;
     }
 
     public int getWidth() {
