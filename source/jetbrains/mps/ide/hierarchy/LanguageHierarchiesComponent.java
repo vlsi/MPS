@@ -11,7 +11,7 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.navigation.RecentEditorsMenu;
-import jetbrains.mps.ide.navigation.EditorsHistory;
+import jetbrains.mps.util.ColorAndGraphicsUtil;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -39,10 +39,11 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
   private Language myLanguage;
   private IOperationContext myOperationContext;
   private List<ConceptContainer> myRoots = new ArrayList<ConceptContainer>();
-  private int myScale = 1;
+  private float myScale = 1f;
   private boolean mySkipAncestors = true;
   private int myWidth = 0;
   private int myHeight = 0;
+  public TextField myScaleField;
 
   public LanguageHierarchiesComponent(Language language, IOperationContext context) {
     myLanguage = language;
@@ -59,10 +60,15 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
 
     final JPanel toolsPane = new JPanel();
     toolsPane.setLayout(new FlowLayout(FlowLayout.LEFT));
+    myScaleField = new TextField("100%");
+    myScaleField.setEditable(false);
+    toolsPane.add(myScaleField);
     toolsPane.add(new JButton(new AbstractAction("+") {
       public void actionPerformed(ActionEvent e) {
         if (myScale < 6) {
-          myScale++;
+          myScale += 0.2;
+          if (myScale > 6) myScale = 6;
+          myScaleField.setText( (int) (myScale*100) + "%");
           relayout();
           LanguageHierarchiesComponent.this.invalidate();
           getExternalComponent().revalidate();
@@ -72,8 +78,10 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     }));
     toolsPane.add(new JButton(new AbstractAction("-") {
       public void actionPerformed(ActionEvent e) {
-        if (myScale > 1) {
-          myScale--;
+        if (myScale > 0.2) {
+          myScale -= 0.2;
+          if (myScale < 0.2) myScale = 0.2f;
+          myScaleField.setText( (int) (myScale*100) + "%");
           relayout();
           LanguageHierarchiesComponent.this.invalidate();
           getExternalComponent().revalidate();
@@ -81,6 +89,41 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
         }
       }
     }));
+    toolsPane.add(new JButton(new AbstractAction("=") {
+      public void actionPerformed(ActionEvent e) {
+        if (myScale != 1) {
+          myScale = 1;
+          myScaleField.setText( (int) (myScale*100) + "%");
+          relayout();
+          LanguageHierarchiesComponent.this.invalidate();
+          getExternalComponent().revalidate();
+          getExternalComponent().repaint();
+        }
+      }
+    }));
+    final JCheckBox jCheckBox = new JCheckBox();
+    jCheckBox.setAction(new AbstractAction("Include Other Languages") {
+      public void actionPerformed(ActionEvent e) {
+        if (jCheckBox.getModel().isSelected()) {
+          if (mySkipAncestors) {
+            mySkipAncestors = false;
+            rebuild();
+            LanguageHierarchiesComponent.this.invalidate();
+            getExternalComponent().revalidate();
+            getExternalComponent().repaint();
+          }
+        } else {
+          if (!mySkipAncestors) {
+            mySkipAncestors = true;
+            rebuild();
+            LanguageHierarchiesComponent.this.invalidate();
+            getExternalComponent().revalidate();
+            getExternalComponent().repaint();
+          }
+        }
+      }
+    });
+    toolsPane.add(jCheckBox);
     myPanel.add(toolsPane, BorderLayout.NORTH);
 
     JScrollPane scrollPane = new JScrollPane();
@@ -98,7 +141,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
       public void actionPerformed(ActionEvent e) {
         RecentEditorsMenu m = new RecentEditorsMenu(myOperationContext);
         if (!m.isHasItems()) return;
-        m.show(LanguageHierarchiesComponent.this, 0, 0);
+        m.show(LanguageHierarchiesComponent.this, getX(), getY());
       }
     }, KeyStroke.getKeyStroke("control E"), WHEN_IN_FOCUSED_WINDOW);
 
@@ -171,14 +214,14 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     for (ConceptContainer root : currentChildren) {
       int subtreeWidth = root.getSubtreeWidth();
       root.setX(x + (subtreeWidth - root.getWidth())/2);
-      root.setY(y + SPACING * myScale);
-      int newY = relayoutChildren(root.getChildren(), x, y + SPACING * myScale + root.getHeight(), false);
+      root.setY((int) (y + SPACING * myScale));
+      int newY = relayoutChildren(root.getChildren(), x, (int) (y + SPACING * myScale + root.getHeight()), false);
       if (vertical) {
-        y = newY + root.getHeight() + 3 * SPACING * myScale;
+        y = (int) (newY + root.getHeight() + 3 * SPACING * myScale);
         y_ = y;
       } else {
         x += subtreeWidth;
-        y_ = Math.max(y + SPACING * myScale + root.getHeight(), newY);
+        y_ = (int) (Math.max(y + SPACING * myScale + root.getHeight(), newY));
       }
     }
     return y_;
@@ -234,6 +277,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     private int myWidth;
     private int myHeight;
     private Color myColor = Color.ORANGE;
+    private boolean myRootable = false;
     private int mySubtreeWidth = 0;
     private java.util.List<ConceptContainer> myChildren = new ArrayList<ConceptContainer>();
     private ConceptContainer myParent;
@@ -245,9 +289,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     private IOperationContext myOperationContext;
 
     public ConceptContainer(@NotNull ConceptDeclaration conceptDeclaration, LanguageHierarchiesComponent component) {
-      if (conceptDeclaration.getRootable()) {
-        myColor = Color.PINK;
-      }
+      myRootable = conceptDeclaration.getRootable();
       myNodeProxy = new SNodeProxy(conceptDeclaration);
       myComponent = component;
       myOperationContext = myComponent.myOperationContext;
@@ -264,15 +306,19 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     }
 
     public void paint(Graphics g) {
-      g.setColor(myColor);
+      Color color = myColor;
+      if (myRootable) {
+        color = color.darker();
+      }
+      g.setColor(color);
       g.fillRect(myX, myY, myWidth, myHeight);
       g.setColor(Color.black);
       g.drawRect(myX, myY, myWidth, myHeight);
-      Font font = myFont.deriveFont(myFont.getSize() * myComponent.myScale);
+      Font font = myFont.deriveFont( (float) myFont.getSize() * myComponent.myScale);
       FontMetrics metrics =  myComponent.getFontMetrics(font);
       String text = getText();
-      int x = myX + PADDING_X * myComponent.myScale;
-      int y = myY + (myHeight - metrics.getHeight())/2;
+      int x = (int) (myX + PADDING_X * myComponent.myScale);
+      int y = (int) (myY + (myHeight - metrics.getHeight())/2);
       Font oldfont = g.getFont();
       g.setFont(font);
       g.drawString(text, x, y + metrics.getAscent());
@@ -317,7 +363,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
         conceptContainer.updateSubtreeWidth();
         sum += conceptContainer.mySubtreeWidth;
       }
-      mySubtreeWidth = Math.max(sum, myWidth + 2 * SPACING * myComponent.myScale);
+      mySubtreeWidth = (int) (Math.max(sum, myWidth + 2 * SPACING * myComponent.myScale));
       if (sum < mySubtreeWidth) {
         Map<ConceptContainer, Integer> sizes = new HashMap<ConceptContainer, Integer>();
         computeSubtreeSizes(sizes);
@@ -347,12 +393,13 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     }
 
     public void updateSize() {
-      FontMetrics metrics =  myComponent.getFontMetrics(myFont);
+      Font font = myFont.deriveFont( (float) myFont.getSize() * myComponent.myScale);
+      FontMetrics metrics =  myComponent.getFontMetrics(font);
       String text = getText();
       int charsWidth = metrics.charsWidth(text.toCharArray(), 0, text.length());
       int charsHeight = metrics.getHeight();
-      myHeight = (2 * PADDING_Y + charsHeight) * myComponent.myScale;
-      myWidth = (2 * PADDING_X + charsWidth) * myComponent.myScale;
+      myHeight = (int) ((2 * PADDING_Y * myComponent.myScale) + charsHeight);
+      myWidth =  (int) ((2 * PADDING_X * myComponent.myScale) + charsWidth);
     }
 
     public int getWidth() {
