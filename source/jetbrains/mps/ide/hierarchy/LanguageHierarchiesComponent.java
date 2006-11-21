@@ -5,16 +5,18 @@ import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.nodeEditor.EditorSettings;
+import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.IEditorOpener;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.EditorsPane;
+import jetbrains.mps.ide.navigation.RecentEditorsMenu;
+import jetbrains.mps.ide.navigation.EditorsHistory;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.ActionEvent;
+import java.awt.event.*;
 import java.util.*;
 import java.util.List;
 
@@ -90,6 +92,32 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     myPanel.add(scrollPane, BorderLayout.CENTER);
 
     setBackground(Color.WHITE);
+
+    // actions
+    registerKeyboardAction(new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
+        RecentEditorsMenu m = new RecentEditorsMenu(myOperationContext);
+        if (!m.isHasItems()) return;
+        m.show(LanguageHierarchiesComponent.this, 0, 0);
+      }
+    }, KeyStroke.getKeyStroke("control E"), WHEN_IN_FOCUSED_WINDOW);
+
+    //ctrl-alt-arrows
+    registerKeyboardAction(new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
+        getEditorOpener().openPrevEditorInHistory();
+      }
+    }, KeyStroke.getKeyStroke("control alt LEFT"), WHEN_IN_FOCUSED_WINDOW);
+
+    registerKeyboardAction(new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
+        getEditorOpener().openNextEditorInHistory();
+      }
+    }, KeyStroke.getKeyStroke("control alt RIGHT"), WHEN_IN_FOCUSED_WINDOW);
+  }
+
+  private IEditorOpener getEditorOpener() {
+    return myOperationContext.getComponent(EditorsPane.class);
   }
 
   public JComponent getExternalComponent() {
@@ -143,14 +171,14 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     for (ConceptContainer root : currentChildren) {
       int subtreeWidth = root.getSubtreeWidth();
       root.setX(x + (subtreeWidth - root.getWidth())/2);
-      root.setY(y + SPACING);
-      int newY = relayoutChildren(root.getChildren(), x, y + SPACING + root.getHeight(), false);
+      root.setY(y + SPACING * myScale);
+      int newY = relayoutChildren(root.getChildren(), x, y + SPACING * myScale + root.getHeight(), false);
       if (vertical) {
-        y = newY + root.getHeight() + 3*SPACING;
+        y = newY + root.getHeight() + 3 * SPACING * myScale;
         y_ = y;
       } else {
         x += subtreeWidth;
-        y_ = Math.max(y + SPACING + root.getHeight(), newY);
+        y_ = Math.max(y + SPACING * myScale + root.getHeight(), newY);
       }
     }
     return y_;
@@ -289,7 +317,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
         conceptContainer.updateSubtreeWidth();
         sum += conceptContainer.mySubtreeWidth;
       }
-      mySubtreeWidth = Math.max(sum, (myWidth + 2* SPACING)*myComponent.myScale);
+      mySubtreeWidth = Math.max(sum, myWidth + 2 * SPACING * myComponent.myScale);
       if (sum < mySubtreeWidth) {
         Map<ConceptContainer, Integer> sizes = new HashMap<ConceptContainer, Integer>();
         computeSubtreeSizes(sizes);
@@ -395,7 +423,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
         child.paintTree(g);
       }
     }
-    
+
     protected boolean mouseClicked(MouseEvent ev) {
       if (processMouseClicked(ev)) return true;
       for (ConceptContainer child : getChildren()) {

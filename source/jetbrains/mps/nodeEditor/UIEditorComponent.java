@@ -1,15 +1,14 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.ide.navigation.EditorsHistory;
-import jetbrains.mps.ide.navigation.EditorsNavigationAdapter;
-import jetbrains.mps.ide.navigation.EditorsNavigationMulticaster;
-import jetbrains.mps.ide.navigation.IHistoryItem;
+import jetbrains.mps.ide.navigation.*;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeProxy;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
 import javax.swing.KeyStroke;
@@ -85,6 +84,16 @@ public class UIEditorComponent extends AbstractEditorComponent implements IEdito
   @NotNull
   public IEditor openEditor(SNode semanticNode, IOperationContext operationContext) {
     return new MyEditor();
+  }
+
+  public
+  @Nullable
+  IEditor openEditor(Condition<IEditor> condition) {
+    IEditor editor = new MyEditor();
+    if (condition.met(editor)) {
+      return editor;
+    }
+    return null;
   }
 
   public IEditor getEditor() {
@@ -192,6 +201,12 @@ public class UIEditorComponent extends AbstractEditorComponent implements IEdito
 
     public AbstractEditorComponent getEditorComponent() {
       return UIEditorComponent.this;
+    }
+
+
+    @Nullable
+    public EditorInfo getEditorInfo() {
+      return null;  
     }
   }
 }

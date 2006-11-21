@@ -372,26 +372,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     registerKeyStrokes(group);
   }
 
- /* @ForDebug
-  protected boolean processKeyBinding(KeyStroke ks, KeyEvent e,
-					int condition, boolean pressed) {
-    System.err.println("");
-    return super.processKeyBinding(ks, e, condition, pressed);
-        *//*InputMap map = getInputMap(condition, false);
-	ActionMap am = getActionMap(false);
-
-        if(map != null && am != null && isEnabled()) {
-	    Object binding = map.get(ks);
-	    Action action = (binding == null) ? null : am.get(binding);
-	    if (action != null) {
-		return SwingUtilities.notifyAction(action, ks, e, this,
-						   e.getModifiers());
-	    }
-	}
-        return false;*//*
-    }*/
-
-
 
   private void registerKeyStrokes(ActionGroup group) {
     if (group != null) {

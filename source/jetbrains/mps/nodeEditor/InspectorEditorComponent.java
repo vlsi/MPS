@@ -11,11 +11,14 @@ import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.navigation.HistoryItem;
 import jetbrains.mps.ide.navigation.IHistoryItem;
 import jetbrains.mps.ide.navigation.InspectorHistoryItem;
+import jetbrains.mps.ide.navigation.EditorInfo;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeProxy;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
 import javax.swing.event.ChangeListener;
@@ -43,6 +46,12 @@ public class InspectorEditorComponent extends AbstractEditorComponent implements
   }
 
   public void removeChangeListener(@NotNull ChangeListener listener) {
+  }
+
+
+  @Nullable
+  public EditorInfo getEditorInfo() {
+    return null;  
   }
 
   public void editNode(SNode semanticNode, IOperationContext operationContext) {
