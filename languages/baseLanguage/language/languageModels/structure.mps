@@ -442,7 +442,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068581242867">
     <property name="name" value="LongType" />
-    <link role="extends" targetNodeId="1068431790189" />
+    <link role="extends" targetNodeId="1164118113764" resolveInfo="PrimitiveType" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107217175618">
       <property name="value" value="long" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
@@ -552,7 +552,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068581517677">
     <property name="name" value="VoidType" />
-    <link role="extends" targetNodeId="1068431790189" />
+    <link role="extends" targetNodeId="1164118113764" resolveInfo="PrimitiveType" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107217929953">
       <property name="value" value="void" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
@@ -635,7 +635,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1070533982221">
     <property name="name" value="ShortType" />
-    <link role="extends" targetNodeId="1068431790189" />
+    <link role="extends" targetNodeId="1164118113764" resolveInfo="PrimitiveType" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107217518509">
       <property name="value" value="short" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
@@ -651,7 +651,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1070534370425">
     <property name="name" value="IntegerType" />
-    <link role="extends" targetNodeId="1068431790189" />
+    <link role="extends" targetNodeId="1164118113764" resolveInfo="PrimitiveType" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107216816637">
       <property name="value" value="int" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
@@ -659,7 +659,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1070534436861">
     <property name="name" value="FloatType" />
-    <link role="extends" targetNodeId="1068431790189" />
+    <link role="extends" targetNodeId="1164118113764" resolveInfo="PrimitiveType" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107216569853">
       <property name="value" value="float" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
@@ -667,7 +667,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1070534513062">
     <property name="name" value="DoubleType" />
-    <link role="extends" targetNodeId="1068431790189" />
+    <link role="extends" targetNodeId="1164118113764" resolveInfo="PrimitiveType" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107216301367">
       <property name="value" value="double" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
@@ -675,7 +675,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1070534555686">
     <property name="name" value="CharType" />
-    <link role="extends" targetNodeId="1068431790189" />
+    <link role="extends" targetNodeId="1164118113764" resolveInfo="PrimitiveType" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107215880460">
       <property name="value" value="char" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
@@ -683,7 +683,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1070534604311">
     <property name="name" value="ByteType" />
-    <link role="extends" targetNodeId="1068431790189" />
+    <link role="extends" targetNodeId="1164118113764" resolveInfo="PrimitiveType" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107215782985">
       <property name="value" value="byte" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
@@ -691,7 +691,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1070534644030">
     <property name="name" value="BooleanType" />
-    <link role="extends" targetNodeId="1068431790189" />
+    <link role="extends" targetNodeId="1164118113764" resolveInfo="PrimitiveType" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107215720091">
       <property name="value" value="boolean" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
@@ -1602,6 +1602,13 @@
       <property name="role" value="body" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1068580123136" resolveInfo="StatementList" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1164118113764">
+    <property name="name" value="PrimitiveType" />
+    <link role="extends" targetNodeId="1068431790189" resolveInfo="Type" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1164118124000">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" />
     </node>
   </node>
 </model>
