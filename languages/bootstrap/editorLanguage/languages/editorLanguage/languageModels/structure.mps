@@ -551,13 +551,6 @@
       <property name="name" value="everyModel" />
       <link role="dataType" targetNodeId="3.1082983657063" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1081293058844">
-      <property name="sourceCardinality" value="0..n" />
-      <property name="targetCardinality" value="1" />
-      <property name="role" value="entry" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1081293058845" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1139445935125">
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="applicableConcept" />
@@ -573,28 +566,6 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1158938229201">
       <property name="value" value="cell keymap" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1081293058845">
-    <property name="name" value="CellKeyMapEntry" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1146864442929">
-      <property name="value" value="remove after next buid" />
-      <link role="conceptPropertyDeclaration" targetNodeId="3.1146864206911" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1081293058846">
-      <property name="propertyType" value="string" />
-      <property name="name" value="modifiers" />
-      <link role="dataType" targetNodeId="3.1082983041843" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1081293058847">
-      <property name="propertyType" value="string" />
-      <property name="name" value="keycode" />
-      <link role="dataType" targetNodeId="3.1082983041843" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1081231329953">
-      <property name="propertyType" value="string" />
-      <property name="name" value="actionProviderId" />
-      <link role="dataType" targetNodeId="3.1082983041843" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.EnumerationDataTypeDeclaration" id="1083928804390">
