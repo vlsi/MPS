@@ -48,9 +48,8 @@ public abstract class GenericEditorUpdater {
   protected void doUpdate() {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        String commandName = "update editor [" + NameUtil.shortNameFromLongName(GenericEditorUpdater.this.getClass().getName()) + "]";
         CommandProcessor commandProcessor = CommandProcessor.instance();
-        commandProcessor.tryToExecuteCommand(new Runnable() {
+        commandProcessor.tryToCheckTypes(new Runnable() {
           public void run() {
             MPSProjects projects = ApplicationComponents.getInstance().getComponentSafe(MPSProjects.class);
             for (MPSProject project : projects.getProjects()) {
@@ -59,7 +58,8 @@ public abstract class GenericEditorUpdater {
               EditorsPane editorsPane = project.getComponentSafe(AbstractProjectFrame.class).getEditorsPane();
               boolean isUpdated = false;
               for (IEditor editor : editorsPane.getEditors()) {
-                if (editor.getCurrentEditorComponent() != null && updateEditor(editor.getCurrentEditorComponent())) {
+                if (editor.getCurrentEditorComponent() != null &&
+                        updateEditor(editor.getCurrentEditorComponent())) {
                   isUpdated = true;
                 }
               }
@@ -75,7 +75,7 @@ public abstract class GenericEditorUpdater {
               }
             }
           }
-        }, commandName, false);
+        }, "editor update");
       }
     });
   }
