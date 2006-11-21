@@ -180,7 +180,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
         if (newConceptContainer == null) {
           newConceptContainer = new ConceptContainer(parentConcept, this);
           if (parentConcept.getModel() != structureModel) {
-            newConceptContainer.setColor(Color.LIGHT_GRAY);
+            newConceptContainer.setColor(ColorAndGraphicsUtil.saturateColor(Color.ORANGE, 0.5f));
           }
         }
         newConceptContainer.addChild(prevConceptContainer);
@@ -204,9 +204,8 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
       root.updateSubtreeWidth();
       maxWidth = Math.max(maxWidth, root.getSubtreeWidth());
     }
-    y = relayoutChildren(myRoots, x, y, true);
+    myHeight = relayoutChildren(myRoots, x, y, true);
     myWidth = maxWidth;
-    myHeight = y;
   }
 
   private int relayoutChildren(List<ConceptContainer> currentChildren, int x, int y, boolean vertical) {
@@ -221,7 +220,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
         y_ = y;
       } else {
         x += subtreeWidth;
-        y_ = (int) (Math.max(y + SPACING * myScale + root.getHeight(), newY));
+        y_ = (int) (Math.max(y_, Math.max(y + SPACING * myScale + root.getHeight(), newY)));
       }
     }
     return y_;
@@ -276,7 +275,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     private int myY;
     private int myWidth;
     private int myHeight;
-    private Color myColor = Color.ORANGE;
+    private Color myColor = ColorAndGraphicsUtil.saturateColor(Color.BLUE, 0.2f);
     private boolean myRootable = false;
     private int mySubtreeWidth = 0;
     private java.util.List<ConceptContainer> myChildren = new ArrayList<ConceptContainer>();
