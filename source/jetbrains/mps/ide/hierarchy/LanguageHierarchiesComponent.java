@@ -43,7 +43,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
   private boolean mySkipAncestors = true;
   private int myWidth = 0;
   private int myHeight = 0;
-  public TextField myScaleField;
+  public JTextField myScaleField;
 
   public LanguageHierarchiesComponent(Language language, IOperationContext context) {
     myLanguage = language;
@@ -60,7 +60,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
 
     final JPanel toolsPane = new JPanel();
     toolsPane.setLayout(new FlowLayout(FlowLayout.LEFT));
-    myScaleField = new TextField("100%");
+    myScaleField = new JTextField("100%");
     myScaleField.setEditable(false);
     toolsPane.add(myScaleField);
     toolsPane.add(new JButton(new AbstractAction("+") {
