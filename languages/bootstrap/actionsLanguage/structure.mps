@@ -221,26 +221,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1154722711862">
-    <property name="name" value="ReferentSubstitutePreconditionFunction" />
-    <link role="extends" targetNodeId="3.1137021947720" />
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1154722711863">
-      <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" />
-      <node role="target" type="jetbrains.mps.baseLanguage.BooleanType" id="1154722711864" />
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1161706063363">
-      <link role="target" targetNodeId="5.1161622878565" />
-      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" />
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1161706063364">
-      <link role="target" targetNodeId="5.1161622753914" />
-      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1154722711870">
-      <property name="value" value="precondition" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1158700664498">
     <property name="rootable" value="true" />
     <property name="name" value="NodeFactories" />
