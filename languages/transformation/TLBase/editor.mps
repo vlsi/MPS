@@ -2588,32 +2588,12 @@
           <property name="name" value="indent" />
           <property name="selectable" value="false" />
         </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1164129387426">
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1164212870535">
           <property name="drawBorder" value="false" />
           <property name="vertical" value="true" />
+          <property name="gridLayout" value="true" />
           <property name="selectable" value="false" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164129387427">
-            <property name="text" value="rewriting rules:" />
-            <property name="drawBorder" value="false" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1164129387428">
-            <property name="drawBorder" value="false" />
-            <property name="vertical" value="false" />
-            <property name="selectable" value="false" />
-            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164129387429">
-              <property name="text" value="    " />
-              <property name="drawBorder" value="false" />
-              <property name="name" value="indent" />
-              <property name="selectable" value="false" />
-            </node>
-            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1164129387430">
-              <property name="drawBorder" value="false" />
-              <property name="vertical" value="true" />
-              <property name="gridLayout" value="true" />
-              <property name="selectable" value="false" />
-              <link role="relationDeclaration" targetNodeId="1.1164129352445" />
-            </node>
-          </node>
+          <link role="relationDeclaration" targetNodeId="1.1164129352445" />
         </node>
       </node>
     </node>

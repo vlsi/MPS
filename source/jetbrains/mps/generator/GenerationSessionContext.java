@@ -100,17 +100,28 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   }
 
   private List<Generator> getGeneratorModules(SModel sourceModel) {
-    // -- create generators list
     List<Generator> generators = new LinkedList<Generator>();
+
+    // from all languages used in source model ..
     List<Language> sourceLanguages = sourceModel.getLanguages(myInvocationContext.getScope());
     for (Language sourceLanguage : sourceLanguages) {
       List<Generator> sourceLanguageGenerators = sourceLanguage.getGenerators();
       for (Generator sourceLanguageGenerator : sourceLanguageGenerators) {
+        // .. get generator to 'target language'
         if (myTargetLanguage.getNamespace().equals(sourceLanguageGenerator.getTargetLanguageName())) {
-          generators.add(sourceLanguageGenerator);
+          if (!generators.contains(sourceLanguageGenerator)) {
+            generators.add(sourceLanguageGenerator);
+          }
+        }
+        // .. get 'rewriting' generator (to self)
+        if (sourceLanguage.getNamespace().equals(sourceLanguageGenerator.getTargetLanguageName())) {
+          if (!generators.contains(sourceLanguageGenerator)) {
+            generators.add(sourceLanguageGenerator);
+          }
         }
       }
     }
+
     // the target language may have "reduction" generator
     List<Generator> reductionGenerators = myTargetLanguage.getGenerators();
     for (Generator generator : reductionGenerators) {
@@ -120,6 +131,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
         }
       }
     }
+
     return generators;
   }
 
