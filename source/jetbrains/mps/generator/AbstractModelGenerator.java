@@ -7,6 +7,7 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.ide.messages.MessageView;
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
@@ -15,9 +16,11 @@ public abstract class AbstractModelGenerator implements IModelGenerator {
   private IOperationContext myOperationContext;
   private SModel mySourceModel;
   private SModel myTargetModel;
+  private IAdaptiveProgressMonitor myProgressMonitor;
 
-  protected AbstractModelGenerator(IOperationContext operationContext) {
+  protected AbstractModelGenerator(IOperationContext operationContext, IAdaptiveProgressMonitor progressMonitor) {
     myOperationContext = operationContext;
+    myProgressMonitor = progressMonitor;
   }
 
   public IOperationContext getOperationContext() {
@@ -49,5 +52,13 @@ public abstract class AbstractModelGenerator implements IModelGenerator {
 
   protected void setTargetModel(SModel targetModel) {
     myTargetModel = targetModel;
+  }
+
+  public IAdaptiveProgressMonitor getProgressMonitor() {
+    return myProgressMonitor;
+  }
+
+  protected void checkMonitorCanceled() {
+    if (myProgressMonitor.isCanceled()) throw new GenerationCanceledException();
   }
 }

@@ -31,8 +31,6 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
 
   IAdaptiveProgressMonitor getProgressMonitor();
 
-  boolean doPreliminaryRewriting(SModel inputModel, SModel outputModel) throws GenerationFailedException;
-
   boolean doPrimaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailedException;
 
   boolean doSecondaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailedException;
@@ -77,7 +75,7 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
 
   int getErrorCount();
 
-  INodeBuilder createCopyingNodeBuilder(SNode sourceNode, SNode templateNode);
+  AbstractNodeBuilderManager getNodeBuilderManager();
 
   void notifyBuilderCreated(INodeBuilder builder);
 

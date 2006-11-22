@@ -18,8 +18,6 @@ import jetbrains.mps.transformation.TLBase.*;
 import jetbrains.mps.transformation.TemplateLanguageUtil;
 import jetbrains.mps.util.QueryMethod;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -50,10 +48,6 @@ public class TemplateGenUtil {
       }
 
       // the reference MACRO exists?
-      /*  String macroReferenceRole = ITemplateGenerator.ROLE_PREFIX_REFEENCE_MAKRO + templateReference.getRole();
-      if (templateNode.getChild(macroReferenceRole) != null) {
-        continue;
-      }*/
       if (ReferenceMacro_AnnotationLink.
               getReferenceMacro((BaseConcept) templateNode, templateReference.getRole()) != null) {
         continue;
@@ -124,40 +118,40 @@ public class TemplateGenUtil {
     return referenceResolver;
   }
 
-  private static INodeBuilder loadNodeBuilder(SNode sourceNode, SNode templateNode, String mappingName, boolean isCopying, ITemplateGenerator generator) {
-    // custom builders are only available for target language
-    Language targetLanguage = generator.getTargetLanguage();
-    String conceptName = templateNode.getConceptName();
-    if (targetLanguage.findConceptDeclaration(conceptName) == null) {
-      // concept is not declared in 'target language'
-      return null;
-    }
-    String buildersPackageName = targetLanguage.getNamespace() + ".builder";
-    String builderClassName = buildersPackageName + "." + conceptName + "_NodeBuilder";
-    try {
-      Constructor constructor = QueryMethod.getNodeBuilderConstructor(builderClassName);
-      if (constructor == null) return null;
-
-      // should be 1 constructor with parameters:
-      // SNode sourceNode, SNode templateNode, String mappingName, boolean isCopying, ITemplateGenerator generator
-      return (INodeBuilder) constructor.newInstance(sourceNode, templateNode, mappingName, isCopying, generator);
-    } catch (IllegalAccessException e) {
-      LOG.error(builderClassName);
-      throw new RuntimeException(e);
-    } catch (InvocationTargetException e) {
-      LOG.error(builderClassName);
-      throw new RuntimeException(e);
-    } catch (InstantiationException e) {
-      LOG.error(builderClassName);
-      throw new RuntimeException(e);
-    } catch (Error e) {
-      LOG.error(builderClassName);
-      throw e;
-    } catch (RuntimeException e) {
-      LOG.error(builderClassName);
-      throw e;
-    }
-  }
+//  private static INodeBuilder loadNodeBuilder(SNode sourceNode, SNode templateNode, String mappingName, boolean isCopying, ITemplateGenerator generator) {
+//    // custom builders are only available for target language
+//    Language targetLanguage = generator.getTargetLanguage();
+//    String conceptName = templateNode.getConceptName();
+//    if (targetLanguage.findConceptDeclaration(conceptName) == null) {
+//      // concept is not declared in 'target language'
+//      return null;
+//    }
+//    String buildersPackageName = targetLanguage.getNamespace() + ".builder";
+//    String builderClassName = buildersPackageName + "." + conceptName + "_NodeBuilder";
+//    try {
+//      Constructor constructor = QueryMethod.getNodeBuilderConstructor(builderClassName);
+//      if (constructor == null) return null;
+//
+//      // should be 1 constructor with parameters:
+//      // SNode sourceNode, SNode templateNode, String mappingName, boolean isCopying, ITemplateGenerator generator
+//      return (INodeBuilder) constructor.newInstance(sourceNode, templateNode, mappingName, isCopying, generator);
+//    } catch (IllegalAccessException e) {
+//      LOG.error(builderClassName);
+//      throw new RuntimeException(e);
+//    } catch (InvocationTargetException e) {
+//      LOG.error(builderClassName);
+//      throw new RuntimeException(e);
+//    } catch (InstantiationException e) {
+//      LOG.error(builderClassName);
+//      throw new RuntimeException(e);
+//    } catch (Error e) {
+//      LOG.error(builderClassName);
+//      throw e;
+//    } catch (RuntimeException e) {
+//      LOG.error(builderClassName);
+//      throw e;
+//    }
+//  }
 
   public static IReferenceResolver loadReferenceResolver(SNode templateNode, IScope scope) {
     ConceptDeclaration conceptDeclaration = SModelUtil.getConceptDeclaration(templateNode, scope);
@@ -494,10 +488,10 @@ public class TemplateGenUtil {
         }
 
       } else if (nodeMacro instanceof CopySrcNodeMacro) {
-        builder = generator.createCopyingNodeBuilder(sourceNode, templateNode);
+        builder = generator.getNodeBuilderManager().createCopyingNodeBuilder(sourceNode, templateNode);
         builderComplete = true;
       } else if (nodeMacro instanceof CopySrcListMacro) {
-        builder = generator.createCopyingNodeBuilder(sourceNode, templateNode);
+        builder = generator.getNodeBuilderManager().createCopyingNodeBuilder(sourceNode, templateNode);
         builderComplete = true;
       } else if (nodeMacro instanceof MapSrcNodeMacro) {
         MapSrcNodeMacro mapSrcNodeMacro = (MapSrcNodeMacro) nodeMacro;
@@ -543,20 +537,21 @@ public class TemplateGenUtil {
     } else {
       // proceed with children
       if (builder == null) {
-        builder = createDefaultNodeBuilder(sourceNode, templateNode, mappingName, false, generator);
+//        builder = createDefaultNodeBuilder(sourceNode, templateNode, mappingName, false, generator);
+        builder = generator.getNodeBuilderManager().createDefaultNodeBuilder(sourceNode, templateNode, mappingName, false);
       }
       createChildBuilders(builder);
     }
     return builder;
   }
 
-  public static INodeBuilder createDefaultNodeBuilder(SNode sourceNode, SNode templateNode, String mappingName, boolean isCopying, ITemplateGenerator generator) {
-    INodeBuilder builder = loadNodeBuilder(sourceNode, templateNode, mappingName, isCopying, generator);
-    if (builder == null) {
-      builder = new DefaultNodeBuilder(sourceNode, templateNode, mappingName, isCopying, generator);
-    }
-    return builder;
-  }
+//  public static INodeBuilder createDefaultNodeBuilder(SNode sourceNode, SNode templateNode, String mappingName, boolean isCopying, ITemplateGenerator generator) {
+//    INodeBuilder builder = loadNodeBuilder(sourceNode, templateNode, mappingName, isCopying, generator);
+//    if (builder == null) {
+//      builder = new DefaultNodeBuilder(sourceNode, templateNode, mappingName, isCopying, generator);
+//    }
+//    return builder;
+//  }
 
   private static INodeBuilder createNodeBuilderForSwitch(SNode sourceNode, TemplateSwitch templateSwitch, String mappingName, ITemplateGenerator generator) {
     ConditionalTemplate templateSwitchCase = generator.getTemplateSwitchCase(sourceNode, templateSwitch);

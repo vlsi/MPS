@@ -365,7 +365,7 @@
       <link role="target" targetNodeId="1114456532170" resolveInfo="ReductionRule" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1164129311848">
-      <property name="value" value="preliminary rewriting" />
+      <property name="value" value="rewriting rules" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
     </node>
   </node>

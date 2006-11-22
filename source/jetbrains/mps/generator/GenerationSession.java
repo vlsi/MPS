@@ -1,6 +1,7 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.generator.template.RewritingGenerator;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessageView;
@@ -176,9 +177,10 @@ public class GenerationSession {
     // preliminary rewriting
     // -----------------------
     int preliminaryRewritingRepeatCount = 1;
-    while (generator.doPreliminaryRewriting(currentInputModel.getSModel(), currentOutputModel.getSModel())) {
+    RewritingGenerator rewritingGenerator = new RewritingGenerator(generationContext, generator.getProgressMonitor());
+    while (rewritingGenerator.doModelRewriting(currentInputModel.getSModel(), currentOutputModel.getSModel())) {
       if (++preliminaryRewritingRepeatCount > 10) {
-        generator.showErrorMessage(null, "Failed to rewrite input after 10 repeated preliminari rewritings");
+        rewritingGenerator.showErrorMessage(null, "Failed to rewrite input after 10 repeated preliminari rewritings");
         throw new GenerationFailedException("Failed to rewrite input after 10 repeated preliminari rewritings");
       }
       currentOutputModel.getSModel().validateLanguagesAndImports();
