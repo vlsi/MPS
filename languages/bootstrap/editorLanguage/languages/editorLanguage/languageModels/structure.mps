@@ -49,12 +49,6 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1142886221719" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1075905542141">
-      <property name="sourceCardinality" value="0..1" />
-      <property name="targetCardinality" value="0..n" />
-      <property name="role" value="actionSet" />
-      <link role="target" targetNodeId="1075814723765" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1139959269582">
       <property name="role" value="actionMap" />
       <link role="target" targetNodeId="1139535219966" />
@@ -324,107 +318,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473914776" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1075814723765">
-    <property name="rootable" value="false" />
-    <property name="name" value="CellActionSetDeclaration" />
-    <link role="extends" targetNodeId="3.1078489098625" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1146864428457">
-      <property name="value" value="remove after next buid" />
-      <link role="conceptPropertyDeclaration" targetNodeId="3.1146864206911" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1076585521578">
-      <property name="sourceCardinality" value="0..1" />
-      <property name="targetCardinality" value="0..n" />
-      <property name="role" value="specializes" />
-      <link role="target" targetNodeId="1075814723765" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1075814876298">
-      <property name="sourceCardinality" value="0..n" />
-      <property name="targetCardinality" value="0..n" />
-      <property name="role" value="actionDeclaration" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1075814781157" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1075814781157">
-    <property name="name" value="CellActionModel" />
-    <link role="extends" targetNodeId="3.1133920641626" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1140231807542">
-      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1146864418531">
-      <property name="value" value="remove after next buid" />
-      <link role="conceptPropertyDeclaration" targetNodeId="3.1146864206911" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1075817715188">
-    <property name="name" value="ActionModel_SubstituteNode" />
-    <link role="extends" targetNodeId="1075814781157" />
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1075982592485">
-      <property name="propertyType" value="string" />
-      <property name="name" value="substituteHandlerId" />
-      <link role="dataType" targetNodeId="3.1082983041843" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1075820624646">
-      <property name="sourceCardinality" value="0..n" />
-      <property name="targetCardinality" value="1" />
-      <property name="role" value="item" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1075817880986" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107223377715">
-      <property name="value" value="substitute node" />
-      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1146864400654">
-      <property name="value" value="remove after next buid" />
-      <link role="conceptPropertyDeclaration" targetNodeId="3.1146864206911" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1075817880986">
-    <property name="name" value="SubstituteItemDeclaration" />
-    <link role="extends" targetNodeId="3.1078489098625" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1147107063942">
-      <property name="value" value="remove after next build" />
-      <link role="conceptPropertyDeclaration" targetNodeId="3.1146864206911" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1155158630212">
-      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1076419276437">
-      <property name="propertyType" value="string" />
-      <property name="name" value="matcherId" />
-      <link role="dataType" targetNodeId="3.1082983041843" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1076419310376">
-      <property name="propertyType" value="string" />
-      <property name="name" value="handlerId" />
-      <link role="dataType" targetNodeId="3.1082983041843" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1075818070959">
-    <property name="name" value="SubstituteItem_ItemGroup" />
-    <link role="extends" targetNodeId="1075817880986" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1146864519402">
-      <property name="value" value="remove after next buid" />
-      <link role="conceptPropertyDeclaration" targetNodeId="3.1146864206911" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1075906840783">
-      <property name="propertyType" value="string" />
-      <property name="name" value="queryId" />
-      <link role="dataType" targetNodeId="3.1082983041843" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1075820394563">
-      <property name="propertyType" value="string" />
-      <property name="name" value="textProviderId" />
-      <link role="dataType" targetNodeId="3.1082983041843" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1081947608593">
-      <property name="propertyType" value="string" />
-      <property name="name" value="descriptionProviderId" />
-      <link role="dataType" targetNodeId="3.1082983041843" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1078308402140">
     <property name="name" value="CellModel_Custom" />
     <link role="extends" targetNodeId="1073389214265" />
@@ -533,13 +426,6 @@
       <property name="role" value="cellModel" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1073389214265" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1080736633878">
-      <property name="sourceCardinality" value="0..n" />
-      <property name="targetCardinality" value="1" />
-      <property name="role" value="actionSetDeclaration" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1075814723765" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1081293058843">
