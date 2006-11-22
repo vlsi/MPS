@@ -45,12 +45,6 @@
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptPropertyDeclaration" id="1137473994950">
       <property name="name" value="dontSubstituteByDefault" />
     </node>
-    <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptPropertyDeclaration" id="1146864206911">
-      <property name="name" value="deprecated_262" />
-    </node>
-    <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptPropertyDeclaration" id="1146864220741">
-      <property name="name" value="deprecated_292" />
-    </node>
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptPropertyDeclaration" id="1154621836409">
       <property name="name" value="deprecated_314" />
     </node>

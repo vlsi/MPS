@@ -18,6 +18,7 @@ import jetbrains.mps.plugin.CompilationResult;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.transformation.TLBase.MappingConfiguration;
 import org.jdom.Element;
 
 import java.io.File;
@@ -138,7 +139,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   public static List<Language> getPossibleTargetLanguages(List<SModel> sourceModels, IScope scope) {
     List<Language> targetLanguages = new LinkedList<Language>();
     for (SModel sourceModel : sourceModels) {
-      List<Language> languages = GeneratorManager.getPossibleTargetLanguages(sourceModel, scope);
+      List<Language> languages = getPossibleTargetLanguages(sourceModel, scope);
       for (Language language : languages) {
         if (!targetLanguages.contains(language)) {
           targetLanguages.add(language);
@@ -148,26 +149,28 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     return targetLanguages;
   }
 
-  public static List<Language> getPossibleTargetLanguages(SModel sourceModel, IScope scope) {
+  private static List<Language> getPossibleTargetLanguages(SModel sourceModel, IScope scope) {
     List<Language> targetLanguages = new LinkedList<Language>();
     List<Language> languages = sourceModel.getLanguages(scope);
-    for (Language language : languages) {
-      List<Generator> generators = language.getGenerators();
+    for (Language sourceLanguage : languages) {
+      List<Generator> generators = sourceLanguage.getGenerators();
       for (Generator generator : generators) {
         Language targetLanguage = generator.getTargetLanguage();
         if (targetLanguage != null && !targetLanguages.contains(targetLanguage)) {
-          targetLanguages.add(targetLanguage);
+          // only take generators with 'mapping configuration'.
+          // otherwise it is pure 'rewriting' generator - it's target language is not target of generation
+          if (containsMappingConfiguration(generator)) {
+            targetLanguages.add(targetLanguage);
+          }
         }
       }
     }
     return targetLanguages;
   }
 
-  public static boolean isPossibleTargetLanguage(Language language) {
-    List<Generator> generators = language.getGenerators();
-    for (Generator generator : generators) {
-      Language targetLanguage = generator.getTargetLanguage();
-      if (targetLanguage == language) {
+  private static boolean containsMappingConfiguration(Generator generator) {
+    for (SModelDescriptor templateModel : generator.getOwnTemplateModels()) {
+      if (SModelUtil.allNodes(templateModel.getSModel(), MappingConfiguration.class).size() > 0) {
         return true;
       }
     }
@@ -197,13 +200,13 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     final Object lock = new Object();
     generateModelsWithProgressWindow(sourceModels, targetLanguage, invocationContext, generationType, new Runnable() {
       public void run() {
-        synchronized(lock) {
+        synchronized (lock) {
           lock.notifyAll();
         }
       }
     }, finishAnyway, monitor);
 
-    synchronized(lock) {
+    synchronized (lock) {
       try {
         lock.wait();
       } catch (InterruptedException e) {

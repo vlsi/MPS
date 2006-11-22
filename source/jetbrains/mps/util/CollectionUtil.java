@@ -1,7 +1,6 @@
 package jetbrains.mps.util;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
 
 import java.util.*;
 
@@ -10,7 +9,7 @@ import java.util.*;
  */
 public class CollectionUtil {
 
-  public static<T, F extends T> List<F> filter(Class<F> cls, List<T> l) {
+  public static <T, F extends T> List<F> filter(Class<F> cls, List<T> l) {
     List<F> result = new ArrayList<F>();
     for (T t : l) {
       if (cls.isInstance(t)) result.add((F) t);
@@ -23,10 +22,10 @@ public class CollectionUtil {
     for (T t : s) {
       if (cls.isInstance(t)) result.add((F) t);
     }
-    return  result;
+    return result;
   }
 
-  public static<T> List<T> filter(List<? extends T> ts, Condition<T> f) {
+  public static <T> List<T> filter(List<? extends T> ts, Condition<T> f) {
     List<T> result = new ArrayList<T>();
     for (T t : ts) {
       if (f.met(t)) {
@@ -36,7 +35,7 @@ public class CollectionUtil {
     return result;
   }
 
-  public static<T> Set<T> filter(Set<T> ts, Condition<T> f) {
+  public static <T> Set<T> filter(Set<T> ts, Condition<T> f) {
     Set<T> result = new HashSet<T>();
     for (T t : ts) {
       if (f.met(t)) {
@@ -102,7 +101,7 @@ public class CollectionUtil {
     return result;
   }
 
-  public static<T> List<T> asList(T... ts) {
+  public static <T> List<T> asList(T... ts) {
     List<T> result = new ArrayList<T>();
     for (T t : ts) {
       result.add(t);
@@ -110,7 +109,7 @@ public class CollectionUtil {
     return result;
   }
 
-  public static<T> Vector<T> asVector(T... ts) {
+  public static <T> Vector<T> asVector(T... ts) {
     Vector<T> result = new Vector<T>();
     for (T t : ts) {
       result.add(t);
@@ -118,15 +117,15 @@ public class CollectionUtil {
     return result;
   }
 
-  public static<R,P> Set<R> map(Set<P> set, Mapper<P, R> mapper) {
+  public static <R, P> Set<R> map(Set<P> set, Mapper<P, R> mapper) {
     Set<R> result = new HashSet<R>();
     for (P p : set) {
       result.add(mapper.map(p));
     }
-    return result;    
+    return result;
   }
 
-  public static<R,P> List<R> map(List<P> list, Mapper<P,R> mapper) {
+  public static <R, P> List<R> map(List<P> list, Mapper<P, R> mapper) {
     List<R> result = new ArrayList<R>();
     for (P p : list) {
       result.add(mapper.map(p));
@@ -134,25 +133,25 @@ public class CollectionUtil {
     return result;
   }
 
-  public static <A,B> B foldLeft(List<A> list, Folder<A,B> folder, B initial) {
+  public static <A, B> B foldLeft(List<A> list, Folder<A, B> folder, B initial) {
     return fold(list, folder, initial);
   }
 
-  public static <A,B> B fold(Iterable<A> iterable, Folder<A,B> folder, B initial) {
+  public static <A, B> B fold(Iterable<A> iterable, Folder<A, B> folder, B initial) {
     B current = initial;
     for (A element : iterable) {
       current = folder.foldOnce(current, element);
     }
     return current;
   }
-  
-  public static<Node extends SNode> Node getByName(
+
+  public static <Node extends SNode> Node getByName(
           Class<Node> cls,
           Iterable<? extends SNode> collection,
           String name) {
     for (SNode node : collection) {
       if (name.equals(node.getName())) {
-        if (cls.isInstance(node)) {        
+        if (cls.isInstance(node)) {
           return (Node) node;
         }
       }
@@ -160,7 +159,7 @@ public class CollectionUtil {
     return null;
   }
 
-  public static<LT extends List> List<String> mapToString(LT list) {
+  public static <LT extends List> List<String> mapToString(LT list) {
     List<String> result = new ArrayList<String>();
     for (Object o : list) {
       result.add(o.toString());
@@ -168,19 +167,19 @@ public class CollectionUtil {
     return result;
   }
 
-  public static<E> void iterate(Collection<E> c, CollectionBlock<E> block) {
+  public static <E> void iterate(Collection<E> c, CollectionBlock<E> block) {
     for (E e : c) {
       block.run(e);
     }
   }
 
-  public static<K, V> void iterate(Map<K, V> m, MapBlock<K, V> block) {
+  public static <K, V> void iterate(Map<K, V> m, MapBlock<K, V> block) {
     for (K k : m.keySet()) {
       block.run(k, m.get(k));
     }
   }
 
-  public static<T> Iterator<T> concatenate(final Iterator<? extends T> it1, final Iterator<? extends T> it2) {
+  public static <T> Iterator<T> concatenate(final Iterator<? extends T> it1, final Iterator<? extends T> it2) {
     return new Iterator<T>() {
       public boolean myFirstActive = true;
 
@@ -216,10 +215,18 @@ public class CollectionUtil {
     };
   }
 
-  public static<T> List<T> setAsList(Set<T> set) {
+  public static <T> List<T> setAsList(Set<T> set) {
     List<T> result = new ArrayList<T>();
     result.addAll(set);
     return result;
+  }
+
+  public static <T> void addAllNotPresent(Collection<T> fromCollection, Collection<T> toCollection) {
+    for (T t : fromCollection) {
+      if (!toCollection.contains(t)) {
+        toCollection.add(t);
+      }
+    }
   }
 
   public interface CollectionBlock<E> {

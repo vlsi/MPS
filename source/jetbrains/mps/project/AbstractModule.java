@@ -203,13 +203,6 @@ public abstract class AbstractModule implements IModule {
   @NotNull
   public List<SModelDescriptor> getOwnModelDescriptors() {
     List<SModelDescriptor> modelDescriptors = SModelRepository.getInstance().getModelDescriptors(this);
-// this code seems to be pointless    
-//    while (iterator.hasNext()) {
-//      SModelDescriptor descriptor = iterator.next();
-//      if (ProjectModels.isProjectModel(descriptor.getModelUID())) {
-//        iterator.remove();
-//      }
-//    }
     return modelDescriptors;
   }
 

@@ -39,6 +39,17 @@ public class Generator extends AbstractModule {
   }
 
   @NotNull
+  public List<SModelDescriptor> getOwnTemplateModels() {
+    List<SModelDescriptor> templateModels = new LinkedList<SModelDescriptor>();
+    for (SModelDescriptor modelDescriptor : getOwnModelDescriptors()) {
+      if (SModelStereotype.TEMPLATES.equals(modelDescriptor.getStereotype())) {
+        templateModels.add(modelDescriptor);
+      }
+    }
+    return templateModels;
+  }
+
+  @NotNull
   public ModuleDescriptor getModuleDescriptor() {
     return myGeneratorDescriptor;
   }
@@ -110,7 +121,7 @@ public class Generator extends AbstractModule {
 
   /**
    * DO NOT comment out this code. If you comment it out, stack overflow will
-   * sometimes happen. 
+   * sometimes happen.
    */
   @Nullable
   @Override

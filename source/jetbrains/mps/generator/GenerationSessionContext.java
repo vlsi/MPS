@@ -7,6 +7,7 @@ import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.projectLanguage.ModuleDescriptor;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -45,14 +46,8 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private void initTemplateModels() {
     myTemplateModels = new LinkedList<SModelDescriptor>();
     for (Generator generatorModule : myGeneratorModules) {
-      List<SModelDescriptor> ownModelDescriptors = generatorModule.getOwnModelDescriptors();
-      for (SModelDescriptor modelDescriptor : ownModelDescriptors) {
-        if (SModelStereotype.TEMPLATES.equals(modelDescriptor.getStereotype())) {
-          if (!myTemplateModels.contains(modelDescriptor)) {
-            myTemplateModels.add(modelDescriptor);
-          }
-        }
-      }
+      List<SModelDescriptor> templateModels = generatorModule.getOwnTemplateModels();
+      CollectionUtil.addAllNotPresent(templateModels, myTemplateModels);
     }
   }
 
