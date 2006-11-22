@@ -53,4 +53,6 @@ public interface IEditor {
   void repaint();
 
   @Nullable AbstractEditorComponent getCurrentEditorComponent();
+
+  boolean removeFromRecentEditorsOnClose();
 }

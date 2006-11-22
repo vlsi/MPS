@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeProxy;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.GenericContext;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -120,11 +121,21 @@ public class UIEditorComponent extends AbstractEditorComponent implements IEdito
     return this;
   }
 
+
+  @Nullable
+  public IEditor openEditor(@NotNull GenericContext context, IOperationContext operationContext) {
+    throw new UnsupportedOperationException();
+  }
+
   private class MyEditor implements IEditor {
     public void addChangeListener(@NotNull ChangeListener listener) {
     }
 
     public void removeChangeListener(@NotNull ChangeListener listener) {
+    }
+
+    public boolean removeFromRecentEditorsOnClose() {
+      return false;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
     public JComponent getComponent() {

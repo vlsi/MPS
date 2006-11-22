@@ -49,6 +49,10 @@ public class InspectorEditorComponent extends AbstractEditorComponent implements
   }
 
 
+  public boolean removeFromRecentEditorsOnClose() {
+    return false;  //To change body of implemented methods use File | Settings | File Templates.
+  }
+
   @Nullable
   public EditorInfo getEditorInfo() {
     return null;  

@@ -44,6 +44,10 @@ public class NodeEditor implements IEditor {
   public void removeChangeListener(@NotNull ChangeListener listener) {
   }
 
+  public boolean removeFromRecentEditorsOnClose() {
+    return false;  //To change body of implemented methods use File | Settings | File Templates.
+  }
+
   public void addCellSelectionListener(@NotNull ICellSelectionListener listener) {
     myEditorComponent.addCellSelectionListener(listener);
   }
