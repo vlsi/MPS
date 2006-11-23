@@ -34,8 +34,18 @@ public abstract class AbstractNodeInformationDialog extends JDialog {
 
     add(new JScrollPane(myTextArea));
 
-    setSize(Math.min(getDefaultSize().width, preferredSize.width) + 30,
-            Math.min(getDefaultSize().height, preferredSize.height) + 30);
+    Dimension newSize = null;
+
+
+    if (!getLineWrap()) {
+      newSize = new Dimension(Math.min(getDefaultSize().width, preferredSize.width) + 30,
+              Math.min(getDefaultSize().height, preferredSize.height) + 30);          
+    } else {
+      newSize = getDefaultSize();
+    }
+
+
+    setSize(newSize);
     setLocation(location);
 
     Rectangle rect = WindowsUtil.findDeviceBoundsAt(location);
@@ -47,8 +57,6 @@ public abstract class AbstractNodeInformationDialog extends JDialog {
     if (rect.y + rect.height < getY() + getHeight()) {
       setLocation(getX(), rect.y + rect.height - getHeight());              
     }
-
-
 
     myTextArea.addKeyListener(new KeyAdapter() {
       public void keyPressed(KeyEvent e) {

@@ -109,7 +109,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
           }
         });
 
-        putAction("ctrl", "VK_I", new EditorCellKeyMapAction() {
+        putAction(EditorCellKeyMap.KEY_MODIFIERS_CTRL_SHIFT, "VK_I", new EditorCellKeyMapAction() {
           public boolean canExecute(KeyEvent keyEvent, EditorContext context) {
             return true;
           }
