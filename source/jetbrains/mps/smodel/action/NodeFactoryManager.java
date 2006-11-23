@@ -39,7 +39,6 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
   }
 
   private static boolean setupNode_internal(ConceptDeclaration nodeConcept, SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-
     // find node factory
     List<NodeFactory> nodeFactories = new LinkedList<NodeFactory>();
     ConceptDeclaration concept = nodeConcept;
