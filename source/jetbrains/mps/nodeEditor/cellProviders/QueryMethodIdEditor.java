@@ -1,4 +1,4 @@
-package jetbrains.mps.bootstrap.editorLanguage.editor;
+package jetbrains.mps.nodeEditor.cellProviders;
 
 import jetbrains.mps.baseLanguage.ClassConcept;
 import jetbrains.mps.baseLanguage.StaticMethodDeclaration;
@@ -30,6 +30,8 @@ import java.util.List;
  */
 public abstract class QueryMethodIdEditor extends AbstractCellProvider {
   private static final Logger LOG = Logger.getLogger(QueryMethodIdEditor.class);
+
+  public static final String QUERY_METHOD_CELL_PROVIDER = "query-method-cell-provider";
 
   private boolean myMustBeSet;
 
@@ -110,44 +112,57 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
         });
 
         putAction(EditorCellKeyMap.KEY_MODIFIERS_CTRL_SHIFT, "VK_I", new EditorCellKeyMapAction() {
+          public boolean isShownInPopupMenu() {
+            return true;
+          }
+
           public boolean canExecute(KeyEvent keyEvent, EditorContext context) {
             return true;
           }
 
           public void execute(KeyEvent keyEvent, EditorContext context) {
-            try {
-              IProjectHandler handler = context.getOperationContext().getProject().getProjectHandler();
-              assert handler != null;
 
+            EditorCell cell = editorCell;
 
-              final String methodText = handler.getQueryMethodText(getNamespace(), getQueryMethodPrefix() + getQueryMethodId());
-
-              Point point = new Point(editorCell.getX() + editorCell.getWidth(), editorCell.getY());
-              SwingUtilities.convertPointToScreen(point, context.getNodeEditorComponent());
-
-              new AbstractNodeInformationDialog(context.getOperationContext().getMainFrame(), point, getSNode()) {
-                protected boolean getLineWrap() {
-                  return false;
-                }
-
-                protected String createNodeInfo(SNode node) {
-                  return methodText;
-                }
-
-
-                protected Dimension getDefaultSize() {
-                  return new Dimension(1000, 400);
-                }
-              }.setVisible(true);
-              
-            } catch (IOException e) {
-              e.printStackTrace();
-            }
+            showMethodTextOnACell(cell, context);
           }
         });
       }
     });
+    
+    editorCell.putUserObject(QUERY_METHOD_CELL_PROVIDER, this);
     return editorCell;
+  }
+
+  public void showMethodTextOnACell(EditorCell cell, final EditorContext context) {
+    try {
+      IProjectHandler handler = context.getOperationContext().getProject().getProjectHandler();
+      assert handler != null;
+
+
+      final String methodText = handler.getQueryMethodText(getNamespace(), getQueryMethodPrefix() + getQueryMethodId());
+
+      Point point = new Point(cell.getX() + cell.getWidth(), cell.getY());
+      SwingUtilities.convertPointToScreen(point, cell.getEditor());
+
+      new AbstractNodeInformationDialog(context.getOperationContext().getMainFrame(), point, getSNode()) {
+        protected boolean getLineWrap() {
+          return false;
+        }
+
+        protected String createNodeInfo(SNode node) {
+          return methodText;
+        }
+
+
+        protected Dimension getDefaultSize() {
+          return new Dimension(1000, 400);
+        }
+      }.setVisible(true);
+
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 
   protected List<INodeSubstituteItem> createActions(EditorContext context) {
