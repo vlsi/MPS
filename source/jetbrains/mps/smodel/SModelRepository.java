@@ -6,6 +6,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.smodel.event.*;
 
 import java.util.*;
 import java.io.File;
@@ -27,11 +28,63 @@ public class SModelRepository extends SModelAdapter {
   private Set<SModelDescriptor> myModelsWithNoOwners = new HashSet<SModelDescriptor>();
   private List<RepositoryListener> myListeners = new ArrayList<RepositoryListener>();
 
+
+  private Map<String, List<SModelCommandListener>> myCommandListeners = new HashMap<String, List<SModelCommandListener>>();
+  private Map<ILanguageModelListenerOwner, List<SModelCommandListener>> myOwnersToListeners = new HashMap<ILanguageModelListenerOwner, List<SModelCommandListener>>();
+
+  private SModelCommandListener myListener = new SModelCommandListener() {
+    public void modelChangedInCommand(List<SModelEvent> events) {
+      someModelChangedInCommand(events);
+    }
+  };
+
   public SModelRepository() {
   }
 
   public static SModelRepository getInstance() {
     return ApplicationComponents.getInstance().getComponent(SModelRepository.class);
+  }
+
+  public void registerLanguageModelListener(String language, SModelCommandListener listener, ILanguageModelListenerOwner owner) {
+    if (myCommandListeners.get(language) == null) {
+      myCommandListeners.put(language,  new ArrayList<SModelCommandListener>());
+    }
+
+    myCommandListeners.get(language).add(listener);
+
+
+    if (myOwnersToListeners.get(owner) == null) {
+      myOwnersToListeners.put(owner, new ArrayList<SModelCommandListener>());
+    }
+
+    myOwnersToListeners.get(owner).add(listener);
+  }
+
+  public void unregisterLangaugeModelListeners(ILanguageModelListenerOwner owner) {
+    if (myOwnersToListeners.get(owner) == null) {
+      return;
+    }
+
+    List<SModelCommandListener> listeners = myOwnersToListeners.get(owner);
+
+    for (List<SModelCommandListener> list : myCommandListeners.values()) {
+      list.removeAll(listeners);
+    }
+
+    myOwnersToListeners.remove(owner);
+  }
+
+  private void someModelChangedInCommand(List<SModelEvent> events) {
+    if (events.size() == 0) return;
+    SModelDescriptor model = events.get(0).getModel().getModelDescriptor();
+    for (String language : model.getSModel().getLanguageNamespaces()) {
+      List<SModelCommandListener> listeners = myCommandListeners.get(language);
+      if (listeners != null) {
+        for (SModelCommandListener l : listeners) {
+          l.modelChangedInCommand(Collections.unmodifiableList(events));
+        }
+      }
+    }
   }
 
   public void refreshModels(Set<SModelDescriptor> skip) {
@@ -119,6 +172,7 @@ public class SModelRepository extends SModelAdapter {
     myModelsWithNoOwners.remove(modelDescriptor);
     owners.add(owner);
     modelDescriptor.addSModelListener(this);
+    modelDescriptor.addSModelCommandListener(myListener);
     fireRepositoryChanged();
   }
 
