@@ -19,10 +19,13 @@ public interface IProjectHandler extends Remote {
   CompilationResult buildModule(final String path) throws RemoteException;
   List<String> getAspectMethodIds(final String namespace, final String prefix) throws RemoteException;
   List<String> findInheritors(final String fqName) throws RemoteException;
+
   void openClass(final String fqName) throws RemoteException;
   void addImport(final String namespace, final String fqName) throws RemoteException;
 
   void openQueryMethod(final String namespace, final String name) throws RemoteException;
+  String getQueryMethodText(final String namespace, final String name) throws RemoteException;
+
   void openMethod(final String className, final String name, final int parameterCount) throws RemoteException;
   void openField(final String className, final String name) throws RemoteException;
   void openConstructor(final String className, final int parameterCount) throws RemoteException;

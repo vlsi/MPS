@@ -14,7 +14,10 @@ import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
 
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import java.awt.event.KeyEvent;
+import java.awt.Point;
+import java.awt.Dimension;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -54,7 +57,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
   protected abstract String getQueryMethodParameterList();
 
   public EditorCell createEditorCell(final EditorContext editorContext) {
-    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
+    final EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return getQueryMethodId();
       }
@@ -100,6 +103,43 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
               IProjectHandler handler = context.getOperationContext().getProject().getProjectHandler();
               assert handler != null;
               handler.openQueryMethod(getNamespace(), getQueryMethodPrefix() + getQueryMethodId());
+            } catch (IOException e) {
+              e.printStackTrace();
+            }
+          }
+        });
+
+        putAction("ctrl", "VK_I", new EditorCellKeyMapAction() {
+          public boolean canExecute(KeyEvent keyEvent, EditorContext context) {
+            return true;
+          }
+
+          public void execute(KeyEvent keyEvent, EditorContext context) {
+            try {
+              IProjectHandler handler = context.getOperationContext().getProject().getProjectHandler();
+              assert handler != null;
+
+
+              final String methodText = handler.getQueryMethodText(getNamespace(), getQueryMethodPrefix() + getQueryMethodId());
+
+              Point point = new Point(editorCell.getX() + editorCell.getWidth(), editorCell.getY());
+              SwingUtilities.convertPointToScreen(point, context.getNodeEditorComponent());
+
+              new AbstractNodeInformationDialog(context.getOperationContext().getMainFrame(), point, getSNode()) {
+                protected boolean getLineWrap() {
+                  return false;
+                }
+
+                protected String createNodeInfo(SNode node) {
+                  return methodText;
+                }
+
+
+                protected Dimension getDefaultSize() {
+                  return new Dimension(600, 400);
+                }
+              }.setVisible(true);
+              
             } catch (IOException e) {
               e.printStackTrace();
             }

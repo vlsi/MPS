@@ -24,7 +24,7 @@ public abstract class AbstractNodeInformationDialog extends JDialog {
     myTextArea = new JTextArea(createNodeInfo(node));
     myTextArea.setFont(EditorSettings.getInstance().getDefaultEditorFont());
     myTextArea.setEditable(false);
-    myTextArea.setLineWrap(true);
+    myTextArea.setLineWrap(getLineWrap());
 
     myTextArea.setBackground(new Color(255, 255, 200));
 
@@ -62,6 +62,10 @@ public abstract class AbstractNodeInformationDialog extends JDialog {
         dispose();
       }
     });
+  }
+
+  protected boolean getLineWrap() {
+    return true;
   }
 
 

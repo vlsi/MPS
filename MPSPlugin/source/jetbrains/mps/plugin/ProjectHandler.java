@@ -43,6 +43,7 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Arrays;
 
 /**
  * @author Kostik
@@ -396,6 +397,45 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
         }
       }
     });
+  }
+
+
+  public String getQueryMethodText(final String namespace, final String name) {
+    if (!isQueriesClassExist(namespace)) return null;
+    final String[] result = new String[] { null };
+    executeWriteAction(new Runnable() {
+      public void run() {
+        PsiClass queries = getQueriesClass(namespace);
+        PsiMethod[] methods = queries.getAllMethods();
+        for (PsiMethod method : methods) {
+          if (method.getName().equals(name)) {
+
+            String text = method.getText();
+
+            PsiElement parent = method.getParent();
+            PsiElement[] children = parent.getChildren();
+            int index = Arrays.asList(children).indexOf(method) - 1;
+
+            while (true) {              
+              if (index == -1) break;
+
+              if (children[index].getText().contains("\n")) {                
+                String childText = children[index].getText();
+                text = childText.substring(childText.lastIndexOf("\n")) + text;
+                break;
+              }
+
+              text = children[index].getText() + text;
+              index--;
+            }
+
+            result[0] = text;
+            return;
+          }
+        }
+      }
+    });
+    return result[0];
   }
 
   public void openMethod(final String className, final String name, final int parameterCount) {
