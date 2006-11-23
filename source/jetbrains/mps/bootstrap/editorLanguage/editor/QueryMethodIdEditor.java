@@ -136,7 +136,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
 
 
                 protected Dimension getDefaultSize() {
-                  return new Dimension(600, 400);
+                  return new Dimension(1000, 400);
                 }
               }.setVisible(true);
               

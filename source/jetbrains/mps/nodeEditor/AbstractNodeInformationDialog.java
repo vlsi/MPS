@@ -22,15 +22,20 @@ public abstract class AbstractNodeInformationDialog extends JDialog {
     setModal(true);
 
     myTextArea = new JTextArea(createNodeInfo(node));
+
+
     myTextArea.setFont(EditorSettings.getInstance().getDefaultEditorFont());
     myTextArea.setEditable(false);
     myTextArea.setLineWrap(getLineWrap());
 
+    Dimension preferredSize = myTextArea.getPreferredSize();
+    
     myTextArea.setBackground(new Color(255, 255, 200));
 
     add(new JScrollPane(myTextArea));
 
-    setSize(getDefaultSize());
+    setSize(Math.min(getDefaultSize().width, preferredSize.width) + 30,
+            Math.min(getDefaultSize().height, preferredSize.height) + 30);
     setLocation(location);
 
     Rectangle rect = WindowsUtil.findDeviceBoundsAt(location);
@@ -40,7 +45,7 @@ public abstract class AbstractNodeInformationDialog extends JDialog {
     }
 
     if (rect.y + rect.height < getY() + getHeight()) {
-      setLocation(getX(), rect.y + rect.height - getHeight());
+      setLocation(getX(), rect.y + rect.height - getHeight());              
     }
 
 
