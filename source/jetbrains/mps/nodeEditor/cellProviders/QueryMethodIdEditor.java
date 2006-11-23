@@ -13,9 +13,9 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
 
-import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
+import javax.swing.*;
 import java.awt.event.KeyEvent;
+import java.awt.event.ActionEvent;
 import java.awt.Point;
 import java.awt.Dimension;
 import java.io.IOException;
@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.rmi.RemoteException;
 
 /**
  * Author: Sergey Dmitriev
@@ -136,16 +137,28 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
 
   public void showMethodTextOnACell(EditorCell cell, final EditorContext context) {
     try {
-      IProjectHandler handler = context.getOperationContext().getProject().getProjectHandler();
+      final IProjectHandler handler = context.getOperationContext().getProject().getProjectHandler();
       assert handler != null;
 
 
       final String methodText = handler.getQueryMethodText(getNamespace(), getQueryMethodPrefix() + getQueryMethodId());
 
-      Point point = new Point(cell.getX() + cell.getWidth(), cell.getY());
+      Point point = new Point(cell.getX(), cell.getY() + cell.getHeight());
       SwingUtilities.convertPointToScreen(point, cell.getEditor());
 
       new AbstractNodeInformationDialog(context.getOperationContext().getMainFrame(), point, getSNode()) {
+        {
+          ((JComponent) getContentPane()).registerKeyboardAction(new AbstractAction() {
+            public void actionPerformed(ActionEvent e) {
+              try {
+                handler.openQueryMethod(getNamespace(), getQueryMethodPrefix() + getQueryMethodId());
+              } catch (RemoteException e1) {
+                e1.printStackTrace();
+              }
+            }
+          }, KeyStroke.getKeyStroke("control B"), JComponent.WHEN_IN_FOCUSED_WINDOW);
+        }
+
         protected boolean getLineWrap() {
           return false;
         }
