@@ -9,11 +9,13 @@ import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.smodel.languageLog.ModelLogger;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.ForDebug;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
+import jetbrains.mps.refactoring.IRefactoring;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -52,6 +54,10 @@ public class SModel implements Iterable<SNode> {
   private Set<SModelUID> myDescriptorNotFoundReportedModelUIDs = new HashSet<SModelUID>();
 
   private HashMap<Object, Object> myUserObjects = new HashMap<Object, Object>();
+  private SNode myLog;
+  private boolean myUsesLog;
+  private int myVersion;
+  private ModelLogger myModelLogger;
 
   public SModel(@NotNull SModelUID modelUID) {
     addSModelListener(myEventTranslator);
@@ -97,6 +103,39 @@ public class SModel implements Iterable<SNode> {
   public String getLongName() {
     return myUID.getLongName();
   }
+
+  public boolean usesLog() {
+    return myUsesLog;
+  }
+
+  public int getVersion() {
+    if (!myUsesLog) return -1;
+    return myVersion;
+  }
+
+  public void setVersion(int version) {
+    myVersion = version;
+  }
+
+  public void setLog(SNode log) {
+    myLog = log;
+  }
+
+  @Nullable
+  public SNode getLog() {
+    return myLog;
+  }
+
+  public void recordRefactoring(IRefactoring refactoring) {
+    if (!myUsesLog) return;
+    myModelLogger.recordRefactoring(refactoring, myLog);
+    myVersion++;
+  }
+
+  public void setUsesLog(boolean usesLog) {
+    myUsesLog = usesLog;
+  }
+
 
   @NotNull
   public Iterator<SNode> roots() {

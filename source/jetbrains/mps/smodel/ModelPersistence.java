@@ -47,6 +47,8 @@ public class ModelPersistence {
   public static final String LANGUAGE = "language";
   public static final String STEREOTYPE = "stereotype";
   public static final String MODEL_UID = "modelUID";
+  public static final String VERSION = "version";
+  public static final String REFACTORING_LOG = "refactoringLog";
 
   @NotNull
   private static Document loadModelDocument(@NotNull File file) {
@@ -169,7 +171,21 @@ public class ModelPersistence {
       model.addImportElement(importedModelUID, importIndex);
     }
 
+    // version & log
     ArrayList<ReferencePersister> referenceDescriptors = new ArrayList<ReferencePersister>();
+    String versionString = rootElement.getAttributeValue(VERSION);
+    if (versionString != null) {
+      model.setVersion(Integer.parseInt(versionString));
+      model.setUsesLog(true);
+      Element logElement = rootElement.getChild(REFACTORING_LOG);
+      if (logElement != null) {
+        Element nodeElement = logElement.getChild(NODE);
+        SNode node = readNode(nodeElement, model, referenceDescriptors, false);
+        model.setLog(node);
+      }
+    }
+
+    // nodes
     List children = rootElement.getChildren(NODE);
     for (Object child : children) {
       Element element = (Element) child;
@@ -357,6 +373,16 @@ public class ModelPersistence {
       SModelUID modelUID = importElement.getModelUID();
       importElem.setAttribute(MODEL_UID, modelUID.toString());
       rootElement.addContent(importElem);
+    }
+
+    // version & log
+    if (sourceModel.usesLog()) {
+      rootElement.setAttribute(VERSION, sourceModel.getVersion()+"");
+      SNode log = sourceModel.getLog();
+      if (log != null) {
+        Element logElement = new Element(REFACTORING_LOG);
+        saveNode(logElement, log);
+      }
     }
 
     Iterator<SNode> iterator = sourceModel.roots();
