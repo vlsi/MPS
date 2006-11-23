@@ -5,13 +5,17 @@ import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.nodeEditor.EditorSettings;
-import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.IEditorOpener;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.EditorsPane;
+import jetbrains.mps.ide.action.IActionDataProvider;
+import jetbrains.mps.ide.action.ActionGroup;
+import jetbrains.mps.ide.action.ActionManager;
+import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.navigation.RecentEditorsMenu;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
+import jetbrains.mps.util.CollectionUtil;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -29,7 +33,7 @@ import org.jetbrains.annotations.NotNull;
  * Time: 15:56:56
  * To change this template use File | Settings | File Templates.
  */
-public class LanguageHierarchiesComponent extends JComponent implements Scrollable {
+public class LanguageHierarchiesComponent extends JComponent implements Scrollable, IActionDataProvider {
   private static final int SPACING = 10;
   private static final int PADDING_X = 5;
   private static final int PADDING_Y = 5;
@@ -43,6 +47,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
   private boolean mySkipAncestors = true;
   private int myWidth = 0;
   private int myHeight = 0;
+  private ConceptContainer mySelectedConceptContainer;
   public JTextField myScaleField;
 
   public LanguageHierarchiesComponent(Language language, IOperationContext context) {
@@ -52,6 +57,18 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
       public void mouseClicked(MouseEvent e) {
         for (ConceptContainer conceptContainer : myRoots) {
           conceptContainer.mouseClicked(e);
+        }
+      }
+
+      public void mousePressed(MouseEvent e) {
+        for (ConceptContainer conceptContainer : myRoots) {
+          conceptContainer.mousePressed(e);
+        }
+      }
+
+      public void mouseReleased(MouseEvent e) {
+        for (ConceptContainer conceptContainer : myRoots) {
+          conceptContainer.mouseReleased(e);
         }
       }
     });
@@ -167,6 +184,26 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     return myPanel;
   }
 
+  private void select(ConceptContainer conceptContainer) {
+    mySelectedConceptContainer = conceptContainer;
+  }
+
+  private ConceptDeclaration getSelectedConcept() {
+    if (mySelectedConceptContainer == null) return null;
+    return mySelectedConceptContainer.getNode();
+  }
+
+  private void processPopupMenu(MouseEvent e) {
+    ActionGroup group = ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_NODE_ACTIONS);
+    if (group == null) return;
+    JPopupMenu popupMenu = new JPopupMenu();
+    ActionContext context = new ActionContext(myOperationContext);
+    context.put(SNode.class, getSelectedConcept());
+    context.put(List.class, CollectionUtil.asList(getSelectedConcept()));
+    group.add(popupMenu, context);
+    popupMenu.show(this, e.getX(), e.getY());
+  }
+
   public java.util.List<ConceptContainer> createHierarchyForest() {
     java.util.List<ConceptContainer> result = new ArrayList<ConceptContainer>();
     Map<ConceptDeclaration, ConceptContainer> processed = new HashMap<ConceptDeclaration, ConceptContainer>();
@@ -228,17 +265,29 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
 
 
   public void rebuild() {
+    mySelectedConceptContainer = null;
     myRoots = createHierarchyForest();
     relayout();
   }
 
   public Dimension getPreferredSize() {
-    return new Dimension(myWidth, myHeight);
+    Container parent = this;
+    while (parent != null) {
+      if (parent instanceof JViewport) break;
+      parent = parent.getParent();
+    }
+    if (parent == null) return new Dimension(myWidth, myHeight);
+    JViewport viewport = (JViewport) parent;
+    Rectangle viewRect = viewport.getViewRect();
+    return new Dimension(Math.max(viewRect.width, myWidth),
+            Math.max(viewRect.height, myHeight));
   }
+
+
 
   protected void paintComponent(Graphics g) {
     g.setColor(Color.WHITE);
-    g.fillRect(0, 0, myWidth, myHeight);
+    g.fillRect(0, 0, getWidth(), getHeight());
     for (ConceptContainer root : myRoots) {
       root.paintTree(g);
     }
@@ -268,6 +317,14 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     return false;
   }
 
+
+  public <T> T get(Class<T> cls) {
+    if (cls == SNode.class) return (T) getSelectedConcept();
+    if (cls == ConceptDeclaration.class) return (T) getSelectedConcept();
+    if (cls == IOperationContext.class) return (T) myOperationContext;
+    return null;
+  }
+
   public static class ConceptContainer {
 
     private SNodeProxy myNodeProxy;
@@ -293,9 +350,24 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
       myComponent = component;
       myOperationContext = myComponent.myOperationContext;
       addMouseListener(new MouseAdapter() {
-        public void mouseClicked(MouseEvent e) {
-          ProjectPane projectPane = myOperationContext.getComponent(IDEProjectFrame.class).getProjectPane();
-          projectPane.selectNode(getNode(), myOperationContext);
+        public void mousePressed(MouseEvent e) {
+          IDEProjectFrame frame = myOperationContext.getComponent(IDEProjectFrame.class);
+          ProjectPane projectPane = frame.getProjectPane();
+          myComponent.select(ConceptContainer.this);
+          if (e.isPopupTrigger()) {
+            myComponent.processPopupMenu(e);
+          } else {
+            projectPane.selectNode(getNode(), myOperationContext);
+            if (e.getClickCount() == 2) {
+              frame.openNode(getNode(), myOperationContext);
+            }
+          }
+        }
+
+        public void mouseReleased(MouseEvent e) {
+          if (e.isPopupTrigger()) {
+            myComponent.processPopupMenu(e);
+          }
         }
       });
     }
@@ -304,16 +376,18 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
       return (ConceptDeclaration) myNodeProxy.getNode();
     }
 
-    public void paint(Graphics g) {
+    public void paint(Graphics graphics) {
+      Graphics2D g = (Graphics2D) graphics;
       Color color = myColor;
-      if (myRootable) {
-        color = color.darker();
-      }
       g.setColor(color);
       g.fillRect(myX, myY, myWidth, myHeight);
       g.setColor(Color.black);
+      Stroke oldStroke = g.getStroke();
+      if (myRootable) {
+        g.setStroke(new BasicStroke(3));
+      }
       g.drawRect(myX, myY, myWidth, myHeight);
-      Font font = myFont.deriveFont( (float) myFont.getSize() * myComponent.myScale);
+      Font font = myFont.deriveFont(/*myRootable ? Font.BOLD : Font.PLAIN,*/ (float) myFont.getSize() * myComponent.myScale);
       FontMetrics metrics =  myComponent.getFontMetrics(font);
       String text = getText();
       int x = (int) (myX + PADDING_X * myComponent.myScale);
@@ -322,6 +396,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
       g.setFont(font);
       g.drawString(text, x, y + metrics.getAscent());
       g.setFont(oldfont);
+      g.setStroke(oldStroke);
     }
 
     public String getText() {
@@ -471,23 +546,51 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     }
 
     protected boolean mouseClicked(MouseEvent ev) {
-      if (processMouseClicked(ev)) return true;
+      if (checkMouseEvent(ev)) {
+        for (MouseListener listener : myMouseListeners) {
+          listener.mouseClicked(ev);
+        }
+        return true;
+      }
       for (ConceptContainer child : getChildren()) {
         if (child.mouseClicked(ev)) return true;
       }
       return false;
     }
 
-    protected boolean processMouseClicked(MouseEvent ev) {
+    protected boolean mousePressed(MouseEvent ev) {
+      if (checkMouseEvent(ev)) {
+        for (MouseListener listener : myMouseListeners) {
+          listener.mousePressed(ev);
+        }
+        return true;
+      }
+      for (ConceptContainer child : getChildren()) {
+        if (child.mousePressed(ev)) return true;
+      }
+      return false;
+    }
+
+    protected boolean mouseReleased(MouseEvent ev) {
+      if (checkMouseEvent(ev)) {
+        for (MouseListener listener : myMouseListeners) {
+          listener.mouseReleased(ev);
+        }
+        return true;
+      }
+      for (ConceptContainer child : getChildren()) {
+        if (child.mouseReleased(ev)) return true;
+      }
+      return false;
+    }
+
+    protected boolean checkMouseEvent(MouseEvent ev) {
       int x = ev.getX();
       int y = ev.getY();
       if (x > myX + myWidth) return false;
       if (x < myX) return false;
       if (y > myY + myHeight) return false;
       if (y < myY) return false;
-      for (MouseListener listener : myMouseListeners) {
-        listener.mouseClicked(ev);
-      }
       return true;
     }
 
