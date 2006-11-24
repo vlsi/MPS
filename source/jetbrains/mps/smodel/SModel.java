@@ -126,12 +126,6 @@ public class SModel implements Iterable<SNode> {
     return myLog;
   }
 
-  public void recordRefactoring(IRefactoring refactoring) {
-    if (!myUsesLog) return;
-    myModelLogger.recordRefactoring(refactoring, myLog);
-    myVersion++;
-  }
-
   public void setUsesLog(boolean usesLog) {
     myUsesLog = usesLog;
   }

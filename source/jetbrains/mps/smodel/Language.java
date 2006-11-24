@@ -14,7 +14,6 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.smodel.languageLog.LanguageLogger;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.UseCarefully;
@@ -59,7 +58,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   };
 
   private boolean myRegisteredInFindUsagesManager;
-  private LanguageLogger myLanguageLogger = new LanguageLogger(this);
 
 
 
@@ -550,10 +548,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       myParentsNamesMap.put(className, result);
       return new HashSet<String>(result);
     }
-  }
-
-  public LanguageLogger getLanguageLogger() {
-    return myLanguageLogger;
   }
 
   public void save() {
