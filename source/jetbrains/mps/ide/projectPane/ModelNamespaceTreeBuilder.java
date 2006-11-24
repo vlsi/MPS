@@ -35,6 +35,7 @@ class ModelNamespaceTreeBuilder {
 
   public void fillNode(MPSTreeNode root) {
     sortTree(myRootNamespace);
+    compactNodes(myRootNamespace);
 
     for (MPSTreeNode node : (List<MPSTreeNode>) CollectionUtil.iterableAsList(CollectionUtil.enumerationAsIterable(myRootNamespace.children()))) {
       myRootNamespace.remove(node);
@@ -68,12 +69,40 @@ class ModelNamespaceTreeBuilder {
     }
   }
 
+  private void compactNodes(NamespaceNode node) {
+    for (int i = 0; i < node.getChildCount(); i++) {
+      MPSTreeNode child = (MPSTreeNode) node.getChildAt(i);
+      if (child instanceof NamespaceNode) {
+        compactNodes((NamespaceNode) child);
+      }
+    }
+
+
+    if (node.getParent() != null && //skip root
+            node.getChildCount() == 1 && node.getChildAt(0) instanceof NamespaceNode) {
+      NamespaceNode child = (NamespaceNode) node.getChildAt(0);
+      node.setName(node.getName() + "." + child.getName());
+
+      for (MPSTreeNode c : (List<MPSTreeNode>) CollectionUtil.iterableAsList(CollectionUtil.enumerationAsIterable(child.children()))) {
+        child.remove(c);
+        node.add(c);
+      }
+
+      node.remove(child);
+    }
+  }
+
   private class NamespaceNode extends TextTreeNode {
     private String myName;
 
     public NamespaceNode(String name) {
       super(name);
-      myName = name;
+      setName(name);
+    }
+
+    private void setName(String newName) {
+      myName = newName;
+      setText(newName);
     }
 
     private NamespaceNode getSubnamespace(List<String> pathElements) {
