@@ -15,14 +15,14 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.CollectionUtil;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultTreeModel;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
-import java.util.ArrayList;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -235,7 +235,13 @@ public class HierarchyView extends DefaultTool {
     }
 
     public void init() {
-      Set<ConceptDeclaration> descendants = HierarchyView.this.myHierarchyTree.myUsagesManager.findDescendants((ConceptDeclaration) this.getUserObject());
+      List<ConceptDeclaration> descendants = new ArrayList<ConceptDeclaration>(HierarchyView.this.myHierarchyTree.myUsagesManager.findDescendants((ConceptDeclaration) this.getUserObject()));
+      Collections.sort(descendants, new Comparator<ConceptDeclaration>() {
+        public int compare(ConceptDeclaration o1, ConceptDeclaration o2) {                    
+          return ("" + o1.getName()).compareTo(o2.getName());
+        }
+      });
+      
       for (ConceptDeclaration descendant : descendants) {
         ChildConceptHierarchyTreeNode childHierarchyTreeNode = new ChildConceptHierarchyTreeNode(descendant, getOperationContext());
         this.add(childHierarchyTreeNode);
