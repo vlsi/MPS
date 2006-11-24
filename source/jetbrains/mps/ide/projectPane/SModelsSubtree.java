@@ -31,9 +31,7 @@ import java.awt.Rectangle;
  */
 class SModelsSubtree {
   static void create(MPSTreeNode rootTreeNode, IOperationContext operationContext) {
-
     List<MPSTreeNode> list = new LinkedList<MPSTreeNode>();
-    list.add(new ModelsGroupTreeNode("<.>", operationContext)); // default
 
     Map<String, List<SModelDescriptor>> stereotypes = new HashMap<String, List<SModelDescriptor>>();
     IModule module = operationContext.getModule();
@@ -42,16 +40,17 @@ class SModelsSubtree {
       if (ProjectModels.isProjectModel(modelDescriptor.getModelUID())) continue;
 
       String stereotype = modelDescriptor.getStereotype();
+
       if (stereotype == null || stereotype.length() == 0) {
-        list.get(0).add(new SModelTreeNode(modelDescriptor, null, operationContext));
-      } else {
-        List<SModelDescriptor> modelDescriptors = stereotypes.get(stereotype);
-        if (modelDescriptors == null) {
-          modelDescriptors = new LinkedList<SModelDescriptor>();
-          stereotypes.put(stereotype, modelDescriptors);
-        }
-        modelDescriptors.add(modelDescriptor);
+        stereotype = ".";
       }
+
+      List<SModelDescriptor> modelDescriptors = stereotypes.get(stereotype);
+      if (modelDescriptors == null) {
+        modelDescriptors = new LinkedList<SModelDescriptor>();
+        stereotypes.put(stereotype, modelDescriptors);
+      }
+      modelDescriptors.add(modelDescriptor);
     }
 
     // create "root" for each stereotype
@@ -69,7 +68,7 @@ class SModelsSubtree {
   }
 
 
-  private static class ModelsGroupTreeNode extends TextTreeNode {
+  public static class ModelsGroupTreeNode extends TextTreeNode {
     private List<SModelDescriptor> myDescriptors = new ArrayList<SModelDescriptor>();
     private boolean myInitialized = false;
 
@@ -92,9 +91,13 @@ class SModelsSubtree {
     public void init() {
       if (myInitialized) return;
 
+      ModelNamespaceTreeBuilder builder = new ModelNamespaceTreeBuilder();
+
       for (SModelDescriptor md : SortUtil.sortModels(myDescriptors)) {
-        add(new SModelTreeNode(md, null, getOperationContext()));
+        builder.addSmodelNode(new SModelTreeNode(md, null, getOperationContext(), false));
       }
+
+      builder.fillNode(this);
 
       myInitialized = true;
     }

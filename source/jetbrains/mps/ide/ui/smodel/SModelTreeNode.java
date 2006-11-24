@@ -40,11 +40,20 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   private String myLabel;
   private boolean myInitialized = false;
   private MyModelListener myModelListener = new MyModelListener();
+  private boolean myShowLongName;
 
   public SModelTreeNode(@NotNull SModelDescriptor modelDescriptor,
                         String label,
                         IOperationContext operationContext) {
+    this(modelDescriptor, label, operationContext, true);
+  }
+
+  public SModelTreeNode(@NotNull SModelDescriptor modelDescriptor,
+                        String label,
+                        IOperationContext operationContext,
+                        boolean showLongName) {
     super(operationContext);
+    myShowLongName = showLongName;
     myModelDescriptor = modelDescriptor;
     myLabel = label;
   }
@@ -97,12 +106,13 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   public String toString() {
-    String fqName = myModelDescriptor.getModelUID().toString();
+    String name = myShowLongName ? myModelDescriptor.getModelUID().toString() 
+                                 : myModelDescriptor.getModelUID().getShortName();
 
     if (myLabel != null) {
-      return myLabel + " : " + fqName;
+      return myLabel + " : " + name;
     }
-    return fqName;
+    return name;
   }
 
   public Color getColor() {
