@@ -2,12 +2,10 @@ package jetbrains.mps.generator.generationTypes;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.textPresentation.TextPresentationManager;
 import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.generator.JavaNameUtil;
 
 public class TextGenerationUtil {
@@ -16,7 +14,7 @@ public class TextGenerationUtil {
     boolean containsErrors = false;
     if (TextGenManager.instance().canGenerateTextFor(node)) {
       TextGenManager.TextGenerationResult generationResult = TextGenManager.instance().generateText(node);
-      containsErrors = generationResult.isContainErrors();
+      containsErrors = generationResult.hasErrors();
       nodeText = generationResult.getText();
     } else {
       nodeText = TextPresentationManager.generateTextPresentation(node);
@@ -47,7 +45,7 @@ public class TextGenerationUtil {
     }
 
 
-    public boolean isContainsErrors() {
+    public boolean hasErrors() {
       return myContainsErrors;
     }
 

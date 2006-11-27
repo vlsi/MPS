@@ -27,7 +27,7 @@ public class TextGenManager {
   public TextGenerationResult generateText(SNode node) {
     TextGenBuffer buffer = new TextGenBuffer();
     appendNodeText(buffer, node);
-    return new TextGenerationResult(buffer.getText(), buffer.isContainsErrors());
+    return new TextGenerationResult(buffer.getText(), buffer.hasErrors());
   }
 
   public boolean canGenerateTextFor(SNode node) {
@@ -90,7 +90,7 @@ public class TextGenManager {
       return myText;
     }
 
-    public boolean isContainErrors() {
+    public boolean hasErrors() {
       return myContainErrors;
     }
   }

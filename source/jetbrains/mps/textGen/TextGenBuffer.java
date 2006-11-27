@@ -26,7 +26,7 @@ public class TextGenBuffer {
     return myBuffers[TOP].toString() + "\n\n" + myBuffers[DEFAULT].toString();
   }
 
-  public boolean isContainsErrors() {
+  public boolean hasErrors() {
     return myContainsErrors;
   }
 
