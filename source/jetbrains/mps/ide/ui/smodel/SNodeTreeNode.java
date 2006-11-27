@@ -24,7 +24,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class SNodeTreeNode extends MPSTreeNodeEx {
-  private boolean myInitialized = false;
+  protected boolean myInitialized = false;
   private SNodeProxy myNodeProxy;
   private String myRole;
 

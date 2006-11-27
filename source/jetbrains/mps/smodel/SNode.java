@@ -967,6 +967,17 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return result;
   }
 
+  @NotNull
+  public List<SNode> getReferents() {
+    NodeReadAccessCaster.fireNodeReadAccessed(this);
+    List<SNode> result = new LinkedList<SNode>();
+    for (SReference reference : myReferences) {
+      SNode targetNode = reference.getTargetNode();
+      if (targetNode != null) result.add(targetNode);
+    }
+    return result;
+  }
+
   private void insertReferenceAt(final int i, @NotNull final SReference reference) {
     myReferences.add(i, reference);
     if (!getModel().isLoading()) {
