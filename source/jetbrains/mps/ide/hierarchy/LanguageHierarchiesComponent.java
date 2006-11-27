@@ -4,6 +4,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.IEditorOpener;
 import jetbrains.mps.ide.projectPane.ProjectPane;
@@ -215,10 +216,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
               !(mySkipAncestors && parentConcept.getModel() != structureModel)) {
         ConceptContainer newConceptContainer = processed.get(parentConcept);
         if (newConceptContainer == null) {
-          newConceptContainer = new ConceptContainer(parentConcept, this);
-          if (parentConcept.getModel() != structureModel) {
-            newConceptContainer.setColor(ColorAndGraphicsUtil.saturateColor(Color.ORANGE, 0.5f));
-          }
+          newConceptContainer = new ConceptContainer(parentConcept, this, parentConcept.getModel() != structureModel);
         }
         newConceptContainer.addChild(prevConceptContainer);
         prevConceptContainer = newConceptContainer;
@@ -343,12 +341,21 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     private LanguageHierarchiesComponent myComponent;
     private java.util.List<MouseListener> myMouseListeners = new ArrayList<MouseListener>();
     private IOperationContext myOperationContext;
+    private boolean myIsAbstract = false;
+    private String myNamespace;
+    private boolean myIsOtherLanguage = false;
 
-    public ConceptContainer(@NotNull ConceptDeclaration conceptDeclaration, LanguageHierarchiesComponent component) {
-      myRootable = conceptDeclaration.getRootable();
-      myNodeProxy = new SNodeProxy(conceptDeclaration);
+    public ConceptContainer(@NotNull ConceptDeclaration conceptDeclaration, LanguageHierarchiesComponent component, boolean otherLanguage) {
       myComponent = component;
+      myIsOtherLanguage = otherLanguage;
+      if (myIsOtherLanguage) {
+        myColor = ColorAndGraphicsUtil.saturateColor(Color.ORANGE, 0.5f);
+      }
       myOperationContext = myComponent.myOperationContext;
+      myRootable = conceptDeclaration.getRootable();
+      myIsAbstract = SModelUtil.getConceptProperty(conceptDeclaration, "abstract", GlobalScope.getInstance()) != null;
+      myNamespace = SModelUtil.getDeclaringLanguage(conceptDeclaration, GlobalScope.getInstance()).getNamespace();
+      myNodeProxy = new SNodeProxy(conceptDeclaration);
       addMouseListener(new MouseAdapter() {
         public void mousePressed(MouseEvent e) {
           IDEProjectFrame frame = myOperationContext.getComponent(IDEProjectFrame.class);
@@ -387,14 +394,21 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
         g.setStroke(new BasicStroke(3));
       }
       g.drawRect(myX, myY, myWidth, myHeight);
-      Font font = myFont.deriveFont(/*myRootable ? Font.BOLD : Font.PLAIN,*/ (float) myFont.getSize() * myComponent.myScale);
+      Font font = myFont.deriveFont(myIsAbstract ? Font.ITALIC : Font.PLAIN, (float) myFont.getSize() * myComponent.myScale);
       FontMetrics metrics =  myComponent.getFontMetrics(font);
       String text = getText();
-      int x = (int) (myX + PADDING_X * myComponent.myScale);
+      int padding1 = (myWidth - metrics.charsWidth(text.toCharArray(), 0, text.length())) / 2;
+      int padding2 = (myWidth - metrics.charsWidth(myNamespace.toCharArray(), 0, myNamespace.length())) / 2;
+      int x1 = (int) (myX + padding1);
+      int x2 = (int) (myX + padding2);
       int y = (int) (myY + (myHeight - metrics.getHeight())/2);
       Font oldfont = g.getFont();
       g.setFont(font);
-      g.drawString(text, x, y + metrics.getAscent());
+      g.drawString(text, x1, y + metrics.getAscent());
+      if (myIsOtherLanguage) {
+        g.setFont(font.deriveFont(Font.PLAIN));
+        g.drawString(myNamespace, x2, y + metrics.getHeight() + metrics.getAscent());
+      }
       g.setFont(oldfont);
       g.setStroke(oldStroke);
     }
@@ -470,10 +484,12 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
       Font font = myFont.deriveFont( (float) myFont.getSize() * myComponent.myScale);
       FontMetrics metrics =  myComponent.getFontMetrics(font);
       String text = getText();
-      int charsWidth = metrics.charsWidth(text.toCharArray(), 0, text.length());
+      int charsWidth1 = metrics.charsWidth(text.toCharArray(), 0, text.length());
+      int charWidth2 = myIsOtherLanguage ? metrics.charsWidth(myNamespace.toCharArray(), 0, myNamespace.length()): 0;
       int charsHeight = metrics.getHeight();
+      if (myIsOtherLanguage) charsHeight = charsHeight * 2 + metrics.getAscent();
       myHeight = (int) ((2 * PADDING_Y * myComponent.myScale) + charsHeight);
-      myWidth =  (int) ((2 * PADDING_X * myComponent.myScale) + charsWidth);
+      myWidth =  (int) ((2 * PADDING_X * myComponent.myScale) + Math.max(charsWidth1, charWidth2));
     }
 
     public int getWidth() {
