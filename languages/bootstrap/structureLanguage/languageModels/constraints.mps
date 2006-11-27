@@ -42,7 +42,7 @@
       </node>
     </node>
     <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1149109145749">
-      <property name="searchScopeDescription" value="links declared in hierarchy of enclosing concept. only applicable to reference links" />
+      <property name="searchScopeDescription" value="links declared in hierarchy of enclosing concept." />
       <link role="applicableConcept" targetNodeId="1.1071489288298" />
       <link role="applicableLink" targetNodeId="1.1071599698500" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Factory" id="1149109145750">
@@ -102,8 +102,8 @@
                 <link role="classifier" extResolveInfo="4.[Classifier]List" />
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1150229981441">
-                <link role="baseMethodDeclaration" extResolveInfo="2.static method ([Classifier]SModelSearchUtil).([StaticMethodDeclaration]getReferenceLinkDeclarationsExcludingOverridden((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ConceptDeclaration])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [LinkDeclaration]&gt;]))" />
                 <link role="classConcept" extResolveInfo="2.[Classifier]SModelSearchUtil" />
+                <link role="baseMethodDeclaration" extResolveInfo="2.static method ([Classifier]SModelSearchUtil).([StaticMethodDeclaration]getLinkDeclarationsExcludingOverridden((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ConceptDeclaration])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [LinkDeclaration]&gt;]))" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.CastExpression" id="1150229990063">
                   <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1150229990064">
                     <link role="variableDeclaration" targetNodeId="1149109328886" />
@@ -127,25 +127,6 @@
                 </node>
                 <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1150230110783">
                   <link role="variableDeclaration" targetNodeId="1150230019660" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="searchScopeCanCreate" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_CanCreate" id="1159217887890">
-        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1159217887891">
-          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1159217906114">
-            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1159219735492">
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1159219735493">
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunctionParameter_referenceNode" id="1159219735494" />
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1159219735495">
-                  <link role="property" targetNodeId="1.1071599937831" />
-                </node>
-              </node>
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Property_HasValue_Enum" id="1159219735496">
-                <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.EnumMemberReference" id="1159219735497">
-                  <link role="enumMember" targetNodeId="1.1084199179705" />
                 </node>
               </node>
             </node>
