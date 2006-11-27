@@ -24,10 +24,10 @@ public class TextGenManager {
     return myInstance;
   }
 
-  public String generateText(SNode node) {
+  public TextGenerationResult generateText(SNode node) {
     TextGenBuffer buffer = new TextGenBuffer();
     appendNodeText(buffer, node);
-    return buffer.getText();
+    return new TextGenerationResult(buffer.getText(), buffer.isContainsErrors());
   }
 
   public boolean canGenerateTextFor(SNode node) {
@@ -74,5 +74,24 @@ public class TextGenManager {
     //test
     loadNodeTextGen(node);
     return new DefaultTextGen();
+  }
+
+  public static class TextGenerationResult {
+    private String myText;
+    private boolean myContainErrors;
+
+    private TextGenerationResult(String text, boolean containErrors) {
+      myText = text;
+      myContainErrors = containErrors;
+    }
+
+
+    public String getText() {
+      return myText;
+    }
+
+    public boolean isContainErrors() {
+      return myContainErrors;
+    }
   }
 }

@@ -11,27 +11,49 @@ import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.generator.JavaNameUtil;
 
 public class TextGenerationUtil {
-  public static String generateText(SNode node) {
+  public static TextGenerationResult generateText(SNode node) {
     String nodeText;
+    boolean containsErrors = false;
     if (TextGenManager.instance().canGenerateTextFor(node)) {
-      nodeText = TextGenManager.instance().generateText(node);
+      TextGenManager.TextGenerationResult generationResult = TextGenManager.instance().generateText(node);
+      containsErrors = generationResult.isContainErrors();
+      nodeText = generationResult.getText();
     } else {
       nodeText = TextPresentationManager.generateTextPresentation(node);
     }
-    return nodeText;
+    return new TextGenerationResult(nodeText, containsErrors);
   }
 
   public static JavaCompiler compile(SModel targetModel, IAdaptiveProgressMonitor progress) {
     JavaCompiler compiler = new JavaCompiler();
 
     for (SNode root : targetModel.getRoots()) {
-      compiler.addSource(generateText(root),
+      compiler.addSource(generateText(root).getText(),
               JavaNameUtil.packageNameForModelUID(targetModel.getUID()) + "." + root.getName());
     }
     progress.addText("Compiling...");
     compiler.compile();
     progress.addText("Compilation finished.");
     return compiler;
+  }
+
+  public static class TextGenerationResult {
+    private boolean myContainsErrors;
+    private String myText;
+
+    public TextGenerationResult(String text, boolean containsErrors) {
+      myContainsErrors = containsErrors;
+      myText = text;
+    }
+
+
+    public boolean isContainsErrors() {
+      return myContainsErrors;
+    }
+
+    public String getText() {
+      return myText;
+    }
   }
 
 }
