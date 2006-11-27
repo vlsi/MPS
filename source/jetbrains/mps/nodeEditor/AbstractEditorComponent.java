@@ -3,6 +3,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IStatus;
+import jetbrains.mps.ide.actions.nodes.GoByFirstReferenceAction;
 import jetbrains.mps.ide.action.*;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.undo.UndoManager;
@@ -290,7 +291,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         showPopupMenu(cell.getX(), cell.getY());
       }
     }, KeyStroke.getKeyStroke("CONTEXT_MENU"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-
 
 
     addMouseListener(new MouseAdapter() {
@@ -1166,7 +1166,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private void processCoordSelection(MouseEvent mouseEvent) {
-    if (mouseEvent.getButton() != MouseEvent.BUTTON1) return;
+    if (mouseEvent.getButton() != MouseEvent.BUTTON1 && mouseEvent.getButton() != MouseEvent.BUTTON2) return;
     EditorCell newSelectedCell = myRootCell.findCell(mouseEvent.getX(), mouseEvent.getY());
     if (newSelectedCell == null || !newSelectedCell.isSelectable()) {
       newSelectedCell = myRootCell.findNearestCell(mouseEvent.getX(), mouseEvent.getY(), true);
@@ -1175,6 +1175,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       changeSelection(newSelectedCell);
       mySelectedCell.processMousePressed(mouseEvent);
       revalidateAndRepaint(false);
+    }
+
+    if (mouseEvent.getButton() == MouseEvent.BUTTON2) {
+      new GoByFirstReferenceAction().execute(new ActionContext(getOperationContext(), mySelectedCell.getSNode()));
     }
   }
 
