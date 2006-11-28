@@ -3,17 +3,13 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.util.Condition;
 
-import java.util.*;
+import java.util.List;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Mar 29, 2005
- * Time: 4:42:24 PM
- * To change this template use File | Settings | File Templates.
+ * Igor Alshannikov
+ * Mar 29, 2005
  */
 public class ModelActions {
   //-------------------
@@ -44,14 +40,6 @@ public class ModelActions {
             context);
   }
 
-//  /**
-//   * helper method
-//   */
-//  public static boolean isDefaultSubstitutableConcept(ConceptDeclaration concept, ConceptDeclaration expectedConcept, IScope scope) {
-//    return ChildSubstituteActionsHelper.isDefaultSubstitutableConcept(concept, expectedConcept, scope);
-//  }
-
-
   /**
    * helper method
    */
@@ -70,13 +58,6 @@ public class ModelActions {
   public static List<INodeSubstituteAction> createReferentSubstituteActions(SNode referenceNode, SNode currentReferent, LinkDeclaration linkDeclaration, IOperationContext context) {
     return ReferentSubstituteActionsHelper.createActions(referenceNode, currentReferent, linkDeclaration, context);
   }
-
-  /**
-   * helper method
-   */
-//  public static List<INodeSubstituteAction> createPrimaryReferentSubstituteActions(SNode referenceNode, SNode currentReferent, LinkDeclaration linkDeclaration, ISearchScope searchScope, IOperationContext context) {
-//    return ReferentSubstituteActionsHelper.createPrimaryReferentSubstituteActions(referenceNode, currentReferent, linkDeclaration, searchScope, context.getScope());
-//  }
 
   //-------------------
   // right-transform hint substitute

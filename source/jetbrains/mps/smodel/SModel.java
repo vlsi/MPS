@@ -9,13 +9,10 @@ import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.smodel.languageLog.ModelLogger;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.ForDebug;
-import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
-import jetbrains.mps.refactoring.IRefactoring;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -57,7 +54,6 @@ public class SModel implements Iterable<SNode> {
   private SNode myLog;
   private boolean myUsesLog;
   private int myVersion;
-  private ModelLogger myModelLogger;
 
   public SModel(@NotNull SModelUID modelUID) {
     addSModelListener(myEventTranslator);

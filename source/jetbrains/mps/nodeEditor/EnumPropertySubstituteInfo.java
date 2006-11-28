@@ -22,7 +22,7 @@ public class EnumPropertySubstituteInfo extends AbstractNodeSubstituteInfo {
     myPropertyDeclaration = propertyDeclaration;
   }
 
-  public List<INodeSubstituteItem> createActions() {
+  public List<INodeSubstituteAction> createActions() {
     List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
     EnumerationDataTypeDeclaration dataType = (EnumerationDataTypeDeclaration) myPropertyDeclaration.getDataType();
     Iterator<EnumerationMemberDeclaration> iterator = dataType.members();

@@ -47,7 +47,7 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
     return myOriginalText;
   }
 
-  protected abstract List<INodeSubstituteItem> createActions();
+  protected abstract List<INodeSubstituteAction> createActions();
 
   public void invalidateActions() {
     myCachedActionList = null;

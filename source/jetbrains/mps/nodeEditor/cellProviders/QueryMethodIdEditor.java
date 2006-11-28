@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
 
 import javax.swing.*;
 import java.awt.Dimension;
@@ -81,7 +82,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
     }, getSNode());
 
     editorCell.setSubstituteInfo(new AbstractNodeSubstituteInfo(editorContext) {
-      protected List<INodeSubstituteItem> createActions() {
+      protected List<INodeSubstituteAction> createActions() {
         return QueryMethodIdEditor.this.createActions(editorContext);
       }
     });
@@ -179,8 +180,8 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
     }
   }
 
-  protected List<INodeSubstituteItem> createActions(EditorContext context) {
-    List<INodeSubstituteItem> actions = new ArrayList<INodeSubstituteItem>();
+  protected List<INodeSubstituteAction> createActions(EditorContext context) {
+    List<INodeSubstituteAction> actions = new ArrayList<INodeSubstituteAction>();
     List<String> conditionsList = getAvailableIdsUsingPlugin(context);
     final MPSProject project = context.getOperationContext().getProject();
 

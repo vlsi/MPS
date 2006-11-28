@@ -282,7 +282,7 @@ public class EditorManager {
     // create the hint's auto-completion menu
     final String transformTag = (String) node.getUserObject(RIGHT_TRANSFORM_HINT_ANCHOR_TAG);
     rightTransformHintCell.setSubstituteInfo(new AbstractNodeSubstituteInfo(context) {
-      protected List<INodeSubstituteItem> createActions() {
+      protected List<INodeSubstituteAction> createActions() {
         List list = ModelActions.createRightTransformHintSubstituteActions(node, transformTag, context.getOperationContext());
         List wrapperList = new LinkedList();
         for (Object action : list) {

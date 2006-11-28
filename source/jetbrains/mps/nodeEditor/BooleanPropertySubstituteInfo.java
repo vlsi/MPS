@@ -18,7 +18,7 @@ public class BooleanPropertySubstituteInfo extends AbstractNodeSubstituteInfo {
     myPropertyName = propertyName;
   }
 
-  public List<INodeSubstituteItem> createActions() {
+  public List<INodeSubstituteAction> createActions() {
     List<INodeSubstituteAction> list = new LinkedList<INodeSubstituteAction>();
     list.add(new PropertySubstituteAction(myNode, myPropertyName, "true"));
     list.add(new PropertySubstituteAction(myNode, myPropertyName, "false"));

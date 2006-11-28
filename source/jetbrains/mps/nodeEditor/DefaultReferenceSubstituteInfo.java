@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
 
-import java.util.*;
+import java.util.List;
 
 public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
   private SNode mySourceNode;
@@ -33,8 +33,8 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
     myCurrentReferent = sourceNode.getReferent(SModelUtil.getGenuineLinkRole(linkDeclaration));
   }
 
-  public List<INodeSubstituteItem> createActions() {
+  public List<INodeSubstituteAction> createActions() {
     List<INodeSubstituteAction> actions = ModelActions.createReferentSubstituteActions(mySourceNode, myCurrentReferent, myLinkDeclaration, getOperationContext());
-    return (List) actions;
+    return actions;
   }
 }
