@@ -23,14 +23,7 @@ public class ModelActions {
   /**
    * helper method
    */
-  public static List<INodeSubstituteAction> createPrimaryChildSubstituteActions(
-          SNode parentNode,
-          SNode currentChild,
-          ConceptDeclaration childConcept,
-          IChildNodeSetter childSetter,
-          Condition<SNode> filter,
-          IOperationContext context) {
-
+  public static List<INodeSubstituteAction> createPrimaryChildSubstituteActions(SNode parentNode, SNode currentChild, ConceptDeclaration childConcept, IChildNodeSetter childSetter, Condition<SNode> filter, IOperationContext context) {
     return ChildSubstituteActionsHelper.createPrimaryChildSubstituteActions(
             parentNode,
             currentChild,

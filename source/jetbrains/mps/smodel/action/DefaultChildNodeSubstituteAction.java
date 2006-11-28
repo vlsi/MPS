@@ -17,8 +17,8 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
   private IScope myScope;
   private IChildNodeSetter mySetter;
 
-  public DefaultChildNodeSubstituteAction(SNode parameterNode, SNode parentNode, SNode currentChild, IChildNodeSetter setter, IScope scope) {
-    super(parameterNode, parentNode);
+  public DefaultChildNodeSubstituteAction(Object parameterObject, SNode parentNode, SNode currentChild, IChildNodeSetter setter, IScope scope) {
+    super(parameterObject, parentNode);
     myCurrentChild = currentChild;
     myScope = scope;
     mySetter = setter;
