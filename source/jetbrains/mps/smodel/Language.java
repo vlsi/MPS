@@ -372,15 +372,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   }
 
   @Nullable
-  public SModelDescriptor getLogModelDescriptor() {
-    Model logModel = getLanguageDescriptor().getLogModel();
-    if (logModel == null) return null;
-    SModelUID modelUID = SModelUID.fromString(logModel.getName());
-    SModelDescriptor logModelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
-    return logModelDescriptor;
-  }
-
-  @Nullable
   public SModelDescriptor getTypesystemModelDescriptor() {
     if (getLanguageDescriptor().getTypeSystem() != null) {
       SModelUID modelUID = SModelUID.fromString(getLanguageDescriptor().getTypeSystem().getName());
