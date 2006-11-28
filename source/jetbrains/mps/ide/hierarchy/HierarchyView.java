@@ -15,7 +15,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.CollectionUtil;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultTreeModel;

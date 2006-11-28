@@ -11,10 +11,14 @@ import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.AbstractProjectFrame;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
+import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.util.CollectionUtil;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultTreeModel;
 import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created by IntelliJ IDEA.
@@ -76,11 +80,17 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   public void init() {
     this.removeAllChildren();
 
-    if (getSNode() == null) return;
 
-    for (SNode childNode : getSNode().getChildren()) {
+
+    SNode n = getSNode();
+    if (n == null) return;
+
+    add(new PropertiesTreeNode(getOperationContext(), n));
+
+    for (SNode childNode : n.getChildren()) {
       add(new SNodeTreeNode(childNode, childNode.getRole_(), getOperationContext()));
     }
+
     IDEProjectFrame projectFrame = (IDEProjectFrame) getOperationContext().getComponent(AbstractProjectFrame.class);
     DefaultTreeModel treeModel = (DefaultTreeModel)projectFrame.getProjectPane().getTree().getModel();
     treeModel.nodeStructureChanged(this);
@@ -99,6 +109,8 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
       return super.getIcon(expanded);
     }
   }
+
+
 
   public String toString() {
     StringBuffer output = new StringBuffer();
