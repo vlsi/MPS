@@ -149,7 +149,7 @@ public class ChildSubstituteActionsHelper {
           IChildNodeSetter childSetter,
           final IScope scope) {
     // try to create referent-search-scope
-    
+
     IStatus status = ModelConstraintsUtil.getReferentSearchScope(parentNode, null, referenceNodeConcept, smartReference, scope);
     if (status.isError()) return null;
 
@@ -166,7 +166,7 @@ public class ChildSubstituteActionsHelper {
               JavaNameUtil.className(targetConcept),
               true, ClassLoaderManager.getInstance().
               getClassLoader());
-    } catch(ClassNotFoundException ex) {
+    } catch (ClassNotFoundException ex) {
       throw new RuntimeException(ex);
     }
 
@@ -178,28 +178,24 @@ public class ChildSubstituteActionsHelper {
 
           public String getMatchingText(String pattern) {
             if (myMatchingText == null) {
-              myMatchingText = getSmartMatchingText(
-                      referenceNodeConcept,
-                      getParameterNode(),
-                      getScope());
+              myMatchingText = getSmartMatchingText(referenceNodeConcept, (SNode) getParameterObject(), getScope());
             }
             return myMatchingText;
           }
 
           public String getDescriptionText(String pattern) {
-            BaseConcept pn = (BaseConcept) getParameterNode();
-            if (pn.getShortDescription() == null) {
-              return "(smart ref:" + referenceNodeConcept.getName() + ") " + NodePresentationUtil.descriptionText(getParameterNode(), true);
+            BaseConcept parameterNode = (BaseConcept) getParameterObject();
+            if (parameterNode.getShortDescription() == null) {
+              return "(smart ref:" + referenceNodeConcept.getName() + ") " + NodePresentationUtil.descriptionText(parameterNode, true);
             }
 
-            return "(smart ref:" + NodePresentationUtil.descriptionText(getParameterNode(), true) + ")";
+            return "(smart ref:" + NodePresentationUtil.descriptionText(parameterNode, true) + ")";
           }
 
-          public SNode createChildNode(SNode parameterNode, SModel model, String pattern) {
-//            SNode childNode = super.createChildNode(referenceNodeConcept, model, pattern);
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode childNode = SModelUtil.instantiateConceptDeclaration(referenceNodeConcept, model);
             String referentRole = SModelUtil.getGenuineLinkRole(referenceLink_final);
-            childNode.setReferent(referentRole, parameterNode);
+            childNode.setReferent(referentRole, (SNode) parameterObject);
             NodeFactoryManager.setupNode(referenceNodeConcept, childNode, currentChild, parentNode, model);
             return childNode;
           }

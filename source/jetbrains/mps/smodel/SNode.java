@@ -583,10 +583,9 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     // tmp check
 
     for (SNode child : myChildren) {
-      if (child.getRole_().equals(role)) {
+      if (role.equals(child.getRole_())) {
         return child;
       }
-      continue;
     }
     return null;
   }

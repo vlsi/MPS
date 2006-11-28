@@ -6,11 +6,8 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Mar 29, 2005
- * Time: 2:06:58 PM
- * To change this template use File | Settings | File Templates.
+ * Igor Alshannikov
+ * Mar 29, 2005
  */
 public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteAction {
   private SNode myCurrentChild;
@@ -37,10 +34,13 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
     return newChild;
   }
 
-  public SNode createChildNode(SNode parameterNode, SModel model, String pattern) {
-    if (parameterNode instanceof ConceptDeclaration) {
-      return NodeFactoryManager.createNode((ConceptDeclaration) parameterNode, myCurrentChild, getSourceNode(), model);
+  public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+    if (parameterObject instanceof ConceptDeclaration) {
+      return NodeFactoryManager.createNode((ConceptDeclaration) parameterObject, myCurrentChild, getSourceNode(), model);
     }
-    throw new RuntimeException("Couldn't create child node. Parameter node: " + parameterNode.getDebugText());
+    if (parameterObject instanceof SNode) {
+      throw new RuntimeException("Couldn't create child node. Parameter object: " + ((SNode) parameterObject).getDebugText());
+    }
+    throw new RuntimeException("Couldn't create child node. Parameter object: " + parameterObject);
   }
 }
