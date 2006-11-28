@@ -211,8 +211,9 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   public void replaceChild(@NotNull SNode oldChild,
                            @NotNull SNode newChild) {
     assert myChildren.contains(oldChild);
-    //noinspection ConstantConditions
-    insertChild(oldChild, oldChild.getRole_(), newChild);
+    String oldChildRole = oldChild.getRole_();
+    assert oldChildRole != null;
+    insertChild(oldChild, oldChildRole, newChild);
     removeChild(oldChild);
   }
 
@@ -582,11 +583,10 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     // tmp check
 
     for (SNode child : myChildren) {
-      //noinspection ConstantConditions
-      if (!child.getRole_().equals(role)) {
-        continue;
+      if (child.getRole_().equals(role)) {
+        return child;
       }
-      return child;
+      continue;
     }
     return null;
   }
