@@ -373,11 +373,12 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
           if (importList == null) return;
           if (importList.findSingleClassImportStatement(fqName) != null) return;
           PsiClass cls = manager.findClass(fqName, GlobalSearchScope.allScope(myProject));
+          if (cls == null) return;
           PsiImportStatement importStatement = getPsiElementFactory().createImportStatement(cls);
           importList.add(importStatement);
         } catch (IncorrectOperationException e) {
           e.printStackTrace();
-        }
+        }                                             
       }
     });
   }
