@@ -382,6 +382,7 @@ public class ModelPersistence {
       if (log != null) {
         Element logElement = new Element(REFACTORING_LOG);
         saveNode(logElement, log);
+        rootElement.addContent(logElement);
       }
     }
 
