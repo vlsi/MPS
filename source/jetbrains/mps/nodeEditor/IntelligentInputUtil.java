@@ -1,10 +1,12 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -42,8 +44,8 @@ public class IntelligentInputUtil {
       newNode = cell.getSNode();
       cellForNewNode = cell;
     } else if (uniqueAction(substituteInfo, smallPattern, tail)) {
-      List<INodeSubstituteItem> matchingActions = substituteInfo.getMatchingItems(smallPattern, true);
-      INodeSubstituteItem item = matchingActions.get(0);
+      List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(smallPattern, true);
+      INodeSubstituteAction item = matchingActions.get(0);
       newNode = item.doSubstitute(smallPattern);
       if (newNode == null) {
         System.err.println("substituted node is null");
@@ -67,12 +69,12 @@ public class IntelligentInputUtil {
       if (rtSubstituteInfo == null) {
         rtSubstituteInfo = new NullSubstituteInfo();
       }
-      List<INodeSubstituteItem> rtMatchingActions = rtSubstituteInfo.getMatchingItems(tail, true);
+      List<INodeSubstituteAction> rtMatchingActions = rtSubstituteInfo.getMatchingActions(tail, true);
       if (!uniqueAction(rtSubstituteInfo, tail, "")) {
         CommandProcessor.instance().invokeLater(cellFounder);
         return;
       }
-      INodeSubstituteItem rtItem = rtMatchingActions.get(0);
+      INodeSubstituteAction rtItem = rtMatchingActions.get(0);
       final SNode yetNewNode = rtItem.doSubstitute(smallPattern);
       CommandProcessor.instance().invokeLater(new Runnable() {
         public void run() {
@@ -90,9 +92,9 @@ public class IntelligentInputUtil {
 
   private static boolean uniqueAction(INodeSubstituteInfo info, String smallPattern, String tail) {
     if ("".equals(tail)) {
-      return info.hasExactlyNItems(smallPattern, true, 1) && info.hasExactlyNItems(smallPattern, false, 1);
+      return info.hasExactlyNActions(smallPattern, true, 1) && info.hasExactlyNActions(smallPattern, false, 1);
     }
-    return info.hasExactlyNItems(smallPattern, true, 1) && info.hasExactlyNItems(smallPattern+tail, false, 0);
+    return info.hasExactlyNActions(smallPattern, true, 1) && info.hasExactlyNActions(smallPattern+tail, false, 0);
   }
 
   private static class CellFounder implements Runnable {
@@ -136,10 +138,10 @@ public class IntelligentInputUtil {
       nodeEditorComponent.relayout();
     }
 
-    public List<INodeSubstituteItem> getFoundCellMatchingItems() {
+    public List<INodeSubstituteAction> getFoundCellMatchingItems() {
       run();
-      if (myFoundCell == null || myFoundCell.getSubstituteInfo() == null) return new ArrayList<INodeSubstituteItem>();
-      return myFoundCell.getSubstituteInfo().getMatchingItems(myFoundCell.getRenderedText(), true);
+      if (myFoundCell == null || myFoundCell.getSubstituteInfo() == null) return new ArrayList<INodeSubstituteAction>();
+      return myFoundCell.getSubstituteInfo().getMatchingActions(myFoundCell.getRenderedText(), true);
     }
   }
 }

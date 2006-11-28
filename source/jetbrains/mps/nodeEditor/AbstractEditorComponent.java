@@ -3,33 +3,33 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IStatus;
-import jetbrains.mps.ide.actions.nodes.GoByFirstReferenceAction;
 import jetbrains.mps.ide.action.*;
+import jetbrains.mps.ide.actions.nodes.GoByFirstReferenceAction;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.navigation.FocusPolicy;
 import jetbrains.mps.ide.navigation.HistoryItem;
 import jetbrains.mps.ide.navigation.IHistoryItem;
 import jetbrains.mps.ide.navigation.RecentEditorsMenu;
-import jetbrains.mps.ide.ui.JMultiLineToolTip;
 import jetbrains.mps.ide.ui.CellSpeedSearch;
+import jetbrains.mps.ide.ui.JMultiLineToolTip;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.text.CellAction_RenderText;
-import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
-import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldAll;
+import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
+import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
+import jetbrains.mps.nodeEditor.text.CellAction_RenderText;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.typesystem.TypeCheckerAccess;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NodesParetoFrontier;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.annotation.UseCarefully;
-import jetbrains.mps.util.annotation.ForDebug;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
-import javax.swing.tree.TreePath;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.*;
@@ -37,8 +37,6 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.*;
 import java.util.List;
-
-import org.jetbrains.annotations.NotNull;
 
 
 /**
@@ -1507,7 +1505,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     // 1st - try to do substitution with current pattern (id cursor at the end of text)
     if (trySubstituteNow) {
-      List<INodeSubstituteItem> matchingActions = substituteInfo.getMatchingItems(pattern, false);
+      List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(pattern, false);
       if (matchingActions.size() == 1 && pattern.length() > 0) {
         EditorUtil.substituteNode(matchingActions.get(0), pattern, this.getEditorContext());
         return true;

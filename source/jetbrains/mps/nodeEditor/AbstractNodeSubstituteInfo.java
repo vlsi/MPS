@@ -2,6 +2,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.util.Pair;
 
 import java.util.*;
@@ -11,12 +12,12 @@ import java.util.*;
  * Time: Oct 29, 2003 2:17:38 PM
  */
 public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo {
-  private List<INodeSubstituteItem> myCachedItemList;
+  private List<INodeSubstituteAction> myCachedActionList;
   private SNode myOriginalNode;
   private String myOriginalText;
   private EditorContext myEditorContext;
-  private Map<String, List<INodeSubstituteItem>> myPatternsToItemListsCache = new HashMap<String, List<INodeSubstituteItem>>();
-  private Map<String, List<INodeSubstituteItem>> myStrictPatternsToItemListsCache = new HashMap<String, List<INodeSubstituteItem>>();
+  private Map<String, List<INodeSubstituteAction>> myPatternsToActionListsCache = new HashMap<String, List<INodeSubstituteAction>>();
+  private Map<String, List<INodeSubstituteAction>> myStrictPatternsToActionListsCache = new HashMap<String, List<INodeSubstituteAction>>();
 
   public AbstractNodeSubstituteInfo(EditorContext editorContext) {
     myEditorContext = editorContext;
@@ -48,20 +49,20 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
 
   protected abstract List<INodeSubstituteItem> createActions();
 
-  public void invalidateItems() {
-    myCachedItemList = null;
+  public void invalidateActions() {
+    myCachedActionList = null;
   }
 
-  public boolean hasExactlyNItems(String pattern, boolean strictMatching, final int n) {
-    Pair<String, List<INodeSubstituteItem>> pair = getItemsAndPattern(pattern, strictMatching);
-    List<INodeSubstituteItem> result = pair.o2;
+  public boolean hasExactlyNActions(String pattern, boolean strictMatching, final int n) {
+    Pair<String, List<INodeSubstituteAction>> pair = getPatternAndActions(pattern, strictMatching);
+    List<INodeSubstituteAction> result = pair.o2;
     String smallPattern = pair.o1;
     int count1 = 0;
     int count2 = result.size();
     if (strictMatching) {
-      Iterator<INodeSubstituteItem> iterator1 = result.iterator();
+      Iterator<INodeSubstituteAction> iterator1 = result.iterator();
       while (iterator1.hasNext()) {
-        INodeSubstituteItem substituteItem = iterator1.next();
+        INodeSubstituteAction substituteItem = iterator1.next();
         if (substituteItem.canSubstituteStrictly(pattern)) {
           count1++;
           if (count1 > n) return false;
@@ -71,12 +72,12 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
           if (count2 < n) return false;
         }
       }
-      myStrictPatternsToItemListsCache.put(smallPattern, new ArrayList<INodeSubstituteItem>(result));
+      myStrictPatternsToActionListsCache.put(smallPattern, new ArrayList<INodeSubstituteAction>(result));
       if (count1 == n) return true;
     } else {
-      Iterator<INodeSubstituteItem> items = result.iterator();
+      Iterator<INodeSubstituteAction> items = result.iterator();
       while (items.hasNext()) {
-        INodeSubstituteItem item = items.next();
+        INodeSubstituteAction item = items.next();
         if (!item.canSubstitute(pattern)) {
           items.remove();
           count2--;
@@ -86,77 +87,77 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
           if (count1 > n && !strictMatching) return false;
         }
       }
-      myPatternsToItemListsCache.put(smallPattern, new ArrayList<INodeSubstituteItem>(result));
+      myPatternsToActionListsCache.put(smallPattern, new ArrayList<INodeSubstituteAction>(result));
       if (count1 == n) return true;
     }
     return false;
   }
 
-  private Pair<String, List<INodeSubstituteItem>> getItemsAndPattern(String pattern, boolean strictMatching) {
+  private Pair<String, List<INodeSubstituteAction>> getPatternAndActions(String pattern, boolean strictMatching) {
     String smallPattern = pattern;
-    List<INodeSubstituteItem> result = null;
+    List<INodeSubstituteAction> result = null;
     if (!strictMatching) {
       while (smallPattern.length() > 0) {
-        if (myPatternsToItemListsCache.containsKey(smallPattern)) {
-          result = new ArrayList<INodeSubstituteItem>();
-          result.addAll(myPatternsToItemListsCache.get(smallPattern));
+        if (myPatternsToActionListsCache.containsKey(smallPattern)) {
+          result = new ArrayList<INodeSubstituteAction>();
+          result.addAll(myPatternsToActionListsCache.get(smallPattern));
           break;
         } else {
-          smallPattern = smallPattern.substring(0,smallPattern.length()-1);
+          smallPattern = smallPattern.substring(0, smallPattern.length() - 1);
         }
       }
     } else {
-      if (myStrictPatternsToItemListsCache.containsKey(smallPattern)) {
-        result = new ArrayList<INodeSubstituteItem>();
-        result.addAll(myStrictPatternsToItemListsCache.get(smallPattern));
-      } else if (myPatternsToItemListsCache.containsKey(smallPattern)) {
-        result = new ArrayList<INodeSubstituteItem>();
-        result.addAll(myPatternsToItemListsCache.get(smallPattern));
+      if (myStrictPatternsToActionListsCache.containsKey(smallPattern)) {
+        result = new ArrayList<INodeSubstituteAction>();
+        result.addAll(myStrictPatternsToActionListsCache.get(smallPattern));
+      } else if (myPatternsToActionListsCache.containsKey(smallPattern)) {
+        result = new ArrayList<INodeSubstituteAction>();
+        result.addAll(myPatternsToActionListsCache.get(smallPattern));
       }
     }
     if (result == null) {
-      result = new ArrayList<INodeSubstituteItem>(items());
+      result = new ArrayList<INodeSubstituteAction>(getActions());
     }
-    return new Pair<String, List<INodeSubstituteItem>>(smallPattern, result);
+    return new Pair<String, List<INodeSubstituteAction>>(smallPattern, result);
   }
 
-  public List<INodeSubstituteItem> getMatchingItems(String pattern, boolean strictMatching) {
-    Pair<String, List<INodeSubstituteItem>> pair = getItemsAndPattern(pattern, strictMatching);
+  public List<INodeSubstituteAction> getMatchingActions(String pattern, boolean strictMatching) {
+    Pair<String, List<INodeSubstituteAction>> pair = getPatternAndActions(pattern, strictMatching);
     String smallPattern = pair.o1;
-    List<INodeSubstituteItem> result = pair.o2;
+    List<INodeSubstituteAction> result = pair.o2;
     /*   if (pattern.length() == 0) {
       return list;
     }*/
 
-    Iterator<INodeSubstituteItem> items = result.iterator();
+    Iterator<INodeSubstituteAction> items = result.iterator();
     while (items.hasNext()) {
-      INodeSubstituteItem item = items.next();
+      INodeSubstituteAction item = items.next();
       if (!item.canSubstitute(pattern)) {
         items.remove();
       }
     }
 
-    myPatternsToItemListsCache.put(smallPattern, new ArrayList<INodeSubstituteItem>(result));
+    myPatternsToActionListsCache.put(smallPattern, new ArrayList<INodeSubstituteAction>(result));
 
     if (strictMatching) {
-      Iterator<INodeSubstituteItem> iterator1 = result.iterator();
+      Iterator<INodeSubstituteAction> iterator1 = result.iterator();
       while (iterator1.hasNext()) {
-        INodeSubstituteItem substituteItem = iterator1.next();
+        INodeSubstituteAction substituteItem = iterator1.next();
         if (substituteItem.canSubstituteStrictly(pattern)) continue;
         iterator1.remove();
       }
     }
 
-    myStrictPatternsToItemListsCache.put(smallPattern, new ArrayList<INodeSubstituteItem>(result));
+    myStrictPatternsToActionListsCache.put(smallPattern, new ArrayList<INodeSubstituteAction>(result));
 
-    return result;
+    return (List)result;
   }
 
-  protected List<INodeSubstituteItem> items() {
-    if (myCachedItemList == null) {
-      myCachedItemList = createActions();
+  private List<INodeSubstituteAction> getActions() {
+    if (myCachedActionList == null) {
+      myCachedActionList = (List) createActions();
     }
-    return Collections.unmodifiableList(myCachedItemList);
+    return Collections.unmodifiableList(myCachedActionList);
   }
 
   public SNode handleSubstituteAction(SNode node, Object substituteObject) {

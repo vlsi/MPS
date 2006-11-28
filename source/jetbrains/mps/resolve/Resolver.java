@@ -111,10 +111,7 @@ public class Resolver {
     INodeSubstituteInfo substituteInfo = refCell.getSubstituteInfo();
     if (substituteInfo == null) substituteInfo = new NullSubstituteInfo();
 
-    List<INodeSubstituteAction> actions = (List<INodeSubstituteAction>) (List) substituteInfo.getMatchingItems(resolveInfo, false);
-            //ModelActions.createReferentSubstituteActions(sourceNode, null, referenceLinkDeclaration, operationContext);
-
-
+    List<INodeSubstituteAction> actions = substituteInfo.getMatchingActions(resolveInfo, false);
     List<INodeSubstituteAction> matchingActions = new ArrayList<INodeSubstituteAction>();
     for (INodeSubstituteAction action : actions) {
       if (action.canSubstituteStrictly(resolveInfo)) {

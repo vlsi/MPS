@@ -1,18 +1,18 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
 
 import java.util.List;
 
 /**
- * tag interface
  * Author: Sergey Dmitriev.
  * Time: Oct 15, 2003 12:21:00 PM
  */
 public interface INodeSubstituteInfo {
-  List<INodeSubstituteItem> getMatchingItems(String pattern, boolean strictMatching);
+  List<INodeSubstituteAction> getMatchingActions(String pattern, boolean strictMatching);
 
-  void invalidateItems();
+  void invalidateActions();
 
   void setOriginalNode(SNode node);
 
@@ -22,5 +22,5 @@ public interface INodeSubstituteInfo {
 
   String getOriginalText();
 
-  boolean hasExactlyNItems(String pattern, boolean strictMatching, int n);
+  boolean hasExactlyNActions(String pattern, boolean strictMatching, int n);
 }

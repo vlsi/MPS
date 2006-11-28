@@ -1,8 +1,10 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -12,11 +14,11 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class NullSubstituteInfo implements INodeSubstituteInfo {
-  public List<INodeSubstituteItem> getMatchingItems(String pattern, boolean strictMatching) {
-    return new ArrayList<INodeSubstituteItem>();
+  public List<INodeSubstituteAction> getMatchingActions(String pattern, boolean strictMatching) {
+    return new ArrayList<INodeSubstituteAction>();
   }
 
-  public void invalidateItems() {
+  public void invalidateActions() {
 
   }
 
@@ -37,7 +39,7 @@ public class NullSubstituteInfo implements INodeSubstituteInfo {
   }
 
 
-  public boolean hasExactlyNItems(String pattern, boolean strictMatching, int n) {
+  public boolean hasExactlyNActions(String pattern, boolean strictMatching, int n) {
     return false;  //To change body of implemented methods use File | Settings | File Templates.
   }
 }
