@@ -123,8 +123,11 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   @NotNull
   public String getRoleOf(@NotNull SNode node) {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
-    if (getChildren().contains(node)) //noinspection ConstantConditions
-      return node.getRole_();
+    if (getChildren().contains(node)) {
+      String role = node.getRole_();
+      assert role != null;
+      return role;
+    }
 
     for (SReference reference : getReferences()) {
       if (reference.getTargetNode() == node) return reference.getRole();
@@ -188,8 +191,9 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     // look through children and referents and replace 1st occurance (may be all occurances?) of the node
     for (SNode child : myChildren) {
       if (child == node) {
-        //noinspection ConstantConditions
-        insertChild(node, child.getRole_(), replacement);
+        String role = child.getRole_();
+        assert role != null;
+        insertChild(node, role, replacement);
         removeChild(node);
         return;
       }
@@ -579,9 +583,10 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
     for (SNode child : myChildren) {
       //noinspection ConstantConditions
-      if (child.getRole_().equals(role)) {
-        return child;
+      if (!child.getRole_().equals(role)) {
+        continue;
       }
+      return child;
     }
     return null;
   }
