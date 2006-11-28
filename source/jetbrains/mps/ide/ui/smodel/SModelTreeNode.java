@@ -224,7 +224,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
               SNode sourceNode = event.getReference().getSourceNode();
               MPSTreeNode nodeTreeNode = findDescendantWith(sourceNode);
-              if (nodeTreeNode == null) return;
+              if (nodeTreeNode == null || !nodeTreeNode.isInitialized()) return;
 
               MPSTreeNodeEx refsNode = (MPSTreeNodeEx) nodeTreeNode.getChildAt(1);
               refsNode.update();
