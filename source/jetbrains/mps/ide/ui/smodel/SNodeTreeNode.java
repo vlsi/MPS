@@ -79,13 +79,11 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
 
   public void init() {
     this.removeAllChildren();
-
-
-
     SNode n = getSNode();
     if (n == null) return;
 
     add(new PropertiesTreeNode(getOperationContext(), n));
+    add(new ReferencesTreeNode(getOperationContext(), n));
 
     for (SNode childNode : n.getChildren()) {
       add(new SNodeTreeNode(childNode, childNode.getRole_(), getOperationContext()));

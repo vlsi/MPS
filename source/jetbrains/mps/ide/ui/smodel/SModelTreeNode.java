@@ -207,10 +207,8 @@ public class SModelTreeNode extends MPSTreeNodeEx {
               }
 
               DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
-              //i tried to use nodeChange but it didn't work
 
               MPSTreeNode nodeTreeNode = findDescendantWith(event.getNode());
-
               if (nodeTreeNode == null) return;
 
               MPSTreeNodeEx propsNode = (MPSTreeNodeEx) nodeTreeNode.getChildAt(0);
@@ -222,6 +220,17 @@ public class SModelTreeNode extends MPSTreeNodeEx {
             }
 
             public void visitReferenceEvent(SModelReferenceEvent event) {
+              DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+
+              SNode sourceNode = event.getReference().getSourceNode();
+              MPSTreeNode nodeTreeNode = findDescendantWith(sourceNode);
+              if (nodeTreeNode == null) return;
+
+              MPSTreeNodeEx refsNode = (MPSTreeNodeEx) nodeTreeNode.getChildAt(1);
+              refsNode.update();
+              refsNode.init();
+
+              treeModel.nodeStructureChanged(refsNode);
             }
 
           };

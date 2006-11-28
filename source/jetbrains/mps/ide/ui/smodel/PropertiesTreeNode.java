@@ -50,8 +50,4 @@ public class PropertiesTreeNode extends MPSTreeNodeEx {
     return "properties";
   }
 
-
-  public String toString() {
-    return "properies";
-  }
 }
