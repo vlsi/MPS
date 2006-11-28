@@ -2,6 +2,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.WindowsUtil;
 
@@ -137,7 +138,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     mySubstituteItems = matchingActions;
     if (mySubstituteItems.size() == 0) {
       myMenuEmpty = true;
-      mySubstituteItems.add(new AbstractNodeSubstituteItem() {
+      mySubstituteItems.add(new AbstractNodeSubstituteAction() {
         public String getMatchingText(String pattern) {
           return "No variants for \"" + getPatternEditor().getPattern() + "\"";
         }
@@ -465,7 +466,6 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       Insets insets = myScroller.getBorder().getBorderInsets(myScroller);
       return insets.top + insets.bottom + 1;
     }
-
 
 
     public PopupWindowPosition getPosition() {

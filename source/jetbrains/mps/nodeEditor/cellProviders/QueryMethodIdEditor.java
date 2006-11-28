@@ -12,18 +12,19 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 
 import javax.swing.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.ActionEvent;
-import java.awt.Point;
 import java.awt.Dimension;
+import java.awt.Point;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.rmi.RemoteException;
 
 /**
  * Author: Sergey Dmitriev
@@ -188,7 +189,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
       conditionsList = getAvailableIdsUsingReflection();
     }
     for (final String queryMethodId : conditionsList) {
-      actions.add(new AbstractNodeSubstituteItem() {
+      actions.add(new AbstractNodeSubstituteAction() {
         public String getMatchingText(String pattern) {
           return queryMethodId;
         }
@@ -200,7 +201,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
       });
     }
 
-    actions.add(new AbstractNodeSubstituteItem() {
+    actions.add(new AbstractNodeSubstituteAction() {
       public String getMatchingText(String pattern) {
         return "New query method";
       }
