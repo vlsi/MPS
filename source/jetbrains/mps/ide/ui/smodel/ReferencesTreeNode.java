@@ -32,6 +32,11 @@ public class ReferencesTreeNode extends MPSTreeNodeEx {
           getOperationContext().getComponent(EditorsPane.class).
                   openEditor(target, getOperationContext());
         }
+
+
+        public boolean isLeaf() {
+          return true;
+        }
       });
     }
     

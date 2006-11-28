@@ -32,6 +32,10 @@ public class PropertiesTreeNode extends MPSTreeNodeEx {
         public String getNodeIdentifier() {
           return p; 
         }
+
+        public boolean isLeaf() {
+          return true;
+        }
       });
     }
 
