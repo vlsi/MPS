@@ -12,21 +12,21 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
   private static final Logger LOG = Logger.getLogger(AbstractNodeSubstituteAction.class);
 
   private SNode mySourceNode;
-  private SNode myParameterNode;
+  private Object myParameterObject;
 
-  protected AbstractNodeSubstituteAction(SNode parameterNode, SNode sourceNode) {
+  protected AbstractNodeSubstituteAction(Object parameterObject, SNode sourceNode) {
     mySourceNode = sourceNode;
-    myParameterNode = parameterNode;
+    myParameterObject = parameterObject;
   }
 
   protected AbstractNodeSubstituteAction(SNode sourceNode) {
     mySourceNode = sourceNode;
-    myParameterNode = null;
+    myParameterObject = null;
   }
 
   protected AbstractNodeSubstituteAction() {
     mySourceNode = null;
-    myParameterNode = null;
+    myParameterObject = null;
   }
 
   public SNode getSourceNode() {
@@ -34,15 +34,36 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
   }
 
   public SNode getParameterNode() {
-    return myParameterNode;
+    if (myParameterObject instanceof SNode) {
+      return (SNode) myParameterObject;
+    }
+    return null;
+  }
+
+  public Object getParameterObject() {
+    return myParameterObject;
   }
 
   public String getMatchingText(String pattern) {
-    return NodePresentationUtil.matchingText(getParameterNode());
+    return getMatchingText(pattern, false);
   }
 
   public String getDescriptionText(String pattern) {
-    return NodePresentationUtil.descriptionText(getParameterNode());
+    return getDescriptionText(pattern, false);
+  }
+
+  protected String getMatchingText(String pattern, boolean referent_presentation) {
+    if (myParameterObject instanceof SNode) {
+      return NodePresentationUtil.matchingText((SNode) myParameterObject, referent_presentation);
+    }
+    return "" + getParameterObject();
+  }
+
+  protected String getDescriptionText(String pattern, boolean referent_presentation) {
+    if (myParameterObject instanceof SNode) {
+      return NodePresentationUtil.descriptionText((SNode) myParameterObject);
+    }
+    return "";
   }
 
   public boolean canSubstituteStrictly(String pattern) {

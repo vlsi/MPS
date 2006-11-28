@@ -5,22 +5,18 @@ import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Mar 29, 2005
- * Time: 2:06:58 PM
- * To change this template use File | Settings | File Templates.
+ * Igor Alshannikov
+ * Mar 29, 2005
  */
 public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteAction implements INodeSubstituteAction {
   private SNode myCurrentReferent;
   private IScope myScope;
   private LinkDeclaration myLinkDeclaration;
 
-  public DefaultReferentNodeSubstituteAction(SNode parameterNode, SNode sourceNode, SNode currentReferent, LinkDeclaration linkDeclaration, IScope scope) {
-    super(parameterNode, sourceNode);
+  public DefaultReferentNodeSubstituteAction(Object parameterObject, SNode referenceNode, SNode currentReferent, LinkDeclaration linkDeclaration, IScope scope) {
+    super(parameterObject, referenceNode);
     myCurrentReferent = currentReferent;
     myScope = scope;
     myLinkDeclaration = linkDeclaration;
@@ -30,11 +26,11 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
   }
 
   public String getMatchingText(String pattern) {
-    return NodePresentationUtil.matchingText(getParameterNode(), true);
+    return getMatchingText(pattern, true);
   }
 
   public String getDescriptionText(String pattern) {
-    return NodePresentationUtil.descriptionText(getParameterNode(), true);
+    return getDescriptionText(pattern, true);
   }
 
   public SNode doSubstitute(String pattern) {

@@ -3,11 +3,8 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.smodel.SNode;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Jan 30, 2006
- * Time: 9:36:09 PM
- * To change this template use File | Settings | File Templates.
+ * Igor Alshannikov
+ * Jan 30, 2006
  */
 public class NodeSubstituteActionWrapper implements INodeSubstituteAction {
   private INodeSubstituteAction mySubstituteAction;
@@ -22,6 +19,11 @@ public class NodeSubstituteActionWrapper implements INodeSubstituteAction {
 
   public SNode getParameterNode() {
     return mySubstituteAction.getParameterNode();
+  }
+
+
+  public Object getParameterObject() {
+    return mySubstituteAction.getParameterObject();
   }
 
   public String getMatchingText(String pattern) {
