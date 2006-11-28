@@ -101,19 +101,11 @@ public class ModelConstraintsManager {
     }
   }
 
-  public void unRegisterNodeReferentSetEventHandlersMap(String conceptFqName, String referentRole) {
+  public void unRegisterNodeReferentSetEventHandler(String conceptFqName, String referentRole) {
     myNodeReferentSetEventHandlersMap.remove(conceptFqName + "#" + referentRole);
   }
 
   public INodeReferentSetEventHandler getNodeReferentSetEventHandler(SNode node, String referentRole) {
-//    String namespace = NameUtil.nodeLanguageNamespace(node);
-//    //language is not loaded yet (bootstrap)?
-//    if (!myAddedLanguageNamespaces.containsKey(namespace)) {
-//      return null;
-//    }
-
-//    System.out.println("find ReferentSetEventHandler for <" + referentRole + "> in " + node.getDebugText());
-
     // todo: optimization needed?
     ConceptDeclaration nodeConcept = node.getNodeConcept();
     while (nodeConcept != null) {
