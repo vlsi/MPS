@@ -3,9 +3,12 @@ package jetbrains.mps.ide.ui.smodel;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.EditorsPane;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
+
+import javax.swing.Icon;
 
 public class ReferencesTreeNode extends MPSTreeNodeEx {
   private SNode myNode;
@@ -33,13 +36,18 @@ public class ReferencesTreeNode extends MPSTreeNodeEx {
                   openEditor(target, getOperationContext());
         }
 
+        public Icon getIcon(boolean expanded) {
+          return Icons.DEFAULT_ICON;
+        }
 
         public boolean isLeaf() {
           return true;
         }
       });
     }
-    
+
+
+
     myInitialized = true;
   }
 

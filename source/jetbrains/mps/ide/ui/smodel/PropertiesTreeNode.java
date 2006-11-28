@@ -2,10 +2,12 @@ package jetbrains.mps.ide.ui.smodel;
 
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 
 import javax.swing.tree.DefaultTreeModel;
+import javax.swing.Icon;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -30,7 +32,11 @@ public class PropertiesTreeNode extends MPSTreeNodeEx {
     for (final String p : props) {
       add(new TextTreeNode(p + " = " + myNode.getProperty(p)) {
         public String getNodeIdentifier() {
-          return p; 
+          return p;
+        }
+
+        public Icon getIcon(boolean expanded) {
+          return Icons.DEFAULT_ICON;
         }
 
         public boolean isLeaf() {
@@ -43,7 +49,6 @@ public class PropertiesTreeNode extends MPSTreeNodeEx {
 
     ((DefaultTreeModel) getTree().getModel()).nodeStructureChanged(this);
   }
-
 
   public void update() {
     this.removeAllChildren();
