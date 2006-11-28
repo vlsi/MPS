@@ -209,7 +209,15 @@ public class SModelTreeNode extends MPSTreeNodeEx {
               DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
 
               MPSTreeNode nodeTreeNode = findDescendantWith(event.getNode());
-              if (nodeTreeNode == null || !nodeTreeNode.isInitialized()) return;
+              if (nodeTreeNode == null) return;
+
+
+
+              if (!nodeTreeNode.isInitialized()) {
+                treeModel.nodeChanged(nodeTreeNode);
+                return;
+              }
+
 
               MPSTreeNodeEx propsNode = (MPSTreeNodeEx) nodeTreeNode.getChildAt(0);
               propsNode.update();
