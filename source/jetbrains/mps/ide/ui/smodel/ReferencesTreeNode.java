@@ -17,11 +17,9 @@ public class ReferencesTreeNode extends MPSTreeNodeEx {
     myNode = node;
   }
 
-
   public boolean isInitialized() {
     return myInitialized;
   }
-
 
   public void init() {
     super.init();
