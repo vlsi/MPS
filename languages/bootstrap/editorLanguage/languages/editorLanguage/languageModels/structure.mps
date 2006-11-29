@@ -64,6 +64,11 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1143891637102" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1164826688380">
+      <property name="role" value="cellMenuComposite" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1164824717996" resolveInfo="CellMenu_Composite" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1073389214266">
       <property name="propertyType" value="string" />
       <property name="name" value="selectable" />
@@ -1984,6 +1989,27 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1164057368739">
       <link role="target" targetNodeId="37.1161622753914" />
       <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1164824717996">
+    <property name="name" value="CellMenu_Composite" />
+    <link role="extends" targetNodeId="3.1133920641626" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1164824815888">
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="cellMenuPart" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1164824854750" resolveInfo="CellMenu_AbstractPart" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1164826227425">
+      <property name="value" value="cell menu" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1164824854750">
+    <property name="name" value="CellMenu_AbstractPart" />
+    <link role="extends" targetNodeId="3.1133920641626" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1164824871502">
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" />
     </node>
   </node>
 </model>
