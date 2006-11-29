@@ -350,7 +350,7 @@ public class SModel implements Iterable<SNode> {
 
   @NotNull
   List<SModelListener> getListeners() {
-    return new ArrayList<SModelListener>(myListeners);
+    return new ArrayList<SModelListener>(CollectionUtil.iteratorAsList(myListeners.iterator()));
   }
 
   @NotNull
