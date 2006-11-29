@@ -2012,5 +2012,19 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1164833692343">
+    <property name="name" value="CellMenuPart_PropertyValues" />
+    <link role="extends" targetNodeId="1164824854750" resolveInfo="CellMenuPart_Abstract" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1164833692344">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="valuesFunction" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1160493135005" resolveInfo="CellMenu_SetProperty_GetValues" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1164833692345">
+      <property name="value" value="property values" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
+  </node>
 </model>
 

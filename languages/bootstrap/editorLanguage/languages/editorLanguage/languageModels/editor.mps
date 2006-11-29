@@ -8715,5 +8715,24 @@
       <property name="drawBorder" value="false" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1164834536966">
+    <link role="conceptDeclaration" targetNodeId="2.1164833692343" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1164834578875">
+      <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164834581705">
+        <property name="text" value="property values" />
+        <property name="drawBorder" value="false" />
+        <property name="selectable" value="true" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164834672598">
+        <property name="text" value=":" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1164834726131">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="2.1164833692344" />
+      </node>
+    </node>
+  </node>
 </model>
 
