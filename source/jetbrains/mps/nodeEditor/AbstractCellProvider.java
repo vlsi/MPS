@@ -7,6 +7,8 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.cellMenu.ICellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SimpleCellContext;
 
 public abstract class AbstractCellProvider {
   private SNode myNode;
@@ -25,6 +27,10 @@ public abstract class AbstractCellProvider {
 
   public SNode getSNode() {
     return myNode;
+  }
+
+  public ICellContext getCellContext() {
+    return new SimpleCellContext(getSNode());
   }
 
   public abstract EditorCell createEditorCell(EditorContext editorContext);

@@ -1,10 +1,10 @@
 package jetbrains.mps.nodeEditor.cellProviders;
 
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.core.BaseConcept;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
+import jetbrains.mps.smodel.SNode;
 
 /**
  * Created by IntelliJ IDEA.
@@ -55,7 +55,6 @@ public abstract class CellProviderWithRole extends AbstractCellProvider {
 
   public abstract INodeSubstituteInfo createDefaultSubstituteInfo();
 
-
   //sets a text to show in a cell if no target can be obtained by role
   public void setNoTargetText(String text) {
     myNoTargetText = text;
@@ -90,6 +89,4 @@ public abstract class CellProviderWithRole extends AbstractCellProvider {
   public static String getRoleByRelationDeclaration(BaseConcept relationDeclaration) {
     return null;
   }
-
-
 }

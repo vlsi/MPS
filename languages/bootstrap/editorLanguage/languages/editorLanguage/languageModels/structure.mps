@@ -65,7 +65,7 @@
       <link role="target" targetNodeId="1143891637102" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1164826688380">
-      <property name="role" value="cellMenuComposite" />
+      <property name="role" value="menuDescriptor" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1164824717996" resolveInfo="CellMenu_Composite" />
     </node>
@@ -1992,7 +1992,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1164824717996">
-    <property name="name" value="CellMenu_Composite" />
+    <property name="name" value="CellMenuDescriptor" />
     <link role="extends" targetNodeId="3.1133920641626" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1164824815888">
       <property name="sourceCardinality" value="0..n" />
