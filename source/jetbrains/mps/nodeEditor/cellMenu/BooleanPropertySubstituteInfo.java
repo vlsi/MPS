@@ -1,9 +1,11 @@
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.nodeEditor.cellMenu;
 
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.PropertySubstituteAction;
+import jetbrains.mps.nodeEditor.AbstractNodeSubstituteInfo;
+import jetbrains.mps.nodeEditor.EditorContext;
 
 import java.util.*;
 

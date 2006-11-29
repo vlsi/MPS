@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
+import jetbrains.mps.nodeEditor.cellMenu.DefaultAttributeSubstituteInfo;
 
 import java.awt.Color;
 import java.awt.event.KeyEvent;

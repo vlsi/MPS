@@ -1,4 +1,4 @@
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.bootstrap.structureLanguage.EnumerationDataTypeDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration;
@@ -6,6 +6,8 @@ import jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.nodeEditor.AbstractNodeSubstituteInfo;
+import jetbrains.mps.nodeEditor.EditorContext;
 
 import java.util.Iterator;
 import java.util.LinkedList;

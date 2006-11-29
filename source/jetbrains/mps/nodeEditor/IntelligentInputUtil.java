@@ -4,6 +4,8 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
 
 import java.util.ArrayList;
 import java.util.List;

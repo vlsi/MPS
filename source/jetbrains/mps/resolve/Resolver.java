@@ -6,6 +6,8 @@ import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.action.DefaultReferentNodeSubstituteAction;

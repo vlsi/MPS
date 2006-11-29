@@ -1,9 +1,11 @@
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 import jetbrains.mps.smodel.action.DefaultAttributeNodeSetter;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
+import jetbrains.mps.nodeEditor.EditorContext;
 
 /**
  * Created by IntelliJ IDEA.

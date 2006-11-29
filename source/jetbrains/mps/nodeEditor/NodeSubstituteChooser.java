@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.util.WindowsUtil;
+import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
 
 import javax.swing.*;
 import javax.swing.event.ListDataListener;

@@ -19,6 +19,7 @@ import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
 import jetbrains.mps.nodeEditor.text.CellAction_RenderText;
+import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.event.*;

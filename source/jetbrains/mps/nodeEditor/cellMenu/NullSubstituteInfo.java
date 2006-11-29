@@ -1,7 +1,8 @@
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
 
 import java.util.ArrayList;
 import java.util.List;

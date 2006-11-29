@@ -1,4 +1,4 @@
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;

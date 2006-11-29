@@ -4,6 +4,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
 
 import java.util.*;
 
