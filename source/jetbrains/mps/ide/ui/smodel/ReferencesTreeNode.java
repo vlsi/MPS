@@ -25,16 +25,17 @@ public class ReferencesTreeNode extends MPSTreeNodeEx {
     return myInitialized;
   }
 
+
   public void init() {
     super.init();
 
     for (final SReference ref : myNode.getReferences()) {
-      add(new TextTreeNode(ref.getRole() + ": " +  ref.getTargetNode()) {
+      add(new TextTreeNode(ref.getRole() + ": " +  ref.getTargetNode(), getOperationContext()) {
         public void doubleClick() {
           SNode target = ref.getTargetNode();
           if (target == null) return;
           getOperationContext().getComponent(EditorsPane.class).
-                  openEditor(target, getOperationContext());
+                  openEditor(target, getOperationContext()).selectNode(target);
         }
 
         public Icon getIcon(boolean expanded) {
