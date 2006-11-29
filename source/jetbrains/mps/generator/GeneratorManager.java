@@ -157,11 +157,12 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       for (Generator generator : generators) {
         Language targetLanguage = generator.getTargetLanguage();
         if (targetLanguage != null && !targetLanguages.contains(targetLanguage)) {
-          // only take generators with 'mapping configuration'.
-          // otherwise it is pure 'rewriting' generator - it's target language is not target of generation
-          if (containsMappingConfiguration(generator)) {
-            targetLanguages.add(targetLanguage);
+          if (targetLanguage == sourceLanguage) {
+            // only take self-generators with 'mapping configuration'.
+            // otherwise it is pure 'rewriting' generator - it's target language is not target of generation
+            if (!containsMappingConfiguration(generator)) continue;
           }
+          targetLanguages.add(targetLanguage);
         }
       }
     }
