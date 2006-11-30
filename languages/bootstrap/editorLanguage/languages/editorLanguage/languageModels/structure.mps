@@ -217,11 +217,6 @@
       <link role="target" targetNodeId="1.1071489288299" />
       <link role="specializedLink" targetNodeId="1140103550593" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1160500651867">
-      <property name="role" value="cellMenu" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1160492900893" resolveInfo="CellMenu_PropertyValue" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107223377706">
       <property name="value" value="property" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
@@ -1360,20 +1355,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1160492900893">
-    <property name="name" value="CellMenu_SetProperty" />
-    <link role="extends" targetNodeId="3.1133920641626" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1160500497347">
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="valuesFunction" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1160493135005" resolveInfo="CellMenu_PropertyValue_ValuesFunction" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1160493061645">
-      <property name="value" value="property value menu" />
-      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1160493135005">
     <property name="name" value="CellMenuPart_PropertyValues_GetValues" />
     <link role="extends" targetNodeId="4.1137021947720" />
@@ -2015,7 +1996,7 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
   </node>
-  <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1164848362119">
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1164848362119">
     <property name="name" value="CellMenuPart_PropertyValues_GetValues_node" />
     <link role="extends" targetNodeId="4.1107135704075" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1164848362120">
