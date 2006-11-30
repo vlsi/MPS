@@ -28,6 +28,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.util.*;
+import java.rmi.RemoteException;
 
 /**
  * Author: Sergey Dmitriev
@@ -346,6 +347,15 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(myProjectDescriptor.classPathEntrieses())) {
       if (entry.getPath() == null) continue;
       classpath.add(entry.getPath());
+    }
+
+    IProjectHandler handler = getProjectHandler();
+    if (handler != null) {
+      try {
+        classpath.addAll(handler.getModuleClassPath(getProjectFile().getAbsolutePath()));
+      } catch (RemoteException e) {
+        e.printStackTrace();  
+      }
     }
 
     return classpath;

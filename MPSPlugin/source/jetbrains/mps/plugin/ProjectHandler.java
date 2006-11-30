@@ -23,8 +23,10 @@ import com.intellij.openapi.vcs.history.VcsFileRevision;
 import com.intellij.openapi.vcs.history.VcsHistorySession;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.wm.WindowManager;
 import com.intellij.psi.*;
+import com.intellij.psi.css.impl.VirtualFileUtil;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.search.PsiSearchHelper;
 import com.intellij.refactoring.MoveClassesOrPackagesRefactoring;
@@ -41,9 +43,10 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Arrays;
+import java.util.*;
+import java.net.URL;
+import java.net.URISyntaxException;
+import java.net.MalformedURLException;
 
 /**
  * @author Kostik
@@ -669,6 +672,54 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     return bestModule;
   }
 
+  public List<String> getModuleClassPath(final String path) {
+    final List<String> res = new ArrayList<String>();
+    executeWriteAction(new Runnable() {
+      public void run() {
+        Module m = findModule(path);
+
+
+        final Set<Module> processedModules = new HashSet<Module>();
+        Set<VirtualFile> result = new LinkedHashSet<VirtualFile>();
+
+        String outUrl = ModuleRootManager.getInstance(m).getCompilerOutputPathUrl();
+        if (outUrl != null) {
+          res.add(new File(VirtualFileManager.extractPath(outUrl)).getAbsolutePath());
+        }
+
+
+        ModuleRootManager.getInstance(m).processOrder(new RootPolicy<Set<VirtualFile>>() {
+          public Set<VirtualFile> visitLibraryOrderEntry(LibraryOrderEntry libraryOrderEntry, Set<VirtualFile> result) {
+            result.addAll(Arrays.asList(libraryOrderEntry.getFiles(OrderRootType.CLASSES)));
+            return result;
+          }
+
+          public Set<VirtualFile> visitModuleOrderEntry(ModuleOrderEntry moduleOrderEntry, Set<VirtualFile> result) {
+            Module module = moduleOrderEntry.getModule();
+            if (module != null && !processedModules.contains(module)) {
+              String outUrl = ModuleRootManager.getInstance(module).getCompilerOutputPathUrl();
+              if (outUrl != null) {
+                res.add(new File(VirtualFileManager.extractPath(outUrl)).getAbsolutePath());
+              }
+              processedModules.add(module);
+              result.addAll(Arrays.asList(moduleOrderEntry.getFiles(OrderRootType.CLASSES_AND_OUTPUT)));
+              ModuleRootManager.getInstance(module).processOrder(this, result);
+            }
+            return result;
+          }
+        }, result);
+        for (VirtualFile f : result) {
+          try {
+            res.add(f.getPresentableUrl());
+          } catch (Exception e) {
+            e.printStackTrace();
+          }
+        }
+
+      }
+    });
+    return res;
+  }
 
   void showAspectMethodUsages(String namepace, String name) {
     for (IMPSIDEHandler h : myIDEHandlers) {

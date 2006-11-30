@@ -41,11 +41,12 @@ public interface IProjectHandler extends Remote {
   void moveConceptClass(String oldClassFQName, String newPackageName, File targetLangSourceRoot) throws RemoteException;
   void renameMethod(String classFQName, String oldMethodName, String newMethodName) throws RemoteException;
   void renameFieldAndInitializer(String classFQName, String oldFieldName, String newFieldName, String initializer) throws RemoteException;
+  
+  List<String> getModuleClassPath(final String path) throws RemoteException;
 
   public void createNewModule(final String moduleName, final String path) throws RemoteException;
 
   void addIdeHandler(IMPSIDEHandler handler) throws RemoteException;
 
   void removeIdeHandler(IMPSIDEHandler handler) throws RemoteException;
-
 }
