@@ -368,13 +368,28 @@
             <property name="noTargetText" value="&lt;none&gt;" />
             <link role="relationDeclaration" targetNodeId="2.1158591300266" />
           </node>
+          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1164909952497">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1164909952498">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1164909952499">
+                <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1164909952500">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1164909952501" />
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1164909952502">
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1164909952503" />
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1164909959115">
+                      <link role="link" targetNodeId="2.1158611464354" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1164826955577">
           <property name="drawBorder" value="false" />
           <property name="vertical" value="false" />
           <property name="selectable" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164826955578">
-            <property name="text" value="menu (composite)" />
+            <property name="text" value="menu" />
             <property name="drawBorder" value="true" />
             <property name="selectable" value="false" />
           </node>
@@ -913,13 +928,28 @@
             <property name="noTargetText" value="&lt;none&gt;" />
             <link role="relationDeclaration" targetNodeId="2.1158591300266" />
           </node>
+          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1164910037034">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1164910037035">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1164910037036">
+                <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1164910037037">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1164910037038" />
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1164910037039">
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1164910037040" />
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1164910038386">
+                      <link role="link" targetNodeId="2.1158610183998" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1164826819402">
           <property name="drawBorder" value="false" />
           <property name="vertical" value="false" />
           <property name="selectable" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164826819403">
-            <property name="text" value="menu (composite)" />
+            <property name="text" value="menu" />
             <property name="drawBorder" value="true" />
             <property name="selectable" value="false" />
           </node>
@@ -1847,13 +1877,28 @@
             <property name="noTargetText" value="&lt;none&gt;" />
             <link role="relationDeclaration" targetNodeId="2.1158591300266" />
           </node>
+          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1164909986530">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1164909986531">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1164909986532">
+                <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1164909986533">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1164909986534" />
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1164909986535">
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1164909986536" />
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1164909990195">
+                      <link role="link" targetNodeId="2.1158591300266" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1164826949633">
           <property name="drawBorder" value="false" />
           <property name="vertical" value="false" />
           <property name="selectable" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164826949634">
-            <property name="text" value="menu (composite)" />
+            <property name="text" value="menu" />
             <property name="drawBorder" value="true" />
             <property name="selectable" value="false" />
           </node>
@@ -2242,13 +2287,28 @@
             <property name="noTargetText" value="&lt;none&gt;" />
             <link role="relationDeclaration" targetNodeId="2.1158591300266" />
           </node>
+          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1164910058473">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1164910058474">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1164910058475">
+                <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1164910058476">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1164910058477" />
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1164910058478">
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1164910058479" />
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1164910060106">
+                      <link role="link" targetNodeId="2.1158609882517" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1164826875292">
           <property name="drawBorder" value="false" />
           <property name="vertical" value="false" />
           <property name="selectable" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164826875293">
-            <property name="text" value="menu (composite)" />
+            <property name="text" value="menu" />
             <property name="drawBorder" value="true" />
             <property name="selectable" value="false" />
           </node>
@@ -2589,13 +2649,28 @@
             <property name="noTargetText" value="&lt;none&gt;" />
             <link role="relationDeclaration" targetNodeId="2.1158591300266" />
           </node>
+          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1164909882095">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1164909882096">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1164909885581">
+                <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1164909902133">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1164909905746" />
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1164909893803">
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1164909890271" />
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1164909899117">
+                      <link role="link" targetNodeId="2.1158611571887" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1164826962005">
           <property name="drawBorder" value="false" />
           <property name="vertical" value="false" />
           <property name="selectable" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164826962006">
-            <property name="text" value="menu (composite)" />
+            <property name="text" value="menu" />
             <property name="drawBorder" value="true" />
             <property name="selectable" value="false" />
           </node>
@@ -6236,13 +6311,28 @@
             <property name="noTargetText" value="&lt;none&gt;" />
             <link role="relationDeclaration" targetNodeId="2.1158591300266" />
           </node>
+          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1164910016767">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1164910016768">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1164910016769">
+                <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1164910016770">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1164910016771" />
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1164910016772">
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1164910016773" />
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1164910018040">
+                      <link role="link" targetNodeId="2.1158610494889" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1164826974136">
           <property name="drawBorder" value="false" />
           <property name="vertical" value="false" />
           <property name="selectable" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164826974137">
-            <property name="text" value="menu (composite)" />
+            <property name="text" value="menu" />
             <property name="drawBorder" value="true" />
             <property name="selectable" value="false" />
           </node>
