@@ -17,6 +17,7 @@ import java.util.*;
  * Sep 19, 2005
  */
 public class GenerationSessionContext extends StandaloneMPSContext {
+  private static final Object USED_NAMES = new Object();
 
   private List<Generator> myGeneratorModules;
   private List<SModelDescriptor> myTemplateModels;
@@ -136,6 +137,21 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   public Object getUserObject(Object key) {
     return myUserObjects.get(key);
+  }
+
+  public String createUniqueName(String roughName) {
+    Set<String> usedNames = (Set<String>) getUserObject(USED_NAMES);
+    if (usedNames == null) {
+      usedNames = new HashSet<String>();
+      putUserObject(USED_NAMES, usedNames);
+    }
+    int count = 1;
+    String name = roughName;
+    while (usedNames.contains(name)) {
+      name = roughName + (count++);
+    }
+    usedNames.add(name);
+    return name;
   }
 
 

@@ -8707,9 +8707,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1164826552421">
     <link role="conceptDeclaration" targetNodeId="2.1164824854750" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164826554254">
-      <property name="editable" value="true" />
-      <property name="textFgColor" value="darkGray" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Error" id="1164841410765">
       <property name="text" value="&lt;choose menu part&gt;" />
       <property name="fontStyle" value="ITALIC" />
       <property name="drawBorder" value="false" />
