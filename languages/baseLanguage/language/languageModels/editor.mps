@@ -3617,9 +3617,6 @@
         <node role="tokenKind" type="jetbrains.mps.bootstrap.editorLanguage.OperationCellToken" id="1147787301503">
           <property name="priority" value="2" />
         </node>
-        <node role="cellMenu" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceNode" id="1158685984228">
-          <link role="replacementConcept" targetNodeId="17.1081773326031" />
-        </node>
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164922010319">
           <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164922016492">
             <link role="replacementConcept" targetNodeId="17.1081773326031" />
@@ -3651,8 +3648,10 @@
         <node role="tokenKind" type="jetbrains.mps.bootstrap.editorLanguage.OperationCellToken" id="1147787286392">
           <property name="priority" value="1" />
         </node>
-        <node role="cellMenu" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceNode" id="1158592246081">
-          <link role="replacementConcept" targetNodeId="17.1081773326031" />
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164922406579">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164922406580">
+            <link role="replacementConcept" targetNodeId="17.1081773326031" />
+          </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776530758">
@@ -3680,8 +3679,10 @@
         <node role="tokenKind" type="jetbrains.mps.bootstrap.editorLanguage.OperationCellToken" id="1147787359241">
           <property name="priority" value="0" />
         </node>
-        <node role="cellMenu" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceNode" id="1158684775107">
-          <link role="replacementConcept" targetNodeId="17.1081773326031" />
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164922365924">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164922365925">
+            <link role="replacementConcept" targetNodeId="17.1081773326031" />
+          </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776559875">
@@ -3708,9 +3709,6 @@
         <property name="drawBorder" value="false" />
         <node role="tokenKind" type="jetbrains.mps.bootstrap.editorLanguage.OperationCellToken" id="1147787336145">
           <property name="priority" value="2" />
-        </node>
-        <node role="cellMenu" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceNode" id="1158686029183">
-          <link role="replacementConcept" targetNodeId="17.1081773326031" />
         </node>
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164916704166">
           <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164916707683">
@@ -3743,8 +3741,10 @@
         <node role="tokenKind" type="jetbrains.mps.bootstrap.editorLanguage.OperationCellToken" id="1147787344724">
           <property name="priority" value="1" />
         </node>
-        <node role="cellMenu" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceNode" id="1158684862142">
-          <link role="replacementConcept" targetNodeId="17.1081773326031" />
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164922337982">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164922337983">
+            <link role="replacementConcept" targetNodeId="17.1081773326031" />
+          </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776604978">
@@ -3774,8 +3774,10 @@
         <node role="tokenKind" type="jetbrains.mps.bootstrap.editorLanguage.OperationCellToken" id="1147787147936">
           <property name="priority" value="2" />
         </node>
-        <node role="cellMenu" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceNode" id="1158686120443">
-          <link role="replacementConcept" targetNodeId="17.1081773326031" />
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164922431818">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164922431819">
+            <link role="replacementConcept" targetNodeId="17.1081773326031" />
+          </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776616605">
@@ -3803,8 +3805,10 @@
         <node role="tokenKind" type="jetbrains.mps.bootstrap.editorLanguage.OperationCellToken" id="1147787326441">
           <property name="priority" value="1" />
         </node>
-        <node role="cellMenu" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceNode" id="1158685960211">
-          <link role="replacementConcept" targetNodeId="17.1081773326031" />
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164922349305">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164922349306">
+            <link role="replacementConcept" targetNodeId="17.1081773326031" />
+          </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776654094">
@@ -3832,8 +3836,10 @@
         <node role="tokenKind" type="jetbrains.mps.bootstrap.editorLanguage.OperationCellToken" id="1147787170296">
           <property name="priority" value="0" />
         </node>
-        <node role="cellMenu" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceNode" id="1158686000276">
-          <link role="replacementConcept" targetNodeId="17.1081773326031" />
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164922323941">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164922323942">
+            <link role="replacementConcept" targetNodeId="17.1081773326031" />
+          </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776665362">
@@ -3861,8 +3867,10 @@
         <node role="tokenKind" type="jetbrains.mps.bootstrap.editorLanguage.OperationCellToken" id="1147787373992">
           <property name="priority" value="0" />
         </node>
-        <node role="cellMenu" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceNode" id="1158686140647">
-          <link role="replacementConcept" targetNodeId="17.1081773326031" />
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164922418699">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164922418700">
+            <link role="replacementConcept" targetNodeId="17.1081773326031" />
+          </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776676177">
@@ -3941,8 +3949,10 @@
         <node role="tokenKind" type="jetbrains.mps.bootstrap.editorLanguage.OperationCellToken" id="1153417919052">
           <property name="priority" value="0" />
         </node>
-        <node role="cellMenu" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceNode" id="1158686103707">
-          <link role="replacementConcept" targetNodeId="17.1081773326031" />
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164922456266">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164922456267">
+            <link role="replacementConcept" targetNodeId="17.1081773326031" />
+          </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1153417919053">
@@ -4129,8 +4139,10 @@
         <node role="tokenKind" type="jetbrains.mps.bootstrap.editorLanguage.OperationCellToken" id="1158685100506">
           <property name="priority" value="0" />
         </node>
-        <node role="cellMenu" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceNode" id="1158685815234">
-          <link role="replacementConcept" targetNodeId="17.1081773326031" />
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164922309103">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164922309104">
+            <link role="replacementConcept" targetNodeId="17.1081773326031" />
+          </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1158685100508">
@@ -4157,8 +4169,10 @@
         <node role="tokenKind" type="jetbrains.mps.bootstrap.editorLanguage.OperationCellToken" id="1158686380894">
           <property name="priority" value="2" />
         </node>
-        <node role="cellMenu" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceNode" id="1158686405949">
-          <link role="replacementConcept" targetNodeId="17.1081773326031" />
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164922379184">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164922379185">
+            <link role="replacementConcept" targetNodeId="17.1081773326031" />
+          </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1158686380896">
@@ -4185,8 +4199,10 @@
         <node role="tokenKind" type="jetbrains.mps.bootstrap.editorLanguage.OperationCellToken" id="1158686491087">
           <property name="priority" value="0" />
         </node>
-        <node role="cellMenu" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceNode" id="1158686515705">
-          <link role="replacementConcept" targetNodeId="17.1081773326031" />
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164922394085">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164922394086">
+            <link role="replacementConcept" targetNodeId="17.1081773326031" />
+          </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1158686491089">
