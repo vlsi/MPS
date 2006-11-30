@@ -544,6 +544,33 @@
           </node>
           <node role="finallyBody" type="jetbrains.mps.baseLanguage.StatementList" id="1164906854344" />
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.TryCatchStatement" id="1164908645904">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1164908645905" />
+          <node role="catchClause" type="jetbrains.mps.baseLanguage.CatchClause" id="1164908645906">
+            <node role="throwable" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1164908645907">
+              <node role="type" type="jetbrains.mps.baseLanguage.Type" id="1164908645908" />
+            </node>
+            <node role="catchBody" type="jetbrains.mps.baseLanguage.StatementList" id="1164908645909" />
+          </node>
+          <node role="catchClause" type="jetbrains.mps.baseLanguage.CatchClause" id="1164908648082">
+            <node role="throwable" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1164908648083">
+              <node role="type" type="jetbrains.mps.baseLanguage.Type" id="1164908648084" />
+            </node>
+            <node role="catchBody" type="jetbrains.mps.baseLanguage.StatementList" id="1164908648085" />
+          </node>
+          <node role="catchClause" type="jetbrains.mps.baseLanguage.CatchClause" id="1164908653148">
+            <node role="throwable" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1164908653149">
+              <node role="type" type="jetbrains.mps.baseLanguage.Type" id="1164908653150" />
+            </node>
+            <node role="catchBody" type="jetbrains.mps.baseLanguage.StatementList" id="1164908653151" />
+          </node>
+          <node role="catchClause" type="jetbrains.mps.baseLanguage.CatchClause" id="1164908656043">
+            <node role="throwable" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1164908656044">
+              <node role="type" type="jetbrains.mps.baseLanguage.Type" id="1164908656045" />
+            </node>
+            <node role="catchBody" type="jetbrains.mps.baseLanguage.StatementList" id="1164908656046" />
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1154544745892">
         <property name="name" value="val" />

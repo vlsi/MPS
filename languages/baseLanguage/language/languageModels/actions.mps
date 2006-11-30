@@ -349,6 +349,16 @@
         </node>
       </node>
     </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1164908910313">
+      <property name="actionsFactoryAspectId" value="TryCatchStatement_AddCatchClause" />
+      <property name="description" value="add catch clause" />
+      <link role="applicableConcept" targetNodeId="1.1164879751025" />
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1164908927832">
+      <property name="actionsFactoryAspectId" value="TryCatchStatement_ConvertToTry" />
+      <property name="description" value="convert to try statement" />
+      <link role="applicableConcept" targetNodeId="1.1164879751025" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeFactories" id="1158793282643">
     <property name="name" value="BL_node_factories" />
