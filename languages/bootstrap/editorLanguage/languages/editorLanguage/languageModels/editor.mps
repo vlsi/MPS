@@ -7455,19 +7455,6 @@
           </node>
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1158591227293">
-        <property name="drawBorder" value="false" />
-        <property name="selectable" value="false" />
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1158591236122">
-          <property name="text" value="setup node" />
-          <property name="drawBorder" value="false" />
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1158591260655">
-          <property name="drawBorder" value="false" />
-          <property name="noTargetText" value="&lt;default&gt;" />
-          <link role="relationDeclaration" targetNodeId="2.1158590055875" />
-        </node>
-      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1158615656703">
