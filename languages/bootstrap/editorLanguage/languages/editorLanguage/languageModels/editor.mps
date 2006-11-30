@@ -3076,13 +3076,28 @@
             <property name="noTargetText" value="&lt;none&gt;" />
             <link role="relationDeclaration" targetNodeId="2.1160500651867" />
           </node>
+          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1164848467851">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1164848467852">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1164848470009">
+                <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1164848504749">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1164848508517" />
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1164848495950">
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1164848487152" />
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1164848502201">
+                      <link role="link" targetNodeId="2.1160500651867" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1164827024298">
           <property name="drawBorder" value="false" />
           <property name="vertical" value="false" />
           <property name="selectable" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164827024299">
-            <property name="text" value="menu (composite)" />
+            <property name="text" value="menu" />
             <property name="drawBorder" value="true" />
             <property name="selectable" value="false" />
           </node>
@@ -5853,7 +5868,7 @@
         <property name="textBgColorSelected" value="cyan" />
         <link role="relationDeclaration" targetNodeId="2.1136923970223" />
         <node role="cellMenu" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_SetProperty" id="1160757379168">
-          <node role="valuesFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_SetProperty_GetValues" id="1160757379169">
+          <node role="valuesFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_PropertyValues_GetValues" id="1160757379169">
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1160757379170">
               <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1160757397957">
                 <node role="expression" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1160757402678">
@@ -5912,7 +5927,7 @@
         <property name="textBgColorSelected" value="cyan" />
         <link role="relationDeclaration" targetNodeId="2.1136923970224" />
         <node role="cellMenu" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_SetProperty" id="1160674387357">
-          <node role="valuesFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_SetProperty_GetValues" id="1160674387358">
+          <node role="valuesFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_PropertyValues_GetValues" id="1160674387358">
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1160674387359">
               <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1160674869626">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1160674869627">
