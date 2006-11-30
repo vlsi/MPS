@@ -12,6 +12,10 @@
       <property name="applicableLinkMetaclass" value="aggregation" />
       <link role="applicableConcept" targetNodeId="1.1073389214265" />
     </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1164921162329">
+      <property name="actionsFactoryAspectId" value="CellMenuPart_Abstract" />
+      <link role="applicableConcept" targetNodeId="1.1164824854750" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeFactories" id="1158947431096">
     <property name="name" value="EDTL_node_factories" />
