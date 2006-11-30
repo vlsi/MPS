@@ -524,27 +524,25 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.TryStatement" id="1164880979121">
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1164880979122" />
-          <node role="finallyBody" type="jetbrains.mps.baseLanguage.StatementList" id="1164880979123" />
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.TryStatement" id="1164884492535">
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1164880989314" />
-          <node role="catchBody" type="jetbrains.mps.baseLanguage.StatementList" id="1164880989315">
-            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1164886234465">
-              <node role="expression" type="jetbrains.mps.baseLanguage.FieldReference" id="1164886235811">
-                <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1164886234466">
-                  <link role="variableDeclaration" targetNodeId="1164882727928" resolveInfo="t" />
-                </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.TryStatement" id="1164906854327">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1164905605649" />
+          <node role="catchClause" type="jetbrains.mps.baseLanguage.CatchClause" id="1164905605650">
+            <node role="throwable" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1164905605651">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1164905782745">
+                <link role="classifier" extResolveInfo="1.[Classifier]Exception" />
               </node>
             </node>
-          </node>
-          <node role="throwable" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1164882727928">
-            <property name="name" value="t" />
-            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1164882740821">
-              <link role="classifier" extResolveInfo="1.[Classifier]Throwable" />
+            <node role="catchBody" type="jetbrains.mps.baseLanguage.StatementList" id="1164905605653">
+              <node role="statement" type="jetbrains.mps.baseLanguage.Statement" id="1164905613576" />
             </node>
           </node>
+          <node role="catchClause" type="jetbrains.mps.baseLanguage.CatchClause" id="1164905642688">
+            <node role="throwable" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1164905642689">
+              <node role="type" type="jetbrains.mps.baseLanguage.Type" id="1164905642690" />
+            </node>
+            <node role="catchBody" type="jetbrains.mps.baseLanguage.StatementList" id="1164905642691" />
+          </node>
+          <node role="finallyBody" type="jetbrains.mps.baseLanguage.StatementList" id="1164906854344" />
         </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1154544745892">
