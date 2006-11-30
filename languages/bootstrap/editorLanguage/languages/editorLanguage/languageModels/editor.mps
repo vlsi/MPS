@@ -4793,13 +4793,28 @@
             <property name="noTargetText" value="&lt;default&gt;" />
             <link role="relationDeclaration" targetNodeId="2.1162923704838" />
           </node>
+          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1164928460279">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1164928460280">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1164928600815">
+                <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1164928619179">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1164928622760" />
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1164928608568">
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1164928606973" />
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1164928613006">
+                      <link role="link" targetNodeId="2.1162923704838" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1164827035429">
           <property name="drawBorder" value="false" />
           <property name="vertical" value="false" />
           <property name="selectable" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164827035430">
-            <property name="text" value="menu (composite)" />
+            <property name="text" value="menu" />
             <property name="drawBorder" value="true" />
             <property name="selectable" value="false" />
           </node>
