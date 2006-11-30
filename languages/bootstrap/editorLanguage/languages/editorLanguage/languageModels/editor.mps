@@ -5867,46 +5867,48 @@
         <property name="noTargetText" value="any" />
         <property name="textBgColorSelected" value="cyan" />
         <link role="relationDeclaration" targetNodeId="2.1136923970223" />
-        <node role="cellMenu" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_SetProperty" id="1160757379168">
-          <node role="valuesFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_PropertyValues_GetValues" id="1160757379169">
-            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1160757379170">
-              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1160757397957">
-                <node role="expression" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1160757402678">
-                  <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListCreatorWithInit" id="1160757405914">
-                    <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1160757413432">
-                      <link role="classifier" extResolveInfo="14.[Classifier]String" />
-                    </node>
-                    <node role="initValue" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1160757433042">
-                      <link role="classifier" extResolveInfo="16.[Classifier]EditorCellKeyMap" />
-                      <link role="variableDeclaration" extResolveInfo="16.static field ([Classifier]EditorCellKeyMap).([StaticFieldDeclaration]KEY_MODIFIERS_NONE : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
-                    </node>
-                    <node role="initValue" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1160757459544">
-                      <link role="classifier" extResolveInfo="16.[Classifier]EditorCellKeyMap" />
-                      <link role="variableDeclaration" extResolveInfo="16.static field ([Classifier]EditorCellKeyMap).([StaticFieldDeclaration]KEY_MODIFIERS_CTRL : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
-                    </node>
-                    <node role="initValue" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1160757667077">
-                      <link role="classifier" extResolveInfo="16.[Classifier]EditorCellKeyMap" />
-                      <link role="variableDeclaration" extResolveInfo="16.static field ([Classifier]EditorCellKeyMap).([StaticFieldDeclaration]KEY_MODIFIERS_ALT : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
-                    </node>
-                    <node role="initValue" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1160757691548">
-                      <link role="classifier" extResolveInfo="16.[Classifier]EditorCellKeyMap" />
-                      <link role="variableDeclaration" extResolveInfo="16.static field ([Classifier]EditorCellKeyMap).([StaticFieldDeclaration]KEY_MODIFIERS_SHIFT : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
-                    </node>
-                    <node role="initValue" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1160757715081">
-                      <link role="classifier" extResolveInfo="16.[Classifier]EditorCellKeyMap" />
-                      <link role="variableDeclaration" extResolveInfo="16.static field ([Classifier]EditorCellKeyMap).([StaticFieldDeclaration]KEY_MODIFIERS_CTRL_ALT : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
-                    </node>
-                    <node role="initValue" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1160757734365">
-                      <link role="classifier" extResolveInfo="16.[Classifier]EditorCellKeyMap" />
-                      <link role="variableDeclaration" extResolveInfo="16.static field ([Classifier]EditorCellKeyMap).([StaticFieldDeclaration]KEY_MODIFIERS_CTRL_SHIFT : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
-                    </node>
-                    <node role="initValue" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1160757763257">
-                      <link role="classifier" extResolveInfo="16.[Classifier]EditorCellKeyMap" />
-                      <link role="variableDeclaration" extResolveInfo="16.static field ([Classifier]EditorCellKeyMap).([StaticFieldDeclaration]KEY_MODIFIERS_CTRL_ALT_SHIFT : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
-                    </node>
-                    <node role="initValue" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1160757795119">
-                      <link role="classifier" extResolveInfo="16.[Classifier]EditorCellKeyMap" />
-                      <link role="variableDeclaration" extResolveInfo="16.static field ([Classifier]EditorCellKeyMap).([StaticFieldDeclaration]KEY_MODIFIERS_ALT_SHIFT : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164849330211">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_PropertyValues" id="1164849343182">
+            <node role="valuesFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_PropertyValues_GetValues" id="1164849353025">
+              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1164849353026">
+                <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1164849353027">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1164849353028">
+                    <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListCreatorWithInit" id="1164849353029">
+                      <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1164849353030">
+                        <link role="classifier" extResolveInfo="14.[Classifier]String" />
+                      </node>
+                      <node role="initValue" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1164849353031">
+                        <link role="variableDeclaration" extResolveInfo="16.static field ([Classifier]EditorCellKeyMap).([StaticFieldDeclaration]KEY_MODIFIERS_NONE : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                        <link role="classifier" extResolveInfo="16.[Classifier]EditorCellKeyMap" />
+                      </node>
+                      <node role="initValue" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1164849353032">
+                        <link role="classifier" extResolveInfo="16.[Classifier]EditorCellKeyMap" />
+                        <link role="variableDeclaration" extResolveInfo="16.static field ([Classifier]EditorCellKeyMap).([StaticFieldDeclaration]KEY_MODIFIERS_CTRL : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                      </node>
+                      <node role="initValue" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1164849353033">
+                        <link role="variableDeclaration" extResolveInfo="16.static field ([Classifier]EditorCellKeyMap).([StaticFieldDeclaration]KEY_MODIFIERS_ALT : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                        <link role="classifier" extResolveInfo="16.[Classifier]EditorCellKeyMap" />
+                      </node>
+                      <node role="initValue" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1164849353050">
+                        <link role="variableDeclaration" extResolveInfo="16.static field ([Classifier]EditorCellKeyMap).([StaticFieldDeclaration]KEY_MODIFIERS_SHIFT : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                        <link role="classifier" extResolveInfo="16.[Classifier]EditorCellKeyMap" />
+                      </node>
+                      <node role="initValue" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1164849353051">
+                        <link role="variableDeclaration" extResolveInfo="16.static field ([Classifier]EditorCellKeyMap).([StaticFieldDeclaration]KEY_MODIFIERS_CTRL_ALT : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                        <link role="classifier" extResolveInfo="16.[Classifier]EditorCellKeyMap" />
+                      </node>
+                      <node role="initValue" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1164849353052">
+                        <link role="variableDeclaration" extResolveInfo="16.static field ([Classifier]EditorCellKeyMap).([StaticFieldDeclaration]KEY_MODIFIERS_CTRL_SHIFT : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                        <link role="classifier" extResolveInfo="16.[Classifier]EditorCellKeyMap" />
+                      </node>
+                      <node role="initValue" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1164849353053">
+                        <link role="classifier" extResolveInfo="16.[Classifier]EditorCellKeyMap" />
+                        <link role="variableDeclaration" extResolveInfo="16.static field ([Classifier]EditorCellKeyMap).([StaticFieldDeclaration]KEY_MODIFIERS_CTRL_ALT_SHIFT : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                      </node>
+                      <node role="initValue" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1164849353054">
+                        <link role="variableDeclaration" extResolveInfo="16.static field ([Classifier]EditorCellKeyMap).([StaticFieldDeclaration]KEY_MODIFIERS_ALT_SHIFT : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                        <link role="classifier" extResolveInfo="16.[Classifier]EditorCellKeyMap" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -5926,62 +5928,64 @@
         <property name="noTargetText" value="&lt;keycode&gt;" />
         <property name="textBgColorSelected" value="cyan" />
         <link role="relationDeclaration" targetNodeId="2.1136923970224" />
-        <node role="cellMenu" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_SetProperty" id="1160674387357">
-          <node role="valuesFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_PropertyValues_GetValues" id="1160674387358">
-            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1160674387359">
-              <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1160674869626">
-                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1160674869627">
-                  <property name="name" value="keycodes" />
-                  <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListType" id="1160674869628">
-                    <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1160674873943">
-                      <link role="classifier" extResolveInfo="14.[Classifier]String" />
-                    </node>
-                  </node>
-                  <node role="initializer" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1160674883351">
-                    <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListCreatorWithInit" id="1160674885400">
-                      <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1160674891402">
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164849004316">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_PropertyValues" id="1164849014504">
+            <node role="valuesFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_PropertyValues_GetValues" id="1164849028331">
+              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1164849028332">
+                <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1164849028333">
+                  <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1164849028334">
+                    <property name="name" value="keycodes" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListType" id="1164849028335">
+                      <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1164849028336">
                         <link role="classifier" extResolveInfo="14.[Classifier]String" />
                       </node>
-                      <node role="initValue" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1160674902762">
-                        <link role="classifier" extResolveInfo="16.[Classifier]EditorCellKeyMap" />
-                        <link role="variableDeclaration" extResolveInfo="16.static field ([Classifier]EditorCellKeyMap).([StaticFieldDeclaration]KEY_CODE_DIGIT : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
-                      </node>
-                      <node role="initValue" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1160674926953">
-                        <link role="classifier" extResolveInfo="16.[Classifier]EditorCellKeyMap" />
-                        <link role="variableDeclaration" extResolveInfo="16.static field ([Classifier]EditorCellKeyMap).([StaticFieldDeclaration]KEY_CODE_LETTER : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
-                      </node>
-                      <node role="initValue" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1160674968127">
-                        <link role="classifier" extResolveInfo="16.[Classifier]EditorCellKeyMap" />
-                        <link role="variableDeclaration" extResolveInfo="16.static field ([Classifier]EditorCellKeyMap).([StaticFieldDeclaration]KEY_CODE_LETTER_OR_DIGIT : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
-                      </node>
-                      <node role="initValue" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1160675867904">
-                        <link role="classifier" extResolveInfo="16.[Classifier]EditorCellKeyMap" />
-                        <link role="variableDeclaration" extResolveInfo="16.static field ([Classifier]EditorCellKeyMap).([StaticFieldDeclaration]KEY_CODE_SPACE : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
-                      </node>
-                      <node role="initValue" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1160675889094">
-                        <link role="classifier" extResolveInfo="16.[Classifier]EditorCellKeyMap" />
-                        <link role="variableDeclaration" extResolveInfo="16.static field ([Classifier]EditorCellKeyMap).([StaticFieldDeclaration]KEY_CODE_CHAR : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                    </node>
+                    <node role="initializer" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1164849028337">
+                      <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListCreatorWithInit" id="1164849028338">
+                        <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1164849028339">
+                          <link role="classifier" extResolveInfo="14.[Classifier]String" />
+                        </node>
+                        <node role="initValue" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1164849028340">
+                          <link role="classifier" extResolveInfo="16.[Classifier]EditorCellKeyMap" />
+                          <link role="variableDeclaration" extResolveInfo="16.static field ([Classifier]EditorCellKeyMap).([StaticFieldDeclaration]KEY_CODE_DIGIT : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                        </node>
+                        <node role="initValue" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1164849028341">
+                          <link role="variableDeclaration" extResolveInfo="16.static field ([Classifier]EditorCellKeyMap).([StaticFieldDeclaration]KEY_CODE_LETTER : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                          <link role="classifier" extResolveInfo="16.[Classifier]EditorCellKeyMap" />
+                        </node>
+                        <node role="initValue" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1164849028342">
+                          <link role="variableDeclaration" extResolveInfo="16.static field ([Classifier]EditorCellKeyMap).([StaticFieldDeclaration]KEY_CODE_LETTER_OR_DIGIT : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                          <link role="classifier" extResolveInfo="16.[Classifier]EditorCellKeyMap" />
+                        </node>
+                        <node role="initValue" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1164849028343">
+                          <link role="variableDeclaration" extResolveInfo="16.static field ([Classifier]EditorCellKeyMap).([StaticFieldDeclaration]KEY_CODE_SPACE : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                          <link role="classifier" extResolveInfo="16.[Classifier]EditorCellKeyMap" />
+                        </node>
+                        <node role="initValue" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1164849028344">
+                          <link role="classifier" extResolveInfo="16.[Classifier]EditorCellKeyMap" />
+                          <link role="variableDeclaration" extResolveInfo="16.static field ([Classifier]EditorCellKeyMap).([StaticFieldDeclaration]KEY_CODE_CHAR : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                        </node>
                       </node>
                     </node>
                   </node>
                 </node>
-              </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1160676049877">
-                <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1160676051848">
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1160676049878">
-                    <link role="variableDeclaration" targetNodeId="1160674869627" resolveInfo="keycodes" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.AddAllElementsOperation" id="1160676054990">
-                    <node role="argument" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1160676079664">
-                      <link role="baseMethodDeclaration" extResolveInfo="16.static method ([Classifier]EditorCellKeyMap).([StaticMethodDeclaration]getVirtualKeycodes() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [String]&gt;]))" />
-                      <link role="classConcept" extResolveInfo="16.[Classifier]EditorCellKeyMap" />
+                <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1164849028345">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1164849028346">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1164849028347">
+                      <link role="variableDeclaration" targetNodeId="1164849028334" resolveInfo="keycodes" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.AddAllElementsOperation" id="1164849028348">
+                      <node role="argument" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1164849028349">
+                        <link role="baseMethodDeclaration" extResolveInfo="16.static method ([Classifier]EditorCellKeyMap).([StaticMethodDeclaration]getVirtualKeycodes() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [String]&gt;]))" />
+                        <link role="classConcept" extResolveInfo="16.[Classifier]EditorCellKeyMap" />
+                      </node>
                     </node>
                   </node>
                 </node>
-              </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1160676103291">
-                <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1160676111543">
-                  <link role="variableDeclaration" targetNodeId="1160674869627" resolveInfo="keycodes" />
+                <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1164849028350">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1164849028351">
+                    <link role="variableDeclaration" targetNodeId="1164849028334" resolveInfo="keycodes" />
+                  </node>
                 </node>
               </node>
             </node>

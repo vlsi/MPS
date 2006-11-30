@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.SNode;
  * Date: Nov 29, 2006
  */
 public class SimpleCellContext implements ICellContext {
-  private static Map myValues = new HashMap();
+  private Map myValues = new HashMap();
 
   public SimpleCellContext(SNode node) {
     put(EDITED_NODE, node);
