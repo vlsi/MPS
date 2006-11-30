@@ -180,8 +180,8 @@ public class GenerationSession {
     RewritingGenerator rewritingGenerator = new RewritingGenerator(generationContext, generator.getProgressMonitor());
     while (rewritingGenerator.doModelRewriting(currentInputModel.getSModel(), currentOutputModel.getSModel())) {
       if (++preliminaryRewritingRepeatCount > 10) {
-        rewritingGenerator.showErrorMessage(null, "Failed to rewrite input after 10 repeated preliminari rewritings");
-        throw new GenerationFailedException("Failed to rewrite input after 10 repeated preliminari rewritings");
+        rewritingGenerator.showErrorMessage(null, "Failed to rewrite input after 10 repeated rewritings");
+        throw new GenerationFailedException("Failed to rewrite input after 10 repeated rewritings");
       }
       currentOutputModel.getSModel().validateLanguagesAndImports();
       currentInputModel = currentOutputModel;
