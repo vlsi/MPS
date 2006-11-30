@@ -6128,6 +6128,7 @@
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1137633209021">
             <property name="textBgColor" value="yellow" />
+            <property name="allowEmptyText" value="true" />
             <property name="drawBorder" value="true" />
             <property name="noTargetText" value="&lt;none&gt;" />
             <property name="textBgColorSelected" value="cyan" />
