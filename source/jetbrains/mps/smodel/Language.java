@@ -204,9 +204,10 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     readDependOnModules();
     revalidateGenerators();
 
+    rereadModels();
+
     ReloadUtils.reloadAll(true, true, false);
 
-    rereadModels();
 
     registerAspectListener();
     updateLastGenerationTime();

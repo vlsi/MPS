@@ -25,4 +25,5 @@ public class WeakSet<T> extends AbstractSet<T> {
   public int size() {
     return myWeakHashMap.size();
   }
+
 }

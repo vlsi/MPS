@@ -13,7 +13,6 @@
     <generator generatorUID="jetbrains.mps.bootstrap.sharedConcepts#1161623873951" targetLanguage="jetbrains.mps.baseLanguage">
       <models>
         <modelRoot path="${language_descriptor}\generators\baseLanguage\templates" namespacePrefix="jetbrains.mps.bootstrap.sharedConcepts.generator.baseLanguage.template" />
-        <modelRoot path="${mps_home}\languages\baseLanguage\language\generator\java\templates" namespacePrefix="jetbrains.mps.baseLanguage.generator.java" />
       </models>
       <module>
         <moduleRoot path="${mps_home}\languages\baseLanguage\language" />
