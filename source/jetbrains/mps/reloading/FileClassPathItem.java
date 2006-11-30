@@ -26,6 +26,11 @@ public class FileClassPathItem extends AbstractClassPathItem{
     myClassPath = classPath;
   }
 
+
+  public String getClassPath() {
+    return myClassPath;
+  }
+
   public byte[] getClass(String name) {
     String path = myClassPath + File.separatorChar + name.replace('.', File.separatorChar) + ".class";
     File file = new File(path);
