@@ -2011,5 +2011,18 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473994950" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1164914519156">
+    <property name="name" value="CellMenuPart_ReplaceNode" />
+    <link role="extends" targetNodeId="1164824854750" resolveInfo="CellMenuPart_Abstract" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1164914727930">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="replacementConcept" />
+      <link role="target" targetNodeId="1.1071489090640" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1164914519158">
+      <property name="value" value="replace node" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
+  </node>
 </model>
 
