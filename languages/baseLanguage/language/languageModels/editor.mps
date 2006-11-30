@@ -3862,20 +3862,96 @@
         <property name="text" value="try {" />
         <property name="drawBorder" value="false" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1153952495826">
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Alternation" id="1164881171028">
         <property name="drawBorder" value="false" />
-        <property name="name" value="ifTrueBox" />
-        <property name="vertical" value="false" />
-        <property name="selectable" value="false" />
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1153952495827">
-          <property name="text" value="  " />
-          <property name="drawBorder" value="false" />
-          <property name="name" value="indentCell" />
-          <property name="selectable" value="false" />
+        <node role="alternationCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1164881171029">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1164881171030">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1164881628084">
+              <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1164881644854">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1164881650248" />
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1164881631930">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1164881631007" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1164881641681">
+                    <link role="link" targetNodeId="17.1164881126932" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1153952495828">
+        <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1164881229403">
           <property name="drawBorder" value="false" />
-          <link role="relationDeclaration" targetNodeId="17.1153952416686" />
+          <property name="name" value="ifTrueBox" />
+          <property name="vertical" value="false" />
+          <property name="selectable" value="false" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164881229404">
+            <property name="text" value="  " />
+            <property name="drawBorder" value="false" />
+            <property name="name" value="indentCell" />
+            <property name="selectable" value="false" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1164881229405">
+            <property name="drawBorder" value="false" />
+            <link role="relationDeclaration" targetNodeId="17.1153952416686" />
+          </node>
+        </node>
+        <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1164881235374">
+          <property name="drawBorder" value="false" />
+          <property name="vertical" value="true" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1164881240166">
+            <property name="drawBorder" value="false" />
+            <property name="name" value="ifTrueBox" />
+            <property name="vertical" value="false" />
+            <property name="selectable" value="false" />
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164881240167">
+              <property name="text" value="  " />
+              <property name="drawBorder" value="false" />
+              <property name="name" value="indentCell" />
+              <property name="selectable" value="false" />
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1164881240168">
+              <property name="drawBorder" value="false" />
+              <link role="relationDeclaration" targetNodeId="17.1153952416686" />
+            </node>
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1164881257719">
+            <property name="drawBorder" value="false" />
+            <property name="selectable" value="false" />
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164881260408">
+              <property name="text" value="}" />
+              <property name="drawBorder" value="false" />
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164881264223">
+              <property name="textFgColor" value="DARK_BLUE" />
+              <property name="text" value="catch" />
+              <property name="drawBorder" value="false" />
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164881268818">
+              <property name="text" value="(" />
+              <property name="drawBorder" value="false" />
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1164881273398">
+              <property name="drawBorder" value="false" />
+              <link role="relationDeclaration" targetNodeId="17.1164881126931" />
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164881321385">
+              <property name="text" value=") {" />
+              <property name="drawBorder" value="false" />
+            </node>
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1164881344436">
+            <property name="drawBorder" value="false" />
+            <property name="selectable" value="false" />
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164881346375">
+              <property name="text" value="  " />
+              <property name="drawBorder" value="false" />
+              <property name="selectable" value="false" />
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1164881352033">
+              <property name="drawBorder" value="false" />
+              <link role="relationDeclaration" targetNodeId="17.1164881126932" />
+            </node>
+          </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1153952559385">
@@ -5781,6 +5857,189 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1164049979597">
           <node role="expression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1164049979598">
             <link role="variableDeclaration" targetNodeId="1164049979559" resolveInfo="referenceNode" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1164880014998">
+    <link role="conceptDeclaration" targetNodeId="17.1164879751025" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1164880022438">
+      <property name="drawBorder" value="false" />
+      <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1164880031472">
+        <property name="drawBorder" value="false" />
+        <property name="selectable" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164880033959">
+          <property name="textFgColor" value="DARK_BLUE" />
+          <property name="text" value="try" />
+          <property name="drawBorder" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164880041383">
+          <property name="text" value="{" />
+          <property name="drawBorder" value="false" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1164880052763">
+        <property name="drawBorder" value="false" />
+        <property name="selectable" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164880062312">
+          <property name="text" value="  " />
+          <property name="drawBorder" value="false" />
+          <property name="selectable" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1164880067767">
+          <property name="drawBorder" value="false" />
+          <link role="relationDeclaration" targetNodeId="17.1164879758292" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1164880076067">
+        <property name="drawBorder" value="false" />
+        <property name="selectable" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164880077944">
+          <property name="text" value="}" />
+          <property name="drawBorder" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164880092133">
+          <property name="textFgColor" value="DARK_BLUE" />
+          <property name="text" value="catch" />
+          <property name="drawBorder" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164880096573">
+          <property name="text" value="(" />
+          <property name="drawBorder" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1164880102887">
+          <property name="drawBorder" value="false" />
+          <link role="relationDeclaration" targetNodeId="17.1164879949809" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164880109483">
+          <property name="text" value=") {" />
+          <property name="drawBorder" value="false" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1164880118673">
+        <property name="drawBorder" value="false" />
+        <property name="selectable" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164880121410">
+          <property name="text" value="  " />
+          <property name="drawBorder" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1164880133696">
+          <property name="drawBorder" value="false" />
+          <link role="relationDeclaration" targetNodeId="17.1164879764308" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164880145745">
+        <property name="editable" value="true" />
+        <property name="text" value="}" />
+        <property name="drawBorder" value="false" />
+        <link role="actionMap" targetNodeId="1164883858924" resolveInfo="_TryCatchStatement_Actions" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.CellActionMapDeclaration" id="1164883858924">
+    <property name="name" value="_TryCatchStatement_Actions" />
+    <link role="applicableConcept" targetNodeId="17.1164879751025" />
+    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMapItem" id="1164883993548">
+      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_ExecuteFunction" id="1164883993549">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1164883993550">
+          <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1164884007254">
+            <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1164884013416">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1164884018529" />
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1164884009227">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_FunctionParm_selectedNode" id="1164884009179" />
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetParentOperation" id="1164884011665" />
+              </node>
+            </node>
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1164884007256">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1164884020076" />
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1164884034594">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1164884034595">
+              <property name="name" value="tryStatement" />
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1164884034596">
+                <link role="concept" targetNodeId="17.1153952380246" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.NewExpression" id="1164884034597">
+                <link role="baseMethodDeclaration" extResolveInfo="44.constructor [Classifier]TryStatement[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SModel]))" />
+                <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1164884034598">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_FunctionParm_selectedNode" id="1164884097574" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetModelOperation" id="1164884034600" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1164884034601">
+            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1164884034602">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1164884034603">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1164884034604">
+                  <link role="variableDeclaration" targetNodeId="1164884034595" resolveInfo="tryStatement" />
+                </node>
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1164884034605">
+                  <link role="link" targetNodeId="17.1153952416686" />
+                </node>
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Link_SetTargetOperation" id="1164884034606">
+                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1164884034607">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_FunctionParm_selectedNode" id="1164884089274" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1164884034609">
+                    <link role="link" targetNodeId="17.1164879758292" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1164884034610">
+            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1164884034611">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1164884034612">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1164884034613">
+                  <link role="variableDeclaration" targetNodeId="1164884034595" resolveInfo="tryStatement" />
+                </node>
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1164884034614">
+                  <link role="link" targetNodeId="17.1164881126932" />
+                </node>
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Link_SetTargetOperation" id="1164884034615">
+                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1164884034616">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_FunctionParm_selectedNode" id="1164884091150" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1164884034618">
+                    <link role="link" targetNodeId="17.1164879764308" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1164884034619">
+            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1164884034620">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1164884034621">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1164884034622">
+                  <link role="variableDeclaration" targetNodeId="1164884034595" resolveInfo="tryStatement" />
+                </node>
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1164884034623">
+                  <link role="link" targetNodeId="17.1164881126931" />
+                </node>
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Link_SetTargetOperation" id="1164884034624">
+                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1164884034625">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_FunctionParm_selectedNode" id="1164884094292" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1164884034627">
+                    <link role="link" targetNodeId="17.1164879949809" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1164884034628">
+            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1164884034629">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_FunctionParm_selectedNode" id="1164884086148" />
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_ReplaceWithAnotherOperation" id="1164884034631">
+                <node role="parameter" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1164884034632">
+                  <link role="variableDeclaration" targetNodeId="1164884034595" resolveInfo="tryStatement" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>

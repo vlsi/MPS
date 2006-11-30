@@ -524,6 +524,20 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.TryStatement" id="1164880979121">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1164880979122" />
+          <node role="finallyBody" type="jetbrains.mps.baseLanguage.StatementList" id="1164880979123" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.TryStatement" id="1164884492535">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1164880989314" />
+          <node role="catchBody" type="jetbrains.mps.baseLanguage.StatementList" id="1164880989315" />
+          <node role="throwable" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1164882727928">
+            <property name="name" value="t" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1164882740821">
+              <link role="classifier" extResolveInfo="1.[Classifier]Throwable" />
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1154544745892">
         <property name="name" value="val" />
