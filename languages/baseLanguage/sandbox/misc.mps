@@ -530,7 +530,15 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.TryStatement" id="1164884492535">
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1164880989314" />
-          <node role="catchBody" type="jetbrains.mps.baseLanguage.StatementList" id="1164880989315" />
+          <node role="catchBody" type="jetbrains.mps.baseLanguage.StatementList" id="1164880989315">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1164886234465">
+              <node role="expression" type="jetbrains.mps.baseLanguage.FieldReference" id="1164886235811">
+                <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1164886234466">
+                  <link role="variableDeclaration" targetNodeId="1164882727928" resolveInfo="t" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node role="throwable" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1164882727928">
             <property name="name" value="t" />
             <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1164882740821">
