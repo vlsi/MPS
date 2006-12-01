@@ -72,6 +72,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
 
   public void showMethodUsages(String classFqName, String methodName, int parameterCount) throws RemoteException {
     Classifier cls = SModelUtil.findNodeByFQName(classFqName, Classifier.class, GlobalScope.getInstance());
+    if (cls == null) return;
     BaseMethodDeclaration m = null;
     for (BaseMethodDeclaration method : cls.getChildren(BaseMethodDeclaration.class)) {
       if (methodName.equals(method.getName()) && method.getParametersCount() == parameterCount) {
