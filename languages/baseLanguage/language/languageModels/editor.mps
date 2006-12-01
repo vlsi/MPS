@@ -330,9 +330,6 @@
             </node>
           </node>
         </node>
-        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1165002205770">
-          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReferentPrimary" id="1165002213911" />
-        </node>
       </node>
     </node>
   </node>
