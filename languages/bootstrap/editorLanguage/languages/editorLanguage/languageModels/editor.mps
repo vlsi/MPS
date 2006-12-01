@@ -8521,7 +8521,7 @@
             <property name="drawBorder" value="false" />
             <property name="selectable" value="false" />
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1165005705258">
-              <property name="text" value="  parameter object type" />
+              <property name="text" value="parameter object type" />
               <property name="drawBorder" value="false" />
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1165005705259">
@@ -8539,7 +8539,7 @@
             <property name="drawBorder" value="false" />
             <property name="selectable" value="false" />
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1165005705262">
-              <property name="text" value="  presentation" />
+              <property name="text" value="presentation" />
               <property name="drawBorder" value="false" />
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1165005705263">
@@ -8556,7 +8556,7 @@
             <property name="drawBorder" value="false" />
             <property name="selectable" value="false" />
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1165005705266">
-              <property name="text" value="  matching text" />
+              <property name="text" value="matching text" />
               <property name="drawBorder" value="false" />
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1165005705267">
@@ -8581,7 +8581,7 @@
                     </node>
                     <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Property_HasValue_Enum" id="1165005705276">
                       <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.EnumMemberReference" id="1165005705277">
-                        <link role="enumMember" targetNodeId="19.1161807432013" />
+                        <link role="enumMember" targetNodeId="19.1165007009658" />
                       </node>
                     </node>
                   </node>
@@ -8593,7 +8593,7 @@
             <property name="drawBorder" value="false" />
             <property name="selectable" value="false" />
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1165005705279">
-              <property name="text" value="  description text" />
+              <property name="text" value="description text" />
               <property name="drawBorder" value="false" />
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1165005705280">
@@ -8618,7 +8618,7 @@
                     </node>
                     <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Property_HasValue_Enum" id="1165005705289">
                       <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.EnumMemberReference" id="1165005705290">
-                        <link role="enumMember" targetNodeId="19.1161807432013" />
+                        <link role="enumMember" targetNodeId="19.1165007009658" />
                       </node>
                     </node>
                   </node>
@@ -8630,7 +8630,7 @@
             <property name="drawBorder" value="false" />
             <property name="selectable" value="false" />
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1165005705292">
-              <property name="text" value="  parameter objects" />
+              <property name="text" value="parameter objects" />
               <property name="drawBorder" value="false" />
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1165005705293">
@@ -8647,7 +8647,7 @@
             <property name="drawBorder" value="false" />
             <property name="selectable" value="false" />
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1165005705296">
-              <property name="text" value="  create new node" />
+              <property name="text" value="create new node" />
               <property name="drawBorder" value="false" />
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1165005705297">

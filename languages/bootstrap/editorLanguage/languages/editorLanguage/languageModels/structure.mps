@@ -1935,7 +1935,7 @@
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1165004502301">
       <property name="name" value="presentation" />
-      <link role="dataType" targetNodeId="37.1161807239261" />
+      <link role="dataType" targetNodeId="37.1165007009656" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1165004207522">
       <property name="value" value="replace node (custom)" />
