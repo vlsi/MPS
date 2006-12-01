@@ -8,7 +8,13 @@
     <property name="name" value="C" />
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1164892342597">
       <property name="name" value="foo" />
-      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1164892342598" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1164892342598">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ThrowStatement" id="1164992599951">
+          <node role="throwable" type="jetbrains.mps.baseLanguage.NewExpression" id="1164992605406">
+            <link role="baseMethodDeclaration" extResolveInfo="1.constructor [Classifier]UnsupportedOperationException[ConstructorDeclaration] ()" />
+          </node>
+        </node>
+      </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1164892342599" />
       <node role="throwsItem" type="jetbrains.mps.baseLanguage.ClassifierType" id="1164892419821">
         <link role="classifier" extResolveInfo="1.[Classifier]Exception" />

@@ -1659,5 +1659,19 @@
       <link role="target" targetNodeId="1068580123136" resolveInfo="StatementList" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1164991038168">
+    <property name="name" value="ThrowStatement" />
+    <link role="extends" targetNodeId="1068580123157" resolveInfo="Statement" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1164992080058">
+      <property name="value" value="throw" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1164991057263">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="throwable" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
+    </node>
+  </node>
 </model>
 

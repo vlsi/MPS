@@ -603,6 +603,7 @@
             <property name="drawBorder" value="false" />
             <property name="selectable" value="false" />
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164891194929">
+              <property name="textFgColor" value="DARK_BLUE" />
               <property name="text" value="throws" />
               <property name="drawBorder" value="false" />
             </node>
@@ -6195,6 +6196,25 @@
           <property name="drawBorder" value="false" />
           <link role="relationDeclaration" targetNodeId="17.1164903359218" />
         </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1164991126499">
+    <link role="conceptDeclaration" targetNodeId="17.1164991038168" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1164991133830">
+      <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164991135285">
+        <property name="textFgColor" value="DARK_BLUE" />
+        <property name="text" value="throw" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1164991147291">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="17.1164991057263" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164991154683">
+        <property name="text" value=";" />
+        <property name="drawBorder" value="false" />
       </node>
     </node>
   </node>

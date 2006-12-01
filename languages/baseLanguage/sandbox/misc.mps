@@ -524,8 +524,41 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ThrowStatement" id="1164992094013">
+          <node role="throwable" type="jetbrains.mps.baseLanguage.NewExpression" id="1164992097750">
+            <link role="baseMethodDeclaration" extResolveInfo="3.constructor [Classifier]AbstractList[ConstructorDeclaration] ()" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ThrowStatement" id="1164992252980">
+          <node role="throwable" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1164992255561">
+            <link role="variableDeclaration" targetNodeId="1161266743380" resolveInfo="a" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1164992190031">
+          <node role="expression" type="jetbrains.mps.baseLanguage.NewExpression" id="1164992190032">
+            <link role="baseMethodDeclaration" extResolveInfo="1.constructor [Classifier]Throwable[ConstructorDeclaration] ()" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1164992218145">
+          <node role="expression" type="jetbrains.mps.baseLanguage.NewExpression" id="1164992218146">
+            <link role="baseMethodDeclaration" extResolveInfo="3.constructor [Classifier]AbstractList[ConstructorDeclaration] ()" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ThrowStatement" id="1164992544279">
+          <node role="throwable" type="jetbrains.mps.baseLanguage.NewExpression" id="1164992549281">
+            <link role="baseMethodDeclaration" extResolveInfo="1.constructor [Classifier]Exception[ConstructorDeclaration] ()" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1164992233194">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1164992233195">
+            <property name="name" value="a" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1164992233196" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.TryStatement" id="1164906854327">
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1164905605649" />
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1164905605649">
+            <node role="statement" type="jetbrains.mps.baseLanguage.Statement" id="1164992125763" />
+          </node>
           <node role="catchClause" type="jetbrains.mps.baseLanguage.CatchClause" id="1164905605650">
             <node role="throwable" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1164905605651">
               <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1164905782745">
