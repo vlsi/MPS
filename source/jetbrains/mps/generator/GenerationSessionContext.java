@@ -17,7 +17,6 @@ import java.util.*;
  * Sep 19, 2005
  */
 public class GenerationSessionContext extends StandaloneMPSContext {
-  private static final Object USED_NAMES = new Object();
 
   private List<Generator> myGeneratorModules;
   private List<SModelDescriptor> myTemplateModels;
@@ -26,7 +25,10 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private Language myTargetLanguage;
 
   private Map<Object, Object> myUserObjects = new HashMap<Object, Object>();
+
+  // these objects survive through all steps of generation
   private TraceMap myTraceMap = new TraceMap();
+  private Set<String> myUsedNames = new HashSet<String>();
 
   public GenerationSessionContext(Language targetLanguage, SModel sourceModel, IOperationContext invocationContext) {
     myTargetLanguage = targetLanguage;
@@ -140,17 +142,12 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   }
 
   public String createUniqueName(String roughName) {
-    Set<String> usedNames = (Set<String>) getUserObject(USED_NAMES);
-    if (usedNames == null) {
-      usedNames = new HashSet<String>();
-      putUserObject(USED_NAMES, usedNames);
-    }
     int count = 1;
     String name = roughName;
-    while (usedNames.contains(name)) {
+    while (myUsedNames.contains(name)) {
       name = roughName + (count++);
     }
-    usedNames.add(name);
+    myUsedNames.add(name);
     return name;
   }
 
