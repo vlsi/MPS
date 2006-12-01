@@ -13,4 +13,6 @@ public interface ICellContext {
 
   @NotNull
   Object get(Object key);
+
+  Object getOpt(Object key);
 }

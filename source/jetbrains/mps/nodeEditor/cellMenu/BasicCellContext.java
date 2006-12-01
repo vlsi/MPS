@@ -11,10 +11,10 @@ import jetbrains.mps.smodel.SNode;
  * Igor Alshannikov
  * Date: Nov 29, 2006
  */
-public class SimpleCellContext implements ICellContext {
+public class BasicCellContext implements ICellContext {
   private Map myValues = new HashMap();
 
-  public SimpleCellContext(SNode node) {
+  public BasicCellContext(SNode node) {
     put(EDITED_NODE, node);
   }
 
@@ -24,6 +24,10 @@ public class SimpleCellContext implements ICellContext {
 
   @NotNull
   public Object get(Object key) {
+    return myValues.get(key);
+  }
+
+  public Object getOpt(Object key) {
     return myValues.get(key);
   }
 }
