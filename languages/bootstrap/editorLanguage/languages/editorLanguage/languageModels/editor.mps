@@ -8471,7 +8471,7 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1164996606400">
       <property name="drawBorder" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164996606401">
-        <property name="text" value="choose referent" />
+        <property name="text" value="primary referent menu" />
         <property name="drawBorder" value="false" />
         <property name="selectable" value="true" />
       </node>
@@ -8481,7 +8481,9 @@
         <property name="selectable" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164996640250">
-        <property name="text" value="primary menu" />
+        <property name="textFgColor" value="darkGray" />
+        <property name="text" value="&lt;no customization needed/available&gt;" />
+        <property name="fontStyle" value="ITALIC" />
         <property name="drawBorder" value="false" />
         <property name="selectable" value="false" />
       </node>
