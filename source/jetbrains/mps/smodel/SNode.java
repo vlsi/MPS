@@ -907,14 +907,19 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return null;
   }
 
-
   @Nullable
   public <N extends SNode> N getParent(@NotNull Class<N> cls) {
-    if (cls.isInstance(this)) return (N) this;
+    return getParent(cls, true);
+  }
+
+  @Nullable
+  public <N extends SNode> N getParent(@NotNull Class<N> cls, boolean canReturnThis) {
+    if (canReturnThis) {
+      if (cls.isInstance(this)) return (N) this;
+    }
     if (myParent == null) return null;
     return myParent.getParent(cls);
   }
-
 
   @NotNull
   public SReference addReferent(@NotNull String role, SNode target) {
