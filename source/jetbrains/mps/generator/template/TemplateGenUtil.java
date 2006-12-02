@@ -461,7 +461,7 @@ public class TemplateGenUtil {
     try {
       return createNodeBuilder_impl(sourceNode, templateNode, mappingName, currentMacroIndex, generator);
     } catch (Exception e) {
-      generator.showErrorMessage(sourceNode, templateNode, "node builde creation failure: " + e.getClass().getName() + " " + e.getMessage());
+      generator.showErrorMessage(sourceNode, templateNode, "node builder creation failure: " + e.getClass().getName() + " " + e.getMessage());
     }
     return new Void_NodeBuilder(sourceNode, templateNode, mappingName, generator);
   }

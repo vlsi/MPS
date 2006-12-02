@@ -1898,7 +1898,7 @@
     <property name="name" value="CellMenuPart_ReferentPrimary" />
     <link role="extends" targetNodeId="1164824854750" resolveInfo="CellMenuPart_Abstract" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1164996492013">
-      <property name="value" value="primary menu" />
+      <property name="value" value="primary choose referent menu" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
   </node>
@@ -1938,7 +1938,7 @@
       <link role="dataType" targetNodeId="37.1165007009656" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1165004207522">
-      <property name="value" value="replace node (custom)" />
+      <property name="value" value="replace node (group of custom actions)" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
   </node>
