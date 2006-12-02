@@ -22,14 +22,6 @@ public class ReferencesTreeNode extends MPSTreeNodeEx {
   }
 
 
-  public Icon getIcon(boolean expanded) {
-    if (expanded) {
-      return Icons.OPENED_FOLDER_GOTHIC;
-    } else {
-      return Icons.CLOSED_FOLDER_GOTHIC;
-    }
-  }
-
   public boolean isInitialized() {
     return myInitialized;
   }

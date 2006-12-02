@@ -118,9 +118,9 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
 
   public Icon getIcon(boolean expanded) {
     if (expanded) {
-      return Icons.OPENED_FOLDER_GOTHIC;
+      return Icons.OPENED_FOLDER;
     } else {
-      return Icons.CLOSED_FOLDER_GOTHIC;
+      return Icons.CLOSED_FOLDER;
     }
   }
 
