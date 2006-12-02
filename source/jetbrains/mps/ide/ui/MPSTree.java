@@ -312,9 +312,6 @@ public abstract class MPSTree extends JTree {
 
   public void rebuildTree(Runnable rebuildAction, boolean saveExpansion) {
     runRebuildAction(rebuildAction, saveExpansion);
-    invalidate();
-    validate();
-    repaint();
   }
 
   public void rebuildTree() {

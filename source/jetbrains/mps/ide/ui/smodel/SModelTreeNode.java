@@ -164,25 +164,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     myModelDescriptor.getSModel().removeSModelCommandListener(myModelListener);
   }
 
-  private boolean needChangeRootNodePosition(SModelPropertyEvent e) {
-    MPSTreeNode rootNode = findExactChildWith(e.getNode());
-    if (rootNode == null) return false;
-    String newName = rootNode.toString();
-    if (newName == null) return true;
-    boolean result = false;
-    MPSTreeNode prevNode = (MPSTreeNode) getChildBefore(rootNode);
-    MPSTreeNode nextNode = (MPSTreeNode) getChildAfter(rootNode);
-    String prevName = prevNode == null ? null : prevNode.toString();
-    String nextName = nextNode == null ? null : nextNode.toString();
-    if (prevName != null) {
-      result = prevName.compareTo(newName) > 0;
-    }
-    if (nextName != null) {
-      result = result || nextName.compareTo(newName) < 0;
-    }
-    return result;
-  }
-
   private class MyModelListener implements SModelCommandListener {
     public MyModelListener() {
     }
@@ -240,7 +221,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
           updateChangedProperties(nodesWithChangedProperties);
           updateChangedRefs(nodesWithChangedRefs);
         }
-      }, false /* EventUtil.isDramaticalChange(events) || EventUtil.isRootNameChange(events)) */);
+      }, false);
     }
 
     private void updateChangedRefs(Set<SNode> nodesWithChangedRefs) {
