@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.ToStringComparator;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
@@ -26,7 +27,7 @@ import javax.swing.tree.TreeNode;
 import java.awt.Color;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -189,77 +190,143 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     public void modelChangedInCommand(final List<SModelEvent> events) {
       getTree().rebuildTree(new Runnable() {
         public void run() {
-          SModelEventVisitor visitor = new SModelEventVisitor() {
-            public void visitRootEvent(SModelRootEvent event) {
-              SModelTreeNode.this.update();
-              updateTreeWithRoot(event.getRoot());
-            }
+          final Set<SNode> addedRoots = new HashSet<SNode>();
+          final Set<SNode> removedRoots = new HashSet<SNode>();
 
-            public void visitChildEvent(SModelChildEvent event) {
-              updateTreeWithRoot(event.getParent());
-            }
+          final Set<SNode> addedNodes = new HashSet<SNode>();
+          final Set<SNode> removedNodes = new HashSet<SNode>();
 
-            public void visitPropertyEvent(SModelPropertyEvent event) {
-              if (event.getNode().isRoot() && needChangeRootNodePosition(event)) {
-                SModelTreeNode.this.update();
-                updateTreeWithRoot(event.getNode());
-                return;
-              }
+          final Set<SNode> nodesWithChangedProperties = new HashSet<SNode>();
 
-              DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+          final Set<SNode> nodesWithChangedRefs = new HashSet<SNode>();
 
-              MPSTreeNode nodeTreeNode = findDescendantWith(event.getNode());
-              if (nodeTreeNode == null) return;
-
-
-
-              if (!nodeTreeNode.isInitialized()) {
-                treeModel.nodeChanged(nodeTreeNode);
-                return;
-              }
-
-
-              MPSTreeNodeEx propsNode = (MPSTreeNodeEx) nodeTreeNode.getChildAt(0);
-              propsNode.update();
-              propsNode.init();
-
-              treeModel.nodeStructureChanged(propsNode);
-              treeModel.nodeChanged(nodeTreeNode);
-            }
-
-            public void visitReferenceEvent(SModelReferenceEvent event) {
-              DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
-
-              SNode sourceNode = event.getReference().getSourceNode();
-              MPSTreeNode nodeTreeNode = findDescendantWith(sourceNode);
-              if (nodeTreeNode == null || !nodeTreeNode.isInitialized()) return;
-
-              MPSTreeNodeEx refsNode = (MPSTreeNodeEx) nodeTreeNode.getChildAt(1);
-              refsNode.update();
-              refsNode.init();
-
-              treeModel.nodeStructureChanged(refsNode);
-            }
-
-          };
           for (SModelEvent event : events) {
-            event.accept(visitor);
+            event.accept(new SModelEventVisitor() {
+              public void visitRootEvent(SModelRootEvent event) {
+                if (event.isAdded()) {
+                  addedRoots.add(event.getRoot());
+                  removedRoots.remove(event.getRoot());
+                }
+
+                if (event.isRemoved()) {
+                  removedRoots.add(event.getRoot());
+                  addedRoots.remove(event.getRoot());
+                }
+              }
+
+              public void visitChildEvent(SModelChildEvent event) {
+                if (event.isAdded()) {
+                  addedNodes.add(event.getChild());
+                }
+
+                if (event.isRemoved()) {
+                  removedNodes.add(event.getChild());
+                }                                
+              }
+
+              public void visitPropertyEvent(SModelPropertyEvent event) {
+                nodesWithChangedProperties.add(event.getNode());
+              }
+
+              public void visitReferenceEvent(SModelReferenceEvent event) {
+                nodesWithChangedRefs.add(event.getReference().getSourceNode());
+
+              }
+            });
           }
 
+          addAndRemoveRoots(removedRoots, addedRoots);
+          addAndRemoveVisibleChildren(removedNodes, addedNodes);
+          updateChangedProperties(nodesWithChangedProperties);
+          updateChangedRefs(nodesWithChangedRefs);
         }
-      }, EventUtil.isDramaticalChange(events) || EventUtil.isRootNameChange(events));
+      }, false /* EventUtil.isDramaticalChange(events) || EventUtil.isRootNameChange(events)) */);
     }
 
-    private void updateTreeWithRoot(SNode node) {
-      MPSTreeNode treeNode = findDescendantWith(node);
-      if (treeNode != null) {
-        treeNode.update();
-      }
+    private void updateChangedRefs(Set<SNode> nodesWithChangedRefs) {
       DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
-      treeModel.nodeStructureChanged((TreeNode) treeModel.getRoot());
+      for (SNode sourceNode : nodesWithChangedRefs) {
+        MPSTreeNode nodeTreeNode = findDescendantWith(sourceNode);
+        if (nodeTreeNode == null || !nodeTreeNode.isInitialized()) return;
+
+        MPSTreeNodeEx refsNode = (MPSTreeNodeEx) nodeTreeNode.getChildAt(1);
+        refsNode.update();
+        refsNode.init();
+
+        treeModel.nodeStructureChanged(refsNode);
+      }
     }
 
+    private void updateChangedProperties(Set<SNode> nodesWithChangedProperties) {
+      DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+      final List<SNode> allRoots = new ArrayList<SNode>(getSModelDescriptor().getSModel().getRoots());
+      Collections.sort(allRoots, new ToStringComparator());
+      for (SNode node : nodesWithChangedProperties) {
+        SNodeTreeNode treeNode = (SNodeTreeNode) findExactChildWith(node);
+        if (treeNode == null) continue;
+        if (node.isRoot()) {
+          int currentIndex = getIndex(treeNode);
+          int newIndex = allRoots.indexOf(node);
 
+          if (currentIndex != newIndex) {
+            treeModel.removeNodeFromParent(treeNode);
+            treeModel.insertNodeInto(treeNode, SModelTreeNode.this, newIndex);
+          }
+        }
+
+        if (treeNode.isInitialized()) {
+          MPSTreeNodeEx propsNode = (MPSTreeNodeEx) treeNode.getChildAt(0);
+          propsNode.update();
+          propsNode.init();
+          treeModel.nodeStructureChanged(propsNode);
+        }
+
+
+        treeModel.nodeChanged(treeNode);
+      }
+    }
+
+    private void addAndRemoveVisibleChildren(Set<SNode> removedNodes, Set<SNode> addedNodes) {
+      DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+      for (SNode removed : removedNodes) {
+        SNodeTreeNode node = (SNodeTreeNode) findDescendantWith(removed);
+        if (node == null) continue;
+        treeModel.removeNodeFromParent(node);
+      }
+
+      for (SNode added : addedNodes) {
+        if (added.isDeleted()) continue;
+        SNodeTreeNode parent = (SNodeTreeNode) findDescendantWith(added.getParent());
+        if (!parent.isInitialized()) continue;
+        SNode parentNode = parent.getSNode();
+        treeModel.insertNodeInto(new SNodeTreeNode(added, added.getRole_(), getOperationContext()),
+                parent, 2 + parentNode.getChildren().indexOf(added));
+      }
+    }
+
+    private void addAndRemoveRoots(Set<SNode> removedRoots, Set<SNode> addedRoots) {
+      DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+      for (SNode root : removedRoots) {
+        SNodeTreeNode node = (SNodeTreeNode) findExactChildWith(root);
+        if (node == null) continue;
+        treeModel.removeNodeFromParent(node);
+      }
+
+      final List<SNode> allRoots = new ArrayList<SNode>(getSModelDescriptor().getSModel().getRoots());
+      Collections.sort(allRoots, new ToStringComparator());
+
+      List<SNode> added = new ArrayList<SNode>(addedRoots);
+      Collections.sort(added, new Comparator<SNode>() {
+        public int compare(SNode o1, SNode o2) {
+          return new Integer(allRoots.indexOf(o1)).compareTo(allRoots.indexOf(o2));
+        }
+      });
+      for (SNode root : added) {
+        int index = allRoots.indexOf(root);
+        assert index != -1;
+        treeModel.insertNodeInto(new SNodeTreeNode(root, getOperationContext()), SModelTreeNode.this,
+                index);
+      }
+    }
   }
-
 }

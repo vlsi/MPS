@@ -29,7 +29,7 @@ import java.util.Collections;
  */
 public class SNodeTreeNode extends MPSTreeNodeEx {
   protected boolean myInitialized = false;
-  private SNodeProxy myNodeProxy;
+  private SNode myNode;
   private String myRole;
 
   public SNodeTreeNode(SNode node, IOperationContext operationContext) {
@@ -38,7 +38,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
 
   public SNodeTreeNode(SNode node, String role, IOperationContext operationContext) {
     super(operationContext);
-    myNodeProxy = new SNodeProxy(node);
+    myNode = node;
     myRole = role;
   }
 
@@ -52,7 +52,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   }
 
   public Object getUserObject() {
-    return myNodeProxy.getNode();
+    return myNode;
   }
 
   public int getToggleClickCount() {
@@ -60,7 +60,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   }
 
   public SNode getSNode() {
-    return myNodeProxy.getNode();
+    return myNode;
   }
 
   public String getNodeIdentifier() {
@@ -97,12 +97,12 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
 
   public void doubleClick() {
     IDEProjectFrame projectFrame = (IDEProjectFrame) getOperationContext().getComponent(AbstractProjectFrame.class);
-    projectFrame.openNode(myNodeProxy.getNode(), getOperationContext());
+    projectFrame.openNode(myNode, getOperationContext());
   }
 
   public Icon getIcon(boolean expanded) {
-    if (myNodeProxy.getNode() != null) {
-      return IconManager.getIconFor(myNodeProxy.getNode());
+    if (myNode != null) {
+      return IconManager.getIconFor(myNode);
     } else {
       return super.getIcon(expanded);
     }
