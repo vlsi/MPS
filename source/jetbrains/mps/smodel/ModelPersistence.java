@@ -79,7 +79,7 @@ public class ModelPersistence {
   @NotNull
   public static SModel readModel(@NotNull byte[] bytes) {
     Document document = loadModelDocument(bytes);
-    return readModel(document, "", "");
+    return readModel(document, "", "", false);
   }
 
   @NotNull
@@ -100,19 +100,20 @@ public class ModelPersistence {
 
     Document document = loadModelDocument(file);
 
-    return readModel(document, modelName, modelStereotype);
+    return readModel(document, modelName, modelStereotype, false);
   }
 
   @NotNull
   public static SModel copyModel(@NotNull SModel model) {
-    return readModel(saveModel(model), model.getShortName(), model.getStereotype());
+    return readModel(saveModel(model), model.getShortName(), model.getStereotype(), false);
   }
 
   @NotNull
   public static SModel readModel(
           @NotNull Document document,
           @NotNull String modelName,
-          @NotNull String stereotype) {
+          @NotNull String stereotype,
+          boolean checkVersion) {
     Element rootElement = document.getRootElement();
 
     String modelLongName = rootElement.getAttributeValue(NAME);
@@ -148,8 +149,21 @@ public class ModelPersistence {
     List imports = rootElement.getChildren(IMPORT_ELEMENT);
     for (Object anImport : imports) {
       Element element = (Element) anImport;
+
       String indexValue = element.getAttributeValue(MODEL_IMPORT_INDEX, element.getAttributeValue("referenceID"));
       int importIndex = Integer.parseInt(indexValue);
+
+      int importedModelVersion = -1;
+      String importedModelVersionValue = element.getAttributeValue(VERSION);
+      if (importedModelVersionValue != null) {
+        importedModelVersion = Integer.parseInt(importedModelVersionValue);
+      }
+
+      if (checkVersion) {
+        // TODO check if imported model has another version
+        System.err.println("checking version");
+      }
+
       String importedModelUIDString = element.getAttributeValue(MODEL_UID);
       if (importedModelUIDString == null) {
         // read in old manner...
@@ -168,7 +182,7 @@ public class ModelPersistence {
       }
 
       SModelUID importedModelUID = SModelUID.fromString(importedModelUIDString);
-      model.addImportElement(importedModelUID, importIndex);
+      model.addImportElement(importedModelUID, importIndex, importedModelVersion);
     }
 
     // version & log
@@ -303,7 +317,7 @@ public class ModelPersistence {
   @NotNull
   public static SModel refreshModel(@NotNull SModel model) {
     String name = model.getShortName();
-    return readModel(saveModel(model), name, model.getStereotype());
+    return readModel(saveModel(model), name, model.getStereotype(), false);
   }
 
   public static void saveModel(@NotNull SModel model, @NotNull File file) {
@@ -372,6 +386,10 @@ public class ModelPersistence {
       importElem.setAttribute(MODEL_IMPORT_INDEX, "" + importElement.getReferenceID());
       SModelUID modelUID = importElement.getModelUID();
       importElem.setAttribute(MODEL_UID, modelUID.toString());
+      int version = importElement.getVersion();
+      if (version > -1) {
+        importElem.setAttribute(VERSION, version+"");
+      }
       rootElement.addContent(importElem);
     }
 

@@ -453,8 +453,8 @@ public class SModel implements Iterable<SNode> {
     fireImportAddedEvent(modelUID);
   }
 
-  void addImportElement(@NotNull SModelUID modelUID, int referenceId) {
-    ImportElement importElement = new ImportElement(modelUID, referenceId);
+  void addImportElement(@NotNull SModelUID modelUID, int referenceId, int version) {
+    ImportElement importElement = new ImportElement(modelUID, referenceId, version);
     myImports.add(importElement);
     fireImportAddedEvent(modelUID);
   }
@@ -683,11 +683,18 @@ public class SModel implements Iterable<SNode> {
   static class ImportElement {
     private SModelUID myModelDescriptor;
     private int myReferenceID;
+    private int myVersion = -1;
 
 
     public ImportElement(SModelUID modelUID, int referenceID) {
       myModelDescriptor = modelUID;
       myReferenceID = referenceID;
+    }
+
+    public ImportElement(SModelUID modelUID, int referenceID, int version) {
+      myModelDescriptor = modelUID;
+      myReferenceID = referenceID;
+      myVersion = version;
     }
 
     public SModelUID getModelUID() {
@@ -696,6 +703,10 @@ public class SModel implements Iterable<SNode> {
 
     public int getReferenceID() {
       return myReferenceID;
+    }
+
+    public int getVersion() {
+      return myVersion;
     }
   }
 
