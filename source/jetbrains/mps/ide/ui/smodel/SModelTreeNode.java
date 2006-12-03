@@ -278,6 +278,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       for (SNode added : addedNodes) {
         if (added.isDeleted()) continue;
         SNodeTreeNode parent = (SNodeTreeNode) findDescendantWith(added.getParent());
+        if (parent == null) continue;
         if (!parent.isInitialized()) continue;
         SNode parentNode = parent.getSNode();
         treeModel.insertNodeInto(new SNodeTreeNode(added, added.getRole_(), getOperationContext()),

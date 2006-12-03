@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import org.jetbrains.annotations.Nullable;
+
 /**
  * @author Kostik
  */
@@ -105,6 +107,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     return null;
   }
 
+  @Nullable
   public final MPSTreeNode findDescendantWith(Object userObject) {
     if (getUserObject() == userObject) return this;
     if (isInitialized()) {
