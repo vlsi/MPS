@@ -77,7 +77,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     setLayout(new BorderLayout());
     new TreeWithSNodesSpeedSearch(myTree);
 
-    JScrollPane scroller = new JScrollPane(myTree);
+    JScrollPane scroller = new JScrollPane(myTree);    
     scroller.setBorder(null);
     add(scroller, BorderLayout.CENTER);
     myTree.addKeyListener(new KeyAdapter() {
@@ -141,9 +141,6 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
 
   public void rebuildTree() {
     getTree().rebuildTree();
-    invalidate();
-    validate();
-    repaint();
   }
 
   public void selectNode(SNode node, IOperationContext context) {
