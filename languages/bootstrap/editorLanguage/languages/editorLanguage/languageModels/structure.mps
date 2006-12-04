@@ -1822,13 +1822,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1165004207520">
     <property name="name" value="CellMenuPart_CustomReplaceNode" />
-    <link role="extends" targetNodeId="1164824854750" resolveInfo="CellMenuPart_Abstract" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1165004529291">
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="parameterObjectType" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="4.1068431790189" />
-    </node>
+    <link role="extends" targetNodeId="1165253627126" resolveInfo="CellMenuPart_AbstractGroup" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1165004529292">
       <property name="sourceCardinality" value="1" />
       <property name="role" value="parametersFunction" />
@@ -1841,23 +1835,36 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1163613131943" resolveInfo="CellMenu_RefCell_ConvertReference_Convert" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1165004529294">
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1165004207522">
+      <property name="value" value="replace node (group of custom actions)" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1165253627126">
+    <property name="name" value="CellMenuPart_AbstractGroup" />
+    <link role="extends" targetNodeId="1164824854750" resolveInfo="CellMenuPart_Abstract" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1165253627127">
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1165253890469">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="parameterObjectType" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="4.1068431790189" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1165254125954">
+      <property name="name" value="presentation" />
+      <link role="dataType" targetNodeId="37.1165007009656" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1165254159533">
       <property name="role" value="matchingTextFunction" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1164052439493" resolveInfo="CellMenu_RefCell_ConvertReference_MatchingText" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1165004529295">
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1165254180581">
       <property name="role" value="descriptionTextFunction" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1164052588708" resolveInfo="CellMenu_RefCell_ConvertReference_DescriptionText" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1165004502301">
-      <property name="name" value="presentation" />
-      <link role="dataType" targetNodeId="37.1165007009656" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1165004207522">
-      <property name="value" value="replace node (group of custom actions)" />
-      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
   </node>
 </model>

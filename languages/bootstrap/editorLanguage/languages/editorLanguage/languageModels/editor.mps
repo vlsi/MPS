@@ -8326,7 +8326,7 @@
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1165005705260">
               <property name="drawBorder" value="false" />
               <property name="noTargetText" value="&lt;none&gt;" />
-              <link role="relationDeclaration" targetNodeId="2.1165004529291" />
+              <link role="relationDeclaration" targetNodeId="2.1165253890469" />
             </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1165005705261">
@@ -8343,7 +8343,7 @@
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1165005705264">
               <property name="drawBorder" value="false" />
-              <link role="relationDeclaration" targetNodeId="2.1165004502301" />
+              <link role="relationDeclaration" targetNodeId="2.1165254125954" />
             </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1165005705265">
@@ -8361,7 +8361,7 @@
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1165005705268">
               <property name="drawBorder" value="false" />
               <property name="noTargetText" value="&lt;default&gt;" />
-              <link role="relationDeclaration" targetNodeId="2.1165004529294" />
+              <link role="relationDeclaration" targetNodeId="2.1165254159533" />
             </node>
             <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1165005705269">
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1165005705270">
@@ -8370,7 +8370,7 @@
                     <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1165005705273">
                       <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1165005705274" />
                       <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1165005705275">
-                        <link role="property" targetNodeId="2.1165004502301" />
+                        <link role="property" targetNodeId="2.1165254125954" />
                       </node>
                     </node>
                     <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Property_HasValue_Enum" id="1165005705276">
@@ -8398,7 +8398,7 @@
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1165005705281">
               <property name="drawBorder" value="false" />
               <property name="noTargetText" value="&lt;default&gt;" />
-              <link role="relationDeclaration" targetNodeId="2.1165004529295" />
+              <link role="relationDeclaration" targetNodeId="2.1165254180581" />
             </node>
             <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1165005705282">
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1165005705283">
@@ -8407,7 +8407,7 @@
                     <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1165005705286">
                       <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1165005705287" />
                       <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1165005705288">
-                        <link role="property" targetNodeId="2.1165004502301" />
+                        <link role="property" targetNodeId="2.1165254125954" />
                       </node>
                     </node>
                     <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Property_HasValue_Enum" id="1165005705289">
