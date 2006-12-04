@@ -1692,7 +1692,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1163613549566">
-    <property name="name" value="CellMenu_RefCell_ConvertReference_parameterObject" />
+    <property name="name" value="CellMenuPart_AbstractGroup_parameterObject" />
     <link role="extends" targetNodeId="4.1107135704075" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1163613549567">
       <property name="value" value="parameterObject" />

@@ -8260,7 +8260,6 @@
           <property name="textFgColor" value="DARK_BLUE" />
           <property name="textBgColor" value="lightGray" />
           <property name="text" value="primary choose referent menu" />
-          <property name="fontStyle" value="ITALIC" />
           <property name="drawBorder" value="false" />
         </node>
       </node>
@@ -8293,7 +8292,6 @@
           <property name="textFgColor" value="DARK_BLUE" />
           <property name="textBgColor" value="lightGray" />
           <property name="text" value="replace node (group of custom actions)" />
-          <property name="fontStyle" value="ITALIC" />
           <property name="drawBorder" value="false" />
         </node>
       </node>

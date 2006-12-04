@@ -324,7 +324,7 @@
                     <link role="classConcept" targetNodeId="1163704265146" resolveInfo="_QueriesUtil" />
                     <link role="baseMethodDeclaration" targetNodeId="1164049658716" resolveInfo="convertReferenceMenu_FieldReference_convertReferenceNode" />
                     <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_Abstract_editedNode" id="1165015269981" />
-                    <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_RefCell_ConvertReference_parameterObject" id="1165015269982" />
+                    <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_AbstractGroup_parameterObject" id="1165015269982" />
                   </node>
                 </node>
               </node>
@@ -831,7 +831,7 @@
                     <link role="classConcept" targetNodeId="1163704265146" resolveInfo="_QueriesUtil" />
                     <link role="baseMethodDeclaration" targetNodeId="1164049979558" resolveInfo="convertReferenceMenu_InstanceMethodCall_convertReferenceNode" />
                     <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_Abstract_editedNode" id="1165018717020" />
-                    <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_RefCell_ConvertReference_parameterObject" id="1165018717021" />
+                    <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_AbstractGroup_parameterObject" id="1165018717021" />
                   </node>
                 </node>
               </node>
@@ -923,7 +923,7 @@
                     <link role="classConcept" targetNodeId="1163704265146" resolveInfo="_QueriesUtil" />
                     <link role="baseMethodDeclaration" targetNodeId="1164039527232" resolveInfo="convertReferenceMenu_StaticMethodCall_convertReferenceNode" />
                     <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_Abstract_editedNode" id="1165018852108" />
-                    <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_RefCell_ConvertReference_parameterObject" id="1165018852109" />
+                    <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_AbstractGroup_parameterObject" id="1165018852109" />
                   </node>
                 </node>
               </node>
@@ -1808,7 +1808,7 @@
                     <link role="classConcept" targetNodeId="1163704265146" resolveInfo="_QueriesUtil" />
                     <link role="baseMethodDeclaration" targetNodeId="1163711274845" resolveInfo="convertReferenceMenu_StaticFieldReference_convertReferenceNode" />
                     <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_Abstract_editedNode" id="1165018780556" />
-                    <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_RefCell_ConvertReference_parameterObject" id="1165018780557" />
+                    <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_AbstractGroup_parameterObject" id="1165018780557" />
                   </node>
                 </node>
               </node>
@@ -2067,7 +2067,7 @@
                     <link role="classConcept" targetNodeId="1163704265146" resolveInfo="_QueriesUtil" />
                     <link role="baseMethodDeclaration" targetNodeId="1164040812310" resolveInfo="convertReferenceMenu_EnumConstantReference_convertReferenceNode" />
                     <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_Abstract_editedNode" id="1165018403155" />
-                    <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_RefCell_ConvertReference_parameterObject" id="1165018403156" />
+                    <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_AbstractGroup_parameterObject" id="1165018403156" />
                   </node>
                 </node>
               </node>
