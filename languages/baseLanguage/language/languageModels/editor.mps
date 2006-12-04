@@ -312,7 +312,7 @@
                   <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1165015049021">
                     <link role="classConcept" targetNodeId="1163704265146" resolveInfo="_QueriesUtil" />
                     <link role="baseMethodDeclaration" targetNodeId="1164049019134" resolveInfo="convertReferenceMenu_FieldReference_getParameterObjects" />
-                    <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_RefCell_ConvertReference_currentReferenceNode" id="1165015049022" />
+                    <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_Abstract_editedNode" id="1165015049022" />
                   </node>
                 </node>
               </node>
@@ -323,7 +323,7 @@
                   <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1165015269980">
                     <link role="classConcept" targetNodeId="1163704265146" resolveInfo="_QueriesUtil" />
                     <link role="baseMethodDeclaration" targetNodeId="1164049658716" resolveInfo="convertReferenceMenu_FieldReference_convertReferenceNode" />
-                    <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_RefCell_ConvertReference_currentReferenceNode" id="1165015269981" />
+                    <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_Abstract_editedNode" id="1165015269981" />
                     <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_RefCell_ConvertReference_parameterObject" id="1165015269982" />
                   </node>
                 </node>
@@ -819,7 +819,7 @@
                   <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1165018702028">
                     <link role="classConcept" targetNodeId="1163704265146" resolveInfo="_QueriesUtil" />
                     <link role="baseMethodDeclaration" targetNodeId="1164049862510" resolveInfo="convertReferenceMenu_InstanceMethodCall_getParameterObjects" />
-                    <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_RefCell_ConvertReference_currentReferenceNode" id="1165018702029" />
+                    <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_Abstract_editedNode" id="1165018702029" />
                   </node>
                 </node>
               </node>
@@ -830,7 +830,7 @@
                   <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1165018717019">
                     <link role="classConcept" targetNodeId="1163704265146" resolveInfo="_QueriesUtil" />
                     <link role="baseMethodDeclaration" targetNodeId="1164049979558" resolveInfo="convertReferenceMenu_InstanceMethodCall_convertReferenceNode" />
-                    <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_RefCell_ConvertReference_currentReferenceNode" id="1165018717020" />
+                    <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_Abstract_editedNode" id="1165018717020" />
                     <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_RefCell_ConvertReference_parameterObject" id="1165018717021" />
                   </node>
                 </node>
@@ -911,7 +911,7 @@
                   <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1165018838913">
                     <link role="classConcept" targetNodeId="1163704265146" resolveInfo="_QueriesUtil" />
                     <link role="baseMethodDeclaration" targetNodeId="1164039169687" resolveInfo="convertReferenceMenu_StaticMethodCall_getParameterObjects" />
-                    <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_RefCell_ConvertReference_currentReferenceNode" id="1165018838914" />
+                    <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_Abstract_editedNode" id="1165018838914" />
                   </node>
                 </node>
               </node>
@@ -922,7 +922,7 @@
                   <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1165018852107">
                     <link role="classConcept" targetNodeId="1163704265146" resolveInfo="_QueriesUtil" />
                     <link role="baseMethodDeclaration" targetNodeId="1164039527232" resolveInfo="convertReferenceMenu_StaticMethodCall_convertReferenceNode" />
-                    <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_RefCell_ConvertReference_currentReferenceNode" id="1165018852108" />
+                    <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_Abstract_editedNode" id="1165018852108" />
                     <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_RefCell_ConvertReference_parameterObject" id="1165018852109" />
                   </node>
                 </node>
@@ -1796,7 +1796,7 @@
                   <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1165018767955">
                     <link role="classConcept" targetNodeId="1163704265146" resolveInfo="_QueriesUtil" />
                     <link role="baseMethodDeclaration" targetNodeId="1163704285491" resolveInfo="convertReferenceMenu_StaticFieldReference_getParameterObjects" />
-                    <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_RefCell_ConvertReference_currentReferenceNode" id="1165018767956" />
+                    <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_Abstract_editedNode" id="1165018767956" />
                   </node>
                 </node>
               </node>
@@ -1807,7 +1807,7 @@
                   <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1165018780555">
                     <link role="classConcept" targetNodeId="1163704265146" resolveInfo="_QueriesUtil" />
                     <link role="baseMethodDeclaration" targetNodeId="1163711274845" resolveInfo="convertReferenceMenu_StaticFieldReference_convertReferenceNode" />
-                    <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_RefCell_ConvertReference_currentReferenceNode" id="1165018780556" />
+                    <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_Abstract_editedNode" id="1165018780556" />
                     <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_RefCell_ConvertReference_parameterObject" id="1165018780557" />
                   </node>
                 </node>
@@ -2055,7 +2055,7 @@
                   <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1165018383070">
                     <link role="classConcept" targetNodeId="1163704265146" resolveInfo="_QueriesUtil" />
                     <link role="baseMethodDeclaration" targetNodeId="1164040653636" resolveInfo="convertReferenceMenu_EnumConstantReference_getParameterObjects" />
-                    <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_RefCell_ConvertReference_currentReferenceNode" id="1165018383071" />
+                    <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_Abstract_editedNode" id="1165018383071" />
                   </node>
                 </node>
               </node>
@@ -2066,7 +2066,7 @@
                   <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1165018403154">
                     <link role="classConcept" targetNodeId="1163704265146" resolveInfo="_QueriesUtil" />
                     <link role="baseMethodDeclaration" targetNodeId="1164040812310" resolveInfo="convertReferenceMenu_EnumConstantReference_convertReferenceNode" />
-                    <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_RefCell_ConvertReference_currentReferenceNode" id="1165018403155" />
+                    <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_Abstract_editedNode" id="1165018403155" />
                     <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_RefCell_ConvertReference_parameterObject" id="1165018403156" />
                   </node>
                 </node>

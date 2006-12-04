@@ -8044,7 +8044,7 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1163613663019">
           <property name="textFgColor" value="DARK_BLUE" />
           <property name="textBgColor" value="lightGray" />
-          <property name="text" value="(parameterObject, currentReferenceNode, model, scope, operationContext)-&gt;new node (replacement for current reference node) or converted current reference node" />
+          <property name="text" value="(parameterObject, node, model, scope, operationContext)-&gt;new node (replacement for current node)" />
           <property name="fontStyle" value="ITALIC" />
           <property name="drawBorder" value="false" />
           <property name="textBgColorSelected" value="lightGray" />
@@ -8078,7 +8078,7 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1163626006350">
           <property name="textFgColor" value="DARK_BLUE" />
           <property name="textBgColor" value="lightGray" />
-          <property name="text" value="(currentReferenceNode, scope, operationContext)-&gt;list&lt;parameter object&gt;" />
+          <property name="text" value="(node, scope, operationContext)-&gt;list&lt;parameter object&gt;" />
           <property name="fontStyle" value="ITALIC" />
           <property name="drawBorder" value="false" />
           <property name="textBgColorSelected" value="lightGray" />

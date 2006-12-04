@@ -1703,10 +1703,10 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1163613822479">
-    <property name="name" value="CellMenu_RefCell_ConvertReference_currentReferenceNode" />
+    <property name="name" value="CellMenuPart_Abstract_editedNode" />
     <link role="extends" targetNodeId="4.1107135704075" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1163613822480">
-      <property name="value" value="currentReferenceNode" />
+      <property name="value" value="node" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1163613822481">
