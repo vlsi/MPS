@@ -317,7 +317,7 @@
                 </node>
               </node>
             </node>
-            <node role="createFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_RefCell_ConvertReference_Convert" id="1165014916916">
+            <node role="createFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_CustomReplaceNode_Create" id="1165014916916">
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1165014916917">
                 <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1165015269979">
                   <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1165015269980">
@@ -824,7 +824,7 @@
                 </node>
               </node>
             </node>
-            <node role="createFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_RefCell_ConvertReference_Convert" id="1165018678981">
+            <node role="createFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_CustomReplaceNode_Create" id="1165018678981">
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1165018678982">
                 <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1165018717018">
                   <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1165018717019">
@@ -916,7 +916,7 @@
                 </node>
               </node>
             </node>
-            <node role="createFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_RefCell_ConvertReference_Convert" id="1165018823335">
+            <node role="createFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_CustomReplaceNode_Create" id="1165018823335">
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1165018823336">
                 <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1165018852106">
                   <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1165018852107">
@@ -1801,7 +1801,7 @@
                 </node>
               </node>
             </node>
-            <node role="createFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_RefCell_ConvertReference_Convert" id="1165018751533">
+            <node role="createFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_CustomReplaceNode_Create" id="1165018751533">
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1165018751534">
                 <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1165018780554">
                   <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1165018780555">
@@ -2060,7 +2060,7 @@
                 </node>
               </node>
             </node>
-            <node role="createFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_RefCell_ConvertReference_Convert" id="1165018346121">
+            <node role="createFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_CustomReplaceNode_Create" id="1165018346121">
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1165018346122">
                 <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1165018403153">
                   <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1165018403154">
