@@ -4488,7 +4488,7 @@
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1163704265146">
     <property name="name" value="_QueriesUtil" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1163704285491">
-      <property name="name" value="convertReferenceMenu_StaticFieldReference_getParameterObjects" />
+      <property name="name" value="replaceNodeMenu_StaticFieldReference_getParameterObjects" />
       <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1163704292666" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1163704285493">
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1163704509843">
@@ -4639,16 +4639,16 @@
         </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1163704459542">
-        <property name="name" value="referenceNode" />
+        <property name="name" value="node" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1163704459543">
           <link role="concept" targetNodeId="17.1070533707846" />
         </node>
       </node>
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1163711274845">
-      <property name="name" value="convertReferenceMenu_StaticFieldReference_convertReferenceNode" />
+      <property name="name" value="replaceNodeMenu_StaticFieldReference_createReplacementNode" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1163711594379">
-        <property name="name" value="referenceNode" />
+        <property name="name" value="node" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1163711594380">
           <link role="concept" targetNodeId="17.1070533707846" />
         </node>
@@ -4829,7 +4829,7 @@
       </node>
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1164039169687">
-      <property name="name" value="convertReferenceMenu_StaticMethodCall_getParameterObjects" />
+      <property name="name" value="replaceNodeMenu_StaticMethodCall_getParameterObjects" />
       <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1164039169688" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1164039169689">
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1164039169690">
@@ -4980,16 +4980,16 @@
         </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1164039169750">
-        <property name="name" value="referenceNode" />
+        <property name="name" value="node" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1164039169751">
           <link role="concept" targetNodeId="17.1081236700937" />
         </node>
       </node>
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1164039527232">
-      <property name="name" value="convertReferenceMenu_StaticMethodCall_convertReferenceNode" />
+      <property name="name" value="replaceNodeMenu_StaticMethodCall_createReplacementNode" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1164039527233">
-        <property name="name" value="referenceNode" />
+        <property name="name" value="node" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1164039527234">
           <link role="concept" targetNodeId="17.1081236700937" />
         </node>
@@ -5167,7 +5167,7 @@
       </node>
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1164040653636">
-      <property name="name" value="convertReferenceMenu_EnumConstantReference_getParameterObjects" />
+      <property name="name" value="replaceNodeMenu_EnumConstantReference_getParameterObjects" />
       <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1164040653637" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1164040653638">
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1164040653639">
@@ -5303,16 +5303,16 @@
         </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1164040653699">
-        <property name="name" value="referenceNode" />
+        <property name="name" value="node" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1164040653700">
           <link role="concept" targetNodeId="17.1083260308424" />
         </node>
       </node>
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1164040812310">
-      <property name="name" value="convertReferenceMenu_EnumConstantReference_convertReferenceNode" />
+      <property name="name" value="replaceNodeMenu_EnumConstantReference_createReplacementNode" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1164040812311">
-        <property name="name" value="referenceNode" />
+        <property name="name" value="node" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1164040812312">
           <link role="concept" targetNodeId="17.1083260308424" />
         </node>
@@ -5487,7 +5487,7 @@
       </node>
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1164049019134">
-      <property name="name" value="convertReferenceMenu_FieldReference_getParameterObjects" />
+      <property name="name" value="replaceNodeMenu_FieldReference_getParameterObjects" />
       <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1164049019135" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1164049019136">
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1164049019137">
@@ -5616,16 +5616,16 @@
         </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1164049019190">
-        <property name="name" value="referenceNode" />
+        <property name="name" value="node" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1164049019191">
           <link role="concept" targetNodeId="17.1068580123158" />
         </node>
       </node>
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1164049658716">
-      <property name="name" value="convertReferenceMenu_FieldReference_convertReferenceNode" />
+      <property name="name" value="replaceNodeMenu_FieldReference_createReplacementNode" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1164049658717">
-        <property name="name" value="referenceNode" />
+        <property name="name" value="node" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1164049658718">
           <link role="concept" targetNodeId="17.1068580123158" />
         </node>
@@ -5722,7 +5722,7 @@
       </node>
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1164049862510">
-      <property name="name" value="convertReferenceMenu_InstanceMethodCall_getParameterObjects" />
+      <property name="name" value="replaceNodeMenu_InstanceMethodCall_getParameterObjects" />
       <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1164049862511" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1164049862512">
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1164049862513">
@@ -5858,9 +5858,9 @@
       </node>
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1164049979558">
-      <property name="name" value="convertReferenceMenu_InstanceMethodCall_convertReferenceNode" />
+      <property name="name" value="replaceNodeMenu_InstanceMethodCall_createReplacementNode" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1164049979559">
-        <property name="name" value="referenceNode" />
+        <property name="name" value="node" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1164049979560">
           <link role="concept" targetNodeId="17.1068580123163" />
         </node>
