@@ -1,8 +1,5 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.ide.command.CommandAdapter;
-import jetbrains.mps.ide.command.CommandEvent;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.LanguagesKeymapManager;
 import jetbrains.mps.project.ApplicationComponents;
@@ -194,46 +191,15 @@ public class MPSModuleRepository {
     fireRepositoryChanged();
   }
 
-  @NotNull
-  public Set<IModule> getReleasedModulesWhenReleasingOwner(@NotNull MPSModuleOwner owner) {
-    Set<IModule> modules = new HashSet<IModule>(myUIDToModuleMap.values());
-
-    //copying module to owners map
-    Map<IModule, HashSet<MPSModuleOwner>> moduleToOwnerMap = new HashMap<IModule, HashSet<MPSModuleOwner>>();
-    for (IModule md : myModuleToOwnersMap.keySet()) {
-      moduleToOwnerMap.put(md, new HashSet<MPSModuleOwner>(myModuleToOwnersMap.get(md)));
-    }//--copying
-
-    return collectReleasedModules(modules, moduleToOwnerMap, owner);
-  }
-
-  @NotNull
-  private Set<IModule> collectReleasedModules(
-          @NotNull Set<IModule> modules,
-          @NotNull Map<IModule, HashSet<MPSModuleOwner>> moduleToOwnerMap,
-          @NotNull MPSModuleOwner owner) {
-    Set<IModule> releasedModules = new HashSet<IModule>();
-    for (IModule module : modules) {
-      Set<MPSModuleOwner> owners = moduleToOwnerMap.get(module);
-      if (owners != null) {
-        owners.remove(owner);
-        if (owners.isEmpty() || (owners.size() == 1 && owners.contains(module))) releasedModules.add(module);
-      }
-    }
-    for (IModule module : releasedModules) {
-      modules.remove(module);
-    }
-    Set<IModule> additionalReleasedModules = new HashSet<IModule>();
-    for (IModule module : releasedModules) {
-      if (module != null) {
-        additionalReleasedModules.addAll(collectReleasedModules(modules, moduleToOwnerMap, module));
-      }
-    }
-    releasedModules.addAll(additionalReleasedModules);
-    return releasedModules;
-  }
-
   public void removeUnusedModules() {
+    for (IModule m : getModelsToBeRemoved(new HashSet<MPSModuleOwner>())) {
+      m.dispose();
+      removeModule(m);
+    }
+  }
+
+  @NotNull
+  public Set<IModule> getModelsToBeRemoved(Set<MPSModuleOwner> willBeReleased) {
     Set<MPSModuleOwner> rootOwners = new HashSet<MPSModuleOwner>();
     for (IModule m : myModuleToOwnersMap.keySet()) {
       for (MPSModuleOwner owner : myModuleToOwnersMap.get(m)) {
@@ -242,6 +208,7 @@ public class MPSModuleRepository {
         }
       }
     }
+    rootOwners.removeAll(willBeReleased);
 
     Set<IModule> visibleModules = new HashSet<IModule>();
     for (IModule m : myModuleToOwnersMap.keySet()) {
@@ -268,13 +235,9 @@ public class MPSModuleRepository {
       visibleModules.addAll(toAdd);
     }
 
-    for (IModule m : new HashSet<IModule>(myModuleToOwnersMap.keySet())) {
-      if (!visibleModules.contains(m)) {
-        m.dispose();
-        removeModule(m);
-      }
-    }
-
+    Set<IModule> toBeRemoved = new HashSet<IModule>(myModuleToOwnersMap.keySet());
+    toBeRemoved.removeAll(visibleModules);
+    return toBeRemoved;
   }
 
   private void removeModule(@NotNull IModule module) {

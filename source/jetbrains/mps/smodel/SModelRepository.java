@@ -6,6 +6,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.smodel.event.*;
 
 import java.util.*;
@@ -345,7 +346,7 @@ public class SModelRepository extends SModelAdapter {
     Set<SModelDescriptor> releasedModels = collectReleasedModels(changedModels, modelToOwnerMap, owner);
 
     //releasing models from released modules
-    Set<IModule> releasedModules = MPSModuleRepository.getInstance().getReleasedModulesWhenReleasingOwner(owner);
+    Set<IModule> releasedModules = MPSModuleRepository.getInstance().getModelsToBeRemoved(CollectionUtil.asSet((MPSModuleOwner) owner));
     for (IModule module : releasedModules) {
       releasedModels.addAll(collectReleasedModels(changedModels, modelToOwnerMap, module));
     }
