@@ -1697,7 +1697,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   /*package*/ Stack<CellInfo> getSelectedStackForMemento() {
     Stack<CellInfo> result = new Stack<CellInfo>();
     for (EditorCell cell : mySelectedStack) {
-      result.push(cell.getCellInfo());
+      if (cell != null) result.push(cell.getCellInfo());
     }
     return result;
   }
