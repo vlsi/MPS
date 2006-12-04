@@ -306,7 +306,7 @@
           <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_CustomReplaceNode" id="1165014916912">
             <property name="presentation" value="default_referent" />
             <node role="parameterObjectType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1165014939507" />
-            <node role="parametersFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_RefCell_ConvertReference_Query" id="1165014916914">
+            <node role="parametersFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_AbstractGroup_Query" id="1165014916914">
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1165014916915">
                 <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1165015049020">
                   <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1165015049021">
@@ -813,7 +813,7 @@
           <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_CustomReplaceNode" id="1165018678977">
             <property name="presentation" value="default_referent" />
             <node role="parameterObjectType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1165018683420" />
-            <node role="parametersFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_RefCell_ConvertReference_Query" id="1165018678979">
+            <node role="parametersFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_AbstractGroup_Query" id="1165018678979">
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1165018678980">
                 <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1165018702027">
                   <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1165018702028">
@@ -905,7 +905,7 @@
           <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_CustomReplaceNode" id="1165018823331">
             <property name="presentation" value="default_referent" />
             <node role="parameterObjectType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1165018827571" />
-            <node role="parametersFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_RefCell_ConvertReference_Query" id="1165018823333">
+            <node role="parametersFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_AbstractGroup_Query" id="1165018823333">
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1165018823334">
                 <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1165018838912">
                   <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1165018838913">
@@ -1790,7 +1790,7 @@
           <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_CustomReplaceNode" id="1165018751529">
             <property name="presentation" value="default_referent" />
             <node role="parameterObjectType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1165018755832" />
-            <node role="parametersFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_RefCell_ConvertReference_Query" id="1165018751531">
+            <node role="parametersFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_AbstractGroup_Query" id="1165018751531">
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1165018751532">
                 <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1165018767954">
                   <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1165018767955">
@@ -2049,7 +2049,7 @@
           <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_CustomReplaceNode" id="1165018346117">
             <property name="presentation" value="default_referent" />
             <node role="parameterObjectType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1165018365478" />
-            <node role="parametersFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_RefCell_ConvertReference_Query" id="1165018346119">
+            <node role="parametersFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_AbstractGroup_Query" id="1165018346119">
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1165018346120">
                 <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1165018383069">
                   <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1165018383070">

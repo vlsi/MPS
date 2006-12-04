@@ -1640,7 +1640,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1163613035599">
-    <property name="name" value="CellMenu_RefCell_ConvertReference_Query" />
+    <property name="name" value="CellMenuPart_AbstractGroup_Query" />
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1163613035600">
       <property name="value" value="get objects" />
@@ -1660,7 +1660,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1163613131943">
-    <property name="name" value="CellMenu_RefCell_ConvertReference_Convert" />
+    <property name="name" value="CellMenuPart_CustomReplaceNode_Create" />
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1163711457917">
       <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" />
@@ -1714,7 +1714,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1164052439493">
-    <property name="name" value="CellMenu_RefCell_ConvertReference_MatchingText" />
+    <property name="name" value="CellMenuPart_AbstractGroup_MatchingText" />
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1164052439494">
       <property name="value" value="matching text" />
@@ -1732,7 +1732,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1164052588708">
-    <property name="name" value="CellMenu_RefCell_ConvertReference_DescriptionText" />
+    <property name="name" value="CellMenuPart_AbstractGroup_DescriptionText" />
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1164052588709">
       <property name="value" value="description text" />
