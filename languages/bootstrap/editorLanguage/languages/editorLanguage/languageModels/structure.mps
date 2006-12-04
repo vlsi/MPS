@@ -1278,7 +1278,7 @@
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1164848564365">
       <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
-      <link role="target" targetNodeId="1164848362119" resolveInfo="CellMenuPart_PropertyValues_GetValues_node" />
+      <link role="target" targetNodeId="1163613822479" resolveInfo="CellMenuPart_Abstract_editedNode" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1160493189132">
       <property name="value" value="property values" />
@@ -1784,21 +1784,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1164848362119">
-    <property name="name" value="CellMenuPart_PropertyValues_GetValues_node" />
-    <link role="extends" targetNodeId="4.1107135704075" />
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1164848362120">
-      <link role="conceptLinkDeclaration" targetNodeId="4.1137545963098" />
-      <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1164848362121" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1164848362122">
-      <property name="value" value="node" />
-      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1164848537207">
-      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473994950" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1164914519156">
     <property name="name" value="CellMenuPart_ReplaceNode" />
     <link role="extends" targetNodeId="1164824854750" resolveInfo="CellMenuPart_Abstract" />
@@ -1808,7 +1793,7 @@
       <link role="target" targetNodeId="1.1071489090640" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1164914519158">
-      <property name="value" value="replace node" />
+      <property name="value" value="replace node (simple)" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
   </node>
