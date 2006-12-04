@@ -7755,26 +7755,13 @@
             <property name="drawBorder" value="false" />
             <property name="selectable" value="false" />
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1162427014975">
-              <property name="text" value="  create new child" />
+              <property name="text" value="  create child" />
               <property name="drawBorder" value="false" />
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1162427014976">
               <property name="drawBorder" value="false" />
               <property name="noTargetText" value="&lt;default&gt;" />
               <link role="relationDeclaration" targetNodeId="2.1162426955201" />
-            </node>
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1162335668469">
-            <property name="drawBorder" value="false" />
-            <property name="selectable" value="false" />
-            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1162335668470">
-              <property name="text" value="  setup new child" />
-              <property name="drawBorder" value="false" />
-            </node>
-            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1162335668471">
-              <property name="drawBorder" value="false" />
-              <property name="noTargetText" value="&lt;default&gt;" />
-              <link role="relationDeclaration" targetNodeId="2.1162335016669" />
             </node>
           </node>
         </node>
@@ -7812,40 +7799,6 @@
           <property name="drawBorder" value="false" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1162335822601">
-          <property name="drawBorder" value="false" />
-          <property name="drawBrackets" value="true" />
-          <link role="relationDeclaration" targetNodeId="12.1137022507850" />
-        </node>
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1162335868655">
-    <link role="conceptDeclaration" targetNodeId="2.1162335323874" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1162335870800">
-      <property name="drawBorder" value="false" />
-      <property name="vertical" value="true" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1162335870801">
-        <property name="drawBorder" value="false" />
-        <property name="selectable" value="false" />
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1162335870802">
-          <property name="textFgColor" value="DARK_BLUE" />
-          <property name="textBgColor" value="lightGray" />
-          <property name="text" value="(newChild, currentChild, parameterObject)" />
-          <property name="fontStyle" value="ITALIC" />
-          <property name="drawBorder" value="false" />
-          <property name="textBgColorSelected" value="lightGray" />
-        </node>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1162335870803">
-        <property name="drawBorder" value="false" />
-        <property name="selectable" value="false" />
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1162335870804">
-          <property name="textFgColor" value="blue" />
-          <property name="text" value="&gt;" />
-          <property name="fontStyle" value="PLAIN" />
-          <property name="drawBorder" value="false" />
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1162335870805">
           <property name="drawBorder" value="false" />
           <property name="drawBrackets" value="true" />
           <link role="relationDeclaration" targetNodeId="12.1137022507850" />
