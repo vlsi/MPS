@@ -197,11 +197,11 @@ public class EditorManager {
             // add listen-nothing listener, fill it up,
             // remove listener to report recorded nodes to parent listener
             CellBuildNodeAccessListener listensNothingListener = new CellBuildNodeAccessListener(nodeEditorComponent);
-            NodeReadAccessCaster.setNodeReadAccessListener(listensNothingListener);
+            NodeReadAccessCaster.setCellBuildNodeReadAccessListener(listensNothingListener);
             if (nodesOldCellDependsOn != null) listensNothingListener.addNodesToDependOn(nodesOldCellDependsOn);
             if (refTargetsOldCellDependsOn != null)
               listensNothingListener.addRefTargetsToDependOn(refTargetsOldCellDependsOn);
-            NodeReadAccessCaster.removeNodeAccessListener();
+            NodeReadAccessCaster.removeCellBuildNodeAccessListener();
             //--voodoo
           }
           return editorCell;
@@ -229,7 +229,7 @@ public class EditorManager {
     CellBuildNodeAccessListener nodeAccessListener = new CellBuildNodeAccessListener(abstractEditorComponent);
     try {
       //voodoo for editor incremental rebuild support
-      NodeReadAccessCaster.setNodeReadAccessListener(nodeAccessListener);
+      NodeReadAccessCaster.setCellBuildNodeReadAccessListener(nodeAccessListener);
       nodeCell = isInspectorCell ? editor.createInspectedCell(context, node) : editor.createEditorCell(context, node);
       //-voodoo
     } catch (Exception e) {
@@ -241,7 +241,7 @@ public class EditorManager {
         abstractEditorComponent.registerAsBigCell(nodeCell, refContext);
         nodeAccessListener.recordingFinishedForCell(nodeCell);
       }
-      NodeReadAccessCaster.removeNodeAccessListener();
+      NodeReadAccessCaster.removeCellBuildNodeAccessListener();
     }
 
     if (node.hasRightTransformHint()) {

@@ -3,6 +3,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeProxy;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.INodeReadAccessListener;
 import jetbrains.mps.util.annotation.Hack;
 
 import java.util.Set;
@@ -16,56 +17,54 @@ import java.util.Stack;
  * To change this template use File | Settings | File Templates.
  */
 public class NodeReadAccessCaster {
-  private static Stack<CellBuildNodeAccessListener> myReadAccessListenerStack = new Stack<CellBuildNodeAccessListener>();
-  private static CellBuildNodeAccessListener myReadAccessListener;
-  private static PropertyCellCreationNodeReadAccessListener myPropertyCellCreationAccessListener;
-  private static PropertyAccessor myPropertyAccessor;
-  private static Thread myThread;
+  private static Stack<CellBuildNodeAccessListener> ourReadAccessListenerStack = new Stack<CellBuildNodeAccessListener>();
+  private static CellBuildNodeAccessListener ourReadAccessListener;
+  private static INodeReadAccessListener ourAbstractReadAccessListener;
+  private static PropertyCellCreationNodeReadAccessListener ourPropertyCellCreationAccessListener;
+  private static PropertyAccessor ourPropertyAccessor;
 
-  private static final Object READ_LOCK = new Object();
   private static boolean ourCanFirePropertyReadAccessedEvent = true;
 
-  public static void setNodeReadAccessListener(CellBuildNodeAccessListener listener) {
-//    ensureNoConcurrentAccess();
-    if (myReadAccessListener == null) {
-      myThread = Thread.currentThread();
-    } else {
-      myReadAccessListenerStack.push(myReadAccessListener);
+  public static void setCellBuildNodeReadAccessListener(CellBuildNodeAccessListener listener) {
+    if (ourReadAccessListener != null) {
+      ourReadAccessListenerStack.push(ourReadAccessListener);
     }
-    myReadAccessListener = listener;
+    ourReadAccessListener = listener;
+  }
+
+  public static void removeCellBuildNodeAccessListener() {
+    if (ourReadAccessListenerStack.isEmpty()) {
+      ourReadAccessListener = null;
+    } else {
+      Set<SNode> nodesWhichChildCellDependsOn = ourReadAccessListener.getNodesToDependOn();
+      Set<SNodeProxy> refTargetsWhichCellDependsOn = ourReadAccessListener.getRefTargetsToDependOn();
+      ourReadAccessListener = ourReadAccessListenerStack.pop();
+      ourReadAccessListener.addNodesToDependOn(nodesWhichChildCellDependsOn);
+      ourReadAccessListener.addRefTargetsToDependOn(refTargetsWhichCellDependsOn);
+    }
+  }
+
+  public static void setNodeAccessListener(INodeReadAccessListener listener) {
+    ourAbstractReadAccessListener = listener;
   }
 
   public static void removeNodeAccessListener() {
-//    ensureNoConcurrentAccess();
-    if (myReadAccessListenerStack.isEmpty()) {
-      myReadAccessListener = null;
-      myThread = null;
-      synchronized (READ_LOCK) {
-        READ_LOCK.notifyAll();
-//        System.out.println("-- notifyAll " + Thread.currentThread().getName());
-      }
-    } else {
-      Set<SNode> nodesWhichChildCellDependsOn = myReadAccessListener.getNodesToDependOn();
-      Set<SNodeProxy> refTargetsWhichCellDependsOn = myReadAccessListener.getRefTargetsToDependOn();
-      myReadAccessListener = myReadAccessListenerStack.pop();
-      myReadAccessListener.addNodesToDependOn(nodesWhichChildCellDependsOn);
-      myReadAccessListener.addRefTargetsToDependOn(refTargetsWhichCellDependsOn);
-    }
+    ourAbstractReadAccessListener = null;
   }
 
   public static void beforeCreatingPropertyCell(PropertyCellCreationNodeReadAccessListener listener) {
-    myPropertyCellCreationAccessListener = listener;
+    ourPropertyCellCreationAccessListener = listener;
   }
 
   public static void propertyCellCreatingFinished(EditorCell_Property cell) {
-    if (myPropertyCellCreationAccessListener != null) {
-      myPropertyCellCreationAccessListener.recordingFinishedForCell(cell);
-      myPropertyCellCreationAccessListener = null;
+    if (ourPropertyCellCreationAccessListener != null) {
+      ourPropertyCellCreationAccessListener.recordingFinishedForCell(cell);
+      ourPropertyCellCreationAccessListener = null;
     }
   }
 
   public static String runEditorCellPropertyAccessAction(PropertyAccessor accessor) {
-    myPropertyAccessor = accessor;
+    ourPropertyAccessor = accessor;
     String propertyName = accessor.getPropertyName();
     SNodeProxy nodeProxy = accessor.getNodeProxy();
     try {
@@ -73,14 +72,13 @@ public class NodeReadAccessCaster {
       if (node == null) return null;
       return node.getProperty(propertyName);
     } finally {
-      myPropertyAccessor = null;
+      ourPropertyAccessor = null;
     }
   }
 
   public static void fireNodeReadAccessed(SNode node) {
-//    ensureNoConcurrentAccess();
-  //  ensureNotDisposed(node);
-    if (myReadAccessListener != null) myReadAccessListener.readAccess(node);
+    if (ourReadAccessListener != null) ourReadAccessListener.readAccess(node);
+    if (ourAbstractReadAccessListener != null) ourAbstractReadAccessListener.readAccess(node);
   }
 
   @Hack
@@ -94,43 +92,27 @@ public class NodeReadAccessCaster {
   }
 
   public static void firePropertyReadAccessed(SNode node, String propertyName) {
-//    ensureNoConcurrentAccess();
-  //  ensureNotDisposed(node);
     if (!ourCanFirePropertyReadAccessedEvent) return;
-    if (myPropertyAccessor != null) {
-      if (myPropertyCellCreationAccessListener != null) {
+    if (ourPropertyAccessor != null) {
+      if (ourPropertyCellCreationAccessListener != null) {
         switchOffFiringPropertyReadAccessedEvent();
-        myPropertyCellCreationAccessListener.propertyCleanReadAccess(new SNodeProxy(node), propertyName);
+        ourPropertyCellCreationAccessListener.propertyCleanReadAccess(new SNodeProxy(node), propertyName);
         switchOnFiringPropertyReadAccessedEvent();
       }
       return;
     }
-    if (myReadAccessListener != null) {
-      myReadAccessListener.propertyDirtyReadAccess(node, propertyName);
-      myReadAccessListener.readAccess(node);
+    if (ourReadAccessListener != null) {
+      ourReadAccessListener.propertyDirtyReadAccess(node, propertyName);
+      ourReadAccessListener.readAccess(node);
+    }
+    if (ourAbstractReadAccessListener != null) {
+      ourAbstractReadAccessListener.readAccess(node);
     }
   }
 
   public static void fireReferenceTargetReadAccessed(SReference reference) {
-//    ensureNoConcurrentAccess();
-  //  ensureNotDisposed(reference.getSourceNode());
-    if (myReadAccessListener != null) myReadAccessListener.readAccess(reference);
+    if (ourReadAccessListener != null) ourReadAccessListener.readAccess(reference);
   }
 
-//  private static void ensureNoConcurrentAccess() {
-//    if (myThread != null) {
-//      if (myThread == Thread.currentThread()) return;
-//      try {
-//        synchronized (READ_LOCK) {
-//          while (myThread != null) {
-//            System.out.println(">> in trap " + Thread.currentThread().getName());
-//            READ_LOCK.wait();
-//            System.out.println(">> out trap " + Thread.currentThread().getName());
-//          }
-//        }
-//      } catch (InterruptedException e) {
-//        throw new RuntimeException(e);
-//      }
-//    }
-//  }
+
 }

@@ -11,6 +11,7 @@ import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 
 import java.util.*;
 
@@ -29,7 +30,8 @@ public class TypeChecker {
 
   private static final Object TYPE_OF_TERM = new Object();
 
-  Set<SNode> myCheckedRoots = new WeakSet<SNode>();
+  private Set<SNode> myCheckedRoots = new WeakSet<SNode>();
+  private Map<SNode, Set<SNode>> myNodesToDependentRoots = new WeakHashMap<SNode, Set<SNode>>();
   private MySModelCommandListener myListener = new MySModelCommandListener();
 
   private List<Rule> myRules = new ArrayList<Rule>();
@@ -245,13 +247,29 @@ public class TypeChecker {
   }
 
   public void doCheckRoot(SNode node) {
-    checkTypes(node);
-    myCheckedRoots.add(node);
-    SModel model = node.getModel();
-    model.removeSModelCommandListener(myListener);
-    model.removeSModelListener(myListener);
-    model.addSModelCommandListener(myListener);
-    model.addSModelListener(myListener);
+    try {
+      MyReadAccessListener listener = new MyReadAccessListener();
+      NodeReadAccessCaster.setNodeAccessListener(listener);
+      checkTypes(node);
+      myCheckedRoots.add(node);
+
+      for (SNode nodeToDependOn : listener.getNodesToDependOn()) {
+        Set<SNode> dependentRoots = myNodesToDependentRoots.get(nodeToDependOn);
+        if (dependentRoots == null) {
+          dependentRoots = new HashSet<SNode>();
+          myNodesToDependentRoots.put(nodeToDependOn, dependentRoots);
+        }
+        dependentRoots.add(node);
+      }
+
+      SModel model = node.getModel();
+      model.removeSModelCommandListener(myListener);
+      model.removeSModelListener(myListener);
+      model.addSModelCommandListener(myListener);
+      model.addSModelListener(myListener);
+    } finally {
+      NodeReadAccessCaster.removeNodeAccessListener();
+    }
   }
 
   public void markAsChecked(SNode node) {
@@ -277,21 +295,49 @@ public class TypeChecker {
     return null;
   }
 
+  private static class MyReadAccessListener implements INodeReadAccessListener {
+    protected HashSet<SNode> myNodesToDependOn = new HashSet<SNode>();
+
+    public void readAccess(SNode node) {
+      myNodesToDependOn.add(node);
+    }
+
+    public Set<SNode> getNodesToDependOn() {
+      return new HashSet<SNode>(myNodesToDependOn);
+    }
+  }
+
   private class MySModelCommandListener extends SModelAdapter implements SModelCommandListener {
     private SModelEventVisitor myVisitor = new SModelEventVisitor() {
       public void visitRootEvent(SModelRootEvent event) {
+        Set<SNode> dependentRoots = myNodesToDependentRoots.get(event.getRoot());
+        if (dependentRoots != null) {
+          myCheckedRoots.removeAll(dependentRoots);
+        }
         myCheckedRoots.remove(event.getRoot());
       }
 
       public void visitChildEvent(SModelChildEvent event) {
+        Set<SNode> dependentRoots = myNodesToDependentRoots.get(event.getParent());
+        if (dependentRoots != null) {
+          myCheckedRoots.removeAll(dependentRoots);
+        }
         myCheckedRoots.remove(event.getParent().getContainingRoot());
       }
 
       public void visitPropertyEvent(SModelPropertyEvent event) {
+        Set<SNode> dependentRoots = myNodesToDependentRoots.get(event.getNode());
+        if (dependentRoots != null) {
+          myCheckedRoots.removeAll(dependentRoots);
+        }
         myCheckedRoots.remove(event.getNode().getContainingRoot());
       }
 
       public void visitReferenceEvent(SModelReferenceEvent event) {
+        Set<SNode> dependentRoots = myNodesToDependentRoots.get(event.getReference().getSourceNode());
+        if (dependentRoots != null) {
+          myCheckedRoots.removeAll(dependentRoots);
+        }
         myCheckedRoots.remove(event.getReference().getSourceNode().getContainingRoot());
       }
     };

@@ -16,7 +16,7 @@ import java.util.Set;
  * Time: 19:17:53
  * To change this template use File | Settings | File Templates.
  */
-public class CellBuildNodeAccessListener extends AbstractNodeReadAccessListener {
+public class CellBuildNodeAccessListener extends AbstractNodeReadAccessOnCellCreationListener {
 
 
   protected HashSet<SNode> myNodesToDependOn = new HashSet<SNode>();
