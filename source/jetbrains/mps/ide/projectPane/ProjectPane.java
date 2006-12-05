@@ -62,7 +62,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
 
   private boolean myShowProperties;
 
-  private JToolBar myToolbar = new MPSToolBar();
+  private JToolBar myToolbar = new JToolBar();
   private JToggleButton myPAndRToggle;
 
   public ProjectPane(IDEProjectFrame ide) {
@@ -123,7 +123,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
 
   public void setShowPropertiesAndReferences(boolean showProperties) {
     myShowProperties = showProperties;
-    myPAndRToggle.getModel().setPressed(showProperties);
+    myPAndRToggle.getModel().setSelected(showProperties);
     rebuildTree();
   }
 
