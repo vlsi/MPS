@@ -15,12 +15,15 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.helgins.evaluator.uiActions.PresentationManager;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.typesystem.ITypeChecker;
+import jetbrains.mps.typesystem.TypeCheckerAccess;
+import jetbrains.mps.typesystem.TSStatus;
+import jetbrains.mps.typesystem.ITypeObject;
 
-import javax.swing.Icon;
-import javax.swing.JComponent;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
+import javax.swing.*;
 import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
 
 /**
  * Created by IntelliJ IDEA.
@@ -34,12 +37,33 @@ public class NodeExplorerView extends DefaultTool {
   SNodeProxy myNode;
   private JPanel myComponent = new JPanel(new BorderLayout());
   private AbstractProjectFrame myAbstractProjectFrame;
+  private JCheckBox myHelginsCheckBox;
+  private JCheckBox myTypeCheckBox;
+  private boolean myShowHelgins = true;
+  private boolean myShowLegacyTypes = false;
 
   public NodeExplorerView(AbstractProjectFrame projectFrame) {
     myAbstractProjectFrame = projectFrame;
     myTree.setRootVisible(true);
     myTree.rebuildTree();
     myComponent.add(new JScrollPane(myTree), BorderLayout.CENTER);
+
+    myHelginsCheckBox = new JCheckBox(new AbstractAction("show HELGINS type info") {
+      public void actionPerformed(ActionEvent e) {
+        setShowHelgins(myHelginsCheckBox.isSelected());
+      }
+    });
+    myTypeCheckBox = new JCheckBox(new AbstractAction("show legacy type info") {
+      public void actionPerformed(ActionEvent e) {
+        setShowLegacyTypes(myTypeCheckBox.isSelected());
+      }
+    });
+
+    myHelginsCheckBox.setSelected(true);
+    JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+    panel.add(myHelginsCheckBox);
+    panel.add(myTypeCheckBox);
+    myComponent.add(panel, BorderLayout.NORTH);
   }
 
   public String getName() {
@@ -60,6 +84,16 @@ public class NodeExplorerView extends DefaultTool {
     }
     myNode = node == null ? null : new SNodeProxy(node);
     myTree.setOperationContext(new ProjectOperationContext(project));
+    myTree.rebuildTree();
+  }
+
+  public void setShowHelgins(boolean show) {
+    myShowHelgins = show;
+    myTree.rebuildTree();
+  }
+
+  public void setShowLegacyTypes(boolean  show) {
+    myShowLegacyTypes = show;
     myTree.rebuildTree();
   }
 
@@ -108,7 +142,32 @@ public class NodeExplorerView extends DefaultTool {
 
 
     public String toString() {
-      return super.toString() + " {" + PresentationManager.toString(TypeChecker.getInstance().getTypeOf(getSNode())) + "}";    
+      String string = super.toString();
+
+      String helginsTypeInfo = myShowHelgins ? " {" + PresentationManager.toString(TypeChecker.getInstance().getTypeOf(getSNode())) + "}" : "";
+
+      String legacyTypeInfo = "";
+      if (myShowLegacyTypes) {
+        SNode node = getSNode();
+        ITypeChecker typeChecker = TypeCheckerAccess.getTypeChecker();
+        StringBuffer sb = new StringBuffer(" [");
+        TSStatus status = typeChecker.checkNodeType(node, true);
+        if (status.isOk()) {
+          ITypeObject typeObject = status.getTypeObject();
+          if (typeObject != null) {
+            sb.append(typeObject.getSignature());
+          } else {
+            sb.append("<no type>");
+          }
+        } else {
+          sb.append("ERROR");
+          sb.append(" Message: ").append(status.getMessage());
+        }
+        sb.append("]");
+        legacyTypeInfo = sb.toString();
+      }
+
+      return string + helginsTypeInfo + legacyTypeInfo;
     }
 
     public void init() {
