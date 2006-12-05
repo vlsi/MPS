@@ -36,6 +36,9 @@ public class ModelConstraintsManager {
 
   public ModelConstraintsManager() {
     MPSModuleRepository.getInstance().addModuleRepositoryListener(new ModuleRepositoryListener() {
+      public void beforeModuleRemoved(IModule module) {
+      }
+
       public void moduleAdded(IModule module) {
         if (module instanceof Language) {
           processLanguageAdded((Language) module);

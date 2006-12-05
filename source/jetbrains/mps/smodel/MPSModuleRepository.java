@@ -85,6 +85,12 @@ public class MPSModuleRepository {
     }
   }
 
+  private void fireBeforeModuleRemoved(@NotNull IModule module) {
+    for (ModuleRepositoryListener l : myModuleListeners) {
+      l.beforeModuleRemoved(module);
+    }
+  }
+
   private void fireModuleRemoved(@NotNull IModule module) {
     for (ModuleRepositoryListener l : myModuleListeners) {
       l.moduleRemoved(module);
@@ -193,6 +199,7 @@ public class MPSModuleRepository {
 
   public void removeUnusedModules() {
     for (IModule m : getModelsToBeRemoved(new HashSet<MPSModuleOwner>())) {
+      fireBeforeModuleRemoved(m);
       m.dispose();
       removeModule(m);
     }

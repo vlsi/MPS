@@ -88,36 +88,30 @@ public class LanguagesKeymapManager {
 
   private class MyModuleRepositoryListener extends CommandAdapter implements ModuleRepositoryListener {
     private List<Language> myLanguagesToRegister = new LinkedList<Language>();
-    private List<Language> myLanguagesToUnRegister = new LinkedList<Language>();
 
     public void moduleInitialized(IModule module) {         
       if (module instanceof Language) {
         myLanguagesToRegister.add((Language) module);
-        myLanguagesToUnRegister.remove((Language) module);
       }
     }
 
     public void moduleRemoved(IModule module) {
-      if (module instanceof Language) {
-        myLanguagesToRegister.remove((Language) module);
-        myLanguagesToUnRegister.add((Language) module);
-      }
     }
 
     public void moduleAdded(IModule module) {
     }
 
+    public void beforeModuleRemoved(IModule module) {
+      if (module instanceof Language) {
+        unregisterLanguageKeyMaps((Language) module);
+      }
+    }
 
     public void beforeCommandFinished(@NotNull CommandEvent event) {
-      for (Language language : myLanguagesToUnRegister) {
-        unregisterLanguageKeyMaps(language);
-      }
       for (Language language : myLanguagesToRegister) {
         registerLanguageKeyMaps(language);
       }
       myLanguagesToRegister.clear();
-      myLanguagesToUnRegister.clear();
     }
   }
-
 }
