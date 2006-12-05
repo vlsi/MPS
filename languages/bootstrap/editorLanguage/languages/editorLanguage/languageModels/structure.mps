@@ -1957,5 +1957,50 @@
       <link role="target" targetNodeId="37.1161622753914" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1165339175678">
+    <property name="name" value="CellMenuPart_ReplaceChild_Item" />
+    <link role="extends" targetNodeId="1164824854750" resolveInfo="CellMenuPart_Abstract" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1165339639991">
+      <property name="name" value="matchingText" />
+      <link role="dataType" targetNodeId="3.1082983041843" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1165339175680">
+      <property name="role" value="createFunction" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1165339307433" resolveInfo="CellMenuPart_ReplaceChild_Item_Create" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1165339175681">
+      <property name="value" value="replace child (custom action)" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1165339307433">
+    <property name="name" value="CellMenuPart_ReplaceChild_Item_Create" />
+    <link role="extends" targetNodeId="4.1137021947720" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1165339307434">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
+      <link role="target" targetNodeId="1163613822479" resolveInfo="CellMenuPart_Abstract_editedNode" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1165339437299">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
+      <link role="target" targetNodeId="1162497113192" resolveInfo="CellMenu_ReplaceChild_Macro_CurrentChild" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1165339437300">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
+      <link role="target" targetNodeId="1162498275506" resolveInfo="CellMenu_ReplaceChild_Macro_DefaultConceptOfChild" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1165339307435">
+      <link role="target" targetNodeId="37.1161622665029" />
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1165339307436">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
+      <link role="target" targetNodeId="37.1161622878565" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1165339307437">
+      <link role="target" targetNodeId="37.1161622753914" />
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
+    </node>
+  </node>
 </model>
 
