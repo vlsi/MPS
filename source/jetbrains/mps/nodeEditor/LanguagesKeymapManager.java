@@ -22,28 +22,10 @@ public class LanguagesKeymapManager {
   private static LanguagesKeymapManager ourInstance = new LanguagesKeymapManager();
 
   private Map<String, List<EditorCellKeyMap>> myLanguagesToKeyMaps = new HashMap<String, List<EditorCellKeyMap>>();
-  //  private ModuleRepositoryListener myListener;
   private MyModuleRepositoryListener myListener = new MyModuleRepositoryListener();
 
 
   private LanguagesKeymapManager() {
-//    myListener = new ModuleRepositoryListener() {
-//      public void moduleAdded(IModule module) {
-//
-//      }
-//
-//      public void moduleInitialized(IModule module) {
-//        if (module instanceof Language) {
-//          registerLanguageKeyMaps((Language) module);
-//        }
-//      }
-//
-//      public void moduleRemoved(IModule module) {
-//        if (module instanceof Language) {
-//          unregisterLanguageKeyMaps((Language) module);
-//        }
-//      }
-//    };
   }
 
   public void addMyListener(MPSModuleRepository repository) {
