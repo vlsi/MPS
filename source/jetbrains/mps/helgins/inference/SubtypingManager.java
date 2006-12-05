@@ -56,6 +56,10 @@ public class SubtypingManager {
   }
 
   public boolean isSubtype(SNode subtype, SNode supertype) {
+    if (subtype == null || supertype == null) {
+      return false;
+    }
+
     SNode subRepresentator = EquationManager.getInstance().getRepresentator(subtype);
     SNode superRepresentator = EquationManager.getInstance().getRepresentator(supertype);
 
@@ -76,13 +80,13 @@ public class SubtypingManager {
      Set<ConceptDeclaration> superConcepts = new HashSet<ConceptDeclaration>();
     {
       Set<ConceptDeclaration> subConcepts = new HashSet<ConceptDeclaration>();
-      ConceptDeclaration subConcept = SModelUtil.getConceptDeclaration(subtype, GlobalScope.getInstance());
+      ConceptDeclaration subConcept = SModelUtil.findConceptDeclaration(subtype, GlobalScope.getInstance());
       subConcepts.add(subConcept);
       while (subConcept.getExtends() != null) {
         subConcept = subConcept.getExtends();
         subConcepts.add(subConcept);
       }
-      ConceptDeclaration superConcept = SModelUtil.getConceptDeclaration(supertype, GlobalScope.getInstance());
+      ConceptDeclaration superConcept = SModelUtil.findConceptDeclaration(supertype, GlobalScope.getInstance());
       superConcepts.add(superConcept);
       while (superConcept.getExtends() != null) {
         superConcept = superConcept.getExtends();
