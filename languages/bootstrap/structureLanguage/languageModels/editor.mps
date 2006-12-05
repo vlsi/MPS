@@ -1067,19 +1067,19 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1105987989392">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1105736901241" />
-        <node role="cellMenu" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceChild_Composite" id="1162422880270">
-          <node role="menuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceChild_CustomChildConcept" id="1162422883162">
-            <node role="childConceptFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceChild_CustomChildConcept_Query" id="1162422883163">
-              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1162422883164">
-                <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1162422905692">
-                  <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1162423015943">
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1162423006191">
-                      <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceChild_Macro_ParentNode" id="1162423004456" />
-                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1162423009770">
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1165336798257">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceChild_CustomChildConcept" id="1165336801227">
+            <node role="childConceptFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceChild_CustomChildConcept_Query" id="1165336801228">
+              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1165336801229">
+                <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1165336805433">
+                  <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1165336817173">
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1165336811202">
+                      <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_Abstract_editedNode" id="1165336808607" />
+                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1165336814078">
                         <link role="link" targetNodeId="1.1105742417828" />
                       </node>
                     </node>
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1162423025866">
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1165336819877">
                       <link role="link" targetNodeId="1.1105736621938" />
                     </node>
                   </node>
