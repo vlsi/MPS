@@ -250,6 +250,11 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1161037552905" resolveInfo="CellMenu_ReplaceChild_Composite" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1165347032372">
+      <property name="role" value="elementMenuDescriptor" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1164824717996" resolveInfo="CellMenuDescriptor" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107223377710">
       <property name="value" value="list" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
