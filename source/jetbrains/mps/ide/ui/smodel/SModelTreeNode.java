@@ -160,6 +160,18 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     myInitialized = true;
   }
 
+  private boolean showPropertiesAndReferences() {
+    return getOperationContext().getComponent(ProjectPane.class).isShowPropertiesAndReferences();
+  }
+
+  private int getNumberOfInformationNodes() {
+    int result = 0;
+    if (showPropertiesAndReferences()) {
+      result += 2;
+    }
+    return result;
+  }
+
   protected void dispose() {
     myModelDescriptor.getSModel().removeSModelCommandListener(myModelListener);
   }
@@ -225,6 +237,8 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     }
 
     private void updateChangedRefs(Set<SNode> nodesWithChangedRefs) {
+      if (!showPropertiesAndReferences()) return;
+
       DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
       for (SNode sourceNode : nodesWithChangedRefs) {
         MPSTreeNode nodeTreeNode = findDescendantWith(sourceNode);
@@ -233,7 +247,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
         MPSTreeNodeEx refsNode = (MPSTreeNodeEx) nodeTreeNode.getChildAt(1);
         refsNode.update();
         refsNode.init();
-
         treeModel.nodeStructureChanged(refsNode);
       }
     }
@@ -255,7 +268,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
           }
         }
 
-        if (treeNode.isInitialized()) {
+        if (treeNode.isInitialized() && showPropertiesAndReferences()) {
           MPSTreeNodeEx propsNode = (MPSTreeNodeEx) treeNode.getChildAt(0);
           propsNode.update();
           propsNode.init();
@@ -282,7 +295,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
         if (!parent.isInitialized()) continue;
         SNode parentNode = parent.getSNode();
         treeModel.insertNodeInto(new SNodeTreeNode(added, added.getRole_(), getOperationContext()),
-                parent, 2 + parentNode.getChildren().indexOf(added));
+                parent, getNumberOfInformationNodes() + parentNode.getChildren().indexOf(added));
       }
     }
 

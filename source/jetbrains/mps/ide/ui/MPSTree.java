@@ -365,7 +365,7 @@ public abstract class MPSTree extends JTree {
 
     for (int j = 0; j < components.length; j++) {
       String component = components[j];
-
+      assert current.isInitialized();
       if (component == null || component.length() == 0) continue;
       boolean found = false;
       for (int i = 0; i < current.getChildCount(); i++) {
@@ -373,7 +373,7 @@ public abstract class MPSTree extends JTree {
         if (node.getNodeIdentifier().equals(component)) {
           current = node;
           path.add(current);
-          if (!current.isInitialized() && j != component.length() - 1) {
+          if (!current.isInitialized() && j != components.length - 1) {
             current.init();
           }
           found = true;
@@ -389,6 +389,9 @@ public abstract class MPSTree extends JTree {
 
   private void expandPaths(List<String> paths) {
     for (String path : paths) {
+      if (stringToPath(path) == null) {
+        stringToPath(path);
+      }
       expandPath(stringToPath(path));
     }
   }

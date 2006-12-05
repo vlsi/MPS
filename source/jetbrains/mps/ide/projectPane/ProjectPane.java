@@ -1,6 +1,7 @@
 package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.MPSToolBar;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.IActionDataProvider;
 import jetbrains.mps.ide.actions.model.DeleteModelsAction;
@@ -22,8 +23,7 @@ import jetbrains.mps.smodel.event.SModelsMulticaster;
 import jetbrains.mps.util.Condition;
 import org.jdom.Element;
 
-import javax.swing.JComponent;
-import javax.swing.JScrollPane;
+import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
@@ -31,6 +31,7 @@ import javax.swing.tree.TreePath;
 import java.awt.BorderLayout;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -57,9 +58,10 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
 
   private MyTree myTree = new MyTree();
   private IDEProjectFrame myIDE;
+  private boolean myShowProperties;
+  private JToolBar myToolbar = new MPSToolBar();
 
   public ProjectPane(IDEProjectFrame ide) {
-
     myIDE = ide;
     SModelsMulticaster.getInstance().addSModelsListener(new SModelsAdapter() {
       public void modelCreated(SModelDescriptor modelDescriptor) {
@@ -77,7 +79,10 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     setLayout(new BorderLayout());
     new TreeWithSNodesSpeedSearch(myTree);
 
-    JScrollPane scroller = new JScrollPane(myTree);    
+    myToolbar.setFloatable(false);
+    add(myToolbar, BorderLayout.NORTH);
+
+    JScrollPane scroller = new JScrollPane(myTree);
     scroller.setBorder(null);
     add(scroller, BorderLayout.CENTER);
     myTree.addKeyListener(new KeyAdapter() {
@@ -91,14 +96,31 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
       }
     });
 
+    myToolbar.add(new JToggleButton() {
+      {
+        setAction(new AbstractAction("P&R") {
+          public void actionPerformed(ActionEvent e) {
+            setShowPropertiesAndReferences(!isShowPropertiesAndReferences());
+          }
+        });
+      }
+    });
+
     rebuildTree();
   }
-
 
   public String getTitle() {
     return "Logical View";
   }
 
+  public boolean isShowPropertiesAndReferences() {
+    return myShowProperties;
+  }
+
+  public void setShowPropertiesAndReferences(boolean showProperties) {
+    myShowProperties = showProperties;
+    rebuildTree();
+  }
 
   public void openEditor() {
     TreePath selectionPath = myTree.getSelectionPath();
