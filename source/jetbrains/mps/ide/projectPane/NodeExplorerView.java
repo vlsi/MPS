@@ -13,6 +13,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.helgins.evaluator.uiActions.PresentationManager;
+import jetbrains.mps.helgins.inference.TypeChecker;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -100,9 +102,13 @@ public class NodeExplorerView extends DefaultTool {
       super(node, operationContext);
     }
 
-
     public MySNodeTreeNode(SNode node, String role, IOperationContext operationContext) {
       super(node, role, operationContext);
+    }
+
+
+    public String toString() {
+      return super.toString() + " {" + PresentationManager.toString(TypeChecker.getInstance().getTypeOf(getSNode())) + "}";    
     }
 
     public void init() {
