@@ -7,8 +7,8 @@
   <import index="2" modelUID="java.util@java_stub" />
   <node type="jetbrains.mps.transformation.TLBase.TemplateDeclaration" id="1162432838732">
     <property name="name" value="test_template" />
-    <node role="contentNode" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1162505622726">
-      <node role="instance" type="jetbrains.mps.baseLanguage.Expression" id="1162505622727" />
+    <node role="contentNode" type="jetbrains.mps.baseLanguage.ClassifierType" id="1165284288833">
+      <link role="classifier" extResolveInfo="1.[Classifier]Object" />
     </node>
   </node>
   <node type="jetbrains.mps.transformation.TLBase.PreliminaryRewritingRules" id="1164129913631">
