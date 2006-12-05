@@ -593,7 +593,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         }
         if (!actions.isEmpty()) popupMenu.addSeparator();
         for (final EditorCellKeyMapAction action : actions) {
-          MPSAction mpsAction = new MPSAction(action.getDescriptionText()) {
+          MPSAction mpsAction = new MPSAction("" + action.getDescriptionText()) {
             private EditorCellKeyMapAction myAction = action;
             public void execute(@NotNull ActionContext context) {
               myAction.execute(null, editorContext);
