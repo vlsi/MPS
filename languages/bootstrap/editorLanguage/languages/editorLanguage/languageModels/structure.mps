@@ -1297,7 +1297,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1162497113192">
-    <property name="name" value="CellMenu_ReplaceChild_Macro_CurrentChild" />
+    <property name="name" value="CellMenuPart_ReplaceChild_currentChild" />
     <link role="extends" targetNodeId="4.1107135704075" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1162497113193">
       <property name="value" value="currentChild" />
@@ -1308,7 +1308,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1162498275506">
-    <property name="name" value="CellMenu_ReplaceChild_Macro_DefaultConceptOfChild" />
+    <property name="name" value="CellMenuPart_ReplaceChild_defaultConceptOfChild" />
     <link role="extends" targetNodeId="4.1107135704075" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1162498325651">
       <link role="conceptLinkDeclaration" targetNodeId="4.1137545963098" />
@@ -1345,7 +1345,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1163613131943">
-    <property name="name" value="CellMenuPart_CustomReplaceNode_Create" />
+    <property name="name" value="CellMenuPart_ReplaceNode_Group_Create" />
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1163711457917">
       <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" />
@@ -1470,7 +1470,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1164914519156">
-    <property name="name" value="CellMenuPart_ReplaceNode" />
+    <property name="name" value="CellMenuPart_ReplaceNode_CustomNodeConcept" />
     <link role="extends" targetNodeId="1164824854750" resolveInfo="CellMenuPart_Abstract" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1164914727930">
       <property name="sourceCardinality" value="1" />
@@ -1478,7 +1478,7 @@
       <link role="target" targetNodeId="1.1071489090640" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1164914519158">
-      <property name="value" value="replace node (simple)" />
+      <property name="value" value="replace node (custom node concept)" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
   </node>
@@ -1491,7 +1491,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1165004207520">
-    <property name="name" value="CellMenuPart_CustomReplaceNode" />
+    <property name="name" value="CellMenuPart_ReplaceNode_Group" />
     <link role="extends" targetNodeId="1165253627126" resolveInfo="CellMenuPart_AbstractGroup" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1165004529292">
       <property name="sourceCardinality" value="1" />

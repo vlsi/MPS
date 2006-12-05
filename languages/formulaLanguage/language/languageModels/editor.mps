@@ -116,7 +116,7 @@
         <property name="drawBorder" value="false" />
         <link role="actionMap" targetNodeId="1154453497787" />
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164923174789">
-          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164923174790">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1164923174790">
             <link role="replacementConcept" targetNodeId="1.1111784562907" />
           </node>
         </node>
@@ -139,7 +139,7 @@
         <property name="drawBorder" value="false" />
         <link role="actionMap" targetNodeId="1154453497787" />
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164923126895">
-          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164923126896">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1164923126896">
             <link role="replacementConcept" targetNodeId="1.1111784562907" />
           </node>
         </node>
@@ -167,7 +167,7 @@
         <property name="drawBorder" value="false" />
         <link role="actionMap" targetNodeId="1154453497787" />
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164923165372">
-          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164923165373">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1164923165373">
             <link role="replacementConcept" targetNodeId="1.1111784562907" />
           </node>
         </node>
@@ -195,7 +195,7 @@
         <property name="drawBorder" value="false" />
         <link role="actionMap" targetNodeId="1154453497787" />
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164923107000">
-          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164923107001">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1164923107001">
             <link role="replacementConcept" targetNodeId="1.1111784562907" />
           </node>
         </node>
@@ -223,7 +223,7 @@
         <property name="drawBorder" value="false" />
         <link role="actionMap" targetNodeId="1154453497787" />
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164923149290">
-          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164923149291">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1164923149291">
             <link role="replacementConcept" targetNodeId="1.1111784562907" />
           </node>
         </node>
@@ -251,7 +251,7 @@
         <property name="drawBorder" value="false" />
         <link role="actionMap" targetNodeId="1154453497787" />
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164923139811">
-          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164923139812">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1164923139812">
             <link role="replacementConcept" targetNodeId="1.1111784562907" />
           </node>
         </node>
@@ -301,7 +301,7 @@
         <property name="drawBorder" value="false" />
         <link role="actionMap" targetNodeId="1154453497787" />
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164923078964">
-          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164923081762">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1164923081762">
             <link role="replacementConcept" targetNodeId="1.1111784562907" />
           </node>
         </node>
@@ -329,7 +329,7 @@
         <property name="drawBorder" value="false" />
         <link role="actionMap" targetNodeId="1154453497787" />
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164923096959">
-          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164923096960">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1164923096960">
             <link role="replacementConcept" targetNodeId="1.1111784562907" />
           </node>
         </node>
@@ -357,7 +357,7 @@
         <property name="drawBorder" value="false" />
         <link role="actionMap" targetNodeId="1154453497787" />
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164923157159">
-          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164923157160">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1164923157160">
             <link role="replacementConcept" targetNodeId="1.1111784562907" />
           </node>
         </node>
@@ -411,7 +411,7 @@
         <property name="text" value="." />
         <property name="drawBorder" value="false" />
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164923117135">
-          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164923117136">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1164923117136">
             <link role="replacementConcept" targetNodeId="1.1111784562907" />
           </node>
         </node>

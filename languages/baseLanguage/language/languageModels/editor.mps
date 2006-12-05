@@ -303,7 +303,7 @@
         </node>
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1165014900128">
           <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReferentPrimary" id="1165014906520" />
-          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_CustomReplaceNode" id="1165014916912">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_Group" id="1165014916912">
             <property name="presentation" value="default_referent" />
             <node role="parameterObjectType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1165014939507" />
             <node role="parametersFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_AbstractGroup_Query" id="1165014916914">
@@ -317,7 +317,7 @@
                 </node>
               </node>
             </node>
-            <node role="createFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_CustomReplaceNode_Create" id="1165014916916">
+            <node role="createFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_Group_Create" id="1165014916916">
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1165014916917">
                 <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1165015269979">
                   <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1165015269980">
@@ -810,7 +810,7 @@
         </node>
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1165018668942">
           <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReferentPrimary" id="1165018673303" />
-          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_CustomReplaceNode" id="1165018678977">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_Group" id="1165018678977">
             <property name="presentation" value="default_referent" />
             <node role="parameterObjectType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1165018683420" />
             <node role="parametersFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_AbstractGroup_Query" id="1165018678979">
@@ -824,7 +824,7 @@
                 </node>
               </node>
             </node>
-            <node role="createFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_CustomReplaceNode_Create" id="1165018678981">
+            <node role="createFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_Group_Create" id="1165018678981">
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1165018678982">
                 <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1165018717018">
                   <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1165018717019">
@@ -902,7 +902,7 @@
         </node>
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1165018814906">
           <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReferentPrimary" id="1165018818751" />
-          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_CustomReplaceNode" id="1165018823331">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_Group" id="1165018823331">
             <property name="presentation" value="default_referent" />
             <node role="parameterObjectType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1165018827571" />
             <node role="parametersFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_AbstractGroup_Query" id="1165018823333">
@@ -916,7 +916,7 @@
                 </node>
               </node>
             </node>
-            <node role="createFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_CustomReplaceNode_Create" id="1165018823335">
+            <node role="createFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_Group_Create" id="1165018823335">
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1165018823336">
                 <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1165018852106">
                   <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1165018852107">
@@ -1787,7 +1787,7 @@
         </node>
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1165018744026">
           <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReferentPrimary" id="1165018745902" />
-          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_CustomReplaceNode" id="1165018751529">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_Group" id="1165018751529">
             <property name="presentation" value="default_referent" />
             <node role="parameterObjectType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1165018755832" />
             <node role="parametersFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_AbstractGroup_Query" id="1165018751531">
@@ -1801,7 +1801,7 @@
                 </node>
               </node>
             </node>
-            <node role="createFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_CustomReplaceNode_Create" id="1165018751533">
+            <node role="createFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_Group_Create" id="1165018751533">
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1165018751534">
                 <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1165018780554">
                   <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1165018780555">
@@ -2046,7 +2046,7 @@
         </node>
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1165018325083">
           <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReferentPrimary" id="1165018328818" />
-          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_CustomReplaceNode" id="1165018346117">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_Group" id="1165018346117">
             <property name="presentation" value="default_referent" />
             <node role="parameterObjectType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1165018365478" />
             <node role="parametersFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_AbstractGroup_Query" id="1165018346119">
@@ -2060,7 +2060,7 @@
                 </node>
               </node>
             </node>
-            <node role="createFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_CustomReplaceNode_Create" id="1165018346121">
+            <node role="createFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_Group_Create" id="1165018346121">
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1165018346122">
                 <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1165018403153">
                   <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1165018403154">
@@ -3624,7 +3624,7 @@
           <property name="priority" value="2" />
         </node>
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164922010319">
-          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164922016492">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1164922016492">
             <link role="replacementConcept" targetNodeId="17.1081773326031" />
           </node>
         </node>
@@ -3655,7 +3655,7 @@
           <property name="priority" value="1" />
         </node>
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164922406579">
-          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164922406580">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1164922406580">
             <link role="replacementConcept" targetNodeId="17.1081773326031" />
           </node>
         </node>
@@ -3686,7 +3686,7 @@
           <property name="priority" value="0" />
         </node>
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164922365924">
-          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164922365925">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1164922365925">
             <link role="replacementConcept" targetNodeId="17.1081773326031" />
           </node>
         </node>
@@ -3717,7 +3717,7 @@
           <property name="priority" value="2" />
         </node>
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164916704166">
-          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164916707683">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1164916707683">
             <link role="replacementConcept" targetNodeId="17.1081773326031" />
           </node>
         </node>
@@ -3748,7 +3748,7 @@
           <property name="priority" value="1" />
         </node>
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164922337982">
-          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164922337983">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1164922337983">
             <link role="replacementConcept" targetNodeId="17.1081773326031" />
           </node>
         </node>
@@ -3781,7 +3781,7 @@
           <property name="priority" value="2" />
         </node>
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164922431818">
-          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164922431819">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1164922431819">
             <link role="replacementConcept" targetNodeId="17.1081773326031" />
           </node>
         </node>
@@ -3812,7 +3812,7 @@
           <property name="priority" value="1" />
         </node>
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164922349305">
-          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164922349306">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1164922349306">
             <link role="replacementConcept" targetNodeId="17.1081773326031" />
           </node>
         </node>
@@ -3843,7 +3843,7 @@
           <property name="priority" value="0" />
         </node>
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164922323941">
-          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164922323942">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1164922323942">
             <link role="replacementConcept" targetNodeId="17.1081773326031" />
           </node>
         </node>
@@ -3874,7 +3874,7 @@
           <property name="priority" value="0" />
         </node>
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164922418699">
-          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164922418700">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1164922418700">
             <link role="replacementConcept" targetNodeId="17.1081773326031" />
           </node>
         </node>
@@ -3956,7 +3956,7 @@
           <property name="priority" value="0" />
         </node>
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164922456266">
-          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164922456267">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1164922456267">
             <link role="replacementConcept" targetNodeId="17.1081773326031" />
           </node>
         </node>
@@ -4146,7 +4146,7 @@
           <property name="priority" value="0" />
         </node>
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164922309103">
-          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164922309104">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1164922309104">
             <link role="replacementConcept" targetNodeId="17.1081773326031" />
           </node>
         </node>
@@ -4176,7 +4176,7 @@
           <property name="priority" value="2" />
         </node>
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164922379184">
-          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164922379185">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1164922379185">
             <link role="replacementConcept" targetNodeId="17.1081773326031" />
           </node>
         </node>
@@ -4206,7 +4206,7 @@
           <property name="priority" value="0" />
         </node>
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164922394085">
-          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode" id="1164922394086">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1164922394086">
             <link role="replacementConcept" targetNodeId="17.1081773326031" />
           </node>
         </node>

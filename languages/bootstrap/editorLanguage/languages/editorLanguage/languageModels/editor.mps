@@ -7709,7 +7709,7 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1165261279435">
           <property name="textFgColor" value="DARK_BLUE" />
           <property name="textBgColor" value="lightGray" />
-          <property name="text" value="replace node (simple)" />
+          <property name="text" value="replace node (custom node concept)" />
           <property name="drawBorder" value="false" />
         </node>
       </node>

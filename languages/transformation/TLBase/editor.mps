@@ -773,13 +773,13 @@
                   <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1165283359721">
                     <property name="name" value="currentChildConcept" />
                     <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1165283359722" />
-                    <node role="initializer" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceChild_Macro_DefaultConceptOfChild" id="1165283363568" />
+                    <node role="initializer" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceChild_defaultConceptOfChild" id="1165283363568" />
                   </node>
                 </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1165283359724">
                   <node role="condition" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1165283359725">
                     <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1165283359726" />
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceChild_Macro_CurrentChild" id="1165283376459" />
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceChild_currentChild" id="1165283376459" />
                   </node>
                   <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1165283359728">
                     <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1165283359729">
@@ -790,7 +790,7 @@
                         <node role="rValue" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1165283359732">
                           <link role="classConcept" extResolveInfo="10.[Classifier]SModelUtil" />
                           <link role="baseMethodDeclaration" extResolveInfo="10.static method ([Classifier]SModelUtil).([StaticMethodDeclaration]getConceptDeclaration((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IScope])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ConceptDeclaration]))" />
-                          <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceChild_Macro_CurrentChild" id="1165283381382" />
+                          <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceChild_currentChild" id="1165283381382" />
                           <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_scope" id="1165283359734" />
                         </node>
                       </node>
