@@ -1,6 +1,7 @@
 package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.IActionDataProvider;
 import jetbrains.mps.ide.actions.model.DeleteModelsAction;
@@ -68,7 +69,6 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     myIDE = ide;
     SModelsMulticaster.getInstance().addSModelsListener(new SModelsAdapter() {
       public void modelCreated(SModelDescriptor modelDescriptor) {
-        selectModel(modelDescriptor);
       }
 
       public void modelDeleted(SModelDescriptor modelDescriptor) {
@@ -111,6 +111,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
 
     rebuildTree();
   }
+
 
   public String getTitle() {
     return "Logical View";
