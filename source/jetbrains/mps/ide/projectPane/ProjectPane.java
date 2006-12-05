@@ -1,7 +1,6 @@
 package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.IDEProjectFrame;
-import jetbrains.mps.ide.MPSToolBar;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.IActionDataProvider;
 import jetbrains.mps.ide.actions.model.DeleteModelsAction;
@@ -29,9 +28,9 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -124,7 +123,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
   public void setShowPropertiesAndReferences(boolean showProperties) {
     myShowProperties = showProperties;
     myPAndRToggle.getModel().setSelected(showProperties);
-    rebuildTree();
+    myIDE.getIProjectPane().rebuild();
   }
 
   public void openEditor() {
