@@ -378,7 +378,7 @@
           <property name="vertical" value="false" />
           <property name="selectable" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1145902613343">
-            <property name="text" value="layout contraint " />
+            <property name="text" value="layout constraint " />
             <property name="drawBorder" value="true" />
             <property name="selectable" value="false" />
           </node>
@@ -792,7 +792,7 @@
           <property name="vertical" value="false" />
           <property name="selectable" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1129573355793">
-            <property name="text" value="layout contraint " />
+            <property name="text" value="layout constraint " />
             <property name="drawBorder" value="true" />
             <property name="selectable" value="false" />
           </node>
@@ -1259,7 +1259,7 @@
           <property name="vertical" value="false" />
           <property name="selectable" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1145902173522">
-            <property name="text" value="layout contraint " />
+            <property name="text" value="layout constraint " />
             <property name="drawBorder" value="true" />
             <property name="selectable" value="false" />
           </node>
@@ -1712,7 +1712,7 @@
           <property name="vertical" value="false" />
           <property name="selectable" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1145902424260">
-            <property name="text" value="layout contraint " />
+            <property name="text" value="layout constraint " />
             <property name="drawBorder" value="true" />
             <property name="selectable" value="false" />
           </node>
@@ -2091,7 +2091,7 @@
           <property name="drawBorder" value="true" />
           <property name="vertical" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1129573376613">
-            <property name="text" value="layout contraint " />
+            <property name="text" value="layout constraint " />
             <property name="drawBorder" value="true" />
             <property name="selectable" value="false" />
           </node>
@@ -2895,7 +2895,7 @@
           <property name="vertical" value="false" />
           <property name="selectable" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1145902887200">
-            <property name="text" value="layout contraint " />
+            <property name="text" value="layout constraint " />
             <property name="drawBorder" value="true" />
             <property name="selectable" value="false" />
           </node>
@@ -3312,7 +3312,7 @@
           <property name="vertical" value="false" />
           <property name="selectable" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1145903121499">
-            <property name="text" value="layout contraint " />
+            <property name="text" value="layout constraint " />
             <property name="drawBorder" value="true" />
             <property name="selectable" value="false" />
           </node>
@@ -3884,7 +3884,7 @@
           <property name="vertical" value="false" />
           <property name="selectable" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1145903046510">
-            <property name="text" value="layout contraint " />
+            <property name="text" value="layout constraint " />
             <property name="drawBorder" value="true" />
             <property name="selectable" value="false" />
           </node>
@@ -4524,7 +4524,7 @@
           <property name="vertical" value="false" />
           <property name="selectable" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1145902962330">
-            <property name="text" value="layout contraint " />
+            <property name="text" value="layout constraint " />
             <property name="drawBorder" value="true" />
             <property name="selectable" value="false" />
           </node>
@@ -4999,7 +4999,7 @@
           <property name="vertical" value="false" />
           <property name="selectable" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1129573252206">
-            <property name="text" value="layout contraint " />
+            <property name="text" value="layout constraint " />
             <property name="drawBorder" value="true" />
             <property name="selectable" value="false" />
           </node>
@@ -6027,7 +6027,7 @@
           <property name="vertical" value="false" />
           <property name="selectable" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1145902289818">
-            <property name="text" value="layout contraint " />
+            <property name="text" value="layout constraint " />
             <property name="drawBorder" value="true" />
             <property name="selectable" value="false" />
           </node>
