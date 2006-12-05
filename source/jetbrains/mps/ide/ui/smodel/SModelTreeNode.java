@@ -164,6 +164,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return getOperationContext().getComponent(ProjectPane.class).isShowPropertiesAndReferences();
   }
 
+
   private int getNumberOfInformationNodes() {
     int result = 0;
     if (showPropertiesAndReferences()) {

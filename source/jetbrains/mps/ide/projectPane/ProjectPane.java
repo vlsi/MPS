@@ -55,11 +55,15 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
   public static final String PROJECT_PANE_MODELS_ACTIONS = "project-pane-models-actions";
   public static final String PROJECT_PANE_STUBS_ACTIONS = "project-pane-stubs-actions";
   public static final String PROJECT_PANE_GENERIC_MODULE_ACTIONS = "project-pane-generic-module-actions";
+  public static final String SHOW_P_AND_R = "show-p-and-r";
 
   private MyTree myTree = new MyTree();
   private IDEProjectFrame myIDE;
+
   private boolean myShowProperties;
+
   private JToolBar myToolbar = new MPSToolBar();
+  private JToggleButton myPAndRToggle;
 
   public ProjectPane(IDEProjectFrame ide) {
     myIDE = ide;
@@ -96,7 +100,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
       }
     });
 
-    myToolbar.add(new JToggleButton() {
+    myToolbar.add(myPAndRToggle = new JToggleButton() {
       {
         setAction(new AbstractAction("P&R") {
           public void actionPerformed(ActionEvent e) {
@@ -119,6 +123,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
 
   public void setShowPropertiesAndReferences(boolean showProperties) {
     myShowProperties = showProperties;
+    myPAndRToggle.getModel().setPressed(showProperties);
     rebuildTree();
   }
 
@@ -338,7 +343,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
   }
 
   public TreeNode getSelectedModelTreeNode() {
-    TreeNode selectedTreeNode = null;
+    TreeNode selectedTreeNode;
     TreePath selectionPath = myTree.getSelectionPath();
     if (selectionPath == null) {
       return null;
@@ -415,11 +420,15 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
   public void read(Element element, MPSProject project) {
     getTree().fromXML(element.getChild(MPSTree.MPS_TREE));
     getTree().scrollRectToVisible(ComponentsUtil.elementToRectangle(element.getChild(ComponentsUtil.RECTANGLE)));
+    if (element.getAttributeValue(SHOW_P_AND_R) != null) {
+      setShowPropertiesAndReferences(element.getAttributeValue(SHOW_P_AND_R).equals("true"));
+    }
   }
 
   public void write(Element element, MPSProject project) {
     element.addContent(getTree().toXML());
     element.addContent(ComponentsUtil.rectangleToElement(getTree().getVisibleRect()));
+    element.setAttribute(SHOW_P_AND_R, "" + myShowProperties);
   }
 
   private class MyTree extends MPSTree {

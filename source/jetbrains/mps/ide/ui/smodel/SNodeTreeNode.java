@@ -9,6 +9,10 @@ import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.AbstractProjectFrame;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
+import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.helgins.lambdaTypes.PresentationUtil;
+import jetbrains.mps.helgins.evaluator.uiActions.PresentationManager;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultTreeModel;
@@ -80,7 +84,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
       add(new PropertiesTreeNode(getOperationContext(), n));
       add(new ReferencesTreeNode(getOperationContext(), n));
     }
-
+    
     for (SNode childNode : n.getChildren()) {
       add(new SNodeTreeNode(childNode, childNode.getRole_(), getOperationContext()));
     }
