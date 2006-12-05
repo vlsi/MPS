@@ -254,6 +254,10 @@ public class TypeChecker {
     model.addSModelListener(myListener);
   }
 
+  public void markAsChecked(SNode node) {
+    myCheckedRoots.add(node);
+  }
+
   @Nullable
   public SNode getTypeOf(SNode node) {
     if (node == null) return null;

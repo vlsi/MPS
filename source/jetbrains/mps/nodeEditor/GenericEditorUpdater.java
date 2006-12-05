@@ -5,7 +5,6 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjects;
-import jetbrains.mps.util.NameUtil;
 
 import javax.swing.SwingUtilities;
 
@@ -49,7 +48,7 @@ public abstract class GenericEditorUpdater {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         CommandProcessor commandProcessor = CommandProcessor.instance();
-        commandProcessor.tryToCheckTypes(new Runnable() {
+        commandProcessor.tryToExecuteCommand(new Runnable() {
           public void run() {
             MPSProjects projects = ApplicationComponents.getInstance().getComponentSafe(MPSProjects.class);
             for (MPSProject project : projects.getProjects()) {
