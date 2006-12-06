@@ -56,15 +56,16 @@ public class SubtypingManager {
   }
 
   public boolean isSubtype(SNode subtype, SNode supertype) {
-    if (subtype == null || supertype == null) {
-      return false;
-    }
 
     SNode subRepresentator = EquationManager.getInstance().getRepresentator(subtype);
     SNode superRepresentator = EquationManager.getInstance().getRepresentator(supertype);
 
     //reflexivity: structural equivalence
     if (MatchingUtil.matchNodes(subRepresentator, superRepresentator)) return true;
+
+    if (subRepresentator == null || superRepresentator == null) {
+      return false;
+    }
 
     // transitivity: nominal equivalence
     return isStrictSubtype(subtype, supertype);

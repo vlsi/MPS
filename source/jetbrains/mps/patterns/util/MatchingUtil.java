@@ -119,7 +119,7 @@ public class MatchingUtil {
   }
 
   public static boolean matchNodes(SNode node1, SNode node2) { //exact matching w/o any vars
-    if (node1 == null && node2 == null) return true;
+    if (node1 == node2) return true;
     if (node1 == null) return false;
     if (node2 == null) return false;
     if (node1.getClass() != node2.getClass()) return false;
