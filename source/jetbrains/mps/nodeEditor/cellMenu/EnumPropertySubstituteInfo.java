@@ -32,13 +32,13 @@ public class EnumPropertySubstituteInfo extends AbstractNodeSubstituteInfo {
       EnumerationMemberDeclaration memberDeclaration = iterator.next();
       actions.add(new AbstractNodeSubstituteAction(memberDeclaration, myNode) {
         public String getMatchingText(String pattern) {
-          return ((EnumerationMemberDeclaration) getParameterNode()).getExternalValue();
+          return ((EnumerationMemberDeclaration) getParameterObject()).getExternalValue();
         }
 
         public SNode doSubstitute(String pattern) {
           String propertyName = myPropertyDeclaration.getName();
           assert propertyName != null;
-          getSourceNode().setProperty(propertyName, ((EnumerationMemberDeclaration) getParameterNode()).getInternalValue());
+          getSourceNode().setProperty(propertyName, ((EnumerationMemberDeclaration) getParameterObject()).getInternalValue());
           return null;
         }
       });

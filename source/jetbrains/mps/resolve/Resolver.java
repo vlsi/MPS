@@ -5,7 +5,9 @@ import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
 import jetbrains.mps.smodel.*;
@@ -49,7 +51,7 @@ public class Resolver {
     reference.setResolveInfo(name);
   }
 
-  public static void resolve(final SReference reference, final IOperationContext operationContext){
+  public static void resolve(final SReference reference, final IOperationContext operationContext) {
     EditorsPane editorsPane = operationContext.getComponent(EditorsPane.class);
     SNode containingRoot = reference.getSourceNode().getContainingRoot();
     assert containingRoot != null;
@@ -64,7 +66,7 @@ public class Resolver {
           processAction(matchingActions.get(0), resolveInfo, reference);
         }
       }
-    } , "resolve" );
+    }, "resolve");
   }
 
   private static void processAction(INodeSubstituteAction action, String pattern, SReference reference) {
@@ -73,7 +75,7 @@ public class Resolver {
       SModel model = sourceNode.getModel();
       DefaultChildNodeSubstituteAction childAction = (DefaultChildNodeSubstituteAction) action;
       try {
-        SNode childNode = childAction.createChildNode(childAction.getParameterNode(), model, pattern);
+        SNode childNode = childAction.createChildNode(childAction.getParameterObject(), model, pattern);
         String role = reference.getRole();
         SNode referent = childNode.getReferent(role);
         sourceNode.setReferent(role, referent);
@@ -88,7 +90,7 @@ public class Resolver {
 
   public static List<INodeSubstituteAction> createResolveActions(SReference reference, IOperationContext operationContext, EditorContext editorContext) {
     String resolveInfo = reference.getResolveInfo();
-    String role  = reference.getRole();
+    String role = reference.getRole();
     final SNode sourceNode = reference.getSourceNode();
 
     ConceptDeclaration sourceConcept = SModelUtil.getConceptDeclaration(sourceNode, operationContext.getScope());
@@ -133,10 +135,12 @@ public class Resolver {
         if (!(o1 instanceof DefaultReferentNodeSubstituteAction)) return -1;
         DefaultReferentNodeSubstituteAction action1 = (DefaultReferentNodeSubstituteAction) o1;
         DefaultReferentNodeSubstituteAction action2 = (DefaultReferentNodeSubstituteAction) o2;
-        SNode node1 = action1.getParameterNode();
-        SNode node2 = action2.getParameterNode();
-        if (node1.getModel() == sourceNode.getModel()) return 1;
-        if (node2.getModel() == sourceNode.getModel()) return -1;
+        SModel model1 = null;
+        SModel model2 = null;
+        if (action1.getParameterObject() instanceof SNode) model1 = ((SNode) action1.getParameterObject()).getModel();
+        if (action2.getParameterObject() instanceof SNode) model2 = ((SNode) action2.getParameterObject()).getModel();
+        if (model1 == sourceNode.getModel()) return 1;
+        if (model2 == sourceNode.getModel()) return -1;
         return 0;
       }
     });
@@ -152,7 +156,7 @@ public class Resolver {
       for (EditorCell cell : frontier) {
         Object userObject = cell.getUserObject(EditorCell.METAINFO_LINK_DECLARATION);
         if (cell.getSNode() == sourceNode) {
-          if  (userObject == refLinkDeclaration) {
+          if (userObject == refLinkDeclaration) {
             return cell;
           }
           if (userObject == childLinkDeclaration) {
@@ -160,7 +164,7 @@ public class Resolver {
           }
         }
         if (cell instanceof EditorCell_Collection) {
-          newFrontier.addAll(CollectionUtil.iteratorAsList(((EditorCell_Collection)cell).cells()));
+          newFrontier.addAll(CollectionUtil.iteratorAsList(((EditorCell_Collection) cell).cells()));
         }
       }
       frontier = newFrontier;

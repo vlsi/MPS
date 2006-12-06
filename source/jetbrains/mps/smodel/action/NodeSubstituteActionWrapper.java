@@ -17,10 +17,6 @@ public class NodeSubstituteActionWrapper implements INodeSubstituteAction {
     return mySubstituteAction.getSourceNode();
   }
 
-  public SNode getParameterNode() {
-    return mySubstituteAction.getParameterNode();
-  }
-
 
   public Object getParameterObject() {
     return mySubstituteAction.getParameterObject();

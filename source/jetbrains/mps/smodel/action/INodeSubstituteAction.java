@@ -9,10 +9,8 @@ import jetbrains.mps.smodel.SNode;
 public interface INodeSubstituteAction {
   SNode getSourceNode();
 
-  SNode getParameterNode();
-
   Object getParameterObject();
-
+  
   String getMatchingText(String pattern);
 
   String getDescriptionText(String pattern);

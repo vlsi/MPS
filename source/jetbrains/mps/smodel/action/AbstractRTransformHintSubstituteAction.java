@@ -1,6 +1,5 @@
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
 
 /**

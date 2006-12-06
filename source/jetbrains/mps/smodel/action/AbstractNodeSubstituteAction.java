@@ -33,13 +33,6 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     return mySourceNode;
   }
 
-  public SNode getParameterNode() {
-    if (myParameterObject instanceof SNode) {
-      return (SNode) myParameterObject;
-    }
-    return null;
-  }
-
   public Object getParameterObject() {
     return myParameterObject;
   }

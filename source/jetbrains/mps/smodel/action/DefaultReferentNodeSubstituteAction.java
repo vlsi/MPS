@@ -15,8 +15,8 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
   private IScope myScope;
   private LinkDeclaration myLinkDeclaration;
 
-  public DefaultReferentNodeSubstituteAction(Object parameterObject, SNode referenceNode, SNode currentReferent, LinkDeclaration linkDeclaration, IScope scope) {
-    super(parameterObject, referenceNode);
+  public DefaultReferentNodeSubstituteAction(SNode parameterNode, SNode referenceNode, SNode currentReferent, LinkDeclaration linkDeclaration, IScope scope) {
+    super(parameterNode, referenceNode);
     myCurrentReferent = currentReferent;
     myScope = scope;
     myLinkDeclaration = linkDeclaration;
@@ -34,11 +34,12 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
   }
 
   public SNode doSubstitute(String pattern) {
-    if (myCurrentReferent != getParameterNode()) {
-      if (!SModelUtil.isAcceptableReferent(myLinkDeclaration, getParameterNode(), myScope)) {
-        throw new RuntimeException("Couldn't set referent node: " + getParameterNode().getDebugText());
+    SNode parameterNode = (SNode) getParameterObject();
+    if (myCurrentReferent != parameterNode) {
+      if (!SModelUtil.isAcceptableReferent(myLinkDeclaration, parameterNode, myScope)) {
+        throw new RuntimeException("Couldn't set referent node: " + parameterNode.getDebugText());
       }
-      getSourceNode().setReferent(SModelUtil.getGenuineLinkRole(myLinkDeclaration), getParameterNode());
+      getSourceNode().setReferent(SModelUtil.getGenuineLinkRole(myLinkDeclaration), parameterNode);
     }
     return null;
   }

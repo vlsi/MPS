@@ -27,7 +27,7 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
 
   public SNode doSubstitute(String pattern) {
     SNode parentNode = getSourceNode();
-    SNode newChild = createChildNode(getParameterNode(), parentNode.getModel(), pattern);
+    SNode newChild = createChildNode(getParameterObject(), parentNode.getModel(), pattern);
     if (newChild != null) {
       mySetter.execute(parentNode, myCurrentChild, newChild, getScope());
     }
