@@ -25,6 +25,7 @@ import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.wm.WindowManager;
+import com.intellij.openapi.projectRoots.ProjectJdk;
 import com.intellij.psi.*;
 import com.intellij.psi.css.impl.VirtualFileUtil;
 import com.intellij.psi.search.GlobalSearchScope;
@@ -215,7 +216,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
           vcs.getTransactionProvider().commitTransaction(comment);
         } catch (VcsException e) {
           e.printStackTrace();
-        }        
+        }
       }
     });
     return "OK";
@@ -381,7 +382,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
           importList.add(importStatement);
         } catch (IncorrectOperationException e) {
           e.printStackTrace();
-        }                                             
+        }
       }
     });
   }
@@ -420,10 +421,10 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
             PsiElement[] children = parent.getChildren();
             int index = Arrays.asList(children).indexOf(method) - 1;
 
-            while (true) {              
+            while (true) {
               if (index == -1) break;
 
-              if (children[index].getText().contains("\n")) {                
+              if (children[index].getText().contains("\n")) {
                 String childText = children[index].getText();
                 text = childText.substring(childText.lastIndexOf("\n")) + text;
                 break;
@@ -535,11 +536,15 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
         ModuleRootManager rootManager = ModuleRootManager.getInstance(module);
         LocalFileSystem localFileSystem = LocalFileSystem.getInstance();
 
-        ProjectRootManager projectRootManager = myProject.getComponent(ProjectRootManager.class);                        
-        rootManager.getModifiableModel().setJdk(projectRootManager.getProjectJdk());
+        ProjectRootManager projectRootManager = myProject.getComponent(ProjectRootManager.class);
+        rootManager.getModifiableModel().inheritJdk();
+
+
 
         rootManager.getModifiableModel().addContentEntry(localFileSystem.findFileByIoFile(new File(path, "source")));
         rootManager.getModifiableModel().addContentEntry(localFileSystem.findFileByIoFile(new File(path, "source_gen")));
+
+        rootManager.getModifiableModel().commit();
       }
     });
   }
@@ -678,13 +683,18 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
       public void run() {
         Module m = findModule(path);
 
+        if (m == null) return;
+
 
         final Set<Module> processedModules = new HashSet<Module>();
         Set<VirtualFile> result = new LinkedHashSet<VirtualFile>();
 
-        String outUrl = ModuleRootManager.getInstance(m).getCompilerOutputPathUrl();
-        if (outUrl != null) {
-          res.add(new File(VirtualFileManager.extractPath(outUrl)).getAbsolutePath());
+        ModuleRootManager instance = ModuleRootManager.getInstance(m);
+        if (instance != null) {
+          String outUrl = instance.getCompilerOutputPathUrl();
+          if (outUrl != null) {
+            res.add(new File(VirtualFileManager.extractPath(outUrl)).getAbsolutePath());
+          }
         }
 
 
