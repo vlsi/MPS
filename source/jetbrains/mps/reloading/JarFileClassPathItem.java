@@ -90,7 +90,7 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
   public long getClassesTimestamp(String namespace) {
     long timestamp = 0;
     for (String cls : getAvailableClasses(namespace)) {
-      timestamp = Math.max(timestamp, getClassTimestamp(namespace + "." + cls));
+      timestamp = Math.max(timestamp, getClassTimestamp(namespace.equals("") ? cls : namespace + "." + cls));
     }
     return timestamp;
   }
@@ -127,10 +127,19 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
         if (!name.endsWith(".class")) continue;
 
         int packEnd = name.lastIndexOf('/');
-        String pack = packEnd > 0 ? name.substring(0, packEnd).replace('/', '.') : name;
+        String pack;
+        String className;
+        if (packEnd == -1) {
+          pack = "";
+          className = name.substring(0, name.length() - ".class".length());
+        } else {
+          pack = packEnd > 0 ? name.substring(0, packEnd).replace('/', '.') : name;
+          className = name.substring(packEnd + 1, name.length() - ".class".length());
+        }
+        
         buildPackageCaches(pack);
 
-        String className = name.substring(packEnd + 1, name.length() - ".class".length());
+
 
         getClassesSetFor(pack).add(className);
 
@@ -166,8 +175,8 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
   }
 
   public static void main(String[] args) {
-    JarFileClassPathItem item = new JarFileClassPathItem(new File("lib/junit.jar"));
+    JarFileClassPathItem item = new JarFileClassPathItem(new File("lib/jdom/jdom-1.0.jar"));
 
-    System.err.println(item.getSubpackages("junit"));
+    System.err.println(item.getClassesSetFor(""));
   }
 }

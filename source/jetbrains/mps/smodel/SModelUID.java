@@ -42,7 +42,7 @@ public class SModelUID implements Comparable {
       stereotype = s.substring(index + 1);
     }
     String longName = s;
-    if (index > 0) {
+    if (index >= 0) {
       longName = s.substring(0, index);
     }
 

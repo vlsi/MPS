@@ -19,8 +19,8 @@ import java.util.Set;
  * @author Kostik
  */
 public class ClassPathModelRootManager extends AbstractModelRootManager  {
-  private static Map<SModelUID, Long> ourTimestamps = new HashMap<SModelUID, Long>();
 
+  private static Map<SModelUID, Long> ourTimestamps = new HashMap<SModelUID, Long>();
   private ModelOwner myOwner;
   private IConverter myConverter;
 
@@ -50,7 +50,9 @@ public class ClassPathModelRootManager extends AbstractModelRootManager  {
     SModel model = modelDescriptor.getSModel();
     model.setLoading(true);
     try {
-      myConverter.updateModel(modelDescriptor.getModelUID().getLongName(), true);
+      SModelUID uid = modelDescriptor.getModelUID();
+      String pack = uid.getLongName();      
+      myConverter.updateModel(pack, true);
     } finally {
       model.setLoading(false);
     }
@@ -89,9 +91,25 @@ public class ClassPathModelRootManager extends AbstractModelRootManager  {
 
   private void addPackageModelDescriptors(Set<SModelDescriptor> descriptors, ModelRoot root, String pack) {
     Set<String> subpackages = getClassPathItem().getSubpackages(pack);
+    if (pack.equals("")) {
+
+      SModelUID defaultPackage = new SModelUID("", "java_stub");
+      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(defaultPackage);
+
+      if (modelDescriptor == null) {
+        modelDescriptor =
+                new DefaultSModelDescriptor(this,
+                        root,
+                        null,
+                        defaultPackage);
+        SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, myOwner);
+      } else {
+        SModelRepository.getInstance().addOwnerForDescriptor(modelDescriptor, myOwner);        
+      }
+      descriptors.add(modelDescriptor);
+    }
 
     for (String subpackage : subpackages) {
-
       if (!getClassPathItem().getAvailableClasses(subpackage).isEmpty()) {
         SModelUID modelUID = SModelUID.fromString(subpackage + "@" + SModelStereotype.JAVA_STUB);
         if (SModelRepository.getInstance().getModelDescriptor(modelUID) != null) {
