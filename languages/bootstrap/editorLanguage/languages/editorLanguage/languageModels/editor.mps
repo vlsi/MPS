@@ -8389,7 +8389,7 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1165420935994">
           <property name="textFgColor" value="DARK_BLUE" />
           <property name="textBgColor" value="lightGray" />
-          <property name="text" value="NOT IMPLEMENTED generic group" />
+          <property name="text" value="generic group" />
           <property name="drawBorder" value="false" />
         </node>
       </node>
