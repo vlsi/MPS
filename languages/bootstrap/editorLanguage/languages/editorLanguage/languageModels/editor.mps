@@ -330,8 +330,9 @@
           <property name="drawBorder" value="true" />
           <property name="vertical" value="false" />
           <property name="selectable" value="false" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1142043281075">
-            <property name="text" value="menu (old)" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1165427377552">
+            <property name="textFgColor" value="red" />
+            <property name="text" value="menu (deprecated - to be removed in next build)" />
             <property name="drawBorder" value="true" />
             <property name="selectable" value="false" />
           </node>
@@ -860,8 +861,9 @@
           <property name="drawBorder" value="true" />
           <property name="vertical" value="false" />
           <property name="selectable" value="false" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1142043239701">
-            <property name="text" value="menu (old)" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1165427426842">
+            <property name="textFgColor" value="red" />
+            <property name="text" value="menu (deprecated - to be removed in next build)" />
             <property name="drawBorder" value="true" />
             <property name="selectable" value="false" />
           </node>
@@ -1211,8 +1213,9 @@
           <property name="drawBorder" value="true" />
           <property name="vertical" value="false" />
           <property name="selectable" value="false" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1142043261504">
-            <property name="text" value="menu (old)" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1165427329378">
+            <property name="textFgColor" value="red" />
+            <property name="text" value="menu (deprecated - to be removed in next build)" />
             <property name="drawBorder" value="true" />
             <property name="selectable" value="false" />
           </node>
@@ -1240,7 +1243,7 @@
           <property name="vertical" value="false" />
           <property name="selectable" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164826866819">
-            <property name="text" value="menu (composite)" />
+            <property name="text" value="menu" />
             <property name="drawBorder" value="true" />
             <property name="selectable" value="false" />
           </node>
@@ -1779,8 +1782,9 @@
           <property name="drawBorder" value="true" />
           <property name="vertical" value="false" />
           <property name="selectable" value="false" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1142043271313">
-            <property name="text" value="menu (old)" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1165427413840">
+            <property name="textFgColor" value="red" />
+            <property name="text" value="menu (deprecated - to be removed in next build)" />
             <property name="drawBorder" value="true" />
             <property name="selectable" value="false" />
           </node>
@@ -2159,8 +2163,9 @@
           <property name="drawBorder" value="true" />
           <property name="vertical" value="false" />
           <property name="selectable" value="false" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1142043275334">
-            <property name="text" value="menu (old)" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1165427299417">
+            <property name="textFgColor" value="red" />
+            <property name="text" value="menu (deprecated - to be removed in next build)" />
             <property name="drawBorder" value="true" />
             <property name="selectable" value="false" />
           </node>
@@ -2491,8 +2496,9 @@
           <property name="drawBorder" value="true" />
           <property name="vertical" value="false" />
           <property name="selectable" value="false" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1141940005532">
-            <property name="text" value="menu (old)" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1165427389304">
+            <property name="textFgColor" value="red" />
+            <property name="text" value="menu (deprecated - to be removed in next build)" />
             <property name="drawBorder" value="true" />
             <property name="selectable" value="false" />
           </node>
@@ -2963,8 +2969,9 @@
           <property name="drawBorder" value="true" />
           <property name="vertical" value="false" />
           <property name="selectable" value="false" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1142043295149">
-            <property name="text" value="menu (old)" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1165427285025">
+            <property name="textFgColor" value="red" />
+            <property name="text" value="menu (deprecated - to be removed in next build)" />
             <property name="drawBorder" value="true" />
             <property name="selectable" value="false" />
           </node>
@@ -3380,8 +3387,9 @@
           <property name="drawBorder" value="true" />
           <property name="vertical" value="false" />
           <property name="selectable" value="false" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1141859728699">
-            <property name="text" value="menu (old)" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1165427399900">
+            <property name="textFgColor" value="red" />
+            <property name="text" value="menu (deprecated - to be removed in next build)" />
             <property name="drawBorder" value="true" />
             <property name="selectable" value="false" />
           </node>
@@ -3939,8 +3947,9 @@
           <property name="drawBorder" value="true" />
           <property name="vertical" value="false" />
           <property name="selectable" value="false" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1154565916888">
-            <property name="text" value="elem. menu(old)" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1165427457906">
+            <property name="textFgColor" value="red" />
+            <property name="text" value="elem. menu (deprecated - to be removed in next build)" />
             <property name="drawBorder" value="true" />
             <property name="selectable" value="false" />
           </node>
@@ -4591,8 +4600,9 @@
           <property name="drawBorder" value="true" />
           <property name="vertical" value="false" />
           <property name="selectable" value="false" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1141849830836">
-            <property name="text" value="menu (old)" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1165427271554">
+            <property name="textFgColor" value="red" />
+            <property name="text" value="menu (deprecated - to be removed in next build)" />
             <property name="drawBorder" value="true" />
             <property name="selectable" value="false" />
           </node>
@@ -5066,8 +5076,9 @@
           <property name="drawBorder" value="true" />
           <property name="vertical" value="false" />
           <property name="selectable" value="false" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1142043226586">
-            <property name="text" value="menu (old)" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1165427510361">
+            <property name="textFgColor" value="red" />
+            <property name="text" value="menu (deprecated - to be removed in next build)" />
             <property name="drawBorder" value="true" />
             <property name="selectable" value="false" />
           </node>
@@ -5088,6 +5099,21 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1165427529446">
+          <property name="drawBorder" value="false" />
+          <property name="vertical" value="false" />
+          <property name="selectable" value="false" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1165427529447">
+            <property name="text" value="menu" />
+            <property name="drawBorder" value="true" />
+            <property name="selectable" value="false" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1165427529448">
+            <property name="drawBorder" value="true" />
+            <property name="noTargetText" value="&lt;none&gt;" />
+            <link role="relationDeclaration" targetNodeId="2.1164826688380" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1145901527487">
@@ -6095,8 +6121,9 @@
           <property name="drawBorder" value="true" />
           <property name="vertical" value="false" />
           <property name="selectable" value="false" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1142043267072">
-            <property name="text" value="menu (old)" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1165427313169">
+            <property name="textFgColor" value="red" />
+            <property name="text" value="menu (deprecated - to be removed in next build)" />
             <property name="drawBorder" value="true" />
             <property name="selectable" value="false" />
           </node>
@@ -6844,7 +6871,8 @@
         <property name="vertical" value="false" />
         <property name="selectable" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1142043285378">
-          <property name="text" value="menu (old)" />
+          <property name="textFgColor" value="red" />
+          <property name="text" value="menu (deprecated - to be removed in next build)" />
           <property name="drawBorder" value="true" />
           <property name="selectable" value="false" />
         </node>
@@ -6872,7 +6900,7 @@
         <property name="vertical" value="false" />
         <property name="selectable" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164826898596">
-          <property name="text" value="menu (composite)" />
+          <property name="text" value="menu" />
           <property name="drawBorder" value="true" />
           <property name="selectable" value="false" />
         </node>
