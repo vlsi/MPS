@@ -180,6 +180,7 @@ public abstract class MPSTree extends JTree {
     return label.getText();
   }
 
+
   private MPSTreeCellRenderer getLabelFor(TreePath path) {
     Object object = path.getLastPathComponent();
     int row = getRowForPath(path);
@@ -282,7 +283,7 @@ public abstract class MPSTree extends JTree {
     expandAll(node);
   }
 
-  private void expandAll(MPSTreeNode node) {
+  public void expandAll(MPSTreeNode node) {
     expandPath(new TreePath(node.getPath()));
     for (int i = 0; i < node.getChildCount(); i++) {
       expandAll((MPSTreeNode) node.getChildAt(i));
