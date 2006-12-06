@@ -66,6 +66,8 @@ public class CreateRootNodeGroup extends ActionGroup {
         this.add(langRootsGroup);
       }
     }
+
+    setVisible(context.hasOneSelectedItem());
   }
 
   private MPSAction newRootNodeAction(final ConceptDeclaration nodeConcept, final Class<? extends SNode> nodeClass, final SModel model, final IDEProjectFrame ide) {
