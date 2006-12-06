@@ -1372,7 +1372,7 @@
       <link role="target" targetNodeId="37.1161622753914" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1163613131951">
-      <property name="value" value="convert reference node" />
+      <property name="value" value="create replacement node" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
   </node>
@@ -1711,6 +1711,54 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1165339307437">
       <link role="target" targetNodeId="37.1161622753914" />
       <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1165420413719">
+    <property name="name" value="CellMenuPart_Generic_Group" />
+    <link role="extends" targetNodeId="1165253627126" resolveInfo="CellMenuPart_AbstractGroup" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1165420413720">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="parametersFunction" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1163613035599" resolveInfo="CellMenuPart_AbstractGroup_Query" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1165420413721">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="handlerFunction" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1165420626554" resolveInfo="CellMenuPart_Generic_Group_Handle" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1165420413722">
+      <property name="value" value="generic group" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1165420626554">
+    <property name="name" value="CellMenuPart_Generic_Group_Handler" />
+    <link role="extends" targetNodeId="4.1137021947720" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1165420626557">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
+      <link role="target" targetNodeId="1163613549566" resolveInfo="CellMenuPart_AbstractGroup_parameterObject" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1165420626558">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
+      <link role="target" targetNodeId="1163613822479" resolveInfo="CellMenuPart_Abstract_editedNode" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1165420626559">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
+      <link role="target" targetNodeId="37.1161622665029" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1165420626560">
+      <link role="target" targetNodeId="37.1161622878565" />
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1165420626561">
+      <link role="target" targetNodeId="37.1161622753914" />
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1165420626562">
+      <property name="value" value="generic handler" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
   </node>
 </model>
