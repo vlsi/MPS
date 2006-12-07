@@ -21,6 +21,7 @@ import jetbrains.mps.util.IDisposable;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vcs.VersionControlManager;
 import jetbrains.mps.vcs.model.IVersionControl;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -437,6 +438,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
         CommandProcessor.instance().removeCommandListener(myEventTranslator);
         MPSModuleRepository.getInstance().unRegisterModules(MPSProject.this);
         SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
+
+        TypeChecker.getInstance().clear();
       }
     }, "disposing project");
 

@@ -53,6 +53,7 @@ public class SubtypingManager {
 
   public void clear() {
     myRules.clear();
+    myVarianceRules.clear();
   }
 
   public boolean isSubtype(SNode subtype, SNode supertype) {
@@ -70,7 +71,6 @@ public class SubtypingManager {
     // transitivity: nominal equivalence
     return isStrictSubtype(subtype, supertype);
   }
-
 
   public boolean isStrictSubtype(SNode subtype, SNode supertype) {
     SNode subRepresentator = EquationManager.getInstance().getRepresentator(subtype);
@@ -161,8 +161,6 @@ public class SubtypingManager {
     }
     return false;
   }
-
-
 
   public Set<SNode> collectSupertypes(SNode term) {
     Set<SNode> result = new HashSet<SNode>();
