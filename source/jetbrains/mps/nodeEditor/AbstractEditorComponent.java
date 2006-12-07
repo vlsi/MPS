@@ -625,9 +625,13 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   public abstract EditorCell createRootCell(List<SModelEvent> events);
 
-  public void clear() {
+  public void dispose() {
     removeOurListener();
     clearCaches();
+
+    if (myNodeSubstituteChooser != null) {
+      myNodeSubstituteChooser.dispose();
+    }
   }
 
   private void addOurListener(SModelDescriptor sm) {

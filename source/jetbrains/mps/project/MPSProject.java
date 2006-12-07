@@ -6,6 +6,7 @@ import jetbrains.mps.ide.*;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.preferences.IComponentWithPreferences;
 import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.logging.Logger;
@@ -440,6 +441,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
         SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
 
         TypeChecker.getInstance().clear();
+
+        UndoManager.instance().clear();
       }
     }, "disposing project");
 

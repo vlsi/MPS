@@ -48,7 +48,7 @@ public interface IEditor {
 
   void requestFocus();
 
-  void clear();
+  void dispose();
 
   void repaint();
 

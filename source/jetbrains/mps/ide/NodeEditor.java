@@ -6,7 +6,6 @@ import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeProxy;
-import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -94,8 +93,8 @@ public class NodeEditor implements IEditor {
     myEditorComponent.selectNode(node);
   }
 
-  public void clear() {
-    myEditorComponent.clear();
+  public void dispose() {
+    myEditorComponent.dispose();
   }
 
   public void repaint() {

@@ -321,6 +321,14 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     }
   }
 
+  public void dispose() {
+    if (myPopupWindow != null) {
+      myPopupWindow.getParent().remove(myPopupWindow);
+      myPopupWindow.dispose();
+      myPopupWindow = null;
+    }
+  }
+
   private enum PopupWindowPosition {
     TOP, BOTTOM
   }
@@ -330,16 +338,19 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     private PopupWindowPosition myPosition = PopupWindowPosition.BOTTOM;
     private JScrollPane myScroller = new JScrollPane(myList, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
     private EditorCell myRelativeCell;
+    ComponentAdapter myComponentListener = new ComponentAdapter() {
+      public void componentMoved(ComponentEvent e) {
+        NodeSubstituteChooser.this.setLocationRelative(myRelativeCell);
+        getPatternEditor().setLocation(myPatternEditorLocation);
+      }
+    };
 
     public PopupWindow(final Window owner) {
       super(owner);
 
-      owner.addComponentListener(new ComponentAdapter() {
-        public void componentMoved(ComponentEvent e) {
-          NodeSubstituteChooser.this.setLocationRelative(myRelativeCell);
-          getPatternEditor().setLocation(myPatternEditorLocation);
-        }
-      });
+      System.out.println("new popup window " + this);
+
+      owner.addComponentListener(myComponentListener);
 
       myList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
       myList.setFont(new TextLine("", null).getFont());
@@ -365,6 +376,13 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       add(myScroller);
       myList.setFocusable(false);
       setSize(PREFERRED_WIDTH, PREFERRED_HEIGHT);
+    }
+
+
+    public void dispose() {
+      getOwner().removeComponentListener(myComponentListener);
+
+      super.dispose();
     }
 
     public int getFontWidth() {

@@ -1,6 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
 import javax.swing.JWindow;
+import javax.swing.JDialog;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
@@ -98,7 +99,7 @@ public class NodeSubstitutePatternEditor {
     private Dimension myMinimalSize;
 
     public EditorWindow(Window owner) {
-      super(owner);
+      super((Frame) owner);
       myTextLine = new TextLine("", this);
     }
 

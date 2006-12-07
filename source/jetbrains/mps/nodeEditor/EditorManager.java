@@ -389,7 +389,8 @@ public class EditorManager {
 
 
   private INodeEditor getEditor(EditorContext context, SNode node) {
-    INodeEditor editor = (INodeEditor) node.getUserObject(this.getClass());
+    INodeEditor editor = null;//(INodeEditor) node.getUserObject(this.getClass());
+/*
 
     if (editor != null &&
             editor.getClass().getClassLoader() != ClassLoaderManager.getInstance().getClassLoader() &&
@@ -400,16 +401,17 @@ public class EditorManager {
 
       editor = null;
     }
+*/
 
-    if (editor != null) {
+  /*  if (editor != null) {
       return editor;
-    }
+    }*/
 
     editor = EditorsFinderManager.loadEditor(context, node);
     if (editor == null) {
       editor = new DefaultNodeEditor();
     }
-    node.putUserObject(this.getClass(), editor);
+//    node.putUserObject(this.getClass(), editor);
     return editor;
   }
 

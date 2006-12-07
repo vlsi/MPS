@@ -187,8 +187,8 @@ public class UIEditorComponent extends AbstractEditorComponent implements IEdito
       UIEditorComponent.this.selectNode(node);
     }
 
-    public void clear() {
-      UIEditorComponent.this.clear();
+    public void dispose() {
+      UIEditorComponent.this.dispose();
     }
 
     public void repaint() {
