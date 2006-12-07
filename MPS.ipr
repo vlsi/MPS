@@ -284,6 +284,8 @@
           <option name="REPORT_NOT_ANNOTATED_METHOD_OVERRIDES_NOTNULL" value="true" />
           <option name="REPORT_NOTNULL_PARAMETER_OVERRIDES_NULLABLE" value="true" />
           <option name="REPORT_NOT_ANNOTATED_PARAMETER_OVERRIDES_NOTNULL" value="true" />
+          <option name="REPORT_NOT_ANNOTATED_GETTER" value="true" />
+          <option name="REPORT_NOT_ANNOTATED_SETTER_PARAMETER" value="true" />
         </inspection_tool>
         <inspection_tool class="UNCHECKED_WARNING" level="WARNING" enabled="false" />
         <inspection_tool class="RedundantCast" level="WARNING" enabled="false" />
@@ -298,13 +300,7 @@
           <option name="m_minLength" value="2" />
           <option name="m_maxLength" value="99" />
         </inspection_tool>
-        <inspection_tool class="EmptyMethod" level="WARNING" enabled="false">
-          <option name="EXCLUDE_ANNOS">
-            <value>
-              <list size="0" />
-            </value>
-          </option>
-        </inspection_tool>
+        <inspection_tool class="EmptyMethod" level="WARNING" enabled="false" />
         <inspection_tool class="CanBeFinal" level="WARNING" enabled="false">
           <option name="REPORT_CLASSES" value="false" />
           <option name="REPORT_METHODS" value="false" />
@@ -477,6 +473,8 @@
           <option name="REPORT_NOT_ANNOTATED_METHOD_OVERRIDES_NOTNULL" value="true" />
           <option name="REPORT_NOTNULL_PARAMETER_OVERRIDES_NULLABLE" value="true" />
           <option name="REPORT_NOT_ANNOTATED_PARAMETER_OVERRIDES_NOTNULL" value="true" />
+          <option name="REPORT_NOT_ANNOTATED_GETTER" value="true" />
+          <option name="REPORT_NOT_ANNOTATED_SETTER_PARAMETER" value="true" />
         </inspection_tool>
         <inspection_tool class="UNCHECKED_WARNING" level="WARNING" enabled="false" />
         <inspection_tool class="RedundantCast" level="WARNING" enabled="false" />
@@ -491,13 +489,7 @@
           <option name="m_minLength" value="2" />
           <option name="m_maxLength" value="99" />
         </inspection_tool>
-        <inspection_tool class="EmptyMethod" level="WARNING" enabled="false">
-          <option name="EXCLUDE_ANNOS">
-            <value>
-              <list size="0" />
-            </value>
-          </option>
-        </inspection_tool>
+        <inspection_tool class="EmptyMethod" level="WARNING" enabled="false" />
         <inspection_tool class="UnusedParameters" level="WARNING" enabled="false" />
         <inspection_tool class="CanBeFinal" level="WARNING" enabled="false">
           <option name="REPORT_CLASSES" value="false" />
@@ -640,13 +632,7 @@
         <inspection_tool class="CssNoGenericFontName" level="WARNING" enabled="false" />
         <inspection_tool class="CssOverwrittenProperties" level="WARNING" enabled="false" />
         <inspection_tool class="CssUnitlessNumber" level="WARNING" enabled="false" />
-        <inspection_tool class="EmptyMethod" level="WARNING" enabled="false">
-          <option name="EXCLUDE_ANNOS">
-            <value>
-              <list size="0" />
-            </value>
-          </option>
-        </inspection_tool>
+        <inspection_tool class="EmptyMethod" level="WARNING" enabled="false" />
         <inspection_tool class="WeakerAccess" level="WARNING" enabled="false">
           <option name="SUGGEST_PACKAGE_LOCAL_FOR_MEMBERS" value="true" />
           <option name="SUGGEST_PACKAGE_LOCAL_FOR_TOP_CLASSES" value="true" />
@@ -715,6 +701,8 @@
           <option name="REPORT_NOT_ANNOTATED_METHOD_OVERRIDES_NOTNULL" value="true" />
           <option name="REPORT_NOTNULL_PARAMETER_OVERRIDES_NULLABLE" value="true" />
           <option name="REPORT_NOT_ANNOTATED_PARAMETER_OVERRIDES_NOTNULL" value="true" />
+          <option name="REPORT_NOT_ANNOTATED_GETTER" value="true" />
+          <option name="REPORT_NOT_ANNOTATED_SETTER_PARAMETER" value="true" />
         </inspection_tool>
         <inspection_tool class="UNCHECKED_WARNING" level="WARNING" enabled="false" />
         <inspection_tool class="RedundantCast" level="WARNING" enabled="false" />
@@ -899,6 +887,8 @@
           <option name="REPORT_NOT_ANNOTATED_METHOD_OVERRIDES_NOTNULL" value="true" />
           <option name="REPORT_NOTNULL_PARAMETER_OVERRIDES_NULLABLE" value="true" />
           <option name="REPORT_NOT_ANNOTATED_PARAMETER_OVERRIDES_NOTNULL" value="true" />
+          <option name="REPORT_NOT_ANNOTATED_GETTER" value="true" />
+          <option name="REPORT_NOT_ANNOTATED_SETTER_PARAMETER" value="true" />
         </inspection_tool>
         <inspection_tool class="UNCHECKED_WARNING" level="WARNING" enabled="false" />
         <inspection_tool class="RedundantCast" level="WARNING" enabled="false" />
@@ -913,13 +903,7 @@
           <option name="m_minLength" value="2" />
           <option name="m_maxLength" value="99" />
         </inspection_tool>
-        <inspection_tool class="EmptyMethod" level="WARNING" enabled="false">
-          <option name="EXCLUDE_ANNOS">
-            <value>
-              <list size="0" />
-            </value>
-          </option>
-        </inspection_tool>
+        <inspection_tool class="EmptyMethod" level="WARNING" enabled="false" />
         <inspection_tool class="CanBeFinal" level="WARNING" enabled="false">
           <option name="REPORT_CLASSES" value="false" />
           <option name="REPORT_METHODS" value="false" />
@@ -1141,7 +1125,7 @@
   </component>
   <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="jdk 1.5" />
   <component name="ProjectRunConfigurationManager">
-    <configuration default="false" name="depot - WebR Sample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
+    <configuration default="false" name="depot - WebR Sample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
@@ -1212,13 +1196,13 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="miniAlpha - WebR Sample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
+    <configuration default="false" name="miniAlpha - WebR Sample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
       <option name="LOCAL" value="true" />
       <option name="OPEN_IN_BROWSER" value="true" />
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/MUser/login" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/User/login" />
       <option name="COMMON_VM_ARGUMENTS" value="" />
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
@@ -1283,7 +1267,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="hello - WebSample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
+    <configuration default="false" name="hello - WebSample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
@@ -1364,8 +1348,8 @@
   </component>
   <component name="StarteamVcsAdapter" />
   <component name="VssVcs">
-    <SourceSafePersistencyRemovedFolder>$PROJECT_DIR$/source/jetbrains/mps/generator/types</SourceSafePersistencyRemovedFolder>
     <SourceSafePersistencyRemovedFolder>$PROJECT_DIR$/projects/SemanticFunctions/source/jetbrains/naturalLanguageDescription/scope</SourceSafePersistencyRemovedFolder>
+    <SourceSafePersistencyRemovedFolder>$PROJECT_DIR$/source/jetbrains/mps/generator/types</SourceSafePersistencyRemovedFolder>
   </component>
   <component name="com.intellij.jsf.UserDefinedFacesConfigs">
     <option name="USER_DEFINED_CONFIGS">
