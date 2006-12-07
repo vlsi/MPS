@@ -9,12 +9,7 @@ import java.io.File;
 public interface IProjectHandler extends Remote {
   void addSourceRoot(final String path) throws RemoteException;
   void addMPSJar(final String mpsHome) throws RemoteException;
-  boolean isVCSSupported(final String path) throws RemoteException;
-  List<Revision> getVersionsFor(final String path) throws RemoteException;
-  boolean isFileChanged(final String path) throws RemoteException;
-  String getCurrentRevisionFor(final String path) throws RemoteException;
-  String commit(final String path, final String comment) throws RemoteException;
-  byte[] getContentsForRevision(final String path, final String revision) throws RemoteException;
+
   void refreshFS() throws RemoteException;
   CompilationResult buildModule(final String path) throws RemoteException;
   List<String> getAspectMethodIds(final String namespace, final String prefix) throws RemoteException;
