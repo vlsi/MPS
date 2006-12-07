@@ -605,6 +605,9 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
 
   public void removeIdeHandler(IMPSIDEHandler handler) throws RemoteException {
     myIDEHandlers.remove(handler);
+
+    //we need it because of RMI's distributed gc
+    System.gc();
   }
 
   private PsiDirectory createPackagesForNamespace(PsiDirectory dir, String namespace) {
