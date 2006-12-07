@@ -82,6 +82,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private HashMap myUserDataMap = new HashMap();
 
   private MyModelListener myModelListener = new MyModelListener();
+  private Set<SModelDescriptor> myModelDescriptorsWithListener = new HashSet<SModelDescriptor>();
 
   private List<ICellSelectionListener> mySelectionListeners = new LinkedList<ICellSelectionListener>();
   private PropertyChangeListener myFocusListener;
@@ -625,12 +626,21 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   public abstract EditorCell createRootCell(List<SModelEvent> events);
 
   public void clear() {
-    SNodeProxy proxy = myRootCell.getSNodeProxy();
-
-    if (proxy != null) {
-      proxy.getModel().getSModel().removeSModelCommandListener(myModelListener);
-    } 
+    removeOurListener();
     clearCaches();
+  }
+
+  private void addOurListener(SModelDescriptor sm) {
+    if (sm.hasSModelCommandListener(myModelListener)) return;
+    sm.addSModelCommandListener(myModelListener);
+    myModelDescriptorsWithListener.add(sm);
+  }
+
+  private void removeOurListener() {
+    for (SModelDescriptor sm : myModelDescriptorsWithListener) {
+      sm.removeSModelCommandListener(myModelListener);
+    }
+    myModelDescriptorsWithListener.clear();
   }
 
   private void clearCaches() {
@@ -643,13 +653,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private void setRootCell(EditorCell rootCell) {
-    if (myRootCell != null) {
-      SNode semanticNode = myRootCell.getSNode();
-      if (semanticNode != null) {
-        SModel semanticModel = semanticNode.getModel();
-        semanticModel.removeSModelCommandListener(myModelListener);
-      }
-    }
+    removeOurListener();
 
     myRootCell = rootCell;
     doRelayout(false);
@@ -657,9 +661,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     Set<SNode> nodesWhichEditorDependsOn = myCellsToNodesToDependOnMap.get(myRootCell);
     if (nodesWhichEditorDependsOn != null) {
       for (SNode node : nodesWhichEditorDependsOn) {
-        SModel model = node.getModel();
-        if (!model.hasSModelCommandListener(myModelListener)) {
-          model.addSModelCommandListener(myModelListener);
+
+        SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
+        if (modelDescriptor != null) {
+          addOurListener(modelDescriptor);
         }
       }
     }
@@ -673,9 +678,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           nodeProxiesToDelete.add(nodeProxy);
           continue;
         }
-        if (!model.hasSModelCommandListener(myModelListener)) {
-          model.addSModelCommandListener(myModelListener);
-        }
+        addOurListener(model);
       }
       refTargetsWhichEditorDependsOn.removeAll(nodeProxiesToDelete);
     }

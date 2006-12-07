@@ -57,6 +57,7 @@ public class TypeChecker {
     myRules.clear();
     myCheckedNodes.clear();
     myNodesWithErrors.clear();
+    myNodesToDependentRoots.clear();
   }
 
   public void checkTypes(SNode root) {
