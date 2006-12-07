@@ -99,7 +99,7 @@ public class NodeSubstitutePatternEditor {
     private Dimension myMinimalSize;
 
     public EditorWindow(Window owner) {
-      super((Frame) owner);
+      super(owner);
       myTextLine = new TextLine("", this);
     }
 
