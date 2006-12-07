@@ -625,11 +625,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   public abstract EditorCell createRootCell(List<SModelEvent> events);
 
   public void clear() {
-    SNode semanticNode = myRootCell.getSNode();
-    if (semanticNode != null) {
-      SModel semanticModel = semanticNode.getModel();
-      semanticModel.removeSModelCommandListener(myModelListener);
-    }
+    SNodeProxy proxy = myRootCell.getSNodeProxy();
+
+    if (proxy != null) {
+      proxy.getModel().getSModel().removeSModelCommandListener(myModelListener);
+    } 
     clearCaches();
   }
 
