@@ -20,8 +20,6 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IDisposable;
 import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.vcs.VersionControlManager;
-import jetbrains.mps.vcs.model.IVersionControl;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -143,11 +141,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     for (IModule m : getModules()) {
       m.readModels();
     }
-  }
-
-  @NotNull
-  public IVersionControl getVCSFor(@NotNull SModelDescriptor model) {
-    return getComponentSafe(VersionControlManager.class).createVCSFor(model, this);
   }
 
   public void setProjectDescriptor(final @NotNull ProjectDescriptor newDescriptor) {
