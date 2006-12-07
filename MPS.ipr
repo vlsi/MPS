@@ -1136,18 +1136,17 @@
       <module fileurl="file://$PROJECT_DIR$/projects/teamSys/teamSysWebApp/teamSysWebApp.iml" filepath="$PROJECT_DIR$/projects/teamSys/teamSysWebApp/teamSysWebApp.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/webr/webr.iml" filepath="$PROJECT_DIR$/projects/webr/webr.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/webrFramework/webrFramework.iml" filepath="$PROJECT_DIR$/projects/webrFramework/webrFramework.iml" group="Projects" />
-      <module fileurl="file://$PROJECT_DIR$/projects/webrTest/webrTest.iml" filepath="$PROJECT_DIR$/projects/webrTest/webrTest.iml" group="Projects" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="jdk 1.5" />
   <component name="ProjectRunConfigurationManager">
-    <configuration default="false" name="depot - WebR Sample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
+    <configuration default="false" name="depot - WebR Sample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
       <option name="LOCAL" value="true" />
       <option name="OPEN_IN_BROWSER" value="true" />
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/Admin/list" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/admin/list" />
       <option name="COMMON_VM_ARGUMENTS" value="" />
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
@@ -1167,11 +1166,6 @@
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="miniAlpha" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE>
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrTest" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <option name="DEPLOY_TOMCAT_MANAGER" value="true" />
@@ -1217,13 +1211,13 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="miniAlpha - WebR Sample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
+    <configuration default="false" name="miniAlpha - WebR Sample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
       <option name="LOCAL" value="true" />
       <option name="OPEN_IN_BROWSER" value="true" />
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/MUser/login" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/muser/login" />
       <option name="COMMON_VM_ARGUMENTS" value="" />
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
@@ -1244,11 +1238,6 @@
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="miniAlpha" />
         <option name="DEPLOY" value="true" />
-      </J2EE_MODULE>
-      <J2EE_MODULE>
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrTest" />
-        <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <option name="DEPLOY_TOMCAT_MANAGER" value="true" />
       <option name="BASE_DIRECTORY_NAME" value="tomcat_Unnamed_e7d78b7c2" />
@@ -1293,7 +1282,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="hello - WebSample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
+    <configuration default="false" name="hello - WebSample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
@@ -1319,11 +1308,6 @@
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="miniAlpha" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE>
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrTest" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <option name="DEPLOY_TOMCAT_MANAGER" value="true" />
@@ -1379,8 +1363,8 @@
   </component>
   <component name="StarteamVcsAdapter" />
   <component name="VssVcs">
-    <SourceSafePersistencyRemovedFolder>$PROJECT_DIR$/source/jetbrains/mps/generator/types</SourceSafePersistencyRemovedFolder>
     <SourceSafePersistencyRemovedFolder>$PROJECT_DIR$/projects/SemanticFunctions/source/jetbrains/naturalLanguageDescription/scope</SourceSafePersistencyRemovedFolder>
+    <SourceSafePersistencyRemovedFolder>$PROJECT_DIR$/source/jetbrains/mps/generator/types</SourceSafePersistencyRemovedFolder>
   </component>
   <component name="com.intellij.jsf.UserDefinedFacesConfigs">
     <option name="USER_DEFINED_CONFIGS">
