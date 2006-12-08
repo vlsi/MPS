@@ -23,7 +23,7 @@ import java.util.List;
  */
 /*package*/ class RTransformHintSubstituteActionsHelper {
 
-  private static Logger LOG = new Logger(RTransformHintSubstituteActionsHelper.class);
+  private static Logger LOG = Logger.getLogger(RTransformHintSubstituteActionsHelper.class);
 
   public static boolean canCreateActions(SNode sourceNode, String transformTag, IOperationContext context) {
     return getActionBuilders(sourceNode, transformTag, context).size() > 0;

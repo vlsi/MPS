@@ -9,20 +9,20 @@ import java.util.HashMap;
  * @author Kostik
  */
 public class Logger {
-  private static Map<Class, Logger> ourLoggers = new HashMap<Class, Logger>();
+  private static Map<String, Logger> ourLoggers = new HashMap<String, Logger>();
 
 
   public static synchronized Logger getLogger(Class cls) {
-    if (!ourLoggers.containsKey(cls)) {
-      ourLoggers.put(cls, new Logger(cls));
+    if (!ourLoggers.containsKey(cls.getName())) {
+      ourLoggers.put(cls.getName(), new Logger(cls.getName()));
     }
-    return ourLoggers.get(cls);
+    return ourLoggers.get(cls.getName());
   }
 
   private org.apache.log4j.Logger myLogger;
 
-  public Logger(Class cls) {
-    myLogger = org.apache.log4j.Logger.getLogger(cls);
+  private Logger(String fqName) {
+    myLogger = org.apache.log4j.Logger.getLogger(fqName);
   }
 
   public void info(String message) {

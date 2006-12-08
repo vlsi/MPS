@@ -14,7 +14,7 @@ import java.awt.event.KeyEvent;
  * Sep 28, 2006
  */
 public class KeyMapUtil {
-  private static Logger LOG = new Logger(KeyMapUtil.class);
+  private static Logger LOG = Logger.getLogger(KeyMapUtil.class);
 
   /**
    * @return list of pairs: keymapAction/actionCell
