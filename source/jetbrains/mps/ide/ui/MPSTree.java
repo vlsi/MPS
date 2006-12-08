@@ -325,6 +325,8 @@ public abstract class MPSTree extends JTree {
         root.setTree(MPSTree.this);
         DefaultTreeModel model = new DefaultTreeModel(root);
         setModel(model);
+
+        updateUI();
       }
     }, true);
   }
