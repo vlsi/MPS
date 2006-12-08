@@ -35,9 +35,11 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
   private static final String SAVE_TRANSIENT_MODELS = "save-transient-models-on-generation";
   private static final String COMPILE_ON_GENERATION = "compile-on-generation";
+  private static final String COMPILE_SOURCE_LANGUAGES_MODULES = "compile-source-languages-modules";
 
   private boolean myCompileOnGeneration = true;
   private boolean mySaveTransientModels;
+  private boolean myCompileSourceLanguageModules = false;
   private MPSProject myProject;
   private List<IFileGenerator> myFileGenerators = new LinkedList<IFileGenerator>();
 
@@ -65,11 +67,15 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     if (element.getAttribute(SAVE_TRANSIENT_MODELS) != null) {
       mySaveTransientModels = Boolean.parseBoolean(element.getAttributeValue(SAVE_TRANSIENT_MODELS));
     }
+    if (element.getAttribute(COMPILE_SOURCE_LANGUAGES_MODULES) != null) {
+      myCompileSourceLanguageModules = Boolean.parseBoolean(element.getAttributeValue(COMPILE_SOURCE_LANGUAGES_MODULES));
+    }
   }
 
   public void write(Element element, MPSProject project) {
     element.setAttribute(COMPILE_ON_GENERATION, "" + myCompileOnGeneration);
     element.setAttribute(SAVE_TRANSIENT_MODELS, "" + mySaveTransientModels);
+    element.setAttribute(COMPILE_SOURCE_LANGUAGES_MODULES,"" + myCompileSourceLanguageModules);
   }
 
   public boolean isCompileOnGeneration() {
@@ -86,6 +92,15 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
   public void setSaveTransientModels(boolean saveTransientModels) {
     mySaveTransientModels = saveTransientModels;
+  }
+
+
+  public boolean isCompileSourceLanguageModules() {
+    return myCompileSourceLanguageModules;
+  }
+
+  public void setCompileSourceLanguageModules(boolean compileSourceLanguageModules) {
+    myCompileSourceLanguageModules = compileSourceLanguageModules;
   }
 
   public IPreferencesPage createPreferencesPage() {
@@ -147,6 +162,16 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       }
     }
     return targetLanguages;
+  }
+
+  public static List<Language> getPossibleSourceLanguages(List<SModel> sourceModels, IScope scope) {
+    List<Language> result = new ArrayList<Language>();
+    for (SModel sm : sourceModels) {
+      for (Generator g : getPossibleGenerators(sm, scope)) {
+        result.add(g.getSourceLanguage());
+      }
+    }
+    return result;
   }
 
   public static List<Generator> getPossibleGenerators(SModel sourceModel, IScope scope) {
@@ -290,19 +315,31 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         // -- compile sources before generation
         checkMonitorCanceled(progress);
 
-
         progress.startLeafTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
         myProject.getProjectHandler().refreshFS();
         progress.finishTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
         checkMonitorCanceled(progress);
 
         progress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
-        progress.addText("compiling...");
+        progress.addText("compiling output module...");
         CompilationResult compilationResult = myProject.getProjectHandler().buildModule(outputFolder);
         progress.addText("" + compilationResult);
         if (!compilationResult.isOk()) {
           reloadClasses = false;
         }
+
+        if (myCompileSourceLanguageModules) {
+          for (Language l : getPossibleSourceLanguages(_sourceModels, invocationContext.getScope())) {
+            progress.addText("compiling " + l + "'s  module...");
+            compilationResult = myProject.getProjectHandler().buildModule(l.getSourceDir().getPath());
+            progress.addText("" + compilationResult);
+
+            if (!compilationResult.isOk()) {
+              reloadClasses = false;
+            }
+          }
+        }
+
         progress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
         checkMonitorCanceled(progress);
       }

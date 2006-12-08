@@ -18,16 +18,19 @@ class GeneratorManagerPreferencesPage implements IPreferencesPage {
   private JPanel myPage;
   private JCheckBox myCompileInIdeaOnGeneration = new JCheckBox("Compile in IntelliJ IDEA on generation");
   private JCheckBox mySaveTransientModelsCheckBox = new JCheckBox("Save transient models on generation (experts only)");
+  private JCheckBox myCompileSourceLanguagesModules = new JCheckBox("Compile source languages' modules before generation");
   private GeneratorManager myGeneratorManager;
 
   public GeneratorManagerPreferencesPage(GeneratorManager generatorManager) {
     myGeneratorManager = generatorManager;
     myCompileInIdeaOnGeneration.setSelected(myGeneratorManager.isCompileOnGeneration());
     mySaveTransientModelsCheckBox.setSelected(myGeneratorManager.isSaveTransientModels());
+    myCompileSourceLanguagesModules.setSelected(myGeneratorManager.isCompileSourceLanguageModules());
 
-    JPanel optionsPanel = new JPanel(new GridLayout(2, 1));
+    JPanel optionsPanel = new JPanel(new GridLayout(3, 1));
     optionsPanel.add(myCompileInIdeaOnGeneration);
     optionsPanel.add(mySaveTransientModelsCheckBox);
+    optionsPanel.add(myCompileSourceLanguagesModules);
 
     myPage = new JPanel(new BorderLayout());
     myPage.setBorder(new EmptyBorder(10, 10, 10, 10));
@@ -53,5 +56,6 @@ class GeneratorManagerPreferencesPage implements IPreferencesPage {
   public void commit() {
     myGeneratorManager.setCompileOnGeneration(myCompileInIdeaOnGeneration.isSelected());
     myGeneratorManager.setSaveTransientModels(mySaveTransientModelsCheckBox.isSelected());
+    myGeneratorManager.setCompileSourceLanguageModules(myCompileSourceLanguagesModules.isSelected());
   }
 }
