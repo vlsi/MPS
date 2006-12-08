@@ -128,13 +128,13 @@
             <property name="selectable" value="false" />
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1165604224376">
               <property name="textFgColor" value="DARK_BLUE" />
-              <property name="text" value="don't use - not ready" />
+              <property name="text" value="superclass" />
               <property name="drawBorder" value="false" />
               <property name="selectable" value="false" />
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1165604250911">
               <property name="drawBorder" value="false" />
-              <property name="noTargetText" value="&lt;none&gt;" />
+              <property name="noTargetText" value="&lt;!do not use it!&gt;" />
               <link role="relationDeclaration" targetNodeId="17.1165602531693" />
             </node>
           </node>

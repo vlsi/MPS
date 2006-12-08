@@ -20,13 +20,13 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class BlockStatement_Editor extends DefaultNodeEditor {
 
-  public static boolean _QueryFunction_NodeCondition_1145916692407(SNode node, IScope scope) {
-    return !(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.IfStatement", "ifFalseStatement"));
-  }
   public static boolean _QueryFunction_NodeCondition_1145916702929(SNode node, IScope scope) {
     return !(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.IfStatement", "ifFalseStatement"));
   }
   public static boolean _QueryFunction_NodeCondition_1145916598814(SNode node, IScope scope) {
+    return !(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.IfStatement", "ifFalseStatement"));
+  }
+  public static boolean _QueryFunction_NodeCondition_1145916692407(SNode node, IScope scope) {
     return !(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.IfStatement", "ifFalseStatement"));
   }
 
