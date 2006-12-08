@@ -55,13 +55,17 @@ public class EditorManager {
 
 
   private EditorCell createRootCell(EditorContext context, SNode node, List<SModelEvent> events, boolean isInspectorCell) {
-    AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
-    EditorCell rootCell = nodeEditorComponent.getRootCell();
-    ReferencedNodeContext refContext = ReferencedNodeContext.createNodeContext(node);
-    myMap.clear();
-    myMap.put(refContext, rootCell);
-    myCreatingInspectedCell = isInspectorCell;
-    return createEditorCell(context, events, refContext);
+    try {
+      AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
+      EditorCell rootCell = nodeEditorComponent.getRootCell();
+      ReferencedNodeContext refContext = ReferencedNodeContext.createNodeContext(node);
+      myMap.clear();
+      myMap.put(refContext, rootCell);
+      myCreatingInspectedCell = isInspectorCell;
+      return createEditorCell(context, events, refContext);
+    } finally {
+      myMap.clear();
+    }
   }
 
 
