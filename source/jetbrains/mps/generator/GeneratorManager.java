@@ -139,34 +139,34 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   public static List<Language> getPossibleTargetLanguages(List<SModel> sourceModels, IScope scope) {
     List<Language> targetLanguages = new LinkedList<Language>();
     for (SModel sourceModel : sourceModels) {
-      List<Language> languages = getPossibleTargetLanguages(sourceModel, scope);
-      for (Language language : languages) {
-        if (!targetLanguages.contains(language)) {
-          targetLanguages.add(language);
+      List<Generator> generators = getPossibleGenerators(sourceModel, scope);
+      for (Generator gen : generators) {
+        if (!targetLanguages.contains(gen.getTargetLanguage())) {
+          targetLanguages.add(gen.getTargetLanguage());
         }
       }
     }
     return targetLanguages;
   }
 
-  private static List<Language> getPossibleTargetLanguages(SModel sourceModel, IScope scope) {
-    List<Language> targetLanguages = new LinkedList<Language>();
+  public static List<Generator> getPossibleGenerators(SModel sourceModel, IScope scope) {
+    List<Generator> result = new LinkedList<Generator>();
     List<Language> languages = sourceModel.getLanguages(scope);
     for (Language sourceLanguage : languages) {
       List<Generator> generators = sourceLanguage.getGenerators();
       for (Generator generator : generators) {
         Language targetLanguage = generator.getTargetLanguage();
-        if (targetLanguage != null && !targetLanguages.contains(targetLanguage)) {
+        if (targetLanguage != null && !result.contains(generator)) {
           if (targetLanguage == sourceLanguage) {
             // only take self-generators with 'mapping configuration'.
             // otherwise it is pure 'rewriting' generator - it's target language is not target of generation
             if (!containsMappingConfiguration(generator)) continue;
           }
-          targetLanguages.add(targetLanguage);
+          result.add(generator);
         }
       }
     }
-    return targetLanguages;
+    return result;
   }
 
   private static boolean containsMappingConfiguration(Generator generator) {
