@@ -292,7 +292,7 @@ public class SModel implements Iterable<SNode> {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
       sModelListener.childAdded(new SModelChildEvent(this, true, parent, role, childIndex, child));
-    }
+    }                                                                 
   }
 
   void fireChildRemovedEvent(@NotNull SNode parent,
@@ -350,7 +350,9 @@ public class SModel implements Iterable<SNode> {
 
   @NotNull
   List<SModelListener> getListeners() {
-    return new ArrayList<SModelListener>(CollectionUtil.iteratorAsList(myListeners.iterator()));
+    ArrayList<SModelListener> result = new ArrayList<SModelListener>(CollectionUtil.iteratorAsList(myListeners.iterator()));
+    result.remove(myEventTranslator);
+    return result;
   }
 
   @NotNull
@@ -640,10 +642,6 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void dispose() {
-//    System.out.println("dispose : " + getUID());
-//    if(getUID().getShortName().equals("structure")) {
-//      System.out.println("structure");
-//    }
     myDisposed = true;
     myCommandListeners.clear();
     myListeners.clear();
