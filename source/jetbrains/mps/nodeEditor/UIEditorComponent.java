@@ -101,12 +101,12 @@ public class UIEditorComponent extends AbstractEditorComponent implements IEdito
     return new MyEditor();
   }
 
-  public void openPrevEditorInHistory() {
-    myEditorsHistory.openPrevEditorInHistory();
+  public void openPrevEditorInHistory(IOperationContext operationContext) {
+    myEditorsHistory.openPrevEditorInHistory(operationContext);
   }
 
-  public void openNextEditorInHistory() {
-    myEditorsHistory.openNextEditorInHistory();
+  public void openNextEditorInHistory(IOperationContext operationContext) {
+    myEditorsHistory.openNextEditorInHistory(operationContext);
   }
 
   public EditorsHistory getEditorsHistory() {

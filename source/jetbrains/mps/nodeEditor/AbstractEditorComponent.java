@@ -1431,13 +1431,13 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     //ctrl-alt-arrows
     if (keyEvent.isControlDown() && keyEvent.isAltDown()) {
       if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT) {
-        getEditorOpener().openPrevEditorInHistory();
+        getEditorOpener().openPrevEditorInHistory(myOperationContext);
         keyEvent.consume();
         return;
       }
 
       if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT) {
-        getEditorOpener().openNextEditorInHistory();
+        getEditorOpener().openNextEditorInHistory(myOperationContext);
         keyEvent.consume();
         return;
       }
@@ -1666,27 +1666,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
 
   public IHistoryItem getHistoryItemFromEditor() {
-    return new HistoryItem(this, this.mySelectedCell, (Stack<EditorCell>) this.mySelectedStack.clone());
+    return new HistoryItem(this, this.mySelectedCell, getSelectedStackForMemento());
   }
 
-  public void setSelectedStackFromHistory(Stack<EditorCell> historySelectedStack) {
-    mySelectedStack.clear();
-    Stack<EditorCell> temp = new Stack<EditorCell>();
-
-    for (int i = historySelectedStack.size() - 1; i >= 0; i--) {
-      EditorCell historyCell = historySelectedStack.get(i);
-      String cellId = (String) historyCell.getUserObject(EditorCell.CELL_ID);
-      SNode cellNode = historyCell.getSNode();
-      EditorCell newCell = findNodeCell(cellNode, cellId);
-      temp.push(newCell);
-      if (newCell == null) break;
-    }
-    while (temp.size() > 0) {
-      mySelectedStack.push(temp.pop());
-    }
-  }
-
-  /*package*/ void setSelectedStackFromMemento(Stack<CellInfo> mementoSelectedStack) {
+  public void setSelectedStackFromMemento(Stack<CellInfo> mementoSelectedStack) {
     mySelectedStack.clear();
     Stack<EditorCell> temp = new Stack<EditorCell>();
 
