@@ -17,6 +17,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugin.CompilationResult;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.MappingConfiguration;
 import org.jdom.Element;
@@ -328,7 +330,16 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           reloadClasses = false;
         }
 
-        if (myCompileSourceLanguageModules) {
+
+        boolean needCompileSourceLanguageModules = false;
+        if (invocationContext instanceof ModuleContext) {
+          ModuleContext ctx = (ModuleContext) invocationContext;
+          if (ctx.getModule() instanceof Solution) {
+            needCompileSourceLanguageModules = true;
+          }
+        }
+
+        if (myCompileSourceLanguageModules && needCompileSourceLanguageModules) {
           for (Language l : getPossibleSourceLanguages(_sourceModels, invocationContext.getScope())) {
             progress.addText("compiling " + l + "'s  module...");
             compilationResult = myProject.getProjectHandler().buildModule(l.getSourceDir().getPath());
