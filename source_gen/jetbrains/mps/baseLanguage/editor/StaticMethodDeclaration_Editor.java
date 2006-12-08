@@ -17,10 +17,10 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
-import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 
 public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
 
@@ -68,23 +68,18 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
-  public EditorCell createHeaderRow(EditorContext context, SNode node) {
+  public EditorCell createBodyArea(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(true);
+    editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "static"));
-    editorCell.addEditorCell(this.createReturnType(context, node));
-    editorCell.addEditorCell(this.createMethodName(context, node));
-    editorCell.addEditorCell(this.createConstantCell1(context, node, "("));
-    editorCell.addEditorCell(this.createParameterList(context, node));
-    editorCell.addEditorCell(this.createConstantCell3(context, node, ")"));
-    editorCell.addEditorCell(this.createCellAlternation(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1075287750860");
+    editorCell.addEditorCell(this.createIndentCell(context, node, "  "));
+    editorCell.addEditorCell(this.createBodyCell(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1075287750857");
     editorCell.setLayoutConstraint("");
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
@@ -106,31 +101,37 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
-  public EditorCell createBodyArea(EditorContext context, SNode node) {
+  public EditorCell createHeaderRow(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(false);
+    editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell(context, node, "  "));
-    editorCell.addEditorCell(this.createBodyCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1075287750857");
+    editorCell.addEditorCell(this.createConstantCell(context, node, "static"));
+    editorCell.addEditorCell(this.createReturnType(context, node));
+    editorCell.addEditorCell(this.createMethodName(context, node));
+    editorCell.addEditorCell(this.createConstantCell1(context, node, "("));
+    editorCell.addEditorCell(this.createParameterList(context, node));
+    editorCell.addEditorCell(this.createConstantCell3(context, node, ")"));
+    editorCell.addEditorCell(this.createCellAlternation(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1075287750860");
     editorCell.setLayoutConstraint("");
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
-  public EditorCell createIndentCell(EditorContext context, SNode node, String text) {
+  public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(false);
+    editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1075287750858");
+    _BaseMethodDeclaration_Actions.setCellActions(editorCell, node, context);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1075287750856");
     editorCell.setLayoutConstraint("");
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
@@ -144,6 +145,19 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.CELL_ID, "1164890632759");
+    editorCell.setLayoutConstraint("");
+    ((EditorCell_Basic)editorCell).setParseable(false);
+    return editorCell;
+  }
+  public EditorCell createConstantCell7(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(true);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1075287750864");
     editorCell.setLayoutConstraint("");
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
@@ -175,15 +189,15 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
-  public EditorCell createConstantCell6(EditorContext context, SNode node, String text) {
+  public EditorCell createIndentCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
+    editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1164891084597");
+    editorCell.putUserObject(EditorCell.CELL_ID, "1075287750858");
     editorCell.setLayoutConstraint("");
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
@@ -202,7 +216,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
-  public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
+  public EditorCell createConstantCell6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -210,21 +224,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    _BaseMethodDeclaration_Actions.setCellActions(editorCell, node, context);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1075287750856");
-    editorCell.setLayoutConstraint("");
-    ((EditorCell_Basic)editorCell).setParseable(false);
-    return editorCell;
-  }
-  public EditorCell createConstantCell7(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(true);
-    editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1075287750864");
+    editorCell.putUserObject(EditorCell.CELL_ID, "1164891084597");
     editorCell.setLayoutConstraint("");
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
@@ -262,6 +262,41 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
+  }
+  public EditorCell createMethodNameinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(null);
+    EditorCell editorCell = provider.createEditorCell(context);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    if(editorCell instanceof EditorCell_Label) {
+      EditorCell_Label editorCellLabel = (EditorCell_Label)editorCell;
+      editorCellLabel.setEditable(true);
+      editorCellLabel.getTextLine().setTextColor(Color.darkGray);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.putUserObject(EditorCell.CELL_ID, "1075287750862");
+    editorCell.setLayoutConstraint("");
+    ((EditorCell_Basic)editorCell).setParseable(false);
+    return editorCell;
+  }
+  public EditorCell createMethodName(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, context);
+    provider.setRole("name");
+    provider.setNoTargetText("<no name>");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(false);
+    EditorCell cellWithRole = this.createMethodNameinternal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if(attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else 
+    return cellWithRole;
   }
   public EditorCell createReturnTypeinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
@@ -322,41 +357,6 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createBodyCellinternal(context, node, provider);
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else 
-    return cellWithRole;
-  }
-  public EditorCell createMethodNameinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
-    EditorCell editorCell = provider.createEditorCell(context);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    if(editorCell instanceof EditorCell_Label) {
-      EditorCell_Label editorCellLabel = (EditorCell_Label)editorCell;
-      editorCellLabel.setEditable(true);
-      editorCellLabel.getTextLine().setTextColor(Color.darkGray);
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1075287750862");
-    editorCell.setLayoutConstraint("");
-    ((EditorCell_Basic)editorCell).setParseable(false);
-    return editorCell;
-  }
-  public EditorCell createMethodName(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("name");
-    provider.setNoTargetText("<no name>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createMethodNameinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if(attributeConcept != null) {

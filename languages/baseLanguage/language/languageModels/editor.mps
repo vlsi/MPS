@@ -96,22 +96,46 @@
             </node>
           </node>
         </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1080648716828">
-          <property name="textFgColor" value="DARK_BLUE" />
-          <property name="text" value="extends" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1165604179539">
           <property name="drawBorder" value="false" />
+          <property name="vertical" value="true" />
           <property name="selectable" value="false" />
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1088354561031">
-          <property name="drawBorder" value="false" />
-          <property name="noTargetText" value="&lt;none&gt;" />
-          <link role="relationDeclaration" targetNodeId="17.1069939147256" />
-          <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1088354561032">
-            <link role="conceptDeclaration" targetNodeId="17.1068390468198" />
-            <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1088354561033">
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1165604195026">
+            <property name="drawBorder" value="false" />
+            <property name="selectable" value="false" />
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1165604195027">
+              <property name="textFgColor" value="DARK_BLUE" />
+              <property name="text" value="extends" />
               <property name="drawBorder" value="false" />
-              <property name="readOnly" value="true" />
-              <link role="relationDeclaration" targetNodeId="17.1075300953595" />
+              <property name="selectable" value="false" />
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1165604203737">
+              <property name="drawBorder" value="false" />
+              <property name="noTargetText" value="&lt;none&gt;" />
+              <link role="relationDeclaration" targetNodeId="17.1069939147256" />
+              <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1165604203738">
+                <link role="conceptDeclaration" targetNodeId="17.1068390468198" />
+                <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1165604203739">
+                  <property name="drawBorder" value="false" />
+                  <property name="readOnly" value="true" />
+                  <link role="relationDeclaration" targetNodeId="17.1075300953595" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1165604224375">
+            <property name="drawBorder" value="false" />
+            <property name="selectable" value="false" />
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1165604224376">
+              <property name="textFgColor" value="DARK_BLUE" />
+              <property name="text" value="don't use - not ready" />
+              <property name="drawBorder" value="false" />
+              <property name="selectable" value="false" />
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1165604250911">
+              <property name="drawBorder" value="false" />
+              <property name="noTargetText" value="&lt;none&gt;" />
+              <link role="relationDeclaration" targetNodeId="17.1165602531693" />
             </node>
           </node>
         </node>

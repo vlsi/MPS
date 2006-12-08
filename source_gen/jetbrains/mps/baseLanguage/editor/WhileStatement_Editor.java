@@ -39,7 +39,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
-  public EditorCell createRowCell2(EditorContext context, SNode node) {
+  public EditorCell createRowCell1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -48,8 +48,9 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell4(context, node, "}"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1081264296786");
+    editorCell.addEditorCell(this.createConstantCell3(context, node, "  "));
+    editorCell.addEditorCell(this.createBodyCell(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1081264296784");
     editorCell.setLayoutConstraint("");
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
@@ -72,7 +73,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
-  public EditorCell createRowCell1(EditorContext context, SNode node) {
+  public EditorCell createRowCell2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -81,35 +82,8 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell3(context, node, "  "));
-    editorCell.addEditorCell(this.createBodyCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1081264296784");
-    editorCell.setLayoutConstraint("");
-    ((EditorCell_Basic)editorCell).setParseable(false);
-    return editorCell;
-  }
-  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
-    editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1101210485457");
-    editorCell.setLayoutConstraint("");
-    ((EditorCell_Basic)editorCell).setParseable(false);
-    return editorCell;
-  }
-  public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
-    editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1081264296767");
+    editorCell.addEditorCell(this.createConstantCell4(context, node, "}"));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1081264296786");
     editorCell.setLayoutConstraint("");
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
@@ -128,6 +102,32 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
+  public EditorCell createConstantCell4(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1081264296787");
+    editorCell.setLayoutConstraint("");
+    ((EditorCell_Basic)editorCell).setParseable(false);
+    return editorCell;
+  }
+  public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1081264296767");
+    editorCell.setLayoutConstraint("");
+    ((EditorCell_Basic)editorCell).setParseable(false);
+    return editorCell;
+  }
   public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(false);
@@ -141,7 +141,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
-  public EditorCell createConstantCell4(EditorContext context, SNode node, String text) {
+  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -149,7 +149,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1081264296787");
+    editorCell.putUserObject(EditorCell.CELL_ID, "1101210485457");
     editorCell.setLayoutConstraint("");
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;

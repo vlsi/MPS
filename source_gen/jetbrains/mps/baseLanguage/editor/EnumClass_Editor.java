@@ -21,9 +21,9 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class EnumClass_Editor extends DefaultNodeEditor {
 
-  public AbstractCellListHandler myConstructorListHandler;
-  public AbstractCellListHandler myFieldListHandler;
   public AbstractCellListHandler myEnumConstantListHandler;
+  public AbstractCellListHandler myFieldListHandler;
+  public AbstractCellListHandler myConstructorListHandler;
   public AbstractCellListHandler myStaticMethodListHandler;
   public AbstractCellListHandler myMethodListHandler;
 
@@ -46,7 +46,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
-  public EditorCell createRowCell1(EditorContext context, SNode node) {
+  public EditorCell createRowCell3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -55,9 +55,9 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell2(context, node, "    "));
-    editorCell.addEditorCell(this.createEnumConstantList(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1085483277588");
+    editorCell.addEditorCell(this.createConstantCell8(context, node, "    "));
+    editorCell.addEditorCell(this.createConstructorList(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1085483457770");
     editorCell.setLayoutConstraint("");
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
@@ -74,22 +74,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell11(context, node, "    "));
     editorCell.addEditorCell(this.createMethodList(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, "1085483457774");
-    editorCell.setLayoutConstraint("");
-    ((EditorCell_Basic)editorCell).setParseable(false);
-    return editorCell;
-  }
-  public EditorCell createRowCell3(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell8(context, node, "    "));
-    editorCell.addEditorCell(this.createConstructorList(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1085483457770");
     editorCell.setLayoutConstraint("");
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
@@ -152,41 +136,18 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
-  public EditorCell createConstantCell4(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
-    editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1138307589269");
-    editorCell.setLayoutConstraint("");
-    ((EditorCell_Basic)editorCell).setParseable(false);
-    return editorCell;
-  }
-  public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+  public EditorCell createRowCell1(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
-    editorCell.setDefaultText("");
+    editorCell.setGridLayout(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1085483277589");
-    editorCell.setLayoutConstraint("");
-    ((EditorCell_Basic)editorCell).setParseable(false);
-    return editorCell;
-  }
-  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
-    editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1085483277587");
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstantCell2(context, node, "    "));
+    editorCell.addEditorCell(this.createEnumConstantList(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1085483277588");
     editorCell.setLayoutConstraint("");
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
@@ -204,19 +165,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
-  public EditorCell createConstantCell5(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
-    editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1085483273079");
-    editorCell.setLayoutConstraint("");
-    ((EditorCell_Basic)editorCell).setParseable(false);
-    return editorCell;
-  }
   public EditorCell createConstantCell8(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
@@ -226,6 +174,84 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.CELL_ID, "1085483457771");
+    editorCell.setLayoutConstraint("");
+    ((EditorCell_Basic)editorCell).setParseable(false);
+    return editorCell;
+  }
+  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1085483277587");
+    editorCell.setLayoutConstraint("");
+    ((EditorCell_Basic)editorCell).setParseable(false);
+    return editorCell;
+  }
+  public EditorCell createConstantCell16(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1085483277593");
+    editorCell.setLayoutConstraint("");
+    ((EditorCell_Basic)editorCell).setParseable(false);
+    return editorCell;
+  }
+  public EditorCell createConstantCell10(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1138307596445");
+    editorCell.setLayoutConstraint("");
+    ((EditorCell_Basic)editorCell).setParseable(false);
+    return editorCell;
+  }
+  public EditorCell createConstantCell13(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1138307599041");
+    editorCell.setLayoutConstraint("");
+    ((EditorCell_Basic)editorCell).setParseable(false);
+    return editorCell;
+  }
+  public EditorCell createConstantCell4(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1138307589269");
+    editorCell.setLayoutConstraint("");
+    ((EditorCell_Basic)editorCell).setParseable(false);
+    return editorCell;
+  }
+  public EditorCell createConstantCell5(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1085483273079");
     editorCell.setLayoutConstraint("");
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
@@ -244,19 +270,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
-  public EditorCell createConstantCell16(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
-    editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1085483277593");
-    editorCell.setLayoutConstraint("");
-    ((EditorCell_Basic)editorCell).setParseable(false);
-    return editorCell;
-  }
   public EditorCell createConstantCell7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(false);
@@ -266,6 +279,19 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.CELL_ID, "1138307592880");
+    editorCell.setLayoutConstraint("");
+    ((EditorCell_Basic)editorCell).setParseable(false);
+    return editorCell;
+  }
+  public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1085483277589");
     editorCell.setLayoutConstraint("");
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
@@ -283,37 +309,11 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
-  public EditorCell createConstantCell13(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
-    editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1138307599041");
-    editorCell.setLayoutConstraint("");
-    ((EditorCell_Basic)editorCell).setParseable(false);
-    return editorCell;
-  }
-  public EditorCell createConstantCell10(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
-    editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1138307596445");
-    editorCell.setLayoutConstraint("");
-    ((EditorCell_Basic)editorCell).setParseable(false);
-    return editorCell;
-  }
-  public EditorCell createConstructorList(EditorContext context, SNode node) {
-    if(this.myConstructorListHandler == null) {
-      this.myConstructorListHandler = new EnumClass_Editor_ConstructorListHandler(node, "constructor", context);
+  public EditorCell createEnumConstantList(EditorContext context, SNode node) {
+    if(this.myEnumConstantListHandler == null) {
+      this.myEnumConstantListHandler = new EnumClass_Editor_EnumConstantListHandler(node, "enumConstant", context);
     }
-    EditorCell_Collection editorCell = this.myConstructorListHandler.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myEnumConstantListHandler.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
@@ -321,7 +321,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myConstructorListHandler.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myEnumConstantListHandler.getElementRole());
     editorCell.setLayoutConstraint("");
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
@@ -343,11 +343,11 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
-  public EditorCell createEnumConstantList(EditorContext context, SNode node) {
-    if(this.myEnumConstantListHandler == null) {
-      this.myEnumConstantListHandler = new EnumClass_Editor_EnumConstantListHandler(node, "enumConstant", context);
+  public EditorCell createConstructorList(EditorContext context, SNode node) {
+    if(this.myConstructorListHandler == null) {
+      this.myConstructorListHandler = new EnumClass_Editor_ConstructorListHandler(node, "constructor", context);
     }
-    EditorCell_Collection editorCell = this.myEnumConstantListHandler.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myConstructorListHandler.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
@@ -355,7 +355,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myEnumConstantListHandler.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myConstructorListHandler.getElementRole());
     editorCell.setLayoutConstraint("");
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;

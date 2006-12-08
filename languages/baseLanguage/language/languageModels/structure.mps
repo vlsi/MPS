@@ -111,6 +111,11 @@
       <property name="role" value="extendedClass" />
       <link role="target" targetNodeId="1068390468198" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1165602531693">
+      <property name="role" value="superClass" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1107535904670" resolveInfo="ClassifierType" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1095933932569">
       <property name="sourceCardinality" value="0..n" />
       <property name="targetCardinality" value="1" />

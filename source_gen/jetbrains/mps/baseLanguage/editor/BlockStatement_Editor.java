@@ -20,13 +20,13 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class BlockStatement_Editor extends DefaultNodeEditor {
 
-  public static boolean _QueryFunction_NodeCondition_1145916598814(SNode node, IScope scope) {
-    return !(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.IfStatement", "ifFalseStatement"));
-  }
   public static boolean _QueryFunction_NodeCondition_1145916692407(SNode node, IScope scope) {
     return !(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.IfStatement", "ifFalseStatement"));
   }
   public static boolean _QueryFunction_NodeCondition_1145916702929(SNode node, IScope scope) {
+    return !(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.IfStatement", "ifFalseStatement"));
+  }
+  public static boolean _QueryFunction_NodeCondition_1145916598814(SNode node, IScope scope) {
     return !(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.IfStatement", "ifFalseStatement"));
   }
 
@@ -72,15 +72,15 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
-  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(false);
+    editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1119291719345");
+    editorCell.putUserObject(EditorCell.CELL_ID, "1144224544543");
     editorCell.setLayoutConstraint("");
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
@@ -98,15 +98,15 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
+    editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1144224544543");
+    editorCell.putUserObject(EditorCell.CELL_ID, "1119291719345");
     editorCell.setLayoutConstraint("");
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
