@@ -437,6 +437,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
         TypeChecker.getInstance().clear();
         UndoManager.instance().clear();
         ActionManager.instance().clearAll();
+
+        ReloadUtils.reloadAll(true);
       }
     }, "disposing project");
 
