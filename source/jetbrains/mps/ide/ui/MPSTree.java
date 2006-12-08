@@ -9,12 +9,11 @@ import org.jdom.Element;
 import javax.swing.*;
 import javax.swing.event.TreeExpansionEvent;
 import javax.swing.event.TreeWillExpandListener;
+import javax.swing.event.TreeExpansionListener;
 import javax.swing.tree.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.HashMap;
+import java.util.*;
 import java.util.List;
 
 /**
@@ -51,6 +50,25 @@ public abstract class MPSTree extends JTree {
       }
 
       public void treeWillCollapse(TreeExpansionEvent event) throws ExpandVetoException {
+      }
+    });
+
+    addTreeExpansionListener(new TreeExpansionListener() {
+      public void treeExpanded(TreeExpansionEvent event) {
+        TreePath eventPath = event.getPath();
+        MPSTreeNode node = (MPSTreeNode) eventPath.getLastPathComponent();
+
+        if (node.getChildCount() == 1) {
+          List<MPSTreeNode> path = new ArrayList<MPSTreeNode>();
+          for (Object item : eventPath.getPath()) {
+            path.add((MPSTreeNode) item);
+          }
+          path.add((MPSTreeNode) node.getChildAt(0));
+          expandPath(new TreePath(path.toArray()));
+        }
+      }
+
+      public void treeCollapsed(TreeExpansionEvent event) {
       }
     });
 
