@@ -1,6 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeProxy;
 import jetbrains.mps.util.EqualUtil;
 
 import java.util.*;
@@ -13,10 +14,10 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class ReferencedNodeContext {
-  private Stack<SNode> myContextRefererNodes = new Stack<SNode>();
+  private Stack<SNodeProxy> myContextRefererNodes = new Stack<SNodeProxy>();
   private SNode myNode = null;
   private Stack<String> myContextRoles = new Stack<String>();
-  private Stack<SNode> myAttributesStack = new Stack<SNode>();
+  private Stack<SNodeProxy> myAttributesStack = new Stack<SNodeProxy>();
 
   private ReferencedNodeContext(SNode node) {
     myNode = node;
@@ -37,7 +38,7 @@ public class ReferencedNodeContext {
   public ReferencedNodeContext contextWithOneMoreReference(SNode node, SNode contextRefererNode, String contextRole) {
     ReferencedNodeContext result = sameContextButAnotherNode(node);
     result.myContextRoles.push(contextRole);
-    result.myContextRefererNodes.push(contextRefererNode);
+    result.myContextRefererNodes.push(new SNodeProxy(contextRefererNode));
     return result;
   }
 
@@ -47,7 +48,7 @@ public class ReferencedNodeContext {
 
   public ReferencedNodeContext contextWithOneMoreAttribute(SNode attribute) {
     ReferencedNodeContext result = sameContextButAnotherNode(myNode);
-    result.myAttributesStack.push(attribute);
+    result.myAttributesStack.push(new SNodeProxy(attribute));
     return result;
   }
 
