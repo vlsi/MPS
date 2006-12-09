@@ -8,7 +8,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
-import jetbrains.mps.nodeEditor.EditorCell_Basic;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
@@ -34,7 +33,6 @@ public class ArrayType_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "[]"));
     editorCell.putUserObject(EditorCell.CELL_ID, "1113208366980");
     editorCell.setLayoutConstraint("");
-    ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -48,7 +46,6 @@ public class ArrayType_Editor extends DefaultNodeEditor {
     ArrayType_Brackets_Actions.setCellActions(editorCell, node, context);
     editorCell.putUserObject(EditorCell.CELL_ID, "1113208455588");
     editorCell.setLayoutConstraint("");
-    ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
   public EditorCell createComponentTypeCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -66,7 +63,6 @@ public class ArrayType_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.putUserObject(EditorCell.CELL_ID, "1113208455587");
     editorCell.setLayoutConstraint("");
-    ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
   public EditorCell createComponentTypeCell(EditorContext context, SNode node) {

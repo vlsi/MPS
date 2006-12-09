@@ -38,7 +38,6 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createTargetCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, "1105739124743");
     editorCell.setLayoutConstraint("");
-    ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -51,7 +50,6 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.CELL_ID, "1105739124746");
     editorCell.setLayoutConstraint("");
-    ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
   public EditorCell createTargetCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -70,7 +68,6 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new AggregationConceptLink_target_cellMenu()}));
     editorCell.putUserObject(EditorCell.CELL_ID, "1105987989392");
     editorCell.setLayoutConstraint("");
-    ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
   public EditorCell createTargetCell(EditorContext context, SNode node) {
@@ -104,7 +101,6 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.putUserObject(EditorCell.CELL_ID, "1105739124744");
     editorCell.setLayoutConstraint("");
-    ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
   public EditorCell createAggregationConceptLinkDeclarationReferenceCell(EditorContext context, SNode node) {

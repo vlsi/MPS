@@ -8,7 +8,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 import java.awt.Color;
-import jetbrains.mps.nodeEditor.EditorCell_Basic;
 
 public class Expression_Editor extends DefaultNodeEditor {
 
@@ -25,7 +24,6 @@ public class Expression_Editor extends DefaultNodeEditor {
     editorCell.addKeyMap(new Expression_KeyMap());
     editorCell.putUserObject(EditorCell.CELL_ID, "1075376431437");
     editorCell.setLayoutConstraint("");
-    ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
 }

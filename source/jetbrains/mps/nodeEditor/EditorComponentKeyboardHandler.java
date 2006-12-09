@@ -10,7 +10,6 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNodeProxy;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.nodeEditor.parser.Parsing;
 
 import java.awt.event.KeyEvent;
 import java.util.*;
@@ -149,9 +148,6 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
             return true;
           }
         }
-
-        // process parsing if any
-        if (Parsing.getInstance().handleKeyPress(selectedCell, keyEvent)) return true;
 
         // allow selected cell to process event.
         if (allowCellToProcessEvent(selectedCell, keyEvent, editorContext)) return true;

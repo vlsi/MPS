@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
-import jetbrains.mps.nodeEditor.EditorCell_Basic;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -35,7 +34,6 @@ public class VariableReference_Editor extends DefaultNodeEditor {
     editorCell.addKeyMap(new Expression_KeyMap());
     editorCell.putUserObject(EditorCell.CELL_ID, "1134569731483");
     editorCell.setLayoutConstraint("");
-    ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
   public EditorCell createVariableDeclarationReferenceCell(EditorContext context, SNode node) {

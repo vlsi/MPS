@@ -8,7 +8,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
-import jetbrains.mps.nodeEditor.EditorCell_Basic;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
@@ -37,7 +36,6 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createEnumConstantDeclarationReferenceCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, "1090928601376");
     editorCell.setLayoutConstraint("");
-    ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -50,7 +48,6 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.CELL_ID, "1090928601378");
     editorCell.setLayoutConstraint("");
-    ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
   public EditorCell createEnumConstantDeclarationReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -69,7 +66,6 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new EnumConstantReference_enumConstantDeclaration_cellMenu(),new EnumConstantReference_customReplace_cellMenu()}));
     editorCell.putUserObject(EditorCell.CELL_ID, "1090928601379");
     editorCell.setLayoutConstraint("");
-    ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
   public EditorCell createEnumConstantDeclarationReferenceCell(EditorContext context, SNode node) {
@@ -103,7 +99,6 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.putUserObject(EditorCell.CELL_ID, "1144432986234");
     editorCell.setLayoutConstraint("");
-    ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
   public EditorCell createEnumClassReferenceCell(EditorContext context, SNode node) {

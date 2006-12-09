@@ -43,7 +43,7 @@ public class FastNodeFinder {
       buildCache(child);
     }
 
-    ConceptDeclaration concept = SModelUtil.getConceptDeclaration(root, GlobalScope.getInstance());
+    ConceptDeclaration concept = SModelUtil.findConceptDeclaration(root, GlobalScope.getInstance());
     while (concept != null) {
       getSetFor(concept).add(root);
       concept = concept.getExtends();

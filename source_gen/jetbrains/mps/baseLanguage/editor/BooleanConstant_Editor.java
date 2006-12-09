@@ -11,7 +11,6 @@ import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.nodeEditor.EditorCell_Basic;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -39,7 +38,6 @@ public class BooleanConstant_Editor extends DefaultNodeEditor {
     editorCell.addKeyMap(new Expression_KeyMap());
     editorCell.putUserObject(EditorCell.CELL_ID, "1088424970609");
     editorCell.setLayoutConstraint("");
-    ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
   public EditorCell createValueCell(EditorContext context, SNode node) {

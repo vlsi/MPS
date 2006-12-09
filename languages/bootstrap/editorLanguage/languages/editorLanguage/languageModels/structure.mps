@@ -59,11 +59,6 @@
       <property name="role" value="keyMap" />
       <link role="target" targetNodeId="1081293058843" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1143892466690">
-      <property name="role" value="tokenKind" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1143891637102" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1164826688380">
       <property name="role" value="menuDescriptor" />
       <property name="metaClass" value="aggregation" />
@@ -374,10 +369,6 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1080736578640">
     <property name="name" value="BaseEditorComponent" />
     <link role="extends" targetNodeId="3.1078489098625" />
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1144060451290">
-      <property name="name" value="parseable" />
-      <link role="dataType" targetNodeId="3.1082983657063" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1080736633876">
       <property name="sourceCardinality" value="0..1" />
       <property name="targetCardinality" value="0..1" />
@@ -1169,21 +1160,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1143891637102">
-    <property name="name" value="AbstractCellToken" />
-    <link role="extends" targetNodeId="3.1133920641626" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1143891679198">
-      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1143891683574">
-    <property name="name" value="ParenthesisCellToken" />
-    <link role="extends" targetNodeId="1143891637102" />
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1143891972018">
-      <property name="name" value="parethesisKind" />
-      <link role="dataType" targetNodeId="1143891911797" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.EnumerationDataTypeDeclaration" id="1143891911797">
     <property name="name" value="_LeftRight_Enum" />
     <link role="memberDataType" targetNodeId="3.1082983657063" />
@@ -1197,46 +1173,6 @@
       <property name="externalValue" value="right" />
       <property name="internalValue" value="false" />
       <property name="name" value="right" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1143892017442">
-    <property name="name" value="OperationCellToken" />
-    <link role="extends" targetNodeId="1143891637102" />
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1143892029834">
-      <property name="name" value="priority" />
-      <link role="dataType" targetNodeId="3.1082983657062" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1143892046382">
-      <property name="name" value="associativity" />
-      <link role="dataType" targetNodeId="1143891911797" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1144936740706">
-    <property name="name" value="ErrorCellToken" />
-    <link role="extends" targetNodeId="1143891637102" />
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1144939715606">
-    <property name="name" value="ErrorTokenNode" />
-    <link role="extends" targetNodeId="3.1133920641626" />
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1144939732389">
-      <property name="name" value="tokenString" />
-      <link role="dataType" targetNodeId="3.1082983041843" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1144940847930">
-    <property name="name" value="NodeTokenWrapper" />
-    <link role="extends" targetNodeId="34.1136027476087" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1144940980119">
-      <property name="sourceCardinality" value="0..n" />
-      <property name="role" value="leftErrorToken" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="3.1133920641626" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1144940999059">
-      <property name="sourceCardinality" value="0..n" />
-      <property name="role" value="rightErrorToken" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="3.1133920641626" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1149850725784">

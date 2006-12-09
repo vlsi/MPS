@@ -8,10 +8,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
-import jetbrains.mps.nodeEditor.EditorCell_Basic;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.parser.TokenFactory;
-import jetbrains.mps.nodeEditor.parser.IToken;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
@@ -38,7 +35,6 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell1(context, node, ")"));
     editorCell.putUserObject(EditorCell.CELL_ID, "1081880010409");
     editorCell.setLayoutConstraint("");
-    ((EditorCell_Basic)editorCell).setParseable(true);
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -51,12 +47,6 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.CELL_ID, "1081880010410");
     editorCell.setLayoutConstraint("");
-    {
-      TokenFactory tokenFactory = new ParenthesizedExpression_EditorConstantCell_TokenKind();
-      IToken token = tokenFactory.createToken(editorCell);
-      editorCell.setTokenKind(token);
-    }
-    ((EditorCell_Basic)editorCell).setParseable(true);
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
@@ -69,12 +59,6 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.CELL_ID, "1081880010412");
     editorCell.setLayoutConstraint("");
-    {
-      TokenFactory tokenFactory = new ParenthesizedExpression_EditorConstantCell1_TokenKind();
-      IToken token = tokenFactory.createToken(editorCell);
-      editorCell.setTokenKind(token);
-    }
-    ((EditorCell_Basic)editorCell).setParseable(true);
     return editorCell;
   }
   public EditorCell createExpressionCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -92,7 +76,6 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.putUserObject(EditorCell.CELL_ID, "1081880010411");
     editorCell.setLayoutConstraint("");
-    ((EditorCell_Basic)editorCell).setParseable(true);
     return editorCell;
   }
   public EditorCell createExpressionCell(EditorContext context, SNode node) {

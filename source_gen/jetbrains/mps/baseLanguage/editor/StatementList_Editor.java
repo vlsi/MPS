@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.CellLayout_Vertical;
 import java.awt.Color;
-import jetbrains.mps.nodeEditor.EditorCell_Basic;
 
 public class StatementList_Editor extends DefaultNodeEditor {
 
@@ -34,7 +33,6 @@ public class StatementList_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.ROLE, this.myStatementListHandler.getElementRole());
     editorCell.setLayoutConstraint("");
     editorCell.addKeyMap(new StatementList_KeyMap());
-    ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
 }
