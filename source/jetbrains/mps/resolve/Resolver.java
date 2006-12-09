@@ -4,6 +4,7 @@ import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.ide.InspectorPane;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
@@ -53,6 +54,7 @@ public class Resolver {
 
   public static void resolve(final SReference reference, final IOperationContext operationContext) {
     EditorsPane editorsPane = operationContext.getComponent(EditorsPane.class);
+    //InspectorPane inspectorPane = operationContext.getComponent(InspectorPane.class);
     SNode containingRoot = reference.getSourceNode().getContainingRoot();
     assert containingRoot != null;
     IEditor editorFor = editorsPane.getEditorFor(containingRoot);
