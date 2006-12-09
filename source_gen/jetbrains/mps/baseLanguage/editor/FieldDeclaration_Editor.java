@@ -30,22 +30,6 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createDeclarationBox(context, node);
   }
-  public EditorCell createInitializerArea(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "="));
-    editorCell.addEditorCell(this.createInitializerCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1075290206265");
-    editorCell.setLayoutConstraint("");
-    ((EditorCell_Basic)editorCell).setParseable(false);
-    return editorCell;
-  }
   public EditorCell createDeclarationBox(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(true);
@@ -66,15 +50,18 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
+  public EditorCell createInitializerArea(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
-    editorCell.setDefaultText("");
+    editorCell.setGridLayout(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1075290218688");
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstantCell(context, node, "="));
+    editorCell.addEditorCell(this.createInitializerCell(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1075290206265");
     editorCell.setLayoutConstraint("");
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
@@ -92,7 +79,20 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
-  public EditorCell createInitializerCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1075290218688");
+    editorCell.setLayoutConstraint("");
+    ((EditorCell_Basic)editorCell).setParseable(false);
+    return editorCell;
+  }
+  public EditorCell createTypeCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -105,18 +105,18 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1075290268533");
+    editorCell.putUserObject(EditorCell.CELL_ID, "1075289941064");
     editorCell.setLayoutConstraint("");
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
-  public EditorCell createInitializerCell(EditorContext context, SNode node) {
+  public EditorCell createTypeCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("initializer");
-    provider.setNoTargetText("");
+    provider.setRole("type");
+    provider.setNoTargetText("<no type>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createInitializerCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.createTypeCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if(attributeConcept != null) {
@@ -163,7 +163,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     } else 
     return cellWithRole;
   }
-  public EditorCell createTypeCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createInitializerCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -176,18 +176,18 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1075289941064");
+    editorCell.putUserObject(EditorCell.CELL_ID, "1075290268533");
     editorCell.setLayoutConstraint("");
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
-  public EditorCell createTypeCell(EditorContext context, SNode node) {
+  public EditorCell createInitializerCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("type");
-    provider.setNoTargetText("<no type>");
+    provider.setRole("initializer");
+    provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createTypeCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.createInitializerCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if(attributeConcept != null) {

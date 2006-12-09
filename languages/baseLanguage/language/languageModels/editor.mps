@@ -104,8 +104,8 @@
             <property name="drawBorder" value="false" />
             <property name="selectable" value="false" />
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1165604195027">
-              <property name="textFgColor" value="DARK_BLUE" />
-              <property name="text" value="extends" />
+              <property name="textFgColor" value="red" />
+              <property name="text" value="extends (deprecated)" />
               <property name="drawBorder" value="false" />
               <property name="selectable" value="false" />
             </node>
@@ -122,6 +122,21 @@
                 </node>
               </node>
             </node>
+            <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1165625641774">
+              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1165625641775">
+                <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1165625758869">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1165625772186">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1165625775721" />
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1165625765966">
+                      <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1165625763605" />
+                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1165625768092">
+                        <link role="link" targetNodeId="17.1069939147256" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1165604224375">
             <property name="drawBorder" value="false" />
@@ -134,7 +149,7 @@
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1165604250911">
               <property name="drawBorder" value="false" />
-              <property name="noTargetText" value="&lt;!do not use it!&gt;" />
+              <property name="noTargetText" value="&lt;none&gt;" />
               <link role="relationDeclaration" targetNodeId="17.1165602531693" />
             </node>
           </node>

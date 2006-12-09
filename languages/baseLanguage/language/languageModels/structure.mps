@@ -74,6 +74,10 @@
       <property name="value" value="class declaration" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1165626079192">
+      <property name="value" value="the 'extendedClass' replaced with 'superclass'" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1162838948922" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1075300953594">
       <property name="propertyType" value="boolean" />
       <property name="name" value="abstractClass" />
