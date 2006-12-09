@@ -3,6 +3,7 @@ package jetbrains.mps.ide.ui;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
 import org.jdom.Element;
 
@@ -334,19 +335,23 @@ public abstract class MPSTree extends JTree {
   }
 
   public void rebuildTree() {
-    runRebuildAction(new Runnable() {
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
-        if (getModel().getRoot() instanceof MPSTreeNode) {
-          (getRootNode()).disposeThisAndChildren();
-        }
-        MPSTreeNode root = rebuild();
-        root.setTree(MPSTree.this);
-        DefaultTreeModel model = new DefaultTreeModel(root);
-        setModel(model);
+        runRebuildAction(new Runnable() {
+          public void run() {
+            if (getModel().getRoot() instanceof MPSTreeNode) {
+              (getRootNode()).disposeThisAndChildren();
+            }
+            MPSTreeNode root = rebuild();
+            root.setTree(MPSTree.this);
+            DefaultTreeModel model = new DefaultTreeModel(root);
+            setModel(model);
 
-        updateUI();
+            updateUI();
+          }
+        }, true);
       }
-    }, true);
+    });
   }
 
   private String pathToString(TreePath path) {
