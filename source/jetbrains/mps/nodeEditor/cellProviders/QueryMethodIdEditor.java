@@ -1,5 +1,6 @@
 package jetbrains.mps.nodeEditor.cellProviders;
 
+import jetbrains.mps.baseLanguage.BaseLanguageUtil;
 import jetbrains.mps.baseLanguage.ClassConcept;
 import jetbrains.mps.baseLanguage.StaticMethodDeclaration;
 import jetbrains.mps.generator.JavaNameUtil;
@@ -132,7 +133,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
         });
       }
     });
-    
+
     editorCell.putUserObject(QUERY_METHOD_CELL_PROVIDER, this);
     return editorCell;
   }
@@ -240,7 +241,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
       result = handler.getAspectMethodIds(getNamespace(), getQueryMethodPrefix());
     } catch (IOException e) {
       e.printStackTrace();
-    } 
+    }
     return result;
   }
 
@@ -258,7 +259,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
           availableIds.add(name.substring(queryMetodPrefix.length()));
         }
       }
-      queriesClass = queriesClass.getExtendedClass();
+      queriesClass = BaseLanguageUtil.getSuperclass(queriesClass);
     }
     return availableIds;
   }
@@ -270,7 +271,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
   protected ClassConcept getQueriesClass() {
     SModel model = getSNode().getModel();
     String classFQName = JavaNameUtil.fqClassName(model, "Queries");
-    return SModelUtil.findNodeByFQName(classFQName, ClassConcept.class,  GlobalScope.getInstance());
+    return SModelUtil.findNodeByFQName(classFQName, ClassConcept.class, GlobalScope.getInstance());
   }
 }
 
