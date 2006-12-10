@@ -39,7 +39,6 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1115766267843">
     <property name="name" value="BaseClass" />
-    <link role="extendedClass" extResolveInfo="1.[Classifier]Object" />
     <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1141251347107">
       <property name="name" value="int_field_base1" />
       <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1141251350859" />
@@ -89,10 +88,12 @@
     <node role="implementedInterface" type="jetbrains.mps.baseLanguage.ClassifierType" id="1115766274125">
       <link role="classifier" targetNodeId="1115766166286" />
     </node>
+    <node role="superclass" type="jetbrains.mps.baseLanguage.ClassifierType" id="1165789417561">
+      <link role="classifier" extResolveInfo="1.[Classifier]Object" />
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1115766310400">
     <property name="name" value="AClass" />
-    <link role="extendedClass" targetNodeId="1115766267843" />
     <node role="staticField" type="jetbrains.mps.baseLanguage.StaticFieldDeclaration" id="1141080210673">
       <property name="name" value="iiii" />
       <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1141080214379" />
@@ -582,10 +583,12 @@
     <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.TypeVariableDeclaration" id="1140819429834">
       <property name="name" value="T2" />
     </node>
+    <node role="superclass" type="jetbrains.mps.baseLanguage.ClassifierType" id="1165789387154">
+      <link role="classifier" targetNodeId="1115766267843" resolveInfo="BaseClass" />
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1115766355096">
     <property name="name" value="TESTMethodCalls" />
-    <link role="extendedClass" targetNodeId="1115766267843" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.ConstructorDeclaration" id="1149095908682">
       <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1149095908683" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1149095908684" />
@@ -704,6 +707,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="superclass" type="jetbrains.mps.baseLanguage.ClassifierType" id="1165789484625">
+      <link role="classifier" targetNodeId="1115766267843" resolveInfo="BaseClass" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1119992601482">
