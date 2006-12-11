@@ -4,6 +4,7 @@ import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.formulaLanguage.evaluator.ExpressionContext;
 import jetbrains.mps.formulaLanguage.evaluator.ExpressionEvaluatorManager;
+import jetbrains.mps.formulaLanguage.Expression;
 import jetbrains.mps.helgins.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.patterns.util.MatchingUtil;
@@ -29,9 +30,10 @@ import java.util.*;
 public class SubtypingManager {
   private static final Logger LOG = Logger.getLogger(SubtypingManager.class);
 
-  Set<SubtypingRule> myRules = new HashSet<SubtypingRule>();
-  Map<ConceptDeclaration, SubtypingVarianceRule> myVarianceRules = new HashMap<ConceptDeclaration, SubtypingVarianceRule>();
+  Set<SubtypingRule> mySubtypingRules = new HashSet<SubtypingRule>();
+  private Set<SupertypingRule> mySupertypingRules = new HashSet<SupertypingRule>();
 
+  Map<ConceptDeclaration, SubtypingVarianceRule> myVarianceRules = new HashMap<ConceptDeclaration, SubtypingVarianceRule>();
   private static SubtypingManager ourInstance = new SubtypingManager();
 
   private SubtypingManager() {
@@ -44,7 +46,10 @@ public class SubtypingManager {
 
   public void initiate(SModel typesModel) {
     for (SubtypingRule rule : typesModel.getRoots(SubtypingRule.class)) {
-      myRules.add(rule);
+      mySubtypingRules.add(rule);
+    }
+    for (SupertypingRule rule : typesModel.getRoots(SupertypingRule.class)) {
+      mySupertypingRules.add(rule);
     }
     for (SubtypingVarianceRule rule : typesModel.getRoots(SubtypingVarianceRule.class)) {
       myVarianceRules.put(rule.getConceptDeclaration(), rule);
@@ -52,7 +57,8 @@ public class SubtypingManager {
   }
 
   public void clear() {
-    myRules.clear();
+    mySubtypingRules.clear();
+    mySupertypingRules.clear();
     myVarianceRules.clear();
   }
 
@@ -164,6 +170,7 @@ public class SubtypingManager {
     }
 
     // transitivity: nominal equivalence
+    //supertypes
     Set<SNode> frontier = new HashSet<SNode>();
     Set<SNode> newFrontier = new HashSet<SNode>();
     frontier.add(subRepresentator);
@@ -178,13 +185,34 @@ public class SubtypingManager {
       frontier = newFrontier;
       newFrontier = new HashSet<SNode>();
     }
+
+    //subtypes
+    frontier = new HashSet<SNode>();
+    newFrontier = new HashSet<SNode>();
+    frontier.add(superRepresentator);
+    while (!frontier.isEmpty()) {
+      for (SNode node : frontier) {
+        Set<SNode> descendants = collectSubtypes(node);
+        if (descendants == null) continue;
+        descendants.remove(node);
+        if (descendants.contains(subRepresentator)) return true;
+        newFrontier.addAll(descendants);
+      }
+      frontier = newFrontier;
+      newFrontier = new HashSet<SNode>();
+    }
+
     return false;
   }
 
   public Set<SNode> collectSupertypes(SNode term) {
     Set<SNode> result = new HashSet<SNode>();
-    for (SubtypingRule rule : myRules) {
-      List<SNode> supertypes = getSupertypes(term, rule);
+    for (SubtypingRule rule : mySubtypingRules) {
+      AnalyzedTermDeclaration applicableNode = rule.getApplicableNode();
+      if (applicableNode == null) continue;
+      Expression expression = rule.getSupertype();
+      if (expression == null) continue;
+      List<SNode> supertypes = getSupertypesOrSubtypes(term, applicableNode, expression);
       if (supertypes != null) {
         result.addAll(supertypes);
       }
@@ -192,14 +220,27 @@ public class SubtypingManager {
     return result;
   }
 
-  public List<SNode> getSupertypes(SNode term, SubtypingRule rule) {
+  public Set<SNode> collectSubtypes(SNode term) {
+    Set<SNode> result = new HashSet<SNode>();
+    for (SupertypingRule rule : mySupertypingRules) {
+      AnalyzedTermDeclaration applicableNode = rule.getApplicableNode();
+      if (applicableNode == null) continue;
+      Expression expression = rule.getSubtype();
+      if (expression == null) continue;
+      List<SNode> subtypes = getSupertypesOrSubtypes(term, applicableNode, expression);
+      if (subtypes != null) {
+        result.addAll(subtypes);
+      }
+    }
+    return result;
+  }
+
+  public List<SNode> getSupertypesOrSubtypes(SNode term, AnalyzedTermDeclaration analyzedTermDeclaration, Expression targetExpression) {
 
     /*
     matching
     */
 
-    if (rule.getApplicableNode() == null) return null;
-    AnalyzedTermDeclaration analyzedTermDeclaration =  rule.getApplicableNode();
     VariableCondition termCondition = analyzedTermDeclaration.getCondition();
     ConditionMatcher conditionMatcher;
     try {
@@ -216,7 +257,7 @@ public class SubtypingManager {
     //puts term variable into the expression context
     expressionContext.putNode(analyzedTermDeclaration, term);
 
-    Object supertypeO = ExpressionEvaluatorManager.evaluate(expressionContext, rule.getSupertype());
+    Object supertypeO = ExpressionEvaluatorManager.evaluate(expressionContext, targetExpression);
     if (supertypeO instanceof SNode) {
       List<SNode> result = new ArrayList<SNode>();
       result.add((SNode) supertypeO);
