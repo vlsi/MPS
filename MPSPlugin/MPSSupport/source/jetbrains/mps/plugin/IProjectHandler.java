@@ -44,4 +44,6 @@ public interface IProjectHandler extends Remote {
   void addIdeHandler(IMPSIDEHandler handler) throws RemoteException;
 
   void removeIdeHandler(IMPSIDEHandler handler) throws RemoteException;
+
+  void deleteFilesAndRemoveFromVCS(List<File> files) throws RemoteException;
 }

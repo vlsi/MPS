@@ -18,16 +18,11 @@ import com.intellij.openapi.roots.*;
 import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.roots.libraries.LibraryTable;
 import com.intellij.openapi.roots.libraries.LibraryTablesRegistrar;
-import com.intellij.openapi.vcs.*;
-import com.intellij.openapi.vcs.history.VcsFileRevision;
-import com.intellij.openapi.vcs.history.VcsHistorySession;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.wm.WindowManager;
-import com.intellij.openapi.projectRoots.ProjectJdk;
 import com.intellij.psi.*;
-import com.intellij.psi.css.impl.VirtualFileUtil;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.search.PsiSearchHelper;
 import com.intellij.refactoring.MoveClassesOrPackagesRefactoring;
@@ -45,9 +40,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.*;
-import java.net.URL;
-import java.net.URISyntaxException;
-import java.net.MalformedURLException;
 
 /**
  * @author Kostik
@@ -776,6 +768,28 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     moveClass(packageName(oldClassFQName)+".editor."+shortName(oldClassFQName)+"_Editor",
             newPackageName+".editor", targetLangSourceRoot);
     buildModule(targetLangSourceRoot.getAbsolutePath());
+  }
+
+  public void deleteFilesAndRemoveFromVCS(final List<File> files) throws RemoteException {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      public void run() {
+        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+          public void run() {
+            LocalFileSystem lfs = LocalFileSystem.getInstance();
+            for (File file : files) {
+              VirtualFile vfile = lfs.refreshAndFindFileByIoFile(file);
+              if (vfile != null) {
+                try {
+                  vfile.delete(this);
+                } catch(IOException ex) {
+                  ex.printStackTrace();
+                }
+              }
+            }
+          }
+        });
+      }
+    });
   }
 
   private PsiElementFactory getPsiElementFactory() {

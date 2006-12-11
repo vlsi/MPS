@@ -298,13 +298,7 @@
           <option name="m_minLength" value="2" />
           <option name="m_maxLength" value="99" />
         </inspection_tool>
-        <inspection_tool class="EmptyMethod" level="WARNING" enabled="false">
-          <option name="EXCLUDE_ANNOS">
-            <value>
-              <list size="0" />
-            </value>
-          </option>
-        </inspection_tool>
+        <inspection_tool class="EmptyMethod" level="WARNING" enabled="false" />
         <inspection_tool class="CanBeFinal" level="WARNING" enabled="false">
           <option name="REPORT_CLASSES" value="false" />
           <option name="REPORT_METHODS" value="false" />
@@ -491,13 +485,7 @@
           <option name="m_minLength" value="2" />
           <option name="m_maxLength" value="99" />
         </inspection_tool>
-        <inspection_tool class="EmptyMethod" level="WARNING" enabled="false">
-          <option name="EXCLUDE_ANNOS">
-            <value>
-              <list size="0" />
-            </value>
-          </option>
-        </inspection_tool>
+        <inspection_tool class="EmptyMethod" level="WARNING" enabled="false" />
         <inspection_tool class="UnusedParameters" level="WARNING" enabled="false" />
         <inspection_tool class="CanBeFinal" level="WARNING" enabled="false">
           <option name="REPORT_CLASSES" value="false" />
@@ -640,13 +628,7 @@
         <inspection_tool class="CssNoGenericFontName" level="WARNING" enabled="false" />
         <inspection_tool class="CssOverwrittenProperties" level="WARNING" enabled="false" />
         <inspection_tool class="CssUnitlessNumber" level="WARNING" enabled="false" />
-        <inspection_tool class="EmptyMethod" level="WARNING" enabled="false">
-          <option name="EXCLUDE_ANNOS">
-            <value>
-              <list size="0" />
-            </value>
-          </option>
-        </inspection_tool>
+        <inspection_tool class="EmptyMethod" level="WARNING" enabled="false" />
         <inspection_tool class="WeakerAccess" level="WARNING" enabled="false">
           <option name="SUGGEST_PACKAGE_LOCAL_FOR_MEMBERS" value="true" />
           <option name="SUGGEST_PACKAGE_LOCAL_FOR_TOP_CLASSES" value="true" />
@@ -913,13 +895,7 @@
           <option name="m_minLength" value="2" />
           <option name="m_maxLength" value="99" />
         </inspection_tool>
-        <inspection_tool class="EmptyMethod" level="WARNING" enabled="false">
-          <option name="EXCLUDE_ANNOS">
-            <value>
-              <list size="0" />
-            </value>
-          </option>
-        </inspection_tool>
+        <inspection_tool class="EmptyMethod" level="WARNING" enabled="false" />
         <inspection_tool class="CanBeFinal" level="WARNING" enabled="false">
           <option name="REPORT_CLASSES" value="false" />
           <option name="REPORT_METHODS" value="false" />
@@ -1140,31 +1116,6 @@
   </component>
   <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="jdk 1.5" />
   <component name="ProjectRunConfigurationManager">
-    <configuration default="false" name="IdeMain" type="Application" factoryName="Application" enabled="false" merge="false">
-      <option name="MAIN_CLASS_NAME" value="jetbrains.mps.ide.IdeMain" />
-      <option name="VM_PARAMETERS" value="-Xmx1024m -ea" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <module name="XmlReader" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="4386" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Profile ">
-        <option name="myExternalizedOptions" value="&#13;&#10;snapshots-dir=&#13;&#10;" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Profile " />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method>
-        <option name="Make" value="true" />
-      </method>
-    </configuration>
     <configuration default="false" name="depot - WebR Sample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
@@ -1378,6 +1329,31 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
+    <configuration default="false" name="IdeMain" type="Application" factoryName="Application" enabled="false" merge="false">
+      <option name="MAIN_CLASS_NAME" value="jetbrains.mps.ide.IdeMain" />
+      <option name="VM_PARAMETERS" value="-Xmx1024m -ea" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <module name="MPS" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="4386" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Profile ">
+        <option name="myExternalizedOptions" value="&#13;&#10;snapshots-dir=&#13;&#10;" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Profile " />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method>
+        <option name="Make" value="true" />
+      </method>
+    </configuration>
   </component>
   <component name="RmicSettings">
     <option name="IS_EANABLED" value="false" />
@@ -1526,6 +1502,13 @@
     <library name="Annotations">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/annotations/annotations.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="idea">
+      <CLASSES>
+        <root url="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
