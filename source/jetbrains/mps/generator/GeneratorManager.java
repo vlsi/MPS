@@ -387,8 +387,15 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
       if (isSaveTransientModels()) {
         File solutionDescriptorFile = generationSession.saveTransientModels();
-        addProgressMessage(MessageKind.INFORMATION, "adding module \"" + generationSession.getSessionModuleName() + "\"", progress);
-        myProject.addProjectSolution(solutionDescriptorFile);
+
+        addProgressMessage(MessageKind.INFORMATION, "update output models solution", progress);
+        Solution outputModels = myProject.findSolution("outputModels");
+        if (outputModels != null) {          
+          outputModels.reloadFromDisk();
+        } else {
+          myProject.addProjectSolution(solutionDescriptorFile);
+        }
+
       }
 
       //update generated sources timestamp

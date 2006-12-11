@@ -148,4 +148,12 @@ public class Solution extends AbstractModule {
     }
     return generatorOutputPath;
   }
+
+  public void reloadFromDisk() {
+    SModel model = ProjectModels.createDescriptorFor(this).getSModel();
+    File file = getDescriptorFile();
+    assert file != null;
+    SolutionDescriptor descriptor = PersistenceUtil.loadSolutionDescriptor(file, model);
+    setSolutionDescriptor(descriptor);
+  }
 }

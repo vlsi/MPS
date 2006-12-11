@@ -130,6 +130,14 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     }
   }
 
+  @Nullable
+  public Solution findSolution(String name) {
+    for (Solution s : mySolutions) {
+      if (name.equals(s.getSolutionDescriptor().getName())) return s;
+    }
+    return null;
+  }
+
   @NotNull
   public List<IModule> getModules() {
     List<IModule> result = new ArrayList<IModule>();

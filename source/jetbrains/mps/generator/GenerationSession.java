@@ -13,6 +13,7 @@ import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.util.FileUtil;
 
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;
@@ -283,7 +284,10 @@ public class GenerationSession {
   public File saveTransientModels() {
     // define solution dir
     String projectDir = myInvocationContext.getProject().getProjectFile().getParentFile().getAbsolutePath();
-    String solutionDir = projectDir + File.separatorChar + "outputModels" + File.separatorChar + getSessionId();
+    String solutionDir = projectDir + File.separatorChar + "outputModels";
+
+    FileUtil.delete(new File(solutionDir));
+
     addProgressMessage(MessageKind.INFORMATION, "saving transient models to \"" + solutionDir + "\"");
 
     List<IModule> transientModules = new LinkedList<IModule>();
@@ -311,13 +315,12 @@ public class GenerationSession {
     }
 
     // create the solution descriptor
-    ModelOwner tmpOwner = new ModelOwner() {
-    };
+    ModelOwner tmpOwner = new ModelOwner() { };
     SModel solutionDescriptorModel = ProjectModels.createDescriptorFor(tmpOwner).getSModel();
     assert solutionDescriptorModel != null;
     SolutionDescriptor solutionDescriptor = new SolutionDescriptor(solutionDescriptorModel);
     solutionDescriptorModel.setLoading(true);
-    solutionDescriptor.setName(getSessionModuleName());
+    solutionDescriptor.setName("outputModels");
     // add root where transient models were saved
     addModelRoot("", solutionDir, solutionDescriptor);
 
@@ -363,7 +366,7 @@ public class GenerationSession {
     }
 
     // save, add to project and reload all
-    File solutionDescriptorFile = new File(solutionDir, getSessionModuleName() + ".msd");
+    File solutionDescriptorFile = new File(solutionDir, "outputModels.msd");
     PersistenceUtil.saveSolutionDescriptor(solutionDescriptorFile, solutionDescriptor);
     SModelDescriptor modelDescriptor = solutionDescriptorModel.getModelDescriptor();
     assert modelDescriptor != null;
