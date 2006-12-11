@@ -100,16 +100,25 @@ public class SubtypingManager {
       Set<String> roles = new HashSet<String>();
       Set<String> covariantRoles = new HashSet<String>();
       Set<String> contraVariantRoles = new HashSet<String>();
+      Set<String> invariantRoles = new HashSet<String>();
+      Set<String> allowsNull = new HashSet<String>();
       for (ConceptDeclaration superConcept : superConcepts) {
         if (myVarianceRules.containsKey(superConcept)) {
           SubtypingVarianceRule rule = myVarianceRules.get(superConcept);
 
           for (LinkVariance linkVariance : CollectionUtil.iteratorAsIterable(rule.linkVariances())) {
             String role = linkVariance.getLinkDeclaration().getRole();
+            if (linkVariance.getAllowsNull()) {
+              allowsNull.add(role);
+            }
             if (linkVariance.getVariance() == _Variance_Enum.covariant) {
               covariantRoles.add(role);
-            } else {
+            }
+            if (linkVariance.getVariance() == _Variance_Enum.contravariant) {
               contraVariantRoles.add(role);
+            }
+            if (linkVariance.getVariance() == _Variance_Enum.invariant) {
+              invariantRoles.add(role);
             }
           }
           roles.addAll(CollectionUtil.map(CollectionUtil.iteratorAsList(superConcept.linkDeclarations()), new Mapper<LinkDeclaration, String>() {
@@ -119,23 +128,33 @@ public class SubtypingManager {
           }));
         }}
 
-      if (!covariantRoles.isEmpty() || !contraVariantRoles.isEmpty()) {
+      if (!covariantRoles.isEmpty() || !contraVariantRoles.isEmpty() || !invariantRoles.isEmpty()) {
         for (String role : roles) {
           List<SNode> subChildren = subRepresentator.getChildren(role);
           subChildren.add(subRepresentator.getReferent(role));
           List<SNode> superChildren = superRepresentator.getChildren(role);
           superChildren.add(superRepresentator.getReferent(role));
-          if (subChildren.size() != superChildren.size()) return false;
+
+          while(subChildren.size() < superChildren.size()) {
+            subChildren.add(null);
+          }
+          while(superChildren.size() < subChildren.size()) {
+            superChildren.add(null);
+          }
+
           Iterator<SNode> subIt = subChildren.iterator();
           Iterator<SNode> superIt = superChildren.iterator();
           for (; subIt.hasNext() ;) {
             SNode subChild = AdaptationManager.getInstance().adaptType(subIt.next());
             SNode superChild = AdaptationManager.getInstance().adaptType(superIt.next());
             if (covariantRoles.contains(role)) {
+              if (allowsNull.contains(role) && superChild == null) continue;
               if (!isSubtype(subChild, superChild)) return false;
             } else if (contraVariantRoles.contains(role)) {
+              if (allowsNull.contains(role) && subChild == null) continue;
               if (!isSubtype(superChild, subChild)) return false;
-            } else {
+            } else if (invariantRoles.contains(role)) {
+              if (allowsNull.contains(role) && superChild == null) continue;
               if (!MatchingUtil.matchNodes(subChild, superChild)) return false;
             }
           }
