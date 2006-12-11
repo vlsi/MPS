@@ -1148,7 +1148,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <module name="MPS" />
+      <module name="XmlReader" />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="4386" />
         <option name="TRANSPORT" value="0" />

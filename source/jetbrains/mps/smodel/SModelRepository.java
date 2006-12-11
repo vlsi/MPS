@@ -433,7 +433,7 @@ public class SModelRepository extends SModelAdapter {
     String fqName = modelRoot.getHandlerClass();
     try {
       Class cls = Class.forName(fqName, true, ClassLoaderManager.getInstance().getClassLoader());
-      return (IModelRootManager) cls.newInstance();
+      return (IModelRootManager) cls.newInstance();                                       
     } catch (Exception e) {
       LOG.error(e);
       return IModelRootManager.NULL_MANAGER;
