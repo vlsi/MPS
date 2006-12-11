@@ -143,7 +143,7 @@
             <property name="selectable" value="false" />
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1165604224376">
               <property name="textFgColor" value="DARK_BLUE" />
-              <property name="text" value="superclass" />
+              <property name="text" value="extends" />
               <property name="drawBorder" value="false" />
               <property name="selectable" value="false" />
             </node>
