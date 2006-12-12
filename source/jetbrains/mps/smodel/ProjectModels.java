@@ -5,6 +5,7 @@ import jetbrains.mps.projectLanguage.ModelRoot;
 import java.util.*;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * @author Kostik
@@ -25,6 +26,12 @@ public class ProjectModels {
     }
 
     public void saveModel(@NotNull SModelDescriptor modelDescriptor) {
+    }
+
+
+    @Nullable
+    public SModel refresh(@NotNull SModelDescriptor modelDescriptor) {
+      return modelDescriptor.getSModel();
     }
 
     public boolean isFindUsagesSupported() {

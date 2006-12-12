@@ -665,7 +665,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     Set<SNode> nodesWhichEditorDependsOn = myCellsToNodesToDependOnMap.get(myRootCell);
     if (nodesWhichEditorDependsOn != null) {
       for (SNode node : nodesWhichEditorDependsOn) {
-
         SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
         if (modelDescriptor != null) {
           addOurListener(modelDescriptor);
