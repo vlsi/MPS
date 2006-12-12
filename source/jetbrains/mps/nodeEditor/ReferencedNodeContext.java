@@ -15,12 +15,12 @@ import java.util.*;
  */
 public class ReferencedNodeContext {
   private Stack<SNodeProxy> myContextRefererNodes = new Stack<SNodeProxy>();
-  private SNode myNode = null;
+  private SNodeProxy myNodeProxy = null;
   private Stack<String> myContextRoles = new Stack<String>();
   private Stack<SNodeProxy> myAttributesStack = new Stack<SNodeProxy>();
 
   private ReferencedNodeContext(SNode node) {
-    myNode = node;
+    myNodeProxy = new SNodeProxy(node);
     node.putUserObject(this, this); //context must be collected only after its target node is collected
   }
 
@@ -47,18 +47,18 @@ public class ReferencedNodeContext {
   }
 
   public ReferencedNodeContext contextWithOneMoreAttribute(SNode attribute) {
-    ReferencedNodeContext result = sameContextButAnotherNode(myNode);
+    ReferencedNodeContext result = sameContextButAnotherNode(getNode());
     result.myAttributesStack.push(new SNodeProxy(attribute));
     return result;
   }
 
   public SNode getNode() {
-    return myNode;
+    return myNodeProxy.getNode();
   }
 
   public int hashCode() {
     return EqualUtil.hashCode(myContextRefererNodes)
-            + EqualUtil.hashCode(myNode)
+            + EqualUtil.hashCode(myNodeProxy)
             + EqualUtil.hashCode(myContextRoles)
             + EqualUtil.hashCode(myAttributesStack);
   }
@@ -71,7 +71,7 @@ public class ReferencedNodeContext {
       return EqualUtil.equals(myContextRoles, o.myContextRoles)
               && EqualUtil.equals(myContextRefererNodes, o.myContextRefererNodes)
               && EqualUtil.equals(myAttributesStack, o.myAttributesStack)
-              && EqualUtil.equals(myNode, o.myNode);
+              && EqualUtil.equals(myNodeProxy, o.myNodeProxy);
     } else {
       return false;
     }
