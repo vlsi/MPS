@@ -22,6 +22,7 @@ public class LanguagesKeymapManager {
   private static LanguagesKeymapManager ourInstance = new LanguagesKeymapManager();
 
   private Map<String, List<EditorCellKeyMap>> myLanguagesToKeyMaps = new HashMap<String, List<EditorCellKeyMap>>();
+  private Set<Language> myLanguages = new HashSet<Language>();
   private MyModuleRepositoryListener myListener = new MyModuleRepositoryListener();
 
 
@@ -37,6 +38,13 @@ public class LanguagesKeymapManager {
     return ourInstance;
   }
 
+  public void clearCaches() {
+    myLanguagesToKeyMaps.clear();
+    for (Language l : myLanguages) {
+      registerLanguageKeyMaps(l);
+    }
+  }
+
   private void registerKeyMap(EditorCellKeyMap keyMap, String languageNamespace) {
     if (keyMap.isApplicableToEveryModel()) {
       List<EditorCellKeyMap> keyMaps = myLanguagesToKeyMaps.get(languageNamespace);
@@ -50,6 +58,7 @@ public class LanguagesKeymapManager {
 
   private void registerLanguageKeyMaps(Language language) {
 //    System.out.println("register KeyMaps " + language.getNamespace());
+    myLanguages.add(language);    
     SModelDescriptor editorModelDescriptor = language.getEditorModelDescriptor();
     if (editorModelDescriptor == null) return;
     SModel editorModel = editorModelDescriptor.getSModel();
@@ -67,6 +76,7 @@ public class LanguagesKeymapManager {
   }
 
   private void unregisterLanguageKeyMaps(Language language) {
+    myLanguages.remove(language);
 //    System.out.println("unregister KeyMaps " + language.getNamespace());
     SModelDescriptor editorModelDescriptor = language.getEditorModelDescriptor();
     if (editorModelDescriptor == null) return;

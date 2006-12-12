@@ -22,7 +22,7 @@ public class IconManager {
 
   public static final Logger LOG = Logger.getLogger(IconManager.class);
 
-  private static Map<Class<? extends SNode>, Icon> ourIcons = new HashMap<Class<? extends SNode>, Icon>();
+  private static Map<String, Icon> ourIcons = new HashMap<String, Icon>();
   private static Map<String, Icon> ourPathsToIcons = new HashMap<String, Icon>();
 
   public static Icon getIconFor(SNode node) {
@@ -53,8 +53,8 @@ public class IconManager {
     }
 
     // legacy
-    if (ourIcons.get(cls) != null) {
-      return ourIcons.get(cls);
+    if (ourIcons.get(cls.getName()) != null) {
+      return ourIcons.get(cls.getName());
     }
 
     Class sourceClass = cls;
@@ -69,7 +69,7 @@ public class IconManager {
         try {
           Icon icon = (Icon) icons.getMethod("getIconFor" + className).invoke(null);
           if (icon != null) {
-            ourIcons.put(sourceClass, icon);
+            ourIcons.put(sourceClass.getName(), icon);
             return icon;
           }
         } catch(NoSuchMethodException ex) {
@@ -86,7 +86,7 @@ public class IconManager {
       cls = (Class<? extends SNode>) cls.getSuperclass();
     }
 
-    ourIcons.put(sourceClass, Icons.DEFAULT_ICON);
+    ourIcons.put(sourceClass.getName(), Icons.DEFAULT_ICON);
     return Icons.DEFAULT_ICON;
   }
 
