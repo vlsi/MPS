@@ -53,15 +53,6 @@
         <option name="PACKAGES_TO_USE_IMPORT_ON_DEMAND">
           <value />
         </option>
-        <ADDITIONAL_INDENT_OPTIONS fileType="js">
-          <option name="INDENT_SIZE" value="4" />
-          <option name="CONTINUATION_INDENT_SIZE" value="8" />
-          <option name="TAB_SIZE" value="4" />
-          <option name="USE_TAB_CHARACTER" value="false" />
-          <option name="SMART_TABS" value="false" />
-          <option name="LABEL_INDENT_SIZE" value="0" />
-          <option name="LABEL_INDENT_ABSOLUTE" value="false" />
-        </ADDITIONAL_INDENT_OPTIONS>
       </value>
     </option>
     <option name="USE_PER_PROJECT_SETTINGS" value="true" />
@@ -319,10 +310,10 @@
         <inspection_tool class="UnusedDeclaration" level="WARNING" enabled="false">
           <option name="ADD_MAINS_TO_ENTRIES" value="true" />
           <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
+          <option name="ADD_EJB_TO_ENTRIES" value="true" />
           <option name="ADD_APPLET_TO_ENTRIES" value="true" />
           <option name="ADD_SERVLET_TO_ENTRIES" value="true" />
           <option name="ADD_NONJAVA_TO_ENTRIES" value="true" />
-          <option name="ADD_EJB_TO_ENTRIES" value="true" />
         </inspection_tool>
         <inspection_tool class="UnnecessaryLocalVariable" level="WARNING" enabled="false">
           <option name="m_ignoreImmediatelyReturnedVariables" value="false" />
@@ -522,10 +513,10 @@
         <inspection_tool class="UnusedDeclaration" level="WARNING" enabled="false">
           <option name="ADD_MAINS_TO_ENTRIES" value="true" />
           <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
+          <option name="ADD_EJB_TO_ENTRIES" value="true" />
           <option name="ADD_APPLET_TO_ENTRIES" value="true" />
           <option name="ADD_SERVLET_TO_ENTRIES" value="true" />
           <option name="ADD_NONJAVA_TO_ENTRIES" value="true" />
-          <option name="ADD_EJB_TO_ENTRIES" value="true" />
         </inspection_tool>
         <inspection_tool class="ConstantConditions" level="ERROR" enabled="true">
           <option name="SUGGEST_NULLABLE_ANNOTATIONS" value="false" />
@@ -690,19 +681,17 @@
           <option name="IGNORE_JAVADOC_PERIOD" value="true" />
           <option name="myAdditionalJavadocTags" value="" />
         </inspection_tool>
-        <inspection_tool class="ForCanBeForeach" level="WARNING" enabled="false">
-          <option name="REPORT_INDEXED_LOOP" value="true" />
-        </inspection_tool>
+        <inspection_tool class="ForCanBeForeach" level="WARNING" enabled="false" />
         <inspection_tool class="UnnecessaryBoxing" level="WARNING" enabled="false" />
         <inspection_tool class="UnnecessaryUnboxing" level="WARNING" enabled="false" />
         <inspection_tool class="WhileCanBeForeach" level="WARNING" enabled="false" />
         <inspection_tool class="UnusedDeclaration" level="WARNING" enabled="false">
           <option name="ADD_MAINS_TO_ENTRIES" value="true" />
           <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
+          <option name="ADD_EJB_TO_ENTRIES" value="true" />
           <option name="ADD_APPLET_TO_ENTRIES" value="true" />
           <option name="ADD_SERVLET_TO_ENTRIES" value="true" />
           <option name="ADD_NONJAVA_TO_ENTRIES" value="true" />
-          <option name="ADD_EJB_TO_ENTRIES" value="true" />
         </inspection_tool>
         <inspection_tool class="UnusedParameters" level="WARNING" enabled="false" />
         <inspection_tool class="SameReturnValue" level="WARNING" enabled="false" />
@@ -924,10 +913,10 @@
         <inspection_tool class="UnusedDeclaration" level="WARNING" enabled="false">
           <option name="ADD_MAINS_TO_ENTRIES" value="true" />
           <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
+          <option name="ADD_EJB_TO_ENTRIES" value="true" />
           <option name="ADD_APPLET_TO_ENTRIES" value="true" />
           <option name="ADD_SERVLET_TO_ENTRIES" value="true" />
           <option name="ADD_NONJAVA_TO_ENTRIES" value="true" />
-          <option name="ADD_EJB_TO_ENTRIES" value="true" />
         </inspection_tool>
         <inspection_tool class="UnnecessaryLocalVariable" level="WARNING" enabled="false">
           <option name="m_ignoreImmediatelyReturnedVariables" value="false" />
@@ -1123,8 +1112,10 @@
       <module fileurl="file://$PROJECT_DIR$/projects/SemanticWeb/sandbox/SemanticWeb.sandbox.iml" filepath="$PROJECT_DIR$/projects/SemanticWeb/sandbox/SemanticWeb.sandbox.iml" group="SemanticWeb" />
       <module fileurl="file://$PROJECT_DIR$/projects/textLanguage/TextLanguage.iml" filepath="$PROJECT_DIR$/projects/textLanguage/TextLanguage.iml" group="DataLanguages" />
       <module fileurl="file://$PROJECT_DIR$/projects/TheSimplestLanguage/TheSimplestLanguage.iml" filepath="$PROJECT_DIR$/projects/TheSimplestLanguage/TheSimplestLanguage.iml" group="Projects" />
+      <module fileurl="file://$PROJECT_DIR$/projects/DataNavigationQueryFramework/TransientDbEntityStore/TransientDbEntityStore.iml" filepath="$PROJECT_DIR$/projects/DataNavigationQueryFramework/TransientDbEntityStore/TransientDbEntityStore.iml" group="Projects/DataNavigationQueryFramework" />
       <module fileurl="file://$PROJECT_DIR$/projects/XmlReader/XmlReader.iml" filepath="$PROJECT_DIR$/projects/XmlReader/XmlReader.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/agreement/agreement.iml" filepath="$PROJECT_DIR$/projects/agreement/agreement.iml" group="Projects" />
+      <module fileurl="file://$PROJECT_DIR$/projects/Charisma/charisma.iml" filepath="$PROJECT_DIR$/projects/Charisma/charisma.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/DataNavigationQueryFramework/core/core.iml" filepath="$PROJECT_DIR$/projects/DataNavigationQueryFramework/core/core.iml" group="Projects/DataNavigationQueryFramework" />
       <module fileurl="file://$PROJECT_DIR$/projects/webrSamples/depot/depot.iml" filepath="$PROJECT_DIR$/projects/webrSamples/depot/depot.iml" group="Projects/WebrSamples" />
       <module fileurl="file://$PROJECT_DIR$/projects/fixedLengthReader/fixedLengthReader.iml" filepath="$PROJECT_DIR$/projects/fixedLengthReader/fixedLengthReader.iml" group="Projects" />
@@ -1139,7 +1130,7 @@
   </component>
   <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="jdk 1.5" project-jdk-type="JavaSDK" />
   <component name="ProjectRunConfigurationManager">
-    <configuration default="false" name="depot - WebR Sample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
+    <configuration default="false" name="depot - WebR Sample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
@@ -1150,6 +1141,11 @@
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="teamSysWebApp" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="charisma" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1210,7 +1206,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="miniAlpha - WebR Sample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
+    <configuration default="false" name="miniAlpha - WebR Sample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
@@ -1221,6 +1217,11 @@
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="teamSysWebApp" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="charisma" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1281,7 +1282,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="hello - WebSample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
+    <configuration default="false" name="hello - WebSample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
@@ -1292,6 +1293,11 @@
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="teamSysWebApp" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="charisma" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1354,24 +1360,20 @@
     </configuration>
     <configuration default="false" name="IdeMain" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="jetbrains.mps.ide.IdeMain" />
-      <option name="VM_PARAMETERS" value="-Xmx1024m -ea" />
+      <option name="VM_PARAMETERS" value="-Xmx512m" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <module name="XmlReader" />
+      <module name="" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="4386" />
+        <option name="DEBUG_PORT" value="1478" />
         <option name="TRANSPORT" value="0" />
         <option name="LOCAL" value="true" />
       </RunnerSettings>
-      <RunnerSettings RunnerId="Profile ">
-        <option name="myExternalizedOptions" value="&#13;&#10;snapshots-dir=&#13;&#10;" />
-      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Profile " />
       <ConfigurationWrapper RunnerId="Run" />
       <method>
         <option name="Make" value="true" />
