@@ -45,6 +45,7 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    DeleteParenthesis_Actions.setCellActions(editorCell, node, context);
     editorCell.putUserObject(EditorCell.CELL_ID, "1081880010412");
     editorCell.setLayoutConstraint("");
     return editorCell;
@@ -57,6 +58,7 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    DeleteParenthesis_Actions.setCellActions(editorCell, node, context);
     editorCell.putUserObject(EditorCell.CELL_ID, "1081880010410");
     editorCell.setLayoutConstraint("");
     return editorCell;
