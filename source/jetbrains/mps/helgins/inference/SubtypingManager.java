@@ -359,7 +359,7 @@ public class SubtypingManager {
       }
     }
 
-    for (T node : new HashSet<T>(commonSupertypes)) { // retaining only lowest common supertypes
+    for (T node : new HashSet<T>(commonSupertypes)) { // retaining only least common supertypes
       Set<T> supertypes = subTypesToSuperTypes.get(node);
       if (supertypes == null) continue;
       for (T supertype : supertypes) {

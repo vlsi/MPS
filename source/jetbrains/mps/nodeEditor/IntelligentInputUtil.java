@@ -62,8 +62,9 @@ public class IntelligentInputUtil {
       return;
     }
     rtAction.execute(editorContext);
-    CellFounder cellFounder = new CellFounder(editorContext, newNode, tail);
-    cellFounder.run(editorContext.createNodeCell(newNode));
+    final CellFounder cellFounder = new CellFounder(editorContext, newNode, tail);
+    EditorCell newCellForNewNode = editorContext.createNodeCell(newNode);
+    cellFounder.run(newCellForNewNode);
     EditorCell foundCell = cellFounder.getFoundCell();
 
     if (foundCell != null) {
@@ -125,7 +126,7 @@ public class IntelligentInputUtil {
       AbstractEditorComponent nodeEditorComponent = myEditorContext.getNodeEditorComponent();
       EditorCell newNodeCell = rootCell;
       if (newNodeCell == null) {
-        newNodeCell = nodeEditorComponent.findNodeCell(myNode);
+        newNodeCell = nodeEditorComponent.findNodeCell(myNode, true);
       }
       EditorCell_Label nextCell_ = EditorUtil.findRTHintCell(newNodeCell);
 

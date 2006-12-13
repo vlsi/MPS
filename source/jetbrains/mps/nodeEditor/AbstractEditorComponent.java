@@ -906,7 +906,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
   }
 
-  public EditorCell findNodeCell(final SNode node) {
+  public EditorCell findNodeCell(SNode node) {
+    return findNodeCell(node, false);
+  }
+
+  public EditorCell findNodeCell(final SNode node, boolean biggest) {
     if (myRootCell == null) return null;
     if (myRootCell.getSNode() == node) {
       return myRootCell;
@@ -914,8 +918,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (node == null || !(myRootCell instanceof EditorCell_Collection)) {
       return null;
     }
-    EditorCell foundCell = myRefNodeContextsToBigCellsMap.get(ReferencedNodeContext.createNodeContext(node));
-    if (foundCell != null) return foundCell;
+    if (!biggest) {
+      EditorCell foundCell = myRefNodeContextsToBigCellsMap.get(ReferencedNodeContext.createNodeContext(node));
+      if (foundCell != null) return foundCell;
+    }
     EditorCell_Collection cellCollection = (EditorCell_Collection) myRootCell;
     class SelectNodeCondition extends NodeCondition {
       public void checkLeafCell(EditorCell editorCell) {
