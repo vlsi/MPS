@@ -18,6 +18,9 @@ import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.refactoring.logging.Marshallable;
+import jetbrains.mps.plugin.MPSPlugin;
+import jetbrains.mps.plugin.IIDEAHandler;
+import jetbrains.mps.plugin.IProjectHandler;
 
 import java.io.File;
 import java.util.*;
@@ -618,15 +621,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     }
     return languages;
   }
-
-//  @Nullable
-//  @Override
-//  protected Language getLanguage(@NotNull String languageNamespace, @NotNull Set<IModule> modulesToSkip, boolean suppressWarnings) {
-//    if (getModuleUID().equals(languageNamespace)) {
-//      return this;
-//    }
-//    return super.getLanguage(languageNamespace, modulesToSkip, suppressWarnings);
-//  }
 
   @NotNull
   public List<String> getClassPathItems() {
