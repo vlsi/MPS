@@ -85,29 +85,6 @@ public class GenerationSession {
     return status;
   }
 
-  //this is a hack for supporting generating models written in DNQ and WebR languages - should be removed after writing support for defining order of generation
-  private GenerationStatus generateModel_HackForSupportingDNQGeneration(SModelDescriptor sourceModel) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-    GenerationStatus status;
-
-    // do model mapping
-    status = generateModel_internal(sourceModel, myTargetLanguage, CollectionUtil.asSet("jetbrains.teamsys.dnq"));
-
-    if (status.isError()) {
-      // if ERROR - keep transient models: we need them to navigate to from error messages
-      myDiscardTransients = false;
-      return status;
-    }
-
-    status = generateModel_internal(status.getOutputModel().getModelDescriptor(), myTargetLanguage);
-
-    if (status.isError()) {
-      // if ERROR - keep transient models: we need them to navigate to from error messages
-      myDiscardTransients = false;
-    }
-
-    return status;
-  }
-
   private GenerationStatus generateModel_internal(SModelDescriptor sourceModelDescriptor, Language targetLanguage) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
     return generateModel_internal(sourceModelDescriptor, targetLanguage, new HashSet<String>());
   }
