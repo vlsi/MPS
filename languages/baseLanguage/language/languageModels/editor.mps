@@ -4,7 +4,7 @@
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
-  <maxImportIndex value="47" />
+  <maxImportIndex value="48" />
   <import index="17" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="18" modelUID="jetbrains.mps.core.structure" />
   <import index="19" modelUID="java.util@java_stub" />
@@ -20,6 +20,7 @@
   <import index="45" modelUID="jetbrains.mps.smodel.search@java_stub" />
   <import index="46" modelUID="jetbrains.mps.baseLanguage.search@java_stub" />
   <import index="47" modelUID="jetbrains.mps.typesystem@java_stub" />
+  <import index="48" modelUID="jetbrains.mps.baseLanguage.editor@java_stub" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1073416106125">
     <property name="name" value="StatementList_Editor" />
     <link role="conceptDeclaration" targetNodeId="17.1068580123136" />
@@ -1744,6 +1745,54 @@
               <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1158862234755" />
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_ReplaceWithNewOperation" id="1158862262461">
                 <link role="concept" targetNodeId="17.1079359253375" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1166035149309">
+      <property name="caretPolicy" value="caret_at_last_position" />
+      <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1166035149310">
+        <property name="keycode" value=")" />
+      </node>
+      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_ExecuteFunction" id="1166035149311">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1166035149312">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1166035418075">
+            <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1166035431639">
+              <link role="baseMethodDeclaration" extResolveInfo="48.static method ([Classifier]ParenthesisUtil).([StaticMethodDeclaration]addClosingParenthesis((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Expression]), (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean)) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
+              <link role="classConcept" extResolveInfo="48.[Classifier]ParenthesisUtil" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.CastExpression" id="1166035784258">
+                <node role="expression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1166035784259" />
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1166035784260">
+                  <link role="classifier" extResolveInfo="44.[Classifier]Expression" />
+                </node>
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1166035451111" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1166035160001">
+      <property name="caretPolicy" value="caret_at_first_position" />
+      <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1166035160002">
+        <property name="keycode" value="(" />
+      </node>
+      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_ExecuteFunction" id="1166035160003">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1166035160004">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1166035468581">
+            <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1166035468582">
+              <link role="baseMethodDeclaration" extResolveInfo="48.static method ([Classifier]ParenthesisUtil).([StaticMethodDeclaration]addClosingParenthesis((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Expression]), (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean)) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
+              <link role="classConcept" extResolveInfo="48.[Classifier]ParenthesisUtil" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.CastExpression" id="1166035794760">
+                <node role="expression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1166035794761" />
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1166035794762">
+                  <link role="classifier" extResolveInfo="44.[Classifier]Expression" />
+                </node>
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1166035468584">
+                <property name="value" value="true" />
               </node>
             </node>
           </node>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.sandbox.misc">
   <language namespace="jetbrains.mps.baseLanguage" />
-  <maxImportIndex value="105" />
+  <maxImportIndex value="106" />
   <import index="1" modelUID="java.lang@java_stub" />
   <import index="3" modelUID="java.util@java_stub" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1144230421203">
@@ -370,16 +370,16 @@
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1166026428407">
               <property name="value" value="4" />
             </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1166026059620">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.MinusExpression" id="1166026399076">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1166026425309">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1166036659514">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.MinusExpression" id="1166036659515">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1166036659516">
                   <property name="value" value="34" />
                 </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1166026061030">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1166036659517">
                   <property name="value" value="10" />
                 </node>
               </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1166026058198">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1166036659518">
                 <property name="value" value="20" />
               </node>
             </node>
