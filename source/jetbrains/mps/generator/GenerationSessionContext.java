@@ -48,6 +48,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   public void addExcludedNamespace(String name) {
     myExcludedNamespaces.add(name);
+    initTemplateModels();
   }
 
   public void clearExcludes() {
