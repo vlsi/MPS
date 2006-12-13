@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.baseLanguage.Classifier;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -43,7 +44,10 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   private SNode myParent;
 
   private Map<String, Integer> myChildInRoleCount = new HashMap<String, Integer>();
-  private List<SNode> myChildren = new ArrayList<SNode>();
+  private List<SNode> myChildren;
+
+  private IChildrenLoader myChildrenLoader;
+
   private List<SReference> myReferences = new ArrayList<SReference>();
   private HashMap<String, String> myProperties = new HashMap<String, String>();
 
@@ -73,9 +77,34 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       myModel.setNodeId(myId, this);
     }
 
-    for (SNode child : myChildren) {
+    for (SNode child : _children()) {
       child.changeModel(newModel);
     }
+  }
+
+  private List<SNode> _children() {
+    if (myChildren == null) {
+      myChildren = new ArrayList<SNode>();
+      if (myChildrenLoader != null) {
+        getModel().runLoadingAction(new Runnable() {
+          public void run() {
+            myChildrenLoader.loadChildren(SNode.this);
+          }
+        });
+      }
+    }
+    return myChildren;
+  }
+
+
+  public void setChildrenLoader(IChildrenLoader childrenLoader) {
+
+    if (myChildren != null) {
+      System.out.println("o' fuck! " + myChildren);
+    }
+
+    assert myChildren == null && myChildrenLoader == null;
+    myChildrenLoader = childrenLoader;
   }
 
   public boolean isRoot() {
@@ -189,7 +218,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   public void replace(@NotNull SNode node,
                       @NotNull SNode replacement) {
     // look through children and referents and replace 1st occurance (may be all occurances?) of the node
-    for (SNode child : myChildren) {
+    for (SNode child : _children()) {
       if (child == node) {
         String role = child.getRole_();
         assert role != null;
@@ -210,7 +239,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   public void replaceChild(@NotNull SNode oldChild,
                            @NotNull SNode newChild) {
-    assert myChildren.contains(oldChild);
+    assert _children().contains(oldChild);
     String oldChildRole = oldChild.getRole_();
     assert oldChildRole != null;
     insertChild(oldChild, oldChildRole, newChild);
@@ -276,7 +305,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   @NotNull
   public List<SNode> getNodeAttributes() {
     List<SNode> attributes = new ArrayList<SNode>();
-    for (SNode child : myChildren) {
+    for (SNode child : _children()) {
       if (AttributesRolesUtil.isNodeAttributeRole(child.getRole_())) {
         attributes.add(child);
       }
@@ -359,7 +388,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   public SNode getPropertyAttribute_new(String propertyName) {
     SNode propertyAttribute = getPropertyAttribute(null, propertyName);
     if (propertyAttribute == null) {
-      for (SNode child : myChildren) {
+      for (SNode child : _children()) {
         if (AttributesRolesUtil.isChildRoleOfPropertyAttributeForPropertyName(propertyName, child.getRole_())) {
           propertyAttribute = child;
           break;
@@ -414,7 +443,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   public SNode getLinkAttribute_new(String linkRole) {
     SNode linkAttribute = getLinkAttribute(null, linkRole);
     if (linkAttribute == null) {
-      for (SNode child : myChildren) {
+      for (SNode child : _children()) {
         if (AttributesRolesUtil.isChildRoleOfLinkAttributeForLinkRole(linkRole, child.getRole_())) {
           linkAttribute = child;
           break;
@@ -582,7 +611,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     }
     // tmp check
 
-    for (SNode child : myChildren) {
+    for (SNode child : _children()) {
       if (role.equals(child.getRole_())) {
         return child;
       }
@@ -591,17 +620,17 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public SNode getChildAt(int index) {
-    return myChildren.get(index);
+    return _children().get(index);
   }
 
   public void removeChild(@NotNull SNode child) {
-    if (!myChildren.contains(child)) return;
-    removeChildAt(myChildren.indexOf(child));
+    if (!_children().contains(child)) return;
+    removeChildAt(_children().indexOf(child));
   }
 
   public void addChild(@NotNull String role,
                        @NotNull SNode child) {
-    insertChildAt(myChildren.size(), role, child);
+    insertChildAt(_children().size(), role, child);
   }
 
   public void insertChild(@Nullable SNode anchorChild,
@@ -625,7 +654,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     String role_ = child_.getRole_();
     if (role_ == null) return -1;
     int count = 0;
-    for (SNode child : myChildren) {
+    for (SNode child : _children()) {
       if (child == child_) return count;
       if (role_.equals(child.getRole_())) {
         count++;
@@ -637,7 +666,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   @NotNull
   public <T extends SNode> Iterator<T> children(@NotNull String role) {
     List<T> list = new LinkedList<T>();
-    for (SNode child : myChildren) {
+    for (SNode child : _children()) {
       if (role.equals(child.getRole_())) {
         list.add((T) child);
       }
@@ -648,7 +677,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   @NotNull
   public <T extends SNode> Iterator<T> reverseChildren(@NotNull String role) {
     List<T> list = new LinkedList<T>();
-    for (SNode child : myChildren) {
+    for (SNode child : _children()) {
       if (role.equals(child.getRole_())) {
         list.add((T) child);
       }
@@ -665,7 +694,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   @NotNull
   public List<SNode> getChildren() {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
-    return new ArrayList<SNode>(myChildren);
+    return new ArrayList<SNode>(_children());
   }
 
   @NotNull
@@ -675,14 +704,14 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   public int getChildCount() {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
-    return myChildren.size();
+    return _children().size();
   }
 
   @NotNull
   public <T extends SNode> List<T> getChildren(@NotNull String role) {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
     List<T> result = new ArrayList<T>();
-    for (SNode child : myChildren) {
+    for (SNode child : _children()) {
       if (role.equals(child.getRole_())) result.add((T) child);
     }
     return result;
@@ -709,13 +738,13 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   private void removeChildAt(final int index) {
-    final SNode wasChild = myChildren.get(index);
-    final String wasId = myChildren.get(index).getId();
+    final SNode wasChild = _children().get(index);
+    final String wasId = _children().get(index).getId();
     final String wasRole = wasChild.getRole_();
 
     assert wasRole != null;
 
-    myChildren.remove(wasChild);
+    _children().remove(wasChild);
     wasChild.myParent = null;
     wasChild.myRoleInParent = null;
     wasChild.unRegisterFromModel();
@@ -744,7 +773,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       child.changeModel(getModel());
     }
 
-    myChildren.add(index, child);
+    _children().add(index, child);
     child.myRoleInParent = role;
     child.myParent = this;
 
@@ -768,7 +797,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     if (!myRegisteredInModelFlag) return;
     myRegisteredInModelFlag = false;
     myModel.removeNodeId(getId());
-    for (SNode child : myChildren) {
+    for (SNode child : _children()) {
       child.unRegisterFromModel();
     }
   }
@@ -780,8 +809,10 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       changeModel(model);
     } else {
       myModel.setNodeId(getId(), this);
-      for (SNode child : myChildren) {
-        child.registerInModel(model);
+      if (myChildren != null) {
+        for (SNode child : _children()) {
+          child.registerInModel(model);
+        }
       }
     }
   }
@@ -1026,7 +1057,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     if (anchorNode != null) {
       int anchorIndex = -1;
       if (isAggregation) {
-        anchorIndex = myChildren.indexOf(anchorNode);
+        anchorIndex = _children().indexOf(anchorNode);
       } else {
         for (SReference reference : myReferences) {
           if (reference.getTargetNode() == anchorNode) {
@@ -1202,7 +1233,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   private <E extends SNode> void collectSubnodes(@NotNull Condition<SNode> condition,
                                                  @NotNull List<E> list) {
-    for (SNode child : myChildren) {
+    for (SNode child : _children()) {
       if (condition.met(child)) {
         list.add((E) child);
       }
