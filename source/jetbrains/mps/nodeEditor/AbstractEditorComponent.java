@@ -365,7 +365,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private void updateMPSActionsWithKeyStrokes() {
     for (MPSAction a : myMPSActionsWithShortcuts) {
-      unregisterKeyboardAction(KeyStroke.getKeyStroke(a.getKeyStroke()));
+      KeyStroke keyStroke = KeyStroke.getKeyStroke(a.getKeyStroke());
+      if (keyStroke != null) unregisterKeyboardAction(keyStroke);
     }
     myMPSActionsWithShortcuts.clear();
     ActionGroup group = ActionManager.instance().getGroup(EDITOR_POPUP_MENU_ACTIONS);
@@ -515,6 +516,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   protected AbstractAction registerNodeAction(final MPSAction action, String keyStroke) {
     AbstractAction result;
+    KeyStroke stroke = KeyStroke.getKeyStroke(keyStroke);
+    if (stroke != null) {
     registerKeyboardAction(result = new AbstractAction(action.getName()) {
       public void actionPerformed(ActionEvent e) {
         if (mySelectedCell != null && mySelectedCell.getSNode() != null) {
@@ -535,8 +538,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           }
         }
       }
-    }, KeyStroke.getKeyStroke(keyStroke), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    }, stroke, WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     return result;
+    }
+    return null;
   }
 
   private EditorCell_Component findCellForComponent(Component component, EditorCell root) {
