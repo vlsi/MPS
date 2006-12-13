@@ -42,7 +42,7 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1106262846792">
           <property name="drawBorder" value="false" />
           <property name="noTargetText" value="&lt;no concept&gt;" />
-          <link role="relationDeclaration" targetNodeId="2.1080736633876" />
+          <link role="relationDeclaration" targetNodeId="2.1166049300910" />
           <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1106262827948">
             <link role="conceptDeclaration" targetNodeId="8.1071489090640" />
             <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1106262846793">
@@ -1402,7 +1402,7 @@
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1106261028889">
               <property name="drawBorder" value="false" />
               <property name="noTargetText" value="&lt;choose concept&gt;" />
-              <link role="relationDeclaration" targetNodeId="2.1080736633876" />
+              <link role="relationDeclaration" targetNodeId="2.1166049300910" />
               <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1106261017482">
                 <link role="conceptDeclaration" targetNodeId="8.1071489090640" />
                 <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1106261028890">
@@ -4333,7 +4333,7 @@
               <link role="conceptDeclaration" targetNodeId="2.1088185857835" />
               <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1147110319487">
                 <property name="noTargetText" value="error! no associated concept" />
-                <link role="relationDeclaration" targetNodeId="2.1080736633876" />
+                <link role="relationDeclaration" targetNodeId="2.1166049300910" />
                 <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1147110319488">
                   <link role="conceptDeclaration" targetNodeId="8.1071489090640" />
                   <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1147110325022">
@@ -8492,7 +8492,7 @@
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1166041234873">
               <property name="drawBorder" value="false" />
               <property name="noTargetText" value="&lt;any concept&gt;" />
-              <link role="relationDeclaration" targetNodeId="2.1166040732742" />
+              <link role="relationDeclaration" targetNodeId="2.1166049300910" />
               <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1166041234874">
                 <link role="conceptDeclaration" targetNodeId="8.1071489090640" />
                 <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1166041234875">
@@ -8522,8 +8522,8 @@
                       <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1166041397421" />
                       <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1166041384525">
                         <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1166041382102" />
-                        <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1166041388010">
-                          <link role="link" targetNodeId="2.1166040732742" />
+                        <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1166049398035">
+                          <link role="link" targetNodeId="2.1166049300910" />
                         </node>
                       </node>
                     </node>
