@@ -11,6 +11,8 @@ import sun.misc.Launcher;
 import java.io.File;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.Set;
+import java.util.LinkedHashSet;
 
 /**
  * @author Kostik
@@ -79,12 +81,17 @@ public class ClassLoaderManager {
       myItems.add(mpsPath);
     }
 
+    Set<String> classPath = new LinkedHashSet<String>();
     if (ApplicationComponents.getInstance().getComponent(MPSProjects.class) != null) {
       for (MPSProject project : ApplicationComponents.getInstance().getComponentSafe(MPSProjects.class).getProjects()) {
         for (String s : project.getClassPath()) {
-          addClassPathItem(s);
+          classPath.add(s);
         }
       }
+    }
+
+    for (String s : classPath) {
+      addClassPathItem(s);
     }
 
     for (IModule l : MPSModuleRepository.getInstance().getAllModules()) {
