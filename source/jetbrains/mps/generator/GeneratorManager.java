@@ -364,9 +364,10 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         checkMonitorCanceled(progress);
       }
 
+
+      GenerationStatus status = null;
       //++ generation
       GenerationSession generationSession = new GenerationSession(targetLanguage, invocationContext, isSaveTransientModels(), progress);
-      GenerationStatus status = null;
       for (SModelDescriptor sourceModelDescriptor : sourceModels) {
         progress.addText("");
         String taskName = ModelsProgressUtil.generationModelTaskName(sourceModelDescriptor);
@@ -390,13 +391,13 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
         addProgressMessage(MessageKind.INFORMATION, "update output models solution", progress);
         Solution outputModels = myProject.findSolution("outputModels");
-        if (outputModels != null) {          
+        if (outputModels != null) {
           outputModels.reloadFromDisk();
         } else {
           myProject.addProjectSolution(solutionDescriptorFile);
         }
-
       }
+
 
       //update generated sources timestamp
       updateLanguagesGenerationRequiredStatus(invocationContext);

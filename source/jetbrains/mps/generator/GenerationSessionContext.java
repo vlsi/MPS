@@ -23,6 +23,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private IOperationContext myInvocationContext;
   private TransientModule myTransientModule;
   private Language myTargetLanguage;
+  private Set<String> myExcludedNamespaces = new HashSet<String>();
 
   private Map<Object, Object> myUserObjects = new HashMap<Object, Object>();
 
@@ -45,11 +46,30 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     initTemplateModels();
   }
 
+  public void addExcludedNamespace(String name) {
+    myExcludedNamespaces.add(name);
+  }
+
+  public void clearExcludes() {
+    myExcludedNamespaces.clear();
+  }
+
 
   private void initTemplateModels() {
     myTemplateModels = new LinkedList<SModelDescriptor>();
     for (Generator generatorModule : myGeneratorModules) {
       List<SModelDescriptor> templateModels = generatorModule.getOwnTemplateModels();
+
+      Iterator<SModelDescriptor> it = templateModels.iterator();
+      while (it.hasNext()) {
+        SModelDescriptor descriptor = it.next();
+        for (String x : myExcludedNamespaces) {
+          if (descriptor.getModelUID().toString().startsWith(x)) {
+            it.remove();
+          }
+        }
+      }      
+
       CollectionUtil.addAllNotPresent(templateModels, myTemplateModels);
     }
   }

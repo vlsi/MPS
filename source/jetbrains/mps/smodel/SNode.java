@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.baseLanguage.Classifier;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

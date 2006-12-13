@@ -14,6 +14,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.CollectionUtil;
 
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;
@@ -72,26 +73,59 @@ public class GenerationSession {
   }
 
   public GenerationStatus generateModel(SModelDescriptor sourceModel) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-    GenerationStatus status;
+    if (sourceModel.getModelUID().toString().startsWith("com.jetbrains")) {
+      System.out.println("special case!");
 
-    // do model mapping
-    status = generateModel_internal(sourceModel, myTargetLanguage);
+      GenerationStatus status;
 
-    if (status.isError()) {
-      // if ERROR - keep transient models: we need them to navigate to from error messages
-      myDiscardTransients = false;
+      // do model mapping
+      status = generateModel_internal(sourceModel, myTargetLanguage, CollectionUtil.asSet("webr"));
+
+      if (status.isError()) {
+        // if ERROR - keep transient models: we need them to navigate to from error messages
+        myDiscardTransients = false;
+        return status;
+      }                                                                         
+
+      status = generateModel_internal(status.getOutputModel().getModelDescriptor(), myTargetLanguage);
+
+      if (status.isError()) {
+        // if ERROR - keep transient models: we need them to navigate to from error messages
+        myDiscardTransients = false;
+      }
+
+      return status;
+    } else {
+      GenerationStatus status;
+
+      // do model mapping
+      status = generateModel_internal(sourceModel, myTargetLanguage);
+
+      if (status.isError()) {
+        // if ERROR - keep transient models: we need them to navigate to from error messages
+        myDiscardTransients = false;
+      }
+      return status;
     }
-    return status;
   }
 
   private GenerationStatus generateModel_internal(SModelDescriptor sourceModelDescriptor, Language targetLanguage) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+    return generateModel_internal(sourceModelDescriptor, targetLanguage, new HashSet<String>());
+  }
+
+  private GenerationStatus generateModel_internal(SModelDescriptor sourceModelDescriptor, Language targetLanguage, Set<String> excludedNamespaces) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
     SModel sourceModel = sourceModelDescriptor.getSModel();
     addProgressMessage(MessageKind.INFORMATION, "generating model \"" + sourceModel.getUID() + "\"");
     Class<? extends IModelGenerator> defaultGeneratorClass = getDefaultGeneratorClass(targetLanguage);
     addMessage(MessageKind.INFORMATION, "    default generator class: " + (defaultGeneratorClass != null ? defaultGeneratorClass.getName() : "<n/a>"));
 
     // -- replace context and create generators list
-    GenerationSessionContext context = new GenerationSessionContext(targetLanguage, sourceModel, myInvocationContext);
+    GenerationSessionContext context = new GenerationSessionContext(targetLanguage, sourceModel, myInvocationContext);    
+
+    for (String x : excludedNamespaces) {
+      context.addExcludedNamespace(x);
+    }
+
     List<Generator> generators = context.getGeneratorModules();
     if (generators.isEmpty()) {
       addProgressMessage(MessageKind.WARNING, "skip model \"" + sourceModel.getUID() + "\" : no generator avalable");
