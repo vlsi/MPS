@@ -1735,5 +1735,58 @@
       <link role="target" targetNodeId="37.1161622753914" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1166040637528">
+    <property name="rootable" value="true" />
+    <property name="name" value="CellMenuComponent" />
+    <link role="extends" targetNodeId="3.1078489098625" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1166040732742">
+      <property name="role" value="applicableConcept" />
+      <link role="target" targetNodeId="1.1071489090640" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1166040865497">
+      <property name="role" value="applicableFeature" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1166041033436" resolveInfo="CellMenuApplicableFeature" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1166041505377">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="menuDescriptor" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1164824717996" resolveInfo="CellMenuDescriptor" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1166041033436">
+    <property name="name" value="CellMenuComponentFeature" />
+    <link role="extends" targetNodeId="3.1133920641626" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1166041079437">
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1166041748520">
+    <property name="name" value="CellMenuComponentFeature_Property" />
+    <link role="extends" targetNodeId="1166041033436" resolveInfo="CellMenuComponentFeature" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1166042102144">
+      <property name="value" value="property" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473914776" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1166041884271">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="propertyDeclaration" />
+      <link role="target" targetNodeId="1.1071489288299" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1166042131867">
+    <property name="name" value="CellMenuComponentFeature_Link" />
+    <link role="extends" targetNodeId="1166041033436" resolveInfo="CellMenuComponentFeature" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1166042131868">
+      <property name="value" value="link" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473914776" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1166042131869">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="linkDeclaration" />
+      <link role="target" targetNodeId="1.1071489288298" />
+    </node>
+  </node>
 </model>
 
