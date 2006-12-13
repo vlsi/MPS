@@ -73,22 +73,16 @@ public class GenerationSession {
   }
 
   public GenerationStatus generateModel(SModelDescriptor sourceModel) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-    if (sourceModel.getModelUID().toString().startsWith("com.jetbrains")) {
-      //this is a hack for supporting generating models written in DNQ and WebR languages - should be removed after writing support for defining order of generation
-      System.out.println("special case!");
-      return generateModel_HackForSupportingDNQGeneration(sourceModel);
-    } else {
-      GenerationStatus status;
+    GenerationStatus status;
 
-      // do model mapping
-      status = generateModel_internal(sourceModel, myTargetLanguage);
+    // do model mapping
+    status = generateModel_internal(sourceModel, myTargetLanguage);
 
-      if (status.isError()) {
-        // if ERROR - keep transient models: we need them to navigate to from error messages
-        myDiscardTransients = false;
-      }
-      return status;
+    if (status.isError()) {
+      // if ERROR - keep transient models: we need them to navigate to from error messages
+      myDiscardTransients = false;
     }
+    return status;
   }
 
   //this is a hack for supporting generating models written in DNQ and WebR languages - should be removed after writing support for defining order of generation
