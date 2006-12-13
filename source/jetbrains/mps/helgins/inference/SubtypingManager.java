@@ -288,6 +288,17 @@ public class SubtypingManager {
     return leastCommonSupertypes(types, new NodeSupertypesCollector());
   }
 
+  public static SNode leastCommonSupertype(Set<? extends SNode> types) {
+    Set<SNode> lcss = leastCommonSupertypes(types);
+    if (lcss.size() != 1) {
+      RuntimeErrorType type = new RuntimeErrorType(Interpretator.getRuntimeTypesModel());
+      type.setErrorText("uncomparable types");
+      return type;
+    }
+    return lcss.iterator().next();
+  }
+
+
   public static <T> Set<T> leastCommonSupertypes(Set<? extends T> types, SupertypesCollector<T> supertypesCollector) {
 
     Set<T> allTypes = new HashSet<T>(types);
@@ -359,6 +370,56 @@ public class SubtypingManager {
     }
 
     return commonSupertypes;
+  }
+
+  public SNode minType(Set<SNode> nodes) {
+    SModel runtimeTypesModel = Interpretator.getRuntimeTypesModel();
+    if (nodes.size() == 0) {
+      RuntimeErrorType errorType = new RuntimeErrorType(runtimeTypesModel);
+      errorType.setErrorText("uncomparable types");
+      return errorType;
+    }
+    if (nodes.size() == 1) return nodes.iterator().next();
+    SNode myMin = null;
+    for (SNode node : nodes) {
+      if (myMin == null) {
+        myMin = node;
+      } else {
+        if (isSubtype(node, myMin)) {
+          myMin = node;
+        } else if (!isSubtype(myMin, node)) {
+          RuntimeErrorType errorType = new RuntimeErrorType(runtimeTypesModel);
+          errorType.setErrorText("uncomparable types");
+          return errorType;
+        }
+      }
+    }
+    return myMin;
+  }
+
+  public SNode maxType(Set<SNode> nodes) {
+    SModel runtimeTypesModel = Interpretator.getRuntimeTypesModel();
+    if (nodes.size() == 0) {
+      RuntimeErrorType errorType = new RuntimeErrorType(runtimeTypesModel);
+      errorType.setErrorText("uncomparable types");
+      return errorType;
+    }
+    if (nodes.size() == 1) return nodes.iterator().next();
+    SNode myMax = null;
+    for (SNode node : nodes) {
+      if (myMax == null) {
+        myMax = node;
+      } else {
+        if (isSubtype(myMax, node)) {
+          myMax = node;
+        } else if (!isSubtype(node, myMax)) {
+          RuntimeErrorType errorType = new RuntimeErrorType(runtimeTypesModel);
+          errorType.setErrorText("uncomparable types");
+          return errorType;
+        }
+      }
+    }
+    return myMax;
   }
 
 
