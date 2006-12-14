@@ -18,6 +18,10 @@ public abstract class Macros {
     return new SolutionDescriptorMacros();
   }
 
+  public static Macros devkitMacros() {
+    return new DevKitDescriptorMacros();
+  }
+
   public static Macros projectDescriptor() {
     return new ProjectDescriptorMacros();
   }
@@ -97,6 +101,24 @@ public abstract class Macros {
         return "${solution_descriptor}" + relationalPath;
       }
       return super.shrinkPath_internal(absolutePath, solutionDescriptor);
+    }
+  }
+
+  private static class DevKitDescriptorMacros extends Macros {
+    protected String expandPath_internal(String path, File devkitDescriptor) {
+      if (path.startsWith("${devkit_descriptor}")) {
+        String modelRelativePath = removePrefix(path, "${devkit_descriptor}");
+        return PathManager.getAbsolutePathByRelational(devkitDescriptor, modelRelativePath);
+      }
+      return super.expandPath_internal(path, devkitDescriptor);
+    }
+
+    protected String shrinkPath_internal(String absolutePath, File devkitDescriptor) {
+      if (pathStartsWith(absolutePath,  devkitDescriptor.getParent())) {
+        String relationalPath = PathManager.getRelationalPathByAbsolute(devkitDescriptor, absolutePath);
+        return "${devkit_descriptor}" + relationalPath;
+      }
+      return super.shrinkPath_internal(absolutePath, devkitDescriptor);
     }
   }
 
