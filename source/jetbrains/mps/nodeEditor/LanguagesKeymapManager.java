@@ -3,9 +3,11 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.bootstrap.editorLanguage.CellKeyMapDeclaration;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandAdapter;
 import jetbrains.mps.ide.command.CommandEvent;
+import jetbrains.mps.component.Dependency;
 
 import java.util.*;
 
@@ -19,23 +21,22 @@ import org.jetbrains.annotations.NotNull;
  * To change this template use File | Settings | File Templates.
  */
 public class LanguagesKeymapManager {
-  private static LanguagesKeymapManager ourInstance = new LanguagesKeymapManager();
-
   private Map<String, List<EditorCellKeyMap>> myLanguagesToKeyMaps = new HashMap<String, List<EditorCellKeyMap>>();
   private Set<Language> myLanguages = new HashSet<Language>();
   private MyModuleRepositoryListener myListener = new MyModuleRepositoryListener();
 
 
-  private LanguagesKeymapManager() {
+  public LanguagesKeymapManager() {
   }
-
+  
+  @Dependency
   public void addMyListener(MPSModuleRepository repository) {
     CommandProcessor.instance().addCommandListener(myListener);
     repository.addModuleRepositoryListener(myListener);
   }
 
   public static LanguagesKeymapManager getInstance() {
-    return ourInstance;
+    return ApplicationComponents.getInstance().getComponent(LanguagesKeymapManager.class);
   }
 
   public void clearCaches() {

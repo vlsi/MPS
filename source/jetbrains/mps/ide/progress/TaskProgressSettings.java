@@ -31,13 +31,11 @@ public class TaskProgressSettings extends DefaultExternalizableComponent {
 
   private boolean myMeasurementInProgress = false;
 
-  private static TaskProgressSettings ourInstance = new TaskProgressSettings();
-
   public static TaskProgressSettings getInstance() {
-    return ourInstance;
+    return ApplicationComponents.getInstance().getComponent(TaskProgressSettings.class);
   }
 
-  private TaskProgressSettings() {
+  public TaskProgressSettings() {
 
   }
 

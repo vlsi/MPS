@@ -3,6 +3,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.components.DefaultExternalizableComponent;
 import jetbrains.mps.components.Externalizable;
 import jetbrains.mps.util.WeakSet;
+import jetbrains.mps.project.ApplicationComponents;
 
 /**
  * Created by IntelliJ IDEA.
@@ -24,14 +25,12 @@ public class CaretBlinker extends DefaultExternalizableComponent {
 
   private WeakSet<AbstractEditorComponent> myEditors = new WeakSet<AbstractEditorComponent>();
 
-  private static CaretBlinker ourInstance = new CaretBlinker();
 
-  private CaretBlinker() {
-
+  public CaretBlinker() {
   }
 
   public static CaretBlinker getInstance() {
-    return ourInstance;
+    return ApplicationComponents.getInstance().getComponent(CaretBlinker.class);
   }
 
   public void launch() {

@@ -39,7 +39,6 @@ public class MPSModuleRepository {
 
   public MPSModuleRepository() {
     initializeExtensionsToModuleTypesMap();
-    LanguagesKeymapManager.getInstance().addMyListener(this);
   }
 
   private void initializeExtensionsToModuleTypesMap() {

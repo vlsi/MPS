@@ -5,13 +5,18 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjects;
+import jetbrains.mps.component.IComponentLifecycle;
 
 import javax.swing.SwingUtilities;
 
-public abstract class GenericEditorUpdater {
+public abstract class GenericEditorUpdater implements IComponentLifecycle  {
   private boolean myStopThread = false;
 
   public GenericEditorUpdater() {
+  }
+
+
+  public void initComponent() {
     new Thread() {
       {
         setDaemon(true);

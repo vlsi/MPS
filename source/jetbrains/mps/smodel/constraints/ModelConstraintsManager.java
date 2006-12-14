@@ -11,6 +11,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.component.Dependency;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -35,7 +36,12 @@ public class ModelConstraintsManager {
   private Map<String, INodeReferentSearchScopeProvider> myNodeDefaultSearchScopeProvidersMap = new HashMap<String, INodeReferentSearchScopeProvider>();
 
   public ModelConstraintsManager() {
-    MPSModuleRepository.getInstance().addModuleRepositoryListener(new ModuleRepositoryListener() {
+
+  }
+
+  @Dependency
+  public void setModuleRepository(MPSModuleRepository r) {
+    r.addModuleRepositoryListener(new ModuleRepositoryListener() {
       public void beforeModuleRemoved(IModule module) {
       }
 
