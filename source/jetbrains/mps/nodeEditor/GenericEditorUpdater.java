@@ -15,7 +15,6 @@ public abstract class GenericEditorUpdater implements IComponentLifecycle  {
   public GenericEditorUpdater() {
   }
 
-
   public void initComponent() {
     new Thread() {
       {
