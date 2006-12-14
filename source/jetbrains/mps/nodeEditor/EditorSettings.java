@@ -33,6 +33,7 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
   private @Externalizable boolean myUseAntialiasing = true;
   private @Externalizable Color mySelectionColor = new Color(0, 200, 255, 35);
   private @Externalizable Color myRangeSelectionColor = new Color(255, 0, 255, 35);
+  private @Externalizable boolean myUseLegacyTypesystem = true;
 
   public Font getDefaultEditorFont() {
     return myFont;
@@ -66,6 +67,14 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
 
   public Color getRangeSelectionColor() {
     return myRangeSelectionColor;
+  }
+
+  public boolean getUseLegacyTypesystem() {
+    return myUseLegacyTypesystem;
+  }
+
+  public void setUseLegacyTypesystem(boolean useLegacyTypesystem) {
+    myUseLegacyTypesystem = useLegacyTypesystem;
   }
 
   public IPreferencesPage createPreferencesPage() {
@@ -156,6 +165,7 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
     private MyColorComponent mySelectedColorComponent = new MyColorComponent(mySelectionColor);
     private MyColorComponent myRangeSelColorComponent = new MyColorComponent(myRangeSelectionColor);
     private JCheckBox myAntialiasingCheckBox = createAntialiasinbCheckBox();
+    private JCheckBox myLegacyTypesystemCheckBox = createLegacyTypesystemCheckBox();
     private JSlider myBlinkingRateSlider = createBlinkingRateSlider();
     private final AbstractEditorComponent myBlinkingDemo = createBlinkingDemo();
     Timer myTimer;
@@ -181,6 +191,12 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
       antialiasingPanel.add(new JLabel("Use Antialiasing"));
 
       panel.add(antialiasingPanel);
+
+      JPanel legacyTypesystemPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+      legacyTypesystemPanel.add(myLegacyTypesystemCheckBox);
+      legacyTypesystemPanel.add(new JLabel("Use Legacy Typesystem For Highlighting"));
+
+      panel.add(legacyTypesystemPanel);
 
 
       JPanel colorSettingsPanel = new JPanel(new GridLayout(0, 1));
@@ -227,6 +243,12 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
     private JCheckBox createAntialiasinbCheckBox() {
       JCheckBox result = new JCheckBox();
       result.setSelected(isUseAntialiasing());
+      return result;
+    }
+
+    private JCheckBox createLegacyTypesystemCheckBox() {
+      JCheckBox result = new JCheckBox();
+      result.setSelected(getUseLegacyTypesystem());
       return result;
     }
 
@@ -314,6 +336,7 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
       CaretBlinker.getInstance().setCaretBlinkingRateTimeMillis(blinkingPeriod);
 
       setUseAntialiasing(myAntialiasingCheckBox.isSelected());
+      setUseLegacyTypesystem(myLegacyTypesystemCheckBox.isSelected());
 
       mySelectionColor = mySelectedColorComponent.getColor();
       myRangeSelectionColor = myRangeSelColorComponent.getColor();
