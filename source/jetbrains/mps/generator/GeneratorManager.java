@@ -209,24 +209,39 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     return super.clone();
   }
 
-  public void generateModelsWithProgressWindowAsync(final List<SModel> sourceModels, final Language targetLanguage, final IOperationContext invocationContext, final IGenerationType generationType, boolean closeOnExit) {
+  public void generateModelsWithProgressWindowAsync(final List<SModel> sourceModels,
+                                                    final Language targetLanguage,
+                                                    final IOperationContext invocationContext,
+                                                    final IGenerationType generationType,
+                                                    final IGenerationScript script,
+                                                    boolean closeOnExit) {
     AdaptiveProgressMonitor adaptiveProgressMonitor = new AdaptiveProgressMonitor(invocationContext.getComponent(IDEProjectFrame.class), closeOnExit);
-    generateModelsWithProgressWindow(sourceModels, targetLanguage, invocationContext, generationType, new Runnable() {
+    generateModelsWithProgressWindow(sourceModels, targetLanguage, invocationContext, generationType, script, new Runnable() {
       public void run() {
       }
     }, true, adaptiveProgressMonitor);
   }
 
-  public void generateModelsWithProgressWindowAsync(final List<SModel> sourceModels, final Language targetLanguage, final IOperationContext invocationContext, final IGenerationType generationType) {
-    generateModelsWithProgressWindow(sourceModels, targetLanguage, invocationContext, generationType, new Runnable() {
+  public void generateModelsWithProgressWindowAsync(final List<SModel> sourceModels,
+                                                    final Language targetLanguage,
+                                                    final IOperationContext invocationContext,
+                                                    final IGenerationType generationType,
+                                                    final IGenerationScript script) {
+    generateModelsWithProgressWindow(sourceModels, targetLanguage, invocationContext, generationType, script, new Runnable() {
       public void run() {
       }
     }, true, null);
   }
 
-  public void generateModelsWithProgressWindow(final List<SModel> sourceModels, final Language targetLanguage, final IOperationContext invocationContext, final IGenerationType generationType, boolean finishAnyway, IAdaptiveProgressMonitor monitor) {
+  public void generateModelsWithProgressWindow(final List<SModel> sourceModels,
+                                               final Language targetLanguage,
+                                               final IOperationContext invocationContext,
+                                               final IGenerationType generationType,
+                                               final IGenerationScript script,
+                                               boolean finishAnyway,
+                                               IAdaptiveProgressMonitor monitor) {
     final Object lock = new Object();
-    generateModelsWithProgressWindow(sourceModels, targetLanguage, invocationContext, generationType, new Runnable() {
+    generateModelsWithProgressWindow(sourceModels, targetLanguage, invocationContext, generationType, script, new Runnable() {
       public void run() {
         synchronized (lock) {
           lock.notifyAll();
@@ -243,13 +258,20 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     }
   }
 
-  public void generateModelsWithProgressWindow(final List<SModel> sourceModels, final Language targetLanguage, final IOperationContext invocationContext, final IGenerationType generationType, final Runnable continuation, final boolean finishAnyway, IAdaptiveProgressMonitor monitor) {
+  public void generateModelsWithProgressWindow(final List<SModel> sourceModels,
+                                               final Language targetLanguage,
+                                               final IOperationContext invocationContext,
+                                               final IGenerationType generationType,
+                                               final IGenerationScript script,
+                                               final Runnable continuation,
+                                               final boolean finishAnyway,
+                                               IAdaptiveProgressMonitor monitor) {
     final IAdaptiveProgressMonitor progress = monitor != null ? monitor : new AdaptiveProgressMonitor(invocationContext.getComponent(IDEProjectFrame.class), false);
     Thread generationThread = new Thread("Generation") {
       public void run() {
         CommandProcessor.instance().executeCommand(new Runnable() {
           public void run() {
-            generateModels(sourceModels, targetLanguage, invocationContext, generationType, progress);
+            generateModels(sourceModels, targetLanguage, invocationContext, generationType, script, progress);
             if (finishAnyway) {
               progress.finishAnyway();
             }
@@ -269,15 +291,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     if (progressMonitor.isCanceled()) throw new GenerationCanceledException();
   }
 
-
-  public void generateModels(List<SModel> _sourceModels, Language targetLanguage, IOperationContext invocationContext, IGenerationType generationType, IAdaptiveProgressMonitor progress) {
-    generateModels(_sourceModels,
-            targetLanguage,
-            invocationContext,
-            generationType,
-            IGenerationScript.DEFAULT,
-            progress);
-  }
 
   public void generateModels(List<SModel> _sourceModels, Language targetLanguage, IOperationContext invocationContext, IGenerationType generationType, IGenerationScript script, IAdaptiveProgressMonitor progress) {
 

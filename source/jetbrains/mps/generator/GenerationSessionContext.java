@@ -77,7 +77,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       myMappingConfigurations = new HashSet<MappingConfiguration>(myCustomMappingConfigurations);
     } else {
       myMappingConfigurations = new HashSet<MappingConfiguration>();
-
       for (SModelDescriptor templateModel : myTemplateModels) {
         myMappingConfigurations.addAll((List) SModelUtil.allNodes(templateModel.getSModel(), new Condition<SNode>() {
           public boolean met(SNode node) {
