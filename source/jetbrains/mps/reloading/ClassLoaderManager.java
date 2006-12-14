@@ -28,8 +28,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
   private MPSModuleRepository myModuleRepository;
 
   public static ClassLoaderManager getInstance() {
-    if (ourInstance == null) ourInstance = new ClassLoaderManager();
-    return ourInstance;
+    return ApplicationComponents.getInstance().getComponent(ClassLoaderManager.class);
   }
 
   private ClassLoader myClassLoader = null;
@@ -48,11 +47,13 @@ public class ClassLoaderManager implements IComponentLifecycle {
 
   @Dependency
   public void setProjects(MPSProjects projects) {
+    System.out.println("set MPS projects " + projects);
     myProjects = projects;
   }
 
   @Dependency
   public void setModuleRepository(MPSModuleRepository moduleRepository) {
+    System.out.println("set module repository " + moduleRepository);
     myModuleRepository = moduleRepository;
   }
 
