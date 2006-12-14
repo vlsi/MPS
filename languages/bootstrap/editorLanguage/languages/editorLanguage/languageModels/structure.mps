@@ -1794,5 +1794,18 @@
       <link role="target" targetNodeId="1.1071489090640" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1166059625718">
+    <property name="name" value="CellMenuPart_CellMenuComponent" />
+    <link role="extends" targetNodeId="1164824854750" resolveInfo="CellMenuPart_Abstract" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1166059677893">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="cellMenuComponent" />
+      <link role="target" targetNodeId="1166040637528" resolveInfo="CellMenuComponent" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1166059625736">
+      <property name="value" value="menu component" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
+  </node>
 </model>
 
