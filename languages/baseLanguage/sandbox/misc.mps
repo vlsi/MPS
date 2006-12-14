@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.sandbox.misc">
   <language namespace="jetbrains.mps.baseLanguage" />
-  <maxImportIndex value="108" />
+  <maxImportIndex value="112" />
   <import index="1" modelUID="java.lang@java_stub" />
   <import index="3" modelUID="java.util@java_stub" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1144230421203">
@@ -72,6 +72,37 @@
             </node>
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1166065454980">
               <property name="value" value="29" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1166121702873">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1166121702874">
+            <property name="name" value="i" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1166121702875" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.PlusExpression" id="1166121731546">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1166121734721">
+                <property name="value" value="45" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.DivExpression" id="1166121716761">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1166121718670">
+                  <property name="value" value="40" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1166121708113">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1166121706815">
+                    <property name="value" value="10" />
+                  </node>
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.MulExpression" id="1166121712663">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1166121709772">
+                      <property name="value" value="20" />
+                    </node>
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.ParenthesizedExpression" id="1166121778644">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1166121778645">
+                        <property name="value" value="30" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>

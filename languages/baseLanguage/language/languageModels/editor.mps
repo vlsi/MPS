@@ -6325,6 +6325,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_ConceptProperty" id="1166063984223">
         <property name="editable" value="true" />
+        <property name="drawBorder" value="false" />
         <property name="selectable" value="true" />
         <link role="relationDeclaration" targetNodeId="18.1137473891462" />
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1166064618699">

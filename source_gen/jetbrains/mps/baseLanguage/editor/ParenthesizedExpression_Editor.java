@@ -37,20 +37,6 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(true);
-    editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    DeleteParenthesis_Actions.setCellActions(editorCell, node, context);
-    editorCell.addKeyMap(new CloseParenthesis_KeyMap());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1081880010412");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
@@ -62,6 +48,20 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
     DeleteParenthesis_Actions.setCellActions(editorCell, node, context);
     editorCell.addKeyMap(new OpenParenthesis_KeyMap());
     editorCell.putUserObject(EditorCell.CELL_ID, "1081880010410");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(true);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    DeleteParenthesis_Actions.setCellActions(editorCell, node, context);
+    editorCell.addKeyMap(new CloseParenthesis_KeyMap());
+    editorCell.putUserObject(EditorCell.CELL_ID, "1081880010412");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
