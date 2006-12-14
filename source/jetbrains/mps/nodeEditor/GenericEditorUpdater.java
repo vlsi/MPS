@@ -6,13 +6,21 @@ import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjects;
 import jetbrains.mps.component.IComponentLifecycle;
+import jetbrains.mps.component.Dependency;
 
 import javax.swing.SwingUtilities;
 
 public abstract class GenericEditorUpdater implements IComponentLifecycle  {
   private boolean myStopThread = false;
 
+  private MPSProjects myProjects;
+
   public GenericEditorUpdater() {
+  }
+
+  @Dependency
+  public void setProjects(MPSProjects projects) {
+    myProjects = projects;
   }
 
   public void initComponent() {
@@ -54,7 +62,7 @@ public abstract class GenericEditorUpdater implements IComponentLifecycle  {
         CommandProcessor commandProcessor = CommandProcessor.instance();
         commandProcessor.tryToExecuteCommand(new Runnable() {
           public void run() {
-            MPSProjects projects = ApplicationComponents.getInstance().getComponentSafe(MPSProjects.class);
+            MPSProjects projects = myProjects;
             for (MPSProject project : projects.getProjects()) {
               if (project.getComponent(IDEProjectFrame.class) == null) continue;
 

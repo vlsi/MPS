@@ -6,6 +6,8 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.component.Dependency;
+import jetbrains.mps.component.IComponentLifecycle;
 import sun.misc.Launcher;
 
 import java.io.File;
@@ -17,11 +19,12 @@ import java.util.LinkedHashSet;
 /**
  * @author Kostik
  */
-public class ClassLoaderManager {
+public class ClassLoaderManager implements IComponentLifecycle {
   private static Logger LOG = Logger.getLogger(ClassLoaderManager.class);
 
   private static ClassLoaderManager ourInstance;
   private CompositeClassPathItem myItems;
+  private MPSProjects myProjects;
 
   public static ClassLoaderManager getInstance() {
     if (ourInstance == null) ourInstance = new ClassLoaderManager();
@@ -32,8 +35,19 @@ public class ClassLoaderManager {
   private boolean myUseSystemClassLoader;
   private IClassPathItem myRTJar = null;
 
-  private ClassLoaderManager() {
-    updateClassPath();
+  public ClassLoaderManager() {
+  }
+
+
+  public void initComponent() {
+    if (myItems == null) {
+      updateClassPath();
+    }
+  }
+
+  @Dependency
+  public void setProjects(MPSProjects projects) {
+    myProjects = projects;
   }
 
   public void setUseSystemClassLoader(boolean useSystemClassLoader) {
@@ -82,8 +96,8 @@ public class ClassLoaderManager {
     }
 
     Set<String> classPath = new LinkedHashSet<String>();
-    if (ApplicationComponents.getInstance().getComponent(MPSProjects.class) != null) {
-      for (MPSProject project : ApplicationComponents.getInstance().getComponentSafe(MPSProjects.class).getProjects()) {
+    if (myProjects != null) {
+      for (MPSProject project : myProjects.getProjects()) {
         for (String s : project.getClassPath()) {
           classPath.add(s);
         }
@@ -102,13 +116,15 @@ public class ClassLoaderManager {
 
     myClassLoader = new MPSClassLoader(myItems);
 
-    for (MPSProject project : ApplicationComponents.getInstance().getComponentSafe(MPSProjects.class).getProjects()) {
-      for (IModule module : project.getModules()) {
-        AbstractModule am = (AbstractModule) module;
+    if (myProjects != null) {
+      for (MPSProject project : myProjects.getProjects()) {
+        for (IModule module : project.getModules()) {
+          AbstractModule am = (AbstractModule) module;
 
-        ClassPathModelRootManager manager = new ClassPathModelRootManager();
-        for (ModelRoot r : am.getModelRoots()) {
-          manager.read(r, module);
+          ClassPathModelRootManager manager = new ClassPathModelRootManager();
+          for (ModelRoot r : am.getModelRoots()) {
+            manager.read(r, module);
+          }
         }
       }
     }
@@ -127,6 +143,10 @@ public class ClassLoaderManager {
   }
 
   public IClassPathItem getClassPathItem() {
+    if (myItems == null) {
+      updateClassPath();
+    }
+
     return myItems;
   }
 

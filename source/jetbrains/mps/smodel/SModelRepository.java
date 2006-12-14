@@ -8,6 +8,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.component.Dependency;
 
 import java.util.*;
 import java.io.File;
@@ -29,6 +30,8 @@ public class SModelRepository extends SModelAdapter {
   private Set<SModelDescriptor> myModelsWithNoOwners = new HashSet<SModelDescriptor>();
   private List<RepositoryListener> myListeners = new ArrayList<RepositoryListener>();
 
+  private MPSModuleRepository myModuleRepository;
+  private ClassLoaderManager myClassLoaderManager;
 
   private Map<String, List<SModelCommandListener>> myCommandListeners = new HashMap<String, List<SModelCommandListener>>();
   private Map<ILanguageModelListenerOwner, List<SModelCommandListener>> myOwnersToListeners = new HashMap<ILanguageModelListenerOwner, List<SModelCommandListener>>();
@@ -40,6 +43,17 @@ public class SModelRepository extends SModelAdapter {
   };
 
   public SModelRepository() {
+  }
+
+  @Dependency
+  public void setModuleRepository(MPSModuleRepository moduleRepository) {
+    myModuleRepository = moduleRepository;
+  }
+
+
+  @Dependency
+  public void setClassLoaderManager(ClassLoaderManager classLoaderManager) {
+    myClassLoaderManager = classLoaderManager;
   }
 
   public static SModelRepository getInstance() {
@@ -346,7 +360,7 @@ public class SModelRepository extends SModelAdapter {
     Set<SModelDescriptor> releasedModels = collectReleasedModels(changedModels, modelToOwnerMap, owner);
 
     //releasing models from released modules
-    Set<IModule> releasedModules = MPSModuleRepository.getInstance().getModelsToBeRemoved(CollectionUtil.asSet((MPSModuleOwner) owner));
+    Set<IModule> releasedModules = myModuleRepository.getModelsToBeRemoved(CollectionUtil.asSet((MPSModuleOwner) owner));
     for (IModule module : releasedModules) {
       releasedModels.addAll(collectReleasedModels(changedModels, modelToOwnerMap, module));
     }
@@ -432,7 +446,7 @@ public class SModelRepository extends SModelAdapter {
     if (modelRoot.getHandlerClass() == null) return new DefaultModelRootManager();
     String fqName = modelRoot.getHandlerClass();
     try {
-      Class cls = Class.forName(fqName, true, ClassLoaderManager.getInstance().getClassLoader());
+      Class cls = Class.forName(fqName, true, myClassLoaderManager.getClassLoader());
       return (IModelRootManager) cls.newInstance();                                       
     } catch (Exception e) {
       LOG.error(e);
