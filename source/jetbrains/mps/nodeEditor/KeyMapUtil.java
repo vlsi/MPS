@@ -24,7 +24,7 @@ public class KeyMapUtil {
     if (keyEvent.getID() != KeyEvent.KEY_PRESSED) return Collections.emptyList();
     int keyCode = keyEvent.getKeyCode();
     if (keyCode == KeyEvent.VK_CONTROL || keyCode == KeyEvent.VK_ALT || keyCode == KeyEvent.VK_SHIFT ||
-            keyCode == KeyEvent.VK_UP || keyCode == KeyEvent.VK_DOWN || keyCode == KeyEvent.VK_LEFT || keyCode == KeyEvent.VK_RIGHT ||
+            /*keyCode == KeyEvent.VK_UP || keyCode == KeyEvent.VK_DOWN || keyCode == KeyEvent.VK_LEFT || keyCode == KeyEvent.VK_RIGHT || */ //why?!
             keyCode == KeyEvent.VK_PAGE_UP || keyCode == KeyEvent.VK_PAGE_DOWN ||
             keyCode == KeyEvent.VK_BACK_SPACE) {
       return Collections.emptyList();
@@ -33,7 +33,7 @@ public class KeyMapUtil {
       // no modifiers - ignore letters/digits etc.
       char keyChar = keyEvent.getKeyChar();
       if (Character.isLetterOrDigit(keyChar) || Character.isSpaceChar(keyChar) || Character.isWhitespace(keyChar)) {
-        return Collections.emptyList();
+        return Collections.emptyList(); //wtf?!
       }
     }
 
