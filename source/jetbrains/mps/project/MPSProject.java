@@ -91,6 +91,11 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     CommandProcessor.instance().addCommandListener(myEventTranslator);
   }
 
+
+  public IContext getContext() {
+    return myContext;
+  }
+
   public void update() {
     setProjectDescriptor(getProjectDescriptor());
   }
