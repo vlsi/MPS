@@ -79,6 +79,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
         readModelsFromModules();
 
         model.setLoading(false);
+
+        myContext.init();
       }
     }, "MPS Project init");
 
@@ -309,10 +311,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
 
   @Nullable
   public <T> T getComponent(Class<T> clazz) {
-    if (clazz == EditorsPane.class) {
-      IDEProjectFrame projectFrame = getComponentSafe(IDEProjectFrame.class);
-      return (T) projectFrame.getEditorsPane();
-    }
     return myContext.get(clazz);
   }
 
