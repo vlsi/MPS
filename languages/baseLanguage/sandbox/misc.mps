@@ -337,28 +337,28 @@
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1154543420694">
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1166026058197">
           <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1166090886101">
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.MinusExpression" id="1166036659515">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.ParenthesizedExpression" id="1166112227922">
-                <node role="expression" type="jetbrains.mps.baseLanguage.DivExpression" id="1166026425341">
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1166036659516">
-                    <property name="value" value="34" />
-                  </node>
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1166026428407">
-                    <property name="value" value="4" />
-                  </node>
-                </node>
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1166036659514">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1166109285619">
-                  <property name="value" value="10" />
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1166036659518">
-                  <property name="value" value="20" />
-                </node>
-              </node>
-            </node>
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1166090887620">
               <property name="value" value="5" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParenthesizedExpression" id="1166112227922">
+              <node role="expression" type="jetbrains.mps.baseLanguage.DivExpression" id="1166026425341">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.MinusExpression" id="1166036659515">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1166036659516">
+                    <property name="value" value="34" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1166036659514">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1166109285619">
+                      <property name="value" value="10" />
+                    </node>
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1166036659518">
+                      <property name="value" value="20" />
+                    </node>
+                  </node>
+                </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1166026428407">
+                  <property name="value" value="4" />
+                </node>
+              </node>
             </node>
           </node>
         </node>

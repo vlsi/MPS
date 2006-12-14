@@ -6376,12 +6376,36 @@
         </node>
       </node>
     </node>
+    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1166113551769">
+      <property name="description" value="move closing parenthesis to the left" />
+      <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1166113551770">
+        <property name="modifiers" value="ctrl+shift" />
+        <property name="keycode" value="VK_LEFT" />
+      </node>
+      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_ExecuteFunction" id="1166113551771">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1166113551772">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1166113551773">
+            <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1166113551774">
+              <link role="classConcept" extResolveInfo="48.[Classifier]ParenthesisUtil" />
+              <link role="baseMethodDeclaration" extResolveInfo="48.static method ([Classifier]ParenthesisUtil).([StaticMethodDeclaration]moveParenthesisToTheLeftInside((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ParenthesizedExpression]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EditorContext])) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.CastExpression" id="1166113551775">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1166113551776">
+                  <link role="classifier" extResolveInfo="44.[Classifier]ParenthesizedExpression" />
+                </node>
+                <node role="expression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1166113551777" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_editorContext" id="1166113551778" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapDeclaration" id="1166110777830">
     <property name="name" value="OpenParenthesis_KeyMap" />
     <link role="applicableConcept" targetNodeId="17.1079359253375" />
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1166110801457">
-      <property name="description" value="move closing parenthesis to the left" />
+      <property name="description" value="move opening parenthesis to the left" />
       <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1166110801458">
         <property name="modifiers" value="ctrl+shift" />
         <property name="keycode" value="VK_LEFT" />
@@ -6399,6 +6423,30 @@
                 <node role="expression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1166110801465" />
               </node>
               <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_editorContext" id="1166111811556" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1166114419153">
+      <property name="description" value="move opening parenthesis to the right" />
+      <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1166114419154">
+        <property name="modifiers" value="ctrl+shift" />
+        <property name="keycode" value="VK_RIGHT" />
+      </node>
+      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_ExecuteFunction" id="1166114419155">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1166114419156">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1166114419157">
+            <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1166114419158">
+              <link role="classConcept" extResolveInfo="48.[Classifier]ParenthesisUtil" />
+              <link role="baseMethodDeclaration" extResolveInfo="48.static method ([Classifier]ParenthesisUtil).([StaticMethodDeclaration]moveParenthesisToTheRightInside((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ParenthesizedExpression]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EditorContext])) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.CastExpression" id="1166114419159">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1166114419160">
+                  <link role="classifier" extResolveInfo="44.[Classifier]ParenthesizedExpression" />
+                </node>
+                <node role="expression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1166114419161" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_editorContext" id="1166114419162" />
             </node>
           </node>
         </node>

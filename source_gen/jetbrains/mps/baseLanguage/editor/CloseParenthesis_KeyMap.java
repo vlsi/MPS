@@ -11,5 +11,6 @@ public class CloseParenthesis_KeyMap extends EditorCellKeyMap {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
     this.putAction("ctrl+shift", "VK_RIGHT", new CloseParenthesis_KeyMap_Action0());
+    this.putAction("ctrl+shift", "VK_LEFT", new CloseParenthesis_KeyMap_Action1());
   }
 }
