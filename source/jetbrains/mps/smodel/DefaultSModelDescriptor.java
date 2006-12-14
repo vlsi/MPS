@@ -50,6 +50,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
       public void modelChangedInCommand(List<SModelEvent> events) {
         if (EventUtil.isDramaticalChange(events)) {
           myLastStructuralChange = System.currentTimeMillis();
+          myFastNodeFinder = null;
           ourStructuralState++;
         }
         myLastChange = System.currentTimeMillis();

@@ -1,14 +1,14 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.project.GlobalScope;
 
 import java.util.*;
+import java.lang.ref.WeakReference;
 
 public class FastNodeFinder {
   private long myStructuralState;
-  private WeakHashMap<ConceptDeclaration, WeakSet<SNode>> myNodes = new WeakHashMap<ConceptDeclaration, WeakSet<SNode>>();
+  private WeakHashMap<ConceptDeclaration, List<WeakReference<SNode>>> myNodes = new WeakHashMap<ConceptDeclaration, List<WeakReference<SNode>>>();
 
   public FastNodeFinder(SModelDescriptor modelDescriptor) {
     myStructuralState = modelDescriptor.structuralState();
@@ -22,18 +22,23 @@ public class FastNodeFinder {
     return myStructuralState;
   }
 
-  public Set<SNode> getNodes(Class<? extends SNode> cls) {
-    Set<SNode> result = new HashSet<SNode>();
+  public List<SNode> getNodes(Class<? extends SNode> cls) {
+    List<SNode> result = new ArrayList<SNode>();
     ConceptDeclaration concept = SModelUtil.findConceptDeclaration(cls, GlobalScope.getInstance());
     if (myNodes.containsKey(concept)) {
-      result.addAll(getSetFor(concept));
+      for (WeakReference<SNode> n : getListFor(concept)) {
+        SNode node = n.get();
+        if (node != null) {
+          result.add(node);
+        }
+      }
     }
     return result;
   }
 
-  private WeakSet<SNode> getSetFor(ConceptDeclaration conceptDeclaration) {
+  private List<WeakReference<SNode>> getListFor(ConceptDeclaration conceptDeclaration) {
     if (!myNodes.containsKey(conceptDeclaration)) {
-      myNodes.put(conceptDeclaration, new WeakSet<SNode>());
+      myNodes.put(conceptDeclaration, new ArrayList<WeakReference<SNode>>());
     }
     return myNodes.get(conceptDeclaration);
   }
@@ -45,7 +50,7 @@ public class FastNodeFinder {
 
     ConceptDeclaration concept = SModelUtil.findConceptDeclaration(root, GlobalScope.getInstance());
     while (concept != null) {
-      getSetFor(concept).add(root);
+      getListFor(concept).add(new WeakReference<SNode>(root));
       concept = concept.getExtends();
     }
   }
