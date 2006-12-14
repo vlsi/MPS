@@ -8503,33 +8503,14 @@
                 </node>
               </node>
             </node>
-            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1166041296460">
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1166062944696">
+              <property name="text" value=":" />
               <property name="drawBorder" value="false" />
-              <property name="selectable" value="false" />
-              <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1166041316119">
-                <property name="text" value=":" />
-                <property name="drawBorder" value="false" />
-              </node>
-              <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1166041324855">
-                <property name="drawBorder" value="false" />
-                <property name="noTargetText" value="&lt;any feature&gt;" />
-                <link role="relationDeclaration" targetNodeId="2.1166040865497" />
-              </node>
-              <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1166041353762">
-                <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1166041353763">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1166041377350">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1166041392746">
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1166041397421" />
-                      <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1166041384525">
-                        <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1166041382102" />
-                        <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1166049398035">
-                          <link role="link" targetNodeId="2.1166049300910" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1166062944697">
+              <property name="drawBorder" value="false" />
+              <property name="noTargetText" value="&lt;any feature&gt;" />
+              <link role="relationDeclaration" targetNodeId="2.1166040865497" />
             </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1166041555819">
@@ -8622,33 +8603,6 @@
               <link role="relationDeclaration" targetNodeId="3.1078489098626" />
             </node>
           </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.CellMenuComponent" id="1166061642996">
-    <property name="name" value="AAAAAAAAAA" />
-    <link role="conceptDeclaration" targetNodeId="3.1133920641626" />
-    <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1166061642997">
-      <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_Generic_Group" id="1166061650670">
-        <node role="parametersFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_AbstractGroup_Query" id="1166061650671">
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1166061650672">
-            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1166061697214">
-              <node role="expression" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1166061743026">
-                <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListCreatorWithInit" id="1166061745294">
-                  <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1166061749889">
-                    <link role="classifier" extResolveInfo="14.[Classifier]String" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="handlerFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_Generic_Group_Handler" id="1166061650673">
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1166061650674" />
-        </node>
-        <node role="parameterObjectType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1166061694694">
-          <link role="classifier" extResolveInfo="14.[Classifier]String" />
         </node>
       </node>
     </node>
