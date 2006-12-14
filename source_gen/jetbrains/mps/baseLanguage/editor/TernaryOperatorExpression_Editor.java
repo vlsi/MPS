@@ -38,18 +38,6 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
-    editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1163668954406");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
@@ -62,38 +50,17 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createIfTrueCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
-    EditorCell editorCell = provider.createEditorCell(context);
+  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    if(editorCell instanceof EditorCell_Label) {
-      EditorCell_Label editorCellLabel = (EditorCell_Label)editorCell;
-      editorCellLabel.setEditable(true);
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1163668956502");
+    editorCell.putUserObject(EditorCell.CELL_ID, "1163668954406");
     editorCell.setLayoutConstraint("");
     return editorCell;
-  }
-  public EditorCell createIfTrueCell(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("ifTrue");
-    provider.setNoTargetText("");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createIfTrueCellinternal(context, node, provider);
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else 
-    return cellWithRole;
   }
   public EditorCell createConditionCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
@@ -152,6 +119,39 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createIfFalseCellinternal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if(attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else 
+    return cellWithRole;
+  }
+  public EditorCell createIfTrueCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(null);
+    EditorCell editorCell = provider.createEditorCell(context);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    if(editorCell instanceof EditorCell_Label) {
+      EditorCell_Label editorCellLabel = (EditorCell_Label)editorCell;
+      editorCellLabel.setEditable(true);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.putUserObject(EditorCell.CELL_ID, "1163668956502");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createIfTrueCell(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+    provider.setRole("ifTrue");
+    provider.setNoTargetText("");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(false);
+    EditorCell cellWithRole = this.createIfTrueCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if(attributeConcept != null) {

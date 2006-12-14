@@ -63,18 +63,6 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
-    editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1140569244933");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
@@ -84,6 +72,18 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.CELL_ID, "1140569244935");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1140569244933");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -102,39 +102,6 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.ROLE, this.myParameterListHandler.getElementRole());
     editorCell.setLayoutConstraint("");
     return editorCell;
-  }
-  public EditorCell createClassifierReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new ClassifierType_Editor_classifier_InlineComponent());
-    EditorCell editorCell = provider.createEditorCell(context);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    if(editorCell instanceof EditorCell_Label) {
-      EditorCell_Label editorCellLabel = (EditorCell_Label)editorCell;
-      editorCellLabel.setEditable(true);
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1140569208432");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
-  public EditorCell createClassifierReferenceCell(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, context);
-    provider.setRole("classifier");
-    provider.setNoTargetText("<no classifier>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createClassifierReferenceCellinternal(context, node, provider);
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else 
-    return cellWithRole;
   }
   public EditorCell createClassifierReferenceCell1internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
@@ -160,6 +127,39 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createClassifierReferenceCell1internal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if(attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else 
+    return cellWithRole;
+  }
+  public EditorCell createClassifierReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(new ClassifierType_Editor_classifier_InlineComponent());
+    EditorCell editorCell = provider.createEditorCell(context);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    if(editorCell instanceof EditorCell_Label) {
+      EditorCell_Label editorCellLabel = (EditorCell_Label)editorCell;
+      editorCellLabel.setEditable(true);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.putUserObject(EditorCell.CELL_ID, "1140569208432");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createClassifierReferenceCell(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, context);
+    provider.setRole("classifier");
+    provider.setNoTargetText("<no classifier>");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(false);
+    EditorCell cellWithRole = this.createClassifierReferenceCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if(attributeConcept != null) {

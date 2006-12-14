@@ -13,10 +13,10 @@ import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
-import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 
 public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
 
@@ -74,7 +74,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createTypeCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createNameCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -87,17 +87,17 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1075303160502");
+    editorCell.putUserObject(EditorCell.CELL_ID, "1075303160503");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createTypeCell(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("type");
-    provider.setNoTargetText("<no type>");
+  public EditorCell createNameCell(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, context);
+    provider.setRole("name");
+    provider.setNoTargetText("<no name>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createTypeCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if(attributeConcept != null) {
@@ -140,7 +140,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     } else 
     return cellWithRole;
   }
-  public EditorCell createNameCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createTypeCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -153,17 +153,17 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1075303160503");
+    editorCell.putUserObject(EditorCell.CELL_ID, "1075303160502");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createNameCell(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("name");
-    provider.setNoTargetText("<no name>");
+  public EditorCell createTypeCell(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+    provider.setRole("type");
+    provider.setNoTargetText("<no type>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.createTypeCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if(attributeConcept != null) {

@@ -30,8 +30,8 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
   public EditorCell createInspectedCell(EditorContext context, SNode node) {
     return this.createColumnCell(context, node);
   }
-  public EditorCell createRowCell2(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+  public EditorCell createColumnCell(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
@@ -39,9 +39,8 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell3(context, node, "Error message : "));
-    editorCell.addEditorCell(this.createMessageCell1(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1160998963757");
+    editorCell.addEditorCell(this.createRowCell2(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1160998960176");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -60,8 +59,8 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createColumnCell(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+  public EditorCell createRowCell2(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
@@ -69,8 +68,9 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createRowCell2(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1160998960176");
+    editorCell.addEditorCell(this.createConstantCell3(context, node, "Error message : "));
+    editorCell.addEditorCell(this.createMessageCell1(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1160998963757");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -105,7 +105,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -113,8 +113,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1160998932010");
+    editorCell.putUserObject(EditorCell.CELL_ID, "1160998953485");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -130,7 +129,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -138,42 +137,10 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1160998953485");
+    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1160998932010");
     editorCell.setLayoutConstraint("");
     return editorCell;
-  }
-  public EditorCell createMessageCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
-    EditorCell editorCell = provider.createEditorCell(context);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    if(editorCell instanceof EditorCell_Label) {
-      EditorCell_Label editorCellLabel = (EditorCell_Label)editorCell;
-      editorCellLabel.setEditable(true);
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1160998956472");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
-  public EditorCell createMessageCell(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("message");
-    provider.setNoTargetText("");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createMessageCellinternal(context, node, provider);
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else 
-    return cellWithRole;
   }
   public EditorCell createConditionCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
@@ -232,6 +199,39 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createMessageCell1internal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if(attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else 
+    return cellWithRole;
+  }
+  public EditorCell createMessageCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(null);
+    EditorCell editorCell = provider.createEditorCell(context);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    if(editorCell instanceof EditorCell_Label) {
+      EditorCell_Label editorCellLabel = (EditorCell_Label)editorCell;
+      editorCellLabel.setEditable(true);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.putUserObject(EditorCell.CELL_ID, "1160998956472");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createMessageCell(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+    provider.setRole("message");
+    provider.setNoTargetText("");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(false);
+    EditorCell cellWithRole = this.createMessageCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if(attributeConcept != null) {
