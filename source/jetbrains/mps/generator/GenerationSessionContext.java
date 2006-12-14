@@ -8,6 +8,8 @@ import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.projectLanguage.ModuleDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Condition;
+import jetbrains.mps.transformation.TLBase.MappingConfiguration;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -23,19 +25,37 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private IOperationContext myInvocationContext;
   private TransientModule myTransientModule;
   private Language myTargetLanguage;
-  private Set<String> myExcludedNamespaces = new HashSet<String>();
 
   private Map<Object, Object> myUserObjects = new HashMap<Object, Object>();
+  private Set<MappingConfiguration> myCustomMappingConfigurations;
+  private Set<MappingConfiguration> myMappingConfigurations;
 
   // these objects survive through all steps of generation
   private TraceMap myTraceMap = new TraceMap();
   private Set<String> myUsedNames = new HashSet<String>();
 
-  public GenerationSessionContext(Language targetLanguage, SModel sourceModel, IOperationContext invocationContext) {
+
+  public GenerationSessionContext(Language targetLanguage,
+                                  SModel sourceModel,
+                                  IOperationContext invocationContext) {
+    this(targetLanguage, sourceModel, invocationContext, null);
+  }
+
+  public GenerationSessionContext(Language targetLanguage,
+                                  SModel sourceModel,
+                                  IOperationContext invocationContext,
+                                  Set<MappingConfiguration> configs) {
     myTargetLanguage = targetLanguage;
     myInvocationContext = invocationContext;
     myGeneratorModules = getGeneratorModules(sourceModel);
     myTransientModule = new TransientModule(invocationContext.getModule(), myGeneratorModules);
+
+    if (configs != null) {
+      myCustomMappingConfigurations = new HashSet<MappingConfiguration>(configs);
+    } else {
+      myCustomMappingConfigurations = null;
+    }
+
     initTemplateModels();
   }
 
@@ -46,33 +66,30 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     initTemplateModels();
   }
 
-  public void addExcludedNamespace(String name) {
-    myExcludedNamespaces.add(name);
-    initTemplateModels();
-  }
-
-  public void clearExcludes() {
-    myExcludedNamespaces.clear();
-  }
-
-
   private void initTemplateModels() {
     myTemplateModels = new LinkedList<SModelDescriptor>();
     for (Generator generatorModule : myGeneratorModules) {
       List<SModelDescriptor> templateModels = generatorModule.getOwnTemplateModels();
-
-      Iterator<SModelDescriptor> it = templateModels.iterator();
-      while (it.hasNext()) {
-        SModelDescriptor descriptor = it.next();
-        for (String x : myExcludedNamespaces) {
-          if (descriptor.getModelUID().toString().startsWith(x)) {
-            it.remove();
-          }
-        }
-      }      
-
       CollectionUtil.addAllNotPresent(templateModels, myTemplateModels);
     }
+
+    if (myCustomMappingConfigurations != null) {
+      myMappingConfigurations = new HashSet<MappingConfiguration>(myCustomMappingConfigurations);
+    } else {
+      myMappingConfigurations = new HashSet<MappingConfiguration>();
+
+      for (SModelDescriptor templateModel : myTemplateModels) {
+        myMappingConfigurations.addAll((List) SModelUtil.allNodes(templateModel.getSModel(), new Condition<SNode>() {
+          public boolean met(SNode node) {
+            return (node instanceof MappingConfiguration);
+          }
+        }));
+      }
+    }
+  }
+
+  public Set<MappingConfiguration> getMappingConfigurations() {
+    return myMappingConfigurations;
   }
 
   public <T> T getComponent(@NotNull Class<T> clazz) {

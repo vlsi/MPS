@@ -269,7 +269,17 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     if (progressMonitor.isCanceled()) throw new GenerationCanceledException();
   }
 
+
   public void generateModels(List<SModel> _sourceModels, Language targetLanguage, IOperationContext invocationContext, IGenerationType generationType, IAdaptiveProgressMonitor progress) {
+    generateModels(_sourceModels,
+            targetLanguage,
+            invocationContext,
+            generationType,
+            IGenerationScript.DEFAULT,
+            progress);
+  }
+
+  public void generateModels(List<SModel> _sourceModels, Language targetLanguage, IOperationContext invocationContext, IGenerationType generationType, IGenerationScript script, IAdaptiveProgressMonitor progress) {
 
     showMessageView();
 
@@ -373,7 +383,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         String taskName = ModelsProgressUtil.generationModelTaskName(sourceModelDescriptor);
         progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_GENERATION);
 
-        status = generationSession.generateModel(sourceModelDescriptor);
+        status = generationSession.generateModel(sourceModelDescriptor, script);
         checkMonitorCanceled(progress);
         if (status.getOutputModel() != null) {
           generationType.handleOutput(invocationContext, status, progress, outputFolder);

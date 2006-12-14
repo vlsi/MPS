@@ -18,8 +18,6 @@ public class HeaderWrapper extends JPanel {
   public static final Color ACTIVE_COLOR = new Color(120, 150, 180);
   public static final Color NOT_ACTIVE_COLOR = new Color(150, 150, 150);
 
-
-
   private JComponent myComponent;
   private JLabel myLabel  = new JLabel("", JLabel.LEFT) {
     public Dimension getMinimumSize() {
@@ -30,6 +28,11 @@ public class HeaderWrapper extends JPanel {
 
   private JButton myCloseButton;
   private JButton myMinimizeButton;
+  private PropertyChangeListener myFocusListener = new PropertyChangeListener() {
+    public void propertyChange(PropertyChangeEvent evt) {
+      updateLabel();
+    }
+  };
   
   public HeaderWrapper(String text, JComponent component) {
     this(text, component, false, false);
@@ -87,11 +90,18 @@ public class HeaderWrapper extends JPanel {
 
     updateLabel();
 
-     KeyboardFocusManager.getCurrentKeyboardFocusManager().addPropertyChangeListener(new PropertyChangeListener() {
-       public void propertyChange(PropertyChangeEvent evt) {
-         updateLabel();
-       }
-     });
+  }
+
+
+  public void addNotify() {
+    super.addNotify();
+    KeyboardFocusManager.getCurrentKeyboardFocusManager().addPropertyChangeListener(myFocusListener);
+  }
+
+
+  public void removeNotify() {
+    KeyboardFocusManager.getCurrentKeyboardFocusManager().removePropertyChangeListener(myFocusListener);
+    super.removeNotify();
   }
 
   private void setupButton(JButton button) {

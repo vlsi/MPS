@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.transformation.TLBase.MappingConfiguration;
 
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;
@@ -72,11 +73,19 @@ public class GenerationSession {
     myCurrentContext = context;
   }
 
-  public GenerationStatus generateModel(SModelDescriptor sourceModel) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+  public GenerationStatus generateModel(final SModelDescriptor sourceModel,
+                                        IGenerationScript script) throws Exception {
     GenerationStatus status;
 
-    // do model mapping
-    status = generateModel_internal(sourceModel, myTargetLanguage);
+    status = script.doGenerate(new IGenerationScriptContext() {
+      public GenerationStatus doGenerate(SModelDescriptor sm, Set<MappingConfiguration> confs) throws Exception {
+        return generateModel_internal(sm, myTargetLanguage, confs);
+      }
+
+      public SModelDescriptor getSourceModelDescriptor() {
+        return sourceModel;
+      }
+    });
 
     if (status.isError()) {
       // if ERROR - keep transient models: we need them to navigate to from error messages
@@ -85,22 +94,20 @@ public class GenerationSession {
     return status;
   }
 
-  private GenerationStatus generateModel_internal(SModelDescriptor sourceModelDescriptor, Language targetLanguage) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-    return generateModel_internal(sourceModelDescriptor, targetLanguage, new HashSet<String>());
-  }
+  private GenerationStatus generateModel_internal(SModelDescriptor sourceModelDescriptor, Language targetLanguage, Set<MappingConfiguration> mappings)
+          throws ClassNotFoundException,
+                 NoSuchMethodException,
+                 IllegalAccessException,
+                 InvocationTargetException,
+                 InstantiationException {
 
-  private GenerationStatus generateModel_internal(SModelDescriptor sourceModelDescriptor, Language targetLanguage, Set<String> excludedNamespaces) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
     SModel sourceModel = sourceModelDescriptor.getSModel();
     addProgressMessage(MessageKind.INFORMATION, "generating model \"" + sourceModel.getUID() + "\"");
     Class<? extends IModelGenerator> defaultGeneratorClass = getDefaultGeneratorClass(targetLanguage);
     addMessage(MessageKind.INFORMATION, "    default generator class: " + (defaultGeneratorClass != null ? defaultGeneratorClass.getName() : "<n/a>"));
 
     // -- replace context and create generators list
-    GenerationSessionContext context = new GenerationSessionContext(targetLanguage, sourceModel, myInvocationContext);    
-
-    for (String x : excludedNamespaces) {
-      context.addExcludedNamespace(x);
-    }
+    GenerationSessionContext context = new GenerationSessionContext(targetLanguage, sourceModel, myInvocationContext, mappings);
 
     List<Generator> generators = context.getGeneratorModules();
     if (generators.isEmpty()) {
