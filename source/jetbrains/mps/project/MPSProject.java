@@ -24,6 +24,7 @@ import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.component.IContext;
 import jetbrains.mps.component.ContextImpl;
+import jetbrains.mps.generator.GeneratorManager;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -60,7 +61,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
   private PluginManager myPluginManager = new PluginManager(this);
 
   public MPSProject(final @NotNull File projectFile) {
-    addComponent(PluginManager.class, myPluginManager);
+    myContext.register(MPSProject.class, this);
+    myContext.register(GeneratorManager.class);
 
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
@@ -69,7 +71,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
         model.setLoading(true);
         myProjectDescriptor = PersistenceUtil.loadProjectDescriptor(projectFile, model);
 
-        MPSProjects projects = ApplicationComponents.getInstance().getComponentSafe(MPSProjects.class);
+        MPSProjects projects = myContext.get(MPSProjects.class);
         projects.addProject(MPSProject.this);
 
         LOG.assertLog(myProjectDescriptor.isRoot(), "Project descriptor has to be root");
@@ -93,12 +95,9 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     setProjectDescriptor(getProjectDescriptor());
   }
 
-  public void loadPlugins() {
-    myPluginManager.reloadPlugins();
-  }
 
-  public void reloadPlugins() {
-    myPluginManager.reloadPlugins();
+  public PluginManager getPluginManager() {
+    return myPluginManager;
   }
 
   @NotNull

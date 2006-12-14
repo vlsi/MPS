@@ -47,13 +47,11 @@ public class ClassLoaderManager implements IComponentLifecycle {
 
   @Dependency
   public void setProjects(MPSProjects projects) {
-    System.out.println("set MPS projects " + projects);
     myProjects = projects;
   }
 
   @Dependency
   public void setModuleRepository(MPSModuleRepository moduleRepository) {
-    System.out.println("set module repository " + moduleRepository);
     myModuleRepository = moduleRepository;
   }
 

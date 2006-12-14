@@ -21,6 +21,7 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.MappingConfiguration;
+import jetbrains.mps.component.Dependency;
 import org.jdom.Element;
 
 import java.io.File;
@@ -49,8 +50,11 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   public static final int AMOUNT_PER_MODEL = 100;
   public static final int AMOUNT_PER_COMPILATION = 100;
 
+  public GeneratorManager() {
+  }
 
-  public GeneratorManager(MPSProject project) {
+  @Dependency
+  public void setProject(MPSProject project) {
     myProject = project;
   }
 
