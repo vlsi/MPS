@@ -37,14 +37,6 @@ public class ModuleContext extends StandaloneMPSContext {
       component = ApplicationComponents.getInstance().getComponent(clazz);
     }
 
-    if (component == null &&
-            clazz != AbstractProjectFrame.class &&
-            getComponent(AbstractProjectFrame.class) != null) {
-      AbstractProjectFrame projectFrame = getComponent(AbstractProjectFrame.class);
-
-      if (clazz == EditorsPane.class) return (T) projectFrame.getEditorsPane();
-    }
-
     if (component == null && clazz != ToolsPane.class && getComponent(ToolsPane.class) != null) {
       ToolsPane toolsPane = getComponent(ToolsPane.class);
 
