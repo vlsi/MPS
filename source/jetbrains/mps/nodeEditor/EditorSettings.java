@@ -9,6 +9,7 @@ import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.IntegerValueDocumentFilter;
+import jetbrains.mps.component.Dependency;
 
 import javax.swing.*;
 import javax.swing.Timer;
@@ -34,6 +35,14 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
   private @Externalizable Color mySelectionColor = new Color(0, 200, 255, 35);
   private @Externalizable Color myRangeSelectionColor = new Color(255, 0, 255, 35);
   private @Externalizable boolean myUseLegacyTypesystem = true;
+
+  private CaretBlinker myCaretBlinker;
+
+
+  @Dependency
+  public void setCaretBlinker(CaretBlinker caretBlinker) {
+    myCaretBlinker = caretBlinker;
+  }
 
   public Font getDefaultEditorFont() {
     return myFont;
@@ -222,7 +231,7 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
           myTimer.setDelay(getBlinkingPeriod());
         }
       };
-      myTimer = new Timer(CaretBlinker.getInstance().getCaretBlinkingRateTimeMillis(), listener);
+      myTimer = new Timer(myCaretBlinker.getCaretBlinkingRateTimeMillis(), listener);
 
       myEditorSettingsPanel.add(panel, BorderLayout.NORTH);
       myTimer.start();

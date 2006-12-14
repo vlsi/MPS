@@ -159,8 +159,7 @@ public class FindUsagesManager {
 
     List<ConceptDeclaration> list = new LinkedList<ConceptDeclaration>();
 
-    FindUsagesManager manager = FindUsagesManager.getInstance();
-    Set<SReference> usages = manager.findUsages(conceptDeclaration, new FilterScope(manager.globalScope()) {
+    Set<SReference> usages = findUsages(conceptDeclaration, new FilterScope(globalScope()) {
       protected boolean accept(SModelDescriptor descriptor) {
         return descriptor.getModelUID().getShortName().equals("structure");
       }
