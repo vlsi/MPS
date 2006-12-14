@@ -21,6 +21,8 @@ import java.io.File;
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Igoor
@@ -74,7 +76,7 @@ public class GenerationSession {
   }
 
   public GenerationStatus generateModel(final SModelDescriptor sourceModel,
-                                        IGenerationScript script) throws Exception {
+                                        final IGenerationScript script) throws Exception {
     GenerationStatus status;
 
     status = script.doGenerate(new IGenerationScriptContext() {
