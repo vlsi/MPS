@@ -22,6 +22,8 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IDisposable;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.component.IContext;
+import jetbrains.mps.component.ContextImpl;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -51,7 +53,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
   public static final String COMPONENT = "component";
   public static final String CLASS = "class";
 
-  private Map<Class, Object> myComponents = new HashMap<Class, Object>();
+  private IContext myContext = new ContextImpl(ApplicationComponents.getInstance().getContext());
+
   private List<IMPSProjectCommandListener> myProjectCommandListeners = new ArrayList<IMPSProjectCommandListener>();
   private ProjectEventTranslator myEventTranslator;
   private PluginManager myPluginManager = new PluginManager(this);
@@ -297,11 +300,11 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
 
   @NotNull
   public List<Object> getComponents() {
-    return new ArrayList<Object>(myComponents.values());
+    return new ArrayList<Object>(myContext.getComponents());
   }
 
   public boolean containsComponent(Class<?> cls) {
-    return myComponents.containsKey(cls);
+    return myContext.getComponentInterfaces().contains(cls);
   }
 
   @Nullable
@@ -310,9 +313,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
       IDEProjectFrame projectFrame = getComponentSafe(IDEProjectFrame.class);
       return (T) projectFrame.getEditorsPane();
     }
-    T result = (T) myComponents.get(clazz);
-//    assert result != null;
-    return result;
+    return myContext.get(clazz);
   }
 
   @NotNull
@@ -323,11 +324,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
   }
 
   public void addComponent(@NotNull Class interfaceClass, @NotNull Object instance) {
-    myComponents.put(interfaceClass, instance);
-  }
-
-  public void removeComponent(@NotNull Class interfaceClass) {
-    myComponents.remove(interfaceClass);
+    myContext.register(interfaceClass, instance);
   }
 
   @NotNull
@@ -410,8 +407,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
           myWorkspaceFile.createNewFile();
         }
         Element root = new Element(COMPONENTS);
-        for (Class cls : myComponents.keySet()) {
-          Object component = myComponents.get(cls);
+        for (Class cls : myContext.getComponentInterfaces()) {
+          Object component = myContext.get(cls);
           if (component instanceof IExternalizableComponent) {
             Element componentElement = new Element(COMPONENT);
             componentElement.setAttribute(CLASS, cls.getName());
