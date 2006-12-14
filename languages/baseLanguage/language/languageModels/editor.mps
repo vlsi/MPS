@@ -3818,34 +3818,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1147776583599">
-    <property name="parseable" value="true" />
-    <link role="conceptDeclaration" targetNodeId="17.1080120340718" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1147776585550">
-      <property name="drawBorder" value="false" />
-      <link role="keyMap" targetNodeId="1081427357000" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776585551">
-        <property name="drawBorder" value="false" />
-        <link role="relationDeclaration" targetNodeId="17.1081773367580" />
-        <link role="actionMap" targetNodeId="1140734304236" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1147776585552">
-        <property name="editable" value="true" />
-        <property name="text" value="&amp;&amp;" />
-        <property name="drawBorder" value="false" />
-        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164916704166">
-          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1164916707683">
-            <link role="replacementConcept" targetNodeId="17.1081773326031" />
-          </node>
-        </node>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776585553">
-        <property name="drawBorder" value="false" />
-        <link role="relationDeclaration" targetNodeId="17.1081773367579" />
-        <link role="actionMap" targetNodeId="1140734681122" />
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1147776602992">
     <property name="parseable" value="true" />
     <link role="conceptDeclaration" targetNodeId="17.1068581242869" />
@@ -6334,6 +6306,42 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1166063928779">
+    <link role="conceptDeclaration" targetNodeId="17.1081773326031" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1166063955820">
+      <property name="drawBorder" value="false" />
+      <link role="keyMap" targetNodeId="1081427357000" resolveInfo="Expression_KeyMap" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1166063955821">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="17.1081773367580" />
+        <link role="actionMap" targetNodeId="1140734304236" resolveInfo="BinaryOperation_LeftArgument_Actions" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_ConceptProperty" id="1166063984223">
+        <property name="editable" value="true" />
+        <property name="selectable" value="true" />
+        <link role="relationDeclaration" targetNodeId="18.1137473891462" />
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1166064618699">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_CellMenuComponent" id="1166064621137">
+            <link role="cellMenuComponent" targetNodeId="1166064517590" resolveInfo="BinaryOperation_symbolCellMenu" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1166063955825">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="17.1081773367579" />
+        <link role="actionMap" targetNodeId="1140734681122" resolveInfo="BinaryOperation_RightArgument_Actions" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.CellMenuComponent" id="1166064517590">
+    <property name="name" value="BinaryOperation_Symbol_Menu" />
+    <link role="conceptDeclaration" targetNodeId="17.1081773326031" />
+    <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1166064517591">
+      <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1166064601526">
+        <link role="replacementConcept" targetNodeId="17.1081773326031" />
       </node>
     </node>
   </node>

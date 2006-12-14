@@ -64,7 +64,18 @@
     <property name="name" value="Main" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.ConstructorDeclaration" id="1159200669329">
       <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1159200669330" />
-      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1159200669331" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1159200669331">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1166064430107">
+          <node role="expression" type="jetbrains.mps.baseLanguage.AndExpression" id="1166065435459">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1166064430108">
+              <property name="value" value="10" />
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1166065454980">
+              <property name="value" value="29" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1158972312230">
       <property name="name" value="aaaaaa" />
