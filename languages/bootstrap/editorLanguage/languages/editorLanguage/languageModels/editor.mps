@@ -8491,7 +8491,7 @@
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1166041234873">
               <property name="drawBorder" value="false" />
-              <property name="noTargetText" value="&lt;any concept&gt;" />
+              <property name="noTargetText" value="&lt;choose concept&gt;" />
               <link role="relationDeclaration" targetNodeId="2.1166049300910" />
               <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1166041234874">
                 <link role="conceptDeclaration" targetNodeId="8.1071489090640" />
@@ -8622,6 +8622,33 @@
               <link role="relationDeclaration" targetNodeId="3.1078489098626" />
             </node>
           </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.CellMenuComponent" id="1166061642996">
+    <property name="name" value="AAAAAAAAAA" />
+    <link role="conceptDeclaration" targetNodeId="3.1133920641626" />
+    <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1166061642997">
+      <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_Generic_Group" id="1166061650670">
+        <node role="parametersFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_AbstractGroup_Query" id="1166061650671">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1166061650672">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1166061697214">
+              <node role="expression" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1166061743026">
+                <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListCreatorWithInit" id="1166061745294">
+                  <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1166061749889">
+                    <link role="classifier" extResolveInfo="14.[Classifier]String" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="handlerFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_Generic_Group_Handler" id="1166061650673">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1166061650674" />
+        </node>
+        <node role="parameterObjectType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1166061694694">
+          <link role="classifier" extResolveInfo="14.[Classifier]String" />
         </node>
       </node>
     </node>
