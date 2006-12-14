@@ -1111,7 +1111,6 @@
   </component>
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/projects/BLFeatures/BLFeatures.iml" filepath="$PROJECT_DIR$/projects/BLFeatures/BLFeatures.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/DataNavigationQueryFramework/BerkeleyDbEntityStore/BerkeleyDbEntityStore.iml" filepath="$PROJECT_DIR$/projects/DataNavigationQueryFramework/BerkeleyDbEntityStore/BerkeleyDbEntityStore.iml" group="Projects/DataNavigationQueryFramework" />
       <module fileurl="file://$PROJECT_DIR$/projects/DataNavigationQuery/DataNavigationQuery.iml" filepath="$PROJECT_DIR$/projects/DataNavigationQuery/DataNavigationQuery.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/MPS.iml" filepath="$PROJECT_DIR$/MPS.iml" />
@@ -1132,7 +1131,9 @@
       <module fileurl="file://$PROJECT_DIR$/projects/DataNavigationQueryFramework/TransientDbEntityStore/TransientDbEntityStore.iml" filepath="$PROJECT_DIR$/projects/DataNavigationQueryFramework/TransientDbEntityStore/TransientDbEntityStore.iml" group="Projects/DataNavigationQueryFramework" />
       <module fileurl="file://$PROJECT_DIR$/projects/XmlReader/XmlReader.iml" filepath="$PROJECT_DIR$/projects/XmlReader/XmlReader.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/agreement/agreement.iml" filepath="$PROJECT_DIR$/projects/agreement/agreement.iml" group="Projects" />
+      <module fileurl="file://$PROJECT_DIR$/projects/baseLanguageExt/dev/baseLanguageExt.iml" filepath="$PROJECT_DIR$/projects/baseLanguageExt/dev/baseLanguageExt.iml" group="Projects/BaseLanguageExt" />
       <module fileurl="file://$PROJECT_DIR$/projects/Charisma/charisma.iml" filepath="$PROJECT_DIR$/projects/Charisma/charisma.iml" group="Projects" />
+      <module fileurl="file://$PROJECT_DIR$/projects/baseLanguageExt/collections-runtime/collections-runtime.iml" filepath="$PROJECT_DIR$/projects/baseLanguageExt/collections-runtime/collections-runtime.iml" group="Projects/BaseLanguageExt" />
       <module fileurl="file://$PROJECT_DIR$/projects/DataNavigationQueryFramework/core/core.iml" filepath="$PROJECT_DIR$/projects/DataNavigationQueryFramework/core/core.iml" group="Projects/DataNavigationQueryFramework" />
       <module fileurl="file://$PROJECT_DIR$/projects/webrSamples/depot/depot.iml" filepath="$PROJECT_DIR$/projects/webrSamples/depot/depot.iml" group="Projects/WebrSamples" />
       <module fileurl="file://$PROJECT_DIR$/projects/fixedLengthReader/fixedLengthReader.iml" filepath="$PROJECT_DIR$/projects/fixedLengthReader/fixedLengthReader.iml" group="Projects" />
@@ -1192,7 +1193,7 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello_dnq" />
+        <option name="MODULE_NAME" value="hello" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1202,7 +1203,7 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="hello" />
+        <option name="MODULE_NAME" value="webrSamples_hello_dnq" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1278,7 +1279,7 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello_dnq" />
+        <option name="MODULE_NAME" value="hello" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1288,7 +1289,7 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="hello" />
+        <option name="MODULE_NAME" value="webrSamples_hello_dnq" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1364,8 +1365,8 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello_dnq" />
-        <option name="DEPLOY" value="false" />
+        <option name="MODULE_NAME" value="hello" />
+        <option name="DEPLOY" value="true" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
@@ -1374,8 +1375,8 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="hello" />
-        <option name="DEPLOY" value="true" />
+        <option name="MODULE_NAME" value="webrSamples_hello_dnq" />
+        <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
@@ -1450,8 +1451,8 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello_dnq" />
-        <option name="DEPLOY" value="true" />
+        <option name="MODULE_NAME" value="charisma" />
+        <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
@@ -1460,8 +1461,8 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="charisma" />
-        <option name="DEPLOY" value="false" />
+        <option name="MODULE_NAME" value="webrSamples_hello_dnq" />
+        <option name="DEPLOY" value="true" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
@@ -1536,7 +1537,7 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="charisma" />
+        <option name="MODULE_NAME" value="webrSamples_hello_dnq" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1546,7 +1547,7 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello_dnq" />
+        <option name="MODULE_NAME" value="charisma" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1622,8 +1623,8 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="charisma" />
-        <option name="DEPLOY" value="true" />
+        <option name="MODULE_NAME" value="webrSamples_hello_dnq" />
+        <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
@@ -1632,8 +1633,8 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello_dnq" />
-        <option name="DEPLOY" value="false" />
+        <option name="MODULE_NAME" value="charisma" />
+        <option name="DEPLOY" value="true" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
@@ -1698,8 +1699,8 @@
   </component>
   <component name="StarteamVcsAdapter" />
   <component name="VssVcs">
-    <SourceSafePersistencyRemovedFolder>$PROJECT_DIR$/source/jetbrains/mps/generator/types</SourceSafePersistencyRemovedFolder>
     <SourceSafePersistencyRemovedFolder>$PROJECT_DIR$/projects/SemanticFunctions/source/jetbrains/naturalLanguageDescription/scope</SourceSafePersistencyRemovedFolder>
+    <SourceSafePersistencyRemovedFolder>$PROJECT_DIR$/source/jetbrains/mps/generator/types</SourceSafePersistencyRemovedFolder>
   </component>
   <component name="com.intellij.jsf.UserDefinedFacesConfigs">
     <option name="USER_DEFINED_CONFIGS">
