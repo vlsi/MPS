@@ -87,6 +87,10 @@ public class GenerationSession {
       public SModelDescriptor getSourceModelDescriptor() {
         return sourceModel;
       }
+
+      public IOperationContext getOperationContext() {
+        return myInvocationContext;
+      }
     });
 
     if (status.isError()) {
