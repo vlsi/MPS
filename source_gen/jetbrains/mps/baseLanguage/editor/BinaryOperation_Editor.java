@@ -86,7 +86,7 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new BinaryOperation_component_cellMenu()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new BinaryOperation_replaceWith_BinaryOperation_cellMenu()}));
     editorCell.putUserObject(EditorCell.CELL_ID, "1166063984223");
     editorCell.setLayoutConstraint("");
     return editorCell;
