@@ -35,8 +35,14 @@ public class ModelConstraintsManager {
   private Map<String, INodeReferentSearchScopeProvider> myNodeReferentSearchScopeProvidersMap = new HashMap<String, INodeReferentSearchScopeProvider>();
   private Map<String, INodeReferentSearchScopeProvider> myNodeDefaultSearchScopeProvidersMap = new HashMap<String, INodeReferentSearchScopeProvider>();
 
-  public ModelConstraintsManager() {
+  private ClassLoaderManager myClassLoaderManager;
 
+  public ModelConstraintsManager() {
+  }
+
+  @Dependency
+  public void setClassLoaderManager(ClassLoaderManager classLoaderManager) {
+    myClassLoaderManager = classLoaderManager;
   }
 
   @Dependency
@@ -283,11 +289,11 @@ public class ModelConstraintsManager {
   private void loadConstraints(String languageNamespace, List<IModelConstraints> loadedConstraints) {
     // load constraints
     String packageName = languageNamespace + ".constraints";
-    IClassPathItem classPathItem = ClassLoaderManager.getInstance().getClassPathItem();
+    IClassPathItem classPathItem = myClassLoaderManager.getClassPathItem();
     Set<String> availableClasses = classPathItem.getAvailableClasses(packageName);
     for (String shortClassName : availableClasses) {
       try {
-        ClassLoader classLoader = ClassLoaderManager.getInstance().getClassLoader();
+        ClassLoader classLoader = myClassLoaderManager.getClassLoader();
         Class constraintsClass = Class.forName(packageName + "." + shortClassName, true, classLoader);
         if (IModelConstraints.class.isAssignableFrom(constraintsClass)) {
           IModelConstraints constraints = (IModelConstraints) constraintsClass.newInstance();

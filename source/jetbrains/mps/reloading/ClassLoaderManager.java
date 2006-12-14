@@ -25,6 +25,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
   private static ClassLoaderManager ourInstance;
   private CompositeClassPathItem myItems;
   private MPSProjects myProjects;
+  private MPSModuleRepository myModuleRepository;
 
   public static ClassLoaderManager getInstance() {
     if (ourInstance == null) ourInstance = new ClassLoaderManager();
@@ -48,6 +49,11 @@ public class ClassLoaderManager implements IComponentLifecycle {
   @Dependency
   public void setProjects(MPSProjects projects) {
     myProjects = projects;
+  }
+
+  @Dependency
+  public void setModuleRepository(MPSModuleRepository moduleRepository) {
+    myModuleRepository = moduleRepository;
   }
 
   public void setUseSystemClassLoader(boolean useSystemClassLoader) {
@@ -108,9 +114,11 @@ public class ClassLoaderManager implements IComponentLifecycle {
       addClassPathItem(s);
     }
 
-    for (IModule l : MPSModuleRepository.getInstance().getAllModules()) {
-      for (String s : l.getClassPathItems()) {
-        addClassPathItem(s);
+    if (myModuleRepository != null) {
+      for (IModule l : myModuleRepository.getAllModules()) {
+        for (String s : l.getClassPathItems()) {
+          addClassPathItem(s);
+        }
       }
     }
 
@@ -151,6 +159,10 @@ public class ClassLoaderManager implements IComponentLifecycle {
   }
 
   public MPSClassLoader getMPSClassLoader() {
+    if (myClassLoader == null) {
+      updateClassPath();
+    }
+
     if (myClassLoader instanceof MPSClassLoader) return (MPSClassLoader) myClassLoader;
     return null;
   }
