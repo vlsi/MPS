@@ -6,6 +6,7 @@ import jetbrains.mps.formulaLanguage.evaluator.Omega;
 import jetbrains.mps.helgins.RuntimeErrorType;
 import jetbrains.mps.helgins.inference.Interpretator;
 import jetbrains.mps.helgins.inference.SubtypingManager;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 
@@ -33,9 +34,9 @@ public class Queries {
     }
     SModelDescriptor helginsModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.baseLanguage.helgins"));
     assert helginsModelDescriptor != null;
-    SModel runtimeTypesModel = Interpretator.getRuntimeTypesModel();
+    SModel runtimeTypesModel = TypeChecker.getInstance().getRuntimeTypesModel();
     Set<? extends SNode> types = CollectionUtil.asSet(leftType, rightType);
-    Set<SNode> lowestCommonSupertypes = SubtypingManager.leastCommonSupertypes(types);
+    Set<SNode> lowestCommonSupertypes = TypeChecker.getInstance().getSubtypingManager().leastCommonSupertypes(types);
 
     if (mayBeString) {
       SModelDescriptor javaLangJavaStubModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("java.lang@java_stub"));

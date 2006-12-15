@@ -1,8 +1,11 @@
 package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.helgins.*;
+import jetbrains.mps.helgins.evaluator.QuotationEvaluator;
+import jetbrains.mps.helgins.evaluator.CopyEvaluator;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.refactoring.CopyUtil;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
@@ -38,22 +41,69 @@ public class TypeChecker {
   private Set<SNode> myCheckedNodes = new HashSet<SNode>();
   private WeakHashMap<SNode, String> myNodesWithErrors = new WeakHashMap<SNode, String>();
 
-  private TypeChecker() {
+  private ContextsManager myContextsManager;
+  private EquationManager myEquationManager;
+  private TypeVariablesManager myTypeVariablesManager;
+  private Interpretator myInterpretator;
+  private SubtypingManager mySubtypingManager;
+  private AdaptationManager myAdaptationManager;
+  private QuotationEvaluator myQuotationEvaluator;
+  private CopyEvaluator myCopyEvaluator;
+
+  public TypeChecker() {
+    myContextsManager = new ContextsManager(this);
+    myEquationManager = new EquationManager(this);
+    myInterpretator = new Interpretator(this);
+    myTypeVariablesManager = new TypeVariablesManager(this);
+    mySubtypingManager = new SubtypingManager(this);
+    myAdaptationManager = new AdaptationManager(this);
+    myQuotationEvaluator = new QuotationEvaluator(this);
+    myCopyEvaluator = new CopyEvaluator(this);
   }
 
-  private static TypeChecker ourInstance = new TypeChecker();
-
   public static TypeChecker getInstance() {
-    return ourInstance;
+    return ApplicationComponents.getInstance().getComponent(TypeChecker.class);
+  }
+
+  public ContextsManager getContextsManager() {
+    return myContextsManager;
+  }
+
+  public EquationManager getEquationManager() {
+    return myEquationManager;
+  }
+
+  public TypeVariablesManager getTypeVariablesManager() {
+    return myTypeVariablesManager;
+  }
+
+  public SubtypingManager getSubtypingManager() {
+    return mySubtypingManager;
+  }
+
+  public AdaptationManager  getAdaptationManager() {
+    return myAdaptationManager;
+  }
+
+  public Interpretator getInterpretator() {
+    return myInterpretator;
+  }
+
+  public QuotationEvaluator getQuotationEvaluator() {
+    return myQuotationEvaluator;
+  }
+
+  public CopyEvaluator getCopyEvaluator() {
+    return myCopyEvaluator;
   }
 
   public void clear() {
-    ContextsManager.getInstance().clear();
-    EquationManager.getInstance().clear();
-    TypeVariablesManager.getInstance().clearVariables();
-    Interpretator.clear();
-    SubtypingManager.getInstance().clear();
-    AdaptationManager.getInstance().clear();
+    myAdaptationManager.clear();
+    myEquationManager.clear();
+    myTypeVariablesManager.clearVariables();
+    myInterpretator.clear();
+    mySubtypingManager.clear();
+    myAdaptationManager.clear();
     myRules.clear();
     myCheckedNodes.clear();
     myNodesWithErrors.clear();
@@ -80,16 +130,16 @@ public class TypeChecker {
       //register contexts
       for (ContextDeclaration contextDeclaration : typesModel.getRoots(ContextDeclaration.class)) {
         if (contextDeclaration.getMain()) {
-          if (ContextsManager.getInstance().isMainContextRegistered()) continue;
-          ContextsManager.getInstance().registerMainContext(contextDeclaration.getName());
+          if (myContextsManager.isMainContextRegistered()) continue;
+          myContextsManager.registerMainContext(contextDeclaration.getName());
         } else {
-          ContextsManager.getInstance().registerNewContext(contextDeclaration.getName());
+          myContextsManager.registerNewContext(contextDeclaration.getName());
         }
       }
 
       //register global varsets
       for (VariableSetDeclaration varset : typesModel.getRoots(VariableSetDeclaration.class)) {
-        TypeVariablesManager.getInstance().registerNewVarset(varset);
+        myTypeVariablesManager.registerNewVarset(varset);
       }
 
       // load rules
@@ -98,26 +148,26 @@ public class TypeChecker {
       }
 
       // load subtyping rules
-      SubtypingManager.getInstance().initiate(typesModel);
+      mySubtypingManager.initiate(typesModel);
 
       // load adaptation rules
-      AdaptationManager.getInstance().initiate(typesModel);
+      myAdaptationManager.initiate(typesModel);
     }
 
     // check types
     doCheckTypes(root);
 
     // solve residual inequations
-    EquationManager.getInstance().solveInequations();
+    myEquationManager.solveInequations();
 
     // main context
-    Set<Pair<SNode, SNode>> mainContext = ContextsManager.getInstance().getMainContext();
+    Set<Pair<SNode, SNode>> mainContext = myContextsManager.getMainContext();
 
     // setting types to nodes
     for (Pair<SNode, SNode> contextEntry : mainContext) {
       SNode term = contextEntry.o1;
       if (term == null) continue;
-      SNode type = expandType(contextEntry.o2, Interpretator.getRuntimeTypesModel());
+      SNode type = expandType(contextEntry.o2, myInterpretator.getRuntimeTypesModel());
       if (type instanceof RuntimeErrorType) {
         reportTypeError(term, ((RuntimeErrorType)type).getErrorText());
       }
@@ -148,7 +198,7 @@ public class TypeChecker {
   }
 
   private SNode expandType(SNode node, SModel typesModel) {
-    SNode representator = EquationManager.getInstance().getRepresentator(node);
+    SNode representator = myEquationManager.getRepresentator(node);
     return expandNode(representator, representator, 0, new HashSet<RuntimeTypeVariable>(), typesModel);
   }
 
@@ -156,7 +206,7 @@ public class TypeChecker {
     if (node == null) return null;
     if (node instanceof RuntimeTypeVariable) {
       RuntimeTypeVariable var = (RuntimeTypeVariable) node;
-      SNode type = EquationManager.getInstance().getRepresentator(node);
+      SNode type = myEquationManager.getRepresentator(node);
       if (type != representator || depth > 0) {
 
         if (variablesMet.contains(var)) {
@@ -210,7 +260,7 @@ public class TypeChecker {
         if (myCheckedNodes.contains(node)) continue;
         newFrontier.addAll(node.getChildren());
         for (Rule rule : myRules) {
-          Interpretator.interpretate(node, rule);
+          myInterpretator.interpretate(node, rule);
         }
       }
       frontier = newFrontier;
@@ -294,6 +344,10 @@ public class TypeChecker {
     Object typeObject = node.getUserObject(TYPE_OF_TERM);
     if (typeObject instanceof SNode) return (SNode) typeObject;
     return null;
+  }
+
+  public SModel getRuntimeTypesModel() {
+    return myInterpretator.getRuntimeTypesModel();
   }
 
   private static class MyReadAccessListener implements INodeReadAccessListener {

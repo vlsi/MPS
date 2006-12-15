@@ -16,19 +16,19 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class EquationManager {
-  private static EquationManager ourInstance = new EquationManager();
 
-  private EquationManager() {
-
-  }
+  private TypeChecker myTypeChecker;
 
   private Map<SNode, Map<SNode,SNode>> mySubtypesToSupertypesMap = new HashMap<SNode, Map<SNode, SNode>>();
   private Map<SNode, Map<SNode, SNode>> mySupertypesToSubtypesMap = new HashMap<SNode, Map<SNode, SNode>>();
   private Map<SNode, SNode> myEquations = new HashMap<SNode, SNode>();
 
+  public EquationManager(TypeChecker typeChecker) {
+    myTypeChecker = typeChecker;
+  }
 
-  public static EquationManager getInstance() {
-    return ourInstance;
+  public TypeChecker getTypeChecker() {
+    return myTypeChecker;
   }
 
   public SNode getParent(SNode type) {
@@ -73,7 +73,7 @@ public class EquationManager {
     }
 
     // if strict subtyping
-    if (SubtypingManager.getInstance().isSubtype(subtypeRepresentator, supertypeRepresentator)) {
+    if (myTypeChecker.getSubtypingManager().isSubtype(subtypeRepresentator, supertypeRepresentator)) {
       return;
     }
 
@@ -117,7 +117,7 @@ public class EquationManager {
   private void processEquation(SNode var, SNode type, SNode nodeToCheck) {
     setParent(var, type);
     keepInequation(var, type);
-    TypeVariablesManager.getInstance().addAllVarSetsOfSourceAndRemoveSourceFromThem(type, var);
+    myTypeChecker.getTypeVariablesManager().addAllVarSetsOfSourceAndRemoveSourceFromThem(type, var);
     RuntimeTypeVariable typeVar = TypeVariablesManager.getTypeVar(var);
     if (typeVar instanceof RuntimeErrorType) {
       TypeChecker.getInstance().reportTypeError(nodeToCheck,((RuntimeErrorType)typeVar).getErrorText());
@@ -149,7 +149,7 @@ public class EquationManager {
 
   private void processErrorEquation(SNode type, SNode error, String errorText, SNode nodeToCheck) {
     setParent(error, type); //type
-    TypeVariablesManager.getInstance().addAllVarSetsOfSourceAndRemoveSourceFromThem(type, error);
+    myTypeChecker.getTypeVariablesManager().addAllVarSetsOfSourceAndRemoveSourceFromThem(type, error);
     TypeChecker.getInstance().reportTypeError(nodeToCheck, errorText);
   }
 
@@ -313,7 +313,7 @@ public class EquationManager {
           mySubtypesToSupertypesMap.get(subtype).remove(node);
         }
         SNode nodeToCheck = nodesToCheck.isEmpty() ? null : nodesToCheck.iterator().next(); //todo nodeToCheck is chosen randomly
-        Set<SNode> lcs = SubtypingManager.leastCommonSupertypes(concreteSubtypes);
+        Set<SNode> lcs = myTypeChecker.getSubtypingManager().leastCommonSupertypes(concreteSubtypes);
         if (lcs.isEmpty()) {
           TypeChecker.getInstance().reportTypeError(nodeToCheck,"can't find common supertype"); //todo show subtypes
         } else {

@@ -34,14 +34,15 @@ public class SubtypingManager {
   private Set<SupertypingRule> mySupertypingRules = new HashSet<SupertypingRule>();
 
   Map<ConceptDeclaration, SubtypingVarianceRule> myVarianceRules = new HashMap<ConceptDeclaration, SubtypingVarianceRule>();
-  private static SubtypingManager ourInstance = new SubtypingManager();
 
-  private SubtypingManager() {
+  private TypeChecker myTypeChecker;
 
+  public SubtypingManager(TypeChecker typeChecker) {
+    myTypeChecker = typeChecker;
   }
 
-  public static SubtypingManager getInstance() {
-    return ourInstance;
+  public TypeChecker getTypeChecker() {
+    return myTypeChecker;
   }
 
   public void initiate(SModel typesModel) {
@@ -64,8 +65,8 @@ public class SubtypingManager {
 
   public boolean isSubtype(SNode subtype, SNode supertype) {
 
-    SNode subRepresentator = EquationManager.getInstance().getRepresentator(subtype);
-    SNode superRepresentator = EquationManager.getInstance().getRepresentator(supertype);
+    SNode subRepresentator = myTypeChecker.getEquationManager().getRepresentator(subtype);
+    SNode superRepresentator = myTypeChecker.getEquationManager().getRepresentator(supertype);
 
     //reflexivity: structural equivalence
     if (MatchingUtil.matchNodes(subRepresentator, superRepresentator)) return true;
@@ -79,8 +80,8 @@ public class SubtypingManager {
   }
 
   public boolean isStrictSubtype(SNode subtype, SNode supertype) {
-    SNode subRepresentator = EquationManager.getInstance().getRepresentator(subtype);
-    SNode superRepresentator = EquationManager.getInstance().getRepresentator(supertype);
+    SNode subRepresentator = myTypeChecker.getEquationManager().getRepresentator(subtype);
+    SNode superRepresentator = myTypeChecker.getEquationManager().getRepresentator(supertype);
 
     //variance:
 
@@ -151,8 +152,8 @@ public class SubtypingManager {
           Iterator<SNode> subIt = subChildren.iterator();
           Iterator<SNode> superIt = superChildren.iterator();
           for (; subIt.hasNext() ;) {
-            SNode subChild = AdaptationManager.getInstance().adaptType(subIt.next());
-            SNode superChild = AdaptationManager.getInstance().adaptType(superIt.next());
+            SNode subChild = myTypeChecker.getAdaptationManager().adaptType(subIt.next());
+            SNode superChild = myTypeChecker.getAdaptationManager().adaptType(superIt.next());
             if (covariantRoles.contains(role)) {
               if (allowsNull.contains(role) && superChild == null) continue;
               if (!isSubtype(subChild, superChild)) return false;
@@ -284,14 +285,14 @@ public class SubtypingManager {
     }
   }
 
-  public static Set<SNode> leastCommonSupertypes(Set<? extends SNode> types) {
-    return leastCommonSupertypes(types, new NodeSupertypesCollector());
+  public Set<SNode> leastCommonSupertypes(Set<? extends SNode> types) {
+    return leastCommonSupertypes(types, new NodeSupertypesCollector(this));
   }
 
-  public static SNode leastCommonSupertype(Set<? extends SNode> types) {
+  public SNode leastCommonSupertype(Set<? extends SNode> types) {
     Set<SNode> lcss = leastCommonSupertypes(types);
     if (lcss.size() != 1) {
-      RuntimeErrorType type = new RuntimeErrorType(Interpretator.getRuntimeTypesModel());
+      RuntimeErrorType type = new RuntimeErrorType(myTypeChecker.getRuntimeTypesModel());
       type.setErrorText("uncomparable types");
       return type;
     }
@@ -299,7 +300,7 @@ public class SubtypingManager {
   }
 
 
-  public static <T> Set<T> leastCommonSupertypes(Set<? extends T> types, SupertypesCollector<T> supertypesCollector) {
+  public <T> Set<T> leastCommonSupertypes(Set<? extends T> types, SupertypesCollector<T> supertypesCollector) {
 
     Set<T> allTypes = new HashSet<T>(types);
     if (types.isEmpty()) return allTypes;
@@ -373,7 +374,7 @@ public class SubtypingManager {
   }
 
   public SNode minType(Set<SNode> nodes) {
-    SModel runtimeTypesModel = Interpretator.getRuntimeTypesModel();
+    SModel runtimeTypesModel = myTypeChecker.getRuntimeTypesModel();
     if (nodes.size() == 0) {
       RuntimeErrorType errorType = new RuntimeErrorType(runtimeTypesModel);
       errorType.setErrorText("uncomparable types");
@@ -398,7 +399,7 @@ public class SubtypingManager {
   }
 
   public SNode maxType(Set<SNode> nodes) {
-    SModel runtimeTypesModel = Interpretator.getRuntimeTypesModel();
+    SModel runtimeTypesModel = myTypeChecker.getRuntimeTypesModel();
     if (nodes.size() == 0) {
       RuntimeErrorType errorType = new RuntimeErrorType(runtimeTypesModel);
       errorType.setErrorText("uncomparable types");
@@ -429,8 +430,12 @@ public class SubtypingManager {
 
 
   public static class NodeSupertypesCollector implements SupertypesCollector<SNode> {
+    private SubtypingManager mySubtypingManager;
+    public NodeSupertypesCollector(SubtypingManager subtypingManager) {
+      mySubtypingManager = subtypingManager;
+    }
     public Set<SNode> collectSupertypes(SNode subtype) {
-      return getInstance().collectSupertypes(subtype);
+      return mySubtypingManager.collectSupertypes(subtype);
     }
   }
 }
