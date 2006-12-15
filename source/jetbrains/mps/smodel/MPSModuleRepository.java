@@ -382,6 +382,11 @@ public class MPSModuleRepository {
   }
 
   @NotNull
+  public List<DevKit> getDevKits(@NotNull MPSModuleOwner moduleOwner) {
+    return getModules(moduleOwner, DevKit.class);
+  }
+
+  @NotNull
   public List<IModule> getModules(@NotNull MPSModuleOwner moduleOwner) {
     return getModules(moduleOwner, IModule.class);
   }
