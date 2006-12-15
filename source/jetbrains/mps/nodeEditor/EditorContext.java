@@ -2,10 +2,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.annotations.LinkAttributeConcept;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.ide.command.CommandProcessor;
 
@@ -39,6 +36,10 @@ public class EditorContext {
 
   public EditorCell getSelectedCell() {
     return myNodeEditorComponent.getSelectedCell();
+  }
+
+  public IScope getScope() {
+    return myOperationContext.getScope();
   }
 
   public SNode getSelectedNode() {

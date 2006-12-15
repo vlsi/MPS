@@ -110,7 +110,7 @@ public class FindUsagesManager {
       for (SModelDescriptor model : models) {
         String taskName = ModelsProgressUtil.findInstancesModelTaskName(model);
         progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_FIND_INSTANCES);
-        result.addAll(model.findInstances(concept, GlobalScope.getInstance()));
+        result.addAll(model.findInstances(concept, scope));
         if (progress.isCanceled()) {
           progress.finishAnyway();
           return result;
