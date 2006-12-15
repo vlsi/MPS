@@ -108,6 +108,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
 
   @NotNull
   public List<SModelDescriptor> getModelDescriptors() {
+    //todo this is a hack!
     return SModelRepository.getInstance().getAllModelDescriptors();
   }
 

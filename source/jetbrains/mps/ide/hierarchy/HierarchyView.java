@@ -38,6 +38,7 @@ public class HierarchyView extends DefaultTool {
   private ConceptHierarchyTree myHierarchyTree = new ConceptHierarchyTree();
   private ConceptHierarchyTreeNode myTreeNode;
   private JPanel myComponent = new JPanel(new BorderLayout());
+  private IOperationContext myContext;
   private IDEProjectFrame myIde;
 
 
@@ -53,6 +54,7 @@ public class HierarchyView extends DefaultTool {
 
   public void showConceptInHierarchy(ConceptDeclaration node, IOperationContext context) {
     myHierarchyTree.setOperationContext(context);
+    myContext = context;
     myHierarchyTree.myConceptDeclaration = node;
     myHierarchyTree.rebuildTree();
     if (myTreeNode != null) myHierarchyTree.selectNode(myTreeNode);
@@ -63,12 +65,12 @@ public class HierarchyView extends DefaultTool {
   }
 
 
-  private JPopupMenu ShowHierarchyForFoundConceptPopupMenu() {
+  private JPopupMenu showHierarchyForFoundConceptPopupMenu() {
     JPopupMenu result = new JPopupMenu();
     result.add(new AbstractActionWithEmptyIcon("Show Hierarchy For Concept") {
       public void actionPerformed(ActionEvent e) {
         java.util.List<SNode> nodes = new ArrayList<SNode>();
-        for (SModelDescriptor modelDescriptor : SModelRepository.getInstance().getAllModelDescriptors()) {
+        for (SModelDescriptor modelDescriptor : myContext.getScope().getModelDescriptors()) {
           if (modelDescriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) continue;
           for (SNode node : modelDescriptor.getSModel().getRoots()) {
             if (node instanceof ConceptDeclaration) nodes.add(node);
@@ -166,7 +168,7 @@ public class HierarchyView extends DefaultTool {
     }
 
     public JPopupMenu getPopupMenu() {
-      return ShowHierarchyForFoundConceptPopupMenu();
+      return showHierarchyForFoundConceptPopupMenu();
     }
   }
 
