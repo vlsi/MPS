@@ -67,7 +67,6 @@ public class IdeMain {
     LoggerUtil.configureLogger();
 
     ApplicationComponents.getInstance();
-    MPSIdeActions.install();
     IDEProjectFrame projectWindow = new IDEProjectFrame();
     projectWindow.loadLastProjectIfAny();
     SplashScreen.getInstance().hideSplashScreen();
