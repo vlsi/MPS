@@ -1754,7 +1754,8 @@
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1166035149309">
       <property name="caretPolicy" value="caret_at_last_position" />
       <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1166035149310">
-        <property name="keycode" value=")" />
+        <property name="modifiers" value="ctrl+shift" />
+        <property name="keycode" value="VK_0" />
       </node>
       <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_ExecuteFunction" id="1166035149311">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1166035149312">
@@ -1778,7 +1779,8 @@
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1166035160001">
       <property name="caretPolicy" value="caret_at_first_position" />
       <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1166035160002">
-        <property name="keycode" value="(" />
+        <property name="modifiers" value="ctrl+shift" />
+        <property name="keycode" value="VK_9" />
       </node>
       <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_ExecuteFunction" id="1166035160003">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1166035160004">

@@ -263,7 +263,7 @@ public class EditorCellKeyMap {
     // todo: the "key typed" event should be handled instead
     if (event.isControlDown() || event.isAltDown()) {
       // ignore keychar
-      return keyCodes;
+      return keyCodes;   //TODO why?!
     }
 
     char keyChar = event.getKeyChar();
