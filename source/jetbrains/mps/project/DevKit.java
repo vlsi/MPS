@@ -28,6 +28,8 @@ public class DevKit extends AbstractModule {
       devKitDescriptor = DevKitDescriptor.newInstance(model);
     }
 
+    model.addRoot(devKitDescriptor);
+
     result.myDescriptor = devKitDescriptor;
     result.myDescriptorFile = descriptorFile;
 
@@ -56,7 +58,15 @@ public class DevKit extends AbstractModule {
     return null;
   }
 
+  public void setDevKitDescriptor(DevKitDescriptor descriptor) {
+    myDescriptor = descriptor;
+  }
+
   public void dispose() {
 
+  }
+
+  public void save() {    
+    PersistenceUtil.saveDevKitDescriptor(getModuleDescriptor(), myDescriptorFile);
   }
 }

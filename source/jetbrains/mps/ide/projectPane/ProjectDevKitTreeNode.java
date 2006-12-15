@@ -34,7 +34,10 @@ class ProjectDevKitTreeNode extends MPSTreeNode {
 
   public JPopupMenu getPopupMenu() {
     JPopupMenu result = new JPopupMenu();
-    //todo
+    DevKit devKit = getDevKit();
+    ActionContext context = new ActionContext(getOperationContext());
+    context.put(DevKit.class, devKit);
+    ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_DEVKIT_ACTIONS).add(result, context);
     return result;
   }
 

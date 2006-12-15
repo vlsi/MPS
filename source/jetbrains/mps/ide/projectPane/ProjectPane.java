@@ -1,7 +1,6 @@
 package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.IDEProjectFrame;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.IActionDataProvider;
 import jetbrains.mps.ide.actions.model.DeleteModelsAction;
@@ -11,10 +10,10 @@ import jetbrains.mps.ide.ui.*;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -49,6 +48,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
   public static final String PROJECT_PANE_MODEL_ACTIONS = "project-pane-model-actions";
   public static final String PROJECT_PANE_VCS_ACTIONS = "project-pane-vcs-actions";
   public static final String PROJECT_PANE_LANGUAGE_ACTIONS = "project-pane-language-actions";
+  public static final String PROJECT_PANE_DEVKIT_ACTIONS = "project-pane-devkit-actions";
   public static final String PROJECT_PANE_PROJECT_ACTIONS = "project-pane-project-actions";
   public static final String PROJECT_PANE_PROJECT_SOLUTION_ACTIONS = "project-pane-project-solution-actions";
   public static final String PROJECT_PANE_GENERATORS_ACTIONS = "project-pane-generators-actions";
