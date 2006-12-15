@@ -40,7 +40,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   }
 
   public void showAspectMethodUsages(String namespace, String name) throws RemoteException {
-    List<SModelDescriptor> modelDescriptors = SModelRepository.getInstance().getModelDescriptorsByModelName(namespace);
+    List<SModelDescriptor> modelDescriptors = myProject.getModelDescriptors(namespace);
     for (SModelDescriptor descriptor : modelDescriptors) {
       if (descriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) continue;
 
