@@ -5,6 +5,7 @@ import jetbrains.mps.nodeEditor.LanguagesKeymapManager;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.DevKit;
 import jetbrains.mps.projectLanguage.Root;
 import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.annotations.NotNull;
@@ -118,6 +119,11 @@ public class MPSModuleRepository {
   }
 
   @NotNull
+  public DevKit registerDevKit(@NotNull File file, @NotNull MPSModuleOwner owner) {
+    return registerModule(file, owner, DevKit.class);
+  }
+
+  @NotNull
   public Solution registerSolution(@NotNull File file, @NotNull MPSModuleOwner owner) {
     return registerModule(file, owner, Solution.class);
   }
@@ -130,8 +136,10 @@ public class MPSModuleRepository {
       if (module == null) {
         if (cls == Language.class) {
           module = Language.newInstance(file, owner);
-        } else { //if (cls == Solution.class) ;
+        } else if (cls == Solution.class) {
           module = Solution.newInstance(file, owner);
+        } else {
+          module = DevKit.newInstance(file, owner);
         }
       } else {
         if (!cls.isInstance(module)) {

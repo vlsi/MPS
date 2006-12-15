@@ -47,6 +47,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
 
   private List<Solution> mySolutions = new ArrayList<Solution>();
   private List<Language> myLanguages = new ArrayList<Language>();
+  private List<DevKit> myDevKits = new ArrayList<DevKit>();
 
   private File myWorkspaceFile;
 
@@ -137,6 +138,17 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
         LOG.error("Couldn't load language from: " + descriptorFile.getAbsolutePath() + " : file doesn't exist");
       }
     }
+
+    //load devkits
+    myDevKits = new LinkedList<DevKit>();
+    for (DevKitPath dk : myProjectDescriptor.getProjectDevkits()) {
+      File devKit = new File(dk.getPath());
+      if (devKit.exists()) {
+        myDevKits.add(MPSModuleRepository.getInstance().registerDevKit(devKit, this));
+      } else {
+        LOG.error("Couldn't load devkit from: " + devKit.getAbsolutePath() + " : file doesn't exist");
+      }
+    }
   }
 
   @Nullable
@@ -152,6 +164,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     List<IModule> result = new ArrayList<IModule>();
     result.addAll(myLanguages);
     result.addAll(mySolutions);
+    result.addAll(myDevKits);
     return result;
   }
 
@@ -204,7 +217,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     setProjectDescriptor(projectDescriptor);
     myEventTranslator.projectChanged();
 
-
     for (Solution s : getProjectSolutions()) {
       File descriptorFile = s.getDescriptorFile();
       assert descriptorFile != null;
@@ -214,6 +226,20 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     }
 
     throw new RuntimeException("it can't happen");
+  }
+
+  public void addProjectDevKit(@NotNull File devKitDescriptorFile) {
+    ProjectDescriptor projectDescriptor = getProjectDescriptor();
+    SModel model = projectDescriptor.getModel();
+    model.setLoading(true);
+
+    DevKitPath devKitPath = DevKitPath.newInstance(model);
+    devKitPath.setPath(devKitDescriptorFile.getAbsolutePath());
+    projectDescriptor.addProjectDevkit(devKitPath);
+
+    setProjectDescriptor(projectDescriptor);
+
+    myEventTranslator.projectChanged();
   }
 
   @NotNull
@@ -294,12 +320,20 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     return Collections.unmodifiableList(mySolutions);
   }
 
+  @NotNull
+  public List<DevKit> getProjectDevKits() {
+    return Collections.unmodifiableList(myDevKits);
+  }
+
   public boolean isProjectModule(@NotNull IModule module) {
     if (module instanceof Language) {
       return myLanguages.contains((Language) module);
     }
     if (module instanceof Solution) {
       return mySolutions.contains((Solution) module);
+    }
+    if (module instanceof DevKit) {
+      return myDevKits.contains((DevKit) module);
     }
     return false;
   }

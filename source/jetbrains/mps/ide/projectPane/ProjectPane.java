@@ -14,6 +14,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -477,6 +478,12 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
       List<Language> languages = getProject().getProjectLanguages();
       for (Language language : languages) {
         ProjectLanguageTreeNode node = new ProjectLanguageTreeNode(language, getProject());
+        root.add(node);
+      }
+
+      List<DevKit> devkits = getProject().getProjectDevKits();
+      for (DevKit devKit : devkits) {
+        ProjectDevKitTreeNode node = new ProjectDevKitTreeNode(devKit, getProject());
         root.add(node);
       }
 

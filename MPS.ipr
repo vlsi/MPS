@@ -1128,20 +1128,20 @@
       <module fileurl="file://$PROJECT_DIR$/projects/XmlReader/XmlReader.iml" filepath="$PROJECT_DIR$/projects/XmlReader/XmlReader.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/agreement/agreement.iml" filepath="$PROJECT_DIR$/projects/agreement/agreement.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/baseLanguageExt/dev/baseLanguageExt.iml" filepath="$PROJECT_DIR$/projects/baseLanguageExt/dev/baseLanguageExt.iml" group="Projects/BaseLanguageExt" />
-      <module fileurl="file://$PROJECT_DIR$/projects/dataNavigationQueryFramework/berkeleyDbEntityStore/berkeleyDbEntityStore.iml" filepath="$PROJECT_DIR$/projects/dataNavigationQueryFramework/berkeleyDbEntityStore/berkeleyDbEntityStore.iml" group="Projects/dataNavigationQuery/runtime" />
+      <module fileurl="file://$PROJECT_DIR$/projects/DataNavigationQueryFramework/berkeleyDbEntityStore/berkeleyDbEntityStore.iml" filepath="$PROJECT_DIR$/projects/DataNavigationQueryFramework/berkeleyDbEntityStore/berkeleyDbEntityStore.iml" group="Projects/dataNavigationQuery/runtime" />
       <module fileurl="file://$PROJECT_DIR$/projects/Charisma/charisma.iml" filepath="$PROJECT_DIR$/projects/Charisma/charisma.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/baseLanguageExt/collections-runtime/collections-runtime.iml" filepath="$PROJECT_DIR$/projects/baseLanguageExt/collections-runtime/collections-runtime.iml" group="Projects/BaseLanguageExt" />
-      <module fileurl="file://$PROJECT_DIR$/projects/dataNavigationQueryFramework/core/core.iml" filepath="$PROJECT_DIR$/projects/dataNavigationQueryFramework/core/core.iml" group="Projects/dataNavigationQuery/runtime" />
+      <module fileurl="file://$PROJECT_DIR$/projects/DataNavigationQueryFramework/core/core.iml" filepath="$PROJECT_DIR$/projects/DataNavigationQueryFramework/core/core.iml" group="Projects/dataNavigationQuery/runtime" />
       <module fileurl="file://$PROJECT_DIR$/projects/dataNavigationQueryLang/dataNavigationQueryLang.iml" filepath="$PROJECT_DIR$/projects/dataNavigationQueryLang/dataNavigationQueryLang.iml" group="Projects/dataNavigationQuery/lang" />
       <module fileurl="file://$PROJECT_DIR$/projects/webrSamples/depot/depot.iml" filepath="$PROJECT_DIR$/projects/webrSamples/depot/depot.iml" group="Projects/WebrSamples" />
       <module fileurl="file://$PROJECT_DIR$/projects/fixedLengthReader/fixedLengthReader.iml" filepath="$PROJECT_DIR$/projects/fixedLengthReader/fixedLengthReader.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/webrSamples/hello/hello.iml" filepath="$PROJECT_DIR$/projects/webrSamples/hello/hello.iml" group="Projects/WebrSamples" />
       <module fileurl="file://$PROJECT_DIR$/projects/webrSamples/miniAlpha/miniAlpha.iml" filepath="$PROJECT_DIR$/projects/webrSamples/miniAlpha/miniAlpha.iml" group="Projects/WebrSamples" />
-      <module fileurl="file://$PROJECT_DIR$/projects/dataNavigationQueryFramework/openAPI/openAPI.iml" filepath="$PROJECT_DIR$/projects/dataNavigationQueryFramework/openAPI/openAPI.iml" group="Projects/dataNavigationQuery/runtime" />
+      <module fileurl="file://$PROJECT_DIR$/projects/DataNavigationQueryFramework/openAPI/openAPI.iml" filepath="$PROJECT_DIR$/projects/DataNavigationQueryFramework/openAPI/openAPI.iml" group="Projects/dataNavigationQuery/runtime" />
       <module fileurl="file://$PROJECT_DIR$/projects/stateMachine/stateMachine.iml" filepath="$PROJECT_DIR$/projects/stateMachine/stateMachine.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/teamSys/teamSys.iml" filepath="$PROJECT_DIR$/projects/teamSys/teamSys.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/teamSys/teamSysWebApp/teamSysWebApp.iml" filepath="$PROJECT_DIR$/projects/teamSys/teamSysWebApp/teamSysWebApp.iml" group="Projects" />
-      <module fileurl="file://$PROJECT_DIR$/projects/dataNavigationQueryFramework/transientDbEntityStore/transientDbEntityStore.iml" filepath="$PROJECT_DIR$/projects/dataNavigationQueryFramework/transientDbEntityStore/transientDbEntityStore.iml" group="Projects/dataNavigationQuery/runtime" />
+      <module fileurl="file://$PROJECT_DIR$/projects/DataNavigationQueryFramework/transientDbEntityStore/transientDbEntityStore.iml" filepath="$PROJECT_DIR$/projects/DataNavigationQueryFramework/transientDbEntityStore/transientDbEntityStore.iml" group="Projects/dataNavigationQuery/runtime" />
       <module fileurl="file://$PROJECT_DIR$/projects/webr/webr.iml" filepath="$PROJECT_DIR$/projects/webr/webr.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/webrFramework/webrFramework.iml" filepath="$PROJECT_DIR$/projects/webrFramework/webrFramework.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/webrSamples/depot_dnq/webrSamples_depot_dnq.iml" filepath="$PROJECT_DIR$/projects/webrSamples/depot_dnq/webrSamples_depot_dnq.iml" group="Projects/WebrSamples" />
@@ -1197,7 +1197,7 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="hello" />
+        <option name="MODULE_NAME" value="webrSamples_hello_dnq" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1207,7 +1207,7 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello_dnq" />
+        <option name="MODULE_NAME" value="hello" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1263,7 +1263,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="miniAlpha - WebR Sample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
+    <configuration default="false" name="miniAlpha - WebR Sample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
@@ -1283,7 +1283,7 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="hello" />
+        <option name="MODULE_NAME" value="webrSamples_hello_dnq" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1293,7 +1293,7 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello_dnq" />
+        <option name="MODULE_NAME" value="hello" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1369,8 +1369,8 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="hello" />
-        <option name="DEPLOY" value="true" />
+        <option name="MODULE_NAME" value="webrSamples_hello_dnq" />
+        <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
@@ -1379,8 +1379,8 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello_dnq" />
-        <option name="DEPLOY" value="false" />
+        <option name="MODULE_NAME" value="hello" />
+        <option name="DEPLOY" value="true" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
@@ -1435,7 +1435,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="hello_dnq_webr_sample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
+    <configuration default="false" name="hello_dnq_webr_sample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
@@ -1455,8 +1455,8 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="charisma" />
-        <option name="DEPLOY" value="false" />
+        <option name="MODULE_NAME" value="webrSamples_hello_dnq" />
+        <option name="DEPLOY" value="true" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
@@ -1465,8 +1465,8 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello_dnq" />
-        <option name="DEPLOY" value="true" />
+        <option name="MODULE_NAME" value="charisma" />
+        <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
@@ -1521,7 +1521,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="depot_dnq_webr_sample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
+    <configuration default="false" name="depot_dnq_webr_sample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
@@ -1541,7 +1541,7 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello_dnq" />
+        <option name="MODULE_NAME" value="charisma" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1551,7 +1551,7 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="charisma" />
+        <option name="MODULE_NAME" value="webrSamples_hello_dnq" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1607,7 +1607,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="Charisma" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
+    <configuration default="false" name="Charisma" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
@@ -1627,8 +1627,8 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="charisma" />
-        <option name="DEPLOY" value="true" />
+        <option name="MODULE_NAME" value="webrSamples_hello_dnq" />
+        <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
@@ -1637,8 +1637,8 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello_dnq" />
-        <option name="DEPLOY" value="false" />
+        <option name="MODULE_NAME" value="charisma" />
+        <option name="DEPLOY" value="true" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
@@ -1703,8 +1703,8 @@
   </component>
   <component name="StarteamVcsAdapter" />
   <component name="VssVcs">
-    <SourceSafePersistencyRemovedFolder>$PROJECT_DIR$/projects/SemanticFunctions/source/jetbrains/naturalLanguageDescription/scope</SourceSafePersistencyRemovedFolder>
     <SourceSafePersistencyRemovedFolder>$PROJECT_DIR$/source/jetbrains/mps/generator/types</SourceSafePersistencyRemovedFolder>
+    <SourceSafePersistencyRemovedFolder>$PROJECT_DIR$/projects/SemanticFunctions/source/jetbrains/naturalLanguageDescription/scope</SourceSafePersistencyRemovedFolder>
   </component>
   <component name="com.intellij.jsf.UserDefinedFacesConfigs">
     <option name="USER_DEFINED_CONFIGS">
