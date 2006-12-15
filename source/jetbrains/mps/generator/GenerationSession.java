@@ -2,20 +2,19 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.RewritingGenerator;
+import jetbrains.mps.generator.template.DefaultTemplateGenerator;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessageView;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.transformation.TLBase.MappingConfiguration;
+import jetbrains.mps.util.FileUtil;
 
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;
@@ -102,15 +101,15 @@ public class GenerationSession {
 
   private GenerationStatus generateModel_internal(SModelDescriptor sourceModelDescriptor, Language targetLanguage, Set<MappingConfiguration> mappings)
           throws ClassNotFoundException,
-                 NoSuchMethodException,
-                 IllegalAccessException,
-                 InvocationTargetException,
-                 InstantiationException {
+          NoSuchMethodException,
+          IllegalAccessException,
+          InvocationTargetException,
+          InstantiationException {
 
     SModel sourceModel = sourceModelDescriptor.getSModel();
     addProgressMessage(MessageKind.INFORMATION, "generating model \"" + sourceModel.getUID() + "\"");
     Class<? extends IModelGenerator> defaultGeneratorClass = getDefaultGeneratorClass(targetLanguage);
-    addMessage(MessageKind.INFORMATION, "    default generator class: " + (defaultGeneratorClass != null ? defaultGeneratorClass.getName() : "<n/a>"));
+    addMessage(MessageKind.INFORMATION, "    default generator class: " + defaultGeneratorClass.getName());
 
     // -- replace context and create generators list
     GenerationSessionContext context = new GenerationSessionContext(targetLanguage, sourceModel, myInvocationContext, mappings);
@@ -266,6 +265,7 @@ public class GenerationSession {
     return transientModel;
   }
 
+  @NotNull
   private Class<? extends IModelGenerator> getDefaultGeneratorClass(Language targetLanguage) throws ClassNotFoundException {
     TargetOfGenerator targetOfGenerator = targetLanguage.getLanguageDescriptor().getTargetOfGenerator();
     if (targetOfGenerator != null) {
@@ -274,7 +274,7 @@ public class GenerationSession {
         return (Class<? extends IModelGenerator>) Class.forName(generatorClassName, true, ClassLoaderManager.getInstance().getClassLoader());
       }
     }
-    return null;
+    return DefaultTemplateGenerator.class;
   }
 
   private Class<? extends IModelGenerator> getGeneratorClass(Generator generatorModule) throws ClassNotFoundException {
@@ -338,7 +338,8 @@ public class GenerationSession {
     }
 
     // create the solution descriptor
-    ModelOwner tmpOwner = new ModelOwner() { };
+    ModelOwner tmpOwner = new ModelOwner() {
+    };
     SModel solutionDescriptorModel = ProjectModels.createDescriptorFor(tmpOwner).getSModel();
     assert solutionDescriptorModel != null;
     SolutionDescriptor solutionDescriptor = new SolutionDescriptor(solutionDescriptorModel);

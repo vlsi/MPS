@@ -100,7 +100,6 @@ public class Generator extends AbstractModule {
     return null;
   }
 
-  @Nullable
   public String getGeneratorClass() {
     return myGeneratorDescriptor.getGeneratorClass();
   }
