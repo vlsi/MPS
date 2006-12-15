@@ -350,7 +350,7 @@ public class GenerationSession {
     // for all languages that really used add the LanguageRoot to the solution descriptor
     Set<Language> usedLang = new HashSet<Language>();
     for (SModelDescriptor descriptor : transientModels) {
-      List<Language> languages = descriptor.getSModel().getLanguages(GlobalScope.getInstance());
+      List<Language> languages = descriptor.getSModel().getLanguages(myInvocationContext.getScope());
       for (Language language : languages) {
         if (!usedLang.contains(language)) {
           usedLang.add(language);
