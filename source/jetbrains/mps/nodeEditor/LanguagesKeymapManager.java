@@ -85,7 +85,7 @@ public class LanguagesKeymapManager {
     for (String namespace : myLanguagesToKeyMaps.keySet()) {
       List<EditorCellKeyMap> keyMaps = myLanguagesToKeyMaps.get(namespace);
       if (keyMaps == null) continue;
-      for (EditorCellKeyMap keyMap : keyMaps) {
+      for (EditorCellKeyMap keyMap : new ArrayList<EditorCellKeyMap>(keyMaps)) {        
         if (keyMap.getClass().getPackage().getName().equals(modelName)) {
           keyMaps.remove(keyMap);
         }
