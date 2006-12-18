@@ -3,10 +3,10 @@ package jetbrains.mps.smodel.event;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUID;
 
-public class SModeImportEvent extends SModelEvent {
+public class SModelImportEvent extends SModelEvent {
   private SModelUID myModelUID;
 
-  public SModeImportEvent(SModel model, SModelUID modelUID) {
+  public SModelImportEvent(SModel model, SModelUID modelUID) {
     super(model);
     myModelUID = modelUID;
   }

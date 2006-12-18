@@ -13,6 +13,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.ForDebug;
+import jetbrains.mps.project.DevKit;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -41,6 +42,7 @@ public class SModel implements Iterable<SNode> {
 
   private int myMaxImportIndex;
   private List<String> myLanguages = new ArrayList<String>();
+  private List<String> myDevKits = new ArrayList<String>();
   private List<ImportElement> myImports = new ArrayList<ImportElement>();
 
   private Map<String, SNode> myIdToNodeMap = new HashMap<String, SNode>();
@@ -225,31 +227,45 @@ public class SModel implements Iterable<SNode> {
     return !myLoading /*&& !UndoManager.instance().isUndoOrRedoInProgress() */;
   }
 
+  void fireDevKitAddedEvent(@NotNull String devkitNamespace) {
+    if (!canFireEvent()) return;
+    for (SModelListener sModelListener : copyListeners()) {
+      sModelListener.devkitAdded(new SModelDevKitEvent(this, devkitNamespace));
+    }
+  }
+
+  void fireDevKitRemovedEvent(@NotNull String devkitNamespace) {
+    if (!canFireEvent()) return;
+    for (SModelListener sModelListener : copyListeners()) {
+      sModelListener.devkitRemoved(new SModelDevKitEvent(this, devkitNamespace));
+    }
+  }
+
   void fireLanguageAddedEvent(@NotNull String languageNamespace) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
-      sModelListener.languageAdded(new SModeLanguageEvent(this, languageNamespace));
+      sModelListener.languageAdded(new SModelLanguageEvent(this, languageNamespace));
     }
   }
 
   void fireLanguageRemovedEvent(@NotNull String languageNamespace) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
-      sModelListener.languageRemoved(new SModeLanguageEvent(this, languageNamespace));
+      sModelListener.languageRemoved(new SModelLanguageEvent(this, languageNamespace));
     }
   }
 
   void fireImportAddedEvent(@NotNull SModelUID modelUID) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
-      sModelListener.importAdded(new SModeImportEvent(this, modelUID));
+      sModelListener.importAdded(new SModelImportEvent(this, modelUID));
     }
   }
 
   void fireImportRemovedEvent(@NotNull SModelUID modelUID) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
-      sModelListener.importAdded(new SModeImportEvent(this, modelUID));
+      sModelListener.importAdded(new SModelImportEvent(this, modelUID));
     }
   }
 
@@ -387,6 +403,22 @@ public class SModel implements Iterable<SNode> {
     fireLanguageRemovedEvent(languageNamespace);
   }
 
+  public void addDevKit(@NotNull DevKit devKit) {
+    addDevKit(devKit.getName());
+  }
+
+  public void addDevKit(@NotNull String fqName) {
+    if (!myDevKits.contains(fqName)) {
+      myDevKits.add(fqName);
+      fireDevKitAddedEvent(fqName);
+    }
+  }
+
+  public void deleteDevKit(@NotNull String fqName) {
+    myDevKits.remove(fqName);
+    fireDevKitRemovedEvent(fqName);
+  }
+
   @NotNull
   public List<Language> getLanguages(@NotNull IScope scope) {
 //don't remove
@@ -405,6 +437,11 @@ public class SModel implements Iterable<SNode> {
   @NotNull
   public List<String> getLanguageNamespaces() {
     return new ArrayList<String>(myLanguages);
+  }
+
+  @NotNull
+  public List<String> getDevKitNamespaces() {
+    return new ArrayList<String>(myDevKits);
   }
 
   @NotNull
@@ -738,19 +775,19 @@ public class SModel implements Iterable<SNode> {
       myEvents.clear();
     }
 
-    public void languageAdded(SModeLanguageEvent event) {
+    public void languageAdded(SModelLanguageEvent event) {
       myEvents.add(event);
     }
 
-    public void languageRemoved(SModeLanguageEvent event) {
+    public void languageRemoved(SModelLanguageEvent event) {
       myEvents.add(event);
     }
 
-    public void importAdded(SModeImportEvent event) {
+    public void importAdded(SModelImportEvent event) {
       myEvents.add(event);
     }
 
-    public void importRemoved(SModeImportEvent event) {
+    public void importRemoved(SModelImportEvent event) {
       myEvents.add(event);
     }
 
@@ -783,6 +820,14 @@ public class SModel implements Iterable<SNode> {
     }
 
     public void referenceRemoved(SModelReferenceEvent event) {
+      myEvents.add(event);
+    }
+
+    public void devkitAdded(SModelDevKitEvent event) {
+      myEvents.add(event);
+    }
+
+    public void devkitRemoved(SModelDevKitEvent event) {
       myEvents.add(event);
     }
 

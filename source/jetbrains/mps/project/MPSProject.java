@@ -534,6 +534,19 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     return list;
   }
 
+  @NotNull
+  public List<DevKit> getVisibleDevkits() {
+    return new LinkedList<DevKit>(MPSModuleRepository.getInstance().getModules(this, DevKit.class));
+  }
+
+  public boolean isVisibleDevKit(@NotNull String devKitNamespace) {
+    for (DevKit dk : getVisibleDevkits()) {
+      if (dk.getName().equals(devKitNamespace)) return true;
+    }
+    return false;
+  }
+
+
   @Nullable
   public SModelDescriptor getModelDescriptor(@NotNull SModelUID modelUID) {
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);

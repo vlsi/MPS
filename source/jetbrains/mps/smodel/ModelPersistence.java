@@ -45,6 +45,7 @@ public class ModelPersistence {
   public static final String MODEL_IMPORT_INDEX = "index";
   public static final String MAX_IMPORT_INDEX = "maxImportIndex";
   public static final String LANGUAGE = "language";
+  public static final String DEVKIT = "devkit";
   public static final String STEREOTYPE = "stereotype";
   public static final String MODEL_UID = "modelUID";
   public static final String VERSION = "version";
@@ -143,6 +144,14 @@ public class ModelPersistence {
       Element element = (Element) language;
       String languageNamespace = element.getAttributeValue(NAMESPACE);
       model.addLanguage(languageNamespace);
+    }
+
+    //devkits
+    List devkits = rootElement.getChildren(DEVKIT);
+    for (Object devkit : devkits) {
+      Element element = (Element) devkit;
+      String devkitNamespace = element.getAttributeValue(NAMESPACE);
+      model.addDevKit(devkitNamespace);
     }
 
     // imports
@@ -372,6 +381,13 @@ public class ModelPersistence {
       Element languageElem = new Element(LANGUAGE);
       languageElem.setAttribute(NAMESPACE, languageNamespace);
       rootElement.addContent(languageElem);
+    }
+
+    //devkits
+    for (String devkitNamespace : sourceModel.getDevKitNamespaces()) {
+      Element devkitElem = new Element(DEVKIT);
+      devkitElem.setAttribute(NAMESPACE, devkitNamespace);
+      rootElement.addContent(devkitElem);
     }
 
     // imports

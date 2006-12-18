@@ -5,11 +5,14 @@ package jetbrains.mps.smodel.event;
  * Created Sep 16, 2003
  */
 public interface SModelListener {
-  void languageAdded(SModeLanguageEvent event);
-  void languageRemoved(SModeLanguageEvent event);
+  void languageAdded(SModelLanguageEvent event);
+  void languageRemoved(SModelLanguageEvent event);
 
-  void importAdded(SModeImportEvent event);
-  void importRemoved(SModeImportEvent event);
+  void importAdded(SModelImportEvent event);
+  void importRemoved(SModelImportEvent event);
+
+  void devkitAdded(SModelDevKitEvent event);
+  void devkitRemoved(SModelDevKitEvent event);
 
   void rootAdded(SModelRootEvent event);
   void rootRemoved(SModelRootEvent event);

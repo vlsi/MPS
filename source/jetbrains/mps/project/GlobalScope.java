@@ -30,7 +30,6 @@ public class GlobalScope implements IScope {
     return language;
   }
 
-
   public boolean isVisibleLanguage(@NotNull String languageNamespace) {
     return getLanguage(languageNamespace) != null;
   }
@@ -38,6 +37,18 @@ public class GlobalScope implements IScope {
   @NotNull
   public List<Language> getVisibleLanguages() {
     return MPSModuleRepository.getInstance().getAllLanguages();
+  }
+
+  @NotNull
+  public List<DevKit> getVisibleDevkits() {
+    return MPSModuleRepository.getInstance().getAllModules(DevKit.class); 
+  }
+
+  public boolean isVisibleDevKit(@NotNull String devKitNamespace) {
+    for (DevKit dk : getVisibleDevkits()) {
+      if (dk.getName().equals(devKitNamespace)) return true;
+    }
+    return false;
   }
 
   public SModelDescriptor getModelDescriptor(@NotNull SModelUID modelUID) {

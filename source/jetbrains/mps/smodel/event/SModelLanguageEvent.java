@@ -2,10 +2,10 @@ package jetbrains.mps.smodel.event;
 
 import jetbrains.mps.smodel.SModel;
 
-public class SModeLanguageEvent extends SModelEvent {
+public class SModelLanguageEvent extends SModelEvent {
   private String myLanguageNamespace;
 
-  public SModeLanguageEvent(SModel model, String languageNamespace) {
+  public SModelLanguageEvent(SModel model, String languageNamespace) {
     super(model);
     myLanguageNamespace = languageNamespace;
   }

@@ -5,6 +5,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
+import jetbrains.mps.project.DevKit;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Igoor
@@ -24,4 +26,8 @@ public interface IScope {
   boolean isVisibleLanguage(@NotNull String languageNamespace);
 
   @NotNull List<Language> getVisibleLanguages();
+
+  @NotNull List<DevKit> getVisibleDevkits();
+
+  boolean isVisibleDevKit(@NotNull String devKitNamespace);
 }

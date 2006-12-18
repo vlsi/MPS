@@ -40,7 +40,6 @@ public abstract class AbstractModule implements IModule {
     return getLanguage(languageNamespace, new HashSet<IModule>(), false);
   }
 
-
   public boolean isVisibleLanguage(@NotNull String languageNamespace) {
     return getLanguage(languageNamespace, new HashSet<IModule>(), true) != null;
   }
@@ -55,6 +54,15 @@ public abstract class AbstractModule implements IModule {
     }
     return language;
   }
+
+
+  public boolean isVisibleDevKit(@NotNull String devKitNamespace) {
+    for (DevKit dk : getVisibleDevkits()) {
+      if (dk.getName().equals(devKitNamespace)) return true;
+    }
+    return false;
+  }
+
 
   @Nullable
   private static Language getLanguage_internal(String languageNamespace, Set<IModule> processedModules, IModule dependentModule) {
@@ -85,6 +93,11 @@ public abstract class AbstractModule implements IModule {
   @NotNull
   public List<Language> getVisibleLanguages() {
     return new ArrayList<Language>(getAllDependOnModules(Language.class));
+  }
+
+  @NotNull
+  public List<DevKit> getVisibleDevkits() {
+    return new ArrayList<DevKit>(getAllDependOnModules(DevKit.class));     
   }
 
   @NotNull
