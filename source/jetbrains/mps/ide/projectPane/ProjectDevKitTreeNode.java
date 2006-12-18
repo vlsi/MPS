@@ -7,6 +7,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.DevKit;
+import jetbrains.mps.smodel.Language;
 
 import javax.swing.JPopupMenu;
 import javax.swing.Icon;
@@ -50,6 +51,9 @@ class ProjectDevKitTreeNode extends MPSTreeNode {
   }
 
   private void populate() {    
+    for (Language l : myDevKit.getLanguages()) {
+      add(new GenericModuleTreeNode(l, getOperationContext().getProject()));
+    }
   }
 
   public Icon getIcon(boolean expanded) {

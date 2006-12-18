@@ -6,15 +6,15 @@ import jetbrains.mps.projectLanguage.ModuleDescriptor;
 import jetbrains.mps.projectLanguage.SolutionDescriptor;
 import jetbrains.mps.projectLanguage.PersistenceUtil;
 import jetbrains.mps.projectLanguage.DevKitDescriptor;
-import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.ProjectModels;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.ide.command.CommandEventTranslator;
+import jetbrains.mps.ide.command.CommandProcessor;
 
 import java.io.File;
+import java.util.List;
+import java.util.ArrayList;
 
 public class DevKit extends AbstractModule {
-
   public static DevKit newInstance(@NotNull File descriptorFile, @NotNull MPSModuleOwner moduleOwner) {
     DevKit result = new DevKit();
 
@@ -40,8 +40,11 @@ public class DevKit extends AbstractModule {
 
   private DevKitDescriptor myDescriptor;
   private File myDescriptorFile;
+  private DevKitEventTranslator myTranslator = new DevKitEventTranslator();
+  private List<DevKitCommandListener> myListeners = new ArrayList<DevKitCommandListener>();
 
   public DevKit() {
+    CommandProcessor.instance().addCommandListener(myTranslator);
   }
 
   public File getDescriptorFile() {
@@ -59,14 +62,59 @@ public class DevKit extends AbstractModule {
   }
 
   public void setDevKitDescriptor(DevKitDescriptor descriptor) {
+    MPSModuleRepository.getInstance().unRegisterModules(this);
+    SModelRepository.getInstance().unRegisterModelDescriptors(this);
+    SModelRepository.getInstance().registerModelDescriptor(descriptor.getModel().getModelDescriptor(), this);
+
     myDescriptor = descriptor;
+
+    readDependOnModules();
+    rereadModels();
+
+    devKitChanged();
   }
 
   public void dispose() {
-
+    SModelRepository.getInstance().unRegisterModelDescriptors(this);
+    MPSModuleRepository.getInstance().unRegisterModules(this);
+    CommandProcessor.instance().removeCommandListener(myTranslator);
   }
 
-  public void save() {    
+  public List<Language> getLanguages() {
+    return MPSModuleRepository.getInstance().getLanguages(this);
+  }
+
+  public void save() {
     PersistenceUtil.saveDevKitDescriptor(getModuleDescriptor(), myDescriptorFile);
+  }
+
+  private void devKitChanged() {
+    myTranslator.devKitChanged();
+  }
+
+  public void addListener(DevKitCommandListener cl) {
+    myListeners.add(cl);
+  }
+
+  public void removeListener(DevKitCommandListener cl) {
+    myListeners.remove(cl);
+  }
+
+
+  private class DevKitEventTranslator extends CommandEventTranslator {
+
+    private void devKitChanged() {
+      markCurrentCommandsDirty();
+    }
+
+    protected void fireCommandEvent() {
+      for (DevKitCommandListener l : myListeners) {
+        l.devKitChangedInCommand();
+      }
+    }
+  }
+
+  public static interface DevKitCommandListener {
+    public void devKitChangedInCommand();
   }
 }

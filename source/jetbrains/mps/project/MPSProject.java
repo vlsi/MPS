@@ -319,7 +319,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
   @NotNull
   public List<Solution> getProjectSolutions() {
     return Collections.unmodifiableList(mySolutions);
-  }
+  }    
 
   @NotNull
   public List<DevKit> getProjectDevKits() {
