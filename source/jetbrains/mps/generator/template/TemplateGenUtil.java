@@ -78,8 +78,8 @@ public class TemplateGenUtil {
               nodeBuilder.getRuleNode(),
               "Couldn't resolve template reference \"" + templateReference.getRole() + "\"");
       //test
-      LOG.error("uhhh! error. set breakpoint here, referenceResolver:" + referenceResolver);
-//      referenceResolver.resolveTarget(templateReference, nodeBuilder);
+      LOG.error("preved! error. set breakpoint here, referenceResolver:" + referenceResolver);
+      referenceResolver.resolveTarget(templateReference, nodeBuilder);
       //test
     } // while (iterator.hasNext())
   }
