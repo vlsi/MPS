@@ -33,6 +33,7 @@ public class MPSModuleRepository {
   private Map<String, Class<? extends IModule>> myExtensionsToModuleTypes = new HashMap<String, Class<? extends IModule>>();
   private static final String LANGUAGE_EXT = ".mpl";
   private static final String SOLUTION_EXT = ".msd";
+  private static final String DEVKIT_EXT = ".devkit";
 
   public static MPSModuleRepository getInstance() {
     return ApplicationComponents.getInstance().getComponent(MPSModuleRepository.class);
@@ -45,6 +46,7 @@ public class MPSModuleRepository {
   private void initializeExtensionsToModuleTypesMap() {
     myExtensionsToModuleTypes.put(LANGUAGE_EXT, Language.class);
     myExtensionsToModuleTypes.put(SOLUTION_EXT, Solution.class);
+    myExtensionsToModuleTypes.put(DEVKIT_EXT, DevKit.class);
   }
 
   @NotNull
@@ -278,6 +280,7 @@ public class MPSModuleRepository {
       if (moduleRoot.exists()) {
         readModuleDescriptors(moduleRoot, owner, LANGUAGE_EXT);
         readModuleDescriptors(moduleRoot, owner, SOLUTION_EXT);
+        readModuleDescriptors(moduleRoot, owner, DEVKIT_EXT);
       } else {
         String error = "Couldn't load modules from " + moduleRoot.getAbsolutePath() + " for owner " + owner +
                 "\nDirectory doesn't exist: ";

@@ -101,6 +101,10 @@ public class DevKit extends AbstractModule {
   }
 
 
+  public String toString() {
+    return "DevKit " + myDescriptor.getName();
+  }
+
   private class DevKitEventTranslator extends CommandEventTranslator {
 
     private void devKitChanged() {
