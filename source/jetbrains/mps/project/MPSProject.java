@@ -562,27 +562,20 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     HashSet<SModelDescriptor> set = new HashSet<SModelDescriptor>();
     {
       List<SModelDescriptor> list = SModelRepository.getInstance().getModelDescriptors(modelName, this);
-      for (SModelDescriptor descriptor : list) {
-        if (!set.contains(descriptor)) {
-          set.add(descriptor);
-        }
-      }
+      set.addAll(list);
     }
 
     for (Solution solution : mySolutions) {
       List<SModelDescriptor> list = SModelRepository.getInstance().getModelDescriptors(modelName, solution);
-      for (SModelDescriptor descriptor : list) {
-        if (!set.contains(descriptor)) {
-          set.add(descriptor);
-        }
-      }
+      set.addAll(list);
     }
     for (Language language : myLanguages) {
       List<SModelDescriptor> list = SModelRepository.getInstance().getModelDescriptors(modelName, language);
-      for (SModelDescriptor descriptor : list) {
-        if (!set.contains(descriptor)) {
-          set.add(descriptor);
-        }
+      set.addAll(list);
+
+      for (Generator g : language.getGenerators()) {
+        List<SModelDescriptor> glist = SModelRepository.getInstance().getModelDescriptors(modelName, g);
+        set.addAll(glist);
       }
     }
 
