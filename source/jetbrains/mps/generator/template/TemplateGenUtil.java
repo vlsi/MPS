@@ -33,46 +33,57 @@ public class TemplateGenUtil {
     return targetNode;
   }
 
-  public static void buildTargetNodeReferences(SNode templateNode, SNode targetNode, INodeBuilder nodeBuilder) {
-    ITemplateGenerator generator = nodeBuilder.getGenerator();
+  public static boolean buildTargetNodeReferences(SNode templateNode, SNode targetNode, INodeBuilder nodeBuilder) {
+    boolean b = true;
     for (SReference templateReference : nodeBuilder.getTemplateReferencesToResolve()) {
-      SNode templateReferentNode = templateReference.getTargetNode();
-      if (templateReferentNode == null) {
-        generator.showErrorMessage(templateNode, "Invalid reference \"" + templateReference.getRole() + "\" in templates model " + templateNode.getModel().getUID());
-        continue;
+      if (!buildTargetNodeReference(nodeBuilder, templateReference, templateNode, targetNode)) {
+        b = false;
       }
-      if (templateReferentNode instanceof NodeMacro ||
-              templateReferentNode instanceof ReferenceMacro ||
-              templateReferentNode instanceof PropertyMacro) {
-        continue;
-      }
+    }
+    return b;
+  }
 
-      // the reference MACRO exists?
-      if (ReferenceMacro_AnnotationLink.
-              getReferenceMacro((BaseConcept) templateNode, templateReference.getRole()) != null) {
-        continue;
-      }
+  public static boolean buildTargetNodeReference(INodeBuilder nodeBuilder, SReference templateReference, SNode templateNode, SNode targetNode) {
+    ITemplateGenerator generator = nodeBuilder.getGenerator();
+    SNode templateReferentNode = templateReference.getTargetNode();
+    if (templateReferentNode == null) {
+      generator.showErrorMessage(templateNode, "Invalid reference \"" + templateReference.getRole() + "\" in templates model " + templateNode.getModel().getUID());
+      return true;
+    }
+    if (templateReferentNode instanceof NodeMacro ||
+            templateReferentNode instanceof ReferenceMacro ||
+            templateReferentNode instanceof PropertyMacro) {
+      return true;
+    }
 
-      // external reference (but not to node from source model)?
-      if (templateReferentNode.getModel() != templateNode.getModel() &&
-              templateReferentNode.getModel() != generator.getSourceModel()) {
-        targetNode.addReferent(templateReference.getRole(), templateReferentNode);
-        continue;
-      }
+    // the reference MACRO exists?
+    if (ReferenceMacro_AnnotationLink.
+            getReferenceMacro((BaseConcept) templateNode, templateReference.getRole()) != null) {
+      return true;
+    }
 
-      // try to resolve the reference
-      IScope scope = generator.getScope();
-      IReferenceResolver referenceResolver = createReferenceResolver(templateNode, scope);
-      SNode targetReferentNode = referenceResolver.resolveTarget(templateReference, nodeBuilder);
-      if (targetReferentNode != null) {
-        if (checkResolvedReference(nodeBuilder.getSourceNode(), targetNode,
-                templateNode, templateReference.getRole(), targetReferentNode, generator)) {
-          targetNode.addReferent(templateReference.getRole(), targetReferentNode);
-        }
-        continue;
-      }
+    // external reference (but not to node from source model)?
+    if (templateReferentNode.getModel() != templateNode.getModel() &&
+            templateReferentNode.getModel() != generator.getSourceModel()) {
+      targetNode.setReferent(templateReference.getRole(), templateReferentNode);
+      return true;
+    }
 
-      generator.showErrorMessage(
+    // try to resolve the reference
+    IScope scope = generator.getScope();
+    IReferenceResolver referenceResolver = createReferenceResolver(templateNode, scope);
+    SNode targetReferentNode = referenceResolver.resolveTarget(templateReference, nodeBuilder);
+    if (targetReferentNode != null) {
+      if (checkResolvedReference(nodeBuilder.getSourceNode(), targetNode,
+              templateNode, templateReference.getRole(), targetReferentNode, generator)) {
+        targetNode.setReferent(templateReference.getRole(), targetReferentNode);
+      }
+      return true;
+    }
+
+    generator.addUnresolvedReference(nodeBuilder, templateReference); 
+    return false;
+    /*  generator.showErrorMessage(
               nodeBuilder.getSourceNode(),
               templateNode,
               nodeBuilder.getRuleNode(),
@@ -80,8 +91,7 @@ public class TemplateGenUtil {
       //test
       LOG.error("preved! error. set breakpoint here, referenceResolver:" + referenceResolver);
       referenceResolver.resolveTarget(templateReference, nodeBuilder);
-      //test
-    } // while (iterator.hasNext())
+      //test*/
   }
 
   static boolean checkResolvedReference(SNode sourceNode, SNode targetNode, SNode templateNode, String role, SNode targetReferentNode, ITemplateGenerator generator) {

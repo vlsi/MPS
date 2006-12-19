@@ -10,10 +10,7 @@ import jetbrains.mps.generator.GenerationFailedException;
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.IModelGenerator;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.ITemplateLanguageConstants;
 import jetbrains.mps.transformation.TLBase.ConditionalTemplate;
 import jetbrains.mps.transformation.TLBase.TemplateSwitch;
@@ -82,4 +79,6 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
   void reset();
 
   Language getTargetLanguage();
+
+  void addUnresolvedReference(INodeBuilder nodeBuilder, SReference templateReference);
 }
