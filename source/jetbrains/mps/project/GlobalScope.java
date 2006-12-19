@@ -2,6 +2,7 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -42,6 +43,14 @@ public class GlobalScope implements IScope {
   @NotNull
   public List<DevKit> getVisibleDevkits() {
     return MPSModuleRepository.getInstance().getAllModules(DevKit.class); 
+  }
+
+  @Nullable
+  public DevKit getDevKit(@NotNull String devKitNamespace) {
+    for (DevKit dk : getVisibleDevkits()) {
+      if (devKitNamespace.equals(dk.getName())) return dk;
+    }
+    return null;
   }
 
   public boolean isVisibleDevKit(@NotNull String devKitNamespace) {

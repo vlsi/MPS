@@ -14,6 +14,7 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.ForDebug;
 import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -421,32 +422,15 @@ public class SModel implements Iterable<SNode> {
 
   @NotNull
   public List<Language> getLanguages(@NotNull IScope scope) {
-//don't remove
-//    Set<Language> result = new HashSet<Language>(getUserDefinedLanguages(scope));
-//    Set<Language> additionalLanguages = new HashSet<Language>();
-//    Set<Language> visibleLanguages = new HashSet<Language>(scope.getVisibleLanguages());
-//    for (Language l : result) {
-//      additionalLanguages.addAll(l.getAllDependOnModules_impl(Language.class));
-//    }
-//    additionalLanguages.retainAll(visibleLanguages);
-//    result.addAll(additionalLanguages);
-//    return new ArrayList<Language>(result);
-    return getUserDefinedLanguages(scope);
-  }
-
-  @NotNull
-  public List<String> getLanguageNamespaces() {
-    return new ArrayList<String>(myLanguages);
-  }
-
-  @NotNull
-  public List<String> getDevKitNamespaces() {
-    return new ArrayList<String>(myDevKits);
-  }
-
-  @NotNull
-  public List<Language> getUserDefinedLanguages(@NotNull IScope scope) {
     ArrayList<Language> languages = new ArrayList<Language>();
+
+    for (String dk : getDevKitNamespaces()) {
+      DevKit devKit = scope.getDevKit(dk);
+      if (devKit != null) {
+        languages.addAll(devKit.getLanguages());        
+      }
+    }
+
     for (String languageNamespace : myLanguages) {
       Language language = scope.getLanguage(languageNamespace);
       if (language != null) {
@@ -462,6 +446,27 @@ public class SModel implements Iterable<SNode> {
     return languages;
   }
 
+  @NotNull
+  public List<String> getLanguageNamespaces() {
+    ArrayList<String> result = new ArrayList<String>(myLanguages);
+    for (String dk : getDevKitNamespaces()) {
+      DevKit devKit = GlobalScope.getInstance().getDevKit(dk);
+      if (devKit != null) {
+        for (Language l : devKit.getLanguages()) {
+          if (!result.contains(l.getNamespace())) {
+            result.add(l.getNamespace());
+          }
+        }
+      }
+    }
+    return result;
+  }
+
+  @NotNull
+  public List<String> getDevKitNamespaces() {
+    return new ArrayList<String>(myDevKits);
+  }
+
   @Nullable
   public SNode getRootByName(@NotNull String name) {
     for (SNode root : getRoots()) {
@@ -471,7 +476,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   @NotNull
-  public List<String> getUserDefinedLanguageNamespaces() {
+  public List<String> getExplicitlyImportedLanguage() {
     return new ArrayList<String>(myLanguages);
   }
 
@@ -689,7 +694,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void validateLanguagesAndImports() {
-    Set<String> usedLanguages = new HashSet<String>(myLanguages);
+    Set<String> usedLanguages = new HashSet<String>(getLanguageNamespaces());
     Set<SModelUID> importedModels = new HashSet<SModelUID>(getImportedModelUIDs());
     List<? extends SNode> nodes = SModelUtil.allNodes(this);
     for (SNode node : nodes) {

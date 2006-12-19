@@ -100,6 +100,14 @@ public abstract class AbstractModule implements IModule {
     return new ArrayList<DevKit>(getAllDependOnModules(DevKit.class));     
   }
 
+  @Nullable
+  public DevKit getDevKit(@NotNull String devKitNamespace) {
+    for (DevKit dk : getVisibleDevkits()) {
+      if (devKitNamespace.equals(dk.getName())) return dk;
+    }
+    return null;
+  }
+
   @NotNull
   public final List<IModule> getOwnModules() {
     return new LinkedList<IModule>(MPSModuleRepository.getInstance().getModules(this));

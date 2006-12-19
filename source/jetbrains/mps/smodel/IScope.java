@@ -29,5 +29,7 @@ public interface IScope {
 
   @NotNull List<DevKit> getVisibleDevkits();
 
+  @Nullable DevKit getDevKit(@NotNull String devKitNamespace);
+
   boolean isVisibleDevKit(@NotNull String devKitNamespace);
 }
