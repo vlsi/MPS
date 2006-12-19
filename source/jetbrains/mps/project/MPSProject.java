@@ -212,11 +212,22 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     ProjectDescriptor projectDescriptor = getProjectDescriptor();
     SModel model = projectDescriptor.getModel();
     model.setLoading(true);
-    SolutionPath solutionPath = new SolutionPath(model);
-    solutionPath.setPath(solutionDescriptionFile.getAbsolutePath());
-    projectDescriptor.addProjectSolution(solutionPath);
+
+    SolutionPath solutionPath = null;
+    for (SolutionPath p : getProjectDescriptor().getProjectSolutions()) {
+      if (p.getPath().equals(solutionDescriptionFile.getPath())) {
+        solutionPath = p;
+        break;
+      }
+    }
+
+    if (solutionPath == null) {
+      solutionPath = new SolutionPath(model);
+      solutionPath.setPath(solutionDescriptionFile.getAbsolutePath());
+      projectDescriptor.addProjectSolution(solutionPath);
+    }
+
     setProjectDescriptor(projectDescriptor);
-    myEventTranslator.projectChanged();
 
     for (Solution s : getProjectSolutions()) {
       File descriptorFile = s.getDescriptorFile();
