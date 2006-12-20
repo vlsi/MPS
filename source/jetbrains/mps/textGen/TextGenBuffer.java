@@ -11,9 +11,9 @@ import java.util.HashMap;
 public class TextGenBuffer {
   public static final int TOP = 0;
   public static final int DEFAULT = 1;
-  private StringBuffer[] myBuffers = new StringBuffer[]{
-    new StringBuffer(256),
-    new StringBuffer(256)
+  private StringBuilder[] myBuffers = new StringBuilder[]{
+    new StringBuilder(256),
+    new StringBuilder(256)
   };
   private int myCurrBuffer = 1;
   private HashMap myUserObjects = new HashMap();
