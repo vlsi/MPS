@@ -818,5 +818,21 @@
       <link role="target" targetNodeId="3.1071489090640" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1166648550386">
+    <property name="name" value="Model_CreateNewRootNodeOperation" />
+    <link role="extends" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1166648550387">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="concept" />
+      <link role="target" targetNodeId="3.1071489090640" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1166648550388">
+      <property name="value" value="new root node" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1166648568734">
+      <link role="conceptPropertyDeclaration" targetNodeId="1143235288634" resolveInfo="applicable_to_model" />
+    </node>
+  </node>
 </model>
 
