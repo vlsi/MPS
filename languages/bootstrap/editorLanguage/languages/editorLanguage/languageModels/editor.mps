@@ -565,6 +565,7 @@
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1078834032968">
             <property name="drawBorder" value="true" />
+            <property name="name" value="ver" />
             <property name="vertical" value="true" />
             <link role="relationDeclaration" targetNodeId="2.1073389446424" />
           </node>
@@ -608,6 +609,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1078915007347">
           <property name="drawBorder" value="true" />
+          <property name="name" value="hor" />
           <property name="vertical" value="false" />
           <link role="relationDeclaration" targetNodeId="2.1073389446424" />
         </node>
@@ -1973,6 +1975,7 @@
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1080750151285">
             <property name="drawBorder" value="true" />
+            <property name="name" value="inspector" />
             <property name="cellProviderId" value="CustomCellProviderAspect" />
           </node>
         </node>
@@ -2579,6 +2582,7 @@
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1088161738870">
             <property name="drawBorder" value="true" />
+            <property name="name" value="inspector" />
             <property name="cellProviderId" value="ModelAccessorAspect" />
           </node>
         </node>
