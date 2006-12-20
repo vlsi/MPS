@@ -41,6 +41,7 @@ public class GenerationSession {
   private GenerationSessionContext myCurrentContext;
   private List<GenerationSessionContext> mySavedContexts = new LinkedList<GenerationSessionContext>();
 
+  private int myInvocationCount = 0;
   private int myTransientModelsCount = 0;
 
 
@@ -99,6 +100,7 @@ public class GenerationSession {
     return status;
   }
 
+
   private GenerationStatus generateModel_internal(SModelDescriptor sourceModelDescriptor, Language targetLanguage, Set<MappingConfiguration> mappings)
           throws ClassNotFoundException,
           NoSuchMethodException,
@@ -106,6 +108,8 @@ public class GenerationSession {
           InvocationTargetException,
           InstantiationException {
 
+    myInvocationCount++;
+    myTransientModelsCount = 0;
     SModel sourceModel = sourceModelDescriptor.getSModel();
     addProgressMessage(MessageKind.INFORMATION, "generating model \"" + sourceModel.getUID() + "\"");
     Class<? extends IModelGenerator> defaultGeneratorClass = getDefaultGeneratorClass(targetLanguage);
@@ -243,7 +247,8 @@ public class GenerationSession {
       SModelDescriptor transientModel = createTransientModel(currentInputModel.getSModel(), module);
       currentInputModel = currentOutputModel;
       if (!generator.doSecondaryMapping(currentInputModel.getSModel(), transientModel.getSModel())) {
-        SModelRepository.getInstance().unRegisterModelDescriptor(transientModel, module);
+        SModelRepository.getInstance().removeModelDescriptor(transientModel);
+        myTransientModelsCount--;
         break;
       }
 
@@ -259,7 +264,7 @@ public class GenerationSession {
   }
 
   private SModelDescriptor createTransientModel(SModel sourceModel, ModelOwner modelOwner) {
-    SModelDescriptor transientModel = TransientModels.createTransientModel(modelOwner, sourceModel.getLongName(), "" + myTransientModelsCount + "_" + getSessionId());
+    SModelDescriptor transientModel = TransientModels.createTransientModel(modelOwner, sourceModel.getLongName(), "" + myInvocationCount + "_" + myTransientModelsCount + "_" + getSessionId());
     myTransientModelsCount++;
     transientModel.getSModel().setLoading(true); // we dont need any events to be casted
     return transientModel;
