@@ -119,7 +119,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.EnumerationDataTypeDeclaration" id="1140829206022">
     <property name="name" value="RTransformTag" />
     <link role="memberDataType" targetNodeId="1.1082983041843" />
-    <link role="defaultMember" targetNodeId="1140829274114" />
+    <link role="defaultMember" targetNodeId="1140829274114" resolveInfo="default_" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1140829274114">
       <property name="externalValue" value="DEFAULT" />
       <property name="internalValue" value="default_RTransform" />
