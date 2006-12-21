@@ -54,6 +54,8 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
 
   INodeBuilder findNodeBuilder(INodeBuilder fromBuilder, Condition<INodeBuilder> condition);
 
+  INodeBuilder getCurrentBuilder();
+
   ConditionalTemplate getTemplateSwitchCase(SNode sourceNode, TemplateSwitch templateSwitch);
 
   void showInformationMessage(SNode node, String message);

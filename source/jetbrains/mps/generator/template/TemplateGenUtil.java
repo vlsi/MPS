@@ -548,21 +548,12 @@ public class TemplateGenUtil {
     } else {
       // proceed with children
       if (builder == null) {
-//        builder = createDefaultNodeBuilder(sourceNode, templateNode, mappingName, false, generator);
         builder = generator.getNodeBuilderManager().createDefaultNodeBuilder(sourceNode, templateNode, mappingName, false);
       }
       createChildBuilders(builder);
     }
     return builder;
   }
-
-//  public static INodeBuilder createDefaultNodeBuilder(SNode sourceNode, SNode templateNode, String mappingName, boolean isCopying, ITemplateGenerator generator) {
-//    INodeBuilder builder = loadNodeBuilder(sourceNode, templateNode, mappingName, isCopying, generator);
-//    if (builder == null) {
-//      builder = new DefaultNodeBuilder(sourceNode, templateNode, mappingName, isCopying, generator);
-//    }
-//    return builder;
-//  }
 
   private static INodeBuilder createNodeBuilderForSwitch(SNode sourceNode, TemplateSwitch templateSwitch, String mappingName, ITemplateGenerator generator) {
     ConditionalTemplate templateSwitchCase = generator.getTemplateSwitchCase(sourceNode, templateSwitch);
