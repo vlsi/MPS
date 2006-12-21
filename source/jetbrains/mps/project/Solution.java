@@ -2,6 +2,7 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.projectLanguage.ModuleDescriptor;
 import jetbrains.mps.projectLanguage.PersistenceUtil;
 import jetbrains.mps.projectLanguage.SolutionDescriptor;
@@ -84,6 +85,8 @@ public class Solution extends AbstractModule {
     rereadModels();
 
     myEventTranslator.solutionChanged();
+    
+    ReloadUtils.reloadAll(true);
   }
 
   public void dispose() {
