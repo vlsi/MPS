@@ -497,8 +497,8 @@ public class SModelRepository extends SModelAdapter {
         for (SModelDescriptor sm : toReload) {
           if (isChanged(sm)) {
             int result = JOptionPane.showConfirmDialog(frame,
-                    "Model changed on a disk. Do you want to discard memory changes?",
-                    "Model Changed", JOptionPane.YES_NO_OPTION);
+                    "Model " + sm.getModelUID() + " changed on a disk. Do you want to discard memory changes?",
+                    "Model Changed " + sm.getModelUID(), JOptionPane.YES_NO_OPTION);
 
             if (result == JOptionPane.YES_OPTION) {
               sm.reloadFromDisk();
