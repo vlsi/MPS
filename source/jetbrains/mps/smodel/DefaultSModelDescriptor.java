@@ -35,6 +35,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   private IModelRootManager myModelRootManager;
   private boolean myTransient;
 
+  private long myDiskTimestamp = -1;
 
   public DefaultSModelDescriptor(IModelRootManager manager, ModelRoot root, File modelFile, SModelUID modelUID) {
     myModelRoot = root;
@@ -130,6 +131,12 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     return myModelRootManager.timestamp(this);
   }
 
+  public long fileTimestamp() {
+    File file = getModelFile();
+    if (file == null || !file.exists()) return -1;
+    return file.lastModified();
+  }
+
   /**
    * todo: should return "long name"
    */
@@ -156,6 +163,8 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 
       LOG.assertLog(mySModel != null, "Couldn't load model \"" + getModelUID() + "\"");
       addListenersToNewModel();
+
+      myDiskTimestamp = fileTimestamp();
     }
     return mySModel;
   }
@@ -243,6 +252,14 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     if (mySModel == null) return;
     SModelRepository.getInstance().markChanged(mySModel, false);
     myModelRootManager.saveModel(this);
+    myDiskTimestamp = fileTimestamp();
+  }
+
+  public boolean needsReloading() {
+    if (myDiskTimestamp == -1) {
+      return false;    
+    }
+    return fileTimestamp() > myDiskTimestamp;
   }
 
   public boolean isInitialized() {

@@ -9,12 +9,16 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.component.Dependency;
+import jetbrains.mps.ide.actions.tools.ReloadUtils;
 
 import java.util.*;
 import java.io.File;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import javax.swing.JOptionPane;
+import javax.swing.JFrame;
 
 /**
  * Author: Sergey Dmitriev
@@ -35,6 +39,8 @@ public class SModelRepository extends SModelAdapter {
 
   private Map<String, List<SModelCommandListener>> myCommandListeners = new HashMap<String, List<SModelCommandListener>>();
   private Map<ILanguageModelListenerOwner, List<SModelCommandListener>> myOwnersToListeners = new HashMap<ILanguageModelListenerOwner, List<SModelCommandListener>>();
+
+  private boolean myInChangedModelsReloading = false;
 
   private SModelCommandListener myListener = new SModelCommandListener() {
     public void modelChangedInCommand(List<SModelEvent> events) {
@@ -472,6 +478,45 @@ public class SModelRepository extends SModelAdapter {
       }
     }
     return result;
+  }
+
+  public synchronized void tryToReloadModelsFromDisk(JFrame frame) {
+    if (myInChangedModelsReloading) return;
+
+    Set<SModelDescriptor> toReload = new HashSet<SModelDescriptor>();
+    for (SModelDescriptor sm : getAllModelDescriptors()) {
+      if (sm.needsReloading()) {
+        toReload.add(sm);
+      }
+    }
+
+    if (!toReload.isEmpty()) {
+      myInChangedModelsReloading = true;
+      try {
+        boolean needReloadAll = false;
+        for (SModelDescriptor sm : toReload) {
+          if (isChanged(sm)) {
+            int result = JOptionPane.showConfirmDialog(frame,
+                    "Model changed on a disk. Do you want to discard memory changes?",
+                    "Model Changed", JOptionPane.YES_NO_OPTION);
+
+            if (result == JOptionPane.YES_OPTION) {
+              sm.reloadFromDisk();
+              needReloadAll = true;
+            }
+          } else {
+            sm.reloadFromDisk();
+            needReloadAll = true;
+          }
+        }
+
+        if (needReloadAll) {
+          ReloadUtils.reloadAll(false);
+        }
+      } finally {
+        myInChangedModelsReloading = false;
+      }
+    }
   }
 
   private void fireRepositoryChanged() {

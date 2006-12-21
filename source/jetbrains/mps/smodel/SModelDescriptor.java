@@ -36,6 +36,7 @@ public interface SModelDescriptor {
   void removeSModelCommandListener(SModelCommandListener listener);
 
   void save();
+  boolean needsReloading();
 
   void reloadFromDisk();
   void refresh();
@@ -55,6 +56,7 @@ public interface SModelDescriptor {
   FastNodeFinder getFastNodeFinder();
 
   long timestamp();
+  long fileTimestamp();
   long lastStructuralChange();
   long lastChange();
 
