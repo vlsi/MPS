@@ -127,7 +127,8 @@ public abstract class MPSTree extends JTree {
             JMenuItem item = findMenuItem(eventKeyStroke, menu);
             if (item != null) {
               item.getAction().actionPerformed(new ActionEvent(this, 0, ""));
-            }            
+              e.consume();
+            }
           }
         }
       }
