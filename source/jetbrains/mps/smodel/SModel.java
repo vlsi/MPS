@@ -440,9 +440,11 @@ public class SModel implements Iterable<SNode> {
                 "\"\nAdd this language to the LANGUAGES section of the project properties");
       }
     }
+
     if (languages.isEmpty()) {
       LOG.error("Model \"" + getUID() + "\" has no languages !!!");
     }
+    
     return languages;
   }
 
