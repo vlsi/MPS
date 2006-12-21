@@ -17,6 +17,16 @@
   </models>
   <module />
   <accessoryModels />
-  <generators />
+  <generators>
+    <generator generatorUID="jetbrains.mps.transformation.TLBase#1166719794418" targetLanguage="jetbrains.mps.transformation.templateGeneratorEngine">
+      <models>
+        <modelRoot path="${language_descriptor}\generators\templateGeneratorEngine\templates" namespacePrefix="jetbrains.mps.transformation.TLBase.generator.templateGeneratorEngine.template" />
+      </models>
+      <module>
+        <moduleRoot path="${mps_home}\languages\transformation\templateGeneratorEngine\templateGeneratorEngine.mpl" />
+      </module>
+    </generator>
+  </generators>
+  <classPath />
 </language>
 
