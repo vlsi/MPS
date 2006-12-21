@@ -51,7 +51,7 @@ public class CopyPasteUtil {
   }
 
   public static PasteNodeData createNodeDataIn(List<SNode> sourceNodes) {
-    if (sourceNodes.isEmpty()) return new PasteNodeData(new ArrayList<SNode>(), null, null, null, null);
+    if (sourceNodes.isEmpty()) return new PasteNodeData(new ArrayList<SNode>(), null, null, null, null, null);
     SModel model = sourceNodes.get(0).getModel();
 
     List<SNode> result = new ArrayList<SNode>();
@@ -65,6 +65,7 @@ public class CopyPasteUtil {
     }
     HashSet<SModelUID> necessaryImports = new HashSet<SModelUID>();
     HashSet<String> necessaryLanguages = new HashSet<String>();
+    HashSet<String> necessaryDevKits = new HashSet<String>();  // todo populate
     SModel fakeModel = copyModelProperties(model);
     processImportsAndLanguages(necessaryImports, necessaryLanguages, sourceNodesToNewNodes.keySet(), allReferences);
     for (SNode copiedNode : result) {
@@ -73,11 +74,14 @@ public class CopyPasteUtil {
     processReferencesIn(sourceNodesToNewNodes, allReferences);
 
     model.setLoading(false);
-    return new PasteNodeData(result, null, fakeModel, necessaryLanguages, necessaryImports);
+    return new PasteNodeData(result, null, fakeModel, necessaryLanguages, necessaryImports, necessaryDevKits);
   }
 
-  public static PasteNodeData createNodeDataOut(List<SNode> sourceNodes, SModel model, SModel modelProperties, Set<String> necessaryLanguages, Set<SModelUID> necessaryImports) {
-    if (sourceNodes.isEmpty()) return new PasteNodeData(new ArrayList<SNode>(), null, null, null, null);
+  public static PasteNodeData createNodeDataOut(List<SNode> sourceNodes, SModel model, SModel modelProperties,
+                                                Set<String> necessaryLanguages,
+                                                Set<SModelUID> necessaryImports,
+                                                Set<String> necessaryDevKits) {
+    if (sourceNodes.isEmpty()) return new PasteNodeData(new ArrayList<SNode>(), null, null, null, null, null);
     List<SNode> result = new ArrayList<SNode>();
     model.setLoading(true);
     Set<SReference> referencesRequireResolve = new HashSet<SReference>();
@@ -103,7 +107,7 @@ public class CopyPasteUtil {
     model.setLoading(false);
     originalModel.setLoading(false);
     fakeModel.setLoading(false);
-    return new PasteNodeData(result, referencesRequireResolve, modelProperties, necessaryLanguages, necessaryImports);
+    return new PasteNodeData(result, referencesRequireResolve, modelProperties, necessaryLanguages, necessaryImports, necessaryDevKits);
   }
 
   private static SNode copyNode_internal(SNode sourceNode, Map<SNode,SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
@@ -182,6 +186,8 @@ public class CopyPasteUtil {
       newModel.addLanguage(language);
     for (SModelUID importedModel : model.getImportedModelUIDs())
       newModel.addImportedModel(importedModel);
+    for (String devKit : model.getDevKitNamespaces())
+      newModel.addDevKit(devKit);
     return newModel;
   }
 
@@ -211,7 +217,7 @@ public class CopyPasteUtil {
     return getPasteNodeDataFromClipboard(model).getNodes();
   }
 
-  
+
 
   public static PasteNodeData getPasteNodeDataFromClipboard(SModel model) {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
@@ -234,7 +240,11 @@ public class CopyPasteUtil {
       if (s == null || s.length() <= 0) return PasteNodeData.emptyPasteNodeData(model);
       @Hack List<SNode> nodes = Parser.parse(s, model, "jetbrains.mpswiki");
       if (nodes == null) return PasteNodeData.emptyPasteNodeData(model);
-      return new PasteNodeData(nodes, new HashSet<SReference>(), model, new HashSet<String>(), new HashSet<SModelUID>());
+      return new PasteNodeData(nodes,
+              new HashSet<SReference>(), model,
+              new HashSet<String>(),
+              new HashSet<SModelUID>(),
+              new HashSet<String>());
     }
 
     return PasteNodeData.emptyPasteNodeData(model);
@@ -248,8 +258,10 @@ public class CopyPasteUtil {
   public static boolean addImportsAndLanguagesToModel(SModel targetModel, SModel modelPropertiesPattern, Set<String> necessaryLanguages, Set<SModelUID> necessaryImports, IOperationContext context) {
     List<String> additionalLanguages = new ArrayList<String>();
     List<SModelUID> additionalModels = new ArrayList<SModelUID>();
+    List<String> additionalDevKits = new ArrayList<String>();
     List<String> languagesFromPattern = new ArrayList<String>(modelPropertiesPattern.getExplicitlyImportedLanguages());
     List<SModelUID> importsFromPattern = new ArrayList<SModelUID>(modelPropertiesPattern.getImportedModelUIDs());
+    List<String> devKitsFromPattern = new ArrayList<String>(modelPropertiesPattern.getDevKitNamespaces());
 
     importsFromPattern.addAll(necessaryImports);
     languagesFromPattern.addAll(necessaryLanguages);
@@ -260,17 +272,25 @@ public class CopyPasteUtil {
     for (SModelUID modelUID : importsFromPattern) {
       if (!(targetModel.hasImportedModel(modelUID)) && !(targetModel.getUID().equals(modelUID))) additionalModels.add(modelUID);
     }
+    for (String devKit : devKitsFromPattern) {
+      if (!(targetModel.hasDevKit(devKit))) additionalDevKits.add(devKit);
+    }
 
     necessaryImports.retainAll(importsFromPattern);
     necessaryLanguages.retainAll(languagesFromPattern);
 
     if ((!additionalModels.isEmpty())||(!additionalLanguages.isEmpty())) {
-      AddRequiredModelImportsDialog dialog = new AddRequiredModelImportsDialog(context.getMainFrame(), targetModel, additionalModels, additionalLanguages, necessaryImports, necessaryLanguages);
+      AddRequiredModelImportsDialog dialog = new AddRequiredModelImportsDialog(context.getMainFrame(), targetModel,
+              additionalModels,
+              additionalLanguages,
+              additionalDevKits,
+              necessaryImports,
+              necessaryLanguages);
       dialog.setModal(true);
       dialog.showDialog();
       return (!dialog.isCanceled());
     }
-     return true;
+    return true;
   }
 
 

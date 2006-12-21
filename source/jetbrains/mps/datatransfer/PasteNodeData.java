@@ -22,13 +22,19 @@ public class PasteNodeData {
   private Set<SReference> myRequireResolveReferences;
   private Set<String> myNecessaryLanguages;
   private Set<SModelUID> myNecessaryImports;
+  private Set<String> myNecessaryDevKits;
   private SModel myModelProperties;
 
-  public PasteNodeData(List<SNode> nodes, Set<SReference> references, SModel modelProperties, Set<String> necessaryLanguages, Set<SModelUID> necessaryImports) {
+  public PasteNodeData(List<SNode> nodes, Set<SReference> references,
+                       SModel modelProperties,
+                       Set<String> necessaryLanguages,
+                       Set<SModelUID> necessaryImports,
+                       Set<String> necessaryDevKits) {
     this.myNodes = nodes;
     this.myRequireResolveReferences = references;
     myNecessaryLanguages = necessaryLanguages;
     myNecessaryImports = necessaryImports;
+    myNecessaryDevKits = necessaryDevKits;
     myModelProperties = modelProperties;
   }
 
@@ -48,12 +54,21 @@ public class PasteNodeData {
     return myNecessaryImports;
   }
 
+  public Set<String> getNecessaryDevKits() {
+    return myNecessaryDevKits;
+  }
+
   public SModel getModelProperties() {
     return myModelProperties;
   }
 
 
   public static PasteNodeData emptyPasteNodeData(SModel model) {
-    return new PasteNodeData(new ArrayList<SNode>(), new HashSet<SReference>(), model, new HashSet<String>(), new HashSet<SModelUID>());
+    return new PasteNodeData(new ArrayList<SNode>(),
+            new HashSet<SReference>(),
+            model,
+            new HashSet<String>(),
+            new HashSet<SModelUID>(),
+            new HashSet<String>());
   }
 }

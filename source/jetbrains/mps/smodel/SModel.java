@@ -404,6 +404,15 @@ public class SModel implements Iterable<SNode> {
     fireLanguageRemovedEvent(languageNamespace);
   }
 
+  public boolean hasDevKit(String devKit) {
+    for (String devkit : myDevKits) {
+      if (devkit.equals(devKit)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   public void addDevKit(@NotNull DevKit devKit) {
     addDevKit(devKit.getName());
   }

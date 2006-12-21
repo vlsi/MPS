@@ -49,7 +49,11 @@ public class CellAction_PasteNode extends EditorCellAction {
     SModel modelProperties = pasteNodeData.getModelProperties();
     Set<String> necessaryLanguages = pasteNodeData.getNecessaryLanguages();
     Set<SModelUID> necessaryImports = pasteNodeData.getNecessaryImports();
-    if (!CopyPasteUtil.addImportsAndLanguagesToModel(model, modelProperties, necessaryLanguages, necessaryImports, context.getOperationContext())) return;
+    if (!CopyPasteUtil.addImportsAndLanguagesToModel(model,
+            modelProperties,
+            necessaryLanguages,
+            necessaryImports,
+            context.getOperationContext())) return;
 
     List<SNode> pasteNodes = pasteNodeData.getNodes();
     Set<SReference> requireResolveReferences = pasteNodeData.getRequireResolveReferences();

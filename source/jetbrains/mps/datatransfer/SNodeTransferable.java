@@ -35,6 +35,7 @@ public class SNodeTransferable implements Transferable {
   private SModel myModelProperties;
   private Set<SModelUID> myNecessaryImports = new HashSet<SModelUID>();
   private Set<String> myNecessaryLanguages = new HashSet<String>();
+  private Set<String> myNecessaryDevKits = new HashSet<String>();
   private String myText = "";
 
   public DataFlavor[] getTransferDataFlavors() {
@@ -88,15 +89,20 @@ public class SNodeTransferable implements Transferable {
     myModelProperties = pasteNodeData.getModelProperties();
     myNecessaryImports = pasteNodeData.getNecessaryImports();
     myNecessaryLanguages = pasteNodeData.getNecessaryLanguages();
+    myNecessaryDevKits = pasteNodeData.getNecessaryDevKits();
   }
 
 
   public PasteNodeData createNodeData(SModel sModel) {
     Set<String> necessaryLanguages = myNecessaryLanguages;
     Set<SModelUID> necessaryImports = myNecessaryImports;
+    Set<String> necessaryDevKits = myNecessaryDevKits;
     if (necessaryImports == null) necessaryImports = new HashSet<SModelUID>();
     if (necessaryLanguages == null) necessaryLanguages = new HashSet<String>();
-    return CopyPasteUtil.createNodeDataOut(mySNodes, sModel, myModelProperties, new HashSet<String>(necessaryLanguages), new HashSet<SModelUID>(necessaryImports));
+    return CopyPasteUtil.createNodeDataOut(mySNodes, sModel, myModelProperties,
+            new HashSet<String>(necessaryLanguages),
+            new HashSet<SModelUID>(necessaryImports),
+            new HashSet<String>(necessaryDevKits));
   }
 
 
