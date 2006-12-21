@@ -100,6 +100,9 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 
   public void reloadFromDisk() {
     if (isInitialized()) {
+      myModelListeners.addAll(mySModel.getListeners());
+      myModelCommandListeners.addAll(mySModel.getCommandListeners());
+      mySModel.dispose();
       mySModel = null;
       getSModel();
       MPSModuleRepository.getInstance().invalidateLanguagesCaches();
