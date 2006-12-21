@@ -8,9 +8,7 @@ import jetbrains.mps.logging.Logger;
 import org.jdom.Element;
 
 import javax.swing.*;
-import javax.swing.event.TreeExpansionEvent;
-import javax.swing.event.TreeWillExpandListener;
-import javax.swing.event.TreeExpansionListener;
+import javax.swing.event.*;
 import javax.swing.tree.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -126,17 +124,55 @@ public abstract class MPSTree extends JTree {
 
             if (menu == null) return;
 
-            for (int i = 0; i < menu.getComponentCount(); i++) {
-              if (menu.getComponent(i) instanceof JMenuItem) {
-                JMenuItem item = (JMenuItem) menu.getComponent(i);
-                KeyStroke keyStroke = item.getAccelerator();
-                if (eventKeyStroke.equals(keyStroke)) {
-                  item.getAction().actionPerformed(new ActionEvent(this, 0, ""));                  
-                }
-              }
+            JMenuItem item = findMenuItem(eventKeyStroke, menu);
+            if (item != null) {
+              item.getAction().actionPerformed(new ActionEvent(this, 0, ""));
+            }            
+          }
+        }
+      }
+
+
+      private JMenuItem findMenuItem(KeyStroke eventKeyStroke, JPopupMenu menu) {
+        for (int i = 0; i < menu.getComponentCount(); i++) {
+          if (menu.getComponent(i) instanceof JMenuItem) {
+            JMenuItem item = (JMenuItem) menu.getComponent(i);
+            KeyStroke keyStroke = item.getAccelerator();
+            if (eventKeyStroke.equals(keyStroke)) {
+              return item;
+            }
+          }
+
+          if (menu.getComponent(i) instanceof JMenu) {
+            JMenuItem result = findMenuItem(eventKeyStroke, (JMenu) menu.getComponent(i));
+            if (result != null) {
+              return result;
             }
           }
         }
+
+        return null;
+      }
+
+      private JMenuItem findMenuItem(KeyStroke eventKeyStroke, JMenu menu) {
+        menu.getModel().setSelected(true);
+
+        for (int i = 0; i < menu.getItemCount(); i++) {
+          JMenuItem item = (JMenuItem) menu.getItem(i);
+          KeyStroke keyStroke = item.getAccelerator();
+          if (eventKeyStroke.equals(keyStroke)) {
+            return item;
+          }
+
+          if (item instanceof JMenu) {
+            JMenuItem result = findMenuItem(eventKeyStroke, (JMenu) menu.getComponent(i));
+            if (result != null) {
+              return result;
+            }
+          }
+        }
+
+        return null;
       }
     });
 
