@@ -424,12 +424,7 @@ public class SModel implements Iterable<SNode> {
   public List<Language> getLanguages(@NotNull IScope scope) {
     ArrayList<Language> languages = new ArrayList<Language>();
 
-    for (String dk : getDevKitNamespaces()) {
-      DevKit devKit = scope.getDevKit(dk);
-      if (devKit != null) {
-        languages.addAll(devKit.getLanguages());        
-      }
-    }
+
 
     for (String languageNamespace : myLanguages) {
       Language language = scope.getLanguage(languageNamespace);
@@ -441,6 +436,17 @@ public class SModel implements Iterable<SNode> {
       }
     }
 
+    for (String dk : getDevKitNamespaces()) {
+      DevKit devKit = scope.getDevKit(dk);
+      if (devKit != null) {
+        for (Language l : devKit.getLanguages()) {
+          if (!languages.contains(l)) {
+            languages.add(l);
+          }
+        }
+      }
+    }
+    
     if (languages.isEmpty()) {
       LOG.error("Model \"" + getUID() + "\" has no languages !!!");
     }
