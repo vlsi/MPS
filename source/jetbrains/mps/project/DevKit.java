@@ -9,6 +9,8 @@ import jetbrains.mps.projectLanguage.DevKitDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Mapper;
 
 import java.io.File;
 import java.util.List;
@@ -82,6 +84,14 @@ public class DevKit extends AbstractModule {
 
   public List<Language> getLanguages() {
     return MPSModuleRepository.getInstance().getLanguages(this);
+  }
+
+  public List<String> getLanguageNamespaces() {
+    return CollectionUtil.map(getLanguages(), new Mapper<Language, String>() {
+      public String map(Language language) {
+        return language.getNamespace();
+      }
+    });
   }
 
   public void save() {

@@ -6,6 +6,8 @@ import jetbrains.mps.nodeEditor.text.Parser;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.Hack;
+import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.GlobalScope;
 
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
@@ -266,18 +268,23 @@ public class CopyPasteUtil {
     importsFromPattern.addAll(necessaryImports);
     languagesFromPattern.addAll(necessaryLanguages);
 
-    for (String namespace : languagesFromPattern) {
-      if (!targetModel.hasLanguage(namespace)) additionalLanguages.add(namespace);
-    }
+
     for (SModelUID modelUID : importsFromPattern) {
       if (!(targetModel.hasImportedModel(modelUID)) && !(targetModel.getUID().equals(modelUID))) additionalModels.add(modelUID);
     }
     for (String devKit : devKitsFromPattern) {
       if (!(targetModel.hasDevKit(devKit))) additionalDevKits.add(devKit);
     }
+    for (String namespace : languagesFromPattern) {
+      if (!targetModel.hasLanguage(namespace)) additionalLanguages.add(namespace);
+    }
 
     necessaryImports.retainAll(importsFromPattern);
     necessaryLanguages.retainAll(languagesFromPattern);
+    for (String devKitName : additionalDevKits) {
+      DevKit devKit = GlobalScope.getInstance().getDevKit(devKitName);
+      if (devKit != null) necessaryLanguages.removeAll(devKit.getLanguageNamespaces());
+    }
 
     if ((!additionalModels.isEmpty())||(!additionalLanguages.isEmpty())) {
       AddRequiredModelImportsDialog dialog = new AddRequiredModelImportsDialog(context.getMainFrame(), targetModel,

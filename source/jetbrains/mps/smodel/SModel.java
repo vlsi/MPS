@@ -382,7 +382,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public boolean hasLanguage(@NotNull String languageNamespace) {
-    for (String languageNamespase : myLanguages) {
+    for (String languageNamespase : getLanguageNamespaces()) {
       if (languageNamespase.equals(languageNamespace)) return true;
     }
     return false;
