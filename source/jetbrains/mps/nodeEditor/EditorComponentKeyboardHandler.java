@@ -52,6 +52,8 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
     // pre-process action
 
+    boolean dontExecuteRT = false;
+
     if (selectedCell != null) {
 
       boolean endEditKeystroke = isEndEditKeystroke(keyEvent);
@@ -71,7 +73,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
         if (EditorCellAction.RIGHT_TRANSFORM.equals(actionType)) {
           // !side effect: can change selection!
-          if (!EditorUtil.validateCell(selectedCell, editorContext, strictMatching)) {
+          if (EditorUtil.validateCell(selectedCell, editorContext, strictMatching, true) != 0) {
             return true;
           }
         }
@@ -83,6 +85,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
       }
 
       // we may want to change action Type as result of pre-processing
+
 
       if (deleteKeystroke) {
         if (!(selectedCell instanceof EditorCell_Label &&
@@ -100,24 +103,25 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
         }
 
       } else if (EditorCellAction.RIGHT_TRANSFORM.equals(actionType)) {
-        if (selectedCell instanceof EditorCell_Label && selectedCell.isErrorState()) {
-          // stop here
-          return true;
-        }
-        if (EditorUtil.getCellAction(selectedCell, EditorCellAction.RIGHT_TRANSFORM, editorContext) == null) {
-          if (selectedCell instanceof EditorCell_Constant) {
-            actionType = EditorCellAction.RIGHT_SPECIAL;
-            keyEvent.consume();
-          } else if (selectedCell instanceof EditorCell_Property) {
-            String text = ((EditorCell_Property) selectedCell).getText();
-            if (!((EditorCell_Property) selectedCell).getModelAccessor().isValidText(text + " ")) {
+        if (!(selectedCell instanceof EditorCell_Label && selectedCell.isErrorState())) {
+          if (EditorUtil.getCellAction(selectedCell, EditorCellAction.RIGHT_TRANSFORM, editorContext) == null) {
+           /* if (selectedCell instanceof EditorCell_Constant) {
               actionType = EditorCellAction.RIGHT_SPECIAL;
               keyEvent.consume();
-            }
-          } else {
-            // stop here
-            return true;
+            } else if (selectedCell instanceof EditorCell_Property) {
+              String text = ((EditorCell_Property) selectedCell).getText();
+              if (!((EditorCell_Property) selectedCell).getModelAccessor().isValidText(text + " ")) {
+                actionType = EditorCellAction.RIGHT_SPECIAL;
+                keyEvent.consume();
+              }
+            } else {
+              // stop here
+              return true;
+            }*/
           }
+        } else {
+          //return true;
+          dontExecuteRT = true;
         }
       }
     }
@@ -127,8 +131,10 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
     if (selectedCell != null) {
 
       if (actionType != null && !actionType.equals(EditorCellAction.DELETE)) {
-        if (EditorUtil.executeCellAction(selectedCell, actionType, editorContext)) {
-          return true;
+        if (!(EditorCellAction.RIGHT_TRANSFORM.equals(actionType) && dontExecuteRT)) {
+          if (EditorUtil.executeCellAction(selectedCell, actionType, editorContext)) {
+            return true;
+          }
         }
       }
 
