@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.projectLanguage.ModelRoot;
+import jetbrains.mps.ide.modelRepositoryViewer.ModelRepositoryView;
 
 import java.io.File;
 import java.util.*;
@@ -105,6 +106,9 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
       mySModel.dispose();
       mySModel = null;
       getSModel();
+
+      SModelRepository.getInstance().markChanged(this, false);
+
       MPSModuleRepository.getInstance().invalidateLanguagesCaches();
     }
   }

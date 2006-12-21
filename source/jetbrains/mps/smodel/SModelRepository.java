@@ -480,7 +480,7 @@ public class SModelRepository extends SModelAdapter {
     return result;
   }
 
-  public synchronized void tryToReloadModelsFromDisk(JFrame frame) {
+  public void tryToReloadModelsFromDisk(JFrame frame) {
     System.out.println("try to reload from disk");
 
     if (myInChangedModelsReloading) {
@@ -502,6 +502,9 @@ public class SModelRepository extends SModelAdapter {
         boolean needReloadAll = false;
         for (SModelDescriptor sm : toReload) {
           if (isChanged(sm)) {
+
+            System.out.println("model " + sm + " changed both in memory and on the disk");
+
             int result = JOptionPane.showConfirmDialog(frame,
                     "Model " + sm.getModelUID() + " changed on a disk. Do you want to discard memory changes?",
                     "Model Changed " + sm.getModelUID(), JOptionPane.YES_NO_OPTION);
@@ -511,12 +514,16 @@ public class SModelRepository extends SModelAdapter {
               needReloadAll = true;
             }
           } else {
+            System.out.println("model " + sm + " changed only on disk. reloading");
+
             sm.reloadFromDisk();
             needReloadAll = true;
           }
         }
 
         if (needReloadAll) {
+          System.out.println("reloading classes");
+
           ReloadUtils.reloadAll(false);
         }
       } finally {
