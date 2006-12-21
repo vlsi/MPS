@@ -478,7 +478,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   @NotNull
-  public List<String> getExplicitlyImportedLanguage() {
+  public List<String> getExplicitlyImportedLanguages() {
     return new ArrayList<String>(myLanguages);
   }
 

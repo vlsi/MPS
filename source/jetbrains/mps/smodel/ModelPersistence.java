@@ -377,7 +377,7 @@ public class ModelPersistence {
     sourceModel.validateLanguagesAndImports();
 
     // languages
-    for (String languageNamespace : sourceModel.getExplicitlyImportedLanguage()) {
+    for (String languageNamespace : sourceModel.getExplicitlyImportedLanguages()) {
       Element languageElem = new Element(LANGUAGE);
       languageElem.setAttribute(NAMESPACE, languageNamespace);
       rootElement.addContent(languageElem);

@@ -178,7 +178,7 @@ public class CopyPasteUtil {
   public static SModel copyModelProperties(SModel model) {
     SModelUID modelUID = model.getUID();
     SModel newModel = new SModel(new SModelUID(modelUID.getLongName(), SModelStereotype.INTERNAL_COPY));
-    for (String language : model.getExplicitlyImportedLanguage())
+    for (String language : model.getExplicitlyImportedLanguages())
       newModel.addLanguage(language);
     for (SModelUID importedModel : model.getImportedModelUIDs())
       newModel.addImportedModel(importedModel);
@@ -248,7 +248,7 @@ public class CopyPasteUtil {
   public static boolean addImportsAndLanguagesToModel(SModel targetModel, SModel modelPropertiesPattern, Set<String> necessaryLanguages, Set<SModelUID> necessaryImports, IOperationContext context) {
     List<String> additionalLanguages = new ArrayList<String>();
     List<SModelUID> additionalModels = new ArrayList<SModelUID>();
-    List<String> languagesFromPattern = new ArrayList<String>(modelPropertiesPattern.getExplicitlyImportedLanguage());
+    List<String> languagesFromPattern = new ArrayList<String>(modelPropertiesPattern.getExplicitlyImportedLanguages());
     List<SModelUID> importsFromPattern = new ArrayList<SModelUID>(modelPropertiesPattern.getImportedModelUIDs());
 
     importsFromPattern.addAll(necessaryImports);
