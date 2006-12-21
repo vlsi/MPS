@@ -101,7 +101,7 @@ public class ModelPersistence {
 
     Document document = loadModelDocument(file);
 
-    return readModel(document, modelName, modelStereotype, false);
+    return readModel(document, modelName, modelStereotype, true);
   }
 
   @NotNull
@@ -168,11 +168,6 @@ public class ModelPersistence {
         importedModelVersion = Integer.parseInt(importedModelVersionValue);
       }
 
-      if (checkVersion) {
-        // TODO check if imported model has another version
-        System.err.println("checking version");
-      }
-
       String importedModelUIDString = element.getAttributeValue(MODEL_UID);
       if (importedModelUIDString == null) {
         // read in old manner...
@@ -191,6 +186,24 @@ public class ModelPersistence {
       }
 
       SModelUID importedModelUID = SModelUID.fromString(importedModelUIDString);
+
+      if (checkVersion) {
+     //   System.err.println("checking version");
+        SModelDescriptor importedModelDescriptor = SModelRepository.getInstance().getModelDescriptor(importedModelUID);
+        if (importedModelDescriptor != null) {
+          File importedModelFile = importedModelDescriptor.getModelFile();
+          if (importedModelFile != null) {
+            int newVersion = readVersionFromFile(importedModelFile);
+            if (newVersion > importedModelVersion) {
+              System.err.println("new imported model version detected: model = " + model
+                      + " imported model = " + importedModelUID + " current import version: " +
+                      importedModelVersion + " new version: " + newVersion);
+              // TODO do something :)
+            }
+          }
+        }
+      }
+
       model.addImportElement(importedModelUID, importIndex, importedModelVersion);
     }
 
@@ -251,7 +264,6 @@ public class ModelPersistence {
     if (node == null) {
       String error = "Error reading model " + model.getUID() + ": couldn't create instance of node id=" + nodeElement.getAttributeValue(ID);
       LOG.errorWithTrace(error);
-      firePersisteneceError();
       return null;
     }
 
@@ -289,7 +301,6 @@ public class ModelPersistence {
         node.addChild(role, childNode);
       } else {
         LOG.errorWithTrace("Error reading child node in node " + node.getDebugText());
-        firePersisteneceError();
       }
     }
 
@@ -303,7 +314,7 @@ public class ModelPersistence {
     try {
       if (!model.getUID().toString().startsWith(NameUtil.namespaceFromLongName(type)) &&
               SModelUtil.findConceptDeclaration(NameUtil.conceptFQNameByClassName(type), GlobalScope.getInstance()) == null) {
-        return new UnknownSNode(model);                
+        return new UnknownSNode(model);
       }
 
       Method method = QueryMethod.getNewInstanceMethod(type);
@@ -335,6 +346,7 @@ public class ModelPersistence {
 
     try {
       JDOMUtil.writeDocument(document, file);
+      writeVersionFile(model, file);
       SModelRepository.getInstance().markChanged(model, false);
     } catch (IOException e) {
       LOG.error(e);
@@ -491,20 +503,42 @@ public class ModelPersistence {
     return Integer.parseInt(element.getAttributeValue(attrName));
   }
 
-  private static List<PersistenceErrorListener> ourListeners = new ArrayList<PersistenceErrorListener>();
-
-  public static void addPersistenceListener(@NotNull PersistenceErrorListener listener) {
-    ourListeners.add(listener);
+  private static File getVersionFile(File modelFile) {
+    String modelPath = modelFile.getAbsolutePath();
+    String versionPath = modelPath.replace(".mps", ".version");
+    File versionFile = new File(versionPath);
+    return versionFile;
   }
 
-  private static void firePersisteneceError() {
-    for (PersistenceErrorListener listener : ourListeners) {
-      listener.onError();
+  public static void writeVersionFile(SModel model, File modelFile) {
+    int version = model.getVersion();
+    if (version < 0) return;
+    File versionFile = getVersionFile(modelFile);
+    try {
+      if (!versionFile.exists()) {
+        versionFile.createNewFile();
+      }
+      FileOutputStream fileOutputStream = new FileOutputStream(versionFile);
+      fileOutputStream.write(version);
+      fileOutputStream.close();
+    } catch(IOException ioe) {
+      ioe.printStackTrace();
     }
   }
 
-  public static interface PersistenceErrorListener {
-    void onError();
+  public static int readVersionFromFile(File modelFile) {
+    File versionFile = getVersionFile(modelFile);
+    if (versionFile.exists()) {
+      try {
+        FileInputStream fileInputStream = new FileInputStream(versionFile);
+        return new InputStreamReader(fileInputStream).read();
+      } catch(FileNotFoundException ex) {
+        ex.printStackTrace();
+      } catch(IOException ex) {
+        ex.printStackTrace();
+      }
+    }
+    return -1;
   }
 
   public static class UnknownSNode extends SNode {
