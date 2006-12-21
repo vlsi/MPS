@@ -162,9 +162,9 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
       SModelsMulticaster.getInstance().fireModelLoadedEvent(this);
 
       LOG.assertLog(mySModel != null, "Couldn't load model \"" + getModelUID() + "\"");
-      addListenersToNewModel();
-
       myDiskTimestamp = fileTimestamp();
+                            
+      addListenersToNewModel();
     }
     return mySModel;
   }

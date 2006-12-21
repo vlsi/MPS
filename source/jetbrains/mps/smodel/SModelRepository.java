@@ -481,11 +481,17 @@ public class SModelRepository extends SModelAdapter {
   }
 
   public synchronized void tryToReloadModelsFromDisk(JFrame frame) {
-    if (myInChangedModelsReloading) return;
+    System.out.println("try to reload from disk");
+
+    if (myInChangedModelsReloading) {
+      System.out.println(" return ");
+      return;
+    }
 
     Set<SModelDescriptor> toReload = new HashSet<SModelDescriptor>();
     for (SModelDescriptor sm : getAllModelDescriptors()) {
       if (sm.needsReloading()) {
+        System.out.println("model is out of date : " + sm);
         toReload.add(sm);
       }
     }
