@@ -15,7 +15,10 @@
   <models>
     <modelRoot path="${language_descriptor}\." namespacePrefix="jetbrains.mps.transformation.TLBase" />
   </models>
-  <module />
+  <module>
+    <moduleRoot path="${mps_home}\languages\baseLanguage\language\baseLanguage.mpl" />
+    <moduleRoot path="${mps_home}\languages\bootstrap\smodelLanguage\language\smodelLanguage.mpl" />
+  </module>
   <accessoryModels />
   <generators>
     <generator generatorUID="jetbrains.mps.transformation.TLBase#1166719794418" targetLanguage="jetbrains.mps.transformation.templateGeneratorEngine">
