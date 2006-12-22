@@ -432,7 +432,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     element.setAttribute(SHOW_P_AND_R, "" + myShowProperties);
   }
 
-  private class MyTree extends MPSTree {
+  public class MyTree extends MPSTree {
 
     public MyTree() {
       super();

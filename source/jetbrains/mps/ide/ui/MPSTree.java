@@ -29,7 +29,7 @@ public abstract class MPSTree extends JTree {
   public static final String TREE_PATH_SEPARATOR = "/";
 
   private MPSToolTipInfo myToolTipInfo;
-  private int myTooltipManagerRecentInitialDelay;
+  private int myTooltipManagerRecentInitialDelay;  
 
   protected MPSTree() {
     largeModel = true;

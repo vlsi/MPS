@@ -161,7 +161,11 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   private boolean showPropertiesAndReferences() {
-    return getOperationContext().getComponent(ProjectPane.class).isShowPropertiesAndReferences();
+
+    System.out.println("getTree = " + getTree());
+
+    return getTree() instanceof ProjectPane.MyTree &&
+            getOperationContext().getComponent(ProjectPane.class).isShowPropertiesAndReferences();
   }
 
 
