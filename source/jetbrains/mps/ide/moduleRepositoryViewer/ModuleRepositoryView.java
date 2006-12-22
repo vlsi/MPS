@@ -1,7 +1,7 @@
 package jetbrains.mps.ide.moduleRepositoryViewer;
 
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
-import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.command.CommandEvent;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.ICommandListener;
@@ -12,8 +12,6 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 
@@ -56,25 +54,6 @@ public class ModuleRepositoryView extends DefaultTool {
     myDeferringEventHandler.unInstallListeners();
   }
 
-  private static Icon getOwnersIcon(MPSModuleOwner owner) {
-    if (owner instanceof Generator) {
-      return Icons.GENERATOR_ICON;
-    }
-    if (owner instanceof Language) {
-      return Icons.LANGUAGE_ICON;
-    }
-    if (owner instanceof MPSProject) {
-      return Icons.PROJECT_ICON;
-    }
-    if (owner instanceof BootstrapLanguages) {
-      return Icons.PROJECT_LANGUAGE_ICON;
-    }
-    if (owner instanceof Solution) {
-      return Icons.SOLUTION_ICON;
-    }
-    return Icons.DEFAULT_ICON;
-  }
-
   private class MyTree extends MPSTree {
     protected MPSTreeNode rebuild() {
       TextTreeNode root = new TextTreeNode("Loaded Modules") {
@@ -112,7 +91,7 @@ public class ModuleRepositoryView extends DefaultTool {
       }
 
       public Icon getIcon(boolean expanded) {
-        return getOwnersIcon(myModule);
+        return IconManager.getIconFor(myModule);
       }
 
       public String getNodeIdentifier() {
@@ -137,7 +116,7 @@ public class ModuleRepositoryView extends DefaultTool {
       }
 
       public Icon getIcon(boolean expanded) {
-        return getOwnersIcon(myOwner);
+        return IconManager.getIconFor(myOwner);
       }
     }
   }

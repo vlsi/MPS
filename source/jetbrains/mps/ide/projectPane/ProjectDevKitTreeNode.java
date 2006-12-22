@@ -57,6 +57,6 @@ class ProjectDevKitTreeNode extends MPSTreeNode {
   }
 
   public Icon getIcon(boolean expanded) {
-    return Icons.SOLUTION_ICON;
+    return Icons.DEVKIT_ICON;
   }
 }

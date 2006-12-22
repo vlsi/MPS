@@ -80,9 +80,11 @@ public class Icons {
   public static final Icon SOLUTION_ICON = new ImageIcon(Icons.class.getResource("nodes/solution.png"));
   public static final Icon SOLUTION_PROPERTIES_ICON = new ImageIcon(Icons.class.getResource("nodes/solutionProperties.png"));
 
-  public static final Icon CFG_END_ICON = new ImageIcon(Icons.class.getResource("nodes/cfgEnd.png"));
+  public static final Icon DEVKIT_ICON = new ImageIcon(Icons.class.getResource("nodes/devkit.png"));
 
+  public static final Icon CFG_END_ICON = new ImageIcon(Icons.class.getResource("nodes/cfgEnd.png"));
   public static final Icon MPS_ICON = new ImageIcon(Icons.class.getResource("nodes/mps2.png"));
+
   public static final Icon MPS_SMALL_ICON = new ImageIcon(Icons.class.getResource("nodes/mps.png"));
 
   public static final Icon JDK_OPENED_FOLDER = new ImageIcon(Icons.class.getResource("nodes/ppJdkOpen.png"));
@@ -94,5 +96,5 @@ public class Icons {
   public static final Icon MINIMIZE_ICON = new ImageIcon(Icons.class.getResource("nodes/minimize.png"));
   public static final Icon CLOSE_ICON = new ImageIcon(Icons.class.getResource("nodes/close.png"));
   public static final Icon MINIMIZE_DISABLED_ICON = new ImageIcon(Icons.class.getResource("nodes/minimizeDis.png"));
-  public static final Icon CLOSE_DISABLED_ICON = new ImageIcon(Icons.class.getResource("nodes/closeDis.png")); 
+  public static final Icon CLOSE_DISABLED_ICON = new ImageIcon(Icons.class.getResource("nodes/closeDis.png"));
 }

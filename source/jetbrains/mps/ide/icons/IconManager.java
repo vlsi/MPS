@@ -3,8 +3,12 @@ package jetbrains.mps.ide.icons;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.DevKit;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Macros;
@@ -140,4 +144,25 @@ public class IconManager {
     return Icons.MODEL_ICON;
   }
 
+  public static Icon getIconFor(MPSModuleOwner owner) {
+    if (owner instanceof Generator) {
+      return Icons.GENERATOR_ICON;
+    }
+    if (owner instanceof Language) {
+      return Icons.LANGUAGE_ICON;
+    }
+    if (owner instanceof MPSProject) {
+      return Icons.PROJECT_ICON;
+    }
+    if (owner instanceof BootstrapLanguages) {
+      return Icons.PROJECT_LANGUAGE_ICON;
+    }
+    if (owner instanceof Solution) {
+      return Icons.SOLUTION_ICON;
+    }
+    if (owner instanceof DevKit) {
+      return Icons.DEVKIT_ICON;
+    }
+    return Icons.DEFAULT_ICON;
+  }
 }
