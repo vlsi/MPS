@@ -1606,7 +1606,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="Charisma" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
+    <configuration default="false" name="Charisma" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
@@ -1657,6 +1657,9 @@
         <option name="TRANSPORT" value="0" />
         <option name="LOCAL" value="true" />
       </RunnerSettings>
+      <RunnerSettings RunnerId="Profile ">
+        <option name="myExternalizedOptions" value="&#13;&#10;snapshots-dir=&#13;&#10;" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -1669,6 +1672,21 @@
         <SHUTDOWN>
           <option name="USE_DEFAULT" value="true" />
           <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value=" stop" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile ">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="C:\Program Files\Apache Software Foundation\Tomcat 5.0\bin\catalina.bat" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value=" run" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="C:\Program Files\Apache Software Foundation\Tomcat 5.0\bin\catalina.bat" />
           <option name="VM_PARAMETERS" value="" />
           <option name="PROGRAM_PARAMETERS" value=" stop" />
         </SHUTDOWN>

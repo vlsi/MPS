@@ -18,12 +18,14 @@ import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ToStringComparator;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import javax.swing.JPopupMenu;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
+import javax.swing.tree.TreePath;
 import java.awt.Color;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
@@ -64,19 +66,26 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   public JPopupMenu getPopupMenu() {
-    ProjectPane pane = getOperationContext().getComponent(ProjectPane.class);
-    if (pane == null) return null;
     JPopupMenu result = new JPopupMenu();
-    ActionContext context = getActionContext(pane);
+    ActionContext context = getActionContext();
+    context.put(SModelDescriptor.class, getSModelDescriptor());    
     ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_MODEL_ACTIONS).add(result, context);
     return result;
   }
 
-  private ActionContext getActionContext(ProjectPane pane) {
+  private ActionContext getActionContext() {
     SModelDescriptor model = getSModelDescriptor();
-    List<SModelDescriptor> models = pane.getSelectedModels();
+
+    List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
+    for (TreePath p : getTree().getSelectionPaths()) {
+      if (p.getLastPathComponent() instanceof SModelTreeNode) {
+        models.add(((SModelTreeNode) p.getLastPathComponent()).getSModelDescriptor());
+      }
+    }
+
     ActionContext context = new ActionContext(getOperationContext());
     context.put(SModelDescriptor.class, model);
+    context.put(MPSProject.class, getOperationContext().getProject());
     context.put(List.class, models);
     return context;
   }
@@ -88,9 +97,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
   public void keyPressed(KeyEvent keyEvent) {
     if (keyEvent.isAltDown() && keyEvent.getKeyCode() == KeyEvent.VK_INSERT) {
-      ProjectPane pane = getOperationContext().getComponent(ProjectPane.class);
-      if (pane == null) return;
-      ActionContext context = getActionContext(pane);
+      ActionContext context = getActionContext();
       JPopupMenu popupMenu = new JPopupMenu();
       ActionGroup group = new CreateRootNodeGroup();
       group.update(context);
