@@ -166,7 +166,7 @@ public abstract class MPSTree extends JTree {
           }
 
           if (item instanceof JMenu) {
-            JMenuItem result = findMenuItem(eventKeyStroke, (JMenu) menu.getComponent(i));
+            JMenuItem result = findMenuItem(eventKeyStroke, (JMenu) menu.getItem(i));
             if (result != null) {
               return result;
             }
