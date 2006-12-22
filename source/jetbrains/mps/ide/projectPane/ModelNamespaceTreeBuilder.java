@@ -15,7 +15,7 @@ import jetbrains.mps.project.Solution;
 import javax.swing.JPopupMenu;
 import java.util.*;
 
-class ModelNamespaceTreeBuilder {
+public class ModelNamespaceTreeBuilder {
   private NamespaceNode myRootNamespace = new NamespaceNode("");
 
   public ModelNamespaceTreeBuilder() {

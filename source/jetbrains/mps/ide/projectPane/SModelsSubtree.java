@@ -29,8 +29,8 @@ import java.awt.Rectangle;
  * Time: 5:20:32 PM
  * To change this template use File | Settings | File Templates.
  */
-class SModelsSubtree {
-  static void create(MPSTreeNode rootTreeNode, IOperationContext operationContext) {
+public class SModelsSubtree {
+  public static void create(MPSTreeNode rootTreeNode, IOperationContext operationContext) {
     List<MPSTreeNode> list = new LinkedList<MPSTreeNode>();
 
     Map<String, List<SModelDescriptor>> stereotypes = new HashMap<String, List<SModelDescriptor>>();

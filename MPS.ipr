@@ -1745,15 +1745,6 @@
         <root url="jar://$PROJECT_DIR$/lib/junit/junit-src.zip!/" />
       </SOURCES>
     </library>
-    <library name="ASM">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/asm/asm.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/asm/asm-src.zip!/" />
-      </SOURCES>
-    </library>
     <library name="JDOM">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/jdom/jdom-1.0.jar!/" />
@@ -1761,16 +1752,6 @@
       <JAVADOC />
       <SOURCES>
         <root url="jar://$PROJECT_DIR$/lib/jdom/jdom-1.0-src.zip!/" />
-      </SOURCES>
-    </library>
-    <library name="JavaSVN">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/javasvn/javasvn.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/javasvn/jsch.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/javasvn/javasvnsrc.zip!/" />
       </SOURCES>
     </library>
     <library name="Log4j">
@@ -1840,13 +1821,6 @@
     <library name="Annotations">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/annotations/annotations.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
-    <library name="idea">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/../idea/lib/idea.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
