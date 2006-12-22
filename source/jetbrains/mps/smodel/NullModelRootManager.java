@@ -1,12 +1,12 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.projectLanguage.ModelRoot;
-
-import java.util.*;
-
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Set;
+
 class NullModelRootManager extends AbstractModelRootManager {
+
   @NotNull
   public Set<SModelDescriptor> read(@NotNull ModelRoot root, @NotNull ModelOwner owner) {
     throw new RuntimeException();

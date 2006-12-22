@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.transformation.TLBase.MappingConfiguration;
+import jetbrains.mps.ide.BootstrapLanguages;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -136,6 +137,17 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   private List<Generator> getGeneratorModules(SModel sourceModel) {
     List<Generator> generators = new LinkedList<Generator>();
+
+    if (sourceModel.getUID().getStereotype().equals(SModelStereotype.TEMPLATES)) {
+      // exception
+      List<Generator> tlGenerators = BootstrapLanguages.getInstance().getTLBase().getGenerators();
+      for (Generator generator : tlGenerators) {
+        if ("jetbrains.mps.transformation.templateGeneratorEngine".equals(generator.getTargetLanguageName())) {
+          generators.add(generator);
+          return generators;
+        }
+      }
+    }
 
     // from all languages used in source model ..
     List<Language> sourceLanguages = sourceModel.getLanguages(myInvocationContext.getScope());
