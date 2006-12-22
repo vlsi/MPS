@@ -90,7 +90,7 @@ public class FileUtil {
     try {
       FileOutputStream fos = new FileOutputStream(to);
       ZipOutputStream out = new ZipOutputStream(fos);
-      _zip(dir, "/", out);
+      _zip(dir, "", out);
       out.close();
       fos.close();
     } catch (IOException e) {
@@ -101,16 +101,19 @@ public class FileUtil {
   private static void _zip(File base, String prefix, ZipOutputStream out) throws IOException {
     File current = new File(base.getPath() + prefix).getAbsoluteFile();
 
-    ZipEntry entry = new ZipEntry(prefix);
-    out.putNextEntry(entry);
-    if (current.isFile()) {
-      byte[] bytes = new byte[(int) current.length()];
-      FileInputStream is = new FileInputStream(current);
-      ReadUtil.read(bytes, is);
-      is.close();
-      out.write(bytes);
-    }
-    out.closeEntry();
+    if (prefix.length() > 0) {
+      ZipEntry entry = new ZipEntry(prefix);
+      entry.setTime(current.lastModified());
+      out.putNextEntry(entry);
+      if (current.isFile()) {
+        byte[] bytes = new byte[(int) current.length()];
+        FileInputStream is = new FileInputStream(current);
+        ReadUtil.read(bytes, is);
+        is.close();
+        out.write(bytes);
+      }
+      out.closeEntry();
+    }    
 
     if (current.isDirectory()) {
       for (File file : current.listFiles()) {
@@ -213,6 +216,6 @@ public class FileUtil {
 
 
   public static void main(String[] args) {
-    System.out.println(getJREHome());
+    zip(new File("C:/temp/test"), new File("C:/temp/test.zip"));
   }
 }
