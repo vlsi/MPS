@@ -1730,6 +1730,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1166040637528">
+    <property name="iconPath" value="${mps_home}\source\jetbrains\mps\bootstrap\editorLanguage\icons\menuComponent.png" />
     <property name="rootable" value="true" />
     <property name="name" value="CellMenuComponent" />
     <link role="extends" targetNodeId="1166049232041" resolveInfo="AbstractComponent" />
