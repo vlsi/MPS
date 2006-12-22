@@ -3,6 +3,7 @@ package jetbrains.mps.generator;
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.messages.Message;
@@ -81,7 +82,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   public void write(Element element, MPSProject project) {
     element.setAttribute(COMPILE_ON_GENERATION, "" + myCompileOnGeneration);
     element.setAttribute(SAVE_TRANSIENT_MODELS, "" + mySaveTransientModels);
-    element.setAttribute(COMPILE_SOURCE_LANGUAGES_MODULES,"" + myCompileSourceLanguageModules);
+    element.setAttribute(COMPILE_SOURCE_LANGUAGES_MODULES, "" + myCompileSourceLanguageModules);
   }
 
   public boolean isCompileOnGeneration() {
@@ -182,18 +183,29 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
   public static List<Generator> getPossibleGenerators(SModel sourceModel, IScope scope) {
     List<Generator> result = new LinkedList<Generator>();
-    List<Language> languages = sourceModel.getLanguages(scope);
-    for (Language sourceLanguage : languages) {
-      List<Generator> generators = sourceLanguage.getGenerators();
-      for (Generator generator : generators) {
-        Language targetLanguage = generator.getTargetLanguage();
-        if (targetLanguage != null && !result.contains(generator)) {
-          if (targetLanguage == sourceLanguage) {
-            // only take self-generators with 'mapping configuration'.
-            // otherwise it is pure 'rewriting' generator - it's target language is not target of generation
-            if (!containsMappingConfiguration(generator)) continue;
-          }
+    if (sourceModel.getUID().getStereotype().equals(SModelStereotype.TEMPLATES)) {
+      // exception
+      List<Generator> tlGenerators = BootstrapLanguages.getInstance().getTLBase().getGenerators();
+      for (Generator generator : tlGenerators) {
+        if ("jetbrains.mps.transformation.templateGeneratorEngine".equals(generator.getTargetLanguageName())) {
           result.add(generator);
+        }
+      }
+    } else {
+      // regular
+      List<Language> languages = sourceModel.getLanguages(scope);
+      for (Language sourceLanguage : languages) {
+        List<Generator> generators = sourceLanguage.getGenerators();
+        for (Generator generator : generators) {
+          Language targetLanguage = generator.getTargetLanguage();
+          if (targetLanguage != null && !result.contains(generator)) {
+            if (targetLanguage == sourceLanguage) {
+              // only take self-generators with 'mapping configuration'.
+              // otherwise it is pure 'rewriting' generator - it's target language is not target of generation
+              if (!containsMappingConfiguration(generator)) continue;
+            }
+            result.add(generator);
+          }
         }
       }
     }
@@ -424,7 +436,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           myProject.addProjectSolution(solutionDescriptorFile);
         }
       }
-
 
       //update generated sources timestamp
       updateLanguagesGenerationRequiredStatus(invocationContext);
