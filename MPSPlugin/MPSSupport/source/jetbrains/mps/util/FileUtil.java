@@ -99,7 +99,7 @@ public class FileUtil {
   }
 
   private static void _zip(File base, String prefix, ZipOutputStream out) throws IOException {
-    File current = new File(base.getPath() + prefix).getAbsoluteFile();
+    File current = new File(base.getPath() + File.separator + prefix).getAbsoluteFile();
 
     if (prefix.length() > 0) {
       ZipEntry entry = new ZipEntry(prefix);
@@ -215,7 +215,18 @@ public class FileUtil {
   }
 
 
+  public static void write(File file, String content) {
+    try {
+      PrintWriter writer = new PrintWriter(new FileWriter(file));
+      writer.print(content);
+      writer.flush();
+      writer.close();
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
+  }
+
   public static void main(String[] args) {
-    zip(new File("C:/temp/test"), new File("C:/temp/test.zip"));
+    zip(new File("C:/aaaaa"), new File("C:/temp/test.zip"));
   }
 }

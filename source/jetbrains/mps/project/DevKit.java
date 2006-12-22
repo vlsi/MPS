@@ -11,10 +11,12 @@ import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Mapper;
+import jetbrains.mps.util.ToStringComparator;
 
 import java.io.File;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class DevKit extends AbstractModule {
   public static DevKit newInstance(@NotNull File descriptorFile, @NotNull MPSModuleOwner moduleOwner) {
@@ -83,7 +85,9 @@ public class DevKit extends AbstractModule {
   }
 
   public List<Language> getLanguages() {
-    return MPSModuleRepository.getInstance().getLanguages(this);
+    List<Language> languages = MPSModuleRepository.getInstance().getLanguages(this);
+    Collections.sort(languages, new ToStringComparator());
+    return languages;
   }
 
   public List<String> getLanguageNamespaces() {
