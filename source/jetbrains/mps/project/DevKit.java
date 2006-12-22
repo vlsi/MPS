@@ -120,6 +120,11 @@ public class DevKit extends AbstractModule {
     return getName();
   }
 
+  @Nullable
+  public String getDevKitPluginClass() {
+    return myDescriptor.getDevKitPlugin();
+  }
+
   private class DevKitEventTranslator extends CommandEventTranslator {
 
     private void devKitChanged() {
