@@ -92,6 +92,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
         });        
         for (SNode node : myChildren) {
           node.registerInModel(node.getModel());
+
         }
       }
     }
@@ -462,14 +463,15 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   @NotNull
   public Map<String, String> getProperties() {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
-    return new HashMap<String, String>(myProperties);
+    return Collections.unmodifiableMap(myProperties);
   }
 
   @NotNull
   public Set<String> getPropertyNames() {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
-    Set<String> result = new HashSet<String>(myProperties.keySet());
-    result.addAll(getPropertyNamesFromAttributes());
+
+    Set<String> result = getPropertyNamesFromAttributes();
+    result.addAll(myProperties.keySet());
     return result;
   }
 
@@ -696,7 +698,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   @NotNull
   public List<SNode> getChildren() {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
-    return new ArrayList<SNode>(_children());
+    return Collections.unmodifiableList(_children());
   }
 
   @NotNull
