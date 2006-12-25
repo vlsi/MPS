@@ -129,12 +129,6 @@
       <property name="name" value="sourceQueryAspectId" />
       <link role="dataType" targetNodeId="2.1082983041843" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1166750128458">
-      <property name="sourceCardinality" value="0..1" />
-      <property name="role" value="sourceNodesFunction" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1166748456925" resolveInfo="MappingRule_Query" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1095417265990">
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />
