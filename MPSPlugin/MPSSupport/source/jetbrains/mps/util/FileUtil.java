@@ -77,7 +77,7 @@ public class FileUtil {
     try {
       FileOutputStream fos = new FileOutputStream(to);
       JarOutputStream out = new JarOutputStream(fos, mf);
-      _zip(dir, "/", out);
+      _zip(dir, "", out);
       out.close();
       fos.close();
     } catch (IOException e) {
