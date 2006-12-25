@@ -9,6 +9,7 @@ import jetbrains.mps.ide.messages.MessageView;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.DevKit;
 import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
@@ -355,6 +356,7 @@ public class GenerationSession {
 
     // for all languages that really used add the LanguageRoot to the solution descriptor
     Set<Language> usedLang = new HashSet<Language>();
+    Set<DevKit> usedDevKits = new HashSet<DevKit>();
     for (SModelDescriptor descriptor : transientModels) {
       List<Language> languages = descriptor.getSModel().getLanguages(myInvocationContext.getScope());
       for (Language language : languages) {
@@ -367,6 +369,10 @@ public class GenerationSession {
           solutionDescriptor.addLanguageRoot(languageRoot);
         }
       }
+
+      for (String namespace : descriptor.getSModel().getDevKitNamespaces()) {
+        addDevKit(solutionDescriptor, namespace, usedDevKits);
+      }
     }
 
     // add models accessible from used generators should be accessible from our solution - add all model roots
@@ -376,6 +382,10 @@ public class GenerationSession {
         List<ModelRoot> modelRoots = generator.getNonDefaultModelRoots();
         for (ModelRoot modelRoot : modelRoots) {
           addModelRoot(modelRoot.getPrefix(), modelRoot.getPath(), solutionDescriptor);
+        }
+
+        for (DevKit dk : generator.getVisibleDevkits()) {
+          addDevKit(solutionDescriptor, dk.getName(), usedDevKits);
         }
       }
     }
@@ -387,6 +397,11 @@ public class GenerationSession {
     for (ModelRoot modelRoot : modelRoots) {
       addModelRoot(modelRoot.getPrefix(), modelRoot.getPath(), solutionDescriptor);
     }
+
+    for (DevKit dk : invocationModule.getVisibleDevkits()) {
+      addDevKit(solutionDescriptor, dk.getName(), usedDevKits);
+    }
+
 
     // discard all transient modules (and models)
     // we have to remove transient models from repository because we need to update they root-managers
@@ -402,6 +417,20 @@ public class GenerationSession {
     SModelRepository.getInstance().unRegisterModelDescriptor(modelDescriptor, tmpOwner);
 
     return solutionDescriptorFile;
+  }
+
+  private void addDevKit(SolutionDescriptor solutionDescriptor, String namespace, Set<DevKit> usedDevKits) {
+    DevKit dk = myInvocationContext.getScope().getDevKit(namespace);
+    if (dk != null && !usedDevKits.contains(dk)) {
+      usedDevKits.add(dk);
+
+      ModuleRoot moduleRoot = ModuleRoot.newInstance(solutionDescriptor.getModel());
+      File descriptorFile = dk.getDescriptorFile();
+
+      assert descriptorFile != null;
+      moduleRoot.setPath(descriptorFile.getAbsolutePath());
+      solutionDescriptor.addModuleRoot(moduleRoot);
+    }
   }
 
   private void addModelRoot(String prefix, String path, SolutionDescriptor descriptor) {
