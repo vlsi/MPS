@@ -33,7 +33,6 @@ import org.jetbrains.annotations.NotNull;
 public class GenerationSession {
   public static final Logger LOG = Logger.getLogger(GenerationSession.class);
 
-  private Language myTargetLanguage;
   private IOperationContext myInvocationContext;
   private boolean myDiscardTransients;
   private IAdaptiveProgressMonitor myProgressMonitor;
@@ -46,8 +45,7 @@ public class GenerationSession {
   private int myTransientModelsCount = 0;
 
 
-  public GenerationSession(Language targetLanguage, IOperationContext invocationContext, boolean saveTransientModels, IAdaptiveProgressMonitor progressMonitor) {
-    myTargetLanguage = targetLanguage;
+  public GenerationSession(IOperationContext invocationContext, boolean saveTransientModels, IAdaptiveProgressMonitor progressMonitor) {
     myInvocationContext = invocationContext;
     myDiscardTransients = !saveTransientModels;
     myProgressMonitor = progressMonitor;
@@ -77,12 +75,13 @@ public class GenerationSession {
   }
 
   public GenerationStatus generateModel(final SModelDescriptor sourceModel,
+                                        final Language targetLanguage,
                                         final IGenerationScript script) throws Exception {
     GenerationStatus status;
 
     status = script.doGenerate(new IGenerationScriptContext() {
       public GenerationStatus doGenerate(SModelDescriptor sm, Set<MappingConfiguration> confs) throws Exception {
-        return generateModel_internal(sm, myTargetLanguage, confs);
+        return generateModel_internal(sm, targetLanguage, confs);
       }
 
       public SModelDescriptor getSourceModelDescriptor() {
@@ -401,7 +400,6 @@ public class GenerationSession {
     for (DevKit dk : invocationModule.getVisibleDevkits()) {
       addDevKit(solutionDescriptor, dk.getName(), usedDevKits);
     }
-
 
     // discard all transient modules (and models)
     // we have to remove transient models from repository because we need to update they root-managers

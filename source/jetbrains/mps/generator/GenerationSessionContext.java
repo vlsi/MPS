@@ -37,12 +37,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   public GenerationSessionContext(Language targetLanguage,
                                   SModel sourceModel,
-                                  IOperationContext invocationContext) {
-    this(targetLanguage, sourceModel, invocationContext, null);
-  }
-
-  public GenerationSessionContext(Language targetLanguage,
-                                  SModel sourceModel,
                                   IOperationContext invocationContext,
                                   Set<MappingConfiguration> configs) {
     myTargetLanguage = targetLanguage;

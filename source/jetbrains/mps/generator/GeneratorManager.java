@@ -394,13 +394,13 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
       GenerationStatus status = null;
       //++ generation
-      GenerationSession generationSession = new GenerationSession(targetLanguage, invocationContext, isSaveTransientModels(), progress);
+      GenerationSession generationSession = new GenerationSession(invocationContext, isSaveTransientModels(), progress);
       for (SModelDescriptor sourceModelDescriptor : sourceModels) {
         progress.addText("");
         String taskName = ModelsProgressUtil.generationModelTaskName(sourceModelDescriptor);
         progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_GENERATION);
 
-        status = generationSession.generateModel(sourceModelDescriptor, script);
+        status = generationSession.generateModel(sourceModelDescriptor, targetLanguage, script);
         checkMonitorCanceled(progress);
         if (status.getOutputModel() != null) {
           generationType.handleOutput(invocationContext, status, progress, outputFolder);
