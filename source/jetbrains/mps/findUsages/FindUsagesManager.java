@@ -128,9 +128,6 @@ public class FindUsagesManager {
     return findUsages(node, scope, progress);
   }
 
-  public Set<SNode> findInstances(ConceptDeclaration concept, IAdaptiveProgressMonitor progress){
-    return findInstances(concept, globalScope(), progress);
-  }
 
   public IScope globalScope() {
     return GlobalScope.getInstance();

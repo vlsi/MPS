@@ -1306,7 +1306,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   @NotNull
-  public ConceptDeclaration getNodeConcept() {
+  public ConceptDeclaration getNodeConcept(IScope scope) {
     return SModelUtil.getConceptDeclaration(this, GlobalScope.getInstance());
   }
 }

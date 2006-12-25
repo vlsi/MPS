@@ -1,35 +1,34 @@
 package jetbrains.mps.ide.actions.nodes;
 
-import jetbrains.mps.ide.action.MPSAction;
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.navigation.NavigationActionProcessor;
-import jetbrains.mps.ide.navigation.EditorNavigationCommand;
+import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.core.BaseConcept;
+import jetbrains.mps.helgins.*;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.action.MPSAction;
+import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.navigation.EditorNavigationCommand;
+import jetbrains.mps.ide.navigation.NavigationActionProcessor;
+import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.patterns.PatternExpression;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.helgins.*;
-import jetbrains.mps.patterns.PatternExpression;
-import jetbrains.mps.core.BaseConcept;
-import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.nodeEditor.AbstractEditorComponent;
-import jetbrains.mpswiki.queryLanguage.VariableCondition;
 import jetbrains.mpswiki.queryLanguage.ConceptReference;
 import jetbrains.mpswiki.queryLanguage.QueryPattern;
+import jetbrains.mpswiki.queryLanguage.VariableCondition;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.JPopupMenu;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.JLabel;
+import javax.swing.JPopupMenu;
 import javax.swing.border.EmptyBorder;
-import java.util.List;
-import java.util.ArrayList;
-import java.awt.event.ActionEvent;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -59,7 +58,7 @@ public class GoToRulesAction extends MPSAction {
 
   public void execute(@NotNull ActionContext context) {
     final ConceptDeclaration conceptDeclaration = (ConceptDeclaration) context.getNode();
-    IOperationContext operationContext = context.getOperationContext();
+    final IOperationContext operationContext = context.getOperationContext();
     Language language = SModelUtil.getDeclaringLanguage(conceptDeclaration, operationContext.getScope());
     List<SNode> rules = new ArrayList<SNode>();
     if (language != null && language.getHelginsTypesystemModelDescriptor() != null) {
@@ -80,7 +79,7 @@ public class GoToRulesAction extends MPSAction {
             if (object instanceof TypeAdaptationRule) {
               analyzedTermDeclaration = ((TypeAdaptationRule)object).getApplicableNodes().get(0);
             }
-            return maybeApplicable(conceptDeclaration, analyzedTermDeclaration);
+            return maybeApplicable(conceptDeclaration, analyzedTermDeclaration, operationContext.getScope());
           }
         }));
       }
@@ -111,7 +110,7 @@ public class GoToRulesAction extends MPSAction {
     m.show(invoker, x, y);
   }
 
-  private static boolean maybeApplicable(ConceptDeclaration conceptDeclaration, AnalyzedTermDeclaration analyzedTermDeclaration) {
+  private static boolean maybeApplicable(ConceptDeclaration conceptDeclaration, AnalyzedTermDeclaration analyzedTermDeclaration, IScope scope) {
     if (analyzedTermDeclaration == null) return false;
     VariableCondition condition = analyzedTermDeclaration.getCondition();
     if (condition instanceof ConceptReference) {
@@ -123,7 +122,7 @@ public class GoToRulesAction extends MPSAction {
       if (expression == null) return false;
       BaseConcept baseConcept = expression.getPatternNode();
       if (baseConcept == null) return false;
-      return SModelUtil.isAssignableConcept(conceptDeclaration, baseConcept.getNodeConcept());
+      return SModelUtil.isAssignableConcept(conceptDeclaration, baseConcept.getNodeConcept(scope));
     }
     return false;
   }
