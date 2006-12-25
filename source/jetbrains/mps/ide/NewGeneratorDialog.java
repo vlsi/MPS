@@ -3,7 +3,6 @@ package jetbrains.mps.ide;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.ui.SmartFileChooser;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.projectLanguage.GeneratorDescriptor;
 import jetbrains.mps.projectLanguage.LanguageDescriptor;
 import jetbrains.mps.projectLanguage.ModelRoot;
@@ -31,10 +30,12 @@ public class NewGeneratorDialog extends BaseDialog {
   private JComboBox myTargetLanguageName;
   private JTextField myTemplateModelsDir;
   private Language mySourceLanguage;
+  private IOperationContext myContext;
 
-  public NewGeneratorDialog(Frame mainFrame, Language sourceLanguage) throws HeadlessException {
+  public NewGeneratorDialog(Frame mainFrame, Language sourceLanguage, IOperationContext context) throws HeadlessException {
     super(mainFrame, "New Generator");
     mySourceLanguage = sourceLanguage;
+    myContext = context;
     initContentPane();
   }
 
@@ -62,7 +63,7 @@ public class NewGeneratorDialog extends BaseDialog {
     myContenetPane.add(internalPanel, BorderLayout.NORTH);
 
     internalPanel.add(new JLabel("Target language :"));
-    List<Language> visibleLanguages = GlobalScope.getInstance().getVisibleLanguages();
+    List<Language> visibleLanguages = myContext.getScope().getVisibleLanguages();
     Object[] items = new Object[visibleLanguages.size()];
     int count = 0;
     for (Language language : visibleLanguages) {
@@ -140,7 +141,7 @@ public class NewGeneratorDialog extends BaseDialog {
     dispose();
 
     String targetLanguageName = (String) myTargetLanguageName.getSelectedItem();
-    final Language targetLanguage = GlobalScope.getInstance().getLanguage(targetLanguageName);
+    final Language targetLanguage = myContext.getScope().getLanguage(targetLanguageName);
 
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
