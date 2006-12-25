@@ -129,7 +129,7 @@ public class CloneModelDialog extends BaseNodeDialog {
       SModel.addLanguage(language);
     }
 
-    CloneModelUtil.cloneModel(mySModel, modelDescriptor.getSModel());
+    CloneModelUtil.cloneModel(mySModel, modelDescriptor.getSModel(), getScope());
 
     MPSProject project = myIde.getProject();
     assert project != null;

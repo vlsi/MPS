@@ -282,7 +282,7 @@ public class CopyPasteUtil {
     necessaryImports.retainAll(importsFromPattern);
     necessaryLanguages.retainAll(languagesFromPattern);
     for (String devKitName : additionalDevKits) {
-      DevKit devKit = GlobalScope.getInstance().getDevKit(devKitName);
+      DevKit devKit = context.getScope().getDevKit(devKitName);
       if (devKit != null) necessaryLanguages.removeAll(devKit.getLanguageNamespaces());
     }
 

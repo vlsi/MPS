@@ -19,11 +19,11 @@ public class CloneModelUtil {
     assert module != null;
     SModelDescriptor modelCopyDescriptor = module.createModel(modelUID, modelRoot);
     SModel modelCopy = modelCopyDescriptor.getSModel();
-    return cloneModel(model, modelCopy);
+    return cloneModel(model, modelCopy, operationContext.getScope());
   }
 
-  public static SModel cloneModel(SModel model, SModel modelCopy) {
-    for (SNode root : CopyUtil.copy(model.getRoots(), modelCopy)) {
+  public static SModel cloneModel(SModel model, SModel modelCopy, IScope scope) {
+    for (SNode root : CopyUtil.copy(model.getRoots(), modelCopy, scope)) {
       modelCopy.addRoot(root);
     }
     return modelCopy;

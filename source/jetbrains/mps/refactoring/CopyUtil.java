@@ -10,34 +10,49 @@ import java.util.Map;
 
 
 public class CopyUtil  {
-  public static<SN extends SNode> List<SN> copy(List<SN> nodes, SModel targetModel) {
-    return copy(nodes, targetModel, new HashMap<SNode, SNode>());
+  public static<SN extends SNode> List<SN> copy(List<SN> nodes, SModel targetModel, IScope scope) {
+    return copy(nodes, targetModel, new HashMap<SNode, SNode>(), scope);
   }
 
+
+  public static<SN extends SNode> SN copy(SN node, SModel targetModel, IScope scope) {
+    return copy(node, targetModel, new HashMap<SNode, SNode>(), scope);
+  }
+
+  /**
+   * @deprecated use method with scope parameter instead
+   */
   public static<SN extends SNode> SN copy(SN node, SModel targetModel) {
-    return copy(node, targetModel, new HashMap<SNode, SNode>());
+    return copy(node, targetModel, GlobalScope.getInstance());
   }
 
-  public static <SN extends SNode> List<SN> copy(List<SN> nodes, SModel targetModel, Map<SNode, SNode> mapping) {
-    List<SN> result = (List<SN>) clone(nodes, targetModel, mapping);
+  public static <SN extends SNode> List<SN> copy(List<SN> nodes, SModel targetModel, Map<SNode, SNode> mapping, IScope scope) {
+    List<SN> result = (List<SN>) clone(nodes, targetModel, mapping, scope);
     fixReferences(result, mapping);
     return result;
   }
 
+  /**
+   * @deprecated use method with scope parameter instead
+   */
   public static <SN extends SNode> SN copy(SN node, SModel targetModel, Map<SNode, SNode> mapping) {
-    SN result = (SN) clone(node, targetModel, mapping);
+    return copy(node, targetModel, mapping, GlobalScope.getInstance());      
+  }
+
+  public static <SN extends SNode> SN copy(SN node, SModel targetModel, Map<SNode, SNode> mapping, IScope scope) {
+    SN result = (SN) clone(node, targetModel, mapping, scope);
     List<SN> nodes = new ArrayList<SN>();
     nodes.add(result);
     fixReferences(nodes, mapping);
     return result;
   }
 
-  private static SNode clone(SNode node, SModel targetModel, Map<SNode, SNode> mapping) {
+  private static SNode clone(SNode node, SModel targetModel, Map<SNode, SNode> mapping, IScope scope) {
     SNode result = ModelPersistence.createNodeInstance(node.getClass().getName(), targetModel);
     assert result != null;
     mapping.put(node, result);
 
-    targetModel.addLanguage(SModelUtil.getLanguage(node, GlobalScope.getInstance()));
+    targetModel.addLanguage(SModelUtil.getLanguage(node, scope));
 
     for (String property : node.getProperties().keySet()) {
       result.setProperty(property, node.getProperty(property), false);
@@ -48,16 +63,16 @@ public class CopyUtil  {
     }
 
     for (SNode child : node.getChildren()) {
-      result.addChild(node.getRoleOf(child), clone(child, targetModel, mapping));
+      result.addChild(node.getRoleOf(child), clone(child, targetModel, mapping, scope));
     }
 
     return result;
   }
 
-   private static List<SNode> clone(List<? extends SNode> nodes, SModel targetModel, Map<SNode, SNode> mapping) {
+   private static List<SNode> clone(List<? extends SNode> nodes, SModel targetModel, Map<SNode, SNode> mapping, IScope scope) {
      List<SNode> results = new ArrayList<SNode>();
      for (SNode node : nodes) {
-       results.add(clone(node, targetModel, mapping));
+       results.add(clone(node, targetModel, mapping, scope));
      }
      return results;
    }

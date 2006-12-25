@@ -124,7 +124,7 @@ public class FindUsagesManager {
     }
   }
 
-  public Set<SReference> findUsages(SNode node, IAdaptiveProgressMonitor progress) {
+  public Set<SReference> findUsages(SNode node, IAdaptiveProgressMonitor progress, IScope scope) {
     return findUsages(node, globalScope(), progress);
   }
 
