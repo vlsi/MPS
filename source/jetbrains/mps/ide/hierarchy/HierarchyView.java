@@ -193,7 +193,7 @@ public class HierarchyView extends DefaultTool {
 
     public String getNodeIdentifier() {
       if (getConceptDeclaration() == null) return "null";
-      Language language = SModelUtil.getDeclaringLanguage(getConceptDeclaration(), GlobalScope.getInstance());
+      Language language = SModelUtil.getDeclaringLanguage(getConceptDeclaration(), getOperationContext().getScope());
       String namespace;
       if (language == null) namespace = " ? "; else namespace = language.getModuleUID();
       return getConceptDeclaration().getName() + "  (" + namespace + ")";
