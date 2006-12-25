@@ -1,11 +1,10 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.LanguagesKeymapManager;
 import jetbrains.mps.project.ApplicationComponents;
+import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.DevKit;
 import jetbrains.mps.projectLanguage.Root;
 import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.annotations.NotNull;
