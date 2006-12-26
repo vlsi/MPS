@@ -80,7 +80,7 @@ public class GenerationSession {
     GenerationStatus status;
 
     status = script.doGenerate(new IGenerationScriptContext() {
-      public GenerationStatus doGenerate(SModelDescriptor sourceModel, Language targetLanguage, Set<MappingConfiguration> confs) throws Exception {
+      public GenerationStatus doGenerate(@NotNull SModelDescriptor sourceModel, @NotNull Language targetLanguage, Set<MappingConfiguration> confs) throws Exception {
         return generateModel_internal(sourceModel, targetLanguage, confs);
       }
 

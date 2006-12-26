@@ -95,7 +95,7 @@ import java.util.List;
       Object[] args = new Object[]{sourceNode, context.getScope(), context};
       SModel model = actionsBuilder.getModel();
       try {
-        return (Boolean) QueryMethodGenerated.invoke(methodName, args, model, true);
+        return (Boolean) QueryMethodGenerated.invoke(methodName, args, model);
       } catch (Exception e) {
         LOG.error(e);
         return false;

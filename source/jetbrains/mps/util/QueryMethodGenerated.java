@@ -1,15 +1,15 @@
 package jetbrains.mps.util;
 
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SModelUID;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUID;
 
-import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
-import java.util.*;
+import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.Map;
 
 public class QueryMethodGenerated {
   private static final Logger LOG = Logger.getLogger(QueryMethodGenerated.class);
@@ -28,14 +28,17 @@ public class QueryMethodGenerated {
 
     String packageName = JavaNameUtil.packageNameForModelUID(sourceModel.getUID());
     String queriesClassName = packageName + ".QueriesGenerated";
-    Class queriesClass;
+    Class queriesClass = null;
     try {
       queriesClass = Class.forName(queriesClassName, true, ClassLoaderManager.getInstance().getClassLoader());
     } catch (ClassNotFoundException e) {
-      if (!suppressErrorLogging) {
-        QueryMethodGenerated.LOG.error("Couldn't find QueriesGenerated class for model " + sourceModel.getUID());
-      }
       throw new RuntimeException(e);
+    } finally {
+      if (queriesClass == null) {
+        if (!suppressErrorLogging) {
+          QueryMethodGenerated.LOG.error("Couldn't find QueriesGenerated class for model " + sourceModel.getUID());
+        }
+      }
     }
 
     Method method = null;
@@ -60,21 +63,16 @@ public class QueryMethodGenerated {
   }
 
   public static Object invoke(String methodName, Object[] arguments, SModel sourceModel) {
-    return invoke(methodName, arguments, sourceModel, false);
-  }
-
-  public static Object invoke(String methodName, Object[] arguments, SModel sourceModel, boolean suppressErrorLogging) {
-    Method method = QueryMethodGenerated.getQueryMethod(sourceModel, methodName, suppressErrorLogging);
-    String queriesClassName = method.getDeclaringClass().getName();
+    Method method = QueryMethodGenerated.getQueryMethod(sourceModel, methodName, false);
     try {
       return method.invoke(null, arguments);
     } catch (IllegalArgumentException e) {
-      throw new RuntimeException("Error invocation method: \"" + methodName + "\" in " + queriesClassName, e);
+      throw new RuntimeException("Error invocation method: \"" + methodName + "\" in " + method.getDeclaringClass().getName(), e);
     } catch (IllegalAccessException e) {
-      throw new RuntimeException("Error invocation method: \"" + methodName + "\" in " + queriesClassName, e);
+      throw new RuntimeException("Error invocation method: \"" + methodName + "\" in " + method.getDeclaringClass().getName(), e);
     } catch (InvocationTargetException e) {
       e.getCause().printStackTrace();
-      throw new RuntimeException("Error invocation method: \"" + methodName + "\" in " + queriesClassName, e);
+      throw new RuntimeException("Error invocation method: \"" + methodName + "\" in " + method.getDeclaringClass().getName(), e);
     }
   }
 }

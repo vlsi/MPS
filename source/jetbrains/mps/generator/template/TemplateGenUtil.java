@@ -15,8 +15,10 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.*;
+import jetbrains.mps.transformation.TLBase.generator.templateGeneratorFixture.TemplateFunctionMethodName;
 import jetbrains.mps.transformation.TemplateLanguageUtil;
 import jetbrains.mps.util.QueryMethod;
+import jetbrains.mps.util.QueryMethodGenerated;
 
 import java.util.Arrays;
 import java.util.Iterator;
@@ -81,7 +83,7 @@ public class TemplateGenUtil {
       return true;
     }
 
-    generator.addUnresolvedReference(nodeBuilder, templateReference); 
+    generator.addUnresolvedReference(nodeBuilder, templateReference);
     return false;
     /*  generator.showErrorMessage(
               nodeBuilder.getSourceNode(),
@@ -198,6 +200,25 @@ public class TemplateGenUtil {
     for (SNode sourceNode : sourceNodes) {
       INodeBuilder nodeBuilder = createNodeBuilder(sourceNode, templateNode, ruleName, 0, generator);
       nodeBuilder.setRuleNode(mappingRule);
+      builders.add(nodeBuilder);
+    }
+
+    return builders;
+  }
+
+  public static List<INodeBuilder> createNodeBuildersForCreateRootRule(CreateRootRule createRootRule, ITemplateGenerator generator) {
+    List<INodeBuilder> builders = new LinkedList<INodeBuilder>();
+    String ruleName = createRootRule.getName();
+    BaseConcept templateNode = createRootRule.getTemplateNode();
+    if (templateNode == null) {
+      generator.showErrorMessage(null, null, createRootRule, "'create root' rule has to template");
+      return builders;
+    }
+
+    if (checkConditionForCreateRootRule(createRootRule, generator)) {
+      // create builder with no source node
+      INodeBuilder nodeBuilder = createNodeBuilder(null, templateNode, ruleName, 0, generator);
+      nodeBuilder.setRuleNode(createRootRule);
       builders.add(nodeBuilder);
     }
 
@@ -350,6 +371,26 @@ public class TemplateGenUtil {
         }
       }
     } // while (childTemplates.hasNext())
+  }
+
+  private static boolean checkConditionForCreateRootRule(CreateRootRule createRootRule, ITemplateGenerator generator) {
+    CreateRootRule_Condition conditionFunction = createRootRule.getConditionFunction();
+    if (conditionFunction == null) {
+      return true;
+    }
+
+    String methodName = TemplateFunctionMethodName.createRootRule_Condition(conditionFunction);
+    Object[] args = new Object[]{
+            generator.getSourceModel(),
+            generator,
+            generator.getScope(),
+            generator.getGeneratorSessionContext()};
+    try {
+      return (Boolean) QueryMethodGenerated.invoke(methodName, args, createRootRule.getModel());
+    } catch (Exception e) {
+      e.printStackTrace();
+      return false;
+    }
   }
 
   private static List<SNode> createSourceNodeListForMappingRule(MappingRule mappingRule, ITemplateGenerator generator) {

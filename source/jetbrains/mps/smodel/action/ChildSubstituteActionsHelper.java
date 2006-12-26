@@ -302,7 +302,7 @@ public class ChildSubstituteActionsHelper {
       Object[] args = new Object[]{parentNode, context.getScope(), context};
       SModel model = actionsBuilder.getModel();
       try {
-        return (Boolean) QueryMethodGenerated.invoke(methodName, args, model, true);
+        return (Boolean) QueryMethodGenerated.invoke(methodName, args, model);
       } catch (Exception e) {
         return false;
       }
