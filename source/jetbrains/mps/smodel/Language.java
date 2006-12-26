@@ -93,7 +93,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     SModel model = ProjectModels.createDescriptorFor(language).getSModel();
     model.setLoading(true);
     language.myDescriptorFile = null;
-    language.myLanguageDescriptor = ContextUtil.copyNode(languageDescriptor, model, GlobalScope.getInstance());
+    language.myLanguageDescriptor = ContextUtil.copyNode(languageDescriptor, model, language);
     MPSModuleRepository.getInstance().addModule(language, owner);
     language.updateDependenciesAndGenerators();
     return language;
