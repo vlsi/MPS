@@ -720,7 +720,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void validateLanguagesAndImports() {
-    Set<String> usedLanguages = new HashSet<String>(getLanguageNamespaces());
+    Set<String> usedLanguages = new HashSet<String>(getLanguageNamespaces(GlobalScope.getInstance()));
     Set<SModelUID> importedModels = new HashSet<SModelUID>(getImportedModelUIDs());
     List<? extends SNode> nodes = SModelUtil.allNodes(this);
     for (SNode node : nodes) {
