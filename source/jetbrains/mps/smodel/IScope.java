@@ -15,7 +15,7 @@ import jetbrains.mps.project.DevKit;
  * To change this template use File | Settings | File Templates.
  */
 public interface IScope {
-  @Nullable SModelDescriptor getModelDescriptor(@NotNull SModelUID modelUID);    
+  @Nullable SModelDescriptor getModelDescriptor(@NotNull SModelUID modelUID);
   
   @NotNull List<SModelDescriptor> getModelDescriptors(@NotNull String modelName);
 
