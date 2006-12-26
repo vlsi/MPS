@@ -461,11 +461,23 @@ public class SModel implements Iterable<SNode> {
     return languages;
   }
 
+
+  /**
+   * If you want to get all explicitly imported languagese getExplicitlyImportedLanguages()
+   * If you want to get all imported languages use the method with the same name but with
+   * IScope parameter 
+   */
+  @Deprecated
   @NotNull
   public List<String> getLanguageNamespaces() {
+    return getLanguageNamespaces(GlobalScope.getInstance());
+  }
+
+  @NotNull
+  public List<String> getLanguageNamespaces(IScope scope) {
     ArrayList<String> result = new ArrayList<String>(myLanguages);
     for (String dk : getDevKitNamespaces()) {
-      DevKit devKit = GlobalScope.getInstance().getDevKit(dk);
+      DevKit devKit = scope.getDevKit(dk);
       if (devKit != null) {
         for (Language l : devKit.getLanguages()) {
           if (!result.contains(l.getNamespace())) {

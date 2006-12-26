@@ -243,7 +243,7 @@ public class GenerationSession {
       // exit if target language is 'baseLanguage' and
       // output model doesn't contain other languages
       if (targetLanguage.getNamespace().equals("jetbrains.mps.baseLanguage")) {
-        List<String> languageNamespaces = currentOutputModel.getSModel().getLanguageNamespaces();
+        List<String> languageNamespaces = currentOutputModel.getSModel().getLanguageNamespaces(module);
         if (languageNamespaces.size() == 1 && languageNamespaces.get(0).equals(targetLanguage.getNamespace())) {
           break;
         }
