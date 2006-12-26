@@ -463,11 +463,11 @@ public class SModel implements Iterable<SNode> {
 
 
   /**
+   * @deprecated 
    * If you want to get all explicitly imported languagese getExplicitlyImportedLanguages()
    * If you want to get all imported languages use the method with the same name but with
    * IScope parameter 
    */
-  @Deprecated
   @NotNull
   public List<String> getLanguageNamespaces() {
     return getLanguageNamespaces(GlobalScope.getInstance());
