@@ -252,12 +252,16 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
   @NotNull
   public List<IModule> getExplicitlyDependOnModules() {
-    // depends of other languages and solutions, but not on generators. why?
-    // I commented out generators exclusion because otherwise GeneratorPlans
-    // work only if we use GlobalScope 
+    // depends of other languages and solutions, but not on generators.
+    // >ks// why?
+    // >ks// I commented out generators exclusion because otherwise GeneratorPlans
+    // >ks// work only if we use GlobalScope
+    // because Language doesn't depend on its generators
+    // just the opposite: a generator depends on its source language
+    // Please, fix GeneratorPlans instead
     List<IModule> result = new LinkedList<IModule>();
     for (IModule ownModule : getOwnModules()) {
-      if (/*ownModule instanceof Generator || */ result.contains(ownModule)) {
+      if (ownModule instanceof Generator || result.contains(ownModule)) {
         continue;
       }
       result.add(ownModule);
