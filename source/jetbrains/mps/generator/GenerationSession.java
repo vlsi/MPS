@@ -121,7 +121,9 @@ public class GenerationSession {
     addMessage(MessageKind.INFORMATION, "    default generator class: " + defaultGeneratorClass.getName());
 
     // -- replace context and create generators list
-    GenerationSessionContext context = new GenerationSessionContext(targetLanguage, sourceModel, myInvocationContext, mappings);
+
+
+    GenerationSessionContext context = new GenerationSessionContext(targetLanguage, sourceModel, myInvocationContext, mappings, myCurrentContext);
 
     List<Generator> generators = context.getGeneratorModules();
     if (generators.isEmpty()) {

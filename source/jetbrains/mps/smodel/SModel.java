@@ -51,8 +51,6 @@ public class SModel implements Iterable<SNode> {
 
   private SModelEventTranslator myEventTranslator = new SModelEventTranslator();
 
-  private Set<SModelUID> myDescriptorNotFoundReportedModelUIDs = new HashSet<SModelUID>();
-
   private HashMap<Object, Object> myUserObjects = new HashMap<Object, Object>();
   private SNode myLog;
   private boolean myUsesLog;
@@ -571,14 +569,11 @@ public class SModel implements Iterable<SNode> {
     List<SModelDescriptor> modelsList = new LinkedList<SModelDescriptor>();
     for (ImportElement importElement : myImports) {
       SModelUID modelUID = importElement.getModelUID();
-      if (!myDescriptorNotFoundReportedModelUIDs.contains(modelUID)) {
-        SModelDescriptor modelDescriptor = scope.getModelDescriptor(modelUID);
-        if (modelDescriptor != null) {
-          modelsList.add(modelDescriptor);
-        } else {
-          myDescriptorNotFoundReportedModelUIDs.add(modelUID);
-          LOG.errorWithTrace("Couldn't find model descriptor for imported model: \"" + modelUID + "\" in: \"" + getUID() + "\"");
-        }
+      SModelDescriptor modelDescriptor = scope.getModelDescriptor(modelUID);
+      if (modelDescriptor != null) {
+        modelsList.add(modelDescriptor);
+      } else {
+        LOG.errorWithTrace("Couldn't find model descriptor for imported model: \"" + modelUID + "\" in: \"" + getUID() + "\"");
       }
     }
     return modelsList.iterator();
@@ -596,7 +591,7 @@ public class SModel implements Iterable<SNode> {
   public void setMaxImportIndex(int i) {
     myMaxImportIndex = i;
   }
-
+                                          
   public int getMaxImportIndex() {
     return myMaxImportIndex;
   }

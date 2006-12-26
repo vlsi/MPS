@@ -38,11 +38,17 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   public GenerationSessionContext(Language targetLanguage,
                                   SModel sourceModel,
                                   IOperationContext invocationContext,
-                                  Set<MappingConfiguration> configs) {
+                                  Set<MappingConfiguration> configs,
+                                  GenerationSessionContext prevContext) {
     myTargetLanguage = targetLanguage;
     myInvocationContext = invocationContext;
     myGeneratorModules = getGeneratorModules(sourceModel);
     myTransientModule = new TransientModule(invocationContext.getModule(), myGeneratorModules);
+
+
+    if (prevContext != null) {
+      myTransientModule.addDependency(prevContext.getModule());
+    }
 
     if (configs != null) {
       myCustomMappingConfigurations = new HashSet<MappingConfiguration>(configs);
@@ -200,6 +206,12 @@ public class GenerationSessionContext extends StandaloneMPSContext {
         if (!myDependOnModules.contains(module)) {
           myDependOnModules.add(module);
         }
+      }
+    }
+
+    public void addDependency(IModule m) {
+      if (!myDependOnModules.contains(m)) {
+        myDependOnModules.add(m);
       }
     }
 
