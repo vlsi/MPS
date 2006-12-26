@@ -29,12 +29,12 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 
 public class ConceptDeclaration_Editor extends DefaultNodeEditor {
 
-  public AbstractCellListHandler myPropertyDeclarationListHandler;
-  public AbstractCellListHandler myLinkDeclarationListHandler;
-  public AbstractCellListHandler myConceptPropertyListHandler;
-  public AbstractCellListHandler myConceptLinkListHandler;
-  public AbstractCellListHandler myConceptPropertyDeclarationListHandler;
-  public AbstractCellListHandler myConceptLinkDeclarationListHandler;
+  public AbstractCellListHandler myPropertyDeclarationListHandler_propertyDeclarationList_;
+  public AbstractCellListHandler myLinkDeclarationListHandler_linkDeclarationList_;
+  public AbstractCellListHandler myConceptPropertyListHandler_conceptPropertyList_;
+  public AbstractCellListHandler myConceptLinkListHandler_conceptLinkList_;
+  public AbstractCellListHandler myConceptPropertyDeclarationListHandler_conceptPropertyDeclarationList_;
+  public AbstractCellListHandler myConceptLinkDeclarationListHandler_conceptLinkDeclarationList_;
 
   public static boolean _QueryFunction_NodeCondition_1161165530948(SNode node, IScope scope) {
     ConceptDeclaration decl = (ConceptDeclaration)node;
@@ -465,10 +465,10 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createPropertyDeclarationList(EditorContext context, SNode node) {
-    if(this.myPropertyDeclarationListHandler == null) {
-      this.myPropertyDeclarationListHandler = new ConceptDeclaration_Editor_PropertyDeclarationListHandler(node, "propertyDeclaration", context);
+    if(this.myPropertyDeclarationListHandler_propertyDeclarationList_ == null) {
+      this.myPropertyDeclarationListHandler_propertyDeclarationList_ = new ConceptDeclaration_Editor_PropertyDeclarationListHandler_propertyDeclarationList_(node, "propertyDeclaration", context);
     }
-    EditorCell_Collection editorCell = this.myPropertyDeclarationListHandler.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myPropertyDeclarationListHandler_propertyDeclarationList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(true);
@@ -476,15 +476,15 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myPropertyDeclarationListHandler.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myPropertyDeclarationListHandler_propertyDeclarationList_.getElementRole());
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createLinkDeclarationList(EditorContext context, SNode node) {
-    if(this.myLinkDeclarationListHandler == null) {
-      this.myLinkDeclarationListHandler = new ConceptDeclaration_Editor_LinkDeclarationListHandler(node, "linkDeclaration", context);
+    if(this.myLinkDeclarationListHandler_linkDeclarationList_ == null) {
+      this.myLinkDeclarationListHandler_linkDeclarationList_ = new ConceptDeclaration_Editor_LinkDeclarationListHandler_linkDeclarationList_(node, "linkDeclaration", context);
     }
-    EditorCell_Collection editorCell = this.myLinkDeclarationListHandler.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myLinkDeclarationListHandler_linkDeclarationList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(true);
@@ -492,15 +492,15 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myLinkDeclarationListHandler.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myLinkDeclarationListHandler_linkDeclarationList_.getElementRole());
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConceptPropertyList(EditorContext context, SNode node) {
-    if(this.myConceptPropertyListHandler == null) {
-      this.myConceptPropertyListHandler = new ConceptDeclaration_Editor_ConceptPropertyListHandler(node, "conceptProperty", context);
+    if(this.myConceptPropertyListHandler_conceptPropertyList_ == null) {
+      this.myConceptPropertyListHandler_conceptPropertyList_ = new ConceptDeclaration_Editor_ConceptPropertyListHandler_conceptPropertyList_(node, "conceptProperty", context);
     }
-    EditorCell_Collection editorCell = this.myConceptPropertyListHandler.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myConceptPropertyListHandler_conceptPropertyList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(true);
@@ -508,15 +508,15 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myConceptPropertyListHandler.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myConceptPropertyListHandler_conceptPropertyList_.getElementRole());
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConceptLinkList(EditorContext context, SNode node) {
-    if(this.myConceptLinkListHandler == null) {
-      this.myConceptLinkListHandler = new ConceptDeclaration_Editor_ConceptLinkListHandler(node, "conceptLink", context);
+    if(this.myConceptLinkListHandler_conceptLinkList_ == null) {
+      this.myConceptLinkListHandler_conceptLinkList_ = new ConceptDeclaration_Editor_ConceptLinkListHandler_conceptLinkList_(node, "conceptLink", context);
     }
-    EditorCell_Collection editorCell = this.myConceptLinkListHandler.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myConceptLinkListHandler_conceptLinkList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(true);
@@ -524,15 +524,15 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myConceptLinkListHandler.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myConceptLinkListHandler_conceptLinkList_.getElementRole());
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConceptPropertyDeclarationList(EditorContext context, SNode node) {
-    if(this.myConceptPropertyDeclarationListHandler == null) {
-      this.myConceptPropertyDeclarationListHandler = new ConceptDeclaration_Editor_ConceptPropertyDeclarationListHandler(node, "conceptPropertyDeclaration", context);
+    if(this.myConceptPropertyDeclarationListHandler_conceptPropertyDeclarationList_ == null) {
+      this.myConceptPropertyDeclarationListHandler_conceptPropertyDeclarationList_ = new ConceptDeclaration_Editor_ConceptPropertyDeclarationListHandler_conceptPropertyDeclarationList_(node, "conceptPropertyDeclaration", context);
     }
-    EditorCell_Collection editorCell = this.myConceptPropertyDeclarationListHandler.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myConceptPropertyDeclarationListHandler_conceptPropertyDeclarationList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(true);
@@ -540,15 +540,15 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myConceptPropertyDeclarationListHandler.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myConceptPropertyDeclarationListHandler_conceptPropertyDeclarationList_.getElementRole());
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConceptLinkDeclarationList(EditorContext context, SNode node) {
-    if(this.myConceptLinkDeclarationListHandler == null) {
-      this.myConceptLinkDeclarationListHandler = new ConceptDeclaration_Editor_ConceptLinkDeclarationListHandler(node, "conceptLinkDeclaration", context);
+    if(this.myConceptLinkDeclarationListHandler_conceptLinkDeclarationList_ == null) {
+      this.myConceptLinkDeclarationListHandler_conceptLinkDeclarationList_ = new ConceptDeclaration_Editor_ConceptLinkDeclarationListHandler_conceptLinkDeclarationList_(node, "conceptLinkDeclaration", context);
     }
-    EditorCell_Collection editorCell = this.myConceptLinkDeclarationListHandler.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myConceptLinkDeclarationListHandler_conceptLinkDeclarationList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(true);
@@ -556,7 +556,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myConceptLinkDeclarationListHandler.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myConceptLinkDeclarationListHandler_conceptLinkDeclarationList_.getElementRole());
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

@@ -20,7 +20,7 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 
 public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
-  public AbstractCellListHandler myMemberListHandler;
+  public AbstractCellListHandler myMemberListHandler_memberList_;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createNodeBox(context, node);
@@ -231,10 +231,10 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createMemberList(EditorContext context, SNode node) {
-    if(this.myMemberListHandler == null) {
-      this.myMemberListHandler = new EnumerationDataTypeDeclaration_Editor_MemberListHandler(node, "member", context);
+    if(this.myMemberListHandler_memberList_ == null) {
+      this.myMemberListHandler_memberList_ = new EnumerationDataTypeDeclaration_Editor_MemberListHandler_memberList_(node, "member", context);
     }
-    EditorCell_Collection editorCell = this.myMemberListHandler.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myMemberListHandler_memberList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(true);
@@ -242,7 +242,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myMemberListHandler.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myMemberListHandler_memberList_.getElementRole());
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
