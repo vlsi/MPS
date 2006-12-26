@@ -129,7 +129,7 @@ public class HierarchyView extends DefaultTool {
     }
 
     private void rebuildChildrenHierarchy_internal(ConceptHierarchyTreeNode hierarchyTreeNode) {
-      Set<ConceptDeclaration> descendants = myUsagesManager.findDescendants((ConceptDeclaration) hierarchyTreeNode.getUserObject());
+      Set<ConceptDeclaration> descendants = myUsagesManager.findDescendants((ConceptDeclaration) hierarchyTreeNode.getUserObject(), myOperationContext.getScope());
       for (ConceptDeclaration descendant : descendants) {
         ConceptHierarchyTreeNode childHierarchyTreeNode = new ConceptHierarchyTreeNode(descendant, myOperationContext);
         hierarchyTreeNode.add(childHierarchyTreeNode);
@@ -236,7 +236,7 @@ public class HierarchyView extends DefaultTool {
     }
 
     public void init() {
-      List<ConceptDeclaration> descendants = new ArrayList<ConceptDeclaration>(HierarchyView.this.myHierarchyTree.myUsagesManager.findDescendants((ConceptDeclaration) this.getUserObject()));
+      List<ConceptDeclaration> descendants = new ArrayList<ConceptDeclaration>(HierarchyView.this.myHierarchyTree.myUsagesManager.findDescendants((ConceptDeclaration) this.getUserObject(), myContext.getScope()));
       Collections.sort(descendants, new Comparator<ConceptDeclaration>() {
         public int compare(ConceptDeclaration o1, ConceptDeclaration o2) {                    
           return ("" + o1.getName()).compareTo(o2.getName());

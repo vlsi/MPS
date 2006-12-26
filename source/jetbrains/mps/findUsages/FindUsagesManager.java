@@ -41,13 +41,12 @@ public class FindUsagesManager {
     descendantsKnownInModel.add(descendant);
   }
 
-  public Set<ConceptDeclaration> findDescendants(ConceptDeclaration node) {
+  public Set<ConceptDeclaration> findDescendants(ConceptDeclaration node, IScope scope) {
     HashMap<SModelDescriptor, HashSet<ConceptDeclaration>> knownDescendantsInModelDescriptors = myConceptsToKnownDescendantsInModelDescriptors.get(node);
     if (knownDescendantsInModelDescriptors == null) {
       knownDescendantsInModelDescriptors = new HashMap<SModelDescriptor, HashSet<ConceptDeclaration>>();
       myConceptsToKnownDescendantsInModelDescriptors.put(node, knownDescendantsInModelDescriptors);
     }
-    IScope scope = globalScope();
     Set<ConceptDeclaration> result = new HashSet<ConceptDeclaration>();
     List<SModelDescriptor> models = scope.getModelDescriptors();
     for (SModelDescriptor model : models) {
@@ -128,11 +127,6 @@ public class FindUsagesManager {
     return findUsages(node, scope, progress);
   }
 
-
-  public IScope globalScope() {
-    return GlobalScope.getInstance();
-  }
-
   private static Map<ConceptDeclaration, List<ConceptDeclaration>> ourCache = new HashMap<ConceptDeclaration, List<ConceptDeclaration>>();
 
   public static void invalidateCaches() {
@@ -151,12 +145,12 @@ public class FindUsagesManager {
     });
   }
 
-  public List<ConceptDeclaration> allSubtypes(ConceptDeclaration conceptDeclaration) {
+  public List<ConceptDeclaration> allSubtypes(ConceptDeclaration conceptDeclaration, IScope scope) {
     if (ourCache.get(conceptDeclaration) != null) return Collections.unmodifiableList(ourCache.get(conceptDeclaration));
 
     List<ConceptDeclaration> list = new LinkedList<ConceptDeclaration>();
 
-    Set<SReference> usages = findUsages(conceptDeclaration, new FilterScope(globalScope()) {
+    Set<SReference> usages = findUsages(conceptDeclaration, new FilterScope(scope) {
       protected boolean accept(SModelDescriptor descriptor) {
         return descriptor.getModelUID().getShortName().equals("structure");
       }
@@ -166,7 +160,7 @@ public class FindUsagesManager {
       if (ref.getRole().equals(ConceptDeclaration.EXTENDS)) {
         ConceptDeclaration subtype = (ConceptDeclaration) ref.getSourceNode();
         list.add(subtype);
-        list.addAll(allSubtypes(subtype));
+        list.addAll(allSubtypes(subtype, scope));
       }
     }
 
