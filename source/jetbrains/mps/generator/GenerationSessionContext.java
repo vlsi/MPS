@@ -1,9 +1,6 @@
 package jetbrains.mps.generator;
 
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.StandaloneMPSContext;
+import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.projectLanguage.ModuleDescriptor;
 import jetbrains.mps.smodel.*;
@@ -107,7 +104,8 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   @NotNull
   public IScope getScope() {
-    return myTransientModule;
+    //todo this greatly improves performance, but it's definitely a hack 
+    return GlobalScope.getInstance();
   }
 
   public List<Generator> getGeneratorModules() {
