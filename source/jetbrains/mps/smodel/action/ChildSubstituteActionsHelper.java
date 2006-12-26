@@ -196,7 +196,7 @@ public class ChildSubstituteActionsHelper {
             SNode childNode = SModelUtil.instantiateConceptDeclaration(referenceNodeConcept, model);
             String referentRole = SModelUtil.getGenuineLinkRole(referenceLink_final);
             childNode.setReferent(referentRole, (SNode) parameterObject);
-            NodeFactoryManager.setupNode(referenceNodeConcept, childNode, currentChild, parentNode, model);
+            NodeFactoryManager.setupNode(referenceNodeConcept, childNode, currentChild, parentNode, model, getScope());
             return childNode;
           }
         });

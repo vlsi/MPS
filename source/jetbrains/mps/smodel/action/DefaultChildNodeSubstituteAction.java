@@ -36,7 +36,7 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
 
   public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
     if (parameterObject instanceof ConceptDeclaration) {
-      return NodeFactoryManager.createNode((ConceptDeclaration) parameterObject, myCurrentChild, getSourceNode(), model);
+      return NodeFactoryManager.createNode((ConceptDeclaration) parameterObject, myCurrentChild, getSourceNode(), model, getScope());
     }
     if (parameterObject instanceof SNode) {
       throw new RuntimeException("Couldn't create child node. Parameter object: " + ((SNode) parameterObject).getDebugText());

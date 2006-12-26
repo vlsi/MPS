@@ -80,12 +80,12 @@ public class CreateRootNodeGroup extends ActionGroup {
         return false;
       }
 
-      public void execute(@NotNull ActionContext context) {
+      public void execute(@NotNull final ActionContext context) {
         final SNode[] node = new SNode[1];
 
         CommandProcessor.instance().executeCommand(new Runnable() {
           public void run() {
-            node[0] = NodeFactoryManager.createNode(nodeConcept, null, null, model);
+            node[0] = NodeFactoryManager.createNode(nodeConcept, null, null, model, context.getScope());
             model.addRoot(node[0]);
           }
         });

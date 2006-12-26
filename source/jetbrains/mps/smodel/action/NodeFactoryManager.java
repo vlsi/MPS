@@ -22,28 +22,28 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
 
   public static SNode createNode(String conceptFqName, SNode sampleNode, SNode enclosingNode, SModel model, IScope scope) {
     ConceptDeclaration conceptDeclaration = SModelUtil.findConceptDeclaration(conceptFqName, scope);
-    return createNode(conceptDeclaration, sampleNode, enclosingNode, model);
+    return createNode(conceptDeclaration, sampleNode, enclosingNode, model, scope);
   }
 
-  public static SNode createNode(ConceptDeclaration nodeConcept, SNode sampleNode, SNode enclosingNode, SModel model) {
+  public static SNode createNode(ConceptDeclaration nodeConcept, SNode sampleNode, SNode enclosingNode, SModel model, IScope scope) {
     SNode node = SModelUtil.instantiateConceptDeclaration(nodeConcept, model);
-    setupNode(nodeConcept, node, sampleNode, enclosingNode, model);
+    setupNode(nodeConcept, node, sampleNode, enclosingNode, model, scope);
     return node;
   }
 
-  public static void setupNode(ConceptDeclaration nodeConcept, SNode node, SNode sampleNode, SNode enclosingNode, SModel model) {
-    boolean done = setupNode_internal(nodeConcept, node, sampleNode, enclosingNode, model);
+  public static void setupNode(ConceptDeclaration nodeConcept, SNode node, SNode sampleNode, SNode enclosingNode, SModel model, IScope scope) {
+    boolean done = setupNode_internal(nodeConcept, node, sampleNode, enclosingNode, model, scope);
     if (!done) {
       setupNode_deprecated(nodeConcept, node, sampleNode);
     }
   }
 
-  private static boolean setupNode_internal(ConceptDeclaration nodeConcept, SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
+  private static boolean setupNode_internal(ConceptDeclaration nodeConcept, SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model, IScope scope) {
     // find node factory
     List<NodeFactory> nodeFactories = new LinkedList<NodeFactory>();
     ConceptDeclaration concept = nodeConcept;
     while (concept != null && nodeFactories.isEmpty()) {
-      Language language = SModelUtil.getDeclaringLanguage(concept, GlobalScope.getInstance());
+      Language language = SModelUtil.getDeclaringLanguage(concept, scope);
       if (language == null) break;
       final ConceptDeclaration conceptF = concept;
       SModelDescriptor actionsModelDescriptor = language.getActionsModelDescriptor();
