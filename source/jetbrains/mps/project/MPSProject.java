@@ -108,8 +108,11 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
 
   @NotNull
   public List<SModelDescriptor> getModelDescriptors() {
-    //todo this is a hack!
-    return SModelRepository.getInstance().getAllModelDescriptors();
+    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
+    for (IModule m : getAllVisibleModules()) {
+      result.addAll(m.getModelDescriptors());
+    }
+    return result;
   }
 
   private void readModules() {
@@ -592,28 +595,36 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
   @NotNull
   public List<SModelDescriptor> getModelDescriptors(@NotNull String modelName) {
     HashSet<SModelDescriptor> set = new HashSet<SModelDescriptor>();
-    {
+
+    { //my models
       List<SModelDescriptor> list = SModelRepository.getInstance().getModelDescriptors(modelName, this);
       set.addAll(list);
     }
 
-    for (Solution solution : mySolutions) {
-      List<SModelDescriptor> list = SModelRepository.getInstance().getModelDescriptors(modelName, solution);
-      set.addAll(list);
-    }
-    for (Language language : myLanguages) {
-      List<SModelDescriptor> list = SModelRepository.getInstance().getModelDescriptors(modelName, language);
-      set.addAll(list);
-
-      for (Generator g : language.getGenerators()) {
-        List<SModelDescriptor> glist = SModelRepository.getInstance().getModelDescriptors(modelName, g);
-        set.addAll(glist);
-      }
-    }
+    Set<IModule> modulesToSearch = getAllVisibleModules();
 
     List<SModelDescriptor> result = CollectionUtil.iteratorAsList(set.iterator());
-    set.clear();
-    return result;
+    for (IModule m : modulesToSearch) {
+      result.addAll(m.getModelDescriptors(modelName));
+    }    
+
+    return new ArrayList<SModelDescriptor>(result);
+  }
+
+  private Set<IModule> getAllVisibleModules() {
+    Set<IModule> modulesToSearch = new HashSet<IModule>();
+
+    for (Solution solution : mySolutions) {
+      modulesToSearch.add(solution);
+      modulesToSearch.addAll(solution.getAllDependOnModules(IModule.class));
+    }
+
+
+    for (Language language : myLanguages) {
+      modulesToSearch.add(language);
+      modulesToSearch.addAll(language.getAllDependOnModules(IModule.class));
+    }
+    return modulesToSearch;
   }
 
   public void addMPSProjectCommandListener(@NotNull IMPSProjectCommandListener listener) {

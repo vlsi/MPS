@@ -5,7 +5,6 @@ import jetbrains.mps.baseLanguage.Classifier;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.usageView.UsagesModel_AspectMethods;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -40,7 +39,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   }
 
   public void showAspectMethodUsages(String namespace, String name) throws RemoteException {
-    List<SModelDescriptor> modelDescriptors = GlobalScope.getInstance().getModelDescriptors(namespace);
+    List<SModelDescriptor> modelDescriptors = myProject.getModelDescriptors(namespace);
     for (SModelDescriptor descriptor : modelDescriptors) {
       if (descriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) continue;
 
@@ -57,21 +56,21 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   }
 
   public void showConceptNode(String fqName) throws RemoteException {
-    ConceptDeclaration concept = SModelUtil.findConceptDeclaration(fqName, GlobalScope.getInstance());
+    ConceptDeclaration concept = SModelUtil.findConceptDeclaration(fqName, myProject);
     IDEProjectFrame projectWindow = getProjectWindow();
     projectWindow.getEditorsPane().openEditor(concept, new ProjectOperationContext(projectWindow.getProject()));
     FrameUtil.activateFrame(getMainFrame());
   }
 
   public void showClassUsages(String fqName) throws RemoteException {
-    Classifier cls = SModelUtil.findNodeByFQName(fqName, Classifier.class, GlobalScope.getInstance());
+    Classifier cls = SModelUtil.findNodeByFQName(fqName, Classifier.class, myProject);
     if (cls == null) return;
     FrameUtil.activateFrame(getMainFrame());
     getProjectWindow().findUsages(cls, new ProjectOperationContext(myProject));
   }
 
   public void showMethodUsages(String classFqName, String methodName, int parameterCount) throws RemoteException {
-    Classifier cls = SModelUtil.findNodeByFQName(classFqName, Classifier.class, GlobalScope.getInstance());
+    Classifier cls = SModelUtil.findNodeByFQName(classFqName, Classifier.class, myProject);
     if (cls == null) return;
     BaseMethodDeclaration m = null;
     for (BaseMethodDeclaration method : cls.getChildren(BaseMethodDeclaration.class)) {

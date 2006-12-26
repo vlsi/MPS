@@ -188,7 +188,7 @@ public abstract class AbstractModule implements IModule {
    * @return all depends-on modules recursively + bootstrap languages
    */
   @NotNull
-  private <T extends IModule> Set<T> getAllDependOnModules(@NotNull Class<T> cls) {
+  public <T extends IModule> Set<T> getAllDependOnModules(@NotNull Class<T> cls) {
     Set<T> modules = new HashSet<T>();
     collectAllExplicitlyDependOnModules(this, modules, cls);
 
