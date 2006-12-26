@@ -21,12 +21,12 @@
   </module>
   <accessoryModels />
   <generators>
-    <generator generatorUID="jetbrains.mps.transformation.TLBase#1166719794418" targetLanguage="jetbrains.mps.transformation.templateGeneratorFixture">
+    <generator generatorUID="jetbrains.mps.transformation.TLBase#1167163152317" targetLanguage="jetbrains.mps.baseLanguage">
       <models>
-        <modelRoot path="${language_descriptor}\generators\templateGeneratorFixture\templates" namespacePrefix="jetbrains.mps.transformation.TLBase.generator.templateGeneratorFixture.template" />
+        <modelRoot path="${language_descriptor}\generators\baseLanguage\templates" namespacePrefix="jetbrains.mps.transformation.TLBase.generator.baseLanguage.template" />
       </models>
       <module>
-        <moduleRoot path="${mps_home}\languages\transformation\templateGeneratorFixture\templateGeneratorFixture.mpl" />
+        <moduleRoot path="${mps_home}\languages\baseLanguage\language\baseLanguage.mpl" />
       </module>
     </generator>
   </generators>

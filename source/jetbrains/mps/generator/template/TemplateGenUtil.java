@@ -15,7 +15,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.*;
-import jetbrains.mps.transformation.TLBase.generator.templateGeneratorFixture.TemplateFunctionMethodName;
+import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.transformation.TemplateLanguageUtil;
 import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.util.QueryMethodGenerated;
