@@ -3,6 +3,9 @@
   <structure>
     <model modelUID="jetbrains.mps.transformation.TLBase.structure" />
   </structure>
+  <typeSystem>
+    <model modelUID="jetbrains.mps.transformation.TLBase.types" />
+  </typeSystem>
   <actions>
     <model modelUID="jetbrains.mps.transformation.TLBase.actions" />
   </actions>
@@ -27,6 +30,7 @@
       </models>
       <module>
         <moduleRoot path="${mps_home}\languages\baseLanguage\language\baseLanguage.mpl" />
+        <moduleRoot path="${mps_home}\languages\core\languageDescriptor.mpl" />
       </module>
     </generator>
   </generators>

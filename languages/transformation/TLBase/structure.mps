@@ -104,6 +104,12 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1095416624611" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1167172143858">
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="weavingMappingRule" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1167171569011" resolveInfo="Weaving_MappingRule" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1132881836530">
       <property name="sourceCardinality" value="0..n" />
       <property name="targetCardinality" value="1" />
@@ -486,6 +492,75 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1167087518670">
       <property name="value" value="condition" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1167168920554">
+    <property name="name" value="BaseMappingRule_Condition" />
+    <link role="extends" targetNodeId="6.1137021947720" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1167168920555">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1137545148427" />
+      <node role="target" type="jetbrains.mps.baseLanguage.BooleanType" id="1167168920556" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1167169278214">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
+      <link role="target" targetNodeId="1167169188348" resolveInfo="TemplateFunctionParameter_sourceNode" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1167168920557">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
+      <link role="target" targetNodeId="1166748937193" resolveInfo="TemplateFunctionParameter_sourceModel" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1167168920558">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
+      <link role="target" targetNodeId="1166749287094" resolveInfo="TemplateFunctionParameter_generator" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1167168920559">
+      <link role="target" targetNodeId="8.1161622878565" />
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1167168920560">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
+      <link role="target" targetNodeId="8.1161622753914" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1167168920561">
+      <property name="value" value="condition" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1167169188348">
+    <property name="name" value="TemplateFunctionParameter_sourceNode" />
+    <link role="extends" targetNodeId="6.1107135704075" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1167169188351">
+      <property name="value" value="sourceNode" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1167169188352">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473994950" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1167169308231">
+    <property name="name" value="BaseMappingRule" />
+    <link role="extends" targetNodeId="2.1078489098625" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1167169349424">
+      <property name="role" value="applicableConcept" />
+      <link role="target" targetNodeId="3.1071489090640" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1167169362365">
+      <property name="sourceCardinality" value="0..1" />
+      <property name="role" value="conditionFunction" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1167168920554" resolveInfo="BaseMappingRule_Condition" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1167169327669">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473854053" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1167171569011">
+    <property name="name" value="Weaving_MappingRule" />
+    <link role="extends" targetNodeId="1167169308231" resolveInfo="BaseMappingRule" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1167171569014">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="template" />
+      <link role="target" targetNodeId="1092059087312" resolveInfo="TemplateDeclaration" />
     </node>
   </node>
 </model>
