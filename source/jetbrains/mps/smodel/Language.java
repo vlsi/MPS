@@ -13,20 +13,16 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.*;
+import jetbrains.mps.refactoring.logging.Marshallable;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.UseCarefully;
-import jetbrains.mps.refactoring.logging.Marshallable;
-import jetbrains.mps.plugin.MPSPlugin;
-import jetbrains.mps.plugin.IIDEAHandler;
-import jetbrains.mps.plugin.IProjectHandler;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.util.*;
-
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 
 /**
@@ -61,7 +57,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   };
 
   private boolean myRegisteredInFindUsagesManager;
-
 
 
   public String marshall() {
@@ -282,8 +277,17 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return new ArrayList<Generator>(myGenerators);
   }
 
+  public Generator getGeneratorTo(@NotNull String targetLanguageName) {
+    for (Generator generator : myGenerators) {
+      if (targetLanguageName.equals(generator.getTargetLanguageName())) {
+        return generator;
+      }
+    }
+    return null;
+  }
+
   @NotNull
-  public String getModuleUID() {        
+  public String getModuleUID() {
     return getNamespace();
   }
 
@@ -703,7 +707,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
   public static class LanguageAspectStatus implements IStatus {
     public static enum AspectKind {
-      STRUCTURE,EDITOR,ACTIONS,CONSTRAINTS,TYPESYSTEM,HELGINS_TYPESYSTEM,ACCESSORY,NONE
+      STRUCTURE, EDITOR, ACTIONS, CONSTRAINTS, TYPESYSTEM, HELGINS_TYPESYSTEM, ACCESSORY, NONE
     }
 
     private Language myLanguage;

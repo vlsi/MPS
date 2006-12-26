@@ -208,18 +208,18 @@ public class TemplateGenUtil {
 
   public static List<INodeBuilder> createNodeBuildersForCreateRootRule(CreateRootRule createRootRule, ITemplateGenerator generator) {
     List<INodeBuilder> builders = new LinkedList<INodeBuilder>();
-    String ruleName = createRootRule.getName();
-    BaseConcept templateNode = createRootRule.getTemplateNode();
-    if (templateNode == null) {
-      generator.showErrorMessage(null, null, createRootRule, "'create root' rule has to template");
-      return builders;
-    }
 
     if (checkConditionForCreateRootRule(createRootRule, generator)) {
-      // create builder with no source node
-      INodeBuilder nodeBuilder = createNodeBuilder(null, templateNode, ruleName, 0, generator);
-      nodeBuilder.setRuleNode(createRootRule);
-      builders.add(nodeBuilder);
+      String ruleName = createRootRule.getName();
+      BaseConcept templateNode = createRootRule.getTemplateNode();
+      if (templateNode == null) {
+        generator.showErrorMessage(null, null, createRootRule, "'create root' rule has to template");
+      } else {
+        // create builder with no source node
+        INodeBuilder nodeBuilder = createNodeBuilder(null, templateNode, ruleName, 0, generator);
+        nodeBuilder.setRuleNode(createRootRule);
+        builders.add(nodeBuilder);
+      }
     }
 
     return builders;
