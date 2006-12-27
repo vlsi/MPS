@@ -83,7 +83,7 @@ public class DevKit extends AbstractModule {
 
   protected void readDependOnModules() {
     super.readDependOnModules();
-    MPSModuleRepository.getInstance().readModuleDescriptors(getModuleDescriptor().generationOnlyModules(), this);
+    MPSModuleRepository.getInstance().readModuleDescriptors(getModuleDescriptor().generationOnlyModules(), myGenerationOnlyModelsModelOwner);
   }
 
   public void dispose() {
