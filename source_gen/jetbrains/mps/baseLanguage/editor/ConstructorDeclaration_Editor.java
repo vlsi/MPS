@@ -23,8 +23,8 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 
 public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
 
-  public AbstractCellListHandler myParameterListHandler;
-  public AbstractCellListHandler myThrowsItemListHandler;
+  public AbstractCellListHandler myParameterListHandler_parameterList_;
+  public AbstractCellListHandler myThrowsItemListHandler_throwsItemList_;
 
   public static boolean _QueryFunction_NodeCondition_1165410808113(SNode node, IScope scope) {
     return SLinkOperations.getCount(node, "throwsItem") > 0;
@@ -201,10 +201,10 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createParameterList(EditorContext context, SNode node) {
-    if(this.myParameterListHandler == null) {
-      this.myParameterListHandler = new ConstructorDeclaration_Editor_ParameterListHandler(node, "parameter", context);
+    if(this.myParameterListHandler_parameterList_ == null) {
+      this.myParameterListHandler_parameterList_ = new ConstructorDeclaration_Editor_ParameterListHandler_parameterList_(node, "parameter", context);
     }
-    EditorCell_Collection editorCell = this.myParameterListHandler.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myParameterListHandler_parameterList_.createCells(context, new CellLayout_Horizontal(), false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
@@ -212,15 +212,15 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myParameterListHandler.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myParameterListHandler_parameterList_.getElementRole());
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createThrowsItemList(EditorContext context, SNode node) {
-    if(this.myThrowsItemListHandler == null) {
-      this.myThrowsItemListHandler = new ConstructorDeclaration_Editor_ThrowsItemListHandler(node, "throwsItem", context);
+    if(this.myThrowsItemListHandler_throwsItemList_ == null) {
+      this.myThrowsItemListHandler_throwsItemList_ = new ConstructorDeclaration_Editor_ThrowsItemListHandler_throwsItemList_(node, "throwsItem", context);
     }
-    EditorCell_Collection editorCell = this.myThrowsItemListHandler.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myThrowsItemListHandler_throwsItemList_.createCells(context, new CellLayout_Horizontal(), false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
@@ -228,7 +228,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myThrowsItemListHandler.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myThrowsItemListHandler_throwsItemList_.getElementRole());
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

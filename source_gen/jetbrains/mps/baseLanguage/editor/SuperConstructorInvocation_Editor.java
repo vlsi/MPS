@@ -15,7 +15,7 @@ import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
 
 public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
 
-  public AbstractCellListHandler myActualArgumentListHandler;
+  public AbstractCellListHandler myActualArgumentListHandler_actualArgumentList_;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
@@ -62,10 +62,10 @@ public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createActualArgumentList(EditorContext context, SNode node) {
-    if(this.myActualArgumentListHandler == null) {
-      this.myActualArgumentListHandler = new SuperConstructorInvocation_Editor_ActualArgumentListHandler(node, "actualArgument", context);
+    if(this.myActualArgumentListHandler_actualArgumentList_ == null) {
+      this.myActualArgumentListHandler_actualArgumentList_ = new SuperConstructorInvocation_Editor_ActualArgumentListHandler_actualArgumentList_(node, "actualArgument", context);
     }
-    EditorCell_Collection editorCell = this.myActualArgumentListHandler.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myActualArgumentListHandler_actualArgumentList_.createCells(context, new CellLayout_Horizontal(), false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
@@ -73,7 +73,7 @@ public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myActualArgumentListHandler.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myActualArgumentListHandler_actualArgumentList_.getElementRole());
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

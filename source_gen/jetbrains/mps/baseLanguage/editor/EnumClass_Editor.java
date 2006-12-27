@@ -20,11 +20,11 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class EnumClass_Editor extends DefaultNodeEditor {
 
-  public AbstractCellListHandler myEnumConstantListHandler;
-  public AbstractCellListHandler myFieldListHandler;
-  public AbstractCellListHandler myConstructorListHandler;
-  public AbstractCellListHandler myMethodListHandler;
-  public AbstractCellListHandler myStaticMethodListHandler;
+  public AbstractCellListHandler myEnumConstantListHandler_enumConstantList_;
+  public AbstractCellListHandler myFieldListHandler_fieldList_;
+  public AbstractCellListHandler myConstructorListHandler_constructorList_;
+  public AbstractCellListHandler myMethodListHandler_methodList_;
+  public AbstractCellListHandler myStaticMethodListHandler_staticMethodList_;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createColumnCell(context, node);
@@ -290,10 +290,10 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createEnumConstantList(EditorContext context, SNode node) {
-    if(this.myEnumConstantListHandler == null) {
-      this.myEnumConstantListHandler = new EnumClass_Editor_EnumConstantListHandler(node, "enumConstant", context);
+    if(this.myEnumConstantListHandler_enumConstantList_ == null) {
+      this.myEnumConstantListHandler_enumConstantList_ = new EnumClass_Editor_EnumConstantListHandler_enumConstantList_(node, "enumConstant", context);
     }
-    EditorCell_Collection editorCell = this.myEnumConstantListHandler.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myEnumConstantListHandler_enumConstantList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
@@ -301,15 +301,15 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myEnumConstantListHandler.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myEnumConstantListHandler_enumConstantList_.getElementRole());
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createFieldList(EditorContext context, SNode node) {
-    if(this.myFieldListHandler == null) {
-      this.myFieldListHandler = new EnumClass_Editor_FieldListHandler(node, "field", context);
+    if(this.myFieldListHandler_fieldList_ == null) {
+      this.myFieldListHandler_fieldList_ = new EnumClass_Editor_FieldListHandler_fieldList_(node, "field", context);
     }
-    EditorCell_Collection editorCell = this.myFieldListHandler.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myFieldListHandler_fieldList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
@@ -317,15 +317,15 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myFieldListHandler.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myFieldListHandler_fieldList_.getElementRole());
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstructorList(EditorContext context, SNode node) {
-    if(this.myConstructorListHandler == null) {
-      this.myConstructorListHandler = new EnumClass_Editor_ConstructorListHandler(node, "constructor", context);
+    if(this.myConstructorListHandler_constructorList_ == null) {
+      this.myConstructorListHandler_constructorList_ = new EnumClass_Editor_ConstructorListHandler_constructorList_(node, "constructor", context);
     }
-    EditorCell_Collection editorCell = this.myConstructorListHandler.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myConstructorListHandler_constructorList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
@@ -333,15 +333,15 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myConstructorListHandler.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myConstructorListHandler_constructorList_.getElementRole());
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createMethodList(EditorContext context, SNode node) {
-    if(this.myMethodListHandler == null) {
-      this.myMethodListHandler = new EnumClass_Editor_MethodListHandler(node, "method", context);
+    if(this.myMethodListHandler_methodList_ == null) {
+      this.myMethodListHandler_methodList_ = new EnumClass_Editor_MethodListHandler_methodList_(node, "method", context);
     }
-    EditorCell_Collection editorCell = this.myMethodListHandler.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myMethodListHandler_methodList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
@@ -349,15 +349,15 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myMethodListHandler.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myMethodListHandler_methodList_.getElementRole());
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createStaticMethodList(EditorContext context, SNode node) {
-    if(this.myStaticMethodListHandler == null) {
-      this.myStaticMethodListHandler = new EnumClass_Editor_StaticMethodListHandler(node, "staticMethod", context);
+    if(this.myStaticMethodListHandler_staticMethodList_ == null) {
+      this.myStaticMethodListHandler_staticMethodList_ = new EnumClass_Editor_StaticMethodListHandler_staticMethodList_(node, "staticMethod", context);
     }
-    EditorCell_Collection editorCell = this.myStaticMethodListHandler.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myStaticMethodListHandler_staticMethodList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
@@ -365,7 +365,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myStaticMethodListHandler.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myStaticMethodListHandler_staticMethodList_.getElementRole());
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

@@ -24,8 +24,8 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class Interface_Editor extends DefaultNodeEditor {
 
   public AbstractCellProvider my_GenericDeclaration_TypeVariables_Component;
-  public AbstractCellListHandler myExtendedInterfaceListHandler;
-  public AbstractCellListHandler myStaticFieldListHandler;
+  public AbstractCellListHandler myExtendedInterfaceListHandler_extendedInterfaceList_;
+  public AbstractCellListHandler myStaticFieldListHandler_staticFieldList_;
   public AbstractCellListHandler myMethodListHandler_methodsList_;
 
   public static boolean _QueryFunction_NodeCondition_1145916182768(SNode node, IScope scope) {
@@ -217,10 +217,10 @@ public class Interface_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createExtendedInterfaceList(EditorContext context, SNode node) {
-    if(this.myExtendedInterfaceListHandler == null) {
-      this.myExtendedInterfaceListHandler = new Interface_Editor_ExtendedInterfaceListHandler(node, "extendedInterface", context);
+    if(this.myExtendedInterfaceListHandler_extendedInterfaceList_ == null) {
+      this.myExtendedInterfaceListHandler_extendedInterfaceList_ = new Interface_Editor_ExtendedInterfaceListHandler_extendedInterfaceList_(node, "extendedInterface", context);
     }
-    EditorCell_Collection editorCell = this.myExtendedInterfaceListHandler.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myExtendedInterfaceListHandler_extendedInterfaceList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
@@ -228,15 +228,15 @@ public class Interface_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myExtendedInterfaceListHandler.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myExtendedInterfaceListHandler_extendedInterfaceList_.getElementRole());
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createStaticFieldList(EditorContext context, SNode node) {
-    if(this.myStaticFieldListHandler == null) {
-      this.myStaticFieldListHandler = new Interface_Editor_StaticFieldListHandler(node, "staticField", context);
+    if(this.myStaticFieldListHandler_staticFieldList_ == null) {
+      this.myStaticFieldListHandler_staticFieldList_ = new Interface_Editor_StaticFieldListHandler_staticFieldList_(node, "staticField", context);
     }
-    EditorCell_Collection editorCell = this.myStaticFieldListHandler.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myStaticFieldListHandler_staticFieldList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
@@ -244,7 +244,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myStaticFieldListHandler.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myStaticFieldListHandler_staticFieldList_.getElementRole());
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

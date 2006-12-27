@@ -20,7 +20,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class SwitchStatement_Editor extends DefaultNodeEditor {
 
-  public AbstractCellListHandler myCaseListHandler;
+  public AbstractCellListHandler myCaseListHandler_caseList_;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createColumnCell(context, node);
@@ -258,10 +258,10 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createCaseList(EditorContext context, SNode node) {
-    if(this.myCaseListHandler == null) {
-      this.myCaseListHandler = new SwitchStatement_Editor_CaseListHandler(node, "case", context);
+    if(this.myCaseListHandler_caseList_ == null) {
+      this.myCaseListHandler_caseList_ = new SwitchStatement_Editor_CaseListHandler_caseList_(node, "case", context);
     }
-    EditorCell_Collection editorCell = this.myCaseListHandler.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myCaseListHandler_caseList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
@@ -269,7 +269,7 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myCaseListHandler.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myCaseListHandler_caseList_.getElementRole());
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

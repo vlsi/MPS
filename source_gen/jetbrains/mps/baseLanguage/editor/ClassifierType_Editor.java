@@ -21,7 +21,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ClassifierType_Editor extends DefaultNodeEditor {
 
-  public AbstractCellListHandler myParameterListHandler;
+  public AbstractCellListHandler myParameterListHandler_parameterList_;
 
   public static boolean _QueryFunction_NodeCondition_1145920376960(SNode node, IScope scope) {
     return SLinkOperations.getCount(node, "parameter") > 0;
@@ -88,10 +88,10 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createParameterList(EditorContext context, SNode node) {
-    if(this.myParameterListHandler == null) {
-      this.myParameterListHandler = new ClassifierType_Editor_ParameterListHandler(node, "parameter", context);
+    if(this.myParameterListHandler_parameterList_ == null) {
+      this.myParameterListHandler_parameterList_ = new ClassifierType_Editor_ParameterListHandler_parameterList_(node, "parameter", context);
     }
-    EditorCell_Collection editorCell = this.myParameterListHandler.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myParameterListHandler_parameterList_.createCells(context, new CellLayout_Horizontal(), false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
@@ -99,7 +99,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myParameterListHandler.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myParameterListHandler_parameterList_.getElementRole());
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

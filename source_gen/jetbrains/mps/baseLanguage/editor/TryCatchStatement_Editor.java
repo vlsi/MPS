@@ -20,7 +20,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class TryCatchStatement_Editor extends DefaultNodeEditor {
 
-  public AbstractCellListHandler myCatchClauseListHandler;
+  public AbstractCellListHandler myCatchClauseListHandler_catchClauseList_;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createColumnCell(context, node);
@@ -137,10 +137,10 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createCatchClauseList(EditorContext context, SNode node) {
-    if(this.myCatchClauseListHandler == null) {
-      this.myCatchClauseListHandler = new TryCatchStatement_Editor_CatchClauseListHandler(node, "catchClause", context);
+    if(this.myCatchClauseListHandler_catchClauseList_ == null) {
+      this.myCatchClauseListHandler_catchClauseList_ = new TryCatchStatement_Editor_CatchClauseListHandler_catchClauseList_(node, "catchClause", context);
     }
-    EditorCell_Collection editorCell = this.myCatchClauseListHandler.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myCatchClauseListHandler_catchClauseList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
@@ -148,7 +148,7 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myCatchClauseListHandler.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myCatchClauseListHandler_catchClauseList_.getElementRole());
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

@@ -13,16 +13,16 @@ import java.awt.Color;
 
 public class StatementList_Editor extends DefaultNodeEditor {
 
-  public AbstractCellListHandler myStatementListHandler;
+  public AbstractCellListHandler myStatementListHandler_statementList_;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createStatementList(context, node);
   }
   public EditorCell createStatementList(EditorContext context, SNode node) {
-    if(this.myStatementListHandler == null) {
-      this.myStatementListHandler = new StatementList_Editor_StatementListHandler(node, "statement", context);
+    if(this.myStatementListHandler_statementList_ == null) {
+      this.myStatementListHandler_statementList_ = new StatementList_Editor_StatementListHandler_statementList_(node, "statement", context);
     }
-    EditorCell_Collection editorCell = this.myStatementListHandler.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myStatementListHandler_statementList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
@@ -30,7 +30,7 @@ public class StatementList_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(true);
-    editorCell.putUserObject(EditorCell.ROLE, this.myStatementListHandler.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myStatementListHandler_statementList_.getElementRole());
     editorCell.setLayoutConstraint("");
     editorCell.addKeyMap(new StatementList_KeyMap());
     return editorCell;

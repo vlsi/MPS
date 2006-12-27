@@ -26,8 +26,8 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 public class ClassConcept_Editor extends DefaultNodeEditor {
 
   public AbstractCellProvider my_GenericDeclaration_TypeVariables_Component;
-  public AbstractCellListHandler myImplementedInterfaceListHandler;
-  public AbstractCellListHandler myStaticFieldListHandler;
+  public AbstractCellListHandler myImplementedInterfaceListHandler_implementedInterfaceList_;
+  public AbstractCellListHandler myStaticFieldListHandler_staticFieldList_;
   public AbstractCellListHandler myFieldListHandler_fieldsList_;
   public AbstractCellListHandler myConstructorListHandler_constructorsList_;
   public AbstractCellListHandler myMethodListHandler_methodsList_;
@@ -397,10 +397,10 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createImplementedInterfaceList(EditorContext context, SNode node) {
-    if(this.myImplementedInterfaceListHandler == null) {
-      this.myImplementedInterfaceListHandler = new ClassConcept_Editor_ImplementedInterfaceListHandler(node, "implementedInterface", context);
+    if(this.myImplementedInterfaceListHandler_implementedInterfaceList_ == null) {
+      this.myImplementedInterfaceListHandler_implementedInterfaceList_ = new ClassConcept_Editor_ImplementedInterfaceListHandler_implementedInterfaceList_(node, "implementedInterface", context);
     }
-    EditorCell_Collection editorCell = this.myImplementedInterfaceListHandler.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myImplementedInterfaceListHandler_implementedInterfaceList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
@@ -408,15 +408,15 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myImplementedInterfaceListHandler.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myImplementedInterfaceListHandler_implementedInterfaceList_.getElementRole());
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createStaticFieldList(EditorContext context, SNode node) {
-    if(this.myStaticFieldListHandler == null) {
-      this.myStaticFieldListHandler = new ClassConcept_Editor_StaticFieldListHandler(node, "staticField", context);
+    if(this.myStaticFieldListHandler_staticFieldList_ == null) {
+      this.myStaticFieldListHandler_staticFieldList_ = new ClassConcept_Editor_StaticFieldListHandler_staticFieldList_(node, "staticField", context);
     }
-    EditorCell_Collection editorCell = this.myStaticFieldListHandler.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myStaticFieldListHandler_staticFieldList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
@@ -424,7 +424,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myStaticFieldListHandler.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myStaticFieldListHandler_staticFieldList_.getElementRole());
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

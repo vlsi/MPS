@@ -14,7 +14,7 @@ import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
 
 public class _GenericDeclaration_TypeVariables_Component extends AbstractCellProvider {
 
-  public AbstractCellListHandler myTypeVariableDeclarationListHandler;
+  public AbstractCellListHandler myTypeVariableDeclarationListHandler_typeVariableDeclarationList_;
 
   public  _GenericDeclaration_TypeVariables_Component(SNode node) {
     super(node);
@@ -67,10 +67,10 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     return editorCell;
   }
   public EditorCell createTypeVariableDeclarationList(EditorContext context, SNode node) {
-    if(this.myTypeVariableDeclarationListHandler == null) {
-      this.myTypeVariableDeclarationListHandler = new _GenericDeclaration_TypeVariables_Component_TypeVariableDeclarationListHandler(node, "typeVariableDeclaration", context);
+    if(this.myTypeVariableDeclarationListHandler_typeVariableDeclarationList_ == null) {
+      this.myTypeVariableDeclarationListHandler_typeVariableDeclarationList_ = new _GenericDeclaration_TypeVariables_Component_TypeVariableDeclarationListHandler_typeVariableDeclarationList_(node, "typeVariableDeclaration", context);
     }
-    EditorCell_Collection editorCell = this.myTypeVariableDeclarationListHandler.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myTypeVariableDeclarationListHandler_typeVariableDeclarationList_.createCells(context, new CellLayout_Horizontal(), false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
@@ -78,7 +78,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myTypeVariableDeclarationListHandler.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myTypeVariableDeclarationListHandler_typeVariableDeclarationList_.getElementRole());
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

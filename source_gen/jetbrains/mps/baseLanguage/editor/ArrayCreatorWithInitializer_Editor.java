@@ -19,7 +19,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
 
-  public AbstractCellListHandler myInitValueListHandler;
+  public AbstractCellListHandler myInitValueListHandler_initValueList_;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
@@ -79,10 +79,10 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createInitValueList(EditorContext context, SNode node) {
-    if(this.myInitValueListHandler == null) {
-      this.myInitValueListHandler = new ArrayCreatorWithInitializer_Editor_InitValueListHandler(node, "initValue", context);
+    if(this.myInitValueListHandler_initValueList_ == null) {
+      this.myInitValueListHandler_initValueList_ = new ArrayCreatorWithInitializer_Editor_InitValueListHandler_initValueList_(node, "initValue", context);
     }
-    EditorCell_Collection editorCell = this.myInitValueListHandler.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myInitValueListHandler_initValueList_.createCells(context, new CellLayout_Horizontal(), false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
@@ -90,7 +90,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myInitValueListHandler.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myInitValueListHandler_initValueList_.getElementRole());
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
