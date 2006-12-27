@@ -21,6 +21,7 @@
     <orderEntry type="library" name="Eclipse-compiler" level="project" />
     <orderEntry type="library" exported="" name="Annotations" level="project" />
     <orderEntry type="module" module-name="baseLanguageExt" exported="" />
+    <orderEntry type="library" name="CGLib" level="project" />
     <orderEntryProperties />
   </component>
   <component name="copyright">
