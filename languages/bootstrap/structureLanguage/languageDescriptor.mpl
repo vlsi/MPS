@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.bootstrap.structureLanguage" loggingEnabled="false" generatorOutputPath="${mps_home}\source_gen">
+<language namespace="jetbrains.mps.bootstrap.structureLanguage" generatorOutputPath="${mps_home}\source_gen">
   <structure>
     <model modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   </structure>
@@ -28,8 +28,6 @@
     <generator name="structure generator" generatorUID="jetbrains.mps.bootstrap.structureLanguage#1129914001820" targetLanguage="jetbrains.mps.baseLanguage">
       <models>
         <modelRoot path="${language_descriptor}\generator" namespacePrefix="jetbrains.mps.bootstrap.structureLanguage.generator" />
-        <modelRoot path="${mps_home}\models\java" namespacePrefix="java" />
-        <modelRoot path="${mps_home}\models\jetbrains" namespacePrefix="jetbrains" />
       </models>
       <module />
     </generator>
