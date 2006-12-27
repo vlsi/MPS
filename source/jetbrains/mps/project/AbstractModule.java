@@ -330,6 +330,7 @@ public abstract class AbstractModule implements IModule {
     return myDescriptorFile;
   }
 
+
   protected void readDependOnModules() {
     MPSModuleRepository.getInstance().readModuleDescriptors(getModuleDescriptor().moduleRoots(), this);
   }

@@ -46,6 +46,7 @@ public class DevKit extends AbstractModule {
   private File myDescriptorFile;
   private DevKitEventTranslator myTranslator = new DevKitEventTranslator();
   private List<DevKitCommandListener> myListeners = new ArrayList<DevKitCommandListener>();
+  private MPSModuleOwner myGenerationOnlyModelsModelOwner = new MPSModuleOwner() { };  
 
   public DevKit() {
     CommandProcessor.instance().addCommandListener(myTranslator);
@@ -67,6 +68,7 @@ public class DevKit extends AbstractModule {
 
   public void setDevKitDescriptor(DevKitDescriptor descriptor) {
     MPSModuleRepository.getInstance().unRegisterModules(this);
+    MPSModuleRepository.getInstance().unRegisterModules(myGenerationOnlyModelsModelOwner);
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
     SModelRepository.getInstance().registerModelDescriptor(descriptor.getModel().getModelDescriptor(), this);
 
@@ -78,14 +80,27 @@ public class DevKit extends AbstractModule {
     devKitChanged();
   }
 
+
+  protected void readDependOnModules() {
+    super.readDependOnModules();
+    MPSModuleRepository.getInstance().readModuleDescriptors(getModuleDescriptor().generationOnlyModules(), this);
+  }
+
   public void dispose() {
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
     MPSModuleRepository.getInstance().unRegisterModules(this);
+    MPSModuleRepository.getInstance().unRegisterModules(myGenerationOnlyModelsModelOwner);
     CommandProcessor.instance().removeCommandListener(myTranslator);
   }
 
   public List<Language> getLanguages() {
     List<Language> languages = MPSModuleRepository.getInstance().getLanguages(this);
+    Collections.sort(languages, new ToStringComparator());
+    return languages;
+  }
+
+  public List<Language> getGenerationOnlyLanuages() {
+    List<Language> languages = MPSModuleRepository.getInstance().getLanguages(myGenerationOnlyModelsModelOwner);
     Collections.sort(languages, new ToStringComparator());
     return languages;
   }
