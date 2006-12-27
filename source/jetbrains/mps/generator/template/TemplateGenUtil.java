@@ -19,11 +19,9 @@ import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.Templ
 import jetbrains.mps.transformation.TemplateLanguageUtil;
 import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.util.QueryMethodGenerated;
+import jetbrains.mps.util.Condition;
 
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class TemplateGenUtil {
   private static final Logger LOG = Logger.getLogger(TemplateGenUtil.class);
@@ -193,7 +191,7 @@ public class TemplateGenUtil {
     String ruleName = mappingRule.getName();
     BaseConcept templateNode = mappingRule.getTemplateNode();
     if (templateNode == null) {
-      generator.showErrorMessage(null, null, mappingRule, "mapping rule has to template");
+      generator.showErrorMessage(null, null, mappingRule, "mapping rule has no template");
       return builders;
     }
     List<SNode> sourceNodes = createSourceNodeListForMappingRule(mappingRule, generator);
@@ -213,7 +211,7 @@ public class TemplateGenUtil {
       String ruleName = createRootRule.getName();
       BaseConcept templateNode = createRootRule.getTemplateNode();
       if (templateNode == null) {
-        generator.showErrorMessage(null, null, createRootRule, "'create root' rule has to template");
+        generator.showErrorMessage(null, null, createRootRule, "'create root' rule has no template");
       } else {
         // create builder with no source node
         INodeBuilder nodeBuilder = createNodeBuilder(null, templateNode, ruleName, 0, generator);
@@ -225,17 +223,50 @@ public class TemplateGenUtil {
     return builders;
   }
 
-  public static void applyWeavingingRule(WeavingRule weavingRule, ITemplateGenerator generator) {
+  public static void applyWeavingRule(WeavingRule weavingRule, ITemplateGenerator generator) {
     TemplateDeclaration templateDeclaration = weavingRule.getTemplate();
     List<SNode> sourceNodes = createSourceNodeListForWeavingRule(weavingRule, generator);
     for (SNode sourceNode : sourceNodes) {
       INodeBuilder contextBuilder = getContextNodeBuilderForWeavingingRule(sourceNode, weavingRule, generator);
       if (contextBuilder == null) {
-        generator.showErrorMessage(sourceNode, weavingRule, "Couldn't create context node builder");
+        generator.showErrorMessage(sourceNode, weavingRule, "couldn't create context node builder");
         continue;
       }
       weaveTemplateDeclaration(sourceNode, templateDeclaration, contextBuilder, generator, weavingRule);
     }
+  }
+
+  public static void applyWeavingMappingRules(final List<Weaving_MappingRule> weavingRules, final ITemplateGenerator generator) {
+    if (weavingRules.isEmpty()) return;
+    final HashSet<Weaving_MappingRule> failedRules = new HashSet<Weaving_MappingRule>();
+    SModelUtil.allNodes(generator.getSourceModel(), new Condition<SNode>() {
+      public boolean met(SNode sourceNode) {
+        ConceptDeclaration nodeConcept = SModelUtil.getConceptDeclaration(sourceNode, generator.getScope());
+        for (Weaving_MappingRule weavingRule : weavingRules) {
+          if (failedRules.contains(weavingRule)) continue;
+          ConceptDeclaration applicableConcept = weavingRule.getApplicableConcept();
+          if (applicableConcept != null) {
+            if (!SModelUtil.isAssignableConcept(nodeConcept, applicableConcept)) continue;
+          }
+          // applicable rule - check condition
+          if (checkConditionForBaseMappingRule(sourceNode, weavingRule, generator)) {
+            TemplateDeclaration templateDeclaration = weavingRule.getTemplate();
+            if (templateDeclaration == null) {
+              generator.showErrorMessage(sourceNode, null, weavingRule, "weaving rule has no template");
+              failedRules.add(weavingRule);
+              continue;
+            }
+            INodeBuilder contextBuilder = getContextNodeBuilderForWeavingingRule(sourceNode, weavingRule, generator);
+            if (contextBuilder == null) {
+              generator.showErrorMessage(sourceNode, weavingRule, "couldn't create context node builder");
+              continue;
+            }
+            weaveTemplateDeclaration(sourceNode, templateDeclaration, contextBuilder, generator, weavingRule);
+          }
+        }
+        return false;
+      }
+    });
   }
 
   public static boolean isContextlessFragment(TemplateDeclaration templateDeclaration) {
@@ -338,6 +369,18 @@ public class TemplateGenUtil {
     }
   }
 
+  private static INodeBuilder getContextNodeBuilderForWeavingingRule(SNode sourceNode, Weaving_MappingRule rule, ITemplateGenerator generator) {
+    try {
+      String aspectId = rule.getContextProviderAspectId();
+      String methodName = "templateWeavingRule_Context_" + aspectId;
+      Object[] args = new Object[]{sourceNode, generator};
+      return (INodeBuilder) QueryMethod.invoke(methodName, args, rule.getModel());
+    } catch (Throwable t) {
+      generator.showErrorMessage(sourceNode, null, rule, t.getClass().getName());
+      throw new RuntimeException(t);
+    }
+  }
+
   public static List<INodeBuilder> createNodeBuildersForTemplateNode(SNode parentSourceNode, SNode templateNode, String mappingName, int currentMacroIndex, ITemplateGenerator generator) {
     List<INodeBuilder> builders = new LinkedList<INodeBuilder>();
     List<SNode> sourceNodes = createSourceNodeListForTemplateNode(parentSourceNode, templateNode, currentMacroIndex, generator);
@@ -387,6 +430,27 @@ public class TemplateGenUtil {
             generator.getGeneratorSessionContext()};
     try {
       return (Boolean) QueryMethodGenerated.invoke(methodName, args, createRootRule.getModel());
+    } catch (Exception e) {
+      e.printStackTrace();
+      return false;
+    }
+  }
+
+  private static boolean checkConditionForBaseMappingRule(SNode sourceNode, BaseMappingRule mappingRule, ITemplateGenerator generator) {
+    BaseMappingRule_Condition conditionFunction = mappingRule.getConditionFunction();
+    if (conditionFunction == null) {
+      return true;
+    }
+
+    String methodName = TemplateFunctionMethodName.baseMappingRule_Condition(conditionFunction);
+    Object[] args = new Object[]{
+            sourceNode,
+            generator.getSourceModel(),
+            generator,
+            generator.getScope(),
+            generator.getGeneratorSessionContext()};
+    try {
+      return (Boolean) QueryMethodGenerated.invoke(methodName, args, mappingRule.getModel());
     } catch (Exception e) {
       e.printStackTrace();
       return false;
