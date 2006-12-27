@@ -362,6 +362,10 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     return myContext.getComponentInterfaces().contains(cls);
   }
 
+  public IOperationContext createOperationContext() {
+    return new ProjectOperationContext(this);
+  }
+
   @Nullable
   public <T> T getComponent(Class<T> clazz) {
     return myContext.get(clazz);

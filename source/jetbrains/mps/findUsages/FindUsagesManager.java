@@ -4,7 +4,6 @@ import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.project.ApplicationComponents;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 
@@ -42,8 +41,6 @@ public class FindUsagesManager {
   }
 
   public Set<ConceptDeclaration> findDescendants(ConceptDeclaration node, IScope scope) {
-    scope = GlobalScope.getInstance();
-
     HashMap<SModelDescriptor, HashSet<ConceptDeclaration>> knownDescendantsInModelDescriptors = myConceptsToKnownDescendantsInModelDescriptors.get(node);
     if (knownDescendantsInModelDescriptors == null) {
       knownDescendantsInModelDescriptors = new HashMap<SModelDescriptor, HashSet<ConceptDeclaration>>();
@@ -69,8 +66,6 @@ public class FindUsagesManager {
   }
 
   public Set<SReference> findUsages(Set<SNode> nodes, IScope scope, IAdaptiveProgressMonitor progress) {
-    scope = GlobalScope.getInstance();
-
     Set<SReference> result = new HashSet<SReference>();
     //noinspection EmptyFinallyBlock
     try {
@@ -100,8 +95,6 @@ public class FindUsagesManager {
   }
 
   public Set<SNode> findInstances(ConceptDeclaration concept, IScope scope, IAdaptiveProgressMonitor progress) {
-    scope = GlobalScope.getInstance();
-
     Set<SNode> result = new HashSet<SNode>();
     //noinspection EmptyFinallyBlock
     try {
@@ -152,8 +145,6 @@ public class FindUsagesManager {
   }
 
   public List<ConceptDeclaration> allSubtypes(ConceptDeclaration conceptDeclaration, IScope scope) {
-    scope = GlobalScope.getInstance();
-
     if (ourCache.get(conceptDeclaration) != null) return Collections.unmodifiableList(ourCache.get(conceptDeclaration));
 
     List<ConceptDeclaration> list = new LinkedList<ConceptDeclaration>();
