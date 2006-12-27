@@ -4,15 +4,17 @@ import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.projectLanguage.ModelRoot;
-import jetbrains.mps.ide.modelRepositoryViewer.ModelRepositoryView;
+import jetbrains.mps.util.NameUtil;
 
 import java.io.File;
-import java.util.*;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
 
 /**
  * @author Kostik

@@ -1,6 +1,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Created by IntelliJ IDEA.
@@ -80,6 +81,7 @@ public class SModelUID implements Comparable {
     return getLongName().substring(offset + 1);
   }
 
+  @NotNull
   public String getStereotype() {
     return myStereotype;
   }
