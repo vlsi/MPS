@@ -2938,7 +2938,7 @@
         <property name="selectable" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1167257103457">
           <property name="drawBorder" value="false" />
-          <property name="bracketsColor" value="lightGray" />
+          <property name="bracketsColor" value="gray" />
           <property name="vertical" value="true" />
           <property name="gridLayout" value="true" />
           <property name="selectable" value="false" />
@@ -2992,7 +2992,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1167171628766">
         <property name="drawBorder" value="false" />
-        <property name="bracketsColor" value="lightGray" />
+        <property name="bracketsColor" value="gray" />
         <property name="vertical" value="true" />
         <property name="drawBrackets" value="true" />
         <property name="gridLayout" value="true" />

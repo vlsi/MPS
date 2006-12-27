@@ -246,7 +246,8 @@ public class TemplateGenUtil {
           if (failedRules.contains(weavingRule)) continue;
           ConceptDeclaration applicableConcept = weavingRule.getApplicableConcept();
           if (applicableConcept != null) {
-            if (!SModelUtil.isAssignableConcept(nodeConcept, applicableConcept)) continue;
+            // should be EXACTLY same
+            if (nodeConcept != applicableConcept) continue;
           }
           // applicable rule - check condition
           if (checkConditionForBaseMappingRule(sourceNode, weavingRule, generator)) {
