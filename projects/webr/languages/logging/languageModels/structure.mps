@@ -18,20 +18,38 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="2.1068431790191" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1167227556558">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
-    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1167228628751">
       <property name="name" value="hasException" />
       <link role="dataType" targetNodeId="1.1082983657063" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1167245565795">
+      <property name="name" value="severity" />
+      <link role="dataType" targetNodeId="1167245107475" resolveInfo="Severity" />
+    </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1167228044279">
-    <property name="name" value="DebugStatement" />
-    <link role="extends" targetNodeId="1167227138527" resolveInfo="LogStatement" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1167228140019">
-      <property name="value" value="debug();" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+  <node type="jetbrains.mps.bootstrap.structureLanguage.EnumerationDataTypeDeclaration" id="1167245107475">
+    <property name="name" value="Severity" />
+    <link role="memberDataType" targetNodeId="1.1082983041843" />
+    <link role="defaultMember" targetNodeId="1167245288119" resolveInfo="debug" />
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1167245107476">
+      <property name="internalValue" value="fatal" />
+      <property name="name" value="fatal" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1167245252932">
+      <property name="internalValue" value="error" />
+      <property name="name" value="error" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1167245264682">
+      <property name="internalValue" value="warn" />
+      <property name="name" value="warn" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1167245288119">
+      <property name="internalValue" value="debug" />
+      <property name="name" value="debug" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1167245293010">
+      <property name="internalValue" value="trace" />
+      <property name="name" value="trace" />
     </node>
   </node>
 </model>

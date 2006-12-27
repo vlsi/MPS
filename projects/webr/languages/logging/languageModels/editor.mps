@@ -6,41 +6,6 @@
   <maxImportIndex value="5" />
   <import index="1" modelUID="webr.logging.structure" />
   <import index="2" modelUID="jetbrains.mps.core.structure" />
-  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1167228119811">
-    <link role="conceptDeclaration" targetNodeId="1.1167228044279" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1167228125392">
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1167228150005">
-        <property name="text" value="debug(" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1167228203121">
-        <link role="relationDeclaration" targetNodeId="1.1167227463056" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1167228408546">
-        <property name="selectable" value="false" />
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1167228413469">
-          <property name="text" value="," />
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1167228421956">
-          <link role="relationDeclaration" targetNodeId="1.1167227561449" />
-        </node>
-        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1167228431754">
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1167228431755">
-            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1167228433896">
-              <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1167228653503">
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1167228652861" />
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1167228654863">
-                  <link role="property" targetNodeId="1.1167228628751" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1167228170197">
-        <property name="text" value=");" />
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapDeclaration" id="1167228512722">
     <property name="name" value="AddException_keymap" />
     <link role="applicableConcept" targetNodeId="1.1167227138527" />
@@ -118,6 +83,55 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1167245582276">
+    <link role="conceptDeclaration" targetNodeId="1.1167227138527" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1167245583614">
+      <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1167245583615">
+        <property name="textFgColor" value="DARK_BLUE" />
+        <property name="fontStyle" value="BOLD" />
+        <property name="drawBorder" value="false" />
+        <link role="keyMap" targetNodeId="1167228512722" resolveInfo="AddException_keymap" />
+        <link role="relationDeclaration" targetNodeId="1.1167245565795" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1167245583616">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="1.1167227463056" />
+        <link role="keyMap" targetNodeId="1167228512722" resolveInfo="AddException_keymap" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1167245583617">
+        <property name="drawBorder" value="false" />
+        <property name="selectable" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1167245583618">
+          <property name="text" value="," />
+          <property name="drawBorder" value="false" />
+          <property name="selectable" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1167245583619">
+          <property name="drawBorder" value="false" />
+          <link role="relationDeclaration" targetNodeId="1.1167227561449" />
+          <link role="keyMap" targetNodeId="1167228512722" resolveInfo="AddException_keymap" />
+        </node>
+        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1167245583620">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1167245583621">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1167245583622">
+              <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1167245583623">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1167245583624" />
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1167245583625">
+                  <link role="property" targetNodeId="1.1167228628751" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1167245583626">
+        <property name="text" value=";" />
+        <property name="drawBorder" value="false" />
+        <link role="keyMap" targetNodeId="1167228512722" resolveInfo="AddException_keymap" />
       </node>
     </node>
   </node>
