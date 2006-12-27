@@ -279,8 +279,8 @@ public class CopyPasteUtil {
       if (!targetModel.hasLanguage(namespace)) additionalLanguages.add(namespace);
     }
 
-    necessaryImports.retainAll(importsFromPattern);
-    necessaryLanguages.retainAll(languagesFromPattern);
+    necessaryImports.retainAll(additionalModels);
+    necessaryLanguages.retainAll(additionalLanguages);
     for (String devKitName : additionalDevKits) {
       DevKit devKit = context.getScope().getDevKit(devKitName);
       if (devKit != null) necessaryLanguages.removeAll(devKit.getLanguageNamespaces());

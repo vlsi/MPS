@@ -6,6 +6,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.QueryMethod;
+import jetbrains.mps.smodel.languageLog.ModelLogger;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
@@ -139,6 +140,7 @@ public class ModelPersistence {
     }
 
     // languages
+    Set<SNode> logs = new HashSet<SNode>();
     List languages = rootElement.getChildren(LANGUAGE);
     for (Object language : languages) {
       Element element = (Element) language;
@@ -188,7 +190,6 @@ public class ModelPersistence {
       SModelUID importedModelUID = SModelUID.fromString(importedModelUIDString);
 
       if (checkVersion) {
-     //   System.err.println("checking version");
         SModelDescriptor importedModelDescriptor = SModelRepository.getInstance().getModelDescriptor(importedModelUID);
         if (importedModelDescriptor != null) {
           File importedModelFile = importedModelDescriptor.getModelFile();
@@ -198,7 +199,12 @@ public class ModelPersistence {
               System.err.println("new imported model version detected: model = " + model
                       + " imported model = " + importedModelUID + " current import version: " +
                       importedModelVersion + " new version: " + newVersion);
-              // TODO do something :)
+              try {
+                SModel importedModel = SModelRepository.getInstance().getModelDescriptor(importedModelUID).getSModel();
+                logs.add(importedModel.getLog());
+              } catch(Throwable t) {
+                t.printStackTrace();
+              }
             }
           }
         }
@@ -234,6 +240,11 @@ public class ModelPersistence {
     for (ReferencePersister referencePersister : referenceDescriptors) {
       referencePersister.createReferenceInModel(model);
     }
+
+  //  ModelLogger modelLogger = new ModelLogger();
+ //   for (SNode log : logs) {
+  //    modelLogger.playRefactoringSequence(log, model, null);
+  //  }
 
     model.setLoading(false);
     return model;
