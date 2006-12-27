@@ -1,6 +1,7 @@
 package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.project.Solution;
@@ -53,6 +54,13 @@ class ProjectDevKitTreeNode extends MPSTreeNode {
   private void populate() {    
     for (Language l : myDevKit.getLanguages()) {
       add(new GenericModuleTreeNode(l, getOperationContext().getProject()));
+    }
+
+    TextTreeNode generationOnly = new TextTreeNode("Generation only languages");
+    add(generationOnly);
+
+    for (Language l : myDevKit.getGenerationOnlyLanuages()) {
+      generationOnly.add(new GenericModuleTreeNode(l, getOperationContext().getProject()));
     }
   }
 
