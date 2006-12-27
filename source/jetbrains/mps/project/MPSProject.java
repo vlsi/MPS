@@ -405,12 +405,14 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
       classpath.add(entry.getPath());
     }
 
-    IProjectHandler handler = getProjectHandler();
-    if (handler != null) {
-      try {
-        classpath.addAll(handler.getModuleClassPath(getProjectFile().getAbsolutePath()));
-      } catch (RemoteException e) {
-        e.printStackTrace();  
+    if (myProjectDescriptor.getAutoImportFromIDEA()) {
+      IProjectHandler handler = getProjectHandler();
+      if (handler != null) {
+        try {
+          classpath.addAll(handler.getModuleClassPath(getProjectFile().getAbsolutePath()));
+        } catch (RemoteException e) {
+          e.printStackTrace();
+        }
       }
     }
 
