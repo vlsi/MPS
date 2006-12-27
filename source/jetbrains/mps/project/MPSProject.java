@@ -577,21 +577,18 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
 
   @Nullable
   public SModelDescriptor getModelDescriptor(@NotNull SModelUID modelUID) {
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
-    if (modelDescriptor != null) {
-      return modelDescriptor;
+     SModelDescriptor modelDescriptor;
+
+    { //my models
+      modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
+      if (modelDescriptor != null) return modelDescriptor;
     }
-    for (Solution solution : mySolutions) {
-      modelDescriptor = solution.getModelDescriptor(modelUID);
-      if (modelDescriptor != null) {
-        return modelDescriptor;
-      }
-    }
-    for (Language language : myLanguages) {
-      modelDescriptor = language.getModelDescriptor(modelUID);
-      if (modelDescriptor != null) {
-        return modelDescriptor;
-      }
+
+    Set<IModule> modulesToSearch = getAllVisibleModules();
+
+    for (IModule m : modulesToSearch) {
+      modelDescriptor = m.getModelDescriptor(modelUID);
+      if (modelDescriptor != null) return modelDescriptor;
     }
 
     LOG.warning("Couldn't find model descriptor for uid: \"" + modelUID + "\" in: " + this);
@@ -618,19 +615,19 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
   }
 
   private Set<IModule> getAllVisibleModules() {
-    Set<IModule> modulesToSearch = new HashSet<IModule>();
+    Set<IModule> modules = new HashSet<IModule>();
+    collectModules(this, modules);
+    return modules;
+  }
 
-    for (Solution solution : mySolutions) {
-      modulesToSearch.add(solution);
-      modulesToSearch.addAll(solution.getAllDependOnModules(IModule.class));
+  private void collectModules(MPSModuleOwner moduleOwner, Set<IModule> modules) {
+    List<IModule> ownedModules = MPSModuleRepository.getInstance().getModules(moduleOwner);
+    for (IModule ownedModule : ownedModules) {
+      if (!modules.contains(ownedModule)) {
+        modules.add(ownedModule);
+        collectModules(ownedModule, modules);
+      }
     }
-
-
-    for (Language language : myLanguages) {
-      modulesToSearch.add(language);
-      modulesToSearch.addAll(language.getAllDependOnModules(IModule.class));
-    }
-    return modulesToSearch;
   }
 
   public void addMPSProjectCommandListener(@NotNull IMPSProjectCommandListener listener) {

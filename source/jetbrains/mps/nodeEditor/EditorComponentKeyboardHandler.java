@@ -103,23 +103,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
         }
 
       } else if (EditorCellAction.RIGHT_TRANSFORM.equals(actionType)) {
-        if (!(selectedCell instanceof EditorCell_Label && selectedCell.isErrorState())) {
-          if (EditorUtil.getCellAction(selectedCell, EditorCellAction.RIGHT_TRANSFORM, editorContext) == null) {
-           /* if (selectedCell instanceof EditorCell_Constant) {
-              actionType = EditorCellAction.RIGHT_SPECIAL;
-              keyEvent.consume();
-            } else if (selectedCell instanceof EditorCell_Property) {
-              String text = ((EditorCell_Property) selectedCell).getText();
-              if (!((EditorCell_Property) selectedCell).getModelAccessor().isValidText(text + " ")) {
-                actionType = EditorCellAction.RIGHT_SPECIAL;
-                keyEvent.consume();
-              }
-            } else {
-              // stop here
-              return true;
-            }*/
-          }
-        } else {
+        if (selectedCell instanceof EditorCell_Label && selectedCell.isErrorState()) {
           //return true;
           dontExecuteRT = true;
         }

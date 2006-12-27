@@ -11,6 +11,7 @@ import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.ide.actions.nodes.DeleteNodesHelper;
 
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
@@ -203,11 +204,15 @@ public class NodeRangeSelection implements IKeyboardHandler {
   }
 
   private void doDeleteNodes(EditorContext editorContext) {
-    for (SNode semanticNode : getNodes()) {
-      EditorCell nodeCell = myEditorComponent.findNodeCell(semanticNode);
-      EditorCellAction action = nodeCell.getAction(EditorCellAction.DELETE);
-      if (action != null && action.canExecute(editorContext)) {
-        action.execute(editorContext);
+    if (getNodes().size() > 1) {
+      new DeleteNodesHelper(getNodes(), editorContext.getOperationContext()).deleteNodes();
+    } else {
+      for (SNode semanticNode : getNodes()) {
+        EditorCell nodeCell = myEditorComponent.findNodeCell(semanticNode);
+        EditorCellAction action = nodeCell.getAction(EditorCellAction.DELETE);
+        if (action != null && action.canExecute(editorContext)) {
+          action.execute(editorContext);
+        }
       }
     }
   }
