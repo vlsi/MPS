@@ -246,6 +246,10 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1114456532170">
     <property name="name" value="ReductionRule" />
     <link role="extends" targetNodeId="2.1078489098625" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1167333207061">
+      <property name="value" value="replaced with Reduction_MappingRule" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1162838948922" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1132950837789">
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />
