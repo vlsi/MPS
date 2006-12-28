@@ -6,6 +6,8 @@ import jetbrains.mps.projectLanguage.GeneratorDescriptor;
 import jetbrains.mps.projectLanguage.ModuleDescriptor;
 import jetbrains.mps.transformation.TLBase.MappingConfiguration;
 import jetbrains.mps.util.annotation.Hack;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.ide.BootstrapLanguages;
 
 import java.util.*;
 
@@ -16,6 +18,8 @@ import org.jetbrains.annotations.Nullable;
  * @author Kostik
  */
 public class Generator extends AbstractModule {
+  public static final Logger LOG = Logger.getLogger(Generator.class);
+
   private Language mySourceLanguage;
   private GeneratorDescriptor myGeneratorDescriptor;
 
@@ -95,10 +99,19 @@ public class Generator extends AbstractModule {
   public Language getTargetLanguage() {
     String targetLanguageName = getTargetLanguageName();
     if (targetLanguageName != null) {
-      //todo it's a hack
-      @Hack Language language = MPSModuleRepository.getInstance().getLanguage(targetLanguageName);
-      return language;
+      Language language = MPSModuleRepository.getInstance().getLanguage(targetLanguageName, this);
+
+      if (language == null) {
+        language = MPSModuleRepository.getInstance().getLanguage(targetLanguageName, BootstrapLanguages.getInstance());
+      }
+
+      if (language != null) {
+        return language;
+      }
     }
+
+    LOG.error("Can't find target language for generator " + this + " : " + targetLanguageName);
+
     return null;
   }
 
@@ -122,7 +135,7 @@ public class Generator extends AbstractModule {
     return sb.toString();
   }
 
-  @NotNull
+  @NotNull             
   public GeneratorDescriptor getGeneratorDescriptor() {
     return myGeneratorDescriptor;
   }

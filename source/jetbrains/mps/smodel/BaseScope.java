@@ -98,6 +98,13 @@ public abstract class BaseScope implements IScope {
 
   public Set<IModule> getVisibleModules() {
     Set<IModule> result = doGetVisibleModules();
+
+    for (IModule m : result) {
+      if (m == null) {
+        throw new NullPointerException();
+      }
+    }
+
     Set<Language> languages = BootstrapLanguages.getInstance().getLanguages();
     collectModules((Set<IModule>) (Set) (languages));
     result.addAll(languages);

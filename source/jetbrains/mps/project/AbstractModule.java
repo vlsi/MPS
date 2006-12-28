@@ -268,6 +268,10 @@ public abstract class AbstractModule implements IModule {
     return new HashSet<IModule>(getExplicitlyDependOnModules());
   }
 
+  public void invalidateCaches() {
+    //todo
+  }
+
   private class MyScope extends BaseScope {
     protected ModelOwner getModelOwner() {
       return AbstractModule.this;

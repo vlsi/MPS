@@ -104,7 +104,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   @NotNull
   public IScope getScope() {
-    //todo this greatly improves performance, but it's definitely a hack 
+//    return myTransientModule.getScope();
     return GlobalScope.getInstance();
   }
 

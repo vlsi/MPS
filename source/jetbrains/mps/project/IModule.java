@@ -57,4 +57,6 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   Set<IModule> getVisibleModules();
 
   Set<IModule> getExplicitlyVisibleModules();
+
+  void invalidateCaches();
 }

@@ -66,7 +66,11 @@ public class MPSModuleRepository {
     myListeners.remove(l);
   }
 
-  private void fireRepositoryChanged() {
+  private void fireRepositoryChanged() {    
+    for (IModule m : getAllModules()) {
+      m.invalidateCaches();
+    }
+
     for (RepositoryListener l : myListeners) {
       l.repositoryChanged();
     }
