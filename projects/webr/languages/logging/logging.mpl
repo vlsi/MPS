@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="webr.logging">
+<language namespace="webr.logging" generatorOutputPath="${mps_home}\projects\webr\source_gen">
   <structure>
     <model modelUID="webr.logging.structure" />
   </structure>
