@@ -1862,18 +1862,13 @@
       <JAVADOC />
       <SOURCES />
     </library>
-    <library name="CGLib">
+    <library name="asm">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/cglib/cglib-2.1_3.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/cglib/asm-attrs.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/cglib/jarjar.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/cglib/asm.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/cglib/asm-util.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/cglib/aspectwerkz-core-0.10.RC1.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/asm/asm.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/cglib/cglib-src.zip!/" />
+        <root url="jar://$PROJECT_DIR$/lib/asm/asm-src.zip!/" />
       </SOURCES>
     </library>
   </component>
