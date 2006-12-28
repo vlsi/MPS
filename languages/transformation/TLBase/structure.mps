@@ -158,6 +158,10 @@
       <property name="role" value="template" />
       <link role="target" targetNodeId="1092059087312" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1167272087006">
+      <property name="value" value="replaced with Weaving_MappingRule" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1162838948922" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1095672379244">
     <property name="name" value="TemplateFragment" />
@@ -540,6 +544,10 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1167169308231">
     <property name="name" value="BaseMappingRule" />
     <link role="extends" targetNodeId="2.1078489098625" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1167272244852">
+      <property name="name" value="applyToConceptInheritors" />
+      <link role="dataType" targetNodeId="2.1082983657063" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1167169349424">
       <property name="role" value="applicableConcept" />
       <link role="target" targetNodeId="3.1071489090640" />
