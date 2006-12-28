@@ -238,17 +238,14 @@ public class TemplateGenUtil {
 
   public static void applyWeavingMappingRules(final List<Weaving_MappingRule> weavingRules, final ITemplateGenerator generator) {
     if (weavingRules.isEmpty()) return;
-    final HashSet<Weaving_MappingRule> failedRules = new HashSet<Weaving_MappingRule>();
     SModelUtil.allNodes(generator.getSourceModel(), new Condition<SNode>() {
       public boolean met(SNode sourceNode) {
         ConceptDeclaration nodeConcept = SModelUtil.getConceptDeclaration(sourceNode, generator.getScope());
         for (Weaving_MappingRule weavingRule : weavingRules) {
-          if (failedRules.contains(weavingRule)) continue;
           if (checkPremiseForBaseMappingRule(sourceNode, nodeConcept, weavingRule, generator)) {
             TemplateDeclaration templateDeclaration = weavingRule.getTemplate();
             if (templateDeclaration == null) {
               generator.showErrorMessage(sourceNode, null, weavingRule, "weaving rule has no template");
-              failedRules.add(weavingRule);
               continue;
             }
             INodeBuilder contextBuilder = getContextNodeBuilderForWeavingingRule(sourceNode, weavingRule, generator);
