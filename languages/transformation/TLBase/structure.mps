@@ -564,7 +564,7 @@
     <property name="name" value="TemplateFunctionParameter_sourceNode" />
     <link role="extends" targetNodeId="6.1107135704075" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1167169188351">
-      <property name="value" value="sourceNode" />
+      <property name="value" value="node" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1167169188352">
