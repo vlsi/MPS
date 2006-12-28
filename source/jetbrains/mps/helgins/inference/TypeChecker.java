@@ -98,6 +98,7 @@ public class TypeChecker {
   }
 
   public void clear() {
+    myContextsManager.clear();
     myAdaptationManager.clear();
     myEquationManager.clear();
     myTypeVariablesManager.clearVariables();
