@@ -1,31 +1,36 @@
 package jetbrains.mps.smodel;
 
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.NotNull;
-
-import java.util.*;
-
+import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.ide.BootstrapLanguages;
-import jetbrains.mps.ide.modelRepositoryViewer.ModelRepositoryView;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.*;
 
 public abstract class BaseScope implements IScope {
 
   private Set<IModule> myVisibleModules;
-  private Map<String, Language> myLanguages = new HashMap<String, Language>();  
+  private Map<String, Language> myLanguages = new HashMap<String, Language>();
+  private Map<SModelUID, SModelDescriptor> myDescriptors = new HashMap<SModelUID, SModelDescriptor>();
 
   @Nullable
   public SModelDescriptor getModelDescriptor(@NotNull SModelUID modelUID) {
+    if (myDescriptors.containsKey(modelUID)) {
+      return myDescriptors.get(modelUID);
+    }
+
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, getModelOwner());
     if (modelDescriptor != null) {
+      myDescriptors.put(modelUID, modelDescriptor);
       return modelDescriptor;
     }
 
     for (IModule m : getVisibleModules()) {
       modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, m);
       if (modelDescriptor != null) {
+        myDescriptors.put(modelUID, modelDescriptor);
         return modelDescriptor;
       }
     }
@@ -60,12 +65,9 @@ public abstract class BaseScope implements IScope {
 
   @Nullable
   public Language getLanguage(@NotNull String languageNamespace) {
-    if (!myLanguages.isEmpty()) {
-      if (myLanguages.containsKey(languageNamespace)) {
-        return myLanguages.get(languageNamespace);
-      }
+    if (myLanguages.containsKey(languageNamespace)) {
+      return myLanguages.get(languageNamespace);
     }
-
 
     for (Language l : getVisibleLanguages()) {
       if (languageNamespace.equals(l.getNamespace())) return l;
@@ -149,5 +151,6 @@ public abstract class BaseScope implements IScope {
   public void invalidateCaches() {
     myVisibleModules = null;
     myLanguages.clear();
+    myDescriptors.clear();
   }
 }
