@@ -38,7 +38,6 @@ import java.rmi.RemoteException;
  * Author: Sergey Dmitriev
  * Created Apr 29, 2004
  */
-
 public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContainer, IComponentWithPreferences {
   private static final Logger LOG = Logger.getLogger(MPSProject.class);
 

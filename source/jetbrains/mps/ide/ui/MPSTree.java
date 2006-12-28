@@ -351,7 +351,8 @@ public abstract class MPSTree extends JTree {
     while (node != null) {
       nodes.add(0, node);
       node = node.getParent();
-    }
+    }    
+    if (nodes.size() == 0) return;
     TreePath path = new TreePath(nodes.toArray());
     setSelectionPath(path);
     scrollRowToVisible(getRowForPath(path));
