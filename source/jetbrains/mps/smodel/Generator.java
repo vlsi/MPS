@@ -5,6 +5,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.GeneratorDescriptor;
 import jetbrains.mps.projectLanguage.ModuleDescriptor;
 import jetbrains.mps.transformation.TLBase.MappingConfiguration;
+import jetbrains.mps.util.annotation.Hack;
 
 import java.util.*;
 
@@ -92,12 +93,11 @@ public class Generator extends AbstractModule {
 
   @Nullable
   public Language getTargetLanguage() {
-    jetbrains.mps.projectLanguage.Language targetLanguage = myGeneratorDescriptor.getTargetLanguage();
-    if (targetLanguage != null) {
-      String targetLanguageName = targetLanguage.getName();
-      if (targetLanguageName != null) {
-        return getLanguage(targetLanguageName);
-      }
+    String targetLanguageName = getTargetLanguageName();
+    if (targetLanguageName != null) {
+      //todo it's a hack
+      @Hack Language language = MPSModuleRepository.getInstance().getLanguage(targetLanguageName);
+      return language;
     }
     return null;
   }
@@ -127,20 +127,6 @@ public class Generator extends AbstractModule {
     return myGeneratorDescriptor;
   }
 
-
-  /**
-   * DO NOT comment out this code. If you comment it out, stack overflow will
-   * sometimes happen.
-   */
-  @Nullable
-  @Override
-  protected Language getLanguage(@NotNull String languageNamespace, @NotNull Set<IModule> modulesToSkip, boolean suppressWarnings) {
-    if (mySourceLanguage.getModuleUID().equals(languageNamespace)) {
-      return mySourceLanguage;
-    }
-    modulesToSkip.add(this);
-    return super.getLanguage(languageNamespace, modulesToSkip, suppressWarnings);
-  }
 
   @NotNull
   public List<IModule> getExplicitlyDependOnModules() {

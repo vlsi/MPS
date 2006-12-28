@@ -8,6 +8,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -16,7 +17,7 @@ import java.util.List;
  * Time: 11:34:18
  * To change this template use File | Settings | File Templates.
  */
-public interface IModule extends IScope, ModelOwner, MPSModuleOwner {
+public interface IModule extends ModelOwner, MPSModuleOwner {
   @NotNull String getModuleUID();
 
   @NotNull List<Language> getOwnLanguages();
@@ -45,9 +46,15 @@ public interface IModule extends IScope, ModelOwner, MPSModuleOwner {
 
   @Nullable String getGeneratorOutputPath();
 
+  IScope getScope();
+
   void dispose();
 
   void readModels();
 
   @NotNull List<String> getClassPathItems();
+
+  Set<IModule> getVisibleModules();
+
+  Set<IModule> getExplicitlyVisibleModules();
 }

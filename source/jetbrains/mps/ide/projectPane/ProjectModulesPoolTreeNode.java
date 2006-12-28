@@ -45,7 +45,7 @@ class ProjectModulesPoolTreeNode extends TextTreeNode {
   private List<IModule> collectModules() {
     Set<IModule> modules = new HashSet<IModule>();
     collectModules(myProject, modules);
-    List<Language> bootstrapLanguages = BootstrapLanguages.getInstance().getLanguages();
+    Set<Language> bootstrapLanguages = BootstrapLanguages.getInstance().getLanguages();
     for (Language language : bootstrapLanguages) {
       if (!modules.contains(language)) {
         modules.add(language);

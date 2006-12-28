@@ -22,15 +22,15 @@ public class ProjectChecker {
   public static boolean checkProject(MPSProject project) {
     Set<SModelDescriptor> modelsToTest = new HashSet<SModelDescriptor>();
 
-    for (Language language : project.getVisibleLanguages()) {
-      modelsToTest.addAll(language.getModelDescriptors());
+    for (Language language : project.getScope().getVisibleLanguages()) {
+      modelsToTest.addAll(language.getScope().getModelDescriptors());
       for (Generator generator : language.getGenerators()) {
-        modelsToTest.addAll(generator.getModelDescriptors());
+        modelsToTest.addAll(generator.getScope().getModelDescriptors());
       }
     }
     
     for (Solution solution : project.getProjectSolutions()) {
-      modelsToTest.addAll(solution.getModelDescriptors());
+      modelsToTest.addAll(solution.getScope().getModelDescriptors());
     }
 
     for (SModelDescriptor m : modelsToTest) {

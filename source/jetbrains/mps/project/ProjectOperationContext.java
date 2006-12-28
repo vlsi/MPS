@@ -38,7 +38,7 @@ public class ProjectOperationContext extends StandaloneMPSContext {
 
   @NotNull
   public IScope getScope() {
-    return myProject;
+    return myProject.getScope();
   }
 
   public String toString() {

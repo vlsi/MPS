@@ -88,7 +88,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     SModel model = ProjectModels.createDescriptorFor(language).getSModel();
     model.setLoading(true);
     language.myDescriptorFile = null;
-    language.myLanguageDescriptor = ContextUtil.copyNode(languageDescriptor, model, language);
+    language.myLanguageDescriptor = ContextUtil.copyNode(languageDescriptor, model, language.getScope());
     MPSModuleRepository.getInstance().addModule(language, owner);
     language.updateDependenciesAndGenerators();
     return language;
@@ -246,14 +246,17 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   }
 
   @NotNull
-  public List<IModule> getExplicitlyDependOnModules() {
+  public List<IModule>
+         getExplicitlyDependOnModules() {
     // depends of other languages and solutions, but not on generators.
-    // >ks// why?
-    // >ks// I commented out generators exclusion because otherwise GeneratorPlans
-    // >ks// work only if we use GlobalScope
+    // >KS// why?
+    // >KS// I commented out generators exclusion because otherwise GeneratorPlans
+    // >KS// work only if we use GlobalScope
     // because Language doesn't depend on its generators
     // just the opposite: a generator depends on its source language
     // Please, fix GeneratorPlans instead
+    // KS : Already fixed :-)
+    // CK : kamenty ruliat!
     List<IModule> result = new LinkedList<IModule>();
     for (IModule ownModule : getOwnModules()) {
       if (ownModule instanceof Generator || result.contains(ownModule)) {
@@ -565,7 +568,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     Iterator<Model> accessoryModels = getLanguageDescriptor().accessoryModels();
     while (accessoryModels.hasNext()) {
       Model model = accessoryModels.next();
-      SModelDescriptor modelDescriptor = getModelDescriptor(SModelUID.fromString(model.getName()));
+      SModelDescriptor modelDescriptor = getScope().getModelDescriptor(SModelUID.fromString(model.getName()));
       if (modelDescriptor != null) {
         result.add(modelDescriptor);
       }
@@ -617,15 +620,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   @NotNull
   public List<Language> getOwnLanguages() {
     List<Language> languages = super.getOwnLanguages();
-    if (!languages.contains(this)) {
-      languages.add(this);
-    }
-    return languages;
-  }
-
-  @NotNull
-  public List<Language> getVisibleLanguages() {
-    List<Language> languages = super.getVisibleLanguages();
     if (!languages.contains(this)) {
       languages.add(this);
     }

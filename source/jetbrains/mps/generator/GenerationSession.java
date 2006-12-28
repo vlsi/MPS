@@ -243,7 +243,7 @@ public class GenerationSession {
       // exit if target language is 'baseLanguage' and
       // output model doesn't contain other languages
       if (targetLanguage.getNamespace().equals("jetbrains.mps.baseLanguage")) {
-        List<String> languageNamespaces = currentOutputModel.getSModel().getLanguageNamespaces(module);
+        List<String> languageNamespaces = currentOutputModel.getSModel().getLanguageNamespaces(module.getScope());
         if (languageNamespaces.size() == 1 && languageNamespaces.get(0).equals(targetLanguage.getNamespace())) {
           break;
         }
@@ -390,7 +390,7 @@ public class GenerationSession {
           addModelRoot(modelRoot.getPrefix(), modelRoot.getPath(), solutionDescriptor);
         }
 
-        for (DevKit dk : generator.getVisibleDevkits()) {
+        for (DevKit dk : generator.getScope().getVisibleDevkits()) {
           addDevKit(solutionDescriptor, dk.getName(), usedDevKits);
         }
       }
@@ -404,7 +404,7 @@ public class GenerationSession {
       addModelRoot(modelRoot.getPrefix(), modelRoot.getPath(), solutionDescriptor);
     }
 
-    for (DevKit dk : invocationModule.getVisibleDevkits()) {
+    for (DevKit dk : invocationModule.getScope().getVisibleDevkits()) {
       addDevKit(solutionDescriptor, dk.getName(), usedDevKits);
     }
 

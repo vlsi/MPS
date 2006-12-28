@@ -39,7 +39,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   }
 
   public void showAspectMethodUsages(String namespace, String name) throws RemoteException {
-    List<SModelDescriptor> modelDescriptors = myProject.getModelDescriptors(namespace);
+    List<SModelDescriptor> modelDescriptors = myProject.getScope().getModelDescriptors(namespace);
     for (SModelDescriptor descriptor : modelDescriptors) {
       if (descriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) continue;
 
@@ -56,21 +56,21 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   }
 
   public void showConceptNode(String fqName) throws RemoteException {
-    ConceptDeclaration concept = SModelUtil.findConceptDeclaration(fqName, myProject);
+    ConceptDeclaration concept = SModelUtil.findConceptDeclaration(fqName, myProject.getScope());
     IDEProjectFrame projectWindow = getProjectWindow();
     projectWindow.getEditorsPane().openEditor(concept, new ProjectOperationContext(projectWindow.getProject()));
     FrameUtil.activateFrame(getMainFrame());
   }
 
   public void showClassUsages(String fqName) throws RemoteException {
-    Classifier cls = SModelUtil.findNodeByFQName(fqName, Classifier.class, myProject);
+    Classifier cls = SModelUtil.findNodeByFQName(fqName, Classifier.class, myProject.getScope());
     if (cls == null) return;
     FrameUtil.activateFrame(getMainFrame());
     getProjectWindow().findUsages(cls, new ProjectOperationContext(myProject));
   }
 
   public void showMethodUsages(String classFqName, String methodName, int parameterCount) throws RemoteException {
-    Classifier cls = SModelUtil.findNodeByFQName(classFqName, Classifier.class, myProject);
+    Classifier cls = SModelUtil.findNodeByFQName(classFqName, Classifier.class, myProject.getScope());
     if (cls == null) return;
     BaseMethodDeclaration m = null;
     for (BaseMethodDeclaration method : cls.getChildren(BaseMethodDeclaration.class)) {

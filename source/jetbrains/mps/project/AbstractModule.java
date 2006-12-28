@@ -26,6 +26,8 @@ public abstract class AbstractModule implements IModule {
   private boolean myInitialized = false;
   protected File myDescriptorFile;
 
+  private MyScope myScope = new MyScope();
+
   //
   // IScope
   //
@@ -33,15 +35,6 @@ public abstract class AbstractModule implements IModule {
   @NotNull
   public String getModuleUID() {
     return toString();
-  }
-
-  @Nullable
-  public final Language getLanguage(@NotNull String languageNamespace) {
-    return getLanguage(languageNamespace, new HashSet<IModule>(), false);
-  }
-
-  public boolean isVisibleLanguage(@NotNull String languageNamespace) {
-    return getLanguage(languageNamespace, new HashSet<IModule>(), true) != null;
   }
 
   @Nullable
@@ -54,15 +47,6 @@ public abstract class AbstractModule implements IModule {
     }
     return language;
   }
-
-
-  public boolean isVisibleDevKit(@NotNull String devKitNamespace) {
-    for (DevKit dk : getVisibleDevkits()) {
-      if (dk.getName().equals(devKitNamespace)) return true;
-    }
-    return false;
-  }
-
 
   @Nullable
   private static Language getLanguage_internal(String languageNamespace, Set<IModule> processedModules, IModule dependentModule) {
@@ -90,99 +74,12 @@ public abstract class AbstractModule implements IModule {
     return new LinkedList<Language>(MPSModuleRepository.getInstance().getLanguages(this));
   }
 
-  @NotNull
-  public List<Language> getVisibleLanguages() {
-    return new ArrayList<Language>(getAllDependOnModules(Language.class));
-  }
-
-  @NotNull
-  public List<DevKit> getVisibleDevkits() {
-    return new ArrayList<DevKit>(getAllDependOnModules(DevKit.class));     
-  }
-
-  @Nullable
-  public DevKit getDevKit(@NotNull String devKitNamespace) {
-    for (DevKit dk : getVisibleDevkits()) {
-      if (devKitNamespace.equals(dk.getName())) return dk;
-    }
-    return null;
-  }
 
   @NotNull
   public final List<IModule> getOwnModules() {
     return new LinkedList<IModule>(MPSModuleRepository.getInstance().getModules(this));
   }
 
-
-  @Nullable
-  public SModelDescriptor getModelDescriptor(@NotNull SModelUID modelUID) {
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
-    if (modelDescriptor != null) {
-      return modelDescriptor;
-    }
-
-    modelDescriptor = getModelDescriptorFromDependOnModules(modelUID, this, new HashSet<IModule>());
-    if (modelDescriptor != null) {
-      return modelDescriptor;
-    }
-
-    LOG.warning("Couldn't find model descriptor for uid: \"" + modelUID + "\" in scope: " + this);
-    return null;
-  }
-
-  @Nullable
-  private static SModelDescriptor getModelDescriptorFromDependOnModules(
-          @NotNull SModelUID modelUID,
-          @NotNull IModule dependentModule,
-          @NotNull Set<IModule> ignoreModules) {
-    ignoreModules.add(dependentModule);
-
-    List<IModule> dependOnModules = dependentModule.getDependOnModules();
-    List<IModule> justProcessedModules = new LinkedList<IModule>();
-    for (IModule dependOnModule : dependOnModules) {
-      if (!ignoreModules.contains(dependOnModule)) {
-        SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, dependOnModule);
-        if (modelDescriptor != null) {
-          return modelDescriptor;
-        }
-        justProcessedModules.add(dependOnModule);
-      }
-    }
-    for (IModule dependOnModule : justProcessedModules) {
-      SModelDescriptor modelDescriptor = getModelDescriptorFromDependOnModules(modelUID, dependOnModule, ignoreModules);
-      if (modelDescriptor != null) {
-        return modelDescriptor;
-      }
-    }
-    return null;
-  }
-
-  @NotNull
-  public List<SModelDescriptor> getModelDescriptors(@NotNull String modelName) {
-    Set<SModelDescriptor> set = new HashSet<SModelDescriptor>();
-    {
-      List<SModelDescriptor> list = SModelRepository.getInstance().getModelDescriptors(modelName, this);
-      for (SModelDescriptor descriptor : list) {
-        if (!set.contains(descriptor)) {
-          set.add(descriptor);
-        }
-      }
-    }
-
-    Set<IModule> dependOnModules = getAllDependOnModules(IModule.class);
-    for (IModule module : dependOnModules) {
-      List<SModelDescriptor> list = SModelRepository.getInstance().getModelDescriptors(modelName, module);
-      for (SModelDescriptor descriptor : list) {
-        if (!set.contains(descriptor)) {
-          set.add(descriptor);
-        }
-      }
-    }
-
-    List<SModelDescriptor> result = CollectionUtil.iteratorAsList(set.iterator());
-    set.clear();
-    return result;
-  }
 
   /**
    * @return all depends-on modules recursively + bootstrap languages
@@ -194,7 +91,7 @@ public abstract class AbstractModule implements IModule {
 
     // add bootstrap languages
     if (Language.class.isAssignableFrom(cls)) {
-      List<Language> languages = BootstrapLanguages.getInstance().getLanguages();
+      Set<Language> languages = BootstrapLanguages.getInstance().getLanguages();
       for (Language language : languages) {
         //noinspection SuspiciousMethodCalls
         if (!modules.contains(language)) {
@@ -288,7 +185,7 @@ public abstract class AbstractModule implements IModule {
 
   @NotNull
   protected static List<IModule> appendBootstrapLanguages(@NotNull List<IModule> list) {
-    List<Language> languages = BootstrapLanguages.getInstance().getLanguages();
+    Set<Language> languages = BootstrapLanguages.getInstance().getLanguages();
     for (Language language : languages) {
       if (!list.contains(language)) {
         list.add(language);
@@ -316,18 +213,13 @@ public abstract class AbstractModule implements IModule {
     return manager.createNewModel(root, uid, this);
   }
 
-  @NotNull
-  public List<SModelDescriptor> getModelDescriptors() {
-    Set<SModelDescriptor> modelDescriptors = new HashSet<SModelDescriptor>(getOwnModelDescriptors());
-    for (IModule module : getAllDependOnModules(IModule.class)) {
-      modelDescriptors.addAll(module.getOwnModelDescriptors());
-    }
-    return new ArrayList<SModelDescriptor>(modelDescriptors);
-  }
-
   @Nullable
   public File getDescriptorFile() {
     return myDescriptorFile;
+  }
+
+  public IScope getScope() {
+    return myScope;
   }
 
 
@@ -344,6 +236,12 @@ public abstract class AbstractModule implements IModule {
       SModelRepository.getInstance().readModelDescriptors(getModelRoots(), this);
       myInitialized = true;
     }
+  }
+
+  public Set<IModule> getVisibleModules() {
+    Set<IModule> result = getExplicitlyVisibleModules();
+    myScope.collectModules(result);
+    return result;
   }
 
   @NotNull
@@ -363,5 +261,21 @@ public abstract class AbstractModule implements IModule {
 
   protected void fireModuleInitialized() {
     MPSModuleRepository.getInstance().fireModuleInitialized(this);
+  }
+
+
+  public Set<IModule> getExplicitlyVisibleModules() {
+    return new HashSet<IModule>(getExplicitlyDependOnModules());
+  }
+
+  private class MyScope extends BaseScope {
+    protected ModelOwner getModelOwner() {
+      return AbstractModule.this;
+    }
+
+    protected Set<IModule> doGetVisibleModules() {
+      return AbstractModule.this.getVisibleModules();
+    }
+
   }
 }

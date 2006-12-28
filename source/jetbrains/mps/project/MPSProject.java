@@ -38,21 +38,23 @@ import java.rmi.RemoteException;
  * Author: Sergey Dmitriev
  * Created Apr 29, 2004
  */
-public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContainer, IComponentWithPreferences {
-  private static final Logger LOG = Logger.getLogger(MPSProject.class);
-
-  private File myProjectFile;
-  private ProjectDescriptor myProjectDescriptor;
-
-  private List<Solution> mySolutions = new ArrayList<Solution>();
-  private List<Language> myLanguages = new ArrayList<Language>();
-  private List<DevKit> myDevKits = new ArrayList<DevKit>();
-
-  private File myWorkspaceFile;
-
+public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComponentWithPreferences {
   public static final String COMPONENTS = "components";
   public static final String COMPONENT = "component";
   public static final String CLASS = "class";
+
+  private static final Logger LOG = Logger.getLogger(MPSProject.class);
+
+  private File myWorkspaceFile;
+  private File myProjectFile;
+
+  private ProjectDescriptor myProjectDescriptor;
+  private List<Solution> mySolutions = new ArrayList<Solution>();
+  private List<Language> myLanguages = new ArrayList<Language>();
+
+  private List<DevKit> myDevKits = new ArrayList<DevKit>();
+
+  private ProjectScope myScope = new ProjectScope();
 
   private IContext myContext = new ContextImpl(ApplicationComponents.getInstance().getContext());
 
@@ -91,6 +93,9 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     CommandProcessor.instance().addCommandListener(myEventTranslator);
   }
 
+  public IScope getScope() {
+    return myScope;
+  }
 
   public IContext getContext() {
     return myContext;
@@ -103,15 +108,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
 
   public PluginManager getPluginManager() {
     return myPluginManager;
-  }
-
-  @NotNull
-  public List<SModelDescriptor> getModelDescriptors() {
-    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
-    for (IModule m : getAllVisibleModules()) {
-      result.addAll(m.getModelDescriptors());
-    }
-    return result;
   }
 
   private void readModules() {
@@ -526,11 +522,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
 
 
   @Nullable
-  public Language getLanguage(@NotNull String languageNamespace) {
-    return getLanguage(languageNamespace, false);
-  }
-
-  @Nullable
   private Language getLanguage(@NotNull String languageNamespace, boolean suppressWarnings) {
     Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, this);
     if (language == null) {
@@ -540,77 +531,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
       LOG.error("Couldn't find language for namespace: \"" + languageNamespace + "\" in: " + this);
     }
     return language;
-  }
-
-  public boolean isVisibleLanguage(@NotNull String languageNamespace) {
-    return getLanguage(languageNamespace, true) != null;
-  }
-
-  @NotNull
-  public List<Language> getVisibleLanguages() {
-    List<Language> list = new LinkedList<Language>(MPSModuleRepository.getInstance().getLanguages(this));
-    list.addAll(MPSModuleRepository.getInstance().getLanguages(BootstrapLanguages.getInstance()));
-    return list;
-  }
-
-  @NotNull
-  public List<DevKit> getVisibleDevkits() {
-    return new LinkedList<DevKit>(MPSModuleRepository.getInstance().getModules(this, DevKit.class));
-  }
-
-  @Nullable
-  public DevKit getDevKit(@NotNull String devKitNamespace) {
-    for (DevKit dk : getVisibleDevkits()) {
-      if (devKitNamespace.equals(dk.getName())) return dk;
-    }
-    return null;
-  }
-
-  public boolean isVisibleDevKit(@NotNull String devKitNamespace) {
-    for (DevKit dk : getVisibleDevkits()) {
-      if (dk.getName().equals(devKitNamespace)) return true;
-    }
-    return false;
-  }
-
-
-  @Nullable
-  public SModelDescriptor getModelDescriptor(@NotNull SModelUID modelUID) {
-     SModelDescriptor modelDescriptor;
-
-    { //my models
-      modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
-      if (modelDescriptor != null) return modelDescriptor;
-    }
-
-    Set<IModule> modulesToSearch = getAllVisibleModules();
-
-    for (IModule m : modulesToSearch) {
-      modelDescriptor = m.getModelDescriptor(modelUID);
-      if (modelDescriptor != null) return modelDescriptor;
-    }
-
-    LOG.warning("Couldn't find model descriptor for uid: \"" + modelUID + "\" in: " + this);
-    return null;
-  }
-
-  @NotNull
-  public List<SModelDescriptor> getModelDescriptors(@NotNull String modelName) {
-    HashSet<SModelDescriptor> set = new HashSet<SModelDescriptor>();
-
-    { //my models
-      List<SModelDescriptor> list = SModelRepository.getInstance().getModelDescriptors(modelName, this);
-      set.addAll(list);
-    }
-
-    Set<IModule> modulesToSearch = getAllVisibleModules();
-
-    List<SModelDescriptor> result = CollectionUtil.iteratorAsList(set.iterator());
-    for (IModule m : modulesToSearch) {
-      result.addAll(m.getModelDescriptors(modelName));
-    }    
-
-    return new ArrayList<SModelDescriptor>(result);
   }
 
   private Set<IModule> getAllVisibleModules() {
@@ -655,6 +575,16 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
 
     public void projectChanged() {
       markCurrentCommandsDirty();
+    }
+  }
+
+  private class ProjectScope extends BaseScope {
+    protected ModelOwner getModelOwner() {
+      return MPSProject.this;
+    }
+
+    protected Set<IModule> doGetVisibleModules() {
+      return getAllVisibleModules();
     }
   }
 }

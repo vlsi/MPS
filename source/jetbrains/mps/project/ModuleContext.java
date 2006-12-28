@@ -61,7 +61,7 @@ public class ModuleContext extends StandaloneMPSContext {
 
   @NotNull
   public IScope getScope() {
-    return myModule;
+    return myModule.getScope();
   }
 
   public String toString() {
