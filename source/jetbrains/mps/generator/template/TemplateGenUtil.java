@@ -244,16 +244,17 @@ public class TemplateGenUtil {
         ConceptDeclaration nodeConcept = SModelUtil.getConceptDeclaration(sourceNode, generator.getScope());
         for (Weaving_MappingRule weavingRule : weavingRules) {
           if (failedRules.contains(weavingRule)) continue;
-          ConceptDeclaration applicableConcept = weavingRule.getApplicableConcept();
-          if (applicableConcept != null) {
-            if (weavingRule.getApplyToConceptInheritors()) {
-              if (!SModelUtil.isAssignableConcept(nodeConcept, applicableConcept)) continue;
-            } else {
-              if (nodeConcept != applicableConcept) continue;
-            }
-          }
-          // applicable rule - check condition
-          if (checkConditionForBaseMappingRule(sourceNode, weavingRule, generator)) {
+//          ConceptDeclaration applicableConcept = weavingRule.getApplicableConcept();
+//          if (applicableConcept != null) {
+//            if (weavingRule.getApplyToConceptInheritors()) {
+//              if (!SModelUtil.isAssignableConcept(nodeConcept, applicableConcept)) continue;
+//            } else {
+//              if (nodeConcept != applicableConcept) continue;
+//            }
+//          }
+//          // applicable rule - check condition
+//          if (checkConditionForBaseMappingRule(sourceNode, weavingRule, generator)) {
+          if (checkPremiseForBaseMappingRule(sourceNode, nodeConcept, weavingRule, generator)) {
             TemplateDeclaration templateDeclaration = weavingRule.getTemplate();
             if (templateDeclaration == null) {
               generator.showErrorMessage(sourceNode, null, weavingRule, "weaving rule has no template");
@@ -438,6 +439,18 @@ public class TemplateGenUtil {
       e.printStackTrace();
       return false;
     }
+  }
+
+  public static boolean checkPremiseForBaseMappingRule(SNode sourceNode, ConceptDeclaration sourceNodeConcept, BaseMappingRule mappingRule, ITemplateGenerator generator) {
+    ConceptDeclaration applicableConcept = mappingRule.getApplicableConcept();
+    if (applicableConcept != null) {
+      if (mappingRule.getApplyToConceptInheritors()) {
+        if (!SModelUtil.isAssignableConcept(sourceNodeConcept, applicableConcept)) return false;
+      } else {
+        if (sourceNodeConcept != applicableConcept) return false;
+      }
+    }
+    return checkConditionForBaseMappingRule(sourceNode, mappingRule, generator);
   }
 
   private static boolean checkConditionForBaseMappingRule(SNode sourceNode, BaseMappingRule mappingRule, ITemplateGenerator generator) {
