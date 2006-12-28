@@ -16,6 +16,8 @@ import jetbrains.mps.ide.modelRepositoryViewer.ModelRepositoryView;
 
 public abstract class BaseScope implements IScope {
 
+  private Set<IModule> myVisibleModules;
+
   @Nullable
   public SModelDescriptor getModelDescriptor(@NotNull SModelUID modelUID) {
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, getModelOwner());
@@ -97,6 +99,10 @@ public abstract class BaseScope implements IScope {
   }
 
   public Set<IModule> getVisibleModules() {
+    if (myVisibleModules != null) {
+      return myVisibleModules;
+    }
+
     Set<IModule> result = doGetVisibleModules();
 
     for (IModule m : result) {
@@ -108,6 +114,8 @@ public abstract class BaseScope implements IScope {
     Set<Language> languages = BootstrapLanguages.getInstance().getLanguages();
     collectModules((Set<IModule>) (Set) (languages));
     result.addAll(languages);
+
+    myVisibleModules = new HashSet<IModule>(result);
     return result;
   }
 
@@ -128,5 +136,9 @@ public abstract class BaseScope implements IScope {
         }
       }
     }
+  }
+
+  public void invalidateCaches() {
+    myVisibleModules = null;
   }
 }

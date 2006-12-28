@@ -1,7 +1,5 @@
 package jetbrains.mps.project;
 
-import jetbrains.mps.ide.AbstractProjectFrame;
-import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.toolsPane.ITool;
 import jetbrains.mps.ide.toolsPane.ToolsPane;
 import jetbrains.mps.logging.Logger;

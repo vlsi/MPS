@@ -269,7 +269,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   public void invalidateCaches() {
-    //todo
+    myScope.invalidateCaches();
   }
 
   private class MyScope extends BaseScope {
