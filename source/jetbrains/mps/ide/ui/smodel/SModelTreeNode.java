@@ -195,15 +195,15 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     public void modelChangedInCommand(final List<SModelEvent> events) {
       getTree().rebuildTree(new Runnable() {
         public void run() {
-          final Set<SNode> addedRoots = new HashSet<SNode>();
-          final Set<SNode> removedRoots = new HashSet<SNode>();
+          final Set<SNode> addedRoots = new LinkedHashSet<SNode>();
+          final Set<SNode> removedRoots = new LinkedHashSet<SNode>();
 
-          final Set<SNode> addedNodes = new HashSet<SNode>();
-          final Set<SNode> removedNodes = new HashSet<SNode>();
+          final Set<SNode> addedNodes = new LinkedHashSet<SNode>();
+          final Set<SNode> removedNodes = new LinkedHashSet<SNode>();
 
-          final Set<SNode> nodesWithChangedProperties = new HashSet<SNode>();
+          final Set<SNode> nodesWithChangedProperties = new LinkedHashSet<SNode>();
 
-          final Set<SNode> nodesWithChangedRefs = new HashSet<SNode>();
+          final Set<SNode> nodesWithChangedRefs = new LinkedHashSet<SNode>();
 
           for (SModelEvent event : events) {
             event.accept(new SModelEventVisitor() {
@@ -300,14 +300,26 @@ public class SModelTreeNode extends MPSTreeNodeEx {
         treeModel.removeNodeFromParent(node);
       }
 
-      for (SNode added : addedNodes) {
+      outer : for (SNode added : addedNodes) {
         if (added.isDeleted()) continue;
         SNodeTreeNode parent = (SNodeTreeNode) findDescendantWith(added.getParent());
         if (parent == null) continue;
         if (!parent.isInitialized()) continue;
         SNode parentNode = parent.getSNode();
-        treeModel.insertNodeInto(new SNodeTreeNode(added, added.getRole_(), getOperationContext()),
-                parent, getNumberOfInformationNodes() + parentNode.getChildren().indexOf(added));
+        int indexof = parentNode.getChildren().indexOf(added);
+        for (Object childO : CollectionUtil.enumerationAsIterable(parent.children())) {
+          if (childO instanceof SNodeTreeNode) {
+            SNodeTreeNode child = (SNodeTreeNode) childO;
+            SNode childNode = child.getSNode();
+            int index = parentNode.getChildren().indexOf(childNode);
+            if (index > indexof) { // insert added before it
+              treeModel.insertNodeInto(new SNodeTreeNode(added, added.getRole_(), getOperationContext()),
+                      parent, treeModel.getIndexOfChild(parent, child));
+              continue outer;
+            }
+          }
+        }
+        treeModel.insertNodeInto(new SNodeTreeNode(added, added.getRole_(), getOperationContext()), parent, parent.getChildCount());
       }
     }
 
