@@ -244,16 +244,6 @@ public class TemplateGenUtil {
         ConceptDeclaration nodeConcept = SModelUtil.getConceptDeclaration(sourceNode, generator.getScope());
         for (Weaving_MappingRule weavingRule : weavingRules) {
           if (failedRules.contains(weavingRule)) continue;
-//          ConceptDeclaration applicableConcept = weavingRule.getApplicableConcept();
-//          if (applicableConcept != null) {
-//            if (weavingRule.getApplyToConceptInheritors()) {
-//              if (!SModelUtil.isAssignableConcept(nodeConcept, applicableConcept)) continue;
-//            } else {
-//              if (nodeConcept != applicableConcept) continue;
-//            }
-//          }
-//          // applicable rule - check condition
-//          if (checkConditionForBaseMappingRule(sourceNode, weavingRule, generator)) {
           if (checkPremiseForBaseMappingRule(sourceNode, nodeConcept, weavingRule, generator)) {
             TemplateDeclaration templateDeclaration = weavingRule.getTemplate();
             if (templateDeclaration == null) {
@@ -469,6 +459,7 @@ public class TemplateGenUtil {
     try {
       return (Boolean) QueryMethodGenerated.invoke(methodName, args, mappingRule.getModel());
     } catch (Exception e) {
+      generator.showErrorMessage(sourceNode, null, mappingRule, "couldn't evaluate rule condition - try to generate template models");
       e.printStackTrace();
       return false;
     }
