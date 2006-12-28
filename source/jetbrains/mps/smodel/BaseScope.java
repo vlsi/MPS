@@ -148,5 +148,6 @@ public abstract class BaseScope implements IScope {
 
   public void invalidateCaches() {
     myVisibleModules = null;
+    myLanguages.clear();
   }
 }
