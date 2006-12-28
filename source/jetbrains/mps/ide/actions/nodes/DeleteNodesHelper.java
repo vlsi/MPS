@@ -29,18 +29,18 @@ public class DeleteNodesHelper {
     myOperationContext = operationContext;
   }
 
-  public void deleteNodes() {
+  public void deleteNodes(boolean fromProjectPane) {
     if (myNodes.size() < 1) return;
 
     ProjectPane projectPane = myOperationContext.getComponent(ProjectPane.class);
     if (myNodes.size() <= 1) {
-      execute_internal(projectPane, myNodes.get(0), myOperationContext);
+      execute_internal(projectPane, fromProjectPane, myNodes.get(0), myOperationContext);
       return;
     }
 
     for (Iterator<SNode> iterator = myNodes.iterator(); iterator.hasNext();) {
       SNode sNode = iterator.next();
-      if (!iterator.hasNext()) {
+      if (!iterator.hasNext() && fromProjectPane) {
         projectPane.rebuildTree();
         projectPane.selectNextTreeNode(sNode);
       }
@@ -49,8 +49,10 @@ public class DeleteNodesHelper {
     }
   }
 
-  private  void execute_internal(ProjectPane projectPane, SNode node, IOperationContext context) {
-    projectPane.selectNextTreeNode(node);
+  private  void execute_internal(ProjectPane projectPane, boolean fromProjectPane, SNode node, IOperationContext context) {
+    if (fromProjectPane) {
+      projectPane.selectNextTreeNode(node);
+    }
     doDelete(node, context);
   }
 

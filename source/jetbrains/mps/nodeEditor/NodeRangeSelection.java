@@ -205,7 +205,7 @@ public class NodeRangeSelection implements IKeyboardHandler {
 
   private void doDeleteNodes(EditorContext editorContext) {
     if (getNodes().size() > 1) {
-      new DeleteNodesHelper(getNodes(), editorContext.getOperationContext()).deleteNodes();
+      new DeleteNodesHelper(getNodes(), editorContext.getOperationContext()).deleteNodes(false);
     } else {
       for (SNode semanticNode : getNodes()) {
         EditorCell nodeCell = myEditorComponent.findNodeCell(semanticNode);

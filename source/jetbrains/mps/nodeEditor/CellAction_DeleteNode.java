@@ -1,7 +1,6 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.ide.actions.nodes.DeleteNodesHelper;
 
 import java.util.List;
@@ -25,6 +24,6 @@ public class CellAction_DeleteNode extends EditorCellAction {
   public void execute(EditorContext context) {
     List<SNode> nodes = new ArrayList<SNode>();
     nodes.add(mySemanticNode);
-    new DeleteNodesHelper(nodes, context.getOperationContext()).deleteNodes();
+    new DeleteNodesHelper(nodes, context.getOperationContext()).deleteNodes(false);
   }
 }
