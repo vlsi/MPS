@@ -698,6 +698,61 @@ public class TemplateGenUtil {
     return new Void_NodeBuilder(sourceNode, templateForSwitchCase, null, generator);
   }
 
+  protected static Reduction_MappingRule findReductionMappingRule(SNode sourceNode, List<Reduction_MappingRule> rules, ITemplateGenerator generator) {
+    ConceptDeclaration concept = SModelUtil.getConceptDeclaration(sourceNode, generator.getScope());
+    for (Reduction_MappingRule rule : rules) {
+      if (checkPremiseForBaseMappingRule(sourceNode, concept, rule, generator)) {
+        return rule;
+      }
+    }
+    return null;
+  }
+
+  protected static INodeBuilder applyReductionRule(SNode sourceNode, SNode reductionRule, ITemplateGenerator generator) {
+    TemplateDeclaration templateDeclaration;
+    if (reductionRule instanceof ReductionRule) {
+      templateDeclaration = ((ReductionRule) reductionRule).getTemplate();
+    } else {
+      templateDeclaration = ((Reduction_MappingRule) reductionRule).getTemplate();
+    }
+    if (templateDeclaration == null) {
+      generator.showErrorMessage(sourceNode, null, reductionRule, "couldn't apply reduction: no template declaration");
+      throw new RuntimeException("no template declaration");
+    }
+
+    List<TemplateFragment> templateFragments = getTemplateFragments(templateDeclaration);
+    if (templateFragments.size() == 0) {
+      generator.showErrorMessage(sourceNode, templateDeclaration, reductionRule, "template declaration has no template fragments");
+      throw new RuntimeException("template declaration has no template fragments");
+    }
+
+    SNode p1 = templateFragments.get(0).getParent();
+    SNode enclosingNode = p1.getParent();
+    List<INodeBuilder> buildersForRule = new LinkedList<INodeBuilder>();
+    for (TemplateFragment fragment : templateFragments) {
+      SNode fragmentNode = fragment.getParent();
+      if (fragmentNode.getParent() != enclosingNode) {
+        // all fragment nodes should have the same parent
+        continue;
+      }
+
+      buildersForRule.addAll(createNodeBuildersForTemplateNode(sourceNode, fragmentNode, fragment.getName(), 0, generator));
+    }
+
+    INodeBuilder builderForRule;
+    if (buildersForRule.size() == 1) {
+      builderForRule = buildersForRule.get(0);
+    } else if (buildersForRule.size() > 1) {
+      builderForRule = new DefaultNodeBuilderList(buildersForRule);
+    } else {
+      return null;
+    }
+
+    builderForRule.setRuleNode(reductionRule);
+    return builderForRule;
+  }
+
+
   public static void printBuildersTree(INodeBuilder builder, int depth) {
     char[] indent = new char[depth * 3];
     Arrays.fill(indent, ' ');

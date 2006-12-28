@@ -201,6 +201,12 @@
       <property name="role" value="defaultTemplate" />
       <link role="target" targetNodeId="1092059087312" resolveInfo="TemplateDeclaration" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1167340453568">
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="reductionMappingRule" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1167327847730" resolveInfo="Reduction_MappingRule" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1112730955130">
     <property name="name" value="ConditionalTemplate" />
@@ -214,6 +220,10 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1112731289399">
       <property name="value" value="conditional template" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1167340550288">
+      <property name="value" value="replaced with Reduction_MappingRule" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1162838948922" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1112731143975">
       <property name="name" value="conditionAspectId" />
