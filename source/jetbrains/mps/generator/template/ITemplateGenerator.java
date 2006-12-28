@@ -12,12 +12,12 @@ import jetbrains.mps.generator.IModelGenerator;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.ITemplateLanguageConstants;
-import jetbrains.mps.transformation.TLBase.ConditionalTemplate;
+import jetbrains.mps.transformation.TLBase.TemplateDeclaration;
 import jetbrains.mps.transformation.TLBase.TemplateSwitch;
 import jetbrains.mps.typesystem.ITypeChecker;
 import jetbrains.mps.util.Condition;
 
-import java.util.*;
+import java.util.Map;
 
 public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageConstants {
   void setStartState();
@@ -56,7 +56,7 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
 
   INodeBuilder getCurrentBuilder();
 
-  ConditionalTemplate getTemplateSwitchCase(SNode sourceNode, TemplateSwitch templateSwitch);
+  TemplateDeclaration getTemplateForSwitchCase(SNode sourceNode, TemplateSwitch templateSwitch);
 
   void showInformationMessage(SNode node, String message);
 

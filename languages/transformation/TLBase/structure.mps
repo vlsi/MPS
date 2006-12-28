@@ -197,6 +197,10 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1112730955130" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1167337076112">
+      <property name="role" value="defaultTemplate" />
+      <link role="target" targetNodeId="1092059087312" resolveInfo="TemplateDeclaration" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1112730955130">
     <property name="name" value="ConditionalTemplate" />

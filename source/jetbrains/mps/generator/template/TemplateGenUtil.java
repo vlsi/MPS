@@ -669,23 +669,20 @@ public class TemplateGenUtil {
   }
 
   private static INodeBuilder createNodeBuilderForSwitch(SNode sourceNode, TemplateSwitch templateSwitch, String mappingName, ITemplateGenerator generator) {
-    ConditionalTemplate templateSwitchCase = generator.getTemplateSwitchCase(sourceNode, templateSwitch);
-    if (templateSwitchCase == null) return null;
-
-    TemplateDeclaration templateDeclarationForCase = templateSwitchCase.getTemplate();
-    if (templateDeclarationForCase == null) {
+    TemplateDeclaration templateForSwitchCase = generator.getTemplateForSwitchCase(sourceNode, templateSwitch);
+    if (templateForSwitchCase == null) {
       // its OK - just skip node under the $CASE$ macro
-      return new Void_NodeBuilder(sourceNode, templateSwitchCase, null, generator);
+      return new Void_NodeBuilder(sourceNode, templateForSwitchCase, null, generator);
     }
 
-    List<TemplateFragment> templateFragments = getTemplateFragments(templateDeclarationForCase);
+    List<TemplateFragment> templateFragments = getTemplateFragments(templateForSwitchCase);
     if (templateFragments.isEmpty()) {
-      generator.showErrorMessage(sourceNode, templateDeclarationForCase, templateSwitch, "Couldn't create builder for switch: no template fragments found");
-      return new Void_NodeBuilder(sourceNode, templateSwitchCase, null, generator);
+      generator.showErrorMessage(sourceNode, templateForSwitchCase, templateSwitch, "couldn't create builder for switch: no template fragments found");
+      return new Void_NodeBuilder(sourceNode, templateForSwitchCase, null, generator);
     }
     if (templateFragments.size() > 1) {
-      generator.showErrorMessage(sourceNode, templateDeclarationForCase, templateSwitch, "Couldn't create builder for switch: more than one (" + templateFragments.size() + ") fragments found");
-      return new Void_NodeBuilder(sourceNode, templateSwitchCase, null, generator);
+      generator.showErrorMessage(sourceNode, templateForSwitchCase, templateSwitch, "couldn't create builder for switch: more than one (" + templateFragments.size() + ") fragments found");
+      return new Void_NodeBuilder(sourceNode, templateForSwitchCase, null, generator);
     }
 
     TemplateFragment templateFragment = templateFragments.get(0);
@@ -697,9 +694,9 @@ public class TemplateGenUtil {
     }
 
     if (sourceNodes2.size() > 1) {
-      generator.showErrorMessage(sourceNode, templateDeclarationForCase, templateSwitch, "Couldn't create builder for switch case: more than one (" + sourceNodes2.size() + ") source nodes are returned by query");
+      generator.showErrorMessage(sourceNode, templateForSwitchCase, templateSwitch, "couldn't create builder for switch case: more than one (" + sourceNodes2.size() + ") source nodes are returned by query");
     }
-    return new Void_NodeBuilder(sourceNode, templateSwitchCase, null, generator);
+    return new Void_NodeBuilder(sourceNode, templateForSwitchCase, null, generator);
   }
 
   public static void printBuildersTree(INodeBuilder builder, int depth) {
