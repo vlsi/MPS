@@ -1032,7 +1032,6 @@
               <property name="drawBorder" value="false" />
               <property name="vertical" value="true" />
               <property name="selectable" value="false" />
-              <property name="gridLayout" value="true" />
               <link role="relationDeclaration" targetNodeId="1.1167172143858" />
             </node>
           </node>
