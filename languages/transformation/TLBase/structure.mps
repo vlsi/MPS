@@ -117,6 +117,12 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1114456532170" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1167328349397">
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="reductionMappingRule" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1167327847730" resolveInfo="Reduction_MappingRule" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1167088157977">
       <property name="sourceCardinality" value="0..n" />
       <property name="role" value="createRootRule" />
@@ -570,6 +576,15 @@
       <link role="dataType" targetNodeId="2.1082983041843" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1167171569014">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="template" />
+      <link role="target" targetNodeId="1092059087312" resolveInfo="TemplateDeclaration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1167327847730">
+    <property name="name" value="Reduction_MappingRule" />
+    <link role="extends" targetNodeId="1167169308231" resolveInfo="BaseMappingRule" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1167327847732">
       <property name="sourceCardinality" value="1" />
       <property name="role" value="template" />
       <link role="target" targetNodeId="1092059087312" resolveInfo="TemplateDeclaration" />
