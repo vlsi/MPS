@@ -172,13 +172,12 @@ public class CellExplorerView extends DefaultTool {
   private class MyTree extends MPSTree {
     protected MPSTreeNode rebuild() {
       IEditor editor = getEditorsPane().getCurrentEditor();
-      if (editor == null) {
+      if (editor == null || editor.getCurrentEditorComponent() == null) {
         return new TextTreeNode("No editor selected") {
           public Icon getIcon(boolean expanded) {
             return Icons.CELL_EXPLORER_ICON;
           }
         };
-
       } else {
         TextTreeNode root = new TextTreeNode("CELLS") {
           public Icon getIcon(boolean expanded) {
