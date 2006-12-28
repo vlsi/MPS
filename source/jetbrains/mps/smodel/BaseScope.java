@@ -44,7 +44,7 @@ public abstract class BaseScope implements IScope {
             new ArrayList<SModelDescriptor>(SModelRepository.getInstance().getModelDescriptors(modelName, getModelOwner()));
 
     for (IModule m : getVisibleModules()) {
-      result.addAll(m.getOwnModelDescriptors());
+      result.addAll(SModelRepository.getInstance().getModelDescriptors(modelName, m));
     }
 
     return result;
