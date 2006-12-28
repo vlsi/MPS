@@ -278,7 +278,9 @@ public abstract class AbstractModule implements IModule {
     }
 
     protected Set<IModule> doGetVisibleModules() {
-      return AbstractModule.this.getVisibleModules();
+      Set<IModule> result = AbstractModule.this.getVisibleModules();
+      result.add(AbstractModule.this);
+      return result;
     }
 
   }
