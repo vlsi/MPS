@@ -3,10 +3,7 @@ package jetbrains.mps.smodel;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Set;
-import java.util.HashSet;
+import java.util.*;
 
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
@@ -17,6 +14,7 @@ import jetbrains.mps.ide.modelRepositoryViewer.ModelRepositoryView;
 public abstract class BaseScope implements IScope {
 
   private Set<IModule> myVisibleModules;
+  private Map<String, Language> myLanguages = new HashMap<String, Language>();  
 
   @Nullable
   public SModelDescriptor getModelDescriptor(@NotNull SModelUID modelUID) {
@@ -62,6 +60,12 @@ public abstract class BaseScope implements IScope {
 
   @Nullable
   public Language getLanguage(@NotNull String languageNamespace) {
+    if (!myLanguages.isEmpty()) {
+      if (myLanguages.containsKey(languageNamespace)) {
+        return myLanguages.get(languageNamespace);
+      }
+    }
+
 
     for (Language l : getVisibleLanguages()) {
       if (languageNamespace.equals(l.getNamespace())) return l;
@@ -76,7 +80,11 @@ public abstract class BaseScope implements IScope {
 
   @NotNull
   public List<Language> getVisibleLanguages() {
-    return new ArrayList<Language>(CollectionUtil.filter(Language.class, getVisibleModules()));
+    Set<Language> languages = CollectionUtil.filter(Language.class, getVisibleModules());
+    for (Language l : languages) {
+      myLanguages.put(l.getNamespace(), l);
+    }
+    return new ArrayList<Language>(languages);
   }
 
   @NotNull
