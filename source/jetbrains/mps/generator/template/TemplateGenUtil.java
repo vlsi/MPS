@@ -671,8 +671,7 @@ public class TemplateGenUtil {
   private static INodeBuilder createNodeBuilderForSwitch(SNode sourceNode, TemplateSwitch templateSwitch, String mappingName, ITemplateGenerator generator) {
     TemplateDeclaration templateForSwitchCase = generator.getTemplateForSwitchCase(sourceNode, templateSwitch);
     if (templateForSwitchCase == null) {
-      // its OK - just skip node under the $CASE$ macro
-      return new Void_NodeBuilder(sourceNode, templateForSwitchCase, null, generator);
+      return null;
     }
 
     List<TemplateFragment> templateFragments = getTemplateFragments(templateForSwitchCase);
