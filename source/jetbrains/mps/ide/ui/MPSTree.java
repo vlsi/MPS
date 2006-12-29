@@ -29,7 +29,8 @@ public abstract class MPSTree extends JTree {
   public static final String TREE_PATH_SEPARATOR = "/";
 
   private MPSToolTipInfo myToolTipInfo;
-  private int myTooltipManagerRecentInitialDelay;  
+  private int myTooltipManagerRecentInitialDelay;
+  private boolean myAutoExpandEnabled = true;
 
   protected MPSTree() {
     largeModel = true;
@@ -54,6 +55,8 @@ public abstract class MPSTree extends JTree {
 
     addTreeExpansionListener(new TreeExpansionListener() {
       public void treeExpanded(TreeExpansionEvent event) {
+        if (!myAutoExpandEnabled) return;
+
         TreePath eventPath = event.getPath();
         MPSTreeNode node = (MPSTreeNode) eventPath.getLastPathComponent();
 
@@ -221,6 +224,16 @@ public abstract class MPSTree extends JTree {
     }
 
     if (e.isPopupTrigger()) showPopup(e);
+  }
+
+  public void runWithoutExpansion(Runnable r) {
+    try {
+      myAutoExpandEnabled = false;
+      r.run();
+    } finally {
+      myAutoExpandEnabled = true;
+    }
+
   }
 
 
