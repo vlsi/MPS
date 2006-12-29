@@ -14,6 +14,7 @@ import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -328,16 +329,28 @@ public class CellExplorerView extends DefaultTool {
   }
 
   private class KeyMapTreeNode extends MPSTreeNode {
-
     public KeyMapTreeNode(EditorCellKeyMap keyMap) {
       super(null);
 
-      Set<String> keys = new TreeSet<String>();
-      for (EditorCellKeyMap.ActionKey ak : keyMap.getActionKeys()) {
-        keys.add(ak.toString());
-      }
-      for (String key : keys) {
-        add(new TextTreeNode(key) {
+
+      List<Pair<EditorCellKeyMapAction, EditorCellKeyMap.ActionKey>> list =
+              new ArrayList<Pair<EditorCellKeyMapAction, EditorCellKeyMap.ActionKey>>(keyMap.getAllActionsAndKeys());
+
+
+      Collections.sort(list, new Comparator<Pair<EditorCellKeyMapAction, EditorCellKeyMap.ActionKey>>() {
+        public int compare(Pair<EditorCellKeyMapAction, EditorCellKeyMap.ActionKey> o1, Pair<EditorCellKeyMapAction, EditorCellKeyMap.ActionKey> o2) {
+          return o1.o2.toString().compareTo(o2.o2.toString());
+        }
+      });
+
+      for (Pair<EditorCellKeyMapAction, EditorCellKeyMap.ActionKey> key : list) {
+        String text = key.o2.toString();
+
+        if (key.o1.getDescriptionText() != null && key.o1.getDescriptionText().length() != 0) {
+          text += " (" + key.o1.getDescriptionText() + ")";
+        }
+        
+        add(new TextTreeNode(text) {
           public Icon getIcon(boolean expanded) {
             return Icons.CELL_ACTION_KEY_ICON;
           }
