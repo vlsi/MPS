@@ -1,6 +1,7 @@
 package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.MPSToolBar;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.IActionDataProvider;
 import jetbrains.mps.ide.actions.model.DeleteModelsAction;
@@ -63,7 +64,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
 
   private boolean myShowProperties;
 
-  private JToolBar myToolbar = new JToolBar();
+  private JToolBar myToolbar = new MPSToolBar();
   private JToggleButton myPAndRToggle;
 
   public ProjectPane(IDEProjectFrame ide) {
