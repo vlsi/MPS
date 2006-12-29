@@ -85,17 +85,24 @@ public class MessageView extends DefaultTool {
             setIcon(ERROR_ICON);
             break;
         }
-
         return this;
       }
     });
-
   }
 
   public boolean canClose() {
     return false;
   }
 
+  public boolean hasErrors() {
+    ListModel model = myList.getModel();
+    for (int i = 0; i < model.getSize(); i++) {
+      Message m = (Message) model.getElementAt(i);
+      if (m.getKind() == MessageKind.ERROR) return true;
+    }
+
+    return false;
+  }
 
   private void showPopupMenu(MouseEvent evt) {
     if (myList.getSelectedValue() == null) return;
