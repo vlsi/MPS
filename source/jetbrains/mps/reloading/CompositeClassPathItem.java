@@ -3,10 +3,7 @@ package jetbrains.mps.reloading;
 import jetbrains.mps.logging.Logger;
 
 import java.net.URL;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Set;
-import java.util.HashSet;
+import java.util.*;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -17,6 +14,8 @@ public class CompositeClassPathItem implements IClassPathItem {
   private static final Logger LOG = Logger.getLogger(CompositeClassPathItem.class);
 
   private List<IClassPathItem> myChildren = new ArrayList<IClassPathItem>();
+  private Map<String, Set<String>> mySubpackages = new HashMap<String, Set<String>>();
+  private Map<String, Set<String>> myClasses = new HashMap<String, Set<String>>();
 
   public void add(IClassPathItem item) {
     LOG.assertLog(item != null);
@@ -44,22 +43,30 @@ public class CompositeClassPathItem implements IClassPathItem {
 
   @NotNull
   public Set<String> getAvailableClasses(String namespace) {
-    Set<String> result = new HashSet<String>();
-    for (IClassPathItem item : myChildren) {
-      result.addAll(item.getAvailableClasses(namespace));
+    if (!myClasses.containsKey(namespace)) {
+      Set<String> result = new HashSet<String>();
+      for (IClassPathItem item : myChildren) {
+        result.addAll(item.getAvailableClasses(namespace));
+      }
+      myClasses.put(namespace, result);
     }
-    return result;
+
+    return Collections.unmodifiableSet(myClasses.get(namespace));
   }
 
   @NotNull
   public Set<String> getSubpackages(String namespace) {
-    Set<String> result = new HashSet<String>();
+    if (!mySubpackages.containsKey(namespace)) {
+      Set<String> result = new HashSet<String>();
 
-    for (IClassPathItem item : myChildren) {
-      result.addAll(item.getSubpackages(namespace));
+      for (IClassPathItem item : myChildren) {
+        result.addAll(item.getSubpackages(namespace));
+      }
+
+      mySubpackages.put(namespace, result);
     }
 
-    return result;
+    return Collections.unmodifiableSet(mySubpackages.get(namespace));
   }
 
   public long getClassesTimestamp(String namespace) {
