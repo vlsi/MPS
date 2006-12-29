@@ -39,7 +39,7 @@ public class IconManager {
     // new style
     GlobalScope scope = GlobalScope.getInstance();
     ConceptDeclaration conceptDeclaration = SModelUtil.findConceptDeclaration(cls, scope);
-    if (conceptDeclaration != null) {
+    while (conceptDeclaration != null) {
       Language language = SModelUtil.getDeclaringLanguage(conceptDeclaration, scope);
       if (language != null) {
         String iconPath = Macros.languageDescriptor().expandPath(conceptDeclaration.getIconPath(), language.getDescriptorFile());
@@ -54,43 +54,9 @@ public class IconManager {
           }
         }
       }
+      conceptDeclaration = conceptDeclaration.getExtends();
     }
 
-    // legacy
-    if (ourIcons.get(cls.getName()) != null) {
-      return ourIcons.get(cls.getName());
-    }
-
-    Class sourceClass = cls;
-
-    while (cls != SNode.class) {
-      String className = cls.getName();
-      className = className.substring(className.lastIndexOf('.') + 1);
-      String packageName = cls.getPackage().getName();
-      String iconsClass = packageName + ".icons.Icons";
-      try {
-        Class icons = Class.forName(iconsClass, true, ClassLoaderManager.getInstance().getClassLoader());
-        try {
-          Icon icon = (Icon) icons.getMethod("getIconFor" + className).invoke(null);
-          if (icon != null) {
-            ourIcons.put(sourceClass.getName(), icon);
-            return icon;
-          }
-        } catch(NoSuchMethodException ex) {
-          //this is ok
-        } catch (Exception ex) {
-          ex.printStackTrace();
-        }
-      } catch (ClassNotFoundException e) {
-        //this is ok
-      } catch (Exception e) {
-        e.printStackTrace();
-      }
-
-      cls = (Class<? extends SNode>) cls.getSuperclass();
-    }
-
-    ourIcons.put(sourceClass.getName(), Icons.DEFAULT_ICON);
     return Icons.DEFAULT_ICON;
   }
 

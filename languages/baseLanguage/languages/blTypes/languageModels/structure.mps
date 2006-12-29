@@ -9,6 +9,7 @@
   <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="4" modelUID="jetbrains.mps.refactoring.common.rename@java_stub" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1159268590033">
+    <property name="iconPath" value="${language_descriptor}\icons\primitive.png" />
     <property name="rootable" value="true" />
     <property name="name" value="PrimitiveTypeDescriptor" />
     <link role="extends" targetNodeId="1.1078489098625" />

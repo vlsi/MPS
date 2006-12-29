@@ -4,7 +4,7 @@
   <maxImportIndex value="3" />
   <import index="1" modelUID="jetbrains.mps.core.structure" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1071489090640">
-    <property name="iconPath" value="${mps_home}\source\jetbrains\mps\bootstrap\structureLanguage\icons\structure.png" />
+    <property name="iconPath" value="${language_descriptor}\icons\structure.png" />
     <property name="rootable" value="true" />
     <property name="name" value="ConceptDeclaration" />
     <link role="extends" targetNodeId="1.1078489098625" />
@@ -116,6 +116,7 @@
     <link role="extends" targetNodeId="1.1078489098625" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1082978164219">
+    <property name="iconPath" value="${language_descriptor}\icons\enum.png" />
     <property name="rootable" value="true" />
     <property name="name" value="EnumerationDataTypeDeclaration" />
     <link role="extends" targetNodeId="1082978164218" />
@@ -140,6 +141,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1082978499127">
+    <property name="iconPath" value="${language_descriptor}\icons\constrainedTD.png" />
     <property name="rootable" value="true" />
     <property name="name" value="ConstrainedDataTypeDeclaration" />
     <link role="extends" targetNodeId="1082978164218" />
@@ -164,6 +166,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1083243159079">
+    <property name="iconPath" value="${language_descriptor}\icons\primitiveTD.png" />
     <property name="name" value="PrimitiveDataTypeDeclaration" />
     <link role="extends" targetNodeId="1082978164218" />
   </node>
