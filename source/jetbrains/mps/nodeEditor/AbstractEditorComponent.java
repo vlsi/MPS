@@ -581,6 +581,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     final EditorContext editorContext = new EditorContext(this, null, getOperationContext());
     JPopupMenu popupMenu = new JPopupMenu();
     List<SNode> selectedNodes = myNodeRangeSelection.getNodes();
+    if (selectedNodes.size() == 0 && selectedNode != null) {
+      selectedNodes.add(selectedNode);
+    }
     ActionContext context = new ActionContext(getOperationContext(), selectedNode, selectedNodes);
     context.put(EditorContext.class, editorContext);
     context.put(EditorCell.class, cell);

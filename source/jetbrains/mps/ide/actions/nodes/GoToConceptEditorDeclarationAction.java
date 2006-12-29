@@ -19,6 +19,7 @@ import jetbrains.mps.projectLanguage.Model;
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
@@ -45,7 +46,9 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
 
   public void update(@NotNull ActionContext context) {
     super.update(context);
-    setVisible(context.get(SNode.class) instanceof ConceptDeclaration);
+    boolean visible = context.getNode() instanceof ConceptDeclaration;
+    setVisible(visible);
+    setEnabled(visible);
   }
 
   public boolean executeInsideCommand() {
@@ -59,7 +62,13 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     final IDEProjectFrame ide = context.get(IDEProjectFrame.class);
     IOperationContext invocationContext = context.get(IOperationContext.class);
     final IScope scope = invocationContext.getScope();
-    final IEditor currentEditor = ide.getEditorsPane().getCurrentEditor();
+    IEditor currentEditor = ide.getEditorsPane().getCurrentEditor();
+    if (currentEditor == null) return;
+    AbstractEditorComponent editorComponent = currentEditor.getCurrentEditorComponent();
+    if (editorComponent == null) return;
+    if (!editorComponent.hasFocus()) {
+      currentEditor = context.get(IDEProjectFrame.class).getInspectorPane().getInspector();
+    }
 
     Language language = null;
     IModule module = invocationContext.getModule();
