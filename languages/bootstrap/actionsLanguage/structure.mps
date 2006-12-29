@@ -11,6 +11,7 @@
   <import index="4" modelUID="jetbrains.mps.smodel@java_stub" />
   <import index="5" modelUID="jetbrains.mps.bootstrap.sharedConcepts.structure" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1112056943463">
+    <property name="iconPath" value="${language_descriptor}\icons\actions.png" />
     <property name="rootable" value="true" />
     <property name="name" value="NodeSubstituteActions" />
     <link role="extends" targetNodeId="1.1078489098625" />
@@ -101,6 +102,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1138079416598">
+    <property name="iconPath" value="${language_descriptor}\icons\rightTransform.png" />
     <property name="rootable" value="true" />
     <property name="name" value="RTransformHintSubstituteActions" />
     <link role="extends" targetNodeId="1.1078489098625" />
@@ -222,6 +224,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1158700664498">
+    <property name="iconPath" value="${language_descriptor}\icons\nodeFactories.png" />
     <property name="rootable" value="true" />
     <property name="name" value="NodeFactories" />
     <link role="extends" targetNodeId="1.1078489098625" />

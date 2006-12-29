@@ -17,7 +17,7 @@
   <import index="36" modelUID="java.lang@java_stub" />
   <import index="37" modelUID="jetbrains.mps.bootstrap.sharedConcepts.structure" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1071666914219">
-    <property name="iconPath" value="${mps_home}\source\jetbrains\mps\bootstrap\editorLanguage\icons\editor.png" />
+    <property name="iconPath" value="${language_descriptor}\icons\editor.png" />
     <property name="rootable" value="true" />
     <property name="name" value="ConceptEditorDeclaration" />
     <link role="extends" targetNodeId="1080736578640" />
@@ -301,7 +301,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1078938745671">
-    <property name="iconPath" value="${mps_home}\source\jetbrains\mps\bootstrap\editorLanguage\icons\editorComponent.png" />
+    <property name="iconPath" value="${language_descriptor}\icons\editorComponent.png" />
     <property name="rootable" value="true" />
     <property name="name" value="EditorComponentDeclaration" />
     <link role="extends" targetNodeId="1080736578640" />
@@ -378,7 +378,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1081293058843">
-    <property name="iconPath" value="${mps_home}\source\jetbrains\mps\bootstrap\editorLanguage\icons\keyMap.png" />
+    <property name="iconPath" value="${language_descriptor}\icons\keyMap.png" />
     <property name="rootable" value="true" />
     <property name="name" value="CellKeyMapDeclaration" />
     <link role="extends" targetNodeId="3.1078489098625" />
@@ -848,6 +848,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1139535219966">
+    <property name="iconPath" value="${language_descriptor}\icons\actionMap.png" />
     <property name="rootable" value="true" />
     <property name="name" value="CellActionMapDeclaration" />
     <link role="extends" targetNodeId="3.1078489098625" />
@@ -1730,7 +1731,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1166040637528">
-    <property name="iconPath" value="${mps_home}\source\jetbrains\mps\bootstrap\editorLanguage\icons\menuComponent.png" />
+    <property name="iconPath" value="${language_descriptor}\icons\menuComponent.png" />
     <property name="rootable" value="true" />
     <property name="name" value="CellMenuComponent" />
     <link role="extends" targetNodeId="1166049232041" resolveInfo="AbstractComponent" />

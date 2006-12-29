@@ -41,6 +41,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1147467351491">
+    <property name="iconPath" value="${language_descriptor}\icons\propertyConstraints.png" />
     <property name="rootable" value="true" />
     <property name="name" value="NodePropertyConstraintSet" />
     <link role="extends" targetNodeId="1.1078489098625" />
@@ -111,6 +112,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1148687112784">
+    <property name="iconPath" value="${language_descriptor}\icons\referenceConstraints.png" />
     <property name="rootable" value="true" />
     <property name="name" value="NodeReferentConstraintSet" />
     <link role="extends" targetNodeId="1.1078489098625" />
