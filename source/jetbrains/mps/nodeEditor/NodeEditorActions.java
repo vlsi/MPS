@@ -309,26 +309,26 @@ public class NodeEditorActions {
   public static class NEXT extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      return selection != null && context.getNodeEditorComponent().findNextSelectableCell(selection) != null;
+      return selection != null && context.getNodeEditorComponent().findNextSelectableOrEditableCell(selection, true) != null;
     }
 
     public void execute(EditorContext context) {
       context.getNodeEditorComponent().clearSelectionStack();
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      context.getNodeEditorComponent().changeSelection(context.getNodeEditorComponent().findNextSelectableCell(selection));
+      context.getNodeEditorComponent().changeSelection(context.getNodeEditorComponent().findNextSelectableOrEditableCell(selection, true));
     }
   }
 
   public static class PREV extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      return selection != null && context.getNodeEditorComponent().findPrevSelectableCell(selection) != null;
+      return selection != null && context.getNodeEditorComponent().findPrevSelectableOrEditableCell(selection, true) != null;
     }
 
     public void execute(EditorContext context) {
       context.getNodeEditorComponent().clearSelectionStack();
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      context.getNodeEditorComponent().changeSelection(context.getNodeEditorComponent().findPrevSelectableCell(selection));
+      context.getNodeEditorComponent().changeSelection(context.getNodeEditorComponent().findPrevSelectableOrEditableCell(selection, true));
     }
   }
 

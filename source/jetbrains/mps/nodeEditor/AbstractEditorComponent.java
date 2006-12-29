@@ -518,28 +518,28 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     AbstractAction result;
     KeyStroke stroke = KeyStroke.getKeyStroke(keyStroke);
     if (stroke != null) {
-    registerKeyboardAction(result = new AbstractAction(action.getName()) {
-      public void actionPerformed(ActionEvent e) {
-        if (mySelectedCell != null && mySelectedCell.getSNode() != null) {
-          final ActionContext context = new ActionContext(getEditorContext().getOperationContext(), mySelectedCell.getSNode());
-          action.update(context);
-          if (!action.isVisible() || !action.isEnabled()) {
-            return;
-          }
+      registerKeyboardAction(result = new AbstractAction(action.getName()) {
+        public void actionPerformed(ActionEvent e) {
+          if (mySelectedCell != null && mySelectedCell.getSNode() != null) {
+            final ActionContext context = new ActionContext(getEditorContext().getOperationContext(), mySelectedCell.getSNode());
+            action.update(context);
+            if (!action.isVisible() || !action.isEnabled()) {
+              return;
+            }
 
-          if (action.executeInsideCommand()) {
-            CommandProcessor.instance().executeCommand(new Runnable() {
-              public void run() {
-                action.execute(context);
-              }
-            });
-          } else {
-            action.execute(context);
+            if (action.executeInsideCommand()) {
+              CommandProcessor.instance().executeCommand(new Runnable() {
+                public void run() {
+                  action.execute(context);
+                }
+              });
+            } else {
+              action.execute(context);
+            }
           }
         }
-      }
-    }, stroke, WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-    return result;
+      }, stroke, WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+      return result;
     }
     return null;
   }
@@ -591,25 +591,25 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     { // keymaps
       List<EditorCellKeyMapAction> actions = new ArrayList<EditorCellKeyMapAction>();
-        for (EditorCellKeyMapAction action  : KeyMapUtil.getRegisteredActions(cell, editorContext)) {
-          try {
-            if (action.isShownInPopupMenu() && action.canExecute(null, editorContext)) {
-              actions.add(action);
-            }
-          } catch(Throwable t) {
-            LOG.error(t);
+      for (EditorCellKeyMapAction action  : KeyMapUtil.getRegisteredActions(cell, editorContext)) {
+        try {
+          if (action.isShownInPopupMenu() && action.canExecute(null, editorContext)) {
+            actions.add(action);
           }
+        } catch(Throwable t) {
+          LOG.error(t);
         }
-        if (!actions.isEmpty()) popupMenu.addSeparator();
-        for (final EditorCellKeyMapAction action : actions) {
-          MPSAction mpsAction = new MPSAction("" + action.getDescriptionText()) {
-            private EditorCellKeyMapAction myAction = action;
-            public void execute(@NotNull ActionContext context) {
-              myAction.execute(null, editorContext);
-            }
-          };
-          mpsAction.add(popupMenu, context);
-        }
+      }
+      if (!actions.isEmpty()) popupMenu.addSeparator();
+      for (final EditorCellKeyMapAction action : actions) {
+        MPSAction mpsAction = new MPSAction("" + action.getDescriptionText()) {
+          private EditorCellKeyMapAction myAction = action;
+          public void execute(@NotNull ActionContext context) {
+            myAction.execute(null, editorContext);
+          }
+        };
+        mpsAction.add(popupMenu, context);
+      }
     } // ~keymaps
 
     popupMenu.show(AbstractEditorComponent.this, x, y);
@@ -1041,6 +1041,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public EditorCell findNextSelectableCell(final EditorCell cell) {
+    return findNextSelectableOrEditableCell(cell, false);
+  }
+
+  public EditorCell findNextSelectableOrEditableCell(final EditorCell cell, final boolean editable) {
     if (!(myRootCell instanceof EditorCell_Collection)) {
       return null;
     }
@@ -1061,7 +1065,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           myToStart = true;
           return;
         }
-        if (myToStart && editorCell.isSelectable()) {
+        boolean goodCell = true;
+        if (editable) {
+          goodCell = editorCell instanceof EditorCell_Label && ((EditorCell_Label) editorCell).isEditable();
+        }
+        if (myToStart && editorCell.isSelectable() && goodCell) {
           setFoundCell(editorCell);
           setToStop(true);
         }
@@ -1073,24 +1081,36 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public EditorCell findPrevSelectableCell(final EditorCell cell) {
+    return findPrevSelectableOrEditableCell(cell, false);
+  }
+
+  public EditorCell findPrevSelectableOrEditableCell(final EditorCell cell, final boolean editable) {
     if (!(myRootCell instanceof EditorCell_Collection)) {
       return null;
     }
     EditorCell_Collection cellCollection = (EditorCell_Collection) myRootCell;
     class SelectNodeCondition extends NodeCondition {
       public boolean checkNotLeafCell(EditorCell editorCell) {
+        boolean goodCell = true;
+        if (editable) {
+          goodCell = editorCell instanceof EditorCell_Label && ((EditorCell_Label) editorCell).isEditable();
+        }
         if (editorCell == cell) {
           setToStop(true);
-        } else if (editorCell.isSelectable() && editorCell.getParent() == cell.getParent()) {
+        } else if (goodCell && editorCell.isSelectable() && editorCell.getParent() == cell.getParent()) {
           setFoundCell(editorCell);
         }
         return true;
       }
 
       public void checkLeafCell(EditorCell editorCell) {
+        boolean goodCell = true;
+        if (editable) {
+          goodCell = editorCell instanceof EditorCell_Label && ((EditorCell_Label) editorCell).isEditable();
+        }
         if (editorCell == cell) {
           setToStop(true);
-        } else if (editorCell.isSelectable()) {
+        } else if (goodCell && editorCell.isSelectable()) {
           setFoundCell(editorCell);
         }
       }
