@@ -52,6 +52,10 @@ public class IdeMain {
   }
 
   public static void main(String[] args) {
+    openProjectWindow(true);
+  }
+
+  public static IDEProjectFrame openProjectWindow(boolean loadOldProject) {
     long start = System.currentTimeMillis();
 
     SplashScreen.getInstance().showSplashScreen();
@@ -68,13 +72,15 @@ public class IdeMain {
 
     ApplicationComponents.getInstance();
     IDEProjectFrame projectWindow = new IDEProjectFrame();
-    projectWindow.loadLastProjectIfAny();
+    if (loadOldProject) {
+      projectWindow.loadLastProjectIfAny();
+    }
     SplashScreen.getInstance().hideSplashScreen();
     projectWindow.show();
 
     long end = System.currentTimeMillis();
-
     System.out.println("MPS Started in " + (end - start) + " ms");
+    return projectWindow;
   }
 
   public static Date expirationDate() {
