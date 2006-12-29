@@ -64,6 +64,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1092059087312">
+    <property name="iconPath" value="${language_descriptor}\icons\templateFragment.png" />
     <property name="rootable" value="true" />
     <property name="name" value="TemplateDeclaration" />
     <link role="extends" targetNodeId="2.1078489098625" />
@@ -80,6 +81,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1095416546421">
+    <property name="iconPath" value="${language_descriptor}\icons\mappingConf.png" />
     <property name="rootable" value="true" />
     <property name="name" value="MappingConfiguration" />
     <link role="extends" targetNodeId="2.1078489098625" />
@@ -178,6 +180,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1112730859144">
+    <property name="iconPath" value="${language_descriptor}\icons\switch.png" />
     <property name="rootable" value="true" />
     <property name="name" value="TemplateSwitch" />
     <link role="extends" targetNodeId="2.1078489098625" />
@@ -400,7 +403,7 @@
     <link role="target" targetNodeId="1095672379244" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1164129274099">
-    <property name="iconPath" value="${mps_home}\source\jetbrains\mps\transformation\TLBase\icons\rewriting.png" />
+    <property name="iconPath" value="${language_descriptor}\icons\rewriting.png" />
     <property name="rootable" value="true" />
     <property name="name" value="PreliminaryRewritingRules" />
     <link role="extends" targetNodeId="2.1078489098625" />
