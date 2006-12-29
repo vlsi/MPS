@@ -59,10 +59,12 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068390468200">
+    <property name="iconPath" value="${mps_home}\languages\baseLanguage\icons\field.png" />
     <property name="name" value="FieldDeclaration" />
     <link role="extends" targetNodeId="1068431474542" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068390468198">
+    <property name="iconPath" value="${mps_home}\languages\baseLanguage\icons\class.png" />
     <property name="rootable" value="true" />
     <property name="name" value="ClassConcept" />
     <link role="extends" targetNodeId="1107461130800" />
@@ -199,6 +201,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068580123132">
+    <property name="iconPath" value="${mps_home}\languages\baseLanguage\icons\method.png" />
     <property name="name" value="BaseMethodDeclaration" />
     <link role="extends" targetNodeId="4.1078489098625" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1109283235663">
@@ -1045,6 +1048,7 @@
     <link role="extends" targetNodeId="4.1082983041843" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1083245097125">
+    <property name="iconPath" value="${mps_home}\languages\baseLanguage\icons\enum.png" />
     <property name="rootable" value="true" />
     <property name="name" value="EnumClass" />
     <link role="extends" targetNodeId="1068390468198" />
@@ -1206,6 +1210,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1107796713796">
+    <property name="iconPath" value="${mps_home}\languages\baseLanguage\icons\interface.png" />
     <property name="rootable" value="true" />
     <property name="name" value="Interface" />
     <link role="extends" targetNodeId="1107461130800" />
