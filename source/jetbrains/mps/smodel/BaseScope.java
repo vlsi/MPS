@@ -14,6 +14,7 @@ public abstract class BaseScope implements IScope {
   private Set<IModule> myVisibleModules;
   private Map<String, Language> myLanguages = new HashMap<String, Language>();
   private Map<SModelUID, SModelDescriptor> myDescriptors = new HashMap<SModelUID, SModelDescriptor>();
+  private Set<SModelDescriptor> myModelDescriptors = new HashSet<SModelDescriptor>();
 
   @Nullable
   public SModelDescriptor getModelDescriptor(@NotNull SModelUID modelUID) {
@@ -51,16 +52,16 @@ public abstract class BaseScope implements IScope {
   }
 
   @NotNull
-  public List<SModelDescriptor> getModelDescriptors() {
+  public List<SModelDescriptor> getModelDescriptors() {    
+    if (myModelDescriptors.isEmpty()) {
+      myModelDescriptors.addAll(SModelRepository.getInstance().getModelDescriptors(getModelOwner()));
 
-    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>(
-            SModelRepository.getInstance().getModelDescriptors(getModelOwner()));
-
-    for (IModule m : getVisibleModules()) {
-      result.addAll(m.getOwnModelDescriptors());
+      for (IModule m : getVisibleModules()) {
+        myModelDescriptors.addAll(m.getOwnModelDescriptors());
+      }
     }
 
-    return result;
+    return new ArrayList<SModelDescriptor>(myModelDescriptors);
   }
 
   @Nullable
@@ -152,5 +153,6 @@ public abstract class BaseScope implements IScope {
     myVisibleModules = null;
     myLanguages.clear();
     myDescriptors.clear();
+    myModelDescriptors.clear();
   }
 }
