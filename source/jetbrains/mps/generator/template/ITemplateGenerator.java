@@ -44,6 +44,12 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
 
   INodeBuilder findNodeBuilderForSource(SNode sourceNode, Condition<INodeBuilder> condition);
 
+  /**
+   * @deprecated
+   * use
+   * findNodeBuilderForSource(SNode sourceNode, String mappingName) 
+   * findNodeBuilderForSource(SNode sourceNode, Condition<INodeBuilder> condition)
+   */
   INodeBuilder findNodeBuilderForSource(SNode sourceNode);
 
   INodeBuilder findCopyingNodeBuilderForSource(SNode sourceNode);
