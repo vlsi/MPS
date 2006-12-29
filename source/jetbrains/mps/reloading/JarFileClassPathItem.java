@@ -79,12 +79,12 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
 
   @NotNull
   public Set<String> getAvailableClasses(String namespace) {
-    return new HashSet<String>(getClassesSetFor(namespace));
+    return Collections.unmodifiableSet(getClassesSetFor(namespace));
   }
 
   @NotNull
   public Set<String> getSubpackages(String namespace) {
-    return new HashSet<String>(getSubpackagesSetFor(namespace));
+    return Collections.unmodifiableSet(getSubpackagesSetFor(namespace));
   }
 
   public long getClassesTimestamp(String namespace) {

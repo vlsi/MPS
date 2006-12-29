@@ -8,10 +8,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @author Kostik
@@ -63,7 +60,7 @@ public class FileClassPathItem extends AbstractClassPathItem{
       buildCacheFor(namespace);
     }
 
-    return new HashSet<String>(myAvailableClassesCache.get(namespace));
+    return Collections.unmodifiableSet(myAvailableClassesCache.get(namespace));
   }
 
   @NotNull
@@ -72,7 +69,7 @@ public class FileClassPathItem extends AbstractClassPathItem{
       buildCacheFor(namespace);
     }
 
-    return new HashSet<String>(mySubpackagesCache.get(namespace));
+    return Collections.unmodifiableSet(mySubpackagesCache.get(namespace));
   }
 
   private void buildCacheFor(String namespace) {
