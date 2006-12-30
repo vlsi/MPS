@@ -251,8 +251,8 @@ public class TemplateGenUtil {
               continue;
             }
 
-            String ruleName = mappingRule.getName();
-            INodeBuilder nodeBuilder = createNodeBuilder(sourceNode, template, ruleName, 0, generator);
+            String mappingName = mappingRule.getName();
+            INodeBuilder nodeBuilder = createNodeBuilder(sourceNode, template, mappingName, 0, generator);
             nodeBuilder.setRuleNode(mappingRule);
             builders.add(nodeBuilder);
           }
@@ -330,10 +330,14 @@ public class TemplateGenUtil {
       }
     }
 
+    String ruleMappingName = ruleNode.getName();
     // for each template fragment create node builder
     for (TemplateFragment templateFragment : templateFragments) {
       SNode templateFragmentNode = templateFragment.getParent();
       String mappingName = templateFragment.getName();
+      if (mappingName == null) {
+        mappingName = ruleMappingName;
+      }
       List<INodeBuilder> fragmentNodeBuilders = createNodeBuildersForTemplateNode(sourceNode, templateFragmentNode, mappingName, 0, generator);
       for (INodeBuilder fragmentBuilder : fragmentNodeBuilders) {
         fragmentBuilder.setRuleNode(ruleNode);
@@ -760,7 +764,11 @@ public class TemplateGenUtil {
         continue;
       }
 
-      buildersForRule.addAll(createNodeBuildersForTemplateNode(sourceNode, fragmentNode, fragment.getName(), 0, generator));
+      String mappingName = fragment.getName();
+      if (mappingName == null) {
+        mappingName = reductionRule.getName();
+      }
+      buildersForRule.addAll(createNodeBuildersForTemplateNode(sourceNode, fragmentNode, mappingName, 0, generator));
     }
 
     INodeBuilder builderForRule;
