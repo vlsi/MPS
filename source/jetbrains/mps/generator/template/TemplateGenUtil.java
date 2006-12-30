@@ -8,6 +8,7 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.core.BaseConcept;
+import jetbrains.mps.core.NamedConcept;
 import jetbrains.mps.generator.GenerationFailedException;
 import jetbrains.mps.generator.GenerationFailueInfo;
 import jetbrains.mps.generator.JavaNameUtil;
@@ -234,6 +235,32 @@ public class TemplateGenUtil {
       }
       weaveTemplateDeclaration(sourceNode, templateDeclaration, contextBuilder, generator, weavingRule);
     }
+  }
+
+  public static List<INodeBuilder> applyRootMappingRules(final List<Root_MappingRule> mappingRules, final ITemplateGenerator generator) {
+    final List<INodeBuilder> builders = new LinkedList<INodeBuilder>();
+    if (mappingRules.isEmpty()) return builders;
+    SModelUtil.allNodes(generator.getSourceModel(), new Condition<SNode>() {
+      public boolean met(SNode sourceNode) {
+        ConceptDeclaration nodeConcept = SModelUtil.getConceptDeclaration(sourceNode, generator.getScope());
+        for (Root_MappingRule mappingRule : mappingRules) {
+          if (checkPremiseForBaseMappingRule(sourceNode, nodeConcept, mappingRule, generator)) {
+            NamedConcept template = mappingRule.getTemplate();
+            if (template == null) {
+              generator.showErrorMessage(sourceNode, null, mappingRule, "root mapping rule has no template");
+              continue;
+            }
+
+            String ruleName = mappingRule.getName();
+            INodeBuilder nodeBuilder = createNodeBuilder(sourceNode, template, ruleName, 0, generator);
+            nodeBuilder.setRuleNode(mappingRule);
+            builders.add(nodeBuilder);
+          }
+        }
+        return false;
+      }
+    });
+    return builders;
   }
 
   public static void applyWeavingMappingRules(final List<Weaving_MappingRule> weavingRules, final ITemplateGenerator generator) {
