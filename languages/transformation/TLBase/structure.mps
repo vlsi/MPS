@@ -4,13 +4,14 @@
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
-  <maxImportIndex value="8" />
+  <maxImportIndex value="9" />
   <import index="2" modelUID="jetbrains.mps.core.structure" />
   <import index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <import index="5" modelUID="jetbrains.mps.transformation.TLBase.structure" />
   <import index="6" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="7" modelUID="jetbrains.mps.generator.template@java_stub" />
   <import index="8" modelUID="jetbrains.mps.bootstrap.sharedConcepts.structure" />
+  <import index="9" modelUID="java.lang@java_stub" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1087833241328">
     <property name="name" value="PropertyMacro" />
     <link role="extends" targetNodeId="2.1133920641626" />
@@ -23,6 +24,16 @@
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="property" />
       <link role="target" targetNodeId="3.1071489288299" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1167756362303">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="propertyValueFunction" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1167756080639" resolveInfo="PropertyMacro_PropertyValue" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1167756010676">
+      <property name="value" value="aspectMethodName - query method is deprecated" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1162838948922" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1087833466690">
@@ -605,6 +616,61 @@
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="template" />
       <link role="target" targetNodeId="2.1078489098625" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1167756080639">
+    <property name="name" value="PropertyMacro_PropertyValue" />
+    <link role="extends" targetNodeId="6.1137021947720" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1167756080640">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1137545148427" />
+      <node role="target" type="jetbrains.mps.baseLanguage.ClassifierType" id="1167756311130">
+        <link role="classifier" extResolveInfo="9.[Classifier]String" />
+      </node>
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1167756080642">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
+      <link role="target" targetNodeId="1167169188348" resolveInfo="TemplateFunctionParameter_sourceNode" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1167756287363">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
+      <link role="target" targetNodeId="1167756221419" resolveInfo="TemplateFunctionParameter_templatePropertyValue" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1167756080643">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
+      <link role="target" targetNodeId="1166748937193" resolveInfo="TemplateFunctionParameter_sourceModel" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1167756080644">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
+      <link role="target" targetNodeId="1166749287094" resolveInfo="TemplateFunctionParameter_generator" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1167756080645">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
+      <link role="target" targetNodeId="8.1161622878565" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1167756080646">
+      <link role="target" targetNodeId="8.1161622753914" />
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1167756080647">
+      <property name="value" value="property value" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1167756221419">
+    <property name="name" value="TemplateFunctionParameter_templatePropertyValue" />
+    <link role="extends" targetNodeId="6.1107135704075" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1167756221420">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1137545963098" />
+      <node role="target" type="jetbrains.mps.baseLanguage.ClassifierType" id="1167756266877">
+        <link role="classifier" extResolveInfo="9.[Classifier]String" />
+      </node>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1167756221422">
+      <property name="value" value="templateValue" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1167756221423">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473994950" />
     </node>
   </node>
 </model>
