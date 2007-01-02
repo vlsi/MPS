@@ -7,20 +7,61 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.generator.template.INodeBuilder;
+import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.QueriesUtil;
+import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
+import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.transformation.TLBase.CreateRootRule_Condition;
 import jetbrains.mps.transformation.TLBase.BaseMappingRule_Condition;
-import jetbrains.mps.transformation.TLBase.PropertyMacro_PropertyValue;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.transformation.TLBase.PropertyMacro_GetPropertyValue;
+import jetbrains.mps.transformation.TLBase.ReferenceMacro_GetReferent;
 
 public class QueriesGenerated {
 
-  public static String propertyMacro_PropertyValue_1167762379110(SNode node, String templateValue, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1167774837569(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    String alias = SConceptPropertyOperations.getString(node, "alias");
+    if(alias == null) {
+      generator.showErrorMessage(node, templateNode, "concept function parm has no <alias> - can't map it to method parameter");
+      return null;
+    }
+    INodeBuilder builder = QueriesUtil.findParent_BaseMethodDeclaration_Builder(generator.getCurrentBuilder());
+    if(builder != null) {
+      SNode methodDeclaration = builder.getTargetNode();
+      {
+        ICursor<SNode> cursor1167777118184 = CursorFactory.createCursor(SLinkOperations.getTargets(methodDeclaration, "parameter", true));
+        try {
+          while(cursor1167777118184.moveToNext()) {
+            SNode parm = cursor1167777118184.getCurrent();
+            if(alias.equals(SPropertyOperations.get(parm, "name"))) {
+              return parm;
+            }
+          }
+        } finally {
+          cursor1167777118184.release();
+        }
+      }
+    }
+    generator.showErrorMessage(node, templateNode, "couldn't find method parameter for concept function parm '" + alias + "'");
+    return null;
+  }
+  public static String propertyMacro_GetPropertyValue_1167762379110(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return TemplateFunctionMethodName.createRootRule_Condition((CreateRootRule_Condition)node);
   }
-  public static String propertyMacro_PropertyValue_1167765482559(SNode node, String templateValue, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static String propertyMacro_GetPropertyValue_1167765482559(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return TemplateFunctionMethodName.baseMappingRule_Condition((BaseMappingRule_Condition)node);
   }
-  public static String propertyMacro_PropertyValue_1167764877550(SNode node, String templateValue, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TemplateFunctionMethodName.propertyMacro_PropertyValue((PropertyMacro_PropertyValue)node);
+  public static SNode referenceMacro_GetReferent_1167771845166(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SNodeOperations.getParent(node, "jetbrains.mps.transformation.TLBase.structure.BaseMappingRule", false, false), "applicableConcept", false);
+  }
+  public static String propertyMacro_GetPropertyValue_1167764877550(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return TemplateFunctionMethodName.propertyMacro_GetPropertyValue((PropertyMacro_GetPropertyValue)node);
+  }
+  public static String propertyMacro_GetPropertyValue_1167770891051(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return TemplateFunctionMethodName.referenceMacro_GetReferent((ReferenceMacro_GetReferent)node);
   }
 }
