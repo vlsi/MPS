@@ -33,16 +33,16 @@ public class QueriesGenerated {
     if(builder != null) {
       SNode methodDeclaration = builder.getTargetNode();
       {
-        ICursor<SNode> cursor1167777118184 = CursorFactory.createCursor(SLinkOperations.getTargets(methodDeclaration, "parameter", true));
+        ICursor<SNode> _zCursor = CursorFactory.createCursor(SLinkOperations.getTargets(methodDeclaration, "parameter", true));
         try {
-          while(cursor1167777118184.moveToNext()) {
-            SNode parm = cursor1167777118184.getCurrent();
+          while(_zCursor.moveToNext()) {
+            SNode parm = _zCursor.getCurrent();
             if(alias.equals(SPropertyOperations.get(parm, "name"))) {
               return parm;
             }
           }
         } finally {
-          cursor1167777118184.release();
+          _zCursor.release();
         }
       }
     }
