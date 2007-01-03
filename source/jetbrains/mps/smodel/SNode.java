@@ -89,7 +89,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
           public void run() {
             myChildrenLoader.loadChildren(SNode.this);
           }
-        });        
+        });
         for (SNode node : myChildren) {
           node.registerInModel(node.getModel());
 
@@ -310,6 +310,20 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     List<SNode> attributes = new ArrayList<SNode>();
     for (SNode child : _children()) {
       if (AttributesRolesUtil.isNodeAttributeRole(child.getRole_())) {
+        attributes.add(child);
+      }
+    }
+    return attributes;
+  }
+
+  @NotNull
+  public List<SNode> getAllAttributes() {
+    List<SNode> attributes = new ArrayList<SNode>();
+    for (SNode child : _children()) {
+      String role = child.getRole_();
+      if (AttributesRolesUtil.isNodeAttributeRole(role) ||
+              AttributesRolesUtil.isLinkAttributeRole(role) ||
+              AttributesRolesUtil.isPropertyAttributeRole(role)) {
         attributes.add(child);
       }
     }

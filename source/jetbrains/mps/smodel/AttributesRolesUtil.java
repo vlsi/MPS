@@ -58,10 +58,18 @@ public class AttributesRolesUtil {
     return role.endsWith(STEREOTYPE_DELIM + ATTRIBUTE_STEREOTYPE);
   }
 
+  public static boolean isLinkAttributeRole(String role) {
+    return role.indexOf(STEREOTYPE_DELIM + LINK_ATTRIBUTE_STEREOTYPE + STEREOTYPE_DELIM) > 0;
+  }
+
+  public static boolean isPropertyAttributeRole(String role) {
+    return role.indexOf(STEREOTYPE_DELIM + PROPERTY_ATTRIBUTE_STEREOTYPE + STEREOTYPE_DELIM) > 0;
+  }
+
   public static String getLinkRoleFromLinkAttributeRole(String attributeRole) {
     int index = attributeRole.indexOf(STEREOTYPE_DELIM);
     if (index < 0) return null;
-    String tail = attributeRole.substring(index+1);
+    String tail = attributeRole.substring(index + 1);
     if (tail.startsWith(LINK_ATTRIBUTE_STEREOTYPE)) {
       return tail.substring((STEREOTYPE_DELIM + LINK_ATTRIBUTE_STEREOTYPE).length());
     } else {
@@ -72,7 +80,7 @@ public class AttributesRolesUtil {
   public static String getPropertyNameFromPropertyAttributeRole(String attributeRole) {
     int index = attributeRole.indexOf(STEREOTYPE_DELIM);
     if (index < 0) return null;
-    String tail = attributeRole.substring(index+1);
+    String tail = attributeRole.substring(index + 1);
     if (tail.startsWith(PROPERTY_ATTRIBUTE_STEREOTYPE)) {
       return tail.substring((STEREOTYPE_DELIM + PROPERTY_ATTRIBUTE_STEREOTYPE).length());
     } else {
