@@ -33,7 +33,7 @@
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1087907544523">
           <property name="textFgColor" value="red" />
-          <property name="text" value="java query (depracated)" />
+          <property name="text" value="java query (deprecated)" />
           <property name="drawBorder" value="false" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1088501636842">
@@ -211,7 +211,7 @@
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1167770426883">
           <property name="textFgColor" value="red" />
-          <property name="text" value="java query (depracated)" />
+          <property name="text" value="java query (deprecated)" />
           <property name="drawBorder" value="false" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1167770426884">
