@@ -92,148 +92,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapDeclaration" id="1087911817437">
-    <property name="name" value="_PropertyMacroSwitch_KeyMap" />
-    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1146772585733">
-      <property name="description" value="add/remove property macro" />
-      <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1146772585734">
-        <property name="modifiers" value="ctrl+shift" />
-        <property name="keycode" value="VK_M" />
-      </node>
-      <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_IsApplicableFunction" id="1146772585735">
-        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1146772585736">
-          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1146773380110">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1146773380111">
-              <property name="name" value="cell" />
-              <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1146773380112">
-                <link role="classifier" extResolveInfo="9.[Classifier]EditorCell" />
-              </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1146773380113">
-                <link role="baseMethodDeclaration" extResolveInfo="9.method ([Classifier]EditorContext).([InstanceMethodDeclaration]getSelectedCell() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EditorCell]))" />
-                <node role="instance" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_editorContext" id="1146773380114" />
-              </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1146773380115">
-            <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1146773380116">
-              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1146773380117">
-                <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1146773380118" />
-              </node>
-            </node>
-            <node role="condition" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1146773380119">
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1146773380120" />
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1146773380121">
-                <link role="baseMethodDeclaration" extResolveInfo="9.method ([Classifier]EditorCell).([InstanceMethodDeclaration]getSNode() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1146773380122">
-                  <link role="variableDeclaration" targetNodeId="1146773380111" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1146773380123">
-            <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1146773380124">
-              <link role="classConcept" extResolveInfo="8.[Classifier]TemplateLanguageUtil" />
-              <link role="baseMethodDeclaration" extResolveInfo="8.static method ([Classifier]TemplateLanguageUtil).([StaticMethodDeclaration]canSwitchPropertyMacro((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EditorCell])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1146773380125">
-                <link role="variableDeclaration" targetNodeId="1146773380111" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_ExecuteFunction" id="1146772585737">
-        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1146772585738">
-          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1146773399455">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1146773399456">
-              <property name="name" value="cell" />
-              <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1146773399457">
-                <link role="classifier" extResolveInfo="9.[Classifier]EditorCell" />
-              </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1146773399458">
-                <link role="baseMethodDeclaration" extResolveInfo="9.method ([Classifier]EditorContext).([InstanceMethodDeclaration]getSelectedCell() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EditorCell]))" />
-                <node role="instance" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_editorContext" id="1146773399459" />
-              </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1146773399460">
-            <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1146773399461">
-              <link role="classConcept" extResolveInfo="8.[Classifier]TemplateLanguageUtil" />
-              <link role="baseMethodDeclaration" extResolveInfo="8.static method ([Classifier]TemplateLanguageUtil).([StaticMethodDeclaration]switchPropertyMacro((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EditorCell]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IScope])) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1146773399462">
-                <link role="variableDeclaration" targetNodeId="1146773399456" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1146773628732">
-                <link role="baseMethodDeclaration" extResolveInfo="10.method ([Classifier]IOperationContext).([InstanceMethodDeclaration]getScope() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IScope]))" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1146773598370">
-                  <link role="baseMethodDeclaration" extResolveInfo="9.method ([Classifier]EditorContext).([InstanceMethodDeclaration]getOperationContext() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IOperationContext]))" />
-                  <node role="instance" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_editorContext" id="1146773577061" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1146773424398">
-      <property name="description" value="remove property macro" />
-      <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1146773424399">
-        <property name="modifiers" value="ctrl+shift" />
-        <property name="keycode" value="VK_M" />
-      </node>
-      <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_IsApplicableFunction" id="1146773424400">
-        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1146773424401">
-          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1146773446984">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1146773446985">
-              <property name="name" value="selectedNode" />
-              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1146773446986" />
-              <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1146773446987">
-                <link role="baseMethodDeclaration" extResolveInfo="9.method ([Classifier]EditorCell).([InstanceMethodDeclaration]getSNode() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1146773446988">
-                  <link role="baseMethodDeclaration" extResolveInfo="9.method ([Classifier]EditorContext).([InstanceMethodDeclaration]getSelectedCell() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EditorCell]))" />
-                  <node role="instance" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_editorContext" id="1146773446989" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1146773446990">
-            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1146773446991">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1146773446992">
-                <link role="variableDeclaration" targetNodeId="1146773446985" />
-              </node>
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1146773446993">
-                <link role="concept" targetNodeId="1.1087833241328" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_ExecuteFunction" id="1146773424418">
-        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1146773424419">
-          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1146773503987">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1146773503988">
-              <property name="name" value="propertyMacro" />
-              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1146773503989" />
-              <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1146773503990">
-                <link role="baseMethodDeclaration" extResolveInfo="9.method ([Classifier]EditorCell).([InstanceMethodDeclaration]getSNode() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1146773503991">
-                  <link role="baseMethodDeclaration" extResolveInfo="9.method ([Classifier]EditorContext).([InstanceMethodDeclaration]getSelectedCell() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EditorCell]))" />
-                  <node role="instance" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_editorContext" id="1146773503992" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1146773503993">
-            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1146773503994">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1146773503995">
-                <link role="variableDeclaration" targetNodeId="1146773503988" />
-              </node>
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_DeleteOperation" id="1146773503996" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1087926271843">
     <property name="name" value="NodeMacro_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1087833466690" />
@@ -334,85 +192,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapDeclaration" id="1087927878702">
-    <property name="name" value="_NodeMacroSwitch_KeyMap" />
-    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1146757069336">
-      <property name="description" value="convert to/from 'template fragmet'" />
-      <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1146757069337">
-        <property name="modifiers" value="ctrl+shift" />
-        <property name="keycode" value="VK_F" />
-      </node>
-      <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_IsApplicableFunction" id="1146757069338">
-        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1146757069339">
-          <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1146757613716">
-            <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1146757613718">
-              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1146757670422">
-                <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1146757672924" />
-              </node>
-            </node>
-            <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1146757623811">
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1146757618776">
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1146757618777" />
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetParentOperation" id="1146757618778">
-                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Concept" id="1146757618779">
-                    <link role="concept" targetNodeId="1.1092059087312" />
-                  </node>
-                </node>
-              </node>
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1146757618775" />
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1146764888741">
-            <node role="expression" type="jetbrains.mps.baseLanguage.NotExpression" id="1146764889946">
-              <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1146764899824">
-                <link role="baseMethodDeclaration" extResolveInfo="8.static method ([Classifier]TemplateLanguageUtil).([StaticMethodDeclaration]isInsideTemplateFragment((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
-                <link role="classConcept" extResolveInfo="8.[Classifier]TemplateLanguageUtil" />
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1146764902059" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_ExecuteFunction" id="1146757069340">
-        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1146757069341">
-          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1146760357262">
-            <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1146760361280">
-              <link role="baseMethodDeclaration" extResolveInfo="8.static method ([Classifier]TemplateLanguageUtil).([StaticMethodDeclaration]switchTemplateFragment((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode])) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
-              <link role="classConcept" extResolveInfo="8.[Classifier]TemplateLanguageUtil" />
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1146760364499" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1146763185637">
-      <property name="description" value="add/remove node macro" />
-      <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1146763185638">
-        <property name="modifiers" value="ctrl+shift" />
-        <property name="keycode" value="VK_M" />
-      </node>
-      <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_IsApplicableFunction" id="1146763185639">
-        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1146763185640">
-          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1146764783456">
-            <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1146764785176">
-              <property name="value" value="true" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_ExecuteFunction" id="1146763185641">
-        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1146763185642">
-          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1146764794381">
-            <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1146764797695">
-              <link role="classConcept" extResolveInfo="8.[Classifier]TemplateLanguageUtil" />
-              <link role="baseMethodDeclaration" extResolveInfo="8.static method ([Classifier]TemplateLanguageUtil).([StaticMethodDeclaration]switchNodeMacro((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode])) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1146764863895" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1088762125437">
     <property name="name" value="ReferenceMacro_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1088761943574" />
@@ -488,141 +267,6 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_AttributedLinkCell" id="1149858915193">
         <property name="drawBorder" value="false" />
         <property name="drawBrackets" value="true" />
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapDeclaration" id="1088969011903">
-    <property name="name" value="_ReferenceMacroSwitch_KeyMap" />
-    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1146765617426">
-      <property name="description" value="add/remove reference macro" />
-      <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1146765617427">
-        <property name="modifiers" value="ctrl+shift" />
-        <property name="keycode" value="VK_M" />
-      </node>
-      <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_IsApplicableFunction" id="1146765617428">
-        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1146765617429">
-          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1146770038514">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1146770038515">
-              <property name="name" value="cell" />
-              <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1146770038533">
-                <link role="classifier" extResolveInfo="9.[Classifier]EditorCell" />
-              </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1146768862615">
-                <link role="baseMethodDeclaration" extResolveInfo="9.method ([Classifier]EditorContext).([InstanceMethodDeclaration]getSelectedCell() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EditorCell]))" />
-                <node role="instance" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_editorContext" id="1146768843649" />
-              </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1146770071380">
-            <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1146770071382">
-              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1146770091576">
-                <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1146770104921" />
-              </node>
-            </node>
-            <node role="condition" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1146770088715">
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1146770081449" />
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1146770081447">
-                <link role="baseMethodDeclaration" extResolveInfo="9.method ([Classifier]EditorCell).([InstanceMethodDeclaration]getSNode() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1146770081448">
-                  <link role="variableDeclaration" targetNodeId="1146770038515" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1146770175781">
-            <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1146770190815">
-              <link role="baseMethodDeclaration" extResolveInfo="8.static method ([Classifier]TemplateLanguageUtil).([StaticMethodDeclaration]canSwitchReferenceMacro((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EditorCell])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
-              <link role="classConcept" extResolveInfo="8.[Classifier]TemplateLanguageUtil" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1146770193707">
-                <link role="variableDeclaration" targetNodeId="1146770038515" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_ExecuteFunction" id="1146765617430">
-        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1146765617431">
-          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1146766016219">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1146766016220">
-              <property name="name" value="cell" />
-              <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1146766016221">
-                <link role="classifier" extResolveInfo="9.[Classifier]EditorCell" />
-              </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1146766029913">
-                <link role="baseMethodDeclaration" extResolveInfo="9.method ([Classifier]EditorContext).([InstanceMethodDeclaration]getSelectedCell() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EditorCell]))" />
-                <node role="instance" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_editorContext" id="1146766023426" />
-              </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1146766594804">
-            <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1146766600040">
-              <link role="classConcept" extResolveInfo="8.[Classifier]TemplateLanguageUtil" />
-              <link role="baseMethodDeclaration" extResolveInfo="8.static method ([Classifier]TemplateLanguageUtil).([StaticMethodDeclaration]switchReferenceMacro((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EditorCell])) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1146766605401">
-                <link role="variableDeclaration" targetNodeId="1146766016220" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1146768766123">
-      <property name="description" value="remove reference macro" />
-      <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1146768766124">
-        <property name="modifiers" value="ctrl+shift" />
-        <property name="keycode" value="VK_M" />
-      </node>
-      <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_IsApplicableFunction" id="1146768766125">
-        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1146768766126">
-          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1146769424391">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1146769424392">
-              <property name="name" value="selectedNode" />
-              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1146769424393" />
-              <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1146769436407">
-                <link role="baseMethodDeclaration" extResolveInfo="9.method ([Classifier]EditorCell).([InstanceMethodDeclaration]getSNode() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1146769436408">
-                  <link role="baseMethodDeclaration" extResolveInfo="9.method ([Classifier]EditorContext).([InstanceMethodDeclaration]getSelectedCell() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EditorCell]))" />
-                  <node role="instance" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_editorContext" id="1146769436409" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1146768974154">
-            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1146768982407">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1146769455123">
-                <link role="variableDeclaration" targetNodeId="1146769424392" />
-              </node>
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1146768984830">
-                <link role="concept" targetNodeId="1.1088761943574" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_ExecuteFunction" id="1146768766127">
-        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1146768766128">
-          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1146769494352">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1146769494353">
-              <property name="name" value="referenceMacro" />
-              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1146769494354" />
-              <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1146769494355">
-                <link role="baseMethodDeclaration" extResolveInfo="9.method ([Classifier]EditorCell).([InstanceMethodDeclaration]getSNode() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1146769494356">
-                  <link role="baseMethodDeclaration" extResolveInfo="9.method ([Classifier]EditorContext).([InstanceMethodDeclaration]getSelectedCell() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EditorCell]))" />
-                  <node role="instance" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_editorContext" id="1146769494357" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1146768997362">
-            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1146768998739">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1146769503561">
-                <link role="variableDeclaration" targetNodeId="1146769494353" />
-              </node>
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_DeleteOperation" id="1146769000506" />
-            </node>
-          </node>
-        </node>
       </node>
     </node>
   </node>
@@ -2474,7 +2118,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapDeclaration" id="1149868357716">
     <property name="everyModel" value="true" />
-    <property name="name" value="_MacrosSwitch_KeyMap" />
+    <property name="name" value="MacrosSwitch_KeyMap" />
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1149868396494">
       <property name="showInPopup" value="true" />
       <property name="description" value="convert to/from 'template fragmet'" />
@@ -2725,7 +2369,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapDeclaration" id="1149931179122">
-    <property name="name" value="_RemoveMacro_KeyMap" />
+    <property name="name" value="RemoveMacro_KeyMap" />
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1149931207086">
       <property name="description" value="remove property macro" />
       <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1149931207087">
@@ -2734,24 +2378,9 @@
       </node>
       <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_IsApplicableFunction" id="1149931207088">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1149931207089">
-          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1149931207090">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1149931207091">
-              <property name="name" value="selectedNode" />
-              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1149931207092" />
-              <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1149931207093">
-                <link role="baseMethodDeclaration" extResolveInfo="9.method ([Classifier]EditorCell).([InstanceMethodDeclaration]getSNode() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1149931207094">
-                  <link role="baseMethodDeclaration" extResolveInfo="9.method ([Classifier]EditorContext).([InstanceMethodDeclaration]getSelectedCell() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EditorCell]))" />
-                  <node role="instance" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_editorContext" id="1149931207095" />
-                </node>
-              </node>
-            </node>
-          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1149931207096">
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1149931207097">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1149931207098">
-                <link role="variableDeclaration" targetNodeId="1149931207091" />
-              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1167850322679" />
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1149931207099">
                 <link role="concept" targetNodeId="1.1087833241328" />
               </node>
@@ -2761,24 +2390,9 @@
       </node>
       <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_ExecuteFunction" id="1149931207100">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1149931207101">
-          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1149931207102">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1149931207103">
-              <property name="name" value="propertyMacro" />
-              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1149931207104" />
-              <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1149931207105">
-                <link role="baseMethodDeclaration" extResolveInfo="9.method ([Classifier]EditorCell).([InstanceMethodDeclaration]getSNode() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1149931207106">
-                  <link role="baseMethodDeclaration" extResolveInfo="9.method ([Classifier]EditorContext).([InstanceMethodDeclaration]getSelectedCell() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EditorCell]))" />
-                  <node role="instance" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_editorContext" id="1149931207107" />
-                </node>
-              </node>
-            </node>
-          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1149931207108">
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1149931207109">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1149931207110">
-                <link role="variableDeclaration" targetNodeId="1149931207103" />
-              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1167850848733" />
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_DeleteOperation" id="1149931207111" />
             </node>
           </node>
@@ -2793,24 +2407,9 @@
       </node>
       <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_IsApplicableFunction" id="1149931224619">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1149931224620">
-          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1149931224621">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1149931224622">
-              <property name="name" value="selectedNode" />
-              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1149931224623" />
-              <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1149931224624">
-                <link role="baseMethodDeclaration" extResolveInfo="9.method ([Classifier]EditorCell).([InstanceMethodDeclaration]getSNode() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1149931224625">
-                  <link role="baseMethodDeclaration" extResolveInfo="9.method ([Classifier]EditorContext).([InstanceMethodDeclaration]getSelectedCell() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EditorCell]))" />
-                  <node role="instance" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_editorContext" id="1149931224626" />
-                </node>
-              </node>
-            </node>
-          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1149931224627">
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1149931224628">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1149931224629">
-                <link role="variableDeclaration" targetNodeId="1149931224622" />
-              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1167851134520" />
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1149931224630">
                 <link role="concept" targetNodeId="1.1088761943574" />
               </node>
@@ -2820,24 +2419,9 @@
       </node>
       <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_ExecuteFunction" id="1149931224631">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1149931224632">
-          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1149931224633">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1149931224634">
-              <property name="name" value="referenceMacro" />
-              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1149931224635" />
-              <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1149931224636">
-                <link role="baseMethodDeclaration" extResolveInfo="9.method ([Classifier]EditorCell).([InstanceMethodDeclaration]getSNode() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1149931224637">
-                  <link role="baseMethodDeclaration" extResolveInfo="9.method ([Classifier]EditorContext).([InstanceMethodDeclaration]getSelectedCell() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EditorCell]))" />
-                  <node role="instance" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_editorContext" id="1149931224638" />
-                </node>
-              </node>
-            </node>
-          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1149931224639">
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1149931224640">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1149931224641">
-                <link role="variableDeclaration" targetNodeId="1149931224634" />
-              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1167851140756" />
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_DeleteOperation" id="1149931224642" />
             </node>
           </node>
@@ -2852,24 +2436,9 @@
       </node>
       <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_IsApplicableFunction" id="1149931229358">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1149931229359">
-          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1149931229360">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1149931229361">
-              <property name="name" value="selectedNode" />
-              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1149931229362" />
-              <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1149931229363">
-                <link role="baseMethodDeclaration" extResolveInfo="9.method ([Classifier]EditorCell).([InstanceMethodDeclaration]getSNode() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1149931229364">
-                  <link role="baseMethodDeclaration" extResolveInfo="9.method ([Classifier]EditorContext).([InstanceMethodDeclaration]getSelectedCell() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EditorCell]))" />
-                  <node role="instance" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_editorContext" id="1149931229365" />
-                </node>
-              </node>
-            </node>
-          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1149931229366">
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1149931229367">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1149931229368">
-                <link role="variableDeclaration" targetNodeId="1149931229361" />
-              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1167851226600" />
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1149931229369">
                 <link role="concept" targetNodeId="1.1087833466690" />
               </node>
@@ -2879,24 +2448,9 @@
       </node>
       <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_ExecuteFunction" id="1149931229370">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1149931229371">
-          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1149931229372">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1149931229373">
-              <property name="name" value="nodeMacro" />
-              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1149931229374" />
-              <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1149931229375">
-                <link role="baseMethodDeclaration" extResolveInfo="9.method ([Classifier]EditorCell).([InstanceMethodDeclaration]getSNode() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1149931229376">
-                  <link role="baseMethodDeclaration" extResolveInfo="9.method ([Classifier]EditorContext).([InstanceMethodDeclaration]getSelectedCell() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EditorCell]))" />
-                  <node role="instance" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_editorContext" id="1149931229377" />
-                </node>
-              </node>
-            </node>
-          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1149931229378">
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1149931229379">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1149931229380">
-                <link role="variableDeclaration" targetNodeId="1149931229373" />
-              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1167851231617" />
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_DeleteOperation" id="1149931229381" />
             </node>
           </node>
