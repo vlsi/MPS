@@ -5331,6 +5331,68 @@
         </node>
       </node>
     </node>
+    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1167849503076">
+      <property name="description" value="toggle [selectable]/[not selectable]" />
+      <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1167849503077">
+        <property name="modifiers" value="ctrl+alt" />
+        <property name="keycode" value="VK_S" />
+      </node>
+      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_ExecuteFunction" id="1167849503078">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1167849503079">
+          <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1167849774627">
+            <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1167849802367">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1167849797693">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1167849795036" />
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1167849799366">
+                  <link role="property" targetNodeId="2.1073389214266" />
+                </node>
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Property_HasValue_Enum" id="1167849804931">
+                <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.EnumMemberReference" id="1167849804932">
+                  <link role="enumMember" targetNodeId="2.1083928804392" />
+                </node>
+              </node>
+            </node>
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1167849774629">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1167849821917">
+                <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1167849825921">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1167849821935">
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1167849821918" />
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1167849825889">
+                      <link role="property" targetNodeId="2.1073389214266" />
+                    </node>
+                  </node>
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Property_SetOperation" id="1167849827985">
+                    <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.EnumMemberReference" id="1167849834143">
+                      <link role="enumMember" targetNodeId="2.1083928804391" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.BlockStatement" id="1167849845567">
+              <node role="statements" type="jetbrains.mps.baseLanguage.StatementList" id="1167849845568">
+                <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1167849849584">
+                  <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1167849857885">
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1167849853461">
+                      <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1167849849585" />
+                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1167849856353">
+                        <link role="property" targetNodeId="2.1073389214266" />
+                      </node>
+                    </node>
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Property_SetOperation" id="1167849859777">
+                      <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.EnumMemberReference" id="1167849872498">
+                        <link role="enumMember" targetNodeId="2.1083928804392" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1134380257602">
     <link role="conceptDeclaration" targetNodeId="2.1134379236839" />

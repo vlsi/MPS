@@ -1589,12 +1589,15 @@
       <property name="vertical" value="true" />
       <property name="selectable" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1112732044745">
-        <property name="text" value="&lt; Switch Macro &gt;" />
+        <property name="textBgColor" value="lightGray" />
+        <property name="textFgColor" value="DARK_BLUE" />
+        <property name="text" value="switch macro" />
         <property name="drawBorder" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1152722291322">
         <property name="drawBorder" value="false" />
         <property name="vertical" value="false" />
+        <property name="selectable" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1152722291323">
           <property name="text" value="mapping name" />
           <property name="drawBorder" value="false" />
@@ -1609,6 +1612,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1112732044746">
         <property name="drawBorder" value="false" />
         <property name="vertical" value="false" />
+        <property name="selectable" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1112732044747">
           <property name="text" value="templateSourceQuery_" />
           <property name="drawBorder" value="false" />
@@ -1629,6 +1633,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1112738370678">
         <property name="drawBorder" value="false" />
         <property name="vertical" value="false" />
+        <property name="selectable" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1112738412384">
           <property name="text" value="template switch" />
           <property name="drawBorder" value="false" />
