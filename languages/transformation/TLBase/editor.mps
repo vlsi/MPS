@@ -263,6 +263,7 @@
         <property name="textBgColorSelected" value="cyan" />
         <property name="selectable" value="true" />
         <link role="keyMap" targetNodeId="1149931179122" />
+        <link role="actionMap" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_AttributedLinkCell" id="1149858915193">
         <property name="drawBorder" value="false" />
@@ -2369,7 +2370,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapDeclaration" id="1149931179122">
-    <property name="name" value="RemoveMacro_KeyMap" />
+    <property name="name" value="MacroSymbol_KeyMap" />
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1149931207086">
       <property name="description" value="remove property macro" />
       <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1149931207087">
@@ -3322,6 +3323,23 @@
           <property name="drawBorder" value="false" />
           <property name="drawBrackets" value="true" />
           <link role="relationDeclaration" targetNodeId="18.1137022507850" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.CellActionMapDeclaration" id="1167859493978">
+    <property name="name" value="MacroSymbol_Actions" />
+    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMapItem" id="1167860279572">
+      <property name="description" value="delete macro node" />
+      <property name="actionId" value="delete_action_id" />
+      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_ExecuteFunction" id="1167860279573">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1167860279574">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1167860339427">
+            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1167860341210">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_FunctionParm_selectedNode" id="1167860339428" />
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_DeleteOperation" id="1167860343774" />
+            </node>
+          </node>
         </node>
       </node>
     </node>
