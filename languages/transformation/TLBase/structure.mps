@@ -745,6 +745,10 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1167774355440">
     <property name="name" value="TemplateFunctionParameter_templateNode" />
     <link role="extends" targetNodeId="6.1107135704075" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1167782639068">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1137545963098" />
+      <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1167782642914" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1167774355441">
       <property name="value" value="templateNode" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
