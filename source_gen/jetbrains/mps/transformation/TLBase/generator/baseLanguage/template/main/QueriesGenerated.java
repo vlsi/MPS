@@ -20,6 +20,7 @@ import jetbrains.mps.transformation.TLBase.BaseMappingRule_Condition;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.transformation.TLBase.PropertyMacro_GetPropertyValue;
 import jetbrains.mps.transformation.TLBase.ReferenceMacro_GetReferent;
+import jetbrains.mps.transformation.TLBase.IfMacro_Condition;
 
 public class QueriesGenerated {
 
@@ -63,5 +64,8 @@ public class QueriesGenerated {
   }
   public static String propertyMacro_GetPropertyValue_1167770891051(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return TemplateFunctionMethodName.referenceMacro_GetReferent((ReferenceMacro_GetReferent)node);
+  }
+  public static String propertyMacro_GetPropertyValue_1167946761277(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return TemplateFunctionMethodName.ifMacro_Condition((IfMacro_Condition)node);
   }
 }
