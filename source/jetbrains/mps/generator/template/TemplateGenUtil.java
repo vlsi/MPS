@@ -498,6 +498,48 @@ public class TemplateGenUtil {
     throw new GenerationFailedException(new GenerationFailueInfo("couldn't evaluate if-macro condition", sourceNode, ifMacro, null, generator.getGeneratorSessionContext()));
   }
 
+  private static List<SNode> createSourceNodeListForLoopMacro(SNode sourceNode, LoopMacro loopMacro, ITemplateGenerator generator) {
+    // new
+    SourceSubstituteMacro_SourceNodesQuery function = loopMacro.getSourceNodesQuery();
+    if (function != null) {
+      String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(function);
+      Object[] args = new Object[]{
+              sourceNode,
+              generator.getSourceModel(),
+              generator,
+              generator.getScope(),
+              generator.getGeneratorSessionContext()};
+      try {
+        List<SNode> sourceNodes = (List<SNode>) QueryMethodGenerated.invoke(methodName, args, loopMacro.getModel());
+        checkNodesFromQuery(sourceNodes, loopMacro, generator);
+        return sourceNodes;
+      } catch (Exception e) {
+        generator.showErrorMessage(sourceNode, null, loopMacro, "couldn't evaluate loop-macro query - try to generate template models");
+        e.printStackTrace();
+        return new LinkedList<SNode>();
+      }
+    }
+
+    // old
+    String sourceQueryAspectMethodName = loopMacro.getSourceQueryAspectMethodName();
+    if (sourceQueryAspectMethodName != null) {
+      String methodName = "templateSourceQuery_" + sourceQueryAspectMethodName;
+      Object[] args = new Object[]{sourceNode, generator};
+      try {
+        List<SNode> sourceNodes = (List<SNode>) QueryMethod.invoke(methodName, args, loopMacro.getModel());
+        checkNodesFromQuery(sourceNodes, loopMacro, generator);
+        return sourceNodes;
+      } catch (Exception e) {
+        generator.showErrorMessage(sourceNode, null, loopMacro, "couldn't evaluate loop-macro query: " + NameUtil.shortNameFromLongName(e.getClass().getName()) + " : " + e.getMessage());
+        e.printStackTrace();
+        return new LinkedList<SNode>();
+      }
+    }
+
+    throw new GenerationFailedException(new GenerationFailueInfo("couldn't evaluate loop-macro query", sourceNode, loopMacro, null, generator.getGeneratorSessionContext()));
+  }
+
+
   public static boolean checkPremiseForBaseMappingRule(SNode sourceNode, ConceptDeclaration sourceNodeConcept, BaseMappingRule mappingRule, ITemplateGenerator generator) {
     ConceptDeclaration applicableConcept = mappingRule.getApplicableConcept();
     if (applicableConcept != null) {
@@ -595,22 +637,10 @@ public class TemplateGenUtil {
           sourceNodes.add(parentSourceNode);
         }
         return sourceNodes;
-//        IfMacro ifMacro = (IfMacro) nodeMacro;
-//        String conditionAspectId = ifMacro.getConditionAspectId();
-//        if (conditionAspectId == null) {
-//          throw new GenerationFailedException(new GenerationFailueInfo("Source query is not defined", parentSourceNode, nodeMacro, null, generator.getGeneratorSessionContext()));
-//        } else {
-//          String methodName = "semanticNodeCondition_" + conditionAspectId;
-//          Object[] args = new Object[]{parentSourceNode};
-//          Boolean conditionStatus = (Boolean) QueryMethod.invokeWithOptionalArg(methodName, args, nodeMacro.getModel(), generator.getGeneratorSessionContext());
-//          List<SNode> sourceNodes = new LinkedList<SNode>();
-//          if (conditionStatus) {
-//            sourceNodes.add(parentSourceNode);
-//          }
-//          return sourceNodes;
-//        }
-      } else if (nodeMacro instanceof LoopMacro ||
-              nodeMacro instanceof CopySrcListMacro ||
+      } else if (nodeMacro instanceof LoopMacro) {
+        return createSourceNodeListForLoopMacro(parentSourceNode, (LoopMacro) nodeMacro, generator);
+
+      } else if (nodeMacro instanceof CopySrcListMacro ||
               nodeMacro instanceof MapSrcListMacro) {
         // produce source list the same way as for NodeMacro...
       }

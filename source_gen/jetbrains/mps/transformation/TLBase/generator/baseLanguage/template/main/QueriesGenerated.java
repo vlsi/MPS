@@ -21,6 +21,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.transformation.TLBase.PropertyMacro_GetPropertyValue;
 import jetbrains.mps.transformation.TLBase.ReferenceMacro_GetReferent;
 import jetbrains.mps.transformation.TLBase.IfMacro_Condition;
+import jetbrains.mps.transformation.TLBase.SourceSubstituteMacro_SourceNodesQuery;
 
 public class QueriesGenerated {
 
@@ -67,5 +68,8 @@ public class QueriesGenerated {
   }
   public static String propertyMacro_GetPropertyValue_1167946761277(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return TemplateFunctionMethodName.ifMacro_Condition((IfMacro_Condition)node);
+  }
+  public static String propertyMacro_GetPropertyValue_1167952935373(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery((SourceSubstituteMacro_SourceNodesQuery)node);
   }
 }
