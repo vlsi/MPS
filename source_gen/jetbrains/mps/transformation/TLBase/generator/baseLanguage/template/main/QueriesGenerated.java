@@ -22,6 +22,7 @@ import jetbrains.mps.transformation.TLBase.PropertyMacro_GetPropertyValue;
 import jetbrains.mps.transformation.TLBase.ReferenceMacro_GetReferent;
 import jetbrains.mps.transformation.TLBase.IfMacro_Condition;
 import jetbrains.mps.transformation.TLBase.SourceSubstituteMacro_SourceNodesQuery;
+import jetbrains.mps.transformation.TLBase.SourceSubstituteMacro_SourceNodeQuery;
 
 public class QueriesGenerated {
 
@@ -51,8 +52,14 @@ public class QueriesGenerated {
     generator.showErrorMessage(node, templateNode, "couldn't find method parameter for concept function parm '" + alias + "'");
     return null;
   }
+  public static SNode sourceNodeQuery_1168025917226(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "body", true);
+  }
   public static String propertyMacro_GetPropertyValue_1167762379110(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return TemplateFunctionMethodName.createRootRule_Condition((CreateRootRule_Condition)node);
+  }
+  public static SNode sourceNodeQuery_1168025905128(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "body", true);
   }
   public static String propertyMacro_GetPropertyValue_1167765482559(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return TemplateFunctionMethodName.baseMappingRule_Condition((BaseMappingRule_Condition)node);
@@ -60,16 +67,34 @@ public class QueriesGenerated {
   public static SNode referenceMacro_GetReferent_1167771845166(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SNodeOperations.getParent(node, "jetbrains.mps.transformation.TLBase.structure.BaseMappingRule", false, false), "applicableConcept", false);
   }
+  public static SNode sourceNodeQuery_1168025932423(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "body", true);
+  }
   public static String propertyMacro_GetPropertyValue_1167764877550(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return TemplateFunctionMethodName.propertyMacro_GetPropertyValue((PropertyMacro_GetPropertyValue)node);
+  }
+  public static SNode sourceNodeQuery_1168025938897(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "body", true);
   }
   public static String propertyMacro_GetPropertyValue_1167770891051(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return TemplateFunctionMethodName.referenceMacro_GetReferent((ReferenceMacro_GetReferent)node);
   }
+  public static SNode sourceNodeQuery_1168025925887(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "body", true);
+  }
   public static String propertyMacro_GetPropertyValue_1167946761277(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return TemplateFunctionMethodName.ifMacro_Condition((IfMacro_Condition)node);
   }
+  public static SNode sourceNodeQuery_1168025947268(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "body", true);
+  }
   public static String propertyMacro_GetPropertyValue_1167952935373(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery((SourceSubstituteMacro_SourceNodesQuery)node);
+  }
+  public static SNode sourceNodeQuery_1168025330833(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "body", true);
+  }
+  public static String propertyMacro_GetPropertyValue_1168025033018(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodeQuery((SourceSubstituteMacro_SourceNodeQuery)node);
   }
 }

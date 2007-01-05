@@ -324,7 +324,13 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1114706874351">
     <property name="name" value="CopySrcNodeMacro" />
-    <link role="extends" targetNodeId="1087833466690" />
+    <link role="extends" targetNodeId="1167951328751" resolveInfo="SourceSubstituteMacro" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1168024447342">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="sourceNodeQuery" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1168024337012" resolveInfo="SourceSubstituteMacro_SourceNodeQuery" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1114707257324">
       <property name="value" value="$COPY_SRC$" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
@@ -332,6 +338,10 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1114707276513">
       <property name="value" value="copy source node macro" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473914776" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1168024421431">
+      <property name="value" value="sourceNodeQueryId" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1162838948922" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1114706920383">
       <property name="name" value="sourceNodeQueryId" />
@@ -850,6 +860,38 @@
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1167951910411">
+      <property name="value" value="query" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1168024337012">
+    <property name="name" value="SourceSubstituteMacro_SourceNodeQuery" />
+    <link role="extends" targetNodeId="6.1137021947720" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1168024337013">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1137545148427" />
+      <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1168024360319" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1168024337016">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
+      <link role="target" targetNodeId="1167169188348" resolveInfo="TemplateFunctionParameter_sourceNode" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1168024337017">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
+      <link role="target" targetNodeId="1166748937193" resolveInfo="TemplateFunctionParameter_sourceModel" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1168024337018">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
+      <link role="target" targetNodeId="1166749287094" resolveInfo="TemplateFunctionParameter_generator" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1168024337019">
+      <link role="target" targetNodeId="8.1161622878565" />
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1168024337020">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
+      <link role="target" targetNodeId="8.1161622753914" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1168024337021">
       <property name="value" value="query" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
     </node>
