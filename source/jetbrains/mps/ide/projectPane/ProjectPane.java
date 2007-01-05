@@ -2,8 +2,9 @@ package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.MPSToolBar;
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.IActionDataProvider;
+import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.action.*;
 import jetbrains.mps.ide.actions.model.DeleteModelsAction;
 import jetbrains.mps.ide.actions.nodes.DeleteNodeAction;
 import jetbrains.mps.ide.components.ComponentsUtil;
@@ -15,14 +16,15 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.event.SModelsAdapter;
 import jetbrains.mps.smodel.event.SModelsMulticaster;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -110,6 +112,10 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
         });
       }
     });
+
+    AbstractActionAdapter adapter = new AbstractActionAdapter(newConceptAction(), new ActionContext(null));
+    myToolbar.add(new JButton(adapter));
+    MPSActionUpdater.getInstance().add(adapter);
 
     rebuildTree();
   }
@@ -349,6 +355,34 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
   }
 
   public TreeNode getSelectedModelTreeNode() {
+    TreeNode selectedTreeNode = getSelectedTreeNode();
+    if (selectedTreeNode == null) {
+      return null;
+    }
+    while (selectedTreeNode != null && !(selectedTreeNode instanceof SModelTreeNode)) {
+      selectedTreeNode = selectedTreeNode.getParent();
+    }
+    if (selectedTreeNode == null) {
+      return null;
+    }
+    return selectedTreeNode;
+  }
+
+  public ProjectLanguageTreeNode getSelectedProjectLanguageTreeNode() {
+    TreeNode selectedTreeNode = getSelectedTreeNode();
+    if (selectedTreeNode == null) {
+      return null;
+    }
+    while (selectedTreeNode != null && !(selectedTreeNode instanceof ProjectLanguageTreeNode)) {
+      selectedTreeNode = selectedTreeNode.getParent();
+    }
+    if (selectedTreeNode == null) {
+      return null;
+    }
+    return (ProjectLanguageTreeNode) selectedTreeNode;
+  }
+
+  public TreeNode getSelectedTreeNode() {
     TreeNode selectedTreeNode;
     TreePath selectionPath = myTree.getSelectionPath();
     if (selectionPath == null) {
@@ -359,12 +393,6 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
       return null;
     }
     selectedTreeNode = (TreeNode) selectedNode;
-    while (selectedTreeNode != null && !(selectedTreeNode instanceof SModelTreeNode)) {
-      selectedTreeNode = selectedTreeNode.getParent();
-    }
-    if (selectedTreeNode == null) {
-      return null;
-    }
     return selectedTreeNode;
   }
 
@@ -499,4 +527,46 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     }
   } // private class MyTree
 
+  private MPSAction newConceptAction() {
+    return new MPSAction("New Concept") {
+      private SModelDescriptor myModel;
+
+      public Icon getIcon() {
+        return jetbrains.mps.bootstrap.structureLanguage.icons.Icons.CONCEPT_DECLARATION_ICON;
+      }
+
+      public boolean executeInsideCommand() {
+        return false;
+      }
+
+      public void update(@NotNull ActionContext context) {
+        ProjectLanguageTreeNode projectLanguageTreeNode = ProjectPane.this.getSelectedProjectLanguageTreeNode();
+        if (projectLanguageTreeNode == null) {
+          setName("New Concept");
+          setEnabled(false);
+          return;
+        }
+        Language l = projectLanguageTreeNode.getLanguage();
+        myModel = l.getStructureModelDescriptor();
+        setName(l.getNamespace());
+        setEnabled(true);
+      }
+
+      public void execute(@NotNull final ActionContext context) {
+        update(context);
+        if (!isEnabled()) return;
+        final ConceptDeclaration[] node = new ConceptDeclaration[1];
+        CommandProcessor.instance().executeCommand(new Runnable() {
+          public void run() {
+            SModel model = myModel.getSModel();
+            node[0] = ConceptDeclaration.newInstance(model);
+            model.addRoot(node[0]);
+          }
+        });
+
+        ProjectPane.this.selectNode(node[0], context.get(IOperationContext.class));
+        ProjectPane.this.openEditor();
+      }
+    };
+  }
 }
