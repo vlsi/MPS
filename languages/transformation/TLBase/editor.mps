@@ -87,6 +87,27 @@
         <link role="keyMap" targetNodeId="1149931179122" />
         <link role="actionMap" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1168019544316">
+        <property name="textFgColor" value="red" />
+        <property name="text" value="!" />
+        <property name="drawBorder" value="false" />
+        <property name="selectable" value="false" />
+        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1168019544317">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1168019544318">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1168019544319">
+              <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1168019544320">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1168019544321" />
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1168019544322">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1168019544323" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1168019562184">
+                    <link role="property" targetNodeId="1.1087833392642" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_AttributedPropertyCell" id="1149859009402">
         <property name="drawBorder" value="false" />
         <property name="drawBrackets" value="true" />
@@ -266,6 +287,27 @@
         <property name="selectable" value="true" />
         <link role="keyMap" targetNodeId="1149931179122" />
         <link role="actionMap" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1168019569397">
+        <property name="textFgColor" value="red" />
+        <property name="text" value="!" />
+        <property name="drawBorder" value="false" />
+        <property name="selectable" value="false" />
+        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1168019569398">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1168019569399">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1168019569400">
+              <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1168019569401">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1168019569402" />
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1168019569403">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1168019569404" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1168019581766">
+                    <link role="property" targetNodeId="1.1088761950280" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_AttributedLinkCell" id="1149858915193">
         <property name="drawBorder" value="false" />
@@ -1706,6 +1748,27 @@
         <link role="keyMap" targetNodeId="1149931179122" />
         <link role="actionMap" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1168019522719">
+        <property name="textFgColor" value="red" />
+        <property name="text" value="!" />
+        <property name="drawBorder" value="false" />
+        <property name="selectable" value="false" />
+        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1168019522720">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1168019522721">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1168019522722">
+              <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1168019522723">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1168019522724" />
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1168019522725">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1168019522726" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1168019533915">
+                    <link role="property" targetNodeId="1.1118773281249" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1152722546973">
         <property name="textBgColor" value="orange" />
         <property name="drawBorder" value="false" />
@@ -2033,6 +2096,27 @@
         <property name="textBgColorSelected" value="cyan" />
         <link role="keyMap" targetNodeId="1149931179122" />
         <link role="actionMap" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1168019424098">
+        <property name="textFgColor" value="red" />
+        <property name="text" value="!" />
+        <property name="drawBorder" value="false" />
+        <property name="selectable" value="false" />
+        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1168019461709">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1168019461710">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1168019474504">
+              <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1168019495619">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1168019498981" />
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1168019478648">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1168019476663" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1168019487883">
+                    <link role="property" targetNodeId="1.1090493180053" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1152722569821">
         <property name="textBgColor" value="orange" />
