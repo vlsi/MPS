@@ -93,6 +93,10 @@
     <property name="rootable" value="true" />
     <property name="name" value="TemplateDeclaration" />
     <link role="extends" targetNodeId="2.1078489098625" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1168285871518">
+      <property name="role" value="applicableConcept" />
+      <link role="target" targetNodeId="3.1071489090640" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1092060348987">
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="1" />
