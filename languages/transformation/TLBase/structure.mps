@@ -412,7 +412,13 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1131073187192">
     <property name="name" value="MapSrcNodeMacro" />
-    <link role="extends" targetNodeId="1087833466690" />
+    <link role="extends" targetNodeId="1167951328751" resolveInfo="SourceSubstituteMacro" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1168281849769">
+      <property name="sourceCardinality" value="0..1" />
+      <property name="role" value="sourceNodeQuery" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1168024337012" resolveInfo="SourceSubstituteMacro_SourceNodeQuery" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1131073187193">
       <property name="value" value="$MAP_SRC$" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
@@ -420,6 +426,10 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1131073187194">
       <property name="value" value="map source node macro" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473914776" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1168281834030">
+      <property name="value" value="sourceNodeQueryId" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1162838948922" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1131073187195">
       <property name="name" value="sourceNodeQueryId" />
