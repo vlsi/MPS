@@ -1,12 +1,11 @@
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelListener;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.projectLanguage.ModelRoot;
 
-import java.util.Set;
 import java.io.File;
+import java.util.Set;
 
 /**
  * User: Sergey Dmitriev
@@ -44,8 +43,6 @@ public interface SModelDescriptor {
   void replaceModel(SModel newModel);
 
   File getModelFile();
-
-  ModelRoot getModelRoot();
 
   Set<SReference> findUsages(Set<SNode> node);
   Set<SReference> findUsages(SNode node);

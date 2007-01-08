@@ -99,7 +99,6 @@ public class ClassPathModelRootManager extends AbstractModelRootManager  {
       if (modelDescriptor == null) {
         modelDescriptor =
                 new DefaultSModelDescriptor(this,
-                        root,
                         null,
                         defaultPackage);
         SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, myOwner);
@@ -120,7 +119,7 @@ public class ClassPathModelRootManager extends AbstractModelRootManager  {
           SModelRepository.getInstance().addOwnerForDescriptor(descriptor, myOwner);
           descriptors.add(descriptor);
         } else {
-          SModelDescriptor modelDescriptor = new DefaultSModelDescriptor(this, root, null, modelUID);
+          SModelDescriptor modelDescriptor = new DefaultSModelDescriptor(this, null, modelUID);
           SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, myOwner);
           descriptors.add(modelDescriptor);
         }

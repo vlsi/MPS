@@ -32,7 +32,6 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   private long myLastStructuralChange = System.currentTimeMillis();
   private long myLastChange = System.currentTimeMillis();
   private File myModelFile;
-  private ModelRoot myModelRoot;
   private FastNodeFinder myFastNodeFinder;
 
   private IModelRootManager myModelRootManager;
@@ -40,8 +39,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 
   private long myDiskTimestamp = -1;
 
-  public DefaultSModelDescriptor(IModelRootManager manager, ModelRoot root, File modelFile, SModelUID modelUID) {
-    myModelRoot = root;
+  public DefaultSModelDescriptor(IModelRootManager manager, File modelFile, SModelUID modelUID) {
     myModelUID = modelUID;
     myModelRootManager = manager;
     myModelFile = modelFile;
@@ -130,10 +128,6 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 
   public File getModelFile() {
     return myModelFile;
-  }
-
-  public ModelRoot getModelRoot() {
-    return myModelRoot;
   }
 
   public long timestamp() {

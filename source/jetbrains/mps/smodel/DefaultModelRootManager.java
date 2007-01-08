@@ -139,7 +139,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       modelRepository.addOwnerForDescriptor(modelDescriptor, owner);
       return modelDescriptor;
     } else {
-      modelDescriptor = new DefaultSModelDescriptor(manager, root, new File(fileName), modelUID);
+      modelDescriptor = new DefaultSModelDescriptor(manager, new File(fileName), modelUID);
       modelRepository.registerModelDescriptor(modelDescriptor, owner);
       return modelDescriptor;
     }
@@ -153,7 +153,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       LOG.error("Couldn't create new model \"" + modelUID + "\" because such model exists");
     }
 
-    SModelDescriptor modelDescriptor = new DefaultSModelDescriptor(manager, root, new File(fileName), modelUID);
+    SModelDescriptor modelDescriptor = new DefaultSModelDescriptor(manager, new File(fileName), modelUID);
     modelRepository.registerModelDescriptor(modelDescriptor, owner);
     modelRepository.markChanged(modelDescriptor, true);
     SModelsMulticaster.getInstance().fireModelCreatedEvent(modelDescriptor);
