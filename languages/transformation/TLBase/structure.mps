@@ -446,7 +446,13 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1133037731736">
     <property name="name" value="MapSrcListMacro" />
-    <link role="extends" targetNodeId="1087833466690" />
+    <link role="extends" targetNodeId="1167951328751" resolveInfo="SourceSubstituteMacro" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1168291362368">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="sourceNodesQuery" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1167951910403" resolveInfo="SourceSubstituteMacro_SourceNodesQuery" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1133037820495">
       <property name="value" value="$MAP_SRCL$" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />

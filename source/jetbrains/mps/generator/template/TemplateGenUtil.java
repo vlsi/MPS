@@ -711,27 +711,10 @@ public class TemplateGenUtil {
         nodeMacro = nodeMacros.get(currentMacroIndex);
       }
 
-//      List<SNode> result = new LinkedList<SNode>();
       if (nodeMacro instanceof CopySrcNodeMacro) {
-//        return createSourceNodeListFor_CopySrcNodeMacro(parentSourceNode, (CopySrcNodeMacro) nodeMacro, generator);
         return getSourceNodesForMacroWithSourceNodeQuery(parentSourceNode, (SourceSubstituteMacro) nodeMacro, ((CopySrcNodeMacro) nodeMacro).getSourceNodeQuery(), false, generator);
-
       } else if (nodeMacro instanceof MapSrcNodeMacro) {
-//        MapSrcNodeMacro mapSrcNodeMacro = ((MapSrcNodeMacro) nodeMacro);
-//        String sourceNodeQueryId = mapSrcNodeMacro.getSourceNodeQueryId();
-//        if (sourceNodeQueryId != null) { // it's optional
-//
-//          String methodName = "" + "templateSourceNodeQuery_" + sourceNodeQueryId;
-//          Object[] args = new Object[]{parentSourceNode, generator};
-//          SNode srcNodeToCopy = (SNode) QueryMethod.invoke(methodName, args, nodeMacro.getModel());
-//          if (srcNodeToCopy != null) {
-//            result.add(srcNodeToCopy);
-//          }
-//          checkNodesFromQuery(result, mapSrcNodeMacro, generator);
-//          return result;
-//        }
         return getSourceNodesForMacroWithSourceNodeQuery(parentSourceNode, (SourceSubstituteMacro) nodeMacro, ((MapSrcNodeMacro) nodeMacro).getSourceNodeQuery(), true, generator);
-
       } else if (nodeMacro instanceof IfMacro) {
         List<SNode> sourceNodes = new LinkedList<SNode>();
         if (checkConditionForIfMacro(parentSourceNode, (IfMacro) nodeMacro, generator)) {
@@ -743,7 +726,7 @@ public class TemplateGenUtil {
       } else if (nodeMacro instanceof CopySrcListMacro) {
         return getSourceNodesForMacroWithSourceNodesQuery(parentSourceNode, (SourceSubstituteMacro) nodeMacro, ((CopySrcListMacro) nodeMacro).getSourceNodesQuery(), generator);
       } else if (nodeMacro instanceof MapSrcListMacro) {
-        // produce source list the same way as for NodeMacro...
+        return getSourceNodesForMacroWithSourceNodesQuery(parentSourceNode, (SourceSubstituteMacro) nodeMacro, ((MapSrcListMacro) nodeMacro).getSourceNodesQuery(), generator);
       }
 
       if (nodeMacro != null) {

@@ -813,7 +813,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1145579947994">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1145579947995">
-            <property name="name" value="ifStatement" />
+            <property name="name" value="ifStatement1" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1145579947996">
               <link role="concept" targetNodeId="1.1068580123159" />
             </node>
