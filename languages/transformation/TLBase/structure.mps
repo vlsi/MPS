@@ -350,7 +350,13 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1114729360583">
     <property name="name" value="CopySrcListMacro" />
-    <link role="extends" targetNodeId="1087833466690" />
+    <link role="extends" targetNodeId="1167951328751" resolveInfo="SourceSubstituteMacro" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1168278589236">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="sourceNodesQuery" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1167951910403" resolveInfo="SourceSubstituteMacro_SourceNodesQuery" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1114729423554">
       <property name="value" value="$COPY_SRCL$" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />

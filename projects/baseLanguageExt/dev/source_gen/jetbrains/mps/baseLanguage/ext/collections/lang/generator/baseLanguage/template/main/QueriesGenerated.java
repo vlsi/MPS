@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import java.util.List;
 
 public class QueriesGenerated {
 
@@ -21,5 +22,13 @@ public class QueriesGenerated {
   }
   public static String propertyMacro_GetPropertyValue_1167778587376(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return generator.getGeneratorSessionContext().createUniqueName("_zCursor");
+  }
+  public static SNode sourceNodeQuery_1168280933571(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode creator = SLinkOperations.getTarget(node, "creator", true);
+    return SLinkOperations.getTarget(creator, "elementType", true);
+  }
+  public static List sourceNodesQuery_1168281040871(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode creator = SLinkOperations.getTarget(node, "creator", true);
+    return SLinkOperations.getTargets(creator, "initValue", true);
   }
 }
