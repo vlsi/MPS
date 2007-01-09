@@ -495,10 +495,11 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
         UndoManager.instance().clear();
         ActionManager.instance().clearAll();
 
+        MPSModuleRepository.getInstance().removeUnusedModules();
+        SModelRepository.getInstance().removeUnusedDescriptors();
         ReloadUtils.reloadAll(true);
       }
     }, "disposing project");
-
   }
 
 
