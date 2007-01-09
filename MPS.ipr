@@ -27,6 +27,13 @@
       <maximumHeapSize value="128" />
       <properties />
     </buildFile>
+    <buildFile url="file://$PROJECT_DIR$/equinox-sandbox/jetbrains.mps.testBundle/build.xml">
+      <additionalClassPath />
+      <antReference projectDefault="true" />
+      <customJdkName value="" />
+      <maximumHeapSize value="128" />
+      <properties />
+    </buildFile>
   </component>
   <component name="BuildJarProjectSettings">
     <option name="BUILD_JARS_ON_MAKE" value="false" />
@@ -1134,9 +1141,10 @@
       <module fileurl="file://$PROJECT_DIR$/projects/DataNavigationQueryFramework/core/core.iml" filepath="$PROJECT_DIR$/projects/DataNavigationQueryFramework/core/core.iml" group="Projects/dataNavigationQuery/runtime" />
       <module fileurl="file://$PROJECT_DIR$/projects/dataNavigationQueryLang/dataNavigationQueryLang.iml" filepath="$PROJECT_DIR$/projects/dataNavigationQueryLang/dataNavigationQueryLang.iml" group="Projects/dataNavigationQuery/lang" />
       <module fileurl="file://$PROJECT_DIR$/projects/webrSamples/depot/depot.iml" filepath="$PROJECT_DIR$/projects/webrSamples/depot/depot.iml" group="Projects/WebrSamples" />
-      <module fileurl="file://$PROJECT_DIR$/equinox-sandbox/equinox-sandbox.iml" filepath="$PROJECT_DIR$/equinox-sandbox/equinox-sandbox.iml" />
+      <module fileurl="file://$PROJECT_DIR$/equinox-sandbox/equinox-sandbox.iml" filepath="$PROJECT_DIR$/equinox-sandbox/equinox-sandbox.iml" group="Equinox-Sandbox" />
       <module fileurl="file://$PROJECT_DIR$/projects/fixedLengthReader/fixedLengthReader.iml" filepath="$PROJECT_DIR$/projects/fixedLengthReader/fixedLengthReader.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/webrSamples/hello/hello.iml" filepath="$PROJECT_DIR$/projects/webrSamples/hello/hello.iml" group="Projects/WebrSamples" />
+      <module fileurl="file://$PROJECT_DIR$/equinox-sandbox/jetbrains.mps.testBundle/jetbrains.mps.testBundle.iml" filepath="$PROJECT_DIR$/equinox-sandbox/jetbrains.mps.testBundle/jetbrains.mps.testBundle.iml" group="Equinox-Sandbox" />
       <module fileurl="file://$PROJECT_DIR$/projects/webrSamples/miniAlpha/miniAlpha.iml" filepath="$PROJECT_DIR$/projects/webrSamples/miniAlpha/miniAlpha.iml" group="Projects/WebrSamples" />
       <module fileurl="file://$PROJECT_DIR$/projects/DataNavigationQueryFramework/openAPI/openAPI.iml" filepath="$PROJECT_DIR$/projects/DataNavigationQueryFramework/openAPI/openAPI.iml" group="Projects/dataNavigationQuery/runtime" />
       <module fileurl="file://$PROJECT_DIR$/projects/stateMachine/stateMachine.iml" filepath="$PROJECT_DIR$/projects/stateMachine/stateMachine.iml" group="Projects" />
@@ -1837,11 +1845,11 @@
     </library>
     <library name="Equinox">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/equinox/org.eclipse.osgi_3.2.1.R32x_v20060919.jar!/" />
+        <root url="jar://$PROJECT_DIR$/equinox-sandbox/org.eclipse.osgi_3.2.1.R32x_v20060919.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/equinox/equinox-src.zip!/" />
+        <root url="jar://$PROJECT_DIR$/equinox-sandbox/equinox-src.zip!/" />
       </SOURCES>
     </library>
   </component>
