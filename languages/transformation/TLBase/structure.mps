@@ -274,7 +274,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1112731569622">
     <property name="name" value="SwitchMacro" />
-    <link role="extends" targetNodeId="1087833466690" />
+    <link role="extends" targetNodeId="1167951328751" resolveInfo="SourceSubstituteMacro" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1112731678471">
       <property name="value" value="$SWITCH$" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
@@ -282,6 +282,12 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1112731684129">
       <property name="value" value="template switch macro" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473914776" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1168380395224">
+      <property name="sourceCardinality" value="0..1" />
+      <property name="role" value="sourceNodeQuery" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1168024337012" resolveInfo="SourceSubstituteMacro_SourceNodeQuery" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1112731629154">
       <property name="sourceCardinality" value="1" />
