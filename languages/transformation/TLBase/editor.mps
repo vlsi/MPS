@@ -1369,8 +1369,8 @@
                   <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1168380475658" />
                   <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1168380475659">
                     <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1168380475660" />
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1168380541837">
-                      <link role="link" targetNodeId="1.1168380395224" />
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1168382781165">
+                      <link role="property" targetNodeId="1.1090493180053" />
                     </node>
                   </node>
                 </node>
@@ -1464,6 +1464,8 @@
             <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1168380594948">
               <link role="conceptDeclaration" targetNodeId="1.1112730859144" />
               <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1168380594949">
+                <property name="textFgColor" value="DARK_BLUE" />
+                <property name="fontStyle" value="BOLD" />
                 <property name="drawBorder" value="false" />
                 <property name="readOnly" value="true" />
                 <property name="noTargetText" value="&lt;no name&gt;" />
