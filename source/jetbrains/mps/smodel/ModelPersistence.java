@@ -140,7 +140,6 @@ public class ModelPersistence {
     }
 
     // languages
-    Set<SNode> logs = new HashSet<SNode>();
     List languages = rootElement.getChildren(LANGUAGE);
     for (Object language : languages) {
       Element element = (Element) language;
@@ -190,6 +189,7 @@ public class ModelPersistence {
       SModelUID importedModelUID = SModelUID.fromString(importedModelUIDString);
 
       if (checkVersion) {
+        Set<SNode> logs = new HashSet<SNode>();
         SModelDescriptor importedModelDescriptor = SModelRepository.getInstance().getModelDescriptor(importedModelUID);
         if (importedModelDescriptor != null) {
           File importedModelFile = importedModelDescriptor.getModelFile();
@@ -208,6 +208,10 @@ public class ModelPersistence {
             }
           }
         }
+          //  ModelLogger modelLogger = new ModelLogger();
+ //   for (SNode log : logs) {
+  //    modelLogger.playRefactoringSequence(log, model, null);
+  //  }
       }
 
       model.addImportElement(importedModelUID, importIndex, importedModelVersion);
@@ -240,11 +244,6 @@ public class ModelPersistence {
     for (ReferencePersister referencePersister : referenceDescriptors) {
       referencePersister.createReferenceInModel(model);
     }
-
-  //  ModelLogger modelLogger = new ModelLogger();
- //   for (SNode log : logs) {
-  //    modelLogger.playRefactoringSequence(log, model, null);
-  //  }
 
     model.setLoading(false);
     return model;
