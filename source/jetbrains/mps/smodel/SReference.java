@@ -81,6 +81,7 @@ public class SReference {
     } else {
       model = modelDescriptor.getSModel();
     }
+    
     SModel sourceModel = mySourceNode.getModel();
     if (model == null) {
       logGetTargetNodeErrors(GetTargetNodeErrorState.NO_MODEL);

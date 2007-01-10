@@ -620,6 +620,10 @@ public class SModel implements Iterable<SNode> {
     return myIdToNodeMap.get(nodeId);
   }
 
+  public Set<String> getNodeIds() {
+    return new HashSet<String>(myIdToNodeMap.keySet());
+  }
+
   public boolean containsNode(@NotNull String id) {
     return myIdToNodeMap.containsKey(id);
   }
