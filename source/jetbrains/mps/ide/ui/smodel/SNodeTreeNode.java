@@ -9,10 +9,6 @@ import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.AbstractProjectFrame;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
-import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.helgins.lambdaTypes.PresentationUtil;
-import jetbrains.mps.helgins.evaluator.uiActions.PresentationManager;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultTreeModel;
@@ -38,6 +34,18 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     super(operationContext);
     myNode = node;
     myRole = role;
+  }
+
+  public SModelTreeNode getSModelModelTreeNode() {
+    if (getParent() instanceof SModelTreeNode) {
+      return (SModelTreeNode) getParent();
+    }
+
+    if (getParent() instanceof SNodeTreeNode) {
+      return ((SNodeTreeNode) getParent()).getSModelModelTreeNode();
+    }
+
+    return null;
   }
 
   public JPopupMenu getPopupMenu() {
@@ -86,7 +94,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     }
     
     for (SNode childNode : n.getChildren()) {
-      add(new SNodeTreeNode(childNode, childNode.getRole_(), getOperationContext()));
+      add(getSModelModelTreeNode().createSNodeTreeNode(childNode, childNode.getRole_(), getOperationContext()));
     }
 
     IDEProjectFrame projectFrame = (IDEProjectFrame) getOperationContext().getComponent(AbstractProjectFrame.class);

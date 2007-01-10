@@ -3,28 +3,27 @@ package jetbrains.mps.ide.ui.smodel;
 import jetbrains.mps.annotations.AttributeConcept;
 import jetbrains.mps.ide.AbstractProjectFrame;
 import jetbrains.mps.ide.IDEProjectFrame;
-import jetbrains.mps.ide.actions.model.CreateRootNodeGroup;
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.ActionGroup;
+import jetbrains.mps.ide.action.ActionManager;
+import jetbrains.mps.ide.actions.model.CreateRootNodeGroup;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.SortUtil;
+import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
-import jetbrains.mps.ide.ui.MPSTree;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ToStringComparator;
-import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import javax.swing.JPopupMenu;
 import javax.swing.tree.DefaultTreeModel;
-import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
 import java.awt.Color;
 import java.awt.Rectangle;
@@ -63,6 +62,14 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
   public Icon getIcon(boolean expanded) {
     return IconManager.getIconFor(myModelDescriptor);
+  }
+
+  public SNodeTreeNode createSNodeTreeNode(SNode node, IOperationContext operationContext) {
+    return createSNodeTreeNode(node, null, operationContext);
+  }
+
+  public SNodeTreeNode createSNodeTreeNode(SNode node, String role, IOperationContext operationContext) {
+    return new SNodeTreeNode(node, role, operationContext);
   }
 
   public JPopupMenu getPopupMenu() {
@@ -313,13 +320,13 @@ public class SModelTreeNode extends MPSTreeNodeEx {
             SNode childNode = child.getSNode();
             int index = parentNode.getChildren().indexOf(childNode);
             if (index > indexof) { // insert added before it
-              treeModel.insertNodeInto(new SNodeTreeNode(added, added.getRole_(), getOperationContext()),
+              treeModel.insertNodeInto(createSNodeTreeNode(added, added.getRole_(), getOperationContext()),
                       parent, treeModel.getIndexOfChild(parent, child));
               continue outer;
             }
           }
         }
-        treeModel.insertNodeInto(new SNodeTreeNode(added, added.getRole_(), getOperationContext()), parent, parent.getChildCount());
+        treeModel.insertNodeInto(createSNodeTreeNode(added, added.getRole_(), getOperationContext()), parent, parent.getChildCount());
       }
     }
 
