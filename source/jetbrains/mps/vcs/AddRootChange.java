@@ -7,6 +7,11 @@ public class AddRootChange extends Change {
     myNodeId = nodeId;
   }
 
+
+  public String getNodeId() {
+    return myNodeId;
+  }
+
   public String toString() {
     return "add root " + myNodeId;
   }

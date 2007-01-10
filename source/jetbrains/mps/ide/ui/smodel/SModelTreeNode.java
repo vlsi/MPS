@@ -165,11 +165,11 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     });
     List<SNode> sortedRoots = SortUtil.sortNodes(filteredRoots);
     for (SNode sortedRoot : sortedRoots) {
-      MPSTreeNodeEx treeNode = new SNodeTreeNode(sortedRoot, getOperationContext());
+      MPSTreeNodeEx treeNode = createSNodeTreeNode(sortedRoot, getOperationContext());
       add(treeNode);
     }
     IDEProjectFrame projectFrame = (IDEProjectFrame) getOperationContext().getComponent(AbstractProjectFrame.class);
-    DefaultTreeModel treeModel = (DefaultTreeModel) projectFrame.getProjectPane().getTree().getModel();
+    DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
     treeModel.nodeStructureChanged(this);
     myInitialized = true;
   }

@@ -12,6 +12,19 @@ public class SetPropertyChange extends Change {
     myNewValue = newValue;
   }
 
+
+  public String getNodeId() {
+    return myNodeId;
+  }
+
+  public String getProperty() {
+    return myProperty;
+  }
+
+  public String getNewValue() {
+    return myNewValue;
+  }
+
   public String toString() {
     return "set property " + myProperty + " for node " + myNodeId + " to " + myNewValue;
   }
