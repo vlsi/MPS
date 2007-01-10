@@ -139,12 +139,37 @@ public class ModelPersistence {
       LOG.error(e);
     }
 
+     Set<SNode> logs = new HashSet<SNode>();
     // languages
     List languages = rootElement.getChildren(LANGUAGE);
     for (Object language : languages) {
       Element element = (Element) language;
       String languageNamespace = element.getAttributeValue(NAMESPACE);
-      model.addLanguage(languageNamespace);
+
+      if (checkVersion) {
+        String oldVersion_string = element.getAttributeValue(VERSION);
+        int oldVersion = -1;
+        if (oldVersion_string != null) {
+          oldVersion = Integer.parseInt(oldVersion_string);
+        }
+        Language modelLanguage = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
+        if (modelLanguage != null) {
+          int newVersion = modelLanguage.getVersion();
+              if (newVersion > oldVersion) {
+              System.err.println("new language version detected: model = " + model
+                      + " language = " + languageNamespace + " current language version: " +
+                      oldVersion + " new version: " + newVersion);
+              try {
+                SModel structureModel = modelLanguage.getStructureModelDescriptor().getSModel();
+                logs.add(structureModel.getLog());
+              } catch(Throwable t) {
+                t.printStackTrace();
+              }
+            }
+        }
+      }
+        model.addLanguage(languageNamespace);
+
     }
 
     //devkits
@@ -189,7 +214,6 @@ public class ModelPersistence {
       SModelUID importedModelUID = SModelUID.fromString(importedModelUIDString);
 
       if (checkVersion) {
-        Set<SNode> logs = new HashSet<SNode>();
         SModelDescriptor importedModelDescriptor = SModelRepository.getInstance().getModelDescriptor(importedModelUID);
         if (importedModelDescriptor != null) {
           File importedModelFile = importedModelDescriptor.getModelFile();
@@ -208,13 +232,17 @@ public class ModelPersistence {
             }
           }
         }
-          //  ModelLogger modelLogger = new ModelLogger();
- //   for (SNode log : logs) {
-  //    modelLogger.playRefactoringSequence(log, model, null);
-  //  }
       }
 
       model.addImportElement(importedModelUID, importIndex, importedModelVersion);
+    }
+
+    if (logs.size() > 0) {
+      ModelLogger modelLogger = new ModelLogger();
+      for (SNode log : logs) {
+  //todo      modelLogger.playRefactoringSequence(log, document);
+      }
+      return readModel(document, modelName, stereotype, false);
     }
 
     // version & log
