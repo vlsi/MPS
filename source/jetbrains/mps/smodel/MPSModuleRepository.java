@@ -1,10 +1,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.ApplicationComponents;
-import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.Root;
 import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.annotations.NotNull;
@@ -66,13 +63,21 @@ public class MPSModuleRepository {
     myListeners.remove(l);
   }
 
-  private void fireRepositoryChanged() {    
-    for (IModule m : getAllModules()) {
-      m.invalidateCaches();
-    }
+  private void fireRepositoryChanged() {
+    invalidateCaches();
 
     for (RepositoryListener l : myListeners) {
       l.repositoryChanged();
+    }
+  }
+
+  public void invalidateCaches() {
+    for (MPSProject p : ApplicationComponents.getInstance().getComponentSafe(MPSProjects.class).getProjects()) {
+      p.invalidateCaches();
+    }
+
+    for (IModule m : getAllModules()) {
+      m.invalidateCaches();
     }
   }
 
@@ -189,12 +194,6 @@ public class MPSModuleRepository {
       fireModuleAdded(module);
     } catch (IOException e) {
       throw new RuntimeException("Failed to add module \"" + module.getModuleUID() + "\"", e);
-    }
-  }
-
-  public void invalidateLanguagesCaches() {
-    for (IModule module : myUIDToModuleMap.values()) {
-      if (module instanceof Language) ((Language) module).invalidateCaches();
     }
   }
 

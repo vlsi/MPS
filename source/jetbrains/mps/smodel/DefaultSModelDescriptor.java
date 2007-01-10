@@ -4,7 +4,6 @@ import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;
@@ -109,7 +108,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 
       SModelRepository.getInstance().markChanged(this, false);
 
-      MPSModuleRepository.getInstance().invalidateLanguagesCaches();
+      MPSModuleRepository.getInstance().invalidateCaches();
     }
   }
 

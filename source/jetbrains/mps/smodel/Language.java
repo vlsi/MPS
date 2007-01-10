@@ -213,6 +213,8 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     ReloadUtils.rebuildAllEditors();
     ReloadUtils.rebuildProjectPanes();
 
+    MPSModuleRepository.getInstance().invalidateCaches();
+
     myEventTranslator.languageChanged();
   }
 
@@ -514,6 +516,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   }
 
   public void invalidateCaches() {
+    super.invalidateCaches();
     myNameToConceptCache.clear();
     myParentsNamesMap.clear();
   }

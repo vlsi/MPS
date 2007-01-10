@@ -569,6 +569,10 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     return new ProjectPathsDialog(getComponent(AbstractProjectFrame.class), this, new ProjectOperationContext(this)).createPreferencesPage();
   }
 
+  public void invalidateCaches() {
+    myScope.invalidateCaches();    
+  }
+
   private class ProjectEventTranslator extends CommandEventTranslator {
     protected void fireCommandEvent() {
       fireMPSProjectChangedInCommand();
