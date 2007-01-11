@@ -139,7 +139,7 @@ public class ModelPersistence {
       LOG.error(e);
     }
 
-     Set<SNode> logs = new HashSet<SNode>();
+     List<LogInfo> logs = new ArrayList<LogInfo>();
     // languages
     List languages = rootElement.getChildren(LANGUAGE);
     for (Object language : languages) {
@@ -161,7 +161,7 @@ public class ModelPersistence {
                       oldVersion + " new version: " + newVersion);
               try {
                 SModel structureModel = modelLanguage.getStructureModelDescriptor().getSModel();
-                logs.add(structureModel.getLog());
+                logs.add(new LogInfo(structureModel.getLog(), oldVersion, newVersion));
               } catch(Throwable t) {
                 t.printStackTrace();
               }
@@ -225,7 +225,7 @@ public class ModelPersistence {
                       importedModelVersion + " new version: " + newVersion);
               try {
                 SModel importedModel = SModelRepository.getInstance().getModelDescriptor(importedModelUID).getSModel();
-                logs.add(importedModel.getLog());
+                logs.add(new LogInfo(importedModel.getLog(), importedModelVersion, newVersion));
               } catch(Throwable t) {
                 t.printStackTrace();
               }
@@ -239,8 +239,8 @@ public class ModelPersistence {
 
     if (logs.size() > 0) {
       ModelLogger modelLogger = new ModelLogger();
-      for (SNode log : logs) {
-  //todo      modelLogger.playRefactoringSequence(log, document);
+      for (LogInfo log : logs) {
+   //todo     modelLogger.playRefactoringSequence(log.myNode, document, log.myOldVersion, log.myNewVersion);
       }
       return readModel(document, modelName, stereotype, false);
     }
@@ -586,6 +586,17 @@ public class ModelPersistence {
 
     public static UnknownSNode newInstance(SModel model) {
       return new UnknownSNode(model);
+    }
+  }
+
+  private static class LogInfo {
+    int myOldVersion;
+    int myNewVersion;
+    SNode myNode;
+    public LogInfo(SNode node, int oldVersion, int newVersion) {
+      myNode = node;
+      myOldVersion = oldVersion;
+      myNewVersion = newVersion;
     }
   }
 }
