@@ -26,4 +26,8 @@ public class AddNodeChange extends Change {
   public String toString() {
     return "add node  " + myNodeId + " in role " + myRole;
   }
+
+  public String getAffectedNodeId() {
+    return myNodeId;
+  }
 }

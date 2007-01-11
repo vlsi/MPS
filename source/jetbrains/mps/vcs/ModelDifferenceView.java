@@ -14,6 +14,9 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JSplitPane;
+import javax.swing.JPopupMenu;
+import javax.swing.tree.TreeNode;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.util.HashSet;
@@ -21,12 +24,22 @@ import java.util.List;
 import java.util.Set;
 
 public class ModelDifferenceView extends JPanel {
-  private MPSTree myTree = new MPSTree() {
+  private MPSTree myModelTree = new MPSTree() {
     protected MPSTreeNode rebuild() {
       if (myNewModel == null) {
         return new TextTreeNode("No Model To Display");
       } else {
         return new MySModelTreeNode(myNewModel.getModelDescriptor(), "", myContext);
+      }
+    }
+  };
+
+  private MPSTree myChangesTree = new MPSTree() {
+    protected MPSTreeNode rebuild() {
+      if (myNewModel == null) {
+        return new TextTreeNode("No Changes To Display");
+      } else {
+        return buildChangesTree();
       }
     }
   };
@@ -42,12 +55,17 @@ public class ModelDifferenceView extends JPanel {
 
   public ModelDifferenceView() {
     setLayout(new BorderLayout());
-    myTree.rebuildTree();
-    add(new JScrollPane(myTree), BorderLayout.CENTER);
+
+    JSplitPane splitter = new JSplitPane(JSplitPane.VERTICAL_SPLIT,
+            new JScrollPane(myModelTree),
+            new JScrollPane(myChangesTree));
+
+    updateView();
+
+    add(splitter, BorderLayout.CENTER);
   }
 
   public void showDifference(IOperationContext context, SModel oldModel, SModel newModel) {
-//    myOldModel = oldModel;
     myNewModel = newModel;
     myContext = context;
 
@@ -79,7 +97,77 @@ public class ModelDifferenceView extends JPanel {
       myChangedNodes.add(r.getNodeId());
     }
 
-    myTree.rebuildTree();
+    updateView();
+  }
+
+  private void updateView() {
+    myChangesTree.rebuildTree();
+    myChangesTree.expandRoot();
+
+    myModelTree.rebuildTree();
+    myModelTree.expandRoot();
+  }
+
+  private MPSTreeNode buildChangesTree() {
+    TextTreeNode changes = new TextTreeNode("Changes");
+
+    List<AddNodeChange> addNodeChanges = CollectionUtil.filter(AddNodeChange.class, myChanges);
+    TextTreeNode addNode = new TextTreeNode("Add Node (" + addNodeChanges.size() + ")");
+    for (AddNodeChange change : addNodeChanges) {
+      addNode.add(new ChangeNode(change));
+    }
+    changes.add(addNode);
+
+    List<AddReferenceChange> addReferenceChanges = CollectionUtil.filter(AddReferenceChange.class, myChanges);
+    TextTreeNode addReference = new TextTreeNode("Add Reference (" + addReferenceChanges.size() + ")");
+    for (AddReferenceChange change : addReferenceChanges) {
+      addNode.add(new ChangeNode(change));
+    }
+    changes.add(addReference);
+
+    List<AddRootChange> addRootChanges = CollectionUtil.filter(AddRootChange.class, myChanges);
+    TextTreeNode addRoot = new TextTreeNode("Add Root (" + addRootChanges.size() + ")");
+    for (AddRootChange change : addRootChanges) {
+      addRoot.add(new ChangeNode(change));
+    }
+    changes.add(addRoot);
+
+    List<DeleteNodeChange> deleteNodeChanges = CollectionUtil.filter(DeleteNodeChange.class, myChanges);
+    TextTreeNode deleteNode = new TextTreeNode("Delete Node (" + deleteNodeChanges.size() + ")");
+    for (DeleteNodeChange change : deleteNodeChanges) {
+      deleteNode.add(new ChangeNode(change));
+    }
+    changes.add(deleteNode);
+
+    List<MoveNodeChange> moveNodeChanges = CollectionUtil.filter(MoveNodeChange.class, myChanges);
+    TextTreeNode moveNode = new TextTreeNode("Move Node (" + moveNodeChanges.size() + ")");
+    for (MoveNodeChange change : moveNodeChanges) {
+      moveNode.add(new ChangeNode(change));
+    }
+    changes.add(moveNode);
+
+    List<SetNodeChange> setNodeChanges = CollectionUtil.filter(SetNodeChange.class, myChanges);
+    TextTreeNode setNode = new TextTreeNode("Set Node (" + setNodeChanges.size() + ")");
+    for (SetNodeChange change : setNodeChanges) {
+      setNode.add(new ChangeNode(change));
+    }
+    changes.add(setNode);
+
+    List<SetPropertyChange> setPropertyChanges = CollectionUtil.filter(SetPropertyChange.class, myChanges);
+    TextTreeNode setProperty = new TextTreeNode("Set Property (" + setPropertyChanges.size() + ")");
+    for (SetPropertyChange change : setPropertyChanges) {
+      setProperty.add(new ChangeNode(change));
+    }
+    changes.add(setProperty);
+
+    List<SetReferenceChange> setReferenceChanges = CollectionUtil.filter(SetReferenceChange.class, myChanges);
+    TextTreeNode setReference = new TextTreeNode("Set Reference (" + setReferenceChanges.size() + ")");
+    for (SetReferenceChange change : setReferenceChanges) {
+      setReference.add(new ChangeNode(change));
+    }
+    changes.add(setReference);
+
+    return changes;
   }
 
   private class MySModelTreeNode extends SModelTreeNode {
@@ -88,9 +176,14 @@ public class ModelDifferenceView extends JPanel {
     }
 
     public SNodeTreeNode createSNodeTreeNode(SNode node, String role, IOperationContext operationContext) {
-      return new MySNodeTreeNode(node, role, operationContext);
+      return new MySNodeTreeNode(node, role, operationContext);      
     }
 
+
+
+    public JPopupMenu getPopupMenu() {
+      return null;
+    }
 
     public void init() {
       super.init();
@@ -100,6 +193,11 @@ public class ModelDifferenceView extends JPanel {
   private class MySNodeTreeNode extends SNodeTreeNode {
     public MySNodeTreeNode(SNode node, String role, IOperationContext operationContext) {
       super(node, role, operationContext);
+    }
+
+
+    public JPopupMenu getPopupMenu() {
+      return null; 
     }
 
     public Color getColor() {
@@ -114,6 +212,34 @@ public class ModelDifferenceView extends JPanel {
       }
 
       return super.getColor();
+    }
+  }
+
+  private class ChangeNode extends MPSTreeNode {
+    private Change myChange;
+
+    public ChangeNode(Change change) {
+      super(change, null);
+      myChange = change;
+    }
+
+    public String getNodeIdentifier() {
+      return myChange.toString();
+    }
+
+
+    public void doubleClick() {
+      String affectedNode = myChange.getAffectedNodeId();
+      SNode node = myNewModel.getNodeById(affectedNode);
+      if (node != null) {
+        TreeNode tn = myModelTree.findNodeWith(node);
+
+        myModelTree.selectNode(tn);
+      }
+    }
+
+    public boolean isLeaf() {
+      return true;
     }
   }
 }

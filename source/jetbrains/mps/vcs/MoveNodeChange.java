@@ -1,18 +1,18 @@
 package jetbrains.mps.vcs;
 
 public class MoveNodeChange extends Change {
-  private String myNode;
+  private String myNodeId;
   private String myNewParent;
 
 
   public MoveNodeChange(String node, String newParent) {
-    myNode = node;
+    myNodeId = node;
     myNewParent = newParent;
   }
 
 
   public String getNode() {
-    return myNode;
+    return myNodeId;
   }
 
   public String getNewParent() {
@@ -21,6 +21,10 @@ public class MoveNodeChange extends Change {
 
 
   public String toString() {
-    return "move " + myNode + " to " + myNewParent;
+    return "move " + myNodeId + " to " + myNewParent;
+  }
+
+  public String getAffectedNodeId() {
+    return myNodeId;
   }
 }

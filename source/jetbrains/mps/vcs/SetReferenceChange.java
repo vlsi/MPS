@@ -35,5 +35,9 @@ public class SetReferenceChange extends Change {
   public String toString() {
     return "set reference " + myNodeId + " in role " + myRole + " to " + myTargetNodeId + "@" + myTargetModelUID;
   }
+
+  public String getAffectedNodeId() {
+    return myNodeId;
+  }
 }
 

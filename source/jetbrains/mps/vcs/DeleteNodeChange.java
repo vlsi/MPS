@@ -11,4 +11,8 @@ public class DeleteNodeChange extends Change {
   public String toString() {
     return "delete " + myNodeId;
   }
+
+  public String getAffectedNodeId() {
+    return myNodeId;
+  }
 }

@@ -28,4 +28,8 @@ public class SetPropertyChange extends Change {
   public String toString() {
     return "set property " + myProperty + " for node " + myNodeId + " to " + myNewValue;
   }
+
+  public String getAffectedNodeId() {
+    return myNodeId;
+  }
 }

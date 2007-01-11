@@ -27,4 +27,8 @@ public class SetNodeChange extends Change {
   public String toString() {
     return "set node " + myNodeId + " in role " + myRole;
   }
+
+  public String getAffectedNodeId() {
+    return myNodeId;
+  }
 }
