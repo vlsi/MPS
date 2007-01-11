@@ -55,10 +55,15 @@ public class MergeResultView extends JPanel {
   private void rebuildResultModel() {
     myResultModel = ModelPersistence.refreshModel(myBaseModel);
 
+
+    myResultModel.setLoading(true);
+
     applyNewNodes();
     applyProperties();
     applyReferences();
     applyDeletes();
+
+    myResultModel.setLoading(false);
 
     updateView();
   }
@@ -147,8 +152,8 @@ public class MergeResultView extends JPanel {
   }
 
 
-  public void saveMergeResult() {
-    
+  public SModel getResult() {
+    return myResultModel;
   }
 
   private class MySNodeTreeNode extends SNodeTreeNode {

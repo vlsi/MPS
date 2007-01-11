@@ -5,6 +5,7 @@ import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.event.SModelsMulticaster;
+import jetbrains.mps.vcs.Merger;
 
 import java.util.*;
 import java.io.*;
@@ -27,6 +28,13 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
   @NotNull
   public SModel loadModel(@NotNull SModelDescriptor modelDescriptor) {
     File file = modelDescriptor.getModelFile();
+
+    File mineFile = new File(file.getPath() + ".mine");
+
+    if (mineFile.exists()) {
+      Merger.merge(file);
+    }
+
     if (!file.exists()) {
       return new SModel(modelDescriptor.getModelUID());
     }

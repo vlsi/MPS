@@ -122,8 +122,8 @@ public class DiffBuilder {
         }
 
         for (String nnp : newNodeProps) {
-          if (!newNode.getProperty(nnp).equals(oldNode.getProperty(nnp))) {
-            myChanges.add(new SetPropertyChange(id, nnp, newNode.getProperty(nnp)));
+          if (!newNode.getProperties().get(nnp).equals(oldNode.getProperties().get(nnp))) {
+            myChanges.add(new SetPropertyChange(id, nnp, newNode.getProperties().get(nnp)));
           }
         }
       }

@@ -10,6 +10,8 @@ import java.awt.HeadlessException;
 
 public class MergeModelsDialog extends BaseDialog {
   private MergeView myMergeView;
+  private boolean myCanceled;
+
 
   public MergeModelsDialog(Frame mainFrame, SModel base, SModel c1, SModel c2) throws HeadlessException {
     super(mainFrame, "Merge Model Changes : " + base.getUID());
@@ -28,9 +30,19 @@ public class MergeModelsDialog extends BaseDialog {
 
   @BaseDialog.Button(position = 0, name = "OK", defaultButton = true)
   public void ok() {
-    myMergeView.saveMergeResult();
     dispose();
   }
 
+  @BaseDialog.Button(position = 1, name = "Cancel")
+  public void cancel() {
+    dispose();
+    myCanceled = true;
+  }
 
+  public SModel getResultModel() {
+    if (myCanceled) {
+      return null;
+    }
+    return myMergeView.getResultModel();
+  }
 }

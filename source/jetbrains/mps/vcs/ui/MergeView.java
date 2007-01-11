@@ -17,7 +17,7 @@ public class MergeView extends JPanel {
     add(myMergeResult = new MergeResultView(baseModel, change1, change2));
   }
 
-  public void saveMergeResult() {
-    myMergeResult.saveMergeResult();
+  public SModel getResultModel() {
+    return myMergeResult.getResult();
   }
 }
