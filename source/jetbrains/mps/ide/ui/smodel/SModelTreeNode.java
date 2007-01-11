@@ -127,8 +127,17 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   public String toString() {
-    String name = myShowLongName ? getSModel().getUID().toString()
-                                 : getSModel().getUID().getShortName();
+
+    SModelUID uid;
+
+    if (getSModelDescriptor() != null) {
+      uid = getSModelDescriptor().getModelUID();
+    } else {
+      uid = getSModel().getUID();      
+    }
+
+    String name = myShowLongName ? uid.toString()
+                                 : uid.getShortName();
 
     if (myLabel != null) {
       return myLabel + " : " + name;
