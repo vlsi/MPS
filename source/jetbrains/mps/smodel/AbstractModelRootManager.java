@@ -48,4 +48,8 @@ public abstract class AbstractModelRootManager implements IModelRootManager {
                                          @NotNull ModelOwner owner) {
     throw new RuntimeException("can't create new model " + modelUID + " manager class = " + getClass());
   }
+
+  public int getVersion(@NotNull SModelDescriptor modelDescriptor) {
+    return -1;
+  }
 }

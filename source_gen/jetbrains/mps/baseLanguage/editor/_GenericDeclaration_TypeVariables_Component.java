@@ -54,18 +54,6 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
-    editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1140573670194");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
   public EditorCell createTypeVariableDeclarationList(EditorContext context, SNode node) {
     if(this.myTypeVariableDeclarationListHandler_typeVariableDeclarationList_ == null) {
       this.myTypeVariableDeclarationListHandler_typeVariableDeclarationList_ = new _GenericDeclaration_TypeVariables_Component_TypeVariableDeclarationListHandler_typeVariableDeclarationList_(node, "typeVariableDeclaration", context);
@@ -79,6 +67,18 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.putUserObject(EditorCell.ROLE, this.myTypeVariableDeclarationListHandler_typeVariableDeclarationList_.getElementRole());
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1140573670194");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

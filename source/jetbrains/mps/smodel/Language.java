@@ -57,7 +57,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   };
 
   private boolean myRegisteredInFindUsagesManager;
-  private int myVersion = -1;
 
 
   public String marshall() {
@@ -77,7 +76,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     LanguageDescriptor languageDescriptor = PersistenceUtil.loadLanguageDescriptor(descriptorFile, model);
     language.myDescriptorFile = descriptorFile;
     language.myLanguageDescriptor = languageDescriptor;
-    language.myVersion = readVersionFromFile(descriptorFile);
     MPSModuleRepository.getInstance().addModule(language, moduleOwner);
     language.updateDependenciesAndGenerators();
     return language;
@@ -235,50 +233,8 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   }
 
   public int getVersion() {
-    return myVersion;
+    return getStructureModelDescriptor().getVersion();
   }
-
-
-  //--- version util
-  public static File getVersionFile(File modelFile) {
-    String modelPath = modelFile.getAbsolutePath();
-    String versionPath = modelPath.replace(".mpl", ".version");
-    File versionFile = new File(versionPath);
-    return versionFile;
-  }
-
-  private void writeVersionFile() {
-    int version = myVersion;
-    if (version < 0) return;
-    File versionFile = getVersionFile(getDescriptorFile());
-    try {
-      if (!versionFile.exists()) {
-        versionFile.createNewFile();
-      }
-      FileOutputStream fileOutputStream = new FileOutputStream(versionFile);
-      fileOutputStream.write(version);
-      fileOutputStream.close();
-    } catch(IOException ioe) {
-      ioe.printStackTrace();
-    }
-  }
-
-  private static int readVersionFromFile(File descriptorFile) {
-    File versionFile = getVersionFile(descriptorFile);
-    if (versionFile.exists()) {
-      try {
-        FileInputStream fileInputStream = new FileInputStream(versionFile);
-        return new InputStreamReader(fileInputStream).read();
-      } catch(FileNotFoundException ex) {
-        ex.printStackTrace();
-      } catch(IOException ex) {
-        ex.printStackTrace();
-      }
-    }
-    return -1;
-  }
-
-  //~~~ version util
 
   @NotNull
   public ModuleDescriptor getModuleDescriptor() {
@@ -611,7 +567,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
   public void save() {
     PersistenceUtil.saveLanguageDescriptor(myDescriptorFile, getLanguageDescriptor());
-    writeVersionFile();
   }
 
   @NotNull

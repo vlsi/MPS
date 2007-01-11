@@ -128,7 +128,8 @@ public class ModelPersistence {
       LOG.assertLog(shortName.equals(modelName));
     }
 
-    SModel model = new SModel(new SModelUID(modelLongName, stereotype));
+    SModelUID modelUID = new SModelUID(modelLongName, stereotype);
+    SModel model = new SModel(modelUID);
 
     model.setLoading(true);
     try {
@@ -213,12 +214,10 @@ public class ModelPersistence {
 
       SModelUID importedModelUID = SModelUID.fromString(importedModelUIDString);
 
-      if (checkVersion) {
+      if (checkVersion && !(importedModelUID.equals(modelUID))) {
         SModelDescriptor importedModelDescriptor = SModelRepository.getInstance().getModelDescriptor(importedModelUID);
         if (importedModelDescriptor != null) {
-          File importedModelFile = importedModelDescriptor.getModelFile();
-          if (importedModelFile != null) {
-            int newVersion = readVersionFromFile(importedModelFile);
+            int newVersion = importedModelDescriptor.getVersion();
             if (newVersion > importedModelVersion) {
               System.err.println("new imported model version detected: model = " + model
                       + " imported model = " + importedModelUID + " current import version: " +
@@ -230,19 +229,21 @@ public class ModelPersistence {
                 t.printStackTrace();
               }
             }
-          }
         }
       }
 
-      model.addImportElement(importedModelUID, importIndex, importedModelVersion);
+      model.addImportElement(importedModelUID, importIndex);
     }
 
     if (logs.size() > 0) {
       ModelLogger modelLogger = new ModelLogger();
       for (LogInfo log : logs) {
-   //todo     modelLogger.playRefactoringSequence(log.myNode, document, log.myOldVersion, log.myNewVersion);
+        // todo test
+        modelLogger.playRefactoringSequence(log.myNode, document, log.myOldVersion, log.myNewVersion);
       }
-      return readModel(document, modelName, stereotype, false);
+      SModel sModel = readModel(document, modelName, stereotype, false);
+      SModelRepository.getInstance().markChanged(sModel, true);
+      return sModel;
     }
 
     // version & log
@@ -430,6 +431,14 @@ public class ModelPersistence {
     for (String languageNamespace : sourceModel.getExplicitlyImportedLanguages()) {
       Element languageElem = new Element(LANGUAGE);
       languageElem.setAttribute(NAMESPACE, languageNamespace);
+      int version = -1;
+      Language modelLanguage = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
+      if (modelLanguage != null) {
+        version = modelLanguage.getVersion();
+      }
+      if (version > -1) {
+        languageElem.setAttribute(VERSION, version+"");
+      }
       rootElement.addContent(languageElem);
     }
 
@@ -452,7 +461,12 @@ public class ModelPersistence {
       importElem.setAttribute(MODEL_IMPORT_INDEX, "" + importElement.getReferenceID());
       SModelUID modelUID = importElement.getModelUID();
       importElem.setAttribute(MODEL_UID, modelUID.toString());
-      int version = importElement.getVersion();
+
+      int version = -1;
+      SModelDescriptor importedModelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
+      if (importedModelDescriptor != null) {
+        version = importedModelDescriptor.getVersion();
+      }
       if (version > -1) {
         importElem.setAttribute(VERSION, version+"");
       }

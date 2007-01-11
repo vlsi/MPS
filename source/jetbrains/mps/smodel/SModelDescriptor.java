@@ -70,4 +70,6 @@ public interface SModelDescriptor {
   boolean isRemote();
 
   boolean isTransient();
+
+  int getVersion();
 }

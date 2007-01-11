@@ -438,4 +438,13 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   public void setTransient(boolean b) {
     myTransient = b;
   }
+
+
+  public int getVersion() {
+    if (mySModel == null) {
+      return myModelRootManager.getVersion(this);
+    } else {
+      return mySModel.getVersion();
+    }
+  }
 }

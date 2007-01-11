@@ -160,4 +160,8 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     modelDescriptor.getSModel();
     return modelDescriptor;
   }
+
+  public int getVersion(@NotNull SModelDescriptor modelDescriptor) {
+    return ModelPersistence.readVersionFromFile(modelDescriptor.getModelFile());
+  }
 }
