@@ -23,10 +23,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.util.QueryMethodGenerated;
 
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class TemplateGenUtil {
   private static final Logger LOG = Logger.getLogger(TemplateGenUtil.class);
@@ -772,6 +769,9 @@ public class TemplateGenUtil {
     try {
       return createNodeBuilder_impl(sourceNode, templateNode, mappingName, currentMacroIndex, generator);
     } catch (Exception e) {
+      if (e instanceof ReductionNotNeededException) {
+        throw (ReductionNotNeededException) e; //hack!
+      }
       LOG.error(e);
       generator.showErrorMessage(sourceNode, templateNode, "node builder creation failure: " + e.getClass().getName() + " " + e.getMessage());
     }
@@ -825,7 +825,9 @@ public class TemplateGenUtil {
         if (targetBuilderAspectMethodName != null) {
           String methodName = "templateTargetBuilder_" + targetBuilderAspectMethodName;
           Object[] args = new Object[]{sourceNode, templateNode, mappingName, generator};
-          builder = (INodeBuilder) QueryMethod.invoke(methodName, args, nodeMacro.getModel());
+          HashSet<Class<? extends RuntimeException>> rethrowSet = new HashSet<Class<? extends RuntimeException>>();
+          rethrowSet.add(ReductionNotNeededException.class);
+          builder = (INodeBuilder) QueryMethod.invoke(methodName, args, nodeMacro.getModel(), rethrowSet);
         }
       }
     }
