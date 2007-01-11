@@ -1,5 +1,8 @@
 package jetbrains.mps.vcs;
 
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
+
 public class SetPropertyChange extends Change {
   private String myNodeId;
   private String myProperty;
@@ -31,5 +34,26 @@ public class SetPropertyChange extends Change {
 
   public String getAffectedNodeId() {
     return myNodeId;
+  }
+
+  public boolean apply(SModel m) {
+    SNode n = m.getNodeById(myNodeId);
+    if (n == null) {
+      return false;
+    }
+
+    n.setProperty(getProperty(), getNewValue(), false);
+    return true;
+  }
+
+  public boolean conflicts(Change c) {
+    if (c instanceof SetPropertyChange) {
+      SetPropertyChange spp = (SetPropertyChange) c;
+      return spp.getNodeId().equals(getNodeId()) &&
+              spp.getProperty().equals(getProperty()) &&
+               !equals(spp.getNewValue(), getNewValue()); 
+    }
+
+    return false;
   }
 }

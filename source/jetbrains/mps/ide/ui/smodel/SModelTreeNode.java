@@ -60,6 +60,14 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     myLabel = label;
   }
 
+  public SModel getSModel() {
+    return myModelDescriptor.getSModel();
+  }
+
+  public SModelDescriptor getSModelDescriptor() {
+    return myModelDescriptor;
+  }
+
   public Icon getIcon(boolean expanded) {
     return IconManager.getIconFor(myModelDescriptor);
   }
@@ -75,7 +83,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   public JPopupMenu getPopupMenu() {
     JPopupMenu result = new JPopupMenu();
     ActionContext context = getActionContext();
-    context.put(SModelDescriptor.class, getSModelDescriptor());    
+    context.put(SModelDescriptor.class, getSModelDescriptor());
     ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_MODEL_ACTIONS).add(result, context);
     return result;
   }
@@ -97,10 +105,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return context;
   }
 
-  public SModelDescriptor getSModelDescriptor() {
-    return myModelDescriptor;
-  }
-
 
   public void keyPressed(KeyEvent keyEvent) {
     if (keyEvent.isAltDown() && keyEvent.getKeyCode() == KeyEvent.VK_INSERT) {
@@ -117,12 +121,12 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   public String getNodeIdentifier() {
-    return myModelDescriptor.getModelUID().toString();
+    return getSModel().getUID().toString();
   }
 
   public String toString() {
-    String name = myShowLongName ? myModelDescriptor.getModelUID().toString() 
-                                 : myModelDescriptor.getModelUID().getShortName();
+    String name = myShowLongName ? getSModel().getUID().toString()
+                                 : getSModel().getUID().getShortName();
 
     if (myLabel != null) {
       return myLabel + " : " + name;
@@ -131,7 +135,9 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   public Color getColor() {
-    if (myModelDescriptor.isInitialized() && SModelRepository.getInstance().isChanged(myModelDescriptor)) {
+    if (getSModelDescriptor() != null &&
+            getSModelDescriptor().isInitialized() &&
+                    SModelRepository.getInstance().isChanged(getSModelDescriptor())) {
       return new Color(0x00, 0x00, 0x90);
     }
 
@@ -149,11 +155,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
   public void init() {
     removeAllChildren();
-    /*  CommandProcessor.instance().executeCommand(new Runnable() {
- public void run() {*/
-    SModel model = myModelDescriptor.getSModel();
-    /*    }
-}, "loading model in project pane");*/
+    SModel model = getSModel();
 
     if (!model.hasSModelCommandListener(myModelListener)) {
       model.addSModelCommandListener(myModelListener);
@@ -192,7 +194,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   protected void dispose() {
-    myModelDescriptor.getSModel().removeSModelCommandListener(myModelListener);
+    getSModel().removeSModelCommandListener(myModelListener);
   }
 
   private class MyModelListener implements SModelCommandListener {

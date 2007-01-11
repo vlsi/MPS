@@ -1,6 +1,7 @@
 package jetbrains.mps.vcs;
 
 import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.SModel;
 
 public class SetReferenceChange extends Change {
   private String myNodeId;
@@ -38,6 +39,14 @@ public class SetReferenceChange extends Change {
 
   public String getAffectedNodeId() {
     return myNodeId;
+  }
+
+  public boolean apply(SModel m) {
+    throw new UnsupportedOperationException();
+  }
+
+  public boolean conflicts(Change c) {
+    return false;
   }
 }
 

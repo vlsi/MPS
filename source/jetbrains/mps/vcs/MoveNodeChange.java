@@ -1,5 +1,7 @@
 package jetbrains.mps.vcs;
 
+import jetbrains.mps.smodel.SModel;
+
 public class MoveNodeChange extends Change {
   private String myNodeId;
   private String myNewParent;
@@ -26,5 +28,13 @@ public class MoveNodeChange extends Change {
 
   public String getAffectedNodeId() {
     return myNodeId;
+  }
+
+  public boolean apply(SModel m) {
+    throw new UnsupportedOperationException();
+  }
+
+  public boolean conflicts(Change c) {
+    return false;
   }
 }

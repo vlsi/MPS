@@ -56,9 +56,9 @@ public class DiffBuilder {
 
       if (role != null) {
         if (!isToManyCardinality(sNode.getParent().getClass(), role)) {
-          myChanges.add(new SetNodeChange(sNode.getParent().getId(), id, role));
+          myChanges.add(new SetNodeChange(sNode.getClass().getName(), sNode.getParent().getId(), id, role));
         } else {
-          myChanges.add(new AddNodeChange(sNode.getParent().getId(), id, role));
+          myChanges.add(new AddNodeChange(sNode.getClass().getName(), sNode.getParent().getId(), id, role));
         }
       } else {
         myChanges.add(new AddRootChange(id));
