@@ -9,6 +9,7 @@ import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.smodel.languageLog.ModelLogger;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.WeakSet;
@@ -54,7 +55,6 @@ public class SModel implements Iterable<SNode> {
   private HashMap<Object, Object> myUserObjects = new HashMap<Object, Object>();
   private SNode myLog;
   private boolean myUsesLog;
-  private int myVersion;
 
   public SModel(@NotNull SModelUID modelUID) {
     addSModelListener(myEventTranslator);
@@ -106,12 +106,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public int getVersion() {
-    if (!myUsesLog) return -1;
-    return myVersion;
-  }
-
-  public void setVersion(int version) {
-    myVersion = version;
+    return new ModelLogger().getVersion(this);
   }
 
   public void setLog(SNode log) {

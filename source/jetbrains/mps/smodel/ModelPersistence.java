@@ -250,7 +250,6 @@ public class ModelPersistence {
     ArrayList<ReferencePersister> referenceDescriptors = new ArrayList<ReferencePersister>();
     String versionString = rootElement.getAttributeValue(VERSION);
     if (versionString != null) {
-      model.setVersion(Integer.parseInt(versionString));
       model.setUsesLog(true);
       Element logElement = rootElement.getChild(REFACTORING_LOG);
       if (logElement != null) {
