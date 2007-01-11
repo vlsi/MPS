@@ -140,7 +140,7 @@ public class ModelPersistence {
       LOG.error(e);
     }
 
-     List<LogInfo> logs = new ArrayList<LogInfo>();
+    List<LogInfo> logs = new ArrayList<LogInfo>();
     // languages
     List languages = rootElement.getChildren(LANGUAGE);
     for (Object language : languages) {
@@ -156,20 +156,20 @@ public class ModelPersistence {
         Language modelLanguage = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
         if (modelLanguage != null) {
           int newVersion = modelLanguage.getVersion();
-              if (newVersion > oldVersion) {
-              System.err.println("new language version detected: model = " + model
-                      + " language = " + languageNamespace + " current language version: " +
-                      oldVersion + " new version: " + newVersion);
-              try {
-                SModel structureModel = modelLanguage.getStructureModelDescriptor().getSModel();
-                logs.add(new LogInfo(structureModel.getLog(), oldVersion, newVersion));
-              } catch(Throwable t) {
-                t.printStackTrace();
-              }
+          if (newVersion > oldVersion) {
+            System.err.println("new language version detected: model = " + model
+                    + " language = " + languageNamespace + " current language version: " +
+                    oldVersion + " new version: " + newVersion);
+            try {
+              SModel structureModel = modelLanguage.getStructureModelDescriptor().getSModel();
+              logs.add(new LogInfo(structureModel.getLog(), oldVersion, newVersion, element));
+            } catch(Throwable t) {
+              t.printStackTrace();
             }
+          }
         }
       }
-        model.addLanguage(languageNamespace);
+      model.addLanguage(languageNamespace);
 
     }
 
@@ -188,12 +188,6 @@ public class ModelPersistence {
 
       String indexValue = element.getAttributeValue(MODEL_IMPORT_INDEX, element.getAttributeValue("referenceID"));
       int importIndex = Integer.parseInt(indexValue);
-
-      int importedModelVersion = -1;
-      String importedModelVersionValue = element.getAttributeValue(VERSION);
-      if (importedModelVersionValue != null) {
-        importedModelVersion = Integer.parseInt(importedModelVersionValue);
-      }
 
       String importedModelUIDString = element.getAttributeValue(MODEL_UID);
       if (importedModelUIDString == null) {
@@ -215,20 +209,25 @@ public class ModelPersistence {
       SModelUID importedModelUID = SModelUID.fromString(importedModelUIDString);
 
       if (checkVersion && !(importedModelUID.equals(modelUID))) {
+        int importedModelVersion = -1;
+        String importedModelVersionValue = element.getAttributeValue(VERSION);
+        if (importedModelVersionValue != null) {
+          importedModelVersion = Integer.parseInt(importedModelVersionValue);
+        }
         SModelDescriptor importedModelDescriptor = SModelRepository.getInstance().getModelDescriptor(importedModelUID);
         if (importedModelDescriptor != null) {
-            int newVersion = importedModelDescriptor.getVersion();
-            if (newVersion > importedModelVersion) {
-              System.err.println("new imported model version detected: model = " + model
-                      + " imported model = " + importedModelUID + " current import version: " +
-                      importedModelVersion + " new version: " + newVersion);
-              try {
-                SModel importedModel = SModelRepository.getInstance().getModelDescriptor(importedModelUID).getSModel();
-                logs.add(new LogInfo(importedModel.getLog(), importedModelVersion, newVersion));
-              } catch(Throwable t) {
-                t.printStackTrace();
-              }
+          int newVersion = importedModelDescriptor.getVersion();
+          if (newVersion > importedModelVersion) {
+            System.err.println("new imported model version detected: model = " + model
+                    + " imported model = " + importedModelUID + " current import version: " +
+                    importedModelVersion + " new version: " + newVersion);
+            try {
+              SModel importedModel = SModelRepository.getInstance().getModelDescriptor(importedModelUID).getSModel();
+              logs.add(new LogInfo(importedModel.getLog(), importedModelVersion, newVersion, element));
+            } catch(Throwable t) {
+              t.printStackTrace();
             }
+          }
         }
       }
 
@@ -240,6 +239,7 @@ public class ModelPersistence {
       for (LogInfo log : logs) {
         // todo test
         modelLogger.playRefactoringSequence(log.myNode, document, log.myOldVersion, log.myNewVersion);
+        log.myElement.setAttribute(VERSION, log.myNewVersion+"");
       }
       SModel sModel = readModel(document, modelName, stereotype, false);
       SModelRepository.getInstance().markChanged(sModel, true);
@@ -607,10 +607,12 @@ public class ModelPersistence {
     int myOldVersion;
     int myNewVersion;
     SNode myNode;
-    public LogInfo(SNode node, int oldVersion, int newVersion) {
+    Element myElement;
+    public LogInfo(SNode node, int oldVersion, int newVersion, Element element) {
       myNode = node;
       myOldVersion = oldVersion;
       myNewVersion = newVersion;
+      myElement = element;
     }
   }
 }
