@@ -370,5 +370,23 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1168502632000">
+    <property name="name" value="SortOperation" />
+    <link role="extends" targetNodeId="1160612356232" resolveInfo="AbstractListOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1168502800721">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="comparable" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1168502774204" resolveInfo="SortBlock" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1168503036201">
+      <property name="value" value="sort" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1168502774204">
+    <property name="name" value="SortBlock" />
+    <link role="extends" targetNodeId="1153509719989" resolveInfo="ClosureWithInputElement" />
+  </node>
 </model>
 

@@ -120,6 +120,9 @@
                     <node role="concept" type="jetbrains.mps.bootstrap.smodelLanguage.ConceptReference" id="1160673266146">
                       <link role="concept" targetNodeId="1.1153513461623" />
                     </node>
+                    <node role="concept" type="jetbrains.mps.bootstrap.smodelLanguage.ConceptReference" id="1168506952345">
+                      <link role="concept" targetNodeId="1.1168502774204" />
+                    </node>
                   </node>
                 </node>
               </node>

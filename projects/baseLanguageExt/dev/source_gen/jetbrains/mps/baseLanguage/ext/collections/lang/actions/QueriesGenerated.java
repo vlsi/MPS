@@ -13,7 +13,7 @@ import jetbrains.mps.typesystem.ITypeObject;
 public class QueriesGenerated {
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_1160672994889(SNode parentNode, IScope scope, IOperationContext operationContext) {
-    SNode block = SNodeOperations.getParentWhereConceptInList(parentNode, new String[]{"jetbrains.mps.baseLanguage.ext.collections.lang.structure.ValueSupplierBlock","jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapperBlock","jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachBlock"}, false, false);
+    SNode block = SNodeOperations.getParentWhereConceptInList(parentNode, new String[]{"jetbrains.mps.baseLanguage.ext.collections.lang.structure.ValueSupplierBlock","jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapperBlock","jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachBlock","jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortBlock"}, false, false);
     return block != null;
   }
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1161719130431(SNode sourceNode, IScope scope, IOperationContext operationContext) {
