@@ -55,9 +55,15 @@ public class DiffBuilder {
 
       if (role != null) {
         if (!isToManyCardinality(sNode.getParent().getClass(), role)) {
-          myChanges.add(new SetNodeChange(sNode.getClass().getName(), sNode.getParent().getId(), id, role));
+          myChanges.add(new SetNodeChange(sNode.getClass().getName(), id, role, sNode.getParent().getId()));
         } else {
-          myChanges.add(new AddNodeChange(sNode.getClass().getName(), sNode.getParent().getId(), id, role));
+          SNode prevChild = sNode.getParent().getPrevChild(sNode);
+          String prevId = null;
+          if (prevChild != null) {
+            prevId = prevChild.getId();
+          }
+
+          myChanges.add(new AddNodeChange(sNode.getClass().getName(), id, role, sNode.getParent().getId(), prevId));
         }
       } else {
         myChanges.add(new AddRootChange(sNode.getClass().getName(), id));
@@ -138,7 +144,7 @@ public class DiffBuilder {
           if (isToManyCardinality(newNode.getClass(), ref.getRole())) {
             myChanges.add(new AddReferenceChange(id, ref.getRole(), ref.getTargetModelUID(), ref.getTargetNodeId()));
           } else {
-            myChanges.add(new SetReferenceChange(id, ref.getRole(), ref.getTargetModelUID(), ref.getTargetNodeId()));
+            myChanges.add(new SetReferenceChange(id, ref.getRole(), new SNodeProxy(ref.getTargetNode())));
           }
         }
       } else {
@@ -147,7 +153,7 @@ public class DiffBuilder {
         for (String role : roles) {
           if (!isToManyCardinality(newNode.getClass(), role)) {
             if (oldNode.getReferences(role).size() != 0 && newNode.getReferences(role).size() == 0) {
-              myChanges.add(new SetReferenceChange(id, role, null, null));
+              myChanges.add(new SetReferenceChange(id, role, null));
             } else {
 
             }            

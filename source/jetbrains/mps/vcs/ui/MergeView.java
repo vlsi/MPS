@@ -7,19 +7,17 @@ import javax.swing.JPanel;
 import java.awt.GridLayout;
 
 public class MergeView extends JPanel {
-  private SModel myBaseModel;
-  private SModel myChange1;
-  private SModel myChange2;
+  private MergeResultView myMergeResult;
  
   public MergeView(SModel baseModel, SModel change1, SModel change2) {
-    myBaseModel = baseModel;
-    myChange1 = change1;
-    myChange2 = change2;
-
     setLayout(new GridLayout(1, 3));
 
     add(new ModelDifferenceView().showDifference(baseModel, change1));
     add(new ModelDifferenceView().showDifference(baseModel, change2));
-    add(new JPanel());
+    add(myMergeResult = new MergeResultView(baseModel, change1, change2));
+  }
+
+  public void saveMergeResult() {
+    myMergeResult.saveMergeResult();
   }
 }

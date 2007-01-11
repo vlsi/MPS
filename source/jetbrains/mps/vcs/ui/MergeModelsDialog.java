@@ -19,17 +19,17 @@ public class MergeModelsDialog extends BaseDialog {
 
 
   public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
-    return new DialogDimensionsSettings.DialogDimensions(100, 100, 800, 600);
+    return new DialogDimensionsSettings.DialogDimensions(10, 10, 1000, 900);
   }
 
   protected JComponent getMainComponent() {
     return myMergeView;
   }
 
-
   @BaseDialog.Button(position = 0, name = "OK", defaultButton = true)
   public void ok() {
-    dispose();    
+    myMergeView.saveMergeResult();
+    dispose();
   }
 
 

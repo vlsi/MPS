@@ -2,18 +2,18 @@ package jetbrains.mps.vcs;
 
 import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNodeProxy;
+import jetbrains.mps.smodel.SNode;
 
 public class SetReferenceChange extends Change {
   private String myNodeId;
   private String myRole;
-  private SModelUID myTargetModelUID;
-  private String myTargetNodeId;
+  private SNodeProxy myProxy;
 
-  public SetReferenceChange(String nodeId, String role, SModelUID targetUID, String targetId) {
+  public SetReferenceChange(String nodeId, String role, SNodeProxy node) {
     myNodeId = nodeId;
     myRole = role;
-    myTargetModelUID = targetUID;
-    myTargetNodeId = targetId;
+    myProxy = node;
   }
 
   public String getNodeId() {
@@ -25,24 +25,29 @@ public class SetReferenceChange extends Change {
   }
 
 
-  public SModelUID getTargetModelUID() {
-    return myTargetModelUID;
+  public SNodeProxy getProxy() {
+    return myProxy;
   }
 
-  public String getTargetNodeId() {
-    return myTargetNodeId;
-  }
 
   public String toString() {
-    return "set reference " + myNodeId + " in role " + myRole + " to " + myTargetNodeId + "@" + myTargetModelUID;
+    return "set reference " + myNodeId + " in role " + myRole + " to " + myProxy;
   }
 
   public String getAffectedNodeId() {
     return myNodeId;
   }
 
-  public boolean apply(SModel m) {
-    throw new UnsupportedOperationException();
+  public boolean apply(SModel m) {    
+    SNode node = m.getNodeById(myNodeId);
+    if (node != null) {
+      if (myProxy == null) {
+        node.setReferent(getRole(), null);
+      } else {
+        node.setReferent(getRole(), myProxy.getNode());
+      }
+    }
+    return true;
   }
 
   public boolean conflicts(Change c) {

@@ -19,6 +19,7 @@ import javax.swing.JSplitPane;
 import javax.swing.tree.TreeNode;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -57,10 +58,10 @@ public class ModelDifferenceView extends JPanel {
     JSplitPane splitter = new JSplitPane(JSplitPane.VERTICAL_SPLIT,
             new JScrollPane(myModelTree),
             new JScrollPane(myChangesTree));
-
-    updateView();
-
+    splitter.setDividerLocation(500);
+    
     add(splitter, BorderLayout.CENTER);
+    updateView();
   }
 
   public ModelDifferenceView showDifference(SModel oldModel, SModel newModel) {
@@ -206,10 +207,6 @@ public class ModelDifferenceView extends JPanel {
 
     public JPopupMenu getPopupMenu() {
       return null;
-    }
-
-    public void init() {
-      super.init();
     }
   }
 

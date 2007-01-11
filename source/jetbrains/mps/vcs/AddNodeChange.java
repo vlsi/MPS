@@ -4,51 +4,44 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.ModelPersistence;
 import jetbrains.mps.smodel.SNode;
 
-public class AddNodeChange extends Change {
-  private String myNodeId;
-  private String myParentId;
-  private String myRole;
-  private String myNodeType;
+public class AddNodeChange extends NewNodeChange {
 
-  public AddNodeChange(String nodeType, String parentId, String nodeId, String role) {
-    myNodeType = nodeType;
-    myParentId = parentId;
-    myNodeId = nodeId;
-    myRole = role;
+  private String myPreviousNode;
+
+  public AddNodeChange(String nodeType, String nodeId, String role, String parentId, String prevNode) {
+    super(nodeType, nodeId, role, parentId);
+    myPreviousNode = prevNode;
   }
 
-  public String getNodeType() {
-    return myNodeType;
-  }
 
-  public String getParentId() {
-    return myParentId;
-  }
-
-  public String getNodeId() {
-    return myNodeId;
-  }
-
-  public String getRole() {
-    return myRole;
+  public String getPreviousNode() {
+    return myPreviousNode;
   }
 
   public String toString() {
-    return "add node  " + myNodeId + " in role " + myRole;
-  }
-
-  public String getAffectedNodeId() {
-    return myNodeId;
+    return "add node  " + getNodeId() + " in role " + getNodeRole() + " before " + getPreviousNode();
   }
 
   public boolean apply(SModel m) {
-    SNode parent = m.getNodeById(myParentId);
+    SNode parent = m.getNodeById(getNodeParent());
     if (parent == null) {
       return false;
     }
+
+    String prevNode = getPreviousNode();
+    SNode prev = null;
+    if (prevNode != null) {
+      prev = m.getNodeById(prevNode);
+      if (prev == null) {
+        return false;
+      }
+    }
+
     SNode n = ModelPersistence.createNodeInstance(getNodeType(), m);
     assert n != null;
-    parent.addChild(myRole, n);
+    n.setId(getNodeId());
+    
+    parent.insertChild(prev, getNodeRole(), n);
     return true;
   }
 

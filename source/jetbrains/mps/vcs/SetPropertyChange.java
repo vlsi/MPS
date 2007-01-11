@@ -42,7 +42,8 @@ public class SetPropertyChange extends Change {
       return false;
     }
 
-    n.setProperty(getProperty(), getNewValue(), false);
+    n.setProperty(getProperty(), getNewValue());
+
     return true;
   }
 

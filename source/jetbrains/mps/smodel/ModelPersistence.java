@@ -125,7 +125,7 @@ public class ModelPersistence {
       modelLongName = NameUtil.longNameFromNamespaceAndShortName(modelNamespace, modelName);
     } else {
       String shortName = NameUtil.shortNameFromLongName(modelLongName);
-      LOG.assertLog(shortName.equals(modelName));
+//      LOG.assertLog(shortName.equals(modelName));  todo commented out temporary 
     }
 
     SModelUID modelUID = new SModelUID(modelLongName, stereotype);

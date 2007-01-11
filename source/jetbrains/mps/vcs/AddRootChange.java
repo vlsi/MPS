@@ -4,34 +4,19 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelPersistence;
 
-public class AddRootChange extends Change {
-  private String myNodeId;
-  private String myType;
-
+public class AddRootChange extends NewNodeChange {
   public AddRootChange(String type, String nodeId) {
-    myType = type;
-    myNodeId = nodeId;
-  }
-
-  public String getNodeType() {
-    return myType;
-  }
-
-  public String getNodeId() {
-    return myNodeId;
+    super(type, nodeId, null, null);
   }
 
   public String toString() {
-    return "add root " + myNodeId;
-  }
-
-  public String getAffectedNodeId() {
-    return myNodeId;
+    return "add root " + getNodeId();
   }
 
   public boolean apply(SModel m) {
     SNode n = ModelPersistence.createNodeInstance(getNodeType(), m);
     assert n != null;
+    n.setId(getNodeId());
     m.addRoot(n);
     return true;
 
