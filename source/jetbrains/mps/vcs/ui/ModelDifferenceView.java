@@ -1,4 +1,4 @@
-package jetbrains.mps.vcs;
+package jetbrains.mps.vcs.ui;
 
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -10,12 +10,12 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.CollectionUtil;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.vcs.*;
 
 import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
-import javax.swing.JPopupMenu;
 import javax.swing.tree.TreeNode;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -29,7 +29,7 @@ public class ModelDifferenceView extends JPanel {
       if (myNewModel == null) {
         return new TextTreeNode("No Model To Display");
       } else {
-        return new MySModelTreeNode(myNewModel.getModelDescriptor(), "", myContext);
+        return new MySModelTreeNode(myNewModel, "", null);
       }
     }
   };
@@ -47,8 +47,6 @@ public class ModelDifferenceView extends JPanel {
   private Set<String> myChangedNodes = new HashSet<String>();
   private Set<String> myAddedNodes = new HashSet<String>();
 
-  private IOperationContext myContext;
-
 //  private SModel myOldModel;
   private SModel myNewModel;
   private List<Change> myChanges;
@@ -65,11 +63,10 @@ public class ModelDifferenceView extends JPanel {
     add(splitter, BorderLayout.CENTER);
   }
 
-  public void showDifference(IOperationContext context, SModel oldModel, SModel newModel) {
+  public ModelDifferenceView showDifference(SModel oldModel, SModel newModel) {
     myNewModel = newModel;
-    myContext = context;
 
-    DiffBuilder builder = new DiffBuilder(context, oldModel, newModel);
+    DiffBuilder builder = new DiffBuilder(oldModel, newModel);
     List<Change> changes = builder.getChanges();
     myChanges = changes;
 
@@ -98,6 +95,12 @@ public class ModelDifferenceView extends JPanel {
     }
 
     updateView();
+
+    for (Change c : changes) {
+      expandNode(c.getAffectedNodeId());      
+    }
+
+    return this;
   }
 
   private void updateView() {
@@ -170,9 +173,21 @@ public class ModelDifferenceView extends JPanel {
     return changes;
   }
 
+  private void expandNode(String affectedNode) {
+    SNode node = myNewModel.getNodeById(affectedNode);
+    if (node != null) {
+      TreeNode tn = myModelTree.findNodeWith(node);
+
+      myModelTree.selectNode(tn);
+    }
+  }
+
   private class MySModelTreeNode extends SModelTreeNode {
-    public MySModelTreeNode(@NotNull SModelDescriptor modelDescriptor, String label, IOperationContext operationContext) {
-      super(modelDescriptor, label, operationContext);
+    private SModel myModel;
+
+    public MySModelTreeNode(SModel model, String label, IOperationContext operationContext) {
+      super(null, label, operationContext);
+      myModel = model;
     }
 
     public SNodeTreeNode createSNodeTreeNode(SNode node, String role, IOperationContext operationContext) {
@@ -180,6 +195,14 @@ public class ModelDifferenceView extends JPanel {
     }
 
 
+    public SModel getSModel() {
+      return myModel;
+    }
+
+
+    public SModelDescriptor getSModelDescriptor() {
+      return null;
+    }
 
     public JPopupMenu getPopupMenu() {
       return null;
@@ -230,12 +253,7 @@ public class ModelDifferenceView extends JPanel {
 
     public void doubleClick() {
       String affectedNode = myChange.getAffectedNodeId();
-      SNode node = myNewModel.getNodeById(affectedNode);
-      if (node != null) {
-        TreeNode tn = myModelTree.findNodeWith(node);
-
-        myModelTree.selectNode(tn);
-      }
+      expandNode(affectedNode);
     }
 
     public boolean isLeaf() {

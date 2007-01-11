@@ -443,6 +443,11 @@ public abstract class MPSTree extends JTree {
     String[] components = pathString.split(TREE_PATH_SEPARATOR);
     List<Object> path = new ArrayList<Object>();
     MPSTreeNode current = getRootNode();
+
+    if (!current.isInitialized()) {
+      current.init();
+    }
+
     path.add(current);
 
     for (int j = 0; j < components.length; j++) {

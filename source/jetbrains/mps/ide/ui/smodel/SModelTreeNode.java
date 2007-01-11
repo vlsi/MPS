@@ -1,13 +1,12 @@
 package jetbrains.mps.ide.ui.smodel;
 
 import jetbrains.mps.annotations.AttributeConcept;
-import jetbrains.mps.ide.AbstractProjectFrame;
-import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionGroup;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.actions.model.CreateRootNodeGroup;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.SortUtil;
 import jetbrains.mps.ide.ui.MPSTree;
@@ -19,7 +18,6 @@ import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ToStringComparator;
-import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import javax.swing.JPopupMenu;
@@ -44,13 +42,13 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   private MyModelListener myModelListener = new MyModelListener();
   private boolean myShowLongName;
 
-  public SModelTreeNode(@NotNull SModelDescriptor modelDescriptor,
+  public SModelTreeNode(SModelDescriptor modelDescriptor,
                         String label,
                         IOperationContext operationContext) {
     this(modelDescriptor, label, operationContext, true);
   }
 
-  public SModelTreeNode(@NotNull SModelDescriptor modelDescriptor,
+  public SModelTreeNode(SModelDescriptor modelDescriptor,
                         String label,
                         IOperationContext operationContext,
                         boolean showLongName) {
@@ -69,7 +67,11 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   public Icon getIcon(boolean expanded) {
-    return IconManager.getIconFor(myModelDescriptor);
+    if (getSModelDescriptor() != null) {
+      return IconManager.getIconFor(getSModelDescriptor());
+    } else {
+      return Icons.MODEL_ICON;
+    }
   }
 
   public SNodeTreeNode createSNodeTreeNode(SNode node, IOperationContext operationContext) {
@@ -170,16 +172,12 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       MPSTreeNodeEx treeNode = createSNodeTreeNode(sortedRoot, getOperationContext());
       add(treeNode);
     }
-    IDEProjectFrame projectFrame = (IDEProjectFrame) getOperationContext().getComponent(AbstractProjectFrame.class);
     DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
     treeModel.nodeStructureChanged(this);
     myInitialized = true;
   }
 
   private boolean showPropertiesAndReferences() {
-
-//    System.out.println("getTree = " + getTree());
-
     return getTree() instanceof ProjectPane.MyTree &&
             getOperationContext().getComponent(ProjectPane.class).isShowPropertiesAndReferences();
   }
@@ -274,7 +272,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
     private void updateChangedProperties(Set<SNode> nodesWithChangedProperties) {
       DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
-      final List<SNode> allRoots = new ArrayList<SNode>(getSModelDescriptor().getSModel().getRoots());
+      final List<SNode> allRoots = new ArrayList<SNode>(getSModel().getRoots());
       Collections.sort(allRoots, new ToStringComparator());
       for (SNode node : nodesWithChangedProperties) {
         SNodeTreeNode treeNode = (SNodeTreeNode) findExactChildWith(node);
@@ -340,7 +338,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
         treeModel.removeNodeFromParent(node);
       }
 
-      final List<SNode> allRoots = new ArrayList<SNode>(getSModelDescriptor().getSModel().getRoots());
+      final List<SNode> allRoots = new ArrayList<SNode>(getSModel().getRoots());
       Collections.sort(allRoots, new ToStringComparator());
 
       List<SNode> added = new ArrayList<SNode>(addedRoots);

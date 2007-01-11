@@ -3,6 +3,7 @@ package jetbrains.mps.vcs;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.Cardinality;
+import jetbrains.mps.project.GlobalScope;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,15 +13,13 @@ import java.util.HashSet;
 public class DiffBuilder {
   private SModel myOldModel;
   private SModel myNewModel;
-  private IOperationContext myContext;
 
   private List<Change> myChanges = new ArrayList<Change>();
 
 
-  public DiffBuilder(IOperationContext ctx, SModel oldModel, SModel newModel) {
+  public DiffBuilder(SModel oldModel, SModel newModel) {
     myOldModel = oldModel;
     myNewModel = newModel;
-    myContext = ctx;
 
     collectChanges();
   }
@@ -61,7 +60,7 @@ public class DiffBuilder {
           myChanges.add(new AddNodeChange(sNode.getClass().getName(), sNode.getParent().getId(), id, role));
         }
       } else {
-        myChanges.add(new AddRootChange(id));
+        myChanges.add(new AddRootChange(sNode.getClass().getName(), id));
       }
     }
   }
@@ -162,7 +161,7 @@ public class DiffBuilder {
   }
 
   private boolean isToManyCardinality(Class cls, String role) {
-    LinkDeclaration ld = SModelUtil.findLinkDeclaration(cls, role, myContext.getScope());
+    LinkDeclaration ld = SModelUtil.findLinkDeclaration(cls, role, GlobalScope.getInstance());
     if (ld == null) {
       return true;
     }

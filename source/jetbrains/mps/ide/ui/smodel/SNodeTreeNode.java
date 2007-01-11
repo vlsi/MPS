@@ -97,8 +97,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
       add(getSModelModelTreeNode().createSNodeTreeNode(childNode, childNode.getRole_(), getOperationContext()));
     }
 
-    IDEProjectFrame projectFrame = (IDEProjectFrame) getOperationContext().getComponent(AbstractProjectFrame.class);
-    DefaultTreeModel treeModel = (DefaultTreeModel)projectFrame.getProjectPane().getTree().getModel();
+    DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
     treeModel.nodeStructureChanged(this);
     myInitialized = true;
   }
