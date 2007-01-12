@@ -6,11 +6,13 @@ import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
+import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.util.CollectionUtil;
 
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
+import javax.swing.JSplitPane;
 import java.util.*;
 import java.awt.BorderLayout;
 
@@ -18,6 +20,21 @@ public class MergeResultView extends JPanel {
   private MPSTree myResultTree = new MPSTree() {
     protected MPSTreeNode rebuild() {
       return new MySModelTreeNode(myResultModel, "", null);
+    }
+  };
+
+  private MPSTree myConflictsTree = new MPSTree() {
+    protected MPSTreeNode rebuild() {
+
+      if (myConflicts.isEmpty()) {
+        return new TextTreeNode("No Conflicts");
+      } else {
+        TextTreeNode root = new TextTreeNode("Conflicts");
+        for (Conflict c : myConflicts) {
+          root.add(new ConflictNode(c));
+        }
+        return root;
+      }
     }
   };
 
@@ -29,6 +46,7 @@ public class MergeResultView extends JPanel {
   private List<Change> myDelta2;
 
   private Set<Change> myExcludedChanges = new HashSet<Change>();
+  private List<Conflict> myConflicts = new ArrayList<Conflict>();
 
   private SModel myResultModel;
 
@@ -40,42 +58,52 @@ public class MergeResultView extends JPanel {
     myDelta1 = new DiffBuilder(myBaseModel, myChange1).getChanges();
     myDelta2 = new DiffBuilder(myBaseModel, myChange2).getChanges();
 
-    rebuildResultModel();
+    rebuildData();
 
     setLayout(new BorderLayout());
-    add(new JScrollPane(myResultTree), BorderLayout.CENTER);
+
+    JSplitPane splitter =
+            new JSplitPane(JSplitPane.VERTICAL_SPLIT, new JScrollPane(myResultTree), new JScrollPane(myConflictsTree));
+
+    splitter.setDividerLocation(300);
+
+    add(splitter, BorderLayout.CENTER);
   }
 
 
   public void updateView() {
     myResultTree.rebuildTree();
     myResultTree.expandRoot();
+
+    myConflictsTree.rebuildTree();
+    myConflictsTree.expandRoot();
   }
 
-  private void rebuildResultModel() {
-    myResultModel = ModelPersistence.refreshModel(myBaseModel);
+  private void rebuildData() {
+    myExcludedChanges.clear();
+    collectConflicts();
 
-
-    myResultModel.setLoading(true);
-
-    applyNewNodes();
-    applyProperties();
-    applyReferences();
-    applyDeletes();
-
-    myResultModel.setLoading(false);
+    rebuldResultModel();
 
     updateView();
   }
 
+  private void rebuldResultModel() {
+    myResultModel = ModelPersistence.refreshModel(myBaseModel);
+    myResultModel.setLoading(true);
+    applyNewNodes();
+    applyProperties();
+    applyReferences();
+    applyDeletes();
+    myResultModel.setLoading(false);
+  }
+
   private void applyNewNodes() {
-    List<NewNodeChange> newNodeChanges = new ArrayList<NewNodeChange>();
-    newNodeChanges.addAll(CollectionUtil.filter(NewNodeChange.class, myDelta1));
-    newNodeChanges.addAll(CollectionUtil.filter(NewNodeChange.class, myDelta2));
+    List<NewNodeChange> newNodeChanges = getChanges(NewNodeChange.class);
 
     Map<String, NewNodeChange> changesMap = new HashMap<String, NewNodeChange>();
     for (NewNodeChange c : newNodeChanges) {
-      changesMap.put(c.getAffectedNodeId(), c);
+      changesMap.put(c.getNodeId(), c);
     }
 
     for (NewNodeChange c : newNodeChanges) {
@@ -119,10 +147,7 @@ public class MergeResultView extends JPanel {
   }
 
   private void applyProperties() {
-    List<SetPropertyChange> sets = new ArrayList<SetPropertyChange>();
-    sets.addAll(CollectionUtil.filter(SetPropertyChange.class, myDelta1));
-    sets.addAll(CollectionUtil.filter(SetPropertyChange.class, myDelta2));
-
+    List<SetPropertyChange> sets = getChanges(SetPropertyChange.class);
     for (SetPropertyChange sp : sets) {
       boolean result = sp.apply(myResultModel);
       assert result;
@@ -130,10 +155,7 @@ public class MergeResultView extends JPanel {
   }
 
   private void applyReferences() {
-    List<SetReferenceChange> refs = new ArrayList<SetReferenceChange>();
-    refs.addAll(CollectionUtil.filter(SetReferenceChange.class, myDelta1));
-    refs.addAll(CollectionUtil.filter(SetReferenceChange.class, myDelta2));
-
+    List<SetReferenceChange> refs = getChanges(SetReferenceChange.class);
     for (SetReferenceChange ref : refs) {
       boolean result = ref.apply(myResultModel);
       assert result;
@@ -142,12 +164,62 @@ public class MergeResultView extends JPanel {
   }
 
   private void applyDeletes() {
-    List<DeleteNodeChange> deletes = new ArrayList<DeleteNodeChange>();
-    deletes.addAll(CollectionUtil.filter(DeleteNodeChange.class, myDelta1));
-    deletes.addAll(CollectionUtil.filter(DeleteNodeChange.class, myDelta2));
+    List<DeleteNodeChange> deletes = getChanges(DeleteNodeChange.class);
 
     for (DeleteNodeChange del : deletes) {
       del.apply(myResultModel);      
+    }
+  }
+
+  private void collectConflicts() {
+    myConflicts.clear();
+
+    collectSetConflicts(SetPropertyChange.class);
+    collectSetConflicts(SetReferenceChange.class);
+    collectSetNodeConflicts();
+  }
+
+  private<C extends Change> void collectSetConflicts(Class<C> cls) {
+    Map<String, Set<C>> changes = new HashMap<String, Set<C>>();
+
+    List<C> sets = getChanges(cls);
+
+    for (C spc : sets) {
+      if (changes.get(spc.getAffectedNodeId()) == null) {
+        changes.put(spc.getAffectedNodeId(), new HashSet<C>());
+      }
+
+      changes.get(spc.getAffectedNodeId()).add(spc);
+    }
+
+    for (String id : changes.keySet()) {
+      if (changes.get(id).size() > 1) {
+        List<C> cs = new ArrayList<C>(changes.get(id));
+        assert cs.size() == 2;
+        myConflicts.add(new Conflict(cs.get(0), cs.get(1)));
+      }
+    }
+  }
+
+  private void collectSetNodeConflicts() {
+    Map<String, Set<SetNodeChange>> changes = new HashMap<String, Set<SetNodeChange>>();
+
+    List<SetNodeChange> sets = getChanges(SetNodeChange.class);
+
+    for (SetNodeChange spc : sets) {
+      if (changes.get(spc.getNodeParent()) == null) {
+        changes.put(spc.getNodeParent(), new HashSet<SetNodeChange>());
+      }
+
+      changes.get(spc.getNodeParent()).add(spc);
+    }
+
+    for (String id : changes.keySet()) {
+      if (changes.get(id).size() > 1) {
+        List<SetNodeChange> cs = new ArrayList<SetNodeChange>(changes.get(id));
+        assert cs.size() == 2;
+        myConflicts.add(new Conflict(cs.get(0), cs.get(1)));
+      }
     }
   }
 
@@ -155,6 +227,14 @@ public class MergeResultView extends JPanel {
   public SModel getResult() {
     return myResultModel;
   }
+
+  private<C extends Change> List<C> getChanges(Class<C> changeClass) {
+    List<C> result = new ArrayList<C>();
+    result.addAll(CollectionUtil.filter(changeClass, myDelta1));
+    result.addAll(CollectionUtil.filter(changeClass, myDelta2));
+    return result;
+  }
+
 
   private class MySNodeTreeNode extends SNodeTreeNode {
     public MySNodeTreeNode(SNode node, String role, IOperationContext operationContext) {
@@ -190,6 +270,24 @@ public class MergeResultView extends JPanel {
 
     public JPopupMenu getPopupMenu() {
       return null;
+    }
+  }
+
+
+  private class ConflictNode extends MPSTreeNode {
+    private Conflict myConflict;
+
+    public ConflictNode(Conflict conflict) {
+      super(null);
+      myConflict = conflict;
+
+      add(new TextTreeNode("" + conflict.getC1()));
+      add(new TextTreeNode("" + conflict.getC2()));
+    }
+
+
+    public String getNodeIdentifier () {
+      return "Conflict";
     }
   }
 }
