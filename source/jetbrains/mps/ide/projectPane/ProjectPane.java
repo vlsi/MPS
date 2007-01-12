@@ -556,10 +556,11 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
         update(context);
         if (!isEnabled()) return;
         final ConceptDeclaration[] node = new ConceptDeclaration[1];
+        final ConceptDeclaration conceptConcept = SModelUtil.findConceptDeclaration(ConceptDeclaration.class, context.getScope());
         CommandProcessor.instance().executeCommand(new Runnable() {
           public void run() {
             SModel model = myModel.getSModel();
-            node[0] = ConceptDeclaration.newInstance(model);
+            node[0] = (ConceptDeclaration) NodeFactoryManager.createNode(conceptConcept, null, null, model, context.getScope());
             model.addRoot(node[0]);
           }
         });
