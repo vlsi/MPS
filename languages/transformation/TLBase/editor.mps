@@ -4338,5 +4338,19 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapDeclaration" id="1168620373595">
+    <property name="name" value="RootTemplateAnnotation_KeyMap" />
+    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1168620555235">
+      <property name="showInPopup" value="true" />
+      <property name="description" value="add root template annotation" />
+      <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1168620555236">
+        <property name="modifiers" value="ctrl+shift" />
+        <property name="keycode" value="VK_H" />
+      </node>
+      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_ExecuteFunction" id="1168620555237">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1168620555238" />
+      </node>
+    </node>
+  </node>
 </model>
 
