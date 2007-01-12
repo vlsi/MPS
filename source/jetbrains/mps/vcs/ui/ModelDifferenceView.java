@@ -19,7 +19,6 @@ import javax.swing.JSplitPane;
 import javax.swing.tree.TreeNode;
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -201,6 +200,9 @@ public class ModelDifferenceView extends JPanel {
     }
 
 
+    public void doubleClick() {      
+    }
+
     public SModelDescriptor getSModelDescriptor() {
       return null;
     }
@@ -218,6 +220,10 @@ public class ModelDifferenceView extends JPanel {
 
     public JPopupMenu getPopupMenu() {
       return null; 
+    }
+
+
+    public void doubleClick() {
     }
 
     public Color getColor() {

@@ -74,12 +74,23 @@ public class SReference {
 
   protected SNode getTargetNode_impl() {
     SModel model;
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(myTargetModelUID);
-    if (modelDescriptor == null) {
-      logGetTargetNodeErrors(GetTargetNodeErrorState.NO_MODEL_DESCRIPTOR);
+
+
+    if (mySourceNode.getModel().getUID().equals(myTargetModelUID)) {
+      // DO NOT REMOVE THIS CODE
+      // it needed in merge view. In this view we create models in air
+      // and it's possible that a couple of models with the same uid
+      // will be loaded. So we have to resolve internal references only
+      // internally
       model = mySourceNode.getModel();
     } else {
-      model = modelDescriptor.getSModel();
+      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(myTargetModelUID);
+      if (modelDescriptor == null) {
+        logGetTargetNodeErrors(GetTargetNodeErrorState.NO_MODEL_DESCRIPTOR);
+        model = mySourceNode.getModel();
+      } else {
+        model = modelDescriptor.getSModel();
+      }
     }
     
     SModel sourceModel = mySourceNode.getModel();

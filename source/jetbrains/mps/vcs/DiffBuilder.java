@@ -130,7 +130,7 @@ public class DiffBuilder {
     }
   }
 
-  private void collectReferenceChanges() {
+  private void collectReferenceChanges() {    
     Set<String> newNodeIds = myNewModel.getNodeIds();
 
     for (String id : newNodeIds) {
@@ -144,7 +144,7 @@ public class DiffBuilder {
           if (isToManyCardinality(newNode.getClass(), ref.getRole())) {
             myChanges.add(new AddReferenceChange(id, ref.getRole(), ref.getTargetModelUID(), ref.getTargetNodeId()));
           } else {
-            myChanges.add(new SetReferenceChange(id, ref.getRole(), new SNodeProxy(ref.getTargetNode())));
+            myChanges.add(new SetReferenceChange(id, ref.getRole(), myNewModel, ref.getTargetNode()));
           }
         }
       } else {
@@ -153,10 +153,12 @@ public class DiffBuilder {
         for (String role : roles) {
           if (!isToManyCardinality(newNode.getClass(), role)) {
             if (oldNode.getReferences(role).size() != 0 && newNode.getReferences(role).size() == 0) {
-              myChanges.add(new SetReferenceChange(id, role, null));
+              myChanges.add(new SetReferenceChange(id, role, myNewModel, null));
             } else {
-
-            }            
+              if (!getTargetId(newNode.getReference(role)).equals(getTargetId(oldNode.getReference(role)))) {
+                myChanges.add(new SetReferenceChange(id, role, myNewModel, newNode.getReferent(role)));
+              }
+            }
           } else {
             System.out.println("not supported!");
             isToManyCardinality(newNode.getClass(), role);
@@ -164,6 +166,12 @@ public class DiffBuilder {
         }
       }
     }
+  }
+
+  private String getTargetId(SReference ref) {
+    SNode tn = ref.getTargetNode();
+    if (tn == null) return null;
+    return tn.getId();
   }
 
   private boolean isToManyCardinality(Class cls, String role) {

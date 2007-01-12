@@ -735,6 +735,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1136916976737">
     <property name="name" value="CellKeyMapKeystroke" />
+    <link role="extends" targetNodeId="1168600538776" resolveInfo="DEF" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1136923970223">
       <property name="propertyType" value="string" />
       <property name="name" value="modifiers" />
@@ -1785,7 +1786,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1166049232041">
     <property name="name" value="AbstractComponent" />
-    <link role="extends" targetNodeId="3.1078489098625" />
+    <link role="extends" targetNodeId="1168601088497" resolveInfo="DEF" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1166049251808">
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" />
     </node>

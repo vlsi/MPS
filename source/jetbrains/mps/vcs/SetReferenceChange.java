@@ -1,19 +1,32 @@
 package jetbrains.mps.vcs;
 
-import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNodeProxy;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeProxy;
 
 public class SetReferenceChange extends Change {
   private String myNodeId;
   private String myRole;
   private SNodeProxy myProxy;
 
-  public SetReferenceChange(String nodeId, String role, SNodeProxy node) {
+  private SModel myModel;
+
+  private boolean myInternal;
+  private String myTargetId;
+
+  public SetReferenceChange(String nodeId, String role, SModel model, SNode target) {
     myNodeId = nodeId;
     myRole = role;
-    myProxy = node;
+    myModel = model;
+
+
+    if (target == null || target.getModel() != model) {
+      myInternal = false;
+      myProxy = new SNodeProxy(target);
+    } else {
+      myInternal = true;
+      myTargetId = target.getId();
+    }
   }
 
   public String getNodeId() {
@@ -31,7 +44,11 @@ public class SetReferenceChange extends Change {
 
 
   public String toString() {
-    return "set reference " + myNodeId + " in role " + myRole + " to " + myProxy;
+    if (!myInternal) {
+      return "set reference " + myNodeId + " in role " + myRole + " to " + myProxy;
+    } else {
+      return "set reference " + myNodeId + " in role " + myRole + " to " + myModel.getNodeById(myTargetId);
+    }
   }
 
   public String getAffectedNodeId() {
@@ -41,10 +58,15 @@ public class SetReferenceChange extends Change {
   public boolean apply(SModel m) {    
     SNode node = m.getNodeById(myNodeId);
     if (node != null) {
-      if (myProxy == null) {
-        node.setReferent(getRole(), null);
+      if (myInternal) {
+        SNode target = m.getNodeById(myTargetId);
+        node.setReferent(getRole(), target);
       } else {
-        node.setReferent(getRole(), myProxy.getNode());
+        if (myProxy == null) {
+          node.setReferent(getRole(), null);
+        } else {
+          node.setReferent(getRole(), myProxy.getNode());
+        }
       }
     }
     return true;

@@ -65,7 +65,7 @@ public class MergeResultView extends JPanel {
     JSplitPane splitter =
             new JSplitPane(JSplitPane.VERTICAL_SPLIT, new JScrollPane(myResultTree), new JScrollPane(myConflictsTree));
 
-    splitter.setDividerLocation(300);
+    splitter.setDividerLocation(500);
 
     add(splitter, BorderLayout.CENTER);
   }
@@ -244,6 +244,10 @@ public class MergeResultView extends JPanel {
     public JPopupMenu getPopupMenu() {
       return null;
     }
+
+
+    public void doubleClick() {
+    }
   }
 
   private class MySModelTreeNode extends SModelTreeNode {
@@ -270,6 +274,10 @@ public class MergeResultView extends JPanel {
 
     public JPopupMenu getPopupMenu() {
       return null;
+    }
+
+
+    public void doubleClick() {
     }
   }
 
