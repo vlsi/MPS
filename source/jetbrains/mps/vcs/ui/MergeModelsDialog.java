@@ -13,10 +13,10 @@ public class MergeModelsDialog extends BaseDialog {
   private boolean myCanceled;
 
 
-  public MergeModelsDialog(Frame mainFrame, SModel base, SModel c1, SModel c2) throws HeadlessException {
+  public MergeModelsDialog(Frame mainFrame, SModel base, SModel mineModel, SModel repoModel) throws HeadlessException {
     super(mainFrame, "Merge Model Changes : " + base.getUID());
 
-    myMergeView = new MergeView(base, c1, c2);
+    myMergeView = new MergeView(base, mineModel, repoModel);
   }
 
 
