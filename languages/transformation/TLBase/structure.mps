@@ -965,5 +965,18 @@
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1168619357332">
+    <property name="name" value="RootTemplateNodeAnnotation" />
+    <link role="extends" targetNodeId="2.1133920641626" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1168619429071">
+      <property name="role" value="applicableConcept" />
+      <link role="target" targetNodeId="3.1071489090640" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.AnnotationLinkDeclaration" id="1168619445822">
+    <property name="role" value="rootTemplateNodeAnnotation" />
+    <link role="source" targetNodeId="2.1133920641626" />
+    <link role="target" targetNodeId="1168619357332" resolveInfo="RootTemplateNodeAnnotation" />
+  </node>
 </model>
 
