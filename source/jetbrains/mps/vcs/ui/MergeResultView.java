@@ -82,7 +82,6 @@ public class MergeResultView extends JPanel {
   }
 
   private void rebuildData() {
-    myExcludedChanges.clear();
     collectConflicts();
 
     rebuldResultModel();
@@ -114,11 +113,15 @@ public class MergeResultView extends JPanel {
   }
 
   private void applyNewNodeChange(NewNodeChange c, Map<String, NewNodeChange> map) {
+    if (myExcludedChanges.contains(c)) {
+      return;
+    }
+
     if (myResultModel.getNodeById(c.getNodeId()) != null) {
       return;
     }
 
-    if (c.getNodeParent() == null) {
+    if (c.getNodeParent() == null) { //i.e. add root
       boolean result = c.apply(myResultModel);
       assert result;
       return;
@@ -128,7 +131,11 @@ public class MergeResultView extends JPanel {
       NewNodeChange pChange = map.get(c.getNodeParent());
       assert pChange != null;
       applyNewNodeChange(pChange, map);
-      assert myResultModel.getNodeById(c.getNodeParent()) != null;
+
+      if (myResultModel.getNodeById(c.getNodeParent()) == null) {
+        //we wasn't able to find a parent (probably because it was exluded) so return
+        return;
+      }
     }
 
     if (c instanceof AddNodeChange) {
@@ -138,7 +145,6 @@ public class MergeResultView extends JPanel {
         NewNodeChange pChange = map.get(anc.getPreviousNode());
         assert pChange != null;
         applyNewNodeChange(pChange, map);
-        assert myResultModel.getNodeById(anc.getPreviousNode()) != null;
       }
     }
 
@@ -151,6 +157,7 @@ public class MergeResultView extends JPanel {
   private void applyProperties() {
     List<SetPropertyChange> sets = getChanges(SetPropertyChange.class);
     for (SetPropertyChange sp : sets) {
+      if (myExcludedChanges.contains(sp)) continue;
       boolean result = sp.apply(myResultModel);
       assert result;
     }
@@ -159,6 +166,7 @@ public class MergeResultView extends JPanel {
   private void applyReferences() {
     List<SetReferenceChange> refs = getChanges(SetReferenceChange.class);
     for (SetReferenceChange ref : refs) {
+      if (myExcludedChanges.contains(ref)) continue;
       boolean result = ref.apply(myResultModel);
       assert result;
     }
@@ -169,7 +177,8 @@ public class MergeResultView extends JPanel {
     List<DeleteNodeChange> deletes = getChanges(DeleteNodeChange.class);
 
     for (DeleteNodeChange del : deletes) {
-      del.apply(myResultModel);      
+      if (myExcludedChanges.contains(del)) continue;      
+      del.apply(myResultModel);
     }
   }
 
@@ -285,11 +294,8 @@ public class MergeResultView extends JPanel {
 
 
   private class ConflictNode extends MPSTreeNode {
-    private Conflict myConflict;
-
     public ConflictNode(Conflict conflict) {
       super(null);
-      myConflict = conflict;
 
       add(new ChangeNode(conflict.getC1()));
       add(new ChangeNode(conflict.getC2()));
@@ -327,6 +333,7 @@ public class MergeResultView extends JPanel {
           } else {
             myExcludedChanges.add(myChange);
           }
+          rebuildData();
         }
       });
       return result;

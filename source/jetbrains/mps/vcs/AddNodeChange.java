@@ -32,9 +32,6 @@ public class AddNodeChange extends NewNodeChange {
     SNode prev = null;
     if (prevNode != null) {
       prev = m.getNodeById(prevNode);
-      if (prev == null) {
-        return false;
-      }
     }
 
     SNode n = ModelPersistence.createNodeInstance(getNodeType(), m);
