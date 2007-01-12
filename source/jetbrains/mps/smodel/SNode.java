@@ -351,12 +351,12 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     setAttribute(null, attributeConcept);
   }
 
-  public void setAttribute(String role, SNode attributeConcept) {
-    setChild(AttributesRolesUtil.childRoleFromAttributeRole(role), attributeConcept);
+  public void setAttribute(String role, SNode attribute) {
+    setChild(AttributesRolesUtil.childRoleFromAttributeRole(role), attribute);
   }
 
-  public void addAttribute(String role, SNode attributeConcept) {
-    addChild(AttributesRolesUtil.childRoleFromAttributeRole(role), attributeConcept);
+  public void addAttribute(String role, SNode attribute) {
+    addChild(AttributesRolesUtil.childRoleFromAttributeRole(role), attribute);
   }
 
   ///--property attributes
