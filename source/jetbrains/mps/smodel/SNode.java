@@ -1318,7 +1318,13 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   @NotNull
-  public ConceptDeclaration getNodeConcept(IScope scope) {
+  public ConceptDeclaration getNodeConcept() {
     return SModelUtil.getConceptDeclaration(this, GlobalScope.getInstance());
+  }
+
+  @NotNull
+  public Language getNodeLanguage() {
+    ConceptDeclaration concept = getNodeConcept();
+    return SModelUtil.getDeclaringLanguage(concept, GlobalScope.getInstance());
   }
 }

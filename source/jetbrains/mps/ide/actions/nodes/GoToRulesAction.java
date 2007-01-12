@@ -122,7 +122,7 @@ public class GoToRulesAction extends MPSAction {
       if (expression == null) return false;
       BaseConcept baseConcept = expression.getPatternNode();
       if (baseConcept == null) return false;
-      return SModelUtil.isAssignableConcept(conceptDeclaration, baseConcept.getNodeConcept(scope));
+      return SModelUtil.isAssignableConcept(conceptDeclaration, baseConcept.getNodeConcept());
     }
     return false;
   }
