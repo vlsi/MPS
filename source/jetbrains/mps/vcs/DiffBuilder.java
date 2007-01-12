@@ -155,7 +155,7 @@ public class DiffBuilder {
             if (oldNode.getReferences(role).size() != 0 && newNode.getReferences(role).size() == 0) {
               myChanges.add(new SetReferenceChange(id, role, myNewModel, null));
             } else {
-              if (!getTargetId(newNode.getReference(role)).equals(getTargetId(oldNode.getReference(role)))) {
+              if (!("" + getTargetId(newNode.getReference(role))).equals("" + getTargetId(oldNode.getReference(role)))) {
                 myChanges.add(new SetReferenceChange(id, role, myNewModel, newNode.getReferent(role)));
               }
             }
