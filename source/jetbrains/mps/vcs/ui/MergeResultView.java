@@ -7,6 +7,7 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.util.CollectionUtil;
 
 import javax.swing.JPanel;
@@ -15,6 +16,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import java.util.*;
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
 
 public class MergeResultView extends JPanel {  
   private MPSTree myResultTree = new MPSTree() {
@@ -289,13 +291,64 @@ public class MergeResultView extends JPanel {
       super(null);
       myConflict = conflict;
 
-      add(new TextTreeNode("" + conflict.getC1()));
-      add(new TextTreeNode("" + conflict.getC2()));
+      add(new ChangeNode(conflict.getC1()));
+      add(new ChangeNode(conflict.getC2()));
     }
 
 
     public String getNodeIdentifier () {
       return "Conflict";
+    }
+  }
+
+  private class ChangeNode extends MPSTreeNode {
+    private Change myChange;
+
+
+    public ChangeNode(Change change) {
+      super(null);
+      myChange = change;
+    }
+
+    public JPopupMenu getPopupMenu() {
+      JPopupMenu result = new JPopupMenu();
+
+      String text;
+      if (myExcludedChanges.contains(myChange)) {
+        text = "Include";
+      } else {
+        text = "Exclude";
+      }
+
+      result.add(new AbstractActionWithEmptyIcon(text) {
+        public void actionPerformed(ActionEvent e) {
+          if (myExcludedChanges.contains(myChange)) {
+            myExcludedChanges.remove(myChange);
+          } else {
+            myExcludedChanges.add(myChange);
+          }
+        }
+      });
+      return result;
+    }
+
+
+    public boolean isLeaf() {
+      return true;
+    }
+
+
+    public String toString() {
+      if (myExcludedChanges.contains(myChange)) {
+        return "<html><s>" + myChange + "</s>";
+
+      } else {
+        return "" + myChange;
+      }
+    }
+
+    public String getNodeIdentifier() {
+      return myChange + "";
     }
   }
 }
