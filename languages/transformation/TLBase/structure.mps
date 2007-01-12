@@ -249,6 +249,11 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1167327847730" resolveInfo="Reduction_MappingRule" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1168558750579">
+      <property name="role" value="defaultConsequence" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1168559098955" resolveInfo="RuleConsequence" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1112730955130">
     <property name="name" value="ConditionalTemplate" />
@@ -925,6 +930,30 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1168024337021">
       <property name="value" value="query" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1168559098955">
+    <property name="name" value="RuleConsequence" />
+    <link role="extends" targetNodeId="2.1133920641626" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1168559255052">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473854053" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1168559333462">
+    <property name="name" value="TemplateDeclarationReference" />
+    <link role="extends" targetNodeId="1168559098955" resolveInfo="RuleConsequence" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1168559393589">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="template" />
+      <link role="target" targetNodeId="1092059087312" resolveInfo="TemplateDeclaration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1168559512253">
+    <property name="name" value="DismissTopMappingRule" />
+    <link role="extends" targetNodeId="1168559098955" resolveInfo="RuleConsequence" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1168559693644">
+      <property name="value" value="&lt;dismiss top rule&gt;" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
     </node>
   </node>
