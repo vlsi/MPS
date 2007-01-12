@@ -40,8 +40,18 @@ public class Resolver {
         return 0;
       }
     });
-    for (SReference reference : referencesToSort) {
-      resolve(reference, operationContext);
+
+    while(true) {
+      int size = referencesToSort.size();
+      for (SReference reference : new ArrayList<SReference>(referencesToSort)) {
+        boolean resolved = resolve(reference, operationContext);
+        if (resolved) {
+          referencesToSort.remove(reference);
+        }
+      }
+      if (size <= referencesToSort.size()) {
+        break;
+      }
     }
   }
 
@@ -52,12 +62,12 @@ public class Resolver {
     reference.setResolveInfo(name);
   }
 
-  public static void resolve(final SReference reference, final IOperationContext operationContext) {
+  public static boolean resolve(final SReference reference, final IOperationContext operationContext) {
     EditorsPane editorsPane = operationContext.getComponent(EditorsPane.class);
     //InspectorPane inspectorPane = operationContext.getComponent(InspectorPane.class);
     SNode containingRoot = reference.getSourceNode().getContainingRoot();
     assert containingRoot != null;
-    IEditor editorFor = editorsPane.getEditorFor(containingRoot);
+    IEditor editorFor = editorsPane.getEditorForCurrentComponentNode(containingRoot);
     assert editorFor != null;
     EditorContext editorContext = editorFor.getEditorContext();
     final List<INodeSubstituteAction> matchingActions = createResolveActions(reference, operationContext, editorContext);
@@ -69,6 +79,7 @@ public class Resolver {
         }
       }
     }, "resolve");
+    return !(matchingActions.isEmpty());
   }
 
   private static void processAction(INodeSubstituteAction action, String pattern, SReference reference) {
