@@ -5,7 +5,7 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
-  <maxImportIndex value="40" />
+  <maxImportIndex value="43" />
   <import index="1" modelUID="jetbrains.mps.transformation.TLBase.structure" />
   <import index="4" modelUID="jetbrains.mps.core.structure" />
   <import index="6" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
@@ -3870,17 +3870,45 @@
           <property name="drawBorder" value="false" />
           <property name="selectable" value="false" />
         </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1168610606679">
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1168615019896">
           <property name="drawBorder" value="false" />
-          <property name="noTargetText" value="&lt;no template&gt;" />
-          <link role="relationDeclaration" targetNodeId="1.1168610618480" />
-          <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1168610606680">
-            <link role="conceptDeclaration" targetNodeId="1.1092059087312" />
-            <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1168610606681">
+          <property name="vertical" value="true" />
+          <property name="drawBrackets" value="true" />
+          <property name="selectable" value="false" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1168615046262">
+            <property name="drawBorder" value="false" />
+            <property name="selectable" value="false" />
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1168615058331">
+              <property name="text" value="template:" />
               <property name="drawBorder" value="false" />
-              <property name="readOnly" value="true" />
-              <property name="noTargetText" value="&lt;no name&gt;" />
-              <link role="relationDeclaration" targetNodeId="4.1078489098626" />
+              <property name="selectable" value="false" />
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1168615046263">
+              <property name="drawBorder" value="false" />
+              <property name="noTargetText" value="&lt;no template&gt;" />
+              <link role="relationDeclaration" targetNodeId="1.1168610618480" />
+              <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1168615046264">
+                <link role="conceptDeclaration" targetNodeId="1.1092059087312" />
+                <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1168615046265">
+                  <property name="drawBorder" value="false" />
+                  <property name="readOnly" value="true" />
+                  <property name="noTargetText" value="&lt;no name&gt;" />
+                  <link role="relationDeclaration" targetNodeId="4.1078489098626" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1168615066021">
+            <property name="drawBorder" value="false" />
+            <property name="selectable" value="false" />
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1168615067836">
+              <property name="text" value="action:" />
+              <property name="drawBorder" value="false" />
+              <property name="selectable" value="false" />
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1168615075700">
+              <property name="drawBorder" value="false" />
+              <property name="cellProviderId" value="reductionRuleAction_QueryId" />
             </node>
           </node>
         </node>
