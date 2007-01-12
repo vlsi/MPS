@@ -199,11 +199,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       myDependOnModules.add(invocationModule);
     }
 
-
-    public IScope getScope() {
-      return GlobalScope.getInstance();
-    }
-
     public void addGeneratorModules(List<Generator> generatorModules) {
       for (IModule module : generatorModules) {
         if (!myDependOnModules.contains(module)) {
