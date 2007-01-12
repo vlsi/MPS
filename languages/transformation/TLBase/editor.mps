@@ -4373,13 +4373,9 @@
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1168620555238">
           <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1168622580789">
             <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1168622589369">
-              <link role="baseMethodDeclaration" extResolveInfo="8.static method ([Classifier]TemplateLanguageUtil).([StaticMethodDeclaration]addRootTemplateAnnotation((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IScope])) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
               <link role="classConcept" extResolveInfo="8.[Classifier]TemplateLanguageUtil" />
+              <link role="baseMethodDeclaration" extResolveInfo="8.static method ([Classifier]TemplateLanguageUtil).([StaticMethodDeclaration]addRootTemplateAnnotation((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode])) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
               <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1168622591698" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1168622638469">
-                <link role="baseMethodDeclaration" extResolveInfo="9.method ([Classifier]EditorContext).([InstanceMethodDeclaration]getScope() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IScope]))" />
-                <node role="instance" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_editorContext" id="1168622632606" />
-              </node>
             </node>
           </node>
         </node>
