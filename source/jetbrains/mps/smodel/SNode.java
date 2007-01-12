@@ -205,7 +205,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return isAncestorOf(parentOfChild);
   }
 
-  @Nullable
   public SNode getContainingRoot() {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
     if (myParent == null) {
