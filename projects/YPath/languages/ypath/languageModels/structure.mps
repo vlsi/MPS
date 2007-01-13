@@ -68,26 +68,31 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.EnumerationDataTypeDeclaration" id="1168457888645">
     <property name="name" value="TraversalAxis" />
-    <link role="memberDataType" targetNodeId="1.1082983657062" />
+    <link role="memberDataType" targetNodeId="1.1082983041843" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1168457888646">
-      <property name="internalValue" value="1" />
-      <property name="name" value="descendants" />
+      <property name="externalValue" value="descendants not including this" />
+      <property name="internalValue" value="DESCENDANTS" />
+      <property name="name" value="DESCENDANTS" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1168458386233">
-      <property name="internalValue" value="2" />
-      <property name="name" value="children" />
+      <property name="externalValue" value="children" />
+      <property name="internalValue" value="CHILDREN" />
+      <property name="name" value="CHILDREN" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1168458451203">
-      <property name="internalValue" value="3" />
-      <property name="name" value="ancestors" />
+      <property name="externalValue" value="ancestors not including this" />
+      <property name="internalValue" value="ANCESTORS" />
+      <property name="name" value="ANCESTORS" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1168458468740">
-      <property name="internalValue" value="4" />
-      <property name="name" value="following_siblings" />
+      <property name="externalValue" value="following siblings" />
+      <property name="internalValue" value="FOLLOWING_SIBLINGS" />
+      <property name="name" value="FOLLOWING_SIBLINGS" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1168458479924">
-      <property name="internalValue" value="5" />
-      <property name="name" value="preceding_siblings" />
+      <property name="externalValue" value="preceding siblings" />
+      <property name="internalValue" value="PRECEDING_SIBLINGS" />
+      <property name="name" value="PRECEDING_SIBLINGS" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1168468602533">
