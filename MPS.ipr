@@ -1154,7 +1154,6 @@
       <module fileurl="file://$PROJECT_DIR$/projects/webrSamples/depot_dnq/webrSamples_depot_dnq_old.iml" filepath="$PROJECT_DIR$/projects/webrSamples/depot_dnq/webrSamples_depot_dnq_old.iml" group="Projects/WebrSamples" />
       <module fileurl="file://$PROJECT_DIR$/applications/webrSamples/hello/webrSamples_hello.iml" filepath="$PROJECT_DIR$/applications/webrSamples/hello/webrSamples_hello.iml" group="applications/webrSamples" />
       <module fileurl="file://$PROJECT_DIR$/applications/webrSamples/hello_dnq/webrSamples_hello_dnq.iml" filepath="$PROJECT_DIR$/applications/webrSamples/hello_dnq/webrSamples_hello_dnq.iml" group="applications/webrSamples" />
-      <module fileurl="file://$PROJECT_DIR$/projects/webrSamples/hello_dnq/webrSamples_hello_dnq_old.iml" filepath="$PROJECT_DIR$/projects/webrSamples/hello_dnq/webrSamples_hello_dnq_old.iml" group="Projects/WebrSamples" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="jdk 1.5" project-jdk-type="JavaSDK">
@@ -1212,11 +1211,6 @@
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="webrSamples_hello_dnq" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello_dnq_old" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1302,11 +1296,6 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello_dnq_old" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="webrSamples_depot" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
@@ -1385,11 +1374,6 @@
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="webrSamples_hello_dnq" />
         <option name="DEPLOY" value="true" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello_dnq_old" />
-        <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
@@ -1474,11 +1458,6 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello_dnq_old" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="webrSamples_depot" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
@@ -1556,11 +1535,6 @@
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="webrSamples_hello_dnq" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello_dnq_old" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
