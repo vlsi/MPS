@@ -1154,6 +1154,7 @@
       <module fileurl="file://$PROJECT_DIR$/applications/webrSamples/depot_dnq/webrSamples_depot_dnq.iml" filepath="$PROJECT_DIR$/applications/webrSamples/depot_dnq/webrSamples_depot_dnq.iml" group="applications/webrSamples" />
       <module fileurl="file://$PROJECT_DIR$/applications/webrSamples/hello/webrSamples_hello.iml" filepath="$PROJECT_DIR$/applications/webrSamples/hello/webrSamples_hello.iml" group="applications/webrSamples" />
       <module fileurl="file://$PROJECT_DIR$/applications/webrSamples/hello_dnq/webrSamples_hello_dnq.iml" filepath="$PROJECT_DIR$/applications/webrSamples/hello_dnq/webrSamples_hello_dnq.iml" group="applications/webrSamples" />
+      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/cssSchema/webr_cssSchema.iml" filepath="$PROJECT_DIR$/platform/webr/languages/cssSchema/webr_cssSchema.iml" group="platform/webr/languages" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/gtext/webr_gtext.iml" filepath="$PROJECT_DIR$/platform/webr/languages/gtext/webr_gtext.iml" group="platform/webr/languages" />
     </modules>
   </component>
