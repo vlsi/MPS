@@ -867,10 +867,6 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1167951328751">
     <property name="name" value="SourceSubstituteMacro" />
     <link role="extends" targetNodeId="1087833466690" resolveInfo="NodeMacro" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1167951677987">
-      <property name="role" value="outputSourceNodeConcept" />
-      <link role="target" targetNodeId="3.1071489090640" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1167951666158">
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473854053" />
     </node>
