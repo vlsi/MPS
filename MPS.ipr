@@ -1151,6 +1151,7 @@
       <module fileurl="file://$PROJECT_DIR$/projects/DataNavigationQueryFramework/transientDbEntityStore/transientDbEntityStore.iml" filepath="$PROJECT_DIR$/projects/DataNavigationQueryFramework/transientDbEntityStore/transientDbEntityStore.iml" group="Projects/dataNavigationQuery/runtime" />
       <module fileurl="file://$PROJECT_DIR$/projects/webr/webr.iml" filepath="$PROJECT_DIR$/projects/webr/webr.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/runtime/webrRuntime.iml" filepath="$PROJECT_DIR$/platform/webr/runtime/webrRuntime.iml" group="platform/webr" />
+      <module fileurl="file://$PROJECT_DIR$/applications/webrSamples/depot/webrSamples_depot.iml" filepath="$PROJECT_DIR$/applications/webrSamples/depot/webrSamples_depot.iml" group="applications/webrSamples" />
       <module fileurl="file://$PROJECT_DIR$/projects/webrSamples/depot_dnq/webrSamples_depot_dnq.iml" filepath="$PROJECT_DIR$/projects/webrSamples/depot_dnq/webrSamples_depot_dnq.iml" group="Projects/WebrSamples" />
       <module fileurl="file://$PROJECT_DIR$/applications/webrSamples/hello/webrSamples_hello.iml" filepath="$PROJECT_DIR$/applications/webrSamples/hello/webrSamples_hello.iml" group="applications/webrSamples" />
       <module fileurl="file://$PROJECT_DIR$/projects/webrSamples/hello_dnq/webrSamples_hello_dnq.iml" filepath="$PROJECT_DIR$/projects/webrSamples/hello_dnq/webrSamples_hello_dnq.iml" group="Projects/WebrSamples" />
@@ -1222,6 +1223,11 @@
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="depot" />
         <option name="DEPLOY" value="true" />
+      </J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="webrSamples_depot" />
+        <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <option name="DEPLOY_TOMCAT_MANAGER" value="true" />
       <option name="BASE_DIRECTORY_NAME" value="tomcat_Unnamed_e7d78b7c1" />
@@ -1302,6 +1308,11 @@
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="depot" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="webrSamples_depot" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <option name="DEPLOY_TOMCAT_MANAGER" value="true" />
@@ -1385,6 +1396,11 @@
         <option name="MODULE_NAME" value="depot" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="webrSamples_depot" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
       <option name="DEPLOY_TOMCAT_MANAGER" value="true" />
       <option name="BASE_DIRECTORY_NAME" value="tomcat_Unnamed_e7d78b7c3" />
       <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
@@ -1466,6 +1482,11 @@
         <option name="MODULE_NAME" value="depot" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="webrSamples_depot" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
       <option name="DEPLOY_TOMCAT_MANAGER" value="true" />
       <option name="BASE_DIRECTORY_NAME" value="tomcat_Unnamed_e7d78b7c3" />
       <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
@@ -1545,6 +1566,11 @@
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="depot" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="webrSamples_depot" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <option name="DEPLOY_TOMCAT_MANAGER" value="true" />
