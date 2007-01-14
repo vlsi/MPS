@@ -1159,6 +1159,7 @@
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/dataLanguage/webr_dataLanguage.iml" filepath="$PROJECT_DIR$/platform/webr/languages/dataLanguage/webr_dataLanguage.iml" group="platform/webr/languages" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/gtext/webr_gtext.iml" filepath="$PROJECT_DIR$/platform/webr/languages/gtext/webr_gtext.iml" group="platform/webr/languages" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/javascript/webr_javascript.iml" filepath="$PROJECT_DIR$/platform/webr/languages/javascript/webr_javascript.iml" group="platform/webr/languages" />
+      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/logging/webr_logging.iml" filepath="$PROJECT_DIR$/platform/webr/languages/logging/webr_logging.iml" group="platform/webr/languages" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/templateLanguage/webr_templateLanguage.iml" filepath="$PROJECT_DIR$/platform/webr/languages/templateLanguage/webr_templateLanguage.iml" group="platform/webr/languages" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/templateLanguageInternal/webr_templateLanguageInternal.iml" filepath="$PROJECT_DIR$/platform/webr/languages/templateLanguageInternal/webr_templateLanguageInternal.iml" group="platform/webr/languages" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/webl/webr_webl.iml" filepath="$PROJECT_DIR$/platform/webr/languages/webl/webr_webl.iml" group="platform/webr/languages" />
