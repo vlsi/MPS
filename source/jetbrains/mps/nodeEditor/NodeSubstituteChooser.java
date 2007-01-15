@@ -348,8 +348,6 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     public PopupWindow(final Window owner) {
       super(owner);
 
-      System.out.println("new popup window " + this);
-
       owner.addComponentListener(myComponentListener);
 
       myList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
