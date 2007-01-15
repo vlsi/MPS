@@ -33,6 +33,7 @@
   </generators>
   <classPath>
     <entry path="${mps_home}\projects\baseLanguageExt\dev\classes" />
+    <entry path="${mps_home}\projects\baseLanguageExt\collections-runtime\classes" />
   </classPath>
 </language>
 

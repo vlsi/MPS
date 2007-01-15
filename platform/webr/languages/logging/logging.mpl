@@ -29,6 +29,7 @@
   </generators>
   <classPath>
     <entry path="${language_descriptor}\classes" />
+    <entry path="${mps_home}\lib\commons-logging\commons-logging-1.1.jar" />
   </classPath>
 </language>
 
