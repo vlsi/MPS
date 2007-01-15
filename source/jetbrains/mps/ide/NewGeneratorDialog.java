@@ -111,9 +111,9 @@ public class NewGeneratorDialog extends BaseDialog {
       assert descriptorFile != null;
       String path = descriptorFile.getParentFile().getCanonicalPath();
       String modelsDir = path +
-              File.separatorChar + "generators" +
+              File.separatorChar + "generator" +
               File.separatorChar + NameUtil.shortNameFromLongName(targetLanguageName) +
-              File.separatorChar + "templates";
+              File.separatorChar + "template";
 
       myTemplateModelsDir.setText(modelsDir);
     } catch (IOException e) {
