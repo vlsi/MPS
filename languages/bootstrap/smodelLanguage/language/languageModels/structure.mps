@@ -837,5 +837,16 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1143235288634" resolveInfo="applicable_to_model" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1168901043992">
+    <property name="name" value="SLinkListAccessAsList" />
+    <link role="extends" targetNodeId="1138056282393" resolveInfo="SLinkListAccess" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1168901043993">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1168901043994">
+      <property name="value" value="&lt;link list access as list&gt;" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
 </model>
 

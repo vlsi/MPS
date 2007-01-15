@@ -14,7 +14,7 @@ import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
 
 public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
 
-  public AbstractCellListHandler myConceptListHandler;
+  public AbstractCellListHandler myConceptListHandler_conceptList_;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
@@ -48,6 +48,22 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
+  public EditorCell createConceptList(EditorContext context, SNode node) {
+    if(this.myConceptListHandler_conceptList_ == null) {
+      this.myConceptListHandler_conceptList_ = new OperationParm_ConceptList_Editor_ConceptListHandler_conceptList_(node, "concept", context);
+    }
+    EditorCell_Collection editorCell = this.myConceptListHandler_conceptList_.createCells(context, new CellLayout_Horizontal(), false);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+    editorCell.setGridLayout(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.putUserObject(EditorCell.ROLE, this.myConceptListHandler_conceptList_.getElementRole());
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
@@ -58,22 +74,6 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(Color.lightGray);
     editorCell.putUserObject(EditorCell.CELL_ID, "1154547244033");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
-  public EditorCell createConceptList(EditorContext context, SNode node) {
-    if(this.myConceptListHandler == null) {
-      this.myConceptListHandler = new OperationParm_ConceptList_Editor_ConceptListHandler(node, "concept", context);
-    }
-    EditorCell_Collection editorCell = this.myConceptListHandler.createCells(context, new CellLayout_Horizontal(), false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myConceptListHandler.getElementRole());
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

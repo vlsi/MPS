@@ -10,8 +10,8 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import java.awt.Color;
-import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
@@ -44,6 +44,18 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
+  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(true);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1144105535520");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(true);
@@ -59,80 +71,30 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createRowCell1(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(false);
+  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
-    editorCell.setGridLayout(false);
+    editorCell.setEditable(true);
+    editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell7(context, node, "root"));
-    editorCell.addEditorCell(this.createConstantCell8(context, node, "get top ancestor"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1154555049677");
+    editorCell.putUserObject(EditorCell.CELL_ID, "1144105631509");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createRowCell2(EditorContext context, SNode node) {
+  public EditorCell createOperationParameters_ComponentCell(EditorContext context, SNode node) {
+    if(this.myOperationParameters_Component == null) {
+      this.myOperationParameters_Component = new OperationParameters_Component(node);
+    }
+    EditorCell componentCell = this.myOperationParameters_Component.createEditorCell(context);
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(false);
+    editorCell.addEditorCell(componentCell);
+    editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
-    editorCell.setGridLayout(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell9(context, node, "concept"));
-    editorCell.addEditorCell(this.createConstantCell10(context, node, "get ancestor which is instance of concept"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1154555230665");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
-  public EditorCell createRowCell3(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell11(context, node, "concept in"));
-    editorCell.addEditorCell(this.createConstantCell12(context, node, "get ancestor which is instance of one of concepts"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1154555322515");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
-  public EditorCell createRowCell4(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell13(context, node, "+"));
-    editorCell.addEditorCell(this.createConstantCell14(context, node, "return current node if it meets the requirements"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1154555175641");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
-  public EditorCell createColumnCell1(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setGridLayout(true);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createRowCell1(context, node));
-    editorCell.addEditorCell(this.createRowCell2(context, node));
-    editorCell.addEditorCell(this.createRowCell3(context, node));
-    editorCell.addEditorCell(this.createRowCell4(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1154555018347");
+    editorCell.putUserObject(EditorCell.CELL_ID, "1144105636839");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -152,43 +114,6 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell6(context, node, "Optional parameters:"));
     editorCell.addEditorCell(this.createColumnCell1(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, "1154554723148");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
-  public EditorCell createOperationParameters_ComponentCell(EditorContext context, SNode node) {
-    if(this.myOperationParameters_Component == null) {
-      this.myOperationParameters_Component = new OperationParameters_Component(node);
-    }
-    EditorCell editorCell = this.myOperationParameters_Component.createEditorCell(context);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1144105636839");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(true);
-    editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1144105535520");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
-  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(true);
-    editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1144105631509");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -256,6 +181,38 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
+  public EditorCell createColumnCell1(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+    editorCell.setGridLayout(true);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createRowCell1(context, node));
+    editorCell.addEditorCell(this.createRowCell2(context, node));
+    editorCell.addEditorCell(this.createRowCell3(context, node));
+    editorCell.addEditorCell(this.createRowCell4(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1154555018347");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createRowCell1(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+    editorCell.setGridLayout(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstantCell7(context, node, "root"));
+    editorCell.addEditorCell(this.createConstantCell8(context, node, "get top ancestor"));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1154555049677");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
   public EditorCell createConstantCell7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
@@ -278,6 +235,21 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setFontType(MPSFonts.PLAIN);
     editorCell.putUserObject(EditorCell.CELL_ID, "1154555089681");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createRowCell2(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+    editorCell.setGridLayout(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstantCell9(context, node, "concept"));
+    editorCell.addEditorCell(this.createConstantCell10(context, node, "get ancestor which is instance of concept"));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1154555230665");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -306,6 +278,21 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
+  public EditorCell createRowCell3(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+    editorCell.setGridLayout(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstantCell11(context, node, "concept in"));
+    editorCell.addEditorCell(this.createConstantCell12(context, node, "get ancestor which is instance of one of concepts"));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1154555322515");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
   public EditorCell createConstantCell11(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
@@ -328,6 +315,21 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setFontType(MPSFonts.PLAIN);
     editorCell.putUserObject(EditorCell.CELL_ID, "1154555322517");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createRowCell4(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+    editorCell.setGridLayout(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstantCell13(context, node, "+"));
+    editorCell.addEditorCell(this.createConstantCell14(context, node, "return current node if it meets the requirements"));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1154555175641");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

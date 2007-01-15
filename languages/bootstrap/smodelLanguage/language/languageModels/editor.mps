@@ -3,7 +3,7 @@
   <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
-  <maxImportIndex value="5" />
+  <maxImportIndex value="6" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" />
   <import index="2" modelUID="jetbrains.mps.core.structure" />
   <import index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
@@ -1227,6 +1227,34 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1166648602703">
         <property name="editable" value="true" />
         <property name="text" value=")" />
+        <property name="drawBorder" value="false" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1168901099262">
+    <link role="conceptDeclaration" targetNodeId="1.1168901043992" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1168901118565">
+      <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1168901122685">
+        <property name="drawBorder" value="false" />
+        <property name="noTargetText" value="&lt;no link&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1138056546658" />
+        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1168901122686">
+          <link role="conceptDeclaration" targetNodeId="3.1071489288298" />
+          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1168901122687">
+            <property name="textFgColor" value="darkGray" />
+            <property name="fontStyle" value="ITALIC" />
+            <property name="drawBorder" value="false" />
+            <property name="readOnly" value="true" />
+            <link role="relationDeclaration" targetNodeId="3.1071599776563" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1168901133423">
+        <property name="layoutConstraint" value="punctuation" />
+        <property name="textFgColor" value="darkGray" />
+        <property name="text" value="/list" />
+        <property name="fontStyle" value="ITALIC" />
         <property name="drawBorder" value="false" />
       </node>
     </node>
