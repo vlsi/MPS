@@ -62,7 +62,7 @@ public class KeyMapUtil {
       }
       keymapOwnerCell = keymapOwnerCell.getParent();
     }
-    SNode node = editorContext.getNodeEditorComponent().getNode();
+    SNode node = editorContext.getNodeEditorComponent().getEditedNode();
     if (node != null) {
       SModel model = node.getModel();
       for (String namespace : model.getLanguageNamespaces()) {

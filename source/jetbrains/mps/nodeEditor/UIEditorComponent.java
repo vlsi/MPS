@@ -63,7 +63,7 @@ public class UIEditorComponent extends AbstractEditorComponent implements IEdito
   }
 
   public EditorCell createRootCell(List<SModelEvent> events) {
-    if (getNode() == null) {
+    if (getEditedNode() == null) {
       return EditorCell_Constant.create(new EditorContext(this, null, null), null, "<NO NODE>", true);
     }
 
@@ -71,7 +71,7 @@ public class UIEditorComponent extends AbstractEditorComponent implements IEdito
 //    if (mySNode.isDeleted()) {
 //      return EditorCell_Constant.create(getEditorContext(), mySNode, "<no editor info>", true);
 //    }
-    return myEditorContext.createRootCell(getNode(), events);
+    return myEditorContext.createRootCell(getEditedNode(), events);
   }
 
   public EditorCell createRootCell() {
@@ -176,7 +176,7 @@ public class UIEditorComponent extends AbstractEditorComponent implements IEdito
     }
 
     public SNode getEditedNode() {
-      return UIEditorComponent.this.getNode();
+      return UIEditorComponent.this.getEditedNode();
     }
 
     public SNodeProxy getEditedNodeProxy() {

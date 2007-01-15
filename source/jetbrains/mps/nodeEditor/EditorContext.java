@@ -2,7 +2,6 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.annotations.LinkAttributeConcept;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
 
@@ -14,7 +13,6 @@ import java.util.*;
  * Created Sep 14, 2003
  */
 public class EditorContext {
-  private static final Logger LOG = Logger.getLogger(EditorContext.class);
 
   private AbstractEditorComponent myNodeEditorComponent;
   private SModelDescriptor myModelDescriptor;

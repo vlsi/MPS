@@ -437,7 +437,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     selectNode(current);
   }
 
-  public SNode getNode() {
+  public SNode getEditedNode() {
     if (myNodeProxy != null) {
       return myNodeProxy.getNode();
     }
@@ -448,18 +448,18 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return myNodeProxy;
   }
 
-  public void editNode(SNode semanticNode, IOperationContext operationContext) {
+  public void editNode(SNode node, IOperationContext operationContext) {
     if (operationContext == null) {
       LOG.errorWithTrace("Opening editor with null context");
     }
     setOperationContext(operationContext);
-    editNode(semanticNode);
+    editNode(node);
   }
 
-  protected void editNode(SNode semanticNode) {
+  protected void editNode(SNode node) {
     IOperationContext operationContext = getOperationContext();
-    myNodeProxy = new SNodeProxy(semanticNode);
-    SModel model = semanticNode == null ? null : semanticNode.getModel();
+    myNodeProxy = new SNodeProxy(node);
+    SModel model = node == null ? null : node.getModel();
     myEditorContext = new EditorContext(this, model, operationContext);
     rebuildEditorContent();
   }

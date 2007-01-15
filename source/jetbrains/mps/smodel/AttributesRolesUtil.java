@@ -66,6 +66,12 @@ public class AttributesRolesUtil {
     return role.indexOf(STEREOTYPE_DELIM + PROPERTY_ATTRIBUTE_STEREOTYPE + STEREOTYPE_DELIM) > 0;
   }
 
+  public static boolean isAttributeRole(String role) {
+    return (AttributesRolesUtil.isNodeAttributeRole(role) ||
+            AttributesRolesUtil.isLinkAttributeRole(role) ||
+            AttributesRolesUtil.isPropertyAttributeRole(role));
+  }
+
   public static String getLinkRoleFromLinkAttributeRole(String attributeRole) {
     int index = attributeRole.indexOf(STEREOTYPE_DELIM);
     if (index < 0) return null;

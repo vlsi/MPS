@@ -329,6 +329,11 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return attributes;
   }
 
+  public boolean isAttribute() {
+    String role_ = getRole_();
+    return (role_ != null && AttributesRolesUtil.isAttributeRole(role_));
+  }
+
   @Nullable
   public SNode getAttribute(String role) {
     String attributeRole = AttributesRolesUtil.childRoleFromAttributeRole(role);

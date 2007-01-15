@@ -34,10 +34,10 @@ public class InspectorEditorComponent extends AbstractEditorComponent implements
   }
 
   private void reinitEditor() {
-    if (getNode() == null) {
+    if (getEditedNode() == null) {
       myEditorContext = new EditorContext(this, null, null);
     } else {
-      myEditorContext = new EditorContext(this, getNode().getModel(), getOperationContext());
+      myEditorContext = new EditorContext(this, getEditedNode().getModel(), getOperationContext());
     }
   }
 
@@ -62,7 +62,7 @@ public class InspectorEditorComponent extends AbstractEditorComponent implements
   }
 
   public void inspectNode(SNode node, IOperationContext context) {
-    if (getNode() == node) {
+    if (getEditedNode() == node) {
       return;
     }
     if (node == null) {
@@ -79,10 +79,10 @@ public class InspectorEditorComponent extends AbstractEditorComponent implements
   }
 
   public EditorCell createRootCell(List<SModelEvent> events) {
-    if (getNode() == null || getNode().isDeleted()) {
+    if (getEditedNode() == null || getEditedNode().isDeleted()) {
       return EditorCell_Constant.create(getEditorContext(), null, "<no inspect info>", true);
     }
-    return getEditorContext().createInspectedCell(getNode(), events);
+    return getEditorContext().createInspectedCell(getEditedNode(), events);
   }
 
   public EditorCell createRootCell() {
@@ -90,7 +90,7 @@ public class InspectorEditorComponent extends AbstractEditorComponent implements
   }
 
   public SNode getInspectedNode() {
-    return getNode();
+    return getEditedNode();
   }
 
 
@@ -101,11 +101,6 @@ public class InspectorEditorComponent extends AbstractEditorComponent implements
   public JComponent getComponent() {
     return this;
   }
-
-  public SNode getEditedNode() {
-    return getNode();
-  }
-
 
   public <T> T get(Class<T> cls) {
     T result =  super.get(cls);

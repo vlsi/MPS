@@ -74,7 +74,7 @@ public class NodesParetoFrontier {
 
   // splits nodes into groups having a maximum, each group is an descending-ordered chain of NodeBoxes
   // where the partial order is the following:
-  // nodeBox1 > nodeBox2 <=> nodeBox1.getNode() is ancestor of nodeBox2.getNode() in an aggregation tree
+  // nodeBox1 > nodeBox2 <=> nodeBox1.getNode() is ancestor of nodeBox2.getEditedNode() in an aggregation tree
   // i.e. the first element in a chain is an ancestor of the others
   //
   // order of groups in the result list

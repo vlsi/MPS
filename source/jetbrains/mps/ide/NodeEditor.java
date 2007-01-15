@@ -22,7 +22,7 @@ public class NodeEditor implements IEditor {
   }
 
   protected NodeEditor() {
-    
+
   }
 
   public JComponent getComponent() {
@@ -58,7 +58,7 @@ public class NodeEditor implements IEditor {
 
   @Nullable
   public EditorInfo getEditorInfo() {
-    return null;  
+    return null;
   }
 
   @NotNull
@@ -75,18 +75,20 @@ public class NodeEditor implements IEditor {
   }
 
   public SNode getEditedNode() {
-    EditorCell rootCell = getRootCell();
-    if (rootCell == null) return null;
-    return rootCell.getSNode();
+//    EditorCell rootCell = getRootCell();
+//    if (rootCell == null) return null;
+//    return rootCell.getSNode();
+    return myEditorComponent.getEditedNode();
   }
 
   public SNodeProxy getEditedNodeProxy() {
-    EditorCell rootCell = getRootCell();
-    if (rootCell != null) {
-      return rootCell.getSNodeProxy();
-    } else {
-      return null;
-    }
+//    EditorCell rootCell = getRootCell();
+//    if (rootCell != null) {
+//      return rootCell.getSNodeProxy();
+//    } else {
+//      return null;
+//    }
+    return myEditorComponent.getEditedNodeProxy();
   }
 
   public void selectNode(SNode node) {
