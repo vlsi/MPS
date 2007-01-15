@@ -477,6 +477,10 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
   }
 
   public void dispose() {
+    dispose(true);
+  }
+
+  public void dispose(final boolean reloadAll) {
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
         myPluginManager.disposePlugins();
@@ -497,7 +501,9 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
         MPSModuleRepository.getInstance().removeUnusedModules();
         SModelRepository.getInstance().removeUnusedDescriptors();
-        ReloadUtils.reloadAll(true);
+        if (reloadAll) {
+          ReloadUtils.reloadAll(true);
+        } 
       }
     }, "disposing project");
   }
