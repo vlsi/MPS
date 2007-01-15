@@ -1140,6 +1140,7 @@
       <module fileurl="file://$PROJECT_DIR$/projects/baseLanguageExt/collections-runtime/collections-runtime.iml" filepath="$PROJECT_DIR$/projects/baseLanguageExt/collections-runtime/collections-runtime.iml" group="Projects/BaseLanguageExt" />
       <module fileurl="file://$PROJECT_DIR$/projects/DataNavigationQueryFramework/core/core.iml" filepath="$PROJECT_DIR$/projects/DataNavigationQueryFramework/core/core.iml" group="Projects/dataNavigationQuery/runtime" />
       <module fileurl="file://$PROJECT_DIR$/projects/dataNavigationQueryLang/dataNavigationQueryLang.iml" filepath="$PROJECT_DIR$/projects/dataNavigationQueryLang/dataNavigationQueryLang.iml" group="Projects/dataNavigationQuery/lang" />
+      <module fileurl="file://$PROJECT_DIR$/platform/devKitPlugin/devKitPlugin.iml" filepath="$PROJECT_DIR$/platform/devKitPlugin/devKitPlugin.iml" group="platform/webr" />
       <module fileurl="file://$PROJECT_DIR$/equinox-sandbox/equinox-sandbox.iml" filepath="$PROJECT_DIR$/equinox-sandbox/equinox-sandbox.iml" group="Equinox-Sandbox" />
       <module fileurl="file://$PROJECT_DIR$/projects/fixedLengthReader/fixedLengthReader.iml" filepath="$PROJECT_DIR$/projects/fixedLengthReader/fixedLengthReader.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/equinox-sandbox/jetbrains.mps.testBundle/jetbrains.mps.testBundle.iml" filepath="$PROJECT_DIR$/equinox-sandbox/jetbrains.mps.testBundle/jetbrains.mps.testBundle.iml" group="Equinox-Sandbox" />
