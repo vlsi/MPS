@@ -26,7 +26,7 @@
   <generators>
     <generator generatorUID="jetbrains.mps.transformation.TLBase#1167163152317" targetLanguage="jetbrains.mps.baseLanguage">
       <models>
-        <modelRoot path="${language_descriptor}\generator\baseLanguage\templates" namespacePrefix="jetbrains.mps.transformation.TLBase.generator.baseLanguage.template" />
+        <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.transformation.TLBase.generator.baseLanguage.template" />
       </models>
       <module>
         <moduleRoot path="${mps_home}\languages\baseLanguage\language\baseLanguage.mpl" />
