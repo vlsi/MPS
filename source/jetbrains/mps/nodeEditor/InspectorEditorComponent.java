@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeProxy;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -103,7 +102,7 @@ public class InspectorEditorComponent extends AbstractEditorComponent implements
     return this;
   }
 
-  public SNode getSNode() {
+  public SNode getEditedNode() {
     return getNode();
   }
 

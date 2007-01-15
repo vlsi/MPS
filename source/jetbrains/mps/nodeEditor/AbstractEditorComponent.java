@@ -11,15 +11,14 @@ import jetbrains.mps.ide.navigation.FocusPolicy;
 import jetbrains.mps.ide.navigation.HistoryItem;
 import jetbrains.mps.ide.navigation.IHistoryItem;
 import jetbrains.mps.ide.navigation.RecentEditorsMenu;
-import jetbrains.mps.ide.ui.CellSpeedSearch;
 import jetbrains.mps.ide.ui.JMultiLineToolTip;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
 import jetbrains.mps.nodeEditor.text.CellAction_RenderText;
-import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.event.*;
@@ -101,7 +100,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private final IGutterMessageOwner myOwner = new IGutterMessageOwner() {
   };
-  private CellSpeedSearch myCellSpeedSearch;
+//  private CellSpeedSearch myCellSpeedSearch;
 
   public AbstractEditorComponent(IOperationContext operationContext) {
     this(operationContext, false);
@@ -310,7 +309,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     });
 
-    myCellSpeedSearch = new CellSpeedSearch(this);
+//    myCellSpeedSearch = new CellSpeedSearch(this);
     addKeyListener(new KeyAdapter() {
       public void keyPressed(final KeyEvent e) {
         processKeyPressed(e);
@@ -445,7 +444,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return null;
   }
 
-  public SNodeProxy getSNodeProxy() {
+  public SNodeProxy getEditedNodeProxy() {
     return myNodeProxy;
   }
 

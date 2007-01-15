@@ -1,7 +1,7 @@
 package jetbrains.mps.ide;
 
-import jetbrains.mps.ide.navigation.IHistoryItem;
 import jetbrains.mps.ide.navigation.EditorInfo;
+import jetbrains.mps.ide.navigation.IHistoryItem;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -9,7 +9,6 @@ import jetbrains.mps.nodeEditor.ICellSelectionListener;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeProxy;
-import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -36,8 +35,8 @@ public interface IEditor {
 
   @Nullable EditorCell getRootCell();
 
-  @Nullable SNode getSNode();
-  @Nullable SNodeProxy getSNodeProxy();
+  @Nullable SNode getEditedNode();
+  @Nullable SNodeProxy getEditedNodeProxy();
 
   //for those types of editors which do not contain node: to find them in another way 
   @Nullable EditorInfo getEditorInfo();

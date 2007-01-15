@@ -74,13 +74,13 @@ public class NodeEditor implements IEditor {
     return myEditorComponent.getRootCell();
   }
 
-  public SNode getSNode() {
+  public SNode getEditedNode() {
     EditorCell rootCell = getRootCell();
     if (rootCell == null) return null;
     return rootCell.getSNode();
   }
 
-  public SNodeProxy getSNodeProxy() {
+  public SNodeProxy getEditedNodeProxy() {
     EditorCell rootCell = getRootCell();
     if (rootCell != null) {
       return rootCell.getSNodeProxy();

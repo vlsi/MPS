@@ -175,12 +175,12 @@ public class UIEditorComponent extends AbstractEditorComponent implements IEdito
       return UIEditorComponent.this.getRootCell();
     }
 
-    public SNode getSNode() {
+    public SNode getEditedNode() {
       return UIEditorComponent.this.getNode();
     }
 
-    public SNodeProxy getSNodeProxy() {
-      return UIEditorComponent.this.getSNodeProxy();
+    public SNodeProxy getEditedNodeProxy() {
+      return UIEditorComponent.this.getEditedNodeProxy();
     }
 
     public void selectNode(SNode node) {
