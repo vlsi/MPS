@@ -379,7 +379,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         if (e instanceof MPSAction) {
           MPSAction action = (MPSAction) e;
           if (action.hasKeystroke()) {
-            registerNodeAction(action, action.getKeyStroke());
+            registerNodeAction(action);
             myMPSActionsWithShortcuts.add(action);
           }
         }
@@ -509,8 +509,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     super.removeNotify();
   }
 
-  protected AbstractAction registerNodeAction(MPSAction action) {
-    return registerNodeAction(action, action.getKeyStroke());
+  protected void registerNodeAction(MPSAction action) {
+    for (String keyStroke : action.getKeyStrokes()) {
+      registerNodeAction(action, keyStroke);
+    }
   }
 
   protected AbstractAction registerNodeAction(final MPSAction action, String keyStroke) {
@@ -841,6 +843,13 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
       return EditorCellAction.PASTE;
     }
+    if (keyEvent.getKeyCode() == KeyEvent.VK_INSERT && keyEvent.isControlDown()) {
+      return EditorCellAction.COPY;
+    }
+    if (keyEvent.getKeyCode() == KeyEvent.VK_INSERT && keyEvent.isShiftDown()) {
+      return EditorCellAction.PASTE;
+    }
+    
 
     return null;
   }

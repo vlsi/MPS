@@ -311,8 +311,10 @@ public abstract class MPSTree extends JTree {
   private HashMap<Pair, MPSAction> myKeyStrokesToActionsMap = new HashMap<Pair, MPSAction>();
 
   public final void registerMPSAction(MPSAction action, Class<? extends MPSTreeNode> nodeClass) {
-    Pair pair = new Pair(KeyStroke.getKeyStroke(action.getKeyStroke()), nodeClass);
-    myKeyStrokesToActionsMap.put(pair, action);
+    for (String keyStroke : action.getKeyStrokes()) {
+      Pair pair = new Pair(KeyStroke.getKeyStroke(keyStroke), nodeClass);
+      myKeyStrokesToActionsMap.put(pair, action);
+    }
   }
 
   protected ActionContext getActionContext(MPSTreeNode node, List<MPSTreeNode> nodes) {
