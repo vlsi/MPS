@@ -764,6 +764,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
   }
 
   public void moveConceptClass(String oldClassFQName, String newPackageName, File targetLangSourceRoot) throws RemoteException {
+    //todo: if source root does not exist then create it add it to sources
     moveClass(oldClassFQName, newPackageName, targetLangSourceRoot);
     moveClass(packageName(oldClassFQName)+".editor."+shortName(oldClassFQName)+"_Editor",
             newPackageName+".editor", targetLangSourceRoot);
