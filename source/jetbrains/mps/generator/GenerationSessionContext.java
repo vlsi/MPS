@@ -187,7 +187,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   }
 
 
-  private class TransientModule extends AbstractModule {
+  public class TransientModule extends AbstractModule {
     private List<IModule> myDependOnModules = new LinkedList<IModule>();
     private IModule myInvocationModule;
     private SModelDescriptor myProjectModelDescriptor = ProjectModels.createDescriptorFor(this);

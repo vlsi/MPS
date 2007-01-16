@@ -4,6 +4,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.Root;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.generator.GenerationSessionContext;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -416,4 +417,9 @@ public class MPSModuleRepository {
     return getAllModules(IModule.class);
   }
 
+  public void removeTransientModules() {
+    for (GenerationSessionContext.TransientModule m : getAllModules(GenerationSessionContext.TransientModule.class)) {
+      m.dispose();
+    }
+  }
 }

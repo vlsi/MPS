@@ -295,9 +295,8 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     if (progressMonitor.isCanceled()) throw new GenerationCanceledException();
   }
 
-
   public void generateModels(List<SModel> _sourceModels, Language targetLanguage, IOperationContext invocationContext, IGenerationType generationType, IGenerationScript script, IAdaptiveProgressMonitor progress) {
-
+    MPSModuleRepository.getInstance().removeTransientModules();
     showMessageView();
 
     invocationContext.getProject().saveModels();
