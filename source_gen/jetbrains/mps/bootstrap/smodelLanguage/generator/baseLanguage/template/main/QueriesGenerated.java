@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.baseLanguage.util.QueriesUtil;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.SNodeOperation;
 import jetbrains.mps.util.NameUtil;
@@ -27,6 +28,18 @@ public class QueriesGenerated {
   }
   public static boolean baseMappingRule_Condition_1168977178297(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return QueriesUtil.isPropertyAccess_enum_nullDefaultValue(node);
+  }
+  public static boolean baseMappingRule_Condition_1168977521292(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SPropertyOperations.get(SLinkOperations.getTarget(node, "enumMember", false), "internalValue") != null;
+  }
+  public static boolean baseMappingRule_Condition_1168977610522(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SPropertyOperations.get(SLinkOperations.getTarget(node, "enumMember", false), "internalValue") == null;
+  }
+  public static boolean baseMappingRule_Condition_1168978381110(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.isProperty_set_stringValue(node, generator);
+  }
+  public static boolean baseMappingRule_Condition_1168978822549(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.isProperty_set_notStringValue(node, generator);
   }
   public static boolean baseMappingRule_Condition_1168907859731(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "nodeOperation", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess");
