@@ -272,7 +272,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1154643386654">
-    <property name="name" value="ActionsUtil_mpsLoadable" />
+    <property name="name" value="QueriesUtil" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1154643460420">
       <property name="name" value="isExpressionOf_any_our_Type" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.BooleanType" id="1154643499252" />
