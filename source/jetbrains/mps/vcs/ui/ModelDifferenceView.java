@@ -67,7 +67,7 @@ public class ModelDifferenceView extends JPanel {
     myNewModel = newModel;
 
     DiffBuilder builder = new DiffBuilder(oldModel, newModel);
-    List<Change> changes = builder.getChanges();
+    final List<Change> changes = builder.getChanges();
     myChanges = changes;
 
     for (AddRootChange ar : CollectionUtil.filter(AddRootChange.class, changes)) {
@@ -96,9 +96,32 @@ public class ModelDifferenceView extends JPanel {
 
     updateView();
 
-    for (Change c : changes) {
-      expandNode(c.getAffectedNodeId());      
-    }
+
+    myModelTree.runWithoutExpansion(new Runnable() {
+      public void run() {
+        for (Change c : changes) {
+          if (c instanceof NewNodeChange) {
+            NewNodeChange nnc = (NewNodeChange) c;
+            if (nnc.getNodeParent() == null || !myAddedNodes.contains(nnc.getNodeParent())) {
+              expandNode(c.getAffectedNodeId());
+            }
+          } else if (c instanceof SetPropertyChange ||
+                  c instanceof SetReferenceChange) {
+            String id = c.getAffectedNodeId();
+            if (!myAddedNodes.contains(id)) {
+              expandNode(id);
+            }
+          } else if (c instanceof DeleteNodeChange) {
+            //skip
+          } else {
+            System.out.println(c.getClass());
+
+            System.out.println("fck! default case!");
+            expandNode(c.getAffectedNodeId());
+          }
+        }
+      }
+    });
 
     return this;
   }
