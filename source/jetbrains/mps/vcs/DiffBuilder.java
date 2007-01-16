@@ -160,6 +160,8 @@ public class DiffBuilder {
               }
             }
           } else {
+            System.out.println("we have to many references : " + newNode + " " + newNode.getId());
+            System.out.println("role : " + role);
             System.out.println("not supported!");
             isToManyCardinality(newNode.getClass(), role);
           }
@@ -177,7 +179,7 @@ public class DiffBuilder {
   private boolean isToManyCardinality(Class cls, String role) {
     LinkDeclaration ld = SModelUtil.findLinkDeclaration(cls, role, GlobalScope.getInstance());
     if (ld == null) {
-      return true;
+      return false;
     }
     return ld.getSourceCardinality() != Cardinality._0_1 && ld.getSourceCardinality() != Cardinality._1;
   }

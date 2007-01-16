@@ -9,6 +9,7 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Pair;
 
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
@@ -143,8 +144,10 @@ public class MergeResultView extends JPanel {
 
       if (anc.getPreviousNode() != null) {
         NewNodeChange pChange = map.get(anc.getPreviousNode());
-        assert pChange != null;
-        applyNewNodeChange(pChange, map);
+        assert pChange != null || myResultModel.getNodeById(anc.getPreviousNode()) != null;
+        if (pChange != null) {
+          applyNewNodeChange(pChange, map);
+        }
       }
     }
 
@@ -213,21 +216,21 @@ public class MergeResultView extends JPanel {
   }
 
   private void collectSetNodeConflicts() {
-    Map<String, Set<SetNodeChange>> changes = new HashMap<String, Set<SetNodeChange>>();
+    Map<Pair<String, String>, Set<SetNodeChange>> changes = new HashMap<Pair<String, String>, Set<SetNodeChange>>();
 
     List<SetNodeChange> sets = getChanges(SetNodeChange.class);
 
     for (SetNodeChange spc : sets) {
-      if (changes.get(spc.getNodeParent()) == null) {
-        changes.put(spc.getNodeParent(), new HashSet<SetNodeChange>());
+      if (changes.get(new Pair<String, String>(spc.getNodeParent(), spc.getNodeRole())) == null) {
+        changes.put(new Pair<String, String>(spc.getNodeParent(), spc.getNodeRole()), new HashSet<SetNodeChange>());
       }
 
-      changes.get(spc.getNodeParent()).add(spc);
+      changes.get(new Pair<String, String>(spc.getNodeParent(), spc.getNodeRole())).add(spc);
     }
 
-    for (String id : changes.keySet()) {
-      if (changes.get(id).size() > 1) {
-        List<SetNodeChange> cs = new ArrayList<SetNodeChange>(changes.get(id));
+    for (Pair<String, String> p: changes.keySet()) {
+      if (changes.get(p).size() > 1) {
+        List<SetNodeChange> cs = new ArrayList<SetNodeChange>(changes.get(p));
         assert cs.size() == 2;
         myConflicts.add(new Conflict(cs.get(0), cs.get(1)));
       }
