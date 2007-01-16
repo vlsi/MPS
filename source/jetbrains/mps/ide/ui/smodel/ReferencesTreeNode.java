@@ -63,4 +63,9 @@ public class ReferencesTreeNode extends MPSTreeNodeEx {
   public String getNodeIdentifier() {
     return "references";
   }
+
+
+  public Icon getIcon(boolean expanded) {
+    return Icons.REFERENCE_ICON;
+  }
 }

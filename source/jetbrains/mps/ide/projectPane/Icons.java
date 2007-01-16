@@ -97,4 +97,7 @@ public class Icons {
   public static final Icon CLOSE_ICON = new ImageIcon(Icons.class.getResource("nodes/close.png"));
   public static final Icon MINIMIZE_DISABLED_ICON = new ImageIcon(Icons.class.getResource("nodes/minimizeDis.png"));
   public static final Icon CLOSE_DISABLED_ICON = new ImageIcon(Icons.class.getResource("nodes/closeDis.png"));
+
+  public static final Icon PROPERTY_ICON = new ImageIcon(Icons.class.getResource("nodes/property.png"));
+  public static final Icon REFERENCE_ICON = new ImageIcon(Icons.class.getResource("nodes/reference.png"));
 }

@@ -59,4 +59,8 @@ public class PropertiesTreeNode extends MPSTreeNodeEx {
     return "properties";
   }
 
+
+  public Icon getIcon(boolean expanded) {
+    return Icons.PROPERTY_ICON;
+  }
 }
