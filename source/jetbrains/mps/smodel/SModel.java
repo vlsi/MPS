@@ -743,6 +743,15 @@ public class SModel implements Iterable<SNode> {
     importedModels.clear();
   }
 
+  public SNode getNodeByCondition(Condition<SNode> c) {
+    for (SNode node : myIdToNodeMap.values()) {
+      if (c.met(node)) {
+        return node;
+      }
+    }
+    return null;
+  }
+
 
   /*package*/
   static class ImportElement {
