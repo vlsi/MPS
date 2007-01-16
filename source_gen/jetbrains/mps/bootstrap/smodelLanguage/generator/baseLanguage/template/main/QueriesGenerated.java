@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.baseLanguage.util.QueriesUtil;
 import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.SNodeOperation;
 import jetbrains.mps.util.NameUtil;
@@ -29,6 +30,18 @@ public class QueriesGenerated {
   }
   public static boolean baseMappingRule_Condition_1168908054750(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "nodeOperation", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.Link_DeleteChildOperation");
+  }
+  public static boolean baseMappingRule_Condition_1168967899174(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "nodeOperation", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation")) {
+      return QueriesUtil.opGetParent_reduceDeafult(SLinkOperations.getTarget(node, "nodeOperation", true));
+    }
+    return false;
+  }
+  public static boolean baseMappingRule_Condition_1168969238044(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "nodeOperation", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation")) {
+      return QueriesUtil.opGetParent_reduceWhereConceptInList(SLinkOperations.getTarget(node, "nodeOperation", true));
+    }
+    return false;
   }
   public static boolean baseMappingRule_Condition_1168911621338(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "nodeOperation", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.Model_CreateNewNodeOperation");
