@@ -19,6 +19,15 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1168911272662(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "creator", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListCreator");
   }
+  public static boolean baseMappingRule_Condition_1168976445524(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.isPropertyAccess_simple(node);
+  }
+  public static boolean baseMappingRule_Condition_1168976854559(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.isPropertyAccess_enum_notNullDefaultValue(node);
+  }
+  public static boolean baseMappingRule_Condition_1168977178297(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.isPropertyAccess_enum_nullDefaultValue(node);
+  }
   public static boolean baseMappingRule_Condition_1168907859731(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "nodeOperation", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess");
   }
