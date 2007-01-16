@@ -14,11 +14,21 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.SNodeOperation;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.bootstrap.smodelLanguage.SConceptPropertyAccess;
 
 public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1168911272662(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "creator", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListCreator");
+  }
+  public static boolean baseMappingRule_Condition_1168983652971(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    boolean b = false;
+    b = b || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "nodeOperation", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess");
+    if(b) {
+      System.out.println("reduce SNodeOperationExpression with new reduction rule");
+      return true;
+    }
+    return false;
   }
   public static boolean baseMappingRule_Condition_1168976445524(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return QueriesUtil.isPropertyAccess_simple(node);
@@ -49,6 +59,9 @@ public class QueriesGenerated {
   }
   public static boolean baseMappingRule_Condition_1168979716443(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return QueriesUtil.isProperty_hasValueEnum_nullDefaultValue(node, generator);
+  }
+  public static String propertyMacro_GetPropertyValue_1168981884180(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SPropertyOperations.get(SLinkOperations.getTarget(node, "enumMember", false), "internalValue");
   }
   public static boolean baseMappingRule_Condition_1168907859731(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "nodeOperation", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess");
@@ -128,9 +141,6 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1168912288225(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "nodeOperation", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.Model_CreateNewRootNodeOperation");
   }
-  public static boolean baseMappingRule_Condition_1168907791267(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "nodeOperation", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess");
-  }
   public static SNode sourceNodeQuery_1168292579606(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "leftExpression", true);
   }
@@ -154,5 +164,17 @@ public class QueriesGenerated {
   }
   public static boolean baseMappingRule_Condition_1168908707817(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "nodeOperation", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_GetCountOperation");
+  }
+  public static SNode sourceNodeQuery_1168983597964(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "nodeOperation", true);
+  }
+  public static SNode sourceNodeQuery_1168985092391(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
+  }
+  public static String propertyMacro_GetPropertyValue_1168985327635(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SPropertyOperations.get(SLinkOperations.getTarget(node, "conceptProperty", false), "name");
+  }
+  public static SNode referenceMacro_GetReferent_1168984233974(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return _QueriesUtil.get_SConceptPropertyAccess_GetMethod((SConceptPropertyAccess)node, scope);
   }
 }
