@@ -83,11 +83,13 @@ public abstract class BaseScope implements IScope {
 
   @NotNull
   public List<Language> getVisibleLanguages() {
-    Set<Language> languages = CollectionUtil.filter(Language.class, getVisibleModules());
-    for (Language l : languages) {
-      myLanguages.put(l.getNamespace(), l);
+    if (myLanguages.isEmpty()) {
+      Set<Language> languages = CollectionUtil.filter(Language.class, getVisibleModules());
+      for (Language l : languages) {
+        myLanguages.put(l.getNamespace(), l);
+      }
     }
-    return new ArrayList<Language>(languages);
+    return new ArrayList<Language>(myLanguages.values());
   }
 
   @NotNull
