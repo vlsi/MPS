@@ -110,19 +110,28 @@ public abstract class BaseNodeDialog extends BaseDialog {
 
   @BaseDialog.Button(position = 0, name = "OK", defaultButton = true)
   public void buttonOK() {
-    if (!validateNode()) return;
+    if (saveChanges_internal()) return;
+    BaseNodeDialog.this.dispose();
+  }
+
+  private boolean saveChanges_internal() {
+    if (!validateNode()) return true;
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
         myEditorComponent.dispose();
         saveChanges();
       }
     }, "Saving dialog changes");
-
-    BaseNodeDialog.this.dispose();
+    return false;
   }
 
   @BaseDialog.Button(position = 1, name = "Cancel")
   public void buttonCancel() {
     BaseNodeDialog.this.dispose();
+  }
+
+  @BaseDialog.Button(position = 2, name = "Apply")
+  public void buttonApply() {
+    saveChanges_internal();
   }
 }
