@@ -73,7 +73,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     Language language = new Language();
     SModel model = ProjectModels.createDescriptorFor(language).getSModel();
     model.setLoading(true);
-    LanguageDescriptor languageDescriptor = PersistenceUtil.loadLanguageDescriptor(descriptorFile, model);
+    LanguageDescriptor languageDescriptor = DescriptorsPersistence.loadLanguageDescriptor(descriptorFile, model);
     language.myDescriptorFile = descriptorFile;
     language.myLanguageDescriptor = languageDescriptor;
     MPSModuleRepository.getInstance().addModule(language, moduleOwner);
@@ -566,7 +566,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   }
 
   public void save() {
-    PersistenceUtil.saveLanguageDescriptor(myDescriptorFile, getLanguageDescriptor());
+    DescriptorsPersistence.saveLanguageDescriptor(myDescriptorFile, getLanguageDescriptor());
   }
 
   @NotNull

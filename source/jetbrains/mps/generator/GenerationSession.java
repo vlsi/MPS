@@ -416,7 +416,7 @@ public class GenerationSession {
 
     // save, add to project and reload all
     File solutionDescriptorFile = new File(solutionDir, "outputModels.msd");
-    PersistenceUtil.saveSolutionDescriptor(solutionDescriptorFile, solutionDescriptor);
+    DescriptorsPersistence.saveSolutionDescriptor(solutionDescriptorFile, solutionDescriptor);
     SModelDescriptor modelDescriptor = solutionDescriptorModel.getModelDescriptor();
     assert modelDescriptor != null;
     SModelRepository.getInstance().unRegisterModelDescriptor(modelDescriptor, tmpOwner);

@@ -71,7 +71,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
         myProjectFile = projectFile;
         SModel model = ProjectModels.createDescriptorFor(MPSProject.this).getSModel();
         model.setLoading(true);
-        myProjectDescriptor = PersistenceUtil.loadProjectDescriptor(projectFile, model);
+        myProjectDescriptor = DescriptorsPersistence.loadProjectDescriptor(projectFile, model);
 
         MPSProjects projects = myContext.get(MPSProjects.class);
         projects.addProject(MPSProject.this);
@@ -451,7 +451,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
   public void save() {
     if (IdeMain.isTestMode()) return;
 
-    PersistenceUtil.saveProjectDescriptor(myProjectFile, myProjectDescriptor);
+    DescriptorsPersistence.saveProjectDescriptor(myProjectFile, myProjectDescriptor);
 
     if (myWorkspaceFile != null) {
       try {

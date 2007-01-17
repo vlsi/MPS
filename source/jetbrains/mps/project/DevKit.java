@@ -25,7 +25,7 @@ public class DevKit extends AbstractModule {
     model.setLoading(true);
     DevKitDescriptor devKitDescriptor;
     if (descriptorFile.exists()) {
-      devKitDescriptor = PersistenceUtil.loadDevKitDescriptor(descriptorFile, model);
+      devKitDescriptor = DescriptorsPersistence.loadDevKitDescriptor(descriptorFile, model);
     } else {
       devKitDescriptor = DevKitDescriptor.newInstance(model);
     }
@@ -114,7 +114,7 @@ public class DevKit extends AbstractModule {
 
 
   public void save() {
-    PersistenceUtil.saveDevKitDescriptor(getModuleDescriptor(), myDescriptorFile);
+    DescriptorsPersistence.saveDevKitDescriptor(getModuleDescriptor(), myDescriptorFile);
   }
 
   private void devKitChanged() {

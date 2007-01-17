@@ -4,7 +4,7 @@ import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.projectLanguage.ModuleDescriptor;
-import jetbrains.mps.projectLanguage.PersistenceUtil;
+import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.SolutionDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
@@ -12,8 +12,6 @@ import jetbrains.mps.util.FileUtil;
 import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
-import java.util.HashSet;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -41,7 +39,7 @@ public class Solution extends AbstractModule {
     model.setLoading(true);
     SolutionDescriptor solutionDescriptor;
     if (descriptorFile.exists()) {
-      solutionDescriptor = PersistenceUtil.loadSolutionDescriptor(descriptorFile, model);
+      solutionDescriptor = DescriptorsPersistence.loadSolutionDescriptor(descriptorFile, model);
     } else {
       solutionDescriptor = SolutionDescriptor.newInstance(model);
     }
@@ -98,7 +96,7 @@ public class Solution extends AbstractModule {
   }
 
   public void save() {
-    PersistenceUtil.saveSolutionDescriptor(myDescriptorFile, getSolutionDescriptor());
+    DescriptorsPersistence.saveSolutionDescriptor(myDescriptorFile, getSolutionDescriptor());
   }
 
   @NotNull
@@ -158,7 +156,7 @@ public class Solution extends AbstractModule {
     SModel model = ProjectModels.createDescriptorFor(this).getSModel();
     File file = getDescriptorFile();
     assert file != null;
-    SolutionDescriptor descriptor = PersistenceUtil.loadSolutionDescriptor(file, model);
+    SolutionDescriptor descriptor = DescriptorsPersistence.loadSolutionDescriptor(file, model);
     setSolutionDescriptor(descriptor);
   }
 }
