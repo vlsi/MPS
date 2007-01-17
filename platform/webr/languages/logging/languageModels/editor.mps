@@ -90,17 +90,16 @@
     <link role="conceptDeclaration" targetNodeId="1.1167227138527" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1167245583614">
       <property name="drawBorder" value="false" />
+      <link role="keyMap" targetNodeId="1167228512722" resolveInfo="AddException_keymap" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1167245583615">
         <property name="textFgColor" value="DARK_BLUE" />
         <property name="fontStyle" value="BOLD" />
         <property name="drawBorder" value="false" />
-        <link role="keyMap" targetNodeId="1167228512722" resolveInfo="AddException_keymap" />
         <link role="relationDeclaration" targetNodeId="1.1167245565795" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1167245583616">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1167227463056" />
-        <link role="keyMap" targetNodeId="1167228512722" resolveInfo="AddException_keymap" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1167245583617">
         <property name="drawBorder" value="false" />
@@ -113,7 +112,6 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1167245583619">
           <property name="drawBorder" value="false" />
           <link role="relationDeclaration" targetNodeId="1.1167227561449" />
-          <link role="keyMap" targetNodeId="1167228512722" resolveInfo="AddException_keymap" />
         </node>
         <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1167245583620">
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1167245583621">
@@ -131,7 +129,23 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1167245583626">
         <property name="text" value=";" />
         <property name="drawBorder" value="false" />
-        <link role="keyMap" targetNodeId="1167228512722" resolveInfo="AddException_keymap" />
+      </node>
+    </node>
+    <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1169034756888">
+      <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1169034768249">
+        <property name="text" value="Has exception" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1169034779126">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="1.1167228628751" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1169034785409">
+        <property name="textFgColor" value="lightGray" />
+        <property name="text" value="Alt+Enter" />
+        <property name="drawBorder" value="false" />
+        <property name="selectable" value="false" />
       </node>
     </node>
   </node>
