@@ -1,23 +1,20 @@
 package jetbrains.mps.project;
 
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.projectLanguage.ModuleDescriptor;
-import jetbrains.mps.projectLanguage.SolutionDescriptor;
-import jetbrains.mps.projectLanguage.PersistenceUtil;
-import jetbrains.mps.projectLanguage.DevKitDescriptor;
-import jetbrains.mps.smodel.*;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.projectLanguage.*;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.ToStringComparator;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
-import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Set;
+import java.util.List;
 
 public class DevKit extends AbstractModule {
   public static DevKit newInstance(@NotNull File descriptorFile, @NotNull MPSModuleOwner moduleOwner) {
