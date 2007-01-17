@@ -2,13 +2,14 @@ package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
-import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModelDescriptor;
 
 import javax.swing.JPopupMenu;
 import javax.swing.Icon;
@@ -51,10 +52,19 @@ class ProjectDevKitTreeNode extends MPSTreeNode {
     return "devKit";
   }
 
-  private void populate() {    
-    for (Language l : myDevKit.getLanguages()) {
-      add(new GenericModuleTreeNode(l, getOperationContext().getProject()));
+  private void populate() {
+
+    TextTreeNode exportedLangs = new TextTreeNode("Exported Languages");
+    for (Language l : myDevKit.getExportedLanguages()) {
+      exportedLangs.add(new GenericModuleTreeNode(l, getOperationContext().getProject()));
     }
+    add(exportedLangs);
+
+    TextTreeNode exportedModels = new TextTreeNode("Exported Models");
+    for (SModelDescriptor sm : myDevKit.getExportedModelDescriptors()) {
+      exportedModels.add(new SModelTreeNode(sm, null, getOperationContext()));
+    }
+    add(exportedModels);
 
     TextTreeNode generationOnly = new TextTreeNode("Generation only languages");
     add(generationOnly);

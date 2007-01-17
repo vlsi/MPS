@@ -91,7 +91,7 @@ public class DevKit extends AbstractModule {
     CommandProcessor.instance().removeCommandListener(myTranslator);
   }
 
-  public List<Language> getLanguages() {
+  public List<Language> getExportedLanguages() {
     List<Language> langs = new ArrayList<Language>();
     for (jetbrains.mps.projectLanguage.Language l : myDescriptor.getExportedLanguages()) {
       Language lng = getScope().getLanguage("" + l.getName());
@@ -105,6 +105,20 @@ public class DevKit extends AbstractModule {
     return langs;
   }
 
+  public List<SModelDescriptor> getExportedModelDescriptors() {
+    List<SModelDescriptor> modelDescriptors = new ArrayList<SModelDescriptor>();
+    for (Model m : myDescriptor.getExportedModels()) {
+      SModelDescriptor sm = getScope().getModelDescriptor(SModelUID.fromString(m.getName()));
+      if (sm != null) {
+        modelDescriptors.add(sm);
+      } else {
+        System.out.println("Can't find a model descriptor " + m.getName() + " in " + this);
+      }
+    }
+    Collections.sort(modelDescriptors, new ToStringComparator());
+    return modelDescriptors;
+  }
+
   public List<Language> getGenerationOnlyLanuages() {
     List<Language> languages = MPSModuleRepository.getInstance().getLanguages(myGenerationOnlyModelsModelOwner);
     Collections.sort(languages, new ToStringComparator());
@@ -112,7 +126,7 @@ public class DevKit extends AbstractModule {
   }
 
   public List<String> getLanguageNamespaces() {
-    return CollectionUtil.map(getLanguages(), new Mapper<Language, String>() {
+    return CollectionUtil.map(getExportedLanguages(), new Mapper<Language, String>() {
       public String map(Language language) {
         return language.getNamespace();
       }

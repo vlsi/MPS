@@ -427,7 +427,6 @@ public class SModel implements Iterable<SNode> {
     ArrayList<Language> languages = new ArrayList<Language>();
 
 
-
     for (String languageNamespace : myLanguages) {
       Language language = scope.getLanguage(languageNamespace);
       if (language != null) {
@@ -441,7 +440,7 @@ public class SModel implements Iterable<SNode> {
     for (String dk : getDevKitNamespaces()) {
       DevKit devKit = scope.getDevKit(dk);
       if (devKit != null) {
-        for (Language l : devKit.getLanguages()) {
+        for (Language l : devKit.getExportedLanguages()) {
           if (!languages.contains(l)) {
             languages.add(l);
           }
@@ -454,6 +453,19 @@ public class SModel implements Iterable<SNode> {
     }
     
     return languages;
+  }
+
+  public List<DevKit> getDevkits(@NotNull IScope scope) {
+    List<DevKit> result = new ArrayList<DevKit>();
+    for (String dk : getDevKitNamespaces()) {
+      DevKit devKit = scope.getDevKit(dk);
+      if (devKit != null) {
+        result.add(devKit);
+      } else {
+        LOG.error("Can't find devkit " + dk + " in scope " + scope);
+      }
+    }
+    return result;
   }
 
 
@@ -474,7 +486,7 @@ public class SModel implements Iterable<SNode> {
     for (String dk : getDevKitNamespaces()) {
       DevKit devKit = scope.getDevKit(dk);
       if (devKit != null) {
-        for (Language l : devKit.getLanguages()) {
+        for (Language l : devKit.getExportedLanguages()) {
           if (!result.contains(l.getNamespace())) {
             result.add(l.getNamespace());
           }
