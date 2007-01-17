@@ -864,8 +864,8 @@
             <property name="name" value="y" />
             <node role="type" type="jetbrains.mps.baseLanguage.VoidType" id="1122986116625" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1122986121554">
-              <link role="baseMethodDeclaration" extResolveInfo="1.static method ([Classifier]Resolver).([StaticMethodDeclaration]resolve((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SReference]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IOperationContext])) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
               <link role="classConcept" extResolveInfo="1.[Classifier]Resolver" />
+              <link role="baseMethodDeclaration" extResolveInfo="1.static method ([Classifier]Resolver).([StaticMethodDeclaration]resolve((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SReference]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IOperationContext])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.NullLiteral" id="1135404547718" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.NewExpression" id="1135405140427" />
             </node>
