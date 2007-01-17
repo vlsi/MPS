@@ -92,9 +92,17 @@ public class DevKit extends AbstractModule {
   }
 
   public List<Language> getLanguages() {
-    List<Language> languages = MPSModuleRepository.getInstance().getLanguages(this);
-    Collections.sort(languages, new ToStringComparator());
-    return languages;
+    List<Language> langs = new ArrayList<Language>();
+    for (jetbrains.mps.projectLanguage.Language l : myDescriptor.getExportedLanguages()) {
+      Language lng = getScope().getLanguage("" + l.getName());
+      if (lng != null) {
+        langs.add(lng);
+      } else {
+        System.out.println("Can't find a language " + l.getName() + " in " + this);
+      }
+    }
+    Collections.sort(langs, new ToStringComparator());
+    return langs;
   }
 
   public List<Language> getGenerationOnlyLanuages() {
@@ -133,7 +141,6 @@ public class DevKit extends AbstractModule {
   public String getName() {
     return myDescriptor.getName();
   }
-
 
   public String toString() {
     return getName();
