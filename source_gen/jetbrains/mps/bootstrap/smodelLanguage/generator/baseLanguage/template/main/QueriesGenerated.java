@@ -30,6 +30,7 @@ public class QueriesGenerated {
     b = b || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "nodeOperation", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess");
     b = b || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "nodeOperation", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation");
     b = b || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "nodeOperation", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation");
+    b = b || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "nodeOperation", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.Link_DeleteChildOperation");
     if(b) {
       System.out.println("reduce SNodeOperationExpression with new reduction rule");
       return true;
@@ -68,9 +69,6 @@ public class QueriesGenerated {
   }
   public static String propertyMacro_GetPropertyValue_1168981884180(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SPropertyOperations.get(SLinkOperations.getTarget(node, "enumMember", false), "internalValue");
-  }
-  public static boolean baseMappingRule_Condition_1168908054750(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "nodeOperation", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.Link_DeleteChildOperation");
   }
   public static SNode sourceNodeQuery_1168986247382(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
@@ -162,6 +160,15 @@ public class QueriesGenerated {
   }
   public static boolean baseMappingRule_Condition_1168975717549(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "nodeOperation", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsRoleOperation");
+  }
+  public static SNode sourceNodeQuery_1169056377509(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    // <expr-to-copy> . link-access . delete-op
+    SNode lexpr1 = SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
+    return SLinkOperations.getTarget(lexpr1, "leftExpression", true);
+  }
+  public static String propertyMacro_GetPropertyValue_1169056436910(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode genuineLink = QueriesUtil.linkOperationExpression_genuineLink(SNodeOperations.getParent(node, null, false, false));
+    return SPropertyOperations.get(genuineLink, "role");
   }
   public static SNode sourceNodeQuery_1169055764567(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     // <expr-to-copy> . link-access . set-target-op
