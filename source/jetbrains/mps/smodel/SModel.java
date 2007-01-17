@@ -600,6 +600,32 @@ public class SModel implements Iterable<SNode> {
     return modelsList.iterator();
   }
 
+  public List<SModelDescriptor> allImportedModels(IScope scope) {
+    SModelDescriptor sourceModel = getModelDescriptor();
+    List<SModelDescriptor> list = new LinkedList<SModelDescriptor>();
+    List<Language> languages = sourceModel.getSModel().getLanguages(scope);
+    for (Language language : languages) {
+      for (SModelDescriptor accessoryModels : language.getAccessoryModels()) {
+        if (accessoryModels != sourceModel && !list.contains(accessoryModels))
+          list.add(accessoryModels);
+      }
+    }
+
+    List<DevKit> devkits = sourceModel.getSModel().getDevkits(scope);
+    for (DevKit dk : devkits) {
+      list.addAll(dk.getExportedModelDescriptors());
+    }
+
+    Iterator<SModelDescriptor> imports = sourceModel.getSModel().importedModels(scope);
+    while (imports.hasNext()) {
+      SModelDescriptor importedModel = imports.next();
+      if (importedModel != sourceModel && !list.contains(importedModel)) {
+        list.add(importedModel);
+      }
+    }
+    return list;
+  }
+
   @NotNull
   Iterator<ImportElement> importElements() {
     return myImports.iterator();
