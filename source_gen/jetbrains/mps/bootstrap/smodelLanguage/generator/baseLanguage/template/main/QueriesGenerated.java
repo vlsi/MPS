@@ -13,9 +13,10 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.baseLanguage.util.Querie
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
-import java.util.List;
+import jetbrains.mps.bootstrap.smodelLanguage.SModelLanguageUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.SNodeOperation;
 import jetbrains.mps.util.NameUtil;
+import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.SConceptPropertyAccess;
 
 public class QueriesGenerated {
@@ -27,6 +28,7 @@ public class QueriesGenerated {
     boolean b = false;
     b = b || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "nodeOperation", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess");
     b = b || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "nodeOperation", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess");
+    b = b || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "nodeOperation", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation");
     if(b) {
       System.out.println("reduce SNodeOperationExpression with new reduction rule");
       return true;
@@ -66,9 +68,6 @@ public class QueriesGenerated {
   public static String propertyMacro_GetPropertyValue_1168981884180(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SPropertyOperations.get(SLinkOperations.getTarget(node, "enumMember", false), "internalValue");
   }
-  public static boolean baseMappingRule_Condition_1168907918946(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "nodeOperation", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation");
-  }
   public static boolean baseMappingRule_Condition_1168908007520(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "nodeOperation", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation");
   }
@@ -89,6 +88,21 @@ public class QueriesGenerated {
       return "true";
     }
     return "false";
+  }
+  public static SNode sourceNodeQuery_1169051323267(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode lexpr1 = SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
+    return SLinkOperations.getTarget(lexpr1, "leftExpression", true);
+  }
+  public static String propertyMacro_GetPropertyValue_1169054268385(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode genuineLink = QueriesUtil.linkOperationExpression_genuineLink(SNodeOperations.getParent(node, null, false, false));
+    return SPropertyOperations.get(genuineLink, "role");
+  }
+  public static String propertyMacro_GetPropertyValue_1169054430478(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode parmConcept = SLinkOperations.getTarget(node, "concept", false);
+    if(parmConcept == null) {
+      parmConcept = SModelLanguageUtil.getLinkTargetConceptForLinkOperation((SNodeOperation)node);
+    }
+    return NameUtil.nodeFQName(parmConcept);
   }
   public static boolean baseMappingRule_Condition_1168967899174(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "nodeOperation", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation")) {
