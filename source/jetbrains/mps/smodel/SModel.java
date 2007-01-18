@@ -1006,4 +1006,49 @@ public class SModel implements Iterable<SNode> {
     return resultNodes;
   }
 
+  public void copyToSModel(final SModel targetModel) {
+    final SModel sourceModel = this;
+    targetModel.runLoadingAction(new Runnable() {
+      public void run() {
+        List<SNode> roots = sourceModel.getRoots();
+        for (SNode node : roots) {
+          SNode nodeClone = SModelUtil.cloneSNode(node, targetModel, false);
+          targetModel.addRoot(nodeClone);
+        }
+
+        List<SNode> targetRoots = targetModel.getRoots();
+        for (SNode targetNode : targetRoots) {
+          updateReferences(targetNode);
+        }
+      }
+    });
+  }
+
+  private void updateReferences(SNode node) {
+    SModel targetModel = node.getModel();
+    Map<SReference, SNode> replacementMap = new HashMap<SReference, SNode>();
+    // do process references
+    for (SReference reference : node.getReferences()) {
+      if (reference.isExternal()) {
+        SNode oldReferentNode = reference.getTargetNode();
+        SNode newReferentNode = targetModel.getNodeById(oldReferentNode.getId());
+        if (newReferentNode != null) {
+          // replace reference
+          replacementMap.put(reference, newReferentNode);
+        }
+      }
+    }
+
+    // do precess children references
+    List<SNode> children = node.getChildren();
+    for (SNode childNode : children) {
+      updateReferences(childNode);
+    }
+
+    for (SReference reference : replacementMap.keySet()) {
+      node.removeReferent(reference.getRole(), reference.getTargetNode());
+      node.addReferent(reference.getRole(), replacementMap.get(reference));
+    }
+  }
+
 }
