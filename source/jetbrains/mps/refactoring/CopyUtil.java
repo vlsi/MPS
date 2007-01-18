@@ -52,7 +52,7 @@ public class CopyUtil  {
     assert result != null;
     mapping.put(node, result);
 
-    targetModel.addLanguage(SModelUtil.getLanguage(node, scope));
+    targetModel.addLanguage(node.getLanguage(scope));
 
     for (String property : node.getProperties().keySet()) {
       result.setProperty(property, node.getProperty(property), false);

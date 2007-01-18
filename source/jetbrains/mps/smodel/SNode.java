@@ -1379,7 +1379,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       return true;
     }
 
-    Language language = SModelUtil.getLanguage(this, scope);
+    Language language = getLanguage(scope);
     if (language == null) return false;
     return language.getParentNames(getClass().getName()).
             contains(JavaNameUtil.className(conceptDeclaration));
