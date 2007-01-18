@@ -362,6 +362,10 @@
       <property name="name" value="sourceNodeQueryId" />
       <link role="dataType" targetNodeId="2.1082983041843" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1169079079555">
+      <property name="name" value="disableReducing" />
+      <link role="dataType" targetNodeId="2.1082983657063" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1114729360583">
     <property name="name" value="CopySrcListMacro" />
