@@ -653,6 +653,10 @@
       <property name="name" value="applyToConceptInheritors" />
       <link role="dataType" targetNodeId="2.1082983657063" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1169133880907">
+      <property name="name" value="searchImportedModels" />
+      <link role="dataType" targetNodeId="2.1082983657063" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1167169349424">
       <property name="role" value="applicableConcept" />
       <link role="target" targetNodeId="3.1071489090640" />
