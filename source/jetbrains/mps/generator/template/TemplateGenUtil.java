@@ -239,18 +239,17 @@ public class TemplateGenUtil {
   }
 
   public static List<INodeBuilder> applyRootMappingRules(final List<Root_MappingRule> mappingRules, final ITemplateGenerator generator) {
-    //todo implement search in imported models like in weaving mapping rules
     final List<INodeBuilder> builders = new LinkedList<INodeBuilder>();
     if (mappingRules.isEmpty()) return builders;
-    generator.getSourceModel().allNodes(new Condition<SNode>() {
-      public boolean met(SNode sourceNode) {
-        ConceptDeclaration nodeConcept = sourceNode.getConceptDeclaration(generator.getScope());
-        for (Root_MappingRule mappingRule : mappingRules) {
+    for (final Root_MappingRule mappingRule : mappingRules) {
+      Condition<SNode> condition = new Condition<SNode>() {
+        public boolean met(SNode sourceNode) {
+          ConceptDeclaration nodeConcept = sourceNode.getConceptDeclaration(generator.getScope());
           if (checkPremiseForBaseMappingRule(sourceNode, nodeConcept, mappingRule, generator)) {
             NamedConcept template = mappingRule.getTemplate();
             if (template == null) {
               generator.showErrorMessage(sourceNode, null, mappingRule, "root mapping rule has no template");
-              continue;
+              return false;
             }
 
             String mappingName = mappingRule.getName();
@@ -258,10 +257,15 @@ public class TemplateGenUtil {
             nodeBuilder.setRuleNode(mappingRule);
             builders.add(nodeBuilder);
           }
+          return false;
         }
-        return false;
+      };
+      if (mappingRule.getSearchImportedModels()) {
+         generator.getSourceModel().allNodesIncludingImported(generator.getScope(), condition);
+      } else {
+        generator.getSourceModel().allNodes(condition);
       }
-    });
+    }
     return builders;
   }
 
