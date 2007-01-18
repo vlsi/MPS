@@ -950,27 +950,44 @@ public class TemplateGenUtil {
     }
 
     List<TemplateFragment> templateFragments = getTemplateFragments(templateDeclaration);
-    if (templateFragments.size() == 0) {
-      generator.showErrorMessage(sourceNode, templateDeclaration, reductionRule, "template declaration has no template fragments");
-      throw new RuntimeException("template declaration has no template fragments");
-    }
 
-    SNode p1 = templateFragments.get(0).getParent();
-    SNode enclosingNode = p1.getParent();
-    List<INodeBuilder> buildersForRule = new LinkedList<INodeBuilder>();
-    for (TemplateFragment fragment : templateFragments) {
-      SNode fragmentNode = fragment.getParent();
-      if (fragmentNode.getParent() != enclosingNode) {
-        // all fragment nodes should have the same parent
-        continue;
-      }
+    // temporarily disable multiple fragments (18JAN07). remove code after reasonable time if nobody need it
 
-      String mappingName = fragment.getName();
-      if (mappingName == null) {
-        mappingName = reductionRule.getName();
-      }
-      buildersForRule.addAll(createNodeBuildersForTemplateNode(sourceNode, fragmentNode, mappingName, 0, generator));
+//    if (templateFragments.size() == 0) {
+//      generator.showErrorMessage(sourceNode, templateDeclaration, reductionRule, "template declaration has no template fragments");
+//      throw new RuntimeException("template declaration has no template fragments");
+//    }
+//
+//    SNode p1 = templateFragments.get(0).getParent();
+//    SNode enclosingNode = p1.getParent();
+//    List<INodeBuilder> buildersForRule = new LinkedList<INodeBuilder>();
+//    for (TemplateFragment fragment : templateFragments) {
+//      SNode fragmentNode = fragment.getParent();
+//      if (fragmentNode.getParent() != enclosingNode) {
+//        // all fragment nodes should have the same parent
+//        continue;
+//      }
+//
+//      String mappingName = fragment.getName();
+//      if (mappingName == null) {
+//        mappingName = reductionRule.getName();
+//      }
+//      buildersForRule.addAll(createNodeBuildersForTemplateNode(sourceNode, fragmentNode, mappingName, 0, generator));
+//    }
+
+
+    // enable single-fragment reducing
+    if (templateFragments.size() != 1) {
+      generator.showErrorMessage(sourceNode, templateDeclaration, reductionRule, "reduction template must have exactly one template fragment");
+      throw new RuntimeException("reduction template must have exactly one template fragment");
     }
+    TemplateFragment fragment = templateFragments.get(0);
+    String mappingName = fragment.getName();
+    if (mappingName == null) {
+      mappingName = reductionRule.getName();
+    }
+    SNode fragmentNode = fragment.getParent();
+    List<INodeBuilder> buildersForRule = createNodeBuildersForTemplateNode(sourceNode, fragmentNode, mappingName, 0, generator);
 
     INodeBuilder builderForRule;
     if (buildersForRule.size() == 1) {

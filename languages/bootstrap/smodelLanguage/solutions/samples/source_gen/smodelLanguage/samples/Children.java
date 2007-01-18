@@ -21,5 +21,8 @@ public class Children {
     for(SNode statement : SLinkOperations.getTargets(statementList1, "statement", true)) {
       SLinkOperations.addChild(statementList2, "statement", SNodeOperations.copyNode(statement));
     }
+    for(SNode statement : SLinkOperations.getTargets(statementList1, "statement", true)) {
+      SLinkOperations.addChild(statementList2, "statement", SNodeOperations.copyNode(statement));
+    }
   }
 }
