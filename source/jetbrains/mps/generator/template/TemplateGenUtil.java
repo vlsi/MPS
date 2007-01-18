@@ -29,7 +29,7 @@ public class TemplateGenUtil {
   private static final Logger LOG = Logger.getLogger(TemplateGenUtil.class);
 
   public static SNode instantiateNodeForTemplate(SNode templateNode, SModel targetModel, IScope scope) {
-    ConceptDeclaration conceptDeclaration = SModelUtil.getConceptDeclaration(templateNode, scope);
+    ConceptDeclaration conceptDeclaration = templateNode.getConceptDeclaration(scope);
     SNode targetNode = SModelUtil.instantiateConceptDeclaration(conceptDeclaration, targetModel, false);
     SModelUtil.copySNodeProperties(templateNode, targetNode);
     return targetNode;
@@ -166,7 +166,7 @@ public class TemplateGenUtil {
 //  }
 
   public static IReferenceResolver loadReferenceResolver(SNode templateNode, IScope scope) {
-    ConceptDeclaration conceptDeclaration = SModelUtil.getConceptDeclaration(templateNode, scope);
+    ConceptDeclaration conceptDeclaration = templateNode.getConceptDeclaration(scope);
     while (conceptDeclaration != null) {
       String modelPackageName = JavaNameUtil.packageNameForModelUID(conceptDeclaration.getModel().getUID());
       String buildersPackageName = modelPackageName + ".builder";
@@ -243,7 +243,7 @@ public class TemplateGenUtil {
     if (mappingRules.isEmpty()) return builders;
     SModelUtil.allNodes(generator.getSourceModel(), new Condition<SNode>() {
       public boolean met(SNode sourceNode) {
-        ConceptDeclaration nodeConcept = SModelUtil.getConceptDeclaration(sourceNode, generator.getScope());
+        ConceptDeclaration nodeConcept = sourceNode.getConceptDeclaration(generator.getScope());
         for (Root_MappingRule mappingRule : mappingRules) {
           if (checkPremiseForBaseMappingRule(sourceNode, nodeConcept, mappingRule, generator)) {
             NamedConcept template = mappingRule.getTemplate();
@@ -268,7 +268,7 @@ public class TemplateGenUtil {
     if (weavingRules.isEmpty()) return;
     SModelUtil.allNodes(generator.getSourceModel(), new Condition<SNode>() {
       public boolean met(SNode sourceNode) {
-        ConceptDeclaration nodeConcept = SModelUtil.getConceptDeclaration(sourceNode, generator.getScope());
+        ConceptDeclaration nodeConcept = sourceNode.getConceptDeclaration(generator.getScope());
         for (Weaving_MappingRule weavingRule : weavingRules) {
           if (checkPremiseForBaseMappingRule(sourceNode, nodeConcept, weavingRule, generator)) {
             TemplateDeclaration templateDeclaration = weavingRule.getTemplate();
@@ -890,7 +890,7 @@ public class TemplateGenUtil {
   }
 
   protected static Reduction_MappingRule findReductionMappingRule(SNode sourceNode, List<Reduction_MappingRule> rules, ITemplateGenerator generator) {
-    ConceptDeclaration concept = SModelUtil.getConceptDeclaration(sourceNode, generator.getScope());
+    ConceptDeclaration concept = sourceNode.getConceptDeclaration(generator.getScope());
     for (Reduction_MappingRule rule : rules) {
       if (checkPremiseForBaseMappingRule(sourceNode, concept, rule, generator)) {
         return rule;

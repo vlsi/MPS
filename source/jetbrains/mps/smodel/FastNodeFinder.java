@@ -48,7 +48,7 @@ public class FastNodeFinder {
       buildCache(child);
     }
 
-    ConceptDeclaration concept = SModelUtil.findConceptDeclaration(root, GlobalScope.getInstance());
+    ConceptDeclaration concept = root.findConceptDeclaration(GlobalScope.getInstance());
     while (concept != null) {
       getListFor(concept).add(new WeakReference<SNode>(root));
       concept = concept.getExtends();

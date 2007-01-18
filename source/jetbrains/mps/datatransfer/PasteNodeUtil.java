@@ -9,10 +9,7 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.Iterator;
@@ -126,8 +123,8 @@ public class PasteNodeUtil {
   }
 
   private static boolean pasteToTarget_internal(final SNode pasteTarget, final SNode pasteNode, final SNode anchorNode, String role, final boolean pasteBefore, boolean reallyPaste, final IOperationContext operationContext) {
-    ConceptDeclaration pasteTargetType = SModelUtil.getConceptDeclaration(pasteTarget, operationContext.getScope());
-    ConceptDeclaration pasteNodeType = SModelUtil.getConceptDeclaration(pasteNode, operationContext.getScope());
+    ConceptDeclaration pasteTargetType = pasteTarget.getConceptDeclaration(operationContext.getScope());
+    ConceptDeclaration pasteNodeType = pasteNode.getConceptDeclaration(operationContext.getScope());
     final LinkDeclaration linkDeclaration = findMetalink(pasteTargetType, pasteNodeType, role);
     if (linkDeclaration == null) {
       return false;

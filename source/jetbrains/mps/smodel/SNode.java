@@ -1324,7 +1324,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   @NotNull
   public ConceptDeclaration getNodeConcept() {
-    return SModelUtil.getConceptDeclaration(this, GlobalScope.getInstance());
+    return getConceptDeclaration(GlobalScope.getInstance());
   }
 
   @NotNull
@@ -1351,7 +1351,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       return true;
     }
 
-    ConceptDeclaration instanceConcept = SModelUtil.getConceptDeclaration(instance, scope);
+    ConceptDeclaration instanceConcept = instance.getConceptDeclaration(scope);
 //    LOG.assertLog(instanceConcept != null, "Couldn't find concept declaration for node : " + instance.getDebugText());
     ConceptDeclaration compareConcept = instanceConcept;
     while (compareConcept != null) {
@@ -1363,6 +1363,21 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
     return false;
   }
+
+  @NotNull
+  public ConceptDeclaration getConceptDeclaration(IScope scope) {
+    String conceptFQName = NameUtil.nodeConceptFQName(this);
+    ConceptDeclaration concept = SModelUtil.findConceptDeclaration(conceptFQName, scope);
+    assert concept != null : "couldn't find concept declaration '" + conceptFQName + "' in scope:" + scope;
+    return concept;
+  }
+
+
+  public ConceptDeclaration findConceptDeclaration(IScope scope) {
+    String conceptFQName = NameUtil.nodeConceptFQName(this);
+    return SModelUtil.findConceptDeclaration(conceptFQName, scope);
+  }
+
 
 
 }

@@ -45,7 +45,7 @@ import java.util.List;
   private static List<RTransformHintSubstituteActionsBuilder> getActionBuilders(final SNode sourceNode, String transformTag, final IOperationContext context) {
     List<RTransformHintSubstituteActionsBuilder> actionsBuilders = new LinkedList<RTransformHintSubstituteActionsBuilder>();
     IScope scope = context.getScope();
-    final ConceptDeclaration sourceConcept = SModelUtil.getConceptDeclaration(sourceNode, scope);
+    final ConceptDeclaration sourceConcept = sourceNode.getConceptDeclaration(scope);
     final RTransformTag tag = RTransformTag.parseValue(transformTag);
 
     List<Language> languages = sourceNode.getModel().getLanguages(scope);

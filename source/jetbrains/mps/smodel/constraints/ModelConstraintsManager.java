@@ -198,7 +198,7 @@ public class ModelConstraintsManager {
       if (getter != null || myNodePropertyGettersCache.containsKey(sourceKey)) return getter;
     }
 
-    ConceptDeclaration concept = SModelUtil.getConceptDeclaration(node, GlobalScope.getInstance());
+    ConceptDeclaration concept = node.getConceptDeclaration(GlobalScope.getInstance());
     while (concept != null) {
       String conceptFqName = NameUtil.nodeFQName(concept);
       IModelConstraints result;
