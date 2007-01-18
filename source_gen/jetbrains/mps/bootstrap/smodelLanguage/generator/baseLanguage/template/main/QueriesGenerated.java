@@ -16,6 +16,7 @@ import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.SModelLanguageUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.SNodeOperation;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Concept;
 import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.SConceptPropertyAccess;
 
@@ -39,6 +40,7 @@ public class QueriesGenerated {
     b = b || SNodeOperations.isInstanceOf(op, "jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_GetCountOperation");
     b = b || SNodeOperations.isInstanceOf(op, "jetbrains.mps.bootstrap.smodelLanguage.structure.Model_CreateNewNodeOperation");
     b = b || SNodeOperations.isInstanceOf(op, "jetbrains.mps.bootstrap.smodelLanguage.structure.Model_CreateNewRootNodeOperation");
+    b = b || SNodeOperations.isInstanceOf(op, "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation");
     if(b) {
       System.out.println("reduce SNodeOperationExpression with new reduction rule");
       return true;
@@ -141,16 +143,10 @@ public class QueriesGenerated {
     return NameUtil.nodeFQName(parmConcept);
   }
   public static boolean baseMappingRule_Condition_1168967899174(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "nodeOperation", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation")) {
-      return QueriesUtil.opGetParent_reduceDeafult(SLinkOperations.getTarget(node, "nodeOperation", true));
-    }
-    return false;
+    return QueriesUtil.opGetParent_reduceDefault(node);
   }
-  public static boolean baseMappingRule_Condition_1168969238044(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "nodeOperation", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation")) {
-      return QueriesUtil.opGetParent_reduceWhereConceptInList(SLinkOperations.getTarget(node, "nodeOperation", true));
-    }
-    return false;
+  public static boolean baseMappingRule_Condition_1169087003242(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.opGetParent_reduceWhereConceptInList(node);
   }
   public static boolean baseMappingRule_Condition_1168970436747(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "nodeOperation", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetModelOperation");
@@ -199,6 +195,9 @@ public class QueriesGenerated {
   }
   public static boolean baseMappingRule_Condition_1168975717549(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "nodeOperation", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsRoleOperation");
+  }
+  public static SNode sourceNodeQuery_1169071189829(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
   }
   public static SNode sourceNodeQuery_1169058187694(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     // <expr-to-copy> . linklist-access . add-child-op
@@ -259,6 +258,14 @@ public class QueriesGenerated {
     SNode parmConcept = SLinkOperations.getTarget(node, "concept", false);
     return NameUtil.nodeFQName(parmConcept);
   }
+  public static boolean baseMappingRule_Condition_1169074670328(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    Object parm = SModelLanguageUtil.findNodeOperationParameter((SNodeOperation)node, OperationParm_Concept.class);
+    return parm != null;
+  }
+  public static boolean baseMappingRule_Condition_1169074949355(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    Object parm = SModelLanguageUtil.findNodeOperationParameter((SNodeOperation)node, OperationParm_Concept.class);
+    return parm == null;
+  }
   public static SNode sourceNodeQuery_1169069851562(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     // <expr-to-copy> . linklist-access . count-op
     SNode lexpr1 = SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
@@ -269,10 +276,11 @@ public class QueriesGenerated {
     return SPropertyOperations.get(genuineLink, "role");
   }
   public static SNode sourceNodeQuery_1168292579606(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "leftExpression", true);
+    return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
   }
   public static List sourceNodesQuery_1168293467222(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (List<SNode>)_QueriesUtil.getNodeOperation_ConceptList_concepts((SNodeOperation)(SLinkOperations.getTarget(node, "nodeOperation", true)));
+    SNode op = SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "nodeOperation", true);
+    return (List<SNode>)_QueriesUtil.getNodeOperation_ConceptList_concepts((SNodeOperation)(op));
   }
   public static String propertyMacro_GetPropertyValue_1168294031937(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return NameUtil.nodeFQName(node);

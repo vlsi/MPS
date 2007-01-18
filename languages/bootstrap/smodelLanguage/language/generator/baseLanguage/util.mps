@@ -17,7 +17,7 @@
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1168968323635">
     <property name="name" value="QueriesUtil" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1168968334480">
-      <property name="name" value="opGetParent_reduceDeafult" />
+      <property name="name" value="opGetParent_reduceDefault" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.BooleanType" id="1168968338921" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1168968334482">
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1168968630547">
