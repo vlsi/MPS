@@ -735,7 +735,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1136916976737">
     <property name="name" value="CellKeyMapKeystroke" />
-    <link role="extends" targetNodeId="1168600538776" resolveInfo="DEF" />
+    <link role="extends" targetNodeId="3.1133920641626" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1136923970223">
       <property name="propertyType" value="string" />
       <property name="name" value="modifiers" />
