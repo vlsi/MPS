@@ -3,7 +3,6 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.bootstrap.actionsLanguage.NodeFactory;
 import jetbrains.mps.bootstrap.actionsLanguage.NodeSetupFunction;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.QueryMethodGenerated;
@@ -48,7 +47,7 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
       final ConceptDeclaration conceptF = concept;
       SModelDescriptor actionsModelDescriptor = language.getActionsModelDescriptor();
       if (actionsModelDescriptor != null) {
-        nodeFactories = SModelUtil.allNodes(actionsModelDescriptor.getSModel(), NodeFactory.class, new Condition<NodeFactory>() {
+        nodeFactories = actionsModelDescriptor.getSModel().allNodes(NodeFactory.class, new Condition<NodeFactory>() {
           public boolean met(NodeFactory object) {
             return object.getApplicableConcept() == conceptF;
           }

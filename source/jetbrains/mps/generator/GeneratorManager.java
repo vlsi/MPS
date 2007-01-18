@@ -202,7 +202,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
   private static boolean containsMappingConfiguration(Generator generator) {
     for (SModelDescriptor templateModel : generator.getOwnTemplateModels()) {
-      if (SModelUtil.allNodes(templateModel.getSModel(), MappingConfiguration.class).size() > 0) {
+      if (templateModel.getSModel().allNodes(MappingConfiguration.class).size() > 0) {
         return true;
       }
     }
