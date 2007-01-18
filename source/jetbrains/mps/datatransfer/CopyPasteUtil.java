@@ -5,9 +5,9 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.text.Parser;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.GlobalScope;
 
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
@@ -16,17 +16,19 @@ import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
 import java.util.*;
 
+import org.jetbrains.annotations.Nullable;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
  * Date: 22.07.2005
  * Time: 17:53:14
  * To change this template use File | Settings | File Templates.
- */                      
+ */
 public class CopyPasteUtil {
 
   private static final Logger LOG = Logger.getLogger(CopyPasteUtil.class);
-                                                         
+
   private static final ModelOwner ourModelOwner = new ModelOwner() {};
 
 
@@ -46,13 +48,13 @@ public class CopyPasteUtil {
     for (SReference ref : allReferences) {
       if (ref.isExternal()) {
         SModelUID targetModelUID = ref.getTargetModelUID();
-          necessaryImports.add(targetModelUID);
+        necessaryImports.add(targetModelUID);
       }
     }
     necessaryImports.add(sourceModel.getUID());
   }
 
-  public static PasteNodeData createNodeDataIn(List<SNode> sourceNodes) {
+  public static PasteNodeData createNodeDataIn(List<SNode> sourceNodes, Map<SNode, Set<SNode>> sourceNodesAndAttributes) {
     if (sourceNodes.isEmpty()) return new PasteNodeData(new ArrayList<SNode>(), null, null, null, null, null);
     SModel model = sourceNodes.get(0).getModel();
 
@@ -62,7 +64,7 @@ public class CopyPasteUtil {
     Set<SReference> allReferences = new HashSet<SReference>();
     for (SNode sourceNode : sourceNodes) {
       assert sourceNode.getModel() == model;
-      SNode targetNode = copyNode_internal(sourceNode, sourceNodesToNewNodes, allReferences);
+      SNode targetNode = copyNode_internal(sourceNode, sourceNodesAndAttributes, sourceNodesToNewNodes, allReferences);
       result.add(targetNode);
     }
     HashSet<SModelUID> necessaryImports = new HashSet<SModelUID>();
@@ -93,7 +95,7 @@ public class CopyPasteUtil {
     originalModel.setLoading(true);
     for (SNode sourceNode : sourceNodes) {
       assert sourceNode.getModel() == originalModel;
-      SNode nodeToPaste = copyNode_internal(sourceNode, sourceNodesToNewNodes, allReferences);
+      SNode nodeToPaste = copyNode_internal(sourceNode, null, sourceNodesToNewNodes, allReferences);
       result.add(nodeToPaste);
     }
     SNode firstNodeToPaste = result.get(0);
@@ -112,7 +114,7 @@ public class CopyPasteUtil {
     return new PasteNodeData(result, referencesRequireResolve, modelProperties, necessaryLanguages, necessaryImports, necessaryDevKits);
   }
 
-  private static SNode copyNode_internal(SNode sourceNode, Map<SNode,SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
+  private static SNode copyNode_internal(SNode sourceNode, @Nullable Map<SNode, Set<SNode>> nodesAndAttributes, Map<SNode,SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
     SNode targetNode = sourceNode.cloneProperties();
     targetNode.setId(SNode.generateUniqueId());
 
@@ -125,7 +127,15 @@ public class CopyPasteUtil {
 
     List<SNode> children = sourceNode.getChildren();
     for(SNode sourceChild : children) {
-      SNode targetChild = copyNode_internal(sourceChild, sourceNodesToNewNodes, allReferences);
+      if (nodesAndAttributes != null) {
+        if (AttributesRolesUtil.isAttributeRole(sourceChild.getRole_())) {
+          Set<SNode> nodes = nodesAndAttributes.get(sourceNode);
+          if (nodes != null && !nodes.contains(sourceChild)) {
+            continue;
+          }
+        }
+      }
+      SNode targetChild = copyNode_internal(sourceChild, nodesAndAttributes, sourceNodesToNewNodes, allReferences);
       String role = sourceChild.getRole_();
       assert role != null;
       targetNode.addChild(role, targetChild);
@@ -204,7 +214,12 @@ public class CopyPasteUtil {
     cb.setContents(new SNodeTransferable(nodes, text), null);
   }
 
-   public static void copyNodesToClipboard(List<SNode> nodes) {
+  public static void copyNodesAndTextToClipboard(List<SNode> nodes, Map<SNode, Set<SNode>> nodesAndAttributes, String text) {
+    Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
+    cb.setContents(new SNodeTransferable(nodes, text, nodesAndAttributes), null);
+  }
+
+  public static void copyNodesToClipboard(List<SNode> nodes) {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
     cb.setContents(new SNodeTransferable(nodes), null);
   }
@@ -305,7 +320,7 @@ public class CopyPasteUtil {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
     Transferable content = cb.getContents(null);
     boolean hasNodes = false;
-     if (content.isDataFlavorSupported(SModelDataFlavor.sNode)) {
+    if (content.isDataFlavorSupported(SModelDataFlavor.sNode)) {
       SNodeTransferable nodeTransferable;
       try {
         nodeTransferable = (SNodeTransferable) content.getTransferData(SModelDataFlavor.sNode);

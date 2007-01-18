@@ -6,10 +6,12 @@ import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.text.TextRenderUtil;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.Mapper;
+import jetbrains.mps.util.Pair;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.ArrayList;
+import java.util.*;
 
 
 /**
@@ -39,15 +41,41 @@ public class CellAction_CopyNode extends EditorCellAction {
       nodeList.add(editorComponent.getSelectedCell().getSNode());
       LOG.debug("Copy node : " + nodeList.get(0).getDebugText());
     }
-    List copyNodeList = new ArrayList(nodeList.size());
+    List<SNode> copyNodeList = new ArrayList<SNode>();
+    Map<SNode, Set<SNode>> nodesAndAttributes = new HashMap<SNode, Set<SNode>>();
     for (SNode node : nodeList) {
-      if (node.getParent() != null && AttributesRolesUtil.isAttributeRole(node.getRole_())) {
-        copyNodeList.add(node.getParent());
+      final SNode parent = node.getParent();
+      if (parent != null && AttributesRolesUtil.isAttributeRole(node.getRole_())) {
+
+        EditorCell selectedCell = editorComponent.getSelectedCell();
+        Condition<EditorCell> condition = new Condition<EditorCell>() {
+          public boolean met(EditorCell object) {
+            SNode selectedNode = object.getSNode();
+            return selectedNode != null &&
+                    selectedNode.getParent() == parent && AttributesRolesUtil.isAttributeRole(selectedNode.getRole_());
+          }
+        };
+        Mapper<EditorCell, SNode> mapper = new Mapper<EditorCell, SNode>() {
+          public SNode map(EditorCell editorCell) {
+            return editorCell.getSNode();
+          }
+        };
+        Set<SNode> selectedAttributes = new HashSet<SNode>();
+        if (selectedCell instanceof EditorCell_Collection) {
+          EditorCell_Collection selectedCollection = (EditorCell_Collection) selectedCell;
+          selectedAttributes.addAll(CollectionUtil.map(CollectionUtil.filter(selectedCollection.dfsCells(), condition), mapper));
+        } else {
+          if (condition.met(selectedCell)) {
+            selectedAttributes.add(mapper.map(selectedCell));
+          }
+        }
+        copyNodeList.add(parent);
+        nodesAndAttributes.put(parent, selectedAttributes);
       } else {
         copyNodeList.add(node);
       }
     }
 
-    CopyPasteUtil.copyNodesAndTextToClipboard(copyNodeList, textBuilder.getText());
+    CopyPasteUtil.copyNodesAndTextToClipboard(copyNodeList, nodesAndAttributes, textBuilder.getText());
   }
 }

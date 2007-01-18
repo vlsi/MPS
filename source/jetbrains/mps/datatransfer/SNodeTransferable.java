@@ -11,6 +11,9 @@ import java.util.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Created by IntelliJ IDEA.
@@ -43,18 +46,23 @@ public class SNodeTransferable implements Transferable {
   }
 
   public SNodeTransferable(List<SNode> nodes, String text) {
-    saveNodes(nodes);
+    saveNodes(nodes, null);
     myText = text;
   }
 
   public SNodeTransferable(List<SNode> nodes) {
-    saveNodes(nodes);
+    saveNodes(nodes, null);
+  }
+
+  public SNodeTransferable(@NotNull List<SNode> nodes, String text, Map<SNode, Set<SNode>> nodesAndAttributes) {
+    saveNodes(nodes, nodesAndAttributes);
+    myText = text;
   }
 
   public SNodeTransferable(SNode node) {
     List<SNode> list = new ArrayList<SNode>();
     list.add(node);
-    saveNodes(list);
+    saveNodes(list, null);
   }
 
   public boolean isDataFlavorSupported(DataFlavor flavor) {
@@ -82,9 +90,9 @@ public class SNodeTransferable implements Transferable {
     return myText;
   }
 
-  private void saveNodes(List<SNode> nodes) {
+  private void saveNodes(@NotNull List<SNode> nodes, @Nullable Map<SNode, Set<SNode>> nodesAndAttributes) {
     mySNodes.clear();
-    PasteNodeData pasteNodeData = CopyPasteUtil.createNodeDataIn(nodes);
+    PasteNodeData pasteNodeData = CopyPasteUtil.createNodeDataIn(nodes, nodesAndAttributes);
     mySNodes.addAll(pasteNodeData.getNodes());
     myModelProperties = pasteNodeData.getModelProperties();
     myNecessaryImports = pasteNodeData.getNecessaryImports();
