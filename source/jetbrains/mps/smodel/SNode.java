@@ -1734,4 +1734,68 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     }
     return language;
   }
+
+  public List<SNode> getLinkAttributes(Condition<SNode> c) {
+    List<SNode> result = new ArrayList<SNode>();
+    for (String role : getReferenceRoles()) {
+      SNode linkAttribute = getLinkAttribute(role);
+      if (c.met(linkAttribute)) {
+        result.add(linkAttribute);
+      }
+    }
+    return result;
+  }
+
+  public List<SNode> findLinkAttributes(Condition<SNode> c) {
+    ArrayList<SNode> result = new ArrayList<SNode>();
+    result.addAll(getLinkAttributes(c));
+    for (SNode child : CollectionUtil.iteratorAsIterable(depthFirstChildren())) {
+      result.addAll(child.getLinkAttributes(c));
+    }
+    return result;
+  }
+
+  public List<SNode> findLinkAttributes(final Class<? extends SNode> cls) {
+    return findLinkAttributes(new Condition<SNode>() {
+      public boolean met(SNode object) {
+        return cls.isInstance(object);
+      }
+    });
+  }
+
+  public List<SNode> getPropertyAttributes(Condition<SNode> c) {
+    List<SNode> result = new ArrayList<SNode>();
+    for (String propertyName : getPropertyNames()) {
+      SNode propertyAttribute = getPropertyAttribute(propertyName);
+      if (c.met(propertyAttribute)) {
+        result.add(propertyAttribute);
+      }
+    }
+    return result;
+  }
+
+  public List<SNode> findPropertyAttributes(Condition<SNode> c) {
+    ArrayList<SNode> result = new ArrayList<SNode>();
+    result.addAll(getPropertyAttributes(c));
+    for (SNode child : CollectionUtil.iteratorAsIterable(depthFirstChildren())) {
+      result.addAll(child.getPropertyAttributes(c));
+    }
+    return result;
+  }
+
+  public List<SNode> getPropertyAttributes(final Class<? extends SNode> cls) {
+    return getPropertyAttributes(new Condition<SNode>() {
+      public boolean met(SNode object) {
+        return cls.isInstance(object);
+      }
+    });
+  }
+
+  public List<SNode> findPropertyAttributes(final Class<? extends SNode> cls) {
+    return findPropertyAttributes(new Condition<SNode>() {
+      public boolean met(SNode object) {
+        return cls.isInstance(object);
+      }
+    });
+  }
 }
