@@ -2,12 +2,14 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.datatransfer.CopyPasteUtil;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.text.TextRenderUtil;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ArrayList;
 
 
 /**
@@ -37,7 +39,15 @@ public class CellAction_CopyNode extends EditorCellAction {
       nodeList.add(editorComponent.getSelectedCell().getSNode());
       LOG.debug("Copy node : " + nodeList.get(0).getDebugText());
     }
+    List copyNodeList = new ArrayList(nodeList.size());
+    for (SNode node : nodeList) {
+      if (node.getParent() != null && AttributesRolesUtil.isAttributeRole(node.getRole_())) {
+        copyNodeList.add(node.getParent());
+      } else {
+        copyNodeList.add(node);
+      }
+    }
 
-    CopyPasteUtil.copyNodesAndTextToClipboard(nodeList, textBuilder.getText());
+    CopyPasteUtil.copyNodesAndTextToClipboard(copyNodeList, textBuilder.getText());
   }
 }
