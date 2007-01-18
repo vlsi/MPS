@@ -96,7 +96,7 @@ public class NodePresentationUtil {
     if (node.isRoot()) {
       return NameUtil.shortNameFromLongName(node.getClass().getName()) + " (" + node.getModel().getUID() + ")";
     }
-    return node.getRole_() + " (" + NameUtil.nodeFQName(SModelUtil.getRootParent(node)) + ")";
+    return node.getRole_() + " (" + NameUtil.nodeFQName(node.getContainingRoot()) + ")";
   }
 
   public static String getAliasOrConceptName(SNode node) {

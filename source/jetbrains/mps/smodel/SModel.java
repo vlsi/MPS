@@ -759,7 +759,7 @@ public class SModel implements Iterable<SNode> {
   public void validateLanguagesAndImports() {
     Set<String> usedLanguages = new HashSet<String>(getLanguageNamespaces(GlobalScope.getInstance()));
     Set<SModelUID> importedModels = new HashSet<SModelUID>(getImportedModelUIDs());
-    List<? extends SNode> nodes = SModelUtil.allNodes(this);
+    List<? extends SNode> nodes = allNodes();
     for (SNode node : nodes) {
       String languageNamespace = SModelUtil.getLanguageNamespace(node);
       if (!usedLanguages.contains(languageNamespace)) {
@@ -922,5 +922,32 @@ public class SModel implements Iterable<SNode> {
 
   public void removeAllUserObjects() {
     myUserObjects.clear();
+  }
+
+  @NotNull
+  public List<? extends SNode> allNodes() {
+    SModel model = this;
+    List<SNode> result = new LinkedList<SNode>();
+
+    for (SNode root : model.getRoots()) {
+      result.add(root);
+      result.addAll(root.allChildren());
+    }
+
+    return result;
+  }
+
+
+  public <E extends SNode> List<E> allNodes(Condition<SNode> condition) {
+    List<E> resultNodes = new LinkedList<E>();
+
+    for (SNode node : getRoots()) {
+      if (condition.met(node)) {
+        resultNodes.add((E) node);
+      }
+      resultNodes.addAll((Collection<? extends E>) node.getSubnodes(condition));
+    }
+
+    return resultNodes;
   }
 }

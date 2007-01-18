@@ -368,7 +368,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
   @NotNull
   public List<ConceptDeclaration> getConceptDeclarations() {
-    return SModelUtil.allNodes(getStructureModelDescriptor().getSModel(), new Condition<SNode>() {
+    return getStructureModelDescriptor().getSModel().allNodes((Condition<SNode>) new Condition<SNode>() {
       public boolean met(SNode object) {
         return object instanceof ConceptDeclaration;
       }
@@ -530,14 +530,14 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     if (myNameToConceptCache.isEmpty()) {
       SModelDescriptor structureModelDescriptor = getStructureModelDescriptor();
       SModel structureModel = structureModelDescriptor.getSModel();
-      SModelUtil.allNodes(structureModel, new Condition<SNode>() {
-        public boolean met(SNode node) {
-          if (node instanceof ConceptDeclaration) {
-            myNameToConceptCache.put(node.getName(), (ConceptDeclaration) node);
+      structureModel.allNodes(new Condition<SNode>() {
+          public boolean met(SNode node) {
+            if (node instanceof ConceptDeclaration) {
+              myNameToConceptCache.put(node.getName(), (ConceptDeclaration) node);
+            }
+            return false;
           }
-          return false;
-        }
-      });
+        });
     }
     return myNameToConceptCache.get(conceptName);
   }

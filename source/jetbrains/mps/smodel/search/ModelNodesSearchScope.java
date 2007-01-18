@@ -2,7 +2,6 @@ package jetbrains.mps.smodel.search;
 
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.util.Condition;
 
 import java.util.List;
@@ -19,6 +18,6 @@ public class ModelNodesSearchScope extends AbstractSearchScope {
   }
 
   public List<SNode> getOwnNodes(Condition<SNode> condition) {
-    return SModelUtil.allNodes(myModel, condition);
+    return myModel.allNodes(condition);
   }
 }

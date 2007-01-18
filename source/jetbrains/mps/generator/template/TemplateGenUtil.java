@@ -241,7 +241,7 @@ public class TemplateGenUtil {
   public static List<INodeBuilder> applyRootMappingRules(final List<Root_MappingRule> mappingRules, final ITemplateGenerator generator) {
     final List<INodeBuilder> builders = new LinkedList<INodeBuilder>();
     if (mappingRules.isEmpty()) return builders;
-    SModelUtil.allNodes(generator.getSourceModel(), new Condition<SNode>() {
+    generator.getSourceModel().allNodes(new Condition<SNode>() {
       public boolean met(SNode sourceNode) {
         ConceptDeclaration nodeConcept = sourceNode.getConceptDeclaration(generator.getScope());
         for (Root_MappingRule mappingRule : mappingRules) {
@@ -266,7 +266,7 @@ public class TemplateGenUtil {
 
   public static void applyWeavingMappingRules(final List<Weaving_MappingRule> weavingRules, final ITemplateGenerator generator) {
     if (weavingRules.isEmpty()) return;
-    SModelUtil.allNodes(generator.getSourceModel(), new Condition<SNode>() {
+    generator.getSourceModel().allNodes(new Condition<SNode>() {
       public boolean met(SNode sourceNode) {
         ConceptDeclaration nodeConcept = sourceNode.getConceptDeclaration(generator.getScope());
         for (Weaving_MappingRule weavingRule : weavingRules) {

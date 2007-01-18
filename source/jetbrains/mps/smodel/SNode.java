@@ -762,6 +762,46 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return children.get(index - 1);
   }
 
+  public SNode getPrevSibling() {
+    SNode parent = getParent();
+    if (parent == null) {
+      return null;
+    }
+
+    SNode prev = null;
+    String role = getRole_();
+    assert role != null;
+    Iterator<SNode> children = parent.children(role);
+    while (children.hasNext()) {
+      SNode child = children.next();
+      if (child == this) {
+        break;
+      }
+      prev = child;
+    }
+    return prev;
+  }
+
+  public SNode getNextSibling() {
+    SNode parent = getParent();
+    if (parent == null) {
+      return null;
+    }
+
+    String role = getRole_();
+    assert role != null;
+    Iterator<SNode> children = parent.children(role);
+    while (children.hasNext()) {
+      SNode child = children.next();
+      if (child == this) {
+        if (children.hasNext()) {
+          return children.next();
+        }
+      }
+    }
+    return null;
+  }
+
   private void removeChildAt(final int index) {
     final SNode wasChild = _children().get(index);
     final String wasId = _children().get(index).getId();
@@ -872,7 +912,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   @NotNull
   public List<SReference> getBackReferences(@NotNull SModel sourceModel) {
     List<SReference> list = new LinkedList<SReference>();
-    List<? extends SNode> nodes = SModelUtil.allNodes(sourceModel);
+    List<? extends SNode> nodes = sourceModel.allNodes();
     for (SNode node : nodes) {
       List<SReference> references = node.getReferences();
       for (SReference reference : references) {
@@ -1498,5 +1538,15 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       parent = parent.getParent();
     }
     return null;
+  }
+
+  public List<? extends SNode> allChildren() {
+    List<SNode> result = new LinkedList<SNode>();
+    List<SNode> children = this.getChildren();
+    result.addAll(children);
+    for (SNode child : children) {
+      result.addAll(child.allChildren());
+    }
+    return result;
   }
 }

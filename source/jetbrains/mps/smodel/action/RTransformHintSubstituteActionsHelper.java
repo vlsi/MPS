@@ -52,7 +52,7 @@ import java.util.List;
     for (Language language : languages) {
       SModelDescriptor actionsModel = language.getActionsModelDescriptor();
       if (actionsModel != null && actionsModel.getSModel() != null) {
-        List<SNode> list = SModelUtil.allNodes(actionsModel.getSModel(), new Condition<SNode>() {
+        List<SNode> list = actionsModel.getSModel().allNodes(new Condition<SNode>() {
           public boolean met(SNode node) {
             if (node instanceof RTransformHintSubstituteActionsBuilder) {
               RTransformHintSubstituteActionsBuilder actionsBuilder = (RTransformHintSubstituteActionsBuilder) node;

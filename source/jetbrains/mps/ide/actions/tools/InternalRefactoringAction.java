@@ -6,7 +6,6 @@ import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
@@ -72,7 +71,7 @@ public class InternalRefactoringAction extends MPSAction {
 
   private void _refactorStaticMemberReferences(SModel model) {
     // ---- static field ref.
-    List<SNode> staticFieldReferences = SModelUtil.allNodes(model, new Condition<SNode>() {
+    List<SNode> staticFieldReferences = model.allNodes(new Condition<SNode>() {
       public boolean met(SNode object) {
         return object instanceof StaticFieldReference;
       }
@@ -95,7 +94,7 @@ public class InternalRefactoringAction extends MPSAction {
     }
 
     // ---- static method call.
-    List<SNode> staticMethodCalls = SModelUtil.allNodes(model, new Condition<SNode>() {
+    List<SNode> staticMethodCalls = model.allNodes(new Condition<SNode>() {
       public boolean met(SNode object) {
         return object instanceof StaticMethodCall;
       }
@@ -124,7 +123,7 @@ public class InternalRefactoringAction extends MPSAction {
     }
 
     // ---- enum const ref.
-    List<SNode> enumConstantRefs = SModelUtil.allNodes(model, new Condition<SNode>() {
+    List<SNode> enumConstantRefs = model.allNodes(new Condition<SNode>() {
       public boolean met(SNode object) {
         return object instanceof EnumConstantReference;
       }
@@ -156,7 +155,7 @@ public class InternalRefactoringAction extends MPSAction {
 
   @SuppressWarnings({"UnusedDeclaration"})
   private void _checkUsageOfSomeDeprecatedFeatures(SModel model) {
-    SModelUtil.allNodes(model, new Condition<SNode>() {
+    model.allNodes(new Condition<SNode>() {
       public boolean met(SNode object) {
         // SURROUND WITH ..
 //        if (object instanceof CellActionSetDeclaration) {
