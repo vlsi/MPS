@@ -239,6 +239,7 @@ public class TemplateGenUtil {
   }
 
   public static List<INodeBuilder> applyRootMappingRules(final List<Root_MappingRule> mappingRules, final ITemplateGenerator generator) {
+    //todo implement search in imported models like in weaving mapping rules
     final List<INodeBuilder> builders = new LinkedList<INodeBuilder>();
     if (mappingRules.isEmpty()) return builders;
     generator.getSourceModel().allNodes(new Condition<SNode>() {
@@ -266,29 +267,34 @@ public class TemplateGenUtil {
 
   public static void applyWeavingMappingRules(final List<Weaving_MappingRule> weavingRules, final ITemplateGenerator generator) {
     if (weavingRules.isEmpty()) return;
-    generator.getSourceModel().allNodes(new Condition<SNode>() {
-      public boolean met(SNode sourceNode) {
-        ConceptDeclaration nodeConcept = sourceNode.getConceptDeclaration(generator.getScope());
-        for (Weaving_MappingRule weavingRule : weavingRules) {
+    for (final Weaving_MappingRule weavingRule : weavingRules) {
+      Condition<SNode> condition = new Condition<SNode>() {
+        public boolean met(SNode sourceNode) {
+          ConceptDeclaration nodeConcept = sourceNode.getConceptDeclaration(generator.getScope());
           if (checkPremiseForBaseMappingRule(sourceNode, nodeConcept, weavingRule, generator)) {
             TemplateDeclaration templateDeclaration = weavingRule.getTemplate();
             if (templateDeclaration == null) {
               generator.showErrorMessage(sourceNode, null, weavingRule, "weaving rule has no template");
-              continue;
+              return false;
             }
             List<INodeBuilder> contextBuilders = getContextNodeBuilderForWeavingingRule(sourceNode, weavingRule, generator);
             if (contextBuilders == null) {
               generator.showErrorMessage(sourceNode, weavingRule, "couldn't create context node builder");
-              continue;
+              return false;
             }
             for (INodeBuilder b : contextBuilders) {
               weaveTemplateDeclaration(sourceNode, templateDeclaration, b, generator, weavingRule);
             }
           }
+          return false;
         }
-        return false;
+      };
+      if (weavingRule.getSearchImportedModels()) {
+         generator.getSourceModel().allNodesIncludingImported(generator.getScope(), condition);
+      } else {
+        generator.getSourceModel().allNodes(condition);
       }
-    });
+    }
   }
 
   public static boolean isContextlessFragment(TemplateDeclaration templateDeclaration) {
