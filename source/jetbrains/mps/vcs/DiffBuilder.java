@@ -122,7 +122,7 @@ public class DiffBuilder {
         }
 
         for (String nnp : newNodeProps) {
-          if (!newNode.getProperties().get(nnp).equals(oldNode.getProperties().get(nnp))) {
+          if (!eq(newNode.getProperties().get(nnp), oldNode.getProperties().get(nnp))) {
             myChanges.add(new SetPropertyChange(id, nnp, newNode.getProperties().get(nnp)));
           }
         }
@@ -130,7 +130,14 @@ public class DiffBuilder {
     }
   }
 
-  private void collectReferenceChanges() {    
+  private boolean eq(Object o1, Object o2) {
+    if (o1 == null) {
+      return o1 == o2;
+    }
+    return o1.equals(o2);
+  }
+
+  private void collectReferenceChanges() {
     Set<String> newNodeIds = myNewModel.getNodeIds();
 
     for (String id : newNodeIds) {
@@ -171,6 +178,7 @@ public class DiffBuilder {
   }
 
   private String getTargetId(SReference ref) {
+    if (ref == null) return null;
     SNode tn = ref.getTargetNode();
     if (tn == null) return null;
     return tn.getId();
