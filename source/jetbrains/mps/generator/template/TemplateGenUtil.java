@@ -97,7 +97,7 @@ public class TemplateGenUtil {
   }
 
   static boolean checkResolvedReference(SNode sourceNode, SNode targetNode, SNode templateNode, String role, SNode targetReferentNode, ITemplateGenerator generator) {
-    if (!SModelUtil.isAcceptableReferent(targetNode, role, targetReferentNode, generator.getScope())) {
+    if (!targetNode.isAcceptableReferent(role, targetReferentNode, generator.getScope())) {
       generator.showErrorMessage(sourceNode, templateNode, "unacceptable referent: " + targetReferentNode.getDebugText() + " for role \"" + role + "\" in " + targetNode.getDebugText());
       return false;
     }

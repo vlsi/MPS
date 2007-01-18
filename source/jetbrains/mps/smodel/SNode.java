@@ -1701,4 +1701,37 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       getParent().dumpNodePath(++currLevel, stream);
     }
   }
+  
+  public String getLanguageNamespace() {
+    String conceptFQName = NameUtil.nodeConceptFQName(this);
+    return NameUtil.namespaceFromConceptFQName(conceptFQName);
+  }
+
+  public boolean isReferentRequired(String role, IScope scope) {
+    ConceptDeclaration conceptDeclaration = getConceptDeclaration(scope);
+    LinkDeclaration linkDeclaration = SModelUtil.findLinkDeclaration(conceptDeclaration, role);
+    LOG.assertLog(linkDeclaration != null, "Couldn't find link declaration for role \"" + role + "\" in hierarchy of concept " + conceptDeclaration.getDebugText());
+    Cardinality cardinality = SModelUtil.getGenuineLinkSourceCardinality(linkDeclaration);
+    if (cardinality == Cardinality._1 || cardinality == Cardinality._1_n) {
+      return true;
+    }
+    return false;
+  }
+
+  public boolean isAcceptableReferent(String role, SNode referentNode, IScope scope) {
+    ConceptDeclaration conceptDeclaration = getConceptDeclaration(scope);
+    LinkDeclaration linkDeclaration = SModelUtil.findSpecializingLink(conceptDeclaration, role, new HashSet());
+    LOG.assertLog(linkDeclaration != null, "Couldn't find link declaration for role \"" + role + "\" in hierarchy of concept " + conceptDeclaration.getDebugText());
+    return SModelUtil.isAcceptableReferent(linkDeclaration, referentNode, scope);
+  }
+
+  public Language getLanguage(IScope scope) {
+    String languageNamespace = getLanguageNamespace();
+    Language language = scope.getLanguage(languageNamespace);
+    if (language == null) {
+      LOG.error("couldn't find language for namespace " + languageNamespace);
+      return null;
+    }
+    return language;
+  }
 }

@@ -762,7 +762,7 @@ public class SModel implements Iterable<SNode> {
     Set<SModelUID> importedModels = new HashSet<SModelUID>(getImportedModelUIDs());
     List<? extends SNode> nodes = allNodes();
     for (SNode node : nodes) {
-      String languageNamespace = SModelUtil.getLanguageNamespace(node);
+      String languageNamespace = node.getLanguageNamespace();
       if (!usedLanguages.contains(languageNamespace)) {
         usedLanguages.add(languageNamespace);
         addLanguage(languageNamespace);
