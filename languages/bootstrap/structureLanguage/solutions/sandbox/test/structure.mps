@@ -15,9 +15,32 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptDeclaration" id="1169126360911">
     <property name="name" value="NamedConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1169133289888">
+      <property name="role" value="xyz" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1.1133920641626" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1169133550988">
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="zyx" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1.1133920641626" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1169133557130">
+      <property name="role" value="yzx" />
+      <link role="target" targetNodeId="1.1133920641626" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1169126367099">
       <property name="name" value="name" />
       <link role="dataType" targetNodeId="1.1082983041843" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1169133227180">
+      <property name="name" value="name1" />
+      <link role="dataType" targetNodeId="1.1082983657063" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1169133231431">
+      <property name="name" value="name2" />
+      <link role="dataType" targetNodeId="1.1082983657062" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptDeclaration" id="1169127823541">
