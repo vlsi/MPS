@@ -37,7 +37,7 @@ public class ModelActions {
    * helper method
    */
   public static List<ConceptDeclaration> getDefaultSubstitutableConcepts(SModel sourceModel, final ConceptDeclaration targetConcept, final IScope scope) {
-    return SModelUtil.conceptsFromModelLanguages(sourceModel, new Condition<ConceptDeclaration>() {
+    return sourceModel.conceptsFromModelLanguages(new Condition<ConceptDeclaration>() {
       public boolean met(ConceptDeclaration node) {
         return ChildSubstituteActionsHelper.isDefaultSubstitutableConcept(node, targetConcept, scope);
       }

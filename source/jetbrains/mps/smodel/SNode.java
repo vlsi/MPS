@@ -23,6 +23,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
+import java.io.PrintStream;
 
 /**
  * User: Sergey Dmitriev
@@ -1690,5 +1691,14 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       current = currentParent;
     }
     return sb.toString();
+  }
+
+  public void dumpNodePath(int currLevel, PrintStream stream) {
+    char[] indent = new char[currLevel * 2];
+    Arrays.fill(indent, ' ');
+    stream.println(new String(indent) + "- " + getDebugText());
+    if (getParent() != null) {
+      getParent().dumpNodePath(++currLevel, stream);
+    }
   }
 }

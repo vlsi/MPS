@@ -16,6 +16,7 @@ import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.ForDebug;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -1049,6 +1050,30 @@ public class SModel implements Iterable<SNode> {
       node.removeReferent(reference.getRole(), reference.getTargetNode());
       node.addReferent(reference.getRole(), replacementMap.get(reference));
     }
+  }
+
+
+  public List<ConceptDeclaration> conceptsFromModelLanguages(IScope scope) {
+    return conceptsFromModelLanguages(new Condition<ConceptDeclaration>() {
+      public boolean met(ConceptDeclaration object) {
+        return true;
+      }
+    }, scope);
+  }
+
+  public List<ConceptDeclaration> conceptsFromModelLanguages(final Condition<ConceptDeclaration> condition, IScope scope) {
+    List<ConceptDeclaration> list = new LinkedList<ConceptDeclaration>();
+    List<Language> languages = getLanguages(scope);
+    for (Language language : languages) {
+      SModelDescriptor structureModelDescriptor = language.getStructureModelDescriptor();
+      SModel structureModel = structureModelDescriptor.getSModel();
+      list.addAll(structureModel.allNodes(ConceptDeclaration.class, new Condition<ConceptDeclaration>() {
+        public boolean met(ConceptDeclaration node) {
+          return condition.met(node);
+        }
+      }));
+    }
+    return list;
   }
 
 }
