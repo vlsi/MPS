@@ -45,7 +45,7 @@ import java.util.List;
     }
     List<SNode> nodes = searchScope.getNodes(new Condition<SNode>() {
       public boolean met(SNode node) {
-        return SModelUtil.isInstanceOfConcept(node, referentConcept, scope);
+        return node.isInstanceOfConcept(referentConcept, scope);
       }
     });
 

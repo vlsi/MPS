@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.generator.JavaNameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -1331,4 +1332,37 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     ConceptDeclaration concept = getNodeConcept();
     return SModelUtil.getDeclaringLanguage(concept, GlobalScope.getInstance());
   }
+
+  public boolean isInstanceOfConcept(ConceptDeclaration conceptDeclaration, IScope scope) {
+    if (this == null) return false;
+    if (NameUtil.nodeFQName(conceptDeclaration).equals("jetbrains.mps.core.structure.BaseConcept")) {
+      return true;
+    }
+
+    Language language = SModelUtil.getLanguage(this, scope);
+    if (language == null) return false;
+    return language.getParentNames(getClass().getName()).
+            contains(JavaNameUtil.className(conceptDeclaration));
+  }
+
+  public boolean isInstanceOfConcept(String conceptFqName, IScope scope) {
+    SNode instance = this;
+    if (conceptFqName.equals("jetbrains.mps.core.structure.BaseConcept")) {
+      return true;
+    }
+
+    ConceptDeclaration instanceConcept = SModelUtil.getConceptDeclaration(instance, scope);
+//    LOG.assertLog(instanceConcept != null, "Couldn't find concept declaration for node : " + instance.getDebugText());
+    ConceptDeclaration compareConcept = instanceConcept;
+    while (compareConcept != null) {
+      if (NameUtil.nodeFQName(compareConcept).equals(conceptFqName)) {
+        return true;
+      }
+      compareConcept = compareConcept.getExtends();
+    }
+
+    return false;
+  }
+
+
 }

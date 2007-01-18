@@ -5,7 +5,6 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink;
@@ -13,7 +12,6 @@ import jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLinkDeclaration
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 
 import java.util.List;
-import java.util.LinkedList;
 import java.util.Collections;
 
 /**
@@ -45,7 +43,7 @@ public class ReferenceConceptLinkTargetSearchScope extends AbstractSearchScope {
         ISearchScope allNodesScope = SModelSearchUtil.createModelAndImportedModelsScope(myReferenceConceptLink.getModel(), myScope);
         return allNodesScope.getNodes(new Condition<SNode>() {
           public boolean met(SNode object) {
-            return SModelUtil.isInstanceOfConcept(object, targetConcept, myScope);
+            return object.isInstanceOfConcept(targetConcept, myScope);
           }
         });
       }
