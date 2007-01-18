@@ -22,6 +22,13 @@
       <property name="role" value="extends" />
       <link role="target" targetNodeId="1071489090640" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1169129564478">
+      <property name="sourceCardinality" value="0..n" />
+      <property name="targetCardinality" value="0..n" />
+      <property name="role" value="implements" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1169127622168" resolveInfo="InterfaceConceptReference" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1071489288298">
     <property name="name" value="LinkDeclaration" />
