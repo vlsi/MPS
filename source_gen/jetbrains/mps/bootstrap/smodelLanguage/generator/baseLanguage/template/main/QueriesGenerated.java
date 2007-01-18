@@ -42,7 +42,6 @@ public class QueriesGenerated {
     b = b || SNodeOperations.isInstanceOf(op, "jetbrains.mps.bootstrap.smodelLanguage.structure.Model_CreateNewRootNodeOperation");
     b = b || SNodeOperations.isInstanceOf(op, "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation");
     if(b) {
-      System.out.println("reduce SNodeOperationExpression with new reduction rule");
       return true;
     }
     return false;
