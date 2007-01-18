@@ -100,4 +100,5 @@ public class Icons {
 
   public static final Icon PROPERTY_ICON = new ImageIcon(Icons.class.getResource("nodes/property.png"));
   public static final Icon REFERENCE_ICON = new ImageIcon(Icons.class.getResource("nodes/reference.png"));
+  public static final Icon PROP_AND_REF = new ImageIcon(Icons.class.getResource("nodes/propAndRef.png"));
 }

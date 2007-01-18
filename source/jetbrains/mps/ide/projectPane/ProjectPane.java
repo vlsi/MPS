@@ -105,7 +105,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
 
     myToolbar.add(myPAndRToggle = new JToggleButton() {
       {
-        setAction(new AbstractAction("P&R") {
+        setAction(new AbstractAction("", Icons.PROP_AND_REF) {
           public void actionPerformed(ActionEvent e) {
             setShowPropertiesAndReferences(!isShowPropertiesAndReferences());
           }
