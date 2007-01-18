@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.constraints.INodePropertyGetter;
 import jetbrains.mps.smodel.constraints.INodePropertySetter;
 import jetbrains.mps.smodel.constraints.INodeReferentSetEventHandler;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
@@ -1599,5 +1600,95 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   public String getAlias(IScope scope) {
     ConceptDeclaration declaration = getConceptDeclaration(scope);
     return SModelUtil.getAlias(declaration);
+  }
+
+
+
+  public List<ConceptLink> getConceptLinks(final String linkName, boolean lookupHierarchy, IScope scope) {
+    ConceptDeclaration conceptDeclaration;
+    if (this instanceof ConceptDeclaration) {
+      conceptDeclaration = (ConceptDeclaration) this;
+    } else {
+      conceptDeclaration = getConceptDeclaration(scope);
+    }
+
+    if (lookupHierarchy) {
+      return (List) SModelSearchUtil.createConceptHierarchyScope(conceptDeclaration).
+              getNodes(new Condition<SNode>() {
+                public boolean met(SNode n) {
+                  if (n instanceof ConceptLink) {
+                    ConceptLinkDeclaration conceptLinkDeclaration = ((ConceptLink) n).getConceptLinkDeclaration();
+                    return (conceptLinkDeclaration != null && linkName.equals(conceptLinkDeclaration.getName()));
+                  }
+                  return false;
+                }
+              });
+    }
+
+    List<ConceptLink> result = new LinkedList<ConceptLink>();
+    Iterator<ConceptLink> conceptLinks = conceptDeclaration.conceptLinks();
+    while (conceptLinks.hasNext()) {
+      ConceptLink conceptLink = conceptLinks.next();
+      ConceptLinkDeclaration conceptLinkDeclaration = conceptLink.getConceptLinkDeclaration();
+      if (conceptLinkDeclaration != null && linkName.equals(conceptLinkDeclaration.getName())) {
+        result.add(conceptLink);
+      }
+    }
+    return result;
+  }
+
+  public List<SNode> getConceptLinkTargets(String linkName, boolean lookupHierarchy, IScope scope) {
+    List<SNode> result = new LinkedList<SNode>();
+    List<ConceptLink> conceptLinks = getConceptLinks(linkName, lookupHierarchy, scope);
+    for (ConceptLink conceptLink : conceptLinks) {
+      SNode target = SModelUtil.getConceptLinkTarget(conceptLink);
+      if (target != null) {
+        result.add(target);
+      }
+    }
+    return result;
+  }
+
+  public SNode findChildByPath(String path) {
+    if (path == null) return null;
+    String residual = path;
+    SNode current = this;
+    while (!residual.equals("") && current != null) {
+      residual = residual.substring(1);
+      int index = residual.indexOf("/");
+      String roleAndNumber = index == -1 ? residual : residual.substring(0, index);
+      residual = residual.substring(roleAndNumber.length());
+
+      int numberIndex = roleAndNumber.indexOf("#");
+      String role = numberIndex == -1 ? roleAndNumber : roleAndNumber.substring(0, numberIndex);
+      String numberString = numberIndex == -1 ? "-1" : roleAndNumber.substring(numberIndex + 1);
+      int number = Integer.parseInt(numberString);
+
+      if (number == -1) {
+        current = current.getChild(role);
+      } else {
+        List<SNode> childrenForRole = current.getChildren(role);
+        if (number < childrenForRole.size()) {
+          current = childrenForRole.get(number);
+        } else {
+          current = null;
+        }
+      }
+    }
+    return current;
+  }
+
+  public String getNodePath(SNode child) {
+    StringBuilder sb = new StringBuilder();
+    SNode current = child;
+    while (current != this && current != null) {
+      String role = current.getRole_();
+      SNode currentParent = current.getParent();
+      List<SNode> children = currentParent == null || role == null ? new ArrayList<SNode>() : currentParent.getChildren(role);
+      String numberString = children.size() <= 1 ? "" : "#" + children.indexOf(current);
+      sb.insert(0, "/" + role + numberString);
+      current = currentParent;
+    }
+    return sb.toString();
   }
 }
