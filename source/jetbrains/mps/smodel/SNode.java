@@ -1416,4 +1416,18 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     }
     return null;
   }
+
+
+  public <E extends SNode> List<E> allChildren(Class<E> clazz) {
+    List<E> resultNodes = new LinkedList<E>();
+    Iterator<? extends SNode> nodes = depthFirstChildren();
+    while (nodes.hasNext()) {
+      SNode node = nodes.next();
+      if (clazz.isAssignableFrom(node.getClass())) {
+        resultNodes.add((E) node);
+      }
+    }
+    return resultNodes;
+  }
+
 }
