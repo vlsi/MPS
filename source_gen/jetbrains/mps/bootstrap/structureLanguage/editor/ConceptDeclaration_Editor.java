@@ -396,7 +396,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myLinkDeclarationListHandler_linkDeclarationList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
-    editorCell.setDrawBorder(true);
+    editorCell.setDrawBorder(false);
     editorCell.setGridLayout(true);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
@@ -581,7 +581,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createColumnCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setSelectable(true);
-    editorCell.setDrawBorder(true);
+    editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
@@ -624,7 +624,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createConstantCell9(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
-    editorCell.setDrawBorder(true);
+    editorCell.setDrawBorder(false);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
