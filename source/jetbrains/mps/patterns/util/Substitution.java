@@ -1,7 +1,6 @@
 package jetbrains.mps.patterns.util;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.patterns.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.annotations.AttributeConcept;
@@ -47,7 +46,7 @@ public class Substitution {
   }
 
   private void goInsideList_internal(SNode attributedNode, HashSet loopVarSet) {
-    for (AttributeConcept patternVar : (List<AttributeConcept>) (List) SModelUtil.allChildren(attributedNode, new Condition<SNode>() {
+    for (AttributeConcept patternVar : (List<AttributeConcept>) (List) attributedNode.allChildren(new Condition<SNode>() {
       public boolean met(SNode object) {
         return object instanceof PatternVariableDeclaration || object instanceof LinkPatternVariableDeclaration || object instanceof PropertyPatternVariableDeclaration;
       }
