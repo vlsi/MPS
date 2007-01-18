@@ -6,6 +6,7 @@ import jetbrains.mps.annotations.PropertyAttributeConcept;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.AnnotationLinkDeclaration;
 import jetbrains.mps.ide.command.undo.IUndoableAction;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
@@ -1385,4 +1386,34 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
 
+  /**
+   * @return SemanticChildDeclaration (tmp returns LinkDeclaration)
+   */
+  public LinkDeclaration getChildDeclaration(String role, IScope scope) {
+    return SModelUtil.getLinkDeclaration(this, role, scope);
+  }
+
+  public LinkDeclaration getLinkDeclaration(String role, IScope scope) {
+    ConceptDeclaration conceptDeclaration = getConceptDeclaration(scope);
+    LinkDeclaration linkDeclaration = SModelUtil.findLinkDeclaration(conceptDeclaration, role);
+    return linkDeclaration;
+  }
+
+  public AnnotationLinkDeclaration findAnnotationLinkDeclaration(IScope scope) {
+    String attributeChildRole = getRole_();
+    assert attributeChildRole != null;
+    int index = attributeChildRole.indexOf(AttributesRolesUtil.STEREOTYPE_DELIM);
+    if (index < 0) return null;
+    String declaredRole = attributeChildRole.substring(0, index);
+    ConceptDeclaration conceptDeclaration = getConceptDeclaration(scope);
+    SModel structureModel = conceptDeclaration.getModel();
+    List<AnnotationLinkDeclaration> annotationLinkDecls =
+            SModelUtil.allNodesIncludingImported(structureModel, scope, AnnotationLinkDeclaration.class);
+    for (AnnotationLinkDeclaration annotationLinkDeclaration : annotationLinkDecls) {
+      if (declaredRole.equals(annotationLinkDeclaration.getRole())) {
+        return annotationLinkDeclaration;
+      }
+    }
+    return null;
+  }
 }
