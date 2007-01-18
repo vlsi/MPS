@@ -45,8 +45,8 @@ public class ChildSubstituteActionsHelper {
   };
 
   public static boolean isDefaultSubstitutableConcept(ConceptDeclaration concept, ConceptDeclaration expectedConcept, IScope scope) {
-    if (!SModelUtil.hasConceptProperty(concept, ABSTRACT, scope) &&
-            !SModelUtil.hasConceptProperty(concept, DONT_SUBSTITUTE_BY_DEFAULT, scope)) {
+    if (!concept.hasConceptProperty(ABSTRACT, scope) &&
+            !concept.hasConceptProperty(DONT_SUBSTITUTE_BY_DEFAULT, scope)) {
       return SModelUtil.isAssignableConcept(concept, expectedConcept);
     }
     return false;
@@ -217,7 +217,7 @@ public class ChildSubstituteActionsHelper {
   private static LinkDeclaration getSmartReference(ConceptDeclaration referenceDeclaringConcept, IScope scope) {
     // trick : should be no custom 'matching text'
     String expectedReferentRole = null;
-    String alias = SModelUtil.getConceptProperty(referenceDeclaringConcept, "alias", scope);
+    String alias = referenceDeclaringConcept.getConceptProperty("alias", scope);
     if (alias != null) {
       // handle pattern 'xxx <{_referent_role_}> yyy'
       if (!alias.matches(".*<\\{.+\\}>.*")) {
@@ -248,7 +248,7 @@ public class ChildSubstituteActionsHelper {
 
   private static String getSmartMatchingText(ConceptDeclaration referenceNodeConcept, SNode referentNode, IScope scope) {
     String referentMatchingText = NodePresentationUtil.matchingText(referentNode, true);
-    String referenceAlias = SModelUtil.getConceptProperty(referenceNodeConcept, "alias", scope);
+    String referenceAlias = referenceNodeConcept.getConceptProperty("alias", scope);
     // handle pattern 'xxx <{_referent_role_}> yyy'
     if (referenceAlias == null || !referenceAlias.matches(".*<\\{.+\\}>.*")) {
 

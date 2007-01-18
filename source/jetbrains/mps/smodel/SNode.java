@@ -3,10 +3,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.annotations.AttributeConcept;
 import jetbrains.mps.annotations.LinkAttributeConcept;
 import jetbrains.mps.annotations.PropertyAttributeConcept;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.AnnotationLinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.*;
 import jetbrains.mps.ide.command.undo.IUndoableAction;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
@@ -1548,5 +1545,59 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       result.addAll(child.allChildren());
     }
     return result;
+  }
+
+  // -----------------------------
+  // concept properties support
+  // -----------------------------
+
+  public boolean hasConceptProperty(String propertyName, IScope scope) {
+    // todo: make "rootable" -> concept property
+
+    if ("root".equals(propertyName)) {
+      ConceptDeclaration conceptDeclaration;
+      if (this instanceof ConceptDeclaration) {
+        conceptDeclaration = (ConceptDeclaration) this;
+      } else {
+        conceptDeclaration = getConceptDeclaration(scope);
+      }
+      return conceptDeclaration.getRootable();
+    }
+
+    ConceptProperty conceptProperty = findConceptProperty(propertyName, scope);
+    return conceptProperty != null;
+  }
+
+  public String getConceptProperty(String propertyName, IScope scope) {
+    ConceptProperty conceptProperty = findConceptProperty(propertyName, scope);
+    if (conceptProperty instanceof StringConceptProperty) {
+      return ((StringConceptProperty) conceptProperty).getValue();
+    }
+
+    if (conceptProperty instanceof IntegerConceptProperty) {
+      return "" + ((IntegerConceptProperty) conceptProperty).getValue();
+    }
+
+    if (conceptProperty instanceof BooleanConceptProperty) {
+      return "true";
+    }
+    return null;
+  }
+
+  public ConceptProperty findConceptProperty(String propertyName, IScope scope) {
+    SNode node = this;
+
+    ConceptDeclaration conceptDeclaration;
+    if (node instanceof ConceptDeclaration) {
+      conceptDeclaration = (ConceptDeclaration) node;
+    } else {
+      conceptDeclaration = node.getConceptDeclaration(scope);
+    }
+    return SModelUtil.findConceptProperty(conceptDeclaration, propertyName);
+  }
+
+  public String getAlias(IScope scope) {
+    ConceptDeclaration declaration = getConceptDeclaration(scope);
+    return SModelUtil.getAlias(declaration);
   }
 }

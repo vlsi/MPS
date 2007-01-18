@@ -5,7 +5,6 @@ import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.core.BaseConcept;
 import jetbrains.mps.core.NamedConcept;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 
@@ -18,7 +17,7 @@ public class NodePresentationUtil {
     // concept declaration : return either 'alias' or 'name'
     if (node instanceof ConceptDeclaration) {
       if (!referent_presentation) {
-        String alias = SModelUtil.getConceptProperty(node, "alias", GlobalScope.getInstance());
+        String alias = node.getConceptProperty("alias", GlobalScope.getInstance());
         if (alias != null) {
           return alias;
         }
@@ -64,7 +63,7 @@ public class NodePresentationUtil {
   public static String descriptionText(SNode node, boolean referent_presentation) {
     if (node instanceof ConceptDeclaration &&
             !referent_presentation) {
-      String description = SModelUtil.getConceptProperty(node, "short_description", GlobalScope.getInstance());
+      String description = node.getConceptProperty("short_description", GlobalScope.getInstance());
       if (description != null) {
         return description;
       }
@@ -100,7 +99,7 @@ public class NodePresentationUtil {
   }
 
   public static String getAliasOrConceptName(SNode node) {
-    String alias = SModelUtil.getConceptProperty(node, "alias", GlobalScope.getInstance());
+    String alias = node.getConceptProperty("alias", GlobalScope.getInstance());
     if (alias != null) {
       return alias;
     }

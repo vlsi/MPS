@@ -4,7 +4,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.IEditorOpener;
 import jetbrains.mps.ide.projectPane.ProjectPane;
@@ -353,7 +352,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
       }
       myOperationContext = myComponent.myOperationContext;
       myRootable = conceptDeclaration.getRootable();
-      myIsAbstract = SModelUtil.getConceptProperty(conceptDeclaration, "abstract", myOperationContext.getScope()) != null;
+      myIsAbstract = conceptDeclaration.getConceptProperty("abstract", myOperationContext.getScope()) != null;
       myNamespace = SModelUtil.getDeclaringLanguage(conceptDeclaration, myOperationContext.getScope()).getNamespace();
       myNodeProxy = new SNodeProxy(conceptDeclaration);
       addMouseListener(new MouseAdapter() {
