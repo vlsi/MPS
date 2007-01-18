@@ -20,7 +20,7 @@ public class PropertyAccessor implements ModelAccessor {
     myPropertyName = propertyName;
     myReadOnly = readOnly || node.getModel().isNotEditable() || editorContext.getNodeEditorComponent().isReadOnly();
     myAllowEmptyText = allowEmptyText;
-    myPropertyDeclaration = SModelUtil.getPropertyDeclaration(node, propertyName, editorContext.getOperationContext().getScope());
+    myPropertyDeclaration = node.getPropertyDeclaration(propertyName, editorContext.getOperationContext().getScope());
   }
 
   public PropertyAccessor(SNode node, String propertyName, boolean readOnly, boolean allowEmptyText, IOperationContext context) {
@@ -28,7 +28,7 @@ public class PropertyAccessor implements ModelAccessor {
     myPropertyName = propertyName;
     myReadOnly = readOnly || node.getModel().isNotEditable();
     myAllowEmptyText = allowEmptyText;
-    myPropertyDeclaration = SModelUtil.getPropertyDeclaration(node, propertyName, context.getScope());
+    myPropertyDeclaration = node.getPropertyDeclaration(propertyName, context.getScope());
   }
 
   public SNodeProxy getNodeProxy() {

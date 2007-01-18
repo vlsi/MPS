@@ -5,6 +5,7 @@ import jetbrains.mps.annotations.LinkAttributeConcept;
 import jetbrains.mps.annotations.PropertyAttributeConcept;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration;
 import jetbrains.mps.ide.command.undo.IUndoableAction;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
@@ -1372,12 +1373,16 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return concept;
   }
 
-
   public ConceptDeclaration findConceptDeclaration(IScope scope) {
     String conceptFQName = NameUtil.nodeConceptFQName(this);
     return SModelUtil.findConceptDeclaration(conceptFQName, scope);
   }
 
+  public PropertyDeclaration getPropertyDeclaration(String propertyName, IScope scope) {
+    SNode sourceNode = this;
+    ConceptDeclaration typeDeclaration = sourceNode.getConceptDeclaration(scope);
+    return SModelUtil.findPropertyDeclaration(typeDeclaration, propertyName);
+  }
 
 
 }
