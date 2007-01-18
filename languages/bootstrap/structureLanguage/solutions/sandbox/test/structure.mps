@@ -9,6 +9,9 @@
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1169129796216">
       <link role="intfc" targetNodeId="1169127823541" resolveInfo="CDE" />
     </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1169132830771">
+      <link role="intfc" targetNodeId="1169126360911" resolveInfo="NamedConcept" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptDeclaration" id="1169126360911">
     <property name="name" value="NamedConcept" />

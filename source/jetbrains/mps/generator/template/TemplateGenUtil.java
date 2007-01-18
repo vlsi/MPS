@@ -276,12 +276,14 @@ public class TemplateGenUtil {
               generator.showErrorMessage(sourceNode, null, weavingRule, "weaving rule has no template");
               continue;
             }
-            INodeBuilder contextBuilder = getContextNodeBuilderForWeavingingRule(sourceNode, weavingRule, generator);
-            if (contextBuilder == null) {
+            List<INodeBuilder> contextBuilders = getContextNodeBuilderForWeavingingRule(sourceNode, weavingRule, generator);
+            if (contextBuilders == null) {
               generator.showErrorMessage(sourceNode, weavingRule, "couldn't create context node builder");
               continue;
             }
-            weaveTemplateDeclaration(sourceNode, templateDeclaration, contextBuilder, generator, weavingRule);
+            for (INodeBuilder b : contextBuilders) {
+              weaveTemplateDeclaration(sourceNode, templateDeclaration, b, generator, weavingRule);
+            }
           }
         }
         return false;
@@ -393,12 +395,26 @@ public class TemplateGenUtil {
     }
   }
 
-  private static INodeBuilder getContextNodeBuilderForWeavingingRule(SNode sourceNode, Weaving_MappingRule rule, ITemplateGenerator generator) {
+  private static List<INodeBuilder> getContextNodeBuilderForWeavingingRule(SNode sourceNode, Weaving_MappingRule rule, ITemplateGenerator generator) {
     try {
       String aspectId = rule.getContextProviderAspectId();
       String methodName = "templateWeavingRule_Context_" + aspectId;
       Object[] args = new Object[]{sourceNode, generator};
-      return (INodeBuilder) QueryMethod.invoke(methodName, args, rule.getModel());
+      Object result = QueryMethod.invoke(methodName, args, rule.getModel());
+
+      List<INodeBuilder> r = new ArrayList<INodeBuilder>();
+
+      if (result == null) {
+        return null;
+      }
+
+      if (result instanceof List) {
+        r.addAll((Collection<? extends INodeBuilder>) result);
+      } else {
+        r.add((INodeBuilder) result);
+      }
+
+      return r;
     } catch (Throwable t) {
       generator.showErrorMessage(sourceNode, null, rule, t.getClass().getName());
       throw new RuntimeException(t);
