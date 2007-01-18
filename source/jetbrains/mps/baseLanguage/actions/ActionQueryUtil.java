@@ -1,15 +1,6 @@
 package jetbrains.mps.baseLanguage.actions;
 
-import jetbrains.mps.baseLanguage.*;
-import jetbrains.mps.baseLanguage.types.BaseLanguageTypesUtil;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.typesystem.TypeCheckerAccess;
-import jetbrains.mps.util.NameUtil;
-
-import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -26,7 +17,7 @@ public class ActionQueryUtil {
     if (clazz.isAssignableFrom(sourceNode.getClass())) {
       return (T) sourceNode;
     }
-    return SModelUtil.findParent(sourceNode, clazz);
+    return sourceNode.findParent(clazz);
   }
 
 }

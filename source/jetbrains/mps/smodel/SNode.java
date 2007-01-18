@@ -1336,7 +1336,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public boolean isInstanceOfConcept(ConceptDeclaration conceptDeclaration, IScope scope) {
-    if (this == null) return false;
     if (NameUtil.nodeFQName(conceptDeclaration).equals("jetbrains.mps.core.structure.BaseConcept")) {
       return true;
     }
@@ -1390,7 +1389,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
    * @return SemanticChildDeclaration (tmp returns LinkDeclaration)
    */
   public LinkDeclaration getChildDeclaration(String role, IScope scope) {
-    return SModelUtil.getLinkDeclaration(this, role, scope);
+    return getLinkDeclaration(role, scope);
   }
 
   public LinkDeclaration getLinkDeclaration(String role, IScope scope) {
@@ -1456,4 +1455,48 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return resultNodes;
   }
 
+  public <T> T findParent(Class<T> clazz) {
+    SNode parent = getParent();
+    while (parent != null) {
+      if (clazz.isAssignableFrom(parent.getClass())) {
+        return (T) parent;
+      }
+      parent = parent.getParent();
+    }
+    return null;
+  }
+
+  public <T extends SNode> List<T> findParents(Class<T> aClass) {
+    List<T> list = new ArrayList<T>();
+    T currNode = getParent(aClass);
+    for (; currNode != null; currNode = currNode.getParent(aClass, false)) {
+      list.add(currNode);
+    }
+    return list;
+  }
+
+  public SNode findFirstParent(Class[] classes) {
+    SNode node = this;
+    SNode parent = node.getParent();
+    while (parent != null) {
+      for (Class clazz : classes) {
+        if (clazz.isAssignableFrom(parent.getClass())) {
+          return parent;
+        }
+      }
+      parent = parent.getParent();
+    }
+    return null;
+  }
+
+  public SNode findParent(Condition<SNode> condition) {
+    SNode parent = getParent();
+    while (parent != null) {
+      if (condition.met(parent)) {
+        return parent;
+      }
+      parent = parent.getParent();
+    }
+    return null;
+  }
 }

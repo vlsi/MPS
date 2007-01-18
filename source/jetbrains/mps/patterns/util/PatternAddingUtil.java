@@ -24,7 +24,7 @@ public class PatternAddingUtil {
     if (contextCell == null) return false;
     SNode node = contextCell.getSNode();
     if (node == null) return false;
-    return SModelUtil.findParent(node, PatternExpression.class) != null;
+    return node.findParent(PatternExpression.class) != null;
   }
 
   public static void addVariablePattern(EditorContext context) {
