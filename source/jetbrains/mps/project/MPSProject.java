@@ -406,7 +406,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
         try {
           classpath.addAll(handler.getModuleClassPath(getProjectFile().getAbsolutePath()));
         } catch (RemoteException e) {
-          e.printStackTrace();
+          LOG.error(e);
         }
       }
     }

@@ -71,7 +71,7 @@ public class QueryMethodGenerated {
     } catch (IllegalAccessException e) {
       throw new RuntimeException("Error invocation method: \"" + methodName + "\" in " + method.getDeclaringClass().getName(), e);
     } catch (InvocationTargetException e) {
-      e.getCause().printStackTrace();
+      LOG.error(e.getCause());
       throw new RuntimeException("Error invocation method: \"" + methodName + "\" in " + method.getDeclaringClass().getName(), e);
     }
   }

@@ -166,7 +166,7 @@ public class ModelPersistence {
               SModel structureModel = modelLanguage.getStructureModelDescriptor().getSModel();
               logs.add(new LogInfo(structureModel.getLog(), oldVersion, newVersion, element));
             } catch(Throwable t) {
-              t.printStackTrace();
+              LOG.error(t);
             }
           }
         }
@@ -227,7 +227,7 @@ public class ModelPersistence {
               SModel importedModel = SModelRepository.getInstance().getModelDescriptor(importedModelUID).getSModel();
               logs.add(new LogInfo(importedModel.getLog(), importedModelVersion, newVersion, element));
             } catch(Throwable t) {
-              t.printStackTrace();
+              LOG.error(t);
             }
           }
         }
@@ -592,7 +592,7 @@ public class ModelPersistence {
       fileOutputStream.write(version);
       fileOutputStream.close();
     } catch(IOException ioe) {
-      ioe.printStackTrace();
+      LOG.error(ioe);
     }
   }
 
@@ -603,9 +603,9 @@ public class ModelPersistence {
         FileInputStream fileInputStream = new FileInputStream(versionFile);
         return new InputStreamReader(fileInputStream).read();
       } catch(FileNotFoundException ex) {
-        ex.printStackTrace();
+        LOG.error(ex);
       } catch(IOException ex) {
-        ex.printStackTrace();
+        LOG.error(ex);
       }
     }
     return -1;

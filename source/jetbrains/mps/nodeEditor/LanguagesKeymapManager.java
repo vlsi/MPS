@@ -8,6 +8,7 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandAdapter;
 import jetbrains.mps.ide.command.CommandEvent;
 import jetbrains.mps.component.Dependency;
+import jetbrains.mps.logging.Logger;
 
 import java.util.*;
 
@@ -21,6 +22,8 @@ import org.jetbrains.annotations.NotNull;
  * To change this template use File | Settings | File Templates.
  */
 public class LanguagesKeymapManager {
+  private static final Logger LOG = Logger.getLogger(LanguagesKeymapManager.class);
+
   private Map<String, List<EditorCellKeyMap>> myLanguagesToKeyMaps = new HashMap<String, List<EditorCellKeyMap>>();
   private Set<Language> myLanguages = new HashSet<Language>();
   private MyModuleRepositoryListener myListener = new MyModuleRepositoryListener();
@@ -71,7 +74,7 @@ public class LanguagesKeymapManager {
           registerKeyMap(keyMapClass.newInstance(), language.getNamespace());
         }
       } catch (Throwable t) {
-        t.printStackTrace();
+        LOG.error(t);
       }
     }
   }

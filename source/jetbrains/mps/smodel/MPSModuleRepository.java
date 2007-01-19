@@ -268,7 +268,7 @@ public class MPSModuleRepository {
         myFileToModuleMap.remove(descriptorFile.getCanonicalPath());
         fireModuleRemoved(module);
       } catch (IOException e) {
-        e.printStackTrace();
+        LOG.error(e);
       }
     }
   }

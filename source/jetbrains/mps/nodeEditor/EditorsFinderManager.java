@@ -45,7 +45,7 @@ public class EditorsFinderManager {
     } catch (ClassNotFoundException cnfe) {
       //it's ok if we didn't find it we're not editing OWL 
     } catch (Throwable t) {
-      t.printStackTrace();
+      LOG.error(t);
     }
   }
 

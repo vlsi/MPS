@@ -110,7 +110,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
               assert handler != null;
               handler.openQueryMethod(getNamespace(), getQueryMethodPrefix() + getQueryMethodId());
             } catch (IOException e) {
-              e.printStackTrace();
+              LOG.error(e);
             }
           }
         });
@@ -156,7 +156,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
               try {
                 handler.openQueryMethod(getNamespace(), getQueryMethodPrefix() + getQueryMethodId());
               } catch (RemoteException e1) {
-                e1.printStackTrace();
+                LOG.error(e1);
               }
             }
           }, KeyStroke.getKeyStroke("control B"), JComponent.WHEN_IN_FOCUSED_WINDOW);
@@ -177,7 +177,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
       }.setVisible(true);
 
     } catch (IOException e) {
-      e.printStackTrace();
+      LOG.error(e);
     }
   }
 
@@ -240,7 +240,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
       assert handler != null;
       result = handler.getAspectMethodIds(getNamespace(), getQueryMethodPrefix());
     } catch (IOException e) {
-      e.printStackTrace();
+      LOG.error(e);
     }
     return result;
   }

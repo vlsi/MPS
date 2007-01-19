@@ -257,7 +257,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       try {
         lock.wait();
       } catch (InterruptedException e) {
-        e.printStackTrace();
+        LOG.error(e);
       }
     }
   }

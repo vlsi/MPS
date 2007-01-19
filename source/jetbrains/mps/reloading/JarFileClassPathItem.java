@@ -2,6 +2,7 @@ package jetbrains.mps.reloading;
 
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ReadUtil;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -17,6 +18,8 @@ import java.util.zip.ZipFile;
  * @author Kostik
  */
 public class JarFileClassPathItem extends AbstractClassPathItem {
+  private static final Logger LOG = Logger.getLogger(JarFileClassPathItem.class);
+
   private ZipFile myZipFile;
   private String myPrefix;
   private File myFile;
@@ -35,7 +38,7 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
       myPrefix = "jar:" + jarFile.toURL() + "!/";
       myZipFile = new ZipFile(jarFile);
     } catch (IOException e) {
-      e.printStackTrace();
+      LOG.error(e);
     }
 
     buildCaches();

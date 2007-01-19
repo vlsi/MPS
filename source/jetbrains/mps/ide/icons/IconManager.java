@@ -78,7 +78,7 @@ public class IconManager {
       Icon icon = (Icon) icons.getMethod("getLanguageIcon").invoke(null);
       if (icon != null) return icon;
     } catch (Exception e) {
-      e.printStackTrace();
+      LOG.error(e);
     }
 
     return MPSAction.EMPTY_ICON;

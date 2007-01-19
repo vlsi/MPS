@@ -3,6 +3,7 @@ package jetbrains.mps.nodeEditor.cellMenu;
 import jetbrains.mps.nodeEditor.AbstractNodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.logging.Logger;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -12,6 +13,8 @@ import java.util.List;
  * Date: Nov 29, 2006
  */
 public class CompositeSubstituteInfo extends AbstractNodeSubstituteInfo {
+  private static final Logger LOG = Logger.getLogger(CompositeSubstituteInfo.class);
+
   private ICellContext myCellContext;
   private ISubstituteInfoPart[] myParts;
 
@@ -28,7 +31,7 @@ public class CompositeSubstituteInfo extends AbstractNodeSubstituteInfo {
       try {
         actions.addAll(menuPart.createActions(myCellContext, getEditorContext()));
       } catch (Exception e) {
-        e.printStackTrace();
+        LOG.error(e);
       }
     }
     return actions;

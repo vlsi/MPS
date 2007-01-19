@@ -1,6 +1,8 @@
 
 package jetbrains.mps.plugin;
 
+import jetbrains.mps.logging.Logger;
+
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 
@@ -8,6 +10,8 @@ import java.rmi.RemoteException;
  * @author Kostik
  */
 public class MPSPlugin {
+  private static final Logger LOG = Logger.getLogger(MPSPlugin.class);
+
   private static MPSPlugin ourInstance;
 
   public static MPSPlugin getInstance() {
@@ -44,7 +48,7 @@ public class MPSPlugin {
         return null;
       }
     } catch (RemoteException e) {
-      e.printStackTrace();
+      LOG.error(e);
     }
     return null;
   }

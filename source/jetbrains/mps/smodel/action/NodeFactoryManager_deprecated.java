@@ -1,21 +1,20 @@
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.NameUtil;
 
-import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 /**
  * author: Igor Alshannikov
  * Sep 20, 2006
  */
 /*package*/ class NodeFactoryManager_deprecated {
+  private static final Logger LOG = Logger.getLogger(NodeFactoryManager_deprecated.class);
 
   protected static void setupNode_deprecated(ConceptDeclaration concept, SNode node, SNode sampleNode) {
     Class factoryClass = getFactoryClass(concept);
@@ -29,9 +28,9 @@ import java.lang.reflect.InvocationTargetException;
       try {
         method.invoke(null, node, sampleNode);
       } catch (IllegalAccessException e) {
-        e.printStackTrace();
+        LOG.error(e);
       } catch (InvocationTargetException e) {
-        e.printStackTrace();
+        LOG.error(e);
       }
       return;
     }
@@ -42,9 +41,9 @@ import java.lang.reflect.InvocationTargetException;
       try {
         method.invoke(null, node);
       } catch (IllegalAccessException e) {
-        e.printStackTrace();
+        LOG.error(e);
       } catch (InvocationTargetException e) {
-        e.printStackTrace();
+        LOG.error(e);
       }
     }
   }

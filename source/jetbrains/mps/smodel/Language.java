@@ -672,7 +672,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
         }
       }
     } catch (ConcurrentModificationException e) {
-      e.printStackTrace();
+      LOG.error(e);
     }
     if (accessoryStatus != null) return accessoryStatus;
     return new LanguageAspectStatus(null, LanguageAspectStatus.AspectKind.NONE);

@@ -1,27 +1,32 @@
 package jetbrains.mps.compiler;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.AbstractMPSClassLoader;
-import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.IClassPathItem;
+import org.eclipse.jdt.internal.compiler.*;
+import org.eclipse.jdt.internal.compiler.Compiler;
+import org.eclipse.jdt.internal.compiler.batch.CompilationUnit;
+import org.eclipse.jdt.internal.compiler.classfmt.ClassFileConstants;
+import org.eclipse.jdt.internal.compiler.classfmt.ClassFileReader;
+import org.eclipse.jdt.internal.compiler.classfmt.ClassFormatException;
+import org.eclipse.jdt.internal.compiler.env.INameEnvironment;
+import org.eclipse.jdt.internal.compiler.env.NameEnvironmentAnswer;
+import org.eclipse.jdt.internal.compiler.impl.CompilerOptions;
+import org.eclipse.jdt.internal.compiler.problem.DefaultProblemFactory;
 
-import java.util.*;
-import java.io.PrintWriter;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-
-import org.eclipse.jdt.internal.compiler.batch.CompilationUnit;
-import org.eclipse.jdt.internal.compiler.*;
-import org.eclipse.jdt.internal.compiler.Compiler;
-import org.eclipse.jdt.internal.compiler.problem.DefaultProblemFactory;
-import org.eclipse.jdt.internal.compiler.impl.CompilerOptions;
-import org.eclipse.jdt.internal.compiler.classfmt.ClassFileReader;
-import org.eclipse.jdt.internal.compiler.classfmt.ClassFormatException;
-import org.eclipse.jdt.internal.compiler.classfmt.ClassFileConstants;
-import org.eclipse.jdt.internal.compiler.env.INameEnvironment;
-import org.eclipse.jdt.internal.compiler.env.NameEnvironmentAnswer;
+import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 public class JavaCompiler {
+  private static final Logger LOG = Logger.getLogger(JavaCompiler.class);
+
   private MapClassLoader myClassLoader = new MapClassLoader();
   private Map<String, CompilationUnit> myCompilationUnits = new HashMap<String, CompilationUnit>();
   private IClassPathItem myClassPathItem;
@@ -73,10 +78,10 @@ public class JavaCompiler {
           output.write(getClass(clsName));
           output.close();
         } catch (IOException e) {
-          e.printStackTrace();
+          LOG.error(e);
         }
      } else {
-        System.err.println("WARNING : Class to be put has a wron package");
+        LOG.warning("WARNING : Class to be put has a wrong package");
       }
     }
   }

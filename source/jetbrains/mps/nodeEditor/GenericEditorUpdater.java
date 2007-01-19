@@ -6,10 +6,13 @@ import jetbrains.mps.ide.*;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjects;
+import jetbrains.mps.logging.Logger;
 
 import javax.swing.SwingUtilities;
 
 public abstract class GenericEditorUpdater implements IComponentLifecycle {
+  private static final Logger LOG = Logger.getLogger(GenericEditorUpdater.class);
+
   private boolean myStopThread = false;
 
   private MPSProjects myProjects;
@@ -44,7 +47,7 @@ public abstract class GenericEditorUpdater implements IComponentLifecycle {
             Thread.sleep(300);
           }
         } catch (Exception e) {
-          e.printStackTrace();
+          LOG.error(e);
         }
       }
 

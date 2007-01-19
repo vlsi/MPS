@@ -5,10 +5,10 @@ import jetbrains.mps.baseLanguage.Classifier;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.usageView.UsagesModel_AspectMethods;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.util.FrameUtil;
@@ -20,6 +20,8 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 
 public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDEHandler, IDisposable {
+  private static final Logger LOG = Logger.getLogger(MPSProjectIDEHandler.class);
+
   private MPSProject myProject;
 
   public MPSProjectIDEHandler(MPSProject project) throws RemoteException {
@@ -50,7 +52,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
         FrameUtil.activateFrame(getMainFrame());
         if (usagesModel.getSNodes().size() > 0) return;
       } catch (Throwable t) {
-        t.printStackTrace();
+        LOG.error(t);
       }
     }
   }
@@ -90,7 +92,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
       try {
         handler.removeIdeHandler(this);
       } catch (RemoteException e) {
-        e.printStackTrace();
+        LOG.error(e);
       }
     }
   }
