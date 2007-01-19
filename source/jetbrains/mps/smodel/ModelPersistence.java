@@ -7,6 +7,8 @@ import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.smodel.languageLog.ModelLogger;
+import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.core.error.ErrorNode;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
@@ -352,12 +354,12 @@ public class ModelPersistence {
     try {
       if (!model.getUID().toString().startsWith(NameUtil.namespaceFromLongName(type)) &&
               SModelUtil.findConceptDeclaration(NameUtil.conceptFQNameByClassName(type), GlobalScope.getInstance()) == null) {
-        return new UnknownSNode(model);
+        return createUnknownNode(model, type);
       }
 
       Method method = QueryMethod.getNewInstanceMethod(type);
       if (method == null) {
-        return new UnknownSNode(model);
+        return createUnknownNode(model, type);
       }
       return (SNode) method.invoke(null, model);
     } catch (SecurityException e) {
@@ -370,6 +372,13 @@ public class ModelPersistence {
       LOG.error(e);
     }
     return null;
+  }
+
+  private static SNode createUnknownNode(SModel model, String type) {    
+    model.addLanguage(BootstrapLanguages.getInstance().getErrorsLanguage());
+    ErrorNode node = ErrorNode.newInstance(model);
+    node.setType(type);
+    return node;
   }
 
   @NotNull
@@ -428,6 +437,10 @@ public class ModelPersistence {
 
     // languages
     for (String languageNamespace : sourceModel.getExplicitlyImportedLanguages()) {
+      if (languageNamespace.equals(BootstrapLanguages.getInstance().getErrorsLanguage().getNamespace())) {
+        continue;
+      }
+
       Element languageElem = new Element(LANGUAGE);
       languageElem.setAttribute(NAMESPACE, languageNamespace);
       int version = -1;
@@ -499,7 +512,9 @@ public class ModelPersistence {
   public static void saveNode(@NotNull Element parentElement, @NotNull SNode node, boolean useUIDs) {
     Element element = new Element(NODE);
     setNotNullAttribute(element, ROLE, node.getRole_());
-    element.setAttribute(TYPE, node.getClass().getName());
+    String type = node instanceof ErrorNode ? ((ErrorNode) node).getType() :                  
+                                               node.getClass().getName();
+    element.setAttribute(TYPE, type);
     element.setAttribute(ID, node.getId());
 
     if (node.getModel().isExternallyResolvable()) {
@@ -517,6 +532,10 @@ public class ModelPersistence {
     Map<String, String> properties = node.getProperties();
     Set<String> keys = properties.keySet();
     for (String propertyName : keys) {
+      if (node instanceof ErrorNode && propertyName.equals(ErrorNode.TYPE)) {
+        continue;
+      }
+
       Element propertyElement = new Element(PROPERTY);
       element.addContent(propertyElement);
       propertyElement.setAttribute(NAME, propertyName);
@@ -590,16 +609,6 @@ public class ModelPersistence {
       }
     }
     return -1;
-  }
-
-  public static class UnknownSNode extends SNode {
-    public UnknownSNode(SModel model) {
-      super(model);
-    }
-
-    public static UnknownSNode newInstance(SModel model) {
-      return new UnknownSNode(model);
-    }
   }
 
   private static class LogInfo {
