@@ -52,9 +52,12 @@ public class TemplateGenUtil {
       generator.showErrorMessage(templateNode, "Invalid reference \"" + templateReference.getRole() + "\" in templates model " + templateNode.getModel().getUID());
       return true;
     }
-    if (templateReferentNode instanceof NodeMacro ||
-            templateReferentNode instanceof ReferenceMacro ||
-            templateReferentNode instanceof PropertyMacro) {
+//    if (templateReferentNode instanceof NodeMacro ||
+//            templateReferentNode instanceof ReferenceMacro ||
+//            templateReferentNode instanceof PropertyMacro) {
+//      return true;
+//    }
+    if (isTemplateLanguageElement(templateReferentNode)) {
       return true;
     }
 
@@ -261,7 +264,7 @@ public class TemplateGenUtil {
         }
       };
       if (mappingRule.getSearchImportedModels()) {
-         generator.getSourceModel().allNodesIncludingImported(generator.getScope(), condition);
+        generator.getSourceModel().allNodesIncludingImported(generator.getScope(), condition);
       } else {
         generator.getSourceModel().allNodes(condition);
       }
@@ -294,7 +297,7 @@ public class TemplateGenUtil {
         }
       };
       if (weavingRule.getSearchImportedModels()) {
-         generator.getSourceModel().allNodesIncludingImported(generator.getScope(), condition);
+        generator.getSourceModel().allNodesIncludingImported(generator.getScope(), condition);
       } else {
         generator.getSourceModel().allNodes(condition);
       }
@@ -446,11 +449,17 @@ public class TemplateGenUtil {
   }
 
   public static boolean isTemplateLanguageElement(SNode templateNode) {
-    String role = templateNode.getRole_();
-    return AttributesRolesUtil.childRoleFromAttributeRole(NodeMacro_AnnotationLink.NODE_MACRO).equals(role) ||
-            AttributesRolesUtil.childRoleFromAttributeRole(TemplateFragment_AnnotationLink.TEMPLATE_FRAGMENT).equals(role) ||
-            AttributesRolesUtil.isChildRoleOfLinkAttributeRole(ReferenceMacro_AnnotationLink.REFERENCE_MACRO, role) ||
-            AttributesRolesUtil.isChildRoleOfPropertyAttributeRole(PropertyMacro_AnnotationLink.PROPERTY_MACRO, role);
+//    String role = templateNode.getRole_();
+//    return AttributesRolesUtil.childRoleFromAttributeRole(NodeMacro_AnnotationLink.NODE_MACRO).equals(role) ||
+//            AttributesRolesUtil.childRoleFromAttributeRole(TemplateFragment_AnnotationLink.TEMPLATE_FRAGMENT).equals(role) ||
+//            AttributesRolesUtil.isChildRoleOfLinkAttributeRole(ReferenceMacro_AnnotationLink.REFERENCE_MACRO, role) ||
+//            AttributesRolesUtil.isChildRoleOfPropertyAttributeRole(PropertyMacro_AnnotationLink.PROPERTY_MACRO, role);
+//
+    return templateNode instanceof NodeMacro ||
+            templateNode instanceof ReferenceMacro ||
+            templateNode instanceof PropertyMacro ||
+            templateNode instanceof TemplateFragment ||
+            templateNode instanceof RootTemplateAnnotation;
   }
 
   private static void createChildBuilders(INodeBuilder parentNodeBuilder) {
@@ -974,7 +983,6 @@ public class TemplateGenUtil {
 //      }
 //      buildersForRule.addAll(createNodeBuildersForTemplateNode(sourceNode, fragmentNode, mappingName, 0, generator));
 //    }
-
 
     // enable single-fragment reducing
     if (templateFragments.size() != 1) {
