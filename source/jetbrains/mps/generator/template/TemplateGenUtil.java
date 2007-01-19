@@ -52,11 +52,6 @@ public class TemplateGenUtil {
       generator.showErrorMessage(templateNode, "Invalid reference \"" + templateReference.getRole() + "\" in templates model " + templateNode.getModel().getUID());
       return true;
     }
-//    if (templateReferentNode instanceof NodeMacro ||
-//            templateReferentNode instanceof ReferenceMacro ||
-//            templateReferentNode instanceof PropertyMacro) {
-//      return true;
-//    }
     if (isTemplateLanguageElement(templateReferentNode)) {
       return true;
     }
@@ -449,12 +444,6 @@ public class TemplateGenUtil {
   }
 
   public static boolean isTemplateLanguageElement(SNode templateNode) {
-//    String role = templateNode.getRole_();
-//    return AttributesRolesUtil.childRoleFromAttributeRole(NodeMacro_AnnotationLink.NODE_MACRO).equals(role) ||
-//            AttributesRolesUtil.childRoleFromAttributeRole(TemplateFragment_AnnotationLink.TEMPLATE_FRAGMENT).equals(role) ||
-//            AttributesRolesUtil.isChildRoleOfLinkAttributeRole(ReferenceMacro_AnnotationLink.REFERENCE_MACRO, role) ||
-//            AttributesRolesUtil.isChildRoleOfPropertyAttributeRole(PropertyMacro_AnnotationLink.PROPERTY_MACRO, role);
-//
     return templateNode instanceof NodeMacro ||
             templateNode instanceof ReferenceMacro ||
             templateNode instanceof PropertyMacro ||

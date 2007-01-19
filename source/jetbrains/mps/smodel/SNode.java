@@ -1412,11 +1412,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return concept;
   }
 
-  public ConceptDeclaration findConceptDeclaration(IScope scope) {
-    String conceptFQName = NameUtil.nodeConceptFQName(this);
-    return SModelUtil.findConceptDeclaration(conceptFQName, scope);
-  }
-
   public PropertyDeclaration getPropertyDeclaration(String propertyName, IScope scope) {
     SNode sourceNode = this;
     ConceptDeclaration typeDeclaration = sourceNode.getConceptDeclaration(scope);
@@ -1604,7 +1599,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
 
-
   public List<ConceptLink> getConceptLinks(final String linkName, boolean lookupHierarchy, IScope scope) {
     ConceptDeclaration conceptDeclaration;
     if (this instanceof ConceptDeclaration) {
@@ -1701,7 +1695,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       getParent().dumpNodePath(++currLevel, stream);
     }
   }
-  
+
   public String getLanguageNamespace() {
     String conceptFQName = NameUtil.nodeConceptFQName(this);
     return NameUtil.namespaceFromConceptFQName(conceptFQName);

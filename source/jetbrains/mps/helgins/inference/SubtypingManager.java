@@ -88,13 +88,13 @@ public class SubtypingManager {
      Set<ConceptDeclaration> superConcepts = new HashSet<ConceptDeclaration>();
     {
       Set<ConceptDeclaration> subConcepts = new HashSet<ConceptDeclaration>();
-      ConceptDeclaration subConcept = subtype.findConceptDeclaration(GlobalScope.getInstance());
+      ConceptDeclaration subConcept = subtype.getConceptDeclaration(GlobalScope.getInstance());
       subConcepts.add(subConcept);
       while (subConcept.getExtends() != null) {
         subConcept = subConcept.getExtends();
         subConcepts.add(subConcept);
       }
-      ConceptDeclaration superConcept = supertype.findConceptDeclaration(GlobalScope.getInstance());
+      ConceptDeclaration superConcept = supertype.getConceptDeclaration(GlobalScope.getInstance());
       superConcepts.add(superConcept);
       while (superConcept.getExtends() != null) {
         superConcept = superConcept.getExtends();
