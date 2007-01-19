@@ -835,11 +835,10 @@ public class TemplateGenUtil {
         }
 
       } else if (nodeMacro instanceof CopySrcNodeMacro) {
-        boolean disableReducing = ((CopySrcNodeMacro) nodeMacro).getDisableReducing();
-        builder = generator.getNodeBuilderManager().createCopyingNodeBuilder(sourceNode, templateNode, !disableReducing);
+        builder = generator.getNodeBuilderManager().createCopyingNodeBuilder(sourceNode, templateNode);
         builderComplete = true;
       } else if (nodeMacro instanceof CopySrcListMacro) {
-        builder = generator.getNodeBuilderManager().createCopyingNodeBuilder(sourceNode, templateNode, true);
+        builder = generator.getNodeBuilderManager().createCopyingNodeBuilder(sourceNode, templateNode);
         builderComplete = true;
       } else if (nodeMacro instanceof MapSrcNodeMacro) {
         MapSrcNodeMacro mapSrcNodeMacro = (MapSrcNodeMacro) nodeMacro;
