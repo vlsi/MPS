@@ -58,5 +58,12 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1137473854053" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptDeclaration" id="1169194658468">
+    <property name="name" value="INamedConcept" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1169194664001">
+      <property name="name" value="name" />
+      <link role="dataType" targetNodeId="1082983041843" resolveInfo="string" />
+    </node>
+  </node>
 </model>
 
