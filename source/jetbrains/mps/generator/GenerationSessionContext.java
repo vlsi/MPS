@@ -136,7 +136,9 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     List<Generator> generators = new LinkedList<Generator>();
 
     // from all languages used in source model ..
-    List<Language> sourceLanguages = sourceModel.getLanguages(myInvocationContext.getScope());
+    // we need our scope, because invocation scope might not contain languages
+    // that we reduced nodes to  
+    List<Language> sourceLanguages = sourceModel.getLanguages(getScope());
     for (Language sourceLanguage : sourceLanguages) {
       List<Generator> sourceLanguageGenerators = sourceLanguage.getGenerators();
       for (Generator sourceLanguageGenerator : sourceLanguageGenerators) {

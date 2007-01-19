@@ -427,13 +427,12 @@ public class SModel implements Iterable<SNode> {
   public List<Language> getLanguages(@NotNull IScope scope) {
     ArrayList<Language> languages = new ArrayList<Language>();
 
-
     for (String languageNamespace : myLanguages) {
       Language language = scope.getLanguage(languageNamespace);
       if (language != null) {
         languages.add(language);
       } else {
-        LOG.error("Language \"" + languageNamespace + "\" was not loaded. Used by model \"" + getUID() +
+        LOG.error("Language \"" + languageNamespace + "\" isn't visible in scope " + scope + " . Used by model \"" + getUID() +
                 "\"\nAdd this language to the LANGUAGES section of the project properties");
       }
     }
