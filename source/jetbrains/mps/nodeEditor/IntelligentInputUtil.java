@@ -50,7 +50,7 @@ public class IntelligentInputUtil {
       INodeSubstituteAction item = matchingActions.get(0);
       newNode = item.doSubstitute(smallPattern);
       if (newNode == null) {
-        System.err.println("substituted node is null");
+        LOG.error("substituted node is null");
       }
       cellForNewNode = editorContext.createNodeCell(newNode);
     } else {

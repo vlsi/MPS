@@ -233,7 +233,7 @@ public class TypeChecker {
     for (SNode child : children) {
       if (!childrenReplacement.keySet().contains(child)) continue;
       if (child.getParent() == null) {
-        System.err.println("debug");
+        LOG.error("debug");
         RuntimeErrorType error = new RuntimeErrorType(typesModel);
         error.setErrorText("recursion types not allowed");
         return error;

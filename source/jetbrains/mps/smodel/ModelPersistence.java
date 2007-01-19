@@ -159,7 +159,7 @@ public class ModelPersistence {
         if (modelLanguage != null) {
           int newVersion = modelLanguage.getVersion();
           if (newVersion > oldVersion) {
-            System.err.println("new language version detected: model = " + model
+            LOG.debug("new language version detected: model = " + model
                     + " language = " + languageNamespace + " current language version: " +
                     oldVersion + " new version: " + newVersion);
             try {
@@ -220,7 +220,7 @@ public class ModelPersistence {
         if (importedModelDescriptor != null) {
           int newVersion = importedModelDescriptor.getVersion();
           if (newVersion > importedModelVersion) {
-            System.err.println("new imported model version detected: model = " + model
+            LOG.debug("new imported model version detected: model = " + model
                     + " imported model = " + importedModelUID + " current import version: " +
                     importedModelVersion + " new version: " + newVersion);
             try {

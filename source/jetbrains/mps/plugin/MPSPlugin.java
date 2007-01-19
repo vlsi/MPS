@@ -34,7 +34,7 @@ public class MPSPlugin {
       try {
         myPlugin = (IMPSPlugin) Naming.lookup("//localhost:2390/MPSPlugin");
       } catch (Exception e) {
-        System.err.println("Can't connect ot IDEA : " + e.getMessage());
+        LOG.error("Can't connect ot IDEA : " + e.getMessage());
       }
     }
     return myPlugin;
@@ -58,7 +58,7 @@ public class MPSPlugin {
       if (getPlugin() == null) return null;
       return getPlugin().getProjectHandlerFor(projectPath);
     } catch (RemoteException e) {
-      System.err.println("Can't connect to IDEA : " + e.getMessage());
+      LOG.error("Can't connect to IDEA : " + e.getMessage());
     }
     return null;
   }

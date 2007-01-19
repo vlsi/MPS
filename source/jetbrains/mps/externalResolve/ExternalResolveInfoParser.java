@@ -3,6 +3,7 @@ package jetbrains.mps.externalResolve;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.*;
+import jetbrains.mps.logging.Logger;
 
 import java.util.Set;
 
@@ -14,6 +15,8 @@ import java.util.Set;
  * To change this template use File | Settings | File Templates.
  */
 public class ExternalResolveInfoParser {
+  private static final Logger LOG = Logger.getLogger(ExternalResolveInfoParser.class);
+
   private static final Set<Character> NAME_FINISHING_CHARS = CollectionUtil.asSet(' ', ':', ')', '(', ',', '.', '[', ']');
 
   static String getHumanFriendlyString(String resolveInfo) {
@@ -44,7 +47,7 @@ public class ExternalResolveInfoParser {
     try {
       return resolveInfo.substring(memberType.length()+1,resolveInfo.indexOf('.')-1);
     } catch(StringIndexOutOfBoundsException ex) {
-      System.err.println("");
+      LOG.error(ex);
       return null;
     }
   }

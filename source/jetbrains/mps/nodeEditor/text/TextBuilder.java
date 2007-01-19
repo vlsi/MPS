@@ -1,5 +1,7 @@
 package jetbrains.mps.nodeEditor.text;
 
+import jetbrains.mps.logging.Logger;
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -11,6 +13,8 @@ import java.util.ArrayList;
  * To change this template use File | Settings | File Templates.
  */
 public class TextBuilder {
+  private static final Logger LOG = Logger.getLogger(TextBuilder.class);
+
   private int myX = 0;
   private int myY = 0;
   private int myWidth = 0;

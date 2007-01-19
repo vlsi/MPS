@@ -13,9 +13,11 @@ import java.util.HashSet;
  * @author Kostik
  */
 public class ProjectChecker {
+  private static final Logger LOG = Logger.getLogger(ProjectChecker.class);
+
   public static void checkProject() {
     if (!checkProject(null)) {
-      System.err.println("Project check failed");
+      LOG.error("Project check failed");
     }
   }
 

@@ -62,7 +62,7 @@ public class ExternalResolver {
   public static SNode findTargetNode(SModel model, String extResolveInfo) {
 
     if (isEmptyExtResolveInfo(extResolveInfo)) {
-      System.err.println("EXTERNAL RESOLVE: resolve info is empty");
+      LOG.error("EXTERNAL RESOLVE: resolve info is empty");
       return null;
     }
 
