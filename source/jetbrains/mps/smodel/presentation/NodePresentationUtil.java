@@ -4,6 +4,7 @@ import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.core.BaseConcept;
 import jetbrains.mps.core.NamedConcept;
+import jetbrains.mps.core.INamedConcept;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
@@ -45,7 +46,7 @@ public class NodePresentationUtil {
     if (node instanceof BaseConcept) {
       String customAlias = ((BaseConcept) node).getAlias();
       if (customAlias != null) return customAlias;
-      if (node instanceof NamedConcept) {
+      if (node instanceof NamedConcept || node instanceof INamedConcept) {
         String name = node.getName();
         if (name != null) {
           return name;

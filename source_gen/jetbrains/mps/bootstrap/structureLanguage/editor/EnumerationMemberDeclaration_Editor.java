@@ -11,14 +11,14 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
 
@@ -51,6 +51,47 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createConstantCell2(context, node, "    (default)"));
     }
     editorCell.putUserObject(EditorCell.CELL_ID, "1083925414250");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.setFontType(MPSFonts.ITALIC);
+    editorCell.getTextLine().setTextColor(Color.darkGray);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1162585934258");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.setFontType(MPSFonts.ITALIC);
+    editorCell.getTextLine().setTextColor(Color.darkGray);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1162585954651");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.setFontType(MPSFonts.PLAIN);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1083925414258");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -89,20 +130,6 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     } else 
     return cellWithRole;
   }
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
-    editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.setFontType(MPSFonts.ITALIC);
-    editorCell.getTextLine().setTextColor(Color.darkGray);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1162585934258");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
   public EditorCell createExternalValueCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -138,20 +165,6 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     } else 
     return cellWithRole;
   }
-  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
-    editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.setFontType(MPSFonts.ITALIC);
-    editorCell.getTextLine().setTextColor(Color.darkGray);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1162585954651");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
   public EditorCell createInternalValueCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -186,18 +199,5 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else 
     return cellWithRole;
-  }
-  public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
-    editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.setFontType(MPSFonts.PLAIN);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1083925414258");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
   }
 }
