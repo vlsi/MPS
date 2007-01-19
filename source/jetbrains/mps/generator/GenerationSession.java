@@ -1,7 +1,6 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.generator.template.RewritingGenerator;
 import jetbrains.mps.generator.template.DefaultTemplateGenerator;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
@@ -206,22 +205,6 @@ public class GenerationSession {
     IModule module = generationContext.getModule();
     SModelDescriptor currentInputModel = inputModel.getModelDescriptor();
     SModelDescriptor currentOutputModel = createTransientModel(inputModel, module);
-
-    // -----------------------
-    // preliminary rewriting
-    // -----------------------
-    int preliminaryRewritingRepeatCount = 1;
-    RewritingGenerator rewritingGenerator = new RewritingGenerator(generationContext, generator.getProgressMonitor());
-    while (rewritingGenerator.doModelRewriting(currentInputModel.getSModel(), currentOutputModel.getSModel())) {
-      if (++preliminaryRewritingRepeatCount > 10) {
-        rewritingGenerator.showErrorMessage(null, "Failed to rewrite input after 10 repeated rewritings");
-        throw new GenerationFailedException("Failed to rewrite input after 10 repeated rewritings");
-      }
-      currentOutputModel.getSModel().validateLanguagesAndImports();
-      currentInputModel = currentOutputModel;
-      myCurrentContext.replaceInputModel(currentInputModel);
-      currentOutputModel = createTransientModel(currentInputModel.getSModel(), module);
-    }
 
     // -----------------------
     // primary mapping

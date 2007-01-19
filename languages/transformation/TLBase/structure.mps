@@ -500,29 +500,6 @@
     <link role="source" targetNodeId="2.1133920641626" />
     <link role="target" targetNodeId="1095672379244" />
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1164129274099">
-    <property name="iconPath" value="${language_descriptor}\icons\rewriting.png" />
-    <property name="rootable" value="true" />
-    <property name="name" value="PreliminaryRewritingRules" />
-    <link role="extends" targetNodeId="2.1078489098625" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1164129352445">
-      <property name="sourceCardinality" value="0..n" />
-      <property name="targetCardinality" value="1" />
-      <property name="role" value="rewritingRule" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1114456532170" resolveInfo="ReductionRule" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1167329435487">
-      <property name="sourceCardinality" value="0..n" />
-      <property name="role" value="rewritingMappingRule" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1167327847730" resolveInfo="Reduction_MappingRule" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1164129311848">
-      <property name="value" value="rewriting rules" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1166748937193">
     <property name="name" value="TemplateFunctionParameter_sourceModel" />
     <link role="extends" targetNodeId="6.1107135704075" />

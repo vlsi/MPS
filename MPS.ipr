@@ -1179,7 +1179,7 @@
   <component name="ProjectRunConfigurationManager">
     <configuration default="false" name="IdeMain" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="jetbrains.mps.ide.IdeMain" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -ea" />
+      <option name="VM_PARAMETERS" value="-Xmx256m -ea" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -1191,30 +1191,21 @@
         <option name="TRANSPORT" value="0" />
         <option name="LOCAL" value="true" />
       </RunnerSettings>
-      <RunnerSettings RunnerId="Profile ">
-        <option name="myExternalizedOptions" value="&#13;&#10;snapshots-dir=&#13;&#10;" />
-      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Profile " />
       <ConfigurationWrapper RunnerId="Run" />
       <method>
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="Charisma" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
+    <configuration default="false" name="Charisma" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
       <option name="LOCAL" value="true" />
       <option name="OPEN_IN_BROWSER" value="true" />
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/app" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/User/login" />
       <option name="COMMON_VM_ARGUMENTS" value="" />
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_depot_dnq" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="webrSamples_hello" />
@@ -1222,8 +1213,13 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="webrSamples_depot_dnq" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="Charisma" />
-        <option name="DEPLOY" value="true" />
+        <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
@@ -1283,7 +1279,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="depot_webrSample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
+    <configuration default="false" name="depot_webrSample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
@@ -1329,8 +1325,26 @@
         <option name="TRANSPORT" value="0" />
         <option name="LOCAL" value="true" />
       </RunnerSettings>
+      <RunnerSettings RunnerId="Profile ">
+        <option name="myExternalizedOptions" value="&#13;&#10;snapshots-dir=&#13;&#10;" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value=" run" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value=" stop" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile ">
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
           <option name="USE_DEFAULT" value="true" />
@@ -1364,7 +1378,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="hello_webrSample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
+    <configuration default="false" name="hello_webrSample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
@@ -1445,7 +1459,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="hello_dnq_webrSample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
+    <configuration default="false" name="hello_dnq_webrSample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
@@ -1526,7 +1540,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="depot_dnq_webrSample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
+    <configuration default="false" name="depot_dnq_webrSample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
