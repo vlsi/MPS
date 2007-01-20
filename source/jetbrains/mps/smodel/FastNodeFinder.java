@@ -10,8 +10,8 @@ import java.util.WeakHashMap;
 
 public class FastNodeFinder {
   private long myStructuralState;
-  private WeakHashMap<ConceptDeclaration, List<WeakReference<SNode>>> myNodes = new WeakHashMap<ConceptDeclaration, List<WeakReference<SNode>>>();
-//  private WeakHashMap<ConceptDeclaration, List<WeakReference<ConceptDeclaration>>> myInheritors = new WeakHashMap<ConceptDeclaration, List<WeakReference<ConceptDeclaration>>>();
+  private WeakHashMap<ConceptDeclaration, List<WeakReference<SNode>>> myNodesAll = new WeakHashMap<ConceptDeclaration, List<WeakReference<SNode>>>();
+  private WeakHashMap<ConceptDeclaration, List<WeakReference<SNode>>> myNodesNoInheritance = new WeakHashMap<ConceptDeclaration, List<WeakReference<SNode>>>();
 
   public FastNodeFinder(SModelDescriptor modelDescriptor) {
     myStructuralState = modelDescriptor.structuralState();
@@ -30,13 +30,18 @@ public class FastNodeFinder {
     if (concept == null) {
       return new LinkedList<SNode>();
     }
-    return getNodes(concept);
+    return getNodes(concept, true);
   }
 
-  public List<SNode> getNodes(ConceptDeclaration concept) {
+  public List<SNode> getNodes(ConceptDeclaration concept, boolean includeInherited) {
     List<SNode> result = new LinkedList<SNode>();
-    if (myNodes.containsKey(concept)) {
-      for (WeakReference<SNode> n : getNodesFor(concept)) {
+    WeakHashMap<ConceptDeclaration, List<WeakReference<SNode>>> map = myNodesNoInheritance;
+    if (includeInherited) {
+      map = myNodesAll;
+    }
+
+    if (map.containsKey(concept)) {
+      for (WeakReference<SNode> n : map.get(concept)) {
         SNode node = n.get();
         if (node != null) {
           result.add(node);
@@ -46,29 +51,35 @@ public class FastNodeFinder {
     return result;
   }
 
-  private List<WeakReference<SNode>> getNodesFor(ConceptDeclaration conceptDeclaration) {
-    if (!myNodes.containsKey(conceptDeclaration)) {
-      myNodes.put(conceptDeclaration, new LinkedList<WeakReference<SNode>>());
-    }
-    return myNodes.get(conceptDeclaration);
-  }
-
-//  private List<WeakReference<ConceptDeclaration>> getInheritorsFor(ConceptDeclaration conceptDeclaration) {
-//    if (!myInheritors.containsKey(conceptDeclaration)) {
-//      myInheritors.put(conceptDeclaration, new LinkedList<WeakReference<ConceptDeclaration>>());
-//    }
-//    return myInheritors.get(conceptDeclaration);
-//  }
-
   private void buildCache(SNode root) {
     for (SNode child : root.getChildren()) {
       buildCache(child);
     }
 
     ConceptDeclaration concept = root.getConceptDeclaration(GlobalScope.getInstance());
+    getNodes_noInheritance(concept).add(new WeakReference<SNode>(root));
+
     while (concept != null) {
-      getNodesFor(concept).add(new WeakReference<SNode>(root));
+      getNodes_all(concept).add(new WeakReference<SNode>(root));
       concept = concept.getExtends();
     }
+  }
+
+  private List<WeakReference<SNode>> getNodes_noInheritance(ConceptDeclaration concept) {
+    List<WeakReference<SNode>> list = myNodesNoInheritance.get(concept);
+    if (list == null) {
+      list = new LinkedList<WeakReference<SNode>>();
+      myNodesNoInheritance.put(concept, list);
+    }
+    return list;
+  }
+
+  private List<WeakReference<SNode>> getNodes_all(ConceptDeclaration concept) {
+    List<WeakReference<SNode>> list = myNodesAll.get(concept);
+    if (list == null) {
+      list = new LinkedList<WeakReference<SNode>>();
+      myNodesAll.put(concept, list);
+    }
+    return list;
   }
 }
