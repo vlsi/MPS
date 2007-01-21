@@ -4002,29 +4002,6 @@
           <property name="vertical" value="true" />
           <property name="selectable" value="false" />
           <property name="drawBrackets" value="true" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1168905786851">
-            <property name="drawBorder" value="false" />
-            <property name="selectable" value="false" />
-            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1168905786852">
-              <property name="text" value="template:" />
-              <property name="drawBorder" value="false" />
-              <property name="selectable" value="false" />
-            </node>
-            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1168905786853">
-              <property name="drawBorder" value="false" />
-              <property name="noTargetText" value="&lt;no template&gt;" />
-              <link role="relationDeclaration" targetNodeId="1.1168610618480" />
-              <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1168905786854">
-                <link role="conceptDeclaration" targetNodeId="1.1092059087312" />
-                <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1168905786855">
-                  <property name="drawBorder" value="false" />
-                  <property name="readOnly" value="true" />
-                  <property name="noTargetText" value="&lt;no name&gt;" />
-                  <link role="relationDeclaration" targetNodeId="4.1078489098626" />
-                </node>
-              </node>
-            </node>
-          </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1168905786856">
             <property name="drawBorder" value="false" />
             <property name="selectable" value="false" />

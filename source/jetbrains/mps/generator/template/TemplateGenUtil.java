@@ -960,19 +960,11 @@ public class TemplateGenUtil {
   }
 
   protected static INodeBuilder applyReductionRule(SNode sourceNode, SNode reductionRule, ITemplateGenerator generator) {
-    return applyReductionRule(sourceNode, reductionRule, generator, false);
-  }
-
-  protected static INodeBuilder applyReductionRule(SNode sourceNode, SNode reductionRule, ITemplateGenerator generator, boolean useCatchTemplate) {
     TemplateDeclaration templateDeclaration;
     if (reductionRule instanceof ReductionRule) {
       templateDeclaration = ((ReductionRule) reductionRule).getTemplate();
     } else {
-      if (useCatchTemplate) {
-        templateDeclaration = ((Reduction_MappingRule) reductionRule).getCatchTemplate();
-      } else {
-        templateDeclaration = ((Reduction_MappingRule) reductionRule).getTemplate();
-      }
+      templateDeclaration = ((Reduction_MappingRule) reductionRule).getTemplate();
     }
     return applyReductionRule(templateDeclaration, generator, sourceNode, reductionRule);
   }

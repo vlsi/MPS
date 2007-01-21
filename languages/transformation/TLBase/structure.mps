@@ -669,10 +669,6 @@
       <property name="role" value="template" />
       <link role="target" targetNodeId="1092059087312" resolveInfo="TemplateDeclaration" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1168610618480">
-      <property name="role" value="catchTemplate" />
-      <link role="target" targetNodeId="1092059087312" resolveInfo="TemplateDeclaration" />
-    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1167514355419">
     <property name="name" value="Root_MappingRule" />
