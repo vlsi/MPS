@@ -102,9 +102,11 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     if (isInitialized()) {
       myModelListeners.addAll(mySModel.getListeners());
       myModelCommandListeners.addAll(mySModel.getCommandListeners());
-      mySModel.dispose();
-      mySModel = null;
-      getSModel();
+
+      SModel oldModel = mySModel;      
+      mySModel = loadModel();
+      doPostLoadStuff();
+      oldModel.dispose();
 
       SModelRepository.getInstance().markChanged(this, false);
 
@@ -160,15 +162,19 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   public SModel getSModel() {
     if (mySModel == null) {
       mySModel = loadModel();
-      myModelRootManager.updateAfterLoad(this);
-      SModelsMulticaster.getInstance().fireModelLoadedEvent(this);
-
-      LOG.assertLog(mySModel != null, "Couldn't load model \"" + getModelUID() + "\"");
-      myDiskTimestamp = fileTimestamp();
-                            
-      addListenersToNewModel();
+      doPostLoadStuff();
     }
     return mySModel;
+  }
+
+  private void doPostLoadStuff() {
+    myModelRootManager.updateAfterLoad(this);
+    SModelsMulticaster.getInstance().fireModelLoadedEvent(this);
+
+    LOG.assertLog(mySModel != null, "Couldn't load model \"" + getModelUID() + "\"");
+    myDiskTimestamp = fileTimestamp();
+
+    addListenersToNewModel();
   }
 
   private void addListenersToNewModel() {
