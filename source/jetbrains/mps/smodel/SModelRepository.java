@@ -1,24 +1,23 @@
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.component.Dependency;
+import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.smodel.event.SModelCommandListener;
+import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.component.Dependency;
-import jetbrains.mps.ide.actions.tools.ReloadUtils;
-
-import java.util.*;
-import java.io.File;
-
+import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.JOptionPane;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import java.io.File;
+import java.util.*;
 
 /**
  * Author: Sergey Dmitriev
@@ -512,10 +511,12 @@ public class SModelRepository extends SModelAdapter {
             if (result == JOptionPane.YES_OPTION) {
               sm.reloadFromDisk();
               needReloadAll = true;
+            } else {
+              //we need to update timestamp in some way
+              sm.save();
             }
           } else {
-//            System.out.println("model " + sm + " changed only on disk. reloading");
-//
+//            System.out.println("model " + sm + " changed only on disk. reloading");//
             sm.reloadFromDisk();
             needReloadAll = true;
           }
