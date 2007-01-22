@@ -1,15 +1,27 @@
 package jetbrains.mps.project;
 
+import jetbrains.mps.component.ContextImpl;
+import jetbrains.mps.component.IContext;
 import jetbrains.mps.components.IContainer;
 import jetbrains.mps.components.IExternalizableComponent;
-import jetbrains.mps.ide.*;
+import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.generationTypes.GenerateClassesGenerationType;
+import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.ide.AbstractProjectFrame;
+import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.ProjectPathsDialog;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.undo.UndoManager;
+import jetbrains.mps.ide.generationPlan.GenerationPlans;
+import jetbrains.mps.ide.messages.IMessageHandler;
+import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.preferences.IComponentWithPreferences;
 import jetbrains.mps.ide.preferences.IPreferencesPage;
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.plugin.MPSPlugin;
@@ -21,18 +33,14 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IDisposable;
 import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.component.IContext;
-import jetbrains.mps.component.ContextImpl;
-import jetbrains.mps.generator.GeneratorManager;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
-import java.util.*;
 import java.rmi.RemoteException;
+import java.util.*;
 
 /**
  * Author: Sergey Dmitriev
@@ -570,6 +578,66 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     }
   }
 
+  //todo find a better place for this method
+  public void testProject() {
+    final IMessageHandler handler = new IMessageHandler() {
+      public void handle(Message msg) {
+        System.err.println(msg.getKind() + " : " + msg.getText());
+      }
+    };
+
+
+    CommandProcessor.instance().executeCommand(new Runnable() {
+      public void run() {
+        for (TestConfiguration t : myProjectDescriptor.getTests()) {
+          SModelDescriptor modelDescriptor = getScope().getModelDescriptor(SModelUID.fromString(t.getModelFqName()));
+          GenerationPlans.Plan p = getComponentSafe(GenerationPlans.class).findPlan(t.getGenerationPlan());
+          Language target = getScope().getLanguage(t.getTargetLanguage());
+
+          if (modelDescriptor == null || p == null || target == null) {
+            System.err.println("can't execute test configuration " + t.getName());
+            continue;
+          }
+
+          System.err.println("executing configuration " + t.getName());
+
+
+          IModule module = null;
+          for (IModule m : getModules()) {
+            if (m.getOwnModelDescriptors().contains(modelDescriptor)) {
+              module = m;
+              break;
+            }
+          }
+
+          if (module == null) {
+            System.err.println("there is no module that can be used to generate model " + modelDescriptor.getModelUID());
+            continue;
+          }
+
+          getComponentSafe(GeneratorManager.class)
+                  .generateModels(
+                          CollectionUtil.asList(modelDescriptor.getSModel()),
+                          target,
+                          new ModuleContext(module, MPSProject.this),
+                          new GenerateClassesGenerationType(false) {
+                            public boolean requiresCompilationInIDEABeforeGeneration() {
+                              return false;
+                            }
+
+                            public boolean requiresCompilationInIDEAfterGeneration() {
+                              return false;
+                            }
+                          },
+                          p.getGenerationScript(),
+                          IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR,
+                          handler
+                  );
+        }
+      }
+    });
+  }
+
   @NotNull
   public IPreferencesPage createPreferencesPage() {
     return new ProjectPathsDialog(getComponent(AbstractProjectFrame.class), this, new ProjectOperationContext(this)).createPreferencesPage();
@@ -598,4 +666,4 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
       return getAllVisibleModules();
     }
   }
-}
+}             
