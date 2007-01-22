@@ -167,6 +167,14 @@ public class CollectionUtil {
     return result;
   }
 
+  public static <LT extends Collection> List<String> mapToString(LT collection) {
+    List<String> result = new ArrayList<String>();
+    for (Object o : collection) {
+      result.add(o.toString());
+    }
+    return result;
+  }
+
   public static <E> void iterate(Collection<E> c, CollectionBlock<E> block) {
     for (E e : c) {
       block.run(e);
