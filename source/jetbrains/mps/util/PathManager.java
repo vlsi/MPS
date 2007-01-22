@@ -92,7 +92,8 @@ public class PathManager {
       ourHomePath = root.getAbsolutePath();    // one step back to getCollectionClass rid of "lib" or "classes" folder
     }
 
-    return new File(".").getAbsolutePath();
+    return new File(".").getAbsolutePath(); //we need this for build server on which stuff written above
+                                            //for somne reason doesn't work
   }
 
   private static boolean isMpsDir(File file) {
