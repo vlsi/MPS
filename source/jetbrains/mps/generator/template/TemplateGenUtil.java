@@ -684,7 +684,7 @@ public class TemplateGenUtil {
     return checkConditionForBaseMappingRule(sourceNode, mappingRule, generator);
   }
 
-  private static boolean checkConditionForBaseMappingRule(SNode sourceNode, BaseMappingRule mappingRule, ITemplateGenerator generator) {
+  protected static boolean checkConditionForBaseMappingRule(SNode sourceNode, BaseMappingRule mappingRule, ITemplateGenerator generator) {
     BaseMappingRule_Condition conditionFunction = mappingRule.getConditionFunction();
     if (conditionFunction == null) {
       return true;
@@ -910,53 +910,6 @@ public class TemplateGenUtil {
       generator.showErrorMessage(sourceNode, templateForSwitchCase, templateSwitch, "couldn't create builder for switch case: more than one (" + sourceNodes2.size() + ") source nodes are returned by query");
     }
     return new Void_NodeBuilder(sourceNode, templateForSwitchCase, null, generator);
-  }
-
-  private static final Object REDUCTION_RULES_CACHE = new Object();
-
-  protected static Reduction_MappingRule findReductionMappingRule(SNode sourceNode, List<Reduction_MappingRule> rules, ITemplateGenerator generator) {
-    // old code: tmp commented for test
-//    ConceptDeclaration concept = sourceNode.getConceptDeclaration(generator.getScope());
-//    for (Reduction_MappingRule rule : rules) {
-//      if (checkPremiseForBaseMappingRule(sourceNode, concept, rule, generator)) {
-//        return rule;
-//      }
-//    }
-//    return null;
-
-    //test ++
-    Map<SNode, List<Reduction_MappingRule>> node2ruleMap = (Map<SNode, List<Reduction_MappingRule>>) generator.getGeneratorSessionContext().getUserObject(REDUCTION_RULES_CACHE);
-    if (node2ruleMap == null) {
-      // build rules cache
-      node2ruleMap = new HashMap<SNode, List<Reduction_MappingRule>>();
-      generator.getGeneratorSessionContext().putUserObject(REDUCTION_RULES_CACHE, node2ruleMap);
-      for (Reduction_MappingRule rule : rules) {
-        ConceptDeclaration applicableConcept = rule.getApplicableConcept();
-        if (applicableConcept == null) applicableConcept = SModelUtil.getBaseConcept();
-        boolean includeInheritors = rule.getApplyToConceptInheritors();
-        List<SNode> nodesForRule = generator.getSourceModel().getModelDescriptor().getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
-        for (SNode node : nodesForRule) {
-          List<Reduction_MappingRule> list = node2ruleMap.get(node);
-          if (list == null) {
-            list = new LinkedList<Reduction_MappingRule>();
-            node2ruleMap.put(node, list);
-          }
-          list.add(rule);
-        }
-      }
-    } // build rules cache
-
-    // find rule
-    List<Reduction_MappingRule> rulesForNode = node2ruleMap.get(sourceNode);
-    if (rulesForNode != null) {
-      for (Reduction_MappingRule rule : rulesForNode) {
-        if (checkConditionForBaseMappingRule(sourceNode, rule, generator)) {
-          return rule;
-        }
-      }
-    }
-    return null;
-    //test --
   }
 
   protected static INodeBuilder applyReductionRule(SNode sourceNode, SNode reductionRule, ITemplateGenerator generator) {

@@ -1405,6 +1405,11 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   @NotNull
+  public ConceptDeclaration getConceptDeclaration() {
+    return getConceptDeclaration(GlobalScope.getInstance());
+  }
+
+  @NotNull
   public ConceptDeclaration getConceptDeclaration(IScope scope) {
     String conceptFQName = NameUtil.nodeConceptFQName(this);
     ConceptDeclaration concept = SModelUtil.findConceptDeclaration(conceptFQName, scope);
