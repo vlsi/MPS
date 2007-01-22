@@ -48,6 +48,19 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
+  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.getTextLine().setTextColor(Color.lightGray);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1154547244033");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
   public EditorCell createConceptList(EditorContext context, SNode node) {
     if(this.myConceptListHandler_conceptList_ == null) {
       this.myConceptListHandler_conceptList_ = new OperationParm_ConceptList_Editor_ConceptListHandler_conceptList_(node, "concept", context);
@@ -61,19 +74,6 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.putUserObject(EditorCell.ROLE, this.myConceptListHandler_conceptList_.getElementRole());
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
-  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
-    editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.getTextLine().setTextColor(Color.lightGray);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1154547244033");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

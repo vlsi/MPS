@@ -44,7 +44,7 @@
         <property name="selectable" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1138412455559">
-        <property name="attractsFocus" value="1" />
+        <property name="attractsFocus" value="0" />
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1138411864174" />
         <link role="actionMap" targetNodeId="1140123519849" />
