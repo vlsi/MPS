@@ -631,6 +631,7 @@
       <link role="dataType" targetNodeId="2.1082983657063" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1167169349424">
+      <property name="sourceCardinality" value="1" />
       <property name="role" value="applicableConcept" />
       <link role="target" targetNodeId="3.1071489090640" />
     </node>
