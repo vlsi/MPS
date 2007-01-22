@@ -61,7 +61,9 @@ public class PathManager {
   }
 
   public static String getHomePath() {
-    if (ourHomePath != null) return ourHomePath;
+    if (ourHomePath != null) {
+      return ourHomePath;
+    }
 
     if (System.getProperty(PROPERTY_HOME_PATH) != null) {
       ourHomePath = getAbsolutePath(System.getProperty(PROPERTY_HOME_PATH));
@@ -90,7 +92,7 @@ public class PathManager {
       ourHomePath = root.getAbsolutePath();    // one step back to getCollectionClass rid of "lib" or "classes" folder
     }
 
-    return ourHomePath;
+    return new File(".").getAbsolutePath();
   }
 
   private static boolean isMpsDir(File file) {
