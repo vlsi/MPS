@@ -5,6 +5,7 @@ import jetbrains.mps.component.IContext;
 import jetbrains.mps.components.IContainer;
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.IGenerationScript;
 import jetbrains.mps.generator.generationTypes.GenerateClassesGenerationType;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.ide.AbstractProjectFrame;
@@ -600,7 +601,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
           GenerationPlans.Plan p = getComponentSafe(GenerationPlans.class).findPlan(t.getGenerationPlan());
           Language target = getScope().getLanguage(t.getTargetLanguage());
 
-          if (modelDescriptor == null || p == null || target == null) {
+          if (modelDescriptor == null || target == null) {
             System.out.println("can't execute test configuration " + t.getName());
             continue;
           }
@@ -621,6 +622,13 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
             continue;
           }
 
+          IGenerationScript script;
+          if (p != null) {
+            script = p.getGenerationScript();
+          } else {
+            script = IGenerationScript.DEFAULT;
+          }
+
           getComponentSafe(GeneratorManager.class)
                   .generateModels(
                           CollectionUtil.asList(modelDescriptor.getSModel()),
@@ -635,10 +643,13 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
                               return false;
                             }
                           },
-                          p.getGenerationScript(),
+                          script,
                           IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR,
-                          handler
-                  );
+                          handler);
+
+          System.out.println("");
+          System.out.println("");
+          System.out.println("");
         }
       }
     });
