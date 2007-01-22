@@ -103,7 +103,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
       myModelListeners.addAll(mySModel.getListeners());
       myModelCommandListeners.addAll(mySModel.getCommandListeners());
 
-      SModel oldModel = mySModel;      
+      SModel oldModel = mySModel;
       mySModel = loadModel();
       doPostLoadStuff();
       oldModel.dispose();

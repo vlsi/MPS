@@ -283,7 +283,6 @@ public abstract class AbstractModule implements IModule {
       return result;
     }
 
-
     public String toString() {
       return "Scope of module " + AbstractModule.this;
     }
