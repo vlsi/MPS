@@ -40,7 +40,7 @@ public class IntelligentInputUtil {
 
     EditorCell cellForNewNode;
     SNode newNode;
-    if (cell.isValidText(smallPattern) && !"".equals(smallPattern)) {
+    if (cell.isValidText(smallPattern) && !"".equals(smallPattern) && substituteInfo.hasExactlyNActions(smallPattern+tail, false, 0)) {
       newNode = cell.getSNode();
       cellForNewNode = cell;
     } else if (uniqueAction(substituteInfo, smallPattern, tail)) {

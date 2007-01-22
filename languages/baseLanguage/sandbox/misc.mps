@@ -423,6 +423,27 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1169482320304">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1169482320305">
+            <property name="name" value="count" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1169482320306" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1169482325730">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1169482325731">
+            <property name="name" value="count_inner" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1169482325732" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1169482335249">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1169482335250">
+            <property name="name" value="f" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1169482335251" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1169482795182">
+              <link role="variableDeclaration" targetNodeId="1169482320305" resolveInfo="count" />
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1154544745892">
         <property name="name" value="val" />
