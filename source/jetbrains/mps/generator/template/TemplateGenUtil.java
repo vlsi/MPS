@@ -236,66 +236,99 @@ public class TemplateGenUtil {
     }
   }
 
-  public static List<INodeBuilder> applyRootMappingRules(final List<Root_MappingRule> mappingRules, final ITemplateGenerator generator) {
+  public static List<INodeBuilder> applyRootMappingRules(final List<Root_MappingRule> rules, final ITemplateGenerator generator) {
     final List<INodeBuilder> builders = new LinkedList<INodeBuilder>();
-    if (mappingRules.isEmpty()) return builders;
-    for (final Root_MappingRule mappingRule : mappingRules) {
-      Condition<SNode> condition = new Condition<SNode>() {
-        public boolean met(SNode sourceNode) {
-          ConceptDeclaration nodeConcept = sourceNode.getConceptDeclaration(generator.getScope());
-          if (checkPremiseForBaseMappingRule(sourceNode, nodeConcept, mappingRule, generator)) {
-            NamedConcept template = mappingRule.getTemplate();
-            if (template == null) {
-              generator.showErrorMessage(sourceNode, null, mappingRule, "root mapping rule has no template");
-              return false;
-            }
+    if (rules.isEmpty()) return builders;
 
-            String mappingName = mappingRule.getName();
-            INodeBuilder nodeBuilder = createNodeBuilder(sourceNode, template, mappingName, 0, generator);
-            nodeBuilder.setRuleNode(mappingRule);
-            builders.add(nodeBuilder);
+    for (Root_MappingRule rule : rules) {
+      ConceptDeclaration applicableConcept = rule.getApplicableConcept();
+      if (applicableConcept == null) {
+        generator.showErrorMessage(null, null, rule, "rule has no applicable concept defined");
+        continue;
+      }
+      boolean includeInheritors = rule.getApplyToConceptInheritors();
+      List<SNode> nodes = generator.getSourceModel().getModelDescriptor().getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
+      for (SNode node : nodes) {
+        if (checkConditionForBaseMappingRule(node, rule, generator)) {
+          NamedConcept template = rule.getTemplate();
+          if (template == null) {
+            generator.showErrorMessage(node, null, rule, "rule has no template");
+            break;
           }
-          return false;
+
+          String mappingName = rule.getName();
+          INodeBuilder nodeBuilder = createNodeBuilder(node, template, mappingName, 0, generator);
+          nodeBuilder.setRuleNode(rule);
+          builders.add(nodeBuilder);
         }
-      };
-      if (mappingRule.getSearchImportedModels()) {
-        generator.getSourceModel().allNodesIncludingImported(generator.getScope(), condition);
-      } else {
-        generator.getSourceModel().allNodes(condition);
       }
     }
+
     return builders;
   }
 
-  public static void applyWeavingMappingRules(final List<Weaving_MappingRule> weavingRules, final ITemplateGenerator generator) {
-    if (weavingRules.isEmpty()) return;
-    for (final Weaving_MappingRule weavingRule : weavingRules) {
+  public static void applyWeavingMappingRules(List<Weaving_MappingRule> rules, final ITemplateGenerator generator) {
+    if (rules.isEmpty()) return;
+
+    List<Weaving_MappingRule> slowRules = new LinkedList<Weaving_MappingRule>();
+    for (Weaving_MappingRule rule : rules) {
+      if (rule.getSearchImportedModels()) {
+        slowRules.add(rule);
+        continue;
+      }
+
+      ConceptDeclaration applicableConcept = rule.getApplicableConcept();
+      if (applicableConcept == null) {
+        generator.showErrorMessage(null, rule, "rule has no applicable concept defined");
+        continue;
+      }
+      boolean includeInheritors = rule.getApplyToConceptInheritors();
+      List<SNode> nodes = generator.getSourceModel().getModelDescriptor().getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
+      for (SNode node : nodes) {
+        if (checkConditionForBaseMappingRule(node, rule, generator)) {
+          TemplateDeclaration template = rule.getTemplate();
+          if (template == null) {
+            generator.showErrorMessage(node, rule, "rule has no template");
+            break;
+          }
+
+          List<INodeBuilder> contextBuilders = getContextNodeBuilderForWeavingingRule(node, rule, generator);
+          if (contextBuilders == null) {
+            generator.showErrorMessage(node, rule, "couldn't create context node builder");
+            continue;
+          }
+          for (INodeBuilder builder : contextBuilders) {
+            weaveTemplateDeclaration(node, template, builder, generator, rule);
+          }
+        }
+      }
+    }
+
+    for (final Weaving_MappingRule rule : slowRules) {
       Condition<SNode> condition = new Condition<SNode>() {
         public boolean met(SNode sourceNode) {
           ConceptDeclaration nodeConcept = sourceNode.getConceptDeclaration(generator.getScope());
-          if (checkPremiseForBaseMappingRule(sourceNode, nodeConcept, weavingRule, generator)) {
-            TemplateDeclaration templateDeclaration = weavingRule.getTemplate();
-            if (templateDeclaration == null) {
-              generator.showErrorMessage(sourceNode, null, weavingRule, "weaving rule has no template");
+          if (checkPremiseForBaseMappingRule(sourceNode, nodeConcept, rule, generator)) {
+            TemplateDeclaration template = rule.getTemplate();
+            if (template == null) {
+              generator.showErrorMessage(sourceNode, rule, "rule has no template");
               return false;
             }
-            List<INodeBuilder> contextBuilders = getContextNodeBuilderForWeavingingRule(sourceNode, weavingRule, generator);
+            List<INodeBuilder> contextBuilders = getContextNodeBuilderForWeavingingRule(sourceNode, rule, generator);
             if (contextBuilders == null) {
-              generator.showErrorMessage(sourceNode, weavingRule, "couldn't create context node builder");
+              generator.showErrorMessage(sourceNode, rule, "couldn't create context node builder");
               return false;
             }
-            for (INodeBuilder b : contextBuilders) {
-              weaveTemplateDeclaration(sourceNode, templateDeclaration, b, generator, weavingRule);
+            for (INodeBuilder builder : contextBuilders) {
+              weaveTemplateDeclaration(sourceNode, template, builder, generator, rule);
             }
           }
           return false;
         }
       };
-      if (weavingRule.getSearchImportedModels()) {
-        generator.getSourceModel().allNodesIncludingImported(generator.getScope(), condition);
-      } else {
-        generator.getSourceModel().allNodes(condition);
-      }
+
+      // slow rules search imported models
+      generator.getSourceModel().allNodesIncludingImported(generator.getScope(), condition);
     }
   }
 
