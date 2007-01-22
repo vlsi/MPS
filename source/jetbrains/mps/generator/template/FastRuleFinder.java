@@ -30,10 +30,10 @@ public class FastRuleFinder {
       addRule_applicableExactly(applicableConcept, rule);
     }
 
-    // rules applicable to inheritors
-    for (ConceptDeclaration concept : myRules_applicableExactly.keySet()) {
-      cacheAllApplicableRules(concept, baseConcept);
-    }
+//    // rules applicable to inheritors
+//    for (ConceptDeclaration concept : myRules_applicableExactly.keySet()) {
+//      cacheAllApplicableRules(concept, baseConcept);
+//    }
 
   }
 
