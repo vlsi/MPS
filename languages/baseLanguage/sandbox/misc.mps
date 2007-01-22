@@ -412,6 +412,17 @@
             <node role="initializer" type="jetbrains.mps.baseLanguage.StringLiteral" id="1169474200478" />
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1169480862254">
+          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1169480865258">
+            <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]String).([InstanceMethodDeclaration]substring((jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int)) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1169480862255">
+              <link role="variableDeclaration" targetNodeId="1169474196912" resolveInfo="s" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1169480867931">
+              <property name="value" value="5" />
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1154544745892">
         <property name="name" value="val" />

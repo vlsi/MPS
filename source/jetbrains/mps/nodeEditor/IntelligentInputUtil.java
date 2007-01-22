@@ -71,6 +71,12 @@ public class IntelligentInputUtil {
         rtSubstituteInfo = new NullSubstituteInfo();
       }
       List<INodeSubstituteAction> rtMatchingActions = rtSubstituteInfo.getMatchingActions(tail, true);
+      if (rtSubstituteInfo.hasNoActionsWithPrefix(tail)) {
+        if (newNode != null) {
+          newNode.removeRightTransformHint();
+        }
+        return;
+      }
       if (!uniqueAction(rtSubstituteInfo, tail, "")) {
         CommandProcessor.instance().invokeLater(cellFounder);
         return;

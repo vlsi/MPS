@@ -54,6 +54,12 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
     myCachedActionList = null;
   }
 
+  public boolean hasNoActionsWithPrefix(String pattern) {
+    Pair<String, List<INodeSubstituteAction>> pair = getPatternAndActions(pattern, false);
+    List<INodeSubstituteAction> result = pair.o2;
+    return result.isEmpty();
+  }
+
   public boolean hasExactlyNActions(String pattern, boolean strictMatching, final int n) {
     Pair<String, List<INodeSubstituteAction>> pair = getPatternAndActions(pattern, strictMatching);
     List<INodeSubstituteAction> result = pair.o2;

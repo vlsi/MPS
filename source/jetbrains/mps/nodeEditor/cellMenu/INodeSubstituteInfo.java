@@ -23,4 +23,6 @@ public interface INodeSubstituteInfo {
   String getOriginalText();
 
   boolean hasExactlyNActions(String pattern, boolean strictMatching, int n);
+
+  boolean hasNoActionsWithPrefix(String pattern);
 }

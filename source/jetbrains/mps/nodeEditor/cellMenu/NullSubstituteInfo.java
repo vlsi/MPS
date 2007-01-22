@@ -43,4 +43,8 @@ public class NullSubstituteInfo implements INodeSubstituteInfo {
   public boolean hasExactlyNActions(String pattern, boolean strictMatching, int n) {
     return false;  //To change body of implemented methods use File | Settings | File Templates.
   }
+
+  public boolean hasNoActionsWithPrefix(String pattern) {
+    return true;
+  }
 }
