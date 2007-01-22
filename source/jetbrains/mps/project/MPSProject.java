@@ -19,6 +19,7 @@ import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.generationPlan.GenerationPlans;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
+import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.preferences.IComponentWithPreferences;
 import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
@@ -579,10 +580,15 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
   }
 
   //todo find a better place for this method
-  public void testProject() {
+  public boolean testProject() {
+    final List<Message> errors = new ArrayList<Message>();
     final IMessageHandler handler = new IMessageHandler() {
       public void handle(Message msg) {
-        System.err.println(msg.getKind() + " : " + msg.getText());
+        if (msg.getKind() == MessageKind.ERROR) {
+          errors.add(msg);
+        }
+
+        System.out.println(msg.getKind() + " : " + msg.getText());
       }
     };
 
@@ -595,11 +601,11 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
           Language target = getScope().getLanguage(t.getTargetLanguage());
 
           if (modelDescriptor == null || p == null || target == null) {
-            System.err.println("can't execute test configuration " + t.getName());
+            System.out.println("can't execute test configuration " + t.getName());
             continue;
           }
 
-          System.err.println("executing configuration " + t.getName());
+          System.out.println("executing configuration " + t.getName());
 
 
           IModule module = null;
@@ -611,7 +617,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
           }
 
           if (module == null) {
-            System.err.println("there is no module that can be used to generate model " + modelDescriptor.getModelUID());
+            System.out.println("there is no module that can be used to generate model " + modelDescriptor.getModelUID());
             continue;
           }
 
@@ -636,6 +642,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
         }
       }
     });
+
+    return errors.size() == 0;
   }
 
   @NotNull

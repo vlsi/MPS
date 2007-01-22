@@ -117,14 +117,16 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
   private void clearMessages() {
     MessageView messageView = myProject.getComponent(MessageView.class);
-    assert messageView != null;
-    messageView.clear();
+    if (messageView != null) {
+      messageView.clear();
+    }
   }
 
   private void showMessageView() {
     MessageView messageView = myProject.getComponent(MessageView.class);
-    assert messageView != null;
-    messageView.show(true);
+    if (messageView != null) {
+      messageView.show(true);
+    }
   }
 
   /**
