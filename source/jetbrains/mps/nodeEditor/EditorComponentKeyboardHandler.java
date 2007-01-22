@@ -175,15 +175,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
   }
 
   private boolean allowCellToProcessEvent(EditorCell selectedCell, KeyEvent keyEvent, EditorContext editorContext) {
-    boolean keyEventProcessed = false;
-    if (selectedCell.processKeyPressed(keyEvent)) {
-      keyEventProcessed = true;
-      if (!EditorUtil.isValidCell(selectedCell)) {
-        String pattern = ((EditorCell_Label) selectedCell).getRenderedText();
-        IntelligentInputUtil.processCell((EditorCell_Label) selectedCell, editorContext, pattern);
-      }
-    }
-    return keyEventProcessed;
+    return selectedCell.processKeyPressed(keyEvent);
   }
 
   private boolean isDeleteKeystroke(final KeyEvent keyEvent) {

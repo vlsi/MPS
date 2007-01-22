@@ -412,19 +412,6 @@
             <node role="initializer" type="jetbrains.mps.baseLanguage.StringLiteral" id="1169474200478" />
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1169474217436">
-          <node role="expression" type="jetbrains.mps.baseLanguage.FieldReference" id="1169474239462">
-            <node role="instance" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1169474238352">
-              <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]String).([InstanceMethodDeclaration]substring((jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int)) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
-              <node role="instance" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1169474232551">
-                <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]String).([InstanceMethodDeclaration]substring((jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int), (jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int)) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1169474217437">
-                  <link role="variableDeclaration" targetNodeId="1169474196912" resolveInfo="s" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1154544745892">
         <property name="name" value="val" />

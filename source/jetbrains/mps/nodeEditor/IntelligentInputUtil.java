@@ -38,8 +38,6 @@ public class IntelligentInputUtil {
       substituteInfo = new NullSubstituteInfo();
     }
 
-
-
     EditorCell cellForNewNode;
     SNode newNode;
     if (cell.isValidText(smallPattern) && !"".equals(smallPattern)) {
