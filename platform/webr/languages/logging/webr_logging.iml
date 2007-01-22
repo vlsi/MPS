@@ -12,6 +12,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPS" />
     <orderEntry type="module" module-name="webrRuntime" />
+    <orderEntry type="library" name="commons-logging" level="project" />
     <orderEntryProperties />
   </component>
 </module>

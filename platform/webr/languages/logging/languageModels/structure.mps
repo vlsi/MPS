@@ -47,6 +47,10 @@
       <property name="internalValue" value="debug" />
       <property name="name" value="debug" />
     </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1169477928086">
+      <property name="internalValue" value="info" />
+      <property name="name" value="info" />
+    </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1167245293010">
       <property name="internalValue" value="trace" />
       <property name="name" value="trace" />
