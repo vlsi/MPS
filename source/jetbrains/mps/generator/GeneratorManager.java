@@ -9,6 +9,7 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessageView;
+import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.preferences.IComponentWithPreferences;
 import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.progress.AdaptiveProgressMonitor;
@@ -34,6 +35,10 @@ import java.util.List;
  * @author Kostik
  */
 public class GeneratorManager implements IExternalizableComponent, IComponentWithPreferences {
+  // progress monitor
+  public static final int AMOUNT_PER_MODEL = 100;
+  public static final int AMOUNT_PER_COMPILATION = 100;
+
   public static final Logger LOG = Logger.getLogger(GeneratorManager.class);
 
   private static final String SAVE_TRANSIENT_MODELS = "save-transient-models-on-generation";
@@ -46,9 +51,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   private MPSProject myProject;
   private List<IFileGenerator> myFileGenerators = new LinkedList<IFileGenerator>();
 
-  // progress monitor
-  public static final int AMOUNT_PER_MODEL = 100;
-  public static final int AMOUNT_PER_COMPILATION = 100;
 
   public GeneratorManager() {
   }
@@ -113,19 +115,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     return new GeneratorManagerPreferencesPage(this);
   }
 
-  private void addMessage(final MessageKind kind, final String text) {
-    MessageView messageView = myProject.getComponent(MessageView.class);
-    assert messageView != null;
-    messageView.add(new Message(kind, text));
-  }
-
-  private void addProgressMessage(final MessageKind kind, final String text, final IAdaptiveProgressMonitor progress) {
-    progress.addText(text);
-    MessageView messageView = myProject.getComponent(MessageView.class);
-    assert messageView != null;
-    messageView.add(new Message(kind, text));
-  }
-
   private void clearMessages() {
     MessageView messageView = myProject.getComponent(MessageView.class);
     assert messageView != null;
@@ -176,7 +165,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       for (Generator g : getPossibleGenerators(sm, scope)) {
         result.add(g.getSourceLanguage());
       }
-    }
+    }                          
     return result;
   }
 
@@ -295,7 +284,38 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     if (progressMonitor.isCanceled()) throw new GenerationCanceledException();
   }
 
-  public void generateModels(List<SModel> _sourceModels, Language targetLanguage, IOperationContext invocationContext, IGenerationType generationType, IGenerationScript script, IAdaptiveProgressMonitor progress) {
+  public void generateModels(
+            List<SModel> _sourceModels,
+            Language targetLanguage,
+            IOperationContext invocationContext,
+            IGenerationType generationType,
+            IGenerationScript script,
+            IAdaptiveProgressMonitor progress) {
+
+    generateModels(_sourceModels,
+            targetLanguage,
+            invocationContext,
+            generationType,
+            script,
+            progress,
+            new IMessageHandler() {
+              public void handle(Message msg) {
+                MessageView messageView = myProject.getComponent(MessageView.class);
+                assert messageView != null;
+                messageView.add(msg);
+              }
+            });
+  }
+
+  public void generateModels(
+          List<SModel> _sourceModels,
+          Language targetLanguage,
+          IOperationContext invocationContext,
+          IGenerationType generationType,
+          IGenerationScript script,
+          IAdaptiveProgressMonitor progress,
+          IMessageHandler handler) {
+
     MPSModuleRepository.getInstance().removeTransientModules();
     showMessageView();
 
@@ -307,9 +327,10 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     clearMessages();
 
 
-    addMessage(MessageKind.INFORMATION, generationType.getStartText());
 
-    addMessage(MessageKind.INFORMATION, "    target language: \"" + targetLanguage.getNamespace() + "\"");
+    handler.handle(new Message(MessageKind.INFORMATION, generationType.getStartText()));
+    handler.handle(new Message(MessageKind.INFORMATION, "    target language: \"" + targetLanguage.getNamespace() + "\""));
+
     String outputFolder = invocationContext.getModule().getGeneratorOutputPath();
 
     if (!new File(outputFolder).exists()) {
@@ -318,11 +339,11 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       try {
         myProject.getProjectHandler().addSourceRoot(outputFolder);
       } catch (Exception e) {
-        addMessage(MessageKind.WARNING, "Can't add output folder to IDEA as sources");
+        handler.handle(new Message(MessageKind.WARNING, "Can't add output folder to IDEA as sources"));
       }
     }
 
-    addMessage(MessageKind.INFORMATION, "    target root folder: \"" + outputFolder + "\"");
+    handler.handle(new Message(MessageKind.INFORMATION, "    target root folder: \"" + outputFolder + "\""));
 
     boolean ideaPresent = myProject.getProjectHandler() != null;
     boolean compile = myCompileOnGeneration && ideaPresent && generationType.requiresCompilationInIDEAfterGeneration();
@@ -393,7 +414,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
       GenerationStatus status = null;
       //++ generation
-      GenerationSession generationSession = new GenerationSession(invocationContext, isSaveTransientModels(), progress);
+      GenerationSession generationSession = new GenerationSession(invocationContext, isSaveTransientModels(), progress, handler);
       for (SModelDescriptor sourceModelDescriptor : sourceModels) {
         progress.addText("");
         String taskName = ModelsProgressUtil.generationModelTaskName(sourceModelDescriptor);
@@ -415,7 +436,9 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       if (isSaveTransientModels()) {
         File solutionDescriptorFile = generationSession.saveTransientModels();
 
-        addProgressMessage(MessageKind.INFORMATION, "update output models solution", progress);
+        progress.addText("update output models solution");
+
+        handler.handle(new Message(MessageKind.INFORMATION, "update output models solution"));
         Solution outputModels = myProject.findSolution("outputModels");
         if (outputModels != null) {
           outputModels.reloadFromDisk();
@@ -453,23 +476,31 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
             checkMonitorCanceled(progress);
           }
         }
-        addProgressMessage(MessageKind.INFORMATION, "generation completed successfully", progress);
+        progress.addText("generation completed successfully");
+
+        handler.handle(new Message(MessageKind.INFORMATION, "generation completed successfully"));
         progress.finishSomehow();
       } else if (status.isError()) {
-        addProgressMessage(MessageKind.WARNING, "generation finished with errors", progress);
+        progress.addText("generation finished with errors");
+        handler.handle(new Message(MessageKind.WARNING, "generation finished with errors"));
+
         progress.finishSomehow();
       }
     } catch (GenerationCanceledException gce) {
-      addProgressMessage(MessageKind.WARNING, "generation canceled", progress);
+      progress.addText("generation canceled");
+      handler.handle(new Message(MessageKind.WARNING, "generation canceled"));
+
       progress.finishAnyway();
       showMessageView();
     } catch (Throwable t) {
       LOG.error(t);
-      addProgressMessage(MessageKind.ERROR, t.toString(), progress);
+      final String text = t.toString();
+      progress.addText(text);
+      handler.handle(new Message(MessageKind.ERROR, text));
       progress.finishSomehow();
     } finally {
       System.gc();
-    }
+    }    
   }
 
   public boolean willCompile(boolean ideaPresent, IGenerationType generationType) {

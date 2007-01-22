@@ -1,26 +1,26 @@
 package jetbrains.mps.generator;
 
-import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.DefaultTemplateGenerator;
+import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
-import jetbrains.mps.ide.messages.MessageView;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.transformation.TLBase.MappingConfiguration;
 import jetbrains.mps.util.FileUtil;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
+import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
-
-import org.jetbrains.annotations.NotNull;
 
 /**
  * Created by IntelliJ IDEA.
@@ -35,6 +35,7 @@ public class GenerationSession {
   private IOperationContext myInvocationContext;
   private boolean myDiscardTransients;
   private IAdaptiveProgressMonitor myProgressMonitor;
+  private IMessageHandler myHandler;
 
   private String mySessionId;
   private GenerationSessionContext myCurrentContext;
@@ -44,10 +45,11 @@ public class GenerationSession {
   private int myTransientModelsCount = 0;
 
 
-  public GenerationSession(IOperationContext invocationContext, boolean saveTransientModels, IAdaptiveProgressMonitor progressMonitor) {
+  public GenerationSession(IOperationContext invocationContext, boolean saveTransientModels, IAdaptiveProgressMonitor progressMonitor, IMessageHandler handler) {
     myInvocationContext = invocationContext;
     myDiscardTransients = !saveTransientModels;
     myProgressMonitor = progressMonitor;
+    myHandler = handler;
     mySessionId = "" + System.currentTimeMillis();
   }
 
@@ -94,6 +96,10 @@ public class GenerationSession {
 
       public IOperationContext getOperationContext() {
         return myInvocationContext;
+      }
+
+      public IMessageHandler getHandler() {
+        return myHandler;
       }
     });
 
@@ -169,7 +175,30 @@ public class GenerationSession {
     }
 
     // templates generator
-    ITemplateGenerator generator = (ITemplateGenerator) currentGeneratorClass.getConstructor(GenerationSessionContext.class, IAdaptiveProgressMonitor.class).newInstance(context, myProgressMonitor);
+    ITemplateGenerator generator = null;
+
+
+    try {
+      Constructor c = currentGeneratorClass.getConstructor(GenerationSessionContext.class, IAdaptiveProgressMonitor.class);
+      generator = (ITemplateGenerator) c.newInstance(context, myProgressMonitor);
+    } catch (NoSuchMethodException e) {
+      //ok to skip
+    }
+
+    if (generator == null) {
+      try {
+        Constructor c = currentGeneratorClass.getConstructor(GenerationSessionContext.class, IAdaptiveProgressMonitor.class, IMessageHandler.class);
+        generator = (ITemplateGenerator) c.newInstance(context, myProgressMonitor, myHandler);
+      } catch (NoSuchMethodException e) {
+        //ok to skip
+      }
+    }
+
+    if (generator == null) {
+      myHandler.handle(new Message(MessageKind.ERROR, "Generator Class Not Found"));
+      return new GenerationStatus.ERROR(sourceModel);
+    }
+
     GenerationStatus status;
     try {
       SModel outputModel = generateModel(sourceModel, targetLanguage, generator);
@@ -281,16 +310,16 @@ public class GenerationSession {
   }
 
   private void addMessage(final Message message) {
-    myInvocationContext.getProject().getComponentSafe(MessageView.class).add(message);
+    myHandler.handle(message);
   }
 
   private void addMessage(final MessageKind kind, final String text) {
-    myInvocationContext.getProject().getComponentSafe(MessageView.class).add(new Message(kind, text));
+    addMessage(new Message(kind, text));
   }
 
   private void addProgressMessage(final MessageKind kind, final String text) {
     myProgressMonitor.addText(text);
-    myInvocationContext.getProject().getComponentSafe(MessageView.class).add(new Message(kind, text));
+    addMessage(new Message(kind, text));
   }
 
 

@@ -6,7 +6,7 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.ide.messages.MessageView;
+import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
@@ -17,10 +17,14 @@ public abstract class AbstractModelGenerator implements IModelGenerator {
   private SModel mySourceModel;
   private SModel myTargetModel;
   private IAdaptiveProgressMonitor myProgressMonitor;
+  private IMessageHandler myHandler;
 
-  protected AbstractModelGenerator(IOperationContext operationContext, IAdaptiveProgressMonitor progressMonitor) {
+  protected AbstractModelGenerator(IOperationContext operationContext,
+                                   IAdaptiveProgressMonitor progressMonitor,
+                                   IMessageHandler handler) {
     myOperationContext = operationContext;
     myProgressMonitor = progressMonitor;
+    myHandler = handler;
   }
 
   public IOperationContext getOperationContext() {
@@ -34,8 +38,8 @@ public abstract class AbstractModelGenerator implements IModelGenerator {
     return null;
   }
 
-  public MessageView getMessageView() {
-    return getOperationContext().getComponent(MessageView.class);
+  public IMessageHandler getMessageHandler() {
+    return myHandler;
   }
 
   public SModel getSourceModel() {
