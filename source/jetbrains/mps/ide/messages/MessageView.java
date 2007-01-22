@@ -115,6 +115,12 @@ public class MessageView extends DefaultTool {
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(text), null);
       }
     });
+    menu.addSeparator();
+    menu.add(new AbstractActionWithEmptyIcon("Clear") {
+      public void actionPerformed(ActionEvent e) {
+        clear();
+      }
+    });
     menu.show(myList, evt.getX(), evt.getY());
   }
 
