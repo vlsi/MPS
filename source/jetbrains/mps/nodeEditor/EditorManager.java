@@ -323,7 +323,10 @@ public class EditorManager {
       node.removeUserObject(RIGHT_TRANSFORM_HINT_JUST_ADDED);
       CommandProcessor.instance().invokeLater(new Runnable() {
         public void run() {
-          context.getNodeEditorComponent().changeSelection(rightTransformHintCell);
+          AbstractEditorComponent component = context.getNodeEditorComponent();
+          if (rightTransformHintCell.getRootParent() == component.getRootCell()) {
+            component.changeSelection(rightTransformHintCell);
+          }
         }
       });
     }
