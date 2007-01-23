@@ -657,6 +657,12 @@
       <property name="role" value="template" />
       <link role="target" targetNodeId="1092059087312" resolveInfo="TemplateDeclaration" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1169570368028">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="ruleConsequence" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1168559098955" resolveInfo="RuleConsequence" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1167327847730">
     <property name="name" value="Reduction_MappingRule" />
@@ -955,6 +961,28 @@
     <property name="role" value="rootTemplateAnnotation" />
     <link role="source" targetNodeId="2.1133920641626" />
     <link role="target" targetNodeId="1168619357332" resolveInfo="RootTemplateNodeAnnotation" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1169569792945">
+    <property name="name" value="WeaveEach_RuleConsequence" />
+    <link role="extends" targetNodeId="1168559098955" resolveInfo="RuleConsequence" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1169569853122">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="template" />
+      <link role="target" targetNodeId="1092059087312" resolveInfo="TemplateDeclaration" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1169569939267">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="sourceNodesQuery" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1167951910403" resolveInfo="SourceSubstituteMacro_SourceNodesQuery" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1169569995612">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473994950" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1169570012785">
+      <property name="value" value="&lt;weave each&gt;" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
+    </node>
   </node>
 </model>
 

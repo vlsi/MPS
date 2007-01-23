@@ -284,21 +284,58 @@ public class TemplateGenUtil {
       }
       boolean includeInheritors = rule.getApplyToConceptInheritors();
       List<SNode> nodes = generator.getSourceModel().getModelDescriptor().getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
-      for (SNode node : nodes) {
-        if (checkConditionForBaseMappingRule(node, rule, generator)) {
-          TemplateDeclaration template = rule.getTemplate();
-          if (template == null) {
-            generator.showErrorMessage(node, rule, "rule has no template");
-            break;
-          }
-
-          List<INodeBuilder> contextBuilders = getContextNodeBuilderForWeavingingRule(node, rule, generator);
+      for (SNode applicableNode : nodes) {
+        if (checkConditionForBaseMappingRule(applicableNode, rule, generator)) {
+          List<INodeBuilder> contextBuilders = getContextNodeBuilderForWeavingingRule(applicableNode, rule, generator);
           if (contextBuilders == null) {
-            generator.showErrorMessage(node, rule, "couldn't create context node builder");
+            generator.showErrorMessage(applicableNode, rule, "couldn't create context node builder");
             continue;
           }
-          for (INodeBuilder builder : contextBuilders) {
-            weaveTemplateDeclaration(node, template, builder, generator, rule);
+
+          // old
+          TemplateDeclaration template = rule.getTemplate();
+          if (template != null) {
+//          if (template == null) {
+//            generator.showErrorMessage(node, rule, "rule has no template");
+//            break;
+//          }
+
+            for (INodeBuilder builder : contextBuilders) {
+              weaveTemplateDeclaration(applicableNode, template, builder, generator, rule);
+            }
+          } else {
+            // new
+            RuleConsequence ruleConsequence = rule.getRuleConsequence();
+            if (ruleConsequence instanceof DismissTopMappingRule) {
+              throw new ReductionNotNeededException();
+            } else if (ruleConsequence instanceof TemplateDeclarationReference) {
+              template = ((TemplateDeclarationReference) ruleConsequence).getTemplate();
+              if (template == null) {
+                generator.showErrorMessage(applicableNode, rule, "rule has no template");
+                break;
+              }
+              for (INodeBuilder builder : contextBuilders) {
+                weaveTemplateDeclaration(applicableNode, template, builder, generator, rule);
+              }
+            } else if (ruleConsequence instanceof WeaveEach_RuleConsequence) {
+              WeaveEach_RuleConsequence weaveEach = (WeaveEach_RuleConsequence) ruleConsequence;
+              template = weaveEach.getTemplate();
+              if (template == null) {
+                generator.showErrorMessage(applicableNode, rule, "rule has no template");
+                break;
+              }
+              SourceSubstituteMacro_SourceNodesQuery nodesQuery = weaveEach.getSourceNodesQuery();
+              if (nodesQuery == null) {
+                generator.showErrorMessage(applicableNode, rule, "couldn't create list of source nodes");
+                break;
+              }
+              List<SNode> queryNodes = evaluateSourceNodesQuery(applicableNode, nodesQuery, ruleConsequence, generator);
+              for (SNode queryNode : queryNodes) {
+                for (INodeBuilder builder : contextBuilders) {
+                  weaveTemplateDeclaration(queryNode, template, builder, generator, rule);
+                }
+              }
+            }
           }
         }
       }
@@ -555,25 +592,45 @@ public class TemplateGenUtil {
     throw new GenerationFailedException(new GenerationFailueInfo("couldn't evaluate if-macro condition", sourceNode, ifMacro, null, generator.getGeneratorSessionContext()));
   }
 
+  protected static List<SNode> evaluateSourceNodesQuery(SNode sourceNode, SourceSubstituteMacro_SourceNodesQuery query, SNode queryOwner, ITemplateGenerator generator) {
+    String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(query);
+    Object[] args = new Object[]{
+            sourceNode,
+            generator.getSourceModel(),
+            generator,
+            generator.getScope(),
+            generator.getGeneratorSessionContext()};
+    try {
+      List<SNode> sourceNodes = (List<SNode>) QueryMethodGenerated.invoke(methodName, args, queryOwner.getModel());
+      checkNodesFromQuery(sourceNodes, queryOwner, generator);
+      return sourceNodes;
+    } catch (Exception e) {
+      generator.showErrorMessage(sourceNode, queryOwner, "couldn't evaluate query - try to generate template models");
+      LOG.error(e);
+      return new LinkedList<SNode>();
+    }
+  }
+
   private static List<SNode> getSourceNodesForMacroWithSourceNodesQuery(SNode sourceNode, SourceSubstituteMacro macro, SourceSubstituteMacro_SourceNodesQuery query, ITemplateGenerator generator) {
     // new
     if (query != null) {
-      String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(query);
-      Object[] args = new Object[]{
-              sourceNode,
-              generator.getSourceModel(),
-              generator,
-              generator.getScope(),
-              generator.getGeneratorSessionContext()};
-      try {
-        List<SNode> sourceNodes = (List<SNode>) QueryMethodGenerated.invoke(methodName, args, macro.getModel());
-        checkNodesFromQuery(sourceNodes, macro, generator);
-        return sourceNodes;
-      } catch (Exception e) {
-        generator.showErrorMessage(sourceNode, null, macro, "couldn't evaluate query - try to generate template models");
-        LOG.error(e);
-        return new LinkedList<SNode>();
-      }
+      return evaluateSourceNodesQuery(sourceNode, query, macro, generator);
+//      String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(query);
+//      Object[] args = new Object[]{
+//              sourceNode,
+//              generator.getSourceModel(),
+//              generator,
+//              generator.getScope(),
+//              generator.getGeneratorSessionContext()};
+//      try {
+//        List<SNode> sourceNodes = (List<SNode>) QueryMethodGenerated.invoke(methodName, args, macro.getModel());
+//        checkNodesFromQuery(sourceNodes, macro, generator);
+//        return sourceNodes;
+//      } catch (Exception e) {
+//        generator.showErrorMessage(sourceNode, null, macro, "couldn't evaluate query - try to generate template models");
+//        LOG.error(e);
+//        return new LinkedList<SNode>();
+//      }
     }
 
     // old
