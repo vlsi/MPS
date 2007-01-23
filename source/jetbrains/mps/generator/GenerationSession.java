@@ -221,6 +221,7 @@ public class GenerationSession {
       status = new GenerationStatus.ERROR(sourceModel);
     } catch (Exception e) {
       LOG.error(e);
+      e.printStackTrace();
       myProgressMonitor.addText(e.toString());
       addMessage(MessageKind.ERROR, "model \"" + sourceModel.getUID() + "\" generation failed : " + e);
       status = new GenerationStatus.ERROR(sourceModel);
