@@ -73,7 +73,6 @@ public class PathManager {
     final Class aClass = PathManager.class;
 
     String rootPath = getResourceRoot(aClass, "/" + aClass.getName().replace('.', '/') + ".class");
-    System.out.println("root path = " + rootPath);
     if (rootPath != null) {
       File root = new File(rootPath);
       root = root.getAbsoluteFile();
@@ -86,7 +85,6 @@ public class PathManager {
       while (true) {
         if (isMpsDir(root)) break;
         if (root.getParentFile() == null) {
-          System.out.println("wasn't able to find the mps dir!");
           break;
         }
 
