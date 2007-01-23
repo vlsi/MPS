@@ -101,7 +101,7 @@ public class Logger {
   }
 
   public void error(Throwable t) {
-    error("Exception", t);
+    error("Exception : " + t.getMessage(), t);
   }
 
   public void error(String message, Throwable t) {
