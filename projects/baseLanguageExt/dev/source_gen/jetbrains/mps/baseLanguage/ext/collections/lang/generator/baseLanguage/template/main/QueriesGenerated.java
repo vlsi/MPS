@@ -26,14 +26,25 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1168510756013(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "operation", true), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortOperation");
   }
-  public static SNode sourceNodeQuery_1168287937464(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "inputSequence", true);
-  }
   public static String propertyMacro_GetPropertyValue_1167778587376(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return generator.getGeneratorSessionContext().createUniqueName("_zCursor");
   }
   public static String propertyMacro_GetPropertyValue_1168288151438(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SPropertyOperations.get(SLinkOperations.getTarget(node, "variable", true), "name");
+  }
+  public static String propertyMacro_GetPropertyValue_1168509021319(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return generator.getGeneratorSessionContext().createUniqueName("zComparator");
+  }
+  public static String propertyMacro_GetPropertyValue_1168512329638(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode c = node;
+    return SPropertyOperations.get(SLinkOperations.getTarget(c, "defaultInputElement", true), "name");
+  }
+  public static List sourceNodesQuery_1168281040871(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode creator = SLinkOperations.getTarget(node, "creator", true);
+    return SLinkOperations.getTargets(creator, "initValue", true);
+  }
+  public static SNode sourceNodeQuery_1168287937464(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "inputSequence", true);
   }
   public static SNode sourceNodeQuery_1168288186650(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "body", true);
@@ -42,21 +53,10 @@ public class QueriesGenerated {
     SNode creator = SLinkOperations.getTarget(node, "creator", true);
     return SLinkOperations.getTarget(creator, "elementType", true);
   }
-  public static List sourceNodesQuery_1168281040871(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode creator = SLinkOperations.getTarget(node, "creator", true);
-    return SLinkOperations.getTargets(creator, "initValue", true);
-  }
-  public static String propertyMacro_GetPropertyValue_1168509021319(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return generator.getGeneratorSessionContext().createUniqueName("zComparator");
-  }
   public static SNode sourceNodeQuery_1168512350251(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     ClosureWithInputElement c = (ClosureWithInputElement)node;
     ExpressionStatement es = (ExpressionStatement)c.getBody().getStatements().get(0);
     return es.getExpression();
-  }
-  public static String propertyMacro_GetPropertyValue_1168512329638(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode c = node;
-    return SPropertyOperations.get(SLinkOperations.getTarget(c, "defaultInputElement", true), "name");
   }
   public static SNode sourceNodeQuery_1168511702747(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "leftExpression", true);
