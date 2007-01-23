@@ -2,6 +2,7 @@
 <model name="smodelLanguage.samples">
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
+  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <maxImportIndex value="11" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="3" modelUID="java.lang@java_stub" />
@@ -2350,6 +2351,48 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1169584463554">
+    <property name="name" value="ListOfNodes" />
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1169584502071">
+      <property name="name" value="newList" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1169584531902">
+        <property name="name" value="e1" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1169584546667">
+          <link role="concept" targetNodeId="1.1068431790191" />
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1169584559825">
+        <property name="name" value="e2" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1169584562436">
+          <link role="concept" targetNodeId="1.1068431790191" />
+        </node>
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1169584502072">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1169584573812">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1169584573813">
+            <property name="name" value="list" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1169584581690">
+              <link role="elementConcept" targetNodeId="1.1068431790191" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1169584599130">
+              <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListCreatorWithInit" id="1169584639100">
+                <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1169584646696">
+                  <link role="concept" targetNodeId="1.1068431790191" />
+                </node>
+                <node role="initValue" type="jetbrains.mps.baseLanguage.ParameterReference" id="1169584663213">
+                  <link role="variableDeclaration" targetNodeId="1169584531902" resolveInfo="e1" />
+                </node>
+                <node role="initValue" type="jetbrains.mps.baseLanguage.ParameterReference" id="1169584667683">
+                  <link role="variableDeclaration" targetNodeId="1169584559825" resolveInfo="e2" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1169584502073" />
     </node>
   </node>
 </model>
