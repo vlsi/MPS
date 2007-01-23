@@ -52,7 +52,7 @@ public class CreateRootNodeGroup extends ActionGroup {
           String nodeClassName = JavaNameUtil.className(conceptDeclaration);
           try {
             Class<? extends SNode> nodeClass = (Class<? extends SNode>) Class.forName(nodeClassName, true, ClassLoaderManager.getInstance().getClassLoader());
-            langRootsGroup.add(newRootNodeAction(conceptDeclaration, nodeClass, modelDescriptor.getSModel(), ide));
+            langRootsGroup.add(newRootNodeAction(new SNodeProxy(conceptDeclaration), nodeClass, modelDescriptor, ide));
           } catch (ClassNotFoundException e) {
             langRootsGroup.add(new MPSAction("class not found: " + nodeClassName) {
               public void execute(@NotNull ActionContext c) {
@@ -70,8 +70,8 @@ public class CreateRootNodeGroup extends ActionGroup {
     setVisible(context.hasOneSelectedItem());
   }
 
-  private MPSAction newRootNodeAction(final ConceptDeclaration nodeConcept, final Class<? extends SNode> nodeClass, final SModel model, final IDEProjectFrame ide) {
-    return new MPSAction(NodePresentationUtil.matchingText(nodeConcept)) {
+  private MPSAction newRootNodeAction(final SNodeProxy nodeConcept, final Class<? extends SNode> nodeClass, final SModelDescriptor modelDescriptor, final IDEProjectFrame ide) {
+    return new MPSAction(NodePresentationUtil.matchingText(nodeConcept.getNode())) {
       public Icon getIcon() {
         return IconManager.getIconFor(nodeClass);
       }
@@ -85,8 +85,8 @@ public class CreateRootNodeGroup extends ActionGroup {
 
         CommandProcessor.instance().executeCommand(new Runnable() {
           public void run() {
-            node[0] = NodeFactoryManager.createNode(nodeConcept, null, null, model, context.getScope());
-            model.addRoot(node[0]);
+            node[0] = NodeFactoryManager.createNode((ConceptDeclaration) nodeConcept.getNode(), null, null, modelDescriptor.getSModel(), context.getScope());
+            modelDescriptor.getSModel().addRoot(node[0]);
           }
         });
 
