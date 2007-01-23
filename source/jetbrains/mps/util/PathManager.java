@@ -84,7 +84,10 @@ public class PathManager {
 
       while (true) {
         if (isMpsDir(root)) break;
-        if (root.getParentFile() == null) break;
+        if (root.getParentFile() == null) {
+          System.out.println("wasn't able to find the mps dir!");
+          break;
+        }
 
         root = root.getParentFile();
       }
