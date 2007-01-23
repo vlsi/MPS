@@ -62,6 +62,7 @@ public class PathManager {
 
   public static String getHomePath() {
     if (ourHomePath != null) {
+      System.out.println("home path = " + ourHomePath);
       return ourHomePath;
     }
 
@@ -93,6 +94,8 @@ public class PathManager {
 
       ourHomePath = root.getAbsolutePath();    // one step back to getCollectionClass rid of "lib" or "classes" folder
     }
+
+    System.out.println("result = " + ourHomePath);
 
     return new File(".").getAbsolutePath(); //we need this for build server on which stuff written above
                                             //for somne reason doesn't work
