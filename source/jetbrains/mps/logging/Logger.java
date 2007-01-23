@@ -4,53 +4,100 @@ import jetbrains.mps.ide.command.CommandProcessor;
 
 import java.util.Map;
 import java.util.HashMap;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  * @author Kostik
  */
 public class Logger {
   private static Map<String, Logger> ourLoggers = new HashMap<String, Logger>();
+  private static List<ILoggingHandler> ourLoggingHandlers = new ArrayList<ILoggingHandler>();
 
+  static {
+    addLoggingHandler(new Log4jLogginHandler());
+  }
 
   public static synchronized Logger getLogger(Class cls) {
     if (!ourLoggers.containsKey(cls.getName())) {
       ourLoggers.put(cls.getName(), new Logger(cls.getName()));
-    }
+    }         
     return ourLoggers.get(cls.getName());
   }
 
-  private org.apache.log4j.Logger myLogger;
+  public static synchronized void addLoggingHandler(ILoggingHandler lh) {
+    ourLoggingHandlers.add(lh);
+  }
+
+  public static synchronized void removeLoggingHandler(ILoggingHandler lh) {
+    ourLoggingHandlers.remove(lh);
+  }
+
+
+  private static synchronized void info(String cls, String message, Throwable t) {
+    for (ILoggingHandler lh : ourLoggingHandlers) {
+      lh.info(cls, message, t);
+    }
+  }
+
+  private static synchronized void warning(String cls, String message, Throwable t) {
+    for (ILoggingHandler lh : ourLoggingHandlers) {
+      lh.warning(cls, message, t);
+    }
+  }
+
+
+  private static synchronized void debug(String cls, String message, Throwable t) {
+    for (ILoggingHandler lh : ourLoggingHandlers) {
+      lh.debug(cls, message, t);
+    }
+  }
+
+
+  private static synchronized void error(String cls, String message, Throwable t) {
+    for (ILoggingHandler lh : ourLoggingHandlers) {
+      lh.error(cls, message, t);
+    }
+  }
+
+  private static synchronized void fatal(String cls, String message, Throwable t) {
+    for (ILoggingHandler lh : ourLoggingHandlers) {
+      lh.fatal(cls, message, t);
+    }
+  }
+
+  private String myFqName;
 
   private Logger(String fqName) {
-    myLogger = org.apache.log4j.Logger.getLogger(fqName);
+    myFqName = fqName;
   }
 
   public void info(String message) {
-    myLogger.info(message);
+    info(message, null);
   }
 
   public void info(String message, Throwable t) {
-    myLogger.info(message, t);
+    info(myFqName, message, t);
   }
 
   public void warning(String message) {
-    myLogger.warn(message);
+    warning(message, null);
   }
 
   public void warning(String message, Throwable t) {
-    myLogger.warn(message, t);
+    warning(myFqName, message, t);
   }
 
   public void debug(String message) {
-    myLogger.debug(message);
+    debug(message, null);
   }
 
   public void debug(String message, Throwable t) {
-    myLogger.debug(message, t);
+    debug(myFqName, message, t);
   }
 
   public void error(String message) {
-    myLogger.error(message);
+    error(message, null);
   }
 
   public void error(Throwable t) {
@@ -58,19 +105,19 @@ public class Logger {
   }
 
   public void error(String message, Throwable t) {
-    myLogger.error(message, t);
+    error(myFqName, message, t);
   }
 
   public void errorWithTrace(String message) {
-    myLogger.error(message, new Throwable());
+    error(message, new Throwable());
   }
 
   public void fatal(String message) {
-    myLogger.fatal(message);
+    fatal(message, null);
   }
 
   public void fatal(String message, Throwable t) {
-    myLogger.fatal(message, t);
+    fatal(myFqName, message, t);
   }
 
   public void assertLog(boolean condition) {
@@ -79,7 +126,7 @@ public class Logger {
 
   public void assertLog(boolean condition, String message) {
     if (!condition) {
-      myLogger.error(message, new Throwable());
+      error(message, new Throwable());
     }
   }
 

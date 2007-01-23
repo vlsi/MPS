@@ -638,6 +638,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     removeOurListener();
     clearCaches();
 
+    myEditorContext = null;
+
     if (myNodeSubstituteChooser != null) {
       myNodeSubstituteChooser.dispose();
     }
