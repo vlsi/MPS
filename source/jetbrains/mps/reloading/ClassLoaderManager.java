@@ -6,6 +6,7 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.PathUtil;
 import jetbrains.mps.component.Dependency;
 import jetbrains.mps.component.IComponentLifecycle;
 import sun.misc.Launcher;
@@ -196,8 +197,12 @@ public class ClassLoaderManager implements IComponentLifecycle {
     String mpsJarPath = PathManager.getHomePath() + File.separator + "lib" + File.separatorChar + "mps.jar";
     if (new File(mpsJarPath).exists()) return new JarFileClassPathItem(new File(mpsJarPath));
 
-    LOG.error("Can't find mps classpath");
+    File file = new File(PathManager.getResourceRoot(ClassLoaderManager.class, "/" + ClassLoaderManager.class.getName().replace('.', '/') + ".class"));
+    if (file.exists()) {
+      return new FileClassPathItem(file.getAbsolutePath());
+    }
 
+    LOG.error("Can't find mps classpath");
     return null;
   }
 
