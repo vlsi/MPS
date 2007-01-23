@@ -62,7 +62,6 @@ public class PathManager {
 
   public static String getHomePath() {
     if (ourHomePath != null) {
-      System.out.println("home path = " + ourHomePath);
       return ourHomePath;
     }
 
