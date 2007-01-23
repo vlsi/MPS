@@ -5,10 +5,15 @@ package smodelLanguage.samples;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
 public class ListOfNodes {
 
   public void newList(SNode e1, SNode e2) {
     List<SNode> list = ListOperations.createList(new SNode[]{e1,e2});
+  }
+  public void first(SNode sl) {
+    SequenceOperations.getFirst(SLinkOperations.getTargets(sl, "statement", true));
   }
 }

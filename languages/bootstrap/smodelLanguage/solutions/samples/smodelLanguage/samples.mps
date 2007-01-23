@@ -2394,6 +2394,31 @@
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1169584502073" />
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1169585406422">
+      <property name="name" value="first" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1169585406423">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1169585438286">
+          <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1169585560832">
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1169585438304">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1169585438287">
+                <link role="variableDeclaration" targetNodeId="1169585427175" resolveInfo="sl" />
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkListAccessAsList" id="1169585455478">
+                <link role="link" targetNodeId="1.1068581517665" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.GetFirstOperation" id="1169585563426" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1169585406424" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1169585427175">
+        <property name="name" value="sl" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1169585427176">
+          <link role="concept" targetNodeId="1.1068580123136" />
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
