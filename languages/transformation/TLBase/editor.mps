@@ -3858,32 +3858,6 @@
           <link role="relationDeclaration" targetNodeId="1.1167272244852" />
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1169494942765">
-        <property name="drawBorder" value="false" />
-        <property name="selectable" value="false" />
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1169494942766">
-          <property name="textFgColor" value="red" />
-          <property name="text" value="search imported models" />
-          <property name="drawBorder" value="false" />
-          <property name="selectable" value="false" />
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1169494942767">
-          <property name="drawBorder" value="false" />
-          <link role="relationDeclaration" targetNodeId="1.1169133880907" />
-        </node>
-        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1169494942768">
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1169494942769">
-            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1169494942770">
-              <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1169494942771">
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1169494942772" />
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1169494942773">
-                  <link role="property" targetNodeId="1.1169133880907" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1169494942774">
         <property name="drawBorder" value="false" />
         <property name="selectable" value="false" />
@@ -4037,23 +4011,6 @@
               <property name="cellProviderId" value="reductionRuleAction_QueryId" />
             </node>
           </node>
-        </node>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1169492418323">
-        <property name="drawBorder" value="false" />
-        <property name="selectable" value="false" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1169492413254">
-        <property name="drawBorder" value="false" />
-        <property name="selectable" value="false" />
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1169492413255">
-          <property name="text" value="search imported models" />
-          <property name="drawBorder" value="false" />
-          <property name="selectable" value="false" />
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1169492413256">
-          <property name="drawBorder" value="false" />
-          <link role="relationDeclaration" targetNodeId="1.1169133880907" />
         </node>
       </node>
     </node>

@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.*;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.transformation.TemplateLanguageUtil;
-import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.util.QueryMethodGenerated;
@@ -270,13 +269,7 @@ public class TemplateGenUtil {
   public static void applyWeavingMappingRules(List<Weaving_MappingRule> rules, final ITemplateGenerator generator) {
     if (rules.isEmpty()) return;
 
-    List<Weaving_MappingRule> slowRules = new LinkedList<Weaving_MappingRule>();
     for (Weaving_MappingRule rule : rules) {
-      if (rule.getSearchImportedModels()) {
-        slowRules.add(rule);
-        continue;
-      }
-
       ConceptDeclaration applicableConcept = rule.getApplicableConcept();
       if (applicableConcept == null) {
         generator.showErrorMessage(null, rule, "rule has no applicable concept defined");
@@ -295,11 +288,6 @@ public class TemplateGenUtil {
           // old
           TemplateDeclaration template = rule.getTemplate();
           if (template != null) {
-//          if (template == null) {
-//            generator.showErrorMessage(node, rule, "rule has no template");
-//            break;
-//          }
-
             for (INodeBuilder builder : contextBuilders) {
               weaveTemplateDeclaration(applicableNode, template, builder, generator, rule);
             }
@@ -307,7 +295,7 @@ public class TemplateGenUtil {
             // new
             RuleConsequence ruleConsequence = rule.getRuleConsequence();
             if (ruleConsequence instanceof DismissTopMappingRule) {
-              throw new ReductionNotNeededException();
+              continue;
             } else if (ruleConsequence instanceof TemplateDeclarationReference) {
               template = ((TemplateDeclarationReference) ruleConsequence).getTemplate();
               if (template == null) {
@@ -339,33 +327,6 @@ public class TemplateGenUtil {
           }
         }
       }
-    }
-
-    for (final Weaving_MappingRule rule : slowRules) {
-      Condition<SNode> condition = new Condition<SNode>() {
-        public boolean met(SNode sourceNode) {
-          ConceptDeclaration nodeConcept = sourceNode.getConceptDeclaration(generator.getScope());
-          if (checkPremiseForBaseMappingRule(sourceNode, nodeConcept, rule, generator)) {
-            TemplateDeclaration template = rule.getTemplate();
-            if (template == null) {
-              generator.showErrorMessage(sourceNode, rule, "rule has no template");
-              return false;
-            }
-            List<INodeBuilder> contextBuilders = getContextNodeBuilderForWeavingingRule(sourceNode, rule, generator);
-            if (contextBuilders == null) {
-              generator.showErrorMessage(sourceNode, rule, "couldn't create context node builder");
-              return false;
-            }
-            for (INodeBuilder builder : contextBuilders) {
-              weaveTemplateDeclaration(sourceNode, template, builder, generator, rule);
-            }
-          }
-          return false;
-        }
-      };
-
-      // slow rules search imported models
-      generator.getSourceModel().allNodesIncludingImported(generator.getScope(), condition);
     }
   }
 
