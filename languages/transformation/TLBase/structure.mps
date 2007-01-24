@@ -944,6 +944,10 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1168559512253">
     <property name="name" value="DismissTopMappingRule" />
     <link role="extends" targetNodeId="1168559098955" resolveInfo="RuleConsequence" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1169669152123">
+      <property name="role" value="generatorMessage" />
+      <link role="target" targetNodeId="1169670156577" resolveInfo="GeneratorMessage" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1168559693644">
       <property name="value" value="&lt;dismiss top rule&gt;" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
@@ -982,6 +986,38 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1169570012785">
       <property name="value" value="&lt;weave each&gt;" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1169670156577">
+    <property name="name" value="GeneratorMessage" />
+    <link role="extends" targetNodeId="2.1133920641626" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1169670356567">
+      <property name="name" value="messageType" />
+      <link role="dataType" targetNodeId="1169670215797" resolveInfo="GeneratorMessageType" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1169670173015">
+      <property name="name" value="messageText" />
+      <link role="dataType" targetNodeId="2.1082983041843" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1169670412849">
+      <property name="value" value="generator message" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.EnumerationDataTypeDeclaration" id="1169670215797">
+    <property name="name" value="GeneratorMessageType" />
+    <link role="memberDataType" targetNodeId="2.1082983041843" />
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1169670215798">
+      <property name="internalValue" value="info" />
+      <property name="name" value="info" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1169670280596">
+      <property name="internalValue" value="warning" />
+      <property name="name" value="warning" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1169670287832">
+      <property name="internalValue" value="error" />
+      <property name="name" value="error" />
     </node>
   </node>
 </model>
