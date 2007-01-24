@@ -128,7 +128,7 @@ public class Logger {
     if (t.getMessage() != null) {
       error("Exception : " + t.getMessage(), t);
     } else {
-      error("Exception : " + t.getClass(), t);
+      error("Exception : " + t.getClass().getName(), t);
     }
   }
 
