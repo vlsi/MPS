@@ -29,7 +29,7 @@ import java.util.*;
  * Time: 5:15:15 PM
  * To change this template use File | Settings | File Templates.
  */
-public class GenerationSession {
+public class GenerationSession implements IGenerationSession{
   public static final Logger LOG = Logger.getLogger(GenerationSession.class);
 
   private IOperationContext myInvocationContext;
