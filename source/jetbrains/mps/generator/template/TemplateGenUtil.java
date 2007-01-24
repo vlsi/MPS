@@ -279,8 +279,8 @@ public class TemplateGenUtil {
       List<SNode> nodes = generator.getSourceModel().getModelDescriptor().getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
       for (SNode applicableNode : nodes) {
         if (checkConditionForBaseMappingRule(applicableNode, rule, generator)) {
-          List<INodeBuilder> contextBuilders = getContextNodeBuilderForWeavingingRule(applicableNode, rule, generator);
-          if (contextBuilders == null) {
+          INodeBuilder contextBuilder = getContextNodeBuilderForWeavingingRule(applicableNode, rule, generator);
+          if (contextBuilder == null) {
             generator.showErrorMessage(applicableNode, rule, "couldn't create context node builder");
             continue;
           }
@@ -288,23 +288,21 @@ public class TemplateGenUtil {
           // old
           TemplateDeclaration template = rule.getTemplate();
           if (template != null) {
-            for (INodeBuilder builder : contextBuilders) {
-              weaveTemplateDeclaration(applicableNode, template, builder, generator, rule);
-            }
+            weaveTemplateDeclaration(applicableNode, template, contextBuilder, generator, rule);
           } else {
             // new
             RuleConsequence ruleConsequence = rule.getRuleConsequence();
             if (ruleConsequence instanceof DismissTopMappingRule) {
               continue;
+
             } else if (ruleConsequence instanceof TemplateDeclarationReference) {
               template = ((TemplateDeclarationReference) ruleConsequence).getTemplate();
               if (template == null) {
                 generator.showErrorMessage(applicableNode, rule, "rule has no template");
                 break;
               }
-              for (INodeBuilder builder : contextBuilders) {
-                weaveTemplateDeclaration(applicableNode, template, builder, generator, rule);
-              }
+              weaveTemplateDeclaration(applicableNode, template, contextBuilder, generator, rule);
+
             } else if (ruleConsequence instanceof WeaveEach_RuleConsequence) {
               WeaveEach_RuleConsequence weaveEach = (WeaveEach_RuleConsequence) ruleConsequence;
               template = weaveEach.getTemplate();
@@ -319,12 +317,10 @@ public class TemplateGenUtil {
               }
               List<SNode> queryNodes = evaluateSourceNodesQuery(applicableNode, nodesQuery, ruleConsequence, generator);
               for (SNode queryNode : queryNodes) {
-                for (INodeBuilder builder : contextBuilders) {
-                  weaveTemplateDeclaration(queryNode, template, builder, generator, rule);
-                }
+                weaveTemplateDeclaration(queryNode, template, contextBuilder, generator, rule);
               }
             }
-          }
+          } // RuleConsequence
         }
       }
     }
@@ -434,26 +430,12 @@ public class TemplateGenUtil {
     }
   }
 
-  private static List<INodeBuilder> getContextNodeBuilderForWeavingingRule(SNode sourceNode, Weaving_MappingRule rule, ITemplateGenerator generator) {
+  private static INodeBuilder getContextNodeBuilderForWeavingingRule(SNode sourceNode, Weaving_MappingRule rule, ITemplateGenerator generator) {
     try {
       String aspectId = rule.getContextProviderAspectId();
       String methodName = "templateWeavingRule_Context_" + aspectId;
       Object[] args = new Object[]{sourceNode, generator};
-      Object result = QueryMethod.invoke(methodName, args, rule.getModel());
-
-      List<INodeBuilder> r = new ArrayList<INodeBuilder>();
-
-      if (result == null) {
-        return null;
-      }
-
-      if (result instanceof List) {
-        r.addAll((Collection<? extends INodeBuilder>) result);
-      } else {
-        r.add((INodeBuilder) result);
-      }
-
-      return r;
+      return (INodeBuilder) QueryMethod.invoke(methodName, args, rule.getModel());
     } catch (Throwable t) {
       generator.showErrorMessage(sourceNode, null, rule, t.getClass().getName());
       throw new RuntimeException(t);
