@@ -612,9 +612,10 @@ public class ModelPersistence {
   }
 
   private static SModel createModel(SModelUID uid) {
-    if (uid.toString().endsWith(".alpha")) {
-      return new MyModel(uid);
-    }
+//    if (uid.toString().endsWith("@templates") && !myLoaded.contains(uid)) {
+//      myLoaded.add(uid);
+//      return new MyModel(uid);
+//    }
     return new SModel(uid);
   }
 
@@ -626,6 +627,8 @@ public class ModelPersistence {
     public MyModel() {
     }
   }
+
+  private static Set<SModelUID> myLoaded = new HashSet<SModelUID>();
 
   private static class LogInfo {
     int myOldVersion;

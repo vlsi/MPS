@@ -1084,7 +1084,6 @@ public class SModel implements Iterable<SNode> {
   protected void finalize() throws Throwable {
     super.finalize();
     ourActiveModels.remove(this);
-    System.out.println("finalized " + getUID());
   }
 
   public static void checkModels() {

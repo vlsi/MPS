@@ -195,10 +195,14 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     private SModelDescriptor myProjectModelDescriptor = ProjectModels.createDescriptorFor(this);
     private ModuleDescriptor myModuleDescriptor = new ModuleDescriptor(myProjectModelDescriptor.getSModel());
 
+    private MPSModuleOwner myOwnOnwer = new MPSModuleOwner() { };
+
     TransientModule(IModule invocationModule, List<Generator> generatorModules) {
       myInvocationModule = invocationModule;
       myDependOnModules.addAll(generatorModules);
       myDependOnModules.add(invocationModule);
+
+      MPSModuleRepository.getInstance().addModule(this, myOwnOnwer);
     }
 
     public void addGeneratorModules(List<Generator> generatorModules) {
@@ -227,6 +231,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
     public void dispose() {
       MPSModuleRepository.getInstance().unRegisterModules(this);
+      MPSModuleRepository.getInstance().unRegisterModules(myOwnOnwer);
 
       // force removing transient models from repository
       List<SModelDescriptor> ownModelDescriptors = getOwnModelDescriptors();
