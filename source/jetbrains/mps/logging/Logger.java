@@ -77,7 +77,15 @@ public class Logger {
   }
 
   public void info(String message, Throwable t) {
-    info(new LogEntry(myFqName, message, t));
+    info(message, t, null);
+  }
+
+  public void info(String message, Object hintObject) {
+    info(message, null, hintObject);
+  }
+
+  public void info(String message, Throwable t, Object hintObject) {
+    info(new LogEntry(myFqName, message, t, hintObject));
   }
 
   public void warning(String message) {
@@ -85,7 +93,15 @@ public class Logger {
   }
 
   public void warning(String message, Throwable t) {
-    warning(new LogEntry(myFqName, message, t));
+    warning(message, t, null);
+  }
+
+  public void warning(String message, Object hintObject) {
+    warning(message, null, hintObject);
+  }
+
+  public void warning(String message, Throwable t, Object hintObject) {
+    warning(new LogEntry(myFqName, message, t, hintObject));
   }
 
   public void debug(String message) {
@@ -93,7 +109,15 @@ public class Logger {
   }
 
   public void debug(String message, Throwable t) {
-    debug(new LogEntry(myFqName, message, t));
+    debug(message, t, null);
+  }
+
+  public void debug(String message, Object hintObject) {
+    debug(message, null, hintObject);
+  }
+
+  public void debug(String message, Throwable t, Object hintObject) {
+    debug(new LogEntry(myFqName, message, t, hintObject));
   }
 
   public void error(String message) {
@@ -105,7 +129,15 @@ public class Logger {
   }
 
   public void error(String message, Throwable t) {
-    error(new LogEntry(myFqName, message, t));
+    error(message, t, null);
+  }
+
+  public void error(String message, Object hintObject) {
+    error(message, null, hintObject);
+  }
+
+  public void error(String message, Throwable t, Object hintObject) {
+    error(new LogEntry(myFqName, message, t, hintObject));
   }
 
   public void errorWithTrace(String message) {
@@ -117,7 +149,15 @@ public class Logger {
   }
 
   public void fatal(String message, Throwable t) {
-    fatal(new LogEntry(myFqName, message, t));
+    fatal(message, t, null);
+  }
+
+  public void fatal(String message, Object hintObject) {
+    fatal(message, null, hintObject);
+  }
+
+  public void fatal(String message, Throwable t, Object hintObject) {
+    fatal(new LogEntry(myFqName, message, t, hintObject));
   }
 
   public void assertLog(boolean condition) {
