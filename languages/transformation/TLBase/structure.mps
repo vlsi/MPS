@@ -648,12 +648,16 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1167171569011">
     <property name="name" value="Weaving_MappingRule" />
     <link role="extends" targetNodeId="1167169308231" resolveInfo="BaseMappingRule" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1169595968114">
+      <property name="value" value="the 'template' reference is deprecated" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1162838948922" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1167240478741">
       <property name="name" value="contextProviderAspectId" />
       <link role="dataType" targetNodeId="2.1082983041843" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1167171569014">
-      <property name="sourceCardinality" value="1" />
+      <property name="sourceCardinality" value="0..1" />
       <property name="role" value="template" />
       <link role="target" targetNodeId="1092059087312" resolveInfo="TemplateDeclaration" />
     </node>
