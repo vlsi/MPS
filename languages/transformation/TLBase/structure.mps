@@ -946,6 +946,7 @@
     <link role="extends" targetNodeId="1168559098955" resolveInfo="RuleConsequence" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1169669152123">
       <property name="role" value="generatorMessage" />
+      <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1169670156577" resolveInfo="GeneratorMessage" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1168559693644">

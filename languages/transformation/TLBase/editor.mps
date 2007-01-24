@@ -3489,6 +3489,8 @@
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1167088005395">
           <link role="conceptDeclaration" targetNodeId="4.1078489098625" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1167088005396">
+            <property name="textFgColor" value="DARK_BLUE" />
+            <property name="fontStyle" value="ITALIC" />
             <property name="drawBorder" value="false" />
             <property name="readOnly" value="true" />
             <property name="noTargetText" value="&lt;no name&gt;" />
@@ -3761,7 +3763,6 @@
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1169580472061">
               <property name="textFgColor" value="DARK_BLUE" />
               <property name="text" value="context" />
-              <property name="fontStyle" value="BOLD_ITALIC" />
               <property name="drawBorder" value="false" />
               <property name="selectable" value="true" />
             </node>
@@ -4337,12 +4338,13 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1169670446867">
       <property name="drawBorder" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1169670468666">
-        <property name="text" value="message" />
+        <property name="textFgColor" value="DARK_BLUE" />
+        <property name="text" value="DISMISS TOP RULE" />
         <property name="drawBorder" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1169670501887">
         <property name="drawBorder" value="false" />
-        <property name="noTargetText" value="&lt;none&gt;" />
+        <property name="noTargetText" value="&lt;no message&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1169669152123" />
       </node>
     </node>
@@ -4543,6 +4545,8 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1169670581344">
       <property name="drawBorder" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1169670587361">
+        <property name="textFgColor" value="DARK_MAGENTA" />
+        <property name="fontStyle" value="BOLD" />
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1169670356567" />
       </node>
@@ -4552,6 +4556,7 @@
         <property name="selectable" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1169670607428">
+        <property name="textFgColor" value="DARK_GREEN" />
         <property name="drawBorder" value="false" />
         <property name="noTargetText" value="&lt;no text&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1169670173015" />
