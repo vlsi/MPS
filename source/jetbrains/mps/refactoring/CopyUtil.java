@@ -87,11 +87,11 @@ public class CopyUtil  {
         }
       }
 
+      List<SNode> childList = new ArrayList<SNode>();
       for (SNode child : node.getChildren()) {
-        List<SNode> childList = new ArrayList<SNode>();
         childList.add(child);
-        fixReferences(childList, mapping);
       }
+      fixReferences(childList, mapping);
     }
   }
 }
