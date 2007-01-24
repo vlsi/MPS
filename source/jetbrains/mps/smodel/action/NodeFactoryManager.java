@@ -25,8 +25,9 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
   }
 
   public static SNode createNode(ConceptDeclaration nodeConcept, SNode sampleNode, SNode enclosingNode, SModel model, IScope scope) {
-    SNode node = SModelUtil.instantiateConceptDeclaration(nodeConcept, model);
+    SNode node = SModelUtil.instantiateConceptDeclaration(nodeConcept, model, false);
     setupNode(nodeConcept, node, sampleNode, enclosingNode, model, scope);
+    SModelUtil.createNodeStructure(nodeConcept, model, node, null, node, scope, true);
     return node;
   }
 
