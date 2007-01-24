@@ -131,7 +131,7 @@ public class ModelPersistence {
     }
 
     SModelUID modelUID = new SModelUID(modelLongName, stereotype);
-    SModel model = new SModel(modelUID);
+    SModel model = createModel(modelUID);
 
     model.setLoading(true);
     try {
@@ -609,6 +609,22 @@ public class ModelPersistence {
       }
     }
     return -1;
+  }
+
+  private static SModel createModel(SModelUID uid) {
+    if (uid.toString().endsWith(".alpha")) {
+      return new MyModel(uid);
+    }
+    return new SModel(uid);
+  }
+
+  private static class MyModel extends SModel {
+    public MyModel(@NotNull SModelUID modelUID) {
+      super(modelUID);
+    }
+
+    public MyModel() {
+    }
   }
 
   private static class LogInfo {

@@ -1075,4 +1075,30 @@ public class SModel implements Iterable<SNode> {
     return list;
   }
 
+  private static WeakSet<SModel> ourActiveModels = new WeakSet<SModel>();
+
+  {
+    ourActiveModels.add(this);
+  }
+
+  protected void finalize() throws Throwable {
+    super.finalize();
+    ourActiveModels.remove(this);
+    System.out.println("finalized " + getUID());
+  }
+
+  public static void checkModels() {
+    System.out.println("total models : " + ourActiveModels.size());
+
+    for (SModel sm : ourActiveModels) {
+      if (sm == null) continue;
+      SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(sm.getUID());
+
+      if (md == null) {
+        System.out.println("can't find a descriptor for " + sm.getUID());
+      } else if (sm != md.getSModel()) {
+        System.out.println("Found a leak! : " + sm.getUID());
+      }
+    }
+  }
 }
