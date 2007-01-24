@@ -420,6 +420,17 @@
               <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1169480862255">
                 <link role="variableDeclaration" targetNodeId="1169474196912" resolveInfo="s" />
               </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1169648513471">
+                <property name="value" value="2" />
+              </node>
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.PlusExpression" id="1169648518175">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1169648520272">
+                <property name="value" value="1" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1169648510283">
+                <property name="value" value="1" />
+              </node>
             </node>
           </node>
         </node>
