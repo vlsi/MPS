@@ -37,6 +37,8 @@ public class GenerationSessionContext extends StandaloneMPSContext {
                                   IOperationContext invocationContext,
                                   Set<MappingConfiguration> configs,
                                   GenerationSessionContext prevContext) {
+
+
     myTargetLanguage = targetLanguage;
     myInvocationContext = invocationContext;
     myGeneratorModules = getGeneratorModules(sourceModel);
@@ -188,6 +190,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return name;
   }
 
+  private static long ourCounter = 0;
 
   public class TransientModule extends AbstractModule {
     private List<IModule> myDependOnModules = new LinkedList<IModule>();
@@ -196,6 +199,8 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     private ModuleDescriptor myModuleDescriptor = new ModuleDescriptor(myProjectModelDescriptor.getSModel());
 
     private MPSModuleOwner myOwnOnwer = new MPSModuleOwner() { };
+
+    private long myNumber = ourCounter++;
 
     TransientModule(IModule invocationModule, List<Generator> generatorModules) {
       myInvocationModule = invocationModule;
@@ -230,6 +235,9 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     }
 
     public void dispose() {
+
+      System.out.println("disposing " + this);
+
       MPSModuleRepository.getInstance().unRegisterModules(this);
       MPSModuleRepository.getInstance().unRegisterModules(myOwnOnwer);
 
@@ -241,6 +249,14 @@ public class GenerationSessionContext extends StandaloneMPSContext {
           SModelRepository.getInstance().removeModelDescriptor(descriptor);
         }
       }
+
+      System.out.println("my owners = " + MPSModuleRepository.getInstance().getOwners(this));
+
+      if (MPSModuleRepository.getInstance().getOwners(this).size() != 0) {
+        MPSModuleRepository.getInstance().unRegisterModules(myOwnOnwer);
+      }
+
+      System.out.println("stub owner = " + myOwnOnwer);
     }
 
     public String toString() {
@@ -250,7 +266,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
         generatorsString += "/";
       }
 
-      return "TransientModule:[" + myInvocationModule + "]->[" + generatorsString + "]";
+      return "TransientModule:[" + myInvocationModule + "]->[" + generatorsString + "] " + myNumber;
     }
 
     public String getGeneratorOutputPath() {
