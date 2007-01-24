@@ -1,23 +1,24 @@
 package jetbrains.mps.ide.messages;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodeProxy;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNode;
 
 /**
  * @author Kostik
  */
 public class Message {
   private MessageKind myKind;
-  private SNodeProxy myNodeProxy;
   private String myText;
-  private IOperationContext myContext;
+  private Object myHintObject;
+
+  public Message(MessageKind kind, String text, Object hintObject) {
+    myKind = kind;
+    myText = text;
+    myHintObject = hintObject;
+  }
 
   public Message(MessageKind kind, IOperationContext context, SNode node, String text) {
-    myKind = kind;
-    myNodeProxy = new SNodeProxy(node);
-    myContext = context;
-    myText = text;
+    this(kind, text, new NodeWithContext(node, context));
   }
 
   public Message(MessageKind kind, String text) {
@@ -32,12 +33,8 @@ public class Message {
     return myKind;
   }
 
-  public SNode getNode() {
-    return myNodeProxy.getNode();
-  }
-
-  public IOperationContext getContext() {
-    return myContext;
+  public Object getHintObject() {
+    return myHintObject;
   }
 
   public String getText() {

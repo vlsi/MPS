@@ -1,17 +1,16 @@
 package jetbrains.mps.ide.messages;
 
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
-import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.ide.toolsPane.ToolsPane;
-import jetbrains.mps.nodeEditor.AbstractEditorComponent;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.project.ApplicationComponents;
 
 import javax.swing.*;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
@@ -126,16 +125,11 @@ public class MessageView extends DefaultTool {
 
   private void openCurrentMessageNodeIfPossible() {
     Message selectedMessage = (Message) myList.getSelectedValue();
-    if (selectedMessage == null) return;
-    SNode node = selectedMessage.getNode();
-    if (node == null) return;
-    IOperationContext context = selectedMessage.getContext();
-    if (context == null) return;
-    AbstractEditorComponent editor = context.getComponent(EditorsPane.class).openEditor(node, context).getCurrentEditorComponent();
-    if (editor != null) {
-      if (node.isRoot()) editor.selectFirstEditableCellOf(node);
-      else editor.selectNode(node);
-    }
+    if (selectedMessage == null || selectedMessage.getHintObject() == null) return;
+
+    ApplicationComponents.getInstance().getComponentSafe(NavigationManager.class)
+            .navigateTo(myToolsPane.getFrame(), selectedMessage.getHintObject());
+
   }
 
 
