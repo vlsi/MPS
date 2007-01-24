@@ -35,11 +35,11 @@ public class CloneModelUtil {
   /**
   Creates cloned model, each node in target model has the same nodeId that corresponding node in source model
    */
-  public static SModel cloneModelAndNodeIds(SModel model, SModel modelCopy, IScope scope) {
-    for (SNode root : copy(model.getRoots(), modelCopy, scope)) {
-      modelCopy.addRoot(root);
+  public static SModel cloneModelAndNodeIds(SModel model, SModel targetModel, IScope scope) {
+    for (SNode root : copy(model.getRoots(), targetModel, scope)) {
+      targetModel.addRoot(root);
     }
-    return modelCopy;
+    return targetModel;
   }
 
   public static List<SNode> copy(List<SNode> nodes, SModel targetModel, IScope scope) {
@@ -59,12 +59,17 @@ public class CloneModelUtil {
       result.setProperty(property, node.getProperty(property), false);
     }
     for (SReference reference : node.getReferences()) {
-      result.addReferent(reference.getRole(), reference.getTargetNode());
+      if(reference.isExternal()) {
+        result.addReferent(reference.getRole(), reference.getTargetNode());
+      }
+      else {
+        SReference sReference = SReference.newInstance(reference.getRole(), result, reference.getTargetNodeId(), reference.getExtResolveInfo(), targetModel.getUID(), reference.getResolveInfo());
+        result.addSReference(sReference);
+      }
     }
     for (SNode child : node.getChildren()) {
       result.addChild(node.getRoleOf(child), clone(child, targetModel, scope));
     }
-
     return result;
   }
 
