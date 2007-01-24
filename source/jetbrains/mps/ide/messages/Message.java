@@ -1,8 +1,5 @@
 package jetbrains.mps.ide.messages;
 
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
-
 /**
  * @author Kostik
  */
@@ -17,12 +14,8 @@ public class Message {
     myHintObject = hintObject;
   }
 
-  public Message(MessageKind kind, IOperationContext context, SNode node, String text) {
-    this(kind, text, new NodeWithContext(node, context));
-  }
-
   public Message(MessageKind kind, String text) {
-    this(kind, null, null, text);
+    this(kind, text, null);
   }
 
   public Message(String text) {
