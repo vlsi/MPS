@@ -47,24 +47,6 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createStatementBox(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "try {"));
-    editorCell.addEditorCell(this.createCellAlternation(context, node));
-    editorCell.addEditorCell(this.createIfTrueBox2(context, node));
-    editorCell.addEditorCell(this.createIfTrueBox3(context, node));
-    editorCell.addEditorCell(this.createConstantCell4(context, node, "}"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1153952495820");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
   public EditorCell createIfTrueBox(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(false);
@@ -80,21 +62,6 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createColumnCell(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIfTrueBox1(context, node));
-    editorCell.addEditorCell(this.createCatchClauseList(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1164881235374");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
   public EditorCell createIfTrueBox1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(false);
@@ -107,6 +74,21 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createIndentCell1(context, node, "  "));
     editorCell.addEditorCell(this.createBodyCell1(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, "1164881240166");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createColumnCell(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setGridLayout(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createIfTrueBox1(context, node));
+    editorCell.addEditorCell(this.createCatchClauseList(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1164881235374");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -138,6 +120,24 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createIndentCell2(context, node, "  "));
     editorCell.addEditorCell(this.createFinallyBodyCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, "1153952622722");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createStatementBox(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setGridLayout(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstantCell(context, node, "try {"));
+    editorCell.addEditorCell(this.createCellAlternation(context, node));
+    editorCell.addEditorCell(this.createIfTrueBox2(context, node));
+    editorCell.addEditorCell(this.createIfTrueBox3(context, node));
+    editorCell.addEditorCell(this.createConstantCell4(context, node, "}"));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1153952495820");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

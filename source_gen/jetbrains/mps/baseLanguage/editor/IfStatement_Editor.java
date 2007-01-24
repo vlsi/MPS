@@ -38,27 +38,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createStatementBox(context, node);
   }
-  public EditorCell createStatementBox(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createHeaderRow(context, node));
-    editorCell.addEditorCell(this.createIfTrueBox(context, node));
-    if(IfStatement_Editor._QueryFunction_NodeCondition_1145915991622(node, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstantCell3(context, node, "}"));
-    }
-    if(IfStatement_Editor._QueryFunction_NodeCondition_1145913965422(node, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createColumnCell(context, node));
-    }
-    editorCell.putUserObject(EditorCell.CELL_ID, "1075379419313");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
   public EditorCell createHeaderRow(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(false);
@@ -88,22 +67,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createIndentCell(context, node, "  "));
     editorCell.addEditorCell(this.createIfTrueCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, "1075379536706");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
-  public EditorCell createColumnCell(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIfFalseBranch(context, node));
-    editorCell.addEditorCell(this.createIfFalseBranch1(context, node));
-    editorCell.addEditorCell(this.createIfFalseBranch2(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1145913930430");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -153,6 +116,43 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createConstantCell8(context, node, "}"));
     }
     editorCell.putUserObject(EditorCell.CELL_ID, "1145913989039");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createColumnCell(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+    editorCell.setGridLayout(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createIfFalseBranch(context, node));
+    editorCell.addEditorCell(this.createIfFalseBranch1(context, node));
+    editorCell.addEditorCell(this.createIfFalseBranch2(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1145913930430");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createStatementBox(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setGridLayout(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createHeaderRow(context, node));
+    editorCell.addEditorCell(this.createIfTrueBox(context, node));
+    if(IfStatement_Editor._QueryFunction_NodeCondition_1145915991622(node, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstantCell3(context, node, "}"));
+    }
+    if(IfStatement_Editor._QueryFunction_NodeCondition_1145913965422(node, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createColumnCell(context, node));
+    }
+    editorCell.putUserObject(EditorCell.CELL_ID, "1075379419313");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
