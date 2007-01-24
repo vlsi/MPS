@@ -125,10 +125,14 @@ public class Logger {
   }
 
   public void error(Throwable t) {
+    error(t, null);
+  }
+
+  public void error(Throwable t, Object hintObject) {
     if (t.getMessage() != null) {
-      error("Exception : " + t.getMessage(), t);
+      error("Exception : " + t.getMessage(), t, hintObject);
     } else {
-      error("Exception : " + t.getClass().getName(), t);
+      error("Exception : " + t.getClass().getName(), t, hintObject);
     }
   }
 
