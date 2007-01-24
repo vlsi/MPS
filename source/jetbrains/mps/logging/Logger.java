@@ -34,35 +34,35 @@ public class Logger {
   }
 
 
-  private static synchronized void info(String cls, String message, Throwable t) {
+  private static synchronized void info(LogEntry e) {
     for (ILoggingHandler lh : ourLoggingHandlers) {
-      lh.info(cls, message, t);
+      lh.info(e);
     }
   }
 
-  private static synchronized void warning(String cls, String message, Throwable t) {
+  private static synchronized void warning(LogEntry e) {
     for (ILoggingHandler lh : ourLoggingHandlers) {
-      lh.warning(cls, message, t);
-    }
-  }
-
-
-  private static synchronized void debug(String cls, String message, Throwable t) {
-    for (ILoggingHandler lh : ourLoggingHandlers) {
-      lh.debug(cls, message, t);
+      lh.warning(e);
     }
   }
 
 
-  private static synchronized void error(String cls, String message, Throwable t) {
+  private static synchronized void debug(LogEntry e) {
     for (ILoggingHandler lh : ourLoggingHandlers) {
-      lh.error(cls, message, t);
+      lh.debug(e);
     }
   }
 
-  private static synchronized void fatal(String cls, String message, Throwable t) {
+
+  private static synchronized void error(LogEntry e) {
     for (ILoggingHandler lh : ourLoggingHandlers) {
-      lh.fatal(cls, message, t);
+      lh.error(e);
+    }
+  }
+
+  private static synchronized void fatal(LogEntry e) {
+    for (ILoggingHandler lh : ourLoggingHandlers) {
+      lh.fatal(e);
     }
   }
 
@@ -77,7 +77,7 @@ public class Logger {
   }
 
   public void info(String message, Throwable t) {
-    info(myFqName, message, t);
+    info(new LogEntry(myFqName, message, t));
   }
 
   public void warning(String message) {
@@ -85,7 +85,7 @@ public class Logger {
   }
 
   public void warning(String message, Throwable t) {
-    warning(myFqName, message, t);
+    warning(new LogEntry(myFqName, message, t));
   }
 
   public void debug(String message) {
@@ -93,7 +93,7 @@ public class Logger {
   }
 
   public void debug(String message, Throwable t) {
-    debug(myFqName, message, t);
+    debug(new LogEntry(myFqName, message, t));
   }
 
   public void error(String message) {
@@ -105,7 +105,7 @@ public class Logger {
   }
 
   public void error(String message, Throwable t) {
-    error(myFqName, message, t);
+    error(new LogEntry(myFqName, message, t));
   }
 
   public void errorWithTrace(String message) {
@@ -117,7 +117,7 @@ public class Logger {
   }
 
   public void fatal(String message, Throwable t) {
-    fatal(myFqName, message, t);
+    fatal(new LogEntry(myFqName, message, t));
   }
 
   public void assertLog(boolean condition) {

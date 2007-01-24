@@ -1,9 +1,9 @@
 package jetbrains.mps.logging;
 
 public interface ILoggingHandler {
-  void info(String cls, String message, Throwable t);
-  void warning(String cls, String message, Throwable t);
-  void debug(String cls, String message, Throwable t);
-  void error(String cls, String message, Throwable t);
-  void fatal(String cls, String message, Throwable t);
+  void info(LogEntry e);
+  void warning(LogEntry e);
+  void debug(LogEntry e);
+  void error(LogEntry e);
+  void fatal(LogEntry e);
 }

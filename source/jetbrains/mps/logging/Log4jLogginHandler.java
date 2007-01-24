@@ -5,23 +5,23 @@ class Log4jLogginHandler implements ILoggingHandler {
     return org.apache.log4j.Logger.getLogger(fqName);
   }
 
-  public void info(String cls, String message, Throwable t) {
-    getLogger(cls).info(message, t);
+  public void info(LogEntry e) {
+    getLogger(e.getSourceClass()).info(e.getMessage(), e.getThrowable());
   }
 
-  public void warning(String cls, String message, Throwable t) {
-    getLogger(cls).warn(message, t);
+  public void warning(LogEntry e) {
+    getLogger(e.getSourceClass()).info(e.getMessage(), e.getThrowable());
   }
 
-  public void debug(String cls, String message, Throwable t) {
-    getLogger(cls).debug(message, t);
+  public void debug(LogEntry e) {
+    getLogger(e.getSourceClass()).info(e.getMessage(), e.getThrowable());
   }
 
-  public void error(String cls, String message, Throwable t) {
-    getLogger(cls).error(message, t);
+  public void error(LogEntry e) {
+    getLogger(e.getSourceClass()).info(e.getMessage(), e.getThrowable());
   }
 
-  public void fatal(String cls, String message, Throwable t) {
-    getLogger(cls).fatal(message, t);
+  public void fatal(LogEntry e) {
+    getLogger(e.getSourceClass()).info(e.getMessage(), e.getThrowable());
   }
 }
