@@ -125,7 +125,11 @@ public class Logger {
   }
 
   public void error(Throwable t) {
-    error("Exception : " + t.getMessage(), t);
+    if (t.getMessage() != null) {
+      error("Exception : " + t.getMessage(), t);
+    } else {
+      error("Exception : " + t.getClass(), t);
+    }
   }
 
   public void error(String message, Throwable t) {
