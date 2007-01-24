@@ -1,6 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
@@ -20,6 +21,7 @@ import java.util.List;
 public class IntelligentInputUtil {
 
   private static final Logger LOG = Logger.getLogger(IntelligentInputUtil.class);
+  private static Object ourMarker = new Object();
 
   public static void processCell(EditorCell_Label cell, final EditorContext editorContext, String pattern) {
     if (pattern == null || pattern.equals("")) {
@@ -31,7 +33,7 @@ public class IntelligentInputUtil {
     processCell(cell, editorContext, smallPattern, tail);
   }
 
-  private static void processCell(EditorCell_Label cell, final EditorContext editorContext, String smallPattern, String tail) {
+  private static void processCell(EditorCell_Label cell, final EditorContext editorContext, final String smallPattern, final String tail) {
 
     INodeSubstituteInfo substituteInfo = cell.getSubstituteInfo();
     if (substituteInfo == null) {
@@ -60,6 +62,7 @@ public class IntelligentInputUtil {
     if (rtAction == null) {
       return;
     }
+    UndoManager.instance().markPlaceInCurrentUndoActionsWithObject(ourMarker);
     rtAction.execute(editorContext);
     final CellFounder cellFounder = new CellFounder(editorContext, newNode, tail);
     EditorCell newCellForNewNode = editorContext.createNodeCell(newNode);
@@ -72,16 +75,37 @@ public class IntelligentInputUtil {
         rtSubstituteInfo = new NullSubstituteInfo();
       }
       List<INodeSubstituteAction> rtMatchingActions = rtSubstituteInfo.getMatchingActions(tail, true);
-      if (rtSubstituteInfo.hasNoActionsWithPrefix(tail)) {
+
+      if (rtSubstituteInfo.hasNoActionsWithPrefix(tail)) { // don't create RT hint cell in such a case
         if (newNode != null) {
           newNode.removeRightTransformHint();
+          UndoManager.instance().removeActionsAfterObject(ourMarker);
+          final CellInfo cellInfo = cell.getCellInfo();
+          CommandProcessor.instance().invokeNowOrLater(new Runnable() {
+            public void run() {
+              AbstractEditorComponent component = editorContext.getNodeEditorComponent();
+              EditorCell cellToSelect = cellInfo.findCell(component);
+              if (cellToSelect != null) {
+                component.changeSelection(cellToSelect);
+              }
+              if (cellToSelect instanceof EditorCell_Label) {
+                EditorCell_Label label = (EditorCell_Label) cellToSelect;
+                if (label.isEditable()) {
+                  label.changeText(smallPattern + tail);
+                }
+                label.getRenderedTextLine().setCaretPositionToLast();
+              }
+            }
+          });
         }
         return;
       }
-      if (!uniqueAction(rtSubstituteInfo, tail, "")) {
+
+      if (!uniqueAction(rtSubstituteInfo, tail, "")) { //don't execute non-unique action on RT hint cell
         CommandProcessor.instance().invokeLater(cellFounder);
         return;
       }
+
       INodeSubstituteAction rtItem = rtMatchingActions.get(0);
       final SNode yetNewNode = rtItem.doSubstitute(smallPattern);
       CommandProcessor.instance().invokeLater(new Runnable() {
