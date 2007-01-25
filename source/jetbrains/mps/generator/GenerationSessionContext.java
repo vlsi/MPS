@@ -269,6 +269,12 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       return "TransientModule:[" + myInvocationModule + "]->[" + generatorsString + "] " + myNumber;
     }
 
+
+    @NotNull
+    public String getModuleUID() {
+      return "Transient module " + myNumber;
+    }
+
     public String getGeneratorOutputPath() {
       return myInvocationModule.getGeneratorOutputPath();
     }
