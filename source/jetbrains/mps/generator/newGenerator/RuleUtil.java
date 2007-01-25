@@ -27,7 +27,7 @@ public class RuleUtil {
       if (templateNode == null) {
         generator.showErrorMessage(null, null, createRootRule, "'create root' rule has no template");
       } else {
-        createRootNodeFromTemplate(generator, outputModel, templateNode);
+        createRootNodeFromTemplate(generator, outputModel, templateNode, null);
       }
     }
   }
@@ -60,7 +60,7 @@ public class RuleUtil {
     }
     List<SNode> sourceNodes = createSourceNodeListForMappingRule(generator, mappingRule);
     for (SNode sourceNode : sourceNodes) {
-      createRootNodeFromTemplate(generator, outputModel, templateNode);
+      createRootNodeFromTemplate(generator, outputModel, templateNode, sourceNode);
     }
   }
 
@@ -80,10 +80,10 @@ public class RuleUtil {
     }
     boolean includeInheritors = rule.getApplyToConceptInheritors();
     List<SNode> nodes = outputModel.getModelDescriptor().getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
-    for (SNode node : nodes) {
-      if (checkConditionForBaseMappingRule(generator, node, rule)) {
+    for (SNode sourceNode : nodes) {
+      if (checkConditionForBaseMappingRule(generator, sourceNode, rule)) {
         SNode templateNode = rule.getTemplate();
-        createRootNodeFromTemplate(generator, outputModel, templateNode);
+        createRootNodeFromTemplate(generator, outputModel, templateNode, sourceNode);
       }
     }
   }
@@ -109,13 +109,13 @@ public class RuleUtil {
     }
   }
 
-  private static void createRootNodeFromTemplate(TemplateModelGenerator_New generator, SModel outputModel, SNode templateNode) {
-    SNode outputNode = createNodeFromTemplate(generator, outputModel, templateNode);
+  private static void createRootNodeFromTemplate(TemplateModelGenerator_New generator, SModel outputModel, SNode templateNode, SNode sourceNode) {
+    SNode outputNode = createNodeFromTemplate(generator, outputModel, templateNode, sourceNode);
     generator.addNewRootNode(outputNode);
     if(templateNode.isRoot()) generator.addRootToDelete(templateNode);
   }
 
-  private static SNode createNodeFromTemplate(ITemplateGenerator generator, SModel outputModel, SNode templateNode) {
+  private static SNode createNodeFromTemplate(ITemplateGenerator generator, SModel outputModel, SNode templateNode, SNode sourceNode) {
     SNode outputNode = ModelPersistence.createNodeInstance(templateNode.getClass().getName(), outputModel);
     if(outputNode == null) {
       generator.showErrorMessage(null, templateNode, "'createNodeFromTemplate' cannot create root node");
@@ -131,9 +131,14 @@ public class RuleUtil {
 
 
     for (SNode templateChildNode : templateNode.getChildren()) {
-      SNode childNode = createNodeFromTemplate(generator, outputModel, templateChildNode);
-      if(childNode != null) {
-        outputNode.addChild(templateNode.getRoleOf(templateChildNode), childNode);
+      if (templateChildNode instanceof PropertyMacro) {
+        MacroUtil.expandPropertyMacro(generator, (PropertyMacro)templateChildNode, sourceNode, templateNode, outputNode);
+      }
+      else {
+        SNode outputChildNode = createNodeFromTemplate(generator, outputModel, templateChildNode, sourceNode);
+        if(outputChildNode != null) {
+          outputNode.addChild(templateNode.getRoleOf(templateChildNode), outputChildNode);
+        }
       }
     }
     return outputNode;
