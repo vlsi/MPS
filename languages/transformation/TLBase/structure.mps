@@ -166,9 +166,19 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1167087469898" resolveInfo="CreateRootRule" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1169742456963">
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="abandonRootRule" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1114458327664" resolveInfo="ConceptDeclarationReference" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1163452921864">
       <property name="value" value="mapping configuration" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1169742531321">
+      <property name="value" value="'outputRootConcept' is replaced with 'abandonRootRule'" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1162838948922" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1095416572297">
