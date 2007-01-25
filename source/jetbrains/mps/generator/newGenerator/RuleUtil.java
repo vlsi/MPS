@@ -28,7 +28,7 @@ public class RuleUtil {
       if (templateNode == null) {
         generator.showErrorMessage(null, null, createRootRule, "'create root' rule has no template");
       } else {
-        createRootNodeFromTemplate(generator, outputModel, templateNode, null);
+        createRootNodeFromTemplate(generator, createRootRule.getName(), outputModel, templateNode, null);
       }
     }
   }
@@ -59,18 +59,18 @@ public class RuleUtil {
       generator.showErrorMessage(null, null, mappingRule, "mapping rule has no template");
       return;
     }
-    List<SNode> sourceNodes = createSourceNodeListForMappingRule(generator, mappingRule);
-    for (SNode sourceNode : sourceNodes) {
-      createRootNodeFromTemplate(generator, outputModel, templateNode, sourceNode);
+    List<SNode> inputNodes = createInputNodeListForMappingRule(generator, mappingRule);
+    for (SNode inputNode : inputNodes) {
+      createRootNodeFromTemplate(generator, mappingRule.getName(), outputModel, templateNode, inputNode);
     }
   }
 
-  private static List<SNode> createSourceNodeListForMappingRule(ITemplateGenerator generator, MappingRule mappingRule) {
+  private static List<SNode> createInputNodeListForMappingRule(ITemplateGenerator generator, MappingRule mappingRule) {
     String sourceQueryAspectId = mappingRule.getSourceQueryAspectId();
     String methodName = "templateMappingRule_SourceQuery_" + sourceQueryAspectId;
     Object[] args = new Object[]{generator};
-    List<SNode> sourceNodes = (List<SNode>) QueryMethod.invoke(methodName, args, mappingRule.getModel());
-    return sourceNodes;
+    List<SNode> inputNodes = (List<SNode>) QueryMethod.invoke(methodName, args, mappingRule.getModel());
+    return inputNodes;
   }
 
   public static void applyRoot_MappingRule(TemplateModelGenerator_New generator, SModel outputModel, Root_MappingRule rule) {
@@ -81,22 +81,22 @@ public class RuleUtil {
     }
     boolean includeInheritors = rule.getApplyToConceptInheritors();
     List<SNode> nodes = outputModel.getModelDescriptor().getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
-    for (SNode sourceNode : nodes) {
-      if (checkConditionForBaseMappingRule(generator, sourceNode, rule)) {
+    for (SNode inputNode : nodes) {
+      if (checkConditionForBaseMappingRule(generator, inputNode, rule)) {
         SNode templateNode = rule.getTemplate();
-        createRootNodeFromTemplate(generator, outputModel, templateNode, sourceNode);
+        createRootNodeFromTemplate(generator, rule.getName(), outputModel, templateNode, inputNode);
       }
     }
   }
 
-  private static boolean checkConditionForBaseMappingRule(ITemplateGenerator generator, SNode sourceNode, BaseMappingRule mappingRule) {
+  private static boolean checkConditionForBaseMappingRule(ITemplateGenerator generator, SNode inputNode, BaseMappingRule mappingRule) {
     BaseMappingRule_Condition conditionFunction = mappingRule.getConditionFunction();
     if (conditionFunction == null) {
       return true;
     }
     String methodName = TemplateFunctionMethodName.baseMappingRule_Condition(conditionFunction);
     Object[] args = new Object[]{
-            sourceNode,
+            inputNode,
             generator.getSourceModel(),
             generator,
             generator.getScope(),
@@ -104,25 +104,26 @@ public class RuleUtil {
     try {
       return (Boolean) QueryMethodGenerated.invoke(methodName, args, mappingRule.getModel());
     } catch (Exception e) {
-      generator.showErrorMessage(sourceNode, null, mappingRule, "couldn't evaluate rule condition - try to generate template models");
+      generator.showErrorMessage(inputNode, null, mappingRule, "couldn't evaluate rule condition - try to generate template models");
       LOG.error(e);
       return false;
     }
   }
 
-  private static void createRootNodeFromTemplate(TemplateModelGenerator_New generator, SModel outputModel, SNode templateNode, SNode sourceNode) {
-    SNode outputNode = createNodeFromTemplate(generator, outputModel, templateNode, sourceNode);
+  private static void createRootNodeFromTemplate(TemplateModelGenerator_New generator, String ruleName, SModel outputModel, SNode templateNode, SNode inputNode) {
+    SNode outputNode = createNodeFromTemplate(generator, ruleName, outputModel, templateNode, inputNode);
     generator.addNewRootNode(outputNode);
-    if(sourceNode != null && sourceNode.isRoot()) generator.addRootToDelete(sourceNode);
+    if(inputNode != null && inputNode.isRoot()) generator.addRootToDelete(inputNode);
   }
 
-  private static SNode createNodeFromTemplate(TemplateModelGenerator_New generator, SModel outputModel, SNode templateNode, SNode sourceNode) {
+  private static SNode createNodeFromTemplate(TemplateModelGenerator_New generator, String ruleName, SModel outputModel, SNode templateNode, SNode inputNode) {
     SNode outputNode = ModelPersistence.createNodeInstance(templateNode.getClass().getName(), outputModel);
     if(outputNode == null) {
       generator.showErrorMessage(null, templateNode, "'createNodeFromTemplate' cannot create root node");
       return null;
     }
-    generator.addOutputNodeByTemplateNodeAndSourceNode(templateNode, sourceNode, outputNode);
+    generator.addOutputNodeByTemplateNodeAndInputNode(templateNode, inputNode, outputNode);
+    generator.addOutputNodeByRuleNameAndInputNode(ruleName, inputNode, outputNode);
     outputModel.addLanguage(templateNode.getLanguage(generator.getScope()));
     for (String property : templateNode.getProperties().keySet()) {
       outputNode.setProperty(property, templateNode.getProperty(property), false);
@@ -145,13 +146,13 @@ public class RuleUtil {
 
     for (SNode templateChildNode : templateNode.getChildren()) {
       if (templateChildNode instanceof PropertyMacro) {
-        MacroUtil.expandPropertyMacro(generator, (PropertyMacro)templateChildNode, sourceNode, templateNode, outputNode);
+        MacroUtil.expandPropertyMacro(generator, (PropertyMacro)templateChildNode, inputNode, templateNode, outputNode);
       }
       else if(templateChildNode instanceof ReferenceMacro) {
         generator.addReferenceInfo(new ReferenceInfo_Macro(outputNode, templateChildNode, (ReferenceMacro)templateChildNode));
       }
       else {
-        SNode outputChildNode = createNodeFromTemplate(generator, outputModel, templateChildNode, sourceNode);
+        SNode outputChildNode = createNodeFromTemplate(generator, ruleName, outputModel, templateChildNode, inputNode);
         if(outputChildNode != null) {
           outputNode.addChild(templateNode.getRoleOf(templateChildNode), outputChildNode);
         }

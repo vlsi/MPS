@@ -17,8 +17,7 @@ public class ReferenceInfo_Default extends ReferenceInfo {
     myTemplateTargetNode = templateTargetNode;
   }
 
-
   public void execute(TemplateModelGenerator_New generator) {
-    myOutputNode.addReferent(myReferenceRole, generator.findOutputNodeByTemplateNodeAndSourceNode(myTemplateTargetNode, myOutputNode));
+    myOutputNode.addReferent(myReferenceRole, generator.findOutputNodeByTemplateNodeAndInputNode(myTemplateTargetNode, myOutputNode));
   }
 }

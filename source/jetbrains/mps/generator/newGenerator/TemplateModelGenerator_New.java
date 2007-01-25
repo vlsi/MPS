@@ -30,7 +30,8 @@ public class TemplateModelGenerator_New extends AbstractModelGenerator implement
   private ArrayList<SNode> myNewRootNodes = new ArrayList<SNode>();
   private ArrayList<SNode> myRootsToDelete = new ArrayList<SNode>();
   private ArrayList<ReferenceInfo> myReferenceInfos = new ArrayList<ReferenceInfo>();
-  private HashMap<Pair<SNode, SNode>, SNode> myTemplateNodeAndSourceNodeToOutputNodeMap = new HashMap<Pair<SNode, SNode>, SNode>();
+  private HashMap<Pair<SNode, SNode>, SNode> myTemplateNodeAndInputNodeToOutputNodeMap = new HashMap<Pair<SNode, SNode>, SNode>();
+  private HashMap<Pair<String, SNode>, SNode> myRuleNameAndInputNodeToOutputNodeMap = new HashMap<Pair<String, SNode>, SNode>();
 
 
   public TemplateModelGenerator_New( GenerationSessionContext operationContext,
@@ -90,16 +91,28 @@ public class TemplateModelGenerator_New extends AbstractModelGenerator implement
   }
 
 
-  public SNode findOutputNodeByTemplateNodeAndSourceNode(SNode templateNode, SNode sourceNode) {
-    return myTemplateNodeAndSourceNodeToOutputNodeMap.get(new Pair(templateNode, sourceNode));
+  public SNode findOutputNodeByTemplateNodeAndInputNode(SNode templateNode, SNode inputNode) {
+    return myTemplateNodeAndInputNodeToOutputNodeMap.get(new Pair(templateNode, inputNode));
   }
 
-  public void addOutputNodeByTemplateNodeAndSourceNode(SNode templateNode, SNode sourceNode, SNode outputNode) {
-    Pair key = new Pair(templateNode, sourceNode);
-    if(myTemplateNodeAndSourceNodeToOutputNodeMap.get(key) != null) {
-      showErrorMessage(sourceNode, templateNode, "The output node already exists, that was build by this template and source node");
+  public void addOutputNodeByTemplateNodeAndInputNode(SNode templateNode, SNode inputNode, SNode outputNode) {
+    Pair key = new Pair(templateNode, inputNode);
+    if(myTemplateNodeAndInputNodeToOutputNodeMap.get(key) != null) {
+      showErrorMessage(inputNode, templateNode, "The output node already exists, that was build by this template and source node");
     }
-    myTemplateNodeAndSourceNodeToOutputNodeMap.put(key, outputNode);
+    myTemplateNodeAndInputNodeToOutputNodeMap.put(key, outputNode);
+  }
+
+  public SNode findOutputNodeByRuleNameAndInputNode(String ruleName, SNode inputNode) {
+    return myRuleNameAndInputNodeToOutputNodeMap.get(new Pair(ruleName, inputNode));
+  }
+
+  public void addOutputNodeByRuleNameAndInputNode(String ruleName, SNode inputNode, SNode outputNode) {
+    Pair key = new Pair(ruleName, inputNode);
+    if(myRuleNameAndInputNodeToOutputNodeMap.get(key) != null) {
+      showErrorMessage(inputNode, "The output node already exists, that was build by this template and rule name - " + ruleName);
+    }
+    myRuleNameAndInputNodeToOutputNodeMap.put(key, outputNode);
   }
 
 
@@ -128,11 +141,11 @@ public class TemplateModelGenerator_New extends AbstractModelGenerator implement
     return false;  //To change body of implemented methods use File | Settings | File Templates.
   }
 
-  public void processPropertyMacros(SNode sourceNode, SNode templateNode, SNode targetNode) {
+  public void processPropertyMacros(SNode inputNode, SNode templateNode, SNode targetNode) {
     //To change body of implemented methods use File | Settings | File Templates.
   }
 
-  public void processReferenceMacros(SNode sourceNode, SNode templateNode, SNode targetNode) {
+  public void processReferenceMacros(SNode inputNode, SNode templateNode, SNode targetNode) {
     //To change body of implemented methods use File | Settings | File Templates.
   }
 
@@ -144,19 +157,20 @@ public class TemplateModelGenerator_New extends AbstractModelGenerator implement
     return null;  //To change body of implemented methods use File | Settings | File Templates.
   }
 
-  public INodeBuilder findNodeBuilderForSource(SNode sourceNode, String mappingName) {
+  public INodeBuilder findNodeBuilderForSource(SNode inputNode, String mappingName) {
+    SNode outputNode = findOutputNodeByRuleNameAndInputNode(mappingName, inputNode);
+    return new SimpleNodeBuilder(outputNode);
+  }
+
+  public INodeBuilder findNodeBuilderForSource(SNode inputNode, Condition<INodeBuilder> condition) {
     return null;  //To change body of implemented methods use File | Settings | File Templates.
   }
 
-  public INodeBuilder findNodeBuilderForSource(SNode sourceNode, Condition<INodeBuilder> condition) {
+  public INodeBuilder findNodeBuilderForSource(SNode inputNode) {
     return null;  //To change body of implemented methods use File | Settings | File Templates.
   }
 
-  public INodeBuilder findNodeBuilderForSource(SNode sourceNode) {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
-  }
-
-  public INodeBuilder findCopyingNodeBuilderForSource(SNode sourceNode) {
+  public INodeBuilder findCopyingNodeBuilderForSource(SNode inputNode) {
     return null;  //To change body of implemented methods use File | Settings | File Templates.
   }
 
@@ -176,7 +190,7 @@ public class TemplateModelGenerator_New extends AbstractModelGenerator implement
     return null;  //To change body of implemented methods use File | Settings | File Templates.
   }
 
-  public TemplateDeclaration getTemplateForSwitchCase(SNode sourceNode, TemplateSwitch templateSwitch) {
+  public TemplateDeclaration getTemplateForSwitchCase(SNode inputNode, TemplateSwitch templateSwitch) {
     return null;  //To change body of implemented methods use File | Settings | File Templates.
   }
 
@@ -192,11 +206,11 @@ public class TemplateModelGenerator_New extends AbstractModelGenerator implement
     //To change body of implemented methods use File | Settings | File Templates.
   }
 
-  public void showErrorMessage(SNode sourceNode, SNode templateNode, String message) {
+  public void showErrorMessage(SNode inputNode, SNode templateNode, String message) {
     //To change body of implemented methods use File | Settings | File Templates.
   }
 
-  public void showErrorMessage(SNode sourceNode, SNode templateNode, SNode ruleNode, String message) {
+  public void showErrorMessage(SNode inputNode, SNode templateNode, SNode ruleNode, String message) {
     //To change body of implemented methods use File | Settings | File Templates.
   }
 
