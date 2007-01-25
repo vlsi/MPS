@@ -667,6 +667,10 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1167327847730">
     <property name="name" value="Reduction_MappingRule" />
     <link role="extends" targetNodeId="1167169308231" resolveInfo="BaseMappingRule" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1169672780802">
+      <property name="value" value="the 'template' reference is deprecated" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1162838948922" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1168614955974">
       <property name="name" value="actionQueryId" />
       <link role="dataType" targetNodeId="2.1082983041843" />
@@ -675,6 +679,12 @@
       <property name="sourceCardinality" value="1" />
       <property name="role" value="template" />
       <link role="target" targetNodeId="1092059087312" resolveInfo="TemplateDeclaration" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1169672767469">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="ruleConsequence" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1168559098955" resolveInfo="RuleConsequence" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1167514355419">

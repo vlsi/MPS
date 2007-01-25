@@ -292,34 +292,26 @@ public class TemplateGenUtil {
           } else {
             // new
             RuleConsequence ruleConsequence = rule.getRuleConsequence();
-            if (ruleConsequence instanceof DismissTopMappingRule) {
-              continue;
-
-            } else if (ruleConsequence instanceof TemplateDeclarationReference) {
+            if (ruleConsequence instanceof TemplateDeclarationReference) {
               template = ((TemplateDeclarationReference) ruleConsequence).getTemplate();
-              if (template == null) {
-                generator.showErrorMessage(applicableNode, rule, "rule has no template");
-                break;
-              }
               weaveTemplateDeclaration(applicableNode, template, contextBuilder, generator, rule);
 
             } else if (ruleConsequence instanceof WeaveEach_RuleConsequence) {
               WeaveEach_RuleConsequence weaveEach = (WeaveEach_RuleConsequence) ruleConsequence;
-              template = weaveEach.getTemplate();
-              if (template == null) {
-                generator.showErrorMessage(applicableNode, rule, "rule has no template");
-                break;
-              }
               SourceSubstituteMacro_SourceNodesQuery nodesQuery = weaveEach.getSourceNodesQuery();
               if (nodesQuery == null) {
                 generator.showErrorMessage(applicableNode, rule, "couldn't create list of source nodes");
                 break;
               }
+              template = weaveEach.getTemplate();
               List<SNode> queryNodes = evaluateSourceNodesQuery(applicableNode, nodesQuery, ruleConsequence, generator);
               for (SNode queryNode : queryNodes) {
                 weaveTemplateDeclaration(queryNode, template, contextBuilder, generator, rule);
               }
+            } else {
+              generator.showErrorMessage(applicableNode, null, ruleConsequence, "unsapported rule consequence");
             }
+
           } // RuleConsequence
         }
       }
@@ -339,10 +331,15 @@ public class TemplateGenUtil {
     return false;
   }
 
-  private static void weaveTemplateDeclaration(SNode sourceNode, TemplateDeclaration templateDeclaration, INodeBuilder contextBuilder, ITemplateGenerator generator, SNode ruleNode) {
-    List<TemplateFragment> templateFragments = getTemplateFragments(templateDeclaration);
+  private static void weaveTemplateDeclaration(SNode sourceNode, TemplateDeclaration template, INodeBuilder contextBuilder, ITemplateGenerator generator, SNode ruleNode) {
+    if (template == null) {
+      generator.showErrorMessage(sourceNode, template, ruleNode, "couldn't evaluate weaving rule: no template");
+      return;
+    }
+
+    List<TemplateFragment> templateFragments = getTemplateFragments(template);
     if (templateFragments.isEmpty()) {
-      generator.showErrorMessage(sourceNode, templateDeclaration, ruleNode, "nothing to weave: no template fragments found in template");
+      generator.showErrorMessage(sourceNode, template, ruleNode, "nothing to weave: no template fragments found in template");
       return;
     }
 
@@ -946,22 +943,55 @@ public class TemplateGenUtil {
   }
 
   protected static INodeBuilder applyReductionRule(SNode sourceNode, SNode reductionRule, ITemplateGenerator generator) {
-    TemplateDeclaration templateDeclaration;
     if (reductionRule instanceof ReductionRule) {
-      templateDeclaration = ((ReductionRule) reductionRule).getTemplate();
-    } else {
-      templateDeclaration = ((Reduction_MappingRule) reductionRule).getTemplate();
+      // old
+      TemplateDeclaration template = ((ReductionRule) reductionRule).getTemplate();
+      return applyReductionRuleTemplate(template, generator, sourceNode, reductionRule);
     }
-    return applyReductionRule(templateDeclaration, generator, sourceNode, reductionRule);
+    // new
+    return applyReductionMappingRule(sourceNode, (Reduction_MappingRule) reductionRule, generator);
   }
 
-  private static INodeBuilder applyReductionRule(TemplateDeclaration templateDeclaration, ITemplateGenerator generator, SNode sourceNode, SNode reductionRule) {
-    if (templateDeclaration == null) {
+  private static INodeBuilder applyReductionMappingRule(SNode sourceNode, Reduction_MappingRule rule, ITemplateGenerator generator) {
+    TemplateDeclaration template = null;
+    RuleConsequence ruleConsequence = rule.getRuleConsequence();
+    if (ruleConsequence != null) {
+      if (ruleConsequence instanceof DismissTopMappingRule) {
+        showGeneratorMessage(((DismissTopMappingRule) ruleConsequence).getGeneratorMessage(), sourceNode, rule, generator);
+        throw new ReductionNotNeededException();
+      } else if (ruleConsequence instanceof TemplateDeclarationReference) {
+        template = ((TemplateDeclarationReference) ruleConsequence).getTemplate();
+      } else {
+        generator.showErrorMessage(sourceNode, null, rule, "unsapported rule consequence");
+      }
+    } else {
+      // old
+      template = rule.getTemplate();
+    }
+
+    return applyReductionRuleTemplate(template, generator, sourceNode, rule);
+  }
+
+  public static void showGeneratorMessage(GeneratorMessage message, SNode sourceNode, SNode rule, ITemplateGenerator generator) {
+    if (message != null) {
+      String text = message.getMessageText();
+      if (message.getMessageType() == GeneratorMessageType.error) {
+        generator.showErrorMessage(sourceNode, null, rule, text);
+      } else if (message.getMessageType() == GeneratorMessageType.warning) {
+        generator.showWarningMessage(sourceNode, text);
+      } else {
+        generator.showInformationMessage(sourceNode, text);
+      }
+    }
+  }
+
+  private static INodeBuilder applyReductionRuleTemplate(TemplateDeclaration template, ITemplateGenerator generator, SNode sourceNode, SNode reductionRule) {
+    if (template == null) {
       generator.showErrorMessage(sourceNode, null, reductionRule, "couldn't apply reduction: no template declaration");
       throw new RuntimeException("no template declaration");
     }
 
-    List<TemplateFragment> templateFragments = getTemplateFragments(templateDeclaration);
+    List<TemplateFragment> templateFragments = getTemplateFragments(template);
 
     // temporarily disable multiple fragments (18JAN07). remove code after reasonable time if nobody need it
 
@@ -989,7 +1019,7 @@ public class TemplateGenUtil {
 
     // enable single-fragment reducing
     if (templateFragments.size() != 1) {
-      generator.showErrorMessage(sourceNode, templateDeclaration, reductionRule, "reduction template must have exactly one template fragment");
+      generator.showErrorMessage(sourceNode, template, reductionRule, "reduction template must have exactly one template fragment");
       throw new RuntimeException("reduction template must have exactly one template fragment");
     }
     TemplateFragment fragment = templateFragments.get(0);
