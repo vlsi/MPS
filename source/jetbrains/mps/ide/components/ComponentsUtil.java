@@ -34,6 +34,37 @@ public class ComponentsUtil {
   public static final String IS_IN_LIST = "isInList";
   public static final String CELL_INFO = "cellInfo";
 
+  public static Element nodeToElement(SNode node) {
+    Element nodeElement = new Element(NODE);
+    SModel model = node.getModel();
+    nodeElement.setAttribute(MODEL, model.getUID().toString());
+    if (model.isExternallyResolvable()) {
+      String extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(node);
+      if (ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)){
+        nodeElement.setAttribute(ID, node.getId());
+      } else {
+        nodeElement.setAttribute(ERI, extResolveInfo);
+      }
+    } else {
+      nodeElement.setAttribute(ID, node.getId());
+    }
+    return nodeElement;
+  }
+
+  //do not remove it. we need it for cell info
+  public static SNode nodeFromElement(Element nodeElement, IScope scope) {
+    String modelUID = nodeElement.getAttributeValue(MODEL);
+    String id = nodeElement.getAttributeValue(ID);
+    String extResolveInfo = nodeElement.getAttributeValue(ERI);
+    SModelDescriptor modelDescriptor = scope.getModelDescriptor(SModelUID.fromString(modelUID));
+    if (modelDescriptor == null) return null;
+    if (!ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
+      return modelDescriptor.getSModel().getNodeByExtResolveInfo(extResolveInfo);
+    } else {
+      return modelDescriptor.getSModel().getNodeById(id);
+    }
+  }
+
   public static Element nodeToElement(SNode node, IModule module) {
     Element nodeElement = new Element(NODE);
     SModel model = node.getModel();
@@ -54,37 +85,7 @@ public class ComponentsUtil {
     }
     return nodeElement;
   }
-
-  public static Element nodeToElement(SNode node) {
-    Element nodeElement = new Element(NODE);
-    SModel model = node.getModel();
-    nodeElement.setAttribute(MODEL, model.getUID().toString());
-    if (model.isExternallyResolvable()) {
-      String extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(node);
-      if (ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)){
-        nodeElement.setAttribute(ID, node.getId());
-      } else {
-        nodeElement.setAttribute(ERI, extResolveInfo);
-      }
-    } else {
-      nodeElement.setAttribute(ID, node.getId());
-    }
-    return nodeElement;
-  }
-
-  public static SNode nodeFromElement(Element nodeElement, IScope scope) {
-    String modelUID = nodeElement.getAttributeValue(MODEL);
-    String id = nodeElement.getAttributeValue(ID);
-    String extResolveInfo = nodeElement.getAttributeValue(ERI);
-    SModelDescriptor modelDescriptor = scope.getModelDescriptor(SModelUID.fromString(modelUID));
-    if (modelDescriptor == null) return null;
-    if (!ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
-      return modelDescriptor.getSModel().getNodeByExtResolveInfo(extResolveInfo);
-    } else {
-      return modelDescriptor.getSModel().getNodeById(id);
-    }
-  }
-
+  
   public static NodeWithContext nodeFromElement(Element nodeElement, MPSProject project) {
     String modelUID = nodeElement.getAttributeValue(MODEL);
     String id = nodeElement.getAttributeValue(ID);
