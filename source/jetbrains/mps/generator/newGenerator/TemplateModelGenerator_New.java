@@ -11,27 +11,73 @@ import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.transformation.TLBase.TemplateDeclaration;
-import jetbrains.mps.transformation.TLBase.TemplateSwitch;
+import jetbrains.mps.util.QueryMethodGenerated;
+import jetbrains.mps.transformation.TLBase.*;
+import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.typesystem.ITypeChecker;
+import jetbrains.mps.core.BaseConcept;
 
 import java.util.Map;
+import java.util.List;
+import java.util.LinkedList;
+import java.util.ArrayList;
 
 /**
  * Created by: Sergey Dmitriev
  * Date: Jan 23, 2007
  */
 public class TemplateModelGenerator_New extends AbstractModelGenerator implements ITemplateGenerator {
+  private SModel myModel;
+  private ArrayList<SNode> myNewRootNodes = new ArrayList<SNode>();
+  private ArrayList<SNode> myRootsToDelete = new ArrayList<SNode>();
+
   public TemplateModelGenerator_New( GenerationSessionContext operationContext,
                                      IAdaptiveProgressMonitor progressMonitor,
-                                     IMessageHandler handler) {
+                                     IMessageHandler handler,
+                                     SModel model) {
     super(operationContext, progressMonitor, handler);
+    myModel = model;
   }
 
   public GenerationSessionContext getGeneratorSessionContext() {
     return (GenerationSessionContext) getOperationContext();
   }
 
+  public void doPrimaryMapping() {
+    RuleManager ruleManager = new RuleManager(this);
+    for (CreateRootRule createRootRule : ruleManager.getCreateRootRules()) {
+      RuleUtil.applyRootRule(this, myModel, createRootRule);
+    }
+    for (MappingRule mappingRule : ruleManager.getMappingRules()) {
+      RuleUtil.applyMappingRule(this, myModel, mappingRule);
+    }
+    for (Root_MappingRule rootMappingRule : ruleManager.getRoot_MappingRules()) {
+      RuleUtil.applyRoot_MappingRule(this, myModel, rootMappingRule);
+    }
+
+    for (SNode rootNode : myNewRootNodes) {
+      myModel.addRoot(rootNode);
+    }
+    for (SNode rootNode : myRootsToDelete) {
+      myModel.removeRoot(rootNode);
+    }
+  }
+
+  public SModel getSourceModel() {
+    return myModel;
+  }
+
+  public void addNewRootNode(SNode node) {
+    myNewRootNodes.add(node);
+  }
+
+  public void addRootToDelete(SNode node) {
+    myRootsToDelete.add(node);
+  }
+
+  public boolean doPrimaryMapping(SModel inputModel, SModel model) throws GenerationFailedException {
+    return false;
+  }
 
   public void setStartState() {
     //To change body of implemented methods use File | Settings | File Templates.
@@ -43,10 +89,6 @@ public class TemplateModelGenerator_New extends AbstractModelGenerator implement
 
   public ITemplateGeneratorState getState() {
     return null;  //To change body of implemented methods use File | Settings | File Templates.
-  }
-
-  public boolean doPrimaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailedException {
-    return false;  //To change body of implemented methods use File | Settings | File Templates.
   }
 
   public boolean doSecondaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailedException {
@@ -153,11 +195,8 @@ public class TemplateModelGenerator_New extends AbstractModelGenerator implement
     //To change body of implemented methods use File | Settings | File Templates.
   }
 
-  public SModel getSourceModel() {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
-  }
-
   public void generate(SModel sourceModel, SModel targetModel) throws GenerationFailedException {
     //To change body of implemented methods use File | Settings | File Templates.
   }
+
 }
