@@ -1404,8 +1404,11 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return false;
   }
 
+  /**
+   * method is final and has strange name to avoid overriding in generated classes (structure)
+   */
   @NotNull
-  public ConceptDeclaration getConceptDeclaration() {
+  public final ConceptDeclaration getConceptDeclaration__() {
     return getConceptDeclaration(GlobalScope.getInstance());
   }
 
