@@ -1081,11 +1081,6 @@ public class SModel implements Iterable<SNode> {
     ourActiveModels.add(this);
   }
 
-  protected void finalize() throws Throwable {
-    super.finalize();
-    ourActiveModels.remove(this);
-  }
-
   public static void checkModels() {
     System.out.println("total models : " + ourActiveModels.size());
 
