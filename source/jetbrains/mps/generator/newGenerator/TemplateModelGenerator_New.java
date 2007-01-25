@@ -16,6 +16,7 @@ import jetbrains.mps.transformation.TLBase.*;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.typesystem.ITypeChecker;
 import jetbrains.mps.core.BaseConcept;
+import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 
 import java.util.Map;
 import java.util.List;
@@ -30,6 +31,7 @@ public class TemplateModelGenerator_New extends AbstractModelGenerator implement
   private SModel myModel;
   private ArrayList<SNode> myNewRootNodes = new ArrayList<SNode>();
   private ArrayList<SNode> myRootsToDelete = new ArrayList<SNode>();
+  private ArrayList<ConceptDeclaration> myAbandonedRootConcepts = new ArrayList<ConceptDeclaration>();
 
   public TemplateModelGenerator_New( GenerationSessionContext operationContext,
                                      IAdaptiveProgressMonitor progressMonitor,
@@ -60,6 +62,14 @@ public class TemplateModelGenerator_New extends AbstractModelGenerator implement
     }
     for (SNode rootNode : myRootsToDelete) {
       myModel.removeRoot(rootNode);
+    }
+    for (SNode rootNode : myModel.getRoots()) {
+      List<ConceptDeclaration> abandonedRootConcepts = ruleManager.getAbandonedRootConcepts();
+      for (ConceptDeclaration abandonedRootConcept : abandonedRootConcepts) {
+        if(rootNode.isInstanceOfConcept(abandonedRootConcept, getScope())){
+          myModel.removeRoot(rootNode);
+        }
+      }
     }
   }
 

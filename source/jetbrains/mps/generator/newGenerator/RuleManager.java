@@ -24,6 +24,7 @@ public class RuleManager {
   private List<Weaving_MappingRule> myWeaving_MappingRules;
   private List<ReductionRule> myReductionRules;
   private List<Reduction_MappingRule> myReduction_MappingRules;
+  private List<ConceptDeclaration> myAbandonedRootConcepts;
   protected ITemplateGenerator myGenerator;
 
   public RuleManager(ITemplateGenerator generator) {
@@ -56,6 +57,7 @@ public class RuleManager {
     myReductionRules = new LinkedList<ReductionRule>();
     myReduction_MappingRules = new LinkedList<Reduction_MappingRule>();
     myOutputRootConcepts = new LinkedList<ConceptDeclaration>();
+    myAbandonedRootConcepts = new LinkedList<ConceptDeclaration>();
     initRules();
   }
 
@@ -111,6 +113,14 @@ public class RuleManager {
       while (reduction_MappingRules.hasNext()) {
         myReduction_MappingRules.add(reduction_MappingRules.next());
       }
+
+      List<ConceptDeclarationReference> abandonRootRules = mappingConfig.getAbandonRootRules();
+      for (ConceptDeclarationReference abandonRoot : abandonRootRules) {
+        ConceptDeclaration concept = abandonRoot.getConceptDeclaration();
+        if (!myAbandonedRootConcepts.contains(concept)) {
+          myAbandonedRootConcepts.add(concept);
+        }
+      }
     }
   }
 
@@ -145,5 +155,9 @@ public class RuleManager {
 
   public List<Reduction_MappingRule> getReduction_MappingRules() {
     return myReduction_MappingRules;
+  }
+
+  public List<ConceptDeclaration> getAbandonedRootConcepts() {
+    return myAbandonedRootConcepts;
   }
 }
