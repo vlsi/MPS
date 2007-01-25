@@ -2,10 +2,10 @@ package jetbrains.mps.logging;
 
 import jetbrains.mps.ide.command.CommandProcessor;
 
-import java.util.Map;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.ArrayList;
+import java.util.Map;
 
 /**
  * @author Kostik
@@ -18,11 +18,16 @@ public class Logger {
     addLoggingHandler(new Log4jLogginHandler());
   }
 
+
   public static synchronized Logger getLogger(Class cls) {
-    if (!ourLoggers.containsKey(cls.getName())) {
-      ourLoggers.put(cls.getName(), new Logger(cls.getName()));
+    return getLogger(cls.getName());
+  }
+
+  public static synchronized Logger getLogger(String name) {
+    if (!ourLoggers.containsKey(name)) {
+      ourLoggers.put(name, new Logger(name));
     }         
-    return ourLoggers.get(cls.getName());
+    return ourLoggers.get(name);
   }
 
   public static synchronized void addLoggingHandler(ILoggingHandler lh) {
