@@ -190,8 +190,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return name;
   }
 
-  private static long ourCounter = 0;
-
   public class TransientModule extends AbstractModule {
     private List<IModule> myDependOnModules = new LinkedList<IModule>();
     private IModule myInvocationModule;
@@ -199,8 +197,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     private ModuleDescriptor myModuleDescriptor = new ModuleDescriptor(myProjectModelDescriptor.getSModel());
 
     private MPSModuleOwner myOwnOnwer = new MPSModuleOwner() { };
-
-    private long myNumber = ourCounter++;
 
     TransientModule(IModule invocationModule, List<Generator> generatorModules) {
       myInvocationModule = invocationModule;
@@ -266,13 +262,13 @@ public class GenerationSessionContext extends StandaloneMPSContext {
         generatorsString += "/";
       }
 
-      return "TransientModule:[" + myInvocationModule + "]->[" + generatorsString + "] " + myNumber;
+      return "TransientModule:[" + myInvocationModule + "]->[" + generatorsString + "] ";
     }
 
 
     @NotNull
     public String getModuleUID() {
-      return "Transient module " + myNumber;
+      return "";
     }
 
     public String getGeneratorOutputPath() {
