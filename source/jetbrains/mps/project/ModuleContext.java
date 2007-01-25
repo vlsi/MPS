@@ -75,6 +75,11 @@ public class ModuleContext extends StandaloneMPSContext {
               "\nCouldn't find owner module for model \"" + modelDescriptor.getModelUID() + "\"");
       return null;
     }
+
+    if (owningModules.size() != 1) {
+      LOG.warning("More than one owner of the node.");
+    }
+
     return new ModuleContext(owningModules.iterator().next(), project);
   }
 }
