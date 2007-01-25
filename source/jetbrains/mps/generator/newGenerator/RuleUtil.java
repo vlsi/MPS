@@ -112,7 +112,7 @@ public class RuleUtil {
   private static void createRootNodeFromTemplate(TemplateModelGenerator_New generator, SModel outputModel, SNode templateNode, SNode sourceNode) {
     SNode outputNode = createNodeFromTemplate(generator, outputModel, templateNode, sourceNode);
     generator.addNewRootNode(outputNode);
-    if(templateNode.isRoot()) generator.addRootToDelete(templateNode);
+    if(sourceNode != null && sourceNode.isRoot()) generator.addRootToDelete(sourceNode);
   }
 
   private static SNode createNodeFromTemplate(ITemplateGenerator generator, SModel outputModel, SNode templateNode, SNode sourceNode) {
