@@ -113,10 +113,6 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
       }
     });
 
-    AbstractActionAdapter adapter = new AbstractActionAdapter(newConceptAction(), new ActionContext(null));
-    myToolbar.add(new JButton(adapter));
-    MPSActionUpdater.getInstance().add(adapter);
-
     rebuildTree();
   }
 
@@ -527,47 +523,4 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     }
   } // private class MyTree
 
-  private MPSAction newConceptAction() {
-    return new MPSAction("New Concept") {
-      private SModelDescriptor myModel;
-
-      public Icon getIcon() {
-        return jetbrains.mps.bootstrap.structureLanguage.icons.Icons.CONCEPT_DECLARATION_ICON;
-      }
-
-      public boolean executeInsideCommand() {
-        return false;
-      }
-
-      public void update(@NotNull ActionContext context) {
-        ProjectLanguageTreeNode projectLanguageTreeNode = ProjectPane.this.getSelectedProjectLanguageTreeNode();
-        if (projectLanguageTreeNode == null) {
-          setName("New Concept");
-          setEnabled(false);
-          return;
-        }
-        Language l = projectLanguageTreeNode.getLanguage();
-        myModel = l.getStructureModelDescriptor();
-        setName(l.getNamespace());
-        setEnabled(true);
-      }
-
-      public void execute(@NotNull final ActionContext context) {
-        update(context);
-        if (!isEnabled()) return;
-        final ConceptDeclaration[] node = new ConceptDeclaration[1];
-        final ConceptDeclaration conceptConcept = SModelUtil.findConceptDeclaration(ConceptDeclaration.class, context.getScope());
-        CommandProcessor.instance().executeCommand(new Runnable() {
-          public void run() {
-            SModel model = myModel.getSModel();
-            node[0] = (ConceptDeclaration) NodeFactoryManager.createNode(conceptConcept, null, null, model, context.getScope());
-            model.addRoot(node[0]);
-          }
-        });
-
-        ProjectPane.this.selectNode(node[0], context.get(IOperationContext.class));
-        ProjectPane.this.openEditor();
-      }
-    };
-  }
 }

@@ -16,6 +16,7 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import java.util.List;
+import java.util.ArrayList;
 
 /**
  * @author Kostik
@@ -32,7 +33,7 @@ public class CreateRootNodeGroup extends ActionGroup {
     IDEProjectFrame ide = context.get(IDEProjectFrame.class);
     IOperationContext operationContext = context.get(IOperationContext.class);
 
-    List<Language> modelLanguages = modelDescriptor.getSModel().getLanguages(operationContext.getScope());
+    List<Language> modelLanguages = modelDescriptor == null ? new ArrayList<Language>(): modelDescriptor.getSModel().getLanguages(operationContext.getScope());
     if (modelLanguages.size() == 0) {
       add(new MPSAction("<NO LANGUAGES>") {
         public void execute(@NotNull ActionContext c) {
