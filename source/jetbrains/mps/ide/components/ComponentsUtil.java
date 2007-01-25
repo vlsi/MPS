@@ -4,10 +4,15 @@ import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.nodeEditor.CellInfo;
+import jetbrains.mps.ide.messages.NodeWithContext;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ModuleContext;
 import org.jdom.DataConversionException;
 import org.jdom.Element;
 
 import java.awt.Rectangle;
+import java.io.File;
 
 /**
  * @author Kostik
@@ -17,6 +22,7 @@ public class ComponentsUtil {
 
   public static final String NODE = "node";
   public static final String MODEL = "model";
+  public static final String MODULE = "module";
   public static final String ID = "id";
   public static final String ERI = "extResolveInfo";
   public static final String RECTANGLE = "rectangle";
@@ -27,6 +33,27 @@ public class ComponentsUtil {
   public static final String NUMBER = "number";
   public static final String IS_IN_LIST = "isInList";
   public static final String CELL_INFO = "cellInfo";
+
+  public static Element nodeToElement(SNode node, IModule module) {
+    Element nodeElement = new Element(NODE);
+    SModel model = node.getModel();
+    nodeElement.setAttribute(MODEL, model.getUID().toString());
+    File descriptorFile = module.getDescriptorFile();
+    if (descriptorFile != null) {
+      nodeElement.setAttribute(MODULE, descriptorFile.getAbsolutePath());
+    }
+    if (model.isExternallyResolvable()) {
+      String extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(node);
+      if (ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)){
+        nodeElement.setAttribute(ID, node.getId());
+      } else {
+        nodeElement.setAttribute(ERI, extResolveInfo);
+      }
+    } else {
+      nodeElement.setAttribute(ID, node.getId());
+    }
+    return nodeElement;
+  }
 
   public static Element nodeToElement(SNode node) {
     Element nodeElement = new Element(NODE);
@@ -56,6 +83,30 @@ public class ComponentsUtil {
     } else {
       return modelDescriptor.getSModel().getNodeById(id);
     }
+  }
+
+  public static NodeWithContext nodeFromElement(Element nodeElement, MPSProject project) {
+    String modelUID = nodeElement.getAttributeValue(MODEL);
+    String id = nodeElement.getAttributeValue(ID);
+    String extResolveInfo = nodeElement.getAttributeValue(ERI);
+    String modulePath = nodeElement.getAttributeValue(MODULE);
+
+    if (modulePath == null) {
+      return null;
+    }
+
+    IModule m = MPSModuleRepository.getInstance().getModuleByFile(new File(modulePath));
+    IScope scope = m.getScope();
+    SModelDescriptor modelDescriptor = scope.getModelDescriptor(SModelUID.fromString(modelUID));
+    if (modelDescriptor == null) return null;
+
+    SNode node;
+    if (!ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
+      node =  modelDescriptor.getSModel().getNodeByExtResolveInfo(extResolveInfo);
+    } else {
+      node =  modelDescriptor.getSModel().getNodeById(id);
+    }
+    return new NodeWithContext(node, new ModuleContext(m, project));
   }
 
   public static CellInfo cellInfoFromElement(Element cellElement, IScope scope) {

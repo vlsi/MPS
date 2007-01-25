@@ -139,6 +139,10 @@ public class MPSModuleRepository {
     return registerModule(file, owner, Solution.class);
   }
 
+  public IModule getModuleByFile(File file) {
+    return myFileToModuleMap.get(file.getAbsolutePath());
+  }
+
   @NotNull
   public <TM extends IModule> TM registerModule(File file, MPSModuleOwner owner, Class<TM> cls) {
     try {
