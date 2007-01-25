@@ -9,6 +9,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelPersistence;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.core.BaseConcept;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 
@@ -115,24 +116,39 @@ public class RuleUtil {
     if(sourceNode != null && sourceNode.isRoot()) generator.addRootToDelete(sourceNode);
   }
 
-  private static SNode createNodeFromTemplate(ITemplateGenerator generator, SModel outputModel, SNode templateNode, SNode sourceNode) {
+  private static SNode createNodeFromTemplate(TemplateModelGenerator_New generator, SModel outputModel, SNode templateNode, SNode sourceNode) {
     SNode outputNode = ModelPersistence.createNodeInstance(templateNode.getClass().getName(), outputModel);
     if(outputNode == null) {
       generator.showErrorMessage(null, templateNode, "'createNodeFromTemplate' cannot create root node");
       return null;
     }
+    generator.addOutputNodeByTemplateNodeAndSourceNode(templateNode, sourceNode, outputNode);
     outputModel.addLanguage(templateNode.getLanguage(generator.getScope()));
     for (String property : templateNode.getProperties().keySet()) {
       outputNode.setProperty(property, templateNode.getProperty(property), false);
     }
 
-
-//    List<NodeMacro> nodeMacros = PropertyMacro_AnnotationLink.getPropertyMacro((BaseConcept) templateNode, "");
+    for (SReference reference : templateNode.getReferences()) {
+      SNode templatereferentNode = reference.getTargetNode();
+      if(templatereferentNode == null) {
+        generator.showErrorMessage(null, templateNode, "'createNodeFromTemplate' referent node is null in template model");
+        continue;
+      }
+      if(templatereferentNode.getModel().equals(outputModel)) {
+        generator.addReferenceInfo(new ReferenceInfo_Default(outputNode, reference.getRole(), templatereferentNode));
+      }
+      else {
+        outputNode.addReferent(reference.getRole(), templatereferentNode);
+      }
+    }
 
 
     for (SNode templateChildNode : templateNode.getChildren()) {
       if (templateChildNode instanceof PropertyMacro) {
         MacroUtil.expandPropertyMacro(generator, (PropertyMacro)templateChildNode, sourceNode, templateNode, outputNode);
+      }
+      else if(templateChildNode instanceof ReferenceMacro) {
+        generator.addReferenceInfo(new ReferenceInfo_Macro(outputNode, templateChildNode, (ReferenceMacro)templateChildNode));
       }
       else {
         SNode outputChildNode = createNodeFromTemplate(generator, outputModel, templateChildNode, sourceNode);

@@ -12,16 +12,14 @@ import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.QueryMethodGenerated;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.transformation.TLBase.*;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.typesystem.ITypeChecker;
 import jetbrains.mps.core.BaseConcept;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 
-import java.util.Map;
-import java.util.List;
-import java.util.LinkedList;
-import java.util.ArrayList;
+import java.util.*;
 
 /**
  * Created by: Sergey Dmitriev
@@ -31,7 +29,9 @@ public class TemplateModelGenerator_New extends AbstractModelGenerator implement
   private SModel myModel;
   private ArrayList<SNode> myNewRootNodes = new ArrayList<SNode>();
   private ArrayList<SNode> myRootsToDelete = new ArrayList<SNode>();
-  private ArrayList<ConceptDeclaration> myAbandonedRootConcepts = new ArrayList<ConceptDeclaration>();
+  private ArrayList<ReferenceInfo> myReferenceInfos = new ArrayList<ReferenceInfo>();
+  private HashMap<Pair<SNode, SNode>, SNode> myTemplateNodeAndSourceNodeToOutputNodeMap = new HashMap<Pair<SNode, SNode>, SNode>();
+
 
   public TemplateModelGenerator_New( GenerationSessionContext operationContext,
                                      IAdaptiveProgressMonitor progressMonitor,
@@ -55,6 +55,10 @@ public class TemplateModelGenerator_New extends AbstractModelGenerator implement
     }
     for (Root_MappingRule rootMappingRule : ruleManager.getRoot_MappingRules()) {
       RuleUtil.applyRoot_MappingRule(this, myModel, rootMappingRule);
+    }
+
+    for (ReferenceInfo referenceInfo : myReferenceInfos) {
+      referenceInfo.execute(this);
     }
 
     for (SNode rootNode : myNewRootNodes) {
@@ -84,6 +88,25 @@ public class TemplateModelGenerator_New extends AbstractModelGenerator implement
   public void addRootToDelete(SNode node) {
     myRootsToDelete.add(node);
   }
+
+
+  public SNode findOutputNodeByTemplateNodeAndSourceNode(SNode templateNode, SNode sourceNode) {
+    return myTemplateNodeAndSourceNodeToOutputNodeMap.get(new Pair(templateNode, sourceNode));
+  }
+
+  public void addOutputNodeByTemplateNodeAndSourceNode(SNode templateNode, SNode sourceNode, SNode outputNode) {
+    Pair key = new Pair(templateNode, sourceNode);
+    if(myTemplateNodeAndSourceNodeToOutputNodeMap.get(key) != null) {
+      showErrorMessage(sourceNode, templateNode, "The output node already exists, that was build by this template and source node");
+    }
+    myTemplateNodeAndSourceNodeToOutputNodeMap.put(key, outputNode);
+  }
+
+
+  public void addReferenceInfo(ReferenceInfo referenceInfo) {
+    myReferenceInfos.add(referenceInfo);
+  }
+
 
   public boolean doPrimaryMapping(SModel inputModel, SModel model) throws GenerationFailedException {
     return false;
