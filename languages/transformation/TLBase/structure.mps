@@ -671,10 +671,6 @@
       <property name="value" value="the 'template' reference is deprecated" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1162838948922" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1168614955974">
-      <property name="name" value="actionQueryId" />
-      <link role="dataType" targetNodeId="2.1082983041843" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1167327847732">
       <property name="sourceCardinality" value="0..1" />
       <property name="role" value="template" />
