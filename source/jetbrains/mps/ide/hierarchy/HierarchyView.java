@@ -79,7 +79,7 @@ public class HierarchyView extends DefaultTool {
 
         new GoToNodeWindow(myIde, nodes.toArray(new SNode[0])) {
           protected void doChoose(final SNode node) {
-            final IOperationContext operationContext = ModuleContext.create(node, myIde.getProject());
+            final IOperationContext operationContext = ModuleContext.create(node, myIde);
             showConceptInHierarchy((ConceptDeclaration) node, operationContext);
           }
         };

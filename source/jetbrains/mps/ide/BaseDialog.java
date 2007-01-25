@@ -158,6 +158,7 @@ public abstract class BaseDialog extends JDialog {
 
         public void actionPerformed(ActionEvent e) {
           try {
+            m.setAccessible(true);
             m.invoke(BaseDialog.this);
           } catch (IllegalAccessException e1) {
             LOG.error(e1);
