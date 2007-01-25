@@ -4020,38 +4020,6 @@
           <link role="relationDeclaration" targetNodeId="4.1078489098626" />
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1168905781012">
-        <property name="drawBorder" value="false" />
-        <property name="selectable" value="false" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1168905786848">
-        <property name="drawBorder" value="false" />
-        <property name="selectable" value="false" />
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1168905786849">
-          <property name="text" value="catch" />
-          <property name="drawBorder" value="false" />
-          <property name="selectable" value="false" />
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1168905786850">
-          <property name="drawBorder" value="false" />
-          <property name="vertical" value="true" />
-          <property name="selectable" value="false" />
-          <property name="drawBrackets" value="true" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1168905786856">
-            <property name="drawBorder" value="false" />
-            <property name="selectable" value="false" />
-            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1168905786857">
-              <property name="text" value="action:" />
-              <property name="drawBorder" value="false" />
-              <property name="selectable" value="false" />
-            </node>
-            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1168905786858">
-              <property name="drawBorder" value="false" />
-              <property name="cellProviderId" value="reductionRuleAction_QueryId" />
-            </node>
-          </node>
-        </node>
-      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1167514442227">
