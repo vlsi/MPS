@@ -21,7 +21,7 @@ public class MPSModuleRepository {
   private static final Logger LOG = Logger.getLogger(MPSModuleRepository.class);
 
   private Map<String, IModule> myFileToModuleMap = new HashMap<String, IModule>();
-  private Map<String, IModule> myUIDToModuleMap = new HashMap<String, IModule>();
+  private Map<String, Set<IModule>> myUIDToModulesMap = new HashMap<String, Set<IModule>>();
   private Map<IModule, Set<MPSModuleOwner>> myModuleToOwnersMap = new HashMap<IModule, Set<MPSModuleOwner>>();
 
   private List<ModuleRepositoryListener> myModuleListeners = new ArrayList<ModuleRepositoryListener>();
@@ -173,9 +173,26 @@ public class MPSModuleRepository {
     }
   }
 
+  private void putModuleWithUID(String moduleUID, IModule module) {
+    Set<IModule> modulesWithUID = myUIDToModulesMap.get(moduleUID);
+    if (modulesWithUID == null) {
+      modulesWithUID = new HashSet<IModule>();
+      myUIDToModulesMap.put(moduleUID, modulesWithUID);
+    }
+    if (module instanceof Language || modulesWithUID instanceof DevKit) {
+      if (modulesWithUID.size() > 1) {
+        LOG.error("can't add module "+ moduleUID + " : module with the same UID exists");
+      }
+      if (modulesWithUID.size() == 1 && modulesWithUID.iterator().next() != module) {
+        LOG.error("can't add module "+ moduleUID + " : module with the same UID exists");
+      }
+    }
+    modulesWithUID.add(module);
+  }
+
   public boolean existsModule(@NotNull IModule module, @NotNull MPSModuleOwner owner) {
     Set<MPSModuleOwner> mpsModuleOwners = myModuleToOwnersMap.get(module);
-    return (myUIDToModuleMap.containsKey(module.getModuleUID()) && mpsModuleOwners != null && mpsModuleOwners.contains(owner));
+    return (mpsModuleOwners != null && mpsModuleOwners.contains(owner));
   }
 
   public void addModule(@NotNull IModule module, @NotNull MPSModuleOwner owner) {
@@ -187,7 +204,7 @@ public class MPSModuleRepository {
       if (descriptorFile != null && !myFileToModuleMap.containsKey(descriptorFile.getCanonicalPath())) {
         myFileToModuleMap.put(descriptorFile.getCanonicalPath(), module);
       }
-      if (!myUIDToModuleMap.containsKey(module.getModuleUID())) myUIDToModuleMap.put(module.getModuleUID(), module);
+      putModuleWithUID(module.getModuleUID(), module);
       Set<MPSModuleOwner> owners = myModuleToOwnersMap.get(module);
       if (owners == null) owners = new HashSet<MPSModuleOwner>();
       owners.add(owner);
@@ -199,7 +216,7 @@ public class MPSModuleRepository {
   }
 
   public void unRegisterModules(@NotNull MPSModuleOwner owner) {
-    for (IModule module : myUIDToModuleMap.values()) {
+    for (IModule module : myModuleToOwnersMap.keySet()) {
       Set owners = myModuleToOwnersMap.get(module);
       if (owners != null) {
         owners.remove(owner);
@@ -262,7 +279,7 @@ public class MPSModuleRepository {
   private void removeModule(@NotNull IModule module) {
     File descriptorFile = module.getDescriptorFile();
     myModuleToOwnersMap.remove(module);
-    myUIDToModuleMap.remove(module.getModuleUID());
+    removeModuleFromUIDMap(module);
     if (descriptorFile != null) {
       try {
         myFileToModuleMap.remove(descriptorFile.getCanonicalPath());
@@ -270,6 +287,13 @@ public class MPSModuleRepository {
       } catch (IOException e) {
         LOG.error(e);
       }
+    }
+  }
+
+  private void removeModuleFromUIDMap(IModule module) {
+    Set<IModule> modules = myUIDToModulesMap.get(module.getModuleUID());
+    if (modules != null) {
+      modules.remove(module);
     }
   }
 
@@ -337,38 +361,46 @@ public class MPSModuleRepository {
     }
   }
 
-  @Nullable
-  private Language moduleAsLanguage(@Nullable IModule module) {
-    if (module instanceof Language) return (Language) module;
-    return null;
-  }
-
-  @Nullable
-  public IModule getModule(@NotNull String namespace) {
-    return myUIDToModuleMap.get(namespace);
-  }
 
   @Nullable
   public Language getLanguage(@NotNull String namespace) {
-    return moduleAsLanguage(getModule(namespace));
+    Set<IModule> modules = myUIDToModulesMap.get(namespace);
+    if (modules == null || modules.isEmpty()) return null;
+    return modulesAsLanguage(modules);
   }
 
-  @Nullable
-  public IModule getModule(@NotNull String namespace, @NotNull MPSModuleOwner moduleOwner) {
-    IModule module = myUIDToModuleMap.get(namespace);
-    if (module == null) {
-      return null;
+  @NotNull
+  public Set<IModule> getModules(@NotNull String namespace, @NotNull MPSModuleOwner moduleOwner) {
+    Set<IModule> modules = myUIDToModulesMap.get(namespace);
+    Set<IModule> result = new HashSet<IModule>();
+    if (modules == null) {
+      return result;
     }
-    Set<MPSModuleOwner> languageOwners = myModuleToOwnersMap.get(module);
-    if (languageOwners.contains(moduleOwner)) {
-      return module;
+    for (IModule module : modules) {
+      Set<MPSModuleOwner> languageOwners = myModuleToOwnersMap.get(module);
+      if (languageOwners.contains(moduleOwner)) {
+        result.add(module);
+      }
     }
-    return null;
+    return result;
+  }
+
+  private Language modulesAsLanguage(Set<IModule> modules) {
+    Language language = null;
+    for (IModule module : modules) {
+      if (module instanceof Language) {
+        language = (Language) module;
+      }
+    }
+    if (language != null && modules.size() > 1) {
+      LOG.error("more than 1 language registered with the same namespace: " + language.getNamespace());
+    }
+    return language;
   }
 
   @Nullable
   public Language getLanguage(String namespace, MPSModuleOwner moduleOwner) {
-    return moduleAsLanguage(getModule(namespace, moduleOwner));
+    return modulesAsLanguage(getModules(namespace, moduleOwner));
   }
 
   public <MT extends IModule> List<MT> getModules(MPSModuleOwner moduleOwner, Class<MT> cls) {
