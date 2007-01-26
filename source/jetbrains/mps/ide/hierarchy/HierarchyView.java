@@ -14,6 +14,7 @@ import jetbrains.mps.ide.ui.TreeTextUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 
 import javax.swing.*;
@@ -52,7 +53,8 @@ public class HierarchyView extends DefaultTool {
 
 
 
-  public void showConceptInHierarchy(ConceptDeclaration node, IOperationContext context) {
+  public void showConceptInHierarchy(ConceptDeclaration node, IOperationContext _context) {
+    IOperationContext context = _context == null ? null : _context.getProject().createOperationContext();
     myHierarchyTree.setOperationContext(context);
     myContext = context;
     myHierarchyTree.myConceptDeclaration = node;
@@ -79,8 +81,11 @@ public class HierarchyView extends DefaultTool {
 
         new GoToNodeWindow(myIde, nodes.toArray(new SNode[0])) {
           protected void doChoose(final SNode node) {
-            final IOperationContext operationContext = ModuleContext.create(node, myIde);
-            showConceptInHierarchy((ConceptDeclaration) node, operationContext);
+            MPSProject project = myIde.getProject();
+            if (project != null) {
+              final IOperationContext operationContext = project.createOperationContext();
+              showConceptInHierarchy((ConceptDeclaration) node, operationContext);
+            }
           }
         };
       }
