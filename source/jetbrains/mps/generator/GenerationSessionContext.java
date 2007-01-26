@@ -231,9 +231,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     }
 
     public void dispose() {
-
-      System.out.println("disposing " + this);
-
       MPSModuleRepository.getInstance().unRegisterModules(this);
       MPSModuleRepository.getInstance().unRegisterModules(myOwnOnwer);
 
@@ -246,13 +243,9 @@ public class GenerationSessionContext extends StandaloneMPSContext {
         }
       }
 
-      System.out.println("my owners = " + MPSModuleRepository.getInstance().getOwners(this));
-
       if (MPSModuleRepository.getInstance().getOwners(this).size() != 0) {
         MPSModuleRepository.getInstance().unRegisterModules(myOwnOnwer);
       }
-
-      System.out.println("stub owner = " + myOwnOnwer);
     }
 
     public String toString() {

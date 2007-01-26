@@ -108,11 +108,13 @@ public class SModelRepository extends SModelAdapter {
   }
 
   public void refreshModels(Set<SModelDescriptor> skip) {
+    LOG.debug("Model refresh");
     for (SModelDescriptor m : new LinkedList<SModelDescriptor>(myUIDToModelDescriptorMap.values())) {
       if (!skip.contains(m)) {
         m.refresh();
       }
     }
+    LOG.debug("Model refresh done");
   }
 
   public void refreshModels() {

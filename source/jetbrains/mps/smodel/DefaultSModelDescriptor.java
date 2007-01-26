@@ -276,6 +276,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 
   public void refresh() {
     if (isInitialized()) {
+      long start = System.currentTimeMillis();
       myFastNodeFinder = null;
       myModelListeners.addAll(mySModel.getListeners());
       myModelCommandListeners.addAll(mySModel.getCommandListeners());
@@ -284,6 +285,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
       if (mySModel != null) {
         addListenersToNewModel();
       }
+      LOG.debug("Refresh  " + getModelUID() + ". Took " + (System.currentTimeMillis() - start) + " ms");
     }
   }
 

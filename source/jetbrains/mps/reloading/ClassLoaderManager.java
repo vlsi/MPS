@@ -1,21 +1,20 @@
 package jetbrains.mps.reloading;
 
+import jetbrains.mps.component.Dependency;
+import jetbrains.mps.component.IComponentLifecycle;
 import jetbrains.mps.conversion.classpath.ClassPathModelRootManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.util.PathUtil;
-import jetbrains.mps.component.Dependency;
-import jetbrains.mps.component.IComponentLifecycle;
 import sun.misc.Launcher;
 
 import java.io.File;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.util.Set;
 import java.util.LinkedHashSet;
+import java.util.Set;
 
 /**
  * @author Kostik
@@ -89,6 +88,8 @@ public class ClassLoaderManager implements IComponentLifecycle {
   public void updateClassPath() {
     if (myUseSystemClassLoader) return;
 
+    LOG.debug("Updating class path");
+
     myItems = new CompositeClassPathItem();
 
 
@@ -116,7 +117,9 @@ public class ClassLoaderManager implements IComponentLifecycle {
 
     if (myModuleRepository != null) {
       for (IModule l : myModuleRepository.getAllModules()) {
+        LOG.debug("Adding classpath from model " + l);
         for (String s : l.getClassPathItems()) {
+          LOG.debug("Add " + s);
           addClassPathItem(s);
         }
       }
@@ -125,17 +128,21 @@ public class ClassLoaderManager implements IComponentLifecycle {
     myClassLoader = new MPSClassLoader(myItems);
 
     if (myProjects != null) {
+      LOG.debug("Updating java stubs");
       for (MPSProject project : myProjects.getProjects()) {
         for (IModule module : project.getModules()) {
+          LOG.debug("Updating in module " + module);          
           AbstractModule am = (AbstractModule) module;
-
           ClassPathModelRootManager manager = new ClassPathModelRootManager();
-          for (ModelRoot r : am.getModelRoots()) {
+          //todo where we are going to release classes that we don't need anymore?          
+          for (ModelRoot r : am.getDefaultModelRoots()) {
             manager.read(r, module);
           }
         }
       }
     }
+
+    LOG.debug("Done");
   }
 
   private void addClassPathItem(String s) {
