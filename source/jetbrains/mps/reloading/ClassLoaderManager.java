@@ -13,8 +13,7 @@ import sun.misc.Launcher;
 import java.io.File;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @author Kostik
@@ -22,10 +21,12 @@ import java.util.Set;
 public class ClassLoaderManager implements IComponentLifecycle {
   private static Logger LOG = Logger.getLogger(ClassLoaderManager.class);
 
-  private static ClassLoaderManager ourInstance;
   private CompositeClassPathItem myItems;
   private MPSProjects myProjects;
   private MPSModuleRepository myModuleRepository;
+
+  private Map<String, IClassPathItem> myCachedItems = new HashMap<String, IClassPathItem>();
+  private Set<String> myAlreadyAdded = new HashSet<String>();
 
   public static ClassLoaderManager getInstance() {
     return ApplicationComponents.getInstance().getComponent(ClassLoaderManager.class);
@@ -85,10 +86,33 @@ public class ClassLoaderManager implements IComponentLifecycle {
     } 
   }
 
+  private void cacheOldItems(CompositeClassPathItem ci) {
+    for (IClassPathItem c : ci.getChildren()) {
+
+//      if (c instanceof FileClassPathItem) {
+//        FileClassPathItem fcpi = (FileClassPathItem) c;
+//        myCachedItems.put(fcpi.getClassPath(), c);
+//      }
+
+      if (c instanceof JarFileClassPathItem) {
+        JarFileClassPathItem jfcpi = (JarFileClassPathItem) c;
+        myCachedItems.put(jfcpi.getFile().getAbsolutePath(), c);
+      }
+
+      if (c instanceof CompositeClassPathItem) {
+        cacheOldItems((CompositeClassPathItem) c);
+      }
+    }
+  }
+
   public void updateClassPath() {
     if (myUseSystemClassLoader) return;
 
     LOG.debug("Updating class path");
+
+    if (myItems != null) {
+      cacheOldItems(myItems);
+    }
 
     myItems = new CompositeClassPathItem();
 
@@ -142,10 +166,28 @@ public class ClassLoaderManager implements IComponentLifecycle {
       }
     }
 
+    myCachedItems.clear();
+    myAlreadyAdded.clear();
+
     LOG.debug("Done");
   }
 
-  private void addClassPathItem(String s) {
+  private void addClassPathItem(String s) {    
+    if (myAlreadyAdded.contains(s)) {
+      return;
+    }
+
+    if (myCachedItems.containsKey(s)) {
+      IClassPathItem i = myCachedItems.get(s);
+
+      if (i.getTimestamp() == new File(s).lastModified()) {
+        myItems.add(i);
+      }
+
+      return;
+    }
+
+
     if (!new File(s).exists()) {
       LOG.warning("Class path item doesn't exist " + s);
     } else {
