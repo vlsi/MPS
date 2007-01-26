@@ -9,16 +9,18 @@ import jetbrains.mps.transformation.TLBase.ReferenceMacro;
  */
 public class ReferenceInfo_Macro extends ReferenceInfo {
   private SNode myTemplateReferentNode;
+  private SNode myInputNode;
   private ReferenceMacro myReferenceMacro;
 
-  public ReferenceInfo_Macro(SNode outputNode, SNode templateReferentNode, ReferenceMacro refMacro) {
+  public ReferenceInfo_Macro(ReferenceMacro refMacro, SNode inputNode, SNode templateReferentNode, SNode outputNode) {
     super(outputNode);
     myTemplateReferentNode = templateReferentNode;
     myReferenceMacro = refMacro;
+    myInputNode = inputNode;
 
   }
 
   public void execute(TemplateModelGenerator_New generator) {
-    MacroUtil.expandReferenceMacro(generator, myReferenceMacro, myOutputNode, myTemplateReferentNode, myOutputNode);
+    MacroUtil.expandReferenceMacro(generator, myReferenceMacro, myInputNode, myTemplateReferentNode, myOutputNode);
   }
 }

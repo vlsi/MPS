@@ -32,6 +32,7 @@ public class TemplateModelGenerator_New extends AbstractModelGenerator implement
   private ArrayList<ReferenceInfo> myReferenceInfos = new ArrayList<ReferenceInfo>();
   private HashMap<Pair<SNode, SNode>, SNode> myTemplateNodeAndInputNodeToOutputNodeMap = new HashMap<Pair<SNode, SNode>, SNode>();
   private HashMap<Pair<String, SNode>, SNode> myRuleNameAndInputNodeToOutputNodeMap = new HashMap<Pair<String, SNode>, SNode>();
+  private DelayedChanges myDelayedChanges = new DelayedChanges();
 
 
   public TemplateModelGenerator_New( GenerationSessionContext operationContext,
@@ -58,9 +59,6 @@ public class TemplateModelGenerator_New extends AbstractModelGenerator implement
       RuleUtil.applyRoot_MappingRule(this, myModel, rootMappingRule);
     }
 
-    for (ReferenceInfo referenceInfo : myReferenceInfos) {
-      referenceInfo.execute(this);
-    }
 
     for (SNode rootNode : myNewRootNodes) {
       myModel.addRoot(rootNode);
@@ -75,6 +73,12 @@ public class TemplateModelGenerator_New extends AbstractModelGenerator implement
           myModel.removeRoot(rootNode);
         }
       }
+    }
+
+    myDelayedChanges.doAllChanges();
+
+    for (ReferenceInfo referenceInfo : myReferenceInfos) {
+      referenceInfo.execute(this);
     }
   }
 
@@ -120,6 +124,9 @@ public class TemplateModelGenerator_New extends AbstractModelGenerator implement
     myReferenceInfos.add(referenceInfo);
   }
 
+  public DelayedChanges getDelayedChanges() {
+    return myDelayedChanges;
+  }
 
   public boolean doPrimaryMapping(SModel inputModel, SModel model) throws GenerationFailedException {
     return false;

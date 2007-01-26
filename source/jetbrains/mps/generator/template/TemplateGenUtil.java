@@ -754,6 +754,10 @@ public class TemplateGenUtil {
     return sourceNodes;
   }
 
+  public static List<SNode> createSourceNodeListForTemplateNode_ForNewGenerator(SNode parentSourceNode, SNode templateNode, int currentMacroIndex, ITemplateGenerator generator) {
+    return createSourceNodeListForTemplateNode(parentSourceNode, templateNode, currentMacroIndex, generator);
+  }
+
   private static List<SNode> createSourceNodeListForTemplateNode(SNode parentSourceNode, SNode templateNode, int currentMacroIndex, ITemplateGenerator generator) {
     try {
       List<NodeMacro> nodeMacros = NodeMacro_AnnotationLink.getNodeMacros((BaseConcept) templateNode);

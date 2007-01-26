@@ -5,6 +5,7 @@ import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.Templ
 import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.generator.template.TemplateGenUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
@@ -111,12 +112,32 @@ public class RuleUtil {
   }
 
   private static void createRootNodeFromTemplate(TemplateModelGenerator_New generator, String ruleName, SModel outputModel, SNode templateNode, SNode inputNode) {
-    SNode outputNode = createNodeFromTemplate(generator, ruleName, outputModel, templateNode, inputNode);
+    SNode outputNode = createNodeFromTemplate(generator, ruleName, outputModel, templateNode, inputNode, null, 0);
     generator.addNewRootNode(outputNode);
     if(inputNode != null && inputNode.isRoot()) generator.addRootToDelete(inputNode);
   }
 
-  private static SNode createNodeFromTemplate(TemplateModelGenerator_New generator, String ruleName, SModel outputModel, SNode templateNode, SNode inputNode) {
+  private static SNode createNodeFromTemplate(TemplateModelGenerator_New generator, String ruleName, SModel outputModel, SNode templateNode, SNode inputNode, SNode outputParentNode, int nodeMacrosToSkip) {
+    int i = 0;
+    for (SNode templateChildNode : templateNode.getChildren()) {
+      if(!(templateChildNode instanceof NodeMacro)) continue;
+      i++;
+      if(i <= nodeMacrosToSkip)continue;
+      if(templateChildNode instanceof LoopMacro) {
+        List<SNode> newInputNodes = TemplateGenUtil.createSourceNodeListForTemplateNode_ForNewGenerator(inputNode, templateNode, nodeMacrosToSkip, generator);
+        for (SNode newInputNode : newInputNodes) {
+          SNode outputChildNode = createNodeFromTemplate(generator, ((LoopMacro)templateChildNode).getMappingId(), outputModel, templateNode, newInputNode, outputParentNode, nodeMacrosToSkip+1);
+          if(outputParentNode != null) {
+            SNode templateParentNode = templateNode.getParent();
+            if(templateParentNode != null) {
+              generator.getDelayedChanges().addAddChildChange(outputParentNode, outputChildNode, templateParentNode.getRoleOf(templateNode));
+            }
+          }
+        }
+        return null;
+      }
+    }
+
     SNode outputNode = ModelPersistence.createNodeInstance(templateNode.getClass().getName(), outputModel);
     if(outputNode == null) {
       generator.showErrorMessage(null, templateNode, "'createNodeFromTemplate' cannot create root node");
@@ -143,16 +164,16 @@ public class RuleUtil {
       }
     }
 
-
     for (SNode templateChildNode : templateNode.getChildren()) {
+      if(templateChildNode instanceof NodeMacro) continue;
       if (templateChildNode instanceof PropertyMacro) {
         MacroUtil.expandPropertyMacro(generator, (PropertyMacro)templateChildNode, inputNode, templateNode, outputNode);
       }
       else if(templateChildNode instanceof ReferenceMacro) {
-        generator.addReferenceInfo(new ReferenceInfo_Macro(outputNode, templateChildNode, (ReferenceMacro)templateChildNode));
+        generator.addReferenceInfo(new ReferenceInfo_Macro((ReferenceMacro)templateChildNode, inputNode, templateNode, outputNode));
       }
       else {
-        SNode outputChildNode = createNodeFromTemplate(generator, ruleName, outputModel, templateChildNode, inputNode);
+        SNode outputChildNode = createNodeFromTemplate(generator, ruleName, outputModel, templateChildNode, inputNode, outputNode, 0);
         if(outputChildNode != null) {
           outputNode.addChild(templateNode.getRoleOf(templateChildNode), outputChildNode);
         }
