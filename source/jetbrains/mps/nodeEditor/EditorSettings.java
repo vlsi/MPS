@@ -302,7 +302,7 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
     private AbstractEditorComponent createBlinkingDemo() {
       return new AbstractEditorComponent(null) {
         {
-          myEditorContext = new EditorContext(this, null, null);
+          setEditorContext(new EditorContext(this, null, null));
           CaretBlinker.getInstance().unregisterEditor(this);
           rebuildEditorContent();
         }

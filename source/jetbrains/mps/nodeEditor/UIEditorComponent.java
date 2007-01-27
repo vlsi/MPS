@@ -71,7 +71,7 @@ public class UIEditorComponent extends AbstractEditorComponent implements IEdito
 //    if (mySNode.isDeleted()) {
 //      return EditorCell_Constant.create(getEditorContext(), mySNode, "<no editor info>", true);
 //    }
-    return myEditorContext.createRootCell(getEditedNode(), events);
+    return getEditorContext().createRootCell(getEditedNode(), events);
   }
 
   public EditorCell createRootCell() {

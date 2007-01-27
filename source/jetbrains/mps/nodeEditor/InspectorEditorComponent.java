@@ -35,9 +35,9 @@ public class InspectorEditorComponent extends AbstractEditorComponent implements
 
   private void reinitEditor() {
     if (getEditedNode() == null) {
-      myEditorContext = new EditorContext(this, null, null);
+      setEditorContext(new EditorContext(this, null, null));
     } else {
-      myEditorContext = new EditorContext(this, getEditedNode().getModel(), getOperationContext());
+      setEditorContext(new EditorContext(this, getEditedNode().getModel(), getOperationContext()));
     }
   }
 

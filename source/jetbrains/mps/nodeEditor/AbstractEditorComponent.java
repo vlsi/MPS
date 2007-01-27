@@ -92,7 +92,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private MessagesGutter myMessagesGutter = new MessagesGutter(this);
   private LeftEditorHighlighter myLeftHighlighter;
   protected SNodeProxy myNodeProxy;
-  protected EditorContext myEditorContext;
+  private EditorContext myEditorContext;
   private List<RebuildListener> myRebuildListeners;
   private List<CellSynchronizationWithModelListener> myCellSynchronizationListeners = new ArrayList<CellSynchronizationWithModelListener>();
   private CellInfo myRecentlySelectedCellInfo = null;
@@ -460,7 +460,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     IOperationContext operationContext = getOperationContext();
     myNodeProxy = new SNodeProxy(node);
     SModel model = node == null ? null : node.getModel();
-    myEditorContext = new EditorContext(this, model, operationContext);
+    setEditorContext(new EditorContext(this, model, operationContext));
     rebuildEditorContent();
   }
 
@@ -638,7 +638,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     removeOurListener();
     clearCaches();
 
-    myEditorContext = null;
+    setEditorContext(null);
 
     if (myNodeSubstituteChooser != null) {
       myNodeSubstituteChooser.dispose();
@@ -1756,6 +1756,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return toSelect;
   }
 
+  protected void setEditorContext(EditorContext editorContext) {
+    myEditorContext = editorContext;
+  }
+
   private class MyModelListener implements SModelCommandListener {
     public void modelChangedInCommand(List<SModelEvent> events) {
       if (!EventUtil.isDramaticalChange(events)) {
@@ -1883,12 +1887,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private void runSwapCellsActions(Runnable action) {
     if (mySelectedCell != null) myRecentlySelectedCellInfo = mySelectedCell.getCellInfo();
     Object memento = null;
-    if (myEditorContext != null) {
-      memento = myEditorContext.createMemento();
+    if (getEditorContext() != null) {
+      memento = getEditorContext().createMemento();
     }
     action.run();
-    if (myEditorContext != null) {
-      myEditorContext.setMemento(memento);
+    if (getEditorContext() != null) {
+      getEditorContext().setMemento(memento);
     }
     myRecentlySelectedCellInfo = null;
   }
