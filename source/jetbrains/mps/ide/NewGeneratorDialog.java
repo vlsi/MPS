@@ -209,6 +209,8 @@ public class NewGeneratorDialog extends BaseDialog {
       SModel templateModel = templateModelDescriptor.getSModel();
       templateModel.addLanguage(BootstrapLanguages.getInstance().getTLBase());
       templateModel.addLanguage(targetLanguage);
+      templateModel.addLanguage("jetbrains.mps.bootstrap.smodelLanguage");
+      templateModel.addImportedModel(sourceLanguage.getStructureModelDescriptor().getModelUID());
 
       MappingConfiguration mappingConfiguration = new MappingConfiguration(templateModel);
       mappingConfiguration.setName("main");
