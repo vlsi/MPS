@@ -1,17 +1,19 @@
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.GeneratorDescriptor;
 import jetbrains.mps.projectLanguage.ModuleDescriptor;
 import jetbrains.mps.transformation.TLBase.MappingConfiguration;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.BootstrapLanguages;
-
-import java.util.*;
-
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
 
 /**
  * @author Kostik
@@ -122,9 +124,9 @@ public class Generator extends AbstractModule {
     return null;
   }
 
-  public String getGeneratorClass() {
-    return myGeneratorDescriptor.getGeneratorClass();
-  }
+//  public String getGeneratorClass() {
+//    return myGeneratorDescriptor.getGeneratorClass();
+//  }
 
   @NotNull
   public String toString() {
