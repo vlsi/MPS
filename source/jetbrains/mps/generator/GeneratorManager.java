@@ -222,6 +222,15 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
                                                     final Language targetLanguage,
                                                     final IOperationContext invocationContext,
                                                     final IGenerationType generationType,
+                                                    final IGenerationScript script,
+                                                    final Runnable continuation) {
+    generateModelsWithProgressWindow(sourceModels, targetLanguage, invocationContext, generationType, script, continuation, true, null, GeneratingEngine.old);
+  }
+
+  public void generateModelsWithProgressWindowAsync(final List<SModel> sourceModels,
+                                                    final Language targetLanguage,
+                                                    final IOperationContext invocationContext,
+                                                    final IGenerationType generationType,
                                                     final IGenerationScript script) {
     generateModelsWithProgressWindow(sourceModels, targetLanguage, invocationContext, generationType, script, new Runnable() {
       public void run() {
