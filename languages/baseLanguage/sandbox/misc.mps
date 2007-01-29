@@ -330,6 +330,31 @@
                 </node>
               </node>
             </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.SynchronizedStatement" id="1170076215475">
+              <node role="expression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1170076429172">
+                <property name="value" value="2" />
+              </node>
+              <node role="block" type="jetbrains.mps.baseLanguage.StatementList" id="1170076215477">
+                <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1170076422551">
+                  <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1170076422552">
+                    <property name="name" value="a" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1170076422553" />
+                    <node role="initializer" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1170076424165">
+                      <property name="value" value="2" />
+                    </node>
+                  </node>
+                </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1170076425401">
+                  <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1170076425402">
+                    <property name="name" value="b" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1170076425403" />
+                    <node role="initializer" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1170076427077">
+                      <property name="value" value="3" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
           <node role="expression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1163673051514">
             <property name="value" value="2" />
