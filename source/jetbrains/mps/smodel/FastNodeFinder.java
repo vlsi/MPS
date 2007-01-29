@@ -25,12 +25,12 @@ public class FastNodeFinder {
     return myStructuralState;
   }
 
-  public List<SNode> getNodes(Class<? extends SNode> cls) {
+  public <T extends SNode> List<T> getNodes(Class<T> cls) {
     ConceptDeclaration concept = SModelUtil.findConceptDeclaration(cls, GlobalScope.getInstance());
     if (concept == null) {
-      return new LinkedList<SNode>();
+      return new LinkedList<T>();
     }
-    return getNodes(concept, true);
+    return (List<T>) getNodes(concept, true);
   }
 
   public List<SNode> getNodes(ConceptDeclaration concept, boolean includeInherited) {
