@@ -31,7 +31,6 @@
     <moduleRoot path="${mps_home}\projects\baseLanguageExt\dev\languages\collections\lang\collections.mpl" />
   </module>
   <accessoryModels />
-  <targetOfGenerator generatorClass="jetbrains.mps.baseLanguage.generator.target.BaseLanguageGenerator" />
   <generators>
     <generator name="reduce to java" generatorUID="jetbrains.mps.baseLanguage#1129914002933" targetLanguage="jetbrains.mps.baseLanguage">
       <models>
