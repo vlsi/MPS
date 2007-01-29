@@ -580,8 +580,10 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1170069761180">
         <property name="text" value="," />
+        <property name="drawBorder" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1170069777933">
+        <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1170069838092" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1168502921044">
