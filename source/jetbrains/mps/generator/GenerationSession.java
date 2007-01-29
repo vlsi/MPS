@@ -21,11 +21,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Oct 26, 2005
- * Time: 5:15:15 PM
- * To change this template use File | Settings | File Templates.
+ * Igor Alshannikov
+ * Oct 26, 2005
  */
 public class GenerationSession implements IGenerationSession {
   public static final Logger LOG = Logger.getLogger(GenerationSession.class);
@@ -120,14 +117,9 @@ public class GenerationSession implements IGenerationSession {
     myTransientModelsCount = 0;
     SModel sourceModel = sourceModelDescriptor.getSModel();
     addProgressMessage(MessageKind.INFORMATION, "generating model \"" + sourceModel.getUID() + "\"");
-//    Class<? extends IModelGenerator> defaultGeneratorClass = getDefaultGeneratorClass(targetLanguage);
-//    addMessage(MessageKind.INFORMATION, "    default generator class: " + defaultGeneratorClass.getName());
 
-    // -- replace context and create generators list
-
-
+    // -- replace context
     GenerationSessionContext context = new GenerationSessionContext(targetLanguage, sourceModel, myInvocationContext, mappings, myCurrentContext);
-
     List<Generator> generators = context.getGeneratorModules();
     if (generators.isEmpty()) {
       addProgressMessage(MessageKind.WARNING, "skip model \"" + sourceModel.getUID() + "\" : no generator avalable");
@@ -135,68 +127,7 @@ public class GenerationSession implements IGenerationSession {
     }
     setGenerationSessionContext(context);
 
-//    // -- choose generator class
-//    Class<? extends IModelGenerator> currentGeneratorClass = null;
-//    for (Generator generator : generators) {
-//      Class<? extends IModelGenerator> generatorClass = getGeneratorClass(generator);
-//      addMessage(MessageKind.INFORMATION, "    generator found: " + generator.getModuleUID() + " generator class: " + (generatorClass != null ? generatorClass.getName() : "<default>"));
-//      if (generatorClass != null) {
-//        if (currentGeneratorClass == null) {
-//          currentGeneratorClass = generatorClass;
-//          continue;
-//        }
-//        if (currentGeneratorClass.isAssignableFrom(generatorClass)) {
-//          currentGeneratorClass = generatorClass;
-//        } else if (!generatorClass.isAssignableFrom(currentGeneratorClass)) {
-//          addProgressMessage(MessageKind.ERROR, "couldn't choose generator class");
-//          addMessage(MessageKind.ERROR, "generator classes \"" + currentGeneratorClass.getName() + "\" and " + generatorClass.getName() + " are not compatible");
-//          return new GenerationStatus.ERROR(sourceModel);
-//        }
-//      }
-//    }
-
-//    if (currentGeneratorClass == null) {
-//      if (defaultGeneratorClass == null) {
-//        addProgressMessage(MessageKind.ERROR, "generator class is not defined");
-//        return new GenerationStatus.ERROR(sourceModel);
-//      }
-//      currentGeneratorClass = defaultGeneratorClass;
-//    }
-//    addMessage(MessageKind.INFORMATION, "    use generator class: \"" + currentGeneratorClass + "\"");
-//    // templates or hand-coded?
-//    if (!ITemplateGenerator.class.isAssignableFrom(currentGeneratorClass)) {
-//      // hand-coded - not much to do ... just instantiate and invoke
-//      IModelGenerator handCodedGenerator = currentGeneratorClass.getConstructor(IOperationContext.class).newInstance(context);
-//      SModelDescriptor outputModel = createTransientModel(sourceModel, context.getModule());
-//      handCodedGenerator.generate(sourceModel, outputModel.getSModel());
-//      return new GenerationStatus(sourceModel, outputModel.getSModel(), null, false, false);
-//    }
-
-//    // templates generator
-//    ITemplateGenerator generator = null;
-//
-//
-//    try {
-//      Constructor c = currentGeneratorClass.getConstructor(GenerationSessionContext.class, IAdaptiveProgressMonitor.class);
-//      generator = (ITemplateGenerator) c.newInstance(context, myProgressMonitor);
-//    } catch (NoSuchMethodException e) {
-//      //ok to skip
-//    }
-//
-//    if (generator == null) {
-//      try {
-//        Constructor c = currentGeneratorClass.getConstructor(GenerationSessionContext.class, IAdaptiveProgressMonitor.class, IMessageHandler.class);
-//        generator = (ITemplateGenerator) c.newInstance(context, myProgressMonitor, myHandler);
-//      } catch (NoSuchMethodException e) {
-//        //ok to skip
-//      }
-//    }
-//
-//    if (generator == null) {
-//      myHandler.handle(new Message(MessageKind.ERROR, "Generator Class Not Found"));
-//      return new GenerationStatus.ERROR(sourceModel);
-//    }
-
+    // -- replace generator
     ITemplateGenerator generator = new DefaultTemplateGenerator(context, myProgressMonitor, myHandler);
     GenerationStatus status;
     try {
@@ -288,26 +219,6 @@ public class GenerationSession implements IGenerationSession {
     transientModel.getSModel().setLoading(true); // we dont need any events to be casted
     return transientModel;
   }
-
-//  @NotNull
-//  private Class<? extends IModelGenerator> getDefaultGeneratorClass(Language targetLanguage) throws ClassNotFoundException {
-//    TargetOfGenerator targetOfGenerator = targetLanguage.getLanguageDescriptor().getTargetOfGenerator();
-//    if (targetOfGenerator != null) {
-//      String generatorClassName = targetOfGenerator.getGeneratorClass();
-//      if (generatorClassName != null) {
-//        return (Class<? extends IModelGenerator>) Class.forName(generatorClassName, true, ClassLoaderManager.getInstance().getClassLoader());
-//      }
-//    }
-//    return DefaultTemplateGenerator.class;
-//  }
-
-//  private Class<? extends IModelGenerator> getGeneratorClass(Generator generatorModule) throws ClassNotFoundException {
-//    String generatorClassName = generatorModule.getGeneratorClass();
-//    if (generatorClassName != null) {
-//      return (Class<? extends IModelGenerator>) Class.forName(generatorClassName, true, ClassLoaderManager.getInstance().getClassLoader());
-//    }
-//    return null;
-//  }
 
   private void addMessage(final Message message) {
     myHandler.handle(message);
