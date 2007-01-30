@@ -27,13 +27,17 @@ public class NameUtil {
   }
 
   public static String pluralize(String singular) {
+    if (singular.endsWith("y")) {
+      return singular.substring(0, singular.length() - 1) + "ies";
+    }
+
     if (singular.endsWith("s") || singular.endsWith("x")) {
       return singular + "es";
     }
 
     return singular + "s";
   }
-  
+
   /**
    * "aaaBBB" -> "AAA_BBB"
    */
