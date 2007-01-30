@@ -12,6 +12,8 @@ import jetbrains.mps.util.FileUtil;
 import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
+import java.util.HashSet;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -81,12 +83,16 @@ public class Solution extends AbstractModule {
 
 
     // read languages and models
+    Set<IModule> before = new HashSet<IModule>(MPSModuleRepository.getInstance().getAllModules());
     readDependOnModules();
+    Set<IModule> after = new HashSet<IModule>(MPSModuleRepository.getInstance().getAllModules());
     rereadModels();
 
     myEventTranslator.solutionChanged();
-    
-    ReloadUtils.reloadAll(true);
+
+    if (!before.equals(after)) {
+      ReloadUtils.reloadAll(true);
+    } 
   }
 
   public void dispose() {
