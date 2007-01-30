@@ -1,31 +1,33 @@
 package jetbrains.mps.generator.newGenerator;
 
-import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.generator.template.ITemplateGeneratorState;
-import jetbrains.mps.generator.template.INodeBuilder;
-import jetbrains.mps.generator.template.AbstractNodeBuilderManager;
+import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.generator.AbstractModelGenerator;
 import jetbrains.mps.generator.GenerationFailedException;
 import jetbrains.mps.generator.GenerationSessionContext;
-import jetbrains.mps.generator.AbstractModelGenerator;
-import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+import jetbrains.mps.generator.template.AbstractNodeBuilderManager;
+import jetbrains.mps.generator.template.INodeBuilder;
+import jetbrains.mps.generator.template.ITemplateGeneratorState;
 import jetbrains.mps.ide.messages.IMessageHandler;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.QueryMethodGenerated;
-import jetbrains.mps.util.Pair;
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.transformation.TLBase.*;
-import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.typesystem.ITypeChecker;
-import jetbrains.mps.core.BaseConcept;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.Pair;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by: Sergey Dmitriev
  * Date: Jan 23, 2007
  */
-public class TemplateModelGenerator_New extends AbstractModelGenerator implements ITemplateGenerator {
+public class TemplateModelGenerator_New extends AbstractModelGenerator {
   private SModel myModel;
   private ArrayList<SNode> myNewRootNodes = new ArrayList<SNode>();
   private ArrayList<SNode> myRootsToDelete = new ArrayList<SNode>();
