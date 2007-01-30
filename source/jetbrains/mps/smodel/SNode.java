@@ -89,7 +89,11 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       if (myChildrenLoader != null) {
         getModel().runLoadingAction(new Runnable() {
           public void run() {
-            myChildrenLoader.loadChildren(SNode.this);
+            try {
+              myChildrenLoader.loadChildren(SNode.this);
+            } catch (Throwable t) {
+              LOG.error(t);
+            }
           }
         });
         for (SNode node : myChildren) {
