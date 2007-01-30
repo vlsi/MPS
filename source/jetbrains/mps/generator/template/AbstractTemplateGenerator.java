@@ -4,23 +4,24 @@
  * Date: Jun 7, 2004
  * Time: 7:45:21 PM
  */
-package jetbrains.mps.generator;
+package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
 
-public abstract class AbstractModelGenerator implements ITemplateGenerator {
+public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   private IOperationContext myOperationContext;
   private SModel mySourceModel;
   private SModel myTargetModel;
   private IAdaptiveProgressMonitor myProgressMonitor;
   private IMessageHandler myHandler;
 
-  protected AbstractModelGenerator(IOperationContext operationContext,
+  protected AbstractTemplateGenerator(IOperationContext operationContext,
                                    IAdaptiveProgressMonitor progressMonitor,
                                    IMessageHandler handler) {
     myOperationContext = operationContext;

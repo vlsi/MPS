@@ -1,7 +1,7 @@
 package jetbrains.mps.generator.newGenerator;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.generator.AbstractModelGenerator;
+import jetbrains.mps.generator.template.AbstractTemplateGenerator;
 import jetbrains.mps.generator.GenerationFailedException;
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.template.AbstractNodeBuilderManager;
@@ -27,7 +27,7 @@ import java.util.Map;
  * Created by: Sergey Dmitriev
  * Date: Jan 23, 2007
  */
-public class TemplateModelGenerator_New extends AbstractModelGenerator {
+public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   private SModel myModel;
   private ArrayList<SNode> myNewRootNodes = new ArrayList<SNode>();
   private ArrayList<SNode> myRootsToDelete = new ArrayList<SNode>();

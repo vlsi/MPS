@@ -1,6 +1,6 @@
 package jetbrains.mps.generator;
 
-import jetbrains.mps.generator.template.DefaultGenerator;
+import jetbrains.mps.generator.template.DefaultTemplateGenerator;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
@@ -128,7 +128,7 @@ public class GenerationSession implements IGenerationSession {
     setGenerationSessionContext(context);
 
     // -- replace generator
-    ITemplateGenerator generator = new DefaultGenerator(context, myProgressMonitor, myHandler);
+    ITemplateGenerator generator = new DefaultTemplateGenerator(context, myProgressMonitor, myHandler);
     GenerationStatus status;
     try {
       SModel outputModel = generateModel(sourceModel, targetLanguage, generator);
