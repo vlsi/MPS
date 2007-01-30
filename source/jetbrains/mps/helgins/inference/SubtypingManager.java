@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mpswiki.queryLanguage.VariableCondition;
+import jetbrains.mpswiki.queryLanguage.QueryPattern;
 import jetbrains.mpswiki.queryLanguage.evaluator.ConditionMatcher;
 import jetbrains.mpswiki.queryLanguage.evaluator.InvalidConditionException;
 
@@ -30,10 +31,9 @@ import java.util.*;
 public class SubtypingManager {
   private static final Logger LOG = Logger.getLogger(SubtypingManager.class);
 
-  Set<SubtypingRule> mySubtypingRules = new HashSet<SubtypingRule>();
-  private Set<SupertypingRule> mySupertypingRules = new HashSet<SupertypingRule>();
-
-  Map<ConceptDeclaration, SubtypingVarianceRule> myVarianceRules = new HashMap<ConceptDeclaration, SubtypingVarianceRule>();
+  private ConceptToRulesMap<SubtypingRule> myConceptsToSubtypingRulesCache = new ConceptToRulesMap<SubtypingRule>();
+  private ConceptToRulesMap<SupertypingRule> myConceptsToSupertypingRulesCache = new ConceptToRulesMap<SupertypingRule>();
+  private Map<ConceptDeclaration, SubtypingVarianceRule> myVarianceRules = new HashMap<ConceptDeclaration, SubtypingVarianceRule>();
 
   private TypeChecker myTypeChecker;
 
@@ -47,10 +47,24 @@ public class SubtypingManager {
 
   public void initiate(SModel typesModel) {
     for (SubtypingRule rule : typesModel.getRoots(SubtypingRule.class)) {
-      mySubtypingRules.add(rule);
+      VariableCondition condition = rule.getApplicableNode().getCondition();
+      ConceptDeclaration ruleConcept = ConditionMatcher.getConcept(condition);
+      Set<SubtypingRule> subtypingRules = myConceptsToSubtypingRulesCache.get(ruleConcept);
+      if (subtypingRules == null) {
+        subtypingRules = new HashSet<SubtypingRule>();
+        myConceptsToSubtypingRulesCache.put(ruleConcept, subtypingRules);
+      }
+      subtypingRules.add(rule);
     }
     for (SupertypingRule rule : typesModel.getRoots(SupertypingRule.class)) {
-      mySupertypingRules.add(rule);
+      VariableCondition condition = rule.getApplicableNode().getCondition();
+      ConceptDeclaration ruleConcept = ConditionMatcher.getConcept(condition);
+      Set<SupertypingRule> supertypingRules = myConceptsToSupertypingRulesCache.get(ruleConcept);
+      if (supertypingRules == null) {
+        supertypingRules = new HashSet<SupertypingRule>();
+        myConceptsToSupertypingRulesCache.put(ruleConcept, supertypingRules);
+      }
+      supertypingRules.add(rule);
     }
     for (SubtypingVarianceRule rule : typesModel.getRoots(SubtypingVarianceRule.class)) {
       myVarianceRules.put(rule.getConceptDeclaration(), rule);
@@ -58,8 +72,8 @@ public class SubtypingManager {
   }
 
   public void clear() {
-    mySubtypingRules.clear();
-    mySupertypingRules.clear();
+    myConceptsToSubtypingRulesCache.clear();
+    myConceptsToSupertypingRulesCache.clear();
     myVarianceRules.clear();
   }
 
@@ -208,7 +222,9 @@ public class SubtypingManager {
 
   public Set<SNode> collectSupertypes(SNode term) {
     Set<SNode> result = new HashSet<SNode>();
-    for (SubtypingRule rule : mySubtypingRules) {
+    Set<SubtypingRule> subtypingRules = myConceptsToSubtypingRulesCache.get(term.getNodeConcept());
+    if (subtypingRules == null) return result;
+    for (SubtypingRule rule : subtypingRules) {
       AnalyzedTermDeclaration applicableNode = rule.getApplicableNode();
       if (applicableNode == null) continue;
       Expression expression = rule.getSupertype();
@@ -223,7 +239,9 @@ public class SubtypingManager {
 
   public Set<SNode> collectSubtypes(SNode term) {
     Set<SNode> result = new HashSet<SNode>();
-    for (SupertypingRule rule : mySupertypingRules) {
+    Set<SupertypingRule> supertypingRules = myConceptsToSupertypingRulesCache.get(term.getNodeConcept());
+    if (supertypingRules == null) return result;
+    for (SupertypingRule rule : supertypingRules) {
       AnalyzedTermDeclaration applicableNode = rule.getApplicableNode();
       if (applicableNode == null) continue;
       Expression expression = rule.getSubtype();
@@ -242,19 +260,20 @@ public class SubtypingManager {
     matching
     */
 
-    VariableCondition termCondition = analyzedTermDeclaration.getCondition();
-    ConditionMatcher conditionMatcher;
-    try {
-      conditionMatcher = new ConditionMatcher(termCondition);
-    } catch(InvalidConditionException ex) {
-      error("invalid condition", ex);
-      return null;
-    }
     ExpressionContext expressionContext = new ExpressionContext();
 
-    // fills the expression context if matches
-    if (!(conditionMatcher.matchesCondition(term, expressionContext))) return null;
-
+    VariableCondition termCondition = analyzedTermDeclaration.getCondition();
+    if (termCondition instanceof QueryPattern) {
+      ConditionMatcher conditionMatcher;
+      try {
+        conditionMatcher = new ConditionMatcher(termCondition);
+      } catch(InvalidConditionException ex) {
+        error("invalid condition", ex);
+        return null;
+      }
+      // fills the expression context if matches
+      if (!(conditionMatcher.matchesCondition(term, expressionContext))) return null;
+    }
     //puts term variable into the expression context
     expressionContext.putNode(analyzedTermDeclaration, term);
 

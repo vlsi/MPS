@@ -72,9 +72,14 @@ public abstract class GenericEditorUpdater implements IComponentLifecycle {
               EditorsPane editorsPane = project.getComponentSafe(AbstractProjectFrame.class).getEditorsPane();
               boolean isUpdated = false;
               for (IEditor editor : editorsPane.getEditors()) {
-                if (editor.getCurrentEditorComponent() != null &&
-                        updateEditor(editor.getCurrentEditorComponent())) {
-                  isUpdated = true;
+                AbstractEditorComponent component = editor.getCurrentEditorComponent();
+                if (component != null) {
+                  if (System.currentTimeMillis() -
+                          component.getEditedNode().getModel().getModelDescriptor().lastStructuralChange() > getCheckDelay()) {
+                    if ( updateEditor(component) ) {
+                      isUpdated = true;
+                    }
+                  }
                 }
               }
               if (isUpdated) {
@@ -95,4 +100,6 @@ public abstract class GenericEditorUpdater implements IComponentLifecycle {
   }
 
   protected abstract boolean updateEditor(AbstractEditorComponent editor);
+
+  protected abstract int getCheckDelay();
 }

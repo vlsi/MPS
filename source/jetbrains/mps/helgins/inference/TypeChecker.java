@@ -15,6 +15,8 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
+import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mpswiki.queryLanguage.evaluator.ConditionMatcher;
 
 import java.util.*;
 
@@ -37,7 +39,7 @@ public class TypeChecker {
   private Map<SNode, Set<SNode>> myNodesToDependentRoots = new WeakHashMap<SNode, Set<SNode>>();
   private MySModelCommandListener myListener = new MySModelCommandListener();
 
-  private List<Rule> myRules = new ArrayList<Rule>();
+  private ConceptToRulesMap<Rule> myConceptsToRulesCache = new ConceptToRulesMap<Rule>();
   private Set<SNode> myCheckedNodes = new HashSet<SNode>();
   private WeakHashMap<SNode, String> myNodesWithErrors = new WeakHashMap<SNode, String>();
 
@@ -105,7 +107,7 @@ public class TypeChecker {
     myInterpretator.clear();
     mySubtypingManager.clear();
     myAdaptationManager.clear();
-    myRules.clear();
+    myConceptsToRulesCache.clear();
     myCheckedNodes.clear();
     myNodesWithErrors.clear();
     myNodesToDependentRoots.clear();
@@ -125,7 +127,7 @@ public class TypeChecker {
     if (typesModels.isEmpty()) return;
 
     //loading typesystems
-    myRules = new ArrayList<Rule>();
+    myConceptsToRulesCache = new ConceptToRulesMap<Rule>();
     for (SModel typesModel : typesModels) {
 
       //register contexts
@@ -145,7 +147,15 @@ public class TypeChecker {
 
       // load rules
       for (Rule rule : typesModel.getRoots(Rule.class)) {
-        myRules.add(rule);
+        if (!rule.applicableNodes().hasNext()) continue;
+        AnalyzedTermDeclaration analyzedTermDeclaration = rule.applicableNodes().next();
+        ConceptDeclaration ruleConcept = ConditionMatcher.getConcept(analyzedTermDeclaration.getCondition());
+        Set<Rule> rules = myConceptsToRulesCache.get(ruleConcept);
+        if (rules == null) {
+          rules = new HashSet<Rule>();
+          myConceptsToRulesCache.put(ruleConcept, rules);
+        }
+        rules.add(rule);
       }
 
       // load subtyping rules
@@ -260,8 +270,11 @@ public class TypeChecker {
       for (SNode node : frontier) {
         if (myCheckedNodes.contains(node)) continue;
         newFrontier.addAll(node.getChildren());
-        for (Rule rule : myRules) {
-          myInterpretator.interpretate(node, rule);
+        Set<Rule> rules = myConceptsToRulesCache.get(node.getNodeConcept());
+        if (rules != null) {
+          for (Rule rule : rules) {
+            myInterpretator.interpretate(node, rule);
+          }
         }
       }
       frontier = newFrontier;
