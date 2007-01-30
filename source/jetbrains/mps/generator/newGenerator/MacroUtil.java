@@ -41,7 +41,7 @@ public class MacroUtil {
       try {
         propertyValue = (String) QueryMethodGenerated.invoke(methodName, args, propertyMacro.getModel());
       } catch (Exception e) {
-        generator.showErrorMessage(sourceNode, templateNode, propertyMacro, "couldn't evaluate property macro - try to generate template models");
+        generator.showErrorMessage(sourceNode, templateNode, propertyMacro, "couldn't evaluate property macro");
         LOG.error(e);
         return;
       }
@@ -79,7 +79,7 @@ public class MacroUtil {
       try {
         referentNode = (SNode) QueryMethodGenerated.invoke(methodName, args, referenceMacro.getModel());
       } catch (Exception e) {
-        generator.showErrorMessage(sourceNode, templateNode, referenceMacro, "couldn't evaluate reference macro - try to generate template models");
+        generator.showErrorMessage(sourceNode, templateNode, referenceMacro, "couldn't evaluate reference macro");
         LOG.error(e);
         return;
       }

@@ -6,6 +6,7 @@ import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.QueryMethodGenerated;
+import jetbrains.mps.logging.Logger;
 
 import java.util.List;
 import java.util.LinkedList;
@@ -18,6 +19,7 @@ import java.util.LinkedList;
  * To change this template use File | Settings | File Templates.
  */
 public class NodeFactoryManager extends NodeFactoryManager_deprecated {
+  private static Logger LOG = Logger.getLogger(NodeFactoryManager.class);
 
   public static SNode createNode(String conceptFqName, SNode sampleNode, SNode enclosingNode, SModel model, IScope scope) {
     ConceptDeclaration conceptDeclaration = SModelUtil.findConceptDeclaration(conceptFqName, scope);
@@ -72,6 +74,10 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
 
     String methodName = ActionQueryMethodName.nodeFactory_NodeSetupFunction(factory);
     Object[] args = new Object[]{newNode, sampleNode, enclosingNode, model};
-    QueryMethodGenerated.invoke(methodName, args, factory.getModel());
+    try {
+      QueryMethodGenerated.invoke(methodName, args, factory.getModel());
+    } catch (Exception e) {
+      LOG.error(e);
+    }
   }
 }

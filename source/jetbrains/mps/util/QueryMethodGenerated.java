@@ -20,7 +20,7 @@ public class QueryMethodGenerated {
     ourMethods.clear();
   }
 
-  private static Method getQueryMethod(SModel sourceModel, String methodName, boolean suppressErrorLogging) {
+  private static Method getQueryMethod(SModel sourceModel, String methodName, boolean suppressErrorLogging) throws ClassNotFoundException, NoSuchMethodException {
     Pair<SModelUID, String> pair = new Pair<SModelUID, String>(sourceModel.getUID(), methodName);
     if (QueryMethodGenerated.ourMethods.containsKey(pair)) {
       return QueryMethodGenerated.ourMethods.get(pair);
@@ -28,51 +28,51 @@ public class QueryMethodGenerated {
 
     String packageName = JavaNameUtil.packageNameForModelUID(sourceModel.getUID());
     String queriesClassName = packageName + ".QueriesGenerated";
-    Class queriesClass = null;
+    Class queriesClass;
     try {
       queriesClass = Class.forName(queriesClassName, true, ClassLoaderManager.getInstance().getClassLoader());
-    } catch (ClassNotFoundException e) {
-      throw new RuntimeException(e);
-    } finally {
-      if (queriesClass == null) {
-        if (!suppressErrorLogging) {
-          QueryMethodGenerated.LOG.error("Couldn't find QueriesGenerated class for model " + sourceModel.getUID());
-        }
+    } catch (ClassNotFoundException cfe) {
+      if (!suppressErrorLogging) {
+        LOG.error("couldn't find class 'QueriesGenerated' for model '" + sourceModel.getUID() + "' : TRY TO GENERATE");
       }
+      throw cfe;
     }
 
     Method method = null;
-    outer:
-    while (queriesClass != null) {
-      Method[] declaredMethods = queriesClass.getDeclaredMethods();
-      for (Method declaredMethod : declaredMethods) {
-        if (declaredMethod.getName().equals(methodName)) {
-          method = declaredMethod;
-          break outer;
-        }
+//    outer:
+//    while (queriesClass != null) {
+    Method[] declaredMethods = queriesClass.getDeclaredMethods();
+    for (Method declaredMethod : declaredMethods) {
+      if (declaredMethod.getName().equals(methodName)) {
+        method = declaredMethod;
+//          break outer;
+        break;
       }
-      queriesClass = queriesClass.getSuperclass();
     }
+//      queriesClass = queriesClass.getSuperclass();
+//    }
 
     if (method == null) {
-      throw new RuntimeException("Couldn't find method \"" + methodName + "\" in " + queriesClassName + " or in its supers");
+//      throw new NoSuchMethodException("couldn't find method '" + methodName + "' in '" + queriesClassName + "' or in its supers");
+      LOG.error("couldn't find method '" + methodName + "' in '" + queriesClassName + "' : TRY TO GENERATE model '" + sourceModel.getUID() + "'");
+      throw new NoSuchMethodException("couldn't find method '" + methodName + "' in '" + queriesClassName + "'");
     }
 
     QueryMethodGenerated.ourMethods.put(pair, method);
     return method;
   }
 
-  public static Object invoke(String methodName, Object[] arguments, SModel sourceModel) {
+  public static Object invoke(String methodName, Object[] arguments, SModel sourceModel) throws ClassNotFoundException, NoSuchMethodException {
     Method method = QueryMethodGenerated.getQueryMethod(sourceModel, methodName, false);
     try {
       return method.invoke(null, arguments);
     } catch (IllegalArgumentException e) {
-      throw new RuntimeException("Error invocation method: \"" + methodName + "\" in " + method.getDeclaringClass().getName(), e);
+      throw new RuntimeException("error invocation method: \"" + methodName + "\" in " + method.getDeclaringClass().getName(), e);
     } catch (IllegalAccessException e) {
-      throw new RuntimeException("Error invocation method: \"" + methodName + "\" in " + method.getDeclaringClass().getName(), e);
+      throw new RuntimeException("error invocation method: \"" + methodName + "\" in " + method.getDeclaringClass().getName(), e);
     } catch (InvocationTargetException e) {
       LOG.error(e.getCause());
-      throw new RuntimeException("Error invocation method: \"" + methodName + "\" in " + method.getDeclaringClass().getName(), e);
+      throw new RuntimeException("error invocation method: \"" + methodName + "\" in " + method.getDeclaringClass().getName(), e);
     }
   }
 }

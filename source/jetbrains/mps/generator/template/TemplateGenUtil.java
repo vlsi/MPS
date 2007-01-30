@@ -489,7 +489,7 @@ public class TemplateGenUtil {
     try {
       return (Boolean) QueryMethodGenerated.invoke(methodName, args, createRootRule.getModel());
     } catch (Exception e) {
-      generator.showErrorMessage(null, null, createRootRule, "couldn't evaluate rule condition - try to generate template models");
+      generator.showErrorMessage(null, null, createRootRule, "couldn't evaluate rule condition");
       LOG.error(e);
       return false;
     }
@@ -509,7 +509,7 @@ public class TemplateGenUtil {
       try {
         return (Boolean) QueryMethodGenerated.invoke(methodName, args, ifMacro.getModel());
       } catch (Exception e) {
-        generator.showErrorMessage(sourceNode, null, ifMacro, "couldn't evaluate if-macro condition - try to generate template models");
+        generator.showErrorMessage(sourceNode, null, ifMacro, "couldn't evaluate if-macro condition");
         LOG.error(e);
         return false;
       }
@@ -545,7 +545,7 @@ public class TemplateGenUtil {
       checkNodesFromQuery(sourceNodes, queryOwner, generator);
       return sourceNodes;
     } catch (Exception e) {
-      generator.showErrorMessage(sourceNode, queryOwner, "couldn't evaluate query - try to generate template models");
+      generator.showErrorMessage(sourceNode, queryOwner, "couldn't evaluate query");
       LOG.error(e);
       return new LinkedList<SNode>();
     }
@@ -567,7 +567,7 @@ public class TemplateGenUtil {
 //        checkNodesFromQuery(sourceNodes, macro, generator);
 //        return sourceNodes;
 //      } catch (Exception e) {
-//        generator.showErrorMessage(sourceNode, null, macro, "couldn't evaluate query - try to generate template models");
+//        generator.showErrorMessage(sourceNode, null, macro, "couldn't evaluate query");
 //        LOG.error(e);
 //        return new LinkedList<SNode>();
 //      }
@@ -626,7 +626,7 @@ public class TemplateGenUtil {
         }
         return sourceNodes;
       } catch (Exception e) {
-        generator.showErrorMessage(sourceNode, null, macro, "couldn't evaluate macro query - try to generate template models");
+        generator.showErrorMessage(sourceNode, null, macro, "couldn't evaluate macro query");
         LOG.error(e);
         return new LinkedList<SNode>();
       }
@@ -682,7 +682,7 @@ public class TemplateGenUtil {
         }
         return sourceNodes;
       } catch (Exception e) {
-        generator.showErrorMessage(sourceNode, null, macro, "couldn't evaluate macro query - try to generate template models");
+        generator.showErrorMessage(sourceNode, null, macro, "couldn't evaluate macro query");
         LOG.error(e);
         return new LinkedList<SNode>();
       }
@@ -730,7 +730,7 @@ public class TemplateGenUtil {
     try {
       return (Boolean) QueryMethodGenerated.invoke(methodName, args, mappingRule.getModel());
     } catch (Exception e) {
-      generator.showErrorMessage(sourceNode, null, mappingRule, "couldn't evaluate rule condition - try to generate template models");
+      generator.showErrorMessage(sourceNode, null, mappingRule, "couldn't evaluate rule condition");
       LOG.error(e);
       return false;
     }

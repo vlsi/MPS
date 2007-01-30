@@ -48,7 +48,7 @@ public class RuleUtil {
     try {
       return (Boolean) QueryMethodGenerated.invoke(methodName, args, createRootRule.getModel());
     } catch (Exception e) {
-      generator.showErrorMessage(null, null, createRootRule, "couldn't evaluate rule condition - try to generate template models");
+      generator.showErrorMessage(null, null, createRootRule, "couldn't evaluate rule condition");
       LOG.error(e);
       return false;
     }
@@ -105,7 +105,7 @@ public class RuleUtil {
     try {
       return (Boolean) QueryMethodGenerated.invoke(methodName, args, mappingRule.getModel());
     } catch (Exception e) {
-      generator.showErrorMessage(inputNode, null, mappingRule, "couldn't evaluate rule condition - try to generate template models");
+      generator.showErrorMessage(inputNode, null, mappingRule, "couldn't evaluate rule condition");
       LOG.error(e);
       return false;
     }
