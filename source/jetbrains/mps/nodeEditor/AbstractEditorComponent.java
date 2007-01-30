@@ -1131,9 +1131,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public void rebuildEditorContent() {
+    long start = System.currentTimeMillis();
     clearCaches();
     updateMPSActionsWithKeyStrokes();
-    rebuildEditorContent(null);
+    rebuildEditorContent(null);    
+    LOG.debug("Rebuild of " + getEditedNode() + "'s editor took " + (System.currentTimeMillis() - start) + " ms");
   }
 
   public void rebuildEditorContent(final List<SModelEvent> events) {
