@@ -6,11 +6,10 @@ import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.ide.toolsPane.ToolsPane;
 import jetbrains.mps.project.ApplicationComponents;
+import jetbrains.mps.nodeEditor.MPSColors;
 
 import javax.swing.*;
-import java.awt.BorderLayout;
-import java.awt.Component;
-import java.awt.Toolkit;
+import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
@@ -72,6 +71,12 @@ public class MessageView extends DefaultTool {
 
         Message msg = (Message) value;
         setText(msg.getText());
+
+        if (msg.getHintObject() != null) {
+          setForeground(MPSColors.DARK_BLUE);
+        } else {
+          setForeground(Color.BLACK);
+        }
 
         switch (msg.getKind()) {
           case INFORMATION:
