@@ -320,9 +320,9 @@ public class EditorManager {
 
     // set focus
     if (node.getUserObject(RIGHT_TRANSFORM_HINT_JUST_ADDED) != null) {
-      node.removeUserObject(RIGHT_TRANSFORM_HINT_JUST_ADDED);
       CommandProcessor.instance().invokeLater(new Runnable() {
         public void run() {
+          node.removeUserObject(RIGHT_TRANSFORM_HINT_JUST_ADDED);
           if (node.hasRightTransformHint()) {
             context.getNodeEditorComponent().changeSelection(rightTransformHintCell);
           }
