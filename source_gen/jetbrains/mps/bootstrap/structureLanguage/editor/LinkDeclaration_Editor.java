@@ -40,10 +40,25 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
   }
+  public EditorCell createRowCell1(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(true);
+    editorCell.setGridLayout(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstantCell1(context, node, "specializes:"));
+    editorCell.addEditorCell(this.createSpecializedLinkReferenceCell(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1164661317301");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
+    editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
@@ -69,25 +84,10 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createRowCell1(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell1(context, node, "specializes:"));
-    editorCell.addEditorCell(this.createSpecializedLinkReferenceCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1164661317301");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    editorCell.setDrawBorder(true);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
@@ -99,7 +99,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    editorCell.setDrawBorder(true);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
@@ -112,7 +112,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     ModelAccessor modelAccessor = Queries.createModelAccessor_LinkDeclaration_SpecializedMetaclass(node);
     EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
     editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
+    editorCell.setDrawBorder(true);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
@@ -127,7 +127,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     ModelAccessor modelAccessor = Queries.createModelAccessor_LinkDeclaration_SpecializedSourceCardinality(node);
     EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
     editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
+    editorCell.setDrawBorder(true);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
@@ -143,7 +143,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
+    editorCell.setDrawBorder(true);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     if(editorCell instanceof EditorCell_Label) {
@@ -176,7 +176,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
+    editorCell.setDrawBorder(true);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     if(editorCell instanceof EditorCell_Label) {
@@ -209,7 +209,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
+    editorCell.setDrawBorder(true);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     if(editorCell instanceof EditorCell_Label) {
@@ -242,7 +242,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new LinkDeclaration_Editor_target_InlineComponent());
     EditorCell editorCell = provider.createEditorCell(context);
     editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
+    editorCell.setDrawBorder(true);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     if(editorCell instanceof EditorCell_Label) {
@@ -275,7 +275,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new LinkDeclaration_Editor_specializedLink_InlineComponent());
     EditorCell editorCell = provider.createEditorCell(context);
     editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
+    editorCell.setDrawBorder(true);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     if(editorCell instanceof EditorCell_Label) {
