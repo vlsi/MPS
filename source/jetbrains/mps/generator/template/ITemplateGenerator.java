@@ -8,7 +8,6 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.GenerationFailedException;
 import jetbrains.mps.generator.GenerationSessionContext;
-import jetbrains.mps.generator.IModelGenerator;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.ITemplateLanguageConstants;
@@ -19,7 +18,7 @@ import jetbrains.mps.util.Condition;
 
 import java.util.Map;
 
-public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageConstants {
+public interface ITemplateGenerator extends ITemplateLanguageConstants {
   void setStartState();
 
   void advanceState();
@@ -27,6 +26,10 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
   ITemplateGeneratorState getState();
 
   IAdaptiveProgressMonitor getProgressMonitor();
+
+  SModel getSourceModel();
+
+  SModel getTargetModel();
 
   boolean doPrimaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailedException;
 

@@ -6,13 +6,14 @@
  */
 package jetbrains.mps.generator;
 
+import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
 
-public abstract class AbstractModelGenerator implements IModelGenerator {
+public abstract class AbstractModelGenerator implements ITemplateGenerator {
   private IOperationContext myOperationContext;
   private SModel mySourceModel;
   private SModel myTargetModel;

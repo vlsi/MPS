@@ -248,9 +248,4 @@ public class TemplateModelGenerator_New extends AbstractModelGenerator implement
   public void addUnresolvedReference(INodeBuilder nodeBuilder, SReference templateReference) {
     //To change body of implemented methods use File | Settings | File Templates.
   }
-
-  public void generate(SModel sourceModel, SModel targetModel) throws GenerationFailedException {
-    //To change body of implemented methods use File | Settings | File Templates.
-  }
-
 }

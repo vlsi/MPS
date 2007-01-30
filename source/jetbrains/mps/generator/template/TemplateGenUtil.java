@@ -82,15 +82,6 @@ public class TemplateGenUtil {
 
     generator.addUnresolvedReference(nodeBuilder, templateReference);
     return false;
-    /*  generator.showErrorMessage(
-              nodeBuilder.getSourceNode(),
-              templateNode,
-              nodeBuilder.getRuleNode(),
-              "Couldn't resolve template reference \"" + templateReference.getRole() + "\"");
-      //test
-      LOG.error("preved! error. set breakpoint here, referenceResolver:" + referenceResolver);
-      referenceResolver.resolveTarget(templateReference, nodeBuilder);
-      //test*/
   }
 
   public static boolean checkResolvedReference(SNode sourceNode, SNode targetNode, SNode templateNode, String role, SNode targetReferentNode, ITemplateGenerator generator) {
@@ -542,7 +533,6 @@ public class TemplateGenUtil {
             generator.getGeneratorSessionContext()};
     try {
       List<SNode> sourceNodes = (List<SNode>) QueryMethodGenerated.invoke(methodName, args, queryOwner.getModel());
-      checkNodesFromQuery(sourceNodes, queryOwner, generator);
       return sourceNodes;
     } catch (Exception e) {
       generator.showErrorMessage(sourceNode, queryOwner, "couldn't evaluate query");
@@ -580,7 +570,6 @@ public class TemplateGenUtil {
       Object[] args = new Object[]{sourceNode, generator};
       try {
         List<SNode> sourceNodes = (List<SNode>) QueryMethod.invoke(methodName, args, macro.getModel());
-        checkNodesFromQuery(sourceNodes, macro, generator);
         return sourceNodes;
       } catch (Exception e) {
         generator.showErrorMessage(sourceNode, null, macro, "couldn't evaluate macro query: " + NameUtil.shortNameFromLongName(e.getClass().getName()) + " : " + e.getMessage());
@@ -622,7 +611,6 @@ public class TemplateGenUtil {
         SNode outputSourceNode = (SNode) QueryMethodGenerated.invoke(methodName, args, macro.getModel());
         if (outputSourceNode != null) {
           sourceNodes.add(outputSourceNode);
-          checkNodesFromQuery(sourceNodes, macro, generator);
         }
         return sourceNodes;
       } catch (Exception e) {
@@ -640,7 +628,6 @@ public class TemplateGenUtil {
         SNode outputSourceNode = (SNode) QueryMethod.invoke(methodName, args, macro.getModel());
         if (outputSourceNode != null) {
           sourceNodes.add(outputSourceNode);
-          checkNodesFromQuery(sourceNodes, macro, generator);
         }
         return sourceNodes;
       } catch (Exception e) {
@@ -678,7 +665,6 @@ public class TemplateGenUtil {
         SNode outputSourceNode = (SNode) QueryMethodGenerated.invoke(methodName, args, macro.getModel());
         if (outputSourceNode != null) {
           sourceNodes.add(outputSourceNode);
-          checkNodesFromQuery(sourceNodes, macro, generator);
         }
         return sourceNodes;
       } catch (Exception e) {
@@ -693,7 +679,6 @@ public class TemplateGenUtil {
     Object[] args = new Object[]{sourceNode, generator};
     try {
       sourceNodes = (List<SNode>) QueryMethod.invoke(methodName, args, macro.getModel());
-      checkNodesFromQuery(sourceNodes, macro, generator);
       return sourceNodes;
     } catch (Exception e) {
       generator.showErrorMessage(sourceNode, null, macro, "couldn't evaluate macro query: " + NameUtil.shortNameFromLongName(e.getClass().getName()) + " : " + e.getMessage());
@@ -741,7 +726,6 @@ public class TemplateGenUtil {
     String methodName = "templateMappingRule_SourceQuery_" + sourceQueryAspectId;
     Object[] args = new Object[]{generator};
     List<SNode> sourceNodes = (List<SNode>) QueryMethod.invoke(methodName, args, mappingRule.getModel());
-    checkNodesFromQuery(sourceNodes, mappingRule, generator);
     return sourceNodes;
   }
 
@@ -750,7 +734,6 @@ public class TemplateGenUtil {
     String methodName = "templateWeavingRule_SourceQuery_" + sourceQueryAspectId;
     Object[] args = new Object[]{generator};
     List<SNode> sourceNodes = (List<SNode>) QueryMethod.invoke(methodName, args, weavingRule.getModel());
-    checkNodesFromQuery(sourceNodes, weavingRule, generator);
     return sourceNodes;
   }
 
@@ -792,7 +775,6 @@ public class TemplateGenUtil {
           String methodName = "templateSourceQuery_" + sourceQueryAspectMethodName;
           Object[] args = new Object[]{parentSourceNode, generator};
           List<SNode> sourceNodes = (List<SNode>) QueryMethod.invoke(methodName, args, nodeMacro.getModel());
-          checkNodesFromQuery(sourceNodes, nodeMacro, generator);
           return sourceNodes;
         }
       }
@@ -807,20 +789,6 @@ public class TemplateGenUtil {
     } catch (Throwable t) {
       throw new GenerationFailedException(new GenerationFailueInfo(t.toString(), parentSourceNode, templateNode, null, generator.getGeneratorSessionContext()), t);
     }
-  }
-
-  @SuppressWarnings({"UnusedDeclaration"})
-  private static void checkNodesFromQuery(List<SNode> queryNodes, SNode templateNode, ITemplateGenerator generator) {
-//    if (!queryNodes.isEmpty()) {
-//      Iterator<SNode> iterator = queryNodes.iterator();
-//      while (iterator.hasNext()) {
-//        SNode node = iterator.next();
-//        if (node.getModel() != generator.getSourceModel()) {
-//          iterator.remove();
-//          generator.showErrorMessage(templateNode, "Query node not from source model : " + node.getDebugText());
-//        }
-//      }
-//    }
   }
 
   private static INodeBuilder createNodeBuilder(SNode sourceNode, SNode templateNode, String mappingName, int currentMacroIndex, ITemplateGenerator generator) {
