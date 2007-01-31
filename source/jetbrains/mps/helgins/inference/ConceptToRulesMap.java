@@ -44,6 +44,24 @@ public class ConceptToRulesMap<T> implements Map<ConceptDeclaration, Set<T>> {
     return hashSet;
   }
 
+  public void makeConsistent() {
+    for (ConceptDeclaration conceptDeclaration : myMap.keySet()) {
+      if (conceptDeclaration == null) {
+        continue;
+      }
+      Set<T> rules = myMap.get(conceptDeclaration);
+      if (rules == null) continue;
+      ConceptDeclaration parent = conceptDeclaration.getExtends();
+      while (parent != null) {
+        Set<T> parentRules = myMap.get(parent);
+        if (parentRules != null) {
+          rules.addAll(parentRules);
+        }
+        parent = parent.getExtends();
+      }
+    }
+  }
+
 
   // not implemented
 
@@ -52,15 +70,15 @@ public class ConceptToRulesMap<T> implements Map<ConceptDeclaration, Set<T>> {
   }
 
   public boolean containsValue(Object value) {
-     throw new UnsupportedOperationException();
+    throw new UnsupportedOperationException();
   }
 
   public Set<T> remove(Object key) {
-     throw new UnsupportedOperationException();
+    throw new UnsupportedOperationException();
   }
 
   public void putAll(Map<? extends ConceptDeclaration, ? extends Set<T>> t) {
-     throw new UnsupportedOperationException();
+    throw new UnsupportedOperationException();
   }
 
   public void clear() {
@@ -68,14 +86,14 @@ public class ConceptToRulesMap<T> implements Map<ConceptDeclaration, Set<T>> {
   }
 
   public Set<ConceptDeclaration> keySet() {
-     throw new UnsupportedOperationException();
+    throw new UnsupportedOperationException();
   }
 
   public Collection<Set<T>> values() {
-     throw new UnsupportedOperationException();
+    throw new UnsupportedOperationException();
   }
 
   public Set<Entry<ConceptDeclaration, Set<T>>> entrySet() {
-     throw new UnsupportedOperationException();
+    throw new UnsupportedOperationException();
   }
 }

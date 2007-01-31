@@ -69,6 +69,8 @@ public class SubtypingManager {
     for (SubtypingVarianceRule rule : typesModel.getRoots(SubtypingVarianceRule.class)) {
       myVarianceRules.put(rule.getConceptDeclaration(), rule);
     }
+    myConceptsToSubtypingRulesCache.makeConsistent();
+    myConceptsToSupertypingRulesCache.makeConsistent();
   }
 
   public void clear() {

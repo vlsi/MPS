@@ -7,6 +7,7 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjects;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.SNode;
 
 import javax.swing.SwingUtilities;
 
@@ -74,10 +75,13 @@ public abstract class GenericEditorUpdater implements IComponentLifecycle {
               for (IEditor editor : editorsPane.getEditors()) {
                 AbstractEditorComponent component = editor.getCurrentEditorComponent();
                 if (component != null) {
-                  if (System.currentTimeMillis() -
-                          component.getEditedNode().getModel().getModelDescriptor().lastStructuralChange() > getCheckDelay()) {
-                    if ( updateEditor(component) ) {
-                      isUpdated = true;
+                  SNode editedNode = component.getEditedNode();
+                  if (editedNode != null) {
+                    if (System.currentTimeMillis() -
+                            editedNode.getModel().getModelDescriptor().lastStructuralChange() > getCheckDelay()) {
+                      if ( updateEditor(component) ) {
+                        isUpdated = true;
+                      }
                     }
                   }
                 }

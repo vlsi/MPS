@@ -16,6 +16,7 @@ import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.baseLanguage.InstanceMethodCall;
 import jetbrains.mpswiki.queryLanguage.evaluator.ConditionMatcher;
 
 import java.util.*;
@@ -157,6 +158,7 @@ public class TypeChecker {
         }
         rules.add(rule);
       }
+      myConceptsToRulesCache.makeConsistent();
 
       // load subtyping rules
       mySubtypingManager.initiate(typesModel);
