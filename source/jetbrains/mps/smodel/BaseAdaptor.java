@@ -89,10 +89,7 @@ public abstract class BaseAdaptor {
   }
 
   protected <T extends BaseAdaptor> List<T> getChildren(@NotNull String role) {
-    List<T> result = new ArrayList<T>();
-    for (SNode node : myNode.getChildren(role)) {
-      result.add((T) node.getAdaptor());
-    }
+    List<T> result = toAdaptors(myNode.getChildren(role));
     return result;
   }
 
@@ -115,5 +112,126 @@ public abstract class BaseAdaptor {
     } else {
       myNode.setReferent(role, newValue.getNode());
     }
+  }
+
+  @Nullable
+  public BaseAdaptor getAttribute() {
+    SNode result = myNode.getAttribute();
+    if (result == null) {
+      return null;
+    } else {
+      return result.getAdaptor();
+    }
+  }
+
+  @Nullable
+  public BaseAdaptor getAttribute(String role) {
+    SNode result = myNode.getAttribute(role);
+    if (result == null) {
+      return null;
+    }
+    return result.getAdaptor();
+  }
+
+  @NotNull
+  public List<? extends BaseAdaptor> getAttributes(String role) {
+    return toAdaptors(myNode.getAttributes(role));
+  }
+
+  public void setAttribute(BaseAdaptor adaptor) {
+    if (adaptor == null) {
+      myNode.setAttribute(null);
+    } else {
+      myNode.setAttribute(adaptor.getNode());
+    }
+  }
+
+  public void setAttribute(String role, BaseAdaptor attribute) {
+    if (attribute == null) {
+      myNode.setAttribute(role, null);
+    } else {
+      myNode.setAttribute(role, attribute.getNode());
+    }
+  }
+
+  public void addAttribute(String role, BaseAdaptor attribute) {
+    myNode.addAttribute(role, attribute.getNode());
+  }
+
+  public BaseAdaptor getPropertyAttribute(String propertyName) {
+    SNode node = myNode.getPropertyAttribute(propertyName);
+    if (node == null) {
+      return null;
+    } else {
+      return node.getAdaptor();
+    }
+  }
+
+  public BaseAdaptor getPropertyAttribute(String role, String propertyName) {
+    SNode node = myNode.getPropertyAttribute(role, propertyName);
+    if (node == null) {
+      return null;
+    } else {
+      return node.getAdaptor();
+    }
+  }
+
+  @NotNull
+  public List<? extends BaseAdaptor> getPropertyAttributes(String role, String propertyName) {
+    return toAdaptors(myNode.getPropertyAttributes(role, propertyName));
+  }
+
+  public void setPropertyAttribute(String role, String propertyName, BaseAdaptor propertyAttribute) {
+    if (propertyAttribute == null) {
+      myNode.setPropertyAttribute(role, propertyName, null);
+    } else {
+      myNode.setPropertyAttribute(role, propertyName, propertyAttribute.getNode());
+    }    
+  }
+
+  public void addPropertyAttribute(String role, String propertyName, BaseAdaptor propertyAttribute) {
+    myNode.addPropertyAttribute(role, propertyName, propertyAttribute.getNode());
+  }
+
+  public BaseAdaptor getLinkAttribute(String propertyName) {
+    SNode node = myNode.getLinkAttribute(propertyName);
+    if (node == null) {
+      return null;
+    } else {
+      return node.getAdaptor();
+    }
+  }
+
+  public BaseAdaptor getLinkAttribute(String role, String propertyName) {
+    SNode node = myNode.getLinkAttribute(role, propertyName);
+    if (node == null) {
+      return null;
+    } else {
+      return node.getAdaptor();
+    }
+  }
+
+  public void setLinkAttribute(String role, String propertyName, BaseAdaptor propertyAttribute) {
+    if (propertyAttribute == null) {
+      myNode.setLinkAttribute(role, propertyName, null);
+    } else {
+      myNode.setLinkAttribute(role, propertyName, propertyAttribute.getNode());
+    }
+  }
+
+  public void addLinkAttribute(String role, String propertyName, BaseAdaptor propertyAttribute) {
+    myNode.addLinkAttribute(role, propertyName, propertyAttribute.getNode());
+  }
+
+  public List<? extends BaseAdaptor> getLinkAttributes(String role, String linkRole) {
+    return toAdaptors(myNode.getLinkAttributes(role, linkRole));
+  }
+
+  private <T extends BaseAdaptor> List<T> toAdaptors(List<? extends SNode> list) {
+    List<T> result = new ArrayList<T>();
+    for (SNode node : list) {
+      result.add((T) node.getAdaptor());
+    }
+    return result;
   }
 }
