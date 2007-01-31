@@ -176,8 +176,16 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     return new SimpleNodeBuilder(outputNode);
   }
 
+  //Should be optimized!!!
   public INodeBuilder findNodeBuilderForSource(SNode inputNode, Condition<INodeBuilder> condition) {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+   for (Pair<SNode,SNode> key : myTemplateNodeAndInputNodeToOutputNodeMap.keySet()) {
+      if (key.o1 == inputNode) {
+        SNode outputNode = myTemplateNodeAndInputNodeToOutputNodeMap.get(key);
+        SimpleNodeBuilder builder = new SimpleNodeBuilder(outputNode);
+        if (condition.met(builder)) return builder;
+      }
+    }
+    return null;
   }
 
   public INodeBuilder findNodeBuilderForSource(SNode inputNode) {

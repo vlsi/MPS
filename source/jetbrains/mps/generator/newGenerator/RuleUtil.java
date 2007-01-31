@@ -222,6 +222,10 @@ public class RuleUtil {
       String methodName = "templateWeavingRule_Context_" + aspectId;
       Object[] args = new Object[]{sourceNode, generator};
       INodeBuilder nodeBuilder = (INodeBuilder) QueryMethod.invoke(methodName, args, ruleNode.getModel());
+      if(nodeBuilder == null) {
+        generator.showErrorMessage(sourceNode, null, ruleNode, "Query Method returned null");
+        return null;
+      }
       return nodeBuilder.getTargetNode();
     } catch (Throwable t) {
       generator.showErrorMessage(sourceNode, null, ruleNode, t.getClass().getName());
@@ -320,7 +324,9 @@ public static void applyWeavingMappingRule(TemplateModelGenerator_New generator,
     if(inputNode != null && inputNode.isRoot()) generator.addRootToDelete(inputNode);
   }
 
-  private static SNode createNodeFromTemplate(TemplateModelGenerator_New generator, String ruleName, SModel outputModel, SNode templateNode, SNode inputNode, SNode outputParentNode, int nodeMacrosToSkip) {
+  private static SNode createNodeFromTemplate(TemplateModelGenerator_New generator, String ruleName, SModel outputModel,
+                                              SNode templateNode, SNode inputNode, SNode outputParentNode,
+                                              int nodeMacrosToSkip) {
     int i = 0;
     for (SNode templateChildNode : templateNode.getChildren()) {
       if(!(templateChildNode instanceof NodeMacro)) continue;
@@ -353,17 +359,18 @@ public static void applyWeavingMappingRule(TemplateModelGenerator_New generator,
       outputNode.setProperty(property, templateNode.getProperty(property), false);
     }
 
+    SModel templateModel = templateNode.getModel();
     for (SReference reference : templateNode.getReferences()) {
-      SNode templatereferentNode = reference.getTargetNode();
-      if(templatereferentNode == null) {
+      SNode templateReferentNode = reference.getTargetNode();
+      if(templateReferentNode == null) {
         generator.showErrorMessage(null, templateNode, "'createNodeFromTemplate' referent node is null in template model");
         continue;
       }
-      if(templatereferentNode.getModel().equals(outputModel)) {
-        generator.addReferenceInfo(new ReferenceInfo_Default(outputNode, reference.getRole(), templatereferentNode));
+      if(templateReferentNode.getModel().equals(templateModel)) {
+        generator.addReferenceInfo(new ReferenceInfo_Default(outputNode, reference.getRole(), templateNode, templateReferentNode, inputNode));
       }
       else {
-        outputNode.addReferent(reference.getRole(), templatereferentNode);
+        outputNode.addReferent(reference.getRole(), templateReferentNode);
       }
     }
 
