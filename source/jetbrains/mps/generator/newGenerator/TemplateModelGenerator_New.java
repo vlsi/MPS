@@ -61,6 +61,12 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
       RuleUtil.applyRoot_MappingRule(this, myModel, rootMappingRule);
     }
 
+    for (WeavingRule weavingRule : ruleManager.getWeavingRules()) {
+      RuleUtil.applyWeavingRule(this, myModel, weavingRule);
+    }
+    for (Weaving_MappingRule weavingMappingRule : ruleManager.getWeaving_MappingRules()) {
+      RuleUtil.applyWeavingMappingRule(this, myModel, weavingMappingRule);
+    }
 
     for (SNode rootNode : myNewRootNodes) {
       myModel.addRoot(rootNode);
@@ -115,10 +121,9 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
 
   public void addOutputNodeByRuleNameAndInputNode(String ruleName, SNode inputNode, SNode outputNode) {
     Pair key = new Pair(ruleName, inputNode);
-    if(myRuleNameAndInputNodeToOutputNodeMap.get(key) != null) {
-      showErrorMessage(inputNode, "The output node already exists, that was build by this template and rule name - " + ruleName);
+    if(myRuleNameAndInputNodeToOutputNodeMap.get(key) == null) {
+      myRuleNameAndInputNodeToOutputNodeMap.put(key, outputNode);
     }
-    myRuleNameAndInputNodeToOutputNodeMap.put(key, outputNode);
   }
 
 
