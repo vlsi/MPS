@@ -9,8 +9,6 @@ import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
  * Date: Jan 13, 2004
  */
 public class JavaNameUtil {
-  public static boolean OLD_STRUCTURE = true;
-
   public static String fqClassName(SModel model, String shortClassName) {
     String packageName = packageNameForModelUID(model.getUID());
     if (packageName == null || packageName.length() == 0) {
@@ -30,7 +28,7 @@ public class JavaNameUtil {
   public static String packageNameForModelUID(SModelUID modelUID) {
     String modelFqName = modelUID.getLongName();
     String packageName = modelFqName;
-    if (modelFqName.endsWith(".structure") && OLD_STRUCTURE) {
+    if (modelFqName.endsWith(".structure")) {
       packageName = modelFqName.substring(0, modelFqName.lastIndexOf(".structure"));
     }
     return packageName;

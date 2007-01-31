@@ -4,10 +4,17 @@ package jetbrains.mps.bootstrap.structureLanguage.structure;
 
 import jetbrains.mps.core.structure.NamedConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.project.GlobalScope;
 
 public class DataTypeDeclaration extends NamedConcept {
 
   public  DataTypeDeclaration(SNode node) {
     super(node);
+  }
+
+  public static DataTypeDeclaration newInstance(SModel sm) {
+    return (DataTypeDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.DataTypeDeclaration", sm, GlobalScope.getInstance()).getAdaptor();
   }
 }

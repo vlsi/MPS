@@ -4,6 +4,9 @@ package jetbrains.mps.bootstrap.structureLanguage.structure;
 
 import jetbrains.mps.core.structure.NamedConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.project.GlobalScope;
 
 public class EnumerationMemberDeclaration extends NamedConcept {
   public static String INTERNAL_VALUE = "internalValue";
@@ -11,6 +14,10 @@ public class EnumerationMemberDeclaration extends NamedConcept {
 
   public  EnumerationMemberDeclaration(SNode node) {
     super(node);
+  }
+
+  public static EnumerationMemberDeclaration newInstance(SModel sm) {
+    return (EnumerationMemberDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration", sm, GlobalScope.getInstance()).getAdaptor();
   }
 
   public String getInternalValue() {

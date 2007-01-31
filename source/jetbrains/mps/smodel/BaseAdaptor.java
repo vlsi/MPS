@@ -18,11 +18,43 @@ public abstract class BaseAdaptor {
     return myNode;
   }
 
-  protected BaseAdaptor getParent() {
+  public SModel getModel() {
+    return myNode.getModel();
+  }
+
+  public String getId() {
+    return myNode.getId();
+  }
+
+  public BaseAdaptor getParent() {
     if (myNode.getParent() == null) {
       return null;
     }
     return myNode.getParent().getAdaptor();
+  }
+
+  public<BA extends BaseAdaptor> BA getParent(Class<BA> cls) {
+    if (getParent() == null) {
+      return null;
+    }
+
+    if (cls.isInstance(getParent())) {
+      return (BA) getParent();
+    }
+
+    return getParent().getParent(cls);
+  }
+
+  public void delete() {
+    myNode.delete();
+  }
+
+  public void addNextSibling(BaseAdaptor a) {
+    myNode.addNextSibling(a.getNode());
+  }
+
+  public void addPrevSibling(BaseAdaptor a) {
+    myNode.addPrevSibling(a.getNode());
   }
 
   protected  String getProperty(@NotNull String propertyName) {

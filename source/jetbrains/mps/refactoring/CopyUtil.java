@@ -14,6 +14,9 @@ public class CopyUtil  {
     return copy(nodes, targetModel, new HashMap<SNode, SNode>(), scope);
   }
 
+  public static<BA extends BaseAdaptor> BA copy(BA node, SModel targetModel, IScope scope) {
+    return (BA) copy(node.getNode(), targetModel, new HashMap<SNode, SNode>(), scope).getAdaptor();
+  }
 
   public static<SN extends SNode> SN copy(SN node, SModel targetModel, IScope scope) {
     return copy(node, targetModel, new HashMap<SNode, SNode>(), scope);

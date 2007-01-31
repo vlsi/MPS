@@ -4,12 +4,19 @@ package jetbrains.mps.bootstrap.structureLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.project.GlobalScope;
 
 public class ConceptProperty extends BaseConcept {
   public static String CONCEPT_PROPERTY_DECLARATION = "conceptPropertyDeclaration";
 
   public  ConceptProperty(SNode node) {
     super(node);
+  }
+
+  public static ConceptProperty newInstance(SModel sm) {
+    return (ConceptProperty)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.ConceptProperty", sm, GlobalScope.getInstance()).getAdaptor();
   }
 
   public ConceptPropertyDeclaration getConceptPropertyDeclaration() {

@@ -4,12 +4,19 @@ package jetbrains.mps.bootstrap.structureLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.project.GlobalScope;
 
 public class ConceptLink extends BaseConcept {
   public static String CONCEPT_LINK_DECLARATION = "conceptLinkDeclaration";
 
   public  ConceptLink(SNode node) {
     super(node);
+  }
+
+  public static ConceptLink newInstance(SModel sm) {
+    return (ConceptLink)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.ConceptLink", sm, GlobalScope.getInstance()).getAdaptor();
   }
 
   public ConceptLinkDeclaration getConceptLinkDeclaration() {

@@ -4,12 +4,19 @@ package jetbrains.mps.bootstrap.structureLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.project.GlobalScope;
 
 public class InterfaceConceptReference extends BaseConcept {
   public static String INTFC = "intfc";
 
   public  InterfaceConceptReference(SNode node) {
     super(node);
+  }
+
+  public static InterfaceConceptReference newInstance(SModel sm) {
+    return (InterfaceConceptReference)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference", sm, GlobalScope.getInstance()).getAdaptor();
   }
 
   public InterfaceConceptDeclaration getIntfc() {

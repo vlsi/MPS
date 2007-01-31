@@ -81,6 +81,10 @@ public class NameUtil {
     return fqName.substring(0, offset);
   }
 
+  public static String conceptFqName(ConceptDeclaration cd) {
+    return namespaceFromConcept(cd) + "." + cd.getName();
+  }
+
   public static String namespaceFromConcept(ConceptDeclaration concept) {
     return namespaceFromConceptFQName(nodeFQName(concept));
   }

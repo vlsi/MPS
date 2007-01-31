@@ -4,6 +4,7 @@ import jetbrains.mps.annotations.AttributeConcept;
 import jetbrains.mps.annotations.LinkAttributeConcept;
 import jetbrains.mps.annotations.PropertyAttributeConcept;
 import jetbrains.mps.bootstrap.structureLanguage.*;
+import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.command.undo.IUndoableAction;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
@@ -18,12 +19,14 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.util.QueryMethod;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
 import java.io.PrintStream;
+import java.util.*;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * User: Sergey Dmitriev
@@ -1812,7 +1815,18 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public BaseAdaptor getAdaptor() {
-    //todo
+    try {
+      Constructor c = QueryMethod.getAdaptorConstructor(getClass().getName());
+      if (c != null) {
+        return (BaseAdaptor) c.newInstance(this);
+      }
+    } catch (IllegalAccessException e) {
+      LOG.error(e);
+    } catch (InvocationTargetException e) {
+      LOG.error(e);
+    } catch (InstantiationException e) {
+      LOG.error(e);
+    }
     return new BaseAdaptor(this) { };
   }
 }
