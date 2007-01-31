@@ -29,12 +29,6 @@ public class FastRuleFinder {
       if (applicableConcept == null) applicableConcept = baseConcept;
       addRule_applicableExactly(applicableConcept, rule);
     }
-
-//    // rules applicable to inheritors
-//    for (ConceptDeclaration concept : myRules_applicableExactly.keySet()) {
-//      cacheAllApplicableRules(concept, baseConcept);
-//    }
-
   }
 
   private void addRule_applicableExactly(ConceptDeclaration concept, Reduction_MappingRule rule) {
@@ -66,9 +60,9 @@ public class FastRuleFinder {
     Collections.reverse(hierarchy);
 
     // rules for inheritor
-    List<Reduction_MappingRule> rulesForInheritor = new LinkedList<Reduction_MappingRule>();
+    List<Reduction_MappingRule> rulesForInheritor = null;
     for (ConceptDeclaration hrrConcept : hierarchy) {
-      myRules_applicableInheritor.get(hrrConcept).addAll(rulesForInheritor);
+      rulesForInheritor = updateRulesForInheritor(hrrConcept, rulesForInheritor);
       List<Reduction_MappingRule> list = myRules_applicableExactly.get(hrrConcept);
       if (list != null) {
         for (Reduction_MappingRule rule : list) {
@@ -86,17 +80,25 @@ public class FastRuleFinder {
       }
       myRules_all.put(hrrConcept, new LinkedList<Reduction_MappingRule>());
       List<Reduction_MappingRule> rulesExectly = myRules_applicableExactly.get(hrrConcept);
-      if(rulesExectly != null) {
-         myRules_all.get(hrrConcept).addAll(rulesExectly);
+      if (rulesExectly != null) {
+        myRules_all.get(hrrConcept).addAll(rulesExectly);
       }
       myRules_all.get(hrrConcept).addAll(myRules_applicableInheritor.get(hrrConcept));
     }
   }
 
+  private List<Reduction_MappingRule> updateRulesForInheritor(ConceptDeclaration concept, List<Reduction_MappingRule> addRulesForInheritor) {
+    List<Reduction_MappingRule> currentRulesForInheritor = myRules_applicableInheritor.get(concept);
+    if (addRulesForInheritor != null) {
+      currentRulesForInheritor.addAll(addRulesForInheritor);
+    }
+    return currentRulesForInheritor;
+  }
+
   public SNode findReductionRule(SNode node, ITemplateGenerator generator) {
     ConceptDeclaration concept = node.getConceptDeclaration__();
 
-   List<Reduction_MappingRule> allRules = myRules_all.get(concept);
+    List<Reduction_MappingRule> allRules = myRules_all.get(concept);
     if (allRules == null) {
       // lazy init: get all rules from inherited concepts
       cacheAllApplicableRules(concept, SModelUtil.getBaseConcept());
