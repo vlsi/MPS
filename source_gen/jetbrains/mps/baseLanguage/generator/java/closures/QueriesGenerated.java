@@ -13,6 +13,15 @@ import jetbrains.mps.baseLanguage.VariableDeclaration;
 
 public class QueriesGenerated {
 
+  public static boolean baseMappingRule_Condition_1170282608160(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return ClosuresUtil.hasVariablesUsedInClosure(node, generator);
+  }
+  public static boolean baseMappingRule_Condition_1170282061477(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    if(!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Closure"))) {
+      return ClosuresUtil.hasVariablesUsedInClosure(node, generator);
+    }
+    return false;
+  }
   public static boolean baseMappingRule_Condition_1170198286262(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode parent = SNodeOperations.getParent(node, null, false, false);
     if(ClosuresUtil.isClosureContextOwner(parent)) {
