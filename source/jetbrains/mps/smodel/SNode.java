@@ -1810,4 +1810,9 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       }
     });
   }
+
+  public BaseAdaptor getAdaptor() {
+    //todo
+    return new BaseAdaptor(this) { };
+  }
 }
