@@ -16,7 +16,6 @@ import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.baseLanguage.InstanceMethodCall;
 import jetbrains.mpswiki.queryLanguage.evaluator.ConditionMatcher;
 
 import java.util.*;
@@ -35,6 +34,7 @@ public class TypeChecker {
   private static final Logger LOG = Logger.getLogger(TypeChecker.class);
 
   private static final Object TYPE_OF_TERM = new Object();
+  private static final Object TYPE_ERROR = new Object();
 
   private Set<SNode> myCheckedRoots = new WeakSet<SNode>();
   private Map<SNode, Set<SNode>> myNodesToDependentRoots = new WeakHashMap<SNode, Set<SNode>>();
@@ -190,7 +190,7 @@ public class TypeChecker {
     // setting errors
     for (SNode node : myNodesWithErrors.keySet()) {
       String errorString = myNodesWithErrors.get(node);
-      node.putUserObject(TYPE_OF_TERM, errorString);
+      node.putUserObject(TYPE_ERROR, errorString);
     }
   }
 
@@ -205,8 +205,6 @@ public class TypeChecker {
   public void reportTypeError(SNode nodeWithError, String errorString) {
     if (nodeWithError != null) {
       myNodesWithErrors.put(nodeWithError, errorString);
-    } else {
-      LOG.warning("can't report error: error has no related node");
     }
   }
 
