@@ -22,6 +22,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
+import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
+
 /**
  * Author: Sergey Dmitriev
  * Created Sep 16, 2003
@@ -975,6 +977,16 @@ public class SModel implements Iterable<SNode> {
 
   public <E extends SNode> List<E> allNodes(Class<E> cls) {
     return allNodes(cls, (Condition<E>) Condition.TRUE_CONDITION);
+  }
+
+  public <BA extends BaseAdaptor> List<BA> allNodesByAdaptor(final Class<BA> cls) {
+    List<BA> result = new ArrayList<BA>();
+    for (SNode n : allNodes()) {
+      if (cls.isInstance(n.getAdaptor())) {
+        result.add((BA) n.getAdaptor());
+      }
+    }
+    return result;
   }
 
   public <SN extends SNode> List<SN> allNodesIncludingImported(IScope scope, final Class<SN> snodeClass) {

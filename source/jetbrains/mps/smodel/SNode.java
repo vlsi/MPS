@@ -1472,6 +1472,16 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
 
+  public <BA extends BaseAdaptor> List<BA> allChildrenByAdaptor(Class<BA> clazz) {
+    List<BA> result = new ArrayList<BA>();
+    for (SNode child : allChildren()) {
+      if (clazz.isInstance(child.getAdaptor())) {
+        result.add((BA) child.getAdaptor());
+      }
+    }    
+    return result;
+  }
+
   public <E extends SNode> List<E> allChildren(Class<E> clazz) {
     List<E> resultNodes = new LinkedList<E>();
     Iterator<? extends SNode> nodes = depthFirstChildren();

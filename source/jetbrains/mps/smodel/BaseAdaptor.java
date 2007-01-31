@@ -3,9 +3,7 @@ package jetbrains.mps.smodel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Iterator;
+import java.util.*;
 
 public abstract class BaseAdaptor {
   private SNode myNode;
@@ -43,6 +41,10 @@ public abstract class BaseAdaptor {
     }
 
     return getParent().getParent(cls);
+  }
+
+  public<BA extends BaseAdaptor> List<BA> allChildren(Class<BA> cls) {
+    return myNode.allChildrenByAdaptor(cls);
   }
 
   public void delete() {
@@ -97,7 +99,7 @@ public abstract class BaseAdaptor {
     return result.getAdaptor();
   }
 
-  protected void removeChild(@NotNull BaseAdaptor child) {
+  public void removeChild(@NotNull BaseAdaptor child) {
     myNode.removeChild(child.getNode());
   }
 
@@ -259,10 +261,38 @@ public abstract class BaseAdaptor {
     return toAdaptors(myNode.getLinkAttributes(role, linkRole));
   }
 
-  private <T extends BaseAdaptor> List<T> toAdaptors(List<? extends SNode> list) {
+
+  public boolean equals(Object obj) {
+    if (!(obj instanceof BaseAdaptor)) return false;
+    BaseAdaptor other = (BaseAdaptor) obj;
+    return other.getNode() == getNode();
+  }
+
+
+  public int hashCode() {
+    return getNode().hashCode();
+  }
+
+  public static <T extends BaseAdaptor> List<T> toAdaptors(List<? extends SNode> list) {
     List<T> result = new ArrayList<T>();
     for (SNode node : list) {
       result.add((T) node.getAdaptor());
+    }
+    return result;
+  }
+
+  public static <T extends SNode> List<T> toNodes(List<? extends BaseAdaptor> list) {
+    List<T> result = new ArrayList<T>();
+    for (BaseAdaptor ba : list) {
+      result.add((T) ba.getNode());
+    }
+    return result;
+  }
+
+  public static <T extends SNode> Set<T> toNodes(Set<? extends BaseAdaptor> list) {
+    Set<T> result = new HashSet<T>();
+    for (BaseAdaptor ba : list) {
+      result.add((T) ba.getNode());
     }
     return result;
   }
