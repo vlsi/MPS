@@ -6,7 +6,6 @@ import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration;
 
 import java.util.Collections;
 import java.util.Iterator;
