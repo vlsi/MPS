@@ -8,6 +8,9 @@ import jetbrains.mps.baseLanguage.*;
 import jetbrains.mps.util.Condition;
 
 import java.util.Iterator;
+import java.util.List;
+import java.util.Collections;
+import java.util.LinkedList;
 
 /**
  * Igor Alshannikov
@@ -17,15 +20,31 @@ public class _QueriesUtil {
   public static SNode find_EnclosingContextOwner_ClosureContext_generatedClass(SNode inputNode, ITemplateGenerator generator) {
     SNode contextOwner = ClosuresUtil.findEnclosingClosureContextOwner(inputNode);
     if (contextOwner != null) {
-      INodeBuilder builder = generator.findNodeBuilderForSource(contextOwner, ClosuresMappingId.CONTEXT_OWNER__CLOSURE_CONTEXT__CLASS);
-      if (builder != null) {
-        return builder.getTargetNode();
+      SNode generatedClass = find_ContextOwner_ClosureContext_generatedClass(contextOwner, generator);
+      if (generatedClass != null) {
+        return generatedClass;
       }
     }
     return SModelUtil.findNodeByFQName("java.lang.Object", ClassConcept.class, generator.getScope());
   }
 
-  public static SNode find_Closure_generatedColsureAdapter_constructor(SNode inputNode, ITemplateGenerator generator) {
+  public static SNode find_ContextOwner_ClosureContext_generatedClass(SNode inputNode, ITemplateGenerator generator) {
+    INodeBuilder builder = generator.findNodeBuilderForSource(inputNode, ClosuresMappingId.CONTEXT_OWNER__CLOSURE_CONTEXT__CLASS);
+    if (builder != null) {
+      return builder.getTargetNode();
+    }
+    return null;
+  }
+
+  public static SNode find_ContextOwner_ClosureContext_generatedClass_constructor(SNode inputNode, ITemplateGenerator generator) {
+    SNode generatedClass = find_ContextOwner_ClosureContext_generatedClass(inputNode, generator);
+    if (generatedClass != null) {
+      return ((ClassConcept) generatedClass).constructors().next();
+    }
+    return null;
+  }
+
+  public static SNode find_Closure_generatedClosureAdapter_constructor(SNode inputNode, ITemplateGenerator generator) {
     Closure closure = (Closure) inputNode;
     INodeBuilder builder = generator.findNodeBuilderForSource(closure, ClosuresMappingId.CLOSURE__ADAPTER_CLASS);
     ClassConcept closureAdapterClass = (ClassConcept) builder.getTargetNode();
@@ -71,4 +90,18 @@ public class _QueriesUtil {
     }
     return null;
   }
+
+  public static List<SNode> getList_ContextOwner_ifMethod_ParmsUsedInClosure(SNode inputNode, ITemplateGenerator generator) {
+    if (!(inputNode instanceof BaseMethodDeclaration)) return Collections.emptyList();
+    BaseMethodDeclaration method = (BaseMethodDeclaration) inputNode;
+    List<VariableDeclaration> variablesUsedInClosure = ClosuresUtil.getVariablesUsedInClosure(method, generator);
+    List<SNode> parms = new LinkedList<SNode>();
+    for (VariableDeclaration var : variablesUsedInClosure) {
+      if (var instanceof ParameterDeclaration) {
+        parms.add(var);
+      }
+    }
+    return parms;
+  }
+
 }
