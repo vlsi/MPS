@@ -461,6 +461,10 @@ public class SModel implements Iterable<SNode> {
       }
     }
 
+    if (languages.isEmpty()) {
+      LOG.error("Model \"" + getUID() + "\" has no languages !!!");
+    }
+
     return languages;
   }
 
@@ -479,10 +483,10 @@ public class SModel implements Iterable<SNode> {
 
 
   /**
-   * @deprecated 
+   * @deprecated
    * If you want to get all explicitly imported languagese getExplicitlyImportedLanguages()
    * If you want to get all imported languages use the method with the same name but with
-   * IScope parameter 
+   * IScope parameter
    */
   @NotNull
   public List<String> getLanguageNamespaces() {
@@ -602,7 +606,7 @@ public class SModel implements Iterable<SNode> {
         modelsList.add(modelDescriptor);
       } else {
         System.out.println("kurlik kurlik. set break point here");
-        scope.getModelDescriptor(modelUID);                
+        scope.getModelDescriptor(modelUID);
         LOG.errorWithTrace("Couldn't find model descriptor for imported model: \"" + modelUID + "\" in: \"" + getUID() + "\"");
       }
     }
@@ -647,7 +651,7 @@ public class SModel implements Iterable<SNode> {
   public void setMaxImportIndex(int i) {
     myMaxImportIndex = i;
   }
-                                          
+
   public int getMaxImportIndex() {
     return myMaxImportIndex;
   }
@@ -767,10 +771,11 @@ public class SModel implements Iterable<SNode> {
 
   public void validateLanguagesAndImports() {
     Set<String> usedLanguages = new HashSet<String>(getLanguageNamespaces(GlobalScope.getInstance()));
-    Set<SModelUID> importedModels = new HashSet<SModelUID>();
-    for (SModelDescriptor sm : allImportedModels(GlobalScope.getInstance())) {
-      importedModels.add(sm.getModelUID());
-    }
+//    Set<SModelUID> importedModels = new HashSet<SModelUID>();
+//    for (SModelDescriptor sm : allImportedModels(GlobalScope.getInstance())) {
+//      importedModels.add(sm.getModelUID());
+//    }
+    Set<SModelUID> importedModels = new HashSet<SModelUID>(getImportedModelUIDs());
     List<? extends SNode> nodes = allNodes();
     for (SNode node : nodes) {
       String languageNamespace = node.getLanguageNamespace();
