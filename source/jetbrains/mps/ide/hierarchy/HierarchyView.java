@@ -220,8 +220,14 @@ public class HierarchyView extends DefaultTool {
 
       final EditorsPane editorsPane = myIde.getEditorsPane();
       final IEditor currentEditor = editorsPane.getCurrentEditor();
+                 
 
-      NavigationActionProcessor.executeNavigationAction(new EditorNavigationCommand(node, currentEditor, editorsPane), getOperationContext());
+      IOperationContext context = getOperationContext();
+      if (context.getModule() == null) {
+        context = ModuleContext.create(node, context.getComponent(AbstractProjectFrame.class));
+      }
+
+      NavigationActionProcessor.executeNavigationAction(new EditorNavigationCommand(node, currentEditor, editorsPane), context);
 
     }
 
