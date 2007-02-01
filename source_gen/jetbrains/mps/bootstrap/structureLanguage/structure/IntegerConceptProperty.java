@@ -18,16 +18,16 @@ public class IntegerConceptProperty extends ConceptProperty {
     return (IntegerConceptProperty)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.IntegerConceptProperty", sm, GlobalScope.getInstance()).getAdapter();
   }
 
-  public int getValue() {
-    return this.getIntegerProperty(IntegerConceptProperty.VALUE);
-  }
-  public void setValue(int value) {
-    this.setIntegerProperty(IntegerConceptProperty.VALUE, value);
-  }
   public IntegerConceptPropertyDeclaration getIntegerConceptPropertyDeclaration() {
     return (IntegerConceptPropertyDeclaration)this.getConceptPropertyDeclaration();
   }
   public void setIntegerConceptPropertyDeclaration(IntegerConceptPropertyDeclaration node) {
     this.setConceptPropertyDeclaration(node);
+  }
+  public int getValue() {
+    return this.getIntegerProperty(IntegerConceptProperty.VALUE);
+  }
+  public void setValue(int value) {
+    this.setIntegerProperty(IntegerConceptProperty.VALUE, value);
   }
 }
