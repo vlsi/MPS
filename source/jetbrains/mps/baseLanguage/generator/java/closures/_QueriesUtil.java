@@ -5,6 +5,7 @@ import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.generator.template.INodeBuilder;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.baseLanguage.ClassConcept;
+import jetbrains.mps.baseLanguage.Closure;
 
 /**
  * Igor Alshannikov
@@ -20,5 +21,12 @@ public class _QueriesUtil {
       }
     }
     return SModelUtil.findNodeByFQName("java.lang.Object", ClassConcept.class, generator.getScope());
+  }
+
+  public static SNode find_Closure_generatedColsureAdapter_constructor(SNode sourceNode, ITemplateGenerator generator) {
+    Closure closure = (Closure) sourceNode;
+    INodeBuilder builder = generator.findNodeBuilderForSource(closure, ClosuresMappingId.CLOSURE__ADAPTER_CLASS);
+    ClassConcept closureAdapterClass = (ClassConcept) builder.getTargetNode();
+    return closureAdapterClass.constructors().next();
   }
 }
