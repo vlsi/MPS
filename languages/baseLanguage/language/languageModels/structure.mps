@@ -1777,5 +1777,35 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1170345865475">
+    <property name="rootable" value="true" />
+    <property name="name" value="AnonymousClass" />
+    <link role="extends" targetNodeId="1068390468198" resolveInfo="ClassConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1170346070688">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="classifier" />
+      <link role="target" targetNodeId="1107461130800" resolveInfo="Classifier" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1170346101385">
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="parameter" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1170346941296">
+    <property name="name" value="AnonymousClassExpression" />
+    <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1170346979436">
+      <property name="value" value="anonymous class" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1170346951344">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="cls" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1170345865475" resolveInfo="AnonymousClass" />
+    </node>
+  </node>
 </model>
 

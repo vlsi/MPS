@@ -137,8 +137,19 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1166110993140">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1166110993141">
             <property name="name" value="m" />
-            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1166110993142">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1170348002459">
               <link role="classifier" extResolveInfo="3.[Classifier]Method" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.AnonymousClassExpression" id="1170347079438">
+              <node role="cls" type="jetbrains.mps.baseLanguage.AnonymousClass" id="1170347079439">
+                <link role="classifier" extResolveInfo="3.[Classifier]Method" />
+                <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1170347417020">
+                  <property name="name" value="abcde" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.ArrayType" id="1170347433349">
+                    <node role="componentType" type="jetbrains.mps.baseLanguage.IntegerType" id="1170347431817" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
