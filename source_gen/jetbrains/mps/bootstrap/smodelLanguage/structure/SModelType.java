@@ -15,6 +15,6 @@ public class SModelType extends Type {
   }
 
   public static SModelType newInstance(SModel sm) {
-    return (SModelType)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SModelType", sm, GlobalScope.getInstance()).getAdaptor();
+    return (SModelType)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SModelType", sm, GlobalScope.getInstance()).getAdapter();
   }
 }

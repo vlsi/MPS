@@ -14,6 +14,6 @@ public class ReferenceConceptLinkDeclaration extends ConceptLinkDeclaration {
   }
 
   public static ReferenceConceptLinkDeclaration newInstance(SModel sm) {
-    return (ReferenceConceptLinkDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLinkDeclaration", sm, GlobalScope.getInstance()).getAdaptor();
+    return (ReferenceConceptLinkDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLinkDeclaration", sm, GlobalScope.getInstance()).getAdapter();
   }
 }

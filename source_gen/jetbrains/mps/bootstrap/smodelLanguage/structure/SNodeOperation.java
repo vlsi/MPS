@@ -26,7 +26,7 @@ public class SNodeOperation extends BaseConcept {
   }
 
   public static SNodeOperation newInstance(SModel sm) {
-    return (SNodeOperation)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SNodeOperation", sm, GlobalScope.getInstance()).getAdaptor();
+    return (SNodeOperation)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SNodeOperation", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public int getParametersCount() {

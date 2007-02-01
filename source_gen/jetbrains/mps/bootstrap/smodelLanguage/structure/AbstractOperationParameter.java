@@ -15,6 +15,6 @@ public class AbstractOperationParameter extends BaseConcept {
   }
 
   public static AbstractOperationParameter newInstance(SModel sm) {
-    return (AbstractOperationParameter)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.AbstractOperationParameter", sm, GlobalScope.getInstance()).getAdaptor();
+    return (AbstractOperationParameter)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.AbstractOperationParameter", sm, GlobalScope.getInstance()).getAdapter();
   }
 }

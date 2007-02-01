@@ -18,7 +18,7 @@ public class PropertyDeclaration extends BaseConcept implements INamedConcept {
   }
 
   public static PropertyDeclaration newInstance(SModel sm) {
-    return (PropertyDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration", sm, GlobalScope.getInstance()).getAdaptor();
+    return (PropertyDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public String getName() {

@@ -16,7 +16,7 @@ public class SNodeListCreator extends AbstractCreator {
   }
 
   public static SNodeListCreator newInstance(SModel sm) {
-    return (SNodeListCreator)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SNodeListCreator", sm, GlobalScope.getInstance()).getAdaptor();
+    return (SNodeListCreator)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SNodeListCreator", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public SNodeListType getCreatedType() {

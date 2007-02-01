@@ -15,7 +15,7 @@ public class ConstrainedDataTypeDeclaration extends DataTypeDeclaration {
   }
 
   public static ConstrainedDataTypeDeclaration newInstance(SModel sm) {
-    return (ConstrainedDataTypeDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.ConstrainedDataTypeDeclaration", sm, GlobalScope.getInstance()).getAdaptor();
+    return (ConstrainedDataTypeDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.ConstrainedDataTypeDeclaration", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public String getConstraint() {

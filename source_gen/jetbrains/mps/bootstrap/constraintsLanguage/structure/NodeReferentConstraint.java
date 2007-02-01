@@ -23,7 +23,7 @@ public class NodeReferentConstraint extends BaseConcept {
   }
 
   public static NodeReferentConstraint newInstance(SModel sm) {
-    return (NodeReferentConstraint)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint", sm, GlobalScope.getInstance()).getAdaptor();
+    return (NodeReferentConstraint)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public String getSearchScopeDescription() {

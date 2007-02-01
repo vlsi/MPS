@@ -20,7 +20,7 @@ public class NodeDefaultSearchScope extends BaseConcept {
   }
 
   public static NodeDefaultSearchScope newInstance(SModel sm) {
-    return (NodeDefaultSearchScope)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.NodeDefaultSearchScope", sm, GlobalScope.getInstance()).getAdaptor();
+    return (NodeDefaultSearchScope)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.NodeDefaultSearchScope", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public String getDescription() {

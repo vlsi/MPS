@@ -15,6 +15,6 @@ public class ConstraintFunctionParameter_newReferentNode extends ConceptFunction
   }
 
   public static ConstraintFunctionParameter_newReferentNode newInstance(SModel sm) {
-    return (ConstraintFunctionParameter_newReferentNode)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunctionParameter_newReferentNode", sm, GlobalScope.getInstance()).getAdaptor();
+    return (ConstraintFunctionParameter_newReferentNode)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunctionParameter_newReferentNode", sm, GlobalScope.getInstance()).getAdapter();
   }
 }

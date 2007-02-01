@@ -17,7 +17,7 @@ public class EnumMemberReference extends Expression {
   }
 
   public static EnumMemberReference newInstance(SModel sm) {
-    return (EnumMemberReference)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.EnumMemberReference", sm, GlobalScope.getInstance()).getAdaptor();
+    return (EnumMemberReference)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.EnumMemberReference", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public EnumerationMemberDeclaration getEnumMember() {

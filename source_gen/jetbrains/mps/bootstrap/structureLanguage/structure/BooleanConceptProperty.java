@@ -14,7 +14,7 @@ public class BooleanConceptProperty extends ConceptProperty {
   }
 
   public static BooleanConceptProperty newInstance(SModel sm) {
-    return (BooleanConceptProperty)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty", sm, GlobalScope.getInstance()).getAdaptor();
+    return (BooleanConceptProperty)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public BooleanConceptPropertyDeclaration getBooleanConceptPropertyDeclaration() {

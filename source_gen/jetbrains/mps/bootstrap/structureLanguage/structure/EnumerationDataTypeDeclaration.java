@@ -19,7 +19,7 @@ public class EnumerationDataTypeDeclaration extends DataTypeDeclaration {
   }
 
   public static EnumerationDataTypeDeclaration newInstance(SModel sm) {
-    return (EnumerationDataTypeDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.EnumerationDataTypeDeclaration", sm, GlobalScope.getInstance()).getAdaptor();
+    return (EnumerationDataTypeDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.EnumerationDataTypeDeclaration", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public int getMembersCount() {

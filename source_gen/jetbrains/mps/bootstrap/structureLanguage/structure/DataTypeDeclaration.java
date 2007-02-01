@@ -15,6 +15,6 @@ public class DataTypeDeclaration extends NamedConcept {
   }
 
   public static DataTypeDeclaration newInstance(SModel sm) {
-    return (DataTypeDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.DataTypeDeclaration", sm, GlobalScope.getInstance()).getAdaptor();
+    return (DataTypeDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.DataTypeDeclaration", sm, GlobalScope.getInstance()).getAdapter();
   }
 }

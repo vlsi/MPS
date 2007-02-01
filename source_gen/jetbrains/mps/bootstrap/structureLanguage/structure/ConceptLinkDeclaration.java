@@ -18,7 +18,7 @@ public class ConceptLinkDeclaration extends BaseConcept implements INamedConcept
   }
 
   public static ConceptLinkDeclaration newInstance(SModel sm) {
-    return (ConceptLinkDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.ConceptLinkDeclaration", sm, GlobalScope.getInstance()).getAdaptor();
+    return (ConceptLinkDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.ConceptLinkDeclaration", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public String getName() {

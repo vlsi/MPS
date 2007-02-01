@@ -17,7 +17,7 @@ public class OperationParm_ConceptList extends AbstractOperationParameter {
   }
 
   public static OperationParm_ConceptList newInstance(SModel sm) {
-    return (OperationParm_ConceptList)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.OperationParm_ConceptList", sm, GlobalScope.getInstance()).getAdaptor();
+    return (OperationParm_ConceptList)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.OperationParm_ConceptList", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public int getConceptsCount() {

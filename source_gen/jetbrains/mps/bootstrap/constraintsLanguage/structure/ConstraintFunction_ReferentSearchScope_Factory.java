@@ -14,6 +14,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory extends ConstraintFu
   }
 
   public static ConstraintFunction_ReferentSearchScope_Factory newInstance(SModel sm) {
-    return (ConstraintFunction_ReferentSearchScope_Factory)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Factory", sm, GlobalScope.getInstance()).getAdaptor();
+    return (ConstraintFunction_ReferentSearchScope_Factory)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Factory", sm, GlobalScope.getInstance()).getAdapter();
   }
 }

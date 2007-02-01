@@ -17,7 +17,7 @@ public class SNodeListType extends Type {
   }
 
   public static SNodeListType newInstance(SModel sm) {
-    return (SNodeListType)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SNodeListType", sm, GlobalScope.getInstance()).getAdaptor();
+    return (SNodeListType)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SNodeListType", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public ConceptDeclaration getElementConcept() {

@@ -21,7 +21,7 @@ public class NodePropertyConstraint extends BaseConcept {
   }
 
   public static NodePropertyConstraint newInstance(SModel sm) {
-    return (NodePropertyConstraint)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraint", sm, GlobalScope.getInstance()).getAdaptor();
+    return (NodePropertyConstraint)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraint", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public ConstraintFunction_PropertyGetter getPropertyGetter() {

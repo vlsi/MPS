@@ -16,7 +16,7 @@ public class ConceptProperty extends BaseConcept {
   }
 
   public static ConceptProperty newInstance(SModel sm) {
-    return (ConceptProperty)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.ConceptProperty", sm, GlobalScope.getInstance()).getAdaptor();
+    return (ConceptProperty)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.ConceptProperty", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public ConceptPropertyDeclaration getConceptPropertyDeclaration() {

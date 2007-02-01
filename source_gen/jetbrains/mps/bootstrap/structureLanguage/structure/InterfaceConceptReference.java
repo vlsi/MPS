@@ -16,7 +16,7 @@ public class InterfaceConceptReference extends BaseConcept {
   }
 
   public static InterfaceConceptReference newInstance(SModel sm) {
-    return (InterfaceConceptReference)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference", sm, GlobalScope.getInstance()).getAdaptor();
+    return (InterfaceConceptReference)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public InterfaceConceptDeclaration getIntfc() {

@@ -16,7 +16,7 @@ public class SConceptPropertyAccess extends SNodeOperation {
   }
 
   public static SConceptPropertyAccess newInstance(SModel sm) {
-    return (SConceptPropertyAccess)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SConceptPropertyAccess", sm, GlobalScope.getInstance()).getAdaptor();
+    return (SConceptPropertyAccess)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SConceptPropertyAccess", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public ConceptPropertyDeclaration getConceptProperty() {

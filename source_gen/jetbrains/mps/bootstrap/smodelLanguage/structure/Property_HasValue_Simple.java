@@ -16,7 +16,7 @@ public class Property_HasValue_Simple extends SNodeOperation {
   }
 
   public static Property_HasValue_Simple newInstance(SModel sm) {
-    return (Property_HasValue_Simple)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Property_HasValue_Simple", sm, GlobalScope.getInstance()).getAdaptor();
+    return (Property_HasValue_Simple)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Property_HasValue_Simple", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public Expression getValue() {

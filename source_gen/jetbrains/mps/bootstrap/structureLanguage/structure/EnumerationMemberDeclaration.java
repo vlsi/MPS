@@ -17,7 +17,7 @@ public class EnumerationMemberDeclaration extends NamedConcept {
   }
 
   public static EnumerationMemberDeclaration newInstance(SModel sm) {
-    return (EnumerationMemberDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration", sm, GlobalScope.getInstance()).getAdaptor();
+    return (EnumerationMemberDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public String getInternalValue() {

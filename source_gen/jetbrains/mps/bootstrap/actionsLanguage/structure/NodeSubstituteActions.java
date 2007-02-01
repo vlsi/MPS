@@ -18,7 +18,7 @@ public class NodeSubstituteActions extends NamedConcept {
   }
 
   public static NodeSubstituteActions newInstance(SModel sm) {
-    return (NodeSubstituteActions)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions", sm, GlobalScope.getInstance()).getAdaptor();
+    return (NodeSubstituteActions)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public int getActionsBuildersCount() {

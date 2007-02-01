@@ -18,7 +18,7 @@ public class Node_IsRoleOperation extends SNodeOperation {
   }
 
   public static Node_IsRoleOperation newInstance(SModel sm) {
-    return (Node_IsRoleOperation)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Node_IsRoleOperation", sm, GlobalScope.getInstance()).getAdaptor();
+    return (Node_IsRoleOperation)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Node_IsRoleOperation", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public ConceptDeclaration getConceptOfParent() {

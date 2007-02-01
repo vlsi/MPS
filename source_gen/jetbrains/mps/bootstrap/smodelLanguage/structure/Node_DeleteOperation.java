@@ -14,6 +14,6 @@ public class Node_DeleteOperation extends SNodeOperation {
   }
 
   public static Node_DeleteOperation newInstance(SModel sm) {
-    return (Node_DeleteOperation)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Node_DeleteOperation", sm, GlobalScope.getInstance()).getAdaptor();
+    return (Node_DeleteOperation)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Node_DeleteOperation", sm, GlobalScope.getInstance()).getAdapter();
   }
 }

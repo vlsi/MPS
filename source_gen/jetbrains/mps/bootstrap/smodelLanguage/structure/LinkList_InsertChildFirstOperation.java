@@ -16,7 +16,7 @@ public class LinkList_InsertChildFirstOperation extends SNodeOperation {
   }
 
   public static LinkList_InsertChildFirstOperation newInstance(SModel sm) {
-    return (LinkList_InsertChildFirstOperation)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.LinkList_InsertChildFirstOperation", sm, GlobalScope.getInstance()).getAdaptor();
+    return (LinkList_InsertChildFirstOperation)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.LinkList_InsertChildFirstOperation", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public Expression getParameter() {

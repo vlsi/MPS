@@ -16,7 +16,7 @@ public class SemanticDowncastExpression extends Expression {
   }
 
   public static SemanticDowncastExpression newInstance(SModel sm) {
-    return (SemanticDowncastExpression)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SemanticDowncastExpression", sm, GlobalScope.getInstance()).getAdaptor();
+    return (SemanticDowncastExpression)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SemanticDowncastExpression", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public Expression getLeftExpression() {

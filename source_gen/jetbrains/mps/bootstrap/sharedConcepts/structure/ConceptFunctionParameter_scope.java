@@ -15,6 +15,6 @@ public class ConceptFunctionParameter_scope extends ConceptFunctionParameter {
   }
 
   public static ConceptFunctionParameter_scope newInstance(SModel sm) {
-    return (ConceptFunctionParameter_scope)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_scope", sm, GlobalScope.getInstance()).getAdaptor();
+    return (ConceptFunctionParameter_scope)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_scope", sm, GlobalScope.getInstance()).getAdapter();
   }
 }

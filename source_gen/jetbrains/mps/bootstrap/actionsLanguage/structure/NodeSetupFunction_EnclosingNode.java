@@ -15,6 +15,6 @@ public class NodeSetupFunction_EnclosingNode extends ConceptFunctionParameter {
   }
 
   public static NodeSetupFunction_EnclosingNode newInstance(SModel sm) {
-    return (NodeSetupFunction_EnclosingNode)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.NodeSetupFunction_EnclosingNode", sm, GlobalScope.getInstance()).getAdaptor();
+    return (NodeSetupFunction_EnclosingNode)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.NodeSetupFunction_EnclosingNode", sm, GlobalScope.getInstance()).getAdapter();
   }
 }

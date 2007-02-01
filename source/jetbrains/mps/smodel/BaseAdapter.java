@@ -28,7 +28,7 @@ public abstract class BaseAdapter {
     if (myNode.getParent() == null) {
       return null;
     }
-    return myNode.getParent().getAdaptor();
+    return myNode.getParent().getAdapter();
   }
 
   public<BA extends BaseAdapter> BA getParent(Class<BA> cls) {
@@ -96,7 +96,7 @@ public abstract class BaseAdapter {
     if (result == null) {
       return null;
     }
-    return result.getAdaptor();
+    return result.getAdapter();
   }
 
   public void removeChild(@NotNull BaseAdapter child) {
@@ -137,7 +137,7 @@ public abstract class BaseAdapter {
     if (result == null) {
       return null;
     }
-    return result.getAdaptor();
+    return result.getAdapter();
   }
 
   protected void setReferent(@NotNull String role, BaseAdapter newValue) {
@@ -154,7 +154,7 @@ public abstract class BaseAdapter {
     if (result == null) {
       return null;
     } else {
-      return result.getAdaptor();
+      return result.getAdapter();
     }
   }
 
@@ -164,7 +164,7 @@ public abstract class BaseAdapter {
     if (result == null) {
       return null;
     }
-    return result.getAdaptor();
+    return result.getAdapter();
   }
 
   @NotNull
@@ -197,7 +197,7 @@ public abstract class BaseAdapter {
     if (node == null) {
       return null;
     } else {
-      return node.getAdaptor();
+      return node.getAdapter();
     }
   }
 
@@ -206,7 +206,7 @@ public abstract class BaseAdapter {
     if (node == null) {
       return null;
     } else {
-      return node.getAdaptor();
+      return node.getAdapter();
     }
   }
 
@@ -232,7 +232,7 @@ public abstract class BaseAdapter {
     if (node == null) {
       return null;
     } else {
-      return node.getAdaptor();
+      return node.getAdapter();
     }
   }
 
@@ -241,7 +241,7 @@ public abstract class BaseAdapter {
     if (node == null) {
       return null;
     } else {
-      return node.getAdaptor();
+      return node.getAdapter();
     }
   }
 
@@ -276,7 +276,7 @@ public abstract class BaseAdapter {
   public static <T extends BaseAdapter> List<T> toAdaptors(List<? extends SNode> list) {
     List<T> result = new ArrayList<T>();
     for (SNode node : list) {
-      result.add((T) node.getAdaptor());
+      result.add((T) node.getAdapter());
     }
     return result;
   }

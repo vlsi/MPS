@@ -16,7 +16,7 @@ public class AnnotationLinkDeclaration extends LinkDeclaration {
   }
 
   public static AnnotationLinkDeclaration newInstance(SModel sm) {
-    return (AnnotationLinkDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.AnnotationLinkDeclaration", sm, GlobalScope.getInstance()).getAdaptor();
+    return (AnnotationLinkDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.AnnotationLinkDeclaration", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public AnnotationLinkStereotype getStereotype() {

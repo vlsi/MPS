@@ -16,7 +16,7 @@ public class Node_ReplaceWithAnotherOperation extends SNodeOperation {
   }
 
   public static Node_ReplaceWithAnotherOperation newInstance(SModel sm) {
-    return (Node_ReplaceWithAnotherOperation)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Node_ReplaceWithAnotherOperation", sm, GlobalScope.getInstance()).getAdaptor();
+    return (Node_ReplaceWithAnotherOperation)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Node_ReplaceWithAnotherOperation", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public Expression getParameter() {

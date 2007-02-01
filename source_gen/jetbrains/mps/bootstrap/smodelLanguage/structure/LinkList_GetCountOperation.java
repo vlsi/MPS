@@ -14,6 +14,6 @@ public class LinkList_GetCountOperation extends SNodeOperation {
   }
 
   public static LinkList_GetCountOperation newInstance(SModel sm) {
-    return (LinkList_GetCountOperation)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.LinkList_GetCountOperation", sm, GlobalScope.getInstance()).getAdaptor();
+    return (LinkList_GetCountOperation)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.LinkList_GetCountOperation", sm, GlobalScope.getInstance()).getAdapter();
   }
 }

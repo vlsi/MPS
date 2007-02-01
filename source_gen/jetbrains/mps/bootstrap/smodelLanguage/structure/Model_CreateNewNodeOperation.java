@@ -16,7 +16,7 @@ public class Model_CreateNewNodeOperation extends SNodeOperation {
   }
 
   public static Model_CreateNewNodeOperation newInstance(SModel sm) {
-    return (Model_CreateNewNodeOperation)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Model_CreateNewNodeOperation", sm, GlobalScope.getInstance()).getAdaptor();
+    return (Model_CreateNewNodeOperation)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Model_CreateNewNodeOperation", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public ConceptDeclaration getConcept() {

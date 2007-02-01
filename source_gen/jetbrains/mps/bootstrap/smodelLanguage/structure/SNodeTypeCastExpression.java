@@ -18,7 +18,7 @@ public class SNodeTypeCastExpression extends Expression {
   }
 
   public static SNodeTypeCastExpression newInstance(SModel sm) {
-    return (SNodeTypeCastExpression)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SNodeTypeCastExpression", sm, GlobalScope.getInstance()).getAdaptor();
+    return (SNodeTypeCastExpression)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SNodeTypeCastExpression", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public Expression getLeftExpression() {

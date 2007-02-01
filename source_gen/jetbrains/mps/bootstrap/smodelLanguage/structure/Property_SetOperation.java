@@ -16,7 +16,7 @@ public class Property_SetOperation extends SNodeOperation {
   }
 
   public static Property_SetOperation newInstance(SModel sm) {
-    return (Property_SetOperation)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Property_SetOperation", sm, GlobalScope.getInstance()).getAdaptor();
+    return (Property_SetOperation)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Property_SetOperation", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public Expression getValue() {

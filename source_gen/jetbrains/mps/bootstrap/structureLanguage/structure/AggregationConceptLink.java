@@ -16,7 +16,7 @@ public class AggregationConceptLink extends ConceptLink {
   }
 
   public static AggregationConceptLink newInstance(SModel sm) {
-    return (AggregationConceptLink)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink", sm, GlobalScope.getInstance()).getAdaptor();
+    return (AggregationConceptLink)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public BaseConcept getTarget() {

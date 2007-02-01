@@ -16,7 +16,7 @@ public class Node_IsInstanceOfOperation extends SNodeOperation {
   }
 
   public static Node_IsInstanceOfOperation newInstance(SModel sm) {
-    return (Node_IsInstanceOfOperation)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation", sm, GlobalScope.getInstance()).getAdaptor();
+    return (Node_IsInstanceOfOperation)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public ConceptDeclaration getConcept() {

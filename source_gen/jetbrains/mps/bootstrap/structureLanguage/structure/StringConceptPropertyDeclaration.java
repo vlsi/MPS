@@ -14,6 +14,6 @@ public class StringConceptPropertyDeclaration extends ConceptPropertyDeclaration
   }
 
   public static StringConceptPropertyDeclaration newInstance(SModel sm) {
-    return (StringConceptPropertyDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.StringConceptPropertyDeclaration", sm, GlobalScope.getInstance()).getAdaptor();
+    return (StringConceptPropertyDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.StringConceptPropertyDeclaration", sm, GlobalScope.getInstance()).getAdapter();
   }
 }

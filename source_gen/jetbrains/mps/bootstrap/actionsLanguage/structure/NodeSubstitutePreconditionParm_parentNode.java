@@ -15,6 +15,6 @@ public class NodeSubstitutePreconditionParm_parentNode extends ConceptFunctionPa
   }
 
   public static NodeSubstitutePreconditionParm_parentNode newInstance(SModel sm) {
-    return (NodeSubstitutePreconditionParm_parentNode)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionParm_parentNode", sm, GlobalScope.getInstance()).getAdaptor();
+    return (NodeSubstitutePreconditionParm_parentNode)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionParm_parentNode", sm, GlobalScope.getInstance()).getAdapter();
   }
 }

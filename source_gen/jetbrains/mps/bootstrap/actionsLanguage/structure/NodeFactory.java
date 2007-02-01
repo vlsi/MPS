@@ -19,7 +19,7 @@ public class NodeFactory extends BaseConcept {
   }
 
   public static NodeFactory newInstance(SModel sm) {
-    return (NodeFactory)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.NodeFactory", sm, GlobalScope.getInstance()).getAdaptor();
+    return (NodeFactory)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.NodeFactory", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public String getDescription() {

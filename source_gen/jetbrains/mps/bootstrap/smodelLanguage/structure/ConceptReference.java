@@ -17,7 +17,7 @@ public class ConceptReference extends BaseConcept {
   }
 
   public static ConceptReference newInstance(SModel sm) {
-    return (ConceptReference)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.ConceptReference", sm, GlobalScope.getInstance()).getAdaptor();
+    return (ConceptReference)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.ConceptReference", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public ConceptDeclaration getConcept() {

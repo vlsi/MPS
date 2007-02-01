@@ -21,7 +21,7 @@ public class LinkDeclaration extends BaseConcept {
   }
 
   public static LinkDeclaration newInstance(SModel sm) {
-    return (LinkDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration", sm, GlobalScope.getInstance()).getAdaptor();
+    return (LinkDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public String getRole() {

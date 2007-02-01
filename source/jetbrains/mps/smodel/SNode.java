@@ -1475,8 +1475,8 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   public <BA extends BaseAdapter> List<BA> allChildrenByAdaptor(Class<BA> clazz) {
     List<BA> result = new ArrayList<BA>();
     for (SNode child : allChildren()) {
-      if (clazz.isInstance(child.getAdaptor())) {
-        result.add((BA) child.getAdaptor());
+      if (clazz.isInstance(child.getAdapter())) {
+        result.add((BA) child.getAdapter());
       }
     }    
     return result;
@@ -1824,9 +1824,9 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     });
   }
 
-  public BaseAdapter getAdaptor() {
+  public BaseAdapter getAdapter() {
     try {
-      Constructor c = QueryMethod.getAdaptorConstructor(getClass().getName());
+      Constructor c = QueryMethod.getAdapterConstructor(getClass().getName());
       if (c != null) {
         return (BaseAdapter) c.newInstance(this);
       }

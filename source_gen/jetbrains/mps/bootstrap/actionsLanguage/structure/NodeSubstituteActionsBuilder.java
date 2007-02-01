@@ -22,7 +22,7 @@ public class NodeSubstituteActionsBuilder extends BaseAdapter {
   }
 
   public static NodeSubstituteActionsBuilder newInstance(SModel sm) {
-    return (NodeSubstituteActionsBuilder)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder", sm, GlobalScope.getInstance()).getAdaptor();
+    return (NodeSubstituteActionsBuilder)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public String getDescription() {

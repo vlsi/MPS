@@ -14,6 +14,6 @@ public class Node_GetPrevSiblingOperation extends SNodeOperation {
   }
 
   public static Node_GetPrevSiblingOperation newInstance(SModel sm) {
-    return (Node_GetPrevSiblingOperation)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Node_GetPrevSiblingOperation", sm, GlobalScope.getInstance()).getAdaptor();
+    return (Node_GetPrevSiblingOperation)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Node_GetPrevSiblingOperation", sm, GlobalScope.getInstance()).getAdapter();
   }
 }

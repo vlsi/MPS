@@ -15,6 +15,6 @@ public class ConstraintFunction_PropertySetter extends ConceptFunction {
   }
 
   public static ConstraintFunction_PropertySetter newInstance(SModel sm) {
-    return (ConstraintFunction_PropertySetter)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_PropertySetter", sm, GlobalScope.getInstance()).getAdaptor();
+    return (ConstraintFunction_PropertySetter)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_PropertySetter", sm, GlobalScope.getInstance()).getAdapter();
   }
 }

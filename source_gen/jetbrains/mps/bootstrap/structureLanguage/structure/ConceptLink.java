@@ -16,7 +16,7 @@ public class ConceptLink extends BaseConcept {
   }
 
   public static ConceptLink newInstance(SModel sm) {
-    return (ConceptLink)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.ConceptLink", sm, GlobalScope.getInstance()).getAdaptor();
+    return (ConceptLink)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.ConceptLink", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public ConceptLinkDeclaration getConceptLinkDeclaration() {

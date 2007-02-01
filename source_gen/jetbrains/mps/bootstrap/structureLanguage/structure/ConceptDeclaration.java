@@ -20,7 +20,7 @@ public class ConceptDeclaration extends AbstractConceptDeclaration {
   }
 
   public static ConceptDeclaration newInstance(SModel sm) {
-    return (ConceptDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration", sm, GlobalScope.getInstance()).getAdaptor();
+    return (ConceptDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public String getIconPath() {

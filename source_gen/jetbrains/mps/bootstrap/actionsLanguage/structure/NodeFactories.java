@@ -16,7 +16,7 @@ public class NodeFactories extends NamedConcept {
   }
 
   public static NodeFactories newInstance(SModel sm) {
-    return (NodeFactories)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.NodeFactories", sm, GlobalScope.getInstance()).getAdaptor();
+    return (NodeFactories)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.NodeFactories", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public NodeFactory getNodeFactory() {

@@ -15,7 +15,7 @@ public class Property_HasValue_Enum extends SNodeOperation {
   }
 
   public static Property_HasValue_Enum newInstance(SModel sm) {
-    return (Property_HasValue_Enum)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Property_HasValue_Enum", sm, GlobalScope.getInstance()).getAdaptor();
+    return (Property_HasValue_Enum)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Property_HasValue_Enum", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public EnumMemberReference getValue() {

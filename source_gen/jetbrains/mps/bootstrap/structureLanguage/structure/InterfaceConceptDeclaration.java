@@ -17,7 +17,7 @@ public class InterfaceConceptDeclaration extends AbstractConceptDeclaration {
   }
 
   public static InterfaceConceptDeclaration newInstance(SModel sm) {
-    return (InterfaceConceptDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptDeclaration", sm, GlobalScope.getInstance()).getAdaptor();
+    return (InterfaceConceptDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptDeclaration", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public int getExtendsesCount() {

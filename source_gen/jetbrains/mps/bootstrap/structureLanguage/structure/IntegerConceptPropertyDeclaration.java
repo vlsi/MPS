@@ -14,6 +14,6 @@ public class IntegerConceptPropertyDeclaration extends ConceptPropertyDeclaratio
   }
 
   public static IntegerConceptPropertyDeclaration newInstance(SModel sm) {
-    return (IntegerConceptPropertyDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.IntegerConceptPropertyDeclaration", sm, GlobalScope.getInstance()).getAdaptor();
+    return (IntegerConceptPropertyDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.IntegerConceptPropertyDeclaration", sm, GlobalScope.getInstance()).getAdapter();
   }
 }

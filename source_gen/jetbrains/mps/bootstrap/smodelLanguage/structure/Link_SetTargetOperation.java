@@ -16,7 +16,7 @@ public class Link_SetTargetOperation extends SNodeOperation {
   }
 
   public static Link_SetTargetOperation newInstance(SModel sm) {
-    return (Link_SetTargetOperation)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Link_SetTargetOperation", sm, GlobalScope.getInstance()).getAdaptor();
+    return (Link_SetTargetOperation)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Link_SetTargetOperation", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public Expression getParameter() {
