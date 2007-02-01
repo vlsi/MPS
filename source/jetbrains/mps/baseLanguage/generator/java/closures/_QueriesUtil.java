@@ -6,6 +6,7 @@ import jetbrains.mps.generator.template.INodeBuilder;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.baseLanguage.*;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 
 import java.util.Iterator;
 import java.util.List;
@@ -89,6 +90,17 @@ public class _QueriesUtil {
       generator.showErrorMessage(closureParmRef_outputNode, "-- was generated node: " + closureParmRef_outputNode.getDebugText());
     }
     return null;
+  }
+
+  public static SNode resolve_MethodParm_CopyOfParm(SNode inputNode, SNode templateNode, ITemplateGenerator generator) {
+    ParameterDeclaration parm = (ParameterDeclaration) inputNode;
+    // suppose that parm is simply copied to target model
+    INodeBuilder builder = generator.findNodeBuilderForSourceAndTemplate(parm, parm);
+    if (builder == null) {
+      generator.showErrorMessage(inputNode, templateNode, "couldn't find builder for method parameter");
+      return null;
+    }
+    return builder.getTargetNode();
   }
 
   public static List<SNode> getList_ContextOwner_ifMethod_ParmsUsedInClosure(SNode inputNode, ITemplateGenerator generator) {

@@ -62,6 +62,9 @@ public class QueriesGenerated {
   public static SNode referenceMacro_GetReferent_1170294467354(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return _QueriesUtil.find_ContextOwner_ClosureContext_generatedClass(node, generator);
   }
+  public static SNode referenceMacro_GetReferent_1170295650824(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return _QueriesUtil.resolve_MethodParm_CopyOfParm(node, templateNode, generator);
+  }
   public static SNode referenceMacro_GetReferent_1170295049904(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return _QueriesUtil.find_ContextOwner_ClosureContext_generatedClass_constructor(node, generator);
   }
