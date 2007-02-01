@@ -461,9 +461,9 @@ public class SModel implements Iterable<SNode> {
       }
     }
 
-    if (languages.isEmpty()) {
-      LOG.error("Model \"" + getUID() + "\" has no languages !!!");
-    }
+//    if (languages.isEmpty()) {
+//      LOG.error("Model \"" + getUID() + "\" has no languages !!!");
+//    }
 
     return languages;
   }
