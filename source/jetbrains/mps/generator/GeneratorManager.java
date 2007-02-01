@@ -471,6 +471,13 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         generationSession = new GenerationSession_New(invocationContext, isSaveTransientModels(), progress, handler);
       }
       for (SModelDescriptor sourceModelDescriptor : sourceModels) {
+
+        if (invocationContext.getModule() instanceof Language &&
+                sourceModelDescriptor.getModelUID().toString().contains(".structure") &&
+                targetLanguage.getNamespace().equals("jetbrains.mps.baseLanguage.ext.collections.lang")) {
+          JavaNameUtil.adaptorGenerator = true;          
+        }
+
         progress.addText("");
         String taskName = ModelsProgressUtil.generationModelTaskName(sourceModelDescriptor);
         progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_GENERATION);
@@ -482,6 +489,9 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         }
         generationSession.discardTransients();
         progress.finishTask(taskName);
+
+        JavaNameUtil.adaptorGenerator = false;
+
         if (!status.isOk()) {
           break;
         }

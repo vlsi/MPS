@@ -31,6 +31,14 @@
       </models>
       <module />
     </generator>
+    <generator generatorUID="jetbrains.mps.bootstrap.structureLanguage#1170324972255" targetLanguage="jetbrains.mps.baseLanguage.ext.collections.lang">
+      <models>
+        <modelRoot path="${language_descriptor}\generator_new" namespacePrefix="jetbrains.mps.bootstrap.structureLanguage.generator_new" />
+      </models>
+      <module>
+        <moduleRoot path="${mps_home}\projects\baseLanguageExt\dev\languages\collections\lang\collections.mpl" />
+      </module>
+    </generator>
   </generators>
   <classPath />
 </language>

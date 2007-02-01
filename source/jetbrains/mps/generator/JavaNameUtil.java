@@ -9,6 +9,8 @@ import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
  * Date: Jan 13, 2004
  */
 public class JavaNameUtil {
+  public static boolean adaptorGenerator = false;
+
   public static String fqClassName(SModel model, String shortClassName) {
     String packageName = packageNameForModelUID(model.getUID());
     if (packageName == null || packageName.length() == 0) {
@@ -35,10 +37,13 @@ public class JavaNameUtil {
   }
 
   public static String _packageNameForModelUID(SModelUID modelUID) {
-    return packageNameForModelUID(modelUID);
-//    String modelFqName = modelUID.getLongName();
-//    String packageName = modelFqName;
-//    return packageName;
+    if (adaptorGenerator) {
+    String modelFqName = modelUID.getLongName();
+    String packageName = modelFqName;
+    return packageName;
+    } else {
+      return packageNameForModelUID(modelUID);
+    }
   }
 
   public static String packageName(String fqName) {
