@@ -45,6 +45,7 @@ public class ModelPersistence {
   public static final String PROPERTY = "property";
   public static final String VALUE = "value";
   public static final String IMPORT_ELEMENT = "import";
+  public static final String VISIBLE_ELEMENT = "visible";
   public static final String MODEL_IMPORT_INDEX = "index";
   public static final String MAX_IMPORT_INDEX = "maxImportIndex";
   public static final String LANGUAGE = "language";
@@ -119,6 +120,8 @@ public class ModelPersistence {
           @NotNull String stereotype,
           boolean checkVersion) {
     Element rootElement = document.getRootElement();
+
+    VisibleModelElements visibleModelElements = new VisibleModelElements(rootElement);
 
     String modelLongName = rootElement.getAttributeValue(NAME);
 
@@ -272,7 +275,7 @@ public class ModelPersistence {
     }
 
     for (ReferencePersister referencePersister : referenceDescriptors) {
-      referencePersister.createReferenceInModel(model);
+      referencePersister.createReferenceInModel(model, visibleModelElements);
     }
 
     model.setLoading(false);
@@ -283,11 +286,12 @@ public class ModelPersistence {
   public static SNode readNode(
           @NotNull Element nodeElement,
           @NotNull SModel model,
-          boolean useUIDs) {
+          boolean useUIDs,
+          VisibleModelElements visibleModelElements) {
     List<ReferencePersister> referenceDescriptors = new ArrayList<ReferencePersister>();
     SNode result = readNode(nodeElement, model, referenceDescriptors, useUIDs);
     for (ReferencePersister referencePersister : referenceDescriptors) {
-      referencePersister.createReferenceInModel(model);
+      referencePersister.createReferenceInModel(model, visibleModelElements);
     }
     return result;
   }
@@ -428,6 +432,8 @@ public class ModelPersistence {
   public static Document saveModel(@NotNull SModel sourceModel) {
     Element rootElement = new Element(MODEL);
 
+    VisibleModelElements visibleModelElements = new VisibleModelElements(rootElement);
+
     rootElement.setAttribute(NAME, sourceModel.getLongName());
 
     Document document = new Document();
@@ -491,7 +497,7 @@ public class ModelPersistence {
       SNode log = sourceModel.getLog();
       if (log != null) {
         Element logElement = new Element(REFACTORING_LOG);
-        saveNode(logElement, log);
+        saveNode(logElement, log, visibleModelElements);
         rootElement.addContent(logElement);
       }
     }
@@ -499,17 +505,21 @@ public class ModelPersistence {
     Iterator<SNode> iterator = sourceModel.roots();
     while (iterator.hasNext()) {
       SNode semanticNode = iterator.next();
-      saveNode(rootElement, semanticNode);
+      saveNode(rootElement, semanticNode, visibleModelElements);
     }
 
     return document;
   }
 
   public static void saveNode(@NotNull Element parentElement, @NotNull SNode node) {
-    saveNode(parentElement, node, false);
+    saveNode(parentElement, node, false, null);
   }
 
-  public static void saveNode(@NotNull Element parentElement, @NotNull SNode node, boolean useUIDs) {
+  public static void saveNode(@NotNull Element parentElement, @NotNull SNode node, VisibleModelElements visibleModelElements) {
+    saveNode(parentElement, node, false, visibleModelElements);
+  }
+
+  public static void saveNode(@NotNull Element parentElement, @NotNull SNode node, boolean useUIDs, VisibleModelElements visibleModelElements) {
     Element element = new Element(NODE);
     setNotNullAttribute(element, ROLE, node.getRole_());
     String type = node instanceof ErrorNode ? ((ErrorNode) node).getType() :                  
@@ -545,13 +555,13 @@ public class ModelPersistence {
     // references ...
     List<SReference> references = node.getReferences();
     for (SReference reference : references) {
-      ReferencePersister.saveReference(element, reference, useUIDs);
+      ReferencePersister.saveReference(element, reference, useUIDs, visibleModelElements);
     }
 
     // children ...
     List<SNode> children = node.getChildren();
     for (SNode childNode : children) {
-      saveNode(element, childNode, useUIDs);
+      saveNode(element, childNode, useUIDs, visibleModelElements);
     }
 
     parentElement.addContent(element);
@@ -612,23 +622,55 @@ public class ModelPersistence {
   }
 
   private static SModel createModel(SModelUID uid) {
-//    if (uid.toString().endsWith("@templates") && !myLoaded.contains(uid)) {
-//      myLoaded.add(uid);
-//      return new MyModel(uid);
-//    }
     return new SModel(uid);
   }
 
-  private static class MyModel extends SModel {
-    public MyModel(@NotNull SModelUID modelUID) {
-      super(modelUID);
+
+  public static class VisibleModelElements {
+    private Map<Integer, SModelUID> myVisibleModelElements = new HashMap<Integer, SModelUID>();
+    private int myMaxVisibleModelIndex = 1;
+    private Element myModelElement;
+
+    public VisibleModelElements(Element modelElement) {
+      myModelElement = modelElement;
+      parseVisibleElements();
     }
 
-    public MyModel() {
+    private void parseVisibleElements() {
+      List visibles = myModelElement.getChildren(VISIBLE_ELEMENT);
+      for (Object aVisible : visibles) {
+        Element element = (Element) aVisible;
+        String indexValue = element.getAttributeValue(MODEL_IMPORT_INDEX);
+        int index = Integer.parseInt(indexValue);
+        String visibleModelUIDString = element.getAttributeValue(MODEL_UID);
+        myVisibleModelElements.put(index, SModelUID.fromString(visibleModelUIDString));
+        myMaxVisibleModelIndex = Math.max(index, myMaxVisibleModelIndex);
+      }
+    }
+
+    public int getVisibleModelIndex(SModelUID modelUID) {
+      for (Map.Entry<Integer, SModelUID> entry : myVisibleModelElements.entrySet()) {
+        if (modelUID.equals(entry.getValue())) {
+          return entry.getKey();
+        }
+      }
+      return addModel(modelUID);
+    }
+
+    private int addModel(SModelUID modelUID) {
+      myMaxVisibleModelIndex++;
+      myVisibleModelElements.put(myMaxVisibleModelIndex, modelUID);
+      Element visibleElement = new Element(VISIBLE_ELEMENT);
+      visibleElement.setAttribute(MODEL_IMPORT_INDEX, myMaxVisibleModelIndex+"");
+      visibleElement.setAttribute(MODEL_UID, modelUID.toString());
+      myModelElement.addContent(visibleElement);
+      return myMaxVisibleModelIndex;
+    }
+
+    public SModelUID getModelUID(int index) {
+      return myVisibleModelElements.get(index);
     }
   }
-
-  private static Set<SModelUID> myLoaded = new HashSet<SModelUID>();
 
   private static class LogInfo {
     int myOldVersion;

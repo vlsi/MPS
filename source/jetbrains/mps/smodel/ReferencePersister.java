@@ -3,6 +3,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.externalResolve.ExternalResolver;
 import org.jdom.Element;
+import org.jdom.Document;
 
 /**
  * Created by IntelliJ IDEA.
@@ -22,6 +23,7 @@ public class ReferencePersister {
   protected String myExtResolveInfo;
   protected String myImportedModelInfo = "-1";
   protected boolean myUseUIDs;
+  private boolean myNotImported;
 
 
   protected ReferencePersister(ReferenceDescriptor rd, boolean useUIDs) {
@@ -36,11 +38,13 @@ public class ReferencePersister {
       ReferenceTargetDescriptor targetDescriptor = parseAttTargetNodeId(attTargetNodeId, useUIDs);
       this.myTargetId = targetDescriptor.myTargetInfo;
       this.myImportedModelInfo = targetDescriptor.myImportedModelInfo;
+      this.myNotImported = targetDescriptor.myNotImported;
     }
     if (attExtResolveInfo != null) {
       ReferenceTargetDescriptor targetDescriptor = parseAttExtResolveInfo(attExtResolveInfo, useUIDs);
       this.myExtResolveInfo = targetDescriptor.myTargetInfo;
       this.myImportedModelInfo = targetDescriptor.myImportedModelInfo;
+      this.myNotImported = targetDescriptor.myNotImported;
     }
     this.myResolveInfo = resolveInfo;
   }
@@ -60,6 +64,11 @@ public class ReferencePersister {
     }
     if (i > 0) {
       referenceTargetDescriptor.myImportedModelInfo = attTargetNodeId.substring(0, i);
+      String info = referenceTargetDescriptor.myImportedModelInfo;
+      if (info.endsWith("v")) {
+        referenceTargetDescriptor.myNotImported = true;
+        referenceTargetDescriptor.myImportedModelInfo = info.substring(0, info.length()-1);
+      }
       referenceTargetDescriptor.myTargetInfo = attTargetNodeId.substring(i + 1);
     } else {
       referenceTargetDescriptor.myImportedModelInfo = "-1";
@@ -90,14 +99,18 @@ public class ReferencePersister {
   }
 
   // -- create reference
-  SReference createReferenceInModelDoNotAddToSourceNode(SModel model) {
+  SReference createReferenceInModelDoNotAddToSourceNode(SModel model, ModelPersistence.VisibleModelElements visibleModelElements) {
     SModelUID importedModelUID = model.getUID();
     if (myUseUIDs) {
       if (!myImportedModelInfo.equals("-1")) {
         importedModelUID = SModelUID.fromString(myImportedModelInfo);
       }
     } else if (getImportIndex() > -1) {
-      importedModelUID = model.getImportedModelUID(getImportIndex());
+      if (myNotImported) {
+        importedModelUID = visibleModelElements.getModelUID(getImportIndex());
+      } else {
+        importedModelUID = model.getImportedModelUID(getImportIndex());
+      }
       if (importedModelUID == null) {
         LOG.error("Couldn't create reference from " + this.getSourceNode().getDebugText() + " : import for index [" + getImportIndex() + "] not found");
         return null;
@@ -112,8 +125,8 @@ public class ReferencePersister {
     );
   }
 
-  public void createReferenceInModel(SModel model) {
-    SReference reference = createReferenceInModelDoNotAddToSourceNode(model);
+  public void createReferenceInModel(SModel model, ModelPersistence.VisibleModelElements visibleModelElements) {
+    SReference reference = createReferenceInModelDoNotAddToSourceNode(model, visibleModelElements);
     if (reference != null) this.getSourceNode().addSReference(reference);
   }
   //--
@@ -144,8 +157,9 @@ public class ReferencePersister {
 
 
   //-- save reference
-  public static void saveReference(Element parentElement, SReference reference, boolean useUIDs) {
-    SNode node = reference.getSourceNode(); 
+  public static void saveReference(Element parentElement, SReference reference, boolean useUIDs, ModelPersistence.VisibleModelElements visibleModelElements) {
+    assert useUIDs || visibleModelElements != null;
+    SNode node = reference.getSourceNode();
     Element linkElement = new Element(ModelPersistence.LINK);
     parentElement.addContent(linkElement);
     linkElement.setAttribute(ModelPersistence.ROLE, reference.getRole());
@@ -159,8 +173,8 @@ public class ReferencePersister {
           int importIndex = importElement.getReferenceID();
           targetModelInfo = importIndex + ".";
         } else {
-          LOG.error("Couldn't save reference \"" + reference.getRole() + "\" in " + node.getDebugText() +
-                  "\n -- importz element for model \"" + targetModelUID + "\" not found");
+          int visibleIndex = visibleModelElements.getVisibleModelIndex(targetModelUID);
+          targetModelInfo = visibleIndex + "v.";
         }
       } else {
         targetModelInfo = targetModelUID.toString() + "#";
@@ -195,6 +209,8 @@ public class ReferencePersister {
     public ReferenceTargetDescriptor() {
 
     }
+
+    public boolean myNotImported = false;
     public String myTargetInfo;
     public String myImportedModelInfo;
   }
