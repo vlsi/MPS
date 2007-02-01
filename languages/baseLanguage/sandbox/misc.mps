@@ -524,6 +524,13 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1170349145527">
+          <node role="expression" type="jetbrains.mps.baseLanguage.AnonymousClassExpression" id="1170349156794">
+            <node role="cls" type="jetbrains.mps.baseLanguage.AnonymousClass" id="1170349156795">
+              <link role="classifier" extResolveInfo="3.[Classifier]Calendar" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1170238598207">
