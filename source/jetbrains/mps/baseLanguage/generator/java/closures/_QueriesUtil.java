@@ -6,7 +6,6 @@ import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 
 import java.util.Collections;
 import java.util.Iterator;
@@ -105,6 +104,15 @@ public class _QueriesUtil {
 
   public static SNode resolve_VariableDeclStmt_Variable_ClosureContext_generatedField(SNode inputNode, ITemplateGenerator generator) {
     VariableDeclaration variable = ((LocalVariableDeclarationStatement) inputNode).getLocalVariableDeclaration();
+    if (variable != null) {
+      INodeBuilder builder = generator.findNodeBuilderForSource(variable, ClosuresMappingId.VARIABLE__CLOSURE_CONTEXT__CLASS_FIELD);
+      return (FieldDeclaration) builder.getTargetNode();
+    }
+    return null;
+  }
+
+  public static SNode resolve_VariableReference_Variable_ClosureContext_generatedField(SNode inputNode, ITemplateGenerator generator) {
+    VariableDeclaration variable = ((VariableReference) inputNode).getVariableDeclaration();
     if (variable != null) {
       INodeBuilder builder = generator.findNodeBuilderForSource(variable, ClosuresMappingId.VARIABLE__CLOSURE_CONTEXT__CLASS_FIELD);
       return (FieldDeclaration) builder.getTargetNode();

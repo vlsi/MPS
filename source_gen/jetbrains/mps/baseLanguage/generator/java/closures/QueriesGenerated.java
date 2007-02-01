@@ -77,6 +77,9 @@ public class QueriesGenerated {
   public static SNode referenceMacro_GetReferent_1170287949033(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return _QueriesUtil.find_EnclosingContextOwner_ClosureContext_generatedClass(node, generator);
   }
+  public static SNode referenceMacro_GetReferent_1170350646244(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return _QueriesUtil.resolve_VariableReference_Variable_ClosureContext_generatedField(node, generator);
+  }
   public static SNode referenceMacro_GetReferent_1170348563863(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return _QueriesUtil.resolve_VariableDeclStmt_Variable_ClosureContext_generatedField(node, generator);
   }
