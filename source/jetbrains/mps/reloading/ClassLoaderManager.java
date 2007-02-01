@@ -124,6 +124,10 @@ public class ClassLoaderManager implements IComponentLifecycle {
     IClassPathItem mpsPath = getMPSPath();
     if (mpsPath != null) {
       myItems.add(mpsPath);
+    }    
+    IClassPathItem supportPath = getMPSSupportPath();
+    if (supportPath != null) {
+      myItems.add(supportPath);
     }
 
     Set<String> classPath = new LinkedHashSet<String>();
@@ -252,6 +256,16 @@ public class ClassLoaderManager implements IComponentLifecycle {
     }
 
     LOG.error("Can't find mps classpath");
+    return null;
+  }
+
+  public IClassPathItem getMPSSupportPath() {
+    String supportClasses = PathManager.getHomePath() + File.separator + "MPSPlugin"
+            + File.separator + "MPSSupport" + File.separator + "classes";
+    if (new File(supportClasses).exists()) {
+      return new FileClassPathItem(supportClasses);
+    }
+
     return null;
   }
 
