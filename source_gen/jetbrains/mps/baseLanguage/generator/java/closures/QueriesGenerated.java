@@ -67,4 +67,7 @@ public class QueriesGenerated {
   public static SNode referenceMacro_GetReferent_1170288676089(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return _QueriesUtil.find_Closure_generatedColsureAdapter_constructor(node, generator);
   }
+  public static SNode referenceMacro_GetReferent_1170293907670(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return _QueriesUtil.resolve_ClosureParameterReference(node, templateNode, generator);
+  }
 }
