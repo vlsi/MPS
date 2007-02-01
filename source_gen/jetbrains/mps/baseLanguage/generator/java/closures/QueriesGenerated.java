@@ -59,6 +59,9 @@ public class QueriesGenerated {
     }
     return false;
   }
+  public static String propertyMacro_GetPropertyValue_1170347597854(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return _QueriesUtil.getString_VariableDeclaration_nameInClosureContext(node, generator);
+  }
   public static SNode referenceMacro_GetReferent_1170294467354(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return _QueriesUtil.find_ContextOwner_ClosureContext_generatedClass(node, generator);
   }
@@ -80,12 +83,27 @@ public class QueriesGenerated {
   public static SNode referenceMacro_GetReferent_1170293907670(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return _QueriesUtil.resolve_ClosureParameterReference(node, templateNode, generator);
   }
+  public static List sourceNodesQuery_1170347787985(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    List list = _QueriesUtil.getList_ContextOwner_ifMethod_ParmsUsedInClosure(node, generator);
+    return (List<SNode>)list;
+  }
+  public static List sourceNodesQuery_1170347696338(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    List list = _QueriesUtil.getList_ContextOwner_ifMethod_ParmsUsedInClosure(node, generator);
+    return (List<SNode>)list;
+  }
+  public static List sourceNodesQuery_1170347169279(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    List list = _QueriesUtil.getList_ContextOwner_VariablesUsedInClosure(node, generator);
+    return (List<SNode>)list;
+  }
   public static List sourceNodesQuery_1170295259476(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     List<SNode> list = _QueriesUtil.getList_ContextOwner_ifMethod_ParmsUsedInClosure(node, generator);
     return (List<SNode>)list;
   }
   public static List sourceNodesQuery_1170294170225(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTargets(node, "statement", true);
+  }
+  public static SNode sourceNodeQuery_1170347410888(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "type", true);
   }
   public static SNode sourceNodeQuery_1170294125679(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.getParent(node, null, false, false);

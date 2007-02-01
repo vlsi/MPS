@@ -1,17 +1,17 @@
 package jetbrains.mps.baseLanguage.generator.java.closures;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.baseLanguage.*;
 import jetbrains.mps.generator.template.INodeBuilder;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.baseLanguage.*;
+import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration;
 
-import java.util.Iterator;
-import java.util.List;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Igor Alshannikov
@@ -114,6 +114,16 @@ public class _QueriesUtil {
       }
     }
     return parms;
+  }
+
+  public static List getList_ContextOwner_VariablesUsedInClosure(SNode inputNode, ITemplateGenerator generator) {
+    return ClosuresUtil.getVariablesUsedInClosure(inputNode, generator);
+  }
+
+  public static String getString_VariableDeclaration_nameInClosureContext(SNode inputNode, ITemplateGenerator generator) {
+    VariableDeclaration variable = (VariableDeclaration) inputNode;
+    SNode contextOwner = ClosuresUtil.findEnclosingClosureContextOwner(variable);
+    return ClosuresUtil.getVariableNameInClosureContext(contextOwner, variable, generator);
   }
 
 }

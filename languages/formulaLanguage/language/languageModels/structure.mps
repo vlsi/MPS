@@ -2,7 +2,6 @@
 <model name="jetbrains.mps.formulaLanguage.structure">
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <maxImportIndex value="2" />
-  <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.library" />
   <import index="2" modelUID="jetbrains.mps.core.structure" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1111784210516">
     <property name="name" value="Formula" />
