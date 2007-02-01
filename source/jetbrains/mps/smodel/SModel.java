@@ -22,8 +22,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
-import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
-
 /**
  * Author: Sergey Dmitriev
  * Created Sep 16, 2003
@@ -150,10 +148,10 @@ public class SModel implements Iterable<SNode> {
     return CollectionUtil.filter(cls, getRoots());
   }
 
-  public <N extends BaseAdaptor> List<N> getRootsAdaptors(@NotNull Class<N> cls) {
+  public <N extends BaseAdapter> List<N> getRootsAdaptors(@NotNull Class<N> cls) {
     List<N> result = new ArrayList<N>();
     for (SNode root : getRoots()) {
-      BaseAdaptor a = root.getAdaptor();
+      BaseAdapter a = root.getAdaptor();
       if (cls.isInstance(a)) {
         result.add((N) a);
       }
@@ -983,7 +981,7 @@ public class SModel implements Iterable<SNode> {
     return allNodes(cls, (Condition<E>) Condition.TRUE_CONDITION);
   }
 
-  public <BA extends BaseAdaptor> List<BA> allNodesByAdaptor(final Class<BA> cls) {
+  public <BA extends BaseAdapter> List<BA> allNodesByAdaptor(final Class<BA> cls) {
     List<BA> result = new ArrayList<BA>();
     for (SNode n : allNodes()) {
       if (cls.isInstance(n.getAdaptor())) {

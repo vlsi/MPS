@@ -5,10 +5,10 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
-public abstract class BaseAdaptor {
+public abstract class BaseAdapter {
   private SNode myNode;
 
-  public BaseAdaptor(SNode node) {
+  public BaseAdapter(SNode node) {
     myNode = node;
   }
 
@@ -24,14 +24,14 @@ public abstract class BaseAdaptor {
     return myNode.getId();
   }
 
-  public BaseAdaptor getParent() {
+  public BaseAdapter getParent() {
     if (myNode.getParent() == null) {
       return null;
     }
     return myNode.getParent().getAdaptor();
   }
 
-  public<BA extends BaseAdaptor> BA getParent(Class<BA> cls) {
+  public<BA extends BaseAdapter> BA getParent(Class<BA> cls) {
     if (getParent() == null) {
       return null;
     }
@@ -43,7 +43,7 @@ public abstract class BaseAdaptor {
     return getParent().getParent(cls);
   }
 
-  public<BA extends BaseAdaptor> List<BA> allChildren(Class<BA> cls) {
+  public<BA extends BaseAdapter> List<BA> allChildren(Class<BA> cls) {
     return myNode.allChildrenByAdaptor(cls);
   }
 
@@ -51,11 +51,11 @@ public abstract class BaseAdaptor {
     myNode.delete();
   }
 
-  public void addNextSibling(BaseAdaptor a) {
+  public void addNextSibling(BaseAdapter a) {
     myNode.addNextSibling(a.getNode());
   }
 
-  public void addPrevSibling(BaseAdaptor a) {
+  public void addPrevSibling(BaseAdapter a) {
     myNode.addPrevSibling(a.getNode());
   }
 
@@ -83,7 +83,7 @@ public abstract class BaseAdaptor {
     myNode.setIntegerProperty(propertyName, value);
   }
 
-  protected void setChild(@NotNull String role, BaseAdaptor childNode) {
+  protected void setChild(@NotNull String role, BaseAdapter childNode) {
     if (childNode == null) {
       myNode.setChild(role, null);
     } else {
@@ -91,7 +91,7 @@ public abstract class BaseAdaptor {
     }
   }
 
-  protected BaseAdaptor getChild(@NotNull String role) {
+  protected BaseAdapter getChild(@NotNull String role) {
     SNode result = myNode.getChild(role);
     if (result == null) {
       return null;
@@ -99,18 +99,18 @@ public abstract class BaseAdaptor {
     return result.getAdaptor();
   }
 
-  public void removeChild(@NotNull BaseAdaptor child) {
+  public void removeChild(@NotNull BaseAdapter child) {
     myNode.removeChild(child.getNode());
   }
 
   protected void addChild(@NotNull String role,
-                       @NotNull BaseAdaptor child) {
+                       @NotNull BaseAdapter child) {
     myNode.addChild(role, child.getNode());
   }
 
-  protected void insertChild(@Nullable BaseAdaptor anchorChild,
+  protected void insertChild(@Nullable BaseAdapter anchorChild,
                           @NotNull String role,
-                          @NotNull BaseAdaptor child) {    
+                          @NotNull BaseAdapter child) {
     SNode anchorNode = null;
     if (anchorChild != null) {
       anchorNode = anchorChild.getNode();
@@ -122,17 +122,17 @@ public abstract class BaseAdaptor {
     return myNode.getChildCount(role);
   }
 
-  protected <T extends BaseAdaptor> List<T> getChildren(@NotNull String role) {
+  protected <T extends BaseAdapter> List<T> getChildren(@NotNull String role) {
     List<T> result = toAdaptors(myNode.getChildren(role));
     return result;
   }
 
-  protected <T extends BaseAdaptor> Iterator<T> children(@NotNull String role) {
+  protected <T extends BaseAdapter> Iterator<T> children(@NotNull String role) {
     List<T> children = getChildren(role);
     return children.iterator();
   }
 
-  protected BaseAdaptor getReferent(String role) {
+  protected BaseAdapter getReferent(String role) {
     SNode result = myNode.getReferent(role);
     if (result == null) {
       return null;
@@ -140,7 +140,7 @@ public abstract class BaseAdaptor {
     return result.getAdaptor();
   }
 
-  protected void setReferent(@NotNull String role, BaseAdaptor newValue) {
+  protected void setReferent(@NotNull String role, BaseAdapter newValue) {
     if (newValue == null) {
       myNode.setReferent(role, null);
     } else {
@@ -149,7 +149,7 @@ public abstract class BaseAdaptor {
   }
 
   @Nullable
-  public BaseAdaptor getAttribute() {
+  public BaseAdapter getAttribute() {
     SNode result = myNode.getAttribute();
     if (result == null) {
       return null;
@@ -159,7 +159,7 @@ public abstract class BaseAdaptor {
   }
 
   @Nullable
-  public BaseAdaptor getAttribute(String role) {
+  public BaseAdapter getAttribute(String role) {
     SNode result = myNode.getAttribute(role);
     if (result == null) {
       return null;
@@ -168,19 +168,19 @@ public abstract class BaseAdaptor {
   }
 
   @NotNull
-  public List<? extends BaseAdaptor> getAttributes(String role) {
+  public List<? extends BaseAdapter> getAttributes(String role) {
     return toAdaptors(myNode.getAttributes(role));
   }
 
-  public void setAttribute(BaseAdaptor adaptor) {
-    if (adaptor == null) {
+  public void setAttribute(BaseAdapter adapter) {
+    if (adapter == null) {
       myNode.setAttribute(null);
     } else {
-      myNode.setAttribute(adaptor.getNode());
+      myNode.setAttribute(adapter.getNode());
     }
   }
 
-  public void setAttribute(String role, BaseAdaptor attribute) {
+  public void setAttribute(String role, BaseAdapter attribute) {
     if (attribute == null) {
       myNode.setAttribute(role, null);
     } else {
@@ -188,11 +188,11 @@ public abstract class BaseAdaptor {
     }
   }
 
-  public void addAttribute(String role, BaseAdaptor attribute) {
+  public void addAttribute(String role, BaseAdapter attribute) {
     myNode.addAttribute(role, attribute.getNode());
   }
 
-  public BaseAdaptor getPropertyAttribute(String propertyName) {
+  public BaseAdapter getPropertyAttribute(String propertyName) {
     SNode node = myNode.getPropertyAttribute(propertyName);
     if (node == null) {
       return null;
@@ -201,7 +201,7 @@ public abstract class BaseAdaptor {
     }
   }
 
-  public BaseAdaptor getPropertyAttribute(String role, String propertyName) {
+  public BaseAdapter getPropertyAttribute(String role, String propertyName) {
     SNode node = myNode.getPropertyAttribute(role, propertyName);
     if (node == null) {
       return null;
@@ -211,11 +211,11 @@ public abstract class BaseAdaptor {
   }
 
   @NotNull
-  public List<? extends BaseAdaptor> getPropertyAttributes(String role, String propertyName) {
+  public List<? extends BaseAdapter> getPropertyAttributes(String role, String propertyName) {
     return toAdaptors(myNode.getPropertyAttributes(role, propertyName));
   }
 
-  public void setPropertyAttribute(String role, String propertyName, BaseAdaptor propertyAttribute) {
+  public void setPropertyAttribute(String role, String propertyName, BaseAdapter propertyAttribute) {
     if (propertyAttribute == null) {
       myNode.setPropertyAttribute(role, propertyName, null);
     } else {
@@ -223,11 +223,11 @@ public abstract class BaseAdaptor {
     }    
   }
 
-  public void addPropertyAttribute(String role, String propertyName, BaseAdaptor propertyAttribute) {
+  public void addPropertyAttribute(String role, String propertyName, BaseAdapter propertyAttribute) {
     myNode.addPropertyAttribute(role, propertyName, propertyAttribute.getNode());
   }
 
-  public BaseAdaptor getLinkAttribute(String propertyName) {
+  public BaseAdapter getLinkAttribute(String propertyName) {
     SNode node = myNode.getLinkAttribute(propertyName);
     if (node == null) {
       return null;
@@ -236,7 +236,7 @@ public abstract class BaseAdaptor {
     }
   }
 
-  public BaseAdaptor getLinkAttribute(String role, String propertyName) {
+  public BaseAdapter getLinkAttribute(String role, String propertyName) {
     SNode node = myNode.getLinkAttribute(role, propertyName);
     if (node == null) {
       return null;
@@ -245,7 +245,7 @@ public abstract class BaseAdaptor {
     }
   }
 
-  public void setLinkAttribute(String role, String propertyName, BaseAdaptor propertyAttribute) {
+  public void setLinkAttribute(String role, String propertyName, BaseAdapter propertyAttribute) {
     if (propertyAttribute == null) {
       myNode.setLinkAttribute(role, propertyName, null);
     } else {
@@ -253,18 +253,18 @@ public abstract class BaseAdaptor {
     }
   }
 
-  public void addLinkAttribute(String role, String propertyName, BaseAdaptor propertyAttribute) {
+  public void addLinkAttribute(String role, String propertyName, BaseAdapter propertyAttribute) {
     myNode.addLinkAttribute(role, propertyName, propertyAttribute.getNode());
   }
 
-  public List<? extends BaseAdaptor> getLinkAttributes(String role, String linkRole) {
+  public List<? extends BaseAdapter> getLinkAttributes(String role, String linkRole) {
     return toAdaptors(myNode.getLinkAttributes(role, linkRole));
   }
 
 
   public boolean equals(Object obj) {
-    if (!(obj instanceof BaseAdaptor)) return false;
-    BaseAdaptor other = (BaseAdaptor) obj;
+    if (!(obj instanceof BaseAdapter)) return false;
+    BaseAdapter other = (BaseAdapter) obj;
     return other.getNode() == getNode();
   }
 
@@ -273,7 +273,7 @@ public abstract class BaseAdaptor {
     return getNode().hashCode();
   }
 
-  public static <T extends BaseAdaptor> List<T> toAdaptors(List<? extends SNode> list) {
+  public static <T extends BaseAdapter> List<T> toAdaptors(List<? extends SNode> list) {
     List<T> result = new ArrayList<T>();
     for (SNode node : list) {
       result.add((T) node.getAdaptor());
@@ -281,17 +281,17 @@ public abstract class BaseAdaptor {
     return result;
   }
 
-  public static <T extends SNode> List<T> toNodes(List<? extends BaseAdaptor> list) {
+  public static <T extends SNode> List<T> toNodes(List<? extends BaseAdapter> list) {
     List<T> result = new ArrayList<T>();
-    for (BaseAdaptor ba : list) {
+    for (BaseAdapter ba : list) {
       result.add((T) ba.getNode());
     }
     return result;
   }
 
-  public static <T extends SNode> Set<T> toNodes(Set<? extends BaseAdaptor> list) {
+  public static <T extends SNode> Set<T> toNodes(Set<? extends BaseAdapter> list) {
     Set<T> result = new HashSet<T>();
-    for (BaseAdaptor ba : list) {
+    for (BaseAdapter ba : list) {
       result.add((T) ba.getNode());
     }
     return result;

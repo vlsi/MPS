@@ -1472,7 +1472,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
 
-  public <BA extends BaseAdaptor> List<BA> allChildrenByAdaptor(Class<BA> clazz) {
+  public <BA extends BaseAdapter> List<BA> allChildrenByAdaptor(Class<BA> clazz) {
     List<BA> result = new ArrayList<BA>();
     for (SNode child : allChildren()) {
       if (clazz.isInstance(child.getAdaptor())) {
@@ -1824,11 +1824,11 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     });
   }
 
-  public BaseAdaptor getAdaptor() {
+  public BaseAdapter getAdaptor() {
     try {
       Constructor c = QueryMethod.getAdaptorConstructor(getClass().getName());
       if (c != null) {
-        return (BaseAdaptor) c.newInstance(this);
+        return (BaseAdapter) c.newInstance(this);
       }
     } catch (IllegalAccessException e) {
       LOG.error(e);
@@ -1837,6 +1837,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     } catch (InstantiationException e) {
       LOG.error(e);
     }
-    return new BaseAdaptor(this) { };
+    return new BaseAdapter(this) { };
   }
 }

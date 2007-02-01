@@ -14,11 +14,11 @@ public class CopyUtil  {
     return copy(nodes, targetModel, new HashMap<SNode, SNode>(), scope);
   }
 
-  public static<BA extends BaseAdaptor> BA copy(BA node, SModel targetModel) {
+  public static<BA extends BaseAdapter> BA copy(BA node, SModel targetModel) {
     return (BA) copy(node.getNode(), targetModel, new HashMap<SNode, SNode>(), GlobalScope.getInstance()).getAdaptor();
   }
 
-  public static<BA extends BaseAdaptor> BA copy(BA node, SModel targetModel, IScope scope) {
+  public static<BA extends BaseAdapter> BA copy(BA node, SModel targetModel, IScope scope) {
     return (BA) copy(node.getNode(), targetModel, new HashMap<SNode, SNode>(), scope).getAdaptor();
   }
 

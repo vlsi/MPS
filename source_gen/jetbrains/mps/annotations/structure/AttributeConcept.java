@@ -4,7 +4,7 @@ package jetbrains.mps.annotations.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.BaseAdaptor;
+import jetbrains.mps.smodel.BaseAdapter;
 
 public class AttributeConcept extends BaseConcept {
   public static String ATTRIBUTED_NODE = "attributedNode";
@@ -22,7 +22,7 @@ public class AttributeConcept extends BaseConcept {
   public BaseConcept getAttributedNode_internal() {
     return (BaseConcept)this.getParent();
   }
-  public BaseAdaptor getReferent(String role) {
+  public BaseAdapter getReferent(String role) {
     if("attributedNode".equals(role)) {
       return this.getAttributedNode_internal();
     } else 
