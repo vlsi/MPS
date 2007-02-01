@@ -77,6 +77,9 @@ public class QueriesGenerated {
   public static SNode referenceMacro_GetReferent_1170287949033(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return _QueriesUtil.find_EnclosingContextOwner_ClosureContext_generatedClass(node, generator);
   }
+  public static SNode referenceMacro_GetReferent_1170348563863(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return _QueriesUtil.resolve_VariableDeclStmt_Variable_ClosureContext_generatedField(node, generator);
+  }
   public static SNode referenceMacro_GetReferent_1170288676089(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return _QueriesUtil.find_Closure_generatedClosureAdapter_constructor(node, generator);
   }
@@ -107,5 +110,8 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_1170294125679(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.getParent(node, null, false, false);
+  }
+  public static SNode sourceNodeQuery_1170348623270(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "localVariableDeclaration", true), "initializer", true);
   }
 }
