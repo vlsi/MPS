@@ -1158,7 +1158,6 @@
       <module fileurl="file://$PROJECT_DIR$/applications/webrSamples/depot/webrSamples_depot.iml" filepath="$PROJECT_DIR$/applications/webrSamples/depot/webrSamples_depot.iml" group="applications/webrSamples" />
       <module fileurl="file://$PROJECT_DIR$/applications/webrSamples/depot_dnq/webrSamples_depot_dnq.iml" filepath="$PROJECT_DIR$/applications/webrSamples/depot_dnq/webrSamples_depot_dnq.iml" group="applications/webrSamples" />
       <module fileurl="file://$PROJECT_DIR$/applications/webrSamples/hello/webrSamples_hello.iml" filepath="$PROJECT_DIR$/applications/webrSamples/hello/webrSamples_hello.iml" group="applications/webrSamples" />
-      <module fileurl="file://$PROJECT_DIR$/applications/webrSamples/hello_dnq/webrSamples_hello_dnq.iml" filepath="$PROJECT_DIR$/applications/webrSamples/hello_dnq/webrSamples_hello_dnq.iml" group="applications/webrSamples" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/css/webr_css.iml" filepath="$PROJECT_DIR$/platform/webr/languages/css/webr_css.iml" group="platform/webr/languages" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/cssSchema/webr_cssSchema.iml" filepath="$PROJECT_DIR$/platform/webr/languages/cssSchema/webr_cssSchema.iml" group="platform/webr/languages" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/dataLanguage/webr_dataLanguage.iml" filepath="$PROJECT_DIR$/platform/webr/languages/dataLanguage/webr_dataLanguage.iml" group="platform/webr/languages" />
@@ -1182,7 +1181,7 @@
   <component name="ProjectRunConfigurationManager">
     <configuration default="false" name="IdeMain" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="jetbrains.mps.ide.IdeMain" />
-      <option name="VM_PARAMETERS" value="-Xmx256m -ea" />
+      <option name="VM_PARAMETERS" value="-Xmx1024m -ea" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -1201,13 +1200,13 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="Charisma" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
+    <configuration default="false" name="Charisma" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
       <option name="LOCAL" value="true" />
       <option name="OPEN_IN_BROWSER" value="true" />
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/User/login" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/app" />
       <option name="COMMON_VM_ARGUMENTS" value="" />
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
@@ -1222,16 +1221,11 @@
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="Charisma" />
-        <option name="DEPLOY" value="false" />
+        <option name="DEPLOY" value="true" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="teamSysWebApp" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello_dnq" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1308,11 +1302,6 @@
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="teamSysWebApp" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello_dnq" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1411,11 +1400,6 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello_dnq" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="webrSamples_depot" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
@@ -1462,7 +1446,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="hello_dnq_webrSample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
+    <configuration default="false" name="hello_dnq_webrSample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
@@ -1489,11 +1473,6 @@
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="teamSysWebApp" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello_dnq" />
-        <option name="DEPLOY" value="true" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
@@ -1569,11 +1548,6 @@
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="teamSysWebApp" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello_dnq" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
