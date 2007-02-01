@@ -524,6 +524,19 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1170357323085">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1170357323086">
+            <property name="name" value="c" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1170357323087">
+              <link role="classifier" extResolveInfo="3.[Classifier]Calendar" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.AnonymousClassExpression" id="1170357336521">
+              <node role="cls" type="jetbrains.mps.baseLanguage.AnonymousClass" id="1170357336522">
+                <link role="classifier" extResolveInfo="3.[Classifier]Calendar" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1170349145527">
           <node role="expression" type="jetbrains.mps.baseLanguage.AnonymousClassExpression" id="1170349156794">
             <node role="cls" type="jetbrains.mps.baseLanguage.AnonymousClass" id="1170349156795">

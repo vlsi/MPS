@@ -66,6 +66,32 @@
         </node>
       </node>
     </node>
+    <node role="nodePropertyConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraint" id="1170356866890">
+      <link role="applicableConcept" targetNodeId="1.1170345865475" />
+      <link role="applicableProperty" targetNodeId="1.1075300953595" />
+      <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_PropertyGetter" id="1170356883829">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1170356883830">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1170356914025">
+            <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1170356931468">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1170356947567">
+                <property name="value" value="$anonymous" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1170356942158">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1170356926372">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.PropertyGetter_FunctionParm_node" id="1170356926309" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1170356927623">
+                    <link role="link" targetNodeId="1.1170346070688" />
+                  </node>
+                </node>
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1170356943159">
+                  <link role="property" targetNodeId="2.1078489098626" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="nodePropertyConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraint" id="1158759808800">
       <link role="applicableConcept" targetNodeId="1.1109283449304" />
       <link role="applicableProperty" targetNodeId="2.1078489098626" />
