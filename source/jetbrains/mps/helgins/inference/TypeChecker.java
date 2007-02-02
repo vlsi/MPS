@@ -53,6 +53,7 @@ public class TypeChecker {
   private AdaptationManager myAdaptationManager;
   private QuotationEvaluator myQuotationEvaluator;
   private CopyEvaluator myCopyEvaluator;
+  private boolean myUsedForBLCompletion = false;
 
   public TypeChecker() {
     myContextsManager = new ContextsManager(this);
@@ -369,6 +370,14 @@ public class TypeChecker {
   public String getTypeErrorDontCheck(SNode node) {
     if (node == null) return null;
     return myNodesWithErrors.get(node);
+  }
+
+  public boolean isUsedForBLCompletion() {
+    return myUsedForBLCompletion;
+  }
+
+  public void setUsedForBLCompletion(boolean b) {
+    myUsedForBLCompletion = b;
   }
 
   private static class MyReadAccessListener implements INodeReadAccessListener {
