@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 
 public class Classifier_shortDescription_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
 
@@ -21,7 +22,6 @@ public class Classifier_shortDescription_PropertyConstraint implements IModelCon
     manager.unRegisterNodePropertyGetter("jetbrains.mps.baseLanguage.structure.Classifier", "shortDescription");
   }
   public String execPropertyGet(SNode node, String propertyName, IScope scope) {
-    SNode node_ = (SNode)node;
-    return NodePresentationUtil.getAliasOrConceptName(node) + " (" + node_.getModel().getUID() + ")";
+    return NodePresentationUtil.getAliasOrConceptName(node) + " (" + SNodeOperations.getModel(node).getUID() + ")";
   }
 }
