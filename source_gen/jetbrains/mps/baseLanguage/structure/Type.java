@@ -4,10 +4,17 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.core.structure.NamedConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.project.GlobalScope;
 
 public class Type extends NamedConcept {
 
   public  Type(SNode node) {
     super(node);
+  }
+
+  public static Type newInstance(SModel sm) {
+    return (Type)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.Type", sm, GlobalScope.getInstance()).getAdapter();
   }
 }

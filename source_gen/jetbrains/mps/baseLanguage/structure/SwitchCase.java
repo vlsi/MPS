@@ -4,6 +4,9 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.project.GlobalScope;
 
 public class SwitchCase extends BaseConcept {
   public static String EXPRESSION = "expression";
@@ -11,6 +14,10 @@ public class SwitchCase extends BaseConcept {
 
   public  SwitchCase(SNode node) {
     super(node);
+  }
+
+  public static SwitchCase newInstance(SModel sm) {
+    return (SwitchCase)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.SwitchCase", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public Expression getExpression() {

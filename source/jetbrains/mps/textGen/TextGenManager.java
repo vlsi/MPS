@@ -47,7 +47,7 @@ public class TextGenManager {
     assert nodeTextGen != null;
 
     nodeTextGen.setBuffer(buffer);
-    nodeTextGen.doGenerateText(node);
+    nodeTextGen.doGenerateText(node.getAdapter());
   }
 
   private SNodeTextGen loadNodeTextGen(SNode node) {

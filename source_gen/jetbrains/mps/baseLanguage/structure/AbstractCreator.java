@@ -4,10 +4,17 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.project.GlobalScope;
 
 public class AbstractCreator extends BaseConcept {
 
   public  AbstractCreator(SNode node) {
     super(node);
+  }
+
+  public static AbstractCreator newInstance(SModel sm) {
+    return (AbstractCreator)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.AbstractCreator", sm, GlobalScope.getInstance()).getAdapter();
   }
 }

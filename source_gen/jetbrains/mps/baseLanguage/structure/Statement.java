@@ -4,10 +4,17 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.project.GlobalScope;
 
 public class Statement extends BaseConcept {
 
   public  Statement(SNode node) {
     super(node);
+  }
+
+  public static Statement newInstance(SModel sm) {
+    return (Statement)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.Statement", sm, GlobalScope.getInstance()).getAdapter();
   }
 }

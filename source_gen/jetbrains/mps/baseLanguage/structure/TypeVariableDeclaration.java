@@ -4,12 +4,19 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.core.structure.NamedConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.project.GlobalScope;
 
 public class TypeVariableDeclaration extends NamedConcept {
   public static String NAME = "name";
 
   public  TypeVariableDeclaration(SNode node) {
     super(node);
+  }
+
+  public static TypeVariableDeclaration newInstance(SModel sm) {
+    return (TypeVariableDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.TypeVariableDeclaration", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public String getName() {

@@ -4,6 +4,9 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.project.GlobalScope;
 
 public class CatchClause extends BaseConcept {
   public static String THROWABLE = "throwable";
@@ -11,6 +14,10 @@ public class CatchClause extends BaseConcept {
 
   public  CatchClause(SNode node) {
     super(node);
+  }
+
+  public static CatchClause newInstance(SModel sm) {
+    return (CatchClause)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.CatchClause", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public LocalVariableDeclaration getThrowable() {

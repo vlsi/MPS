@@ -4,10 +4,17 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.core.structure.NamedConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.project.GlobalScope;
 
 public class ClosureParameter extends NamedConcept {
 
   public  ClosureParameter(SNode node) {
     super(node);
+  }
+
+  public static ClosureParameter newInstance(SModel sm) {
+    return (ClosureParameter)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ClosureParameter", sm, GlobalScope.getInstance()).getAdapter();
   }
 }

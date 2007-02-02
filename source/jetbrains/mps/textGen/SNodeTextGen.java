@@ -2,12 +2,13 @@ package jetbrains.mps.textGen;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.BaseAdapter;
 
 /**
  * Author: Sergey Dmitriev
  * Created Nov 13, 2003
  */
-public abstract class SNodeTextGen {
+public abstract class SNodeTextGen<BA extends BaseAdapter> {
 
   private static final Logger LOGGER = Logger.getLogger(SNodeTextGen.class);
 
@@ -21,8 +22,13 @@ public abstract class SNodeTextGen {
     return myBuffer;
   }
 
-  protected abstract void doGenerateText(SNode node);
+  protected abstract void doGenerateText(BA ba);
 
+  protected final void appendNodeText(BaseAdapter ba) {
+    appendNodeText(ba.getNode());
+  }
+
+  @Deprecated
   protected final void appendNodeText(SNode node) {
     try {
       TextGenManager.instance().appendNodeText(myBuffer, node);

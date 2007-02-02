@@ -4,11 +4,18 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.project.GlobalScope;
 
 public class Expression extends BaseConcept {
   public static String CPR_Lvalue = "lvalue";
 
   public  Expression(SNode node) {
     super(node);
+  }
+
+  public static Expression newInstance(SModel sm) {
+    return (Expression)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.Expression", sm, GlobalScope.getInstance()).getAdapter();
   }
 }

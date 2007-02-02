@@ -4,6 +4,9 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.project.GlobalScope;
 
 public class ConceptFunction extends BaseConcept {
   public static String CLNK_ConceptFunctionReturnType = "conceptFunctionReturnType";
@@ -13,6 +16,10 @@ public class ConceptFunction extends BaseConcept {
 
   public  ConceptFunction(SNode node) {
     super(node);
+  }
+
+  public static ConceptFunction newInstance(SModel sm) {
+    return (ConceptFunction)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ConceptFunction", sm, GlobalScope.getInstance()).getAdapter();
   }
 
   public StatementList getBody() {
