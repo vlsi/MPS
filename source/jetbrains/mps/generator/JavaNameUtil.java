@@ -9,7 +9,7 @@ import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
  * Date: Jan 13, 2004
  */
 public class JavaNameUtil {
-  public static boolean adaptorGenerator = false;
+  public static boolean ourAdaptorGenerator = false;
 
   public static String fqClassName(SModel model, String shortClassName) {
     String packageName = packageNameForModelUID(model.getUID());
@@ -37,7 +37,8 @@ public class JavaNameUtil {
   }
 
   public static String _packageNameForModelUID(SModelUID modelUID) {
-    if (adaptorGenerator) {
+    // package name 'as-is' if we generate adapters of we generate name of class from @java_stub
+    if (ourAdaptorGenerator || !(modelUID.getStereotype().equals(""))) {
     String modelFqName = modelUID.getLongName();
     String packageName = modelFqName;
     return packageName;

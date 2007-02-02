@@ -475,7 +475,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         if (invocationContext.getModule() instanceof Language &&
                 sourceModelDescriptor.getModelUID().toString().contains(".structure") &&
                 targetLanguage.getNamespace().equals("jetbrains.mps.baseLanguage.ext.collections.lang")) {
-          JavaNameUtil.adaptorGenerator = true;          
+          JavaNameUtil.ourAdaptorGenerator = true;
         }
 
         progress.addText("");
@@ -490,7 +490,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         generationSession.discardTransients();
         progress.finishTask(taskName);
 
-        JavaNameUtil.adaptorGenerator = false;
+        JavaNameUtil.ourAdaptorGenerator = false;
 
         if (!status.isOk()) {
           break;
