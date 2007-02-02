@@ -3,7 +3,7 @@
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
-  <maxImportIndex value="11" />
+  <maxImportIndex value="13" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="3" modelUID="java.lang@java_stub" />
   <import index="4" modelUID="jetbrains.mps.smodel@java_stub" />
@@ -11,6 +11,8 @@
   <import index="6" modelUID="jetbrains.mps.core.structure" />
   <import index="9" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <import index="11" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" />
+  <import index="12" modelUID="jetbrains.mps.bootstrap.smodelLanguage@java_stub" />
+  <import index="13" modelUID="jetbrains.mps.baseLanguage.structure@java_stub" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1145576838780">
     <property name="name" value="SemanticDowncast" />
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1145576838781">
@@ -2416,6 +2418,35 @@
         <property name="name" value="sl" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1169585427176">
           <link role="concept" targetNodeId="1.1068580123136" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1170385738897">
+    <property name="name" value="NodeAdapterClass" />
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1170385750351">
+      <property name="name" value="getAdapter" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1170385750352" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1170385750353">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1170386370725">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1170386370726">
+            <property name="name" value="adapter" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1170386370728">
+              <link role="classifier" extResolveInfo="13.[Classifier]IfStatement" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1170385770905">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1170385769685">
+                <link role="variableDeclaration" targetNodeId="1170385759464" resolveInfo="node" />
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1170385773547" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1170385759464">
+        <property name="name" value="node" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1170385759465">
+          <link role="concept" targetNodeId="1.1068580123159" />
         </node>
       </node>
     </node>
