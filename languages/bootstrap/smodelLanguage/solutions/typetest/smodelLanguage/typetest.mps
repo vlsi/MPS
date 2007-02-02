@@ -286,6 +286,16 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1170437883325">
+          <node role="expression" type="jetbrains.mps.baseLanguage.AssignmentExpression" id="1170437884374">
+            <node role="lValue" type="jetbrains.mps.baseLanguage.ParameterReference" id="1170437883326">
+              <link role="variableDeclaration" targetNodeId="1170377948150" resolveInfo="node" />
+            </node>
+            <node role="rValue" type="jetbrains.mps.baseLanguage.NewExpression" id="1170437887156">
+              <link role="baseMethodDeclaration" extResolveInfo="1.constructor [Classifier]String[ConstructorDeclaration] ()" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1170378088919">
