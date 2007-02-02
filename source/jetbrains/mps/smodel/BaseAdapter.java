@@ -12,6 +12,7 @@ public abstract class BaseAdapter {
     myNode = node;
   }
 
+  @NotNull
   public SNode getNode() {
     return myNode;
   }
