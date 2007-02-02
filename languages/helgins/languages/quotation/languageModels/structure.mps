@@ -19,6 +19,10 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1141044949598">
     <property name="name" value="Quotation" />
     <link role="extends" targetNodeId="3.1111784312737" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1170416712765">
+      <property name="value" value="&lt;quotation&gt;" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1141044957162">
       <property name="sourceCardinality" value="1" />
       <property name="role" value="quotedNode" />
