@@ -49,22 +49,12 @@ public class SubtypingManager {
     for (SubtypingRule rule : typesModel.getRoots(SubtypingRule.class)) {
       VariableCondition condition = rule.getApplicableNode().getCondition();
       ConceptDeclaration ruleConcept = ConditionMatcher.getConcept(condition);
-      Set<SubtypingRule> subtypingRules = myConceptsToSubtypingRulesCache.get(ruleConcept);
-      if (subtypingRules == null) {
-        subtypingRules = new HashSet<SubtypingRule>();
-        myConceptsToSubtypingRulesCache.put(ruleConcept, subtypingRules);
-      }
-      subtypingRules.add(rule);
+      myConceptsToSubtypingRulesCache.putRule(ruleConcept, rule);
     }
     for (SupertypingRule rule : typesModel.getRoots(SupertypingRule.class)) {
       VariableCondition condition = rule.getApplicableNode().getCondition();
       ConceptDeclaration ruleConcept = ConditionMatcher.getConcept(condition);
-      Set<SupertypingRule> supertypingRules = myConceptsToSupertypingRulesCache.get(ruleConcept);
-      if (supertypingRules == null) {
-        supertypingRules = new HashSet<SupertypingRule>();
-        myConceptsToSupertypingRulesCache.put(ruleConcept, supertypingRules);
-      }
-      supertypingRules.add(rule);
+      myConceptsToSupertypingRulesCache.putRule(ruleConcept, rule);
     }
     for (SubtypingVarianceRule rule : typesModel.getRoots(SubtypingVarianceRule.class)) {
       myVarianceRules.put(rule.getConceptDeclaration(), rule);

@@ -151,12 +151,7 @@ public class TypeChecker {
         if (!rule.applicableNodes().hasNext()) continue;
         AnalyzedTermDeclaration analyzedTermDeclaration = rule.applicableNodes().next();
         ConceptDeclaration ruleConcept = ConditionMatcher.getConcept(analyzedTermDeclaration.getCondition());
-        Set<Rule> rules = myConceptsToRulesCache.get(ruleConcept);
-        if (rules == null) {
-          rules = new HashSet<Rule>();
-          myConceptsToRulesCache.put(ruleConcept, rules);
-        }
-        rules.add(rule);
+        myConceptsToRulesCache.putRule(ruleConcept, rule);
       }
       myConceptsToRulesCache.makeConsistent();
 

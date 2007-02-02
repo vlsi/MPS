@@ -1,6 +1,7 @@
 package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.smodel.SModelUtil;
 
 import java.util.*;
 
@@ -11,7 +12,7 @@ import java.util.*;
  * Time: 16:02:54
  * To change this template use File | Settings | File Templates.
  */
-public class ConceptToRulesMap<T> implements Map<ConceptDeclaration, Set<T>> {
+public class ConceptToRulesMap<T>  {
   private Map<ConceptDeclaration, Set<T>> myMap = new HashMap<ConceptDeclaration, Set<T>>();
 
   public int size() {
@@ -24,6 +25,15 @@ public class ConceptToRulesMap<T> implements Map<ConceptDeclaration, Set<T>> {
 
   public Set<T> put(ConceptDeclaration key, Set<T> value) {
     return myMap.put(key, value);
+  }
+
+  public void putRule(ConceptDeclaration conceptDeclaration, T rule) {
+    Set<T> rules = myMap.get(conceptDeclaration);
+    if (rules == null) {
+      rules = new HashSet<T>();
+      myMap.put(conceptDeclaration, rules);
+    }
+    rules.add(rule);
   }
 
   public Set<T> get(Object key) {
@@ -62,38 +72,8 @@ public class ConceptToRulesMap<T> implements Map<ConceptDeclaration, Set<T>> {
     }
   }
 
-
-  // not implemented
-
-  public boolean containsKey(Object key) {
-    throw new UnsupportedOperationException();
-  }
-
-  public boolean containsValue(Object value) {
-    throw new UnsupportedOperationException();
-  }
-
-  public Set<T> remove(Object key) {
-    throw new UnsupportedOperationException();
-  }
-
-  public void putAll(Map<? extends ConceptDeclaration, ? extends Set<T>> t) {
-    throw new UnsupportedOperationException();
-  }
-
   public void clear() {
     myMap.clear();
   }
 
-  public Set<ConceptDeclaration> keySet() {
-    throw new UnsupportedOperationException();
-  }
-
-  public Collection<Set<T>> values() {
-    throw new UnsupportedOperationException();
-  }
-
-  public Set<Entry<ConceptDeclaration, Set<T>>> entrySet() {
-    throw new UnsupportedOperationException();
-  }
 }
