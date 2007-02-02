@@ -36,6 +36,7 @@ public class TypeChecker {
   private static final Logger LOG = Logger.getLogger(TypeChecker.class);
 
   private static final Object TYPE_OF_TERM = new Object();
+  public static final Object HELGINS_ERROR = new Object();
 
   private Set<SNode> myCheckedRoots = new WeakSet<SNode>();
   private Map<SNode, Set<SNode>> myNodesToDependentRoots = new WeakHashMap<SNode, Set<SNode>>();
@@ -191,6 +192,7 @@ public class TypeChecker {
       if (status == null || status.isOk()) {
         status = new Status(IStatus.Code.ERROR, errorString);
         node.putUserObject(SNode.ERROR_STATUS, status);
+        ((Status)status).setUserObject(HELGINS_ERROR);
       } else if (status instanceof Status) {
         ((Status)status).addMessage(errorString);
       }
