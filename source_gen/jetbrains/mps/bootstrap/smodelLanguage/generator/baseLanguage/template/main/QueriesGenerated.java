@@ -17,6 +17,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Concept;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess;
 import jetbrains.mps.bootstrap.smodelLanguage.SConceptPropertyAccess;
 import jetbrains.mps.bootstrap.smodelLanguage.SModelLanguageTypesUtil;
 import java.util.List;
@@ -224,6 +225,9 @@ public class QueriesGenerated {
   }
   public static String propertyMacro_GetPropertyValue_1168985327635(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(node, "conceptProperty", false), "name");
+  }
+  public static SNode referenceMacro_GetReferent_1170457360268(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return _QueriesUtil.get_SPropertyAccess_GetMethod((SPropertyAccess)node, scope);
   }
   public static SNode referenceMacro_GetReferent_1168984233974(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return _QueriesUtil.get_SConceptPropertyAccess_GetMethod((SConceptPropertyAccess)node, scope);
