@@ -8,18 +8,18 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 public class Properties {
 
   public void stringProperty(SNode clazz) {
-    boolean hasName = SPropertyOperations.get(clazz, "name") != null;
-    String name = SPropertyOperations.get(clazz, "name");
-    String text = "Name is " + SPropertyOperations.get(clazz, "name");
+    boolean hasName = SPropertyOperations.getString(clazz, "name") != null;
+    String name = SPropertyOperations.getString(clazz, "name");
+    String text = "Name is " + SPropertyOperations.getString(clazz, "name");
     SPropertyOperations.set(clazz, "name", "Sample");
-    boolean ok_not_safely = SPropertyOperations.get(clazz, "name").equals("Sample");
+    boolean ok_not_safely = SPropertyOperations.getString(clazz, "name").equals("Sample");
     boolean ok_safely = SPropertyOperations.hasValue(clazz, "name", "Sample");
-    boolean ok_in_java = SPropertyOperations.get(clazz, "name") == "Sample";
+    boolean ok_in_java = SPropertyOperations.getString(clazz, "name") == "Sample";
   }
   public void stringProperty2(SNode clazz1, SNode clazz2) {
     SPropertyOperations.set(clazz1, "name", "Sample");
-    SPropertyOperations.set(clazz2, "name", SPropertyOperations.get(clazz1, "name"));
-    boolean ok = SPropertyOperations.get(clazz1, "name") == SPropertyOperations.get(clazz2, "name");
+    SPropertyOperations.set(clazz2, "name", SPropertyOperations.getString(clazz1, "name"));
+    boolean ok = SPropertyOperations.getString(clazz1, "name") == SPropertyOperations.getString(clazz2, "name");
   }
   public void booleanProperty(SNode boolConst) {
     boolean isTrue = false;

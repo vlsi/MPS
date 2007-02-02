@@ -31,8 +31,8 @@ public class Child_Referent_Parent {
   }
   public void accessToReferentNode_1(SNode methodCall, SNode method) {
     SNode oldMethod = SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
-    String oldMethopdName = SPropertyOperations.get(oldMethod, "name");
-    oldMethopdName = SPropertyOperations.get(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "name");
+    String oldMethopdName = SPropertyOperations.getString(oldMethod, "name");
+    oldMethopdName = SPropertyOperations.getString(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "name");
     SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", method, false);
   }
   public void accessToParentNode_1(SNode expression) {
