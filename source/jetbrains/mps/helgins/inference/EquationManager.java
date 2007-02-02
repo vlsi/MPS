@@ -2,6 +2,7 @@ package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.helgins.RuntimeErrorType;
 import jetbrains.mps.helgins.RuntimeTypeVariable;
+import jetbrains.mps.helgins.evaluator.uiActions.PresentationManager;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.Pair;
@@ -77,7 +78,8 @@ public class EquationManager {
       return;
     }
 
-    String errorText = "type "+ subtypeRepresentator+" should be a subtype of "+supertypeRepresentator;
+    String errorText = "type "+ PresentationManager.toString(subtypeRepresentator)+
+            " should be a subtype of "+ PresentationManager.toString(supertypeRepresentator);
     TypeChecker.getInstance().reportTypeError(nodeToCheck, errorText);
   }
 

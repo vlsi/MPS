@@ -14,6 +14,8 @@ import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.IStatus;
+import jetbrains.mps.ide.Status;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mpswiki.queryLanguage.evaluator.ConditionMatcher;
@@ -34,7 +36,6 @@ public class TypeChecker {
   private static final Logger LOG = Logger.getLogger(TypeChecker.class);
 
   private static final Object TYPE_OF_TERM = new Object();
-  private static final Object TYPE_ERROR = new Object();
 
   private Set<SNode> myCheckedRoots = new WeakSet<SNode>();
   private Map<SNode, Set<SNode>> myNodesToDependentRoots = new WeakHashMap<SNode, Set<SNode>>();
@@ -184,8 +185,14 @@ public class TypeChecker {
 
     // setting errors
     for (SNode node : myNodesWithErrors.keySet()) {
-      String errorString = myNodesWithErrors.get(node);
-      node.putUserObject(TYPE_ERROR, errorString);
+      String errorString = "HELGINS ERROR: " + myNodesWithErrors.get(node);
+      IStatus status = (IStatus) node.getUserObject(SNode.ERROR_STATUS);
+      if (status == null || status.isOk()) {
+        status = new Status(IStatus.Code.ERROR, errorString);
+        node.putUserObject(SNode.ERROR_STATUS, status);
+      } else if (status instanceof Status) {
+        ((Status)status).addMessage(errorString);
+      }
     }
   }
 
@@ -357,6 +364,11 @@ public class TypeChecker {
 
   public SModel getRuntimeTypesModel() {
     return myInterpretator.getRuntimeTypesModel();
+  }
+
+  public String getTypeErrorDontCheck(SNode node) {
+    if (node == null) return null;
+    return myNodesWithErrors.get(node);
   }
 
   private static class MyReadAccessListener implements INodeReadAccessListener {

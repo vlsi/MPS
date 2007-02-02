@@ -34,6 +34,10 @@ public class Status implements IStatus {
     return myMessage;
   }
 
+  public void addMessage(String s) {
+    myMessage = myMessage + "\n" + s;
+  }
+
   public Object getUserObject() {
     return myUserObject;
   }
