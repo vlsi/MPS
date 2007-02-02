@@ -1550,9 +1550,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1156246260769">
-    <property name="name" value="BL_property_util" />
+    <property name="name" value="QueriesUtil" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1156246279317">
-      <property name="name" value="descrText" />
+      <property name="name" value="getDesciptionText" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1156246297805">
         <link role="classifier" extResolveInfo="13.[Classifier]String" />
       </node>
@@ -1654,7 +1654,7 @@
       </node>
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1156248241223">
-      <property name="name" value="matchingText_BaseMethodDeclaration" />
+      <property name="name" value="getMatchingText_BaseMethodDeclaration" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1156248250598">
         <link role="classifier" extResolveInfo="13.[Classifier]String" />
       </node>
@@ -1854,7 +1854,7 @@
       </node>
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1156248447262">
-      <property name="name" value="matchingText_Type" />
+      <property name="name" value="getMatchingText_Type" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1156248451203">
         <link role="classifier" extResolveInfo="13.[Classifier]String" />
       </node>
