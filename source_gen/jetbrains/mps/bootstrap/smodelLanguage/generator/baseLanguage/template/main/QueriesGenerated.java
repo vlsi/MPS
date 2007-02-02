@@ -61,10 +61,11 @@ public class QueriesGenerated {
     b = b || SNodeOperations.isInstanceOf(op, "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_DeleteOperation");
     b = b || SNodeOperations.isInstanceOf(op, "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_CopyOperation");
     b = b || SNodeOperations.isInstanceOf(op, "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsRoleOperation");
+    b = b || (SNodeOperations.isInstanceOf(op, "jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess") && QueriesUtil.isPropertyAccess_simple(node));
     return b;
   }
   public static boolean baseMappingRule_Condition_1168976445524(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return QueriesUtil.isPropertyAccess_simple(node);
+    return QueriesUtil.isPropertyAccess_simple(SNodeOperations.getParent(node, null, false, false));
   }
   public static boolean baseMappingRule_Condition_1168976854559(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return QueriesUtil.isPropertyAccess_enum_notNullDefaultValue(node);
@@ -73,10 +74,10 @@ public class QueriesGenerated {
     return QueriesUtil.isPropertyAccess_enum_nullDefaultValue(node);
   }
   public static boolean baseMappingRule_Condition_1168977521292(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SPropertyOperations.get(SLinkOperations.getTarget(node, "enumMember", false), "internalValue") != null;
+    return SPropertyOperations.getString(SLinkOperations.getTarget(node, "enumMember", false), "internalValue") != null;
   }
   public static boolean baseMappingRule_Condition_1168977610522(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SPropertyOperations.get(SLinkOperations.getTarget(node, "enumMember", false), "internalValue") == null;
+    return SPropertyOperations.getString(SLinkOperations.getTarget(node, "enumMember", false), "internalValue") == null;
   }
   public static boolean baseMappingRule_Condition_1168978381110(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return QueriesUtil.isProperty_set_stringValue(node, generator);
@@ -108,7 +109,7 @@ public class QueriesGenerated {
     return parm == null;
   }
   public static String propertyMacro_GetPropertyValue_1168981884180(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SPropertyOperations.get(SLinkOperations.getTarget(node, "enumMember", false), "internalValue");
+    return SPropertyOperations.getString(SLinkOperations.getTarget(node, "enumMember", false), "internalValue");
   }
   public static String propertyMacro_GetPropertyValue_1168986363721(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode link = SLinkOperations.getTarget(node, "link", false);
@@ -124,7 +125,7 @@ public class QueriesGenerated {
   }
   public static String propertyMacro_GetPropertyValue_1169054268385(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode genuineLink = QueriesUtil.linkOpExpression_genuineLink(SNodeOperations.getParent(node, null, false, false));
-    return SPropertyOperations.get(genuineLink, "role");
+    return SPropertyOperations.getString(genuineLink, "role");
   }
   public static String propertyMacro_GetPropertyValue_1169054430478(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode parmConcept = SLinkOperations.getTarget(node, "concept", false);
@@ -147,7 +148,7 @@ public class QueriesGenerated {
   }
   public static String propertyMacro_GetPropertyValue_1169057619361(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode genuineLink = QueriesUtil.linkListOpExpression_genuineLink(SNodeOperations.getParent(node, null, false, false));
-    return SPropertyOperations.get(genuineLink, "role");
+    return SPropertyOperations.getString(genuineLink, "role");
   }
   public static String propertyMacro_GetPropertyValue_1169057685014(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode parmConcept = SLinkOperations.getTarget(node, "concept", false);
@@ -167,19 +168,19 @@ public class QueriesGenerated {
   }
   public static String propertyMacro_GetPropertyValue_1169058210501(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode genuineLink = QueriesUtil.linkListOpExpression_genuineLink(SNodeOperations.getParent(node, null, false, false));
-    return SPropertyOperations.get(genuineLink, "role");
+    return SPropertyOperations.getString(genuineLink, "role");
   }
   public static String propertyMacro_GetPropertyValue_1169058658826(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode genuineLink = QueriesUtil.linkListOpExpression_genuineLink(SNodeOperations.getParent(node, null, false, false));
-    return SPropertyOperations.get(genuineLink, "role");
+    return SPropertyOperations.getString(genuineLink, "role");
   }
   public static String propertyMacro_GetPropertyValue_1169056436910(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode genuineLink = QueriesUtil.linkOpExpression_genuineLink(SNodeOperations.getParent(node, null, false, false));
-    return SPropertyOperations.get(genuineLink, "role");
+    return SPropertyOperations.getString(genuineLink, "role");
   }
   public static String propertyMacro_GetPropertyValue_1169055820374(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode genuineLink = QueriesUtil.linkOpExpression_genuineLink(SNodeOperations.getParent(node, null, false, false));
-    return SPropertyOperations.get(genuineLink, "role");
+    return SPropertyOperations.getString(genuineLink, "role");
   }
   public static String propertyMacro_GetPropertyValue_1169055966769(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode genuineLink = QueriesUtil.linkOpExpression_genuineLink(SNodeOperations.getParent(node, null, false, false));
@@ -203,7 +204,7 @@ public class QueriesGenerated {
   }
   public static String propertyMacro_GetPropertyValue_1169069895463(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode genuineLink = QueriesUtil.linkListOpExpression_genuineLink(SNodeOperations.getParent(node, null, false, false));
-    return SPropertyOperations.get(genuineLink, "role");
+    return SPropertyOperations.getString(genuineLink, "role");
   }
   public static String propertyMacro_GetPropertyValue_1170442611639(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return "" + _QueriesUtil.operationHasParm_Inclusion(node);
@@ -222,7 +223,7 @@ public class QueriesGenerated {
     return NameUtil.nodeFQName(parmConcept);
   }
   public static String propertyMacro_GetPropertyValue_1168985327635(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SPropertyOperations.get(SLinkOperations.getTarget(node, "conceptProperty", false), "name");
+    return SPropertyOperations.getString(SLinkOperations.getTarget(node, "conceptProperty", false), "name");
   }
   public static SNode referenceMacro_GetReferent_1168984233974(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return _QueriesUtil.get_SConceptPropertyAccess_GetMethod((SConceptPropertyAccess)node, scope);
