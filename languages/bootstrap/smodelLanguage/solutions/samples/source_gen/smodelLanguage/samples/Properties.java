@@ -44,10 +44,10 @@ public class Properties {
     boolean ok2 = SPropertyOperations.hasValue(link, "sourceCardinality", "0..n", "0..1");
   }
   public void enumProperty2_string(SNode link1, SNode link2) {
-    if(SPropertyOperations.get(link1, "metaClass", null) != SPropertyOperations.get(link2, "metaClass", null)) {
-      SPropertyOperations.set(link1, "metaClass", SPropertyOperations.get(link2, "metaClass", null));
+    if(SPropertyOperations.getString_def(link1, "metaClass", null) != SPropertyOperations.getString_def(link2, "metaClass", null)) {
+      SPropertyOperations.set(link1, "metaClass", SPropertyOperations.getString_def(link2, "metaClass", null));
     }
-    boolean ok1 = SPropertyOperations.get(link1, "metaClass", null) == SPropertyOperations.get(link2, "metaClass", null);
+    boolean ok1 = SPropertyOperations.getString_def(link1, "metaClass", null) == SPropertyOperations.getString_def(link2, "metaClass", null);
     if(SPropertyOperations.hasValue(link1, "metaClass", "aggregation", null)) {
       boolean ok2 = SPropertyOperations.hasValue(link2, "metaClass", "aggregation", null);
     }
