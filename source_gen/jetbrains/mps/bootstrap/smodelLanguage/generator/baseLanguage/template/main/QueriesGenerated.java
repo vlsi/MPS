@@ -65,6 +65,7 @@ public class QueriesGenerated {
     b = b || (SNodeOperations.isInstanceOf(op, "jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess") && QueriesUtil.isPropertyAccess_simple(op));
     b = b || (SNodeOperations.isInstanceOf(op, "jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess") && QueriesUtil.isPropertyAccess_enum_notNullDefaultValue(op));
     b = b || (SNodeOperations.isInstanceOf(op, "jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess") && QueriesUtil.isPropertyAccess_enum_nullDefaultValue(op));
+    b = b || (SNodeOperations.isInstanceOf(op, "jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation") && QueriesUtil.isProperty_set_stringValue(node, generator));
     return b;
   }
   public static boolean baseMappingRule_Condition_1168976445524(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -83,7 +84,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(node, "enumMember", false), "internalValue") == null;
   }
   public static boolean baseMappingRule_Condition_1168978381110(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return QueriesUtil.isProperty_set_stringValue(node, generator);
+    return QueriesUtil.isProperty_set_stringValue(SNodeOperations.getParent(node, null, false, false), generator);
   }
   public static boolean baseMappingRule_Condition_1168978822549(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return QueriesUtil.isProperty_set_notStringValue(node, generator);
