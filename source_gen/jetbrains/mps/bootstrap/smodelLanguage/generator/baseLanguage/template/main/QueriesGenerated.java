@@ -62,13 +62,13 @@ public class QueriesGenerated {
     b = b || SNodeOperations.isInstanceOf(op, "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_DeleteOperation");
     b = b || SNodeOperations.isInstanceOf(op, "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_CopyOperation");
     b = b || SNodeOperations.isInstanceOf(op, "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsRoleOperation");
-    b = b || (SNodeOperations.isInstanceOf(op, "jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess") && QueriesUtil.isPropertyAccess_simple(node));
+    b = b || (SNodeOperations.isInstanceOf(op, "jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess") && QueriesUtil.isPropertyAccess_simple(op));
     b = b || (SNodeOperations.isInstanceOf(op, "jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess") && QueriesUtil.isPropertyAccess_enum_notNullDefaultValue(node));
     b = b || (SNodeOperations.isInstanceOf(op, "jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess") && QueriesUtil.isPropertyAccess_enum_nullDefaultValue(node));
     return b;
   }
   public static boolean baseMappingRule_Condition_1168976445524(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return QueriesUtil.isPropertyAccess_simple(SNodeOperations.getParent(node, null, false, false));
+    return QueriesUtil.isPropertyAccess_simple(node);
   }
   public static boolean baseMappingRule_Condition_1168976854559(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return QueriesUtil.isPropertyAccess_enum_notNullDefaultValue(SNodeOperations.getParent(node, null, false, false));
