@@ -130,4 +130,44 @@ public class JavaModelUtil_new {
     }
     return true;
   }
+
+  public static ClassifierType createType(Classifier classifier, SModel model) {
+    if (classifier instanceof Interface) {
+      ClassifierType classifierType = ClassifierType.newInstance(model);
+      classifierType.setClassifier((Interface) classifier);
+      return classifierType;
+    }
+    ClassifierType classifierType = ClassifierType.newInstance(model);
+    classifierType.setClassifier((ClassConcept) classifier);
+    return classifierType;
+  }
+
+  public static boolean isOverriddenMethod(ClassConcept classConcept, InstanceMethodDeclaration methodDeclaration) {
+    String[] parmTypes = new String[methodDeclaration.getParametersCount()];
+    int count = 0;
+    Iterator<ParameterDeclaration> iterator = methodDeclaration.parameters();
+    while (iterator.hasNext()) {
+      ParameterDeclaration parm = iterator.next();
+      Type parmType = parm.getType();
+      if (parmType != null) {
+        parmTypes[count] = parmType.getName();
+      }
+      count++;
+    }
+
+    InstanceMethodDeclaration methodInHierarchy = JavaModelUtil_new.findMethod(classConcept, methodDeclaration.getName(), parmTypes);
+    return (methodInHierarchy != methodDeclaration);
+  }
+
+
+  public static Expression getActualArgument(BaseMethodCall method, int index) {
+    Expression arg = null;
+    Iterator<Expression> args = method.actualArguments();
+    for (int i = 0; i <= index; i++) {
+      arg = args.next();
+    }
+
+    return arg;
+  }
+  
 }

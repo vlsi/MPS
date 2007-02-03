@@ -297,4 +297,20 @@ public abstract class BaseAdapter {
     }
     return result;
   }
+
+  public static BaseAdapter fromNode(SNode node) {
+    if (node == null) {
+      return null;
+    } else {
+      return node.getAdapter();
+    }
+  }
+
+  public static SNode fromAdapter(BaseAdapter ba) {
+    if (ba == null) {
+      return null;
+    } else {
+      return ba.getNode();
+    }
+  }
 }
