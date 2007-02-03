@@ -261,6 +261,14 @@ public class QueriesGenerated {
     SNode op = SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "nodeOperation", true);
     return (List<SNode>)_QueriesUtil.getNodeOperation_ConceptList_concepts((SNodeOperation)(op));
   }
+  public static SNode sourceNodeQuery_1170466610811(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    // <expr>.<property-access>.<operation>
+    // <operation> : our input node
+    // <expt> : expression to copy
+    SNode noe1 = SNodeOperations.getParent(node, null, false, false);
+    SNode noe2 = SLinkOperations.getTarget(noe1, "leftExpression", true);
+    return SLinkOperations.getTarget(noe2, "leftExpression", true);
+  }
   public static SNode sourceNodeQuery_1170457758878(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
   }
