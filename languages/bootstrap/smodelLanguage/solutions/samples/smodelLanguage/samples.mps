@@ -2157,6 +2157,20 @@
       <property name="name" value="enumProperty3_integer" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1146854599691" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1146854597221">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1170458748584">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1170458748585">
+            <property name="name" value="i" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1170458748586" />
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1170458765574">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1170458764073">
+                <link role="variableDeclaration" targetNodeId="1146854625161" resolveInfo="cellModel" />
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1170458766543">
+                <link role="property" targetNodeId="11.1130859485024" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1146854709495">
           <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1146854729735">
             <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1146854717671">

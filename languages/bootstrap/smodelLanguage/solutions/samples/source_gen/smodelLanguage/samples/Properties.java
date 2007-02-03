@@ -38,8 +38,8 @@ public class Properties {
     }
   }
   public void enumProperty_string(SNode link) {
-    String s = SPropertyOperations.get(link, "sourceCardinality", "0..1");
-    boolean ok1 = SPropertyOperations.get(link, "sourceCardinality", "0..1") == s;
+    String s = SPropertyOperations.getString_def(link, "sourceCardinality", "0..1");
+    boolean ok1 = SPropertyOperations.getString_def(link, "sourceCardinality", "0..1") == s;
     SPropertyOperations.set(link, "sourceCardinality", "0..n");
     boolean ok2 = SPropertyOperations.hasValue(link, "sourceCardinality", "0..n", "0..1");
   }
@@ -53,6 +53,7 @@ public class Properties {
     }
   }
   public void enumProperty3_integer(SNode cellModel) {
+    int i = SPropertyOperations.getInteger_def(cellModel, "attractsFocus", "0");
     if(SPropertyOperations.hasValue(cellModel, "attractsFocus", "0", "0")) {
       SPropertyOperations.set(cellModel, "attractsFocus", "2");
     }
