@@ -2,6 +2,7 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 
 /**
@@ -38,10 +39,10 @@ public class JavaNameUtil {
 
   public static String _packageNameForModelUID(SModelUID modelUID) {
     // package name 'as-is' if we generate adapters of we generate name of class from @java_stub
-    if (ourAdaptorGenerator || !(modelUID.getStereotype().equals(""))) {
-    String modelFqName = modelUID.getLongName();
-    String packageName = modelFqName;
-    return packageName;
+    if (ourAdaptorGenerator || modelUID.getStereotype().equals(SModelStereotype.JAVA_STUB)) {
+      String modelFqName = modelUID.getLongName();
+      String packageName = modelFqName;
+      return packageName;
     } else {
       return packageNameForModelUID(modelUID);
     }

@@ -475,22 +475,27 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         if (invocationContext.getModule() instanceof Language &&
                 sourceModelDescriptor.getModelUID().toString().contains(".structure") &&
                 targetLanguage.getNamespace().equals("jetbrains.mps.baseLanguage.ext.collections.lang")) {
+
+          System.out.println("adaptor gen = true");
+
           JavaNameUtil.ourAdaptorGenerator = true;
         }
+        try {
+          progress.addText("");
+          String taskName = ModelsProgressUtil.generationModelTaskName(sourceModelDescriptor);
+          progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_GENERATION);
 
-        progress.addText("");
-        String taskName = ModelsProgressUtil.generationModelTaskName(sourceModelDescriptor);
-        progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_GENERATION);
-
-        status = generationSession.generateModel(sourceModelDescriptor, targetLanguage, script);
-        checkMonitorCanceled(progress);
-        if (status.getOutputModel() != null) {
-          generationType.handleOutput(invocationContext, status, progress, outputFolder);
+          status = generationSession.generateModel(sourceModelDescriptor, targetLanguage, script);
+          checkMonitorCanceled(progress);
+          if (status.getOutputModel() != null) {
+            generationType.handleOutput(invocationContext, status, progress, outputFolder);
+          }
+          generationSession.discardTransients();
+          progress.finishTask(taskName);
+        } finally {
+          JavaNameUtil.ourAdaptorGenerator = false;
         }
-        generationSession.discardTransients();
-        progress.finishTask(taskName);
 
-        JavaNameUtil.ourAdaptorGenerator = false;
 
         if (!status.isOk()) {
           break;
