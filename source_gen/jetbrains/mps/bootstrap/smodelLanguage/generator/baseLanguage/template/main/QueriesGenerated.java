@@ -112,6 +112,14 @@ public class QueriesGenerated {
     Object parm = SModelLanguageUtil.findNodeOperationParameter((SNodeOperation)node, OperationParm_Concept.class);
     return parm == null;
   }
+  public static String propertyMacro_GetPropertyValue_1170467024360(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    // <expr>.<property-access>.<operation>
+    // <operation> : our input node
+    SNode noe1 = SNodeOperations.getParent(node, null, false, false);
+    SNode noe2 = SLinkOperations.getTarget(noe1, "leftExpression", true);
+    SNode op = SLinkOperations.getTarget(noe2, "nodeOperation", true);
+    return SPropertyOperations.getString(SLinkOperations.getTarget(op, "property", false), "name");
+  }
   public static String propertyMacro_GetPropertyValue_1170457795969(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(node, "property", false), "name");
   }
