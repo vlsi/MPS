@@ -2,6 +2,7 @@ package jetbrains.mps.baseLanguage;
 
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.util.NameUtil;
 
 import jetbrains.mps.baseLanguage.structure.Classifier;
@@ -20,7 +21,7 @@ import java.util.Iterator;
  */
 public class BaseLanguageUtil_new {
   public static boolean isAssignable(Classifier fromClassifier, String toClassifierFqName, IScope scope) {
-    Classifier toClassifier = SModelUtil.findNodeByFQName(toClassifierFqName, Classifier.class, scope);
+    Classifier toClassifier = (Classifier) BaseAdapter.fromNode(SModelUtil.findNodeByFQName(toClassifierFqName, jetbrains.mps.baseLanguage.Classifier.class, scope));
     return isAssignable(fromClassifier, toClassifier);
   }
 
