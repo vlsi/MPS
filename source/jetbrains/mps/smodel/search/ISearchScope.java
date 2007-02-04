@@ -1,12 +1,11 @@
 package jetbrains.mps.smodel.search;
 
-import jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.SNode;
-
-import java.util.*;
-
+import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -16,7 +15,7 @@ import org.jetbrains.annotations.Nullable;
  * To change this template use File | Settings | File Templates.
  */
 public interface ISearchScope {
-  @NotNull List<SNode> getNodes(Condition<SNode> condition);
+  @NotNull List<SNode> getNodes(Condition<SNode> condition);    
 
   @Nullable SNode findNode(Condition<SNode> condition);
 
