@@ -168,6 +168,10 @@ public abstract class BaseAdapter {
     return myNode.getChildCount(role);
   }
 
+  public List<BaseAdapter> getChildren() {
+    return toAdaptors(getNode().getChildren());
+  }
+
   protected <T extends BaseAdapter> List<T> getChildren(@NotNull String role) {
     List<T> result = toAdaptors(myNode.getChildren(role));
     return result;
@@ -202,6 +206,10 @@ public abstract class BaseAdapter {
     } else {
       return result.getAdapter();
     }
+  }
+
+  public List<BaseAdapter> getAllAttributes() {
+    return toAdaptors(getNode().getAllAttributes());
   }
 
   @Nullable
