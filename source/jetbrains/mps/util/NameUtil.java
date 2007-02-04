@@ -2,6 +2,7 @@ package jetbrains.mps.util;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.BaseAdapter;
 
 
 /**
@@ -115,6 +116,10 @@ public class NameUtil {
   public static String nodeFQName(SNode node) {
     String name = node.getName();
     return node.getModel().getLongName() + "." + name;
+  }
+
+  public static String nodeFQName(BaseAdapter node) {
+    return nodeFQName(BaseAdapter.fromAdapter(node));
   }
 
 
