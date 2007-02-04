@@ -1,5 +1,7 @@
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptLink;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -32,6 +34,15 @@ public abstract class BaseAdapter {
     return myNode.getParent().getAdapter();
   }
 
+  public<BA extends BaseAdapter> BA findParent(Class<BA> cls) {
+    return getParent(cls);
+  }
+
+  public<BA extends BaseAdapter> BA getParent(Class<BA> cls, boolean checkThis) {
+    if (cls.isInstance(this)) return (BA) this;
+    return getParent(cls);
+  }
+
   public<BA extends BaseAdapter> BA getParent(Class<BA> cls) {
     if (getParent() == null) {
       return null;
@@ -42,6 +53,40 @@ public abstract class BaseAdapter {
     }
 
     return getParent().getParent(cls);
+  }
+
+  public BaseAdapter findFirstParent(Class[] classes) {
+    BaseAdapter node = this;
+    BaseAdapter parent = node.getParent();
+    while (parent != null) {
+      for (Class clazz : classes) {
+        if (clazz.isAssignableFrom(parent.getClass())) {
+          return parent;
+        }
+      }
+      parent = parent.getParent();
+    }
+    return null;
+  }
+
+  public List<ConceptLink> getConceptLinks(final String linkName, boolean lookupHierarchy, IScope scope) {
+    List<ConceptLink> result = new ArrayList<ConceptLink>();
+    for (jetbrains.mps.bootstrap.structureLanguage.ConceptLink cl : getNode().getConceptLinks(linkName, lookupHierarchy, scope)) {
+      result.add((ConceptLink) cl.getAdapter());
+    }
+    return result;
+  }
+
+  public ConceptDeclaration getConceptDeclaration(IScope scope) {
+    return (ConceptDeclaration) fromNode(getNode().getConceptDeclaration(scope));
+  }
+
+  public void replaceChild(BaseAdapter c1, BaseAdapter c2) {
+    getNode().replaceChild(c1.getNode(), c2.getNode());
+  }
+
+  public BaseAdapter getContainingRoot() {
+    return getNode().getContainingRoot().getAdapter();
   }
 
   public<BA extends BaseAdapter> List<BA> allChildren(Class<BA> cls) {
@@ -281,6 +326,15 @@ public abstract class BaseAdapter {
     }
     return result;
   }
+
+  public static <T extends BaseAdapter> List<T> toAdapters(Class<T> cls, List<? extends SNode> list) {
+    List<T> result = new ArrayList<T>();
+    for (SNode node : list) {
+      result.add((T) node.getAdapter());
+    }
+    return result;
+  }
+
 
   public static <T extends SNode> List<T> toNodes(List<? extends BaseAdapter> list) {
     List<T> result = new ArrayList<T>();
