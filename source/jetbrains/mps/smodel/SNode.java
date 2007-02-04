@@ -1837,6 +1837,9 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     } catch (InstantiationException e) {
       LOG.error(e);
     }
+
+    LOG.error("Can't find an adapter for " + getClass().getName());
+
     return new BaseAdapter(this) { };
   }
 }
