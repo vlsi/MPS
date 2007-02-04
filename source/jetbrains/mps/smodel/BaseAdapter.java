@@ -19,6 +19,10 @@ public abstract class BaseAdapter {
     return myNode;
   }
 
+  public String getDebugText() {
+    return myNode.getDebugText();
+  }
+
   public SModel getModel() {
     return myNode.getModel();
   }
@@ -169,11 +173,11 @@ public abstract class BaseAdapter {
   }
 
   public List<BaseAdapter> getChildren() {
-    return toAdaptors(getNode().getChildren());
+    return toAdapters(getNode().getChildren());
   }
 
   protected <T extends BaseAdapter> List<T> getChildren(@NotNull String role) {
-    List<T> result = toAdaptors(myNode.getChildren(role));
+    List<T> result = toAdapters(myNode.getChildren(role));
     return result;
   }
 
@@ -209,7 +213,7 @@ public abstract class BaseAdapter {
   }
 
   public List<BaseAdapter> getAllAttributes() {
-    return toAdaptors(getNode().getAllAttributes());
+    return toAdapters(getNode().getAllAttributes());
   }
 
   @Nullable
@@ -223,7 +227,7 @@ public abstract class BaseAdapter {
 
   @NotNull
   public List<? extends BaseAdapter> getAttributes(String role) {
-    return toAdaptors(myNode.getAttributes(role));
+    return toAdapters(myNode.getAttributes(role));
   }
 
   public void setAttribute(BaseAdapter adapter) {
@@ -266,7 +270,7 @@ public abstract class BaseAdapter {
 
   @NotNull
   public List<? extends BaseAdapter> getPropertyAttributes(String role, String propertyName) {
-    return toAdaptors(myNode.getPropertyAttributes(role, propertyName));
+    return toAdapters(myNode.getPropertyAttributes(role, propertyName));
   }
 
   public void setPropertyAttribute(String role, String propertyName, BaseAdapter propertyAttribute) {
@@ -312,9 +316,8 @@ public abstract class BaseAdapter {
   }
 
   public List<? extends BaseAdapter> getLinkAttributes(String role, String linkRole) {
-    return toAdaptors(myNode.getLinkAttributes(role, linkRole));
+    return toAdapters(myNode.getLinkAttributes(role, linkRole));
   }
-
 
   public boolean equals(Object obj) {
     if (!(obj instanceof BaseAdapter)) return false;
@@ -327,7 +330,12 @@ public abstract class BaseAdapter {
     return getNode().hashCode();
   }
 
-  public static <T extends BaseAdapter> List<T> toAdaptors(List<? extends SNode> list) {
+
+  public String toString() {
+    return getNode().toString();
+  }
+
+  public static <T extends BaseAdapter> List<T> toAdapters(List<? extends SNode> list) {
     List<T> result = new ArrayList<T>();
     for (SNode node : list) {
       result.add((T) node.getAdapter());

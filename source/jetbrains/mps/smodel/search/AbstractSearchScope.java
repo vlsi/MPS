@@ -1,14 +1,14 @@
 package jetbrains.mps.smodel.search;
 
-import static java.util.Collections.*;
-
-import jetbrains.mps.util.Condition;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
-
-import java.util.*;
-
+import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import static java.util.Collections.EMPTY_LIST;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -37,6 +37,15 @@ public abstract class AbstractSearchScope implements ISearchScope {
     return list;
   }
 
+  @NotNull
+  public List<BaseAdapter> getAdapters(final Condition<BaseAdapter> condition) {
+    return BaseAdapter.toAdapters(getNodes(new Condition<SNode>() {
+      public boolean met(SNode object) {
+        return condition.met(BaseAdapter.fromNode(object));
+      }
+    }));
+  }
+
   @Nullable
   public final SNode findNode(Condition<SNode> condition) {
     List<SNode> list = getOwnNodes(condition);
@@ -44,6 +53,15 @@ public abstract class AbstractSearchScope implements ISearchScope {
     List<SNode> nodesFromAppendedScopes = getNodesFromAppendedScopes(condition);
     if(nodesFromAppendedScopes.size() > 0) return nodesFromAppendedScopes.get(0);
     return null;
+  }
+
+  @Nullable
+  public BaseAdapter findAdapter(final Condition<BaseAdapter> condition) {
+    return BaseAdapter.fromNode(findNode(new Condition<SNode>() {
+      public boolean met(SNode object) {
+        return condition.met(BaseAdapter.fromNode(object));
+      }
+    }));
   }
 
   public abstract List<SNode> getOwnNodes(Condition<SNode> condition);
