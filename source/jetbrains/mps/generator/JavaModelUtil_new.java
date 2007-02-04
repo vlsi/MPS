@@ -2,7 +2,9 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.baseLanguage.BaseLanguageUtil_new;
 import jetbrains.mps.baseLanguage.structure.*;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.NameUtil;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Iterator;
 
@@ -169,5 +171,15 @@ public class JavaModelUtil_new {
 
     return arg;
   }
-  
+
+  @Nullable
+  public static Classifier findClassifier(Class cls) {
+    String name = cls.getName();
+    String rootName = NameUtil.shortNameFromLongName(name);
+    String modelName = NameUtil.namespaceFromLongName(name);
+    SModelUID modelUID = new SModelUID(modelName, SModelStereotype.JAVA_STUB);
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
+    if (modelDescriptor == null) return null;
+    return (Classifier) BaseAdapter.fromNode(modelDescriptor.getSModel().getRootByName(rootName));
+  }
 }
