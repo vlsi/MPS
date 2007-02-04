@@ -1520,7 +1520,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return resultNodes;
   }
 
-  public <T> T findParent(Class<T> clazz) {
+  public <T extends SNode> T findParent(Class<T> clazz) {
     SNode parent = getParent();
     while (parent != null) {
       if (clazz.isAssignableFrom(parent.getClass())) {
