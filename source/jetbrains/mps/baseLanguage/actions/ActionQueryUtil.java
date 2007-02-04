@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SNode;
  * To change this template use File | Settings | File Templates.
  */
 public class ActionQueryUtil {
-  static <T> T getQueryContextElement(SNode sourceNode, Class<T> clazz) {
+  static <T extends SNode> T getQueryContextElement(SNode sourceNode, Class<T> clazz) {
     if (sourceNode == null) {
       return null;
     }
