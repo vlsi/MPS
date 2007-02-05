@@ -277,6 +277,9 @@ public class QueriesGenerated {
     SNode noe2 = SLinkOperations.getTarget(noe1, "leftExpression", true);
     return SLinkOperations.getTarget(noe2, "leftExpression", true);
   }
+  public static SNode sourceNodeQuery_1170633505954(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "value", true);
+  }
   public static SNode sourceNodeQuery_1170457758878(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
   }
