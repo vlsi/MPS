@@ -35,6 +35,6 @@ class NullModelRootManager extends AbstractModelRootManager {
   }
 
   public boolean isFindUsagesSupported() {
-    return false;
+    return true;
   }
 }
