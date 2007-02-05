@@ -25,7 +25,7 @@ public abstract class SNodeTextGen<BA extends BaseAdapter> {
   protected abstract void doGenerateText(BA ba);
 
   protected final void appendNodeText(BaseAdapter ba) {
-    appendNodeText(ba.getNode());
+    appendNodeText(BaseAdapter.fromAdapter(ba));
   }
 
   @Deprecated

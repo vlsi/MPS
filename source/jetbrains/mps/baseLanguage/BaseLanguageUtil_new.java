@@ -26,7 +26,7 @@ public class BaseLanguageUtil_new {
   }
 
   public static boolean isAssignable(Classifier fromClassifier, Classifier toClassifier) {
-    if (fromClassifier == toClassifier) {
+    if (fromClassifier.equals(toClassifier)) {
       return true;
     }
 
