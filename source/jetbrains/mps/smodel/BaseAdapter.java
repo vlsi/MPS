@@ -2,6 +2,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptLink;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -175,6 +176,12 @@ public abstract class BaseAdapter {
   public List<BaseAdapter> getChildren() {
     return toAdapters(getNode().getChildren());
   }
+
+  @NotNull
+  public <N extends BaseAdapter> List<N> getChildren(Class<N> cls) {
+    return CollectionUtil.filter(cls, getChildren());
+  }
+
 
   protected <T extends BaseAdapter> List<T> getChildren(@NotNull String role) {
     List<T> result = toAdapters(myNode.getChildren(role));
