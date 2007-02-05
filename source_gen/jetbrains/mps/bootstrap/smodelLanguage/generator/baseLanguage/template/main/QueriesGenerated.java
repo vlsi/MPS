@@ -289,6 +289,12 @@ public class QueriesGenerated {
   public static String propertyMacro_GetPropertyValue_1168294031937(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return NameUtil.nodeFQName(node);
   }
+  public static String propertyMacro_GetPropertyValue_1170705240139(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return "" + _QueriesUtil.operationHasParm_Inclusion(node);
+  }
+  public static String propertyMacro_GetPropertyValue_1170705311821(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return "" + _QueriesUtil.operationHasParm_Root(node);
+  }
   public static String propertyMacro_GetPropertyValue_1169070814788(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode parmConcept = SLinkOperations.getTarget(node, "concept", false);
     return NameUtil.nodeFQName(parmConcept);
