@@ -28,7 +28,7 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "creator", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListCreator");
   }
   public static boolean baseMappingRule_Condition_1168983652971(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    // todo: remove this condition when all elements are 
+    // todo: remove this condition when all elements are
     // generated in a new way
     boolean b = false;
     SNode op = SLinkOperations.getTarget(node, "nodeOperation", true);
@@ -172,7 +172,7 @@ public class QueriesGenerated {
     return NameUtil.nodeFQName(parmConcept);
   }
   public static String propertyMacro_GetPropertyValue_1170438409571(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return node.getClass().getName();
+    return NameUtil.nodeFQName(SLinkOperations.getTarget(node, "concept", false));
   }
   public static String propertyMacro_GetPropertyValue_1170443135014(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return NameUtil.nodeFQName(SLinkOperations.getTarget(node, "concept", false));
