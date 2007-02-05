@@ -13,6 +13,7 @@ import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.BaseAdapter;
 
 public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   private IOperationContext myOperationContext;
@@ -54,6 +55,10 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 
   public SModel getTargetModel() {
     return myTargetModel;
+  }
+
+  public INodeBuilder findNodeBuilderForSource(BaseAdapter ba, String mappingName) {
+    return findNodeBuilderForSource(BaseAdapter.fromAdapter(ba), mappingName);
   }
 
   protected void setTargetModel(SModel targetModel) {

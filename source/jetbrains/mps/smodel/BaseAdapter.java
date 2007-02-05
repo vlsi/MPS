@@ -3,6 +3,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptLink;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -22,6 +23,10 @@ public abstract class BaseAdapter {
 
   public String getDebugText() {
     return myNode.getDebugText();
+  }
+
+  public String getName() {
+    return myNode.getName();
   }
 
   public SModel getModel() {
@@ -96,6 +101,14 @@ public abstract class BaseAdapter {
 
   public<BA extends BaseAdapter> List<BA> allChildren(Class<BA> cls) {
     return myNode.allChildrenByAdaptor(cls);
+  }
+
+  public<BA extends BaseAdapter> List<BA> allChildren(final Condition<BA> c) {
+    return toAdapters(myNode.allChildren(new Condition<SNode>() {
+      public boolean met(SNode object) {
+        return c.met((BA) BaseAdapter.fromNode(object)); 
+      }
+    }));
   }
 
   public void delete() {

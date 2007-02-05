@@ -233,4 +233,69 @@ public class JavaModelUtil_new {
     }
     return null;
   }
+
+  public static StaticFieldDeclaration findStaticField(Classifier classifier, String constantName) {
+    if (classifier == null) return null;
+
+    Iterator<StaticFieldDeclaration> fields = classifier.staticFields();
+    while (fields.hasNext()) {
+      StaticFieldDeclaration field = fields.next();
+      if (constantName.equals(field.getName())) {
+        return field;
+      }
+    }
+
+    if (classifier instanceof ClassConcept) {
+      StaticFieldDeclaration staticField = findStaticField(BaseLanguageUtil_new.getSuperclass((ClassConcept) classifier), constantName);
+      if (staticField != null) {
+        return staticField;
+      }
+
+      Iterator<ClassifierType> iterator = ((ClassConcept) classifier).implementedInterfaces();
+      while (iterator.hasNext()) {
+        ClassifierType classifierType = iterator.next();
+        staticField = findStaticField(classifierType.getClassifier(), constantName);
+        if (staticField != null) {
+          return staticField;
+        }
+      }
+    } else {
+      Iterator<ClassifierType> iterator = ((Interface) classifier).extendedInterfaces();
+      while (iterator.hasNext()) {
+        ClassifierType classifierType = iterator.next();
+        StaticFieldDeclaration staticField = findStaticField(classifierType.getClassifier(), constantName);
+        if (staticField != null) {
+          return staticField;
+        }
+      }
+    }
+    return null;
+  }
+
+  public static VariableReference createVariableReference(SModel model, VariableDeclaration variable) {
+    if (variable instanceof FieldDeclaration) {
+      FieldReference reference = FieldReference.newInstance(model);
+      reference.setFieldDeclaration((FieldDeclaration) variable);
+      reference.setInstance(ThisExpression.newInstance(model));
+      return reference;
+    }
+    if (variable instanceof StaticFieldDeclaration) {
+      StaticFieldReference reference = StaticFieldReference.newInstance(model);
+      reference.setStaticFieldDeclaration((StaticFieldDeclaration) variable);
+      return reference;
+    }
+    if (variable instanceof ParameterDeclaration) {
+      ParameterReference reference = ParameterReference.newInstance(model);
+      reference.setParameterDeclaration((ParameterDeclaration) variable);
+      return reference;
+    }
+    if (variable instanceof LocalVariableDeclaration) {
+      LocalVariableReference reference = LocalVariableReference.newInstance(model);
+      reference.setLocalVariableDeclaration((LocalVariableDeclaration) variable);
+      return reference;
+    }
+    throw new RuntimeException("Couldn't create reference on: " + variable);
+  }
+
+  
 }
