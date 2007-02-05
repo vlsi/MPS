@@ -66,6 +66,8 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   private Set<String> myPropertyGettersInProgress = new HashSet<String>();
   private Set<String> mySetReferentEventHandlersInProgress = new HashSet<String>();
 
+  private BaseAdapter myApter;
+
   protected SNode(@NotNull SModel model) {
     myModel = model;
   }
@@ -1478,7 +1480,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       if (clazz.isInstance(child.getAdapter())) {
         result.add((BA) child.getAdapter());
       }
-    }    
+    }
     return result;
   }
 
@@ -1825,10 +1827,12 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public BaseAdapter getAdapter() {
+    if (myApter != null) return myApter;
     try {
       Constructor c = QueryMethod.getAdapterConstructor(getClass().getName());
       if (c != null) {
-        return (BaseAdapter) c.newInstance(this);
+        myApter = (BaseAdapter) c.newInstance(this);
+        return myApter;
       }
     } catch (IllegalAccessException e) {
       LOG.error(e);
@@ -1840,6 +1844,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
     LOG.error("Can't find an adapter for " + getClass().getName());
 
-    return new BaseAdapter(this) { };
+    return new BaseAdapter(this) {
+    };
   }
 }
