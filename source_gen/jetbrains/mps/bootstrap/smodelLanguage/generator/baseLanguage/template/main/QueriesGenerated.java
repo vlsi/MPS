@@ -11,11 +11,10 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.baseLanguage.util.QueriesUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.SModelLanguageUtil;
-import jetbrains.mps.bootstrap.smodelLanguage.SNodeOperation;
-import jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Concept;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.bootstrap.smodelLanguage.SModelLanguageUtil;
+import jetbrains.mps.bootstrap.smodelLanguage.SNodeOperation;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess;
 import jetbrains.mps.bootstrap.smodelLanguage.SConceptPropertyAccess;
@@ -106,12 +105,10 @@ public class QueriesGenerated {
     return QueriesUtil.opGetParent_reduceWhereConceptInList(node);
   }
   public static boolean baseMappingRule_Condition_1169074670328(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    Object parm = SModelLanguageUtil.findNodeOperationParameter((SNodeOperation)node, OperationParm_Concept.class);
-    return parm != null;
+    return _QueriesUtil.operationHasParm_Concept(node);
   }
   public static boolean baseMappingRule_Condition_1169074949355(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    Object parm = SModelLanguageUtil.findNodeOperationParameter((SNodeOperation)node, OperationParm_Concept.class);
-    return parm == null;
+    return !(_QueriesUtil.operationHasParm_Concept(node));
   }
   public static String propertyMacro_GetPropertyValue_1170467024360(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     // <expr>.<property-access>.<operation>
