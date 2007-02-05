@@ -28,7 +28,7 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "creator", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListCreator");
   }
   public static boolean baseMappingRule_Condition_1168983652971(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    // todo: remove this condition when all elements are
+    // todo: remove this condition when all elements are 
     // generated in a new way
     boolean b = false;
     SNode op = SLinkOperations.getTarget(node, "nodeOperation", true);
@@ -68,6 +68,7 @@ public class QueriesGenerated {
     b = b || (SNodeOperations.isInstanceOf(op, "jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation") && QueriesUtil.isProperty_set_stringValue(node, generator));
     b = b || (SNodeOperations.isInstanceOf(op, "jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation") && QueriesUtil.isProperty_set_notStringValue(node, generator));
     b = b || SNodeOperations.isInstanceOf(op, "jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Simple");
+    b = b || (SNodeOperations.isInstanceOf(op, "jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum") && QueriesUtil.isProperty_hasValueEnum_notNullDefaultValue(node, generator));
     return b;
   }
   public static boolean baseMappingRule_Condition_1168976445524(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -92,7 +93,7 @@ public class QueriesGenerated {
     return QueriesUtil.isProperty_set_notStringValue(SNodeOperations.getParent(node, null, false, false), generator);
   }
   public static boolean baseMappingRule_Condition_1168979597371(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return QueriesUtil.isProperty_hasValueEnum_notNullDefaultValue(node, generator);
+    return QueriesUtil.isProperty_hasValueEnum_notNullDefaultValue(SNodeOperations.getParent(node, null, false, false), generator);
   }
   public static boolean baseMappingRule_Condition_1168979716443(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return QueriesUtil.isProperty_hasValueEnum_nullDefaultValue(node, generator);
@@ -228,6 +229,22 @@ public class QueriesGenerated {
   }
   public static String propertyMacro_GetPropertyValue_1170443045607(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return "" + _QueriesUtil.operationHasParm_Inclusion(node);
+  }
+  public static String propertyMacro_GetPropertyValue_1170698439209(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    // <expr>.<property-access>.<operation>
+    // <operation> : our input node
+    SNode noe1 = SNodeOperations.getParent(node, null, false, false);
+    SNode noe2 = SLinkOperations.getTarget(noe1, "leftExpression", true);
+    SNode op = SLinkOperations.getTarget(noe2, "nodeOperation", true);
+    return SPropertyOperations.getString(SLinkOperations.getTarget(op, "property", false), "name");
+  }
+  public static String propertyMacro_GetPropertyValue_1170698820249(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    // <expr>.<property-access>.<operation>
+    // <operation> : our input node
+    SNode noe1 = SNodeOperations.getParent(node, null, false, false);
+    SNode noe2 = SLinkOperations.getTarget(noe1, "leftExpression", true);
+    SNode op = SLinkOperations.getTarget(noe2, "nodeOperation", true);
+    return _QueriesUtil.get_SPropertyAccess_enum_defaultValue(op);
   }
   public static String propertyMacro_GetPropertyValue_1170461331284(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(node, "property", false), "name");
@@ -410,6 +427,17 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_1170443028820(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
+  }
+  public static SNode sourceNodeQuery_1170698414312(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    // <expr>.<property-access>.<operation>
+    // <operation> : our input node
+    // <expt> : expression to copy
+    SNode noe1 = SNodeOperations.getParent(node, null, false, false);
+    SNode noe2 = SLinkOperations.getTarget(noe1, "leftExpression", true);
+    return SLinkOperations.getTarget(noe2, "leftExpression", true);
+  }
+  public static SNode sourceNodeQuery_1170698496990(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "value", true);
   }
   public static SNode sourceNodeQuery_1170461311540(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
