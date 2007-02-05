@@ -4,6 +4,7 @@ import jetbrains.mps.baseLanguage.BaseLanguageUtil_new;
 import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Iterator;
@@ -181,5 +182,55 @@ public class JavaModelUtil_new {
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
     if (modelDescriptor == null) return null;
     return (Classifier) BaseAdapter.fromNode(modelDescriptor.getSModel().getRootByName(rootName));
+  }
+
+  public static FieldDeclaration findField(Classifier classifier, String fieldName) {
+    if (!(classifier instanceof ClassConcept)) return null;
+    ClassConcept classConcept = (ClassConcept) classifier;
+    while (classConcept != null) {
+      Iterator<FieldDeclaration> fields = classConcept.fields();
+      while (fields.hasNext()) {
+        FieldDeclaration field = fields.next();
+        if (fieldName.equals(field.getName())) {
+          return field;
+        }
+      }
+      classConcept = BaseLanguageUtil_new.getSuperclass(classConcept);
+    }
+    return null;
+  }
+
+  public static InstanceMethodDeclaration findMethod(Classifier classifier, Condition<InstanceMethodDeclaration> condition) {
+    Iterator<InstanceMethodDeclaration> methods = classifier.methods();
+    while (methods.hasNext()) {
+      InstanceMethodDeclaration method = methods.next();
+      if (condition.met(method)) return method;
+    }
+    if (classifier instanceof ClassConcept) {
+      ClassConcept extendedClass = BaseLanguageUtil_new.getSuperclass((ClassConcept) classifier);
+      if (extendedClass != null) {
+        InstanceMethodDeclaration method = findMethod(extendedClass, condition);
+        if (method != null) {
+          return method;
+        }
+      }
+    }
+
+    Iterator<ClassifierType> interfaces;
+    if (classifier instanceof Interface) {
+      interfaces = ((Interface) classifier).extendedInterfaces();
+    } else if (classifier instanceof ClassConcept) {
+      interfaces = ((ClassConcept) classifier).implementedInterfaces();
+    } else {
+      throw new RuntimeException("This can't happen");
+    }
+    while (interfaces.hasNext()) {
+      ClassifierType classifierType = interfaces.next();
+      InstanceMethodDeclaration method = findMethod(classifierType.getClassifier(), condition);
+      if (method != null) {
+        return method;
+      }
+    }
+    return null;
   }
 }
