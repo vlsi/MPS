@@ -1,8 +1,8 @@
 package jetbrains.mps.util;
 
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
 
 /**
@@ -80,6 +80,20 @@ public class NameUtil {
       return "";
     }
     return fqName.substring(0, offset);
+  }
+
+  /**
+   * @deprecated
+   */
+  public static String conceptFqName(jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration cd) {
+    return namespaceFromConcept((ConceptDeclaration) cd.getAdapter()) + "." + cd.getName();
+  }
+
+  /**
+   * @deprecated
+   */
+  public static String namespaceFromConcept(jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration concept) {
+    return namespaceFromConceptFQName(nodeFQName(concept));
   }
 
   public static String conceptFqName(ConceptDeclaration cd) {

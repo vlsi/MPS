@@ -1,13 +1,13 @@
 package jetbrains.mps.smodel.presentation;
 
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.core.BaseConcept;
 import jetbrains.mps.core.NamedConcept;
 import jetbrains.mps.core.INamedConcept;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 
 public class NodePresentationUtil {
   public static String matchingText(SNode node) {
@@ -16,7 +16,7 @@ public class NodePresentationUtil {
 
   public static String matchingText(SNode node, boolean referent_presentation) {
     // concept declaration : return either 'alias' or 'name'
-    if (node instanceof ConceptDeclaration) {
+    if (node.getAdapter() instanceof ConceptDeclaration) {
       if (!referent_presentation) {
         String alias = node.getConceptProperty("alias", GlobalScope.getInstance());
         if (alias != null) {
@@ -35,13 +35,9 @@ public class NodePresentationUtil {
       return "<none>";
     }
 
-    if (node instanceof LinkDeclaration) {
-      return ((LinkDeclaration) node).getRole();
+    if (node.getAdapter() instanceof LinkDeclaration) {
+      return ((LinkDeclaration) node.getAdapter()).getRole();
     }
-
-//    if (node instanceof EnumerationMemberDeclaration) {
-//      return ((EnumerationMemberDeclaration) node).getExternalValue();
-//    }
 
     if (node instanceof BaseConcept) {
       String customAlias = ((BaseConcept) node).getAlias();
@@ -62,16 +58,16 @@ public class NodePresentationUtil {
   }
 
   public static String descriptionText(SNode node, boolean referent_presentation) {
-    if (node instanceof ConceptDeclaration &&
+    if (node.getAdapter() instanceof ConceptDeclaration &&
             !referent_presentation) {
       String description = node.getConceptProperty("short_description", GlobalScope.getInstance());
       if (description != null) {
         return description;
       }
 
-      ConceptDeclaration anExtends = ((ConceptDeclaration) node).getExtends();
+      ConceptDeclaration anExtends = ((ConceptDeclaration) node.getAdapter()).getExtends();
       if (anExtends != null) {
-        String namespace = NameUtil.namespaceFromConcept((ConceptDeclaration) node);
+        String namespace = NameUtil.namespaceFromConcept((ConceptDeclaration) node.getAdapter());
         return "(" + anExtends.getName() + " in " + namespace + ")";
       }
       return "";
@@ -112,7 +108,7 @@ public class NodePresentationUtil {
     if (role != null) {
       return role;
     }
-    if (node instanceof ConceptDeclaration && node.getName() != null) {
+    if (node.getAdapter() instanceof ConceptDeclaration && node.getName() != null) {
       return node.getName();
     }
     return NameUtil.shortNameFromLongName(node.getClass().getName());
