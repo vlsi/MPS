@@ -1155,8 +1155,8 @@
       <module fileurl="file://$PROJECT_DIR$/platform/webr/webr.iml" filepath="$PROJECT_DIR$/platform/webr/webr.iml" group="platform/webr" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/runtime/webrRuntime.iml" filepath="$PROJECT_DIR$/platform/webr/runtime/webrRuntime.iml" group="platform/webr" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/runtime_notifications/webrRuntime_notifications.iml" filepath="$PROJECT_DIR$/platform/webr/runtime_notifications/webrRuntime_notifications.iml" group="platform/webr" />
-      <module fileurl="file://$PROJECT_DIR$/app/webrSamples/depot_dnq/webrSamples_depot_dnq.iml" filepath="$PROJECT_DIR$/app/webrSamples/depot_dnq/webrSamples_depot_dnq.iml" group="app/webrSamples" />
-      <module fileurl="file://$PROJECT_DIR$/app/webrSamples/hello_dnq/webrSamples_hello_dnq.iml" filepath="$PROJECT_DIR$/app/webrSamples/hello_dnq/webrSamples_hello_dnq.iml" group="app/webrSamples" />
+      <module fileurl="file://$PROJECT_DIR$/app/webrSamples/depot_dnq/webrSamples_depot.iml" filepath="$PROJECT_DIR$/app/webrSamples/depot_dnq/webrSamples_depot.iml" group="app/webrSamples" />
+      <module fileurl="file://$PROJECT_DIR$/app/webrSamples/hello_dnq/webrSamples_hello.iml" filepath="$PROJECT_DIR$/app/webrSamples/hello_dnq/webrSamples_hello.iml" group="app/webrSamples" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/css/webr_css.iml" filepath="$PROJECT_DIR$/platform/webr/languages/css/webr_css.iml" group="platform/webr/languages" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/cssSchema/webr_cssSchema.iml" filepath="$PROJECT_DIR$/platform/webr/languages/cssSchema/webr_cssSchema.iml" group="platform/webr/languages" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/dataLanguage/webr_dataLanguage.iml" filepath="$PROJECT_DIR$/platform/webr/languages/dataLanguage/webr_dataLanguage.iml" group="platform/webr/languages" />
