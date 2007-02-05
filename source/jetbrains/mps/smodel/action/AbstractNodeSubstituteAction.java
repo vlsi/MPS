@@ -2,6 +2,7 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 
 /**
@@ -49,12 +50,18 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     if (myParameterObject instanceof SNode) {
       return NodePresentationUtil.matchingText((SNode) myParameterObject, referent_presentation);
     }
+    if (myParameterObject instanceof BaseAdapter) {
+      return NodePresentationUtil.matchingText(((BaseAdapter) myParameterObject).getNode(), referent_presentation);
+    }
     return "" + getParameterObject();
   }
 
   protected String getDescriptionText(String pattern, boolean referent_presentation) {
     if (myParameterObject instanceof SNode) {
       return NodePresentationUtil.descriptionText((SNode) myParameterObject);
+    }
+    if (myParameterObject instanceof BaseAdapter) {
+      return NodePresentationUtil.descriptionText(((BaseAdapter) myParameterObject).getNode(), referent_presentation);
     }
     return "";
   }
