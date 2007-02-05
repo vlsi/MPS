@@ -65,6 +65,9 @@ public class QueriesGenerated {
   public static String propertyMacro_GetPropertyValue_1170707207731(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return generator.getGeneratorSessionContext().createUniqueName("zClosureContext");
   }
+  public static String propertyMacro_GetPropertyValue_1170707554571(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return generator.getGeneratorSessionContext().createUniqueName("_zClosureContext");
+  }
   public static SNode referenceMacro_GetReferent_1170294467354(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return _QueriesUtil.find_ContextOwner_ClosureContext_generatedClass(node, generator);
   }
