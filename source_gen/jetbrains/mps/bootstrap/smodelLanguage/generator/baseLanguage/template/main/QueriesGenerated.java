@@ -172,7 +172,7 @@ public class QueriesGenerated {
     return NameUtil.nodeFQName(parmConcept);
   }
   public static String propertyMacro_GetPropertyValue_1170438409571(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return NameUtil.nodeFQName(SLinkOperations.getTarget(node, "concept", false));
+    return node.getClass().getName();
   }
   public static String propertyMacro_GetPropertyValue_1170443135014(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return NameUtil.nodeFQName(SLinkOperations.getTarget(node, "concept", false));
