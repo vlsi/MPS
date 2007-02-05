@@ -27,13 +27,6 @@ class NullModelRootManager extends AbstractModelRootManager {
     LOG.error(message);
   }
 
-  public boolean containsString(@NotNull SModelDescriptor modelDescriptor, @NotNull String string) {
-    String message = "trying to find usages in " + modelDescriptor + " , model with NullModelRootManager\n";
-    message += "this model is owned by " + SModelRepository.getInstance().getOwners(modelDescriptor);
-    LOG.error(message);
-    return false;
-  }
-
   public boolean isFindUsagesSupported() {
     return true;
   }
