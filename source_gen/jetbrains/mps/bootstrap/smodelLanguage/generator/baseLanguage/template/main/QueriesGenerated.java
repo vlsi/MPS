@@ -66,6 +66,7 @@ public class QueriesGenerated {
     b = b || (SNodeOperations.isInstanceOf(op, "jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess") && QueriesUtil.isPropertyAccess_enum_notNullDefaultValue(op));
     b = b || (SNodeOperations.isInstanceOf(op, "jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess") && QueriesUtil.isPropertyAccess_enum_nullDefaultValue(op));
     b = b || (SNodeOperations.isInstanceOf(op, "jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation") && QueriesUtil.isProperty_set_stringValue(node, generator));
+    b = b || (SNodeOperations.isInstanceOf(op, "jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation") && QueriesUtil.isProperty_set_notStringValue(node, generator));
     return b;
   }
   public static boolean baseMappingRule_Condition_1168976445524(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -87,7 +88,7 @@ public class QueriesGenerated {
     return QueriesUtil.isProperty_set_stringValue(SNodeOperations.getParent(node, null, false, false), generator);
   }
   public static boolean baseMappingRule_Condition_1168978822549(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return QueriesUtil.isProperty_set_notStringValue(node, generator);
+    return QueriesUtil.isProperty_set_notStringValue(SNodeOperations.getParent(node, null, false, false), generator);
   }
   public static boolean baseMappingRule_Condition_1168979017065(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "nodeOperation", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Simple");
@@ -238,6 +239,14 @@ public class QueriesGenerated {
   }
   public static String propertyMacro_GetPropertyValue_1170462640580(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(node, "property", false), "name");
+  }
+  public static String propertyMacro_GetPropertyValue_1170635043273(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    // <expr>.<property-access>.<operation>
+    // <operation> : our input node
+    SNode noe1 = SNodeOperations.getParent(node, null, false, false);
+    SNode noe2 = SLinkOperations.getTarget(noe1, "leftExpression", true);
+    SNode op = SLinkOperations.getTarget(noe2, "nodeOperation", true);
+    return SPropertyOperations.getString(SLinkOperations.getTarget(op, "property", false), "name");
   }
   public static String propertyMacro_GetPropertyValue_1168294031937(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return NameUtil.nodeFQName(node);
@@ -401,6 +410,17 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_1170462621492(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
+  }
+  public static SNode sourceNodeQuery_1170635027047(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    // <expr>.<property-access>.<operation>
+    // <operation> : our input node
+    // <expt> : expression to copy
+    SNode noe1 = SNodeOperations.getParent(node, null, false, false);
+    SNode noe2 = SLinkOperations.getTarget(noe1, "leftExpression", true);
+    return SLinkOperations.getTarget(noe2, "leftExpression", true);
+  }
+  public static SNode sourceNodeQuery_1170635069296(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "value", true);
   }
   public static SNode sourceNodeQuery_1168292579606(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
