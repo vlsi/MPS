@@ -5,6 +5,7 @@
   <import index="2" modelUID="jetbrains.mps.core.structure" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1111784210516">
     <property name="name" value="Formula" />
+    <link role="extends" targetNodeId="2.1133920641626" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1111784226798">
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="1" />
