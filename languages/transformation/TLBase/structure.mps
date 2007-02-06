@@ -446,6 +446,7 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1170725844563">
       <property name="role" value="mapperFunction" />
+      <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1170725621272" resolveInfo="MapSrcNodeMacro_CreateOutputNode" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1131073187193">
