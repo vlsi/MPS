@@ -238,17 +238,16 @@ public class TypeChecker {
       return node;
     }
     Map<SNode, SNode> childrenReplacement = new HashMap<SNode, SNode>();
-    List<SNode> children = node.getChildren();
+    List<SNode> children = new ArrayList<SNode>(node.getChildren());
     for (SNode child : children) {
       SNode newChild = expandNode(child, representator, depth+1, variablesMet, typesModel);
       if (newChild != child) {
         childrenReplacement.put(child, newChild);
       }
     }
-    for (SNode child : children) {
+    for (SNode child : new ArrayList<SNode>(children)) {
       if (!childrenReplacement.keySet().contains(child)) continue;
       if (child.getParent() == null) {
-        LOG.error("debug");
         RuntimeErrorType error = new RuntimeErrorType(typesModel);
         error.setErrorText("recursion types not allowed");
         return error;
