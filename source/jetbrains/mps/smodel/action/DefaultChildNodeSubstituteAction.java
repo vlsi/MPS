@@ -1,6 +1,7 @@
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
@@ -14,7 +15,18 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
   private IScope myScope;
   private IChildNodeSetter mySetter;
 
+  /**
+   * @deprecated Use {@link #DefaultChildNodeSubstituteAction(jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration, jetbrains.mps.smodel.SNode, jetbrains.mps.smodel.SNode, IChildNodeSetter, jetbrains.mps.smodel.IScope)} 
+   */
+  @Deprecated
   public DefaultChildNodeSubstituteAction(Object parameterObject, SNode parentNode, SNode currentChild, IChildNodeSetter setter, IScope scope) {
+    super(parameterObject, parentNode);
+    myCurrentChild = currentChild;
+    myScope = scope;
+    mySetter = setter;
+  }
+
+  public DefaultChildNodeSubstituteAction(ConceptDeclaration parameterObject, SNode parentNode, SNode currentChild, IChildNodeSetter setter, IScope scope) {
     super(parameterObject, parentNode);
     myCurrentChild = currentChild;
     myScope = scope;
@@ -35,8 +47,11 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
   }
 
   public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+    if (parameterObject instanceof jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration) {
+      parameterObject = BaseAdapter.fromNode(((SNode) parameterObject));
+    }
     if (parameterObject instanceof ConceptDeclaration) {
-      return NodeFactoryManager.createNode((ConceptDeclaration) parameterObject, myCurrentChild, getSourceNode(), model, getScope());
+      return NodeFactoryManager.createNode((jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration) ((ConceptDeclaration) parameterObject).getNode(), myCurrentChild, getSourceNode(), model, getScope());
     }
     if (parameterObject instanceof SNode) {
       throw new RuntimeException("Couldn't create child node. Parameter object: " + ((SNode) parameterObject).getDebugText());
