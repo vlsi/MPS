@@ -122,14 +122,14 @@ public class _QueriesUtil {
   public static List<SNode> getList_ContextOwner_ifMethod_ParmsUsedInClosure(SNode inputNode, ITemplateGenerator generator) {
     BaseAdapter inputNodeAdapter = inputNode.getAdapter();
     if (!(inputNodeAdapter instanceof BaseMethodDeclaration)) return Collections.emptyList();
-    List<jetbrains.mps.baseLanguage.VariableDeclaration> variablesUsedInClosure = ClosuresUtil.getVariablesUsedInClosure(inputNode, generator);
-    List<SNode> parms = new LinkedList<SNode>();
-    for (jetbrains.mps.baseLanguage.VariableDeclaration var : variablesUsedInClosure) {
-      if (var.getAdapter() instanceof ParameterDeclaration) {
+    List<VariableDeclaration> variablesUsedInClosure = ClosuresUtil.getVariablesUsedInClosure(inputNode, generator);
+    List<BaseAdapter> parms = new LinkedList<BaseAdapter>();
+    for (VariableDeclaration var : variablesUsedInClosure) {
+      if (var instanceof ParameterDeclaration) {
         parms.add(var);
       }
     }
-    return parms;
+    return BaseAdapter.toNodes(parms);
   }
 
   public static List getList_ContextOwner_VariablesUsedInClosure(SNode inputNode, ITemplateGenerator generator) {
@@ -138,7 +138,10 @@ public class _QueriesUtil {
 
   public static String getString_VariableDeclaration_nameInClosureContext(SNode varDecl, ITemplateGenerator generator) {
     SNode contextOwner = ClosuresUtil.findEnclosingClosureContextOwner(varDecl);
-    return ClosuresUtil.getVariableNameInClosureContext(contextOwner, (jetbrains.mps.baseLanguage.VariableDeclaration)varDecl, generator);
+    return ClosuresUtil.getVariableNameInClosureContext(
+            contextOwner,
+            (VariableDeclaration) BaseAdapter.fromNode(varDecl),
+            generator);
   }
 
 }

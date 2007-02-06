@@ -9,7 +9,9 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.VariableDeclaration;
+import jetbrains.mps.baseLanguage.structure.VariableDeclaration;
+import jetbrains.mps.core.structure.BaseConcept;
+import jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration;
 import java.util.List;
 import jetbrains.mps.baseLanguage.generator.java.closures.util.QueriesUtil;
 
@@ -38,7 +40,7 @@ public class QueriesGenerated {
     SNode var = SLinkOperations.getTarget(node, "variableDeclaration", false);
     SNode contextOwner = ClosuresUtil.findEnclosingClosureContextOwner(var);
     if(contextOwner != null) {
-      return ClosuresUtil.isVariableUsedInClosure(contextOwner, (VariableDeclaration)var, generator);
+      return ClosuresUtil.isVariableUsedInClosure(contextOwner, (VariableDeclaration)((BaseConcept)SNodeOperations.getAdapter(var)), generator);
     }
     return false;
   }
@@ -46,7 +48,7 @@ public class QueriesGenerated {
     SNode var = SLinkOperations.getTarget(node, "variableDeclaration", false);
     SNode contextOwner = ClosuresUtil.findEnclosingClosureContextOwner(var);
     if(contextOwner != null) {
-      return ClosuresUtil.isVariableUsedInClosure(contextOwner, (VariableDeclaration)var, generator);
+      return ClosuresUtil.isVariableUsedInClosure(contextOwner, (VariableDeclaration)((BaseConcept)SNodeOperations.getAdapter(var)), generator);
     }
     return false;
   }
@@ -55,7 +57,7 @@ public class QueriesGenerated {
     if(SLinkOperations.getTarget(var, "initializer", true) != null) {
       SNode enclosingMethod = SNodeOperations.getParent(var, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
       if(enclosingMethod != null) {
-        return ClosuresUtil.isVariableUsedInClosure(enclosingMethod, (VariableDeclaration)var, generator);
+        return ClosuresUtil.isVariableUsedInClosure(enclosingMethod, (VariableDeclaration)((LocalVariableDeclaration)SNodeOperations.getAdapter(var)), generator);
       }
     }
     return false;

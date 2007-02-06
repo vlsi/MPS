@@ -65,6 +65,14 @@ public abstract class BaseAdapter {
     return getParent().getParent(cls);
   }
 
+  public BaseAdapter findParent(final Condition<BaseAdapter> ba) {
+    return BaseAdapter.fromNode(myNode.findParent(new Condition<SNode>() {
+      public boolean met(SNode object) {
+        return ba.met(BaseAdapter.fromNode(object));
+      }
+    }));
+  }
+
   public BaseAdapter findFirstParent(Class[] classes) {
     BaseAdapter node = this;
     BaseAdapter parent = node.getParent();
@@ -107,6 +115,15 @@ public abstract class BaseAdapter {
     return toAdapters(myNode.allChildren(new Condition<SNode>() {
       public boolean met(SNode object) {
         return c.met((BA) BaseAdapter.fromNode(object)); 
+      }
+    }));
+  }
+
+  @NotNull
+  public <E extends BaseAdapter> List<E> getSubnodes(final Condition<BaseAdapter> condition) {
+    return toAdapters(myNode.getSubnodes(new Condition<SNode>() {
+      public boolean met(SNode object) {
+        return condition.met(BaseAdapter.fromNode(object));
       }
     }));
   }
