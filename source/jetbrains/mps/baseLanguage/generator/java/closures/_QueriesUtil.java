@@ -132,8 +132,8 @@ public class _QueriesUtil {
     return BaseAdapter.toNodes(parms);
   }
 
-  public static List getList_ContextOwner_VariablesUsedInClosure(SNode inputNode, ITemplateGenerator generator) {
-    return ClosuresUtil.getVariablesUsedInClosure(inputNode, generator);
+  public static List<SNode> getList_ContextOwner_VariablesUsedInClosure(SNode inputNode, ITemplateGenerator generator) {
+    return BaseAdapter.toNodes(ClosuresUtil.getVariablesUsedInClosure(inputNode, generator));
   }
 
   public static String getString_VariableDeclaration_nameInClosureContext(SNode varDecl, ITemplateGenerator generator) {

@@ -433,13 +433,9 @@ public class TemplateGenUtil {
   public static List<INodeBuilder> createNodeBuildersForTemplateNode(SNode parentSourceNode, SNode templateNode, String mappingName, int currentMacroIndex, ITemplateGenerator generator) {
     List<INodeBuilder> builders = new LinkedList<INodeBuilder>();
     List<SNode> sourceNodes = createSourceNodeListForTemplateNode(parentSourceNode, templateNode, currentMacroIndex, generator);
-    try {
-      for (SNode sourceNode : sourceNodes) {
-        INodeBuilder nodeBuilder = createNodeBuilder(sourceNode, templateNode, mappingName, currentMacroIndex, generator);
-        builders.add(nodeBuilder);
-      }
-    } catch (ClassCastException e) {
-      createSourceNodeListForTemplateNode(parentSourceNode, templateNode, currentMacroIndex, generator);
+    for (SNode sourceNode : sourceNodes) {
+      INodeBuilder nodeBuilder = createNodeBuilder(sourceNode, templateNode, mappingName, currentMacroIndex, generator);
+      builders.add(nodeBuilder);
     }
 
     if (builders.isEmpty()) {
