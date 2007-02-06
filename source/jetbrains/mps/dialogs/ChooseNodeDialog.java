@@ -11,12 +11,11 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.ToStringComparator;
+import jetbrains.mps.refactoring.common.move.MoveNodeRefactoring;
 
-import javax.swing.JComponent;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
+import javax.swing.*;
 import javax.swing.tree.TreePath;
 import java.awt.BorderLayout;
 import java.awt.Frame;
@@ -29,13 +28,14 @@ public class ChooseNodeDialog extends BaseDialog {
   private Set<SModelDescriptor> myModels = new HashSet<SModelDescriptor>();
   private IOperationContext myContext;
   private Object myResult;
+  private List<SNode> mySourceNodes;
 
   public ChooseNodeDialog(IOperationContext context, Frame mainFrame) {
     this(context, mainFrame, getModelsFrom(context));
   }
 
-  public ChooseNodeDialog(String text, IOperationContext context, Frame mainFrame) {
-    this(text, context, mainFrame, getModelsFrom(context));
+  public ChooseNodeDialog(String text, IOperationContext context, Frame mainFrame, List<SNode> sourceNodes) {
+    this(text, context, mainFrame, getModelsFrom(context), sourceNodes);
   }
 
   private static Set<SModelDescriptor> getModelsFrom(IOperationContext context) {
@@ -52,15 +52,16 @@ public class ChooseNodeDialog extends BaseDialog {
 
 
   public ChooseNodeDialog(IOperationContext context, Frame mainFrame, Set<SModelDescriptor> models) {
-    this("Choose Node", context, mainFrame, models);  
+    this("Choose Node", context, mainFrame, models, null);
   }
 
-  public ChooseNodeDialog(String text, IOperationContext context, Frame mainFrame, Set<SModelDescriptor> models) {
+  public ChooseNodeDialog(String text, IOperationContext context, Frame mainFrame, Set<SModelDescriptor> models, List<SNode> sourceNodes) {
     super(mainFrame, text);
 
     myContext = context;
 
     myModels.addAll(models);
+    mySourceNodes = sourceNodes;
 
     myPanel.add(new JLabel("Choose Node"), BorderLayout.NORTH);
     myPanel.add(new JScrollPane(myTree));
@@ -68,6 +69,9 @@ public class ChooseNodeDialog extends BaseDialog {
     myTree.setRootVisible(false);
     myTree.rebuildTree();
     myTree.expandPath(new TreePath(myTree.getRootNode()));
+    if (mySourceNodes != null && !mySourceNodes.isEmpty()) {
+      myTree.selectNode(myTree.findNodeWith(mySourceNodes.get(0)));
+    }
   }
 
   public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
@@ -86,7 +90,19 @@ public class ChooseNodeDialog extends BaseDialog {
 
     MPSTreeNode node = (MPSTreeNode)  myTree.getSelectionPath().getLastPathComponent();
     if (node instanceof SNodeTreeNode) {
-      myResult = ((SNodeTreeNode) node).getSNode();
+      SNode sNode = ((SNodeTreeNode) node).getSNode();
+      if (mySourceNodes != null && !mySourceNodes.isEmpty()) {
+        if (mySourceNodes.contains(sNode)) {
+          JOptionPane.showMessageDialog(myContext.getMainFrame(), "Can't refactor node onto itself");
+          return;
+        }
+        String role = MoveNodeRefactoring.getRoleInTarget(mySourceNodes.get(0), sNode, myContext.getProject().getScope());
+        if (role == null) {
+          JOptionPane.showMessageDialog(myContext.getMainFrame(), "Can't find suitable role");
+          return;
+        }
+      }
+      myResult = sNode;
     }
 
     if (node instanceof SModelTreeNode) {
