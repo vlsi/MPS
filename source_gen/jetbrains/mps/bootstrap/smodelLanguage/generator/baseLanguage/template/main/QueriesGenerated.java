@@ -261,7 +261,7 @@ public class QueriesGenerated {
     return _QueriesUtil.get_SPropertyAccess_simple_getterMethod((SPropertyAccess)node, scope);
   }
   public static SNode referenceMacro_GetReferent_1170461142999(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return _QueriesUtil.get_SPropertyAccess_enum_getterMethod((SPropertyAccess)node, scope);
+    return _QueriesUtil.get_SPropertyAccess_enum_getterMethod(((jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess)SNodeOperations.getAdapter(node)), scope);
   }
   public static SNode referenceMacro_GetReferent_1170462607714(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return _QueriesUtil.get_SPropertyAccess_enum_getterMethod((SPropertyAccess)node, scope);
