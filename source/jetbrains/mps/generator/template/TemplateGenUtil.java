@@ -549,22 +549,6 @@ public class TemplateGenUtil {
     // new
     if (query != null) {
       return evaluateSourceNodesQuery(sourceNode, query, macro, generator);
-//      String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(query);
-//      Object[] args = new Object[]{
-//              sourceNode,
-//              generator.getSourceModel(),
-//              generator,
-//              generator.getScope(),
-//              generator.getGeneratorSessionContext()};
-//      try {
-//        List<SNode> sourceNodes = (List<SNode>) QueryMethodGenerated.invoke(methodName, args, macro.getModel());
-//        checkNodesFromQuery(sourceNodes, macro, generator);
-//        return sourceNodes;
-//      } catch (Exception e) {
-//        generator.showErrorMessage(sourceNode, null, macro, "couldn't evaluate query");
-//        LOG.error(e);
-//        return new LinkedList<SNode>();
-//      }
     }
 
     // old

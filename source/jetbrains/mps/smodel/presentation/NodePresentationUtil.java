@@ -92,6 +92,9 @@ public class NodePresentationUtil {
     if (node.isRoot()) {
       return NameUtil.shortNameFromLongName(node.getClass().getName()) + " (" + node.getModel().getUID() + ")";
     }
+    if(node.getContainingRoot() == null) {
+      System.out.println("!!!");
+    }
     return node.getRole_() + " (" + NameUtil.nodeFQName(node.getContainingRoot()) + ")";
   }
 
