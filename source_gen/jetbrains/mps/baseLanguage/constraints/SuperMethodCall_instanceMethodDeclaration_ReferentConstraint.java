@@ -10,10 +10,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.baseLanguage.BaseLanguageSearchUtil;
-import jetbrains.mps.baseLanguage.ClassConcept;
+import jetbrains.mps.baseLanguage.BaseLanguageSearchUtil_new;
+import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import java.util.List;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class SuperMethodCall_instanceMethodDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
@@ -32,8 +33,8 @@ public class SuperMethodCall_instanceMethodDeclaration_ReferentConstraint implem
   }
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     SNode enclosingClass = SNodeOperations.getParent(enclosingNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
-    ISearchScope hierarchyScope = BaseLanguageSearchUtil.createSuperClassesScope((ClassConcept)enclosingClass, IClassifiersSearchScope.INSTANCE_METHOD);
-    List methods = BaseLanguageSearchUtil.getMethodsExcludingOverridden(hierarchyScope);
+    ISearchScope hierarchyScope = BaseLanguageSearchUtil_new.createSuperClassesScope((ClassConcept)enclosingClass.getAdapter(), IClassifiersSearchScope.INSTANCE_METHOD);
+    List methods = BaseAdapter.toNodes(BaseLanguageSearchUtil_new.getMethodsExcludingOverridden(hierarchyScope));
     return new SimpleSearchScope((List<SNode>)methods);
   }
   public String getNodeReferentSearchScopeDescription() {
