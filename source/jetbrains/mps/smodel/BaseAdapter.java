@@ -167,12 +167,12 @@ public abstract class BaseAdapter {
     myNode.removeChild(child.getNode());
   }
 
-  protected void addChild(@NotNull String role,
+  public void addChild(@NotNull String role,
                        @NotNull BaseAdapter child) {
     myNode.addChild(role, child.getNode());
   }
 
-  protected void insertChild(@Nullable BaseAdapter anchorChild,
+  public void insertChild(@Nullable BaseAdapter anchorChild,
                           @NotNull String role,
                           @NotNull BaseAdapter child) {
     SNode anchorNode = null;
@@ -182,7 +182,7 @@ public abstract class BaseAdapter {
     myNode.insertChild(anchorNode, role, child.getNode());
   }
 
-  protected int getChildCount(@NotNull String role) {
+  public int getChildCount(@NotNull String role) {
     return myNode.getChildCount(role);
   }
 

@@ -3,6 +3,7 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
@@ -27,6 +28,11 @@ public class DefaultChildNodeSetter implements IChildNodeSetter {
   public LinkDeclaration getLinkDeclaration() {
     return myLinkDeclaration;
   }
+
+  public jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration getLinkDeclarationAdapter() {
+    return (jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration) BaseAdapter.fromNode(myLinkDeclaration);
+  }
+
 
   public void execute(SNode parenNode, SNode oldChild, SNode newChild, IScope scope) {
     String role = SModelUtil.getGenuineLinkRole(myLinkDeclaration);
