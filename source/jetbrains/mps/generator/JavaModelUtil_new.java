@@ -8,6 +8,8 @@ import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Iterator;
+import java.util.List;
+import java.util.LinkedList;
 
 public class JavaModelUtil_new {
 
@@ -295,6 +297,64 @@ public class JavaModelUtil_new {
       return reference;
     }
     throw new RuntimeException("Couldn't create reference on: " + variable);
+  }
+
+  public static LocalVariableDeclaration findLocalVariable(Statement beforeStatement, String variableName) {
+    List<LocalVariableDeclaration> localVariables = getLocalVariables(beforeStatement);
+    for (LocalVariableDeclaration localVariableDeclaration : localVariables) {
+      if (variableName.equals(localVariableDeclaration.getName())) {
+        return localVariableDeclaration;
+      }
+    }
+    return null;
+  }
+
+  public static List<LocalVariableDeclaration> getLocalVariables(Statement beforeStatement) {
+    List<LocalVariableDeclaration> list = new LinkedList<LocalVariableDeclaration>();
+    _collectLocalVariablesFromPrecedingStatements(beforeStatement, list);
+    return list;
+  }
+
+  private static void _collectLocalVariablesFromPrecedingStatements(Statement beforeStatement, List list) {
+    StatementList statementList = beforeStatement.findParent(StatementList.class);
+    if (statementList == null) {
+      return;
+    }
+    Iterator iterator = statementList.statements();
+    while (iterator.hasNext()) {
+      Statement statement = (Statement) iterator.next();
+      if (statement == beforeStatement) {
+        break;
+      }
+      if (statement instanceof LocalVariableDeclarationStatement) {
+        LocalVariableDeclarationStatement localStatement = (LocalVariableDeclarationStatement) statement;
+        LocalVariableDeclaration variable = localStatement.getLocalVariableDeclaration();
+        if (variable != null) {
+          list.add(variable);
+        }
+      }
+    }
+
+    CatchClause catchClause = statementList.findParent(CatchClause.class);
+    if (catchClause != null) {
+      LocalVariableDeclaration variable = catchClause.getThrowable();
+      if (variable != null) {
+        list.add(variable);
+      }
+    }
+
+    Statement parentStatement = statementList.findParent(Statement.class);
+    if (parentStatement != null) {
+      if (parentStatement instanceof AbstractForStatement) {
+        AbstractForStatement forStatement = (AbstractForStatement) parentStatement;
+        LocalVariableDeclaration variable = forStatement.getVariable();
+        if (variable != null) {
+          list.add(variable);
+        }
+      }
+
+      _collectLocalVariablesFromPrecedingStatements(parentStatement, list);
+    }
   }
 
   
