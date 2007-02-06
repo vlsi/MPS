@@ -29,7 +29,7 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="\home\fyodor\tmp\mps\projects\YPath\classes" />
+    <entry path="\home\fyodor\workspace\YPath\classes" />
   </classPath>
 </language>
 
