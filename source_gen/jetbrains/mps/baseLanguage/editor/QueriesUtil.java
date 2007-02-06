@@ -10,6 +10,8 @@ import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.baseLanguage.BaseLanguageSearchUtil;
 import jetbrains.mps.baseLanguage.Classifier;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.baseLanguage.BaseLanguageSearchUtil_new;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
@@ -27,7 +29,7 @@ public class QueriesUtil {
       return result;
     }
     ISearchScope classHierarchy = BaseLanguageSearchUtil.createClassifierHierarchyScope((Classifier)classifier, IClassifiersSearchScope.STATIC_MEMBER);
-    List staticMethods = BaseLanguageSearchUtil.getMethodsExcludingOverridden(classHierarchy);
+    List staticMethods = BaseAdapter.toNodes(BaseLanguageSearchUtil_new.getMethodsExcludingOverridden(classHierarchy));
     ListOperations.addAllElements(result, (List<SNode>)staticMethods);
     List<SNode> allStaticMembers = classHierarchy.getNodes();
     ListOperations.addAllElements(result, SequenceOperations.where(allStaticMembers, new zPredicate(null, null)));
@@ -83,9 +85,9 @@ public class QueriesUtil {
       return result;
     }
     ISearchScope classHierarchy = BaseLanguageSearchUtil.createClassifierHierarchyScope((Classifier)classifier, IClassifiersSearchScope.STATIC_MEMBER);
-    List staticFields = BaseLanguageSearchUtil.getFieldsExcludingOverridden(classHierarchy);
+    List staticFields = BaseAdapter.toNodes(BaseLanguageSearchUtil_new.getFieldsExcludingOverridden(classHierarchy));
     ListOperations.addAllElements(result, (List<SNode>)staticFields);
-    List staticMethods = BaseLanguageSearchUtil.getMethodsExcludingOverridden(classHierarchy);
+    List staticMethods = BaseAdapter.toNodes(BaseLanguageSearchUtil_new.getMethodsExcludingOverridden(classHierarchy));
     ListOperations.addAllElements(result, (List<SNode>)staticMethods);
     return result;
   }
@@ -115,7 +117,7 @@ public class QueriesUtil {
       return result;
     }
     ISearchScope classHierarchy = BaseLanguageSearchUtil.createClassifierHierarchyScope(instanceType, IClassifiersSearchScope.INSTANCE_METHOD);
-    result = (List)BaseLanguageSearchUtil.getMethodsExcludingOverridden(classHierarchy);
+    result = (List)BaseAdapter.toNodes(BaseLanguageSearchUtil_new.getMethodsExcludingOverridden(classHierarchy));
     return result;
   }
   public static SNode replaceNodeMenu_FieldReference_createReplacementNode(SNode node, SNode parameterObject) {
