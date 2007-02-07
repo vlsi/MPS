@@ -11,12 +11,11 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.baseLanguage.util.QueriesUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.SModelUtil;
-import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.SModelLanguageUtil_new;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddNewChildOperation;
 import jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess;
@@ -84,11 +83,11 @@ public class QueriesGenerated {
   }
   public static String propertyMacro_GetPropertyValue_1168986363721(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode link = SLinkOperations.getTarget(node, "link", false);
-    return SModelUtil.getGenuineLinkRole((LinkDeclaration)link);
+    return SModelUtil_new.getGenuineLinkRole(((LinkDeclaration)SNodeOperations.getAdapter(link)));
   }
   public static String propertyMacro_GetPropertyValue_1168986509277(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode link = SLinkOperations.getTarget(node, "link", false);
-    link = SModelUtil.getGenuineLinkDeclaration((LinkDeclaration)link);
+    link = SModelUtil_new.getGenuineLinkDeclaration(((LinkDeclaration)SNodeOperations.getAdapter(link))).getNode();
     if(SPropertyOperations.hasValue(link, "metaClass", "aggregation", null)) {
       return "true";
     }
@@ -107,11 +106,11 @@ public class QueriesGenerated {
   }
   public static String propertyMacro_GetPropertyValue_1169056926467(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode link = SLinkOperations.getTarget(node, "link", false);
-    return SModelUtil_new.getGenuineLinkRole(((jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration)SNodeOperations.getAdapter(link)));
+    return SModelUtil_new.getGenuineLinkRole(((LinkDeclaration)SNodeOperations.getAdapter(link)));
   }
   public static String propertyMacro_GetPropertyValue_1169057010209(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode link = SLinkOperations.getTarget(node, "link", false);
-    link = SModelUtil_new.getGenuineLinkDeclaration(((jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration)SNodeOperations.getAdapter(link))).getNode();
+    link = SModelUtil_new.getGenuineLinkDeclaration(((LinkDeclaration)SNodeOperations.getAdapter(link))).getNode();
     if(SPropertyOperations.hasValue(link, "metaClass", "aggregation", null)) {
       return "true";
     }
@@ -180,7 +179,7 @@ public class QueriesGenerated {
     return NameUtil.nodeFQName(SLinkOperations.getTarget(node, "conceptOfParent", false));
   }
   public static String propertyMacro_GetPropertyValue_1170444136064(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SModelUtil_new.getGenuineLinkRole(((jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration)SNodeOperations.getAdapter(SLinkOperations.getTarget(node, "linkInParent", false))));
+    return SModelUtil_new.getGenuineLinkRole(((LinkDeclaration)SNodeOperations.getAdapter(SLinkOperations.getTarget(node, "linkInParent", false))));
   }
   public static String propertyMacro_GetPropertyValue_1169069895463(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode genuineLink = QueriesUtil.linkListOpExpression_genuineLink(SNodeOperations.getParent(node, null, false, false));
