@@ -275,7 +275,7 @@ public class QueriesGenerated {
   }
   public static List sourceNodesQuery_1168293467222(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode op = SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "nodeOperation", true);
-    return (List<SNode>)_QueriesUtil.getNodeOperation_ConceptList_concepts((SNodeOperation)(op));
+    return (List<SNode>)_QueriesUtil.getNodeOperation_ConceptList_concepts(((jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation)SNodeOperations.getAdapter(op)));
   }
   public static SNode sourceNodeQuery_1170466610811(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     // <expr>.<property-access>.<operation>
