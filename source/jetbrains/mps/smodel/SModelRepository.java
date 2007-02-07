@@ -80,7 +80,7 @@ public class SModelRepository extends SModelAdapter {
     myOwnersToListeners.get(owner).add(listener);
   }
 
-  public void unregisterLangaugeModelListeners(ILanguageModelListenerOwner owner) {
+  public void unregisterLanguageModelListeners(ILanguageModelListenerOwner owner) {
     if (myOwnersToListeners.get(owner) == null) {
       return;
     }

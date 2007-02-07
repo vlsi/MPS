@@ -1841,7 +1841,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       LOG.error(e);
     }
 
-    LOG.error("Can't find an adapter for " + getClass().getName() + ". Try to generate adaptors (use collection langauge target)");
+    LOG.error("Can't find an adapter for " + getClass().getName() + ". Try to generate adapters (use collection language target)");
 
     return new BaseAdapter(this) {
     };
