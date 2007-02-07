@@ -1008,6 +1008,15 @@ public class SModel implements Iterable<SNode> {
     return result;
   }
 
+  public <SN extends BaseAdapter> List<SN> allAdaptersIncludingImported(IScope scope, final Class<SN> snodeClass) {
+    return BaseAdapter.toAdapters(snodeClass, allNodesIncludingImported(scope, new Condition<SNode>() {
+      public boolean met(SNode object) {
+        return snodeClass.isInstance(BaseAdapter.fromNode(object));
+      }
+    }));
+  }
+
+
   public <SN extends SNode> List<SN> allNodesIncludingImported(IScope scope, final Class<SN> snodeClass) {
     List<SModel> modelsList = new LinkedList<SModel>();
     modelsList.add(this);
