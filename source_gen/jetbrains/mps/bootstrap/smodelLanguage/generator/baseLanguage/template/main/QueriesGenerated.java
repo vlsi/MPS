@@ -109,7 +109,7 @@ public class QueriesGenerated {
   }
   public static String propertyMacro_GetPropertyValue_1169057010209(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode link = SLinkOperations.getTarget(node, "link", false);
-    link = SModelUtil.getGenuineLinkDeclaration((LinkDeclaration)link);
+    link = SModelUtil_new.getGenuineLinkDeclaration(((jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration)SNodeOperations.getAdapter(link))).getNode();
     if(SPropertyOperations.hasValue(link, "metaClass", "aggregation", null)) {
       return "true";
     }
