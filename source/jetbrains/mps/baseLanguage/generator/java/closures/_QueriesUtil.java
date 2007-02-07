@@ -1,12 +1,12 @@
 package jetbrains.mps.baseLanguage.generator.java.closures;
 
+import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.generator.template.INodeBuilder;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.smodel.SModelUtil;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.baseLanguage.structure.*;
 
 import java.util.Collections;
 import java.util.Iterator;
@@ -26,7 +26,7 @@ public class _QueriesUtil {
         return generatedClass;
       }
     }
-    return SModelUtil.findNodeByFQName("java.lang.Object", jetbrains.mps.baseLanguage.ClassConcept.class, generator.getScope());
+    return BaseAdapter.fromAdapter(SModelUtil_new.findNodeByFQName("java.lang.Object", ClassConcept.class, generator.getScope()));
   }
 
   public static SNode find_ContextOwner_ClosureContext_generatedClass(SNode inputNode, ITemplateGenerator generator) {

@@ -1,6 +1,7 @@
 package jetbrains.mps.util;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.BaseAdapter;
 
 import java.util.*;
 
@@ -150,6 +151,20 @@ public class CollectionUtil {
           Iterable<? extends SNode> collection,
           String name) {
     for (SNode node : collection) {
+      if (name.equals(node.getName())) {
+        if (cls.isInstance(node)) {
+          return (Node) node;
+        }
+      }
+    }
+    return null;
+  }
+
+  public static <Node extends BaseAdapter> Node getAdapterByName(
+          Class<Node> cls,
+          Iterable<? extends BaseAdapter> collection,
+          String name) {
+    for (BaseAdapter node : collection) {
       if (name.equals(node.getName())) {
         if (cls.isInstance(node)) {
           return (Node) node;
