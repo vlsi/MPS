@@ -58,6 +58,7 @@
                 <link role="classifier" extResolveInfo="1.[Classifier]String" />
               </node>
             </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.NullLiteral" id="1170875060841" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1160612812895">
