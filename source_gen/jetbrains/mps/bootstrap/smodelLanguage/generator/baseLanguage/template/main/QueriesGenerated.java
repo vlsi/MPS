@@ -17,6 +17,8 @@ import jetbrains.mps.bootstrap.smodelLanguage.SModelLanguageUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.SNodeOperation;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.bootstrap.smodelLanguage.SModelLanguageUtil_new;
+import jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddNewChildOperation;
 import jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess;
 import jetbrains.mps.bootstrap.smodelLanguage.SConceptPropertyAccess;
 import jetbrains.mps.bootstrap.smodelLanguage.SModelLanguageTypesUtil;
@@ -122,7 +124,7 @@ public class QueriesGenerated {
   public static String propertyMacro_GetPropertyValue_1169057685014(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode parmConcept = SLinkOperations.getTarget(node, "concept", false);
     if(parmConcept == null) {
-      parmConcept = SModelLanguageUtil.getLinkTargetConceptForLinkOperation((SNodeOperation)node);
+      parmConcept = SModelLanguageUtil_new.getLinkTargetConceptForLinkOperation(((LinkList_AddNewChildOperation)SNodeOperations.getAdapter(node))).getNode();
     }
     return NameUtil.nodeFQName(parmConcept);
   }
