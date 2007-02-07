@@ -91,23 +91,7 @@ public class SubtypingManager {
 
     //variance:
 
-     Set<ConceptDeclaration> superConcepts = new HashSet<ConceptDeclaration>();
-    {
-      Set<ConceptDeclaration> subConcepts = new HashSet<ConceptDeclaration>();
-      ConceptDeclaration subConcept = subtype.getConceptDeclaration(GlobalScope.getInstance());
-      subConcepts.add(subConcept);
-      while (subConcept.getExtends() != null) {
-        subConcept = subConcept.getExtends();
-        subConcepts.add(subConcept);
-      }
-      ConceptDeclaration superConcept = supertype.getConceptDeclaration(GlobalScope.getInstance());
-      superConcepts.add(superConcept);
-      while (superConcept.getExtends() != null) {
-        superConcept = superConcept.getExtends();
-        superConcepts.add(superConcept);
-      }
-      superConcepts.retainAll(subConcepts);
-    }
+    Set<ConceptDeclaration> superConcepts = getSuperConcepts(subtype, supertype);
 
     if (!superConcepts.isEmpty()) {
       Set<String> roles = new HashSet<String>();
@@ -115,31 +99,7 @@ public class SubtypingManager {
       Set<String> contraVariantRoles = new HashSet<String>();
       Set<String> invariantRoles = new HashSet<String>();
       Set<String> allowsNull = new HashSet<String>();
-      for (ConceptDeclaration superConcept : superConcepts) {
-        if (myVarianceRules.containsKey(superConcept)) {
-          SubtypingVarianceRule rule = myVarianceRules.get(superConcept);
-
-          for (LinkVariance linkVariance : CollectionUtil.iteratorAsIterable(rule.linkVariances())) {
-            String role = linkVariance.getLinkDeclaration().getRole();
-            if (linkVariance.getAllowsNull()) {
-              allowsNull.add(role);
-            }
-            if (linkVariance.getVariance() == _Variance_Enum.covariant) {
-              covariantRoles.add(role);
-            }
-            if (linkVariance.getVariance() == _Variance_Enum.contravariant) {
-              contraVariantRoles.add(role);
-            }
-            if (linkVariance.getVariance() == _Variance_Enum.invariant) {
-              invariantRoles.add(role);
-            }
-          }
-          roles.addAll(CollectionUtil.map(CollectionUtil.iteratorAsList(superConcept.linkDeclarations()), new Mapper<LinkDeclaration, String>() {
-            public String map(LinkDeclaration p) {
-              return p.getRole();
-            }
-          }));
-        }}
+      collectVariantRoles(superConcepts, allowsNull, covariantRoles, contraVariantRoles, invariantRoles, roles);
 
       if (!covariantRoles.isEmpty() || !contraVariantRoles.isEmpty() || !invariantRoles.isEmpty()) {
         for (String role : roles) {
@@ -212,18 +172,68 @@ public class SubtypingManager {
     return false;
   }
 
+  private void collectVariantRoles(Set<ConceptDeclaration> superConcepts, Set<String> allowsNull, Set<String> covariantRoles, Set<String> contraVariantRoles, Set<String> invariantRoles, Set<String> roles) {
+    for (ConceptDeclaration superConcept : superConcepts) {
+      if (myVarianceRules.containsKey(superConcept)) {
+        SubtypingVarianceRule rule = myVarianceRules.get(superConcept);
+
+        for (LinkVariance linkVariance : CollectionUtil.iteratorAsIterable(rule.linkVariances())) {
+          String role = linkVariance.getLinkDeclaration().getRole();
+          if (linkVariance.getAllowsNull()) {
+            allowsNull.add(role);
+          }
+          if (linkVariance.getVariance() == _Variance_Enum.covariant) {
+            covariantRoles.add(role);
+          }
+          if (linkVariance.getVariance() == _Variance_Enum.contravariant) {
+            contraVariantRoles.add(role);
+          }
+          if (linkVariance.getVariance() == _Variance_Enum.invariant) {
+            invariantRoles.add(role);
+          }
+        }
+        roles.addAll(CollectionUtil.map(CollectionUtil.iteratorAsList(superConcept.linkDeclarations()), new Mapper<LinkDeclaration, String>() {
+          public String map(LinkDeclaration p) {
+            return p.getRole();
+          }
+        }));
+      }}
+  }
+
+  private Set<ConceptDeclaration> getSuperConcepts(SNode subtype, SNode supertype) {
+    Set<ConceptDeclaration> superConcepts = new HashSet<ConceptDeclaration>();
+    {
+      Set<ConceptDeclaration> subConcepts = new HashSet<ConceptDeclaration>();
+      ConceptDeclaration subConcept = subtype.getConceptDeclaration(GlobalScope.getInstance());
+      subConcepts.add(subConcept);
+      while (subConcept.getExtends() != null) {
+        subConcept = subConcept.getExtends();
+        subConcepts.add(subConcept);
+      }
+      ConceptDeclaration superConcept = supertype.getConceptDeclaration(GlobalScope.getInstance());
+      superConcepts.add(superConcept);
+      while (superConcept.getExtends() != null) {
+        superConcept = superConcept.getExtends();
+        superConcepts.add(superConcept);
+      }
+      superConcepts.retainAll(subConcepts);
+    }
+    return superConcepts;
+  }
+
   public Set<SNode> collectSupertypes(SNode term) {
     Set<SNode> result = new HashSet<SNode>();
     Set<SubtypingRule> subtypingRules = myConceptsToSubtypingRulesCache.get(term.getNodeConcept());
-    if (subtypingRules == null) return result;
-    for (SubtypingRule rule : subtypingRules) {
-      AnalyzedTermDeclaration applicableNode = rule.getApplicableNode();
-      if (applicableNode == null) continue;
-      Expression expression = rule.getSupertype();
-      if (expression == null) continue;
-      List<SNode> supertypes = getSupertypesOrSubtypes(term, applicableNode, expression);
-      if (supertypes != null) {
-        result.addAll(supertypes);
+    if (subtypingRules != null)  {
+      for (SubtypingRule rule : subtypingRules) {
+        AnalyzedTermDeclaration applicableNode = rule.getApplicableNode();
+        if (applicableNode == null) continue;
+        Expression expression = rule.getSupertype();
+        if (expression == null) continue;
+        List<SNode> supertypes = getSupertypesOrSubtypes(term, applicableNode, expression);
+        if (supertypes != null) {
+          result.addAll(supertypes);
+        }
       }
     }
     return result;
