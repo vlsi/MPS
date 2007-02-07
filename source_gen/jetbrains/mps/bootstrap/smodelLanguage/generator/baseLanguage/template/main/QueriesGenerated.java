@@ -105,7 +105,7 @@ public class QueriesGenerated {
   }
   public static String propertyMacro_GetPropertyValue_1169056926467(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode link = SLinkOperations.getTarget(node, "link", false);
-    return SModelUtil.getGenuineLinkRole((LinkDeclaration)link);
+    return SModelUtil_new.getGenuineLinkRole(((jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration)SNodeOperations.getAdapter(link)));
   }
   public static String propertyMacro_GetPropertyValue_1169057010209(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode link = SLinkOperations.getTarget(node, "link", false);
