@@ -12,6 +12,8 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOper
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
+import java.util.List;
+import jetbrains.mps.smodel.IScope;
 
 public class QueriesUtil {
 
@@ -40,5 +42,14 @@ public class QueriesUtil {
       }
     }
     return outputClassType;
+  }
+  public static List<SNode> getTypeVars_from_Closure_enclosingClass(SNode inputClosure, IScope scope) {
+    SNode enclosingClass = SNodeOperations.getParent(inputClosure, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+    if(enclosingClass == null) {
+      // closure is not in class
+      ClassConcept adapter = (ClassConcept)SModelUtil_new.findNodeByFQName("java.lang.Object", ClassConcept.class, scope);
+      enclosingClass = adapter.getNode();
+    }
+    return SLinkOperations.getTargets(enclosingClass, "typeVariableDeclaration", true);
   }
 }

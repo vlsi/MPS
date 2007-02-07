@@ -12,6 +12,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.baseLanguage.structure.VariableDeclaration;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.baseLanguage.generator.java.closures.util.QueriesUtil;
 
@@ -71,6 +72,9 @@ public class QueriesGenerated {
   public static String propertyMacro_GetPropertyValue_1170707554571(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return generator.getGeneratorSessionContext().createUniqueName("_zClosureContext");
   }
+  public static String propertyMacro_GetPropertyValue_1170874110540(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SPropertyOperations.getString(node, "name");
+  }
   public static SNode referenceMacro_GetReferent_1170294467354(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return _QueriesUtil.find_ContextOwner_ClosureContext_generatedClass(node, generator);
   }
@@ -116,6 +120,9 @@ public class QueriesGenerated {
   }
   public static List sourceNodesQuery_1170294170225(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTargets(node, "statement", true);
+  }
+  public static List sourceNodesQuery_1170874089896(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.getTypeVars_from_Closure_enclosingClass(node, scope);
   }
   public static SNode sourceNodeQuery_1170347410888(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "type", true);
