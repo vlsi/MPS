@@ -27,6 +27,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NodesParetoFrontier;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.annotation.UseCarefully;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -1200,16 +1201,25 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         SNode selectedNode = getSelectedCell().getSNode();
         while (selectedNode != null) {
           final IStatus status = (IStatus) selectedNode.getUserObject(SNode.ERROR_STATUS);
-          if (status != null) {
+          final IStatus hstatus = (IStatus) selectedNode.getUserObject(TypeChecker.HELGINS_ERROR_STATUS);
+          if (status != null || hstatus != null) {
             final SNode selectedNode1 = selectedNode;
             SwingUtilities.invokeLater(new Runnable() {
               public void run() {
                 String nodeClasName = JavaNameUtil.shortName(selectedNode1.getClass().getName());
-                JOptionPane.showMessageDialog(getExternalComponent(), status.getMessage(), nodeClasName + " status", JOptionPane.ERROR_MESSAGE);
+                String s = "";
+                if (hstatus != null) {
+                  s += hstatus.getMessage() + "\n";
+                }
+                if (status != null) {
+                  s += status.getMessage();
+                }
+                JOptionPane.showMessageDialog(getExternalComponent(), s, nodeClasName + " status", JOptionPane.ERROR_MESSAGE);
               }
             });
             return;
           }
+          TypeChecker.getInstance().getTypeErrorDontCheck(selectedNode);
           selectedNode = selectedNode.getParent();
         }
       }

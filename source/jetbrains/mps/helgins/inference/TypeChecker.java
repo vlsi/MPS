@@ -35,17 +35,17 @@ import org.jetbrains.annotations.Nullable;
 public class TypeChecker {
   private static final Logger LOG = Logger.getLogger(TypeChecker.class);
 
+  public static final Object HELGINS_ERROR_STATUS = new Object();
   private static final Object TYPE_OF_TERM = new Object();
-  public static final Object HELGINS_ERROR = new Object();
 
   private Set<SNode> myCheckedRoots = new WeakSet<SNode>();
   private Map<SNode, Set<SNode>> myNodesToDependentRoots = new WeakHashMap<SNode, Set<SNode>>();
-  private MySModelCommandListener myListener = new MySModelCommandListener();
 
+  private MySModelCommandListener myListener = new MySModelCommandListener();
   private ConceptToRulesMap<Rule> myConceptsToRulesCache = new ConceptToRulesMap<Rule>();
   private Set<SNode> myCheckedNodes = new HashSet<SNode>();
-  private WeakHashMap<SNode, String> myNodesWithErrors = new WeakHashMap<SNode, String>();
 
+  private WeakHashMap<SNode, String> myNodesWithErrors = new WeakHashMap<SNode, String>();
   private ContextsManager myContextsManager;
   private EquationManager myEquationManager;
   private TypeVariablesManager myTypeVariablesManager;
@@ -188,14 +188,8 @@ public class TypeChecker {
     // setting errors
     for (SNode node : myNodesWithErrors.keySet()) {
       String errorString = "HELGINS ERROR: " + myNodesWithErrors.get(node);
-      IStatus status = (IStatus) node.getUserObject(SNode.ERROR_STATUS);
-      if (status == null || status.isOk()) {
-        status = new Status(IStatus.Code.ERROR, errorString);
-        node.putUserObject(SNode.ERROR_STATUS, status);
-        ((Status)status).setUserObject(HELGINS_ERROR);
-      } else if (status instanceof Status) {
-        ((Status)status).addMessage(errorString);
-      }
+      IStatus status = new Status(IStatus.Code.ERROR, errorString);
+      node.putUserObject(HELGINS_ERROR_STATUS, status);
     }
   }
 
@@ -315,8 +309,17 @@ public class TypeChecker {
     return myCheckedRoots.contains(node);
   }
 
+   private void clearTypeUserObjects(SNode node) {
+    node.removeUserObject(HELGINS_ERROR_STATUS);
+
+    for (SNode child : node.getChildren()) {
+      clearTypeUserObjects(child);
+    }
+  }
+
   public void doCheckRoot(SNode node) {
     try {
+      clearTypeUserObjects(node);
       MyReadAccessListener listener = new MyReadAccessListener();
       NodeReadAccessCaster.setNodeAccessListener(listener);
       checkTypes(node);
