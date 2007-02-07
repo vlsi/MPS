@@ -4,8 +4,9 @@ package jetbrains.mps.externalResolve;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.baseLanguage.*;
+import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.util.CollectionUtil;
 
 import java.util.Collection;
@@ -42,13 +43,13 @@ public class ExternalResolver {
 
   public static String getExternalResolveInfoFromTarget(SNode targetNode) {
     String memberType = ExternalResolveInfoParser.getMemberType(targetNode);
-    if (memberType.equals(CLASSIFIER)) return ExternalResolveInfoProvider.getExtResolveInfoForTargetClassGenericDeclaration((GenericDeclaration) targetNode);
-    if (memberType.equals(CONSTRUCTOR)) return ExternalResolveInfoProvider.getExtResolveInfoForTargetClassConstructorDeclaration((ConstructorDeclaration) targetNode);
-    if (memberType.equals(ENUM_CONST)) return ExternalResolveInfoProvider.getExtResolveInfoForTargetClassEnumConstantDeclaration((EnumConstantDeclaration) targetNode);
-    if (memberType.equals(METHOD)) return ExternalResolveInfoProvider.getExtResolveInfoForTargetClassInstanceMethodDeclaration((InstanceMethodDeclaration) targetNode);
-    if (memberType.equals(STATIC_METHOD)) return ExternalResolveInfoProvider.getExtResolveInfoForTargetClassStaticMethodDeclaration((StaticMethodDeclaration) targetNode);
-    if (memberType.equals(FIELD)) return ExternalResolveInfoProvider.getExtResolveInfoForTargetClassFieldDeclaration((FieldDeclaration) targetNode);
-    if (memberType.equals(STATIC_FIELD)) return ExternalResolveInfoProvider.getExtResolveInfoForTargetClassStaticFieldDeclaration((StaticFieldDeclaration) targetNode);
+    if (memberType.equals(CLASSIFIER)) return ExternalResolveInfoProvider.getExtResolveInfoForTargetClassGenericDeclaration((GenericDeclaration) BaseAdapter.fromNode(targetNode));
+    if (memberType.equals(CONSTRUCTOR)) return ExternalResolveInfoProvider.getExtResolveInfoForTargetClassConstructorDeclaration((ConstructorDeclaration) BaseAdapter.fromNode(targetNode));
+    if (memberType.equals(ENUM_CONST)) return ExternalResolveInfoProvider.getExtResolveInfoForTargetClassEnumConstantDeclaration((EnumConstantDeclaration) BaseAdapter.fromNode(targetNode));
+    if (memberType.equals(METHOD)) return ExternalResolveInfoProvider.getExtResolveInfoForTargetClassInstanceMethodDeclaration((InstanceMethodDeclaration) BaseAdapter.fromNode(targetNode));
+    if (memberType.equals(STATIC_METHOD)) return ExternalResolveInfoProvider.getExtResolveInfoForTargetClassStaticMethodDeclaration((StaticMethodDeclaration) BaseAdapter.fromNode(targetNode));
+    if (memberType.equals(FIELD)) return ExternalResolveInfoProvider.getExtResolveInfoForTargetClassFieldDeclaration((FieldDeclaration) BaseAdapter.fromNode(targetNode));
+    if (memberType.equals(STATIC_FIELD)) return ExternalResolveInfoProvider.getExtResolveInfoForTargetClassStaticFieldDeclaration((StaticFieldDeclaration) BaseAdapter.fromNode(targetNode));
     return null;
   }
 
@@ -76,7 +77,7 @@ public class ExternalResolver {
     boolean isClassifier = CLASSIFIER.equals(ExternalResolveInfoParser.getMemberType(extResolveInfo));
 
     for (SNode root : roots ) {
-      String targetExtResolveInfo = ExternalResolveInfoProvider.getExtResolveInfoForTargetClassGenericDeclaration((GenericDeclaration) root);
+      String targetExtResolveInfo = ExternalResolveInfoProvider.getExtResolveInfoForTargetClassGenericDeclaration((GenericDeclaration) BaseAdapter.fromNode(root));
       if (!ExternalResolveInfoParser.doClassifiersERIMatch(classifierExtResolveInfo, targetExtResolveInfo)) continue;
       if (isClassifier) {
         return root;

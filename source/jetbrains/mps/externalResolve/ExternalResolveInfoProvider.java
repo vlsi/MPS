@@ -1,5 +1,6 @@
 package jetbrains.mps.externalResolve;
-import jetbrains.mps.baseLanguage.*;
+
+import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.CollectionUtil;
@@ -118,19 +119,7 @@ public class ExternalResolveInfoProvider {
   }
 
   private static Pair<String, String> adaptNode(Type node) {
-    /*Pair<String, String> type =*/ return adaptType(node);
-
-   /* ITypeChecker typeChecker = TypeCheckerAccess.getTypeChecker();
-    TSStatus tSStatus = typeChecker.adaptNode(node);
-    ITypeObject typeObject = tSStatus.getTypeObject();
-    if (typeObject == null) return null;
-    if (EqualUtil.equals(type.o1, typeObject.getTypeName()) && EqualUtil.equals(type.o2, typeObject.getSignature())) {
-      System.err.println("OK");
-    } else {
-      System.err.println(type.o1 + " == " + typeObject.getTypeName());
-      System.err.println(type.o2 + " == " + typeObject.getSignature());
-    }
-    return new Pair<String, String>(typeObject.getTypeName(), typeObject.getSignature());*/
+    return adaptType(node);
   }
 
   public static String getExtResolveInfoForTargetClassGenericDeclaration(GenericDeclaration genericDeclaration) {

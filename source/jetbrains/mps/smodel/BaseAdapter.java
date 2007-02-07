@@ -29,6 +29,10 @@ public abstract class BaseAdapter {
     return myNode.getName();
   }
 
+  public String getConceptName() {
+    return myNode.getConceptName();
+  }
+
   public SModel getModel() {
     return myNode.getModel();
   }

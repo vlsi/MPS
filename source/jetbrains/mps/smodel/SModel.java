@@ -989,6 +989,15 @@ public class SModel implements Iterable<SNode> {
     return allNodes(cls, (Condition<E>) Condition.TRUE_CONDITION);
   }
 
+  public <E extends BaseAdapter> List<E> allAdapters(final Class<E> cls) {
+    return BaseAdapter.toAdapters(allNodes(new Condition<SNode>() {
+      public boolean met(SNode object) {
+        return cls.isInstance(BaseAdapter.fromNode(object));
+      }
+    }));
+  }
+
+
   public <BA extends BaseAdapter> List<BA> allNodesByAdaptor(final Class<BA> cls) {
     List<BA> result = new ArrayList<BA>();
     for (SNode n : allNodes()) {
