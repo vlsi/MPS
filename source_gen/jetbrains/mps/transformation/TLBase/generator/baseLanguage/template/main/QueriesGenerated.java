@@ -111,7 +111,7 @@ public class QueriesGenerated {
     return templateValue;
   }
   public static SNode referenceMacro_GetReferent_1170806259490(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    ConceptDeclaration concept = TemplateLanguageTypesUtil.get_sourceNode_concept(((jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodesQuery)SNodeOperations.getAdapter(node)), generator.getTypeChecker());
+    ConceptDeclaration concept = TemplateLanguageTypesUtil.get_sourceNode_concept(((jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodeQuery)SNodeOperations.getAdapter(node)), generator.getTypeChecker());
     if(concept != null) {
       return concept.getNode();
     }
