@@ -126,6 +126,9 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1170348623270(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "localVariableDeclaration", true), "initializer", true);
   }
+  public static SNode mapSrcMacro_mapper_1170873903267(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.createClassType_forClosure_enclosingClass(node, generator);
+  }
   public static SNode mapSrcMacro_mapper_1170730778912(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return QueriesUtil.createClassType_forClosure_enclosingClass(node, generator);
   }
