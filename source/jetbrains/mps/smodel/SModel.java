@@ -1003,16 +1003,6 @@ public class SModel implements Iterable<SNode> {
   }
 
 
-  public <BA extends BaseAdapter> List<BA> allNodesByAdapter(final Class<BA> cls) {
-    List<BA> result = new ArrayList<BA>();
-    for (SNode n : allNodes()) {
-      if (cls.isInstance(n.getAdapter())) {
-        result.add((BA) n.getAdapter());
-      }
-    }
-    return result;
-  }
-
   public <SN extends BaseAdapter> List<SN> allAdaptersIncludingImported(IScope scope, final Class<SN> snodeClass) {
     return BaseAdapter.toAdapters(snodeClass, allNodesIncludingImported(scope, new Condition<SNode>() {
       public boolean met(SNode object) {
