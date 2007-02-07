@@ -420,4 +420,20 @@ public abstract class BaseAdapter {
       return ba.getNode();
     }
   }
+
+  public static Condition<SNode> nodeCondition(final Condition<BaseAdapter> bn) {
+    return new Condition<SNode>() {
+      public boolean met(SNode object) {
+        return bn.met(BaseAdapter.fromNode(object));
+      }
+    };
+  }
+
+  public static Condition<BaseAdapter> adapterCondition(final Condition<SNode> bn) {
+    return new Condition<BaseAdapter>() {
+      public boolean met(BaseAdapter object) {
+        return bn.met(BaseAdapter.fromAdapter(object));
+      }
+    };
+  }
 }
