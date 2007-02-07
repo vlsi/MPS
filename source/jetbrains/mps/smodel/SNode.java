@@ -328,7 +328,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   @NotNull
   public List<SNode> getAllAttributes() {
-    List<SNode> attributes = new ArrayList<SNode>();
+    List<SNode> attributes = new LinkedList<SNode>();
     for (SNode child : _children()) {
       String role = child.getRole_();
       if (AttributesRolesUtil.isNodeAttributeRole(role) ||
