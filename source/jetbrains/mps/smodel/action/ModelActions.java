@@ -16,8 +16,8 @@ public class ModelActions {
   // child substitute
   //-------------------
 
-  public static List<INodeSubstituteAction> createChildSubstituteActions(SNode parentNode, SNode currentChild, ConceptDeclaration childConcept, IChildNodeSetter childSetter, IOperationContext context) {
-    return ChildSubstituteActionsHelper.createActions(parentNode, currentChild, (jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) childConcept.getAdapter(), childSetter, context);
+  public static List<INodeSubstituteAction> createChildSubstituteActions(SNode parentNode, SNode currentChild, jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration childConcept, IChildNodeSetter childSetter, IOperationContext context) {
+    return ChildSubstituteActionsHelper.createActions(parentNode, currentChild, childConcept, childSetter, context);
   }
 
   /**

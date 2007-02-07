@@ -6,6 +6,7 @@ import jetbrains.mps.bootstrap.structureLanguage.AnnotationLinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.Cardinality;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
@@ -50,7 +51,7 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
 
   public List<INodeSubstituteAction> createActions() {
     List<INodeSubstituteAction> actions = ModelActions.createChildSubstituteActions(myParentNode, myCurrentChild,
-            myLinkDeclaration.getTarget(),
+            (ConceptDeclaration) myLinkDeclaration.getTarget().getAdapter(),
             createDefaultNodeSetter(),
             getOperationContext());
     return actions;
