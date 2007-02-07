@@ -2,7 +2,7 @@
 <model name="jetbrains.mps.baseLanguage.ext.collections.sandbox.model1">
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.baseLanguage" />
-  <maxImportIndex value="6" />
+  <maxImportIndex value="8" />
   <import index="1" modelUID="java.lang@java_stub" />
   <import index="2" modelUID="java.util@java_stub" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1160585560003">
@@ -195,6 +195,50 @@
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1160672471207" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1170868139484">
+    <property name="name" value="ClosuresInClassFithGenerics" />
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1170868172894">
+      <property name="name" value="aaa" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1170868172895" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1170868172896">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1170868189831">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1170868189832">
+            <property name="name" value="ss" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceType" id="1170868189833">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.TypeVariableReference" id="1170868569107">
+                <link role="typeVariableDeclaration" targetNodeId="1170868165314" resolveInfo="T2" />
+              </node>
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1170868189835">
+              <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceCreatorWithSupplier" id="1170868189836">
+                <node role="supplier" type="jetbrains.mps.baseLanguage.ext.collections.lang.ValueSupplierBlock" id="1170868189837">
+                  <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1170868189838">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.TraversalYieldStatement" id="1170868189839">
+                      <node role="value" type="jetbrains.mps.baseLanguage.CastExpression" id="1170868586111">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1170868586112">
+                          <property name="value" value="s" />
+                        </node>
+                        <node role="type" type="jetbrains.mps.baseLanguage.TypeVariableReference" id="1170868595302">
+                          <link role="typeVariableDeclaration" targetNodeId="1170868165314" resolveInfo="T2" />
+                        </node>
+                      </node>
+                    </node>
+                    <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.TraversalStopStatement" id="1170868189841" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.TypeVariableDeclaration" id="1170868160704">
+      <property name="name" value="T1" />
+    </node>
+    <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.TypeVariableDeclaration" id="1170868165314">
+      <property name="name" value="T2" />
     </node>
   </node>
 </model>

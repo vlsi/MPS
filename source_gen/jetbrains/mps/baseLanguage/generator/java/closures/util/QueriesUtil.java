@@ -10,6 +10,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
+import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 
 public class QueriesUtil {
 
@@ -17,12 +19,26 @@ public class QueriesUtil {
     SNode enclosingClass = SNodeOperations.getParent(inputClosure, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     if(enclosingClass == null) {
       // closure is not in class
-      ClassConcept adapter = SModelUtil_new.findNodeByFQName("java.lang.Object", ClassConcept.class, generator.getScope());
+      ClassConcept adapter = (ClassConcept)SModelUtil_new.findNodeByFQName("java.lang.Object", ClassConcept.class, generator.getScope());
       enclosingClass = adapter.getNode();
     }
     SModel outputModel = generator.getTargetModel();
-    SNode outClassType = SModelOperations.createNewNode(outputModel, "jetbrains.mps.baseLanguage.structure.ClassifierType");
-    SLinkOperations.setTarget(outClassType, "classifier", enclosingClass, false);
-    return outClassType;
+    SNode outputClassType = SModelOperations.createNewNode(outputModel, "jetbrains.mps.baseLanguage.structure.ClassifierType");
+    SLinkOperations.setTarget(outputClassType, "classifier", enclosingClass, false);
+    {
+      ICursor<SNode> _zCursor = CursorFactory.createCursor(SLinkOperations.getTargets(enclosingClass, "typeVariableDeclaration", true));
+      try {
+        while(_zCursor.moveToNext()) {
+          SNode typeVar = _zCursor.getCurrent();
+          {
+            SNode typeVarRef = SLinkOperations.addNewChild(outputClassType, "parameter", "jetbrains.mps.baseLanguage.structure.TypeVariableReference");
+            SLinkOperations.setTarget(typeVarRef, "typeVariableDeclaration", typeVar, false);
+          }
+        }
+      } finally {
+        _zCursor.release();
+      }
+    }
+    return outputClassType;
   }
 }

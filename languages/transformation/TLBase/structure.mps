@@ -479,6 +479,11 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1167951910403" resolveInfo="SourceSubstituteMacro_SourceNodesQuery" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1170871384825">
+      <property name="role" value="mapperFunction" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1170725621272" resolveInfo="MapSrcMacro_MapperFunction" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1133037820495">
       <property name="value" value="$MAP_SRCL$" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />

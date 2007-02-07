@@ -817,15 +817,17 @@ public class TemplateGenUtil {
         builderComplete = true;
       } else if (nodeMacro instanceof MapSrcNodeMacro) {
         MapSrcNodeMacro mapSrcNodeMacro = (MapSrcNodeMacro) nodeMacro;
+        MapSrcMacro_MapperFunction mapperFunction = mapSrcNodeMacro.getMapperFunction();
         String sourceNodeMapperId = mapSrcNodeMacro.getSourceNodeMapperId();
-        if (sourceNodeMapperId != null) {
+        if (mapperFunction != null || sourceNodeMapperId != null) {
           builder = new QueryMethodMapperNodeBuilder(sourceNode, templateNode, mapSrcNodeMacro, generator);
           builderComplete = true;
         }
       } else if (nodeMacro instanceof MapSrcListMacro) {
         MapSrcListMacro mapSrcListMacro = (MapSrcListMacro) nodeMacro;
+        MapSrcMacro_MapperFunction mapperFunction = mapSrcListMacro.getMapperFunction();
         String sourceNodeMapperId = mapSrcListMacro.getSourceNodeMapperId();
-        if (sourceNodeMapperId != null) {
+        if (mapperFunction != null || sourceNodeMapperId != null) {
           builder = new QueryMethodMapperNodeBuilder(sourceNode, templateNode, mapSrcListMacro, generator);
           builderComplete = true;
         }
