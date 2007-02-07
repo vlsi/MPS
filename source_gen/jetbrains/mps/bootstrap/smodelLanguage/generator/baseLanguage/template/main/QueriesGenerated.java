@@ -17,7 +17,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.SModelLanguageUtil_new;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddNewChildOperation;
-import jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess;
+import jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess;
 import jetbrains.mps.bootstrap.smodelLanguage.SModelLanguageTypesUtil;
 import java.util.List;
@@ -260,13 +260,13 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(node, "conceptProperty", false), "name");
   }
   public static SNode referenceMacro_GetReferent_1170457360268(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return _QueriesUtil.get_SPropertyAccess_simple_getterMethod((SPropertyAccess)node, scope);
+    return _QueriesUtil.get_SPropertyAccess_simple_getterMethod(((SPropertyAccess)SNodeOperations.getAdapter(node)), scope);
   }
   public static SNode referenceMacro_GetReferent_1170461142999(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return _QueriesUtil.get_SPropertyAccess_enum_getterMethod(((jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess)SNodeOperations.getAdapter(node)), scope);
+    return _QueriesUtil.get_SPropertyAccess_enum_getterMethod(((SPropertyAccess)SNodeOperations.getAdapter(node)), scope);
   }
   public static SNode referenceMacro_GetReferent_1170462607714(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return _QueriesUtil.get_SPropertyAccess_enum_getterMethod(((jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess)SNodeOperations.getAdapter(node)), scope);
+    return _QueriesUtil.get_SPropertyAccess_enum_getterMethod(((SPropertyAccess)SNodeOperations.getAdapter(node)), scope);
   }
   public static SNode referenceMacro_GetReferent_1168984233974(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return _QueriesUtil.get_SConceptPropertyAccess_GetMethod(((SConceptPropertyAccess)SNodeOperations.getAdapter(node)), scope);
