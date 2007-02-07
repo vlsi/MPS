@@ -102,7 +102,7 @@ public class SModelSearchUtil_new {
         for (Language language : languages) {
           if (myRootsOnly) {
             SModel structureModel = language.getStructureModelDescriptor().getSModel();
-            myConcepts.addAll(structureModel.getRootsAdaptors(ConceptDeclaration.class));
+            myConcepts.addAll(structureModel.getRootsAdapters(ConceptDeclaration.class));
           } else {
             myConcepts.addAll(BaseAdapter.toAdapters(ConceptDeclaration.class, language.getConceptDeclarations()));
           }

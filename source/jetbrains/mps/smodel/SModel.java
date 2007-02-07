@@ -156,7 +156,7 @@ public class SModel implements Iterable<SNode> {
     return result;
   }
 
-  public <N extends BaseAdapter> List<N> getRootsAdaptors(@NotNull Class<N> cls) {
+  public <N extends BaseAdapter> List<N> getRootsAdapters(@NotNull Class<N> cls) {
     List<N> result = new ArrayList<N>();
     for (SNode root : getRoots()) {
       BaseAdapter a = root.getAdapter();
@@ -519,6 +519,11 @@ public class SModel implements Iterable<SNode> {
   public List<String> getDevKitNamespaces() {
     return new ArrayList<String>(myDevKits);
   }
+
+  public BaseAdapter getRootAdapterByName(@NotNull String name) {
+    return BaseAdapter.fromNode(getRootByName(name));
+  }
+
 
   @Nullable
   public SNode getRootByName(@NotNull String name) {
