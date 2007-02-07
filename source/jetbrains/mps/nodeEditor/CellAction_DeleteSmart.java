@@ -1,12 +1,13 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.bootstrap.structureLanguage.Cardinality;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
+import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkMetaclass;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModelUtil_new;
 
 /**
  * Author: Sergey Dmitriev.
@@ -29,14 +30,14 @@ public class CellAction_DeleteSmart extends EditorCellAction {
 
   public void execute(EditorContext context) {
     SModel model = mySource.getModel();
-    LinkDeclaration genuineLink = SModelUtil.getGenuineLinkDeclaration(myLink);
+    LinkDeclaration genuineLink = SModelUtil_new.getGenuineLinkDeclaration(myLink);
     LinkMetaclass metaclass = genuineLink.getMetaClass();
     if (metaclass == LinkMetaclass.aggregation) {
       myTarget.delete();
       Cardinality sourceCardinality = genuineLink.getSourceCardinality();
       if (sourceCardinality == Cardinality._1) {
         ConceptDeclaration defaultTargetConcept = myLink.getTarget();
-        SNode defaultTarget = SModelUtil.instantiateConceptDeclaration(defaultTargetConcept, model);
+        SNode defaultTarget = SModelUtil.instantiateConceptDeclaration((jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration) defaultTargetConcept.getNode(), model);
         String role = genuineLink.getRole();
         mySource.setChild(role, defaultTarget);
       }

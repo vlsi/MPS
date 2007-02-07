@@ -1116,6 +1116,14 @@ public class SModel implements Iterable<SNode> {
     }, scope);
   }
 
+  public List<jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration> conceptAdaptersFromModelLanguages(final Condition<jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration> condition, IScope scope) {
+    return BaseAdapter.toAdapters(conceptsFromModelLanguages(new Condition<ConceptDeclaration>() {
+      public boolean met(ConceptDeclaration object) {
+        return condition.met((jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) object.getAdapter());    
+      }
+    }, scope));
+  }
+
   public List<ConceptDeclaration> conceptsFromModelLanguages(final Condition<ConceptDeclaration> condition, IScope scope) {
     List<ConceptDeclaration> list = new LinkedList<ConceptDeclaration>();
     List<Language> languages = getLanguages(scope);

@@ -17,7 +17,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 public class DefaultAttributeSubstituteInfo extends DefaultChildSubstituteInfo {
 
   public DefaultAttributeSubstituteInfo(SNode parentNode, SNode currChildNode, LinkDeclaration linkDeclaration, EditorContext editorContext) {
-    super(parentNode, currChildNode, linkDeclaration, editorContext);    
+    super(parentNode, currChildNode, (jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration) linkDeclaration.getAdapter(), editorContext);    
   }
 
   protected DefaultChildNodeSetter createDefaultNodeSetter() {

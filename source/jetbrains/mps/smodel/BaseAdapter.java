@@ -153,11 +153,11 @@ public abstract class BaseAdapter {
   }
 
 
-  protected  String getProperty(@NotNull String propertyName) {
+  public  String getProperty(@NotNull String propertyName) {
     return myNode.getProperty(propertyName);
   }
 
-  protected void setProperty(@NotNull final String propertyName, String propertyValue) {
+  public void setProperty(@NotNull final String propertyName, String propertyValue) {
     myNode.setProperty(propertyName, propertyValue);
   }
 

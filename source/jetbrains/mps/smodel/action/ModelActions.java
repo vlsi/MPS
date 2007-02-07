@@ -1,7 +1,7 @@
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 
@@ -37,10 +37,10 @@ public class ModelActions {
    * helper method
    */
   public static List<ConceptDeclaration> getDefaultSubstitutableConcepts(SModel sourceModel, final jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration targetConcept, final IScope scope) {
-    return sourceModel.conceptsFromModelLanguages(new Condition<ConceptDeclaration>() {
+    return sourceModel.conceptAdaptersFromModelLanguages(new Condition<ConceptDeclaration>() {
       public boolean met(ConceptDeclaration node) {
         return ChildSubstituteActionsHelper.isDefaultSubstitutableConcept(
-                (jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) node.getAdapter(), 
+                (jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) node,
                 targetConcept,
                 scope);
       }
@@ -52,7 +52,7 @@ public class ModelActions {
   //-------------------
 
   public static List<INodeSubstituteAction> createReferentSubstituteActions(SNode referenceNode, SNode currentReferent, LinkDeclaration linkDeclaration, IOperationContext context) {
-    return ReferentSubstituteActionsHelper.createActions(referenceNode, currentReferent, (jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration) linkDeclaration.getAdapter(), context);
+    return ReferentSubstituteActionsHelper.createActions(referenceNode, currentReferent, (jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration) linkDeclaration, context);
   }
 
   //-------------------
