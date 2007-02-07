@@ -2,6 +2,7 @@ package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 import jetbrains.mps.formulaLanguage.evaluator.ExpressionContext;
 import jetbrains.mps.formulaLanguage.evaluator.ExpressionEvaluatorManager;
 import jetbrains.mps.formulaLanguage.Expression;
@@ -9,11 +10,8 @@ import jetbrains.mps.helgins.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.patterns.util.MatchingUtil;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Mapper;
 import jetbrains.mpswiki.queryLanguage.VariableCondition;
 import jetbrains.mpswiki.queryLanguage.QueryPattern;
 import jetbrains.mpswiki.queryLanguage.evaluator.ConditionMatcher;
@@ -94,19 +92,25 @@ public class SubtypingManager {
     Set<ConceptDeclaration> superConcepts = getSuperConcepts(subtype, supertype);
 
     if (!superConcepts.isEmpty()) {
-      Set<String> roles = new HashSet<String>();
-      Set<String> covariantRoles = new HashSet<String>();
-      Set<String> contraVariantRoles = new HashSet<String>();
-      Set<String> invariantRoles = new HashSet<String>();
-      Set<String> allowsNull = new HashSet<String>();
-      collectVariantRoles(superConcepts, allowsNull, covariantRoles, contraVariantRoles, invariantRoles, roles);
+      Set<LinkDeclaration> linkDeclarations = new HashSet<LinkDeclaration>();
+      Set<LinkDeclaration> covariantRoles = new HashSet<LinkDeclaration>();
+      Set<LinkDeclaration> contraVariantRoles = new HashSet<LinkDeclaration>();
+      Set<LinkDeclaration> invariantRoles = new HashSet<LinkDeclaration>();
+      Set<LinkDeclaration> allowsNull = new HashSet<LinkDeclaration>();
+      for (ConceptDeclaration superConcept : superConcepts) {
+        if (myVarianceRules.containsKey(superConcept)) {
+          SubtypingVarianceRule rule = myVarianceRules.get(superConcept);
+          collectRolesForVarianceRule(rule, allowsNull, covariantRoles, contraVariantRoles, invariantRoles);
+          linkDeclarations.addAll(CollectionUtil.iteratorAsList(superConcept.linkDeclarations()));
+        }
+      }
 
       if (!covariantRoles.isEmpty() || !contraVariantRoles.isEmpty() || !invariantRoles.isEmpty()) {
-        for (String role : roles) {
-          List<SNode> subChildren = subRepresentator.getChildren(role);
-          subChildren.add(subRepresentator.getReferent(role));
-          List<SNode> superChildren = superRepresentator.getChildren(role);
-          superChildren.add(superRepresentator.getReferent(role));
+        for (LinkDeclaration linkDeclaration : linkDeclarations) {
+          List<SNode> subChildren = subRepresentator.getChildren(linkDeclaration.getRole());
+          subChildren.add(subRepresentator.getReferent(linkDeclaration.getRole()));
+          List<SNode> superChildren = superRepresentator.getChildren(linkDeclaration.getRole());
+          superChildren.add(superRepresentator.getReferent(linkDeclaration.getRole()));
 
           while(subChildren.size() < superChildren.size()) {
             subChildren.add(null);
@@ -120,14 +124,14 @@ public class SubtypingManager {
           for (; subIt.hasNext() ;) {
             SNode subChild = myTypeChecker.getAdaptationManager().adaptType(subIt.next());
             SNode superChild = myTypeChecker.getAdaptationManager().adaptType(superIt.next());
-            if (covariantRoles.contains(role)) {
-              if (allowsNull.contains(role) && superChild == null) continue;
+            if (covariantRoles.contains(linkDeclaration)) {
+              if (allowsNull.contains(linkDeclaration) && superChild == null) continue;
               if (!isSubtype(subChild, superChild)) return false;
-            } else if (contraVariantRoles.contains(role)) {
-              if (allowsNull.contains(role) && subChild == null) continue;
+            } else if (contraVariantRoles.contains(linkDeclaration)) {
+              if (allowsNull.contains(linkDeclaration) && subChild == null) continue;
               if (!isSubtype(superChild, subChild)) return false;
-            } else if (invariantRoles.contains(role)) {
-              if (allowsNull.contains(role) && superChild == null) continue;
+            } else if (invariantRoles.contains(linkDeclaration)) {
+              if (allowsNull.contains(linkDeclaration) && superChild == null) continue;
               if (!MatchingUtil.matchNodes(subChild, superChild)) return false;
             }
           }
@@ -172,32 +176,22 @@ public class SubtypingManager {
     return false;
   }
 
-  private void collectVariantRoles(Set<ConceptDeclaration> superConcepts, Set<String> allowsNull, Set<String> covariantRoles, Set<String> contraVariantRoles, Set<String> invariantRoles, Set<String> roles) {
-    for (ConceptDeclaration superConcept : superConcepts) {
-      if (myVarianceRules.containsKey(superConcept)) {
-        SubtypingVarianceRule rule = myVarianceRules.get(superConcept);
-
-        for (LinkVariance linkVariance : CollectionUtil.iteratorAsIterable(rule.linkVariances())) {
-          String role = linkVariance.getLinkDeclaration().getRole();
-          if (linkVariance.getAllowsNull()) {
-            allowsNull.add(role);
-          }
-          if (linkVariance.getVariance() == _Variance_Enum.covariant) {
-            covariantRoles.add(role);
-          }
-          if (linkVariance.getVariance() == _Variance_Enum.contravariant) {
-            contraVariantRoles.add(role);
-          }
-          if (linkVariance.getVariance() == _Variance_Enum.invariant) {
-            invariantRoles.add(role);
-          }
-        }
-        roles.addAll(CollectionUtil.map(CollectionUtil.iteratorAsList(superConcept.linkDeclarations()), new Mapper<LinkDeclaration, String>() {
-          public String map(LinkDeclaration p) {
-            return p.getRole();
-          }
-        }));
-      }}
+  private void collectRolesForVarianceRule(SubtypingVarianceRule rule, Set<LinkDeclaration> allowsNull, Set<LinkDeclaration> covariantRoles, Set<LinkDeclaration> contraVariantRoles, Set<LinkDeclaration> invariantRoles) {
+    for (LinkVariance linkVariance : CollectionUtil.iteratorAsIterable(rule.linkVariances())) {
+      LinkDeclaration linkDeclaration = linkVariance.getLinkDeclaration();
+      if (linkVariance.getAllowsNull()) {
+        allowsNull.add(linkDeclaration);
+      }
+      if (linkVariance.getVariance() == _Variance_Enum.covariant) {
+        covariantRoles.add(linkDeclaration);
+      }
+      if (linkVariance.getVariance() == _Variance_Enum.contravariant) {
+        contraVariantRoles.add(linkDeclaration);
+      }
+      if (linkVariance.getVariance() == _Variance_Enum.invariant) {
+        invariantRoles.add(linkDeclaration);
+      }
+    }
   }
 
   private Set<ConceptDeclaration> getSuperConcepts(SNode subtype, SNode supertype) {
@@ -307,8 +301,104 @@ public class SubtypingManager {
   }
 
   public Set<SNode> leastCommonSupertypes(Set<? extends SNode> types) {
-    return leastCommonSupertypes(types, new NodeSupertypesCollector(this));
+    Set<SNode> result = leastCommonSupertypes(types, new NodeSupertypesCollector(this));
+
+    // variance
+//    Set<jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration> conceptDeclarations = new HashSet<jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration>();
+//    for (SNode node : types) {
+//      conceptDeclarations.add((jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) BaseAdapter.fromNode(node.getNodeConcept()));
+//    }
+//    ConceptDeclaration conceptDeclaration = (ConceptDeclaration) BaseAdapter.fromAdapter(SModelUtil_new.getLeastCommonSuperConcept(conceptDeclarations));
+//    if (conceptDeclaration != null) {
+//      SubtypingVarianceRule rule = myVarianceRules.get(conceptDeclaration);
+//      if (rule != null) {
+//        Set<LinkDeclaration> allowsNull = new HashSet<LinkDeclaration>();
+//        Set<LinkDeclaration> covariantLinks = new HashSet<LinkDeclaration>();
+//        Set<LinkDeclaration> contraVariantLinks = new HashSet<LinkDeclaration>();
+//        Set<LinkDeclaration> invariantLinks = new HashSet<LinkDeclaration>();
+//        collectRolesForVarianceRule(rule, allowsNull, covariantLinks, contraVariantLinks, invariantLinks);
+//        SNode resultNode = SModelUtil.instantiateConceptDeclaration(conceptDeclaration, getTypeChecker().getRuntimeTypesModel());
+//
+//        if (!processLinks(covariantLinks, types, allowsNull, resultNode, false)) {
+//          return result;
+//        }
+//
+//        if (!processLinks(invariantLinks, types, allowsNull, resultNode, true)) {
+//          return result;
+//        }
+//
+        //...
+//        result.add(resultNode);
+//      }
+//    }
+    
+    return result;
   }
+
+//  private boolean processLinks(Set<LinkDeclaration> covariantLinks, Set<? extends SNode> types, Set<LinkDeclaration> allowsNull, SNode resultNode, boolean invariant) {
+//    outer : for (LinkDeclaration covariantLink : covariantLinks) {
+//      SNode[][] targetsForNodes = new SNode[types.size()][];
+//      int childrenSize = -1;
+//      int i = 0;
+//      for (SNode type : types) {
+//        List<SNode> linkTargets = type.getChildren(covariantLink.getRole());
+//        SNode referent = type.getReferent(covariantLink.getRole());
+//        if (referent != null) {
+//          linkTargets.add(referent);
+//        }
+//        if (linkTargets.isEmpty()) {// node has no targets in this role
+//          if (allowsNull.contains(covariantLink)) {
+//            continue outer; // don't add child to lcs
+//          } else {
+//            return false;
+//          }
+//        }
+//        int currentChildrenSize = linkTargets.size();
+//        if (currentChildrenSize != childrenSize && childrenSize != -1) {
+//          return false;
+//        }
+//        childrenSize = currentChildrenSize;
+//        targetsForNodes[i] = linkTargets.toArray(new SNode[linkTargets.size()]);
+//        i++;
+//      }
+//      Set<SNode> childrenInRoleAndIndex = new HashSet<SNode>();
+//      for (int j=0; j < childrenSize; j++) {
+//        for (i = 0; i < types.size(); i++) {
+//          childrenInRoleAndIndex.add(targetsForNodes[i][j]);
+//        }
+//      }
+//      SNode childLcs = null;
+//      if (invariant) {
+//        childLcs = matchingNodes(childrenInRoleAndIndex);
+//      } else {
+//        childLcs = leastCommonSupertype(childrenInRoleAndIndex);
+//      }
+//      if (childLcs == null) {
+//        return false;
+//      } else {
+//        if (covariantLink.getMetaClass() == LinkMetaclass.aggregation) {
+//          resultNode.addChild(covariantLink.getRole(), childLcs);
+//        } else {
+//          resultNode.setReferent(covariantLink.getRole(), childLcs);
+//        }
+//      }
+//    }
+//    return true;
+//  }
+
+//  private SNode matchingNodes(Set<SNode> nodes) {
+//    if (nodes.isEmpty()) return null;
+//    Iterator<SNode> iterator = nodes.iterator();
+//    SNode sNode = iterator.next();
+//    if (nodes.size() == 1) {
+//      return sNode;
+//    }
+//    for (;iterator.hasNext();) {
+//
+//      if (!MatchingUtil.matchNodes(subChild, superChild)) return null;
+//    }
+//    return sNode;
+//  }
 
   public SNode leastCommonSupertype(Set<? extends SNode> types) {
     Set<SNode> lcss = leastCommonSupertypes(types);
@@ -321,7 +411,7 @@ public class SubtypingManager {
   }
 
 
-  public <T> Set<T> leastCommonSupertypes(Set<? extends T> types, SupertypesCollector<T> supertypesCollector) {
+  private <T> Set<T> leastCommonSupertypes(Set<? extends T> types, SupertypesCollector<T> supertypesCollector) {
 
     Set<T> allTypes = new HashSet<T>(types);
     if (types.isEmpty()) return allTypes;
