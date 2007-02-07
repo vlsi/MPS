@@ -217,12 +217,12 @@ public abstract class BaseAdapter {
   }
 
 
-  protected <T extends BaseAdapter> List<T> getChildren(@NotNull String role) {
+  public <T extends BaseAdapter> List<T> getChildren(@NotNull String role) {
     List<T> result = toAdapters(myNode.getChildren(role));
     return result;
   }
 
-  protected <T extends BaseAdapter> Iterator<T> children(@NotNull String role) {
+  public <T extends BaseAdapter> Iterator<T> children(@NotNull String role) {
     List<T> children = getChildren(role);
     return children.iterator();
   }
