@@ -4,6 +4,18 @@ import jetbrains.mps.annotations.AttributeConcept;
 import jetbrains.mps.annotations.LinkAttributeConcept;
 import jetbrains.mps.annotations.PropertyAttributeConcept;
 import jetbrains.mps.bootstrap.structureLanguage.*;
+import jetbrains.mps.bootstrap.structureLanguage.AnnotationLinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty;
+import jetbrains.mps.bootstrap.structureLanguage.Cardinality;
+import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.ConceptLink;
+import jetbrains.mps.bootstrap.structureLanguage.ConceptLinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.ConceptProperty;
+import jetbrains.mps.bootstrap.structureLanguage.IntegerConceptProperty;
+import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty;
+import jetbrains.mps.bootstrap.structureLanguage.structure.*;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.command.undo.IUndoableAction;
 import jetbrains.mps.ide.command.undo.UndoManager;
@@ -1389,6 +1401,10 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return SModelUtil.getDeclaringLanguage(concept, GlobalScope.getInstance());
   }
 
+  public boolean isInstanceOfConcept(jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration conceptDeclaration, IScope scope) {
+    return isInstanceOfConcept((ConceptDeclaration) conceptDeclaration.getNode(), scope);
+  }
+
   public boolean isInstanceOfConcept(ConceptDeclaration conceptDeclaration, IScope scope) {
     if (NameUtil.nodeFQName(conceptDeclaration).equals("jetbrains.mps.core.structure.BaseConcept")) {
       return true;
@@ -1425,6 +1441,10 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   @NotNull
   public final ConceptDeclaration getConceptDeclaration__() {
     return getConceptDeclaration(GlobalScope.getInstance());
+  }
+
+  public jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration getConceptDeclarationAdapter(IScope scope) {
+    return (jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) getConceptDeclaration(scope).getAdapter();
   }
 
   //could be null e.g. concept deleted by user
