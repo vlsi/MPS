@@ -16,6 +16,7 @@ import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.SModelLanguageUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.SNodeOperation;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess;
 import jetbrains.mps.bootstrap.smodelLanguage.SConceptPropertyAccess;
 import jetbrains.mps.bootstrap.smodelLanguage.SModelLanguageTypesUtil;
@@ -177,7 +178,7 @@ public class QueriesGenerated {
     return NameUtil.nodeFQName(SLinkOperations.getTarget(node, "conceptOfParent", false));
   }
   public static String propertyMacro_GetPropertyValue_1170444136064(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SModelUtil.getGenuineLinkRole((LinkDeclaration)SLinkOperations.getTarget(node, "linkInParent", false));
+    return SModelUtil_new.getGenuineLinkRole(((jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration)SNodeOperations.getAdapter(SLinkOperations.getTarget(node, "linkInParent", false))));
   }
   public static String propertyMacro_GetPropertyValue_1169069895463(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode genuineLink = QueriesUtil.linkListOpExpression_genuineLink(SNodeOperations.getParent(node, null, false, false));
