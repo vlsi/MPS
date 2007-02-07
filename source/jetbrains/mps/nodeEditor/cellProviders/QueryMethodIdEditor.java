@@ -1,8 +1,8 @@
 package jetbrains.mps.nodeEditor.cellProviders;
 
-import jetbrains.mps.baseLanguage.BaseLanguageUtil;
-import jetbrains.mps.baseLanguage.ClassConcept;
-import jetbrains.mps.baseLanguage.StaticMethodDeclaration;
+import jetbrains.mps.baseLanguage.BaseLanguageUtil_new;
+import jetbrains.mps.baseLanguage.structure.ClassConcept;
+import jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.*;
@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
@@ -259,7 +259,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
           availableIds.add(name.substring(queryMetodPrefix.length()));
         }
       }
-      queriesClass = BaseLanguageUtil.getSuperclass(queriesClass);
+      queriesClass = BaseLanguageUtil_new.getSuperclass(queriesClass);
     }
     return availableIds;
   }
@@ -271,7 +271,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
   protected ClassConcept getQueriesClass() {
     SModel model = getSNode().getModel();
     String classFQName = JavaNameUtil.fqClassName(model, "Queries");
-    return SModelUtil.findNodeByFQName(classFQName, ClassConcept.class, GlobalScope.getInstance());
+    return SModelUtil_new.findNodeByFQName(classFQName, ClassConcept.class, GlobalScope.getInstance());
   }
 }
 
