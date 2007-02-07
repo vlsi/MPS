@@ -17,7 +17,7 @@ public class ModelActions {
   //-------------------
 
   public static List<INodeSubstituteAction> createChildSubstituteActions(SNode parentNode, SNode currentChild, ConceptDeclaration childConcept, IChildNodeSetter childSetter, IOperationContext context) {
-    return ChildSubstituteActionsHelper.createActions(parentNode, currentChild, childConcept, childSetter, context);
+    return ChildSubstituteActionsHelper.createActions(parentNode, currentChild, (jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) childConcept.getAdapter(), childSetter, context);
   }
 
   /**
@@ -27,7 +27,7 @@ public class ModelActions {
     return ChildSubstituteActionsHelper.createPrimaryChildSubstituteActions(
             parentNode,
             currentChild,
-            childConcept,
+            (jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) childConcept.getAdapter(),
             childSetter,
             filter,
             context);
@@ -39,7 +39,10 @@ public class ModelActions {
   public static List<ConceptDeclaration> getDefaultSubstitutableConcepts(SModel sourceModel, final ConceptDeclaration targetConcept, final IScope scope) {
     return sourceModel.conceptsFromModelLanguages(new Condition<ConceptDeclaration>() {
       public boolean met(ConceptDeclaration node) {
-        return ChildSubstituteActionsHelper.isDefaultSubstitutableConcept(node, targetConcept, scope);
+        return ChildSubstituteActionsHelper.isDefaultSubstitutableConcept(
+                (jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) node.getAdapter(), 
+                (jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) targetConcept.getAdapter(),
+                scope);
       }
     }, scope);
   }

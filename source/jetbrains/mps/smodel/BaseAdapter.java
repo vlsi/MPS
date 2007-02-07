@@ -144,6 +144,15 @@ public abstract class BaseAdapter {
     myNode.addPrevSibling(a.getNode());
   }
 
+  public boolean hasConceptProperty(String propertyName, IScope scope) {
+    return myNode.hasConceptProperty(propertyName, scope);
+  }
+
+  public String getConceptProperty(String propertyName, IScope scope) {
+    return myNode.getConceptProperty(propertyName, scope);
+  }
+
+
   protected  String getProperty(@NotNull String propertyName) {
     return myNode.getProperty(propertyName);
   }

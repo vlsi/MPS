@@ -1,12 +1,12 @@
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions;
-import jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder;
-import jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionFunction;
-import jetbrains.mps.bootstrap.structureLanguage.Cardinality;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
-import jetbrains.mps.core.BaseConcept;
+import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder;
+import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions;
+import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction;
+import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.logging.Logger;
@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.util.QueryMethodGenerated;
@@ -45,9 +46,9 @@ public class ChildSubstituteActionsHelper {
   };
 
   public static boolean isDefaultSubstitutableConcept(ConceptDeclaration concept, ConceptDeclaration expectedConcept, IScope scope) {
-    if (!concept.hasConceptProperty(ABSTRACT, scope) &&
+    if (!concept.getNode().hasConceptProperty(ABSTRACT, scope) &&
             !concept.hasConceptProperty(DONT_SUBSTITUTE_BY_DEFAULT, scope)) {
-      return SModelUtil.isAssignableConcept(concept, expectedConcept);
+      return SModelUtil_new.isAssignableConcept(concept, expectedConcept);
     }
     return false;
   }
@@ -58,7 +59,7 @@ public class ChildSubstituteActionsHelper {
       return resultActions;
     }
     IScope scope = context.getScope();
-    Language primaryLanguage = SModelUtil.getDeclaringLanguage(childConcept, scope);
+    Language primaryLanguage = SModelUtil_new.getDeclaringLanguage(childConcept, scope);
     if (primaryLanguage == null) {
       LOG.error("Couldn't build actions : couldn't get declaring language for concept " + childConcept.getDebugText());
       return resultActions;
@@ -118,7 +119,7 @@ public class ChildSubstituteActionsHelper {
     ISearchScope conceptsSearchScope = SModelSearchUtil.createConceptsFromModelLanguagesScope(parentNode.getModel(), true, scope);
     List<SNode> applicableConcepts = conceptsSearchScope.getNodes(new Condition<SNode>() {
       public boolean met(SNode object) {
-        return isDefaultSubstitutableConcept((ConceptDeclaration) object, childConcept, scope) &&
+        return isDefaultSubstitutableConcept((ConceptDeclaration) BaseAdapter.fromNode(object), childConcept, scope) &&
                 filter.met(object);
       }
     });
@@ -126,9 +127,9 @@ public class ChildSubstituteActionsHelper {
     List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
     for (SNode applicableConcept : applicableConcepts) {
       // first try to create 'smart reference' actions for this concept
-      LinkDeclaration smartReference = getSmartReference((ConceptDeclaration) applicableConcept, scope);
+      LinkDeclaration smartReference = getSmartReference((ConceptDeclaration) BaseAdapter.fromNode(applicableConcept), scope);
       if (smartReference != null) {
-        List<INodeSubstituteAction> smartActions = createSmartReferenceActions((ConceptDeclaration) applicableConcept, smartReference, parentNode, currentChild, childSetter, scope);
+        List<INodeSubstituteAction> smartActions = createSmartReferenceActions((ConceptDeclaration) BaseAdapter.fromNode(applicableConcept), smartReference, parentNode, currentChild, childSetter, scope);
         if (smartActions != null) {
           actions.addAll(smartActions);
         }
@@ -150,7 +151,7 @@ public class ChildSubstituteActionsHelper {
           final IScope scope) {
     // try to create referent-search-scope
 
-    IStatus status = ModelConstraintsUtil.getReferentSearchScope(parentNode, null, referenceNodeConcept, smartReference, scope);
+    IStatus status = ModelConstraintsUtil.getReferentSearchScope(parentNode, null, (jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration) referenceNodeConcept.getNode(), (jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration) smartReference.getNode(), scope);
     if (status.isError()) return null;
 
     // create smart actions
@@ -184,7 +185,7 @@ public class ChildSubstituteActionsHelper {
           }
 
           public String getDescriptionText(String pattern) {
-            BaseConcept parameterNode = (BaseConcept) getParameterObject();
+            BaseConcept parameterNode = (BaseConcept) BaseAdapter.fromNode((SNode) getParameterObject());
             if (parameterNode.getShortDescription() == null) {
               return "(smart ref:" + referenceNodeConcept.getName() + ") " + NodePresentationUtil.descriptionText(parameterNode, true);
             }
@@ -193,10 +194,10 @@ public class ChildSubstituteActionsHelper {
           }
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode childNode = SModelUtil.instantiateConceptDeclaration(referenceNodeConcept, model);
-            String referentRole = SModelUtil.getGenuineLinkRole(referenceLink_final);
+            SNode childNode = SModelUtil_new.instantiateConceptDeclaration((ConceptDeclaration) referenceNodeConcept, model).getNode();
+            String referentRole = SModelUtil_new.getGenuineLinkRole(referenceLink_final);
             childNode.setReferent(referentRole, (SNode) parameterObject);
-            NodeFactoryManager.setupNode(referenceNodeConcept, childNode, currentChild, parentNode, model, getScope());
+            NodeFactoryManager.setupNode((jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration) BaseAdapter.fromAdapter(referenceNodeConcept), childNode, currentChild, parentNode, model, getScope());
             return childNode;
           }
         });
@@ -217,7 +218,7 @@ public class ChildSubstituteActionsHelper {
   private static LinkDeclaration getSmartReference(ConceptDeclaration referenceDeclaringConcept, IScope scope) {
     // trick : should be no custom 'matching text'
     String expectedReferentRole = null;
-    String alias = referenceDeclaringConcept.getConceptProperty("alias", scope);
+    String alias = referenceDeclaringConcept.getNode().getConceptProperty("alias", scope);
     if (alias != null) {
       // handle pattern 'xxx <{_referent_role_}> yyy'
       if (!alias.matches(".*<\\{.+\\}>.*")) {
@@ -227,7 +228,7 @@ public class ChildSubstituteActionsHelper {
       expectedReferentRole = matches[1];
     }
 
-    List<LinkDeclaration> links = SModelSearchUtil.getReferenceLinkDeclarationsExcludingOverridden(referenceDeclaringConcept);
+    List<LinkDeclaration> links = SModelSearchUtil_new.getReferenceLinkDeclarationsExcludingOverridden(referenceDeclaringConcept);
     if (expectedReferentRole != null) {
       for (LinkDeclaration linkDeclaration : links) {
         if (expectedReferentRole.equals(linkDeclaration.getRole())) {
@@ -235,10 +236,15 @@ public class ChildSubstituteActionsHelper {
         }
       }
       LOG.warning("The '" + alias + "' doesn't match any link in " + referenceDeclaringConcept.getDebugText());
+      for (LinkDeclaration linkDeclaration : links) {
+        if (expectedReferentRole.equals(linkDeclaration.getRole())) {
+          return linkDeclaration;
+        }
+      }
     } else {
       // if concept has only one REQUIRED reference link...
       if (links.size() == 1) {
-        if (SModelUtil.getGenuineLinkSourceCardinality(links.get(0)) == Cardinality._1) {
+        if (SModelUtil_new.getGenuineLinkSourceCardinality(links.get(0)) == Cardinality._1) {
           return links.get(0);
         }
       }
@@ -268,8 +274,8 @@ public class ChildSubstituteActionsHelper {
     SModelDescriptor actionsModelDescr = language.getActionsModelDescriptor();
     if (actionsModelDescr != null) {
       // find appropriate actions builder
-      List<SNode> roots = actionsModelDescr.getSModel().getRoots();
-      for (SNode root : roots) {
+      List<BaseAdapter> roots = actionsModelDescr.getSModel().getRootsAdapters();
+      for (BaseAdapter root : roots) {
         if (root instanceof NodeSubstituteActions) {
           Iterator<NodeSubstituteActionsBuilder> iterator = ((NodeSubstituteActions) root).actionsBuilders();
           while (iterator.hasNext()) {
@@ -278,7 +284,7 @@ public class ChildSubstituteActionsHelper {
             ConceptDeclaration applicableConcept = actionsBuilder.getApplicableConcept();
 
             //and think better about of the order of arguments of "isAssignableConcept" - this is correct: 
-            if (SModelUtil.isAssignableConcept(applicableConcept, childConcept) &&
+            if (SModelUtil_new.isAssignableConcept(applicableConcept, childConcept) &&
                     satisfiesPrecondition(actionsBuilder, parentNode, context)) {
               actionsBuilders.add(actionsBuilder);
             }
@@ -298,7 +304,7 @@ public class ChildSubstituteActionsHelper {
     NodeSubstitutePreconditionFunction precondition = actionsBuilder.getPrecondition();
     // precondition is optional
     if (precondition != null) {
-      String methodName = ActionQueryMethodName.nodeSubstituteActionsBuilder_Precondition(actionsBuilder);
+      String methodName = ActionQueryMethodName.nodeSubstituteActionsBuilder_Precondition((jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder) actionsBuilder.getNode());
       Object[] args = new Object[]{parentNode, context.getScope(), context};
       SModel model = actionsBuilder.getModel();
       try {
@@ -346,12 +352,12 @@ public class ChildSubstituteActionsHelper {
 
     Object[] args1 = new Object[]{parentNode,
             currentChild,
-            childConcept,
+            childConcept.getNode(),
             childSetter,
             context};
     Object[] args2 = new Object[]{parentNode,
             currentChild,
-            childConcept,
+            childConcept.getNode(),
             childSetter,
             context.getScope()};
     String methodName = "nodeSubstituteActionsBuilder_ActionsFactory_" + factoryQueryMethodId;

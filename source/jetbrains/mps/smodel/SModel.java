@@ -148,7 +148,7 @@ public class SModel implements Iterable<SNode> {
     return CollectionUtil.filter(cls, getRoots());
   }
 
-  public List<BaseAdapter> getRootsAdaptors() {
+  public List<BaseAdapter> getRootsAdapters() {
     List<BaseAdapter> result = new ArrayList<BaseAdapter>();
     for (SNode root : getRoots()) {
       result.add(root.getAdapter());

@@ -70,10 +70,10 @@ public class SModelSearchUtil_new {
   }
 
   public static List<LinkDeclaration> getReferenceLinkDeclarationsExcludingOverridden(IConceptHierarchyScope searchScope) {
-    Condition<SNode> condition = new AndCondition<SNode>(new Condition() {
-      public boolean met(Object object) {
-        return object instanceof LinkDeclaration &&
-                ((LinkDeclaration) object).getMetaClass() == LinkMetaclass.reference;
+    Condition<SNode> condition = new AndCondition<SNode>(new Condition<SNode>() {
+      public boolean met(SNode object) {
+        return BaseAdapter.fromNode(object) instanceof LinkDeclaration &&
+                ((LinkDeclaration) BaseAdapter.fromNode(object)).getMetaClass() == LinkMetaclass.reference;
       }
     }, new SModelSearchUtil_new._LinkDeclarationsExcludingOverridden());
     return BaseAdapter.toAdapters(LinkDeclaration.class, searchScope.getNodes(condition));

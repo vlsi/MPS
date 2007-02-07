@@ -5,6 +5,7 @@ import jetbrains.mps.core.NamedConcept;
 import jetbrains.mps.core.INamedConcept;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
@@ -55,6 +56,10 @@ public class NodePresentationUtil {
 
   public static String descriptionText(SNode node) {
     return descriptionText(node, false);
+  }
+
+  public static String descriptionText(BaseAdapter node, boolean referent_presentation) {
+    return descriptionText(BaseAdapter.fromAdapter(node), referent_presentation);
   }
 
   public static String descriptionText(SNode node, boolean referent_presentation) {
