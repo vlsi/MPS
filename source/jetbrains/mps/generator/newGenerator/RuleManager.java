@@ -6,9 +6,10 @@
  */
 package jetbrains.mps.generator.newGenerator;
 
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.transformation.TLBase.*;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.transformation.TLBase.structure.*;
 import jetbrains.mps.generator.template.*;
+import jetbrains.mps.smodel.BaseAdapter;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -64,7 +65,7 @@ public class RuleManager {
   private void initRules() {
     List<MappingConfiguration> mappingConfigs = new LinkedList<MappingConfiguration>();
 
-    mappingConfigs.addAll(getGenerator().getGeneratorSessionContext().getMappingConfigurations());
+    mappingConfigs.addAll(BaseAdapter.toAdapters(MappingConfiguration.class, getGenerator().getGeneratorSessionContext().getMappingConfigurations()));
 
     for (MappingConfiguration mappingConfig : mappingConfigs) {
       // output root concepts

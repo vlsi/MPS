@@ -1,15 +1,25 @@
 package jetbrains.mps.generator.newGenerator;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.generator.template.AbstractTemplateGenerator;
 import jetbrains.mps.generator.GenerationFailedException;
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.template.AbstractNodeBuilderManager;
+import jetbrains.mps.generator.template.AbstractTemplateGenerator;
 import jetbrains.mps.generator.template.INodeBuilder;
 import jetbrains.mps.generator.template.ITemplateGeneratorState;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.transformation.TLBase.structure.*;
+import jetbrains.mps.transformation.TLBase.structure.CreateRootRule;
+import jetbrains.mps.transformation.TLBase.structure.MappingRule;
+import jetbrains.mps.transformation.TLBase.structure.Root_MappingRule;
+import jetbrains.mps.transformation.TLBase.structure.TemplateSwitch;
+import jetbrains.mps.transformation.TLBase.structure.WeavingRule;
+import jetbrains.mps.transformation.TLBase.structure.Weaving_MappingRule;
 import jetbrains.mps.transformation.TLBase.*;
 import jetbrains.mps.typesystem.ITypeChecker;
 import jetbrains.mps.util.Condition;
@@ -72,7 +82,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
       myModel.removeRoot(rootNode);
     }
     for (SNode rootNode : myModel.getRoots()) {
-      List<ConceptDeclaration> abandonedRootConcepts = BaseAdapter.toAdapters(ConceptDeclaration.class, ruleManager.getAbandonedRootConcepts());
+      List<ConceptDeclaration> abandonedRootConcepts = ruleManager.getAbandonedRootConcepts();
       for (ConceptDeclaration abandonedRootConcept : abandonedRootConcepts) {
         if(rootNode.isInstanceOfConcept(abandonedRootConcept, getScope())){
           myModel.removeRoot(rootNode);
@@ -209,7 +219,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     return null;  //To change body of implemented methods use File | Settings | File Templates.
   }
 
-  public TemplateDeclaration getTemplateForSwitchCase(SNode inputNode, TemplateSwitch templateSwitch) {
+  public jetbrains.mps.transformation.TLBase.TemplateDeclaration getTemplateForSwitchCase(SNode sourceNode, jetbrains.mps.transformation.TLBase.TemplateSwitch templateSwitch) {
     return null;  //To change body of implemented methods use File | Settings | File Templates.
   }
 

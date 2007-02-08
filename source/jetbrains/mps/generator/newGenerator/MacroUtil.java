@@ -1,11 +1,12 @@
 package jetbrains.mps.generator.newGenerator;
 
-import jetbrains.mps.transformation.TLBase.PropertyMacro;
-import jetbrains.mps.transformation.TLBase.PropertyMacro_GetPropertyValue;
-import jetbrains.mps.transformation.TLBase.ReferenceMacro;
-import jetbrains.mps.transformation.TLBase.ReferenceMacro_GetReferent;
+import jetbrains.mps.transformation.TLBase.structure.PropertyMacro;
+import jetbrains.mps.transformation.TLBase.structure.PropertyMacro_GetPropertyValue;
+import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro;
+import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.util.NameUtil;
@@ -29,7 +30,7 @@ public class MacroUtil {
     if (function != null) {
       String templateValue = templateNode.getProperty(propertyName);
 
-      String methodName = TemplateFunctionMethodName.propertyMacro_GetPropertyValue(function);
+      String methodName = TemplateFunctionMethodName.propertyMacro_GetPropertyValue(function.getNode());
       Object[] args = new Object[]{
               sourceNode,
               templateValue,
@@ -41,7 +42,7 @@ public class MacroUtil {
       try {
         propertyValue = (String) QueryMethodGenerated.invoke(methodName, args, propertyMacro.getModel());
       } catch (Exception e) {
-        generator.showErrorMessage(sourceNode, templateNode, propertyMacro, "couldn't evaluate property macro");
+        generator.showErrorMessage(sourceNode, templateNode, BaseAdapter.fromAdapter(propertyMacro), "couldn't evaluate property macro");
         LOG.error(e);
         return;
       }
@@ -67,7 +68,7 @@ public class MacroUtil {
     ReferenceMacro_GetReferent function = referenceMacro.getReferentFunction();
     if (function != null) {
       SNode templateValue = templateNode.getReferent(linkRole);
-      String methodName = TemplateFunctionMethodName.referenceMacro_GetReferent(function);
+      String methodName = TemplateFunctionMethodName.referenceMacro_GetReferent(function.getNode());
       Object[] args = new Object[]{
               sourceNode,
               templateValue,
@@ -79,7 +80,7 @@ public class MacroUtil {
       try {
         referentNode = (SNode) QueryMethodGenerated.invoke(methodName, args, referenceMacro.getModel());
       } catch (Exception e) {
-        generator.showErrorMessage(sourceNode, templateNode, referenceMacro, "couldn't evaluate reference macro");
+        generator.showErrorMessage(sourceNode, templateNode, referenceMacro.getNode(), "couldn't evaluate reference macro");
         LOG.error(e);
         return;
       }

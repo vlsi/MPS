@@ -1,7 +1,7 @@
 package jetbrains.mps.generator.newGenerator;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.transformation.TLBase.ReferenceMacro;
+import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro;
 
 /**
  * Created by: Sergey Dmitriev
