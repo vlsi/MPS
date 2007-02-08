@@ -1,9 +1,11 @@
 package jetbrains.mps.generator.template;
 
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.transformation.TLBase.Reduction_MappingRule;
+import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.transformation.TLBase.structure.Reduction_MappingRule;
+import jetbrains.mps.transformation.TLBase.BaseMappingRule;
 
 import java.util.*;
 
@@ -19,7 +21,7 @@ public class FastRuleFinder {
 
   public FastRuleFinder(List<Reduction_MappingRule> reductionRules) {
     myRuleList = reductionRules;
-    ConceptDeclaration baseConcept = SModelUtil.getBaseConcept();
+    ConceptDeclaration baseConcept = SModelUtil_new.getBaseConcept();
     myRules_applicableExactly.put(baseConcept, new LinkedList<Reduction_MappingRule>());
     myRules_applicableInheritor.put(baseConcept, new LinkedList<Reduction_MappingRule>());
 
@@ -96,18 +98,18 @@ public class FastRuleFinder {
   }
 
   public SNode findReductionRule(SNode node, ITemplateGenerator generator) {
-    ConceptDeclaration concept = node.getConceptDeclaration__();
+    ConceptDeclaration concept = node.getConceptDeclarationAdapter();
 
     List<Reduction_MappingRule> allRules = myRules_all.get(concept);
     if (allRules == null) {
       // lazy init: get all rules from inherited concepts
-      cacheAllApplicableRules(concept, SModelUtil.getBaseConcept());
+      cacheAllApplicableRules(concept, SModelUtil_new.getBaseConcept());
       allRules = myRules_all.get(concept);
     }
 
     for (Reduction_MappingRule rule : allRules) {
-      if (TemplateGenUtil.checkConditionForBaseMappingRule(node, rule, generator)) {
-        return rule;
+      if (TemplateGenUtil.checkConditionForBaseMappingRule(node, (BaseMappingRule) rule.getNode(), generator)) {
+        return BaseAdapter.fromAdapter(rule);
       }
     }
     return null;
@@ -117,10 +119,10 @@ public class FastRuleFinder {
    * for test
    */
   public SNode findReductionRule_SLOW(SNode node, ITemplateGenerator generator) {
-    ConceptDeclaration concept = node.getConceptDeclaration(generator.getScope());
+    ConceptDeclaration concept = node.getConceptDeclarationAdapter(generator.getScope());
     for (Reduction_MappingRule rule : myRuleList) {
-      if (TemplateGenUtil.checkPremiseForBaseMappingRule(node, concept, rule, generator)) {
-        return rule;
+      if (TemplateGenUtil.checkPremiseForBaseMappingRule(node, (jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration) concept.getNode(), (BaseMappingRule) rule.getNode(), generator)) {
+        return BaseAdapter.fromAdapter(rule);
       }
     }
     return null;
