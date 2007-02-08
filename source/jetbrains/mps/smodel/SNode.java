@@ -1640,6 +1640,11 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return null;
   }
 
+  public jetbrains.mps.bootstrap.structureLanguage.structure.ConceptProperty findConceptPropertyAdapter(String propertyName, IScope scope) {
+    return (jetbrains.mps.bootstrap.structureLanguage.structure.ConceptProperty) BaseAdapter.fromNode(findConceptProperty(propertyName, scope));
+  }
+
+
   public ConceptProperty findConceptProperty(String propertyName, IScope scope) {
     SNode node = this;
 
