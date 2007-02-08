@@ -39,6 +39,9 @@ public class QueriesGenerated {
   public static String propertyMacro_GetPropertyValue_1170959003472(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return generator.getGeneratorSessionContext().createUniqueName("zMapper");
   }
+  public static String propertyMacro_GetPropertyValue_1170959486472(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return generator.getGeneratorSessionContext().createUniqueName("zSelector");
+  }
   public static String propertyMacro_GetPropertyValue_1167778587376(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return generator.getGeneratorSessionContext().createUniqueName("_zCursor");
   }
@@ -67,6 +70,9 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(node, "body", true);
   }
   public static SNode sourceNodeQuery_1170959067752(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "body", true);
+  }
+  public static SNode sourceNodeQuery_1170959592162(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "body", true);
   }
   public static SNode sourceNodeQuery_1168287937464(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -105,6 +111,12 @@ public class QueriesGenerated {
     return QueriesUtil.create_Closure_returnedType(node, generator.getTargetModel(), generator.getTypeChecker());
   }
   public static SNode mapSrcMacro_mapper_1170959169275(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.create_Closure_returnedType(node, generator.getTargetModel(), generator.getTypeChecker());
+  }
+  public static SNode mapSrcMacro_mapper_1170959580916(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.create_Closure_returnedType(node, generator.getTargetModel(), generator.getTypeChecker());
+  }
+  public static SNode mapSrcMacro_mapper_1170959570489(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return QueriesUtil.create_Closure_returnedType(node, generator.getTargetModel(), generator.getTypeChecker());
   }
 }
