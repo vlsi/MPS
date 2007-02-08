@@ -1,23 +1,17 @@
 package jetbrains.mps.baseLanguage;
 
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModelUtil;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.util.NameUtil;
-
-import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
-import jetbrains.mps.baseLanguage.structure.Interface;
+import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
+import jetbrains.mps.baseLanguage.structure.Interface;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.NameUtil;
 
 import java.util.Iterator;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Jun 2, 2006
- * Time: 8:11:19 PM
- * To change this template use File | Settings | File Templates.
+ * Igor Alshannikov
+ * Jun 2, 2006
  */
 public class BaseLanguageUtil_new {
   public static boolean isAssignable(Classifier fromClassifier, String toClassifierFqName, IScope scope) {
@@ -70,6 +64,13 @@ public class BaseLanguageUtil_new {
     }
     // old
     return subClass.getExtendedClass();
+  }
+
+  public static ClassifierType createObjectClassType(SModel model, IScope scope) {
+    ClassConcept objectClass = SModelUtil_new.findNodeByFQName("java.lang.Object", ClassConcept.class, scope);
+    ClassifierType objectType = ClassifierType.newInstance(model);
+    objectType.setClassifier(objectClass);
+    return objectType;
   }
 
 }
