@@ -837,7 +837,7 @@ public class TemplateGenUtil {
   }
 
   private static INodeBuilder createNodeBuilderForSwitch(SNode sourceNode, TemplateSwitch templateSwitch, String mappingName, ITemplateGenerator generator) {
-    TemplateDeclaration templateForSwitchCase = (TemplateDeclaration) BaseAdapter.fromNode(generator.getTemplateForSwitchCase(sourceNode, (jetbrains.mps.transformation.TLBase.TemplateSwitch) templateSwitch.getNode()));
+    TemplateDeclaration templateForSwitchCase = (TemplateDeclaration) generator.getTemplateForSwitchCase(sourceNode, templateSwitch);
     if (templateForSwitchCase == null) {
       return null;
     }

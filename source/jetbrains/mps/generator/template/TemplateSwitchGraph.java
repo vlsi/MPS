@@ -2,7 +2,8 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.transformation.TLBase.TemplateSwitch;
+import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.transformation.TLBase.structure.TemplateSwitch;
 
 import java.util.*;
 
@@ -18,7 +19,7 @@ public class TemplateSwitchGraph {
 
   public TemplateSwitchGraph(List<SModelDescriptor> templateModels) {
     for (SModelDescriptor templateModel : templateModels) {
-      for (SNode root : templateModel.getSModel().getRoots()) {
+      for (BaseAdapter root : templateModel.getSModel().getRootsAdapters()) {
         if (root instanceof TemplateSwitch) {
           if (myTemplateSwitchToGraphNodeMap.get((TemplateSwitch) root) == null) {
             addSwitch((TemplateSwitch) root);

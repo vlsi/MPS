@@ -11,8 +11,8 @@ import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.ITemplateLanguageConstants;
-import jetbrains.mps.transformation.TLBase.TemplateDeclaration;
-import jetbrains.mps.transformation.TLBase.TemplateSwitch;
+import jetbrains.mps.transformation.TLBase.structure.TemplateDeclaration;
+import jetbrains.mps.transformation.TLBase.structure.TemplateSwitch;
 import jetbrains.mps.typesystem.ITypeChecker;
 import jetbrains.mps.util.Condition;
 

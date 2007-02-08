@@ -20,6 +20,7 @@ import jetbrains.mps.transformation.TLBase.structure.Root_MappingRule;
 import jetbrains.mps.transformation.TLBase.structure.TemplateSwitch;
 import jetbrains.mps.transformation.TLBase.structure.WeavingRule;
 import jetbrains.mps.transformation.TLBase.structure.Weaving_MappingRule;
+import jetbrains.mps.transformation.TLBase.structure.TemplateDeclaration;
 import jetbrains.mps.transformation.TLBase.*;
 import jetbrains.mps.typesystem.ITypeChecker;
 import jetbrains.mps.util.Condition;
@@ -219,7 +220,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     return null;  //To change body of implemented methods use File | Settings | File Templates.
   }
 
-  public jetbrains.mps.transformation.TLBase.TemplateDeclaration getTemplateForSwitchCase(SNode sourceNode, jetbrains.mps.transformation.TLBase.TemplateSwitch templateSwitch) {
+  public TemplateDeclaration getTemplateForSwitchCase(SNode sourceNode, TemplateSwitch templateSwitch) {
     return null;  //To change body of implemented methods use File | Settings | File Templates.
   }
 
