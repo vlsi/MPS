@@ -36,6 +36,9 @@ public class QueriesGenerated {
   public static String propertyMacro_GetPropertyValue_1170958681801(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return generator.getGeneratorSessionContext().createUniqueName("zValueSupplier");
   }
+  public static String propertyMacro_GetPropertyValue_1170976422667(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(node, "defaultInputElement", true), "name");
+  }
   public static String propertyMacro_GetPropertyValue_1170959003472(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return generator.getGeneratorSessionContext().createUniqueName("zMapper");
   }
@@ -107,8 +110,14 @@ public class QueriesGenerated {
   public static SNode mapSrcMacro_mapper_1170957401571(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return QueriesUtil.create_Closure_returnedType(node, generator.getTargetModel(), generator.getTypeChecker());
   }
+  public static SNode mapSrcMacro_mapper_1170976176384(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.create_ClosureWithInput_inputElementType(node, generator);
+  }
   public static SNode mapSrcMacro_mapper_1170959249892(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return QueriesUtil.create_Closure_returnedType(node, generator.getTargetModel(), generator.getTypeChecker());
+  }
+  public static SNode mapSrcMacro_mapper_1170976265295(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.create_ClosureWithInput_inputElementType(node, generator);
   }
   public static SNode mapSrcMacro_mapper_1170959169275(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return QueriesUtil.create_Closure_returnedType(node, generator.getTargetModel(), generator.getTypeChecker());
