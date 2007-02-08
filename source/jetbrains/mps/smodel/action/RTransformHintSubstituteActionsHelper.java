@@ -67,7 +67,7 @@ import java.util.List;
             return false;
           }
         });
-        actionsBuilders.addAll((List) list);
+        actionsBuilders.addAll((List) BaseAdapter.toAdapters(list));
       }
     }
     return actionsBuilders;

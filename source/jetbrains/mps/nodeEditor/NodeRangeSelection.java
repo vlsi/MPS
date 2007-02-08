@@ -149,10 +149,6 @@ public class NodeRangeSelection implements IKeyboardHandler {
         myEditorComponent.executeComponentAction(EditorCellAction.CUT);
         return true;
       }
-      if (actionType.equals(EditorCellAction.RENDER_TEXT)) {
-        myEditorComponent.executeComponentAction(EditorCellAction.RENDER_TEXT);
-        return true;
-      }
     }
 
     if (keyEvent.getKeyCode() == KeyEvent.VK_ESCAPE) {

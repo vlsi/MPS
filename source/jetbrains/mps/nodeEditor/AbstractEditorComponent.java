@@ -18,7 +18,6 @@ import jetbrains.mps.nodeEditor.folding.CellAction_FoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
-import jetbrains.mps.nodeEditor.text.CellAction_RenderText;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.event.*;
@@ -189,8 +188,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myActionMap.put(EditorCellAction.PASTE, new CellAction_PasteNode());
     myActionMap.put(EditorCellAction.PASTE_BEFORE, new CellAction_PasteNodeRelative(true));
     myActionMap.put(EditorCellAction.PASTE_AFTER, new CellAction_PasteNodeRelative(false));
-    // ----
-    myActionMap.put(EditorCellAction.RENDER_TEXT, new CellAction_RenderText());
     // ----
     myActionMap.put(EditorCellAction.FOLD, new CellAction_FoldCell());
     myActionMap.put(EditorCellAction.UNFOLD, new CellAction_UnfoldCell());
@@ -965,16 +962,18 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   public EditorCell findNodeCellWithRole(SNode node, String role) {
     EditorCell rootCell = findNodeCell(node);
     if (rootCell == null) return null;
-    return findNodeCellWithRole(rootCell, role);
+    return findNodeCellWithRole(rootCell, role, node);
   }
 
-  private EditorCell findNodeCellWithRole(EditorCell rootCell, String role) {
+  private EditorCell findNodeCellWithRole(EditorCell rootCell, String role, SNode node) {
     if (role == null) return null;
-    if (role.equals(EditorUtil.getCellRole(rootCell))) return rootCell;
+    if (role.equals(EditorUtil.getCellRole(rootCell)) && node == rootCell.getSNode()) {
+      return rootCell;
+    }
     if (rootCell instanceof EditorCell_Collection) {
       EditorCell_Collection collection = (EditorCell_Collection) rootCell;
       for (EditorCell child : collection) {
-        EditorCell result = findNodeCellWithRole(child, role);
+        EditorCell result = findNodeCellWithRole(child, role, node);
         if (result != null) return result;
       }
     }
