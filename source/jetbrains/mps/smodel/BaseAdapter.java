@@ -449,4 +449,9 @@ public abstract class BaseAdapter {
       }
     };
   }
+
+  public static String getConceptFqName(Class<? extends BaseAdapter> cls) {
+    return cls.getName();
+  }
+
 }
