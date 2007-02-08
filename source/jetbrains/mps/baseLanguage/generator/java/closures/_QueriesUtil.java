@@ -143,7 +143,7 @@ public class _QueriesUtil {
             generator);
   }
 
-  public static SNode create_ClosureContextObject_for_EnclosingClosureOrContextOwner(SNode nodeInsideClosure, ITemplateGenerator generator) {
+  public static SNode create_closureContextObject(SNode nodeInsideClosure, ITemplateGenerator generator) {
     // find enclosing closure or closure context owner
     BaseAdapter enclosingClosureOrContextOwner = nodeInsideClosure.getAdapter().findParent(new Condition<BaseAdapter>() {
       public boolean met(BaseAdapter object) {
@@ -189,7 +189,7 @@ public class _QueriesUtil {
     return BaseAdapter.fromAdapter(NullLiteral.newInstance(model));
   }
 
-  public static SNode create_ClosureAdapterConstructorArg_enclosingClass(SNode nodeInsideClosure, ITemplateGenerator generator) {
+  public static SNode create_enclosingClassObject(SNode nodeInsideClosure, ITemplateGenerator generator) {
     Class[] classes = new Class[]{BaseMethodDeclaration.class, Closure.class};
     BaseAdapter enclosingNode = nodeInsideClosure.getAdapter().findFirstParent(classes);
     if (enclosingNode instanceof BaseMethodDeclaration &&

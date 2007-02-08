@@ -3,7 +3,6 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.annotations.AttributeConcept;
 import jetbrains.mps.annotations.LinkAttributeConcept;
 import jetbrains.mps.annotations.PropertyAttributeConcept;
-import jetbrains.mps.bootstrap.structureLanguage.*;
 import jetbrains.mps.bootstrap.structureLanguage.AnnotationLinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty;
 import jetbrains.mps.bootstrap.structureLanguage.Cardinality;
@@ -15,7 +14,6 @@ import jetbrains.mps.bootstrap.structureLanguage.IntegerConceptProperty;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty;
-import jetbrains.mps.bootstrap.structureLanguage.structure.*;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.command.undo.IUndoableAction;
 import jetbrains.mps.ide.command.undo.UndoManager;
@@ -78,7 +76,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   private Set<String> myPropertyGettersInProgress = new HashSet<String>();
   private Set<String> mySetReferentEventHandlersInProgress = new HashSet<String>();
 
-  private BaseAdapter myApter;
+  private BaseAdapter myAdapter;
 
   protected SNode(@NotNull SModel model) {
     myModel = model;
@@ -1850,12 +1848,12 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public BaseAdapter getAdapter() {
-    if (myApter != null) return myApter;
+    if (myAdapter != null) return myAdapter;
     try {
       Constructor c = QueryMethod.getAdapterConstructor(getClass().getName());
       if (c != null) {
-        myApter = (BaseAdapter) c.newInstance(this);
-        return myApter;
+        myAdapter = (BaseAdapter) c.newInstance(this);
+        return myAdapter;
       }
     } catch (IllegalAccessException e) {
       LOG.error(e);
