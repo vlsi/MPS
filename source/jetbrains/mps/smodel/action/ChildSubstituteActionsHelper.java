@@ -151,7 +151,7 @@ public class ChildSubstituteActionsHelper {
           final IScope scope) {
     // try to create referent-search-scope
 
-    IStatus status = ModelConstraintsUtil.getReferentSearchScope(parentNode, null, (jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration) referenceNodeConcept.getNode(), (jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration) smartReference.getNode(), scope);
+    IStatus status = ModelConstraintsUtil.getReferentSearchScope(parentNode, null, referenceNodeConcept, smartReference, scope);
     if (status.isError()) return null;
 
     // create smart actions

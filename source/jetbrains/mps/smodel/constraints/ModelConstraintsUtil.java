@@ -1,13 +1,10 @@
 package jetbrains.mps.smodel.constraints;
 
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.Status;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 
@@ -28,7 +25,7 @@ public class ModelConstraintsUtil {
   }
 
   public static IStatus getReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, ConceptDeclaration referenceNodeConcept, LinkDeclaration referenceLinkDeclaration, IScope scope) {
-    String genuineReferenceRole = SModelUtil.getGenuineLinkRole(referenceLinkDeclaration);
+    String genuineReferenceRole = SModelUtil_new.getGenuineLinkRole(referenceLinkDeclaration);
     INodeReferentSearchScopeProvider scopeProvider = ModelConstraintsManager.getInstance().getNodeReferentSearchScopeProvider(referenceNodeConcept, genuineReferenceRole);
     if (scopeProvider != null) {
       if (scopeProvider.canCreateNodeReferentSearchScope(model, enclosingNode, referenceNode, scope)) {

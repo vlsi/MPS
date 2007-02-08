@@ -28,7 +28,7 @@ import java.util.List;
     }
 
     // search scope
-    IStatus status = ModelConstraintsUtil.getReferentSearchScope(referenceNode.getParent(), referenceNode, (jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration) referenceNodeConcept.getNode(), (jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration) linkDeclaration.getNode(), context.getScope());
+    IStatus status = ModelConstraintsUtil.getReferentSearchScope(referenceNode.getParent(), referenceNode, referenceNodeConcept, linkDeclaration, context.getScope());
     if (status.isError()) {
       LOG.error("Couldn't create referent search scope : " + status.getMessage());
       return new LinkedList<INodeSubstituteAction>();

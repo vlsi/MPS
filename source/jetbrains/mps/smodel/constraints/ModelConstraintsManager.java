@@ -1,8 +1,9 @@
 package jetbrains.mps.smodel.constraints;
 
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.core.BaseConcept;
-import jetbrains.mps.helgins.RuntimeTypeVariable;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.component.Dependency;
+import jetbrains.mps.core.structure.NamedConcept;
+import jetbrains.mps.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.GlobalScope;
@@ -11,7 +12,6 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.component.Dependency;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -122,7 +122,7 @@ public class ModelConstraintsManager {
 
   public INodeReferentSetEventHandler getNodeReferentSetEventHandler(SNode node, String referentRole) {
     // todo: optimization needed?
-    ConceptDeclaration nodeConcept = node.getNodeConcept();
+    ConceptDeclaration nodeConcept = node.getNodeConceptAdapter();
     while (nodeConcept != null) {
       String conceptFqName = NameUtil.nodeFQName(nodeConcept);
       INodeReferentSetEventHandler handler = myNodeReferentSetEventHandlersMap.get(conceptFqName + "#" + referentRole);
@@ -158,18 +158,18 @@ public class ModelConstraintsManager {
   }
 
   public INodePropertyGetter getNodePropertyGetter(SNode node, String propertyName) {
-    return (INodePropertyGetter) getNodePropertyGetterOrSetter(node, propertyName, false);
+    return (INodePropertyGetter) getNodePropertyGetterOrSetter(node.getAdapter(), propertyName, false);
   }
 
   public INodePropertySetter getNodePropertySetter(SNode node, String propertyName) {
-    return (INodePropertySetter) getNodePropertyGetterOrSetter(node, propertyName, true);
+    return (INodePropertySetter) getNodePropertyGetterOrSetter(node.getAdapter(), propertyName, true);
   }
 
-  public IModelConstraints getNodePropertyGetterOrSetter(@NotNull SNode node, @NotNull String propertyName, boolean isSetter) {
-    String namespace = NameUtil.nodeLanguageNamespace(node);
+  public IModelConstraints getNodePropertyGetterOrSetter(@NotNull BaseAdapter node, @NotNull String propertyName, boolean isSetter) {
+    String namespace = NameUtil.nodeLanguageNamespace(node.getNode());
 
     // 'bootstrap' properties
-    if (namespace.equals("jetbrains.mps.bootstrap.structureLanguage") && propertyName.equals(BaseConcept.NAME)) {
+    if (namespace.equals("jetbrains.mps.bootstrap.structureLanguage") && propertyName.equals(NamedConcept.NAME)) {
       return null;
     }
     if (namespace.equals("jetbrains.mps.projectLanguage")) {
@@ -187,7 +187,7 @@ public class ModelConstraintsManager {
 
 //    System.out.println("find getter for <" + propertyName + "> in " + node.getDebugText());
 
-    String sourceConceptFqName = NameUtil.nodeConceptFQName(node);
+    String sourceConceptFqName = NameUtil.nodeConceptFQName(node.getNode());
     String sourceKey = sourceConceptFqName + "#" + propertyName;
 
     if (isSetter) {
