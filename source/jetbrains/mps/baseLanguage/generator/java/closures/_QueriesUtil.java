@@ -189,4 +189,22 @@ public class _QueriesUtil {
     return BaseAdapter.fromAdapter(NullLiteral.newInstance(model));
   }
 
+  public static SNode create_ClosureAdapterConstructorArg_enclosingClass(SNode nodeInsideClosure, ITemplateGenerator generator) {
+    Class[] classes = new Class[]{BaseMethodDeclaration.class, Closure.class};
+    BaseAdapter enclosingNode = nodeInsideClosure.getAdapter().findFirstParent(classes);
+    if (enclosingNode instanceof BaseMethodDeclaration &&
+            !(enclosingNode instanceof StaticMethodDeclaration)) {
+      return ThisExpression.newInstance(generator.getTargetModel()).getNode();
+    }
+    if (enclosingNode instanceof Closure) {
+      INodeBuilder builder = generator.findNodeBuilderForSource(enclosingNode, ClosuresMappingId.CLOSURE__ADAPTER_CLASS);
+      ClassConcept closureAdapterClass = (ClassConcept) BaseAdapter.fromNode(builder.getTargetNode());
+      FieldDeclaration field = JavaModelUtil_new.findField(closureAdapterClass, ClosuresMappingId.NAME__CLOSURE_ADAPTER__ENCLOSING_CLASS_FIELD);
+      FieldReference fieldRef = FieldReference.newInstance(generator.getTargetModel());
+      fieldRef.setInstance(ThisExpression.newInstance(generator.getTargetModel()));
+      fieldRef.setFieldDeclaration(field);
+      return BaseAdapter.fromAdapter(fieldRef);
+    }
+    return NullLiteral.newInstance(generator.getTargetModel()).getNode();
+  }
 }
