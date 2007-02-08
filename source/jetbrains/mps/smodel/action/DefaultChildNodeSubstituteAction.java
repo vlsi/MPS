@@ -51,7 +51,7 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
       parameterObject = BaseAdapter.fromNode(((SNode) parameterObject));
     }
     if (parameterObject instanceof ConceptDeclaration) {
-      return NodeFactoryManager.createNode((jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration) ((ConceptDeclaration) parameterObject).getNode(), myCurrentChild, getSourceNode(), model, getScope());
+      return NodeFactoryManager.createNode(((ConceptDeclaration) parameterObject), myCurrentChild, getSourceNode(), model, getScope());
     }
     if (parameterObject instanceof SNode) {
       throw new RuntimeException("Couldn't create child node. Parameter object: " + ((SNode) parameterObject).getDebugText());

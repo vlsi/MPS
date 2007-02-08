@@ -86,7 +86,7 @@ public class CreateRootNodeGroup extends ActionGroup {
 
         CommandProcessor.instance().executeCommand(new Runnable() {
           public void run() {
-            node[0] = NodeFactoryManager.createNode((ConceptDeclaration) nodeConcept.getNode(), null, null, modelDescriptor.getSModel(), context.getScope());
+            node[0] = NodeFactoryManager.createNode((jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) nodeConcept.getNode().getAdapter(), null, null, modelDescriptor.getSModel(), context.getScope());
             modelDescriptor.getSModel().addRoot(node[0]);
           }
         });

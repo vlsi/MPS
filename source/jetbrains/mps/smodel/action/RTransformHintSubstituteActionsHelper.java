@@ -1,9 +1,9 @@
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder;
-import jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionFunction;
-import jetbrains.mps.bootstrap.actionsLanguage.RTransformTag;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActionsBuilder;
+import jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstitutePreconditionFunction;
+import jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformTag;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
@@ -45,7 +45,7 @@ import java.util.List;
   private static List<RTransformHintSubstituteActionsBuilder> getActionBuilders(final SNode sourceNode, String transformTag, final IOperationContext context) {
     List<RTransformHintSubstituteActionsBuilder> actionsBuilders = new LinkedList<RTransformHintSubstituteActionsBuilder>();
     IScope scope = context.getScope();
-    final ConceptDeclaration sourceConcept = sourceNode.getConceptDeclaration(scope);
+    final ConceptDeclaration sourceConcept = sourceNode.getConceptDeclarationAdapter(scope);
     final RTransformTag tag = RTransformTag.parseValue(transformTag);
 
     List<Language> languages = sourceNode.getModel().getLanguages(scope);
@@ -54,14 +54,14 @@ import java.util.List;
       if (actionsModel != null && actionsModel.getSModel() != null) {
         List<SNode> list = actionsModel.getSModel().allNodes(new Condition<SNode>() {
           public boolean met(SNode node) {
-            if (node instanceof RTransformHintSubstituteActionsBuilder) {
-              RTransformHintSubstituteActionsBuilder actionsBuilder = (RTransformHintSubstituteActionsBuilder) node;
+            if (BaseAdapter.fromNode(node) instanceof RTransformHintSubstituteActionsBuilder) {
+              RTransformHintSubstituteActionsBuilder actionsBuilder = (RTransformHintSubstituteActionsBuilder) BaseAdapter.fromNode(node);
               // same tag?
               if (actionsBuilder.getTransformTag() != tag) {
                 return false;
               }
               // is applicable ?
-              return SModelUtil.isAssignableConcept(sourceConcept, actionsBuilder.getApplicableConcept()) &&
+              return SModelUtil_new.isAssignableConcept(sourceConcept, actionsBuilder.getApplicableConcept()) &&
                       satisfiesPrecondition(actionsBuilder, sourceNode, context);
             }
             return false;

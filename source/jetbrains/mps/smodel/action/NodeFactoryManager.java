@@ -1,8 +1,8 @@
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.bootstrap.actionsLanguage.NodeFactory;
-import jetbrains.mps.bootstrap.actionsLanguage.NodeSetupFunction;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactory;
+import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.QueryMethodGenerated;
@@ -22,15 +22,15 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
   private static Logger LOG = Logger.getLogger(NodeFactoryManager.class);
 
   public static SNode createNode(String conceptFqName, SNode sampleNode, SNode enclosingNode, SModel model, IScope scope) {
-    ConceptDeclaration conceptDeclaration = SModelUtil.findConceptDeclaration(conceptFqName, scope);
+    ConceptDeclaration conceptDeclaration = SModelUtil_new.findConceptDeclaration(conceptFqName, scope);
     return createNode(conceptDeclaration, sampleNode, enclosingNode, model, scope);
   }
 
   public static SNode createNode(ConceptDeclaration nodeConcept, SNode sampleNode, SNode enclosingNode, SModel model, IScope scope) {
-    SNode node = SModelUtil.instantiateConceptDeclaration(nodeConcept, model, false);
-    setupNode(nodeConcept, node, sampleNode, enclosingNode, model, scope);
-    SModelUtil.createNodeStructure(nodeConcept, model, node, null, node, scope, true);
-    return node;
+    BaseAdapter node = SModelUtil_new.instantiateConceptDeclaration(nodeConcept, model, false);
+    setupNode(nodeConcept, node.getNode(), sampleNode, enclosingNode, model, scope);
+    SModelUtil_new.createNodeStructure(nodeConcept, model, node, null, node, scope, true);
+    return BaseAdapter.fromAdapter(node);
   }
 
   public static void setupNode(ConceptDeclaration nodeConcept, SNode node, SNode sampleNode, SNode enclosingNode, SModel model, IScope scope) {
@@ -45,12 +45,12 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
     List<NodeFactory> nodeFactories = new LinkedList<NodeFactory>();
     ConceptDeclaration concept = nodeConcept;
     while (concept != null && nodeFactories.isEmpty()) {
-      Language language = SModelUtil.getDeclaringLanguage(concept, scope);
+      Language language = SModelUtil_new.getDeclaringLanguage(concept, scope);
       if (language == null) break;
       final ConceptDeclaration conceptF = concept;
       SModelDescriptor actionsModelDescriptor = language.getActionsModelDescriptor();
       if (actionsModelDescriptor != null) {
-        nodeFactories = actionsModelDescriptor.getSModel().allNodes(NodeFactory.class, new Condition<NodeFactory>() {
+        nodeFactories = actionsModelDescriptor.getSModel().allAdapters(NodeFactory.class, new Condition<NodeFactory>() {
           public boolean met(NodeFactory object) {
             return object.getApplicableConcept() == conceptF;
           }

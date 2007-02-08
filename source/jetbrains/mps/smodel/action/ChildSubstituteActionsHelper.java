@@ -197,7 +197,7 @@ public class ChildSubstituteActionsHelper {
             SNode childNode = SModelUtil_new.instantiateConceptDeclaration((ConceptDeclaration) referenceNodeConcept, model).getNode();
             String referentRole = SModelUtil_new.getGenuineLinkRole(referenceLink_final);
             childNode.setReferent(referentRole, (SNode) parameterObject);
-            NodeFactoryManager.setupNode((jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration) BaseAdapter.fromAdapter(referenceNodeConcept), childNode, currentChild, parentNode, model, getScope());
+            NodeFactoryManager.setupNode(referenceNodeConcept, childNode, currentChild, parentNode, model, getScope());
             return childNode;
           }
         });
@@ -304,7 +304,7 @@ public class ChildSubstituteActionsHelper {
     NodeSubstitutePreconditionFunction precondition = actionsBuilder.getPrecondition();
     // precondition is optional
     if (precondition != null) {
-      String methodName = ActionQueryMethodName.nodeSubstituteActionsBuilder_Precondition((jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder) actionsBuilder.getNode());
+      String methodName = ActionQueryMethodName.nodeSubstituteActionsBuilder_Precondition(actionsBuilder);
       Object[] args = new Object[]{parentNode, context.getScope(), context};
       SModel model = actionsBuilder.getModel();
       try {
