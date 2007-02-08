@@ -461,6 +461,10 @@
       <property name="value" value="sourceNodeQueryId" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1162838948922" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1170898824252">
+      <property name="value" value="property 'sourceNodeMapperId' replaced with 'mapperFunction'" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1170898673630" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1131073187195">
       <property name="name" value="sourceNodeQueryId" />
       <link role="dataType" targetNodeId="2.1082983041843" />
@@ -491,6 +495,10 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1133037820496">
       <property name="value" value="map nodes form source list macro" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473914776" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1170898667455">
+      <property name="value" value="property 'sourceNodeMapperId' replaced with 'mapperFunction'" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1170898673630" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1133037795224">
       <property name="name" value="sourceNodeMapperId" />
