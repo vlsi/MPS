@@ -1,6 +1,6 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.project.GlobalScope;
 
 import java.lang.ref.WeakReference;
@@ -25,12 +25,12 @@ public class FastNodeFinder {
     return myStructuralState;
   }
 
-  public <T extends SNode> List<T> getNodes(Class<T> cls) {
-    ConceptDeclaration concept = SModelUtil.findConceptDeclaration(cls, GlobalScope.getInstance());
+  public <T extends BaseAdapter> List<T> getNodes(Class<T> cls) {
+    ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(cls, GlobalScope.getInstance());
     if (concept == null) {
       return new LinkedList<T>();
     }
-    return (List<T>) getNodes(concept, true);
+    return (List<T>) BaseAdapter.toAdapters(cls, getNodes(concept, true));
   }
 
   public List<SNode> getNodes(ConceptDeclaration concept, boolean includeInherited) {
@@ -56,7 +56,7 @@ public class FastNodeFinder {
       buildCache(child);
     }
 
-    ConceptDeclaration concept = root.getConceptDeclaration(GlobalScope.getInstance());
+    ConceptDeclaration concept = root.getConceptDeclarationAdapter(GlobalScope.getInstance());
     getNodes_noInheritance(concept).add(new WeakReference<SNode>(root));
 
     while (concept != null) {

@@ -237,7 +237,7 @@ public class TemplateGenUtil {
         continue;
       }
       boolean includeInheritors = rule.getApplyToConceptInheritors();
-      List<SNode> nodes = generator.getSourceModel().getModelDescriptor().getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
+      List<SNode> nodes = generator.getSourceModel().getModelDescriptor().getFastNodeFinder().getNodes((jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) applicableConcept.getAdapter(), includeInheritors);
       for (SNode node : nodes) {
         if (checkConditionForBaseMappingRule(node, rule, generator)) {
           NamedConcept template = rule.getTemplate();
@@ -267,7 +267,7 @@ public class TemplateGenUtil {
         continue;
       }
       boolean includeInheritors = rule.getApplyToConceptInheritors();
-      List<SNode> nodes = generator.getSourceModel().getModelDescriptor().getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
+      List<SNode> nodes = generator.getSourceModel().getModelDescriptor().getFastNodeFinder().getNodes((jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) applicableConcept.getAdapter(), includeInheritors);
       for (SNode applicableNode : nodes) {
         if (checkConditionForBaseMappingRule(applicableNode, rule, generator)) {
           INodeBuilder contextBuilder = getContextNodeBuilderForWeavingingRule(applicableNode, rule, generator);

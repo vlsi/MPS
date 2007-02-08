@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.languageLog.ModelLogger;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.WeakSet;
+import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.util.annotation.ForDebug;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
@@ -982,7 +983,7 @@ public class SModel implements Iterable<SNode> {
     List<E> result = new ArrayList<E>();
     SModelDescriptor modelDescriptor = getModelDescriptor();
     assert modelDescriptor != null;
-    for (E e : (Iterable<E>) modelDescriptor.getFastNodeFinder().getNodes(cls)) {
+    for (E e : (Iterable<E>) BaseAdapter.toNodes(modelDescriptor.getFastNodeFinder().getNodes(QueryMethod.getAdapterClass(cls)))) {
       if (condition.met(e)) {
         result.add(e);
       }
@@ -1025,7 +1026,7 @@ public class SModel implements Iterable<SNode> {
       if (aModel.getStereotype().equals(SModelStereotype.JAVA_STUB)) {
         SModelDescriptor modelDescriptor = aModel.getModelDescriptor();
         assert modelDescriptor != null;
-        resultNodes.addAll((Collection<? extends SN>) modelDescriptor.getFastNodeFinder().getNodes(snodeClass));
+        resultNodes.addAll((Collection<? extends SN>) BaseAdapter.toNodes(modelDescriptor.getFastNodeFinder().getNodes(QueryMethod.getAdapterClass(snodeClass))));
       } else {
         resultNodes.addAll((Collection<? extends SN>) aModel.allNodes(new Condition<SNode>() {
           public boolean met(SNode object) {
