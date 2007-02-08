@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink;
-import jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
 import java.util.List;
 import java.util.Collections;
@@ -25,7 +25,7 @@ public class ReferenceConceptLinkTargetSearchScope extends AbstractSearchScope {
 
   public ReferenceConceptLinkTargetSearchScope(SNode referenceConceptLink, IScope scope) {
     myScope = scope;
-    myReferenceConceptLink = (ReferenceConceptLink) referenceConceptLink;
+    myReferenceConceptLink = (ReferenceConceptLink) referenceConceptLink.getAdapter();
   }
 
   public List<SNode> getOwnNodes(Condition<SNode> condition) {

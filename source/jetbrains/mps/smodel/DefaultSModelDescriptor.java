@@ -410,7 +410,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     Set<SNode> result = new HashSet<SNode>();
     if (mySModel != null) {
       for (SNode root : mySModel.getRoots()) {
-        addInstances(root, concept, result, scope);
+        addInstances(root, (jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) concept.getAdapter(), result, scope);
       }
     }
     return result;
@@ -423,7 +423,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     return myFastNodeFinder;
   }
 
-  private void addInstances(SNode current, ConceptDeclaration concept, Set<SNode> result, IScope scope) {
+  private void addInstances(SNode current, jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration concept, Set<SNode> result, IScope scope) {
     if (current.isInstanceOfConcept(concept, scope)) result.add(current);
     for (SNode child : current.getChildren()) {
       addInstances(child, concept, result, scope);

@@ -1,6 +1,6 @@
 package jetbrains.mps.generator.newGenerator;
 
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.generator.template.AbstractTemplateGenerator;
 import jetbrains.mps.generator.GenerationFailedException;
 import jetbrains.mps.generator.GenerationSessionContext;
@@ -9,10 +9,7 @@ import jetbrains.mps.generator.template.INodeBuilder;
 import jetbrains.mps.generator.template.ITemplateGeneratorState;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.*;
 import jetbrains.mps.typesystem.ITypeChecker;
 import jetbrains.mps.util.Condition;
@@ -75,7 +72,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
       myModel.removeRoot(rootNode);
     }
     for (SNode rootNode : myModel.getRoots()) {
-      List<ConceptDeclaration> abandonedRootConcepts = ruleManager.getAbandonedRootConcepts();
+      List<ConceptDeclaration> abandonedRootConcepts = BaseAdapter.toAdapters(ConceptDeclaration.class, ruleManager.getAbandonedRootConcepts());
       for (ConceptDeclaration abandonedRootConcept : abandonedRootConcepts) {
         if(rootNode.isInstanceOfConcept(abandonedRootConcept, getScope())){
           myModel.removeRoot(rootNode);

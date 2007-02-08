@@ -1400,15 +1400,11 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   @NotNull
   public Language getNodeLanguage() {
-    ConceptDeclaration concept = getNodeConcept();
-    return SModelUtil.getDeclaringLanguage(concept, GlobalScope.getInstance());
+    jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration concept = getNodeConceptAdapter();
+    return SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
   }
 
   public boolean isInstanceOfConcept(jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration conceptDeclaration, IScope scope) {
-    return isInstanceOfConcept((ConceptDeclaration) conceptDeclaration.getNode(), scope);
-  }
-
-  public boolean isInstanceOfConcept(ConceptDeclaration conceptDeclaration, IScope scope) {
     if (NameUtil.nodeFQName(conceptDeclaration).equals("jetbrains.mps.core.structure.BaseConcept")) {
       return true;
     }
