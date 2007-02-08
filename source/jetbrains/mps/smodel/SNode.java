@@ -141,7 +141,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     SNode newNode;
     try {
       newNode = (SNode) super.clone();
-
+      newNode.myAdapter = null;
       newNode.myParent = null;
       newNode.myReferences = new ArrayList<SReference>();
       newNode.myChildren = new ArrayList<SNode>();
@@ -1857,12 +1857,13 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     });
   }
 
-  public BaseAdapter getAdapter() {
+  public synchronized BaseAdapter getAdapter() {
     if (myAdapter != null) return myAdapter;
     try {
       Constructor c = QueryMethod.getAdapterConstructor(getClass().getName());
       if (c != null) {
         myAdapter = (BaseAdapter) c.newInstance(this);
+        assert myAdapter.getNode() == this;
         return myAdapter;
       }
     } catch (IllegalAccessException e) {

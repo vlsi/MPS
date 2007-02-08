@@ -541,6 +541,25 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.AnonymousClassExpression" id="1170349156794">
             <node role="cls" type="jetbrains.mps.baseLanguage.AnonymousClass" id="1170349156795">
               <link role="classifier" extResolveInfo="3.[Classifier]Calendar" />
+              <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1170927268911">
+                <property name="name" value="p" />
+                <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1170927268912" />
+                <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1170927268913">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1170927357195">
+                    <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1170927357196">
+                      <property name="name" value="as" />
+                      <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1170932845375">
+                        <link role="classifier" targetNodeId="1154543408784" resolveInfo="Arraysss" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1170932803567">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1170932803568">
+                      <link role="variableDeclaration" targetNodeId="1170927357196" resolveInfo="as" />
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
