@@ -139,4 +139,7 @@ public class QueriesGenerated {
   public static SNode mapSrcMacro_mapper_1170730778912(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return QueriesUtil.createClassType_forClosure_enclosingClass(node, generator);
   }
+  public static SNode mapSrcMacro_mapper_1170898169592(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return _QueriesUtil.create_ClosureContextObject_for_EnclosingClosureOrContextOwner(node, generator);
+  }
 }

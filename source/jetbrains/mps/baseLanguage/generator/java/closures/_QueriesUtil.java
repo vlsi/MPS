@@ -3,15 +3,14 @@ package jetbrains.mps.baseLanguage.generator.java.closures;
 import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.generator.template.INodeBuilder;
 import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.generator.JavaModelUtil_new;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.util.Condition;
 
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Igor Alshannikov
@@ -142,6 +141,52 @@ public class _QueriesUtil {
             contextOwner,
             (VariableDeclaration) BaseAdapter.fromNode(varDecl),
             generator);
+  }
+
+  public static SNode create_ClosureContextObject_for_EnclosingClosureOrContextOwner(SNode nodeInsideClosure, ITemplateGenerator generator) {
+    // find enclosing closure or closure context owner
+    BaseAdapter enclosingClosureOrContextOwner = nodeInsideClosure.getAdapter().findParent(new Condition<BaseAdapter>() {
+      public boolean met(BaseAdapter object) {
+        if (object instanceof Closure) return true;
+        return ClosuresUtil.isClosureContextOwner(object.getNode());
+      }
+    });
+
+    SModel model = generator.getTargetModel();
+    if (enclosingClosureOrContextOwner instanceof Closure) {
+      Closure enclosingClosure = (Closure) enclosingClosureOrContextOwner;
+      INodeBuilder builder = generator.findNodeBuilderForSource(enclosingClosure, ClosuresMappingId.CLOSURE__ADAPTER_CLASS);
+      ClassConcept closureAdapter = (ClassConcept) BaseAdapter.fromNode(builder.getTargetNode());
+      FieldDeclaration field = JavaModelUtil_new.findField(closureAdapter, ClosuresMappingId.NAME__CLOSURE_ADAPTER__CLOSURE_CONTEXT_FIELD);
+      if (field == null) {
+        List<INodeBuilder> fieldBuilders = builder.getChildBuildersForRole(ClassConcept.FIELD);
+        for (INodeBuilder fieldBuilder : fieldBuilders) {
+          fieldBuilder.execute(generator.getState(), new HashMap<String, Object>());
+        }
+        field = JavaModelUtil_new.findField(closureAdapter, ClosuresMappingId.NAME__CLOSURE_ADAPTER__CLOSURE_CONTEXT_FIELD);
+      }
+      if (field != null) {
+        FieldReference fieldRef = FieldReference.newInstance(model);
+        fieldRef.setInstance(ThisExpression.newInstance(model));
+        fieldRef.setFieldDeclaration(field);
+        return BaseAdapter.fromAdapter(fieldRef);
+      }
+    }
+
+    if (enclosingClosureOrContextOwner != null &&
+            ClosuresUtil.isClosureContextOwner(BaseAdapter.fromAdapter(enclosingClosureOrContextOwner))) {
+      INodeBuilder builder = generator.findNodeBuilderForSource(enclosingClosureOrContextOwner, ClosuresMappingId.CONTEXT_OWNER__CLOSURE_CONTEXT__VARIABLE_DECL_STMT);
+      if (builder != null) {
+        LocalVariableDeclarationStatement varDeclStmt = (LocalVariableDeclarationStatement) BaseAdapter.fromNode(builder.getTargetNode());
+        LocalVariableDeclaration varible = varDeclStmt.getLocalVariableDeclaration();
+        LocalVariableReference variableRef = LocalVariableReference.newInstance(model);
+        variableRef.setLocalVariableDeclaration(varible);
+        return BaseAdapter.fromAdapter(variableRef);
+      }
+    }
+
+    // no variable found - return 'null'
+    return BaseAdapter.fromAdapter(NullLiteral.newInstance(model));
   }
 
 }
