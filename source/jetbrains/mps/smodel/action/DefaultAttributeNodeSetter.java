@@ -16,7 +16,7 @@ public class DefaultAttributeNodeSetter extends DefaultChildNodeSetter {
     super(linkDeclaration);
   }
 
-  public void execute(SNode parenNode, SNode oldChild, SNode newChild, IScope scope) {
+  public void doExecute(SNode parenNode, SNode oldChild, SNode newChild, IScope scope) {
     if (oldChild != null) {
       String role = oldChild.getRole_();
       assert role != null;

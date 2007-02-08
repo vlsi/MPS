@@ -22,6 +22,7 @@ public class IntelligentInputUtil {
 
   private static final Logger LOG = Logger.getLogger(IntelligentInputUtil.class);
   private static Object ourMarker = new Object();
+  private static EditorManager ourServiceEditorManager = new EditorManager();
 
   public static void processCell(EditorCell_Label cell, final EditorContext editorContext, String pattern) {
     if (pattern == null || pattern.equals("")) {
@@ -50,22 +51,40 @@ public class IntelligentInputUtil {
       List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(smallPattern, true);
       INodeSubstituteAction item = matchingActions.get(0);
       newNode = item.doSubstitute(smallPattern);
-      if (newNode == null) {
-        LOG.error("substituted node is null");
-      }
-      cellForNewNode = editorContext.createNodeCell(newNode);
+      cellForNewNode = editorContext.createNodeCellInAir(newNode, ourServiceEditorManager);
     } else {
       return;
     }
 
     EditorCellAction rtAction = EditorUtil.getCellAction(cellForNewNode, EditorCellAction.RIGHT_TRANSFORM, editorContext);
     if (rtAction == null) {
+      final CellInfo cellInfo = cellForNewNode.getCellInfo();
+      CommandProcessor.instance().invokeNowOrLater(new Runnable() {
+        public void run() {
+          AbstractEditorComponent component = editorContext.getNodeEditorComponent();
+          EditorCell cellToSelect = cellInfo.findCell(component);
+          if (cellToSelect != null) {
+            EditorCell errorCell = EditorUtil.findErrorCell(cellToSelect);
+            if (errorCell instanceof EditorCell_Label) {
+              EditorCell_Label label = (EditorCell_Label) errorCell;
+              if (label.isEditable() && !(label instanceof EditorCell_Constant)) {
+                label.changeText(label.getText() + tail);
+              }
+              label.getRenderedTextLine().setCaretPositionToLast();
+            }
+          }
+
+        }
+      });
       return;
     }
     UndoManager.instance().markPlaceInCurrentUndoActionsWithObject(ourMarker);
     rtAction.execute(editorContext);
     final CellFounder cellFounder = new CellFounder(editorContext, newNode, tail);
-    EditorCell newCellForNewNode = editorContext.createNodeCell(newNode);
+    EditorCell newCellForNewNode = editorContext.createNodeCellInAir(newNode, ourServiceEditorManager);
+    if (cellForNewNode.isInspectorCell()) {
+      System.err.println("oy, vey!!!");
+    }
     cellFounder.run(newCellForNewNode);
     EditorCell foundCell = cellFounder.getFoundCell();
 
@@ -80,7 +99,7 @@ public class IntelligentInputUtil {
         if (newNode != null) {
           newNode.removeRightTransformHint();
           UndoManager.instance().removeActionsAfterObject(ourMarker);
-          final CellInfo cellInfo = cell.getCellInfo();
+          final CellInfo cellInfo = cellForNewNode.getCellInfo();
           CommandProcessor.instance().invokeNowOrLater(new Runnable() {
             public void run() {
               AbstractEditorComponent component = editorContext.getNodeEditorComponent();
@@ -90,8 +109,8 @@ public class IntelligentInputUtil {
               }
               if (cellToSelect instanceof EditorCell_Label) {
                 EditorCell_Label label = (EditorCell_Label) cellToSelect;
-                if (label.isEditable()) {
-                  label.changeText(smallPattern + tail);
+                if (label.isEditable() && !(label instanceof EditorCell_Constant)) {
+                  label.changeText(label.getRenderedText() + tail);
                 }
                 label.getRenderedTextLine().setCaretPositionToLast();
               }

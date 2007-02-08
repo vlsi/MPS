@@ -11,7 +11,7 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
  * Time: 2:25:37 PM
  * To change this template use File | Settings | File Templates.
  */
-public class DefaultChildNodeSetter implements IChildNodeSetter {
+public class DefaultChildNodeSetter extends AbstractChildNodeSetter {
   LinkDeclaration myLinkDeclaration;
 
   public DefaultChildNodeSetter(LinkDeclaration linkDeclaration) {
@@ -26,7 +26,7 @@ public class DefaultChildNodeSetter implements IChildNodeSetter {
     return myLinkDeclaration;
   }
 
-  public void execute(SNode parenNode, SNode oldChild, SNode newChild, IScope scope) {
+  public void doExecute(SNode parenNode, SNode oldChild, SNode newChild, IScope scope) {
     String role = SModelUtil_new.getGenuineLinkRole(myLinkDeclaration);
     if (oldChild == null) {
       parenNode.setChild(role, newChild);

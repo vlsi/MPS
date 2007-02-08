@@ -558,6 +558,55 @@
                       <link role="variableDeclaration" targetNodeId="1170927357196" resolveInfo="as" />
                     </node>
                   </node>
+                  <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1170943134562">
+                    <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1170943134563">
+                      <property name="name" value="a" />
+                      <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1170943134564" />
+                      <node role="initializer" type="jetbrains.mps.baseLanguage.PlusExpression" id="1170943140489">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1170943142304">
+                          <property name="value" value="3" />
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1170943138722">
+                          <property name="value" value="2" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1170943145808">
+                    <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1170943145809">
+                      <property name="name" value="b" />
+                      <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1170943145810" />
+                      <node role="initializer" type="jetbrains.mps.baseLanguage.PlusExpression" id="1170943167204">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1170943171474">
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1170943173618">
+                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1170943175277">
+                              <property name="value" value="3" />
+                            </node>
+                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1170943173602">
+                              <property name="value" value="2" />
+                            </node>
+                          </node>
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.FieldReference" id="1170943188778">
+                            <link role="variableDeclaration" targetNodeId="1170238598207" resolveInfo="aaa" />
+                            <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1170943171457">
+                              <link role="variableDeclaration" targetNodeId="1170927357196" resolveInfo="as" />
+                            </node>
+                          </node>
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1170943167109">
+                          <link role="variableDeclaration" targetNodeId="1170927357196" resolveInfo="as" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1170943203376">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.FieldReference" id="1170943203394">
+                      <link role="variableDeclaration" targetNodeId="1170238598207" resolveInfo="aaa" />
+                      <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1170943203377">
+                        <link role="variableDeclaration" targetNodeId="1170927357196" resolveInfo="as" />
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>

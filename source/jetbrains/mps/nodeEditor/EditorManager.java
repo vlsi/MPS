@@ -149,7 +149,6 @@ public class EditorManager {
     return stack.isEmpty() ? null : stack.peek();
   }
 
-
   /*package*/ EditorCell createEditorCell(EditorContext context, List<SModelEvent> events, ReferencedNodeContext refContext) {
     SNode node = refContext.getNode();
 
@@ -169,7 +168,7 @@ public class EditorManager {
     }
 
     AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
-    EditorCell oldCell = nodeEditorComponent.getBigCellForRefContext(refContext);
+    EditorCell oldCell = nodeEditorComponent.getBigCellForRefContext(refContext, this);
     if (events != null) {
       boolean nodeChanged = false;
       for (SModelEvent event : events) {
@@ -217,6 +216,10 @@ public class EditorManager {
   }
 
 
+  public boolean isCreatingInspectedCell() {
+    return myCreatingInspectedCell;
+  }
+
   private EditorCell createEditorCell_internal(final EditorContext context, boolean isInspectorCell, ReferencedNodeContext refContext) {
     final SNode node = refContext.getNode();
 
@@ -238,7 +241,7 @@ public class EditorManager {
     } finally {
       if (nodeCell != null) {
         nodeCell.putUserObject(BIG_CELL_CONTEXT, refContext);
-        abstractEditorComponent.registerAsBigCell(nodeCell, refContext);
+        abstractEditorComponent.registerAsBigCell(nodeCell, refContext, this);
         nodeAccessListener.recordingFinishedForCell(nodeCell);
       }
       NodeReadAccessCaster.removeCellBuildNodeAccessListener();
