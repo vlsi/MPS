@@ -207,6 +207,19 @@
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraintSet" id="1170928950528">
     <property name="name" value="SModelLangTypes_names" />
+    <node role="nodePropertyConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraint" id="1170929906135">
+      <link role="applicableConcept" targetNodeId="1.1143226024141" />
+      <link role="applicableProperty" targetNodeId="9.1078489098626" />
+      <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_PropertyGetter" id="1170929914777">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1170929914778">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1170929923347">
+            <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1170929924490">
+              <property name="value" value="smodel" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="nodePropertyConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraint" id="1170928963154">
       <link role="applicableProperty" targetNodeId="9.1078489098626" />
       <link role="applicableConcept" targetNodeId="1.1138055754698" />
