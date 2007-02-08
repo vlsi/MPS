@@ -1,8 +1,8 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.annotations.AttributeConcept;
-import jetbrains.mps.annotations.LinkAttributeConcept;
-import jetbrains.mps.annotations.PropertyAttributeConcept;
+import jetbrains.mps.annotations.structure.AttributeConcept;
+import jetbrains.mps.annotations.structure.LinkAttributeConcept;
+import jetbrains.mps.annotations.structure.PropertyAttributeConcept;
 import jetbrains.mps.bootstrap.structureLanguage.AnnotationLinkDeclaration;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
