@@ -22,7 +22,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.transformation.TLBase.MappingConfiguration;
+import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.generator.newGenerator.GenerationSession_New;
 import org.jdom.Element;
 
@@ -194,7 +194,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
   private static boolean containsMappingConfiguration(Generator generator) {
     for (SModelDescriptor templateModel : generator.getOwnTemplateModels()) {
-      if (templateModel.getSModel().allNodes(MappingConfiguration.class).size() > 0) {
+      if (templateModel.getSModel().allAdapters(MappingConfiguration.class).size() > 0) {
         return true;
       }
     }

@@ -8,7 +8,7 @@ import jetbrains.mps.projectLanguage.LanguageDescriptor;
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.projectLanguage.ModuleRoot;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.transformation.TLBase.MappingConfiguration;
+import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.util.NameUtil;
 
 import javax.swing.*;
@@ -214,7 +214,7 @@ public class NewGeneratorDialog extends BaseDialog {
       templateModel.addImportedModel(sourceLanguage.getStructureModelDescriptor().getModelUID());
       templateModel.addImportedModel(SModelUID.fromString("java.lang@java_stub"));
 
-      MappingConfiguration mappingConfiguration = new MappingConfiguration(templateModel);
+      MappingConfiguration mappingConfiguration = MappingConfiguration.newInstance(templateModel);
       mappingConfiguration.setName("main");
       templateModel.addRoot(mappingConfiguration);
       templateModelDescriptor.save();

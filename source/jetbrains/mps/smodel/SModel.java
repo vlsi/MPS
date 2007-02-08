@@ -168,6 +168,16 @@ public class SModel implements Iterable<SNode> {
     return result;
   }
 
+
+  public void addRoot(@NotNull BaseAdapter node) {
+    addRoot(node.getNode());
+  }
+
+  public void removeRoot(@NotNull BaseAdapter node) {
+    removeRoot(node.getNode());
+  }
+
+
   public void addRoot(@NotNull SNode node) {
     if (myRoots.contains(node)) return;
     if (node.getModel() != this && node.getModel().isRoot(node)) {
