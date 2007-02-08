@@ -48,6 +48,12 @@ public class QueriesGenerated {
   public static String propertyMacro_GetPropertyValue_1170976644359(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return generator.getGeneratorSessionContext().createUniqueName("zForEach");
   }
+  public static String propertyMacro_GetPropertyValue_1170977112610(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(node, "defaultInputElement", true), "name");
+  }
+  public static String propertyMacro_GetPropertyValue_1170977055251(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return generator.getGeneratorSessionContext().createUniqueName("zPredicate");
+  }
   public static String propertyMacro_GetPropertyValue_1170959486472(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return generator.getGeneratorSessionContext().createUniqueName("zSelector");
   }
@@ -82,6 +88,9 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(node, "body", true);
   }
   public static SNode sourceNodeQuery_1170976710748(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "body", true);
+  }
+  public static SNode sourceNodeQuery_1170977120305(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "body", true);
   }
   public static SNode sourceNodeQuery_1170959592162(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -135,6 +144,12 @@ public class QueriesGenerated {
     return QueriesUtil.create_ClosureWithInput_inputElementType(node, generator);
   }
   public static SNode mapSrcMacro_mapper_1170976677202(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.create_ClosureWithInput_inputElementType(node, generator);
+  }
+  public static SNode mapSrcMacro_mapper_1170977090634(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.create_ClosureWithInput_inputElementType(node, generator);
+  }
+  public static SNode mapSrcMacro_mapper_1170977083110(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return QueriesUtil.create_ClosureWithInput_inputElementType(node, generator);
   }
   public static SNode mapSrcMacro_mapper_1170959580916(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
