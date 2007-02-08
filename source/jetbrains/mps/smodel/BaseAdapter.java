@@ -401,6 +401,14 @@ public abstract class BaseAdapter {
     return result;
   }
 
+  public static <T extends BaseAdapter> Set<T> toAdapters(Class<T> cls, Set<? extends SNode> list) {
+    Set<T> result = new HashSet<T>();
+    for (SNode node : list) {
+      result.add((T) node.getAdapter());
+    }
+    return result;
+  }
+
 
   public static <T extends SNode> List<T> toNodes(List<? extends BaseAdapter> list) {
     List<T> result = new ArrayList<T>();
