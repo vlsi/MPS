@@ -6,7 +6,7 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.GeneratorDescriptor;
 import jetbrains.mps.projectLanguage.ModuleDescriptor;
-import jetbrains.mps.transformation.TLBase.MappingConfiguration;
+import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -61,7 +61,7 @@ public class Generator extends AbstractModule {
     List<SModelDescriptor> list = getOwnTemplateModels();
     Set<MappingConfiguration> mappings = new HashSet<MappingConfiguration>();
     for (SModelDescriptor templateModel : list) {
-      mappings.addAll(templateModel.getSModel().allNodes(MappingConfiguration.class));
+      mappings.addAll(templateModel.getSModel().allAdapters(MappingConfiguration.class));
     }
     return mappings;
   }

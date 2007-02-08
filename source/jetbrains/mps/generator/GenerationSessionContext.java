@@ -4,7 +4,7 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.projectLanguage.ModuleDescriptor;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.transformation.TLBase.MappingConfiguration;
+import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
@@ -77,11 +77,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     } else {
       myMappingConfigurations = new HashSet<MappingConfiguration>();
       for (SModelDescriptor templateModel : myTemplateModels) {
-        myMappingConfigurations.addAll((List) templateModel.getSModel().allNodes(new Condition<SNode>() {
-          public boolean met(SNode node) {
-            return (node instanceof MappingConfiguration);
-          }
-        }));
+        myMappingConfigurations.addAll(templateModel.getSModel().allAdapters(MappingConfiguration.class));
       }
     }
   }

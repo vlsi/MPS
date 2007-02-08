@@ -12,7 +12,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.transformation.TLBase.MappingConfiguration;
+import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NotNull;
 
