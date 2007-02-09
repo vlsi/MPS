@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.constraints.INodePropertyGetter;
 import jetbrains.mps.smodel.constraints.INodePropertySetter;
 import jetbrains.mps.smodel.constraints.INodeReferentSetEventHandler;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
@@ -1410,9 +1409,9 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       return true;
     }
 
-    ConceptDeclaration instanceConcept = instance.getConceptDeclaration(scope);
+    jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration instanceConcept = instance.getConceptDeclarationAdapter(scope);
 //    LOG.assertLog(instanceConcept != null, "Couldn't find concept declaration for node : " + instance.getDebugText());
-    ConceptDeclaration compareConcept = instanceConcept;
+    jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration compareConcept = instanceConcept;
     while (compareConcept != null) {
       if (NameUtil.nodeFQName(compareConcept).equals(conceptFqName)) {
         return true;
@@ -1421,14 +1420,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     }
 
     return false;
-  }
-
-  /**
-   * method is final and has strange name to avoid overriding in generated classes (structure)
-   */
-  @NotNull
-  public final ConceptDeclaration getConceptDeclaration__() {
-    return getConceptDeclaration(GlobalScope.getInstance());
   }
 
   public final jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration getConceptDeclarationAdapter() {
@@ -1477,7 +1468,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     int index = attributeChildRole.indexOf(AttributesRolesUtil.STEREOTYPE_DELIM);
     if (index < 0) return null;
     String declaredRole = attributeChildRole.substring(0, index);
-    ConceptDeclaration conceptDeclaration = getConceptDeclaration(scope);
+    jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration conceptDeclaration = getConceptDeclarationAdapter(scope);
     SModel structureModel = conceptDeclaration.getModel();
     List<AnnotationLinkDeclaration> annotationLinkDecls =
             structureModel.allAdaptersIncludingImported(scope, AnnotationLinkDeclaration.class);
