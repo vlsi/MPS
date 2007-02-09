@@ -37,7 +37,7 @@ public class CellAction_DeleteSmart extends EditorCellAction {
       Cardinality sourceCardinality = genuineLink.getSourceCardinality();
       if (sourceCardinality == Cardinality._1) {
         ConceptDeclaration defaultTargetConcept = myLink.getTarget();
-        SNode defaultTarget = SModelUtil.instantiateConceptDeclaration((jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration) defaultTargetConcept.getNode(), model);
+        SNode defaultTarget = SModelUtil_new.instantiateConceptDeclaration(defaultTargetConcept, model).getNode();
         String role = genuineLink.getRole();
         mySource.setChild(role, defaultTarget);
       }
