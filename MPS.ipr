@@ -1150,6 +1150,7 @@
       <module fileurl="file://$PROJECT_DIR$/projects/teamSys/teamSysWebApp/teamSysWebApp.iml" filepath="$PROJECT_DIR$/projects/teamSys/teamSysWebApp/teamSysWebApp.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/DataNavigationQueryFramework/transientDbEntityStore/transientDbEntityStore.iml" filepath="$PROJECT_DIR$/projects/DataNavigationQueryFramework/transientDbEntityStore/transientDbEntityStore.iml" group="Projects/dataNavigationQuery/runtime" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/webr.iml" filepath="$PROJECT_DIR$/platform/webr/webr.iml" group="platform/webr" />
+      <module fileurl="file://$PROJECT_DIR$/platform/webr/devkit/webrDevkitPlugin.iml" filepath="$PROJECT_DIR$/platform/webr/devkit/webrDevkitPlugin.iml" group="platform/webr" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/runtime/webrRuntime.iml" filepath="$PROJECT_DIR$/platform/webr/runtime/webrRuntime.iml" group="platform/webr" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/runtime_notifications/webrRuntime_notifications.iml" filepath="$PROJECT_DIR$/platform/webr/runtime_notifications/webrRuntime_notifications.iml" group="platform/webr" />
       <module fileurl="file://$PROJECT_DIR$/app/webrSamples/depot/webrSamples_depot.iml" filepath="$PROJECT_DIR$/app/webrSamples/depot/webrSamples_depot.iml" group="app/webrSamples" />
