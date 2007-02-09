@@ -1561,6 +1561,11 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       parent = parent.getParent();
     }
     return null;
+
+
+
+
+    
   }
 
   public SNode findParent(Condition<SNode> condition) {
@@ -1599,6 +1604,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       }
       return conceptDeclaration.getRootable();
     }
+    
 
     ConceptProperty conceptProperty = findConceptProperty(propertyName, scope);
     return conceptProperty != null;
