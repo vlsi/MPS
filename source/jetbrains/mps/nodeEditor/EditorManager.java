@@ -119,7 +119,7 @@ public class EditorManager {
     EditorCell cellWithRolePopped = stack.pop();
     LOG.assertLog(cellWithRolePopped == cellWithRole);
     //setting substitute info
-    AnnotationLinkDeclaration linkDeclaration = roleAttribute.findAnnotationLinkDeclaration(context.getOperationContext().getScope());
+    AnnotationLinkDeclaration linkDeclaration = (AnnotationLinkDeclaration) BaseAdapter.fromAdapter(roleAttribute.findAnnotationLinkDeclaration(context.getOperationContext().getScope()));
     if (linkDeclaration != null) {
       DefaultAttributeSubstituteInfo substituteInfo = new DefaultAttributeSubstituteInfo(cellWithRole.getSNode(), roleAttribute, linkDeclaration, context);
       result.setSubstituteInfo(substituteInfo);

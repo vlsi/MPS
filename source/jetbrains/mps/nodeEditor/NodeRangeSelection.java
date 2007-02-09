@@ -9,6 +9,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.bootstrap.structureLanguage.Cardinality;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.ide.actions.nodes.DeleteNodesHelper;
 
@@ -65,7 +66,7 @@ public class NodeRangeSelection implements IKeyboardHandler {
     String role = null;
     while (parentNode != null) {
       role = childNode.getRole_();
-      LinkDeclaration childDeclaration = parentNode.getChildDeclaration(role, myEditorComponent.getEditorContext().getOperationContext().getScope());
+      LinkDeclaration childDeclaration = (LinkDeclaration) BaseAdapter.fromAdapter(parentNode.getChildDeclaration(role, myEditorComponent.getEditorContext().getOperationContext().getScope()));
       Cardinality cardinality = childDeclaration.getSourceCardinality();
       if (cardinality == Cardinality._0_n || cardinality == Cardinality._1_n) {
         break;

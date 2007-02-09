@@ -6,9 +6,9 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.bootstrap.structureLanguage.DataTypeDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.PrimitiveDataTypeDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.DataTypeDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.PrimitiveDataTypeDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -34,7 +34,7 @@ public abstract class PropertySupport {
   public static PropertySupport getPropertySupport(PropertyDeclaration propertyDeclaration) {
     DataTypeDeclaration dataType = propertyDeclaration.getDataType();
     if (dataType != null) {
-      PropertySupport propertySupport = (PropertySupport) dataType.getUserObject(PROPERTY_SUPPORT);
+      PropertySupport propertySupport = (PropertySupport) dataType.getNode().getUserObject(PROPERTY_SUPPORT);
       if (propertySupport != null) {
         return propertySupport;
       }
@@ -56,7 +56,7 @@ public abstract class PropertySupport {
       if (propertySupport == null) {
         propertySupport = new DefaultPropertySupport();
       }
-      dataType.putUserObject(PROPERTY_SUPPORT, propertySupport);
+      dataType.getNode().putUserObject(PROPERTY_SUPPORT, propertySupport);
       return propertySupport;
     }
     return new DefaultPropertySupport();
@@ -90,13 +90,28 @@ public abstract class PropertySupport {
     }
     return propertySupport;
   }
+    
+  @Deprecated
+  public static boolean isString(jetbrains.mps.bootstrap.structureLanguage.PrimitiveDataTypeDeclaration datatype) {
+    return isString((PrimitiveDataTypeDeclaration) datatype.getAdapter());
+  }
 
   public static boolean isString(PrimitiveDataTypeDeclaration datatype) {
     return Primitives.STRING_TYPE.equals(datatype.getName());
   }
 
+  @Deprecated
+  public static boolean isInteger(jetbrains.mps.bootstrap.structureLanguage.PrimitiveDataTypeDeclaration datatype) {
+    return isInteger((PrimitiveDataTypeDeclaration) datatype.getAdapter());
+  }
+
   public static boolean isInteger(PrimitiveDataTypeDeclaration datatype) {
     return Primitives.INTEGER_TYPE.equals(datatype.getName());
+  }
+
+  @Deprecated
+  public static boolean isBoolean(jetbrains.mps.bootstrap.structureLanguage.PrimitiveDataTypeDeclaration datatype) {
+    return isBoolean((PrimitiveDataTypeDeclaration) datatype.getAdapter());
   }
 
   public static boolean isBoolean(PrimitiveDataTypeDeclaration datatype) {

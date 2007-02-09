@@ -92,11 +92,7 @@ public abstract class BaseAdapter {
   }
 
   public List<ConceptLink> getConceptLinks(final String linkName, boolean lookupHierarchy, IScope scope) {
-    List<ConceptLink> result = new ArrayList<ConceptLink>();
-    for (jetbrains.mps.bootstrap.structureLanguage.ConceptLink cl : getNode().getConceptLinks(linkName, lookupHierarchy, scope)) {
-      result.add((ConceptLink) cl.getAdapter());
-    }
-    return result;
+    return myNode.getConceptLinks(linkName, lookupHierarchy, scope);
   }
 
   public ConceptDeclaration getConceptDeclaration(IScope scope) {
