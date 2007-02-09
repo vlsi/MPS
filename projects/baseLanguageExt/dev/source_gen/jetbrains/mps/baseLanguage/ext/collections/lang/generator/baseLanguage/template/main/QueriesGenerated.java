@@ -89,6 +89,9 @@ public class QueriesGenerated {
     SNode creator = SLinkOperations.getTarget(node, "creator", true);
     return SLinkOperations.getTargets(creator, "initValue", true);
   }
+  public static SNode sourceNodeQuery_1170982975543(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "elementType", true);
+  }
   public static SNode sourceNodeQuery_1170957296016(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "body", true);
   }
