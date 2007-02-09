@@ -1,9 +1,10 @@
 package jetbrains.mps.helgins.inference;
 
-import jetbrains.mps.helgins.RuntimeErrorType;
-import jetbrains.mps.helgins.RuntimeTypeVariable;
+import jetbrains.mps.helgins.structure.RuntimeErrorType;
+import jetbrains.mps.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.helgins.evaluator.uiActions.PresentationManager;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.Pair;
 
@@ -272,11 +273,11 @@ public class EquationManager {
 
     //2.T>S
     for (SNode node : subtypingGraphVertices()) {
-      if (node instanceof RuntimeTypeVariable) continue;
+      if (BaseAdapter.isInstance(node, RuntimeTypeVariable.class)) continue;
       Map<SNode,SNode> supertypes = mySubtypesToSupertypesMap.get(node);
       if (supertypes == null) continue;
       for (SNode supertype : new HashSet<SNode>(supertypes.keySet())) {
-        if (supertype instanceof RuntimeTypeVariable) continue;
+        if (BaseAdapter.isInstance(supertype, RuntimeTypeVariable.class)) continue;
         addInequation(node, supertype, supertypes.get(supertype));
         supertypes.remove(supertype);
         mySupertypesToSubtypesMap.get(supertype).remove(node);
@@ -300,13 +301,13 @@ public class EquationManager {
 
     //4. {}->c->{S} => c = lcs({S})
     for (SNode node : subtypingGraphVertices()) {
-      if (node instanceof RuntimeTypeVariable) {
+      if (BaseAdapter.isInstance(node, RuntimeTypeVariable.class)) {
         Map<SNode,SNode> subtypes = mySupertypesToSubtypesMap.get(node);
         if (subtypes == null) continue;
         Set<SNode> concreteSubtypes = new HashSet<SNode>();
         Set<SNode> nodesToCheck = new HashSet<SNode>();
         for (SNode subtype : new HashSet<SNode>(subtypes.keySet())) {
-          if (subtype instanceof RuntimeTypeVariable) {
+          if (BaseAdapter.isInstance(subtype, RuntimeTypeVariable.class)) {
             continue; 
           }
           concreteSubtypes.add(subtype);
@@ -326,7 +327,7 @@ public class EquationManager {
 
     //5. T->c->{} => c = T
     for (SNode node : subtypingGraphVertices()) {
-      if (node instanceof RuntimeTypeVariable) {
+      if (BaseAdapter.isInstance(node, RuntimeTypeVariable.class)) {
         Map<SNode,SNode> supertypes = mySubtypesToSupertypesMap.get(node);
         if (supertypes == null) continue;
         if (supertypes.size() == 1) {

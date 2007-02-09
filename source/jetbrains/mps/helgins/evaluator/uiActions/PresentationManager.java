@@ -1,8 +1,9 @@
 package jetbrains.mps.helgins.evaluator.uiActions;
 
-import jetbrains.mps.helgins.RuntimeTypeVariable;
-import jetbrains.mps.helgins.RuntimeErrorType;
+import jetbrains.mps.helgins.structure.RuntimeTypeVariable;
+import jetbrains.mps.helgins.structure.RuntimeErrorType;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.reloading.ClassLoaderManager;
 
 import java.lang.reflect.Method;
@@ -17,8 +18,15 @@ import java.lang.reflect.Method;
 public class PresentationManager {
   public static String toString(Object type) {
     if (type == null) return null;
-    if (type instanceof RuntimeTypeVariable && !(type instanceof RuntimeErrorType)) {
-      return ((SNode)type).getName();
+    BaseAdapter typeAdapter = null;
+    if (type instanceof BaseAdapter) {
+      typeAdapter = (BaseAdapter) type;
+    }
+    if (type instanceof SNode) {
+      typeAdapter = ((SNode)type).getAdapter();
+    }
+    if (typeAdapter instanceof RuntimeTypeVariable && !(typeAdapter instanceof RuntimeErrorType)) {
+      return ((RuntimeTypeVariable)typeAdapter).getName();
     }
     if (type instanceof String) {
       return (String) type;
@@ -30,13 +38,14 @@ public class PresentationManager {
   }
 
   public static String toString_1(SNode type) {
-    if (type instanceof RuntimeErrorType) {
-      return "ERROR(" + ((RuntimeErrorType)type).getErrorText() + ")";
+    BaseAdapter typeAdapter = BaseAdapter.fromNode(type);
+    if (typeAdapter instanceof RuntimeErrorType) {
+      return "ERROR(" + ((RuntimeErrorType)typeAdapter).getErrorText() + ")";
     }
-    if (type instanceof RuntimeTypeVariable) {
+    if (typeAdapter instanceof RuntimeTypeVariable) {
       return toString(type);
     }
-    String packageName = type.getClass().getPackage().getName();
+    String packageName = type.getLanguageNamespace();
     String presentationUtilName = packageName + ".PresentationUtil";
     try {
       Class presentationUtil = Class.forName(presentationUtilName, true, ClassLoaderManager.getInstance().getClassLoader());

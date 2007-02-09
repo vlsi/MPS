@@ -1,6 +1,6 @@
 package jetbrains.mps.helgins.inference;
 
-import jetbrains.mps.helgins.*;
+import jetbrains.mps.helgins.structure.*;
 import jetbrains.mps.helgins.evaluator.QuotationEvaluator;
 import jetbrains.mps.helgins.evaluator.CopyEvaluator;
 import jetbrains.mps.logging.Logger;
@@ -17,7 +17,7 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.Status;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mpswiki.queryLanguage.evaluator.ConditionMatcher;
 
 import java.util.*;
@@ -135,7 +135,7 @@ public class TypeChecker {
     for (SModel typesModel : typesModels) {
 
       //register contexts
-      for (ContextDeclaration contextDeclaration : typesModel.getRoots(ContextDeclaration.class)) {
+      for (ContextDeclaration contextDeclaration : typesModel.getRootsAdapters(ContextDeclaration.class)) {
         if (contextDeclaration.getMain()) {
           if (myContextsManager.isMainContextRegistered()) continue;
           myContextsManager.registerMainContext(contextDeclaration.getName());
@@ -145,12 +145,12 @@ public class TypeChecker {
       }
 
       //register global varsets
-      for (VariableSetDeclaration varset : typesModel.getRoots(VariableSetDeclaration.class)) {
+      for (VariableSetDeclaration varset : typesModel.getRootsAdapters(VariableSetDeclaration.class)) {
         myTypeVariablesManager.registerNewVarset(varset);
       }
 
       // load rules
-      for (Rule rule : typesModel.getRoots(Rule.class)) {
+      for (Rule rule : typesModel.getRootsAdapters(Rule.class)) {
         if (!rule.applicableNodes().hasNext()) continue;
         AnalyzedTermDeclaration analyzedTermDeclaration = rule.applicableNodes().next();
         ConceptDeclaration ruleConcept = ConditionMatcher.getConcept(analyzedTermDeclaration.getCondition());
@@ -179,8 +179,8 @@ public class TypeChecker {
       SNode term = contextEntry.o1;
       if (term == null) continue;
       SNode type = expandType(contextEntry.o2, myInterpretator.getRuntimeTypesModel());
-      if (type instanceof RuntimeErrorType) {
-        reportTypeError(term, ((RuntimeErrorType)type).getErrorText());
+      if (BaseAdapter.isInstance(type, RuntimeErrorType.class)) {
+        reportTypeError(term, ((RuntimeErrorType) BaseAdapter.fromNode(type)).getErrorText());
       }
       term.putUserObject(TYPE_OF_TERM, type);
     }
@@ -214,16 +214,16 @@ public class TypeChecker {
 
   private SNode expandNode(SNode node, SNode representator, int depth, Set<RuntimeTypeVariable> variablesMet, SModel typesModel) {
     if (node == null) return null;
-    if (node instanceof RuntimeTypeVariable) {
-      RuntimeTypeVariable var = (RuntimeTypeVariable) node;
+    if (BaseAdapter.isInstance(node, RuntimeTypeVariable.class)) {
+      RuntimeTypeVariable var = (RuntimeTypeVariable) BaseAdapter.fromNode(node);
       SNode type = myEquationManager.getRepresentator(node);
       if (type != representator || depth > 0) {
 
         if (variablesMet.contains(var)) {
           //recursion!!
-          RuntimeErrorType error = new RuntimeErrorType(typesModel);
+          RuntimeErrorType error = RuntimeErrorType.newInstance(typesModel);
           error.setErrorText("recursion types not allowed");
-          return error;
+          return BaseAdapter.fromAdapter(error);
         }
         variablesMet.add(var);
         node = expandNode(type, type, 0, variablesMet, typesModel);
@@ -242,9 +242,9 @@ public class TypeChecker {
     for (SNode child : new ArrayList<SNode>(children)) {
       if (!childrenReplacement.keySet().contains(child)) continue;
       if (child.getParent() == null) {
-        RuntimeErrorType error = new RuntimeErrorType(typesModel);
+        RuntimeErrorType error = RuntimeErrorType.newInstance(typesModel);
         error.setErrorText("recursion types not allowed");
-        return error;
+        return BaseAdapter.fromAdapter(error);
       }
       SNode parent = child.getParent();
       assert parent != null;
@@ -268,7 +268,7 @@ public class TypeChecker {
       for (SNode node : frontier) {
         if (myCheckedNodes.contains(node)) continue;
         newFrontier.addAll(node.getChildren());
-        Set<Rule> rules = myConceptsToRulesCache.get(node.getNodeConcept());
+        Set<Rule> rules = myConceptsToRulesCache.get(node.getNodeConceptAdapter());
         if (rules != null) {
           for (Rule rule : rules) {
             myInterpretator.interpretate(node, rule);

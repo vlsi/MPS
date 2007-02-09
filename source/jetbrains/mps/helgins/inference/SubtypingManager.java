@@ -1,19 +1,17 @@
 package jetbrains.mps.helgins.inference;
 
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.formulaLanguage.evaluator.ExpressionContext;
 import jetbrains.mps.formulaLanguage.evaluator.ExpressionEvaluatorManager;
-import jetbrains.mps.formulaLanguage.Expression;
-import jetbrains.mps.helgins.*;
+import jetbrains.mps.formulaLanguage.structure.Expression;
+import jetbrains.mps.helgins.structure.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.patterns.util.MatchingUtil;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mpswiki.queryLanguage.VariableCondition;
-import jetbrains.mpswiki.queryLanguage.QueryPattern;
+import jetbrains.mpswiki.queryLanguage.structure.VariableCondition;
+import jetbrains.mpswiki.queryLanguage.structure.QueryPattern;
 import jetbrains.mpswiki.queryLanguage.evaluator.ConditionMatcher;
 import jetbrains.mpswiki.queryLanguage.evaluator.InvalidConditionException;
 
@@ -44,17 +42,17 @@ public class SubtypingManager {
   }
 
   public void initiate(SModel typesModel) {
-    for (SubtypingRule rule : typesModel.getRoots(SubtypingRule.class)) {
+    for (SubtypingRule rule : typesModel.getRootsAdapters(SubtypingRule.class)) {
       VariableCondition condition = rule.getApplicableNode().getCondition();
       ConceptDeclaration ruleConcept = ConditionMatcher.getConcept(condition);
       myConceptsToSubtypingRulesCache.putRule(ruleConcept, rule);
     }
-    for (SupertypingRule rule : typesModel.getRoots(SupertypingRule.class)) {
+    for (SupertypingRule rule : typesModel.getRootsAdapters(SupertypingRule.class)) {
       VariableCondition condition = rule.getApplicableNode().getCondition();
       ConceptDeclaration ruleConcept = ConditionMatcher.getConcept(condition);
       myConceptsToSupertypingRulesCache.putRule(ruleConcept, rule);
     }
-    for (SubtypingVarianceRule rule : typesModel.getRoots(SubtypingVarianceRule.class)) {
+    for (SubtypingVarianceRule rule : typesModel.getRootsAdapters(SubtypingVarianceRule.class)) {
       myVarianceRules.put(rule.getConceptDeclaration(), rule);
     }
     myConceptsToSubtypingRulesCache.makeConsistent();
@@ -198,13 +196,13 @@ public class SubtypingManager {
     Set<ConceptDeclaration> superConcepts = new HashSet<ConceptDeclaration>();
     {
       Set<ConceptDeclaration> subConcepts = new HashSet<ConceptDeclaration>();
-      ConceptDeclaration subConcept = subtype.getConceptDeclaration(GlobalScope.getInstance());
+      ConceptDeclaration subConcept = subtype.getConceptDeclarationAdapter();
       subConcepts.add(subConcept);
       while (subConcept.getExtends() != null) {
         subConcept = subConcept.getExtends();
         subConcepts.add(subConcept);
       }
-      ConceptDeclaration superConcept = supertype.getConceptDeclaration(GlobalScope.getInstance());
+      ConceptDeclaration superConcept = supertype.getConceptDeclarationAdapter();
       superConcepts.add(superConcept);
       while (superConcept.getExtends() != null) {
         superConcept = superConcept.getExtends();
@@ -217,7 +215,10 @@ public class SubtypingManager {
 
   public Set<SNode> collectSupertypes(SNode term) {
     Set<SNode> result = new HashSet<SNode>();
-    Set<SubtypingRule> subtypingRules = myConceptsToSubtypingRulesCache.get(term.getNodeConcept());
+    if (term == null) {
+      return result;
+    }
+    Set<SubtypingRule> subtypingRules = myConceptsToSubtypingRulesCache.get(term.getNodeConceptAdapter());
     if (subtypingRules != null)  {
       for (SubtypingRule rule : subtypingRules) {
         AnalyzedTermDeclaration applicableNode = rule.getApplicableNode();
@@ -235,7 +236,8 @@ public class SubtypingManager {
 
   public Set<SNode> collectSubtypes(SNode term) {
     Set<SNode> result = new HashSet<SNode>();
-    Set<SupertypingRule> supertypingRules = myConceptsToSupertypingRulesCache.get(term.getNodeConcept());
+    if (term == null) return result;
+    Set<SupertypingRule> supertypingRules = myConceptsToSupertypingRulesCache.get(term.getNodeConceptAdapter());
     if (supertypingRules == null) return result;
     for (SupertypingRule rule : supertypingRules) {
       AnalyzedTermDeclaration applicableNode = rule.getApplicableNode();
@@ -403,9 +405,9 @@ public class SubtypingManager {
   public SNode leastCommonSupertype(Set<? extends SNode> types) {
     Set<SNode> lcss = leastCommonSupertypes(types);
     if (lcss.size() != 1) {
-      RuntimeErrorType type = new RuntimeErrorType(myTypeChecker.getRuntimeTypesModel());
+      RuntimeErrorType type = RuntimeErrorType.newInstance(myTypeChecker.getRuntimeTypesModel());
       type.setErrorText("uncomparable types");
-      return type;
+      return BaseAdapter.fromAdapter(type);
     }
     return lcss.iterator().next();
   }
@@ -487,9 +489,9 @@ public class SubtypingManager {
   public SNode minType(Set<SNode> nodes) {
     SModel runtimeTypesModel = myTypeChecker.getRuntimeTypesModel();
     if (nodes.size() == 0) {
-      RuntimeErrorType errorType = new RuntimeErrorType(runtimeTypesModel);
+      RuntimeErrorType errorType = RuntimeErrorType.newInstance(runtimeTypesModel);
       errorType.setErrorText("uncomparable types");
-      return errorType;
+      return BaseAdapter.fromAdapter(errorType);
     }
     if (nodes.size() == 1) return nodes.iterator().next();
     SNode myMin = null;
@@ -500,9 +502,9 @@ public class SubtypingManager {
         if (isSubtype(node, myMin)) {
           myMin = node;
         } else if (!isSubtype(myMin, node)) {
-          RuntimeErrorType errorType = new RuntimeErrorType(runtimeTypesModel);
+          RuntimeErrorType errorType = RuntimeErrorType.newInstance(runtimeTypesModel);
           errorType.setErrorText("uncomparable types");
-          return errorType;
+          return BaseAdapter.fromAdapter(errorType);
         }
       }
     }
@@ -512,9 +514,9 @@ public class SubtypingManager {
   public SNode maxType(Set<SNode> nodes) {
     SModel runtimeTypesModel = myTypeChecker.getRuntimeTypesModel();
     if (nodes.size() == 0) {
-      RuntimeErrorType errorType = new RuntimeErrorType(runtimeTypesModel);
+      RuntimeErrorType errorType = RuntimeErrorType.newInstance(runtimeTypesModel);
       errorType.setErrorText("uncomparable types");
-      return errorType;
+      return BaseAdapter.fromAdapter(errorType);
     }
     if (nodes.size() == 1) return nodes.iterator().next();
     SNode myMax = null;
@@ -525,9 +527,9 @@ public class SubtypingManager {
         if (isSubtype(myMax, node)) {
           myMax = node;
         } else if (!isSubtype(node, myMax)) {
-          RuntimeErrorType errorType = new RuntimeErrorType(runtimeTypesModel);
+          RuntimeErrorType errorType = RuntimeErrorType.newInstance(runtimeTypesModel);
           errorType.setErrorText("uncomparable types");
-          return errorType;
+          return BaseAdapter.fromAdapter(errorType);
         }
       }
     }

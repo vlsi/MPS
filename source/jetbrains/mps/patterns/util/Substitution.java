@@ -1,9 +1,10 @@
 package jetbrains.mps.patterns.util;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.patterns.*;
+import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.patterns.structure.*;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.annotations.AttributeConcept;
+import jetbrains.mps.annotations.structure.AttributeConcept;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Pair;
 
@@ -32,7 +33,7 @@ public class Substitution {
   public void goInsideList(AttributeConcept listDecl) {
     HashSet loopVarSet = new HashSet();
     myIsUsedInsideListIterating.push(new Pair<Set, Integer>(loopVarSet, 0));
-    SNode attributedNode = listDecl.getAttributedNode();
+    SNode attributedNode = BaseAdapter.fromAdapter(listDecl.getAttributedNode());
     goInsideList_internal(attributedNode, loopVarSet);
   }
 
@@ -40,7 +41,7 @@ public class Substitution {
     HashSet loopVarSet = new HashSet();
     myIsUsedInsideListIterating.push(new Pair<Set, Integer>(loopVarSet, 0));
     for (AttributeConcept listDecl : listDecls) {
-      SNode attributedNode = listDecl.getAttributedNode();
+      SNode attributedNode = BaseAdapter.fromAdapter(listDecl.getAttributedNode());
       goInsideList_internal(attributedNode, loopVarSet);
     }
   }
@@ -48,7 +49,9 @@ public class Substitution {
   private void goInsideList_internal(SNode attributedNode, HashSet loopVarSet) {
     for (AttributeConcept patternVar : (List<AttributeConcept>) (List) attributedNode.allChildren(new Condition<SNode>() {
       public boolean met(SNode object) {
-        return object instanceof PatternVariableDeclaration || object instanceof LinkPatternVariableDeclaration || object instanceof PropertyPatternVariableDeclaration;
+        return BaseAdapter.isInstance(object,PatternVariableDeclaration.class) ||
+                BaseAdapter.isInstance(object, LinkPatternVariableDeclaration.class) ||
+                BaseAdapter.isInstance(object, PropertyPatternVariableDeclaration.class);
       }
     })) {
       loopVarSet.add(patternVar);

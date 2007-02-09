@@ -1,9 +1,10 @@
 package jetbrains.mps.patterns.util;
 
-import jetbrains.mps.core.BaseConcept;
+import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.patterns.*;
+import jetbrains.mps.patterns.structure.*;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.util.EqualUtil;
 
 import java.util.Iterator;
@@ -29,7 +30,8 @@ public class MatchingUtil {
   }
 
   public static Substitution matchNodeWithPattern(SNode node, PatternExpression patternExpression) {
-    SNode patternNode = patternExpression.getPatternNode();
+    SNode patternNode = BaseAdapter.fromAdapter(patternExpression.getPatternNode());
+    patternExpression.getPatternNode();
     Substitution currentSubstitution = new Substitution();
     if (matchNodes(node, patternNode, currentSubstitution)) {
       return currentSubstitution;
@@ -42,17 +44,17 @@ public class MatchingUtil {
 
     //-- whole node bindings
     SNode patternAttribute = patternNode.getAttribute();
-    SNode asPattern = AsPattern_AnnotationLink.getAsPattern((BaseConcept) patternNode);
-    if (patternAttribute instanceof WildcardPattern) {
+    BaseAdapter asPattern = AsPattern_AnnotationLink.getAsPattern((BaseConcept) BaseAdapter.fromNode(patternNode));
+    if (BaseAdapter.isInstance(patternAttribute, WildcardPattern.class)) {
       return true;
     }
-    if (patternAttribute instanceof ListPattern || asPattern instanceof ListPattern) {
+    if (BaseAdapter.isInstance(patternAttribute, ListPattern.class) || asPattern instanceof ListPattern) {
       //simply go on
-    } else if (patternAttribute instanceof AsPattern || asPattern != null) {
-      bindNodeWithVar(substitution, (PatternVariableDeclaration) patternAttribute, node);
+    } else if (BaseAdapter.isInstance(patternAttribute, AsPattern.class) || asPattern != null) {
+      bindNodeWithVar(substitution, (PatternVariableDeclaration) BaseAdapter.fromNode(patternAttribute), node);
     }
-    if (patternAttribute instanceof PatternVariableDeclaration) {
-      bindNodeWithVar(substitution, (PatternVariableDeclaration) patternAttribute, node);
+    if (BaseAdapter.isInstance(patternAttribute, PatternVariableDeclaration.class)) {
+      bindNodeWithVar(substitution, (PatternVariableDeclaration) BaseAdapter.fromNode(patternAttribute), node);
       return true;
     }
 
@@ -65,9 +67,9 @@ public class MatchingUtil {
     for (String propertyName : patternNode.getPropertyNames()) {
       //if property pattern var
       SNode propertyAttribute = patternNode.getPropertyAttribute(propertyName);
-      if (propertyAttribute instanceof PropertyPatternVariableDeclaration) {
+      if (BaseAdapter.isInstance(propertyAttribute, PropertyPatternVariableDeclaration.class)) {
         LazyPropertyValue propertyValue = new LazyPropertyValue(node, propertyName);
-        bindPropertyWithVar(substitution, (PropertyPatternVariableDeclaration) propertyAttribute, propertyValue);
+        bindPropertyWithVar(substitution, (PropertyPatternVariableDeclaration) BaseAdapter.fromNode(propertyAttribute), propertyValue);
       } else {//else match values
         if (!EqualUtil.equals(patternNode.getProperty(propertyName), node.getProperty(propertyName))) return false;
       }
@@ -82,7 +84,9 @@ public class MatchingUtil {
       //if list pattern
       SNode listPatternChild = null;
       for (SNode patternChild : patternChildren) {
-        if (AsPattern_AnnotationLink.getAsPattern((BaseConcept) patternChild) instanceof ListPattern|| patternChild.getAttribute() instanceof ListPattern) {
+        if (AsPattern_AnnotationLink.getAsPattern((BaseConcept) BaseAdapter.fromNode(patternChild))
+                instanceof ListPattern
+                || BaseAdapter.isInstance(patternChild.getAttribute(), ListPattern.class)) {
           listPatternChild = patternChild;
           break;
         }
@@ -107,8 +111,8 @@ public class MatchingUtil {
 
       //if this role has a link pattern var
       SNode linkAttribute = patternNode.getLinkAttribute(role);
-      if (linkAttribute instanceof LinkPatternVariableDeclaration) {
-        bindReferenceTargetWithVar(substitution, (LinkPatternVariableDeclaration) linkAttribute, target);
+      if (BaseAdapter.isInstance(linkAttribute, LinkPatternVariableDeclaration.class)) {
+        bindReferenceTargetWithVar(substitution, (LinkPatternVariableDeclaration) BaseAdapter.fromNode(linkAttribute), target);
       } else {//if role has just a link
         SNode patternTarget = patternNode.getReferent(role);
         if (patternTarget != target) return false;
@@ -159,8 +163,8 @@ public class MatchingUtil {
   }
 
   private static boolean matchListOfNodes(List<SNode> nodes, SNode patternNode, Substitution substitution) {
-    AsPattern asPattern = AsPattern_AnnotationLink.getAsPattern((BaseConcept) patternNode);
-    ListPattern currentListPattern = asPattern instanceof ListPattern ? (ListPattern) asPattern : (ListPattern) patternNode.getAttribute();
+    AsPattern asPattern = AsPattern_AnnotationLink.getAsPattern((BaseConcept) BaseAdapter.fromNode(patternNode));
+    ListPattern currentListPattern = asPattern instanceof ListPattern ? (ListPattern) asPattern : (ListPattern) BaseAdapter.fromNode(patternNode.getAttribute());
     ourCurrentListPatterns.push(currentListPattern);
     boolean stillMatches = true;
     for (SNode node : nodes) {

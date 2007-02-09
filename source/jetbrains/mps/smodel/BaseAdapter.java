@@ -4,6 +4,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptLink;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -471,4 +472,27 @@ public abstract class BaseAdapter {
     return cls.getName();
   }
 
+  public static boolean isInstance(SNode node, Class<? extends BaseAdapter> cls) {
+    return cls.isInstance(fromNode(node));
+  }
+
+  public ConceptDeclaration getNodeConcept() {
+    return getConceptDeclaration(GlobalScope.getInstance());
+  }
+
+  public String getRole_() {
+    return myNode.getRole_();
+  }
+
+  public Object getUserObject(@NotNull Object key) {
+    return myNode.getUserObject(key);
+  }
+
+  public void removeUserObject(@NotNull Object key) {
+    myNode.removeUserObject(key);
+  }
+
+  public void putUserObject(@NotNull Object key, @Nullable Object value) {
+    myNode.putUserObject(key, value);
+  }
 }

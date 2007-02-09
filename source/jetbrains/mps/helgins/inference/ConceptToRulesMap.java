@@ -1,7 +1,6 @@
 package jetbrains.mps.helgins.inference;
 
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
 import java.util.*;
 
@@ -36,9 +35,8 @@ public class ConceptToRulesMap<T>  {
     rules.add(rule);
   }
 
-  public Set<T> get(Object key) {
-    if (!(key instanceof ConceptDeclaration)) return null;
-    ConceptDeclaration conceptDeclaration = (ConceptDeclaration) key;
+  public Set<T> get(ConceptDeclaration key) {
+    ConceptDeclaration conceptDeclaration = key;
     while (conceptDeclaration != null) {
       Set<T> rules = myMap.get(conceptDeclaration);
       if (rules != null) {

@@ -4,6 +4,7 @@ package jetbrains.mps.core.structure;
 
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
 public class BaseConcept extends BaseAdapter {
   public static String CPR_Abstract = "abstract";
