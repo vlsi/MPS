@@ -1,7 +1,7 @@
 package jetbrains.mps.resolve;
 
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.command.CommandProcessor;
@@ -105,13 +105,13 @@ public class Resolver {
     String role = reference.getRole();
     final SNode sourceNode = reference.getSourceNode();
 
-    ConceptDeclaration sourceConcept = sourceNode.getConceptDeclaration(operationContext.getScope());
-    LinkDeclaration refLinkDeclaration = SModelUtil.findLinkDeclaration(sourceConcept, role);
+    ConceptDeclaration sourceConcept = sourceNode.getConceptDeclarationAdapter(operationContext.getScope());
+    LinkDeclaration refLinkDeclaration = SModelUtil_new.findLinkDeclaration(sourceConcept, role);
     SNode sourceParent = sourceNode.getParent();
 
     if (sourceParent == null) sourceParent = sourceNode;
 
-    LinkDeclaration childLinkDeclaration = SModelUtil.findLinkDeclaration(sourceParent.getConceptDeclaration(operationContext.getScope()), sourceNode.getRole_());
+    LinkDeclaration childLinkDeclaration = SModelUtil_new.findLinkDeclaration(sourceParent.getConceptDeclarationAdapter(operationContext.getScope()), sourceNode.getRole_());
 
     EditorCell editorCell = editorContext.createNodeCell(sourceParent);
     EditorCell inspectedCell = editorContext.createInspectedCell(sourceNode, null);
