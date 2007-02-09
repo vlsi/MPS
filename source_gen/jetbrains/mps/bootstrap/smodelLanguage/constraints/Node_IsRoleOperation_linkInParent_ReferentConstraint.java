@@ -11,9 +11,11 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.ISearchScope;
 import java.util.List;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.smodel.search.SModelSearchUtil_new;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
+import jetbrains.mps.smodel.BaseAdapter;
 
 public class Node_IsRoleOperation_linkInParent_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -31,8 +33,8 @@ public class Node_IsRoleOperation_linkInParent_ReferentConstraint implements IMo
   }
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     SNode conceptOfParent = SLinkOperations.getTarget(referenceNode, "conceptOfParent", false);
-    List links = SModelSearchUtil.getAggregationLinkDeclarationsExcludingOverridden((ConceptDeclaration)conceptOfParent);
-    return new SimpleSearchScope((List<SNode>)links);
+    List links = SModelSearchUtil_new.getAggregationLinkDeclarationsExcludingOverridden(((ConceptDeclaration)SNodeOperations.getAdapter(conceptOfParent)));
+    return new SimpleSearchScope((List<SNode>)BaseAdapter.toNodes(links));
   }
   public String getNodeReferentSearchScopeDescription() {
     return "<no description>";

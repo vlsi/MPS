@@ -10,8 +10,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.smodel.search.SModelSearchUtil_new;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
 public class ConceptProperty_conceptPropertyDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -29,7 +29,7 @@ public class ConceptProperty_conceptPropertyDeclaration_ReferentConstraint imple
   }
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     SNode enclosingConcept = SNodeOperations.getParent(enclosingNode, "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration", true, false);
-    return SModelSearchUtil.createConceptHierarchyScope((ConceptDeclaration)enclosingConcept);
+    return SModelSearchUtil_new.createConceptHierarchyScope(((ConceptDeclaration)SNodeOperations.getAdapter(enclosingConcept)));
   }
   public String getNodeReferentSearchScopeDescription() {
     return "concept properties declared in hierarchy of enclosing concept";

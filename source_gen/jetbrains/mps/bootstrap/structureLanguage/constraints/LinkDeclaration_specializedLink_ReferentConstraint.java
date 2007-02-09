@@ -13,8 +13,8 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.EmptySearchScope;
 import java.util.List;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.smodel.search.SModelSearchUtil_new;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class LinkDeclaration_specializedLink_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
@@ -37,7 +37,7 @@ public class LinkDeclaration_specializedLink_ReferentConstraint implements IMode
     if(extendedConcept == null) {
       return new EmptySearchScope();
     }
-    List links = SModelSearchUtil.getLinkDeclarationsExcludingOverridden((ConceptDeclaration)extendedConcept);
+    List links = SModelSearchUtil_new.getLinkDeclarationsExcludingOverridden(((ConceptDeclaration)SNodeOperations.getAdapter(extendedConcept)));
     return new SimpleSearchScope((List<SNode>)links);
   }
   public String getNodeReferentSearchScopeDescription() {

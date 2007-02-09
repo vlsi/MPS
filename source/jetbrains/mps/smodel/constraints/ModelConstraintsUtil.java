@@ -6,7 +6,6 @@ import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.Status;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 
 /**
