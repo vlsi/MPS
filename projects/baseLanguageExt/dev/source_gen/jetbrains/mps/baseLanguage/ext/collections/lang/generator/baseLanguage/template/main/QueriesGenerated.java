@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference;
 import java.util.List;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.baseLanguage.ext.collections.lang.generator.baseLanguage.template.util.QueriesUtil;
@@ -80,6 +81,9 @@ public class QueriesGenerated {
   }
   public static String propertyMacro_GetPropertyValue_1170067652651(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return generator.getGeneratorSessionContext().createUniqueName("zComparator");
+  }
+  public static SNode referenceMacro_GetReferent_1170982686718(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return _QueriesUtil.resolve_ForEachVariableReference(((ForEachVariableReference)SNodeOperations.getAdapter(node)), templateNode, generator);
   }
   public static List sourceNodesQuery_1168281040871(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode creator = SLinkOperations.getTarget(node, "creator", true);
