@@ -1643,8 +1643,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public String getAlias(IScope scope) {
-    ConceptDeclaration declaration = getConceptDeclaration(scope);
-    return SModelUtil.getAlias(declaration);
+    return SModelUtil_new.getAlias(getConceptDeclarationAdapter(scope));
   }
 
 
