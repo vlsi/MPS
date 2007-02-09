@@ -5,7 +5,7 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
-  <maxImportIndex value="60" />
+  <maxImportIndex value="62" />
   <import index="1" modelUID="jetbrains.mps.transformation.TLBase.structure" />
   <import index="4" modelUID="jetbrains.mps.core.structure" />
   <import index="6" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
@@ -15,6 +15,8 @@
   <import index="11" modelUID="java.util@java_stub" />
   <import index="15" modelUID="jetbrains.mps.transformation.TLBase.editor@java_stub" />
   <import index="18" modelUID="jetbrains.mps.baseLanguage.structure" />
+  <import index="61" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" />
+  <import index="62" modelUID="jetbrains.mps.bootstrap.structureLanguage@java_stub" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1087903454703">
     <property name="name" value="PropertyMacro_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1087833241328" />
@@ -583,8 +585,8 @@
                           <link role="variableDeclaration" targetNodeId="1165283359721" resolveInfo="currentChildConcept" />
                         </node>
                         <node role="rValue" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1165283359732">
-                          <link role="classConcept" extResolveInfo="10.[Classifier]SModelUtil" />
                           <link role="baseMethodDeclaration" extResolveInfo="10.static method ([Classifier]SModelUtil).([StaticMethodDeclaration]getConceptDeclaration((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IScope])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ConceptDeclaration]))" />
+                          <link role="classConcept" extResolveInfo="10.[Classifier]SModelUtil" />
                           <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceChild_currentChild" id="1165283381382" />
                           <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_scope" id="1165283359734" />
                         </node>
@@ -600,9 +602,12 @@
                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1165283359739">
                         <link role="variableDeclaration" targetNodeId="1165283359721" resolveInfo="currentChildConcept" />
                       </node>
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1165283359740">
-                        <link role="baseMethodDeclaration" extResolveInfo="10.static method ([Classifier]SModelUtil).([StaticMethodDeclaration]getBaseConcept() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ConceptDeclaration]))" />
-                        <link role="classConcept" extResolveInfo="10.[Classifier]SModelUtil" />
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1171029333907">
+                        <link role="baseMethodDeclaration" extResolveInfo="10.method ([Classifier]BaseAdapter).([InstanceMethodDeclaration]getNode() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
+                        <node role="instance" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1165283359740">
+                          <link role="classConcept" extResolveInfo="10.[Classifier]SModelUtil_new" />
+                          <link role="baseMethodDeclaration" extResolveInfo="10.static method ([Classifier]SModelUtil_new).([StaticMethodDeclaration]getBaseConcept() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ConceptDeclaration]))" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -621,9 +626,12 @@
                           <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1165283359748">
                             <link role="variableDeclaration" targetNodeId="1165283359721" resolveInfo="currentChildConcept" />
                           </node>
-                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1165283359749">
-                            <link role="classConcept" extResolveInfo="10.[Classifier]SModelUtil" />
-                            <link role="baseMethodDeclaration" extResolveInfo="10.static method ([Classifier]SModelUtil).([StaticMethodDeclaration]getNamedConcept() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ConceptDeclaration]))" />
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1171029387844">
+                            <link role="baseMethodDeclaration" extResolveInfo="10.method ([Classifier]BaseAdapter).([InstanceMethodDeclaration]getNode() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
+                            <node role="instance" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1165283359749">
+                              <link role="classConcept" extResolveInfo="10.[Classifier]SModelUtil_new" />
+                              <link role="baseMethodDeclaration" extResolveInfo="10.static method ([Classifier]SModelUtil_new).([StaticMethodDeclaration]getNamedConcept() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ConceptDeclaration]))" />
+                            </node>
                           </node>
                         </node>
                       </node>
