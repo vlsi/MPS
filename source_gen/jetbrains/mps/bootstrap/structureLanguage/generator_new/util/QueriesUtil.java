@@ -12,7 +12,8 @@ import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import java.util.List;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
 public class QueriesUtil {
 
@@ -95,7 +96,7 @@ public class QueriesUtil {
   }
   public static List<SNode> conceptAndItsInterfaces(SNode concept) {
     List<SNode> result = ListOperations.createList(new SNode[]{concept});
-    List<SNode> implemented = (List)SModelUtil.getDirectlyImplementedInterfacesAsList((ConceptDeclaration)concept);
+    List<SNode> implemented = (List)SModelUtil_new.getDirectlyImplementedInterfacesAsList(((ConceptDeclaration)SNodeOperations.getAdapter(concept)));
     ListOperations.addAllElements(result, implemented);
     return result;
   }

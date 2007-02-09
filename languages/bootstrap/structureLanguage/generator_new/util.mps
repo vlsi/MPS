@@ -757,14 +757,12 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.CastExpression" id="1169579427529">
               <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1169579427530">
-                <link role="classConcept" extResolveInfo="2.[Classifier]SModelUtil" />
-                <link role="baseMethodDeclaration" extResolveInfo="2.static method ([Classifier]SModelUtil).([StaticMethodDeclaration]getDirectlyImplementedInterfacesAsList((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ConceptDeclaration])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [AbstractConceptDeclaration]&gt;]))" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.CastExpression" id="1169579427531">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1169579816660">
+                <link role="classConcept" extResolveInfo="2.[Classifier]SModelUtil_new" />
+                <link role="baseMethodDeclaration" extResolveInfo="2.static method ([Classifier]SModelUtil_new).([StaticMethodDeclaration]getDirectlyImplementedInterfacesAsList((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ConceptDeclaration])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [AbstractConceptDeclaration]&gt;]))" />
+                <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1171033838552">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1171033840727" />
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1169579816660">
                     <link role="variableDeclaration" targetNodeId="1169579397877" resolveInfo="concept" />
-                  </node>
-                  <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1169579427533">
-                    <link role="classifier" extResolveInfo="4.[Classifier]ConceptDeclaration" />
                   </node>
                 </node>
               </node>
