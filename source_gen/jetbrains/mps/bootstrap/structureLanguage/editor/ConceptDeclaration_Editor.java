@@ -43,7 +43,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     if(l == null) {
       return false;
     }
-    String s = Macros.languageDescriptor().expandPath(SPropertyOperations.get(node, "iconPath"), l.getDescriptorFile());
+    String s = Macros.languageDescriptor().expandPath(SPropertyOperations.getString(node, "iconPath"), l.getDescriptorFile());
     if(s == null) {
       return false;
     }
