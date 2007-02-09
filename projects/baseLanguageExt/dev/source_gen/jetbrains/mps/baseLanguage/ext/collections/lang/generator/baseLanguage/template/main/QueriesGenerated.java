@@ -29,6 +29,13 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1168510756013(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "operation", true), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortOperation");
   }
+  public static boolean baseMappingRule_Condition_1171063798184(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "creator", true), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceCreatorWithSupplier");
+  }
+  public static boolean baseMappingRule_Condition_1171064114550(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode enclosingClosure = SNodeOperations.getParent(node, "jetbrains.mps.baseLanguage.structure.Closure", false, false);
+    return SNodeOperations.isInstanceOf(enclosingClosure, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ValueSupplierBlock");
+  }
   public static boolean baseMappingRule_Condition_1170068093968(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SPropertyOperations.getBoolean(SNodeOperations.getParent(node, null, false, false), "reverseOrder") == false;
   }
