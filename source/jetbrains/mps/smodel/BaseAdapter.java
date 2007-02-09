@@ -41,6 +41,10 @@ public abstract class BaseAdapter {
     return myNode.getId();
   }
 
+  public String getAlias(IScope scope) {
+    return myNode.getAlias(scope);
+  }
+
   public BaseAdapter getParent() {
     if (myNode.getParent() == null) {
       return null;
@@ -197,6 +201,15 @@ public abstract class BaseAdapter {
                        @NotNull BaseAdapter child) {
     myNode.addChild(role, child.getNode());
   }
+
+
+  public void insertChild(@Nullable BaseAdapter anchorChild,
+                          @NotNull String role,
+                          @NotNull BaseAdapter child,
+                          boolean insertBefore) {
+    myNode.insertChild(BaseAdapter.fromAdapter(anchorChild), role, BaseAdapter.fromAdapter(child), insertBefore);
+  }
+
 
   public void insertChild(@Nullable BaseAdapter anchorChild,
                           @NotNull String role,
