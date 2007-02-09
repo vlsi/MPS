@@ -3,9 +3,10 @@
   <language namespace="jetbrains.mps.bootstrap.actionsLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
-  <maxImportIndex value="2" />
+  <maxImportIndex value="3" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <import index="2" modelUID="jetbrains.mps.smodel@java_stub" />
+  <import index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeFactories" id="1163111159679">
     <property name="name" value="STRL_node_factories" />
     <node role="nodeFactory" type="jetbrains.mps.bootstrap.actionsLanguage.NodeFactory" id="1163111194508">
@@ -22,9 +23,12 @@
                 </node>
               </node>
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Link_SetTargetOperation" id="1163111305396">
-                <node role="parameter" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1163111384734">
-                  <link role="baseMethodDeclaration" extResolveInfo="2.static method ([Classifier]SModelUtil).([StaticMethodDeclaration]getBaseConcept() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ConceptDeclaration]))" />
-                  <link role="classConcept" extResolveInfo="2.[Classifier]SModelUtil" />
+                <node role="parameter" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1171026435256">
+                  <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]BaseAdapter).([InstanceMethodDeclaration]getNode() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
+                  <node role="instance" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1163111384734">
+                    <link role="classConcept" extResolveInfo="2.[Classifier]SModelUtil_new" />
+                    <link role="baseMethodDeclaration" extResolveInfo="2.static method ([Classifier]SModelUtil_new).([StaticMethodDeclaration]getBaseConcept() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ConceptDeclaration]))" />
+                  </node>
                 </node>
               </node>
             </node>

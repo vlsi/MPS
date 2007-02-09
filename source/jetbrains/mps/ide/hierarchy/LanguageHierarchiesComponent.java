@@ -1,7 +1,7 @@
 package jetbrains.mps.ide.hierarchy;
 
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.nodeEditor.EditorSettings;
@@ -198,7 +198,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     if (group == null) return;
     JPopupMenu popupMenu = new JPopupMenu();
     ActionContext context = new ActionContext(myOperationContext);
-    context.put(SNode.class, getSelectedConcept());
+    context.put(SNode.class, BaseAdapter.fromAdapter(getSelectedConcept()));
     context.put(List.class, CollectionUtil.asList(getSelectedConcept()));
     group.add(popupMenu, context);
     popupMenu.show(this, e.getX(), e.getY());
@@ -208,10 +208,10 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     java.util.List<ConceptContainer> result = new ArrayList<ConceptContainer>();
     Map<ConceptDeclaration, ConceptContainer> processed = new HashMap<ConceptDeclaration, ConceptContainer>();
     SModel structureModel = myLanguage.getStructureModelDescriptor().getSModel();
-    outer : for (ConceptDeclaration concept : structureModel.getRoots(ConceptDeclaration.class)) {
+    outer : for (ConceptDeclaration concept : structureModel.getRootsAdapters(ConceptDeclaration.class)) {
       ConceptDeclaration parentConcept = concept;
       ConceptContainer prevConceptContainer = null;
-      while (parentConcept != null && parentConcept != SModelUtil.getBaseConcept() &&
+      while (parentConcept != null && parentConcept != SModelUtil_new.getBaseConcept() &&
               !(mySkipAncestors && parentConcept.getModel() != structureModel)) {
         ConceptContainer newConceptContainer = processed.get(parentConcept);
         if (newConceptContainer == null) {
@@ -353,8 +353,8 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
       myOperationContext = myComponent.myOperationContext;
       myRootable = conceptDeclaration.getRootable();
       myIsAbstract = conceptDeclaration.getConceptProperty("abstract", myOperationContext.getScope()) != null;
-      myNamespace = SModelUtil.getDeclaringLanguage(conceptDeclaration, myOperationContext.getScope()).getNamespace();
-      myNodeProxy = new SNodeProxy(conceptDeclaration);
+      myNamespace = SModelUtil_new.getDeclaringLanguage(conceptDeclaration, myOperationContext.getScope()).getNamespace();
+      myNodeProxy = new SNodeProxy(BaseAdapter.fromAdapter(conceptDeclaration));
       addMouseListener(new MouseAdapter() {
         public void mousePressed(MouseEvent e) {
           IDEProjectFrame frame = myOperationContext.getComponent(IDEProjectFrame.class);
@@ -363,9 +363,9 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
           if (e.isPopupTrigger()) {
             myComponent.processPopupMenu(e);
           } else {
-            projectPane.selectNode(getNode(), myOperationContext);
+            projectPane.selectNode(BaseAdapter.fromAdapter(getNode()), myOperationContext);
             if (e.getClickCount() == 2) {
-              frame.openNode(getNode(), myOperationContext);
+              frame.openNode(BaseAdapter.fromAdapter(getNode()), myOperationContext);
             }
           }
         }
@@ -379,7 +379,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     }
 
     public ConceptDeclaration getNode() {
-      return (ConceptDeclaration) myNodeProxy.getNode();
+      return (ConceptDeclaration) BaseAdapter.fromNode(myNodeProxy.getNode());
     }
 
     public void paint(Graphics graphics) {
