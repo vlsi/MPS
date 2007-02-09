@@ -11,6 +11,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.baseLanguage.ext.collections.lang.ClosureWithInputElement;
 import jetbrains.mps.baseLanguage.ExpressionStatement;
 import jetbrains.mps.baseLanguage.ext.collections.lang.generator.baseLanguage.template.util.QueriesUtil;
@@ -110,9 +111,8 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(creator, "elementType", true);
   }
   public static SNode sourceNodeQuery_1168512350251(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    ClosureWithInputElement c = (ClosureWithInputElement)node;
-    ExpressionStatement es = (ExpressionStatement)c.getBody().getStatements().get(0);
-    return es.getExpression();
+    SNode firstStatement = SequenceOperations.getFirst(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "body", true), "statement", true));
+    return SLinkOperations.getTarget(firstStatement, "expression", true);
   }
   public static SNode sourceNodeQuery_1168511702747(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "leftExpression", true);
@@ -166,5 +166,17 @@ public class QueriesGenerated {
   }
   public static SNode mapSrcMacro_mapper_1170959570489(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return QueriesUtil.create_Closure_returnedType(node, generator.getTargetModel(), generator.getTypeChecker());
+  }
+  public static SNode mapSrcMacro_mapper_1170978063590(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.create_ClosureWithInput_inputElementType(node, generator);
+  }
+  public static SNode mapSrcMacro_mapper_1170978105865(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.create_ClosureWithInput_inputElementType(node, generator);
+  }
+  public static SNode mapSrcMacro_mapper_1170978114264(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.create_ClosureWithInput_inputElementType(node, generator);
+  }
+  public static SNode mapSrcMacro_mapper_1170978123585(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.create_ClosureWithInput_inputElementType(node, generator);
   }
 }
