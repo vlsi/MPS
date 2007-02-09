@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.search.AbstractSearchScope;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 
@@ -34,7 +35,7 @@ public class ConceptDeclarationExtendedConceptSearchScope extends AbstractSearch
   }
 
   private List<SNode> createOwnNodesList() {
-    ISearchScope allNodesScope = SModelSearchUtil.createModelAndImportedModelsScope(myConceptDeclaration.getModel(), myScope);
+    ISearchScope allNodesScope = SModelSearchUtil_new.createModelAndImportedModelsScope(myConceptDeclaration.getModel(), myScope);
     return allNodesScope.getNodes(new Condition<SNode>() {
       public boolean met(SNode object) {
         if (object == myConceptDeclaration) return false;

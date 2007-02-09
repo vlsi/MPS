@@ -7,6 +7,7 @@ import jetbrains.mps.ide.Status;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 
 /**
  * Created by IntelliJ IDEA.
@@ -47,7 +48,7 @@ public class ModelConstraintsUtil {
     }
 
     // global search scope
-    ISearchScope searchScope = SModelSearchUtil.createModelAndImportedModelsScope(model, false, scope);
+    ISearchScope searchScope = SModelSearchUtil_new.createModelAndImportedModelsScope(model, false, scope);
     return new Status.OK(searchScope);
   }
 }

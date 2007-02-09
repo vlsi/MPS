@@ -114,14 +114,12 @@
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1149208402946">
             <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1149208409229">
-              <link role="classConcept" extResolveInfo="5.[Classifier]SModelSearchUtil" />
-              <link role="baseMethodDeclaration" extResolveInfo="5.static method ([Classifier]SModelSearchUtil).([StaticMethodDeclaration]createConceptHierarchyScope((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ConceptDeclaration])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IConceptHierarchyScope]))" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.CastExpression" id="1149208409230">
-                <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1149208409231">
+              <link role="classConcept" extResolveInfo="5.[Classifier]SModelSearchUtil_new" />
+              <link role="baseMethodDeclaration" extResolveInfo="5.static method ([Classifier]SModelSearchUtil_new).([StaticMethodDeclaration]createConceptHierarchyScope((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ConceptDeclaration])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IConceptHierarchyScope]))" />
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1171035656699">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1171036241111" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1149208409231">
                   <link role="variableDeclaration" targetNodeId="1148938291535" />
-                </node>
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1149208409232">
-                  <link role="classifier" extResolveInfo="6.[Classifier]ConceptDeclaration" />
                 </node>
               </node>
             </node>

@@ -3,6 +3,7 @@ package jetbrains.mps.bootstrap.structureLanguage.constraints;
 import jetbrains.mps.smodel.search.AbstractSearchScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.util.Condition;
@@ -40,7 +41,7 @@ public class ReferenceConceptLinkTargetSearchScope extends AbstractSearchScope {
     if (linkDeclaration != null) {
       final ConceptDeclaration targetConcept = linkDeclaration.getTargetType();
       if (targetConcept != null) {
-        ISearchScope allNodesScope = SModelSearchUtil.createModelAndImportedModelsScope(myReferenceConceptLink.getModel(), myScope);
+        ISearchScope allNodesScope = SModelSearchUtil_new.createModelAndImportedModelsScope(myReferenceConceptLink.getModel(), myScope);
         return allNodesScope.getNodes(new Condition<SNode>() {
           public boolean met(SNode object) {
             return object.isInstanceOfConcept(targetConcept, myScope);

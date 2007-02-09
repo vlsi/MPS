@@ -109,14 +109,14 @@ public class SModelSearchUtil_new {
         }
       }
 
-      List<ConceptDeclaration> concepts = new ArrayList<ConceptDeclaration>();
+      List<SNode> concepts = new ArrayList<SNode>();
       for (ConceptDeclaration concept : myConcepts) {
         if (condition.met(concept.getNode())) {
-          concepts.add(concept);
+          concepts.add(concept.getNode());
         }
       }
 
-      return (List) concepts;
+      return concepts;
     }
   }
 

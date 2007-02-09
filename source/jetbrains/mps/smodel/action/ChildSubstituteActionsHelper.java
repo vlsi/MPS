@@ -116,7 +116,7 @@ public class ChildSubstituteActionsHelper {
 
     // create search scope that only includes root concepts.
     // case: concept-function-parameters declared as child-concepts are not added to substitute menue by default
-    ISearchScope conceptsSearchScope = SModelSearchUtil.createConceptsFromModelLanguagesScope(parentNode.getModel(), true, scope);
+    ISearchScope conceptsSearchScope = SModelSearchUtil_new.createConceptsFromModelLanguagesScope(parentNode.getModel(), true, scope);
     List<SNode> applicableConcepts = conceptsSearchScope.getNodes(new Condition<SNode>() {
       public boolean met(SNode object) {
         return isDefaultSubstitutableConcept((ConceptDeclaration) BaseAdapter.fromNode(object), childConcept, scope) &&
