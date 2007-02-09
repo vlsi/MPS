@@ -13,6 +13,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 import java.util.List;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.baseLanguage.ext.collections.lang.generator.baseLanguage.template.util.QueriesUtil;
+import jetbrains.mps.baseLanguage.BaseLanguageUtil_new;
 
 public class QueriesGenerated {
 
@@ -127,6 +128,16 @@ public class QueriesGenerated {
   }
   public static SNode mapSrcMacro_mapper_1170957401571(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return QueriesUtil.create_Closure_returnedType(node, generator.getTargetModel(), generator.getTypeChecker());
+  }
+  public static SNode mapSrcMacro_mapper_1170980972538(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode creator = SLinkOperations.getTarget(node, "creator", true);
+    SNode supplier = SLinkOperations.getTarget(creator, "supplier", true);
+    SModel outputModel = generator.getTargetModel();
+    SNode type = generator.getTypeChecker().getNodeTypeAsNode(supplier, outputModel);
+    if(type != null) {
+      return type;
+    }
+    return BaseLanguageUtil_new.createObjectClassType(outputModel, scope).getNode();
   }
   public static SNode mapSrcMacro_mapper_1170976176384(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return QueriesUtil.create_ClosureWithInput_inputElementType(node, generator);
