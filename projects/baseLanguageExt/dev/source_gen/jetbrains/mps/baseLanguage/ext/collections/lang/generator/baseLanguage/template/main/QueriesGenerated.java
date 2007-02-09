@@ -127,11 +127,17 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1170984741354(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "leftExpression", true);
   }
+  public static SNode sourceNodeQuery_1170985400792(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "operation", true), "whereClosure", true);
+  }
   public static SNode sourceNodeQuery_1170959592162(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "body", true);
   }
   public static SNode sourceNodeQuery_1170984722931(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "leftExpression", true);
+  }
+  public static SNode sourceNodeQuery_1170985357311(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "operation", true), "selector", true);
   }
   public static SNode sourceNodeQuery_1168287937464(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "inputSequence", true);
