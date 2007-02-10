@@ -36,6 +36,10 @@ public class QueriesGenerated {
     SNode enclosingClosure = SNodeOperations.getParent(node, "jetbrains.mps.baseLanguage.structure.Closure", false, false);
     return SNodeOperations.isInstanceOf(enclosingClosure, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ValueSupplierBlock");
   }
+  public static boolean baseMappingRule_Condition_1171064421647(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode enclosingClosure = SNodeOperations.getParent(node, "jetbrains.mps.baseLanguage.structure.Closure", false, false);
+    return !(SNodeOperations.isInstanceOf(enclosingClosure, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ValueSupplierBlock"));
+  }
   public static boolean baseMappingRule_Condition_1170068093968(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SPropertyOperations.getBoolean(SNodeOperations.getParent(node, null, false, false), "reverseOrder") == false;
   }
