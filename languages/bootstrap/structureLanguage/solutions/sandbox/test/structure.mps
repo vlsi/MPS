@@ -5,6 +5,9 @@
   <import index="1" modelUID="jetbrains.mps.core.structure" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1169126353597">
     <property name="name" value="ABC" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1171093460374">
+      <link role="intfc" targetNodeId="1.1169194658468" />
+    </node>
   </node>
 </model>
 
