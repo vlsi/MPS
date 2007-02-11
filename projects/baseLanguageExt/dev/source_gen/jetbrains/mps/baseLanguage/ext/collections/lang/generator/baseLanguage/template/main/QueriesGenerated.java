@@ -23,27 +23,6 @@ public class QueriesGenerated {
     SNode creator = SLinkOperations.getTarget(node, "creator", true);
     return SNodeOperations.isInstanceOf(creator, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListCreatorWithInit");
   }
-  public static boolean baseMappingRule_Condition_1171152299376(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    // todo: remove this condition when all operations
-    // are reduced using new rules
-    SNode op = SLinkOperations.getTarget(node, "operation", true);
-    boolean b = false;
-    b = b || SNodeOperations.isInstanceOf(op, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapOperation");
-    b = b || SNodeOperations.isInstanceOf(op, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.WhereOperation");
-    b = b || SNodeOperations.isInstanceOf(op, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SelectOperation");
-    b = b || SNodeOperations.isInstanceOf(op, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachOperation");
-    b = b || SNodeOperations.isInstanceOf(op, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortOperation");
-    b = b || SNodeOperations.isInstanceOf(op, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation");
-    b = b || SNodeOperations.isInstanceOf(op, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddAllElementsOperation");
-    b = b || SNodeOperations.isInstanceOf(op, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.RemoveElementOperation");
-    b = b || SNodeOperations.isInstanceOf(op, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetElementOperation");
-    b = b || SNodeOperations.isInstanceOf(op, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation");
-    b = b || SNodeOperations.isInstanceOf(op, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetLastOperation");
-    b = b || SNodeOperations.isInstanceOf(op, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetSizeOperation");
-    b = b || SNodeOperations.isInstanceOf(op, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.IsEmptyOperation");
-    b = b || SNodeOperations.isInstanceOf(op, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ToListOperation");
-    return b;
-  }
   public static boolean baseMappingRule_Condition_1171063798184(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "creator", true), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceCreatorWithSupplier");
   }
