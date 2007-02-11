@@ -35,7 +35,7 @@ public class IntelligentInputUtil {
   }
 
   private static void processCell(EditorCell_Label cell, final EditorContext editorContext, final String smallPattern, final String tail) {
-
+    boolean sourceCellRemains = false;
     INodeSubstituteInfo substituteInfo = cell.getSubstituteInfo();
     if (substituteInfo == null) {
       substituteInfo = new NullSubstituteInfo();
@@ -47,6 +47,7 @@ public class IntelligentInputUtil {
             && substituteInfo.hasExactlyNActions(smallPattern+tail, false, 0)) {
       newNode = cell.getSNode();
       cellForNewNode = cell;
+      sourceCellRemains = true;
     } else if (uniqueAction(substituteInfo, smallPattern, tail)) {
       List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(smallPattern, true);
       INodeSubstituteAction item = matchingActions.get(0);
@@ -120,6 +121,9 @@ public class IntelligentInputUtil {
         return;
       }
  //     editorContext.getNodeEditorComponent().invalidateCell(cell);
+      if (sourceCellRemains) {
+        cell.changeText(smallPattern);
+      }
 
       if (!uniqueAction(rtSubstituteInfo, tail, "")) { //don't execute non-unique action on RT hint cell
         CommandProcessor.instance().invokeLater(cellFounder);
