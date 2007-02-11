@@ -29,6 +29,7 @@ public class QueriesGenerated {
     SNode op = SLinkOperations.getTarget(node, "operation", true);
     boolean b = false;
     b = b || SNodeOperations.isInstanceOf(op, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapOperation");
+    b = b || SNodeOperations.isInstanceOf(op, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.WhereOperation");
     b = b || SNodeOperations.isInstanceOf(op, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachOperation");
     b = b || SNodeOperations.isInstanceOf(op, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortOperation");
     b = b || SNodeOperations.isInstanceOf(op, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.RemoveElementOperation");
@@ -146,10 +147,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(node, "body", true);
   }
   public static SNode sourceNodeQuery_1170984741354(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "leftExpression", true);
+    return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
   }
   public static SNode sourceNodeQuery_1170985400792(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "operation", true), "whereClosure", true);
+    return SLinkOperations.getTarget(node, "whereClosure", true);
   }
   public static SNode sourceNodeQuery_1170959592162(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "body", true);
