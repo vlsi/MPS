@@ -51,7 +51,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private WeakHashMap<EditorCell, Set<SNode>> myCellsToNodesToDependOnMap = new WeakHashMap<EditorCell, Set<SNode>>();
 
   private WeakHashMap<SNode, EditorCell> myNodesToBigCellsMap = new WeakHashMap<SNode, EditorCell>();
-  private WeakHashMap<Pair<EditorManager, ReferencedNodeContext>, EditorCell> myRefNodeContextsToBigCellsMap = new WeakHashMap<Pair<EditorManager, ReferencedNodeContext>, EditorCell>();
+  private WeakHashMap<ReferencedNodeContext, EditorCell> myRefNodeContextsToBigCellsMap = new WeakHashMap<ReferencedNodeContext, EditorCell>();
 
   private HashMap<EditorCell, Set<SNodeProxy>> myCellsToRefTargetsToDependOnMap = new HashMap<EditorCell, Set<SNodeProxy>>();
   private HashMap<Pair<SNodeProxy, String>, Set<EditorCell_Property>> myNodePropertiesAccessedCleanlyToDependentCellsMap = new HashMap<Pair<SNodeProxy, String>, Set<EditorCell_Property>>();
@@ -929,9 +929,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       return null;
     }
     if (!biggest) {
-      EditorCell foundCell = myRefNodeContextsToBigCellsMap.get(
-              new Pair<EditorManager, ReferencedNodeContext>(
-                      EditorManager.getInstanceFromContext(myOperationContext), ReferencedNodeContext.createNodeContext(node)));
+      EditorCell foundCell = myRefNodeContextsToBigCellsMap.get(ReferencedNodeContext.createNodeContext(node));
       if (foundCell != null) return foundCell;
     }
     EditorCell_Collection cellCollection = (EditorCell_Collection) myRootCell;
@@ -1655,12 +1653,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   void registerAsBigCell(EditorCell cell, ReferencedNodeContext refContext, EditorManager manager) {
-    myRefNodeContextsToBigCellsMap.put(new Pair<EditorManager, ReferencedNodeContext>(manager, refContext), cell);
-    myNodesToBigCellsMap.put(cell.getSNode(), cell);
+    if (manager == EditorManager.getInstanceFromContext(myOperationContext)) {
+      myRefNodeContextsToBigCellsMap.put(refContext, cell);
+      myNodesToBigCellsMap.put(cell.getSNode(), cell);
+    }
   }
 
-  EditorCell getBigCellForRefContext(ReferencedNodeContext refContext, EditorManager manager) {
-    return myRefNodeContextsToBigCellsMap.get(new Pair<EditorManager, ReferencedNodeContext>(manager, refContext));
+  EditorCell getBigCellForRefContext(ReferencedNodeContext refContext) {
+    return myRefNodeContextsToBigCellsMap.get(refContext);
   }
 
   EditorCell getBigCellForNode(SNode node) {
