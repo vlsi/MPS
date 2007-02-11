@@ -83,7 +83,7 @@ public class IntelligentInputUtil {
     final CellFounder cellFounder = new CellFounder(editorContext, newNode, tail);
     EditorCell newCellForNewNode = editorContext.createNodeCellInAir(newNode, ourServiceEditorManager);
     if (cellForNewNode.isInspectorCell()) {
-      System.err.println("oy, vey!!!");
+//      System.err.println("oy, vey!!!");
     }
     cellFounder.run(newCellForNewNode);
     EditorCell foundCell = cellFounder.getFoundCell();
