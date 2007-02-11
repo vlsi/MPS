@@ -26,8 +26,13 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1167380888941(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "operation", true), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.RemoveElementOperation");
   }
-  public static boolean baseMappingRule_Condition_1168510756013(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "operation", true), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortOperation");
+  public static boolean baseMappingRule_Condition_1171152299376(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    // todo: remove this condition when all operations
+    // are reduced using new rules
+    SNode op = SLinkOperations.getTarget(node, "operation", true);
+    boolean b = true;
+    b = b && SNodeOperations.isInstanceOf(op, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortOperation");
+    return b;
   }
   public static boolean baseMappingRule_Condition_1171063798184(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "creator", true), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceCreatorWithSupplier");
@@ -209,14 +214,17 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(firstStatement, "expression", true);
   }
   public static SNode sourceNodeQuery_1168511702747(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "leftExpression", true);
+    return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
   }
   public static SNode sourceNodeQuery_1168511753711(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "operation", true), "comparable", true);
+    return SLinkOperations.getTarget(node, "comparable", true);
   }
   public static SNode sourceNodeQuery_1170979555022(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode firstStatement = SequenceOperations.getFirst(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "body", true), "statement", true));
     return SLinkOperations.getTarget(firstStatement, "expression", true);
+  }
+  public static SNode sourceNodeQuery_1171152607288(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "operation", true);
   }
   public static SNode mapSrcMacro_mapper_1170957121880(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return QueriesUtil.create_Closure_returnedType(node, generator.getTargetModel(), generator.getTypeChecker());
