@@ -629,7 +629,7 @@ public class SModel implements Iterable<SNode> {
       } else {
 //        System.out.println("kurlik kurlik. set break point here");
         scope.getModelDescriptor(modelUID);
-//        LOG.errorWithTrace("Couldn't find model descriptor for imported model: \"" + modelUID + "\" in: \"" + getUID() + "\"");
+        LOG.errorWithTrace("Couldn't find model descriptor for imported model: \"" + modelUID + "\" in: \"" + getUID() + "\"");
       }
     }
     return modelsList.iterator();
