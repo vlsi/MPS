@@ -119,6 +119,7 @@ public class IntelligentInputUtil {
         }
         return;
       }
+ //     editorContext.getNodeEditorComponent().invalidateCell(cell);
 
       if (!uniqueAction(rtSubstituteInfo, tail, "")) { //don't execute non-unique action on RT hint cell
         CommandProcessor.instance().invokeLater(cellFounder);
