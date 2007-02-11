@@ -110,11 +110,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
 
   public void setChildrenLoader(IChildrenLoader childrenLoader) {
-
-    if (myChildren != null) {
-      System.out.println("o' fuck! " + myChildren);
-    }
-
     assert myChildren == null && myChildrenLoader == null;
     myChildrenLoader = childrenLoader;
   }
