@@ -1544,9 +1544,9 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return list;
   }
 
-  public SNode findFirstParent(Class[] classes) {
+  public BaseAdapter findFirstParent(Class[] classes) {
     SNode node = this;
-    SNode parent = node.getParent();
+    BaseAdapter parent = BaseAdapter.fromNode(node.getParent());
     while (parent != null) {
       for (Class clazz : classes) {
         if (clazz.isAssignableFrom(parent.getClass())) {
@@ -1556,11 +1556,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       parent = parent.getParent();
     }
     return null;
-
-
-
-
-    
   }
 
   public SNode findParent(Condition<SNode> condition) {
