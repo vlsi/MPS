@@ -9,5 +9,12 @@
       <link role="intfc" targetNodeId="1.1169194658468" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptDeclaration" id="1171045444576">
+    <property name="name" value="A" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1171045452046">
+      <property name="name" value="cx" />
+      <link role="dataType" targetNodeId="1.1082983041843" />
+    </node>
+  </node>
 </model>
 

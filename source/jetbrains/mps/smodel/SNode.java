@@ -1386,12 +1386,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   @NotNull
   public jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration getNodeConceptAdapter() {
-    return (jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) getNodeConcept().getAdapter();
-  }
-
-  @NotNull
-  public ConceptDeclaration getNodeConcept() {
-    return getConceptDeclaration(GlobalScope.getInstance());
+    return (jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) getConceptDeclaration(GlobalScope.getInstance()).getAdapter();
   }
 
   @NotNull

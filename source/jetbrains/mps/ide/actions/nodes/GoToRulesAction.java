@@ -1,8 +1,8 @@
 package jetbrains.mps.ide.actions.nodes;
 
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.core.BaseConcept;
-import jetbrains.mps.helgins.*;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.core.structure.BaseConcept;
+import jetbrains.mps.helgins.structure.*;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.action.ActionContext;
@@ -11,12 +11,12 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.patterns.PatternExpression;
+import jetbrains.mps.patterns.structure.PatternExpression;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
-import jetbrains.mpswiki.queryLanguage.ConceptReference;
-import jetbrains.mpswiki.queryLanguage.QueryPattern;
-import jetbrains.mpswiki.queryLanguage.VariableCondition;
+import jetbrains.mpswiki.queryLanguage.structure.ConceptReference;
+import jetbrains.mpswiki.queryLanguage.structure.QueryPattern;
+import jetbrains.mpswiki.queryLanguage.structure.VariableCondition;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.AbstractAction;
@@ -50,22 +50,23 @@ public class GoToRulesAction extends MPSAction {
 
 
   public void update(@NotNull ActionContext context) {
-    boolean enabled = context.getNode() instanceof ConceptDeclaration;
+    boolean enabled = BaseAdapter.fromNode(context.getNode()) instanceof ConceptDeclaration;
     setEnabled(enabled);
     setVisible(enabled);
   }
 
 
   public void execute(@NotNull ActionContext context) {
-    final ConceptDeclaration conceptDeclaration = (ConceptDeclaration) context.getNode();
+    final ConceptDeclaration conceptDeclaration = (ConceptDeclaration) BaseAdapter.fromNode(context.getNode());
     final IOperationContext operationContext = context.getOperationContext();
-    Language language = SModelUtil.getDeclaringLanguage(conceptDeclaration, operationContext.getScope());
+    Language language = SModelUtil_new.getDeclaringLanguage(conceptDeclaration, operationContext.getScope());
     List<SNode> rules = new ArrayList<SNode>();
     if (language != null && language.getHelginsTypesystemModelDescriptor() != null) {
       SModelDescriptor helginsDescriptor = language.getHelginsTypesystemModelDescriptor();
       if (helginsDescriptor != null) {
         rules.addAll(helginsDescriptor.getSModel().getRoots(new Condition<SNode>() {
-          public boolean met(SNode object) {
+          public boolean met(SNode n) {
+            BaseAdapter object = BaseAdapter.fromNode(n);
             AnalyzedTermDeclaration analyzedTermDeclaration = null;
             if (object instanceof Rule) {
               analyzedTermDeclaration = ((Rule)object).getApplicableNodes().get(0);
@@ -74,7 +75,7 @@ public class GoToRulesAction extends MPSAction {
               analyzedTermDeclaration = ((SubtypingRule)object).getApplicableNode();
             }
             if (object instanceof SubtypingVarianceRule) {
-              return SModelUtil.isAssignableConcept(conceptDeclaration, ((SubtypingVarianceRule)object).getConceptDeclaration());
+              return SModelUtil_new.isAssignableConcept(conceptDeclaration, ((SubtypingVarianceRule)object).getConceptDeclaration());
             }
             if (object instanceof TypeAdaptationRule) {
               analyzedTermDeclaration = ((TypeAdaptationRule)object).getApplicableNodes().get(0);
@@ -115,14 +116,14 @@ public class GoToRulesAction extends MPSAction {
     VariableCondition condition = analyzedTermDeclaration.getCondition();
     if (condition instanceof ConceptReference) {
       ConceptReference conceptReference = (ConceptReference)condition;
-      return SModelUtil.isAssignableConcept(conceptDeclaration, conceptReference.getConcept());
+      return SModelUtil_new.isAssignableConcept(conceptDeclaration, conceptReference.getConcept());
     } else if (condition instanceof QueryPattern) {
       QueryPattern queryPattern = (QueryPattern)condition;
       PatternExpression expression = queryPattern.getPattern();
       if (expression == null) return false;
       BaseConcept baseConcept = expression.getPatternNode();
       if (baseConcept == null) return false;
-      return SModelUtil.isAssignableConcept(conceptDeclaration, baseConcept.getNodeConcept());
+      return SModelUtil_new.isAssignableConcept(conceptDeclaration, baseConcept.getNodeConcept());
     }
     return false;
   }
