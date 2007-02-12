@@ -1363,5 +1363,34 @@
       <property name="text" value="containing root" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1171315913365">
+    <link role="conceptDeclaration" targetNodeId="1.1171315804604" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1171315915307">
+      <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1171315915308">
+        <property name="editable" value="true" />
+        <property name="text" value="roots (" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1171315915309">
+        <property name="drawBorder" value="false" />
+        <property name="noTargetText" value="&lt;all&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1171315804605" />
+        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1171315915310">
+          <link role="conceptDeclaration" targetNodeId="3.1071489090640" />
+          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1171315915311">
+            <property name="textFgColor" value="DARK_MAGENTA" />
+            <property name="readOnly" value="true" />
+            <link role="relationDeclaration" targetNodeId="2.1078489098626" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1171315915312">
+        <property name="editable" value="true" />
+        <property name="text" value=")" />
+        <property name="drawBorder" value="false" />
+      </node>
+    </node>
+  </node>
 </model>
 
