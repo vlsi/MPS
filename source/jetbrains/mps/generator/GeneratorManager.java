@@ -205,14 +205,14 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     return super.clone();
   }
 
-  public void generateModelsWithProgressWindowAsync(final List<SModel> sourceModels,
+  public Thread generateModelsWithProgressWindowAsync(final List<SModel> sourceModels,
                                                     final Language targetLanguage,
                                                     final IOperationContext invocationContext,
                                                     final IGenerationType generationType,
                                                     final IGenerationScript script,
                                                     boolean closeOnExit) {
     AdaptiveProgressMonitor adaptiveProgressMonitor = new AdaptiveProgressMonitor(invocationContext.getComponent(IDEProjectFrame.class), closeOnExit);
-    generateModelsWithProgressWindow(sourceModels, targetLanguage, invocationContext, generationType, script, new Runnable() {
+    return generateModelsWithProgressWindow(sourceModels, targetLanguage, invocationContext, generationType, script, new Runnable() {
       public void run() {
       }
     }, true, adaptiveProgressMonitor, GeneratingEngine.old);
@@ -227,12 +227,12 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     generateModelsWithProgressWindow(sourceModels, targetLanguage, invocationContext, generationType, script, continuation, true, null, GeneratingEngine.old);
   }
 
-  public void generateModelsWithProgressWindowAsync(final List<SModel> sourceModels,
+  public Thread generateModelsWithProgressWindowAsync(final List<SModel> sourceModels,
                                                     final Language targetLanguage,
                                                     final IOperationContext invocationContext,
                                                     final IGenerationType generationType,
                                                     final IGenerationScript script) {
-    generateModelsWithProgressWindow(sourceModels, targetLanguage, invocationContext, generationType, script, new Runnable() {
+    return generateModelsWithProgressWindow(sourceModels, targetLanguage, invocationContext, generationType, script, new Runnable() {
       public void run() {
       }
     }, true, null, GeneratingEngine.old);
@@ -275,7 +275,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     }
   }
 
-  public void generateModelsWithProgressWindow(final List<SModel> sourceModels,
+  public Thread generateModelsWithProgressWindow(final List<SModel> sourceModels,
                                                final Language targetLanguage,
                                                final IOperationContext invocationContext,
                                                final IGenerationType generationType,
@@ -303,6 +303,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     //do not change priority! With other priority it's impossible to listen to music
     generationThread.setPriority(Thread.MIN_PRIORITY);
     generationThread.start();
+    return generationThread;
   }
 
   private void checkMonitorCanceled(IAdaptiveProgressMonitor progressMonitor) {
