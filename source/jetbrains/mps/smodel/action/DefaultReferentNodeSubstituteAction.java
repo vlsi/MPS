@@ -1,10 +1,11 @@
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkMetaclass;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModelUtil_new;
 
 /**
  * Igor Alshannikov
@@ -20,7 +21,7 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
     myCurrentReferent = currentReferent;
     myScope = scope;
     myLinkDeclaration = linkDeclaration;
-    if (SModelUtil.getGenuineLinkMetaclass(linkDeclaration) != LinkMetaclass.reference) {
+    if (SModelUtil_new.getGenuineLinkMetaclass(linkDeclaration) != LinkMetaclass.reference) {
       throw new RuntimeException("Only reference links are allowed here.");
     }
   }
@@ -36,10 +37,10 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
   public SNode doSubstitute(String pattern) {
     SNode parameterNode = (SNode) getParameterObject();
     if (myCurrentReferent != parameterNode) {
-      if (!SModelUtil.isAcceptableReferent(myLinkDeclaration, parameterNode, myScope)) {
+      if (!SModelUtil_new.isAcceptableReferent(myLinkDeclaration, parameterNode, myScope)) {
         throw new RuntimeException("Couldn't set referent node: " + parameterNode.getDebugText());
       }
-      getSourceNode().setReferent(SModelUtil.getGenuineLinkRole(myLinkDeclaration), parameterNode);
+      getSourceNode().setReferent(SModelUtil_new.getGenuineLinkRole(myLinkDeclaration), parameterNode);
     }
     return null;
   }
