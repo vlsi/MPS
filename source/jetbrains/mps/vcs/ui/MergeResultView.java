@@ -97,6 +97,7 @@ public class MergeResultView extends JPanel {
     applyNewNodes();
     applyProperties();
     applyReferences();
+    applyMoves();
     applyDeletes();
     myResultModel.setLoading(false);
   }
@@ -183,6 +184,15 @@ public class MergeResultView extends JPanel {
     for (DeleteNodeChange del : deletes) {
       if (myExcludedChanges.contains(del)) continue;      
       del.apply(myResultModel);
+    }
+  }
+
+  private void applyMoves() {
+    List<MoveNodeChange> moves = getChanges(MoveNodeChange.class);
+
+    for (MoveNodeChange mnc : moves) {
+      if (myExcludedChanges.contains(mnc)) continue;
+      mnc.apply(myResultModel);
     }
   }
 

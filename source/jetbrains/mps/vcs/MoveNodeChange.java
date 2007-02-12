@@ -1,15 +1,18 @@
 package jetbrains.mps.vcs;
 
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
 
 public class MoveNodeChange extends Change {
   private String myNodeId;
   private String myNewParent;
+  private String myNewRole;
 
 
-  public MoveNodeChange(String node, String newParent) {
+  public MoveNodeChange(String node, String newParent, String newRole) {
     myNodeId = node;
     myNewParent = newParent;
+    myNewRole = newRole;
   }
 
 
@@ -31,7 +34,13 @@ public class MoveNodeChange extends Change {
   }
 
   public boolean apply(SModel m) {
-    throw new UnsupportedOperationException();
+    SNode node = m.getNodeById(myNodeId);
+    if (node == null) return false;
+    node.getParent().removeChild(node);
+    SNode parent = m.getNodeById(myNewParent);
+    if (parent == null) return false;
+    parent.addChild(myNewRole, node);
+    return true;
   }
 
   public boolean conflicts(Change c) {

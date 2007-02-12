@@ -114,9 +114,6 @@ public class ModelDifferenceView extends JPanel {
           } else if (c instanceof DeleteNodeChange) {
             //skip
           } else {
-            System.out.println(c.getClass());
-
-            System.out.println("fck! default case!");
             expandNode(c.getAffectedNodeId());
           }
         }
@@ -245,6 +242,10 @@ public class ModelDifferenceView extends JPanel {
       return null; 
     }
 
+
+    public String toString() {
+      return super.toString() + " " + getSNode().getId();
+    }
 
     public void doubleClick() {
     }

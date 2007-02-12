@@ -73,19 +73,21 @@ public class DiffBuilder {
 
   private void collectMovedNodes() {
     Set<String> newNodes = myNewModel.getNodeIds();
-    Set<String> oldNodes = myNewModel.getNodeIds();
+    Set<String> oldNodes = myOldModel.getNodeIds();
 
     oldNodes.retainAll(newNodes);
 
     for (String id : oldNodes) {
       SNode n = myNewModel.getNodeById(id);
-      SNode o = myNewModel.getNodeById(id);
+      SNode o = myOldModel.getNodeById(id);
+
+      assert n != null && o != null;
 
       String nid = getParentId(n);
       String oid = getParentId(o);
 
       if (!(nid + "").equals(oid + "")) {
-        myChanges.add(new MoveNodeChange(id, nid));
+        myChanges.add(new MoveNodeChange(id, nid, n.getRole_()));
       }
     }
   }
