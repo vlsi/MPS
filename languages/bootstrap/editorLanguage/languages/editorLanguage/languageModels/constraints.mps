@@ -192,11 +192,9 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1164916996517">
             <node role="expression" type="jetbrains.mps.baseLanguage.NewExpression" id="1164916996518">
               <link role="baseMethodDeclaration" extResolveInfo="10.constructor [Classifier]CellMenuPart_ReplaceNode_replacementConcept_SearchScope[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ConceptDeclaration]))" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.CastExpression" id="1164916996519">
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1164916996520">
-                  <link role="classifier" extResolveInfo="6.[Classifier]ConceptDeclaration" />
-                </node>
-                <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1164916996521">
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1171277453623">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1171277454563" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1164916996521">
                   <link role="variableDeclaration" targetNodeId="1164916996512" resolveInfo="editedConcept" />
                 </node>
               </node>

@@ -1,9 +1,7 @@
 package jetbrains.mps.bootstrap.structureLanguage.constraints;
 
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModelUtil;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.AbstractSearchScope;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
@@ -23,7 +21,7 @@ public class ConceptDeclarationExtendedConceptSearchScope extends AbstractSearch
 
   public ConceptDeclarationExtendedConceptSearchScope(SNode conceptDeclaration, IScope scope) {
     myScope = scope;
-    myConceptDeclaration = (ConceptDeclaration) conceptDeclaration;
+    myConceptDeclaration = (ConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration);
   }
 
   public List<SNode> getOwnNodes(Condition<SNode> condition) {
@@ -35,14 +33,14 @@ public class ConceptDeclarationExtendedConceptSearchScope extends AbstractSearch
 
   private List<SNode> createOwnNodesList() {
     ISearchScope allNodesScope = SModelSearchUtil_new.createModelAndImportedModelsScope(myConceptDeclaration.getModel(), myScope);
-    return allNodesScope.getNodes(new Condition<SNode>() {
-      public boolean met(SNode object) {
-        if (object == myConceptDeclaration) return false;
+    return BaseAdapter.toNodes(allNodesScope.getAdapters(new Condition<BaseAdapter>() {
+      public boolean met(BaseAdapter object) {
+        if (object.equals(myConceptDeclaration)) return false;
         if (!(object instanceof ConceptDeclaration)) return false;
         ConceptDeclaration concept = (ConceptDeclaration) object;
         // concept shouldn't extend 'current concept'
-        return !SModelUtil.isAssignableConcept(concept, myConceptDeclaration);
+        return !SModelUtil_new.isAssignableConcept(concept, myConceptDeclaration);
       }
-    });
+    }));
   }
 }

@@ -51,7 +51,7 @@ import java.util.List;
 
     List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
     for (SNode node : nodes) {
-      actions.add(new DefaultReferentNodeSubstituteAction(node, referenceNode, currentReferent, (jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration) linkDeclaration.getNode(), scope));
+      actions.add(new DefaultReferentNodeSubstituteAction(node, referenceNode, currentReferent, linkDeclaration, scope));
     }
     return actions;
   }
