@@ -94,6 +94,10 @@ public class FindUsagesManager {
     }
   }
 
+  public Set<SNode> findInstances(jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration concept, IScope scope, IAdaptiveProgressMonitor progress) {
+    return findInstances((ConceptDeclaration) concept.getNode(), scope, progress);    
+  }
+
   public Set<SNode> findInstances(ConceptDeclaration concept, IScope scope, IAdaptiveProgressMonitor progress) {
     Set<SNode> result = new HashSet<SNode>();
     //noinspection EmptyFinallyBlock
