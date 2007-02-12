@@ -1,6 +1,5 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.*;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.command.undo.IUndoableAction;
@@ -1386,7 +1385,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   @NotNull
   public jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration getNodeConceptAdapter() {
-    return (jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) getConceptDeclaration(GlobalScope.getInstance()).getAdapter();
+    return (jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) getConceptDeclarationAdapter(GlobalScope.getInstance());
   }
 
   @NotNull
@@ -1430,13 +1429,8 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration getConceptDeclarationAdapter(IScope scope) {
-    return (jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) getConceptDeclaration(scope).getAdapter();
-  }
-
-  //could be null e.g. concept deleted by user
-  public ConceptDeclaration getConceptDeclaration(IScope scope) {
     String conceptFQName = NameUtil.nodeConceptFQName(this);
-    ConceptDeclaration concept = SModelUtil.findConceptDeclaration(conceptFQName, scope);
+    jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFQName, scope);
     assert concept != null : "couldn't find concept declaration '" + conceptFQName + "' in scope:" + scope;
     return concept;
   }
@@ -1594,15 +1588,14 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   public boolean hasConceptProperty(String propertyName, IScope scope) {
     // todo: make "rootable" -> concept property
     if ("root".equals(propertyName)) {
-      ConceptDeclaration conceptDeclaration;
-      if (this instanceof ConceptDeclaration) {
-        conceptDeclaration = (ConceptDeclaration) this;
+      jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration conceptDeclaration;
+      if (getAdapter() instanceof jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) {
+        conceptDeclaration = (jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) getAdapter();
       } else {
-        conceptDeclaration = getConceptDeclaration(scope);
+        conceptDeclaration = getConceptDeclarationAdapter(scope);
       }
       return conceptDeclaration.getRootable();
     }
-    
 
     ConceptProperty conceptProperty = findConceptProperty(propertyName, scope);
     return conceptProperty != null;

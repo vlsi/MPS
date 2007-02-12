@@ -101,7 +101,7 @@ public abstract class BaseAdapter {
   }
 
   public ConceptDeclaration getConceptDeclaration(IScope scope) {
-    return (ConceptDeclaration) fromNode(getNode().getConceptDeclaration(scope));
+    return (ConceptDeclaration) getNode().getConceptDeclarationAdapter(scope);
   }
 
   public void replaceChild(BaseAdapter c1, BaseAdapter c2) {
