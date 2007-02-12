@@ -6,9 +6,10 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import java.io.File;
@@ -38,8 +39,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   public AbstractCellListHandler myConceptLinkDeclarationListHandler_conceptLinkDeclarationList_;
 
   public static boolean _QueryFunction_NodeCondition_1161165530948(SNode node, IScope scope) {
-    ConceptDeclaration decl = (ConceptDeclaration)node;
-    Language l = SModelUtil.getDeclaringLanguage(decl, scope);
+    Language l = SModelUtil_new.getDeclaringLanguage(((ConceptDeclaration)SNodeOperations.getAdapter(node)), scope);
     if(l == null) {
       return false;
     }
@@ -507,7 +507,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createImplementsList(EditorContext context, SNode node) {
     if(this.myImplementsListHandler_implementsList_ == null) {
-      this.myImplementsListHandler_implementsList_ = new ConceptDeclaration_Editor_ImplementsListHandler_implementsList_(node, "implements", context);
+      this.myImplementsListHandler_implementsList_ = new ConceptDeclaration_Editor_ImplementsListHandler_implementsList_(node, "", context);
     }
     EditorCell_Collection editorCell = this.myImplementsListHandler_implementsList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
@@ -523,7 +523,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createPropertyDeclarationList(EditorContext context, SNode node) {
     if(this.myPropertyDeclarationListHandler_propertyDeclarationList_ == null) {
-      this.myPropertyDeclarationListHandler_propertyDeclarationList_ = new ConceptDeclaration_Editor_PropertyDeclarationListHandler_propertyDeclarationList_(node, "propertyDeclaration", context);
+      this.myPropertyDeclarationListHandler_propertyDeclarationList_ = new ConceptDeclaration_Editor_PropertyDeclarationListHandler_propertyDeclarationList_(node, "", context);
     }
     EditorCell_Collection editorCell = this.myPropertyDeclarationListHandler_propertyDeclarationList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
@@ -539,7 +539,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createLinkDeclarationList(EditorContext context, SNode node) {
     if(this.myLinkDeclarationListHandler_linkDeclarationList_ == null) {
-      this.myLinkDeclarationListHandler_linkDeclarationList_ = new ConceptDeclaration_Editor_LinkDeclarationListHandler_linkDeclarationList_(node, "linkDeclaration", context);
+      this.myLinkDeclarationListHandler_linkDeclarationList_ = new ConceptDeclaration_Editor_LinkDeclarationListHandler_linkDeclarationList_(node, "", context);
     }
     EditorCell_Collection editorCell = this.myLinkDeclarationListHandler_linkDeclarationList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
@@ -555,7 +555,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createConceptPropertyList(EditorContext context, SNode node) {
     if(this.myConceptPropertyListHandler_conceptPropertyList_ == null) {
-      this.myConceptPropertyListHandler_conceptPropertyList_ = new ConceptDeclaration_Editor_ConceptPropertyListHandler_conceptPropertyList_(node, "conceptProperty", context);
+      this.myConceptPropertyListHandler_conceptPropertyList_ = new ConceptDeclaration_Editor_ConceptPropertyListHandler_conceptPropertyList_(node, "", context);
     }
     EditorCell_Collection editorCell = this.myConceptPropertyListHandler_conceptPropertyList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
@@ -571,7 +571,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createConceptLinkList(EditorContext context, SNode node) {
     if(this.myConceptLinkListHandler_conceptLinkList_ == null) {
-      this.myConceptLinkListHandler_conceptLinkList_ = new ConceptDeclaration_Editor_ConceptLinkListHandler_conceptLinkList_(node, "conceptLink", context);
+      this.myConceptLinkListHandler_conceptLinkList_ = new ConceptDeclaration_Editor_ConceptLinkListHandler_conceptLinkList_(node, "", context);
     }
     EditorCell_Collection editorCell = this.myConceptLinkListHandler_conceptLinkList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
@@ -587,7 +587,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createConceptPropertyDeclarationList(EditorContext context, SNode node) {
     if(this.myConceptPropertyDeclarationListHandler_conceptPropertyDeclarationList_ == null) {
-      this.myConceptPropertyDeclarationListHandler_conceptPropertyDeclarationList_ = new ConceptDeclaration_Editor_ConceptPropertyDeclarationListHandler_conceptPropertyDeclarationList_(node, "conceptPropertyDeclaration", context);
+      this.myConceptPropertyDeclarationListHandler_conceptPropertyDeclarationList_ = new ConceptDeclaration_Editor_ConceptPropertyDeclarationListHandler_conceptPropertyDeclarationList_(node, "", context);
     }
     EditorCell_Collection editorCell = this.myConceptPropertyDeclarationListHandler_conceptPropertyDeclarationList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
@@ -603,7 +603,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createConceptLinkDeclarationList(EditorContext context, SNode node) {
     if(this.myConceptLinkDeclarationListHandler_conceptLinkDeclarationList_ == null) {
-      this.myConceptLinkDeclarationListHandler_conceptLinkDeclarationList_ = new ConceptDeclaration_Editor_ConceptLinkDeclarationListHandler_conceptLinkDeclarationList_(node, "conceptLinkDeclaration", context);
+      this.myConceptLinkDeclarationListHandler_conceptLinkDeclarationList_ = new ConceptDeclaration_Editor_ConceptLinkDeclarationListHandler_conceptLinkDeclarationList_(node, "", context);
     }
     EditorCell_Collection editorCell = this.myConceptLinkDeclarationListHandler_conceptLinkDeclarationList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);

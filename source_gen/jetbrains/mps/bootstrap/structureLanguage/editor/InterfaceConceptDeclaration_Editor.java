@@ -316,7 +316,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createExtendsList(EditorContext context, SNode node) {
     if(this.myExtendsListHandler_extendsList_ == null) {
-      this.myExtendsListHandler_extendsList_ = new InterfaceConceptDeclaration_Editor_ExtendsListHandler_extendsList_(node, "extends", context);
+      this.myExtendsListHandler_extendsList_ = new InterfaceConceptDeclaration_Editor_ExtendsListHandler_extendsList_(node, "", context);
     }
     EditorCell_Collection editorCell = this.myExtendsListHandler_extendsList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
@@ -332,7 +332,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createPropertyDeclarationList(EditorContext context, SNode node) {
     if(this.myPropertyDeclarationListHandler_propertyDeclarationList_ == null) {
-      this.myPropertyDeclarationListHandler_propertyDeclarationList_ = new InterfaceConceptDeclaration_Editor_PropertyDeclarationListHandler_propertyDeclarationList_(node, "propertyDeclaration", context);
+      this.myPropertyDeclarationListHandler_propertyDeclarationList_ = new InterfaceConceptDeclaration_Editor_PropertyDeclarationListHandler_propertyDeclarationList_(node, "", context);
     }
     EditorCell_Collection editorCell = this.myPropertyDeclarationListHandler_propertyDeclarationList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
@@ -348,7 +348,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createLinkDeclarationList(EditorContext context, SNode node) {
     if(this.myLinkDeclarationListHandler_linkDeclarationList_ == null) {
-      this.myLinkDeclarationListHandler_linkDeclarationList_ = new InterfaceConceptDeclaration_Editor_LinkDeclarationListHandler_linkDeclarationList_(node, "linkDeclaration", context);
+      this.myLinkDeclarationListHandler_linkDeclarationList_ = new InterfaceConceptDeclaration_Editor_LinkDeclarationListHandler_linkDeclarationList_(node, "", context);
     }
     EditorCell_Collection editorCell = this.myLinkDeclarationListHandler_linkDeclarationList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
@@ -364,7 +364,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createConceptPropertyList(EditorContext context, SNode node) {
     if(this.myConceptPropertyListHandler_conceptPropertyList_ == null) {
-      this.myConceptPropertyListHandler_conceptPropertyList_ = new InterfaceConceptDeclaration_Editor_ConceptPropertyListHandler_conceptPropertyList_(node, "conceptProperty", context);
+      this.myConceptPropertyListHandler_conceptPropertyList_ = new InterfaceConceptDeclaration_Editor_ConceptPropertyListHandler_conceptPropertyList_(node, "", context);
     }
     EditorCell_Collection editorCell = this.myConceptPropertyListHandler_conceptPropertyList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
@@ -380,7 +380,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createConceptLinkList(EditorContext context, SNode node) {
     if(this.myConceptLinkListHandler_conceptLinkList_ == null) {
-      this.myConceptLinkListHandler_conceptLinkList_ = new InterfaceConceptDeclaration_Editor_ConceptLinkListHandler_conceptLinkList_(node, "conceptLink", context);
+      this.myConceptLinkListHandler_conceptLinkList_ = new InterfaceConceptDeclaration_Editor_ConceptLinkListHandler_conceptLinkList_(node, "", context);
     }
     EditorCell_Collection editorCell = this.myConceptLinkListHandler_conceptLinkList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
@@ -396,7 +396,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createConceptPropertyDeclarationList(EditorContext context, SNode node) {
     if(this.myConceptPropertyDeclarationListHandler_conceptPropertyDeclarationList_ == null) {
-      this.myConceptPropertyDeclarationListHandler_conceptPropertyDeclarationList_ = new InterfaceConceptDeclaration_Editor_ConceptPropertyDeclarationListHandler_conceptPropertyDeclarationList_(node, "conceptPropertyDeclaration", context);
+      this.myConceptPropertyDeclarationListHandler_conceptPropertyDeclarationList_ = new InterfaceConceptDeclaration_Editor_ConceptPropertyDeclarationListHandler_conceptPropertyDeclarationList_(node, "", context);
     }
     EditorCell_Collection editorCell = this.myConceptPropertyDeclarationListHandler_conceptPropertyDeclarationList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
@@ -412,7 +412,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createConceptLinkDeclarationList(EditorContext context, SNode node) {
     if(this.myConceptLinkDeclarationListHandler_conceptLinkDeclarationList_ == null) {
-      this.myConceptLinkDeclarationListHandler_conceptLinkDeclarationList_ = new InterfaceConceptDeclaration_Editor_ConceptLinkDeclarationListHandler_conceptLinkDeclarationList_(node, "conceptLinkDeclaration", context);
+      this.myConceptLinkDeclarationListHandler_conceptLinkDeclarationList_ = new InterfaceConceptDeclaration_Editor_ConceptLinkDeclarationListHandler_conceptLinkDeclarationList_(node, "", context);
     }
     EditorCell_Collection editorCell = this.myConceptLinkDeclarationListHandler_conceptLinkDeclarationList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);

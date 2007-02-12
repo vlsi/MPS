@@ -40,7 +40,7 @@ public class IconManager {
     GlobalScope scope = GlobalScope.getInstance();
     ConceptDeclaration conceptDeclaration = SModelUtil.findConceptDeclaration(cls, scope);
     while (conceptDeclaration != null) {
-      Language language = SModelUtil.getDeclaringLanguage(conceptDeclaration, scope);
+      Language language = SModelUtil_new.getDeclaringLanguage((jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration), scope);
       if (language != null) {
         String iconPath = Macros.languageDescriptor().expandPath(conceptDeclaration.getIconPath(), language.getDescriptorFile());
         if (iconPath != null) {

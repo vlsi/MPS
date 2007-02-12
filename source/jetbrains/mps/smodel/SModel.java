@@ -1082,7 +1082,7 @@ public class SModel implements Iterable<SNode> {
       public void run() {
         List<SNode> roots = sourceModel.getRoots();
         for (SNode node : roots) {
-          SNode nodeClone = SModelUtil.cloneSNode(node, targetModel, false);
+          SNode nodeClone = SNodeCopyUtil.cloneSNode(node, targetModel, false);
           targetModel.addRoot(nodeClone);
         }
 

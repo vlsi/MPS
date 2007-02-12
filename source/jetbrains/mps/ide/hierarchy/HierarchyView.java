@@ -1,7 +1,7 @@
 package jetbrains.mps.ide.hierarchy;
 
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.icons.Icons;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.ide.*;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
@@ -12,9 +12,8 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.TreeTextUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
 
 import javax.swing.*;
@@ -74,8 +73,8 @@ public class HierarchyView extends DefaultTool {
         java.util.List<SNode> nodes = new ArrayList<SNode>();
         for (SModelDescriptor modelDescriptor : myContext.getScope().getModelDescriptors()) {
           if (modelDescriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) continue;
-          for (SNode node : modelDescriptor.getSModel().getRoots()) {
-            if (node instanceof ConceptDeclaration) nodes.add(node);
+          for (BaseAdapter node : modelDescriptor.getSModel().getRootsAdapters()) {
+            if (node instanceof ConceptDeclaration) nodes.add(node.getNode());
           }
         }
 
@@ -84,7 +83,7 @@ public class HierarchyView extends DefaultTool {
             MPSProject project = myIde.getProject();
             if (project != null) {
               final IOperationContext operationContext = project.createOperationContext();
-              showConceptInHierarchy((ConceptDeclaration) node, operationContext);
+              showConceptInHierarchy((ConceptDeclaration) node.getAdapter(), operationContext);
             }
           }
         };
@@ -193,12 +192,12 @@ public class HierarchyView extends DefaultTool {
     }
 
     public ConceptDeclaration getConceptDeclaration() {
-      return (ConceptDeclaration) myNodeProxy.getNode();
+      return (ConceptDeclaration) BaseAdapter.fromNode(myNodeProxy.getNode());
     }
 
     public String getNodeIdentifier() {
       if (getConceptDeclaration() == null) return "null";
-      Language language = SModelUtil.getDeclaringLanguage(getConceptDeclaration(), getOperationContext().getScope());
+      Language language = SModelUtil_new.getDeclaringLanguage(getConceptDeclaration(), getOperationContext().getScope());
       String namespace;
       if (language == null) namespace = " ? "; else namespace = language.getModuleUID();
       return getConceptDeclaration().getName() + "  (" + namespace + ")";
@@ -209,7 +208,7 @@ public class HierarchyView extends DefaultTool {
       result.add(new AbstractActionWithEmptyIcon("Show Hierarchy For This Concept") {
         public void actionPerformed(ActionEvent e) {
           final SNode node = myNodeProxy.getNode();
-          showConceptInHierarchy((ConceptDeclaration) node, getOperationContext());
+          showConceptInHierarchy((ConceptDeclaration) node.getAdapter(), getOperationContext());
         }
       }).setBorder(null);
       return result;

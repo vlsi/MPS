@@ -30,7 +30,7 @@ public class TemplateGenUtil {
   public static SNode instantiateNodeForTemplate(SNode templateNode, SModel targetModel, IScope scope) {
     ConceptDeclaration conceptDeclaration = templateNode.getConceptDeclarationAdapter(scope);
     SNode targetNode = SModelUtil_new.instantiateConceptDeclaration(conceptDeclaration, targetModel, false).getNode();
-    SModelUtil.copySNodeProperties(templateNode, targetNode);
+    SNodeCopyUtil.copySNodeProperties(templateNode, targetNode);
     return targetNode;
   }
 

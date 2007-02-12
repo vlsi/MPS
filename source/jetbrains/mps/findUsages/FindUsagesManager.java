@@ -40,6 +40,10 @@ public class FindUsagesManager {
     descendantsKnownInModel.add(descendant);
   }
 
+  public Set<jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration> findDescendants(jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration node, IScope scope) {
+    return BaseAdapter.toAdapters(findDescendants((ConceptDeclaration) node.getNode(), scope));
+  }
+
   public Set<ConceptDeclaration> findDescendants(ConceptDeclaration node, IScope scope) {
     HashMap<SModelDescriptor, HashSet<ConceptDeclaration>> knownDescendantsInModelDescriptors = myConceptsToKnownDescendantsInModelDescriptors.get(node);
     if (knownDescendantsInModelDescriptors == null) {

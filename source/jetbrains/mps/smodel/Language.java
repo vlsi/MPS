@@ -556,8 +556,8 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       result.add(className);
       ConceptDeclaration conceptDeclaration = declaration.getExtends();
       if (conceptDeclaration != null) {
-        result.addAll(SModelUtil.getDeclaringLanguage(
-                declaration.getExtends(), GlobalScope.getInstance()).getParentNames(
+        result.addAll(SModelUtil_new.getDeclaringLanguage(
+                (jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) BaseAdapter.fromNode(declaration.getExtends()), GlobalScope.getInstance()).getParentNames(
                 JavaNameUtil.className(conceptDeclaration)));
       }
       myParentsNamesMap.put(className, result);
