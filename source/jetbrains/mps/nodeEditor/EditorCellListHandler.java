@@ -1,10 +1,10 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkMetaclass;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 
 import java.util.Iterator;
@@ -22,9 +22,9 @@ public abstract class EditorCellListHandler extends AbstractCellListHandler {
 
   public EditorCellListHandler(SNode ownerNode, String childRole, EditorContext editorContext) {
     super(ownerNode, childRole, editorContext);
-    myLinkDeclaration = SModelUtil.getLinkDeclaration(ownerNode, childRole, editorContext.getOperationContext().getScope());
+    myLinkDeclaration = ownerNode.getLinkDeclaration(childRole, editorContext.getOperationContext().getScope());
     myChildConcept = myLinkDeclaration.getTarget();
-    LinkDeclaration genuineLink = SModelUtil.getGenuineLinkDeclaration(myLinkDeclaration);
+    LinkDeclaration genuineLink = SModelUtil_new.getGenuineLinkDeclaration(myLinkDeclaration);
     if (genuineLink.getMetaClass() != LinkMetaclass.aggregation) {
       throw new RuntimeException("Only Aggregation links can be used in list");
     }

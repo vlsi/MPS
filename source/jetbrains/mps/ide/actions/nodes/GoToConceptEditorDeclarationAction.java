@@ -1,7 +1,7 @@
 package jetbrains.mps.ide.actions.nodes;
 
-import jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.IEditor;
@@ -46,7 +46,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
 
   public void update(@NotNull ActionContext context) {
     super.update(context);
-    boolean visible = context.getNode() instanceof ConceptDeclaration;
+    boolean visible = BaseAdapter.fromNode(context.getNode()) instanceof ConceptDeclaration;
     setVisible(visible);
     setEnabled(visible);
   }
@@ -57,7 +57,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
 
   public void execute(@NotNull ActionContext context) {
     final SNode node = context.get(SNode.class);
-    if (!(node instanceof ConceptDeclaration)) return;
+    if (!(BaseAdapter.fromNode(node) instanceof ConceptDeclaration)) return;
 
     final IDEProjectFrame ide = context.get(IDEProjectFrame.class);
     IOperationContext invocationContext = context.get(IOperationContext.class);
@@ -80,7 +80,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
       }
     }
     if (language == null) {
-      language = SModelUtil.getDeclaringLanguage((ConceptDeclaration) node, scope);
+      language = SModelUtil_new.getDeclaringLanguage((ConceptDeclaration) node.getAdapter(), scope);
       if (language == null) {
         JOptionPane.showMessageDialog(null, "Couldn't find declaring language for concept " + NameUtil.nodeFQName(node));
         return;
@@ -91,9 +91,9 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     SModelDescriptor languageEditor = language.getEditorModelDescriptor();
     ConceptEditorDeclaration editorDeclaration;
     if (languageEditor != null) {
-      editorDeclaration = SModelUtil.findEditorDeclaration(languageEditor.getSModel(), (ConceptDeclaration) node);
+      editorDeclaration = SModelUtil_new.findEditorDeclaration(languageEditor.getSModel(), (ConceptDeclaration) node.getAdapter());
       if (editorDeclaration != null) {
-        navigateToEditorDeclaration(editorDeclaration, languageContext, currentEditor, ide);
+        navigateToEditorDeclaration(editorDeclaration.getNode(), languageContext, currentEditor, ide);
         return;
       }
     }
@@ -120,17 +120,17 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
       public void run() {
         if (languageEditorFinal == null) {
           createLanguageEditorModel(languageFinal);
-          createEditorDeclaration((ConceptDeclaration) node, languageFinal.getEditorModelDescriptor(), scope);
+          createEditorDeclaration((ConceptDeclaration) node.getAdapter(), languageFinal.getEditorModelDescriptor(), scope);
         } else {
-          createEditorDeclaration((ConceptDeclaration) node, languageEditorFinal, scope);
+          createEditorDeclaration((ConceptDeclaration) node.getAdapter(), languageEditorFinal, scope);
         }
       }
     });
 
     SModelDescriptor editorModelDescriptor = language.getEditorModelDescriptor();
     assert editorModelDescriptor != null;
-    editorDeclaration = SModelUtil.findEditorDeclaration(editorModelDescriptor.getSModel(), (ConceptDeclaration) node);
-    navigateToEditorDeclaration(editorDeclaration, languageContext, currentEditor, ide);
+    editorDeclaration = SModelUtil_new.findEditorDeclaration(editorModelDescriptor.getSModel(), (ConceptDeclaration) node.getAdapter());
+    navigateToEditorDeclaration(editorDeclaration.getNode(), languageContext, currentEditor, ide);
   }
 
   private void navigateToEditorDeclaration(final SNode editorDeclaration, final IOperationContext operationContext, final IEditor currentEditor, final IDEProjectFrame ide) {
@@ -141,7 +141,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
 
   public static ConceptEditorDeclaration createEditorDeclaration(ConceptDeclaration conceptDeclaration, SModelDescriptor editorModelDescriptor, IScope scope) {
     SModel editorModel = editorModelDescriptor.getSModel();
-    ConceptEditorDeclaration editorDeclaration = (ConceptEditorDeclaration) SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration", editorModel, scope);
+    ConceptEditorDeclaration editorDeclaration = (ConceptEditorDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration", editorModel, scope).getAdapter();
     editorDeclaration.setConceptDeclaration(conceptDeclaration);
     editorModel.addRoot(editorDeclaration);
     editorModelDescriptor.save();
