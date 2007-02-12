@@ -87,7 +87,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   private List<SNode> _children() {
     if (myChildren == null) {
-      myChildren = new ArrayList<SNode>();
+      myChildren = new LinkedList<SNode>();
       if (myChildrenLoader != null) {
         getModel().runLoadingAction(new Runnable() {
           public void run() {
@@ -100,7 +100,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
         });
         for (SNode node : myChildren) {
           node.registerInModel(node.getModel());
-
         }
       }
     }
@@ -732,7 +731,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   @NotNull
   public List<SNode> getChildren() {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
-    return Collections.unmodifiableList(_children());
+    return new LinkedList(_children());
   }
 
   @NotNull

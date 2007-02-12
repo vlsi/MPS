@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 
 public class Children {
 
@@ -24,5 +25,10 @@ public class Children {
     for(SNode statement : SLinkOperations.getTargets(statementList1, "statement", true)) {
       SLinkOperations.addChild(statementList2, "statement", SNodeOperations.copyNode(statement));
     }
+  }
+  public void accessToChildren_3(SNode statement) {
+    List<SNode> children1 = SNodeOperations.getDescendants(SLinkOperations.getTarget(statement, "expression", true), null);
+    List<SNode> children2 = SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.BooleanConstant");
+    Iterable<SNode> children3 = SequenceOperations.where(SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), new zPredicate(this, null));
   }
 }
