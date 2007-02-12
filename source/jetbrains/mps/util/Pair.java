@@ -44,4 +44,9 @@ public class Pair<T1, T2> {
     }
     return snd;
   }
+
+
+  public String toString() {
+    return "(" + o1 + ", " + o2 + ")";
+  }
 }

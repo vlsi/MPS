@@ -24,6 +24,9 @@ public class MoveNodeChange extends Change {
     return myNewParent;
   }
 
+  public String getNewRole() {
+    return myNewRole;
+  }
 
   public String toString() {
     return "move " + myNodeId + " to " + myNewParent;

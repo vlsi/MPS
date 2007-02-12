@@ -261,6 +261,22 @@ public class MergeResultView extends JPanel {
       changes.get(new Pair<String, String>(spc.getNodeParent(), spc.getNodeRole())).add(spc);
     }
 
+    for (MoveNodeChange mnc : getChanges(MoveNodeChange.class)) {
+      String newRole = mnc.getNewRole();
+
+      for (SNode newParent : CollectionUtil.asSet(myChange1.getNodeById(mnc.getNewParent()),
+                                                  myChange2.getNodeById(mnc.getNewParent()))) {      
+        while (newParent != null) {
+          if (changes.containsKey(new Pair(newParent.getId(), newRole))) {
+            List<SetNodeChange> cs = new ArrayList<SetNodeChange>(changes.get(new Pair(newParent.getId(), newRole)));
+            myConflicts.add(new Conflict(cs.get(0), mnc));
+          }
+          newRole = newParent.getRole_();
+          newParent = newParent.getParent();
+        }
+      }
+    }
+
     for (Pair<String, String> p: changes.keySet()) {
       if (changes.get(p).size() > 1) {
         List<SetNodeChange> cs = new ArrayList<SetNodeChange>(changes.get(p));
