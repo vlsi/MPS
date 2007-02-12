@@ -2,7 +2,7 @@ package jetbrains.mps.nodeEditor.cellProviders;
 
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.core.BaseConcept;
+import jetbrains.mps.core.structure.BaseConcept;
 
 import java.util.*;
 import java.awt.event.KeyEvent;
