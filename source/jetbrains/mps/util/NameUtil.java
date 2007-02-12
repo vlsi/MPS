@@ -114,7 +114,7 @@ public class NameUtil {
     }
     String namespace = fqName.substring(0, offset);
     int i = namespace.lastIndexOf(".structure");
-    if (i >= 0) {
+    if (i >= 0 && namespace.endsWith(".structure")) {
       namespace = namespace.substring(0, i);
     }
     return namespace;
