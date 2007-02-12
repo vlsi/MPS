@@ -1,9 +1,9 @@
 package jetbrains.mps.datatransfer;
 
-import jetbrains.mps.bootstrap.structureLanguage.Cardinality;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
+import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkMetaclass;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.logging.Logger;
@@ -53,7 +53,7 @@ public class PasteNodeUtil {
   }
 
   public static boolean canPasteAsRoot(SNode pasteNode, IOperationContext operationContext) {
-    final ConceptDeclaration conceptDeclaration = SModelUtil.findConceptDeclaration(NameUtil.nodeConceptFQName(pasteNode), operationContext.getScope());
+    final ConceptDeclaration conceptDeclaration = SModelUtil_new.findConceptDeclaration(NameUtil.nodeConceptFQName(pasteNode), operationContext.getScope());
     return conceptDeclaration.getRootable();
   }
 
@@ -110,7 +110,7 @@ public class PasteNodeUtil {
 
   private static boolean canPasteToRoot(SNode pasteTarget, SNode pasteNode, IOperationContext operationContext) {
     if (pasteNode == null) return false;
-    final ConceptDeclaration conceptDeclaration = SModelUtil.findConceptDeclaration(NameUtil.nodeConceptFQName(pasteNode), operationContext.getScope());
+    final ConceptDeclaration conceptDeclaration = SModelUtil_new.findConceptDeclaration(NameUtil.nodeConceptFQName(pasteNode), operationContext.getScope());
     return (pasteTarget.getParent() == null && conceptDeclaration.getRootable());
   }
 
@@ -123,8 +123,8 @@ public class PasteNodeUtil {
   }
 
   private static boolean pasteToTarget_internal(final SNode pasteTarget, final SNode pasteNode, final SNode anchorNode, String role, final boolean pasteBefore, boolean reallyPaste, final IOperationContext operationContext) {
-    ConceptDeclaration pasteTargetType = pasteTarget.getConceptDeclaration(operationContext.getScope());
-    ConceptDeclaration pasteNodeType = pasteNode.getConceptDeclaration(operationContext.getScope());
+    ConceptDeclaration pasteTargetType = pasteTarget.getConceptDeclarationAdapter(operationContext.getScope());
+    ConceptDeclaration pasteNodeType = pasteNode.getConceptDeclarationAdapter(operationContext.getScope());
     final LinkDeclaration linkDeclaration = findMetalink(pasteTargetType, pasteNodeType, role);
     if (linkDeclaration == null) {
       return false;
@@ -205,7 +205,7 @@ public class PasteNodeUtil {
     Iterator<LinkDeclaration> metalinks = sourceMetatype.linkDeclarations();
     while (metalinks.hasNext()) {
       LinkDeclaration metalink = metalinks.next();
-      if (SModelUtil.isAssignableConcept(targetMetatype, metalink.getTarget()) && metalink.getRole().equals(role)) {
+      if (SModelUtil_new.isAssignableConcept(targetMetatype, metalink.getTarget()) && metalink.getRole().equals(role)) {
         return metalink;
       }
     }
