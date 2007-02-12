@@ -6,9 +6,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.ClassifierType;
-import jetbrains.mps.baseLanguage.types.BaseLanguageTypesUtil;
-import jetbrains.mps.baseLanguage.Expression;
+import jetbrains.mps.baseLanguage.structure.ClassifierType;
+import jetbrains.mps.baseLanguage.types.BaseLanguageTypesUtil_new;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModel;
 
@@ -26,7 +26,7 @@ public class QueriesGenerated {
     return false;
   }
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1158965431412(SNode sourceNode, IScope scope, IOperationContext operationContext) {
-    ClassifierType ct = BaseLanguageTypesUtil.tryObtain_ClassifierType((Expression)sourceNode);
+    ClassifierType ct = BaseLanguageTypesUtil_new.tryObtain_ClassifierType(((Expression)SNodeOperations.getAdapter(sourceNode)));
     return ct != null;
   }
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_VariableDeclaration_1158969943216(SNode sourceNode, IScope scope, IOperationContext operationContext) {

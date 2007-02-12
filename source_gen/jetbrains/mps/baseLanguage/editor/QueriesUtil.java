@@ -15,9 +15,9 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.baseLanguage.ClassifierType;
-import jetbrains.mps.baseLanguage.types.BaseLanguageTypesUtil;
-import jetbrains.mps.baseLanguage.Expression;
+import jetbrains.mps.baseLanguage.structure.ClassifierType;
+import jetbrains.mps.baseLanguage.types.BaseLanguageTypesUtil_new;
+import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class QueriesUtil {
 
@@ -111,11 +111,11 @@ public class QueriesUtil {
     if(instance == null) {
       return result;
     }
-    ClassifierType instanceType = BaseLanguageTypesUtil.tryObtain_ClassifierType((Expression)instance);
+    ClassifierType instanceType = BaseLanguageTypesUtil_new.tryObtain_ClassifierType(((Expression)SNodeOperations.getAdapter(instance)));
     if(instanceType == null) {
       return result;
     }
-    ISearchScope classHierarchy = BaseLanguageSearchUtil_new.createClassifierHierarchyScope((jetbrains.mps.baseLanguage.structure.ClassifierType)BaseAdapter.fromNode(instanceType), IClassifiersSearchScope.INSTANCE_METHOD);
+    ISearchScope classHierarchy = BaseLanguageSearchUtil_new.createClassifierHierarchyScope(instanceType, IClassifiersSearchScope.INSTANCE_METHOD);
     result = (List)BaseAdapter.toNodes(BaseLanguageSearchUtil_new.getMethodsExcludingOverridden(classHierarchy));
     return result;
   }
@@ -134,11 +134,11 @@ public class QueriesUtil {
     if(instance == null) {
       return result;
     }
-    ClassifierType instanceType = BaseLanguageTypesUtil.tryObtain_ClassifierType((Expression)instance);
+    ClassifierType instanceType = BaseLanguageTypesUtil_new.tryObtain_ClassifierType(((Expression)SNodeOperations.getAdapter(instance)));
     if(instanceType == null) {
       return result;
     }
-    ISearchScope classHierarchy = BaseLanguageSearchUtil_new.createClassifierHierarchyScope((jetbrains.mps.baseLanguage.structure.ClassifierType)BaseAdapter.fromNode(instanceType), IClassifiersSearchScope.INSTANCE_FIELD);
+    ISearchScope classHierarchy = BaseLanguageSearchUtil_new.createClassifierHierarchyScope(instanceType, IClassifiersSearchScope.INSTANCE_FIELD);
     result = (List)BaseAdapter.toNodes(BaseLanguageSearchUtil_new.getFieldsExcludingOverridden(classHierarchy));
     return result;
   }

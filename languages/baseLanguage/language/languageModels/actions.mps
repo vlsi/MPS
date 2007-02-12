@@ -3,7 +3,7 @@
   <language namespace="jetbrains.mps.bootstrap.actionsLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
-  <maxImportIndex value="16" />
+  <maxImportIndex value="17" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="2" modelUID="jetbrains.mps.smodel@java_stub" />
   <import index="3" modelUID="jetbrains.mps.baseLanguage.actions@java_stub" />
@@ -14,6 +14,7 @@
   <import index="8" modelUID="jetbrains.mps.typesystem@java_stub" />
   <import index="13" modelUID="jetbrains.mps.baseLanguage@java_stub" />
   <import index="15" modelUID="jetbrains.mps.helgins.inference@java_stub" />
+  <import index="17" modelUID="jetbrains.mps.baseLanguage.structure@java_stub" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions" id="1115842744505">
     <property name="name" value="BL_node_substitute" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1115842748115">
@@ -124,17 +125,15 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1170373576073">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1170373576074">
               <property name="name" value="ct" />
-              <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1170373576076">
-                <link role="classifier" extResolveInfo="13.[Classifier]ClassifierType" />
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1171289483893">
+                <link role="classifier" extResolveInfo="17.[Classifier]ClassifierType" />
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1170373569900">
-                <link role="baseMethodDeclaration" extResolveInfo="7.static method ([Classifier]BaseLanguageTypesUtil).([StaticMethodDeclaration]tryObtain_ClassifierType((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Expression])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ClassifierType]))" />
-                <link role="classConcept" extResolveInfo="7.[Classifier]BaseLanguageTypesUtil" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.CastExpression" id="1170373607939">
-                  <node role="expression" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionParm_sourceNode" id="1170373607940" />
-                  <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1170373607941">
-                    <link role="classifier" extResolveInfo="13.[Classifier]Expression" />
-                  </node>
+                <link role="classConcept" extResolveInfo="7.[Classifier]BaseLanguageTypesUtil_new" />
+                <link role="baseMethodDeclaration" extResolveInfo="7.static method ([Classifier]BaseLanguageTypesUtil_new).([StaticMethodDeclaration]tryObtain_ClassifierType((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Expression])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ClassifierType]))" />
+                <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1171289387344">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1171289389487" />
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionParm_sourceNode" id="1170373607940" />
                 </node>
               </node>
             </node>
