@@ -1384,17 +1384,17 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   @NotNull
-  public jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration getNodeConceptAdapter() {
-    return (jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) getConceptDeclarationAdapter(GlobalScope.getInstance());
+  public ConceptDeclaration getNodeConceptAdapter() {
+    return (ConceptDeclaration) getConceptDeclarationAdapter(GlobalScope.getInstance());
   }
 
   @NotNull
   public Language getNodeLanguage() {
-    jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration concept = getNodeConceptAdapter();
+    ConceptDeclaration concept = getNodeConceptAdapter();
     return SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
   }
 
-  public boolean isInstanceOfConcept(jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration conceptDeclaration, IScope scope) {
+  public boolean isInstanceOfConcept(ConceptDeclaration conceptDeclaration, IScope scope) {
     if (NameUtil.nodeFQName(conceptDeclaration).equals("jetbrains.mps.core.structure.BaseConcept")) {
       return true;
     }
@@ -1411,9 +1411,9 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       return true;
     }
 
-    jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration instanceConcept = instance.getConceptDeclarationAdapter(scope);
+    ConceptDeclaration instanceConcept = instance.getConceptDeclarationAdapter(scope);
 //    LOG.assertLog(instanceConcept != null, "Couldn't find concept declaration for node : " + instance.getDebugText());
-    jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration compareConcept = instanceConcept;
+    ConceptDeclaration compareConcept = instanceConcept;
     while (compareConcept != null) {
       if (NameUtil.nodeFQName(compareConcept).equals(conceptFqName)) {
         return true;
@@ -1424,20 +1424,20 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return false;
   }
 
-  public final jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration getConceptDeclarationAdapter() {
+  public final ConceptDeclaration getConceptDeclarationAdapter() {
     return getConceptDeclarationAdapter(GlobalScope.getInstance());
   }
 
-  public jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration getConceptDeclarationAdapter(IScope scope) {
+  public ConceptDeclaration getConceptDeclarationAdapter(IScope scope) {
     String conceptFQName = NameUtil.nodeConceptFQName(this);
-    jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFQName, scope);
+    ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFQName, scope);
     assert concept != null : "couldn't find concept declaration '" + conceptFQName + "' in scope:" + scope;
     return concept;
   }
 
   public PropertyDeclaration getPropertyDeclaration(String propertyName, IScope scope) {
     SNode sourceNode = this;
-    jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration typeDeclaration = sourceNode.getConceptDeclarationAdapter(scope);
+    ConceptDeclaration typeDeclaration = sourceNode.getConceptDeclarationAdapter(scope);
     return SModelUtil_new.findPropertyDeclaration(typeDeclaration, propertyName);
   }
 
@@ -1454,7 +1454,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public LinkDeclaration getLinkDeclaration(String role, IScope scope) {
-    jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration conceptDeclaration = getConceptDeclarationAdapter(scope);
+    ConceptDeclaration conceptDeclaration = getConceptDeclarationAdapter(scope);
     LinkDeclaration linkDeclaration = SModelUtil_new.findLinkDeclaration(conceptDeclaration, role);
     return linkDeclaration;
   }
@@ -1465,7 +1465,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     int index = attributeChildRole.indexOf(AttributesRolesUtil.STEREOTYPE_DELIM);
     if (index < 0) return null;
     String declaredRole = attributeChildRole.substring(0, index);
-    jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration conceptDeclaration = getConceptDeclarationAdapter(scope);
+    ConceptDeclaration conceptDeclaration = getConceptDeclarationAdapter(scope);
     SModel structureModel = conceptDeclaration.getModel();
     List<AnnotationLinkDeclaration> annotationLinkDecls =
             structureModel.allAdaptersIncludingImported(scope, AnnotationLinkDeclaration.class);
@@ -1588,9 +1588,9 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   public boolean hasConceptProperty(String propertyName, IScope scope) {
     // todo: make "rootable" -> concept property
     if ("root".equals(propertyName)) {
-      jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration conceptDeclaration;
-      if (getAdapter() instanceof jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) {
-        conceptDeclaration = (jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) getAdapter();
+      ConceptDeclaration conceptDeclaration;
+      if (getAdapter() instanceof ConceptDeclaration) {
+        conceptDeclaration = (ConceptDeclaration) getAdapter();
       } else {
         conceptDeclaration = getConceptDeclarationAdapter(scope);
       }
@@ -1624,9 +1624,9 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   public ConceptProperty findConceptProperty(String propertyName, IScope scope) {
     BaseAdapter node = getAdapter();
-    jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration conceptDeclaration;
-    if (node instanceof jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) {
-      conceptDeclaration = (jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) node;
+    ConceptDeclaration conceptDeclaration;
+    if (node instanceof ConceptDeclaration) {
+      conceptDeclaration = (ConceptDeclaration) node;
     } else {
       conceptDeclaration = node.getConceptDeclaration(scope);
     }
@@ -1639,9 +1639,9 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
 
   public List<ConceptLink> getConceptLinks(final String linkName, boolean lookupHierarchy, IScope scope) {
-    jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration conceptDeclaration;
-    if (getAdapter() instanceof jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) {
-      conceptDeclaration = (jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) getAdapter();
+    ConceptDeclaration conceptDeclaration;
+    if (getAdapter() instanceof ConceptDeclaration) {
+      conceptDeclaration = (ConceptDeclaration) getAdapter();
     } else {
       conceptDeclaration = getConceptDeclarationAdapter(scope);
     }
@@ -1741,7 +1741,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public boolean isReferentRequired(String role, IScope scope) {
-    jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration conceptDeclaration = getConceptDeclarationAdapter(scope);
+    ConceptDeclaration conceptDeclaration = getConceptDeclarationAdapter(scope);
     LinkDeclaration linkDeclaration = SModelUtil_new.findLinkDeclaration(conceptDeclaration, role);
     LOG.assertLog(linkDeclaration != null, "Couldn't find link declaration for role \"" + role + "\" in hierarchy of concept " + conceptDeclaration.getDebugText());
     Cardinality cardinality = SModelUtil_new.getGenuineLinkSourceCardinality(linkDeclaration);
@@ -1752,7 +1752,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public boolean isAcceptableReferent(String role, SNode referentNode, IScope scope) {
-    jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration conceptDeclaration = getConceptDeclarationAdapter(scope);
+    ConceptDeclaration conceptDeclaration = getConceptDeclarationAdapter(scope);
     LinkDeclaration linkDeclaration = SModelUtil_new.findSpecializingLink(conceptDeclaration, role, new HashSet());
     LOG.assertLog(linkDeclaration != null, "Couldn't find link declaration for role \"" + role + "\" in hierarchy of concept " + conceptDeclaration.getDebugText());
     return SModelUtil_new.isAcceptableReferent(linkDeclaration, referentNode, scope);
