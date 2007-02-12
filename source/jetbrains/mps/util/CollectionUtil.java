@@ -146,6 +146,21 @@ public class CollectionUtil {
     return current;
   }
 
+  public static <Node extends BaseAdapter> Node getByName(
+          Class<Node> cls,
+          Iterable<? extends BaseAdapter> collection,
+          String name) {
+    for (BaseAdapter node : collection) {
+      if (name.equals(node.getName())) {
+        if (cls.isInstance(node)) {
+          return (Node) node;
+        }
+      }
+    }
+    return null;
+  }
+
+
   public static <Node extends SNode> Node getByName(
           Class<Node> cls,
           Iterable<? extends SNode> collection,
