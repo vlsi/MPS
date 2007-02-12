@@ -1865,8 +1865,10 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   public SNode findLeastCommonParent(SNode node2) {
     SNode commonParent = this;
     while (commonParent != node2 && !commonParent.isParent(node2)) {
-      assert commonParent != null;
       commonParent = commonParent.getParent();
+      if (commonParent == null) {
+        return null;
+      }
     }
     return commonParent;
   }

@@ -15,7 +15,7 @@ import java.util.Iterator;
  */
 public class BaseLanguageUtil_new {
   public static boolean isAssignable(Classifier fromClassifier, String toClassifierFqName, IScope scope) {
-    Classifier toClassifier = (Classifier) BaseAdapter.fromNode(SModelUtil.findNodeByFQName(toClassifierFqName, jetbrains.mps.baseLanguage.Classifier.class, scope));
+    Classifier toClassifier = SModelUtil_new.findNodeByFQName(toClassifierFqName, Classifier.class, scope);
     return isAssignable(fromClassifier, toClassifier);
   }
 
