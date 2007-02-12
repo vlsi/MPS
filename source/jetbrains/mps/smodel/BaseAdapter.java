@@ -112,6 +112,11 @@ public abstract class BaseAdapter {
     return getNode().getContainingRoot().getAdapter();
   }
 
+  public<BA extends BaseAdapter> List<BA> allChildren(Class<BA> cls, Condition<BA> cond) {
+    return CollectionUtil.filter(allChildren(cls), cond);
+  }
+
+
   public<BA extends BaseAdapter> List<BA> allChildren(Class<BA> cls) {
     return myNode.allChildrenByAdaptor(cls);
   }
