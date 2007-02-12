@@ -168,7 +168,7 @@ public class EditorManager {
     }
 
     AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
-    EditorCell oldCell = nodeEditorComponent.getBigCellForRefContext(refContext); // it's ok
+    EditorCell oldCell = nodeEditorComponent.getBigCellForRefContext(refContext);
     if (events != null) {
       boolean nodeChanged = false;
       for (SModelEvent event : events) {
