@@ -232,7 +232,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createMemberList(EditorContext context, SNode node) {
     if(this.myMemberListHandler_memberList_ == null) {
-      this.myMemberListHandler_memberList_ = new EnumerationDataTypeDeclaration_Editor_MemberListHandler_memberList_(node, "", context);
+      this.myMemberListHandler_memberList_ = new EnumerationDataTypeDeclaration_Editor_MemberListHandler_memberList_(node, "member", context);
     }
     EditorCell_Collection editorCell = this.myMemberListHandler_memberList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
