@@ -60,10 +60,11 @@ public class SModelSearchUtil_new {
   }
 
   public static List<LinkDeclaration> getAggregationLinkDeclarationsExcludingOverridden(IConceptHierarchyScope searchScope) {
-    Condition<SNode> condition = new AndCondition<SNode>(new Condition() {
-      public boolean met(Object object) {
-        return object instanceof LinkDeclaration &&
-                ((LinkDeclaration) object).getMetaClass() == LinkMetaclass.aggregation;
+    Condition<SNode> condition = new AndCondition<SNode>(new Condition<SNode>() {
+      public boolean met(SNode node) {
+        BaseAdapter nodeAdapter = BaseAdapter.fromNode(node);
+        return nodeAdapter instanceof LinkDeclaration &&
+                ((LinkDeclaration) nodeAdapter).getMetaClass() == LinkMetaclass.aggregation;
       }
     }, new SModelSearchUtil_new._LinkDeclarationsExcludingOverridden());
     return BaseAdapter.toAdapters(LinkDeclaration.class, searchScope.getNodes(condition));
@@ -191,9 +192,10 @@ public class SModelSearchUtil_new {
   private static class _LinkDeclarationsExcludingOverridden implements Condition<SNode> {
     private Set<LinkDeclaration> myOverriddenLinks = new HashSet<LinkDeclaration>();
 
-    public boolean met(SNode object) {
-      if (!(BaseAdapter.fromNode(object) instanceof LinkDeclaration)) return false;
-      LinkDeclaration linkDeclaration = (LinkDeclaration) BaseAdapter.fromNode(object);
+    public boolean met(SNode node) {
+      BaseAdapter nodeAdapter = BaseAdapter.fromNode(node);
+      if (!(nodeAdapter instanceof LinkDeclaration)) return false;
+      LinkDeclaration linkDeclaration = (LinkDeclaration) nodeAdapter;
       if (myOverriddenLinks.contains(linkDeclaration)) return false;
 
       LinkDeclaration specializedLink = linkDeclaration.getSpecializedLink();
