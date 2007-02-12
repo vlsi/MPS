@@ -321,7 +321,7 @@ public static void applyWeavingMappingRule(TemplateModelGenerator_New generator,
     if(inputNode != null && inputNode.isRoot()) generator.addRootToDelete(inputNode);
   }
 
-  private static SNode createNodeFromTemplate(TemplateModelGenerator_New generator, String ruleName, SModel outputModel,
+  protected static SNode createNodeFromTemplate(TemplateModelGenerator_New generator, String ruleName, SModel outputModel,
                                               SNode templateNode, SNode inputNode, SNode outputParentNode,
                                               int nodeMacrosToSkip) {
     int i = 0;
@@ -336,6 +336,7 @@ public static void applyWeavingMappingRule(TemplateModelGenerator_New generator,
           if(outputParentNode != null) {
             SNode templateParentNode = templateNode.getParent();
             if(templateParentNode != null) {
+              //todo it seems that we shouldn't delay this change, though...
               generator.getDelayedChanges().addAddChildChange(outputParentNode, outputChildNode, templateParentNode.getRoleOf(templateNode));
             }
           }

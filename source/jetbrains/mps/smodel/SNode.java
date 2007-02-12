@@ -252,6 +252,19 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     removeChild(oldChild);
   }
 
+  public void replaceChild(@NotNull SNode oldChild,
+                           @NotNull List<SNode> newChildren) {
+    assert _children().contains(oldChild);
+    String oldChildRole = oldChild.getRole_();
+    assert oldChildRole != null;
+    SNode prevChild = oldChild;
+    for (SNode newChild : newChildren) {
+      insertChild(prevChild, oldChildRole, newChild);
+      prevChild = newChild;
+    }
+    removeChild(oldChild);
+  }
+
 
   @Nullable
   public Object getUserObject(@NotNull Object key) {

@@ -3,6 +3,7 @@ package jetbrains.mps.generator.newGenerator;
 import jetbrains.mps.smodel.SNode;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by: Sergey Dmitriev
@@ -11,6 +12,7 @@ import java.util.ArrayList;
 public class DelayedChanges {
   private ArrayList<AddChildChange> myAddChildChanges = new ArrayList<AddChildChange>();
   private ArrayList<RemoveNodeChange> myRemoveNodeChanges = new ArrayList<RemoveNodeChange>();
+  private ArrayList<ReplaceChildrenChange> myReplaceChildrenChanges = new ArrayList<ReplaceChildrenChange>();
 
 
   public void addAddChildChange(SNode parentNode, SNode childNode, String role) {
@@ -32,6 +34,13 @@ public class DelayedChanges {
     for (RemoveNodeChange removeNodeChange : myRemoveNodeChanges) {
       removeNodeChange.doChange();
     }
+    for (ReplaceChildrenChange replaceChildrenChange : myReplaceChildrenChanges) {
+      replaceChildrenChange.doChange();
+    }
+  }
+
+  public void addReplaceChildrenChange(SNode oldNode, List<SNode> newNodes) {
+    myReplaceChildrenChanges.add(new ReplaceChildrenChange(oldNode, newNodes));
   }
 
   private class AddChildChange {
@@ -61,6 +70,22 @@ public class DelayedChanges {
       SNode parent = myNode.getParent();
       if(parent != null) {
         parent.removeChild(myNode);
+      }
+    }
+  }
+
+  private class ReplaceChildrenChange {
+    protected SNode myOldNode;
+    private List<SNode> myNewNodes;
+
+    public ReplaceChildrenChange(SNode oldNode, List<SNode> newNodes) {
+      myOldNode = oldNode;
+      myNewNodes = newNodes;
+    }
+
+    public void doChange() {
+      if(myOldNode.getParent() != null) {
+        myOldNode.getParent().replaceChild(myOldNode, myNewNodes);
       }
     }
   }

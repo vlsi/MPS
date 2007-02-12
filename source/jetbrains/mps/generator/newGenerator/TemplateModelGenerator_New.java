@@ -3,16 +3,10 @@ package jetbrains.mps.generator.newGenerator;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.generator.GenerationFailedException;
 import jetbrains.mps.generator.GenerationSessionContext;
-import jetbrains.mps.generator.template.AbstractNodeBuilderManager;
-import jetbrains.mps.generator.template.AbstractTemplateGenerator;
-import jetbrains.mps.generator.template.INodeBuilder;
-import jetbrains.mps.generator.template.ITemplateGeneratorState;
+import jetbrains.mps.generator.template.*;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.structure.*;
 import jetbrains.mps.transformation.TLBase.structure.CreateRootRule;
 import jetbrains.mps.transformation.TLBase.structure.MappingRule;
@@ -76,10 +70,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
       RuleUtil.applyWeavingMappingRule(this, myModel, weavingMappingRule);
     }
 
-    for (SNode rootNode : myNewRootNodes) {
-      myModel.addRoot(rootNode);
-    }
-    for (SNode rootNode : myRootsToDelete) {
+   for (SNode rootNode : myRootsToDelete) {
       myModel.removeRoot(rootNode);
     }
     for (SNode rootNode : myModel.getRoots()) {
@@ -91,12 +82,21 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
       }
     }
 
+    for (SNode sourceRootNode : myModel.getRoots()) {
+      ruleManager.getReductionRuleManager().applyReductionRules(sourceRootNode);
+    }
+
+    for (SNode rootNode : myNewRootNodes) {
+      myModel.addRoot(rootNode);
+    }
+
     myDelayedChanges.doAllChanges();
 
     for (ReferenceInfo referenceInfo : myReferenceInfos) {
       referenceInfo.execute(this);
     }
   }
+
 
   public SModel getSourceModel() {
     return myModel;
@@ -184,7 +184,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     return new SimpleNodeBuilder(outputNode);
   }
 
-  //Should be optimized!!!
+  //todo Should be optimized!!! - and why this method is needed at all?
   public INodeBuilder findNodeBuilderForSource(SNode inputNode, Condition<INodeBuilder> condition) {
    for (Pair<SNode,SNode> key : myTemplateNodeAndInputNodeToOutputNodeMap.keySet()) {
       if (key.o1 == inputNode) {
