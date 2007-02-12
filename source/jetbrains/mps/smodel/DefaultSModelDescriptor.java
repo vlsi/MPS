@@ -161,6 +161,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 
   public SModel getSModel() {
     if (mySModel == null) {
+      mySModel = new SModel(getModelUID());
       mySModel = loadModel();
       doPostLoadStuff();
     }
