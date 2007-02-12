@@ -728,6 +728,30 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1171311597599">
+      <property name="name" value="accessToParentNode_5" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1171311597600" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1171311597601">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1171311897876">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1171311897877">
+            <property name="name" value="root" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1171311897879">
+              <link role="concept" targetNodeId="6.1133920641626" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1171311656651">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetContainingRootOperation" id="1171311660295" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1171311655432">
+                <link role="variableDeclaration" targetNodeId="1171311648804" resolveInfo="node" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1171311648804">
+        <property name="name" value="node" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1171311648805" />
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1145579089043">
     <property name="name" value="TypeCast" />

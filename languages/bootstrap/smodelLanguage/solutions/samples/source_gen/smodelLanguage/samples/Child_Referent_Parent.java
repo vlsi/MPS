@@ -55,4 +55,7 @@ public class Child_Referent_Parent {
   public void accessToParentNode_4(SNode expression) {
     SNode declaringClass = SNodeOperations.getParent(SLinkOperations.getTarget(expression, "baseMethodDeclaration", false), null, false, false);
   }
+  public void accessToParentNode_5(SNode node) {
+    SNode root = SNodeOperations.getContainingRoot(node);
+  }
 }

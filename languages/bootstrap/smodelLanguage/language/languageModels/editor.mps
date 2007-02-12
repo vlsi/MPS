@@ -1356,5 +1356,12 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1171310362800">
+    <link role="conceptDeclaration" targetNodeId="1.1171310072040" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1171310416458">
+      <property name="editable" value="true" />
+      <property name="text" value="containing root" />
+    </node>
+  </node>
 </model>
 

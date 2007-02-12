@@ -1786,7 +1786,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1166049232041">
     <property name="name" value="AbstractComponent" />
-    <link role="extends" targetNodeId="3.1133920641626" />
+    <link role="extends" targetNodeId="3.1078489098625" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1166049251808">
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" />
     </node>
