@@ -1,8 +1,8 @@
 package jetbrains.mps.plugin;
 
-import jetbrains.mps.baseLanguage.BaseMethodDeclaration;
-import jetbrains.mps.baseLanguage.Classifier;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
+import jetbrains.mps.baseLanguage.structure.Classifier;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.usageView.UsagesModel_AspectMethods;
 import jetbrains.mps.logging.Logger;
@@ -10,7 +10,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.util.FrameUtil;
 import jetbrains.mps.util.IDisposable;
 
@@ -58,21 +58,21 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   }
 
   public void showConceptNode(String fqName) throws RemoteException {
-    ConceptDeclaration concept = SModelUtil.findConceptDeclaration(fqName, myProject.getScope());
+    ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(fqName, myProject.getScope());
     IDEProjectFrame projectWindow = getProjectWindow();
-    projectWindow.getEditorsPane().openEditor(concept, new ProjectOperationContext(projectWindow.getProject()));
+    projectWindow.getEditorsPane().openEditor(concept.getNode(), new ProjectOperationContext(projectWindow.getProject()));
     FrameUtil.activateFrame(getMainFrame());
   }
 
   public void showClassUsages(String fqName) throws RemoteException {
-    Classifier cls = SModelUtil.findNodeByFQName(fqName, Classifier.class, myProject.getScope());
+    Classifier cls = SModelUtil_new.findNodeByFQName(fqName, Classifier.class, myProject.getScope());
     if (cls == null) return;
     FrameUtil.activateFrame(getMainFrame());
-    getProjectWindow().findUsages(cls, new ProjectOperationContext(myProject));
+    getProjectWindow().findUsages(cls.getNode(), new ProjectOperationContext(myProject));
   }
 
   public void showMethodUsages(String classFqName, String methodName, int parameterCount) throws RemoteException {
-    Classifier cls = SModelUtil.findNodeByFQName(classFqName, Classifier.class, myProject.getScope());
+    Classifier cls = SModelUtil_new.findNodeByFQName(classFqName, Classifier.class, myProject.getScope());
     if (cls == null) return;
     BaseMethodDeclaration m = null;
     for (BaseMethodDeclaration method : cls.getChildren(BaseMethodDeclaration.class)) {
@@ -83,7 +83,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     }
     if (m == null) return;
     FrameUtil.activateFrame(getMainFrame());
-    getProjectWindow().findUsages(m, new ProjectOperationContext(myProject));
+    getProjectWindow().findUsages(m.getNode(), new ProjectOperationContext(myProject));
   }
 
   public void dispose() {
