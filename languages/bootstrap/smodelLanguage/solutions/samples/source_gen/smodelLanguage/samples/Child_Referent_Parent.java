@@ -52,4 +52,7 @@ public class Child_Referent_Parent {
   public void accessToParentNode_3(SNode expression) {
     SNode parent_If_or_WhileStatement = SNodeOperations.getParentWhereConceptInList(expression, new String[]{"jetbrains.mps.baseLanguage.structure.IfStatement","jetbrains.mps.baseLanguage.structure.WhileStatement"}, false, false);
   }
+  public void accessToParentNode_4(SNode expression) {
+    SNode declaringClass = SNodeOperations.getParent(SLinkOperations.getTarget(expression, "baseMethodDeclaration", false), null, false, false);
+  }
 }

@@ -694,6 +694,40 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1171242667791">
+      <property name="name" value="accessToParentNode_4" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1171242667792" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1171242667793">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1171242823055">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1171242823056">
+            <property name="name" value="declaringClass" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1171242823058">
+              <link role="concept" targetNodeId="1.1068390468198" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeTypeCastExpression" id="1171242808819">
+              <link role="concept" targetNodeId="1.1068390468198" />
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1171242783656">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetParentOperation" id="1171242786409" />
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1171242774542">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1171242782327">
+                    <link role="link" targetNodeId="1.1070568044740" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1171242773354">
+                    <link role="variableDeclaration" targetNodeId="1171242727248" resolveInfo="expression" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1171242727248">
+        <property name="name" value="expression" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1171242727249">
+          <link role="concept" targetNodeId="1.1068580123163" />
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1145579089043">
     <property name="name" value="TypeCast" />
