@@ -240,17 +240,18 @@
                   <link role="classifier" extResolveInfo="7.[Classifier]SNode" />
                 </node>
               </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1154653138622">
-                <link role="baseMethodDeclaration" extResolveInfo="7.static method ([Classifier]SModelUtil).([StaticMethodDeclaration]getConceptLinkTargets((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]), (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IScope])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [SNode]&gt;]))" />
-                <link role="classConcept" extResolveInfo="7.[Classifier]SModelUtil" />
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionParm_sourceNode" id="1154653143408" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1154653138640">
+              <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1171396566137">
+                <link role="baseMethodDeclaration" extResolveInfo="7.method ([Classifier]SNode).([InstanceMethodDeclaration]getConceptLinkTargets((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]), (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IScope])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [SNode]&gt;]))" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1171396571696">
                   <property name="value" value="applicableParameter" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1154653138641">
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1171396571697">
                   <property name="value" value="true" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_scope" id="1161705645008" />
+                <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_scope" id="1171396571698" />
+                <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.SemanticDowncastExpression" id="1171396558412">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionParm_sourceNode" id="1171396540463" />
+                </node>
               </node>
             </node>
           </node>

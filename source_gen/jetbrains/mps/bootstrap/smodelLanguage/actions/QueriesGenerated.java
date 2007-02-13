@@ -12,7 +12,6 @@ import jetbrains.mps.typesystem.TypeCheckerAccess;
 import jetbrains.mps.bootstrap.smodelLanguage.types.Snode_TypeObject;
 import jetbrains.mps.bootstrap.smodelLanguage.types.Slink_TypeObject;
 import java.util.List;
-import jetbrains.mps.smodel.SModelUtil;
 
 public class QueriesGenerated {
 
@@ -45,7 +44,7 @@ public class QueriesGenerated {
     if(alreadyHasParms) {
       return false;
     }
-    List<SNode> applicableParms = SModelUtil.getConceptLinkTargets(sourceNode, "applicableParameter", true, scope);
+    List<SNode> applicableParms = sourceNode.getConceptLinkTargets("applicableParameter", true, scope);
     return applicableParms.size() > 0;
   }
 }
