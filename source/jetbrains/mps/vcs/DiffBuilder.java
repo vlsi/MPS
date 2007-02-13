@@ -54,7 +54,7 @@ public class DiffBuilder {
       String role = sNode.getRole_();
 
       if (role != null) {
-        if (!isToManyCardinality(sNode.getParent().getConceptFQName(), role)) {
+        if (!isToManyCardinality(sNode.getParent().getConceptFqName(), role)) {
           myChanges.add(new SetNodeChange(sNode.getClass().getName(), id, role, sNode.getParent().getId()));
         } else {
           SNode prevChild = sNode.getParent().getPrevChild(sNode);
@@ -150,7 +150,7 @@ public class DiffBuilder {
 
       if (oldNode == null) {
         for (SReference ref : newNode.getReferences()) {
-          if (isToManyCardinality(newNode.getConceptFQName(), ref.getRole())) {
+          if (isToManyCardinality(newNode.getConceptFqName(), ref.getRole())) {
             myChanges.add(new AddReferenceChange(id, ref.getRole(), ref.getTargetModelUID(), ref.getTargetNodeId()));
           } else {
             myChanges.add(new SetReferenceChange(id, ref.getRole(), myNewModel, ref.getTargetNode()));
@@ -160,7 +160,7 @@ public class DiffBuilder {
         Set<String> roles = new HashSet<String>(newNode.getReferenceRoles());
         roles.addAll(oldNode.getReferenceRoles());
         for (String role : roles) {
-          if (!isToManyCardinality(newNode.getConceptFQName(), role)) {
+          if (!isToManyCardinality(newNode.getConceptFqName(), role)) {
             if (oldNode.getReferences(role).size() != 0 && newNode.getReferences(role).size() == 0) {
               myChanges.add(new SetReferenceChange(id, role, myNewModel, null));
             } else {
@@ -172,7 +172,7 @@ public class DiffBuilder {
             System.out.println("we have to many references : " + newNode + " " + newNode.getId());
             System.out.println("role : " + role);
             System.out.println("not supported!");
-            isToManyCardinality(newNode.getConceptFQName(), role);
+            isToManyCardinality(newNode.getConceptFqName(), role);
           }
         }
       }

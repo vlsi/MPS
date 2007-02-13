@@ -29,7 +29,7 @@ import java.util.*;
  * User: Sergey Dmitriev
  * Date: Aug 2, 2003
  */
-public abstract class SNode implements Cloneable, Iterable<SNode> {
+public class SNode implements Cloneable, Iterable<SNode> {
   private static final Logger LOG = Logger.getLogger(SNode.class);
 
   public static final Object STATUS = new Object();
@@ -52,7 +52,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   private List<SReference> myReferences = new ArrayList<SReference>();
   private HashMap<String, String> myProperties = new HashMap<String, String>();
 
-
   private boolean myRegisteredInModelFlag;
   private SModel myModel;
   private String myId;
@@ -63,10 +62,18 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   private Set<String> myPropertyGettersInProgress = new HashSet<String>();
   private Set<String> mySetReferentEventHandlersInProgress = new HashSet<String>();
 
+  //this name doesn't contain the word structure
+  private String myConceptName;
+
   private BaseAdapter myAdapter;
 
   protected SNode(@NotNull SModel model) {
     myModel = model;
+  }
+
+  public SNode(@NotNull SModel model, String conceptFqName) {
+    this(model);
+    myConceptName = conceptFqName;
   }
 
   public void changeModel(SModel newModel) {
@@ -1280,12 +1287,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   @NotNull
-  public String getConceptFQName() {
-    NodeReadAccessCaster.fireNodeReadAccessed(this);
-    return getClass().getName();
-  }
-
-  @NotNull
   public String toString() {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
     String name = getName();
@@ -1391,6 +1392,14 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
   }
 
+  public String getConceptFqName() {
+    if (myConceptName != null) {
+      return myConceptName;
+    } else {
+      return getClass().getName();
+    }
+  }
+
   public boolean isInstanceOfConcept(ConceptDeclaration conceptDeclaration, IScope scope) {
     if (NameUtil.nodeFQName(conceptDeclaration).equals("jetbrains.mps.core.structure.BaseConcept")) {
       return true;
@@ -1398,7 +1407,9 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
     Language language = getLanguage(scope);
     if (language == null) return false;
-    return language.getParentNames(getClass().getName()).
+    String conceptName = getConceptFqName();
+
+    return language.getParentNames(conceptName).
             contains(JavaNameUtil.className(conceptDeclaration));
   }
 
@@ -1407,18 +1418,8 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     if (conceptFqName.equals("jetbrains.mps.core.structure.BaseConcept")) {
       return true;
     }
-
     ConceptDeclaration instanceConcept = instance.getConceptDeclarationAdapter(scope);
-//    LOG.assertLog(instanceConcept != null, "Couldn't find concept declaration for node : " + instance.getDebugText());
-    ConceptDeclaration compareConcept = instanceConcept;
-    while (compareConcept != null) {
-      if (NameUtil.nodeFQName(compareConcept).equals(conceptFqName)) {
-        return true;
-      }
-      compareConcept = compareConcept.getExtends();
-    }
-
-    return false;
+    return isInstanceOfConcept(instanceConcept, scope);
   }
 
   public final ConceptDeclaration getConceptDeclarationAdapter() {
@@ -1426,7 +1427,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public ConceptDeclaration getConceptDeclarationAdapter(IScope scope) {
-    String conceptFQName = NameUtil.nodeConceptFQName(this);
+    String conceptFQName = getConceptFqName();
     ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFQName, scope);
     assert concept != null : "couldn't find concept declaration '" + conceptFQName + "' in scope:" + scope;
     return concept;
