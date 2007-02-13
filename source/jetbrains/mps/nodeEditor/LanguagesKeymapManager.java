@@ -1,6 +1,6 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.bootstrap.editorLanguage.CellKeyMapDeclaration;
+import jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapDeclaration;
 import jetbrains.mps.component.Dependency;
 import jetbrains.mps.ide.command.CommandAdapter;
 import jetbrains.mps.ide.command.CommandEvent;
@@ -66,9 +66,9 @@ public class LanguagesKeymapManager {
     if (editorModelDescriptor == null) return;
     SModel editorModel = editorModelDescriptor.getSModel();
     if (editorModel == null) return;
-    for (SNode node : editorModel.getRoots(CellKeyMapDeclaration.class)) {
+    for (CellKeyMapDeclaration node : editorModel.getRootsAdapters(CellKeyMapDeclaration.class)) {
       try {
-        Class<EditorCellKeyMap> keyMapClass = EditorUtil.findKeyMapClassByDeclaration((CellKeyMapDeclaration) node);
+        Class<EditorCellKeyMap> keyMapClass = EditorUtil.findKeyMapClassByDeclaration(node);
         if (keyMapClass != null) {
           registerKeyMap(keyMapClass.newInstance(), language.getNamespace());
         }
