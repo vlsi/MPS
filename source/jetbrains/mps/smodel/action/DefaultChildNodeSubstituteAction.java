@@ -47,7 +47,8 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
   }
 
   public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-    if (parameterObject instanceof jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration) {
+    if (parameterObject instanceof SNode &&
+            BaseAdapter.fromNode((SNode) parameterObject) instanceof ConceptDeclaration) {
       parameterObject = BaseAdapter.fromNode(((SNode) parameterObject));
     }
     if (parameterObject instanceof ConceptDeclaration) {
