@@ -1,6 +1,6 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.logging.Logger;
@@ -388,10 +388,10 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 
   private void addDescendants(SNode current, ConceptDeclaration node, Set<ConceptDeclaration> result) {
 
-    if (current instanceof ConceptDeclaration) {
+    if (BaseAdapter.fromNode(current) instanceof ConceptDeclaration) {
       for (SReference ref : current.getReferences()) {
-        if (ref.getTargetNode() == node && ref.getRole().equals(ConceptDeclaration.EXTENDS)) {
-          result.add((ConceptDeclaration) current);
+        if (ref.getTargetNode() == BaseAdapter.fromAdapter(node) && ref.getRole().equals(ConceptDeclaration.EXTENDS)) {
+          result.add((ConceptDeclaration) BaseAdapter.fromNode(current));
           break;
         }
       }
@@ -411,7 +411,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     Set<SNode> result = new HashSet<SNode>();
     if (mySModel != null) {
       for (SNode root : mySModel.getRoots()) {
-        addInstances(root, (jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) concept.getAdapter(), result, scope);
+        addInstances(root, concept, result, scope);
       }
     }
     return result;

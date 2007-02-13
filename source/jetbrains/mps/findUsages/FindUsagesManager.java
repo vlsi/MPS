@@ -1,6 +1,6 @@
 package jetbrains.mps.findUsages;
 
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.project.ApplicationComponents;
@@ -24,25 +24,6 @@ public class FindUsagesManager {
   private HashMap<ConceptDeclaration, HashMap<SModelDescriptor, HashSet<ConceptDeclaration>>> myConceptsToKnownDescendantsInModelDescriptors = new HashMap<ConceptDeclaration, HashMap<SModelDescriptor, HashSet<ConceptDeclaration>>>();
   //--
 
-
-  public void addDescendant(ConceptDeclaration ancestor, ConceptDeclaration descendant) {
-    HashMap<SModelDescriptor, HashSet<ConceptDeclaration>> knownDescendantsInModelDescriptors = myConceptsToKnownDescendantsInModelDescriptors.get(ancestor);
-    if (knownDescendantsInModelDescriptors == null) {
-      knownDescendantsInModelDescriptors = new HashMap<SModelDescriptor, HashSet<ConceptDeclaration>>();
-      myConceptsToKnownDescendantsInModelDescriptors.put(ancestor, knownDescendantsInModelDescriptors);
-    }
-    SModelDescriptor model = descendant.getModel().getModelDescriptor();
-    HashSet<ConceptDeclaration> descendantsKnownInModel =  knownDescendantsInModelDescriptors.get(model);
-    if (descendantsKnownInModel == null) {
-      descendantsKnownInModel = new HashSet<ConceptDeclaration>();
-      knownDescendantsInModelDescriptors.put(model, descendantsKnownInModel);
-    }
-    descendantsKnownInModel.add(descendant);
-  }
-
-  public Set<jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration> findDescendants(jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration node, IScope scope) {
-    return BaseAdapter.toAdapters(findDescendants((ConceptDeclaration) node.getNode(), scope));
-  }
 
   public Set<ConceptDeclaration> findDescendants(ConceptDeclaration node, IScope scope) {
     HashMap<SModelDescriptor, HashSet<ConceptDeclaration>> knownDescendantsInModelDescriptors = myConceptsToKnownDescendantsInModelDescriptors.get(node);
@@ -98,10 +79,6 @@ public class FindUsagesManager {
     }
   }
 
-  public Set<SNode> findInstances(jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration concept, IScope scope, IAdaptiveProgressMonitor progress) {
-    return findInstances((ConceptDeclaration) concept.getNode(), scope, progress);    
-  }
-
   public Set<SNode> findInstances(ConceptDeclaration concept, IScope scope, IAdaptiveProgressMonitor progress) {
     Set<SNode> result = new HashSet<SNode>();
     //noinspection EmptyFinallyBlock
@@ -134,10 +111,7 @@ public class FindUsagesManager {
     return findUsages(node, scope, progress);
   }
 
-  private static Map<ConceptDeclaration, List<ConceptDeclaration>> ourCache = new HashMap<ConceptDeclaration, List<ConceptDeclaration>>();
-
   public static void invalidateCaches() {
-    ourCache.clear();
   }
 
   public static void registerStructureModel(SModelDescriptor descriptor) {
@@ -150,29 +124,5 @@ public class FindUsagesManager {
         invalidateCaches();
       }
     });
-  }
-
-  public List<ConceptDeclaration> allSubtypes(ConceptDeclaration conceptDeclaration, IScope scope) {
-    if (ourCache.get(conceptDeclaration) != null) return Collections.unmodifiableList(ourCache.get(conceptDeclaration));
-
-    List<ConceptDeclaration> list = new LinkedList<ConceptDeclaration>();
-
-    Set<SReference> usages = findUsages(conceptDeclaration, new FilterScope(scope) {
-      protected boolean accept(SModelDescriptor descriptor) {
-        return descriptor.getModelUID().getShortName().equals("structure");
-      }
-    }, null);
-
-    for (SReference ref : usages) {
-      if (ref.getRole().equals(ConceptDeclaration.EXTENDS)) {
-        ConceptDeclaration subtype = (ConceptDeclaration) ref.getSourceNode();
-        list.add(subtype);
-        list.addAll(allSubtypes(subtype, scope));
-      }
-    }
-
-    ourCache.put(conceptDeclaration, list);
-
-    return Collections.unmodifiableList(list);
   }
 }
