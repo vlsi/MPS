@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.PropertySupport;
-import jetbrains.mps.bootstrap.structureLanguage.PrimitiveDataTypeDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.PrimitiveDataTypeDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
@@ -19,7 +19,7 @@ public class QueriesUtil {
   public static boolean propertyDataType_isString(SNode property) {
     SNode dataType = SLinkOperations.getTarget(property, "dataType", false);
     if(SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.bootstrap.structureLanguage.structure.PrimitiveDataTypeDeclaration")) {
-      return PropertySupport.isString((PrimitiveDataTypeDeclaration)dataType);
+      return PropertySupport.isString_new(((PrimitiveDataTypeDeclaration)SNodeOperations.getAdapter(dataType)));
     }
     if(SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.bootstrap.structureLanguage.structure.ConstrainedDataTypeDeclaration")) {
       return true;
@@ -29,14 +29,14 @@ public class QueriesUtil {
   public static boolean propertyDataType_isBoolean(SNode property) {
     SNode dataType = SLinkOperations.getTarget(property, "dataType", false);
     if(SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.bootstrap.structureLanguage.structure.PrimitiveDataTypeDeclaration")) {
-      return PropertySupport.isBoolean((PrimitiveDataTypeDeclaration)dataType);
+      return PropertySupport.isBoolean_new(((PrimitiveDataTypeDeclaration)SNodeOperations.getAdapter(dataType)));
     }
     return false;
   }
   public static boolean propertyDataType_isInteger(SNode property) {
     SNode dataType = SLinkOperations.getTarget(property, "dataType", false);
     if(SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.bootstrap.structureLanguage.structure.PrimitiveDataTypeDeclaration")) {
-      return PropertySupport.isInteger((PrimitiveDataTypeDeclaration)dataType);
+      return PropertySupport.isInteger_new(((PrimitiveDataTypeDeclaration)SNodeOperations.getAdapter(dataType)));
     }
     return false;
   }
