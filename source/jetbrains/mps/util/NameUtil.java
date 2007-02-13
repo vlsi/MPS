@@ -82,20 +82,6 @@ public class NameUtil {
     return fqName.substring(0, offset);
   }
 
-  /**
-   * @deprecated
-   */
-  public static String conceptFqName(jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration cd) {
-    return namespaceFromConcept((ConceptDeclaration) cd.getAdapter()) + "." + cd.getName();
-  }
-
-  /**
-   * @deprecated
-   */
-  public static String namespaceFromConcept(jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration concept) {
-    return namespaceFromConceptFQName(nodeFQName(concept));
-  }
-
   public static String conceptFqName(ConceptDeclaration cd) {
     return namespaceFromConcept(cd) + "." + cd.getName();
   }

@@ -12,8 +12,9 @@ import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.bootstrap.structureLanguage.PrimitiveDataTypeDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.generator.util.QueriesUtil;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.bootstrap.structureLanguage.generator_new.util.QueriesUtil;
 import java.util.List;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 
@@ -80,64 +81,64 @@ public class QueriesGenerated {
     return b1 || b2;
   }
   public static String propertyMacro_GetPropertyValue_1170239141486(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return NameUtil.conceptFqName((ConceptDeclaration)node);
+    return NameUtil.conceptFqName(((ConceptDeclaration)SNodeOperations.getAdapter(node)));
   }
   public static String propertyMacro_GetPropertyValue_1168020996282(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SPropertyOperations.get(node, "name");
+    return SPropertyOperations.getString(node, "name");
   }
   public static String propertyMacro_GetPropertyValue_1168020858179(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return "CPR_" + NameUtil.capitalize(SPropertyOperations.get(node, "name"));
+    return "CPR_" + NameUtil.capitalize(SPropertyOperations.getString(node, "name"));
   }
   public static String propertyMacro_GetPropertyValue_1168021031848(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SPropertyOperations.get(node, "name");
+    return SPropertyOperations.getString(node, "name");
   }
   public static String propertyMacro_GetPropertyValue_1168020946114(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return "CLNK_" + NameUtil.capitalize(SPropertyOperations.get(node, "name"));
+    return "CLNK_" + NameUtil.capitalize(SPropertyOperations.getString(node, "name"));
   }
   public static String propertyMacro_GetPropertyValue_1168019908729(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SPropertyOperations.get(node, "name");
+    return SPropertyOperations.getString(node, "name");
   }
   public static String propertyMacro_GetPropertyValue_1169581753467(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return "get" + NameUtil.capitalize(SPropertyOperations.get(node, "name"));
+    return "get" + NameUtil.capitalize(SPropertyOperations.getString(node, "name"));
   }
   public static String propertyMacro_GetPropertyValue_1169581814828(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return "set" + NameUtil.capitalize(SPropertyOperations.get(node, "name"));
+    return "set" + NameUtil.capitalize(SPropertyOperations.getString(node, "name"));
   }
   public static String propertyMacro_GetPropertyValue_1169581703461(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SPropertyOperations.get(node, "name");
+    return SPropertyOperations.getString(node, "name");
   }
   public static String propertyMacro_GetPropertyValue_1169581811302(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return NameUtil.toConstantName(SPropertyOperations.get(node, "name"));
+    return NameUtil.toConstantName(SPropertyOperations.getString(node, "name"));
   }
   public static String propertyMacro_GetPropertyValue_1169755844288(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SPropertyOperations.get(node, "role");
+    return SPropertyOperations.getString(node, "role");
   }
   public static String propertyMacro_GetPropertyValue_1169755781139(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return NameUtil.toConstantName(SPropertyOperations.get(node, "role"));
+    return NameUtil.toConstantName(SPropertyOperations.getString(node, "role"));
   }
   public static String propertyMacro_GetPropertyValue_1169758290216(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     if(QueriesUtil.AL_isSingular(node)) {
-      return "set" + NameUtil.capitalize(SPropertyOperations.get(node, "role"));
+      return "set" + NameUtil.capitalize(SPropertyOperations.getString(node, "role"));
     }
-    return "add" + NameUtil.capitalize(SPropertyOperations.get(node, "role"));
+    return "add" + NameUtil.capitalize(SPropertyOperations.getString(node, "role"));
   }
   public static String propertyMacro_GetPropertyValue_1169755707217(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return NameUtil.capitalize(SPropertyOperations.get(node, "role")) + "_AnnotationLink";
+    return NameUtil.capitalize(SPropertyOperations.getString(node, "role")) + "_AnnotationLink";
   }
   public static String propertyMacro_GetPropertyValue_1170173405392(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SPropertyOperations.get(node, "name");
+    return SPropertyOperations.getString(node, "name");
   }
   public static String propertyMacro_GetPropertyValue_1170173405408(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return "CPR_" + NameUtil.capitalize(SPropertyOperations.get(node, "name"));
+    return "CPR_" + NameUtil.capitalize(SPropertyOperations.getString(node, "name"));
   }
   public static String propertyMacro_GetPropertyValue_1170173405421(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SPropertyOperations.get(node, "name");
+    return SPropertyOperations.getString(node, "name");
   }
   public static String propertyMacro_GetPropertyValue_1170173405437(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return "CLNK_" + NameUtil.capitalize(SPropertyOperations.get(node, "name"));
+    return "CLNK_" + NameUtil.capitalize(SPropertyOperations.getString(node, "name"));
   }
   public static String propertyMacro_GetPropertyValue_1169126625179(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SPropertyOperations.get(node, "name");
+    return SPropertyOperations.getString(node, "name");
   }
   public static SNode referenceMacro_GetReferent_1169130026119(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return _QueriesUtil.extendedInterfaceConcept_generatedInterface(node, templateNode, generator);
