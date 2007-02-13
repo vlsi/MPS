@@ -9,11 +9,11 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.PropertySupport;
-import jetbrains.mps.bootstrap.structureLanguage.PrimitiveDataTypeDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.PrimitiveDataTypeDeclaration;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.structureLanguage.generator_new.util.QueriesUtil;
 import java.util.List;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
@@ -22,15 +22,15 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1167266219124(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode type = SLinkOperations.getTarget(node, "memberDataType", false);
-    return PropertySupport.isString((PrimitiveDataTypeDeclaration)type);
+    return PropertySupport.isString(((PrimitiveDataTypeDeclaration)SNodeOperations.getAdapter(type)));
   }
   public static boolean baseMappingRule_Condition_1167266685049(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode type = SLinkOperations.getTarget(node, "memberDataType", false);
-    return PropertySupport.isBoolean((PrimitiveDataTypeDeclaration)type);
+    return PropertySupport.isBoolean(((PrimitiveDataTypeDeclaration)SNodeOperations.getAdapter(type)));
   }
   public static boolean baseMappingRule_Condition_1167266687532(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode type = SLinkOperations.getTarget(node, "memberDataType", false);
-    return PropertySupport.isInteger((PrimitiveDataTypeDeclaration)type);
+    return PropertySupport.isInteger(((PrimitiveDataTypeDeclaration)SNodeOperations.getAdapter(type)));
   }
   public static boolean baseMappingRule_Condition_1167267315256(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SPropertyOperations.hasValue(node, "name", "AttributeConcept");

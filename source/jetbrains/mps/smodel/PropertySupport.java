@@ -91,33 +91,17 @@ public abstract class PropertySupport {
     return propertySupport;
   }
     
-  @Deprecated
-  public static boolean isString(jetbrains.mps.bootstrap.structureLanguage.PrimitiveDataTypeDeclaration datatype) {
-    return isString_new((PrimitiveDataTypeDeclaration) datatype.getAdapter());
-  }
-
-  public static boolean isString_new(PrimitiveDataTypeDeclaration datatype) {
+  public static boolean isString(PrimitiveDataTypeDeclaration datatype) {
     return Primitives.STRING_TYPE.equals(datatype.getName());
   }
 
-  @Deprecated
-  public static boolean isInteger(jetbrains.mps.bootstrap.structureLanguage.PrimitiveDataTypeDeclaration datatype) {
-    return isInteger_new((PrimitiveDataTypeDeclaration) datatype.getAdapter());
-  }
-
-  public static boolean isInteger_new(PrimitiveDataTypeDeclaration datatype) {
+  public static boolean isInteger(PrimitiveDataTypeDeclaration datatype) {
     return Primitives.INTEGER_TYPE.equals(datatype.getName());
   }
 
-  @Deprecated
-  public static boolean isBoolean(jetbrains.mps.bootstrap.structureLanguage.PrimitiveDataTypeDeclaration datatype) {
-    return isBoolean_new((PrimitiveDataTypeDeclaration) datatype.getAdapter());
-  }
-
-  public static boolean isBoolean_new(PrimitiveDataTypeDeclaration datatype) {
+  public static boolean isBoolean(PrimitiveDataTypeDeclaration datatype) {
     return Primitives.BOOLEAN_TYPE.equals(datatype.getName());
   }
-
 
   private static class DefaultPropertySupport extends PropertySupport {
     public boolean canSetValue(String value) {
