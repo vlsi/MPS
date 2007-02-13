@@ -416,7 +416,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   @NotNull
-  public List<? extends SNode> getPropertyAttributes(String role, String propertyName) {
+  public List<SNode> getPropertyAttributes(String role, String propertyName) {
     return getChildren(AttributesRolesUtil.childRoleFromPropertyAttributeRole(role, propertyName));
   }
 
@@ -471,7 +471,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   @NotNull
-  public List<? extends SNode> getLinkAttributes(String role, String linkRole) {
+  public List<SNode> getLinkAttributes(String role, String linkRole) {
     return getChildren(AttributesRolesUtil.childRoleFromLinkAttributeRole(role, linkRole));
   }
 
@@ -924,7 +924,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   @NotNull
   public List<SReference> getBackReferences(@NotNull SModel sourceModel) {
     List<SReference> list = new LinkedList<SReference>();
-    List<? extends SNode> nodes = sourceModel.allNodes();
+    List<SNode> nodes = sourceModel.allNodes();
     for (SNode node : nodes) {
       List<SReference> references = node.getReferences();
       for (SReference reference : references) {
@@ -1076,13 +1076,13 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   @NotNull
-  public <T extends SNode> List<T> getReferents(@NotNull String role) {
+  public List<SNode> getReferents(@NotNull String role) {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
-    List<T> result = new LinkedList<T>();
+    List<SNode> result = new LinkedList<SNode>();
     for (SReference reference : myReferences) {
       if (role.equals(reference.getRole())) {
         SNode targetNode = reference.getTargetNode();
-        if (targetNode != null) result.add((T) targetNode);
+        if (targetNode != null) result.add(targetNode);
       }
     }
     return result;
@@ -1201,7 +1201,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   @NotNull
-  public Iterator<? extends SNode> depthFirstChildren() {
+  public Iterator<SNode> depthFirstChildren() {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
     List<SNode> allChildren = new ArrayList<SNode>();
     putAggregationTree2List(this, allChildren);
@@ -1306,17 +1306,17 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   @NotNull
-  public <E extends SNode> List<E> getSubnodes(Condition<SNode> condition) {
-    List<E> list = new LinkedList<E>();
+  public List<SNode> getSubnodes(Condition<SNode> condition) {
+    List<SNode> list = new LinkedList<SNode>();
     collectSubnodes(condition, list);
     return list;
   }
 
-  private <E extends SNode> void collectSubnodes(@NotNull Condition<SNode> condition,
-                                                 @NotNull List<E> list) {
+  private void collectSubnodes(@NotNull Condition<SNode> condition,
+                                                 @NotNull List<SNode> list) {
     for (SNode child : _children()) {
       if (condition.met(child)) {
-        list.add((E) child);
+        list.add(child);
       }
       child.collectSubnodes(condition, list);
     }
@@ -1489,7 +1489,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   public <E extends SNode> List<E> allChildren(Class<E> clazz) {
     List<E> resultNodes = new LinkedList<E>();
-    Iterator<? extends SNode> nodes = depthFirstChildren();
+    Iterator<SNode> nodes = depthFirstChildren();
     while (nodes.hasNext()) {
       SNode node = nodes.next();
       if (clazz.isAssignableFrom(node.getClass())) {
@@ -1501,7 +1501,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   public <E extends SNode> List<E> allChildren(Class<E> clazz, Condition<E> condition) {
     List<E> resultNodes = new LinkedList<E>();
-    Iterator<? extends SNode> nodes = depthFirstChildren();
+    Iterator<SNode> nodes = depthFirstChildren();
     while (nodes.hasNext()) {
       SNode node = nodes.next();
       if (clazz.isAssignableFrom(node.getClass())) {
@@ -1515,7 +1515,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   public <E extends SNode> List<E> allChildren(Condition<SNode> condition) {
     List<E> resultNodes = new LinkedList<E>();
-    Iterator<? extends SNode> nodes = depthFirstChildren();
+    Iterator<SNode> nodes = depthFirstChildren();
     while (nodes.hasNext()) {
       SNode node = nodes.next();
       if (condition.met(node)) {
@@ -1570,7 +1570,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return null;
   }
 
-  public List<? extends SNode> allChildren() {
+  public List<SNode> allChildren() {
     List<SNode> result = new LinkedList<SNode>();
     List<SNode> children = this.getChildren();
     result.addAll(children);

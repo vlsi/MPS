@@ -757,7 +757,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   @NotNull
-  public Collection<? extends SNode> getAllNodesWithIds() {
+  public Collection<SNode> getAllNodesWithIds() {
     Collection<SNode> nodes = myIdToNodeMap.values();
     return Collections.unmodifiableCollection(nodes);
   }
@@ -798,7 +798,7 @@ public class SModel implements Iterable<SNode> {
       importedModels.add(sm.getModelUID());
     }
   //  Set<SModelUID> importedModels = new HashSet<SModelUID>(getImportedModelUIDs());
-    List<? extends SNode> nodes = allNodes();
+    List<SNode> nodes = allNodes();
     for (SNode node : nodes) {
       String languageNamespace = node.getLanguageNamespace();
       if (!usedLanguages.contains(languageNamespace)) {
@@ -964,7 +964,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   @NotNull
-  public List<? extends SNode> allNodes() {
+  public List<SNode> allNodes() {
     SModel model = this;
     List<SNode> result = new LinkedList<SNode>();
     for (SNode root : model.getRoots()) {
