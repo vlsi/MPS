@@ -60,28 +60,6 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     });
   }
 
-  public Set<RootDescriptor> getRoots() {
-    Set<RootDescriptor> result = new HashSet<RootDescriptor>();
-
-    for (SNode root : getSModel()) {
-      result.add(new RootDescriptor(root));
-    }
-    return result;
-  }
-
-  public Set<RootDescriptor> getRoots(String concept) {
-    Set<RootDescriptor> result = new HashSet<RootDescriptor>();
-    try {
-      Class<? extends SNode> cls = (Class<? extends SNode>) Class.forName(concept, true, ClassLoaderManager.getInstance().getClassLoader());
-      for (SNode root : getSModel().getRoots(cls)) {
-        result.add(new RootDescriptor(root));
-      }
-    } catch (ClassNotFoundException e) {
-      LOG.warning("concept class " + concept + " not found");
-    }
-    return result;
-  }
-
   private void checkModelDuplication() {
 
     SModelDescriptor anotherModel = SModelRepository.getInstance().getModelDescriptor(myModelUID);
@@ -431,13 +409,8 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     }
   }
 
-
   public String toString() {
     return getModelUID().toString();
-  }
-
-  public boolean isRemote() {
-    return false;
   }
 
   public boolean isTransient() {

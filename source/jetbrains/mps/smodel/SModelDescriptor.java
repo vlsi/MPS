@@ -12,9 +12,6 @@ import java.util.Set;
  * Date: Apr 3, 2005
  */
 public interface SModelDescriptor {
-  Set<RootDescriptor> getRoots();
-  Set<RootDescriptor> getRoots(String concept);
-
   /**
    * After model loading call SModelRepostiory.fireModelRepositoryChanged
    */
@@ -66,8 +63,6 @@ public interface SModelDescriptor {
   boolean isNotEditable();
 
   boolean hasSModelCommandListener(SModelCommandListener listener);
-
-  boolean isRemote();
 
   boolean isTransient();
 
