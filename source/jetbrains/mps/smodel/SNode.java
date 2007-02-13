@@ -1453,7 +1453,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration getLinkDeclarationAdapter(String role, IScope scope) {
-    return (jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration) getLinkDeclaration(role, scope);
+    return getLinkDeclaration(role, scope);
   }
 
   public LinkDeclaration getLinkDeclaration(String role, IScope scope) {
