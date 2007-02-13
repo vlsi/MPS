@@ -967,7 +967,6 @@ public class SModel implements Iterable<SNode> {
   public List<? extends SNode> allNodes() {
     SModel model = this;
     List<SNode> result = new LinkedList<SNode>();
-
     for (SNode root : model.getRoots()) {
       result.add(root);
       result.addAll(root.allChildren());
