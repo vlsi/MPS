@@ -2,9 +2,10 @@ package jetbrains.mps.ide.actions.nodes;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.dialogs.YesNoToAllDialog;
 import jetbrains.mps.refactoring.common.safeDelete.SafeDeleteRefactoringAction;
 
@@ -57,7 +58,7 @@ public class DeleteNodesHelper {
   }
 
   private void doDelete(SNode node, IOperationContext context) {
-    if (node instanceof ConceptDeclaration && node.isRoot()) {
+    if (BaseAdapter.fromNode(node) instanceof ConceptDeclaration && node.isRoot()) {
       if (mySafeConceptDeletion) {
         safeDelete(context, node);
       } else if (myUnsafeConceptDeletion) {
