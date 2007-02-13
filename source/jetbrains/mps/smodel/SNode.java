@@ -1787,14 +1787,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return result;
   }
 
-  public List<SNode> findLinkAttributes(final Class<? extends SNode> cls) {
-    return findLinkAttributes(new Condition<SNode>() {
-      public boolean met(SNode object) {
-        return cls.isInstance(object);
-      }
-    });
-  }
-
   public List<SNode> getPropertyAttributes(Condition<SNode> c) {
     List<SNode> result = new ArrayList<SNode>();
     for (String propertyName : getPropertyNames()) {
@@ -1815,14 +1807,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return result;
   }
 
-  public List<SNode> getPropertyAttributes(final Class<? extends SNode> cls) {
-    return getPropertyAttributes(new Condition<SNode>() {
-      public boolean met(SNode object) {
-        return cls.isInstance(object);
-      }
-    });
-  }
-
+  @Deprecated
   public List<SNode> findPropertyAttributes(final Class<? extends SNode> cls) {
     return findPropertyAttributes(new Condition<SNode>() {
       public boolean met(SNode object) {

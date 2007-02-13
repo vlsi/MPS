@@ -975,14 +975,14 @@ public class SModel implements Iterable<SNode> {
     return result;
   }
 
-  public <E extends SNode> List<E> allNodes(Condition<SNode> condition) {
-    List<E> resultNodes = new LinkedList<E>();
+  public List<SNode> allNodes(Condition<SNode> condition) {
+    List<SNode> resultNodes = new LinkedList<SNode>();
 
     for (SNode node : getRoots()) {
       if (condition.met(node)) {
-        resultNodes.add((E) node);
+        resultNodes.add(node);
       }
-      resultNodes.addAll((Collection<? extends E>) node.getSubnodes(condition));
+      resultNodes.addAll(node.getSubnodes(condition));
     }
 
     return resultNodes;
