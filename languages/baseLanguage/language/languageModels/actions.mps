@@ -5,15 +5,9 @@
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <maxImportIndex value="17" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" />
-  <import index="2" modelUID="jetbrains.mps.smodel@java_stub" />
-  <import index="3" modelUID="jetbrains.mps.baseLanguage.actions@java_stub" />
   <import index="4" modelUID="jetbrains.mps.core.structure" />
   <import index="5" modelUID="java.util@java_stub" />
-  <import index="6" modelUID="java.lang@java_stub" />
   <import index="7" modelUID="jetbrains.mps.baseLanguage.types@java_stub" />
-  <import index="8" modelUID="jetbrains.mps.typesystem@java_stub" />
-  <import index="13" modelUID="jetbrains.mps.baseLanguage@java_stub" />
-  <import index="15" modelUID="jetbrains.mps.helgins.inference@java_stub" />
   <import index="17" modelUID="jetbrains.mps.baseLanguage.structure@java_stub" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions" id="1115842744505">
     <property name="name" value="BL_node_substitute" />

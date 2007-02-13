@@ -9,9 +9,9 @@ import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
 
 public class VariableDeclaration extends NamedConcept {
-  public static String NAME = "name";
   public static String TYPE = "type";
   public static String INITIALIZER = "initializer";
+  public static String NAME = "name";
 
   public  VariableDeclaration(SNode node) {
     super(node);
@@ -21,12 +21,6 @@ public class VariableDeclaration extends NamedConcept {
     return (VariableDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.VariableDeclaration", sm, GlobalScope.getInstance()).getAdapter();
   }
 
-  public String getName() {
-    return this.getProperty(VariableDeclaration.NAME);
-  }
-  public void setName(String value) {
-    this.setProperty(VariableDeclaration.NAME, value);
-  }
   public Type getType() {
     return (Type)this.getChild(VariableDeclaration.TYPE);
   }
@@ -38,5 +32,11 @@ public class VariableDeclaration extends NamedConcept {
   }
   public void setInitializer(Expression node) {
     super.setChild(VariableDeclaration.INITIALIZER, node);
+  }
+  public String getName() {
+    return this.getProperty(VariableDeclaration.NAME);
+  }
+  public void setName(String value) {
+    this.setProperty(VariableDeclaration.NAME, value);
   }
 }

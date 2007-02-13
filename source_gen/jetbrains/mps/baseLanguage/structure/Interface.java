@@ -10,8 +10,8 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Interface extends Classifier {
-  public static String NAME = "name";
   public static String EXTENDED_INTERFACE = "extendedInterface";
+  public static String NAME = "name";
 
   public  Interface(SNode node) {
     super(node);
@@ -21,12 +21,6 @@ public class Interface extends Classifier {
     return (Interface)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.Interface", sm, GlobalScope.getInstance()).getAdapter();
   }
 
-  public String getName() {
-    return this.getProperty(Interface.NAME);
-  }
-  public void setName(String value) {
-    this.setProperty(Interface.NAME, value);
-  }
   public int getExtendedInterfacesCount() {
     return this.getChildCount(Interface.EXTENDED_INTERFACE);
   }
@@ -41,5 +35,11 @@ public class Interface extends Classifier {
   }
   public void insertExtendedInterface(ClassifierType prev, ClassifierType node) {
     this.insertChild(prev, Interface.EXTENDED_INTERFACE, node);
+  }
+  public String getName() {
+    return this.getProperty(Interface.NAME);
+  }
+  public void setName(String value) {
+    this.setProperty(Interface.NAME, value);
   }
 }

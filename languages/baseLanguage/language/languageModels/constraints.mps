@@ -14,13 +14,9 @@
   <import index="6" modelUID="java.util@java_stub" />
   <import index="7" modelUID="jetbrains.mps.smodel@java_stub" />
   <import index="8" modelUID="jetbrains.mps.baseLanguage.types@java_stub" />
-  <import index="9" modelUID="jetbrains.mps.typesystem@java_stub" />
   <import index="10" modelUID="jetbrains.mps.baseLanguage.search@java_stub" />
   <import index="11" modelUID="jetbrains.mps.smodel.presentation@java_stub" />
   <import index="13" modelUID="java.lang@java_stub" />
-  <import index="14" modelUID="jetbrains.mps.core@java_stub" />
-  <import index="15" modelUID="jetbrains.mps.baseLanguage.blTypes.structure" />
-  <import index="21" modelUID="jetbrains.mps.helgins.inference@java_stub" />
   <import index="23" modelUID="jetbrains.mps.baseLanguage.structure@java_stub" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraintSet" id="1147487178789">
     <property name="name" value="BL_property" />

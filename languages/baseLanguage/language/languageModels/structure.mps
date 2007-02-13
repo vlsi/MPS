@@ -5,7 +5,6 @@
   <import index="4" modelUID="jetbrains.mps.core.structure" />
   <import index="36" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="37" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
-  <import index="38" modelUID="jetbrains.mps.baseLanguage.blTypes.structure" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068498886294">
     <property name="name" value="AssignmentExpression" />
     <link role="extends" targetNodeId="1068431790191" />

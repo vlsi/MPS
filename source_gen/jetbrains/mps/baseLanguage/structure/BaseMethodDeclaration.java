@@ -11,11 +11,11 @@ import java.util.Iterator;
 import java.util.List;
 
 public class BaseMethodDeclaration extends NamedConcept {
-  public static String NAME = "name";
   public static String RETURN_TYPE = "returnType";
   public static String BODY = "body";
   public static String PARAMETER = "parameter";
   public static String THROWS_ITEM = "throwsItem";
+  public static String NAME = "name";
 
   public  BaseMethodDeclaration(SNode node) {
     super(node);
@@ -25,12 +25,6 @@ public class BaseMethodDeclaration extends NamedConcept {
     return (BaseMethodDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.BaseMethodDeclaration", sm, GlobalScope.getInstance()).getAdapter();
   }
 
-  public String getName() {
-    return this.getProperty(BaseMethodDeclaration.NAME);
-  }
-  public void setName(String value) {
-    this.setProperty(BaseMethodDeclaration.NAME, value);
-  }
   public Type getReturnType() {
     return (Type)this.getChild(BaseMethodDeclaration.RETURN_TYPE);
   }
@@ -72,5 +66,11 @@ public class BaseMethodDeclaration extends NamedConcept {
   }
   public void insertThrowsItem(ClassifierType prev, ClassifierType node) {
     this.insertChild(prev, BaseMethodDeclaration.THROWS_ITEM, node);
+  }
+  public String getName() {
+    return this.getProperty(BaseMethodDeclaration.NAME);
+  }
+  public void setName(String value) {
+    this.setProperty(BaseMethodDeclaration.NAME, value);
   }
 }

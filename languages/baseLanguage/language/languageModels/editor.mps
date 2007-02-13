@@ -14,12 +14,10 @@
   <import index="23" modelUID="javax.swing@java_stub" />
   <import index="24" modelUID="java.lang@java_stub" />
   <import index="27" modelUID="jetbrains.mps.baseLanguage.actions" />
-  <import index="29" modelUID="jetbrains.mps.baseLanguage.blTypes.structure" />
   <import index="43" modelUID="jetbrains.mps.baseLanguage.editor" />
   <import index="44" modelUID="jetbrains.mps.baseLanguage@java_stub" />
   <import index="45" modelUID="jetbrains.mps.smodel.search@java_stub" />
   <import index="46" modelUID="jetbrains.mps.baseLanguage.search@java_stub" />
-  <import index="47" modelUID="jetbrains.mps.typesystem@java_stub" />
   <import index="48" modelUID="jetbrains.mps.baseLanguage.editor@java_stub" />
   <import index="49" modelUID="jetbrains.mps.baseLanguage.structure@java_stub" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1073416106125">
