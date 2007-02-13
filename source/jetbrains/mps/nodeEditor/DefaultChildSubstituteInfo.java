@@ -1,13 +1,8 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkMetaclass;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.smodel.SModelUtil;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.structureLanguage.structure.*;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
@@ -33,10 +28,6 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
     myParentNode = sourceNode;
     myLinkDeclaration = linkDeclaration;
     myCurrentChild = sourceNode.getChild(SModelUtil_new.getGenuineLinkRole(linkDeclaration));
-  }
-
-  public DefaultChildSubstituteInfo(SNode parentNode, SNode currChildNode, jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration linkDeclaration, EditorContext editorContext) {
-    this(parentNode, currChildNode, (jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration) linkDeclaration.getAdapter(), editorContext);
   }
 
   public DefaultChildSubstituteInfo(SNode parentNode, SNode currChildNode, LinkDeclaration linkDeclaration, EditorContext editorContext) {
