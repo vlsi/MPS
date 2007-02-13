@@ -212,6 +212,12 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1171152607288(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "operation", true);
   }
+  public static SNode sourceNodeQuery_1171392402011(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
+  }
+  public static SNode sourceNodeQuery_1171392402022(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "argument", true);
+  }
   public static SNode mapSrcMacro_mapper_1170957121880(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return QueriesUtil.create_Closure_returnedType(node, generator.getTargetModel(), generator.getTypeChecker());
   }

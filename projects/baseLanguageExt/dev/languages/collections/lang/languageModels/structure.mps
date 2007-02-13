@@ -392,5 +392,19 @@
     <property name="name" value="SortBlock" />
     <link role="extends" targetNodeId="1153509719989" resolveInfo="ClosureWithInputElement" />
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1171391069720">
+    <property name="name" value="GetIndexOfOperation" />
+    <link role="extends" targetNodeId="1160612356232" resolveInfo="AbstractListOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1171391518575">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="argument" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="2.1068431790191" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1171391069721">
+      <property name="value" value="indexOf" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
 </model>
 
