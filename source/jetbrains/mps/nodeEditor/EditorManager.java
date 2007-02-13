@@ -3,7 +3,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.annotations.structure.AttributeConcept;
 import jetbrains.mps.annotations.structure.LinkAttributeConcept;
 import jetbrains.mps.annotations.structure.PropertyAttributeConcept;
-import jetbrains.mps.bootstrap.structureLanguage.AnnotationLinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
@@ -119,7 +119,7 @@ public class EditorManager {
     EditorCell cellWithRolePopped = stack.pop();
     LOG.assertLog(cellWithRolePopped == cellWithRole);
     //setting substitute info
-    AnnotationLinkDeclaration linkDeclaration = (AnnotationLinkDeclaration) BaseAdapter.fromAdapter(roleAttribute.findAnnotationLinkDeclaration(context.getOperationContext().getScope()));
+    AnnotationLinkDeclaration linkDeclaration = (AnnotationLinkDeclaration) roleAttribute.findAnnotationLinkDeclaration(context.getOperationContext().getScope());
     if (linkDeclaration != null) {
       DefaultAttributeSubstituteInfo substituteInfo = new DefaultAttributeSubstituteInfo(cellWithRole.getSNode(), roleAttribute, linkDeclaration, context);
       result.setSubstituteInfo(substituteInfo);

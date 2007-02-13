@@ -3,7 +3,7 @@ package jetbrains.mps.nodeEditor.cellMenu;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 import jetbrains.mps.smodel.action.DefaultAttributeNodeSetter;
-import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.EditorContext;
 
@@ -17,7 +17,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 public class DefaultAttributeSubstituteInfo extends DefaultChildSubstituteInfo {
 
   public DefaultAttributeSubstituteInfo(SNode parentNode, SNode currChildNode, LinkDeclaration linkDeclaration, EditorContext editorContext) {
-    super(parentNode, currChildNode, (jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration) linkDeclaration.getAdapter(), editorContext);    
+    super(parentNode, currChildNode, linkDeclaration, editorContext);    
   }
 
   protected DefaultChildNodeSetter createDefaultNodeSetter() {
