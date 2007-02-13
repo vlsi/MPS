@@ -1123,7 +1123,6 @@
       <module fileurl="file://$PROJECT_DIR$/MPSPlugin/MPSPlugin.iml" filepath="$PROJECT_DIR$/MPSPlugin/MPSPlugin.iml" />
       <module fileurl="file://$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" filepath="$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/ProjectHalo/ProjectHalo.iml" filepath="$PROJECT_DIR$/projects/ProjectHalo/ProjectHalo.iml" group="Projects" />
-      <module fileurl="file://$PROJECT_DIR$/Remoting/Remoting.iml" filepath="$PROJECT_DIR$/Remoting/Remoting.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/ResourceStore/ResourceStore.iml" filepath="$PROJECT_DIR$/projects/ResourceStore/ResourceStore.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/SemanticFunctions/SemanticFunctions.iml" filepath="$PROJECT_DIR$/projects/SemanticFunctions/SemanticFunctions.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/textLanguage/TextLanguage.iml" filepath="$PROJECT_DIR$/projects/textLanguage/TextLanguage.iml" group="DataLanguages" />
