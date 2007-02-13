@@ -473,9 +473,9 @@ public abstract class BaseAdapter {
     };
   }
 
-  public static Condition<BaseAdapter> adapterCondition(final Condition<SNode> bn) {
-    return new Condition<BaseAdapter>() {
-      public boolean met(BaseAdapter object) {
+  public static<T extends BaseAdapter> Condition<T> adapterCondition(final Condition<SNode> bn) {
+    return new Condition<T>() {
+      public boolean met(T object) {
         return bn.met(BaseAdapter.fromAdapter(object));
       }
     };

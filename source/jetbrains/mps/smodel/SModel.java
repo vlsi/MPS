@@ -1120,15 +1120,6 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-
-  public List<ConceptDeclaration> conceptsFromModelLanguages(IScope scope) {
-    return conceptsFromModelLanguages(new Condition<ConceptDeclaration>() {
-      public boolean met(ConceptDeclaration object) {
-        return true;
-      }
-    }, scope);
-  }
-
   public List<jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration> conceptAdaptersFromModelLanguages(final Condition<jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration> condition, IScope scope) {
     return BaseAdapter.toAdapters(conceptsFromModelLanguages(new Condition<ConceptDeclaration>() {
       public boolean met(ConceptDeclaration object) {
