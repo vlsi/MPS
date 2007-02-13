@@ -145,6 +145,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   @NotNull
+  @Deprecated
   public <N extends SNode> List<N> getRoots(@NotNull Class<N> cls) {
     return CollectionUtil.filter(cls, getRoots());
   }
@@ -988,6 +989,7 @@ public class SModel implements Iterable<SNode> {
     return resultNodes;
   }
 
+  @Deprecated
   public <E extends SNode> List<E> allNodes(Class<E> cls, Condition<E> condition) {
     List<E> result = new ArrayList<E>();
     SModelDescriptor modelDescriptor = getModelDescriptor();
@@ -1000,6 +1002,7 @@ public class SModel implements Iterable<SNode> {
     return result;
   }
 
+  @Deprecated
   public <E extends SNode> List<E> allNodes(Class<E> cls) {
     return allNodes(cls, (Condition<E>) Condition.TRUE_CONDITION);
   }
@@ -1035,6 +1038,7 @@ public class SModel implements Iterable<SNode> {
   }
 
 
+  @Deprecated
   public <SN extends SNode> List<SN> allNodesIncludingImported(IScope scope, final Class<SN> snodeClass) {
     List<SModel> modelsList = new LinkedList<SModel>();
     modelsList.add(this);

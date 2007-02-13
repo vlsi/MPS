@@ -1,18 +1,17 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.bootstrap.editorLanguage.CellKeyMapDeclaration;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ApplicationComponents;
-import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.component.Dependency;
 import jetbrains.mps.ide.command.CommandAdapter;
 import jetbrains.mps.ide.command.CommandEvent;
-import jetbrains.mps.component.Dependency;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.ApplicationComponents;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.*;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
-
-import org.jetbrains.annotations.NotNull;
 
 /**
  * Created by IntelliJ IDEA.
