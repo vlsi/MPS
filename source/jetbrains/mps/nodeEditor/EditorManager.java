@@ -210,7 +210,7 @@ public class EditorManager {
       }
     }
 
-    nodeEditorComponent.clearNodesCellDependsOn(oldCell);
+    nodeEditorComponent.clearNodesCellDependsOn(oldCell, this);
 
     return createEditorCell_internal(context, myCreatingInspectedCell, refContext);
   }

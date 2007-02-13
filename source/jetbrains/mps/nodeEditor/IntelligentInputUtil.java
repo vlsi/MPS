@@ -83,11 +83,9 @@ public class IntelligentInputUtil {
     rtAction.execute(editorContext);
     final CellFounder cellFounder = new CellFounder(editorContext, newNode, tail);
     EditorCell newCellForNewNode = editorContext.createNodeCellInAir(newNode, ourServiceEditorManager);
-    if (cellForNewNode.isInspectorCell()) {
-//      System.err.println("oy, vey!!!");
-    }
+
     cellFounder.run(newCellForNewNode);
-    EditorCell foundCell = cellFounder.getFoundCell();
+    EditorCell foundCell = cellFounder.getFoundCell(); // found cell shoul be a rt hint cell
 
     if (foundCell != null) {
       INodeSubstituteInfo rtSubstituteInfo = foundCell.getSubstituteInfo();
@@ -120,7 +118,6 @@ public class IntelligentInputUtil {
         }
         return;
       }
- //     editorContext.getNodeEditorComponent().invalidateCell(cell);
       if (sourceCellRemains) {
         cell.changeText(smallPattern);
       }
@@ -153,6 +150,7 @@ public class IntelligentInputUtil {
     return info.hasExactlyNActions(smallPattern, true, 1) && info.hasExactlyNActions(smallPattern+tail, false, 0);
   }
 
+  
   private static class CellFounder implements Runnable {
     private EditorCell_Label myFoundCell;
     private final EditorContext myEditorContext;
@@ -192,12 +190,6 @@ public class IntelligentInputUtil {
       nextCell_.getRenderedTextLine().setCaretPositionToLast();
       nodeEditorComponent.changeSelection(nextCell_);
       nodeEditorComponent.relayout();
-    }
-
-    public List<INodeSubstituteAction> getFoundCellMatchingItems() {
-      run();
-      if (myFoundCell == null || myFoundCell.getSubstituteInfo() == null) return new ArrayList<INodeSubstituteAction>();
-      return myFoundCell.getSubstituteInfo().getMatchingActions(myFoundCell.getRenderedText(), true);
     }
   }
 }

@@ -46,7 +46,6 @@ import java.util.List;
 public abstract class AbstractEditorComponent extends JComponent implements Scrollable, IActionDataProvider {
   private static final Logger LOG = Logger.getLogger(AbstractEditorComponent.class);
   public static final String EDITOR_POPUP_MENU_ACTIONS = "editor-popup-menu-actions";
-  private static final Object EXPIRED = new Object();
 
   private Set<MPSAction> myMPSActionsWithShortcuts = new HashSet<MPSAction>();
   private WeakHashMap<EditorCell, Set<SNode>> myCellsToNodesToDependOnMap = new WeakHashMap<EditorCell, Set<SNode>>();
@@ -921,20 +920,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return findNodeCell(node, false);
   }
 
-  private boolean isExpired(EditorCell cell) {
-    if (cell == null) return true;
-    return cell.getUserObject(EXPIRED) == EXPIRED;
-  }
-
-  private EditorCell getUpToDateByRefContext(ReferencedNodeContext referencedNodeContext) {
-    EditorCell result = myRefNodeContextsToBigCellsMap.get(referencedNodeContext);
-    if (isExpired(result)) {
-      myRefNodeContextsToBigCellsMap.remove(referencedNodeContext);
-      return null;
-    }
-    return result;
-  }
-
   public EditorCell findNodeCell(final SNode node, boolean biggest) {
     if (myRootCell == null) return null;
     if (myRootCell.getSNode() == node) {
@@ -944,7 +929,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       return null;
     }
     if (!biggest) {
-      EditorCell foundCell = getUpToDateByRefContext(ReferencedNodeContext.createNodeContext(node));
+      EditorCell foundCell = myRefNodeContextsToBigCellsMap.get(ReferencedNodeContext.createNodeContext(node));
       if (foundCell != null) return foundCell;
     }
     EditorCell_Collection cellCollection = (EditorCell_Collection) myRootCell;
@@ -1662,9 +1647,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return ((sNodes != null) && (sNodes.contains(node))) || ((nodeProxies != null && nodeProxies.contains(new SNodeProxy(node))));
   }
 
-  public void clearNodesCellDependsOn(EditorCell cell) {
-    myCellsToNodesToDependOnMap.remove(cell);
-    myCellsToRefTargetsToDependOnMap.remove(cell);
+  public void clearNodesCellDependsOn(EditorCell cell, EditorManager editorManager) {
+    if (editorManager == EditorManager.getInstanceFromContext(myOperationContext)) {
+      myCellsToNodesToDependOnMap.remove(cell);
+      myCellsToRefTargetsToDependOnMap.remove(cell);
+    }
   }
 
   void registerAsBigCell(EditorCell cell, ReferencedNodeContext refContext, EditorManager manager) {
@@ -1675,7 +1662,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   EditorCell getBigCellForRefContext(ReferencedNodeContext refContext) {
-    return getUpToDateByRefContext(refContext);
+    return myRefNodeContextsToBigCellsMap.get(refContext);
   }
 
   EditorCell getBigCellForNode(SNode node) {
@@ -1780,12 +1767,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   protected void setEditorContext(EditorContext editorContext) {
     myEditorContext = editorContext;
-  }
-
-  public void invalidateCell(EditorCell cell) {
-    if (cell == null) return;
-    cell.putUserObject(EXPIRED, EXPIRED);
-    invalidateCell(cell.getParent());
   }
 
   private class MyModelListener implements SModelCommandListener {
