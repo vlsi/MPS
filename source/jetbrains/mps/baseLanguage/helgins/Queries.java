@@ -4,8 +4,6 @@ import jetbrains.mps.baseLanguage.Classifier;
 import jetbrains.mps.baseLanguage.ClassifierType;
 import jetbrains.mps.formulaLanguage.evaluator.Omega;
 import jetbrains.mps.helgins.RuntimeErrorType;
-import jetbrains.mps.helgins.inference.Interpretator;
-import jetbrains.mps.helgins.inference.SubtypingManager;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;

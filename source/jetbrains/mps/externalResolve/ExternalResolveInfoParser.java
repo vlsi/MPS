@@ -2,7 +2,8 @@ package jetbrains.mps.externalResolve;
 
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.*;
+import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.logging.Logger;
 
 import java.util.Set;
@@ -86,7 +87,8 @@ public class ExternalResolveInfoParser {
     return resolveInfo;
   }
 
-  public static String getMemberType(SNode node) {
+  public static String getMemberType(SNode n) {
+    BaseAdapter node = (BaseAdapter) BaseAdapter.fromNode(n);
     if (node instanceof Classifier) return ExternalResolver.CLASSIFIER;
     if (node instanceof InstanceMethodDeclaration) return ExternalResolver.METHOD;
     if (node instanceof StaticMethodDeclaration) return ExternalResolver.STATIC_METHOD;
