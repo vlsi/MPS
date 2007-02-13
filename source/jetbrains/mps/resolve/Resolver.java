@@ -168,10 +168,10 @@ public class Resolver {
       for (EditorCell cell : frontier) {
         Object userObject = cell.getUserObject(EditorCell.METAINFO_LINK_DECLARATION);
         if (cell.getSNode() == sourceNode) {
-          if (userObject == refLinkDeclaration) {
+          if (userObject == refLinkDeclaration.getNode()) {
             return cell;
           }
-          if (userObject == childLinkDeclaration) {
+          if (userObject == childLinkDeclaration.getNode()) {
             if (foundCell == null) foundCell = cell;
           }
         }
