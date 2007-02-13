@@ -34,6 +34,7 @@ public class CloneModelUtil {
 
   /**
   Creates cloned model, each node in target model has the same nodeId that corresponding node in source model
+  it allows to resolve internal references much faster
    */
   public static SModel cloneModelAndNodeIds(SModel model, SModel targetModel, IScope scope) {
     for (SNode root : copy(model.getRoots(), targetModel, scope)) {
@@ -59,20 +60,24 @@ public class CloneModelUtil {
       result.setProperty(property, node.getProperty(property), false);
     }
     for (SReference reference : node.getReferences()) {
+/*
       if(reference.isExternal()) {
-        result.addReferent(reference.getRole(), reference.getTargetNode());
+        try {
+          result.addReferent(reference.getRole(), reference.getTargetNode());
+        } catch (Exception e) {
+          e.printStackTrace();
+        }
       }
       else {
-        SReference sReference = SReference.newInstance(reference.getRole(), result, reference.getTargetNodeId(), reference.getExtResolveInfo(), targetModel.getUID(), reference.getResolveInfo());
+*/
+        SModelUID targetModelUID = reference.isExternal() ? reference.getTargetModelUID() : targetModel.getUID();
+        SReference sReference = SReference.newInstance(reference.getRole(), result, reference.getTargetNodeId(), reference.getExtResolveInfo(), targetModelUID, reference.getResolveInfo());
         result.addSReference(sReference);
-      }
+//      }
     }
     for (SNode child : node.getChildren()) {
       result.addChild(node.getRoleOf(child), clone(child, targetModel, scope));
     }
     return result;
   }
-
-
-
 }

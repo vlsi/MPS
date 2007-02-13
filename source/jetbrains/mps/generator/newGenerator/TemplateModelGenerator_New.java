@@ -53,21 +53,23 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
 
   public void doPrimaryMapping() {
     RuleManager ruleManager = new RuleManager(this);
+    RuleUtil ruleUtil = new RuleUtil(ruleManager);
+    ruleManager.getReductionRuleManager().setRuleUtil(ruleUtil);
     for (CreateRootRule createRootRule : ruleManager.getCreateRootRules()) {
-      RuleUtil.applyRootRule(this, myModel, createRootRule);
+      ruleUtil.applyRootRule(createRootRule);
     }
     for (MappingRule mappingRule : ruleManager.getMappingRules()) {
-      RuleUtil.applyMappingRule(this, myModel, mappingRule);
+      ruleUtil.applyMappingRule(mappingRule);
     }
     for (Root_MappingRule rootMappingRule : ruleManager.getRoot_MappingRules()) {
-      RuleUtil.applyRoot_MappingRule(this, myModel, rootMappingRule);
+      ruleUtil.applyRoot_MappingRule(rootMappingRule);
     }
 
     for (WeavingRule weavingRule : ruleManager.getWeavingRules()) {
-      RuleUtil.applyWeavingRule(this, myModel, weavingRule);
+      ruleUtil.applyWeavingRule(weavingRule);
     }
     for (Weaving_MappingRule weavingMappingRule : ruleManager.getWeaving_MappingRules()) {
-      RuleUtil.applyWeavingMappingRule(this, myModel, weavingMappingRule);
+      ruleUtil.applyWeavingMappingRule(weavingMappingRule);
     }
 
    for (SNode rootNode : myRootsToDelete) {

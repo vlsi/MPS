@@ -23,7 +23,7 @@ public class RuleManager {
   private List<WeavingRule> myWeavingRules;
   private List<Weaving_MappingRule> myWeaving_MappingRules;
   private List<ConceptDeclaration> myAbandonedRootConcepts;
-  protected ITemplateGenerator myGenerator;
+  protected TemplateModelGenerator_New myGenerator;
 
   private ReductionRuleManager myReductionRuleManager;
 
@@ -33,7 +33,7 @@ public class RuleManager {
     initialize();
   }
 
-  public ITemplateGenerator getGenerator() {
+  public TemplateModelGenerator_New getGenerator() {
     return myGenerator;
   }
 
