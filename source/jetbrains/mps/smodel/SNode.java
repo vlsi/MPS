@@ -735,6 +735,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   @NotNull
+  @Deprecated
   public <N extends SNode> List<N> getChildren(Class<N> cls) {
     return CollectionUtil.filter(cls, getChildren());
   }
@@ -1015,10 +1016,12 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return null;
   }
 
+  @Deprecated
   public <N extends SNode> N getParent(@NotNull Class<N> cls) {
     return getParent(cls, true);
   }
 
+  @Deprecated
   public <N extends SNode> N getParent(@NotNull Class<N> cls, boolean canReturnThis) {
     if (canReturnThis) {
       if (cls.isInstance(this)) return (N) this;
@@ -1027,6 +1030,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return myParent.getParent(cls);
   }
 
+  @Deprecated
   public <N extends SNode> N getParent(@NotNull Class<N> cls, @NotNull String role) {
     if (myParent == null) return null;
     if (cls.isInstance(myParent) && role.equals(myRoleInParent)) return (N) myParent;
@@ -1487,6 +1491,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return result;
   }
 
+  @Deprecated
   public <E extends SNode> List<E> allChildren(Class<E> clazz) {
     List<E> resultNodes = new LinkedList<E>();
     Iterator<SNode> nodes = depthFirstChildren();
@@ -1499,6 +1504,8 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return resultNodes;
   }
 
+
+  @Deprecated
   public <E extends SNode> List<E> allChildren(Class<E> clazz, Condition<E> condition) {
     List<E> resultNodes = new LinkedList<E>();
     Iterator<SNode> nodes = depthFirstChildren();
@@ -1525,6 +1532,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return resultNodes;
   }
 
+  @Deprecated
   public <T extends SNode> T findParent(Class<T> clazz) {
     SNode parent = getParent();
     while (parent != null) {
@@ -1536,6 +1544,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return null;
   }
 
+  @Deprecated
   public <T extends SNode> List<T> findParents(Class<T> aClass) {
     List<T> list = new ArrayList<T>();
     T currNode = getParent(aClass);
@@ -1545,7 +1554,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return list;
   }
 
-  public BaseAdapter findFirstParent(Class[] classes) {
+  public BaseAdapter findFirstParent(Class<? extends BaseAdapter>[] classes) {
     SNode node = this;
     BaseAdapter parent = BaseAdapter.fromNode(node.getParent());
     while (parent != null) {
