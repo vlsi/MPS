@@ -1808,7 +1808,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
   public synchronized BaseAdapter getAdapter() {
     if (myAdapter != null) return myAdapter;
     try {
-      Constructor c = QueryMethod.getAdapterConstructor(getClass().getName());
+      Constructor c = QueryMethod.getAdapterConstructor(getConceptFqName());
       if (c != null) {
         myAdapter = (BaseAdapter) c.newInstance(this);
         assert myAdapter.getNode() == this;

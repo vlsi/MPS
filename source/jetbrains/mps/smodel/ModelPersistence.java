@@ -1,14 +1,14 @@
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.core.error.ErrorNode;
 import jetbrains.mps.externalResolve.ExternalResolver;
+import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.languageLog.ModelLogger;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.QueryMethod;
-import jetbrains.mps.smodel.languageLog.ModelLogger;
-import jetbrains.mps.ide.BootstrapLanguages;
-import jetbrains.mps.core.error.ErrorNode;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
@@ -16,9 +16,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.*;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.*;
+import java.lang.reflect.Method;
+import java.lang.reflect.InvocationTargetException;
 
 
 /**
@@ -358,12 +358,12 @@ public class ModelPersistence {
     try {
       if (!model.getUID().toString().startsWith(NameUtil.namespaceFromLongName(type)) &&
               SModelUtil.findConceptDeclaration(NameUtil.conceptFQNameByClassName(type), GlobalScope.getInstance()) == null) {
-        return createUnknownNode(model, type);
+        return createNodeWoStructure(model, type);
       }
 
       Method method = QueryMethod.getNewInstanceMethod(type);
       if (method == null) {
-        return createUnknownNode(model, type);
+        return createNodeWoStructure(model, type);
       }
       return (SNode) method.invoke(null, model);
     } catch (SecurityException e) {
@@ -378,11 +378,8 @@ public class ModelPersistence {
     return null;
   }
 
-  private static SNode createUnknownNode(SModel model, String type) {    
-    model.addLanguage(BootstrapLanguages.getInstance().getErrorsLanguage());
-    ErrorNode node = ErrorNode.newInstance(model);
-    node.setType(type);
-    return node;
+  private static SNode createNodeWoStructure(SModel model, String type) {
+    return new SNode(model, type);
   }
 
   @NotNull
