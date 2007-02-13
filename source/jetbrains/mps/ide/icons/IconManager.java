@@ -1,6 +1,6 @@
 package jetbrains.mps.ide.icons;
 
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.BootstrapLanguages;
@@ -12,6 +12,7 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Macros;
+import jetbrains.mps.util.NameUtil;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -26,21 +27,17 @@ public class IconManager {
 
   public static final Logger LOG = Logger.getLogger(IconManager.class);
 
-  private static Map<String, Icon> ourIcons = new HashMap<String, Icon>();
   private static Map<String, Icon> ourPathsToIcons = new HashMap<String, Icon>();
 
   public static Icon getIconFor(SNode node) {
     if (node == null) return Icons.DEFAULT_ICON;
-    Class<? extends SNode> cls = node.getClass();
-    return getIconFor(cls);
+    return getIconFor(node.getConceptDeclarationAdapter());
   }
 
-  public static Icon getIconFor(Class<? extends SNode> cls) {
-    // new style
+  public static Icon getIconFor(ConceptDeclaration conceptDeclaration) {
     GlobalScope scope = GlobalScope.getInstance();
-    ConceptDeclaration conceptDeclaration = SModelUtil.findConceptDeclaration(cls, scope);
     while (conceptDeclaration != null) {
-      Language language = SModelUtil_new.getDeclaringLanguage((jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration), scope);
+      Language language = SModelUtil_new.getDeclaringLanguage(conceptDeclaration, scope);
       if (language != null) {
         String iconPath = Macros.languageDescriptor().expandPath(conceptDeclaration.getIconPath(), language.getDescriptorFile());
         if (iconPath != null) {
@@ -61,14 +58,8 @@ public class IconManager {
   }
 
   public static Icon getIconForConceptFQName(String conceptFQName) {
-    Class<? extends SNode> cls;
-    try {
-      cls = (Class<? extends SNode>) Class.forName(conceptFQName, true, ClassLoaderManager.getInstance().getClassLoader());
-    } catch (ClassNotFoundException e) {
-      return Icons.DEFAULT_ICON;
-    }
-    if (!SNode.class.isAssignableFrom(cls)) return Icons.DEFAULT_ICON;
-    return getIconFor(cls);
+    ConceptDeclaration cd = SModelUtil_new.findConceptDeclaration(NameUtil.conceptFQNameByClassName(conceptFQName), GlobalScope.getInstance());
+    return getIconFor(cd);
   }
 
   public static Icon getIconFor(String namespace) {
