@@ -1283,7 +1283,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
   @NotNull
   public String getConceptName() {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
-    return getClass().getName().substring(getClass().getName().lastIndexOf('.') + 1);
+    return getConceptFqName().substring(getConceptFqName().lastIndexOf('.') + 1);
   }
 
   @NotNull

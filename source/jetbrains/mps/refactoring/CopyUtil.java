@@ -55,7 +55,7 @@ public class CopyUtil  {
   }
 
   private static SNode clone(SNode node, SModel targetModel, Map<SNode, SNode> mapping, IScope scope) {
-    SNode result = ModelPersistence.createNodeInstance(node.getClass().getName(), targetModel);
+    SNode result = ModelPersistence.createNodeInstance(node.getConceptFqName(), targetModel);
     assert result != null;
     mapping.put(node, result);
 
