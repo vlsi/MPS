@@ -93,28 +93,28 @@ public abstract class PropertySupport {
     
   @Deprecated
   public static boolean isString(jetbrains.mps.bootstrap.structureLanguage.PrimitiveDataTypeDeclaration datatype) {
-    return isString((PrimitiveDataTypeDeclaration) datatype.getAdapter());
+    return isString_new((PrimitiveDataTypeDeclaration) datatype.getAdapter());
   }
 
-  public static boolean isString(PrimitiveDataTypeDeclaration datatype) {
+  public static boolean isString_new(PrimitiveDataTypeDeclaration datatype) {
     return Primitives.STRING_TYPE.equals(datatype.getName());
   }
 
   @Deprecated
   public static boolean isInteger(jetbrains.mps.bootstrap.structureLanguage.PrimitiveDataTypeDeclaration datatype) {
-    return isInteger((PrimitiveDataTypeDeclaration) datatype.getAdapter());
+    return isInteger_new((PrimitiveDataTypeDeclaration) datatype.getAdapter());
   }
 
-  public static boolean isInteger(PrimitiveDataTypeDeclaration datatype) {
+  public static boolean isInteger_new(PrimitiveDataTypeDeclaration datatype) {
     return Primitives.INTEGER_TYPE.equals(datatype.getName());
   }
 
   @Deprecated
   public static boolean isBoolean(jetbrains.mps.bootstrap.structureLanguage.PrimitiveDataTypeDeclaration datatype) {
-    return isBoolean((PrimitiveDataTypeDeclaration) datatype.getAdapter());
+    return isBoolean_new((PrimitiveDataTypeDeclaration) datatype.getAdapter());
   }
 
-  public static boolean isBoolean(PrimitiveDataTypeDeclaration datatype) {
+  public static boolean isBoolean_new(PrimitiveDataTypeDeclaration datatype) {
     return Primitives.BOOLEAN_TYPE.equals(datatype.getName());
   }
 

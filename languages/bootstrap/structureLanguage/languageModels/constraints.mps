@@ -283,12 +283,10 @@
               <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1162584118166">
                 <link role="classifier" extResolveInfo="9.[Classifier]String" />
               </node>
-              <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SemanticDowncastExpression" id="1162584110459">
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1162583767929">
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.PropertyGetter_FunctionParm_node" id="1162583766397" />
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1162583772415">
-                    <link role="property" targetNodeId="1.1083923523172" />
-                  </node>
+              <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1162583767929">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.PropertyGetter_FunctionParm_node" id="1162583766397" />
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1162583772415">
+                  <link role="property" targetNodeId="1.1083923523172" />
                 </node>
               </node>
             </node>
