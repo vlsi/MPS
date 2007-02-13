@@ -132,7 +132,8 @@ public class NameUtil {
   }
 
   public static String nodeConceptFQName(SNode node) {
-    return node.getConceptFqName();
+    String name = node.getClass().getName();
+    return conceptFQNameByClassName(name);
   }
 
   public static String conceptFQNameByClass(Class<? extends SNode> cls) {
