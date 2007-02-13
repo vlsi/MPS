@@ -105,7 +105,7 @@ public class SModelSearchUtil_new {
             SModel structureModel = language.getStructureModelDescriptor().getSModel();
             myConcepts.addAll(structureModel.getRootsAdapters(ConceptDeclaration.class));
           } else {
-            myConcepts.addAll(BaseAdapter.toAdapters(ConceptDeclaration.class, language.getConceptDeclarations()));
+            myConcepts.addAll(language.getConceptDeclarations());
           }
         }
       }

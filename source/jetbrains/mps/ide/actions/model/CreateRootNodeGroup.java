@@ -48,7 +48,7 @@ public class CreateRootNodeGroup extends ActionGroup {
         }
       };
 
-      for (ConceptDeclaration conceptDeclaration : language.getConceptDeclarations()) {
+      for (ConceptDeclaration conceptDeclaration : (List<ConceptDeclaration>) (List) BaseAdapter.toNodes(language.getConceptDeclarations())) {
         if (conceptDeclaration.getRootable()) {
           String nodeClassName = JavaNameUtil.className(conceptDeclaration);
           try {

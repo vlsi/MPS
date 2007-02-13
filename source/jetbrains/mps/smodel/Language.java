@@ -1,6 +1,6 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.generator.ContextUtil;
 import jetbrains.mps.generator.JavaNameUtil;
@@ -368,11 +368,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
   @NotNull
   public List<ConceptDeclaration> getConceptDeclarations() {
-    return getStructureModelDescriptor().getSModel().allNodes((Condition<SNode>) new Condition<SNode>() {
-      public boolean met(SNode object) {
-        return object instanceof ConceptDeclaration;
-      }
-    });
+    return getStructureModelDescriptor().getSModel().allAdapters(ConceptDeclaration.class);
   }
 
   @NotNull
@@ -530,8 +526,8 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     if (myNameToConceptCache.isEmpty()) {
       SModelDescriptor structureModelDescriptor = getStructureModelDescriptor();
       SModel structureModel = structureModelDescriptor.getSModel();
-      structureModel.allNodes(new Condition<SNode>() {
-          public boolean met(SNode node) {
+      structureModel.allAdapters(BaseAdapter.class, new Condition<BaseAdapter>() {
+          public boolean met(BaseAdapter node) {
             if (node instanceof ConceptDeclaration) {
               myNameToConceptCache.put(node.getName(), (ConceptDeclaration) node);
             }
@@ -557,7 +553,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       ConceptDeclaration conceptDeclaration = declaration.getExtends();
       if (conceptDeclaration != null) {
         result.addAll(SModelUtil_new.getDeclaringLanguage(
-                (jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) BaseAdapter.fromNode(declaration.getExtends()), GlobalScope.getInstance()).getParentNames(
+                declaration.getExtends(), GlobalScope.getInstance()).getParentNames(
                 JavaNameUtil.className(conceptDeclaration)));
       }
       myParentsNamesMap.put(className, result);
