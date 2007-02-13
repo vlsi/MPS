@@ -1,9 +1,8 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.smodel.SModelUID;
 
 /**
  * User: Dmitriev.
@@ -68,12 +67,6 @@ public class JavaNameUtil {
       return fqName;
     }
     return fqName.substring(offset + 1);
-  }
-
-  public static String className(ConceptDeclaration conceptDeclaration) {
-    SModel languageModel = conceptDeclaration.getModel();
-    String packageName = JavaNameUtil.packageNameForModelUID(languageModel.getUID());
-    return packageName + "." + conceptDeclaration.getName();
   }
 
   public static String className(jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration conceptDeclaration) {
