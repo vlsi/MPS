@@ -712,11 +712,11 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   @NotNull
-  public <T extends SNode> Iterator<T> reverseChildren(@NotNull String role) {
-    List<T> list = new LinkedList<T>();
+  public Iterator<SNode> reverseChildren(@NotNull String role) {
+    List<SNode> list = new LinkedList<SNode>();
     for (SNode child : _children()) {
       if (role.equals(child.getRole_())) {
-        list.add((T) child);
+        list.add(child);
       }
     }
     Collections.reverse(list);
@@ -732,12 +732,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   public List<SNode> getChildren() {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
     return new LinkedList(_children());
-  }
-
-  @NotNull
-  @Deprecated
-  public <N extends SNode> List<N> getChildren(Class<N> cls) {
-    return CollectionUtil.filter(cls, getChildren());
   }
 
   public int getChildCount() {
@@ -1505,28 +1499,13 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
 
-  @Deprecated
-  public <E extends SNode> List<E> allChildren(Class<E> clazz, Condition<E> condition) {
-    List<E> resultNodes = new LinkedList<E>();
-    Iterator<SNode> nodes = depthFirstChildren();
-    while (nodes.hasNext()) {
-      SNode node = nodes.next();
-      if (clazz.isAssignableFrom(node.getClass())) {
-        if (condition.met((E) node)) {
-          resultNodes.add((E) node);
-        }
-      }
-    }
-    return resultNodes;
-  }
-
-  public <E extends SNode> List<E> allChildren(Condition<SNode> condition) {
-    List<E> resultNodes = new LinkedList<E>();
+  public List<SNode> allChildren(Condition<SNode> condition) {
+    List<SNode> resultNodes = new LinkedList<SNode>();
     Iterator<SNode> nodes = depthFirstChildren();
     while (nodes.hasNext()) {
       SNode node = nodes.next();
       if (condition.met(node)) {
-        resultNodes.add((E) node);
+        resultNodes.add(node);
       }
     }
     return resultNodes;
