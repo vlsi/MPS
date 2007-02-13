@@ -1,22 +1,21 @@
 package jetbrains.mps.ide.actions.model;
 
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionGroup;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Kostik
@@ -48,21 +47,11 @@ public class CreateRootNodeGroup extends ActionGroup {
         }
       };
 
-      for (ConceptDeclaration conceptDeclaration : (List<ConceptDeclaration>) (List) BaseAdapter.toNodes(language.getConceptDeclarations())) {
+      for (ConceptDeclaration conceptDeclaration : language.getConceptDeclarations()) {
         if (conceptDeclaration.getRootable()) {
-          String nodeClassName = JavaNameUtil.className(conceptDeclaration);
-          try {
-            Class<? extends SNode> nodeClass = (Class<? extends SNode>) Class.forName(nodeClassName, true, ClassLoaderManager.getInstance().getClassLoader());
-            langRootsGroup.add(newRootNodeAction(new SNodeProxy(conceptDeclaration), nodeClass, modelDescriptor, ide));
-          } catch (ClassNotFoundException e) {
-            langRootsGroup.add(new MPSAction("class not found: " + nodeClassName) {
-              public void execute(@NotNull ActionContext c) {
-              }
-            });
-          }
+          langRootsGroup.add(newRootNodeAction(new SNodeProxy(conceptDeclaration), modelDescriptor, ide));
         }
       }
-
       if (langRootsGroup.getElements().size() > 0) {
         this.add(langRootsGroup);
       }
@@ -71,10 +60,11 @@ public class CreateRootNodeGroup extends ActionGroup {
     setVisible(context.hasOneSelectedItem());
   }
 
-  private MPSAction newRootNodeAction(final SNodeProxy nodeConcept, final Class<? extends SNode> nodeClass, final SModelDescriptor modelDescriptor, final IDEProjectFrame ide) {
+  private MPSAction newRootNodeAction(final SNodeProxy nodeConcept, final SModelDescriptor modelDescriptor, final IDEProjectFrame ide) {
     return new MPSAction(NodePresentationUtil.matchingText(nodeConcept.getNode())) {
       public Icon getIcon() {
-        return IconManager.getIconFor(nodeClass);
+        ConceptDeclaration cd = (ConceptDeclaration) BaseAdapter.fromNode(nodeConcept.getNode());
+        return IconManager.getIconForConceptFQName(NameUtil.conceptFqName(cd));
       }
 
       public boolean executeInsideCommand() {
@@ -86,7 +76,7 @@ public class CreateRootNodeGroup extends ActionGroup {
 
         CommandProcessor.instance().executeCommand(new Runnable() {
           public void run() {
-            node[0] = NodeFactoryManager.createNode((jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) nodeConcept.getNode().getAdapter(), null, null, modelDescriptor.getSModel(), context.getScope());
+            node[0] = NodeFactoryManager.createNode((ConceptDeclaration) nodeConcept.getNode().getAdapter(), null, null, modelDescriptor.getSModel(), context.getScope());
             modelDescriptor.getSModel().addRoot(node[0]);
           }
         });
