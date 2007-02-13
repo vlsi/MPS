@@ -54,24 +54,21 @@ public abstract class BaseAdapter {
   }
 
   public<BA extends BaseAdapter> BA findParent(Class<BA> cls) {
-    return getParent(cls);
+    return getParent(cls, false);
   }
 
   public<BA extends BaseAdapter> BA getParent(Class<BA> cls, boolean checkThis) {
-    if (cls.isInstance(this)) return (BA) this;
-    return getParent(cls);
-  }
-
-  public<BA extends BaseAdapter> BA getParent(Class<BA> cls) {
+    if (checkThis) {
+      if (cls.isInstance(this)) return (BA) this;
+    }
     if (getParent() == null) {
       return null;
     }
-
-    if (cls.isInstance(getParent())) {
-      return (BA) getParent();
-    }
-
     return getParent().getParent(cls);
+  }
+
+  public<BA extends BaseAdapter> BA getParent(Class<BA> cls) {
+    return getParent(cls, true);
   }
 
   public BaseAdapter findParent(final Condition<BaseAdapter> ba) {
