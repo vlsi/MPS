@@ -437,7 +437,7 @@ public class TemplateGenUtil {
       return true;
     }
 
-    String methodName = TemplateFunctionMethodName.createRootRule_Condition((jetbrains.mps.transformation.TLBase.CreateRootRule_Condition) conditionFunction.getNode());
+    String methodName = TemplateFunctionMethodName.createRootRule_Condition(conditionFunction.getNode());
     Object[] args = new Object[]{
             generator.getSourceModel(),
             generator,
@@ -456,7 +456,7 @@ public class TemplateGenUtil {
     // new
     IfMacro_Condition function = ifMacro.getConditionFunction();
     if (function != null) {
-      String methodName = TemplateFunctionMethodName.ifMacro_Condition((jetbrains.mps.transformation.TLBase.IfMacro_Condition) function.getNode());
+      String methodName = TemplateFunctionMethodName.ifMacro_Condition(function.getNode());
       Object[] args = new Object[]{
               sourceNode,
               generator.getSourceModel(),
@@ -490,7 +490,7 @@ public class TemplateGenUtil {
   }
 
   protected static List<SNode> evaluateSourceNodesQuery(SNode sourceNode, SourceSubstituteMacro_SourceNodesQuery query, SNode queryOwner, ITemplateGenerator generator) {
-    String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery((jetbrains.mps.transformation.TLBase.SourceSubstituteMacro_SourceNodesQuery) query.getNode());
+    String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery( query.getNode());
     Object[] args = new Object[]{
             sourceNode,
             generator.getSourceModel(),
@@ -550,7 +550,7 @@ public class TemplateGenUtil {
 
     // new
     if (query != null) {
-      String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodeQuery((jetbrains.mps.transformation.TLBase.SourceSubstituteMacro_SourceNodeQuery) query.getNode());
+      String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodeQuery(query.getNode());
       Object[] args = new Object[]{
               sourceNode,
               generator.getSourceModel(),
@@ -604,7 +604,7 @@ public class TemplateGenUtil {
 
     // new
     if (query != null) {
-      String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodeQuery((jetbrains.mps.transformation.TLBase.SourceSubstituteMacro_SourceNodeQuery) query.getNode());
+      String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodeQuery(query.getNode());
       Object[] args = new Object[]{
               sourceNode,
               generator.getSourceModel(),
@@ -655,7 +655,7 @@ public class TemplateGenUtil {
       return true;
     }
 
-    String methodName = TemplateFunctionMethodName.baseMappingRule_Condition((jetbrains.mps.transformation.TLBase.BaseMappingRule_Condition) conditionFunction.getNode());
+    String methodName = TemplateFunctionMethodName.baseMappingRule_Condition(conditionFunction.getNode());
     Object[] args = new Object[]{
             sourceNode,
             generator.getSourceModel(),
