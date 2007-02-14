@@ -1,6 +1,7 @@
 package jetbrains.mps.smodel.search;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.util.Condition;
 
 import java.util.*;
@@ -13,7 +14,7 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class SimpleSearchScope extends AbstractSearchScope {
-  private List<SNode> myNodes;
+  private List myNodes;
 
   public SimpleSearchScope(List<? extends SNode> nodes) {
     myNodes = (List) nodes;
@@ -28,7 +29,16 @@ public class SimpleSearchScope extends AbstractSearchScope {
 
   public List<SNode> getOwnNodes(Condition<SNode> condition) {
     List<SNode> result = null;
-    for (SNode node : myNodes) {
+
+    for (int i = 0; i < myNodes.size(); i++) {
+      SNode node = null;
+
+      if (myNodes.get(i) instanceof SNode) {
+        node = (SNode) myNodes.get(i);
+      } else {
+        node = ((BaseAdapter)myNodes.get(i)).getNode();
+      }
+
       if (condition.met(node)) {
         if (result == null) result = new LinkedList<SNode>();
         result.add(node);
