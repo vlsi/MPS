@@ -426,7 +426,7 @@ public void applyWeavingMappingRule(Weaving_MappingRule rule) {
 
 
   protected List<SNode> copyNodeFromInputNode(String ruleName, SNode templateNode, SNode inputNode) {
-    List<SNode> outputNodes = myRuleManager.getReductionRuleManager().tryToReduce(inputNode);
+    List<SNode> outputNodes = myRuleManager.getReductionRuleManager().tryToReduce(templateNode);
     if(outputNodes != null) {
        return outputNodes;
     }
@@ -436,26 +436,29 @@ public void applyWeavingMappingRule(Weaving_MappingRule rule) {
       myGenerator.showErrorMessage(null, templateNode, "'copyNodeFromInputNode' cannot create output node");
       return null;
     }
-    myGenerator.addOutputNodeByTemplateNodeAndInputNode(templateNode, inputNode, outputNode);
-    myGenerator.addOutputNodeByRuleNameAndInputNode(ruleName, inputNode, outputNode);
+//    myGenerator.addOutputNodeByTemplateNodeAndInputNode(templateNode, inputNode, outputNode);
+//    myGenerator.addOutputNodeByRuleNameAndInputNode(ruleName, inputNode, outputNode);
     myOutputModel.addLanguage(templateNode.getLanguage(myGenerator.getScope()));
     for (String property : templateNode.getProperties().keySet()) {
       outputNode.setProperty(property, templateNode.getProperty(property), false);
     }
 
-    SModel templateModel = templateNode.getModel();
+//    SModel templateModel = templateNode.getModel();
     for (SReference reference : templateNode.getReferences()) {
       SNode templateReferentNode = reference.getTargetNode();
       if(templateReferentNode == null) {
         myGenerator.showErrorMessage(null, templateNode, "'copyNodeFromInputNode' referent node is null in template model");
         continue;
       }
+      outputNode.addReferent(reference.getRole(), templateReferentNode);
+/*
       if(templateReferentNode.getModel().equals(templateModel)) {
         myGenerator.addReferenceInfo(new ReferenceInfo_Default(outputNode, reference.getRole(), templateNode, templateReferentNode, inputNode));
       }
       else {
         outputNode.addReferent(reference.getRole(), templateReferentNode);
       }
+*/
     }
 
     for (BaseAdapter templateChildNode : templateNode.getAdapter().getChildren()) {
