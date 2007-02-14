@@ -1229,21 +1229,23 @@ public class SNode implements Cloneable, Iterable<SNode> {
     String roleText = getRole_() == null ? "[root]" : "[" + getRole_() + "]";
     String nameText;
     try {
-      if (BaseAdapter.fromNode(this) instanceof LinkDeclaration) {
-        String role = ((LinkDeclaration) BaseAdapter.fromNode(this)).getRole();
+      if ("jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration".equals(getConceptFqName())) {
+        // !!! use *safe* getRole !!!
+        String role = myProperties.get("role");
         nameText = (role == null) ? "<no role>" : '"' + role + '"';
       } else {
-        // !!! use *safe* getName here !!!
-        nameText = (myProperties.get("name") == null) ? "<no name>" : '"' + myProperties.get("name") + '"';
+        // !!! use *safe* getName !!!
+        String name = myProperties.get("name");
+        nameText = (name == null) ? "<no name>" : '"' + name + '"';
       }
-      // !!! use *safe* getId here !!!
+      // !!! use *safe* getId !!!
       nameText = nameText + "[" + myId + "]";
 
     } catch (Exception e) {
       //e.printStackTrace();
       nameText = "<??name??>";
     }
-    return roleText + " " + NameUtil.shortNameFromLongName(getClass().getName()) + " " + nameText + " in " + myModel.getUID();
+    return roleText + " " + NameUtil.shortNameFromLongName(getConceptName()) + " " + nameText + " in " + myModel.getUID();
   }
 
   @NotNull

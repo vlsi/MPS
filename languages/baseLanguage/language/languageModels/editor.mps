@@ -3453,7 +3453,7 @@
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1144408663967">
               <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1145474723754">
                 <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1159379780944" />
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetParentOperation" id="1145474725771">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAncestorOperation" id="1171476530678">
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Concept" id="1145474736054">
                     <link role="concept" targetNodeId="17.1068581242864" />
                   </node>
@@ -3514,7 +3514,7 @@
                     <node role="instance" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_editorContext" id="1145494885154" />
                   </node>
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1145494885155">
-                    <property name="value" value="Couldn't compute expression type" />
+                    <property name="value" value="couldn't compute expression type" />
                   </node>
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1145494885156" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1145494885157">
@@ -3564,7 +3564,7 @@
               </node>
               <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1145479168955">
                 <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1159394405340" />
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetParentOperation" id="1145479170659">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAncestorOperation" id="1171476560670">
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Concept" id="1145479178067">
                     <link role="concept" targetNodeId="17.1068580123157" />
                   </node>
