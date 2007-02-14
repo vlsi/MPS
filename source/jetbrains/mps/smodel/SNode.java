@@ -1,7 +1,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.*;
-import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.command.undo.IUndoableAction;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
@@ -1312,7 +1311,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
   }
 
   private void collectSubnodes(@NotNull Condition<SNode> condition,
-                                                 @NotNull List<SNode> list) {
+                               @NotNull List<SNode> list) {
     for (SNode child : _children()) {
       if (condition.met(child)) {
         list.add(child);
@@ -1400,26 +1399,26 @@ public class SNode implements Cloneable, Iterable<SNode> {
     }
   }
 
-  public boolean isInstanceOfConcept(ConceptDeclaration conceptDeclaration, IScope scope) {
-    if (NameUtil.nodeFQName(conceptDeclaration).equals("jetbrains.mps.core.structure.BaseConcept")) {
-      return true;
-    }
+//  public boolean isInstanceOfConcept(ConceptDeclaration conceptDeclaration, IScope scope) {
+//    if (NameUtil.nodeFQName(conceptDeclaration).equals("jetbrains.mps.core.structure.BaseConcept")) {
+//      return true;
+//    }
+//
+//    Language language = getLanguage(scope);
+//    if (language == null) return false;
+//    String conceptName = getConceptFqName();
+//
+//    return language.getParentNames(conceptName).
+//            contains(JavaNameUtil.className(conceptDeclaration));
+//  }
 
-    Language language = getLanguage(scope);
-    if (language == null) return false;
-    String conceptName = getConceptFqName();
-
-    return language.getParentNames(conceptName).
-            contains(JavaNameUtil.className(conceptDeclaration));
+  public boolean isInstanceOfConcept(ConceptDeclaration concept, IScope scope) {
+    return isInstanceOfConcept(NameUtil.nodeFQName(concept), scope);
   }
 
   public boolean isInstanceOfConcept(String conceptFqName, IScope scope) {
-    SNode instance = this;
-    if (conceptFqName.equals("jetbrains.mps.core.structure.BaseConcept")) {
-      return true;
-    }
-    ConceptDeclaration instanceConcept = instance.getConceptDeclarationAdapter(scope);
-    return isInstanceOfConcept(instanceConcept, scope);
+    String thisConceptFqName = NameUtil.nodeConceptFQName(this);
+    return SModelUtil_new.isAssignableConcept(thisConceptFqName, conceptFqName, scope);
   }
 
   public final ConceptDeclaration getConceptDeclarationAdapter() {
@@ -1750,7 +1749,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
     String languageNamespace = getLanguageNamespace();
     Language language = scope.getLanguage(languageNamespace);
     if (language == null) {
-      LOG.error("couldn't find language for namespace " + languageNamespace);
+      LOG.error("couldn't find language for namespace '" + languageNamespace + "' in scope: " + scope);
       return null;
     }
     return language;

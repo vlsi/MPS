@@ -3,7 +3,6 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.generator.ContextUtil;
-import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.ide.command.CommandEventTranslator;
@@ -21,7 +20,7 @@ import jetbrains.mps.util.annotation.UseCarefully;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.io.*;
+import java.io.File;
 import java.util.*;
 
 
@@ -539,24 +538,24 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   }
 
   @NotNull
-  public Set<String> getParentNames(String className) {
-    if (myParentsNamesMap.containsKey(className)) {
-      return new HashSet<String>(myParentsNamesMap.get(className));
+  public Set<String> getParentNames(String conceptFqName) {
+    if (myParentsNamesMap.containsKey(conceptFqName)) {
+      return new HashSet<String>(myParentsNamesMap.get(conceptFqName));
     } else {
       Set<String> result = new HashSet<String>();
-      ConceptDeclaration declaration = findConceptDeclaration(NameUtil.shortNameFromLongName(className));
+      ConceptDeclaration declaration = findConceptDeclaration(NameUtil.shortNameFromLongName(conceptFqName));
       if (declaration == null) {
         return result;
       }
 
-      result.add(className);
+      result.add(conceptFqName);
       ConceptDeclaration conceptDeclaration = declaration.getExtends();
       if (conceptDeclaration != null) {
         result.addAll(SModelUtil_new.getDeclaringLanguage(
                 declaration.getExtends(), GlobalScope.getInstance()).getParentNames(
-                JavaNameUtil.className(conceptDeclaration)));
+                NameUtil.nodeFQName(conceptDeclaration)));
       }
-      myParentsNamesMap.put(className, result);
+      myParentsNamesMap.put(conceptFqName, result);
       return new HashSet<String>(result);
     }
   }
