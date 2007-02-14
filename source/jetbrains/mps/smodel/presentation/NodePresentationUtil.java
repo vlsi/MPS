@@ -1,14 +1,14 @@
 package jetbrains.mps.smodel.presentation;
 
-import jetbrains.mps.core.BaseConcept;
-import jetbrains.mps.core.NamedConcept;
-import jetbrains.mps.core.INamedConcept;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.core.structure.BaseConcept;
+import jetbrains.mps.core.structure.NamedConcept;
+import jetbrains.mps.core.structure.INamedConcept;
 
 public class NodePresentationUtil {
   public static String matchingText(SNode node) {
@@ -17,7 +17,8 @@ public class NodePresentationUtil {
 
   public static String matchingText(SNode node, boolean referent_presentation) {
     // concept declaration : return either 'alias' or 'name'
-    if (node.getAdapter() instanceof ConceptDeclaration) {
+    BaseAdapter nodeAdapter = node.getAdapter();
+    if (nodeAdapter instanceof ConceptDeclaration) {
       if (!referent_presentation) {
         String alias = node.getConceptProperty("alias", GlobalScope.getInstance());
         if (alias != null) {
@@ -28,30 +29,30 @@ public class NodePresentationUtil {
     }
 
     // all other nodes (not a concept declarations)
-    return matchingText_internal(node);
+    return matchingText_internal(nodeAdapter);
   }
 
-  private static String matchingText_internal(SNode node) {
-    if (node == null) {
+  private static String matchingText_internal(BaseAdapter nodeAdapter) {
+    if (nodeAdapter == null) {
       return "<none>";
     }
 
-    if (node.getAdapter() instanceof LinkDeclaration) {
-      return ((LinkDeclaration) node.getAdapter()).getRole();
+    if (nodeAdapter instanceof LinkDeclaration) {
+      return ((LinkDeclaration) nodeAdapter).getRole();
     }
 
-    if (node instanceof BaseConcept) {
-      String customAlias = ((BaseConcept) node).getAlias();
+    if (nodeAdapter instanceof BaseConcept) {
+      String customAlias = ((BaseConcept) nodeAdapter).getAlias();
       if (customAlias != null) return customAlias;
-      if (node instanceof NamedConcept || node instanceof INamedConcept) {
-        String name = node.getName();
+      if (nodeAdapter instanceof NamedConcept || nodeAdapter instanceof INamedConcept) {
+        String name = nodeAdapter.getName();
         if (name != null) {
           return name;
         }
       }
     }
 
-    return getAliasOrConceptName(node);
+    return getAliasOrConceptName(nodeAdapter.getNode());
   }
 
   public static String descriptionText(SNode node) {
@@ -78,29 +79,29 @@ public class NodePresentationUtil {
       return "";
     }
 
-    return descriptionText_internal(node);
+    return descriptionText_internal(node.getAdapter());
   }
 
-  private static String descriptionText_internal(SNode node) {
-    if (node == null) {
+  private static String descriptionText_internal(BaseAdapter nodeAdapter) {
+    if (nodeAdapter == null) {
       return "";
     }
 
-    if (node instanceof BaseConcept) {
-      BaseConcept bc = (BaseConcept) node;
+    if (nodeAdapter instanceof BaseConcept) {
+      BaseConcept bc = (BaseConcept) nodeAdapter;
       String shortDescription = bc.getShortDescription();
       if (shortDescription != null) {
         return shortDescription;
       }
     }
 
-    if (node.isRoot()) {
-      return NameUtil.shortNameFromLongName(node.getClass().getName()) + " (" + node.getModel().getUID() + ")";
+    if (nodeAdapter.isRoot()) {
+      return NameUtil.shortNameFromLongName(nodeAdapter.getClass().getName()) + " (" + nodeAdapter.getModel().getUID() + ")";
     }
-    if(node.getContainingRoot() == null) {
+    if (nodeAdapter.getContainingRoot() == null) {
       System.out.println("!!!");
     }
-    return node.getRole_() + " (" + NameUtil.nodeFQName(node.getContainingRoot()) + ")";
+    return nodeAdapter.getRole_() + " (" + NameUtil.nodeFQName(nodeAdapter.getContainingRoot()) + ")";
   }
 
   public static String getAliasOrConceptName(SNode node) {
@@ -108,7 +109,7 @@ public class NodePresentationUtil {
     if (alias != null) {
       return alias;
     }
-    return NameUtil.nodeConceptName(node);
+    return node.getConceptName();
   }
 
   public static String getRoleInParentOrConceptName(SNode node) {

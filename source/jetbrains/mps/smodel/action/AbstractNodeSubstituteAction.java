@@ -61,7 +61,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
       return NodePresentationUtil.descriptionText((SNode) myParameterObject);
     }
     if (myParameterObject instanceof BaseAdapter) {
-      return NodePresentationUtil.descriptionText(((BaseAdapter) myParameterObject).getNode(), referent_presentation);
+      return NodePresentationUtil.descriptionText(((BaseAdapter) myParameterObject), referent_presentation);
     }
     return "";
   }
