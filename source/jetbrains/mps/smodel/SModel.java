@@ -1015,6 +1015,10 @@ public class SModel implements Iterable<SNode> {
     }));
   }
 
+  public List<BaseAdapter> allAdapters(Condition<BaseAdapter> condition) {
+    return allAdapters(BaseAdapter.class,  condition);  
+  }
+
   public <E extends BaseAdapter> List<E> allAdapters(final Class<E> cls, Condition<E> condition) {
     List<E> result = allAdapters(cls);
     Iterator<E> it = result.iterator();
