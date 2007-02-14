@@ -519,8 +519,7 @@ public class ModelPersistence {
   public static void saveNode(@NotNull Element parentElement, @NotNull SNode node, boolean useUIDs, VisibleModelElements visibleModelElements) {
     Element element = new Element(NODE);
     setNotNullAttribute(element, ROLE, node.getRole_());
-    String type = node instanceof ErrorNode ? ((ErrorNode) node).getType() :                  
-                                               node.getClass().getName();
+    String type = node.getTypeFqName();
     element.setAttribute(TYPE, type);
     element.setAttribute(ID, node.getId());
 

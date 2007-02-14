@@ -1282,7 +1282,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
   @NotNull
   public String getConceptName() {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
-    return getConceptFqName().substring(getConceptFqName().lastIndexOf('.') + 1);
+    return getTypeFqName().substring(getTypeFqName().lastIndexOf('.') + 1);
   }
 
   @NotNull
@@ -1391,7 +1391,12 @@ public class SNode implements Cloneable, Iterable<SNode> {
     return SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
   }
 
+
   public String getConceptFqName() {
+    return NameUtil.conceptFQNameByClassName(getTypeFqName());
+  }
+
+  /*package*/ String getTypeFqName() {
     if (myConceptName != null) {
       return myConceptName;
     } else {
@@ -1413,7 +1418,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public ConceptDeclaration getConceptDeclarationAdapter(IScope scope) {
-    String conceptFQName = getConceptFqName();
+    String conceptFQName = getTypeFqName();
     ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFQName, scope);
     assert concept != null : "couldn't find concept declaration '" + conceptFQName + "' in scope:" + scope;
     return concept;
