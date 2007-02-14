@@ -1399,19 +1399,6 @@ public class SNode implements Cloneable, Iterable<SNode> {
     }
   }
 
-//  public boolean isInstanceOfConcept(ConceptDeclaration conceptDeclaration, IScope scope) {
-//    if (NameUtil.nodeFQName(conceptDeclaration).equals("jetbrains.mps.core.structure.BaseConcept")) {
-//      return true;
-//    }
-//
-//    Language language = getLanguage(scope);
-//    if (language == null) return false;
-//    String conceptName = getConceptFqName();
-//
-//    return language.getParentNames(conceptName).
-//            contains(JavaNameUtil.className(conceptDeclaration));
-//  }
-
   public boolean isInstanceOfConcept(ConceptDeclaration concept, IScope scope) {
     return isInstanceOfConcept(NameUtil.nodeFQName(concept), scope);
   }
