@@ -157,8 +157,7 @@ public class NameUtil {
   }
 
   public static String nodeLanguageNamespace(SNode node) {
-    String className = node.getClass().getName();
-    return NameUtil.namespaceFromLongName(className);
+    return node.getLanguageNamespace();
   }
 
   public static String convertToMetaString(String s) {

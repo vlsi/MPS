@@ -166,7 +166,7 @@ public class ModelConstraintsManager {
   }
 
   public IModelConstraints getNodePropertyGetterOrSetter(@NotNull BaseAdapter node, @NotNull String propertyName, boolean isSetter) {
-    String namespace = NameUtil.nodeLanguageNamespace(node.getNode());
+    String namespace = node.getNode().getLanguageNamespace();
 
     // 'bootstrap' properties
     if (namespace.equals("jetbrains.mps.bootstrap.structureLanguage") && propertyName.equals(NamedConcept.NAME)) {
