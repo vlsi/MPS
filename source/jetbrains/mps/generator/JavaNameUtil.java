@@ -52,7 +52,7 @@ public class JavaNameUtil {
 
   public static String className(jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration conceptDeclaration) {
     SModel languageModel = conceptDeclaration.getModel();
-    String packageName = JavaNameUtil.packageNameForModelUID(languageModel.getUID());
+    String packageName = withoutStructure(JavaNameUtil.packageNameForModelUID(languageModel.getUID()));
     return packageName + "." + conceptDeclaration.getName();
   }
 }
