@@ -12,6 +12,9 @@ import jetbrains.mps.typesystem.TypeCheckerAccess;
 import jetbrains.mps.bootstrap.smodelLanguage.types.Snode_TypeObject;
 import jetbrains.mps.bootstrap.smodelLanguage.types.Slink_TypeObject;
 import java.util.List;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
+import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 
 public class QueriesGenerated {
 
@@ -46,5 +49,21 @@ public class QueriesGenerated {
     }
     List<SNode> applicableParms = sourceNode.getConceptLinkTargets("applicableParameter", true, scope);
     return applicableParms.size() > 0;
+  }
+  public static void nodeFactory_NodeSetup_Node_GetAncestorOperation_1171415364778(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
+    if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation")) {
+      List<SNode> parms = SLinkOperations.getTargets(sampleNode, "parameter", true);
+      {
+        ICursor<SNode> _zCursor = CursorFactory.createCursor(parms);
+        try {
+          while(_zCursor.moveToNext()) {
+            SNode parm = _zCursor.getCurrent();
+            SLinkOperations.addChild(newNode, "parameter", parm);
+          }
+        } finally {
+          _zCursor.release();
+        }
+      }
+    }
   }
 }
