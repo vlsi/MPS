@@ -25,11 +25,11 @@ public class ParameterReference_parameterDeclaration_ReferentConstraint implemen
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.ParameterReference", "variableDeclaration");
   }
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    SNode enclosingMethod = SNodeOperations.getParent(enclosingNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", true, false);
+    SNode enclosingMethod = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", true, false);
     return enclosingMethod != null;
   }
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    SNode enclosingMethod = SNodeOperations.getParent(enclosingNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", true, false);
+    SNode enclosingMethod = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", true, false);
     return new SimpleSearchScope(SLinkOperations.getTargets(enclosingMethod, "parameter", true));
   }
   public String getNodeReferentSearchScopeDescription() {

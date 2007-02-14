@@ -29,10 +29,10 @@ public class SuperMethodCall_instanceMethodDeclaration_ReferentConstraint implem
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.SuperMethodCall", "baseMethodDeclaration");
   }
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    return SNodeOperations.getParent(enclosingNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false) != null;
+    return SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false) != null;
   }
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    SNode enclosingClass = SNodeOperations.getParent(enclosingNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
+    SNode enclosingClass = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
     ISearchScope hierarchyScope = BaseLanguageSearchUtil_new.createSuperClassesScope((ClassConcept)enclosingClass.getAdapter(), IClassifiersSearchScope.INSTANCE_METHOD);
     List methods = BaseAdapter.toNodes(BaseLanguageSearchUtil_new.getMethodsExcludingOverridden(hierarchyScope));
     return new SimpleSearchScope((List<SNode>)methods);

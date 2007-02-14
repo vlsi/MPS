@@ -25,11 +25,11 @@ public class TypeVariableReference_typeVariableDeclaration_ReferentConstraint im
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.TypeVariableReference", "typeVariableDeclaration");
   }
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    SNode genericDeclaration = SNodeOperations.getParent(enclosingNode, "jetbrains.mps.baseLanguage.structure.GenericDeclaration", true, false);
+    SNode genericDeclaration = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.GenericDeclaration", true, false);
     return genericDeclaration != null;
   }
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    SNode genericDeclaration = SNodeOperations.getParent(enclosingNode, "jetbrains.mps.baseLanguage.structure.GenericDeclaration", true, false);
+    SNode genericDeclaration = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.GenericDeclaration", true, false);
     return new SimpleSearchScope(SLinkOperations.getTargets(genericDeclaration, "typeVariableDeclaration", true));
   }
   public String getNodeReferentSearchScopeDescription() {

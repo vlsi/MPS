@@ -3,7 +3,7 @@
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
-  <maxImportIndex value="13" />
+  <maxImportIndex value="15" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="3" modelUID="java.lang@java_stub" />
   <import index="4" modelUID="jetbrains.mps.smodel@java_stub" />
@@ -134,13 +134,16 @@
             <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1171482174427">
               <link role="classifier" extResolveInfo="3.[Classifier]String" />
             </node>
-            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SemanticDowncastExpression" id="1171482194717">
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1171482184837">
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccessAsNode" id="1171482189497">
-                  <link role="link" targetNodeId="1.1068580123160" />
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1171482183398">
-                  <link role="variableDeclaration" targetNodeId="1145583462061" resolveInfo="ifStatement" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1171483372477">
+              <link role="baseMethodDeclaration" extResolveInfo="4.method ([Classifier]SNode).([InstanceMethodDeclaration]getId() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+              <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.SemanticDowncastExpression" id="1171482194717">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1171482184837">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccessAsNode" id="1171482189497">
+                    <link role="link" targetNodeId="1.1068580123160" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1171482183398">
+                    <link role="variableDeclaration" targetNodeId="1145583462061" resolveInfo="ifStatement" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -180,14 +183,12 @@
             <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1145576838847" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1145576838848">
               <link role="baseMethodDeclaration" extResolveInfo="5.method ([Classifier]List).([InstanceMethodDeclaration]size() : (jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int))" />
-              <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.SemanticDowncastExpression" id="1145576838849">
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1145576838850">
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1145583516177">
-                    <link role="variableDeclaration" targetNodeId="1145583482393" />
-                  </node>
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkListAccess" id="1145576838852">
-                    <link role="link" targetNodeId="1.1068499141038" />
-                  </node>
+              <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1145576838850">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1145583516177">
+                  <link role="variableDeclaration" targetNodeId="1145583482393" />
+                </node>
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkListAccessAsList" id="1171483448259">
+                  <link role="link" targetNodeId="1.1068499141038" />
                 </node>
               </node>
             </node>
@@ -207,6 +208,27 @@
                 </node>
               </node>
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.LinkList_GetCountOperation" id="1145576838860" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1171483610591">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1171483610592">
+            <property name="name" value="ll" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1171483610593" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1171483715401">
+          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1171483759284">
+            <link role="baseMethodDeclaration" extResolveInfo="5.method ([Classifier]List).([InstanceMethodDeclaration]size() : (jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int))" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.ParenthesizedExpression" id="1171483752292">
+              <node role="expression" type="jetbrains.mps.baseLanguage.CastExpression" id="1171483752293">
+                <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1171483752294">
+                  <link role="variableDeclaration" targetNodeId="1171483610592" resolveInfo="ll" />
+                </node>
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1171483752295">
+                  <link role="classifier" extResolveInfo="5.[Classifier]List" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
