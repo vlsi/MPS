@@ -93,6 +93,15 @@ public abstract class BaseAdapter {
     return null;
   }
 
+  public <T extends BaseAdapter> List<T> findParents(Class<T> aClass) {
+    List<T> list = new ArrayList<T>();
+    T currNode = getParent(aClass);
+    for (; currNode != null; currNode = currNode.getParent(aClass, false)) {
+      list.add(currNode);
+    }
+    return list;
+  }
+
   public List<ConceptLink> getConceptLinks(final String linkName, boolean lookupHierarchy, IScope scope) {
     return myNode.getConceptLinks(linkName, lookupHierarchy, scope);
   }
