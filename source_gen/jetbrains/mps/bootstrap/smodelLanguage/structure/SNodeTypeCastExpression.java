@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
 public class SNodeTypeCastExpression extends Expression {
-  public static String LEFT_EXPRESSION = "leftExpression";
   public static String CONCEPT = "concept";
+  public static String LEFT_EXPRESSION = "leftExpression";
 
   public  SNodeTypeCastExpression(SNode node) {
     super(node);
@@ -21,16 +21,16 @@ public class SNodeTypeCastExpression extends Expression {
     return (SNodeTypeCastExpression)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SNodeTypeCastExpression", sm, GlobalScope.getInstance()).getAdapter();
   }
 
-  public Expression getLeftExpression() {
-    return (Expression)this.getChild(SNodeTypeCastExpression.LEFT_EXPRESSION);
-  }
-  public void setLeftExpression(Expression node) {
-    super.setChild(SNodeTypeCastExpression.LEFT_EXPRESSION, node);
-  }
   public ConceptDeclaration getConcept() {
     return (ConceptDeclaration)this.getReferent(SNodeTypeCastExpression.CONCEPT);
   }
   public void setConcept(ConceptDeclaration node) {
     super.setReferent(SNodeTypeCastExpression.CONCEPT, node);
+  }
+  public Expression getLeftExpression() {
+    return (Expression)this.getChild(SNodeTypeCastExpression.LEFT_EXPRESSION);
+  }
+  public void setLeftExpression(Expression node) {
+    super.setChild(SNodeTypeCastExpression.LEFT_EXPRESSION, node);
   }
 }

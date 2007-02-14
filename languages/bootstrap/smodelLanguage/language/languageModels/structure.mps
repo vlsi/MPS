@@ -206,22 +206,6 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1139613262185">
     <property name="name" value="Node_GetParentOperation" />
     <link role="extends" targetNodeId="1138411891628" />
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1144102593421">
-      <link role="conceptLinkDeclaration" targetNodeId="1144102537873" />
-      <link role="target" targetNodeId="1144101972840" />
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1154547378160">
-      <link role="conceptLinkDeclaration" targetNodeId="1144102537873" />
-      <link role="target" targetNodeId="1154546920561" />
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1144102712066">
-      <link role="conceptLinkDeclaration" targetNodeId="1144102537873" />
-      <link role="target" targetNodeId="1144100932627" />
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1144102712287">
-      <link role="conceptLinkDeclaration" targetNodeId="1144102537873" />
-      <link role="target" targetNodeId="1144101597970" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1139613319562">
       <property name="value" value="parent" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
@@ -231,10 +215,6 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1167389280314">
       <link role="conceptPropertyDeclaration" targetNodeId="1138763325919" resolveInfo="applicable_to_link" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1171414873888">
-      <property name="value" value="all parameters are deprecated - see the 'ancestor' operation" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1170898673630" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1139621453865">

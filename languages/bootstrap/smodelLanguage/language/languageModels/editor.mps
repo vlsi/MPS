@@ -261,8 +261,7 @@
         <property name="drawBorder" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1144105631509">
           <property name="editable" value="true" />
-          <property name="textFgColor" value="red" />
-          <property name="text" value="parent !replace with ancestor!" />
+          <property name="text" value="parent" />
           <property name="drawBorder" value="false" />
           <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1171414791791">
             <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1171414791792">
@@ -317,7 +316,7 @@
         <property name="drawBorder" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1154554991970">
-        <property name="text" value="Optional parameters - deprecated. Use the 'ancestor' operation:" />
+        <property name="text" value="Optional parameters - deprecated. Use the 'ancestor' operation" />
         <property name="fontStyle" value="PLAIN" />
         <property name="drawBorder" value="false" />
       </node>
