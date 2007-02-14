@@ -12,6 +12,9 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
@@ -147,9 +150,9 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell2(context, node, "The 'parent' operation"));
     editorCell.addEditorCell(this.createConstantCell3(context, node, ""));
-    editorCell.addEditorCell(this.createConstantCell4(context, node, "Returns parent node (if no parameters)"));
+    editorCell.addEditorCell(this.createConstantCell4(context, node, "Returns parent node"));
     editorCell.addEditorCell(this.createConstantCell5(context, node, ""));
-    editorCell.addEditorCell(this.createConstantCell6(context, node, "Optional parameters:"));
+    editorCell.addEditorCell(this.createConstantCell6(context, node, "Optional parameters - deprecated. Use the 'ancestor' operation:"));
     editorCell.addEditorCell(this.createColumnCell1(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, "1154554723148");
     editorCell.setLayoutConstraint("");
@@ -178,6 +181,7 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new ISubstituteInfoPart[]{new Node_GetParentOperation_replaceWith_SNodeOperation_cellMenu()}));
     editorCell.putUserObject(EditorCell.CELL_ID, "1144105535520");
     editorCell.setLayoutConstraint("");
     return editorCell;
@@ -191,6 +195,7 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(Color.red);
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new ISubstituteInfoPart[]{new Node_GetParentOperation_replaceWith_SNodeOperation_cellMenu1()}));
     editorCell.putUserObject(EditorCell.CELL_ID, "1144105631509");
     editorCell.setLayoutConstraint("");
     return editorCell;

@@ -232,6 +232,10 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1167389280314">
       <link role="conceptPropertyDeclaration" targetNodeId="1138763325919" resolveInfo="applicable_to_link" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1171414873888">
+      <property name="value" value="all parameters are deprecated - see the 'ancestor' operation" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1170898673630" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1139621453865">
     <property name="name" value="Node_IsInstanceOfOperation" />
