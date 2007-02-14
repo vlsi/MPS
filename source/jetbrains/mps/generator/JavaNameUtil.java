@@ -27,6 +27,14 @@ public class JavaNameUtil {
     return packageName + "." + shortClassName;
   }
 
+  public static String __fqClassName(SModel model, String shortClassName) {    
+    String packageName = __packageNameForModelUID(model.getUID());
+    if (packageName == null || packageName.length() == 0) {
+      return shortClassName;
+    }
+    return packageName + "." + shortClassName;
+  }
+
   public static String packageNameForModelUID(SModelUID modelUID) {
     String modelFqName = modelUID.getLongName();
     String packageName = modelFqName;
@@ -46,6 +54,13 @@ public class JavaNameUtil {
       return packageNameForModelUID(modelUID);
     }
   }
+
+  public static String __packageNameForModelUID(SModelUID modelUID) {
+    String modelFqName = modelUID.getLongName();
+    String packageName = modelFqName;
+    return packageName;
+  }
+
 
   public static String packageName(String fqName) {
     if (fqName == null) {
