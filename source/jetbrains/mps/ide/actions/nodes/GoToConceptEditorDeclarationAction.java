@@ -13,10 +13,10 @@ import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.projectLanguage.Editor;
-import jetbrains.mps.projectLanguage.LanguageDescriptor;
-import jetbrains.mps.projectLanguage.Model;
-import jetbrains.mps.projectLanguage.ModelRoot;
+import jetbrains.mps.projectLanguage.structure.Editor;
+import jetbrains.mps.projectLanguage.structure.LanguageDescriptor;
+import jetbrains.mps.projectLanguage.structure.Model;
+import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
@@ -169,9 +169,9 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
 
     // updateTypesystem language
     LanguageDescriptor languageDescriptor = language.getLanguageDescriptor();
-    Model _model = new Model(languageDescriptor.getModel());
+    Model _model = Model.newInstance(languageDescriptor.getModel());
     _model.setName(editorModel.getUID().toString());
-    Editor _editor = new Editor(languageDescriptor.getModel());
+    Editor _editor = Editor.newInstance(languageDescriptor.getModel());
     _editor.setEditorModel(_model);
     _editor.setStereotype("");
     languageDescriptor.addEditor(_editor);

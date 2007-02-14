@@ -1,6 +1,6 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.projectLanguage.ModelRoot;
+import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 

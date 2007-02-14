@@ -2,7 +2,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
-import jetbrains.mps.projectLanguage.Root;
+import jetbrains.mps.projectLanguage.structure.Root;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.generator.GenerationSessionContext;
 import org.jetbrains.annotations.NotNull;

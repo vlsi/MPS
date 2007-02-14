@@ -4,8 +4,8 @@ import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.projectLanguage.GeneratorDescriptor;
-import jetbrains.mps.projectLanguage.ModuleDescriptor;
+import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
+import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -117,7 +117,7 @@ public class Generator extends AbstractModule {
   }
 
   public String getTargetLanguageName() {
-    jetbrains.mps.projectLanguage.Language targetLanguage = myGeneratorDescriptor.getTargetLanguage();
+    jetbrains.mps.projectLanguage.structure.Language targetLanguage = myGeneratorDescriptor.getTargetLanguage();
     if (targetLanguage != null) {
       return targetLanguage.getName();
     }

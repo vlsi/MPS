@@ -1,12 +1,11 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.project.*;
-import jetbrains.mps.projectLanguage.ModelRoot;
-import jetbrains.mps.projectLanguage.ModuleDescriptor;
+import jetbrains.mps.projectLanguage.structure.ModelRoot;
+import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -190,7 +189,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     private List<IModule> myDependOnModules = new LinkedList<IModule>();
     private IModule myInvocationModule;
     private SModelDescriptor myProjectModelDescriptor = ProjectModels.createDescriptorFor(this);
-    private ModuleDescriptor myModuleDescriptor = new ModuleDescriptor(myProjectModelDescriptor.getSModel());
+    private ModuleDescriptor myModuleDescriptor = ModuleDescriptor.newInstance(myProjectModelDescriptor.getSModel());
 
     private MPSModuleOwner myOwnOnwer = new MPSModuleOwner() { };
 

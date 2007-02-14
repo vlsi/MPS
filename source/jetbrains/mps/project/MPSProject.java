@@ -28,7 +28,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.plugins.PluginManager;
-import jetbrains.mps.projectLanguage.*;
+import jetbrains.mps.projectLanguage.structure.*;
+import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.CollectionUtil;
@@ -206,7 +207,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     ProjectDescriptor projectDescriptor = getProjectDescriptor();
     SModel model = projectDescriptor.getModel();
     model.setLoading(true);
-    LanguagePath languagePath = new LanguagePath(model);
+    LanguagePath languagePath = LanguagePath.newInstance(model);
     File descriptorFile = language.getDescriptorFile();
     assert descriptorFile != null;
     languagePath.setPath(descriptorFile.getAbsolutePath());
@@ -230,7 +231,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     }
 
     if (solutionPath == null) {
-      solutionPath = new SolutionPath(model);
+      solutionPath = SolutionPath.newInstance(model);
       solutionPath.setPath(solutionDescriptionFile.getAbsolutePath());
       projectDescriptor.addProjectSolution(solutionPath);
     }

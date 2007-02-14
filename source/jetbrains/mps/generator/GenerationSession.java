@@ -9,7 +9,8 @@ import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.projectLanguage.*;
+import jetbrains.mps.projectLanguage.structure.*;
+import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
@@ -277,7 +278,7 @@ public class GenerationSession implements IGenerationSession {
     };
     SModel solutionDescriptorModel = ProjectModels.createDescriptorFor(tmpOwner).getSModel();
     assert solutionDescriptorModel != null;
-    SolutionDescriptor solutionDescriptor = new SolutionDescriptor(solutionDescriptorModel);
+    SolutionDescriptor solutionDescriptor = SolutionDescriptor.newInstance(solutionDescriptorModel);
     solutionDescriptorModel.setLoading(true);
     solutionDescriptor.setName("outputModels");
     // add root where transient models were saved
@@ -291,7 +292,7 @@ public class GenerationSession implements IGenerationSession {
       for (Language language : languages) {
         if (!usedLang.contains(language)) {
           usedLang.add(language);
-          LanguageRoot languageRoot = new LanguageRoot(solutionDescriptor.getModel());
+          LanguageRoot languageRoot = LanguageRoot.newInstance(solutionDescriptor.getModel());
           File descriptorFile = language.getDescriptorFile();
           assert descriptorFile != null;
           languageRoot.setPath(descriptorFile.getParentFile().getAbsolutePath());
@@ -369,7 +370,7 @@ public class GenerationSession implements IGenerationSession {
         return;
       }
     }
-    ModelRoot modelRoot = new ModelRoot(descriptor.getModel());
+    ModelRoot modelRoot = ModelRoot.newInstance(descriptor.getModel());
     modelRoot.setPrefix(prefix);
     modelRoot.setPath(path);
     descriptor.addModelRoot(modelRoot);

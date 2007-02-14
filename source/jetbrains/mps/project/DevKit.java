@@ -2,7 +2,8 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.projectLanguage.*;
+import jetbrains.mps.projectLanguage.structure.*;
+import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.CollectionUtil;
@@ -93,7 +94,7 @@ public class DevKit extends AbstractModule {
 
   public List<Language> getExportedLanguages() {
     List<Language> langs = new ArrayList<Language>();
-    for (jetbrains.mps.projectLanguage.Language l : myDescriptor.getExportedLanguages()) {
+    for (jetbrains.mps.projectLanguage.structure.Language l : myDescriptor.getExportedLanguages()) {
       Language lng = getScope().getLanguage("" + l.getName());
       if (lng != null) {
         langs.add(lng);

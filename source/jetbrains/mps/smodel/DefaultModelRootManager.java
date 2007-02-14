@@ -1,16 +1,16 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.projectLanguage.ModelRoot;
-import jetbrains.mps.util.PathManager;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.smodel.event.SModelsMulticaster;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vcs.Merger;
-
-import java.util.*;
-import java.io.*;
-
 import org.jetbrains.annotations.NotNull;
+
+import java.io.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author Kostik

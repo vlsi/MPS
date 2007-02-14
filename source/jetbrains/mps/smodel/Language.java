@@ -11,7 +11,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.projectLanguage.*;
+import jetbrains.mps.projectLanguage.structure.*;
+import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.refactoring.logging.Marshallable;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.*;
@@ -87,7 +88,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     SModel model = ProjectModels.createDescriptorFor(language).getSModel();
     model.setLoading(true);
     language.myDescriptorFile = null;
-    language.myLanguageDescriptor = ContextUtil.copyNode(languageDescriptor, model, language.getScope());
+    language.myLanguageDescriptor = (LanguageDescriptor) ContextUtil.copyNode(languageDescriptor.getNode(), model, language.getScope()).getAdapter();
     MPSModuleRepository.getInstance().addModule(language, owner);
     language.updateDependenciesAndGenerators();
     return language;
@@ -101,16 +102,16 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     Language language = new Language();
     SModel descriptorModel = ProjectModels.createDescriptorFor(language).getSModel();
     descriptorModel.setLoading(true);
-    LanguageDescriptor languageDescriptor = new LanguageDescriptor(descriptorModel);
+    LanguageDescriptor languageDescriptor = LanguageDescriptor.newInstance(descriptorModel);
     descriptorModel.addRoot(languageDescriptor);
     languageDescriptor.setNamespace(languageNamespace);
 
     // default descriptorModel roots
-    ModelRoot modelRoot = new ModelRoot(descriptorModel);
+    ModelRoot modelRoot = ModelRoot.newInstance(descriptorModel);
     modelRoot.setPath(new File(descriptorFile.getParentFile(), "languageModels").getAbsolutePath());
     modelRoot.setPrefix(languageNamespace);
     languageDescriptor.addModelRoot(modelRoot);
-    modelRoot = new ModelRoot(descriptorModel);
+    modelRoot = ModelRoot.newInstance(descriptorModel);
     modelRoot.setPath(new File(descriptorFile.getParentFile(), "languageAccessories").getAbsolutePath());
     modelRoot.setPrefix(languageNamespace);
     languageDescriptor.addModelRoot(modelRoot);

@@ -3,10 +3,10 @@ package jetbrains.mps.ide;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.ui.SmartFileChooser;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.projectLanguage.GeneratorDescriptor;
-import jetbrains.mps.projectLanguage.LanguageDescriptor;
-import jetbrains.mps.projectLanguage.ModelRoot;
-import jetbrains.mps.projectLanguage.ModuleRoot;
+import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
+import jetbrains.mps.projectLanguage.structure.LanguageDescriptor;
+import jetbrains.mps.projectLanguage.structure.ModelRoot;
+import jetbrains.mps.projectLanguage.structure.ModuleRoot;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.util.NameUtil;
@@ -160,11 +160,11 @@ public class NewGeneratorDialog extends BaseDialog {
     SModel model = languageDescriptor.getModel();
     model.setLoading(true);
 
-    GeneratorDescriptor generatorDescriptor = new GeneratorDescriptor(model);
+    GeneratorDescriptor generatorDescriptor = GeneratorDescriptor.newInstance(model);
     generatorDescriptor.setGeneratorUID(Generator.generateGeneratorUID(sourceLanguage));
 
     // set target language
-    jetbrains.mps.projectLanguage.Language _targetLanguage = new jetbrains.mps.projectLanguage.Language(model);
+    jetbrains.mps.projectLanguage.structure.Language _targetLanguage = jetbrains.mps.projectLanguage.structure.Language.newInstance(model);
     _targetLanguage.setName(targetLanguage.getNamespace());
     generatorDescriptor.setTargetLanguage(_targetLanguage);
 
@@ -173,14 +173,14 @@ public class NewGeneratorDialog extends BaseDialog {
             ".generator." +
             NameUtil.shortNameFromLongName(targetLanguage.getNamespace()) +
             ".template";
-    ModelRoot templateModelsRoot = new ModelRoot(model);
+    ModelRoot templateModelsRoot = ModelRoot.newInstance(model);
     templateModelsRoot.setPrefix(templateModelNamePrefix);
 
     templateModelsRoot.setPath(templateModelsDir.getAbsolutePath());
     generatorDescriptor.addModelRoot(templateModelsRoot);
 
     // add 'target language module' to 'module roots'
-    ModuleRoot targetLanguageModuleRoot = new ModuleRoot(model);
+    ModuleRoot targetLanguageModuleRoot = ModuleRoot.newInstance(model);
     File descriptorFile = targetLanguage.getDescriptorFile();
     assert descriptorFile != null;
     targetLanguageModuleRoot.setPath(descriptorFile/*.getParentFile()*/.getAbsolutePath());

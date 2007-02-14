@@ -4,10 +4,10 @@ import jetbrains.mps.datatransfer.CloneModelUtil;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.projectLanguage.CloneModelProperties;
-import jetbrains.mps.projectLanguage.Model;
-import jetbrains.mps.projectLanguage.ModelRoot;
-import jetbrains.mps.projectLanguage.RootReference;
+import jetbrains.mps.projectLanguage.structure.CloneModelProperties;
+import jetbrains.mps.projectLanguage.structure.Model;
+import jetbrains.mps.projectLanguage.structure.ModelRoot;
+import jetbrains.mps.projectLanguage.structure.RootReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.CommandRunnable;
@@ -33,7 +33,7 @@ public class CloneModelDialog extends BaseNodeDialog {
   private SModel mySModel;
 
   protected SNode getNode() {
-    return myCloneModelProperties;
+    return BaseAdapter.fromAdapter(myCloneModelProperties);
   }
 
   public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
@@ -77,7 +77,7 @@ public class CloneModelDialog extends BaseNodeDialog {
         myCloneModelProperties.setStereotype(mySModel.getStereotype());
 
         for (String language : mySModel.getExplicitlyImportedLanguages()) {
-          jetbrains.mps.projectLanguage.Language lang = jetbrains.mps.projectLanguage.Language.newInstance(myProjectModel);
+          jetbrains.mps.projectLanguage.structure.Language lang = jetbrains.mps.projectLanguage.structure.Language.newInstance(myProjectModel);
           lang.setName(language);
           myCloneModelProperties.addLanguage(lang);
         }
@@ -121,7 +121,7 @@ public class CloneModelDialog extends BaseNodeDialog {
       SModel.addImportedModel(SModelUID.fromString(modelUID));
     }
 
-    for (jetbrains.mps.projectLanguage.Language l : CollectionUtil.iteratorAsIterable(myCloneModelProperties.languages())) {
+    for (jetbrains.mps.projectLanguage.structure.Language l : CollectionUtil.iteratorAsIterable(myCloneModelProperties.languages())) {
       String name = l.getName();
       assert name != null;
       Language language = getOperationContext().getScope().getLanguage(name);

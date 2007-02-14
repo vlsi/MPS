@@ -5,7 +5,7 @@ import jetbrains.mps.component.IComponentLifecycle;
 import jetbrains.mps.conversion.classpath.ClassPathModelRootManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
-import jetbrains.mps.projectLanguage.ModelRoot;
+import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.PathManager;
 import sun.misc.Launcher;

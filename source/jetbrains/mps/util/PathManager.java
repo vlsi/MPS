@@ -1,6 +1,6 @@
 package jetbrains.mps.util;
 
-import jetbrains.mps.projectLanguage.ModelRoot;
+import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.smodel.IOperationContext;

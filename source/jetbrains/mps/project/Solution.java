@@ -1,21 +1,20 @@
 package jetbrains.mps.project;
 
+import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.actions.tools.ReloadUtils;
-import jetbrains.mps.projectLanguage.ModuleDescriptor;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
-import jetbrains.mps.projectLanguage.SolutionDescriptor;
+import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
+import jetbrains.mps.projectLanguage.structure.SolutionDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
-import java.util.HashSet;
-
-import org.jetbrains.annotations.NotNull;
 
 /**
  * Created by IntelliJ IDEA.

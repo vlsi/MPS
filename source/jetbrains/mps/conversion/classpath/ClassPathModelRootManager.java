@@ -3,7 +3,7 @@ package jetbrains.mps.conversion.classpath;
 import jetbrains.mps.conversion.ConverterFactory;
 import jetbrains.mps.conversion.IConverter;
 import jetbrains.mps.ide.BootstrapLanguages;
-import jetbrains.mps.projectLanguage.ModelRoot;
+import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
@@ -23,6 +23,7 @@ public class ClassPathModelRootManager extends AbstractModelRootManager  {
   private static Map<SModelUID, Long> ourTimestamps = new HashMap<SModelUID, Long>();
   private ModelOwner myOwner;
   private IConverter myConverter;
+
 
   @NotNull
   public Set<SModelDescriptor> read(@NotNull ModelRoot root, @NotNull ModelOwner owner) {

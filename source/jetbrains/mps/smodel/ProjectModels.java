@@ -1,11 +1,10 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.projectLanguage.ModelRoot;
-
-import java.util.*;
-
+import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Set;
 
 /**
  * @author Kostik
