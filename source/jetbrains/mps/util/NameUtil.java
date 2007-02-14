@@ -82,6 +82,16 @@ public class NameUtil {
     return fqName.substring(0, offset);
   }
 
+  @Deprecated
+  public static String oldStructureClassFromConceptFqName(String fqName) {
+    String namespace = namespaceFromLongName(fqName);
+    String shortName = shortNameFromLongName(fqName);
+    if (namespace.endsWith(".structure")) {
+      namespace = namespace.substring(0, namespace.length() - ".structure".length());
+    }
+    return namespace + "." + shortName;
+  }
+
   public static String conceptFqName(ConceptDeclaration cd) {
     return namespaceFromConcept(cd) + "." + cd.getName();
   }

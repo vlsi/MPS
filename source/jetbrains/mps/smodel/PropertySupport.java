@@ -71,7 +71,7 @@ public abstract class PropertySupport {
 
   private static PropertySupport loadPropertySupport(PropertyDeclaration propertyDeclaration) {
     DataTypeDeclaration propertyDataType = propertyDeclaration.getDataType();
-    String propertySupportClassName = JavaNameUtil.__fqClassName(propertyDataType.getModel(), getClassName(propertyDataType));
+    String propertySupportClassName = JavaNameUtil.fqClassName(propertyDataType.getModel(), getClassName(propertyDataType));
     PropertySupport propertySupport = null;
     try {
       Class propertySupportClass = Class.forName(propertySupportClassName, true, ClassLoaderManager.getInstance().getClassLoader());

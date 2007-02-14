@@ -1,7 +1,6 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelUID;
 
 /**
@@ -9,26 +8,8 @@ import jetbrains.mps.smodel.SModelUID;
  * Date: Jan 13, 2004
  */
 public class JavaNameUtil {
-  public static boolean ourAdaptorGenerator = false;
-
   public static String fqClassName(SModel model, String shortClassName) {
     String packageName = packageNameForModelUID(model.getUID());
-    if (packageName == null || packageName.length() == 0) {
-      return shortClassName;
-    }
-    return packageName + "." + shortClassName;
-  }
-
-  public static String _fqClassName(SModel model, String shortClassName) {    
-    String packageName = _packageNameForModelUID(model.getUID());
-    if (packageName == null || packageName.length() == 0) {
-      return shortClassName;
-    }
-    return packageName + "." + shortClassName;
-  }
-
-  public static String __fqClassName(SModel model, String shortClassName) {    
-    String packageName = __packageNameForModelUID(model.getUID());
     if (packageName == null || packageName.length() == 0) {
       return shortClassName;
     }
@@ -38,29 +19,14 @@ public class JavaNameUtil {
   public static String packageNameForModelUID(SModelUID modelUID) {
     String modelFqName = modelUID.getLongName();
     String packageName = modelFqName;
-    if (modelFqName.endsWith(".structure")) {
-      packageName = modelFqName.substring(0, modelFqName.lastIndexOf(".structure"));
-    }
     return packageName;
   }
 
-  public static String _packageNameForModelUID(SModelUID modelUID) {
-    // package name 'as-is' if we generate adapters of we generate name of class from @java_stub
-    if (ourAdaptorGenerator || modelUID.getStereotype().equals(SModelStereotype.JAVA_STUB)) {
-      String modelFqName = modelUID.getLongName();
-      String packageName = modelFqName;
-      return packageName;
-    } else {
-      return packageNameForModelUID(modelUID);
-    }
+  public static String withoutStructure(String ns) {
+    assert ns.endsWith(".structure");
+    ns = ns.substring(0, ns.length() - ".structure".length());
+    return ns;
   }
-
-  public static String __packageNameForModelUID(SModelUID modelUID) {
-    String modelFqName = modelUID.getLongName();
-    String packageName = modelFqName;
-    return packageName;
-  }
-
 
   public static String packageName(String fqName) {
     if (fqName == null) {

@@ -121,8 +121,8 @@ public class TemplateGenUtil {
   public static IReferenceResolver loadReferenceResolver(SNode templateNode, IScope scope) {
     ConceptDeclaration conceptDeclaration = templateNode.getConceptDeclarationAdapter(scope);
     while (conceptDeclaration != null) {
-      String modelPackageName = JavaNameUtil.packageNameForModelUID(conceptDeclaration.getModel().getUID());
-      String buildersPackageName = modelPackageName + ".builder";
+      String modelPackageName = JavaNameUtil.packageNameForModelUID(conceptDeclaration.getModel().getUID());                  
+      String buildersPackageName = JavaNameUtil.withoutStructure(modelPackageName) + ".builder";
       String resolverClassName = buildersPackageName + "." + conceptDeclaration.getName() + "_ReferenceResolver";
       try {
         Class resolverClass = Class.forName(resolverClassName, true, ClassLoaderManager.getInstance().getClassLoader());

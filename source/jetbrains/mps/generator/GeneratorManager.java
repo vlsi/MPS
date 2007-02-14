@@ -472,31 +472,17 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         generationSession = new GenerationSession_New(invocationContext, isSaveTransientModels(), progress, handler);
       }
       for (SModelDescriptor sourceModelDescriptor : sourceModels) {
+        progress.addText("");
+        String taskName = ModelsProgressUtil.generationModelTaskName(sourceModelDescriptor);
+        progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_GENERATION);
 
-        if (invocationContext.getModule() instanceof Language &&
-                sourceModelDescriptor.getModelUID().toString().contains(".structure") &&
-                targetLanguage.getNamespace().equals("jetbrains.mps.baseLanguage.ext.collections.lang")) {
-
-          System.out.println("adaptor gen = true");
-
-          JavaNameUtil.ourAdaptorGenerator = true;
+        status = generationSession.generateModel(sourceModelDescriptor, targetLanguage, script);
+        checkMonitorCanceled(progress);
+        if (status.getOutputModel() != null) {
+          generationType.handleOutput(invocationContext, status, progress, outputFolder);
         }
-        try {
-          progress.addText("");
-          String taskName = ModelsProgressUtil.generationModelTaskName(sourceModelDescriptor);
-          progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_GENERATION);
-
-          status = generationSession.generateModel(sourceModelDescriptor, targetLanguage, script);
-          checkMonitorCanceled(progress);
-          if (status.getOutputModel() != null) {
-            generationType.handleOutput(invocationContext, status, progress, outputFolder);
-          }
-          generationSession.discardTransients();
-          progress.finishTask(taskName);
-        } finally {
-          JavaNameUtil.ourAdaptorGenerator = false;
-        }
-
+        generationSession.discardTransients();
+        progress.finishTask(taskName);
 
         if (!status.isOk()) {
           break;
