@@ -2,14 +2,12 @@
 <model name="jetbrains.mps.bootstrap.smodelLanguage.generator.baseLanguage.util">
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
-  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <maxImportIndex value="22" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.smodelLanguage@java_stub" />
   <import index="4" modelUID="java.lang@java_stub" />
   <import index="5" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <import index="7" modelUID="jetbrains.mps.smodel@java_stub" />
-  <import index="9" modelUID="jetbrains.mps.bootstrap.structureLanguage@java_stub" />
   <import index="10" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="11" modelUID="jetbrains.mps.generator.template@java_stub" />
   <import index="12" modelUID="jetbrains.mps.typesystem@java_stub" />
@@ -19,7 +17,7 @@
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1168968323635">
     <property name="name" value="QueriesUtil" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1168968334480">
-      <property name="name" value="opGetParent_reduceDefault" />
+      <property name="name" value="opGetAncestor_reduceDefault" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.BooleanType" id="1168968338921" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1168968334482">
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1168968630547">
@@ -90,12 +88,12 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1168968445647">
         <property name="name" value="op" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1168968445648">
-          <link role="concept" targetNodeId="1.1139613262185" />
+          <link role="concept" targetNodeId="1.1138411891628" />
         </node>
       </node>
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1168969209239">
-      <property name="name" value="opGetParent_reduceWhereConceptInList" />
+      <property name="name" value="opGetAncestor_reduceWhereConceptInList" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.BooleanType" id="1168969209240" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1168969209241">
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1168969209242">
@@ -164,7 +162,7 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1168969209269">
         <property name="name" value="op" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1168969209270">
-          <link role="concept" targetNodeId="1.1139613262185" />
+          <link role="concept" targetNodeId="1.1138411891628" />
         </node>
       </node>
     </node>

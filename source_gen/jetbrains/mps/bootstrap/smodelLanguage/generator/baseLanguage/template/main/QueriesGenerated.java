@@ -56,10 +56,16 @@ public class QueriesGenerated {
     return QueriesUtil.isProperty_hasValueEnum_nullDefaultValue(node, generator);
   }
   public static boolean baseMappingRule_Condition_1168967899174(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return QueriesUtil.opGetParent_reduceDefault(node);
+    return QueriesUtil.opGetAncestor_reduceDefault(node);
   }
   public static boolean baseMappingRule_Condition_1169087003242(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return QueriesUtil.opGetParent_reduceWhereConceptInList(node);
+    return QueriesUtil.opGetAncestor_reduceWhereConceptInList(node);
+  }
+  public static boolean baseMappingRule_Condition_1171416050076(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.opGetAncestor_reduceDefault(node);
+  }
+  public static boolean baseMappingRule_Condition_1171416050083(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.opGetAncestor_reduceWhereConceptInList(node);
   }
   public static boolean baseMappingRule_Condition_1171323169610(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "concept", false) != null;
@@ -283,6 +289,21 @@ public class QueriesGenerated {
     SNode parmConcept = SLinkOperations.getTarget(node, "concept", false);
     return NameUtil.nodeFQName(parmConcept);
   }
+  public static String propertyMacro_GetPropertyValue_1171415812330(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return "" + _QueriesUtil.operationHasParm_Inclusion(node);
+  }
+  public static String propertyMacro_GetPropertyValue_1171415812339(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return "" + _QueriesUtil.operationHasParm_Root(node);
+  }
+  public static String propertyMacro_GetPropertyValue_1171415960029(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return NameUtil.nodeFQName(node);
+  }
+  public static String propertyMacro_GetPropertyValue_1171415960036(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return "" + _QueriesUtil.operationHasParm_Inclusion(node);
+  }
+  public static String propertyMacro_GetPropertyValue_1171415960045(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return "" + _QueriesUtil.operationHasParm_Root(node);
+  }
   public static SNode referenceMacro_GetReferent_1170457360268(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return _QueriesUtil.get_SPropertyAccess_simple_getterMethod(((SPropertyAccess)SNodeOperations.getAdapter(node)), scope);
   }
@@ -300,6 +321,10 @@ public class QueriesGenerated {
     return SModelLanguageTypesUtil.tryObtain_snode_adapterClass(SLinkOperations.getTarget(noe, "leftExpression", true), generator.getTypeChecker());
   }
   public static List sourceNodesQuery_1168293467222(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode op = SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "nodeOperation", true);
+    return (List<SNode>)_QueriesUtil.getNodeOperation_ConceptList_concepts(((SNodeOperation)SNodeOperations.getAdapter(op)));
+  }
+  public static List sourceNodesQuery_1171415960010(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode op = SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "nodeOperation", true);
     return (List<SNode>)_QueriesUtil.getNodeOperation_ConceptList_concepts(((SNodeOperation)SNodeOperations.getAdapter(op)));
   }
@@ -520,6 +545,12 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
   }
   public static SNode sourceNodeQuery_1171324442831(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
+  }
+  public static SNode sourceNodeQuery_1171415812317(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
+  }
+  public static SNode sourceNodeQuery_1171415959996(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
   }
 }

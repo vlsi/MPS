@@ -49,6 +49,9 @@ public class Child_Referent_Parent {
   public void accessToParentNode_2(SNode expression) {
     SNode parent_IfStatement = SNodeOperations.getParent(expression, "jetbrains.mps.baseLanguage.structure.IfStatement", false, false);
   }
+  public void accessToAncestor_1(SNode expression) {
+    SNode ifStatement = SNodeOperations.getParent(expression, "jetbrains.mps.baseLanguage.structure.IfStatement", true, false);
+  }
   public void accessToParentNode_3(SNode expression) {
     SNode parent_If_or_WhileStatement = SNodeOperations.getParentWhereConceptInList(expression, new String[]{"jetbrains.mps.baseLanguage.structure.IfStatement","jetbrains.mps.baseLanguage.structure.WhileStatement"}, false, false);
   }
