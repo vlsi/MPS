@@ -514,4 +514,9 @@ public abstract class BaseAdapter {
   public void putUserObject(@NotNull Object key, @Nullable Object value) {
     myNode.putUserObject(key, value);
   }
+
+  public boolean isRoot() {
+    return myNode.isRoot();
+  }
+
 }

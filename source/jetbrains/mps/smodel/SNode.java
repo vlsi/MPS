@@ -1510,16 +1510,6 @@ public class SNode implements Cloneable, Iterable<SNode> {
     return null;
   }
 
-  @Deprecated
-  public <T extends SNode> List<T> findParents(Class<T> aClass) {
-    List<T> list = new ArrayList<T>();
-    T currNode = getParent(aClass);
-    for (; currNode != null; currNode = currNode.getParent(aClass, false)) {
-      list.add(currNode);
-    }
-    return list;
-  }
-
   public BaseAdapter findFirstParent(Class<? extends BaseAdapter>[] classes) {
     SNode node = this;
     BaseAdapter parent = BaseAdapter.fromNode(node.getParent());
