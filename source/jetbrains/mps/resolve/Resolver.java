@@ -171,7 +171,7 @@ public class Resolver {
           if (userObject == refLinkDeclaration.getNode()) {
             return cell;
           }
-          if (userObject == childLinkDeclaration.getNode()) {
+          if (childLinkDeclaration != null && userObject == childLinkDeclaration.getNode()) {
             if (foundCell == null) foundCell = cell;
           }
         }
