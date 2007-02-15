@@ -98,7 +98,6 @@ public class GenerationSession implements IGenerationSession {
         return myHandler;
       }
     });
-    System.out.println("status : " + status.hasWarnings());
     if (status.isError() || status.hasWarnings()) {
       // if ERROR - keep transient models: we need them to navigate to from error messages
       myDiscardTransients = false;
@@ -137,7 +136,6 @@ public class GenerationSession implements IGenerationSession {
       SModel outputModel = generateModel(sourceModel, targetLanguage, generator);
       boolean wasErrors = generator.getErrorCount() > 0;
       boolean hasWarnigns = generator.getWarningCount() > 0;
-      System.out.println("warnings : " + hasWarnigns);
       status = new GenerationStatus(sourceModel, outputModel, context.getTraceMap(), wasErrors, hasWarnigns, false);
       addMessage(status.isError() ? MessageKind.WARNING : MessageKind.INFORMATION, "model \"" + sourceModel.getUID() + "\" has been generated " + (status.isError() ? "with errors" : "successfully"));
       generator.reset();
