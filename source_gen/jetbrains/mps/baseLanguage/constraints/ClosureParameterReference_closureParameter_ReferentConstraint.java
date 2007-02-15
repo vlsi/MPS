@@ -29,7 +29,7 @@ public class ClosureParameterReference_closureParameter_ReferentConstraint imple
   }
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     SNode enclosingClosure = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.Closure", true, false);
-    return new SimpleSearchScope(enclosingClosure.getChildren());
+    return new SimpleSearchScope(SNodeOperations.getChildren(enclosingClosure));
   }
   public String getNodeReferentSearchScopeDescription() {
     return "closure-parameters declaring in enclosing closure";
