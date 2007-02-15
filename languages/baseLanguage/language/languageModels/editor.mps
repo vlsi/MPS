@@ -1772,11 +1772,9 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1166035431639">
               <link role="classConcept" extResolveInfo="48.[Classifier]ParenthesisUtil" />
               <link role="baseMethodDeclaration" extResolveInfo="48.static method ([Classifier]ParenthesisUtil).([StaticMethodDeclaration]addClosingParenthesis((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Expression]), (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EditorContext])) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.CastExpression" id="1166035784258">
-                <node role="expression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1166035784259" />
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1166035784260">
-                  <link role="classifier" extResolveInfo="44.[Classifier]Expression" />
-                </node>
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1171545042393">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1171545043333" />
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1166035784259" />
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1166035451111" />
               <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_editorContext" id="1166090256931" />
@@ -1797,11 +1795,9 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1166035468582">
               <link role="classConcept" extResolveInfo="48.[Classifier]ParenthesisUtil" />
               <link role="baseMethodDeclaration" extResolveInfo="48.static method ([Classifier]ParenthesisUtil).([StaticMethodDeclaration]addClosingParenthesis((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Expression]), (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EditorContext])) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.CastExpression" id="1166035794760">
-                <node role="expression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1166035794761" />
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1166035794762">
-                  <link role="classifier" extResolveInfo="44.[Classifier]Expression" />
-                </node>
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1171545046991">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1171545047994" />
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1166035794761" />
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1166035468584">
                 <property name="value" value="true" />
@@ -6000,11 +5996,9 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1166102291297">
               <link role="classConcept" extResolveInfo="48.[Classifier]ParenthesisUtil" />
               <link role="baseMethodDeclaration" extResolveInfo="48.static method ([Classifier]ParenthesisUtil).([StaticMethodDeclaration]moveParenthesisToTheRight((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ParenthesizedExpression]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EditorContext])) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.CastExpression" id="1166102291298">
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1166102291299">
-                  <link role="classifier" extResolveInfo="44.[Classifier]ParenthesizedExpression" />
-                </node>
-                <node role="expression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1166102291300" />
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1171544980718">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1171544983534" />
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1166102291300" />
               </node>
               <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_editorContext" id="1166111860240" />
             </node>
@@ -6024,11 +6018,9 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1166113551774">
               <link role="classConcept" extResolveInfo="48.[Classifier]ParenthesisUtil" />
               <link role="baseMethodDeclaration" extResolveInfo="48.static method ([Classifier]ParenthesisUtil).([StaticMethodDeclaration]moveParenthesisToTheLeftInside((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ParenthesizedExpression]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EditorContext])) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.CastExpression" id="1166113551775">
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1166113551776">
-                  <link role="classifier" extResolveInfo="44.[Classifier]ParenthesizedExpression" />
-                </node>
-                <node role="expression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1166113551777" />
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1171544987269">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1171544988726" />
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1166113551777" />
               </node>
               <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_editorContext" id="1166113551778" />
             </node>
@@ -6052,11 +6044,9 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1166110801462">
               <link role="classConcept" extResolveInfo="48.[Classifier]ParenthesisUtil" />
               <link role="baseMethodDeclaration" extResolveInfo="48.static method ([Classifier]ParenthesisUtil).([StaticMethodDeclaration]moveParenthesisToTheLeft((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ParenthesizedExpression]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EditorContext])) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.CastExpression" id="1166110801463">
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1166110801464">
-                  <link role="classifier" extResolveInfo="44.[Classifier]ParenthesizedExpression" />
-                </node>
-                <node role="expression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1166110801465" />
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1171545003930">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1171545004761" />
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1166110801465" />
               </node>
               <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_editorContext" id="1166111811556" />
             </node>
@@ -6076,11 +6066,9 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1166114419158">
               <link role="classConcept" extResolveInfo="48.[Classifier]ParenthesisUtil" />
               <link role="baseMethodDeclaration" extResolveInfo="48.static method ([Classifier]ParenthesisUtil).([StaticMethodDeclaration]moveParenthesisToTheRightInside((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ParenthesizedExpression]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EditorContext])) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.CastExpression" id="1166114419159">
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1166114419160">
-                  <link role="classifier" extResolveInfo="44.[Classifier]ParenthesizedExpression" />
-                </node>
-                <node role="expression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1166114419161" />
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1171545009340">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1171545010765" />
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1166114419161" />
               </node>
               <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_editorContext" id="1166114419162" />
             </node>
