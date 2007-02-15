@@ -12,9 +12,10 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.baseLanguage.BaseLanguageSearchUtil_new;
 import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import java.util.List;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class StaticFieldReference_staticFieldDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
@@ -32,7 +33,7 @@ public class StaticFieldReference_staticFieldDeclaration_ReferentConstraint impl
     return SLinkOperations.getTarget(referenceNode, "classifier", false) != null;
   }
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    ISearchScope hierarchyScope = BaseLanguageSearchUtil_new.createClassifierHierarchyScope((Classifier)BaseAdapter.fromNode(SLinkOperations.getTarget(referenceNode, "classifier", false)), IClassifiersSearchScope.STATIC_FIELD);
+    ISearchScope hierarchyScope = BaseLanguageSearchUtil_new.createClassifierHierarchyScope(((Classifier)SNodeOperations.getAdapter(SLinkOperations.getTarget(referenceNode, "classifier", false))), IClassifiersSearchScope.STATIC_FIELD);
     List fields = BaseAdapter.toNodes(BaseLanguageSearchUtil_new.getFieldsExcludingOverridden(hierarchyScope));
     return new SimpleSearchScope((List<SNode>)fields);
   }

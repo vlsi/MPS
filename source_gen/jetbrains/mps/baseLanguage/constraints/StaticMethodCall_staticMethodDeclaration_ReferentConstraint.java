@@ -11,10 +11,11 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.baseLanguage.BaseLanguageSearchUtil_new;
-import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.baseLanguage.structure.ClassConcept;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import java.util.List;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class StaticMethodCall_staticMethodDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
@@ -32,7 +33,7 @@ public class StaticMethodCall_staticMethodDeclaration_ReferentConstraint impleme
     return SLinkOperations.getTarget(referenceNode, "classConcept", false) != null;
   }
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    ISearchScope hierarchyScope = BaseLanguageSearchUtil_new.createClassifierHierarchyScope((Classifier)BaseAdapter.fromNode(SLinkOperations.getTarget(referenceNode, "classConcept", false)), IClassifiersSearchScope.STATIC_METHOD);
+    ISearchScope hierarchyScope = BaseLanguageSearchUtil_new.createClassifierHierarchyScope(((ClassConcept)SNodeOperations.getAdapter(SLinkOperations.getTarget(referenceNode, "classConcept", false))), IClassifiersSearchScope.STATIC_METHOD);
     List methods = BaseAdapter.toNodes(BaseLanguageSearchUtil_new.getMethodsExcludingOverridden(hierarchyScope));
     return new SimpleSearchScope((List<SNode>)methods);
   }
