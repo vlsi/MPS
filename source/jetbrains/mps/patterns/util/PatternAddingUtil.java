@@ -29,7 +29,8 @@ public class PatternAddingUtil {
     EditorCell contextCell = context.getSelectedCell();
     SNode node = contextCell.getSNode();
     SModel model = node.getModel();
-    LinkDeclaration linkDeclaration = (LinkDeclaration) contextCell.getUserObject(EditorCell.METAINFO_LINK_DECLARATION);
+    LinkDeclaration linkDeclaration = (LinkDeclaration)
+            BaseAdapter.fromNode((SNode) contextCell.getUserObject(EditorCell.METAINFO_LINK_DECLARATION));
     if (linkDeclaration != null && SModelUtil_new.getGenuineLinkMetaclass(linkDeclaration) == LinkMetaclass.reference) {
       linkDeclaration = SModelUtil_new.getGenuineLinkDeclaration(linkDeclaration);
       String role = linkDeclaration.getRole();
