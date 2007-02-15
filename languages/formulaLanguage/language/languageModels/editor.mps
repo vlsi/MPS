@@ -6,7 +6,6 @@
   <maxImportIndex value="6" />
   <import index="1" modelUID="jetbrains.mps.formulaLanguage.structure" />
   <import index="2" modelUID="jetbrains.mps.formulaLanguage.editor" />
-  <import index="3" modelUID="jetbrains.mps.formulaLanguage@java_stub" />
   <import index="4" modelUID="jetbrains.mps.smodel@java_stub" />
   <import index="5" modelUID="jetbrains.mps.core.structure" />
   <import index="6" modelUID="java.lang@java_stub" />
