@@ -186,8 +186,10 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     return new SimpleNodeBuilder(outputNode);
   }
 
-  //todo Should be optimized!!! - and why this method is needed at all?
+  //todo this method supposes that inputNode is not changed - it should be deprecated after going to new generator
   public INodeBuilder findNodeBuilderForSource(SNode inputNode, Condition<INodeBuilder> condition) {
+    return new SimpleNodeBuilder(inputNode);
+/*
    for (Pair<SNode,SNode> key : myTemplateNodeAndInputNodeToOutputNodeMap.keySet()) {
       if (key.o1 == inputNode) {
         SNode outputNode = myTemplateNodeAndInputNodeToOutputNodeMap.get(key);
@@ -195,15 +197,18 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
         if (condition.met(builder)) return builder;
       }
     }
-    return null;
+*/
+//    return null;
   }
 
+  //todo this method supposes that inputNode is not changed - it should be deprecated after going to new generator
   public INodeBuilder findNodeBuilderForSource(SNode inputNode) {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    return new SimpleNodeBuilder(inputNode);
   }
 
+  //todo this method supposes that inputNode is not changed - it should be deprecated after going to new generator
   public INodeBuilder findCopyingNodeBuilderForSource(SNode inputNode) {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    return new SimpleNodeBuilder(inputNode);
   }
 
   public INodeBuilder findNodeBuilderForSourceAndTemplate(SNode source, SNode template) {
