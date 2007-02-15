@@ -5,15 +5,17 @@ package smodelLanguage.samples;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 
 public class Children {
 
   public void accessToChildren_1(SNode statementList) {
-    int count = SLinkOperations.getCount(statementList, "statement");
+    int count1 = SLinkOperations.getCount(statementList, "statement");
     List<SNode> statements = SLinkOperations.getTargets(statementList, "statement", true);
-    count = statements.size();
+    int count2 = ListOperations.getSize(statements);
+    int count3 = ((List<SNode>)statements).size();
   }
   public void accessToChildren_2(SNode statementList1, SNode statementList2) {
     SLinkOperations.addNewChild(statementList1, "statement", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
