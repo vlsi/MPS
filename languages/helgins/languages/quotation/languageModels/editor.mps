@@ -10,7 +10,6 @@
   <import index="4" modelUID="jetbrains.mps.nodeEditor@java_stub" />
   <import index="5" modelUID="jetbrains.mps.smodel@java_stub" />
   <import index="7" modelUID="jetbrains.mps.annotations@java_stub" />
-  <import index="8" modelUID="jetbrains.mps.bootstrap.structureLanguage@java_stub" />
   <import index="10" modelUID="java.lang@java_stub" />
   <import index="11" modelUID="jetbrains.mps.core@java_stub" />
   <import index="12" modelUID="jetbrains.mps.quotation.structure@java_stub" />

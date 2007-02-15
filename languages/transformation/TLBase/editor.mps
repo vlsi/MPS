@@ -16,7 +16,6 @@
   <import index="15" modelUID="jetbrains.mps.transformation.TLBase.editor@java_stub" />
   <import index="18" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="61" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" />
-  <import index="62" modelUID="jetbrains.mps.bootstrap.structureLanguage@java_stub" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1087903454703">
     <property name="name" value="PropertyMacro_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1087833241328" />

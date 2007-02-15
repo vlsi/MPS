@@ -1832,5 +1832,5 @@ public class SNode implements Cloneable, Iterable<SNode> {
       node = node.getParent();
     }
     return (node == this);
-  }
+  }    
 }
