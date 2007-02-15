@@ -7,7 +7,6 @@ import jetbrains.mps.generator.template.*;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.transformation.TLBase.structure.*;
 import jetbrains.mps.transformation.TLBase.structure.CreateRootRule;
 import jetbrains.mps.transformation.TLBase.structure.MappingRule;
 import jetbrains.mps.transformation.TLBase.structure.Root_MappingRule;
@@ -15,7 +14,6 @@ import jetbrains.mps.transformation.TLBase.structure.TemplateSwitch;
 import jetbrains.mps.transformation.TLBase.structure.WeavingRule;
 import jetbrains.mps.transformation.TLBase.structure.Weaving_MappingRule;
 import jetbrains.mps.transformation.TLBase.structure.TemplateDeclaration;
-import jetbrains.mps.transformation.TLBase.*;
 import jetbrains.mps.typesystem.ITypeChecker;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Pair;
@@ -259,6 +257,11 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
 
   public int getErrorCount() {
     return 0;  //To change body of implemented methods use File | Settings | File Templates.
+  }
+
+
+  public int getWarningCount() {
+    return 0;
   }
 
   public AbstractNodeBuilderManager getNodeBuilderManager() {

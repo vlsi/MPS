@@ -11,7 +11,7 @@ public interface IStatus {
     OK,ERROR
   }
 
-  boolean isOk();
+  boolean isOk(); 
 
   boolean isError();
 

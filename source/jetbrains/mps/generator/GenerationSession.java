@@ -98,8 +98,8 @@ public class GenerationSession implements IGenerationSession {
         return myHandler;
       }
     });
-
-    if (status.isError()) {
+    System.out.println("status : " + status.hasWarnings());
+    if (status.isError() || status.hasWarnings()) {
       // if ERROR - keep transient models: we need them to navigate to from error messages
       myDiscardTransients = false;
     }
@@ -107,12 +107,14 @@ public class GenerationSession implements IGenerationSession {
   }
 
 
-  private GenerationStatus generateModel_internal(SModelDescriptor sourceModelDescriptor, Language targetLanguage, Set<MappingConfiguration> mappings)
+  private GenerationStatus generateModel_internal(SModelDescriptor sourceModelDescriptor,
+                                                  Language targetLanguage,
+                                                  Set<MappingConfiguration> mappings)
           throws ClassNotFoundException,
-          NoSuchMethodException,
-          IllegalAccessException,
-          InvocationTargetException,
-          InstantiationException {
+                 NoSuchMethodException,
+                 IllegalAccessException,
+                 InvocationTargetException,
+                 InstantiationException {
 
     myInvocationCount++;
     myTransientModelsCount = 0;
@@ -124,7 +126,7 @@ public class GenerationSession implements IGenerationSession {
     List<Generator> generators = context.getGeneratorModules();
     if (generators.isEmpty()) {
       addProgressMessage(MessageKind.WARNING, "skip model \"" + sourceModel.getUID() + "\" : no generator avalable");
-      return new GenerationStatus(sourceModel, null, null, false, false);
+      return new GenerationStatus(sourceModel, null, null, false, false, false);
     }
     setGenerationSessionContext(context);
 
@@ -134,7 +136,9 @@ public class GenerationSession implements IGenerationSession {
     try {
       SModel outputModel = generateModel(sourceModel, targetLanguage, generator);
       boolean wasErrors = generator.getErrorCount() > 0;
-      status = new GenerationStatus(sourceModel, outputModel, context.getTraceMap(), wasErrors, false);
+      boolean hasWarnigns = generator.getWarningCount() > 0;
+      System.out.println("warnings : " + hasWarnigns);
+      status = new GenerationStatus(sourceModel, outputModel, context.getTraceMap(), wasErrors, hasWarnigns, false);
       addMessage(status.isError() ? MessageKind.WARNING : MessageKind.INFORMATION, "model \"" + sourceModel.getUID() + "\" has been generated " + (status.isError() ? "with errors" : "successfully"));
       generator.reset();
     } catch (GenerationCanceledException gce) {

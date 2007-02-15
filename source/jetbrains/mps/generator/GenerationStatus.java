@@ -14,13 +14,15 @@ public class GenerationStatus extends Status {
   private SModel myOutputModel;
   private SModel mySourceModel;
   private boolean myCanceled;
+  private boolean myWarnings;
   private TraceMap myTraceMap;
 
-  public GenerationStatus(SModel sourceModel, SModel outputModel, TraceMap traceMap, boolean errors, boolean canceled) {
+  public GenerationStatus(SModel sourceModel, SModel outputModel, TraceMap traceMap, boolean errors, boolean warnings, boolean canceled) {
     super(errors ? Code.ERROR : Code.OK, null);
     myCanceled = canceled;
     myOutputModel = outputModel;
     mySourceModel = sourceModel;
+    myWarnings = warnings;
     myTraceMap = traceMap;
   }
 
@@ -30,6 +32,10 @@ public class GenerationStatus extends Status {
 
   public boolean isCanceled() {
     return myCanceled;
+  }
+
+  public boolean hasWarnings() {
+    return myWarnings;
   }
 
   public SModel getOutputModel() {
@@ -46,7 +52,7 @@ public class GenerationStatus extends Status {
 
   public static class ERROR extends GenerationStatus {
     public ERROR(SModel sourceModel) {
-      super(sourceModel, null, null, true, false);
+      super(sourceModel, null, null, true, false, false);
     }
   }
 }
