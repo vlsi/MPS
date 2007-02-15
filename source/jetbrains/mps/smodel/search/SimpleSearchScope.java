@@ -13,8 +13,8 @@ import java.util.*;
 public class SimpleSearchScope extends AbstractSearchScope {
   private List myNodes;
 
-  public SimpleSearchScope(List<SNode> nodes) {
-    myNodes = (List) nodes;
+  public SimpleSearchScope(List nodes) {
+    myNodes = nodes;
   }
 
   public SimpleSearchScope(SNode node) {
