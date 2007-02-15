@@ -43,6 +43,8 @@ public class SNode implements Cloneable, Iterable<SNode> {
   private String myRoleInParent;
   private SNode myParent;
 
+  private Throwable myCreationPoint = new Throwable();
+
   private Map<String, Integer> myChildInRoleCount = new HashMap<String, Integer>();
   private List<SNode> myChildren;
 
@@ -73,9 +75,6 @@ public class SNode implements Cloneable, Iterable<SNode> {
   public SNode(@NotNull SModel model, String conceptFqName) {
     this(model);
     myConceptName = conceptFqName;
-    if ("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(conceptFqName)) {
-      System.err.println("oy, vey!");
-    }
   }
 
   public void changeModel(SModel newModel) {
@@ -1423,9 +1422,13 @@ public class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public ConceptDeclaration getConceptDeclarationAdapter(IScope scope) {
-    String conceptFQName = getTypeFqName();
+    String conceptFQName = getConceptFqName();
     ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFQName, scope);
-    assert concept != null : "couldn't find concept declaration '" + conceptFQName + "' in scope:" + scope;
+
+    if (concept == null) {
+      LOG.error("couldn't find concept declaration '" + conceptFQName + "' in scope:" + scope + " node " + getId() + " from model " + getModel().getUID());
+    }
+
     return concept;
   }
 
