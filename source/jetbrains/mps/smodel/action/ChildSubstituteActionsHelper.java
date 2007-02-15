@@ -1,16 +1,14 @@
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder;
 import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions;
+import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder;
 import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction;
 import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.core.structure.BaseConcept;
-import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
@@ -26,11 +24,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Jan 24, 2006
- * Time: 8:30:20 PM
- * To change this template use File | Settings | File Templates.
+ * Igor Alshannikov
+ * Jan 24, 2006
  */
 public class ChildSubstituteActionsHelper {
   private static final Logger LOG = Logger.getLogger(ChildSubstituteActionsHelper.class);
@@ -148,8 +143,8 @@ public class ChildSubstituteActionsHelper {
           final SNode currentChild,
           IChildNodeSetter childSetter,
           final IScope scope) {
-    // try to create referent-search-scope
 
+    // try to create referent-search-scope
     IStatus status = ModelConstraintsUtil.getReferentSearchScope(parentNode, null, referenceNodeConcept, smartReference, scope);
     if (status.isError()) return null;
 
@@ -159,20 +154,9 @@ public class ChildSubstituteActionsHelper {
     ISearchScope searchScope = (ISearchScope) status.getUserObject();
     final ConceptDeclaration targetConcept = smartReference.getTarget();
 
-
-    Class targetConceptClass;
-    try {
-      targetConceptClass = Class.forName(
-              JavaNameUtil.className(targetConcept),
-              true, ClassLoaderManager.getInstance().
-              getClassLoader());
-    } catch (ClassNotFoundException ex) {
-      throw new RuntimeException(ex);
-    }
-
     List<SNode> referentNodes = searchScope.getNodes();
-    for (final SNode referentNode : referentNodes) {
-      if (targetConceptClass.isInstance(referentNode)) {
+    for (SNode referentNode : referentNodes) {
+      if (referentNode.isInstanceOfConcept(targetConcept, scope)) {
         actions.add(new DefaultChildNodeSubstituteAction(referentNode, parentNode, currentChild, childSetter, scope) {
           String myMatchingText = null;
 

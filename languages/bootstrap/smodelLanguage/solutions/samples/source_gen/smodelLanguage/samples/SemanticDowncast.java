@@ -14,7 +14,8 @@ public class SemanticDowncast {
   }
   public void invoke_getID_method_2(SNode ifStatement) {
     String id_verbose = ((SNode)((SNode)SLinkOperations.getTarget(ifStatement, "condition", true))).getId();
-    String id_briefly = SLinkOperations.getTarget(ifStatement, "condition", true).getId();
+    String id_better1 = SLinkOperations.getTarget(ifStatement, "condition", true).getId();
+    String id_better2 = SLinkOperations.getTarget(ifStatement, "condition", true).getId();
   }
   public void countChildren(SNode methodCall) {
     int count_verbose_not_efficient = ((List<SNode>)SLinkOperations.getTargets(methodCall, "actualArgument", true)).size();

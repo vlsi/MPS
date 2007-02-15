@@ -7,16 +7,13 @@ import jetbrains.mps.util.Condition;
 import java.util.*;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Mar 1, 2006
- * Time: 5:46:55 PM
- * To change this template use File | Settings | File Templates.
+ * Igor Alshannikov
+ * Mar 1, 2006
  */
 public class SimpleSearchScope extends AbstractSearchScope {
   private List myNodes;
 
-  public SimpleSearchScope(List<? extends SNode> nodes) {
+  public SimpleSearchScope(List<SNode> nodes) {
     myNodes = (List) nodes;
   }
 
@@ -30,13 +27,12 @@ public class SimpleSearchScope extends AbstractSearchScope {
   public List<SNode> getOwnNodes(Condition<SNode> condition) {
     List<SNode> result = null;
 
-    for (int i = 0; i < myNodes.size(); i++) {
-      SNode node = null;
-
-      if (myNodes.get(i) instanceof SNode) {
-        node = (SNode) myNodes.get(i);
+    for (Object myNode : myNodes) {
+      SNode node;
+      if (myNode instanceof SNode) {
+        node = (SNode) myNode;
       } else {
-        node = ((BaseAdapter)myNodes.get(i)).getNode();
+        node = ((BaseAdapter) myNode).getNode();
       }
 
       if (condition.met(node)) {
