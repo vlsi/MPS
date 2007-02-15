@@ -73,6 +73,9 @@ public class SNode implements Cloneable, Iterable<SNode> {
   public SNode(@NotNull SModel model, String conceptFqName) {
     this(model);
     myConceptName = conceptFqName;
+    if ("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(conceptFqName)) {
+      System.err.println("oy, vey!");
+    }
   }
 
   public void changeModel(SModel newModel) {
