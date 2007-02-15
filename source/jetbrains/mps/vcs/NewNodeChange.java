@@ -1,13 +1,13 @@
 package jetbrains.mps.vcs;
 
 public abstract class NewNodeChange extends Change {
-  private String myNodeType;
+  private String myConceptFqName;
   private String myNodeId;
   private String myNodeRole;
   private String myNodeParent;
 
-  protected NewNodeChange(String nodeType, String nodeId, String nodeRole, String nodeParent) {
-    myNodeType = nodeType;
+  protected NewNodeChange(String conceptFqName, String nodeId, String nodeRole, String nodeParent) {
+    myConceptFqName = conceptFqName;
     myNodeId = nodeId;
     myNodeRole = nodeRole;
     myNodeParent = nodeParent;
@@ -17,8 +17,8 @@ public abstract class NewNodeChange extends Change {
     return getNodeId();
   }
 
-  public String getNodeType() {
-    return myNodeType;
+  public String getConceptFqName() {
+    return myConceptFqName;
   }
 
   public String getNodeId() {

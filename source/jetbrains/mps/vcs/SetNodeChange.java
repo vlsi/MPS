@@ -1,8 +1,7 @@
 package jetbrains.mps.vcs;
 
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.ModelPersistence;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.project.GlobalScope;
 
 public class SetNodeChange extends NewNodeChange {
   public SetNodeChange(String nodeType, String nodeId, String role, String parentId) {
@@ -18,7 +17,7 @@ public class SetNodeChange extends NewNodeChange {
     if (parent == null) {
       return false;
     }
-    SNode n = ModelPersistence.createNodeInstance(getNodeType(), m);
+    SNode n = SModelUtil_new.instantiateConceptDeclaration(getConceptFqName(), m, GlobalScope.getInstance());
     assert n != null;
     n.setId(getNodeId());
     parent.setChild(getNodeRole(), n);

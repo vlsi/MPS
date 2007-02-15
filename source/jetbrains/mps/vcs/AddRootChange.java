@@ -3,6 +3,8 @@ package jetbrains.mps.vcs;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelPersistence;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class AddRootChange extends NewNodeChange {
   public AddRootChange(String type, String nodeId) {
@@ -14,7 +16,7 @@ public class AddRootChange extends NewNodeChange {
   }
 
   public boolean apply(SModel m) {
-    SNode n = ModelPersistence.createNodeInstance(getNodeType(), m);
+    SNode n = SModelUtil_new.instantiateConceptDeclaration(getConceptFqName(), m, GlobalScope.getInstance());
     assert n != null;
     n.setId(getNodeId());
     m.addRoot(n);

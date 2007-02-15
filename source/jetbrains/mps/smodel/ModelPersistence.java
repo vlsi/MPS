@@ -353,7 +353,7 @@ public class ModelPersistence {
 
 
   @Nullable
-  public static SNode createNodeInstance(@NotNull String type,
+  private static SNode createNodeInstance(@NotNull String type,
                                          @NotNull SModel model) {
     try {
       if (!model.getUID().toString().startsWith(NameUtil.namespaceFromLongName(type)) &&
