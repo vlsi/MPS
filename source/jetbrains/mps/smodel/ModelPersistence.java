@@ -1,6 +1,5 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.core.error.ErrorNode;
 import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.logging.Logger;
@@ -440,10 +439,6 @@ public class ModelPersistence {
 
     // languages
     for (String languageNamespace : sourceModel.getExplicitlyImportedLanguages()) {
-      if (languageNamespace.equals(BootstrapLanguages.getInstance().getErrorsLanguage().getNamespace())) {
-        continue;
-      }
-
       Element languageElem = new Element(LANGUAGE);
       languageElem.setAttribute(NAMESPACE, languageNamespace);
       int version = -1;
@@ -538,10 +533,6 @@ public class ModelPersistence {
     Map<String, String> properties = node.getProperties();
     Set<String> keys = properties.keySet();
     for (String propertyName : keys) {
-      if (node instanceof ErrorNode && propertyName.equals(ErrorNode.TYPE)) {
-        continue;
-      }
-
       Element propertyElement = new Element(PROPERTY);
       element.addContent(propertyElement);
       propertyElement.setAttribute(NAME, propertyName);
