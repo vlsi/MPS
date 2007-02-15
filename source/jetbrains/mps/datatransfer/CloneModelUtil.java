@@ -52,7 +52,7 @@ public class CloneModelUtil {
   }
 
   private static SNode clone (SNode node, SModel targetModel, IScope scope) {
-    SNode result = ModelPersistence.createNodeInstance(node.getClass().getName(), targetModel);
+    SNode result = SModelUtil_new.instantiateConceptDeclaration(node.getConceptFqName(), targetModel, scope, false);
     assert result != null;
     result.setId(node.getId());
     targetModel.addLanguage(node.getLanguage(scope));

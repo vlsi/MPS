@@ -373,8 +373,7 @@ public void applyWeavingMappingRule(Weaving_MappingRule rule) {
       }
 
     }
-
-    SNode outputNode = ModelPersistence.createNodeInstance(templateNode.getClass().getName(), myOutputModel);
+    SNode outputNode = SModelUtil_new.instantiateConceptDeclaration(templateNode.getConceptFqName(), myOutputModel, myGenerator.getScope(), false);
     if(outputNode == null) {
       myGenerator.showErrorMessage(null, templateNode, "'createNodeFromTemplate' cannot create output node");
       return null;
@@ -430,8 +429,7 @@ public void applyWeavingMappingRule(Weaving_MappingRule rule) {
     if(outputNodes != null) {
        return outputNodes;
     }
-
-    SNode outputNode = ModelPersistence.createNodeInstance(templateNode.getClass().getName(), myOutputModel);
+    SNode outputNode = SModelUtil_new.instantiateConceptDeclaration(templateNode.getConceptFqName(), myOutputModel, myGenerator.getScope(), false);
     if(outputNode == null) {
       myGenerator.showErrorMessage(null, templateNode, "'copyNodeFromInputNode' cannot create output node");
       return null;

@@ -106,6 +106,11 @@ public class FastRuleFinder {
       allRules = myRules_all.get(concept);
     }
 
+    if (allRules == null) {
+      return null;
+    }
+
+
     for (Reduction_MappingRule rule : allRules) {
       if (TemplateGenUtil.checkConditionForBaseMappingRule(node, rule, generator)) {
         return BaseAdapter.fromAdapter(rule);

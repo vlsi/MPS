@@ -72,6 +72,11 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
       ruleUtil.applyWeavingMappingRule(weavingMappingRule);
     }
 
+    for (ReferenceInfo referenceInfo : myReferenceInfos) {
+      referenceInfo.execute(this);
+    }
+    
+
    for (SNode rootNode : myRootsToDelete) {
       myModel.removeRoot(rootNode);
     }
@@ -94,9 +99,6 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
 
     myDelayedChanges.doAllChanges();
 
-    for (ReferenceInfo referenceInfo : myReferenceInfos) {
-      referenceInfo.execute(this);
-    }
   }
 
 

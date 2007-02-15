@@ -52,7 +52,7 @@ public class MacroUtil {
       Object[] args = new Object[]{
               sourceNode,
               templateNode,
-              propertyMacro.getProperty(),
+              BaseAdapter.fromAdapter(propertyMacro.getProperty()),
               generator};
       propertyValue = (String) QueryMethod.invoke("propertyMacro_" + propertyMacro.getAspectMethodName(), args, propertyMacro.getModel());
     }
