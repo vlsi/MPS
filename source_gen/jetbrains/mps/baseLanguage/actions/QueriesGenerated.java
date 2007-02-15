@@ -70,10 +70,8 @@ public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_CastExpression_1158871408598(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
     if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Expression")) {
       SLinkOperations.setTarget(newNode, "expression", SNodeOperations.copyNode(sampleNode), true);
-      if(sampleNode != null) {
-        SNode castType = CastExpression_FactoryUtil.computeCastType(sampleNode);
-        SLinkOperations.setTarget(newNode, "type", castType, true);
-      }
+      SNode castType = CastExpression_FactoryUtil.computeCastType(sampleNode);
+      SLinkOperations.setTarget(newNode, "type", castType, true);
     }
   }
   public static void nodeFactory_NodeSetup_ReturnStatement_1158938591702(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
