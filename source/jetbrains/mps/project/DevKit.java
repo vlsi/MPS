@@ -135,6 +135,14 @@ public class DevKit extends AbstractModule {
   }
 
 
+  @NotNull
+  public List<String> getClassPathItems() {
+    List<String> result = new ArrayList<String>();
+    for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(myDescriptor.classPathEntrys())) {
+      result.add(entry.getPath());
+    }
+    return result;
+  }
 
   public void save() {
     DescriptorsPersistence.saveDevKitDescriptor(getModuleDescriptor(), myDescriptorFile);
