@@ -1,8 +1,8 @@
 package jetbrains.mps.nodeEditor.cellMenu;
 
-import jetbrains.mps.bootstrap.structureLanguage.EnumerationDataTypeDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
