@@ -1,9 +1,9 @@
 package jetbrains.mps.baseLanguage.helgins;
 
-import jetbrains.mps.baseLanguage.Classifier;
-import jetbrains.mps.baseLanguage.ClassifierType;
+import jetbrains.mps.baseLanguage.structure.Classifier;
+import jetbrains.mps.baseLanguage.structure.ClassifierType;
 import jetbrains.mps.formulaLanguage.evaluator.Omega;
-import jetbrains.mps.helgins.RuntimeErrorType;
+import jetbrains.mps.helgins.structure.RuntimeErrorType;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
@@ -40,17 +40,17 @@ public class Queries {
       SModelDescriptor javaLangJavaStubModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("java.lang@java_stub"));
       assert javaLangJavaStubModelDescriptor != null;
       SModel javaLang = javaLangJavaStubModelDescriptor.getSModel();
-      SNode stringClass = javaLang.getRootByName("String");
-      if (leftType instanceof ClassifierType && ((ClassifierType)leftType).getClassifier() == stringClass
-              || rightType instanceof ClassifierType && ((ClassifierType)rightType).getClassifier() == stringClass) {
-        ClassifierType classifierType = new ClassifierType(runtimeTypesModel);
+      BaseAdapter stringClass = javaLang.getRootAdapterByName("String");
+      if (BaseAdapter.isInstance(leftType, ClassifierType.class) && ((ClassifierType) BaseAdapter.fromNode(leftType)).getClassifier() == stringClass
+              || BaseAdapter.isInstance(rightType, ClassifierType.class) && ((ClassifierType) BaseAdapter.fromNode(rightType)).getClassifier() == stringClass) {
+        ClassifierType classifierType = ClassifierType.newInstance(runtimeTypesModel);
         classifierType.setClassifier((Classifier) stringClass);
-        return classifierType;
+        return classifierType.getNode();
       }
     }
 
     if (lowestCommonSupertypes.isEmpty()) {
-      RuntimeErrorType runtimeErrorType = new RuntimeErrorType(runtimeTypesModel);
+      RuntimeErrorType runtimeErrorType = RuntimeErrorType.newInstance(runtimeTypesModel);
       runtimeErrorType.setErrorText("incompatible types");
       return runtimeErrorType;
     }
