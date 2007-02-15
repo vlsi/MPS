@@ -1,12 +1,13 @@
 package jetbrains.mps.ide.actions.tools;
 
-import jetbrains.mps.baseLanguage.*;
+import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 
@@ -73,12 +74,12 @@ public class InternalRefactoringAction extends MPSAction {
     // ---- static field ref.
     List<SNode> staticFieldReferences = model.allNodes(new Condition<SNode>() {
       public boolean met(SNode object) {
-        return object instanceof StaticFieldReference;
+        return BaseAdapter.fromNode(object) instanceof StaticFieldReference;
       }
     });
     System.out.println("// ---- static field ref.:" + staticFieldReferences.size());
     for (SNode node : staticFieldReferences) {
-      StaticFieldReference staticFieldReference = (StaticFieldReference) node;
+      StaticFieldReference staticFieldReference = (StaticFieldReference) node.getAdapter();
       // todo: the 'classifierType' has been deprecated - now removed
 //      ClassifierType classifierType = staticFieldReference.getClassifierType();
 //      if (classifierType != null) {
@@ -96,7 +97,7 @@ public class InternalRefactoringAction extends MPSAction {
     // ---- static method call.
     List<SNode> staticMethodCalls = model.allNodes(new Condition<SNode>() {
       public boolean met(SNode object) {
-        return object instanceof StaticMethodCall;
+        return BaseAdapter.fromNode(object) instanceof StaticMethodCall;
       }
     });
     System.out.println("// ---- static method call:" + staticMethodCalls.size());
@@ -125,7 +126,7 @@ public class InternalRefactoringAction extends MPSAction {
     // ---- enum const ref.
     List<SNode> enumConstantRefs = model.allNodes(new Condition<SNode>() {
       public boolean met(SNode object) {
-        return object instanceof EnumConstantReference;
+        return BaseAdapter.fromNode(object) instanceof EnumConstantReference;
       }
     });
     System.out.println("// ---- enum const ref:" + enumConstantRefs.size());
