@@ -170,7 +170,11 @@ public class ChildSubstituteActionsHelper {
       }
     } else { //fast way
       for (SNode referentNode : referentNodes) {
-        if (adapterClass.isInstance(referentNode.getAdapter().getClass())) {
+
+        String rcfqn = referentNode.getConceptFqName();
+
+        if (rcfqn.equals(conceptFqName) ||
+                adapterClass.isInstance(referentNode.getAdapter().getClass())) {
           actions.add(new SmartRefChildNodeSubstituteAction(referentNode, parentNode, currentChild, childSetter, scope, referenceNodeConcept, referenceLink_final));
         }
       }
