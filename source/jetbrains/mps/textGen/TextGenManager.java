@@ -3,6 +3,9 @@ package jetbrains.mps.textGen;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
 /**
  * User: Dmitriev.
@@ -51,28 +54,24 @@ public class TextGenManager {
   }
 
   private SNodeTextGen loadNodeTextGen(SNode node) {
-    Class<? extends SNode> aClass = node.getClass();
-
-    while (aClass != null) {
-      String className = aClass.getName();
+    ConceptDeclaration cd = node.getConceptDeclarationAdapter();
+    while (cd != SModelUtil_new.getBaseConcept()) {
+      String className = NameUtil.oldStructureClassFromConceptFqName(NameUtil.conceptFqName(cd));
+      String packageName = NameUtil.namespaceFromLongName(className);
       className = className.substring(className.lastIndexOf('.') + 1);
-      String packageName = node.getClass().getPackage().getName();
       String textgenClassname = packageName + ".textGen." + className + "_TextGen";
-
       try {
         Class textgenClass = Class.forName(textgenClassname, true, ClassLoaderManager.getInstance().getClassLoader());
         return (SNodeTextGen) textgenClass.newInstance();
       } catch (ClassNotFoundException e) {
-        //this is ok
+        //that's ok
       } catch (InstantiationException e) {
-        LOG.error(e);
+        LOG.error(e, node);
       } catch (IllegalAccessException e) {
-        LOG.error(e);
+        LOG.error(e, node);
       }
-      aClass = (Class<? extends SNode>) aClass.getSuperclass();
+      cd = cd.getExtends();
     }
-    //test
-//    loadNodeTextGen(node);
     return new DefaultTextGen();
   }
 
