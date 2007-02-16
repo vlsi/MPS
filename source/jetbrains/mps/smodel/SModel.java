@@ -1002,11 +1002,6 @@ public class SModel implements Iterable<SNode> {
     return result;
   }
 
-  @Deprecated
-  public <E extends SNode> List<E> allNodes(Class<E> cls) {
-    return allNodes(cls, (Condition<E>) Condition.TRUE_CONDITION);
-  }
-
   public <E extends BaseAdapter> List<E> allAdapters(final Class<E> cls) {
     return BaseAdapter.toAdapters(allNodes(new Condition<SNode>() {
       public boolean met(SNode object) {
@@ -1039,33 +1034,6 @@ public class SModel implements Iterable<SNode> {
         return snodeClass.isInstance(BaseAdapter.fromNode(object));
       }
     }));
-  }
-
-
-  @Deprecated
-  public <SN extends SNode> List<SN> allNodesIncludingImported(IScope scope, final Class<SN> snodeClass) {
-    List<SModel> modelsList = new LinkedList<SModel>();
-    modelsList.add(this);
-    List<SModelDescriptor> modelDescriptors = allImportedModels(scope);
-    for (SModelDescriptor descriptor : modelDescriptors) {
-      modelsList.add(descriptor.getSModel());
-    }
-
-    List<SN> resultNodes = new LinkedList<SN>();
-    for (SModel aModel : modelsList) {
-      if (aModel.getStereotype().equals(SModelStereotype.JAVA_STUB)) {
-        SModelDescriptor modelDescriptor = aModel.getModelDescriptor();
-        assert modelDescriptor != null;
-        resultNodes.addAll((Collection<? extends SN>) BaseAdapter.toNodes(modelDescriptor.getFastNodeFinder().getNodes(QueryMethod.getAdapterClass(snodeClass))));
-      } else {
-        resultNodes.addAll((Collection<? extends SN>) aModel.allNodes(new Condition<SNode>() {
-          public boolean met(SNode object) {
-            return snodeClass.isInstance(object);
-          }
-        }));
-      }
-    }
-    return resultNodes;
   }
 
   public List<SNode> allNodesIncludingImported(IScope scope, Condition<SNode> condition) {
