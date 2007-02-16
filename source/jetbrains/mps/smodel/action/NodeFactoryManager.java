@@ -27,10 +27,11 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
   }
 
   public static SNode createNode(ConceptDeclaration nodeConcept, SNode sampleNode, SNode enclosingNode, SModel model, IScope scope) {
-    BaseAdapter node = SModelUtil_new.instantiateConceptDeclaration(nodeConcept, model, false);
-    setupNode(nodeConcept, node.getNode(), sampleNode, enclosingNode, model, scope);
-    SModelUtil_new.createNodeStructure(nodeConcept, model, node, null, node, scope, true);
-    return BaseAdapter.fromAdapter(node);
+    SNode newNode = BaseAdapter.fromAdapter(SModelUtil_new.instantiateConceptDeclaration(nodeConcept, model, false));
+    if (newNode == null) return null;
+    setupNode(nodeConcept, newNode, sampleNode, enclosingNode, model, scope);
+    SModelUtil_new.createNodeStructure(nodeConcept, newNode, sampleNode, enclosingNode, model, scope, true);
+    return newNode;
   }
 
   public static void setupNode(ConceptDeclaration nodeConcept, SNode node, SNode sampleNode, SNode enclosingNode, SModel model, IScope scope) {

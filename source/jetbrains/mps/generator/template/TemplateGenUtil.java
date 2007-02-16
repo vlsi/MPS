@@ -28,8 +28,7 @@ public class TemplateGenUtil {
   private static final Logger LOG = Logger.getLogger(TemplateGenUtil.class);
 
   public static SNode instantiateNodeForTemplate(SNode templateNode, SModel targetModel, IScope scope) {
-    ConceptDeclaration conceptDeclaration = templateNode.getConceptDeclarationAdapter(scope);
-    SNode targetNode = SModelUtil_new.instantiateConceptDeclaration(conceptDeclaration, targetModel, false).getNode();
+    SNode targetNode = SModelUtil_new.instantiateConceptDeclaration(templateNode.getConceptFqName(), targetModel, scope, false);
     SNodeCopyUtil.copySNodeProperties(templateNode, targetNode);
     return targetNode;
   }

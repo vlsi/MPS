@@ -63,8 +63,8 @@ public class SNode implements Cloneable, Iterable<SNode> {
   private Set<String> myPropertyGettersInProgress = new HashSet<String>();
   private Set<String> mySetReferentEventHandlersInProgress = new HashSet<String>();
 
-  //this name doesn't contain the word structure
-  private String myConceptName;
+  //TMP: this name doesn't contain the word structure
+  private String myConceptFqName;
 
   private BaseAdapter myAdapter;
 
@@ -74,7 +74,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   public SNode(@NotNull SModel model, String conceptFqName) {
     this(model);
-    myConceptName = conceptFqName;
+    myConceptFqName = conceptFqName;
   }
 
   public void changeModel(SModel newModel) {
@@ -1401,8 +1401,8 @@ public class SNode implements Cloneable, Iterable<SNode> {
   }
 
   /*package*/ String getTypeFqName() {
-    if (myConceptName != null) {
-      return myConceptName;
+    if (myConceptFqName != null) {
+      return myConceptFqName;
     } else {
       return getClass().getName();
     }
