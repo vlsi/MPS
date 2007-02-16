@@ -14,7 +14,6 @@
   <import index="8" modelUID="org.apache.commons.logging@java_stub" />
   <import index="9" modelUID="jetbrains.mps.generator@java_stub" />
   <import index="10" modelUID="jetbrains.mps.baseLanguage@java_stub" />
-  <import index="11" modelUID="webr.logging@java_stub" />
   <import index="12" modelUID="jetbrains.mps.smodel@java_stub" />
   <import index="18" modelUID="jetbrains.mps.core.structure" />
   <import index="21" modelUID="jetbrains.mps.baseLanguage.structure@java_stub" />
