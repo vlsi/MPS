@@ -35,7 +35,7 @@ public class QueriesGenerated {
     return false;
   }
   public static boolean baseMappingRule_Condition_1170198485461(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.getParent(node, "jetbrains.mps.baseLanguage.structure.Closure", false, false) != null;
+    return SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Closure", false, false) != null;
   }
   public static boolean baseMappingRule_Condition_1170198665539(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode var = SLinkOperations.getTarget(node, "variableDeclaration", false);
@@ -56,7 +56,7 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1170199119856(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode var = SLinkOperations.getTarget(node, "localVariableDeclaration", true);
     if(SLinkOperations.getTarget(var, "initializer", true) != null) {
-      SNode enclosingMethod = SNodeOperations.getParent(var, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
+      SNode enclosingMethod = SNodeOperations.getAncestor(var, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
       if(enclosingMethod != null) {
         return ClosuresUtil.isVariableUsedInClosure(enclosingMethod, (VariableDeclaration)((LocalVariableDeclaration)SNodeOperations.getAdapter(var)), generator);
       }
