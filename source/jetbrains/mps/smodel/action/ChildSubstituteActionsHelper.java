@@ -18,6 +18,8 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.reloading.MPSClassLoader;
+import jetbrains.mps.reloading.ClassLoaderManager;
 
 import java.util.Collections;
 import java.util.Iterator;
@@ -158,6 +160,8 @@ public class ChildSubstituteActionsHelper {
     List<SNode> referentNodes = searchScope.getNodes();
 
     Class adapterClass = getAdapterClass(targetConcept);
+    String conceptFqName = NameUtil.conceptFqName(targetConcept);
+
     if (adapterClass == null) {
       for (SNode referentNode : referentNodes) {
         if (referentNode.isInstanceOfConcept(targetConcept, scope)) {
@@ -176,9 +180,9 @@ public class ChildSubstituteActionsHelper {
   }
 
   private static Class getAdapterClass(ConceptDeclaration cd) {
-    String fqName = NameUtil.conceptFqName(cd);
+    String fqName = NameUtil.nodeFQName(cd);
     try {
-      return Class.forName(fqName);
+      return Class.forName(fqName, true, ClassLoaderManager.getInstance().getClassLoader());
     } catch (ClassNotFoundException e) {
       return null;
     }
