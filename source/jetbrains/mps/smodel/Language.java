@@ -2,7 +2,6 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.findUsages.FindUsagesManager;
-import jetbrains.mps.generator.ContextUtil;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.ide.command.CommandEventTranslator;
@@ -11,8 +10,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
+import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.refactoring.logging.Marshallable;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.*;
@@ -88,7 +87,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     SModel model = ProjectModels.createDescriptorFor(language).getSModel();
     model.setLoading(true);
     language.myDescriptorFile = null;
-    language.myLanguageDescriptor = (LanguageDescriptor) ContextUtil.copyNode(languageDescriptor.getNode(), model, language.getScope()).getAdapter();
+    language.myLanguageDescriptor = (LanguageDescriptor) SNodeCopyUtil.cloneSNode(languageDescriptor.getNode(), model, false).getAdapter();
     MPSModuleRepository.getInstance().addModule(language, owner);
     language.updateDependenciesAndGenerators();
     return language;
