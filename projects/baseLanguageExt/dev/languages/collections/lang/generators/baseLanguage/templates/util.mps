@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.ext.collections.lang.generator.baseLanguage.template.util">
   <language namespace="jetbrains.mps.baseLanguage" />
-  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <maxImportIndex value="10" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="3" modelUID="jetbrains.mps.smodel@java_stub" />
   <import index="4" modelUID="jetbrains.mps.baseLanguage.structure@java_stub" />
-  <import index="5" modelUID="java.lang@java_stub" />
-  <import index="6" modelUID="jetbrains.mps.typesystem.typesystemLanguage.actions" />
   <import index="7" modelUID="jetbrains.mps.typesystem@java_stub" />
   <import index="8" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" />
   <import index="9" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.generator.baseLanguage.template.main@java_stub" />
