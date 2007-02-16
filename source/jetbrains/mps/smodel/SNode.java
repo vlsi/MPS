@@ -43,7 +43,6 @@ public class SNode implements Cloneable, Iterable<SNode> {
   private String myRoleInParent;
   private SNode myParent;
 
-  private Throwable myCreationPoint = new Throwable();
 
   private Map<String, Integer> myChildInRoleCount = new HashMap<String, Integer>();
   private List<SNode> myChildren;
