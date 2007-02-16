@@ -15,23 +15,12 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
   private IScope myScope;
   private IChildNodeSetter mySetter;
 
-//  /**
-//   * @deprecated Use {@link #DefaultChildNodeSubstituteAction(jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration, jetbrains.mps.smodel.SNode, jetbrains.mps.smodel.SNode, IChildNodeSetter, jetbrains.mps.smodel.IScope)}
-//   */
-//  @Deprecated
   public DefaultChildNodeSubstituteAction(Object parameterObject, SNode parentNode, SNode currentChild, IChildNodeSetter setter, IScope scope) {
     super(parameterObject, parentNode);
     myCurrentChild = currentChild;
     myScope = scope;
     mySetter = setter;
   }
-
-//  public DefaultChildNodeSubstituteAction(ConceptDeclaration parameterObject, SNode parentNode, SNode currentChild, IChildNodeSetter setter, IScope scope) {
-//    super(parameterObject, parentNode);
-//    myCurrentChild = currentChild;
-//    myScope = scope;
-//    mySetter = setter;
-//  }
 
   public IScope getScope() {
     return myScope;
