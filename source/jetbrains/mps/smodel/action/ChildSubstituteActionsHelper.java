@@ -174,7 +174,7 @@ public class ChildSubstituteActionsHelper {
         String rcfqn = referentNode.getConceptFqName();
 
         if (rcfqn.equals(conceptFqName) ||
-                adapterClass.isInstance(referentNode.getAdapter().getClass())) {
+                adapterClass.isInstance(referentNode.getAdapter())) {
           actions.add(new SmartRefChildNodeSubstituteAction(referentNode, parentNode, currentChild, childSetter, scope, referenceNodeConcept, referenceLink_final));
         }
       }
