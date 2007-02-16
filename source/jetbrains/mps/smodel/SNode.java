@@ -43,6 +43,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
   private String myRoleInParent;
   private SNode myParent;
 
+  private Throwable myCreationPoint;
 
   private Map<String, Integer> myChildInRoleCount = new HashMap<String, Integer>();
   private List<SNode> myChildren;
@@ -95,6 +96,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
   private List<SNode> _children() {
     if (myChildren == null) {
       myChildren = new LinkedList<SNode>();
+      myCreationPoint = new Throwable();
       if (myChildrenLoader != null) {
         getModel().runLoadingAction(new Runnable() {
           public void run() {
@@ -1793,32 +1795,27 @@ public class SNode implements Cloneable, Iterable<SNode> {
     });
   }
 
-  public BaseAdapter getAdapter() {
-    if (myAdapter != null) {
-      return myAdapter;
-    }
-
-    synchronized(this) {
-      try {
-        Constructor c = QueryMethod.getAdapterConstructor(getConceptFqName());
-        if (c != null) {
-          myAdapter = (BaseAdapter) c.newInstance(this);
-          assert myAdapter.getNode() == this;
-          return myAdapter;
-        }
-      } catch (IllegalAccessException e) {
-        LOG.error(e);
-      } catch (InvocationTargetException e) {
-        LOG.error(e);
-      } catch (InstantiationException e) {
-        LOG.error(e);
+  public synchronized BaseAdapter getAdapter() {
+    if (myAdapter != null) return myAdapter;
+    try {
+      Constructor c = QueryMethod.getAdapterConstructor(getConceptFqName());
+      if (c != null) {
+        myAdapter = (BaseAdapter) c.newInstance(this);
+        assert myAdapter.getNode() == this;
+        return myAdapter;
       }
-
-      LOG.error("Can't find an adapter for " + getClass().getName() + ". Try to generate adapters (use collection language target)");
-
-      return new BaseAdapter(this) {
-      };
+    } catch (IllegalAccessException e) {
+      LOG.error(e);
+    } catch (InvocationTargetException e) {
+      LOG.error(e);
+    } catch (InstantiationException e) {
+      LOG.error(e);
     }
+
+    LOG.error("Can't find an adapter for " + getClass().getName() + ". Try to generate adapters (use collection language target)");
+
+    return new BaseAdapter(this) {
+    };
   }
 
   public SNode findLeastCommonParent(SNode node2) {
@@ -1839,5 +1836,5 @@ public class SNode implements Cloneable, Iterable<SNode> {
       node = node.getParent();
     }
     return (node == this);
-  }    
+  }
 }
