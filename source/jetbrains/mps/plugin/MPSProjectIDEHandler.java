@@ -8,9 +8,11 @@ import jetbrains.mps.ide.usageView.UsagesModel_AspectMethods;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.FrameUtil;
 import jetbrains.mps.util.IDisposable;
 
@@ -38,6 +40,21 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   private Frame getMainFrame() {
     if (getProjectWindow() == null) return null;
     return getProjectWindow().getMainFrame();
+  }
+
+  public void showNode(String namespace, String id) throws RemoteException {
+    List<SModelDescriptor> modelDescriptors = myProject.getScope().getModelDescriptors(namespace);
+    for (SModelDescriptor descriptor : modelDescriptors) {
+      if (descriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) continue;
+
+      SNode node = descriptor.getSModel().getNodeById(id);
+      if (node != null) {
+        getProjectWindow().openNode(node, ModuleContext.create(node, getProjectWindow()));
+      }
+    }
+
+    FrameUtil.activateFrame(getMainFrame());
+    
   }
 
   public void showAspectMethodUsages(String namespace, String name) throws RemoteException {

@@ -1,14 +1,15 @@
 package jetbrains.mps.plugin;
 
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.actionSystem.DataConstants;
-import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DataConstants;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.psi.*;
 
+import java.util.regex.Pattern;
 
-public class FindAspectMethodUsages extends AnAction {
+public class OpenGeneratedQueriesSourceInMPS extends AnAction {
   public void update(AnActionEvent e) {
     super.update(e);
     e.getPresentation().setVisible(false);
@@ -41,11 +42,19 @@ public class FindAspectMethodUsages extends AnAction {
     PsiMethod method = getMethod(element);
     String prefixedName = method.getName();
     PsiJavaFile javaFile = (PsiJavaFile) file;
-    callFindUsage(project, javaFile.getPackageName(), prefixedName);
+    openSource(project, javaFile.getPackageName(), prefixedName);
   }
 
-  private void callFindUsage(Project project, String namespace, String name) {
+  private void openSource(Project project, String namespace, String name) {
     ProjectHandler projectHandler = project.getComponent(ProjectHandler.class);
-    projectHandler.showAspectMethodUsages(namespace, name);
+
+    int lastUnderscore = name.lastIndexOf("_");
+
+    if (lastUnderscore == -1 || lastUnderscore > name.length() - 1) return;
+    String id = name.substring(lastUnderscore + 1);
+
+    if (Pattern.matches("\\d+", id)) {
+      projectHandler.showNode(namespace, id);
+    }
   }
 }
