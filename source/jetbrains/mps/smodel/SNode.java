@@ -1793,27 +1793,32 @@ public class SNode implements Cloneable, Iterable<SNode> {
     });
   }
 
-  public synchronized BaseAdapter getAdapter() {
-    if (myAdapter != null) return myAdapter;
-    try {
-      Constructor c = QueryMethod.getAdapterConstructor(getConceptFqName());
-      if (c != null) {
-        myAdapter = (BaseAdapter) c.newInstance(this);
-        assert myAdapter.getNode() == this;
-        return myAdapter;
-      }
-    } catch (IllegalAccessException e) {
-      LOG.error(e);
-    } catch (InvocationTargetException e) {
-      LOG.error(e);
-    } catch (InstantiationException e) {
-      LOG.error(e);
+  public BaseAdapter getAdapter() {
+    if (myAdapter != null) {
+      return myAdapter;
     }
 
-    LOG.error("Can't find an adapter for " + getClass().getName() + ". Try to generate adapters (use collection language target)");
+    synchronized(this) {
+      try {
+        Constructor c = QueryMethod.getAdapterConstructor(getConceptFqName());
+        if (c != null) {
+          myAdapter = (BaseAdapter) c.newInstance(this);
+          assert myAdapter.getNode() == this;
+          return myAdapter;
+        }
+      } catch (IllegalAccessException e) {
+        LOG.error(e);
+      } catch (InvocationTargetException e) {
+        LOG.error(e);
+      } catch (InstantiationException e) {
+        LOG.error(e);
+      }
 
-    return new BaseAdapter(this) {
-    };
+      LOG.error("Can't find an adapter for " + getClass().getName() + ". Try to generate adapters (use collection language target)");
+
+      return new BaseAdapter(this) {
+      };
+    }
   }
 
   public SNode findLeastCommonParent(SNode node2) {
