@@ -6,6 +6,7 @@ import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.ide.BootstrapLanguages;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -137,6 +138,12 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     // that we reduced nodes to  
     List<Language> sourceLanguages = sourceModel.getLanguages(getScope());
     for (Language sourceLanguage : sourceLanguages) {
+      // don't try to apply templateLang generator to normal models
+      if (sourceLanguage == BootstrapLanguages.getInstance().getTLBase()) {
+        if (!(sourceModel.getUID().getStereotype().equals(SModelStereotype.TEMPLATES))) {
+          continue;
+        }
+      }
       List<Generator> sourceLanguageGenerators = sourceLanguage.getGenerators();
       for (Generator sourceLanguageGenerator : sourceLanguageGenerators) {
         // .. get generator to 'target language'
@@ -191,7 +198,8 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     private SModelDescriptor myProjectModelDescriptor = ProjectModels.createDescriptorFor(this);
     private ModuleDescriptor myModuleDescriptor = ModuleDescriptor.newInstance(myProjectModelDescriptor.getSModel());
 
-    private MPSModuleOwner myOwnOnwer = new MPSModuleOwner() { };
+    private MPSModuleOwner myOwnOnwer = new MPSModuleOwner() {
+    };
 
     TransientModule(IModule invocationModule, List<Generator> generatorModules) {
       myInvocationModule = invocationModule;
