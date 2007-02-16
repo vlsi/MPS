@@ -21,7 +21,7 @@ public class MPSModuleRepository {
   private static final Logger LOG = Logger.getLogger(MPSModuleRepository.class);
 
   private Map<String, IModule> myFileToModuleMap = new HashMap<String, IModule>();
-  private Map<String, Set<IModule>> myUIDToModulesMap = new HashMap<String, Set<IModule>>();
+  private Map<String, List<IModule>> myUIDToModulesMap = new HashMap<String, List<IModule>>();
   private Map<IModule, Set<MPSModuleOwner>> myModuleToOwnersMap = new HashMap<IModule, Set<MPSModuleOwner>>();
 
   private List<ModuleRepositoryListener> myModuleListeners = new ArrayList<ModuleRepositoryListener>();
@@ -143,6 +143,12 @@ public class MPSModuleRepository {
     return myFileToModuleMap.get(file.getAbsolutePath());
   }
 
+  public IModule getModuleByUID(String moduleUID) {
+    List<IModule> modules = myUIDToModulesMap.get(moduleUID);
+    if (modules == null || modules.isEmpty()) return null;
+    return modules.get(0);
+  }
+
   @NotNull
   public <TM extends IModule> TM registerModule(File file, MPSModuleOwner owner, Class<TM> cls) {
     try {
@@ -178,17 +184,17 @@ public class MPSModuleRepository {
   }
 
   private void putModuleWithUID(String moduleUID, IModule module) {
-    Set<IModule> modulesWithUID = myUIDToModulesMap.get(moduleUID);
+    List<IModule> modulesWithUID = myUIDToModulesMap.get(moduleUID);
     if (modulesWithUID == null) {
-      modulesWithUID = new HashSet<IModule>();
+      modulesWithUID = new LinkedList<IModule>();
       myUIDToModulesMap.put(moduleUID, modulesWithUID);
     }
     if (module instanceof Language || modulesWithUID instanceof DevKit) {
       if (modulesWithUID.size() > 1) {
-        LOG.error("can't add module "+ moduleUID + " : module with the same UID exists");
+        LOG.error("can't add module " + moduleUID + " : module with the same UID exists");
       }
-      if (modulesWithUID.size() == 1 && modulesWithUID.iterator().next() != module) {
-        LOG.error("can't add module "+ moduleUID + " : module with the same UID exists");
+      if (modulesWithUID.size() == 1 && modulesWithUID.get(0) != module) {
+        LOG.error("can't add module " + moduleUID + " : module with the same UID exists");
       }
     }
     modulesWithUID.add(module);
@@ -295,7 +301,7 @@ public class MPSModuleRepository {
   }
 
   private void removeModuleFromUIDMap(IModule module) {
-    Set<IModule> modules = myUIDToModulesMap.get(module.getModuleUID());
+    List<IModule> modules = myUIDToModulesMap.get(module.getModuleUID());
     if (modules != null) {
       modules.remove(module);
     }
@@ -319,7 +325,6 @@ public class MPSModuleRepository {
       }
     }
   }
-
 
 
   private void readModuleDescriptors(
@@ -368,15 +373,15 @@ public class MPSModuleRepository {
 
   @Nullable
   public Language getLanguage(@NotNull String namespace) {
-    Set<IModule> modules = myUIDToModulesMap.get(namespace);
+    List<IModule> modules = myUIDToModulesMap.get(namespace);
     if (modules == null || modules.isEmpty()) return null;
     return modulesAsLanguage(modules);
   }
 
   @NotNull
-  public Set<IModule> getModules(@NotNull String namespace, @NotNull MPSModuleOwner moduleOwner) {
-    Set<IModule> modules = myUIDToModulesMap.get(namespace);
-    Set<IModule> result = new HashSet<IModule>();
+  private List<IModule> getModules(@NotNull String namespace, @NotNull MPSModuleOwner moduleOwner) {
+    List<IModule> modules = myUIDToModulesMap.get(namespace);
+    List<IModule> result = new LinkedList<IModule>();
     if (modules == null) {
       return result;
     }
@@ -389,7 +394,7 @@ public class MPSModuleRepository {
     return result;
   }
 
-  private Language modulesAsLanguage(Set<IModule> modules) {
+  private Language modulesAsLanguage(List<IModule> modules) {
     Language language = null;
     for (IModule module : modules) {
       if (module instanceof Language) {
