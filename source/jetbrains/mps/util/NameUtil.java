@@ -137,8 +137,7 @@ public class NameUtil {
 
 
   public static String nodeConceptName(SNode node) {
-    Class cls = node.getClass();
-    return NameUtil.shortNameFromLongName(cls.getName());
+    return node.getConceptName();
   }
 
   public static String nodeConceptFQName(SNode node) {
