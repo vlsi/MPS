@@ -8,7 +8,6 @@
   <import index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <import index="3" modelUID="java.util@java_stub" />
   <import index="4" modelUID="jetbrains.mps.smodel.search@java_stub" />
-  <import index="5" modelUID="jetbrains.mps.bootstrap.structureLanguage@java_stub" />
   <import index="6" modelUID="jetbrains.mps.smodel@java_stub" />
   <import index="7" modelUID="jetbrains.mps.bootstrap.smodelLanguage@java_stub" />
   <import index="8" modelUID="jetbrains.mps.typesystem@java_stub" />

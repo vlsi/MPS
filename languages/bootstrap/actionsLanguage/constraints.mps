@@ -10,7 +10,6 @@
   <import index="4" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <import index="5" modelUID="java.util@java_stub" />
   <import index="6" modelUID="jetbrains.mps.smodel.search@java_stub" />
-  <import index="7" modelUID="jetbrains.mps.bootstrap.structureLanguage@java_stub" />
   <import index="8" modelUID="jetbrains.mps.smodel@java_stub" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraintSet" id="1149011699843">
     <property name="name" value="ACTL_reference" />

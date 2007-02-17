@@ -11,7 +11,6 @@
   <import index="3" modelUID="jetbrains.mps.smodel@java_stub" />
   <import index="4" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <import index="5" modelUID="jetbrains.mps.smodel.search@java_stub" />
-  <import index="6" modelUID="jetbrains.mps.bootstrap.structureLanguage@java_stub" />
   <import index="7" modelUID="java.util@java_stub" />
   <import index="8" modelUID="jetbrains.mps.ide@java_stub" />
   <import index="9" modelUID="jetbrains.mps.smodel.constraints@java_stub" />
