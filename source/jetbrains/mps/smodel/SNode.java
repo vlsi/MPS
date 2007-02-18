@@ -1019,27 +1019,6 @@ public class SNode implements Cloneable, Iterable<SNode> {
     return null;
   }
 
-  @Deprecated
-  public <N extends SNode> N getParent(@NotNull Class<N> cls) {
-    return getParent(cls, true);
-  }
-
-  @Deprecated
-  public <N extends SNode> N getParent(@NotNull Class<N> cls, boolean canReturnThis) {
-    if (canReturnThis) {
-      if (cls.isInstance(this)) return (N) this;
-    }
-    if (myParent == null) return null;
-    return myParent.getParent(cls);
-  }
-
-  @Deprecated
-  public <N extends SNode> N getParent(@NotNull Class<N> cls, @NotNull String role) {
-    if (myParent == null) return null;
-    if (cls.isInstance(myParent) && role.equals(myRoleInParent)) return (N) myParent;
-    return myParent.getParent(cls, role);
-  }
-
   @NotNull
   public SReference addReferent(@NotNull String role, SNode target) {
     SReference reference = SReference.newInstance(role, this, target);
@@ -1486,19 +1465,6 @@ public class SNode implements Cloneable, Iterable<SNode> {
     return result;
   }
 
-  @Deprecated
-  public <E extends SNode> List<E> allChildren(Class<E> clazz) {
-    List<E> resultNodes = new LinkedList<E>();
-    Iterator<SNode> nodes = depthFirstChildren();
-    while (nodes.hasNext()) {
-      SNode node = nodes.next();
-      if (clazz.isAssignableFrom(node.getClass())) {
-        resultNodes.add((E) node);
-      }
-    }
-    return resultNodes;
-  }
-
 
   public List<SNode> allChildren(Condition<SNode> condition) {
     List<SNode> resultNodes = new LinkedList<SNode>();
@@ -1510,18 +1476,6 @@ public class SNode implements Cloneable, Iterable<SNode> {
       }
     }
     return resultNodes;
-  }
-
-  @Deprecated
-  public <T extends SNode> T findParent(Class<T> clazz) {
-    SNode parent = getParent();
-    while (parent != null) {
-      if (clazz.isAssignableFrom(parent.getClass())) {
-        return (T) parent;
-      }
-      parent = parent.getParent();
-    }
-    return null;
   }
 
   public BaseAdapter findFirstParent(Class<? extends BaseAdapter>[] classes) {
@@ -1784,15 +1738,6 @@ public class SNode implements Cloneable, Iterable<SNode> {
       result.addAll(child.getPropertyAttributes(c));
     }
     return result;
-  }
-
-  @Deprecated
-  public List<SNode> findPropertyAttributes(final Class<? extends SNode> cls) {
-    return findPropertyAttributes(new Condition<SNode>() {
-      public boolean met(SNode object) {
-        return cls.isInstance(object);
-      }
-    });
   }
 
   public synchronized BaseAdapter getAdapter() {

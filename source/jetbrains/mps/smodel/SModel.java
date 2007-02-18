@@ -144,12 +144,6 @@ public class SModel implements Iterable<SNode> {
     return list;
   }
 
-  @NotNull
-  @Deprecated
-  public <N extends SNode> List<N> getRoots(@NotNull Class<N> cls) {
-    return CollectionUtil.filter(cls, getRoots());
-  }
-
   public List<BaseAdapter> getRootsAdapters() {
     List<BaseAdapter> result = new ArrayList<BaseAdapter>();
     for (SNode root : getRoots()) {
@@ -987,19 +981,6 @@ public class SModel implements Iterable<SNode> {
     }
 
     return resultNodes;
-  }
-
-  @Deprecated
-  public <E extends SNode> List<E> allNodes(Class<E> cls, Condition<E> condition) {
-    List<E> result = new ArrayList<E>();
-    SModelDescriptor modelDescriptor = getModelDescriptor();
-    assert modelDescriptor != null;
-    for (E e : (Iterable<E>) BaseAdapter.toNodes(modelDescriptor.getFastNodeFinder().getNodes(QueryMethod.getAdapterClass(cls)))) {
-      if (condition.met(e)) {
-        result.add(e);
-      }
-    }
-    return result;
   }
 
   public <E extends BaseAdapter> List<E> allAdapters(final Class<E> cls) {
