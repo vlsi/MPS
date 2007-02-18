@@ -1,6 +1,6 @@
 package jetbrains.mps.ide.ui.smodel;
 
-import jetbrains.mps.annotations.AttributeConcept;
+import jetbrains.mps.annotations.structure.AttributeConcept;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionGroup;
 import jetbrains.mps.ide.action.ActionManager;
@@ -173,7 +173,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     }
     List<SNode> filteredRoots = CollectionUtil.filter(model.getRoots(), new Condition<SNode>() {
       public boolean met(SNode object) {
-        return !(object instanceof AttributeConcept);
+        return !(BaseAdapter.fromNode(object) instanceof AttributeConcept);
       }
     });
     List<SNode> sortedRoots = SortUtil.sortNodes(filteredRoots);

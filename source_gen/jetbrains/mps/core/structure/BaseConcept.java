@@ -22,15 +22,15 @@ public class BaseConcept extends BaseAdapter {
   }
 
   public String getShortDescription() {
-    return this.getProperty(jetbrains.mps.core.BaseConcept.SHORT_DESCRIPTION);
+    return this.getProperty(BaseConcept.SHORT_DESCRIPTION);
   }
   public void setShortDescription(String value) {
-    this.setProperty(jetbrains.mps.core.BaseConcept.SHORT_DESCRIPTION, value);
+    this.setProperty(BaseConcept.SHORT_DESCRIPTION, value);
   }
   public String getAlias() {
-    return this.getProperty(jetbrains.mps.core.BaseConcept.ALIAS);
+    return this.getProperty(BaseConcept.ALIAS);
   }
   public void setAlias(String value) {
-    this.setProperty(jetbrains.mps.core.BaseConcept.ALIAS, value);
+    this.setProperty(BaseConcept.ALIAS, value);
   }
 }
