@@ -1,7 +1,6 @@
 package jetbrains.mps.textGen;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.BaseAdapter;
 
 /**
@@ -25,13 +24,8 @@ public abstract class SNodeTextGen<BA extends BaseAdapter> {
   protected abstract void doGenerateText(BA ba);
 
   protected final void appendNodeText(BaseAdapter ba) {
-    appendNodeText(BaseAdapter.fromAdapter(ba));
-  }
-
-  @Deprecated
-  protected final void appendNodeText(SNode node) {
     try {
-      TextGenManager.instance().appendNodeText(myBuffer, node);
+      TextGenManager.instance().appendNodeText(myBuffer, BaseAdapter.fromAdapter(ba));
     } catch (Exception e) {
       LOGGER.error(e);
       append("\n<<<" + e + ">>>");
