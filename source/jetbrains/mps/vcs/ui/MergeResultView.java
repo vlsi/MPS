@@ -92,7 +92,7 @@ public class MergeResultView extends JPanel {
   }
 
   private void rebuldResultModel() {
-    myResultModel = ModelPersistence.refreshModel(myBaseModel);
+    myResultModel = ModelPersistence.copyModel(myBaseModel);
     myResultModel.setLoading(true);
     applyNewNodes();
     applyProperties();

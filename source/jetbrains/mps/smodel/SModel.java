@@ -824,6 +824,13 @@ public class SModel implements Iterable<SNode> {
     return null;
   }
 
+  void clearAdapters() {
+    for (SNode root : getRoots()) {
+      root.clearAdapters();
+    }
+
+  }
+
 
   /*package*/
   static class ImportElement {

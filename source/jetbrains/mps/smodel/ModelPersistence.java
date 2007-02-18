@@ -381,12 +381,6 @@ public class ModelPersistence {
     return new SNode(model, type);
   }
 
-  @NotNull
-  public static SModel refreshModel(@NotNull SModel model) {
-    String name = model.getShortName();
-    return readModel(saveModel(model), name, model.getStereotype(), false);
-  }
-
   public static void saveModel(@NotNull SModel model, @NotNull File file) {
     LOG.debug("Save model " + model.getUID() + " to file " + file.getAbsolutePath());
     Document document = saveModel(model);

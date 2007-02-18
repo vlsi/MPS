@@ -9,7 +9,8 @@ import java.util.Set;
 public abstract class AbstractModelRootManager implements IModelRootManager {
   @Nullable
   public SModel refresh(@NotNull SModelDescriptor modelDescriptor) {
-    return ModelPersistence.refreshModel(modelDescriptor.getSModel());
+    modelDescriptor.getSModel().clearAdapters();
+    return modelDescriptor.getSModel();
   }
 
   public void updateAfterLoad(@NotNull SModelDescriptor modelDescriptor) {
