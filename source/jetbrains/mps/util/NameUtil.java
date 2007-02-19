@@ -81,9 +81,8 @@ public class NameUtil {
     }
     return fqName.substring(0, offset);
   }
-
-  @Deprecated
-  public static String oldStructureClassFromConceptFqName(String fqName) {
+  
+  public static String removeStructureFromFqName(String fqName) {
     String namespace = namespaceFromLongName(fqName);
     String shortName = shortNameFromLongName(fqName);
     if (namespace.endsWith(".structure")) {
