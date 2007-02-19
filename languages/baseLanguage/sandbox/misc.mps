@@ -175,6 +175,14 @@
           </node>
         </node>
       </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1171904665739">
+        <property name="name" value="xxxx" />
+        <node role="type" type="jetbrains.mps.baseLanguage.LowerBoundType" id="1171904665740">
+          <node role="bound" type="jetbrains.mps.baseLanguage.ClassifierType" id="1171904670913">
+            <link role="classifier" extResolveInfo="1.[Classifier]Integer" />
+          </node>
+        </node>
+      </node>
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1158972312230">
       <property name="name" value="aaaaaa" />
