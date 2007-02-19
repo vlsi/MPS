@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.structure;
 import jetbrains.mps.baseLanguage.structure.Type;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ListType extends Type {
@@ -15,8 +15,11 @@ public class ListType extends Type {
     super(node);
   }
 
+  public static ListType newInstance(SModel sm, boolean init) {
+    return (ListType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.ListType", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static ListType newInstance(SModel sm) {
-    return (ListType)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.ListType", sm, GlobalScope.getInstance()).getAdapter();
+    return ListType.newInstance(sm, false);
   }
 
   public Type getElementType() {

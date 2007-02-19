@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ToListOperation extends SequenceOperation {
@@ -13,7 +13,10 @@ public class ToListOperation extends SequenceOperation {
     super(node);
   }
 
+  public static ToListOperation newInstance(SModel sm, boolean init) {
+    return (ToListOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.ToListOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static ToListOperation newInstance(SModel sm) {
-    return (ToListOperation)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.ToListOperation", sm, GlobalScope.getInstance()).getAdapter();
+    return ToListOperation.newInstance(sm, false);
   }
 }

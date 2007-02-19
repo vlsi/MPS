@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class IsEmptyOperation extends SequenceOperation {
@@ -13,7 +13,10 @@ public class IsEmptyOperation extends SequenceOperation {
     super(node);
   }
 
+  public static IsEmptyOperation newInstance(SModel sm, boolean init) {
+    return (IsEmptyOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.IsEmptyOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static IsEmptyOperation newInstance(SModel sm) {
-    return (IsEmptyOperation)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.IsEmptyOperation", sm, GlobalScope.getInstance()).getAdapter();
+    return IsEmptyOperation.newInstance(sm, false);
   }
 }

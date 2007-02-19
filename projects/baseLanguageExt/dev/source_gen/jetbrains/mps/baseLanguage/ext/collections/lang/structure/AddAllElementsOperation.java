@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Expression;
 
@@ -15,8 +15,11 @@ public class AddAllElementsOperation extends AbstractListOperation {
     super(node);
   }
 
+  public static AddAllElementsOperation newInstance(SModel sm, boolean init) {
+    return (AddAllElementsOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.AddAllElementsOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static AddAllElementsOperation newInstance(SModel sm) {
-    return (AddAllElementsOperation)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.AddAllElementsOperation", sm, GlobalScope.getInstance()).getAdapter();
+    return AddAllElementsOperation.newInstance(sm, false);
   }
 
   public Expression getArgument() {

@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class GetSizeOperation extends AbstractListOperation {
@@ -13,7 +13,10 @@ public class GetSizeOperation extends AbstractListOperation {
     super(node);
   }
 
+  public static GetSizeOperation newInstance(SModel sm, boolean init) {
+    return (GetSizeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.GetSizeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static GetSizeOperation newInstance(SModel sm) {
-    return (GetSizeOperation)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.GetSizeOperation", sm, GlobalScope.getInstance()).getAdapter();
+    return GetSizeOperation.newInstance(sm, false);
   }
 }

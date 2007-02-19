@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.structure;
 import jetbrains.mps.core.structure.NamedConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ForEachVariable extends NamedConcept {
@@ -14,7 +14,10 @@ public class ForEachVariable extends NamedConcept {
     super(node);
   }
 
+  public static ForEachVariable newInstance(SModel sm, boolean init) {
+    return (ForEachVariable)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.ForEachVariable", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static ForEachVariable newInstance(SModel sm) {
-    return (ForEachVariable)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.ForEachVariable", sm, GlobalScope.getInstance()).getAdapter();
+    return ForEachVariable.newInstance(sm, false);
   }
 }

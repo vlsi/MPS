@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.structure;
 import jetbrains.mps.baseLanguage.structure.AbstractLoopStatement;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Expression;
 
@@ -17,8 +17,11 @@ public class ForEachStatement extends AbstractLoopStatement {
     super(node);
   }
 
+  public static ForEachStatement newInstance(SModel sm, boolean init) {
+    return (ForEachStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.ForEachStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static ForEachStatement newInstance(SModel sm) {
-    return (ForEachStatement)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.ForEachStatement", sm, GlobalScope.getInstance()).getAdapter();
+    return ForEachStatement.newInstance(sm, false);
   }
 
   public ForEachVariable getVariable() {

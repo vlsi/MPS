@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class GetFirstOperation extends SequenceOperation {
@@ -13,7 +13,10 @@ public class GetFirstOperation extends SequenceOperation {
     super(node);
   }
 
+  public static GetFirstOperation newInstance(SModel sm, boolean init) {
+    return (GetFirstOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.GetFirstOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static GetFirstOperation newInstance(SModel sm) {
-    return (GetFirstOperation)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.GetFirstOperation", sm, GlobalScope.getInstance()).getAdapter();
+    return GetFirstOperation.newInstance(sm, false);
   }
 }

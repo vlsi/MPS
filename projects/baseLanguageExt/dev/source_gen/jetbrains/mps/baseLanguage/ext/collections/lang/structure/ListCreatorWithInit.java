@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.structure;
 import jetbrains.mps.baseLanguage.structure.AbstractCreator;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Type;
 import java.util.Iterator;
@@ -20,8 +20,11 @@ public class ListCreatorWithInit extends AbstractCreator {
     super(node);
   }
 
+  public static ListCreatorWithInit newInstance(SModel sm, boolean init) {
+    return (ListCreatorWithInit)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.ListCreatorWithInit", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static ListCreatorWithInit newInstance(SModel sm) {
-    return (ListCreatorWithInit)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.ListCreatorWithInit", sm, GlobalScope.getInstance()).getAdapter();
+    return ListCreatorWithInit.newInstance(sm, false);
   }
 
   public Type getElementType() {

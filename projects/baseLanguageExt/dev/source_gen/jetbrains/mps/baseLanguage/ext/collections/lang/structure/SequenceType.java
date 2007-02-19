@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.structure;
 import jetbrains.mps.baseLanguage.structure.Type;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class SequenceType extends Type {
@@ -15,8 +15,11 @@ public class SequenceType extends Type {
     super(node);
   }
 
+  public static SequenceType newInstance(SModel sm, boolean init) {
+    return (SequenceType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.SequenceType", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static SequenceType newInstance(SModel sm) {
-    return (SequenceType)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.SequenceType", sm, GlobalScope.getInstance()).getAdapter();
+    return SequenceType.newInstance(sm, false);
   }
 
   public Type getElementType() {
