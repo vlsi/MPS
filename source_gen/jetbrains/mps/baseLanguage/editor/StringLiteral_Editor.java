@@ -64,7 +64,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
     editorCell.setFontType(MPSFonts.BOLD);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
     editorCell.putUserObject(EditorCell.CELL_ID, "1079623722231");
-    editorCell.setLayoutConstraint("");
+    editorCell.setLayoutConstraint("punctuation");
     return editorCell;
   }
   public EditorCell createValueCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -83,7 +83,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.putUserObject(EditorCell.CELL_ID, "1079623722230");
-    editorCell.setLayoutConstraint("");
+    editorCell.setLayoutConstraint("punctuation");
     return editorCell;
   }
   public EditorCell createValueCell(EditorContext context, SNode node) {
