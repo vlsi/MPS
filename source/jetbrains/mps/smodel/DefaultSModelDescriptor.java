@@ -259,8 +259,14 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
       myFastNodeFinder = null;
       myModelListeners.addAll(mySModel.getListeners());
       myModelCommandListeners.addAll(mySModel.getCommandListeners());
-      mySModel.dispose();
+
+      SModel oldModel = mySModel;
       mySModel = myModelRootManager.refresh(this);
+
+      if (mySModel != oldModel) {
+        oldModel.dispose();
+      }
+
       if (mySModel != null) {
         addListenersToNewModel();
       }
