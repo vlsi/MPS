@@ -24,7 +24,7 @@ public class TestMethodList_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myTestMethodListHandler_testMethodList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
-    editorCell.setDrawBorder(true);
+    editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
