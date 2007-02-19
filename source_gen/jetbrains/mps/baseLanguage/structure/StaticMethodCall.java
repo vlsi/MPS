@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class StaticMethodCall extends BaseMethodCall {
@@ -14,8 +14,11 @@ public class StaticMethodCall extends BaseMethodCall {
     super(node);
   }
 
+  public static StaticMethodCall newInstance(SModel sm, boolean init) {
+    return (StaticMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.StaticMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static StaticMethodCall newInstance(SModel sm) {
-    return (StaticMethodCall)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.StaticMethodCall", sm, GlobalScope.getInstance()).getAdapter();
+    return StaticMethodCall.newInstance(sm, false);
   }
 
   public ClassConcept getClassConcept() {

@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class IntegerConstant extends Expression {
@@ -14,8 +14,11 @@ public class IntegerConstant extends Expression {
     super(node);
   }
 
+  public static IntegerConstant newInstance(SModel sm, boolean init) {
+    return (IntegerConstant)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.IntegerConstant", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static IntegerConstant newInstance(SModel sm) {
-    return (IntegerConstant)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.IntegerConstant", sm, GlobalScope.getInstance()).getAdapter();
+    return IntegerConstant.newInstance(sm, false);
   }
 
   public int getValue() {

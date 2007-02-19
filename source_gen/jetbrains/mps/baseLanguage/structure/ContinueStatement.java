@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ContinueStatement extends Statement {
@@ -13,7 +13,10 @@ public class ContinueStatement extends Statement {
     super(node);
   }
 
+  public static ContinueStatement newInstance(SModel sm, boolean init) {
+    return (ContinueStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ContinueStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static ContinueStatement newInstance(SModel sm) {
-    return (ContinueStatement)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ContinueStatement", sm, GlobalScope.getInstance()).getAdapter();
+    return ContinueStatement.newInstance(sm, false);
   }
 }

@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ByteType extends PrimitiveType {
@@ -13,7 +13,10 @@ public class ByteType extends PrimitiveType {
     super(node);
   }
 
+  public static ByteType newInstance(SModel sm, boolean init) {
+    return (ByteType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ByteType", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static ByteType newInstance(SModel sm) {
-    return (ByteType)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ByteType", sm, GlobalScope.getInstance()).getAdapter();
+    return ByteType.newInstance(sm, false);
   }
 }

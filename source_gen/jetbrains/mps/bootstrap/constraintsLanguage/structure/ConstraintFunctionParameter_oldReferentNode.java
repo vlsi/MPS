@@ -5,7 +5,7 @@ package jetbrains.mps.bootstrap.constraintsLanguage.structure;
 import jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ConstraintFunctionParameter_oldReferentNode extends ConceptFunctionParameter {
@@ -14,7 +14,10 @@ public class ConstraintFunctionParameter_oldReferentNode extends ConceptFunction
     super(node);
   }
 
+  public static ConstraintFunctionParameter_oldReferentNode newInstance(SModel sm, boolean init) {
+    return (ConstraintFunctionParameter_oldReferentNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunctionParameter_oldReferentNode", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static ConstraintFunctionParameter_oldReferentNode newInstance(SModel sm) {
-    return (ConstraintFunctionParameter_oldReferentNode)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunctionParameter_oldReferentNode", sm, GlobalScope.getInstance()).getAdapter();
+    return ConstraintFunctionParameter_oldReferentNode.newInstance(sm, false);
   }
 }

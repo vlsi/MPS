@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class TypeVariableReference extends Type {
@@ -14,8 +14,11 @@ public class TypeVariableReference extends Type {
     super(node);
   }
 
+  public static TypeVariableReference newInstance(SModel sm, boolean init) {
+    return (TypeVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.TypeVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static TypeVariableReference newInstance(SModel sm) {
-    return (TypeVariableReference)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.TypeVariableReference", sm, GlobalScope.getInstance()).getAdapter();
+    return TypeVariableReference.newInstance(sm, false);
   }
 
   public TypeVariableDeclaration getTypeVariableDeclaration() {

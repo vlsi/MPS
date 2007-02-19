@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class WhileStatement extends AbstractLoopStatement {
@@ -14,8 +14,11 @@ public class WhileStatement extends AbstractLoopStatement {
     super(node);
   }
 
+  public static WhileStatement newInstance(SModel sm, boolean init) {
+    return (WhileStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.WhileStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static WhileStatement newInstance(SModel sm) {
-    return (WhileStatement)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.WhileStatement", sm, GlobalScope.getInstance()).getAdapter();
+    return WhileStatement.newInstance(sm, false);
   }
 
   public Expression getCondition() {

@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class StringLiteral extends Expression {
@@ -14,8 +14,11 @@ public class StringLiteral extends Expression {
     super(node);
   }
 
+  public static StringLiteral newInstance(SModel sm, boolean init) {
+    return (StringLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.StringLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static StringLiteral newInstance(SModel sm) {
-    return (StringLiteral)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.StringLiteral", sm, GlobalScope.getInstance()).getAdapter();
+    return StringLiteral.newInstance(sm, false);
   }
 
   public String getValue() {

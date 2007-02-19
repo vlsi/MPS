@@ -5,7 +5,7 @@ package jetbrains.mps.bootstrap.constraintsLanguage.structure;
 import jetbrains.mps.baseLanguage.structure.ConceptFunction;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ConstraintFunction_ReferentSearchScope_AbstractBase extends ConceptFunction {
@@ -14,7 +14,10 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase extends Concept
     super(node);
   }
 
+  public static ConstraintFunction_ReferentSearchScope_AbstractBase newInstance(SModel sm, boolean init) {
+    return (ConstraintFunction_ReferentSearchScope_AbstractBase)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_AbstractBase", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static ConstraintFunction_ReferentSearchScope_AbstractBase newInstance(SModel sm) {
-    return (ConstraintFunction_ReferentSearchScope_AbstractBase)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_AbstractBase", sm, GlobalScope.getInstance()).getAdapter();
+    return ConstraintFunction_ReferentSearchScope_AbstractBase.newInstance(sm, false);
   }
 }

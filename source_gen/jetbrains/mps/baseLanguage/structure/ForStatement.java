@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ForStatement extends AbstractForStatement {
@@ -15,8 +15,11 @@ public class ForStatement extends AbstractForStatement {
     super(node);
   }
 
+  public static ForStatement newInstance(SModel sm, boolean init) {
+    return (ForStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ForStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static ForStatement newInstance(SModel sm) {
-    return (ForStatement)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ForStatement", sm, GlobalScope.getInstance()).getAdapter();
+    return ForStatement.newInstance(sm, false);
   }
 
   public Expression getCondition() {

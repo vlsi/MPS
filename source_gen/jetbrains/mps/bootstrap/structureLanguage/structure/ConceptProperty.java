@@ -5,7 +5,7 @@ package jetbrains.mps.bootstrap.structureLanguage.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ConceptProperty extends BaseConcept {
@@ -15,8 +15,11 @@ public class ConceptProperty extends BaseConcept {
     super(node);
   }
 
+  public static ConceptProperty newInstance(SModel sm, boolean init) {
+    return (ConceptProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.ConceptProperty", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static ConceptProperty newInstance(SModel sm) {
-    return (ConceptProperty)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.ConceptProperty", sm, GlobalScope.getInstance()).getAdapter();
+    return ConceptProperty.newInstance(sm, false);
   }
 
   public ConceptPropertyDeclaration getConceptPropertyDeclaration() {

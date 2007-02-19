@@ -5,7 +5,7 @@ package jetbrains.mps.bootstrap.structureLanguage.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ConceptLink extends BaseConcept {
@@ -15,8 +15,11 @@ public class ConceptLink extends BaseConcept {
     super(node);
   }
 
+  public static ConceptLink newInstance(SModel sm, boolean init) {
+    return (ConceptLink)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.ConceptLink", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static ConceptLink newInstance(SModel sm) {
-    return (ConceptLink)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.ConceptLink", sm, GlobalScope.getInstance()).getAdapter();
+    return ConceptLink.newInstance(sm, false);
   }
 
   public ConceptLinkDeclaration getConceptLinkDeclaration() {

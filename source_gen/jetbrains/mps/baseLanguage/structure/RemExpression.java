@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class RemExpression extends BinaryOperation {
@@ -13,7 +13,10 @@ public class RemExpression extends BinaryOperation {
     super(node);
   }
 
+  public static RemExpression newInstance(SModel sm, boolean init) {
+    return (RemExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.RemExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static RemExpression newInstance(SModel sm) {
-    return (RemExpression)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.RemExpression", sm, GlobalScope.getInstance()).getAdapter();
+    return RemExpression.newInstance(sm, false);
   }
 }

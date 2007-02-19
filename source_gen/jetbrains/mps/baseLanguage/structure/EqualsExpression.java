@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class EqualsExpression extends BinaryOperation {
@@ -13,7 +13,10 @@ public class EqualsExpression extends BinaryOperation {
     super(node);
   }
 
+  public static EqualsExpression newInstance(SModel sm, boolean init) {
+    return (EqualsExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.EqualsExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static EqualsExpression newInstance(SModel sm) {
-    return (EqualsExpression)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.EqualsExpression", sm, GlobalScope.getInstance()).getAdapter();
+    return EqualsExpression.newInstance(sm, false);
   }
 }

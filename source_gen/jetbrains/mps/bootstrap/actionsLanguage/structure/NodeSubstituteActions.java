@@ -5,7 +5,7 @@ package jetbrains.mps.bootstrap.actionsLanguage.structure;
 import jetbrains.mps.core.structure.NamedConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
 import java.util.List;
@@ -17,8 +17,11 @@ public class NodeSubstituteActions extends NamedConcept {
     super(node);
   }
 
+  public static NodeSubstituteActions newInstance(SModel sm, boolean init) {
+    return (NodeSubstituteActions)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static NodeSubstituteActions newInstance(SModel sm) {
-    return (NodeSubstituteActions)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions", sm, GlobalScope.getInstance()).getAdapter();
+    return NodeSubstituteActions.newInstance(sm, false);
   }
 
   public int getActionsBuildersCount() {

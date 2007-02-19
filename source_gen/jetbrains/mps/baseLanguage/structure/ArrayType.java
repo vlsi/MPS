@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ArrayType extends Type {
@@ -14,8 +14,11 @@ public class ArrayType extends Type {
     super(node);
   }
 
+  public static ArrayType newInstance(SModel sm, boolean init) {
+    return (ArrayType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ArrayType", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static ArrayType newInstance(SModel sm) {
-    return (ArrayType)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ArrayType", sm, GlobalScope.getInstance()).getAdapter();
+    return ArrayType.newInstance(sm, false);
   }
 
   public Type getComponentType() {

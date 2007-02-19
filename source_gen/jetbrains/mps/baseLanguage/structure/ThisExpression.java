@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ThisExpression extends Expression {
@@ -13,7 +13,10 @@ public class ThisExpression extends Expression {
     super(node);
   }
 
+  public static ThisExpression newInstance(SModel sm, boolean init) {
+    return (ThisExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ThisExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static ThisExpression newInstance(SModel sm) {
-    return (ThisExpression)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ThisExpression", sm, GlobalScope.getInstance()).getAdapter();
+    return ThisExpression.newInstance(sm, false);
   }
 }

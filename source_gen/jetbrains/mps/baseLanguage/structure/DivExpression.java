@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class DivExpression extends BinaryOperation {
@@ -13,7 +13,10 @@ public class DivExpression extends BinaryOperation {
     super(node);
   }
 
+  public static DivExpression newInstance(SModel sm, boolean init) {
+    return (DivExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.DivExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static DivExpression newInstance(SModel sm) {
-    return (DivExpression)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.DivExpression", sm, GlobalScope.getInstance()).getAdapter();
+    return DivExpression.newInstance(sm, false);
   }
 }

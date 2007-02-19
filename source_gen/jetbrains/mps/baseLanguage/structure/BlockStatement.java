@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class BlockStatement extends Statement {
@@ -14,8 +14,11 @@ public class BlockStatement extends Statement {
     super(node);
   }
 
+  public static BlockStatement newInstance(SModel sm, boolean init) {
+    return (BlockStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.BlockStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static BlockStatement newInstance(SModel sm) {
-    return (BlockStatement)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.BlockStatement", sm, GlobalScope.getInstance()).getAdapter();
+    return BlockStatement.newInstance(sm, false);
   }
 
   public StatementList getStatements() {

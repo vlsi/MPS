@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class NullLiteral extends Expression {
@@ -13,7 +13,10 @@ public class NullLiteral extends Expression {
     super(node);
   }
 
+  public static NullLiteral newInstance(SModel sm, boolean init) {
+    return (NullLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.NullLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static NullLiteral newInstance(SModel sm) {
-    return (NullLiteral)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.NullLiteral", sm, GlobalScope.getInstance()).getAdapter();
+    return NullLiteral.newInstance(sm, false);
   }
 }

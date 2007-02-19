@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.structure;
 import jetbrains.mps.core.structure.NamedConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
 import java.util.List;
@@ -17,8 +17,11 @@ public class StatementList extends NamedConcept {
     super(node);
   }
 
+  public static StatementList newInstance(SModel sm, boolean init) {
+    return (StatementList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.StatementList", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static StatementList newInstance(SModel sm) {
-    return (StatementList)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.StatementList", sm, GlobalScope.getInstance()).getAdapter();
+    return StatementList.newInstance(sm, false);
   }
 
   public int getStatementsCount() {

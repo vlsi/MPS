@@ -4,7 +4,7 @@ package jetbrains.mps.bootstrap.structureLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
 import java.util.List;
@@ -18,8 +18,11 @@ public class EnumerationDataTypeDeclaration extends DataTypeDeclaration {
     super(node);
   }
 
+  public static EnumerationDataTypeDeclaration newInstance(SModel sm, boolean init) {
+    return (EnumerationDataTypeDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.EnumerationDataTypeDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static EnumerationDataTypeDeclaration newInstance(SModel sm) {
-    return (EnumerationDataTypeDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.EnumerationDataTypeDeclaration", sm, GlobalScope.getInstance()).getAdapter();
+    return EnumerationDataTypeDeclaration.newInstance(sm, false);
   }
 
   public int getMembersCount() {

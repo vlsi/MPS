@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class AndExpression extends BinaryOperation {
@@ -13,7 +13,10 @@ public class AndExpression extends BinaryOperation {
     super(node);
   }
 
+  public static AndExpression newInstance(SModel sm, boolean init) {
+    return (AndExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.AndExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static AndExpression newInstance(SModel sm) {
-    return (AndExpression)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.AndExpression", sm, GlobalScope.getInstance()).getAdapter();
+    return AndExpression.newInstance(sm, false);
   }
 }

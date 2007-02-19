@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
 import java.util.List;
@@ -17,8 +17,11 @@ public class Classifier extends GenericDeclaration {
     super(node);
   }
 
+  public static Classifier newInstance(SModel sm, boolean init) {
+    return (Classifier)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.Classifier", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static Classifier newInstance(SModel sm) {
-    return (Classifier)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.Classifier", sm, GlobalScope.getInstance()).getAdapter();
+    return Classifier.newInstance(sm, false);
   }
 
   public int getStaticFieldsCount() {

@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ConstructorDeclaration extends BaseMethodDeclaration {
@@ -13,7 +13,10 @@ public class ConstructorDeclaration extends BaseMethodDeclaration {
     super(node);
   }
 
+  public static ConstructorDeclaration newInstance(SModel sm, boolean init) {
+    return (ConstructorDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ConstructorDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static ConstructorDeclaration newInstance(SModel sm) {
-    return (ConstructorDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ConstructorDeclaration", sm, GlobalScope.getInstance()).getAdapter();
+    return ConstructorDeclaration.newInstance(sm, false);
   }
 }

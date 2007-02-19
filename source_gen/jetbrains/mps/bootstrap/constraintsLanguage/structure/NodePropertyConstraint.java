@@ -5,7 +5,7 @@ package jetbrains.mps.bootstrap.constraintsLanguage.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
@@ -20,8 +20,11 @@ public class NodePropertyConstraint extends BaseConcept {
     super(node);
   }
 
+  public static NodePropertyConstraint newInstance(SModel sm, boolean init) {
+    return (NodePropertyConstraint)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraint", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static NodePropertyConstraint newInstance(SModel sm) {
-    return (NodePropertyConstraint)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraint", sm, GlobalScope.getInstance()).getAdapter();
+    return NodePropertyConstraint.newInstance(sm, false);
   }
 
   public ConstraintFunction_PropertyGetter getPropertyGetter() {

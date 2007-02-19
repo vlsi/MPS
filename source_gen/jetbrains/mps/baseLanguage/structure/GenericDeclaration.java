@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.structure;
 import jetbrains.mps.core.structure.NamedConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
 import java.util.List;
@@ -17,8 +17,11 @@ public class GenericDeclaration extends NamedConcept {
     super(node);
   }
 
+  public static GenericDeclaration newInstance(SModel sm, boolean init) {
+    return (GenericDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.GenericDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static GenericDeclaration newInstance(SModel sm) {
-    return (GenericDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.GenericDeclaration", sm, GlobalScope.getInstance()).getAdapter();
+    return GenericDeclaration.newInstance(sm, false);
   }
 
   public int getTypeVariableDeclarationsCount() {

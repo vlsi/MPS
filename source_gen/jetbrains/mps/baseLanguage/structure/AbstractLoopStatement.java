@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class AbstractLoopStatement extends Statement {
@@ -14,8 +14,11 @@ public class AbstractLoopStatement extends Statement {
     super(node);
   }
 
+  public static AbstractLoopStatement newInstance(SModel sm, boolean init) {
+    return (AbstractLoopStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.AbstractLoopStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static AbstractLoopStatement newInstance(SModel sm) {
-    return (AbstractLoopStatement)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.AbstractLoopStatement", sm, GlobalScope.getInstance()).getAdapter();
+    return AbstractLoopStatement.newInstance(sm, false);
   }
 
   public StatementList getBody() {

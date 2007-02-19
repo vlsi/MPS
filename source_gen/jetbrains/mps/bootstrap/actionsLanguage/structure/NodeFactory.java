@@ -5,23 +5,32 @@ package jetbrains.mps.bootstrap.actionsLanguage.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
 public class NodeFactory extends BaseConcept {
+  public static String DESCRIPTION = "description";
   public static String SETUP_FUNCTION = "setupFunction";
   public static String APPLICABLE_CONCEPT = "applicableConcept";
-  public static String DESCRIPTION = "description";
 
   public  NodeFactory(SNode node) {
     super(node);
   }
 
+  public static NodeFactory newInstance(SModel sm, boolean init) {
+    return (NodeFactory)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.NodeFactory", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static NodeFactory newInstance(SModel sm) {
-    return (NodeFactory)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.NodeFactory", sm, GlobalScope.getInstance()).getAdapter();
+    return NodeFactory.newInstance(sm, false);
   }
 
+  public String getDescription() {
+    return this.getProperty(NodeFactory.DESCRIPTION);
+  }
+  public void setDescription(String value) {
+    this.setProperty(NodeFactory.DESCRIPTION, value);
+  }
   public NodeSetupFunction getSetupFunction() {
     return (NodeSetupFunction)this.getChild(NodeFactory.SETUP_FUNCTION);
   }
@@ -33,11 +42,5 @@ public class NodeFactory extends BaseConcept {
   }
   public void setApplicableConcept(ConceptDeclaration node) {
     super.setReferent(NodeFactory.APPLICABLE_CONCEPT, node);
-  }
-  public String getDescription() {
-    return this.getProperty(NodeFactory.DESCRIPTION);
-  }
-  public void setDescription(String value) {
-    this.setProperty(NodeFactory.DESCRIPTION, value);
   }
 }

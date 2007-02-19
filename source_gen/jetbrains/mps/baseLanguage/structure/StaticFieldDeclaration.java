@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class StaticFieldDeclaration extends VariableDeclaration {
@@ -13,7 +13,10 @@ public class StaticFieldDeclaration extends VariableDeclaration {
     super(node);
   }
 
+  public static StaticFieldDeclaration newInstance(SModel sm, boolean init) {
+    return (StaticFieldDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.StaticFieldDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static StaticFieldDeclaration newInstance(SModel sm) {
-    return (StaticFieldDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.StaticFieldDeclaration", sm, GlobalScope.getInstance()).getAdapter();
+    return StaticFieldDeclaration.newInstance(sm, false);
   }
 }

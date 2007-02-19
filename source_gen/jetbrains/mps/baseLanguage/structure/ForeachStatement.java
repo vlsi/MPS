@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ForeachStatement extends AbstractForStatement {
@@ -14,8 +14,11 @@ public class ForeachStatement extends AbstractForStatement {
     super(node);
   }
 
+  public static ForeachStatement newInstance(SModel sm, boolean init) {
+    return (ForeachStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ForeachStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static ForeachStatement newInstance(SModel sm) {
-    return (ForeachStatement)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ForeachStatement", sm, GlobalScope.getInstance()).getAdapter();
+    return ForeachStatement.newInstance(sm, false);
   }
 
   public Expression getIterable() {

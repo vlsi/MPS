@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.blTypes.structure;
 import jetbrains.mps.core.structure.NamedConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
 import java.util.List;
@@ -17,8 +17,11 @@ public class PrimitiveTypeDescriptor extends NamedConcept {
     super(node);
   }
 
+  public static PrimitiveTypeDescriptor newInstance(SModel sm, boolean init) {
+    return (PrimitiveTypeDescriptor)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.PrimitiveTypeDescriptor", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static PrimitiveTypeDescriptor newInstance(SModel sm) {
-    return (PrimitiveTypeDescriptor)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.PrimitiveTypeDescriptor", sm, GlobalScope.getInstance()).getAdapter();
+    return PrimitiveTypeDescriptor.newInstance(sm, false);
   }
 
   public int getExtendsesCount() {

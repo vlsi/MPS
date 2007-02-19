@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class CastExpression extends Expression {
@@ -15,8 +15,11 @@ public class CastExpression extends Expression {
     super(node);
   }
 
+  public static CastExpression newInstance(SModel sm, boolean init) {
+    return (CastExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.CastExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static CastExpression newInstance(SModel sm) {
-    return (CastExpression)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.CastExpression", sm, GlobalScope.getInstance()).getAdapter();
+    return CastExpression.newInstance(sm, false);
   }
 
   public Type getType() {

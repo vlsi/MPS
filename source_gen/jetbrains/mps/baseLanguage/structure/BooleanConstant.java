@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class BooleanConstant extends Expression {
@@ -14,8 +14,11 @@ public class BooleanConstant extends Expression {
     super(node);
   }
 
+  public static BooleanConstant newInstance(SModel sm, boolean init) {
+    return (BooleanConstant)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.BooleanConstant", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static BooleanConstant newInstance(SModel sm) {
-    return (BooleanConstant)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.BooleanConstant", sm, GlobalScope.getInstance()).getAdapter();
+    return BooleanConstant.newInstance(sm, false);
   }
 
   public boolean getValue() {

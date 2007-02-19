@@ -4,7 +4,7 @@ package jetbrains.mps.bootstrap.structureLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
 import java.util.List;
@@ -16,8 +16,11 @@ public class InterfaceConceptDeclaration extends AbstractConceptDeclaration {
     super(node);
   }
 
+  public static InterfaceConceptDeclaration newInstance(SModel sm, boolean init) {
+    return (InterfaceConceptDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static InterfaceConceptDeclaration newInstance(SModel sm) {
-    return (InterfaceConceptDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptDeclaration", sm, GlobalScope.getInstance()).getAdapter();
+    return InterfaceConceptDeclaration.newInstance(sm, false);
   }
 
   public int getExtendsesCount() {

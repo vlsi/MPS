@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class BinaryOperation extends Expression {
@@ -16,8 +16,11 @@ public class BinaryOperation extends Expression {
     super(node);
   }
 
+  public static BinaryOperation newInstance(SModel sm, boolean init) {
+    return (BinaryOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.BinaryOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static BinaryOperation newInstance(SModel sm) {
-    return (BinaryOperation)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.BinaryOperation", sm, GlobalScope.getInstance()).getAdapter();
+    return BinaryOperation.newInstance(sm, false);
   }
 
   public Expression getRightExpression() {

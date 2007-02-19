@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class GenericNewExpression extends Expression {
@@ -14,8 +14,11 @@ public class GenericNewExpression extends Expression {
     super(node);
   }
 
+  public static GenericNewExpression newInstance(SModel sm, boolean init) {
+    return (GenericNewExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.GenericNewExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static GenericNewExpression newInstance(SModel sm) {
-    return (GenericNewExpression)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.GenericNewExpression", sm, GlobalScope.getInstance()).getAdapter();
+    return GenericNewExpression.newInstance(sm, false);
   }
 
   public AbstractCreator getCreator() {

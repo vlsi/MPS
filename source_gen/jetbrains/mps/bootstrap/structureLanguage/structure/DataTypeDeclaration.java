@@ -5,7 +5,7 @@ package jetbrains.mps.bootstrap.structureLanguage.structure;
 import jetbrains.mps.core.structure.NamedConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class DataTypeDeclaration extends NamedConcept {
@@ -14,7 +14,10 @@ public class DataTypeDeclaration extends NamedConcept {
     super(node);
   }
 
+  public static DataTypeDeclaration newInstance(SModel sm, boolean init) {
+    return (DataTypeDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.DataTypeDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static DataTypeDeclaration newInstance(SModel sm) {
-    return (DataTypeDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.DataTypeDeclaration", sm, GlobalScope.getInstance()).getAdapter();
+    return DataTypeDeclaration.newInstance(sm, false);
   }
 }

@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.blTypes.structure;
 import jetbrains.mps.core.structure.NamedConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class BLArrayType extends NamedConcept {
@@ -15,8 +15,11 @@ public class BLArrayType extends NamedConcept {
     super(node);
   }
 
+  public static BLArrayType newInstance(SModel sm, boolean init) {
+    return (BLArrayType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.BLArrayType", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static BLArrayType newInstance(SModel sm) {
-    return (BLArrayType)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.BLArrayType", sm, GlobalScope.getInstance()).getAdapter();
+    return BLArrayType.newInstance(sm, false);
   }
 
   public NamedConcept getComponentType() {

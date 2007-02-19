@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class SuperMethodCall extends BaseMethodCall {
@@ -13,8 +13,11 @@ public class SuperMethodCall extends BaseMethodCall {
     super(node);
   }
 
+  public static SuperMethodCall newInstance(SModel sm, boolean init) {
+    return (SuperMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.SuperMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static SuperMethodCall newInstance(SModel sm) {
-    return (SuperMethodCall)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.SuperMethodCall", sm, GlobalScope.getInstance()).getAdapter();
+    return SuperMethodCall.newInstance(sm, false);
   }
 
   public InstanceMethodDeclaration getInstanceMethodDeclaration() {

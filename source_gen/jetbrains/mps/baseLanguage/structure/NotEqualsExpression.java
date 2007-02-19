@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class NotEqualsExpression extends BinaryOperation {
@@ -13,7 +13,10 @@ public class NotEqualsExpression extends BinaryOperation {
     super(node);
   }
 
+  public static NotEqualsExpression newInstance(SModel sm, boolean init) {
+    return (NotEqualsExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.NotEqualsExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static NotEqualsExpression newInstance(SModel sm) {
-    return (NotEqualsExpression)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.NotEqualsExpression", sm, GlobalScope.getInstance()).getAdapter();
+    return NotEqualsExpression.newInstance(sm, false);
   }
 }

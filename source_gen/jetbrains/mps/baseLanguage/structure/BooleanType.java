@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class BooleanType extends PrimitiveType {
@@ -13,7 +13,10 @@ public class BooleanType extends PrimitiveType {
     super(node);
   }
 
+  public static BooleanType newInstance(SModel sm, boolean init) {
+    return (BooleanType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.BooleanType", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static BooleanType newInstance(SModel sm) {
-    return (BooleanType)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.BooleanType", sm, GlobalScope.getInstance()).getAdapter();
+    return BooleanType.newInstance(sm, false);
   }
 }

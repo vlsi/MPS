@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class MinusExpression extends BinaryOperation {
@@ -13,7 +13,10 @@ public class MinusExpression extends BinaryOperation {
     super(node);
   }
 
+  public static MinusExpression newInstance(SModel sm, boolean init) {
+    return (MinusExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.MinusExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static MinusExpression newInstance(SModel sm) {
-    return (MinusExpression)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.MinusExpression", sm, GlobalScope.getInstance()).getAdapter();
+    return MinusExpression.newInstance(sm, false);
   }
 }

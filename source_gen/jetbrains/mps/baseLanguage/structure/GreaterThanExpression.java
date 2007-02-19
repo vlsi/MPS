@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class GreaterThanExpression extends BinaryOperation {
@@ -13,7 +13,10 @@ public class GreaterThanExpression extends BinaryOperation {
     super(node);
   }
 
+  public static GreaterThanExpression newInstance(SModel sm, boolean init) {
+    return (GreaterThanExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.GreaterThanExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static GreaterThanExpression newInstance(SModel sm) {
-    return (GreaterThanExpression)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.GreaterThanExpression", sm, GlobalScope.getInstance()).getAdapter();
+    return GreaterThanExpression.newInstance(sm, false);
   }
 }

@@ -4,7 +4,7 @@ package jetbrains.mps.bootstrap.structureLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.core.structure.BaseConcept;
 
@@ -15,8 +15,11 @@ public class AggregationConceptLink extends ConceptLink {
     super(node);
   }
 
+  public static AggregationConceptLink newInstance(SModel sm, boolean init) {
+    return (AggregationConceptLink)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static AggregationConceptLink newInstance(SModel sm) {
-    return (AggregationConceptLink)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink", sm, GlobalScope.getInstance()).getAdapter();
+    return AggregationConceptLink.newInstance(sm, false);
   }
 
   public BaseConcept getTarget() {

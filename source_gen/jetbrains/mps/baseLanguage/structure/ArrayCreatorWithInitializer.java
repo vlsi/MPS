@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
 import java.util.List;
@@ -17,8 +17,11 @@ public class ArrayCreatorWithInitializer extends AbstractCreator {
     super(node);
   }
 
+  public static ArrayCreatorWithInitializer newInstance(SModel sm, boolean init) {
+    return (ArrayCreatorWithInitializer)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ArrayCreatorWithInitializer", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static ArrayCreatorWithInitializer newInstance(SModel sm) {
-    return (ArrayCreatorWithInitializer)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ArrayCreatorWithInitializer", sm, GlobalScope.getInstance()).getAdapter();
+    return ArrayCreatorWithInitializer.newInstance(sm, false);
   }
 
   public Type getComponentType() {

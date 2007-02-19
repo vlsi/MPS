@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class VariableReference extends Expression {
@@ -14,8 +14,11 @@ public class VariableReference extends Expression {
     super(node);
   }
 
+  public static VariableReference newInstance(SModel sm, boolean init) {
+    return (VariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.VariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static VariableReference newInstance(SModel sm) {
-    return (VariableReference)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.VariableReference", sm, GlobalScope.getInstance()).getAdapter();
+    return VariableReference.newInstance(sm, false);
   }
 
   public VariableDeclaration getVariableDeclaration() {

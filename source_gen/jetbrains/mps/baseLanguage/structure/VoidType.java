@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class VoidType extends PrimitiveType {
@@ -13,7 +13,10 @@ public class VoidType extends PrimitiveType {
     super(node);
   }
 
+  public static VoidType newInstance(SModel sm, boolean init) {
+    return (VoidType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.VoidType", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static VoidType newInstance(SModel sm) {
-    return (VoidType)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.VoidType", sm, GlobalScope.getInstance()).getAdapter();
+    return VoidType.newInstance(sm, false);
   }
 }

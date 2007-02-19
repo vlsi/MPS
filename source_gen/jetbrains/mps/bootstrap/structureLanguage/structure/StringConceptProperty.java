@@ -4,7 +4,7 @@ package jetbrains.mps.bootstrap.structureLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class StringConceptProperty extends ConceptProperty {
@@ -14,20 +14,23 @@ public class StringConceptProperty extends ConceptProperty {
     super(node);
   }
 
+  public static StringConceptProperty newInstance(SModel sm, boolean init) {
+    return (StringConceptProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static StringConceptProperty newInstance(SModel sm) {
-    return (StringConceptProperty)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty", sm, GlobalScope.getInstance()).getAdapter();
+    return StringConceptProperty.newInstance(sm, false);
   }
 
-  public StringConceptPropertyDeclaration getStringConceptPropertyDeclaration() {
-    return (StringConceptPropertyDeclaration)this.getConceptPropertyDeclaration();
-  }
-  public void setStringConceptPropertyDeclaration(StringConceptPropertyDeclaration node) {
-    this.setConceptPropertyDeclaration(node);
-  }
   public String getValue() {
     return this.getProperty(StringConceptProperty.VALUE);
   }
   public void setValue(String value) {
     this.setProperty(StringConceptProperty.VALUE, value);
+  }
+  public StringConceptPropertyDeclaration getStringConceptPropertyDeclaration() {
+    return (StringConceptPropertyDeclaration)this.getConceptPropertyDeclaration();
+  }
+  public void setStringConceptPropertyDeclaration(StringConceptPropertyDeclaration node) {
+    this.setConceptPropertyDeclaration(node);
   }
 }

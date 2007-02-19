@@ -6,7 +6,7 @@ import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ConceptPropertyDeclaration extends BaseConcept implements INamedConcept {
@@ -16,8 +16,11 @@ public class ConceptPropertyDeclaration extends BaseConcept implements INamedCon
     super(node);
   }
 
+  public static ConceptPropertyDeclaration newInstance(SModel sm, boolean init) {
+    return (ConceptPropertyDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.ConceptPropertyDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static ConceptPropertyDeclaration newInstance(SModel sm) {
-    return (ConceptPropertyDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.ConceptPropertyDeclaration", sm, GlobalScope.getInstance()).getAdapter();
+    return ConceptPropertyDeclaration.newInstance(sm, false);
   }
 
   public String getName() {

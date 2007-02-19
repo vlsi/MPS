@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class LocalVariableReference extends VariableReference {
@@ -13,8 +13,11 @@ public class LocalVariableReference extends VariableReference {
     super(node);
   }
 
+  public static LocalVariableReference newInstance(SModel sm, boolean init) {
+    return (LocalVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.LocalVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static LocalVariableReference newInstance(SModel sm) {
-    return (LocalVariableReference)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.LocalVariableReference", sm, GlobalScope.getInstance()).getAdapter();
+    return LocalVariableReference.newInstance(sm, false);
   }
 
   public LocalVariableDeclaration getLocalVariableDeclaration() {

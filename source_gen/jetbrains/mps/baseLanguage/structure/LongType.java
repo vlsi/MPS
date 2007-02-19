@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class LongType extends PrimitiveType {
@@ -13,7 +13,10 @@ public class LongType extends PrimitiveType {
     super(node);
   }
 
+  public static LongType newInstance(SModel sm, boolean init) {
+    return (LongType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.LongType", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static LongType newInstance(SModel sm) {
-    return (LongType)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.LongType", sm, GlobalScope.getInstance()).getAdapter();
+    return LongType.newInstance(sm, false);
   }
 }

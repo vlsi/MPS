@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
 import java.util.List;
@@ -17,8 +17,11 @@ public class TryCatchStatement extends Statement {
     super(node);
   }
 
+  public static TryCatchStatement newInstance(SModel sm, boolean init) {
+    return (TryCatchStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.TryCatchStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static TryCatchStatement newInstance(SModel sm) {
-    return (TryCatchStatement)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.TryCatchStatement", sm, GlobalScope.getInstance()).getAdapter();
+    return TryCatchStatement.newInstance(sm, false);
   }
 
   public StatementList getBody() {

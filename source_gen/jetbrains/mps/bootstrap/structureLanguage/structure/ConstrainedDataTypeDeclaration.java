@@ -4,7 +4,7 @@ package jetbrains.mps.bootstrap.structureLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ConstrainedDataTypeDeclaration extends DataTypeDeclaration {
@@ -14,8 +14,11 @@ public class ConstrainedDataTypeDeclaration extends DataTypeDeclaration {
     super(node);
   }
 
+  public static ConstrainedDataTypeDeclaration newInstance(SModel sm, boolean init) {
+    return (ConstrainedDataTypeDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.ConstrainedDataTypeDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static ConstrainedDataTypeDeclaration newInstance(SModel sm) {
-    return (ConstrainedDataTypeDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.ConstrainedDataTypeDeclaration", sm, GlobalScope.getInstance()).getAdapter();
+    return ConstrainedDataTypeDeclaration.newInstance(sm, false);
   }
 
   public String getConstraint() {

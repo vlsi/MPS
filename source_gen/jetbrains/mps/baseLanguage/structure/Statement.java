@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Statement extends BaseConcept {
@@ -14,7 +14,10 @@ public class Statement extends BaseConcept {
     super(node);
   }
 
+  public static Statement newInstance(SModel sm, boolean init) {
+    return (Statement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.Statement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static Statement newInstance(SModel sm) {
-    return (Statement)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.Statement", sm, GlobalScope.getInstance()).getAdapter();
+    return Statement.newInstance(sm, false);
   }
 }

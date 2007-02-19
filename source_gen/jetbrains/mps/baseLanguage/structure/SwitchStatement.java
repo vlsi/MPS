@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
 import java.util.List;
@@ -18,8 +18,11 @@ public class SwitchStatement extends Statement {
     super(node);
   }
 
+  public static SwitchStatement newInstance(SModel sm, boolean init) {
+    return (SwitchStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.SwitchStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static SwitchStatement newInstance(SModel sm) {
-    return (SwitchStatement)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.SwitchStatement", sm, GlobalScope.getInstance()).getAdapter();
+    return SwitchStatement.newInstance(sm, false);
   }
 
   public Expression getExpression() {

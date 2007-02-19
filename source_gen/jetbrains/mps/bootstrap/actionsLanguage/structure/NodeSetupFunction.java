@@ -5,7 +5,7 @@ package jetbrains.mps.bootstrap.actionsLanguage.structure;
 import jetbrains.mps.baseLanguage.structure.ConceptFunction;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class NodeSetupFunction extends ConceptFunction {
@@ -14,7 +14,10 @@ public class NodeSetupFunction extends ConceptFunction {
     super(node);
   }
 
+  public static NodeSetupFunction newInstance(SModel sm, boolean init) {
+    return (NodeSetupFunction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.NodeSetupFunction", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static NodeSetupFunction newInstance(SModel sm) {
-    return (NodeSetupFunction)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.NodeSetupFunction", sm, GlobalScope.getInstance()).getAdapter();
+    return NodeSetupFunction.newInstance(sm, false);
   }
 }

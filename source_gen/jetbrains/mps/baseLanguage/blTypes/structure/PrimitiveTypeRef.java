@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.blTypes.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class PrimitiveTypeRef extends BaseConcept {
@@ -15,8 +15,11 @@ public class PrimitiveTypeRef extends BaseConcept {
     super(node);
   }
 
+  public static PrimitiveTypeRef newInstance(SModel sm, boolean init) {
+    return (PrimitiveTypeRef)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.PrimitiveTypeRef", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static PrimitiveTypeRef newInstance(SModel sm) {
-    return (PrimitiveTypeRef)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.PrimitiveTypeRef", sm, GlobalScope.getInstance()).getAdapter();
+    return PrimitiveTypeRef.newInstance(sm, false);
   }
 
   public PrimitiveTypeDescriptor getDescriptor() {

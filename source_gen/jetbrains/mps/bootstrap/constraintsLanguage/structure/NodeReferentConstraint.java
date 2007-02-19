@@ -5,7 +5,7 @@ package jetbrains.mps.bootstrap.constraintsLanguage.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
@@ -22,8 +22,11 @@ public class NodeReferentConstraint extends BaseConcept {
     super(node);
   }
 
+  public static NodeReferentConstraint newInstance(SModel sm, boolean init) {
+    return (NodeReferentConstraint)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static NodeReferentConstraint newInstance(SModel sm) {
-    return (NodeReferentConstraint)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint", sm, GlobalScope.getInstance()).getAdapter();
+    return NodeReferentConstraint.newInstance(sm, false);
   }
 
   public String getSearchScopeDescription() {

@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class SynchronizedStatement extends Statement {
@@ -15,8 +15,11 @@ public class SynchronizedStatement extends Statement {
     super(node);
   }
 
+  public static SynchronizedStatement newInstance(SModel sm, boolean init) {
+    return (SynchronizedStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.SynchronizedStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static SynchronizedStatement newInstance(SModel sm) {
-    return (SynchronizedStatement)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.SynchronizedStatement", sm, GlobalScope.getInstance()).getAdapter();
+    return SynchronizedStatement.newInstance(sm, false);
   }
 
   public Expression getExpression() {

@@ -5,7 +5,7 @@ package jetbrains.mps.bootstrap.actionsLanguage.structure;
 import jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class NodeSubstitutePreconditionParm_parentNode extends ConceptFunctionParameter {
@@ -14,7 +14,10 @@ public class NodeSubstitutePreconditionParm_parentNode extends ConceptFunctionPa
     super(node);
   }
 
+  public static NodeSubstitutePreconditionParm_parentNode newInstance(SModel sm, boolean init) {
+    return (NodeSubstitutePreconditionParm_parentNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionParm_parentNode", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static NodeSubstitutePreconditionParm_parentNode newInstance(SModel sm) {
-    return (NodeSubstitutePreconditionParm_parentNode)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionParm_parentNode", sm, GlobalScope.getInstance()).getAdapter();
+    return NodeSubstitutePreconditionParm_parentNode.newInstance(sm, false);
   }
 }

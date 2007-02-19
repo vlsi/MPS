@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class TernaryOperatorExpression extends Expression {
@@ -16,8 +16,11 @@ public class TernaryOperatorExpression extends Expression {
     super(node);
   }
 
+  public static TernaryOperatorExpression newInstance(SModel sm, boolean init) {
+    return (TernaryOperatorExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.TernaryOperatorExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static TernaryOperatorExpression newInstance(SModel sm) {
-    return (TernaryOperatorExpression)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.TernaryOperatorExpression", sm, GlobalScope.getInstance()).getAdapter();
+    return TernaryOperatorExpression.newInstance(sm, false);
   }
 
   public Expression getCondition() {

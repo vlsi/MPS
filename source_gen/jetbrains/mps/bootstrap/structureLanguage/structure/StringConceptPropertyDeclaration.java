@@ -4,7 +4,7 @@ package jetbrains.mps.bootstrap.structureLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class StringConceptPropertyDeclaration extends ConceptPropertyDeclaration {
@@ -13,7 +13,10 @@ public class StringConceptPropertyDeclaration extends ConceptPropertyDeclaration
     super(node);
   }
 
+  public static StringConceptPropertyDeclaration newInstance(SModel sm, boolean init) {
+    return (StringConceptPropertyDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.StringConceptPropertyDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static StringConceptPropertyDeclaration newInstance(SModel sm) {
-    return (StringConceptPropertyDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.StringConceptPropertyDeclaration", sm, GlobalScope.getInstance()).getAdapter();
+    return StringConceptPropertyDeclaration.newInstance(sm, false);
   }
 }

@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.blTypes.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
 import java.util.List;
@@ -18,8 +18,11 @@ public class FunctionType extends BaseConcept {
     super(node);
   }
 
+  public static FunctionType newInstance(SModel sm, boolean init) {
+    return (FunctionType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.FunctionType", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static FunctionType newInstance(SModel sm) {
-    return (FunctionType)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.FunctionType", sm, GlobalScope.getInstance()).getAdapter();
+    return FunctionType.newInstance(sm, false);
   }
 
   public BaseConcept getResult() {

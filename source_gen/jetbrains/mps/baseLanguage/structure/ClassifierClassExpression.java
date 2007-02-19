@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ClassifierClassExpression extends Expression {
@@ -14,8 +14,11 @@ public class ClassifierClassExpression extends Expression {
     super(node);
   }
 
+  public static ClassifierClassExpression newInstance(SModel sm, boolean init) {
+    return (ClassifierClassExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ClassifierClassExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static ClassifierClassExpression newInstance(SModel sm) {
-    return (ClassifierClassExpression)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ClassifierClassExpression", sm, GlobalScope.getInstance()).getAdapter();
+    return ClassifierClassExpression.newInstance(sm, false);
   }
 
   public Classifier getClassifier() {

@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class OrExpression extends BinaryOperation {
@@ -13,7 +13,10 @@ public class OrExpression extends BinaryOperation {
     super(node);
   }
 
+  public static OrExpression newInstance(SModel sm, boolean init) {
+    return (OrExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.OrExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static OrExpression newInstance(SModel sm) {
-    return (OrExpression)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.OrExpression", sm, GlobalScope.getInstance()).getAdapter();
+    return OrExpression.newInstance(sm, false);
   }
 }

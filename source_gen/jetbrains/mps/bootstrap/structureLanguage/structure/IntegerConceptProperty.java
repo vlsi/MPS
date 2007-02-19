@@ -4,7 +4,7 @@ package jetbrains.mps.bootstrap.structureLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class IntegerConceptProperty extends ConceptProperty {
@@ -14,20 +14,23 @@ public class IntegerConceptProperty extends ConceptProperty {
     super(node);
   }
 
+  public static IntegerConceptProperty newInstance(SModel sm, boolean init) {
+    return (IntegerConceptProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.IntegerConceptProperty", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static IntegerConceptProperty newInstance(SModel sm) {
-    return (IntegerConceptProperty)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.IntegerConceptProperty", sm, GlobalScope.getInstance()).getAdapter();
+    return IntegerConceptProperty.newInstance(sm, false);
   }
 
-  public IntegerConceptPropertyDeclaration getIntegerConceptPropertyDeclaration() {
-    return (IntegerConceptPropertyDeclaration)this.getConceptPropertyDeclaration();
-  }
-  public void setIntegerConceptPropertyDeclaration(IntegerConceptPropertyDeclaration node) {
-    this.setConceptPropertyDeclaration(node);
-  }
   public int getValue() {
     return this.getIntegerProperty(IntegerConceptProperty.VALUE);
   }
   public void setValue(int value) {
     this.setIntegerProperty(IntegerConceptProperty.VALUE, value);
+  }
+  public IntegerConceptPropertyDeclaration getIntegerConceptPropertyDeclaration() {
+    return (IntegerConceptPropertyDeclaration)this.getConceptPropertyDeclaration();
+  }
+  public void setIntegerConceptPropertyDeclaration(IntegerConceptPropertyDeclaration node) {
+    this.setConceptPropertyDeclaration(node);
   }
 }

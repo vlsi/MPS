@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class FloatingPointConstant extends Expression {
@@ -14,8 +14,11 @@ public class FloatingPointConstant extends Expression {
     super(node);
   }
 
+  public static FloatingPointConstant newInstance(SModel sm, boolean init) {
+    return (FloatingPointConstant)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.FloatingPointConstant", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static FloatingPointConstant newInstance(SModel sm) {
-    return (FloatingPointConstant)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.FloatingPointConstant", sm, GlobalScope.getInstance()).getAdapter();
+    return FloatingPointConstant.newInstance(sm, false);
   }
 
   public String getValue() {

@@ -4,7 +4,7 @@ package jetbrains.mps.bootstrap.structureLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class AggregationConceptLinkDeclaration extends ConceptLinkDeclaration {
@@ -13,7 +13,10 @@ public class AggregationConceptLinkDeclaration extends ConceptLinkDeclaration {
     super(node);
   }
 
+  public static AggregationConceptLinkDeclaration newInstance(SModel sm, boolean init) {
+    return (AggregationConceptLinkDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLinkDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static AggregationConceptLinkDeclaration newInstance(SModel sm) {
-    return (AggregationConceptLinkDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLinkDeclaration", sm, GlobalScope.getInstance()).getAdapter();
+    return AggregationConceptLinkDeclaration.newInstance(sm, false);
   }
 }

@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class FloatType extends PrimitiveType {
@@ -13,7 +13,10 @@ public class FloatType extends PrimitiveType {
     super(node);
   }
 
+  public static FloatType newInstance(SModel sm, boolean init) {
+    return (FloatType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.FloatType", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static FloatType newInstance(SModel sm) {
-    return (FloatType)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.FloatType", sm, GlobalScope.getInstance()).getAdapter();
+    return FloatType.newInstance(sm, false);
   }
 }

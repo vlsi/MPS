@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class StaticFieldReference extends VariableReference {
@@ -14,8 +14,11 @@ public class StaticFieldReference extends VariableReference {
     super(node);
   }
 
+  public static StaticFieldReference newInstance(SModel sm, boolean init) {
+    return (StaticFieldReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.StaticFieldReference", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static StaticFieldReference newInstance(SModel sm) {
-    return (StaticFieldReference)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.StaticFieldReference", sm, GlobalScope.getInstance()).getAdapter();
+    return StaticFieldReference.newInstance(sm, false);
   }
 
   public Classifier getClassifier() {

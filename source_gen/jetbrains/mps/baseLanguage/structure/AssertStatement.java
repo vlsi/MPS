@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class AssertStatement extends Statement {
@@ -15,8 +15,11 @@ public class AssertStatement extends Statement {
     super(node);
   }
 
+  public static AssertStatement newInstance(SModel sm, boolean init) {
+    return (AssertStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.AssertStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static AssertStatement newInstance(SModel sm) {
-    return (AssertStatement)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.AssertStatement", sm, GlobalScope.getInstance()).getAdapter();
+    return AssertStatement.newInstance(sm, false);
   }
 
   public Expression getCondition() {

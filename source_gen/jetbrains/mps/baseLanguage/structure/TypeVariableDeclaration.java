@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.structure;
 import jetbrains.mps.core.structure.NamedConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class TypeVariableDeclaration extends NamedConcept {
@@ -15,8 +15,11 @@ public class TypeVariableDeclaration extends NamedConcept {
     super(node);
   }
 
+  public static TypeVariableDeclaration newInstance(SModel sm, boolean init) {
+    return (TypeVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.TypeVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static TypeVariableDeclaration newInstance(SModel sm) {
-    return (TypeVariableDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.TypeVariableDeclaration", sm, GlobalScope.getInstance()).getAdapter();
+    return TypeVariableDeclaration.newInstance(sm, false);
   }
 
   public String getName() {
