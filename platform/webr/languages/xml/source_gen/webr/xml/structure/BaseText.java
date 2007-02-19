@@ -4,7 +4,7 @@ package webr.xml.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class BaseText extends Content {
@@ -13,7 +13,10 @@ public class BaseText extends Content {
     super(node);
   }
 
+  public static BaseText newInstance(SModel sm, boolean init) {
+    return (BaseText)SModelUtil_new.instantiateConceptDeclaration("webr.xml.BaseText", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static BaseText newInstance(SModel sm) {
-    return (BaseText)SModelUtil.instantiateConceptDeclaration("webr.xml.BaseText", sm, GlobalScope.getInstance()).getAdapter();
+    return BaseText.newInstance(sm, false);
   }
 }

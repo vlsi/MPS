@@ -5,7 +5,7 @@ package webr.xml.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class BaseAttribute extends BaseConcept {
@@ -14,7 +14,10 @@ public class BaseAttribute extends BaseConcept {
     super(node);
   }
 
+  public static BaseAttribute newInstance(SModel sm, boolean init) {
+    return (BaseAttribute)SModelUtil_new.instantiateConceptDeclaration("webr.xml.BaseAttribute", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static BaseAttribute newInstance(SModel sm) {
-    return (BaseAttribute)SModelUtil.instantiateConceptDeclaration("webr.xml.BaseAttribute", sm, GlobalScope.getInstance()).getAdapter();
+    return BaseAttribute.newInstance(sm, false);
   }
 }

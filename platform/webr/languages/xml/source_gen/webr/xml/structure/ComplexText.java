@@ -4,7 +4,7 @@ package webr.xml.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
 import java.util.List;
@@ -16,8 +16,11 @@ public class ComplexText extends BaseText {
     super(node);
   }
 
+  public static ComplexText newInstance(SModel sm, boolean init) {
+    return (ComplexText)SModelUtil_new.instantiateConceptDeclaration("webr.xml.ComplexText", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static ComplexText newInstance(SModel sm) {
-    return (ComplexText)SModelUtil.instantiateConceptDeclaration("webr.xml.ComplexText", sm, GlobalScope.getInstance()).getAdapter();
+    return ComplexText.newInstance(sm, false);
   }
 
   public int getTextsCount() {

@@ -4,7 +4,7 @@ package webr.xml.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import webr.xmlSchema.structure.ElementDeclaration;
 
@@ -15,8 +15,11 @@ public class KnownElement extends BaseElement {
     super(node);
   }
 
+  public static KnownElement newInstance(SModel sm, boolean init) {
+    return (KnownElement)SModelUtil_new.instantiateConceptDeclaration("webr.xml.KnownElement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static KnownElement newInstance(SModel sm) {
-    return (KnownElement)SModelUtil.instantiateConceptDeclaration("webr.xml.KnownElement", sm, GlobalScope.getInstance()).getAdapter();
+    return KnownElement.newInstance(sm, false);
   }
 
   public ElementDeclaration getElementDeclaration() {
