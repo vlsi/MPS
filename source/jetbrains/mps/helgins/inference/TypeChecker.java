@@ -386,13 +386,18 @@ public class TypeChecker {
 
   private static class MyReadAccessListener implements INodeReadAccessListener {
     protected HashSet<SNode> myNodesToDependOn = new HashSet<SNode>();
+    private Object LOCK = new Object();
 
     public void readAccess(SNode node) {
-      myNodesToDependOn.add(node);
+      synchronized(LOCK) {
+        myNodesToDependOn.add(node);
+      }
     }
 
     public Set<SNode> getNodesToDependOn() {
-      return new HashSet<SNode>(myNodesToDependOn);
+      synchronized(LOCK) {
+        return new HashSet<SNode>(myNodesToDependOn);
+      }
     }
   }
 
