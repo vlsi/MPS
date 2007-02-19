@@ -5,7 +5,7 @@ package jetbrains.mps.xml.structure;
 import jetbrains.mps.core.structure.NamedConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ElementPart extends NamedConcept {
@@ -14,7 +14,10 @@ public class ElementPart extends NamedConcept {
     super(node);
   }
 
+  public static ElementPart newInstance(SModel sm, boolean init) {
+    return (ElementPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.ElementPart", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static ElementPart newInstance(SModel sm) {
-    return (ElementPart)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.xml.ElementPart", sm, GlobalScope.getInstance()).getAdapter();
+    return ElementPart.newInstance(sm, false);
   }
 }

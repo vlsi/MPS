@@ -5,7 +5,7 @@ package jetbrains.mps.patterns.structure;
 import jetbrains.mps.annotations.structure.AttributeConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Pattern extends AttributeConcept {
@@ -14,7 +14,10 @@ public class Pattern extends AttributeConcept {
     super(node);
   }
 
+  public static Pattern newInstance(SModel sm, boolean init) {
+    return (Pattern)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.patterns.Pattern", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static Pattern newInstance(SModel sm) {
-    return (Pattern)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.patterns.Pattern", sm, GlobalScope.getInstance()).getAdapter();
+    return Pattern.newInstance(sm, false);
   }
 }

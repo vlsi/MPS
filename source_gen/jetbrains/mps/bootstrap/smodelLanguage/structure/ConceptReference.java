@@ -5,7 +5,7 @@ package jetbrains.mps.bootstrap.smodelLanguage.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
@@ -16,8 +16,11 @@ public class ConceptReference extends BaseConcept {
     super(node);
   }
 
+  public static ConceptReference newInstance(SModel sm, boolean init) {
+    return (ConceptReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.ConceptReference", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static ConceptReference newInstance(SModel sm) {
-    return (ConceptReference)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.ConceptReference", sm, GlobalScope.getInstance()).getAdapter();
+    return ConceptReference.newInstance(sm, false);
   }
 
   public ConceptDeclaration getConcept() {

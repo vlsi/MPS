@@ -4,7 +4,7 @@ package jetbrains.mps.bootstrap.smodelLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class OperationParm_Root extends AbstractOperationParameter {
@@ -13,7 +13,10 @@ public class OperationParm_Root extends AbstractOperationParameter {
     super(node);
   }
 
+  public static OperationParm_Root newInstance(SModel sm, boolean init) {
+    return (OperationParm_Root)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Root", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static OperationParm_Root newInstance(SModel sm) {
-    return (OperationParm_Root)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Root", sm, GlobalScope.getInstance()).getAdapter();
+    return OperationParm_Root.newInstance(sm, false);
   }
 }

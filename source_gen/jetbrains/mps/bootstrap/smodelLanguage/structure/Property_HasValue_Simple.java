@@ -4,7 +4,7 @@ package jetbrains.mps.bootstrap.smodelLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Expression;
 
@@ -15,8 +15,11 @@ public class Property_HasValue_Simple extends SNodeOperation {
     super(node);
   }
 
+  public static Property_HasValue_Simple newInstance(SModel sm, boolean init) {
+    return (Property_HasValue_Simple)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Property_HasValue_Simple", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static Property_HasValue_Simple newInstance(SModel sm) {
-    return (Property_HasValue_Simple)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Property_HasValue_Simple", sm, GlobalScope.getInstance()).getAdapter();
+    return Property_HasValue_Simple.newInstance(sm, false);
   }
 
   public Expression getValue() {

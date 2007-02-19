@@ -4,7 +4,7 @@ package jetbrains.mps.patterns.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class PatternVariableDeclaration extends Pattern {
@@ -14,8 +14,11 @@ public class PatternVariableDeclaration extends Pattern {
     super(node);
   }
 
+  public static PatternVariableDeclaration newInstance(SModel sm, boolean init) {
+    return (PatternVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.patterns.PatternVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static PatternVariableDeclaration newInstance(SModel sm) {
-    return (PatternVariableDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.patterns.PatternVariableDeclaration", sm, GlobalScope.getInstance()).getAdapter();
+    return PatternVariableDeclaration.newInstance(sm, false);
   }
 
   public String getVarName() {

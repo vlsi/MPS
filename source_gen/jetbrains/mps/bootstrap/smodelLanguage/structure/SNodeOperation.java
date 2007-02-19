@@ -5,7 +5,7 @@ package jetbrains.mps.bootstrap.smodelLanguage.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
 import java.util.List;
@@ -25,8 +25,11 @@ public class SNodeOperation extends BaseConcept {
     super(node);
   }
 
+  public static SNodeOperation newInstance(SModel sm, boolean init) {
+    return (SNodeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SNodeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static SNodeOperation newInstance(SModel sm) {
-    return (SNodeOperation)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SNodeOperation", sm, GlobalScope.getInstance()).getAdapter();
+    return SNodeOperation.newInstance(sm, false);
   }
 
   public int getParametersCount() {

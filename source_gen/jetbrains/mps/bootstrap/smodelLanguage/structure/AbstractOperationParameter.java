@@ -5,7 +5,7 @@ package jetbrains.mps.bootstrap.smodelLanguage.structure;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class AbstractOperationParameter extends BaseConcept {
@@ -14,7 +14,10 @@ public class AbstractOperationParameter extends BaseConcept {
     super(node);
   }
 
+  public static AbstractOperationParameter newInstance(SModel sm, boolean init) {
+    return (AbstractOperationParameter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.AbstractOperationParameter", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static AbstractOperationParameter newInstance(SModel sm) {
-    return (AbstractOperationParameter)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.AbstractOperationParameter", sm, GlobalScope.getInstance()).getAdapter();
+    return AbstractOperationParameter.newInstance(sm, false);
   }
 }

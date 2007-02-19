@@ -4,7 +4,7 @@ package jetbrains.mps.bootstrap.smodelLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
 import java.util.List;
@@ -16,8 +16,11 @@ public class OperationParm_ConceptList extends AbstractOperationParameter {
     super(node);
   }
 
+  public static OperationParm_ConceptList newInstance(SModel sm, boolean init) {
+    return (OperationParm_ConceptList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.OperationParm_ConceptList", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static OperationParm_ConceptList newInstance(SModel sm) {
-    return (OperationParm_ConceptList)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.OperationParm_ConceptList", sm, GlobalScope.getInstance()).getAdapter();
+    return OperationParm_ConceptList.newInstance(sm, false);
   }
 
   public int getConceptsCount() {

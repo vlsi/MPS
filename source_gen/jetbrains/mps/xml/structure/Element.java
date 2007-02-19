@@ -4,7 +4,7 @@ package jetbrains.mps.xml.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
 import java.util.List;
@@ -17,8 +17,11 @@ public class Element extends ElementPart {
     super(node);
   }
 
+  public static Element newInstance(SModel sm, boolean init) {
+    return (Element)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.Element", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static Element newInstance(SModel sm) {
-    return (Element)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.xml.Element", sm, GlobalScope.getInstance()).getAdapter();
+    return Element.newInstance(sm, false);
   }
 
   public int getAttributesCount() {

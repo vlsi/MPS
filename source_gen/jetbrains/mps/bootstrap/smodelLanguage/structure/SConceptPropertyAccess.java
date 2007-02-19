@@ -4,7 +4,7 @@ package jetbrains.mps.bootstrap.smodelLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptPropertyDeclaration;
 
@@ -15,8 +15,11 @@ public class SConceptPropertyAccess extends SNodeOperation {
     super(node);
   }
 
+  public static SConceptPropertyAccess newInstance(SModel sm, boolean init) {
+    return (SConceptPropertyAccess)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SConceptPropertyAccess", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static SConceptPropertyAccess newInstance(SModel sm) {
-    return (SConceptPropertyAccess)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SConceptPropertyAccess", sm, GlobalScope.getInstance()).getAdapter();
+    return SConceptPropertyAccess.newInstance(sm, false);
   }
 
   public ConceptPropertyDeclaration getConceptProperty() {

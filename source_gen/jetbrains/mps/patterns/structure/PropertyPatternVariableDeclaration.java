@@ -5,7 +5,7 @@ package jetbrains.mps.patterns.structure;
 import jetbrains.mps.annotations.structure.PropertyAttributeConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class PropertyPatternVariableDeclaration extends PropertyAttributeConcept {
@@ -15,8 +15,11 @@ public class PropertyPatternVariableDeclaration extends PropertyAttributeConcept
     super(node);
   }
 
+  public static PropertyPatternVariableDeclaration newInstance(SModel sm, boolean init) {
+    return (PropertyPatternVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.patterns.PropertyPatternVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static PropertyPatternVariableDeclaration newInstance(SModel sm) {
-    return (PropertyPatternVariableDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.patterns.PropertyPatternVariableDeclaration", sm, GlobalScope.getInstance()).getAdapter();
+    return PropertyPatternVariableDeclaration.newInstance(sm, false);
   }
 
   public String getVarName() {

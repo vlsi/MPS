@@ -5,7 +5,7 @@ package jetbrains.mps.patterns.structure;
 import jetbrains.mps.annotations.structure.LinkAttributeConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class LinkPatternVariableDeclaration extends LinkAttributeConcept {
@@ -15,8 +15,11 @@ public class LinkPatternVariableDeclaration extends LinkAttributeConcept {
     super(node);
   }
 
+  public static LinkPatternVariableDeclaration newInstance(SModel sm, boolean init) {
+    return (LinkPatternVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.patterns.LinkPatternVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static LinkPatternVariableDeclaration newInstance(SModel sm) {
-    return (LinkPatternVariableDeclaration)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.patterns.LinkPatternVariableDeclaration", sm, GlobalScope.getInstance()).getAdapter();
+    return LinkPatternVariableDeclaration.newInstance(sm, false);
   }
 
   public String getVarName() {

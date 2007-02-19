@@ -5,7 +5,7 @@ package jetbrains.mps.xml.structure;
 import jetbrains.mps.core.structure.NamedConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Document extends NamedConcept {
@@ -15,8 +15,11 @@ public class Document extends NamedConcept {
     super(node);
   }
 
+  public static Document newInstance(SModel sm, boolean init) {
+    return (Document)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.Document", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static Document newInstance(SModel sm) {
-    return (Document)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.xml.Document", sm, GlobalScope.getInstance()).getAdapter();
+    return Document.newInstance(sm, false);
   }
 
   public Element getRootElement() {

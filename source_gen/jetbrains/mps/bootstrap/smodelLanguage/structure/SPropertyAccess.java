@@ -4,7 +4,7 @@ package jetbrains.mps.bootstrap.smodelLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
 
@@ -15,8 +15,11 @@ public class SPropertyAccess extends SNodeOperation {
     super(node);
   }
 
+  public static SPropertyAccess newInstance(SModel sm, boolean init) {
+    return (SPropertyAccess)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static SPropertyAccess newInstance(SModel sm) {
-    return (SPropertyAccess)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess", sm, GlobalScope.getInstance()).getAdapter();
+    return SPropertyAccess.newInstance(sm, false);
   }
 
   public PropertyDeclaration getProperty() {

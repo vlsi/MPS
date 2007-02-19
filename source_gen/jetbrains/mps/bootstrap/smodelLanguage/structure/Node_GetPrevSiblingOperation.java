@@ -4,7 +4,7 @@ package jetbrains.mps.bootstrap.smodelLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Node_GetPrevSiblingOperation extends SNodeOperation {
@@ -13,7 +13,10 @@ public class Node_GetPrevSiblingOperation extends SNodeOperation {
     super(node);
   }
 
+  public static Node_GetPrevSiblingOperation newInstance(SModel sm, boolean init) {
+    return (Node_GetPrevSiblingOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Node_GetPrevSiblingOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static Node_GetPrevSiblingOperation newInstance(SModel sm) {
-    return (Node_GetPrevSiblingOperation)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Node_GetPrevSiblingOperation", sm, GlobalScope.getInstance()).getAdapter();
+    return Node_GetPrevSiblingOperation.newInstance(sm, false);
   }
 }

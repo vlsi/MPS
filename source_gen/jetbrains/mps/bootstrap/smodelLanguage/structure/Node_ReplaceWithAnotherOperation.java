@@ -4,7 +4,7 @@ package jetbrains.mps.bootstrap.smodelLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Expression;
 
@@ -15,8 +15,11 @@ public class Node_ReplaceWithAnotherOperation extends SNodeOperation {
     super(node);
   }
 
+  public static Node_ReplaceWithAnotherOperation newInstance(SModel sm, boolean init) {
+    return (Node_ReplaceWithAnotherOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Node_ReplaceWithAnotherOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static Node_ReplaceWithAnotherOperation newInstance(SModel sm) {
-    return (Node_ReplaceWithAnotherOperation)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Node_ReplaceWithAnotherOperation", sm, GlobalScope.getInstance()).getAdapter();
+    return Node_ReplaceWithAnotherOperation.newInstance(sm, false);
   }
 
   public Expression getParameter() {

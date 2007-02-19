@@ -4,7 +4,9 @@ package jetbrains.mps.core.structure;
 
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class BaseConcept extends BaseAdapter {
   public static String CPR_Abstract = "abstract";
@@ -13,12 +15,20 @@ public class BaseConcept extends BaseAdapter {
   public static String CPR_DontSubstituteByDefault = "dontSubstituteByDefault";
   public static String CPR_Deprecated_314 = "deprecated_314";
   public static String CPR_Deprecated_320 = "deprecated_320";
-  public static String CPR_Deprecated_next_after_320 = "deprecated_next_after_320";
+  public static String CPR_Deprecated_339 = "deprecated_339";
+  public static String CPR_Deprecated_next_after_339 = "deprecated_next_after_339";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
 
   public  BaseConcept(SNode node) {
     super(node);
+  }
+
+  public static BaseConcept newInstance(SModel sm, boolean init) {
+    return (BaseConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.BaseConcept", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+  public static BaseConcept newInstance(SModel sm) {
+    return BaseConcept.newInstance(sm, false);
   }
 
   public String getShortDescription() {

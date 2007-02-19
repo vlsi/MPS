@@ -5,7 +5,7 @@ package jetbrains.mps.bootstrap.smodelLanguage.structure;
 import jetbrains.mps.baseLanguage.structure.Type;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
@@ -16,8 +16,11 @@ public class SNodeType extends Type {
     super(node);
   }
 
+  public static SNodeType newInstance(SModel sm, boolean init) {
+    return (SNodeType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SNodeType", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static SNodeType newInstance(SModel sm) {
-    return (SNodeType)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SNodeType", sm, GlobalScope.getInstance()).getAdapter();
+    return SNodeType.newInstance(sm, false);
   }
 
   public ConceptDeclaration getConcept() {

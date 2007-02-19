@@ -4,7 +4,7 @@ package jetbrains.mps.patterns.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ListPattern extends AsPattern {
@@ -13,7 +13,10 @@ public class ListPattern extends AsPattern {
     super(node);
   }
 
+  public static ListPattern newInstance(SModel sm, boolean init) {
+    return (ListPattern)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.patterns.ListPattern", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static ListPattern newInstance(SModel sm) {
-    return (ListPattern)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.patterns.ListPattern", sm, GlobalScope.getInstance()).getAdapter();
+    return ListPattern.newInstance(sm, false);
   }
 }

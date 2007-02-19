@@ -4,7 +4,7 @@ package jetbrains.mps.xml.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Text extends ElementPart {
@@ -14,8 +14,11 @@ public class Text extends ElementPart {
     super(node);
   }
 
+  public static Text newInstance(SModel sm, boolean init) {
+    return (Text)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.Text", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static Text newInstance(SModel sm) {
-    return (Text)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.xml.Text", sm, GlobalScope.getInstance()).getAdapter();
+    return Text.newInstance(sm, false);
   }
 
   public String getText() {

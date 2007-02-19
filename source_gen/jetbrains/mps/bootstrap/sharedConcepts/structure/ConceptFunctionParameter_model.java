@@ -5,7 +5,7 @@ package jetbrains.mps.bootstrap.sharedConcepts.structure;
 import jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ConceptFunctionParameter_model extends ConceptFunctionParameter {
@@ -14,7 +14,10 @@ public class ConceptFunctionParameter_model extends ConceptFunctionParameter {
     super(node);
   }
 
+  public static ConceptFunctionParameter_model newInstance(SModel sm, boolean init) {
+    return (ConceptFunctionParameter_model)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_model", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static ConceptFunctionParameter_model newInstance(SModel sm) {
-    return (ConceptFunctionParameter_model)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_model", sm, GlobalScope.getInstance()).getAdapter();
+    return ConceptFunctionParameter_model.newInstance(sm, false);
   }
 }

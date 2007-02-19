@@ -4,7 +4,7 @@ package jetbrains.mps.bootstrap.smodelLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Expression;
 
@@ -15,8 +15,11 @@ public class Link_SetTargetOperation extends SNodeOperation {
     super(node);
   }
 
+  public static Link_SetTargetOperation newInstance(SModel sm, boolean init) {
+    return (Link_SetTargetOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Link_SetTargetOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static Link_SetTargetOperation newInstance(SModel sm) {
-    return (Link_SetTargetOperation)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Link_SetTargetOperation", sm, GlobalScope.getInstance()).getAdapter();
+    return Link_SetTargetOperation.newInstance(sm, false);
   }
 
   public Expression getParameter() {

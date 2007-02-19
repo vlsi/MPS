@@ -4,7 +4,7 @@ package jetbrains.mps.bootstrap.smodelLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Property_HasValue_Enum extends SNodeOperation {
@@ -14,8 +14,11 @@ public class Property_HasValue_Enum extends SNodeOperation {
     super(node);
   }
 
+  public static Property_HasValue_Enum newInstance(SModel sm, boolean init) {
+    return (Property_HasValue_Enum)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Property_HasValue_Enum", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static Property_HasValue_Enum newInstance(SModel sm) {
-    return (Property_HasValue_Enum)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Property_HasValue_Enum", sm, GlobalScope.getInstance()).getAdapter();
+    return Property_HasValue_Enum.newInstance(sm, false);
   }
 
   public EnumMemberReference getValue() {

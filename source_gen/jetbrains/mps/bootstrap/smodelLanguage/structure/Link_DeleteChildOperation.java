@@ -4,7 +4,7 @@ package jetbrains.mps.bootstrap.smodelLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Link_DeleteChildOperation extends SNodeOperation {
@@ -13,7 +13,10 @@ public class Link_DeleteChildOperation extends SNodeOperation {
     super(node);
   }
 
+  public static Link_DeleteChildOperation newInstance(SModel sm, boolean init) {
+    return (Link_DeleteChildOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Link_DeleteChildOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static Link_DeleteChildOperation newInstance(SModel sm) {
-    return (Link_DeleteChildOperation)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Link_DeleteChildOperation", sm, GlobalScope.getInstance()).getAdapter();
+    return Link_DeleteChildOperation.newInstance(sm, false);
   }
 }

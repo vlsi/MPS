@@ -4,7 +4,7 @@ package jetbrains.mps.patterns.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class WildcardPattern extends Pattern {
@@ -13,7 +13,10 @@ public class WildcardPattern extends Pattern {
     super(node);
   }
 
+  public static WildcardPattern newInstance(SModel sm, boolean init) {
+    return (WildcardPattern)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.patterns.WildcardPattern", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static WildcardPattern newInstance(SModel sm) {
-    return (WildcardPattern)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.patterns.WildcardPattern", sm, GlobalScope.getInstance()).getAdapter();
+    return WildcardPattern.newInstance(sm, false);
   }
 }

@@ -4,7 +4,7 @@ package jetbrains.mps.bootstrap.smodelLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 
@@ -15,8 +15,11 @@ public class SLinkAccess extends SNodeOperation {
     super(node);
   }
 
+  public static SLinkAccess newInstance(SModel sm, boolean init) {
+    return (SLinkAccess)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static SLinkAccess newInstance(SModel sm) {
-    return (SLinkAccess)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess", sm, GlobalScope.getInstance()).getAdapter();
+    return SLinkAccess.newInstance(sm, false);
   }
 
   public LinkDeclaration getLink() {

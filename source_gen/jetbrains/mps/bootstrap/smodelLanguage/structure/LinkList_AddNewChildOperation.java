@@ -4,7 +4,7 @@ package jetbrains.mps.bootstrap.smodelLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
@@ -15,8 +15,11 @@ public class LinkList_AddNewChildOperation extends SNodeOperation {
     super(node);
   }
 
+  public static LinkList_AddNewChildOperation newInstance(SModel sm, boolean init) {
+    return (LinkList_AddNewChildOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.LinkList_AddNewChildOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static LinkList_AddNewChildOperation newInstance(SModel sm) {
-    return (LinkList_AddNewChildOperation)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.LinkList_AddNewChildOperation", sm, GlobalScope.getInstance()).getAdapter();
+    return LinkList_AddNewChildOperation.newInstance(sm, false);
   }
 
   public ConceptDeclaration getConcept() {

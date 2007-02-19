@@ -5,7 +5,7 @@ package jetbrains.mps.bootstrap.smodelLanguage.structure;
 import jetbrains.mps.baseLanguage.structure.AbstractCreator;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class SNodeListCreator extends AbstractCreator {
@@ -15,8 +15,11 @@ public class SNodeListCreator extends AbstractCreator {
     super(node);
   }
 
+  public static SNodeListCreator newInstance(SModel sm, boolean init) {
+    return (SNodeListCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SNodeListCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
   public static SNodeListCreator newInstance(SModel sm) {
-    return (SNodeListCreator)SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SNodeListCreator", sm, GlobalScope.getInstance()).getAdapter();
+    return SNodeListCreator.newInstance(sm, false);
   }
 
   public SNodeListType getCreatedType() {
