@@ -22,13 +22,14 @@
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1170730182547">
               <link role="concept" targetNodeId="1.1068390468198" />
             </node>
-            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeTypeCastExpression" id="1171615648292">
-              <link role="concept" targetNodeId="1.1068390468198" />
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1170730182548">
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetParentOperation" id="1170730182549" />
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1170730182551">
-                  <link role="variableDeclaration" targetNodeId="1170730182591" resolveInfo="inputClosure" />
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1170730182548">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAncestorOperation" id="1172006342694">
+                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Concept" id="1172006346883">
+                  <link role="concept" targetNodeId="1.1068390468198" />
                 </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1170730182551">
+                <link role="variableDeclaration" targetNodeId="1170730182591" resolveInfo="inputClosure" />
               </node>
             </node>
           </node>

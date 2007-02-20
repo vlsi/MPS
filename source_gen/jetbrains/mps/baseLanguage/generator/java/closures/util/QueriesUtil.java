@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.IScope;
 public class QueriesUtil {
 
   public static SNode createClassType_forClosure_enclosingClass(SNode inputClosure, ITemplateGenerator generator) {
-    SNode enclosingClass = SNodeOperations.getParent(inputClosure, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+    SNode enclosingClass = SNodeOperations.getAncestor(inputClosure, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     if(enclosingClass == null) {
       // closure is not in class
       ClassConcept adapter = (ClassConcept)SModelUtil_new.findNodeByFQName("java.lang.Object", ClassConcept.class, generator.getScope());
