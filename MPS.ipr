@@ -89,7 +89,7 @@
     <option name="myForwardDirection" value="false" />
   </component>
   <component name="DependencyValidationManager">
-    <scope name="Generated Files" pattern="file:*source_gen/**/*.java" />
+    <scope name="Generated Files" pattern="file:*source_gen/**/*.java||file:*tests_gen/**/*.java" />
     <scope name="Query Methods" pattern="file:*/Queries.java" />
     <scope name="Icons Java Files" pattern="file:*/Icons.java" />
     <scope name="Node Builders Java Files" pattern="file:*/*_NodeBuilder.java" />
