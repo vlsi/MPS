@@ -27,6 +27,9 @@ public class QueriesGenerated {
   public static List sourceNodesQuery_1171932074411(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(node, "testMethodList", true), "testMethod", true);
   }
+  public static List sourceNodesQuery_1171985035236(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTargets(node, "method", true);
+  }
   public static SNode sourceNodeQuery_1171932074431(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode superclass = SLinkOperations.getTarget(node, "superclass", true);
     if(superclass == null) {

@@ -86,6 +86,15 @@
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1171931851044" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1171984680408">
+        <property name="drawBorder" value="false" />
+        <property name="vertical" value="true" />
+        <link role="relationDeclaration" targetNodeId="4.1107880067339" />
+        <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1171984685175">
+          <property name="text" value="&lt;&lt; methods &gt;&gt;" />
+          <property name="drawBorder" value="false" />
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1171931858963">
