@@ -9,6 +9,7 @@ import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.smodel.*;
@@ -290,7 +291,7 @@ public class GenerationSession implements IGenerationSession {
     Set<Language> usedLang = new HashSet<Language>();
     Set<DevKit> usedDevKits = new HashSet<DevKit>();
     for (SModelDescriptor descriptor : transientModels) {
-      List<Language> languages = descriptor.getSModel().getLanguages(myInvocationContext.getScope());
+      List<Language> languages = descriptor.getSModel().getLanguages(GlobalScope.getInstance());
       for (Language language : languages) {
         if (!usedLang.contains(language)) {
           usedLang.add(language);
