@@ -46,6 +46,7 @@ public class AssertSame_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.getTextLine().setTextColor(Color.blue);
     editorCell.putUserObject(EditorCell.CELL_ID, "1171985780515");
     editorCell.setLayoutConstraint("");
     return editorCell;
@@ -58,6 +59,7 @@ public class AssertSame_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.getTextLine().setTextColor(Color.blue);
     editorCell.putUserObject(EditorCell.CELL_ID, "1171985788519");
     editorCell.setLayoutConstraint("");
     return editorCell;
