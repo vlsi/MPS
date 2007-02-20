@@ -21,6 +21,6 @@ public class BTestCase_name_PropertyConstraint implements IModelConstraints, INo
     manager.unRegisterNodePropertyGetter("jetbrains.mps.baseLanguage.unitTest.structure.BTestCase", "name");
   }
   public String execPropertyGet(SNode node, String propertyName, IScope scope) {
-    return SPropertyOperations.getString(node, "testCaseName");
+    return SPropertyOperations.getString(node, "testCaseName") + " test";
   }
 }
