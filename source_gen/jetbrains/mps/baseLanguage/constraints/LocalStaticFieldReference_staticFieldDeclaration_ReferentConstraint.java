@@ -23,10 +23,10 @@ public class LocalStaticFieldReference_staticFieldDeclaration_ReferentConstraint
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", "variableDeclaration");
   }
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    return (SNodeOperations.getAncestor(referenceNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) != null);
+    return (SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) != null);
   }
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    return QueriesUtil.getFieldScope(SNodeOperations.getAncestor(referenceNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false));
+    return QueriesUtil.getFieldScope(SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false));
   }
   public String getNodeReferentSearchScopeDescription() {
     return "<no description>";
