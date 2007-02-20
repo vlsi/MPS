@@ -1129,7 +1129,6 @@
       <module fileurl="file://$PROJECT_DIR$/projects/baseLanguageExt/dev/baseLanguageExt.iml" filepath="$PROJECT_DIR$/projects/baseLanguageExt/dev/baseLanguageExt.iml" group="Projects/BaseLanguageExt" />
       <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/unitTest/baseLanguage_unitTest.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/unitTest/baseLanguage_unitTest.iml" group="baseLanguage/ext" />
       <module fileurl="file://$PROJECT_DIR$/projects/DataNavigationQueryFramework/berkeleyDbEntityStore/berkeleyDbEntityStore.iml" filepath="$PROJECT_DIR$/projects/DataNavigationQueryFramework/berkeleyDbEntityStore/berkeleyDbEntityStore.iml" group="Projects/dataNavigationQuery/runtime" />
-      <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/blUnit/blUnit.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/blUnit/blUnit.iml" group="baseLanguage/ext" />
       <module fileurl="file://$PROJECT_DIR$/projects/baseLanguageExt/collections-runtime/collections-runtime.iml" filepath="$PROJECT_DIR$/projects/baseLanguageExt/collections-runtime/collections-runtime.iml" group="Projects/BaseLanguageExt" />
       <module fileurl="file://$PROJECT_DIR$/projects/DataNavigationQueryFramework/core/core.iml" filepath="$PROJECT_DIR$/projects/DataNavigationQueryFramework/core/core.iml" group="Projects/dataNavigationQuery/runtime" />
       <module fileurl="file://$PROJECT_DIR$/projects/dataNavigationQueryLang/dataNavigationQueryLang.iml" filepath="$PROJECT_DIR$/projects/dataNavigationQueryLang/dataNavigationQueryLang.iml" group="Projects/dataNavigationQuery/lang" />
