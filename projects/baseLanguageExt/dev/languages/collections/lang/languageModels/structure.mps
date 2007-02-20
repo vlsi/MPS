@@ -373,15 +373,17 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1168502632000">
     <property name="name" value="SortOperation" />
     <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1170069838092">
-      <property name="name" value="reverseOrder" />
-      <link role="dataType" targetNodeId="1.1082983657063" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1168502800721">
       <property name="sourceCardinality" value="1" />
       <property name="role" value="comparable" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1168502774204" resolveInfo="SortBlock" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1171960857530">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="order" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="2.1068431790191" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1168503036201">
       <property name="value" value="sort" />
