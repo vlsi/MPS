@@ -36,14 +36,11 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
   }
 
   public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-    if (parameterObject instanceof SNode &&
-            BaseAdapter.fromNode((SNode) parameterObject) instanceof ConceptDeclaration) {
-      parameterObject = BaseAdapter.fromNode(((SNode) parameterObject));
-    }
-    if (parameterObject instanceof ConceptDeclaration) {
-      return NodeFactoryManager.createNode(((ConceptDeclaration) parameterObject), myCurrentChild, getSourceNode(), model, getScope());
-    }
     if (parameterObject instanceof SNode) {
+      BaseAdapter parameterNodeAdapter = BaseAdapter.fromNode((SNode) parameterObject);
+      if (parameterNodeAdapter instanceof ConceptDeclaration) {
+        return NodeFactoryManager.createNode(((ConceptDeclaration) parameterNodeAdapter), myCurrentChild, getSourceNode(), model, getScope());
+      }
       throw new RuntimeException("Couldn't create child node. Parameter object: " + ((SNode) parameterObject).getDebugText());
     }
     throw new RuntimeException("Couldn't create child node. Parameter object: " + parameterObject);
