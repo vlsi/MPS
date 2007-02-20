@@ -1634,6 +1634,7 @@
     <library name="httpunit">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/httpunit/httpunit-1.6.2.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/httpunit/nekohtml.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
