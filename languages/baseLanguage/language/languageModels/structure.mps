@@ -1852,5 +1852,21 @@
       <link role="target" targetNodeId="1068431790189" resolveInfo="Type" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1172008963197">
+    <property name="name" value="LocalStaticFieldReference" />
+    <link role="extends" targetNodeId="1068498886296" resolveInfo="VariableReference" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1172008963199">
+      <property name="value" value="reference to local static field declaration" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1172008963200">
+      <link role="conceptPropertyDeclaration" targetNodeId="1146528679895" resolveInfo="lvalue" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1172008963202">
+      <property name="role" value="staticFieldDeclaration" />
+      <link role="specializedLink" targetNodeId="1068581517664" />
+      <link role="target" targetNodeId="1070462154015" resolveInfo="StaticFieldDeclaration" />
+    </node>
+  </node>
 </model>
 
