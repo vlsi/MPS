@@ -10,6 +10,11 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.structure.Classifier;
+import jetbrains.mps.generator.JavaModelUtil_new;
+import junit.framework.TestCase;
+import jetbrains.mps.baseLanguage.structure.ClassifierType;
+import jetbrains.mps.smodel.BaseAdapter;
 
 public class QueriesGenerated {
 
@@ -23,7 +28,13 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(node, "testMethodList", true), "testMethod", true);
   }
   public static SNode sourceNodeQuery_1171932074431(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "superclass", true);
+    SNode superclass = SLinkOperations.getTarget(node, "superclass", true);
+    if(superclass == null) {
+      Classifier classifier = JavaModelUtil_new.findClassifier(TestCase.class);
+      ClassifierType classifierType = JavaModelUtil_new.createType(classifier, sourceModel);
+      superclass = BaseAdapter.fromAdapter(classifierType);
+    }
+    return superclass;
   }
   public static SNode sourceNodeQuery_1171932074447(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "statementList", true);
