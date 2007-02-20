@@ -46,6 +46,7 @@ public class AssertEquals_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.getTextLine().setTextColor(Color.blue);
     editorCell.putUserObject(EditorCell.CELL_ID, "1171978127907");
     editorCell.setLayoutConstraint("");
     return editorCell;
@@ -58,6 +59,7 @@ public class AssertEquals_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.getTextLine().setTextColor(Color.blue);
     editorCell.putUserObject(EditorCell.CELL_ID, "1171978153884");
     editorCell.setLayoutConstraint("");
     return editorCell;
