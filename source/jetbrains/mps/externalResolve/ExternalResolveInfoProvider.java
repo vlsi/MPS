@@ -32,6 +32,9 @@ public class ExternalResolveInfoProvider {
   public static final String null_ = "jetbrains.mps.baseLanguage.types.null";
   public static final String classifier_ = "jetbrains.mps.baseLanguage.types.classifier";
   public static final String array_ = "jetbrains.mps.baseLanguage.types.array";
+  public static final String wildcard_ = "jetbrains.mps.baseLanguage.types.wildcard";
+  public static final String upperBound_ = "jetbrains.mps.baseLanguage.types.upperBound";
+  public static final String lowerBound_ = "jetbrains.mps.baseLanguage.types.lowerBound";
 
 
   private static Map<String, String> ourPrimitiveAdaptationNames = new HashMap<String, String>();
@@ -104,6 +107,7 @@ public class ExternalResolveInfoProvider {
       sb.append("]");
       return new Pair<String, String>(classifier_, sb.toString());
     }
+
     if (t instanceof ArrayType) {
       StringBuffer sb = new StringBuffer(array_);
       sb.append(" [");
@@ -114,8 +118,22 @@ public class ExternalResolveInfoProvider {
       sb.append("]");
       return new Pair<String, String>(array_, sb.toString());
     }
-    return new Pair<String, String>("", "");
 
+    if (t instanceof WildCardType) {
+      return new Pair<String, String>(wildcard_, "?");
+    }
+
+    if (t instanceof UpperBoundType) {
+      UpperBoundType ubt = (UpperBoundType) t;
+      return new Pair<String, String>(upperBound_, "? extends " + adaptType(ubt.getBound()).o2);
+    }
+
+    if (t instanceof LowerBoundType) {
+      LowerBoundType ubt = (LowerBoundType) t;
+      return new Pair<String, String>(upperBound_, "? super " + adaptType(ubt.getBound()).o2);
+    }
+
+    return new Pair<String, String>("", "");
   }
 
   private static Pair<String, String> adaptNode(Type node) {
