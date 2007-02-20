@@ -10,13 +10,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.baseLanguage.BaseLanguageSearchUtil_new;
-import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import java.util.List;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class StaticFieldReference_staticFieldDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -30,12 +23,10 @@ public class StaticFieldReference_staticFieldDeclaration_ReferentConstraint impl
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "variableDeclaration");
   }
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    return SLinkOperations.getTarget(referenceNode, "classifier", false) != null;
+    return (SLinkOperations.getTarget(referenceNode, "classifier", false) != null);
   }
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    ISearchScope hierarchyScope = BaseLanguageSearchUtil_new.createClassifierHierarchyScope(((Classifier)SNodeOperations.getAdapter(SLinkOperations.getTarget(referenceNode, "classifier", false))), IClassifiersSearchScope.STATIC_FIELD);
-    List fields = BaseAdapter.toNodes(BaseLanguageSearchUtil_new.getFieldsExcludingOverridden(hierarchyScope));
-    return new SimpleSearchScope((List<SNode>)fields);
+    return QueriesUtil.getFieldScope(SLinkOperations.getTarget(referenceNode, "classifier", false));
   }
   public String getNodeReferentSearchScopeDescription() {
     return "static fields from hierarchy of specified class";
