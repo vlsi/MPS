@@ -3,6 +3,9 @@
   <structure>
     <model modelUID="jetbrains.mps.baseLanguage.unitTest.structure" />
   </structure>
+  <constraints>
+    <model modelUID="jetbrains.mps.baseLanguage.unitTest.constraints" />
+  </constraints>
   <editor>
     <model modelUID="jetbrains.mps.baseLanguage.unitTest.editor" />
   </editor>
@@ -12,7 +15,18 @@
   </models>
   <module />
   <accessoryModels />
-  <generators />
-  <classPath />
+  <generators>
+    <generator generatorUID="jetbrains.mps.baseLanguage.unitTest#1171932017138" targetLanguage="jetbrains.mps.baseLanguage">
+      <models>
+        <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template" />
+      </models>
+      <module>
+        <moduleRoot path="${mps_home}\languages\baseLanguage\language\baseLanguage.mpl" />
+      </module>
+    </generator>
+  </generators>
+  <classPath>
+    <entry path="${language_descriptor}\classes" />
+  </classPath>
 </language>
 
