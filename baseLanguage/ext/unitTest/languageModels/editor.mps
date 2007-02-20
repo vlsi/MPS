@@ -82,6 +82,19 @@
         <property name="drawBorder" value="false" />
         <property name="selectable" value="false" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1171986637726">
+        <property name="drawBorder" value="false" />
+        <property name="vertical" value="true" />
+        <link role="relationDeclaration" targetNodeId="4.1128555889557" />
+        <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1171986642884">
+          <property name="text" value="&lt;&lt; static fields &gt;&gt;" />
+          <property name="drawBorder" value="false" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1171986799820">
+        <property name="drawBorder" value="false" />
+        <property name="selectable" value="false" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1171931851757">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1171931851044" />

@@ -24,6 +24,9 @@ public class QueriesGenerated {
   public static String propertyMacro_GetPropertyValue_1171932074456(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return "test_" + SPropertyOperations.getString(node, "methodName");
   }
+  public static List sourceNodesQuery_1171986734537(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTargets(node, "staticField", true);
+  }
   public static List sourceNodesQuery_1171932074411(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(node, "testMethodList", true), "testMethod", true);
   }

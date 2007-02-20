@@ -20,6 +20,7 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 
 public class BTestCase_Editor extends DefaultNodeEditor {
 
+  public AbstractCellListHandler myStaticFieldListHandler_staticFieldList_;
   public AbstractCellListHandler myMethodListHandler_methodList_;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
@@ -53,6 +54,8 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRowCell(context, node));
     editorCell.addEditorCell(this.createConstantCell2(context, node, ""));
+    editorCell.addEditorCell(this.createStaticFieldList(context, node));
+    editorCell.addEditorCell(this.createConstantCell4(context, node, ""));
     editorCell.addEditorCell(this.createTestMethodListCell(context, node));
     editorCell.addEditorCell(this.createMethodList(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, "1171931851750");
@@ -92,6 +95,34 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.CELL_ID, "1171931851756");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createConstantCell4(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1171986799820");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createStaticFieldList(EditorContext context, SNode node) {
+    if(this.myStaticFieldListHandler_staticFieldList_ == null) {
+      this.myStaticFieldListHandler_staticFieldList_ = new BTestCase_Editor_StaticFieldListHandler_staticFieldList_(node, "staticField", context);
+    }
+    EditorCell_Collection editorCell = this.myStaticFieldListHandler_staticFieldList_.createCells(context, new CellLayout_Vertical(), false);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+    editorCell.setGridLayout(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.putUserObject(EditorCell.ROLE, this.myStaticFieldListHandler_staticFieldList_.getElementRole());
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
