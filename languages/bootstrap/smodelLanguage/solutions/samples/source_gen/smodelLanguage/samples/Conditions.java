@@ -17,7 +17,9 @@ public class Conditions {
   }
   public boolean checkIsNull(SNode node) {
     if((node == null)) {
+    } else 
+    if((node != null)) {
     }
-    return (node == null);
+    return (node == null) || (node != null);
   }
 }

@@ -1592,13 +1592,30 @@
             <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsNullOperation" id="1172007974666" />
           </node>
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1172007954488" />
+          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.IfStatement" id="1172008744155">
+            <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1172008746847">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1172008746236">
+                <link role="variableDeclaration" targetNodeId="1172007968490" resolveInfo="node" />
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsNotNullOperation" id="1172008749520" />
+            </node>
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1172008744157" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1172007978028">
-          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1172007980593">
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1172007979920">
-              <link role="variableDeclaration" targetNodeId="1172007968490" resolveInfo="node" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.OrExpression" id="1172008774146">
+            <node role="rightExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1172008781118">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1172008780492">
+                <link role="variableDeclaration" targetNodeId="1172007968490" resolveInfo="node" />
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsNotNullOperation" id="1172008782572" />
             </node>
-            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsNullOperation" id="1172007982016" />
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1172007980593">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1172007979920">
+                <link role="variableDeclaration" targetNodeId="1172007968490" resolveInfo="node" />
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsNullOperation" id="1172007982016" />
+            </node>
           </node>
         </node>
       </node>
