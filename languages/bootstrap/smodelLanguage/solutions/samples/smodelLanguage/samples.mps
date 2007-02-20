@@ -1578,6 +1578,15 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1171999955626">
+          <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1171999957599">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1171999956926">
+              <link role="variableDeclaration" targetNodeId="1145915711626" resolveInfo="node" />
+            </node>
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsNullOperation" id="1171999959506" />
+          </node>
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1171999955628" />
+        </node>
       </node>
     </node>
   </node>

@@ -14,5 +14,7 @@ public class Conditions {
   }
   public void checkRoleAndTypeOfDirectParent(SNode node) {
     boolean b = SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.IfStatement", "condition");
+    if((node == null)) {
+    }
   }
 }

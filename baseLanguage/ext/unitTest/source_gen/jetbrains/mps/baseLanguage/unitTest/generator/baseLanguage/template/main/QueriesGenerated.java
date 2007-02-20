@@ -13,8 +13,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.generator.JavaModelUtil_new;
 import junit.framework.TestCase;
-import jetbrains.mps.baseLanguage.structure.ClassifierType;
-import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 
 public class QueriesGenerated {
 
@@ -35,10 +34,11 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_1171932074431(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode superclass = SLinkOperations.getTarget(node, "superclass", true);
-    if(superclass == null) {
+    if((superclass == null)) {
       Classifier classifier = JavaModelUtil_new.findClassifier(TestCase.class);
-      ClassifierType classifierType = JavaModelUtil_new.createType(classifier, sourceModel);
-      superclass = BaseAdapter.fromAdapter(classifierType);
+      SModel model = generator.getTargetModel();
+      superclass = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ClassifierType");
+      SLinkOperations.setTarget(superclass, "classifier", classifier.getNode(), false);
     }
     return superclass;
   }
