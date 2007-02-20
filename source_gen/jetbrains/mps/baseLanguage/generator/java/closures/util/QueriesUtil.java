@@ -44,7 +44,7 @@ public class QueriesUtil {
     return outputClassType;
   }
   public static List<SNode> getTypeVars_from_Closure_enclosingClass(SNode inputClosure, IScope scope) {
-    SNode enclosingClass = SNodeOperations.getParent(inputClosure, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+    SNode enclosingClass = SNodeOperations.getAncestor(inputClosure, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     if(enclosingClass == null) {
       // closure is not in class
       ClassConcept adapter = (ClassConcept)SModelUtil_new.findNodeByFQName("java.lang.Object", ClassConcept.class, scope);

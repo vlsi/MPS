@@ -231,7 +231,7 @@
               <link role="concept" targetNodeId="1.1068390468198" />
             </node>
             <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1170874244155">
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetParentOperation" id="1170874244156">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAncestorOperation" id="1172006925024">
                 <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Concept" id="1170874244157">
                   <link role="concept" targetNodeId="1.1068390468198" />
                 </node>
