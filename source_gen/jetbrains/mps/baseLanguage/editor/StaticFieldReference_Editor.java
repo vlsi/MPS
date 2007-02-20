@@ -64,6 +64,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    StaticFieldReference_Actions.setCellActions(editorCell, node, context);
     editorCell.putUserObject(EditorCell.CELL_ID, "1144433124322");
     editorCell.setLayoutConstraint("");
     return editorCell;
