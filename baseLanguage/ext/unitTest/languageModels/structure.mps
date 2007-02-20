@@ -5,7 +5,6 @@
   <import index="1" modelUID="jetbrains.mps.core.structure" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="3" modelUID="jetbrains.mps.baseLanguage.unitTest.structure" />
-  <import index="4" modelUID="jetbrains.mps.baseLanguage.blUnit.structure" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1171931690126">
     <property name="name" value="TestMethod" />
     <link role="extends" targetNodeId="1.1133920641626" />
@@ -22,7 +21,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1171931851043">
     <property name="rootable" value="true" />
-    <property name="name" value="BlTestCase" />
+    <property name="name" value="BTestCase" />
     <link role="extends" targetNodeId="2.1068390468198" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1171931851044">
       <property name="sourceCardinality" value="1" />
