@@ -102,7 +102,7 @@ public class ExternalResolver {
 
   public static String getExtResolveInfoFromJavaClass(Class cls) {
     return ExternalResolveInfoProvider.getExtResolveInfoFromJavaClass(cls.getName());
-  }
+  }    
 
   public static String getExtResolveInfoFromJavaClass(String clsName) {
     return ExternalResolveInfoProvider.getExtResolveInfoFromJavaClass(clsName);
