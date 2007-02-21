@@ -64,7 +64,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(node, "actual", true);
   }
   public static SNode sourceNodeQuery_1172017512021(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "message", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "message", true), "message", true);
   }
   public static SNode sourceNodeQuery_1172028454624(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "expression", true);
@@ -72,7 +72,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1172070854680(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "statement", true);
   }
-  public static SNode sourceNodeQuery_1172071584753(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode sourceNodeQuery_1172076393783(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "message", true);
   }
   public static SNode sourceNodeQuery_1172070995412(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {

@@ -156,7 +156,7 @@ public class AssertThrows_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1172071267562");
+    editorCell.putUserObject(EditorCell.CELL_ID, "1172076275715");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

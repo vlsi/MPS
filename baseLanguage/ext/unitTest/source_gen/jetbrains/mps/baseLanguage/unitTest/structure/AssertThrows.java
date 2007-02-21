@@ -8,9 +8,8 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
-import jetbrains.mps.baseLanguage.structure.Expression;
 
-public class AssertThrows extends Statement {
+public class AssertThrows extends Statement implements MessageHolder {
   public static String STATEMENT = "statement";
   public static String EXCEPTION_TYPE = "exceptionType";
   public static String MESSAGE = "message";
@@ -38,10 +37,10 @@ public class AssertThrows extends Statement {
   public void setExceptionType(ClassifierType node) {
     super.setChild(AssertThrows.EXCEPTION_TYPE, node);
   }
-  public Expression getMessage() {
-    return (Expression)this.getChild(AssertThrows.MESSAGE);
+  public Message getMessage() {
+    return (Message)this.getChild(AssertThrows.MESSAGE);
   }
-  public void setMessage(Expression node) {
+  public void setMessage(Message node) {
     super.setChild(AssertThrows.MESSAGE, node);
   }
 }

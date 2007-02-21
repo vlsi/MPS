@@ -117,13 +117,16 @@
     <link role="extends" targetNodeId="2.1068580123157" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1172017295411">
       <property name="sourceCardinality" value="0..1" />
-      <property name="role" value="message" />
+      <property name="role" value="message2" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="2.1068431790191" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1172017243827">
       <property name="value" value="fail" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1172075544314">
+      <link role="intfc" targetNodeId="1172075514136" resolveInfo="MessageHolder" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1172028177041">
@@ -155,14 +158,34 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="2.1107535904670" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1172071251341">
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1172069885863">
+      <property name="value" value="assert throws" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1172076269307">
+      <link role="intfc" targetNodeId="1172075514136" resolveInfo="MessageHolder" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1172073500303">
+    <property name="name" value="Message" />
+    <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1172073511101">
       <property name="role" value="message" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="2.1068431790191" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1172069885863">
-      <property name="value" value="assert throws" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1172076030111">
+      <property name="value" value="message" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptDeclaration" id="1172075514136">
+    <property name="name" value="MessageHolder" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1172075534298">
+      <property name="sourceCardinality" value="0..1" />
+      <property name="role" value="message" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1172073500303" resolveInfo="Message" />
     </node>
   </node>
 </model>
