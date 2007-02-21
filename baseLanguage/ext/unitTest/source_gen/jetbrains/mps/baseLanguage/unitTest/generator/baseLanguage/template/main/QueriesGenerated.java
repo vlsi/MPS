@@ -69,13 +69,13 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1172028454624(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "expression", true);
   }
-  public static SNode sourceNodeQuery_1172070854680(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode sourceNodeQuery_1172078363990(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "statement", true);
   }
-  public static SNode sourceNodeQuery_1172076393783(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode sourceNodeQuery_1172078364000(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "message", true);
   }
-  public static SNode sourceNodeQuery_1172070995412(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode sourceNodeQuery_1172078364010(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "exceptionType", true);
   }
 }
