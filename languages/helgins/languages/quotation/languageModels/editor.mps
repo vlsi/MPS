@@ -65,6 +65,7 @@
     <property name="name" value="_CreateAntiquotationKeyMap" />
     <link role="applicableConcept" targetNodeId="1.1141044949598" />
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1141045209821">
+      <property name="description" value="antiquotation" />
       <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1141045209918">
         <property name="keycode" value="%" />
       </node>
@@ -204,6 +205,7 @@
       </node>
     </node>
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1150896763199">
+      <property name="description" value="list antiquotation" />
       <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1150896763200">
         <property name="keycode" value="*" />
       </node>
@@ -346,6 +348,7 @@
       </node>
     </node>
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1155904410506">
+      <property name="description" value="reference antiquotation" />
       <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1155904410507">
         <property name="keycode" value="^" />
       </node>
