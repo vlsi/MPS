@@ -782,6 +782,25 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     buildModule(targetLangSourceRoot.getAbsolutePath());
   }
 
+  public void renamePackage(final String oldPackageName, final String newPackageName) throws RemoteException {
+    try {
+      new WriteCommandAction(myProject) {
+        protected void run(Result result) throws Throwable {
+          PsiPackage psiPackage = PsiManager.getInstance(myProject).findPackage(oldPackageName);
+          RenameRefactoring refactoring = RefactoringFactory.getInstance(myProject).createRename(psiPackage, newPackageName);
+          refactoring.setPreviewUsages(false);
+          refactoring.setSearchInComments(false);
+          refactoring.setSearchInNonJavaFiles(false);
+          refactoring.setShouldRenameInheritors(false);
+          refactoring.setShouldRenameVariables(false);
+          refactoring.run();
+        }
+      }.execute();
+    } catch (Throwable e) {
+      e.printStackTrace();
+    }
+  }
+
   public void deleteFilesAndRemoveFromVCS(final List<File> files) throws RemoteException {
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {

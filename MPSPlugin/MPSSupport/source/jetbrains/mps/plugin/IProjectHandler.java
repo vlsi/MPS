@@ -46,4 +46,6 @@ public interface IProjectHandler extends Remote {
   void removeIdeHandler(IMPSIDEHandler handler) throws RemoteException;
 
   void deleteFilesAndRemoveFromVCS(List<File> files) throws RemoteException;
+
+  void renamePackage(String oldPackageName, String newPackageName) throws RemoteException;
 }
