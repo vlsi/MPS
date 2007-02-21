@@ -7,6 +7,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
 import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -75,11 +76,15 @@ public class Generator extends AbstractModule {
     return myGeneratorDescriptor.getName();
   }
 
+  public String getAlias() {
+    String sourceLang = NameUtil.shortNameFromLongName(getSourceLanguage().getNamespace());
+    return sourceLang + " : " + myGeneratorDescriptor.getName();
+  }
+
   @NotNull
   public String getModuleUID() {
-    // return mySourceLanguage.getNamespace() + "->" + getTargetLanguageName();//this wannabe key is mutable!!!
-    String namespace = myGeneratorDescriptor.getGeneratorUID();
-    if (namespace == null) {
+    String uid = myGeneratorDescriptor.getGeneratorUID();
+    if (uid == null) {
       myGeneratorDescriptor.setGeneratorUID(generateGeneratorUID(mySourceLanguage));
       mySourceLanguage.save();
     }
@@ -124,10 +129,6 @@ public class Generator extends AbstractModule {
     return null;
   }
 
-//  public String getGeneratorClass() {
-//    return myGeneratorDescriptor.getGeneratorClass();
-//  }
-
   @NotNull
   public String toString() {
     StringBuffer sb = new StringBuffer(this.getClass().getName());
@@ -136,7 +137,7 @@ public class Generator extends AbstractModule {
     return sb.toString();
   }
 
-  @NotNull             
+  @NotNull
   public GeneratorDescriptor getGeneratorDescriptor() {
     return myGeneratorDescriptor;
   }
