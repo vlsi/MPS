@@ -155,6 +155,11 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="2.1107535904670" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1172071251341">
+      <property name="role" value="message" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="2.1068431790191" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1172069885863">
       <property name="value" value="assert throws" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
