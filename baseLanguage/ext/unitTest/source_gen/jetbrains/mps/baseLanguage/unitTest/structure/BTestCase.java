@@ -9,8 +9,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class BTestCase extends ClassConcept {
-  public static String TEST_METHOD_LIST = "testMethodList";
   public static String TEST_CASE_NAME = "testCaseName";
+  public static String TEST_METHOD_LIST = "testMethodList";
 
   public  BTestCase(SNode node) {
     super(node);
@@ -23,16 +23,16 @@ public class BTestCase extends ClassConcept {
     return BTestCase.newInstance(sm, false);
   }
 
-  public TestMethodList getTestMethodList() {
-    return (TestMethodList)this.getChild(BTestCase.TEST_METHOD_LIST);
-  }
-  public void setTestMethodList(TestMethodList node) {
-    super.setChild(BTestCase.TEST_METHOD_LIST, node);
-  }
   public String getTestCaseName() {
     return this.getProperty(BTestCase.TEST_CASE_NAME);
   }
   public void setTestCaseName(String value) {
     this.setProperty(BTestCase.TEST_CASE_NAME, value);
+  }
+  public TestMethodList getTestMethodList() {
+    return (TestMethodList)this.getChild(BTestCase.TEST_METHOD_LIST);
+  }
+  public void setTestMethodList(TestMethodList node) {
+    super.setChild(BTestCase.TEST_METHOD_LIST, node);
   }
 }
