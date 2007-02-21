@@ -1196,6 +1196,7 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method>
         <option name="Make" value="true" />
+        <option name="Run ant target" value="false" />
       </method>
     </configuration>
     <configuration default="false" name="Charisma" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
