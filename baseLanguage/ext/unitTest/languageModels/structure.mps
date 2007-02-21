@@ -115,12 +115,6 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1172017222794">
     <property name="name" value="Fail" />
     <link role="extends" targetNodeId="2.1068580123157" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1172017295411">
-      <property name="sourceCardinality" value="0..1" />
-      <property name="role" value="message2" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="2.1068431790191" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1172017243827">
       <property name="value" value="fail" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />

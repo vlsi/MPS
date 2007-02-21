@@ -229,10 +229,6 @@
         <property name="text" value="fail" />
         <property name="drawBorder" value="false" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1172017317506">
-        <property name="drawBorder" value="false" />
-        <link role="relationDeclaration" targetNodeId="1.1172017295411" />
-      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1172074682885">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1172075534298" />

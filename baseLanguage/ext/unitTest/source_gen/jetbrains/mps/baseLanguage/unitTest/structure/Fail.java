@@ -7,10 +7,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class Fail extends Statement implements MessageHolder {
-  public static String MESSAGE2 = "message2";
   public static String MESSAGE = "message";
 
   public  Fail(SNode node) {
@@ -24,12 +22,6 @@ public class Fail extends Statement implements MessageHolder {
     return Fail.newInstance(sm, false);
   }
 
-  public Expression getMessage2() {
-    return (Expression)this.getChild(Fail.MESSAGE2);
-  }
-  public void setMessage2(Expression node) {
-    super.setChild(Fail.MESSAGE2, node);
-  }
   public Message getMessage() {
     return (Message)this.getChild(Fail.MESSAGE);
   }
