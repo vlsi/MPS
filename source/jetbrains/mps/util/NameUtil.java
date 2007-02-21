@@ -148,6 +148,11 @@ public class NameUtil {
     return conceptFQNameByClassName(className);
   }
 
+  public static String conceptFQNameByAdapterClass(Class<? extends BaseAdapter> cls) {
+    String className = cls.getName();
+    return className;
+  }
+
   public static String conceptFQNameByClassName(String className) {
     String conceptName = NameUtil.shortNameFromLongName(className);
     String languageNamespace = NameUtil.namespaceFromLongName(className);
