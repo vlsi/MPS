@@ -61,7 +61,6 @@ public class SNode implements Cloneable, Iterable<SNode> {
   private Set<String> myPropertyGettersInProgress = new HashSet<String>();
   private Set<String> mySetReferentEventHandlersInProgress = new HashSet<String>();
 
-  //TMP: this name doesn't contain the word structure
   private String myConceptFqName;
 
   private BaseAdapter myAdapter;
@@ -70,9 +69,13 @@ public class SNode implements Cloneable, Iterable<SNode> {
     myModel = model;
   }
 
-  public SNode(@NotNull SModel model, String conceptFqName) {
+  /**
+   * @param model
+   * @param typeName type without word structure
+   */
+  public SNode(@NotNull SModel model, String typeName) {
     this(model);
-    myConceptFqName = conceptFqName;
+    myConceptFqName = NameUtil.conceptFQNameByClassName(typeName);
   }
 
   public void changeModel(SModel newModel) {
@@ -1375,15 +1378,11 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
 
   public String getConceptFqName() {
-    return NameUtil.conceptFQNameByClassName(getTypeFqName());
+    return myConceptFqName;
   }
 
   /*package*/ String getTypeFqName() {
-    if (myConceptFqName != null) {
-      return myConceptFqName;
-    } else {
-      return getClass().getName();
-    }
+    return NameUtil.removeStructureFromFqName(getConceptFqName());
   }
 
   public boolean isInstanceOfConcept(ConceptDeclaration concept, IScope scope) {
