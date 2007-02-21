@@ -837,6 +837,13 @@ public class SModel implements Iterable<SNode> {
         importElement.myModelDescriptor = newImportedModelUID;
       }
     }
+    for (SNode node : getAllNodesWithIds()) {
+      for (SReference reference : node.getReferences()) {
+        if (oldImportedModelUID.equals(reference.getTargetModelUID())) {
+          reference.setTargetModelUID(newImportedModelUID);
+        }
+      }
+    }
   }
 
 

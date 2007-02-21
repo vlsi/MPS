@@ -46,6 +46,10 @@ public class SReference {
     return myTargetModelUID;
   }
 
+  /*package*/ void setTargetModelUID(SModelUID modelUID) {
+    myTargetModelUID = modelUID;
+  }
+
   public boolean equalsTargetInfo(SReference reference) {
     if(!EqualUtil.equals(reference.myTargetNodeId, myTargetNodeId)) return false;
     if (!EqualUtil.equals(reference.myExtResolveInfo, myExtResolveInfo)) return false;

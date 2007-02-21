@@ -196,11 +196,15 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
         return false;
       }
       // 2. update model repository
-      SModelRepository.getInstance().renameUID(modelDescriptor.getModelUID(), newModelUID);
+      SModelUID oldModelUID = modelDescriptor.getModelUID();
+      SModelRepository.getInstance().renameUID(oldModelUID, newModelUID);
 
       // 3. rename descriptor itself
       DefaultSModelDescriptor defaultSModelDescriptor = (DefaultSModelDescriptor) modelDescriptor;
       defaultSModelDescriptor.changeSModelUID(newModelUID);
+
+      // 4. update node proxies
+      SNodeProxy.changeModelUID(oldModelUID, modelDescriptor);
       return true;
     } catch(Throwable t) {
       LOG.error("rename threw an exception " + t.toString(), t);
