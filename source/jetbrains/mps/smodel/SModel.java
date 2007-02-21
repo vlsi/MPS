@@ -846,6 +846,10 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
+  /*package*/ void changeModelUID(SModelUID newModelUID) {
+    myUID = newModelUID;
+  }
+
 
   /*package*/
   static class ImportElement {
