@@ -45,6 +45,7 @@ public interface SModelDescriptor {
   Set<SReference> findUsages(SNode node);
   Set<ConceptDeclaration> findDescendants(ConceptDeclaration node, Set<ConceptDeclaration> descendantsKnownInModel);
   Set<SNode> findInstances(ConceptDeclaration concept, IScope scope);
+  boolean hasImportedModel(SModelDescriptor modelDescriptor);
 
 
   FastNodeFinder getFastNodeFinder();
@@ -67,4 +68,6 @@ public interface SModelDescriptor {
   boolean isTransient();
 
   int getVersion();
+
+  boolean rename(String newLongName);
 }

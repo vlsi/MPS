@@ -4,7 +4,6 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
@@ -324,6 +323,20 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     return result;
   }
 
+  public boolean hasImportedModel(SModelDescriptor modelDescriptor) {
+    if (!myModelRootManager.isFindUsagesSupported()) return false;
+    Set<String> strings = new HashSet<String>();
+    if (mySModel == null || !SModelRepository.getInstance().isChanged(mySModel)) {
+      strings.add(modelDescriptor.toString());
+    }
+    if (!myModelRootManager.containsSomeString(this, strings)) return false;
+    getSModel();
+    if (mySModel != null) {
+      return mySModel.hasImportedModel(modelDescriptor.getModelUID());
+    }
+    return false;
+  }
+
   public Set<SReference> findUsages(SNode node) {
     return findUsages(CollectionUtil.asSet(node));
   }
@@ -434,5 +447,13 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     } else {
       return mySModel.getVersion();
     }
+  }
+
+  public boolean rename(String newLongName) {
+    return myModelRootManager.renameModelDescriptor(this, newLongName);
+  }
+
+  /*package*/ void changeSModelUID(SModelUID newModelUID) {
+    myModelUID = newModelUID;
   }
 }

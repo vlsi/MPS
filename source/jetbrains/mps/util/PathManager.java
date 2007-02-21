@@ -327,7 +327,7 @@ public class PathManager {
       String modelPath = modelFile.getCanonicalPath();
       String rootPath = root.getCanonicalPath();
       if(!modelPath.startsWith(rootPath)) {
-        throw new RuntimeException("getModelFQName failed for " + modelPath + " root= " + rootPath);
+        return null;
       }
       int length = rootPath.length();
       if(rootPath.endsWith(File.separator)) {

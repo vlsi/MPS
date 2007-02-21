@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.event.SModelsMulticaster;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vcs.Merger;
+import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
@@ -93,12 +94,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       }
     });
     for (File file : files) {
-      /* String modelFQName = PathManager.getModelFQName(file, new File(modelRoot.getPath()), modelRoot.getPrefix());
-      String stereotype = PathManager.getModelStereotype(file, new File(modelRoot.getPath()), modelRoot.getPrefix());*/
-      /*     if (modelFQName.equals("jetbrains.mps.baseLanguage.generator.java")) {
-        System.out.println();
-      }*/
-      SModelUID modelUID = PathManager.getModelUID(file, new File(modelRoot.getPath()), modelRoot.getPrefix());//new SModelUID(modelFQName, stereotype);
+      SModelUID modelUID = PathManager.getModelUID(file, new File(modelRoot.getPath()), modelRoot.getPrefix());
       SModelDescriptor modelDescriptor = getInstance(this, modelRoot, file.getAbsolutePath(), modelUID, owner);
       LOG.debug("I've read model descriptor " + modelDescriptor.getModelUID() + "\n" + "Model root is " + modelRoot.getPath() + " " + modelRoot.getPrefix());
       modelDescriptors.add(modelDescriptor);
@@ -117,6 +113,15 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 
   @NotNull
   public SModelDescriptor createNewModel(@NotNull ModelRoot root, @NotNull SModelUID uid, @NotNull ModelOwner owner) {
+    File modelFile = createFileForModelUID(root, uid);
+    try {
+      return DefaultModelRootManager.createModel(this, root, modelFile.getCanonicalPath(), uid, owner);
+    } catch (IOException e) {
+      throw new RuntimeException("Couldn't create new model \"" + uid + "\"", e);
+    }
+  }
+
+  private File createFileForModelUID(ModelRoot root, SModelUID uid) {
     String pathPrefix = root.getPrefix();
     String path = root.getPath();
 
@@ -131,11 +136,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     }
 
     File modelFile = new File(path, filenameSuffix.replace('.', File.separatorChar) + ".mps");
-    try {
-      return DefaultModelRootManager.createModel(this, root, modelFile.getCanonicalPath(), uid, owner);
-    } catch (IOException e) {
-      throw new RuntimeException("Couldn't create new model \"" + uid + "\"", e);
-    }
+    return modelFile;
   }
 
   public static SModelDescriptor getInstance(IModelRootManager manager, ModelRoot root, String fileName, SModelUID modelUID, ModelOwner owner) {
@@ -173,4 +174,51 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     return ModelPersistence.readVersionFromFile(modelDescriptor.getModelFile());
   }
 
+
+  public boolean renameModelDescriptor(SModelDescriptor modelDescriptor, String newLongName) {
+    try {
+      assert modelDescriptor instanceof DefaultSModelDescriptor;
+      SModelUID newModelUID = new SModelUID(newLongName, modelDescriptor.getStereotype());
+      // 1. rename file
+      Set<ModelRoot> modelRoots = collectModelRoots(modelDescriptor);
+      if (modelRoots.size() == 0) {
+        LOG.error("can't rename model " + modelDescriptor + " : no model root exists");
+        return false;
+      }
+      if (modelRoots.size() > 1) {
+        LOG.error("can't rename model " + modelDescriptor + " : more than one model root exists");
+        return false;
+      }
+      File dest = createFileForModelUID(modelRoots.iterator().next(), newModelUID);
+      boolean renameSuccessful = modelDescriptor.getModelFile().renameTo(dest);
+      if (!renameSuccessful) {
+        LOG.error("rename failed");
+        return false;
+      }
+      // 2. update model repository
+      SModelRepository.getInstance().renameUID(modelDescriptor.getModelUID(), newModelUID);
+
+      // 3. rename descriptor itself
+      DefaultSModelDescriptor defaultSModelDescriptor = (DefaultSModelDescriptor) modelDescriptor;
+      defaultSModelDescriptor.changeSModelUID(newModelUID);
+      return true;
+    } catch(Throwable t) {
+      LOG.error("rename threw an exception " + t.toString(), t);
+      return false;
+    }
+  }
+
+  private Set<ModelRoot> collectModelRoots(SModelDescriptor modelDescriptor) {
+    Set<ModelRoot> result = new HashSet<ModelRoot>();
+    File sourceFile = modelDescriptor.getModelFile();
+    Set<IModule> modelOwners = SModelRepository.getInstance().getOwners(modelDescriptor, IModule.class);
+    for (IModule module : modelOwners) {
+      for (ModelRoot modelRoot : module.getModelRoots()) {
+        if (modelDescriptor.getModelUID().toString().equals(PathManager.getModelUIDString(sourceFile, new File(modelRoot.getPath()), modelRoot.getPrefix()))) {
+          result.add(modelRoot);
+        }
+      }
+    }
+    return result;
+  }
 }

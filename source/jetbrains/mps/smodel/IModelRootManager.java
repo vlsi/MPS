@@ -44,4 +44,6 @@ public interface IModelRootManager {
   @NotNull SModelDescriptor createNewModel(@NotNull ModelRoot root,
                                            @NotNull SModelUID modelUID,
                                            @NotNull ModelOwner owner);
+
+  boolean renameModelDescriptor(SModelDescriptor modelDescriptor, String newLongName);
 }

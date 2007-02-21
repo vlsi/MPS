@@ -53,4 +53,9 @@ public abstract class AbstractModelRootManager implements IModelRootManager {
   public int getVersion(@NotNull SModelDescriptor modelDescriptor) {
     return -1;
   }
+
+
+  public boolean renameModelDescriptor(SModelDescriptor modelDescriptor, String newLongName) {
+    return false;
+  }
 }

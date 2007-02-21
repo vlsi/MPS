@@ -831,6 +831,14 @@ public class SModel implements Iterable<SNode> {
 
   }
 
+  public void changeImportedModelUID(SModelUID oldImportedModelUID, SModelUID newImportedModelUID) {
+    for (ImportElement importElement : myImports) {
+      if (importElement.getModelUID().equals(oldImportedModelUID)) {
+        importElement.myModelDescriptor = newImportedModelUID;
+      }
+    }
+  }
+
 
   /*package*/
   static class ImportElement {

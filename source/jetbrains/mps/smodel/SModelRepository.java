@@ -321,6 +321,15 @@ public class SModelRepository extends SModelAdapter {
     }
   }
 
+  public void renameUID(SModelUID oldModelUID, SModelUID newModelUID) {
+    SModelDescriptor modelDescriptor = myUIDToModelDescriptorMap.get(oldModelUID);
+    if (modelDescriptor != null) {
+      myUIDToModelDescriptorMap.remove(oldModelUID);
+      myUIDToModelDescriptorMap.put(newModelUID, modelDescriptor);
+      fireRepositoryChanged();
+    }
+  }
+
   public void markChanged(@NotNull SModelDescriptor descriptor, boolean b) {
     LOG.assertLog(myModelDescriptors.contains(descriptor));
 
