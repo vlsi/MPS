@@ -7,9 +7,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.baseLanguage.structure.ClassifierType;
 
 public class AssertThrows extends Statement {
   public static String STATEMENT = "statement";
+  public static String EXCEPTION_TYPE = "exceptionType";
 
   public  AssertThrows(SNode node) {
     super(node);
@@ -27,5 +29,11 @@ public class AssertThrows extends Statement {
   }
   public void setStatement(Statement node) {
     super.setChild(AssertThrows.STATEMENT, node);
+  }
+  public ClassifierType getExceptionType() {
+    return (ClassifierType)this.getChild(AssertThrows.EXCEPTION_TYPE);
+  }
+  public void setExceptionType(ClassifierType node) {
+    super.setChild(AssertThrows.EXCEPTION_TYPE, node);
   }
 }
