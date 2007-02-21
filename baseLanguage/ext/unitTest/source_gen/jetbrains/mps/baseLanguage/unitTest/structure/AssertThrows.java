@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class AssertThrows extends Statement {
+  public static String STATEMENT = "statement";
 
   public  AssertThrows(SNode node) {
     super(node);
@@ -19,5 +20,12 @@ public class AssertThrows extends Statement {
   }
   public static AssertThrows newInstance(SModel sm) {
     return AssertThrows.newInstance(sm, false);
+  }
+
+  public Statement getStatement() {
+    return (Statement)this.getChild(AssertThrows.STATEMENT);
+  }
+  public void setStatement(Statement node) {
+    super.setChild(AssertThrows.STATEMENT, node);
   }
 }

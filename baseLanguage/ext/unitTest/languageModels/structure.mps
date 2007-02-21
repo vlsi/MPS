@@ -143,6 +143,12 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1172069869612">
     <property name="name" value="AssertThrows" />
     <link role="extends" targetNodeId="2.1068580123157" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1172070029086">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="statement" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="2.1068580123157" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1172069885863">
       <property name="value" value="assert throws" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
