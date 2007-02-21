@@ -268,6 +268,7 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1172069902038">
       <property name="drawBorder" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1172069903868">
+        <property name="textFgColor" value="blue" />
         <property name="text" value="assert" />
         <property name="drawBorder" value="false" />
       </node>
@@ -276,6 +277,7 @@
         <link role="relationDeclaration" targetNodeId="1.1172070029086" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1172069911792">
+        <property name="textFgColor" value="blue" />
         <property name="text" value="throws" />
         <property name="drawBorder" value="false" />
       </node>

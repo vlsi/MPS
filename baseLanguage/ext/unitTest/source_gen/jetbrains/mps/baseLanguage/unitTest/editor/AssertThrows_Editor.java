@@ -45,6 +45,7 @@ public class AssertThrows_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.getTextLine().setTextColor(Color.blue);
     editorCell.putUserObject(EditorCell.CELL_ID, "1172069903868");
     editorCell.setLayoutConstraint("");
     return editorCell;
@@ -57,6 +58,7 @@ public class AssertThrows_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.getTextLine().setTextColor(Color.blue);
     editorCell.putUserObject(EditorCell.CELL_ID, "1172069911792");
     editorCell.setLayoutConstraint("");
     return editorCell;
