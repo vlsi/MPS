@@ -2,7 +2,10 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
 
 import java.util.List;
@@ -36,13 +39,10 @@ public class ModelActions {
   /**
    * helper method
    */
-  public static List<ConceptDeclaration> getDefaultSubstitutableConcepts(SModel sourceModel, final jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration targetConcept, final IScope scope) {
+  public static List<ConceptDeclaration> getDefaultSubstitutableConcepts(SModel sourceModel, final ConceptDeclaration targetConcept, final IScope scope) {
     return sourceModel.conceptAdaptersFromModelLanguages(new Condition<ConceptDeclaration>() {
       public boolean met(ConceptDeclaration node) {
-        return ChildSubstituteActionsHelper.isDefaultSubstitutableConcept(
-                (jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) node,
-                targetConcept,
-                scope);
+        return ChildSubstituteActionsHelper.isDefaultSubstitutableConcept((ConceptDeclaration) node, targetConcept, scope);
       }
     }, scope);
   }
