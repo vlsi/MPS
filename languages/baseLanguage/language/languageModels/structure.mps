@@ -1868,5 +1868,20 @@
       <link role="target" targetNodeId="1070462154015" resolveInfo="StaticFieldDeclaration" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1172058436953">
+    <property name="name" value="LocalStaticMethodCall" />
+    <link role="extends" targetNodeId="1068499141036" resolveInfo="BaseMethodCall" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1172058436955">
+      <property name="value" value="local static method invocation" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1172058436957">
+      <property name="sourceCardinality" value="1" />
+      <property name="targetCardinality" value="0..n" />
+      <property name="role" value="staticMethodDeclaration" />
+      <link role="specializedLink" targetNodeId="1068499141037" />
+      <link role="target" targetNodeId="1081236700938" resolveInfo="StaticMethodDeclaration" />
+    </node>
+  </node>
 </model>
 

@@ -11,22 +11,22 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.ISearchScope;
 
-public class LocalStaticFieldReference_staticFieldDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
+public class LocalStaticMethodCall_staticMethodDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  LocalStaticFieldReference_staticFieldDeclaration_ReferentConstraint() {
+  public  LocalStaticMethodCall_staticMethodDeclaration_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
-    manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", "variableDeclaration", this);
+    manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", "baseMethodDeclaration", this);
   }
   public void unRegisterSelf(ModelConstraintsManager manager) {
-    manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", "variableDeclaration");
+    manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", "baseMethodDeclaration");
   }
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    return (SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) != null);
+    return (SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null);
   }
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    return ReferenceUtil.getFieldScope(SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false));
+    return ReferenceUtil.getMethodScope(SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false));
   }
   public String getNodeReferentSearchScopeDescription() {
     return "<no description>";
