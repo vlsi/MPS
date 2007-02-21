@@ -43,8 +43,6 @@ public class SNode implements Cloneable, Iterable<SNode> {
   private String myRoleInParent;
   private SNode myParent;
 
-  private Throwable myCreationPoint;
-
   private Map<String, Integer> myChildInRoleCount = new HashMap<String, Integer>();
   private List<SNode> myChildren;
 
@@ -96,7 +94,6 @@ public class SNode implements Cloneable, Iterable<SNode> {
   private List<SNode> _children() {
     if (myChildren == null) {
       myChildren = new LinkedList<SNode>();
-      myCreationPoint = new Throwable();
       if (myChildrenLoader != null) {
         getModel().runLoadingAction(new Runnable() {
           public void run() {
