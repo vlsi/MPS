@@ -1,6 +1,5 @@
 package jetbrains.mps.ide;
 
-import jetbrains.mps.ide.action.MPSIdeActions;
 import jetbrains.mps.logging.LoggerUtil;
 import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.project.ApplicationComponents;
