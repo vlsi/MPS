@@ -457,4 +457,8 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     myModelUID = newModelUID;
     getSModel().changeModelUID(newModelUID);
   }
+
+  /*package*/ void setModelFile(File file) {
+    myModelFile = file;
+  }
 }

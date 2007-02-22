@@ -321,13 +321,38 @@ public class SModelRepository extends SModelAdapter {
     }
   }
 
-  public void renameUID(SModelUID oldModelUID, SModelUID newModelUID) {
-    SModelDescriptor modelDescriptor = myUIDToModelDescriptorMap.get(oldModelUID);
-    if (modelDescriptor != null) {
-      myUIDToModelDescriptorMap.remove(oldModelUID);
-      myUIDToModelDescriptorMap.put(newModelUID, modelDescriptor);
-      fireRepositoryChanged();
+  public void renameUID(SModelDescriptor modelDescriptor, SModelUID newModelUID) {
+    boolean contains0 = myUIDToModelDescriptorMap.containsKey(modelDescriptor.getModelUID());
+    myUIDToModelDescriptorMap.remove(modelDescriptor.getModelUID());
+    boolean contains1 = myModelDescriptors.contains(modelDescriptor);
+    myModelDescriptors.remove(modelDescriptor);
+    Long aLong = myChangedModels.get(modelDescriptor);
+    myChangedModels.remove(modelDescriptor);
+    HashSet<ModelOwner> owners = myModelToOwnerMap.get(modelDescriptor);
+    myModelToOwnerMap.remove(modelDescriptor);
+    boolean contains2 = myModelsWithNoOwners.contains(modelDescriptor);
+    myModelsWithNoOwners.remove(modelDescriptor);
+
+    if (modelDescriptor instanceof DefaultSModelDescriptor) {
+      ((DefaultSModelDescriptor)modelDescriptor).changeSModelUID(newModelUID);
     }
+
+    if (contains0) {
+      myUIDToModelDescriptorMap.put(newModelUID, modelDescriptor);
+    }
+    if (contains1) {
+      myModelDescriptors.add(modelDescriptor);
+    }
+    if (aLong != null) {
+      myChangedModels.put(modelDescriptor, aLong);
+    }
+    myModelToOwnerMap.put(modelDescriptor, owners);
+    if (contains2) {
+      myModelsWithNoOwners.add(modelDescriptor);
+    }
+
+    markChanged(modelDescriptor, true);
+    fireRepositoryChanged();
   }
 
   public void markChanged(@NotNull SModelDescriptor descriptor, boolean b) {
