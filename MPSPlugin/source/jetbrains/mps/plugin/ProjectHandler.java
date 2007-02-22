@@ -763,7 +763,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     try {
       new WriteCommandAction(myProject) {
         protected void run(Result result) throws Throwable {
-          doRenameClass(oldClassFQName, newClassName);
+          doRenameClass(packageName(oldClassFQName) + ".structure." + shortName(oldClassFQName), newClassName);
           doRenameClass(packageName(oldClassFQName) + ".editor." + shortName(oldClassFQName)+"_Editor",
                   newClassName + "_Editor");
         }
@@ -776,7 +776,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
 
   public void moveConceptClass(String oldClassFQName, String newPackageName, File targetLangSourceRoot) throws RemoteException {
     //todo: if source root does not exist then create it add it to sources
-    moveClass(oldClassFQName, newPackageName, targetLangSourceRoot);
+    moveClass(packageName(oldClassFQName)+".structure."+shortName(oldClassFQName), newPackageName+".structure", targetLangSourceRoot);
     moveClass(packageName(oldClassFQName)+".editor."+shortName(oldClassFQName)+"_Editor",
             newPackageName+".editor", targetLangSourceRoot);
     buildModule(targetLangSourceRoot.getAbsolutePath());
