@@ -25,7 +25,7 @@
   <module />
   <accessoryModels />
   <generators>
-    <generator generatorUID="jetbrains.mps.baseLanguage.ext.collections.lang#1151699677197" targetLanguage="jetbrains.mps.baseLanguage">
+    <generator name="default" generatorUID="jetbrains.mps.baseLanguage.ext.collections.lang#1151699677197" targetLanguage="jetbrains.mps.baseLanguage">
       <models>
         <modelRoot path="${language_descriptor}\generators\baseLanguage\templates" namespacePrefix="jetbrains.mps.baseLanguage.ext.collections.lang.generator.baseLanguage.template" />
       </models>

@@ -6,6 +6,7 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
 import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
+import jetbrains.mps.projectLanguage.structure.GeneratorReference;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
@@ -150,7 +151,21 @@ public class Generator extends AbstractModule {
     if (!result.contains(mySourceLanguage)) {
       result.add(mySourceLanguage);
     }
+    // depends on refrenced generators
+    result.addAll(getReferencedGenerators());
     return result;
+  }
+
+  @NotNull
+  public List<Generator> getReferencedGenerators() {
+    List<Generator> list = new LinkedList<Generator>();
+    for (GeneratorReference generatorReference : myGeneratorDescriptor.getGeneratorReferences()) {
+      IModule module = MPSModuleRepository.getInstance().getModuleByUID(generatorReference.getReferentUID());
+      if (module instanceof Generator) {
+        list.add((Generator) module);
+      }
+    }
+    return list;
   }
 
   @Nullable
