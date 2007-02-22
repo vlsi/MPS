@@ -115,7 +115,7 @@ public abstract class BaseAdapter {
   }
 
   public BaseAdapter getContainingRoot() {
-    return getNode().getContainingRoot().getAdapter();
+    return BaseAdapter.fromNode(getNode().getContainingRoot());
   }
 
   public<BA extends BaseAdapter> List<BA> allChildren(Class<BA> cls, Condition<BA> cond) {
