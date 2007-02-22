@@ -65,7 +65,7 @@
     <option name="USE_PER_PROJECT_SETTINGS" value="true" />
   </component>
   <component name="CompilerConfiguration">
-    <option name="DEFAULT_COMPILER" value="Javac" />
+    <option name="DEFAULT_COMPILER" value="EclipseEmbedded" />
     <option name="DEPLOY_AFTER_MAKE" value="2" />
     <resourceExtensions>
       <entry name=".+\.(properties|xml|html|dtd|tld)" />
@@ -190,12 +190,6 @@
         <inspection_tool class="GWTStyleCheck" level="ERROR" enabled="false" />
         <inspection_tool class="GwtToHtmlReferences" level="ERROR" enabled="false" />
         <inspection_tool class="CheckEmptyScriptTag" level="WARNING" enabled="false" />
-        <inspection_tool class="HTML" level="WARNING" enabled="false">
-          <option name="myAdditionalHtmlTags" value="embed,nobr" />
-          <option name="myAdditionalHtmlAttributes" value="type,wmode,src,width,height" />
-          <option name="myCheckHtmlTags" value="true" />
-          <option name="myCheckHtmlAttributes" value="true" />
-        </inspection_tool>
         <inspection_tool class="CheckImageSize" level="WARNING" enabled="false" />
         <inspection_tool class="RequiredAttributes" level="WARNING" enabled="false">
           <option name="myAdditionalRequiredHtmlAttributes" value="" />
@@ -234,10 +228,6 @@
         </inspection_tool>
         <inspection_tool class="EjbDomInspection" level="ERROR" enabled="false" />
         <inspection_tool class="EjbQlInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="PersistenceDomInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="PersistenceModelErrorInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="PersistenceModelWarningInspection" level="WARNING" enabled="false" />
-        <inspection_tool class="PersistenceQlInspection" level="ERROR" enabled="false" />
         <inspection_tool class="ReferencesToClassesFromDefaultPackagesInJSPFile" level="ERROR" enabled="false" />
         <inspection_tool class="SelfIncludingJspFiles" level="ERROR" enabled="false" />
         <inspection_tool class="WebProperties" level="ERROR" enabled="false" />
@@ -396,12 +386,6 @@
         <inspection_tool class="GWTStyleCheck" level="ERROR" enabled="false" />
         <inspection_tool class="GwtToHtmlReferences" level="ERROR" enabled="false" />
         <inspection_tool class="CheckEmptyScriptTag" level="WARNING" enabled="false" />
-        <inspection_tool class="HTML" level="WARNING" enabled="false">
-          <option name="myAdditionalHtmlTags" value="embed,nobr" />
-          <option name="myAdditionalHtmlAttributes" value="type,wmode,src,width,height" />
-          <option name="myCheckHtmlTags" value="true" />
-          <option name="myCheckHtmlAttributes" value="true" />
-        </inspection_tool>
         <inspection_tool class="CheckImageSize" level="WARNING" enabled="false" />
         <inspection_tool class="RequiredAttributes" level="WARNING" enabled="false">
           <option name="myAdditionalRequiredHtmlAttributes" value="" />
@@ -440,10 +424,6 @@
         </inspection_tool>
         <inspection_tool class="EjbDomInspection" level="ERROR" enabled="false" />
         <inspection_tool class="EjbQlInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="PersistenceDomInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="PersistenceModelErrorInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="PersistenceModelWarningInspection" level="WARNING" enabled="false" />
-        <inspection_tool class="PersistenceQlInspection" level="ERROR" enabled="false" />
         <inspection_tool class="ReferencesToClassesFromDefaultPackagesInJSPFile" level="ERROR" enabled="false" />
         <inspection_tool class="SelfIncludingJspFiles" level="ERROR" enabled="false" />
         <inspection_tool class="WebProperties" level="ERROR" enabled="false" />
@@ -608,12 +588,6 @@
         <inspection_tool class="ReturnFromFinallyBlockJS" level="WARNING" enabled="false" />
         <inspection_tool class="ThrowFromFinallyBlockJS" level="WARNING" enabled="false" />
         <inspection_tool class="CheckEmptyScriptTag" level="WARNING" enabled="false" />
-        <inspection_tool class="HTML" level="WARNING" enabled="false">
-          <option name="myAdditionalHtmlTags" value="embed,nobr" />
-          <option name="myAdditionalHtmlAttributes" value="type,wmode,src,width,height" />
-          <option name="myCheckHtmlTags" value="true" />
-          <option name="myCheckHtmlAttributes" value="true" />
-        </inspection_tool>
         <inspection_tool class="CheckImageSize" level="WARNING" enabled="false" />
         <inspection_tool class="RequiredAttributes" level="WARNING" enabled="false">
           <option name="myAdditionalRequiredHtmlAttributes" value="" />
@@ -666,10 +640,6 @@
         </inspection_tool>
         <inspection_tool class="EjbDomInspection" level="ERROR" enabled="false" />
         <inspection_tool class="EjbQlInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="PersistenceDomInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="PersistenceModelErrorInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="PersistenceModelWarningInspection" level="WARNING" enabled="false" />
-        <inspection_tool class="PersistenceQlInspection" level="ERROR" enabled="false" />
         <inspection_tool class="ReferencesToClassesFromDefaultPackagesInJSPFile" level="ERROR" enabled="false" />
         <inspection_tool class="SelfIncludingJspFiles" level="ERROR" enabled="false" />
         <inspection_tool class="WebProperties" level="ERROR" enabled="false" />
@@ -805,12 +775,6 @@
         <inspection_tool class="GWTStyleCheck" level="ERROR" enabled="false" />
         <inspection_tool class="GwtToHtmlReferences" level="ERROR" enabled="false" />
         <inspection_tool class="CheckEmptyScriptTag" level="WARNING" enabled="false" />
-        <inspection_tool class="HTML" level="WARNING" enabled="false">
-          <option name="myAdditionalHtmlTags" value="embed,nobr" />
-          <option name="myAdditionalHtmlAttributes" value="type,wmode,src,width,height" />
-          <option name="myCheckHtmlTags" value="true" />
-          <option name="myCheckHtmlAttributes" value="true" />
-        </inspection_tool>
         <inspection_tool class="CheckImageSize" level="WARNING" enabled="false" />
         <inspection_tool class="RequiredAttributes" level="WARNING" enabled="false">
           <option name="myAdditionalRequiredHtmlAttributes" value="" />
@@ -849,10 +813,6 @@
         </inspection_tool>
         <inspection_tool class="EjbDomInspection" level="ERROR" enabled="false" />
         <inspection_tool class="EjbQlInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="PersistenceDomInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="PersistenceModelErrorInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="PersistenceModelWarningInspection" level="WARNING" enabled="false" />
-        <inspection_tool class="PersistenceQlInspection" level="ERROR" enabled="false" />
         <inspection_tool class="ReferencesToClassesFromDefaultPackagesInJSPFile" level="ERROR" enabled="false" />
         <inspection_tool class="SelfIncludingJspFiles" level="ERROR" enabled="false" />
         <inspection_tool class="WebProperties" level="ERROR" enabled="false" />
@@ -1128,6 +1088,7 @@
       <module fileurl="file://$PROJECT_DIR$/projects/textLanguage/TextLanguage.iml" filepath="$PROJECT_DIR$/projects/textLanguage/TextLanguage.iml" group="DataLanguages" />
       <module fileurl="file://$PROJECT_DIR$/projects/agreement/agreement.iml" filepath="$PROJECT_DIR$/projects/agreement/agreement.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/baseLanguageExt/dev/baseLanguageExt.iml" filepath="$PROJECT_DIR$/projects/baseLanguageExt/dev/baseLanguageExt.iml" group="Projects/BaseLanguageExt" />
+      <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/strings/baseLanguage_strings.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/strings/baseLanguage_strings.iml" group="baseLanguage/ext" />
       <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/unitTest/baseLanguage_unitTest.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/unitTest/baseLanguage_unitTest.iml" group="baseLanguage/ext" />
       <module fileurl="file://$PROJECT_DIR$/projects/DataNavigationQueryFramework/berkeleyDbEntityStore/berkeleyDbEntityStore.iml" filepath="$PROJECT_DIR$/projects/DataNavigationQueryFramework/berkeleyDbEntityStore/berkeleyDbEntityStore.iml" group="Projects/dataNavigationQuery/runtime" />
       <module fileurl="file://$PROJECT_DIR$/projects/baseLanguageExt/collections-runtime/collections-runtime.iml" filepath="$PROJECT_DIR$/projects/baseLanguageExt/collections-runtime/collections-runtime.iml" group="Projects/BaseLanguageExt" />
@@ -1175,43 +1136,37 @@
   <component name="ProjectRunConfigurationManager">
     <configuration default="false" name="IdeMain" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="jetbrains.mps.ide.IdeMain" />
-      <option name="VM_PARAMETERS" value="-Xmx1500m -ea" />
+      <option name="VM_PARAMETERS" value="-Xmx1024m -ea" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <module name="ProjectHalo" />
+      <module name="webr" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="3309" />
+        <option name="DEBUG_PORT" value="1478" />
         <option name="TRANSPORT" value="0" />
         <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="JProfiler">
-        <option name="WINDOW" value="false" />
-        <option name="JVMPI" value="false" />
-        <option name="INTERPRETED" value="false" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Profile ">
         <option name="myExternalizedOptions" value="&#13;&#10;snapshots-dir=&#13;&#10;" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="JProfiler" />
       <ConfigurationWrapper RunnerId="Profile " />
       <ConfigurationWrapper RunnerId="Run" />
       <method>
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="Charisma" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
+    <configuration default="false" name="Charisma" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
       <option name="LOCAL" value="true" />
-      <option name="OPEN_IN_BROWSER" value="true" />
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/User/login" />
-      <option name="COMMON_VM_ARGUMENTS" value="" />
+      <option name="OPEN_IN_BROWSER" value="false" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/app" />
+      <option name="COMMON_VM_ARGUMENTS" value="-Xms256m -Xmx1024m" />
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="webrSamples_hello" />
@@ -1242,7 +1197,7 @@
         <option name="MODULE_NAME" value="PubMedDB" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
-      <option name="DEPLOY_TOMCAT_MANAGER" value="true" />
+      <option name="DEPLOY_TOMCAT_MANAGER" value="false" />
       <option name="BASE_DIRECTORY_NAME" value="tomcat_Unnamed_e7d78b7c4" />
       <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
       <RunnerSettings RunnerId="Debug">
@@ -1250,8 +1205,26 @@
         <option name="TRANSPORT" value="0" />
         <option name="LOCAL" value="true" />
       </RunnerSettings>
+      <RunnerSettings RunnerId="Profile ">
+        <option name="myExternalizedOptions" value="&#13;&#10;snapshots-dir=&#13;&#10;" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value=" run" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value=" stop" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile ">
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
           <option name="USE_DEFAULT" value="true" />
@@ -1285,18 +1258,18 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="hello_webrSample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
+    <configuration default="false" name="depot_webrSample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
       <option name="LOCAL" value="true" />
       <option name="OPEN_IN_BROWSER" value="true" />
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/app/Say/hello" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/app" />
       <option name="COMMON_VM_ARGUMENTS" value="" />
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="webrSamples_hello" />
-        <option name="DEPLOY" value="true" />
+        <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
@@ -1316,7 +1289,7 @@
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="webrSamples_depot" />
-        <option name="DEPLOY" value="false" />
+        <option name="DEPLOY" value="true" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
@@ -1324,15 +1297,33 @@
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <option name="DEPLOY_TOMCAT_MANAGER" value="true" />
-      <option name="BASE_DIRECTORY_NAME" value="tomcat_Unnamed_e7d78b7c3" />
+      <option name="BASE_DIRECTORY_NAME" value="tomcat_Unnamed_e7d78b7c1" />
       <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="3714" />
+        <option name="DEBUG_PORT" value="2299" />
         <option name="TRANSPORT" value="0" />
         <option name="LOCAL" value="true" />
       </RunnerSettings>
+      <RunnerSettings RunnerId="Profile ">
+        <option name="myExternalizedOptions" value="&#13;&#10;snapshots-dir=&#13;&#10;" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value=" run" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value=" stop" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile ">
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
           <option name="USE_DEFAULT" value="true" />
@@ -1366,18 +1357,18 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="depot_webrSample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
+    <configuration default="false" name="hello_webrSample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
       <option name="LOCAL" value="true" />
       <option name="OPEN_IN_BROWSER" value="true" />
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/app/admin/list" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/app" />
       <option name="COMMON_VM_ARGUMENTS" value="" />
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="webrSamples_hello" />
-        <option name="DEPLOY" value="false" />
+        <option name="DEPLOY" value="true" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
