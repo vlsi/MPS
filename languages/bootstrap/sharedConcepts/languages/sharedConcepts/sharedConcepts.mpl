@@ -14,9 +14,7 @@
       <models>
         <modelRoot path="${language_descriptor}\generators\baseLanguage\templates" namespacePrefix="jetbrains.mps.bootstrap.sharedConcepts.generator.baseLanguage.template" />
       </models>
-      <module>
-        <moduleRoot path="${mps_home}\languages\baseLanguage\language" />
-      </module>
+      <module />
     </generator>
   </generators>
   <classPath />
