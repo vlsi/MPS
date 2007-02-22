@@ -5,7 +5,7 @@
   </models>
   <module />
   <languages>
-    <moduleRoot path="\home\fyodor\tmp\mps\projects\YPath\languages" />
+    <moduleRoot path="\home\fyodor\workspace\YPath\languages" />
   </languages>
 </solution>
 
