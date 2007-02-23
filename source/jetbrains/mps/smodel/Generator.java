@@ -5,10 +5,9 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
-import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
 import jetbrains.mps.projectLanguage.structure.GeneratorReference;
+import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
-import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -78,8 +77,8 @@ public class Generator extends AbstractModule {
   }
 
   public String getAlias() {
-    String sourceLang = NameUtil.shortNameFromLongName(getSourceLanguage().getNamespace());
-    return sourceLang + " : " + myGeneratorDescriptor.getName();
+    String name = myGeneratorDescriptor.getName();
+    return getSourceLanguage().getNamespace() + " -> [" + (name == null ? "<no name>" : name) + "]";
   }
 
   @NotNull
