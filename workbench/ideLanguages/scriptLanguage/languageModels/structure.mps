@@ -11,6 +11,9 @@
       <property name="name" value="scriptName" />
       <link role="dataType" targetNodeId="1.1082983041843" />
     </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1172273958036">
+      <link role="intfc" targetNodeId="1.1169194658468" />
+    </node>
   </node>
 </model>
 
