@@ -16,7 +16,7 @@
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1171931690128">
       <property name="name" value="methodName" />
-      <link role="dataType" targetNodeId="2.1083065718921" />
+      <link role="dataType" targetNodeId="1.1082983041843" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1171931851043">
