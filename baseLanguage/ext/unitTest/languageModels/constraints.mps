@@ -17,7 +17,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1171931968237">
             <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1171984465717">
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1171984466532">
-                <property name="value" value="_test" />
+                <property name="value" value="_Test" />
               </node>
               <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1171931968238">
                 <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.PropertyGetter_FunctionParm_node" id="1171931968239" />

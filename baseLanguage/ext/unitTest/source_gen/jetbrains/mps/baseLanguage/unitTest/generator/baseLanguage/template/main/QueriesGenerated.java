@@ -18,7 +18,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOper
 public class QueriesGenerated {
 
   public static String propertyMacro_GetPropertyValue_1171932074421(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return "Test_" + SPropertyOperations.getString(node, "testCaseName");
+    return SPropertyOperations.getString(node, "name");
   }
   public static String propertyMacro_GetPropertyValue_1171932074456(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return "test_" + SPropertyOperations.getString(node, "methodName");
