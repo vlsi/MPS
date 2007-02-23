@@ -132,6 +132,24 @@
                 <node role="operation" type="ypath.IterateOperation" id="1169051168306" />
               </node>
             </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1172246598171">
+              <node role="expression" type="ypath.TreePathOperationExpression" id="1172246881862">
+                <node role="expression" type="ypath.TreePathOperationExpression" id="1172246876113">
+                  <node role="expression" type="ypath.TreePathAdapterExpression" id="1172246876115">
+                    <link role="treepathAspect" targetNodeId="1169047438062" resolveInfo="DomNode_TreePath" />
+                    <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1172246598172">
+                      <link role="variableDeclaration" targetNodeId="1169048628465" resolveInfo="doc" />
+                    </node>
+                  </node>
+                  <node role="operation" type="ypath.IterateOperation" id="1172246876116">
+                    <property name="axis" value="DESCENDANTS" />
+                  </node>
+                </node>
+                <node role="operation" type="ypath.MatchKindOperation" id="1172246881864">
+                  <link role="nodeKind" targetNodeId="1172246121749" resolveInfo="FOO" />
+                </node>
+              </node>
+            </node>
           </node>
           <node role="catchClause" type="jetbrains.mps.baseLanguage.CatchClause" id="1169048613424">
             <node role="throwable" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1169048613425">
@@ -156,6 +174,30 @@
   </node>
   <node type="ypath.TreePathAspect" id="1169047438062">
     <property name="name" value="DomNode_TreePath" />
+    <node role="nodeKinds" type="ypath.TreeNodeKind" id="1172246121749">
+      <property name="name" value="FOO" />
+      <node role="trigger" type="ypath.KindBlock" id="1172246121750">
+        <node role="parameter" type="ypath.LambdaMethodParameter" id="1172246121751">
+          <property name="name" value="n" />
+        </node>
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1172246121752">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1172246129993">
+            <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1172246155513">
+              <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]String).([InstanceMethodDeclaration]equals((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1172246147182">
+                <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]Node).([InstanceMethodDeclaration]getLocalName() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.ClosureParameterReference" id="1172246131571">
+                  <link role="closureParameter" targetNodeId="1172246121751" resolveInfo="n" />
+                </node>
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1172246157167">
+                <property name="value" value="FOO" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="nodeType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1169047525472">
       <link role="classifier" extResolveInfo="2.[Classifier]Node" />
     </node>

@@ -219,6 +219,12 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="2.1068431790189" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1172240749936">
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="nodeKinds" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1172240563057" resolveInfo="TreeNodeKind" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1168881525623">
       <property name="sourceCardinality" value="1" />
       <property name="role" value="parentBlock" />
@@ -245,6 +251,29 @@
       <property name="role" value="treepathAspect" />
       <link role="target" targetNodeId="1168879975004" resolveInfo="TreePathAspect" />
     </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1172240563057">
+    <property name="name" value="TreeNodeKind" />
+    <link role="extends" targetNodeId="1.1078489098625" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1172240613817">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="trigger" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1172243209751" resolveInfo="KindBlock" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1172242735136">
+    <property name="name" value="MatchKindOperation" />
+    <link role="extends" targetNodeId="1168468681335" resolveInfo="TreePathOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1172242802393">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="nodeKind" />
+      <link role="target" targetNodeId="1172240563057" resolveInfo="TreeNodeKind" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1172243209751">
+    <property name="name" value="KindBlock" />
+    <link role="extends" targetNodeId="1168428649324" resolveInfo="LambdaMethod" />
   </node>
 </model>
 
