@@ -15,5 +15,9 @@
       <link role="intfc" targetNodeId="1.1169194658468" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1172275276977">
+    <property name="name" value="ScriptAction" />
+    <link role="extends" targetNodeId="1.1133920641626" />
+  </node>
 </model>
 
