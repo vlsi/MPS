@@ -3,10 +3,11 @@
   <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
-  <maxImportIndex value="3" />
+  <maxImportIndex value="4" />
   <import index="1" modelUID="jetbrains.mps.ide.scriptLanguage.structure" />
   <import index="2" modelUID="jetbrains.mps.core.structure" />
   <import index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
+  <import index="4" modelUID="jetbrains.mps.ide.scriptLanguageInternal.structure" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1172272818532">
     <link role="conceptDeclaration" targetNodeId="1.1172272794406" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1172272822706">
@@ -75,13 +76,6 @@
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1172333394362" />
       </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1172334581932">
-    <link role="conceptDeclaration" targetNodeId="1.1172334553039" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1172334585730">
-      <property name="text" value="actionContext" />
-      <property name="drawBorder" value="false" />
     </node>
   </node>
 </model>
