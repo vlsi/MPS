@@ -574,4 +574,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1172319321668(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "parameter", true);
   }
+  public static SNode sourceNodeQuery_1172323662440(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.getLeftExpression(node);
+  }
 }

@@ -1050,6 +1050,36 @@
         </node>
       </node>
     </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1172323746593">
+      <property name="name" value="getLeftExpression" />
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1172323752492">
+        <link role="concept" targetNodeId="10.1068431790191" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1172323746595">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1172323774027">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1172323798284">
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeTypeCastExpression" id="1172323788142">
+              <link role="concept" targetNodeId="1.1138055978872" />
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1172323778312">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1172323777201">
+                  <link role="variableDeclaration" targetNodeId="1172323763666" resolveInfo="node" />
+                </node>
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetParentOperation" id="1172323779578" />
+              </node>
+            </node>
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1172323804551">
+              <link role="link" targetNodeId="1.1138056667223" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1172323763666">
+        <property name="name" value="node" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1172323763667">
+          <link role="concept" targetNodeId="1.1138411891628" />
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
