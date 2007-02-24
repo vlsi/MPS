@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.ide.scriptLanguage.structure">
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
-  <maxImportIndex value="2" />
+  <maxImportIndex value="3" />
   <import index="1" modelUID="jetbrains.mps.core.structure" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" />
+  <import index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1172272794406">
     <property name="rootable" value="true" />
     <property name="name" value="Script" />
@@ -30,6 +31,19 @@
       <property name="role" value="statementList" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="2.1068580123136" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1172277049382">
+    <property name="name" value="FindConceptInstances" />
+    <link role="extends" targetNodeId="2.1068431790191" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1172277120423">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="conceptDeclaration" />
+      <link role="target" targetNodeId="3.1071489090640" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1172277228410">
+      <property name="value" value="findConceptInstances" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>
 </model>
