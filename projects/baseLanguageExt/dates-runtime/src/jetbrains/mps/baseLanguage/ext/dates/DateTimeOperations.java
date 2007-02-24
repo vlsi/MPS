@@ -72,4 +72,8 @@ public class DateTimeOperations {
   public static Integer get(Long datetime, DateTimeFieldType type) {
     return datetime != null ? new DateTime(datetime).property(type).get() : null;
   }
+
+  public static Long with(Long datetime, DateTimeFieldType type, int value) {
+    return datetime != null ? new DateTime(datetime).property(type).setCopy(value).getMillis() : null;
+  }
 }
