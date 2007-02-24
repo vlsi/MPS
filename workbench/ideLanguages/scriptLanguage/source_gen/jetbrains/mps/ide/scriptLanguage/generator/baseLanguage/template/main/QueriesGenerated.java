@@ -22,4 +22,7 @@ public class QueriesGenerated {
   public static List sourceNodesQuery_1172275596624(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTargets(node, "scriptAction", true);
   }
+  public static SNode sourceNodeQuery_1172276505705(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "statementList", true);
+  }
 }

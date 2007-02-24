@@ -43,6 +43,19 @@
         <property name="text" value="action" />
         <property name="drawBorder" value="false" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1172276185243">
+        <property name="drawBorder" value="false" />
+        <property name="selectable" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1172276187151">
+          <property name="text" value="  " />
+          <property name="drawBorder" value="false" />
+          <property name="selectable" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1172276317715">
+          <property name="drawBorder" value="false" />
+          <link role="relationDeclaration" targetNodeId="1.1172276096082" />
+        </node>
+      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1172275865798">
         <property name="drawBorder" value="false" />
         <property name="selectable" value="false" />
