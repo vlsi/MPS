@@ -77,5 +77,12 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1172334581932">
+    <link role="conceptDeclaration" targetNodeId="1.1172334553039" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1172334585730">
+      <property name="text" value="actionContext" />
+      <property name="drawBorder" value="false" />
+    </node>
+  </node>
 </model>
 
