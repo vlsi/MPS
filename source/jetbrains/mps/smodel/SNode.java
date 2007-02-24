@@ -1423,14 +1423,13 @@ public class SNode implements Cloneable, Iterable<SNode> {
     return getLinkDeclaration(role, scope);
   }
 
-  public jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration getLinkDeclarationAdapter(String role, IScope scope) {
+  public LinkDeclaration getLinkDeclarationAdapter(String role, IScope scope) {
     return getLinkDeclaration(role, scope);
   }
 
   public LinkDeclaration getLinkDeclaration(String role, IScope scope) {
     ConceptDeclaration conceptDeclaration = getConceptDeclarationAdapter(scope);
-    LinkDeclaration linkDeclaration = SModelUtil_new.findLinkDeclaration(conceptDeclaration, role);
-    return linkDeclaration;
+    return SModelUtil_new.findLinkDeclaration(conceptDeclaration, role);
   }
 
   public AnnotationLinkDeclaration findAnnotationLinkDeclaration(IScope scope) {
