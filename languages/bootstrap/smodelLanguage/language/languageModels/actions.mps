@@ -318,7 +318,7 @@
                   <node role="expression" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1172327680170">
                     <node role="rightExpression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1172327682798">
                       <link role="classifier" extResolveInfo="6.[Classifier]BasicType" />
-                      <link role="variableDeclaration" extResolveInfo="6.static field ([Classifier]BasicType).([StaticFieldDeclaration]concept_ : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [BasicType]))" />
+                      <link role="variableDeclaration" extResolveInfo="6.static field ([Classifier]BasicType).([StaticFieldDeclaration]sconcept_ : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [BasicType]))" />
                     </node>
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1172327677825">
                       <link role="variableDeclaration" targetNodeId="1154643669371" resolveInfo="type" />
