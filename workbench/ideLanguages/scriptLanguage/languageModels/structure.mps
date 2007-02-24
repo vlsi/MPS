@@ -39,6 +39,10 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1172333370642">
     <property name="name" value="ShowNodes" />
     <link role="extends" targetNodeId="2.1068580123157" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1172354255546">
+      <property name="name" value="caption" />
+      <link role="dataType" targetNodeId="1.1082983041843" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1172333394362">
       <property name="sourceCardinality" value="1" />
       <property name="role" value="nodeList" />

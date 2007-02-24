@@ -76,6 +76,16 @@
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1172333394362" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1172354242591">
+        <property name="text" value=":" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1172354272828">
+        <property name="textFgColor" value="DARK_GREEN" />
+        <property name="fontStyle" value="BOLD" />
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="1.1172354255546" />
+      </node>
     </node>
   </node>
 </model>
