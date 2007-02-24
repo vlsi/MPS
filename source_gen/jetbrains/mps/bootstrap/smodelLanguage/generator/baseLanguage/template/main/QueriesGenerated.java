@@ -566,12 +566,12 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1172008623309(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
   }
-  public static SNode sourceNodeQuery_1172244910098(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode sourceNodeQuery_1172319274605(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     // <expr-to-copy> . linklist-access . add-child-op
     SNode lexpr1 = SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
     return SLinkOperations.getTarget(lexpr1, "leftExpression", true);
   }
-  public static SNode sourceNodeQuery_1172245019025(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode sourceNodeQuery_1172319321668(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "parameter", true);
   }
 }
