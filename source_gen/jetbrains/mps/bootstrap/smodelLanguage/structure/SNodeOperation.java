@@ -18,6 +18,7 @@ public class SNodeOperation extends BaseConcept {
   public static String CPR_Applicable_to_concept_property = "applicable_to_concept_property";
   public static String CPR_Applicable_to_link = "applicable_to_link";
   public static String CPR_Applicable_to_linkList = "applicable_to_linkList";
+  public static String CPR_Applicable_to_concept = "applicable_to_concept";
   public static String CLNK_ApplicableParameter = "applicableParameter";
   public static String PARAMETER = "parameter";
 

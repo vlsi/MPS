@@ -301,17 +301,7 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1154652093234">
             <property name="name" value="test1" />
             <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1154652093236" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.OrExpression" id="1154652038275">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.ParenthesizedExpression" id="1154652084278">
-                <node role="expression" type="jetbrains.mps.baseLanguage.InstanceOfExpression" id="1154652075479">
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1154652070447">
-                    <link role="variableDeclaration" targetNodeId="1154643669371" />
-                  </node>
-                  <node role="classType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1154652080527">
-                    <link role="classifier" extResolveInfo="6.[Classifier]Snode_TypeObject" />
-                  </node>
-                </node>
-              </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.OrExpression" id="1172327654803">
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParenthesizedExpression" id="1154652031414">
                 <node role="expression" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1154651602058">
                   <node role="rightExpression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1154651612108">
@@ -320,6 +310,29 @@
                   </node>
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1154651599901">
                     <link role="variableDeclaration" targetNodeId="1154643669371" />
+                  </node>
+                </node>
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.OrExpression" id="1172327672711">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.ParenthesizedExpression" id="1172327676636">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1172327680170">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1172327682798">
+                      <link role="classifier" extResolveInfo="6.[Classifier]BasicType" />
+                      <link role="variableDeclaration" extResolveInfo="6.static field ([Classifier]BasicType).([StaticFieldDeclaration]concept_ : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [BasicType]))" />
+                    </node>
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1172327677825">
+                      <link role="variableDeclaration" targetNodeId="1154643669371" resolveInfo="type" />
+                    </node>
+                  </node>
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParenthesizedExpression" id="1154652084278">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.InstanceOfExpression" id="1154652075479">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1154652070447">
+                      <link role="variableDeclaration" targetNodeId="1154643669371" />
+                    </node>
+                    <node role="classType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1154652080527">
+                      <link role="classifier" extResolveInfo="6.[Classifier]Snode_TypeObject" />
+                    </node>
                   </node>
                 </node>
               </node>
