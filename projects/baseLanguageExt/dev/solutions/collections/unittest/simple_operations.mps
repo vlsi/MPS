@@ -995,6 +995,70 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1172278345458">
+      <property name="name" value="test_2" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1172278345459" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1172278345460">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1172278352727">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1172278352728">
+            <property name="name" value="llb" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListType" id="1172278352729">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListType" id="1172278361513">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1172278364859">
+                  <link role="classifier" extResolveInfo="1.[Classifier]Boolean" />
+                </node>
+              </node>
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1172278374986">
+              <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListCreatorWithInit" id="1172278378598">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListType" id="1172278383193">
+                  <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1172278386258">
+                    <link role="classifier" extResolveInfo="1.[Classifier]Boolean" />
+                  </node>
+                </node>
+                <node role="initValue" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1172278392103">
+                  <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListCreatorWithInit" id="1172278395730">
+                    <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1172278398466">
+                      <link role="classifier" extResolveInfo="1.[Classifier]Boolean" />
+                    </node>
+                    <node role="initValue" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1172278412389" />
+                    <node role="initValue" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1172278416750">
+                      <property name="value" value="true" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.AssertSame" id="1172279133392">
+          <node role="expected" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1172279163738">
+            <property name="value" value="2" />
+          </node>
+          <node role="actual" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1172279173414">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1172279169615">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1172279168349">
+                <link role="variableDeclaration" targetNodeId="1172278352728" resolveInfo="llb" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.GetFirstOperation" id="1172279172148" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.GetSizeOperation" id="1172279182775" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.AssertSame" id="1172279190074">
+          <node role="expected" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1172279193170" />
+          <node role="actual" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1172279211268">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1172279207313">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1172279197531">
+                <link role="variableDeclaration" targetNodeId="1172278352728" resolveInfo="llb" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.GetFirstOperation" id="1172279210220" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.GetFirstOperation" id="1172279212691" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="superclass" type="jetbrains.mps.baseLanguage.ClassifierType" id="1171392114612">
       <link role="classifier" extResolveInfo="3.[Classifier]TestCase" />
     </node>
