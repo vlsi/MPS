@@ -199,7 +199,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1170868139484">
-    <property name="name" value="ClosuresInClassFithGenerics" />
+    <property name="name" value="ClosuresInClassWithGenerics" />
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1170868172894">
       <property name="name" value="aaa" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1170868172895" />
