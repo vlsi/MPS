@@ -28,6 +28,10 @@
         <property name="drawBorder" value="false" />
         <property name="selectable" value="false" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1172287492045">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="1.1172287476293" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1172277069804">

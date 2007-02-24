@@ -9,6 +9,12 @@
     <property name="rootable" value="true" />
     <property name="name" value="Script" />
     <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1172287476293">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="statementList" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="2.1068580123136" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1172272845008">
       <property name="name" value="scriptName" />
       <link role="dataType" targetNodeId="1.1082983041843" />

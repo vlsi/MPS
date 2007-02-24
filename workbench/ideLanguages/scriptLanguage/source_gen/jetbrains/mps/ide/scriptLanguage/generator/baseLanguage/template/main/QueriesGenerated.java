@@ -8,10 +8,14 @@ import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.scriptLanguage.util.ScriptNameUtil;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
 public class QueriesGenerated {
 
   public static String propertyMacro_GetPropertyValue_1172274241857(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return ScriptNameUtil.getClassName(node);
+  }
+  public static SNode sourceNodeQuery_1172287555052(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "statementList", true);
   }
 }
