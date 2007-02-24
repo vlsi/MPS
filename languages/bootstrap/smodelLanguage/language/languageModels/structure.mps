@@ -1001,7 +1001,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1172244025706">
-    <property name="name" value="LinkList_AddListOperation" />
+    <property name="name" value="LinkList_AddAllOperation" />
     <link role="extends" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1172244025707">
       <property name="sourceCardinality" value="1" />
@@ -1011,12 +1011,8 @@
       <link role="target" targetNodeId="2.1068431790191" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1172244025708">
-      <property name="value" value="addList" />
+      <property name="value" value="add all" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1172244025709">
-      <property name="value" value="add list" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1172244025710">
       <link role="conceptPropertyDeclaration" targetNodeId="1138763350436" resolveInfo="applicable_to_linkList" />
