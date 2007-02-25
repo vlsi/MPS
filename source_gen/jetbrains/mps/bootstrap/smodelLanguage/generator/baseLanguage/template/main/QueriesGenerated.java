@@ -583,4 +583,10 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1172329130127(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return QueriesUtil.getLeftExpression(node);
   }
+  public static SNode sourceNodeQuery_1172422071590(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.getLeftExpression(node);
+  }
+  public static SNode sourceNodeQuery_1172422081544(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "sconceptExpression", true);
+  }
 }
