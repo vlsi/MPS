@@ -1082,7 +1082,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1172424058054">
-    <property name="name" value="ConceptExpression" />
+    <property name="name" value="ConceptRefExpression" />
     <link role="extends" targetNodeId="2.1068431790191" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1172424100906">
       <property name="sourceCardinality" value="1" />

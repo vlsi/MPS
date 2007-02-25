@@ -15,7 +15,7 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
-public class ConceptExpression_Editor extends DefaultNodeEditor {
+public class ConceptRefExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
@@ -62,7 +62,7 @@ public class ConceptExpression_Editor extends DefaultNodeEditor {
   }
   public EditorCell createConceptDeclarationReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new ConceptExpression_Editor_conceptDeclaration_InlineComponent());
+    provider.setAuxiliaryCellProvider(new ConceptRefExpression_Editor_conceptDeclaration_InlineComponent());
     EditorCell editorCell = provider.createEditorCell(context);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
