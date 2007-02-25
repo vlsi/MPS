@@ -1090,7 +1090,7 @@
       <link role="target" targetNodeId="3.1071489090640" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1172424146100">
-      <property name="value" value="concept" />
+      <property name="value" value="concept ref" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>

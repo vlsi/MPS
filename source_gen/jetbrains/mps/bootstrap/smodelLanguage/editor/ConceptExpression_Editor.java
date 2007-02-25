@@ -29,7 +29,7 @@ public class ConceptExpression_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "concept ("));
+    editorCell.addEditorCell(this.createConstantCell(context, node, "concept ref ("));
     editorCell.addEditorCell(this.createConceptDeclarationReferenceCell(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, ")"));
     editorCell.putUserObject(EditorCell.CELL_ID, "1172424084370");
