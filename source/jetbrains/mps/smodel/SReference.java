@@ -268,5 +268,8 @@ public class SReference {
     CANT_RESOLVE_BY_ERI
   }
 
+  public void replaceSourceReferent(SNode newReferent) {
+    mySourceNode.setReferent(myRole, newReferent);
+  }
 
 }
