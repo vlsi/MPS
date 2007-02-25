@@ -2,7 +2,7 @@
 <model name="jetbrains.mps.bootstrap.smodelLanguage.generator.baseLanguage.util">
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
-  <maxImportIndex value="22" />
+  <maxImportIndex value="23" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.smodelLanguage@java_stub" />
   <import index="4" modelUID="java.lang@java_stub" />
@@ -14,6 +14,7 @@
   <import index="13" modelUID="jetbrains.mps.baseLanguage.types@java_stub" />
   <import index="19" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure@java_stub" />
   <import index="20" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" />
+  <import index="23" modelUID="jetbrains.mps.util@java_stub" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1168968323635">
     <property name="name" value="QueriesUtil" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1168968334480">
@@ -1077,6 +1078,29 @@
         <property name="name" value="node" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1172323763667">
           <link role="concept" targetNodeId="1.1138411891628" />
+        </node>
+      </node>
+    </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1172424541766">
+      <property name="name" value="getConceptFqName" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1172424548134">
+        <link role="classifier" extResolveInfo="4.[Classifier]String" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1172424541768">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1172424577871">
+          <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1172424595467">
+            <link role="classConcept" extResolveInfo="23.[Classifier]NameUtil" />
+            <link role="baseMethodDeclaration" extResolveInfo="23.static method ([Classifier]NameUtil).([StaticMethodDeclaration]nodeFQName((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1172424608784">
+              <link role="variableDeclaration" targetNodeId="1172424560853" resolveInfo="concept" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1172424560853">
+        <property name="name" value="concept" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1172424560854">
+          <link role="concept" targetNodeId="5.1071489090640" />
         </node>
       </node>
     </node>

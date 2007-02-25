@@ -309,7 +309,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(genuineLink, "role");
   }
   public static String propertyMacro_GetPropertyValue_1172329155840(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return NameUtil.nodeFQName(SLinkOperations.getTarget(node, "conceptDeclaration", false));
+    return QueriesUtil.getConceptFqName(SLinkOperations.getTarget(node, "conceptDeclaration", false));
+  }
+  public static String propertyMacro_GetPropertyValue_1172424406141(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.getConceptFqName(SLinkOperations.getTarget(node, "conceptDeclaration", false));
   }
   public static SNode referenceMacro_GetReferent_1170457360268(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return _QueriesUtil.get_SPropertyAccess_simple_getterMethod(((SPropertyAccess)SNodeOperations.getAdapter(node)), scope);
