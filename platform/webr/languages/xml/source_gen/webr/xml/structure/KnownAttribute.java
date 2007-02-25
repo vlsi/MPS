@@ -9,8 +9,8 @@ import jetbrains.mps.project.GlobalScope;
 import webr.xmlSchema.structure.AttributeDeclaration;
 
 public class KnownAttribute extends BaseAttribute {
-  public static String ATTRIBUTE_DECLARATION = "attributeDeclaration";
   public static String VALUE = "value";
+  public static String ATTRIBUTE_DECLARATION = "attributeDeclaration";
 
   public  KnownAttribute(SNode node) {
     super(node);
@@ -23,16 +23,16 @@ public class KnownAttribute extends BaseAttribute {
     return KnownAttribute.newInstance(sm, false);
   }
 
-  public AttributeDeclaration getAttributeDeclaration() {
-    return (AttributeDeclaration)this.getReferent(KnownAttribute.ATTRIBUTE_DECLARATION);
-  }
-  public void setAttributeDeclaration(AttributeDeclaration node) {
-    super.setReferent(KnownAttribute.ATTRIBUTE_DECLARATION, node);
-  }
   public BaseText getValue() {
     return (BaseText)this.getChild(KnownAttribute.VALUE);
   }
   public void setValue(BaseText node) {
     super.setChild(KnownAttribute.VALUE, node);
+  }
+  public AttributeDeclaration getAttributeDeclaration() {
+    return (AttributeDeclaration)this.getReferent(KnownAttribute.ATTRIBUTE_DECLARATION);
+  }
+  public void setAttributeDeclaration(AttributeDeclaration node) {
+    super.setReferent(KnownAttribute.ATTRIBUTE_DECLARATION, node);
   }
 }
