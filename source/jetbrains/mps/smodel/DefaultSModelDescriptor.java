@@ -400,10 +400,17 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 
   public Set<SNode> findInstances(ConceptDeclaration concept, IScope scope) {
     if (!myModelRootManager.isFindUsagesSupported()) return new HashSet<SNode>();
-    String conceptFqName = JavaNameUtil.className(concept);
+/*
     if (mySModel == null || !SModelRepository.getInstance().isChanged(mySModel)) {
-      if (!myModelRootManager.containsString(this, conceptFqName)) return new HashSet<SNode>();
+      List<ConceptDeclaration> conceptDeclarations = SModelUtil_new.getAccessibleSubtypes(concept, getSModel(), scope);
+      conceptDeclarations.add(concept);
+      Set<String> conceptFqNames = new HashSet<String>();
+      for (ConceptDeclaration conceptDeclaration : conceptDeclarations) {
+        conceptFqNames.add(JavaNameUtil.className(conceptDeclaration));
+      }
+      if (!myModelRootManager.containsSomeString(this, conceptFqNames)) return new HashSet<SNode>();
     }
+*/
     getSModel();
     Set<SNode> result = new HashSet<SNode>();
     if (mySModel != null) {
