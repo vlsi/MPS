@@ -421,7 +421,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     return myFastNodeFinder;
   }
 
-  private void addInstances(SNode current, jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration concept, Set<SNode> result, IScope scope) {
+  private void addInstances(SNode current, ConceptDeclaration concept, Set<SNode> result, IScope scope) {
     if (current.isInstanceOfConcept(concept, scope)) result.add(current);
     for (SNode child : current.getChildren()) {
       addInstances(child, concept, result, scope);
