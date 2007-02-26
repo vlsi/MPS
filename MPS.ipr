@@ -1495,7 +1495,6 @@
     </library>
     <library name="Jena">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/jena/jenatest.jar!/" />
         <root url="jar://$PROJECT_DIR$/lib/jena/stax-1.1.1-dev.jar!/" />
         <root url="jar://$PROJECT_DIR$/lib/jena/icu4j_3_4.jar!/" />
         <root url="jar://$PROJECT_DIR$/lib/jena/arq.jar!/" />
