@@ -268,7 +268,7 @@ public class TypeChecker {
       for (SNode node : frontier) {
         if (myCheckedNodes.contains(node)) continue;
         newFrontier.addAll(node.getChildren());
-        Set<Rule> rules = myConceptsToRulesCache.get(node.getNodeConceptAdapter());
+        Set<Rule> rules = myConceptsToRulesCache.get(node.getConceptDeclarationAdapter());
         if (rules != null) {
           for (Rule rule : rules) {
             myInterpretator.interpretate(node, rule);

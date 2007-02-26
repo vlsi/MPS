@@ -122,7 +122,7 @@ public class ModelConstraintsManager {
 
   public INodeReferentSetEventHandler getNodeReferentSetEventHandler(SNode node, String referentRole) {
     // todo: optimization needed?
-    ConceptDeclaration nodeConcept = node.getNodeConceptAdapter();
+    ConceptDeclaration nodeConcept = node.getConceptDeclarationAdapter();
     while (nodeConcept != null) {
       String conceptFqName = NameUtil.nodeFQName(nodeConcept);
       INodeReferentSetEventHandler handler = myNodeReferentSetEventHandlersMap.get(conceptFqName + "#" + referentRole);

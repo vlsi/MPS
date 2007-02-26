@@ -218,7 +218,7 @@ public class SubtypingManager {
     if (term == null) {
       return result;
     }
-    Set<SubtypingRule> subtypingRules = myConceptsToSubtypingRulesCache.get(term.getNodeConceptAdapter());
+    Set<SubtypingRule> subtypingRules = myConceptsToSubtypingRulesCache.get(term.getConceptDeclarationAdapter());
     if (subtypingRules != null)  {
       for (SubtypingRule rule : subtypingRules) {
         AnalyzedTermDeclaration applicableNode = rule.getApplicableNode();
@@ -237,7 +237,7 @@ public class SubtypingManager {
   public Set<SNode> collectSubtypes(SNode term) {
     Set<SNode> result = new HashSet<SNode>();
     if (term == null) return result;
-    Set<SupertypingRule> supertypingRules = myConceptsToSupertypingRulesCache.get(term.getNodeConceptAdapter());
+    Set<SupertypingRule> supertypingRules = myConceptsToSupertypingRulesCache.get(term.getConceptDeclarationAdapter());
     if (supertypingRules == null) return result;
     for (SupertypingRule rule : supertypingRules) {
       AnalyzedTermDeclaration applicableNode = rule.getApplicableNode();
