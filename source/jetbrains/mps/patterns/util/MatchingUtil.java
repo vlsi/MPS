@@ -126,7 +126,7 @@ public class MatchingUtil {
     if (node1 == node2) return true;
     if (node1 == null) return false;
     if (node2 == null) return false;
-    if (node1.getClass() != node2.getClass()) return false;
+    if (!node1.getConceptFqName().equals(node2.getConceptFqName())) return false;
 
     //properties
     Set<String> propertyNames = node1.getPropertyNames();
