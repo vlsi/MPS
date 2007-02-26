@@ -400,6 +400,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   public Set<SNode> findInstances(ConceptDeclaration concept, IScope scope) {
     if (!myModelRootManager.isFindUsagesSupported()) return new HashSet<SNode>();
 /*
+    // this optimization is incorrect and slow (overall)   :)
     if (mySModel == null || !SModelRepository.getInstance().isChanged(mySModel)) {
       List<ConceptDeclaration> conceptDeclarations = SModelUtil_new.getAccessibleSubtypes(concept, getSModel(), scope);
       conceptDeclarations.add(concept);
