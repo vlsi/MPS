@@ -24,7 +24,4 @@ public class SetNodeChange extends NewNodeChange {
     return true;
   }
 
-  public boolean conflicts(Change c) {
-    return false;
-  }
 }

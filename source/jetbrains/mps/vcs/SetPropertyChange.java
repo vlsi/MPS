@@ -47,14 +47,4 @@ public class SetPropertyChange extends Change {
     return true;
   }
 
-  public boolean conflicts(Change c) {
-    if (c instanceof SetPropertyChange) {
-      SetPropertyChange spp = (SetPropertyChange) c;
-      return spp.getNodeId().equals(getNodeId()) &&
-              spp.getProperty().equals(getProperty()) &&
-               !equals(spp.getNewValue(), getNewValue()); 
-    }
-
-    return false;
-  }
 }

@@ -72,8 +72,5 @@ public class SetReferenceChange extends Change {
     return true;
   }
 
-  public boolean conflicts(Change c) {
-    return false;
-  }
 }
 

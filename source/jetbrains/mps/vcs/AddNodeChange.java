@@ -1,7 +1,6 @@
 package jetbrains.mps.vcs;
 
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.ModelPersistence;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -44,7 +43,4 @@ public class AddNodeChange extends NewNodeChange {
     return true;
   }
 
-  public boolean conflicts(Change c) {
-    return false;
-  }
 }

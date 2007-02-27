@@ -46,7 +46,4 @@ public class MoveNodeChange extends Change {
     return true;
   }
 
-  public boolean conflicts(Change c) {
-    return false;
-  }
 }
