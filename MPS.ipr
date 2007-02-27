@@ -67,9 +67,6 @@
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="Eclipse" />
     <option name="DEPLOY_AFTER_MAKE" value="2" />
-    <excludeFromCompile>
-      <directory url="file://$PROJECT_DIR$/MPSPlugin/source" includeSubdirectories="true" />
-    </excludeFromCompile>
     <resourceExtensions>
       <entry name=".+\.(properties|xml|html|dtd|tld)" />
       <entry name=".+\.(gif|png|jpeg|jpg)" />
