@@ -1144,36 +1144,42 @@
   <component name="ProjectRunConfigurationManager">
     <configuration default="false" name="IdeMain" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="jetbrains.mps.ide.IdeMain" />
-      <option name="VM_PARAMETERS" value="-Xmx1024m -ea" />
+      <option name="VM_PARAMETERS" value="-Xmx1500m -ea" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <module name="MPS" />
+      <module name="ProjectHalo" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="4386" />
+        <option name="DEBUG_PORT" value="3309" />
         <option name="TRANSPORT" value="0" />
         <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="JProfiler">
+        <option name="WINDOW" value="false" />
+        <option name="JVMPI" value="false" />
+        <option name="INTERPRETED" value="false" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Profile ">
         <option name="myExternalizedOptions" value="&#13;&#10;snapshots-dir=&#13;&#10;" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="JProfiler" />
       <ConfigurationWrapper RunnerId="Profile " />
       <ConfigurationWrapper RunnerId="Run" />
       <method>
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="depot_webrSample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
+    <configuration default="false" name="Charisma" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
       <option name="LOCAL" value="true" />
       <option name="OPEN_IN_BROWSER" value="true" />
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/User/login" />
       <option name="COMMON_VM_ARGUMENTS" value="" />
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
@@ -1188,9 +1194,9 @@
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="Charisma" />
-        <option name="DEPLOY" value="false" />
+        <option name="DEPLOY" value="true" />
       </J2EE_MODULE>
-      <J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="teamSysWebApp" />
         <option name="DEPLOY" value="false" />
@@ -1198,7 +1204,7 @@
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="webrSamples_depot" />
-        <option name="DEPLOY" value="true" />
+        <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
@@ -1206,10 +1212,10 @@
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <option name="DEPLOY_TOMCAT_MANAGER" value="true" />
-      <option name="BASE_DIRECTORY_NAME" value="tomcat_Unnamed_e7d78b7c1" />
+      <option name="BASE_DIRECTORY_NAME" value="tomcat_Unnamed_e7d78b7c4" />
       <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="2299" />
+        <option name="DEBUG_PORT" value="2795" />
         <option name="TRANSPORT" value="0" />
         <option name="LOCAL" value="true" />
       </RunnerSettings>
@@ -1248,13 +1254,13 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="hello_webrSample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
+    <configuration default="false" name="hello_webrSample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
       <option name="LOCAL" value="true" />
       <option name="OPEN_IN_BROWSER" value="true" />
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/app/Say/hello" />
       <option name="COMMON_VM_ARGUMENTS" value="" />
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
@@ -1271,7 +1277,7 @@
         <option name="MODULE_NAME" value="Charisma" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
-      <J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="teamSysWebApp" />
         <option name="DEPLOY" value="false" />
@@ -1329,13 +1335,13 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="Charisma" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
+    <configuration default="false" name="depot_webrSample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
       <option name="LOCAL" value="true" />
       <option name="OPEN_IN_BROWSER" value="true" />
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/app/admin/list" />
       <option name="COMMON_VM_ARGUMENTS" value="" />
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
@@ -1350,9 +1356,9 @@
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="Charisma" />
-        <option name="DEPLOY" value="true" />
+        <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
-      <J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="teamSysWebApp" />
         <option name="DEPLOY" value="false" />
@@ -1368,10 +1374,10 @@
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <option name="DEPLOY_TOMCAT_MANAGER" value="true" />
-      <option name="BASE_DIRECTORY_NAME" value="tomcat_Unnamed_e7d78b7c4" />
+      <option name="BASE_DIRECTORY_NAME" value="tomcat_Unnamed_e7d78b7c3" />
       <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="2795" />
+        <option name="DEBUG_PORT" value="3714" />
         <option name="TRANSPORT" value="0" />
         <option name="LOCAL" value="true" />
       </RunnerSettings>
@@ -1487,24 +1493,6 @@
       </CLASSES>
       <JAVADOC />
       <SOURCES />
-    </library>
-    <library name="Jena">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/jena/stax-1.1.1-dev.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/jena/icu4j_3_4.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/jena/arq.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/jena/antlr-2.7.5.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/jena/xml-apis.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/jena/jena.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/jena/stax-api-1.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/jena/concurrent.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/jena/xercesImpl.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/jena/jakarta-oro-2.0.8.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/jena/jena-src.zip!/" />
-      </SOURCES>
     </library>
     <library name="Eclipse-compiler">
       <CLASSES>
@@ -1632,54 +1620,16 @@
       <JAVADOC />
       <SOURCES />
     </library>
-    <library name="Axis">
+    <library name="httpclient">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/axis/activation-1.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/annogen-0.1.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/axiom-api-1.2.2.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/axiom-dom-1.2.2.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/axiom-impl-1.2.2.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/axis2-adb-1.1.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/axis2-adb-codegen-1.1.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/axis2-codegen-1.1.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/axis2-java2wsdl-1.1.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/axis2-jaxbri-1.1.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/axis2-jibx-1.1.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/axis2-kernel-1.1.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/axis2-saaj-1.1.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/axis2-soapmonitor-1.1.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/axis2-spring-1.1.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/axis2-tools-1.1.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/axis2-xmlbeans-1.1.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/backport-util-concurrent-2.2.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/commons-codec-1.3.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/commons-fileupload-1.1.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/commons-httpclient-3.0.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/commons-io-1.2.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/commons-logging-1.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/geronimo-spec-jms-1.1-rc4.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/jakarta-httpcore-4.0-alpha2.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/jaxb-api-2.0.2.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/jaxb-impl-2.0.2.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/jaxb-xjc-2.0.2.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/jaxen-1.1-beta-10.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/jibx-bind-1.1.3.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/jibx-run-1.1.3.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/mail-1.4.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/neethi-2.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/servletapi-2.3.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/stax-api-1.0.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/woden-1.0.0M6.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/wsdl4j-1.6.2.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/wstx-asl-3.2.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/xalan-2.7.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/xbean-2.2.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/xercesImpl-2.8.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/xml-apis-1.3.03.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/axis/XmlSchema-1.2.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/httpclient/httpclient.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/httpclient/commons-codec-1.3.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/httpclient/commons-logging-1.1.jar!/" />
       </CLASSES>
       <JAVADOC />
-      <SOURCES />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/httpclient/httpclient-src.zip!/" />
+      </SOURCES>
     </library>
   </component>
   <component name="org.tmatesoft.tmate.projectComponent" />
