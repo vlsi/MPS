@@ -46,18 +46,23 @@ public interface SModelDescriptor {
   Set<SReference> findUsages(SNode node);
   Set<ConceptDeclaration> findDescendants(ConceptDeclaration node, Set<ConceptDeclaration> descendantsKnownInModel);
   Set<SNode> findInstances(ConceptDeclaration concept, IScope scope);
-  boolean hasImportedModel(SModelDescriptor modelDescriptor);
 
+  boolean hasImportedModel(SModelDescriptor modelDescriptor);
+  boolean hasLanguage(Language language);
 
   FastNodeFinder getFastNodeFinder();
 
   long timestamp();
+
   long fileTimestamp();
+
   long lastStructuralChange();
+
   long lastChange();
 
   //dramatical event counter
   long structuralState();
+
   long state();
 
   void delete();

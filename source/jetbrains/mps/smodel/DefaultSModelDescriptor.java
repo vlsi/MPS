@@ -337,6 +337,20 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     return false;
   }
 
+  public boolean hasLanguage(Language language) {
+    if (!myModelRootManager.isFindUsagesSupported()) return false;
+    Set<String> strings = new HashSet<String>();
+    if (mySModel == null || !SModelRepository.getInstance().isChanged(mySModel)) {
+      strings.add(language.getNamespace());
+    }
+    if (!myModelRootManager.containsSomeString(this, strings)) return false;
+    getSModel();
+    if (mySModel != null) {
+      return mySModel.hasLanguage(language.getNamespace());
+    }
+    return false;
+  }
+
   public Set<SReference> findUsages(SNode node) {
     return findUsages(CollectionUtil.asSet(node));
   }

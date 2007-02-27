@@ -13,15 +13,18 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.refactoring.logging.Marshallable;
+import jetbrains.mps.refactoring.languages.RenameModelRefactoring;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.UseCarefully;
+import jetbrains.mps.plugin.IProjectHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.util.*;
+import java.rmi.RemoteException;
 
 
 /**
@@ -31,17 +34,20 @@ import java.util.*;
 public class Language extends AbstractModule implements Marshallable<Language> {
   private static final Logger LOG = Logger.getLogger(Language.class);
 
+  private static final String LANGUAGE_ACCESSORIES = "languageAccessories";
+  private static final String LANGUAGE_MODELS = "languageModels";
+
   private LanguageDescriptor myLanguageDescriptor;
   private List<Generator> myGenerators;
-
   private HashMap<String, ConceptDeclaration> myNameToConceptCache = new HashMap<String, ConceptDeclaration>();
   private List<LanguageCommandListener> myCommandListeners = new ArrayList<LanguageCommandListener>();
   private LanguageEventTranslator myEventTranslator = new LanguageEventTranslator();
   private SModelsListener myModelsListener = new LanguageModelsAdapter();
   private boolean myUpToDate = true;
-  private boolean myUpdateLastGenerationTimeCalled = false;
-  private Map<String, Set<String>> myParentsNamesMap = new HashMap<String, Set<String>>();
 
+  private boolean myUpdateLastGenerationTimeCalled = false;
+
+  private Map<String, Set<String>> myParentsNamesMap = new HashMap<String, Set<String>>();
   private SModelCommandListener myAspectModelsListener = new SModelCommandListener() {
     public void modelChangedInCommand(List<SModelEvent> events) {
       if (myUpToDate) {
@@ -54,9 +60,87 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       }
     }
   };
-
   private boolean myRegisteredInFindUsagesManager;
 
+
+  public void rename(String newNamespace, IOperationContext operationContext) {
+    String oldNamespace = getNamespace();
+
+    renameLanguageModel(oldNamespace, newNamespace, myLanguageDescriptor.getStructureModel(), operationContext);
+    Model editorModel = null;
+    for (Editor editor : myLanguageDescriptor.getEditors()) {
+      if (editor.getStereotype() == null || editor.getStereotype().equals(SModelStereotype.NONE)) {
+        editorModel = editor.getEditorModel();
+        break;
+      }
+    }
+    renameLanguageModel(oldNamespace, newNamespace, editorModel, operationContext);
+    renameLanguageModel(oldNamespace, newNamespace, myLanguageDescriptor.getActionsModel(), operationContext);
+    renameLanguageModel(oldNamespace, newNamespace, myLanguageDescriptor.getHelginsTypesystemModel(), operationContext);
+    renameLanguageModel(oldNamespace, newNamespace, myLanguageDescriptor.getTypeSystem(), operationContext);
+
+    MPSModuleRepository.getInstance().renameUID(this, newNamespace);
+    myLanguageDescriptor.setNamespace(newNamespace);
+
+    String oldLanguageModelsRoot = new File(myDescriptorFile.getParentFile(), LANGUAGE_MODELS).getAbsolutePath();
+    String oldLanguageAccesoriesRoot = new File(myDescriptorFile.getParentFile(), LANGUAGE_ACCESSORIES).getAbsolutePath();
+    for (ModelRoot modelRoot : myLanguageDescriptor.getModelRoots()) {
+      if (modelRoot.getPath().equals(oldLanguageModelsRoot)) {
+        modelRoot.delete();
+      }
+      if (modelRoot.getPath().equals(oldLanguageAccesoriesRoot)) {
+        modelRoot.delete();
+      }
+    }
+
+
+    IProjectHandler projectHandler = operationContext.getProject().getProjectHandler();
+    if (projectHandler != null) {
+      try{
+        projectHandler.deleteFilesAndRemoveFromVCS(CollectionUtil.asList(myDescriptorFile));
+      } catch(RemoteException e) {
+        LOG.error(e);
+      }
+    } else {
+      myDescriptorFile.delete();
+    }
+
+    File descriptorFile = newDescriptorFileByNewName(newNamespace);
+
+    SModel descriptorModel = myLanguageDescriptor.getModel();
+    ModelRoot modelRoot = ModelRoot.newInstance(descriptorModel);
+    modelRoot.setPath(new File(descriptorFile.getParentFile(), LANGUAGE_MODELS).getAbsolutePath());
+    modelRoot.setPrefix(newNamespace);
+    myLanguageDescriptor.addModelRoot(modelRoot);
+    modelRoot = ModelRoot.newInstance(descriptorModel);
+    modelRoot.setPath(new File(descriptorFile.getParentFile(), LANGUAGE_ACCESSORIES).getAbsolutePath());
+    modelRoot.setPrefix(newNamespace);
+    myLanguageDescriptor.addModelRoot(modelRoot);
+
+    myDescriptorFile = descriptorFile;
+    setLanguageDescriptor(myLanguageDescriptor);
+    save();
+  }
+
+  /*package*/ File newDescriptorFileByNewName(String newNamespace) {
+    File dir = myDescriptorFile.getParentFile();
+    return new File(dir, NameUtil.shortNameFromLongName(newNamespace));
+  }
+
+  private void renameLanguageModel(String oldNamespace, String newNamespace, Model model, IOperationContext operationContext) {
+    if (model == null) return;
+    String name = model.getName();
+    if (name.startsWith(oldNamespace)) {
+      String newName = newNamespace + name.substring(oldNamespace.length(), name.length());
+      model.setName(newName);
+      SModelUID modelUID = SModelUID.fromString(name);
+      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
+      if (modelDescriptor == null) {
+        LOG.error("Couldn't get model \"" + modelUID + "\"");
+      }
+      new RenameModelRefactoring(modelDescriptor, operationContext, newName).run();
+    }
+  }
 
   public String marshall() {
     return getNamespace();
@@ -107,11 +191,11 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
     // default descriptorModel roots
     ModelRoot modelRoot = ModelRoot.newInstance(descriptorModel);
-    modelRoot.setPath(new File(descriptorFile.getParentFile(), "languageModels").getAbsolutePath());
+    modelRoot.setPath(new File(descriptorFile.getParentFile(), LANGUAGE_MODELS).getAbsolutePath());
     modelRoot.setPrefix(languageNamespace);
     languageDescriptor.addModelRoot(modelRoot);
     modelRoot = ModelRoot.newInstance(descriptorModel);
-    modelRoot.setPath(new File(descriptorFile.getParentFile(), "languageAccessories").getAbsolutePath());
+    modelRoot.setPath(new File(descriptorFile.getParentFile(), LANGUAGE_ACCESSORIES).getAbsolutePath());
     modelRoot.setPrefix(languageNamespace);
     languageDescriptor.addModelRoot(modelRoot);
 

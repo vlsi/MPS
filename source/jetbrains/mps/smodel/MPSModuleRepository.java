@@ -370,6 +370,29 @@ public class MPSModuleRepository {
     }
   }
 
+  /*package*/ void renameUID(Language l, String newUID) {
+    File descriptorFile = l.getDescriptorFile();
+    if (descriptorFile != null) {
+      try {
+        myFileToModuleMap.remove(descriptorFile.getCanonicalPath());
+      } catch(IOException e) {
+        LOG.error(e);
+      }
+    }
+    myUIDToModulesMap.get(l.getNamespace()).remove(l);
+
+    List<IModule> modules = myUIDToModulesMap.get(newUID);
+    if (modules == null) {
+      modules = new ArrayList<IModule>();
+      myUIDToModulesMap.put(newUID, modules);
+    }
+    modules.add(l);
+    try {
+      myFileToModuleMap.put(l.newDescriptorFileByNewName(newUID).getCanonicalPath(), l);
+    } catch(IOException e) {
+      LOG.error(e);
+    }
+  }
 
   @Nullable
   public Language getLanguage(@NotNull String namespace) {
