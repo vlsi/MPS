@@ -31,6 +31,9 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1167756080639" resolveInfo="PropertyMacro_GetPropertyValue" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1172595017738">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473994950" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1167756010676">
       <property name="value" value="aspectMethodName - query method is deprecated" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1162838948922" />
