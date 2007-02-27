@@ -6,6 +6,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.project.MPSProject;
 
 import java.io.File;
 import java.util.HashSet;
@@ -456,8 +457,8 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     }
   }
 
-  public boolean rename(String newLongName) {
-    return myModelRootManager.renameModelDescriptor(this, newLongName);
+  public boolean rename(String newLongName, MPSProject project) {
+    return myModelRootManager.renameModelDescriptor(this, newLongName, project);
   }
 
   /*package*/ void changeSModelUID(SModelUID newModelUID) {

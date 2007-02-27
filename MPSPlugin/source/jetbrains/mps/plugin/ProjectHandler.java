@@ -28,6 +28,8 @@ import com.intellij.psi.search.PsiSearchHelper;
 import com.intellij.refactoring.MoveClassesOrPackagesRefactoring;
 import com.intellij.refactoring.RefactoringFactory;
 import com.intellij.refactoring.RenameRefactoring;
+import com.intellij.refactoring.MoveDestination;
+import com.intellij.refactoring.move.moveClassesOrPackages.SingleSourceRootMoveDestination;
 import com.intellij.util.IncorrectOperationException;
 import org.jetbrains.annotations.NotNull;
 
@@ -146,33 +148,33 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     final CompilationResult[] result = new CompilationResult[1];
     synchronized(lock) {
       ApplicationManager.getApplication().invokeLater(new Runnable() {
-          public void run() {
-            ApplicationManager.getApplication().runWriteAction(new Runnable() {
-              public void run() {
-                Module module = findModule(path);
-                if (module == null) {
-                  synchronized(lock) {
-                    lock.notifyAll();
-                  }
-                  return;
+        public void run() {
+          ApplicationManager.getApplication().runWriteAction(new Runnable() {
+            public void run() {
+              Module module = findModule(path);
+              if (module == null) {
+                synchronized(lock) {
+                  lock.notifyAll();
+                }
+                return;
+              }
+
+              CompilerManager compilerManager = myProject.getComponent(CompilerManager.class);
+              compilerManager.make(module, new CompileStatusNotification() {
+                public void finished(boolean aborted, int errors, int warnings, CompileContext compileContext) {
+                  compilationFinished(aborted, errors, warnings);
                 }
 
-                CompilerManager compilerManager = myProject.getComponent(CompilerManager.class);
-                compilerManager.make(module, new CompileStatusNotification() {
-                  public void finished(boolean aborted, int errors, int warnings, CompileContext compileContext) {
-                    compilationFinished(aborted, errors, warnings);
+                private void compilationFinished(boolean aborted, int errorsNumber, int warningsNumber) {
+                  synchronized(lock) {
+                    result[0] = new CompilationResult(errorsNumber, warningsNumber, aborted);
+                    lock.notifyAll();
                   }
-
-                  private void compilationFinished(boolean aborted, int errorsNumber, int warningsNumber) {
-                    synchronized(lock) {
-                      result[0] = new CompilationResult(errorsNumber, warningsNumber, aborted);
-                      lock.notifyAll();
-                    }
-                  }
-                });
-              }
-            });
-          }
+                }
+              });
+            }
+          });
+        }
       });
       try {
         lock.wait();
@@ -517,7 +519,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
 
   private void executeWriteAction(final Runnable runnable) {
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-      public void run() {        
+      public void run() {
         CommandProcessor.getInstance().executeCommand(myProject, new Runnable() {
           public void run() {
             ApplicationManager.getApplication().runWriteAction(runnable);
@@ -783,22 +785,35 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
   }
 
   public void renamePackage(final String oldPackageName, final String newPackageName) throws RemoteException {
-    try {
-      new WriteCommandAction(myProject) {
-        protected void run(Result result) throws Throwable {
-          PsiPackage psiPackage = PsiManager.getInstance(myProject).findPackage(oldPackageName);
-          RenameRefactoring refactoring = RefactoringFactory.getInstance(myProject).createRename(psiPackage, newPackageName);
-          refactoring.setPreviewUsages(false);
-          refactoring.setSearchInComments(false);
-          refactoring.setSearchInNonJavaFiles(false);
-          refactoring.setShouldRenameInheritors(false);
-          refactoring.setShouldRenameVariables(false);
-          refactoring.run();
-        }
-      }.execute();
-    } catch (Throwable e) {
-      e.printStackTrace();
-    }
+    new WriteCommandAction(myProject) {
+      protected void run(Result result) throws Throwable {
+        PsiPackage psiPackage = PsiManager.getInstance(myProject).findPackage(oldPackageName);
+        RenameRefactoring refactoring = RefactoringFactory.getInstance(myProject).createRename(psiPackage, newPackageName);
+        refactoring.setPreviewUsages(false);
+        refactoring.setSearchInComments(false);
+        refactoring.setSearchInNonJavaFiles(false);
+        refactoring.setShouldRenameInheritors(false);
+        refactoring.setShouldRenameVariables(false);
+        refactoring.run();
+      }
+    }.execute();
+  }
+
+
+  public void movePackage(final String oldPackageName, final String newLongPackageName) throws RemoteException {
+    new WriteCommandAction(myProject) {
+      protected void run(Result result) throws Throwable {
+        PsiPackage psiPackage = PsiManager.getInstance(myProject).findPackage(oldPackageName);
+        RefactoringFactory refactoringFactory = RefactoringFactory.getInstance(myProject);
+        MoveDestination newPackage = refactoringFactory.createSourceFolderPreservingMoveDestination(newLongPackageName);
+        MoveClassesOrPackagesRefactoring  moveClassesOrPackagesRefactoring
+                = refactoringFactory.createMoveClassesOrPackages(new PsiElement[]{psiPackage}, newPackage);
+        moveClassesOrPackagesRefactoring.setSearchInComments(false);
+        moveClassesOrPackagesRefactoring.setSearchInNonJavaFiles(false);
+        moveClassesOrPackagesRefactoring.setPreviewUsages(false);
+        moveClassesOrPackagesRefactoring.run();
+      }
+    }.execute();
   }
 
   public void deleteFilesAndRemoveFromVCS(final List<File> files) throws RemoteException {

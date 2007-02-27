@@ -3,6 +3,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelListener;
+import jetbrains.mps.project.MPSProject;
 
 import java.io.File;
 import java.util.Set;
@@ -69,5 +70,5 @@ public interface SModelDescriptor {
 
   int getVersion();
 
-  boolean rename(String newLongName);
+  boolean rename(String newLongName, MPSProject project);
 }

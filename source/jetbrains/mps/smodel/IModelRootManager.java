@@ -1,6 +1,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -45,5 +46,5 @@ public interface IModelRootManager {
                                            @NotNull SModelUID modelUID,
                                            @NotNull ModelOwner owner);
 
-  boolean renameModelDescriptor(SModelDescriptor modelDescriptor, String newLongName);
+  boolean renameModelDescriptor(SModelDescriptor modelDescriptor, String newLongName, MPSProject project);
 }

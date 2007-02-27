@@ -7,11 +7,14 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vcs.Merger;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.plugin.IProjectHandler;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
 import java.util.HashSet;
 import java.util.Set;
+import java.rmi.RemoteException;
 
 /**
  * @author Kostik
@@ -175,7 +178,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
   }
 
 
-  public boolean renameModelDescriptor(SModelDescriptor modelDescriptor, String newLongName) {
+  public boolean renameModelDescriptor(SModelDescriptor modelDescriptor, String newLongName, MPSProject project) {
     try {
       assert modelDescriptor instanceof DefaultSModelDescriptor;
       SModelUID newModelUID = new SModelUID(newLongName, modelDescriptor.getStereotype());
@@ -189,12 +192,22 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
         LOG.error("can't rename model " + modelDescriptor + " : more than one model root exists");
         return false;
       }
+
       File dest = createFileForModelUID(modelRoots.iterator().next(), newModelUID);
-      boolean renameSuccessful = modelDescriptor.getModelFile().renameTo(dest);
-      if (!renameSuccessful) {
-        LOG.error("rename failed");
-        return false;
+
+      File oldModelFile = modelDescriptor.getModelFile();
+      IProjectHandler projectHandler = project.getProjectHandler();
+      if (projectHandler != null) {
+        try {
+          projectHandler.deleteFilesAndRemoveFromVCS(CollectionUtil.asList(oldModelFile));
+        } catch(RemoteException ex) {
+          LOG.error(ex);
+          return false;
+        }
+      } else {
+        oldModelFile.delete();
       }
+
       ((DefaultSModelDescriptor)modelDescriptor).setModelFile(dest);
       
       // 2. update model repository and rename descriptor itself

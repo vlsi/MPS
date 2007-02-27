@@ -1,6 +1,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -55,7 +56,7 @@ public abstract class AbstractModelRootManager implements IModelRootManager {
   }
 
 
-  public boolean renameModelDescriptor(SModelDescriptor modelDescriptor, String newLongName) {
+  public boolean renameModelDescriptor(SModelDescriptor modelDescriptor, String newLongName, MPSProject project) {
     return false;
   }
 }
