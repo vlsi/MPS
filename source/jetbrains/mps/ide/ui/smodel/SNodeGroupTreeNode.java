@@ -19,4 +19,6 @@ public class SNodeGroupTreeNode extends TextTreeNode {
   public boolean isAutoDelete() {
     return myAutoDelete;
   }
+
+  
 }

@@ -35,6 +35,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   private boolean myInitialized = false;
   private MyModelListener myModelListener = new MyModelListener();
   private boolean myShowLongName;
+  private List<SNodeGroupTreeNode> myGroups = new ArrayList<SNodeGroupTreeNode>();
 
   public SModelTreeNode(SModelDescriptor modelDescriptor,
                         String label,
@@ -57,9 +58,36 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return null;
   }
 
+  protected SNodeGroupTreeNode createGroup(String name, boolean autoDelete) {
+    SNodeGroupTreeNode result = new SNodeGroupTreeNode(name, autoDelete);
+
+    int index = -1;
+    for (int i = 0; i < myGroups.size(); i++) {
+      SNodeGroupTreeNode group = myGroups.get(i);      
+      String rp = name;
+      String cp = group.toString();
+      if (rp.compareTo(cp) < 0) {
+        index = i;
+        break;
+      }
+    }
+    if (index == -1) {
+      index = myGroups.size();
+    }
+
+    myGroups.add(index, result);
+
+    if (myInitialized) {
+      insert(result, index);
+    }
+
+    return result;
+  }
+
   protected void groupWasDeleted(SNodeGroupTreeNode node) {
     DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
 
+    myGroups.remove(node);    
     if (node.isAutoDelete()) {
       treeModel.removeNodeFromParent(node);
     }
@@ -173,8 +201,10 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
   public void init() {
     removeAllChildren();
+    for (SNodeGroupTreeNode group : myGroups) {
+      add(group);
+    }
     SModel model = getSModel();
-
     if (!model.hasSModelCommandListener(myModelListener)) {
       model.addSModelCommandListener(myModelListener);
     }
@@ -216,8 +246,11 @@ public class SModelTreeNode extends MPSTreeNodeEx {
         return (SNodeTreeNode) child;
       }
 
-      if (child instanceof SNodeGroupTreeNode) {
-        return (SNodeTreeNode) child.findExactChildWith(node);
+      if (child instanceof SNodeGroupTreeNode) {        
+        SNodeTreeNode result = (SNodeTreeNode) child.findExactChildWith(node);
+        if (result != null) {
+          return result;
+        }
       }
     }
 
@@ -304,7 +337,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       final List<SNode> allRoots = new ArrayList<SNode>(getSModel().getRoots());
       Collections.sort(allRoots, new ToStringComparator());
       for (SNode node : nodesWithChangedProperties) {
-        SNodeTreeNode treeNode = (SNodeTreeNode) findExactChildWith(node);
+        SNodeTreeNode treeNode = (SNodeTreeNode) findRootSNodeTreeNode(node);
         if (treeNode == null) continue;
         if (node.isRoot()) {
           MPSTreeNode parentTreeNode = (MPSTreeNode) treeNode.getParent();
@@ -332,7 +365,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
           if (currentIndex != newIndex) {
             treeModel.removeNodeFromParent(treeNode);
-            treeModel.insertNodeInto(treeNode, SModelTreeNode.this, newIndex);
+            treeModel.insertNodeInto(treeNode, parentTreeNode, newIndex);
           }
         }
 
