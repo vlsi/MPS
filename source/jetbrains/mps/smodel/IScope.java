@@ -34,4 +34,6 @@ public interface IScope {
   @Nullable DevKit getDevKit(@NotNull String devKitNamespace);
 
   boolean isVisibleDevKit(@NotNull String devKitNamespace);
+
+  Set<IModule> getVisibleModules();
 }
