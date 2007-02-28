@@ -36,6 +36,8 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IDisposable;
 import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.reloading.MPSClassLoader;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -404,6 +406,10 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     myContext.register(interfaceClass, instance);
   }
 
+  public void removeComponent(Class interfaceClass) {
+    myContext.unregister(interfaceClass);
+  }
+
   @NotNull
   public File getClassGenPath() {
     return new File(myProjectFile.getParentFile(), "classes_gen");
@@ -456,7 +462,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
         for (Element component : components) {
           try {
             String className = component.getAttributeValue(CLASS);
-            Class cls = Class.forName(className);
+            Class cls = Class.forName(className, true, ClassLoaderManager.getInstance().getClassLoader());
 
             if (containsComponent(cls) && getComponent(cls) instanceof IExternalizableComponent) {
               ((IExternalizableComponent) getComponentSafe(cls)).read(component, this);
