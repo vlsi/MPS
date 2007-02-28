@@ -1418,10 +1418,6 @@ public class SNode implements Cloneable, Iterable<SNode> {
     return getLinkDeclaration(role, scope);
   }
 
-  public LinkDeclaration getLinkDeclarationAdapter(String role, IScope scope) {
-    return getLinkDeclaration(role, scope);
-  }
-
   public LinkDeclaration getLinkDeclaration(String role, IScope scope) {
     ConceptDeclaration conceptDeclaration = getConceptDeclarationAdapter(scope);
     return SModelUtil_new.findLinkDeclaration(conceptDeclaration, role);
