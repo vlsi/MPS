@@ -179,48 +179,49 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 
 
   public boolean renameModelDescriptor(SModelDescriptor modelDescriptor, String newLongName, MPSProject project) {
-    try {
-      assert modelDescriptor instanceof DefaultSModelDescriptor;
-      SModelUID newModelUID = new SModelUID(newLongName, modelDescriptor.getStereotype());
-      // 1. rename file
-      Set<ModelRoot> modelRoots = collectModelRoots(modelDescriptor);
-      if (modelRoots.size() == 0) {
-        LOG.error("can't rename model " + modelDescriptor + " : no model root exists");
-        return false;
-      }
-      if (modelRoots.size() > 1) {
-        LOG.error("can't rename model " + modelDescriptor + " : more than one model root exists");
-        return false;
-      }
-
-      File dest = createFileForModelUID(modelRoots.iterator().next(), newModelUID);
-
-      File oldModelFile = modelDescriptor.getModelFile();
-      IProjectHandler projectHandler = project.getProjectHandler();
-      if (projectHandler != null) {
-        try {
-          projectHandler.deleteFilesAndRemoveFromVCS(CollectionUtil.asList(oldModelFile));
-        } catch(RemoteException ex) {
-          LOG.error(ex);
-          return false;
-        }
-      } else {
-        oldModelFile.delete();
-      }
-
-      ((DefaultSModelDescriptor)modelDescriptor).setModelFile(dest);
-      
-      // 2. update model repository and rename descriptor itself
-      SModelUID oldModelUID = modelDescriptor.getModelUID();
-      SModelRepository.getInstance().renameUID(modelDescriptor, newModelUID);
-
-      // 3. update node proxies
-      SNodeProxy.changeModelUID(oldModelUID, modelDescriptor);
-      return true;
-    } catch(Throwable t) {
-      LOG.error("rename threw an exception " + t.toString(), t);
+    assert modelDescriptor instanceof DefaultSModelDescriptor;
+    // 1. rename file
+    Set<ModelRoot> modelRoots = collectModelRoots(modelDescriptor);
+    if (modelRoots.size() == 0) {
+      LOG.error("can't rename model " + modelDescriptor + " : no model root exists");
       return false;
     }
+    if (modelRoots.size() > 1) {
+      LOG.error("can't rename model " + modelDescriptor + " : more than one model root exists");
+      return false;
+    }
+
+    ModelRoot root = modelRoots.iterator().next();
+    return renameModelDescriptor(modelDescriptor, newLongName, root, project);
+  }
+
+  public boolean renameModelDescriptor(SModelDescriptor modelDescriptor, String newLongName, ModelRoot root, MPSProject project) {
+    assert modelDescriptor instanceof DefaultSModelDescriptor;
+    SModelUID newModelUID = new SModelUID(newLongName, modelDescriptor.getStereotype());
+    File dest = createFileForModelUID(root, newModelUID);
+
+    File oldModelFile = modelDescriptor.getModelFile();
+    IProjectHandler projectHandler = project.getProjectHandler();
+    if (projectHandler != null) {
+      try {
+        projectHandler.deleteFilesAndRemoveFromVCS(CollectionUtil.asList(oldModelFile));
+      } catch(RemoteException ex) {
+        LOG.error(ex);
+        return false;
+      }
+    } else {
+      oldModelFile.delete();
+    }
+
+    ((DefaultSModelDescriptor)modelDescriptor).setModelFile(dest);
+
+    // update model repository and rename descriptor itself
+    SModelUID oldModelUID = modelDescriptor.getModelUID();
+    SModelRepository.getInstance().renameUID(modelDescriptor, newModelUID);
+
+    // update node proxies
+    SNodeProxy.changeModelUID(oldModelUID, modelDescriptor);
+    return true;
   }
 
   private Set<ModelRoot> collectModelRoots(SModelDescriptor modelDescriptor) {

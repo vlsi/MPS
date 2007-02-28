@@ -47,4 +47,6 @@ public interface IModelRootManager {
                                            @NotNull ModelOwner owner);
 
   boolean renameModelDescriptor(SModelDescriptor modelDescriptor, String newLongName, MPSProject project);
+
+  boolean renameModelDescriptor(SModelDescriptor modelDescriptor, String newLongName, ModelRoot root, MPSProject project);
 }

@@ -66,22 +66,13 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   public void rename(String newNamespace, IOperationContext operationContext) {
     String oldNamespace = getNamespace();
 
-    renameLanguageModel(oldNamespace, newNamespace, myLanguageDescriptor.getStructureModel(), operationContext);
-    Model editorModel = null;
-    for (Editor editor : myLanguageDescriptor.getEditors()) {
-      if (editor.getStereotype() == null || editor.getStereotype().equals(SModelStereotype.NONE)) {
-        editorModel = editor.getEditorModel();
-        break;
-      }
-    }
-    renameLanguageModel(oldNamespace, newNamespace, editorModel, operationContext);
-    renameLanguageModel(oldNamespace, newNamespace, myLanguageDescriptor.getActionsModel(), operationContext);
-    renameLanguageModel(oldNamespace, newNamespace, myLanguageDescriptor.getHelginsTypesystemModel(), operationContext);
-    renameLanguageModel(oldNamespace, newNamespace, myLanguageDescriptor.getTypeSystem(), operationContext);
-
+    // update repository
     MPSModuleRepository.getInstance().renameUID(this, newNamespace);
+
+    // set new namespace
     myLanguageDescriptor.setNamespace(newNamespace);
 
+    // rename model roots
     String oldLanguageModelsRoot = new File(myDescriptorFile.getParentFile(), LANGUAGE_MODELS).getAbsolutePath();
     String oldLanguageAccesoriesRoot = new File(myDescriptorFile.getParentFile(), LANGUAGE_ACCESSORIES).getAbsolutePath();
     for (ModelRoot modelRoot : myLanguageDescriptor.getModelRoots()) {
@@ -108,15 +99,30 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     File descriptorFile = newDescriptorFileByNewName(newNamespace);
 
     SModel descriptorModel = myLanguageDescriptor.getModel();
-    ModelRoot modelRoot = ModelRoot.newInstance(descriptorModel);
-    modelRoot.setPath(new File(descriptorFile.getParentFile(), LANGUAGE_MODELS).getAbsolutePath());
-    modelRoot.setPrefix(newNamespace);
-    myLanguageDescriptor.addModelRoot(modelRoot);
-    modelRoot = ModelRoot.newInstance(descriptorModel);
-    modelRoot.setPath(new File(descriptorFile.getParentFile(), LANGUAGE_ACCESSORIES).getAbsolutePath());
-    modelRoot.setPrefix(newNamespace);
-    myLanguageDescriptor.addModelRoot(modelRoot);
+    ModelRoot languageModelRoot = ModelRoot.newInstance(descriptorModel);
+    languageModelRoot.setPath(new File(descriptorFile.getParentFile(), LANGUAGE_MODELS).getAbsolutePath());
+    languageModelRoot.setPrefix(newNamespace);
+    myLanguageDescriptor.addModelRoot(languageModelRoot);
+    ModelRoot accessoryModelRoot = ModelRoot.newInstance(descriptorModel);
+    accessoryModelRoot.setPath(new File(descriptorFile.getParentFile(), LANGUAGE_ACCESSORIES).getAbsolutePath());
+    accessoryModelRoot.setPrefix(newNamespace);
+    myLanguageDescriptor.addModelRoot(accessoryModelRoot);
 
+    // rename language models
+    renameLanguageModel(oldNamespace, newNamespace, myLanguageDescriptor.getStructureModel(), languageModelRoot, operationContext);
+    Model editorModel = null;
+    for (Editor editor : myLanguageDescriptor.getEditors()) {
+      if (editor.getStereotype() == null || editor.getStereotype().equals(SModelStereotype.NONE)) {
+        editorModel = editor.getEditorModel();
+        break;
+      }
+    }
+    renameLanguageModel(oldNamespace, newNamespace, editorModel, languageModelRoot, operationContext);
+    renameLanguageModel(oldNamespace, newNamespace, myLanguageDescriptor.getActionsModel(), languageModelRoot, operationContext);
+    renameLanguageModel(oldNamespace, newNamespace, myLanguageDescriptor.getHelginsTypesystemModel(), languageModelRoot, operationContext);
+    renameLanguageModel(oldNamespace, newNamespace, myLanguageDescriptor.getTypeSystem(), languageModelRoot, operationContext);
+
+    // save descriptor
     myDescriptorFile = descriptorFile;
     setLanguageDescriptor(myLanguageDescriptor);
     save();
@@ -127,7 +133,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return new File(dir, NameUtil.shortNameFromLongName(newNamespace));
   }
 
-  private void renameLanguageModel(String oldNamespace, String newNamespace, Model model, IOperationContext operationContext) {
+  private void renameLanguageModel(String oldNamespace, String newNamespace, Model model, ModelRoot newRoot, IOperationContext operationContext) {
     if (model == null) return;
     String name = model.getName();
     if (name.startsWith(oldNamespace)) {
@@ -138,7 +144,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       if (modelDescriptor == null) {
         LOG.error("Couldn't get model \"" + modelUID + "\"");
       }
-      new RenameModelRefactoring(modelDescriptor, operationContext, newName).run();
+      new RenameModelRefactoring(modelDescriptor, operationContext, newName, newRoot).run();
     }
   }
 

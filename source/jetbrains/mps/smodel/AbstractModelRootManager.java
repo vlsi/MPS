@@ -59,4 +59,9 @@ public abstract class AbstractModelRootManager implements IModelRootManager {
   public boolean renameModelDescriptor(SModelDescriptor modelDescriptor, String newLongName, MPSProject project) {
     return false;
   }
+
+
+  public boolean renameModelDescriptor(SModelDescriptor modelDescriptor, String newLongName, ModelRoot root, MPSProject project) {
+    return false;
+  }
 }
