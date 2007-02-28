@@ -216,6 +216,22 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     myEventTranslator.projectChanged();
   }
 
+  public void removeProjectLanguage(@NotNull Language language) {
+    ProjectDescriptor projectDescriptor = getProjectDescriptor();
+    SModel model = projectDescriptor.getModel();
+    model.setLoading(true);
+    File descriptorFile = language.getDescriptorFile();
+    assert descriptorFile != null;
+    String absolutePath = descriptorFile.getAbsolutePath();
+    for (LanguagePath languagePath : projectDescriptor.getProjectLanguages()) {
+      if (languagePath.getPath().equals(absolutePath)) {
+        languagePath.delete();
+      }
+    }
+    setProjectDescriptor(projectDescriptor);
+    myEventTranslator.projectChanged();
+  }
+
   @NotNull
   public Solution addProjectSolution(@NotNull File solutionDescriptionFile) {
     ProjectDescriptor projectDescriptor = getProjectDescriptor();
