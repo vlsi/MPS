@@ -28,9 +28,9 @@ public class MPSModuleRepository {
   private List<RepositoryListener> myListeners = new ArrayList<RepositoryListener>();
 
   private Map<String, Class<? extends IModule>> myExtensionsToModuleTypes = new HashMap<String, Class<? extends IModule>>();
-  private static final String LANGUAGE_EXT = ".mpl";
-  private static final String SOLUTION_EXT = ".msd";
-  private static final String DEVKIT_EXT = ".devkit";
+  public static final String LANGUAGE_EXT = ".mpl";
+  public static final String SOLUTION_EXT = ".msd";
+  public static final String DEVKIT_EXT = ".devkit";
 
   public static MPSModuleRepository getInstance() {
     return ApplicationComponents.getInstance().getComponent(MPSModuleRepository.class);

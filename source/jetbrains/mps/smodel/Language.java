@@ -132,11 +132,11 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     File dir = myDescriptorFile.getParentFile();
     String oldShortFileName = NameUtil.shortNameFromLongName(myDescriptorFile.getAbsolutePath());
     String newPathSuffix = NameUtil.shortNameFromLongName(newNamespace);
-    if (dir.getAbsolutePath().endsWith(oldShortFileName)) {
+    if ((dir.getAbsolutePath() + MPSModuleRepository.LANGUAGE_EXT).endsWith(oldShortFileName)) {
       dir = dir.getParentFile();
       newPathSuffix = newPathSuffix + File.separatorChar + newPathSuffix;
     }
-    return new File(dir, newPathSuffix);
+    return new File(dir, newPathSuffix + MPSModuleRepository.LANGUAGE_EXT);
   }
 
   private void renameLanguageModel(String oldNamespace, String newNamespace, Model model, ModelRoot newRoot, IOperationContext operationContext) {
