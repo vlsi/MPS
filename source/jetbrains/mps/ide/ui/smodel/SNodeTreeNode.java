@@ -1,16 +1,18 @@
 package jetbrains.mps.ide.ui.smodel;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.ide.action.ActionManager;
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.AbstractProjectFrame;
+import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.action.ActionManager;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 
-import javax.swing.*;
+import javax.swing.Icon;
+import javax.swing.JPopupMenu;
 import javax.swing.tree.DefaultTreeModel;
 import java.util.List;
 
@@ -127,8 +129,16 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
       output.append(myRole).append(" : ");
     }
 
-    if (getSNode() != null) {
-      output.append(getSNode().toString());
+    SNode node = getSNode();
+    if (node != null) {
+      String nodeString = node.toString();
+      output.append(nodeString);
+      if (myRole != null) {
+        String matchingText = NodePresentationUtil.matchingText(node);
+        if (!matchingText.equals(nodeString)) {
+          output.append(" [").append(matchingText).append("]");
+        }
+      }
     }
 
     return output.toString();
