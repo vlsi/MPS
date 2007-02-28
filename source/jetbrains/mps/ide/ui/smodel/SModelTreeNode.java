@@ -23,18 +23,12 @@ import javax.swing.Icon;
 import javax.swing.JPopupMenu;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
+import javax.swing.tree.TreeNode;
 import java.awt.Color;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Aug 25, 2005
- * Time: 5:19:27 PM
- * To change this template use File | Settings | File Templates.
- */
 public class SModelTreeNode extends MPSTreeNodeEx {
   private SModelDescriptor myModelDescriptor;
   private String myLabel;
@@ -56,6 +50,19 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     myShowLongName = showLongName;
     myModelDescriptor = modelDescriptor;
     myLabel = label;
+  }
+
+
+  protected SNodeGroupTreeNode getGroupNodeFor(SNode node) {
+    return null;
+  }
+
+  protected void groupWasDeleted(SNodeGroupTreeNode node) {
+    DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+
+    if (node.isAutoDelete()) {
+      treeModel.removeNodeFromParent(node);
+    }
   }
 
   public SModel getSModel() {
@@ -179,7 +186,12 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     List<SNode> sortedRoots = SortUtil.sortNodes(filteredRoots);
     for (SNode sortedRoot : sortedRoots) {
       MPSTreeNodeEx treeNode = createSNodeTreeNode(sortedRoot, getOperationContext());
-      add(treeNode);
+      MPSTreeNode group = getGroupNodeFor(sortedRoot);
+      if (group != null) {
+        group.add(treeNode);
+      } else {
+        add(treeNode);
+      }
     }
     DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
     treeModel.nodeStructureChanged(this);
@@ -192,16 +204,24 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
 
-  private int getNumberOfInformationNodes() {
-    int result = 0;
-    if (showPropertiesAndReferences()) {
-      result += 2;
-    }
-    return result;
-  }
-
   protected void dispose() {
     getSModel().removeSModelCommandListener(myModelListener);
+  }
+
+  private SNodeTreeNode findRootSNodeTreeNode(SNode node) {
+    for (int i = 0; i < getChildCount(); i++) {
+      MPSTreeNode child = (MPSTreeNode) getChildAt(i);
+
+      if (child instanceof SNodeTreeNode && ((SNodeTreeNode) child).getSNode() == node) {
+        return (SNodeTreeNode) child;
+      }
+
+      if (child instanceof SNodeGroupTreeNode) {
+        return (SNodeTreeNode) child.findExactChildWith(node);
+      }
+    }
+
+    return null;
   }
 
   private class MyModelListener implements SModelCommandListener {
@@ -287,8 +307,28 @@ public class SModelTreeNode extends MPSTreeNodeEx {
         SNodeTreeNode treeNode = (SNodeTreeNode) findExactChildWith(node);
         if (treeNode == null) continue;
         if (node.isRoot()) {
-          int currentIndex = getIndex(treeNode);
-          int newIndex = allRoots.indexOf(node);
+          MPSTreeNode parentTreeNode = (MPSTreeNode) treeNode.getParent();
+          int currentIndex = parentTreeNode.getIndex(treeNode);
+
+          int newIndex = -1;
+          for (int i = 0; i < parentTreeNode.getChildCount(); i++) {
+            if (i == currentIndex) continue;
+            if (!(parentTreeNode.getChildAt(i) instanceof SNodeTreeNode)) continue;
+            SNodeTreeNode child = (SNodeTreeNode) parentTreeNode.getChildAt(i);
+
+            String rp = node.toString();
+            String cp = child.getSNode().toString();
+            if (rp.compareTo(cp) < 0) {
+              newIndex = i;
+              if (newIndex > currentIndex) {
+                newIndex--;
+              }
+              break;
+            }
+          }
+          if (newIndex == -1) {
+            newIndex = parentTreeNode.getChildCount() - 1;             
+          }
 
           if (currentIndex != newIndex) {
             treeModel.removeNodeFromParent(treeNode);
@@ -342,9 +382,15 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     private void addAndRemoveRoots(Set<SNode> removedRoots, Set<SNode> addedRoots) {
       DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
       for (SNode root : removedRoots) {
-        SNodeTreeNode node = (SNodeTreeNode) findExactChildWith(root);
+        SNodeTreeNode node = (SNodeTreeNode) findRootSNodeTreeNode(root);
         if (node == null) continue;
+
+        MPSTreeNode parent = (MPSTreeNode) node.getParent();
         treeModel.removeNodeFromParent(node);
+
+        if (parent instanceof SNodeGroupTreeNode && parent.getChildCount() == 0) {
+          groupWasDeleted((SNodeGroupTreeNode) parent);
+        }
       }
 
       final List<SNode> allRoots = new ArrayList<SNode>(getSModel().getRoots());
@@ -356,11 +402,31 @@ public class SModelTreeNode extends MPSTreeNodeEx {
           return new Integer(allRoots.indexOf(o1)).compareTo(allRoots.indexOf(o2));
         }
       });
+
       for (SNode root : added) {
-        int index = allRoots.indexOf(root);
-        assert index != -1;
-        treeModel.insertNodeInto(new SNodeTreeNode(root, getOperationContext()), SModelTreeNode.this,
-                index);
+        SNodeTreeNode nodeToInsert = new SNodeTreeNode(root, getOperationContext());
+        SNodeGroupTreeNode group = getGroupNodeFor(root);
+        if (group != null) {
+          int index = -1;
+          for (int i = 0; i < group.getChildCount(); i++) {
+            SNodeTreeNode child = (SNodeTreeNode) group.getChildAt(i);
+            String rp = root.toString();
+            String cp = child.getSNode().toString();
+            if (rp.compareTo(cp) < 0) {
+              index = i;
+              break;
+            }
+          }
+          if (index == -1) {
+            index = group.getChildCount();
+          }
+          treeModel.insertNodeInto(nodeToInsert, group,  index);
+        } else {
+          int index = allRoots.indexOf(root);
+          assert index != -1;
+          treeModel.insertNodeInto(nodeToInsert, SModelTreeNode.this,
+                  index);
+        }
       }
     }
   }

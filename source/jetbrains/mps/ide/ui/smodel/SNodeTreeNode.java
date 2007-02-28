@@ -15,6 +15,7 @@ import javax.swing.Icon;
 import javax.swing.JPopupMenu;
 import javax.swing.tree.DefaultTreeModel;
 import java.util.List;
+import java.util.Arrays;
 
 /**
  * Created by IntelliJ IDEA.
@@ -47,6 +48,10 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
       return ((SNodeTreeNode) getParent()).getSModelModelTreeNode();
     }
 
+    if (getParent() instanceof SNodeGroupTreeNode) {
+      return (SModelTreeNode) ((SNodeGroupTreeNode) getParent()).getParent();
+    }
+
     return null;
   }
 
@@ -54,7 +59,15 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     JPopupMenu result = new JPopupMenu();
     ProjectPane pane = getOperationContext().getComponent(ProjectPane.class);
     if (pane == null) return null;
-    List<SNode> selection = pane.getNormalizedSelectedNodes();
+
+    //todo hack
+    List<SNode> selection; 
+    if (getTree() == pane.getTree()) {
+      selection = pane.getNormalizedSelectedNodes();
+    } else {
+      selection = Arrays.asList(getSNode());
+    }
+
     ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_NODE_ACTIONS).add(result, new ActionContext(getOperationContext(), getSNode(), selection));
     return result;
   }

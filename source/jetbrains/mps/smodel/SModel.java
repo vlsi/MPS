@@ -357,7 +357,11 @@ public class SModel implements Iterable<SNode> {
 
   private void fireSModelChangedInCommandEvent(@NotNull List<SModelEvent> events) {
     for (SModelCommandListener l : copyCommandListeners()) {
-      l.modelChangedInCommand(events);
+      try {
+        l.modelChangedInCommand(events);
+      } catch (Exception e) {
+        LOG.error(e);
+      }
     }
   }
 
