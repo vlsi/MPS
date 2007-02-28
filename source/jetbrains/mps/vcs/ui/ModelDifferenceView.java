@@ -90,10 +90,6 @@ public class ModelDifferenceView extends JPanel {
       myChangedNodes.add(r.getNodeId());
     }
 
-    for (AddReferenceChange r : CollectionUtil.filter(AddReferenceChange.class, changes)) {
-      myChangedNodes.add(r.getNodeId());
-    }
-
     updateView();
 
 
@@ -140,13 +136,6 @@ public class ModelDifferenceView extends JPanel {
       addNode.add(new ChangeNode(change));
     }
     changes.add(addNode);
-
-    List<AddReferenceChange> addReferenceChanges = CollectionUtil.filter(AddReferenceChange.class, myChanges);
-    TextTreeNode addReference = new TextTreeNode("Add Reference (" + addReferenceChanges.size() + ")");
-    for (AddReferenceChange change : addReferenceChanges) {
-      addNode.add(new ChangeNode(change));
-    }
-    changes.add(addReference);
 
     List<AddRootChange> addRootChanges = CollectionUtil.filter(AddRootChange.class, myChanges);
     TextTreeNode addRoot = new TextTreeNode("Add Root (" + addRootChanges.size() + ")");

@@ -150,11 +150,7 @@ public class DiffBuilder {
 
       if (oldNode == null) {
         for (SReference ref : newNode.getReferences()) {
-          if (isToManyCardinality(newNode.getConceptFqName(), ref.getRole())) {
-            myChanges.add(new AddReferenceChange(id, ref.getRole(), ref.getTargetModelUID(), ref.getTargetNodeId()));
-          } else {
-            myChanges.add(new SetReferenceChange(id, ref.getRole(), myNewModel, ref.getTargetNode()));
-          }
+          myChanges.add(new SetReferenceChange(id, ref.getRole(), myNewModel, ref.getTargetNode()));
         }
       } else {
         Set<String> roles = new HashSet<String>(newNode.getReferenceRoles());
