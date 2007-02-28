@@ -5,6 +5,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.Set;
+import java.util.HashSet;
 
 /**
  * Created by IntelliJ IDEA.
@@ -43,6 +45,11 @@ public class GlobalScope implements IScope {
   @NotNull
   public List<DevKit> getVisibleDevkits() {
     return MPSModuleRepository.getInstance().getAllModules(DevKit.class); 
+  }
+
+  @NotNull
+  public Set<IModule> getVisibleModules() {
+    return new HashSet<IModule>(MPSModuleRepository.getInstance().getAllModules());
   }
 
   @Nullable
