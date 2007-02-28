@@ -132,24 +132,6 @@
                 <node role="operation" type="ypath.IterateOperation" id="1169051168306" />
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1172246598171">
-              <node role="expression" type="ypath.TreePathOperationExpression" id="1172246881862">
-                <node role="expression" type="ypath.TreePathOperationExpression" id="1172246876113">
-                  <node role="expression" type="ypath.TreePathAdapterExpression" id="1172246876115">
-                    <link role="treepathAspect" targetNodeId="1169047438062" resolveInfo="DomNode_TreePath" />
-                    <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1172246598172">
-                      <link role="variableDeclaration" targetNodeId="1169048628465" resolveInfo="doc" />
-                    </node>
-                  </node>
-                  <node role="operation" type="ypath.IterateOperation" id="1172246876116">
-                    <property name="axis" value="DESCENDANTS" />
-                  </node>
-                </node>
-                <node role="operation" type="ypath.MatchKindOperation" id="1172246881864">
-                  <link role="nodeKind" targetNodeId="1172246121749" resolveInfo="FOO" />
-                </node>
-              </node>
-            </node>
           </node>
           <node role="catchClause" type="jetbrains.mps.baseLanguage.CatchClause" id="1169048613424">
             <node role="throwable" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1169048613425">
