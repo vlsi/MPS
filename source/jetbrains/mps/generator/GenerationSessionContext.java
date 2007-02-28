@@ -275,5 +275,14 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     public List<IModule> getExplicitlyDependOnModules() {
       return new LinkedList<IModule>(myDependOnModules);
     }
+
+
+    public void setModuleDescriptor(@NotNull ModuleDescriptor moduleDescriptor) {
+      throw new UnsupportedOperationException();
+    }
+
+    public void save() {
+      throw  new UnsupportedOperationException();
+    }
   } // private class TransientModule
 }

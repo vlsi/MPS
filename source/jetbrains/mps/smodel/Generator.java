@@ -72,6 +72,11 @@ public class Generator extends AbstractModule {
     return myGeneratorDescriptor;
   }
 
+
+  public void setModuleDescriptor(@NotNull ModuleDescriptor moduleDescriptor) {
+    LOG.error(new UnsupportedOperationException());
+  }
+
   public String getName() {
     return myGeneratorDescriptor.getName();
   }
@@ -142,6 +147,9 @@ public class Generator extends AbstractModule {
     return myGeneratorDescriptor;
   }
 
+
+  public void save() {
+  }
 
   @NotNull
   public List<IModule> getExplicitlyDependOnModules() {

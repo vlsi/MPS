@@ -8,6 +8,7 @@ import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
 import jetbrains.mps.projectLanguage.structure.SolutionDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -24,6 +25,8 @@ import java.util.Set;
  * To change this template use File | Settings | File Templates.
  */
 public class Solution extends AbstractModule {
+  private static Logger LOG = Logger.getLogger(Solution.class);
+
   private @NotNull SolutionDescriptor mySolutionDescriptor;
   private @NotNull List<SolutionCommandListener> myCommandListeners = new LinkedList<SolutionCommandListener>();
   private @NotNull SolutionEventTranslator myEventTranslator = new SolutionEventTranslator();
@@ -65,6 +68,14 @@ public class Solution extends AbstractModule {
         CommandProcessor.instance().addCommandListener(myEventTranslator);
         fireModuleInitialized();
       }
+    }
+  }
+
+  public void setModuleDescriptor(@NotNull ModuleDescriptor moduleDescriptor) {
+    if (moduleDescriptor instanceof SolutionDescriptor) {
+      setSolutionDescriptor((SolutionDescriptor) moduleDescriptor);
+    } else {
+      LOG.error("not a dev kit descriptor", new Throwable());
     }
   }
 

@@ -44,6 +44,8 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   @NotNull ModuleDescriptor getModuleDescriptor();
 
+  void setModuleDescriptor(@NotNull ModuleDescriptor moduleDescriptor);
+
   @Nullable String getGeneratorOutputPath();
 
   IScope getScope();
@@ -59,4 +61,6 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   Set<IModule> getExplicitlyVisibleModules();
 
   void invalidateCaches();
+
+  void save();
 }

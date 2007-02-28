@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.ToStringComparator;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -18,6 +19,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class DevKit extends AbstractModule {
+  private static Logger LOG = Logger.getLogger(DevKit.class);
+
   public static DevKit newInstance(@NotNull File descriptorFile, @NotNull MPSModuleOwner moduleOwner) {
     DevKit result = new DevKit();
 
@@ -58,6 +61,15 @@ public class DevKit extends AbstractModule {
   @NotNull
   public DevKitDescriptor getModuleDescriptor() {
     return myDescriptor;
+  }
+
+
+  public void setModuleDescriptor(@NotNull ModuleDescriptor moduleDescriptor) {
+    if (moduleDescriptor instanceof DevKitDescriptor) {
+      setDevKitDescriptor((DevKitDescriptor) moduleDescriptor);
+    } else {
+      LOG.error("not a solution descriptor", new Throwable());
+    }
   }
 
   @Nullable

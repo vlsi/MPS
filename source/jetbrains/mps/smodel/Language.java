@@ -336,6 +336,15 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return myLanguageDescriptor;
   }
 
+
+  public void setModuleDescriptor(@NotNull ModuleDescriptor moduleDescriptor) {
+    if (moduleDescriptor instanceof LanguageDescriptor) {
+      setLanguageDescriptor((LanguageDescriptor) moduleDescriptor);
+    } else {
+      LOG.error("not a language descriptor", new Throwable());
+    }
+  }
+
   @NotNull
   public LanguageDescriptor getLanguageDescriptor() {
     return myLanguageDescriptor;
