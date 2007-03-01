@@ -327,7 +327,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1162935959151">
     <property name="name" value="GetSizeOperation" />
-    <link role="extends" targetNodeId="1160612356232" resolveInfo="AbstractListOperation" />
+    <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1162935959153">
       <property name="value" value="size" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
