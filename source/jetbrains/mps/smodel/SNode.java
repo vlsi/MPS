@@ -853,7 +853,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
     }
 
     _children().add(index, child);
-    child.myRoleInParent = role;
+    child.myRoleInParent = InternUtil.intern(role);
     child.myParent = this;
 
     incrementChildInRoleCount(role);
