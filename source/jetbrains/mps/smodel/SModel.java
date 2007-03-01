@@ -832,7 +832,12 @@ public class SModel implements Iterable<SNode> {
     for (SNode root : getRoots()) {
       root.clearAdapters();
     }
+  }
 
+  void clearUseObjects() {
+    for (SNode root : getRoots()) {
+      root.clearUserObjects();
+    }
   }
 
   public void changeImportedModelUID(SModelUID oldImportedModelUID, SModelUID newImportedModelUID) {

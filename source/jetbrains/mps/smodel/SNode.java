@@ -1776,4 +1776,11 @@ public class SNode implements Cloneable, Iterable<SNode> {
       child.clearAdapters();
     }
   }
+
+  void clearUserObjects() {
+    myUserObjects.clear();
+    for (SNode child : getChildren()) {
+      child.clearUserObjects();
+    }
+  }
 }
