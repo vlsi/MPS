@@ -315,9 +315,7 @@ public class MPSModuleRepository {
       File moduleRoot = new File(root.getPath());
 
       if (moduleRoot.exists()) {
-        readModuleDescriptors(moduleRoot, owner, LANGUAGE_EXT);
-        readModuleDescriptors(moduleRoot, owner, SOLUTION_EXT);
-        readModuleDescriptors(moduleRoot, owner, DEVKIT_EXT);
+        readModuleDescriptors(moduleRoot, owner);
       } else {
         String error = "Couldn't load modules from " + moduleRoot.getAbsolutePath() + " for owner " + owner +
                 "\nDirectory doesn't exist: ";
@@ -329,17 +327,19 @@ public class MPSModuleRepository {
 
   private void readModuleDescriptors(
           @NotNull File dir,
-          @NotNull MPSModuleOwner owner,
-          @NotNull final String extension) {
+          @NotNull MPSModuleOwner owner) {
+    if (dir.getName().equals(".svn")) { //skip svn
+      return;
+    }
 
-
-    if (dir.getName().endsWith(extension) && dir.isFile()) {
-      readModuleDescriptor_internal(dir, owner, extension);
+    String dirName = dir.getName();
+    if ((hasModuleExtension(dirName)) && dir.isFile()) {
+      readModuleDescriptor_internal(dir, owner, getModuleExtension(dirName));
     }
 
     File[] files = dir.listFiles(new FilenameFilter() {
       public boolean accept(File d, String name) {
-        return name.endsWith(extension);
+        return hasModuleExtension(name);
       }
     });
 
@@ -348,14 +348,25 @@ public class MPSModuleRepository {
     }
 
     for (File file : files) {
-      readModuleDescriptor_internal(file, owner, extension);
+      readModuleDescriptor_internal(file, owner, getModuleExtension(file.getName()));
     }
     File[] dirs = dir.listFiles();
     for (File childDir : dirs) {
       if (childDir.isDirectory()) {
-        readModuleDescriptors(childDir, owner, extension);
+        readModuleDescriptors(childDir, owner);
       }
     }
+  }
+
+  private boolean hasModuleExtension(String name) {
+    return getModuleExtension(name) != null;
+  }
+
+  private String getModuleExtension(String name) {
+    if (name.endsWith(LANGUAGE_EXT)) return LANGUAGE_EXT;
+    if (name.endsWith(SOLUTION_EXT)) return SOLUTION_EXT;
+    if (name.endsWith(DEVKIT_EXT)) return DEVKIT_EXT;
+    return null;
   }
 
   private void readModuleDescriptor_internal(
