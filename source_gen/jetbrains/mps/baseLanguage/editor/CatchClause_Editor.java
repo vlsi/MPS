@@ -120,7 +120,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
   }
   public EditorCell createConstantCell4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
+    editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");

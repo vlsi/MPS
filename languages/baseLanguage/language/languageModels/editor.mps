@@ -68,8 +68,8 @@
           <property name="defaultValue" value="&lt;no name&gt;" />
           <property name="drawBorder" value="false" />
           <property name="noTargetText" value="&lt;no name&gt;" />
-          <property name="rightTransformAnchorTag" value="default_RTransform" />
           <property name="selectable" value="true" />
+          <property name="rightTransformAnchorTag" value="default_RTransform" />
           <link role="relationDeclaration" targetNodeId="18.1078489098626" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1109281144581">
@@ -853,8 +853,8 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1075289970878">
         <property name="textFgColor" value="DARK_MAGENTA" />
         <property name="writable" value="true" />
-        <property name="fontStyle" value="BOLD" />
         <property name="defaultValue" value="?" />
+        <property name="fontStyle" value="BOLD" />
         <property name="drawBorder" value="false" />
         <property name="noTargetText" value="&lt;no name&gt;" />
         <property name="rightTransformAnchorTag" value="default_RTransform" />
@@ -932,8 +932,8 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1075303160503">
         <property name="writable" value="true" />
-        <property name="attractsFocus" value="0" />
         <property name="defaultValue" value="?" />
+        <property name="attractsFocus" value="0" />
         <property name="drawBorder" value="false" />
         <property name="noTargetText" value="&lt;no name&gt;" />
         <link role="relationDeclaration" targetNodeId="18.1078489098626" />
@@ -1153,11 +1153,11 @@
     <link role="conceptDeclaration" targetNodeId="17.1068498886294" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1075310480282">
       <property name="drawBorder" value="false" />
-      <property name="name" value="expressionBox" />
       <property name="actionSet" value="RightTransform" />
+      <property name="name" value="expressionBox" />
       <property name="vertical" value="false" />
-      <property name="gridLayout" value="true" />
       <property name="selectable" value="true" />
+      <property name="gridLayout" value="true" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1075310480284">
         <property name="drawBorder" value="false" />
         <property name="actionSet" value="LeftExpression" />
@@ -1594,10 +1594,10 @@
         <property name="drawBorder" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1079623722230">
-        <property name="layoutConstraint" value="punctuation" />
         <property name="editable" value="true" />
-        <property name="textFgColor" value="DARK_GREEN" />
+        <property name="layoutConstraint" value="punctuation" />
         <property name="allowEmptyText" value="true" />
+        <property name="textFgColor" value="DARK_GREEN" />
         <property name="writable" value="true" />
         <property name="fontStyle" value="BOLD" />
         <property name="drawBorder" value="false" />
@@ -2339,8 +2339,8 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1084188979615">
         <property name="textFgColor" value="DARK_MAGENTA" />
         <property name="writable" value="true" />
-        <property name="fontStyle" value="BOLD_ITALIC" />
         <property name="defaultValue" value="?" />
+        <property name="fontStyle" value="BOLD_ITALIC" />
         <property name="drawBorder" value="false" />
         <property name="noTargetText" value="&lt;no name&gt;" />
         <property name="rightTransformAnchorTag" value="default_RTransform" />
@@ -2608,8 +2608,8 @@
           <property name="defaultValue" value="&lt;no name&gt;" />
           <property name="drawBorder" value="false" />
           <property name="noTargetText" value="&lt;no name&gt;" />
-          <property name="rightTransformAnchorTag" value="default_RTransform" />
           <property name="selectable" value="true" />
+          <property name="rightTransformAnchorTag" value="default_RTransform" />
           <link role="relationDeclaration" targetNodeId="18.1078489098626" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1109281106345">
@@ -4426,11 +4426,11 @@
             <property name="name" value="staticMethods" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1171389392255" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1170779577114">
-              <link role="baseMethodDeclaration" extResolveInfo="20.static method ([Classifier]BaseAdapter).([StaticMethodDeclaration]toNodes((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [Object]&gt;]))" />
               <link role="classConcept" extResolveInfo="20.[Classifier]BaseAdapter" />
+              <link role="baseMethodDeclaration" extResolveInfo="20.static method ([Classifier]BaseAdapter).([StaticMethodDeclaration]toNodes((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;? extends jetbrains.mps.baseLanguage.types.classifier [BaseAdapter]&gt;])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List]))" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1170779577949">
                 <link role="classConcept" extResolveInfo="44.[Classifier]BaseLanguageSearchUtil_new" />
-                <link role="baseMethodDeclaration" extResolveInfo="44.static method ([Classifier]BaseLanguageSearchUtil_new).([StaticMethodDeclaration]getMethodsExcludingOverridden((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ISearchScope])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [BaseMethodDeclaration]&gt;]))" />
+                <link role="baseMethodDeclaration" extResolveInfo="44.static method ([Classifier]BaseLanguageSearchUtil_new).([StaticMethodDeclaration]getMethodsExcludingOverridden((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ISearchScope])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List]))" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1170779577950">
                   <link role="variableDeclaration" targetNodeId="1163705010790" resolveInfo="classHierarchy" />
                 </node>
@@ -4764,11 +4764,11 @@
             <property name="name" value="staticFields" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1171389614501" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1170780182660">
-              <link role="baseMethodDeclaration" extResolveInfo="20.static method ([Classifier]BaseAdapter).([StaticMethodDeclaration]toNodes((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [Object]&gt;]))" />
               <link role="classConcept" extResolveInfo="20.[Classifier]BaseAdapter" />
+              <link role="baseMethodDeclaration" extResolveInfo="20.static method ([Classifier]BaseAdapter).([StaticMethodDeclaration]toNodes((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;? extends jetbrains.mps.baseLanguage.types.classifier [BaseAdapter]&gt;])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List]))" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1170780183088">
-                <link role="baseMethodDeclaration" extResolveInfo="44.static method ([Classifier]BaseLanguageSearchUtil_new).([StaticMethodDeclaration]getFieldsExcludingOverridden((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ISearchScope])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [VariableDeclaration]&gt;]))" />
                 <link role="classConcept" extResolveInfo="44.[Classifier]BaseLanguageSearchUtil_new" />
+                <link role="baseMethodDeclaration" extResolveInfo="44.static method ([Classifier]BaseLanguageSearchUtil_new).([StaticMethodDeclaration]getFieldsExcludingOverridden((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ISearchScope])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List]))" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1170780183089">
                   <link role="variableDeclaration" targetNodeId="1164039169710" resolveInfo="classHierarchy" />
                 </node>
@@ -5099,11 +5099,11 @@
             <property name="name" value="staticFields" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1171389666539" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1170779455630">
-              <link role="baseMethodDeclaration" extResolveInfo="20.static method ([Classifier]BaseAdapter).([StaticMethodDeclaration]toNodes((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [Object]&gt;]))" />
               <link role="classConcept" extResolveInfo="20.[Classifier]BaseAdapter" />
+              <link role="baseMethodDeclaration" extResolveInfo="20.static method ([Classifier]BaseAdapter).([StaticMethodDeclaration]toNodes((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;? extends jetbrains.mps.baseLanguage.types.classifier [BaseAdapter]&gt;])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List]))" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1170779456152">
                 <link role="classConcept" extResolveInfo="44.[Classifier]BaseLanguageSearchUtil_new" />
-                <link role="baseMethodDeclaration" extResolveInfo="44.static method ([Classifier]BaseLanguageSearchUtil_new).([StaticMethodDeclaration]getFieldsExcludingOverridden((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ISearchScope])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [VariableDeclaration]&gt;]))" />
+                <link role="baseMethodDeclaration" extResolveInfo="44.static method ([Classifier]BaseLanguageSearchUtil_new).([StaticMethodDeclaration]getFieldsExcludingOverridden((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ISearchScope])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List]))" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1170779456153">
                   <link role="variableDeclaration" targetNodeId="1164040653659" resolveInfo="classHierarchy" />
                 </node>
@@ -5128,11 +5128,11 @@
             <property name="name" value="staticMethods" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1171389678883" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1170779822628">
-              <link role="baseMethodDeclaration" extResolveInfo="20.static method ([Classifier]BaseAdapter).([StaticMethodDeclaration]toNodes((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [Object]&gt;]))" />
               <link role="classConcept" extResolveInfo="20.[Classifier]BaseAdapter" />
+              <link role="baseMethodDeclaration" extResolveInfo="20.static method ([Classifier]BaseAdapter).([StaticMethodDeclaration]toNodes((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;? extends jetbrains.mps.baseLanguage.types.classifier [BaseAdapter]&gt;])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List]))" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1170779823088">
                 <link role="classConcept" extResolveInfo="44.[Classifier]BaseLanguageSearchUtil_new" />
-                <link role="baseMethodDeclaration" extResolveInfo="44.static method ([Classifier]BaseLanguageSearchUtil_new).([StaticMethodDeclaration]getMethodsExcludingOverridden((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ISearchScope])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [BaseMethodDeclaration]&gt;]))" />
+                <link role="baseMethodDeclaration" extResolveInfo="44.static method ([Classifier]BaseLanguageSearchUtil_new).([StaticMethodDeclaration]getMethodsExcludingOverridden((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ISearchScope])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List]))" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1170779823089">
                   <link role="variableDeclaration" targetNodeId="1164040653659" resolveInfo="classHierarchy" />
                 </node>
@@ -5435,11 +5435,11 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1164049019188">
           <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1171390044008">
-            <link role="baseMethodDeclaration" extResolveInfo="20.static method ([Classifier]BaseAdapter).([StaticMethodDeclaration]toNodes((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [Object]&gt;]))" />
             <link role="classConcept" extResolveInfo="20.[Classifier]BaseAdapter" />
+            <link role="baseMethodDeclaration" extResolveInfo="20.static method ([Classifier]BaseAdapter).([StaticMethodDeclaration]toNodes((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;? extends jetbrains.mps.baseLanguage.types.classifier [BaseAdapter]&gt;])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List]))" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1171390044009">
-              <link role="baseMethodDeclaration" extResolveInfo="44.static method ([Classifier]BaseLanguageSearchUtil_new).([StaticMethodDeclaration]getMethodsExcludingOverridden((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ISearchScope])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [BaseMethodDeclaration]&gt;]))" />
               <link role="classConcept" extResolveInfo="44.[Classifier]BaseLanguageSearchUtil_new" />
+              <link role="baseMethodDeclaration" extResolveInfo="44.static method ([Classifier]BaseLanguageSearchUtil_new).([StaticMethodDeclaration]getMethodsExcludingOverridden((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ISearchScope])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List]))" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1171390046386">
                 <link role="variableDeclaration" targetNodeId="1164049019157" resolveInfo="classHierarchy" />
               </node>
@@ -5647,10 +5647,10 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1171389829754">
           <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1171389832515">
             <link role="classConcept" extResolveInfo="20.[Classifier]BaseAdapter" />
-            <link role="baseMethodDeclaration" extResolveInfo="20.static method ([Classifier]BaseAdapter).([StaticMethodDeclaration]toNodes((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [Object]&gt;]))" />
+            <link role="baseMethodDeclaration" extResolveInfo="20.static method ([Classifier]BaseAdapter).([StaticMethodDeclaration]toNodes((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;? extends jetbrains.mps.baseLanguage.types.classifier [BaseAdapter]&gt;])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List]))" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1171389832516">
               <link role="classConcept" extResolveInfo="44.[Classifier]BaseLanguageSearchUtil_new" />
-              <link role="baseMethodDeclaration" extResolveInfo="44.static method ([Classifier]BaseLanguageSearchUtil_new).([StaticMethodDeclaration]getFieldsExcludingOverridden((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ISearchScope])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [VariableDeclaration]&gt;]))" />
+              <link role="baseMethodDeclaration" extResolveInfo="44.static method ([Classifier]BaseLanguageSearchUtil_new).([StaticMethodDeclaration]getFieldsExcludingOverridden((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ISearchScope])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List]))" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1171389834971">
                 <link role="variableDeclaration" targetNodeId="1164049862548" resolveInfo="classHierarchy" />
               </node>
@@ -6006,6 +6006,7 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1164903407627">
           <property name="text" value="  " />
           <property name="drawBorder" value="false" />
+          <property name="selectable" value="false" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1164903407628">
           <property name="drawBorder" value="false" />
@@ -6191,8 +6192,8 @@
         <property name="drawBorder" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1168623099813">
-        <property name="textFgColor" value="gray" />
         <property name="allowEmptyText" value="true" />
+        <property name="textFgColor" value="gray" />
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="17.1168623065899" />
       </node>
