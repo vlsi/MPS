@@ -519,4 +519,8 @@ public abstract class BaseAdapter {
     return myNode.isRoot();
   }
 
+  public final List<SNode> getConceptLinkTargets(String linkName, boolean lookupHierarchy, IScope scope) {
+    return myNode.getConceptLinkTargets(linkName, lookupHierarchy, scope);
+  }
+
 }
