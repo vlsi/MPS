@@ -1,6 +1,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -18,21 +19,21 @@ public class SModelUID implements Comparable {
   public SModelUID(String longName, String stereotype) {
     if (longName == null) longName = "";
     if (stereotype == null) stereotype = "";
-    myLongName = longName;
-    myStereotype = stereotype;
-    myUIDString = myLongName + (myStereotype.length() == 0 ? "" : "@" + myStereotype);
+    myLongName = InternUtil.intern(longName);
+    myStereotype = InternUtil.intern(stereotype);
+    myUIDString = InternUtil.intern(myLongName + (myStereotype.length() == 0 ? "" : "@" + myStereotype));
   }
 
   public SModelUID(String namePrefix, String shortName, String stereotype) {
     if (shortName == null) shortName = "";
     if (stereotype == null) stereotype = "";
     if (namePrefix == null || namePrefix.length() == 0) {
-      myLongName = shortName;
+      myLongName = InternUtil.intern(shortName);
     } else
-      myLongName = namePrefix + '.' + shortName;
+      myLongName = InternUtil.intern(namePrefix + '.' + shortName);
 
-    myStereotype = stereotype;
-    myUIDString = myLongName + (myStereotype.length() == 0 ? "" : "@" + myStereotype);
+    myStereotype = InternUtil.intern(stereotype);
+    myUIDString = InternUtil.intern(myLongName + (myStereotype.length() == 0 ? "" : "@" + myStereotype));
   }
 
   public static SModelUID fromString(String s) {

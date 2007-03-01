@@ -4,6 +4,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.resolve.Resolver;
 
 /**
@@ -22,15 +23,15 @@ public class SReference {
 
   private SReference(String role, SNode sourceNode, String targetNodeId, String resolveInfo, String extResolveInfo, SModelUID targetModelUID) {
     this(role, sourceNode, targetModelUID, extResolveInfo);
-    myTargetNodeId = targetNodeId;
-    myResolveInfo = resolveInfo;
+    myTargetNodeId = InternUtil.intern(targetNodeId);
+    myResolveInfo = InternUtil.intern(resolveInfo);
     LOG.assertLog(targetModelUID != null, "targetModelUID is NULL");
   }
 
   private SReference(String role, SNode sourceNode, SModelUID targetModelUID, String extResolveInfo) {
-    myRole = role;
+    myRole = InternUtil.intern(role);
     mySourceNode = sourceNode;
-    myExtResolveInfo = extResolveInfo;
+    myExtResolveInfo = InternUtil.intern(extResolveInfo);
     myTargetModelUID = targetModelUID;
   }
 
