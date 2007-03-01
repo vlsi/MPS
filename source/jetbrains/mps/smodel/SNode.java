@@ -12,10 +12,7 @@ import jetbrains.mps.smodel.constraints.INodePropertySetter;
 import jetbrains.mps.smodel.constraints.INodeReferentSetEventHandler;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.QueryMethod;
+import jetbrains.mps.util.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -75,7 +72,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
    */
   public SNode(@NotNull SModel model, String typeName) {
     this(model);
-    myConceptFqName = NameUtil.conceptFQNameByClassName(typeName).intern();
+    myConceptFqName = InternUtil.intern(NameUtil.conceptFQNameByClassName(typeName));
   }
 
   public void changeModel(SModel newModel) {
@@ -589,9 +586,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public void setProperty(@NotNull final String propertyName, String propertyValue, boolean usePropertySetter) {
-    if (propertyValue != null) {
-      propertyValue = propertyValue.intern();
-    }
+    propertyValue = InternUtil.intern(propertyValue);
     if (!myPropertySettersInProgress.contains(propertyName) && !myModel.isLoading() && usePropertySetter) {
       INodePropertySetter setter = ModelConstraintsManager.getInstance().getNodePropertySetter(this, propertyName);
       if (setter != null) {
