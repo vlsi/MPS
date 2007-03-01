@@ -148,7 +148,11 @@ public class SubtypingManager {
         Set<SNode> ancestors = collectSupertypes(node);
         if (ancestors == null) continue;
         ancestors.remove(node);
-        if (ancestors.contains(superRepresentator)) return true;
+        for (SNode ancestor : ancestors) {
+          if (MatchingUtil.matchNodes(ancestor,  superRepresentator)) {
+            return true;
+          }
+        }
         newFrontier.addAll(ancestors);
       }
       frontier = newFrontier;
@@ -164,7 +168,11 @@ public class SubtypingManager {
         Set<SNode> descendants = collectSubtypes(node);
         if (descendants == null) continue;
         descendants.remove(node);
-        if (descendants.contains(subRepresentator)) return true;
+        for (SNode descendant : descendants) {
+          if (MatchingUtil.matchNodes(descendant,  superRepresentator)) {
+            return true;
+          }
+        }
         newFrontier.addAll(descendants);
       }
       frontier = newFrontier;
@@ -329,11 +337,11 @@ public class SubtypingManager {
 //          return result;
 //        }
 //
-        //...
+    //...
 //        result.add(resultNode);
 //      }
 //    }
-    
+
     return result;
   }
 

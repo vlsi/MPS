@@ -135,6 +135,15 @@ public class MatchingUtil {
        if (!EqualUtil.equals(node1.getProperty(propertyName), node2.getProperty(propertyName))) return false;
     }
 
+    //-- matching references
+    Set<String> referenceRoles = node1.getReferenceRoles();
+    referenceRoles.addAll(node2.getReferenceRoles());
+    for (String role : referenceRoles) {
+      SNode target1 = node1.getReferent(role);
+      SNode target2 = node2.getReferent(role);
+      if (target2 != target1) return false;
+    }
+
     // children
     Set<String> childRoles = node1.getChildRoles();
     childRoles.addAll(node2.getChildRoles());
@@ -148,16 +157,7 @@ public class MatchingUtil {
         if (!matchNodes(child1, child2)) return false;
       }
       if (childrenIterator.hasNext() && childrenIterator.next() != null) return false; //the first has more children
-    }
-
-    //-- matching references
-    Set<String> referenceRoles = node1.getReferenceRoles();
-    referenceRoles.addAll(node2.getReferenceRoles());
-    for (String role : referenceRoles) {
-      SNode target1 = node1.getReferent(role);
-      SNode target2 = node2.getReferent(role);
-      if (target2 != target1) return false;
-    }
+    }  
 
     return true;
   }
