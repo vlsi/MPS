@@ -16,7 +16,7 @@
     <model modelUID="jetbrains.mps.bootstrap.actionsLanguage.editor" />
   </editor>
   <models>
-    <modelRoot path="${language_descriptor}\." namespacePrefix="jetbrains.mps.bootstrap.actionsLanguage" />
+    <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.bootstrap.actionsLanguage" />
   </models>
   <module>
     <moduleRoot path="${mps_home}\languages\bootstrap\sharedConcepts\languages\sharedConcepts\sharedConcepts.mpl" />
