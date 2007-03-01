@@ -6,6 +6,7 @@ import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessageView;
@@ -556,6 +557,10 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       handler.handle(new Message(MessageKind.ERROR, text));
       progress.finishSomehow();
     } finally {
+      //todo this is tmp anti memory leak hack:
+      UndoManager.instance().clear();
+      SModelRepository.getInstance().refreshModels();
+
       System.gc();
     }    
   }

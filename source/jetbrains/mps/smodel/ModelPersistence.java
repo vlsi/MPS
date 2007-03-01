@@ -575,6 +575,10 @@ public class ModelPersistence {
 
   private static SModel createModel(SModelUID uid) {
 
+    if (uid.toString().startsWith("jetbrains.pubMedDB.web")) {
+      return new MyModel(uid);
+    }
+
 
     return new SModel(uid);
   }
@@ -636,6 +640,16 @@ public class ModelPersistence {
       myOldVersion = oldVersion;
       myNewVersion = newVersion;
       myElement = element;
+    }
+  }
+
+  private static class MyModel extends SModel {
+
+    public MyModel(@NotNull SModelUID modelUID) {
+      super(modelUID);
+    }
+
+    public MyModel() {
     }
   }
 }
