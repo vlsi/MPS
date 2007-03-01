@@ -75,7 +75,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
    */
   public SNode(@NotNull SModel model, String typeName) {
     this(model);
-    myConceptFqName = NameUtil.conceptFQNameByClassName(typeName);
+    myConceptFqName = NameUtil.conceptFQNameByClassName(typeName).intern();
   }
 
   public void changeModel(SModel newModel) {
@@ -589,6 +589,9 @@ public class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public void setProperty(@NotNull final String propertyName, String propertyValue, boolean usePropertySetter) {
+    if (propertyValue != null) {
+      propertyValue = propertyValue.intern();
+    }
     if (!myPropertySettersInProgress.contains(propertyName) && !myModel.isLoading() && usePropertySetter) {
       INodePropertySetter setter = ModelConstraintsManager.getInstance().getNodePropertySetter(this, propertyName);
       if (setter != null) {
