@@ -29,7 +29,9 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
     return ApplicationComponents.getInstance().getComponent(EditorSettings.class);
   }
 
-  private @Externalizable Font myFont = new Font("Monospaced", Font.PLAIN, 12);
+  private @Externalizable String myFontFamily;
+  private @Externalizable int myFontSize;
+
   private @Externalizable int myTextWidth = 500;
   private @Externalizable boolean myUseAntialiasing = true;
   private @Externalizable Color mySelectionColor = new Color(0, 200, 255, 35);
@@ -45,11 +47,12 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
   }
 
   public Font getDefaultEditorFont() {
-    return myFont;
+    return new Font(myFontFamily, 0, myFontSize);
   }
 
   public void setDefaultEditorFont(Font newFont) {
-    myFont = newFont;
+    myFontFamily = newFont.getFamily();
+    myFontSize = newFont.getSize();
     ReloadUtils.rebuildAllEditors();
   }
 
@@ -269,7 +272,7 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
       }
 
       JComboBox result = new JComboBox(sizes.toArray());
-      result.setSelectedItem("" + myFont.getSize());
+      result.setSelectedItem("" + myFontSize);
       return result;
     }
 
@@ -287,7 +290,7 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
         }
       });
 
-      result.setSelectedItem("" + myFont.getFamily());
+      result.setSelectedItem("" + myFontFamily);
       return result;
     }
 
