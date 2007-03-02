@@ -14,16 +14,23 @@ import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author Kostik
  */
 public class CreateRootNodeGroup extends ActionGroup {
 
+  private Set<String> myAllowedLanguages = null;
+
   public CreateRootNodeGroup() {
     super("Create Root Node");
+  }
+
+  public CreateRootNodeGroup(String... allowed) {
+    this();
+    myAllowedLanguages = new HashSet<String>();
+    myAllowedLanguages.addAll(Arrays.asList(allowed));
   }
 
   public void update(ActionContext context) {
@@ -41,6 +48,11 @@ public class CreateRootNodeGroup extends ActionGroup {
     }
 
     for (final Language language : modelLanguages) {
+
+      if (myAllowedLanguages != null) {
+        if (!myAllowedLanguages.contains(language.getNamespace())) continue;
+      }
+
       ActionGroup langRootsGroup = new ActionGroup(language.getNamespace()) {
         public Icon getIcon() {
           return IconManager.getIconFor(language.getNamespace());

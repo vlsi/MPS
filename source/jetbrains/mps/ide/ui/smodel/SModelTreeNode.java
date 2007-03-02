@@ -62,13 +62,11 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return createGroup(name, false);
   }
 
-  protected SNodeGroupTreeNode createGroup(String name, boolean autoDelete) {
-    SNodeGroupTreeNode result = new SNodeGroupTreeNode(name, autoDelete);
-
+  void register(SNodeGroupTreeNode groupTreeNode) {
     int index = -1;
     for (int i = 0; i < myGroups.size(); i++) {
-      SNodeGroupTreeNode group = myGroups.get(i);      
-      String rp = name;
+      SNodeGroupTreeNode group = myGroups.get(i);
+      String rp = groupTreeNode.toString();
       String cp = group.toString();
       if (rp.compareTo(cp) < 0) {
         index = i;
@@ -79,11 +77,15 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       index = myGroups.size();
     }
 
-    myGroups.add(index, result);
+    myGroups.add(index, groupTreeNode);
 
     if (myInitialized) {
-      insert(result, index);
+      insert(groupTreeNode, index);
     }
+  }
+
+  protected SNodeGroupTreeNode createGroup(String name, boolean autoDelete) {
+    SNodeGroupTreeNode result = new SNodeGroupTreeNode(this, name, autoDelete);
 
     return result;
   }
