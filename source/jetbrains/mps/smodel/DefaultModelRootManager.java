@@ -203,18 +203,19 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 
     File oldModelFile = modelDescriptor.getModelFile();
     IProjectHandler projectHandler = project.getProjectHandler();
-    if (projectHandler != null) {
-      try {
-        projectHandler.deleteFilesAndRemoveFromVCS(CollectionUtil.asList(oldModelFile));
-      } catch(RemoteException ex) {
-        LOG.error(ex);
-        return false;
+    if (!dest.equals(oldModelFile)) {    // change file
+      if (projectHandler != null) {
+        try {
+          projectHandler.deleteFilesAndRemoveFromVCS(CollectionUtil.asList(oldModelFile));
+        } catch(RemoteException ex) {
+          LOG.error(ex);
+          return false;
+        }
+      } else {
+        oldModelFile.delete();
       }
-    } else {
-      oldModelFile.delete();
+      ((DefaultSModelDescriptor)modelDescriptor).setModelFile(dest);
     }
-
-    ((DefaultSModelDescriptor)modelDescriptor).setModelFile(dest);
 
     // if imports itself: rename import here
     if (modelDescriptor.getSModel().hasImportedModel(oldModelUID)) {
