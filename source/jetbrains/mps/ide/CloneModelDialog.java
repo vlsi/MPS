@@ -75,6 +75,14 @@ public class CloneModelDialog extends BaseNodeDialog {
         String longName = mySModel.getLongName();
         myCloneModelProperties.setLongName(createNameForCopy(longName, mySModel.getStereotype()));
         myCloneModelProperties.setStereotype(mySModel.getStereotype());
+        Set<ModelRoot> modelRoots = mySModel.getModelDescriptor().collectModelRoots();
+        if (!modelRoots.isEmpty()) {
+          ModelRoot root = modelRoots.iterator().next();
+          RootReference rootReference = RootReference.newInstance(myProjectModel);
+          rootReference.setPath(root.getPath());
+          rootReference.setPrefix(root.getPrefix());
+          myCloneModelProperties.setRoot(rootReference);
+        }
 
         for (String language : mySModel.getExplicitlyImportedLanguages()) {
           jetbrains.mps.projectLanguage.structure.Language lang = jetbrains.mps.projectLanguage.structure.Language.newInstance(myProjectModel);

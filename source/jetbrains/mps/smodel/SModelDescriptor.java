@@ -77,4 +77,6 @@ public interface SModelDescriptor {
   int getVersion();
 
   boolean rename(String newLongName, MPSProject project, ModelRoot newRoot);
+
+  Set<ModelRoot> collectModelRoots();
 }

@@ -6,7 +6,9 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.PathManager;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 
 import java.io.File;
@@ -470,6 +472,20 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     } else {
       return mySModel.getVersion();
     }
+  }
+
+  public Set<ModelRoot> collectModelRoots() {
+    Set<ModelRoot> result = new HashSet<ModelRoot>();
+    File sourceFile = this.getModelFile();
+    Set<IModule> modelOwners = SModelRepository.getInstance().getOwners(this, IModule.class);
+    for (IModule module : modelOwners) {
+      for (ModelRoot modelRoot : module.getModelRoots()) {
+        if (this.getModelUID().toString().equals(PathManager.getModelUIDString(sourceFile, new File(modelRoot.getPath()), modelRoot.getPrefix()))) {
+          result.add(modelRoot);
+        }
+      }
+    }
+    return result;
   }
 
   public boolean rename(String newLongName, MPSProject project, ModelRoot newRoot) {

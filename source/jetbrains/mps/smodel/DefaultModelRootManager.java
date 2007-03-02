@@ -181,7 +181,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
   public boolean renameModelDescriptor(SModelDescriptor modelDescriptor, String newLongName, MPSProject project) {
     assert modelDescriptor instanceof DefaultSModelDescriptor;
     // 1. rename file
-    Set<ModelRoot> modelRoots = collectModelRoots(modelDescriptor);
+    Set<ModelRoot> modelRoots = modelDescriptor.collectModelRoots();
     if (modelRoots.size() == 0) {
       LOG.error("can't rename model " + modelDescriptor + " : no model root exists");
       return false;
@@ -228,19 +228,5 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     // update node proxies
     SNodeProxy.changeModelUID(oldModelUID, modelDescriptor);
     return true;
-  }
-
-  private Set<ModelRoot> collectModelRoots(SModelDescriptor modelDescriptor) {
-    Set<ModelRoot> result = new HashSet<ModelRoot>();
-    File sourceFile = modelDescriptor.getModelFile();
-    Set<IModule> modelOwners = SModelRepository.getInstance().getOwners(modelDescriptor, IModule.class);
-    for (IModule module : modelOwners) {
-      for (ModelRoot modelRoot : module.getModelRoots()) {
-        if (modelDescriptor.getModelUID().toString().equals(PathManager.getModelUIDString(sourceFile, new File(modelRoot.getPath()), modelRoot.getPrefix()))) {
-          result.add(modelRoot);
-        }
-      }
-    }
-    return result;
   }
 }
