@@ -29,8 +29,8 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
     return ApplicationComponents.getInstance().getComponent(EditorSettings.class);
   }
 
-  private @Externalizable String myFontFamily;
-  private @Externalizable int myFontSize;
+  private @Externalizable String myFontFamily = "Monospaced";
+  private @Externalizable int myFontSize = 12;
 
   private @Externalizable int myTextWidth = 500;
   private @Externalizable boolean myUseAntialiasing = true;
