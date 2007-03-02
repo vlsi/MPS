@@ -58,6 +58,10 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return null;
   }
 
+  protected SNodeGroupTreeNode createGroup(String name) {
+    return createGroup(name, false);
+  }
+
   protected SNodeGroupTreeNode createGroup(String name, boolean autoDelete) {
     SNodeGroupTreeNode result = new SNodeGroupTreeNode(name, autoDelete);
 
