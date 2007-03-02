@@ -338,17 +338,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     return myProjectDescriptor;
   }
 
-  public void addClassPathItem(@NotNull String path) {
-    for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(myProjectDescriptor.classPathEntrieses())) {
-      if (path.equals(entry.getPath())) return;
-    }
-
-    SModel model = myProjectDescriptor.getModel();
-    ClassPathEntry entry = ClassPathEntry.newInstance(model);
-    entry.setPath(path);
-    myProjectDescriptor.addClassPathEntries(entry);
-  }
-
   @NotNull
   public List<Language> getProjectLanguages() {
     return Collections.unmodifiableList(myLanguages);
@@ -426,11 +415,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
     if (getClassGenPath().exists()) {
       classpath.add(FileUtil.getCanonicalPath(getClassGenPath()));
-    }
-
-    for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(myProjectDescriptor.classPathEntrieses())) {
-      if (entry.getPath() == null) continue;
-      classpath.add(entry.getPath());
     }
 
     if (myProjectDescriptor.getAutoImportFromIDEA()) {

@@ -6,16 +6,14 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
 import jetbrains.mps.projectLanguage.structure.SolutionDescriptor;
+import jetbrains.mps.projectLanguage.structure.ClassPathEntry;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -100,7 +98,7 @@ public class Solution extends AbstractModule {
 
     myEventTranslator.solutionChanged();
 
-    if (!before.equals(after)) {
+    if (!before.equals(after) || mySolutionDescriptor.getClassPathEntrysCount() > 0) {
       ReloadUtils.reloadAll(true);
     } 
   }
@@ -174,5 +172,14 @@ public class Solution extends AbstractModule {
     assert file != null;
     SolutionDescriptor descriptor = DescriptorsPersistence.loadSolutionDescriptor(file, model);
     setSolutionDescriptor(descriptor);
+  }
+
+  @NotNull
+  public List<String> getClassPathItems() {
+    List<String> result = new ArrayList<String>();
+    for (ClassPathEntry entry : mySolutionDescriptor.getClassPathEntrys()) {
+      result.add(entry.getPath());
+    }
+    return result;
   }
 }
