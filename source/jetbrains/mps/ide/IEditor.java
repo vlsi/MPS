@@ -14,6 +14,7 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
 import javax.swing.event.ChangeListener;
+import java.util.Set;
 
 public interface IEditor {
   JComponent getComponent();
@@ -36,6 +37,7 @@ public interface IEditor {
   @Nullable EditorCell getRootCell();
 
   @Nullable SNode getEditedNode();
+
   @Nullable SNodeProxy getEditedNodeProxy();
 
   //for those types of editors which do not contain node: to find them in another way 
