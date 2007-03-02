@@ -198,6 +198,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
   public boolean renameModelDescriptor(SModelDescriptor modelDescriptor, String newLongName, ModelRoot root, MPSProject project) {
     assert modelDescriptor instanceof DefaultSModelDescriptor;
     SModelUID newModelUID = new SModelUID(newLongName, modelDescriptor.getStereotype());
+    SModelUID oldModelUID = modelDescriptor.getModelUID();
     File dest = createFileForModelUID(root, newModelUID);
 
     File oldModelFile = modelDescriptor.getModelFile();
@@ -215,8 +216,12 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 
     ((DefaultSModelDescriptor)modelDescriptor).setModelFile(dest);
 
+    // if imports itself: rename import here
+    if (modelDescriptor.getSModel().hasImportedModel(oldModelUID)) {
+      modelDescriptor.getSModel().changeImportedModelUID(oldModelUID, newModelUID);
+    }
+
     // update model repository and rename descriptor itself
-    SModelUID oldModelUID = modelDescriptor.getModelUID();
     SModelRepository.getInstance().renameUID(modelDescriptor, newModelUID);
 
     // update node proxies
