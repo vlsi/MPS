@@ -144,8 +144,6 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     ConceptEditorDeclaration editorDeclaration = (ConceptEditorDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration", editorModel, scope).getAdapter();
     editorDeclaration.setConceptDeclaration(conceptDeclaration);
     editorModel.addRoot(editorDeclaration);
-    editorModelDescriptor.save();
-    SModelRepository.getInstance().markChanged(editorModelDescriptor, false);
     return editorDeclaration;
   }
 
