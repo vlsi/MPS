@@ -616,7 +616,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (selectedNode != null) {
       EditorContext editorContext_ = createEditorContextForActions();
       List<SNode> selectedNodes = myNodeRangeSelection.getNodes();
-      if (selectedNodes.size() == 0 && selectedNode != null) {
+      if (selectedNodes.size() == 0) {
         selectedNodes.add(selectedNode);
       }
       context = new ActionContext(getOperationContext(), selectedNode, selectedNodes);

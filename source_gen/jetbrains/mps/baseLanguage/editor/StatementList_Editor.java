@@ -32,7 +32,6 @@ public class StatementList_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(true);
     editorCell.putUserObject(EditorCell.ROLE, this.myStatementListHandler_statementList_.getElementRole());
     editorCell.setLayoutConstraint("");
-    editorCell.addKeyMap(new StatementList_KeyMap());
     return editorCell;
   }
 }

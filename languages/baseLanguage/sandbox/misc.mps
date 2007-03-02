@@ -2,7 +2,7 @@
 <model name="jetbrains.mps.baseLanguage.sandbox.misc">
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
-  <maxImportIndex value="119" />
+  <maxImportIndex value="120" />
   <import index="1" modelUID="java.lang@java_stub" />
   <import index="3" modelUID="java.util@java_stub" />
   <import index="115" modelUID="jetbrains.mps.baseLanguage.structure" />
@@ -10,6 +10,7 @@
   <import index="117" modelUID="java.io@java_stub" />
   <import index="118" modelUID="jetbrains.mps.helgins.inference@java_stub" />
   <import index="119" modelUID="jetbrains.mps.smodel@java_stub" />
+  <import index="120" modelUID="jetbrains.mps.baseLanguage.sandbox.misc" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1144230421203">
     <property name="name" value="Test" />
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1144230427845">
@@ -496,12 +497,36 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1172849434970">
+          <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1172849435019">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1172849436476">
+              <property name="value" value="3" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1172849434971">
+              <property name="value" value="3" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1172855568846">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1172855568847">
+            <property name="name" value="ddd" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1172855568848">
+              <link role="classifier" extResolveInfo="1.[Classifier]String" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.PlusExpression" id="1172849365092">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1172855559293" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1172769513509">
+                <property name="value" value="3" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1172769510755">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1172769510756">
             <property name="name" value="f" />
             <node role="type" type="jetbrains.mps.baseLanguage.FloatType" id="1172769510757" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1172769513509">
-              <property name="value" value="3" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1172855568849">
+              <link role="variableDeclaration" targetNodeId="1172855568847" resolveInfo="ddd" />
             </node>
           </node>
         </node>
