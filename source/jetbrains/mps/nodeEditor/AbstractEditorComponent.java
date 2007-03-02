@@ -520,7 +520,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       registerKeyboardAction(result = new AbstractAction(action.getName()) {
         public void actionPerformed(ActionEvent e) {
           if (mySelectedCell != null && mySelectedCell.getSNode() != null) {
-            final ActionContext context = new ActionContext(getEditorContext().getOperationContext(), mySelectedCell.getSNode());
+            final ActionContext context = createActionContext();
             action.update(context);
             if (!action.isVisible() || !action.isEnabled()) {
               return;
@@ -572,23 +572,18 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private void showPopupMenu(int x, int y) {
-    EditorCell cell = getSelectedCell();
-    final SNode selectedNode = cell.getSNode();
-    if (selectedNode == null) return;
     ActionGroup group = ActionManager.instance().getGroup(EDITOR_POPUP_MENU_ACTIONS);
     if (group == null) return;
-    final EditorContext editorContext = new EditorContext(this, null, getOperationContext());
+
+    ActionContext context = createActionContext();
+
+    if (context == null) return;
     JPopupMenu popupMenu = new JPopupMenu();
-    List<SNode> selectedNodes = myNodeRangeSelection.getNodes();
-    if (selectedNodes.size() == 0 && selectedNode != null) {
-      selectedNodes.add(selectedNode);
-    }
-    ActionContext context = new ActionContext(getOperationContext(), selectedNode, selectedNodes);
-    context.put(EditorContext.class, editorContext);
-    context.put(EditorCell.class, cell);
     group.add(popupMenu, context);
 
+    EditorCell cell = getSelectedCell();
     { // keymaps
+      final EditorContext editorContext = createEditorContextForActions();
       List<EditorCellKeyMapAction> actions = new ArrayList<EditorCellKeyMapAction>();
       for (EditorCellKeyMapAction action  : KeyMapUtil.getRegisteredActions(cell, editorContext)) {
         try {
@@ -612,6 +607,28 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     } // ~keymaps
 
     popupMenu.show(AbstractEditorComponent.this, x, y);
+  }
+
+  private ActionContext createActionContext() {
+    EditorCell cell_ = getSelectedCell();
+    final SNode selectedNode = cell_.getSNode();
+    ActionContext context = null;
+    if (selectedNode != null) {
+      EditorContext editorContext_ = createEditorContextForActions();
+      List<SNode> selectedNodes = myNodeRangeSelection.getNodes();
+      if (selectedNodes.size() == 0 && selectedNode != null) {
+        selectedNodes.add(selectedNode);
+      }
+      context = new ActionContext(getOperationContext(), selectedNode, selectedNodes);
+      context.put(EditorContext.class, editorContext_);
+      context.put(EditorCell.class, cell_);
+    }
+    return context;
+  }
+
+  private EditorContext createEditorContextForActions() {
+    final EditorContext editorContext = new EditorContext(this, null, getOperationContext());
+    return editorContext;
   }
 
   private void selectComponentCell(Component component) {
@@ -1232,7 +1249,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
 
     if (mouseEvent.getButton() == MouseEvent.BUTTON2) {
-      new GoByFirstReferenceAction().execute(new ActionContext(getOperationContext(), mySelectedCell.getSNode()));
+      new GoByFirstReferenceAction().execute(createActionContext());
     }
   }
 
@@ -1310,21 +1327,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (mySelectedCell != null) {
       mySelectedCell.setSelected(true);
     }
-    if (mySelectedCell != null) {
-      EditorCell cell = getDeepestSelectedCell();
-      Rectangle selectionRect;
-      if (cell instanceof EditorCell_Label) {
-        EditorCell_Label cellLabel = (EditorCell_Label) cell;
-        int caretX = cellLabel.getCaretX();
-        int charWidth = cellLabel.getCharWidth();
-        selectionRect = new Rectangle(caretX-2*charWidth, cellLabel.getY(), 4*charWidth, cellLabel.getHeight());
-      } else {
-        selectionRect = new Rectangle(cell.getX(), cell.getY(), 30, cell.getHeight());
-      }
-      //Rectangle fakeRect = new Rectangle(0,cell.getY(), 30, cell.getHeight());
-      //scrollRectToVisible(fakeRect);
-      scrollRectToVisible(selectionRect);
-    }
+   // if (mySelectedCell != null) {
+   //
+   // }
     repaint();
 
     fireCellSelectionChanged(oldSelection, newSelectedCell);
