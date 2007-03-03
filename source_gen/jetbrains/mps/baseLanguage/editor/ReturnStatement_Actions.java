@@ -10,5 +10,6 @@ public class ReturnStatement_Actions {
 
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction("RIGHT_TRANSFORM", new ReturnStatement_Actions_RIGHT_TRANSFORM(node));
+    editorCell.setAction("DELETE", new ReturnStatement_Actions_DELETE(node));
   }
 }
