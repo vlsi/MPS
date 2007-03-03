@@ -106,11 +106,11 @@ public abstract class BaseAdapter {
     return myNode.getConceptLinks(linkName, lookupHierarchy, scope);
   }
 
-  public ConceptDeclaration getConceptDeclaration(IScope scope) {
+  public final ConceptDeclaration getConceptDeclaration(IScope scope) {
     return getNode().getConceptDeclarationAdapter(scope);
   }
 
-  public ConceptDeclaration getConceptDeclarationAdapter() {
+  public final ConceptDeclaration getConceptDeclarationAdapter() {
     return getNode().getConceptDeclarationAdapter();
   }
 
