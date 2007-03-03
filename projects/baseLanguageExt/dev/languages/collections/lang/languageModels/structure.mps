@@ -182,6 +182,10 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1153760673252">
     <property name="name" value="WhereBlock" />
     <link role="extends" targetNodeId="1153509719989" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1172935318132">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" />
+      <node role="target" type="jetbrains.mps.baseLanguage.BooleanType" id="1172935321119" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1153760737019">
     <property name="name" value="WhereOperation" />
