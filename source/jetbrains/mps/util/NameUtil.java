@@ -84,6 +84,9 @@ public class NameUtil {
   
   public static String removeStructureFromFqName(String fqName) {
     String namespace = namespaceFromLongName(fqName);
+    if (namespace == null) {
+      throw new NullPointerException("fqName: " + fqName);
+    }
     String shortName = shortNameFromLongName(fqName);
     if (namespace.endsWith(".structure")) {
       namespace = namespace.substring(0, namespace.length() - ".structure".length());
