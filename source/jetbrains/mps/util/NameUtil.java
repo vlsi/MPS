@@ -3,6 +3,7 @@ package jetbrains.mps.util;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
 
 
 /**
@@ -82,11 +83,8 @@ public class NameUtil {
     return fqName.substring(0, offset);
   }
   
-  public static String removeStructureFromFqName(String fqName) {
+  public static String removeStructureFromFqName(@NotNull String fqName) {
     String namespace = namespaceFromLongName(fqName);
-    if (namespace == null) {
-      throw new NullPointerException("fqName: " + fqName);
-    }
     String shortName = shortNameFromLongName(fqName);
     if (namespace.endsWith(".structure")) {
       namespace = namespace.substring(0, namespace.length() - ".structure".length());
