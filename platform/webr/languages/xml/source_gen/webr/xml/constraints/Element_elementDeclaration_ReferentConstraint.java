@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import webr.xml.util.ElementUtil;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
@@ -28,13 +28,12 @@ public class Element_elementDeclaration_ReferentConstraint implements IModelCons
     manager.unRegisterNodeReferentSearchScopeProvider("webr.xml.structure.Element", "elementDeclaration");
   }
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    SNode baseElement = SNodeOperations.getAncestor(enclosingNode, "webr.xml.structure.BaseElement", false, false);
-    return baseElement == null || SNodeOperations.isInstanceOf(baseElement, "webr.xml.structure.Element");
+    return true;
   }
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     ISearchScope searchScope;
-    SNode knownElement = SNodeOperations.getAncestor(enclosingNode, "webr.xml.structure.Element", false, false);
-    List<SNode> elementDeclarations = ElementUtil.getElementDeclarations(knownElement, enclosingNode);
+    SNode element = SNodeOperations.getAncestor(enclosingNode, "webr.xml.structure.Element", false, false);
+    List<SNode> elementDeclarations = ElementUtil.getElementDeclarations(element, enclosingNode);
     if(SequenceOperations.isEmpty(elementDeclarations)) {
       searchScope = SModelSearchUtil_new.createModelAndImportedModelsScope(model, scope);
     } else 

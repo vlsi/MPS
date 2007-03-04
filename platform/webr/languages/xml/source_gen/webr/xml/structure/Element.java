@@ -8,7 +8,10 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import webr.xmlSchema.structure.ElementDeclaration;
 
-public class Element extends BaseElement {
+public class Element extends Content {
+  public static String CONTENT_LIST = "contentList";
+  public static String ATTRIBUTE_LIST = "attributeList";
+  public static String IS_EMPTY = "isEmpty";
   public static String ELEMENT_DECLARATION = "elementDeclaration";
 
   public  Element(SNode node) {
@@ -22,6 +25,24 @@ public class Element extends BaseElement {
     return Element.newInstance(sm, false);
   }
 
+  public ContentList getContentList() {
+    return (ContentList)this.getChild(Element.CONTENT_LIST);
+  }
+  public void setContentList(ContentList node) {
+    super.setChild(Element.CONTENT_LIST, node);
+  }
+  public AttributeList getAttributeList() {
+    return (AttributeList)this.getChild(Element.ATTRIBUTE_LIST);
+  }
+  public void setAttributeList(AttributeList node) {
+    super.setChild(Element.ATTRIBUTE_LIST, node);
+  }
+  public boolean getIsEmpty() {
+    return this.getBooleanProperty(Element.IS_EMPTY);
+  }
+  public void setIsEmpty(boolean value) {
+    this.setBooleanProperty(Element.IS_EMPTY, value);
+  }
   public ElementDeclaration getElementDeclaration() {
     return (ElementDeclaration)this.getReferent(Element.ELEMENT_DECLARATION);
   }

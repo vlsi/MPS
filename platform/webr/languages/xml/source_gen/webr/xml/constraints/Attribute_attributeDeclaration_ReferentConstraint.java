@@ -25,12 +25,11 @@ public class Attribute_attributeDeclaration_ReferentConstraint implements IModel
     manager.unRegisterNodeReferentSearchScopeProvider("webr.xml.structure.Attribute", "attributeDeclaration");
   }
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    SNode baseElement = SNodeOperations.getAncestor(enclosingNode, "webr.xml.structure.BaseElement", false, false);
-    return SNodeOperations.isInstanceOf(baseElement, "webr.xml.structure.Element");
+    return (SNodeOperations.getAncestor(enclosingNode, "webr.xml.structure.Element", false, false) != null);
   }
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    SNode knownElement = SNodeOperations.getAncestor(enclosingNode, "webr.xml.structure.Element", false, false);
-    return new SimpleSearchScope(AttributeUtil.getAttributeDeclarations_knownElement(knownElement));
+    SNode element = SNodeOperations.getAncestor(enclosingNode, "webr.xml.structure.Element", false, false);
+    return new SimpleSearchScope(AttributeUtil.getAttributeDeclarations_knownElement(element));
   }
   public String getNodeReferentSearchScopeDescription() {
     return "<no description>";
