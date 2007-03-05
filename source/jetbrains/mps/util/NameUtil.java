@@ -3,6 +3,7 @@ package jetbrains.mps.util;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.INodeAdapter;
 import org.jetbrains.annotations.NotNull;
 
 
@@ -132,7 +133,7 @@ public class NameUtil {
     return node.getModel().getLongName() + "." + name;
   }
 
-  public static String nodeFQName(BaseAdapter node) {
+  public static String nodeFQName(INodeAdapter node) {
     return nodeFQName(BaseAdapter.fromAdapter(node));
   }
 

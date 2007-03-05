@@ -62,7 +62,7 @@ public class SModelSearchUtil_new {
   public static List<LinkDeclaration> getAggregationLinkDeclarationsExcludingOverridden(IConceptHierarchyScope searchScope) {
     Condition<SNode> condition = new AndCondition<SNode>(new Condition<SNode>() {
       public boolean met(SNode node) {
-        BaseAdapter nodeAdapter = BaseAdapter.fromNode(node);
+        INodeAdapter nodeAdapter = BaseAdapter.fromNode(node);
         return nodeAdapter instanceof LinkDeclaration &&
                 ((LinkDeclaration) nodeAdapter).getMetaClass() == LinkMetaclass.aggregation;
       }
@@ -170,7 +170,7 @@ public class SModelSearchUtil_new {
       ensureHierarchyInitialized();
       List<SNode> result = new LinkedList<SNode>();
       // filter by condition
-      for (BaseAdapter node : myConceptHierarchy) {
+      for (INodeAdapter node : myConceptHierarchy) {
         if (node == null) continue;
         if (condition.met(node.getNode())) {
           result.add(node.getNode());
@@ -193,7 +193,7 @@ public class SModelSearchUtil_new {
     private Set<LinkDeclaration> myOverriddenLinks = new HashSet<LinkDeclaration>();
 
     public boolean met(SNode node) {
-      BaseAdapter nodeAdapter = BaseAdapter.fromNode(node);
+      INodeAdapter nodeAdapter = BaseAdapter.fromNode(node);
       if (!(nodeAdapter instanceof LinkDeclaration)) return false;
       LinkDeclaration linkDeclaration = (LinkDeclaration) nodeAdapter;
       if (myOverriddenLinks.contains(linkDeclaration)) return false;

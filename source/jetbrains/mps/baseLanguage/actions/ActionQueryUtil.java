@@ -1,7 +1,7 @@
 package jetbrains.mps.baseLanguage.actions;
 
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.INodeAdapter;
 
 /**
  * Created by IntelliJ IDEA.
@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.BaseAdapter;
  * To change this template use File | Settings | File Templates.
  */
 public class ActionQueryUtil {
-  static <T extends BaseAdapter> T getQueryContextElement(BaseAdapter sourceNode, Class<T> clazz) {
+  static <T extends BaseAdapter> T getQueryContextElement(INodeAdapter sourceNode, Class<T> clazz) {
     if (sourceNode == null) {
       return null;
     }

@@ -43,11 +43,11 @@ public interface ITemplateGenerator extends ITemplateLanguageConstants {
 
   INodeBuilder findNodeBuilderForTarget(SNode targetNode);
 
-  INodeBuilder findNodeBuilderForTarget(BaseAdapter targetNode);
+  INodeBuilder findNodeBuilderForTarget(INodeAdapter targetNode);
 
   INodeBuilder findNodeBuilderForSource(SNode sourceNode, String mappingName);
 
-  INodeBuilder findNodeBuilderForSource(BaseAdapter ba, String mappingName);
+  INodeBuilder findNodeBuilderForSource(INodeAdapter ba, String mappingName);
 
   INodeBuilder findNodeBuilderForSource(SNode sourceNode, Condition<INodeBuilder> condition);
 

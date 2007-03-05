@@ -1,10 +1,7 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 
 /**
  * Igor Alshannikov
@@ -38,7 +35,7 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
   public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
     ConceptDeclaration conceptDeclaration = null;
     if (parameterObject instanceof SNode) {
-      BaseAdapter parameterNodeAdapter = BaseAdapter.fromNode((SNode) parameterObject);
+      INodeAdapter parameterNodeAdapter = BaseAdapter.fromNode((SNode) parameterObject);
       if (parameterNodeAdapter instanceof ConceptDeclaration) {
         conceptDeclaration = (ConceptDeclaration) parameterNodeAdapter;
       } else {

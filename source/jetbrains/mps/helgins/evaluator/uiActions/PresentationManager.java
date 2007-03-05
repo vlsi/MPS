@@ -4,6 +4,7 @@ import jetbrains.mps.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.helgins.structure.RuntimeErrorType;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.reloading.ClassLoaderManager;
 
 import java.lang.reflect.Method;
@@ -18,9 +19,9 @@ import java.lang.reflect.Method;
 public class PresentationManager {
   public static String toString(Object type) {
     if (type == null) return null;
-    BaseAdapter typeAdapter = null;
-    if (type instanceof BaseAdapter) {
-      typeAdapter = (BaseAdapter) type;
+    INodeAdapter typeAdapter = null;
+    if (type instanceof INodeAdapter) {
+      typeAdapter = (INodeAdapter) type;
     }
     if (type instanceof SNode) {
       typeAdapter = ((SNode)type).getAdapter();
@@ -38,7 +39,7 @@ public class PresentationManager {
   }
 
   public static String toString_1(SNode type) {
-    BaseAdapter typeAdapter = BaseAdapter.fromNode(type);
+    INodeAdapter typeAdapter = BaseAdapter.fromNode(type);
     if (typeAdapter instanceof RuntimeErrorType) {
       return "ERROR(" + ((RuntimeErrorType)typeAdapter).getErrorText() + ")";
     }

@@ -10,10 +10,7 @@ import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.*;
 
 public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   private IOperationContext myOperationContext;
@@ -57,11 +54,11 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     return myTargetModel;
   }
 
-  public INodeBuilder findNodeBuilderForTarget(BaseAdapter targetNode) {
+  public INodeBuilder findNodeBuilderForTarget(INodeAdapter targetNode) {
     return findNodeBuilderForTarget(BaseAdapter.fromAdapter(targetNode));
   }
 
-  public INodeBuilder findNodeBuilderForSource(BaseAdapter ba, String mappingName) {
+  public INodeBuilder findNodeBuilderForSource(INodeAdapter ba, String mappingName) {
     return findNodeBuilderForSource(BaseAdapter.fromAdapter(ba), mappingName);
   }
 

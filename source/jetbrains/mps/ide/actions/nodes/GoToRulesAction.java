@@ -66,7 +66,7 @@ public class GoToRulesAction extends MPSAction {
       if (helginsDescriptor != null) {
         rules.addAll(helginsDescriptor.getSModel().getRoots(new Condition<SNode>() {
           public boolean met(SNode n) {
-            BaseAdapter object = BaseAdapter.fromNode(n);
+            INodeAdapter object = BaseAdapter.fromNode(n);
             AnalyzedTermDeclaration analyzedTermDeclaration = null;
             if (object instanceof Rule) {
               analyzedTermDeclaration = ((Rule)object).getApplicableNodes().get(0);

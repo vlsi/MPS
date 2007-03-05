@@ -631,8 +631,8 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     if (myNameToConceptCache.isEmpty()) {
       SModelDescriptor structureModelDescriptor = getStructureModelDescriptor();
       SModel structureModel = structureModelDescriptor.getSModel();
-      structureModel.allAdapters(BaseAdapter.class, new Condition<BaseAdapter>() {
-          public boolean met(BaseAdapter node) {
+      structureModel.allAdapters(INodeAdapter.class, new Condition<INodeAdapter>() {
+          public boolean met(INodeAdapter node) {
             if (node instanceof ConceptDeclaration) {
               myNameToConceptCache.put(node.getName(), (ConceptDeclaration) node);
             }

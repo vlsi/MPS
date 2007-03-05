@@ -18,7 +18,6 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.reloading.MPSClassLoader;
 import jetbrains.mps.reloading.ClassLoaderManager;
 
 import java.util.Collections;
@@ -259,8 +258,8 @@ public class ChildSubstituteActionsHelper {
     SModelDescriptor actionsModelDescr = language.getActionsModelDescriptor();
     if (actionsModelDescr != null) {
       // find appropriate actions builder
-      List<BaseAdapter> roots = actionsModelDescr.getSModel().getRootsAdapters();
-      for (BaseAdapter root : roots) {
+      List<INodeAdapter> roots = actionsModelDescr.getSModel().getRootsAdapters();
+      for (INodeAdapter root : roots) {
         if (root instanceof NodeSubstituteActions) {
           Iterator<NodeSubstituteActionsBuilder> iterator = ((NodeSubstituteActions) root).actionsBuilders();
           while (iterator.hasNext()) {

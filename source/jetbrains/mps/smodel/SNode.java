@@ -1440,7 +1440,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
   }
 
 
-  public <BA extends BaseAdapter> List<BA> allChildrenByAdaptor(Class<BA> clazz) {
+  public <BA extends INodeAdapter> List<BA> allChildrenByAdaptor(Class<BA> clazz) {
     List<BA> result = new ArrayList<BA>();
     for (SNode child : allChildren()) {
       if (clazz.isInstance(child.getAdapter())) {
@@ -1463,9 +1463,9 @@ public class SNode implements Cloneable, Iterable<SNode> {
     return resultNodes;
   }
 
-  public BaseAdapter findFirstParent(Class<? extends BaseAdapter>[] classes) {
+  public INodeAdapter findFirstParent(Class<? extends INodeAdapter>[] classes) {
     SNode node = this;
-    BaseAdapter parent = BaseAdapter.fromNode(node.getParent());
+    INodeAdapter parent = BaseAdapter.fromNode(node.getParent());
     while (parent != null) {
       for (Class clazz : classes) {
         if (clazz.isAssignableFrom(parent.getClass())) {
@@ -1540,7 +1540,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
 
   public ConceptProperty findConceptProperty(String propertyName, IScope scope) {
-    BaseAdapter node = getAdapter();
+    INodeAdapter node = getAdapter();
     ConceptDeclaration conceptDeclaration;
     if (node instanceof ConceptDeclaration) {
       conceptDeclaration = (ConceptDeclaration) node;
@@ -1565,8 +1565,8 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
     if (lookupHierarchy) {
       return (List) SModelSearchUtil_new.createConceptHierarchyScope(conceptDeclaration).
-              getAdapters(new Condition<BaseAdapter>() {
-                public boolean met(BaseAdapter n) {
+              getAdapters(new Condition<INodeAdapter>() {
+                public boolean met(INodeAdapter n) {
                   if (n instanceof ConceptLink) {
                     ConceptLinkDeclaration conceptLinkDeclaration = ((ConceptLink) n).getConceptLinkDeclaration();
                     return (conceptLinkDeclaration != null && linkName.equals(conceptLinkDeclaration.getName()));
@@ -1592,7 +1592,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
     List<SNode> result = new LinkedList<SNode>();
     List<ConceptLink> conceptLinks = getConceptLinks(linkName, lookupHierarchy, scope);
     for (ConceptLink conceptLink : conceptLinks) {
-      BaseAdapter target = SModelUtil_new.getConceptLinkTarget(conceptLink);
+      INodeAdapter target = SModelUtil_new.getConceptLinkTarget(conceptLink);
       if (target != null) {
         result.add(target.getNode());
       }

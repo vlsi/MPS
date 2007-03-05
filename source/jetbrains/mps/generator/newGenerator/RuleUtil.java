@@ -216,7 +216,7 @@ public class RuleUtil {
     List<TemplateFragment> templateFragments = new LinkedList<TemplateFragment>();
     Iterator<? extends SNode> iterator = template.getNode().depthFirstChildren();
     while (iterator.hasNext()) {
-      BaseAdapter templateFragment = BaseAdapter.fromNode(iterator.next());
+      INodeAdapter templateFragment = BaseAdapter.fromNode(iterator.next());
       if (templateFragment instanceof TemplateFragment) {
         templateFragments.add((TemplateFragment) templateFragment);
       }
@@ -340,7 +340,7 @@ public void applyWeavingMappingRule(Weaving_MappingRule rule) {
                                                int nodeMacrosToSkip) {
     int i = 0;
     List<SNode> outputNodes = new LinkedList<SNode>();
-    for (BaseAdapter templateChildNode : templateNode.getAdapter().getChildren()) {
+    for (INodeAdapter templateChildNode : templateNode.getAdapter().getChildren()) {
       if(!(templateChildNode instanceof NodeMacro)) continue;
       i++;
       if(i <= nodeMacrosToSkip)continue;
@@ -401,7 +401,7 @@ public void applyWeavingMappingRule(Weaving_MappingRule rule) {
       }
     }
 
-    for (BaseAdapter templateChildNode : templateNode.getAdapter().getChildren()) {
+    for (INodeAdapter templateChildNode : templateNode.getAdapter().getChildren()) {
       if(templateChildNode instanceof NodeMacro) continue;
       if (templateChildNode instanceof PropertyMacro) {
         MacroUtil.expandPropertyMacro(myGenerator, (PropertyMacro)templateChildNode, inputNode, templateNode, outputNode);
@@ -459,7 +459,7 @@ public void applyWeavingMappingRule(Weaving_MappingRule rule) {
 */
     }
 
-    for (BaseAdapter templateChildNode : templateNode.getAdapter().getChildren()) {
+    for (INodeAdapter templateChildNode : templateNode.getAdapter().getChildren()) {
       String childRole = templateNode.getRoleOf(templateChildNode.getNode());
       List<SNode> outputChildNodes = copyNodeFromInputNode(ruleName, templateChildNode.getNode(), inputNode);
       if (outputChildNodes != null) {

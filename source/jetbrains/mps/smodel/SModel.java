@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.languageLog.ModelLogger;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.WeakSet;
-import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.util.annotation.ForDebug;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
@@ -144,18 +143,18 @@ public class SModel implements Iterable<SNode> {
     return list;
   }
 
-  public List<BaseAdapter> getRootsAdapters() {
-    List<BaseAdapter> result = new ArrayList<BaseAdapter>();
+  public List<INodeAdapter> getRootsAdapters() {
+    List<INodeAdapter> result = new ArrayList<INodeAdapter>();
     for (SNode root : getRoots()) {
       result.add(root.getAdapter());
     }
     return result;
   }
 
-  public <N extends BaseAdapter> List<N> getRootsAdapters(@NotNull Class<N> cls) {
+  public <N extends INodeAdapter> List<N> getRootsAdapters(@NotNull Class<N> cls) {
     List<N> result = new ArrayList<N>();
     for (SNode root : getRoots()) {
-      BaseAdapter a = root.getAdapter();
+      INodeAdapter a = root.getAdapter();
       if (cls.isInstance(a)) {
         result.add((N) a);
       }
@@ -164,11 +163,11 @@ public class SModel implements Iterable<SNode> {
   }
 
 
-  public void addRoot(@NotNull BaseAdapter node) {
+  public void addRoot(@NotNull INodeAdapter node) {
     addRoot(node.getNode());
   }
 
-  public void removeRoot(@NotNull BaseAdapter node) {
+  public void removeRoot(@NotNull INodeAdapter node) {
     removeRoot(node.getNode());
   }
 
@@ -530,7 +529,7 @@ public class SModel implements Iterable<SNode> {
     return new ArrayList<String>(myDevKits);
   }
 
-  public BaseAdapter getRootAdapterByName(@NotNull String name) {
+  public INodeAdapter getRootAdapterByName(@NotNull String name) {
     return BaseAdapter.fromNode(getRootByName(name));
   }
 
@@ -1018,7 +1017,7 @@ public class SModel implements Iterable<SNode> {
     return resultNodes;
   }
 
-  public <E extends BaseAdapter> List<E> allAdapters(final Class<E> cls) {
+  public <E extends INodeAdapter> List<E> allAdapters(final Class<E> cls) {
     return BaseAdapter.toAdapters(allNodes(new Condition<SNode>() {
       public boolean met(SNode object) {
         return cls.isInstance(BaseAdapter.fromNode(object));
@@ -1026,11 +1025,11 @@ public class SModel implements Iterable<SNode> {
     }));
   }
 
-  public List<BaseAdapter> allAdapters(Condition<BaseAdapter> condition) {
-    return allAdapters(BaseAdapter.class,  condition);  
+  public List<INodeAdapter> allAdapters(Condition<INodeAdapter> condition) {
+    return allAdapters(INodeAdapter.class,  condition);
   }
 
-  public <E extends BaseAdapter> List<E> allAdapters(final Class<E> cls, Condition<E> condition) {
+  public <E extends INodeAdapter> List<E> allAdapters(final Class<E> cls, Condition<E> condition) {
     List<E> result = allAdapters(cls);
     Iterator<E> it = result.iterator();
     while (it.hasNext()) {
@@ -1044,7 +1043,7 @@ public class SModel implements Iterable<SNode> {
 
 
 
-  public <SN extends BaseAdapter> List<SN> allAdaptersIncludingImported(IScope scope, final Class<SN> snodeClass) {
+  public <SN extends INodeAdapter> List<SN> allAdaptersIncludingImported(IScope scope, final Class<SN> snodeClass) {
     return BaseAdapter.toAdapters(snodeClass, allNodesIncludingImported(scope, new Condition<SNode>() {
       public boolean met(SNode object) {
         return snodeClass.isInstance(BaseAdapter.fromNode(object));

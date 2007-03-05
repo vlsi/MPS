@@ -1,7 +1,7 @@
 package jetbrains.mps.smodel.search;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.util.Condition;
 
 import java.util.*;
@@ -32,7 +32,7 @@ public class SimpleSearchScope extends AbstractSearchScope {
       if (myNode instanceof SNode) {
         node = (SNode) myNode;
       } else {
-        node = ((BaseAdapter) myNode).getNode();
+        node = ((INodeAdapter) myNode).getNode();
       }
 
       if (condition.met(node)) {

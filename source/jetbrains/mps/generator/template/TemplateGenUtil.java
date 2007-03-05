@@ -409,7 +409,7 @@ public class TemplateGenUtil {
   }
 
   public static boolean isTemplateLanguageElement(SNode n) {
-    BaseAdapter templateNode = BaseAdapter.fromNode(n);
+    INodeAdapter templateNode = BaseAdapter.fromNode(n);
     return templateNode instanceof NodeMacro ||
             templateNode instanceof ReferenceMacro ||
             templateNode instanceof PropertyMacro ||

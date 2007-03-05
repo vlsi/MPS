@@ -5,6 +5,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.patterns.structure.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.util.EqualUtil;
 
 import java.util.Iterator;
@@ -44,7 +45,7 @@ public class MatchingUtil {
 
     //-- whole node bindings
     SNode patternAttribute = patternNode.getAttribute();
-    BaseAdapter asPattern = AsPattern_AnnotationLink.getAsPattern((BaseConcept) BaseAdapter.fromNode(patternNode));
+    INodeAdapter asPattern = AsPattern_AnnotationLink.getAsPattern((BaseConcept) BaseAdapter.fromNode(patternNode));
     if (BaseAdapter.isInstance(patternAttribute, WildcardPattern.class)) {
       return true;
     }

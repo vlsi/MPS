@@ -7,10 +7,10 @@
 package jetbrains.mps.textGen;
 
 import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.INodeAdapter;
 
 public class DefaultTextGen extends SNodeTextGen {
-  protected void doGenerateText(BaseAdapter baseAdapter) {
+  protected void doGenerateText(INodeAdapter baseAdapter) {
     String typeName = JavaNameUtil.shortName(baseAdapter.getNode().getClass().getName());
     append("<!"+typeName+" TextGen not found!>");
   }

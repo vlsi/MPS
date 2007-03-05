@@ -46,18 +46,18 @@ public abstract class BaseAdapter implements INodeAdapter {
     return myNode.getAlias(scope);
   }
 
-  public BaseAdapter getParent() {
+  public INodeAdapter getParent() {
     if (myNode.getParent() == null) {
       return null;
     }
     return myNode.getParent().getAdapter();
   }
 
-  public<BA extends BaseAdapter> BA findParent(Class<BA> cls) {
+  public<BA extends INodeAdapter> BA findParent(Class<BA> cls) {
     return getParent(cls, false);
   }
 
-  public<BA extends BaseAdapter> BA getParent(Class<BA> cls, boolean checkThis) {
+  public<BA extends INodeAdapter> BA getParent(Class<BA> cls, boolean checkThis) {
     if (checkThis) {
       if (cls.isInstance(this)) return (BA) this;
     }
@@ -67,11 +67,11 @@ public abstract class BaseAdapter implements INodeAdapter {
     return getParent().getParent(cls);
   }
 
-  public<BA extends BaseAdapter> BA getParent(Class<BA> cls) {
+  public<BA extends INodeAdapter> BA getParent(Class<BA> cls) {
     return getParent(cls, true);
   }
 
-  public BaseAdapter findParent(final Condition<BaseAdapter> ba) {
+  public INodeAdapter findParent(final Condition<INodeAdapter> ba) {
     return BaseAdapter.fromNode(myNode.findParent(new Condition<SNode>() {
       public boolean met(SNode object) {
         return ba.met(BaseAdapter.fromNode(object));
@@ -79,9 +79,9 @@ public abstract class BaseAdapter implements INodeAdapter {
     }));
   }
 
-  public BaseAdapter findFirstParent(Class[] classes) {
-    BaseAdapter node = this;
-    BaseAdapter parent = node.getParent();
+  public INodeAdapter findFirstParent(Class[] classes) {
+    INodeAdapter node = this;
+    INodeAdapter parent = node.getParent();
     while (parent != null) {
       for (Class clazz : classes) {
         if (clazz.isAssignableFrom(parent.getClass())) {
@@ -93,7 +93,7 @@ public abstract class BaseAdapter implements INodeAdapter {
     return null;
   }
 
-  public <T extends BaseAdapter> List<T> findParents(Class<T> aClass) {
+  public <T extends INodeAdapter> List<T> findParents(Class<T> aClass) {
     List<T> list = new ArrayList<T>();
     T currNode = getParent(aClass);
     for (; currNode != null; currNode = currNode.getParent(aClass, false)) {
@@ -114,24 +114,24 @@ public abstract class BaseAdapter implements INodeAdapter {
     return getNode().getConceptDeclarationAdapter();
   }
 
-  public void replaceChild(BaseAdapter c1, BaseAdapter c2) {
+  public void replaceChild(INodeAdapter c1, INodeAdapter c2) {
     getNode().replaceChild(c1.getNode(), c2.getNode());
   }
 
-  public BaseAdapter getContainingRoot() {
+  public INodeAdapter getContainingRoot() {
     return BaseAdapter.fromNode(getNode().getContainingRoot());
   }
 
-  public<BA extends BaseAdapter> List<BA> allChildren(Class<BA> cls, Condition<BA> cond) {
+  public<BA extends INodeAdapter> List<BA> allChildren(Class<BA> cls, Condition<BA> cond) {
     return CollectionUtil.filter(allChildren(cls), cond);
   }
 
 
-  public<BA extends BaseAdapter> List<BA> allChildren(Class<BA> cls) {
+  public<BA extends INodeAdapter> List<BA> allChildren(Class<BA> cls) {
     return myNode.allChildrenByAdaptor(cls);
   }
 
-  public<BA extends BaseAdapter> List<BA> allChildren(final Condition<BA> c) {
+  public<BA extends INodeAdapter> List<BA> allChildren(final Condition<BA> c) {
     return toAdapters(myNode.allChildren(new Condition<SNode>() {
       public boolean met(SNode object) {
         return c.met((BA) BaseAdapter.fromNode(object)); 
@@ -140,7 +140,7 @@ public abstract class BaseAdapter implements INodeAdapter {
   }
 
   @NotNull
-  public <E extends BaseAdapter> List<E> getSubnodes(final Condition<BaseAdapter> condition) {
+  public <E extends INodeAdapter> List<E> getSubnodes(final Condition<INodeAdapter> condition) {
     return toAdapters(myNode.getSubnodes(new Condition<SNode>() {
       public boolean met(SNode object) {
         return condition.met(BaseAdapter.fromNode(object));
@@ -152,11 +152,11 @@ public abstract class BaseAdapter implements INodeAdapter {
     myNode.delete();
   }
 
-  public void addNextSibling(BaseAdapter a) {
+  public void addNextSibling(INodeAdapter a) {
     myNode.addNextSibling(a.getNode());
   }
 
-  public void addPrevSibling(BaseAdapter a) {
+  public void addPrevSibling(INodeAdapter a) {
     myNode.addPrevSibling(a.getNode());
   }
 
@@ -193,7 +193,7 @@ public abstract class BaseAdapter implements INodeAdapter {
     myNode.setIntegerProperty(propertyName, value);
   }
 
-  protected void setChild(@NotNull String role, BaseAdapter childNode) {
+  protected void setChild(@NotNull String role, INodeAdapter childNode) {
     if (childNode == null) {
       myNode.setChild(role, null);
     } else {
@@ -201,7 +201,7 @@ public abstract class BaseAdapter implements INodeAdapter {
     }
   }
 
-  protected BaseAdapter getChild(@NotNull String role) {
+  protected INodeAdapter getChild(@NotNull String role) {
     SNode result = myNode.getChild(role);
     if (result == null) {
       return null;
@@ -209,27 +209,27 @@ public abstract class BaseAdapter implements INodeAdapter {
     return result.getAdapter();
   }
 
-  public void removeChild(@NotNull BaseAdapter child) {
+  public void removeChild(@NotNull INodeAdapter child) {
     myNode.removeChild(child.getNode());
   }
 
   public void addChild(@NotNull String role,
-                       @NotNull BaseAdapter child) {
+                       @NotNull INodeAdapter child) {
     myNode.addChild(role, child.getNode());
   }
 
 
-  public void insertChild(@Nullable BaseAdapter anchorChild,
+  public void insertChild(@Nullable INodeAdapter anchorChild,
                           @NotNull String role,
-                          @NotNull BaseAdapter child,
+                          @NotNull INodeAdapter child,
                           boolean insertBefore) {
     myNode.insertChild(BaseAdapter.fromAdapter(anchorChild), role, BaseAdapter.fromAdapter(child), insertBefore);
   }
 
 
-  public void insertChild(@Nullable BaseAdapter anchorChild,
+  public void insertChild(@Nullable INodeAdapter anchorChild,
                           @NotNull String role,
-                          @NotNull BaseAdapter child) {
+                          @NotNull INodeAdapter child) {
     SNode anchorNode = null;
     if (anchorChild != null) {
       anchorNode = anchorChild.getNode();
@@ -241,27 +241,27 @@ public abstract class BaseAdapter implements INodeAdapter {
     return myNode.getChildCount(role);
   }
 
-  public List<BaseAdapter> getChildren() {
+  public List<INodeAdapter> getChildren() {
     return toAdapters(getNode().getChildren());
   }
 
   @NotNull
-  public <N extends BaseAdapter> List<N> getChildren(Class<N> cls) {
+  public <N extends INodeAdapter> List<N> getChildren(Class<N> cls) {
     return CollectionUtil.filter(cls, getChildren());
   }
 
 
-  public <T extends BaseAdapter> List<T> getChildren(@NotNull String role) {
+  public <T extends INodeAdapter> List<T> getChildren(@NotNull String role) {
     List<T> result = toAdapters(myNode.getChildren(role));
     return result;
   }
 
-  public <T extends BaseAdapter> Iterator<T> children(@NotNull String role) {
+  public <T extends INodeAdapter> Iterator<T> children(@NotNull String role) {
     List<T> children = getChildren(role);
     return children.iterator();
   }
 
-  protected BaseAdapter getReferent(String role) {
+  protected INodeAdapter getReferent(String role) {
     SNode result = myNode.getReferent(role);
     if (result == null) {
       return null;
@@ -269,7 +269,7 @@ public abstract class BaseAdapter implements INodeAdapter {
     return result.getAdapter();
   }
 
-  protected void setReferent(@NotNull String role, BaseAdapter newValue) {
+  protected void setReferent(@NotNull String role, INodeAdapter newValue) {
     if (newValue == null) {
       myNode.setReferent(role, null);
     } else {
@@ -278,7 +278,7 @@ public abstract class BaseAdapter implements INodeAdapter {
   }
 
   @Nullable
-  public BaseAdapter getAttribute() {
+  public INodeAdapter getAttribute() {
     SNode result = myNode.getAttribute();
     if (result == null) {
       return null;
@@ -287,12 +287,12 @@ public abstract class BaseAdapter implements INodeAdapter {
     }
   }
 
-  public List<BaseAdapter> getAllAttributes() {
+  public List<INodeAdapter> getAllAttributes() {
     return toAdapters(getNode().getAllAttributes());
   }
 
   @Nullable
-  public BaseAdapter getAttribute(String role) {
+  public INodeAdapter getAttribute(String role) {
     SNode result = myNode.getAttribute(role);
     if (result == null) {
       return null;
@@ -301,11 +301,11 @@ public abstract class BaseAdapter implements INodeAdapter {
   }
 
   @NotNull
-  public List<? extends BaseAdapter> getAttributes(String role) {
+  public List<? extends INodeAdapter> getAttributes(String role) {
     return toAdapters(myNode.getAttributes(role));
   }
 
-  public void setAttribute(BaseAdapter adapter) {
+  public void setAttribute(INodeAdapter adapter) {
     if (adapter == null) {
       myNode.setAttribute(null);
     } else {
@@ -313,7 +313,7 @@ public abstract class BaseAdapter implements INodeAdapter {
     }
   }
 
-  public void setAttribute(String role, BaseAdapter attribute) {
+  public void setAttribute(String role, INodeAdapter attribute) {
     if (attribute == null) {
       myNode.setAttribute(role, null);
     } else {
@@ -321,11 +321,11 @@ public abstract class BaseAdapter implements INodeAdapter {
     }
   }
 
-  public void addAttribute(String role, BaseAdapter attribute) {
+  public void addAttribute(String role, INodeAdapter attribute) {
     myNode.addAttribute(role, attribute.getNode());
   }
 
-  public BaseAdapter getPropertyAttribute(String propertyName) {
+  public INodeAdapter getPropertyAttribute(String propertyName) {
     SNode node = myNode.getPropertyAttribute(propertyName);
     if (node == null) {
       return null;
@@ -334,7 +334,7 @@ public abstract class BaseAdapter implements INodeAdapter {
     }
   }
 
-  public BaseAdapter getPropertyAttribute(String role, String propertyName) {
+  public INodeAdapter getPropertyAttribute(String role, String propertyName) {
     SNode node = myNode.getPropertyAttribute(role, propertyName);
     if (node == null) {
       return null;
@@ -344,11 +344,11 @@ public abstract class BaseAdapter implements INodeAdapter {
   }
 
   @NotNull
-  public List<? extends BaseAdapter> getPropertyAttributes(String role, String propertyName) {
+  public List<? extends INodeAdapter> getPropertyAttributes(String role, String propertyName) {
     return toAdapters(myNode.getPropertyAttributes(role, propertyName));
   }
 
-  public void setPropertyAttribute(String role, String propertyName, BaseAdapter propertyAttribute) {
+  public void setPropertyAttribute(String role, String propertyName, INodeAdapter propertyAttribute) {
     if (propertyAttribute == null) {
       myNode.setPropertyAttribute(role, propertyName, null);
     } else {
@@ -356,11 +356,11 @@ public abstract class BaseAdapter implements INodeAdapter {
     }    
   }
 
-  public void addPropertyAttribute(String role, String propertyName, BaseAdapter propertyAttribute) {
+  public void addPropertyAttribute(String role, String propertyName, INodeAdapter propertyAttribute) {
     myNode.addPropertyAttribute(role, propertyName, propertyAttribute.getNode());
   }
 
-  public BaseAdapter getLinkAttribute(String propertyName) {
+  public INodeAdapter getLinkAttribute(String propertyName) {
     SNode node = myNode.getLinkAttribute(propertyName);
     if (node == null) {
       return null;
@@ -369,7 +369,7 @@ public abstract class BaseAdapter implements INodeAdapter {
     }
   }
 
-  public BaseAdapter getLinkAttribute(String role, String propertyName) {
+  public INodeAdapter getLinkAttribute(String role, String propertyName) {
     SNode node = myNode.getLinkAttribute(role, propertyName);
     if (node == null) {
       return null;
@@ -378,7 +378,7 @@ public abstract class BaseAdapter implements INodeAdapter {
     }
   }
 
-  public void setLinkAttribute(String role, String propertyName, BaseAdapter propertyAttribute) {
+  public void setLinkAttribute(String role, String propertyName, INodeAdapter propertyAttribute) {
     if (propertyAttribute == null) {
       myNode.setLinkAttribute(role, propertyName, null);
     } else {
@@ -386,17 +386,17 @@ public abstract class BaseAdapter implements INodeAdapter {
     }
   }
 
-  public void addLinkAttribute(String role, String propertyName, BaseAdapter propertyAttribute) {
+  public void addLinkAttribute(String role, String propertyName, INodeAdapter propertyAttribute) {
     myNode.addLinkAttribute(role, propertyName, propertyAttribute.getNode());
   }
 
-  public List<? extends BaseAdapter> getLinkAttributes(String role, String linkRole) {
+  public List<? extends INodeAdapter> getLinkAttributes(String role, String linkRole) {
     return toAdapters(myNode.getLinkAttributes(role, linkRole));
   }
 
   public boolean equals(Object obj) {
-    if (!(obj instanceof BaseAdapter)) return false;
-    BaseAdapter other = (BaseAdapter) obj;
+    if (!(obj instanceof INodeAdapter)) return false;
+    INodeAdapter other = (INodeAdapter) obj;
     return other.getNode() == getNode();
   }
 
@@ -410,7 +410,7 @@ public abstract class BaseAdapter implements INodeAdapter {
     return getNode().toString();
   }
 
-  public static <T extends BaseAdapter> List<T> toAdapters(List<? extends SNode> list) {
+  public static <T extends INodeAdapter> List<T> toAdapters(List<? extends SNode> list) {
     List<T> result = new ArrayList<T>();
     for (SNode node : list) {
       result.add((T) node.getAdapter());
@@ -418,7 +418,7 @@ public abstract class BaseAdapter implements INodeAdapter {
     return result;
   }
 
-  public static <T extends BaseAdapter> Set<T> toAdapters(Set<? extends SNode> list) {
+  public static <T extends INodeAdapter> Set<T> toAdapters(Set<? extends SNode> list) {
     Set<T> result = new HashSet<T>();
     for (SNode node : list) {
       result.add((T) node.getAdapter());
@@ -426,7 +426,7 @@ public abstract class BaseAdapter implements INodeAdapter {
     return result;
   }
 
-  public static <T extends BaseAdapter> List<T> toAdapters(Class<T> cls, List<? extends SNode> list) {
+  public static <T extends INodeAdapter> List<T> toAdapters(Class<T> cls, List<? extends SNode> list) {
     List<T> result = new ArrayList<T>();
     for (SNode node : list) {
       result.add((T) node.getAdapter());
@@ -434,7 +434,7 @@ public abstract class BaseAdapter implements INodeAdapter {
     return result;
   }
 
-  public static <T extends BaseAdapter> Set<T> toAdapters(Class<T> cls, Set<? extends SNode> list) {
+  public static <T extends INodeAdapter> Set<T> toAdapters(Class<T> cls, Set<? extends SNode> list) {
     Set<T> result = new HashSet<T>();
     for (SNode node : list) {
       result.add((T) node.getAdapter());
@@ -443,23 +443,23 @@ public abstract class BaseAdapter implements INodeAdapter {
   }
 
 
-  public static <T extends SNode> List<T> toNodes(List<? extends BaseAdapter> list) {
+  public static <T extends SNode> List<T> toNodes(List<? extends INodeAdapter> list) {
     List<T> result = new ArrayList<T>();
-    for (BaseAdapter ba : list) {
+    for (INodeAdapter ba : list) {
       result.add((T) ba.getNode());
     }
     return result;
   }
 
-  public static <T extends SNode> Set<T> toNodes(Set<? extends BaseAdapter> list) {
+  public static <T extends SNode> Set<T> toNodes(Set<? extends INodeAdapter> list) {
     Set<T> result = new HashSet<T>();
-    for (BaseAdapter ba : list) {
+    for (INodeAdapter ba : list) {
       result.add((T) ba.getNode());
     }
     return result;
   }
 
-  public static BaseAdapter fromNode(SNode node) {
+  public static INodeAdapter fromNode(SNode node) {
     if (node == null) {
       return null;
     } else {
@@ -467,7 +467,7 @@ public abstract class BaseAdapter implements INodeAdapter {
     }
   }
 
-  public static SNode fromAdapter(BaseAdapter ba) {
+  public static SNode fromAdapter(INodeAdapter ba) {
     if (ba == null) {
       return null;
     } else {
@@ -475,7 +475,7 @@ public abstract class BaseAdapter implements INodeAdapter {
     }
   }
 
-  public static Condition<SNode> nodeCondition(final Condition<BaseAdapter> bn) {
+  public static Condition<SNode> nodeCondition(final Condition<INodeAdapter> bn) {
     return new Condition<SNode>() {
       public boolean met(SNode object) {
         return bn.met(BaseAdapter.fromNode(object));
@@ -483,7 +483,7 @@ public abstract class BaseAdapter implements INodeAdapter {
     };
   }
 
-  public static<T extends BaseAdapter> Condition<T> adapterCondition(final Condition<SNode> bn) {
+  public static<T extends INodeAdapter> Condition<T> adapterCondition(final Condition<SNode> bn) {
     return new Condition<T>() {
       public boolean met(T object) {
         return bn.met(BaseAdapter.fromAdapter(object));
@@ -491,11 +491,11 @@ public abstract class BaseAdapter implements INodeAdapter {
     };
   }
 
-  public static String getConceptFqName(Class<? extends BaseAdapter> cls) {
+  public static String getConceptFqName(Class<? extends INodeAdapter> cls) {
     return cls.getName();
   }
 
-  public static boolean isInstance(SNode node, Class<? extends BaseAdapter> cls) {
+  public static boolean isInstance(SNode node, Class<? extends INodeAdapter> cls) {
     return cls.isInstance(fromNode(node));
   }
 

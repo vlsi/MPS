@@ -33,8 +33,8 @@ public class ConceptDeclarationExtendedConceptSearchScope extends AbstractSearch
 
   private List<SNode> createOwnNodesList() {
     ISearchScope allNodesScope = SModelSearchUtil_new.createModelAndImportedModelsScope(myConceptDeclaration.getModel(), myScope);
-    return BaseAdapter.toNodes(allNodesScope.getAdapters(new Condition<BaseAdapter>() {
-      public boolean met(BaseAdapter object) {
+    return BaseAdapter.toNodes(allNodesScope.getAdapters(new Condition<INodeAdapter>() {
+      public boolean met(INodeAdapter object) {
         if (object.equals(myConceptDeclaration)) return false;
         if (!(object instanceof ConceptDeclaration)) return false;
         ConceptDeclaration concept = (ConceptDeclaration) object;

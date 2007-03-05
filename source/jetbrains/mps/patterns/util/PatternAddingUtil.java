@@ -20,7 +20,7 @@ public class PatternAddingUtil {
   public static boolean isPatternApplicable(EditorContext context) {
     EditorCell contextCell = context.getSelectedCell();
     if (contextCell == null) return false;
-    BaseAdapter node = BaseAdapter.fromNode(contextCell.getSNode());
+    INodeAdapter node = BaseAdapter.fromNode(contextCell.getSNode());
     if (node == null) return false;
     return node.findParent(PatternExpression.class) != null;
   }

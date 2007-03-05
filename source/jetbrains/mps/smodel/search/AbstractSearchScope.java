@@ -2,6 +2,7 @@ package jetbrains.mps.smodel.search;
 
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -38,7 +39,7 @@ public abstract class AbstractSearchScope implements ISearchScope {
   }
 
   @NotNull
-  public List<BaseAdapter> getAdapters(final Condition<BaseAdapter> condition) {
+  public List<INodeAdapter> getAdapters(final Condition<INodeAdapter> condition) {
     return BaseAdapter.toAdapters(getNodes(new Condition<SNode>() {
       public boolean met(SNode object) {
         return condition.met(BaseAdapter.fromNode(object));
@@ -56,7 +57,7 @@ public abstract class AbstractSearchScope implements ISearchScope {
   }
 
   @Nullable
-  public BaseAdapter findAdapter(final Condition<BaseAdapter> condition) {
+  public INodeAdapter findAdapter(final Condition<INodeAdapter> condition) {
     return BaseAdapter.fromNode(findNode(new Condition<SNode>() {
       public boolean met(SNode object) {
         return condition.met(BaseAdapter.fromNode(object));

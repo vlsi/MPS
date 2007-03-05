@@ -5,6 +5,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.NamedConcept;
@@ -17,7 +18,7 @@ public class NodePresentationUtil {
 
   public static String matchingText(SNode node, boolean referent_presentation) {
     // concept declaration : return either 'alias' or 'name'
-    BaseAdapter nodeAdapter = node.getAdapter();
+    INodeAdapter nodeAdapter = node.getAdapter();
     if (nodeAdapter instanceof ConceptDeclaration) {
       if (!referent_presentation) {
         String alias = node.getConceptProperty("alias", GlobalScope.getInstance());
@@ -32,7 +33,7 @@ public class NodePresentationUtil {
     return matchingText_internal(nodeAdapter);
   }
 
-  private static String matchingText_internal(BaseAdapter nodeAdapter) {
+  private static String matchingText_internal(INodeAdapter nodeAdapter) {
     if (nodeAdapter == null) {
       return "<none>";
     }
@@ -59,7 +60,7 @@ public class NodePresentationUtil {
     return descriptionText(node, false);
   }
 
-  public static String descriptionText(BaseAdapter node, boolean referent_presentation) {
+  public static String descriptionText(INodeAdapter node, boolean referent_presentation) {
     return descriptionText(BaseAdapter.fromAdapter(node), referent_presentation);
   }
 
@@ -82,7 +83,7 @@ public class NodePresentationUtil {
     return descriptionText_internal(node.getAdapter());
   }
 
-  private static String descriptionText_internal(BaseAdapter nodeAdapter) {
+  private static String descriptionText_internal(INodeAdapter nodeAdapter) {
     if (nodeAdapter == null) {
       return "";
     }

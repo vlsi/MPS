@@ -4,10 +4,7 @@ import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.generator.template.INodeBuilder;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.JavaModelUtil_new;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 
 import java.util.*;
@@ -119,10 +116,10 @@ public class _QueriesUtil {
   }
 
   public static List<SNode> getList_ContextOwner_ifMethod_ParmsUsedInClosure(SNode inputNode, ITemplateGenerator generator) {
-    BaseAdapter inputNodeAdapter = inputNode.getAdapter();
+    INodeAdapter inputNodeAdapter = inputNode.getAdapter();
     if (!(inputNodeAdapter instanceof BaseMethodDeclaration)) return Collections.emptyList();
     List<VariableDeclaration> variablesUsedInClosure = ClosuresUtil.getVariablesUsedInClosure(inputNode, generator);
-    List<BaseAdapter> parms = new LinkedList<BaseAdapter>();
+    List<INodeAdapter> parms = new LinkedList<INodeAdapter>();
     for (VariableDeclaration var : variablesUsedInClosure) {
       if (var instanceof ParameterDeclaration) {
         parms.add(var);
@@ -145,8 +142,8 @@ public class _QueriesUtil {
 
   public static SNode create_closureContextObject(SNode nodeInsideClosure, ITemplateGenerator generator) {
     // find enclosing closure or closure context owner
-    BaseAdapter enclosingClosureOrContextOwner = nodeInsideClosure.getAdapter().findParent(new Condition<BaseAdapter>() {
-      public boolean met(BaseAdapter object) {
+    INodeAdapter enclosingClosureOrContextOwner = nodeInsideClosure.getAdapter().findParent(new Condition<INodeAdapter>() {
+      public boolean met(INodeAdapter object) {
         if (object instanceof Closure) return true;
         return ClosuresUtil.isClosureContextOwner(object.getNode());
       }
@@ -191,7 +188,7 @@ public class _QueriesUtil {
 
   public static SNode create_enclosingClassObject(SNode nodeInsideClosure, ITemplateGenerator generator) {
     Class[] classes = new Class[]{BaseMethodDeclaration.class, Closure.class};
-    BaseAdapter enclosingNode = nodeInsideClosure.getAdapter().findFirstParent(classes);
+    INodeAdapter enclosingNode = nodeInsideClosure.getAdapter().findFirstParent(classes);
     if (enclosingNode instanceof BaseMethodDeclaration &&
             !(enclosingNode instanceof StaticMethodDeclaration)) {
       return ThisExpression.newInstance(generator.getTargetModel()).getNode();
