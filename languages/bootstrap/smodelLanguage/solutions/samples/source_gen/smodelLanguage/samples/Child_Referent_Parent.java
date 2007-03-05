@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import java.util.List;
 
 public class Child_Referent_Parent {
 
@@ -47,15 +48,21 @@ public class Child_Referent_Parent {
     }
   }
   public void accessToParentNode_2(SNode expression) {
-    SNode parent_IfStatement = SNodeOperations.getAncestor(expression, "jetbrains.mps.baseLanguage.structure.IfStatement", false, false);
-  }
-  public void accessToParentNode_3(SNode expression) {
-    SNode parent_If_or_WhileStatement = SNodeOperations.getAncestorWhereConceptInList(expression, new String[]{"jetbrains.mps.baseLanguage.structure.IfStatement","jetbrains.mps.baseLanguage.structure.WhileStatement"}, false, false);
-  }
-  public void accessToParentNode_4(SNode expression) {
     SNode declaringClass = SNodeOperations.getParent(SLinkOperations.getTarget(expression, "baseMethodDeclaration", false), null, false, false);
   }
-  public void accessToParentNode_5(SNode node) {
+  public void accessToParentNode_3(SNode node) {
     SNode root = SNodeOperations.getContainingRoot(node);
+  }
+  public void accessToAncestorNode_1(SNode expression) {
+    SNode parent_IfStatement = SNodeOperations.getAncestor(expression, "jetbrains.mps.baseLanguage.structure.IfStatement", false, false);
+  }
+  public void accessToAncestorNode_2(SNode expression) {
+    SNode parent_If_or_WhileStatement = SNodeOperations.getAncestorWhereConceptInList(expression, new String[]{"jetbrains.mps.baseLanguage.structure.IfStatement","jetbrains.mps.baseLanguage.structure.WhileStatement"}, false, false);
+  }
+  public void accessToAncestorNodes_1(SNode expression) {
+    List<SNode> allAncestorStatements = SNodeOperations.getAncestors(expression, "jetbrains.mps.baseLanguage.structure.Statement", true);
+  }
+  public void accessToAncestorNodes_2(SNode expression) {
+    List<SNode> allAncestor_If_or_WhileStatements = SNodeOperations.getAncestorsWhereConceptInList(expression, new String[]{"jetbrains.mps.baseLanguage.structure.IfStatement","jetbrains.mps.baseLanguage.structure.WhileStatement"}, true);
   }
 }

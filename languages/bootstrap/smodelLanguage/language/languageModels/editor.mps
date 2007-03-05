@@ -299,8 +299,8 @@
       <property name="drawBorder" value="false" />
       <property name="vertical" value="true" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1154554752665">
-        <property name="textFgColor" value="blue" />
         <property name="textBgColor" value="lightGray" />
+        <property name="textFgColor" value="blue" />
         <property name="text" value="The 'parent' operation" />
         <property name="drawBorder" value="false" />
       </node>
@@ -323,8 +323,8 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1154555018347">
         <property name="drawBorder" value="false" />
         <property name="vertical" value="true" />
-        <property name="selectable" value="false" />
         <property name="gridLayout" value="true" />
+        <property name="selectable" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1154555049677">
           <property name="drawBorder" value="false" />
           <property name="vertical" value="false" />
@@ -1328,8 +1328,8 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1170384687660">
       <property name="textFgColor" value="darkGray" />
       <property name="text" value="adapter" />
-      <property name="fontStyle" value="ITALIC" />
       <property name="attractsFocus" value="1" />
+      <property name="fontStyle" value="ITALIC" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1171305550276">
@@ -1444,8 +1444,8 @@
       <property name="drawBorder" value="false" />
       <property name="vertical" value="true" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1171407548389">
-        <property name="textFgColor" value="blue" />
         <property name="textBgColor" value="lightGray" />
+        <property name="textFgColor" value="blue" />
         <property name="text" value="The 'ancestor' operation" />
         <property name="drawBorder" value="false" />
       </node>
@@ -1468,8 +1468,8 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1171407548394">
         <property name="drawBorder" value="false" />
         <property name="vertical" value="true" />
-        <property name="selectable" value="false" />
         <property name="gridLayout" value="true" />
+        <property name="selectable" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1171407548395">
           <property name="drawBorder" value="false" />
           <property name="vertical" value="false" />
@@ -1753,6 +1753,20 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1172424091843">
         <property name="text" value=")" />
         <property name="drawBorder" value="false" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1173122820494">
+    <link role="conceptDeclaration" targetNodeId="1.1173122760281" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1173122851696">
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1173122851697">
+        <property name="editable" value="true" />
+        <property name="text" value="ancestors" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1173122851698">
+        <property name="drawBorder" value="false" />
+        <link role="editorComponent" targetNodeId="1144105329976" resolveInfo="OperationParameters_Component" />
       </node>
     </node>
   </node>

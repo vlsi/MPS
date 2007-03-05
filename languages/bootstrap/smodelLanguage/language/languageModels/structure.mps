@@ -1098,5 +1098,31 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1173122760281">
+    <property name="name" value="Node_GetAncestorsOperation" />
+    <link role="extends" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1173122795259">
+      <link role="conceptLinkDeclaration" targetNodeId="1144102537873" resolveInfo="applicableParameter" />
+      <link role="target" targetNodeId="1144100932627" resolveInfo="OperationParm_Inclusion" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1173122760282">
+      <link role="conceptLinkDeclaration" targetNodeId="1144102537873" resolveInfo="applicableParameter" />
+      <link role="target" targetNodeId="1144101972840" resolveInfo="OperationParm_Concept" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1173122760283">
+      <link role="conceptLinkDeclaration" targetNodeId="1144102537873" resolveInfo="applicableParameter" />
+      <link role="target" targetNodeId="1154546920561" resolveInfo="OperationParm_ConceptList" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1173122760284">
+      <property name="value" value="ancestors" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1173122760285">
+      <link role="conceptPropertyDeclaration" targetNodeId="1138763241883" resolveInfo="applicable_to_node" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1173122760286">
+      <link role="conceptPropertyDeclaration" targetNodeId="1138763325919" resolveInfo="applicable_to_link" />
+    </node>
+  </node>
 </model>
 
