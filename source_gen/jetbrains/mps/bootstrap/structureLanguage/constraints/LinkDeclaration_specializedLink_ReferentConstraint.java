@@ -32,13 +32,13 @@ public class LinkDeclaration_specializedLink_ReferentConstraint implements IMode
     return true;
   }
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    SNode enclosingConcept = SNodeOperations.getParent(enclosingNode, "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration", true, false);
+    SNode enclosingConcept = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration", true, false);
     SNode extendedConcept = SLinkOperations.getTarget(enclosingConcept, "extends", false);
     if(extendedConcept == null) {
       return new EmptySearchScope();
     }
     List links = SModelSearchUtil_new.getLinkDeclarationsExcludingOverridden(((ConceptDeclaration)SNodeOperations.getAdapter(extendedConcept)));
-    return new SimpleSearchScope((List<SNode>)links);
+    return new SimpleSearchScope(links);
   }
   public String getNodeReferentSearchScopeDescription() {
     return "links declared in hierarchy of enclosing concept.";

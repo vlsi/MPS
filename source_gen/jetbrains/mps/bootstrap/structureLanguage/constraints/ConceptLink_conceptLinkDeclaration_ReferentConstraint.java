@@ -28,7 +28,7 @@ public class ConceptLink_conceptLinkDeclaration_ReferentConstraint implements IM
     return true;
   }
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    SNode enclosingConcept = SNodeOperations.getParent(enclosingNode, "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration", true, false);
+    SNode enclosingConcept = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration", true, false);
     return SModelSearchUtil_new.createConceptHierarchyScope(((ConceptDeclaration)SNodeOperations.getAdapter(enclosingConcept)));
   }
   public String getNodeReferentSearchScopeDescription() {

@@ -194,6 +194,9 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_1169757149991(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return QueriesUtil.AL_isLinkStereotypeAndPlural(node);
   }
+  public static boolean ifMacro_Condition_1173128500049(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getCount(node, "extends") == 0;
+  }
   public static List sourceNodesQuery_1169129983235(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTargets(node, "implements", true);
   }
