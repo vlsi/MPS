@@ -18,7 +18,7 @@
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1168968323635">
     <property name="name" value="QueriesUtil" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1168968334480">
-      <property name="name" value="opGetAncestor_reduceDefault" />
+      <property name="name" value="nodeOp_noParm_conceptList" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.BooleanType" id="1168968338921" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1168968334482">
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1168968630547">
@@ -94,7 +94,7 @@
       </node>
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1168969209239">
-      <property name="name" value="opGetAncestor_reduceWhereConceptInList" />
+      <property name="name" value="nodeOp_hasParm_conceptList" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.BooleanType" id="1168969209240" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1168969209241">
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1168969209242">

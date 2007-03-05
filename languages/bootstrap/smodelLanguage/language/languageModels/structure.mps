@@ -860,6 +860,10 @@
       <link role="conceptLinkDeclaration" targetNodeId="1144102537873" resolveInfo="applicableParameter" />
       <link role="target" targetNodeId="1144101972840" resolveInfo="OperationParm_Concept" />
     </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1173118322375">
+      <link role="conceptLinkDeclaration" targetNodeId="1144102537873" resolveInfo="applicableParameter" />
+      <link role="target" targetNodeId="1154546920561" resolveInfo="OperationParm_ConceptList" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1171305333426">
       <property name="value" value="descendants" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />

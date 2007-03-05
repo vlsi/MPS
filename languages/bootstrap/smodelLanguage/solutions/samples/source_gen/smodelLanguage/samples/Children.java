@@ -32,4 +32,7 @@ public class Children {
     List<SNode> children2 = SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.BooleanConstant");
     Iterable<SNode> children3 = SequenceOperations.where(SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), new zPredicate(this, null));
   }
+  public void accessToChildren_4(SNode statement) {
+    List<SNode> children1 = SNodeOperations.getDescendantsWhereConceptInList(SLinkOperations.getTarget(statement, "expression", true), new String[]{"jetbrains.mps.baseLanguage.structure.BooleanConstant","jetbrains.mps.baseLanguage.structure.IntegerConstant"});
+  }
 }

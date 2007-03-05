@@ -1367,6 +1367,46 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1173117814218">
+      <property name="name" value="accessToChildren_4" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1173117814219" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1173117814220">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1173117814221">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1173117814222">
+            <property name="name" value="children1" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1173117814223">
+              <link role="elementConcept" targetNodeId="6.1133920641626" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1173117814224">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetDescendantsOperation" id="1173117814225">
+                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_ConceptList" id="1173118242343">
+                  <node role="concept" type="jetbrains.mps.bootstrap.smodelLanguage.ConceptReference" id="1173118278829">
+                    <link role="concept" targetNodeId="1.1068580123137" />
+                  </node>
+                  <node role="concept" type="jetbrains.mps.bootstrap.smodelLanguage.ConceptReference" id="1173118284935">
+                    <link role="concept" targetNodeId="1.1068580320020" />
+                  </node>
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1173117814226">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1173117814227">
+                  <link role="link" targetNodeId="1.1068580123156" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1173117814228">
+                  <link role="variableDeclaration" targetNodeId="1173117814255" resolveInfo="statement" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1173117814255">
+        <property name="name" value="statement" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1173117814256">
+          <link role="concept" targetNodeId="1.1068580123155" />
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1145583629132">
     <property name="name" value="Siblings" />
