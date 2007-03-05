@@ -65,9 +65,19 @@
                 </node>
                 <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1171037736401">
                   <link role="classConcept" extResolveInfo="6.[Classifier]BaseAdapter" />
-                  <link role="baseMethodDeclaration" extResolveInfo="6.static method ([Classifier]BaseAdapter).([StaticMethodDeclaration]toNodes((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;? extends jetbrains.mps.baseLanguage.types.classifier [BaseAdapter]&gt;])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List]))" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1171037737997">
-                    <link role="variableDeclaration" targetNodeId="1149280736095" resolveInfo="links" />
+                  <link role="baseMethodDeclaration" extResolveInfo="6.static method ([Classifier]BaseAdapter).([StaticMethodDeclaration]toNodes((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;? extends jetbrains.mps.baseLanguage.types.classifier [INodeAdapter]&gt;])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List]))" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.CastExpression" id="1173134904081">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1173134904082">
+                      <link role="variableDeclaration" targetNodeId="1149280736095" resolveInfo="links" />
+                    </node>
+                    <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1173134904083">
+                      <link role="classifier" extResolveInfo="3.[Classifier]List" />
+                      <node role="parameter" type="jetbrains.mps.baseLanguage.UpperBoundType" id="1173134904084">
+                        <node role="bound" type="jetbrains.mps.baseLanguage.ClassifierType" id="1173134904085">
+                          <link role="classifier" extResolveInfo="6.[Classifier]INodeAdapter" />
+                        </node>
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>

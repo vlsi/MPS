@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 public class ConceptRefExpression extends Expression {
   public static String CONCEPT_DECLARATION = "conceptDeclaration";
@@ -23,10 +23,10 @@ public class ConceptRefExpression extends Expression {
     return ConceptRefExpression.newInstance(sm, false);
   }
 
-  public ConceptDeclaration getConceptDeclaration() {
-    return (ConceptDeclaration)this.getReferent(ConceptRefExpression.CONCEPT_DECLARATION);
+  public AbstractConceptDeclaration getConceptDeclaration() {
+    return (AbstractConceptDeclaration)this.getReferent(ConceptRefExpression.CONCEPT_DECLARATION);
   }
-  public void setConceptDeclaration(ConceptDeclaration node) {
+  public void setConceptDeclaration(AbstractConceptDeclaration node) {
     super.setReferent(ConceptRefExpression.CONCEPT_DECLARATION, node);
   }
 }

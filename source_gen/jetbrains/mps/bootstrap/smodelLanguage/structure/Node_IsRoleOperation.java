@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 
 public class Node_IsRoleOperation extends SNodeOperation {
@@ -24,10 +24,10 @@ public class Node_IsRoleOperation extends SNodeOperation {
     return Node_IsRoleOperation.newInstance(sm, false);
   }
 
-  public ConceptDeclaration getConceptOfParent() {
-    return (ConceptDeclaration)this.getReferent(Node_IsRoleOperation.CONCEPT_OF_PARENT);
+  public AbstractConceptDeclaration getConceptOfParent() {
+    return (AbstractConceptDeclaration)this.getReferent(Node_IsRoleOperation.CONCEPT_OF_PARENT);
   }
-  public void setConceptOfParent(ConceptDeclaration node) {
+  public void setConceptOfParent(AbstractConceptDeclaration node) {
     super.setReferent(Node_IsRoleOperation.CONCEPT_OF_PARENT, node);
   }
   public LinkDeclaration getLinkInParent() {

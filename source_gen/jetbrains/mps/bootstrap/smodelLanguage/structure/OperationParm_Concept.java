@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 public class OperationParm_Concept extends AbstractOperationParameter {
   public static String CONCEPT = "concept";
@@ -22,10 +22,10 @@ public class OperationParm_Concept extends AbstractOperationParameter {
     return OperationParm_Concept.newInstance(sm, false);
   }
 
-  public ConceptDeclaration getConcept() {
-    return (ConceptDeclaration)this.getReferent(OperationParm_Concept.CONCEPT);
+  public AbstractConceptDeclaration getConcept() {
+    return (AbstractConceptDeclaration)this.getReferent(OperationParm_Concept.CONCEPT);
   }
-  public void setConcept(ConceptDeclaration node) {
+  public void setConcept(AbstractConceptDeclaration node) {
     super.setReferent(OperationParm_Concept.CONCEPT, node);
   }
 }

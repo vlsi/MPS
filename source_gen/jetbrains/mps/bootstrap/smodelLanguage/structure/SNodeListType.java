@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 public class SNodeListType extends Type {
   public static String ELEMENT_CONCEPT = "elementConcept";
@@ -23,10 +23,10 @@ public class SNodeListType extends Type {
     return SNodeListType.newInstance(sm, false);
   }
 
-  public ConceptDeclaration getElementConcept() {
-    return (ConceptDeclaration)this.getReferent(SNodeListType.ELEMENT_CONCEPT);
+  public AbstractConceptDeclaration getElementConcept() {
+    return (AbstractConceptDeclaration)this.getReferent(SNodeListType.ELEMENT_CONCEPT);
   }
-  public void setElementConcept(ConceptDeclaration node) {
+  public void setElementConcept(AbstractConceptDeclaration node) {
     super.setReferent(SNodeListType.ELEMENT_CONCEPT, node);
   }
 }

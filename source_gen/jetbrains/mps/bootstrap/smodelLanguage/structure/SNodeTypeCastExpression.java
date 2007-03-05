@@ -7,11 +7,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 public class SNodeTypeCastExpression extends Expression {
-  public static String LEFT_EXPRESSION = "leftExpression";
   public static String CONCEPT = "concept";
+  public static String LEFT_EXPRESSION = "leftExpression";
 
   public  SNodeTypeCastExpression(SNode node) {
     super(node);
@@ -24,16 +24,16 @@ public class SNodeTypeCastExpression extends Expression {
     return SNodeTypeCastExpression.newInstance(sm, false);
   }
 
+  public AbstractConceptDeclaration getConcept() {
+    return (AbstractConceptDeclaration)this.getReferent(SNodeTypeCastExpression.CONCEPT);
+  }
+  public void setConcept(AbstractConceptDeclaration node) {
+    super.setReferent(SNodeTypeCastExpression.CONCEPT, node);
+  }
   public Expression getLeftExpression() {
     return (Expression)this.getChild(SNodeTypeCastExpression.LEFT_EXPRESSION);
   }
   public void setLeftExpression(Expression node) {
     super.setChild(SNodeTypeCastExpression.LEFT_EXPRESSION, node);
-  }
-  public ConceptDeclaration getConcept() {
-    return (ConceptDeclaration)this.getReferent(SNodeTypeCastExpression.CONCEPT);
-  }
-  public void setConcept(ConceptDeclaration node) {
-    super.setReferent(SNodeTypeCastExpression.CONCEPT, node);
   }
 }

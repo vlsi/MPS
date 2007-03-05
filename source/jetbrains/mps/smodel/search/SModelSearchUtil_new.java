@@ -31,16 +31,16 @@ public class SModelSearchUtil_new {
     return new SModelSearchUtil_new._ConceptsFromModelLanguagesScope(model, rootsOnly, scope);
   }
 
-  public static IConceptHierarchyScope createConceptHierarchyScope(ConceptDeclaration concept) {
+  public static IConceptHierarchyScope createConceptHierarchyScope(AbstractConceptDeclaration concept) {
     return new SModelSearchUtil_new._ConceptHierarchyScope(concept);
   }
 
-  public static List<LinkDeclaration> getLinkDeclarationsExcludingOverridden(ConceptDeclaration concept) {
+  public static List<LinkDeclaration> getLinkDeclarationsExcludingOverridden(AbstractConceptDeclaration concept) {
     IConceptHierarchyScope searchScope = createConceptHierarchyScope(concept);
     return getLinkDeclarationsExcludingOverridden(searchScope);
   }
 
-  public static List<LinkDeclaration> getAggregationLinkDeclarationsExcludingOverridden(ConceptDeclaration concept) {
+  public static List<LinkDeclaration> getAggregationLinkDeclarationsExcludingOverridden(AbstractConceptDeclaration concept) {
     IConceptHierarchyScope searchScope = createConceptHierarchyScope(concept);
     return getAggregationLinkDeclarationsExcludingOverridden(searchScope);
   }
@@ -50,7 +50,7 @@ public class SModelSearchUtil_new {
     return getReferenceLinkDeclarationsExcludingOverridden(searchScope);
   }
 
-  public static List<PropertyDeclaration> getPropertyDeclarationsExcludingOverridden(ConceptDeclaration concept) {
+  public static List<PropertyDeclaration> getPropertyDeclarationsExcludingOverridden(AbstractConceptDeclaration concept) {
     IConceptHierarchyScope searchScope = createConceptHierarchyScope(concept);
     return getPropertyDeclarationsExcludingOverridden(searchScope);
   }
