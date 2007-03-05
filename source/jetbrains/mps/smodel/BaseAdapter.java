@@ -10,7 +10,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
-public abstract class BaseAdapter {
+public abstract class BaseAdapter implements INodeAdapter {
   private SNode myNode;
 
   public BaseAdapter(SNode node) {
