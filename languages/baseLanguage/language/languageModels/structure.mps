@@ -1883,5 +1883,39 @@
       <link role="target" targetNodeId="1081236700938" resolveInfo="StaticMethodDeclaration" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1173175405605">
+    <property name="name" value="ArrayAccessExpression" />
+    <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1173175590490">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="array" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1173175577737">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="index" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1173175569001">
+      <property name="value" value="[" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1173176849460">
+    <property name="name" value="ArrayLengthExpression" />
+    <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1173176867072">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="array" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1173176859618">
+      <property name="value" value=".length" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
+  </node>
 </model>
 

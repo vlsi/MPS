@@ -158,6 +158,16 @@
       <property name="description" value="transform expression into left operand of 'instanceof'" />
       <link role="applicableConcept" targetNodeId="1.1068431790191" />
     </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1173176145405">
+      <property name="actionsFactoryAspectId" value="ArrayAccessExpression" />
+      <property name="description" value="transforms array into array access expression" />
+      <link role="applicableConcept" targetNodeId="1.1068431790191" />
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1173177437060">
+      <property name="actionsFactoryAspectId" value="ArrayLengthExpression" />
+      <property name="description" value="transform array into array length expression" />
+      <link role="applicableConcept" targetNodeId="1.1068431790191" />
+    </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1140462494826">
       <property name="actionsFactoryAspectId" value="AddInitializer" />
       <property name="description" value="add initializer to variable declaration" />

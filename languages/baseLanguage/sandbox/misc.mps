@@ -175,6 +175,31 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1173177522413">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1173177522414">
+            <property name="name" value="aaaa" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ArrayType" id="1173177525323">
+              <node role="componentType" type="jetbrains.mps.baseLanguage.IntegerType" id="1173177522415" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1173177577361">
+          <node role="expression" type="jetbrains.mps.baseLanguage.ArrayLengthExpression" id="1173177605302">
+            <node role="array" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1173177530074">
+              <link role="variableDeclaration" targetNodeId="1173177522414" resolveInfo="aaaa" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1173177642483">
+          <node role="expression" type="jetbrains.mps.baseLanguage.ArrayAccessExpression" id="1173177643157">
+            <node role="array" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1173177642484">
+              <link role="variableDeclaration" targetNodeId="1173177522414" resolveInfo="aaaa" />
+            </node>
+            <node role="index" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1173177644612">
+              <property name="value" value="23" />
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1171904665739">
         <property name="name" value="xxxx" />
@@ -488,15 +513,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1172769428313">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1172769428314">
-            <property name="name" value="a" />
-            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1172769428315" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1172769432942">
-              <property name="value" value="3" />
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1172849434970">
           <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1172849435019">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1172849436476">
@@ -540,6 +556,33 @@
               <node role="creator" type="jetbrains.mps.baseLanguage.ArrayCreatorWithInitializer" id="1172769774903">
                 <node role="componentType" type="jetbrains.mps.baseLanguage.IntegerType" id="1172769777311" />
               </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1173176022066">
+          <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1173176026021">
+            <link role="variableDeclaration" targetNodeId="1172769763366" resolveInfo="a" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1173176033867">
+          <node role="expression" type="jetbrains.mps.baseLanguage.NotExpression" id="1173176033868">
+            <node role="expression" type="jetbrains.mps.baseLanguage.ArrayAccessExpression" id="1173176107136">
+              <node role="array" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1173176108936">
+                <link role="variableDeclaration" targetNodeId="1172769763366" resolveInfo="a" />
+              </node>
+              <node role="index" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1173176110593">
+                <property name="value" value="23" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1173176593746">
+          <node role="expression" type="jetbrains.mps.baseLanguage.ArrayAccessExpression" id="1173176594780">
+            <node role="array" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1173176593747">
+              <link role="variableDeclaration" targetNodeId="1172769763366" resolveInfo="a" />
+            </node>
+            <node role="index" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1173176596282">
+              <property name="value" value="239" />
             </node>
           </node>
         </node>
