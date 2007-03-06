@@ -12,7 +12,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.smodel.search.ISearchScope;
 import java.util.List;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.smodel.BaseAdapter;
@@ -34,7 +34,7 @@ public class Node_IsRoleOperation_linkInParent_ReferentConstraint implements IMo
   }
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     SNode conceptOfParent = SLinkOperations.getTarget(referenceNode, "conceptOfParent", false);
-    List links = SModelSearchUtil_new.getAggregationLinkDeclarationsExcludingOverridden(((ConceptDeclaration)SNodeOperations.getAdapter(conceptOfParent)));
+    List links = SModelSearchUtil_new.getAggregationLinkDeclarationsExcludingOverridden(((AbstractConceptDeclaration)SNodeOperations.getAdapter(conceptOfParent)));
     return new SimpleSearchScope((List<SNode>)BaseAdapter.toNodes((List<? extends INodeAdapter>)links));
   }
   public String getNodeReferentSearchScopeDescription() {

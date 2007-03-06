@@ -1770,5 +1770,37 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1173215124162">
+    <link role="conceptDeclaration" targetNodeId="1.1173215057012" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1173216735518">
+      <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1173216735519">
+        <property name="editable" value="true" />
+        <property name="textFgColor" value="DARK_BLUE" />
+        <property name="text" value="_SPROPERTY_{" />
+        <property name="fontStyle" value="BOLD" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1173216735521">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="1.1173215071669" />
+        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1173216735522">
+          <link role="conceptDeclaration" targetNodeId="3.1071489288299" />
+          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1173216735523">
+            <property name="textFgColor" value="DARK_MAGENTA" />
+            <property name="drawBorder" value="false" />
+            <property name="readOnly" value="true" />
+            <property name="noTargetText" value="&lt;no name&gt;" />
+            <link role="relationDeclaration" targetNodeId="2.1078489098626" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1173216735524">
+        <property name="text" value="}" />
+        <property name="drawBorder" value="false" />
+        <property name="selectable" value="false" />
+      </node>
+    </node>
+  </node>
 </model>
 
