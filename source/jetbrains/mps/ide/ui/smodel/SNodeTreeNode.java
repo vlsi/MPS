@@ -7,6 +7,7 @@ import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
+import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
@@ -14,6 +15,7 @@ import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import javax.swing.Icon;
 import javax.swing.JPopupMenu;
 import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreeNode;
 import java.util.List;
 import java.util.Arrays;
 
@@ -49,7 +51,11 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     }
 
     if (getParent() instanceof SNodeGroupTreeNode) {
-      return (SModelTreeNode) ((SNodeGroupTreeNode) getParent()).getParent();
+      TreeNode node = getParent();
+      while (!(node instanceof SModelTreeNode)) {
+        node = node.getParent();
+      }
+      return (SModelTreeNode) node;
     }
 
     return null;
