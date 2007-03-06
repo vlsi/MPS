@@ -239,6 +239,10 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1164824717996" resolveInfo="CellMenuDescriptor" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1173177718857">
+      <property name="role" value="elementActionMap" />
+      <link role="target" targetNodeId="1139535219966" resolveInfo="CellActionMapDeclaration" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107223377710">
       <property name="value" value="list" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />

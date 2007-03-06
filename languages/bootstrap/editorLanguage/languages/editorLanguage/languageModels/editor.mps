@@ -3914,6 +3914,7 @@
           <property name="selectable" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1156252814527">
             <property name="text" value="separator constraint" />
+            <property name="selectable" value="false" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1156252995206">
             <link role="relationDeclaration" targetNodeId="2.1156252885376" />
@@ -3941,6 +3942,26 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1085052976160">
             <property name="drawBorder" value="true" />
             <property name="cellProviderId" value="RefNodeList_NodeToInsertAspect" />
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1173181621064">
+          <property name="selectable" value="false" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1173181621065">
+            <property name="text" value="elem. action map" />
+            <property name="drawBorder" value="true" />
+            <property name="selectable" value="false" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1173181621066">
+            <property name="drawBorder" value="true" />
+            <property name="noTargetText" value="&lt;default&gt;" />
+            <link role="relationDeclaration" targetNodeId="2.1173177718857" />
+            <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1173181621067">
+              <link role="conceptDeclaration" targetNodeId="2.1139535219966" />
+              <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1173181621068">
+                <property name="readOnly" value="true" />
+                <link role="relationDeclaration" targetNodeId="3.1078489098626" />
+              </node>
+            </node>
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1080843012541">
@@ -5786,8 +5807,8 @@
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.AddAllElementsOperation" id="1164849028348">
                       <node role="argument" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1164849028349">
-                        <link role="baseMethodDeclaration" extResolveInfo="16.static method ([Classifier]EditorCellKeyMap).([StaticMethodDeclaration]getVirtualKeycodes() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [String]&gt;]))" />
                         <link role="classConcept" extResolveInfo="16.[Classifier]EditorCellKeyMap" />
+                        <link role="baseMethodDeclaration" extResolveInfo="16.static method ([Classifier]EditorCellKeyMap).([StaticMethodDeclaration]getVirtualKeycodes() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List]))" />
                       </node>
                     </node>
                   </node>
