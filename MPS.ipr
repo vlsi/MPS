@@ -1447,7 +1447,7 @@
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="MForum" />
-        <option name="DEPLOY" value="false" />
+        <option name="DEPLOY" value="true" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
