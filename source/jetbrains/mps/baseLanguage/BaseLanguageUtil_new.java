@@ -73,4 +73,11 @@ public class BaseLanguageUtil_new {
     return objectType;
   }
 
+  public static ClassifierType createStringClassType(SModel model, IScope scope) {
+    ClassConcept objectClass = SModelUtil_new.findNodeByFQName("java.lang.String", ClassConcept.class, scope);
+    ClassifierType objectType = ClassifierType.newInstance(model);
+    objectType.setClassifier(objectClass);
+    return objectType;
+  }
+
 }
