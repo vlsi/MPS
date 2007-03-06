@@ -8,13 +8,17 @@ public class SNodeGroupTreeNode extends TextTreeNode {
 
 
   public SNodeGroupTreeNode(SModelTreeNode model, String text) {
-    this(model, text, false);
+    this(model, null, text, false);
   }
 
-  public SNodeGroupTreeNode(SModelTreeNode model, String text, boolean autoDelete) {
+  public SNodeGroupTreeNode(SModelTreeNode model, SNodeGroupTreeNode group, String text) {
+    this(model, group, text, false);
+  }
+
+  public SNodeGroupTreeNode(SModelTreeNode model, SNodeGroupTreeNode parentGroup, String text, boolean autoDelete) {
     super(text);
 
-    model.register(this);
+    model.register(parentGroup, this);
 
     myAutoDelete = autoDelete;
   }
