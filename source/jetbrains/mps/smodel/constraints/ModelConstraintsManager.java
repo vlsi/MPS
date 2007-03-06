@@ -187,7 +187,7 @@ public class ModelConstraintsManager {
 
 //    System.out.println("find getter for <" + propertyName + "> in " + node.getDebugText());
 
-    String sourceConceptFqName = NameUtil.nodeConceptFQName(node.getNode());
+    String sourceConceptFqName = node.getConceptName();
     String sourceKey = sourceConceptFqName + "#" + propertyName;
 
     if (isSetter) {
