@@ -66,6 +66,22 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1173187696497">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1173187696498">
+            <property name="name" value="a" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ArrayType" id="1173187701031">
+              <node role="componentType" type="jetbrains.mps.baseLanguage.IntegerType" id="1173187696499" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1173187702939">
+          <node role="expression" type="jetbrains.mps.baseLanguage.ArrayAccessExpression" id="1173187703894">
+            <node role="array" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1173187702940">
+              <link role="variableDeclaration" targetNodeId="1173187696498" resolveInfo="a" />
+            </node>
+            <node role="index" type="jetbrains.mps.baseLanguage.Expression" id="1173187703895" />
+          </node>
+        </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1165629053277" />
     </node>

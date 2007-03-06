@@ -45,6 +45,7 @@ public class ArrayAccessExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    ArrayAccessExpression_Actions.setCellActions(editorCell, node, context);
     editorCell.putUserObject(EditorCell.CELL_ID, "1173175604827");
     editorCell.setLayoutConstraint("");
     return editorCell;
