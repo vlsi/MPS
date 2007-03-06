@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.structureLanguage.structure.DataTypeDeclaration;
-import jetbrains.mps.bootstrap.smodelLanguage.SModelLanguageUtil_new;
+import jetbrains.mps.bootstrap.smodelLanguage.SModelLanguageUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation;
 import jetbrains.mps.typesystem.TypeCheckerAccess;
 import jetbrains.mps.smodel.DataTypeUtil_new;
@@ -31,7 +31,7 @@ public class EnumMemberReference_enumMember_ReferentConstraint implements IModel
   }
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     if(SNodeOperations.isInstanceOf(enclosingNode, "jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation") || SNodeOperations.isInstanceOf(enclosingNode, "jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum")) {
-      DataTypeDeclaration datatype = SModelLanguageUtil_new.getDatatypeFromLeftExpression_Property(((SNodeOperation)SNodeOperations.getAdapter(enclosingNode)), TypeCheckerAccess.getTypeChecker());
+      DataTypeDeclaration datatype = SModelLanguageUtil.getDatatypeFromLeftExpression_Property(((SNodeOperation)SNodeOperations.getAdapter(enclosingNode)), TypeCheckerAccess.getTypeChecker());
       if(DataTypeUtil_new.isEnum(datatype)) {
         return true;
       }
@@ -39,7 +39,7 @@ public class EnumMemberReference_enumMember_ReferentConstraint implements IModel
     return false;
   }
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    DataTypeDeclaration datatype = SModelLanguageUtil_new.getDatatypeFromLeftExpression_Property(((SNodeOperation)SNodeOperations.getAdapter(enclosingNode)), TypeCheckerAccess.getTypeChecker());
+    DataTypeDeclaration datatype = SModelLanguageUtil.getDatatypeFromLeftExpression_Property(((SNodeOperation)SNodeOperations.getAdapter(enclosingNode)), TypeCheckerAccess.getTypeChecker());
     SNode datatypeNode = datatype.getNode();
     return new SimpleSearchScope(SLinkOperations.getTargets(datatypeNode, "member", true));
   }

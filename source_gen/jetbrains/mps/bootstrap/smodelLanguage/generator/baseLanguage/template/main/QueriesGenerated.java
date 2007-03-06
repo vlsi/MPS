@@ -13,7 +13,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.baseLanguage.util.Querie
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
-import jetbrains.mps.bootstrap.smodelLanguage.SModelLanguageUtil_new;
+import jetbrains.mps.bootstrap.smodelLanguage.SModelLanguageUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddNewChildOperation;
@@ -130,7 +130,7 @@ public class QueriesGenerated {
   public static String propertyMacro_GetPropertyValue_1169054430478(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode parmConcept = SLinkOperations.getTarget(node, "concept", false);
     if(parmConcept == null) {
-      parmConcept = SModelLanguageUtil_new.getLinkTargetConceptForLinkOperation(((Link_SetNewChildOperation)SNodeOperations.getAdapter(node))).getNode();
+      parmConcept = SModelLanguageUtil.getLinkTargetConceptForLinkOperation(((Link_SetNewChildOperation)SNodeOperations.getAdapter(node))).getNode();
     }
     return NameUtil.nodeFQName(parmConcept);
   }
@@ -153,7 +153,7 @@ public class QueriesGenerated {
   public static String propertyMacro_GetPropertyValue_1169057685014(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode parmConcept = SLinkOperations.getTarget(node, "concept", false);
     if(parmConcept == null) {
-      parmConcept = SModelLanguageUtil_new.getLinkTargetConceptForLinkOperation(((LinkList_AddNewChildOperation)SNodeOperations.getAdapter(node))).getNode();
+      parmConcept = SModelLanguageUtil.getLinkTargetConceptForLinkOperation(((LinkList_AddNewChildOperation)SNodeOperations.getAdapter(node))).getNode();
     }
     return NameUtil.nodeFQName(parmConcept);
   }
