@@ -274,8 +274,8 @@
                   <link role="classifier" extResolveInfo="20.[Classifier]EnumerationMemberDeclaration" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1170463736178">
-                  <link role="classConcept" extResolveInfo="7.[Classifier]DataTypeUtil_new" />
-                  <link role="baseMethodDeclaration" extResolveInfo="7.static method ([Classifier]DataTypeUtil_new).([StaticMethodDeclaration]getDefaultMember((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EnumerationDataTypeDeclaration])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EnumerationMemberDeclaration]))" />
+                  <link role="classConcept" extResolveInfo="7.[Classifier]DataTypeUtil" />
+                  <link role="baseMethodDeclaration" extResolveInfo="7.static method ([Classifier]DataTypeUtil).([StaticMethodDeclaration]getDefaultMember((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EnumerationDataTypeDeclaration])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EnumerationMemberDeclaration]))" />
                   <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1171297698494">
                     <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1171297699747" />
                     <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeTypeCastExpression" id="1171297720920">
@@ -381,8 +381,8 @@
                   <link role="classifier" extResolveInfo="20.[Classifier]EnumerationMemberDeclaration" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1171297821187">
-                  <link role="classConcept" extResolveInfo="7.[Classifier]DataTypeUtil_new" />
-                  <link role="baseMethodDeclaration" extResolveInfo="7.static method ([Classifier]DataTypeUtil_new).([StaticMethodDeclaration]getDefaultMember((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EnumerationDataTypeDeclaration])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EnumerationMemberDeclaration]))" />
+                  <link role="classConcept" extResolveInfo="7.[Classifier]DataTypeUtil" />
+                  <link role="baseMethodDeclaration" extResolveInfo="7.static method ([Classifier]DataTypeUtil).([StaticMethodDeclaration]getDefaultMember((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EnumerationDataTypeDeclaration])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EnumerationMemberDeclaration]))" />
                   <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1171297821188">
                     <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1171297821189" />
                     <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeTypeCastExpression" id="1171297821190">
@@ -704,8 +704,8 @@
               <link role="classifier" extResolveInfo="20.[Classifier]EnumerationMemberDeclaration" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1170702261833">
-              <link role="classConcept" extResolveInfo="7.[Classifier]DataTypeUtil_new" />
-              <link role="baseMethodDeclaration" extResolveInfo="7.static method ([Classifier]DataTypeUtil_new).([StaticMethodDeclaration]getDefaultMember((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EnumerationDataTypeDeclaration])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EnumerationMemberDeclaration]))" />
+              <link role="classConcept" extResolveInfo="7.[Classifier]DataTypeUtil" />
+              <link role="baseMethodDeclaration" extResolveInfo="7.static method ([Classifier]DataTypeUtil).([StaticMethodDeclaration]getDefaultMember((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EnumerationDataTypeDeclaration])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EnumerationMemberDeclaration]))" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.CastExpression" id="1171245941948">
                 <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1171245941949">
                   <link role="variableDeclaration" targetNodeId="1170702261822" resolveInfo="datatype" />
@@ -793,8 +793,8 @@
               <link role="classifier" extResolveInfo="20.[Classifier]EnumerationMemberDeclaration" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1170702390215">
-              <link role="classConcept" extResolveInfo="7.[Classifier]DataTypeUtil_new" />
-              <link role="baseMethodDeclaration" extResolveInfo="7.static method ([Classifier]DataTypeUtil_new).([StaticMethodDeclaration]getDefaultMember((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EnumerationDataTypeDeclaration])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EnumerationMemberDeclaration]))" />
+              <link role="classConcept" extResolveInfo="7.[Classifier]DataTypeUtil" />
+              <link role="baseMethodDeclaration" extResolveInfo="7.static method ([Classifier]DataTypeUtil).([StaticMethodDeclaration]getDefaultMember((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EnumerationDataTypeDeclaration])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EnumerationMemberDeclaration]))" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.CastExpression" id="1171246120426">
                 <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1171246120427">
                   <link role="variableDeclaration" targetNodeId="1170702390204" resolveInfo="datatype" />

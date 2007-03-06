@@ -205,8 +205,8 @@
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1159217451691">
                 <node role="condition" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1159217451692">
-                  <link role="classConcept" extResolveInfo="6.[Classifier]DataTypeUtil_new" />
-                  <link role="baseMethodDeclaration" extResolveInfo="6.static method ([Classifier]DataTypeUtil_new).([StaticMethodDeclaration]isEnum((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [DataTypeDeclaration])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
+                  <link role="classConcept" extResolveInfo="6.[Classifier]DataTypeUtil" />
+                  <link role="baseMethodDeclaration" extResolveInfo="6.static method ([Classifier]DataTypeUtil).([StaticMethodDeclaration]isEnum((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [DataTypeDeclaration])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1159217451695">
                     <link role="variableDeclaration" targetNodeId="1159217451684" resolveInfo="datatype" />
                   </node>
