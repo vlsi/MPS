@@ -9,6 +9,9 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
 import jetbrains.mps.baseLanguage.types.BaseLanguageTypesUtil_new;
 import jetbrains.mps.baseLanguage.structure.Expression;
+import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.baseLanguage.structure.ArrayType;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModel;
 
@@ -28,6 +31,14 @@ public class QueriesGenerated {
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1158965431412(SNode sourceNode, IScope scope, IOperationContext operationContext) {
     ClassifierType ct = BaseLanguageTypesUtil_new.tryObtain_ClassifierType(((Expression)SNodeOperations.getAdapter(sourceNode)));
     return ct != null;
+  }
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1173186369008(SNode sourceNode, IScope scope, IOperationContext operationContext) {
+    TypeChecker typeChecker = operationContext.getComponent(TypeChecker.class);
+    return BaseAdapter.fromNode(typeChecker.getTypeOf(sourceNode)) instanceof ArrayType;
+  }
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1173186583931(SNode sourceNode, IScope scope, IOperationContext operationContext) {
+    TypeChecker typeChecker = operationContext.getComponent(TypeChecker.class);
+    return BaseAdapter.fromNode(typeChecker.getTypeOf(sourceNode)) instanceof ArrayType;
   }
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_VariableDeclaration_1158969943216(SNode sourceNode, IScope scope, IOperationContext operationContext) {
     if(SLinkOperations.getTarget(sourceNode, "initializer", true) != null) {

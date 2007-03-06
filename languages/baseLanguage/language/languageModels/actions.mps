@@ -4,11 +4,15 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
-  <maxImportIndex value="17" />
+  <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
+  <maxImportIndex value="20" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="4" modelUID="jetbrains.mps.core.structure" />
   <import index="7" modelUID="jetbrains.mps.baseLanguage.types@java_stub" />
   <import index="17" modelUID="jetbrains.mps.baseLanguage.structure@java_stub" />
+  <import index="18" modelUID="jetbrains.mps.helgins.inference@java_stub" />
+  <import index="19" modelUID="jetbrains.mps.smodel@java_stub" />
+  <import index="20" modelUID="java.lang@java_stub" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions" id="1115842744505">
     <property name="name" value="BL_node_substitute" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1115842748115">
@@ -162,11 +166,85 @@
       <property name="actionsFactoryAspectId" value="ArrayAccessExpression" />
       <property name="description" value="transforms array into array access expression" />
       <link role="applicableConcept" targetNodeId="1.1068431790191" />
+      <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionFunction" id="1173186369008">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1173186369009">
+          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1173186489783">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1173186489784">
+              <property name="name" value="typeChecker" />
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1173186489785">
+                <link role="classifier" extResolveInfo="18.[Classifier]TypeChecker" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1173186502161">
+                <link role="baseMethodDeclaration" extResolveInfo="19.method ([Classifier]IOperationContext).([InstanceMethodDeclaration]getComponent((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Class, &lt;jetbrains.mps.baseLanguage.types.classifier [Object]&gt;])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object]))" />
+                <node role="instance" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_operationContext" id="1173186499237" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.ClassifierClassExpression" id="1173186513804">
+                  <link role="classifier" extResolveInfo="18.[Classifier]TypeChecker" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1173186393642">
+            <node role="expression" type="jetbrains.mps.baseLanguage.InstanceOfExpression" id="1173186567423">
+              <node role="classType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1173186576064">
+                <link role="classifier" extResolveInfo="17.[Classifier]ArrayType" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1173186639752">
+                <link role="baseMethodDeclaration" extResolveInfo="19.static method ([Classifier]BaseAdapter).([StaticMethodDeclaration]fromNode((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [INodeAdapter]))" />
+                <link role="classConcept" extResolveInfo="19.[Classifier]BaseAdapter" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1173186640341">
+                  <link role="baseMethodDeclaration" extResolveInfo="18.method ([Classifier]TypeChecker).([InstanceMethodDeclaration]getTypeOf((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
+                  <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1173186640342">
+                    <link role="variableDeclaration" targetNodeId="1173186489784" resolveInfo="typeChecker" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionParm_sourceNode" id="1173186640343" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1173177437060">
       <property name="actionsFactoryAspectId" value="ArrayLengthExpression" />
       <property name="description" value="transform array into array length expression" />
       <link role="applicableConcept" targetNodeId="1.1068431790191" />
+      <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionFunction" id="1173186583931">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1173186583932">
+          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1173186583933">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1173186583934">
+              <property name="name" value="typeChecker" />
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1173186583935">
+                <link role="classifier" extResolveInfo="18.[Classifier]TypeChecker" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1173186583936">
+                <link role="baseMethodDeclaration" extResolveInfo="19.method ([Classifier]IOperationContext).([InstanceMethodDeclaration]getComponent((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Class, &lt;jetbrains.mps.baseLanguage.types.classifier [Object]&gt;])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object]))" />
+                <node role="instance" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_operationContext" id="1173186583937" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.ClassifierClassExpression" id="1173186583938">
+                  <link role="classifier" extResolveInfo="18.[Classifier]TypeChecker" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1173186655121">
+            <node role="expression" type="jetbrains.mps.baseLanguage.InstanceOfExpression" id="1173186655122">
+              <node role="classType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1173186655123">
+                <link role="classifier" extResolveInfo="17.[Classifier]ArrayType" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1173186655124">
+                <link role="baseMethodDeclaration" extResolveInfo="19.static method ([Classifier]BaseAdapter).([StaticMethodDeclaration]fromNode((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [INodeAdapter]))" />
+                <link role="classConcept" extResolveInfo="19.[Classifier]BaseAdapter" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1173186655125">
+                  <link role="baseMethodDeclaration" extResolveInfo="18.method ([Classifier]TypeChecker).([InstanceMethodDeclaration]getTypeOf((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
+                  <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1173186655126">
+                    <link role="variableDeclaration" targetNodeId="1173186583934" resolveInfo="typeChecker" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionParm_sourceNode" id="1173186655127" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1140462494826">
       <property name="actionsFactoryAspectId" value="AddInitializer" />
@@ -324,8 +402,8 @@
       </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1140831852602">
-      <property name="transformTag" value="ext_1_RTransform" />
       <property name="actionsFactoryAspectId" value="NewExpression_addTypeParameter" />
+      <property name="transformTag" value="ext_1_RTransform" />
       <property name="description" value="add type parameters to new-expression" />
       <link role="applicableConcept" targetNodeId="1.1068581242872" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionFunction" id="1159200493867">
