@@ -13,6 +13,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
+import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.Status;
@@ -54,7 +55,7 @@ public class TypeChecker {
   private AdaptationManager myAdaptationManager;
   private QuotationEvaluator myQuotationEvaluator;
   private CopyEvaluator myCopyEvaluator;
-  private boolean myUsedForBLCompletion = false;
+  private boolean myUsedForBLCompletion = true;
 
   public TypeChecker() {
     myContextsManager = new ContextsManager(this);
@@ -376,6 +377,7 @@ public class TypeChecker {
     return myNodesWithErrors.get(node);
   }
 
+  @Hack
   public boolean isUsedForBLCompletion() {
     return myUsedForBLCompletion;
   }
@@ -386,16 +388,16 @@ public class TypeChecker {
 
   private static class MyReadAccessListener implements INodeReadAccessListener {
     protected HashSet<SNode> myNodesToDependOn = new HashSet<SNode>();
-    private Object LOCK = new Object();
+    private final Object myLock = new Object();
 
     public void readAccess(SNode node) {
-      synchronized(LOCK) {
+      synchronized(myLock) {
         myNodesToDependOn.add(node);
       }
     }
 
     public Set<SNode> getNodesToDependOn() {
-      synchronized(LOCK) {
+      synchronized(myLock) {
         return new HashSet<SNode>(myNodesToDependOn);
       }
     }
