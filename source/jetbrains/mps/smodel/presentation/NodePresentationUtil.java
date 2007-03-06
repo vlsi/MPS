@@ -110,7 +110,7 @@ public class NodePresentationUtil {
     if (alias != null) {
       return alias;
     }
-    return node.getConceptName();
+    return node.getShortConceptName();
   }
 
   public static String getRoleInParentOrConceptName(SNode node) {

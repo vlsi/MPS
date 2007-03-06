@@ -1225,7 +1225,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
       //e.printStackTrace();
       nameText = "<??name??>";
     }
-    return roleText + " " + NameUtil.shortNameFromLongName(getConceptName()) + " " + nameText + " in " + myModel.getUID();
+    return roleText + " " + NameUtil.shortNameFromLongName(getShortConceptName()) + " " + nameText + " in " + myModel.getUID();
   }
 
   @NotNull
@@ -1262,7 +1262,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
 //  }
 
   @NotNull
-  public String getConceptName() {
+  public String getShortConceptName() {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
     return getTypeFqName().substring(getTypeFqName().lastIndexOf('.') + 1);
   }
@@ -1274,7 +1274,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
     if (name != null && !name.equals("")) {
       return name;
     }
-    return getConceptName();
+    return getShortConceptName();
   }
 
   public boolean isDisposed() {

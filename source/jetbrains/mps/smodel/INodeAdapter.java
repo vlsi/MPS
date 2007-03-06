@@ -21,7 +21,7 @@ public interface INodeAdapter {
 
   String getName();
 
-  String getConceptName();
+  String getShortConceptName();
 
   SModel getModel();
 

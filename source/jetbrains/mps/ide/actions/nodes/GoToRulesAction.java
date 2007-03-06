@@ -143,7 +143,7 @@ public class GoToRulesAction extends MPSAction {
       for (final SNode node : list) {
         if(node == null) continue;
         String nodeName = node.getName();
-        if (nodeName == null || nodeName.equals("")) nodeName = node.getConceptName();
+        if (nodeName == null || nodeName.equals("")) nodeName = node.getShortConceptName();
         add(new AbstractAction(nodeName + " (" + node.getModel() + ")") {
           {
             putValue(Action.SMALL_ICON, IconManager.getIconFor(node));

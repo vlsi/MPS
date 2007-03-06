@@ -146,7 +146,7 @@ public class ExternalResolveInfoProvider {
   }
 
   public static String getExtResolveInfoForTargetClassConstructorDeclaration(ConstructorDeclaration constructorDeclaration) {
-    String conceptName = constructorDeclaration.getConceptName();
+    String conceptName = constructorDeclaration.getShortConceptName();
 
     ClassConcept classConcept = (ClassConcept) constructorDeclaration.getParent();
     String classifierExtResolveInfo = getExtResolveInfoForTargetClassGenericDeclaration(classConcept);
@@ -170,7 +170,7 @@ public class ExternalResolveInfoProvider {
 
   public static String getExtResolveInfoForTargetClassBaseMethodDeclaration(BaseMethodDeclaration baseMethodDeclaration) {
     String name = baseMethodDeclaration.getName();
-    String conceptName = baseMethodDeclaration.getConceptName();
+    String conceptName = baseMethodDeclaration.getShortConceptName();
 
 
     Pair<String, String> typeObject = adaptNode(baseMethodDeclaration.getReturnType());
@@ -215,7 +215,7 @@ public class ExternalResolveInfoProvider {
     String classExtResolveInfo = getExtResolveInfoForTargetClassGenericDeclaration(classConcept);
 
     String name = variableDeclaration.getName();
-    String conceptName = variableDeclaration.getConceptName();
+    String conceptName = variableDeclaration.getShortConceptName();
 
     String myExtResolveInfo = "[" + conceptName + "]" + name + " : ";
     Pair<String, String> typeObject = adaptNode(variableDeclaration.getType());
@@ -238,7 +238,7 @@ public class ExternalResolveInfoProvider {
     String classExtResolveInfo = getExtResolveInfoForTargetClassGenericDeclaration(enumClass);
 
     String name = enumConstantDeclaration.getName();
-    String conceptName = enumConstantDeclaration.getConceptName();
+    String conceptName = enumConstantDeclaration.getShortConceptName();
 
     String myExtResolveInfo  = "[" + conceptName + "]" + name;
     return ExternalResolver.ENUM_CONST + "("+ classExtResolveInfo + ")." + "(" + myExtResolveInfo + ")";
