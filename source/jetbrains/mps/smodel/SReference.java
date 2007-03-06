@@ -20,6 +20,8 @@ public class SReference {
   protected String myExtResolveInfo = "";
   protected SModelUID myTargetModelUID;
   protected String myResolveInfo;
+  private boolean myLoggingOff = false;
+  private static boolean ourLoggingOff = false;
 
   private SReference(String role, SNode sourceNode, String targetNodeId, String resolveInfo, String extResolveInfo, SModelUID targetModelUID) {
     this(role, sourceNode, targetModelUID, extResolveInfo);
@@ -156,11 +158,18 @@ public class SReference {
   }
 
   public boolean isResolved() {
-    if (getTargetNode() != null) return true;
-    if (ExternalResolver.isEmptyExtResolveInfo(myExtResolveInfo)) {
-      return (ExternalResolver.isEmptyExtResolveInfo(myResolveInfo));
+    boolean oldLoggingOff = myLoggingOff;
+    myLoggingOff = true;
+    try {
+      SNode targetNode = getTargetNode();
+      if (targetNode != null) return true;
+      if (ExternalResolver.isEmptyExtResolveInfo(myExtResolveInfo)) {
+        return (ExternalResolver.isEmptyExtResolveInfo(myResolveInfo));
+      }
+      return false;
+    } finally {
+      myLoggingOff = oldLoggingOff;
     }
-    return false;
   }
 
   public String getExtResolveInfo() {
@@ -229,13 +238,20 @@ public class SReference {
   // --- end new instance
   //
 
+  public static void disableLogging() {
+    ourLoggingOff = true;
+  }
 
+  public static void enableLogging() {
+    ourLoggingOff = false;
+  }
 
   protected void logGetTargetNodeErrors(GetTargetNodeErrorState errorState) {
     //skip errors in java stubs because they can have reference to classes that doesn't present
     //in class path
     if (mySourceNode.getModel().getStereotype().endsWith(SModelStereotype.JAVA_STUB)) return;
-    if (mySourceNode.getModel().getUserObject(SModel.TMP_MODEL) != null) return;    
+    if (mySourceNode.getModel().getUserObject(SModel.TMP_MODEL) != null) return;
+    if (myLoggingOff || ourLoggingOff) return;
 
     if (SNodeProxy.getOurSourceNode() == mySourceNode) return;
     if (errorState == GetTargetNodeErrorState.NO_MODEL_DESCRIPTOR) {

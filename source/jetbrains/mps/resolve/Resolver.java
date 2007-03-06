@@ -28,7 +28,10 @@ import java.util.*;
 public class Resolver {
 
 
-  public static void resolveReferences(Set<SReference> references, IOperationContext operationContext) {
+  /**
+   * @return unresolved references
+   * */
+  public static List<SReference> resolveReferences(Set<SReference> references, IOperationContext operationContext) {
     List<SReference> referencesToSort = new ArrayList<SReference>(references);
     Collections.sort(referencesToSort, new Comparator<SReference>() {
       public int compare(SReference o1, SReference o2) {
@@ -52,6 +55,7 @@ public class Resolver {
         break;
       }
     }
+    return referencesToSort;
   }
 
   public static void setResolveInfo(SReference reference) {

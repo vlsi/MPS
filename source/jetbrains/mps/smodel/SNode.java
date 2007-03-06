@@ -1186,17 +1186,25 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   @NotNull
   public Iterator<SNode> depthFirstChildren() {
+    return depthFirstChildren(false);
+  }
+  
+  @NotNull
+  public Iterator<SNode> depthFirstChildren(boolean addThis) {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
     List<SNode> allChildren = new ArrayList<SNode>();
-    putAggregationTree2List(this, allChildren);
+    putAggregationTree2List(this, allChildren, addThis);
     return allChildren.iterator();
   }
 
-  private void putAggregationTree2List(@NotNull SNode semanticNode, @NotNull List<SNode> allChildren) {
+  private void putAggregationTree2List(@NotNull SNode semanticNode, @NotNull List<SNode> allChildren, boolean addThis) {
     List<SNode> list = semanticNode.getChildren();
+    if (addThis) {
+      allChildren.add(semanticNode);
+    }
     for (SNode child : list) {
       allChildren.add(child);
-      putAggregationTree2List(child, allChildren);
+      putAggregationTree2List(child, allChildren, false);
     }
   }
 
