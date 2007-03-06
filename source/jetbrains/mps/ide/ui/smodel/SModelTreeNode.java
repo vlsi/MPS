@@ -62,7 +62,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   void register(SNodeGroupTreeNode parent, SNodeGroupTreeNode groupTreeNode) {
-
     if (parent == null) {
       int index = -1;
       for (int i = 0; i < myRootGroups.size(); i++) {
@@ -103,9 +102,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       if (index == -1) {
         index = lastGroupIndex;
       }
-
-      myRootGroups.add(index, groupTreeNode);
-
+      
       if (myInitialized) {
         DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
         treeModel.insertNodeInto(groupTreeNode, parent, index);
