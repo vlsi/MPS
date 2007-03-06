@@ -186,8 +186,8 @@
               </node>
             </node>
             <node role="condition" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1171541557728">
-              <link role="baseMethodDeclaration" extResolveInfo="5.static method ([Classifier]BaseAdapter).([StaticMethodDeclaration]isInstance((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Class])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
               <link role="classConcept" extResolveInfo="5.[Classifier]BaseAdapter" />
+              <link role="baseMethodDeclaration" extResolveInfo="5.static method ([Classifier]BaseAdapter).([StaticMethodDeclaration]isInstance((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Class, &lt;? extends jetbrains.mps.baseLanguage.types.classifier [INodeAdapter]&gt;])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1171541559472">
                 <link role="baseMethodDeclaration" extResolveInfo="5.method ([Classifier]SNode).([InstanceMethodDeclaration]getAttribute() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
                 <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.SemanticDowncastExpression" id="1171541559473">
@@ -329,8 +329,8 @@
               </node>
             </node>
             <node role="condition" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1171541864528">
-              <link role="baseMethodDeclaration" extResolveInfo="5.static method ([Classifier]BaseAdapter).([StaticMethodDeclaration]isInstance((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Class])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
               <link role="classConcept" extResolveInfo="5.[Classifier]BaseAdapter" />
+              <link role="baseMethodDeclaration" extResolveInfo="5.static method ([Classifier]BaseAdapter).([StaticMethodDeclaration]isInstance((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Class, &lt;? extends jetbrains.mps.baseLanguage.types.classifier [INodeAdapter]&gt;])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1171541867256">
                 <link role="baseMethodDeclaration" extResolveInfo="5.method ([Classifier]SNode).([InstanceMethodDeclaration]getAttribute() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
                 <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.SemanticDowncastExpression" id="1171541867257">
@@ -418,8 +418,8 @@
             </node>
             <node role="condition" type="jetbrains.mps.baseLanguage.NotExpression" id="1155904983392">
               <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1171542469622">
-                <link role="baseMethodDeclaration" extResolveInfo="5.static method ([Classifier]BaseAdapter).([StaticMethodDeclaration]isInstance((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Class])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
                 <link role="classConcept" extResolveInfo="5.[Classifier]BaseAdapter" />
+                <link role="baseMethodDeclaration" extResolveInfo="5.static method ([Classifier]BaseAdapter).([StaticMethodDeclaration]isInstance((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Class, &lt;? extends jetbrains.mps.baseLanguage.types.classifier [INodeAdapter]&gt;])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1171543535708">
                   <link role="variableDeclaration" targetNodeId="1155904921421" resolveInfo="linkNode" />
                 </node>
