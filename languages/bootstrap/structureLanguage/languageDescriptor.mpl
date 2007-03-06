@@ -6,6 +6,9 @@
   <typeSystem>
     <model modelUID="jetbrains.mps.bootstrap.structureLanguage.types" />
   </typeSystem>
+  <helginsTypeSystem>
+    <model modelUID="jetbrains.mps.bootstrap.structureLanguage.helgins" />
+  </helginsTypeSystem>
   <actions>
     <model modelUID="jetbrains.mps.bootstrap.structureLanguage.actions" />
   </actions>
@@ -29,8 +32,8 @@
       <models>
         <modelRoot path="${language_descriptor}\generator_new" namespacePrefix="jetbrains.mps.bootstrap.structureLanguage.generator_new" />
       </models>
-      <module>
-      </module>
+      <module />
+      <external-templates />
     </generator>
   </generators>
   <classPath />
