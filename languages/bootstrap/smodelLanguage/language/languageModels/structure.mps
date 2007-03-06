@@ -1124,21 +1124,5 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1138763325919" resolveInfo="applicable_to_link" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1173215057012">
-    <property name="name" value="SPropertyType" />
-    <link role="extends" targetNodeId="2.1068431790189" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1173216077209">
-      <property name="value" value="_SPROPERTY_" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1173216429018">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1173215071669">
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="propertyDeclaration" />
-      <link role="target" targetNodeId="3.1071489288299" />
-    </node>
-  </node>
 </model>
 
