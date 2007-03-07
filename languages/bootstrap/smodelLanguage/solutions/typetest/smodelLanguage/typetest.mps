@@ -651,6 +651,31 @@
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1173305408399" />
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1173306542132">
+      <property name="name" value="err_5" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1173306542133" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1173306542134">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1173306577161">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1173306577162">
+            <property name="name" value="ancestors" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1173306577163" />
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1173306577164">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1173306577165">
+                <link role="variableDeclaration" targetNodeId="1173306552869" resolveInfo="node" />
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAncestorsOperation" id="1173306577166">
+                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Inclusion" id="1173306590858" />
+                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Root" id="1173306594610" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1173306552869">
+        <property name="name" value="node" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1173306552870" />
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1170378849411">
     <property name="name" value="snode_property_test" />
