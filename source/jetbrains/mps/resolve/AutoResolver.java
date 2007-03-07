@@ -33,7 +33,7 @@ public class AutoResolver extends GenericEditorUpdater implements IGutterMessage
     return CHECK_DELAY;
   }
 
-  protected boolean updateEditor(AbstractEditorComponent editor) {
+  protected boolean updateEditor(final AbstractEditorComponent editor) {
     if (editor == null || editor.getRootCell() == null) {
       return false;
     }
@@ -52,16 +52,23 @@ public class AutoResolver extends GenericEditorUpdater implements IGutterMessage
     try {
       // resolve references
       Set<SReference> badReferences = collectBadReferences(editor);
-      int oldSize = badReferences.size();
-      yetBadReferences = Resolver.resolveReferences(badReferences, editor.getOperationContext());
-      int newSize = yetBadReferences.size();
-      someReferencesResolved = oldSize > newSize; 
+      if (!badReferences.isEmpty()) {
+        int oldSize = badReferences.size();
+        yetBadReferences = Resolver.resolveReferences(badReferences, editor.getOperationContext());
+        int newSize = yetBadReferences.size();
+        someReferencesResolved = oldSize > newSize;
+      }
     } finally {
       SReference.enableLogging();
     }
 
-    if (!someReferencesResolved) {
-      CommandProcessor.instance().doNotFireEvents();
+    if (someReferencesResolved) {
+      CommandProcessor.instance().invokeLater(new Runnable() {
+        public void run() {
+          editor.rebuildEditorContent();
+          editor.relayout();
+        }
+      });
     }
 
     // highlight nodes with errors
