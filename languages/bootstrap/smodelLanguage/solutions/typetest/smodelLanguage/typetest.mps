@@ -676,6 +676,28 @@
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1173306552870" />
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1173307411060">
+      <property name="name" value="ok_6" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1173307411061" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1173307411062">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1173307439102">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1173307439103">
+            <property name="name" value="next1" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1173307439101" />
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1173307429333">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1173307428223">
+                <link role="variableDeclaration" targetNodeId="1173307422767" resolveInfo="node" />
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetNextSiblingOperation" id="1173307433115" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1173307422767">
+        <property name="name" value="node" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1173307422768" />
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1170378849411">
     <property name="name" value="snode_property_test" />
