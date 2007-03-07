@@ -104,13 +104,15 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
     String smallPattern = pattern;
     List<INodeSubstituteAction> result = null;
     if (!strictMatching) {
-      while (smallPattern.length() > 0) {
-        if (myPatternsToActionListsCache.containsKey(smallPattern)) {
-          result = new ArrayList<INodeSubstituteAction>();
-          result.addAll(myPatternsToActionListsCache.get(smallPattern));
-          break;
-        } else {
-          smallPattern = smallPattern.substring(0, smallPattern.length() - 1);
+      if (smallPattern != null) {
+        while (smallPattern.length() > 0) {
+          if (myPatternsToActionListsCache.containsKey(smallPattern)) {
+            result = new ArrayList<INodeSubstituteAction>();
+            result.addAll(myPatternsToActionListsCache.get(smallPattern));
+            break;
+          } else {
+            smallPattern = smallPattern.substring(0, smallPattern.length() - 1);
+          }
         }
       }
     } else {
