@@ -662,19 +662,23 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1170379021492">
-          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1170379021493">
-            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1170379021494">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1170379021495">
-                <link role="variableDeclaration" targetNodeId="1170378905398" resolveInfo="node" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1173227657175">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1173227657176">
+            <property name="name" value="b" />
+            <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1173227657174" />
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1170379021493">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1170379021494">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1170379021495">
+                  <link role="variableDeclaration" targetNodeId="1170378905398" resolveInfo="node" />
+                </node>
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1170379021496">
+                  <link role="property" targetNodeId="6.1083152972672" />
+                </node>
               </node>
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1170379021496">
-                <link role="property" targetNodeId="6.1083152972672" />
-              </node>
-            </node>
-            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Property_HasValue_Simple" id="1170379021497">
-              <node role="value" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1170379030213">
-                <property name="value" value="10" />
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Property_HasValue_Simple" id="1170379021497">
+                <node role="value" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1170379030213">
+                  <property name="value" value="10" />
+                </node>
               </node>
             </node>
           </node>
@@ -828,7 +832,7 @@
               </node>
             </node>
             <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Property_HasValue_Simple" id="1170379316022">
-              <node role="value" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1170379320368">
+              <node role="value" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1173228238191">
                 <property name="value" value="10" />
               </node>
             </node>
