@@ -1704,6 +1704,34 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1173297988874">
+      <property name="name" value="ok_child" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1173297988875" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1173297988876">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1173298050477">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1173298050478">
+            <property name="name" value="statements" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1173298050476">
+              <link role="elementConcept" targetNodeId="6.1068580123157" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1173298040709">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1173298040661">
+                <link role="variableDeclaration" targetNodeId="1173298018939" resolveInfo="node" />
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkListAccess" id="1173298043663">
+                <link role="link" targetNodeId="6.1068581517665" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1173298018939">
+        <property name="name" value="node" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1173298018940">
+          <link role="concept" targetNodeId="6.1068580123136" />
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
