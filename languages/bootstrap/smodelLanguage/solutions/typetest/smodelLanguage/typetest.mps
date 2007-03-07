@@ -2,13 +2,14 @@
 <model name="smodelLanguage.typetest">
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
-  <maxImportIndex value="13" />
+  <maxImportIndex value="14" />
   <import index="1" modelUID="java.lang@java_stub" />
   <import index="3" modelUID="jetbrains.mps.smodel@java_stub" />
   <import index="6" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="7" modelUID="jetbrains.mps.core.structure" />
   <import index="8" modelUID="jetbrains.mps.baseLanguage@java_stub" />
   <import index="13" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
+  <import index="14" modelUID="jetbrains.mps.baseLanguage.structure@java_stub" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1170371320095">
     <property name="name" value="smodel_test" />
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1170371357833">
@@ -219,6 +220,44 @@
             </node>
             <node role="rValue" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1170377861435">
               <link role="variableDeclaration" targetNodeId="1170377823966" resolveInfo="n" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1173300672162">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1173300672163">
+            <property name="name" value="model" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SModelType" id="1173300672161" />
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1173300665456">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1173300662017">
+                <link role="variableDeclaration" targetNodeId="1170377711989" resolveInfo="node" />
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetModelOperation" id="1173300667472" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1173300901556">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1173300901557">
+            <property name="name" value="children" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1173300901555" />
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1173300894022">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1173300892677">
+                <link role="variableDeclaration" targetNodeId="1170377711989" resolveInfo="node" />
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetChildrenOperation" id="1173300894789" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1173301735521">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1173301735522">
+            <property name="name" value="adapter" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1173301735520">
+              <link role="classifier" extResolveInfo="14.[Classifier]VariableDeclaration" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1173301639397">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1173301639365">
+                <link role="variableDeclaration" targetNodeId="1170377711989" resolveInfo="node" />
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1173301641304" />
             </node>
           </node>
         </node>
