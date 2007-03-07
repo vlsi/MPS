@@ -4,6 +4,10 @@ import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.ide.EditorsPane;
+import jetbrains.mps.ide.navigation.NavigationActionProcessor;
+import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.ide.usageView.UsagesModel_AspectMethods;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
@@ -15,6 +19,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.FrameUtil;
 import jetbrains.mps.util.IDisposable;
+import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 
 import java.awt.Frame;
 import java.rmi.RemoteException;
@@ -49,7 +54,11 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
 
       SNode node = descriptor.getSModel().getNodeById(id);
       if (node != null) {
-        getProjectWindow().openNode(node, ModuleContext.create(node, getProjectWindow()));
+        IDEProjectFrame frame = getProjectWindow();
+        ModuleContext operationContext = ModuleContext.create(node, getProjectWindow());
+        EditorsPane pane = frame.getEditorsPane();
+        IEditor editor = pane.openEditor(node, operationContext);
+        NavigationActionProcessor.executeNavigationAction(new EditorNavigationCommand(node, editor, pane), operationContext);
       }
     }
 
