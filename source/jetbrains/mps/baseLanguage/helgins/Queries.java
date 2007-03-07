@@ -7,6 +7,9 @@ import jetbrains.mps.helgins.structure.RuntimeErrorType;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.typesystem.TSStatus;
+import jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess;
+import jetbrains.mps.project.GlobalScope;
 
 import java.util.Set;
 
@@ -18,10 +21,10 @@ import java.util.Set;
  * To change this template use File | Settings | File Templates.
  */
 public class Queries {
-  public static Object CustomExpression_getBinaryOperationType(Object... args)  {
+  public static Object CustomExpression_getBinaryOperationType(Object... args) {
     for (int i = 0; i <= 1; i++) {
       if (args[i] instanceof Omega) {
-        return args[1-i];
+        return args[1 - i];
       }
     }
     SNode leftType = (SNode) args[0];
@@ -55,5 +58,10 @@ public class Queries {
       return runtimeErrorType;
     }
     return lowestCommonSupertypes.iterator().next();
+  }
+
+  public static Object CustomExpression_hasConceptProperty_lvalue(Object... args) {
+    SNode node = (SNode) args[0];
+    return node.hasConceptProperty("lvalue", GlobalScope.getInstance());
   }
 }
