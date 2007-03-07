@@ -3,6 +3,7 @@ package jetbrains.mps.ide.projectPane;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.ToStringComparator;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -53,23 +54,7 @@ public class SortUtil {
 
   public static List<SNode> sortNodes(List<SNode> nodes) {
     List<SNode> sortedNodes = new ArrayList<SNode>(nodes);
-    Collections.sort(sortedNodes, new Comparator() {
-      public int compare(Object o, Object o1) {
-        if (o == o1) {
-          return 0;
-        }
-        String name1 = ((SNode) o).getName();
-        String name2 = ((SNode) o1).getName();
-        if (name1 == null) name1 = "";
-        if (name2 == null) name2 = "";
-
-        if (name1.equals(name2)) {
-          // allow duplications
-          return o.hashCode() < o1.hashCode() ? -1 : 1;
-        }
-        return name1.compareTo(name2);
-      }
-    });
+    Collections.sort(sortedNodes, new ToStringComparator());
     return sortedNodes;
   }
 }
