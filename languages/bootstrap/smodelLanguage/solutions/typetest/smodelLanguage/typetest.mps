@@ -1724,6 +1724,39 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1173298190954">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1173298190955">
+            <property name="name" value="statements1" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1173298190953">
+              <link role="elementConcept" targetNodeId="6.1068580123157" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1173298173889">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1173298169325">
+                <link role="variableDeclaration" targetNodeId="1173298018939" resolveInfo="node" />
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkListAccessAsList" id="1173298177436">
+                <link role="link" targetNodeId="6.1068581517665" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1173298436801">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1173298436802">
+            <property name="name" value="count" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1173298436800" />
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1173298430126">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1173298426530">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1173298425232">
+                  <link role="variableDeclaration" targetNodeId="1173298018939" resolveInfo="node" />
+                </node>
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkListAccess" id="1173298429062">
+                  <link role="link" targetNodeId="6.1068581517665" />
+                </node>
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.LinkList_GetCountOperation" id="1173298431424" />
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1173298018939">
         <property name="name" value="node" />
