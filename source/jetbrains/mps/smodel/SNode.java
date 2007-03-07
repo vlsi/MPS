@@ -650,7 +650,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
     if (count > 1) {
       String errorMessage = "ERROR: " + count + " children for role " + role + " in " + NameUtil.shortNameFromLongName(getClass().getName()) + "[" + getId() + "] " + getModel().getUID() + "\n";
       errorMessage += "they are : " + getChildren(role);
-      LOG.errorWithTrace(errorMessage);
+      LOG.error(errorMessage, this);
 
     }
     // tmp check
