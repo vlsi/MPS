@@ -30,7 +30,7 @@ public class Node_IsRoleOperation_linkInParent_ReferentConstraint implements IMo
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsRoleOperation", "linkInParent");
   }
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    return SLinkOperations.getTarget(referenceNode, "conceptOfParent", false) != null;
+    return (SLinkOperations.getTarget(referenceNode, "conceptOfParent", false) != null);
   }
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     SNode conceptOfParent = SLinkOperations.getTarget(referenceNode, "conceptOfParent", false);

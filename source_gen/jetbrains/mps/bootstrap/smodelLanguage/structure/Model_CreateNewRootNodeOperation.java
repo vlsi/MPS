@@ -6,10 +6,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
-public class Model_CreateNewRootNodeOperation extends SNodeOperation {
-  public static String CONCEPT = "concept";
+public class Model_CreateNewRootNodeOperation extends Model_CreateNewNodeOperation {
 
   public  Model_CreateNewRootNodeOperation(SNode node) {
     super(node);
@@ -20,12 +18,5 @@ public class Model_CreateNewRootNodeOperation extends SNodeOperation {
   }
   public static Model_CreateNewRootNodeOperation newInstance(SModel sm) {
     return Model_CreateNewRootNodeOperation.newInstance(sm, false);
-  }
-
-  public ConceptDeclaration getConcept() {
-    return (ConceptDeclaration)this.getReferent(Model_CreateNewRootNodeOperation.CONCEPT);
-  }
-  public void setConcept(ConceptDeclaration node) {
-    super.setReferent(Model_CreateNewRootNodeOperation.CONCEPT, node);
   }
 }
