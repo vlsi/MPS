@@ -10,7 +10,6 @@
   <import index="4" modelUID="jetbrains.mps.smodel.search@java_stub" />
   <import index="6" modelUID="jetbrains.mps.smodel@java_stub" />
   <import index="7" modelUID="jetbrains.mps.bootstrap.smodelLanguage@java_stub" />
-  <import index="8" modelUID="jetbrains.mps.typesystem@java_stub" />
   <import index="9" modelUID="jetbrains.mps.core.structure" />
   <import index="11" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraintSet" id="1149280386921">

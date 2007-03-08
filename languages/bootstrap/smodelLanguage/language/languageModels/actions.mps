@@ -12,7 +12,6 @@
   <import index="6" modelUID="jetbrains.mps.bootstrap.smodelLanguage.types@java_stub" />
   <import index="7" modelUID="jetbrains.mps.smodel@java_stub" />
   <import index="8" modelUID="java.util@java_stub" />
-  <import index="9" modelUID="jetbrains.mps.core.structure" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions" id="1138078942005">
     <property name="name" value="SModelLang_node_substitute" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1138413233760">
