@@ -1,17 +1,20 @@
 package jetbrains.mps.baseLanguage.helgins;
 
-import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.baseLanguage.structure.ClassifierType;
+import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.formulaLanguage.evaluator.Omega;
 import jetbrains.mps.helgins.structure.RuntimeErrorType;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.typesystem.TSStatus;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.refactoring.CopyUtil;
 
 import java.util.Set;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
@@ -63,5 +66,61 @@ public class Queries {
   public static Object CustomExpression_hasConceptProperty_lvalue(Object... args) {
     SNode node = (SNode) args[0];
     return node.hasConceptProperty("lvalue", GlobalScope.getInstance());
+  }
+
+  @Hack
+  public static Object CustomExpression_classifierTypeSuperTypes(Object... args) {
+    ClassifierType clt = (ClassifierType) BaseAdapter.fromNode((SNode) args[0]);
+    List<SNode> result = new ArrayList<SNode>();
+
+    Classifier classifier = clt.getClassifier();
+    if (classifier instanceof ClassConcept) {
+      for (ClassifierType interfaceType : ((ClassConcept)classifier).getImplementedInterfaces()) {
+        result.add(BaseAdapter.fromAdapter(supertypeByDeclaration(clt, interfaceType)));
+      }
+      ClassifierType superclass = ((ClassConcept) classifier).getSuperclass();
+      if (superclass != null) {
+        result.add(BaseAdapter.fromAdapter(supertypeByDeclaration(clt, superclass)));
+      }
+    }
+    if (classifier instanceof Interface) {
+      for (ClassifierType interfaceType : ((Interface) classifier).getExtendedInterfaces()) {
+        result.add(BaseAdapter.fromAdapter(supertypeByDeclaration(clt, interfaceType)));
+      }
+    }
+    return result;
+  }
+
+  @Hack
+  private static ClassifierType supertypeByDeclaration(ClassifierType subType,  ClassifierType declaredSupertype) {
+    Classifier cls = subType.getClassifier();
+    List<TypeVariableDeclaration> declarations = cls.getTypeVariableDeclarations();
+    List<Type> typeParameters = subType.getParameters();
+    SModel model = TypeChecker.getInstance().getRuntimeTypesModel();
+    ClassifierType result = CopyUtil.copy(declaredSupertype, model);
+    for (Type t : result.getParameters()) {
+      if (t instanceof TypeVariableReference) {
+        TypeVariableReference ref = (TypeVariableReference) t;
+        int i = declarations.indexOf(ref.getTypeVariableDeclaration());
+        Type newT = null;
+        if (i > -1 && i < typeParameters.size()) {
+          newT = typeParameters.get(i);
+        }
+        if (newT != null) {
+          newT = CopyUtil.copy(newT, model);
+          result.replaceChild(t, newT);
+        } else {
+          result.removeChild(t);
+        }
+      }
+    }
+    return result;
+  }
+
+  @Hack
+  public static Object CustomExpression_arrayTypeSuperTypes(Object... args) {   //todo
+    ArrayType art = (ArrayType) BaseAdapter.fromNode((SNode) args[0]);
+    List<SNode> result = new ArrayList<SNode>();
+    return result;
   }
 }

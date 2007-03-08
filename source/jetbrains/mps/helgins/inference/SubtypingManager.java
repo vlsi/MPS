@@ -173,7 +173,7 @@ public class SubtypingManager {
     return result;
   }
 
-  public List<SNode> getSupertypesOrSubtypes(SNode term, AnalyzedTermDeclaration analyzedTermDeclaration, Expression targetExpression) {
+  private List<SNode> getSupertypesOrSubtypes(SNode term, AnalyzedTermDeclaration analyzedTermDeclaration, Expression targetExpression) {
 
     /*
     matching
@@ -197,9 +197,12 @@ public class SubtypingManager {
     expressionContext.putNode(analyzedTermDeclaration, term);
 
     Object supertypeO = ExpressionEvaluatorManager.evaluate(expressionContext, targetExpression);
+    List<SNode> result = new ArrayList<SNode>();
     if (supertypeO instanceof SNode) {
-      List<SNode> result = new ArrayList<SNode>();
-      result.add((SNode) supertypeO);
+      SNode supernode = (SNode) supertypeO;
+      if (!MatchingUtil.matchNodes(supernode, term)) {
+        result.add(supernode);
+      }
       return result;
     }
     if (supertypeO instanceof List) {
@@ -208,9 +211,13 @@ public class SubtypingManager {
         if (!(o instanceof SNode)) {
           isCorrect = false;
           break;
+        } else {
+          if (!MatchingUtil.matchNodes((SNode) o, term)) {
+            result.add((SNode) o);
+          }
         }
       }
-      if (isCorrect) return (List<SNode>) supertypeO;
+      if (isCorrect) return result;
     }
     return null;
   }
