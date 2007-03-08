@@ -285,6 +285,18 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1173384992642">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1173384992643">
+            <property name="name" value="concept" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SConceptType" id="1173384992641" />
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1173384801743">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1173384800273">
+                <link role="variableDeclaration" targetNodeId="1170377711989" resolveInfo="node" />
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetConceptOperation" id="1173384808119" />
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1170377711989">
         <property name="name" value="node" />
