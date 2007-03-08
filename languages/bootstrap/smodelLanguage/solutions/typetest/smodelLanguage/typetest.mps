@@ -2360,6 +2360,65 @@
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1173394308735" />
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1173394686982">
+      <property name="name" value="ok_2" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1173394686983" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1173394686984">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1173394819939">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1173394819940">
+            <property name="name" value="concept" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SConceptType" id="1173394819938" />
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.ConceptRefExpression" id="1173394692033">
+              <link role="conceptDeclaration" targetNodeId="6.1068580123159" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1173394871839">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1173394871840">
+            <property name="name" value="b1" />
+            <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1173394871838" />
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1173394836883">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.ConceptRefExpression" id="1173394830413">
+                <link role="conceptDeclaration" targetNodeId="6.1068580123159" />
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Concept_IsExactlyOperation" id="1173394840665">
+                <link role="conceptDeclaration" targetNodeId="6.1068580123159" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1173394887281">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1173394891814">
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.ConceptRefExpression" id="1173394887282">
+              <link role="conceptDeclaration" targetNodeId="6.1068580123159" />
+            </node>
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Concept_IsAssignableFromOperation" id="1173394893721">
+              <node role="sconceptExpression" type="jetbrains.mps.bootstrap.smodelLanguage.ConceptRefExpression" id="1173394955082">
+                <link role="conceptDeclaration" targetNodeId="6.1068580123157" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1173394939914">
+      <property name="name" value="err_2" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1173394939915" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1173394939916">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1173394949077">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1173394949078">
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.ConceptRefExpression" id="1173394949079">
+              <link role="conceptDeclaration" targetNodeId="6.1068580123159" />
+            </node>
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Concept_IsAssignableFromOperation" id="1173394949080">
+              <node role="sconceptExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1173394949081">
+                <property name="value" value="10" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
