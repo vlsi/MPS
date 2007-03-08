@@ -1,7 +1,6 @@
 package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.formulaLanguage.evaluator.ExpressionContext;
 import jetbrains.mps.formulaLanguage.evaluator.ExpressionEvaluatorManager;
 import jetbrains.mps.formulaLanguage.structure.Expression;
@@ -9,7 +8,6 @@ import jetbrains.mps.helgins.structure.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.patterns.util.MatchingUtil;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mpswiki.queryLanguage.structure.VariableCondition;
 import jetbrains.mpswiki.queryLanguage.structure.QueryPattern;
 import jetbrains.mpswiki.queryLanguage.evaluator.ConditionMatcher;
@@ -80,9 +78,40 @@ public class SubtypingManager {
     SNode subRepresentator = myTypeChecker.getEquationManager().getRepresentator(subtype);
     SNode superRepresentator = myTypeChecker.getEquationManager().getRepresentator(supertype);
 
-
-    // transitivity:
     //supertypes
+    Matcher m1 = new MySimpleMatcher(superRepresentator);
+    if (searchInSupertypes(subRepresentator, m1)) return true;
+
+    //subtypes
+    Matcher m2 = new MySimpleMatcher(subRepresentator);
+    if (searchInSubtypes(superRepresentator, m2)) return true;
+
+    return false;
+  }
+
+  private boolean searchInSubtypes(SNode superRepresentator, Matcher m) {
+    Set<SNode> frontier = new HashSet<SNode>();
+    Set<SNode> newFrontier = new HashSet<SNode>();
+    frontier.add(superRepresentator);
+    while (!frontier.isEmpty()) {
+      for (SNode node : frontier) {
+        Set<SNode> descendants = collectSubtypes(node);
+        if (descendants == null) continue;
+        descendants.remove(node);
+        for (SNode descendant : descendants) {
+          if (m.matches(descendant)) {
+            return true;
+          }
+        }
+        newFrontier.addAll(descendants);
+      }
+      frontier = newFrontier;
+      newFrontier = new HashSet<SNode>();
+    }
+    return false;
+  }
+
+  private boolean searchInSupertypes(SNode subRepresentator, Matcher m) {
     Set<SNode> frontier = new HashSet<SNode>();
     Set<SNode> newFrontier = new HashSet<SNode>();
     frontier.add(subRepresentator);
@@ -92,7 +121,7 @@ public class SubtypingManager {
         if (ancestors == null) continue;
         ancestors.remove(node);
         for (SNode ancestor : ancestors) {
-          if (MatchingUtil.matchNodes(ancestor,  superRepresentator)) {
+          if (m.matches(ancestor)) {
             return true;
           }
         }
@@ -101,27 +130,6 @@ public class SubtypingManager {
       frontier = newFrontier;
       newFrontier = new HashSet<SNode>();
     }
-
-    //subtypes
-    frontier = new HashSet<SNode>();
-    newFrontier = new HashSet<SNode>();
-    frontier.add(superRepresentator);
-    while (!frontier.isEmpty()) {
-      for (SNode node : frontier) {
-        Set<SNode> descendants = collectSubtypes(node);
-        if (descendants == null) continue;
-        descendants.remove(node);
-        for (SNode descendant : descendants) {
-          if (MatchingUtil.matchNodes(descendant,  superRepresentator)) {
-            return true;
-          }
-        }
-        newFrontier.addAll(descendants);
-      }
-      frontier = newFrontier;
-      newFrontier = new HashSet<SNode>();
-    }
-
     return false;
   }
 
@@ -304,6 +312,16 @@ public class SubtypingManager {
     return commonSupertypes;
   }
 
+  public boolean coerceSubtyping(SNode subtype, AnalyzedTermDeclaration analyzedTermDeclaration, ExpressionContext context) {
+    MyCoersionMatcher coersionMatcher = new MyCoersionMatcher(analyzedTermDeclaration, context);
+    return searchInSupertypes(subtype, coersionMatcher);
+  }
+
+  public boolean coerceSupertyping(SNode supertype, AnalyzedTermDeclaration analyzedTermDeclaration, ExpressionContext context) {
+    MyCoersionMatcher coersionMatcher = new MyCoersionMatcher(analyzedTermDeclaration, context);
+    return searchInSubtypes(supertype, coersionMatcher);
+  }
+
   public static interface SupertypesCollector<T> {
     Set<T> collectSupertypes(T subtype);
   }
@@ -316,6 +334,53 @@ public class SubtypingManager {
     }
     public Set<SNode> collectSupertypes(SNode subtype) {
       return mySubtypingManager.collectSupertypes(subtype);
+    }
+  }
+
+  private static interface Matcher {
+    boolean matches(SNode nodeToMatch);
+  }
+
+  private static class MySimpleMatcher implements Matcher {
+    private SNode myPattern;
+
+    public MySimpleMatcher(SNode pattern) {
+      myPattern = pattern;
+    }
+
+    public boolean matches(SNode nodeToMatch) {
+      return MatchingUtil.matchNodes(nodeToMatch, myPattern);
+    }
+  }
+
+  private static class MyCoersionMatcher implements Matcher {
+    ConditionMatcher myConditionMatcher;
+    AnalyzedTermDeclaration myAnalyzedTermDeclaration;
+    ExpressionContext myExpressionContext;
+    private boolean myIsInvalid = false;
+
+    public MyCoersionMatcher(AnalyzedTermDeclaration analyzedTermDeclaration, ExpressionContext expressionContext) {
+      myAnalyzedTermDeclaration = analyzedTermDeclaration;
+      VariableCondition condition = analyzedTermDeclaration.getCondition();
+      try {
+        myConditionMatcher = new ConditionMatcher(condition);
+      } catch(InvalidConditionException ex) {
+        LOG.error("invalid condition in a coersion rule", condition);
+        myIsInvalid = true;
+      }
+      myExpressionContext = expressionContext;
+    }
+
+    public boolean matches(SNode nodeToMatch) {
+      boolean b = myConditionMatcher.matchesCondition(nodeToMatch, myExpressionContext);
+      if (b) {
+        myExpressionContext.putValue(myAnalyzedTermDeclaration, nodeToMatch);
+      }
+      return b;
+    }
+
+    public boolean isInvalid() {
+      return myIsInvalid;
     }
   }
 }
