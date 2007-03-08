@@ -297,6 +297,20 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1173385178523">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1173385178524">
+            <property name="name" value="b1" />
+            <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1173385178522" />
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1173385164286">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1173385162394">
+                <link role="variableDeclaration" targetNodeId="1170377711989" resolveInfo="node" />
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1173385166521">
+                <link role="concept" targetNodeId="6.1068431474542" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1170377711989">
         <property name="name" value="node" />
