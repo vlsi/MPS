@@ -6,6 +6,9 @@
   <typeSystem>
     <model modelUID="jetbrains.mps.transformation.TLBase.types" />
   </typeSystem>
+  <helginsTypeSystem>
+    <model modelUID="jetbrains.mps.transformation.TLBase.helgins" />
+  </helginsTypeSystem>
   <actions>
     <model modelUID="jetbrains.mps.transformation.TLBase.actions" />
   </actions>
@@ -32,6 +35,7 @@
         <moduleRoot path="${mps_home}\languages\baseLanguage\language\baseLanguage.mpl" />
         <moduleRoot path="${mps_home}\languages\core\languageDescriptor.mpl" />
       </module>
+      <external-templates />
     </generator>
   </generators>
   <classPath />
