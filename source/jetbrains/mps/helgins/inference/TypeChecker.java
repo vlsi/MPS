@@ -173,13 +173,13 @@ public class TypeChecker {
     myEquationManager.solveInequations();
 
     // main context
-    Set<Pair<SNode, SNode>> mainContext = myContextsManager.getMainContext();
+    Map<SNode, SNode> mainContext = myContextsManager.getMainContext();
 
     // setting types to nodes
-    for (Pair<SNode, SNode> contextEntry : mainContext) {
-      SNode term = contextEntry.o1;
+    for (Map.Entry<SNode, SNode> contextEntry : mainContext.entrySet()) {
+      SNode term = contextEntry.getKey();
       if (term == null) continue;
-      SNode type = expandType(contextEntry.o2, myInterpretator.getRuntimeTypesModel());
+      SNode type = expandType(contextEntry.getValue(), myInterpretator.getRuntimeTypesModel());
       if (BaseAdapter.isInstance(type, RuntimeErrorType.class)) {
         reportTypeError(term, ((RuntimeErrorType) BaseAdapter.fromNode(type)).getErrorText());
       }
