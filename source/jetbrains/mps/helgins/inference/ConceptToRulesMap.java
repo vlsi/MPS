@@ -1,6 +1,7 @@
 package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 import java.util.*;
 
@@ -12,7 +13,7 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class ConceptToRulesMap<T>  {
-  private Map<ConceptDeclaration, Set<T>> myMap = new HashMap<ConceptDeclaration, Set<T>>();
+  private Map<AbstractConceptDeclaration, Set<T>> myMap = new HashMap<AbstractConceptDeclaration, Set<T>>();
 
   public int size() {
     return myMap.size();
@@ -22,11 +23,11 @@ public class ConceptToRulesMap<T>  {
     return myMap.isEmpty();
   }
 
-  public Set<T> put(ConceptDeclaration key, Set<T> value) {
+  public Set<T> put(AbstractConceptDeclaration key, Set<T> value) {
     return myMap.put(key, value);
   }
 
-  public void putRule(ConceptDeclaration conceptDeclaration, T rule) {
+  public void putRule(AbstractConceptDeclaration conceptDeclaration, T rule) {
     Set<T> rules = myMap.get(conceptDeclaration);
     if (rules == null) {
       rules = new HashSet<T>();
@@ -53,13 +54,14 @@ public class ConceptToRulesMap<T>  {
   }
 
   public void makeConsistent() {
-    for (ConceptDeclaration conceptDeclaration : myMap.keySet()) {
+    for (AbstractConceptDeclaration conceptDeclaration : myMap.keySet()) {
       if (conceptDeclaration == null) {
         continue;
       }
       Set<T> rules = myMap.get(conceptDeclaration);
       if (rules == null) continue;
-      ConceptDeclaration parent = conceptDeclaration.getExtends();
+      if(!(conceptDeclaration instanceof ConceptDeclaration)) continue;
+      ConceptDeclaration parent = ((ConceptDeclaration)conceptDeclaration).getExtends();
       while (parent != null) {
         Set<T> parentRules = myMap.get(parent);
         if (parentRules != null) {

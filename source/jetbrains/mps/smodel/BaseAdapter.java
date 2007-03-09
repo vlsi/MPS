@@ -1,10 +1,10 @@
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptLink;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -106,11 +106,11 @@ public abstract class BaseAdapter implements INodeAdapter {
     return myNode.getConceptLinks(linkName, lookupHierarchy, scope);
   }
 
-  public final ConceptDeclaration getConceptDeclaration(IScope scope) {
+  public final AbstractConceptDeclaration getConceptDeclaration(IScope scope) {
     return getNode().getConceptDeclarationAdapter(scope);
   }
 
-  public final ConceptDeclaration getConceptDeclarationAdapter() {
+  public final AbstractConceptDeclaration getConceptDeclarationAdapter() {
     return getNode().getConceptDeclarationAdapter();
   }
 
@@ -499,7 +499,7 @@ public abstract class BaseAdapter implements INodeAdapter {
     return cls.isInstance(fromNode(node));
   }
 
-  public ConceptDeclaration getNodeConcept() {
+  public AbstractConceptDeclaration getNodeConcept() {
     return getConceptDeclaration(GlobalScope.getInstance());
   }
 

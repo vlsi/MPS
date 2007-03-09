@@ -1549,9 +1549,9 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   public ConceptProperty findConceptProperty(String propertyName, IScope scope) {
     INodeAdapter node = getAdapter();
-    ConceptDeclaration conceptDeclaration;
-    if (node instanceof ConceptDeclaration) {
-      conceptDeclaration = (ConceptDeclaration) node;
+    AbstractConceptDeclaration conceptDeclaration;
+    if (node instanceof AbstractConceptDeclaration) {
+      conceptDeclaration = (AbstractConceptDeclaration) node;
     } else {
       conceptDeclaration = node.getConceptDeclaration(scope);
     }

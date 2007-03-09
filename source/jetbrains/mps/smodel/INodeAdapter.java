@@ -1,13 +1,13 @@
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptLink;
+import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.util.Condition;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptLink;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
-import java.util.List;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * Igor Alshannikov
@@ -45,9 +45,12 @@ public interface INodeAdapter {
 
   List<ConceptLink> getConceptLinks(String linkName, boolean lookupHierarchy, IScope scope);
 
-  ConceptDeclaration getConceptDeclaration(IScope scope);
+  /**
+   * @deprecated 
+   */
+  AbstractConceptDeclaration getConceptDeclaration(IScope scope);
 
-  ConceptDeclaration getConceptDeclarationAdapter();
+  AbstractConceptDeclaration getConceptDeclarationAdapter();
 
   void replaceChild(INodeAdapter c1, INodeAdapter c2);
 
@@ -139,7 +142,10 @@ public interface INodeAdapter {
 
   List<? extends INodeAdapter> getLinkAttributes(String role, String linkRole);
 
-  ConceptDeclaration getNodeConcept();
+  /**
+   * @deprecated
+   */
+  AbstractConceptDeclaration getNodeConcept();
 
   String getRole_();
 

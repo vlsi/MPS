@@ -63,7 +63,7 @@
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="target" />
-      <link role="target" targetNodeId="1071489090640" />
+      <link role="target" targetNodeId="1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1071489288299">

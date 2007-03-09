@@ -1,6 +1,7 @@
 package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.formulaLanguage.evaluator.ExpressionContext;
 import jetbrains.mps.formulaLanguage.evaluator.ExpressionEvaluatorManager;
 import jetbrains.mps.formulaLanguage.structure.Expression;
@@ -41,12 +42,12 @@ public class SubtypingManager {
   public void initiate(SModel typesModel) {
     for (SubtypingRule rule : typesModel.getRootsAdapters(SubtypingRule.class)) {
       VariableCondition condition = rule.getApplicableNode().getCondition();
-      ConceptDeclaration ruleConcept = ConditionMatcher.getConcept(condition);
+      AbstractConceptDeclaration ruleConcept = ConditionMatcher.getConcept(condition);
       myConceptsToSubtypingRulesCache.putRule(ruleConcept, rule);
     }
     for (SupertypingRule rule : typesModel.getRootsAdapters(SupertypingRule.class)) {
       VariableCondition condition = rule.getApplicableNode().getCondition();
-      ConceptDeclaration ruleConcept = ConditionMatcher.getConcept(condition);
+      AbstractConceptDeclaration ruleConcept = ConditionMatcher.getConcept(condition);
       myConceptsToSupertypingRulesCache.putRule(ruleConcept, rule);
     }
     myConceptsToSubtypingRulesCache.makeConsistent();

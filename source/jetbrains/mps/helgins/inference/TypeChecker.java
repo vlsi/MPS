@@ -1,11 +1,16 @@
 package jetbrains.mps.helgins.inference;
 
-import jetbrains.mps.helgins.structure.*;
-import jetbrains.mps.helgins.evaluator.QuotationEvaluator;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.helgins.evaluator.CopyEvaluator;
+import jetbrains.mps.helgins.evaluator.QuotationEvaluator;
+import jetbrains.mps.helgins.structure.*;
+import jetbrains.mps.ide.IStatus;
+import jetbrains.mps.ide.Status;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.project.ApplicationComponents;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.refactoring.CopyUtil;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
@@ -14,17 +19,11 @@ import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.Hack;
-import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.IStatus;
-import jetbrains.mps.ide.Status;
-import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mpswiki.queryLanguage.evaluator.ConditionMatcher;
-
-import java.util.*;
-
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -154,7 +153,7 @@ public class TypeChecker {
       for (Rule rule : typesModel.getRootsAdapters(Rule.class)) {
         if (!rule.applicableNodes().hasNext()) continue;
         AnalyzedTermDeclaration analyzedTermDeclaration = rule.applicableNodes().next();
-        ConceptDeclaration ruleConcept = ConditionMatcher.getConcept(analyzedTermDeclaration.getCondition());
+        AbstractConceptDeclaration ruleConcept = ConditionMatcher.getConcept(analyzedTermDeclaration.getCondition());
         myConceptsToRulesCache.putRule(ruleConcept, rule);
       }
       myConceptsToRulesCache.makeConsistent();

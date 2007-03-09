@@ -1,12 +1,12 @@
 package jetbrains.mps.smodel.constraints;
 
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.component.Dependency;
 import jetbrains.mps.core.structure.NamedConcept;
 import jetbrains.mps.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.IClassPathItem;
@@ -198,9 +198,10 @@ public class ModelConstraintsManager {
       if (getter != null || myNodePropertyGettersCache.containsKey(sourceKey)) return getter;
     }
 
-    ConceptDeclaration concept = node.getConceptDeclaration(GlobalScope.getInstance());
-    while (concept != null) {
-      String conceptFqName = NameUtil.nodeFQName(concept);
+    AbstractConceptDeclaration abstractConcept = node.getConceptDeclarationAdapter();
+    ConceptDeclaration concreteConcept = (abstractConcept instanceof ConceptDeclaration) ? (ConceptDeclaration) abstractConcept : (ConceptDeclaration) null;
+    while (concreteConcept != null) {
+      String conceptFqName = NameUtil.nodeFQName(concreteConcept);
       IModelConstraints result;
       if (isSetter) {
         result = myNodePropertySettersMap.get(conceptFqName + "#" + propertyName);
@@ -216,7 +217,7 @@ public class ModelConstraintsManager {
 
         return result;
       }
-      concept = concept.getExtends();
+      concreteConcept = concreteConcept.getExtends();
     }
 
     if (isSetter) {
