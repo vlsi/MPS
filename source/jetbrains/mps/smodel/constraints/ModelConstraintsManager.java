@@ -239,7 +239,6 @@ public class ModelConstraintsManager {
   }
 
   public INodeReferentSearchScopeProvider getNodeReferentSearchScopeProvider(ConceptDeclaration nodeConcept, String referentRole) {
-
     while (nodeConcept != null) {
       String conceptFqName = NameUtil.nodeFQName(nodeConcept);
       INodeReferentSearchScopeProvider provider = myNodeReferentSearchScopeProvidersMap.get(conceptFqName + "#" + referentRole);
