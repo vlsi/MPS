@@ -330,7 +330,7 @@
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1153944301918">
           <property name="drawBorder" value="false" />
           <property name="readOnly" value="true" />
-          <link role="relationDeclaration" targetNodeId="2.1078489098626" />
+          <link role="relationDeclaration" targetNodeId="2.1169194664001" />
         </node>
       </node>
     </node>

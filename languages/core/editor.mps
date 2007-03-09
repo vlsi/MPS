@@ -8,7 +8,7 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1152908253258">
       <property name="drawBorder" value="false" />
       <property name="noTargetText" value="&lt;no name&gt;" />
-      <link role="relationDeclaration" targetNodeId="1.1078489098626" />
+      <link role="relationDeclaration" targetNodeId="1.1169194664001" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1133921100033">

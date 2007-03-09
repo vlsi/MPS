@@ -340,7 +340,7 @@
                 <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1166991314302">
                   <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.PropertyGetter_FunctionParm_node" id="1166991313848" />
                   <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1166991320334">
-                    <link role="property" targetNodeId="8.1078489098626" />
+                    <link role="property" targetNodeId="8.1169194664001" />
                   </node>
                 </node>
               </node>

@@ -23,7 +23,7 @@
     <property name="name" value="BL_property" />
     <node role="nodePropertyConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraint" id="1147487185915">
       <link role="applicableConcept" targetNodeId="1.1107535904670" />
-      <link role="applicableProperty" targetNodeId="2.1078489098626" />
+      <link role="applicableProperty" targetNodeId="2.1169194664001" />
       <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_PropertyGetter" id="1147487199103">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1147487199104">
           <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1147487243250">
@@ -67,7 +67,7 @@
     </node>
     <node role="nodePropertyConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraint" id="1171964789232">
       <link role="applicableConcept" targetNodeId="1.1171903916106" />
-      <link role="applicableProperty" targetNodeId="2.1078489098626" />
+      <link role="applicableProperty" targetNodeId="2.1169194664001" />
       <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_PropertyGetter" id="1171964799124">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1171964799125">
           <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1171964885581">
@@ -111,7 +111,7 @@
       </node>
     </node>
     <node role="nodePropertyConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraint" id="1171965046910">
-      <link role="applicableProperty" targetNodeId="2.1078489098626" />
+      <link role="applicableProperty" targetNodeId="2.1169194664001" />
       <link role="applicableConcept" targetNodeId="1.1171903862077" />
       <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_PropertyGetter" id="1171965046911">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1171965046912">
@@ -157,7 +157,7 @@
     </node>
     <node role="nodePropertyConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraint" id="1171965603368">
       <link role="applicableConcept" targetNodeId="1.1171903607971" />
-      <link role="applicableProperty" targetNodeId="2.1078489098626" />
+      <link role="applicableProperty" targetNodeId="2.1169194664001" />
       <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_PropertyGetter" id="1171965609900">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1171965609901">
           <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1171965620864">
@@ -186,7 +186,7 @@
                   </node>
                 </node>
                 <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1170356943159">
-                  <link role="property" targetNodeId="2.1078489098626" />
+                  <link role="property" targetNodeId="2.1169194664001" />
                 </node>
               </node>
             </node>
@@ -196,7 +196,7 @@
     </node>
     <node role="nodePropertyConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraint" id="1158759808800">
       <link role="applicableConcept" targetNodeId="1.1109283449304" />
-      <link role="applicableProperty" targetNodeId="2.1078489098626" />
+      <link role="applicableProperty" targetNodeId="2.1169194664001" />
       <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_PropertyGetter" id="1158759825516">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1158759825517">
           <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1158759853362">
@@ -275,7 +275,7 @@
                     <link role="variableDeclaration" targetNodeId="1147487505772" />
                   </node>
                   <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1147487528647">
-                    <link role="property" targetNodeId="2.1078489098626" />
+                    <link role="property" targetNodeId="2.1169194664001" />
                   </node>
                 </node>
               </node>
@@ -478,7 +478,7 @@
     </node>
     <node role="nodePropertyConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraint" id="1161693931313">
       <link role="applicableConcept" targetNodeId="1.1068431790189" />
-      <link role="applicableProperty" targetNodeId="2.1078489098626" />
+      <link role="applicableProperty" targetNodeId="2.1169194664001" />
       <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_PropertyGetter" id="1161693963909">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1161693963910">
           <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1161694002558">
@@ -660,7 +660,7 @@
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1161694385884">
               <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.PropertyGetter_FunctionParm_node" id="1161694385133" />
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1161694387760">
-                <link role="property" targetNodeId="2.1078489098626" />
+                <link role="property" targetNodeId="2.1169194664001" />
               </node>
             </node>
           </node>
@@ -2001,7 +2001,7 @@
                   <link role="baseMethodDeclaration" extResolveInfo="3.static method ([Classifier]NameUtil).([StaticMethodDeclaration]shortNameFromLongName((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
                   <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1171331146649">
                     <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1171331147793">
-                      <link role="property" targetNodeId="2.1078489098626" />
+                      <link role="property" targetNodeId="2.1169194664001" />
                     </node>
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1171330436775">
                       <link role="variableDeclaration" targetNodeId="1171330436779" resolveInfo="type" />
@@ -2023,7 +2023,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1171330436776">
           <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1171331165544">
             <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1171331166578">
-              <link role="property" targetNodeId="2.1078489098626" />
+              <link role="property" targetNodeId="2.1169194664001" />
             </node>
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1171330436778">
               <link role="variableDeclaration" targetNodeId="1171330436779" resolveInfo="type" />

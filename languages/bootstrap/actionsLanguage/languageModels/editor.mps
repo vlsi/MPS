@@ -37,7 +37,7 @@
                 <property name="drawBorder" value="false" />
                 <property name="readOnly" value="true" />
                 <property name="noTargetText" value="&lt;no name&gt;" />
-                <link role="relationDeclaration" targetNodeId="3.1078489098626" />
+                <link role="relationDeclaration" targetNodeId="3.1169194664001" />
               </node>
             </node>
           </node>
@@ -226,7 +226,7 @@
             <property name="drawBorder" value="false" />
             <property name="readOnly" value="true" />
             <property name="noTargetText" value="&lt;no name&gt;" />
-            <link role="relationDeclaration" targetNodeId="3.1078489098626" />
+            <link role="relationDeclaration" targetNodeId="3.1169194664001" />
           </node>
         </node>
       </node>
@@ -462,7 +462,7 @@
             <property name="drawBorder" value="false" />
             <property name="readOnly" value="true" />
             <property name="noTargetText" value="&lt;no name&gt;" />
-            <link role="relationDeclaration" targetNodeId="3.1078489098626" />
+            <link role="relationDeclaration" targetNodeId="3.1169194664001" />
           </node>
         </node>
       </node>

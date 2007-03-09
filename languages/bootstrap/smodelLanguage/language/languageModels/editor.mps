@@ -23,7 +23,7 @@
           <property name="drawBorder" value="false" />
           <property name="readOnly" value="true" />
           <property name="noTargetText" value="&lt;no name&gt;" />
-          <link role="relationDeclaration" targetNodeId="2.1078489098626" />
+          <link role="relationDeclaration" targetNodeId="2.1169194664001" />
         </node>
       </node>
     </node>
@@ -113,7 +113,7 @@
             <property name="drawBorder" value="false" />
             <property name="readOnly" value="true" />
             <property name="noTargetText" value="&lt;no name&gt;" />
-            <link role="relationDeclaration" targetNodeId="2.1078489098626" />
+            <link role="relationDeclaration" targetNodeId="2.1169194664001" />
           </node>
         </node>
       </node>
@@ -203,7 +203,7 @@
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1139880110907">
             <property name="textFgColor" value="DARK_MAGENTA" />
             <property name="readOnly" value="true" />
-            <link role="relationDeclaration" targetNodeId="2.1078489098626" />
+            <link role="relationDeclaration" targetNodeId="2.1169194664001" />
           </node>
         </node>
       </node>
@@ -232,7 +232,7 @@
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1139877785578">
             <property name="textFgColor" value="DARK_MAGENTA" />
             <property name="readOnly" value="true" />
-            <link role="relationDeclaration" targetNodeId="2.1078489098626" />
+            <link role="relationDeclaration" targetNodeId="2.1169194664001" />
           </node>
         </node>
       </node>
@@ -403,7 +403,7 @@
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1139621618369">
             <property name="textFgColor" value="DARK_MAGENTA" />
             <property name="readOnly" value="true" />
-            <link role="relationDeclaration" targetNodeId="2.1078489098626" />
+            <link role="relationDeclaration" targetNodeId="2.1169194664001" />
           </node>
         </node>
       </node>
@@ -432,7 +432,7 @@
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1139859127630">
             <property name="textFgColor" value="DARK_MAGENTA" />
             <property name="readOnly" value="true" />
-            <link role="relationDeclaration" targetNodeId="2.1078489098626" />
+            <link role="relationDeclaration" targetNodeId="2.1169194664001" />
           </node>
         </node>
       </node>
@@ -461,7 +461,7 @@
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1139868035542">
             <property name="textFgColor" value="DARK_MAGENTA" />
             <property name="readOnly" value="true" />
-            <link role="relationDeclaration" targetNodeId="2.1078489098626" />
+            <link role="relationDeclaration" targetNodeId="2.1169194664001" />
           </node>
         </node>
       </node>
@@ -596,7 +596,7 @@
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1140138242844">
             <property name="textFgColor" value="DARK_MAGENTA" />
             <property name="readOnly" value="true" />
-            <link role="relationDeclaration" targetNodeId="2.1078489098626" />
+            <link role="relationDeclaration" targetNodeId="2.1169194664001" />
           </node>
         </node>
       </node>
@@ -665,7 +665,7 @@
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1143221124300">
             <property name="textFgColor" value="DARK_MAGENTA" />
             <property name="readOnly" value="true" />
-            <link role="relationDeclaration" targetNodeId="2.1078489098626" />
+            <link role="relationDeclaration" targetNodeId="2.1169194664001" />
           </node>
         </node>
       </node>
@@ -755,7 +755,7 @@
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1143235366835">
             <property name="textFgColor" value="DARK_MAGENTA" />
             <property name="readOnly" value="true" />
-            <link role="relationDeclaration" targetNodeId="2.1078489098626" />
+            <link role="relationDeclaration" targetNodeId="2.1169194664001" />
           </node>
         </node>
       </node>
@@ -810,7 +810,7 @@
             <property name="textFgColor" value="DARK_MAGENTA" />
             <property name="readOnly" value="true" />
             <property name="noTargetText" value="&lt;no name&gt;" />
-            <link role="relationDeclaration" targetNodeId="2.1078489098626" />
+            <link role="relationDeclaration" targetNodeId="2.1169194664001" />
           </node>
         </node>
       </node>
@@ -876,7 +876,7 @@
             <property name="textFgColor" value="DARK_MAGENTA" />
             <property name="readOnly" value="true" />
             <property name="noTargetText" value="&lt;concept has no name&gt;" />
-            <link role="relationDeclaration" targetNodeId="2.1078489098626" />
+            <link role="relationDeclaration" targetNodeId="2.1169194664001" />
           </node>
         </node>
       </node>
@@ -931,7 +931,7 @@
             <property name="textFgColor" value="DARK_MAGENTA" />
             <property name="readOnly" value="true" />
             <property name="noTargetText" value="&lt;no name&gt;" />
-            <link role="relationDeclaration" targetNodeId="2.1078489098626" />
+            <link role="relationDeclaration" targetNodeId="2.1169194664001" />
           </node>
         </node>
       </node>
@@ -1135,7 +1135,7 @@
           <property name="fontStyle" value="ITALIC" />
           <property name="readOnly" value="true" />
           <property name="noTargetText" value="&lt;no name&gt;" />
-          <link role="relationDeclaration" targetNodeId="2.1078489098626" />
+          <link role="relationDeclaration" targetNodeId="2.1169194664001" />
         </node>
       </node>
     </node>
@@ -1193,7 +1193,7 @@
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1154547041930">
           <property name="textFgColor" value="DARK_MAGENTA" />
           <property name="readOnly" value="true" />
-          <link role="relationDeclaration" targetNodeId="2.1078489098626" />
+          <link role="relationDeclaration" targetNodeId="2.1169194664001" />
         </node>
       </node>
     </node>
@@ -1237,7 +1237,7 @@
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1166648602702">
             <property name="textFgColor" value="DARK_MAGENTA" />
             <property name="readOnly" value="true" />
-            <link role="relationDeclaration" targetNodeId="2.1078489098626" />
+            <link role="relationDeclaration" targetNodeId="2.1169194664001" />
           </node>
         </node>
       </node>
@@ -1398,7 +1398,7 @@
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1171315915311">
             <property name="textFgColor" value="DARK_MAGENTA" />
             <property name="readOnly" value="true" />
-            <link role="relationDeclaration" targetNodeId="2.1078489098626" />
+            <link role="relationDeclaration" targetNodeId="2.1169194664001" />
           </node>
         </node>
       </node>
@@ -1427,7 +1427,7 @@
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1171323979882">
             <property name="textFgColor" value="DARK_MAGENTA" />
             <property name="readOnly" value="true" />
-            <link role="relationDeclaration" targetNodeId="2.1078489098626" />
+            <link role="relationDeclaration" targetNodeId="2.1169194664001" />
           </node>
         </node>
       </node>

@@ -21,7 +21,7 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1116535104470">
           <property name="drawBorder" value="false" />
           <property name="noTargetText" value="&lt;no name&gt;" />
-          <link role="relationDeclaration" targetNodeId="2.1078489098626" />
+          <link role="relationDeclaration" targetNodeId="2.1169194664001" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1116535127706">
@@ -127,7 +127,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1116535940767">
         <property name="drawBorder" value="false" />
         <property name="noTargetText" value="&lt;no name&gt;" />
-        <link role="relationDeclaration" targetNodeId="2.1078489098626" />
+        <link role="relationDeclaration" targetNodeId="2.1169194664001" />
       </node>
     </node>
   </node>

@@ -568,7 +568,7 @@
     <link role="conceptDeclaration" targetNodeId="1.1172240563057" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1172240676628">
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1172240689435">
-        <link role="relationDeclaration" targetNodeId="2.1078489098626" />
+        <link role="relationDeclaration" targetNodeId="2.1169194664001" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1172240696609">
         <property name="text" value=":" />
@@ -593,7 +593,7 @@
           <link role="conceptDeclaration" targetNodeId="1.1172240563057" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1172242931320">
             <property name="readOnly" value="true" />
-            <link role="relationDeclaration" targetNodeId="2.1078489098626" />
+            <link role="relationDeclaration" targetNodeId="2.1169194664001" />
           </node>
         </node>
       </node>

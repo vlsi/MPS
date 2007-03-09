@@ -8,11 +8,6 @@
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1173467730296">
       <link role="intfc" targetNodeId="1169194658468" resolveInfo="INamedConcept" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1078489098626">
-      <property name="propertyType" value="string" />
-      <property name="name" value="name" />
-      <link role="dataType" targetNodeId="1082983041843" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1133922301475">
       <link role="conceptPropertyDeclaration" targetNodeId="1137473854053" />
     </node>

@@ -213,7 +213,7 @@
                     <link role="variableDeclaration" targetNodeId="1169469245570" resolveInfo="sfd" />
                   </node>
                   <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1169472286932">
-                    <link role="property" targetNodeId="18.1078489098626" />
+                    <link role="property" targetNodeId="18.1169194664001" />
                   </node>
                 </node>
                 <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Property_HasValue_Simple" id="1169469477948">

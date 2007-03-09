@@ -19,7 +19,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1159268590365">
         <property name="fontStyle" value="ITALIC" />
         <property name="drawBorder" value="false" />
-        <link role="relationDeclaration" targetNodeId="2.1078489098626" />
+        <link role="relationDeclaration" targetNodeId="2.1169194664001" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1159268590366">
         <property name="text" value="extends" />
@@ -44,7 +44,7 @@
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1159268661797">
             <property name="fontStyle" value="ITALIC" />
             <property name="readOnly" value="true" />
-            <link role="relationDeclaration" targetNodeId="2.1078489098626" />
+            <link role="relationDeclaration" targetNodeId="2.1169194664001" />
           </node>
         </node>
       </node>
@@ -91,7 +91,7 @@
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1161696750126">
           <link role="conceptDeclaration" targetNodeId="2.1078489098625" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1161696750127">
-            <link role="relationDeclaration" targetNodeId="2.1078489098626" />
+            <link role="relationDeclaration" targetNodeId="2.1169194664001" />
           </node>
         </node>
       </node>
