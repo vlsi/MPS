@@ -44,7 +44,6 @@
     <property name="iconPath" value="${language_descriptor}\icons\propertyConstraints.png" />
     <property name="rootable" value="true" />
     <property name="name" value="NodePropertyConstraintSet" />
-    <link role="extends" targetNodeId="1.1078489098625" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1147467368445">
       <property name="sourceCardinality" value="0..n" />
       <property name="role" value="nodePropertyConstraint" />
@@ -54,6 +53,9 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1159284367973">
       <property name="value" value="property constraints" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1173470546161">
+      <link role="intfc" targetNodeId="1.1169194658468" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1147467790433">
@@ -115,7 +117,9 @@
     <property name="iconPath" value="${language_descriptor}\icons\referenceConstraints.png" />
     <property name="rootable" value="true" />
     <property name="name" value="NodeReferentConstraintSet" />
-    <link role="extends" targetNodeId="1.1078489098625" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1173470555990">
+      <link role="intfc" targetNodeId="1.1169194658468" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1148687980226">
       <property name="sourceCardinality" value="0..n" />
       <property name="role" value="nodeReferentConstraint" />
