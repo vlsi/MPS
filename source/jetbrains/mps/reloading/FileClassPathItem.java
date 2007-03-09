@@ -1,6 +1,7 @@
 package jetbrains.mps.reloading;
 
 import jetbrains.mps.util.ReadUtil;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -29,6 +30,15 @@ public class FileClassPathItem extends AbstractClassPathItem{
   }
 
   public byte[] getClass(String name) {
+    String namespace = NameUtil.namespaceFromLongName(name);
+    String shortname = NameUtil.shortNameFromLongName(name);
+
+    Set<String> classes = myAvailableClassesCache.get(namespace);
+    if (classes == null
+            || !classes.contains(shortname)) {
+      return null;
+    }
+
     String path = myClassPath + File.separatorChar + name.replace('.', File.separatorChar) + ".class";
     File file = new File(path);
     try {
@@ -38,6 +48,7 @@ public class FileClassPathItem extends AbstractClassPathItem{
       ReadUtil.read(result, inp);
 
       inp.close();
+
       return result;
     } catch (IOException e) {
       return null;
@@ -89,7 +100,7 @@ public class FileClassPathItem extends AbstractClassPathItem{
           }
         }
 
-        if (name.endsWith(".class") && !name.contains("$")) {
+        if (name.endsWith(".class")) {
           classes.add(name.substring(0, name.length() - ".class".length()));
         }
       }

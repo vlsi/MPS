@@ -159,7 +159,7 @@ public class JavaCompiler {
         return new NameEnvironmentAnswer(myCompilationUnits.get(fqName), null);
       }
 
-      try {
+      try {        
         byte[] aClass = myClassPathItem.getClass(fqName);
         if (aClass == null) return null;
         return new NameEnvironmentAnswer(new ClassFileReader(aClass, fqName.toCharArray()),  null);

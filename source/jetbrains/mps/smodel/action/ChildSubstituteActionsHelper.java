@@ -165,15 +165,6 @@ public class ChildSubstituteActionsHelper {
     return actions;
   }
 
-  private static Class getAdapterClass(ConceptDeclaration cd) {
-    String fqName = NameUtil.nodeFQName(cd);
-    try {
-      return Class.forName(fqName, true, ClassLoaderManager.getInstance().getClassLoader());
-    } catch (ClassNotFoundException e) {
-      return null;
-    }
-  }
-
   /**
    * @return reference link declaration which is used to populate auto-completion menu with possible referent nodes.
    *         Smart actions are no applicable if:
