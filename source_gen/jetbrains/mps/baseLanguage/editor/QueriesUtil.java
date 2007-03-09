@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.editor;
 
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import java.util.LinkedList;
+import java.util.ArrayList;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.baseLanguage.BaseLanguageSearchUtil_new;
@@ -22,7 +22,7 @@ import jetbrains.mps.baseLanguage.structure.Expression;
 public class QueriesUtil {
 
   public static List<SNode> replaceNodeMenu_StaticFieldReference_getParameterObjects(SNode node) {
-    List<SNode> result = new LinkedList<SNode>();
+    List<SNode> result = new ArrayList<SNode>();
     SNode classifier = SLinkOperations.getTarget(node, "classifier", false);
     if(classifier == null) {
       return result;
@@ -50,7 +50,7 @@ public class QueriesUtil {
     return node;
   }
   public static List<SNode> replaceNodeMenu_StaticMethodCall_getParameterObjects(SNode node) {
-    List<SNode> result = new LinkedList<SNode>();
+    List<SNode> result = new ArrayList<SNode>();
     SNode classifier = SLinkOperations.getTarget(node, "classConcept", false);
     if(classifier == null) {
       return result;
@@ -78,7 +78,7 @@ public class QueriesUtil {
     return node;
   }
   public static List<SNode> replaceNodeMenu_EnumConstantReference_getParameterObjects(SNode node) {
-    List<SNode> result = new LinkedList<SNode>();
+    List<SNode> result = new ArrayList<SNode>();
     SNode classifier = SLinkOperations.getTarget(node, "enumClass", false);
     if(classifier == null) {
       return result;
@@ -108,11 +108,11 @@ public class QueriesUtil {
   public static List<SNode> replaceNodeMenu_FieldReference_getParameterObjects(SNode node) {
     SNode instance = SLinkOperations.getTarget(node, "instance", true);
     if(instance == null) {
-      return new LinkedList<SNode>();
+      return new ArrayList<SNode>();
     }
     ClassifierType instanceType = BaseLanguageTypesUtil_new.tryObtain_ClassifierType(((Expression)SNodeOperations.getAdapter(instance)));
     if(instanceType == null) {
-      return new LinkedList<SNode>();
+      return new ArrayList<SNode>();
     }
     ISearchScope classHierarchy = BaseLanguageSearchUtil_new.createClassifierHierarchyScope(instanceType, IClassifiersSearchScope.INSTANCE_METHOD);
     return BaseAdapter.toNodes(BaseLanguageSearchUtil_new.getMethodsExcludingOverridden(classHierarchy));
@@ -129,11 +129,11 @@ public class QueriesUtil {
   public static List<SNode> replaceNodeMenu_InstanceMethodCall_getParameterObjects(SNode referenceNode) {
     SNode instance = SLinkOperations.getTarget(referenceNode, "instance", true);
     if(instance == null) {
-      return new LinkedList<SNode>();
+      return new ArrayList<SNode>();
     }
     ClassifierType instanceType = BaseLanguageTypesUtil_new.tryObtain_ClassifierType(((Expression)SNodeOperations.getAdapter(instance)));
     if(instanceType == null) {
-      return new LinkedList<SNode>();
+      return new ArrayList<SNode>();
     }
     ISearchScope classHierarchy = BaseLanguageSearchUtil_new.createClassifierHierarchyScope(instanceType, IClassifiersSearchScope.INSTANCE_FIELD);
     return BaseAdapter.toNodes(BaseLanguageSearchUtil_new.getFieldsExcludingOverridden(classHierarchy));
