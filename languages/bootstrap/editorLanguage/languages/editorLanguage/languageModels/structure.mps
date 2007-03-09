@@ -35,7 +35,9 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1073389214265">
     <property name="name" value="EditorCellModel" />
-    <link role="extends" targetNodeId="3.1078489098625" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1173470701199">
+      <link role="intfc" targetNodeId="3.1169194658468" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1119645550923">
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" />
     </node>
@@ -385,7 +387,9 @@
     <property name="iconPath" value="${language_descriptor}\icons\keyMap.png" />
     <property name="rootable" value="true" />
     <property name="name" value="CellKeyMapDeclaration" />
-    <link role="extends" targetNodeId="3.1078489098625" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1173470710781">
+      <link role="intfc" targetNodeId="3.1169194658468" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1149937560128">
       <property name="name" value="everyModel" />
       <link role="dataType" targetNodeId="3.1082983657063" />
@@ -856,7 +860,9 @@
     <property name="iconPath" value="${language_descriptor}\icons\actionMap.png" />
     <property name="rootable" value="true" />
     <property name="name" value="CellActionMapDeclaration" />
-    <link role="extends" targetNodeId="3.1078489098625" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1173470751204">
+      <link role="intfc" targetNodeId="3.1169194658468" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1139535219968">
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="applicableConcept" />
@@ -1790,7 +1796,6 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1166049232041">
     <property name="name" value="AbstractComponent" />
-    <link role="extends" targetNodeId="3.1078489098625" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1166049251808">
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" />
     </node>
@@ -1799,6 +1804,9 @@
       <property name="targetCardinality" value="0..1" />
       <property name="role" value="conceptDeclaration" />
       <link role="target" targetNodeId="1.1071489090640" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1173470691635">
+      <link role="intfc" targetNodeId="3.1169194658468" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1166059625718">

@@ -19,7 +19,7 @@
     <property name="name" value="EDTL_property" />
     <node role="nodePropertyConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraint" id="1147473587979">
       <link role="applicableConcept" targetNodeId="1.1071666914219" />
-      <link role="applicableProperty" targetNodeId="2.1078489098626" />
+      <link role="applicableProperty" targetNodeId="2.1169194664001" />
       <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_PropertyGetter" id="1147474122159">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1147474122160">
           <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1147474917363">
@@ -53,8 +53,8 @@
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1147474949644">
                       <link role="variableDeclaration" targetNodeId="1147474917364" />
                     </node>
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1147474957287">
-                      <link role="property" targetNodeId="2.1078489098626" />
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1173471014906">
+                      <link role="property" targetNodeId="2.1169194664001" />
                     </node>
                   </node>
                 </node>
