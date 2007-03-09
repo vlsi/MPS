@@ -5,6 +5,9 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1078489098625">
     <property name="name" value="NamedConcept" />
     <link role="extends" targetNodeId="1133920641626" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1173467730296">
+      <link role="intfc" targetNodeId="1169194658468" resolveInfo="INamedConcept" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1078489098626">
       <property name="propertyType" value="string" />
       <property name="name" value="name" />
