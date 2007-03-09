@@ -10,12 +10,12 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
 public class NodeSubstituteActionsBuilder extends BaseConcept {
-  public static String PRECONDITION = "precondition";
-  public static String APPLICABLE_CONCEPT = "applicableConcept";
   public static String DESCRIPTION = "description";
   public static String ACTIONS_FACTORY_ASPECT_ID = "actionsFactoryAspectId";
   public static String ACTIONS_FILTER_ASPECT_ID = "actionsFilterAspectId";
   public static String PRECONDITION_ASPECT_ID = "preconditionAspectId";
+  public static String APPLICABLE_CONCEPT = "applicableConcept";
+  public static String PRECONDITION = "precondition";
 
   public  NodeSubstituteActionsBuilder(SNode node) {
     super(node);
@@ -28,18 +28,6 @@ public class NodeSubstituteActionsBuilder extends BaseConcept {
     return NodeSubstituteActionsBuilder.newInstance(sm, false);
   }
 
-  public NodeSubstitutePreconditionFunction getPrecondition() {
-    return (NodeSubstitutePreconditionFunction)this.getChild(NodeSubstituteActionsBuilder.PRECONDITION);
-  }
-  public void setPrecondition(NodeSubstitutePreconditionFunction node) {
-    super.setChild(NodeSubstituteActionsBuilder.PRECONDITION, node);
-  }
-  public ConceptDeclaration getApplicableConcept() {
-    return (ConceptDeclaration)this.getReferent(NodeSubstituteActionsBuilder.APPLICABLE_CONCEPT);
-  }
-  public void setApplicableConcept(ConceptDeclaration node) {
-    super.setReferent(NodeSubstituteActionsBuilder.APPLICABLE_CONCEPT, node);
-  }
   public String getDescription() {
     return this.getProperty(NodeSubstituteActionsBuilder.DESCRIPTION);
   }
@@ -63,5 +51,17 @@ public class NodeSubstituteActionsBuilder extends BaseConcept {
   }
   public void setPreconditionAspectId(String value) {
     this.setProperty(NodeSubstituteActionsBuilder.PRECONDITION_ASPECT_ID, value);
+  }
+  public ConceptDeclaration getApplicableConcept() {
+    return (ConceptDeclaration)this.getReferent(NodeSubstituteActionsBuilder.APPLICABLE_CONCEPT);
+  }
+  public void setApplicableConcept(ConceptDeclaration node) {
+    super.setReferent(NodeSubstituteActionsBuilder.APPLICABLE_CONCEPT, node);
+  }
+  public NodeSubstitutePreconditionFunction getPrecondition() {
+    return (NodeSubstitutePreconditionFunction)this.getChild(NodeSubstituteActionsBuilder.PRECONDITION);
+  }
+  public void setPrecondition(NodeSubstitutePreconditionFunction node) {
+    super.setChild(NodeSubstituteActionsBuilder.PRECONDITION, node);
   }
 }

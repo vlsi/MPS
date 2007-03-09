@@ -14,7 +14,10 @@
     <property name="iconPath" value="${language_descriptor}\icons\actions.png" />
     <property name="rootable" value="true" />
     <property name="name" value="NodeSubstituteActions" />
-    <link role="extends" targetNodeId="1.1078489098625" />
+    <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1173470386323">
+      <link role="intfc" targetNodeId="1.1169194658468" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1112058057696">
       <property name="sourceCardinality" value="0..n" />
       <property name="targetCardinality" value="1" />
@@ -105,7 +108,10 @@
     <property name="iconPath" value="${language_descriptor}\icons\rightTransform.png" />
     <property name="rootable" value="true" />
     <property name="name" value="RTransformHintSubstituteActions" />
-    <link role="extends" targetNodeId="1.1078489098625" />
+    <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1173470403719">
+      <link role="intfc" targetNodeId="1.1169194658468" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1138079416599">
       <property name="sourceCardinality" value="0..n" />
       <property name="targetCardinality" value="1" />
@@ -227,7 +233,9 @@
     <property name="iconPath" value="${language_descriptor}\icons\nodeFactories.png" />
     <property name="rootable" value="true" />
     <property name="name" value="NodeFactories" />
-    <link role="extends" targetNodeId="1.1078489098625" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1173470414329">
+      <link role="intfc" targetNodeId="1.1169194658468" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1158700779049">
       <property name="role" value="nodeFactory" />
       <property name="metaClass" value="aggregation" />
