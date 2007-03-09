@@ -36,11 +36,11 @@ public class Queries {
     if (args.length >= 3) {
       mayBeString = (Boolean) args[2];
     }
-    SModelDescriptor helginsModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.baseLanguage.helgins"));
-    assert helginsModelDescriptor != null;
+  //  SModelDescriptor helginsModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.baseLanguage.helgins"));
+  //  assert helginsModelDescriptor != null;
     SModel runtimeTypesModel = TypeChecker.getInstance().getRuntimeTypesModel();
     Set<? extends SNode> types = CollectionUtil.asSet(leftType, rightType);
-    Set<SNode> lowestCommonSupertypes = TypeChecker.getInstance().getSubtypingManager().leastCommonSupertypes(types);
+    Set<SNode> leastCommonSupertypes = TypeChecker.getInstance().getSubtypingManager().leastCommonSupertypes(types);
 
     if (mayBeString) {
       SModelDescriptor javaLangJavaStubModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("java.lang@java_stub"));
@@ -55,12 +55,12 @@ public class Queries {
       }
     }
 
-    if (lowestCommonSupertypes.isEmpty()) {
+    if (leastCommonSupertypes.isEmpty()) {
       RuntimeErrorType runtimeErrorType = RuntimeErrorType.newInstance(runtimeTypesModel);
       runtimeErrorType.setErrorText("incompatible types");
       return runtimeErrorType;
     }
-    return lowestCommonSupertypes.iterator().next();
+    return leastCommonSupertypes.iterator().next();
   }
 
   public static Object CustomExpression_hasConceptProperty_lvalue(Object... args) {

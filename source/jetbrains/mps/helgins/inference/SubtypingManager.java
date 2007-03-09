@@ -95,7 +95,7 @@ public class SubtypingManager {
     frontier.add(superRepresentator);
     while (!frontier.isEmpty()) {
       for (SNode node : frontier) {
-        Set<SNode> descendants = collectSubtypes(node);
+        Set<SNode> descendants = collectImmediateSubtypes(node);
         if (descendants == null) continue;
         descendants.remove(node);
         for (SNode descendant : descendants) {
@@ -117,7 +117,7 @@ public class SubtypingManager {
     frontier.add(subRepresentator);
     while (!frontier.isEmpty()) {
       for (SNode node : frontier) {
-        Set<SNode> ancestors = collectSupertypes(node);
+        Set<SNode> ancestors = collectImmediateSupertypes(node);
         if (ancestors == null) continue;
         ancestors.remove(node);
         for (SNode ancestor : ancestors) {
@@ -134,7 +134,7 @@ public class SubtypingManager {
   }
 
 
-  public Set<SNode> collectSupertypes(SNode term) {
+  public Set<SNode> collectImmediateSupertypes(SNode term) {
     Set<SNode> result = new HashSet<SNode>();
     if (term == null) {
       return result;
@@ -155,7 +155,7 @@ public class SubtypingManager {
     return result;
   }
 
-  public Set<SNode> collectSubtypes(SNode term) {
+  public Set<SNode> collectImmediateSubtypes(SNode term) {
     Set<SNode> result = new HashSet<SNode>();
     if (term == null) return result;
     Set<SupertypingRule> supertypingRules = myConceptsToSupertypingRulesCache.get(term.getConceptDeclarationAdapter());
@@ -230,11 +230,6 @@ public class SubtypingManager {
     }
   }
 
-  public Set<SNode> leastCommonSupertypes(Set<? extends SNode> types) {
-    Set<SNode> result = leastCommonSupertypes(types, new NodeSupertypesCollector(this));
-    return result;
-  }
-
   public SNode leastCommonSupertype(Set<? extends SNode> types) {
     Set<SNode> lcss = leastCommonSupertypes(types);
     if (lcss.size() != 1) {
@@ -245,73 +240,118 @@ public class SubtypingManager {
     return lcss.iterator().next();
   }
 
-
-  private <T> Set<T> leastCommonSupertypes(Set<? extends T> types, SupertypesCollector<T> supertypesCollector) {
-
-    Set<T> allTypes = new HashSet<T>(types);
-    if (types.isEmpty()) return allTypes;
-    Map<T, Set<T>> subTypesToSuperTypes = new HashMap<T, Set<T>>();
-
-    Set<T> frontier = new HashSet<T>(types);
-    Set<T> newFrontier = new HashSet<T>();
-    while (!(frontier.isEmpty())) {
-      for (T type : frontier) {
-        Set<T> superTypes = supertypesCollector.collectSupertypes(type);
-        superTypes.remove(type);
-        newFrontier.addAll(superTypes);
-        allTypes.addAll(superTypes);
-        subTypesToSuperTypes.put(type, superTypes);
+  private boolean containsStructurally(Set<SNode> nodes, SNode ourNode) {
+    for (SNode node : nodes) {
+      if (MatchingUtil.matchNodes(node, ourNode)) {
+        return true;
       }
+    }
+    return false;
+  }
+
+  private void removeStructurally(Set<SNode> nodes, SNode ourNode) {
+    for (SNode node : new HashSet<SNode>(nodes)) {
+      if (MatchingUtil.matchNodes(node, ourNode)) {
+        nodes.remove(node);
+      }
+    }
+  }
+
+  private void addStructurally(Set<SNode> nodes, SNode ourNode) {
+    if (!containsStructurally(nodes, ourNode)) {
+      nodes.add(ourNode);
+    }
+  }
+
+  private void addAllStructurally(Set<SNode> nodes, Set<SNode> ourNodes) {
+    for (SNode ourNode : ourNodes) {
+      addStructurally(nodes, ourNode);
+    }
+  }
+
+  public Set<SNode> leastCommonSupertypes(Set<? extends SNode> types) {
+    Set<SNode> allTypes = new HashSet<SNode>();
+
+    addAllStructurally(allTypes, (Set<SNode>) types);
+
+    HashMap<SNode, Set<SNode>> subTypesToSupertypes = new HashMap<SNode, Set<SNode>>();
+
+    Set<SNode> frontier = new HashSet<SNode>(types);
+    Set<SNode> newFrontier = new HashSet<SNode>();
+
+    while (!frontier.isEmpty()) {
+      for (SNode type : frontier) {
+        if (containsStructurally(subTypesToSupertypes.keySet(), type)) {
+          continue;
+        }
+        Set<SNode> superTypes = collectImmediateSubtypes(type);
+        subTypesToSupertypes.put(type, superTypes);
+        newFrontier.addAll(superTypes);
+        addAllStructurally(allTypes, superTypes);
+      }
+
       frontier = newFrontier;
-      newFrontier = new HashSet<T>();
+      newFrontier = new HashSet<SNode>();
     }
 
-    for (T node2 : allTypes) { // transitive closure
-      for (T node1 : allTypes) {
-        for (T node3 : allTypes) {
-          if (node1 == node2 || node2 == node3 || node1 == node3) continue;
-          Set<T> supertypes1 = subTypesToSuperTypes.get(node1);
+    for (SNode node2 : allTypes) { // transitive closure
+      for (SNode node1 : allTypes) {
+        for (SNode node3 : allTypes) {
+          if (MatchingUtil.matchNodes(node1, node2) ||
+              MatchingUtil.matchNodes(node2, node3) ||
+              MatchingUtil.matchNodes(node1, node3)) continue;
+          Set<SNode> supertypes1 = subTypesToSupertypes.get(node1);
           if (supertypes1 == null) continue;
-          Set<T> supertypes2 = subTypesToSuperTypes.get(node2);
+          Set<SNode> supertypes2 = subTypesToSupertypes.get(node2);
           if (supertypes2 == null) continue;
-          if (supertypes1.contains(node2) && supertypes2.contains(node3)) {
+          if (containsStructurally(supertypes1, node2) && containsStructurally(supertypes2, node3)) {
             supertypes1.add(node3);
           }
         }
       }
     }
 
-
-    Set<T> commonSupertypes = new HashSet<T>();
-    T first = types.iterator().next();
-    Set<T> candidates = subTypesToSuperTypes.get(first);
-    if (candidates == null) {
-      candidates = new HashSet<T>();
-    } else {
-      candidates = new HashSet<T>(candidates);
+    while (types.size() >= 2) {
+      Iterator<? extends SNode> iterator = types.iterator();
+      SNode a = iterator.next();
+      SNode b = iterator.next();
+      types.remove(a);
+      types.remove(b);
+      addAllStructurally((Set<SNode>) types, leastCommonSupertypes(a, b, subTypesToSupertypes));
     }
-    candidates.add(first);
-    for (T node : candidates) {
-      boolean good = true;
-      for (T type : types) {
-        if (type == node) continue;
-        Set<T> supertypes = subTypesToSuperTypes.get(type);
-        if (supertypes == null || !supertypes.contains(node)) {
-          good = false;
+
+    return (Set<SNode>) types;
+  }
+
+  private Set<SNode> leastCommonSupertypes(SNode a, SNode b, Map<SNode, Set<SNode>> subTypesToSuperTypes) {
+    Set<SNode> result = new HashSet<SNode>();
+    if (MatchingUtil.matchNodes(a,b)) {
+      result.add(a);
+      return result;
+    }
+
+    Set<SNode> superTypesA = subTypesToSuperTypes.get(a);
+    superTypesA.add(a);
+    Set<SNode> superTypesB = subTypesToSuperTypes.get(b);
+    superTypesB.add(b);
+    for (SNode superTypeA : new HashSet<SNode>(superTypesA)) {
+      boolean matches = false;
+      for (SNode superTypeB : superTypesB) {
+        if (MatchingUtil.matchNodes(superTypeA, superTypeB)) {
+          matches = true;
           break;
         }
       }
-      if (good) { // if all sets contain it
-        commonSupertypes.add(node);
+      if (!matches) {
+        superTypesA.remove(superTypeA);
       }
     }
-
-    for (T node : new HashSet<T>(commonSupertypes)) { // retaining only least common supertypes
-      Set<T> supertypes = subTypesToSuperTypes.get(node);
-      if (supertypes == null) continue;
-      for (T supertype : supertypes) {
-        if (commonSupertypes.contains(supertype)) {
-          commonSupertypes.remove(supertype);
+    Set<SNode> commonSupertypes = superTypesA;
+    for (SNode commonSupertype : new HashSet<SNode>(commonSupertypes)) {
+      Set<SNode> superTypes = subTypesToSuperTypes.get(commonSupertype);
+      if (superTypes != null) {
+        for (SNode superType : superTypes) {
+          removeStructurally(commonSupertypes, superType);
         }
       }
     }
@@ -327,21 +367,6 @@ public class SubtypingManager {
   public boolean coerceSupertyping(SNode supertype, AnalyzedTermDeclaration analyzedTermDeclaration, ExpressionContext context) {
     MyCoersionMatcher coersionMatcher = new MyCoersionMatcher(analyzedTermDeclaration, context);
     return searchInSubtypes(supertype, coersionMatcher);
-  }
-
-  public static interface SupertypesCollector<T> {
-    Set<T> collectSupertypes(T subtype);
-  }
-
-
-  public static class NodeSupertypesCollector implements SupertypesCollector<SNode> {
-    private SubtypingManager mySubtypingManager;
-    public NodeSupertypesCollector(SubtypingManager subtypingManager) {
-      mySubtypingManager = subtypingManager;
-    }
-    public Set<SNode> collectSupertypes(SNode subtype) {
-      return mySubtypingManager.collectSupertypes(subtype);
-    }
   }
 
   private static interface Matcher {
