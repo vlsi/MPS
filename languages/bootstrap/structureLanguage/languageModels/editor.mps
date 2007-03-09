@@ -108,7 +108,7 @@
         <property name="drawBorder" value="false" />
         <property name="noTargetText" value="&lt;no name&gt;" />
         <property name="textBgColorSelected" value="cyan" />
-        <link role="relationDeclaration" targetNodeId="2.1078489098626" />
+        <link role="relationDeclaration" targetNodeId="2.1169194664001" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1162585934258">
         <property name="textFgColor" value="darkGray" />
@@ -132,8 +132,8 @@
         <property name="selectable" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1083925414256">
-        <property name="allowEmptyText" value="true" />
         <property name="textFgColor" value="blue" />
+        <property name="allowEmptyText" value="true" />
         <property name="drawBorder" value="false" />
         <property name="noTargetText" value="&lt;NULL&gt;" />
         <property name="textBgColorSelected" value="cyan" />
@@ -239,8 +239,8 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1162581349090">
             <property name="drawBorder" value="false" />
             <property name="vertical" value="true" />
-            <property name="selectable" value="false" />
             <property name="gridLayout" value="true" />
+            <property name="selectable" value="false" />
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1162581349091">
               <property name="drawBorder" value="false" />
               <property name="vertical" value="false" />
@@ -316,8 +316,8 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1162581824142">
             <property name="drawBorder" value="false" />
             <property name="vertical" value="true" />
-            <property name="gridLayout" value="true" />
             <property name="selectable" value="false" />
+            <property name="gridLayout" value="true" />
             <link role="relationDeclaration" targetNodeId="1.1083172003582" />
           </node>
         </node>
@@ -596,8 +596,8 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1105739255644">
             <property name="drawBorder" value="false" />
             <property name="vertical" value="true" />
-            <property name="gridLayout" value="true" />
             <property name="selectable" value="false" />
+            <property name="gridLayout" value="true" />
             <link role="relationDeclaration" targetNodeId="1.1071489727084" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1105739255645">
@@ -612,8 +612,8 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1105726767734">
             <property name="drawBorder" value="false" />
             <property name="vertical" value="true" />
-            <property name="selectable" value="false" />
             <property name="gridLayout" value="true" />
+            <property name="selectable" value="false" />
             <link role="relationDeclaration" targetNodeId="1.1071489727083" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1105726767735">
@@ -629,8 +629,8 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1105726873349">
             <property name="drawBorder" value="false" />
             <property name="vertical" value="true" />
-            <property name="gridLayout" value="true" />
             <property name="selectable" value="false" />
+            <property name="gridLayout" value="true" />
             <link role="relationDeclaration" targetNodeId="1.1105725339613" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1105739239077">
@@ -646,8 +646,8 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1105739239079">
             <property name="drawBorder" value="false" />
             <property name="vertical" value="true" />
-            <property name="selectable" value="false" />
             <property name="gridLayout" value="true" />
+            <property name="selectable" value="false" />
             <link role="relationDeclaration" targetNodeId="1.1105736949336" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1137467292180">
@@ -663,8 +663,8 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1137467292182">
             <property name="drawBorder" value="false" />
             <property name="vertical" value="true" />
-            <property name="gridLayout" value="true" />
             <property name="selectable" value="false" />
+            <property name="gridLayout" value="true" />
             <link role="relationDeclaration" targetNodeId="1.1137467167200" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1137467292184">
@@ -680,8 +680,8 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1137532267760">
             <property name="drawBorder" value="false" />
             <property name="vertical" value="true" />
-            <property name="gridLayout" value="true" />
             <property name="selectable" value="false" />
+            <property name="gridLayout" value="true" />
             <link role="relationDeclaration" targetNodeId="1.1137532086877" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1137532267761">
@@ -1299,8 +1299,8 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1169126008931">
             <property name="drawBorder" value="false" />
             <property name="vertical" value="true" />
-            <property name="gridLayout" value="true" />
             <property name="selectable" value="false" />
+            <property name="gridLayout" value="true" />
             <link role="relationDeclaration" targetNodeId="1.1071489727084" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1169126008932">
@@ -1315,8 +1315,8 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1169126008934">
             <property name="drawBorder" value="false" />
             <property name="vertical" value="true" />
-            <property name="selectable" value="false" />
             <property name="gridLayout" value="true" />
+            <property name="selectable" value="false" />
             <link role="relationDeclaration" targetNodeId="1.1071489727083" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1169126008935">
@@ -1332,8 +1332,8 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1169126008937">
             <property name="drawBorder" value="false" />
             <property name="vertical" value="true" />
-            <property name="gridLayout" value="true" />
             <property name="selectable" value="false" />
+            <property name="gridLayout" value="true" />
             <link role="relationDeclaration" targetNodeId="1.1105725339613" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1169126008938">
@@ -1349,8 +1349,8 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1169126008940">
             <property name="drawBorder" value="false" />
             <property name="vertical" value="true" />
-            <property name="selectable" value="false" />
             <property name="gridLayout" value="true" />
+            <property name="selectable" value="false" />
             <link role="relationDeclaration" targetNodeId="1.1105736949336" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1169126008941">
@@ -1366,8 +1366,8 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1169126008943">
             <property name="drawBorder" value="false" />
             <property name="vertical" value="true" />
-            <property name="gridLayout" value="true" />
             <property name="selectable" value="false" />
+            <property name="gridLayout" value="true" />
             <link role="relationDeclaration" targetNodeId="1.1137467167200" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1169126008944">
@@ -1383,8 +1383,8 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1169126008946">
             <property name="drawBorder" value="false" />
             <property name="vertical" value="true" />
-            <property name="gridLayout" value="true" />
             <property name="selectable" value="false" />
+            <property name="gridLayout" value="true" />
             <link role="relationDeclaration" targetNodeId="1.1137532086877" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1169126008947">

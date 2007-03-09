@@ -81,7 +81,9 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1082978164218">
     <property name="name" value="DataTypeDeclaration" />
-    <link role="extends" targetNodeId="1.1078489098625" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1173471269815">
+      <link role="intfc" targetNodeId="1.1169194658468" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1082978164219">
     <property name="iconPath" value="${language_descriptor}\icons\enum.png" />
@@ -121,7 +123,9 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1083171877298">
     <property name="name" value="EnumerationMemberDeclaration" />
-    <link role="extends" targetNodeId="1.1078489098625" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1173471274769">
+      <link role="intfc" targetNodeId="1.1169194658468" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1083923523171">
       <property name="propertyType" value="string" />
       <property name="name" value="internalValue" />
