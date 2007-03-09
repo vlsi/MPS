@@ -23,7 +23,8 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private TransientModule myTransientModule;
   private Language myTargetLanguage;
 
-  private Map<Object, Object> myUserObjects = new HashMap<Object, Object>();
+  private Map<Object, Object> myTransientObjects = new HashMap<Object, Object>();
+  private Map<Object, Object> mySessionObjects = new HashMap<Object, Object>();
   private Set<MappingConfiguration> myCustomMappingConfigurations;
   private Set<MappingConfiguration> myMappingConfigurations;
 
@@ -59,7 +60,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   }
 
   public void replaceInputModel(SModelDescriptor inputModel) {
-    myUserObjects.clear();
+    myTransientObjects.clear();
     myGeneratorModules = getGeneratorModules(inputModel.getSModel());
     myTransientModule.addGeneratorModules(myGeneratorModules);
     initTemplateModels();
@@ -174,12 +175,20 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return generators;
   }
 
-  public void putUserObject(Object key, Object o) {
-    myUserObjects.put(key, o);
+  public void putTransientObject(Object key, Object o) {
+    myTransientObjects.put(key, o);
   }
 
-  public Object getUserObject(Object key) {
-    return myUserObjects.get(key);
+  public Object getTransientObject(Object key) {
+    return myTransientObjects.get(key);
+  }
+
+  public void putSessionObject(Object key, Object o) {
+    mySessionObjects.put(key, o);
+  }
+
+  public Object getSessionObject(Object key) {
+    return mySessionObjects.get(key);
   }
 
   public String createUniqueName(String roughName) {
@@ -282,7 +291,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     }
 
     public void save() {
-      throw  new UnsupportedOperationException();
+      throw new UnsupportedOperationException();
     }
   } // private class TransientModule
 }
