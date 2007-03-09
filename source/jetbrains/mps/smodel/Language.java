@@ -1,6 +1,9 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
+import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
@@ -39,7 +42,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
   private LanguageDescriptor myLanguageDescriptor;
   private List<Generator> myGenerators;
-  private HashMap<String, ConceptDeclaration> myNameToConceptCache = new HashMap<String, ConceptDeclaration>();
+  private HashMap<String, AbstractConceptDeclaration> myNameToConceptCache = new HashMap<String, AbstractConceptDeclaration>();
   private List<LanguageCommandListener> myCommandListeners = new ArrayList<LanguageCommandListener>();
   private LanguageEventTranslator myEventTranslator = new LanguageEventTranslator();
   private SModelsListener myModelsListener = new LanguageModelsAdapter();
@@ -627,14 +630,14 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   }
 
   @Nullable
-  public ConceptDeclaration findConceptDeclaration(@NotNull String conceptName) {
+  public AbstractConceptDeclaration findConceptDeclaration(@NotNull String conceptName) {
     if (myNameToConceptCache.isEmpty()) {
       SModelDescriptor structureModelDescriptor = getStructureModelDescriptor();
       SModel structureModel = structureModelDescriptor.getSModel();
       structureModel.allAdapters(INodeAdapter.class, new Condition<INodeAdapter>() {
           public boolean met(INodeAdapter node) {
-            if (node instanceof ConceptDeclaration) {
-              myNameToConceptCache.put(node.getName(), (ConceptDeclaration) node);
+            if (node instanceof AbstractConceptDeclaration) {
+              myNameToConceptCache.put(node.getName(), (AbstractConceptDeclaration) node);
             }
             return false;
           }
@@ -649,18 +652,37 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       return new HashSet<String>(myParentsNamesMap.get(conceptFqName));
     } else {
       Set<String> result = new HashSet<String>();
-      ConceptDeclaration declaration = findConceptDeclaration(NameUtil.shortNameFromLongName(conceptFqName));
+      AbstractConceptDeclaration declaration = findConceptDeclaration(NameUtil.shortNameFromLongName(conceptFqName));
       if (declaration == null) {
         return result;
       }
 
       result.add(conceptFqName);
-      ConceptDeclaration conceptDeclaration = declaration.getExtends();
-      if (conceptDeclaration != null) {
-        result.addAll(SModelUtil_new.getDeclaringLanguage(
-                declaration.getExtends(), GlobalScope.getInstance()).getParentNames(
-                NameUtil.nodeFQName(conceptDeclaration)));
+
+      if (declaration instanceof ConceptDeclaration) {
+        ConceptDeclaration cd = (ConceptDeclaration) declaration;
+        if (cd.getExtends() != null) {
+          result.addAll(SModelUtil_new.getDeclaringLanguage(
+                  cd.getExtends(), GlobalScope.getInstance()).getParentNames(
+                  NameUtil.nodeFQName(cd.getExtends())));
+        }
+
+        for (InterfaceConceptReference icr : cd.getImplementses()) {
+          result.addAll(SModelUtil_new.getDeclaringLanguage(
+                  icr.getIntfc(), GlobalScope.getInstance()).getParentNames(
+                  NameUtil.nodeFQName(icr.getIntfc())));
+        }
       }
+
+      if (declaration instanceof InterfaceConceptDeclaration) {
+        InterfaceConceptDeclaration icd = (InterfaceConceptDeclaration) declaration;
+        for (InterfaceConceptReference icr : icd.getExtendses()) {
+          result.addAll(SModelUtil_new.getDeclaringLanguage(
+                  icr.getIntfc(), GlobalScope.getInstance()).getParentNames(
+                  NameUtil.nodeFQName(icr.getIntfc())));
+        }
+      }
+
       myParentsNamesMap.put(conceptFqName, result);
       return new HashSet<String>(result);
     }
