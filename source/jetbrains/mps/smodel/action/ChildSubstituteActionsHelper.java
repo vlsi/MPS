@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
+import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.util.QueryMethodGenerated;
@@ -156,27 +157,9 @@ public class ChildSubstituteActionsHelper {
     ISearchScope searchScope = (ISearchScope) status.getUserObject();
     final ConceptDeclaration targetConcept = smartReference.getTarget();
 
-    List<SNode> referentNodes = searchScope.getNodes();
-
-    Class adapterClass = getAdapterClass(targetConcept);
-    String conceptFqName = NameUtil.conceptFqName(targetConcept);
-
-    if (adapterClass == null) {
-      for (SNode referentNode : referentNodes) {
-        if (referentNode.isInstanceOfConcept(targetConcept, scope)) {
-          actions.add(new SmartRefChildNodeSubstituteAction(referentNode, parentNode, currentChild, childSetter, scope, referenceNodeConcept, referenceLink_final));
-        }
-      }
-    } else { //fast way
-      for (SNode referentNode : referentNodes) {
-
-        String rcfqn = referentNode.getConceptFqName();
-
-        if (rcfqn.equals(conceptFqName) ||
-                adapterClass.isInstance(referentNode.getAdapter())) {
-          actions.add(new SmartRefChildNodeSubstituteAction(referentNode, parentNode, currentChild, childSetter, scope, referenceNodeConcept, referenceLink_final));
-        }
-      }
+    List<SNode> referentNodes = searchScope.getNodes(new IsInstanceCondition(targetConcept));
+    for (SNode referentNode : referentNodes) {
+        actions.add(new SmartRefChildNodeSubstituteAction(referentNode, parentNode, currentChild, childSetter, scope, referenceNodeConcept, referenceLink_final));
     }
 
     return actions;

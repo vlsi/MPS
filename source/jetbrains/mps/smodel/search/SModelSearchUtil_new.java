@@ -148,7 +148,12 @@ public class SModelSearchUtil_new {
       } else {
         for (SModelDescriptor model : myModels) {
           try {
-            result.addAll(model.getSModel().allNodes(condition));
+            if (condition instanceof IsInstanceCondition) {
+              IsInstanceCondition isInstance = (IsInstanceCondition) condition;              
+              result.addAll(model.getFastNodeFinder().getNodes(isInstance.getConceptDeclaration(), true));
+            } else {
+              result.addAll(model.getSModel().allNodes(condition));
+            }
           } catch (Throwable t) {
             LOG.error("error collecting nodes form model " + model, t);
           }
