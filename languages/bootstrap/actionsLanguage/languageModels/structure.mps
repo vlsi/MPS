@@ -239,7 +239,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1158700725281">
-    <property name="name" value="RTransformHintSubstituteActionsBuilderNodeFactory" />
+    <property name="name" value="NodeFactory" />
     <link role="extends" targetNodeId="1.1133920641626" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1158952310477">
       <property name="name" value="description" />
