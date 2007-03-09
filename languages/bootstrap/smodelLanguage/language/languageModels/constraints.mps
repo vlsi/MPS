@@ -218,6 +218,7 @@
         </node>
       </node>
     </node>
+    <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1173400603489" />
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraintSet" id="1170928950528">
     <property name="name" value="SModelLangTypes_names" />
