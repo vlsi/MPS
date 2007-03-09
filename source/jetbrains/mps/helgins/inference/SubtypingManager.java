@@ -284,7 +284,7 @@ public class SubtypingManager {
         if (containsStructurally(subTypesToSupertypes.keySet(), type)) {
           continue;
         }
-        Set<SNode> superTypes = collectImmediateSubtypes(type);
+        Set<SNode> superTypes = collectImmediateSupertypes(type);
         subTypesToSupertypes.put(type, superTypes);
         newFrontier.addAll(superTypes);
         addAllStructurally(allTypes, superTypes);
@@ -330,9 +330,9 @@ public class SubtypingManager {
       return result;
     }
 
-    Set<SNode> superTypesA = subTypesToSuperTypes.get(a);
+    Set<SNode> superTypesA = new HashSet<SNode>(subTypesToSuperTypes.get(a));
     superTypesA.add(a);
-    Set<SNode> superTypesB = subTypesToSuperTypes.get(b);
+    Set<SNode> superTypesB = new HashSet<SNode>(subTypesToSuperTypes.get(b));
     superTypesB.add(b);
     for (SNode superTypeA : new HashSet<SNode>(superTypesA)) {
       boolean matches = false;
