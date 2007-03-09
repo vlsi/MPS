@@ -3,9 +3,6 @@
   <structure>
     <model modelUID="jetbrains.mps.transformation.TLBase.structure" />
   </structure>
-  <typeSystem>
-    <model modelUID="jetbrains.mps.transformation.TLBase.types" />
-  </typeSystem>
   <helginsTypeSystem>
     <model modelUID="jetbrains.mps.transformation.TLBase.helgins" />
   </helginsTypeSystem>
