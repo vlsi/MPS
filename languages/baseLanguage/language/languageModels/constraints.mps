@@ -667,6 +667,42 @@
         </node>
       </node>
     </node>
+    <node role="nodePropertyConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraint" id="1173475842434">
+      <link role="applicableConcept" targetNodeId="1.1070475926800" />
+      <link role="applicableProperty" targetNodeId="1.1070475926801" />
+      <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_PropertyGetter" id="1173475852701">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1173475852702">
+          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1173475883903">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1173475883904">
+              <property name="name" value="value" />
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1173475883902">
+                <link role="classifier" extResolveInfo="13.[Classifier]String" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1173475875033">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.PropertyGetter_FunctionParm_node" id="1173475874008" />
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1173475876588">
+                  <link role="property" targetNodeId="1.1070475926801" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1173475889992">
+            <node role="expression" type="jetbrains.mps.baseLanguage.TernaryOperatorExpression" id="1173475889993">
+              <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1173475893507">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1173475895463" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1173475891990">
+                  <link role="variableDeclaration" targetNodeId="1173475883904" resolveInfo="value" />
+                </node>
+              </node>
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.StringLiteral" id="1173475898831" />
+              <node role="ifFalse" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1173475901059">
+                <link role="variableDeclaration" targetNodeId="1173475883904" resolveInfo="value" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraintSet" id="1149122036826">
     <property name="name" value="BL_reference" />
