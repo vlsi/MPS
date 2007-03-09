@@ -1,5 +1,6 @@
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -43,7 +44,7 @@ public class FastNodeFinder {
     }
   }
 
-  public List<SNode> getNodes(ConceptDeclaration concept, boolean includeInherited) {
+  public List<SNode> getNodes(AbstractConceptDeclaration concept, boolean includeInherited) {
     if (!myInitialized) {
       initCache();
     }

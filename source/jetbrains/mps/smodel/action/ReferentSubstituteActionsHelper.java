@@ -2,6 +2,7 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
@@ -39,7 +40,7 @@ import java.util.List;
   }
 
   private static List<INodeSubstituteAction> createActions(SNode referenceNode, SNode currentReferent, LinkDeclaration linkDeclaration, ISearchScope searchScope, final IScope scope) {
-    final ConceptDeclaration referentConcept = linkDeclaration.getTarget();
+    final AbstractConceptDeclaration referentConcept = linkDeclaration.getTarget();
     if (referentConcept == null) {
       return Collections.emptyList();
     }

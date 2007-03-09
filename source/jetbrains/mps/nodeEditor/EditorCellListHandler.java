@@ -23,7 +23,7 @@ public abstract class EditorCellListHandler extends AbstractCellListHandler {
   public EditorCellListHandler(SNode ownerNode, String childRole, EditorContext editorContext) {
     super(ownerNode, childRole, editorContext);
     myLinkDeclaration = ownerNode.getLinkDeclaration(childRole, editorContext.getOperationContext().getScope());
-    myChildConcept = myLinkDeclaration.getTarget();
+    myChildConcept = (ConceptDeclaration) myLinkDeclaration.getTarget();
     LinkDeclaration genuineLink = SModelUtil_new.getGenuineLinkDeclaration(myLinkDeclaration);
     if (genuineLink.getMetaClass() != LinkMetaclass.aggregation) {
       throw new RuntimeException("Only Aggregation links can be used in list");

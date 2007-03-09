@@ -1386,7 +1386,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
     return NameUtil.removeStructureFromFqName(getConceptFqName());
   }
 
-  public boolean isInstanceOfConcept(ConceptDeclaration concept, IScope scope) {
+  public boolean isInstanceOfConcept(AbstractConceptDeclaration concept, IScope scope) {
     return isInstanceOfConcept(NameUtil.nodeFQName(concept), scope);
   }
 

@@ -2,6 +2,7 @@ package jetbrains.mps.smodel.constraints;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.Status;
 import jetbrains.mps.smodel.*;
@@ -36,7 +37,7 @@ public class ModelConstraintsUtil {
     }
 
     // default search scope
-    ConceptDeclaration referentConcept = referenceLinkDeclaration.getTarget();
+    AbstractConceptDeclaration referentConcept = referenceLinkDeclaration.getTarget();
     scopeProvider = ModelConstraintsManager.getInstance().getNodeDefaultSearchScopeProvider(referentConcept);
     if (scopeProvider != null) {
       if (scopeProvider.canCreateNodeReferentSearchScope(model, enclosingNode, referenceNode, scope)) {

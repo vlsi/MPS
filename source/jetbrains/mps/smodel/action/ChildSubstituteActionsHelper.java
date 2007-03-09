@@ -6,6 +6,7 @@ import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePrecondit
 import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.logging.Logger;
@@ -153,7 +154,7 @@ public class ChildSubstituteActionsHelper {
     List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
     final LinkDeclaration referenceLink_final = smartReference;
     ISearchScope searchScope = (ISearchScope) status.getUserObject();
-    final ConceptDeclaration targetConcept = smartReference.getTarget();
+    final AbstractConceptDeclaration targetConcept = smartReference.getTarget();
 
     List<SNode> referentNodes = searchScope.getNodes(new IsInstanceCondition(targetConcept));
     for (SNode referentNode : referentNodes) {

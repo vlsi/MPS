@@ -1,18 +1,18 @@
 package jetbrains.mps.smodel.search;
 
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
 
 public class IsInstanceCondition implements Condition<SNode> {
-  private ConceptDeclaration myConceptDeclaration;
+  private AbstractConceptDeclaration myConceptDeclaration;
 
-  public IsInstanceCondition(ConceptDeclaration conceptDeclaration) {
+  public IsInstanceCondition(AbstractConceptDeclaration conceptDeclaration) {
     myConceptDeclaration = conceptDeclaration;
   }
 
-  public ConceptDeclaration getConceptDeclaration() {
+  public AbstractConceptDeclaration getConceptDeclaration() {
     return myConceptDeclaration;
   }
 
