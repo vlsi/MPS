@@ -44,39 +44,6 @@ public class FastNodeFinder {
   }
 
   public List<SNode> getNodes(ConceptDeclaration concept, boolean includeInherited) {
-    //todo this is a hack
-    //we treat java_stubs in a different way because they are loaded very lazily
-//    if (myModelDescriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) {
-//      Language l = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
-//      if (l != BootstrapLanguages.getInstance().getBaseLanguage()) {
-//        return new ArrayList<SNode>();
-//      }
-//
-//      if (concept.getRootable() ||
-//              NameUtil.nodeFQName(concept).equals("jetbrains.mps.baseLanguage.structure.Classifier")) {
-//        List<SNode> result = new ArrayList<SNode>();
-//
-//        Class<? extends BaseAdapter> adapter = getAdapterClass(concept);
-//
-//
-//        if (adapter != null) {
-//          for (SNode root : myModelDescriptor.getSModel().getRoots()) {
-//            if (adapter.isInstance(root.getAdapter())) {
-//              result.add(root);
-//            }
-//          }
-//        } else {
-//          for (SNode root : myModelDescriptor.getSModel().getRoots()) {
-//            if (root.isInstanceOfConcept(concept, GlobalScope.getInstance())) {
-//              result.add(root);
-//            }
-//          }
-//        }
-//
-//        return result;
-//      }
-//    }
-
     if (!myInitialized) {
       initCache();
     }
