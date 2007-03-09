@@ -8,7 +8,7 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.core.structure.BaseConcept;
-import jetbrains.mps.core.structure.NamedConcept;
+import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.generator.GenerationFailedException;
 import jetbrains.mps.generator.GenerationFailueInfo;
 import jetbrains.mps.generator.JavaNameUtil;
@@ -163,7 +163,7 @@ public class TemplateGenUtil {
 
     if (checkConditionForCreateRootRule(createRootRule, generator)) {
       String ruleName = createRootRule.getName();
-      BaseConcept templateNode = createRootRule.getTemplateNode();
+      INamedConcept templateNode = createRootRule.getTemplateNode();
       if (templateNode == null) {
         generator.showErrorMessage(null, null, BaseAdapter.fromAdapter(createRootRule), "'create root' rule has no template");
       } else {
@@ -204,7 +204,7 @@ public class TemplateGenUtil {
       List<SNode> nodes = generator.getSourceModel().getModelDescriptor().getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
       for (SNode node : nodes) {
         if (checkConditionForBaseMappingRule(node, rule, generator)) {
-          NamedConcept template = rule.getTemplate();
+          INamedConcept template = rule.getTemplate();
           if (template == null) {
             generator.showErrorMessage(node, null, BaseAdapter.fromAdapter(rule), "rule has no template");
             break;

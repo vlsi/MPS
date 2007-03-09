@@ -576,7 +576,7 @@
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="templateNode" />
-      <link role="target" targetNodeId="2.1078489098625" />
+      <link role="target" targetNodeId="2.1169194658468" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1167087518662">
@@ -721,7 +721,7 @@
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="template" />
-      <link role="target" targetNodeId="2.1078489098625" />
+      <link role="target" targetNodeId="2.1169194658468" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1167756080639">
