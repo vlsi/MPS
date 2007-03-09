@@ -178,25 +178,12 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1173177522413">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1173177522414">
             <property name="name" value="aaaa" />
-            <node role="type" type="jetbrains.mps.baseLanguage.ArrayType" id="1173177525323">
-              <node role="componentType" type="jetbrains.mps.baseLanguage.IntegerType" id="1173177522415" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1173177577361">
-          <node role="expression" type="jetbrains.mps.baseLanguage.ArrayLengthExpression" id="1173177605302">
-            <node role="array" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1173177530074">
-              <link role="variableDeclaration" targetNodeId="1173177522414" resolveInfo="aaaa" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1173177642483">
-          <node role="expression" type="jetbrains.mps.baseLanguage.ArrayAccessExpression" id="1173177643157">
-            <node role="array" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1173177642484">
-              <link role="variableDeclaration" targetNodeId="1173177522414" resolveInfo="aaaa" />
-            </node>
-            <node role="index" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1173177644612">
-              <property name="value" value="23" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1173177522415" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.NewExpression" id="1173450915820">
+              <link role="baseMethodDeclaration" extResolveInfo="1.constructor [Classifier]Integer[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int))" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1173450922917">
+                <property name="value" value="2" />
+              </node>
             </node>
           </node>
         </node>
