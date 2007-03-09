@@ -738,7 +738,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
   @NotNull
   public List<SNode> getChildren() {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
-    return new LinkedList(_children());
+    return new ArrayList(_children());
   }
 
   public int getChildCount() {
