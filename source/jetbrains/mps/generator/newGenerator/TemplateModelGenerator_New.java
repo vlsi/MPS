@@ -215,6 +215,11 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     return null;  //To change body of implemented methods use File | Settings | File Templates.
   }
 
+
+  public INodeBuilder findFirstNodeBuilderForTemplate(SNode template) {
+    return null;  //To change body of implemented methods use File | Settings | File Templates.
+  }
+
   public INodeBuilder findNodeBuilder(Condition<INodeBuilder> condition) {
     return null;  //To change body of implemented methods use File | Settings | File Templates.
   }

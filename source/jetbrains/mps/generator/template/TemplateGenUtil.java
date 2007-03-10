@@ -70,6 +70,11 @@ public class TemplateGenUtil {
     // try to resolve the reference
     IScope scope = generator.getScope();
     IReferenceResolver referenceResolver = createReferenceResolver(templateNode, scope);
+    return buildTargetNodeReference(nodeBuilder, templateReference, templateNode, targetNode, referenceResolver);
+  }
+
+  public static boolean buildTargetNodeReference(INodeBuilder nodeBuilder, SReference templateReference, SNode templateNode, SNode targetNode, IReferenceResolver referenceResolver) {
+    ITemplateGenerator generator = nodeBuilder.getGenerator();
     SNode targetReferentNode = referenceResolver.resolveTarget(templateReference, nodeBuilder);
     if (targetReferentNode != null) {
       if (checkResolvedReference(nodeBuilder.getSourceNode(), targetNode,
