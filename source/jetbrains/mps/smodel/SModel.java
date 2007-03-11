@@ -136,7 +136,7 @@ public class SModel implements Iterable<SNode> {
 
   @NotNull
   public List<SNode> getRoots(@NotNull Condition<SNode> condition) {
-    List<SNode> list = new LinkedList<SNode>();
+    List<SNode> list = new ArrayList<SNode>();
     for (SNode node : myRoots) {
       if (condition.met(node)) list.add(node);
     }
@@ -375,7 +375,7 @@ public class SModel implements Iterable<SNode> {
 
   @NotNull
   private List<SModelCommandListener> copyCommandListeners() {
-    return new LinkedList<SModelCommandListener>(myCommandListeners);
+    return new ArrayList<SModelCommandListener>(myCommandListeners);
   }
 
   public void addSModelCommandListener(@NotNull SModelCommandListener listener) {
@@ -599,7 +599,7 @@ public class SModel implements Iterable<SNode> {
 
   @NotNull
   public List<SModelUID> getImportedModelUIDs() {
-    List<SModelUID> uids = new LinkedList<SModelUID>();
+    List<SModelUID> uids = new ArrayList<SModelUID>();
     for (ImportElement importElement : myImports) {
       uids.add(importElement.getModelUID());
     }
@@ -618,7 +618,7 @@ public class SModel implements Iterable<SNode> {
 
   @NotNull
   public Iterator<SModelDescriptor> importedModels(@NotNull IScope scope) {
-    List<SModelDescriptor> modelsList = new LinkedList<SModelDescriptor>();
+    List<SModelDescriptor> modelsList = new ArrayList<SModelDescriptor>();
     for (ImportElement importElement : myImports) {
       SModelUID modelUID = importElement.getModelUID();
       SModelDescriptor modelDescriptor = scope.getModelDescriptor(modelUID);
@@ -635,7 +635,7 @@ public class SModel implements Iterable<SNode> {
 
   public List<SModelDescriptor> allImportedModels(IScope scope) {
     SModelDescriptor sourceModel = getModelDescriptor();
-    List<SModelDescriptor> list = new LinkedList<SModelDescriptor>();
+    List<SModelDescriptor> list = new ArrayList<SModelDescriptor>();
     List<Language> languages = getLanguages(scope);
     for (Language language : languages) {
       for (SModelDescriptor accessoryModels : language.getAccessoryModels()) {
@@ -773,7 +773,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void clear() {
-    List<SNode> roots = new LinkedList<SNode>(myRoots);
+    List<SNode> roots = new ArrayList<SNode>(myRoots);
     for (SNode root : roots) {
       root.delete();
     }
@@ -995,7 +995,7 @@ public class SModel implements Iterable<SNode> {
   @NotNull
   public List<SNode> allNodes() {
     SModel model = this;
-    List<SNode> result = new LinkedList<SNode>();
+    List<SNode> result = new ArrayList<SNode>();
     for (SNode root : model.getRoots()) {
       result.add(root);
       result.addAll(root.allChildren());
@@ -1005,7 +1005,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public List<SNode> allNodes(Condition<SNode> condition) {
-    List<SNode> resultNodes = new LinkedList<SNode>();
+    List<SNode> resultNodes = new ArrayList<SNode>();
 
     for (SNode node : getRoots()) {
       if (condition.met(node)) {
@@ -1052,14 +1052,14 @@ public class SModel implements Iterable<SNode> {
   }
 
   public List<SNode> allNodesIncludingImported(IScope scope, Condition<SNode> condition) {
-    List<SModel> modelsList = new LinkedList<SModel>();
+    List<SModel> modelsList = new ArrayList<SModel>();
     modelsList.add(this);
     List<SModelDescriptor> modelDescriptors = allImportedModels(scope);
     for (SModelDescriptor descriptor : modelDescriptors) {
       modelsList.add(descriptor.getSModel());
     }
 
-    List<SNode> resultNodes = new LinkedList<SNode>();
+    List<SNode> resultNodes = new ArrayList<SNode>();
     for (SModel aModel : modelsList) {
       resultNodes.addAll(aModel.allNodes(condition));
     }
@@ -1112,7 +1112,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public List<ConceptDeclaration> conceptAdaptersFromModelLanguages(final Condition<ConceptDeclaration> condition, IScope scope) {
-    List<ConceptDeclaration> list = new LinkedList<ConceptDeclaration>();
+    List<ConceptDeclaration> list = new ArrayList<ConceptDeclaration>();
     List<Language> languages = getLanguages(scope);
     for (Language language : languages) {
       SModelDescriptor structureModelDescriptor = language.getStructureModelDescriptor();
