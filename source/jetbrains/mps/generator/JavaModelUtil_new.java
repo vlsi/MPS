@@ -180,10 +180,15 @@ public class JavaModelUtil_new {
     String name = cls.getName();
     String rootName = NameUtil.shortNameFromLongName(name);
     String modelName = NameUtil.namespaceFromLongName(name);
-    SModelUID modelUID = new SModelUID(modelName, SModelStereotype.JAVA_STUB);
+    return (Classifier) BaseAdapter.fromNode(findClassifier(modelName, rootName));
+  }
+
+  @Nullable
+  public static SNode findClassifier(String packageName, String shortClassName) {
+    SModelUID modelUID = new SModelUID(packageName, SModelStereotype.JAVA_STUB);
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
     if (modelDescriptor == null) return null;
-    return (Classifier) BaseAdapter.fromNode(modelDescriptor.getSModel().getRootByName(rootName));
+    return modelDescriptor.getSModel().getRootByName(shortClassName);
   }
 
   public static FieldDeclaration findField(Classifier classifier, String fieldName) {
