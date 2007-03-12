@@ -29,12 +29,18 @@ import java.awt.event.KeyEvent;
 import java.util.*;
 
 public class SModelTreeNode extends MPSTreeNodeEx {
+  public static final String PACK = "package";
+
   private SModelDescriptor myModelDescriptor;
   private String myLabel;
   private boolean myInitialized = false;
+  private boolean myInitializing = false;
   private MyModelListener myModelListener = new MyModelListener();
   private boolean myShowLongName;
   private List<SNodeGroupTreeNode> myRootGroups = new ArrayList<SNodeGroupTreeNode>();
+
+  private boolean myPackagesEnabled = true;
+  private Map<String, PackageNode> myPackageNodes = new HashMap<String, PackageNode>();
 
   public SModelTreeNode(SModelDescriptor modelDescriptor,
                         String label,
@@ -52,8 +58,34 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     myLabel = label;
   }
 
+  protected SNodeGroupTreeNode getNodeGroupFor(SNode node) {
+    if (!myPackagesEnabled) {
+      return null;
+    }
 
-  protected SNodeGroupTreeNode getGroupNodeFor(SNode node) {
+    String nodePackage = node.getProperty(PACK);
+
+    if (nodePackage != null) {
+      String[] packages = nodePackage.split("\\.");
+
+      String pack = "";
+      PackageNode current = null;
+      for (String aPackage : packages) {
+        if (pack.length() > 0) {
+          pack += ".";
+        }
+        pack += aPackage;
+
+        if (!myPackageNodes.containsKey(pack)) {
+          current = new PackageNode(aPackage, current);
+          myPackageNodes.put(pack, current);
+        }
+
+        current = myPackageNodes.get(pack);
+      }
+
+      return current;
+    }
     return null;
   }
 
@@ -79,7 +111,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
       myRootGroups.add(index, groupTreeNode);
 
-      if (myInitialized) {
+      if (myInitialized || myInitializing) {
         DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
         treeModel.insertNodeInto(groupTreeNode, this, index);
       }
@@ -102,8 +134,8 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       if (index == -1) {
         index = lastGroupIndex;
       }
-      
-      if (myInitialized) {
+
+      if (myInitialized || myInitializing) {
         DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
         treeModel.insertNodeInto(groupTreeNode, parent, index);
       } else {
@@ -118,7 +150,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return result;
   }
 
-  protected void groupWasDeleted(SNodeGroupTreeNode node) {
+  protected void groupBecameEmpty(SNodeGroupTreeNode node) {
     DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
 
     myRootGroups.remove(node);
@@ -202,7 +234,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     if (getSModelDescriptor() != null) {
       uid = getSModelDescriptor().getModelUID();
     } else {
-      uid = getSModel().getUID();      
+      uid = getSModel().getUID();
     }
 
     String name = myShowLongName ? uid.toString()
@@ -234,32 +266,37 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   public void init() {
-    removeAllChildren();
-    for (SNodeGroupTreeNode group : myRootGroups) {
-      add(group);
-    }
-    SModel model = getSModel();
-    if (!model.hasSModelCommandListener(myModelListener)) {
-      model.addSModelCommandListener(myModelListener);
-    }
-    List<SNode> filteredRoots = CollectionUtil.filter(model.getRoots(), new Condition<SNode>() {
-      public boolean met(SNode object) {
-        return !(BaseAdapter.fromNode(object) instanceof AttributeConcept);
+    try {
+      myInitializing = true;
+      removeAllChildren();
+      for (SNodeGroupTreeNode group : myRootGroups) {
+        add(group);
       }
-    });
-    List<SNode> sortedRoots = SortUtil.sortNodes(filteredRoots);
-    for (SNode sortedRoot : sortedRoots) {
-      MPSTreeNodeEx treeNode = createSNodeTreeNode(sortedRoot, getOperationContext());
-      MPSTreeNode group = getGroupNodeFor(sortedRoot);
-      if (group != null) {
-        group.add(treeNode);
-      } else {
-        add(treeNode);
+      SModel model = getSModel();
+      if (!model.hasSModelCommandListener(myModelListener)) {
+        model.addSModelCommandListener(myModelListener);
       }
+      List<SNode> filteredRoots = CollectionUtil.filter(model.getRoots(), new Condition<SNode>() {
+        public boolean met(SNode object) {
+          return !(BaseAdapter.fromNode(object) instanceof AttributeConcept);
+        }
+      });
+      List<SNode> sortedRoots = SortUtil.sortNodes(filteredRoots);
+      for (SNode sortedRoot : sortedRoots) {
+        MPSTreeNodeEx treeNode = createSNodeTreeNode(sortedRoot, getOperationContext());
+        MPSTreeNode group = getNodeGroupFor(sortedRoot);
+        if (group != null) {
+          group.add(treeNode);
+        } else {
+          add(treeNode);
+        }
+      }
+      DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+      treeModel.nodeStructureChanged(this);
+      myInitialized = true;
+    } finally {
+      myInitializing = false;
     }
-    DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
-    treeModel.nodeStructureChanged(this);
-    myInitialized = true;
   }
 
   private boolean showPropertiesAndReferences() {
@@ -310,6 +347,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
           final Set<SNode> removedNodes = new LinkedHashSet<SNode>();
 
           final Set<SNode> nodesWithChangedProperties = new LinkedHashSet<SNode>();
+          final Set<SNode> nodesWithChangedPackages = new LinkedHashSet<SNode>();
 
           final Set<SNode> nodesWithChangedRefs = new LinkedHashSet<SNode>();
 
@@ -334,11 +372,15 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
                 if (event.isRemoved()) {
                   removedNodes.add(event.getChild());
-                }                                
+                }
               }
 
               public void visitPropertyEvent(SModelPropertyEvent event) {
                 nodesWithChangedProperties.add(event.getNode());
+
+                if (PACK.equals(event.getPropertyName()) && event.getNode().isRoot()) {
+                  nodesWithChangedPackages.add(event.getNode());
+                }
               }
 
               public void visitReferenceEvent(SModelReferenceEvent event) {
@@ -352,8 +394,25 @@ public class SModelTreeNode extends MPSTreeNodeEx {
           addAndRemoveVisibleChildren(removedNodes, addedNodes);
           updateChangedProperties(nodesWithChangedProperties);
           updateChangedRefs(nodesWithChangedRefs);
+          updateNodesWithChangedPackages(nodesWithChangedPackages);
         }
       }, false);
+    }
+
+    private void updateNodesWithChangedPackages(Set<SNode> nodes) {            
+      DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+
+      for (SNode node : nodes) {
+        SNodeTreeNode treeNode = (SNodeTreeNode) findRootSNodeTreeNode(node);
+        MPSTreeNode parent = (MPSTreeNode) treeNode.getParent();
+
+        treeModel.removeNodeFromParent(treeNode);
+        if (parent.getChildCount() == 0 && parent instanceof SNodeGroupTreeNode) {
+          groupBecameEmpty((SNodeGroupTreeNode) parent);
+        }
+      }
+      
+      insertRoots(nodes);
     }
 
     private void updateChangedRefs(Set<SNode> nodesWithChangedRefs) {
@@ -399,7 +458,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
             }
           }
           if (newIndex == -1) {
-            newIndex = parentTreeNode.getChildCount() - 1;             
+            newIndex = parentTreeNode.getChildCount() - 1;
           }
 
           if (currentIndex != newIndex) {
@@ -461,10 +520,16 @@ public class SModelTreeNode extends MPSTreeNodeEx {
         treeModel.removeNodeFromParent(node);
 
         if (parent instanceof SNodeGroupTreeNode && parent.getChildCount() == 0) {
-          groupWasDeleted((SNodeGroupTreeNode) parent);
+          groupBecameEmpty((SNodeGroupTreeNode) parent);
         }
       }
 
+      insertRoots(addedRoots);
+    }
+
+    private void insertRoots(Set<SNode> addedRoots) {
+      DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+      
       final List<SNode> allRoots = new ArrayList<SNode>(getSModel().getRoots());
       Collections.sort(allRoots, new ToStringComparator());
 
@@ -477,7 +542,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
       for (SNode root : added) {
         SNodeTreeNode nodeToInsert = new SNodeTreeNode(root, getOperationContext());
-        SNodeGroupTreeNode group = getGroupNodeFor(root);
+        SNodeGroupTreeNode group = getNodeGroupFor(root);
         if (group != null) {
           int index = -1;
           for (int i = 0; i < group.getChildCount(); i++) {
@@ -502,4 +567,11 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       }
     }
   }
+
+  private class PackageNode extends SNodeGroupTreeNode {
+    public PackageNode(String name, PackageNode parent) {
+      super(SModelTreeNode.this, parent, name, true);
+    }
+  }
+
 }
