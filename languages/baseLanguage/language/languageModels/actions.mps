@@ -402,8 +402,8 @@
       </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1140831852602">
-      <property name="actionsFactoryAspectId" value="NewExpression_addTypeParameter" />
       <property name="transformTag" value="ext_1_RTransform" />
+      <property name="actionsFactoryAspectId" value="NewExpression_addTypeParameter" />
       <property name="description" value="add type parameters to new-expression" />
       <link role="applicableConcept" targetNodeId="1.1068581242872" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionFunction" id="1159200493867">
@@ -436,6 +436,11 @@
       <property name="actionsFactoryAspectId" value="TryCatchStatement_ConvertToTry" />
       <property name="description" value="convert to try statement" />
       <link role="applicableConcept" targetNodeId="1.1164879751025" />
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1173719449555">
+      <property name="actionsFactoryAspectId" value="Expression_ConvertToTernaryOpertor" />
+      <property name="description" value="convert to ternary operator" />
+      <link role="applicableConcept" targetNodeId="1.1068431790191" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeFactories" id="1158793282643">
