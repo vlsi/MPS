@@ -6,6 +6,9 @@
   <typeSystem>
     <model modelUID="ypath.types" />
   </typeSystem>
+  <helginsTypeSystem>
+    <model modelUID="ypath.helgins" />
+  </helginsTypeSystem>
   <actions>
     <model modelUID="ypath.actions" />
   </actions>
@@ -26,6 +29,7 @@
       <module>
         <moduleRoot path="${mps_home}\languages\baseLanguage\language\baseLanguage.mpl" />
       </module>
+      <external-templates />
     </generator>
   </generators>
   <classPath>
