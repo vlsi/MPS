@@ -9,6 +9,7 @@ import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.projectLanguage.structure.ModuleRoot;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
+import jetbrains.mps.transformation.TemplateLanguageUtil;
 import jetbrains.mps.util.NameUtil;
 
 import javax.swing.*;
@@ -196,7 +197,7 @@ public class NewGeneratorDialog extends BaseDialog {
     Generator newGenerator = generators.get(generators.size() - 1);
     boolean alreadyOwnsTemplateModel = false;
     for (SModelDescriptor modelDescriptor : newGenerator.getOwnModelDescriptors()) {
-      if (SModelStereotype.TEMPLATES.equals(modelDescriptor.getStereotype())) {
+      if (TemplateLanguageUtil.isTemplatesModel(modelDescriptor)) {
         alreadyOwnsTemplateModel = true;
         break;
       }

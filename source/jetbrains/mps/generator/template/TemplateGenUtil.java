@@ -80,6 +80,10 @@ public class TemplateGenUtil {
       if (checkResolvedReference(nodeBuilder.getSourceNode(), targetNode,
               templateNode, templateReference.getRole(), targetReferentNode, generator)) {
         targetNode.setReferent(templateReference.getRole(), targetReferentNode);
+      } else {
+//        // for debug+
+//        referenceResolver.resolveTarget(templateReference, nodeBuilder);
+//        // for debug-
       }
       return true;
     }
@@ -93,13 +97,18 @@ public class TemplateGenUtil {
       generator.showErrorMessage(sourceNode, templateNode, "unacceptable referent: " + targetReferentNode.getDebugText() + " for role \"" + role + "\" in " + targetNode.getDebugText());
       return false;
     }
-    SModelDescriptor modelDescriptor = targetReferentNode.getModel().getModelDescriptor();
-    assert modelDescriptor != null;
-    if (targetReferentNode.getModel() != targetNode.getModel() &&
-            modelDescriptor.isTransient()) {
-      // references on transient nodes are not acceptable
-      generator.showErrorMessage(sourceNode, templateNode, "unacceptable referent (transient): " + targetReferentNode.getDebugText() + " for role \"" + role + "\" in " + targetNode.getDebugText());
-      return false;
+    SModel referentNodeModel = targetReferentNode.getModel();
+    if (referentNodeModel != targetNode.getModel()) {
+      if (TemplateLanguageUtil.isTemplatesModel(referentNodeModel)) {
+        // references on template nodes are not acceptable
+        generator.showErrorMessage(sourceNode, templateNode, "unacceptable referent on template node: " + targetReferentNode.getDebugText() + " for role \"" + role + "\" in " + targetNode.getDebugText());
+        return false;
+      }
+      if (referentNodeModel.getModelDescriptor().isTransient()) {
+        // references on transient nodes are not acceptable
+        generator.showErrorMessage(sourceNode, templateNode, "unacceptable referent on transient node: " + targetReferentNode.getDebugText() + " for role \"" + role + "\" in " + targetNode.getDebugText());
+        return false;
+      }
     }
     return true;
   }
@@ -125,7 +134,7 @@ public class TemplateGenUtil {
   public static IReferenceResolver loadReferenceResolver(SNode templateNode, IScope scope) {
     ConceptDeclaration conceptDeclaration = templateNode.getConceptDeclarationAdapter(scope);
     while (conceptDeclaration != null) {
-      String modelPackageName = JavaNameUtil.packageNameForModelUID(conceptDeclaration.getModel().getUID());                  
+      String modelPackageName = JavaNameUtil.packageNameForModelUID(conceptDeclaration.getModel().getUID());
       String buildersPackageName = JavaNameUtil.withoutStructure(modelPackageName) + ".builder";
       String resolverClassName = buildersPackageName + "." + conceptDeclaration.getName() + "_ReferenceResolver";
       try {
@@ -494,7 +503,7 @@ public class TemplateGenUtil {
   }
 
   protected static List<SNode> evaluateSourceNodesQuery(SNode sourceNode, SourceSubstituteMacro_SourceNodesQuery query, SNode queryOwner, ITemplateGenerator generator) {
-    String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery( query.getNode());
+    String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(query.getNode());
     Object[] args = new Object[]{
             sourceNode,
             generator.getSourceModel(),
