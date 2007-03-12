@@ -154,8 +154,14 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
 
     myRootGroups.remove(node);
+
+    MPSTreeNode parent = (MPSTreeNode) node.getParent();
     if (node.isAutoDelete()) {
       treeModel.removeNodeFromParent(node);
+    }
+
+    if (parent instanceof SNodeGroupTreeNode && parent.getChildCount() == 0) {
+      groupBecameEmpty((SNodeGroupTreeNode) parent);
     }
   }
 
