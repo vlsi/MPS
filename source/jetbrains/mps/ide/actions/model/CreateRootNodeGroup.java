@@ -2,6 +2,7 @@ package jetbrains.mps.ide.actions.model;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionGroup;
 import jetbrains.mps.ide.action.MPSAction;
@@ -22,15 +23,21 @@ import java.util.*;
 public class CreateRootNodeGroup extends ActionGroup {
 
   private Set<String> myAllowedLanguages = null;
+  private String myPackage;
 
   public CreateRootNodeGroup() {
     super("Create Root Node");
   }
 
-  public CreateRootNodeGroup(String... allowed) {
+  public CreateRootNodeGroup(List<String> allowed) {
     this();
     myAllowedLanguages = new HashSet<String>();
-    myAllowedLanguages.addAll(Arrays.asList(allowed));
+    myAllowedLanguages.addAll(allowed);
+  }
+
+  public CreateRootNodeGroup(String pack) {
+    this();
+    myPackage = pack;
   }
 
   public void update(ActionContext context) {
@@ -89,6 +96,7 @@ public class CreateRootNodeGroup extends ActionGroup {
         CommandProcessor.instance().executeCommand(new Runnable() {
           public void run() {
             node[0] = NodeFactoryManager.createNode((ConceptDeclaration) nodeConcept.getNode().getAdapter(), null, null, modelDescriptor.getSModel(), context.getScope());
+            node[0].setProperty(SModelTreeNode.PACK, myPackage);
             modelDescriptor.getSModel().addRoot(node[0]);
           }
         });

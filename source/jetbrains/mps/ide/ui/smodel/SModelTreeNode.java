@@ -201,7 +201,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return result;
   }
 
-  private ActionContext getActionContext() {
+  protected ActionContext getActionContext() {
     SModelDescriptor model = getSModelDescriptor();
 
     List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
@@ -589,6 +589,18 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       } else {
         myName = name;
       }
+    }
+
+
+    public JPopupMenu getPopupMenu() {
+      JPopupMenu menu = new JPopupMenu();
+      ActionContext context = getActionContext();
+
+      CreateRootNodeGroup cg = new CreateRootNodeGroup(getPackage());
+      cg.update(context);
+      cg.add(menu, context);
+
+      return menu;
     }
 
     private String getPackage() {
