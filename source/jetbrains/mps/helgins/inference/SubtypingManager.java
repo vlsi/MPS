@@ -331,9 +331,14 @@ public class SubtypingManager {
       return result;
     }
 
-    Set<SNode> superTypesA = new HashSet<SNode>(subTypesToSuperTypes.get(a));
+    Set<SNode> superTypesA = subTypesToSuperTypes.get(a) != null ?
+            new HashSet<SNode>(subTypesToSuperTypes.get(a)) :
+            new HashSet<SNode>();
     superTypesA.add(a);
-    Set<SNode> superTypesB = new HashSet<SNode>(subTypesToSuperTypes.get(b));
+
+    Set<SNode> superTypesB = subTypesToSuperTypes.get(b) != null ?
+            new HashSet<SNode>(subTypesToSuperTypes.get(b)) :
+            new HashSet<SNode>();
     superTypesB.add(b);
     for (SNode superTypeA : new HashSet<SNode>(superTypesA)) {
       boolean matches = false;
