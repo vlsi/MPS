@@ -117,12 +117,12 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       }
     } else {
       int index = -1;
-      int lastGroupIndex = 0;
+      int groupCount = 0;
       for (int i = 0; i < parent.getChildCount(); i++) {
         if (!(parent.getChildAt(i) instanceof SNodeGroupTreeNode)) {
           break;
         }
-        lastGroupIndex = i;
+        groupCount++;
         SNodeGroupTreeNode group = (SNodeGroupTreeNode) parent.getChildAt(i);
         String rp = groupTreeNode.toString();
         String cp = group.toString();
@@ -132,7 +132,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
         }
       }
       if (index == -1) {
-        index = lastGroupIndex;
+        index = groupCount;
       }
 
       if (myInitialized || myInitializing) {
