@@ -163,6 +163,10 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     if (parent instanceof SNodeGroupTreeNode && parent.getChildCount() == 0) {
       groupBecameEmpty((SNodeGroupTreeNode) parent);
     }
+
+    if (node instanceof PackageNode) {
+      myPackageNodes.remove(((PackageNode) node).getPackage());
+    }
   }
 
   public SModel getSModel() {
@@ -576,8 +580,19 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   private class PackageNode extends SNodeGroupTreeNode {
+    private String myName;
+
     public PackageNode(String name, PackageNode parent) {
       super(SModelTreeNode.this, parent, name, true);
+      if (parent != null) {
+        myName = parent.getPackage() + "." + name;
+      } else {
+        myName = name;
+      }
+    }
+
+    private String getPackage() {
+      return myName;
     }
   }
 
