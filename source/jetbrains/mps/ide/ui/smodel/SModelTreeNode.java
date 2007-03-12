@@ -548,28 +548,29 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
       for (SNode root : added) {
         SNodeTreeNode nodeToInsert = new SNodeTreeNode(root, getOperationContext());
-        SNodeGroupTreeNode group = getNodeGroupFor(root);
-        if (group != null) {
-          int index = -1;
-          for (int i = 0; i < group.getChildCount(); i++) {
-            SNodeTreeNode child = (SNodeTreeNode) group.getChildAt(i);
-            String rp = root.toString();
-            String cp = child.getSNode().toString();
-            if (rp.compareTo(cp) < 0) {
-              index = i;
-              break;
-            }
-          }
-          if (index == -1) {
-            index = group.getChildCount();
-          }
-          treeModel.insertNodeInto(nodeToInsert, group,  index);
-        } else {
-          int index = allRoots.indexOf(root);
-          assert index != -1;
-          treeModel.insertNodeInto(nodeToInsert, SModelTreeNode.this,
-                  index);
+        MPSTreeNode targetNode = getNodeGroupFor(root);
+
+        if (targetNode == null) {
+          targetNode = SModelTreeNode.this;
         }
+
+        int index = -1;
+        for (int i = 0; i < targetNode.getChildCount(); i++) {
+          if (targetNode.getChildAt(i) instanceof SNodeGroupTreeNode) {
+            continue;
+          }
+          SNodeTreeNode child = (SNodeTreeNode) targetNode.getChildAt(i);
+          String rp = root.toString();
+          String cp = child.getSNode().toString();
+          if (rp.compareTo(cp) < 0) {
+            index = i;
+            break;
+          }
+        }
+        if (index == -1) {
+          index = targetNode.getChildCount();
+        }
+        treeModel.insertNodeInto(nodeToInsert, targetNode,  index);
       }
     }
   }
