@@ -32,7 +32,7 @@ public interface IEditor {
 
   @Nullable EditorContext getEditorContext();
 
-  @Nullable EditorCell getSelectedCell();
+  @Nullable EditorCell  getSelectedCell();
 
   @Nullable EditorCell getRootCell();
 
