@@ -1,6 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.action.*;
@@ -26,7 +27,6 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NodesParetoFrontier;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.annotation.UseCarefully;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -585,12 +585,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     { // keymaps
       final EditorContext editorContext = createEditorContextForActions();
       List<EditorCellKeyMapAction> actions = new ArrayList<EditorCellKeyMapAction>();
-      for (EditorCellKeyMapAction action  : KeyMapUtil.getRegisteredActions(cell, editorContext)) {
+      for (EditorCellKeyMapAction action : KeyMapUtil.getRegisteredActions(cell, editorContext)) {
         try {
           if (action.isShownInPopupMenu() && action.canExecute(null, editorContext)) {
             actions.add(action);
           }
-        } catch(Throwable t) {
+        } catch (Throwable t) {
           LOG.error(t);
         }
       }
@@ -598,6 +598,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       for (final EditorCellKeyMapAction action : actions) {
         MPSAction mpsAction = new MPSAction("" + action.getDescriptionText()) {
           private EditorCellKeyMapAction myAction = action;
+
           public void execute(@NotNull ActionContext context) {
             myAction.execute(null, editorContext);
           }
@@ -838,7 +839,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     }
 
-
     // ---
     if (keyEvent.getKeyCode() == KeyEvent.VK_C && keyEvent.isControlDown()) {
       return EditorCellAction.COPY;
@@ -860,7 +860,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (keyEvent.getKeyCode() == KeyEvent.VK_INSERT && keyEvent.isShiftDown()) {
       return EditorCellAction.PASTE;
     }
-    
+
 
     return null;
   }
@@ -1145,7 +1145,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     long start = System.currentTimeMillis();
     clearCaches();
     updateMPSActionsWithKeyStrokes();
-    rebuildEditorContent(null);    
+    rebuildEditorContent(null);
     LOG.debug("Rebuild of " + getEditedNode() + "'s editor took " + (System.currentTimeMillis() - start) + " ms");
   }
 
@@ -1298,7 +1298,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         }
       }
       boolean toRelayout = !foldedParents.isEmpty();
-      while(!foldedParents.isEmpty()) {
+      while (!foldedParents.isEmpty()) {
         EditorCell_Collection collection = foldedParents.pop();
         collection.unfold(true);
       }
@@ -1334,7 +1334,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         EditorCell_Label cellLabel = (EditorCell_Label) cell;
         int caretX = cellLabel.getCaretX();
         int charWidth = cellLabel.getCharWidth();
-        selectionRect = new Rectangle(caretX-2*charWidth, cellLabel.getY(), 4*charWidth, cellLabel.getHeight());
+        selectionRect = new Rectangle(caretX - 2 * charWidth, cellLabel.getY(), 4 * charWidth, cellLabel.getHeight());
       } else {
         selectionRect = new Rectangle(cell.getX(), cell.getY(), 30, cell.getHeight());
       }
@@ -1377,19 +1377,20 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
 
 
-
     g.setColor(getBackground());
     Rectangle bounds = g.getClipBounds();
 
 
     g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
     myLeftHighlighter.paint(g);
-    myRootCell.paint(g);
+    if (myRootCell != null) {
+      myRootCell.paint(g);
+    }
   }
 
   protected void paintChildren(Graphics g) {
     super.paintChildren(g);
-    if (mySelectedCell instanceof EditorCell_Component) ((EditorCell_Component)mySelectedCell).paintSelection(g);
+    if (mySelectedCell instanceof EditorCell_Component) ((EditorCell_Component) mySelectedCell).paintSelection(g);
   }
 
   public Dimension getPreferredSize() {
@@ -1762,7 +1763,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
 
-
   public EditorCell changeSelectionWRTFocusPolicy(EditorCell cell) {
     EditorCell focusPolicyCell = FocusPolicy.findCellToSelectDueToFocusPolicy(cell);
     EditorCell toSelect;
@@ -1907,7 +1907,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     }
   }
-
 
 
   private void runSwapCellsActions(Runnable action) {
