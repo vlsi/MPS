@@ -3,10 +3,10 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions;
 import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder;
 import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.logging.Logger;
@@ -20,9 +20,9 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.util.QueryMethodGenerated;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -50,7 +50,7 @@ public class ChildSubstituteActionsHelper {
   }
 
   public static List<INodeSubstituteAction> createActions(SNode parentNode, SNode currentChild, ConceptDeclaration childConcept, IChildNodeSetter childSetter, IOperationContext context) {
-    List<INodeSubstituteAction> resultActions = new LinkedList<INodeSubstituteAction>();
+    List<INodeSubstituteAction> resultActions = new ArrayList<INodeSubstituteAction>();
     if (childConcept == null) {
       return resultActions;
     }
@@ -73,7 +73,7 @@ public class ChildSubstituteActionsHelper {
     }
 
     // search 'extending' builders
-    List<NodeSubstituteActionsBuilder> extendedBuilders = new LinkedList<NodeSubstituteActionsBuilder>();
+    List<NodeSubstituteActionsBuilder> extendedBuilders = new ArrayList<NodeSubstituteActionsBuilder>();
     List<Language> languages = parentNode.getModel().getLanguages(scope);
     for (Language language : languages) {
       if (language == primaryLanguage) {
@@ -120,7 +120,7 @@ public class ChildSubstituteActionsHelper {
       }
     });
 
-    List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
+    List<INodeSubstituteAction> actions = new ArrayList<INodeSubstituteAction>();
     for (SNode applicableConcept : applicableConcepts) {
       // first try to create 'smart reference' actions for this concept
       LinkDeclaration smartReference = getSmartReference((ConceptDeclaration) BaseAdapter.fromNode(applicableConcept), scope);
@@ -151,7 +151,7 @@ public class ChildSubstituteActionsHelper {
     if (status.isError()) return null;
 
     // create smart actions
-    List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
+    List<INodeSubstituteAction> actions = new ArrayList<INodeSubstituteAction>();
     final LinkDeclaration referenceLink_final = smartReference;
     ISearchScope searchScope = (ISearchScope) status.getUserObject();
     final AbstractConceptDeclaration targetConcept = smartReference.getTarget();
@@ -227,7 +227,7 @@ public class ChildSubstituteActionsHelper {
   }
 
   private static List<NodeSubstituteActionsBuilder> getActionBuilders(SNode parentNode, Language language, ConceptDeclaration childConcept, IOperationContext context) {
-    List<NodeSubstituteActionsBuilder> actionsBuilders = new LinkedList<NodeSubstituteActionsBuilder>();
+    List<NodeSubstituteActionsBuilder> actionsBuilders = new ArrayList<NodeSubstituteActionsBuilder>();
     SModelDescriptor actionsModelDescr = language.getActionsModelDescriptor();
     if (actionsModelDescr != null) {
       // find appropriate actions builder
