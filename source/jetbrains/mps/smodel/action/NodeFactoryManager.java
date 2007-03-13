@@ -2,14 +2,15 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactory;
 import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.QueryMethodGenerated;
-import jetbrains.mps.logging.Logger;
 
-import java.util.List;
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -26,11 +27,12 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
     return createNode(conceptDeclaration, sampleNode, enclosingNode, model, scope);
   }
 
-  public static SNode createNode(ConceptDeclaration nodeConcept, SNode sampleNode, SNode enclosingNode, SModel model, IScope scope) {
-    SNode newNode = BaseAdapter.fromAdapter(SModelUtil_new.instantiateConceptDeclaration(nodeConcept, model, false));
+  public static SNode createNode(AbstractConceptDeclaration nodeConcept, SNode sampleNode, SNode enclosingNode, SModel model, IScope scope) {
+    assert nodeConcept instanceof ConceptDeclaration : "couldn't instantiate interface concept '" + nodeConcept.getName() + "'";
+    SNode newNode = BaseAdapter.fromAdapter(SModelUtil_new.instantiateConceptDeclaration((ConceptDeclaration) nodeConcept, model, false));
     if (newNode == null) return null;
-    setupNode(nodeConcept, newNode, sampleNode, enclosingNode, model, scope);
-    SModelUtil_new.createNodeStructure(nodeConcept, newNode, sampleNode, enclosingNode, model, scope, true);
+    setupNode((ConceptDeclaration) nodeConcept, newNode, sampleNode, enclosingNode, model, scope);
+    SModelUtil_new.createNodeStructure((ConceptDeclaration) nodeConcept, newNode, sampleNode, enclosingNode, model, scope, true);
     return newNode;
   }
 

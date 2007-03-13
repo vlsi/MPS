@@ -17,6 +17,7 @@ import jetbrains.mps.util.annotation.ForDebug;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -1111,8 +1112,8 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  public List<ConceptDeclaration> conceptAdaptersFromModelLanguages(final Condition<ConceptDeclaration> condition, IScope scope) {
-    List<ConceptDeclaration> list = new ArrayList<ConceptDeclaration>();
+  public List<AbstractConceptDeclaration> conceptAdaptersFromModelLanguages(final Condition<AbstractConceptDeclaration> condition, IScope scope) {
+    List<AbstractConceptDeclaration> list = new ArrayList<AbstractConceptDeclaration>();
     List<Language> languages = getLanguages(scope);
     for (Language language : languages) {
       SModelDescriptor structureModelDescriptor = language.getStructureModelDescriptor();

@@ -41,7 +41,7 @@ public class ChildSubstituteActionsHelper {
     }
   };
 
-  public static boolean isDefaultSubstitutableConcept(ConceptDeclaration concept, ConceptDeclaration expectedConcept, IScope scope) {
+  public static boolean isDefaultSubstitutableConcept(AbstractConceptDeclaration concept, ConceptDeclaration expectedConcept, IScope scope) {
     if (!concept.getNode().hasConceptProperty(ABSTRACT, scope) &&
             !concept.hasConceptProperty(DONT_SUBSTITUTE_BY_DEFAULT, scope)) {
       return SModelUtil_new.isAssignableConcept(concept, expectedConcept);
