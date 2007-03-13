@@ -6,7 +6,7 @@
   <maxImportIndex value="1" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions" id="1119639069735">
-    <property name="name" value="EDTL_child_substitute" />
+    <property name="name" value="EDTL_node_substitute" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1119639072236">
       <property name="actionsFactoryAspectId" value="CellActionModel" />
       <property name="applicableLinkMetaclass" value="aggregation" />

@@ -139,7 +139,7 @@
                     </node>
                   </node>
                 </node>
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1159221106960">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1173748436583">
                   <link role="link" targetNodeId="1.1166049300910" />
                 </node>
               </node>
@@ -410,7 +410,7 @@
                     </node>
                   </node>
                 </node>
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1166056916220">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1173748480349">
                   <link role="link" targetNodeId="1.1166049300910" />
                 </node>
               </node>

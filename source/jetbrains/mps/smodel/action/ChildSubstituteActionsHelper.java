@@ -158,7 +158,7 @@ public class ChildSubstituteActionsHelper {
 
     List<SNode> referentNodes = searchScope.getNodes(new IsInstanceCondition(targetConcept));
     for (SNode referentNode : referentNodes) {
-        actions.add(new SmartRefChildNodeSubstituteAction(referentNode, parentNode, currentChild, childSetter, scope, referenceNodeConcept, referenceLink_final));
+      actions.add(new SmartRefChildNodeSubstituteAction(referentNode, parentNode, currentChild, childSetter, scope, referenceNodeConcept, referenceLink_final));
     }
 
     return actions;
@@ -238,10 +238,9 @@ public class ChildSubstituteActionsHelper {
           while (iterator.hasNext()) {
             NodeSubstituteActionsBuilder actionsBuilder = iterator.next();
             // is applicable ?
-            ConceptDeclaration applicableConcept = actionsBuilder.getApplicableConcept();
-
-            //and think better about of the order of arguments of "isAssignableConcept" - this is correct: 
-            if (SModelUtil_new.isAssignableConcept(applicableConcept, childConcept) &&
+            // the aggregation link target (child concept) should be sub-concept of the 'applicable concept'
+            ConceptDeclaration applicableChildConcept = actionsBuilder.getApplicableConcept();
+            if (SModelUtil_new.isAssignableConcept(childConcept, applicableChildConcept) &&
                     satisfiesPrecondition(actionsBuilder, parentNode, context)) {
               actionsBuilders.add(actionsBuilder);
             }
