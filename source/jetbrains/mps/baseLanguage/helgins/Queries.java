@@ -118,7 +118,16 @@ public class Queries {
   @Hack
   public static Object CustomExpression_arrayTypeSuperTypes(Object... args) {   //todo
     ArrayType art = (ArrayType) BaseAdapter.fromNode((SNode) args[0]);
+    SModel model = TypeChecker.getInstance().getRuntimeTypesModel();
     List<SNode> result = new ArrayList<SNode>();
+    for (SNode type : TypeChecker.getInstance().getSubtypingManager().
+            collectImmediateSupertypes(BaseAdapter.fromAdapter(art.getComponentType()))) {
+      if (BaseAdapter.isInstance(type, Type.class)) {
+        ArrayType arrayType = ArrayType.newInstance(model);
+        arrayType.setComponentType((Type) BaseAdapter.fromNode(CopyUtil.copy(type, model)));
+        result.add(arrayType.getNode());
+      }
+    }
     return result;
   }
 }
