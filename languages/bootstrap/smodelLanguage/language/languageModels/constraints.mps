@@ -275,7 +275,7 @@
                 </node>
               </node>
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.StringLiteral" id="1171203720192">
-                <property name="value" value="snodes" />
+                <property name="value" value="snodes&lt;*&gt;" />
               </node>
               <node role="ifFalse" type="jetbrains.mps.baseLanguage.PlusExpression" id="1171203747068">
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1171203755686">
@@ -329,7 +329,7 @@
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1170929047519">
               <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1170929057481">
                 <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1170929058873">
-                  <property name="value" value="snode" />
+                  <property name="value" value="snode&lt;*&gt;" />
                 </node>
               </node>
             </node>
