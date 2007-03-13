@@ -2,6 +2,7 @@
 <model name="smodelLanguage.typetest">
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
+  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <maxImportIndex value="14" />
   <import index="1" modelUID="java.lang@java_stub" />
   <import index="3" modelUID="jetbrains.mps.smodel@java_stub" />
@@ -266,6 +267,30 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1173387517834">
         <property name="name" value="model" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SModelType" id="1173387517835" />
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1173810395164">
+      <property name="name" value="ok_4" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1173810395165" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1173810395166">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1173810461468">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1173810461469">
+            <property name="name" value="roots1" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListType" id="1173810461470">
+              <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1173810464676" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1173810475350">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1173810473928">
+                <link role="variableDeclaration" targetNodeId="1173810406017" resolveInfo="model" />
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Model_RootsOperation" id="1173810482851" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1173810406017">
+        <property name="name" value="model" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SModelType" id="1173810406018" />
       </node>
     </node>
   </node>
