@@ -107,10 +107,6 @@ public class FindUsagesManager {
     }
   }
 
-  public Set<SReference> findUsages(SNode node, IAdaptiveProgressMonitor progress, IScope scope) {
-    return findUsages(node, scope, progress);
-  }
-
   public static void invalidateCaches() {
   }
 
