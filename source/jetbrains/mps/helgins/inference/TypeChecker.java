@@ -36,7 +36,7 @@ public class TypeChecker {
   private static final Logger LOG = Logger.getLogger(TypeChecker.class);
 
   public static final Object HELGINS_ERROR_STATUS = new Object();
-  private static final Object TYPE_OF_TERM = new Object();
+  public static final Object TYPE_OF_TERM = new Object();
 
   private Set<SNode> myCheckedRoots = new WeakSet<SNode>();
   private Map<SNode, Set<SNode>> myNodesToDependentRoots = new WeakHashMap<SNode, Set<SNode>>();
@@ -115,6 +115,11 @@ public class TypeChecker {
     myCheckedNodes.clear();
     myNodesWithErrors.clear();
     myNodesToDependentRoots.clear();
+  }
+
+  public void clearCheckedRoots() {
+    myCheckedRoots.clear();
+    clear();
   }
 
   public void checkTypes(SNode root) {
@@ -317,7 +322,7 @@ public class TypeChecker {
     }
   }
 
-  public void doCheckRoot(SNode node) {
+  public void checkRoot(SNode node) {
     try {
       clearTypeUserObjects(node);
       MyReadAccessListener listener = new MyReadAccessListener();
@@ -354,7 +359,7 @@ public class TypeChecker {
     SNode containingRoot = node.getContainingRoot();
     if (containingRoot == null) return null;
     if (!myCheckedRoots.contains(containingRoot)) {
-      doCheckRoot(containingRoot);
+      checkRoot(containingRoot);
     }
     return getTypeDontCheck(node);
   }

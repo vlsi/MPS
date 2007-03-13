@@ -515,7 +515,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
         MPSModuleRepository.getInstance().unRegisterModules(MPSProject.this);
         SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
 
-        TypeChecker.getInstance().clear();
+        TypeChecker.getInstance().clearCheckedRoots();
         UndoManager.instance().clear();
         ActionManager.instance().clearAll();
 

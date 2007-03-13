@@ -833,7 +833,7 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  void clearUseObjects() {
+  void clearUserObjects() {
     for (SNode root : getRoots()) {
       root.clearUserObjects();
     }

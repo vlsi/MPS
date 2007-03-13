@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.constraints.INodeReferentSetEventHandler;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.util.*;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -1784,7 +1785,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
   }
 
   void clearUserObjects() {
-    myUserObjects.clear();
+    removeAllUserObjects();
     for (SNode child : getChildren()) {
       child.clearUserObjects();
     }
