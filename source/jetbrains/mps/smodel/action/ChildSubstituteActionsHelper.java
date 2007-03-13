@@ -240,7 +240,7 @@ public class ChildSubstituteActionsHelper {
             // is applicable ?
             // the aggregation link target (child concept) should be sub-concept of the 'applicable concept'
             ConceptDeclaration applicableChildConcept = actionsBuilder.getApplicableConcept();
-            if (SModelUtil_new.isAssignableConcept(childConcept, applicableChildConcept) &&
+            if (SModelUtil_new.isAssignableConcept(applicableChildConcept, childConcept) &&
                     satisfiesPrecondition(actionsBuilder, parentNode, context)) {
               actionsBuilders.add(actionsBuilder);
             }
