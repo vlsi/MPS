@@ -35,7 +35,7 @@ public class Node_IsRoleOperation_linkInParent_ReferentConstraint implements IMo
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     SNode conceptOfParent = SLinkOperations.getTarget(referenceNode, "conceptOfParent", false);
     List links = SModelSearchUtil_new.getAggregationLinkDeclarationsExcludingOverridden(((AbstractConceptDeclaration)SNodeOperations.getAdapter(conceptOfParent)));
-    return new SimpleSearchScope((List<SNode>)BaseAdapter.toNodes((List<? extends INodeAdapter>)links));
+    return new SimpleSearchScope(BaseAdapter.toNodes((List<? extends INodeAdapter>)links));
   }
   public String getNodeReferentSearchScopeDescription() {
     return "<no description>";
