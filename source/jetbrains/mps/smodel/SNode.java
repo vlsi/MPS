@@ -1784,4 +1784,9 @@ public class SNode implements Cloneable, Iterable<SNode> {
       child.clearUserObjects();
     }
   }
+
+  void setRoleInParent(String newRoleInParent) {
+    myRoleInParent = newRoleInParent;
+  }
+
 }

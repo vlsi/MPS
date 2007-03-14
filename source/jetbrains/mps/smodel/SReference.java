@@ -295,7 +295,6 @@ public final class SReference {
 
   void setRole(String newRole) {
     myRole = newRole;
-    markChanged();
   }
 
 }
