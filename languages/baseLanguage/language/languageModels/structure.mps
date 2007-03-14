@@ -1688,6 +1688,10 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1068580123136" resolveInfo="StatementList" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1173883200014">
+      <property name="value" value="case" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1164118113764">
     <property name="name" value="PrimitiveType" />
