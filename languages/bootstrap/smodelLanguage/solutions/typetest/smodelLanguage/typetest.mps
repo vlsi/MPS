@@ -1941,6 +1941,25 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1173903410376">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1173903410377">
+            <property name="name" value="adapter" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1173903410378">
+              <link role="classifier" extResolveInfo="14.[Classifier]FieldDeclaration" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1173903383140">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1173903350746">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1173903348949">
+                  <link role="variableDeclaration" targetNodeId="1170381635476" resolveInfo="node" />
+                </node>
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1173903355497">
+                  <link role="link" targetNodeId="6.1070568237987" />
+                </node>
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1173903387188" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1170382265503">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1170382265504">
             <property name="name" value="n2" />

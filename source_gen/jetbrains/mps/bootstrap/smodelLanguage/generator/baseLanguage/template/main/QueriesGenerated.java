@@ -19,7 +19,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddNewChildOperation;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess;
-import jetbrains.mps.bootstrap.smodelLanguage.SModelLanguageTypesUtil;
 import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation;
 
@@ -352,7 +351,7 @@ public class QueriesGenerated {
   }
   public static SNode referenceMacro_GetReferent_1170386916206(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode noe = SNodeOperations.getParent(node, null, false, false);
-    return SModelLanguageTypesUtil.tryObtain_snode_adapterClass(SLinkOperations.getTarget(noe, "leftExpression", true), generator.getTypeChecker());
+    return SModelLanguageUtil.tryObtain_snode_adapterClass(SLinkOperations.getTarget(noe, "leftExpression", true), scope);
   }
   public static List sourceNodesQuery_1168293467222(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode op = SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "nodeOperation", true);
