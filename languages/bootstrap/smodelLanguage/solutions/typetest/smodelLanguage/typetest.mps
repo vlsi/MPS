@@ -1886,7 +1886,7 @@
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1170381203537">
     <property name="name" value="snode_link_test" />
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1170381247570">
-      <property name="name" value="ok_ref" />
+      <property name="name" value="ok_ref_1" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1170381247571" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1170381247572">
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1170381759656">
@@ -1975,7 +1975,7 @@
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1170381664681">
-      <property name="name" value="err_ref" />
+      <property name="name" value="err_ref_1" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1170381673161">
         <property name="name" value="node" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1170381673162">
@@ -2103,8 +2103,41 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1173898491915">
+      <property name="name" value="ok_ref_2" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1173898491916" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1173898491917">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1173899026817">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1173899026818">
+            <property name="name" value="field" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1173899026819">
+              <link role="concept" targetNodeId="6.1068390468200" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1173898549026">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1173898527163">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1173898525865">
+                  <link role="variableDeclaration" targetNodeId="1173898516539" resolveInfo="node" />
+                </node>
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAncestorOperation" id="1173898530758">
+                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Concept" id="1173898536181">
+                    <link role="concept" targetNodeId="6.1068580123158" />
+                  </node>
+                </node>
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1173898554855">
+                <link role="link" targetNodeId="6.1070568237987" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1173898516539">
+        <property name="name" value="node" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1173898516540" />
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1173296321341">
-      <property name="name" value="ok_child" />
+      <property name="name" value="ok_child_1" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1173296321342" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1173296321343">
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1173296522679">
@@ -2186,7 +2219,7 @@
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1173297988874">
-      <property name="name" value="ok_children" />
+      <property name="name" value="ok_children_1" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1173297988875" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1173297988876">
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1173298050477">
