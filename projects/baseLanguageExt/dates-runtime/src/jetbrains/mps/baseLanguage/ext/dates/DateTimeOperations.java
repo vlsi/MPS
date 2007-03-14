@@ -163,4 +163,22 @@ public class DateTimeOperations {
     }
     return result;
   }
+
+  public static boolean isNull(Long datetime) {
+    return datetime == null;
+  }
+
+  public static boolean isNotNull(Long datetime) {
+    return datetime != null;
+  }
+
+  public static boolean isNull(long datetime) {
+    return false;
+  }
+
+  public static boolean isNotNull(long datetime) {
+    return true;
+  }
+
+
 }
