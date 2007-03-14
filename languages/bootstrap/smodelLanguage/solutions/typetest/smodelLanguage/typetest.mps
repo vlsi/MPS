@@ -2919,20 +2919,26 @@
       <property name="name" value="aaa" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1173834821599" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1173834821600">
-        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1173834838744">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1173834838745">
-            <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1173834838746" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.ParameterReference" id="1173834844044">
-              <link role="variableDeclaration" targetNodeId="1173834828773" resolveInfo="statement" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1173893795298">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1173893795299">
+            <property name="name" value="list1" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListType" id="1173893795300">
+              <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1173893799068">
+                <link role="concept" targetNodeId="6.1068580123157" />
+              </node>
             </node>
           </node>
         </node>
-      </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1173834828773">
-        <property name="name" value="statement" />
-        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1173834828774">
-          <link role="concept" targetNodeId="6.1068580123157" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1173893814101">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1173893814102">
+            <property name="name" value="list2" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1173893814103">
+              <link role="elementConcept" targetNodeId="6.1068580123157" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1173893821980">
+              <link role="variableDeclaration" targetNodeId="1173893795299" resolveInfo="list1" />
+            </node>
+          </node>
         </node>
       </node>
     </node>
