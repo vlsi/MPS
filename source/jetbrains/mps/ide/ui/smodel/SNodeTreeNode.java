@@ -154,7 +154,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
       output.append(nodeString);
       if (myRole != null) {
         String matchingText = NodePresentationUtil.matchingText(node);
-        if (!matchingText.equals(nodeString)) {
+        if (matchingText != null && !matchingText.equals(nodeString)) {
           output.append(" [").append(matchingText).append("]");
         }
       }
