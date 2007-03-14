@@ -1,7 +1,10 @@
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro;
 import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_AnnotationLink;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 public final class RefactoringUtil {
@@ -13,7 +16,8 @@ public final class RefactoringUtil {
     return AttributesRolesUtil.childRoleFromLinkAttributeRole(ReferenceMacro_AnnotationLink.REFERENCE_MACRO, linkRole);
   }
 
-  public static void renameLink(Set<SNode> nodes, boolean aggregation, String oldRole, String newRole) {
+  public static List<ReferenceMacro> renameLink(Set<SNode> nodes, boolean aggregation, String oldRole, String newRole) {
+    List<ReferenceMacro> referenceMacros = new ArrayList<ReferenceMacro>();
     SModelRepository modelRepository = SModelRepository.getInstance();
     for (SNode node : nodes) {
       if (aggregation) {
@@ -26,10 +30,12 @@ public final class RefactoringUtil {
         SNode linkAttribute = node.getChild(getRefMacroRole(oldRole));
         if (linkAttribute != null) {
           linkAttribute.setRoleInParent(getRefMacroRole(newRole));
+          referenceMacros.add((ReferenceMacro) linkAttribute.getAdapter());
         }
         modelRepository.markChanged(node.getModel(), true);
       }
     }
+    return referenceMacros;
   }
 
 }
