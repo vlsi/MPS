@@ -4,10 +4,12 @@ import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactory;
 import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.QueryMethodGenerated;
+import jetbrains.mps.nodeEditor.EditorContext;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -25,6 +27,15 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
   public static SNode createNode(String conceptFqName, SNode sampleNode, SNode enclosingNode, SModel model, IScope scope) {
     ConceptDeclaration conceptDeclaration = SModelUtil_new.findConceptDeclaration(conceptFqName, scope);
     return createNode(conceptDeclaration, sampleNode, enclosingNode, model, scope);
+  }
+
+  public static SNode createNode(SNode enclosingNode, EditorContext editorContext, String linkRole) {
+    ConceptDeclaration concept = enclosingNode.getConceptDeclarationAdapter();
+    LinkDeclaration linkDeclaration = SModelUtil_new.findLinkDeclaration(concept, linkRole);
+    AbstractConceptDeclaration targetConcept = linkDeclaration.getTarget();
+    SModel model = enclosingNode.getModel();
+    IScope scope = editorContext.getOperationContext().getScope();
+    return createNode(targetConcept, null, enclosingNode, model, scope);
   }
 
   public static SNode createNode(AbstractConceptDeclaration nodeConcept, SNode sampleNode, SNode enclosingNode, SModel model, IScope scope) {
