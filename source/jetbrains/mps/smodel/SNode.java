@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.constraints.INodeReferentSetEventHandler;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.util.*;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -919,11 +918,6 @@ public class SNode implements Cloneable, Iterable<SNode> {
     return refs;
   }
 
-
-  public void removeReference(@NotNull SReference ref) {
-    myReferences.remove(ref);
-  }
-
   @NotNull
   public List<SReference> getBackReferences(@NotNull SModel sourceModel) {
     List<SReference> list = new LinkedList<SReference>();
@@ -1029,7 +1023,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
     insertReferenceAt(myReferences.size(), reference);
   }
 
-  public void insertReferent(SNode anchorNode, @NotNull String role, @NotNull SNode referent) {
+  private void insertReferent(SNode anchorNode, @NotNull String role, @NotNull SNode referent) {
     insertReferent(anchorNode, role, referent, false);
   }
 

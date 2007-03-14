@@ -11,15 +11,15 @@ import jetbrains.mps.resolve.Resolver;
  * User: Sergey Dmitriev
  * Date: Aug 2, 2003
  */
-public class SReference {
+public final class SReference {
   private static final Logger LOG = Logger.getLogger(SReference.class);
 
   private String myRole;
-  private SNode mySourceNode;
-  protected String myTargetNodeId;
-  protected String myExtResolveInfo = "";
-  protected SModelUID myTargetModelUID;
-  protected String myResolveInfo;
+  private final SNode mySourceNode;
+  private String myTargetNodeId;
+  private String myExtResolveInfo = "";
+  private SModelUID myTargetModelUID;
+  private String myResolveInfo;
   private boolean myLoggingOff = false;
   private static boolean ourLoggingOff = false;
 
@@ -125,7 +125,7 @@ public class SReference {
             model.setNodeExtResolveInfo(nodeById, extResolveInfo);
             myExtResolveInfo = extResolveInfo;
             myTargetNodeId = null;
-            SModelRepository.getInstance().markChanged(getSourceNode().getModel(), true);
+            markChanged();
           }
         }
       }
@@ -138,6 +138,10 @@ public class SReference {
       }
       return nodeByExtResolveInfo;
     }
+  }
+
+  private void markChanged() {
+    SModelRepository.getInstance().markChanged(getSourceNode().getModel(), true);
   }
 
   public boolean isTargetNode(SNode node) {
@@ -287,6 +291,11 @@ public class SReference {
 
   public void replaceSourceReferent(SNode newReferent) {
     mySourceNode.setReferent(myRole, newReferent);
+  }
+
+  void setRole(String newRole) {
+    myRole = newRole;
+    markChanged();
   }
 
 }
