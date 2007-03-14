@@ -218,10 +218,6 @@
           <property name="value" value="sourceNode" />
           <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
         </node>
-        <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1154622616124">
-          <link role="conceptLinkDeclaration" targetNodeId="3.1137545963098" />
-          <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1154622616125" />
-        </node>
       </node>
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1154622616126">
