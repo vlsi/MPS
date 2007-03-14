@@ -6,12 +6,12 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.QueryMethodGenerated;
-import jetbrains.mps.nodeEditor.EditorContext;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -56,7 +56,7 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
 
   private static boolean setupNode_internal(ConceptDeclaration nodeConcept, SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model, IScope scope) {
     // find node factory
-    List<NodeFactory> nodeFactories = new LinkedList<NodeFactory>();
+    List<NodeFactory> nodeFactories = new ArrayList<NodeFactory>();
     ConceptDeclaration concept = nodeConcept;
     while (concept != null && nodeFactories.isEmpty()) {
       Language language = SModelUtil_new.getDeclaringLanguage(concept, scope);
