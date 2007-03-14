@@ -558,7 +558,8 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       progress.finishSomehow();
     } finally {
       //todo this is tmp anti memory leak hack:
-      UndoManager.instance().clear();
+      //UndoManager.instance().clear();
+      ReloadUtils.invalidateCaches();
       SModelRepository.getInstance().refreshModels();
 
       System.gc();
