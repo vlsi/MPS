@@ -294,6 +294,9 @@ public class TypeChecker {
     if (o instanceof SNode) {
       return (SNode) o;
     }
+    if (o instanceof BaseAdapter) {
+      return ((BaseAdapter)o).getNode();
+    }
     return null;
   }
 
