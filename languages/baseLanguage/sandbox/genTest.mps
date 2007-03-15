@@ -16,8 +16,9 @@
           <node role="expression" type="jetbrains.mps.baseLanguageInternal.InternalStaticMethodCall" id="1173992955583">
             <property name="fqClassName" value="java.lang.String" />
             <property name="methodName" value="valueOf" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1173993439392">
-              <property name="value" value="hey!" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguageInternal.InternalStaticFieldReference" id="1173995701616">
+              <property name="fqClassName" value="java.util.TimeZone" />
+              <property name="fieldName" value="LONG" />
             </node>
           </node>
         </node>
