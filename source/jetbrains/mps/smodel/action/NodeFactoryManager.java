@@ -8,6 +8,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.QueryMethodGenerated;
 
@@ -31,11 +32,24 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
 
   public static SNode createNode(SNode enclosingNode, EditorContext editorContext, String linkRole) {
     ConceptDeclaration concept = enclosingNode.getConceptDeclarationAdapter();
-    LinkDeclaration linkDeclaration = SModelUtil_new.findLinkDeclaration(concept, linkRole);
+    LinkDeclaration linkDeclaration = getTopLinkDeclaration(concept, SModelUtil_new.findLinkDeclaration(concept, linkRole));
     AbstractConceptDeclaration targetConcept = linkDeclaration.getTarget();
     SModel model = enclosingNode.getModel();
     IScope scope = editorContext.getOperationContext().getScope();
     return createNode(targetConcept, null, enclosingNode, model, scope);
+  }
+
+  private static LinkDeclaration getTopLinkDeclaration(ConceptDeclaration conceptDeclaration, LinkDeclaration linkDeclaration) {
+    LinkDeclaration result = linkDeclaration;
+    List<LinkDeclaration> linkDeclarations = SModelSearchUtil_new.getLinkDeclarationsExcludingOverridden(conceptDeclaration);
+    for (LinkDeclaration declaration : linkDeclarations) {
+      LinkDeclaration specializedLink = declaration.getSpecializedLink();
+      if (specializedLink == linkDeclaration) {
+        result = linkDeclaration;
+        break;
+      }
+    }
+    return result;
   }
 
   public static SNode createNode(AbstractConceptDeclaration nodeConcept, SNode sampleNode, SNode enclosingNode, SModel model, IScope scope) {
