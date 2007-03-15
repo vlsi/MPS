@@ -3,6 +3,9 @@
   <structure>
     <model modelUID="jetbrains.mps.baseLanguageInternal.structure" />
   </structure>
+  <helginsTypeSystem>
+    <model modelUID="jetbrains.mps.baseLanguageInternal.helgins" />
+  </helginsTypeSystem>
   <editor>
     <model modelUID="jetbrains.mps.baseLanguageInternal.editor" />
   </editor>

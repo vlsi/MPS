@@ -22,6 +22,11 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1173997445411">
+          <node role="expression" type="jetbrains.mps.baseLanguageInternal.InternalNewExpression" id="1173997445412">
+            <property name="fqClassName" value="java.lang.Object" />
+          </node>
+        </node>
       </node>
     </node>
   </node>
