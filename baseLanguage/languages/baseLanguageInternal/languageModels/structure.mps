@@ -9,7 +9,7 @@
     <link role="extends" targetNodeId="2.1068499141036" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1173992483054">
       <property name="name" value="fqClassName" />
-      <link role="dataType" targetNodeId="2.1083065718921" />
+      <link role="dataType" targetNodeId="1.1082983041843" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1173992444083">
       <property name="name" value="methodName" />

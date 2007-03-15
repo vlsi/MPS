@@ -14,8 +14,11 @@
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1173992785002">
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1173992955582">
           <node role="expression" type="jetbrains.mps.baseLanguageInternal.InternalStaticMethodCall" id="1173992955583">
-            <property name="fqClassName" value="ff" />
-            <property name="methodName" value="fff" />
+            <property name="fqClassName" value="java.lang.String" />
+            <property name="methodName" value="valueOf" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1173993439392">
+              <property name="value" value="hey!" />
+            </node>
           </node>
         </node>
       </node>
