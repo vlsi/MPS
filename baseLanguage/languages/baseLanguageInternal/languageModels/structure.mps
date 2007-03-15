@@ -16,7 +16,7 @@
       <link role="dataType" targetNodeId="2.1083065718921" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1173992941124">
-      <property name="value" value="_internal static method call" />
+      <property name="value" value="_static method call" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1173992371598">
@@ -36,7 +36,7 @@
       <link role="dataType" targetNodeId="2.1083065718921" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1173995267633">
-      <property name="value" value="_internal static field reference" />
+      <property name="value" value="_static field reference" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1173995353807">
@@ -52,7 +52,7 @@
       <link role="dataType" targetNodeId="1.1082983041843" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1173996435049">
-      <property name="value" value="_internal new expression" />
+      <property name="value" value="_new" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1173996453036">
