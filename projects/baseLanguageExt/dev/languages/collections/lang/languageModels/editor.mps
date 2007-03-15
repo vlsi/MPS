@@ -420,8 +420,8 @@
           <property name="editable" value="true" />
           <property name="textFgColor" value="darkGray" />
           <property name="text" value="empty" />
-          <property name="attractsFocus" value="0" />
           <property name="fontStyle" value="ITALIC" />
+          <property name="attractsFocus" value="0" />
           <property name="drawBorder" value="false" />
         </node>
         <node role="cellLayout" type="jetbrains.mps.bootstrap.editorLanguage.CellLayout_Flow" id="1160601562019" />
@@ -540,8 +540,12 @@
     <link role="conceptDeclaration" targetNodeId="1.1167380149909" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1167380251306">
       <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_ConceptProperty" id="1173946461259">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="2.1137473891462" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1167380253167">
-        <property name="text" value="remove(" />
+        <property name="text" value="(" />
         <property name="drawBorder" value="false" />
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1167380287297">
           <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1167380290954">
@@ -717,6 +721,33 @@
         <link role="relationDeclaration" targetNodeId="1.1172667748353" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1172667800461">
+        <property name="text" value=")" />
+        <property name="drawBorder" value="false" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1173946584135">
+    <link role="conceptDeclaration" targetNodeId="1.1173946412755" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1173946587184">
+      <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_ConceptProperty" id="1173946589186">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="2.1137473891462" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1173946592109">
+        <property name="text" value="(" />
+        <property name="drawBorder" value="false" />
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1173946621974">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1173946639115">
+            <link role="replacementConcept" targetNodeId="1.1151701983961" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1173946606424">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="1.1173946412756" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1173946609863">
         <property name="text" value=")" />
         <property name="drawBorder" value="false" />
       </node>
