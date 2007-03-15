@@ -21,7 +21,10 @@ public final class RefactoringUtil {
     SModelRepository modelRepository = SModelRepository.getInstance();
     for (SNode node : nodes) {
       if (aggregation) {
-        throw new UnsupportedOperationException();
+        List<SNode> children = node.getChildren(oldRole);
+        for (SNode child : children) {
+          child.setRoleInParent(newRole);
+        }
       } else {
         SReference reference = node.getReference(oldRole);
         assert reference != null;
