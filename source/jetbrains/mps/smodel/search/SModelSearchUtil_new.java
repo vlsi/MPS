@@ -148,7 +148,12 @@ public class SModelSearchUtil_new {
       } else {
         for (SModelDescriptor model : myModels) {
           try {
-            if (condition instanceof IsInstanceCondition) {
+            if (condition instanceof IsInstanceCondition
+                    /* TODO following line was added because cache of FastNodeFinder currently doesn't
+                     * support InterfaceConceptDeclaration and as a result
+                     * fastNodeFinder.getNodes(abstractConceptDeclaration, true)
+                     * always returns empty list for InstanceConceptDeclaration */ 
+                    && ((IsInstanceCondition) condition).getConceptDeclaration() instanceof ConceptDeclaration) {
               IsInstanceCondition isInstance = (IsInstanceCondition) condition;              
               result.addAll(model.getFastNodeFinder().getNodes(isInstance.getConceptDeclaration(), true));
             } else {
