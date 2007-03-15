@@ -83,7 +83,7 @@ public class Generator extends AbstractModule {
 
   public String getAlias() {
     String name = myGeneratorDescriptor.getName();
-    return getSourceLanguage().getNamespace() + " -> [" + (name == null ? "<no name>" : name) + "]";
+    return getSourceLanguage().getNamespace() + "/" + (name == null ? "<no name>" : name);
   }
 
   @NotNull
