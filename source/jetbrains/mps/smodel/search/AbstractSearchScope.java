@@ -47,12 +47,22 @@ public abstract class AbstractSearchScope implements ISearchScope {
     }));
   }
 
+
+  @NotNull
+  public <T extends INodeAdapter> List<T> getAdapters(final Class<T> adapterClass) {
+    return (List<T>) getAdapters(new Condition<INodeAdapter>() {
+      public boolean met(INodeAdapter node) {
+        return adapterClass.isAssignableFrom(node.getClass());
+      }
+    });
+  }
+
   @Nullable
   public final SNode findNode(Condition<SNode> condition) {
     List<SNode> list = getOwnNodes(condition);
-    if(list.size() > 0) return list.get(0);
+    if (list.size() > 0) return list.get(0);
     List<SNode> nodesFromAppendedScopes = getNodesFromAppendedScopes(condition);
-    if(nodesFromAppendedScopes.size() > 0) return nodesFromAppendedScopes.get(0);
+    if (nodesFromAppendedScopes.size() > 0) return nodesFromAppendedScopes.get(0);
     return null;
   }
 

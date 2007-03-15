@@ -140,7 +140,7 @@ public class SModelSearchUtil_new {
         myModels.add(0, myModel.getModelDescriptor());
       }
 
-      List<SNode> result = new LinkedList<SNode>();
+      List<SNode> result = new ArrayList<SNode>();
       if (myRootsOnly) {
         for (SModelDescriptor model : myModels) {
           result.addAll(model.getSModel().getRoots(condition));
@@ -178,7 +178,7 @@ public class SModelSearchUtil_new {
 
     public List<SNode> getOwnNodes(Condition<SNode> condition) {
       ensureHierarchyInitialized();
-      List<SNode> result = new LinkedList<SNode>();
+      List<SNode> result = new ArrayList<SNode>();
       // filter by condition
       for (INodeAdapter node : myConceptHierarchy) {
         if (node == null) continue;
@@ -192,7 +192,7 @@ public class SModelSearchUtil_new {
 
     private void ensureHierarchyInitialized() {
       if (myConceptHierarchy == null) {
-        myConceptHierarchy = new LinkedList<AbstractConceptDeclaration>();
+        myConceptHierarchy = new ArrayList<AbstractConceptDeclaration>();
         myConceptHierarchy.addAll(SModelUtil_new.getImplementedAndExtendedConcepts(myConcept));
       }
     }

@@ -1548,7 +1548,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
     if (node instanceof AbstractConceptDeclaration) {
       conceptDeclaration = (AbstractConceptDeclaration) node;
     } else {
-      conceptDeclaration = node.getConceptDeclaration(scope);
+      conceptDeclaration = node.getConceptDeclarationAdapter();
     }
     return SModelUtil_new.findConceptProperty(conceptDeclaration, propertyName);
   }
