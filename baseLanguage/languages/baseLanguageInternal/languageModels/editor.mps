@@ -12,6 +12,7 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1173990744300">
       <property name="drawBorder" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1173992540713">
+        <property name="textFgColor" value="DARK_GREEN" />
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1173992483054" />
       </node>
@@ -20,6 +21,7 @@
         <property name="drawBorder" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1173992460507">
+        <property name="textFgColor" value="DARK_GREEN" />
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1173992444083" />
       </node>
