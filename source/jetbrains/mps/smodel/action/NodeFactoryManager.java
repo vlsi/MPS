@@ -45,7 +45,7 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
     for (LinkDeclaration declaration : linkDeclarations) {
       LinkDeclaration specializedLink = declaration.getSpecializedLink();
       if (specializedLink == linkDeclaration) {
-        result = linkDeclaration;
+        result = declaration;
         break;
       }
     }
