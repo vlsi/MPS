@@ -9,6 +9,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class InternalStaticMethodCall extends BaseMethodCall {
+  public static String FQ_CLASS_NAME = "fqClassName";
+  public static String METHOD_NAME = "methodName";
 
   public  InternalStaticMethodCall(SNode node) {
     super(node);
@@ -19,5 +21,18 @@ public class InternalStaticMethodCall extends BaseMethodCall {
   }
   public static InternalStaticMethodCall newInstance(SModel sm) {
     return InternalStaticMethodCall.newInstance(sm, false);
+  }
+
+  public String getFqClassName() {
+    return this.getProperty(InternalStaticMethodCall.FQ_CLASS_NAME);
+  }
+  public void setFqClassName(String value) {
+    this.setProperty(InternalStaticMethodCall.FQ_CLASS_NAME, value);
+  }
+  public String getMethodName() {
+    return this.getProperty(InternalStaticMethodCall.METHOD_NAME);
+  }
+  public void setMethodName(String value) {
+    this.setProperty(InternalStaticMethodCall.METHOD_NAME, value);
   }
 }
