@@ -15,6 +15,14 @@
       <property name="name" value="methodName" />
       <link role="dataType" targetNodeId="2.1083065718921" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1173992941124">
+      <property name="value" value=".&lt;internal static method&gt;" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1173992371598">
+      <property name="value" value="internal static method" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
+    </node>
   </node>
 </model>
 
