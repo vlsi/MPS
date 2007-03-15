@@ -285,10 +285,6 @@
           <property name="value" value="newNode" />
           <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
         </node>
-        <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1158701330195">
-          <link role="conceptLinkDeclaration" targetNodeId="3.1137545963098" />
-          <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1158701333384" />
-        </node>
       </node>
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1158701349058">
