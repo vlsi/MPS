@@ -35,9 +35,19 @@
     <link role="conceptDeclaration" targetNodeId="1.1173995204289" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1173995375435">
       <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1173995481086">
+        <property name="textFgColor" value="DARK_GREEN" />
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="1.1173995448817" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1173995377125">
         <property name="text" value="." />
         <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1173995486322">
+        <property name="textFgColor" value="DARK_GREEN" />
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="1.1173995466678" />
       </node>
     </node>
   </node>
