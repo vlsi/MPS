@@ -1124,26 +1124,9 @@
           </node>
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1081149570780">
-        <property name="text" value="(" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1173991610903">
         <property name="drawBorder" value="false" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1138337320390">
-        <property name="separatorText" value="," />
-        <property name="drawBorder" value="false" />
-        <property name="vertical" value="false" />
-        <link role="relationDeclaration" targetNodeId="17.1068499141038" />
-        <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1138337320391">
-          <property name="editable" value="true" />
-          <property name="drawBorder" value="false" />
-          <property name="selectable" value="true" />
-        </node>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1081149570782">
-        <property name="editable" value="false" />
-        <property name="text" value=")" />
-        <property name="drawBorder" value="false" />
-        <property name="selectable" value="true" />
+        <link role="editorComponent" targetNodeId="1173990860683" resolveInfo="BaseMethodCall_actualArgumentList" />
       </node>
     </node>
   </node>
@@ -6714,6 +6697,7 @@
     <link role="conceptDeclaration" targetNodeId="17.1068499141036" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1173990937233">
       <property name="drawBorder" value="false" />
+      <property name="selectable" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1173990956438">
         <property name="text" value="(" />
         <property name="drawBorder" value="false" />
