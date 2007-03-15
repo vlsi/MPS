@@ -2,6 +2,7 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.SNode;
 
 /**
  * User: Dmitriev.
@@ -14,6 +15,10 @@ public class JavaNameUtil {
       return shortClassName;
     }
     return packageName + "." + shortClassName;
+  }
+
+  public static String fqClassName(SNode node, String shortClassName) {
+    return fqClassName(node.getModel(), shortClassName);
   }
 
   public static String packageNameForModelUID(SModelUID modelUID) {

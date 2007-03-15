@@ -1,10 +1,10 @@
 package jetbrains.mps.smodel.search;
 
+import jetbrains.mps.bootstrap.structureLanguage.structure.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.bootstrap.structureLanguage.structure.*;
-import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.AndCondition;
+import jetbrains.mps.util.Condition;
 
 import java.util.*;
 
@@ -136,8 +136,12 @@ public class SModelSearchUtil_new {
 
     public List<SNode> getOwnNodes(Condition<SNode> condition) {
       if (myModels == null) {
-        myModels = myModel.allImportedModels(myScope);
-        myModels.add(0, myModel.getModelDescriptor());
+        if (myModel == null) {
+          myModels = Collections.EMPTY_LIST;
+        } else {
+          myModels = myModel.allImportedModels(myScope);
+          myModels.add(0, myModel.getModelDescriptor());
+        }
       }
 
       List<SNode> result = new ArrayList<SNode>();
@@ -152,9 +156,9 @@ public class SModelSearchUtil_new {
                     /* TODO following line was added because cache of FastNodeFinder currently doesn't
                      * support InterfaceConceptDeclaration and as a result
                      * fastNodeFinder.getNodes(abstractConceptDeclaration, true)
-                     * always returns empty list for InstanceConceptDeclaration */ 
+                     * always returns empty list for InstanceConceptDeclaration */
                     && ((IsInstanceCondition) condition).getConceptDeclaration() instanceof ConceptDeclaration) {
-              IsInstanceCondition isInstance = (IsInstanceCondition) condition;              
+              IsInstanceCondition isInstance = (IsInstanceCondition) condition;
               result.addAll(model.getFastNodeFinder().getNodes(isInstance.getConceptDeclaration(), true));
             } else {
               result.addAll(model.getSModel().allNodes(condition));
