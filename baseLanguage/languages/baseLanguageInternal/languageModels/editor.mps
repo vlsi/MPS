@@ -51,5 +51,24 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1173996477896">
+    <link role="conceptDeclaration" targetNodeId="1.1173996401517" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1173996492632">
+      <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1173996494697">
+        <property name="text" value="new" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1173996598179">
+        <property name="textFgColor" value="DARK_GREEN" />
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="1.1173996588177" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1173996742260">
+        <property name="drawBorder" value="false" />
+        <link role="editorComponent" targetNodeId="3.1173990860683" />
+      </node>
+    </node>
+  </node>
 </model>
 
