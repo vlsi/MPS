@@ -7,6 +7,11 @@
   <import index="3" modelUID="java.lang.reflect@java_stub" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1171627004550">
     <property name="name" value="A" />
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1173992785000">
+      <property name="name" value="f" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1173992785001" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1173992785002" />
+    </node>
   </node>
 </model>
 
