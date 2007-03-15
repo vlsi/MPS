@@ -556,6 +556,12 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
         progress.finishSomehow();
       }
+
+      if (generationType instanceof GenerateFilesGenerationType && ideaPresent &&
+              !generationType.requiresCompilationInIDEAfterGeneration()) {
+        myProject.getProjectHandler().refreshFS();
+      }
+
     } catch (GenerationCanceledException gce) {
       progress.addText("generation canceled");
       handler.handle(new Message(MessageKind.WARNING, "generation canceled"));
