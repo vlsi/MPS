@@ -13,6 +13,8 @@
   <module />
   <accessoryModels />
   <generators />
-  <classPath />
+  <classPath>
+    <entry path="${language_descriptor}\classes" />
+  </classPath>
 </language>
 
