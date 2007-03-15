@@ -35,8 +35,8 @@ public final class RefactoringUtil {
           linkAttribute.setRoleInParent(getRefMacroRole(newRole));
           referenceMacros.add((ReferenceMacro) linkAttribute.getAdapter());
         }
-        modelRepository.markChanged(node.getModel(), true);
       }
+      modelRepository.markChanged(node.getModel(), true);
     }
     return referenceMacros;
   }
