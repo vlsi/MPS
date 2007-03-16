@@ -377,11 +377,13 @@ public class SubtypingManager {
 
   public boolean coerceSubtyping(SNode subtype, AnalyzedTermDeclaration analyzedTermDeclaration, ExpressionContext context) {
     MyCoersionMatcher coersionMatcher = new MyCoersionMatcher(analyzedTermDeclaration, context);
+    if (coersionMatcher.matches(subtype)) return true;
     return searchInSupertypes(subtype, coersionMatcher);
   }
 
   public boolean coerceSupertyping(SNode supertype, AnalyzedTermDeclaration analyzedTermDeclaration, ExpressionContext context) {
     MyCoersionMatcher coersionMatcher = new MyCoersionMatcher(analyzedTermDeclaration, context);
+     if (coersionMatcher.matches(supertype)) return true;
     return searchInSubtypes(supertype, coersionMatcher);
   }
 
