@@ -5,6 +5,7 @@ import org.joda.time.*;
 
 import java.util.Date;
 import java.util.Calendar;
+import java.util.Locale;
 
 /**
  * @author Maxim.Mazin at date: 21.02.2007 time: 17:25:49
@@ -15,6 +16,10 @@ public class DateTimeOperations {
 
   public static String print(Long datetime, DateTimeFormatter formatter) {
     return formatter.print(datetime != null ? new DateTime(datetime) : Constants.NULL_DATE_TIME);
+  }
+
+  public static String print(Long datetime, DateTimeFormatter formatter, Locale locale) {
+    return print(datetime, formatter.withLocale(locale));
   }
 
   public static Long convert(DateTime dateTime) {

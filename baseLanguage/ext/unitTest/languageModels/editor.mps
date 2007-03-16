@@ -137,6 +137,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1171978341091">
         <property name="drawBorder" value="false" />
+        <property name="noTargetText" value="expected" />
         <link role="relationDeclaration" targetNodeId="1.1171978312978" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1171978153884">
@@ -146,6 +147,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1171978348249">
         <property name="drawBorder" value="false" />
+        <property name="noTargetText" value="actual" />
         <link role="relationDeclaration" targetNodeId="1.1171978322433" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1171978143085">

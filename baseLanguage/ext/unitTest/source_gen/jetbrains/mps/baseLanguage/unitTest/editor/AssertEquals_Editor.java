@@ -96,7 +96,7 @@ public class AssertEquals_Editor extends DefaultNodeEditor {
   public EditorCell createExpectedCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("expected");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("expected");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createExpectedCellinternal(context, node, provider);
@@ -129,7 +129,7 @@ public class AssertEquals_Editor extends DefaultNodeEditor {
   public EditorCell createActualCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("actual");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("actual");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createActualCellinternal(context, node, provider);
