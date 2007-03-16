@@ -49,7 +49,7 @@ public class TypeChecker {
   private ContextsManager myContextsManager;
   private EquationManager myEquationManager;
   private TypeVariablesManager myTypeVariablesManager;
-  private Interpretator myInterpretator;
+  private HInterpreter myHInterpreter;
   private SubtypingManager mySubtypingManager;
   private AdaptationManager myAdaptationManager;
   private QuotationEvaluator myQuotationEvaluator;
@@ -59,7 +59,7 @@ public class TypeChecker {
   public TypeChecker() {
     myContextsManager = new ContextsManager(this);
     myEquationManager = new EquationManager(this);
-    myInterpretator = new Interpretator(this);
+    myHInterpreter = new HInterpreter(this);
     myTypeVariablesManager = new TypeVariablesManager(this);
     mySubtypingManager = new SubtypingManager(this);
     myAdaptationManager = new AdaptationManager(this);
@@ -91,8 +91,8 @@ public class TypeChecker {
     return myAdaptationManager;
   }
 
-  public Interpretator getInterpretator() {
-    return myInterpretator;
+  public HInterpreter getInterpreter() {
+    return myHInterpreter;
   }
 
   public QuotationEvaluator getQuotationEvaluator() {
@@ -108,7 +108,7 @@ public class TypeChecker {
     myAdaptationManager.clear();
     myEquationManager.clear();
     myTypeVariablesManager.clearVariables();
-    myInterpretator.clear();
+    myHInterpreter.clear();
     mySubtypingManager.clear();
     myAdaptationManager.clear();
     myConceptsToRulesCache.clear();
@@ -183,7 +183,7 @@ public class TypeChecker {
     for (Map.Entry<SNode, SNode> contextEntry : mainContext.entrySet()) {
       SNode term = contextEntry.getKey();
       if (term == null) continue;
-      SNode type = expandType(contextEntry.getValue(), myInterpretator.getRuntimeTypesModel());
+      SNode type = expandType(contextEntry.getValue(), myHInterpreter.getRuntimeTypesModel());
       if (BaseAdapter.isInstance(type, RuntimeErrorType.class)) {
         reportTypeError(term, ((RuntimeErrorType) BaseAdapter.fromNode(type)).getErrorText());
       }
@@ -276,7 +276,7 @@ public class TypeChecker {
         Set<Rule> rules = myConceptsToRulesCache.get(node.getConceptDeclarationAdapter());
         if (rules != null) {
           for (Rule rule : rules) {
-            myInterpretator.interpretate(node, rule);
+            myHInterpreter.interpret(node, rule);
           }
         }
       }
@@ -376,7 +376,7 @@ public class TypeChecker {
   }
 
   public SModel getRuntimeTypesModel() {
-    return myInterpretator.getRuntimeTypesModel();
+    return myHInterpreter.getRuntimeTypesModel();
   }
 
   public String getTypeErrorDontCheck(SNode node) {

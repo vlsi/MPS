@@ -23,6 +23,7 @@ public class EquationManager {
 
   private Map<SNode, Map<SNode,SNode>> mySubtypesToSupertypesMap = new HashMap<SNode, Map<SNode, SNode>>();
   private Map<SNode, Map<SNode, SNode>> mySupertypesToSubtypesMap = new HashMap<SNode, Map<SNode, SNode>>();
+  private Map<SNode, Map<SNode, SNode>> myComparableTypesMap = new HashMap<SNode, Map<SNode, SNode>>();
   private Map<SNode, SNode> myEquations = new HashMap<SNode, SNode>();
 
   public EquationManager(TypeChecker typeChecker) {
@@ -84,6 +85,37 @@ public class EquationManager {
     TypeChecker.getInstance().reportTypeError(nodeToCheck, errorText);
   }
 
+  public void addInequationComparable(SNode type1, SNode type2, SNode nodeToCheck) {
+    SNode representator1 = getRepresentator(type1);
+    SNode representator2 = getRepresentator(type2);
+
+    // no equation needed
+    if (representator1 == representator2) return;
+
+    // if one of them is a var
+    RuntimeTypeVariable varSubtype = TypeVariablesManager.getTypeVar(representator1);
+    RuntimeTypeVariable varSupertype = TypeVariablesManager.getTypeVar(representator2);
+    if (varSubtype != null || varSupertype != null) {
+      addComparable(representator1, representator2, nodeToCheck);
+      return;
+    }
+
+    // if subtype or supertype
+    if (myTypeChecker.getSubtypingManager().isComparableWRTRules(representator1, representator2)) {
+      return;
+    }
+    if (myTypeChecker.getSubtypingManager().isSubtype(representator1, representator2)) {
+      return;
+    }
+    if (myTypeChecker.getSubtypingManager().isSubtype(representator2, representator1)) {
+      return;
+    }
+
+    String errorText = "type "+ PresentationManager.toString(representator1)+
+            " should be comparable with "+ PresentationManager.toString(representator2);
+    TypeChecker.getInstance().reportTypeError(nodeToCheck, errorText);
+  }
+
 
   public void addEquation(SNode lhs, SNode rhs, SNode nodeToCheck) {
     SNode rhsRepresentator = getRepresentator(lhs);
@@ -107,7 +139,8 @@ public class EquationManager {
 
     // solve equation
     if (!compareNodes(rhsRepresentator, lhsRepresentator)) {
-      String error = "incompatible types: " + rhsRepresentator + " and " + lhsRepresentator; //todo more friendly error representation
+      String error = "incompatible types: "+ PresentationManager.toString(rhsRepresentator)+
+            " and "+ PresentationManager.toString(lhsRepresentator);
       processErrorEquation(lhsRepresentator, rhsRepresentator, error, nodeToCheck);
       return;
     }
@@ -154,6 +187,20 @@ public class EquationManager {
         addInequation(subtype, type, subtypes.get(subtype));
       }
     }
+
+    if (myComparableTypesMap.get(var) != null) {
+      Map<SNode,SNode> comparables = myComparableTypesMap.get(var);
+      myComparableTypesMap.remove(var);
+      for (SNode comparable : comparables.keySet()) {
+        Map<SNode, SNode> map = myComparableTypesMap.get(comparable);
+        if (map != null) {
+          map.remove(var);
+        }
+      }
+      for (SNode subtype : comparables.keySet()) {
+        addInequationComparable(subtype, type, comparables.get(subtype));
+      }
+    }
   }
 
   private void processErrorEquation(SNode type, SNode error, String errorText, SNode nodeToCheck) {
@@ -165,6 +212,7 @@ public class EquationManager {
   public void clear() {
     mySubtypesToSupertypesMap.clear();
     mySupertypesToSubtypesMap.clear();
+    myComparableTypesMap.clear();
     myEquations.clear();
   }
 
@@ -239,17 +287,21 @@ public class EquationManager {
     subtypes.put(subtype, nodeToCheck);
   }
 
-//  private void removeSubtyping(SNode subtype, SNode supertype) {
-//    Map<SNode,SNode> supertypes = mySubtypesToSupertypesMap.get(subtype);
-//    if (supertypes != null) {
-//      supertypes.remove(supertype);
-//    }
-//
-//    Map<SNode,SNode> subtypes = mySupertypesToSubtypesMap.get(supertype);
-//    if (subtypes != null) {
-//      subtypes.remove(subtype);
-//    }
-//  }
+   private void addComparable(SNode type1, SNode type2, SNode nodeToCheck) {
+    Map<SNode,SNode> comparables1 = myComparableTypesMap.get(type1);
+    if (comparables1 == null) {
+      comparables1 = new HashMap<SNode, SNode>();
+      myComparableTypesMap.put(type1, comparables1);
+    }
+    comparables1.put(type2, nodeToCheck);
+
+    Map<SNode,SNode> comparables2 = myComparableTypesMap.get(type2);
+    if (comparables2 == null) {
+      comparables2 = new HashMap<SNode, SNode>();
+      myComparableTypesMap.put(type2, comparables2);
+    }
+    comparables2.put(type1, nodeToCheck);
+  }
 
   private Set<SNode> subtypingGraphVertices() {
     Set<SNode> nodes = new HashSet<SNode>(mySubtypesToSupertypesMap.keySet());

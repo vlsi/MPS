@@ -385,6 +385,10 @@ public class SubtypingManager {
     return searchInSubtypes(supertype, coersionMatcher);
   }
 
+  public boolean isComparableWRTRules(SNode subtypeRepresentator, SNode supertypeRepresentator) {
+    return false; // todo
+  }
+
   private static interface Matcher {
     boolean matches(SNode nodeToMatch);
   }
