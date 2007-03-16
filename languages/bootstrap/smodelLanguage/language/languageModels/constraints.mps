@@ -212,7 +212,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraintSet" id="1170928950528">
-    <property name="name" value="SModelLangTypes_names" />
+    <property name="name" value="SModelLang_typeNames" />
     <node role="nodePropertyConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraint" id="1170929906135">
       <link role="applicableConcept" targetNodeId="1.1143226024141" />
       <link role="applicableProperty" targetNodeId="9.1169194664001" />
