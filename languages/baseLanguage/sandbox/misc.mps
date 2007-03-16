@@ -556,6 +556,14 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1174046931658">
+          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1174046936833">
+            <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]Object).([InstanceMethodDeclaration]hashCode() : (jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int))" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174046931659">
+              <link role="variableDeclaration" targetNodeId="1173455856697" resolveInfo="o" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1173455713362">
           <node role="expression" type="jetbrains.mps.baseLanguage.TernaryOperatorExpression" id="1173455713363">
             <node role="condition" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1173455783942">
