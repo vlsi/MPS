@@ -284,22 +284,7 @@ public class EquationManager {
       }
     }
 
-    //3. a->b, b->a => a = b
-    for (SNode node : subtypingGraphVertices()) {
-      Map<SNode,SNode> supertypes = mySubtypesToSupertypesMap.get(node);
-      if (supertypes == null) continue;
-      for (SNode supertype : new HashSet<SNode>(supertypes.keySet())) {
-        Map<SNode,SNode> supertypesSupertypes = mySubtypesToSupertypesMap.get(supertype);
-        if (supertypesSupertypes == null) continue;
-        for (SNode supertypesSubtype : supertypesSupertypes.keySet()) {
-          if (supertypesSubtype == node) {
-            addEquation(node, supertype, supertypesSupertypes.get(supertypesSubtype));
-          }
-        }
-      }
-    }
-
-    //4. {}->c->{S} => c = lcs({S})
+    //3. {}->c->{S} => c = lcs({S})
     for (SNode node : subtypingGraphVertices()) {
       if (BaseAdapter.isInstance(node, RuntimeTypeVariable.class)) {
         Map<SNode,SNode> subtypes = mySupertypesToSubtypesMap.get(node);

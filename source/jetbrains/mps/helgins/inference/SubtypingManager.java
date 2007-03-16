@@ -98,12 +98,13 @@ public class SubtypingManager {
       for (SNode node : frontier) {
         Set<SNode> descendants = collectImmediateSubtypes(node);
         if (descendants == null) continue;
-        descendants.remove(node);
+        removeStructurally(descendants, node);
         for (SNode descendant : descendants) {
           if (m.matches(descendant)) {
             return true;
           }
         }
+        addAllStructurally(newFrontier, descendants);
         newFrontier.addAll(descendants);
       }
       frontier = newFrontier;
@@ -120,13 +121,13 @@ public class SubtypingManager {
       for (SNode node : frontier) {
         Set<SNode> ancestors = collectImmediateSupertypes(node);
         if (ancestors == null) continue;
-        ancestors.remove(node);
+        removeStructurally(ancestors, node);
         for (SNode ancestor : ancestors) {
           if (m.matches(ancestor)) {
             return true;
           }
         }
-        newFrontier.addAll(ancestors);
+        addAllStructurally(newFrontier, ancestors);
       }
       frontier = newFrontier;
       newFrontier = new HashSet<SNode>();
