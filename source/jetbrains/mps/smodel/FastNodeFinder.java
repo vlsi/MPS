@@ -66,7 +66,6 @@ public class FastNodeFinder {
     ConceptDeclaration concept = root.getConceptDeclarationAdapter(GlobalScope.getInstance());
     getNodes_noInheritance(concept).add(new WeakReference<SNode>(root));
 
-
     Set<AbstractConceptDeclaration> result = new HashSet<AbstractConceptDeclaration>();
     collectParents(concept, result);
 
@@ -99,7 +98,7 @@ public class FastNodeFinder {
       }
 
       if (cd.getExtends() != null) {
-        collectParents(cd, result);
+        collectParents(cd.getExtends(), result);
       }
     }
   }
