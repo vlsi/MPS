@@ -1151,10 +1151,6 @@
       <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1142886811589">
         <property name="name" value="NodeCondition_FunctionParm_node" />
         <link role="extends" targetNodeId="4.1107135704075" />
-        <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1147485970291">
-          <link role="conceptLinkDeclaration" targetNodeId="4.1137545963098" />
-          <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1147485974730" />
-        </node>
         <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1142886811590">
           <property name="value" value="node" />
           <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
