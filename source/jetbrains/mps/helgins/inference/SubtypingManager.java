@@ -93,11 +93,15 @@ public class SubtypingManager {
   private boolean searchInSubtypes(SNode superRepresentator, Matcher m) {
     Set<SNode> frontier = new HashSet<SNode>();
     Set<SNode> newFrontier = new HashSet<SNode>();
+    Set<SNode> yetPassed = new HashSet<SNode>();
     frontier.add(superRepresentator);
     while (!frontier.isEmpty()) {
       for (SNode node : frontier) {
         Set<SNode> descendants = collectImmediateSubtypes(node);
         if (descendants == null) continue;
+        for (SNode passedNode : yetPassed) {
+          removeStructurally(descendants, passedNode);
+        }
         removeStructurally(descendants, node);
         for (SNode descendant : descendants) {
           if (m.matches(descendant)) {
@@ -105,7 +109,7 @@ public class SubtypingManager {
           }
         }
         addAllStructurally(newFrontier, descendants);
-        newFrontier.addAll(descendants);
+        addAllStructurally(yetPassed, descendants);
       }
       frontier = newFrontier;
       newFrontier = new HashSet<SNode>();
@@ -116,11 +120,15 @@ public class SubtypingManager {
   private boolean searchInSupertypes(SNode subRepresentator, Matcher m) {
     Set<SNode> frontier = new HashSet<SNode>();
     Set<SNode> newFrontier = new HashSet<SNode>();
+    Set<SNode> yetPassed = new HashSet<SNode>();
     frontier.add(subRepresentator);
     while (!frontier.isEmpty()) {
       for (SNode node : frontier) {
         Set<SNode> ancestors = collectImmediateSupertypes(node);
         if (ancestors == null) continue;
+        for (SNode passedNode : yetPassed) {
+          removeStructurally(ancestors, passedNode);
+        }
         removeStructurally(ancestors, node);
         for (SNode ancestor : ancestors) {
           if (m.matches(ancestor)) {
@@ -128,6 +136,7 @@ public class SubtypingManager {
           }
         }
         addAllStructurally(newFrontier, ancestors);
+        addAllStructurally(yetPassed, ancestors);
       }
       frontier = newFrontier;
       newFrontier = new HashSet<SNode>();
