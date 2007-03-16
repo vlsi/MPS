@@ -20,9 +20,8 @@ public class BaseLanguageUtil_new {
   }
 
   public static boolean isAssignable(Classifier fromClassifier, Classifier toClassifier) {
-    if (fromClassifier.equals(toClassifier)) {
-      return true;
-    }
+    if (fromClassifier == null) return false;
+    if (fromClassifier.equals(toClassifier)) return true;
 
     if ("java.lang.Object".equals(NameUtil.nodeFQName(toClassifier.getNode()))) {
       return true;
