@@ -1347,7 +1347,7 @@
     <property name="name" value="ForeachStatement" />
     <link role="extends" targetNodeId="1144230876926" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1144226391574">
-      <property name="value" value="foreach" />
+      <property name="value" value="for" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1144226396076">
