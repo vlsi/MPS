@@ -128,21 +128,27 @@ public class EquationManager {
   }
 
   private void keepInequation(SNode var, SNode type) {
-    if (mySubtypesToSupertypesMap.containsKey(var)) {
+    if (mySubtypesToSupertypesMap.get(var) != null) {
       Map<SNode,SNode> supertypes = mySubtypesToSupertypesMap.get(var);
       mySubtypesToSupertypesMap.remove(var);
       for (SNode supertype : supertypes.keySet()) {
-        mySupertypesToSubtypesMap.get(supertype).remove(var);
+        Map<SNode, SNode> map = mySupertypesToSubtypesMap.get(supertype);
+        if (map != null) {
+          map.remove(var);
+        }
       }
       for (SNode supertype : supertypes.keySet()) {
         addInequation(type, supertype, supertypes.get(supertype));
       }
     }
-    if (mySupertypesToSubtypesMap.containsKey(var)) {
+    if (mySupertypesToSubtypesMap.get(var) != null) {                         
       Map<SNode,SNode> subtypes = mySupertypesToSubtypesMap.get(var);
       mySupertypesToSubtypesMap.remove(var);
       for (SNode subtype : subtypes.keySet()) {
-        mySubtypesToSupertypesMap.get(subtype).remove(var);
+        Map<SNode, SNode> map = mySubtypesToSupertypesMap.get(subtype);
+        if (map != null) {
+          map.remove(var);
+        }
       }
       for (SNode subtype : subtypes.keySet()) {
         addInequation(subtype, type, subtypes.get(subtype));
@@ -247,12 +253,34 @@ public class EquationManager {
 
   private Set<SNode> subtypingGraphVertices() {
     Set<SNode> nodes = new HashSet<SNode>(mySubtypesToSupertypesMap.keySet());
-    nodes.addAll(mySupertypesToSubtypesMap.keySet());
-    return nodes;
+    Set<SNode> result = new HashSet<SNode>();
+    for (SNode node : nodes) {
+      Map<SNode, SNode> map = mySubtypesToSupertypesMap.get(node);
+      if (map == null || map.isEmpty()) {
+        mySubtypesToSupertypesMap.remove(node);
+      } else {
+        result.add(node);
+      }
+    }
+    nodes = new HashSet<SNode>(mySupertypesToSubtypesMap.keySet());
+    for (SNode node : nodes) {
+      Map<SNode, SNode> map = mySubtypesToSupertypesMap.get(node);
+      if (map == null || map.isEmpty()) {
+        mySupertypesToSubtypesMap.remove(node);
+      } else {
+        result.add(node);
+      }
+    }
+
+    return result;
   }
 
   public void solveInequations() {
     Set<SNode> nodes = subtypingGraphVertices();
+
+    if (nodes.size() > 200) {
+      System.out.println("Oy vey!");
+    }
 
     //1.transitive closure
     for (SNode node2 : nodes) {
@@ -320,7 +348,10 @@ public class EquationManager {
           Map<SNode,SNode> subtypes = mySupertypesToSubtypesMap.get(node);
           if (subtypes == null || subtypes.isEmpty()) {
             supertypes.remove(supertype);
-            mySupertypesToSubtypesMap.get(supertype).remove(node);
+            Map<SNode, SNode> map = mySupertypesToSubtypesMap.get(supertype);
+            if (map != null) {
+              map.remove(node);
+            }
             addEquation(supertype, node, supertypes.get(supertype));
           }
         }
