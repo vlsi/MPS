@@ -1818,5 +1818,13 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174088067129">
+    <property name="name" value="CellMenuPart_ReplaceChildPrimary" />
+    <link role="extends" targetNodeId="1164824854750" resolveInfo="CellMenuPart_Abstract" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174088067130">
+      <property name="value" value="primary replace child menu" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
+  </node>
 </model>
 
