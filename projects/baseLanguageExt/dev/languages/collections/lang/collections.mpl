@@ -32,6 +32,7 @@
       <module>
         <moduleRoot path="${mps_home}\languages\baseLanguage\language\baseLanguage.mpl" />
       </module>
+      <external-templates />
     </generator>
   </generators>
   <classPath>
