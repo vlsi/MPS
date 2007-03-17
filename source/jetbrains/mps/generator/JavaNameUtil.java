@@ -1,5 +1,6 @@
 package jetbrains.mps.generator;
 
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.smodel.SNode;
@@ -55,7 +56,7 @@ public class JavaNameUtil {
     return fqName.substring(offset + 1);
   }
 
-  public static String className(jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration conceptDeclaration) {
+  public static String className(ConceptDeclaration conceptDeclaration) {
     SModel languageModel = conceptDeclaration.getModel();
     String packageName = withoutStructure(JavaNameUtil.packageNameForModelUID(languageModel.getUID()));
     return packageName + "." + conceptDeclaration.getName();
