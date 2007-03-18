@@ -111,5 +111,30 @@
       <link role="applicableConcept" targetNodeId="1.1151701983961" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeFactories" id="1174261408149">
+    <property name="name" value="BLC_factories" />
+    <node role="nodeFactory" type="jetbrains.mps.bootstrap.actionsLanguage.NodeFactory" id="1174261447072">
+      <link role="applicableConcept" targetNodeId="1.1153248196026" />
+      <node role="setupFunction" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSetupFunction" id="1174261447073">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1174261447074">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1174261461892">
+            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1174261474271">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1174261462988">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSetupFunction_NewNode" id="1174261461893" />
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1174261465504">
+                  <link role="property" targetNodeId="3.1169194664001" />
+                </node>
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Property_SetOperation" id="1174261475897">
+                <node role="value" type="jetbrains.mps.baseLanguage.StringLiteral" id="1174261479602">
+                  <property name="value" value="it" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

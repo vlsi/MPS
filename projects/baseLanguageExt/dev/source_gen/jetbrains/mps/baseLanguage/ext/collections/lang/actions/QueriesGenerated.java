@@ -8,6 +8,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.ext.collections.lang.CollectionsLanguageUtil;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 
 public class QueriesGenerated {
 
@@ -19,5 +21,8 @@ public class QueriesGenerated {
     SNode type = TypeChecker.getInstance().getTypeDontCheck(sourceNode);
     SNode sequenceType = CollectionsLanguageUtil.coerceTo_SequenceType(type);
     return (sequenceType != null);
+  }
+  public static void nodeFactory_NodeSetup_DefaultInputElement_1174261447073(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
+    SPropertyOperations.set(newNode, "name", "it");
   }
 }
