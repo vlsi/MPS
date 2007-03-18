@@ -86,6 +86,10 @@ public class Queries {
         result.add(BaseAdapter.fromAdapter(supertypeByDeclaration(clt, interfaceType)));
       }
     }
+    SModel model = TypeChecker.getInstance().getRuntimeTypesModel();
+    ClassifierType erasedClt = ClassifierType.newInstance(model);
+    erasedClt.setClassifier(classifier);
+    result.add(BaseAdapter.fromAdapter(erasedClt));
     return result;
   }
 

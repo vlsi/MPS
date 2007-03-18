@@ -556,6 +556,34 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1174216409117">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1174216409118">
+            <property name="name" value="l" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1174216409119">
+              <link role="classifier" extResolveInfo="3.[Classifier]List" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.NewExpression" id="1174216420792">
+              <link role="baseMethodDeclaration" extResolveInfo="3.constructor [Classifier]ArrayList[ConstructorDeclaration] ()" />
+              <node role="typeParameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1174216450027">
+                <link role="classifier" extResolveInfo="1.[Classifier]String" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1174216465163">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1174216465164">
+            <property name="name" value="l2" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1174216465165">
+              <link role="classifier" extResolveInfo="3.[Classifier]ArrayList" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1174216476822">
+                <link role="classifier" extResolveInfo="1.[Classifier]String" />
+              </node>
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.NewExpression" id="1174216485506">
+              <link role="baseMethodDeclaration" extResolveInfo="3.constructor [Classifier]ArrayList[ConstructorDeclaration] ()" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1174055237265">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1174055237266">
             <property name="name" value="snodes" />
