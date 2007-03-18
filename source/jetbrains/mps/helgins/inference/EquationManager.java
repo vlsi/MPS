@@ -83,9 +83,6 @@ public class EquationManager {
     String errorText = "type "+ PresentationManager.toString(subtypeRepresentator)+
             " should be a subtype of "+ PresentationManager.toString(supertypeRepresentator);
     myTypeChecker.reportTypeError(nodeToCheck, errorText);
-
-    //debug:
-    myTypeChecker.getSubtypingManager().isSubtype(subtypeRepresentator, supertypeRepresentator);
   }
 
   public void addInequationComparable(SNode type1, SNode type2, SNode nodeToCheck) {
