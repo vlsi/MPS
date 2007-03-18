@@ -337,6 +337,40 @@
                 </node>
               </node>
             </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1174259125876">
+              <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1174259135756">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174259128332">
+                  <link role="variableDeclaration" targetNodeId="1173920495360" resolveInfo="leftOperation" />
+                </node>
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1174259139023">
+                  <link role="concept" targetNodeId="1.1138056143562" />
+                </node>
+              </node>
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1174259125878">
+                <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1174259153727">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1174259156119">
+                    <property name="value" value="true" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1174259160509">
+              <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1174259160510">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174259160511">
+                  <link role="variableDeclaration" targetNodeId="1173920495360" resolveInfo="leftOperation" />
+                </node>
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1174259160512">
+                  <link role="concept" targetNodeId="1.1138056282393" />
+                </node>
+              </node>
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1174259160513">
+                <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1174259160514">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1174259160515">
+                    <property name="value" value="true" />
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1173912635229">

@@ -6,23 +6,18 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.typesystem.ITypeChecker;
-import jetbrains.mps.typesystem.TypeCheckerAccess;
-import jetbrains.mps.typesystem.ITypeObject;
+import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.baseLanguage.ext.collections.lang.CollectionsLanguageUtil;
 
 public class QueriesGenerated {
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_1160672994889(SNode parentNode, IScope scope, IOperationContext operationContext) {
-    SNode block = SNodeOperations.getParentWhereConceptInList(parentNode, new String[]{"jetbrains.mps.baseLanguage.ext.collections.lang.structure.ValueSupplierBlock","jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapperBlock","jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachBlock","jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortBlock"}, false, false);
+    SNode block = SNodeOperations.getAncestorWhereConceptInList(parentNode, new String[]{"jetbrains.mps.baseLanguage.ext.collections.lang.structure.ValueSupplierBlock","jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapperBlock","jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachBlock","jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortBlock"}, false, false);
     return block != null;
   }
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1161719130431(SNode sourceNode, IScope scope, IOperationContext operationContext) {
-    ITypeChecker checker = TypeCheckerAccess.getTypeChecker();
-    ITypeObject type = checker.getNodeType(sourceNode);
-    if(type != null) {
-      ITypeObject sequence_type = checker.coerceType(type, "jetbrains.mps.baseLanguage.ext.collections.lang.types.sequence");
-      return sequence_type != null;
-    }
-    return false;
+    SNode type = TypeChecker.getInstance().getTypeDontCheck(sourceNode);
+    SNode sequenceType = CollectionsLanguageUtil.coerceTo_SequenceType(type);
+    return (sequenceType != null);
   }
 }
