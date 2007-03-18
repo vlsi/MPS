@@ -1,6 +1,5 @@
 package jetbrains.mps.helgins.inference;
 
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.formulaLanguage.evaluator.ExpressionContext;
 import jetbrains.mps.formulaLanguage.evaluator.ExpressionEvaluatorManager;
@@ -8,6 +7,7 @@ import jetbrains.mps.formulaLanguage.structure.Expression;
 import jetbrains.mps.helgins.structure.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.patterns.util.MatchingUtil;
+import jetbrains.mps.patterns.util.IMatchModifier;
 import jetbrains.mps.smodel.*;
 import jetbrains.mpswiki.queryLanguage.structure.VariableCondition;
 import jetbrains.mpswiki.queryLanguage.structure.QueryPattern;
@@ -75,16 +75,19 @@ public class SubtypingManager {
     return isStrictSubtype(subtype, supertype);
   }
 
+  /**
+   * may produce side effects, such as creating new type equations
+   */
   public boolean isStrictSubtype(SNode subtype, SNode supertype) {
     SNode subRepresentator = myTypeChecker.getEquationManager().getRepresentator(subtype);
     SNode superRepresentator = myTypeChecker.getEquationManager().getRepresentator(supertype);
 
     //supertypes
-    Matcher m1 = new MySimpleMatcher(superRepresentator);
+    Matcher m1 = new MySimpleMatcher(superRepresentator, myTypeChecker);
     if (searchInSupertypes(subRepresentator, m1)) return true;
 
     //subtypes
-    Matcher m2 = new MySimpleMatcher(subRepresentator);
+    Matcher m2 = new MySimpleMatcher(subRepresentator, myTypeChecker);
     if (searchInSubtypes(superRepresentator, m2)) return true;
 
     return false;
@@ -396,14 +399,27 @@ public class SubtypingManager {
   }
 
   private static class MySimpleMatcher implements Matcher {
+    private TypeChecker myTypeChecker;
     private SNode myPattern;
 
-    public MySimpleMatcher(SNode pattern) {
+    private IMatchModifier myMatchModifier = new IMatchModifier() {
+      public boolean accept(SNode node1, SNode node2) {
+        return BaseAdapter.isInstance(node1, RuntimeTypeVariable.class) ||
+                BaseAdapter.isInstance(node2, RuntimeTypeVariable.class);
+      }
+
+      public void performAction(SNode node1, SNode node2) {
+        myTypeChecker.getEquationManager().addEquation(node1, node2, null); // todo: really null?
+      }
+    };
+
+    public MySimpleMatcher(SNode pattern, TypeChecker typeChecker) {
       myPattern = pattern;
+      myTypeChecker = typeChecker;
     }
 
     public boolean matches(SNode nodeToMatch) {
-      return MatchingUtil.matchNodes(nodeToMatch, myPattern);
+      return MatchingUtil.matchNodes(nodeToMatch, myPattern, myMatchModifier);
     }
   }
 

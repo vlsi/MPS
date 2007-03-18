@@ -123,7 +123,11 @@ public class MatchingUtil {
     return true;
   }
 
-  public static boolean matchNodes(SNode node1, SNode node2) { //exact matching w/o any vars
+  public static boolean matchNodes(SNode node1, SNode node2) {
+    return matchNodes(node1, node2, IMatchModifier.DEFAULT);
+  }
+
+  public static boolean matchNodes(SNode node1, SNode node2, IMatchModifier matchModifier) { //exact matching w/o any vars
     if (node1 == node2) return true;
     if (node1 == null) return false;
     if (node2 == null) return false;
@@ -155,6 +159,10 @@ public class MatchingUtil {
       Iterator<SNode> childrenIterator = children1.iterator();
       for (SNode child2 : children2) {
         SNode child1 = childrenIterator.hasNext() ? childrenIterator.next() : null;
+        if (matchModifier.accept(child1, child2)) {
+          matchModifier.performAction(child1, child2);
+          continue;
+        }
         if (!matchNodes(child1, child2)) return false;
       }
       if (childrenIterator.hasNext() && childrenIterator.next() != null) return false; //the first has more children
