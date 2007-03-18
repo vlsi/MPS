@@ -72,7 +72,7 @@ public class SubtypingManager {
     }
 
     // transitivity:
-    return isStrictSubtype(subtype, supertype);
+    return isStrictSubtype(subRepresentator, superRepresentator);
   }
 
   /**

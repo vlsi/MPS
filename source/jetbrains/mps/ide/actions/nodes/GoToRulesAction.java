@@ -74,9 +74,9 @@ public class GoToRulesAction extends MPSAction {
             if (object instanceof SubtypingRule) {
               analyzedTermDeclaration = ((SubtypingRule)object).getApplicableNode();
             }
-         //   if (object instanceof SubtypingVarianceRule) {
-         //     return SModelUtil_new.isAssignableConcept(conceptDeclaration, ((SubtypingVarianceRule)object).getConceptDeclaration());
-         //   }
+            if (object instanceof SupertypingRule) {
+              analyzedTermDeclaration = ((SupertypingRule)object).getApplicableNode();
+            }
             if (object instanceof TypeAdaptationRule) {
               analyzedTermDeclaration = ((TypeAdaptationRule)object).getApplicableNodes().get(0);
             }
