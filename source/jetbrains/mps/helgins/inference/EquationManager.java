@@ -80,9 +80,9 @@ public class EquationManager {
       return;
     }
 
-    String errorText = "type "+ PresentationManager.toString(subtypeRepresentator)+
-            " should be a subtype of "+ PresentationManager.toString(supertypeRepresentator);
-    myTypeChecker.reportTypeError(nodeToCheck, errorText);
+    IErrorReporter errorReporter =
+            new EquationErrorReporter(this, "type ", subtypeRepresentator, " should be a subtype of ", supertypeRepresentator, "");
+    myTypeChecker.reportTypeError(nodeToCheck, errorReporter);
   }
 
   public void addInequationComparable(SNode type1, SNode type2, SNode nodeToCheck) {
@@ -111,9 +111,9 @@ public class EquationManager {
       return;
     }
 
-    String errorText = "type "+ PresentationManager.toString(representator1)+
-            " should be comparable with "+ PresentationManager.toString(representator2);
-    TypeChecker.getInstance().reportTypeError(nodeToCheck, errorText);
+    IErrorReporter errorReporter =
+            new EquationErrorReporter(this, "type ", representator1, " should be comparable with ", representator2, "");
+    myTypeChecker.reportTypeError(nodeToCheck, errorReporter);
   }
 
 
@@ -139,9 +139,9 @@ public class EquationManager {
 
     // solve equation
     if (!compareNodes(rhsRepresentator, lhsRepresentator)) {
-      String error = "incompatible types: "+ PresentationManager.toString(rhsRepresentator)+
-            " and "+ PresentationManager.toString(lhsRepresentator);
-      processErrorEquation(lhsRepresentator, rhsRepresentator, error, nodeToCheck);
+      IErrorReporter errorReporter =
+              new EquationErrorReporter(this, "incompatible types: ", rhsRepresentator, " and ", lhsRepresentator, "");
+      processErrorEquation(lhsRepresentator, rhsRepresentator, errorReporter, nodeToCheck);
       return;
     }
     Set<Pair<SNode, SNode>> childEQs = createChildEquations(rhsRepresentator, lhsRepresentator);
@@ -203,10 +203,10 @@ public class EquationManager {
     }
   }
 
-  private void processErrorEquation(SNode type, SNode error, String errorText, SNode nodeToCheck) {
+  private void processErrorEquation(SNode type, SNode error, IErrorReporter errorReporter, SNode nodeToCheck) {
     setParent(error, type); //type
     myTypeChecker.getTypeVariablesManager().addAllVarSetsOfSourceAndRemoveSourceFromThem(type, error);
-    TypeChecker.getInstance().reportTypeError(nodeToCheck, errorText);
+    myTypeChecker.reportTypeError(nodeToCheck, errorReporter);
   }
 
   public void clear() {

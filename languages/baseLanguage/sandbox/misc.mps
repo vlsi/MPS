@@ -614,6 +614,26 @@
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1174062552666" />
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1174215711445">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1174215711446">
+            <property name="name" value="it" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1174215711447">
+              <link role="classifier" extResolveInfo="1.[Classifier]Iterable" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ForeachStatement" id="1174215725074">
+          <node role="iterable" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174215742426">
+            <link role="variableDeclaration" targetNodeId="1174215711446" resolveInfo="it" />
+          </node>
+          <node role="variable" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1174215725076">
+            <property name="name" value="o" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1174215730814">
+              <link role="classifier" extResolveInfo="1.[Classifier]Object" />
+            </node>
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1174215725078" />
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1174046931658">
           <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1174046936833">
             <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]Object).([InstanceMethodDeclaration]hashCode() : (jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int))" />

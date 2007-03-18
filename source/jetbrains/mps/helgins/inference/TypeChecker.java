@@ -45,7 +45,8 @@ public class TypeChecker {
   private ConceptToRulesMap<Rule> myConceptsToRulesCache = new ConceptToRulesMap<Rule>();
   private Set<SNode> myCheckedNodes = new HashSet<SNode>();
 
-  private WeakHashMap<SNode, String> myNodesWithErrors = new WeakHashMap<SNode, String>();
+  private WeakHashMap<SNode, IErrorReporter> myNodesWithErrors = new WeakHashMap<SNode, IErrorReporter>();
+  private WeakHashMap<SNode, String> myNodesWithErrorStrings = new WeakHashMap<SNode, String>();
   private ContextsManager myContextsManager;
   private EquationManager myEquationManager;
   private TypeVariablesManager myTypeVariablesManager;
@@ -114,6 +115,7 @@ public class TypeChecker {
     myConceptsToRulesCache.clear();
     myCheckedNodes.clear();
     myNodesWithErrors.clear();
+    myNodesWithErrorStrings.clear();
     myNodesToDependentRoots.clear();
   }
 
@@ -192,23 +194,30 @@ public class TypeChecker {
 
     // setting errors
     for (SNode node : myNodesWithErrors.keySet()) {
-      String errorString = "HELGINS ERROR: " + myNodesWithErrors.get(node);
+      String errorString = "HELGINS ERROR: " + myNodesWithErrors.get(node).reportError();
+      myNodesWithErrorStrings.put(node, errorString);
       IStatus status = new Status(IStatus.Code.ERROR, errorString);
       node.putUserObject(HELGINS_ERROR_STATUS, status);
     }
   }
 
   public Set<Pair<SNode, String>> getNodesWithErrors() {
-    return CollectionUtil.map(myNodesWithErrors.keySet(), new Mapper<SNode, Pair<SNode, String>>() {
+    return CollectionUtil.map(myNodesWithErrorStrings.keySet(), new Mapper<SNode, Pair<SNode, String>>() {
       public Pair<SNode, String> map(SNode p) {
-        return new Pair<SNode, String>(p, myNodesWithErrors.get(p));
+        return new Pair<SNode, String>(p, myNodesWithErrorStrings.get(p));
       }
     });
   }
 
   public void reportTypeError(SNode nodeWithError, String errorString) {
     if (nodeWithError != null) {
-      myNodesWithErrors.put(nodeWithError, errorString);
+      myNodesWithErrors.put(nodeWithError, new SimpleErrorReporter(errorString));
+    }
+  }
+
+  public void reportTypeError(SNode nodeWithError, IErrorReporter errorReporter) {
+    if (nodeWithError != null) {
+      myNodesWithErrors.put(nodeWithError, errorReporter);
     }
   }
 
@@ -381,7 +390,7 @@ public class TypeChecker {
 
   public String getTypeErrorDontCheck(SNode node) {
     if (node == null) return null;
-    return myNodesWithErrors.get(node);
+    return myNodesWithErrorStrings.get(node);
   }
 
   @Hack
