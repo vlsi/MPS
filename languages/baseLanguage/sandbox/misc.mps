@@ -618,6 +618,14 @@
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1174062408906" />
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1174215711445">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1174215711446">
+            <property name="name" value="it" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1174215711447">
+              <link role="classifier" extResolveInfo="1.[Classifier]Iterable" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ForeachStatement" id="1174062476274">
           <node role="iterable" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174062498545">
             <link role="variableDeclaration" targetNodeId="1174055237266" resolveInfo="snodes" />
@@ -641,14 +649,6 @@
             </node>
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1174062552666" />
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1174215711445">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1174215711446">
-            <property name="name" value="it" />
-            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1174215711447">
-              <link role="classifier" extResolveInfo="1.[Classifier]Iterable" />
-            </node>
-          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ForeachStatement" id="1174215725074">
           <node role="iterable" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174215742426">
