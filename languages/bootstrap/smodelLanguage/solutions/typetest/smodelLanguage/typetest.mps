@@ -1885,10 +1885,6 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1170381203537">
     <property name="name" value="snode_link_test" />
-    <node role="constructor" type="jetbrains.mps.baseLanguage.ConstructorDeclaration" id="1174057413297">
-      <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1174057413298" />
-      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1174057413299" />
-    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1170381247570">
       <property name="name" value="ok_ref_1" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1170381247571" />
