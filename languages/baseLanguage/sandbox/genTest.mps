@@ -27,6 +27,7 @@
             <property name="fqClassName" value="java.lang.Object" />
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.Statement" id="1174337393964" />
       </node>
     </node>
   </node>
