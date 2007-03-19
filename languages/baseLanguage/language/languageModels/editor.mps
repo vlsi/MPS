@@ -6725,5 +6725,19 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1174337947775">
+    <link role="conceptDeclaration" targetNodeId="17.1174337657556" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1174337950809">
+      <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1174337953201">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="17.1174337957593" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1174337976407">
+        <property name="text" value=";" />
+        <property name="drawBorder" value="false" />
+      </node>
+    </node>
+  </node>
 </model>
 
