@@ -1921,5 +1921,9 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174335983096">
+    <property name="name" value="VarDeclaration" />
+    <link role="extends" targetNodeId="1068431474542" resolveInfo="VariableDeclaration" />
+  </node>
 </model>
 
