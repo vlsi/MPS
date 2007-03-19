@@ -26,6 +26,9 @@ public class Children {
     for(SNode statement : SLinkOperations.getTargets(statementList1, "statement", true)) {
       SLinkOperations.addChild(statementList2, "statement", SNodeOperations.copyNode(statement));
     }
+    for(SNode statement : SLinkOperations.getTargets(statementList1, "statement", true)) {
+      SLinkOperations.addChild(statementList2, "statement", SNodeOperations.copyNode(statement));
+    }
   }
   public void accessToChildren_3(SNode statement) {
     List<SNode> children1 = SNodeOperations.getDescendants(SLinkOperations.getTarget(statement, "expression", true), null);

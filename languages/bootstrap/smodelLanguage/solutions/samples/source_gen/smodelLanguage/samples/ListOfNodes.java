@@ -15,5 +15,6 @@ public class ListOfNodes {
   }
   public void first(SNode sl) {
     SequenceOperations.getFirst(SLinkOperations.getTargets(sl, "statement", true));
+    Iterable<SNode> nodes = SequenceOperations.where(SLinkOperations.getTargets(sl, "statement", true), new zPredicate1(this, null));
   }
 }
