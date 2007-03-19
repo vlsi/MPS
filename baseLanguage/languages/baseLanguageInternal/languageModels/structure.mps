@@ -60,5 +60,17 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174294166120">
+    <property name="name" value="InternalPartialInstanceMethodCall" />
+    <link role="extends" targetNodeId="2.1068580123163" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1174294288199">
+      <property name="name" value="methodName" />
+      <link role="dataType" targetNodeId="2.1083065718921" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174294824069">
+      <property name="value" value="_method call" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
 </model>
 
