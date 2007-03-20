@@ -9,8 +9,11 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.patterns.util.MatchingUtil;
 import jetbrains.mps.patterns.util.IMatchModifier;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.baseLanguage.structure.ClassifierType;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mpswiki.queryLanguage.structure.VariableCondition;
 import jetbrains.mpswiki.queryLanguage.structure.QueryPattern;
+import jetbrains.mpswiki.queryLanguage.structure.ConceptReference;
 import jetbrains.mpswiki.queryLanguage.evaluator.ConditionMatcher;
 import jetbrains.mpswiki.queryLanguage.evaluator.InvalidConditionException;
 
@@ -392,6 +395,20 @@ public class SubtypingManager {
 
   public boolean isComparableWRTRules(SNode subtypeRepresentator, SNode supertypeRepresentator) {
     return false; // todo
+  }
+
+  public <T extends BaseAdapter> T getCoercedSupertypeByAdapterClass(SNode subtype, Class<T> aClass) {
+    ExpressionContext expressionContext = new ExpressionContext();
+    AnalyzedTermDeclaration analyzedTermDeclaration = AnalyzedTermDeclaration.newInstance(getRuntimeTypesModel());
+    ConceptReference condition = ConceptReference.newInstance(getRuntimeTypesModel());
+    condition.setConcept(SModelUtil_new.findConceptDeclaration(aClass, GlobalScope.getInstance()));
+    analyzedTermDeclaration.setCondition(condition);
+    coerceSubtyping(subtype, analyzedTermDeclaration, expressionContext);
+    return (T) BaseAdapter.fromNode((SNode) expressionContext.getValue(analyzedTermDeclaration));
+  }
+
+  public SModel getRuntimeTypesModel() {
+    return getTypeChecker().getRuntimeTypesModel();
   }
 
   private static interface Matcher {

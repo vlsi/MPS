@@ -46,6 +46,45 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1174400225040">
+          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1174400225041">
+            <link role="baseMethodDeclaration" targetNodeId="1174396504076" resolveInfo="cccc" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1174400225042" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1174400264619">
+          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1174400270592">
+            <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]String).([InstanceMethodDeclaration]equals((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174400266902">
+              <link role="variableDeclaration" targetNodeId="1174396532019" resolveInfo="s" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1174400299469">
+    <property name="name" value="VVV" />
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1174400304110">
+      <property name="name" value="sdds" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1174400304111" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1174400304112">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1174400311082">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1174400311083">
+            <property name="name" value="a" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1174400311084">
+              <link role="classifier" targetNodeId="1174396439481" resolveInfo="SSS" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1174400325310">
+          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1174400332533">
+            <link role="baseMethodDeclaration" targetNodeId="1174396504076" resolveInfo="cccc" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174400325311">
+              <link role="variableDeclaration" targetNodeId="1174400311083" resolveInfo="a" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
