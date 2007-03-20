@@ -56,6 +56,7 @@ public interface ITemplateGenerator extends ITemplateLanguageConstants {
    * use
    * findNodeBuilderForSource(SNode sourceNode, String mappingName) 
    * findNodeBuilderForSource(SNode sourceNode, Condition<INodeBuilder> condition)
+   * findCopyingNodeBuilderForSource(SNode sourceNode)
    */
   INodeBuilder findNodeBuilderForSource(SNode sourceNode);
 
