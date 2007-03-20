@@ -527,4 +527,8 @@ public abstract class BaseAdapter implements INodeAdapter {
     return myNode.getConceptLinkTargets(linkName, lookupHierarchy, scope);
   }
 
+
+  public String getConceptFQName() {
+    return myNode.getConceptFqName();
+  }
 }

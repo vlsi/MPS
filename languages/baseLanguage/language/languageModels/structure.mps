@@ -1787,9 +1787,17 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1170345865475">
-    <property name="rootable" value="true" />
+    <property name="rootable" value="false" />
     <property name="name" value="AnonymousClass" />
     <link role="extends" targetNodeId="1068390468198" resolveInfo="ClassConcept" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174396595294">
+      <property name="value" value="new..." />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174396598233">
+      <property name="value" value="anonymous class" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1170346070688">
       <property name="sourceCardinality" value="1" />
       <property name="role" value="classifier" />

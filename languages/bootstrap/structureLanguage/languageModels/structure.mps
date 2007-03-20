@@ -364,6 +364,9 @@
     <property name="rootable" value="true" />
     <property name="name" value="AnnotationLinkDeclaration" />
     <link role="extends" targetNodeId="1071489288298" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1174387216526">
+      <link role="intfc" targetNodeId="1.1169194658468" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1149608445162">
       <property name="name" value="stereotype" />
       <link role="dataType" targetNodeId="1149608316235" />
@@ -372,6 +375,9 @@
       <property name="sourceCardinality" value="1" />
       <property name="role" value="source" />
       <link role="target" targetNodeId="1071489090640" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1174386183942">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.EnumerationDataTypeDeclaration" id="1149608316235">

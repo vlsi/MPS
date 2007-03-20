@@ -201,42 +201,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         getHighlightManager().clearForOwner(myOwner);
       }
     }, KeyStroke.getKeyStroke("ESCAPE"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-    registerKeyboardAction(new AbstractAction() {
-      public final Color myNodeColor = Color.PINK;
-      public final Color myUsageColor = Color.MAGENTA;
-
-      public void actionPerformed(ActionEvent e) {
-        if (getSelectedCell() != null) {
-          SNode node = getSelectedCell().getSNode();
-
-          SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
-          assert modelDescriptor != null;
-          Set<SReference> usages = modelDescriptor.findUsages(node);
-          if (usages.size() > 0) {
-            getHighlightManager().mark(node, myNodeColor, "source node", myOwner);
-          }
-
-          if (usages.size() == 0) {
-            for (SReference ref : node.getReferences()) {
-              SModelDescriptor sModelDescriptor = node.getModel().getModelDescriptor();
-              assert sModelDescriptor != null;
-              usages = sModelDescriptor.findUsages(ref.getTargetNode());
-              if (usages.size() > 0) {
-                getHighlightManager().mark(ref.getTargetNode(), myNodeColor, "source node", myOwner);
-                break;
-              }
-            }
-          }
-
-          for (SReference ref : usages) {
-            if (ref.getSourceNode().getContainingRoot() == getRootCell().getSNode()) {
-              getHighlightManager().mark(ref.getSourceNode(), myUsageColor, "usage", myOwner);
-            }
-          }
-        }
-      }
-    }, KeyStroke.getKeyStroke("control shift F7"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
@@ -370,6 +334,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     registerKeyStrokes(group);
   }
 
+  public IGutterMessageOwner getGutterMessageOwner() {
+    return myOwner;
+  }
 
   private void registerKeyStrokes(ActionGroup group) {
     if (group != null) {

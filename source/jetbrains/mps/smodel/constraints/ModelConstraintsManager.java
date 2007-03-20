@@ -169,7 +169,8 @@ public class ModelConstraintsManager {
     String namespace = node.getNode().getLanguageNamespace();
 
     // 'bootstrap' properties
-    if (namespace.equals("jetbrains.mps.bootstrap.structureLanguage") && propertyName.equals(NamedConcept.NAME)) {
+    if (namespace.equals("jetbrains.mps.bootstrap.structureLanguage") && propertyName.equals(NamedConcept.NAME)
+            && !node.getConceptFQName().equals("jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration")) {
       return null;
     }
     if (namespace.equals("jetbrains.mps.projectLanguage")) {

@@ -328,6 +328,7 @@ public class TypeChecker {
 
    private void clearTypeUserObjects(SNode node) {
     node.removeUserObject(HELGINS_ERROR_STATUS);
+    node.removeUserObject(TYPE_OF_TERM);
 
     for (SNode child : node.getChildren()) {
       clearTypeUserObjects(child);

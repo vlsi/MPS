@@ -76,7 +76,7 @@ public class NodeHighlightManager implements IGutterMessageOwner {
     IGutterMessageOwner owner = message.getOwner();
     SNode node = message.getNode();
     for (HighlighterMessage msg : myMessages()) {
-      if (msg.getNode() == node) return;
+      if (msg.getNode() == node && msg.getOwner() == owner) return;
     }
 
     Set<HighlighterMessage> messages = myMessages.get(owner);

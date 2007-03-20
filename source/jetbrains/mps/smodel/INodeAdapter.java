@@ -158,4 +158,6 @@ public interface INodeAdapter {
   boolean isRoot();
 
   List<SNode> getConceptLinkTargets(String linkName, boolean lookupHierarchy, IScope scope);
+
+  String getConceptFQName();
 }

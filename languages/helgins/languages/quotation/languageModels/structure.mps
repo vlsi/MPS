@@ -49,6 +49,9 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="3.1111784312737" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1174386398486">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.AnnotationLinkDeclaration" id="1155904635870">
     <property name="stereotype" value="link" />
