@@ -62,6 +62,11 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1174408004384">
+      <property name="name" value="cc" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1174408004385" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1174408004386" />
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1174400299469">
     <property name="name" value="VVV" />
@@ -77,11 +82,32 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1174400325310">
-          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1174400332533">
-            <link role="baseMethodDeclaration" targetNodeId="1174396504076" resolveInfo="cccc" />
-            <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174400325311">
-              <link role="variableDeclaration" targetNodeId="1174400311083" resolveInfo="a" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1174408080174">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1174408080175">
+            <property name="name" value="b" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1174408080176" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1174408064056">
+          <node role="expression" type="jetbrains.mps.baseLanguage.AssignmentExpression" id="1174408064777">
+            <node role="lValue" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174408084585">
+              <link role="variableDeclaration" targetNodeId="1174408080175" resolveInfo="b" />
+            </node>
+            <node role="rValue" type="jetbrains.mps.baseLanguage.PlusExpression" id="1174408072920">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1174408075704">
+                <property name="value" value="3" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1174408072919">
+                <property name="value" value="2" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1174408450579">
+          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1174408450580">
+            <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]Object).([InstanceMethodDeclaration]getClass() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Class, &lt;?&gt;]))" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174408450581">
+              <link role="variableDeclaration" targetNodeId="1174408080175" resolveInfo="b" />
             </node>
           </node>
         </node>

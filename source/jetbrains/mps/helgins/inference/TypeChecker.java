@@ -127,6 +127,7 @@ public class TypeChecker {
   public void checkTypes(SNode root) {
     //clear
     clear();
+    clearTypeUserObjects(root);
     List<Language> languages = root.getModel().getLanguages(GlobalScope.getInstance());
     Set<SModel> typesModels = new HashSet<SModel>();
     for (Language language : languages) {
@@ -337,7 +338,6 @@ public class TypeChecker {
 
   public void checkRoot(SNode node) {
     try {
-      clearTypeUserObjects(node);
       MyReadAccessListener listener = new MyReadAccessListener();
       NodeReadAccessCaster.setNodeAccessListener(listener);
       checkTypes(node);

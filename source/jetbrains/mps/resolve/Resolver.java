@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.action.DefaultReferentNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.helgins.inference.TypeChecker;
 
 import java.util.*;
 
@@ -68,7 +69,7 @@ public class Resolver {
   public static boolean resolve(final SReference reference, final IOperationContext operationContext) {
     EditorsPane editorsPane = operationContext.getComponent(EditorsPane.class);
     //InspectorPane inspectorPane = operationContext.getComponent(InspectorPane.class);
-    SNode containingRoot = reference.getSourceNode().getContainingRoot();
+    final SNode containingRoot = reference.getSourceNode().getContainingRoot();
     assert containingRoot != null;
     IEditor editorFor = editorsPane.getEditorForCurrentComponentNode(containingRoot);
     assert editorFor != null;
@@ -79,6 +80,8 @@ public class Resolver {
         if (!(matchingActions.isEmpty())) {
           String resolveInfo = reference.getResolveInfo();
           processAction(matchingActions.get(0), resolveInfo, reference);
+          // TypeChecker.getInstance().checkRoot(containingRoot);
+          TypeChecker.getInstance().checkTypes(reference.getSourceNode().getParent()); //todo dirty hack
         }
       }
     }, "resolve");
