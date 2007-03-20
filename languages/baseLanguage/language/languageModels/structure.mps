@@ -1931,17 +1931,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174335983096">
     <property name="name" value="VarDeclaration" />
-    <link role="extends" targetNodeId="4.1133920641626" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174337226460">
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="initializer" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1174337188209">
-      <property name="name" value="variableName" />
-      <link role="dataType" targetNodeId="1083065718921" resolveInfo="_Identifier_String" />
-    </node>
+    <link role="extends" targetNodeId="1068581242863" resolveInfo="LocalVariableDeclaration" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174337657556">
     <property name="name" value="VarDeclarationStatement" />

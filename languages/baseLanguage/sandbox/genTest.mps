@@ -27,14 +27,6 @@
             <property name="fqClassName" value="java.lang.Object" />
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.VarDeclarationStatement" id="1174338311443">
-          <node role="varDeclaration" type="jetbrains.mps.baseLanguage.VarDeclaration" id="1174338311444">
-            <property name="variableName" value="s" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.StringLiteral" id="1174338315353">
-              <property name="value" value="hey!" />
-            </node>
-          </node>
-        </node>
       </node>
     </node>
   </node>

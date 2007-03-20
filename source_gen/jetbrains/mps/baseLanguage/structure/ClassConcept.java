@@ -10,6 +10,9 @@ import java.util.Iterator;
 import java.util.List;
 
 public class ClassConcept extends Classifier {
+  public static String EXTENDED_CLASS = "extendedClass";
+  public static String NAME = "name";
+  public static String ABSTRACT_CLASS = "abstractClass";
   public static String SUPERCLASS = "superclass";
   public static String VISIBILITY = "visibility";
   public static String STATIC_INITIALIZER = "staticInitializer";
@@ -17,9 +20,6 @@ public class ClassConcept extends Classifier {
   public static String CONSTRUCTOR = "constructor";
   public static String STATIC_METHOD = "staticMethod";
   public static String IMPLEMENTED_INTERFACE = "implementedInterface";
-  public static String NAME = "name";
-  public static String ABSTRACT_CLASS = "abstractClass";
-  public static String EXTENDED_CLASS = "extendedClass";
 
   public  ClassConcept(SNode node) {
     super(node);
@@ -32,6 +32,24 @@ public class ClassConcept extends Classifier {
     return ClassConcept.newInstance(sm, false);
   }
 
+  public ClassConcept getExtendedClass() {
+    return (ClassConcept)this.getReferent(ClassConcept.EXTENDED_CLASS);
+  }
+  public void setExtendedClass(ClassConcept node) {
+    super.setReferent(ClassConcept.EXTENDED_CLASS, node);
+  }
+  public String getName() {
+    return this.getProperty(ClassConcept.NAME);
+  }
+  public void setName(String value) {
+    this.setProperty(ClassConcept.NAME, value);
+  }
+  public boolean getAbstractClass() {
+    return this.getBooleanProperty(ClassConcept.ABSTRACT_CLASS);
+  }
+  public void setAbstractClass(boolean value) {
+    this.setBooleanProperty(ClassConcept.ABSTRACT_CLASS, value);
+  }
   public ClassifierType getSuperclass() {
     return (ClassifierType)this.getChild(ClassConcept.SUPERCLASS);
   }
@@ -109,23 +127,5 @@ public class ClassConcept extends Classifier {
   }
   public void insertImplementedInterface(ClassifierType prev, ClassifierType node) {
     this.insertChild(prev, ClassConcept.IMPLEMENTED_INTERFACE, node);
-  }
-  public String getName() {
-    return this.getProperty(ClassConcept.NAME);
-  }
-  public void setName(String value) {
-    this.setProperty(ClassConcept.NAME, value);
-  }
-  public boolean getAbstractClass() {
-    return this.getBooleanProperty(ClassConcept.ABSTRACT_CLASS);
-  }
-  public void setAbstractClass(boolean value) {
-    this.setBooleanProperty(ClassConcept.ABSTRACT_CLASS, value);
-  }
-  public ClassConcept getExtendedClass() {
-    return (ClassConcept)this.getReferent(ClassConcept.EXTENDED_CLASS);
-  }
-  public void setExtendedClass(ClassConcept node) {
-    super.setReferent(ClassConcept.EXTENDED_CLASS, node);
   }
 }
