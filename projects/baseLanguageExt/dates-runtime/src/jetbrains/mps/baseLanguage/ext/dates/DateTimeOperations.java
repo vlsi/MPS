@@ -137,12 +137,22 @@ public class DateTimeOperations {
     return result;
   }
 
-  public static Period minus(Long leftExpression, Long rightExpression) {
+  public static Period minus(Long leftExpression, Long rightExpression, PeriodType periodType) {
     Period result;
     if (leftExpression == null || rightExpression == null) {
       result = null;
     } else {
-      result = new Period(rightExpression, leftExpression);
+      result = new Period(rightExpression, leftExpression, periodType);
+    }
+    return result;
+  }
+
+  public static Period absMinus(Long leftExpression, Long rightExpression, PeriodType periodType) {
+    Period result;
+    if (leftExpression == null || rightExpression == null) {
+      result = null;
+    } else {
+      result = new Period(Math.min(leftExpression, rightExpression), Math.max(leftExpression, rightExpression), periodType);
     }
     return result;
   }
