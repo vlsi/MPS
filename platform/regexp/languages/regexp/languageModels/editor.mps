@@ -26,7 +26,7 @@
         <link role="relationDeclaration" targetNodeId="1.1174485243418" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1174482896702">
-        <property name="textFgColor" value="DARK_BLUE" />
+        <property name="textFgColor" value="DARK_MAGENTA" />
         <property name="text" value="*" />
         <property name="drawBorder" value="false" />
       </node>
@@ -41,7 +41,7 @@
         <link role="relationDeclaration" targetNodeId="1.1174485243418" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1174482941494">
-        <property name="textFgColor" value="DARK_BLUE" />
+        <property name="textFgColor" value="DARK_MAGENTA" />
         <property name="text" value="+" />
         <property name="drawBorder" value="false" />
       </node>
@@ -56,7 +56,7 @@
         <link role="relationDeclaration" targetNodeId="1.1174485176897" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1174482972752">
-        <property name="textFgColor" value="DARK_BLUE" />
+        <property name="textFgColor" value="DARK_MAGENTA" />
         <property name="text" value="|" />
         <property name="drawBorder" value="false" />
       </node>
@@ -138,6 +138,18 @@
         <property name="textFgColor" value="DARK_MAGENTA" />
         <property name="text" value=")" />
         <property name="drawBorder" value="false" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1174510563589">
+    <link role="conceptDeclaration" targetNodeId="1.1174510540317" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1174510565684">
+      <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1174510567265">
+        <property name="drawBorder" value="false" />
+        <property name="bracketsColor" value="DARK_MAGENTA" />
+        <property name="drawBrackets" value="true" />
+        <link role="relationDeclaration" targetNodeId="1.1174510571016" />
       </node>
     </node>
   </node>
