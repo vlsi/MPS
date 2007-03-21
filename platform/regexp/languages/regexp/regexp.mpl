@@ -16,6 +16,8 @@
   <module />
   <accessoryModels />
   <generators />
-  <classPath />
+  <classPath>
+    <entry path="${mps_home}\platform\regexp\classes" />
+  </classPath>
 </language>
 

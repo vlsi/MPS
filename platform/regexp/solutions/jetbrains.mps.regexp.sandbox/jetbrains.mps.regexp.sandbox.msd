@@ -4,7 +4,9 @@
     <modelRoot path="${solution_descriptor}\." namespacePrefix="" />
   </models>
   <module />
-  <languages />
+  <languages>
+    <moduleRoot path="${mps_home}\platform\regexp\languages\regexp\regexp.mpl" />
+  </languages>
   <classPath />
 </solution>
 
