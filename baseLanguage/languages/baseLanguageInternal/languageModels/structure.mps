@@ -92,5 +92,23 @@
       <link role="target" targetNodeId="2.1068431790191" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174478619261">
+    <property name="name" value="InternalClassExpression" />
+    <link role="extends" targetNodeId="2.1068431790191" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174478686812">
+      <property name="value" value="_&lt;type&gt;.class" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174478718126">
+      <property name="value" value="internal class expression" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174478663778">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="type" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="2.1068431790189" />
+    </node>
+  </node>
 </model>
 
