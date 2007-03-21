@@ -6899,7 +6899,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1174336145056">
         <property name="drawBorder" value="false" />
-        <link role="relationDeclaration" targetNodeId="17.1083152972671" />
+        <link role="relationDeclaration" targetNodeId="18.1169194664001" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1174336162245">
         <property name="text" value="=" />
