@@ -27,23 +27,14 @@
             <property name="fqClassName" value="java.lang.Object" />
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.VarDeclarationStatement" id="1174498010059">
-          <node role="varDeclaration" type="jetbrains.mps.baseLanguage.VarDeclaration" id="1174498010060">
-            <property name="name" value="s2" />
-            <node role="type" type="jetbrains.mps.baseLanguage.Type" id="1174498010061" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.StringLiteral" id="1174496616352">
-              <property name="value" value="str" />
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1174495049059">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1174495049060">
             <property name="name" value="s" />
             <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1174495049061">
               <link role="classifier" extResolveInfo="1.[Classifier]String" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174498010062">
-              <link role="variableDeclaration" targetNodeId="1174498010060" resolveInfo="s2" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.StringLiteral" id="1174499144394">
+              <property name="value" value="hi" />
             </node>
           </node>
         </node>
