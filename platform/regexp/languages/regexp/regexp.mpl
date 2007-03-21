@@ -15,7 +15,18 @@
   </models>
   <module />
   <accessoryModels />
-  <generators />
+  <generators>
+    <generator generatorUID="jetbrains.mps.regexp#1174510748147" targetLanguage="jetbrains.mps.baseLanguage">
+      <models>
+        <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.regexp.generator.baseLanguage.template" />
+      </models>
+      <module>
+        <moduleRoot path="${mps_home}\languages\baseLanguage\language\baseLanguage.mpl" />
+      </module>
+      <external-templates />
+      <mapping-priorities />
+    </generator>
+  </generators>
   <classPath>
     <entry path="${mps_home}\platform\regexp\classes" />
   </classPath>
