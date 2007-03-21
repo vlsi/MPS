@@ -5,36 +5,42 @@
   <maxImportIndex value="0" />
   <node type="jetbrains.mps.regexp.RegexpDeclaration" id="1174484236394">
     <property name="name" value="Sample" />
-    <node role="regexp" type="jetbrains.mps.regexp.OrRegexp" id="1174486662041">
-      <node role="left" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174486658571">
-        <property name="text" value="abcde" />
-      </node>
-      <node role="right" type="jetbrains.mps.regexp.OrRegexp" id="1174486665669">
-        <node role="left" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174486662044">
-          <property name="text" value="cdef" />
-        </node>
-        <node role="right" type="jetbrains.mps.regexp.OrRegexp" id="1174486667813">
-          <node role="left" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174486665672">
-            <property name="text" value="def" />
-          </node>
-          <node role="right" type="jetbrains.mps.regexp.OrRegexp" id="1174486672145">
-            <node role="left" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174486667816">
-              <property name="text" value="xyz" />
+    <node role="regexp" type="jetbrains.mps.regexp.StarRegexp" id="1174491468728">
+      <node role="regexp" type="jetbrains.mps.regexp.PlusRegexp" id="1174491466304">
+        <node role="regexp" type="jetbrains.mps.regexp.ParensRegexp" id="1174491427941">
+          <node role="expr" type="jetbrains.mps.regexp.SeqRegexp" id="1174491430490">
+            <node role="left" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174491437996">
+              <property name="text" value="abc" />
             </node>
-            <node role="right" type="jetbrains.mps.regexp.SeqRegexp" id="1174486675633">
-              <node role="left" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174486672148">
-                <property name="text" value="axawdqwd" />
+            <node role="right" type="jetbrains.mps.regexp.SeqRegexp" id="1174491447779">
+              <node role="left" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174491441481">
+                <property name="text" value="cdef" />
               </node>
-              <node role="right" type="jetbrains.mps.regexp.SeqRegexp" id="1174486679511">
-                <node role="left" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174486675636">
-                  <property name="text" value="abcde" />
+              <node role="right" type="jetbrains.mps.regexp.SeqRegexp" id="1174491452815">
+                <node role="left" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174491447782">
+                  <property name="text" value="asdsadad" />
                 </node>
-                <node role="right" type="jetbrains.mps.regexp.SeqRegexp" id="1174486686093">
-                  <node role="left" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174486679514">
-                    <property name="text" value="afqwfqwf" />
+                <node role="right" type="jetbrains.mps.regexp.OrRegexp" id="1174491455662">
+                  <node role="left" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174491452818">
+                    <property name="text" value="adsdasd" />
                   </node>
-                  <node role="right" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174486686096">
-                    <property name="text" value="wdqwdqwd" />
+                  <node role="right" type="jetbrains.mps.regexp.OrRegexp" id="1174491459260">
+                    <node role="left" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174491455665">
+                      <property name="text" value="edffe" />
+                    </node>
+                    <node role="right" type="jetbrains.mps.regexp.OrRegexp" id="1174491461311">
+                      <node role="left" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174491459263">
+                        <property name="text" value="zzzz" />
+                      </node>
+                      <node role="right" type="jetbrains.mps.regexp.OrRegexp" id="1174491463409">
+                        <node role="left" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174491461314">
+                          <property name="text" value="asqwdqwd" />
+                        </node>
+                        <node role="right" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174491463412">
+                          <property name="text" value="wdqwdqwd" />
+                        </node>
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
