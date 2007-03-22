@@ -17,6 +17,11 @@
       <property name="description" value="transfrom to binary regexp" />
       <link role="applicableConcept" targetNodeId="1.1174482743037" />
     </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1174555323798">
+      <property name="actionsFactoryAspectId" value="OtherRegexp" />
+      <property name="description" value="transfrom to other regexps (create a sequence and add as the right)" />
+      <link role="applicableConcept" targetNodeId="1.1174482743037" />
+    </node>
   </node>
 </model>
 

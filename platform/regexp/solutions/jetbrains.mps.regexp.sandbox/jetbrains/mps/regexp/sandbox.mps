@@ -2,14 +2,29 @@
 <model name="jetbrains.mps.regexp.sandbox">
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.regexp" />
-  <maxImportIndex value="3" />
+  <maxImportIndex value="4" />
   <import index="1" modelUID="java.util.regex@java_stub" />
   <import index="2" modelUID="java.lang@java_stub" />
   <import index="3" modelUID="java.io@java_stub" />
+  <import index="4" modelUID="jetbrains.mps.regexp.jetbrains.mps.regexp.accessory" />
   <node type="jetbrains.mps.regexp.RegexpDeclaration" id="1174484236394">
     <property name="name" value="Sample" />
-    <node role="regexp" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174511951111">
-      <property name="text" value="some regexp" />
+    <node role="regexp" type="jetbrains.mps.regexp.SeqRegexp" id="1174556735215">
+      <node role="left" type="jetbrains.mps.regexp.ParensRegexp" id="1174556705929">
+        <node role="expr" type="jetbrains.mps.regexp.PlusRegexp" id="1174556715697">
+          <node role="regexp" type="jetbrains.mps.regexp.PredefinedSymbolClassRegexp" id="1174556711993">
+            <link role="symbolClass" targetNodeId="4.1174554726460" />
+          </node>
+        </node>
+      </node>
+      <node role="right" type="jetbrains.mps.regexp.SeqRegexp" id="1174556737873">
+        <node role="left" type="jetbrains.mps.regexp.PredefinedSymbolClassRegexp" id="1174556735216">
+          <link role="symbolClass" targetNodeId="4.1174554696286" />
+        </node>
+        <node role="right" type="jetbrains.mps.regexp.PredefinedSymbolClassRegexp" id="1174556751877">
+          <link role="symbolClass" targetNodeId="4.1174554726460" />
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1174510621720">
@@ -38,8 +53,13 @@
           </node>
           <node role="regexp" type="jetbrains.mps.regexp.InlineRegexpExpression" id="1174512721177">
             <node role="regexp" type="jetbrains.mps.regexp.QuestionRegexp" id="1174552346202">
-              <node role="regexp" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174512724976">
-                <property name="text" value="abcdef" />
+              <node role="regexp" type="jetbrains.mps.regexp.SeqRegexp" id="1174555971922">
+                <node role="left" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174512724976">
+                  <property name="text" value="abcdef" />
+                </node>
+                <node role="right" type="jetbrains.mps.regexp.PredefinedSymbolClassRegexp" id="1174555971923">
+                  <link role="symbolClass" targetNodeId="4.1174554796231" />
+                </node>
               </node>
             </node>
           </node>

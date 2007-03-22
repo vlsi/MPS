@@ -14,7 +14,9 @@
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.regexp" />
   </models>
   <module />
-  <accessoryModels />
+  <accessoryModels>
+    <model modelUID="jetbrains.mps.regexp.jetbrains.mps.regexp.accessory" />
+  </accessoryModels>
   <generators>
     <generator generatorUID="jetbrains.mps.regexp#1174510748147" targetLanguage="jetbrains.mps.baseLanguage">
       <models>

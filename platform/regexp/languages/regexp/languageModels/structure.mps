@@ -50,7 +50,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174483125581">
     <property name="rootable" value="true" />
     <property name="name" value="RegexpDeclaration" />
-    <link role="extends" targetNodeId="1174482743037" resolveInfo="Regexp" />
+    <link role="extends" targetNodeId="1.1133920641626" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174483133849">
       <property name="sourceCardinality" value="1" />
       <property name="role" value="regexp" />
@@ -193,6 +193,71 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174552333310">
       <property name="value" value="question regexp" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174554186090">
+    <property name="name" value="SymbolClassRegexp" />
+    <link role="extends" targetNodeId="1174482743037" resolveInfo="Regexp" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1174554202498">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174554211468">
+    <property name="name" value="PositiveSymbolClassRegexp" />
+    <link role="extends" targetNodeId="1174554186090" resolveInfo="SymbolClassRegexp" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174554226704">
+      <property name="value" value="[" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174554230659">
+      <property name="value" value="positive symbol class" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174554238051">
+    <property name="name" value="NegativeSymbolClassRegexp" />
+    <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174554246475">
+      <property name="value" value="[^" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174554251008">
+      <property name="value" value="negative symbol class" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174554386384">
+    <property name="name" value="PredefinedSymbolClassDeclaration" />
+    <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1174555760257">
+      <link role="intfc" targetNodeId="1.1169194658468" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1174554540628">
+      <property name="name" value="description" />
+      <link role="dataType" targetNodeId="1.1082983041843" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174554406855">
+    <property name="rootable" value="false" />
+    <property name="name" value="PredefinedSymbolClasses" />
+    <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174554418919">
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="symbolClass" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1174554386384" resolveInfo="PredefinedSymbolClassDeclaration" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1174554417184">
+      <link role="intfc" targetNodeId="1.1169194658468" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174555732504">
+    <property name="name" value="PredefinedSymbolClassRegexp" />
+    <link role="extends" targetNodeId="1174482743037" resolveInfo="Regexp" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174555843709">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="symbolClass" />
+      <link role="target" targetNodeId="1174554386384" resolveInfo="PredefinedSymbolClassDeclaration" />
     </node>
   </node>
 </model>
