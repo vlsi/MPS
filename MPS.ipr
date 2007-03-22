@@ -38,6 +38,7 @@
   <component name="BuildJarProjectSettings">
     <option name="BUILD_JARS_ON_MAKE" value="false" />
   </component>
+  <component name="ClearCase" />
   <component name="CodeStyleProjectProfileManger">
     <option name="PROJECT_PROFILE" />
     <option name="USE_PROJECT_LEVEL_SETTINGS" value="false" />
@@ -155,180 +156,6 @@
             <option name="myVal" value="100" />
           </server>
         </used_levels>
-        <inspection_tool class="Weblogic" level="ERROR" enabled="false" />
-        <inspection_tool class="StrutsInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="StrutsTilesInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="StrutsValidatorInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="ClassEscapesItsScope" level="WARNING" enabled="true" />
-        <inspection_tool class="CloneCallsSuperClone" level="WARNING" enabled="false" />
-        <inspection_tool class="CloneDeclaresCloneNotSupported" level="WARNING" enabled="false" />
-        <inspection_tool class="UnnecessaryLocalVariableJS" level="WARNING" enabled="false">
-          <option name="m_ignoreImmediatelyReturnedVariables" value="false" />
-          <option name="m_ignoreAnnotatedVariables" value="false" />
-        </inspection_tool>
-        <inspection_tool class="ConstantConditionalExpressionJS" level="WARNING" enabled="false" />
-        <inspection_tool class="ConstantIfStatementJS" level="WARNING" enabled="false" />
-        <inspection_tool class="FallthroughInSwitchStatementJS" level="WARNING" enabled="false" />
-        <inspection_tool class="LoopStatementThatDoesntLoopJS" level="WARNING" enabled="false" />
-        <inspection_tool class="PointlessBooleanExpressionJS" level="WARNING" enabled="false" />
-        <inspection_tool class="TrivialIfJS" level="WARNING" enabled="false" />
-        <inspection_tool class="TrivialConditionalJS" level="WARNING" enabled="false" />
-        <inspection_tool class="UnnecessaryContinueJS" level="WARNING" enabled="false" />
-        <inspection_tool class="UnnecessaryReturnJS" level="WARNING" enabled="false" />
-        <inspection_tool class="UnnecessaryLabelJS" level="WARNING" enabled="false" />
-        <inspection_tool class="UnnecessaryLabelOnBreakStatementJS" level="WARNING" enabled="false" />
-        <inspection_tool class="UnnecessaryLabelOnContinueStatementJS" level="WARNING" enabled="false" />
-        <inspection_tool class="ContinueOrBreakFromFinallyBlockJS" level="WARNING" enabled="false" />
-        <inspection_tool class="ExceptionCaughtLocallyJS" level="WARNING" enabled="false" />
-        <inspection_tool class="ReturnFromFinallyBlockJS" level="WARNING" enabled="false" />
-        <inspection_tool class="ThrowFromFinallyBlockJS" level="WARNING" enabled="false" />
-        <inspection_tool class="FacesModelInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="NonJREEmulationClassesInClientCode" level="ERROR" enabled="false" />
-        <inspection_tool class="GwtServiceNotRegistered" level="ERROR" enabled="false" />
-        <inspection_tool class="GWTRemoteServiceAsyncCheck" level="ERROR" enabled="false" />
-        <inspection_tool class="NonSerializableServiceParameters" level="ERROR" enabled="false" />
-        <inspection_tool class="GWTStyleCheck" level="ERROR" enabled="false" />
-        <inspection_tool class="GwtToHtmlReferences" level="ERROR" enabled="false" />
-        <inspection_tool class="CheckEmptyScriptTag" level="WARNING" enabled="false" />
-        <inspection_tool class="CheckImageSize" level="WARNING" enabled="false" />
-        <inspection_tool class="RequiredAttributes" level="WARNING" enabled="false">
-          <option name="myAdditionalRequiredHtmlAttributes" value="" />
-        </inspection_tool>
-        <inspection_tool class="CheckValidXmlInScriptTagBody" level="ERROR" enabled="false" />
-        <inspection_tool class="SimplifiableIfStatement" level="WARNING" enabled="false" />
-        <inspection_tool class="JSUndeclaredVariable" level="INFO" enabled="false" />
-        <inspection_tool class="JSUnresolvedFunction" level="INFO" enabled="false" />
-        <inspection_tool class="JSUnresolvedVariable" level="INFO" enabled="false" />
-        <inspection_tool class="DuplicateCaseLabelJS" level="WARNING" enabled="false" />
-        <inspection_tool class="DuplicatePropertyOnObjectJS" level="WARNING" enabled="false" />
-        <inspection_tool class="BadExpressionStatementJS" level="WARNING" enabled="false" />
-        <inspection_tool class="FunctionWithInconsistentReturnsJS" level="WARNING" enabled="false" />
-        <inspection_tool class="ReservedWordUsedAsNameJS" level="WARNING" enabled="false" />
-        <inspection_tool class="ThisExpressionReferencesGlobalObjectJS" level="WARNING" enabled="false" />
-        <inspection_tool class="UnreachableCodeJS" level="WARNING" enabled="false" />
-        <inspection_tool class="CheckJsfComponentUnderViewTag" level="INFO" enabled="false" />
-        <inspection_tool class="PointlessArithmeticExpressionJS" level="WARNING" enabled="false" />
-        <inspection_tool class="EmptyStatementBodyJS" level="WARNING" enabled="false">
-          <option name="m_reportEmptyBlocks" value="false" />
-        </inspection_tool>
-        <inspection_tool class="InfiniteLoopJS" level="WARNING" enabled="false" />
-        <inspection_tool class="InfiniteRecursionJS" level="WARNING" enabled="false" />
-        <inspection_tool class="CssNoGenericFontName" level="WARNING" enabled="false" />
-        <inspection_tool class="CssOverwrittenProperties" level="WARNING" enabled="false" />
-        <inspection_tool class="CssUnitlessNumber" level="WARNING" enabled="false" />
-        <inspection_tool class="WeakerAccess" level="WARNING" enabled="false">
-          <option name="SUGGEST_PACKAGE_LOCAL_FOR_MEMBERS" value="true" />
-          <option name="SUGGEST_PACKAGE_LOCAL_FOR_TOP_CLASSES" value="true" />
-          <option name="SUGGEST_PRIVATE_FOR_INNERS" value="false" />
-        </inspection_tool>
-        <inspection_tool class="DefaultFileTemplate" level="WARNING" enabled="false">
-          <option name="CHECK_FILE_HEADER" value="true" />
-          <option name="CHECK_TRY_CATCH_SECTION" value="true" />
-          <option name="CHECK_METHOD_BODY" value="true" />
-        </inspection_tool>
-        <inspection_tool class="EjbDomInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="EjbQlInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="ReferencesToClassesFromDefaultPackagesInJSPFile" level="ERROR" enabled="false" />
-        <inspection_tool class="SelfIncludingJspFiles" level="ERROR" enabled="false" />
-        <inspection_tool class="WebProperties" level="ERROR" enabled="false" />
-        <inspection_tool class="UnusedParameters" level="WARNING" enabled="false" />
-        <inspection_tool class="JavaDoc" level="WARNING" enabled="false">
-          <option name="TOP_LEVEL_CLASS_OPTIONS">
-            <value>
-              <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
-              <option name="REQUIRED_TAGS" value="" />
-            </value>
-          </option>
-          <option name="INNER_CLASS_OPTIONS">
-            <value>
-              <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
-              <option name="REQUIRED_TAGS" value="" />
-            </value>
-          </option>
-          <option name="METHOD_OPTIONS">
-            <value>
-              <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
-              <option name="REQUIRED_TAGS" value="@return@param@throws or @exception" />
-            </value>
-          </option>
-          <option name="FIELD_OPTIONS">
-            <value>
-              <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
-              <option name="REQUIRED_TAGS" value="" />
-            </value>
-          </option>
-          <option name="IGNORE_DEPRECATED" value="false" />
-          <option name="IGNORE_JAVADOC_PERIOD" value="true" />
-          <option name="myAdditionalJavadocTags" value="" />
-        </inspection_tool>
-        <inspection_tool class="UNUSED_SYMBOL" level="WARNING" enabled="true">
-          <option name="LOCAL_VARIABLE" value="true" />
-          <option name="FIELD" value="true" />
-          <option name="METHOD" value="true" />
-          <option name="CLASS" value="true" />
-          <option name="PARAMETER" value="false" />
-          <option name="INJECTION_ANNOS">
-            <value>
-              <list size="0" />
-            </value>
-          </option>
-        </inspection_tool>
-        <inspection_tool class="TrivialIf" level="WARNING" enabled="false" />
-        <inspection_tool class="SameReturnValue" level="WARNING" enabled="false" />
-        <inspection_tool class="SameParameterValue" level="WARNING" enabled="false" />
-        <inspection_tool class="NullableProblems" level="ERROR" enabled="true">
-          <option name="REPORT_NULLABLE_METHOD_OVERRIDES_NOTNULL" value="true" />
-          <option name="REPORT_NOT_ANNOTATED_METHOD_OVERRIDES_NOTNULL" value="true" />
-          <option name="REPORT_NOTNULL_PARAMETER_OVERRIDES_NULLABLE" value="true" />
-          <option name="REPORT_NOT_ANNOTATED_PARAMETER_OVERRIDES_NOTNULL" value="true" />
-        </inspection_tool>
-        <inspection_tool class="UNCHECKED_WARNING" level="WARNING" enabled="false" />
-        <inspection_tool class="RedundantCast" level="WARNING" enabled="false" />
-        <inspection_tool class="UnnecessaryReturn" level="WARNING" enabled="false" />
-        <inspection_tool class="InstanceVariableNamingConvention" level="WARNING" enabled="true">
-          <option name="m_regex" value="my[A-Z][A-Za-z_\d]*" />
-          <option name="m_minLength" value="3" />
-          <option name="m_maxLength" value="99" />
-        </inspection_tool>
-        <inspection_tool class="StaticVariableNamingConvention" level="WARNING" enabled="true">
-          <option name="m_regex" value="our[A-Z][A-Za-z\d]*" />
-          <option name="m_minLength" value="2" />
-          <option name="m_maxLength" value="99" />
-        </inspection_tool>
-        <inspection_tool class="EmptyMethod" level="WARNING" enabled="false">
-          <option name="EXCLUDE_ANNOS">
-            <value>
-              <list size="0" />
-            </value>
-          </option>
-        </inspection_tool>
-        <inspection_tool class="CanBeFinal" level="WARNING" enabled="false">
-          <option name="REPORT_CLASSES" value="false" />
-          <option name="REPORT_METHODS" value="false" />
-          <option name="REPORT_FIELDS" value="true" />
-        </inspection_tool>
-        <inspection_tool class="FieldCanBeLocal" level="WARNING" enabled="false" />
-        <inspection_tool class="UnusedDeclaration" level="WARNING" enabled="false">
-          <option name="ADD_MAINS_TO_ENTRIES" value="true" />
-          <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
-          <option name="ADD_EJB_TO_ENTRIES" value="true" />
-          <option name="ADD_APPLET_TO_ENTRIES" value="true" />
-          <option name="ADD_SERVLET_TO_ENTRIES" value="true" />
-          <option name="ADD_NONJAVA_TO_ENTRIES" value="true" />
-        </inspection_tool>
-        <inspection_tool class="UnnecessaryLocalVariable" level="WARNING" enabled="false">
-          <option name="m_ignoreImmediatelyReturnedVariables" value="false" />
-          <option name="m_ignoreAnnotatedVariables" value="false" />
-        </inspection_tool>
-        <inspection_tool class="SuspiciousNameCombination" level="WARNING" enabled="false">
-          <group names="x,width,left,right" />
-          <group names="y,height,top,bottom" />
-        </inspection_tool>
-        <inspection_tool class="UnusedReturnValue" level="WARNING" enabled="false" />
-        <inspection_tool class="RedundantThrows" level="WARNING" enabled="false" />
-        <inspection_tool class="ConstantConditions" level="ERROR" enabled="true">
-          <option name="SUGGEST_NULLABLE_ANNOTATIONS" value="false" />
-        </inspection_tool>
       </profile>
       <profile version="1.0" is_locked="false">
         <option name="myName" value="Default" />
@@ -1095,6 +922,7 @@
       <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/unitTest/baseLanguage_unitTest.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/unitTest/baseLanguage_unitTest.iml" group="baseLanguage/ext" />
       <module fileurl="file://$PROJECT_DIR$/projects/DataNavigationQueryFramework/berkeleyDbEntityStore/berkeleyDbEntityStore.iml" filepath="$PROJECT_DIR$/projects/DataNavigationQueryFramework/berkeleyDbEntityStore/berkeleyDbEntityStore.iml" group="Projects/dataNavigationQuery/runtime" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/extensions/blogs/blogs.iml" filepath="$PROJECT_DIR$/platform/webr/extensions/blogs/blogs.iml" group="platform/webr/extensions" />
+      <module fileurl="file://$PROJECT_DIR$/projects/businessRules/businessRules.iml" filepath="$PROJECT_DIR$/projects/businessRules/businessRules.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/baseLanguageExt/collections-runtime/collections-runtime.iml" filepath="$PROJECT_DIR$/projects/baseLanguageExt/collections-runtime/collections-runtime.iml" group="Projects/BaseLanguageExt" />
       <module fileurl="file://$PROJECT_DIR$/projects/DataNavigationQueryFramework/core/core.iml" filepath="$PROJECT_DIR$/projects/DataNavigationQueryFramework/core/core.iml" group="Projects/dataNavigationQuery/runtime" />
       <module fileurl="file://$PROJECT_DIR$/projects/dataNavigationQueryLang/dataNavigationQueryLang.iml" filepath="$PROJECT_DIR$/projects/dataNavigationQueryLang/dataNavigationQueryLang.iml" group="Projects/dataNavigationQuery/lang" />
@@ -1144,21 +972,21 @@
       <module fileurl="file://$PROJECT_DIR$/platform/webr/extensions/wiki/wiki.iml" filepath="$PROJECT_DIR$/platform/webr/extensions/wiki/wiki.iml" group="platform/webr/extensions" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="jdk 1.5" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/classes" />
   </component>
   <component name="ProjectRunConfigurationManager">
     <configuration default="false" name="IdeMain" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="jetbrains.mps.ide.IdeMain" />
-      <option name="VM_PARAMETERS" value="-Xmx1524m -ea" />
+      <option name="VM_PARAMETERS" value="-Xms800m -Xmx1300m -ea" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <module name="MPS" />
+      <module name="webr" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="4386" />
+        <option name="DEBUG_PORT" value="1478" />
         <option name="TRANSPORT" value="0" />
         <option name="LOCAL" value="true" />
       </RunnerSettings>
@@ -1173,15 +1001,15 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="depot_webrSample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
+    <configuration default="false" name="Charisma" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
       <option name="LOCAL" value="true" />
-      <option name="OPEN_IN_BROWSER" value="true" />
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
-      <option name="COMMON_VM_ARGUMENTS" value="" />
-      <J2EE_MODULE>
+      <option name="OPEN_IN_BROWSER" value="false" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/app" />
+      <option name="COMMON_VM_ARGUMENTS" value="-Xms256m -Xmx1024m" />
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="webrSamples_hello" />
         <option name="DEPLOY" value="false" />
@@ -1193,12 +1021,12 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="MForum" />
-        <option name="DEPLOY" value="false" />
+        <option name="MODULE_NAME" value="Charisma" />
+        <option name="DEPLOY" value="true" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="Charisma" />
+        <option name="MODULE_NAME" value="MForum" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE>
@@ -1209,9 +1037,113 @@
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="webrSamples_depot" />
-        <option name="DEPLOY" value="true" />
+        <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE>
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="PubMedDB" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
+      <option name="DEPLOY_TOMCAT_MANAGER" value="false" />
+      <option name="BASE_DIRECTORY_NAME" value="tomcat_Unnamed_e7d78b7c4" />
+      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="2795" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Profile ">
+        <option name="myExternalizedOptions" value="&#13;&#10;force-jvmti=true&#13;&#10;snapshots-dir=&#13;&#10;startup=0&#13;&#10;" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value=" run" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value=" stop" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile ">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value=" run" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value=" stop" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value=" run" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value=" stop" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="Make" value="true" />
+      </method>
+    </configuration>
+    <configuration default="false" name="depot_webrSample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
+      <option name="WORKING_DIRECTORY" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="8080" />
+      <option name="LOCAL" value="true" />
+      <option name="OPEN_IN_BROWSER" value="true" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/app" />
+      <option name="COMMON_VM_ARGUMENTS" value="" />
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="webrSamples_hello" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="webrSamples_sandbox" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="Charisma" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="MForum" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="teamSysWebApp" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="webrSamples_depot" />
+        <option name="DEPLOY" value="true" />
+      </J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="PubMedDB" />
         <option name="DEPLOY" value="false" />
@@ -1224,8 +1156,26 @@
         <option name="TRANSPORT" value="0" />
         <option name="LOCAL" value="true" />
       </RunnerSettings>
+      <RunnerSettings RunnerId="Profile ">
+        <option name="myExternalizedOptions" value="&#13;&#10;snapshots-dir=&#13;&#10;" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value=" run" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value=" stop" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile ">
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
           <option name="USE_DEFAULT" value="true" />
@@ -1265,7 +1215,7 @@
       <option name="PORT" value="8080" />
       <option name="LOCAL" value="true" />
       <option name="OPEN_IN_BROWSER" value="true" />
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/app" />
       <option name="COMMON_VM_ARGUMENTS" value="" />
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
@@ -1279,25 +1229,25 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="Charisma" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="MForum" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="Charisma" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE>
-        <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="teamSysWebApp" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
-      <J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="webrSamples_depot" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
-      <J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="PubMedDB" />
         <option name="DEPLOY" value="false" />
@@ -1345,92 +1295,6 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="Charisma" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
-      <option name="WORKING_DIRECTORY" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="8080" />
-      <option name="LOCAL" value="true" />
-      <option name="OPEN_IN_BROWSER" value="true" />
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
-      <option name="COMMON_VM_ARGUMENTS" value="" />
-      <J2EE_MODULE>
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_sandbox" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="MForum" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="Charisma" />
-        <option name="DEPLOY" value="true" />
-      </J2EE_MODULE>
-      <J2EE_MODULE>
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="teamSysWebApp" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_depot" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE>
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="PubMedDB" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <option name="DEPLOY_TOMCAT_MANAGER" value="true" />
-      <option name="BASE_DIRECTORY_NAME" value="tomcat_Unnamed_e7d78b7c4" />
-      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="2795" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value=" run" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value=" stop" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value=" run" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value=" stop" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method>
-        <option name="Make" value="true" />
-      </method>
-    </configuration>
     <configuration default="false" name="MForum" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
@@ -1439,7 +1303,7 @@
       <option name="OPEN_IN_BROWSER" value="true" />
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
       <option name="COMMON_VM_ARGUMENTS" value="" />
-      <J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="webrSamples_hello" />
         <option name="DEPLOY" value="false" />
@@ -1451,13 +1315,13 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="MForum" />
-        <option name="DEPLOY" value="true" />
+        <option name="MODULE_NAME" value="Charisma" />
+        <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="Charisma" />
-        <option name="DEPLOY" value="false" />
+        <option name="MODULE_NAME" value="MForum" />
+        <option name="DEPLOY" value="true" />
       </J2EE_MODULE>
       <J2EE_MODULE>
         <option name="CONTEXT_PATH" value="/" />
@@ -1469,7 +1333,7 @@
         <option name="MODULE_NAME" value="webrSamples_depot" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
-      <J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="PubMedDB" />
         <option name="DEPLOY" value="false" />
@@ -1517,7 +1381,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="PubMedDB" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
+    <configuration default="false" name="PubMedDB" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
@@ -1537,12 +1401,12 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="MForum" />
+        <option name="MODULE_NAME" value="Charisma" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="Charisma" />
+        <option name="MODULE_NAME" value="MForum" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE>
@@ -1604,6 +1468,13 @@
       </method>
     </configuration>
   </component>
+  <component name="ResourceManagerContainer">
+    <option name="myResourceBundles">
+      <value>
+        <list size="0" />
+      </value>
+    </option>
+  </component>
   <component name="RmicSettings">
     <option name="IS_EANABLED" value="false" />
     <option name="DEBUGGING_INFO" value="true" />
@@ -1612,6 +1483,10 @@
     <option name="ADDITIONAL_OPTIONS_STRING" value="" />
   </component>
   <component name="StarteamVcsAdapter" />
+  <component name="SvnBranchConfigurationManager" />
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="svn" />
+  </component>
   <component name="VssVcs">
     <SourceSafePersistencyRemovedFolder>$PROJECT_DIR$/projects/SemanticFunctions/source/jetbrains/naturalLanguageDescription/scope</SourceSafePersistencyRemovedFolder>
     <SourceSafePersistencyRemovedFolder>$PROJECT_DIR$/source/jetbrains/mps/generator/types</SourceSafePersistencyRemovedFolder>
