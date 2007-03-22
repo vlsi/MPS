@@ -3210,6 +3210,43 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1174581973226">
+      <property name="name" value="bbb" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1174581973227" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1174581973228">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1174582123910">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1174582123911">
+            <property name="name" value="nn" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1174582129600">
+              <link role="classifier" extResolveInfo="3.[Classifier]SNode" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.ParameterReference" id="1174582005833">
+              <link role="variableDeclaration" targetNodeId="1174581997270" resolveInfo="node" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1174582576680">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1174582576681">
+            <property name="name" value="i" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1174582576682" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1174582581341">
+          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1174582585751">
+            <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]Object).([InstanceMethodDeclaration]clone() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object]))" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174582581342">
+              <link role="variableDeclaration" targetNodeId="1174582576681" resolveInfo="i" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1174581997270">
+        <property name="name" value="node" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1174581997271">
+          <link role="concept" targetNodeId="6.1068580123159" />
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
