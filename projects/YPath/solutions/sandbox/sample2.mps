@@ -96,7 +96,7 @@
                 <link role="baseMethodDeclaration" extResolveInfo="3.method ([Classifier]List).([InstanceMethodDeclaration]get((jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int)) : (jetbrains.mps.baseLanguage.types.any/jetbrains.mps.baseLanguage.types.any))" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1168905159252">
                   <link role="classConcept" extResolveInfo="3.[Classifier]Arrays" />
-                  <link role="baseMethodDeclaration" extResolveInfo="3.static method ([Classifier]Arrays).([StaticMethodDeclaration]asList((jetbrains.mps.baseLanguage.types.array/jetbrains.mps.baseLanguage.types.array [-1, jetbrains.mps.baseLanguage.types.classifier [Object]])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List]))" />
+                  <link role="baseMethodDeclaration" extResolveInfo="3.static method ([Classifier]Arrays).([StaticMethodDeclaration]asList((jetbrains.mps.baseLanguage.types.array/jetbrains.mps.baseLanguage.types.array [-1, jetbrains.mps.baseLanguage.types.classifier [Object]])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [Object]&gt;]))" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1168905161451">
                     <link role="variableDeclaration" targetNodeId="1168894275019" resolveInfo="args" />
                   </node>

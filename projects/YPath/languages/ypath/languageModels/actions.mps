@@ -19,8 +19,8 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActions" id="1168462842641">
     <property name="name" value="YPath_rhint" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1168893677147">
-      <property name="actionsFactoryAspectId" value="Expression_to_TreePathAdapterExpression" />
       <property name="description" value="Initiate treepath search for existing TreePathAspect" />
+      <property name="actionsFactoryAspectId" value="Expression_to_TreePathAdapterExpression" />
       <link role="applicableConcept" targetNodeId="4.1068431790191" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionFunction" id="1168893690367">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1168893690368">
@@ -99,7 +99,7 @@
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1168893902939">
                 <link role="classConcept" extResolveInfo="7.[Classifier]TreePathAspectUtil" />
-                <link role="baseMethodDeclaration" extResolveInfo="7.static method ([Classifier]TreePathAspectUtil).([StaticMethodDeclaration]GetTreePathAspects((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SModel]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ITypeObject]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IScope]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ITypeChecker])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List]))" />
+                <link role="baseMethodDeclaration" extResolveInfo="7.static method ([Classifier]TreePathAspectUtil).([StaticMethodDeclaration]GetTreePathAspects((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SModel]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ITypeObject]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IScope]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ITypeChecker])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [SNode]&gt;]))" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1168893989189">
                   <link role="baseMethodDeclaration" extResolveInfo="6.method ([Classifier]SNode).([InstanceMethodDeclaration]getModel() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SModel]))" />
                   <node role="instance" type="jetbrains.mps.baseLanguage.ParenthesizedExpression" id="1168893966530">
@@ -138,8 +138,8 @@
       </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1168462963747">
-      <property name="actionsFactoryAspectId" value="Expression_to_TreePathOperationExpression" />
       <property name="description" value="Substitute an expression with an TreePathOperationExpression" />
+      <property name="actionsFactoryAspectId" value="Expression_to_TreePathOperationExpression" />
       <link role="applicableConcept" targetNodeId="4.1068431790191" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionFunction" id="1168469425594">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1168469425595">
@@ -250,8 +250,8 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions" id="1169037619065">
     <property name="name" value="YPath_subs" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1169037620751">
-      <property name="actionsFactoryAspectId" value="AllowOnlyFromOperation" />
       <property name="description" value="Allow only &quot;from&quot; as the first treepath operation" />
+      <property name="actionsFactoryAspectId" value="AllowOnlyFromOperation" />
       <link role="applicableConcept" targetNodeId="1.1168468681335" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionFunction" id="1169038348122">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1169038348123">
@@ -318,8 +318,8 @@
       </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1169038110957">
-      <property name="actionsFactoryAspectId" value="AllowOnlyIterateOperation" />
       <property name="description" value="Allow only &quot;iterate&quot; as the first tree traversal operation" />
+      <property name="actionsFactoryAspectId" value="AllowOnlyIterateOperation" />
       <link role="applicableConcept" targetNodeId="1.1168468681335" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionFunction" id="1169038722084">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1169038722085">
@@ -374,8 +374,8 @@
       </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1169038203232">
-      <property name="actionsFactoryAspectId" value="DisallowFromOperation" />
       <property name="description" value="Disallow &quot;from&quot; as a tree traversal operations" />
+      <property name="actionsFactoryAspectId" value="DisallowFromOperation" />
       <link role="applicableConcept" targetNodeId="1.1168468681335" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionFunction" id="1169039090800">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1169039090801">
