@@ -6,6 +6,7 @@
   <module />
   <languages>
     <moduleRoot path="${mps_home}\languages\bootstrap\helgins\languages\helgins\helgins.mpl" />
+    <moduleRoot path="${mps_home}\languages\bootstrap\helgins\languages\test\test.mpl" />
   </languages>
   <classPath />
 </solution>
