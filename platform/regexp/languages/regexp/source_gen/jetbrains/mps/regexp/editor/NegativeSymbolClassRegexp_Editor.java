@@ -15,7 +15,7 @@ import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
 
 public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
 
-  public AbstractCellListHandler myPartsListHandler_partsList_;
+  public AbstractCellListHandler myPartListHandler_partList_;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
@@ -30,7 +30,7 @@ public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell(context, node, "[^"));
-    editorCell.addEditorCell(this.createPartsList(context, node));
+    editorCell.addEditorCell(this.createPartList(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, "]"));
     editorCell.putUserObject(EditorCell.CELL_ID, "1174557673745");
     editorCell.setLayoutConstraint("");
@@ -62,11 +62,11 @@ public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createPartsList(EditorContext context, SNode node) {
-    if(this.myPartsListHandler_partsList_ == null) {
-      this.myPartsListHandler_partsList_ = new NegativeSymbolClassRegexp_Editor_PartsListHandler_partsList_(node, "parts", context);
+  public EditorCell createPartList(EditorContext context, SNode node) {
+    if(this.myPartListHandler_partList_ == null) {
+      this.myPartListHandler_partList_ = new NegativeSymbolClassRegexp_Editor_PartListHandler_partList_(node, "part", context);
     }
-    EditorCell_Collection editorCell = this.myPartsListHandler_partsList_.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myPartListHandler_partList_.createCells(context, new CellLayout_Horizontal(), false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
@@ -74,7 +74,7 @@ public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myPartsListHandler_partsList_.getElementRole());
+    editorCell.putUserObject(EditorCell.ROLE, this.myPartListHandler_partList_.getElementRole());
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

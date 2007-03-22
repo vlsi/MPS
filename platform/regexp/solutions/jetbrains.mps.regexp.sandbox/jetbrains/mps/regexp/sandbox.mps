@@ -62,14 +62,13 @@
           <node role="expr" type="jetbrains.mps.baseLanguage.StringLiteral" id="1174512664139">
             <property name="value" value="abcdef" />
           </node>
-          <node role="regexp" type="jetbrains.mps.regexp.InlineRegexpExpression" id="1174512721177">
-            <node role="regexp" type="jetbrains.mps.regexp.QuestionRegexp" id="1174552346202">
-              <node role="regexp" type="jetbrains.mps.regexp.SeqRegexp" id="1174555971922">
-                <node role="left" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174512724976">
-                  <property name="text" value="abcdef" />
-                </node>
-                <node role="right" type="jetbrains.mps.regexp.PredefinedSymbolClassRegexp" id="1174555971923">
-                  <link role="symbolClass" targetNodeId="4.1174554796231" />
+          <node role="regexp" type="jetbrains.mps.regexp.InlineRegexpExpression" id="1174562275263">
+            <node role="regexp" type="jetbrains.mps.regexp.PlusRegexp" id="1174562275714">
+              <node role="regexp" type="jetbrains.mps.regexp.ParensRegexp" id="1174562275715">
+                <node role="expr" type="jetbrains.mps.regexp.NegativeSymbolClassRegexp" id="1174562275716">
+                  <node role="part" type="jetbrains.mps.regexp.PredefinedSymbolClassSymbolClassPart" id="1174562275717">
+                    <link role="declaration" targetNodeId="4.1174554872719" />
+                  </node>
                 </node>
               </node>
             </node>

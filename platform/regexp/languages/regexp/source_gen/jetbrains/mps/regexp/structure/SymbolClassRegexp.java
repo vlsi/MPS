@@ -10,7 +10,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class SymbolClassRegexp extends Regexp {
-  public static String PARTS = "parts";
+  public static String PART = "part";
 
   public  SymbolClassRegexp(SNode node) {
     super(node);
@@ -23,19 +23,19 @@ public class SymbolClassRegexp extends Regexp {
     return SymbolClassRegexp.newInstance(sm, false);
   }
 
-  public int getPartsesCount() {
-    return this.getChildCount(SymbolClassRegexp.PARTS);
+  public int getPartsCount() {
+    return this.getChildCount(SymbolClassRegexp.PART);
   }
-  public Iterator<SymbolClassPart> partses() {
-    return this.children(SymbolClassRegexp.PARTS);
+  public Iterator<SymbolClassPart> parts() {
+    return this.children(SymbolClassRegexp.PART);
   }
-  public List<SymbolClassPart> getPartses() {
-    return this.getChildren(SymbolClassRegexp.PARTS);
+  public List<SymbolClassPart> getParts() {
+    return this.getChildren(SymbolClassRegexp.PART);
   }
-  public void addParts(SymbolClassPart node) {
-    this.addChild(SymbolClassRegexp.PARTS, node);
+  public void addPart(SymbolClassPart node) {
+    this.addChild(SymbolClassRegexp.PART, node);
   }
-  public void insertParts(SymbolClassPart prev, SymbolClassPart node) {
-    this.insertChild(prev, SymbolClassRegexp.PARTS, node);
+  public void insertPart(SymbolClassPart prev, SymbolClassPart node) {
+    this.insertChild(prev, SymbolClassRegexp.PART, node);
   }
 }
