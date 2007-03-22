@@ -6,8 +6,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import java.util.Iterator;
+import java.util.List;
 
 public class SymbolClassRegexp extends Regexp {
+  public static String PARTS = "parts";
 
   public  SymbolClassRegexp(SNode node) {
     super(node);
@@ -18,5 +21,21 @@ public class SymbolClassRegexp extends Regexp {
   }
   public static SymbolClassRegexp newInstance(SModel sm) {
     return SymbolClassRegexp.newInstance(sm, false);
+  }
+
+  public int getPartsesCount() {
+    return this.getChildCount(SymbolClassRegexp.PARTS);
+  }
+  public Iterator<SymbolClassPart> partses() {
+    return this.children(SymbolClassRegexp.PARTS);
+  }
+  public List<SymbolClassPart> getPartses() {
+    return this.getChildren(SymbolClassRegexp.PARTS);
+  }
+  public void addParts(SymbolClassPart node) {
+    this.addChild(SymbolClassRegexp.PARTS, node);
+  }
+  public void insertParts(SymbolClassPart prev, SymbolClassPart node) {
+    this.insertChild(prev, SymbolClassRegexp.PARTS, node);
   }
 }

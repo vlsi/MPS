@@ -198,6 +198,12 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174554186090">
     <property name="name" value="SymbolClassRegexp" />
     <link role="extends" targetNodeId="1174482743037" resolveInfo="Regexp" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174557628217">
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="parts" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1174557861378" resolveInfo="SymbolClassPart" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1174554202498">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
     </node>
@@ -216,7 +222,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174554238051">
     <property name="name" value="NegativeSymbolClassRegexp" />
-    <link role="extends" targetNodeId="1.1133920641626" />
+    <link role="extends" targetNodeId="1174554186090" resolveInfo="SymbolClassRegexp" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174554246475">
       <property name="value" value="[^" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
@@ -257,6 +263,58 @@
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174555843709">
       <property name="sourceCardinality" value="1" />
       <property name="role" value="symbolClass" />
+      <link role="target" targetNodeId="1174554386384" resolveInfo="PredefinedSymbolClassDeclaration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174556813606">
+    <property name="name" value="DotRegexp" />
+    <link role="extends" targetNodeId="1174482743037" resolveInfo="Regexp" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174556830202">
+      <property name="value" value="." />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174556832720">
+      <property name="value" value="dot regexp (any character)" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174557861378">
+    <property name="name" value="SymbolClassPart" />
+    <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1174557870224">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174557878319">
+    <property name="name" value="CharacterSymbolClassPart" />
+    <link role="extends" targetNodeId="1174557861378" resolveInfo="SymbolClassPart" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1174557887320">
+      <property name="name" value="character" />
+      <link role="dataType" targetNodeId="1174557900649" resolveInfo="_Character" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConstrainedDataTypeDeclaration" id="1174557900649">
+    <property name="constraint" value="([^\\\\]|\\\\.)" />
+    <property name="name" value="_Character" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174558301835">
+    <property name="name" value="IntervalSymbolClassPart" />
+    <link role="extends" targetNodeId="1174557861378" resolveInfo="SymbolClassPart" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1174558315290">
+      <property name="name" value="start" />
+      <link role="dataType" targetNodeId="1174557900649" resolveInfo="_Character" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1174558317822">
+      <property name="name" value="end" />
+      <link role="dataType" targetNodeId="1174557900649" resolveInfo="_Character" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174558792178">
+    <property name="name" value="PredefinedSymbolClassSymbolClassPart" />
+    <link role="extends" targetNodeId="1174557861378" resolveInfo="SymbolClassPart" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174558819022">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="declaration" />
       <link role="target" targetNodeId="1174554386384" resolveInfo="PredefinedSymbolClassDeclaration" />
     </node>
   </node>
