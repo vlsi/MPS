@@ -20,9 +20,11 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.bootstrap.helgins.test.SuperVar" id="1174584974643">
             <property name="name" value="s" />
             <node role="type" type="jetbrains.mps.baseLanguage.Type" id="1174584974644" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.ClassifierType" id="1174590061915">
-              <link role="classifier" extResolveInfo="3.[Classifier]List" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.IntegerType" id="1174590061916" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.ClassifierType" id="1174599583973">
+              <link role="classifier" extResolveInfo="3.[Classifier]Set" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.IntegerType" id="1174599583974" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.IntegerType" id="1174599583975" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.IntegerType" id="1174599583976" />
             </node>
           </node>
         </node>

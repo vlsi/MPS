@@ -116,6 +116,19 @@
               </node>
             </node>
           </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1174598497960">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1174598497961">
+              <property name="name" value="n" />
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1174598497962">
+                <link role="concept" targetNodeId="3.1107535904670" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.bootstrap.helgins.Quotation" id="1174598509098">
+                <node role="quotedNode" type="jetbrains.mps.baseLanguage.ClassifierType" id="1174598518105">
+                  <link role="classifier" extResolveInfo="4.[Classifier]Set" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1174583918026">
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1174583941842">
               <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1174583923887">
@@ -132,6 +145,16 @@
                       <node role="_attr_$attribute" type="jetbrains.mps.bootstrap.helgins.ListAntiquotation" id="1174596800587">
                         <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174596806219">
                           <link role="variableDeclaration" targetNodeId="1174596712681" resolveInfo="nodes" />
+                        </node>
+                      </node>
+                    </node>
+                    <node role="referenceAntiquotation$link_attribute$classifier" type="jetbrains.mps.bootstrap.helgins.ReferenceAntiquotation" id="1174598483931">
+                      <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1174598536299">
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174598528475">
+                          <link role="variableDeclaration" targetNodeId="1174598497961" resolveInfo="n" />
+                        </node>
+                        <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1174598537352">
+                          <link role="link" targetNodeId="3.1107535924139" />
                         </node>
                       </node>
                     </node>
