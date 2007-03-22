@@ -318,5 +318,35 @@
       <link role="target" targetNodeId="1174554386384" resolveInfo="PredefinedSymbolClassDeclaration" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174564062919">
+    <property name="name" value="MatchParensRegexp" />
+    <link role="extends" targetNodeId="1174482743037" resolveInfo="Regexp" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174564160889">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="regexp" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1174482743037" resolveInfo="Regexp" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174564090390">
+      <property name="value" value="(name" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174564095782">
+      <property name="value" value="matching parens" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1174564103895">
+      <link role="intfc" targetNodeId="1.1169194658468" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174565027678">
+    <property name="name" value="MatchVariableReference" />
+    <link role="extends" targetNodeId="2.1068431790191" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174565035929">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="match" />
+      <link role="target" targetNodeId="1174564062919" resolveInfo="MatchParensRegexp" />
+    </node>
+  </node>
 </model>
 

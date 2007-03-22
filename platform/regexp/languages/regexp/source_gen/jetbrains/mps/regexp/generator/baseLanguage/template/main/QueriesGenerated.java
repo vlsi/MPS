@@ -11,6 +11,9 @@ import jetbrains.mps.regexp.RegexpProcessor;
 import jetbrains.mps.regexp.structure.Regexp;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import java.util.List;
+import jetbrains.mps.regexp.structure.MatchParensRegexp;
+import java.util.ArrayList;
 
 public class QueriesGenerated {
 
@@ -19,6 +22,13 @@ public class QueriesGenerated {
   }
   public static String propertyMacro_GetPropertyValue_1174511849647(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return RegexpProcessor.toString(((Regexp)SNodeOperations.getAdapter(SLinkOperations.getTarget(node, "regexp", true))));
+  }
+  public static String propertyMacro_GetPropertyValue_1174565617595(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode parens = SLinkOperations.getTarget(node, "match", false);
+    SNode matcher = SNodeOperations.getAncestor(parens, "jetbrains.mps.regexp.structure.MatchRegexpStatement", false, false);
+    List<MatchParensRegexp> matchparens = new ArrayList<MatchParensRegexp>();
+    RegexpProcessor.toString(((Regexp)SNodeOperations.getAdapter(SLinkOperations.getTarget(SLinkOperations.getTarget(matcher, "regexp", true), "regexp", true))), matchparens);
+    return "" + (1 + matchparens.indexOf(((MatchParensRegexp)SNodeOperations.getAdapter(parens))));
   }
   public static SNode sourceNodeQuery_1174512824855(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "regexp", true);

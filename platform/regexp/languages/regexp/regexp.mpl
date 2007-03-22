@@ -6,6 +6,9 @@
   <actions>
     <model modelUID="jetbrains.mps.regexp.actions" />
   </actions>
+  <constraints>
+    <model modelUID="jetbrains.mps.regexp.constraints" />
+  </constraints>
   <editor>
     <model modelUID="jetbrains.mps.regexp.editor" />
   </editor>
