@@ -103,4 +103,6 @@ public interface ITemplateGenerator extends ITemplateLanguageConstants {
   Language getTargetLanguage();
 
   void addUnresolvedReference(INodeBuilder nodeBuilder, SReference templateReference);
+
+  boolean isNew();
 }
