@@ -183,5 +183,17 @@
       <link role="target" targetNodeId="1174510518094" resolveInfo="RegexpExpression" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174552240608">
+    <property name="name" value="QuestionRegexp" />
+    <link role="extends" targetNodeId="1174485235885" resolveInfo="UnaryRegexp" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174552330777">
+      <property name="value" value="?" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174552333310">
+      <property name="value" value="question regexp" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
+    </node>
+  </node>
 </model>
 

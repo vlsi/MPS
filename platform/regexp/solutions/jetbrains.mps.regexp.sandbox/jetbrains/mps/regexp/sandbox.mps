@@ -37,8 +37,10 @@
             <property name="value" value="abcdef" />
           </node>
           <node role="regexp" type="jetbrains.mps.regexp.InlineRegexpExpression" id="1174512721177">
-            <node role="regexp" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174512724976">
-              <property name="text" value="abcdef" />
+            <node role="regexp" type="jetbrains.mps.regexp.QuestionRegexp" id="1174552346202">
+              <node role="regexp" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174512724976">
+                <property name="text" value="abcdef" />
+              </node>
             </node>
           </node>
         </node>
