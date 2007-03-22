@@ -40,6 +40,16 @@
       </node>
       <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_ExecuteFunction" id="1174583875290">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1174583875291">
+          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1174589427858">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1174589427859">
+              <property name="name" value="model" />
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SModelType" id="1174589427860" />
+              <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1174589433129">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1174589431441" />
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetModelOperation" id="1174589434427" />
+              </node>
+            </node>
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1174583918026">
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1174583941842">
               <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1174583923887">
@@ -54,6 +64,16 @@
                     <link role="classifier" extResolveInfo="4.[Classifier]List" />
                     <node role="parameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1174584167862">
                       <link role="classifier" extResolveInfo="5.[Classifier]String" />
+                      <node role="_attr_$attribute" type="jetbrains.mps.bootstrap.helgins.Antiquotation" id="1174589359900">
+                        <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1174589440460">
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174589439319">
+                            <link role="variableDeclaration" targetNodeId="1174589427859" resolveInfo="model" />
+                          </node>
+                          <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Model_CreateNewNodeOperation" id="1174589445930">
+                            <link role="concept" targetNodeId="3.1070534370425" />
+                          </node>
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>
