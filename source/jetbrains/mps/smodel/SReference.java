@@ -184,7 +184,6 @@ public final class SReference {
     this.myExtResolveInfo = extResolveInfo;
   }
 
-
   //
   // --- new instance
   //
@@ -237,6 +236,13 @@ public final class SReference {
 
   }
 
+  public static SReference newInstance(String role, SNode sourceNode, String targetModelUID, String targetInfo, boolean isExtResolveInfo) {
+    if (isExtResolveInfo) {
+      return new SReference(role, sourceNode, null, null, targetInfo, SModelUID.fromString(targetModelUID));
+    } else {
+      return new SReference(role, sourceNode, targetInfo, null, null, SModelUID.fromString(targetModelUID));
+    }
+  }
 
   //
   // --- end new instance
