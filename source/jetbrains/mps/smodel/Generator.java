@@ -11,10 +11,7 @@ import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @author Kostik
@@ -48,7 +45,7 @@ public class Generator extends AbstractModule {
 
   @NotNull
   public List<SModelDescriptor> getOwnTemplateModels() {
-    List<SModelDescriptor> templateModels = new LinkedList<SModelDescriptor>();
+    List<SModelDescriptor> templateModels = new ArrayList<SModelDescriptor>();
     for (SModelDescriptor modelDescriptor : getOwnModelDescriptors()) {
       if (SModelStereotype.TEMPLATES.equals(modelDescriptor.getStereotype())) {
         templateModels.add(modelDescriptor);
@@ -58,9 +55,9 @@ public class Generator extends AbstractModule {
   }
 
   @NotNull
-  public Set<MappingConfiguration> getOwnMappings() {
+  public List<MappingConfiguration> getOwnMappings() {
     List<SModelDescriptor> list = getOwnTemplateModels();
-    Set<MappingConfiguration> mappings = new HashSet<MappingConfiguration>();
+    List<MappingConfiguration> mappings = new ArrayList<MappingConfiguration>();
     for (SModelDescriptor templateModel : list) {
       mappings.addAll(templateModel.getSModel().allAdapters(MappingConfiguration.class));
     }
@@ -154,7 +151,7 @@ public class Generator extends AbstractModule {
   @NotNull
   public List<IModule> getExplicitlyDependOnModules() {
     // depends on source language and all owned modules (target language etc.)
-    List<IModule> result = new LinkedList<IModule>(getOwnModules());
+    List<IModule> result = new ArrayList<IModule>(getOwnModules());
     if (!result.contains(mySourceLanguage)) {
       result.add(mySourceLanguage);
     }
@@ -165,7 +162,7 @@ public class Generator extends AbstractModule {
 
   @NotNull
   public List<Generator> getReferencedGenerators() {
-    List<Generator> list = new LinkedList<Generator>();
+    List<Generator> list = new ArrayList<Generator>();
     for (GeneratorReference generatorReference : myGeneratorDescriptor.getGeneratorReferences()) {
       IModule module = MPSModuleRepository.getInstance().getModuleByUID(generatorReference.getReferentUID());
       if (module instanceof Generator) {
