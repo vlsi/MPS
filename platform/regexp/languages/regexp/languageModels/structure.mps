@@ -119,16 +119,9 @@
       <link role="target" targetNodeId="1174482743037" resolveInfo="Regexp" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174510518094">
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174510540317">
     <property name="name" value="RegexpExpression" />
     <link role="extends" targetNodeId="2.1068431790191" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1174510535379">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174510540317">
-    <property name="name" value="InlineRegexpExpression" />
-    <link role="extends" targetNodeId="1174510518094" resolveInfo="RegexpExpression" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174510571016">
       <property name="sourceCardinality" value="1" />
       <property name="role" value="regexp" />
@@ -138,19 +131,6 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174510550789">
       <property name="value" value="regexp" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174510557697">
-      <property name="value" value="inline regexp" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174511988547">
-    <property name="name" value="PredefinedRegexpExpression" />
-    <link role="extends" targetNodeId="1174510518094" resolveInfo="RegexpExpression" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174512001673">
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="regexp" />
-      <link role="target" targetNodeId="1174483125581" resolveInfo="RegexpDeclaration" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174512414484">
@@ -351,7 +331,7 @@
       <property name="sourceCardinality" value="1" />
       <property name="role" value="regexp" />
       <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1174510518094" resolveInfo="RegexpExpression" />
+      <link role="target" targetNodeId="2.1068431790191" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174655989549">

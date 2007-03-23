@@ -154,29 +154,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1174512014127">
-    <link role="conceptDeclaration" targetNodeId="1.1174511988547" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1174512016145">
-      <property name="drawBorder" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1174512019225">
-        <property name="drawBorder" value="false" />
-        <property name="bracketsColor" value="DARK_MAGENTA" />
-        <property name="drawBrackets" value="true" />
-        <link role="relationDeclaration" targetNodeId="1.1174512001673" />
-        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1174512019226">
-          <link role="conceptDeclaration" targetNodeId="1.1174483125581" />
-          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1174512021618">
-            <property name="textFgColor" value="DARK_MAGENTA" />
-            <property name="drawBorder" value="false" />
-            <property name="bracketsColor" value="DARK_MAGENTA" />
-            <property name="readOnly" value="true" />
-            <property name="drawBrackets" value="true" />
-            <link role="relationDeclaration" targetNodeId="2.1169194664001" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1174512458522">
     <link role="conceptDeclaration" targetNodeId="1.1174512414484" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1174512460884">

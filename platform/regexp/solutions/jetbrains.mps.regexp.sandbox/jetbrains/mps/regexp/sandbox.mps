@@ -114,7 +114,7 @@
               <node role="expr" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174654917733">
                 <link role="variableDeclaration" targetNodeId="1174564396603" resolveInfo="email" />
               </node>
-              <node role="regexp" type="jetbrains.mps.regexp.InlineRegexpExpression" id="1174654919765">
+              <node role="regexp" type="jetbrains.mps.regexp.RegexpExpression" id="1174654919765">
                 <node role="regexp" type="jetbrains.mps.regexp.MatchParensRegexp" id="1174654922689">
                   <property name="name" value="abdef" />
                   <node role="regexp" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174654928520">
@@ -127,7 +127,7 @@
           <node role="expr" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174564408549">
             <link role="variableDeclaration" targetNodeId="1174564396603" resolveInfo="email" />
           </node>
-          <node role="regexp" type="jetbrains.mps.regexp.InlineRegexpExpression" id="1174564411128">
+          <node role="regexp" type="jetbrains.mps.regexp.RegexpExpression" id="1174564411128">
             <node role="regexp" type="jetbrains.mps.regexp.SeqRegexp" id="1174564473109">
               <node role="left" type="jetbrains.mps.regexp.MatchParensRegexp" id="1174564423490">
                 <property name="name" value="user" />
@@ -200,7 +200,7 @@
                   </node>
                 </node>
               </node>
-              <node role="regexp" type="jetbrains.mps.regexp.InlineRegexpExpression" id="1174657595933">
+              <node role="regexp" type="jetbrains.mps.regexp.RegexpExpression" id="1174657595933">
                 <node role="regexp" type="jetbrains.mps.regexp.MatchParensRegexp" id="1174657603512">
                   <property name="name" value="user" />
                   <node role="regexp" type="jetbrains.mps.regexp.PlusRegexp" id="1174657603513">
