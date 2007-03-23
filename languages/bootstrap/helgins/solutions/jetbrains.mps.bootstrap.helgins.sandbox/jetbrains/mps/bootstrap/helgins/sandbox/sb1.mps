@@ -16,15 +16,6 @@
       <link role="concept" targetNodeId="4.1068431474542" />
     </node>
     <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1174646542323">
-      <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1174647074385">
-        <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1174647074386">
-          <property name="name" value="a" />
-          <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1174647074387" />
-          <node role="initializer" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1174647078921">
-            <property name="value" value="3" />
-          </node>
-        </node>
-      </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1174647095688">
         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1174647095689">
           <property name="name" value="n" />
@@ -43,8 +34,10 @@
           <node role="lValue" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174654287536">
             <link role="variableDeclaration" targetNodeId="1174647095689" resolveInfo="n" />
           </node>
-          <node role="rValue" type="jetbrains.mps.bootstrap.helgins.ApplicableNodeReference" id="1174654290070">
-            <link role="applicableNode" targetNodeId="1174646557887" resolveInfo="varDecl" />
+          <node role="rValue" type="jetbrains.mps.bootstrap.helgins.TypeOfExpression" id="1174657646159">
+            <node role="term" type="jetbrains.mps.bootstrap.helgins.ApplicableNodeReference" id="1174657648802">
+              <link role="applicableNode" targetNodeId="1174646557887" resolveInfo="varDecl" />
+            </node>
           </node>
         </node>
       </node>

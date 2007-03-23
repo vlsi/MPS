@@ -1,6 +1,7 @@
 package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.bootstrap.helgins.runtime.RuntimeSupport;
 import jetbrains.mps.helgins.evaluator.CopyEvaluator;
 import jetbrains.mps.helgins.evaluator.QuotationEvaluator;
 import jetbrains.mps.helgins.structure.*;
@@ -55,6 +56,7 @@ public class TypeChecker {
   private AdaptationManager myAdaptationManager;
   private QuotationEvaluator myQuotationEvaluator;
   private CopyEvaluator myCopyEvaluator;
+  private RuntimeSupport myRuntimeSupport;
   private boolean myUsedForBLCompletion = true;
 
   public TypeChecker() {
@@ -66,6 +68,7 @@ public class TypeChecker {
     myAdaptationManager = new AdaptationManager(this);
     myQuotationEvaluator = new QuotationEvaluator(this);
     myCopyEvaluator = new CopyEvaluator(this);
+    myRuntimeSupport = new RuntimeSupport(this);
   }
 
   public static TypeChecker getInstance() {
@@ -102,6 +105,10 @@ public class TypeChecker {
 
   public CopyEvaluator getCopyEvaluator() {
     return myCopyEvaluator;
+  }
+
+  public RuntimeSupport getRuntimeSupport() {
+    return myRuntimeSupport;
   }
 
   public void clear() {
