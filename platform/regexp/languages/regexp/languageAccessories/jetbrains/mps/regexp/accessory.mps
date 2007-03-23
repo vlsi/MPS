@@ -99,9 +99,94 @@
   <node type="jetbrains.mps.regexp.Regexps" id="1174662820983">
     <property name="name" value="Common" />
     <node role="regexp" type="jetbrains.mps.regexp.RegexpDeclaration" id="1174662825047">
-      <property name="description" value="url regexp" />
-      <property name="name" value="url" />
-      <node role="regexp" type="jetbrains.mps.regexp.Regexp" id="1174662825048" />
+      <property name="description" value="url like http://www.jetbrains.com/mps" />
+      <property name="name" value="URL" />
+      <node role="regexp" type="jetbrains.mps.regexp.SeqRegexp" id="1174663455900">
+        <node role="left" type="jetbrains.mps.regexp.RegexpDeclarationReferenceRegexp" id="1174663453508">
+          <link role="regexp" targetNodeId="1174663242478" resolveInfo="PROTOCOL" />
+        </node>
+        <node role="right" type="jetbrains.mps.regexp.SeqRegexp" id="1174663461405">
+          <node role="left" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174663455901">
+            <property name="text" value="://" />
+          </node>
+          <node role="right" type="jetbrains.mps.regexp.SeqRegexp" id="1174663465251">
+            <node role="left" type="jetbrains.mps.regexp.RegexpDeclarationReferenceRegexp" id="1174663461406">
+              <link role="regexp" targetNodeId="1174663261663" resolveInfo="HOST_NAME" />
+            </node>
+            <node role="right" type="jetbrains.mps.regexp.QuestionRegexp" id="1174663521896">
+              <node role="regexp" type="jetbrains.mps.regexp.ParensRegexp" id="1174663510547">
+                <node role="expr" type="jetbrains.mps.regexp.SeqRegexp" id="1174663518706">
+                  <node role="left" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174663515096">
+                    <property name="text" value="/" />
+                  </node>
+                  <node role="right" type="jetbrains.mps.regexp.RegexpDeclarationReferenceRegexp" id="1174663518707">
+                    <link role="regexp" targetNodeId="1174663417344" resolveInfo="PATH" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="regexp" type="jetbrains.mps.regexp.RegexpDeclaration" id="1174663417344">
+      <property name="description" value="http path" />
+      <property name="name" value="PATH" />
+      <node role="regexp" type="jetbrains.mps.regexp.PlusRegexp" id="1174663501934">
+        <node role="regexp" type="jetbrains.mps.regexp.PositiveSymbolClassRegexp" id="1174663488710">
+          <node role="part" type="jetbrains.mps.regexp.PredefinedSymbolClassSymbolClassPart" id="1174663490587">
+            <link role="declaration" targetNodeId="1174554738336" resolveInfo="\w" />
+          </node>
+          <node role="part" type="jetbrains.mps.regexp.PredefinedSymbolClassSymbolClassPart" id="1174663499074">
+            <link role="declaration" targetNodeId="1174554872719" resolveInfo="\p{Punct}" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="regexp" type="jetbrains.mps.regexp.RegexpDeclaration" id="1174663261663">
+      <property name="description" value="internet host name" />
+      <property name="name" value="HOST_NAME" />
+      <node role="regexp" type="jetbrains.mps.regexp.SeqRegexp" id="1174663366714">
+        <node role="left" type="jetbrains.mps.regexp.PlusRegexp" id="1174663358555">
+          <node role="regexp" type="jetbrains.mps.regexp.PositiveSymbolClassRegexp" id="1174663325062">
+            <node role="part" type="jetbrains.mps.regexp.CharacterSymbolClassPart" id="1174663330908">
+              <property name="character" value="-" />
+            </node>
+            <node role="part" type="jetbrains.mps.regexp.PredefinedSymbolClassSymbolClassPart" id="1174663345427">
+              <link role="declaration" targetNodeId="1174554738336" resolveInfo="\w" />
+            </node>
+          </node>
+        </node>
+        <node role="right" type="jetbrains.mps.regexp.StarRegexp" id="1174663404529">
+          <node role="regexp" type="jetbrains.mps.regexp.ParensRegexp" id="1174663366715">
+            <node role="expr" type="jetbrains.mps.regexp.SeqRegexp" id="1174663379534">
+              <node role="left" type="jetbrains.mps.regexp.DotRegexp" id="1174663370967" />
+              <node role="right" type="jetbrains.mps.regexp.PlusRegexp" id="1174663399510">
+                <node role="regexp" type="jetbrains.mps.regexp.PredefinedSymbolClassRegexp" id="1174663379535">
+                  <link role="symbolClass" targetNodeId="1174554738336" resolveInfo="\w" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="regexp" type="jetbrains.mps.regexp.RegexpDeclaration" id="1174663242478">
+      <property name="description" value="common internet protocol" />
+      <property name="name" value="PROTOCOL" />
+      <node role="regexp" type="jetbrains.mps.regexp.OrRegexp" id="1174663254029">
+        <node role="left" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174663252028">
+          <property name="text" value="http" />
+        </node>
+        <node role="right" type="jetbrains.mps.regexp.OrRegexp" id="1174663256361">
+          <node role="left" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174663254032">
+            <property name="text" value="https" />
+          </node>
+          <node role="right" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174663256364">
+            <property name="text" value="ftp" />
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>
