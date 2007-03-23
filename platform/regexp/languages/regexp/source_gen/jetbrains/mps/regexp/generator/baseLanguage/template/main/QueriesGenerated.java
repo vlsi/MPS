@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.regexp.RegexpProcessor;
 import jetbrains.mps.regexp.structure.Regexp;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
@@ -18,6 +18,12 @@ import java.util.ArrayList;
 
 public class QueriesGenerated {
 
+  public static boolean baseMappingRule_Condition_1174659423207(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getAncestor(node, "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false, false), "jetbrains.mps.regexp.structure.MatchRegexpStatement");
+  }
+  public static boolean baseMappingRule_Condition_1174659531465(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getAncestor(node, "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false, false), "jetbrains.mps.regexp.structure.ReplaceWithRegexpExpression");
+  }
   public static String propertyMacro_GetPropertyValue_1174511161822(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return RegexpProcessor.toString(((Regexp)SNodeOperations.getAdapter(SLinkOperations.getTarget(node, "regexp", true))));
   }
@@ -39,6 +45,16 @@ public class QueriesGenerated {
     RegexpProcessor.toString(((Regexp)SNodeOperations.getAdapter(SLinkOperations.getTarget(SLinkOperations.getTarget(matcher, "regexp", true), "regexp", true))), matchparens);
     return "" + (1 + matchparens.indexOf(((MatchParensRegexp)SNodeOperations.getAdapter(parens))));
   }
+  public static String propertyMacro_GetPropertyValue_1174658262046(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return generator.getGeneratorSessionContext().createUniqueName("_Replacer");
+  }
+  public static String propertyMacro_GetPropertyValue_1174659618559(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode parens = SLinkOperations.getTarget(node, "match", false);
+    SNode matcher = SNodeOperations.getAncestor(parens, "jetbrains.mps.regexp.structure.ReplaceWithRegexpExpression", false, false);
+    List<MatchParensRegexp> matchparens = new ArrayList<MatchParensRegexp>();
+    RegexpProcessor.toString(((Regexp)SNodeOperations.getAdapter(SLinkOperations.getTarget(SLinkOperations.getTarget(matcher, "regexp", true), "regexp", true))), matchparens);
+    return "" + (1 + matchparens.indexOf(((MatchParensRegexp)SNodeOperations.getAdapter(parens))));
+  }
   public static SNode referenceMacro_GetReferent_1174655509856(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode parens = SLinkOperations.getTarget(node, "match", false);
     SNode ruc = SNodeOperations.getAncestor(parens, "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false, false);
@@ -51,6 +67,18 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(node, "expr", true);
   }
   public static SNode sourceNodeQuery_1174512937325(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "body", true);
+  }
+  public static SNode sourceNodeQuery_1174659183903(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "expr", true);
+  }
+  public static SNode sourceNodeQuery_1174659193709(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "regexp", true);
+  }
+  public static SNode sourceNodeQuery_1174659237673(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "replaceBlock", true);
+  }
+  public static SNode sourceNodeQuery_1174658308251(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "body", true);
   }
 }

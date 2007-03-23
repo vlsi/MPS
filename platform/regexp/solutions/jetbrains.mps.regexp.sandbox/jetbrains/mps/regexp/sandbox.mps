@@ -178,13 +178,23 @@
               </node>
               <node role="replaceBlock" type="jetbrains.mps.regexp.ReplaceBlock" id="1174657590414">
                 <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1174657590415">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1174659360255">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.AssignmentExpression" id="1174659360788">
+                      <node role="lValue" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174659360256">
+                        <link role="variableDeclaration" targetNodeId="1174564396603" resolveInfo="email" />
+                      </node>
+                      <node role="rValue" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174659362695">
+                        <link role="variableDeclaration" targetNodeId="1174564396603" resolveInfo="email" />
+                      </node>
+                    </node>
+                  </node>
                   <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1174657609813">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1174657618316">
-                      <node role="rightExpression" type="jetbrains.mps.regexp.MatchVariableReference" id="1174657619460">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1174659729958">
+                      <node role="rightExpression" type="jetbrains.mps.regexp.MatchVariableReference" id="1174659730883">
                         <link role="match" targetNodeId="1174657603512" resolveInfo="user" />
                       </node>
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1174657610831">
-                        <property name="value" value="zzzzz" />
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1174659317441">
+                        <property name="value" value="abcdef" />
                       </node>
                     </node>
                   </node>
