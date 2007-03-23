@@ -16,29 +16,55 @@
       <link role="concept" targetNodeId="4.1068431474542" />
     </node>
     <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1174646542323">
-      <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1174647095688">
-        <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1174647095689">
-          <property name="name" value="n" />
-          <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1174647095690">
-            <link role="classifier" extResolveInfo="2.[Classifier]SNode" />
+      <node role="statement" type="jetbrains.mps.bootstrap.helgins.CreateEquationStatement" id="1174658636828">
+        <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.TypeOfExpression" id="1174658642769">
+          <node role="term" type="jetbrains.mps.bootstrap.helgins.ApplicableNodeReference" id="1174658644208">
+            <link role="applicableNode" targetNodeId="1174646557887" resolveInfo="varDecl" />
           </node>
-          <node role="initializer" type="jetbrains.mps.bootstrap.helgins.Quotation" id="1174647224717">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.ClassifierType" id="1174647231532">
-              <link role="classifier" extResolveInfo="1.[Classifier]String" />
-            </node>
+        </node>
+        <node role="rightExpression" type="jetbrains.mps.bootstrap.helgins.Quotation" id="1174658648272">
+          <node role="quotedNode" type="jetbrains.mps.baseLanguage.ClassifierType" id="1174658651196">
+            <link role="classifier" extResolveInfo="1.[Classifier]String" />
           </node>
         </node>
       </node>
-      <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1174654287535">
-        <node role="expression" type="jetbrains.mps.baseLanguage.AssignmentExpression" id="1174654288116">
-          <node role="lValue" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174654287536">
-            <link role="variableDeclaration" targetNodeId="1174647095689" resolveInfo="n" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1174662482595">
+        <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1174662482596">
+          <property name="name" value="n" />
+          <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1174662482597" />
+          <node role="initializer" type="jetbrains.mps.baseLanguage.NullLiteral" id="1174662488989" />
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1174663004492">
+        <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1174663004493">
+          <property name="name" value="k" />
+          <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1174663004494" />
+          <node role="initializer" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174663011793">
+            <link role="variableDeclaration" targetNodeId="1174662482596" resolveInfo="n" />
           </node>
-          <node role="rValue" type="jetbrains.mps.bootstrap.helgins.TypeOfExpression" id="1174657646159">
-            <node role="term" type="jetbrains.mps.bootstrap.helgins.ApplicableNodeReference" id="1174657648802">
-              <link role="applicableNode" targetNodeId="1174646557887" resolveInfo="varDecl" />
-            </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.bootstrap.helgins.CreateLessThanInequationStatement" id="1174664832755">
+        <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.Quotation" id="1174662536829">
+          <node role="quotedNode" type="jetbrains.mps.baseLanguage.ClassifierType" id="1174662540690">
+            <link role="classifier" extResolveInfo="3.[Classifier]Set" />
           </node>
+        </node>
+        <node role="rightExpression" type="jetbrains.mps.bootstrap.helgins.TypeOfExpression" id="1174662545066">
+          <node role="term" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174662548240">
+            <link role="variableDeclaration" targetNodeId="1174662482596" resolveInfo="n" />
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.bootstrap.helgins.CreateComparableEquationStatement" id="1174664912734">
+        <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174662967005">
+          <link role="variableDeclaration" targetNodeId="1174662482596" resolveInfo="n" />
+        </node>
+        <node role="rightExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174662972116">
+          <link role="variableDeclaration" targetNodeId="1174662482596" resolveInfo="n" />
+        </node>
+        <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174663025950">
+          <link role="variableDeclaration" targetNodeId="1174663004493" resolveInfo="k" />
         </node>
       </node>
     </node>

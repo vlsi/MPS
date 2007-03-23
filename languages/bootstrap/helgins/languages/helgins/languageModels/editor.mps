@@ -829,5 +829,44 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1174664104035">
+    <link role="conceptDeclaration" targetNodeId="1.1174660718586" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1174664105912">
+      <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1174664105913">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="1.1174660783413" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_ConceptProperty" id="1174664114276">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="2.1137473891462" />
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1174664145542">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1174664147918">
+            <link role="replacementConcept" targetNodeId="1.1174660718586" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1174664105915">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="1.1174660783414" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1174664105916">
+        <property name="text" value=";" />
+        <property name="drawBorder" value="false" />
+      </node>
+    </node>
+    <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1174664133789">
+      <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1174664133790">
+        <property name="text" value="node to check =" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1174664133791">
+        <property name="drawBorder" value="false" />
+        <property name="noTargetText" value="&lt;auto&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1174662598553" />
+      </node>
+    </node>
+  </node>
 </model>
 

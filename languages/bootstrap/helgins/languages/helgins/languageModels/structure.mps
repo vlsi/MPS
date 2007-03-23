@@ -139,5 +139,61 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174658326157">
+    <property name="name" value="CreateEquationStatement" />
+    <link role="extends" targetNodeId="1174660718586" resolveInfo="AbstractEquationStatement" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174658543003">
+      <property name="value" value=":==:" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174660718586">
+    <property name="name" value="AbstractEquationStatement" />
+    <link role="extends" targetNodeId="2.1068580123157" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174660783413">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="leftExpression" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="2.1068431790191" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174660783414">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="rightExpression" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="2.1068431790191" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174662598553">
+      <property name="role" value="nodeToCheck" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="2.1068431790191" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1174664393854">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174663118805">
+    <property name="name" value="CreateLessThanInequationStatement" />
+    <link role="extends" targetNodeId="1174660718586" resolveInfo="AbstractEquationStatement" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174663199540">
+      <property name="value" value=":&lt;=:" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174663239020">
+    <property name="name" value="CreateGreaterThanInequationStatement" />
+    <link role="extends" targetNodeId="1174660718586" resolveInfo="AbstractEquationStatement" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174663257474">
+      <property name="value" value=":&gt;=:" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174663314467">
+    <property name="name" value="CreateComparableEquationStatement" />
+    <link role="extends" targetNodeId="1174660718586" resolveInfo="AbstractEquationStatement" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174663330968">
+      <property name="value" value=":~~:" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
 </model>
 

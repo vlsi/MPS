@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.smodel.BaseAdapter;
@@ -24,6 +24,15 @@ import jetbrains.mps.bootstrap.helgins.structure.ReferenceAntiquotation_Annotati
 
 public class QueriesGenerated {
 
+  public static boolean baseMappingRule_Condition_1174662794354(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "nodeToCheck", true) != null;
+  }
+  public static boolean baseMappingRule_Condition_1174661049584(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "leftExpression", true), "jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression");
+  }
+  public static boolean baseMappingRule_Condition_1174661198791(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "rightExpression", true), "jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression");
+  }
   public static String propertyMacro_GetPropertyValue_1174586557380(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return "parameter_" + node.getId();
   }
@@ -312,5 +321,40 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_1174657742834(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "term", true);
+  }
+  public static SNode sourceNodeQuery_1174659246360(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "leftExpression", true);
+  }
+  public static SNode sourceNodeQuery_1174659256692(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "rightExpression", true);
+  }
+  public static SNode sourceNodeQuery_1174661816168(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode toe = SLinkOperations.getTarget(node, "leftExpression", true);
+    return SLinkOperations.getTarget(toe, "term", true);
+  }
+  public static SNode sourceNodeQuery_1174661930271(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode toe = SLinkOperations.getTarget(node, "rightExpression", true);
+    return SLinkOperations.getTarget(toe, "term", true);
+  }
+  public static SNode sourceNodeQuery_1174662846575(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "nodeToCheck", true);
+  }
+  public static SNode sourceNodeQuery_1174663601249(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "leftExpression", true);
+  }
+  public static SNode sourceNodeQuery_1174663601257(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "rightExpression", true);
+  }
+  public static SNode sourceNodeQuery_1174663674476(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "leftExpression", true);
+  }
+  public static SNode sourceNodeQuery_1174663674484(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "rightExpression", true);
+  }
+  public static SNode sourceNodeQuery_1174663713984(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "leftExpression", true);
+  }
+  public static SNode sourceNodeQuery_1174663713992(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "rightExpression", true);
   }
 }
