@@ -1881,6 +1881,16 @@
       </node>
       <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_ExecuteFunction" id="1174345740552">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1174345740553">
+          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1174614246414">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.VarDeclaration" id="1174614246415">
+              <property name="name" value="nodeEditorComponent" />
+              <node role="type" type="jetbrains.mps.baseLanguage.Type" id="1174614246416" />
+              <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1174346129692">
+                <link role="baseMethodDeclaration" extResolveInfo="21.method ([Classifier]EditorContext).([InstanceMethodDeclaration]getNodeEditorComponent() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [AbstractEditorComponent]))" />
+                <node role="instance" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_editorContext" id="1174346114314" />
+              </node>
+            </node>
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1174346169054">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1174346169055">
               <property name="name" value="name" />
@@ -1890,9 +1900,8 @@
               <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1174346101625">
                 <link role="baseMethodDeclaration" extResolveInfo="23.static method ([Classifier]JOptionPane).([StaticMethodDeclaration]showInputDialog((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Component]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
                 <link role="classConcept" extResolveInfo="23.[Classifier]JOptionPane" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1174346129692">
-                  <link role="baseMethodDeclaration" extResolveInfo="21.method ([Classifier]EditorContext).([InstanceMethodDeclaration]getNodeEditorComponent() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [AbstractEditorComponent]))" />
-                  <node role="instance" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_editorContext" id="1174346114314" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174614246433">
+                  <link role="variableDeclaration" targetNodeId="1174614246415" resolveInfo="nodeEditorComponent" />
                 </node>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1174346137241">
                   <property name="value" value="Enter variable name" />

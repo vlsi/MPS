@@ -18,7 +18,7 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
     myBuffer = buffer;
   }
 
-  protected TextGenBuffer getBuffer() {
+  protected final TextGenBuffer getBuffer() {
     return myBuffer;
   }
 
@@ -52,4 +52,13 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
   protected void indentBuffer() {
     myBuffer.indentBuffer();
   }
+
+  protected final Object getUserObject(Object key) {
+    return myBuffer.getUserObject(key);
+  }
+
+  protected final void putUserObject(Object key, Object o) {
+    myBuffer.putUserObject(key, o);
+  }
+
 }
