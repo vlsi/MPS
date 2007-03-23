@@ -44,6 +44,9 @@
           </node>
         </node>
       </node>
+      <node role="statement" type="jetbrains.mps.bootstrap.helgins.TypeVarDeclaration" id="1174665786250">
+        <property name="name" value="T" />
+      </node>
       <node role="statement" type="jetbrains.mps.bootstrap.helgins.CreateLessThanInequationStatement" id="1174664832755">
         <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.Quotation" id="1174662536829">
           <node role="quotedNode" type="jetbrains.mps.baseLanguage.ClassifierType" id="1174662540690">
@@ -60,8 +63,8 @@
         <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174662967005">
           <link role="variableDeclaration" targetNodeId="1174662482596" resolveInfo="n" />
         </node>
-        <node role="rightExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174662972116">
-          <link role="variableDeclaration" targetNodeId="1174662482596" resolveInfo="n" />
+        <node role="rightExpression" type="jetbrains.mps.bootstrap.helgins.TypeVarReference" id="1174666380904">
+          <link role="typeVarDeclaration" targetNodeId="1174665786250" resolveInfo="T" />
         </node>
         <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174663025950">
           <link role="variableDeclaration" targetNodeId="1174663004493" resolveInfo="k" />

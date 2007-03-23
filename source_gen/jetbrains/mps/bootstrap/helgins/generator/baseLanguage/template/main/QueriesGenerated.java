@@ -97,6 +97,12 @@ public class QueriesGenerated {
     SNode ruleConcept = SNodeOperations.getConceptDeclaration(node);
     return SPropertyOperations.getString(node, "name") + "_" + ruleConcept;
   }
+  public static String propertyMacro_GetPropertyValue_1174666030638(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SPropertyOperations.getBoolean(node, "nullable") + "";
+  }
+  public static String propertyMacro_GetPropertyValue_1174666025058(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SPropertyOperations.getString(node, "name") + "_typevar_" + node.getId();
+  }
   public static SNode referenceMacro_GetReferent_1174599415255(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode quotation = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.helgins.structure.Quotation", false, false);
     SNode antiquotation = node;
@@ -172,6 +178,10 @@ public class QueriesGenerated {
     SNode method = generator.findNodeBuilderForSource(rule, "mainMethodForRule").getTargetNode();
     InstanceMethodDeclaration method_ = (InstanceMethodDeclaration)BaseAdapter.fromNode(method);
     return method_.getParameters().get(0).getNode();
+  }
+  public static SNode referenceMacro_GetReferent_1174666452984(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode statement = generator.findNodeBuilderForSource(SLinkOperations.getTarget(node, "typeVarDeclaration", false), "typeVarDeclaration").getTargetNode();
+    return SLinkOperations.getTarget(statement, "localVariableDeclaration", true);
   }
   public static boolean ifMacro_Condition_1174589744219(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return false;

@@ -195,5 +195,33 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174665551739">
+    <property name="name" value="TypeVarDeclaration" />
+    <link role="extends" targetNodeId="2.1068580123157" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1174665590537">
+      <property name="name" value="nullable" />
+      <link role="dataType" targetNodeId="1.1082983657063" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1174665574974">
+      <link role="intfc" targetNodeId="1.1169194658468" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174665724832">
+      <property name="value" value="var" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174665812299">
+      <property name="value" value="helgins type variable" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174666260556">
+    <property name="name" value="TypeVarReference" />
+    <link role="extends" targetNodeId="2.1068431790191" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174666276259">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="typeVarDeclaration" />
+      <link role="target" targetNodeId="1174665551739" resolveInfo="TypeVarDeclaration" />
+    </node>
+  </node>
 </model>
 
