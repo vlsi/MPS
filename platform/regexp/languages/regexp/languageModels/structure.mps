@@ -381,5 +381,29 @@
     <property name="name" value="ReplaceBlock" />
     <link role="extends" targetNodeId="2.1152728232947" />
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174660461415">
+    <property name="name" value="LazyStarRegexp" />
+    <link role="extends" targetNodeId="1174485235885" resolveInfo="UnaryRegexp" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174660474120">
+      <property name="value" value="*?" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174660505718">
+    <property name="name" value="LazyPlusRegexp" />
+    <link role="extends" targetNodeId="1174485235885" resolveInfo="UnaryRegexp" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174660515579">
+      <property name="value" value="+?" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174660533095">
+    <property name="name" value="LazyQuestionRegexp" />
+    <link role="extends" targetNodeId="1174485235885" resolveInfo="UnaryRegexp" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174660567895">
+      <property name="value" value="??" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
 </model>
 

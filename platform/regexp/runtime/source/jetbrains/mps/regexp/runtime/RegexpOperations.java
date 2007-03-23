@@ -4,9 +4,8 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 public class RegexpOperations {
-  public static String replace(String text, String regexp, Replacer replacer) {
-    Pattern p = Pattern.compile(regexp);
-    Matcher m = p.matcher(text);
+  public static String replace(String text, Pattern regexp, Replacer replacer) {
+    Matcher m = regexp.matcher(text);
     StringBuilder newText = new StringBuilder();
     int current = 0;
     while (m.find()) {
