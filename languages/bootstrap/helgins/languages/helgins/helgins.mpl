@@ -6,6 +6,9 @@
   <actions>
     <model modelUID="jetbrains.mps.bootstrap.helgins.actions" />
   </actions>
+  <constraints>
+    <model modelUID="jetbrains.mps.bootstrap.helgins.constraints" />
+  </constraints>
   <editor>
     <model modelUID="jetbrains.mps.bootstrap.helgins.editor" />
   </editor>

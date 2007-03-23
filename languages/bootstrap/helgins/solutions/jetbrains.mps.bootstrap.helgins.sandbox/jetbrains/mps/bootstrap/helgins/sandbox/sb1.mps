@@ -47,6 +47,21 @@
       <node role="statement" type="jetbrains.mps.bootstrap.helgins.TypeVarDeclaration" id="1174665786250">
         <property name="name" value="T" />
       </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.BlockStatement" id="1174667818581">
+        <node role="statements" type="jetbrains.mps.baseLanguage.StatementList" id="1174667818582">
+          <node role="statement" type="jetbrains.mps.bootstrap.helgins.TypeVarDeclaration" id="1174667821177">
+            <property name="name" value="S" />
+          </node>
+          <node role="statement" type="jetbrains.mps.bootstrap.helgins.CreateLessThanInequationStatement" id="1174667829007">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174667831088">
+              <link role="variableDeclaration" targetNodeId="1174662482596" resolveInfo="n" />
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.bootstrap.helgins.TypeVarReference" id="1174667841432">
+              <link role="typeVarDeclaration" targetNodeId="1174667821177" resolveInfo="S" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="statement" type="jetbrains.mps.bootstrap.helgins.CreateLessThanInequationStatement" id="1174664832755">
         <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.Quotation" id="1174662536829">
           <node role="quotedNode" type="jetbrains.mps.baseLanguage.ClassifierType" id="1174662540690">
@@ -63,13 +78,25 @@
         <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174662967005">
           <link role="variableDeclaration" targetNodeId="1174662482596" resolveInfo="n" />
         </node>
-        <node role="rightExpression" type="jetbrains.mps.bootstrap.helgins.TypeVarReference" id="1174666380904">
+        <node role="rightExpression" type="jetbrains.mps.bootstrap.helgins.TypeVarReference" id="1174667731164">
           <link role="typeVarDeclaration" targetNodeId="1174665786250" resolveInfo="T" />
         </node>
         <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174663025950">
           <link role="variableDeclaration" targetNodeId="1174663004493" resolveInfo="k" />
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.helgins.InferenceRule" id="1174667739665">
+    <property name="name" value="rule2" />
+    <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1174667739666">
+      <node role="statement" type="jetbrains.mps.bootstrap.helgins.TypeVarDeclaration" id="1174667794704">
+        <property name="name" value="VV" />
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.bootstrap.helgins.ConceptReference" id="1174667744731">
+      <property name="name" value="arrayType" />
+      <link role="concept" targetNodeId="4.1070534760951" />
     </node>
   </node>
 </model>
