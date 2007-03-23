@@ -156,8 +156,11 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174512414484">
     <property name="name" value="MatchRegexpStatement" />
     <link role="extends" targetNodeId="2.1068580123157" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1174653421060">
+      <link role="intfc" targetNodeId="1174653354106" resolveInfo="RegexpUsingConstruction" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174512444738">
-      <property name="value" value="re match" />
+      <property name="value" value="if (expr matches regexp) {" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174512449303">
@@ -175,12 +178,6 @@
       <property name="role" value="expr" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="2.1068431790191" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174512434174">
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="regexp" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1174510518094" resolveInfo="RegexpExpression" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174552240608">
@@ -346,6 +343,15 @@
       <property name="sourceCardinality" value="1" />
       <property name="role" value="match" />
       <link role="target" targetNodeId="1174564062919" resolveInfo="MatchParensRegexp" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptDeclaration" id="1174653354106">
+    <property name="name" value="RegexpUsingConstruction" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174653387388">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="regexp" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1174510518094" resolveInfo="RegexpExpression" />
     </node>
   </node>
 </model>

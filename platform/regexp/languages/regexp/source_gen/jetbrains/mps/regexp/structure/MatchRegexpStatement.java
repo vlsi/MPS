@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.StatementList;
 import jetbrains.mps.baseLanguage.structure.Expression;
 
-public class MatchRegexpStatement extends Statement {
+public class MatchRegexpStatement extends Statement implements RegexpUsingConstruction {
   public static String BODY = "body";
   public static String EXPR = "expr";
   public static String REGEXP = "regexp";
