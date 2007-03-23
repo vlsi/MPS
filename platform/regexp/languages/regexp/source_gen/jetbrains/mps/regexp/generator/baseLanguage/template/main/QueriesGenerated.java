@@ -27,9 +27,6 @@ public class QueriesGenerated {
   public static String propertyMacro_GetPropertyValue_1174511161822(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return RegexpProcessor.toString(((Regexp)SNodeOperations.getAdapter(SLinkOperations.getTarget(node, "regexp", true))));
   }
-  public static String propertyMacro_GetPropertyValue_1174511849647(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return RegexpProcessor.toString(((Regexp)SNodeOperations.getAdapter(SLinkOperations.getTarget(node, "regexp", true))));
-  }
   public static String propertyMacro_GetPropertyValue_1174655313358(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     List<SNode> nodes = SNodeOperations.getAncestors(node, "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false);
     return "_pattern_" + SequenceOperations.getSize(nodes);

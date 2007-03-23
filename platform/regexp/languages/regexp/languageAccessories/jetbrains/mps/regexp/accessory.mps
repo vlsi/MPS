@@ -96,5 +96,13 @@
       <property name="name" value="\P{InGreek}" />
     </node>
   </node>
+  <node type="jetbrains.mps.regexp.Regexps" id="1174662820983">
+    <property name="name" value="Common" />
+    <node role="regexp" type="jetbrains.mps.regexp.RegexpDeclaration" id="1174662825047">
+      <property name="description" value="url regexp" />
+      <property name="name" value="url" />
+      <node role="regexp" type="jetbrains.mps.regexp.Regexp" id="1174662825048" />
+    </node>
+  </node>
 </model>
 

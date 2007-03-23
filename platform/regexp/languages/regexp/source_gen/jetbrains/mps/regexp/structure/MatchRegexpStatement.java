@@ -38,10 +38,10 @@ public class MatchRegexpStatement extends Statement implements RegexpUsingConstr
   public void setExpr(Expression node) {
     super.setChild(MatchRegexpStatement.EXPR, node);
   }
-  public RegexpExpression getRegexp() {
-    return (RegexpExpression)this.getChild(MatchRegexpStatement.REGEXP);
+  public Expression getRegexp() {
+    return (Expression)this.getChild(MatchRegexpStatement.REGEXP);
   }
-  public void setRegexp(RegexpExpression node) {
+  public void setRegexp(Expression node) {
     super.setChild(MatchRegexpStatement.REGEXP, node);
   }
 }

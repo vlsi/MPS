@@ -11,6 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class RegexpDeclaration extends BaseConcept implements INamedConcept {
   public static String REGEXP = "regexp";
+  public static String DESCRIPTION = "description";
   public static String NAME = "name";
 
   public  RegexpDeclaration(SNode node) {
@@ -29,6 +30,12 @@ public class RegexpDeclaration extends BaseConcept implements INamedConcept {
   }
   public void setRegexp(Regexp node) {
     super.setChild(RegexpDeclaration.REGEXP, node);
+  }
+  public String getDescription() {
+    return this.getProperty(RegexpDeclaration.DESCRIPTION);
+  }
+  public void setDescription(String value) {
+    this.setProperty(RegexpDeclaration.DESCRIPTION, value);
   }
   public String getName() {
     return this.getProperty(RegexpDeclaration.NAME);
