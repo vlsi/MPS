@@ -3,6 +3,9 @@
   <structure>
     <model modelUID="jetbrains.mps.regexp.structure" />
   </structure>
+  <helginsTypeSystem>
+    <model modelUID="jetbrains.mps.regexp.helgins" />
+  </helginsTypeSystem>
   <actions>
     <model modelUID="jetbrains.mps.regexp.actions" />
   </actions>

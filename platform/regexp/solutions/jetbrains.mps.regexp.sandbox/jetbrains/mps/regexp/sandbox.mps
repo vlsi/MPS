@@ -91,6 +91,38 @@
                 </node>
               </node>
             </node>
+            <node role="statement" type="jetbrains.mps.regexp.MatchRegexpStatement" id="1174654916182">
+              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1174654916183">
+                <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1174654933630">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1174654938576">
+                    <link role="baseMethodDeclaration" extResolveInfo="3.method ([Classifier]PrintStream).([InstanceMethodDeclaration]println((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
+                    <node role="instance" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1174654933631">
+                      <link role="classifier" extResolveInfo="2.[Classifier]System" />
+                      <link role="variableDeclaration" extResolveInfo="2.static field ([Classifier]System).([StaticFieldDeclaration]out : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [PrintStream]))" />
+                    </node>
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.PlusExpression" id="1174655085990">
+                      <node role="rightExpression" type="jetbrains.mps.regexp.MatchVariableReference" id="1174655089821">
+                        <link role="match" targetNodeId="1174654922689" resolveInfo="abdef" />
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1174654939577">
+                        <property name="value" value="never happens" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="expr" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174654917733">
+                <link role="variableDeclaration" targetNodeId="1174564396603" resolveInfo="email" />
+              </node>
+              <node role="regexp" type="jetbrains.mps.regexp.InlineRegexpExpression" id="1174654919765">
+                <node role="regexp" type="jetbrains.mps.regexp.MatchParensRegexp" id="1174654922689">
+                  <property name="name" value="abdef" />
+                  <node role="regexp" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174654928520">
+                    <property name="text" value="abddef" />
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
           <node role="expr" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174564408549">
             <link role="variableDeclaration" targetNodeId="1174564396603" resolveInfo="email" />
