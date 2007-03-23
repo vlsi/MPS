@@ -354,5 +354,32 @@
       <link role="target" targetNodeId="1174510518094" resolveInfo="RegexpExpression" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174655989549">
+    <property name="name" value="ReplaceWithRegexpExpression" />
+    <link role="extends" targetNodeId="2.1068431790191" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174657169497">
+      <property name="value" value="replace with regexp" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174656103019">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="expr" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="2.1068431790191" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174656339468">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="replaceBlock" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1174656254036" resolveInfo="ReplaceBlock" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1174656048646">
+      <link role="intfc" targetNodeId="1174653354106" resolveInfo="RegexpUsingConstruction" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174656254036">
+    <property name="name" value="ReplaceBlock" />
+    <link role="extends" targetNodeId="2.1152728232947" />
+  </node>
 </model>
 

@@ -167,6 +167,42 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1174657478685">
+          <node role="expression" type="jetbrains.mps.baseLanguage.AssignmentExpression" id="1174657478984">
+            <node role="lValue" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174657478686">
+              <link role="variableDeclaration" targetNodeId="1174564396603" resolveInfo="email" />
+            </node>
+            <node role="rValue" type="jetbrains.mps.regexp.ReplaceWithRegexpExpression" id="1174657590412">
+              <node role="expr" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174657607249">
+                <link role="variableDeclaration" targetNodeId="1174564396603" resolveInfo="email" />
+              </node>
+              <node role="replaceBlock" type="jetbrains.mps.regexp.ReplaceBlock" id="1174657590414">
+                <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1174657590415">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1174657609813">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1174657618316">
+                      <node role="rightExpression" type="jetbrains.mps.regexp.MatchVariableReference" id="1174657619460">
+                        <link role="match" targetNodeId="1174657603512" resolveInfo="user" />
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1174657610831">
+                        <property name="value" value="zzzzz" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="regexp" type="jetbrains.mps.regexp.InlineRegexpExpression" id="1174657595933">
+                <node role="regexp" type="jetbrains.mps.regexp.MatchParensRegexp" id="1174657603512">
+                  <property name="name" value="user" />
+                  <node role="regexp" type="jetbrains.mps.regexp.PlusRegexp" id="1174657603513">
+                    <node role="regexp" type="jetbrains.mps.regexp.PredefinedSymbolClassRegexp" id="1174657603514">
+                      <link role="symbolClass" targetNodeId="4.1174554738336" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
