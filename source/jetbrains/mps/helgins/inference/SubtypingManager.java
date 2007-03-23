@@ -9,7 +9,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.patterns.util.MatchingUtil;
 import jetbrains.mps.patterns.util.IMatchModifier;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.baseLanguage.structure.ClassifierType;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mpswiki.queryLanguage.structure.VariableCondition;
 import jetbrains.mpswiki.queryLanguage.structure.QueryPattern;
@@ -33,6 +32,17 @@ public class SubtypingManager {
   private ConceptToRulesMap<SupertypingRule> myConceptsToSupertypingRulesCache = new ConceptToRulesMap<SupertypingRule>();
 
   private TypeChecker myTypeChecker;
+
+   private IMatchModifier myMatchModifier = new IMatchModifier() {
+        public boolean accept(SNode node1, SNode node2) {
+          return BaseAdapter.isInstance(node1, RuntimeTypeVariable.class) ||
+                  BaseAdapter.isInstance(node2, RuntimeTypeVariable.class);
+        }
+
+        public void performAction(SNode node1, SNode node2) {
+          myTypeChecker.getEquationManager().addEquation(node1, node2, null); // todo: really null?
+        }
+      };
 
   public SubtypingManager(TypeChecker typeChecker) {
     myTypeChecker = typeChecker;
@@ -63,12 +73,20 @@ public class SubtypingManager {
   }
 
   public boolean isSubtype(SNode subtype, SNode supertype) {
+    return isSubtype(subtype, supertype, false);
+  }
+
+   /**
+   * may produce side effects, such as creating new type equations
+   */
+  public boolean isSubtype(SNode subtype, SNode supertype, boolean processVariables) {
 
     SNode subRepresentator = myTypeChecker.getEquationManager().getRepresentator(subtype);
     SNode superRepresentator = myTypeChecker.getEquationManager().getRepresentator(supertype);
 
     //reflexivity:
-    if (MatchingUtil.matchNodes(subRepresentator, superRepresentator)) return true;
+    IMatchModifier matchModifier = processVariables ? myMatchModifier : IMatchModifier.DEFAULT;
+    if (MatchingUtil.matchNodes(subRepresentator, superRepresentator, matchModifier)) return true;
 
     if (subRepresentator == null || superRepresentator == null) {
       return false;
@@ -86,11 +104,11 @@ public class SubtypingManager {
     SNode superRepresentator = myTypeChecker.getEquationManager().getRepresentator(supertype);
 
     //supertypes
-    Matcher m1 = new MySimpleMatcher(superRepresentator, myTypeChecker);
+    Matcher m1 = new MySimpleMatcher(superRepresentator, myMatchModifier);
     if (searchInSupertypes(subRepresentator, m1)) return true;
 
     //subtypes
-    Matcher m2 = new MySimpleMatcher(subRepresentator, myTypeChecker);
+    Matcher m2 = new MySimpleMatcher(subRepresentator, myMatchModifier);
     if (searchInSubtypes(superRepresentator, m2)) return true;
 
     return false;
@@ -415,24 +433,14 @@ public class SubtypingManager {
     boolean matches(SNode nodeToMatch);
   }
 
+
   private static class MySimpleMatcher implements Matcher {
-    private TypeChecker myTypeChecker;
     private SNode myPattern;
+    private IMatchModifier myMatchModifier;
 
-    private IMatchModifier myMatchModifier = new IMatchModifier() {
-      public boolean accept(SNode node1, SNode node2) {
-        return BaseAdapter.isInstance(node1, RuntimeTypeVariable.class) ||
-                BaseAdapter.isInstance(node2, RuntimeTypeVariable.class);
-      }
-
-      public void performAction(SNode node1, SNode node2) {
-        myTypeChecker.getEquationManager().addEquation(node1, node2, null); // todo: really null?
-      }
-    };
-
-    public MySimpleMatcher(SNode pattern, TypeChecker typeChecker) {
+    public MySimpleMatcher(SNode pattern, IMatchModifier matchModifier) {
       myPattern = pattern;
-      myTypeChecker = typeChecker;
+      myMatchModifier = matchModifier;
     }
 
     public boolean matches(SNode nodeToMatch) {

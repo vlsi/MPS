@@ -13,6 +13,7 @@
   <module>
     <moduleRoot path="${mps_home}\languages\baseLanguage\language\baseLanguage.mpl" />
     <moduleRoot path="${mps_home}\languages\bootstrap\smodelLanguage\language\smodelLanguage.mpl" />
+    <moduleRoot path="${mps_home}\languages\patternLanguage\languages\patterns\patterns.mpl" />
   </module>
   <accessoryModels />
   <generators>
@@ -24,6 +25,7 @@
         <moduleRoot path="${mps_home}\languages\baseLanguage\language\baseLanguage.mpl" />
       </module>
       <external-templates />
+      <mapping-priorities />
     </generator>
   </generators>
   <classPath />

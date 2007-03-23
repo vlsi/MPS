@@ -165,7 +165,15 @@ public class MatchingUtil {
         }
         if (!matchNodes(child1, child2)) return false;
       }
-      if (childrenIterator.hasNext() && childrenIterator.next() != null) return false; //the first has more children
+      while (childrenIterator.hasNext()) {
+        SNode child1 = childrenIterator.next();
+        SNode child2 = null;
+        if (matchModifier.accept(child1, child2)) {
+          matchModifier.performAction(child1, child2);
+          continue;
+        }
+        if (!matchNodes(child1, child2)) return false;
+      }
     }  
 
     return true;

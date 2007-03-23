@@ -76,7 +76,7 @@ public class EquationManager {
     }
 
     // if strict subtyping
-    if (myTypeChecker.getSubtypingManager().isSubtype(subtypeRepresentator, supertypeRepresentator)) {
+    if (myTypeChecker.getSubtypingManager().isSubtype(subtypeRepresentator, supertypeRepresentator, true)) {
       return;
     }
 
@@ -104,10 +104,10 @@ public class EquationManager {
     if (myTypeChecker.getSubtypingManager().isComparableWRTRules(representator1, representator2)) {
       return;
     }
-    if (myTypeChecker.getSubtypingManager().isSubtype(representator1, representator2)) {
+    if (myTypeChecker.getSubtypingManager().isSubtype(representator1, representator2, true)) {
       return;
     }
-    if (myTypeChecker.getSubtypingManager().isSubtype(representator2, representator1)) {
+    if (myTypeChecker.getSubtypingManager().isSubtype(representator2, representator1, true)) {
       return;
     }
 
@@ -151,6 +151,11 @@ public class EquationManager {
   }
 
   private void processEquation(SNode var, SNode type, SNode nodeToCheck) {
+    if (type == null) {
+      if (((RuntimeTypeVariable) BaseAdapter.fromNode(var)).getNullable()) {
+        return;
+      }
+    }
     setParent(var, type);
     keepInequation(var, type);
     myTypeChecker.getTypeVariablesManager().addAllVarSetsOfSourceAndRemoveSourceFromThem(type, var);
