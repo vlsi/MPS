@@ -439,11 +439,11 @@ public class TypeChecker {
       }
 
       public void visitPropertyEvent(SModelPropertyEvent event) {
-        Set<SNode> dependentRoots = myNodesToDependentRoots.get(event.getNode());
+      /*  Set<SNode> dependentRoots = myNodesToDependentRoots.get(event.getNode());
         if (dependentRoots != null) {
           myCheckedRoots.removeAll(dependentRoots);
         }
-        myCheckedRoots.remove(event.getNode().getContainingRoot());
+        myCheckedRoots.remove(event.getNode().getContainingRoot());*/
       }
 
       public void visitReferenceEvent(SModelReferenceEvent event) {
