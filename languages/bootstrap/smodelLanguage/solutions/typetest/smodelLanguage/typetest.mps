@@ -2267,7 +2267,7 @@
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1173298169325">
                 <link role="variableDeclaration" targetNodeId="1173298018939" resolveInfo="node" />
               </node>
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkListAccessAsList" id="1173298177436">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkListAccessAsList" id="1174701817350">
                 <link role="link" targetNodeId="6.1068581517665" />
               </node>
             </node>
