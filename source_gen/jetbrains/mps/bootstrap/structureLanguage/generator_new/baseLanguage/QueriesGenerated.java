@@ -110,6 +110,12 @@ public class QueriesGenerated {
   public static String propertyMacro_GetPropertyValue_1169581811302(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return NameUtil.toConstantName(SPropertyOperations.getString(node, "name"));
   }
+  public static String propertyMacro_GetPropertyValue_1174697681347(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SPropertyOperations.getString(node, "constraint");
+  }
+  public static String propertyMacro_GetPropertyValue_1174696429121(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SPropertyOperations.getString(node, "name") + "_PropertySupport";
+  }
   public static String propertyMacro_GetPropertyValue_1169755844288(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SPropertyOperations.getString(node, "role");
   }
