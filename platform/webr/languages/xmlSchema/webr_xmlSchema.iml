@@ -12,6 +12,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPS" />
     <orderEntry type="module" module-name="webr_xml" />
+    <orderEntry type="module" module-name="webr_xmlInternal" />
     <orderEntryProperties />
   </component>
 </module>
