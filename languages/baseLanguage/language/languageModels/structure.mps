@@ -1932,6 +1932,14 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174335983096">
     <property name="name" value="VarDeclaration" />
     <link role="extends" targetNodeId="1068581242863" resolveInfo="LocalVariableDeclaration" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174838199332">
+      <property name="value" value="var" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174838203474">
+      <property name="value" value="var declaration" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
+    </node>
   </node>
 </model>
 
