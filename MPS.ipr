@@ -922,8 +922,8 @@
       <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/unitTest/baseLanguage_unitTest.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/unitTest/baseLanguage_unitTest.iml" group="baseLanguage/ext" />
       <module fileurl="file://$PROJECT_DIR$/projects/DataNavigationQueryFramework/berkeleyDbEntityStore/berkeleyDbEntityStore.iml" filepath="$PROJECT_DIR$/projects/DataNavigationQueryFramework/berkeleyDbEntityStore/berkeleyDbEntityStore.iml" group="Projects/dataNavigationQuery/runtime" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/extensions/blogs/blogs.iml" filepath="$PROJECT_DIR$/platform/webr/extensions/blogs/blogs.iml" group="platform/webr/extensions" />
-      <module fileurl="file://$PROJECT_DIR$/projects/businessRules/businessRules.iml" filepath="$PROJECT_DIR$/projects/businessRules/businessRules.iml" group="Projects/businessRules" />
-      <module fileurl="file://$PROJECT_DIR$/projects/businessRules/runtime/businessRules-runtime.iml" filepath="$PROJECT_DIR$/projects/businessRules/runtime/businessRules-runtime.iml" group="Projects/businessRules" />
+      <module fileurl="file://$PROJECT_DIR$/platform/businessRules/businessRules.iml" filepath="$PROJECT_DIR$/platform/businessRules/businessRules.iml" group="Projects/businessRules" />
+      <module fileurl="file://$PROJECT_DIR$/platform/businessRules/runtime/businessRules-runtime.iml" filepath="$PROJECT_DIR$/platform/businessRules/runtime/businessRules-runtime.iml" group="Projects/businessRules" />
       <module fileurl="file://$PROJECT_DIR$/projects/baseLanguageExt/collections-runtime/collections-runtime.iml" filepath="$PROJECT_DIR$/projects/baseLanguageExt/collections-runtime/collections-runtime.iml" group="Projects/BaseLanguageExt" />
       <module fileurl="file://$PROJECT_DIR$/projects/DataNavigationQueryFramework/core/core.iml" filepath="$PROJECT_DIR$/projects/DataNavigationQueryFramework/core/core.iml" group="Projects/dataNavigationQuery/runtime" />
       <module fileurl="file://$PROJECT_DIR$/projects/dataNavigationQueryLang/dataNavigationQueryLang.iml" filepath="$PROJECT_DIR$/projects/dataNavigationQueryLang/dataNavigationQueryLang.iml" group="Projects/dataNavigationQuery/lang" />
@@ -1023,13 +1023,13 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="Charisma" />
-        <option name="DEPLOY" value="true" />
+        <option name="MODULE_NAME" value="MForum" />
+        <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="MForum" />
-        <option name="DEPLOY" value="false" />
+        <option name="MODULE_NAME" value="Charisma" />
+        <option name="DEPLOY" value="true" />
       </J2EE_MODULE>
       <J2EE_MODULE>
         <option name="CONTEXT_PATH" value="/" />
@@ -1127,12 +1127,12 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="Charisma" />
+        <option name="MODULE_NAME" value="MForum" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="MForum" />
+        <option name="MODULE_NAME" value="Charisma" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1231,12 +1231,12 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="Charisma" />
+        <option name="MODULE_NAME" value="MForum" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="MForum" />
+        <option name="MODULE_NAME" value="Charisma" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1317,13 +1317,13 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="Charisma" />
-        <option name="DEPLOY" value="false" />
+        <option name="MODULE_NAME" value="MForum" />
+        <option name="DEPLOY" value="true" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="MForum" />
-        <option name="DEPLOY" value="true" />
+        <option name="MODULE_NAME" value="Charisma" />
+        <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE>
         <option name="CONTEXT_PATH" value="/" />
@@ -1403,12 +1403,12 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="Charisma" />
+        <option name="MODULE_NAME" value="MForum" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="MForum" />
+        <option name="MODULE_NAME" value="Charisma" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE>
