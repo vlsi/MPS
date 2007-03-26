@@ -47,6 +47,7 @@ public class LookRegexp_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
+    LookRegexp_Actions.setCellActions(editorCell, node, context);
     editorCell.putUserObject(EditorCell.CELL_ID, "1174906588578");
     editorCell.setLayoutConstraint("");
     return editorCell;
@@ -65,6 +66,7 @@ public class LookRegexp_Editor extends DefaultNodeEditor {
       editorCellLabel.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    LookRegexp_Actions.setCellActions(editorCell, node, context);
     editorCell.putUserObject(EditorCell.CELL_ID, "1174906581168");
     editorCell.setLayoutConstraint("");
     return editorCell;
