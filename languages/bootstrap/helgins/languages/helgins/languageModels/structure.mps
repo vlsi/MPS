@@ -223,5 +223,36 @@
       <link role="target" targetNodeId="1174665551739" resolveInfo="TypeVarDeclaration" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174913569543">
+    <property name="name" value="Judgement" />
+    <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1174913619594">
+      <property name="name" value="result" />
+      <link role="dataType" targetNodeId="1.1082983657063" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174913577997">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="pattern" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="4.1136720037777" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174913589936">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="nodeToMatch" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="2.1068431790191" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174913798044">
+    <property name="rootable" value="true" />
+    <property name="name" value="Judgementlist" />
+    <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174913808889">
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="judgement" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1174913569543" resolveInfo="Judgement" />
+    </node>
+  </node>
 </model>
 
