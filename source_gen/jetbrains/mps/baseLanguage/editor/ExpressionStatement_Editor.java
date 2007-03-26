@@ -61,7 +61,6 @@ public class ExpressionStatement_Editor extends DefaultNodeEditor {
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     ExpressionStatement_Expression_Actions.setCellActions(editorCell, node, context);
-    editorCell.addKeyMap(new Expression_KeyMap());
     editorCell.putUserObject(EditorCell.CELL_ID, "1075379141236");
     editorCell.setLayoutConstraint("");
     return editorCell;

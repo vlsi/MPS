@@ -47,7 +47,6 @@ public class CastExpression_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addKeyMap(new Expression_KeyMap());
     editorCell.addEditorCell(this.createRowCell1(context, node));
     editorCell.addEditorCell(this.createExpressionCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, "1080902646660");

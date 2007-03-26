@@ -324,7 +324,6 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1153944293571">
       <property name="drawBorder" value="false" />
       <link role="relationDeclaration" targetNodeId="1.1153944258490" />
-      <link role="keyMap" targetNodeId="5.1081427357000" />
       <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1153944293572">
         <link role="conceptDeclaration" targetNodeId="1.1153944193378" />
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1153944301918">
@@ -420,8 +419,8 @@
           <property name="editable" value="true" />
           <property name="textFgColor" value="darkGray" />
           <property name="text" value="empty" />
-          <property name="fontStyle" value="ITALIC" />
           <property name="attractsFocus" value="0" />
+          <property name="fontStyle" value="ITALIC" />
           <property name="drawBorder" value="false" />
         </node>
         <node role="cellLayout" type="jetbrains.mps.bootstrap.editorLanguage.CellLayout_Flow" id="1160601562019" />

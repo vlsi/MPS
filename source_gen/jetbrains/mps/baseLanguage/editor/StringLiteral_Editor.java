@@ -31,7 +31,6 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addKeyMap(new Expression_KeyMap());
     editorCell.addEditorCell(this.createConstantCell(context, node, "\""));
     editorCell.addEditorCell(this.createValueCell(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, "\""));

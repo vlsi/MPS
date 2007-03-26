@@ -34,7 +34,6 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addKeyMap(new Expression_KeyMap());
     editorCell.addEditorCell(this.createConstantCell(context, node, "super"));
     editorCell.addEditorCell(this.createConstantCell1(context, node, "."));
     editorCell.addEditorCell(this.createInstanceMethodDeclarationReferenceCell(context, node));

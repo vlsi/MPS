@@ -32,7 +32,6 @@ public class IntegerConstant_Editor extends DefaultNodeEditor {
       editorCellLabel.getTextLine().setTextColor(Color.blue);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.addKeyMap(new Expression_KeyMap());
     editorCell.putUserObject(EditorCell.CELL_ID, "1083091696640");
     editorCell.setLayoutConstraint("");
     return editorCell;

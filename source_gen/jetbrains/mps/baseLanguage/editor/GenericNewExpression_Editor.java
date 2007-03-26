@@ -31,7 +31,6 @@ public class GenericNewExpression_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addKeyMap(new Expression_KeyMap());
     editorCell.addEditorCell(this.createConstantCell(context, node, "new"));
     editorCell.addEditorCell(this.createCreatorCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, "1145553172764");
