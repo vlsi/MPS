@@ -63,6 +63,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
 
   @NotNull
   public String getComponentName() {
+    
     return "MPSSupport Handler";
   }
 
@@ -86,7 +87,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
             if (sourceFolderFile == null) return;
             Module module = ModuleUtil.findModuleForFile(sourceFolderFile, myProject);
             assert module != null;
-            ModifiableRootModel model = module.getComponent(ModuleRootManager.class).getModifiableModel();
+            ModifiableRootModel model = ModuleRootManager.getInstance(module).getModifiableModel();
             ContentEntry entry = model.getContentEntries()[0];
             entry.addSourceFolder(sourceFolderFile, false);
             model.commit();
@@ -99,8 +100,8 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
   public void addMPSJar(final String mpsHome) {
     executeWriteAction(new Runnable() {
       public void run() {
-        Module module = myProject.getComponent(ModuleManager.class).getModules()[0];
-        ModifiableRootModel rootModel = module.getComponent(ModuleRootManager.class).getModifiableModel();
+        Module module = ModuleManager.getInstance(myProject).getModules()[0];
+        ModifiableRootModel rootModel = ModuleRootManager.getInstance(module).getModifiableModel();
         LibraryTable table = LibraryTablesRegistrar.getInstance().getLibraryTable(myProject);
         Library library = table.createLibrary("MPS");
 
@@ -159,7 +160,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
                 return;
               }
 
-              CompilerManager compilerManager = myProject.getComponent(CompilerManager.class);
+              CompilerManager compilerManager = CompilerManager.getInstance(myProject);
               compilerManager.make(module, new CompileStatusNotification() {
                 public void finished(boolean aborted, int errors, int warnings, CompileContext compileContext) {
                   compilationFinished(aborted, errors, warnings);
@@ -407,10 +408,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
         ModuleRootManager rootManager = ModuleRootManager.getInstance(module);
         LocalFileSystem localFileSystem = LocalFileSystem.getInstance();
 
-        ProjectRootManager projectRootManager = myProject.getComponent(ProjectRootManager.class);
         rootManager.getModifiableModel().inheritJdk();
-
-
 
         rootManager.getModifiableModel().addContentEntry(localFileSystem.findFileByIoFile(new File(path, "source")));
         rootManager.getModifiableModel().addContentEntry(localFileSystem.findFileByIoFile(new File(path, "source_gen")));
@@ -537,7 +535,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     int bestDistance = Integer.MAX_VALUE;
     Module bestModule = null;
 
-    for (Module module : myProject.getComponent(ModuleManager.class).getModules()) {
+    for (Module module : ModuleManager.getInstance(myProject).getModules()) {
       ModuleRootManager rootManager = ModuleRootManager.getInstance(module);
       for (VirtualFile contentRoot : rootManager.getContentRoots()) {
         int distance = getDistance(contentRoot, file);
@@ -850,11 +848,11 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
             LocalFileSystem lfs = LocalFileSystem.getInstance();
             Project project = myProject;
 
-            ModuleManager moduleManager = project.getComponent(ModuleManager.class);
+            ModuleManager moduleManager = ModuleManager.getInstance(project);
 
             Module module = moduleManager.newModule(path + File.separator + moduleName + ".iml", ModuleType.JAVA);
 
-            ModuleRootManager rootManager = module.getComponent(ModuleRootManager.class);
+            ModuleRootManager rootManager = ModuleRootManager.getInstance(module);
             ModifiableRootModel rootModel = rootManager.getModifiableModel();
 
             Module mpsModule = moduleManager.findModuleByName("MPS");

@@ -6,7 +6,7 @@
     <output url="file://$MODULE_DIR$/classes" />
     <exclude-output />
     <content url="file://$MODULE_DIR$" />
-    <orderEntry type="jdk" jdkName="IDEA SDK" jdkType="IDEA JDK" />
+    <orderEntry type="jdk" jdkName="IDEA 6148" jdkType="IDEA JDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPSSupport" />
     <orderEntryProperties />

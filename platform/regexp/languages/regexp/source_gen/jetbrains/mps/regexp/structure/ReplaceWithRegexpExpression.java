@@ -36,10 +36,10 @@ public class ReplaceWithRegexpExpression extends Expression implements RegexpUsi
   public void setReplaceBlock(ReplaceBlock node) {
     super.setChild(ReplaceWithRegexpExpression.REPLACE_BLOCK, node);
   }
-  public Expression getRegexp() {
-    return (Expression)this.getChild(ReplaceWithRegexpExpression.REGEXP);
+  public RegexpExpression getRegexp() {
+    return (RegexpExpression)this.getChild(ReplaceWithRegexpExpression.REGEXP);
   }
-  public void setRegexp(Expression node) {
+  public void setRegexp(RegexpExpression node) {
     super.setChild(ReplaceWithRegexpExpression.REGEXP, node);
   }
 }

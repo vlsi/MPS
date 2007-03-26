@@ -125,7 +125,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174510540317">
     <property name="name" value="InlineRegexpExpression" />
-    <link role="extends" targetNodeId="2.1068431790191" />
+    <link role="extends" targetNodeId="1174919147781" resolveInfo="RegexpExpression" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174510571016">
       <property name="sourceCardinality" value="1" />
       <property name="role" value="regexp" />
@@ -335,7 +335,7 @@
       <property name="sourceCardinality" value="1" />
       <property name="role" value="regexp" />
       <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="2.1068431790191" />
+      <link role="target" targetNodeId="1174919147781" resolveInfo="RegexpExpression" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174655989549">
@@ -517,6 +517,14 @@
       <property name="role" value="match" />
       <link role="target" targetNodeId="1174564062919" resolveInfo="MatchParensRegexp" />
     </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174919147781">
+    <property name="name" value="RegexpExpression" />
+    <link role="extends" targetNodeId="2.1068431790191" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174919541558">
+    <property name="name" value="RegexpReference" />
+    <link role="extends" targetNodeId="1.1133920641626" />
   </node>
 </model>
 

@@ -77,7 +77,7 @@ public class IDEAHandler extends UnicastRemoteObject implements ApplicationCompo
             ProjectRootManagerEx projectRootManager = (ProjectRootManagerEx) ProjectRootManagerEx.getInstance(project);
             projectRootManager.setLanguageLevel(LanguageLevel.JDK_1_5);
 
-            ModuleManager moduleManager = project.getComponent(ModuleManager.class);                        
+            ModuleManager moduleManager = ModuleManager.getInstance(project);                        
 
             Module module = moduleManager.newModule(path + File.separator + name + ".iml", ModuleType.JAVA);
             ModuleRootManager rootManager = module.getComponent(ModuleRootManager.class);
