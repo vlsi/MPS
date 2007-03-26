@@ -110,5 +110,17 @@
       <link role="target" targetNodeId="2.1068431790189" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174914042989">
+    <property name="name" value="InternalClassifierType" />
+    <link role="extends" targetNodeId="2.1107535904670" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1174914081067">
+      <property name="name" value="fqClassName" />
+      <link role="dataType" targetNodeId="1.1082983041843" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174914140474">
+      <property name="value" value="_classifier type" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
 </model>
 
