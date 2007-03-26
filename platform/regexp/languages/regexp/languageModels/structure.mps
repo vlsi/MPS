@@ -509,5 +509,14 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174909099093">
+    <property name="name" value="MatchVariableReferenceRegexp" />
+    <link role="extends" targetNodeId="1174482743037" resolveInfo="Regexp" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174909113141">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="match" />
+      <link role="target" targetNodeId="1174564062919" resolveInfo="MatchParensRegexp" />
+    </node>
+  </node>
 </model>
 

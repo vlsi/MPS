@@ -52,7 +52,7 @@
               <link role="classifier" extResolveInfo="2.[Classifier]String" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.StringLiteral" id="1174564398746">
-              <property name="value" value="kosti@jetbrains.com" />
+              <property name="value" value="kostik@jetbrains.com" />
             </node>
           </node>
         </node>
@@ -157,9 +157,24 @@
                         </node>
                       </node>
                     </node>
-                    <node role="right" type="jetbrains.mps.regexp.PlusRegexp" id="1174564499920">
-                      <node role="regexp" type="jetbrains.mps.regexp.PredefinedSymbolClassRegexp" id="1174564499013">
-                        <link role="symbolClass" targetNodeId="4.1174554738336" />
+                    <node role="right" type="jetbrains.mps.regexp.SeqRegexp" id="1174909532100">
+                      <node role="left" type="jetbrains.mps.regexp.PlusRegexp" id="1174564499920">
+                        <node role="regexp" type="jetbrains.mps.regexp.PredefinedSymbolClassRegexp" id="1174564499013">
+                          <link role="symbolClass" targetNodeId="4.1174554738336" />
+                        </node>
+                      </node>
+                      <node role="right" type="jetbrains.mps.regexp.SeqRegexp" id="1174911336451">
+                        <node role="right" type="jetbrains.mps.regexp.SeqRegexp" id="1174911340141">
+                          <node role="right" type="jetbrains.mps.regexp.MatchVariableReferenceRegexp" id="1174911340142">
+                            <link role="match" targetNodeId="1174564423490" resolveInfo="user" />
+                          </node>
+                          <node role="left" type="jetbrains.mps.regexp.MatchVariableReferenceRegexp" id="1174911336452">
+                            <link role="match" targetNodeId="1174564477096" resolveInfo="domain" />
+                          </node>
+                        </node>
+                        <node role="left" type="jetbrains.mps.regexp.MatchVariableReferenceRegexp" id="1174909538023">
+                          <link role="match" targetNodeId="1174564423490" resolveInfo="user" />
+                        </node>
                       </node>
                     </node>
                   </node>
