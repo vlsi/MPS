@@ -49,6 +49,7 @@ public class BinaryRegexp_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    BinaryRegexp_Left_Actions.setCellActions(editorCell, node, context);
     editorCell.putUserObject(EditorCell.CELL_ID, "1174900472658");
     editorCell.setLayoutConstraint("");
     return editorCell;
@@ -115,6 +116,7 @@ public class BinaryRegexp_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    BinaryRegexp_Right_Actions.setCellActions(editorCell, node, context);
     editorCell.putUserObject(EditorCell.CELL_ID, "1174900480209");
     editorCell.setLayoutConstraint("");
     return editorCell;

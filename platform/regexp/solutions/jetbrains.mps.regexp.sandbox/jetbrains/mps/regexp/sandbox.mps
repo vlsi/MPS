@@ -32,8 +32,13 @@
         <node role="left" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174558935065">
           <property name="text" value="abcdef" />
         </node>
-        <node role="right" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174558938630">
-          <property name="text" value="cdef" />
+        <node role="right" type="jetbrains.mps.regexp.OrRegexp" id="1174901160366">
+          <node role="left" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174558938630">
+            <property name="text" value="cdef" />
+          </node>
+          <node role="right" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174901160369">
+            <property name="text" value="str" />
+          </node>
         </node>
       </node>
     </node>

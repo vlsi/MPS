@@ -47,6 +47,7 @@ public class SeqRegexp_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    BinaryRegexp_Left_Actions.setCellActions(editorCell, node, context);
     editorCell.putUserObject(EditorCell.CELL_ID, "1174900570494");
     editorCell.setLayoutConstraint("");
     return editorCell;
@@ -80,6 +81,7 @@ public class SeqRegexp_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    BinaryRegexp_Right_Actions.setCellActions(editorCell, node, context);
     editorCell.putUserObject(EditorCell.CELL_ID, "1174900573371");
     editorCell.setLayoutConstraint("");
     return editorCell;
