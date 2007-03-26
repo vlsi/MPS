@@ -1158,18 +1158,6 @@
       <link role="targetType" targetNodeId="1068431790189" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1107460423361">
-    <property name="name" value="VariableType" />
-    <link role="extends" targetNodeId="1068431790189" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107460443941">
-      <property name="value" value="var" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107460447927">
-      <property name="value" value="variable type" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1107461130800">
     <property name="name" value="Classifier" />
     <link role="extends" targetNodeId="1109279851642" />

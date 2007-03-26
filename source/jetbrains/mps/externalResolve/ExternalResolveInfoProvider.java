@@ -50,7 +50,6 @@ public class ExternalResolveInfoProvider {
     ourPrimitiveAdaptationNames.put(LongType.class.getName(), long_);
     ourPrimitiveAdaptationNames.put(DoubleType.class.getName(), double_);
     ourPrimitiveAdaptationNames.put(FloatType.class.getName(), float_);
-    ourPrimitiveAdaptationNames.put(VariableType.class.getName(), any_);
     ourPrimitiveAdaptationNames.put(TypeVariableReference.class.getName(), any_);
 
     ourTypeNames.put(VoidType.class.getName(), "void_");
@@ -62,7 +61,6 @@ public class ExternalResolveInfoProvider {
     ourTypeNames.put(LongType.class.getName(), "long_");
     ourTypeNames.put(DoubleType.class.getName(), "double_");
     ourTypeNames.put(FloatType.class.getName(), "float_");
-    ourTypeNames.put(VariableType.class.getName(), "any_");
     ourTypeNames.put(TypeVariableReference.class.getName(), "any_");
 
   }
