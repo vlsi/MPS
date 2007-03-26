@@ -294,28 +294,6 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.regexp.MatchRegexpStatement" id="1174921899684">
-              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1174921899685">
-                <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1174921919770">
-                  <node role="expression" type="jetbrains.mps.regexp.MatchVariableReference" id="1174921919771">
-                    <link role="match" targetNodeId="1174921885036" resolveInfo="somename" />
-                  </node>
-                </node>
-                <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1174921936058">
-                  <node role="expression" type="jetbrains.mps.regexp.MatchVariableReference" id="1174921936059">
-                    <link role="match" targetNodeId="1174921885036" resolveInfo="somename" />
-                  </node>
-                </node>
-              </node>
-              <node role="expr" type="jetbrains.mps.baseLanguage.StringLiteral" id="1174921900657">
-                <property name="value" value="zzz" />
-              </node>
-              <node role="regexp" type="jetbrains.mps.regexp.InlineRegexpExpression" id="1174921904876">
-                <node role="regexp" type="jetbrains.mps.regexp.RegexpDeclarationReferenceRegexp" id="1174921909597">
-                  <link role="regexp" targetNodeId="1174921880690" resolveInfo="cde" />
-                </node>
-              </node>
-            </node>
           </node>
           <node role="expr" type="jetbrains.mps.baseLanguage.StringLiteral" id="1174921495415">
             <property name="value" value="abc" />
@@ -335,7 +313,9 @@
       <property name="name" value="cde" />
       <node role="regexp" type="jetbrains.mps.regexp.MatchParensRegexp" id="1174921885036">
         <property name="name" value="somename" />
-        <node role="regexp" type="jetbrains.mps.regexp.Regexp" id="1174921885037" />
+        <node role="regexp" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174922977145">
+          <property name="text" value="abc" />
+        </node>
       </node>
     </node>
   </node>
