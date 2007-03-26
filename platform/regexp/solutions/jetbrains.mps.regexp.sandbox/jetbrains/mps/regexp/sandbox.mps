@@ -9,35 +9,27 @@
   <import index="4" modelUID="jetbrains.mps.regexp.jetbrains.mps.regexp.accessory" />
   <node type="jetbrains.mps.regexp.RegexpDeclaration" id="1174484236394">
     <property name="name" value="Sample" />
-    <node role="regexp" type="jetbrains.mps.regexp.SeqRegexp" id="1174558935064">
-      <node role="left" type="jetbrains.mps.regexp.PositiveSymbolClassRegexp" id="1174558737516">
-        <node role="parts" type="jetbrains.mps.regexp.IntervalSymbolClassPart" id="1174558739331">
-          <property name="start" value="A" />
-          <property name="end" value="Z" />
-        </node>
-        <node role="parts" type="jetbrains.mps.regexp.IntervalSymbolClassPart" id="1174558742458">
-          <property name="start" value="a" />
-          <property name="end" value="z" />
-        </node>
-        <node role="parts" type="jetbrains.mps.regexp.PredefinedSymbolClassSymbolClassPart" id="1174558914294">
-          <link role="declaration" targetNodeId="4.1174555093479" />
-        </node>
-        <node role="parts" type="jetbrains.mps.regexp.PredefinedSymbolClassSymbolClassPart" id="1174558919702">
-          <link role="declaration" targetNodeId="4.1174554796231" />
-        </node>
-      </node>
-      <node role="right" type="jetbrains.mps.regexp.SeqRegexp" id="1174558938629">
-        <node role="left" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174558935065">
+    <node role="regexp" type="jetbrains.mps.regexp.SeqRegexp" id="1174905299637">
+      <node role="left" type="jetbrains.mps.regexp.FromNToMTimesRegexp" id="1174905299638">
+        <property name="m" value="23" />
+        <property name="n" value="23" />
+        <node role="regexp" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174905299639">
           <property name="text" value="abcdef" />
         </node>
-        <node role="right" type="jetbrains.mps.regexp.OrRegexp" id="1174901160366">
-          <node role="left" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174558938630">
+      </node>
+      <node role="right" type="jetbrains.mps.regexp.OrRegexp" id="1174905299640">
+        <node role="left" type="jetbrains.mps.regexp.AtLeastNTimesRegexp" id="1174905299641">
+          <property name="n" value="239" />
+          <node role="regexp" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174905299642">
             <property name="text" value="cdef" />
           </node>
-          <node role="right" type="jetbrains.mps.regexp.PlusRegexp" id="1174902980677">
-            <node role="regexp" type="jetbrains.mps.regexp.PlusRegexp" id="1174902766173">
-              <node role="regexp" type="jetbrains.mps.regexp.ParensRegexp" id="1174903347347">
-                <node role="expr" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174903349646">
+        </node>
+        <node role="right" type="jetbrains.mps.regexp.PlusRegexp" id="1174905299643">
+          <node role="regexp" type="jetbrains.mps.regexp.PlusRegexp" id="1174905299644">
+            <node role="regexp" type="jetbrains.mps.regexp.ParensRegexp" id="1174905299645">
+              <node role="expr" type="jetbrains.mps.regexp.NTimesRegexp" id="1174905299646">
+                <property name="n" value="23" />
+                <node role="regexp" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174905299647">
                   <property name="text" value="abcdef" />
                 </node>
               </node>
@@ -215,6 +207,52 @@
                   <node role="regexp" type="jetbrains.mps.regexp.PlusRegexp" id="1174657603513">
                     <node role="regexp" type="jetbrains.mps.regexp.PredefinedSymbolClassRegexp" id="1174657603514">
                       <link role="symbolClass" targetNodeId="4.1174554738336" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1174905433848">
+    <property name="name" value="XXX" />
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1174905437286">
+      <property name="name" value="test" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1174905449612" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1174905437288">
+        <node role="statement" type="jetbrains.mps.regexp.MatchRegexpStatement" id="1174905455379">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1174905455380" />
+          <node role="expr" type="jetbrains.mps.baseLanguage.StringLiteral" id="1174905464791">
+            <property name="value" value="abs" />
+          </node>
+          <node role="regexp" type="jetbrains.mps.regexp.RegexpExpression" id="1174905455406">
+            <node role="regexp" type="jetbrains.mps.regexp.SeqRegexp" id="1174905471133">
+              <node role="left" type="jetbrains.mps.regexp.FromNToMTimesRegexp" id="1174905471134">
+                <property name="m" value="23" />
+                <property name="n" value="23" />
+                <node role="regexp" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174905471135">
+                  <property name="text" value="abcdef" />
+                </node>
+              </node>
+              <node role="right" type="jetbrains.mps.regexp.OrRegexp" id="1174905471136">
+                <node role="left" type="jetbrains.mps.regexp.AtLeastNTimesRegexp" id="1174905471137">
+                  <property name="n" value="239" />
+                  <node role="regexp" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174905471138">
+                    <property name="text" value="cdef" />
+                  </node>
+                </node>
+                <node role="right" type="jetbrains.mps.regexp.PlusRegexp" id="1174905471139">
+                  <node role="regexp" type="jetbrains.mps.regexp.PlusRegexp" id="1174905471140">
+                    <node role="regexp" type="jetbrains.mps.regexp.ParensRegexp" id="1174905471141">
+                      <node role="expr" type="jetbrains.mps.regexp.NTimesRegexp" id="1174905471142">
+                        <property name="n" value="23" />
+                        <node role="regexp" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174905471143">
+                          <property name="text" value="abcdef" />
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>

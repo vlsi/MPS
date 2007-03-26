@@ -430,5 +430,45 @@
       <link role="target" targetNodeId="1174482743037" resolveInfo="Regexp" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174904166999">
+    <property name="name" value="NTimesRegexp" />
+    <link role="extends" targetNodeId="1174485235885" resolveInfo="UnaryRegexp" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1174904184877">
+      <property name="name" value="n" />
+      <link role="dataType" targetNodeId="1.1082983657062" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174904181641">
+      <property name="value" value="{n}" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174904442594">
+    <property name="name" value="AtLeastNTimesRegexp" />
+    <link role="extends" targetNodeId="1174485235885" resolveInfo="UnaryRegexp" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174904484266">
+      <property name="value" value="{n,}" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1174904477749">
+      <property name="name" value="n" />
+      <link role="dataType" targetNodeId="1.1082983657062" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174904605806">
+    <property name="name" value="FromNToMTimesRegexp" />
+    <link role="extends" targetNodeId="1174485235885" resolveInfo="UnaryRegexp" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174904757971">
+      <property name="value" value="{n,m}" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1174904618869">
+      <property name="name" value="n" />
+      <link role="dataType" targetNodeId="1.1082983657062" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1174904621683">
+      <property name="name" value="m" />
+      <link role="dataType" targetNodeId="1.1082983657062" />
+    </node>
+  </node>
 </model>
 
