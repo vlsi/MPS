@@ -63,10 +63,6 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     return myTargetModel;
   }
 
-  public INodeBuilder findNodeBuilderForTarget(INodeAdapter targetNode) {
-    return findNodeBuilderForTarget(BaseAdapter.fromAdapter(targetNode));
-  }
-
   public INodeBuilder findNodeBuilderForSource(INodeAdapter ba, String mappingName) {
     return findNodeBuilderForSource(BaseAdapter.fromAdapter(ba), mappingName);
   }

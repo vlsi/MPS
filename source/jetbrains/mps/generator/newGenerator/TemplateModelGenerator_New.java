@@ -191,10 +191,6 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     //To change body of implemented methods use File | Settings | File Templates.
   }
 
-  public INodeBuilder findNodeBuilderForTarget(SNode targetNode) {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
-  }
-
   public INodeBuilder findNodeBuilderForSource(SNode inputNode, String mappingName) {
     return  findOutputNodeByRuleNameAndInputNode(mappingName, inputNode);
   }
@@ -212,11 +208,6 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     }
 */
 //    return null;
-  }
-
-  //todo this method supposes that inputNode is not changed - it should be deprecated after going to new generator
-  public INodeBuilder findNodeBuilderForSource(SNode inputNode) {
-    return new SimpleNodeBuilder(this, inputNode);
   }
 
   //todo this method supposes that inputNode is not changed - it should be deprecated after going to new generator
