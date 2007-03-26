@@ -37,7 +37,7 @@ public class FromNToMTimesRegexp_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell1(context, node, ","));
     editorCell.addEditorCell(this.createMCell(context, node));
     editorCell.addEditorCell(this.createConstantCell2(context, node, "}"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174904641994");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174904641994");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -51,7 +51,7 @@ public class FromNToMTimesRegexp_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
     UnaryRegexp_Regexp_actions.setCellActions(editorCell, node, context);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174904641996");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174904641996");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -63,7 +63,7 @@ public class FromNToMTimesRegexp_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174904641998");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174904641998");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -77,7 +77,7 @@ public class FromNToMTimesRegexp_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
     UnaryRegexp_Regexp_actions.setCellActions(editorCell, node, context);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174904641999");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174904641999");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -94,7 +94,7 @@ public class FromNToMTimesRegexp_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174904641995");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174904641995");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -127,7 +127,7 @@ public class FromNToMTimesRegexp_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174904641997");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174904641997");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -160,7 +160,7 @@ public class FromNToMTimesRegexp_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174904650360");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174904650360");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

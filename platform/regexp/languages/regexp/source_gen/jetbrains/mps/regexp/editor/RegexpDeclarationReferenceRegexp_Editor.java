@@ -29,7 +29,7 @@ public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRegexpReferenceCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174662639718");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174662639718");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -46,7 +46,7 @@ public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174662648736");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174662648736");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

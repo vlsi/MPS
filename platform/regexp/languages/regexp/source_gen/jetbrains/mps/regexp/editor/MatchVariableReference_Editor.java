@@ -29,7 +29,7 @@ public class MatchVariableReference_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createMatchReferenceCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174565052932");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174565052932");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -46,7 +46,7 @@ public class MatchVariableReference_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174565057138");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174565057138");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

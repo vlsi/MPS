@@ -26,7 +26,7 @@ public class DotRegexp_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell(context, node, "."));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174556841426");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174556841426");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -39,7 +39,7 @@ public class DotRegexp_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174556842365");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174556842365");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

@@ -30,7 +30,7 @@ public class SeqRegexp_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createLeftCell(context, node));
     editorCell.addEditorCell(this.createRightCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174900567679");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174900567679");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -48,7 +48,7 @@ public class SeqRegexp_Editor extends DefaultNodeEditor {
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     BinaryRegexp_Left_Actions.setCellActions(editorCell, node, context);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174900570494");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174900570494");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -82,7 +82,7 @@ public class SeqRegexp_Editor extends DefaultNodeEditor {
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     BinaryRegexp_Right_Actions.setCellActions(editorCell, node, context);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174900573371");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174900573371");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

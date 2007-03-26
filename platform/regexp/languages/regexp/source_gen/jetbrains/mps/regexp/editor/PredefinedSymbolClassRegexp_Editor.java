@@ -29,7 +29,7 @@ public class PredefinedSymbolClassRegexp_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createSymbolClassReferenceCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174555875696");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174555875696");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -46,7 +46,7 @@ public class PredefinedSymbolClassRegexp_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174555877167");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174555877167");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

@@ -31,7 +31,7 @@ public class StringLiteralRegexp_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createTextCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174482863553");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174482863553");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -50,7 +50,7 @@ public class StringLiteralRegexp_Editor extends DefaultNodeEditor {
       editorCellLabel.getTextLine().setTextColor(MPSColors.DARK_GREEN);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174482866914");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174482866914");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

@@ -30,7 +30,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRegexpCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174510565684");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174510565684");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -47,7 +47,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174510567265");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174510567265");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

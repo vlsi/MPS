@@ -30,7 +30,7 @@ public class ReplaceBlock_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createBodyCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174656460068");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174656460068");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -47,7 +47,7 @@ public class ReplaceBlock_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174656462804");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174656462804");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

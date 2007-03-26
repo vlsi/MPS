@@ -31,7 +31,7 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRegexpCell(context, node));
     editorCell.addEditorCell(this.createCellModel_ConceptProperty(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174900298799");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174900298799");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -48,7 +48,7 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174900298800");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174900298800");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -82,7 +82,7 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     UnaryRegexp_Regexp_actions.setCellActions(editorCell, node, context);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174900304959");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174900304959");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

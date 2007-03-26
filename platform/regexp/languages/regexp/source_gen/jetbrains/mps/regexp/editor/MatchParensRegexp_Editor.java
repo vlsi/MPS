@@ -36,7 +36,7 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createNameCell(context, node));
     editorCell.addEditorCell(this.createRegexpCell(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, ")"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174564107521");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174564107521");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -49,7 +49,7 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174564108851");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174564108851");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -62,7 +62,7 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174564111509");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174564111509");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -81,7 +81,7 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
       editorCellLabel.getTextLine().setTextColor(MPSColors.DARK_BLUE);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174564130683");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174564130683");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -114,7 +114,7 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174564178985");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174564178985");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

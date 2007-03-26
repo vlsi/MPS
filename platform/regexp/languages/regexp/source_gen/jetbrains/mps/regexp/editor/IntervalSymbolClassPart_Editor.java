@@ -33,7 +33,7 @@ public class IntervalSymbolClassPart_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createStartCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "-"));
     editorCell.addEditorCell(this.createEndCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174558324060");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174558324060");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -46,7 +46,7 @@ public class IntervalSymbolClassPart_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174558328282");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174558328282");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -63,7 +63,7 @@ public class IntervalSymbolClassPart_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174558326265");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174558326265");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -96,7 +96,7 @@ public class IntervalSymbolClassPart_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174558329519");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174558329519");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

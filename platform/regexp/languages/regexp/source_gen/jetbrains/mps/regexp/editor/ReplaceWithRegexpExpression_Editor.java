@@ -34,7 +34,7 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRegexpCell(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, "in"));
     editorCell.addEditorCell(this.createExprCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174656565425");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174656565425");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -50,7 +50,7 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell2(context, node, "  "));
     editorCell.addEditorCell(this.createConstantCell3(context, node, "with"));
     editorCell.addEditorCell(this.createReplaceBlockCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174656570856");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174656570856");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -65,7 +65,7 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRowCell(context, node));
     editorCell.addEditorCell(this.createRowCell1(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174656564840");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174656564840");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -78,7 +78,7 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174656565426");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174656565426");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -91,7 +91,7 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174656565428");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174656565428");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -103,7 +103,7 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174656571858");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174656571858");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -116,7 +116,7 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174656572803");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174656572803");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -133,7 +133,7 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174656565427");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174656565427");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -166,7 +166,7 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174656565429");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174656565429");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -199,7 +199,7 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174656572804");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174656572804");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

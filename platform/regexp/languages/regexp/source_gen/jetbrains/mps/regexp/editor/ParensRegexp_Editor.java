@@ -33,7 +33,7 @@ public class ParensRegexp_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "("));
     editorCell.addEditorCell(this.createExprCell(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, ")"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174491186783");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174491186783");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -47,7 +47,7 @@ public class ParensRegexp_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
     ParensRegexp_Actions.setCellActions(editorCell, node, context);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174491189175");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174491189175");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -61,7 +61,7 @@ public class ParensRegexp_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
     ParensRegexp_Actions.setCellActions(editorCell, node, context);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174491196039");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174491196039");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -78,7 +78,7 @@ public class ParensRegexp_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174491192506");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174491192506");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

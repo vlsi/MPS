@@ -32,7 +32,7 @@ public class BinaryRegexp_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createLeftCell(context, node));
     editorCell.addEditorCell(this.createCellModel_ConceptProperty(context, node));
     editorCell.addEditorCell(this.createRightCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174900470765");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174900470765");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -50,7 +50,7 @@ public class BinaryRegexp_Editor extends DefaultNodeEditor {
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     BinaryRegexp_Left_Actions.setCellActions(editorCell, node, context);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174900472658");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174900472658");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -83,7 +83,7 @@ public class BinaryRegexp_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174900475613");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174900475613");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -117,7 +117,7 @@ public class BinaryRegexp_Editor extends DefaultNodeEditor {
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     BinaryRegexp_Right_Actions.setCellActions(editorCell, node, context);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174900480209");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174900480209");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

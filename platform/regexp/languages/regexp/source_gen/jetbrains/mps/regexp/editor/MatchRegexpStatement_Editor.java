@@ -37,7 +37,7 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRegexpCell(context, node));
     editorCell.addEditorCell(this.createConstantCell3(context, node, ")"));
     editorCell.addEditorCell(this.createConstantCell4(context, node, "{"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174512461995");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174512461995");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -52,7 +52,7 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell5(context, node, "  "));
     editorCell.addEditorCell(this.createBodyCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174512486509");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174512486509");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -68,7 +68,7 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRowCell(context, node));
     editorCell.addEditorCell(this.createRowCell1(context, node));
     editorCell.addEditorCell(this.createConstantCell6(context, node, "}"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174512460884");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174512460884");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -81,7 +81,7 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174512462935");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174512462935");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -93,7 +93,7 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174595113216");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174595113216");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -106,7 +106,7 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174512611584");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174512611584");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -118,7 +118,7 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174595121109");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174595121109");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -130,7 +130,7 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174512482458");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174512482458");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -142,7 +142,7 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174512488089");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174512488089");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -154,7 +154,7 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174512484429");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174512484429");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -171,7 +171,7 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174512590800");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174512590800");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -204,7 +204,7 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174512614570");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174512614570");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -237,7 +237,7 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174512490341");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174512490341");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

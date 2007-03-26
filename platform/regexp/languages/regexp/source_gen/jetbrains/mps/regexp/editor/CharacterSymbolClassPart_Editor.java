@@ -29,7 +29,7 @@ public class CharacterSymbolClassPart_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCharacterCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174558016484");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174558016484");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -46,7 +46,7 @@ public class CharacterSymbolClassPart_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174558018736");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174558018736");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

@@ -29,7 +29,7 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createDeclarationReferenceCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174558833260");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174558833260");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -46,7 +46,7 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174558836402");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174558836402");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

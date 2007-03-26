@@ -32,7 +32,7 @@ public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "[^"));
     editorCell.addEditorCell(this.createPartList(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, "]"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174557673745");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174557673745");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -45,7 +45,7 @@ public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174557673746");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174557673746");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -58,7 +58,7 @@ public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174557673748");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174557673748");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
