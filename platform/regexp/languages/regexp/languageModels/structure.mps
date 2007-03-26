@@ -412,24 +412,6 @@
       <link role="target" targetNodeId="1174483125581" resolveInfo="RegexpDeclaration" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174665595879">
-    <property name="name" value="NegativeLookBehindRegex" />
-    <link role="extends" targetNodeId="1174482743037" resolveInfo="Regexp" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174665787572">
-      <property name="value" value="(?&lt;!" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174665793933">
-      <property name="value" value="negative look behind" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174665708860">
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="regexp" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1174482743037" resolveInfo="Regexp" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174904166999">
     <property name="name" value="NTimesRegexp" />
     <link role="extends" targetNodeId="1174485235885" resolveInfo="UnaryRegexp" />
@@ -468,6 +450,63 @@
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1174904621683">
       <property name="name" value="m" />
       <link role="dataType" targetNodeId="1.1082983657062" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174906321267">
+    <property name="name" value="PositiveLookAheadRegexp" />
+    <link role="extends" targetNodeId="1174906544517" resolveInfo="LookRegexp" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174906385283">
+      <property name="value" value="(?=" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174906468661">
+    <property name="name" value="NegativeLookAheadRegexp" />
+    <link role="extends" targetNodeId="1174906544517" resolveInfo="LookRegexp" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174906482383">
+      <property name="value" value="(?!" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174907373482">
+      <property name="value" value="negative look ahead" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174906544517">
+    <property name="name" value="LookRegexp" />
+    <link role="extends" targetNodeId="1174482743037" resolveInfo="Regexp" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174906566584">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="regexp" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1174482743037" resolveInfo="Regexp" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1174906564349">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174906762287">
+    <property name="name" value="PositiveLookBehindRegexp" />
+    <link role="extends" targetNodeId="1174906544517" resolveInfo="LookRegexp" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174906771743">
+      <property name="value" value="(?&lt;=" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174906781839">
+      <property name="value" value="positive look behind" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174906790902">
+    <property name="name" value="NegativeLookBehindRegexp" />
+    <link role="extends" targetNodeId="1174906544517" resolveInfo="LookRegexp" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174906828077">
+      <property name="value" value="(?&lt;!" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174906837235">
+      <property name="value" value="negative look behind" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
     </node>
   </node>
 </model>

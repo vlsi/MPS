@@ -229,31 +229,29 @@
             <property name="value" value="abs" />
           </node>
           <node role="regexp" type="jetbrains.mps.regexp.RegexpExpression" id="1174905455406">
-            <node role="regexp" type="jetbrains.mps.regexp.SeqRegexp" id="1174905471133">
-              <node role="left" type="jetbrains.mps.regexp.FromNToMTimesRegexp" id="1174905471134">
-                <property name="m" value="23" />
-                <property name="n" value="23" />
-                <node role="regexp" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174905471135">
-                  <property name="text" value="abcdef" />
+            <node role="regexp" type="jetbrains.mps.regexp.OrRegexp" id="1174907019482">
+              <node role="left" type="jetbrains.mps.regexp.AtLeastNTimesRegexp" id="1174907019483">
+                <property name="n" value="239" />
+                <node role="regexp" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174907019484">
+                  <property name="text" value="cdef" />
                 </node>
               </node>
-              <node role="right" type="jetbrains.mps.regexp.OrRegexp" id="1174905471136">
-                <node role="left" type="jetbrains.mps.regexp.AtLeastNTimesRegexp" id="1174905471137">
-                  <property name="n" value="239" />
-                  <node role="regexp" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174905471138">
-                    <property name="text" value="cdef" />
-                  </node>
-                </node>
-                <node role="right" type="jetbrains.mps.regexp.PlusRegexp" id="1174905471139">
-                  <node role="regexp" type="jetbrains.mps.regexp.PlusRegexp" id="1174905471140">
-                    <node role="regexp" type="jetbrains.mps.regexp.ParensRegexp" id="1174905471141">
-                      <node role="expr" type="jetbrains.mps.regexp.NTimesRegexp" id="1174905471142">
+              <node role="right" type="jetbrains.mps.regexp.SeqRegexp" id="1174907363745">
+                <node role="left" type="jetbrains.mps.regexp.PlusRegexp" id="1174907019485">
+                  <node role="regexp" type="jetbrains.mps.regexp.PlusRegexp" id="1174907019486">
+                    <node role="regexp" type="jetbrains.mps.regexp.ParensRegexp" id="1174907019487">
+                      <node role="expr" type="jetbrains.mps.regexp.NTimesRegexp" id="1174907019488">
                         <property name="n" value="23" />
-                        <node role="regexp" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174905471143">
+                        <node role="regexp" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174907019489">
                           <property name="text" value="abcdef" />
                         </node>
                       </node>
                     </node>
+                  </node>
+                </node>
+                <node role="right" type="jetbrains.mps.regexp.NegativeLookAheadRegexp" id="1174907363746">
+                  <node role="regexp" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174907524675">
+                    <property name="text" value="abcdef" />
                   </node>
                 </node>
               </node>
