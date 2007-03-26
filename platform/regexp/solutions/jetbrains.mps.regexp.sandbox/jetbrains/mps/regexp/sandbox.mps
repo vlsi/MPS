@@ -10,22 +10,20 @@
   <node type="jetbrains.mps.regexp.RegexpDeclaration" id="1174484236394">
     <property name="name" value="Sample" />
     <node role="regexp" type="jetbrains.mps.regexp.SeqRegexp" id="1174558935064">
-      <node role="left" type="jetbrains.mps.regexp.PlusRegexp" id="1174558930859">
-        <node role="regexp" type="jetbrains.mps.regexp.PositiveSymbolClassRegexp" id="1174558737516">
-          <node role="parts" type="jetbrains.mps.regexp.IntervalSymbolClassPart" id="1174558739331">
-            <property name="start" value="A" />
-            <property name="end" value="Z" />
-          </node>
-          <node role="parts" type="jetbrains.mps.regexp.IntervalSymbolClassPart" id="1174558742458">
-            <property name="start" value="a" />
-            <property name="end" value="z" />
-          </node>
-          <node role="parts" type="jetbrains.mps.regexp.PredefinedSymbolClassSymbolClassPart" id="1174558914294">
-            <link role="declaration" targetNodeId="4.1174555093479" />
-          </node>
-          <node role="parts" type="jetbrains.mps.regexp.PredefinedSymbolClassSymbolClassPart" id="1174558919702">
-            <link role="declaration" targetNodeId="4.1174554796231" />
-          </node>
+      <node role="left" type="jetbrains.mps.regexp.PositiveSymbolClassRegexp" id="1174558737516">
+        <node role="parts" type="jetbrains.mps.regexp.IntervalSymbolClassPart" id="1174558739331">
+          <property name="start" value="A" />
+          <property name="end" value="Z" />
+        </node>
+        <node role="parts" type="jetbrains.mps.regexp.IntervalSymbolClassPart" id="1174558742458">
+          <property name="start" value="a" />
+          <property name="end" value="z" />
+        </node>
+        <node role="parts" type="jetbrains.mps.regexp.PredefinedSymbolClassSymbolClassPart" id="1174558914294">
+          <link role="declaration" targetNodeId="4.1174555093479" />
+        </node>
+        <node role="parts" type="jetbrains.mps.regexp.PredefinedSymbolClassSymbolClassPart" id="1174558919702">
+          <link role="declaration" targetNodeId="4.1174554796231" />
         </node>
       </node>
       <node role="right" type="jetbrains.mps.regexp.SeqRegexp" id="1174558938629">
@@ -36,8 +34,14 @@
           <node role="left" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174558938630">
             <property name="text" value="cdef" />
           </node>
-          <node role="right" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174901160369">
-            <property name="text" value="str" />
+          <node role="right" type="jetbrains.mps.regexp.PlusRegexp" id="1174902980677">
+            <node role="regexp" type="jetbrains.mps.regexp.PlusRegexp" id="1174902766173">
+              <node role="regexp" type="jetbrains.mps.regexp.ParensRegexp" id="1174903347347">
+                <node role="expr" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174903349646">
+                  <property name="text" value="abcdef" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>

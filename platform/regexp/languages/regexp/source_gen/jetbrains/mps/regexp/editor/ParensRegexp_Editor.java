@@ -46,6 +46,7 @@ public class ParensRegexp_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
+    ParensRegexp_Actions.setCellActions(editorCell, node, context);
     editorCell.putUserObject(EditorCell.CELL_ID, "1174491189175");
     editorCell.setLayoutConstraint("");
     return editorCell;
@@ -59,6 +60,7 @@ public class ParensRegexp_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
+    ParensRegexp_Actions.setCellActions(editorCell, node, context);
     editorCell.putUserObject(EditorCell.CELL_ID, "1174491196039");
     editorCell.setLayoutConstraint("");
     return editorCell;

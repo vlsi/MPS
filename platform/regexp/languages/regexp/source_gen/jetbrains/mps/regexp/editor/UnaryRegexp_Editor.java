@@ -81,6 +81,7 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    UnaryRegexp_Regexp_actions.setCellActions(editorCell, node, context);
     editorCell.putUserObject(EditorCell.CELL_ID, "1174900304959");
     editorCell.setLayoutConstraint("");
     return editorCell;
