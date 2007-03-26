@@ -11,14 +11,14 @@ import java.util.*;
  * Mar 1, 2006
  */
 public class SimpleSearchScope extends AbstractSearchScope {
-  private List myNodes;
+  private LinkedHashSet myNodes;
 
   public SimpleSearchScope(List nodes) {
-    myNodes = nodes;
+    myNodes = new LinkedHashSet(nodes);
   }
 
   public SimpleSearchScope(SNode node) {
-    myNodes = new LinkedList<SNode>();
+    myNodes = new LinkedHashSet<SNode>();
     if (node != null) {
       myNodes.add(node);
     }
