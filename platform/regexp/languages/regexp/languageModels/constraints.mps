@@ -174,6 +174,31 @@
                     <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Concept" id="1174910834008">
                       <link role="concept" targetNodeId="1.1174564062919" />
                     </node>
+                    <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Inclusion" id="1174913978042" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1174914070329">
+            <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1174914076216">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174914071266">
+                <link role="variableDeclaration" targetNodeId="1174910820322" resolveInfo="top" />
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1174914078134">
+                <link role="concept" targetNodeId="1.1174564062919" />
+              </node>
+            </node>
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1174914070331">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1174914082530">
+                <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1174914087324">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174914082531">
+                    <link role="variableDeclaration" targetNodeId="1174910746444" resolveInfo="matches" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.AddElementOperation" id="1174914089820">
+                    <node role="argument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174914092098">
+                      <link role="variableDeclaration" targetNodeId="1174910820322" resolveInfo="top" />
+                    </node>
                   </node>
                 </node>
               </node>
