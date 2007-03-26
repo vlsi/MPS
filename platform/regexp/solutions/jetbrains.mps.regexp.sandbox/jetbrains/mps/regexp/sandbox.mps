@@ -157,25 +157,41 @@
                         </node>
                       </node>
                     </node>
-                    <node role="right" type="jetbrains.mps.regexp.SeqRegexp" id="1174909532100">
-                      <node role="left" type="jetbrains.mps.regexp.PlusRegexp" id="1174564499920">
-                        <node role="regexp" type="jetbrains.mps.regexp.PredefinedSymbolClassRegexp" id="1174564499013">
-                          <link role="symbolClass" targetNodeId="4.1174554738336" />
-                        </node>
+                    <node role="right" type="jetbrains.mps.regexp.PlusRegexp" id="1174564499920">
+                      <node role="regexp" type="jetbrains.mps.regexp.PredefinedSymbolClassRegexp" id="1174564499013">
+                        <link role="symbolClass" targetNodeId="4.1174554738336" />
                       </node>
-                      <node role="right" type="jetbrains.mps.regexp.SeqRegexp" id="1174911336451">
-                        <node role="right" type="jetbrains.mps.regexp.SeqRegexp" id="1174911340141">
-                          <node role="right" type="jetbrains.mps.regexp.MatchVariableReferenceRegexp" id="1174911340142">
-                            <link role="match" targetNodeId="1174564423490" resolveInfo="user" />
-                          </node>
-                          <node role="left" type="jetbrains.mps.regexp.MatchVariableReferenceRegexp" id="1174911336452">
-                            <link role="match" targetNodeId="1174564477096" resolveInfo="domain" />
-                          </node>
-                        </node>
-                        <node role="left" type="jetbrains.mps.regexp.MatchVariableReferenceRegexp" id="1174909538023">
-                          <link role="match" targetNodeId="1174564423490" resolveInfo="user" />
-                        </node>
-                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.regexp.MatchRegexpStatement" id="1174911774409">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1174911774410" />
+          <node role="expr" type="jetbrains.mps.baseLanguage.StringLiteral" id="1174911775897">
+            <property name="value" value="bcde" />
+          </node>
+          <node role="regexp" type="jetbrains.mps.regexp.RegexpExpression" id="1174911781164">
+            <node role="regexp" type="jetbrains.mps.regexp.SeqRegexp" id="1174911795826">
+              <node role="left" type="jetbrains.mps.regexp.MatchParensRegexp" id="1174911786604">
+                <property name="name" value="abc" />
+                <node role="regexp" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174911790856">
+                  <property name="text" value="abc" />
+                </node>
+              </node>
+              <node role="right" type="jetbrains.mps.regexp.ParensRegexp" id="1174911795827">
+                <node role="expr" type="jetbrains.mps.regexp.OrRegexp" id="1174911799986">
+                  <node role="left" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174911798032">
+                    <property name="text" value="a" />
+                  </node>
+                  <node role="right" type="jetbrains.mps.regexp.OrRegexp" id="1174911811713">
+                    <node role="left" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174911803353">
+                      <property name="text" value="b" />
+                    </node>
+                    <node role="right" type="jetbrains.mps.regexp.MatchVariableReferenceRegexp" id="1174911815639">
+                      <link role="match" targetNodeId="1174911786604" resolveInfo="abc" />
                     </node>
                   </node>
                 </node>
