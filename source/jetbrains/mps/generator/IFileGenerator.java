@@ -11,9 +11,9 @@ import java.io.IOException;
  * Sep 14, 2006
  */
 public interface IFileGenerator {
-  File generateFile(SNode outputNode, SNode sourceNode, SModel sourceModel, String content, File outputRoot) throws IOException;
+  File generateFile(SNode outputRootNode, SNode originalInputNode, SModel inputModel, String content, File outputRootDir) throws IOException;
 
-  boolean overridesDefault(SNode outputNode, SNode sourceNode);
+  boolean overridesDefault(SNode outputRootNode, SNode originalInputNode);
 
-  boolean isDefault(SNode outputNode);
+  boolean isDefault(SNode outputRootNode);
 }

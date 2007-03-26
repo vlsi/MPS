@@ -2,15 +2,16 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.component.Dependency;
 import jetbrains.mps.components.IExternalizableComponent;
+import jetbrains.mps.generator.generationTypes.GenerateFilesGenerationType;
+import jetbrains.mps.generator.newGenerator.GenerationSession_New;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.command.undo.UndoManager;
+import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessageView;
-import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.preferences.IComponentWithPreferences;
 import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.progress.AdaptiveProgressMonitor;
@@ -24,8 +25,6 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
-import jetbrains.mps.generator.newGenerator.GenerationSession_New;
-import jetbrains.mps.generator.generationTypes.GenerateFilesGenerationType;
 import org.jdom.Element;
 
 import javax.swing.JOptionPane;
@@ -136,16 +135,16 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   /**
    * todo Move it to a better place
    */
-  public IFileGenerator chooseFileGenerator(SNode outputNode, SNode sourceNode) {
+  public IFileGenerator chooseFileGenerator(SNode outputRootNode, SNode originalInputNode) {
     for (IFileGenerator fileGenerator : myFileGenerators) {
-      if (sourceNode != null &&
-              fileGenerator.overridesDefault(outputNode, sourceNode)) {
+      if (originalInputNode != null &&
+              fileGenerator.overridesDefault(outputRootNode, originalInputNode)) {
         return fileGenerator;
       }
     }
 
     for (IFileGenerator fileGenerator : myFileGenerators) {
-      if (fileGenerator.isDefault(outputNode)) {
+      if (fileGenerator.isDefault(outputRootNode)) {
         return fileGenerator;
       }
     }
