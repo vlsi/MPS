@@ -13,8 +13,9 @@ import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.ConceptPropertyCellProvider;
 
-public class SeqRegexp_Editor extends DefaultNodeEditor {
+public class UnaryRegexp_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
@@ -28,13 +29,13 @@ public class SeqRegexp_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createLeftCell(context, node));
-    editorCell.addEditorCell(this.createRightCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174900567679");
+    editorCell.addEditorCell(this.createRegexpCell(context, node));
+    editorCell.addEditorCell(this.createCellModel_ConceptProperty(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1174900298799");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createLeftCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRegexpCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -47,17 +48,17 @@ public class SeqRegexp_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174900570494");
+    editorCell.putUserObject(EditorCell.CELL_ID, "1174900298800");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createLeftCell(EditorContext context, SNode node) {
+  public EditorCell createRegexpCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("left");
+    provider.setRole("regexp");
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createLeftCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.createRegexpCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if(attributeConcept != null) {
@@ -67,7 +68,7 @@ public class SeqRegexp_Editor extends DefaultNodeEditor {
     } else 
     return cellWithRole;
   }
-  public EditorCell createRightCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createCellModel_ConceptPropertyinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -80,17 +81,17 @@ public class SeqRegexp_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174900573371");
+    editorCell.putUserObject(EditorCell.CELL_ID, "1174900304959");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createRightCell(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("right");
+  public EditorCell createCellModel_ConceptProperty(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
+    provider.setRole("alias");
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRightCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.createCellModel_ConceptPropertyinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if(attributeConcept != null) {
