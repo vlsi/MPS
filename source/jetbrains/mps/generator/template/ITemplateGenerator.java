@@ -45,8 +45,6 @@ public interface ITemplateGenerator extends ITemplateLanguageConstants {
 
   INodeBuilder findNodeBuilderForSource(INodeAdapter sourceNodeAdapter, String mappingName);
 
-  INodeBuilder findNodeBuilderForSource(SNode sourceNode, Condition<INodeBuilder> condition);
-
   INodeBuilder findCopyingNodeBuilderForSource(SNode sourceNode);
 
   INodeBuilder findNodeBuilderForSourceAndTemplate(SNode source, SNode template);
