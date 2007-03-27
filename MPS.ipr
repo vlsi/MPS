@@ -27,7 +27,7 @@
       <maximumHeapSize value="128" />
       <properties />
     </buildFile>
-    <buildFile url="file://$PROJECT_DIR$/equinox-sandbox/jetbrains.mps.testBundle/build.xml">
+    <buildFile url="file://equinox-sandbox/jetbrains.mps.testBundle/build.xml">
       <additionalClassPath />
       <antReference projectDefault="true" />
       <customJdkName value="" />
@@ -930,9 +930,7 @@
       <module fileurl="file://$PROJECT_DIR$/platform/webr/extensions/discussion/discussion.iml" filepath="$PROJECT_DIR$/platform/webr/extensions/discussion/discussion.iml" group="platform/webr/extensions" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/dnq.iml" filepath="$PROJECT_DIR$/platform/dnq/dnq.iml" group="platform/dnq/language" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/extensions/entityBrowser/entityBrowser.iml" filepath="$PROJECT_DIR$/platform/webr/extensions/entityBrowser/entityBrowser.iml" group="platform/webr/extensions" />
-      <module fileurl="file://$PROJECT_DIR$/equinox-sandbox/equinox-sandbox.iml" filepath="$PROJECT_DIR$/equinox-sandbox/equinox-sandbox.iml" group="Equinox-Sandbox" />
       <module fileurl="file://$PROJECT_DIR$/projects/fixedLengthReader/fixedLengthReader.iml" filepath="$PROJECT_DIR$/projects/fixedLengthReader/fixedLengthReader.iml" group="Projects" />
-      <module fileurl="file://$PROJECT_DIR$/equinox-sandbox/jetbrains.mps.testBundle/jetbrains.mps.testBundle.iml" filepath="$PROJECT_DIR$/equinox-sandbox/jetbrains.mps.testBundle/jetbrains.mps.testBundle.iml" group="Equinox-Sandbox" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/openAPI/openAPI.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/openAPI/openAPI.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/platform/regexp/regexp.iml" filepath="$PROJECT_DIR$/platform/regexp/regexp.iml" group="platform/regexp" />
       <module fileurl="file://$PROJECT_DIR$/platform/regexp/runtime/regexp_runtime.iml" filepath="$PROJECT_DIR$/platform/regexp/runtime/regexp_runtime.iml" group="platform/regexp" />
