@@ -16,7 +16,7 @@ public class XmlDemo {
     try {
       InputStream is = new ByteArrayInputStream(INPUT.getBytes());
       Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(is);
-      for(Node n : TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new DomNode_TreePath().from(doc), TreeTraversalFactory.Axis("DESCENDANTS")), new WhereFilter_1169051087510()), TreeTraversalFactory.Axis("PRECEDING_SIBLINGS")), TreeTraversalFactory.Axis("DESCENDANTS"))) {
+      for(Node n : TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new DomNode_TreePath().from(doc), TreeTraversalFactory.Axis("DESCENDANTS")), new WhereFilter_1169051087510(null, null)), TreeTraversalFactory.Axis("PRECEDING_SIBLINGS")), TreeTraversalFactory.Axis("DESCENDANTS"))) {
         System.out.println(n);
       }
     } catch (Exception ignored) {
