@@ -15,6 +15,11 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1.1133920641626" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1175003344231">
+      <property name="role" value="modelToCreate" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="2.1068431790191" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174385620730">
       <property name="value" value="&lt;quotation&gt;" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />

@@ -25,7 +25,7 @@
         <property name="textBgColor" value="cyan" />
         <property name="text" value="&lt;" />
         <property name="drawBorder" value="false" />
-        <property name="selectable" value="false" />
+        <property name="selectable" value="true" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1174385644141">
         <property name="drawBorder" value="false" />
@@ -35,7 +35,39 @@
         <property name="textBgColor" value="cyan" />
         <property name="text" value="&gt;" />
         <property name="drawBorder" value="false" />
+        <property name="selectable" value="true" />
+        <link role="keyMap" targetNodeId="1175003740831" resolveInfo="_Quotation_createModel" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1175003309100">
+        <property name="drawBorder" value="false" />
         <property name="selectable" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1175003319103">
+          <property name="text" value="[model =" />
+          <property name="drawBorder" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1175003309101">
+          <property name="drawBorder" value="false" />
+          <link role="relationDeclaration" targetNodeId="1.1175003344231" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1175003331355">
+          <property name="text" value="]" />
+          <property name="drawBorder" value="false" />
+        </node>
+        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1175003386763">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1175003386764">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1175003397431">
+              <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1175003402326">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1175003403688" />
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1175003399246">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1175003397432" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1175003401153">
+                    <link role="link" targetNodeId="1.1175003344231" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
@@ -1011,6 +1043,46 @@
           <property name="drawBorder" value="false" />
           <property name="readOnly" value="true" />
           <link role="relationDeclaration" targetNodeId="2.1169194664001" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapDeclaration" id="1175003740831">
+    <property name="name" value="_Quotation_createModel" />
+    <link role="applicableConcept" targetNodeId="1.1174385511721" />
+    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1175003766886">
+      <property name="caretPolicy" value="caret_at_last_position" />
+      <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1175003766887">
+        <property name="keycode" value="[" />
+      </node>
+      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_ExecuteFunction" id="1175003766888">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1175003766889">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1175003790750">
+            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1175003817365">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1175003792455">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1175003790751" />
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1175003815318">
+                  <link role="link" targetNodeId="1.1175003344231" />
+                </node>
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Link_SetNewChildOperation" id="1175003819038" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_IsApplicableFunction" id="1175003802636">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1175003802637">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1175003804622">
+            <node role="expression" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1175003810861">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1175003812067" />
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1175003806874">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1175003804623" />
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1175003809625">
+                  <link role="link" targetNodeId="1.1175003344231" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>
