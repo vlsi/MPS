@@ -944,6 +944,7 @@
       <module fileurl="file://$PROJECT_DIR$/projects/teamSys/teamSysWebApp/teamSysWebApp.iml" filepath="$PROJECT_DIR$/projects/teamSys/teamSysWebApp/teamSysWebApp.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/transientDbEntityStore/transientDbEntityStore.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/transientDbEntityStore/transientDbEntityStore.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/platform/web-query/web-query.iml" filepath="$PROJECT_DIR$/platform/web-query/web-query.iml" group="platform/web-query" />
+      <module fileurl="file://$PROJECT_DIR$/platform/web-query/runtime/web-query-runtime.iml" filepath="$PROJECT_DIR$/platform/web-query/runtime/web-query-runtime.iml" group="platform/web-query" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/webr.iml" filepath="$PROJECT_DIR$/platform/webr/webr.iml" group="platform/webr" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/devkit/webrDevkitPlugin.iml" filepath="$PROJECT_DIR$/platform/webr/devkit/webrDevkitPlugin.iml" group="platform/webr" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/runtime/webrRuntime.iml" filepath="$PROJECT_DIR$/platform/webr/runtime/webrRuntime.iml" group="platform/webr" />
@@ -1563,15 +1564,6 @@
       <JAVADOC />
       <SOURCES>
         <root url="jar://$PROJECT_DIR$/lib/asm/asm-src.zip!/" />
-      </SOURCES>
-    </library>
-    <library name="Equinox">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/equinox-sandbox/org.eclipse.osgi_3.2.1.R32x_v20060919.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/equinox-sandbox/equinox-src.zip!/" />
       </SOURCES>
     </library>
     <library name="commons-logging">
