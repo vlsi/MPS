@@ -31,7 +31,7 @@ public class ApplicableNodeReference_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174650488858");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174650488858");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

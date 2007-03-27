@@ -35,7 +35,7 @@ public class PatternCondition_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createPatternCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "as"));
     editorCell.addEditorCell(this.createNameCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174643009469");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174643009469");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -47,7 +47,7 @@ public class PatternCondition_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174643015145");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174643015145");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -64,7 +64,7 @@ public class PatternCondition_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174643011893");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174643011893");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -99,7 +99,7 @@ public class PatternCondition_Editor extends DefaultNodeEditor {
       editorCellLabel.getTextLine().setTextColor(MPSColors.DARK_BLUE);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174643021631");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174643021631");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

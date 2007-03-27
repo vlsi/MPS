@@ -13,14 +13,14 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
-public class TypeVarReference_Editor extends DefaultNodeEditor {
+public class PropertyPatternVariableReference_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createTypeVarDeclarationReferenceCell(context, node);
+    return this.createPatternVarDeclReferenceCell(context, node);
   }
-  public EditorCell createTypeVarDeclarationReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createPatternVarDeclReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new TypeVarReference_Editor_typeVarDeclaration_InlineComponent());
+    provider.setAuxiliaryCellProvider(new PropertyPatternVariableReference_Editor_patternVarDecl_InlineComponent());
     EditorCell editorCell = provider.createEditorCell(context);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -31,17 +31,17 @@ public class TypeVarReference_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174666294979");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174990265997");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createTypeVarDeclarationReferenceCell(EditorContext context, SNode node) {
+  public EditorCell createPatternVarDeclReferenceCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
-    provider.setRole("typeVarDeclaration");
+    provider.setRole("patternVarDecl");
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createTypeVarDeclarationReferenceCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.createPatternVarDeclReferenceCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if(attributeConcept != null) {

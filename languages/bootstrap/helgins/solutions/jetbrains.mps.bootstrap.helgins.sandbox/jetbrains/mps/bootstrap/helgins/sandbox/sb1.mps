@@ -34,7 +34,17 @@
         </node>
       </node>
     </node>
-    <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1174828651410" />
+    <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1174828651410">
+      <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1174990718481">
+        <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1174990718482">
+          <property name="name" value="a" />
+          <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1174990718483" />
+          <node role="initializer" type="jetbrains.mps.bootstrap.helgins.PropertyPatternVariableReference" id="1174992752958">
+            <link role="patternVarDecl" targetNodeId="1174908056404" resolveInfo="$a" />
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.helgins.Judgementlist" id="1174920791764">
     <node role="judgement" type="jetbrains.mps.bootstrap.helgins.Judgement" id="1174920803124">
@@ -126,6 +136,7 @@
       </node>
     </node>
     <node role="judgement" type="jetbrains.mps.bootstrap.helgins.Judgement" id="1174921033927">
+      <property name="result" value="true" />
       <node role="pattern" type="jetbrains.mps.patterns.PatternExpression" id="1174921033928">
         <node role="patternNode" type="jetbrains.mps.baseLanguage.PlusExpression" id="1174921094501">
           <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1174921098066">

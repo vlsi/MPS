@@ -254,5 +254,32 @@
       <link role="target" targetNodeId="1174913569543" resolveInfo="Judgement" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174989242422">
+    <property name="name" value="PatternVariableReference" />
+    <link role="extends" targetNodeId="2.1068431790191" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174989274720">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="patternVarDecl" />
+      <link role="target" targetNodeId="4.1136720037779" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174989777619">
+    <property name="name" value="LinkPatternVariableReference" />
+    <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174989841903">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="patternVarReference" />
+      <link role="target" targetNodeId="4.1137418540378" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174989799417">
+    <property name="name" value="PropertyPatternVariableReference" />
+    <link role="extends" targetNodeId="2.1068431790191" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174989822012">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="patternVarDecl" />
+      <link role="target" targetNodeId="4.1136720037781" />
+    </node>
+  </node>
 </model>
 

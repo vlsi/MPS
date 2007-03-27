@@ -32,7 +32,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell(context, node, "TYPEOF"));
     editorCell.addEditorCell(this.createTermCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174657546993");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174657546993");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -45,7 +45,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174657548745");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174657548745");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -62,7 +62,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174657554356");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174657554356");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
