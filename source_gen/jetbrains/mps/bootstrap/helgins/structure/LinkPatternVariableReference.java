@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.patterns.structure.LinkPatternVariableDeclaration;
 
 public class LinkPatternVariableReference extends Expression {
-  public static String PATTERN_VAR_REFERENCE = "patternVarReference";
+  public static String PATTERN_VAR_DECL = "patternVarDecl";
 
   public  LinkPatternVariableReference(SNode node) {
     super(node);
@@ -23,10 +23,10 @@ public class LinkPatternVariableReference extends Expression {
     return LinkPatternVariableReference.newInstance(sm, false);
   }
 
-  public LinkPatternVariableDeclaration getPatternVarReference() {
-    return (LinkPatternVariableDeclaration)this.getReferent(LinkPatternVariableReference.PATTERN_VAR_REFERENCE);
+  public LinkPatternVariableDeclaration getPatternVarDecl() {
+    return (LinkPatternVariableDeclaration)this.getReferent(LinkPatternVariableReference.PATTERN_VAR_DECL);
   }
-  public void setPatternVarReference(LinkPatternVariableDeclaration node) {
-    super.setReferent(LinkPatternVariableReference.PATTERN_VAR_REFERENCE, node);
+  public void setPatternVarDecl(LinkPatternVariableDeclaration node) {
+    super.setReferent(LinkPatternVariableReference.PATTERN_VAR_DECL, node);
   }
 }

@@ -176,8 +176,18 @@ public class QueriesGenerated {
     LocalVariableDeclarationStatement lvs = (LocalVariableDeclarationStatement)statementList.getStatements().get(0);
     return BaseAdapter.fromAdapter(lvs.getLocalVariableDeclaration());
   }
-  public static SNode referenceMacro_GetReferent_1174988626934(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1175002013260(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return generator.findNodeBuilderForSource(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "applicableNode", true), "pattern", true), "patternClass").getTargetNode();
+  }
+  public static SNode referenceMacro_GetReferent_1174998489630(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return generator.findNodeBuilderForSource(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "applicableNode", true), "pattern", true), "patternClass").getTargetNode().getChild("constructor");
+  }
+  public static SNode referenceMacro_GetReferent_1175002064909(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode clt;
+    if(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.InferenceRule")) {
+      return SLinkOperations.getTarget(new QuotationClass_1175002623261().createNode(), "classifier", false);
+    }
+    return SLinkOperations.getTarget(new QuotationClass_1175002623266().createNode(), "classifier", false);
   }
   public static SNode referenceMacro_GetReferent_1174655195413(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode rule = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.helgins.structure.AbstractRule", false, false);
@@ -191,6 +201,27 @@ public class QueriesGenerated {
   }
   public static SNode referenceMacro_GetReferent_1174916691301(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return generator.findNodeBuilderForSource(SLinkOperations.getTarget(node, "pattern", true), "patternClass").getTargetNode().getChild("constructor");
+  }
+  public static SNode referenceMacro_GetReferent_1174999318513(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode rule = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.helgins.structure.AbstractRule", false, false);
+    return generator.findNodeBuilderForSource(rule, "applicableNodePatternField").getTargetNode();
+  }
+  public static SNode referenceMacro_GetReferent_1174997611702(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return generator.findNodeBuilderForSource(SLinkOperations.getTarget(node, "patternVarDecl", false), "patternVarField").getTargetNode();
+  }
+  public static SNode referenceMacro_GetReferent_1174999849168(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode rule = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.helgins.structure.AbstractRule", false, false);
+    return generator.findNodeBuilderForSource(rule, "applicableNodePatternField").getTargetNode();
+  }
+  public static SNode referenceMacro_GetReferent_1174999849185(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return generator.findNodeBuilderForSource(SLinkOperations.getTarget(node, "patternVarDecl", false), "patternVarField").getTargetNode();
+  }
+  public static SNode referenceMacro_GetReferent_1174999907201(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode rule = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.helgins.structure.AbstractRule", false, false);
+    return generator.findNodeBuilderForSource(rule, "applicableNodePatternField").getTargetNode();
+  }
+  public static SNode referenceMacro_GetReferent_1174999907218(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return generator.findNodeBuilderForSource(SLinkOperations.getTarget(node, "patternVarDecl", false), "patternVarField").getTargetNode();
   }
   public static boolean ifMacro_Condition_1174589744219(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return false;
@@ -239,6 +270,9 @@ public class QueriesGenerated {
       }
     }
     return false;
+  }
+  public static boolean ifMacro_Condition_1174998351525(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
   }
   public static boolean ifMacro_Condition_1174643945663(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.ConceptReference");

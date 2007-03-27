@@ -38,7 +38,9 @@
       <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1174990718481">
         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1174990718482">
           <property name="name" value="a" />
-          <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1174990718483" />
+          <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1175002683359">
+            <link role="classifier" extResolveInfo="1.[Classifier]String" />
+          </node>
           <node role="initializer" type="jetbrains.mps.bootstrap.helgins.PropertyPatternVariableReference" id="1174992752958">
             <link role="patternVarDecl" targetNodeId="1174908056404" resolveInfo="$a" />
           </node>

@@ -16,11 +16,11 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class LinkPatternVariableReference_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createPatternVarReferenceReferenceCell(context, node);
+    return this.createPatternVarDeclReferenceCell(context, node);
   }
-  public EditorCell createPatternVarReferenceReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createPatternVarDeclReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new LinkPatternVariableReference_Editor_patternVarReference_InlineComponent());
+    provider.setAuxiliaryCellProvider(new LinkPatternVariableReference_Editor_patternVarDecl_InlineComponent());
     EditorCell editorCell = provider.createEditorCell(context);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -35,13 +35,13 @@ public class LinkPatternVariableReference_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createPatternVarReferenceReferenceCell(EditorContext context, SNode node) {
+  public EditorCell createPatternVarDeclReferenceCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
-    provider.setRole("patternVarReference");
+    provider.setRole("patternVarDecl");
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createPatternVarReferenceReferenceCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.createPatternVarDeclReferenceCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if(attributeConcept != null) {

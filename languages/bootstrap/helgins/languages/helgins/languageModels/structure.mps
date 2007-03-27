@@ -268,7 +268,7 @@
     <link role="extends" targetNodeId="2.1068431790191" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174989841903">
       <property name="sourceCardinality" value="1" />
-      <property name="role" value="patternVarReference" />
+      <property name="role" value="patternVarDecl" />
       <link role="target" targetNodeId="4.1137418540378" />
     </node>
   </node>

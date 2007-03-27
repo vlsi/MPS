@@ -13,5 +13,4 @@ import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 public interface Rule_Runtime {
   boolean isApplicable(SNode argument);
   String getApplicableConceptFQName();
-  ApplicableNodeCondition getNodeCondition();
 }
