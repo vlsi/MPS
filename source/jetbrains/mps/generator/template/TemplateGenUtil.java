@@ -523,7 +523,11 @@ public class TemplateGenUtil {
   private static List<SNode> getSourceNodesForMacroWithSourceNodesQuery(SNode sourceNode, SourceSubstituteMacro macro, SourceSubstituteMacro_SourceNodesQuery query, ITemplateGenerator generator) {
     // new
     if (query != null) {
-      return evaluateSourceNodesQuery(sourceNode, query, BaseAdapter.fromAdapter(macro), generator);
+      List<SNode> list = evaluateSourceNodesQuery(sourceNode, query, BaseAdapter.fromAdapter(macro), generator);
+      if (list != null) {
+        return list;
+      }
+      return new LinkedList<SNode>();
     }
 
     // old
@@ -533,7 +537,10 @@ public class TemplateGenUtil {
       Object[] args = new Object[]{sourceNode, generator};
       try {
         List<SNode> sourceNodes = (List<SNode>) QueryMethod.invoke(methodName, args, macro.getModel());
-        return sourceNodes;
+        if (sourceNodes != null) {
+          return sourceNodes;
+        }
+        return new LinkedList<SNode>();
       } catch (Exception e) {
         generator.showErrorMessage(sourceNode, null, BaseAdapter.fromAdapter(macro), "couldn't evaluate macro query: " + NameUtil.shortNameFromLongName(e.getClass().getName()) + " : " + e.getMessage());
         LOG.error(e);
