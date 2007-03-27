@@ -43,7 +43,7 @@ public class GenerationPlan {
   }
 
   private List<MappingConfiguration> getMappingsFromRef(MappingConfig_AbstractRef mappingRef) {
-    if (mappingRef instanceof MappingConfig_RefAll) {
+    if (mappingRef instanceof MappingConfig_RefAllLocal) {
       return getAllMappings();
     }
     if (mappingRef instanceof MappingConfig_SimpleRef) {
