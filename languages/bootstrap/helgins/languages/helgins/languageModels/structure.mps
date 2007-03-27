@@ -265,7 +265,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174989777619">
     <property name="name" value="LinkPatternVariableReference" />
-    <link role="extends" targetNodeId="1.1133920641626" />
+    <link role="extends" targetNodeId="2.1068431790191" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174989841903">
       <property name="sourceCardinality" value="1" />
       <property name="role" value="patternVarReference" />
