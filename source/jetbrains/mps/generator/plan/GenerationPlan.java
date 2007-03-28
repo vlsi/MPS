@@ -87,13 +87,13 @@ public class GenerationPlan {
       return myAllMappings;
     }
     if (mappingRef instanceof MappingConfig_ExtRef) {
-      GeneratorReference generatorRef = ((MappingConfig_ExtRef) mappingRef).getGeneratorReference();
+      GeneratorReference generatorRef = ((MappingConfig_ExtRef) mappingRef).getGenerator();
       if (generatorRef != null) {
         String referentUID = generatorRef.getReferentUID();
         if (referentUID != null) {
           Generator newRefGenerator = (Generator) MPSModuleRepository.getInstance().getModuleByUID(referentUID);
           if (newRefGenerator != null) {
-            return getMappingsFromRef(((MappingConfig_ExtRef) mappingRef).getMappingConfigReference(), newRefGenerator, scope);
+            return getMappingsFromRef(((MappingConfig_ExtRef) mappingRef).getMappingConfig(), newRefGenerator, scope);
           } else {
             LOG.error("couldn't get generator by uid: '" + referentUID + "'");
           }
@@ -102,21 +102,21 @@ public class GenerationPlan {
       return new ArrayList();
     }
     if (mappingRef instanceof MappingConfig_SimpleRef) {
-      String modelUID = ((MappingConfig_SimpleRef) mappingRef).getTemplatesModelUID();
-      String mappingConfigID = ((MappingConfig_SimpleRef) mappingRef).getMappingConfigID();
-      if (modelUID != null && mappingConfigID != null) {
+      String modelUID = ((MappingConfig_SimpleRef) mappingRef).getModelUID();
+      String nodeID = ((MappingConfig_SimpleRef) mappingRef).getNodeID();
+      if (modelUID != null && nodeID != null) {
         SModelDescriptor refModel = scope.getModelDescriptor(SModelUID.fromString(modelUID));
         if (refModel != null) {
-          if (mappingConfigID.equals("*")) {
+          if (nodeID.equals("*")) {
             return refModel.getSModel().allAdapters(MappingConfiguration.class);
           } else {
-            SNode mappingConfig = refModel.getSModel().getNodeById(mappingConfigID);
+            SNode mappingConfig = refModel.getSModel().getNodeById(nodeID);
             if (mappingConfig != null) {
               List<MappingConfiguration> result = new ArrayList<MappingConfiguration>();
               result.add((MappingConfiguration) BaseAdapter.fromNode(mappingConfig));
               return result;
             } else {
-              LOG.error("couldn't get node by id: '" + mappingConfigID + "' in model " + modelUID);
+              LOG.error("couldn't get node by id: '" + nodeID + "' in model " + modelUID);
             }
           }
         } else {
