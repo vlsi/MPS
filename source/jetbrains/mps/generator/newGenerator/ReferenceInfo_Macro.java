@@ -1,14 +1,20 @@
 package jetbrains.mps.generator.newGenerator;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro;
 import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent;
+import jetbrains.mps.transformation.TLBase.structure.NodeMacro;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.baseLanguage.structure.InstanceMethodCall;
+import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
+
+import java.util.List;
 
 /**
  * Created by: Sergey Dmitriev
@@ -24,7 +30,6 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
     myTemplateReferentNode = templateReferentNode;
     myReferenceMacro = refMacro;
     myInputNode = inputNode;
-
   }
 
   public void execute(TemplateModelGenerator_New generator) {

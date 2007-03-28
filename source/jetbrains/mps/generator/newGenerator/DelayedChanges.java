@@ -1,6 +1,7 @@
 package jetbrains.mps.generator.newGenerator;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.generator.template.INodeBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +14,7 @@ public class DelayedChanges {
   private ArrayList<AddChildChange> myAddChildChanges = new ArrayList<AddChildChange>();
   private ArrayList<RemoveNodeChange> myRemoveNodeChanges = new ArrayList<RemoveNodeChange>();
   private ArrayList<ReplaceChildrenChange> myReplaceChildrenChanges = new ArrayList<ReplaceChildrenChange>();
+  private ArrayList<ExecuteNodebuilderChange> myExecuteNodeBuilderChanges = new ArrayList<ExecuteNodebuilderChange>();
 
 
   public void addAddChildChange(SNode parentNode, SNode childNode, String role) {
@@ -27,6 +29,10 @@ public class DelayedChanges {
     }
   }
 
+  public void addExecuteNodeBuilderChange(SNode parentNode, INodeBuilder builder, SNode childToReplace) {
+    myExecuteNodeBuilderChanges.add(new ExecuteNodebuilderChange(parentNode, builder, childToReplace));
+  }
+
   public void doAllChanges() {
     for (AddChildChange addChildChange : myAddChildChanges) {
       addChildChange.doChange();
@@ -36,6 +42,9 @@ public class DelayedChanges {
     }
     for (ReplaceChildrenChange replaceChildrenChange : myReplaceChildrenChanges) {
       replaceChildrenChange.doChange();
+    }
+    for (ExecuteNodebuilderChange executeNodebuilderChange : myExecuteNodeBuilderChanges) {
+      executeNodebuilderChange.doChange();
     }
   }
 
@@ -88,5 +97,27 @@ public class DelayedChanges {
         myOldNode.getParent().replaceChild(myOldNode, myNewNodes);
       }
     }
+  }
+
+  private class ExecuteNodebuilderChange {
+    protected SNode myParentNode;
+    protected SNode myChildToReplace;
+    private INodeBuilder myNodeBuilder;
+
+    public ExecuteNodebuilderChange(SNode parentNode, INodeBuilder nodeBuilder, SNode childToReplace) {
+      myParentNode = parentNode;
+      myNodeBuilder = nodeBuilder;
+      myChildToReplace = childToReplace;
+    }
+
+    public void doChange() {
+      myNodeBuilder.setParent(new SimpleNodeBuilder(myNodeBuilder.getGenerator(), myParentNode));
+      myNodeBuilder.execute(null, null);
+      SNode child = myNodeBuilder.getTargetNode();
+      if(child != null) {
+        myParentNode.replaceChild(myChildToReplace, child);
+      }
+    }
+
   }
 }

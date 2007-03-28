@@ -3,6 +3,7 @@ package jetbrains.mps.generator.newGenerator;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.generator.GenerationFailedException;
 import jetbrains.mps.generator.GenerationSessionContext;
+import jetbrains.mps.generator.GenerationFailueInfo;
 import jetbrains.mps.generator.template.*;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
@@ -10,17 +11,12 @@ import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.NodeWithContext;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.transformation.TLBase.structure.CreateRootRule;
-import jetbrains.mps.transformation.TLBase.structure.MappingRule;
-import jetbrains.mps.transformation.TLBase.structure.Root_MappingRule;
-import jetbrains.mps.transformation.TLBase.structure.TemplateSwitch;
-import jetbrains.mps.transformation.TLBase.structure.WeavingRule;
-import jetbrains.mps.transformation.TLBase.structure.Weaving_MappingRule;
-import jetbrains.mps.transformation.TLBase.structure.TemplateDeclaration;
+import jetbrains.mps.transformation.TLBase.structure.*;
 import jetbrains.mps.typesystem.ITypeChecker;
 import jetbrains.mps.typesystem.TypeCheckerAccess;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.QueryMethod;
 
 import java.util.*;
 
@@ -36,6 +32,8 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   private HashMap<Pair<SNode, SNode>, INodeBuilder> myTemplateNodeAndInputNodeToBuilderMap = new HashMap<Pair<SNode, SNode>, INodeBuilder>();
   private HashMap<Pair<String, SNode>, INodeBuilder> myRuleNameAndInputNodeToBuilderMap = new HashMap<Pair<String, SNode>, INodeBuilder>();
   private DelayedChanges myDelayedChanges = new DelayedChanges();
+  private TemplateSwitchGraph myTemplateSwitchGraph;
+  private Map<TemplateSwitch, List<TemplateSwitch>> myTemplateSwitchToListCache;
 
 
   public TemplateModelGenerator_New( GenerationSessionContext operationContext,
@@ -43,6 +41,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
                                      IMessageHandler handler,
                                      SModel model) {
     super(operationContext, progressMonitor, handler);
+    setTargetModel(model);
     myModel = model;
   }
 
@@ -244,7 +243,83 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   }
 
   public TemplateDeclaration getTemplateForSwitchCase(SNode sourceNode, TemplateSwitch templateSwitch) {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    ConceptDeclaration nodeConcept = sourceNode.getConceptDeclarationAdapter(getScope());
+
+    if (myTemplateSwitchGraph == null) {
+      myTemplateSwitchGraph = new TemplateSwitchGraph(getGeneratorSessionContext().getTemplateModels());
+      myTemplateSwitchToListCache = new HashMap<TemplateSwitch, List<TemplateSwitch>>();
+    }
+
+    List<TemplateSwitch> switches = myTemplateSwitchToListCache.get(templateSwitch);
+    if (switches == null) {
+      switches = myTemplateSwitchGraph.getSubgraphAsList(templateSwitch);
+      myTemplateSwitchToListCache.put(templateSwitch, switches);
+    }
+
+    // for each template switch test conditions and choose template node
+    for (TemplateSwitch aSwitch : switches) {
+      // old rules
+      Iterator<ConditionalTemplate> iterator = aSwitch.templates();
+      while (iterator.hasNext()) {
+        ConditionalTemplate conditionalTemplate = iterator.next();
+
+        // ... test condition
+        String conditionAspectId = conditionalTemplate.getConditionAspectId();
+        String methodName = "semanticNodeCondition_" + conditionAspectId;
+        Object[] args = new Object[]{sourceNode};
+        try {
+          Boolean condition = (Boolean) QueryMethod.invokeWithOptionalArg(methodName, args, conditionalTemplate.getModel(), getOperationContext());
+          if (condition) {
+            return conditionalTemplate.getTemplate();
+          }
+        } catch (Throwable t) {
+          throw new GenerationFailedException(new GenerationFailueInfo("Error while processing template switch", sourceNode, null, conditionalTemplate.getNode(), getGeneratorSessionContext()), t);
+        }
+      }
+
+      // new rules
+      List<Reduction_MappingRule> rules = aSwitch.getReductionMappingRules();
+      for (Reduction_MappingRule rule : rules) {
+        if (TemplateGenUtil.checkPremiseForBaseMappingRule(sourceNode, nodeConcept, rule, this)) {
+          // new
+          RuleConsequence ruleConsequence = rule.getRuleConsequence();
+          if (ruleConsequence != null) {
+            return processSwitchRuleConsequence(ruleConsequence, sourceNode, this);
+          }
+          // old
+          TemplateDeclaration ruleTemplate = rule.getTemplate();
+          if (ruleTemplate == null) {
+            showErrorMessage(sourceNode, null, rule.getNode(), "couldn't apply reduction: no template declaration");
+          }
+          return ruleTemplate;
+        }
+      }
+
+      // old: if switch has 'default'
+      TemplateDeclaration defaultTemplate = aSwitch.getDefaultTemplate();
+      if (defaultTemplate != null) {
+        return defaultTemplate;
+      }
+
+      // new default
+      RuleConsequence ruleConsequence = aSwitch.getDefaultConsequence();
+      if (ruleConsequence != null) {
+        return processSwitchRuleConsequence(ruleConsequence, sourceNode, this);
+      }
+    }
+    return null;
+  }
+
+
+  private TemplateDeclaration processSwitchRuleConsequence(RuleConsequence ruleConsequence, SNode sourceNode, ITemplateGenerator generator) {
+    if (ruleConsequence instanceof DismissTopMappingRule) {
+      TemplateGenUtil.showGeneratorMessage((GeneratorMessage) ((DismissTopMappingRule) ruleConsequence).getGeneratorMessage(), sourceNode, ruleConsequence.getNode(), generator);
+      throw new ReductionNotNeededException();
+    } else if (ruleConsequence instanceof TemplateDeclarationReference) {
+      return ((TemplateDeclarationReference) ruleConsequence).getTemplate();
+    }
+    generator.showErrorMessage(sourceNode, null, ruleConsequence.getNode(), "unsapported rule consequence");
+    return null;
   }
 
   public ITypeChecker getTypeChecker() {
