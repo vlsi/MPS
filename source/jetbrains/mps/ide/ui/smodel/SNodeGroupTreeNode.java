@@ -1,6 +1,11 @@
 package jetbrains.mps.ide.ui.smodel;
 
 import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.ide.ui.MPSTree;
+
+import javax.swing.JPopupMenu;
+import java.awt.Rectangle;
+import java.awt.event.KeyEvent;
 
 public class SNodeGroupTreeNode extends TextTreeNode {
 
@@ -22,6 +27,18 @@ public class SNodeGroupTreeNode extends TextTreeNode {
 
     myAutoDelete = autoDelete;
   }
+
+  public void keyPressed(KeyEvent keyEvent) {
+    if (keyEvent.isAltDown() && keyEvent.getKeyCode() == KeyEvent.VK_INSERT) {
+      JPopupMenu popupMenu = getPopupMenu();
+      if (popupMenu == null) return;
+      MPSTree mpsTree = getTree();
+      if (mpsTree == null) return;
+      Rectangle rectangle = mpsTree.getPathBounds(mpsTree.getSelectionPath());
+      popupMenu.show(mpsTree, rectangle.x + rectangle.width / 2, rectangle.y);
+    }
+  }
+
 
   public boolean isAutoDelete() {
     return myAutoDelete;
