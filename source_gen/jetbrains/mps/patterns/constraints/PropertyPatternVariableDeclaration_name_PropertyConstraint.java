@@ -20,7 +20,7 @@ public class PropertyPatternVariableDeclaration_name_PropertyConstraint implemen
   public void unRegisterSelf(ModelConstraintsManager manager) {
     manager.unRegisterNodePropertyGetter("jetbrains.mps.patterns.structure.PropertyPatternVariableDeclaration", "name");
   }
-  public String execPropertyGet(SNode node, String propertyName, IScope scope) {
+  public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     return "$" + SPropertyOperations.getString(node, "varName");
   }
 }

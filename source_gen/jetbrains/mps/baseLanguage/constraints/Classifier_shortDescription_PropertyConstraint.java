@@ -21,7 +21,7 @@ public class Classifier_shortDescription_PropertyConstraint implements IModelCon
   public void unRegisterSelf(ModelConstraintsManager manager) {
     manager.unRegisterNodePropertyGetter("jetbrains.mps.baseLanguage.structure.Classifier", "shortDescription");
   }
-  public String execPropertyGet(SNode node, String propertyName, IScope scope) {
+  public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     return NodePresentationUtil.getAliasOrConceptName(node) + " (" + SNodeOperations.getModel(node).getUID() + ")";
   }
 }

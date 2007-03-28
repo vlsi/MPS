@@ -19,7 +19,7 @@ public class LocalVariableDeclaration_shortDescription_PropertyConstraint implem
   public void unRegisterSelf(ModelConstraintsManager manager) {
     manager.unRegisterNodePropertyGetter("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", "shortDescription");
   }
-  public String execPropertyGet(SNode node, String propertyName, IScope scope) {
+  public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     return "local variable";
   }
 }

@@ -20,7 +20,7 @@ public class PatternVariableDeclaration_name_PropertyConstraint implements IMode
   public void unRegisterSelf(ModelConstraintsManager manager) {
     manager.unRegisterNodePropertyGetter("jetbrains.mps.patterns.structure.PatternVariableDeclaration", "name");
   }
-  public String execPropertyGet(SNode node, String propertyName, IScope scope) {
+  public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     return "#" + SPropertyOperations.getString(node, "varName");
   }
 }

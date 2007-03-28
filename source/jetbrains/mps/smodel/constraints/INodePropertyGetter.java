@@ -11,5 +11,5 @@ import jetbrains.mps.smodel.IScope;
  * To change this template use File | Settings | File Templates.
  */
 public interface INodePropertyGetter extends IModelConstraints {
-  String execPropertyGet(SNode node, String propertyName, IScope scope);
+  Object execPropertyGet(SNode node, String propertyName, IScope scope);
 }
