@@ -9,10 +9,10 @@ import jetbrains.mps.project.GlobalScope;
 import webr.xmlSchema.structure.ElementDeclaration;
 
 public class Element extends Content {
+  public static String IS_EMPTY = "isEmpty";
   public static String ELEMENT_DECLARATION = "elementDeclaration";
   public static String CONTENT_LIST = "contentList";
   public static String ATTRIBUTE_LIST = "attributeList";
-  public static String IS_EMPTY = "isEmpty";
 
   public  Element(SNode node) {
     super(node);
@@ -25,6 +25,12 @@ public class Element extends Content {
     return Element.newInstance(sm, false);
   }
 
+  public boolean getIsEmpty() {
+    return this.getBooleanProperty(Element.IS_EMPTY);
+  }
+  public void setIsEmpty(boolean value) {
+    this.setBooleanProperty(Element.IS_EMPTY, value);
+  }
   public ElementDeclaration getElementDeclaration() {
     return (ElementDeclaration)this.getReferent(Element.ELEMENT_DECLARATION);
   }
@@ -42,11 +48,5 @@ public class Element extends Content {
   }
   public void setAttributeList(AttributeList node) {
     super.setChild(Element.ATTRIBUTE_LIST, node);
-  }
-  public boolean getIsEmpty() {
-    return this.getBooleanProperty(Element.IS_EMPTY);
-  }
-  public void setIsEmpty(boolean value) {
-    this.setBooleanProperty(Element.IS_EMPTY, value);
   }
 }
