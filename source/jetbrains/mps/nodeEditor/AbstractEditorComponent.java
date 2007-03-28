@@ -712,46 +712,46 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
       return EditorCellAction.INSERT;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT && keyEvent.isControlDown()) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
       return EditorCellAction.LEFT_SPECIAL;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT && keyEvent.isControlDown()) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
       return EditorCellAction.RIGHT_SPECIAL;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_UP && keyEvent.isControlDown()) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_UP && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
       return EditorCellAction.UP_SPECIAL;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_W && keyEvent.isControlDown() && !keyEvent.isShiftDown()) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_W && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
       return EditorCellAction.UP_SPECIAL;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_DOWN && keyEvent.isControlDown()) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_DOWN && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
       return EditorCellAction.DOWN_SPECIAL;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_W && keyEvent.isControlDown() && keyEvent.isShiftDown()) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_W && keyEvent.isControlDown() && keyEvent.isShiftDown() && !keyEvent.isAltDown()) {
       return EditorCellAction.DOWN_SPECIAL;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_HOME && keyEvent.isControlDown()) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_HOME && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
       return EditorCellAction.CTRL_HOME;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_END && keyEvent.isControlDown()) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_END && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
       return EditorCellAction.CTRL_END;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_HOME) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_HOME && keyEvent.getModifiers() == 0) {
       return EditorCellAction.HOME;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_END) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_END && keyEvent.getModifiers() == 0) {
       return EditorCellAction.END;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_PAGE_DOWN) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_PAGE_DOWN && keyEvent.getModifiers() == 0) {
       return EditorCellAction.PAGE_DOWN;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_PAGE_UP) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_PAGE_UP && keyEvent.getModifiers() == 0) {
       return EditorCellAction.PAGE_UP;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_TAB && keyEvent.getModifiers() == 0) {
       return EditorCellAction.NEXT;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_TAB && keyEvent.isShiftDown()) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_TAB && keyEvent.isShiftDown() && !(keyEvent.isControlDown() || keyEvent.isAltDown())) {
       return EditorCellAction.PREV;
     }
 
