@@ -63,8 +63,8 @@
     <link role="extends" targetNodeId="3.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1147468324383">
       <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" />
-      <node role="target" type="jetbrains.mps.baseLanguage.ClassifierType" id="1147468354204">
-        <link role="classifier" extResolveInfo="5.[Classifier]String" />
+      <node role="target" type="jetbrains.mps.baseLanguage.ClassifierType" id="1175115638496">
+        <link role="classifier" extResolveInfo="5.[Classifier]Object" />
       </node>
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1161720815712">
