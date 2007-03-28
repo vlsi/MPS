@@ -1,9 +1,9 @@
 package jetbrains.mps.generator.plan;
 
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.projectLanguage.structure.*;
+import jetbrains.mps.logging.Logger;
 
 import java.util.*;
 
@@ -12,56 +12,122 @@ import java.util.*;
  * Date: Mar 27, 2007
  */
 public class GenerationPlan {
+  private static Logger LOG = Logger.getLogger(GenerationPlan.class);
 
   public static List<GenerationStep> createSteps(List<Generator> generators) {
     GenerationPlan plan = new GenerationPlan(generators);
 
+    Map<MappingConfiguration, Set<MappingConfiguration>> priorityMap = plan.newPriorityMap();
     for (Generator generator : generators) {
       List<MappingPriorityRule> rules = ((GeneratorDescriptor) generator.getModuleDescriptor()).getPriorityRules();
       for (MappingPriorityRule rule : rules) {
-        plan.fillPriorityMap(rule, generator.getScope());
+        plan.fillPriorityMap(rule, generator, priorityMap);
       }
     }
 
-    return new ArrayList<GenerationStep>();
+    return createSteps(priorityMap);
   }
 
+  private static List<GenerationStep> createSteps(Map<MappingConfiguration, Set<MappingConfiguration>> priorityMap) {
+    List<GenerationStep> steps = new ArrayList<GenerationStep>();
+    while (!priorityMap.isEmpty()) {
+      steps.add(createStep(priorityMap));
+    }
+    return steps;
+  }
+
+  private static GenerationStep createStep(Map<MappingConfiguration, Set<MappingConfiguration>> priorityMap) {
+
+    return null;  //To change body of created methods use File | Settings | File Templates.
+  }
+
+
   private List<Generator> myGenerators;
-  Map<MappingConfiguration, Set<MappingConfiguration>> myPriorityMap = new HashMap<MappingConfiguration, Set<MappingConfiguration>>();
-  private List<MappingConfiguration> myAllMappins;
+  private List<MappingConfiguration> myAllMappings;
 
   private GenerationPlan(List<Generator> generators) {
     myGenerators = generators;
   }
 
-  private void fillPriorityMap(MappingPriorityRule rule, IScope scope) {
+  private Map<MappingConfiguration, Set<MappingConfiguration>> newPriorityMap() {
+    myAllMappings = new ArrayList<MappingConfiguration>();
+    for (Generator generator : myGenerators) {
+      myAllMappings.addAll(generator.getOwnMappings());
+    }
+    Map<MappingConfiguration, Set<MappingConfiguration>> priorityMap = new HashMap<MappingConfiguration, Set<MappingConfiguration>>();
+    for (MappingConfiguration mapping : myAllMappings) {
+      if (!priorityMap.containsKey(mapping)) {
+        priorityMap.put(mapping, new HashSet<MappingConfiguration>());
+      }
+    }
+    return priorityMap;
+  }
+
+  private void fillPriorityMap(MappingPriorityRule rule, Generator generator, Map<MappingConfiguration, Set<MappingConfiguration>> priorityMap) {
+
     MappingConfig_AbstractRef greaterPriMappingRef = rule.getGreaterPriorityMapping();
     MappingConfig_AbstractRef lesserPriMappingRef = rule.getLesserPriorityMapping();
     if (greaterPriMappingRef == null || lesserPriMappingRef == null) return;
 
-    List<MappingConfiguration> greaterPriMappings = getMappingsFromRef(greaterPriMappingRef);
-  }
-
-  private List<MappingConfiguration> getMappingsFromRef(MappingConfig_AbstractRef mappingRef) {
-    if (mappingRef instanceof MappingConfig_RefAllLocal) {
-      return getAllMappings();
-    }
-    if (mappingRef instanceof MappingConfig_SimpleRef) {
-      return new ArrayList();
-    }
-    if (mappingRef instanceof MappingConfig_ExtRef) {
-      return new ArrayList();
-    }
-    return new ArrayList();
-  }
-
-  private List<MappingConfiguration> getAllMappings() {
-    if (myAllMappins == null) {
-      myAllMappins = new ArrayList<MappingConfiguration>();
-      for (Generator generator : myGenerators) {
-        myAllMappins.addAll(generator.getOwnMappings());
+    List<MappingConfiguration> greaterPriMappings = getMappingsFromRef(greaterPriMappingRef, generator, generator.getScope());
+    List<MappingConfiguration> lesserPriMappings = getMappingsFromRef(lesserPriMappingRef, generator, generator.getScope());
+    for (MappingConfiguration lesserPriMapping : lesserPriMappings) {
+      Set<MappingConfiguration> gtPriSet = priorityMap.get(lesserPriMapping);
+      for (MappingConfiguration greaterPriMapping : greaterPriMappings) {
+        if (greaterPriMapping != lesserPriMapping && !gtPriSet.contains(greaterPriMapping)) {
+          gtPriSet.add(greaterPriMapping);
+        }
       }
     }
-    return myAllMappins;
+    return;
+  }
+
+  private List<MappingConfiguration> getMappingsFromRef(MappingConfig_AbstractRef mappingRef, Generator refGenerator, IScope scope) {
+    if (mappingRef instanceof MappingConfig_RefAllGlobal) {
+      return myAllMappings;
+    }
+    if (mappingRef instanceof MappingConfig_ExtRef) {
+      GeneratorReference generatorRef = ((MappingConfig_ExtRef) mappingRef).getGeneratorReference();
+      if (generatorRef != null) {
+        String referentUID = generatorRef.getReferentUID();
+        if (referentUID != null) {
+          Generator newRefGenerator = (Generator) MPSModuleRepository.getInstance().getModuleByUID(referentUID);
+          if (newRefGenerator != null) {
+            return getMappingsFromRef(((MappingConfig_ExtRef) mappingRef).getMappingConfigReference(), newRefGenerator, scope);
+          } else {
+            LOG.error("couldn't get generator by uid: '" + referentUID + "'");
+          }
+        }
+      }
+      return new ArrayList();
+    }
+    if (mappingRef instanceof MappingConfig_SimpleRef) {
+      String modelUID = ((MappingConfig_SimpleRef) mappingRef).getTemplatesModelUID();
+      String mappingConfigID = ((MappingConfig_SimpleRef) mappingRef).getMappingConfigID();
+      if (modelUID != null && mappingConfigID != null) {
+        SModelDescriptor refModel = scope.getModelDescriptor(SModelUID.fromString(modelUID));
+        if (refModel != null) {
+          if (mappingConfigID.equals("*")) {
+            return refModel.getSModel().allAdapters(MappingConfiguration.class);
+          } else {
+            SNode mappingConfig = refModel.getSModel().getNodeById(mappingConfigID);
+            if (mappingConfig != null) {
+              List<MappingConfiguration> result = new ArrayList<MappingConfiguration>();
+              result.add((MappingConfiguration) BaseAdapter.fromNode(mappingConfig));
+              return result;
+            } else {
+              LOG.error("couldn't get node by id: '" + mappingConfigID + "' in model " + modelUID);
+            }
+          }
+        } else {
+          LOG.error("couldn't get model by uid: '" + modelUID + "' in scope " + scope);
+        }
+      }
+      return new ArrayList();
+    }
+    if (mappingRef instanceof MappingConfig_RefAllLocal) {
+      return refGenerator.getOwnMappings();
+    }
+    return new ArrayList();
   }
 }
