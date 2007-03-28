@@ -1613,6 +1613,10 @@
       <property name="name" value="matchingText" />
       <link role="dataType" targetNodeId="3.1082983041843" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1175117579502">
+      <property name="name" value="descriptionText" />
+      <link role="dataType" targetNodeId="3.1082983041843" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1165339175680">
       <property name="role" value="createFunction" />
       <property name="metaClass" value="aggregation" />

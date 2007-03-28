@@ -4,6 +4,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.util.CollectionUtil;
 
 import java.util.*;
 
@@ -71,10 +72,11 @@ public class GenerationPlan {
 
     List<MappingConfiguration> greaterPriMappings = getMappingsFromRef(greaterPriMappingRef, generator, generator.getScope());
     List<MappingConfiguration> lesserPriMappings = getMappingsFromRef(lesserPriMappingRef, generator, generator.getScope());
-    for (MappingConfiguration lesserPriMapping : lesserPriMappings) {
+    List<MappingConfiguration> lesserPriMappingsComplement = CollectionUtil.substruct(lesserPriMappings, greaterPriMappings);
+    for (MappingConfiguration lesserPriMapping : lesserPriMappingsComplement) {
       Set<MappingConfiguration> gtPriSet = priorityMap.get(lesserPriMapping);
       for (MappingConfiguration greaterPriMapping : greaterPriMappings) {
-        if (greaterPriMapping != lesserPriMapping && !gtPriSet.contains(greaterPriMapping)) {
+        if (!gtPriSet.contains(greaterPriMapping)) {
           gtPriSet.add(greaterPriMapping);
         }
       }
