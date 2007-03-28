@@ -5,7 +5,8 @@
   </models>
   <module />
   <languages>
-    <moduleRoot path="\home\fyodor\workspace\YPath\languages" />
+    <moduleRoot path="${mps_home}\projects\YPath\languages\ypath\ypath.mpl" />
   </languages>
+  <classPath />
 </solution>
 

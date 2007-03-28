@@ -30,10 +30,12 @@
         <moduleRoot path="${mps_home}\languages\baseLanguage\language\baseLanguage.mpl" />
       </module>
       <external-templates />
+      <mapping-priorities />
     </generator>
   </generators>
   <classPath>
-    <entry path="\home\fyodor\workspace\YPath\classes" />
+    <entry path="${language_descriptor}\home\fyodor\workspace\YPath\classes" />
+    <entry path="${mps_home}\projects\YPath\classes" />
   </classPath>
 </language>
 
