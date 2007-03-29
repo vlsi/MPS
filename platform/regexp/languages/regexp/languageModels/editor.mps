@@ -248,7 +248,7 @@
           <property name="selectable" value="false" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1175159029433">
-          <property name="text" value="the end of the text but on starts ands of a line separated with new line characters" />
+          <property name="text" value="the end of the text but on starts and ends of lines separated by new line characters" />
           <property name="fontStyle" value="ITALIC" />
           <property name="drawBorder" value="false" />
         </node>

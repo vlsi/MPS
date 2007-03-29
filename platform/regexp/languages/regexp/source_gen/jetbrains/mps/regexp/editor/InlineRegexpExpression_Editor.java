@@ -146,7 +146,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell13(context, node, "  "));
-    editorCell.addEditorCell(this.createConstantCell14(context, node, "the end of the text but on starts ands of a line separated with new line characters"));
+    editorCell.addEditorCell(this.createConstantCell14(context, node, "the end of the text but on starts and ends of lines separated by new line characters"));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175159024710");
     editorCell.setLayoutConstraint("");
     return editorCell;
