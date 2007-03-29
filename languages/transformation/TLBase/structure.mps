@@ -95,7 +95,10 @@
     <property name="iconPath" value="${language_descriptor}\icons\templateFragment.png" />
     <property name="rootable" value="true" />
     <property name="name" value="TemplateDeclaration" />
-    <link role="extends" targetNodeId="2.1078489098625" />
+    <link role="extends" targetNodeId="2.1133920641626" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1175152854371">
+      <link role="intfc" targetNodeId="2.1169194658468" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1168285871518">
       <property name="role" value="applicableConcept" />
       <link role="target" targetNodeId="3.1071489090640" />
@@ -116,7 +119,10 @@
     <property name="iconPath" value="${language_descriptor}\icons\mappingConf.png" />
     <property name="rootable" value="true" />
     <property name="name" value="MappingConfiguration" />
-    <link role="extends" targetNodeId="2.1078489098625" />
+    <link role="extends" targetNodeId="2.1133920641626" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1175152822399">
+      <link role="intfc" targetNodeId="2.1169194658468" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1132881767512">
       <property name="sourceCardinality" value="0..n" />
       <property name="targetCardinality" value="1" />
@@ -186,7 +192,10 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1095416572297">
     <property name="name" value="MappingRule" />
-    <link role="extends" targetNodeId="2.1078489098625" />
+    <link role="extends" targetNodeId="2.1133920641626" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1175152829041">
+      <link role="intfc" targetNodeId="2.1169194658468" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1095440741546">
       <property name="name" value="sourceQueryAspectId" />
       <link role="dataType" targetNodeId="2.1082983041843" />
@@ -204,7 +213,10 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1095416624611">
     <property name="name" value="WeavingRule" />
-    <link role="extends" targetNodeId="2.1078489098625" />
+    <link role="extends" targetNodeId="2.1133920641626" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1175152879452">
+      <link role="intfc" targetNodeId="2.1169194658468" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1095418755477">
       <property name="name" value="sourceQueryAspectId" />
       <link role="dataType" targetNodeId="2.1082983041843" />
@@ -225,7 +237,10 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1095672379244">
     <property name="name" value="TemplateFragment" />
-    <link role="extends" targetNodeId="2.1078489098625" />
+    <link role="extends" targetNodeId="2.1133920641626" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1175152860919">
+      <link role="intfc" targetNodeId="2.1169194658468" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1095757900618">
       <property name="name" value="contextProviderAspectId" />
       <link role="dataType" targetNodeId="2.1082983041843" />
@@ -235,7 +250,10 @@
     <property name="iconPath" value="${language_descriptor}\icons\switch.png" />
     <property name="rootable" value="true" />
     <property name="name" value="TemplateSwitch" />
-    <link role="extends" targetNodeId="2.1078489098625" />
+    <link role="extends" targetNodeId="2.1133920641626" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1175152870076">
+      <link role="intfc" targetNodeId="2.1169194658468" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1112820671508">
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="modifiedSwitch" />
@@ -270,7 +288,10 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1112730955130">
     <property name="name" value="ConditionalTemplate" />
-    <link role="extends" targetNodeId="2.1078489098625" />
+    <link role="extends" targetNodeId="2.1133920641626" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1175152799491">
+      <link role="intfc" targetNodeId="2.1169194658468" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1112804745009">
       <property name="sourceCardinality" value="0..1" />
       <property name="targetCardinality" value="0..n" />
@@ -325,7 +346,10 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1114456532170">
     <property name="name" value="ReductionRule" />
-    <link role="extends" targetNodeId="2.1078489098625" />
+    <link role="extends" targetNodeId="2.1133920641626" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1175152837370">
+      <link role="intfc" targetNodeId="2.1169194658468" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1167333207061">
       <property name="value" value="replaced with Reduction_MappingRule" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1162838948922" />
@@ -565,7 +589,10 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1167087469898">
     <property name="name" value="CreateRootRule" />
-    <link role="extends" targetNodeId="2.1078489098625" />
+    <link role="extends" targetNodeId="2.1133920641626" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1175152807351">
+      <link role="intfc" targetNodeId="2.1169194658468" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1167087469900">
       <property name="sourceCardinality" value="0..1" />
       <property name="role" value="conditionFunction" />
@@ -652,7 +679,10 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1167169308231">
     <property name="name" value="BaseMappingRule" />
-    <link role="extends" targetNodeId="2.1078489098625" />
+    <link role="extends" targetNodeId="2.1133920641626" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1175152790300">
+      <link role="intfc" targetNodeId="2.1169194658468" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1167272244852">
       <property name="name" value="applyToConceptInheritors" />
       <link role="dataType" targetNodeId="2.1082983657063" />
