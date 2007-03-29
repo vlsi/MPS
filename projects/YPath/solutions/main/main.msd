@@ -4,6 +4,9 @@
     <modelRoot path="${solution_descriptor}\." namespacePrefix="" />
   </models>
   <module />
-  <languages />
+  <languages>
+    <moduleRoot path="\home\fyodor\workspace\YPath\languages\ypath\ypath.mpl" />
+  </languages>
+  <classPath />
 </solution>
 

@@ -3,7 +3,9 @@
   <models>
     <modelRoot path="${solution_descriptor}\." namespacePrefix="" />
   </models>
-  <module />
+  <module>
+    <moduleRoot path="${mps_home}\projects\YPath\solutions\main\main.msd" />
+  </module>
   <languages>
     <moduleRoot path="${mps_home}\projects\YPath\languages\ypath\ypath.mpl" />
   </languages>
