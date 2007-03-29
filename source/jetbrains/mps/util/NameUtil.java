@@ -188,4 +188,8 @@ public class NameUtil {
     }
     return sb.toString();
   }
+
+  public static String pathFromNamespace(String namespace) {
+    return namespace.replace('.', '/');
+  }
 }
