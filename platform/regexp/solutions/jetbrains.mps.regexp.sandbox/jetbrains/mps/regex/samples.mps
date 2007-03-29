@@ -295,6 +295,14 @@
         </node>
       </node>
     </node>
+    <node role="regexp" type="jetbrains.mps.regexp.RegexpDeclaration" id="1175161573569">
+      <property name="description" value="prefix" />
+      <property name="name" value="prefix" />
+      <node role="regexp" type="jetbrains.mps.regexp.SeqRegexp" id="1175161596253">
+        <node role="left" type="jetbrains.mps.regexp.LineStartRegexp" id="1175161593067" />
+        <node role="right" type="jetbrains.mps.regexp.LineEndRegexp" id="1175161596254" />
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1174939949624">
     <property name="name" value="PredefinedRegexps" />

@@ -560,5 +560,29 @@
       <link role="intfc" targetNodeId="1174653354106" resolveInfo="RegexpUsingConstruction" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1175161264766">
+    <property name="name" value="LineStartRegexp" />
+    <link role="extends" targetNodeId="1174482743037" resolveInfo="Regexp" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1175161277910">
+      <property name="value" value="^" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1175161280396">
+      <property name="value" value="line start" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1175161300324">
+    <property name="name" value="LineEndRegexp" />
+    <link role="extends" targetNodeId="1174482743037" resolveInfo="Regexp" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1175161312248">
+      <property name="value" value="$" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1175161317594">
+      <property name="value" value="line end" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
+    </node>
+  </node>
 </model>
 
