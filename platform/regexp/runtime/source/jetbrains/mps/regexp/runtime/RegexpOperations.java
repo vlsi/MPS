@@ -19,8 +19,8 @@ public class RegexpOperations {
     return newText.toString();
   }
 
-  public static List<String> split(String s, Pattern pattern) {
-    return Arrays.asList(pattern.split(s));    
+  public static List<String> split(String s, Pattern pattern) {    
+    return Arrays.asList(pattern.split(s));
   }
 
 }

@@ -605,5 +605,28 @@
       <link role="intfc" targetNodeId="1174653354106" resolveInfo="RegexpUsingConstruction" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1175169009571">
+    <property name="name" value="FindMatchStatement" />
+    <link role="extends" targetNodeId="2.1068580123157" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1175169377208">
+      <property name="value" value="if (expr find match for regex) {" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1175169023932">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="expr" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="2.1068431790191" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1175169154112">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="body" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="2.1068580123136" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1175169017384">
+      <link role="intfc" targetNodeId="1174653354106" resolveInfo="RegexpUsingConstruction" />
+    </node>
+  </node>
 </model>
 
