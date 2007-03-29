@@ -85,4 +85,8 @@ public class RuntimeSupport {
       createEquation(nodesType, type, node);
     }
   }
+
+  public void check(SNode node) {
+    myTypeChecker.checkTypesForNode(node);
+  }
 }

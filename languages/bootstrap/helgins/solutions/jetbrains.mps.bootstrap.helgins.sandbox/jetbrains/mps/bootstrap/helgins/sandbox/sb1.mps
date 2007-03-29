@@ -35,6 +35,11 @@
       </node>
     </node>
     <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1174828651410">
+      <node role="statement" type="jetbrains.mps.bootstrap.helgins.CheckStatement" id="1175156662472">
+        <node role="nodeToCheck" type="jetbrains.mps.bootstrap.helgins.ApplicableNodeReference" id="1175156665474">
+          <link role="applicableNode" targetNodeId="1174828592761" resolveInfo="varDecl" />
+        </node>
+      </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1174990718481">
         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1174990718482">
           <property name="name" value="a" />

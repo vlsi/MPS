@@ -305,5 +305,19 @@
     <property name="name" value="SubtypingRule" />
     <link role="extends" targetNodeId="1175147569072" resolveInfo="AbstractSubtypingRule" />
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1175153783149">
+    <property name="name" value="CheckStatement" />
+    <link role="extends" targetNodeId="2.1068580123157" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1175153845993">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="nodeToCheck" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="2.1068431790191" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1175153794212">
+      <property name="value" value="CHECK" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
 </model>
 

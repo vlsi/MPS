@@ -30,6 +30,9 @@ public class TypeVarScope extends SearchScopeWithNode {
     Statement statement = BaseAdapter.fromNode(getEnclosingNode()).getParent(Statement.class);
     while(statement != null) {
       StatementList statementList = statement.getParent(StatementList.class);
+      if (statementList == null) {
+        return result;
+      }
       for(Statement aStatement : statementList.getStatements()) {
         if (aStatement == statement) break;
         if (aStatement instanceof TypeVarDeclaration) {
