@@ -13,4 +13,5 @@ import java.util.List;
  */
 public interface SubtypingRule_Runtime {
   List<SNode> getSubOrSuperTypes(SNode type);
+  boolean isSupertyping();
 }

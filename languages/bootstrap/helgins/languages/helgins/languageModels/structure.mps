@@ -319,5 +319,10 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1175162660418">
+    <property name="rootable" value="true" />
+    <property name="name" value="SupertypingRule" />
+    <link role="extends" targetNodeId="1175147569072" resolveInfo="AbstractSubtypingRule" />
+  </node>
 </model>
 

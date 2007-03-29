@@ -105,6 +105,9 @@ public class QueriesGenerated {
     SNode applicableNode = SLinkOperations.getTarget(node, "applicableNode", true);
     return applicableNode.getId();
   }
+  public static String propertyMacro_GetPropertyValue_1175162990835(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.SupertypingRule") + "";
+  }
   public static String propertyMacro_GetPropertyValue_1174643589864(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode ruleConcept = SNodeOperations.getConceptDeclaration(node);
     return SPropertyOperations.getString(node, "name") + "_" + ruleConcept;
@@ -307,6 +310,9 @@ public class QueriesGenerated {
   }
   public static boolean ifMacro_Condition_1174648541218(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
+  }
+  public static boolean ifMacro_Condition_1175162630666(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.AbstractSubtypingRule");
   }
   public static boolean ifMacro_Condition_1175149440226(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.AbstractSubtypingRule");

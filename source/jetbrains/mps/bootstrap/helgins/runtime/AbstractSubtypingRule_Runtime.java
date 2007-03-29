@@ -21,4 +21,8 @@ public abstract class AbstractSubtypingRule_Runtime implements SubtypingRule_Run
   }
 
   public abstract SNode getSubOrSuperType(SNode type);
+
+  public boolean isSupertyping() {
+    return false;
+  }
 }
