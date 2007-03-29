@@ -17,5 +17,5 @@ public abstract class AbstractChildNodeSetter implements IChildNodeSetter {
     return newChild;
   }
 
-  public abstract void doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope);
+  protected abstract void doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope);
 }

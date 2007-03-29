@@ -1,17 +1,20 @@
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.smodel.*;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.SNode;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Igoor
+ * User: Igor Alshannikov
  * Date: Mar 7, 2006
- * Time: 2:25:37 PM
- * To change this template use File | Settings | File Templates.
  */
 public class DefaultChildNodeSetter extends AbstractChildNodeSetter {
+  private static Logger LOG = Logger.getLogger(DefaultChildNodeSetter.class);
+
   LinkDeclaration myLinkDeclaration;
 
   public DefaultChildNodeSetter(LinkDeclaration linkDeclaration) {
@@ -27,10 +30,17 @@ public class DefaultChildNodeSetter extends AbstractChildNodeSetter {
   }
 
   public void doExecute(SNode parenNode, SNode oldChild, SNode newChild, IScope scope) {
+    if (newChild != null &&
+            !SModelUtil_new.isAcceptableReferent(myLinkDeclaration, newChild, GlobalScope.getInstance())) {
+      LOG.error("couldn't set instance of " + newChild.getConceptFqName() +
+              " as child '" + myLinkDeclaration.getRole() + "' to " + parenNode.getDebugText());
+      return;
+    }
+
     String role = SModelUtil_new.getGenuineLinkRole(myLinkDeclaration);
     if (oldChild == null) {
       parenNode.setChild(role, newChild);
-    } else {
+    } else if (newChild != null) {
       parenNode.insertChild(oldChild, role, newChild);
       oldChild.delete();
     }
