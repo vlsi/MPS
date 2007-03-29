@@ -134,4 +134,15 @@ public class Queries {
     }
     return result;
   }
+
+  public static Object CustomExpression_allReturnStatements(Object... args) {
+    SNode statementList = ((SNode) args[0]);
+    List<SNode> result = new ArrayList<SNode>();
+    for (SNode node : CollectionUtil.iteratorAsIterable(statementList.depthFirstChildren())) {
+      if (BaseAdapter.isInstance(node, ReturnStatement.class)) {
+        result.add(node);
+      }
+    }
+    return result;
+  }
 }

@@ -321,7 +321,7 @@ public class EquationManager {
     }
     nodes = new HashSet<SNode>(mySupertypesToSubtypesMap.keySet());
     for (SNode node : nodes) {
-      Map<SNode, SNode> map = mySubtypesToSupertypesMap.get(node);
+      Map<SNode, SNode> map = mySupertypesToSubtypesMap.get(node);
       if (map == null || map.isEmpty()) {
         mySupertypesToSubtypesMap.remove(node);
       } else {

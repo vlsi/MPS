@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
@@ -24,6 +25,14 @@ import jetbrains.mps.bootstrap.helgins.structure.ReferenceAntiquotation_Annotati
 
 public class QueriesGenerated {
 
+  public static boolean baseMappingRule_Condition_1175150707078(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "body", true));
+    return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(type, new QuotationClass_().createNode()));
+  }
+  public static boolean baseMappingRule_Condition_1175150546879(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "body", true));
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(type, new QuotationClass_1().createNode());
+  }
   public static boolean baseMappingRule_Condition_1174662794354(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "nodeToCheck", true) != null;
   }
@@ -188,9 +197,16 @@ public class QueriesGenerated {
   public static SNode referenceMacro_GetReferent_1175002064909(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode clt;
     if(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.InferenceRule")) {
-      return SLinkOperations.getTarget(new QuotationClass_().createNode(generator.getTargetModel()), "classifier", false);
+      return SLinkOperations.getTarget(new QuotationClass_2().createNode(generator.getTargetModel()), "classifier", false);
     }
-    return SLinkOperations.getTarget(new QuotationClass_1().createNode(generator.getTargetModel()), "classifier", false);
+    if(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.AbstractSubtypingRule")) {
+      return SLinkOperations.getTarget(new QuotationClass_3().createNode(generator.getTargetModel()), "classifier", false);
+    }
+    return SLinkOperations.getTarget(new QuotationClass_4().createNode(generator.getTargetModel()), "classifier", false);
+  }
+  public static SNode referenceMacro_GetReferent_1175149443385(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode clt;
+    return SLinkOperations.getTarget(new QuotationClass_5().createNode(), "classifier", false);
   }
   public static SNode referenceMacro_GetReferent_1174655195413(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode rule = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.helgins.structure.AbstractRule", false, false);
@@ -291,6 +307,9 @@ public class QueriesGenerated {
   }
   public static boolean ifMacro_Condition_1174648541218(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
+  }
+  public static boolean ifMacro_Condition_1175149440226(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.AbstractSubtypingRule");
   }
   public static List sourceNodesQuery_1174585963726(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     List<SNode> result = new ArrayList();
@@ -427,5 +446,11 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_1174917063458(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "nodeToMatch", true);
+  }
+  public static SNode sourceNodeQuery_1175149651851(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "body", true);
+  }
+  public static SNode sourceNodeQuery_1175149818478(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "body", true);
   }
 }

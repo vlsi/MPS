@@ -3,6 +3,9 @@
   <structure>
     <model modelUID="jetbrains.mps.bootstrap.helgins.structure" />
   </structure>
+  <helginsTypeSystem>
+    <model modelUID="jetbrains.mps.bootstrap.helgins.helgins" />
+  </helginsTypeSystem>
   <actions>
     <model modelUID="jetbrains.mps.bootstrap.helgins.actions" />
   </actions>
