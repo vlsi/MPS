@@ -30,7 +30,7 @@ public class QueriesGenerated {
     return "PatternVar_" + node.getId();
   }
   public static String propertyMacro_GetPropertyValue_1174811055861(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return "Pattern_" + node.getId();
+    return generator.getGeneratorSessionContext().createUniqueName("Pattern_");
   }
   public static String propertyMacro_GetPropertyValue_1174823343924(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return "nodeToMatch_" + node.getId();

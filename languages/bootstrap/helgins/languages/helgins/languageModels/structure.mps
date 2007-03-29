@@ -286,5 +286,24 @@
       <link role="target" targetNodeId="4.1136720037781" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1175147569072">
+    <property name="rootable" value="false" />
+    <property name="name" value="AbstractSubtypingRule" />
+    <link role="extends" targetNodeId="1174648085619" resolveInfo="AbstractRule" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1175147624276">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="body" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="2.1068580123136" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1175147661136">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1175147670730">
+    <property name="rootable" value="true" />
+    <property name="name" value="SubtypingRule" />
+    <link role="extends" targetNodeId="1175147569072" resolveInfo="AbstractSubtypingRule" />
+  </node>
 </model>
 

@@ -40,7 +40,7 @@ public class QueriesGenerated {
     return "parameter_" + node.getId();
   }
   public static String propertyMacro_GetPropertyValue_1174411533255(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return "QuotationClass_" + node.getId();
+    return generator.getGeneratorSessionContext().createUniqueName("QuotationClass_");
   }
   public static String propertyMacro_GetPropertyValue_1174589744208(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return "quotedNode_" + node.getId();
@@ -188,9 +188,9 @@ public class QueriesGenerated {
   public static SNode referenceMacro_GetReferent_1175002064909(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode clt;
     if(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.InferenceRule")) {
-      return SLinkOperations.getTarget(new QuotationClass_1175005662875().createNode(generator.getTargetModel()), "classifier", false);
+      return SLinkOperations.getTarget(new QuotationClass_().createNode(generator.getTargetModel()), "classifier", false);
     }
-    return SLinkOperations.getTarget(new QuotationClass_1175005662882().createNode(generator.getTargetModel()), "classifier", false);
+    return SLinkOperations.getTarget(new QuotationClass_1().createNode(generator.getTargetModel()), "classifier", false);
   }
   public static SNode referenceMacro_GetReferent_1174655195413(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode rule = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.helgins.structure.AbstractRule", false, false);
