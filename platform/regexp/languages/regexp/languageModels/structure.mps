@@ -584,5 +584,26 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1175164405556">
+    <property name="name" value="SplitExpression" />
+    <link role="extends" targetNodeId="2.1068431790191" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1175164472898">
+      <property name="value" value="split with" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1175164475807">
+      <property name="value" value="split with regexp" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1175164443297">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="expr" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="2.1068431790191" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1175164412823">
+      <link role="intfc" targetNodeId="1174653354106" resolveInfo="RegexpUsingConstruction" />
+    </node>
+  </node>
 </model>
 

@@ -8,10 +8,10 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class InlineRegexpExpression extends RegexpExpression {
+  public static String REGEXP = "regexp";
   public static String DOT_ALL = "dotAll";
   public static String MULTI_LINE = "multiLine";
   public static String CASE_INSENSITIVE = "caseInsensitive";
-  public static String REGEXP = "regexp";
 
   public  InlineRegexpExpression(SNode node) {
     super(node);
@@ -24,6 +24,12 @@ public class InlineRegexpExpression extends RegexpExpression {
     return InlineRegexpExpression.newInstance(sm, false);
   }
 
+  public Regexp getRegexp() {
+    return (Regexp)this.getChild(InlineRegexpExpression.REGEXP);
+  }
+  public void setRegexp(Regexp node) {
+    super.setChild(InlineRegexpExpression.REGEXP, node);
+  }
   public boolean getDotAll() {
     return this.getBooleanProperty(InlineRegexpExpression.DOT_ALL);
   }
@@ -41,11 +47,5 @@ public class InlineRegexpExpression extends RegexpExpression {
   }
   public void setCaseInsensitive(boolean value) {
     this.setBooleanProperty(InlineRegexpExpression.CASE_INSENSITIVE, value);
-  }
-  public Regexp getRegexp() {
-    return (Regexp)this.getChild(InlineRegexpExpression.REGEXP);
-  }
-  public void setRegexp(Regexp node) {
-    super.setChild(InlineRegexpExpression.REGEXP, node);
   }
 }

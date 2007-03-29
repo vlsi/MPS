@@ -1079,5 +1079,24 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1175164437386">
+    <link role="conceptDeclaration" targetNodeId="1.1175164405556" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1175164439982">
+      <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1175164450235">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="1.1175164443297" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1175164452268">
+        <property name="textFgColor" value="DARK_BLUE" />
+        <property name="text" value="split with" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1175164456786">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="1.1174653387388" />
+      </node>
+    </node>
+  </node>
 </model>
 

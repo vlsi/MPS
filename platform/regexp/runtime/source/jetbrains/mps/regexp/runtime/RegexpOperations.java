@@ -2,6 +2,8 @@ package jetbrains.mps.regexp.runtime;
 
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
+import java.util.List;
+import java.util.Arrays;
 
 public class RegexpOperations {
   public static String replace(String text, Pattern regexp, Replacer replacer) {
@@ -15,6 +17,10 @@ public class RegexpOperations {
     }
     newText.append(text.substring(current, text.length()));
     return newText.toString();
+  }
+
+  public static List<String> split(String s, Pattern pattern) {
+    return Arrays.asList(pattern.split(s));    
   }
 
 }

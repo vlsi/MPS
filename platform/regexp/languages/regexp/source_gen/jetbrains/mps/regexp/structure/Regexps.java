@@ -12,8 +12,8 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Regexps extends BaseConcept implements INamedConcept {
-  public static String NAME = "name";
   public static String REGEXP = "regexp";
+  public static String NAME = "name";
 
   public  Regexps(SNode node) {
     super(node);
@@ -26,12 +26,6 @@ public class Regexps extends BaseConcept implements INamedConcept {
     return Regexps.newInstance(sm, false);
   }
 
-  public String getName() {
-    return this.getProperty(Regexps.NAME);
-  }
-  public void setName(String value) {
-    this.setProperty(Regexps.NAME, value);
-  }
   public int getRegexpsCount() {
     return this.getChildCount(Regexps.REGEXP);
   }
@@ -46,5 +40,11 @@ public class Regexps extends BaseConcept implements INamedConcept {
   }
   public void insertRegexp(RegexpDeclaration prev, RegexpDeclaration node) {
     this.insertChild(prev, Regexps.REGEXP, node);
+  }
+  public String getName() {
+    return this.getProperty(Regexps.NAME);
+  }
+  public void setName(String value) {
+    this.setProperty(Regexps.NAME, value);
   }
 }

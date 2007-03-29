@@ -471,5 +471,64 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1175164538647">
+    <property name="name" value="Split" />
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1175164540913">
+      <property name="name" value="splitTest" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1175164540914" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1175164540915">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1175164544444">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1175164544445">
+            <property name="name" value="s" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1175164544446">
+              <link role="classifier" extResolveInfo="2.[Classifier]String" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.StringLiteral" id="1175164545729">
+              <property name="value" value="ab23cd23ef" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ForeachStatement" id="1175164631550">
+          <node role="variable" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1175164631552">
+            <property name="name" value="st" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1175164633837">
+              <link role="classifier" extResolveInfo="2.[Classifier]String" />
+            </node>
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1175164631554">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1175164638080">
+              <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1175164642685">
+                <link role="baseMethodDeclaration" extResolveInfo="4.method ([Classifier]PrintStream).([InstanceMethodDeclaration]println((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1175164638081">
+                  <link role="classifier" extResolveInfo="2.[Classifier]System" />
+                  <link role="variableDeclaration" extResolveInfo="2.static field ([Classifier]System).([StaticFieldDeclaration]out : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [PrintStream]))" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.PlusExpression" id="1175164646626">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1175164654054">
+                    <link role="variableDeclaration" targetNodeId="1175164631552" resolveInfo="st" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1175164644546">
+                    <property name="value" value="s = " />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="iterable" type="jetbrains.mps.regexp.SplitExpression" id="1175164634870">
+            <node role="expr" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1175164840365">
+              <link role="variableDeclaration" targetNodeId="1175164544445" resolveInfo="s" />
+            </node>
+            <node role="regexp" type="jetbrains.mps.regexp.InlineRegexpExpression" id="1175164634872">
+              <node role="regexp" type="jetbrains.mps.regexp.PlusRegexp" id="1175164634873">
+                <node role="regexp" type="jetbrains.mps.regexp.PredefinedSymbolClassRegexp" id="1175164634874">
+                  <link role="symbolClass" targetNodeId="3.1174554674770" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

@@ -122,4 +122,10 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1175155725139(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "body", true);
   }
+  public static SNode sourceNodeQuery_1175164955452(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "expr", true);
+  }
+  public static SNode sourceNodeQuery_1175164958475(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "regexp", true);
+  }
 }
