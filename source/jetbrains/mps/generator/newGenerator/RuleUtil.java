@@ -31,7 +31,7 @@ public class RuleUtil {
   public RuleUtil(RuleManager ruleManager) {
     myRuleManager = ruleManager;
     myGenerator = ruleManager.getGenerator();
-    myOutputModel = myGenerator.getSourceModel();
+    myOutputModel = myGenerator.getTargetModel();
   }
 
   public void applyRootRule(CreateRootRule createRootRule) {
@@ -72,6 +72,7 @@ public class RuleUtil {
       return;
     }
     List<SNode> inputNodes = createInputNodeListForMappingRule(mappingRule);
+    if(inputNodes.size() > 0) myGenerator.setChanged(true);
     for (SNode inputNode : inputNodes) {
       createRootNodeFromTemplate(mappingRule.getName(), BaseAdapter.fromAdapter(templateNode), inputNode);
     }
@@ -92,9 +93,10 @@ public class RuleUtil {
       return;
     }
     boolean includeInheritors = rule.getApplyToConceptInheritors();
-    List<SNode> nodes = myOutputModel.getModelDescriptor().getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
-    for (SNode inputNode : nodes) {
+    List<SNode> inputNodes = myGenerator.getSourceModel().getModelDescriptor().getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
+    for (SNode inputNode : inputNodes) {
       if (checkConditionForBaseMappingRule(inputNode, rule)) {
+        myGenerator.setChanged(true);
         SNode templateNode = BaseAdapter.fromAdapter(rule.getTemplate());
         createRootNodeFromTemplate(rule.getName(), templateNode, inputNode);
       }
@@ -125,26 +127,27 @@ public class RuleUtil {
 
   public void applyWeavingRule(WeavingRule rule) {
     TemplateDeclaration templateDeclaration = rule.getTemplate();
-    List<SNode> sourceNodes = createSourceNodeListForWeavingRule(rule);
-    for (SNode sourceNode : sourceNodes) {
-      INodeBuilder contextNodeBuilder = getContextNodeForWeavingingRule(sourceNode, rule.getNode(), rule.getContextProviderAspectId());
+    List<SNode> inputNodes = createInputNodeListForWeavingRule(rule);
+    for (SNode inputNode : inputNodes) {
+      INodeBuilder contextNodeBuilder = getContextNodeForWeavingingRule(inputNode, rule.getNode(), rule.getContextProviderAspectId());
       if (contextNodeBuilder == null) {
-        myGenerator.showErrorMessage(sourceNode, rule.getNode(), "couldn't create context node");
+        myGenerator.showErrorMessage(inputNode, rule.getNode(), "couldn't create context node");
         continue;
       }
-      weaveTemplateDeclaration(sourceNode, templateDeclaration, contextNodeBuilder, rule.getNode());
+      myGenerator.setChanged(true);
+      weaveTemplateDeclaration(inputNode, templateDeclaration, contextNodeBuilder, rule.getNode());
     }
   }
 
-  private void weaveTemplateDeclaration(SNode sourceNode, TemplateDeclaration template, INodeBuilder contextNodeBuilder, SNode ruleNode) {
+  private void weaveTemplateDeclaration(SNode inputNode, TemplateDeclaration template, INodeBuilder contextNodeBuilder, SNode ruleNode) {
     if (template == null) {
-      myGenerator.showErrorMessage(sourceNode, BaseAdapter.fromAdapter(template), ruleNode, "couldn't evaluate weaving rule: no template");
+      myGenerator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), ruleNode, "couldn't evaluate weaving rule: no template");
       return;
     }
 
     List<TemplateFragment> templateFragments = getTemplateFragments(template);
     if (templateFragments.isEmpty()) {
-      myGenerator.showErrorMessage(sourceNode, template.getNode(), ruleNode, "nothing to weave: no template fragments found in template");
+      myGenerator.showErrorMessage(inputNode, template.getNode(), ruleNode, "nothing to weave: no template fragments found in template");
       return;
     }
 
@@ -178,22 +181,20 @@ public class RuleUtil {
       if (mappingName == null) {
         mappingName = ruleMappingName;
       }
-//      List<INodeBuilder> fragmentNodeBuilders = createNodeBuildersForTemplateNode(sourceNode, templateFragmentNode, mappingName, 0, myGenerator);
-      List<SNode> weavingSourceNodes = TemplateGenUtil.createSourceNodeListForTemplateNode_ForNewGenerator(sourceNode, templateFragmentNode, 0, myGenerator);
-      for (SNode weavingSourceNode : weavingSourceNodes) {
-//        INodeBuilder nodeBuilder = createNodeBuilder(sourceNode, templateNode, mappingName, currentMacroIndex, myGenerator);
+      List<SNode> weavingInputNodes = TemplateGenUtil.createSourceNodeListForTemplateNode_ForNewGenerator(inputNode, templateFragmentNode, 0, myGenerator);
+      for (SNode weavingInputNode : weavingInputNodes) {
         SNode contextParentNode = getContextNodeForTemplateFragment(templateFragmentNode, contextNodeBuilder);
         if (contextParentNode != null) {
           SNode templateParentNode = templateFragmentNode.getParent();
           String childRole = templateParentNode.getRoleOf(templateFragmentNode);
-          List<SNode> outputNodesToWeave = createNodeFromTemplate(mappingName, templateFragmentNode, weavingSourceNode, contextParentNode, childRole, 0);
+          List<SNode> outputNodesToWeave = createNodeFromTemplate(mappingName, templateFragmentNode, weavingInputNode, contextParentNode, childRole, 0);
           if (outputNodesToWeave != null) {
             for (SNode outputNodeToWeave : outputNodesToWeave) {
               contextParentNode.addChild(childRole, outputNodeToWeave);
             }
           }
         } else {
-          myGenerator.showErrorMessage(sourceNode, templateFragment.getNode(), ruleNode, "couldn't define 'context' for template fragment");
+          myGenerator.showErrorMessage(inputNode, templateFragment.getNode(), ruleNode, "couldn't define 'context' for template fragment");
         }
       }
     }
@@ -227,29 +228,29 @@ public class RuleUtil {
     return templateFragments;
   }
 
-  private INodeBuilder getContextNodeForWeavingingRule(SNode sourceNode, SNode ruleNode, String aspectId) {
+  private INodeBuilder getContextNodeForWeavingingRule(SNode inputNode, SNode ruleNode, String aspectId) {
     try {
       String methodName = "templateWeavingRule_Context_" + aspectId;
-      Object[] args = new Object[]{sourceNode, myGenerator};
+      Object[] args = new Object[]{inputNode, myGenerator};
       INodeBuilder nodeBuilder = (INodeBuilder) QueryMethod.invoke(methodName, args, ruleNode.getModel());
       if (nodeBuilder == null) {
-        myGenerator.showErrorMessage(sourceNode, null, ruleNode, "Query Method returned null");
+        myGenerator.showErrorMessage(inputNode, null, ruleNode, "Query Method returned null");
         return null;
       }
       return nodeBuilder;
     } catch (Throwable t) {
-      myGenerator.showErrorMessage(sourceNode, null, ruleNode, t.getClass().getName());
+      myGenerator.showErrorMessage(inputNode, null, ruleNode, t.getClass().getName());
       throw new RuntimeException(t);
     }
   }
 
 
-  private List<SNode> createSourceNodeListForWeavingRule(WeavingRule weavingRule) {
+  private List<SNode> createInputNodeListForWeavingRule(WeavingRule weavingRule) {
     String sourceQueryAspectId = weavingRule.getSourceQueryAspectId();
     String methodName = "templateWeavingRule_SourceQuery_" + sourceQueryAspectId;
     Object[] args = new Object[]{myGenerator};
-    List<SNode> sourceNodes = (List<SNode>) QueryMethod.invoke(methodName, args, weavingRule.getModel());
-    return sourceNodes;
+    List<SNode> inputNodes = (List<SNode>) QueryMethod.invoke(methodName, args, weavingRule.getModel());
+    return inputNodes;
   }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -267,6 +268,7 @@ public class RuleUtil {
     List<SNode> nodes = myGenerator.getSourceModel().getModelDescriptor().getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
     for (SNode applicableNode : nodes) {
       if (checkConditionForBaseMappingRule(applicableNode, rule)) {
+        myGenerator.setChanged(true);
         INodeBuilder contextNodeBuilder = getContextNodeForWeavingingRule(applicableNode, rule.getNode(), rule.getContextProviderAspectId());
         if (contextNodeBuilder == null) {
           myGenerator.showErrorMessage(applicableNode, rule.getNode(), "couldn't find context node");
@@ -305,19 +307,19 @@ public class RuleUtil {
     }
   }
 
-  protected List<SNode> evaluateSourceNodesQuery(SNode sourceNode, SourceSubstituteMacro_SourceNodesQuery query, SNode queryOwner) {
+  protected List<SNode> evaluateSourceNodesQuery(SNode inputNode, SourceSubstituteMacro_SourceNodesQuery query, SNode queryOwner) {
     String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(query.getNode());
     Object[] args = new Object[]{
-            sourceNode,
+            inputNode,
             myGenerator.getSourceModel(),
             myGenerator,
             myGenerator.getScope(),
             myGenerator.getGeneratorSessionContext()};
     try {
-      List<SNode> sourceNodes = (List<SNode>) QueryMethodGenerated.invoke(methodName, args, queryOwner.getModel());
-      return sourceNodes;
+      List<SNode> inputNodes = (List<SNode>) QueryMethodGenerated.invoke(methodName, args, queryOwner.getModel());
+      return inputNodes;
     } catch (Exception e) {
-      myGenerator.showErrorMessage(sourceNode, queryOwner, "couldn't evaluate query");
+      myGenerator.showErrorMessage(inputNode, queryOwner, "couldn't evaluate query");
       LOG.error(e);
       return new LinkedList<SNode>();
     }
@@ -460,6 +462,7 @@ public class RuleUtil {
 
     for (INodeAdapter templateChildNode : templateNode.getAdapter().getChildren()) {
       if (templateChildNode instanceof NodeMacro) continue;
+      if (templateChildNode instanceof TemplateFragment) continue;
       if (templateChildNode instanceof PropertyMacro) {
         MacroUtil.expandPropertyMacro(myGenerator, (PropertyMacro) templateChildNode, inputNode, templateNode, outputNode);
       } else if (templateChildNode instanceof ReferenceMacro) {
@@ -495,7 +498,7 @@ public class RuleUtil {
   }
 
 
-  protected List<SNode> copyNodeFromInputNode(String ruleName, SNode templateNode, SNode inputNode) {
+  private List<SNode> copyNodeFromInputNode(String ruleName, SNode templateNode, SNode inputNode) {
     List<SNode> outputNodes = myRuleManager.getReductionRuleManager().tryToReduce(templateNode);
     if (outputNodes != null) {
       return outputNodes;

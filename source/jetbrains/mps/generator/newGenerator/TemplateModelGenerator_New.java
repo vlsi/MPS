@@ -6,9 +6,6 @@ import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.GenerationFailueInfo;
 import jetbrains.mps.generator.template.*;
 import jetbrains.mps.ide.messages.IMessageHandler;
-import jetbrains.mps.ide.messages.Message;
-import jetbrains.mps.ide.messages.MessageKind;
-import jetbrains.mps.ide.messages.NodeWithContext;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.structure.*;
@@ -25,7 +22,8 @@ import java.util.*;
  * Date: Jan 23, 2007
  */
 public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
-  private SModel myModel;
+  private SModel myInputModel;
+  private SModel myOutputModel;
   private ArrayList<SNode> myNewRootNodes = new ArrayList<SNode>();
   private ArrayList<SNode> myRootsToDelete = new ArrayList<SNode>();
   private ArrayList<ReferenceInfo> myReferenceInfos = new ArrayList<ReferenceInfo>();
@@ -34,15 +32,17 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   private DelayedChanges myDelayedChanges = new DelayedChanges();
   private TemplateSwitchGraph myTemplateSwitchGraph;
   private Map<TemplateSwitch, List<TemplateSwitch>> myTemplateSwitchToListCache;
+  private boolean isChanged = false;
 
 
   public TemplateModelGenerator_New( GenerationSessionContext operationContext,
                                      IAdaptiveProgressMonitor progressMonitor,
                                      IMessageHandler handler,
-                                     SModel model) {
+                                     SModel inputModel,
+                                     SModel outputModel) {
     super(operationContext, progressMonitor, handler);
-    setTargetModel(model);
-    myModel = model;
+    myInputModel = inputModel;
+    myOutputModel = outputModel;
   }
 
   public GenerationSessionContext getGeneratorSessionContext() {
@@ -50,11 +50,39 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   }
 
   public void doPrimaryMapping() {
+    doMapping(true);
+  }
+
+  public boolean doSecondaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailedException {
+    reset();
+    myInputModel = inputModel;
+    myOutputModel = outputModel;
+    doMapping(false);
+    return isChanged();
+  }
+
+  public void reset() {
+    myNewRootNodes.clear();
+    myRootsToDelete.clear();
+    myReferenceInfos.clear();
+    myTemplateNodeAndInputNodeToBuilderMap.clear();
+    myRuleNameAndInputNodeToBuilderMap.clear();
+    myDelayedChanges = new DelayedChanges();
+    myTemplateSwitchGraph = null;
+    myTemplateSwitchToListCache = null;
+    isChanged = false;
+    myInputModel = null;
+    myOutputModel = null;
+  }
+
+  private void doMapping(boolean isPrimary) {
     RuleManager ruleManager = new RuleManager(this);
     RuleUtil ruleUtil = new RuleUtil(ruleManager);
     ruleManager.getReductionRuleManager().setRuleUtil(ruleUtil);
-    for (CreateRootRule createRootRule : ruleManager.getCreateRootRules()) {
-      ruleUtil.applyRootRule(createRootRule);
+    if (isPrimary) {
+      for (CreateRootRule createRootRule : ruleManager.getCreateRootRules()) {
+        ruleUtil.applyRootRule(createRootRule);
+      }
     }
     for (MappingRule mappingRule : ruleManager.getMappingRules()) {
       ruleUtil.applyMappingRule(mappingRule);
@@ -70,9 +98,38 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
       ruleUtil.applyWeavingMappingRule(weavingMappingRule);
     }
 
+    updateAllReferences();
+
+    for (SNode rootNode : myRootsToDelete) {
+      myOutputModel.removeRoot(rootNode);
+    }
+    for (SNode rootNode : myOutputModel.getRoots()) {
+      List<ConceptDeclaration> abandonedRootConcepts = ruleManager.getAbandonedRootConcepts();
+      for (ConceptDeclaration abandonedRootConcept : abandonedRootConcepts) {
+        if(rootNode.isInstanceOfConcept(abandonedRootConcept, getScope())){
+          myOutputModel.removeRoot(rootNode);
+        }
+      }
+    }
+
+    for (SNode outputRootNode : myOutputModel.getRoots()) {
+      ruleManager.getReductionRuleManager().applyReductionRules(findInputNodeByOutputNodeWithSameId(outputRootNode));
+    }
+
+    for (SNode rootNode : myNewRootNodes) {
+      myOutputModel.addRoot(rootNode);
+    }
+
+    myDelayedChanges.doAllChanges();
+
+    //There could new unresolved references appear after applying reduction rules (all delayed changes should be done before this, like replacing children)
+    updateAllReferences();
+
+  }
+
+  private void updateAllReferences() {
     ArrayList<ReferenceInfo> referenceInfos = myReferenceInfos;
     ArrayList<ReferenceInfo> newReferenceInfos = new ArrayList<ReferenceInfo>(referenceInfos.size());
-
     while(true) {
       for (ReferenceInfo referenceInfo : referenceInfos) {
         referenceInfo.execute(this);
@@ -86,44 +143,28 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
       referenceInfos = newReferenceInfos;
       newReferenceInfos = new ArrayList<ReferenceInfo>(referenceInfos.size());
     }
-
-   for (SNode rootNode : myRootsToDelete) {
-      myModel.removeRoot(rootNode);
-    }
-    for (SNode rootNode : myModel.getRoots()) {
-      List<ConceptDeclaration> abandonedRootConcepts = ruleManager.getAbandonedRootConcepts();
-      for (ConceptDeclaration abandonedRootConcept : abandonedRootConcepts) {
-        if(rootNode.isInstanceOfConcept(abandonedRootConcept, getScope())){
-          myModel.removeRoot(rootNode);
-        }
-      }
-    }
-
-    for (SNode sourceRootNode : myModel.getRoots()) {
-      ruleManager.getReductionRuleManager().applyReductionRules(sourceRootNode);
-    }
-
-    for (SNode rootNode : myNewRootNodes) {
-      myModel.addRoot(rootNode);
-    }
-
-    myDelayedChanges.doAllChanges();
-
   }
 
 
   public SModel getSourceModel() {
-    return myModel;
+    return myInputModel;
+  }
+
+
+  public SModel getTargetModel() {
+    return myOutputModel;
   }
 
   public void addNewRootNode(SNode node) {
     myNewRootNodes.add(node);
   }
 
-  public void addRootToDelete(SNode node) {
-    myRootsToDelete.add(node);
+  public void addRootToDelete(SNode inputNode) {
+    SNode nodeTodelete = findOutputNodeByInputNodeWithSameId(inputNode);
+    if(inputNode != null) {
+      myRootsToDelete.add(nodeTodelete);
+    }
   }
-
 
   public SNode findOutputNodeByTemplateNodeAndInputNode(SNode templateNode, SNode inputNode) {
     INodeBuilder nodeBuilder = myTemplateNodeAndInputNodeToBuilderMap.get(new Pair(templateNode, inputNode));
@@ -134,7 +175,8 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   public void addOutputNodeByTemplateNodeAndInputNode(SNode templateNode, SNode inputNode, SNode outputNode) {
     Pair key = new Pair(templateNode, inputNode);
     if(myTemplateNodeAndInputNodeToBuilderMap.get(key) != null) {
-      showErrorMessage(inputNode, templateNode, "The output node already exists, that was build by this template and source node");
+//      showErrorMessage(inputNode, templateNode, "The output node already exists, that was build by this template and source node");
+      showWarningMessage(inputNode, "The output node already exists, that was build by this template and source node");
     }
     myTemplateNodeAndInputNodeToBuilderMap.put(key, new SimpleNodeBuilder(this, outputNode, templateNode, inputNode));
   }
@@ -174,9 +216,6 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     return null;  //To change body of implemented methods use File | Settings | File Templates.
   }
 
-  public boolean doSecondaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailedException {
-    return false;  //To change body of implemented methods use File | Settings | File Templates.
-  }
 
   public void processPropertyMacros(SNode inputNode, SNode templateNode, SNode targetNode) {
     //To change body of implemented methods use File | Settings | File Templates.
@@ -195,23 +234,12 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   }
 
   //todo this method supposes that inputNode is not changed - it should be deprecated after going to new generator
-  public INodeBuilder findNodeBuilderForSource(SNode inputNode, Condition<INodeBuilder> condition) {
-    return new SimpleNodeBuilder(this, inputNode);
-/*
-   for (Pair<SNode,SNode> key : myTemplateNodeAndInputNodeToOutputNodeMap.keySet()) {
-      if (key.o1 == inputNode) {
-        SNode outputNode = myTemplateNodeAndInputNodeToOutputNodeMap.get(key);
-        SimpleNodeBuilder builder = new SimpleNodeBuilder(outputNode);
-        if (condition.met(builder)) return builder;
-      }
-    }
-*/
-//    return null;
-  }
-
-  //todo this method supposes that inputNode is not changed - it should be deprecated after going to new generator
   public INodeBuilder findCopyingNodeBuilderForSource(SNode inputNode) {
-    return new SimpleNodeBuilder(this, inputNode);
+    SNode outputNode = findOutputNodeByInputNodeWithSameId(inputNode);
+    if(outputNode == null) {
+      return null;
+    }
+    return new SimpleNodeBuilder(this, outputNode, inputNode, inputNode);
   }
 
   public INodeBuilder findNodeBuilderForSourceAndTemplate(SNode source, SNode template) {
@@ -334,9 +362,6 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     //To change body of implemented methods use File | Settings | File Templates.
   }
 
-  public void reset() {
-    //To change body of implemented methods use File | Settings | File Templates.
-  }
 
   public Language getTargetLanguage() {
     return null;  //To change body of implemented methods use File | Settings | File Templates.
@@ -348,5 +373,23 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
 
   public boolean isNew() {
     return true;
+  }
+
+  public SNode findOutputNodeByInputNodeWithSameId(SNode inputNode) {
+    if(inputNode == null) return null;
+    return myOutputModel.getNodeById(inputNode.getId());
+  }
+
+  public SNode findInputNodeByOutputNodeWithSameId(SNode outputNode) {
+    if(outputNode == null) return null;
+    return myInputModel.getNodeById(outputNode.getId());
+  }
+
+  public boolean isChanged() {
+    return isChanged;
+  }
+
+  public void setChanged(boolean b) {
+    isChanged = true;
   }
 }

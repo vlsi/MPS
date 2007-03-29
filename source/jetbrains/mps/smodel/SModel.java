@@ -427,6 +427,13 @@ public class SModel implements Iterable<SNode> {
     fireLanguageRemovedEvent(languageNamespace);
   }
 
+  public void deleteAllLanguages() {
+    ArrayList <String> languages = new ArrayList<String>(myLanguages);
+    for (String language : languages) {
+      deleteLanguage(language);
+    }
+  }
+
   public boolean hasDevKit(String devKit) {
     for (String devkit : myDevKits) {
       if (devkit.equals(devKit)) {
@@ -790,13 +797,24 @@ public class SModel implements Iterable<SNode> {
     return myDisposed;
   }
 
+  public void validateLanguages() {
+    Set<String> usedLanguages = new HashSet<String>(getLanguageNamespaces(GlobalScope.getInstance()));
+    List<SNode> nodes = allNodes();
+    for (SNode node : nodes) {
+      String languageNamespace = node.getLanguageNamespace();
+      if (!usedLanguages.contains(languageNamespace)) {
+        usedLanguages.add(languageNamespace);
+        addLanguage(languageNamespace);
+      }
+    }
+  }
+
   public void validateLanguagesAndImports() {
     Set<String> usedLanguages = new HashSet<String>(getLanguageNamespaces(GlobalScope.getInstance()));
     Set<SModelUID> importedModels = new HashSet<SModelUID>();
     for (SModelDescriptor sm : allImportedModels(GlobalScope.getInstance())) {
       importedModels.add(sm.getModelUID());
     }
-  //  Set<SModelUID> importedModels = new HashSet<SModelUID>(getImportedModelUIDs());
     List<SNode> nodes = allNodes();
     for (SNode node : nodes) {
       String languageNamespace = node.getLanguageNamespace();
