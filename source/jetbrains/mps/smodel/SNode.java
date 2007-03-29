@@ -1387,7 +1387,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   public boolean isInstanceOfConcept(String conceptFqName, IScope scope) {
     String thisConceptFqName = NameUtil.nodeConceptFQName(this);
-    return SModelUtil_new.isAssignableConcept(thisConceptFqName, conceptFqName, scope);
+    return SModelUtil_new.isAssignableConcept(thisConceptFqName, conceptFqName);
   }
 
   public final ConceptDeclaration getConceptDeclarationAdapter() {
