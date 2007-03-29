@@ -579,5 +579,26 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1175170722314">
+    <property name="name" value="Options" />
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1175170725268">
+      <property name="name" value="test" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1175170725269" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1175170725270">
+        <node role="statement" type="jetbrains.mps.regexp.MatchRegexpStatement" id="1175170748755">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1175170748756" />
+          <node role="expr" type="jetbrains.mps.baseLanguage.StringLiteral" id="1175170750681">
+            <property name="value" value="abc" />
+          </node>
+          <node role="regexp" type="jetbrains.mps.regexp.InlineRegexpExpression" id="1175170752088">
+            <property name="dotAll" value="true" />
+            <node role="regexp" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1175170754981">
+              <property name="text" value="abcde" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
