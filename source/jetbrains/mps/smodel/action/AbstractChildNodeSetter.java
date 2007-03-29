@@ -12,12 +12,10 @@ import jetbrains.mps.smodel.IScope;
  */
 public abstract class AbstractChildNodeSetter implements IChildNodeSetter {
 
-  public SNode execute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope) {
+  public final SNode execute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope) {
     doExecute(parentNode, oldChild, newChild, scope);
     return newChild;
   }
 
-  public void doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope) {
-
-  }
+  public abstract void doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope);
 }
