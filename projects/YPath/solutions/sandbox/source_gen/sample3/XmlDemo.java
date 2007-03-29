@@ -8,7 +8,6 @@ import org.w3c.dom.Document;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Node;
 import ypath.util.TreeTraversalFactory;
-import treepath_dom.DOM;
 
 public class XmlDemo {
 
@@ -17,9 +16,9 @@ public class XmlDemo {
     try {
       InputStream is = new ByteArrayInputStream(INPUT.getBytes());
       Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(is);
-      for(Node node : TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new DOM().from(doc), TreeTraversalFactory.Axis("DESCENDANTS")), new WhereFilter_1175129771556(null, null))) {
-        System.out.println(node);
-      }
+//      for(Node node : TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new DOM().from(doc), TreeTraversalFactory.Axis("DESCENDANTS")), new WhereFilter_1175129771556(null, null))) {
+//        System.out.println(node);
+//      }
     } catch (Exception ignored) {
     }
   }
