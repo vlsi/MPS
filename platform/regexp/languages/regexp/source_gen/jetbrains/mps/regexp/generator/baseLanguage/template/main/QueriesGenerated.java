@@ -11,6 +11,8 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.regexp.RegexpProcessor;
 import jetbrains.mps.regexp.structure.Regexp;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import java.util.regex.Pattern;
 import java.util.List;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.regexp.generator.baseLanguage.template.util.GeneratorUtil;
@@ -30,6 +32,19 @@ public class QueriesGenerated {
   }
   public static String propertyMacro_GetPropertyValue_1174511161822(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return RegexpProcessor.toString(((Regexp)SNodeOperations.getAdapter(SLinkOperations.getTarget(node, "regexp", true))));
+  }
+  public static String propertyMacro_GetPropertyValue_1175160038498(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    int result = 0;
+    if(SPropertyOperations.getBoolean(node, "multiLine")) {
+      result = result + Pattern.MULTILINE;
+    }
+    if(SPropertyOperations.getBoolean(node, "dotAll")) {
+      result = result + Pattern.DOTALL;
+    }
+    if(SPropertyOperations.getBoolean(node, "caseInsensitive")) {
+      result = result + Pattern.CASE_INSENSITIVE;
+    }
+    return "" + result;
   }
   public static String propertyMacro_GetPropertyValue_1174655313358(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     List<SNode> nodes = SNodeOperations.getAncestors(node, "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false);

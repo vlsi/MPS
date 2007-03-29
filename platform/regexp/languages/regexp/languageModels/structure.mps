@@ -126,6 +126,18 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174510540317">
     <property name="name" value="InlineRegexpExpression" />
     <link role="extends" targetNodeId="1174919147781" resolveInfo="RegexpExpression" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1175158902584">
+      <property name="name" value="dotAll" />
+      <link role="dataType" targetNodeId="1.1082983657063" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1175158906851">
+      <property name="name" value="multiLine" />
+      <link role="dataType" targetNodeId="1.1082983657063" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1175159132192">
+      <property name="name" value="caseInsensitive" />
+      <link role="dataType" targetNodeId="1.1082983657063" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174510571016">
       <property name="sourceCardinality" value="1" />
       <property name="role" value="regexp" />
@@ -521,6 +533,9 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174919147781">
     <property name="name" value="RegexpExpression" />
     <link role="extends" targetNodeId="2.1068431790191" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1175158897614">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1175154849582">
     <property name="name" value="ForEachMatchStatement" />
