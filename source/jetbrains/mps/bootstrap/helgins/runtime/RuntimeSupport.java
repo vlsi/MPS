@@ -1,11 +1,8 @@
 package jetbrains.mps.bootstrap.helgins.runtime;
 
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.helgins.inference.ContextsManager;
-import jetbrains.mps.helgins.structure.ContextDeclaration;
 import jetbrains.mps.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
 
 import java.util.Map;
 
@@ -31,8 +28,7 @@ public class RuntimeSupport {
   }
 
   public SNode typeOf(SNode node) {
-    ContextsManager contextsManager = myTypeChecker.getContextsManager();
-    Map<SNode, SNode> typesContext = contextsManager.getMainContext();
+    Map<SNode, SNode> typesContext = myTypeChecker.getMainContext();
     SNode type = typesContext.get(node);
     if (type == null) {
       SNode var = createNewRuntimeTypesVariable(false);
@@ -77,7 +73,7 @@ public class RuntimeSupport {
   }
 
   public void givetype(SNode type, SNode node) {
-    Map<SNode, SNode> typesContext = myTypeChecker.getContextsManager().getMainContext();
+    Map<SNode, SNode> typesContext = myTypeChecker.getMainContext();
     SNode nodesType = typesContext.get(node);
     if (nodesType == null) { // put to context
       typesContext.put(node, type);

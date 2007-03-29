@@ -48,7 +48,7 @@ public class TypeChecker {
 
   private WeakHashMap<SNode, IErrorReporter> myNodesWithErrors = new WeakHashMap<SNode, IErrorReporter>();
   private WeakHashMap<SNode, String> myNodesWithErrorStrings = new WeakHashMap<SNode, String>();
-  private ContextsManager myContextsManager;
+  private Map<SNode, SNode> myMainContext = new HashMap<SNode, SNode>();
   private EquationManager myEquationManager;
   private TypeVariablesManager myTypeVariablesManager;
   private HInterpreter myHInterpreter;
@@ -60,7 +60,6 @@ public class TypeChecker {
   private boolean myUsedForBLCompletion = true;
 
   public TypeChecker() {
-    myContextsManager = new ContextsManager(this);
     myEquationManager = new EquationManager(this);
     myHInterpreter = new HInterpreter(this);
     myTypeVariablesManager = new TypeVariablesManager(this);
@@ -75,8 +74,8 @@ public class TypeChecker {
     return ApplicationComponents.getInstance().getComponent(TypeChecker.class);
   }
 
-  public ContextsManager getContextsManager() {
-    return myContextsManager;
+  public Map<SNode, SNode> getMainContext() {
+    return myMainContext;
   }
 
   public EquationManager getEquationManager() {
@@ -112,7 +111,7 @@ public class TypeChecker {
   }
 
   public void clear() {
-    myContextsManager.clear();
+    myMainContext.clear();
     myAdaptationManager.clear();
     myEquationManager.clear();
     myTypeVariablesManager.clearVariables();
@@ -149,16 +148,6 @@ public class TypeChecker {
     myConceptsToRulesCache = new ConceptToRulesMap<Rule>();
     for (SModel typesModel : typesModels) {
 
-      //register contexts
-      for (ContextDeclaration contextDeclaration : typesModel.getRootsAdapters(ContextDeclaration.class)) {
-        if (contextDeclaration.getMain()) {
-          if (myContextsManager.isMainContextRegistered()) continue;
-          myContextsManager.registerMainContext(contextDeclaration.getName());
-        } else {
-          myContextsManager.registerNewContext(contextDeclaration.getName());
-        }
-      }
-
       //register global varsets
       for (VariableSetDeclaration varset : typesModel.getRootsAdapters(VariableSetDeclaration.class)) {
         myTypeVariablesManager.registerNewVarset(varset);
@@ -187,7 +176,7 @@ public class TypeChecker {
     myEquationManager.solveInequations();
 
     // main context
-    Map<SNode, SNode> mainContext = myContextsManager.getMainContext();
+    Map<SNode, SNode> mainContext = getMainContext();
 
     // setting types to nodes
     for (Map.Entry<SNode, SNode> contextEntry : mainContext.entrySet()) {
