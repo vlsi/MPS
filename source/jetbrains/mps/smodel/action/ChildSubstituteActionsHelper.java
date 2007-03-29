@@ -41,7 +41,7 @@ public class ChildSubstituteActionsHelper {
     }
   };
 
-  public static boolean isDefaultSubstitutableConcept(AbstractConceptDeclaration concept, ConceptDeclaration expectedConcept, IScope scope) {
+  public static boolean isDefaultSubstitutableConcept(AbstractConceptDeclaration concept, AbstractConceptDeclaration expectedConcept, IScope scope) {
     if (!concept.getNode().hasConceptProperty(ABSTRACT, scope) &&
             !concept.hasConceptProperty(DONT_SUBSTITUTE_BY_DEFAULT, scope)) {
       return SModelUtil_new.isAssignableConcept(concept, expectedConcept);
@@ -49,7 +49,7 @@ public class ChildSubstituteActionsHelper {
     return false;
   }
 
-  public static List<INodeSubstituteAction> createActions(SNode parentNode, SNode currentChild, ConceptDeclaration childConcept, IChildNodeSetter childSetter, IOperationContext context) {
+  public static List<INodeSubstituteAction> createActions(SNode parentNode, SNode currentChild, AbstractConceptDeclaration childConcept, IChildNodeSetter childSetter, IOperationContext context) {
     List<INodeSubstituteAction> resultActions = new ArrayList<INodeSubstituteAction>();
     if (childConcept == null) {
       return resultActions;
@@ -100,7 +100,7 @@ public class ChildSubstituteActionsHelper {
   public static List<INodeSubstituteAction> createPrimaryChildSubstituteActions(
           SNode parentNode,
           SNode currentChild,
-          final ConceptDeclaration childConcept,
+          final AbstractConceptDeclaration childConcept,
           IChildNodeSetter childSetter,
           final Condition<SNode> filter,
           IOperationContext context) {
@@ -226,7 +226,7 @@ public class ChildSubstituteActionsHelper {
     return sb.toString();
   }
 
-  private static List<NodeSubstituteActionsBuilder> getActionBuilders(SNode parentNode, Language language, ConceptDeclaration childConcept, IOperationContext context) {
+  private static List<NodeSubstituteActionsBuilder> getActionBuilders(SNode parentNode, Language language, AbstractConceptDeclaration childConcept, IOperationContext context) {
     List<NodeSubstituteActionsBuilder> actionsBuilders = new ArrayList<NodeSubstituteActionsBuilder>();
     SModelDescriptor actionsModelDescr = language.getActionsModelDescriptor();
     if (actionsModelDescr != null) {
@@ -239,7 +239,7 @@ public class ChildSubstituteActionsHelper {
             NodeSubstituteActionsBuilder actionsBuilder = iterator.next();
             // is applicable ?
             // the aggregation link target (child concept) should be sub-concept of the 'applicable concept'
-            ConceptDeclaration applicableChildConcept = actionsBuilder.getApplicableConcept();
+            AbstractConceptDeclaration applicableChildConcept = actionsBuilder.getApplicableConcept();
             if (SModelUtil_new.isAssignableConcept(applicableChildConcept, childConcept) &&
                     satisfiesPrecondition(actionsBuilder, parentNode, context)) {
               actionsBuilders.add(actionsBuilder);
@@ -299,7 +299,7 @@ public class ChildSubstituteActionsHelper {
     return (List<INodeSubstituteAction>) QueryMethod.invoke_alternativeArguments(methodName, args1, args2, model);
   }
 
-  private static List<INodeSubstituteAction> invokeActionFactory(NodeSubstituteActionsBuilder builder, SNode parentNode, SNode currentChild, ConceptDeclaration childConcept, IChildNodeSetter childSetter, IOperationContext context) {
+  private static List<INodeSubstituteAction> invokeActionFactory(NodeSubstituteActionsBuilder builder, SNode parentNode, SNode currentChild, AbstractConceptDeclaration childConcept, IChildNodeSetter childSetter, IOperationContext context) {
     String factoryQueryMethodId = builder.getActionsFactoryAspectId();
     // factory is optional
     if (factoryQueryMethodId == null) {

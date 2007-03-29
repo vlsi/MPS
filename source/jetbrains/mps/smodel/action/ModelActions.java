@@ -20,18 +20,18 @@ public class ModelActions {
   // child substitute
   //-------------------
 
-  public static List<INodeSubstituteAction> createChildSubstituteActions(SNode parentNode, SNode currentChild, jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration childConcept, IChildNodeSetter childSetter, IOperationContext context) {
+  public static List<INodeSubstituteAction> createChildSubstituteActions(SNode parentNode, SNode currentChild, AbstractConceptDeclaration childConcept, IChildNodeSetter childSetter, IOperationContext context) {
     return ChildSubstituteActionsHelper.createActions(parentNode, currentChild, childConcept, childSetter, context);
   }
 
   /**
    * helper method
    */
-  public static List<INodeSubstituteAction> createPrimaryChildSubstituteActions(SNode parentNode, SNode currentChild, jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration childConcept, IChildNodeSetter childSetter, Condition<SNode> filter, IOperationContext context) {
+  public static List<INodeSubstituteAction> createPrimaryChildSubstituteActions(SNode parentNode, SNode currentChild, AbstractConceptDeclaration childConcept, IChildNodeSetter childSetter, Condition<SNode> filter, IOperationContext context) {
     return ChildSubstituteActionsHelper.createPrimaryChildSubstituteActions(
             parentNode,
             currentChild,
-            (jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration) childConcept,
+            childConcept,
             childSetter,
             filter,
             context);
