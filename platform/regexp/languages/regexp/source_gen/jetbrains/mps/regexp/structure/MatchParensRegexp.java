@@ -9,8 +9,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class MatchParensRegexp extends Regexp implements INamedConcept {
-  public static String REGEXP = "regexp";
   public static String NAME = "name";
+  public static String REGEXP = "regexp";
 
   public  MatchParensRegexp(SNode node) {
     super(node);
@@ -23,16 +23,16 @@ public class MatchParensRegexp extends Regexp implements INamedConcept {
     return MatchParensRegexp.newInstance(sm, false);
   }
 
-  public Regexp getRegexp() {
-    return (Regexp)this.getChild(MatchParensRegexp.REGEXP);
-  }
-  public void setRegexp(Regexp node) {
-    super.setChild(MatchParensRegexp.REGEXP, node);
-  }
   public String getName() {
     return this.getProperty(MatchParensRegexp.NAME);
   }
   public void setName(String value) {
     this.setProperty(MatchParensRegexp.NAME, value);
+  }
+  public Regexp getRegexp() {
+    return (Regexp)this.getChild(MatchParensRegexp.REGEXP);
+  }
+  public void setRegexp(Regexp node) {
+    super.setChild(MatchParensRegexp.REGEXP, node);
   }
 }

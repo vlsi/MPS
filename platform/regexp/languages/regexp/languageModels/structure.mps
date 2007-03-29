@@ -522,9 +522,28 @@
     <property name="name" value="RegexpExpression" />
     <link role="extends" targetNodeId="2.1068431790191" />
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174919541558">
-    <property name="name" value="RegexpReference" />
-    <link role="extends" targetNodeId="1.1133920641626" />
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1175154849582">
+    <property name="name" value="ForEachMatchStatement" />
+    <link role="extends" targetNodeId="2.1068580123157" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1175154888102">
+      <property name="value" value="for each match" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1175154880428">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="expr" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="2.1068431790191" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1175154946790">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="body" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="2.1068580123136" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1175155207516">
+      <link role="intfc" targetNodeId="1174653354106" resolveInfo="RegexpUsingConstruction" />
+    </node>
   </node>
 </model>
 

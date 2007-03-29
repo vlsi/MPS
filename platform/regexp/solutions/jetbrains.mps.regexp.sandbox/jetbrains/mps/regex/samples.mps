@@ -409,5 +409,59 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1175155050941">
+    <property name="name" value="MatchIteration" />
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1175155055598">
+      <property name="name" value="forEachMatch" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1175155055599" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1175155055600">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1175155160052">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1175155160053">
+            <property name="name" value="test" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1175155160054">
+              <link role="classifier" extResolveInfo="2.[Classifier]String" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.StringLiteral" id="1175155161775">
+              <property name="value" value="239 239 239" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.regexp.ForEachMatchStatement" id="1175155078945">
+          <node role="regexp" type="jetbrains.mps.regexp.InlineRegexpExpression" id="1175155150546">
+            <node role="regexp" type="jetbrains.mps.regexp.MatchParensRegexp" id="1175155183604">
+              <property name="name" value="number" />
+              <node role="regexp" type="jetbrains.mps.regexp.PlusRegexp" id="1175155189779">
+                <node role="regexp" type="jetbrains.mps.regexp.PredefinedSymbolClassRegexp" id="1175155188091">
+                  <link role="symbolClass" targetNodeId="3.1174554674770" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="expr" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1175155165870">
+            <link role="variableDeclaration" targetNodeId="1175155160053" resolveInfo="test" />
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1175155078948">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1175155168793">
+              <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1175155174410">
+                <link role="baseMethodDeclaration" extResolveInfo="4.method ([Classifier]PrintStream).([InstanceMethodDeclaration]println((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1175155168794">
+                  <link role="classifier" extResolveInfo="2.[Classifier]System" />
+                  <link role="variableDeclaration" extResolveInfo="2.static field ([Classifier]System).([StaticFieldDeclaration]out : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [PrintStream]))" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.PlusExpression" id="1175155179490">
+                  <node role="rightExpression" type="jetbrains.mps.regexp.MatchVariableReference" id="1175155268878">
+                    <link role="match" targetNodeId="1175155183604" resolveInfo="number" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1175155175333">
+                    <property name="value" value="number = " />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
