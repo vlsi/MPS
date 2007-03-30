@@ -1394,10 +1394,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return false;
   }
 
-  public JScrollPane getScrollPane() {
-    return myScrollPane;
-  }
-
   public EditorCell getDeepestSelectedCell() {
     if (mySelectedStack.isEmpty()) return mySelectedCell;
     return mySelectedStack.get(0);
