@@ -655,7 +655,6 @@ public class SModel implements Iterable<SNode> {
 
     List<DevKit> devkits = getDevkits(scope);
     for (DevKit dk : devkits) {
-      list.addAll(dk.getExportedModelDescriptors());
       for (SModelDescriptor dkModel : dk.getExportedModelDescriptors()) {
         if (dkModel != sourceModel && !list.contains(dkModel)) {
           list.add(dkModel);
