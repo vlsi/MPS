@@ -932,6 +932,7 @@
       <module fileurl="file://$PROJECT_DIR$/workbench/ideLanguages/scriptLanguage/scriptLanguage.iml" filepath="$PROJECT_DIR$/workbench/ideLanguages/scriptLanguage/scriptLanguage.iml" group="workbench/ideLanguages/scriptLanguage" />
       <module fileurl="file://$PROJECT_DIR$/workbench/ideLanguages/scriptLanguageInternal/scriptLanguageInternal.iml" filepath="$PROJECT_DIR$/workbench/ideLanguages/scriptLanguageInternal/scriptLanguageInternal.iml" group="workbench/ideLanguages/scriptLanguage" />
       <module fileurl="file://$PROJECT_DIR$/workbench/ideLanguages/scriptLanguage/runtime/scriptLanguage_runtime.iml" filepath="$PROJECT_DIR$/workbench/ideLanguages/scriptLanguage/runtime/scriptLanguage_runtime.iml" group="workbench/ideLanguages/scriptLanguage" />
+      <module fileurl="file://$PROJECT_DIR$/app/search-watch/search-watch.iml" filepath="$PROJECT_DIR$/app/search-watch/search-watch.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/springframework/springframework.iml" filepath="$PROJECT_DIR$/projects/springframework/springframework.iml" group="Projects/springframework" />
       <module fileurl="file://$PROJECT_DIR$/projects/springframework/runtime/springframework-runtime.iml" filepath="$PROJECT_DIR$/projects/springframework/runtime/springframework-runtime.iml" group="Projects/springframework" />
       <module fileurl="file://$PROJECT_DIR$/projects/stateWorks/stateWorks.iml" filepath="$PROJECT_DIR$/projects/stateWorks/stateWorks.iml" group="Projects" />
@@ -981,7 +982,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <module name="MPS" />
+      <module name="regexp" />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="4386" />
         <option name="TRANSPORT" value="0" />
@@ -1018,17 +1019,22 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="MForum" />
+        <option name="MODULE_NAME" value="Charisma" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="Charisma" />
+        <option name="MODULE_NAME" value="MForum" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE>
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="teamSysWebApp" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="search-watch" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1104,17 +1110,22 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="MForum" />
+        <option name="MODULE_NAME" value="Charisma" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="Charisma" />
+        <option name="MODULE_NAME" value="MForum" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE>
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="teamSysWebApp" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="search-watch" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE>
@@ -1190,17 +1201,22 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="MForum" />
-        <option name="DEPLOY" value="false" />
+        <option name="MODULE_NAME" value="Charisma" />
+        <option name="DEPLOY" value="true" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="Charisma" />
-        <option name="DEPLOY" value="true" />
+        <option name="MODULE_NAME" value="MForum" />
+        <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE>
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="teamSysWebApp" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="search-watch" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1276,17 +1292,22 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="MForum" />
-        <option name="DEPLOY" value="true" />
+        <option name="MODULE_NAME" value="Charisma" />
+        <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="Charisma" />
-        <option name="DEPLOY" value="false" />
+        <option name="MODULE_NAME" value="MForum" />
+        <option name="DEPLOY" value="true" />
       </J2EE_MODULE>
       <J2EE_MODULE>
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="teamSysWebApp" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="search-watch" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1362,17 +1383,22 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="MForum" />
+        <option name="MODULE_NAME" value="Charisma" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="Charisma" />
+        <option name="MODULE_NAME" value="MForum" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE>
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="teamSysWebApp" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="search-watch" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
