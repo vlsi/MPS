@@ -106,10 +106,6 @@ public abstract class BaseAdapter implements INodeAdapter {
     return myNode.getConceptLinks(linkName, lookupHierarchy, scope);
   }
 
-  public final AbstractConceptDeclaration getConceptDeclaration(IScope scope) {
-    return getNode().getConceptDeclarationAdapter(scope);
-  }
-
   public final AbstractConceptDeclaration getConceptDeclarationAdapter() {
     return getNode().getConceptDeclarationAdapter();
   }
@@ -497,10 +493,6 @@ public abstract class BaseAdapter implements INodeAdapter {
 
   public static boolean isInstance(SNode node, Class<? extends INodeAdapter> cls) {
     return cls.isInstance(fromNode(node));
-  }
-
-  public AbstractConceptDeclaration getNodeConcept() {
-    return getConceptDeclaration(GlobalScope.getInstance());
   }
 
   public String getRole_() {

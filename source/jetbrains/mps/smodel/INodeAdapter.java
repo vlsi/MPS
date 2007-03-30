@@ -45,11 +45,6 @@ public interface INodeAdapter {
 
   List<ConceptLink> getConceptLinks(String linkName, boolean lookupHierarchy, IScope scope);
 
-  /**
-   * @deprecated 
-   */
-  AbstractConceptDeclaration getConceptDeclaration(IScope scope);
-
   AbstractConceptDeclaration getConceptDeclarationAdapter();
 
   void replaceChild(INodeAdapter c1, INodeAdapter c2);
@@ -141,11 +136,6 @@ public interface INodeAdapter {
   void addLinkAttribute(String role, String propertyName, INodeAdapter propertyAttribute);
 
   List<? extends INodeAdapter> getLinkAttributes(String role, String linkRole);
-
-  /**
-   * @deprecated
-   */
-  AbstractConceptDeclaration getNodeConcept();
 
   String getRole_();
 
