@@ -91,7 +91,7 @@ public class GenerationPlan {
     if (mappingRef instanceof MappingConfig_ExtRef) {
       GeneratorReference generatorRef = ((MappingConfig_ExtRef) mappingRef).getGenerator();
       if (generatorRef != null) {
-        String referentUID = generatorRef.getReferentUID();
+        String referentUID = generatorRef.getGeneratorUID();
         if (referentUID != null) {
           Generator newRefGenerator = (Generator) MPSModuleRepository.getInstance().getModuleByUID(referentUID);
           if (newRefGenerator != null) {

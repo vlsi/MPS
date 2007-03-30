@@ -164,7 +164,7 @@ public class Generator extends AbstractModule {
   public List<Generator> getReferencedGenerators() {
     List<Generator> list = new ArrayList<Generator>();
     for (GeneratorReference generatorReference : myGeneratorDescriptor.getGeneratorReferences()) {
-      IModule module = MPSModuleRepository.getInstance().getModuleByUID(generatorReference.getReferentUID());
+      IModule module = MPSModuleRepository.getInstance().getModuleByUID(generatorReference.getGeneratorUID());
       if (module instanceof Generator) {
         list.add((Generator) module);
       }
