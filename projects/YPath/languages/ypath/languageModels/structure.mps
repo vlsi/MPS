@@ -264,14 +264,25 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1172243209751" resolveInfo="KindBlock" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1175162866857">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="properties" />
+      <link role="target" targetNodeId="1175160940972" resolveInfo="KindProperty" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1172242735136">
     <property name="name" value="MatchKindOperation" />
     <link role="extends" targetNodeId="1168468681335" resolveInfo="TreePathOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1172242802393">
       <property name="role" value="nodeKind" />
-      <property name="sourceCardinality" value="1" />
+      <property name="sourceCardinality" value="0..1" />
       <link role="target" targetNodeId="1172240563057" resolveInfo="TreeNodeKind" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1175165403535">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="nodeKindOccurrence" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1175165417012" resolveInfo="TreeNodeKindOccurrence" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1172243209751">
@@ -281,6 +292,45 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1172734607873">
     <property name="name" value="TreepathType" />
     <link role="extends" targetNodeId="2.1068431790189" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1175160940972">
+    <property name="name" value="TreeNodeKindProperty" />
+    <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1175160966691">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="getter" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1175161007000" resolveInfo="PropertyGetter" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1175161056224">
+      <link role="intfc" targetNodeId="1.1169194658468" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1175161007000">
+    <property name="name" value="PropertyGetter" />
+    <link role="extends" targetNodeId="1168428649324" resolveInfo="LambdaMethod" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1175165417012">
+    <property name="name" value="TreeNodeKindOccurrence" />
+    <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1175167444487">
+      <property name="role" value="nodeKind" />
+      <link role="target" targetNodeId="1172240563057" resolveInfo="TreeNodeKind" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1175169769579">
+    <property name="name" value="MatchPropertyOperation" />
+    <link role="extends" targetNodeId="1172242735136" resolveInfo="MatchKindOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1175169795791">
+      <property name="role" value="property" />
+      <link role="target" targetNodeId="1175160940972" resolveInfo="TreeNodeKindProperty" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1175170018451">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="matchExpression" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" />
+    </node>
   </node>
 </model>
 

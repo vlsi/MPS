@@ -8,17 +8,24 @@ import org.w3c.dom.Document;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Node;
 import ypath.util.TreeTraversalFactory;
+import treepath_dom.DOM;
+import treepath_dom.TreePath_nodeKind_1175164209844;
+import ypath.util.CompositeFilter;
+import treepath_dom.TreePath_nodeKind_propertyMatcher_1175164263587;
 
 public class XmlDemo {
 
   public static void main(String[] args) {
-    String INPUT = new String("<doc> <a><b><findme/></b><c></c></a> </doc>");
+    String INPUT = new String("<doc> <a><b><foobar/><findme baz=\"fooblin\"/></b><c></c></a> </doc>");
     try {
       InputStream is = new ByteArrayInputStream(INPUT.getBytes());
       Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(is);
-//      for(Node node : TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new DOM().from(doc), TreeTraversalFactory.Axis("DESCENDANTS")), new WhereFilter_1175129771556(null, null))) {
-//        System.out.println(node);
-//      }
+      for(Node node : TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new DOM().from(doc), TreeTraversalFactory.Axis("DESCENDANTS")), new TreePath_nodeKind_1175164209844())) {
+        System.out.println(node);
+      }
+      for(Node node : TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new DOM().from(doc), TreeTraversalFactory.Axis("DESCENDANTS")), new CompositeFilter<Node>(new TreePath_nodeKind_1175164209844(), new TreePath_nodeKind_propertyMatcher_1175164263587("a"))), TreeTraversalFactory.Axis("DESCENDANTS")), new CompositeFilter<Node>(new TreePath_nodeKind_1175164209844(), new TreePath_nodeKind_propertyMatcher_1175164263587("findme")))) {
+        System.out.println("Found: " + node);
+      }
     } catch (Exception ignored) {
     }
   }

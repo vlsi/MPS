@@ -10,6 +10,24 @@
     <property name="name" value="File_TreePath" />
     <node role="nodeKinds" type="ypath.TreeNodeKind" id="1172248962391">
       <property name="name" value="FILE" />
+      <node role="properties" type="ypath.TreeNodeKindProperty" id="1175164134728">
+        <property name="name" value="name" />
+        <node role="getter" type="ypath.PropertyGetter" id="1175164134729">
+          <node role="parameter" type="ypath.LambdaMethodParameter" id="1175164134730">
+            <property name="name" value="f" />
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1175164134731">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1175164142650">
+              <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1175164147583">
+                <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]File).([InstanceMethodDeclaration]getName() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.ClosureParameterReference" id="1175164143628">
+                  <link role="closureParameter" targetNodeId="1175164134730" resolveInfo="f" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="trigger" type="ypath.KindBlock" id="1172248962392">
         <node role="parameter" type="ypath.LambdaMethodParameter" id="1172248962393">
           <property name="name" value="f" />

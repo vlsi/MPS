@@ -423,5 +423,27 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActions" id="1175164415469">
+    <property name="name" value="rhint_MatchKind_to_MatchProperty" />
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1175164446140">
+      <property name="actionsFactoryAspectId" value="TreeNodeKindOccurrence_matchProperty" />
+      <link role="applicableConcept" targetNodeId="1.1175165417012" />
+      <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionFunction" id="1175170178382">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1175170178383">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1175170181651">
+            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1175170239475">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1175170203120">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionParm_sourceNode" id="1175170197112" />
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetParentOperation" id="1175170204614" />
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1175170240796">
+                <link role="concept" targetNodeId="1.1172242735136" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
