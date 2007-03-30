@@ -6,10 +6,13 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
+import jetbrains.mps.logging.Logger;
 
 import java.util.List;
 
 public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
+  private static final Logger LOG = Logger.getLogger(DefaultChildSubstituteInfo.class);
+
   private SNode myParentNode;
   private SNode myCurrentChild;
   private LinkDeclaration myLinkDeclaration;
@@ -18,11 +21,11 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
   public DefaultChildSubstituteInfo(SNode sourceNode, LinkDeclaration linkDeclaration, EditorContext editorContext) {
     super(editorContext);
     if (isNotAggregation(linkDeclaration)) {
-      throw new RuntimeException("Only aggregation links are allowed here.");
+      LOG.error("only aggregation links are allowed here", new RuntimeException("only aggregation links are allowed here."), linkDeclaration.getNode());
     }
     Cardinality sourceCardinality = SModelUtil_new.getGenuineLinkSourceCardinality(linkDeclaration);
     if (!(sourceCardinality == Cardinality._1 || sourceCardinality == Cardinality._0_1)) {
-      throw new RuntimeException("Only cardinalities 1 or 0..1 are allowed here.");
+      LOG.error("only cardinalities 1 or 0..1 are allowed here", new RuntimeException("only cardinalities 1 or 0..1 are allowed here"), linkDeclaration.getNode());
     }
 
     myParentNode = sourceNode;
@@ -33,10 +36,9 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
   public DefaultChildSubstituteInfo(SNode parentNode, SNode currChildNode, LinkDeclaration linkDeclaration, EditorContext editorContext) {
     super(editorContext);
     if (linkDeclaration == null) {
-      throw new IllegalArgumentException("link declaration is null");
-    }
-    if (isNotAggregation(linkDeclaration)) {
-      throw new RuntimeException("Only aggregation links are allowed here.");
+      LOG.error("link declaration is null", new IllegalArgumentException("link declaration is null"));
+    } else if (isNotAggregation(linkDeclaration)) {
+      LOG.error("only aggregation links are allowed here", new RuntimeException("only aggregation links are allowed here"), linkDeclaration.getNode());
     }
     myParentNode = parentNode;
     myLinkDeclaration = linkDeclaration;

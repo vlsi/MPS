@@ -7,9 +7,10 @@
       <sourceFolder url="file://$MODULE_DIR$/languages/bootstrap/helgins/solutions/jetbrains.mps.bootstrap.helgins.sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/bootstrap/refactoringLanguage/solutions/sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/bootstrap/smodelLanguage/solutions/samples/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/languages/bootstrap/smodelLanguage/solutions/sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/bootstrap/structureLanguage/solutions/sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/helgins/languages/subtyping/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/projects/mf/lair1/languages/config/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/projects/mf/lair1/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />

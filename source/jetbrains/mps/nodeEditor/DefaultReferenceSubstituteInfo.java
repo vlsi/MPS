@@ -5,6 +5,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkMetaclass;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
@@ -13,6 +14,8 @@ import jetbrains.mps.smodel.action.ModelActions;
 import java.util.List;
 
 public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
+  private static final Logger LOG = Logger.getLogger(DefaultReferenceSubstituteInfo.class);
+
   private SNode mySourceNode;
   private LinkDeclaration myLinkDeclaration;
   private SNode myCurrentReferent;
@@ -21,11 +24,11 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
     super(editorContext);
     LinkDeclaration genuineLink = SModelUtil_new.getGenuineLinkDeclaration(linkDeclaration);
     if (genuineLink.getMetaClass() != LinkMetaclass.reference) {
-      throw new RuntimeException("Only reference links are allowed here.");
+      LOG.error("only reference links are allowed here", new RuntimeException("only reference links are allowed here"), linkDeclaration.getNode());
     }
     Cardinality sourceCardinality = genuineLink.getSourceCardinality();
     if (!(sourceCardinality == Cardinality._1 || sourceCardinality == Cardinality._0_1)) {
-      throw new RuntimeException("Only cardinalities 1 or 0..1 are allowed here.");
+      LOG.error("only cardinalities 1 or 0..1 are allowed here", new RuntimeException("only cardinalities 1 or 0..1 are allowed here"), linkDeclaration.getNode());
     }
 
     mySourceNode = sourceNode;
