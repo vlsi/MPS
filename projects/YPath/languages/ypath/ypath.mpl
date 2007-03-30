@@ -34,7 +34,6 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${language_descriptor}\home\fyodor\workspace\YPath\classes" />
     <entry path="${mps_home}\projects\YPath\classes" />
   </classPath>
 </language>
