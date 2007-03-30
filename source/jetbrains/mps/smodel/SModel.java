@@ -647,14 +647,20 @@ public class SModel implements Iterable<SNode> {
     List<Language> languages = getLanguages(scope);
     for (Language language : languages) {
       for (SModelDescriptor accessoryModels : language.getAccessoryModels()) {
-        if (accessoryModels != sourceModel && !list.contains(accessoryModels))
+        if (accessoryModels != sourceModel && !list.contains(accessoryModels)) {
           list.add(accessoryModels);
+        }
       }
     }
 
     List<DevKit> devkits = getDevkits(scope);
     for (DevKit dk : devkits) {
       list.addAll(dk.getExportedModelDescriptors());
+      for (SModelDescriptor dkModel : dk.getExportedModelDescriptors()) {
+        if (dkModel != sourceModel && !list.contains(dkModel)) {
+          list.add(dkModel);
+        }
+      }
     }
 
     Iterator<SModelDescriptor> imports = importedModels(scope);
@@ -664,6 +670,7 @@ public class SModel implements Iterable<SNode> {
         list.add(importedModel);
       }
     }
+    
     return list;
   }
 
