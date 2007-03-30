@@ -13,6 +13,10 @@ import jetbrains.mps.smodel.constraints.INodeReferentSetEventHandler;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.util.*;
+import jetbrains.mps.baseLanguage.structure.FieldReference;
+import jetbrains.mps.baseLanguage.structure.Classifier;
+import jetbrains.mps.baseLanguage.structure.StaticFieldReference;
+import jetbrains.mps.baseLanguage.structure.StatementList;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -1043,6 +1047,16 @@ public class SNode implements Cloneable, Iterable<SNode> {
     }
   }
 
+  public void removeReference(@NotNull SReference referenceToRemove) {
+    for (SReference reference : myReferences) {
+      if (reference.equals(referenceToRemove)) {
+        int index = myReferences.indexOf(reference);
+        removeReferenceAt(index);
+        break;
+      }
+    }
+  }
+
   public int getReferentCount(@NotNull String role) {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
     int count = 0;
@@ -1079,6 +1093,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
   }
 
   private void insertReferenceAt(final int i, @NotNull final SReference reference) {
+
     myReferences.add(i, reference);
     if (!getModel().isLoading()) {
       UndoManager.instance().undoableActionPerformed(new IUndoableAction() {

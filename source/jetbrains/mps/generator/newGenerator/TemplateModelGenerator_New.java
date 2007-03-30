@@ -14,6 +14,7 @@ import jetbrains.mps.typesystem.TypeCheckerAccess;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.QueryMethod;
+import jetbrains.mps.baseLanguage.structure.FieldReference;
 
 import java.util.*;
 
@@ -112,7 +113,8 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
       }
     }
 
-    for (SNode outputRootNode : myOutputModel.getRoots()) {
+    ArrayList <SNode> copiedRoots = new ArrayList<SNode>(myOutputModel.getRoots());
+    for (SNode outputRootNode : copiedRoots) {
       ruleManager.getReductionRuleManager().applyReductionRules(findInputNodeByOutputNodeWithSameId(outputRootNode));
     }
 
@@ -125,6 +127,38 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     //There could new unresolved references appear after applying reduction rules (all delayed changes should be done before this, like replacing children)
     updateAllReferences();
 
+    validateReferencesInCopiedRoots(copiedRoots);
+
+
+  }
+
+  private void validateReferencesInCopiedRoots(ArrayList<SNode> copiedRoots) {
+    for (SNode copiedRoot : copiedRoots) {
+      validateReferences(copiedRoot);
+    }
+  }
+
+  private void validateReferences(SNode node) {
+    List<SReference> list = node.getReferences();
+    for (SReference reference : list) {
+      vallidateReference(reference);
+    }
+    for (SNode childNode : node.getChildren()) {
+      validateReferences(childNode);
+    }
+  }
+
+  private void vallidateReference(SReference reference) {
+    if(reference.isExternal())return;
+    if(myOutputModel.getNodeById(reference.getTargetNodeId()) != null) return;
+    SNode outputNode = reference.getSourceNode();
+    SNode inputNode = findInputNodeByOutputNodeWithSameId(outputNode);
+    if(inputNode == null)return;
+    SReference inputReference = inputNode.getReference(reference.getRole());
+    if(inputReference == null) return;
+    ReferenceInfo_Default refInfo = new ReferenceInfo_Default(outputNode, inputReference, inputNode, inputReference.getTargetNode(), inputNode);
+    outputNode.removeReference(reference);
+    refInfo.execute(this);
   }
 
   private void updateAllReferences() {
@@ -143,6 +177,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
       referenceInfos = newReferenceInfos;
       newReferenceInfos = new ArrayList<ReferenceInfo>(referenceInfos.size());
     }
+    myReferenceInfos = newReferenceInfos;
   }
 
 
@@ -234,12 +269,20 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   }
 
   //todo this method supposes that inputNode is not changed - it should be deprecated after going to new generator
+  //todo may be better to have always hashtable for copied nodes???
   public INodeBuilder findCopyingNodeBuilderForSource(SNode inputNode) {
+    INodeBuilder builder = myTemplateNodeAndInputNodeToBuilderMap.get(new Pair<SNode, SNode>(inputNode, inputNode));
+    if(builder != null) return builder;
     SNode outputNode = findOutputNodeByInputNodeWithSameId(inputNode);
     if(outputNode == null) {
       return null;
     }
     return new SimpleNodeBuilder(this, outputNode, inputNode, inputNode);
+  }
+
+  public SNode findCopyingOutputNodeForInputNode(SNode inputNode) {
+    INodeBuilder builder = findCopyingNodeBuilderForSource(inputNode);
+    return builder.getTargetNode();
   }
 
   public INodeBuilder findNodeBuilderForSourceAndTemplate(SNode source, SNode template) {
@@ -392,4 +435,5 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   public void setChanged(boolean b) {
     isChanged = true;
   }
+
 }

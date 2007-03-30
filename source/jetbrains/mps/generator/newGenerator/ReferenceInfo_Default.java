@@ -7,6 +7,10 @@ import jetbrains.mps.generator.template.IReferenceResolver;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.baseLanguage.structure.StaticFieldReference;
+import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro;
+
+import java.util.List;
 
 /**
  * Created by: Sergey Dmitriev

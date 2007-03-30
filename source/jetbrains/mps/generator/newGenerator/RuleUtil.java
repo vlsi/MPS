@@ -448,6 +448,9 @@ public class RuleUtil {
 
     SModel templateModel = templateNode.getModel();
     for (SReference reference : templateNode.getReferences()) {
+      if(templateNode.getLinkAttribute("referenceMacro", reference.getRole()) != null) {
+        continue;  
+      }
       SNode templateReferentNode = reference.getTargetNode();
       if (templateReferentNode == null) {
         myGenerator.showErrorMessage(null, templateNode, "'createNodeFromTemplate' referent node is null in template model");
