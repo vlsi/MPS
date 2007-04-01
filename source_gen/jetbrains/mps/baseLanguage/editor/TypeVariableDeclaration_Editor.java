@@ -31,7 +31,7 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1109281432641");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1109281432641");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

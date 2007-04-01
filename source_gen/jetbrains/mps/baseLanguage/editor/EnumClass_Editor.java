@@ -44,7 +44,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell1(context, node, "implements"));
     editorCell.addEditorCell(this.createImplementedInterfaceList(context, node));
     editorCell.addEditorCell(this.createConstantCell3(context, node, "{"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1085483277584");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1085483277584");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -59,7 +59,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell4(context, node, "    "));
     editorCell.addEditorCell(this.createEnumConstantList(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1085483277588");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1085483277588");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -74,7 +74,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell7(context, node, "    "));
     editorCell.addEditorCell(this.createFieldList(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1085483273078");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1085483273078");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -89,7 +89,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell10(context, node, "    "));
     editorCell.addEditorCell(this.createConstructorList(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1085483457770");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1085483457770");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -104,7 +104,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell13(context, node, "    "));
     editorCell.addEditorCell(this.createMethodList(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1085483457774");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1085483457774");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -119,7 +119,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell16(context, node, "    "));
     editorCell.addEditorCell(this.createStaticMethodList(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1085483457778");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1085483457778");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -143,7 +143,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell15(context, node, ""));
     editorCell.addEditorCell(this.createRowCell5(context, node));
     editorCell.addEditorCell(this.createConstantCell18(context, node, "}"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1085483277583");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1085483277583");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -156,7 +156,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1085483277585");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1085483277585");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -169,7 +169,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1169763676999");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1169763676999");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -181,7 +181,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1085483277587");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1085483277587");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -193,7 +193,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1085483277589");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1085483277589");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -205,7 +205,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1138307589269");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138307589269");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -217,7 +217,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1085483273079");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1085483273079");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -229,7 +229,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1138307592880");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138307592880");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -241,7 +241,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1085483457771");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1085483457771");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -253,7 +253,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1138307596445");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138307596445");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -265,7 +265,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1085483457775");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1085483457775");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -277,7 +277,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1138307599041");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138307599041");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -289,7 +289,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1085483457779");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1085483457779");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -301,7 +301,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1085483277593");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1085483277593");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -414,7 +414,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1085483277586");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1085483277586");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

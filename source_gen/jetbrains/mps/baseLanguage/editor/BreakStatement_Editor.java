@@ -27,7 +27,7 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell(context, node, "break"));
     editorCell.addEditorCell(this.createConstantCell1(context, node, ";"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1101210155304");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1101210155304");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -40,7 +40,7 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1101210485459");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1101210485459");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -52,7 +52,7 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1101210485460");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1101210485460");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

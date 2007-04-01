@@ -38,7 +38,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell1(context, node, "{"));
     editorCell.addEditorCell(this.createInitValueList(context, node));
     editorCell.addEditorCell(this.createConstantCell3(context, node, "}"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1154543006078");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1154543006078");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -50,7 +50,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1154543021847");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1154543021847");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -62,7 +62,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1154543041458");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1154543041458");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -74,7 +74,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1154543071509");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1154543071509");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -107,7 +107,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1154543009938");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1154543009938");
     editorCell.setLayoutConstraint("");
     editorCell.putUserObject(EditorCell.ATTRACTS_FOCUS_POLICY, EditorCell.FIRST_EDITABLE_CELL);
     return editorCell;

@@ -24,7 +24,7 @@ public class NullLiteral_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1079605716541");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1079605716541");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

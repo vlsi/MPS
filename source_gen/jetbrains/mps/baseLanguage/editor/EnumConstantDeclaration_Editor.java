@@ -12,7 +12,9 @@ import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -37,7 +39,7 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "("));
     editorCell.addEditorCell(this.createActualArgumentList(context, node));
     editorCell.addEditorCell(this.createConstantCell2(context, node, ")"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1085485112428");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1085485112428");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -49,7 +51,7 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1085485112430");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1085485112430");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -61,7 +63,7 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1085485112432");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1085485112432");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -89,12 +91,14 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.setFontType(MPSFonts.BOLD);
     if(editorCell instanceof EditorCell_Label) {
       EditorCell_Label editorCellLabel = (EditorCell_Label)editorCell;
       editorCellLabel.setEditable(true);
+      editorCellLabel.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1085485112429");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1085485112429");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

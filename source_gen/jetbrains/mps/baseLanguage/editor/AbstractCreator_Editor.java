@@ -21,7 +21,7 @@ public class AbstractCreator_Editor extends DefaultNodeEditor {
     editorCell.setEditable(true);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1145552947529");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145552947529");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

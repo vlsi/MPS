@@ -35,7 +35,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell2(context, node, "("));
     editorCell.addEditorCell(this.createThrowableCell(context, node));
     editorCell.addEditorCell(this.createConstantCell3(context, node, ") {"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1164903407620");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164903407620");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -50,7 +50,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell4(context, node, "  "));
     editorCell.addEditorCell(this.createCatchBodyCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1164903407626");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164903407626");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -65,7 +65,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRowCell(context, node));
     editorCell.addEditorCell(this.createRowCell1(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1164903406669");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164903406669");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -77,7 +77,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1164903407621");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164903407621");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -90,7 +90,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1164903407622");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164903407622");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -102,7 +102,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1164903407623");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164903407623");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -114,7 +114,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1164903407625");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164903407625");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -126,7 +126,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1164903407627");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164903407627");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -143,7 +143,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1164903407624");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164903407624");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -176,7 +176,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1164903407628");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164903407628");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

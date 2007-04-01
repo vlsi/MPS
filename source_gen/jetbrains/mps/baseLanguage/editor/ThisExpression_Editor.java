@@ -24,7 +24,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1075374365334");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075374365334");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

@@ -31,7 +31,7 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell(context, node, "//"));
     editorCell.addEditorCell(this.createValueCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1168623087575");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1168623087575");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -44,7 +44,7 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(Color.gray);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1168623096233");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1168623096233");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -62,7 +62,7 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
       editorCellLabel.getTextLine().setTextColor(Color.gray);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1168623099813");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1168623099813");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

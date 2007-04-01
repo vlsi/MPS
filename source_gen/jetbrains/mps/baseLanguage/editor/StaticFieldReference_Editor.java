@@ -34,7 +34,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createClassifierReferenceCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "."));
     editorCell.addEditorCell(this.createStaticFieldDeclarationReferenceCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1082740154392");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1082740154392");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -46,7 +46,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1082740154394");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1082740154394");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -64,7 +64,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     StaticFieldReference_Actions.setCellActions(editorCell, node, context);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1144433124322");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1144433124322");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -98,7 +98,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new StaticFieldReference_staticFieldDeclaration_cellMenu(),new StaticFieldReference_customReplace_cellMenu()}));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1088427644683");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1088427644683");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

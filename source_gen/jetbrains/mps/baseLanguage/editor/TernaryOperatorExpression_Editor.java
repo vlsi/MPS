@@ -34,7 +34,7 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createIfTrueCell(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, ":"));
     editorCell.addEditorCell(this.createIfFalseCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1163668947305");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1163668947305");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -46,7 +46,7 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1163668954406");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1163668954406");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -58,7 +58,7 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1163668958738");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1163668958738");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -75,7 +75,7 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1163668952186");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1163668952186");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -108,7 +108,7 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1163668956502");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1163668956502");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -141,7 +141,7 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1163668962067");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1163668962067");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

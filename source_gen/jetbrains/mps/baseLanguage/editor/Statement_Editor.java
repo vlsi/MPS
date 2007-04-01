@@ -21,7 +21,7 @@ public class Statement_Editor extends DefaultNodeEditor {
     editorCell.setEditable(true);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1078746085984");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1078746085984");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

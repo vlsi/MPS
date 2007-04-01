@@ -27,7 +27,7 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell(context, node, "continue"));
     editorCell.addEditorCell(this.createConstantCell1(context, node, ";"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1101210185160");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1101210185160");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -40,7 +40,7 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1101210485461");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1101210485461");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -52,7 +52,7 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1101210485462");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1101210485462");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

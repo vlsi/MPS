@@ -38,7 +38,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "."));
     editorCell.addEditorCell(this.createStaticMethodDeclarationReferenceCell(context, node));
     editorCell.addEditorCell(this.createBaseMethodCall_actualArgumentListCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1081149310028");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081149310028");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -53,7 +53,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1173991610903");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173991610903");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -65,7 +65,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1081149570778");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081149570778");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -83,7 +83,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     StaticMethodCall_Actions.setCellActions(editorCell, node, context);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1144433246063");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1144433246063");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -117,7 +117,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new StaticMethodCall_staticMethodDeclaration_cellMenu(),new StaticMethodCall_customReplace_cellMenu()}));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1088427863670");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1088427863670");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

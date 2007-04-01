@@ -31,7 +31,7 @@ public class ExpressionStatement_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createExpressionCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, ";"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1075379141235");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075379141235");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -43,7 +43,7 @@ public class ExpressionStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1075379141237");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075379141237");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -61,7 +61,7 @@ public class ExpressionStatement_Editor extends DefaultNodeEditor {
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     ExpressionStatement_Expression_Actions.setCellActions(editorCell, node, context);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1075379141236");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075379141236");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

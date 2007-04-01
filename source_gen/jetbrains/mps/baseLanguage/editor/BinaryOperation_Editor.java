@@ -34,7 +34,7 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createLeftExpressionCell(context, node));
     editorCell.addEditorCell(this.createCellModel_ConceptProperty(context, node));
     editorCell.addEditorCell(this.createRightExpressionCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1166063955820");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1166063955820");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -52,7 +52,7 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     BinaryOperation_LeftArgument_Actions.setCellActions(editorCell, node, context);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1166063955821");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1166063955821");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -86,7 +86,7 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new BinaryOperation_replaceWith_BinaryOperation_cellMenu()}));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1166063984223");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1166063984223");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -120,7 +120,7 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     BinaryOperation_RightArgument_Actions.setCellActions(editorCell, node, context);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1166063955825");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1166063955825");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

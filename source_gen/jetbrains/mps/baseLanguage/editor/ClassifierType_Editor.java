@@ -42,7 +42,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     }
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1140569118323");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140569118323");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -59,7 +59,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "<"));
     editorCell.addEditorCell(this.createParameterList(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, ">"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1140569207250");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140569207250");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -71,7 +71,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1140569244933");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140569244933");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -83,7 +83,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1140569244935");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140569244935");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -116,7 +116,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1140569208432");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140569208432");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -149,7 +149,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1145473161607");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145473161607");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

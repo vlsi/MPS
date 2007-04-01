@@ -31,7 +31,7 @@ public class ClosureParameterReference_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1153179576790");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1153179576790");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

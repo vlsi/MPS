@@ -29,7 +29,7 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createBodyCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1137096602628");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1137096602628");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -46,7 +46,7 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1137096604522");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1137096604522");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

@@ -35,7 +35,7 @@ public class BooleanConstant_Editor extends DefaultNodeEditor {
       editorCellLabel.getTextLine().setTextColor(MPSColors.DARK_BLUE);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1088424970609");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1088424970609");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

@@ -32,7 +32,7 @@ public class IntegerConstant_Editor extends DefaultNodeEditor {
       editorCellLabel.getTextLine().setTextColor(Color.blue);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1083091696640");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083091696640");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

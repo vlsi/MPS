@@ -31,7 +31,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createTypeCell(context, node));
     editorCell.addEditorCell(this.createNameCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1075302295735");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075302295735");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -48,7 +48,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1075302295736");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075302295736");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -82,7 +82,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     ParameterDeclaration_Name_Actions.setCellActions(editorCell, node, context);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1075302295737");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075302295737");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

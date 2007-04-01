@@ -33,7 +33,7 @@ public class ArrayAccessExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "["));
     editorCell.addEditorCell(this.createIndexCell(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, "]"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1173175599366");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173175599366");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -46,7 +46,7 @@ public class ArrayAccessExpression_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     ArrayAccessExpression_Actions.setCellActions(editorCell, node, context);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1173175604827");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173175604827");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -58,7 +58,7 @@ public class ArrayAccessExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1173175610988");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173175610988");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -75,7 +75,7 @@ public class ArrayAccessExpression_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1173175602450");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173175602450");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -108,7 +108,7 @@ public class ArrayAccessExpression_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1173175607861");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173175607861");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
