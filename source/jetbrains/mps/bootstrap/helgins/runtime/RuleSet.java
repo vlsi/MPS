@@ -75,4 +75,7 @@ public class RuleSet<T extends Rule_Runtime> {
     }
   }
 
+  public void clear() {
+    myRules.clear();
+  }
 }
