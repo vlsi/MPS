@@ -24,6 +24,8 @@ import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.bootstrap.helgins.structure.ReferenceAntiquotation_AnnotationLink;
 import jetbrains.mps.bootstrap.helgins.structure.InferenceRule;
+import jetbrains.mps.bootstrap.helgins.structure.SubtypingRule;
+import jetbrains.mps.bootstrap.helgins.structure.SupertypingRule;
 
 public class QueriesGenerated {
 
@@ -214,7 +216,13 @@ public class QueriesGenerated {
   }
   public static SNode referenceMacro_GetReferent_1175149443385(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode clt;
-    return SLinkOperations.getTarget(new QuotationClass_5().createNode(), "classifier", false);
+    if(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.SubtypingRule")) {
+      return SLinkOperations.getTarget(new QuotationClass_5().createNode(), "classifier", false);
+    }
+    if(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.SupertypingRule")) {
+      return SLinkOperations.getTarget(new QuotationClass_6().createNode(), "classifier", false);
+    }
+    return SLinkOperations.getTarget(new QuotationClass_7().createNode(), "classifier", false);
   }
   public static SNode referenceMacro_GetReferent_1174655195413(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode rule = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.helgins.structure.AbstractRule", false, false);
@@ -254,7 +262,13 @@ public class QueriesGenerated {
     return generator.findNodeBuilderForSource(SLinkOperations.getTarget(node, "modelToCreate", true), "parametersFromExpressions").getTargetNode();
   }
   public static SNode referenceMacro_GetReferent_1175249167916(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return generator.findNodeBuilderForSource(node, "classForRule").getTargetNode();
+    return generator.findNodeBuilderForSource(node, "classForRule").getTargetNode().getChild("constructor");
+  }
+  public static SNode referenceMacro_GetReferent_1175440294358(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return generator.findNodeBuilderForSource(node, "classForRule").getTargetNode().getChild("constructor");
+  }
+  public static SNode referenceMacro_GetReferent_1175440299480(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return generator.findNodeBuilderForSource(node, "classForRule").getTargetNode().getChild("constructor");
   }
   public static boolean ifMacro_Condition_1174589744219(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return false;
@@ -410,6 +424,12 @@ public class QueriesGenerated {
   }
   public static List sourceNodesQuery_1175249249128(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return BaseAdapter.toNodes(sourceModel.getRootsAdapters(InferenceRule.class));
+  }
+  public static List sourceNodesQuery_1175440294397(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return BaseAdapter.toNodes(sourceModel.getRootsAdapters(SubtypingRule.class));
+  }
+  public static List sourceNodesQuery_1175440299519(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return BaseAdapter.toNodes(sourceModel.getRootsAdapters(SupertypingRule.class));
   }
   public static SNode sourceNodeQuery_1174578748617(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "quotedNode", true);

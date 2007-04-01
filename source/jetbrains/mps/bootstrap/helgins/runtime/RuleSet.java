@@ -21,8 +21,7 @@ import java.util.HashSet;
 public class RuleSet<T extends Rule_Runtime> {
   Map<ConceptDeclaration, Set<T>> myRules = new HashMap<ConceptDeclaration, Set<T>>();
 
-  public void addRuleSetItem(RuleSetItem<T> ruleSetItem) {
-    Set<T> rules = ruleSetItem.getRules();
+  public void addRuleSetItem(Set<T> rules) {
     for (T rule : rules) {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(rule.getApplicableConceptFQName(), GlobalScope.getInstance());
       Set<T> existingRules = myRules.get(concept);

@@ -11,7 +11,7 @@ import java.util.List;
  * Time: 9:55:59
  * To change this template use File | Settings | File Templates.
  */
-public interface SubtypingRule_Runtime {
+public interface ISubtypingRule_Runtime extends Rule_Runtime {
   List<SNode> getSubOrSuperTypes(SNode type);
   boolean isSupertyping();
 }
