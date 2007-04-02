@@ -45,7 +45,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   public static final Logger LOG = Logger.getLogger(GeneratorManager.class);
 
   private static final String SAVE_TRANSIENT_MODELS = "save-transient-models-on-generation";
-  private static final String COMPILE_BEFORE_GENERATION = "compile-on-generation";
+  private static final String COMPILE_BEFORE_GENERATION = "compile-before-generation";
   private static final String COMPILE_ON_GENERATION = "compile-on-generation";
   private static final String COMPILE_SOURCE_LANGUAGES_MODULES = "compile-source-languages-modules";
 
