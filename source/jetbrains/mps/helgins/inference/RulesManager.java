@@ -57,7 +57,8 @@ public class RulesManager {
       mySupertypingRules.makeConsistent();
       myLoadedLanguages.add(l.getNamespace());
     } catch(Throwable t) {
-      LOG.error("fail to instantiate HelginsDescriptor for language " + l.getNamespace());
+ //     LOG.error("fail to instantiate HelginsDescriptor for language " + l.getNamespace());
+      myLoadedLanguages.add(l.getNamespace());
     }
   }
 

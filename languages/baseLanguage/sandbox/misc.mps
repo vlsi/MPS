@@ -524,6 +524,19 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1154543408784">
     <property name="name" value="Arraysss" />
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1175503592445">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1175503592446" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1175503592447">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1175503614768">
+          <node role="expression" type="jetbrains.mps.baseLanguage.NewExpression" id="1175503631136">
+            <link role="baseMethodDeclaration" extResolveInfo="1.constructor [Classifier]Object[ConstructorDeclaration] ()" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1175503650953">
+          <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1175503662992" />
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1173883022720">
       <property name="name" value="sss" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1173883026863">
