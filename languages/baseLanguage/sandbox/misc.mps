@@ -715,6 +715,16 @@
             <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1173880506360" />
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1175495648770">
+          <node role="expression" type="jetbrains.mps.baseLanguage.AndExpression" id="1175495657252">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1175495664141">
+              <link role="variableDeclaration" targetNodeId="1173880506359" resolveInfo="b" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1175495648771">
+              <link role="variableDeclaration" targetNodeId="1173880502730" resolveInfo="a" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1174053445882">
           <node role="expression" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1174053447665">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174053449731">
@@ -866,12 +876,12 @@
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1173882475096" />
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1173882685559">
-          <node role="condition" type="jetbrains.mps.baseLanguage.OrExpression" id="1173882687438">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1173882689207">
-              <link role="variableDeclaration" targetNodeId="1173880506359" resolveInfo="b" />
-            </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.AndExpression" id="1175495616032">
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1173882686656">
               <link role="variableDeclaration" targetNodeId="1173880502730" resolveInfo="a" />
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1173882689207">
+              <link role="variableDeclaration" targetNodeId="1173880506359" resolveInfo="b" />
             </node>
           </node>
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1173882685561" />

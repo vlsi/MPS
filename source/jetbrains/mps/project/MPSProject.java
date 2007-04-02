@@ -36,7 +36,6 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IDisposable;
 import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.reloading.MPSClassLoader;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -515,7 +514,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
         MPSModuleRepository.getInstance().unRegisterModules(MPSProject.this);
         SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
 
-        TypeChecker.getInstance().clearCheckedRoots();
+        TypeChecker.getInstance().clearForReload();
         UndoManager.instance().clear();
         ActionManager.instance().clearAll();
 

@@ -2,6 +2,7 @@ package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.helgins.runtime.RuntimeSupport;
+import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.helgins.evaluator.CopyEvaluator;
 import jetbrains.mps.helgins.evaluator.QuotationEvaluator;
 import jetbrains.mps.helgins.structure.*;
@@ -57,6 +58,7 @@ public class TypeChecker {
   private QuotationEvaluator myQuotationEvaluator;
   private CopyEvaluator myCopyEvaluator;
   private RuntimeSupport myRuntimeSupport;
+  private RulesManager myRulesManager;
   private boolean myUsedForBLCompletion = true;
 
   public TypeChecker() {
@@ -68,6 +70,7 @@ public class TypeChecker {
     myQuotationEvaluator = new QuotationEvaluator(this);
     myCopyEvaluator = new CopyEvaluator(this);
     myRuntimeSupport = new RuntimeSupport(this);
+    myRulesManager = new RulesManager(this);
   }
 
   public static TypeChecker getInstance() {
@@ -110,6 +113,10 @@ public class TypeChecker {
     return myRuntimeSupport;
   }
 
+  public RulesManager getRulesManager() {
+    return myRulesManager;
+  }
+
   public void clear() {
     myMainContext.clear();
     myAdaptationManager.clear();
@@ -125,8 +132,9 @@ public class TypeChecker {
     myNodesToDependentRoots.clear();
   }
 
-  public void clearCheckedRoots() {
+  public void clearForReload() {
     myCheckedRoots.clear();
+    myRulesManager.clear();
     clear();
   }
 
@@ -137,6 +145,7 @@ public class TypeChecker {
     List<Language> languages = root.getModel().getLanguages(GlobalScope.getInstance());
     Set<SModel> typesModels = new HashSet<SModel>();
     for (Language language : languages) {
+      myRulesManager.loadLanguage(language);
       SModelDescriptor helginsModelDescriptor = language.getHelginsTypesystemModelDescriptor();
       if (helginsModelDescriptor != null) {
         typesModels.add(helginsModelDescriptor.getSModel());
@@ -279,6 +288,12 @@ public class TypeChecker {
       for (SNode node : frontier) {
         if (myCheckedNodes.contains(node)) continue;
         newFrontier.addAll(node.getChildren());
+        Set<InferenceRule_Runtime> newRules = myRulesManager.getInferenceRules(node);
+        if (newRules != null) {
+          for (InferenceRule_Runtime rule : newRules) {
+            rule.applyRule(node);
+          }
+        }
         Set<Rule> rules = myConceptsToRulesCache.get(node.getConceptDeclarationAdapter());
         if (rules != null) {
           for (Rule rule : rules) {
