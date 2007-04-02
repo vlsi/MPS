@@ -1,6 +1,8 @@
 package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.bootstrap.helgins.runtime.SubtypingRule_Runtime;
+import jetbrains.mps.bootstrap.helgins.runtime.SupertypingRule_Runtime;
 import jetbrains.mps.formulaLanguage.evaluator.ExpressionContext;
 import jetbrains.mps.formulaLanguage.evaluator.ExpressionEvaluatorManager;
 import jetbrains.mps.formulaLanguage.structure.Expression;
@@ -174,6 +176,15 @@ public class SubtypingManager {
     if (term == null) {
       return result;
     }
+
+    Set<SubtypingRule_Runtime> subtypingRule_runtimes = myTypeChecker.getRulesManager().getSubtypingRules(term);
+    if (subtypingRule_runtimes != null) {
+      for (SubtypingRule_Runtime subtypingRule : subtypingRule_runtimes) {
+        List<SNode> supertypes = subtypingRule.getSubOrSuperTypes(term);
+        result.addAll(supertypes);
+      }
+    }
+
     Set<SubtypingRule> subtypingRules = myConceptsToSubtypingRulesCache.get(term.getConceptDeclarationAdapter());
     if (subtypingRules != null)  {
       for (SubtypingRule rule : subtypingRules) {
@@ -193,6 +204,15 @@ public class SubtypingManager {
   public Set<SNode> collectImmediateSubtypes(SNode term) {
     Set<SNode> result = new HashSet<SNode>();
     if (term == null) return result;
+
+    Set<SupertypingRule_Runtime> supertypingRule_runtimes = myTypeChecker.getRulesManager().getSupertypingRules(term);
+    if (supertypingRule_runtimes != null) {
+      for (SupertypingRule_Runtime supertypingRule : supertypingRule_runtimes) {
+        List<SNode> subtypes = supertypingRule.getSubOrSuperTypes(term);
+        result.addAll(subtypes);
+      }
+    }
+
     Set<SupertypingRule> supertypingRules = myConceptsToSupertypingRulesCache.get(term.getConceptDeclarationAdapter());
     if (supertypingRules == null) return result;
     for (SupertypingRule rule : supertypingRules) {

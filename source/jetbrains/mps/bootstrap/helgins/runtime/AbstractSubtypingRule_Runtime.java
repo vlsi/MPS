@@ -20,7 +20,9 @@ public abstract class AbstractSubtypingRule_Runtime implements ISubtypingRule_Ru
     return CollectionUtil.asList(subOrSuperType);
   }
 
-  public abstract SNode getSubOrSuperType(SNode type);
+  public SNode getSubOrSuperType(SNode type) {
+    return null;
+  }
 
   public boolean isSupertyping() {
     return false;
