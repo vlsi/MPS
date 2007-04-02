@@ -273,8 +273,8 @@ public class CollectionUtil {
 
   public static <T> List<T> substruct(Collection<T> fromCollection, Collection<T> collection) {
     ArrayList<T> result = new ArrayList<T>();
-    for (T t : collection) {
-      if (!fromCollection.contains(t)) {
+    for (T t : fromCollection) {
+      if (!collection.contains(t)) {
         result.add(t);
       }
     }

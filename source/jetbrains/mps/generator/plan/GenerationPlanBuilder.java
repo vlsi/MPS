@@ -55,9 +55,12 @@ public class GenerationPlanBuilder {
       }
     }
 
-    // clean-up
+    // clean-up less pri
     for (MappingConfiguration mappingConfig : step) {
       priorityMap.remove(mappingConfig);
+    }
+    // clean-up grt pri
+    for (MappingConfiguration mappingConfig : step) {
       for (Map<MappingConfiguration, MappingPriorityRule> set : priorityMap.values()) {
         set.remove(mappingConfig);
       }

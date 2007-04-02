@@ -17,23 +17,18 @@ public class GenerationPlanUtil {
   private static final Logger LOG = Logger.getLogger(GenerationPlanUtil.class);
 
   public static GenerationPlanBuilderStatus createGenerationPlan(SModelDescriptor inputModel, IScope scope) {
-    List<Generator> usedGenerators = collectUsedGenerators(inputModel, scope, false, new ArrayList<Generator>(), new HashSet<Language>());
-    return GenerationPlanBuilder.createSteps(usedGenerators);
+    List<Generator> generators = collectGenerators(inputModel, scope, false, new ArrayList<Generator>(), new HashSet<Language>());
+    return GenerationPlanBuilder.createSteps(generators);
   }
 
   public static GenerationPlanBuilderStatus checkMappingPriorityConfig(GeneratorDescriptor generatorDescriptor) {
     Generator generator = (Generator) MPSModuleRepository.getInstance().getModuleByUID(generatorDescriptor.getGeneratorUID());
-    ArrayList<Generator> usedGenerators = new ArrayList<Generator>();
-    usedGenerators.add(generator);
+    List<Generator> generators = collectGenerators(generator, new ArrayList<Generator>(), new HashSet<Language>());
 
-    for (SModelDescriptor modelDescriptor : generator.getOwnTemplateModels()) {
-      collectUsedGenerators(modelDescriptor, generator.getScope(), true, usedGenerators, new HashSet<Language>());
-    }
-
-    return GenerationPlanBuilder.createSteps(usedGenerators);
+    return GenerationPlanBuilder.createSteps(generators);
   }
 
-  private static List<Generator> collectUsedGenerators(SModelDescriptor inputModel, IScope scope, boolean excludeTLBase, List<Generator> usedGenerators, Set<Language> processedLanguages) {
+  private static List<Generator> collectGenerators(SModelDescriptor inputModel, IScope scope, boolean excludeTLBase, List<Generator> usedGenerators, Set<Language> processedLanguages) {
     List<Language> languages;
     if (excludeTLBase) {
       languages = extractLanguagesExcludingTLBase(inputModel, scope);
@@ -50,14 +45,24 @@ public class GenerationPlanUtil {
       if (generators.size() > 1) {
         LOG.error("LANG '" + language.getNamespace() + "' has " + generators.size() + ". use 1st: '" + generator.getName() + "'");
       }
-      if (!usedGenerators.contains(generator)) {
-        usedGenerators.add(generator);
-        List<SModelDescriptor> templateModels = generator.getOwnTemplateModels();
-        for (SModelDescriptor templateModel : templateModels) {
-          collectUsedGenerators(templateModel, generator.getScope(), true, usedGenerators, processedLanguages);
-        }
-      }
+      collectGenerators(generator, usedGenerators, processedLanguages);
     }
+    return usedGenerators;
+  }
+
+  private static List<Generator> collectGenerators(Generator generator, List<Generator> usedGenerators, Set<Language> processedLanguages) {
+    if (usedGenerators.contains(generator)) return usedGenerators;
+
+    usedGenerators.add(generator);
+    List<SModelDescriptor> templateModels = generator.getOwnTemplateModels();
+    for (SModelDescriptor templateModel : templateModels) {
+      collectGenerators(templateModel, generator.getScope(), true, usedGenerators, processedLanguages);
+    }
+
+    for (Generator refGenerator : generator.getReferencedGenerators()) {
+      collectGenerators(refGenerator, usedGenerators, processedLanguages);
+    }
+
     return usedGenerators;
   }
 
