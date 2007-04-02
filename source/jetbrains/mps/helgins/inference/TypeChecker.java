@@ -123,7 +123,6 @@ public class TypeChecker {
     myEquationManager.clear();
     myTypeVariablesManager.clearVariables();
     myHInterpreter.clear();
-    mySubtypingManager.clear();
     myAdaptationManager.clear();
     myConceptsToRulesCache.clear();
     myCheckedNodes.clear();
@@ -135,6 +134,7 @@ public class TypeChecker {
   public void clearForReload() {
     myCheckedRoots.clear();
     myRulesManager.clear();
+    mySubtypingManager.clearCaches();
     clear();
   }
 

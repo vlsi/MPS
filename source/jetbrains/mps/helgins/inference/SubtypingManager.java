@@ -69,7 +69,7 @@ public class SubtypingManager {
     myConceptsToSupertypingRulesCache.makeConsistent();
   }
 
-  public void clear() {
+  public void clearCaches() {
     myConceptsToSubtypingRulesCache.clear();
     myConceptsToSupertypingRulesCache.clear();
   }
