@@ -1,7 +1,8 @@
 package jetbrains.mps.generator.plan;
 
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
+import jetbrains.mps.smodel.*;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -13,13 +14,23 @@ import java.util.Set;
  * Date: Mar 30, 2007
  */
 public class GenerationPlanUtil {
+  private static final Logger LOG = Logger.getLogger(GenerationPlanUtil.class);
+
   public static GenerationPlanBuilderStatus createGenerationPlan(SModelDescriptor inputModel, IScope scope) {
-    List<Generator> generators = collectUsedGenerators(inputModel, scope, false, new ArrayList<Generator>(), new HashSet<Language>());
-    return GenerationPlanBuilder.createSteps(generators);
+    List<Generator> usedGenerators = collectUsedGenerators(inputModel, scope, false, new ArrayList<Generator>(), new HashSet<Language>());
+    return GenerationPlanBuilder.createSteps(usedGenerators);
   }
 
   public static GenerationPlanBuilderStatus checkMappingPriorityConfig(GeneratorDescriptor generatorDescriptor) {
-     return null;
+    Generator generator = (Generator) MPSModuleRepository.getInstance().getModuleByUID(generatorDescriptor.getGeneratorUID());
+    ArrayList<Generator> usedGenerators = new ArrayList<Generator>();
+    usedGenerators.add(generator);
+
+    for (SModelDescriptor modelDescriptor : generator.getOwnTemplateModels()) {
+      collectUsedGenerators(modelDescriptor, generator.getScope(), true, usedGenerators, new HashSet<Language>());
+    }
+
+    return GenerationPlanBuilder.createSteps(usedGenerators);
   }
 
   private static List<Generator> collectUsedGenerators(SModelDescriptor inputModel, IScope scope, boolean excludeTLBase, List<Generator> usedGenerators, Set<Language> processedLanguages) {
@@ -37,12 +48,14 @@ public class GenerationPlanUtil {
       if (generators.size() == 0) continue;
       Generator generator = generators.get(0);
       if (generators.size() > 1) {
-        System.err.println("LANG '" + language.getNamespace() + "' has " + generators.size() + ". use 1st: '" + generator.getName() + "'");
+        LOG.error("LANG '" + language.getNamespace() + "' has " + generators.size() + ". use 1st: '" + generator.getName() + "'");
       }
-      usedGenerators.add(generator);
-      List<SModelDescriptor> templateModels = generator.getOwnTemplateModels();
-      for (SModelDescriptor templateModel : templateModels) {
-        collectUsedGenerators(templateModel, generator.getScope(), true, usedGenerators, processedLanguages);
+      if (!usedGenerators.contains(generator)) {
+        usedGenerators.add(generator);
+        List<SModelDescriptor> templateModels = generator.getOwnTemplateModels();
+        for (SModelDescriptor templateModel : templateModels) {
+          collectUsedGenerators(templateModel, generator.getScope(), true, usedGenerators, processedLanguages);
+        }
       }
     }
     return usedGenerators;
@@ -59,7 +72,7 @@ public class GenerationPlanUtil {
       if (language != null) {
         result.add(language);
       } else {
-        System.err.println("couldn't find language for namespace '" + namespace + "' in scope: " + scope);
+        LOG.error("couldn't find language for namespace '" + namespace + "' in scope: " + scope);
       }
     }
     return result;

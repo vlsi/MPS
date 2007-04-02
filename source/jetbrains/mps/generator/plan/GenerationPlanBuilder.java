@@ -95,8 +95,8 @@ public class GenerationPlanBuilder {
     if (greaterPriMappingRef == null || lesserPriMappingRef == null) return;
 
     // map: lesser mapping -> {greater mapping, .... , greater mapping }
-    List<MappingConfiguration> greaterPriMappings = getMappingsFromRef(greaterPriMappingRef, generator, generator.getScope());
-    List<MappingConfiguration> lesserPriMappings = getMappingsFromRef(lesserPriMappingRef, generator, generator.getScope());
+    List<MappingConfiguration> greaterPriMappings = getMappingsFromRef(greaterPriMappingRef, generator);
+    List<MappingConfiguration> lesserPriMappings = getMappingsFromRef(lesserPriMappingRef, generator);
     List<MappingConfiguration> lesserPriMappingsComplement = CollectionUtil.substruct(lesserPriMappings, greaterPriMappings);
     for (MappingConfiguration lesserPriMapping : lesserPriMappingsComplement) {
       Map<MappingConfiguration, MappingPriorityRule> gtPriSet = priorityMap.get(lesserPriMapping);
@@ -108,7 +108,9 @@ public class GenerationPlanBuilder {
     }
   }
 
-  private List<MappingConfiguration> getMappingsFromRef(MappingConfig_AbstractRef mappingRef, Generator refGenerator, IScope scope) {
+  private List<MappingConfiguration> getMappingsFromRef(MappingConfig_AbstractRef mappingRef, Generator refGenerator) {
+    IScope scope = refGenerator.getScope();
+
     if (mappingRef instanceof MappingConfig_RefAllGlobal) {
       return myAllMappings;
     }
@@ -121,7 +123,7 @@ public class GenerationPlanBuilder {
       List<MappingConfiguration> result = new ArrayList<MappingConfiguration>();
       MappingConfig_SimpleRefSet simpleRefSet = ((MappingConfig_SimpleRefSet) mappingRef);
       for (MappingConfig_SimpleRef simpleRef : simpleRefSet.getMappingConfigs()) {
-        result.addAll(getMappingsFromRef(simpleRef, refGenerator, scope));
+        result.addAll(getMappingsFromRef(simpleRef, refGenerator));
       }
       return result;
     }
@@ -129,13 +131,13 @@ public class GenerationPlanBuilder {
     if (mappingRef instanceof MappingConfig_ExtRef) {
       GeneratorReference generatorRef = ((MappingConfig_ExtRef) mappingRef).getGenerator();
       if (generatorRef != null) {
-        String referentUID = generatorRef.getGeneratorUID();
-        if (referentUID != null) {
-          Generator newRefGenerator = (Generator) MPSModuleRepository.getInstance().getModuleByUID(referentUID);
+        String generatorUID = generatorRef.getGeneratorUID();
+        if (generatorUID != null) {
+          Generator newRefGenerator = (Generator) MPSModuleRepository.getInstance().getModuleByUID(generatorUID);
           if (newRefGenerator != null) {
-            return getMappingsFromRef(((MappingConfig_ExtRef) mappingRef).getMappingConfig(), newRefGenerator, scope);
+            return getMappingsFromRef(((MappingConfig_ExtRef) mappingRef).getMappingConfig(), newRefGenerator);
           } else {
-            LOG.error("couldn't get generator by uid: '" + referentUID + "'");
+            LOG.error("couldn't get generator by uid: '" + generatorUID + "'");
           }
         }
       }
