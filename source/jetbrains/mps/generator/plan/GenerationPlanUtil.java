@@ -1,7 +1,7 @@
 package jetbrains.mps.generator.plan;
 
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
+import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -12,10 +12,14 @@ import java.util.Set;
  * Igor Alshannikov
  * Date: Mar 30, 2007
  */
-public class GenrationPlanUtil {
-  public static List<List<MappingConfiguration>> createGenerationPlan(SModelDescriptor inputModel, IScope scope) {
-    List<Generator> generators = GenrationPlanUtil.collectUsedGenerators(inputModel, scope, false, new ArrayList<Generator>(), new HashSet<Language>());
-    return GenerationPlan.createSteps(generators);
+public class GenerationPlanUtil {
+  public static GenerationPlanBuilderStatus createGenerationPlan(SModelDescriptor inputModel, IScope scope) {
+    List<Generator> generators = collectUsedGenerators(inputModel, scope, false, new ArrayList<Generator>(), new HashSet<Language>());
+    return GenerationPlanBuilder.createSteps(generators);
+  }
+
+  public static GenerationPlanBuilderStatus checkMappingPriorityConfig(GeneratorDescriptor generatorDescriptor) {
+     return null;
   }
 
   private static List<Generator> collectUsedGenerators(SModelDescriptor inputModel, IScope scope, boolean excludeTLBase, List<Generator> usedGenerators, Set<Language> processedLanguages) {

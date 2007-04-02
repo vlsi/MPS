@@ -6,34 +6,38 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.util.CollectionUtil;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Igor Alshannikov
  * Date: Mar 27, 2007
  */
-public class GenerationPlan {
-  private static Logger LOG = Logger.getLogger(GenerationPlan.class);
+public class GenerationPlanBuilder {
+  private static Logger LOG = Logger.getLogger(GenerationPlanBuilder.class);
 
-  public static List<List<MappingConfiguration>> createSteps(List<Generator> generators) {
-    GenerationPlan plan = new GenerationPlan(generators);
+  public static GenerationPlanBuilderStatus createSteps(List<Generator> generators) {
+    GenerationPlanBuilder planBuilder = new GenerationPlanBuilder(generators);
 
-    Map<MappingConfiguration, Set<MappingConfiguration>> priorityMap = plan.newPriorityMap();
+    Map<MappingConfiguration, Map<MappingConfiguration, MappingPriorityRule>> priorityMap = planBuilder.newPriorityMap();
     for (Generator generator : generators) {
       List<MappingPriorityRule> rules = ((GeneratorDescriptor) generator.getModuleDescriptor()).getPriorityRules();
       for (MappingPriorityRule rule : rules) {
-        plan.fillPriorityMap(rule, generator, priorityMap);
+        planBuilder.fillPriorityMap(rule, generator, priorityMap);
       }
     }
 
-    return createSteps(priorityMap);
+    List<List<MappingConfiguration>> steps = createSteps(priorityMap);
+    return new GenerationPlanBuilderStatus(steps, priorityMap);
   }
 
-  private static List<List<MappingConfiguration>> createSteps(Map<MappingConfiguration, Set<MappingConfiguration>> priorityMap) {
+  private static List<List<MappingConfiguration>> createSteps(Map<MappingConfiguration, Map<MappingConfiguration, MappingPriorityRule>> priorityMap) {
     List<List<MappingConfiguration>> steps = new ArrayList<List<MappingConfiguration>>();
     while (!priorityMap.isEmpty()) {
       List<MappingConfiguration> step = createStep(priorityMap);
-      if(step.isEmpty()) {
+      if (step.isEmpty()) {
         // error!!!
         return steps;
       }
@@ -42,11 +46,11 @@ public class GenerationPlan {
     return steps;
   }
 
-  private static List<MappingConfiguration> createStep(Map<MappingConfiguration, Set<MappingConfiguration>> priorityMap) {
+  private static List<MappingConfiguration> createStep(Map<MappingConfiguration, Map<MappingConfiguration, MappingPriorityRule>> priorityMap) {
     List<MappingConfiguration> step = new ArrayList<MappingConfiguration>();
     for (MappingConfiguration mappingConfig : priorityMap.keySet()) {
       // no greater priority mappings?
-      if(priorityMap.get(mappingConfig).isEmpty()) {
+      if (priorityMap.get(mappingConfig).isEmpty()) {
         step.add(mappingConfig);
       }
     }
@@ -54,8 +58,8 @@ public class GenerationPlan {
     // clean-up
     for (MappingConfiguration mappingConfig : step) {
       priorityMap.remove(mappingConfig);
-      for (Set<MappingConfiguration> set : priorityMap.values()) {
-         set.remove(mappingConfig);
+      for (Map<MappingConfiguration, MappingPriorityRule> set : priorityMap.values()) {
+        set.remove(mappingConfig);
       }
     }
 
@@ -66,25 +70,25 @@ public class GenerationPlan {
   private List<Generator> myGenerators;
   private List<MappingConfiguration> myAllMappings;
 
-  private GenerationPlan(List<Generator> generators) {
+  private GenerationPlanBuilder(List<Generator> generators) {
     myGenerators = generators;
   }
 
-  private Map<MappingConfiguration, Set<MappingConfiguration>> newPriorityMap() {
+  private Map<MappingConfiguration, Map<MappingConfiguration, MappingPriorityRule>> newPriorityMap() {
     myAllMappings = new ArrayList<MappingConfiguration>();
     for (Generator generator : myGenerators) {
       myAllMappings.addAll(generator.getOwnMappings());
     }
-    Map<MappingConfiguration, Set<MappingConfiguration>> priorityMap = new HashMap<MappingConfiguration, Set<MappingConfiguration>>();
+    Map<MappingConfiguration, Map<MappingConfiguration, MappingPriorityRule>> priorityMap = new HashMap<MappingConfiguration, Map<MappingConfiguration, MappingPriorityRule>>();
     for (MappingConfiguration mapping : myAllMappings) {
       if (!priorityMap.containsKey(mapping)) {
-        priorityMap.put(mapping, new HashSet<MappingConfiguration>());
+        priorityMap.put(mapping, new HashMap<MappingConfiguration, MappingPriorityRule>());
       }
     }
     return priorityMap;
   }
 
-  private void fillPriorityMap(MappingPriorityRule rule, Generator generator, Map<MappingConfiguration, Set<MappingConfiguration>> priorityMap) {
+  private void fillPriorityMap(MappingPriorityRule rule, Generator generator, Map<MappingConfiguration, Map<MappingConfiguration, MappingPriorityRule>> priorityMap) {
 
     MappingConfig_AbstractRef greaterPriMappingRef = rule.getGreaterPriorityMapping();
     MappingConfig_AbstractRef lesserPriMappingRef = rule.getLesserPriorityMapping();
@@ -95,10 +99,10 @@ public class GenerationPlan {
     List<MappingConfiguration> lesserPriMappings = getMappingsFromRef(lesserPriMappingRef, generator, generator.getScope());
     List<MappingConfiguration> lesserPriMappingsComplement = CollectionUtil.substruct(lesserPriMappings, greaterPriMappings);
     for (MappingConfiguration lesserPriMapping : lesserPriMappingsComplement) {
-      Set<MappingConfiguration> gtPriSet = priorityMap.get(lesserPriMapping);
+      Map<MappingConfiguration, MappingPriorityRule> gtPriSet = priorityMap.get(lesserPriMapping);
       for (MappingConfiguration greaterPriMapping : greaterPriMappings) {
-        if (!gtPriSet.contains(greaterPriMapping)) {
-          gtPriSet.add(greaterPriMapping);
+        if (!gtPriSet.containsKey(greaterPriMapping)) {
+          gtPriSet.put(greaterPriMapping, rule);
         }
       }
     }
