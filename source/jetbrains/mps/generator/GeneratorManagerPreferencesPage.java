@@ -16,18 +16,21 @@ import java.awt.*;
  */
 class GeneratorManagerPreferencesPage implements IPreferencesPage {
   private JPanel myPage;
-  private JCheckBox myCompileInIdeaOnGeneration = new JCheckBox("Compile in IntelliJ IDEA on generation");
+  private JCheckBox myCompileInIdeaBeforeGeneration = new JCheckBox("Compile in IntelliJ IDEA before generation");
+  private JCheckBox myCompileInIdeaOnGeneration = new JCheckBox("Compile in IntelliJ IDEA after generation");
   private JCheckBox mySaveTransientModelsCheckBox = new JCheckBox("Save transient models on generation (experts only)");
   private JCheckBox myCompileSourceLanguagesModules = new JCheckBox("Compile source languages' modules before generation");
   private GeneratorManager myGeneratorManager;
 
   public GeneratorManagerPreferencesPage(GeneratorManager generatorManager) {
     myGeneratorManager = generatorManager;
+    myCompileInIdeaBeforeGeneration.setSelected(myGeneratorManager.isCompileBeforeGeneration());
     myCompileInIdeaOnGeneration.setSelected(myGeneratorManager.isCompileOnGeneration());
     mySaveTransientModelsCheckBox.setSelected(myGeneratorManager.isSaveTransientModels());
     myCompileSourceLanguagesModules.setSelected(myGeneratorManager.isCompileSourceLanguageModules());
 
-    JPanel optionsPanel = new JPanel(new GridLayout(3, 1));
+    JPanel optionsPanel = new JPanel(new GridLayout(4, 1));
+    optionsPanel.add(myCompileInIdeaBeforeGeneration);
     optionsPanel.add(myCompileInIdeaOnGeneration);
     optionsPanel.add(mySaveTransientModelsCheckBox);
     optionsPanel.add(myCompileSourceLanguagesModules);
@@ -54,6 +57,7 @@ class GeneratorManagerPreferencesPage implements IPreferencesPage {
   }
 
   public void commit() {
+    myGeneratorManager.setCompileBeforeGeneration(myCompileInIdeaBeforeGeneration.isSelected());
     myGeneratorManager.setCompileOnGeneration(myCompileInIdeaOnGeneration.isSelected());
     myGeneratorManager.setSaveTransientModels(mySaveTransientModelsCheckBox.isSelected());
     myGeneratorManager.setCompileSourceLanguageModules(myCompileSourceLanguagesModules.isSelected());

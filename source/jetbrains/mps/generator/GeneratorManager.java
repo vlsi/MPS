@@ -45,9 +45,11 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   public static final Logger LOG = Logger.getLogger(GeneratorManager.class);
 
   private static final String SAVE_TRANSIENT_MODELS = "save-transient-models-on-generation";
+  private static final String COMPILE_BEFORE_GENERATION = "compile-on-generation";
   private static final String COMPILE_ON_GENERATION = "compile-on-generation";
   private static final String COMPILE_SOURCE_LANGUAGES_MODULES = "compile-source-languages-modules";
 
+  private boolean myCompileBeforeGeneration = false;
   private boolean myCompileOnGeneration = true;
   private boolean mySaveTransientModels;
   private boolean myCompileSourceLanguageModules = false;
@@ -72,6 +74,9 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   }
 
   public void read(Element element, MPSProject project) {
+    if (element.getAttribute(COMPILE_BEFORE_GENERATION) != null) {
+      myCompileBeforeGeneration = Boolean.parseBoolean(element.getAttributeValue(COMPILE_BEFORE_GENERATION));
+    }
     if (element.getAttribute(COMPILE_ON_GENERATION) != null) {
       myCompileOnGeneration = Boolean.parseBoolean(element.getAttributeValue(COMPILE_ON_GENERATION));
     }
@@ -84,9 +89,18 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   }
 
   public void write(Element element, MPSProject project) {
+    element.setAttribute(COMPILE_BEFORE_GENERATION, "" + myCompileBeforeGeneration);
     element.setAttribute(COMPILE_ON_GENERATION, "" + myCompileOnGeneration);
     element.setAttribute(SAVE_TRANSIENT_MODELS, "" + mySaveTransientModels);
     element.setAttribute(COMPILE_SOURCE_LANGUAGES_MODULES, "" + myCompileSourceLanguageModules);
+  }
+
+  public boolean isCompileBeforeGeneration() {
+    return myCompileBeforeGeneration;
+  }
+
+  public void setCompileBeforeGeneration(boolean compileBeforeGeneration) {
+    myCompileBeforeGeneration = compileBeforeGeneration;
   }
 
   public boolean isCompileOnGeneration() {
@@ -398,7 +412,9 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     handler.handle(new Message(MessageKind.INFORMATION, "    target root folder: \"" + outputFolder + "\""));
 
     boolean ideaPresent = myProject.getProjectHandler() != null;
-    boolean compile = myCompileOnGeneration && ideaPresent && generationType.requiresCompilationInIDEAfterGeneration();
+    boolean compile = ideaPresent && (
+            (myCompileOnGeneration && generationType.requiresCompilationInIDEAfterGeneration())
+         || (myCompileBeforeGeneration && generationType.requiresCompilationInIDEABeforeGeneration()));
 
     long totalJob = ModelsProgressUtil.estimateTotalGenerationJobMillis(compile, sourceModels);
 
@@ -407,8 +423,8 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     try {
       boolean reloadClasses = true;
 
-      if (!myCompileOnGeneration || !generationType.requiresCompilationInIDEABeforeGeneration()) {
-        progress.addText("compilation in IntelliJ IDEA on generation is turned off or not needed");
+      if (!myCompileBeforeGeneration || !generationType.requiresCompilationInIDEABeforeGeneration()) {
+        progress.addText("compilation in IntelliJ IDEA before generation is turned off or not needed");
         reloadClasses = false;
       } else if (!ideaPresent) {
         progress.addText("IntelliJ IDEA with installed MPS is not present");
@@ -522,7 +538,9 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       checkMonitorCanceled(progress);
       progress.addText("");
       if (status.isOk()) {
-        if (compile) {
+        if (!myCompileOnGeneration || !ideaPresent || !generationType.requiresCompilationInIDEAfterGeneration() ) {
+          progress.addText("compilation in IntelliJ IDEA after generation is turned off or not needed");
+        } else {
           // -- compile after generation
           progress.addText("compiling in IntelliJ IDEA...");
 
