@@ -499,4 +499,19 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1175496464709(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "termExpression", true);
   }
+  public static SNode sourceNodeQuery_1175518525147(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "condition", true);
+  }
+  public static SNode sourceNodeQuery_1175518581070(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "nodeToReport", true);
+  }
+  public static SNode sourceNodeQuery_1175518604952(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "errorString", true);
+  }
+  public static SNode sourceNodeQuery_1175518655902(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "nodeToReport", true);
+  }
+  public static SNode sourceNodeQuery_1175518655910(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "errorString", true);
+  }
 }

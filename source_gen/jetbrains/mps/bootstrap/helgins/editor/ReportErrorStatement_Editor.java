@@ -16,7 +16,7 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
-public class GivetypeStatement_Editor extends DefaultNodeEditor {
+public class ReportErrorStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
@@ -30,14 +30,12 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "GIVETYPE"));
-    editorCell.addEditorCell(this.createConstantCell1(context, node, "("));
-    editorCell.addEditorCell(this.createTypeExpressionCell(context, node));
-    editorCell.addEditorCell(this.createConstantCell2(context, node, ")"));
-    editorCell.addEditorCell(this.createConstantCell3(context, node, "TO"));
-    editorCell.addEditorCell(this.createTermExpressionCell(context, node));
-    editorCell.addEditorCell(this.createConstantCell4(context, node, ";"));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175496213287");
+    editorCell.addEditorCell(this.createConstantCell(context, node, "REPORT_ERROR"));
+    editorCell.addEditorCell(this.createErrorStringCell(context, node));
+    editorCell.addEditorCell(this.createConstantCell1(context, node, "->"));
+    editorCell.addEditorCell(this.createNodeToReportCell(context, node));
+    editorCell.addEditorCell(this.createConstantCell2(context, node, ";"));
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175517968839");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -50,7 +48,7 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175496216836");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175517970856");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -62,7 +60,7 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175519380362");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175517986109");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -74,36 +72,11 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175519384020");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175518052514");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
-    editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175496245699");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
-  public EditorCell createConstantCell4(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
-    editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175496799986");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
-  public EditorCell createTypeExpressionCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createErrorStringCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -116,17 +89,17 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175496229572");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175517983013");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createTypeExpressionCell(EditorContext context, SNode node) {
+  public EditorCell createErrorStringCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("typeExpression");
+    provider.setRole("errorString");
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createTypeExpressionCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.createErrorStringCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if(attributeConcept != null) {
@@ -136,7 +109,7 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
     } else 
     return cellWithRole;
   }
-  public EditorCell createTermExpressionCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createNodeToReportCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -149,17 +122,17 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175496250217");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175517990173");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createTermExpressionCell(EditorContext context, SNode node) {
+  public EditorCell createNodeToReportCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("termExpression");
+    provider.setRole("nodeToReport");
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createTermExpressionCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.createNodeToReportCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if(attributeConcept != null) {
