@@ -493,4 +493,10 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1175154733812(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "nodeToCheck", true);
   }
+  public static SNode sourceNodeQuery_1175496456158(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "typeExpression", true);
+  }
+  public static SNode sourceNodeQuery_1175496464709(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "termExpression", true);
+  }
 }
