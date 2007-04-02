@@ -1788,8 +1788,10 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   void clearAdapters() {
     myAdapter = null;
-    for (SNode child : getChildren()) {
-      child.clearAdapters();
+    if (myChildren != null) {
+      for (SNode child : myChildren) {
+        child.clearAdapters();
+      }
     }
   }
 
