@@ -2,7 +2,6 @@ package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.helgins.structure.RuntimeErrorType;
 import jetbrains.mps.helgins.structure.RuntimeTypeVariable;
-import jetbrains.mps.helgins.evaluator.uiActions.PresentationManager;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.util.EqualUtil;
@@ -334,10 +333,6 @@ public class EquationManager {
 
   public void solveInequations() {
     Set<SNode> nodes = subtypingGraphVertices();
-
-    if (nodes.size() > 200) {
-      System.out.println("Oy vey!");
-    }
 
     //1.transitive closure
     for (SNode node2 : nodes) {
