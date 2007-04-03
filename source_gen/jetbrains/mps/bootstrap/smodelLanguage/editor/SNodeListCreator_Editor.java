@@ -31,7 +31,7 @@ public class SNodeListCreator_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1145567624652");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145567624652");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

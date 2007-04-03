@@ -22,7 +22,7 @@ public class Node_DeleteOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1140133705634");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140133705634");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

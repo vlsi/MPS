@@ -22,7 +22,7 @@ public class LinkList_GetCountOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1145468793690");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145468793690");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

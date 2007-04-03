@@ -31,7 +31,7 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "concept in:["));
     editorCell.addEditorCell(this.createConceptList(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, "]"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1154547198372");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1154547198372");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -44,7 +44,7 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(Color.lightGray);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1154547202185");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1154547202185");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -57,7 +57,7 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(Color.lightGray);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1154547244033");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1154547244033");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

@@ -378,5 +378,13 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1175594888091">
+    <property name="name" value="TypeCheckerAccessExpression" />
+    <link role="extends" targetNodeId="2.1068431790191" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1175594916842">
+      <property name="value" value="typechecker" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
 </model>
 

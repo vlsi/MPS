@@ -353,6 +353,9 @@ public class QueriesGenerated {
     SNode noe = SNodeOperations.getParent(node, null, false, false);
     return SModelLanguageUtil.tryObtain_snode_adapterClass(SLinkOperations.getTarget(noe, "leftExpression", true), scope);
   }
+  public static boolean ifMacro_Condition_1175594466810(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "modelToCopy", true) != null;
+  }
   public static List sourceNodesQuery_1168293467222(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode op = SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "nodeOperation", true);
     return (List<SNode>)_QueriesUtil.getNodeOperation_ConceptList_concepts(((SNodeOperation)SNodeOperations.getAdapter(op)));
@@ -481,6 +484,9 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_1170443980567(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
+  }
+  public static SNode sourceNodeQuery_1175594470814(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "modelToCopy", true);
   }
   public static SNode sourceNodeQuery_1170444043092(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);

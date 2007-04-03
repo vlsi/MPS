@@ -26,7 +26,7 @@ public class SModelType_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setFontType(MPSFonts.BOLD);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1143226143282");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1143226143282");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

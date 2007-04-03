@@ -564,6 +564,11 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1144146199828">
     <property name="name" value="Node_CopyOperation" />
     <link role="extends" targetNodeId="1138411891628" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1175593548382">
+      <property name="role" value="modelToCopy" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="2.1068431790191" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1144146320702">
       <property name="value" value="copy" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />

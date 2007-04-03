@@ -1339,5 +1339,11 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1175594923155">
+    <link role="conceptDeclaration" targetNodeId="1.1175594888091" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1175594925954">
+      <property name="text" value="typechecker" />
+    </node>
+  </node>
 </model>
 

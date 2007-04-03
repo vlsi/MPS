@@ -31,7 +31,7 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1154547037209");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1154547037209");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

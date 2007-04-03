@@ -21,7 +21,7 @@ public class SNodeOperation_Editor extends DefaultNodeEditor {
     editorCell.setEditable(true);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1138412005946");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138412005946");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

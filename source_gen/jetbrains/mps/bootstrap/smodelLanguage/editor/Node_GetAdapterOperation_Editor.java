@@ -25,7 +25,7 @@ public class Node_GetAdapterOperation_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setFontType(MPSFonts.ITALIC);
     editorCell.getTextLine().setTextColor(Color.darkGray);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1170384687660");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1170384687660");
     editorCell.setLayoutConstraint("");
     editorCell.putUserObject(EditorCell.ATTRACTS_FOCUS_POLICY, EditorCell.ATTRACTS_FOCUS);
     return editorCell;

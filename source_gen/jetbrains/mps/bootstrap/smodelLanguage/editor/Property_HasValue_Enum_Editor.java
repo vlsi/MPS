@@ -32,7 +32,7 @@ public class Property_HasValue_Enum_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "is ("));
     editorCell.addEditorCell(this.createValueCell(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, ")"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1146171170036");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1146171170036");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -44,7 +44,7 @@ public class Property_HasValue_Enum_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1146171170037");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1146171170037");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -56,7 +56,7 @@ public class Property_HasValue_Enum_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1146171170039");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1146171170039");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -73,7 +73,7 @@ public class Property_HasValue_Enum_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1146171170038");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1146171170038");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

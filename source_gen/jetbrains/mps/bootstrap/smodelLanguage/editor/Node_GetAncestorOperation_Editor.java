@@ -36,7 +36,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell5(context, node, "root"));
     editorCell.addEditorCell(this.createConstantCell6(context, node, "get top ancestor"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1171407548395");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171407548395");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -51,7 +51,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell7(context, node, "concept"));
     editorCell.addEditorCell(this.createConstantCell8(context, node, "get ancestor which is instance of concept"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1171407548398");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171407548398");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -66,7 +66,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell9(context, node, "concept in"));
     editorCell.addEditorCell(this.createConstantCell10(context, node, "get ancestor which is instance of one of concepts"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1171407548401");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171407548401");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -81,7 +81,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell11(context, node, "+"));
     editorCell.addEditorCell(this.createConstantCell12(context, node, "return current node if it meets the requirements"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1171407548404");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171407548404");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -98,7 +98,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRowCell1(context, node));
     editorCell.addEditorCell(this.createRowCell2(context, node));
     editorCell.addEditorCell(this.createRowCell3(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1171407548394");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171407548394");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -117,7 +117,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell3(context, node, ""));
     editorCell.addEditorCell(this.createConstantCell4(context, node, "Optional parameters:"));
     editorCell.addEditorCell(this.createColumnCell1(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1171407548388");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171407548388");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -132,7 +132,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell13(context, node, "ancestor"));
     editorCell.addEditorCell(this.createOperationParameters_ComponentCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1171414677370");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171414677370");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -147,7 +147,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1171414677372");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171414677372");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -161,7 +161,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(Color.blue);
     editorCell.getTextLine().setTextBackgroundColor(Color.lightGray);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1171407548389");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171407548389");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -173,7 +173,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1171407548390");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171407548390");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -186,7 +186,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setFontType(MPSFonts.PLAIN);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1171407548391");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171407548391");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -198,7 +198,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1171407548392");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171407548392");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -211,7 +211,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setFontType(MPSFonts.PLAIN);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1171407548393");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171407548393");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -223,7 +223,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1171407548396");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171407548396");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -236,7 +236,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setFontType(MPSFonts.PLAIN);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1171407548397");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171407548397");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -248,7 +248,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1171407548399");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171407548399");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -261,7 +261,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setFontType(MPSFonts.PLAIN);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1171407548400");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171407548400");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -273,7 +273,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1171407548402");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171407548402");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -286,7 +286,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setFontType(MPSFonts.PLAIN);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1171407548403");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171407548403");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -298,7 +298,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1171407548405");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171407548405");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -311,7 +311,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setFontType(MPSFonts.PLAIN);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1171407548406");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171407548406");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -324,7 +324,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new ISubstituteInfoPart[]{new Node_GetAncestorOperation_replaceWith_SNodeOperation_cellMenu()}));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1171414677371");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171414677371");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

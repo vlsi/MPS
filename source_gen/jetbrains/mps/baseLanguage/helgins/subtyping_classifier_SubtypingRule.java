@@ -7,10 +7,11 @@ import jetbrains.mps.bootstrap.helgins.runtime.ISubtypingRule_Runtime;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import java.util.ArrayList;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.smodel.BaseAdapter;
@@ -23,6 +24,7 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
 
   public List<SNode> getSubOrSuperTypes(SNode type) {
     SNode classifier = SLinkOperations.getTarget(type, "classifier", false);
+    SModel runtimeTypesModel = TypeChecker.getInstance().getRuntimeTypesModel();
     List<SNode> supertypes = new ArrayList<SNode>();
     supertypes.add(new QuotationClass_4().createNode());
     if(SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
@@ -37,7 +39,7 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
     }
     List<SNode> result = new ArrayList<SNode>();
     for(SNode supertype : supertypes) {
-      SNode supertypeCopy = SNodeOperations.copyNode(supertype);
+      SNode supertypeCopy = SNodeOperations.copyNode(supertype, runtimeTypesModel);
       for(SNode typeParam : new ArrayList<SNode>(SLinkOperations.getTargets(supertypeCopy, "parameter", true))) {
         if(SNodeOperations.isInstanceOf(typeParam, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
           SNode tvr = typeParam;
@@ -46,7 +48,7 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
             ((SNode)supertypeCopy).removeChild(typeParam);
             continue;
           }
-          SNode newNode = SNodeOperations.copyNode(((SNode)((List)SLinkOperations.getTargets(type, "parameter", true)).get(i)));
+          SNode newNode = SNodeOperations.copyNode(((SNode)((List)SLinkOperations.getTargets(type, "parameter", true)).get(i)), runtimeTypesModel);
           supertypeCopy.replaceChild(typeParam, newNode);
         }
       }

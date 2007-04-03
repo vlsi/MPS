@@ -32,7 +32,7 @@ public class SemanticDowncastExpression_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createLeftExpressionCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "/"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1145404664303");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145404664303");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -46,7 +46,7 @@ public class SemanticDowncastExpression_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
     SemanticDowncastExpression_Symbol_Actions.setCellActions(editorCell, node, context);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1145404664305");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145404664305");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -63,7 +63,7 @@ public class SemanticDowncastExpression_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1145404664304");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145404664304");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

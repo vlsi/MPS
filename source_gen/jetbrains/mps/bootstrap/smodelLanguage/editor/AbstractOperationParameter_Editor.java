@@ -33,7 +33,7 @@ public class AbstractOperationParameter_Editor extends DefaultNodeEditor {
       editorCellLabel.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1146258034223");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1146258034223");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

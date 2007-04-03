@@ -22,7 +22,7 @@ public class Node_GetNextSiblingOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1143512964460");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1143512964460");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

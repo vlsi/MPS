@@ -22,7 +22,7 @@ public class Link_DeleteChildOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1140129710123");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140129710123");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

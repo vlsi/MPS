@@ -35,7 +35,7 @@ public class SNodeListType_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell1(context, node, "<"));
     editorCell.addEditorCell(this.createElementConceptReferenceCell(context, node));
     editorCell.addEditorCell(this.createConstantCell2(context, node, ">"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1145383245679");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145383245679");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -49,7 +49,7 @@ public class SNodeListType_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setFontType(MPSFonts.BOLD);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1145383245680");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145383245680");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -61,7 +61,7 @@ public class SNodeListType_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1145383245681");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145383245681");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -73,7 +73,7 @@ public class SNodeListType_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1145383245687");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145383245687");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -90,7 +90,7 @@ public class SNodeListType_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1145383273157");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145383273157");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
