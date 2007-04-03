@@ -2,6 +2,7 @@ package jetbrains.mps.generator.plan;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
+import jetbrains.mps.projectLanguage.structure.GeneratorReference;
 import jetbrains.mps.smodel.*;
 
 import java.util.ArrayList;
@@ -18,14 +19,26 @@ public class GenerationPlanUtil {
 
   public static GenerationPlanBuilderStatus createGenerationPlan(SModelDescriptor inputModel, IScope scope) {
     List<Generator> generators = collectGenerators(inputModel, scope, false, new ArrayList<Generator>(), new HashSet<Language>());
-    return GenerationPlanBuilder.createSteps(generators);
+    return new GenerationPlanBuilder().createSteps(generators);
   }
 
-  public static GenerationPlanBuilderStatus checkMappingPriorityConfig(GeneratorDescriptor generatorDescriptor) {
-    Generator generator = (Generator) MPSModuleRepository.getInstance().getModuleByUID(generatorDescriptor.getGeneratorUID());
-    List<Generator> generators = collectGenerators(generator, new ArrayList<Generator>(), new HashSet<Language>());
+  public static GenerationPlanBuilderStatus checkMappingPriorityConfig(GeneratorDescriptor descriptorWorkingCopy, IScope scope) {
+    ArrayList<Generator> generators = new ArrayList<Generator>();
+    HashSet<Language> processedLanguages = new HashSet<Language>();
 
-    return GenerationPlanBuilder.createSteps(generators);
+    // generator edited in 'property dialog'
+    Generator editedGenerator = (Generator) MPSModuleRepository.getInstance().getModuleByUID(descriptorWorkingCopy.getGeneratorUID());
+    generators.add(editedGenerator);
+    List<GeneratorReference> generatorRefs = descriptorWorkingCopy.getGeneratorReferences();
+    for (GeneratorReference generatorRef : generatorRefs) {
+      Generator refGenerator = (Generator) MPSModuleRepository.getInstance().getModuleByUID(generatorRef.getGeneratorUID());
+      collectGenerators(refGenerator, generators, processedLanguages);
+    }
+    for (SModelDescriptor model : editedGenerator.getOwnTemplateModels()) {
+      collectGenerators(model, scope, true, generators, processedLanguages);
+    }
+
+    return new GenerationPlanBuilder().createSteps(generators, descriptorWorkingCopy);
   }
 
   private static List<Generator> collectGenerators(SModelDescriptor inputModel, IScope scope, boolean excludeTLBase, List<Generator> usedGenerators, Set<Language> processedLanguages) {
@@ -50,20 +63,20 @@ public class GenerationPlanUtil {
     return usedGenerators;
   }
 
-  private static List<Generator> collectGenerators(Generator generator, List<Generator> usedGenerators, Set<Language> processedLanguages) {
-    if (usedGenerators.contains(generator)) return usedGenerators;
+  private static List<Generator> collectGenerators(Generator generator, List<Generator> collectedGenerators, Set<Language> processedLanguages) {
+    if (collectedGenerators.contains(generator)) return collectedGenerators;
 
-    usedGenerators.add(generator);
+    collectedGenerators.add(generator);
     List<SModelDescriptor> templateModels = generator.getOwnTemplateModels();
     for (SModelDescriptor templateModel : templateModels) {
-      collectGenerators(templateModel, generator.getScope(), true, usedGenerators, processedLanguages);
+      collectGenerators(templateModel, generator.getScope(), true, collectedGenerators, processedLanguages);
     }
 
     for (Generator refGenerator : generator.getReferencedGenerators()) {
-      collectGenerators(refGenerator, usedGenerators, processedLanguages);
+      collectGenerators(refGenerator, collectedGenerators, processedLanguages);
     }
 
-    return usedGenerators;
+    return collectedGenerators;
   }
 
   private static List<Language> extractLanguagesExcludingTLBase(SModelDescriptor modelDescriptor, IScope scope) {

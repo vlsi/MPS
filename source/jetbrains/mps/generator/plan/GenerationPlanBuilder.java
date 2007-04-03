@@ -5,6 +5,7 @@ import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.project.GlobalScope;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,14 +19,37 @@ import java.util.Map;
 public class GenerationPlanBuilder {
   private static Logger LOG = Logger.getLogger(GenerationPlanBuilder.class);
 
-  public static GenerationPlanBuilderStatus createSteps(List<Generator> generators) {
-    GenerationPlanBuilder planBuilder = new GenerationPlanBuilder(generators);
+  private List<MappingConfiguration> myAllMappings = new ArrayList<MappingConfiguration>();
 
-    Map<MappingConfiguration, Map<MappingConfiguration, MappingPriorityRule>> priorityMap = planBuilder.newPriorityMap();
+  /*package*/ GenerationPlanBuilder() {
+  }
+
+  public GenerationPlanBuilderStatus createSteps(List<Generator> generators) {
+    return createSteps(generators, null);
+  }
+
+  public GenerationPlanBuilderStatus createSteps(List<Generator> generators, GeneratorDescriptor descriptorWorkingCopy) {
     for (Generator generator : generators) {
-      List<MappingPriorityRule> rules = ((GeneratorDescriptor) generator.getModuleDescriptor()).getPriorityRules();
+      myAllMappings.addAll(generator.getOwnMappings());
+    }
+
+    Map<MappingConfiguration, Map<MappingConfiguration, MappingPriorityRule>> priorityMap = new HashMap<MappingConfiguration, Map<MappingConfiguration, MappingPriorityRule>>();
+    for (MappingConfiguration mapping : myAllMappings) {
+      if (!priorityMap.containsKey(mapping)) {
+        priorityMap.put(mapping, new HashMap<MappingConfiguration, MappingPriorityRule>());
+      }
+    }
+
+    for (Generator generator : generators) {
+      GeneratorDescriptor descriptor = (GeneratorDescriptor) generator.getModuleDescriptor();
+      List<MappingPriorityRule> rules;
+      if (descriptor.getGeneratorUID().equals(descriptorWorkingCopy.getGeneratorUID())) {
+        rules = descriptorWorkingCopy.getPriorityRules();
+      } else {
+        rules = descriptor.getPriorityRules();
+      }
       for (MappingPriorityRule rule : rules) {
-        planBuilder.fillPriorityMap(rule, generator, priorityMap);
+        fillPriorityMap(rule, generator, priorityMap);
       }
     }
 
@@ -33,7 +57,7 @@ public class GenerationPlanBuilder {
     return new GenerationPlanBuilderStatus(steps, priorityMap);
   }
 
-  private static List<List<MappingConfiguration>> createSteps(Map<MappingConfiguration, Map<MappingConfiguration, MappingPriorityRule>> priorityMap) {
+  private List<List<MappingConfiguration>> createSteps(Map<MappingConfiguration, Map<MappingConfiguration, MappingPriorityRule>> priorityMap) {
     List<List<MappingConfiguration>> steps = new ArrayList<List<MappingConfiguration>>();
     while (!priorityMap.isEmpty()) {
       List<MappingConfiguration> step = createStep(priorityMap);
@@ -46,7 +70,7 @@ public class GenerationPlanBuilder {
     return steps;
   }
 
-  private static List<MappingConfiguration> createStep(Map<MappingConfiguration, Map<MappingConfiguration, MappingPriorityRule>> priorityMap) {
+  private List<MappingConfiguration> createStep(Map<MappingConfiguration, Map<MappingConfiguration, MappingPriorityRule>> priorityMap) {
     List<MappingConfiguration> step = new ArrayList<MappingConfiguration>();
     for (MappingConfiguration mappingConfig : priorityMap.keySet()) {
       // no greater priority mappings?
@@ -67,28 +91,6 @@ public class GenerationPlanBuilder {
     }
 
     return step;
-  }
-
-
-  private List<Generator> myGenerators;
-  private List<MappingConfiguration> myAllMappings;
-
-  private GenerationPlanBuilder(List<Generator> generators) {
-    myGenerators = generators;
-  }
-
-  private Map<MappingConfiguration, Map<MappingConfiguration, MappingPriorityRule>> newPriorityMap() {
-    myAllMappings = new ArrayList<MappingConfiguration>();
-    for (Generator generator : myGenerators) {
-      myAllMappings.addAll(generator.getOwnMappings());
-    }
-    Map<MappingConfiguration, Map<MappingConfiguration, MappingPriorityRule>> priorityMap = new HashMap<MappingConfiguration, Map<MappingConfiguration, MappingPriorityRule>>();
-    for (MappingConfiguration mapping : myAllMappings) {
-      if (!priorityMap.containsKey(mapping)) {
-        priorityMap.put(mapping, new HashMap<MappingConfiguration, MappingPriorityRule>());
-      }
-    }
-    return priorityMap;
   }
 
   private void fillPriorityMap(MappingPriorityRule rule, Generator generator, Map<MappingConfiguration, Map<MappingConfiguration, MappingPriorityRule>> priorityMap) {
@@ -112,8 +114,6 @@ public class GenerationPlanBuilder {
   }
 
   private List<MappingConfiguration> getMappingsFromRef(MappingConfig_AbstractRef mappingRef, Generator refGenerator) {
-    IScope scope = refGenerator.getScope();
-
     if (mappingRef instanceof MappingConfig_RefAllGlobal) {
       return myAllMappings;
     }
@@ -151,7 +151,7 @@ public class GenerationPlanBuilder {
       String modelUID = ((MappingConfig_SimpleRef) mappingRef).getModelUID();
       String nodeID = ((MappingConfig_SimpleRef) mappingRef).getNodeID();
       if (modelUID != null && nodeID != null) {
-        SModelDescriptor refModel = scope.getModelDescriptor(SModelUID.fromString(modelUID));
+        SModelDescriptor refModel = GlobalScope.getInstance().getModelDescriptor(SModelUID.fromString(modelUID));
         if (refModel != null) {
           if (nodeID.equals("*")) {
             return refModel.getSModel().allAdapters(MappingConfiguration.class);
@@ -166,7 +166,7 @@ public class GenerationPlanBuilder {
             }
           }
         } else {
-          LOG.error("couldn't get model by uid: '" + modelUID + "' in scope " + scope);
+          LOG.error("couldn't get model by uid: '" + modelUID + "'");
         }
       }
       return new ArrayList();
