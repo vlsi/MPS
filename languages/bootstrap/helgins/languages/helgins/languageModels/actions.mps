@@ -4,8 +4,9 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
-  <maxImportIndex value="1" />
+  <maxImportIndex value="2" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.helgins.structure" />
+  <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeFactories" id="1174664633061">
     <property name="name" value="_AbstractEquationStatement_factory" />
     <node role="nodeFactory" type="jetbrains.mps.bootstrap.actionsLanguage.NodeFactory" id="1174664649250">
@@ -87,6 +88,13 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActions" id="1175609457861">
+    <property name="name" value="_Helgins_RT" />
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1175609466956">
+      <property name="actionsFactoryAspectId" value="EquationActions" />
+      <link role="applicableConcept" targetNodeId="2.1068431790191" />
     </node>
   </node>
 </model>
