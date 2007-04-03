@@ -12,6 +12,8 @@ import jetbrains.mps.ide.AbstractProjectFrame;
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ProjectPathsDialog;
+import jetbrains.mps.ide.genconf.GenParameters;
+import jetbrains.mps.ide.genconf.GeneratorConfigUtil;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.ide.command.CommandEventTranslator;
@@ -608,48 +610,12 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
         for (RunConfiguration t : myProjectDescriptor.getRunConfigurations()) {
           if (!t.getTest()) continue;
 
-          SModelDescriptor modelDescriptor = getScope().getModelDescriptor(SModelUID.fromString(t.getModelFqName()));
-          GenerationPlans.Plan p = getComponentSafe(GenerationPlans.class).findPlan(t.getGenerationPlan());
-
-          String tl = t.getTargetLanguage();
-          if (tl == null) {
-            tl = BootstrapLanguages.getInstance().getBaseLanguage().getNamespace();
-          }          
-          Language target = getScope().getLanguage(tl);
-
-          if (modelDescriptor == null || target == null) {
-            System.out.println("can't execute test configuration " + t.getName());
-            continue;
-          }
-
-          System.out.println("executing configuration " + t.getName());
-
-
-          IModule module = null;
-          for (IModule m : getModules()) {
-            if (m.getOwnModelDescriptors().contains(modelDescriptor)) {
-              module = m;
-              break;
-            }
-          }
-
-          if (module == null) {
-            System.out.println("there is no module that can be used to generate model " + modelDescriptor.getModelUID());
-            continue;
-          }
-
-          IGenerationScript script;
-          if (p != null) {
-            script = p.getGenerationScript();
-          } else {
-            script = IGenerationScript.DEFAULT;
-          }
-
+          GenParameters parms = GeneratorConfigUtil.calculate(MPSProject.this, t);
           getComponentSafe(GeneratorManager.class)
                   .generateModels(
-                          CollectionUtil.asList(modelDescriptor.getSModel()),
-                          target,
-                          new ModuleContext(module, MPSProject.this),
+                          parms.getModels(),
+                          parms.getTarget(),
+                          new ModuleContext(parms.getModule(), MPSProject.this),
                           new GenerateClassesGenerationType(false) {
                             public boolean requiresCompilationInIDEABeforeGeneration() {
                               return false;
@@ -659,7 +625,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
                               return false;
                             }
                           },
-                          script,
+                          parms.getScript(),
                           IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR,
                           handler);
 
