@@ -14,17 +14,14 @@ import org.jetbrains.annotations.NotNull;
  */
 public class NameUtil {
   public static String capitalize(String s) {
-    if (s.length() == 0) {
+    if (s == null || s.length() == 0 || s.charAt(0) == Character.toUpperCase(s.charAt(0))) {
       return s;
     }
     return "" + Character.toUpperCase(s.charAt(0)) + s.substring(1);
   }
 
   public static String decapitalize(String s) {
-    if (s == null) {
-      return s;
-    }
-    if (s.length() == 0) {
+    if (s == null || s.length() == 0 || s.charAt(0) == Character.toLowerCase(s.charAt(0))) {
       return s;
     }
     return "" + Character.toLowerCase(s.charAt(0)) + s.substring(1);
