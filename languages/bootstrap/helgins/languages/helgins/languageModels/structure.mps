@@ -290,6 +290,10 @@
     <property name="rootable" value="false" />
     <property name="name" value="AbstractSubtypingRule" />
     <link role="extends" targetNodeId="1174648085619" resolveInfo="AbstractRule" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1175607673137">
+      <property name="name" value="isWeak" />
+      <link role="dataType" targetNodeId="1.1082983657063" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1175147624276">
       <property name="sourceCardinality" value="1" />
       <property name="role" value="body" />

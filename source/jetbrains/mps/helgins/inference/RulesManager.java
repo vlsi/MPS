@@ -6,6 +6,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.helgins.runtime.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Condition;
 
 import java.util.Set;
 import java.util.HashSet;
@@ -62,16 +64,28 @@ public class RulesManager {
     }
   }
 
-  public Set<InferenceRule_Runtime> getInferenceRules(SNode node) {
-    return myInferenceRules.getRules(node);
+  public Set<InferenceRule_Runtime> getInferenceRules(final SNode node) {
+    return CollectionUtil.filter(myInferenceRules.getRules(node), new Condition<InferenceRule_Runtime>() {
+      public boolean met(InferenceRule_Runtime object) {
+        return object.isApplicable(node);
+      }
+    });
   }
 
-  public Set<SubtypingRule_Runtime> getSubtypingRules(SNode node) {
-    return mySubtypingRules.getRules(node);
+  public Set<SubtypingRule_Runtime> getSubtypingRules(final SNode node) {
+     return CollectionUtil.filter(mySubtypingRules.getRules(node), new Condition<SubtypingRule_Runtime>() {
+      public boolean met(SubtypingRule_Runtime object) {
+        return object.isApplicable(node);
+      }
+    });
   }
 
-  public Set<SupertypingRule_Runtime> getSupertypingRules(SNode node) {
-    return mySupertypingRules.getRules(node);
+  public Set<SupertypingRule_Runtime> getSupertypingRules(final SNode node) {
+     return CollectionUtil.filter(mySupertypingRules.getRules(node), new Condition<SupertypingRule_Runtime>() {
+      public boolean met(SupertypingRule_Runtime object) {
+        return object.isApplicable(node);
+      }
+    });
   }
 
   public TypeChecker getTypeChecker() {

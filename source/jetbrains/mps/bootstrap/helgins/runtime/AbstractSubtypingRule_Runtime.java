@@ -27,4 +27,8 @@ public abstract class AbstractSubtypingRule_Runtime implements ISubtypingRule_Ru
   public boolean isSupertyping() {
     return false;
   }
+
+  public boolean isWeak() {
+    return false;
+  }
 }

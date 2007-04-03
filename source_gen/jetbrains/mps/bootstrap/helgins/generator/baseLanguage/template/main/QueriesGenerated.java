@@ -115,6 +115,9 @@ public class QueriesGenerated {
   public static String propertyMacro_GetPropertyValue_1175162990835(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.SupertypingRule") + "";
   }
+  public static String propertyMacro_GetPropertyValue_1175607860006(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SPropertyOperations.getBoolean(node, "isWeak") + "";
+  }
   public static String propertyMacro_GetPropertyValue_1174643589864(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode ruleConcept = SNodeOperations.getConceptDeclaration(node);
     return SPropertyOperations.getString(node, "name") + "_" + ruleConcept;
@@ -336,6 +339,9 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_1175162630666(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.AbstractSubtypingRule");
   }
+  public static boolean ifMacro_Condition_1175607840890(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.AbstractSubtypingRule");
+  }
   public static boolean ifMacro_Condition_1175149440226(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.AbstractSubtypingRule");
   }
@@ -414,7 +420,8 @@ public class QueriesGenerated {
     }
     for(SNode child : SNodeOperations.getDescendants(node, null)) {
       if(SNodeOperations.isInstanceOf(child, "jetbrains.mps.bootstrap.helgins.structure.AbstractAntiquotation")) {
-        result.add(SLinkOperations.getTarget(child, "expression", true));
+        SNode antiqExpression = SLinkOperations.getTarget(child, "expression", true);
+        result.add(antiqExpression);
       }
     }
     return result;
