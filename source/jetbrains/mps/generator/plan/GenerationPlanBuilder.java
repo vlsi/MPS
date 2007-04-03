@@ -43,7 +43,8 @@ public class GenerationPlanBuilder {
     for (Generator generator : generators) {
       GeneratorDescriptor descriptor = (GeneratorDescriptor) generator.getModuleDescriptor();
       List<MappingPriorityRule> rules;
-      if (descriptor.getGeneratorUID().equals(descriptorWorkingCopy.getGeneratorUID())) {
+      if (descriptorWorkingCopy != null &&
+              descriptorWorkingCopy.getGeneratorUID().equals(descriptor.getGeneratorUID())) {
         rules = descriptorWorkingCopy.getPriorityRules();
       } else {
         rules = descriptor.getPriorityRules();

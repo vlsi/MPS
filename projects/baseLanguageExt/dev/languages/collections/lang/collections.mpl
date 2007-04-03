@@ -32,8 +32,22 @@
       <module>
         <moduleRoot path="${mps_home}\languages\baseLanguage\language\baseLanguage.mpl" />
       </module>
-      <external-templates />
-      <mapping-priorities />
+      <external-templates>
+        <generator generatorUID="jetbrains.mps.baseLanguage#1129914002933" />
+      </external-templates>
+      <mapping-priorities>
+        <mapping-priority-rule>
+          <greater-priority-mapping>
+            <mapping-node modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.generator.baseLanguage.template.main@templates" nodeID="1151957132284" />
+          </greater-priority-mapping>
+          <lesser-priority-mapping>
+            <generator generatorUID="jetbrains.mps.baseLanguage#1129914002933" />
+            <external-mapping>
+              <all-local-mappings />
+            </external-mapping>
+          </lesser-priority-mapping>
+        </mapping-priority-rule>
+      </mapping-priorities>
     </generator>
   </generators>
   <classPath>
