@@ -36,7 +36,16 @@
         <moduleRoot path="${mps_home}\languages\core\languageDescriptor.mpl" />
       </module>
       <external-templates />
-      <mapping-priorities />
+      <mapping-priorities>
+        <mapping-priority-rule>
+          <greater-priority-mapping>
+            <all-local-mappings />
+          </greater-priority-mapping>
+          <lesser-priority-mapping>
+            <all-mappings />
+          </lesser-priority-mapping>
+        </mapping-priority-rule>
+      </mapping-priorities>
     </generator>
   </generators>
   <classPath />

@@ -263,6 +263,12 @@ public class CollectionUtil {
     return result;
   }
 
+  public static <T> Set<T> lisAsSet(List<T> list) {
+    Set<T> result = new HashSet<T>();
+    result.addAll(list);
+    return result;
+  }
+
   public static <T> void addAllNotPresent(Collection<T> fromCollection, Collection<T> toCollection) {
     for (T t : fromCollection) {
       if (!toCollection.contains(t)) {
