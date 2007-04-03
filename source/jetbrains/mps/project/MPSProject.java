@@ -605,10 +605,17 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
-        for (TestConfiguration t : myProjectDescriptor.getTests()) {
+        for (RunConfiguration t : myProjectDescriptor.getRunConfigurations()) {
+          if (!t.getTest()) continue;
+
           SModelDescriptor modelDescriptor = getScope().getModelDescriptor(SModelUID.fromString(t.getModelFqName()));
           GenerationPlans.Plan p = getComponentSafe(GenerationPlans.class).findPlan(t.getGenerationPlan());
-          Language target = getScope().getLanguage(t.getTargetLanguage());
+
+          String tl = t.getTargetLanguage();
+          if (tl == null) {
+            tl = BootstrapLanguages.getInstance().getBaseLanguage().getNamespace();
+          }          
+          Language target = getScope().getLanguage(tl);
 
           if (modelDescriptor == null || target == null) {
             System.out.println("can't execute test configuration " + t.getName());
