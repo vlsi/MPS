@@ -96,7 +96,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   private List<SNode> _children() {
     if (myChildren == null) {
-      myChildren = new ArrayList<SNode>();
+      myChildren = new ArrayList<SNode>(2);
       if (myChildrenLoader != null) {
         getModel().runLoadingAction(new Runnable() {
           public void run() {
