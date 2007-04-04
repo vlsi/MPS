@@ -55,7 +55,15 @@ public class GenerationPlanBuilder {
     }
 
     List<List<MappingConfiguration>> steps = createSteps(priorityMap);
-    return new GenerationPlanBuilderStatus(steps, priorityMap);
+    List<MappingPriorityRule> conflictingRules = new ArrayList<MappingPriorityRule>();
+    for (Map<MappingConfiguration, MappingPriorityRule> value : priorityMap.values()) {
+      for (MappingPriorityRule rule : value.values()) {
+        if (!conflictingRules.contains(rule)) {
+          conflictingRules.add(rule);
+        }
+      }
+    }
+    return new GenerationPlanBuilderStatus(steps, generators, conflictingRules);
   }
 
   private List<List<MappingConfiguration>> createSteps(Map<MappingConfiguration, Map<MappingConfiguration, MappingPriorityRule>> priorityMap) {

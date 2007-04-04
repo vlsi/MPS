@@ -8,7 +8,7 @@ import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.transformation.TemplateLanguageUtil;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.ide.BootstrapLanguages;
-import jetbrains.mps.generator.plan.GenerationPlanUtil;
+import jetbrains.mps.generator.plan.GenerationSessionData;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -24,6 +24,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private IOperationContext myInvocationContext;
   private TransientModule myTransientModule;
   private Language myTargetLanguage;
+  private GenerationSessionData myAutoPlanData;
 
   private Map<Object, Object> myTransientObjects = new HashMap<Object, Object>();
   private Map<Object, Object> mySessionObjects = new HashMap<Object, Object>();
@@ -44,62 +45,62 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
     myTargetLanguage = targetLanguage;
     myInvocationContext = invocationContext;
-    myGeneratorModules = getGeneratorModules(inputModel);
+    myCustomMappingConfigurations = null;
+
+    if (targetLanguage == null) {
+      // auto-plan
+      myAutoPlanData = new GenerationSessionData(inputModel);
+      myGeneratorModules = myAutoPlanData.getGenerators();
+      myTemplateModels = myAutoPlanData.getTemplateModels();
+      myCustomMappingConfigurations = CollectionUtil.lisAsSet(myAutoPlanData.getMappings());  // ???
+      myMappingConfigurations = CollectionUtil.lisAsSet(myAutoPlanData.getMappings());
+    } else {
+      // old
+      myGeneratorModules = getUsedGenerators(inputModel);
+      if (configs != null) {
+        myCustomMappingConfigurations = new HashSet<MappingConfiguration>(configs);
+      }
+      initTemplateModels();
+    }
+
     myTransientModule = new TransientModule(invocationContext.getModule(), myGeneratorModules);
-
-
     if (prevContext != null) {
       myTransientModule.addDependency(prevContext.getModule());
     }
-
-    if (configs != null) {
-      myCustomMappingConfigurations = new HashSet<MappingConfiguration>(configs);
-    } else {
-      myCustomMappingConfigurations = null;
-    }
-
-    initTemplateModels(inputModel);
   }
 
   public void replaceInputModel(SModelDescriptor inputModel) {
     myTransientObjects.clear();
-    myGeneratorModules = getGeneratorModules(inputModel.getSModel());
-    myTransientModule.addGeneratorModules(myGeneratorModules);
-    initTemplateModels(inputModel.getSModel());
-  }
-
-  private void initTemplateModels(SModel inputModel) {
-    if (myTargetLanguage == null) {
-      // generation with auto-plan
-      List<Generator> generators = GenerationPlanUtil.getUsedGenerators(inputModel.getModelDescriptor(), GlobalScope.getInstance());
-      myTemplateModels = new ArrayList<SModelDescriptor>();
-      for (Generator generatorModule : generators) {
-        List<SModelDescriptor> templateModels = generatorModule.getOwnTemplateModels();
-        CollectionUtil.addAllNotPresent(templateModels, myTemplateModels);
-      }
-      // remove unused mappings. ("unused" abandon root rules can remove wrong roots)
-      myMappingConfigurations = new HashSet<MappingConfiguration>();
-      for (MappingConfiguration mappingConfig : myCustomMappingConfigurations) {
-        if (myTemplateModels.contains(mappingConfig.getModel().getModelDescriptor())) {
-          myMappingConfigurations.add(mappingConfig);
-        }
-      }
-
+    if (myAutoPlanData != null) {
+      // auto-plan
+      myAutoPlanData = new GenerationSessionData(inputModel.getSModel());
+      myGeneratorModules = myAutoPlanData.getGenerators();
+      myTemplateModels = myAutoPlanData.getTemplateModels();
+      myMappingConfigurations = CollectionUtil.lisAsSet(myAutoPlanData.getMappings());
     } else {
       // old
-      myTemplateModels = new ArrayList<SModelDescriptor>();
-      for (Generator generatorModule : myGeneratorModules) {
-        List<SModelDescriptor> templateModels = generatorModule.getOwnTemplateModels();
-        CollectionUtil.addAllNotPresent(templateModels, myTemplateModels);
-      }
+      myGeneratorModules = getUsedGenerators(inputModel.getSModel());
+      initTemplateModels();
+    }
 
-      if (myCustomMappingConfigurations != null) {
-        myMappingConfigurations = new HashSet<MappingConfiguration>(myCustomMappingConfigurations);
-      } else {
-        myMappingConfigurations = new HashSet<MappingConfiguration>();
-        for (SModelDescriptor templateModel : myTemplateModels) {
-          myMappingConfigurations.addAll(templateModel.getSModel().allAdapters(MappingConfiguration.class));
-        }
+    myTransientModule.addGeneratorModules(myGeneratorModules);
+  }
+
+  private void initTemplateModels() {
+    assert myAutoPlanData == null : "method can't be used with 'auto-plan' generation";
+
+    myTemplateModels = new ArrayList<SModelDescriptor>();
+    for (Generator generatorModule : myGeneratorModules) {
+      List<SModelDescriptor> templateModels = generatorModule.getOwnTemplateModels();
+      CollectionUtil.addAllNotPresent(templateModels, myTemplateModels);
+    }
+
+    if (myCustomMappingConfigurations != null) {
+      myMappingConfigurations = new HashSet<MappingConfiguration>(myCustomMappingConfigurations);
+    } else {
+      myMappingConfigurations = new HashSet<MappingConfiguration>();
+      for (SModelDescriptor templateModel : myTemplateModels) {
+        myMappingConfigurations.addAll(templateModel.getSModel().allAdapters(MappingConfiguration.class));
       }
     }
   }
@@ -156,11 +157,8 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return getClass().getName() + "-> " + myTargetLanguage.getNamespace() + "\ninvoked from: " + myInvocationContext;
   }
 
-  private List<Generator> getGeneratorModules(SModel sourceModel) {
-    if (myTargetLanguage == null) {
-      // generation with auto-plan
-      return new ArrayList<Generator>();
-    }
+  private List<Generator> getUsedGenerators(SModel sourceModel) {
+    assert myAutoPlanData == null : "method can't be used with 'auto-plan' generation";
 
     List<Generator> generators = new ArrayList<Generator>();
 
@@ -229,6 +227,15 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     }
     myUsedNames.add(name);
     return name;
+  }
+
+
+  public GenerationSessionData getAutoPlanData() {
+    return myAutoPlanData;
+  }
+
+  public void setAutoPlanData(GenerationSessionData autoPlanData) {
+    myAutoPlanData = autoPlanData;
   }
 
   public class TransientModule extends AbstractModule {

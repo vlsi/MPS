@@ -80,7 +80,7 @@ public class GenerationSession implements IGenerationSession {
 
     Statistics.clear();
 
-            status = script.doGenerate(new IGenerationScriptContext() {
+    status = script.doGenerate(new IGenerationScriptContext() {
       public GenerationStatus doGenerate(@NotNull SModelDescriptor sourceModel,
                                          Language targetLanguage,
                                          Set<MappingConfiguration> confs) throws Exception {
@@ -131,14 +131,12 @@ public class GenerationSession implements IGenerationSession {
 
     // -- replace context
     GenerationSessionContext context = new GenerationSessionContext(targetLanguage, sourceModel, myInvocationContext, mappings, myCurrentContext);
-    if (targetLanguage != null) {
-      // targetLanguage is NULL when generation with auto-plan
-      List<Generator> generators = context.getGeneratorModules();
-      if (generators.isEmpty()) {
-        addProgressMessage(MessageKind.WARNING, "skip model \"" + sourceModel.getUID() + "\" : no generator avalable");
-        return new GenerationStatus(sourceModel, null, null, false, false, false);
-      }
+    List<Generator> generators = context.getGeneratorModules();
+    if (generators.isEmpty()) {
+      addProgressMessage(MessageKind.WARNING, "skip model \"" + sourceModel.getUID() + "\" : no generator avalable");
+      return new GenerationStatus(sourceModel, null, null, false, false, false);
     }
+
     setGenerationSessionContext(context);
 
     // -- replace generator
@@ -200,8 +198,8 @@ public class GenerationSession implements IGenerationSession {
       // optimization trick:
       // exit if target language is 'baseLanguage' and
       // output model doesn't contain other languages
-      if (targetLanguage != null) {
-        // targetLanguage is NULL when generation with auto-plan
+      if (generationContext.getAutoPlanData() == null) { // with auto-plan the target langauge is NULL
+        
         if (targetLanguage.getNamespace().equals("jetbrains.mps.baseLanguage")) {
           List<String> languageNamespaces = currentOutputModel.getSModel().getLanguageNamespaces(module.getScope());
           if (languageNamespaces.size() == 1 && languageNamespaces.get(0).equals(targetLanguage.getNamespace())) {
