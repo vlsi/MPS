@@ -395,7 +395,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
 
     handler.handle(new Message(MessageKind.INFORMATION, generationType.getStartText()));
-    handler.handle(new Message(MessageKind.INFORMATION, "    target language: \"" + targetLanguage.getNamespace() + "\""));
+//    handler.handle(new Message(MessageKind.INFORMATION, "    target language: \"" + targetLanguage.getNamespace() + "\""));
 
     String outputFolder = invocationContext.getModule().getGeneratorOutputPath();
 

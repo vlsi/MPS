@@ -17,8 +17,12 @@ import java.util.Set;
 public class GenerationPlanUtil {
   private static final Logger LOG = Logger.getLogger(GenerationPlanUtil.class);
 
+  public static List<Generator> getUsedGenerators(SModelDescriptor inputModel, IScope scope) {
+    return collectGenerators(inputModel, scope, false, new ArrayList<Generator>(), new HashSet<Language>());
+  }
+
   public static GenerationPlanBuilderStatus createGenerationPlan(SModelDescriptor inputModel, IScope scope) {
-    List<Generator> generators = collectGenerators(inputModel, scope, false, new ArrayList<Generator>(), new HashSet<Language>());
+    List<Generator> generators = getUsedGenerators(inputModel, scope);
     return new GenerationPlanBuilder().createSteps(generators);
   }
 

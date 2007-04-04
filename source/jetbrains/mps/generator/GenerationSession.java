@@ -78,7 +78,9 @@ public class GenerationSession implements IGenerationSession {
     GenerationStatus status;
 
     status = script.doGenerate(new IGenerationScriptContext() {
-      public GenerationStatus doGenerate(@NotNull SModelDescriptor sourceModel, @NotNull Language targetLanguage, Set<MappingConfiguration> confs) throws Exception {
+      public GenerationStatus doGenerate(@NotNull SModelDescriptor sourceModel,
+                                         Language targetLanguage,
+                                         Set<MappingConfiguration> confs) throws Exception {
         return generateModel_internal(sourceModel, targetLanguage, confs);
       }
 
@@ -111,10 +113,10 @@ public class GenerationSession implements IGenerationSession {
                                                   Language targetLanguage,
                                                   Set<MappingConfiguration> mappings)
           throws ClassNotFoundException,
-                 NoSuchMethodException,
-                 IllegalAccessException,
-                 InvocationTargetException,
-                 InstantiationException {
+          NoSuchMethodException,
+          IllegalAccessException,
+          InvocationTargetException,
+          InstantiationException {
 
     myInvocationCount++;
     myTransientModelsCount = 0;
@@ -123,10 +125,13 @@ public class GenerationSession implements IGenerationSession {
 
     // -- replace context
     GenerationSessionContext context = new GenerationSessionContext(targetLanguage, sourceModel, myInvocationContext, mappings, myCurrentContext);
-    List<Generator> generators = context.getGeneratorModules();
-    if (generators.isEmpty()) {
-      addProgressMessage(MessageKind.WARNING, "skip model \"" + sourceModel.getUID() + "\" : no generator avalable");
-      return new GenerationStatus(sourceModel, null, null, false, false, false);
+    if (targetLanguage != null) {
+      // targetLanguage is NULL when generation with auto-plan
+      List<Generator> generators = context.getGeneratorModules();
+      if (generators.isEmpty()) {
+        addProgressMessage(MessageKind.WARNING, "skip model \"" + sourceModel.getUID() + "\" : no generator avalable");
+        return new GenerationStatus(sourceModel, null, null, false, false, false);
+      }
     }
     setGenerationSessionContext(context);
 
@@ -189,10 +194,13 @@ public class GenerationSession implements IGenerationSession {
       // optimization trick:
       // exit if target language is 'baseLanguage' and
       // output model doesn't contain other languages
-      if (targetLanguage.getNamespace().equals("jetbrains.mps.baseLanguage")) {
-        List<String> languageNamespaces = currentOutputModel.getSModel().getLanguageNamespaces(module.getScope());
-        if (languageNamespaces.size() == 1 && languageNamespaces.get(0).equals(targetLanguage.getNamespace())) {
-          break;
+      if (targetLanguage != null) {
+        // targetLanguage is NULL when generation with auto-plan
+        if (targetLanguage.getNamespace().equals("jetbrains.mps.baseLanguage")) {
+          List<String> languageNamespaces = currentOutputModel.getSModel().getLanguageNamespaces(module.getScope());
+          if (languageNamespaces.size() == 1 && languageNamespaces.get(0).equals(targetLanguage.getNamespace())) {
+            break;
+          }
         }
       }
 

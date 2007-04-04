@@ -406,9 +406,9 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   }
 
 
-  public Language getTargetLanguage() {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
-  }
+//  public Language getTargetLanguage() {
+//    return null;  //To change body of implemented methods use File | Settings | File Templates.
+//  }
 
   public void addUnresolvedReference(INodeBuilder nodeBuilder, SReference templateReference) {
     //To change body of implemented methods use File | Settings | File Templates.

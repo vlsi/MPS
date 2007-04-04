@@ -8,6 +8,7 @@ import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.transformation.TemplateLanguageUtil;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.generator.plan.GenerationPlanUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -35,7 +36,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
 
   public GenerationSessionContext(Language targetLanguage,
-                                  SModel sourceModel,
+                                  SModel inputModel,
                                   IOperationContext invocationContext,
                                   Set<MappingConfiguration> configs,
                                   GenerationSessionContext prevContext) {
@@ -43,7 +44,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
     myTargetLanguage = targetLanguage;
     myInvocationContext = invocationContext;
-    myGeneratorModules = getGeneratorModules(sourceModel);
+    myGeneratorModules = getGeneratorModules(inputModel);
     myTransientModule = new TransientModule(invocationContext.getModule(), myGeneratorModules);
 
 
@@ -57,29 +58,48 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       myCustomMappingConfigurations = null;
     }
 
-    initTemplateModels();
+    initTemplateModels(inputModel);
   }
 
   public void replaceInputModel(SModelDescriptor inputModel) {
     myTransientObjects.clear();
     myGeneratorModules = getGeneratorModules(inputModel.getSModel());
     myTransientModule.addGeneratorModules(myGeneratorModules);
-    initTemplateModels();
+    initTemplateModels(inputModel.getSModel());
   }
 
-  private void initTemplateModels() {
-    myTemplateModels = new LinkedList<SModelDescriptor>();
-    for (Generator generatorModule : myGeneratorModules) {
-      List<SModelDescriptor> templateModels = generatorModule.getOwnTemplateModels();
-      CollectionUtil.addAllNotPresent(templateModels, myTemplateModels);
-    }
-
-    if (myCustomMappingConfigurations != null) {
-      myMappingConfigurations = new HashSet<MappingConfiguration>(myCustomMappingConfigurations);
-    } else {
+  private void initTemplateModels(SModel inputModel) {
+    if (myTargetLanguage == null) {
+      // generation with auto-plan
+      List<Generator> generators = GenerationPlanUtil.getUsedGenerators(inputModel.getModelDescriptor(), GlobalScope.getInstance());
+      myTemplateModels = new ArrayList<SModelDescriptor>();
+      for (Generator generatorModule : generators) {
+        List<SModelDescriptor> templateModels = generatorModule.getOwnTemplateModels();
+        CollectionUtil.addAllNotPresent(templateModels, myTemplateModels);
+      }
+      // remove unused mappings. ("unused" abandon root rules can remove wrong roots)
       myMappingConfigurations = new HashSet<MappingConfiguration>();
-      for (SModelDescriptor templateModel : myTemplateModels) {
-        myMappingConfigurations.addAll(templateModel.getSModel().allAdapters(MappingConfiguration.class));
+      for (MappingConfiguration mappingConfig : myCustomMappingConfigurations) {
+        if (myTemplateModels.contains(mappingConfig.getModel().getModelDescriptor())) {
+          myMappingConfigurations.add(mappingConfig);
+        }
+      }
+
+    } else {
+      // old
+      myTemplateModels = new ArrayList<SModelDescriptor>();
+      for (Generator generatorModule : myGeneratorModules) {
+        List<SModelDescriptor> templateModels = generatorModule.getOwnTemplateModels();
+        CollectionUtil.addAllNotPresent(templateModels, myTemplateModels);
+      }
+
+      if (myCustomMappingConfigurations != null) {
+        myMappingConfigurations = new HashSet<MappingConfiguration>(myCustomMappingConfigurations);
+      } else {
+        myMappingConfigurations = new HashSet<MappingConfiguration>();
+        for (SModelDescriptor templateModel : myTemplateModels) {
+          myMappingConfigurations.addAll(templateModel.getSModel().allAdapters(MappingConfiguration.class));
+        }
       }
     }
   }
@@ -120,20 +140,29 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return myInvocationContext;
   }
 
-  public Language getTargetLanguage() {
-    return myTargetLanguage;
-  }
+//  public Language getTargetLanguage() {
+//    return myTargetLanguage;
+//  }
 
   public TraceMap getTraceMap() {
     return myTraceMap;
   }
 
   public String toString() {
+    if (myTargetLanguage == null) {
+      // generation with auto-plan
+      return getClass().getName() + "-> " + "<auto-plan>" + "\ninvoked from: " + myInvocationContext;
+    }
     return getClass().getName() + "-> " + myTargetLanguage.getNamespace() + "\ninvoked from: " + myInvocationContext;
   }
 
   private List<Generator> getGeneratorModules(SModel sourceModel) {
-    List<Generator> generators = new LinkedList<Generator>();
+    if (myTargetLanguage == null) {
+      // generation with auto-plan
+      return new ArrayList<Generator>();
+    }
+
+    List<Generator> generators = new ArrayList<Generator>();
 
     // from all languages used in source model ..
     // we need our scope, because invocation scope might not contain languages
@@ -203,7 +232,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   }
 
   public class TransientModule extends AbstractModule {
-    private List<IModule> myDependOnModules = new LinkedList<IModule>();
+    private List<IModule> myDependOnModules = new ArrayList<IModule>();
     private IModule myInvocationModule;
     private SModelDescriptor myProjectModelDescriptor = ProjectModels.createDescriptorFor(this);
     private ModuleDescriptor myModuleDescriptor = ModuleDescriptor.newInstance(myProjectModelDescriptor.getSModel());
@@ -283,7 +312,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
     @NotNull
     public List<IModule> getExplicitlyDependOnModules() {
-      return new LinkedList<IModule>(myDependOnModules);
+      return new ArrayList<IModule>(myDependOnModules);
     }
 
 
