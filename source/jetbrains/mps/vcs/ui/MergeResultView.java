@@ -201,6 +201,7 @@ public class MergeResultView extends JPanel {
     collectPropertyChanflicts();
     collectReferenceConflicts();
     collectSetNodeConflicts();
+    collectAddAndDeleteConflicts();
   }
 
   private void collectPropertyChanflicts() {
@@ -285,6 +286,33 @@ public class MergeResultView extends JPanel {
     }
   }
 
+  private void collectAddAndDeleteConflicts() {
+    for (AddNodeChange c : getChanges(AddNodeChange.class)) {
+      for (DeleteNodeChange d : getChanges(DeleteNodeChange.class)) {
+        if (d.getAffectedNodeId().equals(c.getNodeParent())) {
+          myConflicts.add(new Conflict(c, d));
+        }
+      }
+    }
+
+    for (SetNodeChange c : getChanges(SetNodeChange.class)) {
+      SNode oldParent = myBaseModel.getNodeById(c.getNodeParent());
+      if (oldParent == null) {
+        continue; 
+      }
+      SNode child = oldParent.getChild(c.getNodeRole());
+      if (child == null) {
+        continue;
+      }
+      String prevId = child.getId();
+      for (AddNodeChange ac : getChanges(AddNodeChange.class)) {
+        if (ac.getNodeParent().equals(prevId)) {
+          myConflicts.add(new Conflict(c, ac));
+        }
+      }
+    }
+  }
+
 
   public SModel getResult() {
     return myResultModel;
@@ -352,8 +380,11 @@ public class MergeResultView extends JPanel {
       add(new ChangeNode(conflict.getC2()));
     }
 
-
     public String getNodeIdentifier () {
+      return "Conflict" + getParent().getIndex(this);
+    }
+
+    public String toString() {
       return "Conflict";
     }
   }
