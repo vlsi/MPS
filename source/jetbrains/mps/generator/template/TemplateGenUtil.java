@@ -682,12 +682,18 @@ public class TemplateGenUtil {
             generator,
             generator.getScope(),
             generator.getGeneratorSessionContext()};
+    long t1 = System.currentTimeMillis();
+    boolean res = false;
     try {
-      return (Boolean) QueryMethodGenerated.invoke(methodName, args, mappingRule.getModel());
+      res = (Boolean) QueryMethodGenerated.invoke(methodName, args, mappingRule.getModel());
+      return res;
     } catch (Exception e) {
       generator.showErrorMessage(sourceNode, null, BaseAdapter.fromAdapter(mappingRule), "couldn't evaluate rule condition");
       LOG.error(e);
+
       return false;
+    } finally{
+      Statistics.add(mappingRule.getModel().getLongName() + "." + methodName, System.currentTimeMillis() - t1, res);
     }
   }
 

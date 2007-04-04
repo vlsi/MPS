@@ -2,6 +2,7 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.template.DefaultTemplateGenerator;
 import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.generator.template.Statistics;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
@@ -77,7 +78,9 @@ public class GenerationSession implements IGenerationSession {
                                         final IGenerationScript script) throws Exception {
     GenerationStatus status;
 
-    status = script.doGenerate(new IGenerationScriptContext() {
+    Statistics.clear();
+
+            status = script.doGenerate(new IGenerationScriptContext() {
       public GenerationStatus doGenerate(@NotNull SModelDescriptor sourceModel,
                                          Language targetLanguage,
                                          Set<MappingConfiguration> confs) throws Exception {
@@ -105,6 +108,9 @@ public class GenerationSession implements IGenerationSession {
       // if ERROR - keep transient models: we need them to navigate to from error messages
       myDiscardTransients = false;
     }
+
+    Statistics.dump();
+
     return status;
   }
 
