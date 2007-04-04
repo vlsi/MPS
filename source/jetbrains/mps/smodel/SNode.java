@@ -1381,16 +1381,33 @@ public class SNode implements Cloneable, Iterable<SNode> {
   }
 
   private int getChildInRoleCount(@NotNull String role) {
-    if(myChildInRoleCount == null) return 0;
+    if(myChildren == null) {
+      return 0;
+    }
+    if(myChildInRoleCount == null) {
+      initChildInRoleCount();
+    }
     Integer count = myChildInRoleCount.get(role);
     if (count == null) return 0;
     return myChildInRoleCount.get(role);
   }
 
+  private void initChildInRoleCount() {
+    myChildInRoleCount = new HashMap<String, Integer>(4);
+    for (SNode childNode : myChildren) {
+      String childRole = childNode.getRole_();
+      incrementChildInRoleCount_Internal(childRole);
+    }
+  }
+
   private void incrementChildInRoleCount(@NotNull String role) {
     if(myChildInRoleCount == null) {
-      myChildInRoleCount = new HashMap<String, Integer>(4);
+      return;
     }
+    incrementChildInRoleCount_Internal(role);
+  }
+
+  private void incrementChildInRoleCount_Internal(String role) {
     if (!myChildInRoleCount.containsKey(role)) {
       myChildInRoleCount.put(role, 0);
     }
@@ -1400,7 +1417,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   private void decrementChildInRoleCount(@NotNull String role) {
     if(myChildInRoleCount == null) {
-      myChildInRoleCount = new HashMap<String, Integer>(4);
+      initChildInRoleCount();
     }
     if (!myChildInRoleCount.containsKey(role)) {
       LOG.error("This can't happen: role = " + role + " node = " + this);
