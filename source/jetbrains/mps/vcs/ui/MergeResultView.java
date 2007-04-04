@@ -29,7 +29,6 @@ public class MergeResultView extends JPanel {
 
   private MPSTree myConflictsTree = new MPSTree() {
     protected MPSTreeNode rebuild() {
-
       if (myConflicts.isEmpty()) {
         return new TextTreeNode("No Conflicts");
       } else {
@@ -61,6 +60,7 @@ public class MergeResultView extends JPanel {
 
     myDelta1 = new DiffBuilder(myBaseModel, myChange1).getChanges();
     myDelta2 = new DiffBuilder(myBaseModel, myChange2).getChanges();
+
 
     rebuildData();
 
@@ -163,8 +163,7 @@ public class MergeResultView extends JPanel {
     List<SetPropertyChange> sets = getChanges(SetPropertyChange.class);
     for (SetPropertyChange sp : sets) {
       if (myExcludedChanges.contains(sp)) continue;
-      boolean result = sp.apply(myResultModel);
-      assert result;
+      sp.apply(myResultModel);
     }
   }
 
@@ -172,8 +171,7 @@ public class MergeResultView extends JPanel {
     List<SetReferenceChange> refs = getChanges(SetReferenceChange.class);
     for (SetReferenceChange ref : refs) {
       if (myExcludedChanges.contains(ref)) continue;
-      boolean result = ref.apply(myResultModel);
-      assert result;
+      ref.apply(myResultModel);
     }
 
   }
