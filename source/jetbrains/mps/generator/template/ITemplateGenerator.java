@@ -9,6 +9,7 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.generator.GenerationFailedException;
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.ITemplateLanguageConstants;
 import jetbrains.mps.transformation.TLBase.structure.TemplateDeclaration;
@@ -24,6 +25,8 @@ public interface ITemplateGenerator extends ITemplateLanguageConstants {
   void advanceState();
 
   ITemplateGeneratorState getState();
+
+  IMessageHandler getMessageHandler();
 
   IAdaptiveProgressMonitor getProgressMonitor();
 

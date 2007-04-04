@@ -47,10 +47,6 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     return null;
   }
 
-  public IMessageHandler getMessageHandler() {
-    return myHandler;
-  }
-
   public SModel getSourceModel() {
     return mySourceModel;
   }
@@ -69,6 +65,10 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 
   protected void setTargetModel(SModel targetModel) {
     myTargetModel = targetModel;
+  }
+
+  public IMessageHandler getMessageHandler() {
+    return myHandler;
   }
 
   public IAdaptiveProgressMonitor getProgressMonitor() {

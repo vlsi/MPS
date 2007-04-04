@@ -3,6 +3,7 @@ package jetbrains.mps.generator;
 import jetbrains.mps.generator.template.DefaultTemplateGenerator;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.Statistics;
+import jetbrains.mps.generator.plan.GenerationSessionData;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
@@ -19,6 +20,7 @@ import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NotNull;
 
+import javax.swing.JOptionPane;
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
@@ -175,6 +177,9 @@ public class GenerationSession implements IGenerationSession {
 
   private SModel generateModel(SModel inputModel, Language targetLanguage, ITemplateGenerator generator) {
     GenerationSessionContext generationContext = generator.getGeneratorSessionContext();
+    if (generationContext.getAutoPlanData() != null) {
+      checkAutoPlanData(generationContext.getAutoPlanData(), generator.getMessageHandler());
+    }
     IModule module = generationContext.getModule();
     SModelDescriptor currentInputModel = inputModel.getModelDescriptor();
     SModelDescriptor currentOutputModel = createTransientModel(inputModel, module);
@@ -199,7 +204,6 @@ public class GenerationSession implements IGenerationSession {
       // exit if target language is 'baseLanguage' and
       // output model doesn't contain other languages
       if (generationContext.getAutoPlanData() == null) { // with auto-plan the target langauge is NULL
-        
         if (targetLanguage.getNamespace().equals("jetbrains.mps.baseLanguage")) {
           List<String> languageNamespaces = currentOutputModel.getSModel().getLanguageNamespaces(module.getScope());
           if (languageNamespaces.size() == 1 && languageNamespaces.get(0).equals(targetLanguage.getNamespace())) {
@@ -209,7 +213,10 @@ public class GenerationSession implements IGenerationSession {
       }
 
       // apply mapping to the output model
-      myCurrentContext.replaceInputModel(currentOutputModel);
+      generationContext.replaceInputModel(currentOutputModel);
+      if (generationContext.getAutoPlanData() != null) {
+        checkAutoPlanData(generationContext.getAutoPlanData(), generator.getMessageHandler());
+      }
       SModelDescriptor transientModel = createTransientModel(currentInputModel.getSModel(), module);
       currentInputModel = currentOutputModel;
       if (!generator.doSecondaryMapping(currentInputModel.getSModel(), transientModel.getSModel())) {
@@ -393,5 +400,21 @@ public class GenerationSession implements IGenerationSession {
 
   public String getSessionModuleName() {
     return "generationSession_" + getSessionId();
+  }
+
+  private void checkAutoPlanData(GenerationSessionData autoPlanData, IMessageHandler messageHandler) {
+    if (autoPlanData.hasConflictingPriorityRules()) {
+      List<String> errors = autoPlanData.getConflictingPriorityRulesAsText();
+      for (String error : errors) {
+        messageHandler.handle(new Message(MessageKind.ERROR, "conflicting rule: " + error));
+      }
+
+      int option = JOptionPane.showConfirmDialog(null,
+              "Conflicting mapping priority rules encountered.\nContinue generation?",
+              "", JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE);
+      if (option != JOptionPane.YES_OPTION) {
+        throw new GenerationCanceledException();
+      }
+    }
   }
 }
