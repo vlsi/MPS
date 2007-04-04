@@ -1409,15 +1409,17 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   private void incrementChildInRoleCount_Internal(String role) {
     if (!myChildInRoleCount.containsKey(role)) {
-      myChildInRoleCount.put(role, 0);
+      myChildInRoleCount.put(role, 1);
     }
-    Integer childCount = myChildInRoleCount.get(role);
-    myChildInRoleCount.put(role, childCount + 1);
+    else {
+      Integer childCount = myChildInRoleCount.get(role);
+      myChildInRoleCount.put(role, childCount + 1);
+    }  
   }
 
   private void decrementChildInRoleCount(@NotNull String role) {
     if(myChildInRoleCount == null) {
-      initChildInRoleCount();
+      return;
     }
     if (!myChildInRoleCount.containsKey(role)) {
       LOG.error("This can't happen: role = " + role + " node = " + this);
