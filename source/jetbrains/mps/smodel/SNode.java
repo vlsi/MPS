@@ -39,8 +39,6 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   private String myRoleInParent;
   private SNode myParent;
-
-  private Map<String, Integer> myChildInRoleCount;
   private List<SNode> myChildren;
 
   private IChildrenLoader myChildrenLoader;
@@ -136,7 +134,6 @@ public class SNode implements Cloneable, Iterable<SNode> {
         newNode.myProperties.putAll(this.myProperties);
       }
       newNode.myUserObjects = null;
-      newNode.myChildInRoleCount = null;
     } catch (CloneNotSupportedException e) {
       throw new RuntimeException(e);
     }
@@ -663,24 +660,21 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   @Nullable
   public SNode getChild(@NotNull String role) {
-    // tmp check
-/*
-    int count = getChildCount(role);
+    int count = 0;
+    SNode foundChild = null;
+    for (SNode child : _children()) {
+      if (role.equals(child.getRole_())) {
+        foundChild = child;
+        count++;
+      }
+    }
     if (count > 1) {
       String errorMessage = "ERROR: " + count + " children for role " + role + " in " + NameUtil.shortNameFromLongName(getClass().getName()) + "[" + getId() + "] " + getModel().getUID() + "\n";
       errorMessage += "they are : " + getChildren(role);
       LOG.error(errorMessage, this);
 
     }
-*/
-    // tmp check
-
-    for (SNode child : _children()) {
-      if (role.equals(child.getRole_())) {
-        return child;
-      }
-    }
-    return null;
+    return foundChild;
   }
 
   public SNode getChildAt(int index) {
@@ -711,7 +705,13 @@ public class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public int getChildCount(@NotNull String role) {
-    return getChildInRoleCount(role);
+    int count = 0;
+    for (SNode child : myChildren) {
+      if(role.equals(child.getRole_())) {
+        count++;
+      }
+    }
+    return count;
   }
 
   public int getIndexOfChild(@NotNull SNode child_) {
@@ -848,8 +848,6 @@ public class SNode implements Cloneable, Iterable<SNode> {
     wasChild.myRoleInParent = null;
     wasChild.unRegisterFromModel();
 
-    decrementChildInRoleCount(wasRole);
-
     if (!getModel().isLoading()) {
       UndoManager.instance().undoableActionPerformed(new IUndoableAction() {
         public void undo() {
@@ -875,8 +873,6 @@ public class SNode implements Cloneable, Iterable<SNode> {
     _children().add(index, child);
     child.myRoleInParent = InternUtil.intern(role);
     child.myParent = this;
-
-    incrementChildInRoleCount(role);
 
     if (myRegisteredInModelFlag) {
       child.registerInModel(getModel());
@@ -1379,59 +1375,6 @@ public class SNode implements Cloneable, Iterable<SNode> {
           addRightTransformHint();
         }
       });
-    }
-  }
-
-  private int getChildInRoleCount(@NotNull String role) {
-    if(myChildren == null) {
-      return 0;
-    }
-    if(myChildInRoleCount == null) {
-      initChildInRoleCount();
-    }
-    Integer count = myChildInRoleCount.get(role);
-    if (count == null) return 0;
-    return myChildInRoleCount.get(role);
-  }
-
-  private void initChildInRoleCount() {
-    myChildInRoleCount = new HashMap<String, Integer>(4);
-    for (SNode childNode : myChildren) {
-      String childRole = childNode.getRole_();
-      incrementChildInRoleCount_Internal(childRole);
-    }
-  }
-
-  private void incrementChildInRoleCount(@NotNull String role) {
-    if(myChildInRoleCount == null) {
-      return;
-    }
-    incrementChildInRoleCount_Internal(role);
-  }
-
-  private void incrementChildInRoleCount_Internal(String role) {
-    if (!myChildInRoleCount.containsKey(role)) {
-      myChildInRoleCount.put(role, 1);
-    }
-    else {
-      Integer childCount = myChildInRoleCount.get(role);
-      myChildInRoleCount.put(role, childCount + 1);
-    }  
-  }
-
-  private void decrementChildInRoleCount(@NotNull String role) {
-    if(myChildInRoleCount == null) {
-      return;
-    }
-    if (!myChildInRoleCount.containsKey(role)) {
-      LOG.error("This can't happen: role = " + role + " node = " + this);
-    }
-
-    Integer childCount = myChildInRoleCount.get(role);
-    if (childCount == 1) {
-      myChildInRoleCount.remove(role);
-    } else {
-      myChildInRoleCount.put(role, childCount - 1);
     }
   }
 
