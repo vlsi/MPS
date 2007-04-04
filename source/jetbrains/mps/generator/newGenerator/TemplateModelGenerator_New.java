@@ -14,7 +14,6 @@ import jetbrains.mps.typesystem.TypeCheckerAccess;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.QueryMethod;
-import jetbrains.mps.baseLanguage.structure.FieldReference;
 
 import java.util.*;
 
@@ -26,10 +25,11 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   private SModel myInputModel;
   private SModel myOutputModel;
   private ArrayList<SNode> myNewRootNodes = new ArrayList<SNode>();
-  private ArrayList<SNode> myRootsToDelete = new ArrayList<SNode>();
+  private ArrayList<SNode> myRootsNotToCopy = new ArrayList<SNode>();
   private ArrayList<ReferenceInfo> myReferenceInfos = new ArrayList<ReferenceInfo>();
   private HashMap<Pair<SNode, SNode>, INodeBuilder> myTemplateNodeAndInputNodeToBuilderMap = new HashMap<Pair<SNode, SNode>, INodeBuilder>();
   private HashMap<Pair<String, SNode>, INodeBuilder> myRuleNameAndInputNodeToBuilderMap = new HashMap<Pair<String, SNode>, INodeBuilder>();
+  private HashMap<SNode, SNode> myOutputNodeToTemplateNodeMap = new HashMap<SNode, SNode>();
   private DelayedChanges myDelayedChanges = new DelayedChanges();
   private TemplateSwitchGraph myTemplateSwitchGraph;
   private Map<TemplateSwitch, List<TemplateSwitch>> myTemplateSwitchToListCache;
@@ -64,10 +64,11 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
 
   public void reset() {
     myNewRootNodes.clear();
-    myRootsToDelete.clear();
+    myRootsNotToCopy.clear();
     myReferenceInfos.clear();
     myTemplateNodeAndInputNodeToBuilderMap.clear();
     myRuleNameAndInputNodeToBuilderMap.clear();
+    myOutputNodeToTemplateNodeMap.clear();
     myDelayedChanges = new DelayedChanges();
     myTemplateSwitchGraph = null;
     myTemplateSwitchToListCache = null;
@@ -92,6 +93,8 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
       ruleUtil.applyRoot_MappingRule(rootMappingRule);
     }
 
+    List<SNode> copiedRoots = copyRootsFromInputModel(ruleManager);
+
     for (WeavingRule weavingRule : ruleManager.getWeavingRules()) {
       ruleUtil.applyWeavingRule(weavingRule);
     }
@@ -101,19 +104,6 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
 
     updateAllReferences();
 
-    for (SNode rootNode : myRootsToDelete) {
-      myOutputModel.removeRoot(rootNode);
-    }
-    for (SNode rootNode : myOutputModel.getRoots()) {
-      List<ConceptDeclaration> abandonedRootConcepts = ruleManager.getAbandonedRootConcepts();
-      for (ConceptDeclaration abandonedRootConcept : abandonedRootConcepts) {
-        if(rootNode.isInstanceOfConcept(abandonedRootConcept, getScope())){
-          myOutputModel.removeRoot(rootNode);
-        }
-      }
-    }
-
-    ArrayList <SNode> copiedRoots = new ArrayList<SNode>(myOutputModel.getRoots());
     for (SNode outputRootNode : copiedRoots) {
       ruleManager.getReductionRuleManager().applyReductionRules(findInputNodeByOutputNodeWithSameId(outputRootNode));
     }
@@ -132,7 +122,28 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
 
   }
 
-  private void validateReferencesInCopiedRoots(ArrayList<SNode> copiedRoots) {
+  private List<SNode> copyRootsFromInputModel(RuleManager ruleManager) {
+    List<SNode> rootsToCopy = myInputModel.getRoots();
+    for (SNode rootNode : myRootsNotToCopy) {
+      rootsToCopy.remove(rootNode);
+    }
+    for (SNode rootNode : myInputModel.getRoots()) {
+      List<ConceptDeclaration> abandonedRootConcepts = ruleManager.getAbandonedRootConcepts();
+      for (ConceptDeclaration abandonedRootConcept : abandonedRootConcepts) {
+        if(rootNode.isInstanceOfConcept(abandonedRootConcept, getScope())){
+          rootsToCopy.remove(rootNode);
+        }
+      }
+    }
+    List<SNode> copiedRoots = new ArrayList<SNode>();
+    for (SNode root : CloneUtil.copy(rootsToCopy, myOutputModel, getScope())) {
+      myOutputModel.addRoot(root);
+      copiedRoots.add(root);
+    }
+    return copiedRoots;
+  }
+
+  private void validateReferencesInCopiedRoots(List<SNode> copiedRoots) {
     for (SNode copiedRoot : copiedRoots) {
       validateReferences(copiedRoot);
     }
@@ -194,11 +205,8 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     myNewRootNodes.add(node);
   }
 
-  public void addRootToDelete(SNode inputNode) {
-    SNode nodeTodelete = findOutputNodeByInputNodeWithSameId(inputNode);
-    if(inputNode != null) {
-      myRootsToDelete.add(nodeTodelete);
-    }
+  public void addRootNotToCopy(SNode inputNode) {
+    myRootsNotToCopy.add(inputNode);
   }
 
   public SNode findOutputNodeByTemplateNodeAndInputNode(SNode templateNode, SNode inputNode) {
@@ -226,6 +234,19 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
       myRuleNameAndInputNodeToBuilderMap.put(key, new SimpleNodeBuilder(this, outputNode, templateNode, inputNode));
     }
   }
+
+  public SNode findTemplateNodeByOutputNode(SNode outputNode) {
+    return myOutputNodeToTemplateNodeMap.get(outputNode);
+  }
+
+  public void addTemplateNodeByOutputNode(SNode outputNode, SNode templateNode) {
+    if(myOutputNodeToTemplateNodeMap.get(outputNode) != null) {
+      showWarningMessage(templateNode, "The template node already exists, that was build by this output node");
+    }
+    myOutputNodeToTemplateNodeMap.put(outputNode, templateNode);
+  }
+
+
 
   public void addReferenceInfo(ReferenceInfo referenceInfo) {
     myReferenceInfos.add(referenceInfo);
@@ -271,22 +292,28 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   //todo this method supposes that inputNode is not changed - it should be deprecated after going to new generator
   //todo may be better to have always hashtable for copied nodes???
   public INodeBuilder findCopyingNodeBuilderForSource(SNode inputNode) {
-    INodeBuilder builder = myTemplateNodeAndInputNodeToBuilderMap.get(new Pair<SNode, SNode>(inputNode, inputNode));
-    if(builder != null) return builder;
-    SNode outputNode = findOutputNodeByInputNodeWithSameId(inputNode);
-    if(outputNode == null) {
-      return null;
-    }
-    return new SimpleNodeBuilder(this, outputNode, inputNode, inputNode);
+    return findNodeBuilderForSourceAndTemplate(inputNode, inputNode);
   }
 
   public SNode findCopyingOutputNodeForInputNode(SNode inputNode) {
     INodeBuilder builder = findCopyingNodeBuilderForSource(inputNode);
+    if(builder == null) {
+      return null;
+    }
     return builder.getTargetNode();
   }
 
-  public INodeBuilder findNodeBuilderForSourceAndTemplate(SNode source, SNode template) {
-    return myTemplateNodeAndInputNodeToBuilderMap.get(new Pair<SNode, SNode>(template, source));
+  public INodeBuilder findNodeBuilderForSourceAndTemplate(SNode inputNode, SNode template) {
+    INodeBuilder builder =  myTemplateNodeAndInputNodeToBuilderMap.get(new Pair<SNode, SNode>(template, inputNode));
+    if(builder != null) return builder;
+    if(inputNode == template) {
+      SNode outputNode = findOutputNodeByInputNodeWithSameId(inputNode);
+      if(outputNode == null) {
+        return null;
+      }
+      return new SimpleNodeBuilder(this, outputNode, inputNode, inputNode);
+    }
+    return null;
   }
 
 

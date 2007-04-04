@@ -4,11 +4,14 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.generator.template.IReferenceResolver;
+import jetbrains.mps.generator.template.INodeBuilder;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.baseLanguage.structure.StaticFieldReference;
 import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro;
+import jetbrains.mps.util.Condition;
+import jetbrains.mpswiki.queryLanguage.structure.LoopVariableReference;
 
 import java.util.List;
 
@@ -33,7 +36,15 @@ public class ReferenceInfo_Default extends ReferenceInfo {
 
   public void execute(TemplateModelGenerator_New generator) {
 
-    SNode referentNode = generator.findOutputNodeByTemplateNodeAndInputNode(myTemplateTargetNode, myInputNode);
+    //Try to find target node if it was reduced from the copied node
+    SNode referentNode = generator.findCopyingOutputNodeForInputNode(myTemplateTargetNode);
+    if(referentNode != null) {
+      myOutputNode.addReferent(myTemplateReference.getRole(), referentNode);
+      setSuccess(true);
+      return;
+    }
+
+    referentNode = generator.findOutputNodeByTemplateNodeAndInputNode(myTemplateTargetNode, myInputNode);
     if(referentNode != null) {
       myOutputNode.addReferent(myTemplateReference.getRole(), referentNode);
       setSuccess(true);
@@ -59,9 +70,42 @@ public class ReferenceInfo_Default extends ReferenceInfo {
       if(outputTargetNode != null) {
         myOutputNode.addReferent(myTemplateReference.getRole(), outputTargetNode);
         setSuccess(true);
+        return;
       }
     }
 
+    // ok. try more expensive lookup...
+    // find least common parent for the template referent and referring node
+
+    SNode leastCommonParent_template = myTemplateSourceNode.findLeastCommonParent(myTemplateTargetNode);
+    if (leastCommonParent_template != null) {
+      // find builder for the least common parent
+      SNode leastCommonOutputNode = myOutputNode;
+      while (leastCommonOutputNode != null && generator.findTemplateNodeByOutputNode(leastCommonOutputNode) != leastCommonParent_template) {
+        leastCommonOutputNode = leastCommonOutputNode.getParent();
+      }
+      if (leastCommonOutputNode != null) {
+        outputTargetNode = findOutputNodeByTemplateTarget(generator, leastCommonOutputNode);
+        if (outputTargetNode != null) {
+          myOutputNode.addReferent(myTemplateReference.getRole(), outputTargetNode);
+          setSuccess(true);
+        }
+      }
+    }
+
+
+  }
+
+  private SNode findOutputNodeByTemplateTarget(TemplateModelGenerator_New generator, SNode outputNode) {
+    if(generator.findTemplateNodeByOutputNode(outputNode) == myTemplateTargetNode) return outputNode;
+    List<SNode> children = outputNode.getChildren();
+    for (SNode childNode : children) {
+      SNode outputTargetNode = findOutputNodeByTemplateTarget(generator, childNode);
+      if(outputTargetNode != null) {
+        return outputTargetNode;
+      }
+    }
+    return null;
   }
 
   private IReferenceResolver loadReferenceResolver(IScope scope) {

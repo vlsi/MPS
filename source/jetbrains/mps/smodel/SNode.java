@@ -49,18 +49,17 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   private IChildrenLoader myChildrenLoader;
 
-  private List<SReference> myReferences = new ArrayList<SReference>();
-  private HashMap<String, String> myProperties = new HashMap<String, String>();
+  private List<SReference> myReferences = new ArrayList<SReference>(1);
+  private HashMap<String, String> myProperties = new HashMap<String, String>(2);
 
   private boolean myRegisteredInModelFlag;
   private SModel myModel;
   private String myId;
 
-  private HashMap<Object, Object> myUserObjects = new HashMap<Object, Object>();
-
-  private Set<String> myPropertySettersInProgress = new HashSet<String>();
-  private Set<String> myPropertyGettersInProgress = new HashSet<String>();
-  private Set<String> mySetReferentEventHandlersInProgress = new HashSet<String>();
+  private HashMap<Object, Object> myUserObjects = new HashMap<Object, Object>(1);
+  private Set<String> myPropertySettersInProgress = null;
+  private Set<String> myPropertyGettersInProgress = new HashSet<String>(1);
+  private Set<String> mySetReferentEventHandlersInProgress = new HashSet<String>(1);
 
   private String myConceptFqName;
 
@@ -591,15 +590,18 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   public void setProperty(@NotNull final String propertyName, String propertyValue, boolean usePropertySetter) {
     propertyValue = InternUtil.intern(propertyValue);
-    if (!myPropertySettersInProgress.contains(propertyName) && !myModel.isLoading() && usePropertySetter) {
-      INodePropertySetter setter = ModelConstraintsManager.getInstance().getNodePropertySetter(this, propertyName);
-      if (setter != null) {
-        myPropertySettersInProgress.add(propertyName);
-        try {
-          setter.execPropertySet(this, propertyName, propertyValue, GlobalScope.getInstance());
-          return;
-        } finally {
-          myPropertySettersInProgress.remove(propertyName);
+    if(usePropertySetter) {
+      if ((myPropertySettersInProgress == null || !myPropertySettersInProgress.contains(propertyName)) && !myModel.isLoading()) {
+        INodePropertySetter setter = ModelConstraintsManager.getInstance().getNodePropertySetter(this, propertyName);
+        if (setter != null) {
+          myPropertySettersInProgress = new HashSet<String>(1);
+          myPropertySettersInProgress.add(propertyName);
+          try {
+            setter.execPropertySet(this, propertyName, propertyValue, GlobalScope.getInstance());
+            return;
+          } finally {
+            myPropertySettersInProgress.remove(propertyName);
+          }
         }
       }
     }

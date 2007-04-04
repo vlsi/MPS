@@ -2,6 +2,7 @@ package jetbrains.mps.generator.newGenerator;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.INodeBuilder;
+import jetbrains.mps.transformation.TLBase.structure.NodeMacro;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +16,7 @@ public class DelayedChanges {
   private ArrayList<RemoveNodeChange> myRemoveNodeChanges = new ArrayList<RemoveNodeChange>();
   private ArrayList<ReplaceChildrenChange> myReplaceChildrenChanges = new ArrayList<ReplaceChildrenChange>();
   private ArrayList<ExecuteNodebuilderChange> myExecuteNodeBuilderChanges = new ArrayList<ExecuteNodebuilderChange>();
+  private ArrayList<ExecuteMapSrcNodeMacroChange> myExecuteMapSrcNodeMacroChanges = new ArrayList<ExecuteMapSrcNodeMacroChange>();
 
 
   public void addAddChildChange(SNode parentNode, SNode childNode, String role) {
@@ -33,6 +35,10 @@ public class DelayedChanges {
     myExecuteNodeBuilderChanges.add(new ExecuteNodebuilderChange(parentNode, builder, childToReplace));
   }
 
+  public void addExecuteMapSrcNodeMacroChange(SNode parentNode, NodeMacro mapSrcMacro, SNode childToReplace, SNode inputNode, TemplateModelGenerator_New generator) {
+    myExecuteMapSrcNodeMacroChanges.add(new ExecuteMapSrcNodeMacroChange(parentNode, mapSrcMacro, childToReplace, inputNode, generator));
+  }
+
   public void doAllChanges() {
     for (AddChildChange addChildChange : myAddChildChanges) {
       addChildChange.doChange();
@@ -45,6 +51,9 @@ public class DelayedChanges {
     }
     for (ExecuteNodebuilderChange executeNodebuilderChange : myExecuteNodeBuilderChanges) {
       executeNodebuilderChange.doChange();
+    }
+    for (ExecuteMapSrcNodeMacroChange executeMapSrcNodeMacroChange : myExecuteMapSrcNodeMacroChanges) {
+      executeMapSrcNodeMacroChange.doChange();
     }
   }
 
@@ -114,6 +123,29 @@ public class DelayedChanges {
       myNodeBuilder.setParent(new SimpleNodeBuilder(myNodeBuilder.getGenerator(), myParentNode));
       myNodeBuilder.execute(null, null);
       SNode child = myNodeBuilder.getTargetNode();
+      if(child != null) {
+        myParentNode.replaceChild(myChildToReplace, child);
+      }
+    }
+
+  }
+  private class ExecuteMapSrcNodeMacroChange {
+    protected SNode myParentNode;
+    private NodeMacro myMapSrcMacro;
+    protected SNode myChildToReplace;
+    private SNode myInputNode;
+    private TemplateModelGenerator_New myGenerator;
+
+    public ExecuteMapSrcNodeMacroChange(SNode parentNode, NodeMacro mapSrcMacro, SNode childToReplace, SNode inputNode, TemplateModelGenerator_New generator) {
+      myParentNode = parentNode;
+      myMapSrcMacro = mapSrcMacro;
+      myChildToReplace = childToReplace;
+      myInputNode = inputNode;
+      myGenerator = generator;
+    }
+
+    public void doChange() {
+      SNode child = MacroUtil.executeMapSrcNodeMacro(myInputNode, myMapSrcMacro.getNode(), myGenerator);
       if(child != null) {
         myParentNode.replaceChild(myChildToReplace, child);
       }
