@@ -705,6 +705,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public int getChildCount(@NotNull String role) {
+    if(myChildren == null) return 0;
     int count = 0;
     for (SNode child : myChildren) {
       if(role.equals(child.getRole_())) {
