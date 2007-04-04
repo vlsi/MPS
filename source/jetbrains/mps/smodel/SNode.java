@@ -341,7 +341,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   @NotNull
   public List<SNode> getNodeAttributes() {
-    List<SNode> attributes = new ArrayList<SNode>();
+    List<SNode> attributes = new ArrayList<SNode>(4);
     for (SNode child : _children()) {
       if (AttributesRolesUtil.isNodeAttributeRole(child.getRole_())) {
         attributes.add(child);
@@ -1125,7 +1125,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
   }
 
   private void insertReferenceAt(final int i, @NotNull final SReference reference) {
-    if(myReferences == null) myReferences = new ArrayList<SReference>();
+    if(myReferences == null) myReferences = new ArrayList<SReference>(1);
     myReferences.add(i, reference);
     if (!getModel().isLoading()) {
       UndoManager.instance().undoableActionPerformed(new IUndoableAction() {
