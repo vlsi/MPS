@@ -607,7 +607,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
-        for (RunConfiguration t : myProjectDescriptor.getRunConfigurations()) {
+        for (BaseGeneratorConfiguration t : myProjectDescriptor.getRunConfigurations()) {
           if (!t.getTest()) continue;
 
           GenParameters parms = GeneratorConfigUtil.calculate(MPSProject.this, t);
