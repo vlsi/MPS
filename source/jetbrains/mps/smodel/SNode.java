@@ -96,7 +96,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   private List<SNode> _children() {
     if (myChildren == null) {
-      myChildren = new LinkedList<SNode>();
+      myChildren = new ArrayList<SNode>();
       if (myChildrenLoader != null) {
         getModel().runLoadingAction(new Runnable() {
           public void run() {
@@ -352,7 +352,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   @NotNull
   public List<SNode> getAllAttributes() {
-    List<SNode> attributes = new LinkedList<SNode>();
+    List<SNode> attributes = new ArrayList<SNode>(4);
     for (SNode child : _children()) {
       String role = child.getRole_();
       if (AttributesRolesUtil.isNodeAttributeRole(role) ||
@@ -731,7 +731,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   @NotNull
   public <T extends SNode> Iterator<T> children(@NotNull String role) {
-    List<T> list = new LinkedList<T>();
+    List<T> list = new ArrayList<T>();
     for (SNode child : _children()) {
       if (role.equals(child.getRole_())) {
         list.add((T) child);
@@ -742,7 +742,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   @NotNull
   public Iterator<SNode> reverseChildren(@NotNull String role) {
-    List<SNode> list = new LinkedList<SNode>();
+    List<SNode> list = new ArrayList<SNode>();
     for (SNode child : _children()) {
       if (role.equals(child.getRole_())) {
         list.add(child);
@@ -944,7 +944,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   @NotNull
   public List<SReference> getBackReferences(@NotNull SModel sourceModel) {
-    List<SReference> list = new LinkedList<SReference>();
+    List<SReference> list = new ArrayList<SReference>();
     List<SNode> nodes = sourceModel.allNodes();
     for (SNode node : nodes) {
       List<SReference> references = node.getReferences();
@@ -960,7 +960,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
   @Nullable
   public SReference setReferent(@NotNull String role, SNode newReferent) {
     // remove old references
-    List<SReference> toDelete = new LinkedList<SReference>();
+    List<SReference> toDelete = new ArrayList<SReference>();
     if(myReferences != null) {
       for (SReference reference : myReferences) {
         if (reference.getRole().equals(role)) {
@@ -1101,7 +1101,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
   @NotNull
   public List<SNode> getReferents(@NotNull String role) {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
-    List<SNode> result = new LinkedList<SNode>();
+    List<SNode> result = new ArrayList<SNode>();
     if(myReferences == null) return result;
     for (SReference reference : myReferences) {
       if (role.equals(reference.getRole())) {
@@ -1115,7 +1115,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
   @NotNull
   public List<SNode> getReferents() {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
-    List<SNode> result = new LinkedList<SNode>();
+    List<SNode> result = new ArrayList<SNode>();
     if(myReferences == null) return result;
     for (SReference reference : myReferences) {
       SNode targetNode = reference.getTargetNode();
@@ -1199,7 +1199,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   private void delete_internal() {
     //delete all children
-    List<SNode> children = new LinkedList<SNode>(getChildren());
+    List<SNode> children = new ArrayList<SNode>(getChildren());
     for (SNode child : children) {
       child.delete_internal();
     }
@@ -1340,7 +1340,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   @NotNull
   public List<SNode> getSubnodes(Condition<SNode> condition) {
-    List<SNode> list = new LinkedList<SNode>();
+    List<SNode> list = new ArrayList<SNode>();
     collectSubnodes(condition, list);
     return list;
   }
@@ -1513,7 +1513,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
 
   public List<SNode> allChildren(Condition<SNode> condition) {
-    List<SNode> resultNodes = new LinkedList<SNode>();
+    List<SNode> resultNodes = new ArrayList<SNode>();
     Iterator<SNode> nodes = depthFirstChildren();
     while (nodes.hasNext()) {
       SNode node = nodes.next();
@@ -1550,7 +1550,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public List<SNode> allChildren() {
-    List<SNode> result = new LinkedList<SNode>();
+    List<SNode> result = new ArrayList<SNode>();
     List<SNode> children = this.getChildren();
     result.addAll(children);
     for (SNode child : children) {
@@ -1637,7 +1637,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
               });
     }
 
-    List<ConceptLink> result = new LinkedList<ConceptLink>();
+    List<ConceptLink> result = new ArrayList<ConceptLink>();
     Iterator<ConceptLink> conceptLinks = conceptDeclaration.conceptLinks();
     while (conceptLinks.hasNext()) {
       ConceptLink conceptLink = conceptLinks.next();
@@ -1650,7 +1650,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public List<SNode> getConceptLinkTargets(String linkName, boolean lookupHierarchy, IScope scope) {
-    List<SNode> result = new LinkedList<SNode>();
+    List<SNode> result = new ArrayList<SNode>();
     List<ConceptLink> conceptLinks = getConceptLinks(linkName, lookupHierarchy, scope);
     for (ConceptLink conceptLink : conceptLinks) {
       INodeAdapter target = SModelUtil_new.getConceptLinkTarget(conceptLink);
