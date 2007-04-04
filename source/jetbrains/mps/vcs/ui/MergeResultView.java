@@ -132,8 +132,9 @@ public class MergeResultView extends JPanel {
 
     if (myResultModel.getNodeById(c.getNodeParent()) == null) {
       NewNodeChange pChange = map.get(c.getNodeParent());
-      assert pChange != null;
-      applyNewNodeChange(pChange, map);
+      if (pChange != null) {
+        applyNewNodeChange(pChange, map);
+      }
 
       if (myResultModel.getNodeById(c.getNodeParent()) == null) {
         //we wasn't able to find a parent (probably because it was exluded) so return
