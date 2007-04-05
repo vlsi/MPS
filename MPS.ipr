@@ -905,8 +905,8 @@
       <module fileurl="file://$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" filepath="$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/Panacea/Panacea.iml" filepath="$PROJECT_DIR$/projects/Panacea/Panacea.iml" group="platform/YPath-Panacea" />
       <module fileurl="file://$PROJECT_DIR$/projects/ProjectHalo/ProjectHalo.iml" filepath="$PROJECT_DIR$/projects/ProjectHalo/ProjectHalo.iml" group="Projects" />
-      <module fileurl="file://$PROJECT_DIR$/projects/PubMedDB/pubmed-ws/PubMed-WS.iml" filepath="$PROJECT_DIR$/projects/PubMedDB/pubmed-ws/PubMed-WS.iml" group="Projects/PubMedDB" />
-      <module fileurl="file://$PROJECT_DIR$/projects/PubMedDB/PubMedDB.iml" filepath="$PROJECT_DIR$/projects/PubMedDB/PubMedDB.iml" group="Projects/PubMedDB" />
+      <module fileurl="file://$PROJECT_DIR$/app/PubMedDB/pubmed-ws/PubMed-WS.iml" filepath="$PROJECT_DIR$/app/PubMedDB/pubmed-ws/PubMed-WS.iml" group="app/PubMedDB" />
+      <module fileurl="file://$PROJECT_DIR$/app/PubMedDB/PubMedDB.iml" filepath="$PROJECT_DIR$/app/PubMedDB/PubMedDB.iml" group="app/PubMedDB" />
       <module fileurl="file://$PROJECT_DIR$/projects/textLanguage/TextLanguage.iml" filepath="$PROJECT_DIR$/projects/textLanguage/TextLanguage.iml" group="DataLanguages" />
       <module fileurl="file://$PROJECT_DIR$/projects/YPath/YPath.iml" filepath="$PROJECT_DIR$/projects/YPath/YPath.iml" group="platform/YPath-Panacea" />
       <module fileurl="file://$PROJECT_DIR$/projects/agreement/agreement.iml" filepath="$PROJECT_DIR$/projects/agreement/agreement.iml" group="Projects" />
