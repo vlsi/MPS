@@ -11,6 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class Content extends BaseConcept {
   public static String CPR_IsComplex = "isComplex";
   public static String CLNK_CorrespondingElement = "correspondingElement";
+  public static String CLNK_ElementForChildren = "elementForChildren";
 
   public  Content(SNode node) {
     super(node);
