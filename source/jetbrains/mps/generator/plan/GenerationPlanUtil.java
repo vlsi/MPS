@@ -15,16 +15,12 @@ import java.util.*;
 public class GenerationPlanUtil {
   private static final Logger LOG = Logger.getLogger(GenerationPlanUtil.class);
 
-  public static List<Generator> getUsedGenerators(SModelDescriptor inputModel, IScope scope) {
-    return collectGenerators(inputModel, scope, false, new ArrayList<Generator>(), new HashSet<Language>());
+  public static GenerationPlan createGenerationPlan(SModelDescriptor inputModel, IScope scope) {
+    List<Generator> generators = collectGenerators(inputModel, scope, false, new ArrayList<Generator>(), new HashSet<Language>());
+    return new GenerationPlanBuilder().createPlan(generators);
   }
 
-  public static GenerationPlanBuilderStatus createGenerationPlan(SModelDescriptor inputModel, IScope scope) {
-    List<Generator> generators = getUsedGenerators(inputModel, scope);
-    return new GenerationPlanBuilder().createSteps(generators);
-  }
-
-  public static GenerationPlanBuilderStatus checkMappingPriorityConfig(GeneratorDescriptor descriptorWorkingCopy, IScope scope) {
+  public static GenerationPlan createGenerationPlan(GeneratorDescriptor descriptorWorkingCopy, IScope scope) {
     ArrayList<Generator> generators = new ArrayList<Generator>();
     HashSet<Language> processedLanguages = new HashSet<Language>();
 
@@ -40,7 +36,7 @@ public class GenerationPlanUtil {
       collectGenerators(model, scope, true, generators, processedLanguages);
     }
 
-    return new GenerationPlanBuilder().createSteps(generators, descriptorWorkingCopy);
+    return new GenerationPlanBuilder().createPlan(generators, descriptorWorkingCopy);
   }
 
   private static List<Generator> collectGenerators(SModelDescriptor inputModel, IScope scope, boolean excludeTLBase, List<Generator> usedGenerators, Set<Language> processedLanguages) {

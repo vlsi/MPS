@@ -16,7 +16,7 @@ import java.util.Map;
  * Igor Alshannikov
  * Date: Mar 27, 2007
  */
-public class GenerationPlanBuilder {
+/*package*/ class GenerationPlanBuilder {
   private static Logger LOG = Logger.getLogger(GenerationPlanBuilder.class);
 
   private List<MappingConfiguration> myAllMappings = new ArrayList<MappingConfiguration>();
@@ -24,11 +24,11 @@ public class GenerationPlanBuilder {
   /*package*/ GenerationPlanBuilder() {
   }
 
-  public GenerationPlanBuilderStatus createSteps(List<Generator> generators) {
-    return createSteps(generators, null);
+  public GenerationPlan createPlan(List<Generator> generators) {
+    return createPlan(generators, null);
   }
 
-  public GenerationPlanBuilderStatus createSteps(List<Generator> generators, GeneratorDescriptor descriptorWorkingCopy) {
+  public GenerationPlan createPlan(List<Generator> generators, GeneratorDescriptor descriptorWorkingCopy) {
     for (Generator generator : generators) {
       myAllMappings.addAll(generator.getOwnMappings());
     }
@@ -63,7 +63,7 @@ public class GenerationPlanBuilder {
         }
       }
     }
-    return new GenerationPlanBuilderStatus(steps, generators, conflictingRules);
+    return new GenerationPlan(steps, generators, conflictingRules);
   }
 
   private List<List<MappingConfiguration>> createSteps(Map<MappingConfiguration, Map<MappingConfiguration, MappingPriorityRule>> priorityMap) {

@@ -8,7 +8,7 @@ import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.transformation.TemplateLanguageUtil;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.ide.BootstrapLanguages;
-import jetbrains.mps.generator.plan.GenerationSessionData;
+import jetbrains.mps.generator.plan.GenerationStepData;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -24,7 +24,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private IOperationContext myInvocationContext;
   private TransientModule myTransientModule;
   private Language myTargetLanguage;
-  private GenerationSessionData myAutoPlanData;
+  private GenerationStepData myGenerationStepData;
 
   private Map<Object, Object> myTransientObjects = new HashMap<Object, Object>();
   private Map<Object, Object> mySessionObjects = new HashMap<Object, Object>();
@@ -49,11 +49,11 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
     if (targetLanguage == null) {
       // auto-plan
-      myAutoPlanData = new GenerationSessionData(inputModel);
-      myGeneratorModules = myAutoPlanData.getGenerators();
-      myTemplateModels = myAutoPlanData.getTemplateModels();
-      myCustomMappingConfigurations = CollectionUtil.lisAsSet(myAutoPlanData.getMappings());  // ???
-      myMappingConfigurations = CollectionUtil.lisAsSet(myAutoPlanData.getMappings());
+      myGenerationStepData = new GenerationStepData(inputModel);
+      myGeneratorModules = myGenerationStepData.getGenerators();
+      myTemplateModels = myGenerationStepData.getTemplateModels();
+      myCustomMappingConfigurations = CollectionUtil.lisAsSet(myGenerationStepData.getMappings());  // ???
+      myMappingConfigurations = CollectionUtil.lisAsSet(myGenerationStepData.getMappings());
     } else {
       // old
       myGeneratorModules = getUsedGenerators(inputModel);
@@ -71,12 +71,12 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   public void replaceInputModel(SModelDescriptor inputModel) {
     myTransientObjects.clear();
-    if (myAutoPlanData != null) {
+    if (myGenerationStepData != null) {
       // auto-plan
-      myAutoPlanData = new GenerationSessionData(inputModel.getSModel());
-      myGeneratorModules = myAutoPlanData.getGenerators();
-      myTemplateModels = myAutoPlanData.getTemplateModels();
-      myMappingConfigurations = CollectionUtil.lisAsSet(myAutoPlanData.getMappings());
+      myGenerationStepData = new GenerationStepData(inputModel.getSModel());
+      myGeneratorModules = myGenerationStepData.getGenerators();
+      myTemplateModels = myGenerationStepData.getTemplateModels();
+      myMappingConfigurations = CollectionUtil.lisAsSet(myGenerationStepData.getMappings());
     } else {
       // old
       myGeneratorModules = getUsedGenerators(inputModel.getSModel());
@@ -87,7 +87,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   }
 
   private void initTemplateModels() {
-    assert myAutoPlanData == null : "method can't be used with 'auto-plan' generation";
+    assert myGenerationStepData == null : "method can't be used with 'auto-plan' generation";
 
     myTemplateModels = new ArrayList<SModelDescriptor>();
     for (Generator generatorModule : myGeneratorModules) {
@@ -158,7 +158,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   }
 
   private List<Generator> getUsedGenerators(SModel sourceModel) {
-    assert myAutoPlanData == null : "method can't be used with 'auto-plan' generation";
+    assert myGenerationStepData == null : "method can't be used with 'auto-plan' generation";
 
     List<Generator> generators = new ArrayList<Generator>();
 
@@ -230,12 +230,8 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   }
 
 
-  public GenerationSessionData getAutoPlanData() {
-    return myAutoPlanData;
-  }
-
-  public void setAutoPlanData(GenerationSessionData autoPlanData) {
-    myAutoPlanData = autoPlanData;
+  public GenerationStepData getGenerationStepData() {
+    return myGenerationStepData;
   }
 
   public class TransientModule extends AbstractModule {

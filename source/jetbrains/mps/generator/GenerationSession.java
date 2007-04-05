@@ -3,7 +3,7 @@ package jetbrains.mps.generator;
 import jetbrains.mps.generator.template.DefaultTemplateGenerator;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.Statistics;
-import jetbrains.mps.generator.plan.GenerationSessionData;
+import jetbrains.mps.generator.plan.GenerationStepData;
 import jetbrains.mps.generator.plan.GenerationPlanUtil;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
@@ -178,8 +178,8 @@ public class GenerationSession implements IGenerationSession {
 
   private SModel generateModel(SModel inputModel, Language targetLanguage, ITemplateGenerator generator) {
     GenerationSessionContext generationContext = generator.getGeneratorSessionContext();
-    if (generationContext.getAutoPlanData() != null) {
-      checkAutoPlanData(generationContext.getAutoPlanData());
+    if (generationContext.getGenerationStepData() != null) {
+      checkGenerationStepData(generationContext.getGenerationStepData());
     }
     IModule module = generationContext.getModule();
     SModelDescriptor currentInputModel = inputModel.getModelDescriptor();
@@ -204,7 +204,7 @@ public class GenerationSession implements IGenerationSession {
       // optimization trick:
       // exit if target language is 'baseLanguage' and
       // output model doesn't contain other languages
-      if (generationContext.getAutoPlanData() == null) { // with auto-plan the target langauge is NULL
+      if (generationContext.getGenerationStepData() == null) { // with auto-plan the target langauge is NULL
         if (targetLanguage.getNamespace().equals("jetbrains.mps.baseLanguage")) {
           List<String> languageNamespaces = currentOutputModel.getSModel().getLanguageNamespaces(module.getScope());
           if (languageNamespaces.size() == 1 && languageNamespaces.get(0).equals(targetLanguage.getNamespace())) {
@@ -216,8 +216,8 @@ public class GenerationSession implements IGenerationSession {
       // apply mapping to the output model
       addMessage(MessageKind.INFORMATION, "generating model \"" + currentOutputModel.getModelUID() + "\"");
       generationContext.replaceInputModel(currentOutputModel);
-      if (generationContext.getAutoPlanData() != null) {
-        checkAutoPlanData(generationContext.getAutoPlanData());
+      if (generationContext.getGenerationStepData() != null) {
+        checkGenerationStepData(generationContext.getGenerationStepData());
       }
       SModelDescriptor transientModel = createTransientModel(currentInputModel.getSModel(), module);
       currentInputModel = currentOutputModel;
@@ -404,15 +404,15 @@ public class GenerationSession implements IGenerationSession {
     return "generationSession_" + getSessionId();
   }
 
-  private void checkAutoPlanData(GenerationSessionData autoPlanData) {
+  private void checkGenerationStepData(GenerationStepData stepData) {
     addMessage(new Message(MessageKind.INFORMATION, "apply mapping configuration:"));
-    List<String> messages = GenerationPlanUtil.toStrings(autoPlanData.getMappings());
+    List<String> messages = GenerationPlanUtil.toStrings(stepData.getMappings());
     for (String message : messages) {
       addMessage(new Message(MessageKind.INFORMATION, "    " + message));
     }
 
-    if (autoPlanData.hasConflictingPriorityRules()) {
-      List<String> errors = autoPlanData.getConflictingPriorityRulesAsText();
+    if (stepData.hasConflictingPriorityRules()) {
+      List<String> errors = stepData.getConflictingPriorityRulesAsStrings();
       for (String error : errors) {
         addMessage(new Message(MessageKind.ERROR, "conflicting rule: " + error));
       }
