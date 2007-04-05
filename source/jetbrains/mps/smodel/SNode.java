@@ -1814,8 +1814,10 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   void clearUserObjects() {
     removeAllUserObjects();
-    for (SNode child : getChildren()) {
-      child.clearUserObjects();
+    if (myChildren != null) {
+      for (SNode child : myChildren) {
+        child.clearUserObjects();
+      }
     }
   }
 
