@@ -80,26 +80,46 @@ import java.util.Map;
   }
 
   private List<MappingConfiguration> createStep(Map<MappingConfiguration, Map<MappingConfiguration, MappingPriorityRule>> priorityMap) {
-    List<MappingConfiguration> step = new ArrayList<MappingConfiguration>();
-    for (MappingConfiguration mappingConfig : priorityMap.keySet()) {
-      // no greater priority mappings?
-      if (priorityMap.get(mappingConfig).isEmpty()) {
-        step.add(mappingConfig);
+    List<MappingConfiguration> stepMappings = new ArrayList<MappingConfiguration>();
+    while (true) {
+      List<MappingConfiguration> mappingsForStep = new ArrayList<MappingConfiguration>();
+      for (MappingConfiguration mapping : priorityMap.keySet()) {
+        // no greater priority mappings?
+        if (priorityMap.get(mapping).isEmpty()) {
+          mappingsForStep.add(mapping);
+        }
+      }
+
+      if(mappingsForStep.isEmpty()) break;
+      stepMappings.addAll(mappingsForStep);
+
+      // clean-up lesser-pri-mappings
+      for (MappingConfiguration mappingForStep : mappingsForStep) {
+        priorityMap.remove(mappingForStep);
+      }
+
+      // clean-up weak greater-pri-mappings
+      for (MappingConfiguration mappingForStep : mappingsForStep) {
+        for (Map<MappingConfiguration, MappingPriorityRule> greaterPriMappings : priorityMap.values()) {
+          if(greaterPriMappings.containsKey(mappingForStep)) {
+            MappingPriorityRule priorityRule = greaterPriMappings.get(mappingForStep);
+            if(priorityRule.getKind() == MappingPriorityRuleKind.before_or_together) {
+              // weak priority
+              greaterPriMappings.remove(mappingForStep);
+            }
+          }
+        }
       }
     }
 
-    // clean-up less pri
-    for (MappingConfiguration mappingConfig : step) {
-      priorityMap.remove(mappingConfig);
-    }
-    // clean-up grt pri
-    for (MappingConfiguration mappingConfig : step) {
-      for (Map<MappingConfiguration, MappingPriorityRule> set : priorityMap.values()) {
-        set.remove(mappingConfig);
+    // clean-up strict greater-pri-mappings
+    for (MappingConfiguration mapping : stepMappings) {
+      for (Map<MappingConfiguration, MappingPriorityRule> greaterPriMappings : priorityMap.values()) {
+        greaterPriMappings.remove(mapping);
       }
     }
 
-    return step;
+    return stepMappings;
   }
 
   private void fillPriorityMap(MappingPriorityRule rule, Generator generator, Map<MappingConfiguration, Map<MappingConfiguration, MappingPriorityRule>> priorityMap, List<MappingConfiguration> ignoreGreaterPriMappings) {
