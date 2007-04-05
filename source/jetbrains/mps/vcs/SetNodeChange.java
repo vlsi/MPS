@@ -17,11 +17,22 @@ public class SetNodeChange extends NewNodeChange {
     if (parent == null) {
       return false;
     }
-    SNode n = SModelUtil_new.instantiateConceptDeclaration(getConceptFqName(), m, GlobalScope.getInstance());
+    SNode n = SModelUtil_new.instantiateConceptDeclaration(getConceptFqName(), m, GlobalScope.getInstance(), false);
     assert n != null;
     n.setId(getNodeId());
-    parent.setChild(getNodeRole(), n);
+    parent.addChild(getNodeRole(), n);
     return true;
+  }
+
+  public void secondApply(SModel m) {
+    SNode n = m.getNodeById(getNodeId());
+    if (n == null) return;
+    SNode parent = n.getParent();
+    for (SNode pc : parent.getChildren(getNodeRole())) {
+      if (pc != n) {
+        parent.removeChild(pc);
+      }
+    }        
   }
 
 }

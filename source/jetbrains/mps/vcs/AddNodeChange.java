@@ -36,7 +36,7 @@ public class AddNodeChange extends NewNodeChange {
       prev = m.getNodeById(prevNode);
     }
 
-    SNode n = SModelUtil_new.instantiateConceptDeclaration(getConceptFqName(), m, GlobalScope.getInstance());
+    SNode n = SModelUtil_new.instantiateConceptDeclaration(getConceptFqName(), m, GlobalScope.getInstance(), false);
     assert n != null;
     n.setId(getNodeId());
     

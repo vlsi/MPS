@@ -16,7 +16,7 @@ public class AddRootChange extends NewNodeChange {
   }
 
   public boolean apply(SModel m) {
-    SNode n = SModelUtil_new.instantiateConceptDeclaration(getConceptFqName(), m, GlobalScope.getInstance());
+    SNode n = SModelUtil_new.instantiateConceptDeclaration(getConceptFqName(), m, GlobalScope.getInstance(), false);
     assert n != null;
     n.setId(getNodeId());
     m.addRoot(n);

@@ -94,11 +94,33 @@ public class MergeResultView extends JPanel {
   private void rebuldResultModel() {
     myResultModel = ModelPersistence.copyModel(myBaseModel);
     myResultModel.setLoading(true);
+
+    SNode tmp = new SNode(myResultModel, "tmp");
+    myResultModel.addRoot(tmp);
+
     applyNewNodes();
     applyProperties();
     applyReferences();
-    applyMoves();
+
+    //move all nodes which are to move into tmp root
+    for (MoveNodeChange mnc : getChanges(MoveNodeChange.class)) {
+      SNode node = myResultModel.getNodeById(mnc.getNode());
+      if (node != null) {
+        if (node.isRoot()) {
+          myResultModel.removeRoot(node);
+        } else {
+          node.getParent().removeChild(node);
+        }
+
+        tmp.addChild("tmp", node);
+      }
+    }
+
     applyDeletes();
+    applyMoves();
+
+    myResultModel.removeRoot(tmp);
+
     myResultModel.setLoading(false);
   }
 
@@ -178,11 +200,13 @@ public class MergeResultView extends JPanel {
   }
 
   private void applyDeletes() {
-    List<DeleteNodeChange> deletes = getChanges(DeleteNodeChange.class);
-
-    for (DeleteNodeChange del : deletes) {
+    for (DeleteNodeChange del : getChanges(DeleteNodeChange.class)) {
       if (myExcludedChanges.contains(del)) continue;      
       del.apply(myResultModel);
+    }
+
+    for (SetNodeChange snc : getChanges(SetNodeChange.class)) {
+      snc.secondApply(myResultModel);      
     }
   }
 
@@ -202,6 +226,7 @@ public class MergeResultView extends JPanel {
     collectReferenceConflicts();
     collectSetNodeConflicts();
     collectAddAndDeleteConflicts();
+    collectMoveConflicts();
   }
 
   private void collectPropertyChanflicts() {
@@ -308,6 +333,19 @@ public class MergeResultView extends JPanel {
       for (AddNodeChange ac : getChanges(AddNodeChange.class)) {
         if (ac.getNodeParent().equals(prevId)) {
           myConflicts.add(new Conflict(c, ac));
+        }
+      }
+    }
+  }
+
+  private void collectMoveConflicts() {
+    List<MoveNodeChange> moves = getChanges(MoveNodeChange.class);
+    for (int i = 0; i < moves.size(); i++) {
+      MoveNodeChange mnc1 = moves.get(i);
+      for (int j = i + 1; j < moves.size(); j++) {
+        MoveNodeChange mnc2 = moves.get(j);
+        if (mnc1.getNode().equals(mnc2.getNode())) {
+          myConflicts.add(new Conflict(mnc1, mnc2));
         }
       }
     }

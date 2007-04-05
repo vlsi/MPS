@@ -40,9 +40,9 @@ public class MoveNodeChange extends Change {
   public boolean apply(SModel m) {
     SNode node = m.getNodeById(myNodeId);
     if (node == null) return false;
-    node.getParent().removeChild(node);
     SNode parent = m.getNodeById(myNewParent);
     if (parent == null) return false;
+    node.getParent().removeChild(node);
     parent.addChild(myNewRole, node);
     return true;
   }
