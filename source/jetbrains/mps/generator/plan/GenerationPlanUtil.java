@@ -4,11 +4,9 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
 import jetbrains.mps.projectLanguage.structure.GeneratorReference;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Igor Alshannikov
@@ -110,5 +108,44 @@ public class GenerationPlanUtil {
         }
       }
     }
+  }
+
+  public static List<String> toStrings(List<MappingConfiguration> step) {
+    List<String> text = new ArrayList<String>();
+
+    // consolidate mappings
+    Map<SModel, Integer> numOfMappingsByModel = new HashMap<SModel, Integer>();
+    for (MappingConfiguration mappingConfig : step) {
+      SModel model = mappingConfig.getModel();
+      if (!numOfMappingsByModel.containsKey(model)) {
+        numOfMappingsByModel.put(model, 0);
+      }
+      numOfMappingsByModel.put(model, numOfMappingsByModel.get(model) + 1);
+    }
+    Iterator<SModel> models = numOfMappingsByModel.keySet().iterator();
+    while (models.hasNext()) {
+      SModel model = models.next();
+      int totalMappings = model.allAdapters(MappingConfiguration.class).size();
+      if (numOfMappingsByModel.get(model) < totalMappings) {
+        models.remove();
+      } else {
+        numOfMappingsByModel.put(model, 0);
+      }
+    }
+
+    // output
+    for (MappingConfiguration mappingConfig : step) {
+      SModel model = mappingConfig.getModel();
+      if (numOfMappingsByModel.containsKey(model)) {
+        if (numOfMappingsByModel.get(model) == 0) {
+          text.add(model.getLongName() + ".*");
+          numOfMappingsByModel.put(model, 1);
+        }
+      } else {
+        text.add(model.getLongName() + "." + mappingConfig.getName());
+      }
+    }
+
+    return text;
   }
 }
