@@ -5,10 +5,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.vcs.*;
 
@@ -44,8 +41,8 @@ public class ModelDifferenceView extends JPanel {
     }
   };
 
-  private Set<String> myChangedNodes = new HashSet<String>();
-  private Set<String> myAddedNodes = new HashSet<String>();
+  private Set<SNodeId> myChangedNodes = new HashSet<SNodeId>();
+  private Set<SNodeId> myAddedNodes = new HashSet<SNodeId>();
 
 //  private SModel myOldModel;
   private SModel myNewModel;
@@ -103,7 +100,7 @@ public class ModelDifferenceView extends JPanel {
             }
           } else if (c instanceof SetPropertyChange ||
                   c instanceof SetReferenceChange) {
-            String id = c.getAffectedNodeId();
+            SNodeId id = c.getAffectedNodeId();
             if (!myAddedNodes.contains(id)) {
               expandNode(id);
             }
@@ -182,7 +179,7 @@ public class ModelDifferenceView extends JPanel {
     return changes;
   }
 
-  private void expandNode(String affectedNode) {
+  private void expandNode(SNodeId affectedNode) {
     SNode node = myNewModel.getNodeById(affectedNode);
     if (node != null) {
       TreeNode tn = myModelTree.findNodeWith(node);
@@ -268,7 +265,7 @@ public class ModelDifferenceView extends JPanel {
 
 
     public void doubleClick() {
-      String affectedNode = myChange.getAffectedNodeId();
+      SNodeId affectedNode = myChange.getAffectedNodeId();
       expandNode(affectedNode);
     }
 

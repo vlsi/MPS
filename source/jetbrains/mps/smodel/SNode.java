@@ -48,7 +48,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   private boolean myRegisteredInModelFlag;
   private SModel myModel;
-  private String myId;
+  private SNodeId myId;
 
   private HashMap<Object, Object> myUserObjects;
   private Set<String> myPropertySettersInProgress;
@@ -839,7 +839,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   private void removeChildAt(final int index) {
     final SNode wasChild = _children().get(index);
-    final String wasId = _children().get(index).getId();
+    final SNodeId wasId = _children().get(index).getSNodeId();
     final String wasRole = wasChild.getRole_();
 
     assert wasRole != null;
@@ -892,7 +892,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
   /*package*/ void unRegisterFromModel() {
     if (!myRegisteredInModelFlag) return;
     myRegisteredInModelFlag = false;
-    myModel.removeNodeId(getId());
+    myModel.removeNodeId(getSNodeId());
     for (SNode child : _children()) {
       child.unRegisterFromModel();
     }
@@ -904,7 +904,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
     if (model != myModel) {
       changeModel(model);
     } else {
-      myModel.setNodeId(getId(), this);
+      myModel.setNodeId(getSNodeId(), this);
       if (myChildren != null) {
         for (SNode child : _children()) {
           child.registerInModel(model);
@@ -1282,17 +1282,25 @@ public class SNode implements Cloneable, Iterable<SNode> {
     if (myId == null) {
       setId(generateUniqueId());
     }
+    return myId.toString();
+  }
+
+  public SNodeId getSNodeId() {
+    NodeReadAccessCaster.fireNodeReadAccessed(this);
+    if (myId == null) {
+      setId(generateUniqueId());
+    }
     return myId;
   }
 
   @NotNull
-  public static String generateUniqueId() {
+  public static SNodeId generateUniqueId() {
     long id = System.currentTimeMillis() + ourCounter;
     ourCounter++;
-    return "" + id;
+    return new SNodeId(id);
   }
 
-  public void setId(String id) {
+  public void setId(SNodeId id) {
     if (id == null) {
       if (myId != null) {
         myModel.removeNodeId(myId);
@@ -1301,6 +1309,11 @@ public class SNode implements Cloneable, Iterable<SNode> {
       myModel.setNodeId(id, this);
     }
     myId = id;
+  }
+
+  public void setStringId(String idString) {
+    SNodeId id = SNodeId.createId(idString);
+    setId(id);
   }
 
 //  @NotNull

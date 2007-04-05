@@ -2,16 +2,17 @@ package jetbrains.mps.vcs;
 
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeId;
 
 public class DeleteNodeChange extends Change {
-  private String myNodeId;
+  private SNodeId myNodeId;
 
-  public DeleteNodeChange(String nodeId) {
+  public DeleteNodeChange(SNodeId nodeId) {
     myNodeId = nodeId;
   }
 
 
-  public String getNodeId() {
+  public SNodeId getNodeId() {
     return myNodeId;
   }
 
@@ -19,7 +20,7 @@ public class DeleteNodeChange extends Change {
     return "delete " + myNodeId;
   }
 
-  public String getAffectedNodeId() {
+  public SNodeId getAffectedNodeId() {
     return myNodeId;
   }
 

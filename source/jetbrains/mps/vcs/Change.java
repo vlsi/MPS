@@ -1,10 +1,11 @@
 package jetbrains.mps.vcs;
 
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNodeId;
 
 public abstract class Change {
 
-  public abstract String getAffectedNodeId();
+  public abstract SNodeId getAffectedNodeId();
 
   public abstract boolean apply(SModel m);
 

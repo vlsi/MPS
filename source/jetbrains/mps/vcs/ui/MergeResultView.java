@@ -105,7 +105,7 @@ public class MergeResultView extends JPanel {
   private void applyNewNodes() {
     List<NewNodeChange> newNodeChanges = getChanges(NewNodeChange.class);
 
-    Map<String, NewNodeChange> changesMap = new HashMap<String, NewNodeChange>();
+    Map<SNodeId, NewNodeChange> changesMap = new HashMap<SNodeId, NewNodeChange>();
     for (NewNodeChange c : newNodeChanges) {
       changesMap.put(c.getNodeId(), c);
     }
@@ -115,7 +115,7 @@ public class MergeResultView extends JPanel {
     }
   }
 
-  private void applyNewNodeChange(NewNodeChange c, Map<String, NewNodeChange> map) {
+  private void applyNewNodeChange(NewNodeChange c, Map<SNodeId, NewNodeChange> map) {
     if (myExcludedChanges.contains(c)) {
       return;
     }
@@ -205,16 +205,16 @@ public class MergeResultView extends JPanel {
   }
 
   private void collectPropertyChanflicts() {
-    Map<Pair<String, String>, Set<SetPropertyChange>> changes = new HashMap<Pair<String, String>, Set<SetPropertyChange>>();
+    Map<Pair<SNodeId, String>, Set<SetPropertyChange>> changes = new HashMap<Pair<SNodeId, String>, Set<SetPropertyChange>>();
 
     List<SetPropertyChange> sets = getChanges(SetPropertyChange.class);
 
     for (SetPropertyChange spc : sets) {
-      if (changes.get(new Pair<String, String>(spc.getAffectedNodeId(), spc.getProperty())) == null) {
-        changes.put(new Pair<String, String>(spc.getAffectedNodeId(), spc.getProperty()), new HashSet<SetPropertyChange>());
+      if (changes.get(new Pair<SNodeId, String>(spc.getAffectedNodeId(), spc.getProperty())) == null) {
+        changes.put(new Pair<SNodeId, String>(spc.getAffectedNodeId(), spc.getProperty()), new HashSet<SetPropertyChange>());
       }
 
-      changes.get(new Pair<String, String>(spc.getAffectedNodeId(), spc.getProperty())).add(spc);
+      changes.get(new Pair<SNodeId, String>(spc.getAffectedNodeId(), spc.getProperty())).add(spc);
     }
 
     for (Pair p : changes.keySet()) {
@@ -227,16 +227,16 @@ public class MergeResultView extends JPanel {
   }
 
   private void collectReferenceConflicts() {
-    Map<Pair<String, String>, Set<SetReferenceChange>> changes = new HashMap<Pair<String, String>, Set<SetReferenceChange>>();
+    Map<Pair<SNodeId, String>, Set<SetReferenceChange>> changes = new HashMap<Pair<SNodeId, String>, Set<SetReferenceChange>>();
 
     List<SetReferenceChange> sets = getChanges(SetReferenceChange.class);
 
     for (SetReferenceChange spc : sets) {
-      if (changes.get(new Pair<String, String>(spc.getAffectedNodeId(), spc.getRole())) == null) {
-        changes.put(new Pair<String, String>(spc.getAffectedNodeId(), spc.getRole()), new HashSet<SetReferenceChange>());
+      if (changes.get(new Pair<SNodeId, String>(spc.getAffectedNodeId(), spc.getRole())) == null) {
+        changes.put(new Pair<SNodeId, String>(spc.getAffectedNodeId(), spc.getRole()), new HashSet<SetReferenceChange>());
       }
 
-      changes.get(new Pair<String, String>(spc.getAffectedNodeId(), spc.getRole())).add(spc);
+      changes.get(new Pair<SNodeId, String>(spc.getAffectedNodeId(), spc.getRole())).add(spc);
     }
 
     for (Pair p : changes.keySet()) {
@@ -249,16 +249,16 @@ public class MergeResultView extends JPanel {
   }
 
   private void collectSetNodeConflicts() {
-    Map<Pair<String, String>, Set<SetNodeChange>> changes = new HashMap<Pair<String, String>, Set<SetNodeChange>>();
+    Map<Pair<SNodeId, String>, Set<SetNodeChange>> changes = new HashMap<Pair<SNodeId, String>, Set<SetNodeChange>>();
 
     List<SetNodeChange> sets = getChanges(SetNodeChange.class);
 
     for (SetNodeChange spc : sets) {
-      if (changes.get(new Pair<String, String>(spc.getNodeParent(), spc.getNodeRole())) == null) {
-        changes.put(new Pair<String, String>(spc.getNodeParent(), spc.getNodeRole()), new HashSet<SetNodeChange>());
+      if (changes.get(new Pair<SNodeId, String>(spc.getNodeParent(), spc.getNodeRole())) == null) {
+        changes.put(new Pair<SNodeId, String>(spc.getNodeParent(), spc.getNodeRole()), new HashSet<SetNodeChange>());
       }
 
-      changes.get(new Pair<String, String>(spc.getNodeParent(), spc.getNodeRole())).add(spc);
+      changes.get(new Pair<SNodeId, String>(spc.getNodeParent(), spc.getNodeRole())).add(spc);
     }
 
     for (MoveNodeChange mnc : getChanges(MoveNodeChange.class)) {
@@ -277,7 +277,7 @@ public class MergeResultView extends JPanel {
       }
     }
 
-    for (Pair<String, String> p: changes.keySet()) {
+    for (Pair<SNodeId, String> p: changes.keySet()) {
       if (changes.get(p).size() > 1) {
         List<SetNodeChange> cs = new ArrayList<SetNodeChange>(changes.get(p));
         assert cs.size() == 2;
@@ -423,7 +423,7 @@ public class MergeResultView extends JPanel {
 
 
     public void doubleClick() {
-      String id = myChange.getAffectedNodeId();
+      SNodeId id = myChange.getAffectedNodeId();
       if (myChange instanceof NewNodeChange && ((NewNodeChange) myChange).getNodeParent() != null) {
         NewNodeChange anc = (NewNodeChange) myChange;
         id = anc.getNodeParent();

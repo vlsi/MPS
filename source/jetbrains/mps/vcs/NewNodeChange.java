@@ -1,19 +1,21 @@
 package jetbrains.mps.vcs;
 
+import jetbrains.mps.smodel.SNodeId;
+
 public abstract class NewNodeChange extends Change {
   private String myConceptFqName;
-  private String myNodeId;
+  private SNodeId myNodeId;
   private String myNodeRole;
-  private String myNodeParent;
+  private SNodeId myNodeParent;
 
-  protected NewNodeChange(String conceptFqName, String nodeId, String nodeRole, String nodeParent) {
+  protected NewNodeChange(String conceptFqName, SNodeId nodeId, String nodeRole, SNodeId nodeParent) {
     myConceptFqName = conceptFqName;
     myNodeId = nodeId;
     myNodeRole = nodeRole;
     myNodeParent = nodeParent;
   }
 
-  public String getAffectedNodeId() {
+  public SNodeId getAffectedNodeId() {
     return getNodeId();
   }
 
@@ -21,7 +23,7 @@ public abstract class NewNodeChange extends Change {
     return myConceptFqName;
   }
 
-  public String getNodeId() {
+  public SNodeId getNodeId() {
     return myNodeId;
   }
 
@@ -29,7 +31,7 @@ public abstract class NewNodeChange extends Change {
     return myNodeRole;
   }
 
-  public String getNodeParent() {
+  public SNodeId getNodeParent() {
     return myNodeParent;
   }
 }

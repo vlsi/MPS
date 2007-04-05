@@ -3,19 +3,20 @@ package jetbrains.mps.vcs;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.project.GlobalScope;
 
 public class AddNodeChange extends NewNodeChange {
 
-  private String myPreviousNode;
+  private SNodeId myPreviousNode;
 
-  public AddNodeChange(String nodeType, String nodeId, String role, String parentId, String prevNode) {
+  public AddNodeChange(String nodeType, SNodeId nodeId, String role, SNodeId parentId, SNodeId prevNode) {
     super(nodeType, nodeId, role, parentId);
     myPreviousNode = prevNode;
   }
 
 
-  public String getPreviousNode() {
+  public SNodeId getPreviousNode() {
     return myPreviousNode;
   }
 
@@ -29,7 +30,7 @@ public class AddNodeChange extends NewNodeChange {
       return false;
     }
 
-    String prevNode = getPreviousNode();
+    SNodeId prevNode = getPreviousNode();
     SNode prev = null;
     if (prevNode != null) {
       prev = m.getNodeById(prevNode);

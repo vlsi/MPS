@@ -26,7 +26,7 @@ public class CloneUtil {
   private static SNode clone (SNode node, SModel targetModel, IScope scope) {
     SNode result = SModelUtil_new.instantiateConceptDeclaration(node.getConceptFqName(), targetModel, scope, false);
     assert result != null;
-    result.setId(node.getId());
+    result.setId(node.getSNodeId());
     targetModel.addLanguage(node.getLanguage(scope));
     for (String property : node.getProperties().keySet()) {
       result.setProperty(property, node.getProperty(property), false);

@@ -2,25 +2,26 @@ package jetbrains.mps.vcs;
 
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeId;
 
 public class MoveNodeChange extends Change {
-  private String myNodeId;
-  private String myNewParent;
+  private SNodeId myNodeId;
+  private SNodeId myNewParent;
   private String myNewRole;
 
 
-  public MoveNodeChange(String node, String newParent, String newRole) {
+  public MoveNodeChange(SNodeId node, SNodeId newParent, String newRole) {
     myNodeId = node;
     myNewParent = newParent;
     myNewRole = newRole;
   }
 
 
-  public String getNode() {
+  public SNodeId getNode() {
     return myNodeId;
   }
 
-  public String getNewParent() {
+  public SNodeId getNewParent() {
     return myNewParent;
   }
 
@@ -32,7 +33,7 @@ public class MoveNodeChange extends Change {
     return "move " + myNodeId + " to " + myNewParent;
   }
 
-  public String getAffectedNodeId() {
+  public SNodeId getAffectedNodeId() {
     return myNodeId;
   }
 

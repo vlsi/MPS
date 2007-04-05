@@ -3,18 +3,19 @@ package jetbrains.mps.vcs;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeProxy;
+import jetbrains.mps.smodel.SNodeId;
 
 public class SetReferenceChange extends Change {
-  private String myNodeId;
+  private SNodeId myNodeId;
   private String myRole;
   private SNodeProxy myProxy;
 
   private SModel myModel;
 
   private boolean myInternal;
-  private String myTargetId;
+  private SNodeId myTargetId;
 
-  public SetReferenceChange(String nodeId, String role, SModel model, SNode target) {
+  public SetReferenceChange(SNodeId nodeId, String role, SModel model, SNode target) {
     myNodeId = nodeId;
     myRole = role;
     myModel = model;
@@ -25,11 +26,11 @@ public class SetReferenceChange extends Change {
       myProxy = new SNodeProxy(target);
     } else {
       myInternal = true;
-      myTargetId = target.getId();
+      myTargetId = target.getSNodeId();
     }
   }
 
-  public String getNodeId() {
+  public SNodeId getNodeId() {
     return myNodeId;
   }
 
@@ -51,7 +52,7 @@ public class SetReferenceChange extends Change {
     }
   }
 
-  public String getAffectedNodeId() {
+  public SNodeId getAffectedNodeId() {
     return myNodeId;
   }
 

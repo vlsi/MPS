@@ -49,7 +49,7 @@ public class SModel implements Iterable<SNode> {
   private List<String> myDevKits = new ArrayList<String>();
   private List<ImportElement> myImports = new ArrayList<ImportElement>();
 
-  private Map<String, SNode> myIdToNodeMap = new HashMap<String, SNode>();
+  private Map<SNodeId, SNode> myIdToNodeMap = new HashMap<SNodeId, SNode>();
   private Map<String, SNode> myExternalResolveInfoToNodeMap = new HashMap<String, SNode>();
 
   private SModelEventTranslator myEventTranslator = new SModelEventTranslator();
@@ -192,7 +192,7 @@ public class SModel implements Iterable<SNode> {
 
   public void removeRoot(@NotNull SNode node) {
     if (myRoots.contains(node)) {
-      String id = node.getId();
+      SNodeId id = node.getSNodeId();
       myRoots.remove(node);
       node.unRegisterFromModel();
       if (!isLoading()) UndoManager.instance().undoableActionPerformed(new UndoRootAddOrDelete(node, id, true));
@@ -696,15 +696,21 @@ public class SModel implements Iterable<SNode> {
   }
 
   @Nullable
-  public SNode getNodeById(String nodeId) {
+  public SNode getNodeById(String idString) {
+    SNodeId nodeId = SNodeId.createId(idString);
     return myIdToNodeMap.get(nodeId);
   }
 
-  public Set<String> getNodeIds() {
-    return new HashSet<String>(myIdToNodeMap.keySet());
+  @Nullable
+  public SNode getNodeById(SNodeId nodeId) {
+    return myIdToNodeMap.get(nodeId);
   }
 
-  public boolean containsNode(String id) {
+  public Set<SNodeId> getNodeIds() {
+    return new HashSet<SNodeId>(myIdToNodeMap.keySet());
+  }
+
+  public boolean containsNode(SNodeId id) {
     return myIdToNodeMap.containsKey(id);
   }
 
@@ -755,7 +761,7 @@ public class SModel implements Iterable<SNode> {
   }
 
 
-  public void setNodeId(@NotNull String id, @NotNull SNode node) {
+  void setNodeId(@NotNull SNodeId id, @NotNull SNode node) {
     SNode existingNode = myIdToNodeMap.get(id);
     if (existingNode != null && existingNode != node) {
       LOG.errorWithTrace("couldn't set id=" + id + " to node: " + node.getDebugText() + "\nnode with this id exists: " + existingNode.getDebugText());
@@ -764,7 +770,7 @@ public class SModel implements Iterable<SNode> {
     myIdToNodeMap.put(id, node);
   }
 
-  public void removeNodeId(@NotNull String id) {
+  public void removeNodeId(@NotNull SNodeId id) {
     myIdToNodeMap.remove(id);
   }
 
@@ -905,10 +911,10 @@ public class SModel implements Iterable<SNode> {
 
   private static class UndoRootAddOrDelete implements IUndoableAction {
     private SNode myRoot;
-    private String myId;
+    private SNodeId myId;
     private boolean myAdd;
 
-    UndoRootAddOrDelete(SNode root, String id, boolean isAdd) {
+    UndoRootAddOrDelete(SNode root, SNodeId id, boolean isAdd) {
       myId = id;
       myRoot = root;
       myAdd = isAdd;
@@ -1116,7 +1122,7 @@ public class SModel implements Iterable<SNode> {
     for (SReference reference : node.getReferences()) {
       if (reference.isExternal()) {
         SNode oldReferentNode = reference.getTargetNode();
-        SNode newReferentNode = targetModel.getNodeById(oldReferentNode.getId());
+        SNode newReferentNode = targetModel.getNodeById(oldReferentNode.getSNodeId());
         if (newReferentNode != null) {
           // replace reference
           replacementMap.put(reference, newReferentNode);

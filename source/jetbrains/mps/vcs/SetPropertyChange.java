@@ -2,21 +2,22 @@ package jetbrains.mps.vcs;
 
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeId;
 
 public class SetPropertyChange extends Change {
-  private String myNodeId;
+  private SNodeId myNodeId;
   private String myProperty;
   private String myNewValue;
 
 
-  public SetPropertyChange(String nodeId, String property, String newValue) {
+  public SetPropertyChange(SNodeId nodeId, String property, String newValue) {
     myNodeId = nodeId;
     myProperty = property;
     myNewValue = newValue;
   }
 
 
-  public String getNodeId() {
+  public SNodeId getNodeId() {
     return myNodeId;
   }
 
@@ -32,7 +33,7 @@ public class SetPropertyChange extends Change {
     return "set property " + myProperty + " for node " + myNodeId + " to " + myNewValue;
   }
 
-  public String getAffectedNodeId() {
+  public SNodeId getAffectedNodeId() {
     return myNodeId;
   }
 

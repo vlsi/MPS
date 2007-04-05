@@ -3,10 +3,11 @@ package jetbrains.mps.vcs;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.project.GlobalScope;
 
 public class AddRootChange extends NewNodeChange {
-  public AddRootChange(String type, String nodeId) {
+  public AddRootChange(String type, SNodeId nodeId) {
     super(type, nodeId, null, null);
   }
 

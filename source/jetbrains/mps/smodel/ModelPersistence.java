@@ -306,7 +306,7 @@ public class ModelPersistence {
     }
 
     String myOldId = nodeElement.getAttributeValue(ID);
-    node.setId(myOldId);
+    node.setStringId(myOldId);
 
 
     String cachedExtResolveInfo = nodeElement.getAttributeValue(EXT_RESOLVE_INFO);

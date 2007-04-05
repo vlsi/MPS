@@ -33,37 +33,37 @@ public class DiffBuilder {
   }
 
   private void collectDeletedNodes() {
-    Set<String> oldNodes = myOldModel.getNodeIds();
-    Set<String> newNodeIds = myNewModel.getNodeIds();
+    Set<SNodeId> oldNodes = myOldModel.getNodeIds();
+    Set<SNodeId> newNodeIds = myNewModel.getNodeIds();
     oldNodes.removeAll(newNodeIds);
 
-    for (String id : oldNodes) {
+    for (SNodeId id : oldNodes) {
       myChanges.add(new DeleteNodeChange(id));
     }
   }
 
   private void collectAddedNodes() {
-    Set<String> oldNodes = myOldModel.getNodeIds();
-    Set<String> newNodeIds = myNewModel.getNodeIds();
+    Set<SNodeId> oldNodes = myOldModel.getNodeIds();
+    Set<SNodeId> newNodeIds = myNewModel.getNodeIds();
 
     newNodeIds.removeAll(oldNodes);
 
-    for (String id : newNodeIds) {
+    for (SNodeId id : newNodeIds) {
       SNode sNode = myNewModel.getNodeById(id);
       assert sNode != null;
       String role = sNode.getRole_();
 
       if (role != null) {
         if (!isToManyCardinality(sNode.getParent().getConceptFqName(), role)) {
-          myChanges.add(new SetNodeChange(sNode.getConceptFqName(), id, role, sNode.getParent().getId()));
+          myChanges.add(new SetNodeChange(sNode.getConceptFqName(), id, role, sNode.getParent().getSNodeId()));
         } else {
           SNode prevChild = sNode.getParent().getPrevChild(sNode);
-          String prevId = null;
+          SNodeId prevId = null;
           if (prevChild != null) {
-            prevId = prevChild.getId();
+            prevId = prevChild.getSNodeId();
           }
 
-          myChanges.add(new AddNodeChange(sNode.getConceptFqName(), id, role, sNode.getParent().getId(), prevId));
+          myChanges.add(new AddNodeChange(sNode.getConceptFqName(), id, role, sNode.getParent().getSNodeId(), prevId));
         }
       } else {
         myChanges.add(new AddRootChange(sNode.getConceptFqName(), id));
@@ -72,19 +72,19 @@ public class DiffBuilder {
   }
 
   private void collectMovedNodes() {
-    Set<String> newNodes = myNewModel.getNodeIds();
-    Set<String> oldNodes = myOldModel.getNodeIds();
+    Set<SNodeId> newNodes = myNewModel.getNodeIds();
+    Set<SNodeId> oldNodes = myOldModel.getNodeIds();
 
     oldNodes.retainAll(newNodes);
 
-    for (String id : oldNodes) {
+    for (SNodeId id : oldNodes) {
       SNode n = myNewModel.getNodeById(id);
       SNode o = myOldModel.getNodeById(id);
 
       assert n != null && o != null;
 
-      String nid = getParentId(n);
-      String oid = getParentId(o);
+      SNodeId nid = getParentId(n);
+      SNodeId oid = getParentId(o);
 
       if (!(nid + "").equals(oid + "")) {
         myChanges.add(new MoveNodeChange(id, nid, n.getRole_()));
@@ -92,17 +92,17 @@ public class DiffBuilder {
     }
   }
 
-  private String getParentId(SNode n) {
+  private SNodeId getParentId(SNode n) {
     if (n.getParent() == null) {
       return null;
     }
-    return n.getParent().getId();
+    return n.getParent().getSNodeId();
   }
 
   private void collectPropertyChanges() {
-    Set<String> newNodeIds = myNewModel.getNodeIds();
+    Set<SNodeId> newNodeIds = myNewModel.getNodeIds();
 
-    for (String id : newNodeIds) {
+    for (SNodeId id : newNodeIds) {
       SNode newNode = myNewModel.getNodeById(id);
       SNode oldNode = myOldModel.getNodeById(id);
 
@@ -140,9 +140,9 @@ public class DiffBuilder {
   }
 
   private void collectReferenceChanges() {
-    Set<String> newNodeIds = myNewModel.getNodeIds();
+    Set<SNodeId> newNodeIds = myNewModel.getNodeIds();
 
-    for (String id : newNodeIds) {
+    for (SNodeId id : newNodeIds) {
       SNode newNode = myNewModel.getNodeById(id);
       SNode oldNode = myOldModel.getNodeById(id);
 

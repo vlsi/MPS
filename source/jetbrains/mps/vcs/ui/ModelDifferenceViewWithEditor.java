@@ -6,6 +6,7 @@ import jetbrains.mps.nodeEditor.IGutterMessageOwner;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.vcs.*;
 import jetbrains.mps.util.CollectionUtil;
 
@@ -29,8 +30,8 @@ public class ModelDifferenceViewWithEditor extends JPanel implements IGutterMess
   private IOperationContext myOperationContext;
   private UIEditorComponent myModelEditorComponent;
   public InspectorEditorComponent myModelInspector;
-  private Set<String> myChangedNodes = new HashSet<String>();
-  private Set<String> myAddedNodes = new HashSet<String>();
+  private Set<SNodeId> myChangedNodes = new HashSet<SNodeId>();
+  private Set<SNodeId> myAddedNodes = new HashSet<SNodeId>();
   private SNode myNewRoot;
 
 
@@ -88,11 +89,11 @@ public class ModelDifferenceViewWithEditor extends JPanel implements IGutterMess
   public void updateView() {
     SModel newModel = myNewRoot.getModel();
     myModelEditorComponent.editNode(myNewRoot);
-    for (String changedNodeId : myChangedNodes) {
+    for (SNodeId changedNodeId : myChangedNodes) {
       SNode changedNode = newModel.getNodeById(changedNodeId);
       myModelEditorComponent.getHighlightManager().mark(changedNode, Color.BLUE, "", this);
     }
-    for (String addedNodeId : myAddedNodes) {
+    for (SNodeId addedNodeId : myAddedNodes) {
       SNode addedNode = newModel.getNodeById(addedNodeId);
       myModelEditorComponent.getHighlightManager().mark(addedNode, Color.GREEN, "", this);
     }

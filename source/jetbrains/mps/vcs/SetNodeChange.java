@@ -4,7 +4,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.GlobalScope;
 
 public class SetNodeChange extends NewNodeChange {
-  public SetNodeChange(String nodeType, String nodeId, String role, String parentId) {
+  public SetNodeChange(String nodeType, SNodeId nodeId, String role, SNodeId parentId) {
     super(nodeType, nodeId, role, parentId);
   }
 
