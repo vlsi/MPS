@@ -24,11 +24,11 @@ import java.util.Map;
   /*package*/ GenerationPlanBuilder() {
   }
 
-  public GenerationPlan createPlan(List<Generator> generators) {
-    return createPlan(generators, null);
+  public GenerationPlan createPlan(List<Generator> generators, List<MappingConfiguration> ignoreGreaterPriMappings) {
+    return createPlan(generators, null, ignoreGreaterPriMappings);
   }
 
-  public GenerationPlan createPlan(List<Generator> generators, GeneratorDescriptor descriptorWorkingCopy) {
+  public GenerationPlan createPlan(List<Generator> generators, GeneratorDescriptor descriptorWorkingCopy, List<MappingConfiguration> ignoreGreaterPriMappings) {
     for (Generator generator : generators) {
       myAllMappings.addAll(generator.getOwnMappings());
     }
@@ -50,7 +50,7 @@ import java.util.Map;
         rules = descriptor.getPriorityRules();
       }
       for (MappingPriorityRule rule : rules) {
-        fillPriorityMap(rule, generator, priorityMap);
+        fillPriorityMap(rule, generator, priorityMap, ignoreGreaterPriMappings);
       }
     }
 
@@ -102,7 +102,7 @@ import java.util.Map;
     return step;
   }
 
-  private void fillPriorityMap(MappingPriorityRule rule, Generator generator, Map<MappingConfiguration, Map<MappingConfiguration, MappingPriorityRule>> priorityMap) {
+  private void fillPriorityMap(MappingPriorityRule rule, Generator generator, Map<MappingConfiguration, Map<MappingConfiguration, MappingPriorityRule>> priorityMap, List<MappingConfiguration> ignoreGreaterPriMappings) {
 
     MappingConfig_AbstractRef greaterPriMappingRef = rule.getGreaterPriorityMapping();
     MappingConfig_AbstractRef lesserPriMappingRef = rule.getLesserPriorityMapping();
@@ -111,8 +111,9 @@ import java.util.Map;
     // map: lesser mapping -> {greater mapping, .... , greater mapping }
     List<MappingConfiguration> greaterPriMappings = getMappingsFromRef(greaterPriMappingRef, generator);
     List<MappingConfiguration> lesserPriMappings = getMappingsFromRef(lesserPriMappingRef, generator);
-    List<MappingConfiguration> lesserPriMappingsComplement = CollectionUtil.substruct(lesserPriMappings, greaterPriMappings);
-    for (MappingConfiguration lesserPriMapping : lesserPriMappingsComplement) {
+    lesserPriMappings = CollectionUtil.substruct(lesserPriMappings, greaterPriMappings);
+    greaterPriMappings = CollectionUtil.substruct(greaterPriMappings, ignoreGreaterPriMappings);
+    for (MappingConfiguration lesserPriMapping : lesserPriMappings) {
       Map<MappingConfiguration, MappingPriorityRule> gtPriSet = priorityMap.get(lesserPriMapping);
       for (MappingConfiguration greaterPriMapping : greaterPriMappings) {
         if (!gtPriSet.containsKey(greaterPriMapping)) {

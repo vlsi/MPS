@@ -72,17 +72,20 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   public void replaceInputModel(SModelDescriptor inputModel) {
     myTransientObjects.clear();
     if (myGenerationStepData != null) {
-      // auto-plan
-      myGenerationStepData = new GenerationStepData(inputModel.getSModel());
-      myGeneratorModules = myGenerationStepData.getGenerators();
-      myTemplateModels = myGenerationStepData.getTemplateModels();
-      myMappingConfigurations = CollectionUtil.lisAsSet(myGenerationStepData.getMappings());
+      // auto-plan - nothing
     } else {
       // old
       myGeneratorModules = getUsedGenerators(inputModel.getSModel());
       initTemplateModels();
+      myTransientModule.addGeneratorModules(myGeneratorModules);
     }
+  }
 
+  public void replaceGenerationStepData(GenerationStepData generationStepData) {
+    myGenerationStepData = generationStepData;
+    myGeneratorModules = myGenerationStepData.getGenerators();
+    myTemplateModels = myGenerationStepData.getTemplateModels();
+    myMappingConfigurations = CollectionUtil.lisAsSet(myGenerationStepData.getMappings());
     myTransientModule.addGeneratorModules(myGeneratorModules);
   }
 

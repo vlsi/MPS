@@ -16,11 +16,16 @@ public class GenerationPlanUtil {
   private static final Logger LOG = Logger.getLogger(GenerationPlanUtil.class);
 
   public static GenerationPlan createGenerationPlan(SModelDescriptor inputModel, IScope scope) {
+    return createGenerationPlan(inputModel, new ArrayList<MappingConfiguration>(), scope);
+  }
+
+  public static GenerationPlan createGenerationPlan(SModelDescriptor inputModel, List<MappingConfiguration> alreadyProcessedMappings, IScope scope) {
     List<Generator> generators = collectGenerators(inputModel, scope, false, new ArrayList<Generator>(), new HashSet<Language>());
-    return new GenerationPlanBuilder().createPlan(generators);
+    return new GenerationPlanBuilder().createPlan(generators, alreadyProcessedMappings);
   }
 
   public static GenerationPlan createGenerationPlan(GeneratorDescriptor descriptorWorkingCopy, IScope scope) {
+
     ArrayList<Generator> generators = new ArrayList<Generator>();
     HashSet<Language> processedLanguages = new HashSet<Language>();
 
@@ -36,7 +41,7 @@ public class GenerationPlanUtil {
       collectGenerators(model, scope, true, generators, processedLanguages);
     }
 
-    return new GenerationPlanBuilder().createPlan(generators, descriptorWorkingCopy);
+    return new GenerationPlanBuilder().createPlan(generators, descriptorWorkingCopy, new ArrayList<MappingConfiguration>());
   }
 
   private static List<Generator> collectGenerators(SModelDescriptor inputModel, IScope scope, boolean excludeTLBase, List<Generator> usedGenerators, Set<Language> processedLanguages) {
@@ -107,7 +112,7 @@ public class GenerationPlanUtil {
   }
 
   public static List<String> toStrings(List<MappingConfiguration> step) {
-    List<String> text = new ArrayList<String>();
+    List<String> strings = new ArrayList<String>();
 
     // consolidate mappings
     Map<SModel, Integer> numOfMappingsByModel = new HashMap<SModel, Integer>();
@@ -122,7 +127,7 @@ public class GenerationPlanUtil {
     while (models.hasNext()) {
       SModel model = models.next();
       int totalMappings = model.allAdapters(MappingConfiguration.class).size();
-      if (numOfMappingsByModel.get(model) < totalMappings) {
+      if (totalMappings <= 1 || numOfMappingsByModel.get(model) < totalMappings) {
         models.remove();
       } else {
         numOfMappingsByModel.put(model, 0);
@@ -134,14 +139,16 @@ public class GenerationPlanUtil {
       SModel model = mappingConfig.getModel();
       if (numOfMappingsByModel.containsKey(model)) {
         if (numOfMappingsByModel.get(model) == 0) {
-          text.add(model.getLongName() + ".*");
+          strings.add(model.getLongName() + ".*");
           numOfMappingsByModel.put(model, 1);
         }
       } else {
-        text.add(model.getLongName() + "." + mappingConfig.getName());
+        strings.add(model.getLongName() + "." + mappingConfig.getName());
       }
     }
 
-    return text;
+    Collections.sort(strings);
+    return strings;
   }
+
 }

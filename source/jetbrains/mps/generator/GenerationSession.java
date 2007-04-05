@@ -134,10 +134,23 @@ public class GenerationSession implements IGenerationSession {
 
     // -- replace context
     GenerationSessionContext context = new GenerationSessionContext(targetLanguage, sourceModel, myInvocationContext, mappings, myCurrentContext);
-    List<Generator> generators = context.getGeneratorModules();
-    if (generators.isEmpty()) {
-      addProgressMessage(MessageKind.WARNING, "skip model \"" + sourceModel.getUID() + "\" : no generator avalable");
-      return new GenerationStatus(sourceModel, null, null, false, false, false);
+    if (context.getGenerationStepData() != null) {
+      // auto-plan
+      if (!checkGenerationStepData(context.getGenerationStepData())) {
+        throw new GenerationCanceledException();
+      }
+      if (context.getGenerationStepData().getMappings().isEmpty()) {
+        addProgressMessage(MessageKind.WARNING, "skip model \"" + sourceModel.getUID() + "\" : no generator avalable");
+        return new GenerationStatus(sourceModel, null, null, false, false, false);
+      }
+      printGenerationStepData(context.getGenerationStepData());
+
+    } else {
+      List<Generator> generators = context.getGeneratorModules();
+      if (generators.isEmpty()) {
+        addProgressMessage(MessageKind.WARNING, "skip model \"" + sourceModel.getUID() + "\" : no generator avalable");
+        return new GenerationStatus(sourceModel, null, null, false, false, false);
+      }
     }
 
     setGenerationSessionContext(context);
@@ -178,9 +191,37 @@ public class GenerationSession implements IGenerationSession {
 
   private SModel generateModel(SModel inputModel, Language targetLanguage, ITemplateGenerator generator) {
     GenerationSessionContext generationContext = generator.getGeneratorSessionContext();
-    if (generationContext.getGenerationStepData() != null) {
-      checkGenerationStepData(generationContext.getGenerationStepData());
+    if (generationContext.getGenerationStepData() == null) {
+      // old
+      return generateModel(inputModel, targetLanguage, generator, generationContext);
     }
+
+    // auto-plan
+    SModel outputModel = null;
+    GenerationStepData generationStepData = generationContext.getGenerationStepData();
+    while (true) {
+      outputModel = generateModel(inputModel, targetLanguage, generator, generationContext);
+      // need more steps?
+      if (!generationStepData.update(outputModel)) {
+        // generation complete
+        break;
+      }
+      if (!checkGenerationStepData(generationStepData)) {
+        throw new GenerationCanceledException();
+      }
+      if (generationStepData.getMappings().isEmpty()) {
+        break;
+      }
+      printGenerationStepData(generationStepData);
+      inputModel = outputModel;
+      generationContext.replaceInputModel(inputModel.getModelDescriptor());
+      generationContext.replaceGenerationStepData(generationStepData);
+    }
+
+    return outputModel;
+  }
+
+  private SModel generateModel(SModel inputModel, Language targetLanguage, ITemplateGenerator generator, GenerationSessionContext generationContext) {
     IModule module = generationContext.getModule();
     SModelDescriptor currentInputModel = inputModel.getModelDescriptor();
     SModelDescriptor currentOutputModel = createTransientModel(inputModel, module);
@@ -216,9 +257,6 @@ public class GenerationSession implements IGenerationSession {
       // apply mapping to the output model
       addMessage(MessageKind.INFORMATION, "generating model \"" + currentOutputModel.getModelUID() + "\"");
       generationContext.replaceInputModel(currentOutputModel);
-      if (generationContext.getGenerationStepData() != null) {
-        checkGenerationStepData(generationContext.getGenerationStepData());
-      }
       SModelDescriptor transientModel = createTransientModel(currentInputModel.getSModel(), module);
       currentInputModel = currentOutputModel;
       if (!generator.doSecondaryMapping(currentInputModel.getSModel(), transientModel.getSModel())) {
@@ -404,13 +442,7 @@ public class GenerationSession implements IGenerationSession {
     return "generationSession_" + getSessionId();
   }
 
-  private void checkGenerationStepData(GenerationStepData stepData) {
-    addMessage(new Message(MessageKind.INFORMATION, "apply mapping configuration:"));
-    List<String> messages = GenerationPlanUtil.toStrings(stepData.getMappings());
-    for (String message : messages) {
-      addMessage(new Message(MessageKind.INFORMATION, "    " + message));
-    }
-
+  private boolean checkGenerationStepData(GenerationStepData stepData) {
     if (stepData.hasConflictingPriorityRules()) {
       List<String> errors = stepData.getConflictingPriorityRulesAsStrings();
       for (String error : errors) {
@@ -420,9 +452,16 @@ public class GenerationSession implements IGenerationSession {
       int option = JOptionPane.showConfirmDialog(null,
               "Conflicting mapping priority rules encountered.\nContinue generation?",
               "", JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE);
-      if (option != JOptionPane.YES_OPTION) {
-        throw new GenerationCanceledException();
-      }
+      return option == JOptionPane.YES_OPTION;
+    }
+    return true;
+  }
+
+  private void printGenerationStepData(GenerationStepData stepData) {
+    addMessage(new Message(MessageKind.INFORMATION, "apply mapping configurations:"));
+    List<String> messages = GenerationPlanUtil.toStrings(stepData.getMappings());
+    for (String message : messages) {
+      addMessage(new Message(MessageKind.INFORMATION, "    " + message));
     }
   }
 }
