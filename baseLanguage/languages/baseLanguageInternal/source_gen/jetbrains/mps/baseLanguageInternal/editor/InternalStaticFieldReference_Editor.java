@@ -33,7 +33,7 @@ public class InternalStaticFieldReference_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createFqClassNameCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "."));
     editorCell.addEditorCell(this.createFieldNameCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1173995375435");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173995375435");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -45,7 +45,7 @@ public class InternalStaticFieldReference_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1173995377125");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173995377125");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -63,7 +63,7 @@ public class InternalStaticFieldReference_Editor extends DefaultNodeEditor {
       editorCellLabel.getTextLine().setTextColor(MPSColors.DARK_GREEN);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1173995481086");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173995481086");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -97,7 +97,7 @@ public class InternalStaticFieldReference_Editor extends DefaultNodeEditor {
       editorCellLabel.getTextLine().setTextColor(MPSColors.DARK_GREEN);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1173995486322");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173995486322");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

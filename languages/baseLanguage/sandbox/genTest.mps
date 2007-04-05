@@ -14,11 +14,14 @@
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1173992785002">
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1173992955582">
           <node role="expression" type="jetbrains.mps.baseLanguageInternal.InternalStaticMethodCall" id="1173992955583">
-            <property name="fqClassName" value="java.lang.String" />
             <property name="methodName" value="valueOf" />
+            <property name="fqClassName" value="java.lang.String" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguageInternal.InternalStaticFieldReference" id="1173995701616">
               <property name="fqClassName" value="java.util.TimeZone" />
               <property name="fieldName" value="LONG" />
+            </node>
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1175794438345">
+              <link role="classifier" extResolveInfo="1.[Classifier]String" />
             </node>
           </node>
         </node>

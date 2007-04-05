@@ -12,6 +12,18 @@
     <link role="conceptDeclaration" targetNodeId="1.1173990517731" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1173990744300">
       <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1175794014860">
+        <property name="text" value="[" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1175794020991">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="1.1175794062018" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1175794017816">
+        <property name="text" value="]" />
+        <property name="drawBorder" value="false" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1173992540713">
         <property name="textFgColor" value="DARK_GREEN" />
         <property name="drawBorder" value="false" />

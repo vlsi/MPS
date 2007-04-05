@@ -7,10 +7,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.baseLanguage.structure.Type;
 
 public class InternalStaticMethodCall extends BaseMethodCall {
   public static String FQ_CLASS_NAME = "fqClassName";
   public static String METHOD_NAME = "methodName";
+  public static String RETURN_TYPE = "returnType";
 
   public  InternalStaticMethodCall(SNode node) {
     super(node);
@@ -34,5 +36,11 @@ public class InternalStaticMethodCall extends BaseMethodCall {
   }
   public void setMethodName(String value) {
     this.setProperty(InternalStaticMethodCall.METHOD_NAME, value);
+  }
+  public Type getReturnType() {
+    return (Type)this.getChild(InternalStaticMethodCall.RETURN_TYPE);
+  }
+  public void setReturnType(Type node) {
+    super.setChild(InternalStaticMethodCall.RETURN_TYPE, node);
   }
 }

@@ -31,7 +31,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell(context, node, "_"));
     editorCell.addEditorCell(this.createFqClassNameCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174914170570");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174914170570");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -43,7 +43,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174914681253");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174914681253");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -60,7 +60,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174914171915");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174914171915");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

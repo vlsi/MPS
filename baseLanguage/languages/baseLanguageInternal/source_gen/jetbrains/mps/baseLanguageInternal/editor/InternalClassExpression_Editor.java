@@ -31,7 +31,7 @@ public class InternalClassExpression_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createTypeCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, ".class"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174478736536");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174478736536");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -43,7 +43,7 @@ public class InternalClassExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174478748651");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174478748651");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -60,7 +60,7 @@ public class InternalClassExpression_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1174478741007");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174478741007");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
