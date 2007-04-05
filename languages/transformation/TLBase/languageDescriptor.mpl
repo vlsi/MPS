@@ -37,7 +37,7 @@
       </module>
       <external-templates />
       <mapping-priorities>
-        <mapping-priority-rule>
+        <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
             <all-local-mappings />
           </greater-priority-mapping>
