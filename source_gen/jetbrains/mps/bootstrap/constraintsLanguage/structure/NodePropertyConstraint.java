@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
 
 public class NodePropertyConstraint extends BaseConcept {
@@ -27,10 +27,10 @@ public class NodePropertyConstraint extends BaseConcept {
     return NodePropertyConstraint.newInstance(sm, false);
   }
 
-  public ConceptDeclaration getApplicableConcept() {
-    return (ConceptDeclaration)this.getReferent(NodePropertyConstraint.APPLICABLE_CONCEPT);
+  public AbstractConceptDeclaration getApplicableConcept() {
+    return (AbstractConceptDeclaration)this.getReferent(NodePropertyConstraint.APPLICABLE_CONCEPT);
   }
-  public void setApplicableConcept(ConceptDeclaration node) {
+  public void setApplicableConcept(AbstractConceptDeclaration node) {
     super.setReferent(NodePropertyConstraint.APPLICABLE_CONCEPT, node);
   }
   public PropertyDeclaration getApplicableProperty() {
