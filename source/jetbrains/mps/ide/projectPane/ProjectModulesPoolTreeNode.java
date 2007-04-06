@@ -77,11 +77,11 @@ class ProjectModulesPoolTreeNode extends TextTreeNode {
       }
 
       if (node.getModule() instanceof Solution) {
-        return "Solutions";
+        return "Solutions." + NameUtil.namespaceFromLongName(node.getModule().toString());
       }
 
       if (node.getModule() instanceof DevKit) {
-        return "DevKits";
+        return "DevKits." + NameUtil.namespaceFromLongName(node.getModule().toString());
       }
 
       if (node.getModule() instanceof Language) {
