@@ -16,10 +16,10 @@ import jetbrains.mps.project.Solution;
 import javax.swing.JPopupMenu;
 import java.util.*;
 
-public class ModelNamespaceTreeBuilder {
+public class NamespaceTreeBuilder {
   private NamespaceNode myRootNamespace = new NamespaceNode("");
 
-  public ModelNamespaceTreeBuilder() {
+  public NamespaceTreeBuilder() {
   }
 
   public void addSmodelNode(SModelTreeNode node) {

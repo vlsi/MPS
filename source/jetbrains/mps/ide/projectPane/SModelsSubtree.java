@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.ProjectModels;
 
 import javax.swing.Icon;
 import javax.swing.JPopupMenu;
-import javax.swing.JOptionPane;
 import java.util.*;
 import java.awt.event.KeyEvent;
 import java.awt.Rectangle;
@@ -91,7 +90,7 @@ public class SModelsSubtree {
     public void init() {
       if (myInitialized) return;
 
-      ModelNamespaceTreeBuilder builder = new ModelNamespaceTreeBuilder();
+      NamespaceTreeBuilder builder = new NamespaceTreeBuilder();
 
       for (SModelDescriptor md : SortUtil.sortModels(myDescriptors)) {
         builder.addSmodelNode(new SModelTreeNode(md, null, getOperationContext(), false));
