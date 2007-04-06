@@ -1,12 +1,10 @@
 package jetbrains.mps.reloading;
 
-import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.ReadUtil;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.*;
@@ -14,7 +12,7 @@ import java.util.*;
 /**
  * @author Kostik
  */
-public class FileClassPathItem extends AbstractClassPathItem{
+public class FileClassPathItem extends AbstractClassPathItem {
   private String myClassPath;
 
   private Map<String, Set<String>> mySubpackagesCache = new HashMap<String, Set<String>>();
@@ -43,11 +41,15 @@ public class FileClassPathItem extends AbstractClassPathItem{
     File file = new File(path);
     try {
       byte[] result = new byte[(int) file.length()];
-      FileInputStream inp = new FileInputStream(file);
-
-      ReadUtil.read(result, inp);
-
-      inp.close();
+      InputStream inp = null;
+      try {
+        inp = new BufferedInputStream(new FileInputStream(file));
+        ReadUtil.read(result, inp);
+      } finally {
+        if (inp != null) {
+          inp.close();
+        }
+      }
 
       return result;
     } catch (IOException e) {
@@ -66,7 +68,7 @@ public class FileClassPathItem extends AbstractClassPathItem{
   }
 
   @NotNull
-  public Set<String> getAvailableClasses(String namespace) {    
+  public Set<String> getAvailableClasses(String namespace) {
     if (!myAvailableClassesCache.containsKey(namespace)) {
       buildCacheFor(namespace);
     }
