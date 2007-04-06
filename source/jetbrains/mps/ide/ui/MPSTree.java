@@ -356,7 +356,9 @@ public abstract class MPSTree extends JTree {
 
   public void expandRoot() {
     expandPath(new TreePath(new Object[] { getRootNode() }));
-    getRootNode().init();
+    if (!getRootNode().isInitialized()) {
+      getRootNode().init();
+    }    
   }
 
   public void expandAll(MPSTreeNode node) {
