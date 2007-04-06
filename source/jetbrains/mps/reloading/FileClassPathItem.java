@@ -43,7 +43,7 @@ public class FileClassPathItem extends AbstractClassPathItem {
       byte[] result = new byte[(int) file.length()];
       InputStream inp = null;
       try {
-        inp = new BufferedInputStream(new FileInputStream(file));
+        inp = new FileInputStream(file);
         ReadUtil.read(result, inp);
       } finally {
         if (inp != null) {
