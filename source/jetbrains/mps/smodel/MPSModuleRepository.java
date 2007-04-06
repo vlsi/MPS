@@ -437,6 +437,15 @@ public class MPSModuleRepository {
     }
     if (language != null && modules.size() > 1) {
       LOG.error("more than 1 language registered with the same namespace: " + language.getNamespace());
+      for (IModule m : modules) {
+        File descriptorFile = m.getDescriptorFile();
+        if (descriptorFile == null) {
+          LOG.error("module without descriptor");
+        } else {
+          LOG.error(descriptorFile.getAbsolutePath());
+        }
+      }
+
     }
     return language;
   }
