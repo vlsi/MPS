@@ -21,7 +21,7 @@ public class SequenceOperation_Editor extends DefaultNodeEditor {
     editorCell.setEditable(true);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1171391160396");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171391160396");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

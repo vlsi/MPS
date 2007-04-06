@@ -35,7 +35,7 @@ public class TakeOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "take("));
     editorCell.addEditorCell(this.createElementsToTakeCell(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, ")"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1172664400582");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172664400582");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -48,7 +48,7 @@ public class TakeOperation_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new ISubstituteInfoPart[]{new TakeOperation_replaceWith_SequenceOperation_cellMenu()}));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1172664402224");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172664402224");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -60,7 +60,7 @@ public class TakeOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1172664411416");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172664411416");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -77,7 +77,7 @@ public class TakeOperation_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1172664409117");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172664409117");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

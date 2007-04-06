@@ -22,7 +22,7 @@ public class ToListOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1151703486466");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1151703486466");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

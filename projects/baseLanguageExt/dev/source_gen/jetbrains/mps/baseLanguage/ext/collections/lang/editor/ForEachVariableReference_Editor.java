@@ -31,7 +31,7 @@ public class ForEachVariableReference_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1153944293571");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1153944293571");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
