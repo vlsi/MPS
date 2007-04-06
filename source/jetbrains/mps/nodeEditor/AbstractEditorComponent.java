@@ -218,23 +218,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        RecentEditorsMenu m = new RecentEditorsMenu(myOperationContext);
-
-        if (!m.isHasItems()) return;
-
-        int x = 0;
-        int y = 0;
-        EditorCell cell = getSelectedCell();
-        if (cell != null) {
-          x = cell.getX();
-          y = cell.getY();
-        }
-        m.show(AbstractEditorComponent.this, x, y);
-      }
-    }, KeyStroke.getKeyStroke("control E"), WHEN_IN_FOCUSED_WINDOW);
-
-    registerKeyboardAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
         moveCurrentUp();
       }
     }, KeyStroke.getKeyStroke("alt UP"), WHEN_FOCUSED);

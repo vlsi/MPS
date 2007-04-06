@@ -153,14 +153,6 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
 
     setBackground(Color.WHITE);
 
-    // actions
-    registerKeyboardAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
-        RecentEditorsMenu m = new RecentEditorsMenu(myOperationContext);
-        if (!m.isHasItems()) return;
-        m.show(LanguageHierarchiesComponent.this, getX(), getY());
-      }
-    }, KeyStroke.getKeyStroke("control E"), WHEN_IN_FOCUSED_WINDOW);
 
     //ctrl-alt-arrows
     registerKeyboardAction(new AbstractAction() {
