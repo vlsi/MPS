@@ -4,9 +4,10 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.DevKit;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.NameUtil;
 
 import javax.swing.*;
 import java.util.HashSet;
@@ -36,10 +37,13 @@ class ProjectModulesPoolTreeNode extends TextTreeNode {
 
   private void populate() {
     List<IModule> modules = collectModules();
+    ModulePoolNamespaceBuilder builder = new ModulePoolNamespaceBuilder();
     for (IModule module : modules) {
       GenericModuleTreeNode moduleTreeNode = new GenericModuleTreeNode(module, myProject);
-      this.add(moduleTreeNode);
+      builder.addNode(moduleTreeNode);
     }
+
+    builder.fillNode(this);
   }
 
   private List<IModule> collectModules() {
@@ -62,6 +66,29 @@ class ProjectModulesPoolTreeNode extends TextTreeNode {
         modules.add(ownedModule);
         collectModules(ownedModule, modules);
       }
+    }
+  }
+
+  private class ModulePoolNamespaceBuilder extends NamespaceTreeBuilder<GenericModuleTreeNode> {
+    protected String getNamespace(GenericModuleTreeNode node) {
+      if (node.getModule() instanceof Generator) {
+        Generator generator = (Generator) node.getModule();
+        return "Languages." + NameUtil.namespaceFromLongName(generator.getSourceLanguage().getNamespace());
+      }
+
+      if (node.getModule() instanceof Solution) {
+        return "Solutions";
+      }
+
+      if (node.getModule() instanceof DevKit) {
+        return "DevKits";
+      }
+
+      if (node.getModule() instanceof Language) {
+        return "Languages." + NameUtil.namespaceFromLongName(node.getModule().getModuleUID());
+      }
+
+      return "Others." + node.getModule().getModuleUID();
     }
   }
 }

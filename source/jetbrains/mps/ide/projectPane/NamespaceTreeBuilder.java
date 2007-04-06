@@ -21,7 +21,7 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode> {
 
   protected abstract String getNamespace(N node);
 
-  public void addSmodelNode(N node) {
+  public void addNode(N node) {
     String namespace = getNamespace(node);
     List<String> pathElements = new ArrayList<String>(Arrays.asList(namespace.split("\\.")));
         

@@ -93,7 +93,7 @@ public class SModelsSubtree {
       NamespaceTreeBuilder builder = new SModelNamespaceTreeBuilder();
 
       for (SModelDescriptor md : SortUtil.sortModels(myDescriptors)) {
-        builder.addSmodelNode(new SModelTreeNode(md, null, getOperationContext(), false));
+        builder.addNode(new SModelTreeNode(md, null, getOperationContext(), false));
       }
 
       builder.fillNode(this);
