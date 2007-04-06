@@ -1,30 +1,28 @@
 package jetbrains.mps.ide.projectPane;
 
-import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.util.CollectionUtil;
 
 import javax.swing.JPopupMenu;
 import java.util.*;
 
-public class NamespaceTreeBuilder {
+public abstract class NamespaceTreeBuilder<N extends MPSTreeNode> {
   private NamespaceNode myRootNamespace = new NamespaceNode("");
 
-  public NamespaceTreeBuilder() {
+  protected NamespaceTreeBuilder() {
   }
 
-  public void addSmodelNode(SModelTreeNode node) {
-    SModelDescriptor d = node.getSModelDescriptor();
-    String namespace = d.getModelUID().getNamespace();
+  protected abstract String getNamespace(N node);
+
+  public void addSmodelNode(N node) {
+    String namespace = getNamespace(node);
     List<String> pathElements = new ArrayList<String>(Arrays.asList(namespace.split("\\.")));
         
     if (pathElements.size() == 1 && pathElements.get(0).equals("")) {
@@ -93,7 +91,7 @@ public class NamespaceTreeBuilder {
     }
   }
 
-  private class NamespaceNode extends TextTreeNode {
+  private static class NamespaceNode extends TextTreeNode {
     private String myName;
 
     public NamespaceNode(String name) {
