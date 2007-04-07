@@ -198,10 +198,10 @@ public class GenerationSession implements IGenerationSession {
 
     // auto-plan
     SModel outputModel = null;
-    GenerationStepData generationStepData = generationContext.getGenerationStepData();
     while (true) {
       outputModel = generateModel(inputModel, targetLanguage, generator, generationContext);
       // need more steps?
+      GenerationStepData generationStepData = generationContext.getGenerationStepData();
       if (!generationStepData.update(outputModel)) {
         // generation complete
         break;

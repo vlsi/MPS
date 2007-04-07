@@ -19,7 +19,7 @@ import java.util.*;
 
   private List<MappingConfiguration> myAllMappings = new ArrayList<MappingConfiguration>();
   private Map<MappingConfiguration, Map<MappingConfiguration, MappingPriorityRule>> myPriorityMap = new HashMap<MappingConfiguration, Map<MappingConfiguration, MappingPriorityRule>>();
-  private List<Pair<MappingPriorityRule, Set<MappingConfiguration>>> myCoherentMappings = new ArrayList<Pair<MappingPriorityRule, Set<MappingConfiguration>>>();
+  private List<Pair<Set<MappingConfiguration>, List<MappingPriorityRule>>> myCoherentMappings = new ArrayList<Pair<Set<MappingConfiguration>, List<MappingPriorityRule>>>();
 
   /*package*/ GenerationPlanBuilder() {
   }

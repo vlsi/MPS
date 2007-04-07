@@ -37,6 +37,8 @@
         <modelRoot path="${language_descriptor}\generator\java\templates" namespacePrefix="jetbrains.mps.baseLanguage.generator.java" />
       </models>
       <module />
+      <external-templates />
+      <mapping-priorities />
     </generator>
   </generators>
   <classPath />

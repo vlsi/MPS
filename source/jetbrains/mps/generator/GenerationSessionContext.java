@@ -52,7 +52,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       myGenerationStepData = new GenerationStepData(inputModel);
       myGeneratorModules = myGenerationStepData.getGenerators();
       myTemplateModels = myGenerationStepData.getTemplateModels();
-      myCustomMappingConfigurations = CollectionUtil.lisAsSet(myGenerationStepData.getMappings());  // ???
       myMappingConfigurations = CollectionUtil.lisAsSet(myGenerationStepData.getMappings());
     } else {
       // old

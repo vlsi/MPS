@@ -5,7 +5,8 @@ import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
 import jetbrains.mps.projectLanguage.structure.GeneratorReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
-import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.transformation.TLBase.structure.TemplateDeclaration;
+import jetbrains.mps.core.structure.BaseConcept;
 
 import java.util.*;
 
@@ -21,7 +22,7 @@ public class GenerationPlanUtil {
   }
 
   public static GenerationPlan createGenerationPlan(SModelDescriptor inputModel, List<MappingConfiguration> alreadyProcessedMappings, IScope scope) {
-    List<Generator> generators = collectGenerators(inputModel, scope, false, new ArrayList<Generator>(), new HashSet<Language>());
+    List<Generator> generators = collectGenerators(inputModel, false, new ArrayList<Generator>(), new HashSet<Language>(), scope);
     return new GenerationPlanBuilder().createPlan(generators, alreadyProcessedMappings);
   }
 
@@ -39,17 +40,14 @@ public class GenerationPlanUtil {
       collectGenerators(refGenerator, generators, processedLanguages);
     }
     for (SModelDescriptor model : editedGenerator.getOwnTemplateModels()) {
-      collectGenerators(model, scope, true, generators, processedLanguages);
+      collectGenerators(model, true, generators, processedLanguages, scope);
     }
 
     return new GenerationPlanBuilder().createPlan(generators, descriptorWorkingCopy, new ArrayList<MappingConfiguration>());
   }
 
-  private static List<Generator> collectGenerators(SModelDescriptor inputModel, IScope scope, boolean excludeTLBase, List<Generator> usedGenerators, Set<Language> processedLanguages) {
-    List<Language> languages = inputModel.getSModel().getLanguages(scope);
-    if (excludeTLBase) {
-      languages.remove(BootstrapLanguages.getInstance().getTLBase());
-    }
+  private static List<Generator> collectGenerators(SModelDescriptor inputModel, boolean excludeTLBase, List<Generator> usedGenerators, Set<Language> processedLanguages, IScope scope) {
+    List<Language> languages = extractUsedLanguages(inputModel, excludeTLBase, scope);
 
     for (Language language : languages) {
       if (processedLanguages.contains(language)) continue;
@@ -72,7 +70,7 @@ public class GenerationPlanUtil {
     collectedGenerators.add(generator);
     List<SModelDescriptor> templateModels = generator.getOwnTemplateModels();
     for (SModelDescriptor templateModel : templateModels) {
-      collectGenerators(templateModel, generator.getScope(), true, collectedGenerators, processedLanguages);
+      collectGenerators(templateModel, true, collectedGenerators, processedLanguages, generator.getScope());
     }
 
     for (Generator refGenerator : generator.getReferencedGenerators()) {
@@ -81,6 +79,53 @@ public class GenerationPlanUtil {
 
     return collectedGenerators;
   }
+
+
+  private static List<Language> extractUsedLanguages(SModelDescriptor modelDescriptor, boolean excludeTLBase, IScope scope) {
+    Set<String> namespaces = new HashSet<String>();
+    for (SNode root : modelDescriptor.getSModel().getRoots()) {
+      collectLanguageNamespaces(root, namespaces, excludeTLBase);
+    }
+    List<Language> result = new ArrayList<Language>();
+    for (String namespace : namespaces) {
+      Language language = scope.getLanguage(namespace);
+      if (language != null) {
+        result.add(language);
+      } else {
+        LOG.error("couldn't find language for namespace '" + namespace + "' in scope: " + scope);
+      }
+    }
+    return result;
+  }
+
+  private static void collectLanguageNamespaces(SNode node, Set<String> namespaces, boolean excludeTLBase) {
+    String namespace = node.getLanguageNamespace();
+    if(!namespace.equals("jetbrains.mps.transformation.TLBase")) {
+      namespaces.add(namespace);
+      for (SNode child : node.getChildren()) {
+        collectLanguageNamespaces(child, namespaces, excludeTLBase);
+      }
+    } else {
+      if(excludeTLBase) {
+        // only look into 'content' in template declartions
+        if(node.getAdapter() instanceof TemplateDeclaration) {
+          BaseConcept content = ((TemplateDeclaration) node.getAdapter()).getContentNode();
+          if(content != null) {
+            collectLanguageNamespaces(content.getNode(), namespaces, excludeTLBase);
+          }
+        }
+      } else {
+        namespaces.add(namespace);
+        // look into any node except 'content' in template declartions
+        if(!(node.getAdapter() instanceof TemplateDeclaration)) {
+          for (SNode child : node.getChildren()) {
+            collectLanguageNamespaces(child, namespaces, excludeTLBase);
+          }
+        }
+      }
+    }
+  }
+
 
   public static List<String> toStrings(List<MappingConfiguration> step) {
     List<String> strings = new ArrayList<String>();
