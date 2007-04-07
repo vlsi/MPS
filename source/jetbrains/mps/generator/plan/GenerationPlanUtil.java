@@ -5,6 +5,7 @@ import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
 import jetbrains.mps.projectLanguage.structure.GeneratorReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
+import jetbrains.mps.ide.BootstrapLanguages;
 
 import java.util.*;
 
@@ -45,12 +46,11 @@ public class GenerationPlanUtil {
   }
 
   private static List<Generator> collectGenerators(SModelDescriptor inputModel, IScope scope, boolean excludeTLBase, List<Generator> usedGenerators, Set<Language> processedLanguages) {
-    List<Language> languages;
+    List<Language> languages = inputModel.getSModel().getLanguages(scope);
     if (excludeTLBase) {
-      languages = extractLanguagesExcludingTLBase(inputModel, scope);
-    } else {
-      languages = inputModel.getSModel().getLanguages(scope);
+      languages.remove(BootstrapLanguages.getInstance().getTLBase());
     }
+
     for (Language language : languages) {
       if (processedLanguages.contains(language)) continue;
       processedLanguages.add(language);
@@ -80,35 +80,6 @@ public class GenerationPlanUtil {
     }
 
     return collectedGenerators;
-  }
-
-  private static List<Language> extractLanguagesExcludingTLBase(SModelDescriptor modelDescriptor, IScope scope) {
-    Set<String> namespaces = new HashSet<String>();
-    for (SNode root : modelDescriptor.getSModel().getRoots()) {
-      collectLanguageNamespacesExcludingTLBase(root, namespaces);
-    }
-    List<Language> result = new ArrayList<Language>();
-    for (String namespace : namespaces) {
-      Language language = scope.getLanguage(namespace);
-      if (language != null) {
-        result.add(language);
-      } else {
-        LOG.error("couldn't find language for namespace '" + namespace + "' in scope: " + scope);
-      }
-    }
-    return result;
-  }
-
-  private static void collectLanguageNamespacesExcludingTLBase(SNode node, Set<String> namespaces) {
-    String namespace = node.getLanguageNamespace();
-    if (!namespaces.contains(namespace)) {
-      if (!namespace.equals("jetbrains.mps.transformation.TLBase")) {
-        namespaces.add(namespace);
-        for (SNode child : node.getChildren()) {
-          collectLanguageNamespacesExcludingTLBase(child, namespaces);
-        }
-      }
-    }
   }
 
   public static List<String> toStrings(List<MappingConfiguration> step) {

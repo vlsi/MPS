@@ -120,8 +120,8 @@
                   <link role="baseMethodDeclaration" targetNodeId="1174067612898" resolveInfo="typePresentation" />
                   <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1174067824307">
                     <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.PropertyGetter_FunctionParm_node" id="1174067824308" />
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1174067824309">
-                      <link role="link" targetNodeId="1.1151689745422" />
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1175885578832">
+                      <link role="link" targetNodeId="1.1151688676805" />
                     </node>
                   </node>
                 </node>

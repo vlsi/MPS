@@ -5,12 +5,10 @@ import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.project.GlobalScope;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Igor Alshannikov
@@ -20,6 +18,8 @@ import java.util.Map;
   private static Logger LOG = Logger.getLogger(GenerationPlanBuilder.class);
 
   private List<MappingConfiguration> myAllMappings = new ArrayList<MappingConfiguration>();
+  private Map<MappingConfiguration, Map<MappingConfiguration, MappingPriorityRule>> myPriorityMap = new HashMap<MappingConfiguration, Map<MappingConfiguration, MappingPriorityRule>>();
+  private List<Pair<MappingPriorityRule, Set<MappingConfiguration>>> myCoherentMappings = new ArrayList<Pair<MappingPriorityRule, Set<MappingConfiguration>>>();
 
   /*package*/ GenerationPlanBuilder() {
   }
@@ -33,10 +33,9 @@ import java.util.Map;
       myAllMappings.addAll(generator.getOwnMappings());
     }
 
-    Map<MappingConfiguration, Map<MappingConfiguration, MappingPriorityRule>> priorityMap = new HashMap<MappingConfiguration, Map<MappingConfiguration, MappingPriorityRule>>();
     for (MappingConfiguration mapping : myAllMappings) {
-      if (!priorityMap.containsKey(mapping)) {
-        priorityMap.put(mapping, new HashMap<MappingConfiguration, MappingPriorityRule>());
+      if (!myPriorityMap.containsKey(mapping)) {
+        myPriorityMap.put(mapping, new HashMap<MappingConfiguration, MappingPriorityRule>());
       }
     }
 
@@ -50,13 +49,13 @@ import java.util.Map;
         rules = descriptor.getPriorityRules();
       }
       for (MappingPriorityRule rule : rules) {
-        fillPriorityMap(rule, generator, priorityMap, ignoreGreaterPriMappings);
+        processRule(rule, generator, ignoreGreaterPriMappings);
       }
     }
 
-    List<List<MappingConfiguration>> steps = createSteps(priorityMap);
+    List<List<MappingConfiguration>> steps = createSteps();
     List<MappingPriorityRule> conflictingRules = new ArrayList<MappingPriorityRule>();
-    for (Map<MappingConfiguration, MappingPriorityRule> value : priorityMap.values()) {
+    for (Map<MappingConfiguration, MappingPriorityRule> value : myPriorityMap.values()) {
       for (MappingPriorityRule rule : value.values()) {
         if (!conflictingRules.contains(rule)) {
           conflictingRules.add(rule);
@@ -66,10 +65,10 @@ import java.util.Map;
     return new GenerationPlan(steps, generators, conflictingRules);
   }
 
-  private List<List<MappingConfiguration>> createSteps(Map<MappingConfiguration, Map<MappingConfiguration, MappingPriorityRule>> priorityMap) {
+  private List<List<MappingConfiguration>> createSteps() {
     List<List<MappingConfiguration>> steps = new ArrayList<List<MappingConfiguration>>();
-    while (!priorityMap.isEmpty()) {
-      List<MappingConfiguration> step = createStep(priorityMap);
+    while (!myPriorityMap.isEmpty()) {
+      List<MappingConfiguration> step = createStep();
       if (step.isEmpty()) {
         // error!!!
         return steps;
@@ -79,31 +78,31 @@ import java.util.Map;
     return steps;
   }
 
-  private List<MappingConfiguration> createStep(Map<MappingConfiguration, Map<MappingConfiguration, MappingPriorityRule>> priorityMap) {
+  private List<MappingConfiguration> createStep() {
     List<MappingConfiguration> stepMappings = new ArrayList<MappingConfiguration>();
     while (true) {
       List<MappingConfiguration> mappingsForStep = new ArrayList<MappingConfiguration>();
-      for (MappingConfiguration mapping : priorityMap.keySet()) {
+      for (MappingConfiguration mapping : myPriorityMap.keySet()) {
         // no greater priority mappings?
-        if (priorityMap.get(mapping).isEmpty()) {
+        if (myPriorityMap.get(mapping).isEmpty()) {
           mappingsForStep.add(mapping);
         }
       }
 
-      if(mappingsForStep.isEmpty()) break;
+      if (mappingsForStep.isEmpty()) break;
       stepMappings.addAll(mappingsForStep);
 
       // clean-up lesser-pri-mappings
       for (MappingConfiguration mappingForStep : mappingsForStep) {
-        priorityMap.remove(mappingForStep);
+        myPriorityMap.remove(mappingForStep);
       }
 
       // clean-up weak greater-pri-mappings
       for (MappingConfiguration mappingForStep : mappingsForStep) {
-        for (Map<MappingConfiguration, MappingPriorityRule> greaterPriMappings : priorityMap.values()) {
-          if(greaterPriMappings.containsKey(mappingForStep)) {
+        for (Map<MappingConfiguration, MappingPriorityRule> greaterPriMappings : myPriorityMap.values()) {
+          if (greaterPriMappings.containsKey(mappingForStep)) {
             MappingPriorityRule priorityRule = greaterPriMappings.get(mappingForStep);
-            if(priorityRule.getKind() == MappingPriorityRuleKind.before_or_together) {
+            if (priorityRule.getKind() == MappingPriorityRuleKind.before_or_together) {
               // weak priority
               greaterPriMappings.remove(mappingForStep);
             }
@@ -114,7 +113,7 @@ import java.util.Map;
 
     // clean-up strict greater-pri-mappings
     for (MappingConfiguration mapping : stepMappings) {
-      for (Map<MappingConfiguration, MappingPriorityRule> greaterPriMappings : priorityMap.values()) {
+      for (Map<MappingConfiguration, MappingPriorityRule> greaterPriMappings : myPriorityMap.values()) {
         greaterPriMappings.remove(mapping);
       }
     }
@@ -122,22 +121,26 @@ import java.util.Map;
     return stepMappings;
   }
 
-  private void fillPriorityMap(MappingPriorityRule rule, Generator generator, Map<MappingConfiguration, Map<MappingConfiguration, MappingPriorityRule>> priorityMap, List<MappingConfiguration> ignoreGreaterPriMappings) {
+  private void processRule(MappingPriorityRule rule, Generator generator, List<MappingConfiguration> ignoreGreaterPriMappings) {
 
     MappingConfig_AbstractRef greaterPriMappingRef = rule.getGreaterPriorityMapping();
     MappingConfig_AbstractRef lesserPriMappingRef = rule.getLesserPriorityMapping();
     if (greaterPriMappingRef == null || lesserPriMappingRef == null) return;
 
-    // map: lesser mapping -> {greater mapping, .... , greater mapping }
     List<MappingConfiguration> greaterPriMappings = getMappingsFromRef(greaterPriMappingRef, generator);
     List<MappingConfiguration> lesserPriMappings = getMappingsFromRef(lesserPriMappingRef, generator);
-    lesserPriMappings = CollectionUtil.substruct(lesserPriMappings, greaterPriMappings);
-    greaterPriMappings = CollectionUtil.substruct(greaterPriMappings, ignoreGreaterPriMappings);
-    for (MappingConfiguration lesserPriMapping : lesserPriMappings) {
-      Map<MappingConfiguration, MappingPriorityRule> gtPriSet = priorityMap.get(lesserPriMapping);
-      for (MappingConfiguration greaterPriMapping : greaterPriMappings) {
-        if (!gtPriSet.containsKey(greaterPriMapping)) {
-          gtPriSet.put(greaterPriMapping, rule);
+    if (rule.getKind() == MappingPriorityRuleKind.strictly_together) {
+
+    } else {
+      // map: lesser mapping -> {greater mapping, .... , greater mapping }
+      lesserPriMappings = CollectionUtil.substruct(lesserPriMappings, greaterPriMappings);
+      greaterPriMappings = CollectionUtil.substruct(greaterPriMappings, ignoreGreaterPriMappings);
+      for (MappingConfiguration lesserPriMapping : lesserPriMappings) {
+        Map<MappingConfiguration, MappingPriorityRule> gtPriSet = myPriorityMap.get(lesserPriMapping);
+        for (MappingConfiguration greaterPriMapping : greaterPriMappings) {
+          if (!gtPriSet.containsKey(greaterPriMapping)) {
+            gtPriSet.put(greaterPriMapping, rule);
+          }
         }
       }
     }
