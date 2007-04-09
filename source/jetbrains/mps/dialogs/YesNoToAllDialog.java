@@ -5,6 +5,9 @@ import jetbrains.mps.util.ColorAndGraphicsUtil;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.WindowListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowAdapter;
 
 /**
  * Created by IntelliJ IDEA.
@@ -49,6 +52,14 @@ public class YesNoToAllDialog extends JDialog {
       }
     }));
     contentPane.add(panel, BorderLayout.SOUTH);
+
+    addWindowListener(new WindowAdapter() {
+
+      public void windowClosing(WindowEvent e) {
+        myResponse = ResponseValue.NO_TO_ALL;        
+        YesNoToAllDialog.this.dispose();
+      }
+    });
   }
 
   public ResponseValue getResponse() {
@@ -56,8 +67,9 @@ public class YesNoToAllDialog extends JDialog {
   }
 
   public static ResponseValue showDialog(Frame frame, String message) {
-    YesNoToAllDialog dialog = new YesNoToAllDialog(frame, message);
-    dialog.setUndecorated(true);
+    final YesNoToAllDialog dialog = new YesNoToAllDialog(frame, message);
+    dialog.setUndecorated(false);
+    dialog.setTitle(message);
     dialog.pack();
     dialog.setResizable(false);
     dialog.setLocation(ColorAndGraphicsUtil.getCentralPosition(frame, dialog));
