@@ -1097,6 +1097,21 @@ public class SModel implements Iterable<SNode> {
     return resultNodes;
   }
 
+  public List<SNode> allRootsIncludingImported(IScope scope) {
+    List<SModel> modelsList = new ArrayList<SModel>();
+    modelsList.add(this);
+    List<SModelDescriptor> modelDescriptors = allImportedModels(scope);
+    for (SModelDescriptor descriptor : modelDescriptors) {
+      modelsList.add(descriptor.getSModel());
+    }
+
+    List<SNode> resultNodes = new ArrayList<SNode>();
+    for (SModel aModel : modelsList) {
+      resultNodes.addAll(aModel.getRoots());
+    }
+    return resultNodes;
+  }
+
   public void copyToSModel(final SModel targetModel) {
     final SModel sourceModel = this;
     targetModel.runLoadingAction(new Runnable() {
