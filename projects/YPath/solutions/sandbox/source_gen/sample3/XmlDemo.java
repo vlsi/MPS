@@ -26,6 +26,9 @@ public class XmlDemo {
       for(Node node : TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new DOM().from(doc), TreeTraversalFactory.Axis("DESCENDANTS")), new CompositeFilter<Node>(new TreePath_nodeKind_1175164209844(), new TreePath_nodeKind_propertyMatcher_1175164263587("a"))), TreeTraversalFactory.Axis("DESCENDANTS")), new CompositeFilter<Node>(new TreePath_nodeKind_1175164209844(), new TreePath_nodeKind_propertyMatcher_1175164263587("findme")))) {
         System.out.println("Found: " + node);
       }
+      for(Node node : TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new DOM().from(doc), TreeTraversalFactory.Axis("DESCENDANTS")), new CompositeFilter<Node>(new TreePath_nodeKind_1175164209844(), new TreePath_nodeKind_propertyMatcher_1175164263587("a"))), TreeTraversalFactory.Axis("DESCENDANTS")), new CompositeFilter<Node>(new TreePath_nodeKind_1175164209844(), new TreePath_nodeKind_propertyMatcher_1175164263587("findme")))) {
+        System.out.println("Found again: " + node);
+      }
     } catch (Exception ignored) {
     }
   }

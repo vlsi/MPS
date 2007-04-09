@@ -11,6 +11,7 @@
       <property name="name" value="ELEMENT" />
       <node role="properties" type="ypath.TreeNodeKindProperty" id="1175164263587">
         <property name="name" value="tag" />
+        <property name="default" value="true" />
         <node role="getter" type="ypath.PropertyGetter" id="1175164263588">
           <node role="parameter" type="ypath.LambdaMethodParameter" id="1175164263589">
             <property name="name" value="e" />
@@ -56,6 +57,7 @@
       <property name="name" value="ATTR" />
       <node role="properties" type="ypath.TreeNodeKindProperty" id="1175253104657">
         <property name="name" value="name" />
+        <property name="default" value="false" />
         <node role="getter" type="ypath.PropertyGetter" id="1175253104658">
           <node role="parameter" type="ypath.LambdaMethodParameter" id="1175253104659">
             <property name="name" value="a" />
@@ -81,6 +83,7 @@
       </node>
       <node role="properties" type="ypath.TreeNodeKindProperty" id="1175253134705">
         <property name="name" value="value" />
+        <property name="default" value="false" />
         <node role="getter" type="ypath.PropertyGetter" id="1175253134706">
           <node role="parameter" type="ypath.LambdaMethodParameter" id="1175253134707">
             <property name="name" value="a" />
