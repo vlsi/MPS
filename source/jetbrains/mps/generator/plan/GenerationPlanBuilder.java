@@ -1,12 +1,12 @@
 package jetbrains.mps.generator.plan;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.project.GlobalScope;
 
 import java.util.*;
 
@@ -18,8 +18,8 @@ import java.util.*;
   private static Logger LOG = Logger.getLogger(GenerationPlanBuilder.class);
 
   private List<MappingConfiguration> myAllMappings = new ArrayList<MappingConfiguration>();
-  private Map<MappingConfiguration, Map<MappingConfiguration, MappingPriorityRule>> myPriorityMap = new HashMap<MappingConfiguration, Map<MappingConfiguration, MappingPriorityRule>>();
-  private List<Pair<Set<MappingConfiguration>, List<MappingPriorityRule>>> myCoherentMappings = new ArrayList<Pair<Set<MappingConfiguration>, List<MappingPriorityRule>>>();
+  private Map<MappingConfiguration, Map<MappingConfiguration, PriorityData>> myPriorityMap = new HashMap<MappingConfiguration, Map<MappingConfiguration, PriorityData>>();
+  private List<Pair<MappingPriorityRule, List<MappingConfiguration>>> myStrictlyTogetherMappings = new ArrayList<Pair<MappingPriorityRule, List<MappingConfiguration>>>();
 
   /*package*/ GenerationPlanBuilder() {
   }
@@ -35,7 +35,7 @@ import java.util.*;
 
     for (MappingConfiguration mapping : myAllMappings) {
       if (!myPriorityMap.containsKey(mapping)) {
-        myPriorityMap.put(mapping, new HashMap<MappingConfiguration, MappingPriorityRule>());
+        myPriorityMap.put(mapping, new HashMap<MappingConfiguration, PriorityData>());
       }
     }
 
@@ -53,12 +53,34 @@ import java.util.*;
       }
     }
 
+    // make priority equals for all 'coherent' mappings
+    for (Pair<MappingPriorityRule, List<MappingConfiguration>> strictlyTogetherMappingData : myStrictlyTogetherMappings) {
+      Map<MappingConfiguration, PriorityData> allGrtPriMappings = new HashMap<MappingConfiguration, PriorityData>();
+      // collect all grt-pri-mappings for each coherent mapping
+      for (MappingConfiguration strictlyTogetherMapping : strictlyTogetherMappingData.o2) {
+        allGrtPriMappings.putAll(myPriorityMap.get(strictlyTogetherMapping));
+      }
+
+      // update grt-pri-mappings for each coherent mapping
+      for (MappingConfiguration strictlyTogetherMapping : strictlyTogetherMappingData.o2) {
+        Map<MappingConfiguration, PriorityData> grtPriMappings = myPriorityMap.get(strictlyTogetherMapping);
+        for (MappingConfiguration grtPriMappingToAdd : allGrtPriMappings.keySet()) {
+          if(!grtPriMappings.containsKey(grtPriMappingToAdd)) {
+            PriorityData priorityDataToAdd = allGrtPriMappings.get(grtPriMappingToAdd);
+            PriorityData priorityDataUpdated = new PriorityData(priorityDataToAdd.isStrict, strictlyTogetherMappingData.o1);
+            grtPriMappings.put(grtPriMappingToAdd, priorityDataUpdated);
+          }
+        }
+      }
+    }
+
+    // create mappings partitioning
     List<List<MappingConfiguration>> steps = createSteps();
     List<MappingPriorityRule> conflictingRules = new ArrayList<MappingPriorityRule>();
-    for (Map<MappingConfiguration, MappingPriorityRule> value : myPriorityMap.values()) {
-      for (MappingPriorityRule rule : value.values()) {
-        if (!conflictingRules.contains(rule)) {
-          conflictingRules.add(rule);
+    for (Map<MappingConfiguration, PriorityData> grtPriMappings : myPriorityMap.values()) {
+      for (PriorityData priorityData : grtPriMappings.values()) {
+        if (!conflictingRules.contains(priorityData.causeRule)) {
+          conflictingRules.add(priorityData.causeRule);
         }
       }
     }
@@ -99,29 +121,29 @@ import java.util.*;
 
       // clean-up weak greater-pri-mappings
       for (MappingConfiguration mappingForStep : mappingsForStep) {
-        for (Map<MappingConfiguration, MappingPriorityRule> greaterPriMappings : myPriorityMap.values()) {
-          if (greaterPriMappings.containsKey(mappingForStep)) {
-            MappingPriorityRule priorityRule = greaterPriMappings.get(mappingForStep);
-            if (priorityRule.getKind() == MappingPriorityRuleKind.before_or_together) {
+        for (Map<MappingConfiguration, PriorityData> grtPriMappings : myPriorityMap.values()) {
+          if (grtPriMappings.containsKey(mappingForStep)) {
+            PriorityData priorityData = grtPriMappings.get(mappingForStep);
+            if (!priorityData.isStrict) {
               // weak priority
-              greaterPriMappings.remove(mappingForStep);
+              grtPriMappings.remove(mappingForStep);
             }
           }
         }
       }
-    }
+    } // while have something to add to 'mappings-for-step'
 
     // clean-up strict greater-pri-mappings
     for (MappingConfiguration mapping : stepMappings) {
-      for (Map<MappingConfiguration, MappingPriorityRule> greaterPriMappings : myPriorityMap.values()) {
-        greaterPriMappings.remove(mapping);
+      for (Map<MappingConfiguration, PriorityData> grtPriMappings : myPriorityMap.values()) {
+        grtPriMappings.remove(mapping);
       }
     }
 
     return stepMappings;
   }
 
-  private void processRule(MappingPriorityRule rule, Generator generator, List<MappingConfiguration> ignoreGreaterPriMappings) {
+  private void processRule(MappingPriorityRule rule, Generator generator, List<MappingConfiguration> alreadyProcessedMappings) {
 
     MappingConfig_AbstractRef greaterPriMappingRef = rule.getGreaterPriorityMapping();
     MappingConfig_AbstractRef lesserPriMappingRef = rule.getLesserPriorityMapping();
@@ -130,16 +152,20 @@ import java.util.*;
     List<MappingConfiguration> greaterPriMappings = getMappingsFromRef(greaterPriMappingRef, generator);
     List<MappingConfiguration> lesserPriMappings = getMappingsFromRef(lesserPriMappingRef, generator);
     if (rule.getKind() == MappingPriorityRuleKind.strictly_together) {
+      List<MappingConfiguration> coherentMappings = new ArrayList<MappingConfiguration>(CollectionUtil.substruct(lesserPriMappings, alreadyProcessedMappings));
+      CollectionUtil.addAllNotPresent(CollectionUtil.substruct(greaterPriMappings, alreadyProcessedMappings), coherentMappings);
+      myStrictlyTogetherMappings.add(new Pair<MappingPriorityRule, List<MappingConfiguration>>(rule, coherentMappings));
 
     } else {
       // map: lesser mapping -> {greater mapping, .... , greater mapping }
       lesserPriMappings = CollectionUtil.substruct(lesserPriMappings, greaterPriMappings);
-      greaterPriMappings = CollectionUtil.substruct(greaterPriMappings, ignoreGreaterPriMappings);
+      lesserPriMappings = CollectionUtil.substruct(lesserPriMappings, alreadyProcessedMappings);
+      greaterPriMappings = CollectionUtil.substruct(greaterPriMappings, alreadyProcessedMappings);
       for (MappingConfiguration lesserPriMapping : lesserPriMappings) {
-        Map<MappingConfiguration, MappingPriorityRule> gtPriSet = myPriorityMap.get(lesserPriMapping);
-        for (MappingConfiguration greaterPriMapping : greaterPriMappings) {
-          if (!gtPriSet.containsKey(greaterPriMapping)) {
-            gtPriSet.put(greaterPriMapping, rule);
+        Map<MappingConfiguration, PriorityData> grtPriMappings = myPriorityMap.get(lesserPriMapping);
+        for (MappingConfiguration grtPriMapping : greaterPriMappings) {
+          if (!grtPriMappings.containsKey(grtPriMapping)) {
+            grtPriMappings.put(grtPriMapping, new PriorityData(rule.getKind() == MappingPriorityRuleKind.strictly_before, rule));
           }
         }
       }
@@ -206,5 +232,15 @@ import java.util.*;
     }
 
     return new ArrayList();
+  }
+
+  private static class PriorityData {
+    boolean isStrict;
+    MappingPriorityRule causeRule;
+
+    public PriorityData(boolean strict, MappingPriorityRule causeRule) {
+      this.isStrict = strict;
+      this.causeRule = causeRule;
+    }
   }
 }
