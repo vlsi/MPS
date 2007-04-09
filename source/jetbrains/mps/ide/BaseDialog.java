@@ -15,10 +15,8 @@ import java.lang.annotation.Target;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.*;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author Kostik
@@ -79,7 +77,7 @@ public abstract class BaseDialog extends JDialog {
 
   public abstract DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings();
 
-  protected static DialogDimensionsSettings.DialogDimensions getDimensionSettings(Class <? extends BaseDialog> cls) {
+  protected static DialogDimensionsSettings.DialogDimensions getDimensionSettings(Class<? extends BaseDialog> cls) {
     return ApplicationComponents.getInstance().getComponentSafe(DialogDimensionsSettings.class).getDimensionSettings(cls);
   }
 
@@ -126,6 +124,16 @@ public abstract class BaseDialog extends JDialog {
 
 
   protected void setErrorText(String errorText) {
+    if (errorText != null) {
+      StringTokenizer tokenizer = new StringTokenizer(errorText, "\n");
+      errorText = "";
+      while (errorText.length() == 0 && tokenizer.hasMoreTokens()) {
+        errorText = tokenizer.nextToken();
+      }
+      if (tokenizer.hasMoreTokens()) {
+        errorText += "...";
+      }
+    }
     myErrorLabel.setText(errorText);
   }
 
@@ -146,7 +154,8 @@ public abstract class BaseDialog extends JDialog {
 
     List<JButton> result = new ArrayList<JButton>();
     for (int i = 0; i < buttonMethods.keySet().size(); i++) {
-      if (!buttonMethods.containsKey(i)) throw new RuntimeException("BaseDialog doesn't contain button with index " + i);
+      if (!buttonMethods.containsKey(i))
+        throw new RuntimeException("BaseDialog doesn't contain button with index " + i);
       final Button b = buttonMethods.get(i).getAnnotation(Button.class);
       final Method m = buttonMethods.get(i);
       JButton button = new JButton(new AbstractAction(b.name()) {
@@ -183,8 +192,11 @@ public abstract class BaseDialog extends JDialog {
   @Retention(RetentionPolicy.RUNTIME)
   public @interface Button {
     int position();
+
     String name();
+
     String shortcut() default "";
+
     boolean defaultButton() default false;
   }
 }
