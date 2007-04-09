@@ -29,9 +29,13 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
     supertypes.add(new QuotationClass_4().createNode());
     if(SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
       SNode classConcept = classifier;
-      supertypes.add(SLinkOperations.getTarget(classConcept, "superclass", true));
+      if(!((SLinkOperations.getTarget(classConcept, "superclass", true) == null))) {
+        supertypes.add(SLinkOperations.getTarget(classConcept, "superclass", true));
+      }
       supertypes.addAll(SLinkOperations.getTargets(classConcept, "implementedInterface", true));
-      supertypes.add(new QuotationClass_5().createNode(SLinkOperations.getTarget(classConcept, "extendedClass", false)));
+      if(!((SLinkOperations.getTarget(classConcept, "extendedClass", false) == null))) {
+        supertypes.add(new QuotationClass_5().createNode(SLinkOperations.getTarget(classConcept, "extendedClass", false)));
+      }
     }
     if(SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
       SNode interfaceConcept = classifier;

@@ -7,6 +7,7 @@ import jetbrains.mps.formulaLanguage.evaluator.ExpressionContext;
 import jetbrains.mps.formulaLanguage.evaluator.ExpressionEvaluatorManager;
 import jetbrains.mps.formulaLanguage.structure.Expression;
 import jetbrains.mps.helgins.structure.*;
+import jetbrains.mps.helgins.evaluator.uiActions.PresentationManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.patterns.util.MatchingUtil;
 import jetbrains.mps.patterns.util.IMatchModifier;
@@ -325,6 +326,7 @@ public class SubtypingManager {
   }
 
   public Set<SNode> leastCommonSupertypes(Set<? extends SNode> types) {
+    if (types.size() == 1) return new HashSet<SNode>(types);
     Set<SNode> allTypes = new HashSet<SNode>();
 
     addAllStructurally(allTypes, (Set<SNode>) types);
@@ -360,7 +362,7 @@ public class SubtypingManager {
           Set<SNode> supertypes2 = subTypesToSupertypes.get(node2);
           if (supertypes2 == null) continue;
           if (containsStructurally(supertypes1, node2) && containsStructurally(supertypes2, node3)) {
-            supertypes1.add(node3);
+            addStructurally(supertypes1, (node3));
           }
         }
       }
@@ -379,6 +381,7 @@ public class SubtypingManager {
   }
 
   private Set<SNode> leastCommonSupertypes(SNode a, SNode b, Map<SNode, Set<SNode>> subTypesToSuperTypes) {
+   // System.err.println("lcs inner, types are: " + PresentationManager.toString(a) + " , " + PresentationManager.toString(b));
     Set<SNode> result = new HashSet<SNode>();
     if (MatchingUtil.matchNodes(a,b)) {
       result.add(a);
@@ -411,7 +414,9 @@ public class SubtypingManager {
       Set<SNode> superTypes = subTypesToSuperTypes.get(commonSupertype);
       if (superTypes != null) {
         for (SNode superType : superTypes) {
-          removeStructurally(commonSupertypes, superType);
+          if (!MatchingUtil.matchNodes(superType, commonSupertype)) {
+            removeStructurally(commonSupertypes, superType);
+          }
         }
       }
     }
