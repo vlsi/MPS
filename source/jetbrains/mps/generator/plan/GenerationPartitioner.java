@@ -35,11 +35,11 @@ public class GenerationPartitioner {
     return doPartitioning(descriptorWorkingCopy, generators, null, null);
   }
 
-  public GenerationStepInfo createGenerationStepInfo(List<Generator> generators) {
+  GenerationStepInfo createGenerationStepInfo(List<Generator> generators) {
     return createGenerationStepInfo(generators, null);
   }
 
-  public GenerationStepInfo createGenerationStepInfo(List<Generator> generators, GenerationStepInfo prevStepInfo) {
+  GenerationStepInfo createGenerationStepInfo(List<Generator> generators, GenerationStepInfo prevStepInfo) {
     Set<MappingConfiguration> processedLockingMappings = null;
     Set<MappingConfiguration> processedNotLockingMappings = null;
     if (prevStepInfo != null) {

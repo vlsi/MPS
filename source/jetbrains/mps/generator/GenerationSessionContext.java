@@ -8,7 +8,7 @@ import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.transformation.TemplateLanguageUtil;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.ide.BootstrapLanguages;
-import jetbrains.mps.generator.plan.GenerationStepData;
+import jetbrains.mps.generator.plan.GenerationStepController;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -24,7 +24,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private IOperationContext myInvocationContext;
   private TransientModule myTransientModule;
   private Language myTargetLanguage;
-  private GenerationStepData myGenerationStepData;
+  private GenerationStepController myGenerationStepController;
 
   private Map<Object, Object> myTransientObjects = new HashMap<Object, Object>();
   private Map<Object, Object> mySessionObjects = new HashMap<Object, Object>();
@@ -49,10 +49,10 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
     if (targetLanguage == null) {
       // auto-plan
-      myGenerationStepData = new GenerationStepData(inputModel);
-      myGeneratorModules = myGenerationStepData.getGenerators();
-      myTemplateModels = myGenerationStepData.getTemplateModels();
-      myMappingConfigurations = CollectionUtil.lisAsSet(myGenerationStepData.getMappings());
+      myGenerationStepController = new GenerationStepController(inputModel);
+      myGeneratorModules = myGenerationStepController.getGenerators();
+      myTemplateModels = myGenerationStepController.getTemplateModels();
+      myMappingConfigurations = CollectionUtil.lisAsSet(myGenerationStepController.getMappings());
     } else {
       // old
       myGeneratorModules = getUsedGenerators(inputModel);
@@ -70,7 +70,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   public void replaceInputModel(SModelDescriptor inputModel) {
     myTransientObjects.clear();
-    if (myGenerationStepData != null) {
+    if (myGenerationStepController != null) {
       // auto-plan - nothing
     } else {
       // old
@@ -80,16 +80,16 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     }
   }
 
-  public void replaceGenerationStepData(GenerationStepData generationStepData) {
-    myGenerationStepData = generationStepData;
-    myGeneratorModules = myGenerationStepData.getGenerators();
-    myTemplateModels = myGenerationStepData.getTemplateModels();
-    myMappingConfigurations = CollectionUtil.lisAsSet(myGenerationStepData.getMappings());
+  public void updateGenerationStepData(GenerationStepController generationStepController) {
+    myGenerationStepController = generationStepController;
+    myGeneratorModules = myGenerationStepController.getGenerators();
+    myTemplateModels = myGenerationStepController.getTemplateModels();
+    myMappingConfigurations = CollectionUtil.lisAsSet(myGenerationStepController.getMappings());
     myTransientModule.addGeneratorModules(myGeneratorModules);
   }
 
   private void initTemplateModels() {
-    assert myGenerationStepData == null : "method can't be used with 'auto-plan' generation";
+    assert myGenerationStepController == null : "method can't be used with 'auto-plan' generation";
 
     myTemplateModels = new ArrayList<SModelDescriptor>();
     for (Generator generatorModule : myGeneratorModules) {
@@ -160,7 +160,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   }
 
   private List<Generator> getUsedGenerators(SModel sourceModel) {
-    assert myGenerationStepData == null : "method can't be used with 'auto-plan' generation";
+    assert myGenerationStepController == null : "method can't be used with 'auto-plan' generation";
 
     List<Generator> generators = new ArrayList<Generator>();
 
@@ -232,8 +232,8 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   }
 
 
-  public GenerationStepData getGenerationStepData() {
-    return myGenerationStepData;
+  public GenerationStepController getGenerationStepController() {
+    return myGenerationStepController;
   }
 
   public class TransientModule extends AbstractModule {

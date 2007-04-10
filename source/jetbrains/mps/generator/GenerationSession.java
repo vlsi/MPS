@@ -3,7 +3,7 @@ package jetbrains.mps.generator;
 import jetbrains.mps.generator.template.DefaultTemplateGenerator;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.Statistics;
-import jetbrains.mps.generator.plan.GenerationStepData;
+import jetbrains.mps.generator.plan.GenerationStepController;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
@@ -134,16 +134,16 @@ public class GenerationSession implements IGenerationSession {
 
     // -- replace context
     GenerationSessionContext context = new GenerationSessionContext(targetLanguage, sourceModel, myInvocationContext, mappings, myCurrentContext);
-    if (context.getGenerationStepData() != null) {
+    if (context.getGenerationStepController() != null) {
       // auto-plan
-      if (!checkGenerationStepData(context.getGenerationStepData())) {
+      if (!checkGenerationStep(context.getGenerationStepController())) {
         throw new GenerationCanceledException();
       }
-      if (context.getGenerationStepData().getMappings().isEmpty()) {
+      if (context.getGenerationStepController().getMappings().isEmpty()) {
         addProgressMessage(MessageKind.WARNING, "skip model \"" + sourceModel.getUID() + "\" : no generator avalable");
         return new GenerationStatus(sourceModel, null, null, false, false, false);
       }
-      printGenerationStepData(context.getGenerationStepData(), sourceModel);
+      printGenerationStepData(context.getGenerationStepController(), sourceModel);
 
     } else {
       List<Generator> generators = context.getGeneratorModules();
@@ -191,7 +191,7 @@ public class GenerationSession implements IGenerationSession {
 
   private SModel generateModel(SModel inputModel, Language targetLanguage, ITemplateGenerator generator) {
     GenerationSessionContext generationContext = generator.getGeneratorSessionContext();
-    if (generationContext.getGenerationStepData() == null) {
+    if (generationContext.getGenerationStepController() == null) {
       // old
       return generateModel(inputModel, targetLanguage, generator, generationContext);
     }
@@ -202,20 +202,20 @@ public class GenerationSession implements IGenerationSession {
       outputModel = generateModel(inputModel, targetLanguage, generator, generationContext);
       inputModel = outputModel;
       // need more steps?
-      GenerationStepData generationStepData = generationContext.getGenerationStepData();
-      if (!generationStepData.update(inputModel)) {
+      GenerationStepController generationStepController = generationContext.getGenerationStepController();
+      if (!generationStepController.update(inputModel)) {
         // generation complete
         break;
       }
-      if (!checkGenerationStepData(generationStepData)) {
+      if (!checkGenerationStep(generationStepController)) {
         throw new GenerationCanceledException();
       }
-      if (generationStepData.getMappings().isEmpty()) {
+      if (generationStepController.getMappings().isEmpty()) {
         break;
       }
-      printGenerationStepData(generationStepData, inputModel);
+      printGenerationStepData(generationStepController, inputModel);
       generationContext.replaceInputModel(inputModel.getModelDescriptor());
-      generationContext.replaceGenerationStepData(generationStepData);
+      generationContext.updateGenerationStepData(generationStepController);
     }
 
     return outputModel;
@@ -245,7 +245,7 @@ public class GenerationSession implements IGenerationSession {
       // optimization trick:
       // exit if target language is 'baseLanguage' and
       // output model doesn't contain other languages
-      if (generationContext.getGenerationStepData() == null) { // with auto-plan the target langauge is NULL
+      if (generationContext.getGenerationStepController() == null) { // with auto-plan the target langauge is NULL
         if (targetLanguage.getNamespace().equals("jetbrains.mps.baseLanguage")) {
           List<String> languageNamespaces = currentOutputModel.getSModel().getLanguageNamespaces(module.getScope());
           if (languageNamespaces.size() == 1 && languageNamespaces.get(0).equals(targetLanguage.getNamespace())) {
@@ -442,9 +442,9 @@ public class GenerationSession implements IGenerationSession {
     return "generationSession_" + getSessionId();
   }
 
-  private boolean checkGenerationStepData(GenerationStepData stepData) {
-    if (stepData.hasConflictingPriorityRules()) {
-      List<String> errors = stepData.getConflictingPriorityRulesAsStrings();
+  private boolean checkGenerationStep(GenerationStepController stepController) {
+    if (stepController.hasConflictingPriorityRules()) {
+      List<String> errors = stepController.getConflictingPriorityRulesAsStrings();
       for (String error : errors) {
         addMessage(new Message(MessageKind.ERROR, "conflicting rule: " + error));
       }
@@ -457,28 +457,28 @@ public class GenerationSession implements IGenerationSession {
     return true;
   }
 
-  private void printGenerationStepData(GenerationStepData stepData, SModel inputModel) {
+  private void printGenerationStepData(GenerationStepController stepController, SModel inputModel) {
     List<String> namespaces = GenerationPartitioningUtil.getUsedLanguageNamespaces(inputModel, false);
     Collections.sort(namespaces);
     addMessage(new Message(MessageKind.INFORMATION, "languages used:"));
     for (String namespace : namespaces) {
       addMessage(new Message(MessageKind.INFORMATION, "    " + namespace));
     }
-    List<Generator> generators = stepData.getGenerators();
-    Collections.sort(generators, new Comparator<Generator>() {
-      public int compare(Generator o1, Generator o2) {
-        if (o1 == o2) return 0;
-        return o1.getAlias().compareTo(o2.getAlias());
-      }
-    });
-    addMessage(new Message(MessageKind.INFORMATION, "engaged generators:"));
-    for (Generator generator : generators) {
-      addMessage(new Message(MessageKind.INFORMATION, "    " + generator.getAlias()));
-    }
+//    List<Generator> generators = stepData.getGenerators();
+//    Collections.sort(generators, new Comparator<Generator>() {
+//      public int compare(Generator o1, Generator o2) {
+//        if (o1 == o2) return 0;
+//        return o1.getAlias().compareTo(o2.getAlias());
+//      }
+//    });
+//    addMessage(new Message(MessageKind.INFORMATION, "engaged generators:"));
+//    for (Generator generator : generators) {
+//      addMessage(new Message(MessageKind.INFORMATION, "    " + generator.getAlias()));
+//    }
 
 
     addMessage(new Message(MessageKind.INFORMATION, "apply mapping configurations:"));
-    List<String> messages = GenerationPartitioningUtil.toStrings(stepData.getMappings());
+    List<String> messages = GenerationPartitioningUtil.toStrings(stepController.getMappings());
     for (String message : messages) {
       addMessage(new Message(MessageKind.INFORMATION, "    " + message));
     }
