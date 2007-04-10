@@ -17,36 +17,29 @@ import java.util.*;
 public class GenerationPlanUtil {
   private static final Logger LOG = Logger.getLogger(GenerationPlanUtil.class);
 
-  public static GenerationPlan createGenerationPlan(SModelDescriptor inputModel, IScope scope) {
-    return createGenerationPlan(inputModel, new ArrayList<MappingConfiguration>(), scope);
-  }
-
-  public static GenerationPlan createGenerationPlan(SModelDescriptor inputModel, List<MappingConfiguration> alreadyProcessedMappings, IScope scope) {
-    List<Generator> generators = collectGenerators(inputModel, false, new ArrayList<Generator>(), new HashSet<Language>(), scope);
-    return new GenerationPlanBuilder().createPlan(generators, alreadyProcessedMappings);
-  }
-
-  public static GenerationPlan createGenerationPlan(GeneratorDescriptor descriptorWorkingCopy, IScope scope) {
-
-    ArrayList<Generator> generators = new ArrayList<Generator>();
+  public static List<Generator> getAllReachableGenerators(GeneratorDescriptor descriptorWorkingCopy, IScope scope) {
+    ArrayList<Generator> collectedGenerators = new ArrayList<Generator>();
     HashSet<Language> processedLanguages = new HashSet<Language>();
 
     // generator edited in 'property dialog'
     Generator editedGenerator = (Generator) MPSModuleRepository.getInstance().getModuleByUID(descriptorWorkingCopy.getGeneratorUID());
-    generators.add(editedGenerator);
+    collectedGenerators.add(editedGenerator);
     List<GeneratorReference> generatorRefs = descriptorWorkingCopy.getGeneratorReferences();
     for (GeneratorReference generatorRef : generatorRefs) {
       Generator refGenerator = (Generator) MPSModuleRepository.getInstance().getModuleByUID(generatorRef.getGeneratorUID());
-      collectGenerators(refGenerator, generators, processedLanguages);
+      collectGenerators(refGenerator, collectedGenerators, processedLanguages);
     }
     for (SModelDescriptor model : editedGenerator.getOwnTemplateModels()) {
-      collectGenerators(model, true, generators, processedLanguages, scope);
+      collectGenerators(model.getSModel(), true, collectedGenerators, processedLanguages, scope);
     }
-
-    return new GenerationPlanBuilder().createPlan(generators, descriptorWorkingCopy, new ArrayList<MappingConfiguration>());
+    return collectedGenerators;
   }
 
-  private static List<Generator> collectGenerators(SModelDescriptor inputModel, boolean excludeTLBase, List<Generator> usedGenerators, Set<Language> processedLanguages, IScope scope) {
+  public static List<Generator> getGeneratorsRequiredForAllGenerationSteps(SModel inputModel, IScope scope) {
+    return collectGenerators(inputModel, false, new ArrayList<Generator>(), new HashSet<Language>(), scope);
+  }
+
+  private static List<Generator> collectGenerators(SModel inputModel, boolean excludeTLBase, List<Generator> collectedGenerators, Set<Language> processedLanguages, IScope scope) {
     List<Language> languages = extractUsedLanguages(inputModel, excludeTLBase, scope);
 
     for (Language language : languages) {
@@ -59,9 +52,9 @@ public class GenerationPlanUtil {
       if (generators.size() > 1) {
         LOG.error("LANG '" + language.getNamespace() + "' has " + generators.size() + ". use 1st: '" + generator.getName() + "'");
       }
-      collectGenerators(generator, usedGenerators, processedLanguages);
+      collectGenerators(generator, collectedGenerators, processedLanguages);
     }
-    return usedGenerators;
+    return collectedGenerators;
   }
 
   private static List<Generator> collectGenerators(Generator generator, List<Generator> collectedGenerators, Set<Language> processedLanguages) {
@@ -70,7 +63,7 @@ public class GenerationPlanUtil {
     collectedGenerators.add(generator);
     List<SModelDescriptor> templateModels = generator.getOwnTemplateModels();
     for (SModelDescriptor templateModel : templateModels) {
-      collectGenerators(templateModel, true, collectedGenerators, processedLanguages, generator.getScope());
+      collectGenerators(templateModel.getSModel(), true, collectedGenerators, processedLanguages, generator.getScope());
     }
 
     for (Generator refGenerator : generator.getReferencedGenerators()) {
@@ -81,9 +74,9 @@ public class GenerationPlanUtil {
   }
 
 
-  private static List<Language> extractUsedLanguages(SModelDescriptor modelDescriptor, boolean excludeTLBase, IScope scope) {
+  private static List<Language> extractUsedLanguages(SModel model, boolean excludeTLBase, IScope scope) {
     Set<String> namespaces = new HashSet<String>();
-    for (SNode root : modelDescriptor.getSModel().getRoots()) {
+    for (SNode root : model.getRoots()) {
       collectLanguageNamespaces(root, namespaces, excludeTLBase);
     }
     List<Language> result = new ArrayList<Language>();
@@ -100,24 +93,24 @@ public class GenerationPlanUtil {
 
   private static void collectLanguageNamespaces(SNode node, Set<String> namespaces, boolean excludeTLBase) {
     String namespace = node.getLanguageNamespace();
-    if(!namespace.equals("jetbrains.mps.transformation.TLBase")) {
+    if (!namespace.equals("jetbrains.mps.transformation.TLBase")) {
       namespaces.add(namespace);
       for (SNode child : node.getChildren()) {
         collectLanguageNamespaces(child, namespaces, excludeTLBase);
       }
     } else {
-      if(excludeTLBase) {
+      if (excludeTLBase) {
         // only look into 'content' in template declartions
-        if(node.getAdapter() instanceof TemplateDeclaration) {
+        if (node.getAdapter() instanceof TemplateDeclaration) {
           BaseConcept content = ((TemplateDeclaration) node.getAdapter()).getContentNode();
-          if(content != null) {
+          if (content != null) {
             collectLanguageNamespaces(content.getNode(), namespaces, excludeTLBase);
           }
         }
       } else {
         namespaces.add(namespace);
         // look into any node except 'content' in template declartions
-        if(!(node.getAdapter() instanceof TemplateDeclaration)) {
+        if (!(node.getAdapter() instanceof TemplateDeclaration)) {
           for (SNode child : node.getChildren()) {
             collectLanguageNamespaces(child, namespaces, excludeTLBase);
           }

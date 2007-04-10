@@ -14,21 +14,26 @@ import java.util.*;
  * Igor Alshannikov
  * Date: Mar 27, 2007
  */
-/*package*/ class GenerationPlanBuilder {
+public class GenerationPlanBuilder {
   private static Logger LOG = Logger.getLogger(GenerationPlanBuilder.class);
 
   private List<MappingConfiguration> myAllMappings = new ArrayList<MappingConfiguration>();
   private Map<MappingConfiguration, Map<MappingConfiguration, PriorityData>> myPriorityMap = new HashMap<MappingConfiguration, Map<MappingConfiguration, PriorityData>>();
   private List<Pair<MappingPriorityRule, List<MappingConfiguration>>> myStrictlyTogetherMappings = new ArrayList<Pair<MappingPriorityRule, List<MappingConfiguration>>>();
 
-  /*package*/ GenerationPlanBuilder() {
+  public GenerationPlan createPlan(List<Generator> generators) {
+    return createPlan(null, generators, new ArrayList<MappingConfiguration>());
+  }
+
+  public GenerationPlan createPlan(GeneratorDescriptor descriptorWorkingCopy, List<Generator> generators) {
+    return createPlan(descriptorWorkingCopy, generators, new ArrayList<MappingConfiguration>());
   }
 
   public GenerationPlan createPlan(List<Generator> generators, List<MappingConfiguration> ignoreGreaterPriMappings) {
-    return createPlan(generators, null, ignoreGreaterPriMappings);
+    return createPlan(null, generators, ignoreGreaterPriMappings);
   }
 
-  public GenerationPlan createPlan(List<Generator> generators, GeneratorDescriptor descriptorWorkingCopy, List<MappingConfiguration> ignoreGreaterPriMappings) {
+  private GenerationPlan createPlan(GeneratorDescriptor descriptorWorkingCopy, List<Generator> generators, List<MappingConfiguration> ignoreGreaterPriMappings) {
     for (Generator generator : generators) {
       myAllMappings.addAll(generator.getOwnMappings());
     }
@@ -39,6 +44,7 @@ import java.util.*;
       }
     }
 
+    // get priority mapping rules from generators and build 'priority map'
     for (Generator generator : generators) {
       GeneratorDescriptor descriptor = (GeneratorDescriptor) generator.getModuleDescriptor();
       List<MappingPriorityRule> rules;
