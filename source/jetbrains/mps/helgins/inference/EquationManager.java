@@ -178,7 +178,7 @@ public class EquationManager {
         addInequation(type, supertype, supertypes.get(supertype));
       }
     }
-    if (mySupertypesToSubtypesMap.get(var) != null) {                         
+    if (mySupertypesToSubtypesMap.get(var) != null) {
       Map<SNode,SNode> subtypes = mySupertypesToSubtypesMap.get(var);
       mySupertypesToSubtypesMap.remove(var);
       for (SNode subtype : subtypes.keySet()) {
@@ -291,7 +291,7 @@ public class EquationManager {
     subtypes.put(subtype, nodeToCheck);
   }
 
-   private void addComparable(SNode type1, SNode type2, SNode nodeToCheck) {
+  private void addComparable(SNode type1, SNode type2, SNode nodeToCheck) {
     Map<SNode,SNode> comparables1 = myComparableTypesMap.get(type1);
     if (comparables1 == null) {
       comparables1 = new HashMap<SNode, SNode>();
@@ -332,83 +332,91 @@ public class EquationManager {
   }
 
   public void solveInequations() {
-    Set<SNode> nodes = subtypingGraphVertices();
+    Set<SNode> types = subtypingGraphVertices();
 
-    //1.transitive closure
-    for (SNode node2 : nodes) {
-      for (SNode node1 : nodes) {
-        for (SNode node3 : nodes) {
-          if (node1 == node2 || node2 == node3 || node1 == node3) continue;
-          Map<SNode,SNode> supertypes1 = mySubtypesToSupertypesMap.get(node1);
-          if (supertypes1 == null) continue;
-          Map<SNode,SNode> supertypes2 = mySubtypesToSupertypesMap.get(node2);
-          if (supertypes2 == null) continue;
-          if (supertypes1.keySet().contains(node2) && supertypes2.keySet().contains(node3)) {
-            mySubtypesToSupertypesMap.get(node1).put(node3, supertypes1.get(node2));
-            mySupertypesToSubtypesMap.get(node3).put(node1, supertypes1.get(node2));
-          }
-        }
+    for (SNode type : types) {
+      if (BaseAdapter.isInstance(type, RuntimeTypeVariable.class)) {
+        varLessThanType(type);
+        typeLessThanVar(type);
       }
     }
 
-    //2.T>S
-    for (SNode node : subtypingGraphVertices()) {
-      if (BaseAdapter.isInstance(node, RuntimeTypeVariable.class)) continue;
-      Map<SNode,SNode> supertypes = mySubtypesToSupertypesMap.get(node);
-      if (supertypes == null) continue;
-      for (SNode supertype : new HashSet<SNode>(supertypes.keySet())) {
-        if (BaseAdapter.isInstance(supertype, RuntimeTypeVariable.class)) continue;
-        addInequation(node, supertype, supertypes.get(supertype));
-        supertypes.remove(supertype);
-        mySupertypesToSubtypesMap.get(supertype).remove(node);
-      }
-    }
+    types = subtypingGraphVertices();
 
-    //3. {}->c->{S} => c = lcs({S})
-    for (SNode node : subtypingGraphVertices()) {
-      if (BaseAdapter.isInstance(node, RuntimeTypeVariable.class)) {
-        Map<SNode,SNode> subtypes = mySupertypesToSubtypesMap.get(node);
-        if (subtypes == null) continue;
-        Set<SNode> concreteSubtypes = new HashSet<SNode>();
-        Set<SNode> nodesToCheck = new HashSet<SNode>();
-        for (SNode subtype : new HashSet<SNode>(subtypes.keySet())) {
-          if (BaseAdapter.isInstance(subtype, RuntimeTypeVariable.class)) {
-            continue;
-          }
-          concreteSubtypes.add(subtype);
-          nodesToCheck.add(subtypes.get(subtype));
-          subtypes.remove(subtype);
-          mySubtypesToSupertypesMap.get(subtype).remove(node);
+    for (SNode type : types) {
+      assert BaseAdapter.isInstance(type, RuntimeTypeVariable.class);
+      Map<SNode, SNode> supertypes = mySubtypesToSupertypesMap.get(type);
+      if (supertypes != null) {
+        mySubtypesToSupertypesMap.remove(type);
+        for (SNode supertype : supertypes.keySet()) {
+          mySupertypesToSubtypesMap.get(supertype).remove(type);
+          addEquation(type, supertype, supertypes.get(supertype));
         }
-        SNode nodeToCheck = nodesToCheck.isEmpty() ? null : nodesToCheck.iterator().next(); //todo nodeToCheck is chosen randomly
-        Set<SNode> lcs = myTypeChecker.getSubtypingManager().leastCommonSupertypes(concreteSubtypes);
-        if (lcs.isEmpty()) {
-          TypeChecker.getInstance().reportTypeError(nodeToCheck,"can't find common supertype"); //todo show subtypes
-        } else {
-          addEquation(node, lcs.iterator().next(), nodeToCheck); // todo not just first type but intersection
+      }
+      Map<SNode, SNode> subtypes = mySupertypesToSubtypesMap.get(type);
+      if (subtypes != null) {
+        mySupertypesToSubtypesMap.remove(type);
+        for (SNode subtype : subtypes.keySet()) {
+          mySubtypesToSupertypesMap.get(subtype).remove(type);
+          addEquation(type,  subtype, subtypes.get(subtype));
         }
       }
     }
+  }
 
-    //5. T->c->{} => c = T
-    for (SNode node : subtypingGraphVertices()) {
-      if (BaseAdapter.isInstance(node, RuntimeTypeVariable.class)) {
-        Map<SNode,SNode> supertypes = mySubtypesToSupertypesMap.get(node);
-        if (supertypes == null) continue;
-        if (supertypes.size() == 1) {
-          SNode supertype = supertypes.keySet().iterator().next();
-          Map<SNode,SNode> subtypes = mySupertypesToSubtypesMap.get(node);
-          if (subtypes == null || subtypes.isEmpty()) {
-            supertypes.remove(supertype);
-            Map<SNode, SNode> map = mySupertypesToSubtypesMap.get(supertype);
-            if (map != null) {
-              map.remove(node);
-            }
-            addEquation(supertype, node, supertypes.get(supertype));
-          }
-        }
+  private void typeLessThanVar(SNode type) {
+    Map<SNode, SNode> subtypes = mySupertypesToSubtypesMap.get(type);
+    if (subtypes == null) {
+      return;
+    }
+    if (subtypes.isEmpty()) {
+      mySupertypesToSubtypesMap.remove(type);
+      return;
+    }
+    Set<SNode> concreteSubtypes = new HashSet<SNode>();
+    for (SNode subtypeNode : subtypes.keySet()) {
+      if (!BaseAdapter.isInstance(subtypeNode, RuntimeTypeVariable.class)) {
+        concreteSubtypes.add(subtypeNode);
       }
     }
+    if (concreteSubtypes.isEmpty()) return;
+
+    SNode nodeToCheck = mySubtypesToSupertypesMap.get(concreteSubtypes.iterator().next()).get(type);
+
+    for (SNode subtypeNode : concreteSubtypes) {
+      mySupertypesToSubtypesMap.get(type).remove(subtypeNode);
+      mySubtypesToSupertypesMap.get(subtypeNode).remove(type);
+    }
+    //  T,S <: c => c = lcs(T,S)
+    addEquation(type, myTypeChecker.getSubtypingManager().leastCommonSupertype(concreteSubtypes), nodeToCheck);
+  }
+
+  private void varLessThanType(SNode type) {
+    Map<SNode, SNode> supertypes = mySubtypesToSupertypesMap.get(type);
+    if (supertypes == null) {
+      return;
+    }
+    if (supertypes.isEmpty()) {
+      mySubtypesToSupertypesMap.remove(type);
+      return;
+    }
+    Set<SNode> concreteSupertypes = new HashSet<SNode>();
+    for (SNode supertypeNode : supertypes.keySet()) {
+      if (!BaseAdapter.isInstance(supertypeNode, RuntimeTypeVariable.class)) {
+        concreteSupertypes.add(supertypeNode);
+      }
+    }
+    if (concreteSupertypes.isEmpty()) return;
+
+    SNode supertype = concreteSupertypes.iterator().next();
+    SNode nodeToCheck = supertypes.get(supertype);
+
+    for (SNode supertypeNode : concreteSupertypes) {
+      mySubtypesToSupertypesMap.get(type).remove(supertypeNode);
+      mySupertypesToSubtypesMap.get(supertypeNode).remove(type);
+    }
+    // c :< T => c = T
+    addEquation(type, supertype, nodeToCheck);
   }
 
 }
