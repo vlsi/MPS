@@ -2,8 +2,8 @@ package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.helgins.structure.RuntimeErrorType;
 import jetbrains.mps.helgins.structure.RuntimeTypeVariable;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.Pair;
 
@@ -344,7 +344,7 @@ public class EquationManager {
     types = subtypingGraphVertices();
 
     for (SNode type : types) {
-      assert BaseAdapter.isInstance(type, RuntimeTypeVariable.class);
+      //assert BaseAdapter.isInstance(type, RuntimeTypeVariable.class);
       Map<SNode, SNode> supertypes = mySubtypesToSupertypesMap.get(type);
       if (supertypes != null) {
         mySubtypesToSupertypesMap.remove(type);
