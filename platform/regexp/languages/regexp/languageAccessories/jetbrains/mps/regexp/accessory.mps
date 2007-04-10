@@ -159,11 +159,18 @@
         </node>
         <node role="right" type="jetbrains.mps.regexp.StarRegexp" id="1174663404529">
           <node role="regexp" type="jetbrains.mps.regexp.ParensRegexp" id="1174663366715">
-            <node role="expr" type="jetbrains.mps.regexp.SeqRegexp" id="1174663379534">
-              <node role="left" type="jetbrains.mps.regexp.DotRegexp" id="1174663370967" />
-              <node role="right" type="jetbrains.mps.regexp.PlusRegexp" id="1174663399510">
-                <node role="regexp" type="jetbrains.mps.regexp.PredefinedSymbolClassRegexp" id="1174663379535">
-                  <link role="symbolClass" targetNodeId="1174554738336" resolveInfo="\w" />
+            <node role="expr" type="jetbrains.mps.regexp.SeqRegexp" id="1176206443967">
+              <node role="left" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1176206436621">
+                <property name="text" value="." />
+              </node>
+              <node role="right" type="jetbrains.mps.regexp.PlusRegexp" id="1176206454769">
+                <node role="regexp" type="jetbrains.mps.regexp.PositiveSymbolClassRegexp" id="1176206443968">
+                  <node role="part" type="jetbrains.mps.regexp.CharacterSymbolClassPart" id="1176206447376">
+                    <property name="character" value="-" />
+                  </node>
+                  <node role="part" type="jetbrains.mps.regexp.PredefinedSymbolClassSymbolClassPart" id="1176206450112">
+                    <link role="declaration" targetNodeId="1174554738336" resolveInfo="\w" />
+                  </node>
                 </node>
               </node>
             </node>
