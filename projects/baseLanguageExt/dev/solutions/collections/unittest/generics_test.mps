@@ -5,7 +5,6 @@
   <language namespace="jetbrains.mps.baseLanguage.unitTest" />
   <maxImportIndex value="3" />
   <import index="1" modelUID="java.lang@java_stub" />
-  <import index="3" modelUID="junit.framework@java_stub" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1170878927223">
     <property name="name" value="MySequence" />
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1170878984788">
