@@ -10,6 +10,8 @@ import jetbrains.mps.util.Pair;
 
 import java.util.*;
 
+import org.jetbrains.annotations.Nullable;
+
 /**
  * Igor Alshannikov
  * Date: Mar 27, 2007
@@ -17,24 +19,52 @@ import java.util.*;
 public class GenerationPartitioner {
   private static Logger LOG = Logger.getLogger(GenerationPartitioner.class);
 
-  private List<MappingConfiguration> myAllMappings = new ArrayList<MappingConfiguration>();
-  private Map<MappingConfiguration, Map<MappingConfiguration, PriorityData>> myPriorityMap = new HashMap<MappingConfiguration, Map<MappingConfiguration, PriorityData>>();
-  private List<Pair<MappingPriorityRule, List<MappingConfiguration>>> myStrictlyTogetherMappings = new ArrayList<Pair<MappingPriorityRule, List<MappingConfiguration>>>();
-  private List<MappingPriorityRule> myConflictingRules = new ArrayList<MappingPriorityRule>();
+  private List<MappingConfiguration> myAllMappings;
+  private Map<MappingConfiguration, Map<MappingConfiguration, PriorityData>> myPriorityMap;
+  private List<Pair<MappingPriorityRule, List<MappingConfiguration>>> myStrictlyTogetherMappings;
+  private List<MappingPriorityRule> myConflictingRules;
+
+  private Set<MappingConfiguration> myLockingMappingsInFirstSet;
+  private Set<MappingConfiguration> myNotLockingMappingsInFirstSet;
 
   public List<List<MappingConfiguration>> createMappingSets(List<Generator> generators) {
-    return createPlan(null, generators, new ArrayList<MappingConfiguration>());
+    return doPartitioning(null, generators, null, null);
   }
 
   public List<List<MappingConfiguration>> createMappingSets(GeneratorDescriptor descriptorWorkingCopy, List<Generator> generators) {
-    return createPlan(descriptorWorkingCopy, generators, new ArrayList<MappingConfiguration>());
+    return doPartitioning(descriptorWorkingCopy, generators, null, null);
   }
 
-  public List<List<MappingConfiguration>> createPlan(List<Generator> generators, List<MappingConfiguration> ignoreGreaterPriMappings) {
-    return createPlan(null, generators, ignoreGreaterPriMappings);
+  public GenerationStepInfo createGenerationStepInfo(List<Generator> generators) {
+    return createGenerationStepInfo(generators, null);
   }
 
-  private List<List<MappingConfiguration>> createPlan(GeneratorDescriptor descriptorWorkingCopy, List<Generator> generators, List<MappingConfiguration> ignoreGreaterPriMappings) {
+  public GenerationStepInfo createGenerationStepInfo(List<Generator> generators, GenerationStepInfo prevStepInfo) {
+    Set<MappingConfiguration> processedLockingMappings = null;
+    Set<MappingConfiguration> processedNotLockingMappings = null;
+    if (prevStepInfo != null) {
+      processedLockingMappings = prevStepInfo.getLockingMappings();
+      processedNotLockingMappings = prevStepInfo.getNotLockingMappings();
+    }
+    List<List<MappingConfiguration>> mappingSets = doPartitioning(null, generators, processedLockingMappings, processedNotLockingMappings);
+    if (mappingSets.isEmpty()) {
+      return new GenerationStepInfo(new ArrayList<MappingConfiguration>(), myLockingMappingsInFirstSet, myNotLockingMappingsInFirstSet);
+    }
+    return new GenerationStepInfo(mappingSets.get(0), myLockingMappingsInFirstSet, myNotLockingMappingsInFirstSet);
+  }
+
+
+  private void reset() {
+    myAllMappings = new ArrayList<MappingConfiguration>();
+    myPriorityMap = new HashMap<MappingConfiguration, Map<MappingConfiguration, PriorityData>>();
+    myStrictlyTogetherMappings = new ArrayList<Pair<MappingPriorityRule, List<MappingConfiguration>>>();
+    myConflictingRules = new ArrayList<MappingPriorityRule>();
+    myLockingMappingsInFirstSet = new HashSet<MappingConfiguration>();
+    myNotLockingMappingsInFirstSet = new HashSet<MappingConfiguration>();
+  }
+
+  private List<List<MappingConfiguration>> doPartitioning(GeneratorDescriptor descriptorWorkingCopy, List<Generator> generators, @Nullable Set<MappingConfiguration> processedLockingMappings, @Nullable Set<MappingConfiguration> processedNotLockingMappings) {
+    reset();
     for (Generator generator : generators) {
       myAllMappings.addAll(generator.getOwnMappings());
     }
@@ -56,8 +86,40 @@ public class GenerationPartitioner {
         rules = descriptor.getPriorityRules();
       }
       for (MappingPriorityRule rule : rules) {
-        processRule(rule, generator, ignoreGreaterPriMappings);
+        processRule(rule, generator);
       }
+    }
+
+    if (processedLockingMappings != null && processedNotLockingMappings != null) {
+      // check if some 'not-locking' mappings became 'locking' (from prev step)
+      Collection<Map<MappingConfiguration, PriorityData>> grtPriMappings = myPriorityMap.values();
+      Iterator<MappingConfiguration> iterator = processedNotLockingMappings.iterator();
+      while (iterator.hasNext()) {
+        MappingConfiguration processedMapping = iterator.next();
+        boolean becameLocking = false;
+        for (Map<MappingConfiguration, PriorityData> grtPriMapping : grtPriMappings) {
+          if (grtPriMapping.containsKey(processedMapping)) {
+            becameLocking = true;
+            break;
+          }
+        }
+        if (becameLocking) {
+          iterator.remove();
+          processedLockingMappings.add(processedMapping);
+        }
+      }
+
+      // disable all processed 'locking' mappings (from prev step)
+      for (MappingConfiguration processedLockingMapping : processedLockingMappings) {
+        myPriorityMap.remove(processedLockingMapping);
+        for (Map<MappingConfiguration, PriorityData> grtPriMapping : grtPriMappings) {
+          grtPriMapping.remove(processedLockingMapping);
+        }
+      }
+
+      // save for next step
+      myLockingMappingsInFirstSet.addAll(processedLockingMappings);
+      myNotLockingMappingsInFirstSet.addAll(processedNotLockingMappings);
     }
 
     // make priority equals for all 'coherent' mappings
@@ -72,7 +134,7 @@ public class GenerationPartitioner {
       for (MappingConfiguration strictlyTogetherMapping : strictlyTogetherMappingData.o2) {
         Map<MappingConfiguration, PriorityData> grtPriMappings = myPriorityMap.get(strictlyTogetherMapping);
         for (MappingConfiguration grtPriMappingToAdd : allGrtPriMappings.keySet()) {
-          if(!grtPriMappings.containsKey(grtPriMappingToAdd)) {
+          if (!grtPriMappings.containsKey(grtPriMappingToAdd)) {
             PriorityData priorityDataToAdd = allGrtPriMappings.get(grtPriMappingToAdd);
             PriorityData priorityDataUpdated = new PriorityData(priorityDataToAdd.isStrict, strictlyTogetherMappingData.o1);
             grtPriMappings.put(grtPriMappingToAdd, priorityDataUpdated);
@@ -82,7 +144,7 @@ public class GenerationPartitioner {
     }
 
     // create mappings partitioning
-    List<List<MappingConfiguration>> steps = createSteps();
+    List<List<MappingConfiguration>> mappingSets = createMappingSets();
     for (Map<MappingConfiguration, PriorityData> grtPriMappings : myPriorityMap.values()) {
       for (PriorityData priorityData : grtPriMappings.values()) {
         if (!myConflictingRules.contains(priorityData.causeRule)) {
@@ -90,66 +152,80 @@ public class GenerationPartitioner {
         }
       }
     }
-    return steps;
+    return mappingSets;
   }
 
-  private List<List<MappingConfiguration>> createSteps() {
-    List<List<MappingConfiguration>> steps = new ArrayList<List<MappingConfiguration>>();
+  private List<List<MappingConfiguration>> createMappingSets() {
+    List<List<MappingConfiguration>> mappingSets = new ArrayList<List<MappingConfiguration>>();
     while (!myPriorityMap.isEmpty()) {
-      List<MappingConfiguration> step = createStep();
-      if (step.isEmpty()) {
+      List<MappingConfiguration> mappingSet = createMappingSet(mappingSets.isEmpty());
+      if (mappingSet.isEmpty()) {
         // error!!!
-        return steps;
+        return mappingSets;
       }
-      steps.add(step);
+      mappingSets.add(mappingSet);
     }
-    return steps;
+    return mappingSets;
   }
 
-  private List<MappingConfiguration> createStep() {
-    List<MappingConfiguration> stepMappings = new ArrayList<MappingConfiguration>();
+  private List<MappingConfiguration> createMappingSet(boolean firstSet) {
+    List<MappingConfiguration> mappingSet = new ArrayList<MappingConfiguration>();
     while (true) {
-      List<MappingConfiguration> mappingsForStep = new ArrayList<MappingConfiguration>();
+      List<MappingConfiguration> mappingsForSet = new ArrayList<MappingConfiguration>();
       for (MappingConfiguration mapping : myPriorityMap.keySet()) {
         // no greater priority mappings?
         if (myPriorityMap.get(mapping).isEmpty()) {
-          mappingsForStep.add(mapping);
+          mappingsForSet.add(mapping);
+          if (firstSet) {
+            myNotLockingMappingsInFirstSet.add(mapping);
+          }
         }
       }
 
-      if (mappingsForStep.isEmpty()) break;
-      stepMappings.addAll(mappingsForStep);
+      if (mappingsForSet.isEmpty()) break;
+      mappingSet.addAll(mappingsForSet);
 
       // clean-up lesser-pri-mappings
-      for (MappingConfiguration mappingForStep : mappingsForStep) {
-        myPriorityMap.remove(mappingForStep);
+      for (MappingConfiguration mappingForSet : mappingsForSet) {
+        myPriorityMap.remove(mappingForSet);
       }
 
       // clean-up weak greater-pri-mappings
-      for (MappingConfiguration mappingForStep : mappingsForStep) {
+      for (MappingConfiguration mappingForSet : mappingsForSet) {
         for (Map<MappingConfiguration, PriorityData> grtPriMappings : myPriorityMap.values()) {
-          if (grtPriMappings.containsKey(mappingForStep)) {
-            PriorityData priorityData = grtPriMappings.get(mappingForStep);
+          if (grtPriMappings.containsKey(mappingForSet)) {
+            if (firstSet) {
+              myNotLockingMappingsInFirstSet.remove(mappingForSet);
+              myLockingMappingsInFirstSet.add(mappingForSet);
+            }
+
+            PriorityData priorityData = grtPriMappings.get(mappingForSet);
             if (!priorityData.isStrict) {
               // weak priority
-              grtPriMappings.remove(mappingForStep);
+              grtPriMappings.remove(mappingForSet);
             }
           }
         }
       }
-    } // while have something to add to 'mappings-for-step'
+    } // while have something to add to 'mappings-for-set'
 
     // clean-up strict greater-pri-mappings
-    for (MappingConfiguration mapping : stepMappings) {
+    for (MappingConfiguration mappingInSet : mappingSet) {
       for (Map<MappingConfiguration, PriorityData> grtPriMappings : myPriorityMap.values()) {
-        grtPriMappings.remove(mapping);
+        if (grtPriMappings.containsKey(mappingInSet)) {
+          if (firstSet) {
+            myNotLockingMappingsInFirstSet.remove(mappingInSet);
+            myLockingMappingsInFirstSet.add(mappingInSet);
+          }
+          grtPriMappings.remove(mappingInSet);
+        }
       }
     }
 
-    return stepMappings;
+    return mappingSet;
   }
 
-  private void processRule(MappingPriorityRule rule, Generator generator, List<MappingConfiguration> alreadyProcessedMappings) {
+  private void processRule(MappingPriorityRule rule, Generator generator) {
 
     MappingConfig_AbstractRef greaterPriMappingRef = rule.getGreaterPriorityMapping();
     MappingConfig_AbstractRef lesserPriMappingRef = rule.getLesserPriorityMapping();
@@ -158,15 +234,13 @@ public class GenerationPartitioner {
     List<MappingConfiguration> greaterPriMappings = getMappingsFromRef(greaterPriMappingRef, generator);
     List<MappingConfiguration> lesserPriMappings = getMappingsFromRef(lesserPriMappingRef, generator);
     if (rule.getKind() == MappingPriorityRuleKind.strictly_together) {
-      List<MappingConfiguration> coherentMappings = new ArrayList<MappingConfiguration>(CollectionUtil.substruct(lesserPriMappings, alreadyProcessedMappings));
-      CollectionUtil.addAllNotPresent(CollectionUtil.substruct(greaterPriMappings, alreadyProcessedMappings), coherentMappings);
+      List<MappingConfiguration> coherentMappings = new ArrayList<MappingConfiguration>(lesserPriMappings);
+      CollectionUtil.addAllNotPresent(greaterPriMappings, coherentMappings);
       myStrictlyTogetherMappings.add(new Pair<MappingPriorityRule, List<MappingConfiguration>>(rule, coherentMappings));
 
     } else {
       // map: lesser mapping -> {greater mapping, .... , greater mapping }
       lesserPriMappings = CollectionUtil.substruct(lesserPriMappings, greaterPriMappings);
-      lesserPriMappings = CollectionUtil.substruct(lesserPriMappings, alreadyProcessedMappings);
-      greaterPriMappings = CollectionUtil.substruct(greaterPriMappings, alreadyProcessedMappings);
       for (MappingConfiguration lesserPriMapping : lesserPriMappings) {
         Map<MappingConfiguration, PriorityData> grtPriMappings = myPriorityMap.get(lesserPriMapping);
         for (MappingConfiguration grtPriMapping : greaterPriMappings) {

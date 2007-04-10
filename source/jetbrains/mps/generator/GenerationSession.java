@@ -143,7 +143,7 @@ public class GenerationSession implements IGenerationSession {
         addProgressMessage(MessageKind.WARNING, "skip model \"" + sourceModel.getUID() + "\" : no generator avalable");
         return new GenerationStatus(sourceModel, null, null, false, false, false);
       }
-      printGenerationStepData(context.getGenerationStepData());
+      printGenerationStepData(context.getGenerationStepData(), sourceModel);
 
     } else {
       List<Generator> generators = context.getGeneratorModules();
@@ -200,9 +200,10 @@ public class GenerationSession implements IGenerationSession {
     SModel outputModel = null;
     while (true) {
       outputModel = generateModel(inputModel, targetLanguage, generator, generationContext);
+      inputModel = outputModel;
       // need more steps?
       GenerationStepData generationStepData = generationContext.getGenerationStepData();
-      if (!generationStepData.update(outputModel)) {
+      if (!generationStepData.update(inputModel)) {
         // generation complete
         break;
       }
@@ -212,8 +213,7 @@ public class GenerationSession implements IGenerationSession {
       if (generationStepData.getMappings().isEmpty()) {
         break;
       }
-      printGenerationStepData(generationStepData);
-      inputModel = outputModel;
+      printGenerationStepData(generationStepData, inputModel);
       generationContext.replaceInputModel(inputModel.getModelDescriptor());
       generationContext.replaceGenerationStepData(generationStepData);
     }
@@ -457,8 +457,8 @@ public class GenerationSession implements IGenerationSession {
     return true;
   }
 
-  private void printGenerationStepData(GenerationStepData stepData) {
-    List<String> namespaces = GenerationPartitioningUtil.getUsedLanguageNamespaces(stepData.getInputModel(), false);
+  private void printGenerationStepData(GenerationStepData stepData, SModel inputModel) {
+    List<String> namespaces = GenerationPartitioningUtil.getUsedLanguageNamespaces(inputModel, false);
     Collections.sort(namespaces);
     addMessage(new Message(MessageKind.INFORMATION, "languages used:"));
     for (String namespace : namespaces) {
