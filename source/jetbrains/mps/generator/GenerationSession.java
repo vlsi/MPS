@@ -4,7 +4,7 @@ import jetbrains.mps.generator.template.DefaultTemplateGenerator;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.Statistics;
 import jetbrains.mps.generator.plan.GenerationStepData;
-import jetbrains.mps.generator.plan.GenerationPlanUtil;
+import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
@@ -458,8 +458,27 @@ public class GenerationSession implements IGenerationSession {
   }
 
   private void printGenerationStepData(GenerationStepData stepData) {
+    List<String> namespaces = GenerationPartitioningUtil.getUsedLanguageNamespaces(stepData.getInputModel(), false);
+    Collections.sort(namespaces);
+    addMessage(new Message(MessageKind.INFORMATION, "languages used:"));
+    for (String namespace : namespaces) {
+      addMessage(new Message(MessageKind.INFORMATION, "    " + namespace));
+    }
+    List<Generator> generators = stepData.getGenerators();
+    Collections.sort(generators, new Comparator<Generator>() {
+      public int compare(Generator o1, Generator o2) {
+        if (o1 == o2) return 0;
+        return o1.getAlias().compareTo(o2.getAlias());
+      }
+    });
+    addMessage(new Message(MessageKind.INFORMATION, "engaged generators:"));
+    for (Generator generator : generators) {
+      addMessage(new Message(MessageKind.INFORMATION, "    " + generator.getAlias()));
+    }
+
+
     addMessage(new Message(MessageKind.INFORMATION, "apply mapping configurations:"));
-    List<String> messages = GenerationPlanUtil.toStrings(stepData.getMappings());
+    List<String> messages = GenerationPartitioningUtil.toStrings(stepData.getMappings());
     for (String message : messages) {
       addMessage(new Message(MessageKind.INFORMATION, "    " + message));
     }

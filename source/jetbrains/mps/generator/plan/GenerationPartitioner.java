@@ -14,26 +14,27 @@ import java.util.*;
  * Igor Alshannikov
  * Date: Mar 27, 2007
  */
-public class GenerationPlanBuilder {
-  private static Logger LOG = Logger.getLogger(GenerationPlanBuilder.class);
+public class GenerationPartitioner {
+  private static Logger LOG = Logger.getLogger(GenerationPartitioner.class);
 
   private List<MappingConfiguration> myAllMappings = new ArrayList<MappingConfiguration>();
   private Map<MappingConfiguration, Map<MappingConfiguration, PriorityData>> myPriorityMap = new HashMap<MappingConfiguration, Map<MappingConfiguration, PriorityData>>();
   private List<Pair<MappingPriorityRule, List<MappingConfiguration>>> myStrictlyTogetherMappings = new ArrayList<Pair<MappingPriorityRule, List<MappingConfiguration>>>();
+  private List<MappingPriorityRule> myConflictingRules = new ArrayList<MappingPriorityRule>();
 
-  public GenerationPlan createPlan(List<Generator> generators) {
+  public List<List<MappingConfiguration>> createMappingSets(List<Generator> generators) {
     return createPlan(null, generators, new ArrayList<MappingConfiguration>());
   }
 
-  public GenerationPlan createPlan(GeneratorDescriptor descriptorWorkingCopy, List<Generator> generators) {
+  public List<List<MappingConfiguration>> createMappingSets(GeneratorDescriptor descriptorWorkingCopy, List<Generator> generators) {
     return createPlan(descriptorWorkingCopy, generators, new ArrayList<MappingConfiguration>());
   }
 
-  public GenerationPlan createPlan(List<Generator> generators, List<MappingConfiguration> ignoreGreaterPriMappings) {
+  public List<List<MappingConfiguration>> createPlan(List<Generator> generators, List<MappingConfiguration> ignoreGreaterPriMappings) {
     return createPlan(null, generators, ignoreGreaterPriMappings);
   }
 
-  private GenerationPlan createPlan(GeneratorDescriptor descriptorWorkingCopy, List<Generator> generators, List<MappingConfiguration> ignoreGreaterPriMappings) {
+  private List<List<MappingConfiguration>> createPlan(GeneratorDescriptor descriptorWorkingCopy, List<Generator> generators, List<MappingConfiguration> ignoreGreaterPriMappings) {
     for (Generator generator : generators) {
       myAllMappings.addAll(generator.getOwnMappings());
     }
@@ -82,15 +83,14 @@ public class GenerationPlanBuilder {
 
     // create mappings partitioning
     List<List<MappingConfiguration>> steps = createSteps();
-    List<MappingPriorityRule> conflictingRules = new ArrayList<MappingPriorityRule>();
     for (Map<MappingConfiguration, PriorityData> grtPriMappings : myPriorityMap.values()) {
       for (PriorityData priorityData : grtPriMappings.values()) {
-        if (!conflictingRules.contains(priorityData.causeRule)) {
-          conflictingRules.add(priorityData.causeRule);
+        if (!myConflictingRules.contains(priorityData.causeRule)) {
+          myConflictingRules.add(priorityData.causeRule);
         }
       }
     }
-    return new GenerationPlan(steps, generators, conflictingRules);
+    return steps;
   }
 
   private List<List<MappingConfiguration>> createSteps() {
@@ -238,6 +238,14 @@ public class GenerationPlanBuilder {
     }
 
     return new ArrayList();
+  }
+
+  public boolean hasConflictingPriorityRules() {
+    return !myConflictingRules.isEmpty();
+  }
+
+  public List<MappingPriorityRule> getConflictingPriorityRules() {
+    return myConflictingRules;
   }
 
   private static class PriorityData {

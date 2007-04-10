@@ -1,12 +1,14 @@
 package jetbrains.mps.generator.plan;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
-import jetbrains.mps.projectLanguage.structure.GeneratorReference;
+import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.transformation.TLBase.structure.TemplateDeclaration;
 import jetbrains.mps.core.structure.BaseConcept;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.project.GlobalScope;
 
 import java.util.*;
 
@@ -14,8 +16,8 @@ import java.util.*;
  * Igor Alshannikov
  * Date: Mar 30, 2007
  */
-public class GenerationPlanUtil {
-  private static final Logger LOG = Logger.getLogger(GenerationPlanUtil.class);
+public class GenerationPartitioningUtil {
+  private static final Logger LOG = Logger.getLogger(GenerationPartitioningUtil.class);
 
   public static List<Generator> getAllReachableGenerators(GeneratorDescriptor descriptorWorkingCopy, IScope scope) {
     ArrayList<Generator> collectedGenerators = new ArrayList<Generator>();
@@ -35,12 +37,16 @@ public class GenerationPlanUtil {
     return collectedGenerators;
   }
 
-  public static List<Generator> getGeneratorsRequiredForAllGenerationSteps(SModel inputModel, IScope scope) {
+  public static List<Generator> getEngagedGenerators(SModel inputModel, IScope scope) {
+     return getAllPossiblyEngagedGenerators(inputModel, scope);
+  }
+
+  public static List<Generator> getAllPossiblyEngagedGenerators(SModel inputModel, IScope scope) {
     return collectGenerators(inputModel, false, new ArrayList<Generator>(), new HashSet<Language>(), scope);
   }
 
   private static List<Generator> collectGenerators(SModel inputModel, boolean excludeTLBase, List<Generator> collectedGenerators, Set<Language> processedLanguages, IScope scope) {
-    List<Language> languages = extractUsedLanguages(inputModel, excludeTLBase, scope);
+    List<Language> languages = getUsedLanguages(inputModel, excludeTLBase, scope);
 
     for (Language language : languages) {
       if (processedLanguages.contains(language)) continue;
@@ -74,7 +80,7 @@ public class GenerationPlanUtil {
   }
 
 
-  private static List<Language> extractUsedLanguages(SModel model, boolean excludeTLBase, IScope scope) {
+  public static List<Language> getUsedLanguages(SModel model, boolean excludeTLBase, IScope scope) {
     Set<String> namespaces = new HashSet<String>();
     for (SNode root : model.getRoots()) {
       collectLanguageNamespaces(root, namespaces, excludeTLBase);
@@ -89,6 +95,14 @@ public class GenerationPlanUtil {
       }
     }
     return result;
+  }
+
+  public static List<String> getUsedLanguageNamespaces(SModel model, boolean excludeTLBase) {
+    Set<String> namespaces = new HashSet<String>();
+    for (SNode root : model.getRoots()) {
+      collectLanguageNamespaces(root, namespaces, excludeTLBase);
+    }
+    return CollectionUtil.setAsList(namespaces);
   }
 
   private static void collectLanguageNamespaces(SNode node, Set<String> namespaces, boolean excludeTLBase) {
@@ -120,12 +134,12 @@ public class GenerationPlanUtil {
   }
 
 
-  public static List<String> toStrings(List<MappingConfiguration> step) {
+  public static List<String> toStrings(List<MappingConfiguration> mappings) {
     List<String> strings = new ArrayList<String>();
 
     // consolidate mappings
     Map<SModel, Integer> numOfMappingsByModel = new HashMap<SModel, Integer>();
-    for (MappingConfiguration mappingConfig : step) {
+    for (MappingConfiguration mappingConfig : mappings) {
       SModel model = mappingConfig.getModel();
       if (!numOfMappingsByModel.containsKey(model)) {
         numOfMappingsByModel.put(model, 0);
@@ -144,7 +158,7 @@ public class GenerationPlanUtil {
     }
 
     // output
-    for (MappingConfiguration mappingConfig : step) {
+    for (MappingConfiguration mappingConfig : mappings) {
       SModel model = mappingConfig.getModel();
       if (numOfMappingsByModel.containsKey(model)) {
         if (numOfMappingsByModel.get(model) == 0) {
@@ -160,4 +174,85 @@ public class GenerationPlanUtil {
     return strings;
   }
 
+  public static List<String> toStrings(List<MappingPriorityRule> priorityRules, boolean moreDetails) {
+    List<String> list = new ArrayList<String>();
+    for (MappingPriorityRule rule : priorityRules) {
+      GeneratorDescriptor enclosingGenerator = rule.findParent(GeneratorDescriptor.class);
+      String text = asString(rule);
+      if (moreDetails) {
+        text = text + "   (" + asString(enclosingGenerator) + ")";
+      } else {
+        if (text.length() > 120) {
+          text = text.substring(0, 120) + "...";
+        }
+      }
+      list.add(text);
+    }
+    Collections.sort(list);
+    return list;
+  }
+
+  private static String asString(MappingPriorityRule rule) {
+    return asString(rule.getGreaterPriorityMapping()) + " " + rule.getKind().getName() + " " + asString(rule.getLesserPriorityMapping());
+  }
+
+  private static String asString(MappingConfig_AbstractRef mappingRef) {
+    if (mappingRef instanceof MappingConfig_RefAllLocal) {
+      return "*";
+    }
+    if (mappingRef instanceof MappingConfig_RefAllGlobal) {
+      return "[*:*]";
+
+    }
+
+    if (mappingRef instanceof MappingConfig_SimpleRefSet) {
+      String s = "{";
+      int count = ((MappingConfig_SimpleRefSet) mappingRef).getMappingConfigsCount();
+      for (MappingConfig_SimpleRef mappingSimpleRef : ((MappingConfig_SimpleRefSet) mappingRef).getMappingConfigs()) {
+        count--;
+        s = s + asString(mappingSimpleRef);
+        if (count > 0) s += ", ";
+      }
+      return s + "}";
+    }
+
+    if (mappingRef instanceof MappingConfig_SimpleRef) {
+      String modelUID = ((MappingConfig_SimpleRef) mappingRef).getModelUID();
+      String nodeID = ((MappingConfig_SimpleRef) mappingRef).getNodeID();
+      String s = SModelUID.fromString(modelUID).getShortName() + ".";
+      if (nodeID.equals("*")) {
+        return s + "*";
+      } else {
+        GlobalScope scope = GlobalScope.getInstance();
+        SModelDescriptor refModel = scope.getModelDescriptor(SModelUID.fromString(modelUID));
+        if (refModel != null) {
+          SNode mappingConfig = refModel.getSModel().getNodeById(nodeID);
+          if (mappingConfig != null) {
+            return s + mappingConfig.getName();
+          }
+        }
+      }
+      return s + nodeID;
+    }
+
+    if (mappingRef instanceof MappingConfig_ExtRef) {
+      GeneratorReference generatorRef = ((MappingConfig_ExtRef) mappingRef).getGenerator();
+      MappingConfig_AbstractRef extMappingRef = ((MappingConfig_ExtRef) mappingRef).getMappingConfig();
+      return "[" + asString(generatorRef) + ":" + asString(extMappingRef) + "]";
+    }
+
+    return "???";
+  }
+
+  private static String asString(GeneratorReference generatorRef) {
+    String generatorUID = generatorRef.getGeneratorUID();
+    Generator generator = (Generator) MPSModuleRepository.getInstance().getModuleByUID(generatorUID);
+    return generator.getAlias();
+  }
+
+  private static String asString(GeneratorDescriptor generatorDescriptor) {
+    String generatorUID = generatorDescriptor.getGeneratorUID();
+    Generator generator = (Generator) MPSModuleRepository.getInstance().getModuleByUID(generatorUID);
+    return generator.getAlias();
+  }
 }
