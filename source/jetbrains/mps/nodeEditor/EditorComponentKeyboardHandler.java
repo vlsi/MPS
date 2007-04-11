@@ -22,11 +22,6 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
   }
 
   public boolean processKeyPressed(final EditorContext editorContext, final KeyEvent keyEvent) {
-    //test
-    if(keyEvent.getKeyCode() == KeyEvent.VK_UP && keyEvent.isAltDown()) {
-      System.out.println("aaa");
-    }
-    //test
     if (keyEvent.isConsumed()) return false;
     AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
     SNodeProxy sNodeProxy = editor.getRootCell().getSNodeProxy();
