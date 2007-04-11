@@ -15,6 +15,8 @@ public interface IProjectHandler extends Remote {
   List<String> getAspectMethodIds(final String namespace, final String prefix) throws RemoteException;
   List<String> findInheritors(final String fqName) throws RemoteException;
 
+  List<String> getMethods(final String name) throws RemoteException;
+
   void openClass(final String fqName) throws RemoteException;
   void addImport(final String namespace, final String fqName) throws RemoteException;
 
