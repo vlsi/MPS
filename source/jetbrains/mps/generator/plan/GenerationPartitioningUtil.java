@@ -37,8 +37,8 @@ public class GenerationPartitioningUtil {
     return collectedGenerators;
   }
 
-  public static List<Generator> getEngagedGenerators(SModel inputModel, IScope scope) {
-    return getAllPossiblyEngagedGenerators(inputModel, scope);
+  public static List<Generator> getExplicitlyEngagedGenerators(SModel inputModel, IScope scope) {
+    return collectGenerators(inputModel, false, false, new ArrayList<Generator>(), new HashSet<Language>(), scope);
   }
 
   public static List<Generator> getAllPossiblyEngagedGenerators(SModel inputModel, IScope scope) {

@@ -464,17 +464,17 @@ public class GenerationSession implements IGenerationSession {
     for (String namespace : namespaces) {
       addMessage(new Message(MessageKind.INFORMATION, "    " + namespace));
     }
-//    List<Generator> generators = stepData.getGenerators();
-//    Collections.sort(generators, new Comparator<Generator>() {
-//      public int compare(Generator o1, Generator o2) {
-//        if (o1 == o2) return 0;
-//        return o1.getAlias().compareTo(o2.getAlias());
-//      }
-//    });
-//    addMessage(new Message(MessageKind.INFORMATION, "engaged generators:"));
-//    for (Generator generator : generators) {
-//      addMessage(new Message(MessageKind.INFORMATION, "    " + generator.getAlias()));
-//    }
+    List<Generator> generators = stepController.getGenerators();
+    Collections.sort(generators, new Comparator<Generator>() {
+      public int compare(Generator o1, Generator o2) {
+        if (o1 == o2) return 0;
+        return o1.getAlias().compareTo(o2.getAlias());
+      }
+    });
+    addMessage(new Message(MessageKind.INFORMATION, "engaged generators:"));
+    for (Generator generator : generators) {
+      addMessage(new Message(MessageKind.INFORMATION, "    " + generator.getAlias()));
+    }
 
 
     addMessage(new Message(MessageKind.INFORMATION, "apply mapping configurations:"));
