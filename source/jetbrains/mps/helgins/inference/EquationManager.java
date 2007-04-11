@@ -341,10 +341,15 @@ public class EquationManager {
       }
     }
 
+    Set<SNode> oldTypes = types;
     types = subtypingGraphVertices();
 
     for (SNode type : types) {
       //assert BaseAdapter.isInstance(type, RuntimeTypeVariable.class);
+      if (!(BaseAdapter.isInstance(type, RuntimeTypeVariable.class))) {
+        System.err.println("oy vey");
+        continue;
+      }
       Map<SNode, SNode> supertypes = mySubtypesToSupertypesMap.get(type);
       if (supertypes != null) {
         mySubtypesToSupertypesMap.remove(type);
