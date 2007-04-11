@@ -110,18 +110,22 @@
             <property name="text" value="://" />
           </node>
           <node role="right" type="jetbrains.mps.regexp.SeqRegexp" id="1174663465251">
-            <node role="left" type="jetbrains.mps.regexp.RegexpDeclarationReferenceRegexp" id="1174663461406">
-              <link role="regexp" targetNodeId="1174663261663" resolveInfo="HOST_NAME" />
+            <node role="left" type="jetbrains.mps.regexp.SeqRegexp" id="1176281423205">
+              <node role="left" type="jetbrains.mps.regexp.RegexpDeclarationReferenceRegexp" id="1174663461406">
+                <link role="regexp" targetNodeId="1174663261663" resolveInfo="HOST_NAME" />
+              </node>
+              <node role="right" type="jetbrains.mps.regexp.QuestionRegexp" id="1176281429271">
+                <node role="regexp" type="jetbrains.mps.regexp.ParensRegexp" id="1176281423206">
+                  <node role="expr" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1176281425395">
+                    <property name="text" value="/" />
+                  </node>
+                </node>
+              </node>
             </node>
             <node role="right" type="jetbrains.mps.regexp.QuestionRegexp" id="1174663521896">
               <node role="regexp" type="jetbrains.mps.regexp.ParensRegexp" id="1174663510547">
-                <node role="expr" type="jetbrains.mps.regexp.SeqRegexp" id="1174663518706">
-                  <node role="left" type="jetbrains.mps.regexp.StringLiteralRegexp" id="1174663515096">
-                    <property name="text" value="/" />
-                  </node>
-                  <node role="right" type="jetbrains.mps.regexp.RegexpDeclarationReferenceRegexp" id="1174663518707">
-                    <link role="regexp" targetNodeId="1174663417344" resolveInfo="PATH" />
-                  </node>
+                <node role="expr" type="jetbrains.mps.regexp.RegexpDeclarationReferenceRegexp" id="1174663518707">
+                  <link role="regexp" targetNodeId="1174663417344" resolveInfo="PATH" />
                 </node>
               </node>
             </node>
