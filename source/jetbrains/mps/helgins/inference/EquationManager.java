@@ -33,6 +33,37 @@ public class EquationManager {
     return myTypeChecker;
   }
 
+  public void putAllEquations(EquationManager slave) {
+    for (SNode key : slave.mySubtypesToSupertypesMap.keySet()) {
+      Map<SNode, SNode> map = mySubtypesToSupertypesMap.get(key);
+      if (map == null) {
+        map = new HashMap<SNode, SNode>();
+        mySubtypesToSupertypesMap.put(key, map);
+      }
+      map.putAll(slave.mySubtypesToSupertypesMap.get(key));
+    }
+
+    for (SNode key : slave.mySupertypesToSubtypesMap.keySet()) {
+      Map<SNode, SNode> map = mySupertypesToSubtypesMap.get(key);
+      if (map == null) {
+        map = new HashMap<SNode, SNode>();
+        mySupertypesToSubtypesMap.put(key, map);
+      }
+      map.putAll(slave.mySupertypesToSubtypesMap.get(key));
+    }
+
+    for (SNode key : slave.myComparableTypesMap.keySet()) {
+      Map<SNode, SNode> map = myComparableTypesMap.get(key);
+      if (map == null) {
+        map = new HashMap<SNode, SNode>();
+        myComparableTypesMap.put(key, map);
+      }
+      map.putAll(slave.myComparableTypesMap.get(key));
+    }
+
+    myEquations.putAll(slave.myEquations);
+  }
+
   public SNode getParent(SNode type) {
     return myEquations.get(type);
   }

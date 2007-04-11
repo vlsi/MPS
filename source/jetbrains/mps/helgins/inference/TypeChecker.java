@@ -50,7 +50,7 @@ public class TypeChecker {
   private WeakHashMap<SNode, IErrorReporter> myNodesWithErrors = new WeakHashMap<SNode, IErrorReporter>();
   private WeakHashMap<SNode, String> myNodesWithErrorStrings = new WeakHashMap<SNode, String>();
   private Map<SNode, SNode> myMainContext = new HashMap<SNode, SNode>();
-  private EquationManager myEquationManager;
+  private Stack<EquationManager> myEquationManagersStack = new Stack<EquationManager>();
   private TypeVariablesManager myTypeVariablesManager;
   private HInterpreter myHInterpreter;
   private SubtypingManager mySubtypingManager;
@@ -62,7 +62,7 @@ public class TypeChecker {
   private boolean myUsedForBLCompletion = true;
 
   public TypeChecker() {
-    myEquationManager = new EquationManager(this);
+    myEquationManagersStack.push(new EquationManager(this));
     myHInterpreter = new HInterpreter(this);
     myTypeVariablesManager = new TypeVariablesManager(this);
     mySubtypingManager = new SubtypingManager(this);
@@ -82,7 +82,7 @@ public class TypeChecker {
   }
 
   public EquationManager getEquationManager() {
-    return myEquationManager;
+    return myEquationManagersStack.peek();
   }
 
   public TypeVariablesManager getTypeVariablesManager() {
@@ -120,7 +120,8 @@ public class TypeChecker {
   public void clear() {
     myMainContext.clear();
     myAdaptationManager.clear();
-    myEquationManager.clear();
+    myEquationManagersStack.clear();
+    myEquationManagersStack.push(new EquationManager(this));
     myTypeVariablesManager.clearVariables();
     myHInterpreter.clear();
     myAdaptationManager.clear();
@@ -182,7 +183,7 @@ public class TypeChecker {
     doCheckTypes(root);
 
     // solve residual inequations
-    myEquationManager.solveInequations();
+    myEquationManagersStack.peek().solveInequations();
 
     // main context
     Map<SNode, SNode> mainContext = getMainContext();
@@ -228,7 +229,7 @@ public class TypeChecker {
   }
 
   private SNode expandType(SNode node, SModel typesModel) {
-    SNode representator = myEquationManager.getRepresentator(node);
+    SNode representator = myEquationManagersStack.peek().getRepresentator(node);
     return expandNode(representator, representator, 0, new HashSet<RuntimeTypeVariable>(), typesModel);
   }
 
@@ -236,7 +237,7 @@ public class TypeChecker {
     if (node == null) return null;
     if (BaseAdapter.isInstance(node, RuntimeTypeVariable.class)) {
       RuntimeTypeVariable var = (RuntimeTypeVariable) BaseAdapter.fromNode(node);
-      SNode type = myEquationManager.getRepresentator(node);
+      SNode type = myEquationManagersStack.peek().getRepresentator(node);
       if (type != representator || depth > 0) {
 
         if (variablesMet.contains(var)) {
@@ -288,12 +289,16 @@ public class TypeChecker {
       for (SNode node : frontier) {
         if (myCheckedNodes.contains(node)) continue;
         newFrontier.addAll(node.getChildren());
+
+        // new rules:
         Set<InferenceRule_Runtime> newRules = myRulesManager.getInferenceRules(node);
         if (newRules != null) {
           for (InferenceRule_Runtime rule : newRules) {
             rule.applyRule(node);
           }
         }
+
+        // legacy rules:
         Set<Rule> rules = myConceptsToRulesCache.get(node.getConceptDeclarationAdapter());
         if (rules != null) {
           for (Rule rule : rules) {
@@ -306,8 +311,14 @@ public class TypeChecker {
     }
   }
 
-  public void checkTypesForNode(SNode node) {
+  public void checkTypesForNodeAndSolveInequations(SNode node) {
+    EquationManager oldSlave = new EquationManager(this);
+    myEquationManagersStack.push(oldSlave);
     doCheckTypes(node);
+    EquationManager slave = myEquationManagersStack.pop();
+    assert slave == oldSlave;
+    slave.solveInequations();
+    myEquationManagersStack.peek().putAllEquations(slave);
     myCheckedNodes.add(node); // for not to check it again
   }
 

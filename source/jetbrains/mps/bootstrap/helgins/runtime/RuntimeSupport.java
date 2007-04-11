@@ -35,7 +35,7 @@ public class RuntimeSupport {
       type = TypeChecker.asType(var);
       typesContext.put(node, type);
     }
-    return type;
+    return myTypeChecker.getEquationManager().getRepresentator(type);
   }
 
   private String getNewVarName() {
@@ -83,6 +83,6 @@ public class RuntimeSupport {
   }
 
   public void check(SNode node) {
-    myTypeChecker.checkTypesForNode(node);
+    myTypeChecker.checkTypesForNodeAndSolveInequations(node);
   }
 }
