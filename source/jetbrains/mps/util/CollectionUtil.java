@@ -263,8 +263,8 @@ public class CollectionUtil {
     return result;
   }
 
-  public static <T> Set<T> lisAsSet(List<T> list) {
-    Set<T> result = new HashSet<T>();
+  public static <T> Set<T> listAsSet(List<T> list) {
+    Set<T> result = new LinkedHashSet<T>();
     result.addAll(list);
     return result;
   }
