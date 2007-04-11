@@ -28,8 +28,8 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   private Map<Object, Object> myTransientObjects = new HashMap<Object, Object>();
   private Map<Object, Object> mySessionObjects = new HashMap<Object, Object>();
-  private Set<MappingConfiguration> myCustomMappingConfigurations;
-  private Set<MappingConfiguration> myMappingConfigurations;
+  private LinkedHashSet<MappingConfiguration> myCustomMappingConfigurations;
+  private LinkedHashSet<MappingConfiguration> myMappingConfigurations;
 
   // these objects survive through all steps of generation
   private TraceMap myTraceMap = new TraceMap();
@@ -52,7 +52,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       myGenerationStepController = new GenerationStepController(inputModel);
       myGeneratorModules = myGenerationStepController.getGenerators();
       myTemplateModels = myGenerationStepController.getTemplateModels();
-      myMappingConfigurations = CollectionUtil.listAsSet(myGenerationStepController.getMappings());
+      myMappingConfigurations = new LinkedHashSet<MappingConfiguration>(myGenerationStepController.getMappings());
     } else {
       // old
       myGeneratorModules = getUsedGenerators(inputModel);
@@ -84,7 +84,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     myGenerationStepController = generationStepController;
     myGeneratorModules = myGenerationStepController.getGenerators();
     myTemplateModels = myGenerationStepController.getTemplateModels();
-    myMappingConfigurations = CollectionUtil.listAsSet(myGenerationStepController.getMappings());
+    myMappingConfigurations = new LinkedHashSet<MappingConfiguration>(myGenerationStepController.getMappings());
     myTransientModule.addGeneratorModules(myGeneratorModules);
   }
 
@@ -98,9 +98,9 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     }
 
     if (myCustomMappingConfigurations != null) {
-      myMappingConfigurations = new HashSet<MappingConfiguration>(myCustomMappingConfigurations);
+      myMappingConfigurations = new LinkedHashSet<MappingConfiguration>(myCustomMappingConfigurations);
     } else {
-      myMappingConfigurations = new HashSet<MappingConfiguration>();
+      myMappingConfigurations = new LinkedHashSet<MappingConfiguration>();
       for (SModelDescriptor templateModel : myTemplateModels) {
         myMappingConfigurations.addAll(templateModel.getSModel().allAdapters(MappingConfiguration.class));
       }
