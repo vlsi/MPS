@@ -156,8 +156,12 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     int textLength = 0;
     int descriptionLength = 0;
     for (INodeSubstituteAction item : mySubstituteActions) {
-      textLength = Math.max(textLength, getTextLength(item));
-      descriptionLength = Math.max(descriptionLength, getDescriptionLength(item));
+      try {
+        textLength = Math.max(textLength, getTextLength(item));
+        descriptionLength = Math.max(descriptionLength, getDescriptionLength(item));
+      } catch(Throwable t) {
+        LOG.error(t);
+      }
     }
 
     myLength = Math.max(2 + textLength + descriptionLength, PREFERRED_WIDTH / getPopupWindow().getFontWidth());
@@ -170,8 +174,16 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   private String getPresentation(INodeSubstituteAction action) {
     StringBuilder result = new StringBuilder();
 
-    String text = action.getMatchingText(null);
-    String descriptionText = action.getDescriptionText(null);
+    String text = null;
+    String descriptionText = null;
+
+    try {
+      text = action.getMatchingText(null);
+      descriptionText = action.getDescriptionText(null);
+    } catch(Throwable t) {
+      LOG.error(t);
+    }
+
     if (descriptionText == null) {
       descriptionText = "";
     }

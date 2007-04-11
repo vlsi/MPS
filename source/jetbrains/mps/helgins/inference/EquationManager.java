@@ -333,23 +333,25 @@ public class EquationManager {
 
   public void solveInequations() {
     Set<SNode> types = subtypingGraphVertices();
+    boolean hasConcreteTypes = true;
 
-    for (SNode type : types) {
-      if (BaseAdapter.isInstance(type, RuntimeTypeVariable.class)) {
-        varLessThanType(type);
-        typeLessThanVar(type);
+    while (hasConcreteTypes) {
+      hasConcreteTypes = false;
+      for (SNode type : types) {
+        if (BaseAdapter.isInstance(type, RuntimeTypeVariable.class)) {
+          varLessThanType(type);
+          typeLessThanVar(type);
+        } else {
+          hasConcreteTypes = true;
+        }
       }
+      types = subtypingGraphVertices();
     }
 
-    Set<SNode> oldTypes = types;
-    types = subtypingGraphVertices();
 
     for (SNode type : types) {
-      //assert BaseAdapter.isInstance(type, RuntimeTypeVariable.class);
-      if (!(BaseAdapter.isInstance(type, RuntimeTypeVariable.class))) {
-        System.err.println("oy vey");
-        continue;
-      }
+      assert BaseAdapter.isInstance(type, RuntimeTypeVariable.class);
+    
       Map<SNode, SNode> supertypes = mySubtypesToSupertypesMap.get(type);
       if (supertypes != null) {
         mySubtypesToSupertypesMap.remove(type);
