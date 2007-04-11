@@ -57,7 +57,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       // old
       myGeneratorModules = getUsedGenerators(inputModel);
       if (configs != null) {
-        myCustomMappingConfigurations = new HashSet<MappingConfiguration>(configs);
+        myCustomMappingConfigurations = new LinkedHashSet<MappingConfiguration>(configs);
       }
       initTemplateModels();
     }
