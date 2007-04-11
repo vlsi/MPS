@@ -10,7 +10,7 @@ import jetbrains.mps.util.Pair;
 
 import java.util.*;
 
-import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Igor Alshannikov
@@ -24,15 +24,15 @@ public class GenerationPartitioner {
   private List<Pair<MappingPriorityRule, List<MappingConfiguration>>> myStrictlyTogetherMappings;
   private List<MappingPriorityRule> myConflictingRules;
 
-  private Set<MappingConfiguration> myLockingMappingsInFirstSet;
-  private Set<MappingConfiguration> myNotLockingMappingsInFirstSet;
+  private Set<MappingConfiguration> myProcessedLockingMappings;
+  private Set<MappingConfiguration> myDeferredNotLockingMappings;
 
   public List<List<MappingConfiguration>> createMappingSets(List<Generator> generators) {
-    return doPartitioning(null, generators, null, null);
+    return doPartitioning(null, generators, new HashSet<MappingConfiguration>(), new HashSet<MappingConfiguration>());
   }
 
   public List<List<MappingConfiguration>> createMappingSets(GeneratorDescriptor descriptorWorkingCopy, List<Generator> generators) {
-    return doPartitioning(descriptorWorkingCopy, generators, null, null);
+    return doPartitioning(descriptorWorkingCopy, generators, new HashSet<MappingConfiguration>(), new HashSet<MappingConfiguration>());
   }
 
   GenerationStepInfo createGenerationStepInfo(List<Generator> generators) {
@@ -40,17 +40,20 @@ public class GenerationPartitioner {
   }
 
   GenerationStepInfo createGenerationStepInfo(List<Generator> generators, GenerationStepInfo prevStepInfo) {
-    Set<MappingConfiguration> processedLockingMappings = null;
-    Set<MappingConfiguration> processedNotLockingMappings = null;
+    Set<MappingConfiguration> processedLockingMappings;
+    Set<MappingConfiguration> deferredNotLockingMappings;
     if (prevStepInfo != null) {
       processedLockingMappings = prevStepInfo.getLockingMappings();
-      processedNotLockingMappings = prevStepInfo.getNotLockingMappings();
+      deferredNotLockingMappings = prevStepInfo.getNotLockingMappings();
+    } else {
+      processedLockingMappings = new HashSet<MappingConfiguration>();
+      deferredNotLockingMappings = new HashSet<MappingConfiguration>();
     }
-    List<List<MappingConfiguration>> mappingSets = doPartitioning(null, generators, processedLockingMappings, processedNotLockingMappings);
+    List<List<MappingConfiguration>> mappingSets = doPartitioning(null, generators, processedLockingMappings, deferredNotLockingMappings);
     if (mappingSets.isEmpty()) {
-      return new GenerationStepInfo(new ArrayList<MappingConfiguration>(), myLockingMappingsInFirstSet, myNotLockingMappingsInFirstSet);
+      return new GenerationStepInfo(new ArrayList<MappingConfiguration>(), myProcessedLockingMappings, myDeferredNotLockingMappings);
     }
-    return new GenerationStepInfo(mappingSets.get(0), myLockingMappingsInFirstSet, myNotLockingMappingsInFirstSet);
+    return new GenerationStepInfo(mappingSets.get(0), myProcessedLockingMappings, myDeferredNotLockingMappings);
   }
 
 
@@ -59,11 +62,11 @@ public class GenerationPartitioner {
     myPriorityMap = new HashMap<MappingConfiguration, Map<MappingConfiguration, PriorityData>>();
     myStrictlyTogetherMappings = new ArrayList<Pair<MappingPriorityRule, List<MappingConfiguration>>>();
     myConflictingRules = new ArrayList<MappingPriorityRule>();
-    myLockingMappingsInFirstSet = new HashSet<MappingConfiguration>();
-    myNotLockingMappingsInFirstSet = new HashSet<MappingConfiguration>();
+    myProcessedLockingMappings = new HashSet<MappingConfiguration>();
+    myDeferredNotLockingMappings = new HashSet<MappingConfiguration>();
   }
 
-  private List<List<MappingConfiguration>> doPartitioning(GeneratorDescriptor descriptorWorkingCopy, List<Generator> generators, @Nullable Set<MappingConfiguration> processedLockingMappings, @Nullable Set<MappingConfiguration> processedNotLockingMappings) {
+  private List<List<MappingConfiguration>> doPartitioning(GeneratorDescriptor descriptorWorkingCopy, List<Generator> generators, @NotNull Set<MappingConfiguration> processedLockingMappings, @NotNull Set<MappingConfiguration> deferredNotLockingMappings) {
     reset();
     for (Generator generator : generators) {
       myAllMappings.addAll(generator.getOwnMappings());
@@ -90,39 +93,7 @@ public class GenerationPartitioner {
       }
     }
 
-    if (processedLockingMappings != null && processedNotLockingMappings != null) {
-      // check if some 'not-locking' mappings became 'locking' (from prev step)
-      Collection<Map<MappingConfiguration, PriorityData>> grtPriMappings = myPriorityMap.values();
-      Iterator<MappingConfiguration> iterator = processedNotLockingMappings.iterator();
-      while (iterator.hasNext()) {
-        MappingConfiguration processedMapping = iterator.next();
-        boolean becameLocking = false;
-        for (Map<MappingConfiguration, PriorityData> grtPriMapping : grtPriMappings) {
-          if (grtPriMapping.containsKey(processedMapping)) {
-            becameLocking = true;
-            break;
-          }
-        }
-        if (becameLocking) {
-          iterator.remove();
-          processedLockingMappings.add(processedMapping);
-        }
-      }
-
-      // disable all processed 'locking' mappings (from prev step)
-      for (MappingConfiguration processedLockingMapping : processedLockingMappings) {
-        myPriorityMap.remove(processedLockingMapping);
-        for (Map<MappingConfiguration, PriorityData> grtPriMapping : grtPriMappings) {
-          grtPriMapping.remove(processedLockingMapping);
-        }
-      }
-
-      // save for next step
-      myLockingMappingsInFirstSet.addAll(processedLockingMappings);
-      myNotLockingMappingsInFirstSet.addAll(processedNotLockingMappings);
-    }
-
-    // make priority equals for all 'coherent' mappings
+    // make priority equals for all 'strictly-together' mappings
     for (Pair<MappingPriorityRule, List<MappingConfiguration>> strictlyTogetherMappingData : myStrictlyTogetherMappings) {
       Map<MappingConfiguration, PriorityData> allGrtPriMappings = new HashMap<MappingConfiguration, PriorityData>();
       // collect all grt-pri-mappings for each coherent mapping
@@ -143,8 +114,64 @@ public class GenerationPartitioner {
       }
     }
 
+    // modify priority-map using history data
+    {
+      Collection<Map<MappingConfiguration, PriorityData>> grtPriMappings = myPriorityMap.values();
+
+      // disable all processed 'locking' mappings
+      for (MappingConfiguration processedLockingMapping : processedLockingMappings) {
+        myPriorityMap.remove(processedLockingMapping);
+        for (Map<MappingConfiguration, PriorityData> grtPriMapping : grtPriMappings) {
+          grtPriMapping.remove(processedLockingMapping);
+        }
+      }
+
+      // check if some 'not-locking' mappings became 'locking'
+      Iterator<MappingConfiguration> iterator = deferredNotLockingMappings.iterator();
+      while (iterator.hasNext()) {
+        MappingConfiguration processedMapping = iterator.next();
+        boolean becameLocking = false;
+        for (Map<MappingConfiguration, PriorityData> grtPriMapping : grtPriMappings) {
+          if (grtPriMapping.containsKey(processedMapping)) {
+            becameLocking = true;
+            break;
+          }
+        }
+        if (becameLocking) {
+          // do not postpone any more
+          iterator.remove();
+        }
+      }
+
+    }
+
+    // update my state
+    myProcessedLockingMappings.addAll(processedLockingMappings);
+    myDeferredNotLockingMappings.addAll(deferredNotLockingMappings);
+
+    // collect all 'locking' mappings
+    for (Map<MappingConfiguration, PriorityData> grtPriMappings : myPriorityMap.values()) {
+      myProcessedLockingMappings.addAll(grtPriMappings.keySet());
+    }
+
+    // postpone all 'not-locking' mappings
+    Iterator<MappingConfiguration> iterator = myPriorityMap.keySet().iterator();
+    while (iterator.hasNext()) {
+      MappingConfiguration lsrPriMapping = iterator.next();
+      if (!myProcessedLockingMappings.contains(lsrPriMapping)) {
+        myDeferredNotLockingMappings.add(lsrPriMapping);
+        iterator.remove();
+      }
+    }
+
     // create mappings partitioning
     List<List<MappingConfiguration>> mappingSets = createMappingSets();
+    if (!myDeferredNotLockingMappings.isEmpty()) {
+      // the last set contains all deferred mappings
+      mappingSets.add(new ArrayList<MappingConfiguration>(myDeferredNotLockingMappings));
+    }
+
+    // if the priority map is still not empty, then there are some conflicting rules
     for (Map<MappingConfiguration, PriorityData> grtPriMappings : myPriorityMap.values()) {
       for (PriorityData priorityData : grtPriMappings.values()) {
         if (!myConflictingRules.contains(priorityData.causeRule)) {
@@ -158,7 +185,7 @@ public class GenerationPartitioner {
   private List<List<MappingConfiguration>> createMappingSets() {
     List<List<MappingConfiguration>> mappingSets = new ArrayList<List<MappingConfiguration>>();
     while (!myPriorityMap.isEmpty()) {
-      List<MappingConfiguration> mappingSet = createMappingSet(mappingSets.isEmpty());
+      List<MappingConfiguration> mappingSet = createMappingSet();
       if (mappingSet.isEmpty()) {
         // error!!!
         return mappingSets;
@@ -168,17 +195,16 @@ public class GenerationPartitioner {
     return mappingSets;
   }
 
-  private List<MappingConfiguration> createMappingSet(boolean firstSet) {
+  private List<MappingConfiguration> createMappingSet() {
     List<MappingConfiguration> mappingSet = new ArrayList<MappingConfiguration>();
+
+    // get all not-locked mappings form the priority-map
     while (true) {
       List<MappingConfiguration> mappingsForSet = new ArrayList<MappingConfiguration>();
       for (MappingConfiguration mapping : myPriorityMap.keySet()) {
         // no greater priority mappings?
         if (myPriorityMap.get(mapping).isEmpty()) {
           mappingsForSet.add(mapping);
-          if (firstSet) {
-            myNotLockingMappingsInFirstSet.add(mapping);
-          }
         }
       }
 
@@ -194,11 +220,6 @@ public class GenerationPartitioner {
       for (MappingConfiguration mappingForSet : mappingsForSet) {
         for (Map<MappingConfiguration, PriorityData> grtPriMappings : myPriorityMap.values()) {
           if (grtPriMappings.containsKey(mappingForSet)) {
-            if (firstSet) {
-              myNotLockingMappingsInFirstSet.remove(mappingForSet);
-              myLockingMappingsInFirstSet.add(mappingForSet);
-            }
-
             PriorityData priorityData = grtPriMappings.get(mappingForSet);
             if (!priorityData.isStrict) {
               // weak priority
@@ -212,13 +233,7 @@ public class GenerationPartitioner {
     // clean-up strict greater-pri-mappings
     for (MappingConfiguration mappingInSet : mappingSet) {
       for (Map<MappingConfiguration, PriorityData> grtPriMappings : myPriorityMap.values()) {
-        if (grtPriMappings.containsKey(mappingInSet)) {
-          if (firstSet) {
-            myNotLockingMappingsInFirstSet.remove(mappingInSet);
-            myLockingMappingsInFirstSet.add(mappingInSet);
-          }
-          grtPriMappings.remove(mappingInSet);
-        }
+        grtPriMappings.remove(mappingInSet);
       }
     }
 
