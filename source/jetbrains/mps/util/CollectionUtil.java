@@ -287,6 +287,23 @@ public class CollectionUtil {
     return result;
   }
 
+  public static <T> List<T> intersect(Collection<T> collection1, Collection<T> collection2) {
+    ArrayList<T> result = new ArrayList<T>();
+    for (T t : collection1) {
+      if (collection2.contains(t)) {
+        result.add(t);
+      }
+    }
+    for (T t : collection2) {
+      if (!result.contains(t)) {
+        if (collection1.contains(t)) {
+          result.add(t);
+        }
+      }
+    }
+    return result;
+  }
+
   public interface CollectionBlock<E> {
     void run(E e);
   }
