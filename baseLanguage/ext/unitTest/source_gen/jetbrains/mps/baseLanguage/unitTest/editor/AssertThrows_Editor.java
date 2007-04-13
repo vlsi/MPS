@@ -35,7 +35,7 @@ public class AssertThrows_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createExceptionTypeCell(context, node));
     editorCell.addEditorCell(this.createMessageCell(context, node));
     editorCell.addEditorCell(this.createConstantCell2(context, node, ";"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1172069902038");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172069902038");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -48,7 +48,7 @@ public class AssertThrows_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(Color.blue);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1172069903868");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172069903868");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -61,7 +61,7 @@ public class AssertThrows_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(Color.blue);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1172069911792");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172069911792");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -73,7 +73,7 @@ public class AssertThrows_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1172069915466");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172069915466");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -90,7 +90,7 @@ public class AssertThrows_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1172070041823");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172070041823");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -123,7 +123,7 @@ public class AssertThrows_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1172070592863");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172070592863");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -156,7 +156,7 @@ public class AssertThrows_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1172076275715");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172076275715");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

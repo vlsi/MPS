@@ -31,7 +31,7 @@ public class Message_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell(context, node, ":"));
     editorCell.addEditorCell(this.createMessageCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1172075965040");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172075965040");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -43,7 +43,7 @@ public class Message_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1172075965041");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172075965041");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -60,7 +60,7 @@ public class Message_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1172075965042");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172075965042");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
