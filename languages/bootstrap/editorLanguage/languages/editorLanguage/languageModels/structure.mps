@@ -618,6 +618,12 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1103016434866">
     <property name="name" value="CellModel_JComponent" />
     <link role="extends" targetNodeId="1073389214265" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1176475119347">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="componentProvider" />
+      <link role="target" targetNodeId="1176474535556" resolveInfo="QueryFunction_JComponent" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1137941825015">
       <property name="value" value="swing component" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
