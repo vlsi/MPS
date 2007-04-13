@@ -99,6 +99,9 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1169074670328(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return _QueriesUtil.operationHasParm_Concept(node);
   }
+  public static boolean baseMappingRule_Condition_1176463204705(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return _QueriesUtil.operationHasParm_ConceptExpression(node);
+  }
   public static boolean baseMappingRule_Condition_1169074949355(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return !(_QueriesUtil.operationHasParm_Concept(node));
   }
@@ -665,5 +668,12 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_1176109959290(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "scope", true);
+  }
+  public static SNode sourceNodeQuery_1176463628326(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode n = _QueriesUtil.operationGetParm_ConceptExpression_conceptExpression(node);
+    if((n == null)) {
+      generator.showErrorMessage(node, "concept expression is undefined");
+    }
+    return n;
   }
 }
