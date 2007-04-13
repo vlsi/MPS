@@ -20,6 +20,6 @@ public class Warning {
   }
 
   public String toString() {
-    return myMessage + " at " + myId;
+    return myMessage;
   }
 }

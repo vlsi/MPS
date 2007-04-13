@@ -247,7 +247,6 @@ public class MergeResultView extends JPanel {
 
   private void collectWarnings() {
     myWarnings.clear();
-
     for (SetReferenceChange srf : getChanges(SetReferenceChange.class)) {
       if (srf.isBrokenReference()) {
         myWarnings.add(new Warning(srf.getNodeId(), "Broken Reference at " + srf.getNodeId()));
