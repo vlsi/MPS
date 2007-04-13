@@ -4,6 +4,9 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
+import jetbrains.mps.ide.ChooseItemWindow;
+
+import java.util.regex.Pattern;
 
 /**
  * Igor Alshannikov
@@ -85,8 +88,13 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
       LOG.error(e);
     }
     if (matchingText == null || matchingText.length() == 0) return false;
-    // first char must be same
+    // first char must be the same
     if (matchingText.charAt(0) != pattern.charAt(0)) return false;
+
+    if (matchingText.matches(ChooseItemWindow.getExactItemPatternBuilder(pattern).toString() + ".*")) {
+      return true;      
+    }
+
     return matchingText.toUpperCase().startsWith(pattern.toUpperCase());
   }
 
