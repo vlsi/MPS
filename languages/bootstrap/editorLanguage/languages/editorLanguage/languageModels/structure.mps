@@ -628,10 +628,6 @@
       <property name="value" value="swing component" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1103016933314">
-      <property name="name" value="componentProviderID" />
-      <link role="dataType" targetNodeId="3.1082983041843" />
-    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1106270491082">
     <property name="name" value="CellLayout" />
