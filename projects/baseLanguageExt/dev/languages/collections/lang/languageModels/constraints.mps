@@ -9,7 +9,7 @@
   <import index="3" modelUID="jetbrains.mps.core.structure" />
   <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="5" modelUID="java.lang@java_stub" />
-  <import index="6" modelUID="jetbrains.mps.helgins.evaluator.uiActions@java_stub" />
+  <import index="6" modelUID="jetbrains.mps.helgins.uiActions@java_stub" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraintSet" id="1153950300856">
     <property name="name" value="BLC_reference" />
     <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1153950318560">

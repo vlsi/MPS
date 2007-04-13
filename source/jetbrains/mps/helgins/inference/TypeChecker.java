@@ -3,6 +3,8 @@ package jetbrains.mps.helgins.inference;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.helgins.runtime.RuntimeSupport;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
+import jetbrains.mps.bootstrap.helgins.runtime.incremental.SNodeReadEvent;
+import jetbrains.mps.bootstrap.helgins.runtime.incremental.HelginsNodesReadListener;
 import jetbrains.mps.helgins.evaluator.CopyEvaluator;
 import jetbrains.mps.helgins.evaluator.QuotationEvaluator;
 import jetbrains.mps.helgins.structure.*;
@@ -60,6 +62,9 @@ public class TypeChecker {
   private RuntimeSupport myRuntimeSupport;
   private RulesManager myRulesManager;
   private boolean myUsedForBLCompletion = true;
+
+  // cache
+  private WeakHashMap<SNode, Set<Pair<SNode, SNodeReadEvent>>> myNodesToDependentNodes = new WeakHashMap<SNode, Set<Pair<SNode, SNodeReadEvent>>>();
 
   public TypeChecker() {
     myEquationManagersStack.push(new EquationManager(this));
@@ -129,13 +134,14 @@ public class TypeChecker {
     myCheckedNodes.clear();
     myNodesWithErrors.clear();
     myNodesWithErrorStrings.clear();
-    myNodesToDependentRoots.clear();
   }
 
   public void clearForReload() {
     myCheckedRoots.clear();
     myRulesManager.clear();
     mySubtypingManager.clearCaches();
+    myNodesToDependentNodes.clear();
+    myNodesToDependentRoots.clear();
     clear();
   }
 
@@ -163,7 +169,7 @@ public class TypeChecker {
         myTypeVariablesManager.registerNewVarset(varset);
       }
 
-      // load rules
+      // load rules (legacy)
       for (Rule rule : typesModel.getRootsAdapters(Rule.class)) {
         if (!rule.applicableNodes().hasNext()) continue;
         AnalyzedTermDeclaration analyzedTermDeclaration = rule.applicableNodes().next();
@@ -289,26 +295,47 @@ public class TypeChecker {
       for (SNode node : frontier) {
         if (myCheckedNodes.contains(node)) continue;
         newFrontier.addAll(node.getChildren());
-
-        // new rules:
-        Set<InferenceRule_Runtime> newRules = myRulesManager.getInferenceRules(node);
-        if (newRules != null) {
-          for (InferenceRule_Runtime rule : newRules) {
-            rule.applyRule(node);
-          }
-        }
-
-        // legacy rules:
-        Set<Rule> rules = myConceptsToRulesCache.get(node.getConceptDeclarationAdapter());
-        if (rules != null) {
-          for (Rule rule : rules) {
-            myHInterpreter.interpret(node, rule);
-          }
-        }
+        applyRulesToNode(node);
       }
       frontier = newFrontier;
       newFrontier = new ArrayList<SNode>();
     }
+  }
+
+  private void applyRulesToNode(SNode node) {
+    HelginsNodesReadListener readAccessListener = new HelginsNodesReadListener(node, myNodesToDependentNodes);
+    NodeReadEventsCaster.setNodesReadListener(readAccessListener);
+    // new rules:
+    Set<InferenceRule_Runtime> newRules = myRulesManager.getInferenceRules(node);
+    if (newRules != null) {
+      for (InferenceRule_Runtime rule : newRules) {
+        rule.applyRule(node);
+      }
+    }
+
+    // legacy rules:
+    Set<Rule> rules = myConceptsToRulesCache.get(node.getConceptDeclarationAdapter());
+    if (rules != null) {
+      for (Rule rule : rules) {
+        myHInterpreter.interpret(node, rule);
+      }
+    }
+    NodeReadEventsCaster.removeNodesReadListener();
+  }
+
+  public void dumpHelginsCache() {
+    System.err.println("");
+    System.err.println("---------------------");
+    System.err.println("helgins cache dump:");
+    for (Map.Entry<SNode, Set<Pair<SNode, SNodeReadEvent>>> entry : myNodesToDependentNodes.entrySet()) {
+      System.err.println("---");
+      System.err.println("recorded node : " + entry.getKey());
+      for (Pair<SNode, SNodeReadEvent> pair : entry.getValue()) {
+        System.err.println("   dependent node: " + pair.o1 + " event: " + pair.o2);
+      }
+    }
+    System.err.println("---------------------");
+    System.err.println("");
   }
 
   public void checkTypesForNodeAndSolveInequations(SNode node) {

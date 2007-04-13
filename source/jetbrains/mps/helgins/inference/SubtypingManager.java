@@ -7,7 +7,6 @@ import jetbrains.mps.formulaLanguage.evaluator.ExpressionContext;
 import jetbrains.mps.formulaLanguage.evaluator.ExpressionEvaluatorManager;
 import jetbrains.mps.formulaLanguage.structure.Expression;
 import jetbrains.mps.helgins.structure.*;
-import jetbrains.mps.helgins.evaluator.uiActions.PresentationManager;
 import jetbrains.mps.helgins.inference.util.StructuralNodeSet;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.patterns.util.MatchingUtil;

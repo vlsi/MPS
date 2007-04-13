@@ -1,4 +1,4 @@
-package jetbrains.mps.helgins.evaluator.uiActions;
+package jetbrains.mps.helgins.uiActions;
 
 import jetbrains.mps.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.helgins.structure.RuntimeErrorType;

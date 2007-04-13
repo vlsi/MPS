@@ -1,7 +1,7 @@
 package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.helgins.evaluator.uiActions.PresentationManager;
+import jetbrains.mps.helgins.uiActions.PresentationManager;
 
 /**
  * Created by IntelliJ IDEA.

@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.helgins.evaluator.uiActions.PresentationManager;
+import jetbrains.mps.helgins.uiActions.PresentationManager;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.typesystem.ITypeChecker;
 import jetbrains.mps.typesystem.TypeCheckerAccess;
