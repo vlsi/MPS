@@ -2,6 +2,7 @@ package jetbrains.mps.util;
 
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 
 import java.util.*;
 

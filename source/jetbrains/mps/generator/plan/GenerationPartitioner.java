@@ -21,7 +21,7 @@ public class GenerationPartitioner {
 
   private List<MappingConfiguration> myAllMappings;
   private Map<MappingConfiguration, Map<MappingConfiguration, PriorityData>> myPriorityMap;
-  private List<Pair<MappingPriorityRule, List<MappingConfiguration>>> myStrictlyTogetherMappings;
+  private List<Pair<List<MappingPriorityRule>, Set<MappingConfiguration>>> myStrictlyTogetherMappings;
   private List<MappingPriorityRule> myConflictingRules;
 
   public List<List<MappingConfiguration>> createMappingSets(List<Generator> generators) {
@@ -71,7 +71,7 @@ public class GenerationPartitioner {
   private void reset() {
     myAllMappings = new ArrayList<MappingConfiguration>();
     myPriorityMap = new HashMap<MappingConfiguration, Map<MappingConfiguration, PriorityData>>();
-    myStrictlyTogetherMappings = new ArrayList<Pair<MappingPriorityRule, List<MappingConfiguration>>>();
+    myStrictlyTogetherMappings = new ArrayList<Pair<List<MappingPriorityRule>, Set<MappingConfiguration>>>();
     myConflictingRules = new ArrayList<MappingPriorityRule>();
   }
 
@@ -213,8 +213,8 @@ public class GenerationPartitioner {
       }
     } else {
       // check and apply 'strictly-together' rules
-      for (Pair<MappingPriorityRule, List<MappingConfiguration>> strictlyTogetherInfo : myStrictlyTogetherMappings) {
-        List<MappingConfiguration> strictlyTogetherSet = strictlyTogetherInfo.o2;
+      for (Pair<List<MappingPriorityRule>, Set<MappingConfiguration>> strictlyTogetherInfo : myStrictlyTogetherMappings) {
+        Set<MappingConfiguration> strictlyTogetherSet = strictlyTogetherInfo.o2;
         // current set should contain either all or none mappings from 'strictly-together' set
         List<MappingConfiguration> intersection = CollectionUtil.intersect(strictlyTogetherSet, mappingSet);
         if (intersection.isEmpty()) continue; // ok
@@ -235,7 +235,7 @@ public class GenerationPartitioner {
 
         if (!foundAllNeeded) {
           // error
-          myConflictingRules.add(strictlyTogetherInfo.o1);
+          myConflictingRules.addAll(strictlyTogetherInfo.o1);
         }
       }
 
@@ -259,9 +259,24 @@ public class GenerationPartitioner {
     List<MappingConfiguration> greaterPriMappings = getMappingsFromRef(greaterPriMappingRef, generator);
     List<MappingConfiguration> lesserPriMappings = getMappingsFromRef(lesserPriMappingRef, generator);
     if (rule.getKind() == MappingPriorityRuleKind.strictly_together) {
-      List<MappingConfiguration> coherentMappings = new ArrayList<MappingConfiguration>(lesserPriMappings);
-      CollectionUtil.addAllNotPresent(greaterPriMappings, coherentMappings);
-      myStrictlyTogetherMappings.add(new Pair<MappingPriorityRule, List<MappingConfiguration>>(rule, coherentMappings));
+      Set<MappingConfiguration> coherentMappings = new HashSet<MappingConfiguration>(lesserPriMappings);
+      coherentMappings.addAll(greaterPriMappings);
+      // unite with other 'strictly together' set?
+      Pair<List<MappingPriorityRule>, Set<MappingConfiguration>> toUnite = null;
+      for (Pair<List<MappingPriorityRule>, Set<MappingConfiguration>> pair : myStrictlyTogetherMappings) {
+        if (!CollectionUtil.intersect(coherentMappings, pair.o2).isEmpty()) {
+          toUnite = pair;
+          break;
+        }
+      }
+      if (toUnite != null) {
+        toUnite.o2.addAll(coherentMappings);
+        toUnite.o1.add(rule);
+      } else {
+        List<MappingPriorityRule> rules = new ArrayList<MappingPriorityRule>();
+        rules.add(rule);
+        myStrictlyTogetherMappings.add(new Pair<List<MappingPriorityRule>, Set<MappingConfiguration>>(rules, coherentMappings));
+      }
 
     } else {
       // map: lesser mapping -> {greater mapping, .... , greater mapping }
