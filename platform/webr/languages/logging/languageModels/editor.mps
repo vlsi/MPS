@@ -117,7 +117,7 @@
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1167245583621">
             <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1167245583622">
               <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1167245583623">
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1167245583624" />
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_node" id="1167245583624" />
                 <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1167245583625">
                   <link role="property" targetNodeId="1.1167228628751" />
                 </node>
