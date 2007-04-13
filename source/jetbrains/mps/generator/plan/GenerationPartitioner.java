@@ -42,13 +42,29 @@ public class GenerationPartitioner {
     if (prevStepInfo != null) {
       processedMappings = new HashSet<MappingConfiguration>(prevStepInfo.getMappings());
       processedMappings.addAll(prevStepInfo.getMappingsProcessedOnEarlierSteps());
-      deferredMappings = prevStepInfo.getDeferredMappings();
+      deferredMappings = prevStepInfo.getMappingsToProcessOnLaterSteps();
     } else {
       processedMappings = new HashSet<MappingConfiguration>();
       deferredMappings = new HashSet<MappingConfiguration>();
     }
     List<List<MappingConfiguration>> mappingSets = doPartitioning(null, generators, processedMappings, deferredMappings);
-    return new GenerationStepInfo(mappingSets, processedMappings);
+    List<MappingConfiguration> mappingsForThisStep;
+    Set<MappingConfiguration> mappingsToProcessOnLaterSteps = new HashSet<MappingConfiguration>();
+    if (mappingSets.isEmpty()) {
+      mappingsForThisStep = new ArrayList<MappingConfiguration>();
+    } else {
+      mappingsForThisStep = mappingSets.get(0);
+      if (mappingSets.size() == 1) {
+        // only 1 set: there are no 'locking' mappings. repeat all on later steps.
+        mappingsToProcessOnLaterSteps.addAll(mappingSets.get(0));
+      } else {
+        // 1st set consists of 'locking' mappings and '==' mappings - don't repeat them on later steps.
+        for (int i = 1; i < mappingSets.size(); i++) {
+          mappingsToProcessOnLaterSteps.addAll(mappingSets.get(i));
+        }
+      }
+    }
+    return new GenerationStepInfo(mappingsForThisStep, processedMappings, mappingsToProcessOnLaterSteps);
   }
 
 
@@ -91,11 +107,21 @@ public class GenerationPartitioner {
       Collection<Map<MappingConfiguration, PriorityData>> grtPriMappings = myPriorityMap.values();
       // disable all processed mappings
       for (MappingConfiguration processedMapping : processedMappings) {
-        myPriorityMap.remove(processedMapping);
         for (Map<MappingConfiguration, PriorityData> grtPriMapping : grtPriMappings) {
           grtPriMapping.remove(processedMapping);
         }
       }
+      // check if some 'processed' mappings must go after not processed mapping (according current rules)
+      for (MappingConfiguration processedMapping : processedMappings) {
+        if (myPriorityMap.containsKey(processedMapping) && !myPriorityMap.get(processedMapping).isEmpty()) {
+          // error
+          for (PriorityData priorityData : myPriorityMap.get(processedMapping).values()) {
+            myConflictingRules.add(priorityData.causeRule);
+          }
+        }
+        myPriorityMap.remove(processedMapping);
+      }
+
       // add all deferred
       for (MappingConfiguration deferredMapping : deferredMappings) {
         if (!myPriorityMap.containsKey(deferredMapping)) {
