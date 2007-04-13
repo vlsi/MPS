@@ -476,7 +476,6 @@ public class GenerationSession implements IGenerationSession {
       addMessage(new Message(MessageKind.INFORMATION, "    " + generator.getAlias()));
     }
 
-
     addMessage(new Message(MessageKind.INFORMATION, "apply mapping configurations:"));
     List<String> messages = GenerationPartitioningUtil.toStrings(stepController.getMappings());
     for (String message : messages) {

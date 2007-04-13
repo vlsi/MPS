@@ -41,13 +41,14 @@ public class GenerationPartitioner {
     Set<MappingConfiguration> deferredMappings;
     if (prevStepInfo != null) {
       processedMappings = new HashSet<MappingConfiguration>(prevStepInfo.getMappings());
+      processedMappings.addAll(prevStepInfo.getMappingsProcessedOnEarlierSteps());
       deferredMappings = prevStepInfo.getDeferredMappings();
     } else {
       processedMappings = new HashSet<MappingConfiguration>();
       deferredMappings = new HashSet<MappingConfiguration>();
     }
     List<List<MappingConfiguration>> mappingSets = doPartitioning(null, generators, processedMappings, deferredMappings);
-    return new GenerationStepInfo(mappingSets);
+    return new GenerationStepInfo(mappingSets, processedMappings);
   }
 
 
