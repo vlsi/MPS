@@ -27,17 +27,31 @@ public class MergeResultView extends JPanel {
     }
   };
 
-  private MPSTree myConflictsTree = new MPSTree() {
+  private MPSTree myConflictsAndWarningsTree = new MPSTree() {
     protected MPSTreeNode rebuild() {
-      if (myConflicts.isEmpty()) {
-        return new TextTreeNode("No Conflicts");
+      TextTreeNode root = new TextTreeNode("Conflicts And Warnings");
+
+      if (myWarnings.isEmpty()) {
+        root.add(new TextTreeNode("No Warnings"));
       } else {
-        TextTreeNode root = new TextTreeNode("Conflicts");
-        for (Conflict c : myConflicts) {
-          root.add(new ConflictNode(c));
+        TextTreeNode warnings = new TextTreeNode("Warnings");
+        for (Warning w : myWarnings) {
+          warnings.add(new WarningNode(w));
         }
-        return root;
+        root.add(warnings);
       }
+
+      if (myConflicts.isEmpty()) {
+        root.add(new TextTreeNode("No Conflicts"));
+      } else {
+        TextTreeNode conflicts = new TextTreeNode("Conflicts");
+        for (Conflict c : myConflicts) {
+          conflicts.add(new ConflictNode(c));
+        }
+        root.add(conflicts);
+      }
+
+      return root;
     }
   };
 
@@ -50,6 +64,7 @@ public class MergeResultView extends JPanel {
 
   private Set<Change> myExcludedChanges = new HashSet<Change>();
   private List<Conflict> myConflicts = new ArrayList<Conflict>();
+  private List<Warning> myWarnings = new ArrayList<Warning>();
 
   private SModel myResultModel;
 
@@ -67,7 +82,7 @@ public class MergeResultView extends JPanel {
     setLayout(new BorderLayout());
 
     JSplitPane splitter =
-            new JSplitPane(JSplitPane.VERTICAL_SPLIT, new JScrollPane(myResultTree), new JScrollPane(myConflictsTree));
+            new JSplitPane(JSplitPane.VERTICAL_SPLIT, new JScrollPane(myResultTree), new JScrollPane(myConflictsAndWarningsTree));
 
     splitter.setDividerLocation(500);
 
@@ -79,12 +94,13 @@ public class MergeResultView extends JPanel {
     myResultTree.rebuildTree();
     myResultTree.expandRoot();
 
-    myConflictsTree.rebuildTree();
-    myConflictsTree.expandRoot();
+    myConflictsAndWarningsTree.rebuildTree();
+    myConflictsAndWarningsTree.expandRoot();
   }
 
   private void rebuildData() {
     collectConflicts();
+    collectWarnings();
 
     rebuldResultModel();
 
@@ -229,6 +245,16 @@ public class MergeResultView extends JPanel {
     collectMoveConflicts();
   }
 
+  private void collectWarnings() {
+    myWarnings.clear();
+
+    for (SetReferenceChange srf : getChanges(SetReferenceChange.class)) {
+      if (srf.isBrokenReference()) {
+        myWarnings.add(new Warning(srf.getNodeId(), "Broken Reference at " + srf.getNodeId()));
+      }
+    }
+  }
+
   private void collectPropertyChanflicts() {
     Map<Pair<SNodeId, String>, Set<SetPropertyChange>> changes = new HashMap<Pair<SNodeId, String>, Set<SetPropertyChange>>();
 
@@ -329,7 +355,7 @@ public class MergeResultView extends JPanel {
       if (child == null) {
         continue;
       }
-      String prevId = child.getId();
+      SNodeId prevId = child.getSNodeId();
       for (AddNodeChange ac : getChanges(AddNodeChange.class)) {
         if (ac.getNodeParent().equals(prevId)) {
           myConflicts.add(new Conflict(c, ac));
@@ -424,6 +450,27 @@ public class MergeResultView extends JPanel {
 
     public String toString() {
       return "Conflict";
+    }
+  }
+
+  private class WarningNode extends MPSTreeNode {
+    private Warning myWarning;
+
+    public WarningNode(Warning w) {
+      super(null);
+      myWarning = w;
+    }
+
+    public void doubleClick() {
+      SNode node = myResultModel.getNodeById(myWarning.getId());
+      if (node != null) {
+        TreeNode tn = myResultTree.findNodeWith(node);
+        myResultTree.selectNode(tn);
+      }
+    }
+
+    public String getNodeIdentifier() {
+      return myWarning.toString();
     }
   }
 

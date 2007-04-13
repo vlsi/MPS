@@ -43,10 +43,19 @@ public class SetReferenceChange extends Change {
     return myProxy;
   }
 
+  public boolean isBrokenReference() {
+    if (!myInternal && myProxy.getNode() == null) return true;
+    return false;
+  }
+
 
   public String toString() {
     if (!myInternal) {
-      return "set reference " + myNodeId + " in role " + myRole + " to " + myProxy;
+      if (myProxy.getNode() == null) {
+        return "set reference" + myNodeId + " in role. [BAD REFERENCE]";
+      } else {
+        return "set reference " + myNodeId + " in role " + myRole + " to " + myProxy + " in model " + myProxy.getModel();
+      }
     } else {
       return "set reference " + myNodeId + " in role " + myRole + " to " + myModel.getNodeById(myTargetId);
     }
