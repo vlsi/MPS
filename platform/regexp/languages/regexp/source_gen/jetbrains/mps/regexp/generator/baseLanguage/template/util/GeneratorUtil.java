@@ -29,6 +29,6 @@ public class GeneratorUtil {
     }
   }
   public static INodeBuilder findBuilderForMatcher(ITemplateGenerator generator, SNode ref) {
-    return generator.findNodeBuilderForSource(findRegexpUsingConstructionFor(ref), "matcher");
+    return generator.findNodeBuilderForSource(GeneratorUtil.findRegexpUsingConstructionFor(ref), "matcher");
   }
 }
