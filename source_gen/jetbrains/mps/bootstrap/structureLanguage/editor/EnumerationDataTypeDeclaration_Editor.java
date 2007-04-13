@@ -36,7 +36,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell(context, node, "enumeration datatype:"));
     editorCell.addEditorCell(this.createNameCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1083172476029");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083172476029");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -52,7 +52,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell1(context, node, "member type"));
     editorCell.addEditorCell(this.createIndent1(context, node, ":"));
     editorCell.addEditorCell(this.createMemberDataTypeReferenceCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1162581349091");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162581349091");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -68,7 +68,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell2(context, node, "default"));
     editorCell.addEditorCell(this.createIndent2(context, node, ":"));
     editorCell.addEditorCell(this.createDefaultMemberReferenceCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1162581349096");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162581349096");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -83,7 +83,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRowCell1(context, node));
     editorCell.addEditorCell(this.createRowCell2(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1162581349090");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162581349090");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -100,7 +100,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createIndent3(context, node, ""));
     editorCell.addEditorCell(this.createIndent4(context, node, ""));
     editorCell.addEditorCell(this.createMemberList(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1162581349089");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162581349089");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -115,7 +115,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createIndent(context, node, "    "));
     editorCell.addEditorCell(this.createColumnCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1162581284214");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162581284214");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -130,7 +130,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createHeaderRow(context, node));
     editorCell.addEditorCell(this.createRowCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1083172476028");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083172476028");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -142,7 +142,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1083172476030");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083172476030");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -154,7 +154,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1162581300246");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162581300246");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -166,7 +166,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1162581349092");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162581349092");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -178,7 +178,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1162581845504");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162581845504");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -190,7 +190,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1162581349097");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162581349097");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -202,7 +202,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1162581855288");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162581855288");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -214,7 +214,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1162582323023");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162582323023");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -226,7 +226,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1162582337073");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162582337073");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -261,7 +261,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       editorCellLabel.getTextLine().setSelectedTextBackgroundColor(Color.cyan);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1083172476031");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083172476031");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -294,7 +294,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1162581349093");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162581349093");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -327,7 +327,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1162581349098");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162581349098");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

@@ -21,7 +21,7 @@ public class ConceptProperty_Editor extends DefaultNodeEditor {
     editorCell.setEditable(true);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1105728957754");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105728957754");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

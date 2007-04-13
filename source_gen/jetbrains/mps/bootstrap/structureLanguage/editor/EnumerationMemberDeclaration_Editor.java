@@ -50,7 +50,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     if(EnumerationMemberDeclaration_Editor._QueryFunction_NodeCondition_1162585619940(node, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstantCell2(context, node, "    (default)"));
     }
-    editorCell.putUserObject(EditorCell.CELL_ID, "1083925414250");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083925414250");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -64,7 +64,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setFontType(MPSFonts.ITALIC);
     editorCell.getTextLine().setTextColor(Color.darkGray);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1162585934258");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162585934258");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -78,7 +78,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setFontType(MPSFonts.ITALIC);
     editorCell.getTextLine().setTextColor(Color.darkGray);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1162585954651");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162585954651");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -91,7 +91,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setFontType(MPSFonts.PLAIN);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1083925414258");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083925414258");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -110,7 +110,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
       editorCellLabel.getTextLine().setSelectedTextBackgroundColor(Color.cyan);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1083925414252");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083925414252");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -145,7 +145,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
       editorCellLabel.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1083925414254");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083925414254");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -180,7 +180,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
       editorCellLabel.getTextLine().setSelectedTextBackgroundColor(Color.cyan);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1083925414256");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083925414256");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

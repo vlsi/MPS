@@ -31,7 +31,7 @@ public class BooleanConceptProperty_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1146699642295");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1146699642295");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

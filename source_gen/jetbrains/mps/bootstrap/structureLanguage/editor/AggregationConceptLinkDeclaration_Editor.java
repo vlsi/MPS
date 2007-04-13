@@ -36,7 +36,7 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
     editorCell.addEditorCell(this.createNameCell(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, "target concept:"));
     editorCell.addEditorCell(this.createTargetTypeReferenceCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1137532662973");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1137532662973");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -50,7 +50,7 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
     editorCell.setBracketsColor(Color.black);
     editorCell.setFontType(MPSFonts.BOLD);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1137532662974");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1137532662974");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -64,7 +64,7 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
     editorCell.setBracketsColor(Color.black);
     editorCell.setFontType(MPSFonts.BOLD);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1137532662976");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1137532662976");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -82,7 +82,7 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
       editorCellLabel.getTextLine().setTextColor(MPSColors.DARK_GREEN);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1137532662975");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1137532662975");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -115,7 +115,7 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1137532662977");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1137532662977");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

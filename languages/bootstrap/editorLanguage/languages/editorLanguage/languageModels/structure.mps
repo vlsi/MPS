@@ -1169,6 +1169,9 @@
       <property name="value" value="function parameter" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473914776" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1176492724289">
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473994950" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.EnumerationDataTypeDeclaration" id="1143891911797">
     <property name="name" value="_LeftRight_Enum" />

@@ -21,7 +21,7 @@ public class ConceptLinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setEditable(true);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1137532945724");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1137532945724");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

@@ -29,7 +29,7 @@ public class InterfaceConceptReference_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createIntfcReferenceCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1169127650439");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1169127650439");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -46,7 +46,7 @@ public class InterfaceConceptReference_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1169127655072");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1169127655072");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
