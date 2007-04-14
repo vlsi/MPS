@@ -2,7 +2,6 @@ package jetbrains.mps.util;
 
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 
 import java.util.*;
 
@@ -278,7 +277,7 @@ public class CollectionUtil {
     }
   }
 
-  public static <T> List<T> substruct(Collection<T> fromCollection, Collection<T> collection) {
+  public static <T> List<T> subtraction(Collection<T> fromCollection, Collection<T> collection) {
     ArrayList<T> result = new ArrayList<T>();
     for (T t : fromCollection) {
       if (!collection.contains(t)) {
@@ -288,21 +287,23 @@ public class CollectionUtil {
     return result;
   }
 
-  public static <T> List<T> intersect(Collection<T> collection1, Collection<T> collection2) {
+  public static <T> List<T> intersection(Collection<T> collection1, Collection<T> collection2) {
     ArrayList<T> result = new ArrayList<T>();
     for (T t : collection1) {
       if (collection2.contains(t)) {
         result.add(t);
       }
     }
-    for (T t : collection2) {
-      if (!result.contains(t)) {
-        if (collection1.contains(t)) {
-          result.add(t);
-        }
+    return result;
+  }
+
+  public static <T> boolean intersect(Collection<T> collection1, Collection<T> collection2) {
+    for (T t : collection1) {
+      if (collection2.contains(t)) {
+        return true;
       }
     }
-    return result;
+    return false;
   }
 
   public interface CollectionBlock<E> {

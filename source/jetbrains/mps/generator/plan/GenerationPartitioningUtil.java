@@ -176,13 +176,13 @@ public class GenerationPartitioningUtil {
     return strings;
   }
 
-  public static List<String> toStrings(List<MappingPriorityRule> priorityRules, boolean moreDetails) {
+  public static List<String> toStrings(Iterable<MappingPriorityRule> priorityRules, boolean moreDetails) {
     List<String> list = new ArrayList<String>();
     for (MappingPriorityRule rule : priorityRules) {
       GeneratorDescriptor enclosingGenerator = rule.findParent(GeneratorDescriptor.class);
       String text = asString(rule);
       if (moreDetails) {
-        text = text + "   (" + asString(enclosingGenerator) + ")";
+        text = asString(enclosingGenerator) + ": " + text;
       } else {
         if (text.length() > 120) {
           text = text.substring(0, 120) + "...";
