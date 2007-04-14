@@ -30,4 +30,8 @@ public class typeOf_TypeCheckerAccess_InferenceRule implements InferenceRule_Run
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
+  public boolean overrides() {
+    return false;
+  }
 }

@@ -34,4 +34,7 @@ public class typeOf_ArrayAccess_InferenceRule implements InferenceRule_Runtime {
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+  public boolean overrides() {
+    return false;
+  }
 }

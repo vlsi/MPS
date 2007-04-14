@@ -32,4 +32,8 @@ public class typeOf_ConceptReference_InferenceRule implements InferenceRule_Runt
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
+  public boolean overrides() {
+    return false;
+  }
 }

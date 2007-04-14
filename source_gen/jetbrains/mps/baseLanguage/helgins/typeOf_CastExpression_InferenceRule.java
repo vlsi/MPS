@@ -32,4 +32,7 @@ public class typeOf_CastExpression_InferenceRule implements InferenceRule_Runtim
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+  public boolean overrides() {
+    return false;
+  }
 }

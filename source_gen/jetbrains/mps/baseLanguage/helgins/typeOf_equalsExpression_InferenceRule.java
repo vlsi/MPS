@@ -32,4 +32,7 @@ public class typeOf_equalsExpression_InferenceRule implements InferenceRule_Runt
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+  public boolean overrides() {
+    return false;
+  }
 }

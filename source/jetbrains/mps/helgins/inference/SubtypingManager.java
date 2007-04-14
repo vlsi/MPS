@@ -11,6 +11,7 @@ import jetbrains.mps.helgins.inference.util.StructuralNodeSet;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.patterns.util.MatchingUtil;
 import jetbrains.mps.patterns.util.IMatchModifier;
+import jetbrains.mps.patterns.IMatchingPattern;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mpswiki.queryLanguage.structure.VariableCondition;
@@ -403,6 +404,14 @@ public class SubtypingManager {
     return searchInSupertypes(subtype, coersionMatcher);
   }
 
+  public SNode coerceSubtyping(SNode subtype, final IMatchingPattern pattern) {
+    if (pattern.match(subtype)) return subtype;
+    MyCoersionMatcher2 coersionMatcher2 = new MyCoersionMatcher2(pattern);
+    boolean success = searchInSubtypes(subtype, coersionMatcher2);
+    if (!success) return null;
+    return coersionMatcher2.getResult();
+  }
+
   public boolean coerceSupertyping(SNode supertype, AnalyzedTermDeclaration analyzedTermDeclaration, ExpressionContext context) {
     MyCoersionMatcher coersionMatcher = new MyCoersionMatcher(analyzedTermDeclaration, context);
      if (coersionMatcher.matches(supertype)) return true;
@@ -474,6 +483,27 @@ public class SubtypingManager {
 
     public boolean isInvalid() {
       return myIsInvalid;
+    }
+  }
+
+  private static class MyCoersionMatcher2 implements Matcher {
+    private final IMatchingPattern myPattern;
+    private SNode myResult = null;
+
+    public MyCoersionMatcher2(IMatchingPattern pattern) {
+      myPattern = pattern;
+    }
+
+    public boolean matches(SNode nodeToMatch) {
+      boolean b = myPattern.match(nodeToMatch);
+      if (b) {
+        myResult = nodeToMatch;
+      }
+      return b;
+    }
+
+    public SNode getResult() {
+      return myResult;
     }
   }
 }

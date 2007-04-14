@@ -33,4 +33,7 @@ public class typeOf_TernaryOperator_InferenceRule implements InferenceRule_Runti
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+  public boolean overrides() {
+    return false;
+  }
 }

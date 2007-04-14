@@ -3,6 +3,7 @@ package jetbrains.mps.bootstrap.helgins.runtime;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.patterns.IMatchingPattern;
 
 import java.util.Map;
 
@@ -84,5 +85,9 @@ public class RuntimeSupport {
 
   public void check(SNode node) {
     myTypeChecker.checkTypesForNodeAndSolveInequations(node);
+  }
+
+  public SNode coerce(SNode subtype, IMatchingPattern pattern) {
+    return myTypeChecker.getSubtypingManager().coerceSubtyping(subtype, pattern);
   }
 }
