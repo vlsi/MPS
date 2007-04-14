@@ -258,6 +258,18 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ForeachStatement" id="1176561864855">
+          <node role="iterable" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1176561879797">
+            <link role="variableDeclaration" targetNodeId="1174216465164" resolveInfo="l2" />
+          </node>
+          <node role="variable" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1176561864857">
+            <property name="name" value="as" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176561867672">
+              <link role="classifier" extResolveInfo="1.[Classifier]String" />
+            </node>
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176561864859" />
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ForeachStatement" id="1174062476274">
           <node role="iterable" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1174062498545">
             <link role="variableDeclaration" targetNodeId="1174055237266" resolveInfo="snodes" />

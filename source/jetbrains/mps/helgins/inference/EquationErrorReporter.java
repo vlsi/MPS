@@ -1,7 +1,9 @@
 package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.helgins.uiActions.PresentationManager;
+import jetbrains.mps.helgins.structure.RuntimeTypeVariable;
 
 /**
  * Created by IntelliJ IDEA.
@@ -29,8 +31,14 @@ public class EquationErrorReporter implements IErrorReporter {
 
 
   public String reportError() {
-    SNode representator1 = myEquationManager.getRepresentator(myNode1);
-    SNode representator2 = myEquationManager.getRepresentator(myNode2);
+    SNode representator1 = myNode1;
+    if (BaseAdapter.isInstance(representator1, RuntimeTypeVariable.class)) {
+      representator1 = myEquationManager.getRepresentator(myNode1);
+    }
+    SNode representator2 = myNode2;
+    if (BaseAdapter.isInstance(representator2, RuntimeTypeVariable.class)) {
+      representator2 = myEquationManager.getRepresentator(myNode2);
+    }
     return myBefore + PresentationManager.toString(representator1) +
             myBetween + PresentationManager.toString(representator2) + myAfter;
   }
