@@ -226,6 +226,30 @@ public class FileUtil {
     }
   }
 
+  public static String read(File file) {
+    try {
+      BufferedReader r = null;
+      try {
+        r = new BufferedReader(new FileReader(file));
+
+        StringBuilder result = new StringBuilder();
+                
+        String line = null;
+        while ((line = r.readLine()) != null) {
+          result.append(line).append("\n");
+        }
+
+        return result.toString();
+      } finally {
+        if (r != null) {
+          r.close();
+        }
+      }
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
+  }
+
   public static void main(String[] args) {
     zip(new File("C:/aaaaa"), new File("C:/temp/test.zip"));
   }
