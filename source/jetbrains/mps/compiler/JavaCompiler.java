@@ -117,55 +117,17 @@ public class JavaCompiler {
     }
   }
 
-  private class MyNameEnvironment implements INameEnvironment {
-    public NameEnvironmentAnswer findType(char[][] compoundTypeName) {
-      StringBuilder fqName = new StringBuilder();
-      for (int i = 0; i < compoundTypeName.length; i++) {
-        char[] part = compoundTypeName[i];
-        fqName.append(new String(part));
-        if (i != compoundTypeName.length - 1) {
-          fqName.append(".");
-        }
-      }
-      return findType(fqName.toString());
+  private class MyNameEnvironment extends MPSNameEnvironment {
+    protected IClassPathItem getClassPathItem() {
+      return myClassPathItem;
     }
 
-    public NameEnvironmentAnswer findType(char[] typeName, char[][] packageName) {
-      StringBuilder fqName = new StringBuilder();
-      for (char[] packName : packageName) {
-        fqName.append(new String(packName)).append(".");
-      }
-      fqName.append(typeName);
-      return findType(fqName.toString());
-    }
-
-    public boolean isPackage(char[][] parentPackageName, char[] packageName) {
-      String pname = "";
-      if (parentPackageName != null) {
-        for (char[] part : parentPackageName) {
-          pname += new String(part) + ".";
-        }
-      }
-      pname += new String(packageName);
-
-      return myClassPathItem.getAvailableClasses(pname).size() != 0 || myClassPathItem.getSubpackages(pname).size() != 0;
-    }
-
-    public void cleanup() {
-    }
-
-    private NameEnvironmentAnswer findType(String fqName) {
+    protected NameEnvironmentAnswer findType(String fqName) {
       if (myCompilationUnits.containsKey(fqName)) {
         return new NameEnvironmentAnswer(myCompilationUnits.get(fqName), null);
       }
 
-      try {        
-        byte[] aClass = myClassPathItem.getClass(fqName);
-        if (aClass == null) return null;
-        return new NameEnvironmentAnswer(new ClassFileReader(aClass, fqName.toCharArray()),  null);
-      } catch (ClassFormatException e) {
-        return null;
-      }
+      return super.findType(fqName);
     }
   }
 
