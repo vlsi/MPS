@@ -33,7 +33,7 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
   }
 
   public static SNode createNode(SNode enclosingNode, EditorContext editorContext, String linkRole) {
-    ConceptDeclaration concept = enclosingNode.getConceptDeclarationAdapter();
+    ConceptDeclaration concept = (ConceptDeclaration) enclosingNode.getConceptDeclarationAdapter();
     LinkDeclaration linkDeclaration = getTopLinkDeclaration(concept, SModelUtil_new.findLinkDeclaration(concept, linkRole));
     AbstractConceptDeclaration targetConcept = linkDeclaration.getTarget();
     SModel model = enclosingNode.getModel();
@@ -55,7 +55,6 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
   }
 
   public static SNode createNode(AbstractConceptDeclaration nodeConcept, SNode sampleNode, SNode enclosingNode, SModel model, IScope scope) {
-//    assert nodeConcept instanceof ConceptDeclaration : "couldn't instantiate interface concept '" + nodeConcept.getName() + "'";
     if (nodeConcept instanceof InterfaceConceptDeclaration) {
       return new SNode(model, NameUtil.removeStructureFromFqName(NameUtil.nodeFQName(nodeConcept)));
     }

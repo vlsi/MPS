@@ -19,7 +19,7 @@ import java.util.HashSet;
  * To change this template use File | Settings | File Templates.
  */
 public class RuleSet<T extends Rule_Runtime> {
-  Map<ConceptDeclaration, Set<T>> myRules = new HashMap<ConceptDeclaration, Set<T>>();
+  Map<AbstractConceptDeclaration, Set<T>> myRules = new HashMap<AbstractConceptDeclaration, Set<T>>();
 
   public void addRuleSetItem(Set<T> rules) {
     for (T rule : rules) {
@@ -35,24 +35,26 @@ public class RuleSet<T extends Rule_Runtime> {
   }
 
   public Set<T> getRules(SNode node) {
-    ConceptDeclaration conceptDeclaration = node.getConceptDeclarationAdapter();
+    AbstractConceptDeclaration conceptDeclaration = node.getConceptDeclarationAdapter();
     return get(conceptDeclaration);
   }
 
-  protected Set<T> get(ConceptDeclaration key) {
-    ConceptDeclaration conceptDeclaration = key;
-    while (conceptDeclaration != null) {
-      Set<T> rules = myRules.get(conceptDeclaration);
-      if (rules != null) {
-        if (conceptDeclaration != key) {
-          myRules.put((ConceptDeclaration) key, rules);
+  protected Set<T> get(AbstractConceptDeclaration key) {
+    if (key instanceof ConceptDeclaration) {
+      ConceptDeclaration conceptDeclaration = (ConceptDeclaration) key;
+      while (conceptDeclaration != null) {
+        Set<T> rules = myRules.get(conceptDeclaration);
+        if (rules != null) {
+          if (conceptDeclaration != key) {
+            myRules.put(key, rules);
+          }
+          return rules;
         }
-        return rules;
+        conceptDeclaration = conceptDeclaration.getExtends();
       }
-      conceptDeclaration = conceptDeclaration.getExtends();
     }
     HashSet<T> hashSet = new HashSet<T>();
-    myRules.put((ConceptDeclaration) key, hashSet);
+    myRules.put(key, hashSet);
     return hashSet;
   }
 

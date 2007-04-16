@@ -12,7 +12,7 @@ import java.util.*;
  * Time: 16:02:54
  * To change this template use File | Settings | File Templates.
  */
-public class ConceptToRulesMap<T>  {
+public class ConceptToRulesMap<T> {
   private Map<AbstractConceptDeclaration, Set<T>> myMap = new HashMap<AbstractConceptDeclaration, Set<T>>();
 
   public int size() {
@@ -36,20 +36,22 @@ public class ConceptToRulesMap<T>  {
     rules.add(rule);
   }
 
-  public Set<T> get(ConceptDeclaration key) {
-    ConceptDeclaration conceptDeclaration = key;
-    while (conceptDeclaration != null) {
-      Set<T> rules = myMap.get(conceptDeclaration);
-      if (rules != null) {
-        if (conceptDeclaration != key) {
-          myMap.put((ConceptDeclaration) key, rules);
+  public Set<T> get(AbstractConceptDeclaration key) {
+    if (key instanceof ConceptDeclaration) {
+      ConceptDeclaration conceptDeclaration = (ConceptDeclaration) key;
+      while (conceptDeclaration != null) {
+        Set<T> rules = myMap.get(conceptDeclaration);
+        if (rules != null) {
+          if (conceptDeclaration != key) {
+            myMap.put(key, rules);
+          }
+          return rules;
         }
-        return rules;
+        conceptDeclaration = conceptDeclaration.getExtends();
       }
-      conceptDeclaration = conceptDeclaration.getExtends();
     }
     HashSet<T> hashSet = new HashSet<T>();
-    myMap.put((ConceptDeclaration) key, hashSet);
+    myMap.put(key, hashSet);
     return hashSet;
   }
 
@@ -60,8 +62,8 @@ public class ConceptToRulesMap<T>  {
       }
       Set<T> rules = myMap.get(conceptDeclaration);
       if (rules == null) continue;
-      if(!(conceptDeclaration instanceof ConceptDeclaration)) continue;
-      ConceptDeclaration parent = ((ConceptDeclaration)conceptDeclaration).getExtends();
+      if (!(conceptDeclaration instanceof ConceptDeclaration)) continue;
+      ConceptDeclaration parent = ((ConceptDeclaration) conceptDeclaration).getExtends();
       while (parent != null) {
         Set<T> parentRules = myMap.get(parent);
         if (parentRules != null) {

@@ -1411,7 +1411,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   @NotNull
   public Language getNodeLanguage() {
-    ConceptDeclaration concept = getConceptDeclarationAdapter();
+    AbstractConceptDeclaration concept = getConceptDeclarationAdapter();
     return SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
   }
 
@@ -1433,8 +1433,13 @@ public class SNode implements Cloneable, Iterable<SNode> {
     return SModelUtil_new.isAssignableConcept(thisConceptFqName, conceptFqName);
   }
 
-  public final ConceptDeclaration getConceptDeclarationAdapter() {
-    return getConceptDeclarationAdapter(GlobalScope.getInstance());
+  public final AbstractConceptDeclaration getConceptDeclarationAdapter() {
+    String conceptFQName = getConceptFqName();
+    AbstractConceptDeclaration concept = SModelUtil_new.findAbstractConceptDeclaration(conceptFQName, GlobalScope.getInstance());
+    if (concept == null) {
+      LOG.error("couldn't find concept declaration '" + conceptFQName + " for node " + getId() + " in model " + getModel().getUID());
+    }
+    return concept;
   }
 
   public ConceptDeclaration getConceptDeclarationAdapter(IScope scope) {

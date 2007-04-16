@@ -31,7 +31,7 @@ public class IconManager {
 
   public static Icon getIconFor(SNode node) {
     if (node == null) return Icons.DEFAULT_ICON;
-    return getIconFor(node.getConceptDeclarationAdapter());
+    return getIconFor((ConceptDeclaration) node.getConceptDeclarationAdapter());
   }
 
   public static Icon getIconFor(ConceptDeclaration conceptDeclaration) {

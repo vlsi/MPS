@@ -1,6 +1,7 @@
 package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.helgins.runtime.RuntimeSupport;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.incremental.SNodeReadEvent;

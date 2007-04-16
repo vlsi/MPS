@@ -91,7 +91,7 @@ public class NameUtil {
     return namespace + "." + shortName;
   }
 
-  public static String conceptFqName(ConceptDeclaration cd) {
+  public static String conceptFqName(AbstractConceptDeclaration cd) {
     if (cd == null) return null;
     return namespaceFromConcept(cd) + "." + cd.getName();
   }

@@ -1,6 +1,7 @@
 package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.helgins.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.SupertypingRule_Runtime;
 import jetbrains.mps.formulaLanguage.evaluator.ExpressionContext;
@@ -187,7 +188,7 @@ public class SubtypingManager {
       }
     }
 
-    Set<SubtypingRule> subtypingRules = myConceptsToSubtypingRulesCache.get(term.getConceptDeclarationAdapter());
+    Set<SubtypingRule> subtypingRules = myConceptsToSubtypingRulesCache.get((ConceptDeclaration) term.getConceptDeclarationAdapter());
     if (subtypingRules != null)  {
       for (SubtypingRule rule : subtypingRules) {
         AnalyzedTermDeclaration applicableNode = rule.getApplicableNode();
@@ -215,7 +216,7 @@ public class SubtypingManager {
       }
     }
 
-    Set<SupertypingRule> supertypingRules = myConceptsToSupertypingRulesCache.get(term.getConceptDeclarationAdapter());
+    Set<SupertypingRule> supertypingRules = myConceptsToSupertypingRulesCache.get((ConceptDeclaration) term.getConceptDeclarationAdapter());
     if (supertypingRules == null) return result;
     for (SupertypingRule rule : supertypingRules) {
       AnalyzedTermDeclaration applicableNode = rule.getApplicableNode();

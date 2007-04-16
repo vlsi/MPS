@@ -28,6 +28,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.patterns.structure.PropertyPatternVariableDeclaration;
 import jetbrains.mps.patterns.structure.LinkPatternVariableDeclaration;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 public class QueriesGenerated {
 
@@ -326,7 +327,7 @@ public class QueriesGenerated {
   public static List sourceNodesQuery_1174824306211(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     List<SNode> result = new ArrayList<SNode>();
     SModel model = generator.getTargetModel();
-    ConceptDeclaration concept = node.getConceptDeclarationAdapter();
+    AbstractConceptDeclaration concept = node.getConceptDeclarationAdapter();
     for(String childRole : node.getChildRoles()) {
       SNode childRoleNode = BaseConcept.newInstance(model).getNode();
       childRoleNode.setProperty("childRole", childRole);
