@@ -15,6 +15,11 @@ import jetbrains.mps.nodeEditor.ModelAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkMetaclass;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
@@ -72,10 +77,10 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createSourceCardinalityCell(context, node));
     }
     if(LinkDeclaration_Editor._QueryFunction_NodeCondition_1146605762247(node, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createLinkDeclaration_SpecializedMetaclassCell(context, node));
+      editorCell.addEditorCell(this.createNullCell(context, node));
     }
     if(LinkDeclaration_Editor._QueryFunction_NodeCondition_1146606011485(node, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createLinkDeclaration_SpecializedSourceCardinalityCell(context, node));
+      editorCell.addEditorCell(this.createNullCell1(context, node));
     }
     editorCell.addEditorCell(this.createConstantCell(context, node, "target:"));
     editorCell.addEditorCell(this.createTargetReferenceCell(context, node));
@@ -108,8 +113,9 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createLinkDeclaration_SpecializedMetaclassCell(EditorContext context, SNode node) {
-    ModelAccessor modelAccessor = Queries.createModelAccessor_LinkDeclaration_SpecializedMetaclass(node);
+  public EditorCell createNullCell(EditorContext context, SNode node) {
+    ModelAccessor modelAccessor;
+    modelAccessor = this.createModelAccessor(context, node);
     EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
@@ -123,8 +129,23 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createLinkDeclaration_SpecializedSourceCardinalityCell(EditorContext context, SNode node) {
-    ModelAccessor modelAccessor = Queries.createModelAccessor_LinkDeclaration_SpecializedSourceCardinality(node);
+  public ModelAccessor createModelAccessor(final EditorContext context, final SNode node) {
+    return new ModelAccessor() {
+
+      public String getText() {
+        LinkMetaclass lm = SModelUtil_new.getGenuineLinkMetaclass(((LinkDeclaration)SNodeOperations.getAdapter(node)));
+        return lm.getName();
+      }
+      public void setText(String text) {
+      }
+      public boolean isValidText(String text) {
+        return true;
+      }
+    };
+  }
+  public EditorCell createNullCell1(EditorContext context, SNode node) {
+    ModelAccessor modelAccessor;
+    modelAccessor = this.createModelAccessor1(context, node);
     EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
@@ -137,6 +158,20 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1084205682785");
     editorCell.setLayoutConstraint("");
     return editorCell;
+  }
+  public ModelAccessor createModelAccessor1(final EditorContext context, final SNode node) {
+    return new ModelAccessor() {
+
+      public String getText() {
+        Cardinality cardinality = SModelUtil_new.getGenuineLinkSourceCardinality(((LinkDeclaration)SNodeOperations.getAdapter(node)));
+        return cardinality.getName();
+      }
+      public void setText(String text) {
+      }
+      public boolean isValidText(String text) {
+        return true;
+      }
+    };
   }
   public EditorCell createRoleCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
