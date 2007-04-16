@@ -1939,6 +1939,10 @@
       <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
       <link role="target" targetNodeId="1142886811589" resolveInfo="ConceptFunctionParameter_node" />
     </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1176725584265">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
+      <link role="target" targetNodeId="1176717779940" resolveInfo="ConceptFunctionParameter_text" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1176717888428">
     <property name="name" value="QueryFunction_ModelAccess_Validator" />
@@ -1962,6 +1966,10 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1176717888434">
       <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
       <link role="target" targetNodeId="1142886811589" resolveInfo="ConceptFunctionParameter_node" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1176725860484">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
+      <link role="target" targetNodeId="1176717779940" resolveInfo="ConceptFunctionParameter_text" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1176717996748">
