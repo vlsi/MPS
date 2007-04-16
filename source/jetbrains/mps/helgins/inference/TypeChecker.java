@@ -288,6 +288,7 @@ public class TypeChecker {
 
   private void doCheckTypes(SNode root) {
     // bfs from root
+    if (root == null) return;
     List<SNode> frontier = new ArrayList<SNode>();
     List<SNode> newFrontier = new ArrayList<SNode>();
     frontier.add(root);

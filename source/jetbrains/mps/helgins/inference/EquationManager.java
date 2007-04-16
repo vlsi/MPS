@@ -61,7 +61,10 @@ public class EquationManager {
       map.putAll(slave.myComparableTypesMap.get(key));
     }
 
-    myEquations.putAll(slave.myEquations);
+    for (SNode type : slave.myEquations.keySet()) {
+      SNode parentType = slave.myEquations.get(type);
+      processEquation(type, parentType, null);
+    }
   }
 
   public SNode getParent(SNode type) {
@@ -366,6 +369,7 @@ public class EquationManager {
     Set<SNode> types = subtypingGraphVertices();
     boolean hasConcreteTypes = true;
 
+    // we assume that there are no equations such as T1 :< T2 where T1 and T2 are both concrete
     while (hasConcreteTypes) {
       hasConcreteTypes = false;
       for (SNode type : types) {

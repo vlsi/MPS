@@ -22,7 +22,7 @@ import java.util.HashSet;
 public class RulesManager {
   private TypeChecker myTypeChecker;
   private Set<String> myLoadedLanguages = new HashSet<String>();
-  private RuleSet<InferenceRule_Runtime> myInferenceRules = new RuleSet<InferenceRule_Runtime>();
+  private RuleSet<InferenceRule_Runtime> myInferenceRules = new InferenceRuleSet();
   private RuleSet<SubtypingRule_Runtime> mySubtypingRules = new RuleSet<SubtypingRule_Runtime>();
   private RuleSet<SupertypingRule_Runtime> mySupertypingRules = new RuleSet<SupertypingRule_Runtime>();
 

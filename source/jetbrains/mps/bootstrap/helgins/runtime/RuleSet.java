@@ -39,7 +39,7 @@ public class RuleSet<T extends Rule_Runtime> {
     return get(conceptDeclaration);
   }
 
-  private Set<T> get(ConceptDeclaration key) {
+  protected Set<T> get(ConceptDeclaration key) {
     ConceptDeclaration conceptDeclaration = key;
     while (conceptDeclaration != null) {
       Set<T> rules = myRules.get(conceptDeclaration);

@@ -192,9 +192,35 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1176716642142">
-          <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1176716642143">
-            <link role="variableDeclaration" targetNodeId="1176714617148" resolveInfo="l" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1176725520459">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1176725520460">
+            <property name="name" value="l2" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176725520461">
+              <link role="classifier" extResolveInfo="3.[Classifier]List" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1176725542992">
+          <node role="expression" type="jetbrains.mps.baseLanguage.AssignmentExpression" id="1176725544475">
+            <node role="lValue" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1176725542993">
+              <link role="variableDeclaration" targetNodeId="1176725520460" resolveInfo="l2" />
+            </node>
+            <node role="rValue" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1176725546801">
+              <link role="variableDeclaration" targetNodeId="1176714617148" resolveInfo="l" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1176728050284">
+          <node role="expression" type="jetbrains.mps.baseLanguage.NotExpression" id="1176728050285">
+            <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1176728057926">
+              <link role="baseMethodDeclaration" extResolveInfo="3.method ([Classifier]List).([InstanceMethodDeclaration]get((jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int)) : (jetbrains.mps.baseLanguage.types.any/jetbrains.mps.baseLanguage.types.any))" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1176728055433">
+                <link role="variableDeclaration" targetNodeId="1176714617148" resolveInfo="l" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1176728064267">
+                <property name="value" value="2" />
+              </node>
+            </node>
           </node>
         </node>
       </node>
