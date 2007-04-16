@@ -260,11 +260,6 @@
       <property name="role" value="modelAcessor" />
       <link role="target" targetNodeId="1176717996748" resolveInfo="ModelAccessor" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1074767920766">
-      <property name="name" value="modelAccessorId" />
-      <property name="propertyType" value="string" />
-      <link role="dataType" targetNodeId="3.1082983041843" />
-    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1082638248796">
       <property name="name" value="nullText" />
       <property name="propertyType" value="string" />
