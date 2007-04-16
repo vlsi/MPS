@@ -8847,7 +8847,7 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1176717970976">
           <property name="textFgColor" value="DARK_BLUE" />
           <property name="textBgColor" value="lightGray" />
-          <property name="text" value="(node, text, editorContext)-&gt;boolean" />
+          <property name="text" value="(node, text, oldText, editorContext)-&gt;boolean" />
           <property name="fontStyle" value="ITALIC" />
           <property name="drawBorder" value="false" />
         </node>

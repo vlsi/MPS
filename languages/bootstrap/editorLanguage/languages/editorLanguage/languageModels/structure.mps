@@ -1971,6 +1971,10 @@
       <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
       <link role="target" targetNodeId="1176717779940" resolveInfo="ConceptFunctionParameter_text" />
     </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1176732129892">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
+      <link role="target" targetNodeId="1176731909317" resolveInfo="ConceptFunctionParameter_oldText" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1176717996748">
     <property name="name" value="ModelAccessor" />
@@ -1992,6 +1996,27 @@
       <property name="sourceCardinality" value="1" />
       <property name="role" value="validator" />
       <link role="target" targetNodeId="1176717888428" resolveInfo="QueryFunction_ModelAccess_Validater" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1176731909317">
+    <property name="name" value="ConceptFunctionParameter_oldText" />
+    <link role="extends" targetNodeId="4.1107135704075" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1176731909318">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1137545963098" />
+      <node role="target" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176731909319">
+        <link role="classifier" extResolveInfo="36.[Classifier]String" />
+      </node>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1176731909320">
+      <property name="value" value="oldText" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1176731909321">
+      <property name="value" value="function parameter" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473914776" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1176731909322">
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473994950" />
     </node>
   </node>
 </model>
