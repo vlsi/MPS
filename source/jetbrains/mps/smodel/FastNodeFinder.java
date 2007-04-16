@@ -4,7 +4,6 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
-import jetbrains.mps.project.GlobalScope;
 
 import java.lang.ref.WeakReference;
 import java.util.*;
@@ -62,7 +61,7 @@ public class FastNodeFinder {
       buildCache(child, result);
     }
 
-    ConceptDeclaration concept = root.getConceptDeclarationAdapter(GlobalScope.getInstance());
+    AbstractConceptDeclaration concept = root.getConceptDeclarationAdapter();
     getNodes_noInheritance(concept).add(new WeakReference<SNode>(root));
 
     result.clear();

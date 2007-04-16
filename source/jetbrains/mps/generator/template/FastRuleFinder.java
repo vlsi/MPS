@@ -123,7 +123,7 @@ public class FastRuleFinder {
    * for test
    */
   public SNode findReductionRule_SLOW(SNode node, ITemplateGenerator generator) {
-    ConceptDeclaration concept = node.getConceptDeclarationAdapter(generator.getScope());
+    ConceptDeclaration concept = (ConceptDeclaration) node.getConceptDeclarationAdapter();
     for (Reduction_MappingRule rule : myRuleList) {
       if (TemplateGenUtil.checkPremiseForBaseMappingRule(node, concept, rule, generator)) {
         return BaseAdapter.fromAdapter(rule);

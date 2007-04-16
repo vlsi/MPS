@@ -27,7 +27,7 @@ public interface INodeAdapter {
 
   String getId();
 
-  String getAlias(IScope scope);
+  String getAlias();
 
   INodeAdapter getParent();
 

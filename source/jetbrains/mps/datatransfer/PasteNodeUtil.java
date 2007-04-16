@@ -123,8 +123,8 @@ public class PasteNodeUtil {
   }
 
   private static boolean pasteToTarget_internal(final SNode pasteTarget, final SNode pasteNode, final SNode anchorNode, String role, final boolean pasteBefore, boolean reallyPaste, final IOperationContext operationContext) {
-    ConceptDeclaration pasteTargetType = pasteTarget.getConceptDeclarationAdapter(operationContext.getScope());
-    ConceptDeclaration pasteNodeType = pasteNode.getConceptDeclarationAdapter(operationContext.getScope());
+    ConceptDeclaration pasteTargetType = (ConceptDeclaration) pasteTarget.getConceptDeclarationAdapter();
+    ConceptDeclaration pasteNodeType = (ConceptDeclaration) pasteNode.getConceptDeclarationAdapter();
     final LinkDeclaration linkDeclaration = findMetalink(pasteTargetType, pasteNodeType, role);
     if (linkDeclaration == null) {
       return false;

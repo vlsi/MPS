@@ -109,7 +109,7 @@ public class ReferenceInfo_Default extends ReferenceInfo {
   }
 
   private IReferenceResolver loadReferenceResolver(IScope scope) {
-    ConceptDeclaration conceptDeclaration = myTemplateSourceNode.getConceptDeclarationAdapter(scope);
+    ConceptDeclaration conceptDeclaration = (ConceptDeclaration) myTemplateSourceNode.getConceptDeclarationAdapter();
     while (conceptDeclaration != null) {
       String modelPackageName = JavaNameUtil.packageNameForModelUID(conceptDeclaration.getModel().getUID());
       String buildersPackageName = JavaNameUtil.withoutStructure(modelPackageName) + ".builder";

@@ -112,13 +112,13 @@ public class Resolver {
     String role = reference.getRole();
     final SNode sourceNode = reference.getSourceNode();
 
-    ConceptDeclaration sourceConcept = sourceNode.getConceptDeclarationAdapter(operationContext.getScope());
+    ConceptDeclaration sourceConcept = (ConceptDeclaration) sourceNode.getConceptDeclarationAdapter();
     LinkDeclaration refLinkDeclaration = SModelUtil_new.findLinkDeclaration(sourceConcept, role);
     SNode sourceParent = sourceNode.getParent();
 
     if (sourceParent == null) sourceParent = sourceNode;
 
-    LinkDeclaration childLinkDeclaration = SModelUtil_new.findLinkDeclaration(sourceParent.getConceptDeclarationAdapter(operationContext.getScope()), sourceNode.getRole_());
+    LinkDeclaration childLinkDeclaration = SModelUtil_new.findLinkDeclaration(sourceParent.getConceptDeclarationAdapter(), sourceNode.getRole_());
 
     EditorCell editorCell = editorContext.createNodeCell(sourceParent);
     EditorCell inspectedCell = editorContext.createInspectedCell(sourceNode, null);

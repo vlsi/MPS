@@ -21,7 +21,7 @@ import java.util.List;
     IScope scope = context.getScope();
 
     // proceed with custom builders
-    ConceptDeclaration referenceNodeConcept = referenceNode.getConceptDeclarationAdapter(scope);
+    ConceptDeclaration referenceNodeConcept = (ConceptDeclaration) referenceNode.getConceptDeclarationAdapter();
     Language primaryLanguage = SModelUtil_new.getDeclaringLanguage(referenceNodeConcept, scope);
     if (primaryLanguage == null) {
       LOG.error("Couldn't build actions : couldn't get declaring language for concept " + referenceNodeConcept.getDebugText());

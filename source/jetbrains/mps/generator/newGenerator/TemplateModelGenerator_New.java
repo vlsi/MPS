@@ -341,7 +341,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   }
 
   public TemplateDeclaration getTemplateForSwitchCase(SNode sourceNode, TemplateSwitch templateSwitch) {
-    ConceptDeclaration nodeConcept = sourceNode.getConceptDeclarationAdapter(getScope());
+    ConceptDeclaration nodeConcept = (ConceptDeclaration) sourceNode.getConceptDeclarationAdapter();
 
     if (myTemplateSwitchGraph == null) {
       myTemplateSwitchGraph = new TemplateSwitchGraph(getGeneratorSessionContext().getTemplateModels());

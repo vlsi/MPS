@@ -2,7 +2,6 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptLink;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
@@ -42,8 +41,8 @@ public abstract class BaseAdapter implements INodeAdapter {
     return myNode.getId();
   }
 
-  public String getAlias(IScope scope) {
-    return myNode.getAlias(scope);
+  public String getAlias() {
+    return myNode.getAlias();
   }
 
   public INodeAdapter getParent() {

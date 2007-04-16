@@ -3,7 +3,7 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActionsBuilder;
 import jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstitutePreconditionFunction;
 import jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformTag;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
@@ -45,7 +45,7 @@ import java.util.List;
   private static List<RTransformHintSubstituteActionsBuilder> getActionBuilders(final SNode sourceNode, String transformTag, final IOperationContext context) {
     List<RTransformHintSubstituteActionsBuilder> actionsBuilders = new LinkedList<RTransformHintSubstituteActionsBuilder>();
     IScope scope = context.getScope();
-    final ConceptDeclaration sourceConcept = sourceNode.getConceptDeclarationAdapter(scope);
+    final AbstractConceptDeclaration sourceConcept = sourceNode.getConceptDeclarationAdapter();
     final RTransformTag tag = RTransformTag.parseValue(transformTag);
 
     List<Language> languages = sourceNode.getModel().getLanguages(scope);
