@@ -112,8 +112,6 @@ public class GenerationSession implements IGenerationSession {
       myDiscardTransients = false;
     }
 
-    Statistics.dump();
-
     return status;
   }
 

@@ -19,6 +19,7 @@ class GeneratorManagerPreferencesPage implements IPreferencesPage {
   private JCheckBox myCompileInIdeaBeforeGeneration = new JCheckBox("Compile in IntelliJ IDEA before generation");
   private JCheckBox myCompileInIdeaOnGeneration = new JCheckBox("Compile in IntelliJ IDEA after generation");
   private JCheckBox mySaveTransientModelsCheckBox = new JCheckBox("Save transient models on generation (experts only)");
+  private JCheckBox myDumpQueriesStatisticsCheckBox = new JCheckBox("Dump query execution statistic in concole (experts only)");
   private JCheckBox myCompileSourceLanguagesModules = new JCheckBox("Compile source languages' modules before generation");
   private GeneratorManager myGeneratorManager;
 
@@ -27,12 +28,14 @@ class GeneratorManagerPreferencesPage implements IPreferencesPage {
     myCompileInIdeaBeforeGeneration.setSelected(myGeneratorManager.isCompileBeforeGeneration());
     myCompileInIdeaOnGeneration.setSelected(myGeneratorManager.isCompileOnGeneration());
     mySaveTransientModelsCheckBox.setSelected(myGeneratorManager.isSaveTransientModels());
+    myDumpQueriesStatisticsCheckBox.setSelected(myGeneratorManager.isDumpStatistics());
     myCompileSourceLanguagesModules.setSelected(myGeneratorManager.isCompileSourceLanguageModules());
 
-    JPanel optionsPanel = new JPanel(new GridLayout(4, 1));
+    JPanel optionsPanel = new JPanel(new GridLayout(5, 1));
     optionsPanel.add(myCompileInIdeaBeforeGeneration);
     optionsPanel.add(myCompileInIdeaOnGeneration);
     optionsPanel.add(mySaveTransientModelsCheckBox);
+    optionsPanel.add(myDumpQueriesStatisticsCheckBox);
     optionsPanel.add(myCompileSourceLanguagesModules);
 
     myPage = new JPanel(new BorderLayout());
@@ -60,6 +63,7 @@ class GeneratorManagerPreferencesPage implements IPreferencesPage {
     myGeneratorManager.setCompileBeforeGeneration(myCompileInIdeaBeforeGeneration.isSelected());
     myGeneratorManager.setCompileOnGeneration(myCompileInIdeaOnGeneration.isSelected());
     myGeneratorManager.setSaveTransientModels(mySaveTransientModelsCheckBox.isSelected());
+    myGeneratorManager.setDumpStatistics(myDumpQueriesStatisticsCheckBox.isSelected());
     myGeneratorManager.setCompileSourceLanguageModules(myCompileSourceLanguagesModules.isSelected());
   }
 }

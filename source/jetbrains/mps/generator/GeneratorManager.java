@@ -4,6 +4,7 @@ import jetbrains.mps.component.Dependency;
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.generator.generationTypes.GenerateFilesGenerationType;
 import jetbrains.mps.generator.newGenerator.GenerationSession_New;
+import jetbrains.mps.generator.template.Statistics;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
@@ -45,6 +46,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   public static final Logger LOG = Logger.getLogger(GeneratorManager.class);
 
   private static final String SAVE_TRANSIENT_MODELS = "save-transient-models-on-generation";
+  private static final String DUMP_STATISTICS = "dump-staticstics-on-generation";
   private static final String COMPILE_BEFORE_GENERATION = "compile-before-generation";
   private static final String COMPILE_ON_GENERATION = "compile-on-generation";
   private static final String COMPILE_SOURCE_LANGUAGES_MODULES = "compile-source-languages-modules";
@@ -52,6 +54,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   private boolean myCompileBeforeGeneration = false;
   private boolean myCompileOnGeneration = true;
   private boolean mySaveTransientModels;
+  private boolean myDumpStatistics = false;
   private boolean myCompileSourceLanguageModules = false;
   private MPSProject myProject;
   private List<IFileGenerator> myFileGenerators = new LinkedList<IFileGenerator>();
@@ -83,6 +86,9 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     if (element.getAttribute(SAVE_TRANSIENT_MODELS) != null) {
       mySaveTransientModels = Boolean.parseBoolean(element.getAttributeValue(SAVE_TRANSIENT_MODELS));
     }
+    if (element.getAttribute(DUMP_STATISTICS) != null) {
+      myDumpStatistics = Boolean.parseBoolean(element.getAttributeValue(DUMP_STATISTICS));
+    }
     if (element.getAttribute(COMPILE_SOURCE_LANGUAGES_MODULES) != null) {
       myCompileSourceLanguageModules = Boolean.parseBoolean(element.getAttributeValue(COMPILE_SOURCE_LANGUAGES_MODULES));
     }
@@ -92,6 +98,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     element.setAttribute(COMPILE_BEFORE_GENERATION, "" + myCompileBeforeGeneration);
     element.setAttribute(COMPILE_ON_GENERATION, "" + myCompileOnGeneration);
     element.setAttribute(SAVE_TRANSIENT_MODELS, "" + mySaveTransientModels);
+    element.setAttribute(DUMP_STATISTICS, "" + myDumpStatistics);
     element.setAttribute(COMPILE_SOURCE_LANGUAGES_MODULES, "" + myCompileSourceLanguageModules);
   }
 
@@ -119,6 +126,13 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     mySaveTransientModels = saveTransientModels;
   }
 
+  public boolean isDumpStatistics() {
+    return myDumpStatistics;
+  }
+
+  public void setDumpStatistics(boolean dumpStatistics) {
+    myDumpStatistics = dumpStatistics;
+  }
 
   public boolean isCompileSourceLanguageModules() {
     return myCompileSourceLanguageModules;
@@ -494,7 +508,13 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         String taskName = ModelsProgressUtil.generationModelTaskName(sourceModelDescriptor);
         progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_GENERATION);
 
+
         status = generationSession.generateModel(sourceModelDescriptor, targetLanguage, script);
+
+        if (isDumpStatistics()) {
+          Statistics.dump();
+        }
+
         checkMonitorCanceled(progress);
         if (status.getOutputModel() != null) {
           boolean generateText = true;
