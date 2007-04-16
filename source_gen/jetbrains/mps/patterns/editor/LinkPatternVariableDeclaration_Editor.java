@@ -33,7 +33,7 @@ public class LinkPatternVariableDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell(context, node, "#"));
     editorCell.addEditorCell(this.createVarNameCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1137418661903");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1137418661903");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -46,7 +46,7 @@ public class LinkPatternVariableDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1140969522389");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140969522389");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -65,7 +65,7 @@ public class LinkPatternVariableDeclaration_Editor extends DefaultNodeEditor {
       editorCellLabel.getTextLine().setTextColor(MPSColors.DARK_GREEN);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1137418665045");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1137418665045");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

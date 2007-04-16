@@ -15,5 +15,8 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
     this.putAction("any", "#", new _PatternExpression_KeyMap_Action2());
     this.putAction("any", "$", new _PatternExpression_KeyMap_Action3());
     this.putAction("any", "*", new _PatternExpression_KeyMap_Action4());
+    this.putAction("any", "%", new _PatternExpression_KeyMap_Action5());
+    this.putAction("any", "*", new _PatternExpression_KeyMap_Action6());
+    this.putAction("any", "^", new _PatternExpression_KeyMap_Action7());
   }
 }

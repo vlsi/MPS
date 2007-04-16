@@ -27,7 +27,7 @@ public class WildcardPattern_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell(context, node, "_"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1136720096762");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1136720096762");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -41,7 +41,7 @@ public class WildcardPattern_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setFontType(MPSFonts.BOLD);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1136720096763");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1136720096763");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
