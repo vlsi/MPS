@@ -5,9 +5,6 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 
 import java.lang.ref.WeakReference;
 import java.util.*;
@@ -27,7 +24,7 @@ public class FastNodeFinder {
   private void initCache() {
     myStructuralState = myModelDescriptor.structuralState();
     for (SNode root : myModelDescriptor.getSModel().getRoots()) {
-      buildCache(root);
+      buildCache(root, new HashSet<AbstractConceptDeclaration>());
     }
     myInitialized = true;
   }
@@ -41,32 +38,34 @@ public class FastNodeFinder {
       initCache();
     }
 
-    List<SNode> result = new LinkedList<SNode>();
     WeakHashMap<AbstractConceptDeclaration, List<WeakReference<SNode>>> map = myNodesNoInheritance;
     if (includeInherited) {
       map = myNodesAll;
     }
 
     if (map.containsKey(concept)) {
+      final List<SNode> result = new LinkedList<SNode>();
       for (WeakReference<SNode> n : map.get(concept)) {
         SNode node = n.get();
         if (node != null) {
           result.add(node);
         }
       }
+      return result;
     }
-    return result;
+
+    return Collections.EMPTY_LIST;
   }
 
-  private void buildCache(SNode root) {
+  private void buildCache(final SNode root, final Set<AbstractConceptDeclaration> result) {
     for (SNode child : root.getChildren()) {
-      buildCache(child);
+      buildCache(child, result);
     }
 
     ConceptDeclaration concept = root.getConceptDeclarationAdapter(GlobalScope.getInstance());
     getNodes_noInheritance(concept).add(new WeakReference<SNode>(root));
 
-    Set<AbstractConceptDeclaration> result = new HashSet<AbstractConceptDeclaration>();
+    result.clear();
     collectParents(concept, result);
 
     for (AbstractConceptDeclaration acd : result) {
@@ -75,7 +74,7 @@ public class FastNodeFinder {
   }
 
 
-  private void collectParents(AbstractConceptDeclaration current, Set<AbstractConceptDeclaration> result) {
+  private void collectParents(final AbstractConceptDeclaration current, final Set<AbstractConceptDeclaration> result) {
     if (result.contains(current)) {
       return;
     }

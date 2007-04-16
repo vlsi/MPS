@@ -1,10 +1,10 @@
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.structure.Root;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.generator.GenerationSessionContext;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -186,7 +186,7 @@ public class MPSModuleRepository {
   private void putModuleWithUID(String moduleUID, IModule module) {
     List<IModule> modulesWithUID = myUIDToModulesMap.get(moduleUID);
     if (modulesWithUID == null) {
-      modulesWithUID = new LinkedList<IModule>();
+      modulesWithUID = new ArrayList<IModule>(1);
       myUIDToModulesMap.put(moduleUID, modulesWithUID);
     }
     if (module instanceof Language || modulesWithUID instanceof DevKit) {
@@ -394,7 +394,7 @@ public class MPSModuleRepository {
 
     List<IModule> modules = myUIDToModulesMap.get(newUID);
     if (modules == null) {
-      modules = new ArrayList<IModule>();
+      modules = new ArrayList<IModule>(1);
       myUIDToModulesMap.put(newUID, modules);
     }
     modules.add(l);
