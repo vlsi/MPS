@@ -10,6 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class VariableDeclaration extends NamedConcept {
   public static String NAME = "name";
+  public static String IS_FINAL = "isFinal";
   public static String TYPE = "type";
   public static String INITIALIZER = "initializer";
 
@@ -29,6 +30,12 @@ public class VariableDeclaration extends NamedConcept {
   }
   public void setName(String value) {
     this.setProperty(VariableDeclaration.NAME, value);
+  }
+  public boolean getIsFinal() {
+    return this.getBooleanProperty(VariableDeclaration.IS_FINAL);
+  }
+  public void setIsFinal(boolean value) {
+    this.setBooleanProperty(VariableDeclaration.IS_FINAL, value);
   }
   public Type getType() {
     return (Type)this.getChild(VariableDeclaration.TYPE);

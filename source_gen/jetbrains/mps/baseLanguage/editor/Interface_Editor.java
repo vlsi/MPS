@@ -23,7 +23,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class Interface_Editor extends DefaultNodeEditor {
 
-  public AbstractCellProvider my_GenericDeclaration_TypeVariables_Component;
+  public AbstractCellProvider my_GenericDeclaration_TypeVariables_Component1;
   public AbstractCellListHandler myExtendedInterfaceListHandler_extendedInterfaceList_;
   public AbstractCellListHandler myStaticFieldListHandler_staticFieldList_;
   public AbstractCellListHandler myMethodListHandler_methodsList_;
@@ -106,10 +106,10 @@ public class Interface_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell create_GenericDeclaration_TypeVariables_ComponentCell(EditorContext context, SNode node) {
-    if(this.my_GenericDeclaration_TypeVariables_Component == null) {
-      this.my_GenericDeclaration_TypeVariables_Component = new _GenericDeclaration_TypeVariables_Component(node);
+    if(this.my_GenericDeclaration_TypeVariables_Component1 == null) {
+      this.my_GenericDeclaration_TypeVariables_Component1 = new _GenericDeclaration_TypeVariables_Component(node);
     }
-    EditorCell componentCell = this.my_GenericDeclaration_TypeVariables_Component.createEditorCell(context);
+    EditorCell componentCell = this.my_GenericDeclaration_TypeVariables_Component1.createEditorCell(context);
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.addEditorCell(componentCell);
     editorCell.setSelectable(true);
