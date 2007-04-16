@@ -2014,5 +2014,66 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473994950" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1176749715029">
+    <property name="name" value="QueryFunction_CellProvider" />
+    <link role="extends" targetNodeId="4.1137021947720" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1176749779885">
+      <property name="value" value="cell provider" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1176749779886">
+      <property name="value" value="embedded block of code" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473914776" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1176749854668">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" />
+      <node role="target" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176749856486">
+        <link role="classifier" extResolveInfo="29.[Classifier]EditorCell" />
+      </node>
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1176749862944">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
+      <link role="target" targetNodeId="1142886811589" resolveInfo="ConceptFunctionParameter_node" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1176749872102">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
+      <link role="target" targetNodeId="1161622981231" resolveInfo="ConceptFunctionParameter_editorContext" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1176750487975">
+    <property name="name" value="CellModel_QueryMethodEditor" />
+    <link role="extends" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1176750736379">
+      <property name="name" value="notSetString" />
+      <link role="dataType" targetNodeId="3.1082983041843" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1176750922515">
+      <property name="name" value="prefix" />
+      <link role="dataType" targetNodeId="3.1082983041843" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1176750512039">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="queryIdProperty" />
+      <link role="target" targetNodeId="1.1071489288299" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1176750789991">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="returnType" />
+      <link role="target" targetNodeId="4.1068431790189" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1176750796710">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="parameter" />
+      <link role="target" targetNodeId="4.1068431790189" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1176750816680">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="additionalImport" />
+      <link role="target" targetNodeId="4.1068431790189" />
+    </node>
+  </node>
 </model>
 
