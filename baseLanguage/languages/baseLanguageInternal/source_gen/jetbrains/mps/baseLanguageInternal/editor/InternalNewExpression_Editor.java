@@ -20,7 +20,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class InternalNewExpression_Editor extends DefaultNodeEditor {
 
-  public AbstractCellProvider myBaseMethodCall_actualArgumentList;
+  public AbstractCellProvider myBaseMethodCall_actualArgumentList1;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
@@ -42,10 +42,10 @@ public class InternalNewExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createBaseMethodCall_actualArgumentListCell(EditorContext context, SNode node) {
-    if(this.myBaseMethodCall_actualArgumentList == null) {
-      this.myBaseMethodCall_actualArgumentList = new BaseMethodCall_actualArgumentList(node);
+    if(this.myBaseMethodCall_actualArgumentList1 == null) {
+      this.myBaseMethodCall_actualArgumentList1 = new BaseMethodCall_actualArgumentList(node);
     }
-    EditorCell componentCell = this.myBaseMethodCall_actualArgumentList.createEditorCell(context);
+    EditorCell componentCell = this.myBaseMethodCall_actualArgumentList1.createEditorCell(context);
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.addEditorCell(componentCell);
     editorCell.setSelectable(true);
