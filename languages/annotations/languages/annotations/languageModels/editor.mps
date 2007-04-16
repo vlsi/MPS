@@ -8,8 +8,8 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1136027532768">
     <link role="conceptDeclaration" targetNodeId="1.1136027476087" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1136027532769">
-      <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
+      <property name="drawBorder" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1136027532770">
         <property name="text" value="$(" />
         <property name="drawBorder" value="false" />
@@ -42,14 +42,14 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1136027532778">
     <link role="conceptDeclaration" targetNodeId="1.1136027498485" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1136027532779">
-      <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
+      <property name="drawBorder" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1136027532780">
         <property name="text" value="$(" />
         <property name="drawBorder" value="false" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_ModelAccess" id="1136027532781">
-        <property name="modelAccessorId" value="attributedNodeProperty" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1176738996438">
+        <property name="text" value="property attribute concept" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1136027532782">
         <property name="text" value=")$" />

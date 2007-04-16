@@ -9,10 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.ModelAccessor;
-import jetbrains.mps.nodeEditor.EditorCell_Property;
-import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.nodeEditor.CellAction_Empty;
 
 public class PropertyAttributeConcept_Editor extends DefaultNodeEditor {
 
@@ -29,9 +25,9 @@ public class PropertyAttributeConcept_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell(context, node, "$("));
-    editorCell.addEditorCell(this.createAttributedNodePropertyCell(context, node));
-    editorCell.addEditorCell(this.createConstantCell1(context, node, ")$"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1136027532779");
+    editorCell.addEditorCell(this.createConstantCell1(context, node, "property attribute concept"));
+    editorCell.addEditorCell(this.createConstantCell2(context, node, ")$"));
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1136027532779");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -43,7 +39,7 @@ public class PropertyAttributeConcept_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1136027532780");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1136027532780");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -55,21 +51,19 @@ public class PropertyAttributeConcept_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1136027532782");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176738996438");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createAttributedNodePropertyCell(EditorContext context, SNode node) {
-    ModelAccessor modelAccessor = Queries.createModelAccessor_attributedNodeProperty(node, context.getOperationContext());
-    EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
+  public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
-    editorCell.setDrawBorder(true);
-    editorCell.setEditable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1136027532781");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1136027532782");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
