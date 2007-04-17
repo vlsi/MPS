@@ -4,7 +4,7 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
-  <maxImportIndex value="38" />
+  <maxImportIndex value="39" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <import index="3" modelUID="jetbrains.mps.core.structure" />
   <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" />
@@ -17,6 +17,7 @@
   <import index="36" modelUID="java.lang@java_stub" />
   <import index="37" modelUID="jetbrains.mps.bootstrap.sharedConcepts.structure" />
   <import index="38" modelUID="javax.swing@java_stub" />
+  <import index="39" modelUID="java.awt@java_stub" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1071666914219">
     <property name="name" value="ConceptEditorDeclaration" />
     <property name="iconPath" value="${language_descriptor}\icons\editor.png" />
@@ -66,6 +67,11 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="menuDescriptor" />
       <link role="target" targetNodeId="1164824717996" resolveInfo="CellMenu_Composite" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1176810465151">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="cellBackgroundFunction" />
+      <link role="target" targetNodeId="1176809959526" resolveInfo="QueryFunction_Color" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1073389214266">
       <property name="name" value="selectable" />
@@ -2078,6 +2084,32 @@
       <property name="sourceCardinality" value="0..n" />
       <property name="role" value="additionalImport" />
       <link role="target" targetNodeId="4.1068431790189" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1176809959526">
+    <property name="name" value="QueryFunction_Color" />
+    <link role="extends" targetNodeId="4.1137021947720" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1176809959527">
+      <property name="value" value="color function" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1176809959528">
+      <property name="value" value="embedded block of code" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473914776" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1176809959529">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" />
+      <node role="target" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176810139102">
+        <link role="classifier" extResolveInfo="39.[Classifier]Color" />
+      </node>
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1176809959531">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
+      <link role="target" targetNodeId="1142886811589" resolveInfo="ConceptFunctionParameter_node" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1176809959532">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
+      <link role="target" targetNodeId="1161622981231" resolveInfo="ConceptFunctionParameter_editorContext" />
     </node>
   </node>
 </model>
