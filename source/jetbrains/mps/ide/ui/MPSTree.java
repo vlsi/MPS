@@ -163,6 +163,9 @@ public abstract class MPSTree extends JTree {
 
         for (int i = 0; i < menu.getItemCount(); i++) {
           JMenuItem item = (JMenuItem) menu.getItem(i);
+
+          if (item == null) continue;
+
           KeyStroke keyStroke = item.getAccelerator();
           if (eventKeyStroke.equals(keyStroke)) {
             return item;
