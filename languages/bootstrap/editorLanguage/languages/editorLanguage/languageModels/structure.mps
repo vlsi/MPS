@@ -300,11 +300,6 @@
       <property name="role" value="cellProvider" />
       <link role="target" targetNodeId="1176749715029" resolveInfo="QueryFunction_CellProvider" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1078308402141">
-      <property name="name" value="cellProviderId" />
-      <property name="propertyType" value="string" />
-      <link role="dataType" targetNodeId="3.1082983041843" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107223377720">
       <property name="value" value="custom" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
