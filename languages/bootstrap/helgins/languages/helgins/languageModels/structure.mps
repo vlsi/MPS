@@ -482,6 +482,10 @@
       <property name="role" value="body" />
       <link role="target" targetNodeId="2.1068580123136" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1176818293740">
+      <property name="value" value="coerce" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
   </node>
 </model>
 

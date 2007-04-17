@@ -8,10 +8,13 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
+import java.util.List;
+import java.util.ArrayList;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class ApplicableNodeReference_applicableNode_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -25,10 +28,23 @@ public class ApplicableNodeReference_applicableNode_ReferentConstraint implement
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeReference", "applicableNode");
   }
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    return SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.bootstrap.helgins.structure.AbstractRule", false, false) != null;
+    return true;
   }
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    return new SimpleSearchScope(SLinkOperations.getTarget(SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.bootstrap.helgins.structure.AbstractRule", false, false), "applicableNode", true));
+    List<SNode> result = new ArrayList<SNode>();
+    SNode rule = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.bootstrap.helgins.structure.AbstractRule", false, false);
+    if(rule != null) {
+      SNode appNode = SLinkOperations.getTarget(rule, "applicableNode", true);
+      ListOperations.addElement(result, appNode);
+    }
+    SNode coerceStatement = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.bootstrap.helgins.structure.CoerceStatement", false, false);
+    while(coerceStatement != null) {
+      if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(coerceStatement, "pattern", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition")) {
+        ListOperations.addElement(result, SLinkOperations.getTarget(coerceStatement, "pattern", true));
+      }
+      coerceStatement = SNodeOperations.getAncestor(coerceStatement, "jetbrains.mps.bootstrap.helgins.structure.CoerceStatement", false, false);
+    }
+    return new SimpleSearchScope(result);
   }
   public String getNodeReferentSearchScopeDescription() {
     return "<no description>";

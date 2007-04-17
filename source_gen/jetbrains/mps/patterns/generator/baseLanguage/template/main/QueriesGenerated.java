@@ -115,8 +115,9 @@ public class QueriesGenerated {
   }
   public static SNode referenceMacro_GetReferent_1176737751209(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     String refRole = node.getProperty("referentRole");
-    ReferenceAntiquotation refAntiq = ReferenceAntiquotation_AnnotationLink.getReferenceAntiquotation((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(node)), refRole);
-    return generator.findNodeBuilderForSource(refAntiq.getNode(), "antiquotations").getTargetNode();
+    SNode mainNode = node.getReferent("mainNode");
+    ReferenceAntiquotation refAntiq = ReferenceAntiquotation_AnnotationLink.getReferenceAntiquotation((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(mainNode)), refRole);
+    return generator.findNodeBuilderForSource(refAntiq.getExpression().getNode(), "antiquotations").getTargetNode();
   }
   public static SNode referenceMacro_GetReferent_1174903629930(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     String referentRole = node.getProperty("referentRole");
@@ -146,6 +147,9 @@ public class QueriesGenerated {
   public static SNode referenceMacro_GetReferent_1174909655556(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return generator.findNodeBuilderForSource(SNodeOperations.getParent(node, null, false, false), "nodeToMatch").getTargetNode();
   }
+  public static boolean ifMacro_Condition_1176815681743(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return true;
+  }
   public static boolean ifMacro_Condition_1174824018407(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return true;
   }
@@ -166,11 +170,13 @@ public class QueriesGenerated {
   }
   public static boolean ifMacro_Condition_1176736069371(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     String refRole = node.getProperty("referentRole");
-    return ReferenceAntiquotation_AnnotationLink.getReferenceAntiquotation((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(node)), refRole) == null;
+    SNode mainNode = node.getReferent("mainNode");
+    return ReferenceAntiquotation_AnnotationLink.getReferenceAntiquotation((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(mainNode)), refRole) == null;
   }
   public static boolean ifMacro_Condition_1176736075781(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     String refRole = node.getProperty("referentRole");
-    return ReferenceAntiquotation_AnnotationLink.getReferenceAntiquotation((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(node)), refRole) != null;
+    SNode mainNode = node.getReferent("mainNode");
+    return ReferenceAntiquotation_AnnotationLink.getReferenceAntiquotation((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(mainNode)), refRole) != null;
   }
   public static boolean ifMacro_Condition_1174827615898(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return true;
@@ -295,6 +301,7 @@ public class QueriesGenerated {
       }
       referenceNode.setProperty("targetInfo", targetInfo);
       referenceNode.setProperty("isExternalInfo", isExternalInfo + "");
+      referenceNode.setReferent("mainNode", node);
       result.add(referenceNode);
     }
     return result;

@@ -36,6 +36,13 @@ public class LinkPatternVariableReference_patternVarDecl_ReferentConstraint impl
     if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rule, "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition")) {
       ListOperations.addAllElements(result, SNodeOperations.getDescendants(SLinkOperations.getTarget(SLinkOperations.getTarget(rule, "applicableNode", true), "pattern", true), "jetbrains.mps.patterns.structure.LinkPatternVariableDeclaration"));
     }
+    SNode coerceStatement = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.bootstrap.helgins.structure.CoerceStatement", false, false);
+    while(coerceStatement != null) {
+      if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(coerceStatement, "pattern", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition")) {
+        ListOperations.addAllElements(result, SNodeOperations.getDescendants(SLinkOperations.getTarget(SLinkOperations.getTarget(coerceStatement, "pattern", true), "pattern", true), "jetbrains.mps.patterns.structure.LinkPatternVariableDeclaration"));
+      }
+      coerceStatement = SNodeOperations.getAncestor(coerceStatement, "jetbrains.mps.bootstrap.helgins.structure.CoerceStatement", false, false);
+    }
     return new SimpleSearchScope(result);
   }
   public String getNodeReferentSearchScopeDescription() {
