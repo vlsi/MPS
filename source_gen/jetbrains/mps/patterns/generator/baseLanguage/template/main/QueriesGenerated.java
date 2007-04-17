@@ -132,8 +132,11 @@ public class QueriesGenerated {
     SNode attribute = node.getAttribute();
     return generator.findNodeBuilderForSource(attribute, "patternVarField").getTargetNode();
   }
+  public static SNode referenceMacro_GetReferent_1176822806433(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return generator.findNodeBuilderForSource(node, "childVar").getTargetNode();
+  }
   public static SNode referenceMacro_GetReferent_1174909796960(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode attribute = node.getAttribute();
+    SNode attribute = BaseAdapter.fromAdapter(AsPattern_AnnotationLink.getAsPattern(((BaseConcept)SNodeOperations.getAdapter(node))));
     return generator.findNodeBuilderForSource(attribute, "patternVarField").getTargetNode();
   }
   public static SNode referenceMacro_GetReferent_1174909927153(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
