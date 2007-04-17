@@ -5,7 +5,7 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
-  <maxImportIndex value="64" />
+  <maxImportIndex value="65" />
   <import index="1" modelUID="jetbrains.mps.transformation.TLBase.structure" />
   <import index="4" modelUID="jetbrains.mps.core.structure" />
   <import index="6" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
@@ -18,6 +18,7 @@
   <import index="61" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" />
   <import index="63" modelUID="jetbrains.mps.plugin@java_stub" />
   <import index="64" modelUID="jetbrains.mps.generator.template@java_stub" />
+  <import index="65" modelUID="java.lang@java_stub" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1087903454703">
     <property name="name" value="PropertyMacro_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1087833241328" />
@@ -40,8 +41,45 @@
           <property name="text" value="java query (deprecated)" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1088501636842">
-          <property name="cellProviderId" value="PropertyMacroProviderAspect" />
           <property name="drawBorder" value="false" />
+          <node role="cellProvider" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_CellProvider" id="1176804140005">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176804140006">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176804149783">
+                <node role="expression" type="jetbrains.mps.bootstrap.editorLanguage.QueryMethodIdEditorProviderExpression" id="1176804150566">
+                  <property name="prefix" value="propertyMacro_" />
+                  <property name="notSetString" value="&lt;no property macro&gt;" />
+                  <link role="queryIdProperty" targetNodeId="1.1087833392642" />
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176804177971">
+                    <property name="name" value="sourceNode" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176804179513">
+                      <link role="classifier" extResolveInfo="10.[Classifier]SNode" />
+                    </node>
+                  </node>
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176804181061">
+                    <property name="name" value="teplateNode" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176804182828">
+                      <link role="classifier" extResolveInfo="10.[Classifier]SNode" />
+                    </node>
+                  </node>
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176804184970">
+                    <property name="name" value="property" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176804190425">
+                      <link role="classifier" extResolveInfo="61.[Classifier]PropertyDeclaration" />
+                    </node>
+                  </node>
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176804193082">
+                    <property name="name" value="generator" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176804197334">
+                      <link role="classifier" extResolveInfo="64.[Classifier]ITemplateGenerator" />
+                    </node>
+                  </node>
+                  <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176804175939">
+                    <link role="classifier" extResolveInfo="65.[Classifier]String" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1167765644943">
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1167765644944">
@@ -225,8 +263,45 @@
           <property name="drawBorder" value="false" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1090493300952">
-          <property name="cellProviderId" value="templateTargetBuilder_CellProvider" />
           <property name="drawBorder" value="false" />
+          <node role="cellProvider" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_CellProvider" id="1176804373768">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176804373769">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176804382501">
+                <node role="expression" type="jetbrains.mps.bootstrap.editorLanguage.QueryMethodIdEditorProviderExpression" id="1176804384940">
+                  <property name="prefix" value="templateTargetBuilder_" />
+                  <property name="notSetString" value="&lt;default&gt;" />
+                  <link role="queryIdProperty" targetNodeId="1.1090493180054" />
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176804392709">
+                    <property name="name" value="sourceNode" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176804394367">
+                      <link role="classifier" extResolveInfo="10.[Classifier]SNode" />
+                    </node>
+                  </node>
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176804396446">
+                    <property name="name" value="templateNode" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176804397995">
+                      <link role="classifier" extResolveInfo="10.[Classifier]SNode" />
+                    </node>
+                  </node>
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176804400184">
+                    <property name="name" value="mappingName" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176804401936">
+                      <link role="classifier" extResolveInfo="65.[Classifier]String" />
+                    </node>
+                  </node>
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176804403843">
+                    <property name="name" value="generator" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176804406017">
+                      <link role="classifier" extResolveInfo="64.[Classifier]ITemplateGenerator" />
+                    </node>
+                  </node>
+                  <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176804388161">
+                    <link role="classifier" extResolveInfo="64.[Classifier]INodeBuilder" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1090493300953">
           <property name="text" value="(..)" />
@@ -297,8 +372,45 @@
           <property name="text" value="java query (deprecated)" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1167770426884">
-          <property name="cellProviderId" value="ReferenceMacroProviderAspect" />
           <property name="drawBorder" value="false" />
+          <node role="cellProvider" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_CellProvider" id="1176803926437">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176803926438">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176803935182">
+                <node role="expression" type="jetbrains.mps.bootstrap.editorLanguage.QueryMethodIdEditorProviderExpression" id="1176803936074">
+                  <property name="prefix" value="referenceMacro_" />
+                  <property name="notSetString" value="&lt;no reference macro&gt;" />
+                  <link role="queryIdProperty" targetNodeId="1.1088761950280" />
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176803943890">
+                    <property name="name" value="sourceNode" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176803945423">
+                      <link role="classifier" extResolveInfo="10.[Classifier]SNode" />
+                    </node>
+                  </node>
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176803946987">
+                    <property name="name" value="templateNode" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176803948926">
+                      <link role="classifier" extResolveInfo="10.[Classifier]SNode" />
+                    </node>
+                  </node>
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176803952411">
+                    <property name="name" value="link" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176803955304">
+                      <link role="classifier" extResolveInfo="61.[Classifier]LinkDeclaration" />
+                    </node>
+                  </node>
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176803957196">
+                    <property name="name" value="generator" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176803958854">
+                      <link role="classifier" extResolveInfo="64.[Classifier]ITemplateGenerator" />
+                    </node>
+                  </node>
+                  <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176803939420">
+                    <link role="classifier" extResolveInfo="10.[Classifier]SNode" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1167770426885">
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1167770426886">
@@ -1239,8 +1351,32 @@
         <property name="selectable" value="true" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1095441898830">
-        <property name="cellProviderId" value="templateMappingRule_SourceQuery_CellProvider" />
         <property name="drawBorder" value="false" />
+        <node role="cellProvider" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_CellProvider" id="1176803706935">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176803706936">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176803715563">
+              <node role="expression" type="jetbrains.mps.bootstrap.editorLanguage.QueryMethodIdEditorProviderExpression" id="1176803725737">
+                <property name="prefix" value="templateMappingRule_SourceQuery_" />
+                <property name="notSetString" value="&lt;no source query&gt;" />
+                <link role="queryIdProperty" targetNodeId="1.1095440741546" />
+                <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176803736634">
+                  <property name="name" value="generator" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176803738574">
+                    <link role="classifier" extResolveInfo="64.[Classifier]ITemplateGenerator" />
+                  </node>
+                </node>
+                <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176803727942">
+                  <link role="classifier" extResolveInfo="11.[Classifier]List" />
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.LowerBoundType" id="1176803730584">
+                    <node role="bound" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176803732196">
+                      <link role="classifier" extResolveInfo="10.[Classifier]SNode" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1095424336422">
         <property name="text" value="--&gt;" />
@@ -1287,8 +1423,32 @@
           <property name="drawBorder" value="false" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1095442750742">
-          <property name="cellProviderId" value="templateMappingRule_SourceQuery_CellProvider" />
           <property name="drawBorder" value="false" />
+          <node role="cellProvider" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_CellProvider" id="1176803757551">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176803757552">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176803757839">
+                <node role="expression" type="jetbrains.mps.bootstrap.editorLanguage.QueryMethodIdEditorProviderExpression" id="1176803757840">
+                  <property name="prefix" value="templateMappingRule_SourceQuery_" />
+                  <property name="notSetString" value="&lt;no source query&gt;" />
+                  <link role="queryIdProperty" targetNodeId="1.1095440741546" />
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176803757841">
+                    <property name="name" value="generator" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176803757842">
+                      <link role="classifier" extResolveInfo="64.[Classifier]ITemplateGenerator" />
+                    </node>
+                  </node>
+                  <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176803757843">
+                    <link role="classifier" extResolveInfo="11.[Classifier]List" />
+                    <node role="parameter" type="jetbrains.mps.baseLanguage.LowerBoundType" id="1176803757844">
+                      <node role="bound" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176803757845">
+                        <link role="classifier" extResolveInfo="10.[Classifier]SNode" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1095442750743">
           <property name="text" value="()" />
@@ -1309,8 +1469,32 @@
         <property name="selectable" value="true" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1167171691456">
-        <property name="cellProviderId" value="templateWeavingRule_SourceQuery_CellProvider" />
         <property name="drawBorder" value="false" />
+        <node role="cellProvider" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_CellProvider" id="1176803493449">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176803493450">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176803502641">
+              <node role="expression" type="jetbrains.mps.bootstrap.editorLanguage.QueryMethodIdEditorProviderExpression" id="1176803503737">
+                <property name="prefix" value="templateWeavingRule_SourceQuery_" />
+                <property name="notSetString" value="&lt;no source query&gt;" />
+                <link role="queryIdProperty" targetNodeId="1.1095418755477" />
+                <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176803521213">
+                  <property name="name" value="generator" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176803524277">
+                    <link role="classifier" extResolveInfo="64.[Classifier]ITemplateGenerator" />
+                  </node>
+                </node>
+                <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176803507317">
+                  <link role="classifier" extResolveInfo="11.[Classifier]List" />
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.LowerBoundType" id="1176803509647">
+                    <node role="bound" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176803510884">
+                      <link role="classifier" extResolveInfo="10.[Classifier]SNode" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1095421134218">
         <property name="text" value="--&gt;" />
@@ -1346,8 +1530,33 @@
             <property name="selectable" value="true" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1095676835590">
-            <property name="cellProviderId" value="templateWeavingRule_Context_CellProvider" />
             <property name="drawBorder" value="false" />
+            <node role="cellProvider" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_CellProvider" id="1176802524094">
+              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176802524095">
+                <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176802533422">
+                  <node role="expression" type="jetbrains.mps.bootstrap.editorLanguage.QueryMethodIdEditorProviderExpression" id="1176802536580">
+                    <property name="prefix" value="templateWeavingRule_Context_" />
+                    <property name="notSetString" value="&lt;no context provider&gt;" />
+                    <link role="queryIdProperty" targetNodeId="1.1095418755478" />
+                    <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176802548974">
+                      <property name="name" value="sourceNode" />
+                      <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176802550491">
+                        <link role="classifier" extResolveInfo="10.[Classifier]SNode" />
+                      </node>
+                    </node>
+                    <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176802553961">
+                      <property name="name" value="generator" />
+                      <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176802557526">
+                        <link role="classifier" extResolveInfo="64.[Classifier]ITemplateGenerator" />
+                      </node>
+                    </node>
+                    <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176802540707">
+                      <link role="classifier" extResolveInfo="64.[Classifier]INodeBuilder" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>
@@ -1388,8 +1597,39 @@
           <property name="drawBorder" value="false" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1095757990768">
-          <property name="cellProviderId" value="templateFragment_Context_CellProvider" />
           <property name="drawBorder" value="false" />
+          <node role="cellProvider" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_CellProvider" id="1176803269063">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176803269064">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176803279411">
+                <node role="expression" type="jetbrains.mps.bootstrap.editorLanguage.QueryMethodIdEditorProviderExpression" id="1176803280368">
+                  <property name="prefix" value="templateFragment_Context_" />
+                  <property name="notSetString" value="&lt;default&gt;" />
+                  <link role="queryIdProperty" targetNodeId="1.1095757900618" />
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176803293297">
+                    <property name="name" value="templateFragmentNode" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176803294754">
+                      <link role="classifier" extResolveInfo="10.[Classifier]SNode" />
+                    </node>
+                  </node>
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176803300554">
+                    <property name="name" value="weavingRuleContextBuilder" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176803304027">
+                      <link role="classifier" extResolveInfo="64.[Classifier]INodeBuilder" />
+                    </node>
+                  </node>
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176803310968">
+                    <property name="name" value="generator" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176803314768">
+                      <link role="classifier" extResolveInfo="64.[Classifier]ITemplateGenerator" />
+                    </node>
+                  </node>
+                  <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176803285279">
+                    <link role="classifier" extResolveInfo="64.[Classifier]INodeBuilder" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1095757990769">
           <property name="text" value="()" />
@@ -1915,8 +2155,31 @@
         <property name="drawBorder" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1112733509078">
-        <property name="cellProviderId" value="semanticNodeCondition_CellProvider" />
         <property name="drawBorder" value="false" />
+        <node role="cellProvider" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_CellProvider" id="1176803036936">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176803036937">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176803045508">
+              <node role="expression" type="jetbrains.mps.bootstrap.editorLanguage.QueryMethodIdEditorProviderExpression" id="1176803046307">
+                <property name="prefix" value="semanticNodeCondition_" />
+                <property name="notSetString" value="&lt;no condition&gt;" />
+                <link role="queryIdProperty" targetNodeId="1.1112731143975" />
+                <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176803055935">
+                  <property name="name" value="sourceNode" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176803057375">
+                    <link role="classifier" extResolveInfo="10.[Classifier]SNode" />
+                  </node>
+                </node>
+                <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176803059001">
+                  <property name="name" value="context" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176803061393">
+                    <link role="classifier" extResolveInfo="10.[Classifier]IOperationContext" />
+                  </node>
+                </node>
+                <node role="returnType" type="jetbrains.mps.baseLanguage.BooleanType" id="1176803049559" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1112733509079">
         <property name="text" value="  : " />
@@ -1982,8 +2245,31 @@
         <property name="drawBorder" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1114461360776">
-        <property name="cellProviderId" value="reductionRuleCondition_AspectId" />
         <property name="drawBorder" value="false" />
+        <node role="cellProvider" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_CellProvider" id="1176802788282">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176802788283">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176802796821">
+              <node role="expression" type="jetbrains.mps.bootstrap.editorLanguage.QueryMethodIdEditorProviderExpression" id="1176802798917">
+                <property name="prefix" value="reductionRuleCondition_" />
+                <property name="notSetString" value="&lt;no condition&gt;" />
+                <link role="queryIdProperty" targetNodeId="1.1114456556796" />
+                <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176802814404">
+                  <property name="name" value="sourceNode" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176802816578">
+                    <link role="classifier" extResolveInfo="10.[Classifier]SNode" />
+                  </node>
+                </node>
+                <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176802820048">
+                  <property name="name" value="generator" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176802823612">
+                    <link role="classifier" extResolveInfo="64.[Classifier]ITemplateGenerator" />
+                  </node>
+                </node>
+                <node role="returnType" type="jetbrains.mps.baseLanguage.BooleanType" id="1176802802106" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1114461360777">
         <property name="text" value="--&gt;" />
@@ -2064,8 +2350,31 @@
             <property name="selectable" value="false" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1167946218109">
-            <property name="cellProviderId" value="semanticNodeCondition_CellProvider" />
             <property name="drawBorder" value="false" />
+            <node role="cellProvider" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_CellProvider" id="1176803086229">
+              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176803086230">
+                <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176803087987">
+                  <node role="expression" type="jetbrains.mps.bootstrap.editorLanguage.QueryMethodIdEditorProviderExpression" id="1176803087988">
+                    <property name="prefix" value="semanticNodeCondition_" />
+                    <property name="notSetString" value="&lt;no condition&gt;" />
+                    <link role="queryIdProperty" targetNodeId="1.1118773281249" />
+                    <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176803087989">
+                      <property name="name" value="sourceNode" />
+                      <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176803087990">
+                        <link role="classifier" extResolveInfo="10.[Classifier]SNode" />
+                      </node>
+                    </node>
+                    <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176803087991">
+                      <property name="name" value="context" />
+                      <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176803087992">
+                        <link role="classifier" extResolveInfo="10.[Classifier]IOperationContext" />
+                      </node>
+                    </node>
+                    <node role="returnType" type="jetbrains.mps.baseLanguage.BooleanType" id="1176803087993" />
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
           <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1167946218110">
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1167946218111">
@@ -2412,8 +2721,33 @@
             <property name="selectable" value="false" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1168024528005">
-            <property name="cellProviderId" value="templateSourceNodeQueryId" />
             <property name="drawBorder" value="false" />
+            <node role="cellProvider" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_CellProvider" id="1176804905769">
+              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176804905770">
+                <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176804914653">
+                  <node role="expression" type="jetbrains.mps.bootstrap.editorLanguage.QueryMethodIdEditorProviderExpression" id="1176804916358">
+                    <property name="prefix" value="templateSourceNodeQuery_" />
+                    <property name="notSetString" value="&lt;no query&gt;" />
+                    <link role="queryIdProperty" targetNodeId="1.1114706920383" />
+                    <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176804923189">
+                      <property name="name" value="parentSourceNode" />
+                      <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176804924785">
+                        <link role="classifier" extResolveInfo="10.[Classifier]SNode" />
+                      </node>
+                    </node>
+                    <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176804927317">
+                      <property name="name" value="generator" />
+                      <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176804928944">
+                        <link role="classifier" extResolveInfo="64.[Classifier]ITemplateGenerator" />
+                      </node>
+                    </node>
+                    <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176804918782">
+                      <link role="classifier" extResolveInfo="10.[Classifier]SNode" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
           <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1168024528006">
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1168024528007">
@@ -2813,8 +3147,33 @@
             <property name="selectable" value="false" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1168281881373">
-            <property name="cellProviderId" value="templateSourceNodeQueryId_Optional" />
             <property name="drawBorder" value="false" />
+            <node role="cellProvider" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_CellProvider" id="1176804977644">
+              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176804977645">
+                <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176804977963">
+                  <node role="expression" type="jetbrains.mps.bootstrap.editorLanguage.QueryMethodIdEditorProviderExpression" id="1176804977964">
+                    <property name="prefix" value="templateSourceNodeQuery_" />
+                    <property name="notSetString" value="&lt;parent&gt;" />
+                    <link role="queryIdProperty" targetNodeId="1.1131073187195" />
+                    <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176804977965">
+                      <property name="name" value="parentSourceNode" />
+                      <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176804977966">
+                        <link role="classifier" extResolveInfo="10.[Classifier]SNode" />
+                      </node>
+                    </node>
+                    <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176804977967">
+                      <property name="name" value="generator" />
+                      <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176804977968">
+                        <link role="classifier" extResolveInfo="64.[Classifier]ITemplateGenerator" />
+                      </node>
+                    </node>
+                    <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176804977969">
+                      <link role="classifier" extResolveInfo="10.[Classifier]SNode" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
           <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1168281881374">
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1168281881375">
@@ -2926,8 +3285,33 @@
           <property name="text" value="templateSourceNodeMapper_ (old)" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1168285062731">
-          <property name="cellProviderId" value="templateSourceNodeMapperId" />
           <property name="drawBorder" value="false" />
+          <node role="cellProvider" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_CellProvider" id="1176804628768">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176804628769">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176804637960">
+                <node role="expression" type="jetbrains.mps.bootstrap.editorLanguage.QueryMethodIdEditorProviderExpression" id="1176804638775">
+                  <property name="prefix" value="templateSourceNodeMapper_" />
+                  <property name="notSetString" value="&lt;default&gt;" />
+                  <link role="queryIdProperty" targetNodeId="1.1131073509203" />
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176804648766">
+                    <property name="name" value="sourceNode" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176804650442">
+                      <link role="classifier" extResolveInfo="10.[Classifier]SNode" />
+                    </node>
+                  </node>
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176804652130">
+                    <property name="name" value="generator" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176804653916">
+                      <link role="classifier" extResolveInfo="64.[Classifier]ITemplateGenerator" />
+                    </node>
+                  </node>
+                  <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176804643154">
+                    <link role="classifier" extResolveInfo="10.[Classifier]SNode" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1170726034310">
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1170726034311">
@@ -3257,8 +3641,33 @@
           <property name="text" value="templateSourceNodeMapper_ (old)" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1168291763043">
-          <property name="cellProviderId" value="templateSourceNodeMapperId" />
           <property name="drawBorder" value="false" />
+          <node role="cellProvider" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_CellProvider" id="1176804676371">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176804676372">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176804676722">
+                <node role="expression" type="jetbrains.mps.bootstrap.editorLanguage.QueryMethodIdEditorProviderExpression" id="1176804676723">
+                  <property name="prefix" value="templateSourceNodeMapper_" />
+                  <property name="notSetString" value="&lt;default&gt;" />
+                  <link role="queryIdProperty" targetNodeId="1.1133037795224" />
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176804676724">
+                    <property name="name" value="sourceNode" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176804676725">
+                      <link role="classifier" extResolveInfo="10.[Classifier]SNode" />
+                    </node>
+                  </node>
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176804676726">
+                    <property name="name" value="generator" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176804676727">
+                      <link role="classifier" extResolveInfo="64.[Classifier]ITemplateGenerator" />
+                    </node>
+                  </node>
+                  <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176804676728">
+                    <link role="classifier" extResolveInfo="10.[Classifier]SNode" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1170898776381">
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1170898776382">
@@ -4220,8 +4629,33 @@
               <property name="selectable" value="true" />
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1169580472062">
-              <property name="cellProviderId" value="templateWeavingRule_Context_CellProvider" />
               <property name="drawBorder" value="false" />
+              <node role="cellProvider" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_CellProvider" id="1176802584784">
+                <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176802584785">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176802585400">
+                    <node role="expression" type="jetbrains.mps.bootstrap.editorLanguage.QueryMethodIdEditorProviderExpression" id="1176802585401">
+                      <property name="prefix" value="templateWeavingRule_Context_" />
+                      <property name="notSetString" value="&lt;no context provider&gt;" />
+                      <link role="queryIdProperty" targetNodeId="1.1167240478741" />
+                      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176802585402">
+                        <property name="name" value="sourceNode" />
+                        <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176802585403">
+                          <link role="classifier" extResolveInfo="10.[Classifier]SNode" />
+                        </node>
+                      </node>
+                      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1176802585404">
+                        <property name="name" value="generator" />
+                        <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176802585405">
+                          <link role="classifier" extResolveInfo="64.[Classifier]ITemplateGenerator" />
+                        </node>
+                      </node>
+                      <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176802585406">
+                        <link role="classifier" extResolveInfo="64.[Classifier]INodeBuilder" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
