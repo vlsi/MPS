@@ -10,8 +10,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
+import java.util.List;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class ParameterReference_parameterDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -29,8 +31,12 @@ public class ParameterReference_parameterDeclaration_ReferentConstraint implemen
     return enclosingMethod != null;
   }
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    SNode enclosingMethod = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", true, false);
-    return new SimpleSearchScope(SLinkOperations.getTargets(enclosingMethod, "parameter", true));
+    List<SNode> methods = SNodeOperations.getAncestors(enclosingNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", true);
+    List<SNode> params = ListOperations.createList(new SNode[]{});
+    for(SNode bmd : methods) {
+      ListOperations.addAllElements(params, SLinkOperations.getTargets(bmd, "parameter", true));
+    }
+    return new SimpleSearchScope(params);
   }
   public String getNodeReferentSearchScopeDescription() {
     return "parameters declared in enclosing method";

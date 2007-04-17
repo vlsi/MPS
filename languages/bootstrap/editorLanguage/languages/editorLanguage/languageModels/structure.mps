@@ -294,6 +294,12 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1078308402140">
     <property name="name" value="CellModel_Custom" />
     <link role="extends" targetNodeId="1073389214265" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1176795024817">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="cellProvider" />
+      <link role="target" targetNodeId="1176749715029" resolveInfo="QueryFunction_CellProvider" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1078308402141">
       <property name="name" value="cellProviderId" />
       <property name="propertyType" value="string" />
@@ -2027,8 +2033,8 @@
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1176749854668">
       <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" />
-      <node role="target" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176749856486">
-        <link role="classifier" extResolveInfo="29.[Classifier]EditorCell" />
+      <node role="target" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176794890268">
+        <link role="classifier" extResolveInfo="29.[Classifier]AbstractCellProvider" />
       </node>
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1176749862944">
@@ -2041,8 +2047,12 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1176750487975">
-    <property name="name" value="CellModel_QueryMethodEditor" />
-    <link role="extends" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
+    <property name="name" value="QueryMethodIdEditorProviderExpression" />
+    <link role="extends" targetNodeId="4.1068431790191" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1176795885088">
+      <property name="value" value="query method cell provider" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1176750736379">
       <property name="name" value="notSetString" />
       <link role="dataType" targetNodeId="3.1082983041843" />
@@ -2066,7 +2076,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="0..n" />
       <property name="role" value="parameter" />
-      <link role="target" targetNodeId="4.1068431790189" />
+      <link role="target" targetNodeId="4.1068498886292" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1176750816680">
       <property name="metaClass" value="aggregation" />
