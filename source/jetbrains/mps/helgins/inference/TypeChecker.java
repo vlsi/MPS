@@ -413,6 +413,19 @@ public class TypeChecker {
     }
   }
 
+  // we assume that type of a node does not depend on its ancestors
+  @Hack
+  @Nullable
+  public SNode hackTypeOf(SNode node) {
+    if (node == null) return null;
+    if (myCheckedRoots.contains(node.getContainingRoot())) {
+      SNode type = getTypeDontCheck(node);
+      return type;
+    }
+    checkTypes(node);
+    return getTypeDontCheck(node);
+  }
+
   public void markAsChecked(SNode node) {
     myCheckedRoots.add(node);
   }
