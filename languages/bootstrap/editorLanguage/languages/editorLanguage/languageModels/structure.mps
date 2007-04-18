@@ -119,10 +119,6 @@
       <property name="name" value="rightTransformAnchorTag" />
       <link role="dataType" targetNodeId="1140813780565" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1141849502928">
-      <property name="name" value="substituteActionsFactoryId" />
-      <link role="dataType" targetNodeId="3.1082983041843" />
-    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1073389446423">
     <property name="name" value="CellModel_Collection" />
