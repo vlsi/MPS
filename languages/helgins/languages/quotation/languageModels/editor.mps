@@ -3,7 +3,7 @@
   <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
-  <maxImportIndex value="23" />
+  <maxImportIndex value="25" />
   <import index="1" modelUID="jetbrains.mps.quotation.structure" />
   <import index="2" modelUID="jetbrains.mps.core.structure" />
   <import index="3" modelUID="jetbrains.mps.annotations.structure" />
@@ -15,26 +15,46 @@
   <import index="12" modelUID="jetbrains.mps.quotation.structure@java_stub" />
   <import index="13" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" />
   <import index="17" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
+  <import index="24" modelUID="java.awt.color@java_stub" />
+  <import index="25" modelUID="java.awt@java_stub" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1141044867559">
     <link role="conceptDeclaration" targetNodeId="1.1141044709506" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1141044871921">
       <property name="drawBorder" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1141045252204">
-        <property name="textFgColorQueryId" value="brown" />
         <property name="textFgColor" value="query" />
         <property name="text" value="%(" />
         <property name="drawBorder" value="false" />
+        <node role="cellForegroundFunction" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_Color" id="1176891191270">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176891191271">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176891192600">
+              <node role="expression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1176891196196">
+                <link role="classifier" targetNodeId="1176891002298" resolveInfo="Colors" />
+                <link role="variableDeclaration" targetNodeId="1176891009268" resolveInfo="BROWN" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1141044874953">
-        <property name="drawBorder" value="false" />
         <property name="noTargetText" value="&lt;expr&gt;" />
+        <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1141044749211" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1142538426700">
-        <property name="textFgColorQueryId" value="brown" />
         <property name="textFgColor" value="query" />
         <property name="text" value=")%" />
         <property name="drawBorder" value="false" />
+        <node role="cellForegroundFunction" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_Color" id="1176891200728">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176891200729">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176891201934">
+              <node role="expression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1176891207420">
+                <link role="classifier" targetNodeId="1176891002298" resolveInfo="Colors" />
+                <link role="variableDeclaration" targetNodeId="1176891009268" resolveInfo="BROWN" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
@@ -639,21 +659,39 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1150896623141">
       <property name="drawBorder" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1150896623142">
-        <property name="textFgColorQueryId" value="brown" />
         <property name="textFgColor" value="query" />
         <property name="text" value="*(" />
         <property name="drawBorder" value="false" />
+        <node role="cellForegroundFunction" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_Color" id="1176891220734">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176891220735">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176891221939">
+              <node role="expression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1176891229379">
+                <link role="classifier" targetNodeId="1176891002298" resolveInfo="Colors" />
+                <link role="variableDeclaration" targetNodeId="1176891009268" resolveInfo="BROWN" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1150896623143">
-        <property name="drawBorder" value="false" />
         <property name="noTargetText" value="&lt;expr&gt;" />
+        <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1141044749211" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1150896623144">
-        <property name="textFgColorQueryId" value="brown" />
         <property name="textFgColor" value="query" />
         <property name="text" value=")*" />
         <property name="drawBorder" value="false" />
+        <node role="cellForegroundFunction" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_Color" id="1176891233365">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176891233366">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176891234523">
+              <node role="expression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1176891236994">
+                <link role="classifier" targetNodeId="1176891002298" resolveInfo="Colors" />
+                <link role="variableDeclaration" targetNodeId="1176891009268" resolveInfo="BROWN" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
@@ -662,21 +700,60 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1155904240523">
       <property name="drawBorder" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1155904240524">
-        <property name="textFgColorQueryId" value="brown" />
         <property name="textFgColor" value="query" />
         <property name="text" value="^(" />
         <property name="drawBorder" value="false" />
+        <node role="cellForegroundFunction" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_Color" id="1176891242979">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176891242980">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176891244247">
+              <node role="expression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1176891246608">
+                <link role="classifier" targetNodeId="1176891002298" resolveInfo="Colors" />
+                <link role="variableDeclaration" targetNodeId="1176891009268" resolveInfo="BROWN" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1155904240525">
-        <property name="drawBorder" value="false" />
         <property name="noTargetText" value="&lt;expr&gt;" />
+        <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1155904255360" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1155904240526">
-        <property name="textFgColorQueryId" value="brown" />
         <property name="textFgColor" value="query" />
         <property name="text" value=")^" />
         <property name="drawBorder" value="false" />
+        <node role="cellForegroundFunction" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_Color" id="1176891250500">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176891250501">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176891252690">
+              <node role="expression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1176891257301">
+                <link role="classifier" targetNodeId="1176891002298" resolveInfo="Colors" />
+                <link role="variableDeclaration" targetNodeId="1176891009268" resolveInfo="BROWN" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1176891002298">
+    <property name="name" value="Colors" />
+    <node role="staticField" type="jetbrains.mps.baseLanguage.StaticFieldDeclaration" id="1176891009268">
+      <property name="name" value="BROWN" />
+      <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176891132825">
+        <link role="classifier" extResolveInfo="25.[Classifier]Color" />
+      </node>
+      <node role="initializer" type="jetbrains.mps.baseLanguage.NewExpression" id="1176891161376">
+        <link role="baseMethodDeclaration" extResolveInfo="25.constructor [Classifier]Color[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int), (jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int), (jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int))" />
+        <node role="actualArgument" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1176891168748">
+          <property name="value" value="200" />
+        </node>
+        <node role="actualArgument" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1176891179564">
+          <property name="value" value="150" />
+        </node>
+        <node role="actualArgument" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1176891181425">
+          <property name="value" value="0" />
+        </node>
       </node>
     </node>
   </node>
