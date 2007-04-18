@@ -82,11 +82,6 @@
       <property name="name" value="drawBrackets" />
       <link role="dataType" targetNodeId="1083928804390" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1075115294281">
-      <property name="name" value="conditionId" />
-      <property name="propertyType" value="string" />
-      <link role="dataType" targetNodeId="3.1082983041843" />
-    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1129573164669">
       <property name="name" value="layoutConstraint" />
       <link role="dataType" targetNodeId="1138197387103" />
