@@ -5,16 +5,16 @@ package jetbrains.mps.bootstrap.structureLanguage.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.util.Macros;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.util.Macros;
+import jetbrains.mps.smodel.IScope;
 import java.io.File;
 import javax.swing.JComponent;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
@@ -39,6 +39,11 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   public AbstractCellListHandler myConceptPropertyDeclarationListHandler_conceptPropertyDeclarationList_;
   public AbstractCellListHandler myConceptLinkDeclarationListHandler_conceptLinkDeclarationList_;
 
+  public static String _image_provider_1161165534970(SNode node, EditorContext editorContext) {
+    Language language = SModelUtil_new.getDeclaringLanguage(((ConceptDeclaration)SNodeOperations.getAdapter(node)), editorContext.getScope());
+    String iconPath = SPropertyOperations.getString(node, "iconPath");
+    return Macros.languageDescriptor().expandPath(iconPath, language.getDescriptorFile());
+  }
   public static boolean _QueryFunction_NodeCondition_1161165530948(SNode node, IScope scope) {
     Language l = SModelUtil_new.getDeclaringLanguage(((ConceptDeclaration)SNodeOperations.getAdapter(node)), scope);
     if(l == null) {
@@ -499,7 +504,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createImageCell(EditorContext context, SNode node) {
     EditorCell_Image editorCell;
-    editorCell = EditorCell_Image.createImageCell(context, node, Queries.imageFileName_ConceptIcon(node, context.getOperationContext()));
+    editorCell = EditorCell_Image.createImageCell(context, node, ConceptDeclaration_Editor._image_provider_1161165534970(node, context));
     editorCell.setDescent(0);
     editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);

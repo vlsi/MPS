@@ -77,10 +77,10 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createSourceCardinalityCell(context, node));
     }
     if(LinkDeclaration_Editor._QueryFunction_NodeCondition_1146605762247(node, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createNullCell(context, node));
+      editorCell.addEditorCell(this.createCellModel_ModelAccess(context, node));
     }
     if(LinkDeclaration_Editor._QueryFunction_NodeCondition_1146606011485(node, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createNullCell1(context, node));
+      editorCell.addEditorCell(this.createCellModel_ModelAccess1(context, node));
     }
     editorCell.addEditorCell(this.createConstantCell(context, node, "target:"));
     editorCell.addEditorCell(this.createTargetReferenceCell(context, node));
@@ -113,10 +113,9 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createNullCell(EditorContext context, SNode node) {
-    ModelAccessor modelAccessor;
-    modelAccessor = this.createModelAccessor(context, node);
-    EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
+  public EditorCell createCellModel_ModelAccess(EditorContext editorContext, SNode node) {
+    ModelAccessor modelAccessor = this._modelAcessorFactory_1084205682784(editorContext, node);
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setEditable(false);
@@ -129,7 +128,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public ModelAccessor createModelAccessor(final EditorContext context, final SNode node) {
+  public ModelAccessor _modelAcessorFactory_1084205682784(final EditorContext editorContext, final SNode node) {
     return new ModelAccessor() {
 
       public String getText() {
@@ -143,10 +142,9 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       }
     };
   }
-  public EditorCell createNullCell1(EditorContext context, SNode node) {
-    ModelAccessor modelAccessor;
-    modelAccessor = this.createModelAccessor1(context, node);
-    EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
+  public EditorCell createCellModel_ModelAccess1(EditorContext editorContext, SNode node) {
+    ModelAccessor modelAccessor = this._modelAcessorFactory_1084205682785(editorContext, node);
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setEditable(false);
@@ -159,7 +157,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public ModelAccessor createModelAccessor1(final EditorContext context, final SNode node) {
+  public ModelAccessor _modelAcessorFactory_1084205682785(final EditorContext editorContext, final SNode node) {
     return new ModelAccessor() {
 
       public String getText() {
