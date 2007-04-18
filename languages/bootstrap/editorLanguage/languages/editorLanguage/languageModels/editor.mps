@@ -8219,39 +8219,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1176749907968">
-    <link role="conceptDeclaration" targetNodeId="2.1176749715029" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1176749909551">
-      <property name="vertical" value="true" />
-      <property name="drawBorder" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1176749909552">
-        <property name="drawBorder" value="false" />
-        <property name="selectable" value="false" />
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1176749909553">
-          <property name="textBgColor" value="lightGray" />
-          <property name="textFgColor" value="DARK_BLUE" />
-          <property name="text" value="(node, editorContext)-&gt;AbstractCellProvider" />
-          <property name="fontStyle" value="ITALIC" />
-          <property name="drawBorder" value="false" />
-        </node>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1176749909554">
-        <property name="drawBorder" value="false" />
-        <property name="selectable" value="false" />
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1176749909555">
-          <property name="textFgColor" value="blue" />
-          <property name="text" value="&gt;" />
-          <property name="fontStyle" value="PLAIN" />
-          <property name="drawBorder" value="false" />
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1176749909556">
-          <property name="drawBorder" value="false" />
-          <property name="drawBrackets" value="true" />
-          <link role="relationDeclaration" targetNodeId="12.1137022507850" />
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1176750843681">
     <link role="conceptDeclaration" targetNodeId="2.1176750487975" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1176750848496">
