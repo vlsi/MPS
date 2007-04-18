@@ -369,18 +369,6 @@
       <property name="propertyType" value="string" />
       <link role="dataType" targetNodeId="1083952545109" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1139247678516">
-      <property name="name" value="textFgColorQueryId" />
-      <link role="dataType" targetNodeId="3.1082983041843" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1139247690190">
-      <property name="name" value="textBgColorQueryId" />
-      <link role="dataType" targetNodeId="3.1082983041843" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1139247699146">
-      <property name="name" value="textBgColorSelectedQueryId" />
-      <link role="dataType" targetNodeId="3.1082983041843" />
-    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1080736578640">
     <property name="name" value="BaseEditorComponent" />
