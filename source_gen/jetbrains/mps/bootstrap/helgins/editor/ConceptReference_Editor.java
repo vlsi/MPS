@@ -15,7 +15,6 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 
 public class ConceptReference_Editor extends DefaultNodeEditor {
@@ -109,7 +108,6 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
     if(editorCell instanceof EditorCell_Label) {
       EditorCell_Label editorCellLabel = (EditorCell_Label)editorCell;
       editorCellLabel.setEditable(true);
-      editorCellLabel.getTextLine().setTextColor(MPSColors.DARK_BLUE);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174647124944");
