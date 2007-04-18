@@ -1046,11 +1046,6 @@
       <property name="propertyType" value="string" />
       <link role="dataType" targetNodeId="3.1082983041843" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1140524450558">
-      <property name="name" value="nodeFactoryId" />
-      <property name="propertyType" value="string" />
-      <link role="dataType" targetNodeId="3.1082983041843" />
-    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1156252885376">
       <property name="name" value="separatorLayoutConstraint" />
       <link role="dataType" targetNodeId="1138197387103" resolveInfo="_Layout_Constraints_Enum" />
