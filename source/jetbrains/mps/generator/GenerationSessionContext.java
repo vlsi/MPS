@@ -52,7 +52,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       myGenerationStepController = new GenerationStepController(inputModel);
       myGeneratorModules = myGenerationStepController.getGenerators();
       myTemplateModels = myGenerationStepController.getTemplateModels();
-      myMappingConfigurations = new LinkedHashSet<MappingConfiguration>(myGenerationStepController.getMappings());
+      myMappingConfigurations = new LinkedHashSet<MappingConfiguration>(myGenerationStepController.getCurrentMappings());
     } else {
       // old
       myGeneratorModules = getUsedGenerators(inputModel);
@@ -84,7 +84,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     myGenerationStepController = generationStepController;
     myGeneratorModules = myGenerationStepController.getGenerators();
     myTemplateModels = myGenerationStepController.getTemplateModels();
-    myMappingConfigurations = new LinkedHashSet<MappingConfiguration>(myGenerationStepController.getMappings());
+    myMappingConfigurations = new LinkedHashSet<MappingConfiguration>(myGenerationStepController.getCurrentMappings());
     myTransientModule.addGeneratorModules(myGeneratorModules);
   }
 

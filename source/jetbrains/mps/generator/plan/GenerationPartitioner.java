@@ -28,43 +28,6 @@ public class GenerationPartitioner {
     return doPartitioning(descriptorWorkingCopy, generators);
   }
 
-  GenerationStepInfo createGenerationStepInfo(List<Generator> generators) {
-    return createGenerationStepInfo(generators, null);
-  }
-
-  GenerationStepInfo createGenerationStepInfo(List<Generator> generators, GenerationStepInfo prevStepInfo) {
-    Set<MappingConfiguration> mappingsFromEarlierStepsToDisable;
-    Set<MappingConfiguration> mappingsFromEarlierStepsToProcess;
-    if (prevStepInfo != null) {
-      mappingsFromEarlierStepsToDisable = new HashSet<MappingConfiguration>(prevStepInfo.getMappings());
-      mappingsFromEarlierStepsToDisable.addAll(prevStepInfo.getMappingsProcessedOnEarlierSteps());
-      mappingsFromEarlierStepsToProcess = prevStepInfo.getMappingsToProcessOnLaterSteps();
-      mappingsFromEarlierStepsToDisable.removeAll(mappingsFromEarlierStepsToProcess);
-    } else {
-      mappingsFromEarlierStepsToDisable = new HashSet<MappingConfiguration>();
-      mappingsFromEarlierStepsToProcess = new HashSet<MappingConfiguration>();
-    }
-    List<List<MappingConfiguration>> mappingSets = doPartitioning(null, generators);
-    List<MappingConfiguration> mappingsForThisStep;
-    Set<MappingConfiguration> mappingsToProcessOnLaterSteps = new HashSet<MappingConfiguration>();
-    if (mappingSets.isEmpty()) {
-      mappingsForThisStep = new ArrayList<MappingConfiguration>();
-    } else {
-      mappingsForThisStep = mappingSets.get(0);
-      if (mappingSets.size() == 1) {
-        // only 1 set: there are no 'locking' mappings. repeat all on later steps.
-        mappingsToProcessOnLaterSteps.addAll(mappingSets.get(0));
-      } else {
-        // 1st set consists of 'locking' mappings and '==' mappings - don't repeat them on later steps.
-        for (int i = 1; i < mappingSets.size(); i++) {
-          mappingsToProcessOnLaterSteps.addAll(mappingSets.get(i));
-        }
-      }
-    }
-    return new GenerationStepInfo(mappingsForThisStep, mappingsFromEarlierStepsToDisable, mappingsToProcessOnLaterSteps);
-  }
-
-
   private void reset() {
     myPriorityMap = new HashMap<MappingConfiguration, Map<MappingConfiguration, PriorityData>>();
     myCoherentMappings = new ArrayList<CoherentSetData>();

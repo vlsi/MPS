@@ -137,7 +137,7 @@ public class GenerationSession implements IGenerationSession {
       if (!checkGenerationStep(context.getGenerationStepController())) {
         throw new GenerationCanceledException();
       }
-      if (context.getGenerationStepController().getMappings().isEmpty()) {
+      if (context.getGenerationStepController().getCurrentMappings().isEmpty()) {
         addProgressMessage(MessageKind.WARNING, "skip model \"" + sourceModel.getUID() + "\" : no generator avalable");
         return new GenerationStatus(sourceModel, null, null, false, false, false);
       }
@@ -195,20 +195,20 @@ public class GenerationSession implements IGenerationSession {
     }
 
     // auto-plan
+    GenerationStepController generationStepController = generationContext.getGenerationStepController();
+    if (!checkGenerationStep(generationStepController)) {
+      throw new GenerationCanceledException();
+    }
     SModel outputModel = null;
     while (true) {
       outputModel = generateModel(inputModel, targetLanguage, generator, generationContext);
       inputModel = outputModel;
       // need more steps?
-      GenerationStepController generationStepController = generationContext.getGenerationStepController();
-      if (!generationStepController.update(inputModel)) {
+      if (!generationStepController.advanceStep()) {
         // generation complete
         break;
       }
-      if (!checkGenerationStep(generationStepController)) {
-        throw new GenerationCanceledException();
-      }
-      if (generationStepController.getMappings().isEmpty()) {
+      if (generationStepController.getCurrentMappings().isEmpty()) {
         break;
       }
       printGenerationStepData(generationStepController, inputModel);
@@ -462,20 +462,20 @@ public class GenerationSession implements IGenerationSession {
     for (String namespace : namespaces) {
       addMessage(new Message(MessageKind.INFORMATION, "    " + namespace));
     }
-    List<Generator> generators = stepController.getGenerators();
-    Collections.sort(generators, new Comparator<Generator>() {
-      public int compare(Generator o1, Generator o2) {
-        if (o1 == o2) return 0;
-        return o1.getAlias().compareTo(o2.getAlias());
-      }
-    });
-    addMessage(new Message(MessageKind.INFORMATION, "engaged generators:"));
-    for (Generator generator : generators) {
-      addMessage(new Message(MessageKind.INFORMATION, "    " + generator.getAlias()));
-    }
+//    List<Generator> generators = stepController.getGenerators();
+//    Collections.sort(generators, new Comparator<Generator>() {
+//      public int compare(Generator o1, Generator o2) {
+//        if (o1 == o2) return 0;
+//        return o1.getAlias().compareTo(o2.getAlias());
+//      }
+//    });
+//    addMessage(new Message(MessageKind.INFORMATION, "engaged generators:"));
+//    for (Generator generator : generators) {
+//      addMessage(new Message(MessageKind.INFORMATION, "    " + generator.getAlias()));
+//    }
 
     addMessage(new Message(MessageKind.INFORMATION, "apply mapping configurations:"));
-    List<String> messages = GenerationPartitioningUtil.toStrings(stepController.getMappings());
+    List<String> messages = GenerationPartitioningUtil.toStrings(stepController.getCurrentMappings());
     for (String message : messages) {
       addMessage(new Message(MessageKind.INFORMATION, "    " + message));
     }
