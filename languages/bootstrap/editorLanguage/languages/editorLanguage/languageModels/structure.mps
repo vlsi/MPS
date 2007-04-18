@@ -346,6 +346,11 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1079353555532">
     <property name="name" value="CellModel_AbstractLabel" />
     <link role="extends" targetNodeId="1073389214265" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1176889772388">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="cellForegroundFunction" />
+      <link role="target" targetNodeId="1176809959526" resolveInfo="QueryFunction_Color" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1119646130993">
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" />
     </node>
