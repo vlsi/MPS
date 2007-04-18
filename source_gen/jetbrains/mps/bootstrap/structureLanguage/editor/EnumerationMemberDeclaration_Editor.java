@@ -15,6 +15,7 @@ import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -62,6 +63,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setFontType(MPSFonts.ITALIC);
+    editorCell.getTextLine().setTextColor(Color.darkGray);
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162585934258");
     editorCell.setLayoutConstraint("");
     return editorCell;
@@ -75,6 +77,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setFontType(MPSFonts.ITALIC);
+    editorCell.getTextLine().setTextColor(Color.darkGray);
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162585954651");
     editorCell.setLayoutConstraint("");
     return editorCell;
@@ -103,6 +106,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     if(editorCell instanceof EditorCell_Label) {
       EditorCell_Label editorCellLabel = (EditorCell_Label)editorCell;
       editorCellLabel.setEditable(true);
+      editorCellLabel.getTextLine().setTextColor(MPSColors.DARK_BLUE);
       editorCellLabel.getTextLine().setSelectedTextBackgroundColor(Color.cyan);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -138,6 +142,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     if(editorCell instanceof EditorCell_Label) {
       EditorCell_Label editorCellLabel = (EditorCell_Label)editorCell;
       editorCellLabel.setEditable(true);
+      editorCellLabel.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083925414254");
@@ -171,6 +176,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     if(editorCell instanceof EditorCell_Label) {
       EditorCell_Label editorCellLabel = (EditorCell_Label)editorCell;
       editorCellLabel.setEditable(true);
+      editorCellLabel.getTextLine().setTextColor(Color.blue);
       editorCellLabel.getTextLine().setSelectedTextBackgroundColor(Color.cyan);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
