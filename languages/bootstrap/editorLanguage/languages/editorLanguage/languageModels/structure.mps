@@ -540,10 +540,6 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1088612959204">
     <property name="name" value="CellModel_Alternation" />
     <link role="extends" targetNodeId="1073389214265" />
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1088765956434">
-      <property name="name" value="alternationConditionAspectMethodId" />
-      <link role="dataType" targetNodeId="3.1082983041843" />
-    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1088613081987">
       <property name="name" value="vertical" />
       <property name="propertyType" value="boolean" />
