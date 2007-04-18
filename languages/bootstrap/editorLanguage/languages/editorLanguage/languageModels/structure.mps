@@ -104,10 +104,6 @@
       <property name="name" value="cellBackground" />
       <link role="dataType" targetNodeId="1083952545109" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1139312929738">
-      <property name="name" value="cellBackgroundQueryId" />
-      <link role="dataType" targetNodeId="3.1082983041843" />
-    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1130426512758">
       <property name="name" value="fontStyle" />
       <link role="dataType" targetNodeId="1101211480448" />
