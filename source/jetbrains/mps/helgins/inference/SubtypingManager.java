@@ -408,7 +408,7 @@ public class SubtypingManager {
   public SNode coerceSubtyping(SNode subtype, final IMatchingPattern pattern) {
     if (pattern.match(subtype)) return subtype;
     MyCoersionMatcher2 coersionMatcher2 = new MyCoersionMatcher2(pattern);
-    boolean success = searchInSubtypes(subtype, coersionMatcher2);
+    boolean success = searchInSupertypes(subtype, coersionMatcher2);
     if (!success) return null;
     return coersionMatcher2.getResult();
   }

@@ -36,10 +36,10 @@ public class QueriesGenerated {
     return "parameter_" + node.getId();
   }
   public static String propertyMacro_GetPropertyValue_1174811358972(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return "PatternVar_" + node.getId();
+    return generator.getGeneratorSessionContext().createUniqueName("PatternVar");
   }
   public static String propertyMacro_GetPropertyValue_1176737323510(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return "AntiquotationField_" + node.getId();
+    return generator.getGeneratorSessionContext().createUniqueName("AntiquotationField");
   }
   public static String propertyMacro_GetPropertyValue_1174811055861(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return generator.getGeneratorSessionContext().createUniqueName("Pattern_");
@@ -195,7 +195,7 @@ public class QueriesGenerated {
     String childRole_ = node.getProperty("childRole");
     SNode mainNode = node.getReferent("mainNode");
     List<SNode> children = mainNode.getChildren(childRole_);
-    SNode attribute = children.get(0).getAttribute();
+    SNode attribute = BaseAdapter.fromAdapter(AsPattern_AnnotationLink.getAsPattern((BaseConcept)children.get(0).getAdapter()));
     return !(BaseAdapter.isInstance(attribute, ListPattern.class));
   }
   public static boolean ifMacro_Condition_1174909690038(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
