@@ -485,7 +485,7 @@ public abstract class MPSTree extends JTree {
 
   private void expandPaths(List<String> paths) {
     for (String path : paths) {
-      if (stringToPath(path) == null) {
+      if (stringToPath(path) == null) {        
         stringToPath(path);
       }
       expandPath(stringToPath(path));
