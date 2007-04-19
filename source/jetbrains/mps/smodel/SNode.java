@@ -1437,13 +1437,13 @@ public class SNode implements Cloneable, Iterable<SNode> {
     return SModelUtil_new.isAssignableConcept(thisConceptFqName, conceptFqName);
   }
 
-  public AbstractConceptDeclaration getConceptDeclarationAdapter() {
+  public ConceptDeclaration getConceptDeclarationAdapter() {
     String conceptFQName = getConceptFqName();
     AbstractConceptDeclaration concept = SModelUtil_new.findAbstractConceptDeclaration(conceptFQName, GlobalScope.getInstance());
     if (concept == null) {
       LOG.error("couldn't find concept declaration '" + conceptFQName + " for node " + getId() + " in model " + getModel().getUID());
     }
-    return concept;
+    return (ConceptDeclaration) concept;
   }
 
   public PropertyDeclaration getPropertyDeclaration(String propertyName, IScope scope) {
