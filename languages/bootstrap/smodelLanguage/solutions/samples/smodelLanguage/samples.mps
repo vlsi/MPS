@@ -3188,6 +3188,11 @@
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1173133606678" />
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1177011565489">
+      <property name="name" value="sandbox" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1177011565490" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177011565491" />
+    </node>
   </node>
 </model>
 
