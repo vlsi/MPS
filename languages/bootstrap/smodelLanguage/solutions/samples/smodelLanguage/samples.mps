@@ -3191,7 +3191,37 @@
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1177011565489">
       <property name="name" value="sandbox" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1177011565490" />
-      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177011565491" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177011565491">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1177011788785">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1177011788786">
+            <property name="name" value="nodeConcept" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SConceptType" id="1177011788787" />
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1177011778721">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1177011775891">
+                <link role="variableDeclaration" targetNodeId="1177011766342" resolveInfo="node" />
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetConceptOperation" id="1177011780784" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1177011822539">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1177011822540">
+            <property name="name" value="nodeConcept1" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1177011822541">
+              <link role="concept" targetNodeId="9.1169125787135" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1177011860309">
+              <link role="variableDeclaration" targetNodeId="1177011788786" resolveInfo="nodeConcept" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1177011766342">
+        <property name="name" value="node" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1177011766343">
+          <link role="concept" targetNodeId="1.1068580123157" />
+        </node>
+      </node>
     </node>
   </node>
 </model>
