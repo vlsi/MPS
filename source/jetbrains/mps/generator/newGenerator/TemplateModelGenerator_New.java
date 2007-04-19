@@ -130,7 +130,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     for (SNode rootNode : myInputModel.getRoots()) {
       List<ConceptDeclaration> abandonedRootConcepts = ruleManager.getAbandonedRootConcepts();
       for (ConceptDeclaration abandonedRootConcept : abandonedRootConcepts) {
-        if(rootNode.isInstanceOfConcept(abandonedRootConcept, getScope())){
+        if(rootNode.isInstanceOfConcept(abandonedRootConcept)){
           rootsToCopy.remove(rootNode);
         }
       }

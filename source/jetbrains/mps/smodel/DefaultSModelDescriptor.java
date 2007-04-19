@@ -447,7 +447,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   }
 
   private void addInstances(SNode current, ConceptDeclaration concept, Set<SNode> result, IScope scope) {
-    if (current.isInstanceOfConcept(concept, scope)) result.add(current);
+    if (current.isInstanceOfConcept(concept)) result.add(current);
     for (SNode child : current.getChildren()) {
       addInstances(child, concept, result, scope);
     }

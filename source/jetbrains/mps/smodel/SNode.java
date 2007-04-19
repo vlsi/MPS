@@ -1425,10 +1425,13 @@ public class SNode implements Cloneable, Iterable<SNode> {
     return NameUtil.removeStructureFromFqName(getConceptFqName());
   }
 
-  public boolean isInstanceOfConcept(AbstractConceptDeclaration concept, IScope scope) {
-    return isInstanceOfConcept(NameUtil.nodeFQName(concept), scope);
+  public boolean isInstanceOfConcept(AbstractConceptDeclaration concept) {
+    return isInstanceOfConcept(NameUtil.nodeFQName(concept), GlobalScope.getInstance());
   }
 
+  /**
+   * todo: remove the 'scope' parm 
+   */
   public boolean isInstanceOfConcept(String conceptFqName, IScope scope) {
     String thisConceptFqName = NameUtil.nodeConceptFQName(this);
     return SModelUtil_new.isAssignableConcept(thisConceptFqName, conceptFqName);
@@ -1447,14 +1450,6 @@ public class SNode implements Cloneable, Iterable<SNode> {
     SNode sourceNode = this;
     AbstractConceptDeclaration typeDeclaration = sourceNode.getConceptDeclarationAdapter();
     return SModelUtil_new.findPropertyDeclaration(typeDeclaration, propertyName);
-  }
-
-
-  /**
-   * @return SemanticChildDeclaration (tmp returns LinkDeclaration)
-   */
-  public LinkDeclaration getChildDeclaration(String role, IScope scope) {
-    return getLinkDeclaration(role, scope);
   }
 
   public LinkDeclaration getLinkDeclaration(String role, IScope scope) {

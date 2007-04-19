@@ -43,7 +43,7 @@ public class ReferenceConceptLinkTargetSearchScope extends AbstractSearchScope {
         ISearchScope allNodesScope = SModelSearchUtil_new.createModelAndImportedModelsScope(myReferenceConceptLink.getModel(), myScope);
         return allNodesScope.getNodes(new Condition<SNode>() {
           public boolean met(SNode object) {
-            return object.isInstanceOfConcept(targetConcept, myScope);
+            return object.isInstanceOfConcept(targetConcept);
           }
         });
       }
