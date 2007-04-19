@@ -27,6 +27,7 @@ public class ModelsProgressUtil {
   public static final String TASK_NAME_COMPILE_ON_GENERATION = "tn_compileOnGeneration";
   public static final String TASK_NAME_RELOAD_ALL = "tn_reloadAll";
   public static final String TASK_NAME_REFRESH_FS = "tn_refreshFs";
+  public static final String TASK_KIND_CHECK_MODELS = "tk_checkModels";
 
   //generic utilities:
 
@@ -59,6 +60,10 @@ public class ModelsProgressUtil {
     return getInstance().getModelsProgressHelper(TASK_KIND_FIND_USAGES).modelTaskName(modelDescriptor);
   }
 
+  public static String checkModelTaskName(SModelDescriptor modelDescriptor) {
+    return getInstance().getModelsProgressHelper(TASK_KIND_CHECK_MODELS).modelTaskName(modelDescriptor);
+  }
+
   public static long estimateFindUsagesTimeMillis(Collection<SModelDescriptor> models) {
     return getInstance().getModelsProgressHelper(TASK_KIND_FIND_USAGES).estimateModelsTaskTimeMillis(models);
   }
@@ -69,6 +74,10 @@ public class ModelsProgressUtil {
 
   public static long estimateFindInstancesTimeMillis(Collection<SModelDescriptor> models) {
     return getInstance().getModelsProgressHelper(TASK_KIND_FIND_INSTANCES).estimateModelsTaskTimeMillis(models);
+  }
+
+  public static long estimateCheckModelsTimeMillis(Collection<SModelDescriptor> models) {
+    return getInstance().getModelsProgressHelper(TASK_KIND_CHECK_MODELS).estimateModelsTaskTimeMillis(models);
   }
 
   public static long estimateTotalGenerationJobMillis(boolean compile, Collection<SModelDescriptor> models) {
