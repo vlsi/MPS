@@ -12,6 +12,8 @@ import jetbrains.mps.ide.projectPane.SortUtil;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
+import jetbrains.mps.ide.modelchecker.ModelChecker;
+import jetbrains.mps.ide.modelchecker.ModelCheckResult;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
@@ -256,10 +258,22 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return name;
   }
 
-  public Color getColor() {
-    if (getSModelDescriptor() != null &&
-            getSModelDescriptor().isInitialized() &&
-                    SModelRepository.getInstance().isChanged(getSModelDescriptor())) {
+  ModelCheckResult getModelCheckResult() {
+    SModelDescriptor sm = getSModelDescriptor();
+    if (sm == null) {
+      return null;
+    }
+    return (ModelCheckResult) sm.getUserObject(ModelChecker.MODEL_CHECK_RESULT);
+  }
+
+  public Color getColor() {    
+    ModelCheckResult r = getModelCheckResult();
+    if (r != null && r.hasErrors()) {
+      return Color.RED;
+    }
+
+    SModelDescriptor sm = getSModelDescriptor();
+    if (sm != null && sm.isInitialized() && SModelRepository.getInstance().isChanged(sm)) {
       return new Color(0x00, 0x00, 0x90);
     }
 

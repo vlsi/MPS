@@ -5,9 +5,9 @@ import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.modelchecker.ModelCheckResult;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
-import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
@@ -16,8 +16,9 @@ import javax.swing.Icon;
 import javax.swing.JPopupMenu;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
-import java.util.List;
+import java.awt.Color;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -161,5 +162,16 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     }
 
     return output.toString();
+  }
+
+  public Color getColor() {
+    SModelTreeNode stn = getSModelModelTreeNode();
+    ModelCheckResult r = stn.getModelCheckResult();
+
+    if (r != null && r.hasErrorsInside(getSNode())) {
+      return Color.RED;
+    }
+
+    return Color.BLACK;
   }
 }

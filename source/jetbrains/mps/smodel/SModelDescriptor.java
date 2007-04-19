@@ -79,4 +79,8 @@ public interface SModelDescriptor {
   boolean rename(String newLongName, MPSProject project, ModelRoot newRoot);
 
   Set<ModelRoot> collectModelRoots();
+
+  Object getUserObject(String key);
+  void putUserObject(String key, Object value);
+  void removeUserObject(String key);
 }

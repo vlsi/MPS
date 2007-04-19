@@ -12,10 +12,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 
 import java.io.File;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @author Kostik
@@ -30,6 +27,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   private SModelUID myModelUID = new SModelUID("", "");
   private List<SModelListener> myModelListeners = new LinkedList<SModelListener>();
   private List<SModelCommandListener> myModelCommandListeners = new LinkedList<SModelCommandListener>();
+  private Map<String, Object> myUserObjects = new HashMap<String, Object>();
   private long myLastStructuralChange = System.currentTimeMillis();
   private long myLastChange = System.currentTimeMillis();
   private File myModelFile;
@@ -503,5 +501,17 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 
   /*package*/ void setModelFile(File file) {
     myModelFile = file;
+  }
+
+  public Object getUserObject(String key) {
+    return myUserObjects.get(key);
+  }
+
+  public void putUserObject(String key, Object value) {
+    myUserObjects.put(key, value);
+  }
+
+  public void removeUserObject(String key) {
+    myUserObjects.remove(key);
   }
 }

@@ -4,6 +4,10 @@ import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IStatus;
+import jetbrains.mps.ide.NodeGutterMessage;
+import jetbrains.mps.ide.modelchecker.ModelChecker;
+import jetbrains.mps.ide.modelchecker.ModelCheckResult;
+import jetbrains.mps.ide.modelchecker.ModelCheckerMessage;
 import jetbrains.mps.ide.action.*;
 import jetbrains.mps.ide.actions.nodes.GoByFirstReferenceAction;
 import jetbrains.mps.ide.command.CommandProcessor;
@@ -11,7 +15,6 @@ import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.navigation.FocusPolicy;
 import jetbrains.mps.ide.navigation.HistoryItem;
 import jetbrains.mps.ide.navigation.IHistoryItem;
-import jetbrains.mps.ide.navigation.RecentEditorsMenu;
 import jetbrains.mps.ide.ui.JMultiLineToolTip;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
@@ -56,6 +59,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private HashMap<EditorCell, Set<SNodeProxy>> myCellsToRefTargetsToDependOnMap = new HashMap<EditorCell, Set<SNodeProxy>>();
   private HashMap<Pair<SNodeProxy, String>, Set<EditorCell_Property>> myNodePropertiesAccessedCleanlyToDependentCellsMap = new HashMap<Pair<SNodeProxy, String>, Set<EditorCell_Property>>();
   private HashMap<Pair<SNodeProxy, String>, Set<EditorCell>> myNodePropertiesAccessedDirtilyToDependentCellsMap = new HashMap<Pair<SNodeProxy, String>, Set<EditorCell>>();
+
+  private IGutterMessageOwner myMessageOwner = new IGutterMessageOwner() { };
 
   private boolean myHasLastCaretX = false;
   private int myLastCaretX;
@@ -1094,9 +1099,47 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   public void rebuildEditorContent() {
     long start = System.currentTimeMillis();
     clearCaches();
+    updateModelCheckerMessages();
     updateMPSActionsWithKeyStrokes();
     rebuildEditorContent(null);
     LOG.debug("Rebuild of " + getEditedNode() + "'s editor took " + (System.currentTimeMillis() - start) + " ms");
+  }
+
+  void updateModelCheckerMessages() {
+    if (myNodeProxy == null) {
+      return;
+    }
+
+    SNode rootNode = myNodeProxy.getNode();
+    if (rootNode == null) {
+      return;
+    }
+
+    getMessagesGutter().removeMessages(myMessageOwner);
+    SModelDescriptor sm = rootNode.getModel().getModelDescriptor();
+    ModelCheckResult res = (ModelCheckResult) sm.getUserObject(ModelChecker.MODEL_CHECK_RESULT);
+
+    if (res == null) {
+      return;
+    }
+
+    for (final ModelCheckerMessage m : res.getMessages()) {
+      if (m.getNode().getContainingRoot() == rootNode) {        
+        getMessagesGutter().add(new NodeGutterMessage(this, m.getNode()) {
+          public String getMessage() {
+            return m.getMessage();
+          }
+
+          public Color getColor() {
+            if (m.isError()) {
+              return Color.RED;
+            } else {
+              return Color.YELLOW;
+            }
+          }
+        }, myMessageOwner);
+      }
+    }
   }
 
   public void rebuildEditorContent(final List<SModelEvent> events) {
