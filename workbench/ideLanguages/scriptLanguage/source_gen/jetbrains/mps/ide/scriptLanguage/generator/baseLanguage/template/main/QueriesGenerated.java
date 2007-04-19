@@ -23,15 +23,17 @@ public class QueriesGenerated {
   public static String propertyMacro_GetPropertyValue_1172354478331(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     String caption = SPropertyOperations.getString(node, "caption");
     return (caption == null ?
-
       "<no name>" :
-
-      caption    );
+      caption
+    );
   }
   public static SNode sourceNodeQuery_1172287555052(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "statementList", true);
   }
   public static SNode sourceNodeQuery_1172333760299(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "nodeList", true);
+  }
+  public static SNode sourceNodeQuery_1177001853600(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "nodeExpression", true);
   }
 }

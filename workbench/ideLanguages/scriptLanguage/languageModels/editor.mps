@@ -11,8 +11,8 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1172272818532">
     <link role="conceptDeclaration" targetNodeId="1.1172272794406" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1172272822706">
-      <property name="drawBorder" value="false" />
       <property name="vertical" value="true" />
+      <property name="drawBorder" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1172272828364">
         <property name="drawBorder" value="false" />
         <property name="selectable" value="false" />
@@ -53,8 +53,8 @@
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1172277178832">
           <link role="conceptDeclaration" targetNodeId="3.1071489090640" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1172277182443">
-            <property name="readOnly" value="true" />
             <property name="textFgColor" value="DARK_MAGENTA" />
+            <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="2.1169194664001" />
           </node>
         </node>
@@ -82,10 +82,32 @@
         <property name="text" value=":" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1172354272828">
-        <property name="drawBorder" value="false" />
         <property name="fontStyle" value="BOLD" />
         <property name="textFgColor" value="DARK_GREEN" />
+        <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1172354255546" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1177000932001">
+    <link role="conceptDeclaration" targetNodeId="1.1177000809919" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1177000936628">
+      <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1177000938724">
+        <property name="text" value="findUsages" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1177000948773">
+        <property name="text" value="(" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1177000952650">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="1.1177000892796" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1177000956261">
+        <property name="text" value=")" />
+        <property name="drawBorder" value="false" />
       </node>
     </node>
   </node>
