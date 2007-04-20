@@ -192,12 +192,15 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       }
     }
 
-    // the target language may have "reduction" generator
-    List<Generator> reductionGenerators = myTargetLanguage.getGenerators();
-    for (Generator generator : reductionGenerators) {
-      if (myTargetLanguage.getNamespace().equals(generator.getTargetLanguageName())) {
-        if (!generators.contains(generator)) {
-          generators.add(generator);
+    // found any generators? add another one
+    if (!generators.isEmpty()) {
+      // the target language may have "reduction" generator
+      List<Generator> reductionGenerators = myTargetLanguage.getGenerators();
+      for (Generator generator : reductionGenerators) {
+        if (myTargetLanguage.getNamespace().equals(generator.getTargetLanguageName())) {
+          if (!generators.contains(generator)) {
+            generators.add(generator);
+          }
         }
       }
     }
