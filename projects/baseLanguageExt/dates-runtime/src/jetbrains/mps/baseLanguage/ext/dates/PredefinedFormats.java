@@ -16,4 +16,8 @@ public final class PredefinedFormats {
     return RSS_DATE_FORMATTER;
   }
 
+  public static DateTimeFormatter defaultFormat() {
+    return RSS_DATE_FORMATTER;
+  }
+
 }
