@@ -1120,5 +1120,23 @@
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177093525992">
+    <property name="name" value="InlineTemplate_RuleConsequence" />
+    <link role="extends" targetNodeId="1168559098955" resolveInfo="RuleConsequence" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177093586806">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="templateNode" />
+      <link role="target" targetNodeId="2.1133920641626" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1177093643994">
+      <property name="value" value="&lt;in-line&gt;" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1177093666168">
+      <property name="value" value="in-line template" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473914776" />
+    </node>
+  </node>
 </model>
 

@@ -24,12 +24,18 @@ import java.util.ArrayList;
  * To change this template use File | Settings | File Templates.
  */
 public class Queries {
-
-  public static SNode getBinaryOperationType(SNode leftType, SNode rightType) {
-    return getBinaryOperationType(leftType, rightType, false);
-  }
-
-  public static SNode getBinaryOperationType(SNode leftType, SNode rightType, boolean mayBeString) {
+  public static Object CustomExpression_getBinaryOperationType(Object... args) {
+    for (int i = 0; i <= 1; i++) {
+      if (args[i] instanceof Omega) {
+        return args[1 - i];
+      }
+    }
+    SNode leftType = (SNode) args[0];
+    SNode rightType = (SNode) args[1];
+    boolean mayBeString = false;
+    if (args.length >= 3) {
+      mayBeString = (Boolean) args[2];
+    }
     SModel runtimeTypesModel = TypeChecker.getInstance().getRuntimeTypesModel();
     Set<? extends SNode> types = CollectionUtil.asSet(leftType, rightType);
     Set<SNode> leastCommonSupertypes = TypeChecker.getInstance().getSubtypingManager().leastCommonSupertypes(types);
@@ -50,24 +56,9 @@ public class Queries {
     if (leastCommonSupertypes.isEmpty()) {
       RuntimeErrorType runtimeErrorType = RuntimeErrorType.newInstance(runtimeTypesModel);
       runtimeErrorType.setErrorText("incompatible types");
-      return runtimeErrorType.getNode();
+      return runtimeErrorType;
     }
     return leastCommonSupertypes.iterator().next();
-  }
-
-  public static Object CustomExpression_getBinaryOperationType(Object... args) {
-    for (int i = 0; i <= 1; i++) {
-      if (args[i] instanceof Omega) {
-        return args[1 - i];
-      }
-    }
-    SNode leftType = (SNode) args[0];
-    SNode rightType = (SNode) args[1];
-    boolean mayBeString = false;
-    if (args.length >= 3) {
-      mayBeString = (Boolean) args[2];
-    }
-    return getBinaryOperationType(leftType, rightType, mayBeString);
   }
 
   public static Object CustomExpression_hasConceptProperty_lvalue(Object... args) {

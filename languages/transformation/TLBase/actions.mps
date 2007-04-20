@@ -9,8 +9,8 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions" id="1169570915271">
     <property name="name" value="TL_node_substitute" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1169570930693">
-      <property name="actionsFactoryAspectId" value="Weaving_MappingRule" />
       <property name="description" value="choice of consequences for weaving rule" />
+      <property name="actionsFactoryAspectId" value="Weaving_MappingRule" />
       <link role="applicableConcept" targetNodeId="1.1168559098955" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionFunction" id="1169582381136">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1169582381137">
@@ -18,7 +18,9 @@
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1169582463431">
               <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionParm_parentNode" id="1169582460352" />
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1169582465151">
-                <link role="concept" targetNodeId="1.1167171569011" />
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.RefConcept_Reference" id="1177093043370">
+                  <link role="conceptDeclaration" targetNodeId="1.1167171569011" />
+                </node>
               </node>
             </node>
           </node>

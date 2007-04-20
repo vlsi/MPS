@@ -63,9 +63,7 @@ public class EquationManager {
 
     for (SNode type : slave.myEquations.keySet()) {
       SNode parentType = slave.myEquations.get(type);
-      if (parentType != null) {
-        processEquation(type, parentType, null);
-      }
+      processEquation(type, parentType, null);
     }
   }
 
