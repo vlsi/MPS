@@ -20,7 +20,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule
 
   public void applyRule(SNode argument) {
     for(SNode throwsItem : SLinkOperations.getTargets(argument, "throwsItem", true)) {
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(throwsItem, new QuotationClass_29().createNode(), argument);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(throwsItem, new QuotationClass_31().createNode(), argument);
     }
   }
   public String getApplicableConceptFQName() {

@@ -19,8 +19,8 @@ public class typeOf_NotExpression_InferenceRule implements InferenceRule_Runtime
   }
 
   public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_35().createNode(), argument);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expression", true)), new QuotationClass_36().createNode(), SLinkOperations.getTarget(argument, "expression", true));
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_37().createNode(), argument);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expression", true)), new QuotationClass_38().createNode(), SLinkOperations.getTarget(argument, "expression", true));
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.NotExpression";

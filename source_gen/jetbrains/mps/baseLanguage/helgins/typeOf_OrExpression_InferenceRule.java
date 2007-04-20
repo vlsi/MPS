@@ -19,9 +19,9 @@ public class typeOf_OrExpression_InferenceRule implements InferenceRule_Runtime 
   }
 
   public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "leftExpression", true)), new QuotationClass_37().createNode(), SLinkOperations.getTarget(argument, "leftExpression", true));
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "rightExpression", true)), new QuotationClass_38().createNode(), SLinkOperations.getTarget(argument, "rightExpression", true));
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_39().createNode(), argument);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "leftExpression", true)), new QuotationClass_39().createNode(), SLinkOperations.getTarget(argument, "leftExpression", true));
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "rightExpression", true)), new QuotationClass_40().createNode(), SLinkOperations.getTarget(argument, "rightExpression", true));
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_41().createNode(), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.OrExpression";

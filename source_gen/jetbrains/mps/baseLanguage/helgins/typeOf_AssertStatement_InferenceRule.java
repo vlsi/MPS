@@ -19,9 +19,9 @@ public class typeOf_AssertStatement_InferenceRule implements InferenceRule_Runti
   }
 
   public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "condition", true)), new QuotationClass_32().createNode(), SLinkOperations.getTarget(argument, "condition", true));
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "condition", true)), new QuotationClass_34().createNode(), SLinkOperations.getTarget(argument, "condition", true));
     if((SLinkOperations.getTarget(argument, "message", true) != null)) {
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "message", true)), new QuotationClass_33().createNode(), SLinkOperations.getTarget(argument, "message", true));
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "message", true)), new QuotationClass_35().createNode(), SLinkOperations.getTarget(argument, "message", true));
     }
   }
   public String getApplicableConceptFQName() {
