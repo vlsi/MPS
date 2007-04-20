@@ -1,6 +1,9 @@
 package jetbrains.mps.ide.actions.nodes;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.helgins.structure.AbstractRule;
+import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
+import jetbrains.mps.bootstrap.helgins.structure.PatternCondition;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.helgins.structure.*;
 import jetbrains.mps.ide.EditorsPane;
@@ -80,7 +83,16 @@ public class GoToRulesAction extends MPSAction {
             if (object instanceof TypeAdaptationRule) {
               analyzedTermDeclaration = ((TypeAdaptationRule)object).getApplicableNodes().get(0);
             }
-            return maybeApplicable(conceptDeclaration, analyzedTermDeclaration, operationContext.getScope());
+
+            if (maybeApplicable(conceptDeclaration, analyzedTermDeclaration, operationContext.getScope())) {
+              return true;
+            }
+
+            if (object instanceof AbstractRule) {
+              AbstractRule rule = (AbstractRule) object;
+              return (maybeApplicable_new(conceptDeclaration, rule.getApplicableNode(), operationContext.getScope()));
+            }
+            return false;
           }
         }));
       }
@@ -109,6 +121,19 @@ public class GoToRulesAction extends MPSAction {
       invoker = currentEditor.getCurrentEditorComponent();
     }
     m.show(invoker, x, y);
+  }
+
+  private boolean maybeApplicable_new(ConceptDeclaration conceptDeclaration, ApplicableNodeCondition applicableNode, IScope scope) {
+    if (applicableNode instanceof jetbrains.mps.bootstrap.helgins.structure.ConceptReference) {
+      jetbrains.mps.bootstrap.helgins.structure.ConceptReference conceptReference =
+              (jetbrains.mps.bootstrap.helgins.structure.ConceptReference) applicableNode;
+      return SModelUtil_new.isAssignableConcept(conceptDeclaration, conceptReference.getConcept());
+    } else if (applicableNode instanceof PatternCondition) {
+      BaseConcept baseConcept = ((PatternCondition)applicableNode).getPattern().getPatternNode();
+      if (baseConcept == null) return false;
+      return SModelUtil_new.isAssignableConcept(conceptDeclaration, baseConcept.getConceptDeclarationAdapter());
+    }
+    return false;
   }
 
   private static boolean maybeApplicable(ConceptDeclaration conceptDeclaration, AnalyzedTermDeclaration analyzedTermDeclaration, IScope scope) {
