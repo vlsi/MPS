@@ -245,6 +245,10 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1145915035426">
       <link role="conceptPropertyDeclaration" targetNodeId="1138763325919" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1177038003316">
+      <property name="value" value="the reference link 'concept' is deprecated" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1170898673630" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1139858892567">
     <property name="name" value="Node_InsertNewNextSiblingOperation" />
