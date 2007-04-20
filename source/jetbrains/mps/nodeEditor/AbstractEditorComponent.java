@@ -4,14 +4,13 @@ import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IStatus;
-import jetbrains.mps.ide.NodeGutterMessage;
-import jetbrains.mps.ide.modelchecker.ModelChecker;
-import jetbrains.mps.ide.modelchecker.ModelCheckResult;
-import jetbrains.mps.ide.modelchecker.ModelCheckerMessage;
 import jetbrains.mps.ide.action.*;
 import jetbrains.mps.ide.actions.nodes.GoByFirstReferenceAction;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.undo.UndoManager;
+import jetbrains.mps.ide.modelchecker.ModelCheckResult;
+import jetbrains.mps.ide.modelchecker.ModelChecker;
+import jetbrains.mps.ide.modelchecker.ModelCheckerMessage;
 import jetbrains.mps.ide.navigation.FocusPolicy;
 import jetbrains.mps.ide.navigation.HistoryItem;
 import jetbrains.mps.ide.navigation.IHistoryItem;
@@ -27,6 +26,7 @@ import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.typesystem.TypeCheckerAccess;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.ColorAndGraphicsUtil;
 import jetbrains.mps.util.NodesParetoFrontier;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.annotation.UseCarefully;
@@ -1125,19 +1125,21 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     for (final ModelCheckerMessage m : res.getMessages()) {
       if (m.getNode().getContainingRoot() == rootNode) {        
-        getMessagesGutter().add(new NodeGutterMessage(this, m.getNode()) {
+        getHighlightManager().mark(new NodeHighlightManager.HighlighterMessage(m.getNode(), Color.PINK, m.getMessage(), myMessageOwner, this) {
+          public void paint(Graphics g, EditorCell cell) {
+            int x = cell.getX();
+            int y = cell.getY();
+            int height = cell. getHeight();
+            int leftInternalInset = cell.getLeftInternalInset();
+            int effectiveWidth = cell.getEffectiveWidth();
+            g.setColor(getColor());
+            ColorAndGraphicsUtil.drawWave(g, x + leftInternalInset, x + leftInternalInset + effectiveWidth, y + height - ColorAndGraphicsUtil.WAVE_HEIGHT);
+          }
+
           public String getMessage() {
             return m.getMessage();
           }
-
-          public Color getColor() {
-            if (m.isError()) {
-              return Color.RED;
-            } else {
-              return Color.YELLOW;
-            }
-          }
-        }, myMessageOwner);
+        });
       }
     }
   }

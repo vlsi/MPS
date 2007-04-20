@@ -1,22 +1,20 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.nodeEditor.icons.Icons;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.ui.JMultiLineToolTip;
-import jetbrains.mps.typesystem.TSStatus;
-import jetbrains.mps.typesystem.TypeCheckerAccess;
+import jetbrains.mps.nodeEditor.icons.Icons;
 
-import javax.swing.*;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JToolTip;
+import javax.swing.ToolTipManager;
 import java.awt.*;
-import java.awt.event.MouseEvent;
 import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
-import java.util.List;
 import java.util.ArrayList;
-import java.util.Map;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author Kostik
@@ -118,8 +116,6 @@ public class MessagesGutter extends JPanel {
 
         g.setColor(msg.getColor());
         g.fillRect(0, messageY - 1, getWidth() - 2, 2);
-
-
       }
       myMessages.removeAll(messagesToRemove);
     }
