@@ -100,6 +100,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174643105530">
+    <property name="iconPath" value="${language_descriptor}\icons\rule.png" />
     <property name="name" value="InferenceRule" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="1174648085619" resolveInfo="AbstractRule" />
@@ -311,6 +312,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1175147670730">
+    <property name="iconPath" value="${language_descriptor}\icons\subtyping.png" />
     <property name="name" value="SubtypingRule" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="1175147569072" resolveInfo="AbstractSubtypingRule" />
@@ -330,6 +332,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1175162660418">
+    <property name="iconPath" value="${language_descriptor}\icons\supertyping.png" />
     <property name="name" value="SupertypingRule" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="1175147569072" resolveInfo="AbstractSubtypingRule" />
@@ -491,9 +494,9 @@
     <property name="name" value="ImmediateSupertypesExpression" />
     <link role="extends" targetNodeId="2.1068431790191" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177068475017">
+      <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="1" />
       <property name="role" value="subtypeExpression" />
-      <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="2.1068431790191" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1177068545393">
