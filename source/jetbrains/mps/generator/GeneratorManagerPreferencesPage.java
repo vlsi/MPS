@@ -21,6 +21,7 @@ class GeneratorManagerPreferencesPage implements IPreferencesPage {
   private JCheckBox mySaveTransientModelsCheckBox = new JCheckBox("Save transient models on generation (experts only)");
   private JCheckBox myDumpQueriesStatisticsCheckBox = new JCheckBox("Dump query execution statistic in concole (experts only)");
   private JCheckBox myCompileSourceLanguagesModules = new JCheckBox("Compile source languages' modules before generation");
+  private JCheckBox myCheckBeforeGeneration = new JCheckBox("Check before generation");
   private GeneratorManager myGeneratorManager;
 
   public GeneratorManagerPreferencesPage(GeneratorManager generatorManager) {
@@ -30,13 +31,15 @@ class GeneratorManagerPreferencesPage implements IPreferencesPage {
     mySaveTransientModelsCheckBox.setSelected(myGeneratorManager.isSaveTransientModels());
     myDumpQueriesStatisticsCheckBox.setSelected(myGeneratorManager.isDumpStatistics());
     myCompileSourceLanguagesModules.setSelected(myGeneratorManager.isCompileSourceLanguageModules());
+    myCheckBeforeGeneration.setSelected(myGeneratorManager.isCheckBeforeCompilation());
 
-    JPanel optionsPanel = new JPanel(new GridLayout(5, 1));
+    JPanel optionsPanel = new JPanel(new GridLayout(6, 1));
     optionsPanel.add(myCompileInIdeaBeforeGeneration);
     optionsPanel.add(myCompileInIdeaOnGeneration);
     optionsPanel.add(mySaveTransientModelsCheckBox);
     optionsPanel.add(myDumpQueriesStatisticsCheckBox);
     optionsPanel.add(myCompileSourceLanguagesModules);
+    optionsPanel.add(myCheckBeforeGeneration);
 
     myPage = new JPanel(new BorderLayout());
     myPage.setBorder(new EmptyBorder(10, 10, 10, 10));
@@ -65,5 +68,6 @@ class GeneratorManagerPreferencesPage implements IPreferencesPage {
     myGeneratorManager.setSaveTransientModels(mySaveTransientModelsCheckBox.isSelected());
     myGeneratorManager.setDumpStatistics(myDumpQueriesStatisticsCheckBox.isSelected());
     myGeneratorManager.setCompileSourceLanguageModules(myCompileSourceLanguagesModules.isSelected());
+    myGeneratorManager.setCheckBeforeCompilation(myCheckBeforeGeneration.isSelected());
   }
 }

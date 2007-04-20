@@ -7,6 +7,8 @@ import jetbrains.mps.generator.newGenerator.GenerationSession_New;
 import jetbrains.mps.generator.template.Statistics;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.modelchecker.ModelChecker;
+import jetbrains.mps.ide.modelchecker.ModelCheckResult;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.messages.IMessageHandler;
@@ -50,12 +52,14 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   private static final String COMPILE_BEFORE_GENERATION = "compile-before-generation";
   private static final String COMPILE_ON_GENERATION = "compile-on-generation";
   private static final String COMPILE_SOURCE_LANGUAGES_MODULES = "compile-source-languages-modules";
+  private static final String CHECK_BEFORE_COMPILATION = "check-before-compilation";
 
   private boolean myCompileBeforeGeneration = false;
   private boolean myCompileOnGeneration = true;
   private boolean mySaveTransientModels;
   private boolean myDumpStatistics = false;
   private boolean myCompileSourceLanguageModules = false;
+  private boolean myCheckBeforeCompilation = false;
   private MPSProject myProject;
   private List<IFileGenerator> myFileGenerators = new LinkedList<IFileGenerator>();
 
@@ -92,6 +96,9 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     if (element.getAttribute(COMPILE_SOURCE_LANGUAGES_MODULES) != null) {
       myCompileSourceLanguageModules = Boolean.parseBoolean(element.getAttributeValue(COMPILE_SOURCE_LANGUAGES_MODULES));
     }
+    if (element.getAttribute(CHECK_BEFORE_COMPILATION) != null) {
+      myCheckBeforeCompilation = Boolean.parseBoolean(element.getAttributeValue(CHECK_BEFORE_COMPILATION));
+    }
   }
 
   public void write(Element element, MPSProject project) {
@@ -100,6 +107,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     element.setAttribute(SAVE_TRANSIENT_MODELS, "" + mySaveTransientModels);
     element.setAttribute(DUMP_STATISTICS, "" + myDumpStatistics);
     element.setAttribute(COMPILE_SOURCE_LANGUAGES_MODULES, "" + myCompileSourceLanguageModules);
+    element.setAttribute(CHECK_BEFORE_COMPILATION, "" + myCheckBeforeCompilation);
   }
 
   public boolean isCompileBeforeGeneration() {
@@ -140,6 +148,14 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
   public void setCompileSourceLanguageModules(boolean compileSourceLanguageModules) {
     myCompileSourceLanguageModules = compileSourceLanguageModules;
+  }
+
+  public boolean isCheckBeforeCompilation() {
+    return myCheckBeforeCompilation;
+  }
+
+  public void setCheckBeforeCompilation(boolean checkBeforeCompilation) {
+    myCheckBeforeCompilation = checkBeforeCompilation;
   }
 
   public IPreferencesPage createPreferencesPage() {
@@ -505,6 +521,17 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       }
       for (SModelDescriptor sourceModelDescriptor : sourceModels) {
         progress.addText("");
+
+        if (myCheckBeforeCompilation) {
+          progress.addText("Checking model \"" + sourceModelDescriptor.getModelUID() + "\"... ");
+          ModelCheckResult result = new ModelChecker(invocationContext).checkModel(sourceModelDescriptor);
+          if (result.hasErrors()) {
+            if (JOptionPane.showConfirmDialog(invocationContext.getMainFrame(), "Model " + sourceModelDescriptor.getModelUID() + " has errors. Are you sure that you want to generate it?") != JOptionPane.YES_OPTION) {
+              continue;
+            }
+          }
+        }
+
         String taskName = ModelsProgressUtil.generationModelTaskName(sourceModelDescriptor);
         progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_GENERATION);
 
