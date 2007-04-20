@@ -58,6 +58,10 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1174661198791(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "rightExpression", true), "jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression");
   }
+  public static boolean baseMappingRule_Condition_1177059616673(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode rule = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.helgins.structure.AbstractRule", false, false);
+    return rule == null;
+  }
   public static boolean baseMappingRule_Condition_1175004525975(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "modelToCreate", true) != null;
   }
@@ -400,7 +404,7 @@ public class QueriesGenerated {
     if(SLinkOperations.getTarget(node, "modelToCreate", true) != null) {
       result.add(SLinkOperations.getTarget(node, "modelToCreate", true));
     }
-    for(SNode child : SNodeOperations.getDescendants(node, null)) {
+    for(SNode child : SNodeOperations.getDescendants(node, null, false)) {
       if(SNodeOperations.isInstanceOf(child, "jetbrains.mps.bootstrap.helgins.structure.AbstractAntiquotation")) {
         result.add(SLinkOperations.getTarget(child, "expression", true));
       }
@@ -468,7 +472,7 @@ public class QueriesGenerated {
     if(SLinkOperations.getTarget(node, "modelToCreate", true) != null) {
       result.add(SLinkOperations.getTarget(node, "modelToCreate", true));
     }
-    for(SNode child : SNodeOperations.getDescendants(node, null)) {
+    for(SNode child : SNodeOperations.getDescendants(node, null, false)) {
       if(SNodeOperations.isInstanceOf(child, "jetbrains.mps.bootstrap.helgins.structure.AbstractAntiquotation")) {
         SNode antiqExpression = SLinkOperations.getTarget(child, "expression", true);
         result.add(antiqExpression);
@@ -502,7 +506,7 @@ public class QueriesGenerated {
   }
   public static List sourceNodesQuery_1176816586186(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     List<SNode> result = new ArrayList();
-    for(SNode child : SNodeOperations.getDescendants(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "pattern", true), "pattern", true), null)) {
+    for(SNode child : SNodeOperations.getDescendants(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "pattern", true), "pattern", true), null, false)) {
       if(SNodeOperations.isInstanceOf(child, "jetbrains.mps.bootstrap.helgins.structure.AbstractAntiquotation")) {
         result.add(SLinkOperations.getTarget(child, "expression", true));
       }
