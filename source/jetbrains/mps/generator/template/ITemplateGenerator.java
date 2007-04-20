@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.ITemplateLanguageConstants;
 import jetbrains.mps.transformation.TLBase.structure.TemplateDeclaration;
 import jetbrains.mps.transformation.TLBase.structure.TemplateSwitch;
+import jetbrains.mps.transformation.TLBase.structure.RuleConsequence;
 import jetbrains.mps.typesystem.ITypeChecker;
 import jetbrains.mps.util.Condition;
 
@@ -60,7 +61,12 @@ public interface ITemplateGenerator extends ITemplateLanguageConstants {
 
   INodeBuilder getCurrentBuilder();
 
-  TemplateDeclaration getTemplateForSwitchCase(SNode sourceNode, TemplateSwitch templateSwitch);
+  /**
+   * @deprecated  for back compatibility with old switches
+   */
+  TemplateDeclaration getTemplateForSwitchCase_deprecated(SNode sourceNode, TemplateSwitch templateSwitch);
+
+  RuleConsequence getConsequenceForSwitchCase(SNode inputNode, TemplateSwitch templateSwitch);
 
   void showInformationMessage(SNode node, String message);
 

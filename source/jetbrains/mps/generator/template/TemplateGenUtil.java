@@ -692,7 +692,7 @@ public class TemplateGenUtil {
       LOG.error(e);
 
       return false;
-    } finally{
+    } finally {
       Statistics.add(mappingRule.getModel().getLongName() + "." + methodName, System.currentTimeMillis() - t1, res);
     }
   }
@@ -863,33 +863,61 @@ public class TemplateGenUtil {
   }
 
   private static INodeBuilder createNodeBuilderForSwitch(SNode sourceNode, TemplateSwitch templateSwitch, String mappingName, ITemplateGenerator generator) {
-    TemplateDeclaration templateForSwitchCase = (TemplateDeclaration) generator.getTemplateForSwitchCase(sourceNode, templateSwitch);
-    if (templateForSwitchCase == null) {
+    SNode templateNodeForCase = null;
+    RuleConsequence consequenceForCase = generator.getConsequenceForSwitchCase(sourceNode, templateSwitch);
+    if (consequenceForCase != null) {
+      if (consequenceForCase instanceof DismissTopMappingRule) {
+        TemplateGenUtil.showGeneratorMessage((GeneratorMessage) ((DismissTopMappingRule) consequenceForCase).getGeneratorMessage(), sourceNode, consequenceForCase.getNode(), generator);
+        throw new ReductionNotNeededException();
+      } else if (consequenceForCase instanceof TemplateDeclarationReference) {
+        TemplateDeclaration templateForSwitchCase = ((TemplateDeclarationReference) consequenceForCase).getTemplate();
+        templateNodeForCase = getTemplateNodeForSwitchCaseTemplate(sourceNode, templateForSwitchCase, templateSwitch, generator);
+      } else if (consequenceForCase instanceof InlineTemplate_RuleConsequence) {
+        templateNodeForCase = BaseAdapter.fromAdapter(((InlineTemplate_RuleConsequence) consequenceForCase).getTemplateNode());
+      } else {
+        generator.showErrorMessage(sourceNode, null, consequenceForCase.getNode(), "unsapported rule consequence");
+      }
+    } else {
+      // for back compatibility
+      TemplateDeclaration templateForSwitchCase = generator.getTemplateForSwitchCase_deprecated(sourceNode, templateSwitch);
+      if (templateForSwitchCase != null) {
+        templateNodeForCase = getTemplateNodeForSwitchCaseTemplate(sourceNode, templateForSwitchCase, templateSwitch, generator);
+      } else {
+        return null; // it's ok - process template surrounded with the switch macro
+      }
+    }
+
+    if (templateNodeForCase == null) {
+      generator.showErrorMessage(sourceNode, null, BaseAdapter.fromAdapter(templateSwitch), "failed to process switch");
       return null;
     }
 
-    List<TemplateFragment> templateFragments = getTemplateFragments(templateForSwitchCase);
-    if (templateFragments.isEmpty()) {
-      generator.showErrorMessage(sourceNode, BaseAdapter.fromAdapter(templateForSwitchCase), BaseAdapter.fromAdapter(templateSwitch), "couldn't create builder for switch: no template fragments found");
-      return new Void_NodeBuilder(sourceNode, templateForSwitchCase.getNode(), null, generator);
-    }
-    if (templateFragments.size() > 1) {
-      generator.showErrorMessage(sourceNode, BaseAdapter.fromAdapter(templateForSwitchCase), BaseAdapter.fromAdapter(templateSwitch), "couldn't create builder for switch: more than one (" + templateFragments.size() + ") fragments found");
-      return new Void_NodeBuilder(sourceNode, templateForSwitchCase.getNode(), null, generator);
-    }
-
-    TemplateFragment templateFragment = templateFragments.get(0);
-    SNode templateNodeForCase = BaseAdapter.fromAdapter(templateFragment.getParent());
-
     List<SNode> sourceNodes2 = createSourceNodeListForTemplateNode(sourceNode, templateNodeForCase, 0, generator);
+    if (sourceNodes2.size() == 0) {
+      return new Void_NodeBuilder(sourceNode, templateNodeForCase, null, generator);
+    }
     if (sourceNodes2.size() == 1) {
       return createNodeBuilder(sourceNodes2.get(0), templateNodeForCase, mappingName, 0, generator);
     }
 
-    if (sourceNodes2.size() > 1) {
-      generator.showErrorMessage(sourceNode, BaseAdapter.fromAdapter(templateForSwitchCase), BaseAdapter.fromAdapter(templateSwitch), "couldn't create builder for switch case: more than one (" + sourceNodes2.size() + ") source nodes are returned by query");
+    generator.showErrorMessage(sourceNode, templateNodeForCase, BaseAdapter.fromAdapter(templateSwitch), "couldn't create builder for switch case: can't map more than one (" + sourceNodes2.size() + ") input nodes");
+    return null;
+  }
+
+  private static SNode getTemplateNodeForSwitchCaseTemplate(SNode inputNode, TemplateDeclaration template, TemplateSwitch templateSwitch, ITemplateGenerator generator) {
+    List<TemplateFragment> templateFragments = getTemplateFragments(template);
+    if (templateFragments.isEmpty()) {
+      generator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), BaseAdapter.fromAdapter(templateSwitch), "couldn't create builder for switch: no template fragments found");
+      return null;
     }
-    return new Void_NodeBuilder(sourceNode, templateForSwitchCase.getNode(), null, generator);
+    if (templateFragments.size() > 1) {
+      generator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), BaseAdapter.fromAdapter(templateSwitch), "couldn't create builder for switch: more than one (" + templateFragments.size() + ") fragments found");
+      return null;
+    }
+
+    TemplateFragment templateFragment = templateFragments.get(0);
+    SNode templateNode = BaseAdapter.fromAdapter(templateFragment.getParent());
+    return templateNode;
   }
 
   protected static INodeBuilder applyReductionRule(SNode sourceNode, SNode reductionRule, ITemplateGenerator generator) {

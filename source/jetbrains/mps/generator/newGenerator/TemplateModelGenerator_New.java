@@ -2,12 +2,15 @@ package jetbrains.mps.generator.newGenerator;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.generator.GenerationFailedException;
-import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.GenerationFailueInfo;
+import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.template.*;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.transformation.TLBase.structure.*;
 import jetbrains.mps.typesystem.ITypeChecker;
 import jetbrains.mps.typesystem.TypeCheckerAccess;
@@ -340,7 +343,23 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     return myCurrentBuilder;  //This is hack
   }
 
-  public TemplateDeclaration getTemplateForSwitchCase(SNode sourceNode, TemplateSwitch templateSwitch) {
+  public RuleConsequence getConsequenceForSwitchCase(SNode inputNode, TemplateSwitch templateSwitch) {
+    INodeAdapter adapter = getConsequenceForSwitchCase_internal(inputNode, templateSwitch);
+    if (adapter instanceof RuleConsequence) {
+      return (RuleConsequence) adapter;
+    }
+    return null;
+  }
+
+  public TemplateDeclaration getTemplateForSwitchCase_deprecated(SNode inputNode, TemplateSwitch templateSwitch) {
+    INodeAdapter adapter = getConsequenceForSwitchCase_internal(inputNode, templateSwitch);
+    if (adapter instanceof TemplateDeclaration) {
+      return (TemplateDeclaration) adapter;
+    }
+    return null;
+  }
+
+  private INodeAdapter getConsequenceForSwitchCase_internal(SNode sourceNode, TemplateSwitch templateSwitch) {
     ConceptDeclaration nodeConcept = (ConceptDeclaration) sourceNode.getConceptDeclarationAdapter();
 
     if (myTemplateSwitchGraph == null) {
@@ -379,10 +398,10 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
       List<Reduction_MappingRule> rules = aSwitch.getReductionMappingRules();
       for (Reduction_MappingRule rule : rules) {
         if (TemplateGenUtil.checkPremiseForBaseMappingRule(sourceNode, nodeConcept, rule, this)) {
-          // new
+          // new (return consequences)
           RuleConsequence ruleConsequence = rule.getRuleConsequence();
           if (ruleConsequence != null) {
-            return processSwitchRuleConsequence(ruleConsequence, sourceNode, this);
+            return ruleConsequence;
           }
           // old
           TemplateDeclaration ruleTemplate = rule.getTemplate();
@@ -402,9 +421,10 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
       // new default
       RuleConsequence ruleConsequence = aSwitch.getDefaultConsequence();
       if (ruleConsequence != null) {
-        return processSwitchRuleConsequence(ruleConsequence, sourceNode, this);
+        return ruleConsequence;
       }
     }
+
     return null;
   }
 

@@ -688,7 +688,7 @@ public class QueriesGenerated {
     }
     return n;
   }
-  public static SNode sourceNodeQuery_1177032482363(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode sourceNodeQuery_1177103548906(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "conceptArgument", true), "expression", true);
   }
 }
