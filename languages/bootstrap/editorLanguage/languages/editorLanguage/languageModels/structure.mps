@@ -1795,7 +1795,7 @@
       <property name="targetCardinality" value="0..1" />
       <property name="sourceCardinality" value="1" />
       <property name="role" value="conceptDeclaration" />
-      <link role="target" targetNodeId="1.1071489090640" />
+      <link role="target" targetNodeId="1.1169125787135" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1173470691635">
       <link role="intfc" targetNodeId="3.1169194658468" />
