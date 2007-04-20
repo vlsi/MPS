@@ -164,14 +164,16 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     return output.toString();
   }
 
-  public Color getColor() {
+  public boolean hasErrors() {
     SModelTreeNode stn = getSModelModelTreeNode();
     ModelCheckResult r = stn.getModelCheckResult();
+    return r != null && r.hasErrorsInside(getSNode());
+  }
 
-    if (r != null && r.hasErrorsInside(getSNode())) {
+  public Color getColor() {
+    if (hasErrors()) {
       return Color.RED;
     }
-
     return Color.BLACK;
   }
 }

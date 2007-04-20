@@ -2,9 +2,11 @@ package jetbrains.mps.ide.ui.smodel;
 
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
+import jetbrains.mps.ide.ui.MPSTreeNode;
 
 import javax.swing.JPopupMenu;
 import java.awt.Rectangle;
+import java.awt.Color;
 import java.awt.event.KeyEvent;
 
 public class SNodeGroupTreeNode extends TextTreeNode {
@@ -39,6 +41,27 @@ public class SNodeGroupTreeNode extends TextTreeNode {
     }
   }
 
+  public boolean hasErrors() {
+    for (int i = 0; i < getChildCount(); i++) {
+      MPSTreeNode node = (MPSTreeNode) getChildAt(i);
+      if (node instanceof SNodeTreeNode) {
+        if (((SNodeTreeNode) node).hasErrors()) return true;
+      }
+
+      if (node instanceof SNodeGroupTreeNode) {
+        if (((SNodeGroupTreeNode) node).hasErrors()) return true;
+      }
+    }
+
+    return false;
+  }
+
+  public Color getColor() {
+    if (hasErrors()) {
+      return Color.RED;
+    }
+    return Color.BLACK;
+  }
 
   public boolean isAutoDelete() {
     return myAutoDelete;
