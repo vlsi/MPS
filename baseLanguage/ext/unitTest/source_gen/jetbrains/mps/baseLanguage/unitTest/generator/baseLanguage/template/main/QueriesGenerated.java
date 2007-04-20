@@ -43,7 +43,7 @@ public class QueriesGenerated {
     return superclass;
   }
   public static SNode sourceNodeQuery_1171932074447(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "statementList", true);
+    return SLinkOperations.getTarget(node, "body", true);
   }
   public static SNode sourceNodeQuery_1171978925030(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "expected", true);

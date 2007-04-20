@@ -10,7 +10,7 @@
     <node role="testMethodList" type="jetbrains.mps.baseLanguage.unitTest.TestMethodList" id="1172667103847">
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.TestMethod" id="1172667126985">
         <property name="methodName" value="skip1" />
-        <node role="statementList" type="jetbrains.mps.baseLanguage.StatementList" id="1172667126986">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1172667126986">
           <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1172667132487">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1172667132488">
               <property name="name" value="s" />
@@ -164,7 +164,7 @@
       </node>
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.TestMethod" id="1172667364856">
         <property name="methodName" value="take1" />
-        <node role="statementList" type="jetbrains.mps.baseLanguage.StatementList" id="1172667364857">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1172667364857">
           <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1172667380442">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1172667380443">
               <property name="name" value="s" />
@@ -320,7 +320,7 @@
       </node>
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.TestMethod" id="1172667481220">
         <property name="methodName" value="takeSkip" />
-        <node role="statementList" type="jetbrains.mps.baseLanguage.StatementList" id="1172667481221">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1172667481221">
           <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1172667489704">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1172667489705">
               <property name="name" value="s" />
@@ -440,7 +440,7 @@
       </node>
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.TestMethod" id="1172668363428">
         <property name="methodName" value="page" />
-        <node role="statementList" type="jetbrains.mps.baseLanguage.StatementList" id="1172668380748">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1172668380748">
           <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1172668380749">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1172668380750">
               <property name="name" value="s" />

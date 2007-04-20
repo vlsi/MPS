@@ -7,11 +7,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.StatementList;
 
 public class TestMethod extends BaseMethodDeclaration {
   public static String METHOD_NAME = "methodName";
-  public static String STATEMENT_LIST = "statementList";
 
   public  TestMethod(SNode node) {
     super(node);
@@ -29,11 +27,5 @@ public class TestMethod extends BaseMethodDeclaration {
   }
   public void setMethodName(String value) {
     this.setProperty(TestMethod.METHOD_NAME, value);
-  }
-  public StatementList getStatementList() {
-    return (StatementList)this.getChild(TestMethod.STATEMENT_LIST);
-  }
-  public void setStatementList(StatementList node) {
-    super.setChild(TestMethod.STATEMENT_LIST, node);
   }
 }

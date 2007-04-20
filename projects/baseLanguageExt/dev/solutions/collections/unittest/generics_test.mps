@@ -215,7 +215,7 @@
     <node role="testMethodList" type="jetbrains.mps.baseLanguage.unitTest.TestMethodList" id="1172029167444">
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.TestMethod" id="1172029180836">
         <property name="methodName" value="test1" />
-        <node role="statementList" type="jetbrains.mps.baseLanguage.StatementList" id="1172029180837">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1172029180837">
           <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1172029188738">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1172029188739">
               <property name="name" value="bools" />
@@ -252,7 +252,7 @@
       </node>
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.TestMethod" id="1172029195858">
         <property name="methodName" value="test2" />
-        <node role="statementList" type="jetbrains.mps.baseLanguage.StatementList" id="1172029195859">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1172029195859">
           <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1172029203862">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1172029203863">
               <property name="name" value="ints" />

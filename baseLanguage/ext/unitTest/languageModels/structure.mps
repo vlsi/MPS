@@ -8,12 +8,6 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1171931690126">
     <property name="name" value="TestMethod" />
     <link role="extends" targetNodeId="2.1068580123132" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1171931690127">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="statementList" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2.1068580123136" />
-    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1171931690128">
       <property name="name" value="methodName" />
       <link role="dataType" targetNodeId="1.1082983041843" />

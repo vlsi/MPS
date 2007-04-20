@@ -1069,7 +1069,7 @@
     <node role="testMethodList" type="jetbrains.mps.baseLanguage.unitTest.TestMethodList" id="1172256754302">
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.TestMethod" id="1172256778150">
         <property name="methodName" value="test1" />
-        <node role="statementList" type="jetbrains.mps.baseLanguage.StatementList" id="1172256778151">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1172256778151">
           <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1172256827202">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1172256827203">
               <property name="name" value="intS" />
@@ -1136,7 +1136,7 @@
       </node>
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.TestMethod" id="1172267731982">
         <property name="methodName" value="test2" />
-        <node role="statementList" type="jetbrains.mps.baseLanguage.StatementList" id="1172267731983">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1172267731983">
           <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1172267741016">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1172267741017">
               <property name="name" value="intL" />
@@ -1196,7 +1196,7 @@
     <node role="testMethodList" type="jetbrains.mps.baseLanguage.unitTest.TestMethodList" id="1176938643519">
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.TestMethod" id="1176938681926">
         <property name="methodName" value="union1" />
-        <node role="statementList" type="jetbrains.mps.baseLanguage.StatementList" id="1176938681927">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176938681927">
           <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1176938703546">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1176938703547">
               <property name="name" value="s1" />
