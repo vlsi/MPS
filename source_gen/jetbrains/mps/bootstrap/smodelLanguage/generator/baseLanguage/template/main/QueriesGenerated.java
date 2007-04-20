@@ -105,6 +105,9 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1169074949355(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return !(_QueriesUtil.operationHasParm_Concept(node));
   }
+  public static boolean baseMappingRule_Condition_1177031312269(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "conceptArgument", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Expression");
+  }
   public static String propertyMacro_GetPropertyValue_1170467024360(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     // <expr>.<property-access>.<operation>
     // <operation> : our input node
@@ -172,6 +175,9 @@ public class QueriesGenerated {
     return "" + _QueriesUtil.operationHasParm_Root(node);
   }
   public static String propertyMacro_GetPropertyValue_1170438409571(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "conceptArgument", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference")) {
+      return NameUtil.nodeFQName(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "conceptArgument", true), "conceptDeclaration", false));
+    }
     return NameUtil.nodeFQName(SLinkOperations.getTarget(node, "concept", false));
   }
   public static String propertyMacro_GetPropertyValue_1170443135014(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -681,5 +687,8 @@ public class QueriesGenerated {
       generator.showErrorMessage(node, "concept expression is undefined");
     }
     return n;
+  }
+  public static SNode sourceNodeQuery_1177032482363(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "conceptArgument", true), "expression", true);
   }
 }

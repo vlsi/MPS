@@ -5,6 +5,7 @@ package smodelLanguage.samples;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.NameUtil;
 
 public class ConceptRef {
 
@@ -13,5 +14,12 @@ public class ConceptRef {
     SNode concept2 = SNodeOperations.getConceptDeclaration(node);
     if(SConceptOperations.isAssignableFrom(concept1, concept2)) {
     }
+  }
+  public void instanceOf_1(SNode node, SNode concept1, SNode concept2) {
+    SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.IfStatement");
+    SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement")));
+    SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node)));
+    SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(concept1));
+    SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(concept2));
   }
 }

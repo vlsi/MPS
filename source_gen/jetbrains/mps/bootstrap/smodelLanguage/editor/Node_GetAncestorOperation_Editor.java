@@ -17,7 +17,7 @@ import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
 
 public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
 
-  public AbstractCellProvider myOperationParameters_Component;
+  public AbstractCellProvider myOperationParameters_Component5;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell4(context, node);
@@ -137,10 +137,10 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createOperationParameters_ComponentCell(EditorContext context, SNode node) {
-    if(this.myOperationParameters_Component == null) {
-      this.myOperationParameters_Component = new OperationParameters_Component(node);
+    if(this.myOperationParameters_Component5 == null) {
+      this.myOperationParameters_Component5 = new OperationParameters_Component(node);
     }
-    EditorCell componentCell = this.myOperationParameters_Component.createEditorCell(context);
+    EditorCell componentCell = this.myOperationParameters_Component5.createEditorCell(context);
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.addEditorCell(componentCell);
     editorCell.setSelectable(true);

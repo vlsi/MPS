@@ -15,7 +15,7 @@ import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class Node_GetAllSiblingsOperation_Editor extends DefaultNodeEditor {
 
-  public AbstractCellProvider myOperationParameters_Component;
+  public AbstractCellProvider myOperationParameters_Component3;
 
   public static boolean _QueryFunction_NodeCondition_1146258729757(SNode node, IScope scope) {
     return SLinkOperations.getCount(node, "parameter") == 0;
@@ -56,10 +56,10 @@ public class Node_GetAllSiblingsOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createOperationParameters_ComponentCell(EditorContext context, SNode node) {
-    if(this.myOperationParameters_Component == null) {
-      this.myOperationParameters_Component = new OperationParameters_Component(node);
+    if(this.myOperationParameters_Component3 == null) {
+      this.myOperationParameters_Component3 = new OperationParameters_Component(node);
     }
-    EditorCell componentCell = this.myOperationParameters_Component.createEditorCell(context);
+    EditorCell componentCell = this.myOperationParameters_Component3.createEditorCell(context);
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.addEditorCell(componentCell);
     editorCell.setSelectable(true);

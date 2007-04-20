@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
@@ -29,9 +30,10 @@ public class ConceptRefExpression_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "concept ref ("));
+    editorCell.addEditorCell(this.createConstantCell(context, node, "concept"));
+    editorCell.addEditorCell(this.createConstantCell1(context, node, "/"));
     editorCell.addEditorCell(this.createConceptDeclarationReferenceCell(context, node));
-    editorCell.addEditorCell(this.createConstantCell1(context, node, ")"));
+    editorCell.addEditorCell(this.createConstantCell2(context, node, "/"));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172424084370");
     editorCell.setLayoutConstraint("");
     return editorCell;
@@ -50,12 +52,26 @@ public class ConceptRefExpression_Editor extends DefaultNodeEditor {
   }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.setFontType(MPSFonts.PLAIN);
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177028645589");
+    editorCell.setLayoutConstraint("punctuation");
+    return editorCell;
+  }
+  public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.setFontType(MPSFonts.PLAIN);
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172424091843");
     editorCell.setLayoutConstraint("");
     return editorCell;
@@ -80,7 +96,7 @@ public class ConceptRefExpression_Editor extends DefaultNodeEditor {
   public EditorCell createConceptDeclarationReferenceCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("conceptDeclaration");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no concept>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createConceptDeclarationReferenceCellinternal(context, node, provider);
