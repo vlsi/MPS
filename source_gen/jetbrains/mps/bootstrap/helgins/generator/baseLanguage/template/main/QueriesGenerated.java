@@ -632,4 +632,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1176817614222(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "body", true);
   }
+  public static SNode sourceNodeQuery_1177069447756(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "subtypeExpression", true);
+  }
 }
