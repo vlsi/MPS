@@ -68,8 +68,7 @@ public class TemplateGenUtil {
     }
 
     // try to resolve the reference
-    IScope scope = generator.getScope();
-    IReferenceResolver referenceResolver = createReferenceResolver(templateNode, scope);
+    IReferenceResolver referenceResolver = createReferenceResolver(templateNode);
     return buildTargetNodeReference(nodeBuilder, templateReference, templateNode, targetNode, referenceResolver);
   }
 
@@ -113,8 +112,8 @@ public class TemplateGenUtil {
     return true;
   }
 
-  private static IReferenceResolver createReferenceResolver(SNode templateNode, IScope scope) {
-    IReferenceResolver referenceResolver = loadReferenceResolver(templateNode, scope);
+  private static IReferenceResolver createReferenceResolver(SNode templateNode) {
+    IReferenceResolver referenceResolver = loadReferenceResolver(templateNode);
     if (referenceResolver == null) {
       referenceResolver = new DefaultReferenceResolver();
     }
@@ -131,7 +130,7 @@ public class TemplateGenUtil {
     return referenceResolver;
   }
 
-  public static IReferenceResolver loadReferenceResolver(SNode templateNode, IScope scope) {
+  public static IReferenceResolver loadReferenceResolver(SNode templateNode) {
     ConceptDeclaration conceptDeclaration = (ConceptDeclaration) templateNode.getConceptDeclarationAdapter();
     while (conceptDeclaration != null) {
       String modelPackageName = JavaNameUtil.packageNameForModelUID(conceptDeclaration.getModel().getUID());
@@ -920,84 +919,54 @@ public class TemplateGenUtil {
     return templateNode;
   }
 
-  protected static INodeBuilder applyReductionRule(SNode sourceNode, SNode reductionRule, ITemplateGenerator generator) {
+  protected static INodeBuilder applyReductionRule(SNode inputNode, SNode reductionRule, ITemplateGenerator generator) {
     if (BaseAdapter.fromNode(reductionRule) instanceof ReductionRule) {
       // old
       TemplateDeclaration template = ((ReductionRule) reductionRule.getAdapter()).getTemplate();
-      return applyReductionRuleTemplate(template, generator, sourceNode, reductionRule);
+      return applyReductionRuleTemplate(inputNode, template, reductionRule, generator);
     }
     // new
-    return applyReductionMappingRule(sourceNode, (Reduction_MappingRule) reductionRule.getAdapter(), generator);
+    return applyReductionMappingRule(inputNode, (Reduction_MappingRule) reductionRule.getAdapter(), generator);
   }
 
-  private static INodeBuilder applyReductionMappingRule(SNode sourceNode, Reduction_MappingRule rule, ITemplateGenerator generator) {
-    TemplateDeclaration template = null;
+  private static INodeBuilder applyReductionMappingRule(SNode inputNode, Reduction_MappingRule rule, ITemplateGenerator generator) {
     RuleConsequence ruleConsequence = rule.getRuleConsequence();
     if (ruleConsequence != null) {
       if (ruleConsequence instanceof DismissTopMappingRule) {
-        showGeneratorMessage(((DismissTopMappingRule) ruleConsequence).getGeneratorMessage(), sourceNode, BaseAdapter.fromAdapter(rule), generator);
+        showGeneratorMessage(((DismissTopMappingRule) ruleConsequence).getGeneratorMessage(), inputNode, BaseAdapter.fromAdapter(rule), generator);
         throw new ReductionNotNeededException();
       } else if (ruleConsequence instanceof TemplateDeclarationReference) {
-        template = ((TemplateDeclarationReference) ruleConsequence).getTemplate();
+        TemplateDeclaration template = ((TemplateDeclarationReference) ruleConsequence).getTemplate();
+        return applyReductionRuleTemplate(inputNode, template, BaseAdapter.fromAdapter(rule), generator);
+      } else if (ruleConsequence instanceof InlineTemplate_RuleConsequence) {
+        BaseConcept templateNode = ((InlineTemplate_RuleConsequence) ruleConsequence).getTemplateNode();
+        if (templateNode != null) {
+          return applyReductionRuleTemplateNode(inputNode, templateNode.getNode(), rule.getName(), rule.getNode(), generator);
+        }
       } else {
-        generator.showErrorMessage(sourceNode, null, BaseAdapter.fromAdapter(rule), "unsapported rule consequence");
+        generator.showErrorMessage(inputNode, null, BaseAdapter.fromAdapter(rule), "unsapported rule consequence");
       }
     } else {
       // old
-      template = rule.getTemplate();
+      TemplateDeclaration template = rule.getTemplate();
+      return applyReductionRuleTemplate(inputNode, template, BaseAdapter.fromAdapter(rule), generator);
     }
 
-    return applyReductionRuleTemplate(template, generator, sourceNode, BaseAdapter.fromAdapter(rule));
+    generator.showErrorMessage(inputNode, null, BaseAdapter.fromAdapter(rule), "couldn't apply reduction rule");
+    return new Void_NodeBuilder(inputNode, BaseAdapter.fromAdapter(rule), null, generator);
   }
 
-  public static void showGeneratorMessage(GeneratorMessage message, SNode sourceNode, SNode rule, ITemplateGenerator generator) {
-    if (message != null) {
-      String text = message.getMessageText();
-      if (message.getMessageType() == GeneratorMessageType.error) {
-        generator.showErrorMessage(sourceNode, null, rule, text);
-      } else if (message.getMessageType() == GeneratorMessageType.warning) {
-        generator.showWarningMessage(sourceNode, text);
-      } else {
-        generator.showInformationMessage(sourceNode, text);
-      }
-    }
-  }
-
-  private static INodeBuilder applyReductionRuleTemplate(TemplateDeclaration template, ITemplateGenerator generator, SNode sourceNode, SNode reductionRule) {
+  private static INodeBuilder applyReductionRuleTemplate(SNode inputNode, TemplateDeclaration template, SNode reductionRule, ITemplateGenerator generator) {
     if (template == null) {
-      generator.showErrorMessage(sourceNode, null, reductionRule, "couldn't apply reduction: no template declaration");
+      generator.showErrorMessage(inputNode, null, reductionRule, "couldn't apply reduction: no template declaration");
       throw new RuntimeException("no template declaration");
     }
 
     List<TemplateFragment> templateFragments = getTemplateFragments(template);
 
-    // temporarily disable multiple fragments (18JAN07). remove code after reasonable time if nobody need it
-
-//    if (templateFragments.size() == 0) {
-//      generator.showErrorMessage(sourceNode, templateDeclaration, reductionRule, "template declaration has no template fragments");
-//      throw new RuntimeException("template declaration has no template fragments");
-//    }
-//
-//    SNode p1 = templateFragments.get(0).getParent();
-//    SNode enclosingNode = p1.getParent();
-//    List<INodeBuilder> buildersForRule = new LinkedList<INodeBuilder>();
-//    for (TemplateFragment fragment : templateFragments) {
-//      SNode fragmentNode = fragment.getParent();
-//      if (fragmentNode.getParent() != enclosingNode) {
-//        // all fragment nodes should have the same parent
-//        continue;
-//      }
-//
-//      String mappingName = fragment.getName();
-//      if (mappingName == null) {
-//        mappingName = reductionRule.getName();
-//      }
-//      buildersForRule.addAll(createNodeBuildersForTemplateNode(sourceNode, fragmentNode, mappingName, 0, generator));
-//    }
-
-    // enable single-fragment reducing
+    // single-fragment reducing only
     if (templateFragments.size() != 1) {
-      generator.showErrorMessage(sourceNode, BaseAdapter.fromAdapter(template), reductionRule, "reduction template must have exactly one template fragment");
+      generator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), reductionRule, "reduction template must have exactly one template fragment");
       throw new RuntimeException("reduction template must have exactly one template fragment");
     }
     TemplateFragment fragment = templateFragments.get(0);
@@ -1006,7 +975,11 @@ public class TemplateGenUtil {
       mappingName = reductionRule.getName();
     }
     SNode fragmentNode = BaseAdapter.fromAdapter(fragment.getParent());
-    List<INodeBuilder> buildersForRule = createNodeBuildersForTemplateNode(sourceNode, fragmentNode, mappingName, 0, generator);
+    return applyReductionRuleTemplateNode(inputNode, fragmentNode, mappingName, reductionRule, generator);
+  }
+
+  private static INodeBuilder applyReductionRuleTemplateNode(SNode inputNode, SNode templateNode, String mappingName, SNode reductionRule, ITemplateGenerator generator) {
+    List<INodeBuilder> buildersForRule = createNodeBuildersForTemplateNode(inputNode, templateNode, mappingName, 0, generator);
 
     INodeBuilder builderForRule;
     if (buildersForRule.size() == 1) {
@@ -1021,6 +994,18 @@ public class TemplateGenUtil {
     return builderForRule;
   }
 
+  public static void showGeneratorMessage(GeneratorMessage message, SNode sourceNode, SNode rule, ITemplateGenerator generator) {
+    if (message != null) {
+      String text = message.getMessageText();
+      if (message.getMessageType() == GeneratorMessageType.error) {
+        generator.showErrorMessage(sourceNode, null, rule, text);
+      } else if (message.getMessageType() == GeneratorMessageType.warning) {
+        generator.showWarningMessage(sourceNode, text);
+      } else {
+        generator.showInformationMessage(sourceNode, text);
+      }
+    }
+  }
 
   public static void printBuildersTree(INodeBuilder builder, int depth) {
     char[] indent = new char[depth * 3];
