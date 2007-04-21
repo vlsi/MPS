@@ -108,6 +108,9 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1177031312269(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "conceptArgument", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Expression");
   }
+  public static String propertyMacro_GetPropertyValue_1177115336225(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.getConceptFqName(SLinkOperations.getTarget(node, "conceptDeclaration", false));
+  }
   public static String propertyMacro_GetPropertyValue_1170467024360(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     // <expr>.<property-access>.<operation>
     // <operation> : our input node
@@ -338,9 +341,6 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(genuineLink, "role");
   }
   public static String propertyMacro_GetPropertyValue_1172329155840(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return QueriesUtil.getConceptFqName(SLinkOperations.getTarget(node, "conceptDeclaration", false));
-  }
-  public static String propertyMacro_GetPropertyValue_1172424406141(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return QueriesUtil.getConceptFqName(SLinkOperations.getTarget(node, "conceptDeclaration", false));
   }
   public static String propertyMacro_GetPropertyValue_1173119412100(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
