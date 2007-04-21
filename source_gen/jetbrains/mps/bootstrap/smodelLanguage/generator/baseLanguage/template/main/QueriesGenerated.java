@@ -403,6 +403,9 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1177113386164(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "leftExpression", true);
   }
+  public static SNode sourceNodeQuery_1177114720205(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "leftExpression", true);
+  }
   public static SNode sourceNodeQuery_1170466610811(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     // <expr>.<property-access>.<operation>
     // <operation> : our input node
@@ -518,9 +521,6 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_1170444043092(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
-  }
-  public static SNode sourceNodeQuery_1170704093260(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "leftExpression", true);
   }
   public static SNode sourceNodeQuery_1169069851562(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     // <expr-to-copy> . linklist-access . count-op
