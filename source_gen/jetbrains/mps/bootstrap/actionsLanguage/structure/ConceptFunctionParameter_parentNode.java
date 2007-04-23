@@ -10,14 +10,14 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ConceptFunctionParameter_parentNode extends ConceptFunctionParameter {
 
-  public ConceptFunctionParameter_parentNode(SNode node) {
+  public  ConceptFunctionParameter_parentNode(SNode node) {
     super(node);
   }
 
   public static ConceptFunctionParameter_parentNode newInstance(SModel sm, boolean init) {
-    return (ConceptFunctionParameter_parentNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionParm_parentNode", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunctionParameter_parentNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parentNode", sm, GlobalScope.getInstance(), init).getAdapter();
   }
   public static ConceptFunctionParameter_parentNode newInstance(SModel sm) {
-    return newInstance(sm, false);
+    return ConceptFunctionParameter_parentNode.newInstance(sm, false);
   }
 }
