@@ -38,6 +38,12 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1176817952409(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SLinkOperations.getTarget(node, "applicableNode", false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.CoerceStatement");
   }
+  public static boolean baseMappingRule_Condition_1177333576000(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(node, "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.AbstractRule");
+  }
+  public static boolean baseMappingRule_Condition_1177333630561(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(node, "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.CoerceStatement");
+  }
   public static boolean baseMappingRule_Condition_1176817655159(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "pattern", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
   }
@@ -266,8 +272,11 @@ public class QueriesGenerated {
     return generator.findNodeBuilderForSource(SLinkOperations.getTarget(node, "pattern", true), "patternClass").getTargetNode().getChild("constructor");
   }
   public static SNode referenceMacro_GetReferent_1174999318513(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode rule = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.helgins.structure.AbstractRule", false, false);
-    return generator.findNodeBuilderForSource(rule, "applicableNodePatternField").getTargetNode();
+    SNode rule = SNodeOperations.getAncestor(SLinkOperations.getTarget(node, "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.AbstractRule", false, false);
+    if(rule != null) {
+      return generator.findNodeBuilderForSource(rule, "applicableNodePatternField").getTargetNode();
+    }
+    return null;
   }
   public static SNode referenceMacro_GetReferent_1174997611702(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return generator.findNodeBuilderForSource(SLinkOperations.getTarget(node, "patternVarDecl", false), "patternVarField").getTargetNode();
@@ -308,12 +317,25 @@ public class QueriesGenerated {
   public static SNode referenceMacro_GetReferent_1176549220787(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return generator.findNodeBuilderForSource(node, "multipleLoopIterDecl").getTargetNode();
   }
+  public static SNode referenceMacro_GetReferent_1177335329571(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return generator.findNodeBuilderForSource(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "pattern", true), "pattern", true), "patternClass").getTargetNode();
+  }
   public static SNode referenceMacro_GetReferent_1176815596912(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return generator.findNodeBuilderForSource(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "pattern", true), "pattern", true), "patternConstructor").getTargetNode();
   }
   public static SNode referenceMacro_GetReferent_1176817939040(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode parent = SNodeOperations.getParent(SLinkOperations.getTarget(node, "applicableNode", false), null, false, false);
     return generator.findNodeBuilderForSource(parent, "coercedNode").getTargetNode();
+  }
+  public static SNode referenceMacro_GetReferent_1177333800976(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode coerceStatement = SNodeOperations.getAncestor(SLinkOperations.getTarget(node, "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.CoerceStatement", false, false);
+    if(coerceStatement != null) {
+      return generator.findNodeBuilderForSource(coerceStatement, "coercedPattern").getTargetNode();
+    }
+    return null;
+  }
+  public static SNode referenceMacro_GetReferent_1177334072396(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return generator.findNodeBuilderForSource(SLinkOperations.getTarget(node, "patternVarDecl", false), "patternVarField").getTargetNode();
   }
   public static boolean ifMacro_Condition_1174589744219(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return false;
@@ -394,6 +416,9 @@ public class QueriesGenerated {
     return true;
   }
   public static boolean ifMacro_Condition_1176555418137(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return true;
+  }
+  public static boolean ifMacro_Condition_1177333456827(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return true;
   }
   public static boolean ifMacro_Condition_1176818088438(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
