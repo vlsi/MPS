@@ -214,4 +214,37 @@ public class QueriesGenerated {
     }
     return result;
   }
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1177338141665(final SNode sourceNode, final SNode currentTargetNode, final ConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", operationContext.getScope());
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          List<Integer> ints = new ArrayList<Integer>();
+          ListOperations.addElement(ints, 239);
+          ListOperations.addElement(ints, 30);
+          return ints;
+        }
+      };
+      List<Integer> queryResult = (List)calc.calculate();
+      for(Integer item : queryResult) {
+        result.add(new DefaultChildNodeSubstituteAction(item, sourceNode, currentTargetNode, childSetter, operationContext.getScope()) {
+
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode cons = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.IntegerConstant");
+            SPropertyOperations.set(cons, "value", "" + (((Integer)this.getParameterObject())));
+            return cons;
+          }
+          public String getMatchingText(String pattern) {
+            return ((Integer)this.getParameterObject()) + "";
+          }
+          public String getDescriptionText(String pattern) {
+            return "predefined integer";
+          }
+        });
+      }
+    }
+    return result;
+  }
 }
