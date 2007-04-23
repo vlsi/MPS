@@ -20,6 +20,31 @@
       <property name="actionsFactoryAspectId" value="Expression" />
       <property name="applicableLinkMetaclass" value="aggregation" />
       <link role="applicableConcept" targetNodeId="1.1068431790191" />
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddDefaultsPart" id="1177324768591" />
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.OverridePart" id="1177324846620">
+        <link role="concept" targetNodeId="1.1068580320020" />
+      </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.OverridePart" id="1177324839815">
+        <link role="concept" targetNodeId="1.1111509017652" />
+      </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.OverridePart" id="1177324853302">
+        <link role="concept" targetNodeId="1.1068580123137" />
+      </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddPart" id="1177324881392">
+        <link role="concept" targetNodeId="1.1068580123158" />
+      </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddPart" id="1177324891025">
+        <link role="concept" targetNodeId="1.1068580123163" />
+      </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddPart" id="1177324897455">
+        <link role="concept" targetNodeId="1.1070533707846" />
+      </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddPart" id="1177324924651">
+        <link role="concept" targetNodeId="1.1081236700937" />
+      </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddPart" id="1177324968052">
+        <link role="concept" targetNodeId="1.1107135704075" />
+      </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1119298590500">
       <property name="actionsFactoryAspectId" value="Statement" />
@@ -404,8 +429,8 @@
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1140831852602">
       <property name="description" value="add type parameters to new-expression" />
-      <property name="actionsFactoryAspectId" value="NewExpression_addTypeParameter" />
       <property name="transformTag" value="ext_1_RTransform" />
+      <property name="actionsFactoryAspectId" value="NewExpression_addTypeParameter" />
       <link role="applicableConcept" targetNodeId="1.1068581242872" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionFunction" id="1159200493867">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1159200493868">
