@@ -16,7 +16,7 @@
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1169582381137">
           <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1169582443491">
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1169582463431">
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionParm_parentNode" id="1169582460352" />
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parentNode" id="1169582460352" />
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1169582465151">
                 <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.RefConcept_Reference" id="1177093043370">
                   <link role="conceptDeclaration" targetNodeId="1.1167171569011" />

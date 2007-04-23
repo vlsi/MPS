@@ -12,8 +12,8 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActions" id="1151703690959">
     <property name="name" value="BLC_rtansform" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1151703707960">
-      <property name="actionsFactoryAspectId" value="Expression_to_SequenceOperationExpression" />
       <property name="description" value="transform to sequence-operation-expression. only applicable to expression of 'sequence' type" />
+      <property name="actionsFactoryAspectId" value="Expression_to_SequenceOperationExpression" />
       <link role="applicableConcept" targetNodeId="2.1068431790191" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionFunction" id="1161719130431">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1161719130432">
@@ -63,9 +63,9 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions" id="1152143990738">
     <property name="name" value="BLC_node_substitute" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1152144005896">
+      <property name="description" value="some blocks allows using of stop/skip/yield statements" />
       <property name="actionsFactoryAspectId" value="Inside__ValueSupplier_Mapper_ForEach" />
       <property name="actionsFilterAspectId" value="Inside__ValueSupplier_Mapper_ForEach" />
-      <property name="description" value="some blocks allows using of stop/skip/yield statements" />
       <link role="applicableConcept" targetNodeId="2.1068580123157" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionFunction" id="1160672994889">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1160672994890">
@@ -74,7 +74,7 @@
               <property name="name" value="block" />
               <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1160673732290" />
               <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1160673208012">
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionParm_parentNode" id="1160673028611" />
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parentNode" id="1160673028611" />
                 <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAncestorOperation" id="1174260289759">
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_ConceptList" id="1160673224984">
                     <node role="concept" type="jetbrains.mps.bootstrap.smodelLanguage.ConceptReference" id="1160673232314">
@@ -106,8 +106,8 @@
       </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1160663024951">
-      <property name="actionsFactoryAspectId" value="SequenceOperation_filtered" />
       <property name="description" value="some of operations are only applicable to 'list' (like add/addAll etc.)" />
+      <property name="actionsFactoryAspectId" value="SequenceOperation_filtered" />
       <link role="applicableConcept" targetNodeId="1.1151701983961" />
     </node>
   </node>

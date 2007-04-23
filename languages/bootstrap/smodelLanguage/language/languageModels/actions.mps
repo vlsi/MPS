@@ -17,13 +17,13 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions" id="1138078942005">
     <property name="name" value="SModelLang_node_substitute" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1173984362064">
-      <property name="actionsFactoryAspectId" value="NoActions" />
       <property name="description" value="disable default substitute" />
+      <property name="actionsFactoryAspectId" value="NoActions" />
       <link role="applicableConcept" targetNodeId="1.1138411891628" />
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1138413233760">
-      <property name="actionsFactoryAspectId" value="PrimaryOperations_for_leftExpression" />
       <property name="description" value="all operations appropriate for expression before'.'" />
+      <property name="actionsFactoryAspectId" value="PrimaryOperations_for_leftExpression" />
       <property name="applicableLinkMetaclass" value="aggregation" />
       <link role="applicableConcept" targetNodeId="1.1138411891628" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionFunction" id="1161715685433">
@@ -37,7 +37,7 @@
               <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1173919433961">
                 <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeTypeCastExpression" id="1173919433962">
                   <link role="concept" targetNodeId="1.1138055978872" />
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionParm_parentNode" id="1173919433963" />
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parentNode" id="1173919433963" />
                 </node>
                 <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1173919433964">
                   <link role="link" targetNodeId="1.1138056667223" />
@@ -58,8 +58,8 @@
       </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1173979260328">
-      <property name="actionsFactoryAspectId" value="PropertyAccess_for_leftExpression" />
       <property name="description" value="all appropriate 'property access' operations" />
+      <property name="actionsFactoryAspectId" value="PropertyAccess_for_leftExpression" />
       <link role="applicableConcept" targetNodeId="1.1138411891628" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionFunction" id="1173979326981">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1173979326982">
@@ -72,7 +72,7 @@
               <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1173979326986">
                 <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeTypeCastExpression" id="1173979326987">
                   <link role="concept" targetNodeId="1.1138055978872" />
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionParm_parentNode" id="1173979326988" />
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parentNode" id="1173979326988" />
                 </node>
                 <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1173979326989">
                   <link role="link" targetNodeId="1.1138056667223" />
@@ -93,8 +93,8 @@
       </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1173980551142">
-      <property name="actionsFactoryAspectId" value="LinkAccess_for_leftExpression" />
       <property name="description" value="all appropriate 'link access' operations" />
+      <property name="actionsFactoryAspectId" value="LinkAccess_for_leftExpression" />
       <link role="applicableConcept" targetNodeId="1.1138411891628" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionFunction" id="1173980551143">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1173980551144">
@@ -107,7 +107,7 @@
               <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1173980551148">
                 <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeTypeCastExpression" id="1173980551149">
                   <link role="concept" targetNodeId="1.1138055978872" />
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionParm_parentNode" id="1173980551150" />
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parentNode" id="1173980551150" />
                 </node>
                 <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1173980551151">
                   <link role="link" targetNodeId="1.1138056667223" />

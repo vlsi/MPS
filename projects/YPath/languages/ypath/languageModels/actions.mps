@@ -265,7 +265,7 @@
                   </node>
                   <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeTypeCastExpression" id="1172656756742">
                     <link role="concept" targetNodeId="1.1168468602533" />
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionParm_parentNode" id="1172067253750" />
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parentNode" id="1172067253750" />
                   </node>
                 </node>
               </node>
@@ -305,7 +305,7 @@
               </node>
             </node>
             <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1172066558511">
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionParm_parentNode" id="1172066555493" />
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parentNode" id="1172066555493" />
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1172066563113">
                 <link role="concept" targetNodeId="1.1168468602533" />
               </node>
@@ -325,7 +325,7 @@
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1169038722085">
           <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1172067554216">
             <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1172067562280">
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionParm_parentNode" id="1172067557110" />
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parentNode" id="1172067557110" />
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1172067566597">
                 <link role="concept" targetNodeId="1.1168468602533" />
               </node>
@@ -339,7 +339,7 @@
                   </node>
                   <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeTypeCastExpression" id="1172656767858">
                     <link role="concept" targetNodeId="1.1168468602533" />
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionParm_parentNode" id="1172067607292" />
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parentNode" id="1172067607292" />
                   </node>
                 </node>
               </node>
@@ -381,7 +381,7 @@
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1169039090801">
           <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1172067690651">
             <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1172067694743">
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionParm_parentNode" id="1172067693527" />
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parentNode" id="1172067693527" />
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1172067697846">
                 <link role="concept" targetNodeId="1.1168468602533" />
               </node>
@@ -395,7 +395,7 @@
                   </node>
                   <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeTypeCastExpression" id="1172656782791">
                     <link role="concept" targetNodeId="1.1168468602533" />
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionParm_parentNode" id="1172067767976" />
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parentNode" id="1172067767976" />
                   </node>
                 </node>
               </node>
