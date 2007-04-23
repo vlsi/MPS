@@ -55,6 +55,12 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_1177336442294(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "matchingText", true) != null;
   }
+  public static boolean ifMacro_Condition_1177357107076(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "matchingText", true) != null;
+  }
+  public static boolean ifMacro_Condition_1177357899517(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "descriptionText", true) != null;
+  }
   public static List sourceNodesQuery_1177330914926(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.getDescendants(node, "jetbrains.mps.bootstrap.actionsLanguage.structure.MenuPart", false);
   }
@@ -90,5 +96,14 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_1177354123170(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "handler", true), "body", true);
+  }
+  public static SNode sourceNodeQuery_1177357083101(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "matchingText", true), "body", true);
+  }
+  public static SNode sourceNodeQuery_1177357877609(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "descriptionText", true), "body", true);
+  }
+  public static SNode sourceNodeQuery_1177357415115(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedMenuPart", false, false), "type", true);
   }
 }
