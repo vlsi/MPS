@@ -781,7 +781,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     Set<ModelOwner> owners = SModelRepository.getInstance().getOwners(modelDescriptor);
     LanguageAspectStatus accessoryStatus = null;
     try {
-
       for (ModelOwner modelOwner : owners) {
         if (modelOwner instanceof Language) {
           LanguageAspectStatus languageAspectStatus = getLanguageAspectStatus((Language) modelOwner, modelDescriptor);
