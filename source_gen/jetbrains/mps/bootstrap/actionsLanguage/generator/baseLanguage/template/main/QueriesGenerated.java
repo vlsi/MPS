@@ -14,8 +14,8 @@ import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBu
 import jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActionsBuilder;
 import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactory;
 import jetbrains.mps.util.NameUtil;
-import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import java.util.List;
 
 public class QueriesGenerated {
 
@@ -38,7 +38,7 @@ public class QueriesGenerated {
     return ActionQueryMethodName.nodeFactory_SubstituteActionBuilder(((NodeSubstituteActionsBuilder)SNodeOperations.getAdapter(node)));
   }
   public static String propertyMacro_GetPropertyValue_1177331479810(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node));
+    return NameUtil.nodeFQName(SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "concept", false));
   }
   public static List sourceNodesQuery_1177330914926(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.getDescendants(node, "jetbrains.mps.bootstrap.actionsLanguage.structure.MenuPart", false);

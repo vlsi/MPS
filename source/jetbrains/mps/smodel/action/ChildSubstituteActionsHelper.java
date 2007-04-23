@@ -300,25 +300,40 @@ public class ChildSubstituteActionsHelper {
   }
 
   private static List<INodeSubstituteAction> invokeActionFactory(NodeSubstituteActionsBuilder builder, SNode parentNode, SNode currentChild, AbstractConceptDeclaration childConcept, IChildNodeSetter childSetter, IOperationContext context) {
-    String factoryQueryMethodId = builder.getActionsFactoryAspectId();
-    // factory is optional
-    if (factoryQueryMethodId == null) {
-      return Collections.emptyList();
-    }
+    if (!builder.getUseNewActions()) {
+      String factoryQueryMethodId = builder.getActionsFactoryAspectId();
+      // factory is optional
+      if (factoryQueryMethodId == null) {
+        return Collections.emptyList();
+      }
 
-    Object[] args1 = new Object[]{parentNode,
-            currentChild,
-            childConcept.getNode(),
-            childSetter,
-            context};
-    Object[] args2 = new Object[]{parentNode,
-            currentChild,
-            childConcept.getNode(),
-            childSetter,
-            context.getScope()};
-    String methodName = "nodeSubstituteActionsBuilder_ActionsFactory_" + factoryQueryMethodId;
-    SModel model = builder.getModel();
-    return (List<INodeSubstituteAction>) QueryMethod.invoke_alternativeArguments(methodName, args1, args2, model);
+      Object[] args1 = new Object[]{parentNode,
+              currentChild,
+              childConcept.getNode(),
+              childSetter,
+              context};
+      Object[] args2 = new Object[]{parentNode,
+              currentChild,
+              childConcept.getNode(),
+              childSetter,
+              context.getScope()};
+      String methodName = "nodeSubstituteActionsBuilder_ActionsFactory_" + factoryQueryMethodId;
+      SModel model = builder.getModel();
+      return (List<INodeSubstituteAction>) QueryMethod.invoke_alternativeArguments(methodName, args1, args2, model);
+    } else {
+      Object[] args1 = new Object[]{parentNode,
+              currentChild,
+              childConcept,
+              childSetter,
+              context};
+      String methodName = ActionQueryMethodName.nodeFactory_SubstituteActionBuilder(builder);
+      try {
+        return (List<INodeSubstituteAction>) QueryMethodGenerated.invoke(methodName, args1, builder.getModel());
+      } catch (Exception e) {
+        e.printStackTrace();
+        return Collections.emptyList();
+      }
+    }
   }
 
   private static class SmartRefChildNodeSubstituteAction extends DefaultChildNodeSubstituteAction {

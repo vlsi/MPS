@@ -10,12 +10,10 @@ public abstract class DefaultSimpleSubstituteAction extends DefaultChildNodeSubs
 
 
   public boolean canSubstituteStrictly(String pattern) {
-    if (super.canSubstituteStrictly(pattern)) return true;
     return canSubstitute_internal(pattern);
   }
 
   public boolean canSubstitute(String pattern) {
-    if (super.canSubstitute(pattern)) return true;
     return canSubstitute_internal(pattern);
   }
 

@@ -351,21 +351,10 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177323645393">
     <property name="name" value="OverridePart" />
     <property name="package" value="NodeBuilderParts" />
-    <link role="extends" targetNodeId="1177323240852" resolveInfo="NodeBuilderPart" />
+    <link role="extends" targetNodeId="1177333529597" resolveInfo="ConceptPart" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1177323966819">
       <property name="value" value="override" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177323778080">
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="concept" />
-      <link role="target" targetNodeId="2.1071489090640" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177323797294">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="0..n" />
-      <property name="role" value="menuPart" />
-      <link role="target" targetNodeId="1177323652379" resolveInfo="MenuPart" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177323652379">
@@ -379,21 +368,10 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177323996388">
     <property name="name" value="AddPart" />
     <property name="package" value="NodeBuilderParts" />
-    <link role="extends" targetNodeId="1177323240852" resolveInfo="NodeBuilderPart" />
+    <link role="extends" targetNodeId="1177333529597" resolveInfo="ConceptPart" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1177324874604">
       <property name="value" value="add" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177324012267">
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="concept" />
-      <link role="target" targetNodeId="2.1071489090640" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177324012268">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="0..n" />
-      <property name="role" value="menuPart" />
-      <link role="target" targetNodeId="1177323652379" resolveInfo="MenuPart" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177327161126">
@@ -475,6 +453,25 @@
       <property name="sourceCardinality" value="1" />
       <property name="role" value="handler" />
       <link role="target" targetNodeId="1177327570013" resolveInfo="QueryFunction_Handler" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177333529597">
+    <property name="name" value="ConceptPart" />
+    <property name="package" value="NodeBuilderParts" />
+    <link role="extends" targetNodeId="1177323240852" resolveInfo="NodeBuilderPart" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177333551023">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="concept" />
+      <link role="target" targetNodeId="2.1071489090640" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177333559040">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="part" />
+      <link role="target" targetNodeId="1177323652379" resolveInfo="MenuPart" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1177333549225">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
     </node>
   </node>
 </model>

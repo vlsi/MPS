@@ -131,22 +131,23 @@ public class QueriesGenerated {
       }
     }
   }
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1177328442875(SNode sourceNode, SNode currentTargetNode, ConceptDeclaration childConcept, IChildNodeSetter childSetter, IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1177334116177(SNode sourceNode, SNode currentTargetNode, ConceptDeclaration childConcept, IChildNodeSetter childSetter, IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    int m = 23;
     {
-      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.SimpleItemPart", operationContext.getScope());
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", operationContext.getScope());
       result.add(new DefaultSimpleSubstituteAction(concept, sourceNode, currentTargetNode, childSetter, operationContext.getScope()) {
 
         public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.IntegerConstant");
-          SPropertyOperations.set(result, "value", "" + (Integer.parseInt(pattern)));
-          return result;
+          SNode cons = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.IntegerConstant");
+          SPropertyOperations.set(cons, "value", "" + (Integer.parseInt(pattern)));
+          return cons;
         }
         public boolean canSubstitute_internal(String pattern) {
           {
             Pattern _pattern_0 = Pattern.compile("(?:\\d)+", 0);
             Matcher _matcher_0 = _pattern_0.matcher(pattern);
-            if(_matcher_0.find()) {
+            if(_matcher_0.matches()) {
               return true;
             }
           }
