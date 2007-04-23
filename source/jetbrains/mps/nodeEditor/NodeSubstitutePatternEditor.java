@@ -183,7 +183,7 @@ public class NodeSubstitutePatternEditor {
       }
 
       char keyChar = keyEvent.getKeyChar();
-      if(KeyboardUtil.isDefaultAction(keyEvent.getKeyCode(), keyChar)) {
+      if(KeyboardUtil.isDefaultAction(keyEvent)) {
         changeText(myText.substring(0, caretPosition) + keyChar/* + myText.substring(caretPosition)*/);
         myTextLine.setCaretPosition(caretPosition + 1);
         return true;
