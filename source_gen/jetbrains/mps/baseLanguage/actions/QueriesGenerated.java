@@ -133,15 +133,14 @@ public class QueriesGenerated {
   }
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1177334764520(SNode sourceNode, SNode currentTargetNode, ConceptDeclaration childConcept, IChildNodeSetter childSetter, IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
-    int m = 23;
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", operationContext.getScope());
       result.add(new DefaultSimpleSubstituteAction(concept, sourceNode, currentTargetNode, childSetter, operationContext.getScope()) {
 
         public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-          SNode integerConst = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.IntegerConstant");
-          SPropertyOperations.set(integerConst, "value", "" + (Integer.parseInt(pattern)));
-          return integerConst;
+          SNode boolConst = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.IntegerConstant");
+          SPropertyOperations.set(boolConst, "value", "" + (Integer.parseInt(pattern)));
+          return boolConst;
         }
         public boolean hasSubstitute() {
           return true;
@@ -149,6 +148,58 @@ public class QueriesGenerated {
         public boolean canSubstitute_internal(String pattern) {
           {
             Pattern _pattern_0 = Pattern.compile("(?:\\d)+", 0);
+            Matcher _matcher_0 = _pattern_0.matcher(pattern);
+            if(_matcher_0.matches()) {
+              return true;
+            }
+          }
+          return false;
+        }
+      });
+    }
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", operationContext.getScope());
+      result.add(new DefaultSimpleSubstituteAction(concept, sourceNode, currentTargetNode, childSetter, operationContext.getScope()) {
+
+        public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+          SNode integerConst = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.BooleanConstant");
+          SPropertyOperations.set(integerConst, "value", "" + (true));
+          return integerConst;
+        }
+        public String getMatchingText(String pattern) {
+          return "true";
+        }
+      });
+    }
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", operationContext.getScope());
+      result.add(new DefaultSimpleSubstituteAction(concept, sourceNode, currentTargetNode, childSetter, operationContext.getScope()) {
+
+        public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+          SNode boolConst = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.BooleanConstant");
+          SPropertyOperations.set(boolConst, "value", "" + (false));
+          return boolConst;
+        }
+        public String getMatchingText(String pattern) {
+          return "false";
+        }
+      });
+    }
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatingPointConstant", operationContext.getScope());
+      result.add(new DefaultSimpleSubstituteAction(concept, sourceNode, currentTargetNode, childSetter, operationContext.getScope()) {
+
+        public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+          SNode boolConst = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.FloatingPointConstant");
+          SPropertyOperations.set(boolConst, "value", pattern);
+          return boolConst;
+        }
+        public boolean hasSubstitute() {
+          return true;
+        }
+        public boolean canSubstitute_internal(String pattern) {
+          {
+            Pattern _pattern_0 = Pattern.compile("(?:(?:(?:-)?))(?:(?:(?:\\d)+)(?:(?:\\.)(?:(?:\\d)*)))", 0);
             Matcher _matcher_0 = _pattern_0.matcher(pattern);
             if(_matcher_0.matches()) {
               return true;

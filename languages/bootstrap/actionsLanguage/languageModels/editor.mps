@@ -1107,6 +1107,10 @@
           <link role="relationDeclaration" targetNodeId="1.1177333559040" />
         </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1177336274122">
+        <property name="text" value=" " />
+        <property name="selectable" value="false" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1177327881805">
@@ -1143,6 +1147,38 @@
               <property name="noTargetText" value="&lt;default&gt;" />
               <property name="drawBrackets" value="true" />
               <link role="relationDeclaration" targetNodeId="1.1177327698839" />
+            </node>
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1177336072132">
+            <property name="textFgColor" value="DARK_BLUE" />
+            <property name="text" value="matching text" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1177336072133">
+            <property name="selectable" value="false" />
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1177336072134">
+              <property name="text" value="  " />
+              <property name="selectable" value="false" />
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1177336072135">
+              <property name="noTargetText" value="&lt;default&gt;" />
+              <property name="drawBrackets" value="true" />
+              <link role="relationDeclaration" targetNodeId="1.1177336013307" />
+            </node>
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1177336094053">
+            <property name="textFgColor" value="DARK_BLUE" />
+            <property name="text" value="description text" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1177336094054">
+            <property name="selectable" value="false" />
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1177336094055">
+              <property name="text" value="  " />
+              <property name="selectable" value="false" />
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1177336094056">
+              <property name="noTargetText" value="&lt;default&gt;" />
+              <property name="drawBrackets" value="true" />
+              <link role="relationDeclaration" targetNodeId="1.1177336018902" />
             </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1177327948202">

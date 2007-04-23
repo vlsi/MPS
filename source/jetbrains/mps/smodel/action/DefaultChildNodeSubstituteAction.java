@@ -32,6 +32,8 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
     return null;
   }
 
+  
+
   public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
     ConceptDeclaration conceptDeclaration = null;
     if (parameterObject instanceof SNode) {

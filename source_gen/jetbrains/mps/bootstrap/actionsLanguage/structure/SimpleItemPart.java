@@ -8,6 +8,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class SimpleItemPart extends MenuPart {
+  public static String MATCHING_TEXT = "matchingText";
+  public static String DESCRIPTION_TEXT = "descriptionText";
   public static String CAN_SUBSTITUTE = "canSubstitute";
   public static String HANDLER = "handler";
 
@@ -22,6 +24,18 @@ public class SimpleItemPart extends MenuPart {
     return SimpleItemPart.newInstance(sm, false);
   }
 
+  public QueryFunction_String getMatchingText() {
+    return (QueryFunction_String)this.getChild(SimpleItemPart.MATCHING_TEXT);
+  }
+  public void setMatchingText(QueryFunction_String node) {
+    super.setChild(SimpleItemPart.MATCHING_TEXT, node);
+  }
+  public QueryFunction_String getDescriptionText() {
+    return (QueryFunction_String)this.getChild(SimpleItemPart.DESCRIPTION_TEXT);
+  }
+  public void setDescriptionText(QueryFunction_String node) {
+    super.setChild(SimpleItemPart.DESCRIPTION_TEXT, node);
+  }
   public QueryFunction_CanSubstitute getCanSubstitute() {
     return (QueryFunction_CanSubstitute)this.getChild(SimpleItemPart.CAN_SUBSTITUTE);
   }

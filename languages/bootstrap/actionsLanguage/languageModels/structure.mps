@@ -442,6 +442,16 @@
     <property name="name" value="SimpleItemPart" />
     <property name="package" value="MenuParts" />
     <link role="extends" targetNodeId="1177323652379" resolveInfo="MenuPart" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177336013307">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="matchingText" />
+      <link role="target" targetNodeId="1177335944525" resolveInfo="QueryFunction_String" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177336018902">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="descriptionText" />
+      <link role="target" targetNodeId="1177335944525" resolveInfo="QueryFunction_String" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177327698839">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="0..1" />
@@ -472,6 +482,29 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1177333549225">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177335944525">
+    <property name="name" value="QueryFunction_String" />
+    <property name="package" value="QueryFunctions" />
+    <link role="extends" targetNodeId="3.1137021947720" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1177335968687">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" />
+      <link role="target" targetNodeId="5.1161622753914" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1177335968688">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" />
+      <link role="target" targetNodeId="1154465273778" resolveInfo="ConceptFunctionParameter_parentNode" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1177335968689">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" />
+      <link role="target" targetNodeId="1177327274449" resolveInfo="ConceptFunctionParameter_pattern" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1177335993647">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" />
+      <node role="target" type="jetbrains.mps.baseLanguage.ClassifierType" id="1177335996071">
+        <link role="classifier" extResolveInfo="6.[Classifier]String" />
+      </node>
     </node>
   </node>
 </model>
