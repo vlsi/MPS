@@ -425,6 +425,9 @@
       <property name="value" value="pattern" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1177328325126">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
+    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1177327358084">
       <link role="conceptLinkDeclaration" targetNodeId="3.1137545963098" />
       <node role="target" type="jetbrains.mps.baseLanguage.ClassifierType" id="1177327384266">

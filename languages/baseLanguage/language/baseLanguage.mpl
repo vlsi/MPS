@@ -29,6 +29,7 @@
     <moduleRoot path="${mps_home}\languages\helgins\helgins.mpl" />
     <moduleRoot path="${mps_home}\languages\baseLanguage\languages\blTypes\blTypes.mpl" />
     <moduleRoot path="${mps_home}\projects\baseLanguageExt\dev\languages\collections\lang\collections.mpl" />
+    <moduleRoot path="${mps_home}\platform\regexp\languages\regexp\regexp.mpl" />
   </module>
   <accessoryModels />
   <generators>

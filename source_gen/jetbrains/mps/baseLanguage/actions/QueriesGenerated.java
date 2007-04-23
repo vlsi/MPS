@@ -18,6 +18,17 @@ import jetbrains.mps.generator.JavaModelUtil_new;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import java.util.List;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.smodel.action.IChildNodeSetter;
+import java.util.ArrayList;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
 public class QueriesGenerated {
 
@@ -119,5 +130,30 @@ public class QueriesGenerated {
         _zCursor.release();
       }
     }
+  }
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1177328442875(SNode sourceNode, SNode currentTargetNode, ConceptDeclaration childConcept, IChildNodeSetter childSetter, IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.SimpleItemPart", operationContext.getScope());
+      result.add(new DefaultSimpleSubstituteAction(concept, sourceNode, currentTargetNode, childSetter, operationContext.getScope()) {
+
+        public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.IntegerConstant");
+          SPropertyOperations.set(result, "value", "" + (Integer.parseInt(pattern)));
+          return result;
+        }
+        public boolean canSubstitute_internal(String pattern) {
+          {
+            Pattern _pattern_0 = Pattern.compile("(?:\\d)+", 0);
+            Matcher _matcher_0 = _pattern_0.matcher(pattern);
+            if(_matcher_0.find()) {
+              return true;
+            }
+          }
+          return false;
+        }
+      });
+    }
+    return result;
   }
 }
