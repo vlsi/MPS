@@ -8,16 +8,28 @@ public abstract class DefaultSimpleSubstituteAction extends DefaultChildNodeSubs
     super(parameterObject, parentNode, currentChild, setter, scope);
   }
 
+  public boolean hasSubstitute() {
+    return false;
+  }
+
 
   public boolean canSubstituteStrictly(String pattern) {
-    return canSubstitute_internal(pattern);
+    if (hasSubstitute()) {
+      return canSubstitute_internal(pattern);
+    }
+    return super.canSubstituteStrictly(pattern);
   }
 
   public boolean canSubstitute(String pattern) {
-    return canSubstitute_internal(pattern);
+    if (hasSubstitute()) {
+      return canSubstitute_internal(pattern);
+    }
+    return super.canSubstitute(pattern);
   }
 
-  protected abstract boolean canSubstitute_internal(String pattern);
+  protected boolean canSubstitute_internal(String pattern) {
+    return false;
+  }
 
   
 }

@@ -1213,16 +1213,6 @@
           </node>
         </node>
       </node>
-      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddPart" id="1177335094974">
-        <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.SimpleItemPart" id="1177335096558">
-          <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_SubstituteHandler" id="1177335096559">
-            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177335096560" />
-          </node>
-          <node role="canSubstitute" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_CanSubstitute" id="1177335176280">
-            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177335176281" />
-          </node>
-        </node>
-      </node>
     </node>
   </node>
 </model>
