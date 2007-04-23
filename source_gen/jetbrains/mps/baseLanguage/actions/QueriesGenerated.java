@@ -280,4 +280,37 @@ public class QueriesGenerated {
     }
     return result;
   }
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1177362994569(final SNode parentNode, final SNode currentTargetNode, final ConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCall", operationContext.getScope());
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          SNode classConcept = SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+          List<SNode> result = ListOperations.createList(new SNode[]{});
+          List<SNode> alreadyVisited = ListOperations.createList(new SNode[]{});
+          while(classConcept != null && !(SequenceOperations.contains(alreadyVisited, classConcept))) {
+            ListOperations.addAllElements(result, SLinkOperations.getTargets(classConcept, "method", true));
+            ListOperations.addElement(alreadyVisited, classConcept);
+            classConcept = SLinkOperations.getTarget(SLinkOperations.getTarget(classConcept, "superclass", true), "classifier", false);
+          }
+          return result;
+        }
+      };
+      List<SNode> queryResult = (List)calc.calculate();
+      for(SNode item : queryResult) {
+        result.add(new DefaultChildNodeSubstituteAction(item, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
+
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode call = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.InstanceMethodCall");
+            SLinkOperations.setTarget(call, "instance", SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ThisExpression"), true);
+            SLinkOperations.setTarget(call, "baseMethodDeclaration", ((SNode)this.getParameterObject()), false);
+            return call;
+          }
+        });
+      }
+    }
+    return result;
+  }
 }
