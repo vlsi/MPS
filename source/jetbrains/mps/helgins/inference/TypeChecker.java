@@ -343,9 +343,15 @@ public class TypeChecker {
   public void checkTypesForNodeAndSolveInequations(SNode node) {
     EquationManager oldSlave = new EquationManager(this);
     myEquationManagersStack.push(oldSlave);
-    doCheckTypes(node);
+    try {
+      doCheckTypes(node);
+    } catch(Throwable t) {
+      LOG.error(t);
+    }
     EquationManager slave = myEquationManagersStack.pop();
-    assert slave == oldSlave;
+    if (slave != oldSlave) {
+      LOG.error("equation managers' stack violated");
+    }
     slave.solveInequations();
     myEquationManagersStack.peek().putAllEquations(slave);
     myCheckedNodes.add(node); // for not to check it again

@@ -1933,5 +1933,15 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177326519037">
+    <property name="name" value="CommentedStatementsBlock" />
+    <link role="extends" targetNodeId="1068580123157" resolveInfo="Statement" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177326540772">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1..n" />
+      <property name="role" value="statement" />
+      <link role="target" targetNodeId="1068580123157" resolveInfo="Statement" />
+    </node>
+  </node>
 </model>
 
