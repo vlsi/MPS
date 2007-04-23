@@ -444,7 +444,7 @@
     <link role="extends" targetNodeId="1177323652379" resolveInfo="MenuPart" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177327698839">
       <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
+      <property name="sourceCardinality" value="0..1" />
       <property name="role" value="canSubstitute" />
       <link role="target" targetNodeId="1177327161126" resolveInfo="QueryFunction_CanSubstitute" />
     </node>
