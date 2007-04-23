@@ -40,6 +40,9 @@ public class QueriesGenerated {
   public static String propertyMacro_GetPropertyValue_1177331479810(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return NameUtil.nodeFQName(SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "concept", false));
   }
+  public static String propertyMacro_GetPropertyValue_1177340188447(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return NameUtil.nodeFQName(SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "concept", false));
+  }
   public static boolean ifMacro_Condition_1177335419476(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "canSubstitute", true) != null;
   }
@@ -75,5 +78,17 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_1177336437649(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "matchingText", true), "body", true);
+  }
+  public static SNode sourceNodeQuery_1177353800103(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "query", true), "body", true);
+  }
+  public static SNode sourceNodeQuery_1177354355234(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "type", true);
+  }
+  public static SNode sourceNodeQuery_1177353864165(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "type", true);
+  }
+  public static SNode sourceNodeQuery_1177354123170(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "handler", true), "body", true);
   }
 }
