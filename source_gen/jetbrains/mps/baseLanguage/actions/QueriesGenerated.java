@@ -134,11 +134,11 @@ public class QueriesGenerated {
       }
     }
   }
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1177334764520(final SNode sourceNode, final SNode currentTargetNode, final ConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1177334764520(final SNode parentNode, final SNode currentTargetNode, final ConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", operationContext.getScope());
-      result.add(new DefaultSimpleSubstituteAction(concept, sourceNode, currentTargetNode, childSetter, operationContext.getScope()) {
+      result.add(new DefaultSimpleSubstituteAction(concept, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
 
         public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
           SNode boolConst = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.IntegerConstant");
@@ -162,7 +162,7 @@ public class QueriesGenerated {
     }
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", operationContext.getScope());
-      result.add(new DefaultSimpleSubstituteAction(concept, sourceNode, currentTargetNode, childSetter, operationContext.getScope()) {
+      result.add(new DefaultSimpleSubstituteAction(concept, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
 
         public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
           SNode integerConst = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.BooleanConstant");
@@ -176,7 +176,7 @@ public class QueriesGenerated {
     }
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", operationContext.getScope());
-      result.add(new DefaultSimpleSubstituteAction(concept, sourceNode, currentTargetNode, childSetter, operationContext.getScope()) {
+      result.add(new DefaultSimpleSubstituteAction(concept, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
 
         public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
           SNode boolConst = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.BooleanConstant");
@@ -190,7 +190,7 @@ public class QueriesGenerated {
     }
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatingPointConstant", operationContext.getScope());
-      result.add(new DefaultSimpleSubstituteAction(concept, sourceNode, currentTargetNode, childSetter, operationContext.getScope()) {
+      result.add(new DefaultSimpleSubstituteAction(concept, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
 
         public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
           SNode boolConst = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.FloatingPointConstant");
@@ -214,7 +214,7 @@ public class QueriesGenerated {
     }
     return result;
   }
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1177338141665(final SNode sourceNode, final SNode currentTargetNode, final ConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1177338141665(final SNode parentNode, final SNode currentTargetNode, final ConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", operationContext.getScope());
@@ -229,7 +229,7 @@ public class QueriesGenerated {
       };
       List<Integer> queryResult = (List)calc.calculate();
       for(Integer item : queryResult) {
-        result.add(new DefaultChildNodeSubstituteAction(item, sourceNode, currentTargetNode, childSetter, operationContext.getScope()) {
+        result.add(new DefaultChildNodeSubstituteAction(item, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode cons = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.IntegerConstant");
@@ -241,6 +241,39 @@ public class QueriesGenerated {
           }
           public String getDescriptionText(String pattern) {
             return "predefined integer";
+          }
+        });
+      }
+    }
+    return result;
+  }
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1177361135564(final SNode parentNode, final SNode currentTargetNode, final ConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReference", operationContext.getScope());
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          SNode classConcept = SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+          List<SNode> result = ListOperations.createList(new SNode[]{});
+          List<SNode> alreadyVisited = ListOperations.createList(new SNode[]{});
+          while(classConcept != null && !(SequenceOperations.contains(alreadyVisited, classConcept))) {
+            ListOperations.addAllElements(result, SLinkOperations.getTargets(classConcept, "field", true));
+            ListOperations.addElement(alreadyVisited, classConcept);
+            classConcept = SLinkOperations.getTarget(SLinkOperations.getTarget(classConcept, "superclass", true), "classifier", false);
+          }
+          return result;
+        }
+      };
+      List<SNode> queryResult = (List)calc.calculate();
+      for(SNode item : queryResult) {
+        result.add(new DefaultChildNodeSubstituteAction(item, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
+
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode ref = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.FieldReference");
+            SLinkOperations.setTarget(ref, "variableDeclaration", ((SNode)this.getParameterObject()), false);
+            SLinkOperations.setTarget(ref, "instance", SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ThisExpression"), true);
+            return ref;
           }
         });
       }
