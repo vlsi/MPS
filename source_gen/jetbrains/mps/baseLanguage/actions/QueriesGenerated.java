@@ -208,39 +208,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1177338141665(final SNode parentNode, final SNode currentTargetNode, final ConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
-    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
-    {
-      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", operationContext.getScope());
-      Calculable calc = new Calculable() {
-
-        public Object calculate() {
-          List<Integer> ints = new ArrayList<Integer>();
-          ListOperations.addElement(ints, 239);
-          ListOperations.addElement(ints, 30);
-          return ints;
-        }
-      };
-      List<Integer> queryResult = (List)calc.calculate();
-      for(Integer item : queryResult) {
-        result.add(new DefaultChildNodeSubstituteAction(item, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
-
-          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode cons = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.IntegerConstant");
-            SPropertyOperations.set(cons, "value", "" + (((Integer)this.getParameterObject())));
-            return cons;
-          }
-          public String getMatchingText(String pattern) {
-            return ((Integer)this.getParameterObject()) + "";
-          }
-          public String getDescriptionText(String pattern) {
-            return "predefined integer";
-          }
-        });
-      }
-    }
-    return result;
-  }
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1177361135564(final SNode parentNode, final SNode currentTargetNode, final ConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
@@ -429,10 +396,30 @@ public class QueriesGenerated {
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
 
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
+          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
           SNode var = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
           SLinkOperations.setTarget(var, "type", nodeToWrap, true);
-          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
           SLinkOperations.setTarget(result, "localVariableDeclaration", var, true);
+          return result;
+        }
+        public void doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
+          childSetter.execute(parentNode, currentTargetNode, this.wrapNode(nc, nc.getModel()), operationContext.getScope());
+        }
+      };
+      result.addAll(ModelActions.createChildSubstituteActions(parentNode, currentTargetNode, wrappedConcept, setter, operationContext));
+    }
+    return result;
+  }
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_1177406968279(final SNode parentNode, final SNode currentTargetNode, final ConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", operationContext.getScope());
+      ConceptDeclaration wrappedConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", operationContext.getScope());
+      IChildNodeSetter setter = new AbstractChildNodeSetter() {
+
+        public SNode wrapNode(SNode nodeToWrap, SModel model) {
+          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
+          SLinkOperations.setTarget(result, "localVariableDeclaration", nodeToWrap, true);
           return result;
         }
         public void doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
