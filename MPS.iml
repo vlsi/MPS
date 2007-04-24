@@ -9,8 +9,6 @@
       <sourceFolder url="file://$MODULE_DIR$/languages/bootstrap/smodelLanguage/solutions/samples/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/bootstrap/structureLanguage/solutions/sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/helgins/languages/subtyping/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/languages/transformation/outputModels/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/platform/profiler/languages/profiler/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/mf/lair1/languages/config/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/mf/lair1/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
@@ -29,6 +27,9 @@
     <orderEntry type="library" exported="" name="Annotations" level="project" />
     <orderEntry type="module" module-name="baseLanguageExt" exported="" />
     <orderEntry type="library" name="asm" level="project" />
+    <orderEntry type="module" module-name="scriptLanguage" />
+    <orderEntry type="module" module-name="scriptLanguageInternal" />
+    <orderEntry type="module" module-name="scriptLanguage_runtime" />
     <orderEntryProperties />
   </component>
   <component name="copyright">
