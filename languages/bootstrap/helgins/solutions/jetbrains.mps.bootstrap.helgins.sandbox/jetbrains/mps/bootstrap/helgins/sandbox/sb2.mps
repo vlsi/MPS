@@ -65,12 +65,6 @@
                 <link role="classifier" extResolveInfo="2.[Classifier]Integer" />
               </node>
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.NewExpression" id="1177339531822">
-              <link role="baseMethodDeclaration" targetNodeId="1176894440670" resolveInfo="D" />
-              <node role="typeParameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1177339537947">
-                <link role="classifier" extResolveInfo="2.[Classifier]Integer" />
-              </node>
-            </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1177339577040">

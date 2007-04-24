@@ -72,18 +72,18 @@ public class RulesManager {
     });
   }
 
-  public Set<SubtypingRule_Runtime> getSubtypingRules(final SNode node) {
+  public Set<SubtypingRule_Runtime> getSubtypingRules(final SNode node, final boolean isWeak) {
      return CollectionUtil.filter(mySubtypingRules.getRules(node), new Condition<SubtypingRule_Runtime>() {
       public boolean met(SubtypingRule_Runtime object) {
-        return object.isApplicable(node);
+        return (isWeak || !object.isWeak()) && object.isApplicable(node);
       }
     });
   }
 
-  public Set<SupertypingRule_Runtime> getSupertypingRules(final SNode node) {
+  public Set<SupertypingRule_Runtime> getSupertypingRules(final SNode node, final boolean isWeak) {
      return CollectionUtil.filter(mySupertypingRules.getRules(node), new Condition<SupertypingRule_Runtime>() {
       public boolean met(SupertypingRule_Runtime object) {
-        return object.isApplicable(node);
+        return (isWeak || !object.isWeak()) && object.isApplicable(node);
       }
     });
   }

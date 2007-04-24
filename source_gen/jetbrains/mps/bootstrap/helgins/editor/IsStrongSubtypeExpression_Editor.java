@@ -18,7 +18,7 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
-public class IsSubtypeExpression_Editor extends DefaultNodeEditor {
+public class IsStrongSubtypeExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
@@ -32,12 +32,12 @@ public class IsSubtypeExpression_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "isSubtype("));
+    editorCell.addEditorCell(this.createConstantCell(context, node, "isStrongSubtype("));
     editorCell.addEditorCell(this.createSubtypeExpressionCell(context, node));
-    editorCell.addEditorCell(this.createConstantCell1(context, node, ":<"));
+    editorCell.addEditorCell(this.createConstantCell1(context, node, ":<<"));
     editorCell.addEditorCell(this.createSupertypeExpressionCell(context, node));
     editorCell.addEditorCell(this.createConstantCell2(context, node, ")"));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176543992252");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177406341885");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -49,8 +49,8 @@ public class IsSubtypeExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new ISubstituteInfoPart[]{new IsSubtypeExpression_replaceWith_IsSubtypeExpression_cellMenu()}));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176543998552");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new ISubstituteInfoPart[]{new IsStrongSubtypeExpression_replaceWith_IsSubtypeExpression_cellMenu()}));
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177406341886");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -62,7 +62,7 @@ public class IsSubtypeExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176544008680");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177406341888");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -74,7 +74,7 @@ public class IsSubtypeExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176544016091");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177406341890");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -91,7 +91,7 @@ public class IsSubtypeExpression_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176544005866");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177406341887");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -124,7 +124,7 @@ public class IsSubtypeExpression_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176544012573");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177406341889");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

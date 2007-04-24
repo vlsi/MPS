@@ -504,5 +504,13 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177406296561">
+    <property name="name" value="IsStrongSubtypeExpression" />
+    <link role="extends" targetNodeId="1176543928247" resolveInfo="IsSubtypeExpression" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1177406358156">
+      <property name="value" value="isStrongSubtype()" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
 </model>
 

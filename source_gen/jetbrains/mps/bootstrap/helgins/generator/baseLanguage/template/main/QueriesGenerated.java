@@ -660,4 +660,10 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1177069447756(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "subtypeExpression", true);
   }
+  public static SNode sourceNodeQuery_1177406558038(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "subtypeExpression", true);
+  }
+  public static SNode sourceNodeQuery_1177406558046(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "supertypeExpression", true);
+  }
 }

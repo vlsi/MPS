@@ -13,7 +13,7 @@ import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class Node_TypeOperation_Editor extends DefaultNodeEditor {
 
-  public AbstractCellProvider my_NotInRules_Component1;
+  public AbstractCellProvider my_NotInRules_Component;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createConstantCell(context, node, "type");
@@ -22,10 +22,10 @@ public class Node_TypeOperation_Editor extends DefaultNodeEditor {
     return this.create_NotInRules_ComponentCell(context, node);
   }
   public EditorCell create_NotInRules_ComponentCell(EditorContext context, SNode node) {
-    if(this.my_NotInRules_Component1 == null) {
-      this.my_NotInRules_Component1 = new _NotInRules_Component(node);
+    if(this.my_NotInRules_Component == null) {
+      this.my_NotInRules_Component = new _NotInRules_Component(node);
     }
-    EditorCell componentCell = this.my_NotInRules_Component1.createEditorCell(context);
+    EditorCell componentCell = this.my_NotInRules_Component.createEditorCell(context);
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.addEditorCell(componentCell);
     editorCell.setSelectable(true);

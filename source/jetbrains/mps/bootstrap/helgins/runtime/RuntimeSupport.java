@@ -90,4 +90,8 @@ public class RuntimeSupport {
   public SNode coerce(SNode subtype, IMatchingPattern pattern) {
     return myTypeChecker.getSubtypingManager().coerceSubtyping(subtype, pattern);
   }
+
+  public SNode coerceStrong(SNode subtype, IMatchingPattern pattern) {
+    return myTypeChecker.getSubtypingManager().coerceSubtyping(subtype, pattern, false);
+  }
 }

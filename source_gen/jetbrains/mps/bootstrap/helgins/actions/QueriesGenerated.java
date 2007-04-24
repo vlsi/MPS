@@ -16,4 +16,10 @@ public class QueriesGenerated {
       SLinkOperations.setTarget(newNode, "nodeToCheck", SLinkOperations.getTarget(sampleNode, "nodeToCheck", true), true);
     }
   }
+  public static void nodeFactory_NodeSetup_IsSubtypeExpression_1177408248540(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
+    if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.bootstrap.helgins.structure.IsSubtypeExpression")) {
+      SLinkOperations.setTarget(newNode, "subtypeExpression", SLinkOperations.getTarget(sampleNode, "subtypeExpression", true), true);
+      SLinkOperations.setTarget(newNode, "supertypeExpression", SLinkOperations.getTarget(sampleNode, "supertypeExpression", true), true);
+    }
+  }
 }
