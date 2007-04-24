@@ -52,6 +52,9 @@ public class QueriesGenerated {
   public static String propertyMacro_GetPropertyValue_1177404645418(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return NameUtil.nodeFQName(SLinkOperations.getTarget(node, "wrappedConcept", false));
   }
+  public static String propertyMacro_GetPropertyValue_1177415134316(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return "removeConceptByCondition_" + node.getId();
+  }
   public static boolean ifMacro_Condition_1177335419476(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "canSubstitute", true) != null;
   }
@@ -120,5 +123,8 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_1177405091687(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "wrapperBlock", true), "body", true);
+  }
+  public static SNode sourceNodeQuery_1177415030311(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "condition", true), "body", true);
   }
 }
