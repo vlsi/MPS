@@ -6,7 +6,7 @@
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
   <language namespace="jetbrains.mps.regexp" />
-  <maxImportIndex value="30" />
+  <maxImportIndex value="31" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="4" modelUID="jetbrains.mps.core.structure" />
   <import index="7" modelUID="jetbrains.mps.baseLanguage.types@java_stub" />
@@ -24,6 +24,7 @@
   <import index="28" modelUID="jetbrains.mps.baseLanguage.search@java_stub" />
   <import index="29" modelUID="jetbrains.mps.util@java_stub" />
   <import index="30" modelUID="jetbrains.mps.smodel.presentation@java_stub" />
+  <import index="31" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions" id="1115842744505">
     <property name="name" value="substitute_node_substitute" />
     <property name="package" value="substitute" />
@@ -1736,6 +1737,9 @@
                   </node>
                 </node>
               </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1177398471408">
+                <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1177398472856" />
+              </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1177361630955">
                 <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1177361631855">
                   <link role="variableDeclaration" targetNodeId="1177361579172" resolveInfo="ref" />
@@ -2260,6 +2264,27 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions" id="1177397776787">
+    <property name="name" value="conceptFunctionParameters" />
+    <property name="package" value="substitute.expression" />
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1177397791368">
+      <link role="applicableConcept" targetNodeId="1.1068431790191" />
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddPart" id="1177397839813">
+        <link role="concept" targetNodeId="1.1107135704075" />
+        <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.ParameterizedMenuPart" id="1177397847292">
+          <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1177397852689">
+            <link role="concept" targetNodeId="31.1071489090640" />
+          </node>
+          <node role="query" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_Parameterized_Query" id="1177397847294">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177397847295" />
+          </node>
+          <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_Parameterized_SubstituteHandler" id="1177397847296">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177397847297" />
           </node>
         </node>
       </node>

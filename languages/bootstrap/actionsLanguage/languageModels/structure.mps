@@ -624,5 +624,10 @@
       <link role="target" targetNodeId="1177337833147" resolveInfo="ConceptFunctionParameter_parameterObject" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177398027324">
+    <property name="name" value="ConceptsMenuPart" />
+    <property name="package" value="MenuParts" />
+    <link role="extends" targetNodeId="1177323652379" resolveInfo="MenuPart" />
+  </node>
 </model>
 
