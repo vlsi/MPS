@@ -1,34 +1,28 @@
-package jetbrains.mps.ide.actions.tools;
+package jetbrains.mps.ide.scriptLanguage.plugin;
 
-import jetbrains.mps.ide.action.ActionGroup;
+import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.action.ActionGroup;
 import jetbrains.mps.ide.action.MPSAction;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+import jetbrains.mps.ide.scriptLanguage.runtime.BaseScript;
+import jetbrains.mps.ide.scriptLanguage.runtime.ScriptContext;
+import jetbrains.mps.ide.scriptLanguage.structure.Script;
+import jetbrains.mps.ide.scriptLanguage.util.ScriptNameUtil;
+import jetbrains.mps.ide.usageView.UsagesModel_Composite;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IOperationContext;
-
-import java.util.List;
-import java.util.ArrayList;
-
-import jetbrains.mps.ide.scriptLanguage.structure.*;
-import jetbrains.mps.ide.scriptLanguage.util.ScriptNameUtil;
-import jetbrains.mps.ide.scriptLanguage.runtime.BaseScript;
-import jetbrains.mps.ide.scriptLanguage.runtime.ScriptContext;
-import jetbrains.mps.ide.IDEProjectFrame;
-import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.usageView.UsagesModel_Composite;
-import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.reloading.MPSClassLoader;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
+import java.util.List;
 
 
 /**
@@ -37,6 +31,7 @@ import javax.swing.JOptionPane;
  */
 public class ScriptsGroup extends ActionGroup {
   private static Logger LOG = Logger.getLogger(ScriptsGroup.class);
+
   public ScriptsGroup() {
     super("Scripts");
   }
@@ -61,21 +56,14 @@ public class ScriptsGroup extends ActionGroup {
     }
   }
 
-  /**
-   * !!! can't use adapters because they are loaded by MPS class loader
-   */
   private void addLanguageScriptsGroup(Language language) throws ClassNotFoundException {
     SModelDescriptor scriptsModel = language.getScriptsModelDescriptor();
     if (scriptsModel == null) return;
-    List<SNode> genericScripts = scriptsModel.getSModel().getRoots(new Condition<SNode>() {
-      public boolean met(SNode node) {
-        return node.getConceptFqName().equals(Script.class.getName());
-      }
-    });
-    if(genericScripts.isEmpty()) return;
+    List<Script> genericScripts = scriptsModel.getSModel().getRootsAdapters(Script.class);
+    if (genericScripts.isEmpty()) return;
     ActionGroup languageScriptsGroup = new ActionGroup(language.getNamespace());
-    for (SNode script : genericScripts) {
-      languageScriptsGroup.add(new RunGenericScriptsAction(script));
+    for (Script script : genericScripts) {
+      languageScriptsGroup.add(new RunGenericScriptsAction(script.getNode()));
     }
     add(languageScriptsGroup);
   }
