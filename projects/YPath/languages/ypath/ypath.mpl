@@ -3,6 +3,9 @@
   <structure>
     <model modelUID="ypath.structure" />
   </structure>
+  <helginsTypeSystem>
+    <model modelUID="ypath.helgins" />
+  </helginsTypeSystem>
   <actions>
     <model modelUID="ypath.actions" />
   </actions>

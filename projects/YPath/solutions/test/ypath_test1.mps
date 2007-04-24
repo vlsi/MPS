@@ -19,36 +19,37 @@
                 <link role="classifier" extResolveInfo="2.[Classifier]File" />
               </node>
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1177414804078">
-              <node role="creator" type="ypath.TreePathCreator" id="1177414805467">
-                <node role="nodeType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1177414808085">
-                  <link role="classifier" extResolveInfo="2.[Classifier]File" />
-                </node>
-                <node role="treePathType" type="ypath.TreePathType" id="1177416177980">
-                  <node role="nodeType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1177418496484">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1177428130629">
+              <node role="creator" type="ypath.TreePathCreator" id="1177428132801">
+                <node role="nodeType" type="jetbrains.mps.baseLanguage.Type" id="1177428132802" />
+                <node role="treePathType" type="ypath.TreePathType" id="1177428132803">
+                  <node role="nodeType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1177428134474">
                     <link role="classifier" extResolveInfo="2.[Classifier]File" />
                   </node>
                 </node>
-                <node role="parentBlock" type="ypath.ParentBlock" id="1177414805471">
-                  <node role="parameter" type="ypath.LambdaMethodParameter" id="1177414805472">
+                <node role="parentBlock" type="ypath.ParentBlock" id="1177428132805">
+                  <node role="parameter" type="ypath.LambdaMethodParameter" id="1177428132806">
                     <property name="name" value="f" />
                   </node>
-                  <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177414805473">
-                    <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1177414822129">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1177418725506">
-                        <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]File).([InstanceMethodDeclaration]getParent() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
-                        <node role="instance" type="jetbrains.mps.baseLanguage.ClosureParameterReference" id="1177418545171">
-                          <link role="closureParameter" targetNodeId="1177414805472" resolveInfo="e" />
-                        </node>
+                  <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177428132807">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1177428141783">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.ClosureParameterReference" id="1177434340692">
+                        <link role="closureParameter" targetNodeId="1177428132806" resolveInfo="f" />
                       </node>
                     </node>
                   </node>
                 </node>
-                <node role="childrenBlock" type="ypath.ChildrenBlock" id="1177414805474">
-                  <node role="parameter" type="ypath.LambdaMethodParameter" id="1177414805475">
+                <node role="childrenBlock" type="ypath.ChildrenBlock" id="1177428132808">
+                  <node role="parameter" type="ypath.LambdaMethodParameter" id="1177428132809">
                     <property name="name" value="d" />
                   </node>
-                  <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177414805476" />
+                  <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177428132810">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1177434881405">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.ClosureParameterReference" id="1177434886671">
+                        <link role="closureParameter" targetNodeId="1177428132809" resolveInfo="d" />
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
