@@ -342,24 +342,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177323259586">
-    <property name="name" value="AddDefaultsPart" />
-    <property name="package" value="NodeBuilderParts" />
-    <link role="extends" targetNodeId="1177323240852" resolveInfo="NodeBuilderPart" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1177323296331">
-      <property name="value" value="add defaults" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177323645393">
-    <property name="name" value="OverridePart" />
-    <property name="package" value="NodeBuilderParts" />
-    <link role="extends" targetNodeId="1177333529597" resolveInfo="ConceptPart" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1177323966819">
-      <property name="value" value="override" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177323652379">
     <property name="name" value="MenuPart" />
     <property name="package" value="MenuParts" />
