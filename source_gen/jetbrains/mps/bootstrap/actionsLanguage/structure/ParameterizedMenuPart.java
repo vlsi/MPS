@@ -15,45 +15,45 @@ public class ParameterizedMenuPart extends MenuPart {
   public static String DESCRIPTION_TEXT = "descriptionText";
   public static String HANDLER = "handler";
 
-  public ParameterizedMenuPart(SNode node) {
+  public  ParameterizedMenuPart(SNode node) {
     super(node);
   }
 
   public static ParameterizedMenuPart newInstance(SModel sm, boolean init) {
-    return (ParameterizedMenuPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.ParameterizedItemPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ParameterizedMenuPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.ParameterizedMenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
   public static ParameterizedMenuPart newInstance(SModel sm) {
-    return newInstance(sm, false);
+    return ParameterizedMenuPart.newInstance(sm, false);
   }
 
   public Type getType() {
-    return (Type)this.getChild(TYPE);
+    return (Type)this.getChild(ParameterizedMenuPart.TYPE);
   }
   public void setType(Type node) {
-    super.setChild(TYPE, node);
+    super.setChild(ParameterizedMenuPart.TYPE, node);
   }
   public QueryFunction_Parameterized_Query getQuery() {
-    return (QueryFunction_Parameterized_Query)this.getChild(QUERY);
+    return (QueryFunction_Parameterized_Query)this.getChild(ParameterizedMenuPart.QUERY);
   }
   public void setQuery(QueryFunction_Parameterized_Query node) {
-    super.setChild(QUERY, node);
+    super.setChild(ParameterizedMenuPart.QUERY, node);
   }
   public QueryFunction_Parameterized_String getMatchingText() {
-    return (QueryFunction_Parameterized_String)this.getChild(MATCHING_TEXT);
+    return (QueryFunction_Parameterized_String)this.getChild(ParameterizedMenuPart.MATCHING_TEXT);
   }
   public void setMatchingText(QueryFunction_Parameterized_String node) {
-    super.setChild(MATCHING_TEXT, node);
+    super.setChild(ParameterizedMenuPart.MATCHING_TEXT, node);
   }
   public QueryFunction_Parameterized_String getDescriptionText() {
-    return (QueryFunction_Parameterized_String)this.getChild(DESCRIPTION_TEXT);
+    return (QueryFunction_Parameterized_String)this.getChild(ParameterizedMenuPart.DESCRIPTION_TEXT);
   }
   public void setDescriptionText(QueryFunction_Parameterized_String node) {
-    super.setChild(DESCRIPTION_TEXT, node);
+    super.setChild(ParameterizedMenuPart.DESCRIPTION_TEXT, node);
   }
   public QueryFunction_Parameterized_SubstituteHandler getHandler() {
-    return (QueryFunction_Parameterized_SubstituteHandler)this.getChild(HANDLER);
+    return (QueryFunction_Parameterized_SubstituteHandler)this.getChild(ParameterizedMenuPart.HANDLER);
   }
   public void setHandler(QueryFunction_Parameterized_SubstituteHandler node) {
-    super.setChild(HANDLER, node);
+    super.setChild(ParameterizedMenuPart.HANDLER, node);
   }
 }

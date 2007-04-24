@@ -628,6 +628,12 @@
     <property name="name" value="ConceptsMenuPart" />
     <property name="package" value="MenuParts" />
     <link role="extends" targetNodeId="1177323652379" resolveInfo="MenuPart" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177398809232">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="query" />
+      <link role="target" targetNodeId="1177337890340" resolveInfo="QueryFunction_Parameterized_Query" />
+    </node>
   </node>
 </model>
 
