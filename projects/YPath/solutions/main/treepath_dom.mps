@@ -2,9 +2,10 @@
 <model name="treepath_dom">
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="ypath" />
-  <maxImportIndex value="3" />
+  <maxImportIndex value="4" />
   <import index="1" modelUID="org.w3c.dom@java_stub" />
   <import index="2" modelUID="ypath.util.xml@java_stub" />
+  <import index="4" modelUID="java.lang@java_stub" />
   <node type="ypath.TreePathAspect" id="1175083364493">
     <property name="name" value="DOM" />
     <node role="nodeKinds" type="ypath.TreeNodeKind" id="1175164209843">

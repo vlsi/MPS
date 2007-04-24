@@ -92,7 +92,7 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1168436278144">
               <node role="creator" type="ypath.TreePathCreator" id="1168436278145">
-                <node role="nodeType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1168436278146">
+                <node role="nodeType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1177357362887">
                   <link role="classifier" targetNodeId="1168429752169" resolveInfo="Foo" />
                 </node>
                 <node role="parentBlock" type="ypath.ParentBlock" id="1168436278147">

@@ -3,15 +3,12 @@
   <structure>
     <model modelUID="ypath.structure" />
   </structure>
-  <typeSystem>
-    <model modelUID="ypath.types" />
-  </typeSystem>
-  <helginsTypeSystem>
-    <model modelUID="ypath.helgins" />
-  </helginsTypeSystem>
   <actions>
     <model modelUID="ypath.actions" />
   </actions>
+  <constraints>
+    <model modelUID="ypath.constraints" />
+  </constraints>
   <editor>
     <model modelUID="ypath.editor" />
   </editor>

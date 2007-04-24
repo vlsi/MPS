@@ -5,7 +5,7 @@
   <language namespace="jetbrains.mps.core" />
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
-  <maxImportIndex value="22" />
+  <maxImportIndex value="23" />
   <import index="1" modelUID="ypath.structure" />
   <import index="2" modelUID="jetbrains.mps.core.structure" />
   <import index="3" modelUID="jetbrains.mps.typesystem@java_stub" />
@@ -16,6 +16,7 @@
   <import index="10" modelUID="ypath@java_stub" />
   <import index="21" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <import index="22" modelUID="jetbrains.mps.core.structure@java_stub" />
+  <import index="23" modelUID="jetbrains.mps.helgins.inference@java_stub" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActions" id="1168462842641">
     <property name="name" value="YPath_rhint" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1168893677147">
@@ -61,75 +62,36 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1168893699046">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1168893699047">
-              <property name="name" value="checker" />
-              <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1168893699048">
-                <link role="classifier" extResolveInfo="3.[Classifier]ITypeChecker" />
-              </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1168893699049">
-                <link role="baseMethodDeclaration" extResolveInfo="3.static method ([Classifier]TypeCheckerAccess).([StaticMethodDeclaration]getTypeChecker() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ITypeChecker]))" />
-                <link role="classConcept" extResolveInfo="3.[Classifier]TypeCheckerAccess" />
-              </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1168893708887">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1168893708888">
-              <property name="name" value="type" />
-              <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1168893708889">
-                <link role="classifier" extResolveInfo="3.[Classifier]ITypeObject" />
-              </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1168893708890">
-                <link role="baseMethodDeclaration" extResolveInfo="3.method ([Classifier]ITypeChecker).([InstanceMethodDeclaration]getNodeType((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ITypeObject]))" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1168893708891">
-                  <link role="variableDeclaration" targetNodeId="1168893699047" resolveInfo="checker" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionParm_sourceNode" id="1168893708893" />
-              </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1168893761750">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1168893761751">
+          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1176976767191">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1176976767192">
               <property name="name" value="aspects" />
-              <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1168893761752">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176976767193">
                 <link role="classifier" extResolveInfo="5.[Classifier]List" />
-                <node role="parameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1168893870582">
+                <node role="parameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1176976773397">
                   <link role="classifier" extResolveInfo="6.[Classifier]SNode" />
                 </node>
               </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1168893902939">
+              <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1176976787186">
+                <link role="baseMethodDeclaration" extResolveInfo="7.static method ([Classifier]TreePathAspectUtil).([StaticMethodDeclaration]GetTreePathAspects_new((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SModel]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IScope])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [SNode]&gt;]))" />
                 <link role="classConcept" extResolveInfo="7.[Classifier]TreePathAspectUtil" />
-                <link role="baseMethodDeclaration" extResolveInfo="7.static method ([Classifier]TreePathAspectUtil).([StaticMethodDeclaration]GetTreePathAspects((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SModel]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ITypeObject]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IScope]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ITypeChecker])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [SNode]&gt;]))" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1168893989189">
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1176976825129">
                   <link role="baseMethodDeclaration" extResolveInfo="6.method ([Classifier]SNode).([InstanceMethodDeclaration]getModel() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SModel]))" />
-                  <node role="instance" type="jetbrains.mps.baseLanguage.ParenthesizedExpression" id="1168893966530">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.CastExpression" id="1168893970232">
-                      <node role="expression" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionParm_sourceNode" id="1168893981526" />
-                      <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1168893978355">
-                        <link role="classifier" extResolveInfo="6.[Classifier]SNode" />
-                      </node>
-                    </node>
-                  </node>
+                  <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionParm_sourceNode" id="1176976818401" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1168893998064">
-                  <link role="variableDeclaration" targetNodeId="1168893708888" resolveInfo="type" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_scope" id="1168894029968" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1168894057336">
-                  <link role="variableDeclaration" targetNodeId="1168893699047" resolveInfo="checker" />
-                </node>
+                <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionParm_sourceNode" id="1176976840446" />
+                <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_scope" id="1176976844798" />
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1168894087730">
-            <node role="expression" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1168894098276">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1168894099441">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176976851567">
+            <node role="expression" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1176976860592">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1176976861498">
                 <property name="value" value="1" />
               </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1168894094793">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1176976856276">
                 <link role="baseMethodDeclaration" extResolveInfo="5.method ([Classifier]List).([InstanceMethodDeclaration]size() : (jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int))" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1168894091275">
-                  <link role="variableDeclaration" targetNodeId="1168893761751" resolveInfo="aspects" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1176976853801">
+                  <link role="variableDeclaration" targetNodeId="1176976767192" resolveInfo="aspects" />
                 </node>
               </node>
             </node>
@@ -143,101 +105,29 @@
       <link role="applicableConcept" targetNodeId="4.1068431790191" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionFunction" id="1168469425594">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1168469425595">
-          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1168469549836">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1168469549838">
-              <property name="name" value="checker" />
-              <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1168469549839">
-                <link role="classifier" extResolveInfo="3.[Classifier]ITypeChecker" />
-              </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1168469566774">
-                <link role="baseMethodDeclaration" extResolveInfo="3.static method ([Classifier]TypeCheckerAccess).([StaticMethodDeclaration]getTypeChecker() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ITypeChecker]))" />
-                <link role="classConcept" extResolveInfo="3.[Classifier]TypeCheckerAccess" />
-              </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1168469575862">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1168469575863">
+          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1176980076346">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1176980076347">
               <property name="name" value="type" />
-              <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1168469734455">
-                <link role="classifier" extResolveInfo="3.[Classifier]ITypeObject" />
-              </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1168469590858">
-                <link role="baseMethodDeclaration" extResolveInfo="3.method ([Classifier]ITypeChecker).([InstanceMethodDeclaration]getNodeType((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ITypeObject]))" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1168469587363">
-                  <link role="variableDeclaration" targetNodeId="1168469549838" resolveInfo="checker" />
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1176980076348" />
+              <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1176980097153">
+                <link role="baseMethodDeclaration" extResolveInfo="23.method ([Classifier]TypeChecker).([InstanceMethodDeclaration]getTypeOf((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1176980091945">
+                  <link role="baseMethodDeclaration" extResolveInfo="23.static method ([Classifier]TypeChecker).([StaticMethodDeclaration]getInstance() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [TypeChecker]))" />
+                  <link role="classConcept" extResolveInfo="23.[Classifier]TypeChecker" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionParm_sourceNode" id="1168469594133" />
+                <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionParm_sourceNode" id="1176980099439" />
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1168469597606">
-            <node role="condition" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1168469602459">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1168469604341" />
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1168469601089">
-                <link role="variableDeclaration" targetNodeId="1168469575863" resolveInfo="type" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176980138369">
+            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1176980144470">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1176980140119">
+                <link role="variableDeclaration" targetNodeId="1176980076347" resolveInfo="type" />
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1176980146059">
+                <link role="concept" targetNodeId="1.1168428529658" />
               </node>
             </node>
-            <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1168469597608">
-              <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1168469610239">
-                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1168469610240">
-                  <property name="name" value="treepath_type" />
-                  <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1168469610241">
-                    <link role="classifier" extResolveInfo="3.[Classifier]ITypeObject" />
-                  </node>
-                  <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1168469624511">
-                    <link role="baseMethodDeclaration" extResolveInfo="3.method ([Classifier]ITypeChecker).([InstanceMethodDeclaration]coerceType((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ITypeObject]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ITypeObject]))" />
-                    <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1168469620294">
-                      <link role="variableDeclaration" targetNodeId="1168469549838" resolveInfo="checker" />
-                    </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1168469634624">
-                      <link role="variableDeclaration" targetNodeId="1168469575863" resolveInfo="type" />
-                    </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1168469641305">
-                      <property name="value" value="ypath.types.treepath" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1168524705806">
-                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1168524705807">
-                  <property name="name" value="treetraversal_type" />
-                  <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1168524705808">
-                    <link role="classifier" extResolveInfo="3.[Classifier]ITypeObject" />
-                  </node>
-                  <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1168524719259">
-                    <link role="baseMethodDeclaration" extResolveInfo="3.method ([Classifier]ITypeChecker).([InstanceMethodDeclaration]coerceType((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ITypeObject]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ITypeObject]))" />
-                    <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1168524713486">
-                      <link role="variableDeclaration" targetNodeId="1168469549838" resolveInfo="checker" />
-                    </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1168524738075">
-                      <link role="variableDeclaration" targetNodeId="1168469575863" resolveInfo="type" />
-                    </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1168524745577">
-                      <property name="value" value="ypath.types.treetraversal" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1168469683701">
-                <node role="expression" type="jetbrains.mps.baseLanguage.OrExpression" id="1168524768890">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1168524774191">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1168524775923" />
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1168524771954">
-                      <link role="variableDeclaration" targetNodeId="1168524705807" resolveInfo="treetraversal_type" />
-                    </node>
-                  </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1168469688956">
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1168469687069">
-                      <link role="variableDeclaration" targetNodeId="1168469610240" resolveInfo="treepath_type" />
-                    </node>
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1168469690668" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1168469695441">
-            <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1168469696735" />
           </node>
         </node>
       </node>
