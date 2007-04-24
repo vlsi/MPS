@@ -90,9 +90,9 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
     IProjectHandler projectHandler = operationContext.getProject().getProjectHandler();
     if (projectHandler != null) {
-      try{
+      try {
         projectHandler.deleteFilesAndRemoveFromVCS(CollectionUtil.asList(myDescriptorFile));
-      } catch(RemoteException e) {
+      } catch (RemoteException e) {
         LOG.error(e);
       }
     } else {
@@ -551,6 +551,19 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   }
 
   @Nullable
+  public SModelDescriptor getScriptsModelDescriptor() {
+    if (getLanguageDescriptor().getScriptsModel() != null) {
+      SModelUID modelUID = SModelUID.fromString(getLanguageDescriptor().getScriptsModel().getName());
+      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
+      if (modelDescriptor == null) {
+        LOG.error("Couldn't get scripts model \"" + modelUID + "\"");
+      }
+      return modelDescriptor;
+    }
+    return null;
+  }
+
+  @Nullable
   public SModelDescriptor getEditorModelDescriptor() {
     return getEditorModelDescriptor(null);
   }
@@ -635,13 +648,13 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       SModelDescriptor structureModelDescriptor = getStructureModelDescriptor();
       SModel structureModel = structureModelDescriptor.getSModel();
       structureModel.allAdapters(INodeAdapter.class, new Condition<INodeAdapter>() {
-          public boolean met(INodeAdapter node) {
-            if (node instanceof AbstractConceptDeclaration) {
-              myNameToConceptCache.put(node.getName(), (AbstractConceptDeclaration) node);
-            }
-            return false;
+        public boolean met(INodeAdapter node) {
+          if (node instanceof AbstractConceptDeclaration) {
+            myNameToConceptCache.put(node.getName(), (AbstractConceptDeclaration) node);
           }
-        });
+          return false;
+        }
+      });
     }
     return myNameToConceptCache.get(conceptName);
   }
@@ -816,6 +829,9 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     if (modelDescriptor == language.getConstraintsModelDescriptor()) {
       return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.CONSTRAINTS);
     }
+    if (modelDescriptor == language.getScriptsModelDescriptor()) {
+      return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.SCRIPTS);
+    }
     List<SModelDescriptor> acccessoryModels = language.getAccessoryModels();
     if (acccessoryModels.contains(modelDescriptor)) {
       return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.ACCESSORY);
@@ -830,7 +846,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
   public static class LanguageAspectStatus implements IStatus {
     public static enum AspectKind {
-      STRUCTURE, EDITOR, ACTIONS, CONSTRAINTS, TYPESYSTEM, HELGINS_TYPESYSTEM, ACCESSORY, NONE
+      STRUCTURE, EDITOR, ACTIONS, CONSTRAINTS, TYPESYSTEM, HELGINS_TYPESYSTEM, ACCESSORY, SCRIPTS, NONE
     }
 
     private Language myLanguage;

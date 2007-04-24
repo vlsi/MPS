@@ -79,12 +79,6 @@ class ProjectLanguageTreeNode extends MPSTreeNode {
       this.add(new SModelTreeNode(editorModelDescriptor, "editor", operationContext));
     }
 
-    // todo: tmp here
-    SModelDescriptor templatesEditorModelDescriptor = myLanguage.getEditorModelDescriptor("templates");
-    if (templatesEditorModelDescriptor != null) {
-      this.add(new SModelTreeNode(templatesEditorModelDescriptor, "templates editor", operationContext));
-    }
-
     SModelDescriptor typesystemModelDescriptor = myLanguage.getTypesystemModelDescriptor();
     if (typesystemModelDescriptor != null) {
       this.add(new SModelTreeNode(typesystemModelDescriptor, "typesystem", operationContext));
@@ -103,6 +97,11 @@ class ProjectLanguageTreeNode extends MPSTreeNode {
     SModelDescriptor constraintsModelDescriptor = myLanguage.getConstraintsModelDescriptor();
     if (constraintsModelDescriptor != null) {
       this.add(new SModelTreeNode(constraintsModelDescriptor, "constraints", operationContext));
+    }
+
+    SModelDescriptor scriptsModelDescriptor = myLanguage.getScriptsModelDescriptor();
+    if (scriptsModelDescriptor != null) {
+      this.add(new SModelTreeNode(scriptsModelDescriptor, "scripts", operationContext));
     }
 
 
