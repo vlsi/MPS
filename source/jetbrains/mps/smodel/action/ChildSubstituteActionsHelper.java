@@ -1,9 +1,6 @@
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions;
-import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder;
-import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction;
-import jetbrains.mps.bootstrap.actionsLanguage.structure.RemovePart;
+import jetbrains.mps.bootstrap.actionsLanguage.structure.*;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
@@ -94,7 +91,7 @@ public class ChildSubstituteActionsHelper {
     // apply all filters
     primaryBuilders.addAll(extendedBuilders);
     for (NodeSubstituteActionsBuilder builder : primaryBuilders) {
-      resultActions = applyActionFilter(builder, resultActions, context);
+      resultActions = applyActionFilter(builder, resultActions, parentNode, currentChild, context);
     }
 
     return resultActions;
@@ -297,7 +294,11 @@ public class ChildSubstituteActionsHelper {
   }
 
 
-  private static List<INodeSubstituteAction> applyActionFilter(NodeSubstituteActionsBuilder substituteActionsBuilder, List<INodeSubstituteAction> actions, IOperationContext context) {
+  private static List<INodeSubstituteAction> applyActionFilter(NodeSubstituteActionsBuilder substituteActionsBuilder,
+                                                               List<INodeSubstituteAction> actions,
+                                                               SNode parentNode,
+                                                               SNode currentChild,
+                                                               IOperationContext context) {
     if (!substituteActionsBuilder.getUseNewActions()) {
       String filterQueryMethodId = substituteActionsBuilder.getActionsFilterAspectId();
       // filter is optional
@@ -316,12 +317,27 @@ public class ChildSubstituteActionsHelper {
         conceptsToRemove.add(rp.getConceptToRemove().getNode());
       }
 
+
+      List<RemoveByConditionPart> removesByCondition = substituteActionsBuilder.getSubnodes(RemoveByConditionPart.class);
+
       Iterator<INodeSubstituteAction> it = actions.iterator();
       while (it.hasNext()) {
         INodeSubstituteAction action = it.next();
-
-        if (conceptsToRemove.contains(action.getParameterObject())) {
-          it.remove();
+        if (action.getParameterObject() instanceof SNode && ((SNode) action.getParameterObject()).getAdapter() instanceof ConceptDeclaration) {
+          if (conceptsToRemove.contains(action.getParameterObject())) {
+            it.remove();
+          }
+          for (RemoveByConditionPart part : removesByCondition) {
+            String methodName = "removeConceptByCondition_" + part.getId();
+            Object[] args = { (SNode) action.getParameterObject(), parentNode, currentChild, context };
+            try {
+              if ((Boolean) QueryMethodGenerated.invoke(methodName, args, substituteActionsBuilder.getModel())) {
+                it.remove();
+              }
+            } catch (Exception e) {
+              LOG.error(e);
+            }
+          }
         }
       }
       return actions;

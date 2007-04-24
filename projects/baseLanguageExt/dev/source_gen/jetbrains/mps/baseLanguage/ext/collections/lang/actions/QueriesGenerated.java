@@ -76,6 +76,10 @@ public class QueriesGenerated {
     }
     return result;
   }
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_SequenceOperation_1160663024951(final SNode parentNode, final SNode currentTargetNode, final ConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    return result;
+  }
   public static boolean removeConceptByCondition_1177414262137(SNode concept, SNode parentNode, SNode currentChild, IOperationContext operationContext) {
     boolean applicableToSequence = false;
     boolean applicableToList = false;
@@ -90,10 +94,10 @@ public class QueriesGenerated {
       }
     }
     if(!(applicableToSequence)) {
-      return false;
+      return true;
     }
     if(applicableToList) {
-      return true;
+      return false;
     }
     return SConceptOperations.isAssignableFrom(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.AbstractListOperation"), concept);
   }
