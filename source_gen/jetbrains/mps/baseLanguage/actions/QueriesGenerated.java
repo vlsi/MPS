@@ -430,4 +430,24 @@ public class QueriesGenerated {
     }
     return result;
   }
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ParameterDeclaration_1177408380007(final SNode parentNode, final SNode currentTargetNode, final ConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", operationContext.getScope());
+      ConceptDeclaration wrappedConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type", operationContext.getScope());
+      IChildNodeSetter setter = new AbstractChildNodeSetter() {
+
+        public SNode wrapNode(SNode nodeToWrap, SModel model) {
+          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
+          SLinkOperations.setTarget(result, "type", nodeToWrap, true);
+          return result;
+        }
+        public void doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
+          childSetter.execute(parentNode, currentTargetNode, this.wrapNode(nc, nc.getModel()), operationContext.getScope());
+        }
+      };
+      result.addAll(ModelActions.createChildSubstituteActions(parentNode, currentTargetNode, wrappedConcept, setter, operationContext));
+    }
+    return result;
+  }
 }
