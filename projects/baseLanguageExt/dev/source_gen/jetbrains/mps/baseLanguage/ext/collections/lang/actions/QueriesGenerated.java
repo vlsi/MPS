@@ -10,6 +10,15 @@ import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.ext.collections.lang.CollectionsLanguageUtil;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import java.util.List;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.smodel.action.IChildNodeSetter;
+import java.util.ArrayList;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.util.Calculable;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 
 public class QueriesGenerated {
 
@@ -24,5 +33,49 @@ public class QueriesGenerated {
   }
   public static void nodeFactory_NodeSetup_DefaultInputElement_1174261447073(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
     SPropertyOperations.set(newNode, "name", "it");
+  }
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_1152144005896(final SNode parentNode, final SNode currentTargetNode, final ConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement", operationContext.getScope());
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          boolean yieldAllowed = false;
+          boolean stopAllowed = false;
+          boolean skipAllowed = false;
+          SNode parentClosure = SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.structure.Closure", false, false);
+          if(SNodeOperations.isInstanceOf(parentClosure, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ValueSupplierBlock")) {
+            yieldAllowed = true;
+            stopAllowed = true;
+          }
+          if(SNodeOperations.isInstanceOf(parentClosure, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapperBlock")) {
+            yieldAllowed = true;
+            stopAllowed = true;
+            skipAllowed = true;
+          }
+          if(SNodeOperations.isInstanceOf(parentClosure, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachBlock")) {
+            stopAllowed = true;
+            skipAllowed = true;
+          }
+          List<SNode> concepts = new ArrayList<SNode>();
+          if(yieldAllowed) {
+            concepts.add(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.TraversalYieldStatement"));
+          }
+          if(stopAllowed) {
+            concepts.add(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.TraversalStopStatement"));
+          }
+          if(skipAllowed) {
+            concepts.add(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.TraversalSkipStatement"));
+          }
+          return concepts;
+        }
+      };
+      List queryResult = (List)calc.calculate();
+      for(Object item : queryResult) {
+        result.add(new DefaultChildNodeSubstituteAction(item, parentNode, currentTargetNode, childSetter, operationContext.getScope()));
+      }
+    }
+    return result;
   }
 }

@@ -665,5 +665,15 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177409831820">
+    <property name="name" value="RemovePart" />
+    <property name="package" value="NodeBuilderParts" />
+    <link role="extends" targetNodeId="1177323240852" resolveInfo="NodeBuilderPart" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177409838946">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="conceptToRemove" />
+      <link role="target" targetNodeId="2.1071489090640" />
+    </node>
+  </node>
 </model>
 

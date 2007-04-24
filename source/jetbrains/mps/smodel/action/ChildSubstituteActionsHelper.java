@@ -3,6 +3,7 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions;
 import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder;
 import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction;
+import jetbrains.mps.bootstrap.actionsLanguage.structure.RemovePart;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
@@ -20,10 +21,7 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.util.QueryMethodGenerated;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 /**
  * Igor Alshannikov
@@ -300,17 +298,34 @@ public class ChildSubstituteActionsHelper {
 
 
   private static List<INodeSubstituteAction> applyActionFilter(NodeSubstituteActionsBuilder substituteActionsBuilder, List<INodeSubstituteAction> actions, IOperationContext context) {
-    String filterQueryMethodId = substituteActionsBuilder.getActionsFilterAspectId();
-    // filter is optional
-    if (filterQueryMethodId == null) {
+    if (!substituteActionsBuilder.getUseNewActions()) {
+      String filterQueryMethodId = substituteActionsBuilder.getActionsFilterAspectId();
+      // filter is optional
+      if (filterQueryMethodId == null) {
+        return actions;
+      }
+
+      Object[] args1 = new Object[]{actions, context};
+      Object[] args2 = new Object[]{actions, context.getScope()};
+      String methodName = "nodeSubstituteActionsBuilder_ActionsFilter_" + filterQueryMethodId;
+      SModel model = substituteActionsBuilder.getModel();
+      return (List<INodeSubstituteAction>) QueryMethod.invoke_alternativeArguments(methodName, args1, args2, model);
+    } else {
+      Set<SNode> conceptsToRemove = new HashSet<SNode>();
+      for (RemovePart rp : substituteActionsBuilder.getSubnodes(RemovePart.class)) {
+        conceptsToRemove.add(rp.getConceptToRemove().getNode());
+      }
+
+      Iterator<INodeSubstituteAction> it = actions.iterator();
+      while (it.hasNext()) {
+        INodeSubstituteAction action = it.next();
+
+        if (conceptsToRemove.contains(action.getParameterObject())) {
+          it.remove();
+        }
+      }
       return actions;
     }
-
-    Object[] args1 = new Object[]{actions, context};
-    Object[] args2 = new Object[]{actions, context.getScope()};
-    String methodName = "nodeSubstituteActionsBuilder_ActionsFilter_" + filterQueryMethodId;
-    SModel model = substituteActionsBuilder.getModel();
-    return (List<INodeSubstituteAction>) QueryMethod.invoke_alternativeArguments(methodName, args1, args2, model);
   }
 
   private static List<INodeSubstituteAction> invokeActionFactory(NodeSubstituteActionsBuilder builder, SNode parentNode, SNode currentChild, AbstractConceptDeclaration childConcept, IChildNodeSetter childSetter, IOperationContext context) {
