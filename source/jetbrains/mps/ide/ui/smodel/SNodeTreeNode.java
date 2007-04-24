@@ -166,8 +166,12 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
 
   public boolean hasErrors() {
     SModelTreeNode stn = getSModelModelTreeNode();
-    ModelCheckResult r = stn.getModelCheckResult();
-    return r != null && r.hasErrorsInside(getSNode());
+    if (stn != null) {
+        // the following line causes sometimes a nasty NPE
+        ModelCheckResult r = stn.getModelCheckResult();
+        return r != null && r.hasErrorsInside(getSNode());
+    }
+    return false;
   }
 
   public Color getColor() {
