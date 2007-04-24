@@ -5,21 +5,19 @@ import jetbrains.mps.component.IContext;
 import jetbrains.mps.components.IContainer;
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.IGenerationScript;
 import jetbrains.mps.generator.generationTypes.GenerateClassesGenerationType;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.ide.AbstractProjectFrame;
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ProjectPathsDialog;
-import jetbrains.mps.ide.genconf.GenParameters;
-import jetbrains.mps.ide.genconf.GeneratorConfigUtil;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.undo.UndoManager;
-import jetbrains.mps.ide.generationPlan.GenerationPlans;
+import jetbrains.mps.ide.genconf.GenParameters;
+import jetbrains.mps.ide.genconf.GeneratorConfigUtil;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
@@ -30,15 +28,15 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.plugins.PluginManager;
-import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
+import jetbrains.mps.projectLanguage.structure.*;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IDisposable;
 import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -134,7 +132,9 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
         continue;
       }
       File descriptorFile = new File(path);
-      if (descriptorFile.exists()) {
+      if (!descriptorFile.getName().endsWith(".msd")) {
+        LOG.error("Couldn't load solution from: " + descriptorFile.getAbsolutePath() + " : '*.msd' file expected");
+      } else if (descriptorFile.exists()) {
         mySolutions.add((Solution) MPSModuleRepository.getInstance().registerSolution(descriptorFile, this));
       } else {
         LOG.error("Couldn't load solution from: " + descriptorFile.getAbsolutePath() + " : file doesn't exist");
@@ -145,7 +145,9 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     myLanguages = new LinkedList<Language>();
     for (LanguagePath languagePath : CollectionUtil.iteratorAsIterable(myProjectDescriptor.projectLanguages())) {
       File descriptorFile = new File(languagePath.getPath());
-      if (descriptorFile.exists()) {
+      if (!descriptorFile.getName().endsWith(".mpl")) {
+        LOG.error("Couldn't load language from: " + descriptorFile.getAbsolutePath() + " : '*.mpl' file expected");
+      } else if (descriptorFile.exists()) {
         myLanguages.add(MPSModuleRepository.getInstance().registerLanguage(descriptorFile, this));
       } else {
         LOG.error("Couldn't load language from: " + descriptorFile.getAbsolutePath() + " : file doesn't exist");
@@ -156,7 +158,9 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     myDevKits = new LinkedList<DevKit>();
     for (DevKitPath dk : myProjectDescriptor.getProjectDevkits()) {
       File devKit = new File(dk.getPath());
-      if (devKit.exists()) {
+      if (!devKit.getName().endsWith(".devkit")) {
+        LOG.error("Couldn't load devkit from: " + devKit.getAbsolutePath() + " : '*.devkit' file expected");
+      } else if (devKit.exists()) {
         myDevKits.add(MPSModuleRepository.getInstance().registerDevKit(devKit, this));
       } else {
         LOG.error("Couldn't load devkit from: " + devKit.getAbsolutePath() + " : file doesn't exist");
@@ -347,7 +351,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
   @NotNull
   public List<Solution> getProjectSolutions() {
     return Collections.unmodifiableList(mySolutions);
-  }    
+  }
 
   @NotNull
   public List<DevKit> getProjectDevKits() {
@@ -524,7 +528,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
         SModelRepository.getInstance().removeUnusedDescriptors();
         if (reloadAll) {
           ReloadUtils.reloadAll(true);
-        } 
+        }
       }
     }, "disposing project");
   }
@@ -645,7 +649,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
   }
 
   public void invalidateCaches() {
-    myScope.invalidateCaches();    
+    myScope.invalidateCaches();
   }
 
   private class ProjectEventTranslator extends CommandEventTranslator {
