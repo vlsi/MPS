@@ -63,8 +63,9 @@ public class ChildSubstituteActionsHelper {
 
     // add actions from 'primary' language
     List<NodeSubstituteActionsBuilder> primaryBuilders = getActionBuilders(parentNode, primaryLanguage, childConcept, context);
-    if (primaryBuilders.isEmpty()) {
+    if (primaryBuilders.isEmpty() || !containsLegacyQueries(primaryBuilders)) {
       // if 'primary' language hasn't defined actions for that target - create 'default' actions
+      // if 'primary' language doesn't contain legacy queries, than default actions will be created by default
       resultActions = createPrimaryChildSubstituteActions(parentNode, currentChild, childConcept, childSetter, TRUE_CONDITION, context);
     } else {
       for (NodeSubstituteActionsBuilder builder : primaryBuilders) {
@@ -95,6 +96,15 @@ public class ChildSubstituteActionsHelper {
     }
 
     return resultActions;
+  }
+
+  private static boolean containsLegacyQueries(List<NodeSubstituteActionsBuilder> list) {
+    for (NodeSubstituteActionsBuilder builder : list) {
+      if (builder.getActionsFactoryAspectId() != null) {
+        return true;
+      }
+    }
+    return false;
   }
 
   public static List<INodeSubstituteAction> createPrimaryChildSubstituteActions(

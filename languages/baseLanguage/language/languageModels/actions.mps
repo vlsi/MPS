@@ -28,11 +28,6 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions" id="1115842744505">
     <property name="name" value="substitute_node_substitute" />
     <property name="package" value="substitute" />
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1115842748115">
-      <property name="actionsFactoryAspectId" value="Expression" />
-      <property name="applicableLinkMetaclass" value="aggregation" />
-      <link role="applicableConcept" targetNodeId="1.1068431790191" />
-    </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1119298590500">
       <property name="actionsFactoryAspectId" value="Statement" />
       <property name="applicableLinkMetaclass" value="aggregation" />
@@ -416,8 +411,8 @@
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1140831852602">
       <property name="description" value="add type parameters to new-expression" />
-      <property name="transformTag" value="ext_1_RTransform" />
       <property name="actionsFactoryAspectId" value="NewExpression_addTypeParameter" />
+      <property name="transformTag" value="ext_1_RTransform" />
       <link role="applicableConcept" targetNodeId="1.1068581242872" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionFunction" id="1159200493867">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1159200493868">
