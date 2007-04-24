@@ -32,6 +32,10 @@ import java.util.regex.Matcher;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
+import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.baseLanguage.BaseLanguageSearchUtil_new;
+import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 
 public class QueriesGenerated {
 
@@ -307,6 +311,56 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(call, "instance", SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ThisExpression"), true);
             SLinkOperations.setTarget(call, "baseMethodDeclaration", ((SNode)this.getParameterObject()), false);
             return call;
+          }
+        });
+      }
+    }
+    return result;
+  }
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1177396179719(final SNode parentNode, final SNode currentTargetNode, final ConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", operationContext.getScope());
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          ISearchScope searchScope = BaseLanguageSearchUtil_new.createVisibleClassifiersScope(SNodeOperations.getModel(parentNode), IClassifiersSearchScope.CLASSIFFIER, operationContext.getScope());
+          List<SNode> classifiers = new ArrayList<SNode>();
+          for(SNode node : searchScope.getNodes()) {
+            if(!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+              continue;
+            }
+            SNode cls = node;
+            if(SequenceOperations.getSize(SLinkOperations.getTargets(cls, "staticField", true)) > 0) {
+              ListOperations.addElement(classifiers, cls);
+              continue;
+            }
+            if(SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept") && SequenceOperations.getSize(SLinkOperations.getTargets(cls, "staticMethod", true)) > 0) {
+              ListOperations.addElement(classifiers, cls);
+              continue;
+            }
+            if(SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.EnumClass") && SequenceOperations.getSize(SLinkOperations.getTargets(cls, "enumConstant", true)) > 0) {
+              ListOperations.addElement(classifiers, cls);
+              continue;
+            }
+          }
+          return classifiers;
+        }
+      };
+      List<SNode> queryResult = (List)calc.calculate();
+      for(SNode item : queryResult) {
+        result.add(new DefaultChildNodeSubstituteAction(item, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
+
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.StaticFieldReference");
+            SLinkOperations.setTarget(result, "classifier", ((SNode)this.getParameterObject()), false);
+            return result;
+          }
+          public String getMatchingText(String pattern) {
+            return SPropertyOperations.getString(((SNode)this.getParameterObject()), "name") + ".";
+          }
+          public String getDescriptionText(String pattern) {
+            return NodePresentationUtil.descriptionText(((SNode)this.getParameterObject())) + " static access";
           }
         });
       }
