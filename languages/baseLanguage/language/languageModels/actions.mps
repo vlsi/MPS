@@ -34,7 +34,7 @@
       <link role="applicableConcept" targetNodeId="1.1068580123157" />
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1154033305516">
-      <property name="actionsFactoryAspectId" value="Continue_Break_statements" />
+      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1068580123157" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionFunction" id="1154539862600">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1154539862601">
@@ -70,7 +70,9 @@
                 <link role="variableDeclaration" targetNodeId="1154567871794" resolveInfo="parent" />
               </node>
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1163671525325">
-                <link role="concept" targetNodeId="1.1154032098014" />
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.RefConcept_Reference" id="1177400590739">
+                  <link role="conceptDeclaration" targetNodeId="1.1154032098014" />
+                </node>
               </node>
             </node>
           </node>
@@ -97,7 +99,9 @@
                 <link role="variableDeclaration" targetNodeId="1154567871794" resolveInfo="parent" />
               </node>
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1163671572138">
-                <link role="concept" targetNodeId="1.1163670490218" />
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.RefConcept_Reference" id="1177400595602">
+                  <link role="conceptDeclaration" targetNodeId="1.1163670490218" />
+                </node>
               </node>
             </node>
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1163671567073">
@@ -110,6 +114,59 @@
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1163671537133">
             <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1163671538885" />
+          </node>
+        </node>
+      </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddPart" id="1177400193572">
+        <link role="concept" targetNodeId="1.1068580123157" />
+        <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptsMenuPart" id="1177400480575">
+          <node role="query" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_Parameterized_Query" id="1177400480576">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177400480577">
+              <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1177400483383">
+                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1177400483384">
+                  <property name="name" value="concepts" />
+                  <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1177400483385">
+                    <link role="elementConcept" targetNodeId="31.1071489090640" />
+                  </node>
+                  <node role="initializer" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1177400489436">
+                    <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListCreator" id="1177400490825">
+                      <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1177400490826">
+                        <link role="elementConcept" targetNodeId="31.1071489090640" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1177400503673">
+                <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1177400505410">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1177400503674">
+                    <link role="variableDeclaration" targetNodeId="1177400483384" resolveInfo="concepts" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.AddElementOperation" id="1177400506109">
+                    <node role="argument" type="jetbrains.mps.bootstrap.smodelLanguage.ConceptRefExpression" id="1177400509461">
+                      <link role="conceptDeclaration" targetNodeId="1.1081855346303" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1177400530545">
+                <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1177400531984">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1177400530546">
+                    <link role="variableDeclaration" targetNodeId="1177400483384" resolveInfo="concepts" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.AddElementOperation" id="1177400533168">
+                    <node role="argument" type="jetbrains.mps.bootstrap.smodelLanguage.ConceptRefExpression" id="1177400536655">
+                      <link role="conceptDeclaration" targetNodeId="1.1082113931046" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1177400497110">
+                <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1177400498572">
+                  <link role="variableDeclaration" targetNodeId="1177400483384" resolveInfo="concepts" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>
@@ -411,8 +468,8 @@
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1140831852602">
       <property name="description" value="add type parameters to new-expression" />
-      <property name="actionsFactoryAspectId" value="NewExpression_addTypeParameter" />
       <property name="transformTag" value="ext_1_RTransform" />
+      <property name="actionsFactoryAspectId" value="NewExpression_addTypeParameter" />
       <link role="applicableConcept" targetNodeId="1.1068581242872" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionFunction" id="1159200493867">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1159200493868">

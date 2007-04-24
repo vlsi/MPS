@@ -12,10 +12,7 @@ import jetbrains.mps.baseLanguage.structure.ArrayType;
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
 import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.baseLanguage.types.BaseLanguageTypesUtil_new;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.*;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.generator.JavaModelUtil_new;
 import jetbrains.mps.helgins.inference.TypeChecker;
@@ -133,6 +130,26 @@ public class QueriesGenerated {
         _zCursor.release();
       }
     }
+  }
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_1154033305516(final SNode parentNode, final SNode currentTargetNode, final ConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement", operationContext.getScope());
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          List<SNode> concepts = new ArrayList<SNode>();
+          ListOperations.addElement(concepts, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BreakStatement"));
+          ListOperations.addElement(concepts, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ContinueStatement"));
+          return concepts;
+        }
+      };
+      List queryResult = (List)calc.calculate();
+      for(Object item : queryResult) {
+        result.add(new DefaultChildNodeSubstituteAction(item, parentNode, currentTargetNode, childSetter, operationContext.getScope()));
+      }
+    }
+    return result;
   }
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1177334764520(final SNode parentNode, final SNode currentTargetNode, final ConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
