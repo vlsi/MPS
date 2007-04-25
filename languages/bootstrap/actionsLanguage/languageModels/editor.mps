@@ -1106,6 +1106,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1177324036619">
           <property name="vertical" value="true" />
+          <property name="separatorText" value="=============" />
           <link role="relationDeclaration" targetNodeId="1.1177333559040" />
         </node>
       </node>
