@@ -28,8 +28,8 @@
     <orderEntry type="module" module-name="baseLanguageExt" exported="" />
     <orderEntry type="library" name="asm" level="project" />
     <orderEntry type="module" module-name="scriptLanguage" />
-    <orderEntry type="module" module-name="scriptLanguageInternal" />
     <orderEntry type="module" module-name="scriptLanguage_runtime" />
+    <orderEntry type="module" module-name="scriptLanguageInternal" />
     <orderEntryProperties />
   </component>
   <component name="copyright">
