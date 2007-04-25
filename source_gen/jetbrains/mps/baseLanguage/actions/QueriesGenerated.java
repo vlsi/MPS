@@ -6,13 +6,13 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
 import jetbrains.mps.baseLanguage.types.BaseLanguageTypesUtil_new;
 import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.baseLanguage.structure.ArrayType;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.JavaModelUtil_new;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
@@ -54,12 +54,6 @@ public class QueriesGenerated {
     }
     return false;
   }
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_GenericDeclaration_1159200256287(SNode sourceNode, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getCount(sourceNode, "typeVariableDeclaration") == 0;
-  }
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_NewExpression_1159200493867(SNode sourceNode, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getCount(sourceNode, "typeParameter") == 0;
-  }
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1177499026996(SNode sourceNode, IScope scope, IOperationContext operationContext) {
     ClassifierType ct = BaseLanguageTypesUtil_new.tryObtain_ClassifierType(((Expression)SNodeOperations.getAdapter(sourceNode)));
     return ct != null;
@@ -89,6 +83,12 @@ public class QueriesGenerated {
   }
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_ClassifierType_1177505734541(SNode sourceNode, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getCount(sourceNode, "parameter") == 0;
+  }
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_GenericDeclaration_1177506104970(SNode sourceNode, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getCount(sourceNode, "typeVariableDeclaration") == 0;
+  }
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_NewExpression_1177506323526(SNode sourceNode, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getCount(sourceNode, "typeParameter") == 0;
   }
   public static void nodeFactory_NodeSetup_InstanceMethodDeclaration_1158793299786(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
     SLinkOperations.setNewChild(newNode, "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
@@ -632,6 +632,111 @@ public class QueriesGenerated {
         }
         public String getDescriptionText(String pattern) {
           return "add type parameter";
+        }
+      });
+    }
+    return result;
+  }
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_GenericDeclaration_1177506104969(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericDeclaration", operationContext.getScope());
+      result.add(new AbstractRTransformHintSubstituteAction(concept.getNode(), sourceNode) {
+
+        public SNode doSubstitute(String pattern) {
+          SLinkOperations.addNewChild(sourceNode, "typeVariableDeclaration", "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration");
+          return SequenceOperations.getFirst(SLinkOperations.getTargets(sourceNode, "typeVariableDeclaration", true));
+        }
+        public String getMatchingText(String pattern) {
+          return "<";
+        }
+        public String getDescriptionText(String pattern) {
+          return "add type variable";
+        }
+      });
+    }
+    return result;
+  }
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_NewExpression_1177506323525(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.NewExpression", operationContext.getScope());
+      result.add(new AbstractRTransformHintSubstituteAction(concept.getNode(), sourceNode) {
+
+        public SNode doSubstitute(String pattern) {
+          SLinkOperations.addNewChild(sourceNode, "typeParameter", "jetbrains.mps.baseLanguage.structure.Type");
+          return SequenceOperations.getFirst(SLinkOperations.getTargets(sourceNode, "typeParameter", true));
+        }
+        public String getMatchingText(String pattern) {
+          return "<";
+        }
+        public String getDescriptionText(String pattern) {
+          return "add type parameter";
+        }
+      });
+    }
+    return result;
+  }
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_TryCatchStatement_1177507970664(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.TryCatchStatement", operationContext.getScope());
+      result.add(new AbstractRTransformHintSubstituteAction(concept.getNode(), sourceNode) {
+
+        public SNode doSubstitute(String pattern) {
+          SLinkOperations.addNewChild(sourceNode, "catchClause", "jetbrains.mps.baseLanguage.structure.CatchClause");
+          return SequenceOperations.getFirst(SLinkOperations.getTargets(sourceNode, "catchClause", true));
+        }
+        public String getMatchingText(String pattern) {
+          return "catch";
+        }
+      });
+    }
+    return result;
+  }
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_TryCatchStatement_1177508119482(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.TryCatchStatement", operationContext.getScope());
+      result.add(new AbstractRTransformHintSubstituteAction(concept.getNode(), sourceNode) {
+
+        public SNode doSubstitute(String pattern) {
+          SNode tryStatement = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.TryStatement");
+          SNode body = SLinkOperations.getTarget(sourceNode, "body", true);
+          SLinkOperations.deleteChild(sourceNode, "body");
+          SLinkOperations.setTarget(tryStatement, "body", body, true);
+          for(SNode catchClause : SLinkOperations.getTargets(sourceNode, "catchClause", true)) {
+            SNodeOperations.deleteNode(catchClause);
+            SLinkOperations.addChild(tryStatement, "catchClause", catchClause);
+          }
+          SLinkOperations.setNewChild(tryStatement, "finallyBody", "jetbrains.mps.baseLanguage.structure.StatementList");
+          SNodeOperations.replaceWithAnother(sourceNode, tryStatement);
+          return tryStatement;
+        }
+        public String getMatchingText(String pattern) {
+          return "finally";
+        }
+      });
+    }
+    return result;
+  }
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1177508524786(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", operationContext.getScope());
+      result.add(new AbstractRTransformHintSubstituteAction(concept.getNode(), sourceNode) {
+
+        public SNode doSubstitute(String pattern) {
+          SNode to = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression");
+          SNodeOperations.replaceWithAnother(sourceNode, to);
+          SLinkOperations.setTarget(to, "condition", sourceNode, true);
+          return to;
+        }
+        public String getMatchingText(String pattern) {
+          return "?";
+        }
+        public String getDescriptionText(String pattern) {
+          return "ternary operator";
         }
       });
     }
