@@ -6,7 +6,6 @@
  */
 package jetbrains.mps.generator.template;
 
-import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
@@ -94,10 +93,12 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   }
 
   public void showErrorMessage(SNode sourceNode, SNode templateNode, String message) {
+    myErrorsCount++;
     showErrorMessage(sourceNode, templateNode, null, message);
   }
 
   public void showErrorMessage(SNode sourceNode, SNode templateNode, SNode ruleNode, String message) {
+    myErrorsCount++;    
     if (ruleNode != null) {
       if (myFailedRules.contains(ruleNode)) {
         // do not show duplicating messages
