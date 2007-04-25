@@ -6,13 +6,13 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.baseLanguage.structure.ArrayType;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
 import jetbrains.mps.baseLanguage.types.BaseLanguageTypesUtil_new;
 import jetbrains.mps.baseLanguage.structure.Expression;
+import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.baseLanguage.structure.ArrayType;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.JavaModelUtil_new;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
@@ -54,15 +54,25 @@ public class QueriesGenerated {
     }
     return false;
   }
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1173186369008(SNode sourceNode, IScope scope, IOperationContext operationContext) {
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_GenericDeclaration_1159200256287(SNode sourceNode, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getCount(sourceNode, "typeVariableDeclaration") == 0;
+  }
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_NewExpression_1159200493867(SNode sourceNode, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getCount(sourceNode, "typeParameter") == 0;
+  }
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1177499026996(SNode sourceNode, IScope scope, IOperationContext operationContext) {
+    ClassifierType ct = BaseLanguageTypesUtil_new.tryObtain_ClassifierType(((Expression)SNodeOperations.getAdapter(sourceNode)));
+    return ct != null;
+  }
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1177503884613(SNode sourceNode, IScope scope, IOperationContext operationContext) {
     TypeChecker typeChecker = operationContext.getComponent(TypeChecker.class);
     return BaseAdapter.fromNode(typeChecker.getTypeOf(sourceNode)) instanceof ArrayType;
   }
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1173186583931(SNode sourceNode, IScope scope, IOperationContext operationContext) {
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1177504604529(SNode sourceNode, IScope scope, IOperationContext operationContext) {
     TypeChecker typeChecker = operationContext.getComponent(TypeChecker.class);
     return BaseAdapter.fromNode(typeChecker.getTypeOf(sourceNode)) instanceof ArrayType;
   }
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_VariableDeclaration_1158969943216(SNode sourceNode, IScope scope, IOperationContext operationContext) {
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_VariableDeclaration_1177505054800(SNode sourceNode, IScope scope, IOperationContext operationContext) {
     if(SLinkOperations.getTarget(sourceNode, "initializer", true) != null) {
       return false;
     }
@@ -77,18 +87,8 @@ public class QueriesGenerated {
     }
     return false;
   }
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_ClassifierType_1158972050511(SNode sourceNode, IScope scope, IOperationContext operationContext) {
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_ClassifierType_1177505734541(SNode sourceNode, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getCount(sourceNode, "parameter") == 0;
-  }
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_GenericDeclaration_1159200256287(SNode sourceNode, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getCount(sourceNode, "typeVariableDeclaration") == 0;
-  }
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_NewExpression_1159200493867(SNode sourceNode, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getCount(sourceNode, "typeParameter") == 0;
-  }
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1177499026996(SNode sourceNode, IScope scope, IOperationContext operationContext) {
-    ClassifierType ct = BaseLanguageTypesUtil_new.tryObtain_ClassifierType(((Expression)SNodeOperations.getAdapter(sourceNode)));
-    return ct != null;
   }
   public static void nodeFactory_NodeSetup_InstanceMethodDeclaration_1158793299786(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
     SLinkOperations.setNewChild(newNode, "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
@@ -503,6 +503,135 @@ public class QueriesGenerated {
         }
         public String getDescriptionText(String pattern) {
           return "";
+        }
+      });
+    }
+    return result;
+  }
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1177503307237(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AssignmentExpression", operationContext.getScope());
+      result.add(new AbstractRTransformHintSubstituteAction(concept.getNode(), sourceNode) {
+
+        public SNode doSubstitute(String pattern) {
+          SNode assignment = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
+          SNodeOperations.replaceWithAnother(sourceNode, assignment);
+          SLinkOperations.setTarget(assignment, "lValue", sourceNode, true);
+          return assignment;
+        }
+        public String getMatchingText(String pattern) {
+          return "=";
+        }
+        public String getDescriptionText(String pattern) {
+          return "assignment";
+        }
+      });
+    }
+    return result;
+  }
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1177503884612(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayAccessExpression", operationContext.getScope());
+      result.add(new AbstractRTransformHintSubstituteAction(concept.getNode(), sourceNode) {
+
+        public SNode doSubstitute(String pattern) {
+          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ArrayAccessExpression");
+          SNodeOperations.replaceWithAnother(sourceNode, result);
+          SLinkOperations.setTarget(result, "array", sourceNode, true);
+          return result;
+        }
+        public String getMatchingText(String pattern) {
+          return "[";
+        }
+        public String getDescriptionText(String pattern) {
+          return "array access";
+        }
+      });
+    }
+    return result;
+  }
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1177504604528(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayLengthExpression", operationContext.getScope());
+      result.add(new AbstractRTransformHintSubstituteAction(concept.getNode(), sourceNode) {
+
+        public SNode doSubstitute(String pattern) {
+          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ArrayLengthExpression");
+          SNodeOperations.replaceWithAnother(sourceNode, result);
+          SLinkOperations.setTarget(result, "array", sourceNode, true);
+          return result;
+        }
+        public String getMatchingText(String pattern) {
+          return ".length";
+        }
+        public String getDescriptionText(String pattern) {
+          return "array length expression";
+        }
+      });
+    }
+    return result;
+  }
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_VariableDeclaration_1177505054799(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration", operationContext.getScope());
+      result.add(new AbstractRTransformHintSubstituteAction(concept.getNode(), sourceNode) {
+
+        public SNode doSubstitute(String pattern) {
+          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.Expression");
+          SLinkOperations.setTarget(sourceNode, "initializer", result, true);
+          return result;
+        }
+        public String getMatchingText(String pattern) {
+          return "=";
+        }
+        public String getDescriptionText(String pattern) {
+          return "initializer";
+        }
+      });
+    }
+    return result;
+  }
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Type_1177505359407(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", operationContext.getScope());
+      result.add(new AbstractRTransformHintSubstituteAction(concept.getNode(), sourceNode) {
+
+        public SNode doSubstitute(String pattern) {
+          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ArrayType");
+          SNodeOperations.replaceWithAnother(sourceNode, result);
+          SLinkOperations.setTarget(result, "componentType", sourceNode, true);
+          return result;
+        }
+        public String getMatchingText(String pattern) {
+          return "[]";
+        }
+        public String getDescriptionText(String pattern) {
+          return "to array type";
+        }
+      });
+    }
+    return result;
+  }
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_ClassifierType_1177505734540(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", operationContext.getScope());
+      result.add(new AbstractRTransformHintSubstituteAction(concept.getNode(), sourceNode) {
+
+        public SNode doSubstitute(String pattern) {
+          SLinkOperations.addNewChild(sourceNode, "parameter", "jetbrains.mps.baseLanguage.structure.Type");
+          return SequenceOperations.getFirst(SLinkOperations.getTargets(sourceNode, "parameter", true));
+        }
+        public String getMatchingText(String pattern) {
+          return "<";
+        }
+        public String getDescriptionText(String pattern) {
+          return "add type parameter";
         }
       });
     }

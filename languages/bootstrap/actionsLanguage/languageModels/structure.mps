@@ -776,10 +776,6 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1177498107386">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
     </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1177498120675">
-      <link role="conceptLinkDeclaration" targetNodeId="3.1137545963098" />
-      <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1177498122097" />
-    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177498013932">
     <property name="name" value="SimpleRightTransformMenuPart" />
