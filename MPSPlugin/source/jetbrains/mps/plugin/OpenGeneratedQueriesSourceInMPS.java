@@ -2,9 +2,9 @@ package jetbrains.mps.plugin;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.DataConstants;
-import com.intellij.openapi.project.Project;
+import com.intellij.openapi.actionSystem.DataKeys;
 import com.intellij.openapi.editor.Editor;
+import com.intellij.openapi.project.Project;
 import com.intellij.psi.*;
 
 import java.util.regex.Pattern;
@@ -13,9 +13,10 @@ public class OpenGeneratedQueriesSourceInMPS extends AnAction {
   public void update(AnActionEvent e) {
     super.update(e);
     e.getPresentation().setVisible(false);
-    Editor editor = (Editor) e.getDataContext().getData(DataConstants.EDITOR);
+    Editor editor = e.getData(DataKeys.EDITOR);
     if (editor == null) return;
-    Project project = (Project) e.getDataContext().getData(DataConstants.PROJECT);
+
+    Project project = e.getData(DataKeys.PROJECT);
     int offset = editor.getCaretModel().getOffset();
     PsiFile file = PsiDocumentManager.getInstance(project).getCachedPsiFile(editor.getDocument());
     if (file == null) return;
@@ -32,9 +33,9 @@ public class OpenGeneratedQueriesSourceInMPS extends AnAction {
   }
 
   public void actionPerformed(AnActionEvent e) {
-    Editor editor = (Editor) e.getDataContext().getData(DataConstants.EDITOR);
+    Editor editor = e.getData(DataKeys.EDITOR);
     if (editor == null) return;
-    Project project = (Project) e.getDataContext().getData(DataConstants.PROJECT);
+    Project project = e.getData(DataKeys.PROJECT);
     int offset = editor.getCaretModel().getOffset();
     PsiFile file = PsiDocumentManager.getInstance(project).getCachedPsiFile(editor.getDocument());
     if (file == null) return;

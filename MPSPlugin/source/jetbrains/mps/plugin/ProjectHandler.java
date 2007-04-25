@@ -22,14 +22,14 @@ import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.wm.WindowManager;
+import com.intellij.openapi.util.SystemInfo;
 import com.intellij.psi.*;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.search.PsiSearchHelper;
 import com.intellij.refactoring.MoveClassesOrPackagesRefactoring;
+import com.intellij.refactoring.MoveDestination;
 import com.intellij.refactoring.RefactoringFactory;
 import com.intellij.refactoring.RenameRefactoring;
-import com.intellij.refactoring.MoveDestination;
-import com.intellij.refactoring.move.moveClassesOrPackages.SingleSourceRootMoveDestination;
 import com.intellij.util.IncorrectOperationException;
 import org.jetbrains.annotations.NotNull;
 
@@ -74,12 +74,12 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
   }
 
   String getProjectPath() {
-    return new File(myProject.getProjectFilePath()).getAbsolutePath();
+    return new File(myProject.getPresentableUrl()).getAbsolutePath();
   }
 
   public void addSourceRoot(final String path) {
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-      public void run() {
+      public void run() {                                                                   
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
           public void run() {
             LocalFileSystem lfs = LocalFileSystem.getInstance();
@@ -390,7 +390,9 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     });
   }
 
-  private void activateProjectWindow() {
+  private void activateProjectWindow() {    
+    if (SystemInfo.isLinux) return;
+
     Frame window = (Frame) WindowManager.getInstance().suggestParentWindow(myProject);
     if (window == null) return;
     window.toFront();

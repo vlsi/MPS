@@ -2,7 +2,7 @@ package jetbrains.mps.plugin;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.DataConstants;
+import com.intellij.openapi.actionSystem.DataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.*;
 
@@ -32,7 +32,7 @@ public class FindClassUsagesInMPS extends AnAction {
   public void actionPerformed(AnActionEvent anActionEvent) {
     PsiElement element = PluginUtil.getCurrentElement(anActionEvent);
 
-    Project project = (Project) anActionEvent.getDataContext().getData(DataConstants.PROJECT);
+    Project project = anActionEvent.getData(DataKeys.PROJECT);
     if (project == null) return;
     ProjectHandler projectHandler = project.getComponent(ProjectHandler.class);
     PsiClass cls = getPsiClass(element);

@@ -2,7 +2,7 @@ package jetbrains.mps.plugin;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.DataConstants;
+import com.intellij.openapi.actionSystem.DataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.*;
 import com.intellij.psi.impl.source.PsiClassReferenceType;
@@ -49,7 +49,7 @@ public class GoToConceptDeclaration extends AnAction {
 
   public void actionPerformed(AnActionEvent e) {
     PsiClass cls = getConceptClass(PluginUtil.getCurrentElement(e));
-    Project project = (Project) e.getDataContext().getData(DataConstants.PROJECT);
+    Project project = (Project) e.getData(DataKeys.PROJECT);
     if (project == null) return;
     ProjectHandler projectHandler = project.getComponent(ProjectHandler.class);
     projectHandler.showConceptDeclaration(cls.getQualifiedName());

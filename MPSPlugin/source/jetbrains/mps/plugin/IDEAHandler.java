@@ -1,30 +1,30 @@
 package jetbrains.mps.plugin;
 
-import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
-import com.intellij.openapi.project.ex.ProjectManagerEx;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectManager;
+import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.module.ModuleType;
-import com.intellij.openapi.roots.ModuleRootManager;
-import com.intellij.openapi.roots.ModifiableRootModel;
-import com.intellij.openapi.roots.ex.ProjectRootManagerEx;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.LocalFileSystem;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
+import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.projectRoots.ProjectJdk;
 import com.intellij.openapi.projectRoots.ProjectJdkTable;
+import com.intellij.openapi.roots.ModifiableRootModel;
+import com.intellij.openapi.roots.ModuleRootManager;
+import com.intellij.openapi.roots.ex.ProjectRootManagerEx;
+import com.intellij.openapi.vfs.LocalFileSystem;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.pom.java.LanguageLevel;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.IOException;
-import java.rmi.server.UnicastRemoteObject;
 import java.rmi.RemoteException;
-import java.util.*;
-
-import org.jetbrains.annotations.NotNull;
+import java.rmi.server.UnicastRemoteObject;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Kostik
@@ -123,7 +123,7 @@ public class IDEAHandler extends UnicastRemoteObject implements ApplicationCompo
   public List<String> getOpenProjects() throws RemoteException {
     List<String> result = new ArrayList<String>();
     for (Project p : ProjectManager.getInstance().getOpenProjects()) {
-      result.add(new File(p.getProjectFilePath()).getAbsolutePath());
+      result.add(new File(p.getPresentableUrl()).getAbsolutePath());
     }
     return result;
   }
