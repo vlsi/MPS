@@ -1489,7 +1489,7 @@
             </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1177498639115">
-            <property name="text" value="handler" />
+            <property name="text" value="do substitute" />
             <property name="textFgColor" value="DARK_BLUE" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1177498639116">
