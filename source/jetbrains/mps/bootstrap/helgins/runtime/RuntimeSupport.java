@@ -77,7 +77,7 @@ public class RuntimeSupport {
     Map<SNode, SNode> typesContext = myTypeChecker.getMainContext();
     SNode nodesType = typesContext.get(node);
     if (nodesType == null) { // put to context
-      typesContext.put(node, type);
+      typesContext.put(node, myTypeChecker.getEquationManager().getRepresentator(type));
     } else { // create equation
       createEquation(nodesType, type, node);
     }
