@@ -67,6 +67,12 @@ public class QueriesGenerated {
   public static String propertyMacro_GetPropertyValue_1177509909274(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return NameUtil.nodeFQName(SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "concept", false));
   }
+  public static String propertyMacro_GetPropertyValue_1177527514739(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return NameUtil.nodeFQName(SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "concept", false));
+  }
+  public static String propertyMacro_GetPropertyValue_1177527741008(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return NameUtil.nodeFQName(SLinkOperations.getTarget(node, "baseConcept", false));
+  }
   public static boolean ifMacro_Condition_1177335419476(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "canSubstitute", true) != null;
   }
@@ -189,5 +195,8 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_1177514456119(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "descriptionText", true), "body", true);
+  }
+  public static SNode sourceNodeQuery_1177528022223(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "handler", true), "body", true);
   }
 }
