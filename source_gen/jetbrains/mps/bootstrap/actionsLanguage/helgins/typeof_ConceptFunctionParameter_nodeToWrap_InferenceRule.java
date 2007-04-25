@@ -20,7 +20,7 @@ public class typeof_ConceptFunctionParameter_nodeToWrap_InferenceRule implements
   }
 
   public void applyRule(SNode argument) {
-    SNode menu = SNodeOperations.getAncestor(argument, "jetbrains.mps.bootstrap.actionsLanguage.structure.WrapperMenuPart", false, false);
+    SNode menu = SNodeOperations.getAncestor(argument, "jetbrains.mps.bootstrap.actionsLanguage.structure.WrapperSubstituteMenuPart", false, false);
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_2().createNode(SLinkOperations.getTarget(menu, "wrappedConcept", false)), argument);
   }
   public String getApplicableConceptFQName() {
