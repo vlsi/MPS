@@ -19,9 +19,9 @@
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.RemovePart" id="1177412906732">
         <link role="conceptToRemove" targetNodeId="1.1177093525992" />
       </node>
-      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddPart" id="1177412984585">
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddSubstitutePart" id="1177412984585">
         <link role="concept" targetNodeId="1.1169569792945" />
-        <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptsMenuPart" id="1177412990748">
+        <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptsSubstituteMenuPart" id="1177412990748">
           <node role="query" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_Parameterized_Query" id="1177412990749">
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177412990750">
               <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1177413017371">

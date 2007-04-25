@@ -80,10 +80,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(node, "descriptionText", true) != null;
   }
   public static List sourceNodesQuery_1177330914926(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.getDescendants(node, "jetbrains.mps.bootstrap.actionsLanguage.structure.MenuPart", false);
+    return SNodeOperations.getDescendants(node, "jetbrains.mps.bootstrap.actionsLanguage.structure.SubstituteMenuPart", false);
   }
   public static List sourceNodesQuery_1177441873770(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.getDescendants(node, "jetbrains.mps.bootstrap.actionsLanguage.structure.MenuPart", false);
+    return SNodeOperations.getDescendants(node, "jetbrains.mps.bootstrap.actionsLanguage.structure.SubstituteMenuPart", false);
   }
   public static SNode sourceNodeQuery_1172253302099(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "body", true);
@@ -110,7 +110,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "query", true), "body", true);
   }
   public static SNode sourceNodeQuery_1177357415115(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedMenuPart", false, false), "type", true);
+    return SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedSubstituteMenuPart", false, false), "type", true);
   }
   public static SNode sourceNodeQuery_1177399369165(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "query", true), "body", true);

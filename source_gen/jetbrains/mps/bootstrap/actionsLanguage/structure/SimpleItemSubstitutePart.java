@@ -7,45 +7,45 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class SimpleItemPart extends MenuPart {
+public class SimpleItemSubstitutePart extends SubstituteMenuPart {
   public static String MATCHING_TEXT = "matchingText";
   public static String DESCRIPTION_TEXT = "descriptionText";
   public static String CAN_SUBSTITUTE = "canSubstitute";
   public static String HANDLER = "handler";
 
-  public  SimpleItemPart(SNode node) {
+  public SimpleItemSubstitutePart(SNode node) {
     super(node);
   }
 
-  public static SimpleItemPart newInstance(SModel sm, boolean init) {
-    return (SimpleItemPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.SimpleItemPart", sm, GlobalScope.getInstance(), init).getAdapter();
+  public static SimpleItemSubstitutePart newInstance(SModel sm, boolean init) {
+    return (SimpleItemSubstitutePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.SimpleItemPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
-  public static SimpleItemPart newInstance(SModel sm) {
-    return SimpleItemPart.newInstance(sm, false);
+  public static SimpleItemSubstitutePart newInstance(SModel sm) {
+    return newInstance(sm, false);
   }
 
   public QueryFunction_String getMatchingText() {
-    return (QueryFunction_String)this.getChild(SimpleItemPart.MATCHING_TEXT);
+    return (QueryFunction_String)this.getChild(MATCHING_TEXT);
   }
   public void setMatchingText(QueryFunction_String node) {
-    super.setChild(SimpleItemPart.MATCHING_TEXT, node);
+    super.setChild(MATCHING_TEXT, node);
   }
   public QueryFunction_String getDescriptionText() {
-    return (QueryFunction_String)this.getChild(SimpleItemPart.DESCRIPTION_TEXT);
+    return (QueryFunction_String)this.getChild(DESCRIPTION_TEXT);
   }
   public void setDescriptionText(QueryFunction_String node) {
-    super.setChild(SimpleItemPart.DESCRIPTION_TEXT, node);
+    super.setChild(DESCRIPTION_TEXT, node);
   }
   public QueryFunction_CanSubstitute getCanSubstitute() {
-    return (QueryFunction_CanSubstitute)this.getChild(SimpleItemPart.CAN_SUBSTITUTE);
+    return (QueryFunction_CanSubstitute)this.getChild(CAN_SUBSTITUTE);
   }
   public void setCanSubstitute(QueryFunction_CanSubstitute node) {
-    super.setChild(SimpleItemPart.CAN_SUBSTITUTE, node);
+    super.setChild(CAN_SUBSTITUTE, node);
   }
   public QueryFunction_SubstituteHandler getHandler() {
-    return (QueryFunction_SubstituteHandler)this.getChild(SimpleItemPart.HANDLER);
+    return (QueryFunction_SubstituteHandler)this.getChild(HANDLER);
   }
   public void setHandler(QueryFunction_SubstituteHandler node) {
-    super.setChild(SimpleItemPart.HANDLER, node);
+    super.setChild(HANDLER, node);
   }
 }
