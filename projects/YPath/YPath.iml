@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module relativePaths="true" type="JAVA_MODULE" version="4">
+<module version="4" relativePaths="true" type="JAVA_MODULE">
   <component name="ModuleRootManager" />
   <component name="NewModuleRootManager" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/classes" />
@@ -10,11 +10,11 @@
       <sourceFolder url="file://$MODULE_DIR$/solutions/main/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/solutions/sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/test/source" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPS" />
+    <orderEntry type="module" module-name="YPath-runtime" />
     <orderEntry type="library" name="JUnit4" level="project" />
     <orderEntry type="library" name="Log4j" level="project" />
     <orderEntryProperties />

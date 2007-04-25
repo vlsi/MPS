@@ -35,6 +35,7 @@
   </generators>
   <classPath>
     <entry path="${mps_home}\projects\YPath\classes" />
+    <entry path="${mps_home}\projects\YPath\runtime\classes" />
   </classPath>
 </language>
 
