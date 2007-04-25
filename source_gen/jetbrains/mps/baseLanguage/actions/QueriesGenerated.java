@@ -472,4 +472,26 @@ public class QueriesGenerated {
     }
     return result;
   }
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1177502380176(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceOfExpression", operationContext.getScope());
+      result.add(new AbstractRTransformHintSubstituteAction(concept.getNode(), sourceNode) {
+
+        public SNode doSubstitute(String pattern) {
+          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.InstanceOfExpression");
+          SNodeOperations.replaceWithAnother(sourceNode, result);
+          SLinkOperations.setTarget(result, "leftExpression", sourceNode, true);
+          return result;
+        }
+        public String getMatchingText(String pattern) {
+          return "instanceof";
+        }
+        public String getDescriptionText(String pattern) {
+          return "";
+        }
+      });
+    }
+    return result;
+  }
 }
