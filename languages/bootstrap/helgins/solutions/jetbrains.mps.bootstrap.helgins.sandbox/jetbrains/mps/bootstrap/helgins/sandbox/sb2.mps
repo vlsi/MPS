@@ -105,7 +105,28 @@
     <property name="name" value="D" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.ConstructorDeclaration" id="1176894440670">
       <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1176894440671" />
-      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176894440672" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176894440672">
+        <node role="statement" type="jetbrains.mps.bootstrap.helgins.MatchStatement" id="1177515967145">
+          <node role="expression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1177515987801">
+            <link role="variableDeclaration" targetNodeId="1177515982156" resolveInfo="n" />
+          </node>
+          <node role="item" type="jetbrains.mps.bootstrap.helgins.MatchStatementItem" id="1177515967147">
+            <node role="condition" type="jetbrains.mps.bootstrap.helgins.PatternCondition" id="1177515972620">
+              <property name="name" value="nn" />
+              <node role="pattern" type="jetbrains.mps.patterns.PatternExpression" id="1177515972621">
+                <node role="patternNode" type="jetbrains.mps.baseLanguage.ClassifierType" id="1177516005913">
+                  <link role="classifier" extResolveInfo="2.[Classifier]String" />
+                </node>
+              </node>
+            </node>
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1177515967149" />
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1177515982156">
+        <property name="name" value="n" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1177515982157" />
+      </node>
     </node>
     <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.TypeVariableDeclaration" id="1176894372776">
       <property name="name" value="E" />
