@@ -13,6 +13,7 @@ import jetbrains.mps.util.QueryMethodGenerated;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
@@ -131,22 +132,39 @@ import java.util.List;
   }
 
   private static List<INodeSubstituteAction> invokeActionFactory(RTransformHintSubstituteActionsBuilder substituteActionsBuilder, SNode sourceNode, IOperationContext context) {
-    String factoryQueryMethodId = substituteActionsBuilder.getActionsFactoryAspectId();
-    // factory is optional
-    if (factoryQueryMethodId == null) {
-      return Collections.EMPTY_LIST;
-    }
+    if (!substituteActionsBuilder.getUseNewActions()) {
+      String factoryQueryMethodId = substituteActionsBuilder.getActionsFactoryAspectId();
+      // factory is optional
+      if (factoryQueryMethodId == null) {
+        return Collections.EMPTY_LIST;
+      }
 
-    Object[] args1 = new Object[]{
-            sourceNode,
-            null,                  // todo: tag from builder description
-            context};
-    Object[] args2 = new Object[]{
-            sourceNode,
-            null,                  // todo: tag from builder description
-            context.getScope()};
-    String methodName = "rightTransformHintSubstituteActionsBuilder_ActionsFactory_" + factoryQueryMethodId;
-    SModel model = substituteActionsBuilder.getModel();
-    return (List<INodeSubstituteAction>) QueryMethod.invoke_alternativeArguments(methodName, args1, args2, model);
+      Object[] args1 = new Object[]{
+              sourceNode,
+              null,                  // todo: tag from builder description
+              context};
+      Object[] args2 = new Object[]{
+              sourceNode,
+              null,                  // todo: tag from builder description
+              context.getScope()};
+      String methodName = "rightTransformHintSubstituteActionsBuilder_ActionsFactory_" + factoryQueryMethodId;
+      SModel model = substituteActionsBuilder.getModel();
+      return (List<INodeSubstituteAction>) QueryMethod.invoke_alternativeArguments(methodName, args1, args2, model);
+    } else {
+      Object[] args = new Object[] {
+        sourceNode,
+        sourceNode.getModel(),
+        null,
+        context
+      };
+
+      String methodName = ActionQueryMethodName.nodeFactory_RightTransformActionBuilder(substituteActionsBuilder);
+      SModel model = substituteActionsBuilder.getModel();
+      try {
+        return (List<INodeSubstituteAction>) QueryMethodGenerated.invoke(methodName, args, model);
+      } catch (Exception e) {
+        return new ArrayList<INodeSubstituteAction>();
+      }
+    }
   }
 }
