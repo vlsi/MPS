@@ -1052,7 +1052,7 @@
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1177334764520">
       <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1068431790191" />
-      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddSubstitutePart" id="1177334764521">
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddMenuPart" id="1177334764521">
         <link role="concept" targetNodeId="1.1068580320020" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.SimpleItemSubstitutePart" id="1177334764522">
           <node role="canSubstitute" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_CanSubstitute" id="1177334764523">
@@ -1123,7 +1123,7 @@
           </node>
         </node>
       </node>
-      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddSubstitutePart" id="1177336181430">
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddMenuPart" id="1177336181430">
         <link role="concept" targetNodeId="1.1068580123137" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.SimpleItemSubstitutePart" id="1177336185107">
           <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_SubstituteHandler" id="1177336185108">
@@ -1226,7 +1226,7 @@
           </node>
         </node>
       </node>
-      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddSubstitutePart" id="1177336786014">
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddMenuPart" id="1177336786014">
         <link role="concept" targetNodeId="1.1111509017652" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.SimpleItemSubstitutePart" id="1177337054021">
           <node role="canSubstitute" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_CanSubstitute" id="1177337054022">
@@ -1322,7 +1322,7 @@
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1177361135564">
       <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1068431790191" />
-      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddSubstitutePart" id="1177361143096">
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddMenuPart" id="1177361143096">
         <link role="concept" targetNodeId="1.1068580123158" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.ParameterizedSubstituteMenuPart" id="1177361153545">
           <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1177361157499">
@@ -1531,7 +1531,7 @@
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1177362994569">
       <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1068431790191" />
-      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddSubstitutePart" id="1177362994570">
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddMenuPart" id="1177362994570">
         <link role="concept" targetNodeId="1.1068580123163" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.ParameterizedSubstituteMenuPart" id="1177362994571">
           <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1177362994572">
@@ -1740,7 +1740,7 @@
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1177396179719">
       <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1068431790191" />
-      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddSubstitutePart" id="1177396218490">
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddMenuPart" id="1177396218490">
         <link role="concept" targetNodeId="1.1070533707846" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.ParameterizedSubstituteMenuPart" id="1177396239695">
           <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1177396246736">
@@ -2049,7 +2049,7 @@
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1177397791368">
       <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1068431790191" />
-      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddSubstitutePart" id="1177397839813">
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddMenuPart" id="1177397839813">
         <link role="concept" targetNodeId="1.1107135704075" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptsSubstituteMenuPart" id="1177399034464">
           <node role="query" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_ParameterizedSubstitute_Query" id="1177399034465">
@@ -2248,7 +2248,7 @@
           </node>
         </node>
       </node>
-      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddSubstitutePart" id="1177400765772">
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddMenuPart" id="1177400765772">
         <link role="concept" targetNodeId="1.1068580123157" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptsSubstituteMenuPart" id="1177400765773">
           <node role="query" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_ParameterizedSubstitute_Query" id="1177400765774">
@@ -2309,7 +2309,7 @@
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1177403614729">
       <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1068580123157" />
-      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddSubstitutePart" id="1177403622097">
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddMenuPart" id="1177403622097">
         <link role="concept" targetNodeId="1.1068580123155" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.WrapperSubstituteMenuPart" id="1177403626165">
           <link role="wrappedConcept" targetNodeId="1.1068431790191" />
@@ -2364,7 +2364,7 @@
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1177406371457">
       <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1068580123157" />
-      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddSubstitutePart" id="1177406379469">
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddMenuPart" id="1177406379469">
         <link role="concept" targetNodeId="1.1068581242864" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.WrapperSubstituteMenuPart" id="1177406387370">
           <link role="wrappedConcept" targetNodeId="1.1068431790189" />
@@ -2447,7 +2447,7 @@
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1177406968279">
       <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1068580123157" />
-      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddSubstitutePart" id="1177406981716">
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddMenuPart" id="1177406981716">
         <link role="concept" targetNodeId="1.1068581242864" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.WrapperSubstituteMenuPart" id="1177407618147">
           <link role="wrappedConcept" targetNodeId="1.1068581242863" />
@@ -2499,7 +2499,7 @@
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1177408380007">
       <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1068498886292" />
-      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddSubstitutePart" id="1177408386765">
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddMenuPart" id="1177408386765">
         <link role="concept" targetNodeId="1.1068498886292" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.WrapperSubstituteMenuPart" id="1177408391405">
           <link role="wrappedConcept" targetNodeId="1.1068431790189" />

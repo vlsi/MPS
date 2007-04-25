@@ -361,7 +361,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177323996388">
-    <property name="name" value="AddSubstitutePart" />
+    <property name="name" value="AddMenuPart" />
     <property name="package" value="NodeBuilderParts" />
     <link role="extends" targetNodeId="1177333529597" resolveInfo="ConceptPart" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1177324874604">
@@ -465,7 +465,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177333529597">
-    <property name="name" value="ConceptSubstitutePart" />
+    <property name="name" value="ConceptPart" />
     <property name="package" value="NodeBuilderParts" />
     <link role="extends" targetNodeId="1177323240852" resolveInfo="NodeBuilderPart" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177333551023">
@@ -477,7 +477,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="0..n" />
       <property name="role" value="part" />
-      <link role="target" targetNodeId="1177323652379" resolveInfo="MenuPart" />
+      <link role="target" targetNodeId="1177495774157" resolveInfo="MenuPart" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1177333549225">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />

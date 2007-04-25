@@ -73,7 +73,7 @@
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.RemovePart" id="1177410566270">
         <link role="conceptToRemove" targetNodeId="2.1068581242878" />
       </node>
-      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddSubstitutePart" id="1177410617481">
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddMenuPart" id="1177410617481">
         <link role="concept" targetNodeId="2.1068580123157" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptsSubstituteMenuPart" id="1177410708020">
           <node role="query" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_ParameterizedSubstitute_Query" id="1177410708021">
