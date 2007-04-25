@@ -14,23 +14,23 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActions" id="1174484726883">
     <property name="name" value="Regexp_RT" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1174484749009">
-      <property name="actionsFactoryAspectId" value="UnaryRegexp" />
       <property name="description" value="transform to unary regexp" />
+      <property name="actionsFactoryAspectId" value="UnaryRegexp" />
       <link role="applicableConcept" targetNodeId="1.1174482743037" />
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1174486593893">
-      <property name="actionsFactoryAspectId" value="BinaryRegexp" />
       <property name="description" value="transfrom to binary regexp" />
+      <property name="actionsFactoryAspectId" value="BinaryRegexp" />
       <link role="applicableConcept" targetNodeId="1.1174482743037" />
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1174555323798">
-      <property name="actionsFactoryAspectId" value="OtherRegexp" />
       <property name="description" value="transfrom to other regexps (create a sequence and add as the right)" />
+      <property name="actionsFactoryAspectId" value="OtherRegexp" />
       <link role="applicableConcept" targetNodeId="1.1174482743037" />
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1175165206848">
-      <property name="actionsFactoryAspectId" value="StringTypedExpression" />
       <property name="description" value="transforms String typed expression into replace or split expression " />
+      <property name="actionsFactoryAspectId" value="StringTypedExpression" />
       <link role="applicableConcept" targetNodeId="3.1068431790191" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionFunction" id="1175165238942">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1175165238943">
@@ -46,7 +46,7 @@
                   <link role="baseMethodDeclaration" extResolveInfo="4.static method ([Classifier]TypeChecker).([StaticMethodDeclaration]getInstance() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [TypeChecker]))" />
                   <link role="classConcept" extResolveInfo="4.[Classifier]TypeChecker" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionParm_sourceNode" id="1175165363396" />
+                <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_sourceNode" id="1175165363396" />
               </node>
             </node>
           </node>

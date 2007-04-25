@@ -139,7 +139,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1154652627218">
               <link role="classConcept" targetNodeId="1154643386654" />
               <link role="baseMethodDeclaration" targetNodeId="1173912496513" resolveInfo="isTypeOf_Expression_is_snode_or_snodelist" />
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionParm_sourceNode" id="1173906822604" />
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_sourceNode" id="1173906822604" />
             </node>
           </node>
         </node>
@@ -154,7 +154,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1173919692400">
               <link role="baseMethodDeclaration" targetNodeId="1173918371841" resolveInfo="isTypeOf_Expression_is_snode" />
               <link role="classConcept" targetNodeId="1154643386654" resolveInfo="QueriesUtil" />
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionParm_sourceNode" id="1173919698700" />
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_sourceNode" id="1173919698700" />
             </node>
           </node>
         </node>
@@ -169,7 +169,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1154652872591">
               <link role="classConcept" targetNodeId="1154643386654" />
               <link role="baseMethodDeclaration" targetNodeId="1173978587590" resolveInfo="isExpression_appropriateFor_SemanticDowncast" />
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionParm_sourceNode" id="1154652872592" />
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_sourceNode" id="1154652872592" />
             </node>
           </node>
         </node>
@@ -194,7 +194,7 @@
                 </node>
                 <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1154637549549">
                   <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1154637530641">
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionParm_sourceNode" id="1173981185216" />
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_sourceNode" id="1173981185216" />
                     <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkListAccess" id="1173981489633">
                       <link role="link" targetNodeId="1.1144104376918" />
                     </node>
@@ -233,7 +233,7 @@
                 </node>
                 <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_scope" id="1171396571698" />
                 <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.SemanticDowncastExpression" id="1171396558412">
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionParm_sourceNode" id="1171396540463" />
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_sourceNode" id="1171396540463" />
                 </node>
               </node>
             </node>

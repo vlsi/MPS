@@ -31,7 +31,7 @@
                   <link role="baseMethodDeclaration" extResolveInfo="5.static method ([Classifier]TypeChecker).([StaticMethodDeclaration]getInstance() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [TypeChecker]))" />
                   <link role="classConcept" extResolveInfo="5.[Classifier]TypeChecker" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionParm_sourceNode" id="1174260155040" />
+                <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_sourceNode" id="1174260155040" />
               </node>
             </node>
           </node>
