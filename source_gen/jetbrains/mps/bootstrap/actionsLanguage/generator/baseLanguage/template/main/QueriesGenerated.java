@@ -73,6 +73,9 @@ public class QueriesGenerated {
   public static String propertyMacro_GetPropertyValue_1177527741008(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return NameUtil.nodeFQName(SLinkOperations.getTarget(node, "baseConcept", false));
   }
+  public static String propertyMacro_GetPropertyValue_1177530577519(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return NameUtil.nodeFQName(SLinkOperations.getTarget(node, "concept", false));
+  }
   public static boolean ifMacro_Condition_1177335419476(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "canSubstitute", true) != null;
   }
@@ -108,6 +111,9 @@ public class QueriesGenerated {
   }
   public static List sourceNodesQuery_1177441873770(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.getDescendants(node, "jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransformMenuPart", false);
+  }
+  public static List sourceNodesQuery_1177530541055(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTargets(node, "exclude", true);
   }
   public static SNode sourceNodeQuery_1172253302099(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "body", true);
