@@ -28,5 +28,31 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.ide.scriptLanguage.MigrationScript" id="1177461782622">
+    <property name="title" value="Migrate From b.339 " />
+    <property name="name" value="TestMigration" />
+    <node role="part" type="jetbrains.mps.ide.scriptLanguage.MigrationScriptPart_Instance" id="1177462133415">
+      <property name="description" value="update arguments in 'IsInstanceOf' operation" />
+      <link role="affectedInstanceConcept" targetNodeId="1.1139621453865" />
+      <node role="affectedInstancePredicate" type="jetbrains.mps.ide.scriptLanguage.MigrationScriptPart_Instance_Predicate" id="1177462133416">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177462133417">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1177462304381">
+            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1177464151299">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1177464124637">
+                <node role="leftExpression" type="jetbrains.mps.ide.scriptLanguage.MigrationScriptPart_node" id="1177462388133" />
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1177464142982">
+                  <link role="link" targetNodeId="1.1139621517231" />
+                </node>
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsNotNullOperation" id="1177464155440" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.ide.scriptLanguage.MigrationScriptPart_Instance_Updater" id="1177462133418">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177462133419" />
+      </node>
+    </node>
+  </node>
 </model>
 
