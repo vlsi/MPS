@@ -42,10 +42,10 @@ public class SimpleItemSubstitutePart extends SubstituteMenuPart {
   public void setCanSubstitute(QueryFunction_CanSubstitute node) {
     super.setChild(SimpleItemSubstitutePart.CAN_SUBSTITUTE, node);
   }
-  public QueryFunction_SubstituteHandler getHandler() {
-    return (QueryFunction_SubstituteHandler)this.getChild(SimpleItemSubstitutePart.HANDLER);
+  public QueryFunction_Substitute_Handler getHandler() {
+    return (QueryFunction_Substitute_Handler)this.getChild(SimpleItemSubstitutePart.HANDLER);
   }
-  public void setHandler(QueryFunction_SubstituteHandler node) {
+  public void setHandler(QueryFunction_Substitute_Handler node) {
     super.setChild(SimpleItemSubstitutePart.HANDLER, node);
   }
 }

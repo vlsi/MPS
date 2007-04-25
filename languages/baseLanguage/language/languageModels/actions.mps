@@ -59,6 +59,9 @@
           </node>
         </node>
       </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddMenuPart" id="1177497994960">
+        <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.RightTransformMenuPart" id="1177497997862" />
+      </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1138168906052">
       <property name="description" value="transform expression into left operand of binary operation" />
@@ -316,8 +319,8 @@
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1140831852602">
       <property name="description" value="add type parameters to new-expression" />
-      <property name="transformTag" value="ext_1_RTransform" />
       <property name="actionsFactoryAspectId" value="NewExpression_addTypeParameter" />
+      <property name="transformTag" value="ext_1_RTransform" />
       <link role="applicableConcept" targetNodeId="1.1068581242872" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionFunction" id="1159200493867">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1159200493868">
@@ -1079,7 +1082,7 @@
               </node>
             </node>
           </node>
-          <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_SubstituteHandler" id="1177334764535">
+          <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_Substitute_Handler" id="1177334764535">
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177334764536">
               <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1177334764537">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1177334764519">
@@ -1126,7 +1129,7 @@
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddMenuPart" id="1177336181430">
         <link role="concept" targetNodeId="1.1068580123137" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.SimpleItemSubstitutePart" id="1177336185107">
-          <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_SubstituteHandler" id="1177336185108">
+          <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_Substitute_Handler" id="1177336185108">
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177336185109">
               <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1177336208092">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1177336208093">
@@ -1177,7 +1180,7 @@
           </node>
         </node>
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.SimpleItemSubstitutePart" id="1177336237512">
-          <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_SubstituteHandler" id="1177336237513">
+          <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_Substitute_Handler" id="1177336237513">
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177336237514">
               <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1177336237515">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1177336237516">
@@ -1274,7 +1277,7 @@
               </node>
             </node>
           </node>
-          <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_SubstituteHandler" id="1177337054034">
+          <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_Substitute_Handler" id="1177337054034">
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177337054035">
               <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1177337054036">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1177337054037">
