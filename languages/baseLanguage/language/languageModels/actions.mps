@@ -316,8 +316,8 @@
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1140831852602">
       <property name="description" value="add type parameters to new-expression" />
-      <property name="actionsFactoryAspectId" value="NewExpression_addTypeParameter" />
       <property name="transformTag" value="ext_1_RTransform" />
+      <property name="actionsFactoryAspectId" value="NewExpression_addTypeParameter" />
       <link role="applicableConcept" targetNodeId="1.1068581242872" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionFunction" id="1159200493867">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1159200493868">
@@ -1166,7 +1166,7 @@
               </node>
             </node>
           </node>
-          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_String" id="1177336192221">
+          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_SubstituteString" id="1177336192221">
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177336192222">
               <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1177336193569">
                 <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1177336194509">
@@ -1215,7 +1215,7 @@
               </node>
             </node>
           </node>
-          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_String" id="1177336237530">
+          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_SubstituteString" id="1177336237530">
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177336237531">
               <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1177336237532">
                 <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1177336237533">
@@ -1328,7 +1328,7 @@
           <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1177361157499">
             <link role="concept" targetNodeId="1.1068390468200" />
           </node>
-          <node role="query" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_Parameterized_Query" id="1177361153547">
+          <node role="query" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_ParameterizedSubstitute_Query" id="1177361153547">
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177361153548">
               <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1177361251433">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1177361251434">
@@ -1463,7 +1463,7 @@
               </node>
             </node>
           </node>
-          <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_Parameterized_SubstituteHandler" id="1177361153549">
+          <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_ParameterizedSubstitute_Handler" id="1177361153549">
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177361153550">
               <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1177361579171">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1177361579172">
@@ -1537,7 +1537,7 @@
           <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1177362994572">
             <link role="concept" targetNodeId="1.1068580123165" />
           </node>
-          <node role="query" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_Parameterized_Query" id="1177362994573">
+          <node role="query" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_ParameterizedSubstitute_Query" id="1177362994573">
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177362994574">
               <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1177362994575">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1177362994576">
@@ -1672,7 +1672,7 @@
               </node>
             </node>
           </node>
-          <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_Parameterized_SubstituteHandler" id="1177362994631">
+          <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_ParameterizedSubstitute_Handler" id="1177362994631">
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177362994632">
               <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1177363054002">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1177363054003">
@@ -1746,7 +1746,7 @@
           <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1177396246736">
             <link role="concept" targetNodeId="1.1107461130800" />
           </node>
-          <node role="query" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_Parameterized_Query" id="1177396239697">
+          <node role="query" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_ParameterizedSubstitute_Query" id="1177396239697">
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177396472968">
               <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1177396538474">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1177396538475">
@@ -1968,7 +1968,7 @@
               </node>
             </node>
           </node>
-          <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_Parameterized_SubstituteHandler" id="1177396239699">
+          <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_ParameterizedSubstitute_Handler" id="1177396239699">
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177396239700">
               <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1177397398637">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1177397398638">
@@ -2006,7 +2006,7 @@
               </node>
             </node>
           </node>
-          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_Parameterized_String" id="1177397021318">
+          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_ParameterizedSubstitute_String" id="1177397021318">
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177397021319">
               <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1177397022478">
                 <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1177397027529">
@@ -2023,7 +2023,7 @@
               </node>
             </node>
           </node>
-          <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_Parameterized_String" id="1177397032667">
+          <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_ParameterizedSubstitute_String" id="1177397032667">
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177397032668">
               <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1177397033506">
                 <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1177397588245">
@@ -2052,7 +2052,7 @@
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddSubstitutePart" id="1177397839813">
         <link role="concept" targetNodeId="1.1107135704075" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptsSubstituteMenuPart" id="1177399034464">
-          <node role="query" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_Parameterized_Query" id="1177399034465">
+          <node role="query" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_ParameterizedSubstitute_Query" id="1177399034465">
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177399034466">
               <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1177399123274">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1177399123275">
@@ -2251,7 +2251,7 @@
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddSubstitutePart" id="1177400765772">
         <link role="concept" targetNodeId="1.1068580123157" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptsSubstituteMenuPart" id="1177400765773">
-          <node role="query" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_Parameterized_Query" id="1177400765774">
+          <node role="query" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_ParameterizedSubstitute_Query" id="1177400765774">
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177400765775">
               <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1177400765776">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1177400765734">
@@ -2313,7 +2313,7 @@
         <link role="concept" targetNodeId="1.1068580123155" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.WrapperSubstituteMenuPart" id="1177403626165">
           <link role="wrappedConcept" targetNodeId="1.1068431790191" />
-          <node role="wrapperBlock" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_Wrapper" id="1177403626166">
+          <node role="wrapperBlock" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_SubstituteWrapper" id="1177403626166">
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177403626167">
               <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1177403636225">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1177403636226">
@@ -2368,7 +2368,7 @@
         <link role="concept" targetNodeId="1.1068581242864" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.WrapperSubstituteMenuPart" id="1177406387370">
           <link role="wrappedConcept" targetNodeId="1.1068431790189" />
-          <node role="wrapperBlock" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_Wrapper" id="1177406387371">
+          <node role="wrapperBlock" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_SubstituteWrapper" id="1177406387371">
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177406387372">
               <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1177407864630">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1177407864631">
@@ -2451,7 +2451,7 @@
         <link role="concept" targetNodeId="1.1068581242864" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.WrapperSubstituteMenuPart" id="1177407618147">
           <link role="wrappedConcept" targetNodeId="1.1068581242863" />
-          <node role="wrapperBlock" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_Wrapper" id="1177407618148">
+          <node role="wrapperBlock" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_SubstituteWrapper" id="1177407618148">
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177407618149">
               <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1177408155717">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1177408155718">
@@ -2503,7 +2503,7 @@
         <link role="concept" targetNodeId="1.1068498886292" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.WrapperSubstituteMenuPart" id="1177408391405">
           <link role="wrappedConcept" targetNodeId="1.1068431790189" />
-          <node role="wrapperBlock" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_Wrapper" id="1177408391406">
+          <node role="wrapperBlock" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_SubstituteWrapper" id="1177408391406">
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177408391407">
               <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1177408397255">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1177408397256">

@@ -9,14 +9,14 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AddSubstitutePart extends ConceptSubstitutePart {
 
-  public AddSubstitutePart(SNode node) {
+  public  AddSubstitutePart(SNode node) {
     super(node);
   }
 
   public static AddSubstitutePart newInstance(SModel sm, boolean init) {
-    return (AddSubstitutePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.AddPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AddSubstitutePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.AddSubstitutePart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
   public static AddSubstitutePart newInstance(SModel sm) {
-    return newInstance(sm, false);
+    return AddSubstitutePart.newInstance(sm, false);
   }
 }

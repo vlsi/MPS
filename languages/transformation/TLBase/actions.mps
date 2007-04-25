@@ -22,7 +22,7 @@
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddSubstitutePart" id="1177412984585">
         <link role="concept" targetNodeId="1.1169569792945" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptsSubstituteMenuPart" id="1177412990748">
-          <node role="query" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_Parameterized_Query" id="1177412990749">
+          <node role="query" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_ParameterizedSubstitute_Query" id="1177412990749">
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177412990750">
               <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1177413017371">
                 <node role="expression" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1177413019329">

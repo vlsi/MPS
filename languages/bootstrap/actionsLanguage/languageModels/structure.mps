@@ -354,8 +354,8 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177323652379">
     <property name="name" value="SubstituteMenuPart" />
-    <property name="package" value="MenuParts" />
-    <link role="extends" targetNodeId="1.1133920641626" />
+    <property name="package" value="MenuParts.Substitute" />
+    <link role="extends" targetNodeId="1177495774157" resolveInfo="MenuPart" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1177323663787">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
     </node>
@@ -435,8 +435,12 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177327666243">
     <property name="name" value="SimpleItemSubstitutePart" />
-    <property name="package" value="MenuParts" />
+    <property name="package" value="MenuParts.Substitute" />
     <link role="extends" targetNodeId="1177323652379" resolveInfo="MenuPart" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1177496097737">
+      <property name="value" value="simple" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177336013307">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="matchingText" />
@@ -480,7 +484,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177335944525">
-    <property name="name" value="QueryFunction_String" />
+    <property name="name" value="QueryFunction_SubstituteString" />
     <property name="package" value="QueryFunctions" />
     <link role="extends" targetNodeId="3.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1177335968687">
@@ -504,7 +508,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177337641126">
     <property name="name" value="ParameterizedSubstituteMenuPart" />
-    <property name="package" value="MenuParts" />
+    <property name="package" value="MenuParts.Substitute" />
     <link role="extends" targetNodeId="1177323652379" resolveInfo="MenuPart" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177337679534">
       <property name="metaClass" value="aggregation" />
@@ -552,7 +556,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177337890340">
-    <property name="name" value="QueryFunction_Parameterized_Query" />
+    <property name="name" value="QueryFunction_ParameterizedSubstitute_Query" />
     <property name="package" value="QueryFunctions" />
     <link role="extends" targetNodeId="3.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1177337983167">
@@ -565,7 +569,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177339114370">
-    <property name="name" value="QueryFunction_Parameterized_String" />
+    <property name="name" value="QueryFunction_ParameterizedSubstitute_String" />
     <property name="package" value="QueryFunctions" />
     <link role="extends" targetNodeId="3.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1177339114371">
@@ -592,7 +596,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177339225103">
-    <property name="name" value="QueryFunction_Parameterized_SubstituteHandler" />
+    <property name="name" value="QueryFunction_ParameterizedSubstitute_Handler" />
     <property name="package" value="QueryFunctions" />
     <link role="extends" targetNodeId="3.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1177339225104">
@@ -622,8 +626,12 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177398027324">
     <property name="name" value="ConceptsSubstituteMenuPart" />
-    <property name="package" value="MenuParts" />
+    <property name="package" value="MenuParts.Substitute" />
     <link role="extends" targetNodeId="1177323652379" resolveInfo="MenuPart" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1177496107815">
+      <property name="value" value="concepts" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177398809232">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="1" />
@@ -633,8 +641,12 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177402519659">
     <property name="name" value="WrapperSubstituteMenuPart" />
-    <property name="package" value="MenuParts" />
+    <property name="package" value="MenuParts.Substitute" />
     <link role="extends" targetNodeId="1177323652379" resolveInfo="MenuPart" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1177496087440">
+      <property name="value" value="wrapper" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177402731616">
       <property name="role" value="wrappedConcept" />
       <link role="target" targetNodeId="2.1071489090640" />
@@ -647,7 +659,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177402571666">
-    <property name="name" value="QueryFunction_Wrapper" />
+    <property name="name" value="QueryFunction_SubstituteWrapper" />
     <property name="package" value="QueryFunctions" />
     <link role="extends" targetNodeId="3.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1177402590248">
@@ -743,6 +755,28 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1177414677850">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177495774157">
+    <property name="name" value="MenuPart" />
+    <property name="package" value="MenuParts" />
+    <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1177495789097">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177496137779">
+    <property name="name" value="RightTransformMenuPart" />
+    <property name="package" value="MenuParts.RightTransform" />
+    <link role="extends" targetNodeId="1177495774157" resolveInfo="MenuPart" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177497140107">
+    <property name="name" value="ConceptFucntionParameter_sourceNode" />
+    <property name="package" value="ConceptFunctionParameters" />
+    <link role="extends" targetNodeId="3.1107135704075" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1177497149042">
+      <property name="value" value="sourceNode" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>
 </model>

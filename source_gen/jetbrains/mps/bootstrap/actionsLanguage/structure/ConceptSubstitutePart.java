@@ -14,36 +14,36 @@ public class ConceptSubstitutePart extends NodeBuilderPart {
   public static String CONCEPT = "concept";
   public static String PART = "part";
 
-  public ConceptSubstitutePart(SNode node) {
+  public  ConceptSubstitutePart(SNode node) {
     super(node);
   }
 
   public static ConceptSubstitutePart newInstance(SModel sm, boolean init) {
-    return (ConceptSubstitutePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.ConceptPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptSubstitutePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.ConceptSubstitutePart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
   public static ConceptSubstitutePart newInstance(SModel sm) {
-    return newInstance(sm, false);
+    return ConceptSubstitutePart.newInstance(sm, false);
   }
 
   public ConceptDeclaration getConcept() {
-    return (ConceptDeclaration)this.getReferent(CONCEPT);
+    return (ConceptDeclaration)this.getReferent(ConceptSubstitutePart.CONCEPT);
   }
   public void setConcept(ConceptDeclaration node) {
-    super.setReferent(CONCEPT, node);
+    super.setReferent(ConceptSubstitutePart.CONCEPT, node);
   }
   public int getPartsCount() {
-    return this.getChildCount(PART);
+    return this.getChildCount(ConceptSubstitutePart.PART);
   }
   public Iterator<SubstituteMenuPart> parts() {
-    return this.children(PART);
+    return this.children(ConceptSubstitutePart.PART);
   }
   public List<SubstituteMenuPart> getParts() {
-    return this.getChildren(PART);
+    return this.getChildren(ConceptSubstitutePart.PART);
   }
   public void addPart(SubstituteMenuPart node) {
-    this.addChild(PART, node);
+    this.addChild(ConceptSubstitutePart.PART, node);
   }
   public void insertPart(SubstituteMenuPart prev, SubstituteMenuPart node) {
-    this.insertChild(prev, PART, node);
+    this.insertChild(prev, ConceptSubstitutePart.PART, node);
   }
 }
