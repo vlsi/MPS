@@ -99,7 +99,7 @@ public class ChildSubstituteActionsHelper {
 
   private static boolean containsLegacyQueries(List<NodeSubstituteActionsBuilder> list) {
     for (NodeSubstituteActionsBuilder builder : list) {
-      if (builder.getActionsFactoryAspectId() != null) {
+      if (!builder.getUseNewActions()) {
         return true;
       }
     }
