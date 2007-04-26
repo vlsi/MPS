@@ -44,8 +44,14 @@ public abstract class AbstractMigrationRefactoring extends DefaultRefactoring {
     FindUsagesManager usages = ApplicationComponents.getInstance().getComponentSafe(FindUsagesManager.class);
     IScope scope = GlobalScope.getInstance();
     ConceptDeclaration conceptDeclaration = SModelUtil_new.findConceptDeclaration(getFqNameOfConceptToSearchInstances(), scope);
-    Set<SNode> nodes = usages.findInstances(conceptDeclaration, scope, monitor);
-    return new HashSet<SNode>(nodes);
+    Set<SNode> instances = usages.findInstances(conceptDeclaration, scope, monitor);
+    HashSet<SNode> affectedInstances = new HashSet<SNode>();
+    for (SNode instance : instances) {
+      if (isApplicableInstanceNode(instance)) {
+        affectedInstances.add(instance);
+      }
+    }
+    return affectedInstances;
   }
 
 

@@ -20,10 +20,8 @@ public class ProjectOperationContext extends StandaloneMPSContext {
 
   public <T> T getComponent(@NotNull Class<T> clazz) {
     T component = myProject.getComponent(clazz);
-    if(component == null && ApplicationComponents.getInstance().containsComponent(clazz)) {
-      component = ApplicationComponents.getInstance().getComponent(clazz);
-    }
-    return component;
+    if (component != null) return component;
+    return super.getComponent(clazz);
   }
 
   @Nullable

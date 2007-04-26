@@ -1,7 +1,5 @@
 package jetbrains.mps.project;
 
-import jetbrains.mps.ide.toolsPane.ITool;
-import jetbrains.mps.ide.toolsPane.ToolsPane;
 import jetbrains.mps.ide.AbstractProjectFrame;
 import jetbrains.mps.ide.BaseDialog;
 import jetbrains.mps.ide.DialogDimensionsSettings;
@@ -9,18 +7,21 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JComponent;
-import javax.swing.JScrollPane;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
 import javax.swing.tree.TreePath;
-import java.util.Set;
-import java.util.HashSet;
-import java.util.Collection;
 import java.awt.Frame;
 import java.awt.HeadlessException;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -42,20 +43,8 @@ public class ModuleContext extends StandaloneMPSContext {
 
   public <T> T getComponent(@NotNull Class<T> clazz) {
     T component = myProject.getComponent(clazz);
-    if (component == null && ApplicationComponents.getInstance().containsComponent(clazz)) {
-      component = ApplicationComponents.getInstance().getComponent(clazz);
-    }
-
-    if (component == null && clazz != ToolsPane.class && getComponent(ToolsPane.class) != null) {
-      ToolsPane toolsPane = getComponent(ToolsPane.class);
-
-      if (toolsPane.getTool((Class<? extends ITool>) clazz) != null) {
-        return (T) toolsPane.getTool((Class<? extends ITool>) clazz);
-      }
-
-    }
-
-    return component;
+    if (component != null) return component;
+    return super.getComponent(clazz);
   }
 
   @NotNull
@@ -100,6 +89,7 @@ public class ModuleContext extends StandaloneMPSContext {
 
     return new ModuleContext(module, project);
   }
+
   private static class ChooseModuleDialog extends BaseDialog {
     private MPSTree myTree = new MPSTree() {
       protected MPSTreeNode rebuild() {
