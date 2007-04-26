@@ -28,12 +28,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   public static boolean _QueryFunction_NodeCondition_1177550459993(SNode node, IScope scope) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.IfStatement");
   }
-  public static boolean _QueryFunction_NodeCondition_1177550482701(SNode node, IScope scope) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement");
-  }
-  public static boolean _QueryFunction_NodeCondition_1177550482714(SNode node, IScope scope) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement");
-  }
   public static boolean _QueryFunction_NodeCondition_1177550497980(SNode node, IScope scope) {
     return SLinkOperations.getTarget(node, "ifFalseStatement", true) != null;
   }
@@ -52,10 +46,10 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     alternationCondition = IfStatement_Editor._QueryFunction_NodeCondition_1177550459993(node, context.getOperationContext().getScope());
     EditorCell editorCell = null;
     if(alternationCondition) {
-      editorCell = this.createColumnCell(context, node);
+      editorCell = this.createIfFalseStatementCell1(context, node);
     } else 
     {
-      editorCell = this.createColumnCell1(context, node);
+      editorCell = this.createColumnCell(context, node);
     }
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
@@ -106,10 +100,10 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell4(context, node, "}"));
     editorCell.addEditorCell(this.createConstantCell5(context, node, "else"));
-    if(IfStatement_Editor._QueryFunction_NodeCondition_1177550482701(node, context.getOperationContext().getScope())) {
+    if(IfStatement_Editor._QueryFunction_NodeCondition_1177550638004(node, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstantCell6(context, node, "{"));
     }
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177550482697");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177550638000");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -124,7 +118,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell7(context, node, "  "));
     editorCell.addEditorCell(this.createIfFalseStatementCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177550482709");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177550638012");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -137,10 +131,10 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if(IfStatement_Editor._QueryFunction_NodeCondition_1177550482714(node, context.getOperationContext().getScope())) {
+    if(IfStatement_Editor._QueryFunction_NodeCondition_1177550638017(node, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstantCell8(context, node, "}"));
     }
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177550482712");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177550638015");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -156,71 +150,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createIfFalseBranch(context, node));
     editorCell.addEditorCell(this.createIfFalseBranch1(context, node));
     editorCell.addEditorCell(this.createIfFalseBranch2(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177550482696");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
-  public EditorCell createIfFalseBranch3(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell9(context, node, "}"));
-    editorCell.addEditorCell(this.createConstantCell10(context, node, "else"));
-    if(IfStatement_Editor._QueryFunction_NodeCondition_1177550638004(node, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstantCell11(context, node, "{"));
-    }
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177550638000");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
-  public EditorCell createIfFalseBranch4(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell12(context, node, "  "));
-    editorCell.addEditorCell(this.createIfFalseStatementCell1(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177550638012");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
-  public EditorCell createIfFalseBranch5(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    if(IfStatement_Editor._QueryFunction_NodeCondition_1177550638017(node, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstantCell13(context, node, "}"));
-    }
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177550638015");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
-  public EditorCell createColumnCell1(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIfFalseBranch3(context, node));
-    editorCell.addEditorCell(this.createIfFalseBranch4(context, node));
-    editorCell.addEditorCell(this.createIfFalseBranch5(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177550637999");
     editorCell.setLayoutConstraint("");
     return editorCell;
@@ -303,7 +232,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    IfStatement_Actions.setCellActions(editorCell, node, context);
+    IfStatement_rTransform_action.setCellActions(editorCell, node, context);
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145915991621");
     editorCell.setLayoutConstraint("");
     return editorCell;
@@ -316,7 +245,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177550482698");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177550638001");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -330,7 +259,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setFontType(MPSFonts.BOLD);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177550482699");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177550638002");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -342,7 +271,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177550482700");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177550638003");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -354,73 +283,11 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177550482710");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
-  public EditorCell createConstantCell8(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
-    editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177550482713");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
-  public EditorCell createConstantCell9(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
-    editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177550638001");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
-  public EditorCell createConstantCell10(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
-    editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.setFontType(MPSFonts.BOLD);
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177550638002");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
-  public EditorCell createConstantCell11(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
-    editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177550638003");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
-  public EditorCell createConstantCell12(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
-    editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177550638013");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createConstantCell13(EditorContext context, SNode node, String text) {
+  public EditorCell createConstantCell8(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -511,7 +378,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177550482711");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177550638014");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -544,7 +411,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177550638014");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177550934427");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
