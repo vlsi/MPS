@@ -12,14 +12,14 @@ import java.util.Iterator;
 import java.util.List;
 
 public class NodeSubstituteActionsBuilder extends BaseConcept {
+  public static String APPLICABLE_CONCEPT = "applicableConcept";
+  public static String PRECONDITION = "precondition";
+  public static String PART = "part";
   public static String DESCRIPTION = "description";
   public static String ACTIONS_FACTORY_ASPECT_ID = "actionsFactoryAspectId";
   public static String ACTIONS_FILTER_ASPECT_ID = "actionsFilterAspectId";
   public static String PRECONDITION_ASPECT_ID = "preconditionAspectId";
   public static String USE_NEW_ACTIONS = "useNewActions";
-  public static String APPLICABLE_CONCEPT = "applicableConcept";
-  public static String PRECONDITION = "precondition";
-  public static String PART = "part";
 
   public  NodeSubstituteActionsBuilder(SNode node) {
     super(node);
@@ -32,6 +32,33 @@ public class NodeSubstituteActionsBuilder extends BaseConcept {
     return NodeSubstituteActionsBuilder.newInstance(sm, false);
   }
 
+  public AbstractConceptDeclaration getApplicableConcept() {
+    return (AbstractConceptDeclaration)this.getReferent(NodeSubstituteActionsBuilder.APPLICABLE_CONCEPT);
+  }
+  public void setApplicableConcept(AbstractConceptDeclaration node) {
+    super.setReferent(NodeSubstituteActionsBuilder.APPLICABLE_CONCEPT, node);
+  }
+  public NodeSubstitutePreconditionFunction getPrecondition() {
+    return (NodeSubstitutePreconditionFunction)this.getChild(NodeSubstituteActionsBuilder.PRECONDITION);
+  }
+  public void setPrecondition(NodeSubstitutePreconditionFunction node) {
+    super.setChild(NodeSubstituteActionsBuilder.PRECONDITION, node);
+  }
+  public int getPartsCount() {
+    return this.getChildCount(NodeSubstituteActionsBuilder.PART);
+  }
+  public Iterator<NodeBuilderPart> parts() {
+    return this.children(NodeSubstituteActionsBuilder.PART);
+  }
+  public List<NodeBuilderPart> getParts() {
+    return this.getChildren(NodeSubstituteActionsBuilder.PART);
+  }
+  public void addPart(NodeBuilderPart node) {
+    this.addChild(NodeSubstituteActionsBuilder.PART, node);
+  }
+  public void insertPart(NodeBuilderPart prev, NodeBuilderPart node) {
+    this.insertChild(prev, NodeSubstituteActionsBuilder.PART, node);
+  }
   public String getDescription() {
     return this.getProperty(NodeSubstituteActionsBuilder.DESCRIPTION);
   }
@@ -61,32 +88,5 @@ public class NodeSubstituteActionsBuilder extends BaseConcept {
   }
   public void setUseNewActions(boolean value) {
     this.setBooleanProperty(NodeSubstituteActionsBuilder.USE_NEW_ACTIONS, value);
-  }
-  public AbstractConceptDeclaration getApplicableConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(NodeSubstituteActionsBuilder.APPLICABLE_CONCEPT);
-  }
-  public void setApplicableConcept(AbstractConceptDeclaration node) {
-    super.setReferent(NodeSubstituteActionsBuilder.APPLICABLE_CONCEPT, node);
-  }
-  public NodeSubstitutePreconditionFunction getPrecondition() {
-    return (NodeSubstitutePreconditionFunction)this.getChild(NodeSubstituteActionsBuilder.PRECONDITION);
-  }
-  public void setPrecondition(NodeSubstitutePreconditionFunction node) {
-    super.setChild(NodeSubstituteActionsBuilder.PRECONDITION, node);
-  }
-  public int getPartsCount() {
-    return this.getChildCount(NodeSubstituteActionsBuilder.PART);
-  }
-  public Iterator<NodeBuilderPart> parts() {
-    return this.children(NodeSubstituteActionsBuilder.PART);
-  }
-  public List<NodeBuilderPart> getParts() {
-    return this.getChildren(NodeSubstituteActionsBuilder.PART);
-  }
-  public void addPart(NodeBuilderPart node) {
-    this.addChild(NodeSubstituteActionsBuilder.PART, node);
-  }
-  public void insertPart(NodeBuilderPart prev, NodeBuilderPart node) {
-    this.insertChild(prev, NodeSubstituteActionsBuilder.PART, node);
   }
 }
