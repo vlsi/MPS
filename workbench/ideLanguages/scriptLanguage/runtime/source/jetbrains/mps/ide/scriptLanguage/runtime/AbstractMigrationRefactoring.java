@@ -26,12 +26,12 @@ public abstract class AbstractMigrationRefactoring extends DefaultRefactoring {
 
 
   public String getName() {
-    return "AbstractMigrationRefactoring : name";
+    return super.getName();
   }
 
 
   public String getAdditionalInfo() {
-    return "AbstractMigrationRefactoring : additionalInfo";
+    return super.getAdditionalInfo();
   }
 
   public abstract String getFqNameOfConceptToSearchInstances();

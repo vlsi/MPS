@@ -163,6 +163,61 @@
         </node>
       </node>
     </node>
+    <node role="part" type="jetbrains.mps.ide.scriptLanguage.MigrationScriptPart_Instance" id="1177554302604">
+      <property name="description" value="update parent&lt;parms...&gt; --&gt; ancestor&lt;parms...&gt;" />
+      <link role="affectedInstanceConcept" targetNodeId="1.1139613262185" />
+      <node role="affectedInstancePredicate" type="jetbrains.mps.ide.scriptLanguage.MigrationScriptPart_Instance_Predicate" id="1177554302605">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177554302606">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1177554405454">
+            <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1177554474513">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1177554409347">
+                <node role="leftExpression" type="jetbrains.mps.ide.scriptLanguage.MigrationScriptPart_node" id="1177554405455" />
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkListAccessAsList" id="1177554469199">
+                  <link role="link" targetNodeId="1.1144104376918" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.IsNotEmptyOperation" id="1177554483373" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.ide.scriptLanguage.MigrationScriptPart_Instance_Updater" id="1177554302607">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177554302608">
+          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1177554599865">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.VarDeclaration" id="1177554599866">
+              <property name="name" value="ancestorOp" />
+              <node role="type" type="jetbrains.mps.baseLanguage.Type" id="1177554599867" />
+              <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1177554573612">
+                <node role="leftExpression" type="jetbrains.mps.ide.scriptLanguage.MigrationScriptPart_node" id="1177554571283" />
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_ReplaceWithNewOperation" id="1177554578113">
+                  <link role="concept" targetNodeId="1.1171407110247" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1177554720561">
+            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1177554777268">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1177554766813">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1177554720562">
+                  <link role="variableDeclaration" targetNodeId="1177554599866" resolveInfo="ancestorOp" />
+                </node>
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkListAccess" id="1177554774595">
+                  <link role="link" targetNodeId="1.1144104376918" />
+                </node>
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.LinkList_AddAllOperation" id="1177554779534">
+                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1177554786662">
+                  <node role="leftExpression" type="jetbrains.mps.ide.scriptLanguage.MigrationScriptPart_node" id="1177554783177" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkListAccess" id="1177554795257">
+                    <link role="link" targetNodeId="1.1144104376918" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 

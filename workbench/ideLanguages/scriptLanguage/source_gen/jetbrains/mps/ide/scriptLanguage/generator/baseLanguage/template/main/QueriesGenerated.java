@@ -31,6 +31,20 @@ public class QueriesGenerated {
   public static String propertyMacro_GetPropertyValue_1177464819480(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SPropertyOperations.getString(node, "title");
   }
+  public static String propertyMacro_GetPropertyValue_1177555396906(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    String title = SPropertyOperations.getString(node, "description");
+    return (title != null ?
+      title :
+      ""
+    );
+  }
+  public static String propertyMacro_GetPropertyValue_1177555562762(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    String title = SPropertyOperations.getString(node, "description");
+    return (title != null ?
+      title :
+      ""
+    );
+  }
   public static String propertyMacro_GetPropertyValue_1177465342820(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode affectedConcept = SLinkOperations.getTarget(node, "affectedInstanceConcept", false);
     return NameUtil.nodeFQName(affectedConcept);
