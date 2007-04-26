@@ -272,6 +272,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    IfStatement_elseBlockStatement_delete.setCellActions(editorCell, node, context);
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177550638003");
     editorCell.setLayoutConstraint("");
     return editorCell;
@@ -296,6 +297,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    IfStatement_elseBlockStatement_delete.setCellActions(editorCell, node, context);
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177550638016");
     editorCell.setLayoutConstraint("");
     return editorCell;
