@@ -52,7 +52,9 @@
               </node>
             </node>
             <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1173137280768">
-              <link role="concept" targetNodeId="1.1169194658468" />
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.RefConcept_Reference" id="1177556242855">
+                <link role="conceptDeclaration" targetNodeId="1.1169194658468" />
+              </node>
             </node>
           </node>
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1173137252418">

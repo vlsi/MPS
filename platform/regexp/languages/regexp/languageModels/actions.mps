@@ -62,7 +62,9 @@
                   <link role="variableDeclaration" targetNodeId="1175165360507" resolveInfo="type" />
                 </node>
                 <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1175165892249">
-                  <link role="concept" targetNodeId="3.1107535904670" />
+                  <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.RefConcept_Reference" id="1177556242938">
+                    <link role="conceptDeclaration" targetNodeId="3.1107535904670" />
+                  </node>
                 </node>
               </node>
             </node>

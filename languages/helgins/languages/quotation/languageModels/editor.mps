@@ -23,8 +23,8 @@
       <property name="drawBorder" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1141045252204">
         <property name="textFgColor" value="query" />
-        <property name="text" value="%(" />
         <property name="drawBorder" value="false" />
+        <property name="text" value="%(" />
         <node role="cellForegroundFunction" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_Color" id="1176891191270">
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176891191271">
             <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176891192600">
@@ -43,8 +43,8 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1142538426700">
         <property name="textFgColor" value="query" />
-        <property name="text" value=")%" />
         <property name="drawBorder" value="false" />
+        <property name="text" value=")%" />
         <node role="cellForegroundFunction" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_Color" id="1176891200728">
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176891200729">
             <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176891201934">
@@ -158,7 +158,9 @@
             </node>
             <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1171541378022">
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1171541379556">
-                <link role="concept" targetNodeId="1.1141044709506" />
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.RefConcept_Reference" id="1177556243097">
+                  <link role="conceptDeclaration" targetNodeId="1.1141044709506" />
+                </node>
               </node>
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1171541376880">
                 <link role="variableDeclaration" targetNodeId="1141045402451" resolveInfo="contextNode" />
@@ -301,7 +303,9 @@
             </node>
             <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1171541686790">
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1171541688152">
-                <link role="concept" targetNodeId="1.1150896580228" />
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.RefConcept_Reference" id="1177556243027">
+                  <link role="conceptDeclaration" targetNodeId="1.1150896580228" />
+                </node>
               </node>
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1171541685554">
                 <link role="variableDeclaration" targetNodeId="1150896774037" resolveInfo="contextNode" />
@@ -565,7 +569,9 @@
             </node>
             <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1171542708142">
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1171542712114">
-                <link role="concept" targetNodeId="1.1155904190472" />
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.RefConcept_Reference" id="1177556242926">
+                  <link role="conceptDeclaration" targetNodeId="1.1155904190472" />
+                </node>
               </node>
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1171542702298">
                 <link role="variableDeclaration" targetNodeId="1155904410515" resolveInfo="contextNode" />
@@ -660,8 +666,8 @@
       <property name="drawBorder" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1150896623142">
         <property name="textFgColor" value="query" />
-        <property name="text" value="*(" />
         <property name="drawBorder" value="false" />
+        <property name="text" value="*(" />
         <node role="cellForegroundFunction" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_Color" id="1176891220734">
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176891220735">
             <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176891221939">
@@ -680,8 +686,8 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1150896623144">
         <property name="textFgColor" value="query" />
-        <property name="text" value=")*" />
         <property name="drawBorder" value="false" />
+        <property name="text" value=")*" />
         <node role="cellForegroundFunction" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_Color" id="1176891233365">
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176891233366">
             <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176891234523">
@@ -701,8 +707,8 @@
       <property name="drawBorder" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1155904240524">
         <property name="textFgColor" value="query" />
-        <property name="text" value="^(" />
         <property name="drawBorder" value="false" />
+        <property name="text" value="^(" />
         <node role="cellForegroundFunction" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_Color" id="1176891242979">
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176891242980">
             <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176891244247">
@@ -721,8 +727,8 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1155904240526">
         <property name="textFgColor" value="query" />
-        <property name="text" value=")^" />
         <property name="drawBorder" value="false" />
+        <property name="text" value=")^" />
         <node role="cellForegroundFunction" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_Color" id="1176891250500">
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176891250501">
             <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176891252690">

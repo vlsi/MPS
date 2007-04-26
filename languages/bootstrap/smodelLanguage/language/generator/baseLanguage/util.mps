@@ -210,7 +210,9 @@
                 <link role="variableDeclaration" targetNodeId="1170463133404" resolveInfo="datatype" />
               </node>
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1170463133413">
-                <link role="concept" targetNodeId="5.1082978164219" />
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.RefConcept_Reference" id="1177556243053">
+                  <link role="conceptDeclaration" targetNodeId="5.1082978164219" />
+                </node>
               </node>
             </node>
           </node>
@@ -321,7 +323,9 @@
               <link role="variableDeclaration" targetNodeId="1170463736168" resolveInfo="datatype" />
             </node>
             <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1170463736190">
-              <link role="concept" targetNodeId="5.1082978164219" />
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.RefConcept_Reference" id="1177556243001">
+                <link role="conceptDeclaration" targetNodeId="5.1082978164219" />
+              </node>
             </node>
           </node>
         </node>
@@ -428,7 +432,9 @@
               <link role="variableDeclaration" targetNodeId="1170464177712" resolveInfo="datatype" />
             </node>
             <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1170464177734">
-              <link role="concept" targetNodeId="5.1082978164219" />
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.RefConcept_Reference" id="1177556242880">
+                <link role="conceptDeclaration" targetNodeId="5.1082978164219" />
+              </node>
             </node>
           </node>
         </node>
@@ -851,7 +857,9 @@
               <link role="variableDeclaration" targetNodeId="1169051965195" resolveInfo="leftExpr" />
             </node>
             <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1169051987423">
-              <link role="concept" targetNodeId="1.1138055978872" />
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.RefConcept_Reference" id="1177556242863">
+                <link role="conceptDeclaration" targetNodeId="1.1138055978872" />
+              </node>
             </node>
           </node>
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1169051980092">
@@ -959,7 +967,9 @@
               <link role="variableDeclaration" targetNodeId="1169057553834" resolveInfo="leftExpr" />
             </node>
             <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1169057553842">
-              <link role="concept" targetNodeId="1.1138055978872" />
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.RefConcept_Reference" id="1177556242982">
+                <link role="conceptDeclaration" targetNodeId="1.1138055978872" />
+              </node>
             </node>
           </node>
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1169057553843">

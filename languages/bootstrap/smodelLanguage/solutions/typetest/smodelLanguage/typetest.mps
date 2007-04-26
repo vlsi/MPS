@@ -452,7 +452,9 @@
                 <link role="variableDeclaration" targetNodeId="1170377711989" resolveInfo="node" />
               </node>
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1173385166521">
-                <link role="concept" targetNodeId="6.1068431474542" />
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.RefConcept_Reference" id="1177556242977">
+                  <link role="conceptDeclaration" targetNodeId="6.1068431474542" />
+                </node>
               </node>
             </node>
           </node>
