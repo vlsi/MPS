@@ -91,7 +91,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
-    editorCell.setGridLayout(false);
+    editorCell.setGridLayout(true);
     editorCell.setDrawBrackets(true);
     editorCell.setBracketsColor(Color.lightGray);
     editorCell.setUsesBraces(false);
