@@ -259,6 +259,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setFontType(MPSFonts.BOLD);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    IfStatement_elseDelete_action.setCellActions(editorCell, node, context);
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177550638002");
     editorCell.setLayoutConstraint("");
     return editorCell;

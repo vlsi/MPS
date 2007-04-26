@@ -1466,6 +1466,7 @@
               <property name="textFgColor" value="DARK_BLUE" />
               <property name="drawBorder" value="false" />
               <property name="fontStyle" value="BOLD" />
+              <link role="actionMap" targetNodeId="1177552153770" resolveInfo="IfStatement_elseDelete_action" />
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1177550638003">
               <property name="text" value="{" />
@@ -7297,6 +7298,28 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1177326622077">
         <property name="text" value="*/" />
         <property name="textFgColor" value="gray" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.CellActionMapDeclaration" id="1177552153770">
+    <property name="name" value="IfStatement_elseDelete_action" />
+    <link role="applicableConcept" targetNodeId="17.1068580123159" />
+    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMapItem" id="1177552200139">
+      <property name="actionId" value="delete_action_id" />
+      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_ExecuteFunction" id="1177552200140">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177552200141">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1177552221486">
+            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1177552276465">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1177552258115">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_FunctionParm_selectedNode" id="1177552221487" />
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1177552260882">
+                  <link role="link" targetNodeId="17.1082485599094" />
+                </node>
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Link_DeleteChildOperation" id="1177552278107" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
