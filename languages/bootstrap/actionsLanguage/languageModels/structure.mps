@@ -1069,5 +1069,17 @@
       <link role="target" targetNodeId="2.1071489090640" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177614709184">
+    <property name="name" value="RemoveDefaultsPart" />
+    <property name="package" value="NodeBuilderParts" />
+    <link role="extends" targetNodeId="1177323240852" resolveInfo="NodeBuilderPart" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1177614725102">
+      <property name="value" value="remove defaults" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1177614984755">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
+    </node>
+  </node>
 </model>
 

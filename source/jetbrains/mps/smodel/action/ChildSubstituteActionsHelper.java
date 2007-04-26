@@ -62,7 +62,7 @@ public class ChildSubstituteActionsHelper {
       // if 'primary' language hasn't defined actions for that target - create 'default' actions
       resultActions = createPrimaryChildSubstituteActions(parentNode, currentChild, childConcept, childSetter, TRUE_CONDITION, context);
     } else {      
-      if (!containsLegacyQueries(primaryBuilders)) {
+      if (!containsLegacyQueries(primaryBuilders) && !containsRemoveDefaults(primaryBuilders)) {
         // if 'primary' language doesn't contain legacy queries, than default actions will be created by default
         resultActions.addAll(createPrimaryChildSubstituteActions(parentNode, currentChild, childConcept, childSetter, TRUE_CONDITION, context));
       }
@@ -100,6 +100,15 @@ public class ChildSubstituteActionsHelper {
   private static boolean containsLegacyQueries(List<NodeSubstituteActionsBuilder> list) {
     for (NodeSubstituteActionsBuilder builder : list) {
       if (!builder.getUseNewActions()) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  private static boolean containsRemoveDefaults(List<NodeSubstituteActionsBuilder> list) {
+    for (NodeSubstituteActionsBuilder builder : list) {
+      if (!builder.getSubnodes(RemoveDefaultsPart.class).isEmpty()) {
         return true;
       }
     }

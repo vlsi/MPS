@@ -87,6 +87,33 @@
         </node>
       </node>
     </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1177615006919">
+      <property name="useNewActions" value="true" />
+      <link role="applicableConcept" targetNodeId="1.1177323240852" />
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddMenuPart" id="1177615025894">
+        <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptSubstituteMenuPart" id="1177615026882">
+          <link role="concept" targetNodeId="1.1177614709184" />
+        </node>
+      </node>
+      <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionFunction" id="1177615035800">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177615035801">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1177615037180">
+            <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1177615037182">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1177615037183" />
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1177615037184">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parentNode" id="1177615037185" />
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAncestorOperation" id="1177615037186">
+                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Concept" id="1177615037187">
+                    <link role="concept" targetNodeId="1.1112058030570" />
+                  </node>
+                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Inclusion" id="1177615041078" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
