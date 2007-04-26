@@ -29,8 +29,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.ide.scriptLanguage.MigrationScript" id="1177461782622">
-    <property name="title" value="Migrate From b.339 " />
-    <property name="name" value="TestMigration" />
+    <property name="title" value="Migrate from build #339" />
+    <property name="name" value="SmodelLangMigration339" />
     <node role="part" type="jetbrains.mps.ide.scriptLanguage.MigrationScriptPart_Instance" id="1177462133415">
       <property name="description" value="update arguments in 'IsInstanceOf' operation" />
       <link role="affectedInstanceConcept" targetNodeId="1.1139621453865" />
