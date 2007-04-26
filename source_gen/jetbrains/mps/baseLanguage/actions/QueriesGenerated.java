@@ -95,6 +95,10 @@ public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_InstanceMethodDeclaration_1158793299786(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
     SLinkOperations.setNewChild(newNode, "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
   }
+  public static void nodeFactory_NodeSetup_ConstructorDeclaration_1177516330787(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
+    SLinkOperations.setNewChild(newNode, "returnType", "jetbrains.mps.baseLanguage.structure.ClassifierType");
+    SLinkOperations.setTarget(SLinkOperations.getTarget(newNode, "returnType", true), "classifier", enclosingNode, false);
+  }
   public static void nodeFactory_NodeSetup_BinaryOperation_1158797366355(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
     if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
       SLinkOperations.setTarget(newNode, "leftExpression", SLinkOperations.getTarget(sampleNode, "leftExpression", true), true);
