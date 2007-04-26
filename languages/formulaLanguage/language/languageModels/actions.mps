@@ -247,7 +247,6 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActions" id="1140215639502">
     <property name="name" value="Formula_rtransform" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1140215644909">
-      <property name="actionsFactoryAspectId" value="BinaryOperation" />
       <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1111784312737" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddMenuPart" id="1177586989322">
