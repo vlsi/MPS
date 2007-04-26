@@ -1054,5 +1054,19 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177571984778">
+    <property name="name" value="ConceptSubstituteMenuPart" />
+    <property name="package" value="MenuParts.Substitute" />
+    <link role="extends" targetNodeId="1177323652379" resolveInfo="SubstituteMenuPart" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1177572377924">
+      <property name="value" value="concept" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177571997481">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="concept" />
+      <link role="target" targetNodeId="2.1071489090640" />
+    </node>
+  </node>
 </model>
 
