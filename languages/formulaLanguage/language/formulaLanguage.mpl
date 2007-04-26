@@ -12,7 +12,9 @@
   <models>
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.formulaLanguage" />
   </models>
-  <module />
+  <module>
+    <moduleRoot path="${mps_home}\platform\regexp\languages\regexp\regexp.mpl" />
+  </module>
   <accessoryModels />
   <generators>
     <generator name="generator" generatorUID="jetbrains.mps.formulaLanguage#1130266266255" targetLanguage="jetbrains.mps.baseLanguage">
@@ -20,7 +22,10 @@
         <modelRoot path="${language_descriptor}\generator\generator" namespacePrefix="jetbrains.mps.formulaLanguage.generator" />
       </models>
       <module />
+      <external-templates />
+      <mapping-priorities />
     </generator>
   </generators>
+  <classPath />
 </language>
 

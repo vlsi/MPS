@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model namespace="postingrules">
-  <maxImportIndex value="1" />
+<model name="postingrules.agreement">
   <language namespace="agreementLanguage" />
   <language namespace="jetbrains.mps.formulaLanguage" />
+  <maxImportIndex value="1" />
   <import index="1" modelUID="agreementLanguage.declarations" />
   <node type="agreementLanguage.Plan" id="1112303557868">
     <property name="name" value="Regular" />
@@ -21,9 +21,9 @@
           </node>
         </node>
         <node role="date" type="agreementLanguage.Date" id="1112383994545">
+          <property name="year" value="1999" />
           <property name="month" value="10" />
           <property name="day" value="01" />
-          <property name="year" value="1999" />
         </node>
       </node>
     </node>
@@ -45,16 +45,16 @@
             <node role="rightOperand" type="agreementLanguage.Quantity" id="1112384483477">
               <property name="unit" value="USD" />
               <node role="amount" type="jetbrains.mps.formulaLanguage.FloatingPointConstant" id="1112384483476">
-                <property name="value" value="10.0" />
                 <property name="integerPart" value="10" />
+                <property name="value" value="10.0" />
               </node>
             </node>
           </node>
         </node>
         <node role="date" type="agreementLanguage.Date" id="1112384434482">
+          <property name="year" value="1999" />
           <property name="month" value="10" />
           <property name="day" value="01" />
-          <property name="year" value="1999" />
         </node>
       </node>
       <node role="postingRule" type="agreementLanguage.PostingRuleTemporalProperty" id="1112384647066">
@@ -73,16 +73,16 @@
             <node role="rightOperand" type="agreementLanguage.Quantity" id="1112384556772">
               <property name="unit" value="USD" />
               <node role="amount" type="jetbrains.mps.formulaLanguage.FloatingPointConstant" id="1112384556771">
-                <property name="value" value="15.0" />
                 <property name="integerPart" value="15" />
+                <property name="value" value="15.0" />
               </node>
             </node>
           </node>
         </node>
         <node role="date" type="agreementLanguage.Date" id="1112384528448">
+          <property name="year" value="1999" />
           <property name="month" value="12" />
           <property name="day" value="01" />
-          <property name="year" value="1999" />
         </node>
       </node>
     </node>
@@ -103,9 +103,9 @@
           </node>
         </node>
         <node role="date" type="agreementLanguage.Date" id="1112384610291">
+          <property name="year" value="1999" />
           <property name="month" value="10" />
           <property name="day" value="01" />
-          <property name="year" value="1999" />
         </node>
       </node>
     </node>
@@ -114,8 +114,8 @@
       <node role="quantity" type="agreementLanguage.QuantityTemporalProperty" id="1112383882932">
         <node role="value" type="agreementLanguage.Quantity" id="1112383882933">
           <node role="amount" type="jetbrains.mps.formulaLanguage.FloatingPointConstant" id="1112383772351">
-            <property name="value" value="10.0" />
             <property name="integerPart" value="10" />
+            <property name="value" value="10.0" />
           </node>
         </node>
         <node role="date" type="agreementLanguage.Date_Past" id="1116446878604" />
@@ -123,14 +123,14 @@
       <node role="quantity" type="agreementLanguage.QuantityTemporalProperty" id="1112383979448">
         <node role="value" type="agreementLanguage.Quantity" id="1112383979449">
           <node role="amount" type="jetbrains.mps.formulaLanguage.FloatingPointConstant" id="1112383963275">
-            <property name="value" value="12.0" />
             <property name="integerPart" value="12" />
+            <property name="value" value="12.0" />
           </node>
         </node>
         <node role="date" type="agreementLanguage.Date" id="1112383954446">
+          <property name="year" value="1999" />
           <property name="month" value="12" />
           <property name="day" value="01" />
-          <property name="year" value="1999" />
         </node>
       </node>
     </node>
@@ -170,9 +170,9 @@
           </node>
         </node>
         <node role="date" type="agreementLanguage.Date" id="1112393071752">
+          <property name="year" value="1999" />
           <property name="month" value="10" />
           <property name="day" value="01" />
-          <property name="year" value="1999" />
         </node>
       </node>
     </node>
@@ -184,15 +184,15 @@
           <node role="expression" type="agreementLanguage.Quantity" id="1112393154670">
             <property name="unit" value="USD" />
             <node role="amount" type="jetbrains.mps.formulaLanguage.FloatingPointConstant" id="1112393154669">
-              <property name="value" value="10.0" />
               <property name="integerPart" value="10" />
+              <property name="value" value="10.0" />
             </node>
           </node>
         </node>
         <node role="date" type="agreementLanguage.Date" id="1112393138448">
+          <property name="year" value="1999" />
           <property name="month" value="10" />
           <property name="day" value="01" />
-          <property name="year" value="1999" />
         </node>
       </node>
     </node>
@@ -213,9 +213,9 @@
           </node>
         </node>
         <node role="date" type="agreementLanguage.Date" id="1112393225124">
+          <property name="year" value="1999" />
           <property name="month" value="10" />
           <property name="day" value="01" />
-          <property name="year" value="1999" />
         </node>
       </node>
     </node>
@@ -224,8 +224,8 @@
       <node role="quantity" type="agreementLanguage.QuantityTemporalProperty" id="1112393265152">
         <node role="value" type="agreementLanguage.Quantity" id="1112393265153">
           <node role="amount" type="jetbrains.mps.formulaLanguage.FloatingPointConstant" id="1112392991085">
-            <property name="value" value="10.0" />
             <property name="integerPart" value="10" />
+            <property name="value" value="10.0" />
           </node>
         </node>
         <node role="date" type="agreementLanguage.Date_Past" id="1116446666034" />
@@ -236,8 +236,8 @@
       <node role="quantity" type="agreementLanguage.QuantityTemporalProperty" id="1112393265154">
         <node role="value" type="agreementLanguage.Quantity" id="1112393034215">
           <node role="amount" type="jetbrains.mps.formulaLanguage.FloatingPointConstant" id="1112393022197">
-            <property name="value" value="5.0" />
             <property name="integerPart" value="5" />
+            <property name="value" value="5.0" />
           </node>
         </node>
         <node role="date" type="agreementLanguage.Date_Past" id="1116446834806" />
@@ -249,8 +249,8 @@
         <node role="value" type="agreementLanguage.Quantity" id="1112393052453">
           <property name="unit" value="KWH" />
           <node role="amount" type="jetbrains.mps.formulaLanguage.FloatingPointConstant" id="1112393046749">
-            <property name="value" value="50.0" />
             <property name="integerPart" value="50" />
+            <property name="value" value="50.0" />
           </node>
         </node>
         <node role="date" type="agreementLanguage.Date_Past" id="1116446763488" />
@@ -263,9 +263,9 @@
           </node>
         </node>
         <node role="date" type="agreementLanguage.Date" id="1116446773944">
+          <property name="year" value="1999" />
           <property name="month" value="12" />
           <property name="day" value="01" />
-          <property name="year" value="1999" />
         </node>
       </node>
     </node>

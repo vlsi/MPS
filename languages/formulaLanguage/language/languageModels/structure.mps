@@ -7,8 +7,8 @@
     <property name="name" value="Formula" />
     <link role="extends" targetNodeId="2.1133920641626" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1111784226798">
-      <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="1" />
+      <property name="sourceCardinality" value="1" />
       <property name="role" value="expression" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1111784312737" />
@@ -49,15 +49,15 @@
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473854053" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1111784613299">
-      <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="1" />
+      <property name="sourceCardinality" value="1" />
       <property name="role" value="leftOperand" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1111784312737" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1111784647019">
-      <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="1" />
+      <property name="sourceCardinality" value="1" />
       <property name="role" value="rightOperand" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1111784312737" />
@@ -69,6 +69,9 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1112037519288">
       <property name="value" value="integer constant" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473914776" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1177586805458">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473994950" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1111784874587">
       <property name="name" value="value" />
@@ -86,6 +89,9 @@
       <property name="value" value="floating point constant" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473914776" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1177586810331">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473994950" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1111785030296">
     <property name="name" value="IfFunction" />
@@ -99,22 +105,22 @@
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473914776" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1111785044750">
-      <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="1" />
+      <property name="sourceCardinality" value="1" />
       <property name="role" value="logicalTest" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1111784312737" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1111785091720">
-      <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="1" />
+      <property name="sourceCardinality" value="1" />
       <property name="role" value="valueIfTrue" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1111784312737" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1111785124143">
-      <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="1" />
+      <property name="sourceCardinality" value="1" />
       <property name="role" value="valueIfFalse" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1111784312737" />
@@ -181,8 +187,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConstrainedDataTypeDeclaration" id="1113256863281">
-    <property name="constraint" value="-?[0-9]+(\\.?[0-9]*)" />
     <property name="name" value="_FPNumber" />
+    <property name="constraint" value="-?[0-9]+(\\.?[0-9]*)" />
     <link role="extends" targetNodeId="2.1082983041843" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1133954660098">
@@ -249,8 +255,8 @@
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473914776" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1134036114963">
-      <property name="role" value="expression" />
       <property name="metaClass" value="aggregation" />
+      <property name="role" value="expression" />
       <link role="target" targetNodeId="1111784312737" />
     </node>
   </node>
