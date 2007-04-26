@@ -284,6 +284,7 @@ public class ChildSubstituteActionsHelper {
       try {
         return (Boolean) QueryMethodGenerated.invoke(methodName, args, model);
       } catch (Exception e) {
+        LOG.error(e);
         return false;
       }
     }
@@ -384,7 +385,7 @@ public class ChildSubstituteActionsHelper {
       try {
         return (List<INodeSubstituteAction>) QueryMethodGenerated.invoke(methodName, args1, builder.getModel());
       } catch (Exception e) {
-        e.printStackTrace();
+        LOG.error(e);
         return Collections.emptyList();
       }
     }
