@@ -57,8 +57,8 @@
             <property name="textFgColor" value="red" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1177416798567">
-            <property name="text" value="treepath&lt;" />
             <property name="drawBorder" value="false" />
+            <property name="text" value="treepath&lt;" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1177416798568">
             <property name="drawBorder" value="false" />
@@ -133,7 +133,9 @@
                   </node>
                 </node>
                 <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1168904595732">
-                  <link role="concept" targetNodeId="1.1168890168054" />
+                  <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.RefConcept_Reference" id="1177626176032">
+                    <link role="conceptDeclaration" targetNodeId="1.1168890168054" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -464,18 +466,18 @@
               <property name="textFgColor" value="red" />
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1177416764592">
-              <property name="text" value="treepath&lt;" />
-              <property name="selectable" value="false" />
               <property name="drawBorder" value="false" />
+              <property name="selectable" value="false" />
+              <property name="text" value="treepath&lt;" />
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1177416764593">
               <property name="drawBorder" value="false" />
               <link role="relationDeclaration" targetNodeId="1.1168881500048" />
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1177416764594">
-              <property name="text" value="&gt;" />
-              <property name="selectable" value="false" />
               <property name="drawBorder" value="false" />
+              <property name="selectable" value="false" />
+              <property name="text" value="&gt;" />
             </node>
             <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1177416764595">
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177416764596">
@@ -866,8 +868,8 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1175169875861">
         <property name="drawBorder" value="false" />
-        <property name="noTargetText" value="property?" />
         <property name="attractsFocus" value="1" />
+        <property name="noTargetText" value="property?" />
         <link role="relationDeclaration" targetNodeId="1.1175169795791" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1175169875862">
           <link role="conceptDeclaration" targetNodeId="1.1175160940972" />
@@ -939,7 +941,9 @@
                     <link role="variableDeclaration" targetNodeId="1175878250427" resolveInfo="desc" />
                   </node>
                   <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1175878308253">
-                    <link role="concept" targetNodeId="1.1175160940972" />
+                    <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.RefConcept_Reference" id="1177626176206">
+                      <link role="conceptDeclaration" targetNodeId="1.1175160940972" />
+                    </node>
                   </node>
                 </node>
                 <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1175878300095">

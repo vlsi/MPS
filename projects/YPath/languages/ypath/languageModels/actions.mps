@@ -125,7 +125,9 @@
                 <link role="variableDeclaration" targetNodeId="1176980076347" resolveInfo="type" />
               </node>
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1176980146059">
-                <link role="concept" targetNodeId="1.1168428529658" />
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.RefConcept_Reference" id="1177626176285">
+                  <link role="conceptDeclaration" targetNodeId="1.1168428529658" />
+                </node>
               </node>
             </node>
           </node>
@@ -172,7 +174,9 @@
                         </node>
                       </node>
                       <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1172067483856">
-                        <link role="concept" targetNodeId="1.1168890168054" />
+                        <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.RefConcept_Reference" id="1177626176240">
+                          <link role="conceptDeclaration" targetNodeId="1.1168890168054" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -187,7 +191,9 @@
                         </node>
                       </node>
                       <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1172067427594">
-                        <link role="concept" targetNodeId="1.1168468602533" />
+                        <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.RefConcept_Reference" id="1177626176005">
+                          <link role="conceptDeclaration" targetNodeId="1.1168468602533" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -197,7 +203,9 @@
             <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1172066558511">
               <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parentNode" id="1172066555493" />
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1172066563113">
-                <link role="concept" targetNodeId="1.1168468602533" />
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.RefConcept_Reference" id="1177626176055">
+                  <link role="conceptDeclaration" targetNodeId="1.1168468602533" />
+                </node>
               </node>
             </node>
           </node>
@@ -217,7 +225,9 @@
             <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1172067562280">
               <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parentNode" id="1172067557110" />
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1172067566597">
-                <link role="concept" targetNodeId="1.1168468602533" />
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.RefConcept_Reference" id="1177626176241">
+                  <link role="conceptDeclaration" targetNodeId="1.1168468602533" />
+                </node>
               </node>
             </node>
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1172067554218">
@@ -244,7 +254,9 @@
                     </node>
                   </node>
                   <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1172067653975">
-                    <link role="concept" targetNodeId="1.1168890168054" />
+                    <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.RefConcept_Reference" id="1177626176015">
+                      <link role="conceptDeclaration" targetNodeId="1.1168890168054" />
+                    </node>
                   </node>
                 </node>
                 <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1172067639629">
@@ -273,7 +285,9 @@
             <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1172067694743">
               <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parentNode" id="1172067693527" />
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1172067697846">
-                <link role="concept" targetNodeId="1.1168468602533" />
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.RefConcept_Reference" id="1177626176275">
+                  <link role="conceptDeclaration" targetNodeId="1.1168468602533" />
+                </node>
               </node>
             </node>
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1172067690653">
@@ -300,7 +314,9 @@
                     </node>
                   </node>
                   <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1172067806092">
-                    <link role="concept" targetNodeId="1.1168468602533" />
+                    <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.RefConcept_Reference" id="1177626176035">
+                      <link role="conceptDeclaration" targetNodeId="1.1168468602533" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -327,7 +343,9 @@
                 <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetParentOperation" id="1175170204614" />
               </node>
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1175170240796">
-                <link role="concept" targetNodeId="1.1172242735136" />
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.RefConcept_Reference" id="1177626176237">
+                  <link role="conceptDeclaration" targetNodeId="1.1172242735136" />
+                </node>
               </node>
             </node>
           </node>
