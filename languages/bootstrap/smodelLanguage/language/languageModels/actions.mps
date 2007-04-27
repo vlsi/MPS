@@ -19,7 +19,9 @@
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1173984362064">
       <property name="description" value="disable default substitute" />
       <property name="actionsFactoryAspectId" value="NoActions" />
+      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1138411891628" />
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.RemoveDefaultsPart" id="1177693940908" />
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1138413233760">
       <property name="description" value="all operations appropriate for expression before'.'" />

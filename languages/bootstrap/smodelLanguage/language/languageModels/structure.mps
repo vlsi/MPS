@@ -501,6 +501,11 @@
       <property name="role" value="concept" />
       <link role="target" targetNodeId="3.1071489090640" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177700677986">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="prototypeNode" />
+      <link role="target" targetNodeId="2.1068431790191" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1143235216709">
       <property name="value" value="new node" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />

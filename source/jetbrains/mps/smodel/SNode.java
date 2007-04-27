@@ -1539,7 +1539,6 @@ public class SNode implements Cloneable, Iterable<SNode> {
   // -----------------------------
 
   public boolean hasConceptProperty(String propertyName, IScope scope) {
-    // todo: make "rootable" -> concept property
     if ("root".equals(propertyName)) {
       if (getAdapter() instanceof ConceptDeclaration) {
         return ((ConceptDeclaration) getAdapter()).getRootable();

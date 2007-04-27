@@ -108,6 +108,9 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1177031312269(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "conceptArgument", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Expression");
   }
+  public static boolean baseMappingRule_Condition_1177701505375(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return (SLinkOperations.getTarget(node, "prototypeNode", true) != null);
+  }
   public static String propertyMacro_GetPropertyValue_1177115336225(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return QueriesUtil.getConceptFqName(SLinkOperations.getTarget(node, "conceptDeclaration", false));
   }
@@ -690,5 +693,8 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_1177103548906(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "conceptArgument", true), "expression", true);
+  }
+  public static SNode sourceNodeQuery_1177701501920(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "prototypeNode", true);
   }
 }
