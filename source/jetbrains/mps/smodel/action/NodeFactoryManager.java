@@ -60,8 +60,11 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
       return new SNode(model, NameUtil.removeStructureFromFqName(NameUtil.nodeFQName(nodeConcept)));
     }
     SNode newNode = BaseAdapter.fromAdapter(SModelUtil_new.instantiateConceptDeclaration((ConceptDeclaration) nodeConcept, model, false));
-    if (newNode == null) return null;    
+    if (newNode == null) return null;
     BehaviorManager.getInstance().initNode(newNode);
+    if (sampleNode != null) {
+      sampleNode = SNodeCopyUtil.cloneSNode(sampleNode, model, false);
+    }
     setupNode((ConceptDeclaration) nodeConcept, newNode, sampleNode, enclosingNode, model, scope);
     SModelUtil_new.createNodeStructure((ConceptDeclaration) nodeConcept, newNode, sampleNode, enclosingNode, model, scope, true);
     return newNode;
