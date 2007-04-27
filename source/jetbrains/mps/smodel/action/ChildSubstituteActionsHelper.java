@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.util.QueryMethodGenerated;
+import jetbrains.mps.util.CollectionUtil;
 
 import java.util.*;
 
@@ -140,20 +141,28 @@ public class ChildSubstituteActionsHelper {
 
     List<INodeSubstituteAction> actions = new ArrayList<INodeSubstituteAction>();
     for (SNode applicableConcept : applicableConcepts) {
-      // first try to create 'smart reference' actions for this concept
-      LinkDeclaration smartReference = getSmartReference((ConceptDeclaration) BaseAdapter.fromNode(applicableConcept), scope);
-      if (smartReference != null) {
-        List<INodeSubstituteAction> smartActions = createSmartReferenceActions((ConceptDeclaration) BaseAdapter.fromNode(applicableConcept), smartReference, parentNode, currentChild, childSetter, scope);
-        if (smartActions != null) {
-          actions.addAll(smartActions);
-        }
-      } else {
-        // apply default 'child substitute'
-        actions.add(new DefaultChildNodeSubstituteAction(applicableConcept, parentNode, currentChild, childSetter, scope));
-      }
+      actions.addAll(createDefaultActions((ConceptDeclaration) BaseAdapter.fromNode(applicableConcept), parentNode, currentChild, childSetter, scope));
     }
 
     return actions;
+  }
+
+  public static List<INodeSubstituteAction> createDefaultActions(ConceptDeclaration applicableConcept,
+                                                                 SNode parentNode,
+                                                                 SNode currentChild,
+                                                                 IChildNodeSetter setter,
+                                                                 IScope scope) {
+    LinkDeclaration smartRef = getSmartReference(applicableConcept, scope);
+    if (smartRef != null) {
+      List<INodeSubstituteAction> smartActions = createSmartReferenceActions(applicableConcept, smartRef, parentNode, currentChild, setter, scope);
+      if (smartActions != null) {
+        return smartActions;
+      } else {
+        return Collections.emptyList();
+      }
+    } else {
+      return CollectionUtil.asList((INodeSubstituteAction) new DefaultChildNodeSubstituteAction(applicableConcept, parentNode, currentChild, setter, scope));
+    }
   }
 
   private static List<INodeSubstituteAction> createSmartReferenceActions(
