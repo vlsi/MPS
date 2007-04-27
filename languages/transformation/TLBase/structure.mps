@@ -181,6 +181,12 @@
       <property name="role" value="abandonRootRule" />
       <link role="target" targetNodeId="1114458327664" resolveInfo="ConceptDeclarationReference" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177715175777">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="alwaysCopyRootRule" />
+      <link role="target" targetNodeId="1114458327664" resolveInfo="ConceptDeclarationReference" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1163452921864">
       <property name="value" value="mapping configuration" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />

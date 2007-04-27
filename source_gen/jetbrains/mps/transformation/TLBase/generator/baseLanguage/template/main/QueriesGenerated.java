@@ -78,7 +78,7 @@ public class QueriesGenerated {
     return null;
   }
   public static SNode referenceMacro_GetReferent_1167771845166(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(node, "jetbrains.mps.transformation.TLBase.structure.BaseMappingRule", false, false), "applicableConcept", false);
+    return SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.transformation.TLBase.structure.BaseMappingRule", false, false), "applicableConcept", false);
   }
   public static SNode referenceMacro_GetReferent_1170806025025(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     AbstractConceptDeclaration concept = TemplateLanguageTypesUtil.get_sourceNode_concept(((PropertyMacro_GetPropertyValue)SNodeOperations.getAdapter(node)), generator.getTypeChecker());
