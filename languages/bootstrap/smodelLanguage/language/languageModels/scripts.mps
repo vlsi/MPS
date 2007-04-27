@@ -183,10 +183,10 @@
       </node>
       <node role="affectedInstanceUpdater" type="jetbrains.mps.ide.scriptLanguage.MigrationScriptPart_Instance_Updater" id="1177554302607">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177554302608">
-          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1177554599865">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.VarDeclaration" id="1177554599866">
-              <property name="name" value="ancestorOp" />
-              <node role="type" type="jetbrains.mps.baseLanguage.Type" id="1177554599867" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1177716284237">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1177716284238">
+              <property name="name" value="node_GetAncestorOperation" />
+              <node role="type" type="jetbrains.mps.baseLanguage.VarType" id="1177716507792" />
               <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1177554573612">
                 <node role="leftExpression" type="jetbrains.mps.ide.scriptLanguage.MigrationScriptPart_node" id="1177554571283" />
                 <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_ReplaceWithNewOperation" id="1177554578113">
@@ -198,8 +198,8 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1177554720561">
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1177554777268">
               <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1177554766813">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1177554720562">
-                  <link role="variableDeclaration" targetNodeId="1177554599866" resolveInfo="ancestorOp" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1177716307054">
+                  <link role="variableDeclaration" targetNodeId="1177716284238" resolveInfo="node_GetAncestorOperation" />
                 </node>
                 <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkListAccess" id="1177554774595">
                   <link role="link" targetNodeId="1.1144104376918" />
