@@ -205,10 +205,11 @@
                   <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1177585776516">
                     <link role="concept" targetNodeId="1.1073389446423" />
                   </node>
-                  <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1177680004881">
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_currentTargetNode" id="1177680002908" />
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_ReplaceWithNewOperation" id="1177680007539">
+                  <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1177703288270">
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_model" id="1177703288271" />
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Model_CreateNewNodeOperation" id="1177703288272">
                       <link role="concept" targetNodeId="1.1073389446423" />
+                      <node role="prototypeNode" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_currentTargetNode" id="1177703288273" />
                     </node>
                   </node>
                 </node>
@@ -256,10 +257,11 @@
                   <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1177680848720">
                     <link role="concept" targetNodeId="1.1073389446423" />
                   </node>
-                  <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1177680848721">
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_currentTargetNode" id="1177680848722" />
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_ReplaceWithNewOperation" id="1177680848723">
+                  <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1177703292610">
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_model" id="1177703292611" />
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Model_CreateNewNodeOperation" id="1177703292612">
                       <link role="concept" targetNodeId="1.1073389446423" />
+                      <node role="prototypeNode" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_currentTargetNode" id="1177703292613" />
                     </node>
                   </node>
                 </node>
@@ -316,10 +318,11 @@
                   <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1177680038421">
                     <link role="concept" targetNodeId="1.1073389446423" />
                   </node>
-                  <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1177680038422">
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_currentTargetNode" id="1177680038423" />
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_ReplaceWithNewOperation" id="1177680038424">
+                  <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1177702357509">
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_model" id="1177702353258" />
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Model_CreateNewNodeOperation" id="1177702360948">
                       <link role="concept" targetNodeId="1.1073389446423" />
+                      <node role="prototypeNode" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_currentTargetNode" id="1177702380792" />
                     </node>
                   </node>
                 </node>
@@ -367,10 +370,11 @@
                   <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1177680871673">
                     <link role="concept" targetNodeId="1.1073389446423" />
                   </node>
-                  <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1177680871674">
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_currentTargetNode" id="1177680871675" />
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_ReplaceWithNewOperation" id="1177680871676">
+                  <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1177703347294">
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_model" id="1177703347295" />
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Model_CreateNewNodeOperation" id="1177703347296">
                       <link role="concept" targetNodeId="1.1073389446423" />
+                      <node role="prototypeNode" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_currentTargetNode" id="1177703347297" />
                     </node>
                   </node>
                 </node>
@@ -431,6 +435,7 @@
                     <node role="leftExpression" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_model" id="1177680474962" />
                     <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Model_CreateNewNodeOperation" id="1177680474963">
                       <link role="concept" targetNodeId="1.1073390211982" />
+                      <node role="prototypeNode" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_currentTargetNode" id="1177703410913" />
                     </node>
                   </node>
                 </node>
@@ -482,6 +487,7 @@
                     <node role="leftExpression" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_model" id="1177680921686" />
                     <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Model_CreateNewNodeOperation" id="1177680921687">
                       <link role="concept" targetNodeId="1.1073390211982" />
+                      <node role="prototypeNode" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_currentTargetNode" id="1177703473893" />
                     </node>
                   </node>
                 </node>
@@ -542,6 +548,7 @@
                     <node role="leftExpression" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_model" id="1177585866428" />
                     <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Model_CreateNewNodeOperation" id="1177585866429">
                       <link role="concept" targetNodeId="1.1073390211982" />
+                      <node role="prototypeNode" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_currentTargetNode" id="1177703492394" />
                     </node>
                   </node>
                 </node>
@@ -593,6 +600,7 @@
                     <node role="leftExpression" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_model" id="1177680944124" />
                     <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Model_CreateNewNodeOperation" id="1177680944125">
                       <link role="concept" targetNodeId="1.1073390211982" />
+                      <node role="prototypeNode" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_currentTargetNode" id="1177703513754" />
                     </node>
                   </node>
                 </node>
@@ -653,6 +661,7 @@
                     <node role="leftExpression" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_model" id="1177681029319" />
                     <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Model_CreateNewNodeOperation" id="1177681033777">
                       <link role="concept" targetNodeId="1.1073389658414" />
+                      <node role="prototypeNode" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_currentTargetNode" id="1177703520333" />
                     </node>
                   </node>
                 </node>
@@ -696,6 +705,7 @@
                     <node role="leftExpression" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_model" id="1177681080343" />
                     <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Model_CreateNewNodeOperation" id="1177681080344">
                       <link role="concept" targetNodeId="1.1137553248617" />
+                      <node role="prototypeNode" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_currentTargetNode" id="1177703525412" />
                     </node>
                   </node>
                 </node>
@@ -739,6 +749,7 @@
                     <node role="leftExpression" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_model" id="1177681126425" />
                     <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Model_CreateNewNodeOperation" id="1177681126426">
                       <link role="concept" targetNodeId="1.1088612959204" />
+                      <node role="prototypeNode" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_currentTargetNode" id="1177703533820" />
                     </node>
                   </node>
                 </node>
@@ -782,6 +793,7 @@
                     <node role="leftExpression" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_model" id="1177681814418" />
                     <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Model_CreateNewNodeOperation" id="1177681814419">
                       <link role="concept" targetNodeId="1.1073389577006" />
+                      <node role="prototypeNode" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_currentTargetNode" id="1177703542039" />
                     </node>
                   </node>
                 </node>
