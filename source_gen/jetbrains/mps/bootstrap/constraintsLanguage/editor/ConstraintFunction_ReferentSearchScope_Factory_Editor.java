@@ -35,7 +35,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell(context, node, ">"));
     editorCell.addEditorCell(this.createBodyCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1158790978196");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790978196");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -50,7 +50,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell6(context, node, "model"));
     editorCell.addEditorCell(this.createConstantCell7(context, node, "context"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1158790989572");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989572");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -65,7 +65,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell8(context, node, "enclosingNode"));
     editorCell.addEditorCell(this.createConstantCell9(context, node, "context"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1158790989575");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989575");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -80,7 +80,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell11(context, node, "source of the reference link"));
     editorCell.addEditorCell(this.createConstantCell12(context, node, "(optional - may not exist yet)"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1158790989580");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989580");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -95,7 +95,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell10(context, node, "referenceNode"));
     editorCell.addEditorCell(this.createColumnCell2(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1158790989578");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989578");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -110,7 +110,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell13(context, node, "scope"));
     editorCell.addEditorCell(this.createConstantCell14(context, node, "context (jetbrains.mps.smodel.IScope)"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1158790989583");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989583");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -127,7 +127,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.addEditorCell(this.createRowCell2(context, node));
     editorCell.addEditorCell(this.createRowCell3(context, node));
     editorCell.addEditorCell(this.createRowCell4(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1158790989571");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989571");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -146,7 +146,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.addEditorCell(this.createConstantCell4(context, node, ""));
     editorCell.addEditorCell(this.createConstantCell5(context, node, "macros:"));
     editorCell.addEditorCell(this.createColumnCell1(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1158790989565");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989565");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -160,7 +160,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setBracketsColor(Color.black);
     editorCell.setFontType(MPSFonts.BOLD);
     editorCell.getTextLine().setTextColor(Color.blue);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1158790978197");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790978197");
     editorCell.setLayoutConstraint("");
     editorCell.putUserObject(EditorCell.ATTRACTS_FOCUS_POLICY, EditorCell.ATTRACTS_FOCUS);
     return editorCell;
@@ -175,7 +175,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(Color.blue);
     editorCell.getTextLine().setTextBackgroundColor(Color.lightGray);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1158790989566");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989566");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -187,7 +187,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1158790989567");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989567");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -200,7 +200,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setFontType(MPSFonts.PLAIN);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1158790989568");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989568");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -212,7 +212,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1158790989569");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989569");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -225,7 +225,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setFontType(MPSFonts.PLAIN);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1158790989570");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989570");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -237,7 +237,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1158790989573");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989573");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -250,7 +250,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setFontType(MPSFonts.PLAIN);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1158790989574");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989574");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -262,7 +262,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1158790989576");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989576");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -275,7 +275,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setFontType(MPSFonts.PLAIN);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1158790989577");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989577");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -287,7 +287,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1158790989579");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989579");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -300,7 +300,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setFontType(MPSFonts.PLAIN);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1158790989581");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989581");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -313,7 +313,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setFontType(MPSFonts.PLAIN);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1158790989582");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989582");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -325,7 +325,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1158790989584");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989584");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -338,7 +338,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setFontType(MPSFonts.PLAIN);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1158790989585");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989585");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -355,7 +355,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1158790978198");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790978198");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

@@ -178,4 +178,27 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
 
     return editorModelDescriptor;
   }
+
+  public static SModelDescriptor createConstraintsModel(Language language) {
+    ModelRoot modelRoot = null;
+    List<ModelRoot> modelRoots = language.getModelRoots();
+    for (ModelRoot mRoot : modelRoots) {
+      IModelRootManager rootManager = SModelRepository.getInstance().getManagerFor(mRoot);
+      if (rootManager instanceof DefaultModelRootManager) {
+        modelRoot = mRoot;
+        break;
+      }
+    }
+
+    assert modelRoot != null;
+
+    SModelDescriptor constraintsModelDescriptor = language.createModel(new SModelUID(language.getModuleUID(), "constraints", ""), modelRoot);
+    SModel constraintsModel = constraintsModelDescriptor.getSModel();
+    constraintsModel.addLanguage(BootstrapLanguages.getInstance().getConstraintsLanguage());
+    constraintsModel.addLanguage(BootstrapLanguages.getInstance().getBaseLanguage());
+    constraintsModel.addLanguage(BootstrapLanguages.getInstance().getSModelLanguage());
+    constraintsModelDescriptor.save();
+
+    return constraintsModelDescriptor;
+  }
 }
