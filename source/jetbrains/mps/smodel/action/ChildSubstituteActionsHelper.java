@@ -161,7 +161,7 @@ public class ChildSubstituteActionsHelper {
         return Collections.emptyList();
       }
     } else {
-      return CollectionUtil.asList((INodeSubstituteAction) new DefaultChildNodeSubstituteAction(applicableConcept, parentNode, currentChild, setter, scope));
+      return CollectionUtil.asList((INodeSubstituteAction) new DefaultChildNodeSubstituteAction(BaseAdapter.fromAdapter(applicableConcept), parentNode, currentChild, setter, scope));
     }
   }
 
