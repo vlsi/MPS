@@ -10,6 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ConceptMethodDeclaration extends BaseMethodDeclaration {
   public static String IS_VIRTUAL = "isVirtual";
+  public static String IS_PRIVATE = "isPrivate";
 
   public  ConceptMethodDeclaration(SNode node) {
     super(node);
@@ -27,5 +28,11 @@ public class ConceptMethodDeclaration extends BaseMethodDeclaration {
   }
   public void setIsVirtual(boolean value) {
     this.setBooleanProperty(ConceptMethodDeclaration.IS_VIRTUAL, value);
+  }
+  public boolean getIsPrivate() {
+    return this.getBooleanProperty(ConceptMethodDeclaration.IS_PRIVATE);
+  }
+  public void setIsPrivate(boolean value) {
+    this.setBooleanProperty(ConceptMethodDeclaration.IS_PRIVATE, value);
   }
 }

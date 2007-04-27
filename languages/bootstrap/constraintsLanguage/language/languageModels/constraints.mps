@@ -404,12 +404,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehaviour" id="1177672070822">
-    <link role="concept" targetNodeId="5.1169125787135" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1177672307688">
-      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177672307689" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehaviour" id="1177678324737">
     <property name="package" value="Behaviour" />
     <link role="concept" targetNodeId="1.1177677612101" />
@@ -570,15 +564,27 @@
               </node>
             </node>
           </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1177698714324">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1177698714325">
+              <property name="name" value="methods" />
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1177698714326">
+                <link role="elementConcept" targetNodeId="1.1177673300966" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodCall" id="1177698722477">
+                <link role="baseMethodDeclaration" targetNodeId="13.1177682774106" />
+                <node role="thisNode" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1177698722478">
+                  <link role="variableDeclaration" targetNodeId="1177683051215" resolveInfo="concept" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptParameter_ReferentSearchScope_enclosingNode" id="1177698838509" />
+                <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_scope" id="1177698722479" />
+              </node>
+            </node>
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1177682995157">
             <node role="expression" type="jetbrains.mps.baseLanguage.NewExpression" id="1177683129497">
               <link role="baseMethodDeclaration" extResolveInfo="7.constructor [Classifier]SimpleSearchScope[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodCall" id="1177683133265">
-                <link role="baseMethodDeclaration" targetNodeId="13.1177682774106" />
-                <node role="thisNode" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1177683133266">
-                  <link role="variableDeclaration" targetNodeId="1177683051215" resolveInfo="concept" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_scope" id="1177683133267" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1177698726011">
+                <link role="variableDeclaration" targetNodeId="1177698714325" resolveInfo="methods" />
               </node>
             </node>
           </node>
