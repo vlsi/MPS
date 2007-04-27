@@ -15,6 +15,9 @@
   <constraints>
     <model modelUID="jetbrains.mps.bootstrap.actionsLanguage.constraints" />
   </constraints>
+  <scripts>
+    <model modelUID="jetbrains.mps.bootstrap.actionsLanguage.scripts" />
+  </scripts>
   <editor>
     <model modelUID="jetbrains.mps.bootstrap.actionsLanguage.editor" />
   </editor>
@@ -34,6 +37,7 @@
       <external-templates>
         <generator generatorUID="jetbrains.mps.baseLanguage#1129914002933" />
       </external-templates>
+      <mapping-priorities />
     </generator>
   </generators>
   <classPath />

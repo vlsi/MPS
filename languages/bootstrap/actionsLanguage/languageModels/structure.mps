@@ -75,12 +75,20 @@
       <property name="value" value="'preconditionAspectId' property is replaced with 'precondition block'" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1154621836409" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1177689228988">
+      <property name="value" value="'actionsFactoryAspectId' &amp; 'actionsFilterAspectId'" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1170898673630" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1138079221458">
     <property name="name" value="RTransformHintSubstituteActionsBuilder" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1154622781911">
       <property name="value" value="'preconditionAspectId' property is replaced with 'precondition block'" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1154621836409" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1177689775984">
+      <property name="value" value="'actionsFactoryAspectId' &amp; 'actionsFilterAspectId'" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1170898673630" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1158952484319">
       <property name="name" value="description" />
