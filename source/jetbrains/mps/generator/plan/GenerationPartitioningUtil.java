@@ -1,14 +1,14 @@
 package jetbrains.mps.generator.plan;
 
+import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.transformation.TLBase.structure.TemplateDeclaration;
-import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.project.GlobalScope;
 
 import java.util.*;
 
@@ -42,6 +42,13 @@ public class GenerationPartitioningUtil {
   }
 
   public static List<Generator> getAllPossiblyEngagedGenerators(SModel inputModel, IScope scope) {
+//    AbstractModelScanner modelScanner = new SimpleModelScanner();
+//    if(TemplateLanguageUtil.isTemplatesModel(inputModel)) {
+//      modelScanner = new TemplateQueriesOnlyScanner();
+//    }
+//    Set<Language> usedLanguages = new HashSet<Language>();
+//    Set<Generator> engagedGenerators = new HashSet<Generator>();
+//    modelScanner.collectUsedLanguagesAndEngagedGenerators(inputModel, true, usedLanguages, engagedGenerators, scope);
     return collectGenerators(inputModel, false, true, new ArrayList<Generator>(), new HashSet<Language>(), scope);
   }
 
@@ -125,11 +132,16 @@ public class GenerationPartitioningUtil {
         }
       } else {
         namespaces.add(namespace);
-        // look into any node except 'content' in template declartions
-        if (!(node.getAdapter() instanceof TemplateDeclaration)) {
-          for (SNode child : node.getChildren()) {
-            collectLanguageNamespaces(child, namespaces, excludeTLBase);
-          }
+        // todo: committed because this way we don't look into code inside macros (while we need to generate this code!)
+//        // look into any node except 'content' in template declartions
+//        if (!(node.getAdapter() instanceof TemplateDeclaration)) {
+//          for (SNode child : node.getChildren()) {
+//            collectLanguageNamespaces(child, namespaces, excludeTLBase);
+//          }
+//        }
+        // todo: tmp scan all children
+        for (SNode child : node.getChildren()) {
+          collectLanguageNamespaces(child, namespaces, excludeTLBase);
         }
       }
     }
