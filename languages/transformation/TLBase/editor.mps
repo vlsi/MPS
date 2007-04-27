@@ -1274,7 +1274,7 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1177715273994">
             <property name="textFgColor" value="DARK_BLUE" />
             <property name="underlined" value="2" />
-            <property name="text" value="always roots:" />
+            <property name="text" value="always copy roots:" />
             <property name="fontStyle" value="BOLD_ITALIC" />
             <property name="drawBorder" value="false" />
             <property name="selectable" value="false" />
