@@ -4,7 +4,7 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
-  <maxImportIndex value="15" />
+  <maxImportIndex value="16" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" />
   <import index="2" modelUID="jetbrains.mps.smodel.constraints@java_stub" />
   <import index="3" modelUID="jetbrains.mps.ide@java_stub" />
@@ -18,6 +18,7 @@
   <import index="13" modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" />
   <import index="14" modelUID="jetbrains.mps.helgins.inference@java_stub" />
   <import index="15" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" />
+  <import index="16" modelUID="java.io@java_stub" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraintSet" id="1148948177828">
     <property name="name" value="CSTRL_reference" />
     <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1159220719661">

@@ -4,15 +4,16 @@ import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactory;
 import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.behaviour.BehaviourManager;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.QueryMethodGenerated;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,7 +60,8 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
       return new SNode(model, NameUtil.removeStructureFromFqName(NameUtil.nodeFQName(nodeConcept)));
     }
     SNode newNode = BaseAdapter.fromAdapter(SModelUtil_new.instantiateConceptDeclaration((ConceptDeclaration) nodeConcept, model, false));
-    if (newNode == null) return null;
+    if (newNode == null) return null;    
+    BehaviourManager.getInstance().initNode(newNode);
     setupNode((ConceptDeclaration) nodeConcept, newNode, sampleNode, enclosingNode, model, scope);
     SModelUtil_new.createNodeStructure((ConceptDeclaration) nodeConcept, newNode, sampleNode, enclosingNode, model, scope, true);
     return newNode;
