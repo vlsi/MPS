@@ -12,6 +12,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
@@ -20,7 +21,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 
-public class ConceptMethod_Editor extends DefaultNodeEditor {
+public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
 
   public AbstractCellListHandler myParameterListHandler_parameterList_;
 
@@ -43,7 +44,7 @@ public class ConceptMethod_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if(ConceptMethod_Editor._QueryFunction_NodeCondition_1177676251494(node, context.getOperationContext().getScope())) {
+    if(ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177676251494(node, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstantCell(context, node, "virtual"));
     }
     editorCell.addEditorCell(this.createReturnTypeCell(context, node));
@@ -124,6 +125,7 @@ public class ConceptMethod_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177676244961");
     editorCell.setLayoutConstraint("");
     return editorCell;
@@ -202,7 +204,7 @@ public class ConceptMethod_Editor extends DefaultNodeEditor {
   }
   public EditorCell createParameterList(EditorContext context, SNode node) {
     if(this.myParameterListHandler_parameterList_ == null) {
-      this.myParameterListHandler_parameterList_ = new ConceptMethod_Editor_ParameterListHandler_parameterList_(node, "parameter", context);
+      this.myParameterListHandler_parameterList_ = new ConceptMethodDeclaration_Editor_ParameterListHandler_parameterList_(node, "parameter", context);
     }
     EditorCell_Collection editorCell = this.myParameterListHandler_parameterList_.createCells(context, new CellLayout_Horizontal(), false);
     editorCell.setSelectable(false);

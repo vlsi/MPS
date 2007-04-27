@@ -4,7 +4,7 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
-  <maxImportIndex value="11" />
+  <maxImportIndex value="12" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" />
   <import index="2" modelUID="jetbrains.mps.smodel.constraints@java_stub" />
   <import index="3" modelUID="jetbrains.mps.ide@java_stub" />
@@ -14,6 +14,7 @@
   <import index="9" modelUID="jetbrains.mps.smodel@java_stub" />
   <import index="10" modelUID="java.lang@java_stub" />
   <import index="11" modelUID="jetbrains.mps.core.structure" />
+  <import index="12" modelUID="jetbrains.mps.baseLanguage.structure" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraintSet" id="1148948177828">
     <property name="name" value="CSTRL_reference" />
     <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1159220719661">
@@ -401,13 +402,14 @@
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehaviour" id="1177672070822">
     <link role="concept" targetNodeId="5.1169125787135" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructor" id="1177672307688">
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1177672307688">
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177672307689" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehaviour" id="1177674079500">
     <link role="concept" targetNodeId="1.1177670533743" />
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethod" id="1177676489845">
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1177676489845">
+      <property name="isVirtual" value="true" />
       <property name="name" value="getSomeCoolStuff" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1177676508612">
         <property name="name" value="i" />
@@ -426,7 +428,7 @@
         </node>
       </node>
     </node>
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructor" id="1177674079501">
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1177674079501">
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177674079502">
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1177677131358">
           <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1177677138911">
@@ -436,6 +438,61 @@
         </node>
       </node>
     </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehaviour" id="1177678324737">
+    <property name="package" value="Behaviour" />
+    <link role="concept" targetNodeId="1.1177677612101" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1177678356948">
+      <property name="name" value="isVirtualMethodCall" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.BooleanType" id="1177678364105" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177678356950">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1177678388647">
+          <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1177678390071">
+            <property name="value" value="false" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1177678326676">
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177678326677" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehaviour" id="1177681174380">
+    <property name="package" value="Behaviour" />
+    <link role="concept" targetNodeId="1.1177673300966" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1177681178696">
+      <property name="name" value="getGeneratedName" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1177681200726">
+        <link role="classifier" extResolveInfo="10.[Classifier]String" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177681178698">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1177681204219">
+          <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1177681235427">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1177681238422">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1177681242738">
+                <link role="baseMethodDeclaration" extResolveInfo="9.method ([Classifier]SNode).([InstanceMethodDeclaration]getId() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                <node role="instance" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1177681239362" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1177681236368">
+                <property name="value" value="_" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1177681232441">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1177681222621" />
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1177681234723">
+                <link role="property" targetNodeId="12.1083152972672" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1177681174381">
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177681174382" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraintSet" id="1177681366662">
+    <property name="name" value="ConceptMethods" />
   </node>
 </model>
 
