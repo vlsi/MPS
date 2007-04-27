@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 
-public class ConceptBehaviour_Editor extends DefaultNodeEditor {
+public class ConceptBehavior_Editor extends DefaultNodeEditor {
 
   public AbstractCellListHandler myMethodListHandler_methodList_;
 
@@ -152,7 +152,7 @@ public class ConceptBehaviour_Editor extends DefaultNodeEditor {
   }
   public EditorCell createMethodList(EditorContext context, SNode node) {
     if(this.myMethodListHandler_methodList_ == null) {
-      this.myMethodListHandler_methodList_ = new ConceptBehaviour_Editor_MethodListHandler_methodList_(node, "method", context);
+      this.myMethodListHandler_methodList_ = new ConceptBehavior_Editor_MethodListHandler_methodList_(node, "method", context);
     }
     EditorCell_Collection editorCell = this.myMethodListHandler_methodList_.createCells(context, new CellLayout_Vertical(), false);
     editorCell.setSelectable(false);
@@ -168,7 +168,7 @@ public class ConceptBehaviour_Editor extends DefaultNodeEditor {
   }
   public EditorCell createConceptReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new ConceptBehaviour_Editor_concept_InlineComponent());
+    provider.setAuxiliaryCellProvider(new ConceptBehavior_Editor_concept_InlineComponent());
     EditorCell editorCell = provider.createEditorCell(context);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);

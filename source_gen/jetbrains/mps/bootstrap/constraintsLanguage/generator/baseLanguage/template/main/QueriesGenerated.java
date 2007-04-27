@@ -7,8 +7,8 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.bootstrap.constraintsLanguage.constraints.ConceptMethodCall_Behaviour;
-import jetbrains.mps.bootstrap.constraintsLanguage.constraints.ConceptMethodDeclaration_Behaviour;
+import jetbrains.mps.bootstrap.constraintsLanguage.constraints.ConceptMethodCall_Behavior;
+import jetbrains.mps.bootstrap.constraintsLanguage.constraints.ConceptMethodDeclaration_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
@@ -18,10 +18,10 @@ import java.util.List;
 public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1177680638554(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return !(ConceptMethodCall_Behaviour.isVirtualMethodCall_1177678356948(node));
+    return !(ConceptMethodCall_Behavior.isVirtualMethodCall_1177678356948(node));
   }
   public static String propertyMacro_GetPropertyValue_1177677003299(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return ConceptMethodDeclaration_Behaviour.getGeneratedName_1177681178696(node);
+    return ConceptMethodDeclaration_Behavior.getGeneratedName_1177681178696(node);
   }
   public static String propertyMacro_GetPropertyValue_1177676953415(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SPropertyOperations.getString(node, "name");
@@ -31,7 +31,7 @@ public class QueriesGenerated {
     return NameUtil.nodeFQName(behaviour);
   }
   public static String propertyMacro_GetPropertyValue_1177679643787(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return ConceptMethodDeclaration_Behaviour.getGeneratedName_1177681178696(SLinkOperations.getTarget(node, "baseMethodDeclaration", false));
+    return ConceptMethodDeclaration_Behavior.getGeneratedName_1177681178696(SLinkOperations.getTarget(node, "baseMethodDeclaration", false));
   }
   public static List sourceNodesQuery_1177676783297(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTargets(node, "parameter", true);

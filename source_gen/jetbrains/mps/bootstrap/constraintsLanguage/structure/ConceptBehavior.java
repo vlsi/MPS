@@ -12,54 +12,54 @@ import java.util.Iterator;
 import java.util.List;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
-public class ConceptBehaviour extends BaseConcept implements INamedConcept {
+public class ConceptBehavior extends BaseConcept implements INamedConcept {
   public static String CONSTRUCTOR = "constructor";
   public static String METHOD = "method";
   public static String CONCEPT = "concept";
   public static String NAME = "name";
 
-  public  ConceptBehaviour(SNode node) {
+  public ConceptBehavior(SNode node) {
     super(node);
   }
 
-  public static ConceptBehaviour newInstance(SModel sm, boolean init) {
-    return (ConceptBehaviour)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehaviour", sm, GlobalScope.getInstance(), init).getAdapter();
+  public static ConceptBehavior newInstance(SModel sm, boolean init) {
+    return (ConceptBehavior)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehaviour", sm, GlobalScope.getInstance(), init).getAdapter();
   }
-  public static ConceptBehaviour newInstance(SModel sm) {
-    return ConceptBehaviour.newInstance(sm, false);
+  public static ConceptBehavior newInstance(SModel sm) {
+    return newInstance(sm, false);
   }
 
   public ConceptConstructorDeclaration getConstructor() {
-    return (ConceptConstructorDeclaration)this.getChild(ConceptBehaviour.CONSTRUCTOR);
+    return (ConceptConstructorDeclaration)this.getChild(CONSTRUCTOR);
   }
   public void setConstructor(ConceptConstructorDeclaration node) {
-    super.setChild(ConceptBehaviour.CONSTRUCTOR, node);
+    super.setChild(CONSTRUCTOR, node);
   }
   public int getMethodsCount() {
-    return this.getChildCount(ConceptBehaviour.METHOD);
+    return this.getChildCount(METHOD);
   }
   public Iterator<ConceptMethodDeclaration> methods() {
-    return this.children(ConceptBehaviour.METHOD);
+    return this.children(METHOD);
   }
   public List<ConceptMethodDeclaration> getMethods() {
-    return this.getChildren(ConceptBehaviour.METHOD);
+    return this.getChildren(METHOD);
   }
   public void addMethod(ConceptMethodDeclaration node) {
-    this.addChild(ConceptBehaviour.METHOD, node);
+    this.addChild(METHOD, node);
   }
   public void insertMethod(ConceptMethodDeclaration prev, ConceptMethodDeclaration node) {
-    this.insertChild(prev, ConceptBehaviour.METHOD, node);
+    this.insertChild(prev, METHOD, node);
   }
   public ConceptDeclaration getConcept() {
-    return (ConceptDeclaration)this.getReferent(ConceptBehaviour.CONCEPT);
+    return (ConceptDeclaration)this.getReferent(CONCEPT);
   }
   public void setConcept(ConceptDeclaration node) {
-    super.setReferent(ConceptBehaviour.CONCEPT, node);
+    super.setReferent(CONCEPT, node);
   }
   public String getName() {
-    return this.getProperty(ConceptBehaviour.NAME);
+    return this.getProperty(NAME);
   }
   public void setName(String value) {
-    this.setProperty(ConceptBehaviour.NAME, value);
+    this.setProperty(NAME, value);
   }
 }

@@ -9,7 +9,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.behaviour.BehaviourManager;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
@@ -61,7 +61,7 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
     }
     SNode newNode = BaseAdapter.fromAdapter(SModelUtil_new.instantiateConceptDeclaration((ConceptDeclaration) nodeConcept, model, false));
     if (newNode == null) return null;    
-    BehaviourManager.getInstance().initNode(newNode);
+    BehaviorManager.getInstance().initNode(newNode);
     setupNode((ConceptDeclaration) nodeConcept, newNode, sampleNode, enclosingNode, model, scope);
     SModelUtil_new.createNodeStructure((ConceptDeclaration) nodeConcept, newNode, sampleNode, enclosingNode, model, scope, true);
     return newNode;

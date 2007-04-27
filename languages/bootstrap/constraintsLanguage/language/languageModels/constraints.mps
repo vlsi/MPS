@@ -393,7 +393,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1177671045833">
             <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1177671050352">
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1177671051513">
-                <property name="value" value="_Behaviour" />
+                <property name="value" value="_Behavior" />
               </node>
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1177671049023">
                 <link role="variableDeclaration" targetNodeId="1177670979722" resolveInfo="conceptName" />
@@ -404,8 +404,8 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehaviour" id="1177678324737">
-    <property name="package" value="Behaviour" />
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1177678324737">
+    <property name="package" value="Behavior" />
     <link role="concept" targetNodeId="1.1177677612101" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1177678356948">
       <property name="name" value="isVirtualMethodCall" />
@@ -422,8 +422,8 @@
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177678326677" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehaviour" id="1177681174380">
-    <property name="package" value="Behaviour" />
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1177681174380">
+    <property name="package" value="Behavior" />
     <link role="concept" targetNodeId="1.1177673300966" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1177681178696">
       <property name="name" value="getGeneratedName" />

@@ -12,12 +12,12 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.ArrayList;
 
-public class BehaviourManager {
-  private static final Logger LOG = Logger.getLogger(BehaviourManager.class);
+public class BehaviorManager {
+  private static final Logger LOG = Logger.getLogger(BehaviorManager.class);
 
-  private static BehaviourManager ourInstance = new BehaviourManager();
+  private static BehaviorManager ourInstance = new BehaviorManager();
 
-  public static BehaviourManager getInstance() {
+  public static BehaviorManager getInstance() {
     return ourInstance;
   }
 
@@ -29,7 +29,7 @@ public class BehaviourManager {
 
     while (concept != null) {
       String fqName = NameUtil.nodeFQName(concept);
-      String behaviourClass = fqName.replaceAll("(.*)\\.structure\\.(\\w+)$", "$1.constraints.$2_Behaviour");
+      String behaviourClass = fqName.replaceAll("(.*)\\.structure\\.(\\w+)$", "$1.constraints.$2_Behavior");
 
       try {
         Class cls = Class.forName(behaviourClass, true, ClassLoaderManager.getInstance().getClassLoader());

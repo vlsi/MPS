@@ -372,9 +372,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177670533743">
-    <property name="name" value="ConceptBehaviour" />
+    <property name="name" value="ConceptBehavior" />
+    <property name="package" value="Behavior" />
     <property name="rootable" value="true" />
-    <property name="package" value="Behaviour" />
     <link role="extends" targetNodeId="1.1133920641626" />
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1177670964896">
       <link role="intfc" targetNodeId="1.1169194658468" />
@@ -398,12 +398,12 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177671617671">
     <property name="name" value="ConceptConstructorDeclaration" />
-    <property name="package" value="Behaviour" />
+    <property name="package" value="Behavior" />
     <link role="extends" targetNodeId="3.1137021947720" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177671741405">
     <property name="name" value="ThisNodeExpression" />
-    <property name="package" value="Behaviour" />
+    <property name="package" value="Behavior" />
     <link role="extends" targetNodeId="3.1068431790191" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1177671761017">
       <property name="value" value="this" />
@@ -419,7 +419,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177673300966">
     <property name="name" value="ConceptMethodDeclaration" />
-    <property name="package" value="Behaviour" />
+    <property name="package" value="Behavior" />
     <link role="extends" targetNodeId="3.1068580123132" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1177676055874">
       <property name="name" value="isVirtual" />
@@ -432,7 +432,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177677612101">
     <property name="name" value="ConceptMethodCall" />
-    <property name="package" value="Behaviour" />
+    <property name="package" value="Behavior" />
     <link role="extends" targetNodeId="3.1068499141036" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177677641911">
       <property name="metaClass" value="aggregation" />

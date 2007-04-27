@@ -377,7 +377,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehaviour" id="1177681747210">
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1177681747210">
     <link role="concept" targetNodeId="1.1071489090640" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1177681750916">
       <property name="name" value="findBehaviour" />
