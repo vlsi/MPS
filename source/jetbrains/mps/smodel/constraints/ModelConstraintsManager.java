@@ -243,12 +243,14 @@ public class ModelConstraintsManager {
     return null;
   }
 
-  public INodeReferentSearchScopeProvider getNodeReferentSearchScopeProvider(ConceptDeclaration nodeConcept, String referentRole) {
-    while (nodeConcept != null) {
-      String conceptFqName = NameUtil.nodeFQName(nodeConcept);
-      INodeReferentSearchScopeProvider provider = myNodeReferentSearchScopeProvidersMap.get(conceptFqName + "#" + referentRole);
-      if (provider != null) return provider;
-      nodeConcept = nodeConcept.getExtends();
+  public INodeReferentSearchScopeProvider getNodeReferentSearchScopeProvider(AbstractConceptDeclaration nodeConcept, String referentRole) {
+    if (nodeConcept instanceof ConceptDeclaration) {
+      while (nodeConcept != null) {
+        String conceptFqName = NameUtil.nodeFQName(nodeConcept);
+        INodeReferentSearchScopeProvider provider = myNodeReferentSearchScopeProvidersMap.get(conceptFqName + "#" + referentRole);
+        if (provider != null) return provider;
+        nodeConcept = ((ConceptDeclaration) nodeConcept).getExtends();
+      }
     }
     return null;
   }

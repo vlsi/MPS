@@ -1,6 +1,7 @@
 package jetbrains.mps.smodel.behaviour;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
@@ -21,7 +22,8 @@ public class BehaviourManager {
   }
 
   public void initNode(SNode node) {
-    ConceptDeclaration concept = node.getConceptDeclarationAdapter();
+    AbstractConceptDeclaration concept = node.getConceptDeclarationAdapter();
+    if (!(concept instanceof ConceptDeclaration)) return;
 
     List<Method> methodsToCall = new ArrayList<Method>();
 
@@ -39,7 +41,7 @@ public class BehaviourManager {
         //ignor too
       }
 
-      concept = concept.getExtends();
+      concept = ((ConceptDeclaration) concept).getExtends();
     }
 
     for (int i = methodsToCall.size() - 1; i >= 0; i--) {
