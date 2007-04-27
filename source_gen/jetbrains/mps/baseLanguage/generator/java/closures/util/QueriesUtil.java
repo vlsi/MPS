@@ -25,7 +25,7 @@ public class QueriesUtil {
       enclosingClass = adapter.getNode();
     }
     SModel outputModel = generator.getTargetModel();
-    SNode outputClassType = SModelOperations.createNewNode(outputModel, "jetbrains.mps.baseLanguage.structure.ClassifierType");
+    SNode outputClassType = SModelOperations.createNewNode(outputModel, "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(outputClassType, "classifier", enclosingClass, false);
     {
       ICursor<SNode> _zCursor = CursorFactory.createCursor(SLinkOperations.getTargets(enclosingClass, "typeVariableDeclaration", true));

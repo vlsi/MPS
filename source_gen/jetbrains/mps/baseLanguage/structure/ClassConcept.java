@@ -10,7 +10,6 @@ import java.util.Iterator;
 import java.util.List;
 
 public class ClassConcept extends Classifier {
-  public static String EXTENDED_CLASS = "extendedClass";
   public static String SUPERCLASS = "superclass";
   public static String VISIBILITY = "visibility";
   public static String STATIC_INITIALIZER = "staticInitializer";
@@ -18,6 +17,7 @@ public class ClassConcept extends Classifier {
   public static String CONSTRUCTOR = "constructor";
   public static String STATIC_METHOD = "staticMethod";
   public static String IMPLEMENTED_INTERFACE = "implementedInterface";
+  public static String EXTENDED_CLASS = "extendedClass";
   public static String NAME = "name";
   public static String ABSTRACT_CLASS = "abstractClass";
 
@@ -32,12 +32,6 @@ public class ClassConcept extends Classifier {
     return ClassConcept.newInstance(sm, false);
   }
 
-  public ClassConcept getExtendedClass() {
-    return (ClassConcept)this.getReferent(ClassConcept.EXTENDED_CLASS);
-  }
-  public void setExtendedClass(ClassConcept node) {
-    super.setReferent(ClassConcept.EXTENDED_CLASS, node);
-  }
   public ClassifierType getSuperclass() {
     return (ClassifierType)this.getChild(ClassConcept.SUPERCLASS);
   }
@@ -115,6 +109,12 @@ public class ClassConcept extends Classifier {
   }
   public void insertImplementedInterface(ClassifierType prev, ClassifierType node) {
     this.insertChild(prev, ClassConcept.IMPLEMENTED_INTERFACE, node);
+  }
+  public ClassConcept getExtendedClass() {
+    return (ClassConcept)this.getReferent(ClassConcept.EXTENDED_CLASS);
+  }
+  public void setExtendedClass(ClassConcept node) {
+    super.setReferent(ClassConcept.EXTENDED_CLASS, node);
   }
   public String getName() {
     return this.getProperty(ClassConcept.NAME);

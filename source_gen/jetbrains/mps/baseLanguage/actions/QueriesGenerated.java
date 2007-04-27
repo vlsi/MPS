@@ -36,6 +36,7 @@ import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.baseLanguage.BaseLanguageSearchUtil_new;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
+import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.action.ModelActions;
@@ -95,10 +96,6 @@ public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_InstanceMethodDeclaration_1158793299786(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
     SLinkOperations.setNewChild(newNode, "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
   }
-  public static void nodeFactory_NodeSetup_ConstructorDeclaration_1177516330787(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-    SLinkOperations.setNewChild(newNode, "returnType", "jetbrains.mps.baseLanguage.structure.ClassifierType");
-    SLinkOperations.setTarget(SLinkOperations.getTarget(newNode, "returnType", true), "classifier", enclosingNode, false);
-  }
   public static void nodeFactory_NodeSetup_BinaryOperation_1158797366355(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
     if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
       SLinkOperations.setTarget(newNode, "leftExpression", SLinkOperations.getTarget(sampleNode, "leftExpression", true), true);
@@ -155,7 +152,7 @@ public class QueriesGenerated {
       result.add(new DefaultSimpleSubstituteAction(concept, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
 
         public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-          SNode boolConst = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.IntegerConstant");
+          SNode boolConst = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
           SPropertyOperations.set(boolConst, "value", "" + (Integer.parseInt(pattern)));
           return boolConst;
         }
@@ -179,7 +176,7 @@ public class QueriesGenerated {
       result.add(new DefaultSimpleSubstituteAction(concept, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
 
         public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-          SNode integerConst = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.BooleanConstant");
+          SNode integerConst = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
           SPropertyOperations.set(integerConst, "value", "" + (true));
           return integerConst;
         }
@@ -193,7 +190,7 @@ public class QueriesGenerated {
       result.add(new DefaultSimpleSubstituteAction(concept, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
 
         public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-          SNode boolConst = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.BooleanConstant");
+          SNode boolConst = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
           SPropertyOperations.set(boolConst, "value", "" + (false));
           return boolConst;
         }
@@ -207,7 +204,7 @@ public class QueriesGenerated {
       result.add(new DefaultSimpleSubstituteAction(concept, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
 
         public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-          SNode boolConst = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.FloatingPointConstant");
+          SNode boolConst = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.FloatingPointConstant", null);
           SPropertyOperations.set(boolConst, "value", pattern);
           return boolConst;
         }
@@ -246,14 +243,14 @@ public class QueriesGenerated {
           return result;
         }
       };
-      List<SNode> queryResult = (List)calc.calculate();
+      Iterable<SNode> queryResult = (Iterable)calc.calculate();
       for(SNode item : queryResult) {
         result.add(new DefaultChildNodeSubstituteAction(item, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode ref = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.FieldReference");
+            SNode ref = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.FieldReference", null);
             SLinkOperations.setTarget(ref, "variableDeclaration", ((SNode)this.getParameterObject()), false);
-            SLinkOperations.setTarget(ref, "instance", SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ThisExpression"), true);
+            SLinkOperations.setTarget(ref, "instance", SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ThisExpression", null), true);
             return ref;
           }
         });
@@ -279,13 +276,13 @@ public class QueriesGenerated {
           return result;
         }
       };
-      List<SNode> queryResult = (List)calc.calculate();
+      Iterable<SNode> queryResult = (Iterable)calc.calculate();
       for(SNode item : queryResult) {
         result.add(new DefaultChildNodeSubstituteAction(item, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode call = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.InstanceMethodCall");
-            SLinkOperations.setTarget(call, "instance", SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ThisExpression"), true);
+            SNode call = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.InstanceMethodCall", null);
+            SLinkOperations.setTarget(call, "instance", SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ThisExpression", null), true);
             SLinkOperations.setTarget(call, "baseMethodDeclaration", ((SNode)this.getParameterObject()), false);
             return call;
           }
@@ -324,12 +321,12 @@ public class QueriesGenerated {
           return classifiers;
         }
       };
-      List<SNode> queryResult = (List)calc.calculate();
+      Iterable<SNode> queryResult = (Iterable)calc.calculate();
       for(SNode item : queryResult) {
         result.add(new DefaultChildNodeSubstituteAction(item, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.StaticFieldReference");
+            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
             SLinkOperations.setTarget(result, "classifier", ((SNode)this.getParameterObject()), false);
             return result;
           }
@@ -361,9 +358,10 @@ public class QueriesGenerated {
           return result;
         }
       };
-      List queryResult = (List)calc.calculate();
+      Iterable queryResult = (Iterable)calc.calculate();
       for(Object item : queryResult) {
-        result.add(new DefaultChildNodeSubstituteAction(item, parentNode, currentTargetNode, childSetter, operationContext.getScope()));
+        List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions((ConceptDeclaration)BaseAdapter.fromNode((SNode)item), parentNode, currentTargetNode, childSetter, operationContext.getScope());
+        result.addAll(defaultActions);
       }
     }
     return result;
@@ -381,9 +379,10 @@ public class QueriesGenerated {
           return concepts;
         }
       };
-      List queryResult = (List)calc.calculate();
+      Iterable queryResult = (Iterable)calc.calculate();
       for(Object item : queryResult) {
-        result.add(new DefaultChildNodeSubstituteAction(item, parentNode, currentTargetNode, childSetter, operationContext.getScope()));
+        List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions((ConceptDeclaration)BaseAdapter.fromNode((SNode)item), parentNode, currentTargetNode, childSetter, operationContext.getScope());
+        result.addAll(defaultActions);
       }
     }
     return result;
@@ -396,7 +395,7 @@ public class QueriesGenerated {
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
 
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
-          SNode result = SModelOperations.createNewNode(SNodeOperations.getModel(nodeToWrap), "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
+          SNode result = SModelOperations.createNewNode(SNodeOperations.getModel(nodeToWrap), "jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
           SLinkOperations.setTarget(result, "expression", nodeToWrap, true);
           return result;
         }
@@ -416,8 +415,8 @@ public class QueriesGenerated {
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
 
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
-          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
-          SNode var = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
+          SNode var = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null);
           SLinkOperations.setTarget(var, "type", nodeToWrap, true);
           SLinkOperations.setTarget(result, "localVariableDeclaration", var, true);
           return result;
@@ -438,7 +437,7 @@ public class QueriesGenerated {
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
 
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
-          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
+          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
           SLinkOperations.setTarget(result, "localVariableDeclaration", nodeToWrap, true);
           return result;
         }
@@ -458,7 +457,7 @@ public class QueriesGenerated {
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
 
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
-          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
+          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
           SLinkOperations.setTarget(result, "type", nodeToWrap, true);
           return result;
         }
@@ -482,7 +481,7 @@ public class QueriesGenerated {
           return result;
         }
       };
-      List<SNode> parameterObjects = (List<SNode>)calculable.calculate();
+      Iterable<SNode> parameterObjects = (Iterable<SNode>)calculable.calculate();
       for(SNode parameter : parameterObjects) {
         result.add(new AbstractRTransformHintSubstituteAction(parameter, sourceNode) {
 
@@ -507,10 +506,10 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReference", operationContext.getScope());
-      result.add(new AbstractRTransformHintSubstituteAction(concept.getNode(), sourceNode) {
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
 
         public SNode doSubstitute(String pattern) {
-          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.FieldReference");
+          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.FieldReference", null);
           SNodeOperations.replaceWithAnother(sourceNode, result);
           SLinkOperations.setTarget(result, "instance", sourceNode, true);
           return result;
@@ -529,10 +528,10 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceOfExpression", operationContext.getScope());
-      result.add(new AbstractRTransformHintSubstituteAction(concept.getNode(), sourceNode) {
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
 
         public SNode doSubstitute(String pattern) {
-          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.InstanceOfExpression");
+          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.InstanceOfExpression", null);
           SNodeOperations.replaceWithAnother(sourceNode, result);
           SLinkOperations.setTarget(result, "leftExpression", sourceNode, true);
           return result;
@@ -551,10 +550,10 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AssignmentExpression", operationContext.getScope());
-      result.add(new AbstractRTransformHintSubstituteAction(concept.getNode(), sourceNode) {
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
 
         public SNode doSubstitute(String pattern) {
-          SNode assignment = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
+          SNode assignment = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.AssignmentExpression", null);
           SNodeOperations.replaceWithAnother(sourceNode, assignment);
           SLinkOperations.setTarget(assignment, "lValue", sourceNode, true);
           return assignment;
@@ -573,10 +572,10 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayAccessExpression", operationContext.getScope());
-      result.add(new AbstractRTransformHintSubstituteAction(concept.getNode(), sourceNode) {
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
 
         public SNode doSubstitute(String pattern) {
-          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ArrayAccessExpression");
+          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ArrayAccessExpression", null);
           SNodeOperations.replaceWithAnother(sourceNode, result);
           SLinkOperations.setTarget(result, "array", sourceNode, true);
           return result;
@@ -595,10 +594,10 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayLengthExpression", operationContext.getScope());
-      result.add(new AbstractRTransformHintSubstituteAction(concept.getNode(), sourceNode) {
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
 
         public SNode doSubstitute(String pattern) {
-          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ArrayLengthExpression");
+          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ArrayLengthExpression", null);
           SNodeOperations.replaceWithAnother(sourceNode, result);
           SLinkOperations.setTarget(result, "array", sourceNode, true);
           return result;
@@ -617,10 +616,10 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration", operationContext.getScope());
-      result.add(new AbstractRTransformHintSubstituteAction(concept.getNode(), sourceNode) {
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
 
         public SNode doSubstitute(String pattern) {
-          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.Expression");
+          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.Expression", null);
           SLinkOperations.setTarget(sourceNode, "initializer", result, true);
           return result;
         }
@@ -638,10 +637,10 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", operationContext.getScope());
-      result.add(new AbstractRTransformHintSubstituteAction(concept.getNode(), sourceNode) {
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
 
         public SNode doSubstitute(String pattern) {
-          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ArrayType");
+          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ArrayType", null);
           SNodeOperations.replaceWithAnother(sourceNode, result);
           SLinkOperations.setTarget(result, "componentType", sourceNode, true);
           return result;
@@ -660,7 +659,7 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", operationContext.getScope());
-      result.add(new AbstractRTransformHintSubstituteAction(concept.getNode(), sourceNode) {
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
 
         public SNode doSubstitute(String pattern) {
           SLinkOperations.addNewChild(sourceNode, "parameter", "jetbrains.mps.baseLanguage.structure.Type");
@@ -680,7 +679,7 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericDeclaration", operationContext.getScope());
-      result.add(new AbstractRTransformHintSubstituteAction(concept.getNode(), sourceNode) {
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
 
         public SNode doSubstitute(String pattern) {
           SLinkOperations.addNewChild(sourceNode, "typeVariableDeclaration", "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration");
@@ -700,7 +699,7 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.NewExpression", operationContext.getScope());
-      result.add(new AbstractRTransformHintSubstituteAction(concept.getNode(), sourceNode) {
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
 
         public SNode doSubstitute(String pattern) {
           SLinkOperations.addNewChild(sourceNode, "typeParameter", "jetbrains.mps.baseLanguage.structure.Type");
@@ -720,7 +719,7 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.TryCatchStatement", operationContext.getScope());
-      result.add(new AbstractRTransformHintSubstituteAction(concept.getNode(), sourceNode) {
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
 
         public SNode doSubstitute(String pattern) {
           SLinkOperations.addNewChild(sourceNode, "catchClause", "jetbrains.mps.baseLanguage.structure.CatchClause");
@@ -737,10 +736,10 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.TryCatchStatement", operationContext.getScope());
-      result.add(new AbstractRTransformHintSubstituteAction(concept.getNode(), sourceNode) {
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
 
         public SNode doSubstitute(String pattern) {
-          SNode tryStatement = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.TryStatement");
+          SNode tryStatement = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.TryStatement", null);
           SNode body = SLinkOperations.getTarget(sourceNode, "body", true);
           SLinkOperations.deleteChild(sourceNode, "body");
           SLinkOperations.setTarget(tryStatement, "body", body, true);
@@ -763,10 +762,10 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", operationContext.getScope());
-      result.add(new AbstractRTransformHintSubstituteAction(concept.getNode(), sourceNode) {
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
 
         public SNode doSubstitute(String pattern) {
-          SNode to = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression");
+          SNode to = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", null);
           SNodeOperations.replaceWithAnother(sourceNode, to);
           SLinkOperations.setTarget(to, "condition", sourceNode, true);
           return to;
