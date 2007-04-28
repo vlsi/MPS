@@ -28,88 +28,21 @@
       </node>
     </node>
     <node role="statements" type="jetbrains.mps.helgins.StatementList" id="1177767960894">
-      <node role="statement" type="jetbrains.mps.helgins.ForeachStatement" id="1177767961889">
-        <node role="collection" type="jetbrains.mpswiki.queryLanguage.LoopVariableDeclaration" id="1177767961890">
-          <property name="name" value="u" />
-          <node role="collection" type="jetbrains.mpswiki.queryLanguage.QueryVariableReference" id="1177767961891">
-            <link role="variable" targetNodeId="1177681456836" resolveInfo="sss" />
-          </node>
+      <node role="statement" type="jetbrains.mps.helgins.EvaluateStatement" id="1177776776686">
+        <node role="expression" type="jetbrains.mpswiki.queryLanguage.QueryVariableReference" id="1177776800467">
+          <link role="variable" targetNodeId="1177681456836" resolveInfo="sss" />
         </node>
-        <node role="statements" type="jetbrains.mps.helgins.StatementList" id="1177767961892">
-          <node role="statement" type="jetbrains.mps.helgins.IfStatement" id="1177767961893">
-            <node role="statements" type="jetbrains.mps.helgins.StatementList" id="1177767961894">
-              <node role="statement" type="jetbrains.mps.helgins.EvaluateStatement" id="1177767961895">
-                <node role="expression" type="jetbrains.mps.helgins.TypeOfExpression" id="1177767961896">
-                  <node role="term" type="jetbrains.mpswiki.queryLanguage.CollectionSizeOperation" id="1177770804839">
-                    <node role="rightOperand" type="jetbrains.mps.formulaLanguage.Expression" id="1177770804841" />
-                    <node role="leftOperand" type="jetbrains.mpswiki.queryLanguage.QueryVariableReference" id="1177768851432">
-                      <link role="variable" targetNodeId="1177681456836" resolveInfo="sss" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node role="statement" type="jetbrains.mps.helgins.EvaluateStatement" id="1177772955704">
-                <node role="expression" type="jetbrains.mpswiki.queryLanguage.GetParentOperation" id="1177772965293">
-                  <node role="rightOperand" type="jetbrains.mps.formulaLanguage.Expression" id="1177772965295" />
-                  <node role="leftOperand" type="jetbrains.mpswiki.queryLanguage.QueryVariableReference" id="1177772962308">
-                    <link role="variable" targetNodeId="1177681456836" resolveInfo="sss" />
-                  </node>
-                </node>
-              </node>
-              <node role="statement" type="jetbrains.mps.helgins.EvaluateStatement" id="1177772969204">
-                <node role="expression" type="jetbrains.mpswiki.queryLanguage.GetParentOperation" id="1177772974766">
-                  <link role="concept" targetNodeId="4.1068499141036" />
-                  <node role="rightOperand" type="jetbrains.mps.formulaLanguage.Expression" id="1177772974768" />
-                  <node role="leftOperand" type="jetbrains.mpswiki.queryLanguage.QueryVariableReference" id="1177772972593">
-                    <link role="variable" targetNodeId="1177681456836" resolveInfo="sss" />
-                  </node>
-                </node>
-              </node>
-              <node role="statement" type="jetbrains.mps.helgins.VarNameBinding" id="1177773327702">
-                <property name="name" value="v" />
-                <node role="initializer" type="jetbrains.mpswiki.queryLanguage.LinkExpression" id="1177773336037">
-                  <node role="rightOperand" type="jetbrains.mps.formulaLanguage.Expression" id="1177773336038" />
-                  <node role="feature" type="jetbrains.mpswiki.queryLanguage.LinkReference" id="1177773336039">
-                    <link role="link" targetNodeId="4.1107535924139" />
-                  </node>
-                  <node role="leftOperand" type="jetbrains.mpswiki.queryLanguage.QueryVariableReference" id="1177773332407">
-                    <link role="variable" targetNodeId="1177681456836" resolveInfo="sss" />
-                  </node>
-                </node>
-              </node>
-              <node role="statement" type="jetbrains.mps.helgins.EvaluateStatement" id="1177773303723">
-                <node role="expression" type="jetbrains.mpswiki.queryLanguage.ListElementByNumberExpression" id="1177773366186">
-                  <node role="elementNumber" type="jetbrains.mps.formulaLanguage.PlusOperation" id="1177775005813">
-                    <node role="rightOperand" type="jetbrains.mps.formulaLanguage.EqualsOperation" id="1177775016501">
-                      <node role="rightOperand" type="jetbrains.mps.formulaLanguage.MultOperation" id="1177776165451">
-                        <node role="rightOperand" type="jetbrains.mps.formulaLanguage.IntegerConstant" id="1177776167532">
-                          <property name="value" value="4" />
-                        </node>
-                        <node role="leftOperand" type="jetbrains.mps.formulaLanguage.NullConstant" id="1177776155669" />
-                      </node>
-                      <node role="leftOperand" type="jetbrains.mps.formulaLanguage.FloatingPointConstant" id="1177775008562">
-                        <property name="value" value="0.1" />
-                      </node>
-                    </node>
-                    <node role="leftOperand" type="jetbrains.mps.formulaLanguage.IsNullOperation" id="1177774983763">
-                      <node role="rightOperand" type="jetbrains.mps.formulaLanguage.Expression" id="1177774983765" />
-                      <node role="leftOperand" type="jetbrains.mps.formulaLanguage.IntegerConstant" id="1177773369048">
-                        <property name="value" value="22" />
-                      </node>
-                    </node>
-                  </node>
-                  <node role="rightOperand" type="jetbrains.mps.formulaLanguage.Expression" id="1177773366188" />
-                  <node role="leftOperand" type="jetbrains.mps.helgins.VarBindingReference" id="1177773341509">
-                    <link role="varBinding" targetNodeId="1177773327702" resolveInfo="v" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="condition" type="jetbrains.mpswiki.queryLanguage.BooleanConstant" id="1177767961898" />
-          </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.helgins.EvaluateStatement" id="1177778644667">
+        <node role="expression" type="jetbrains.mps.helgins.CustomFunctionCall" id="1177778666499">
+          <link role="function" targetNodeId="1177778634039" resolveInfo="foo" />
         </node>
       </node>
     </node>
+  </node>
+  <node type="jetbrains.mps.helgins.CustomFunction" id="1177778634039">
+    <property name="name" value="foo" />
+    <node role="statements" type="jetbrains.mps.helgins.StatementList" id="1177778634040" />
   </node>
 </model>
 
