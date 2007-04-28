@@ -628,6 +628,10 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
                             public boolean requiresCompilationInIDEAfterGeneration() {
                               return false;
                             }
+
+                            protected boolean isPutClassesOnTheDisk() {
+                              return false;
+                            }
                           },
                           parms.getScript(),
                           IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR,
