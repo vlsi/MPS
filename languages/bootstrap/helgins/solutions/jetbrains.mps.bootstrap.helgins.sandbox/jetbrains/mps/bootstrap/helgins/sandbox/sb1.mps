@@ -7,6 +7,7 @@
   <language namespace="jetbrains.mps.patterns" />
   <language namespace="jetbrains.mps.helgins" />
   <language namespace="jetbrains.mpswiki.queryLanguage" />
+  <language namespace="jetbrains.mps.formulaLanguage" />
   <maxImportIndex value="6" />
   <import index="1" modelUID="java.lang@java_stub" />
   <import index="2" modelUID="jetbrains.mps.smodel@java_stub" />
@@ -39,8 +40,11 @@
             <node role="statements" type="jetbrains.mps.helgins.StatementList" id="1177767961894">
               <node role="statement" type="jetbrains.mps.helgins.EvaluateStatement" id="1177767961895">
                 <node role="expression" type="jetbrains.mps.helgins.TypeOfExpression" id="1177767961896">
-                  <node role="term" type="jetbrains.mpswiki.queryLanguage.LoopVariableReference" id="1177767961897">
-                    <link role="variable" targetNodeId="1177767961890" resolveInfo="u" />
+                  <node role="term" type="jetbrains.mpswiki.queryLanguage.CollectionSizeOperation" id="1177770804839">
+                    <node role="rightOperand" type="jetbrains.mps.formulaLanguage.Expression" id="1177770804841" />
+                    <node role="leftOperand" type="jetbrains.mpswiki.queryLanguage.QueryVariableReference" id="1177768851432">
+                      <link role="variable" targetNodeId="1177681456836" resolveInfo="sss" />
+                    </node>
                   </node>
                 </node>
               </node>
