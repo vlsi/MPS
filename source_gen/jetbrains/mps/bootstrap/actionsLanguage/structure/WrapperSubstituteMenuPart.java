@@ -9,8 +9,8 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
 public class WrapperSubstituteMenuPart extends SubstituteMenuPart {
-  public static String WRAPPED_CONCEPT = "wrappedConcept";
   public static String WRAPPER_BLOCK = "wrapperBlock";
+  public static String WRAPPED_CONCEPT = "wrappedConcept";
 
   public  WrapperSubstituteMenuPart(SNode node) {
     super(node);
@@ -23,16 +23,16 @@ public class WrapperSubstituteMenuPart extends SubstituteMenuPart {
     return WrapperSubstituteMenuPart.newInstance(sm, false);
   }
 
-  public ConceptDeclaration getWrappedConcept() {
-    return (ConceptDeclaration)this.getReferent(WrapperSubstituteMenuPart.WRAPPED_CONCEPT);
-  }
-  public void setWrappedConcept(ConceptDeclaration node) {
-    super.setReferent(WrapperSubstituteMenuPart.WRAPPED_CONCEPT, node);
-  }
   public QueryFunction_SubstituteWrapper getWrapperBlock() {
     return (QueryFunction_SubstituteWrapper)this.getChild(WrapperSubstituteMenuPart.WRAPPER_BLOCK);
   }
   public void setWrapperBlock(QueryFunction_SubstituteWrapper node) {
     super.setChild(WrapperSubstituteMenuPart.WRAPPER_BLOCK, node);
+  }
+  public ConceptDeclaration getWrappedConcept() {
+    return (ConceptDeclaration)this.getReferent(WrapperSubstituteMenuPart.WRAPPED_CONCEPT);
+  }
+  public void setWrappedConcept(ConceptDeclaration node) {
+    super.setReferent(WrapperSubstituteMenuPart.WRAPPED_CONCEPT, node);
   }
 }

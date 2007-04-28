@@ -7,14 +7,14 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 public class NodeSubstituteActionsBuilder extends BaseConcept {
-  public static String APPLICABLE_CONCEPT = "applicableConcept";
   public static String PRECONDITION = "precondition";
   public static String PART = "part";
+  public static String APPLICABLE_CONCEPT = "applicableConcept";
   public static String DESCRIPTION = "description";
   public static String ACTIONS_FACTORY_ASPECT_ID = "actionsFactoryAspectId";
   public static String ACTIONS_FILTER_ASPECT_ID = "actionsFilterAspectId";
@@ -32,12 +32,6 @@ public class NodeSubstituteActionsBuilder extends BaseConcept {
     return NodeSubstituteActionsBuilder.newInstance(sm, false);
   }
 
-  public AbstractConceptDeclaration getApplicableConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(NodeSubstituteActionsBuilder.APPLICABLE_CONCEPT);
-  }
-  public void setApplicableConcept(AbstractConceptDeclaration node) {
-    super.setReferent(NodeSubstituteActionsBuilder.APPLICABLE_CONCEPT, node);
-  }
   public NodeSubstitutePreconditionFunction getPrecondition() {
     return (NodeSubstitutePreconditionFunction)this.getChild(NodeSubstituteActionsBuilder.PRECONDITION);
   }
@@ -58,6 +52,12 @@ public class NodeSubstituteActionsBuilder extends BaseConcept {
   }
   public void insertPart(NodeBuilderPart prev, NodeBuilderPart node) {
     this.insertChild(prev, NodeSubstituteActionsBuilder.PART, node);
+  }
+  public AbstractConceptDeclaration getApplicableConcept() {
+    return (AbstractConceptDeclaration)this.getReferent(NodeSubstituteActionsBuilder.APPLICABLE_CONCEPT);
+  }
+  public void setApplicableConcept(AbstractConceptDeclaration node) {
+    super.setReferent(NodeSubstituteActionsBuilder.APPLICABLE_CONCEPT, node);
   }
   public String getDescription() {
     return this.getProperty(NodeSubstituteActionsBuilder.DESCRIPTION);

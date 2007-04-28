@@ -92,7 +92,7 @@ public class ChildSubstituteActionsHelper {
     // apply all filters
     primaryBuilders.addAll(extendedBuilders);
     for (NodeSubstituteActionsBuilder builder : primaryBuilders) {
-      resultActions = applyActionFilter(builder, resultActions, parentNode, currentChild, context);
+      resultActions = applyActionFilter(builder, resultActions, parentNode, currentChild, childConcept.getNode(), context);
     }
 
     return resultActions;
@@ -317,6 +317,7 @@ public class ChildSubstituteActionsHelper {
                                                                List<INodeSubstituteAction> actions,
                                                                SNode parentNode,
                                                                SNode currentChild,
+                                                               SNode childConcept,
                                                                IOperationContext context) {
     if (!substituteActionsBuilder.getUseNewActions()) {
       String filterQueryMethodId = substituteActionsBuilder.getActionsFilterAspectId();
@@ -348,7 +349,7 @@ public class ChildSubstituteActionsHelper {
           }
           for (RemoveByConditionPart part : removesByCondition) {
             String methodName = "removeConceptByCondition_" + part.getId();
-            Object[] args = { (SNode) action.getParameterObject(), parentNode, currentChild, context };
+            Object[] args = { (SNode) action.getParameterObject(), parentNode, currentChild, childConcept, context };
             try {
               if ((Boolean) QueryMethodGenerated.invoke(methodName, args, substituteActionsBuilder.getModel())) {
                 it.remove();
