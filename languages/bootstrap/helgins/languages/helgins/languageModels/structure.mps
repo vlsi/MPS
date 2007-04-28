@@ -433,6 +433,9 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1176544301565">
       <link role="conceptPropertyDeclaration" targetNodeId="5.1138763241883" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1177766357674">
+      <link role="conceptPropertyDeclaration" targetNodeId="5.1138763325919" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1176547808367">
     <property name="name" value="MultipleForeachLoop" />
@@ -528,8 +531,8 @@
       <link role="target" targetNodeId="1177514840044" resolveInfo="MatchStatementItem" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177514345236">
-      <property name="sourceCardinality" value="0..1" />
       <property name="targetCardinality" value="1" />
+      <property name="sourceCardinality" value="0..1" />
       <property name="role" value="ifFalseStatement" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="2.1068580123157" />
