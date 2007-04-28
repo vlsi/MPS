@@ -11,7 +11,7 @@
       <maximumHeapSize value="128" />
       <properties />
     </buildFile>
-    <buildFile url="file://$PROJECT_DIR$/mps.xml">
+    <buildFile url="file://mps.xml">
       <additionalClassPath />
       <antReference projectDefault="true" />
       <customJdkName value="" />
@@ -27,14 +27,14 @@
       <maximumHeapSize value="128" />
       <properties />
     </buildFile>
-    <buildFile url="file://$PROJECT_DIR$/charisma.xml">
+    <buildFile url="file://$PROJECT_DIR$/charisma-custom.xml">
       <additionalClassPath />
       <antReference projectDefault="true" />
       <customJdkName value="" />
       <maximumHeapSize value="128" />
       <properties />
     </buildFile>
-    <buildFile url="file://$PROJECT_DIR$/charisma-custom.xml">
+    <buildFile url="file://$PROJECT_DIR$/charisma.xml">
       <additionalClassPath />
       <antReference projectDefault="true" />
       <customJdkName value="" />
@@ -1046,7 +1046,7 @@
         <option name="MODULE_NAME" value="webrSamples_hello" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      <J2EE_MODULE>
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="MForum" />
         <option name="DEPLOY" value="false" />
