@@ -644,7 +644,9 @@
                 </node>
                 <node role="initializer" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodCall" id="1177682880067">
                   <link role="baseMethodDeclaration" targetNodeId="1177681750916" resolveInfo="findBehaviour" />
-                  <node role="thisNode" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1177682874227" />
+                  <node role="thisNode" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1177763133630">
+                    <link role="variableDeclaration" targetNodeId="1177682821322" resolveInfo="concept" />
+                  </node>
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1177682887218">
                     <link role="variableDeclaration" targetNodeId="1177682789922" resolveInfo="scope" />
                   </node>

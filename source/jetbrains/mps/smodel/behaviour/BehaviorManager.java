@@ -11,6 +11,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class BehaviorManager {
   private static final Logger LOG = Logger.getLogger(BehaviorManager.class);
@@ -23,13 +24,12 @@ public class BehaviorManager {
 
   public void initNode(SNode node) {
     AbstractConceptDeclaration concept = node.getConceptDeclarationAdapter();
-    if (!(concept instanceof ConceptDeclaration)) return;
 
     List<Method> methodsToCall = new ArrayList<Method>();
 
     while (concept != null) {
       String fqName = NameUtil.nodeFQName(concept);
-      String behaviourClass = fqName.replaceAll("(.*)\\.structure\\.(\\w+)$", "$1.constraints.$2_Behavior");
+      String behaviourClass = behaviourClassByConceptFqName(fqName);
 
       try {
         Class cls = Class.forName(behaviourClass, true, ClassLoaderManager.getInstance().getClassLoader());
@@ -53,6 +53,43 @@ public class BehaviorManager {
         e.printStackTrace();
       }
     }
+  }
+
+  private String behaviourClassByConceptFqName(String fqName) {
+    String behaviourClass = fqName.replaceAll("(.*)\\.structure\\.(\\w+)$", "$1.constraints.$2_Behavior");
+    return behaviourClass;
+  }
+
+  public<T> T invoke(Class<T> returnType, SNode node, String methodName, Object... parameters) {
+    AbstractConceptDeclaration concept = node.getConceptDeclarationAdapter();
+
+    while (concept != null) {
+      String fqName = NameUtil.nodeFQName(concept);
+      String behaviourClass = behaviourClassByConceptFqName(fqName);
+
+      try {
+        Class cls = Class.forName(behaviourClass, true, ClassLoaderManager.getInstance().getClassLoader());
+        Method method = cls.getMethod(methodName, SNode.class);
+                        
+        List<Object> params = new ArrayList<Object>();
+        params.add(node);
+        params.addAll(Arrays.asList(parameters));
+
+        return (T) method.invoke(null, params.toArray());
+      } catch (ClassNotFoundException e) {
+        //ignore
+      } catch (NoSuchMethodException e) {
+        //ignor too
+      } catch (IllegalAccessException e) {
+        throw new RuntimeException(e);
+      } catch (InvocationTargetException e) {
+        throw new RuntimeException(e);
+      }
+
+      concept = ((ConceptDeclaration) concept).getExtends();
+    }
+
+    throw new RuntimeException("Can't invoke a method " + methodName + " on node " + node);
   }
 
 

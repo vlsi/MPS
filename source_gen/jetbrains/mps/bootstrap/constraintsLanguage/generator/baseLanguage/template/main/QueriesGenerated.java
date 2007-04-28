@@ -20,6 +20,9 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1177680638554(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return !(ConceptMethodCall_Behavior.isVirtualMethodCall_1177678356948(node));
   }
+  public static boolean baseMappingRule_Condition_1177762878862(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return ConceptMethodCall_Behavior.isVirtualMethodCall_1177678356948(node);
+  }
   public static String propertyMacro_GetPropertyValue_1177677003299(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return ConceptMethodDeclaration_Behavior.getGeneratedName_1177681178696(node);
   }
@@ -33,8 +36,14 @@ public class QueriesGenerated {
   public static String propertyMacro_GetPropertyValue_1177679643787(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return ConceptMethodDeclaration_Behavior.getGeneratedName_1177681178696(SLinkOperations.getTarget(node, "baseMethodDeclaration", false));
   }
+  public static String propertyMacro_GetPropertyValue_1177765483991(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return ConceptMethodDeclaration_Behavior.getGeneratedName_1177681178696(ConceptMethodCall_Behavior.getVirtualMethodDeclaration_1177762565388(node));
+  }
+  public static SNode referenceMacro_GetReferent_1177763923176(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(ConceptMethodCall_Behavior.getVirtualMethodDeclaration_1177762565388(node), "returnType", true), "classifier", false);
+  }
   public static boolean ifMacro_Condition_1177759890771(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return !(SPropertyOperations.getBoolean(node, "isVirtual"));
+    return !(SPropertyOperations.getBoolean(node, "isAbstract"));
   }
   public static List sourceNodesQuery_1177676783297(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTargets(node, "parameter", true);
@@ -43,6 +52,9 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(node, "method", true);
   }
   public static List sourceNodesQuery_1177680209966(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTargets(node, "actualArgument", true);
+  }
+  public static List sourceNodesQuery_1177763825388(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTargets(node, "actualArgument", true);
   }
   public static SNode sourceNodeQuery_1177676686820(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -64,6 +76,15 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(node, "thisNode", true);
   }
   public static SNode sourceNodeQuery_1177680252245(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return node;
+  }
+  public static SNode sourceNodeQuery_1177763825380(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "thisNode", true);
+  }
+  public static SNode sourceNodeQuery_1177763825395(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return node;
+  }
+  public static SNode sourceNodeQuery_1177762503932(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return node;
   }
 }
