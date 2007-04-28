@@ -13,15 +13,15 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1068498886295">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="lValue" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1068431790191" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1068498886297">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="rValue" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1068431790191" />
@@ -40,8 +40,8 @@
       <link role="target" targetNodeId="1068580123132" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1068499141038">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="actualArgument" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1068431790191" />
@@ -90,22 +90,22 @@
       <link role="dataType" targetNodeId="1083065718921" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1068390468199">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="field" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1068390468200" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1068390468201">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="constructor" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1068580123140" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1070462273904">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="staticMethod" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1081236700938" />
@@ -122,8 +122,8 @@
       <link role="target" targetNodeId="1107535904670" resolveInfo="ClassifierType" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1095933932569">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="implementedInterface" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1107535904670" />
@@ -177,15 +177,15 @@
       <link role="dataType" targetNodeId="4.1082983657063" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1068431790188">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="type" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1068431790189" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1068431790190">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="initializer" />
       <property name="sourceCardinality" value="0..1" />
       <link role="target" targetNodeId="1068431790191" />
@@ -221,22 +221,22 @@
       <link role="dataType" targetNodeId="1083065718921" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1068580123133">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="returnType" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1068431790189" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1068580123134">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="parameter" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1068498886292" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1068580123135">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="body" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1068580123136" />
@@ -252,8 +252,8 @@
     <property name="name" value="StatementList" />
     <link role="extends" targetNodeId="4.1078489098625" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1068581517665">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="statement" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1068580123157" />
@@ -296,8 +296,8 @@
     <property name="name" value="ExpressionStatement" />
     <link role="extends" targetNodeId="1068580123157" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1068580123156">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="expression" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1068431790191" />
@@ -333,8 +333,8 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1146528679895" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1080137532343">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="instance" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1068431790191" />
@@ -355,22 +355,22 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1068580123160">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="condition" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1068431790191" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1082485599094">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="ifFalseStatement" />
       <property name="sourceCardinality" value="0..1" />
       <link role="target" targetNodeId="1068580123157" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1068580123161">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="ifTrue" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1068580123136" />
@@ -388,8 +388,8 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1068580123164">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="instance" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1068431790191" />
@@ -443,8 +443,8 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1068581242865">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="localVariableDeclaration" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1068581242863" />
@@ -530,8 +530,8 @@
       <link role="specializedLink" targetNodeId="1068499141037" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1135374457323">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="typeParameter" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1068431790189" />
@@ -581,8 +581,8 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1068581517676">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="expression" />
       <property name="sourceCardinality" value="0..1" />
       <link role="target" targetNodeId="1068431790191" />
@@ -622,8 +622,8 @@
       <link role="target" targetNodeId="1068580123140" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1070475587104">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="actualArgument" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1068431790191" />
@@ -742,8 +742,8 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1070534760952">
-      <property name="targetCardinality" value="0..1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="0..1" />
       <property name="role" value="componentType" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1068431790189" />
@@ -761,15 +761,15 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1070534934091">
-      <property name="targetCardinality" value="0..1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="0..1" />
       <property name="role" value="type" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1068431790189" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1070534934092">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="expression" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1068431790191" />
@@ -818,8 +818,8 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1076505808688">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="condition" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1068431790191" />
@@ -837,8 +837,8 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1079359253376">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="expression" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1068431790191" />
@@ -912,15 +912,15 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1081256993304">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="leftExpression" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1068431790191" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1081256993305">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="classType" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1107535904670" />
@@ -970,8 +970,8 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1081516765348">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="expression" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1068431790191" />
@@ -1002,15 +1002,15 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1081773367579">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="rightExpression" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1068431790191" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1081773367580">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="leftExpression" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1068431790191" />
@@ -1043,8 +1043,8 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1082485599096">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="statements" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1068580123136" />
@@ -1074,8 +1074,8 @@
       <link role="dataType" targetNodeId="1083065718921" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1083245396908">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="enumConstant" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1083245299891" />
@@ -1089,8 +1089,8 @@
       <link role="dataType" targetNodeId="1083065718921" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1083245396909">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="actualArgument" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1068431790191" />
@@ -1166,15 +1166,15 @@
     <property name="name" value="Classifier" />
     <link role="extends" targetNodeId="1109279851642" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1128555889557">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="staticField" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1070462154015" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1107880067339">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="method" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1068580123165" />
@@ -1198,8 +1198,8 @@
       <link role="target" targetNodeId="1107461130800" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1109201940907">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="parameter" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1068431790189" />
@@ -1219,8 +1219,8 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1107797138135">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="extendedInterface" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1107535904670" />
@@ -1242,8 +1242,8 @@
     <property name="name" value="GenericDeclaration" />
     <link role="extends" targetNodeId="4.1078489098625" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1109279881614">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="typeVariableDeclaration" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1109279763828" />
@@ -1309,8 +1309,8 @@
     <property name="name" value="ConceptFunction" />
     <link role="extends" targetNodeId="4.1133920641626" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1137022507850">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="body" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1068580123136" />
@@ -1560,8 +1560,8 @@
     <property name="name" value="ArrayCreatorWithInitializer" />
     <link role="extends" targetNodeId="1145552809883" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1154542793668">
-      <property name="targetCardinality" value="0..1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="0..1" />
       <property name="role" value="componentType" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1068431790189" />
@@ -1921,18 +1921,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174335983096">
-    <property name="name" value="VarDeclaration" />
-    <link role="extends" targetNodeId="1068581242863" resolveInfo="LocalVariableDeclaration" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174838199332">
-      <property name="value" value="var" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174838203474">
-      <property name="value" value="var declaration" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177326519037">
     <property name="name" value="CommentedStatementsBlock" />
     <link role="extends" targetNodeId="1068580123157" resolveInfo="Statement" />
@@ -1947,8 +1935,8 @@
     <property name="name" value="DoWhileStatement" />
     <link role="extends" targetNodeId="1154032098014" resolveInfo="AbstractLoopStatement" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177666688034">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="condition" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
