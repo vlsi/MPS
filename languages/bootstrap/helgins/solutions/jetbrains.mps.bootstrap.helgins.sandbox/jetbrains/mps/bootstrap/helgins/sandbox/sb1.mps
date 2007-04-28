@@ -15,7 +15,20 @@
   <import index="5" modelUID="java.io@java_stub" />
   <node type="jetbrains.mps.helgins.Rule" id="1177681456834">
     <property name="name" value="rrr" />
-    <node role="statements" type="jetbrains.mps.helgins.StatementList" id="1177681456835" />
+    <node role="statements" type="jetbrains.mps.helgins.StatementList" id="1177681456835">
+      <node role="statement" type="jetbrains.mps.helgins.NewVarStatement" id="1177760450593">
+        <node role="var" type="jetbrains.mps.helgins.NewTypeVarDeclaration" id="1177760450594">
+          <property name="name" value="DDD" />
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.helgins.GiveTypeStatement" id="1177760460580">
+        <node role="type" type="jetbrains.mps.helgins.AdaptTypeExpression" id="1177760945970">
+          <node role="typeExpr" type="jetbrains.mps.helgins.TypeVarReference" id="1177760949099">
+            <link role="typeVar" targetNodeId="1177760450594" resolveInfo="DDD" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="applicableNode" type="jetbrains.mps.helgins.AnalyzedTermDeclaration" id="1177681456836">
       <property name="name" value="sss" />
       <node role="condition" type="jetbrains.mpswiki.queryLanguage.QueryPattern" id="1177681564196">
