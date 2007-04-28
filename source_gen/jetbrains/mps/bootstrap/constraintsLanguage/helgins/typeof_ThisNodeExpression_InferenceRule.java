@@ -20,7 +20,7 @@ public class typeof_ThisNodeExpression_InferenceRule implements InferenceRule_Ru
   }
 
   public void applyRule(SNode argument) {
-    SNode behaviour = SNodeOperations.getAncestor(argument, "jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehaviour", true, false);
+    SNode behaviour = SNodeOperations.getAncestor(argument, "jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior", true, false);
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_().createNode(SLinkOperations.getTarget(behaviour, "concept", false)), argument);
   }
   public String getApplicableConceptFQName() {

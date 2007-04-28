@@ -373,8 +373,8 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177670533743">
     <property name="name" value="ConceptBehavior" />
-    <property name="package" value="Behavior" />
     <property name="rootable" value="true" />
+    <property name="package" value="Behavior" />
     <link role="extends" targetNodeId="1.1133920641626" />
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1177670964896">
       <link role="intfc" targetNodeId="1.1169194658468" />
@@ -421,6 +421,10 @@
     <property name="name" value="ConceptMethodDeclaration" />
     <property name="package" value="Behavior" />
     <link role="extends" targetNodeId="3.1068580123132" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177755346718">
+      <property name="role" value="overridenMethod" />
+      <link role="target" targetNodeId="1177673300966" resolveInfo="ConceptMethodDeclaration" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1177676055874">
       <property name="name" value="isVirtual" />
       <link role="dataType" targetNodeId="1.1082983657063" />

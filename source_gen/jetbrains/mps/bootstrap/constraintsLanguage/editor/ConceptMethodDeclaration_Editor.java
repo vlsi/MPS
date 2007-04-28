@@ -7,6 +7,7 @@ import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
@@ -20,54 +21,39 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 
 public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
 
   public AbstractCellListHandler myParameterListHandler_parameterList_;
 
-  public static boolean _QueryFunction_NodeCondition_1177698481027(SNode node, IScope scope) {
+  public static boolean _QueryFunction_NodeCondition_1177755613626(SNode node, IScope scope) {
     return SPropertyOperations.getBoolean(node, "isPrivate");
   }
-  public static boolean _QueryFunction_NodeCondition_1177699658932(SNode node, IScope scope) {
+  public static boolean _QueryFunction_NodeCondition_1177755613633(SNode node, IScope scope) {
     return !(SPropertyOperations.getBoolean(node, "isPrivate"));
   }
-  public static boolean _QueryFunction_NodeCondition_1177676251494(SNode node, IScope scope) {
+  public static boolean _QueryFunction_NodeCondition_1177755613641(SNode node, IScope scope) {
     return SPropertyOperations.getBoolean(node, "isVirtual");
+  }
+  public static boolean _QueryFunction_NodeCondition_1177755665241(SNode node, IScope scope) {
+    return SLinkOperations.getTarget(node, "overridenMethod", false) != null;
+  }
+  public static boolean _QueryFunction_NodeCondition_1177755751557(SNode node, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "isPrivate")) && SLinkOperations.getTarget(node, "overridenMethod", false) == null;
+  }
+  public static boolean _QueryFunction_NodeCondition_1177755728221(SNode node, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "isVirtual")) && (SLinkOperations.getTarget(node, "overridenMethod", false) == null);
+  }
+  public static boolean _QueryFunction_NodeCondition_1177755844974(SNode node, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "isVirtual")) && !(SPropertyOperations.getBoolean(node, "isPrivate"));
   }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createColumnCell(context, node);
   }
   public EditorCell createInspectedCell(EditorContext context, SNode node) {
-    return this.createColumnCell1(context, node);
-  }
-  public EditorCell createRowCell(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    if(ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177698481027(node, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstantCell(context, node, "private"));
-    }
-    if(ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177699658932(node, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstantCell1(context, node, "public"));
-    }
-    if(ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177676251494(node, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstantCell2(context, node, "virtual"));
-    }
-    editorCell.addEditorCell(this.createReturnTypeCell(context, node));
-    editorCell.addEditorCell(this.createNameCell(context, node));
-    editorCell.addEditorCell(this.createConstantCell3(context, node, "("));
-    editorCell.addEditorCell(this.createParameterList(context, node));
-    editorCell.addEditorCell(this.createConstantCell4(context, node, ")"));
-    editorCell.addEditorCell(this.createConstantCell5(context, node, "{"));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177675860858");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
+    return this.createColumnCell2(context, node);
   }
   public EditorCell createRowCell1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
@@ -78,7 +64,82 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell6(context, node, "  "));
+    if(ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177755613626(node, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstantCell(context, node, "private"));
+    }
+    if(ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177755613633(node, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstantCell1(context, node, "public"));
+    }
+    if(ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177755613641(node, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstantCell2(context, node, "virtual"));
+    }
+    editorCell.addEditorCell(this.createReturnTypeCell(context, node));
+    editorCell.addEditorCell(this.createNameCell(context, node));
+    editorCell.addEditorCell(this.createConstantCell3(context, node, "("));
+    editorCell.addEditorCell(this.createParameterList(context, node));
+    editorCell.addEditorCell(this.createConstantCell4(context, node, ")"));
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177755613135");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createRowCell2(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setGridLayout(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstantCell5(context, node, "  "));
+    editorCell.addEditorCell(this.createConstantCell6(context, node, "overrides"));
+    editorCell.addEditorCell(this.createOverridenMethodReferenceCell(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177755630514");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createColumnCell1(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setGridLayout(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createRowCell1(context, node));
+    if(ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177755665241(node, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRowCell2(context, node));
+    }
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177755609151");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createRowCell(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setGridLayout(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createColumnCell1(context, node));
+    editorCell.addEditorCell(this.createConstantCell7(context, node, "{"));
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177675860858");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createRowCell3(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setGridLayout(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstantCell8(context, node, "  "));
     editorCell.addEditorCell(this.createBodyCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177675976418");
     editorCell.setLayoutConstraint("");
@@ -94,13 +155,13 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRowCell(context, node));
-    editorCell.addEditorCell(this.createRowCell1(context, node));
-    editorCell.addEditorCell(this.createConstantCell7(context, node, "}"));
+    editorCell.addEditorCell(this.createRowCell3(context, node));
+    editorCell.addEditorCell(this.createConstantCell9(context, node, "}"));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177675859311");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createRowCell2(EditorContext context, SNode node) {
+  public EditorCell createRowCell4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
@@ -109,13 +170,13 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell8(context, node, "virtual"));
+    editorCell.addEditorCell(this.createConstantCell10(context, node, "virtual"));
     editorCell.addEditorCell(this.createIsVirtualCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177676229923");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createRowCell3(EditorContext context, SNode node) {
+  public EditorCell createRowCell5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
@@ -124,13 +185,28 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell9(context, node, "private"));
+    editorCell.addEditorCell(this.createConstantCell11(context, node, "private"));
     editorCell.addEditorCell(this.createIsPrivateCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177698443041");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createColumnCell1(EditorContext context, SNode node) {
+  public EditorCell createRowCell6(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+    editorCell.setGridLayout(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstantCell12(context, node, "overrides"));
+    editorCell.addEditorCell(this.createOverridenMethodReferenceCell1(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177755557038");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createColumnCell2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -139,8 +215,15 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createRowCell2(context, node));
-    editorCell.addEditorCell(this.createRowCell3(context, node));
+    if(ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177755751557(node, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRowCell4(context, node));
+    }
+    if(ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177755728221(node, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRowCell5(context, node));
+    }
+    if(ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177755844974(node, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRowCell6(context, node));
+    }
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177676228735");
     editorCell.setLayoutConstraint("");
     return editorCell;
@@ -154,7 +237,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177698474373");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177755613625");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -167,7 +250,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177699647559");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177755613632");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -180,7 +263,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177676244961");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177755613640");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -192,7 +275,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177675959643");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177755613649");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -204,23 +287,11 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177675967834");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177755613651");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell5(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
-    editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177675969336");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
-  public EditorCell createConstantCell6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
@@ -228,7 +299,20 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177675977294");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177755640611");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createConstantCell6(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177755630515");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -240,19 +324,19 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177675972057");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177675969336");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell8(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
+    editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177676230831");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177675977294");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -264,7 +348,43 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177675972057");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createConstantCell10(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177676230831");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createConstantCell11(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177698444988");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createConstantCell12(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177755559399");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -297,7 +417,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177675951108");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177755613647");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -330,7 +450,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177675953641");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177755613648");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -341,6 +461,39 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if(attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else 
+    return cellWithRole;
+  }
+  public EditorCell createOverridenMethodReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(new ConceptMethodDeclaration_Editor_overridenMethod_InlineComponent());
+    EditorCell editorCell = provider.createEditorCell(context);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    if(editorCell instanceof EditorCell_Label) {
+      EditorCell_Label editorCellLabel = (EditorCell_Label)editorCell;
+      editorCellLabel.setEditable(true);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177755650425");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createOverridenMethodReferenceCell(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, context);
+    provider.setRole("overridenMethod");
+    provider.setNoTargetText("");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(false);
+    EditorCell cellWithRole = this.createOverridenMethodReferenceCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if(attributeConcept != null) {
@@ -440,6 +593,39 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createIsPrivateCellinternal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if(attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else 
+    return cellWithRole;
+  }
+  public EditorCell createOverridenMethodReferenceCell1internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(new ConceptMethodDeclaration_Editor_overridenMethod_InlineComponent1());
+    EditorCell editorCell = provider.createEditorCell(context);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    if(editorCell instanceof EditorCell_Label) {
+      EditorCell_Label editorCellLabel = (EditorCell_Label)editorCell;
+      editorCellLabel.setEditable(true);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177755570354");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createOverridenMethodReferenceCell1(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, context);
+    provider.setRole("overridenMethod");
+    provider.setNoTargetText("<no overriden method>");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(false);
+    EditorCell cellWithRole = this.createOverridenMethodReferenceCell1internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if(attributeConcept != null) {
