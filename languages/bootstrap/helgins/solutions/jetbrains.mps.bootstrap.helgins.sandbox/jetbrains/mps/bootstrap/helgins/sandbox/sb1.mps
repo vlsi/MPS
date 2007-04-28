@@ -79,8 +79,24 @@
               </node>
               <node role="statement" type="jetbrains.mps.helgins.EvaluateStatement" id="1177773303723">
                 <node role="expression" type="jetbrains.mpswiki.queryLanguage.ListElementByNumberExpression" id="1177773366186">
-                  <node role="elementNumber" type="jetbrains.mps.formulaLanguage.IntegerConstant" id="1177773369048">
-                    <property name="value" value="22" />
+                  <node role="elementNumber" type="jetbrains.mps.formulaLanguage.PlusOperation" id="1177775005813">
+                    <node role="rightOperand" type="jetbrains.mps.formulaLanguage.EqualsOperation" id="1177775016501">
+                      <node role="rightOperand" type="jetbrains.mps.formulaLanguage.MultOperation" id="1177776165451">
+                        <node role="rightOperand" type="jetbrains.mps.formulaLanguage.IntegerConstant" id="1177776167532">
+                          <property name="value" value="4" />
+                        </node>
+                        <node role="leftOperand" type="jetbrains.mps.formulaLanguage.NullConstant" id="1177776155669" />
+                      </node>
+                      <node role="leftOperand" type="jetbrains.mps.formulaLanguage.FloatingPointConstant" id="1177775008562">
+                        <property name="value" value="0.1" />
+                      </node>
+                    </node>
+                    <node role="leftOperand" type="jetbrains.mps.formulaLanguage.IsNullOperation" id="1177774983763">
+                      <node role="rightOperand" type="jetbrains.mps.formulaLanguage.Expression" id="1177774983765" />
+                      <node role="leftOperand" type="jetbrains.mps.formulaLanguage.IntegerConstant" id="1177773369048">
+                        <property name="value" value="22" />
+                      </node>
+                    </node>
                   </node>
                   <node role="rightOperand" type="jetbrains.mps.formulaLanguage.Expression" id="1177773366188" />
                   <node role="leftOperand" type="jetbrains.mps.helgins.VarBindingReference" id="1177773341509">
