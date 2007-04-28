@@ -21,7 +21,6 @@
     <property name="name" value="stringOperations" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1175165206848">
       <property name="description" value="transforms String typed expression into replace or split expression " />
-      <property name="actionsFactoryAspectId" value="StringTypedExpression" />
       <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="3.1068431790191" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionFunction" id="1175165238942">

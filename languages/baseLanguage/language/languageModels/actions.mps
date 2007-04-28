@@ -2911,7 +2911,6 @@
     <property name="package" value="rightTransform" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1177505054799">
       <property name="description" value="add initializer to variable declaration" />
-      <property name="actionsFactoryAspectId" value="AddInitializer" />
       <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1068431474542" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddMenuPart" id="1177505064891">
