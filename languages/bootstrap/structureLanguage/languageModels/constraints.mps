@@ -809,16 +809,11 @@
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1177756721109">
               <property name="value" value="1" />
             </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.MinusExpression" id="1177756728288">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1177756730478">
-                <property name="value" value="1" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1177756726172">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1177756723262">
+                <link role="variableDeclaration" targetNodeId="1177756712821" resolveInfo="parentConcepts" />
               </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1177756726172">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1177756723262">
-                  <link role="variableDeclaration" targetNodeId="1177756712821" resolveInfo="parentConcepts" />
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.GetSizeOperation" id="1177756727032" />
-              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.GetSizeOperation" id="1177756727032" />
             </node>
           </node>
           <node role="variable" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1177756204424">
@@ -836,7 +831,9 @@
                 </node>
                 <node role="initializer" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodCall" id="1177756204430">
                   <link role="baseMethodDeclaration" targetNodeId="1177681750916" resolveInfo="findBehaviour" />
-                  <node role="thisNode" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1177756204431" />
+                  <node role="thisNode" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1177761003639">
+                    <link role="variableDeclaration" targetNodeId="1177756204424" resolveInfo="concept" />
+                  </node>
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1177756204432">
                     <link role="variableDeclaration" targetNodeId="1177756204403" resolveInfo="scope" />
                   </node>
