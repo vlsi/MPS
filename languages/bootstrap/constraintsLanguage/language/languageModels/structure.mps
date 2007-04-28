@@ -373,8 +373,8 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177670533743">
     <property name="name" value="ConceptBehavior" />
-    <property name="rootable" value="true" />
     <property name="package" value="Behavior" />
+    <property name="rootable" value="true" />
     <link role="extends" targetNodeId="1.1133920641626" />
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1177670964896">
       <link role="intfc" targetNodeId="1.1169194658468" />
@@ -431,6 +431,10 @@
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1177698427276">
       <property name="name" value="isPrivate" />
+      <link role="dataType" targetNodeId="1.1082983657063" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1177758833703">
+      <property name="name" value="isAbstract" />
       <link role="dataType" targetNodeId="1.1082983657063" />
     </node>
   </node>

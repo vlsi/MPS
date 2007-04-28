@@ -11,6 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ConceptMethodDeclaration extends BaseMethodDeclaration {
   public static String IS_VIRTUAL = "isVirtual";
   public static String IS_PRIVATE = "isPrivate";
+  public static String IS_ABSTRACT = "isAbstract";
   public static String OVERRIDEN_METHOD = "overridenMethod";
 
   public  ConceptMethodDeclaration(SNode node) {
@@ -35,6 +36,12 @@ public class ConceptMethodDeclaration extends BaseMethodDeclaration {
   }
   public void setIsPrivate(boolean value) {
     this.setBooleanProperty(ConceptMethodDeclaration.IS_PRIVATE, value);
+  }
+  public boolean getIsAbstract() {
+    return this.getBooleanProperty(ConceptMethodDeclaration.IS_ABSTRACT);
+  }
+  public void setIsAbstract(boolean value) {
+    this.setBooleanProperty(ConceptMethodDeclaration.IS_ABSTRACT, value);
   }
   public ConceptMethodDeclaration getOverridenMethod() {
     return (ConceptMethodDeclaration)this.getReferent(ConceptMethodDeclaration.OVERRIDEN_METHOD);
