@@ -7,12 +7,14 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import webr.xmlSchema.structure.ElementDeclaration;
+import java.util.Iterator;
+import java.util.List;
 
 public class Element extends Content {
   public static String IS_EMPTY = "isEmpty";
   public static String ELEMENT_DECLARATION = "elementDeclaration";
   public static String CONTENT_LIST = "contentList";
-  public static String ATTRIBUTE_LIST = "attributeList";
+  public static String ATTRIBUTE = "attribute";
 
   public  Element(SNode node) {
     super(node);
@@ -43,10 +45,19 @@ public class Element extends Content {
   public void setContentList(ContentList node) {
     super.setChild(Element.CONTENT_LIST, node);
   }
-  public AttributeList getAttributeList() {
-    return (AttributeList)this.getChild(Element.ATTRIBUTE_LIST);
+  public int getAttributesCount() {
+    return this.getChildCount(Element.ATTRIBUTE);
   }
-  public void setAttributeList(AttributeList node) {
-    super.setChild(Element.ATTRIBUTE_LIST, node);
+  public Iterator<BaseAttribute> attributes() {
+    return this.children(Element.ATTRIBUTE);
+  }
+  public List<BaseAttribute> getAttributes() {
+    return this.getChildren(Element.ATTRIBUTE);
+  }
+  public void addAttribute(BaseAttribute node) {
+    this.addChild(Element.ATTRIBUTE, node);
+  }
+  public void insertAttribute(BaseAttribute prev, BaseAttribute node) {
+    this.insertChild(prev, Element.ATTRIBUTE, node);
   }
 }
