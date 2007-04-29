@@ -186,6 +186,30 @@ public class NameUtil {
     return sb.toString();
   }
 
+  public static String toValidCamelIdentifier(String s) {
+    if (s.matches("[a-zA-Z[_]][a-zA-Z0-9[_]]*")) {
+      return s;
+    }
+    StringBuilder sb = new StringBuilder();
+    boolean upperCaseNext = false;
+    for (int i = 0; i < s.length(); i++) {
+      char c = s.charAt(i);
+      if (i == 0 && Character.isDigit(c)) {
+        sb.append('_');
+      }
+      if (c == '_' || Character.isLetterOrDigit(c)) {
+        if (upperCaseNext) {
+          upperCaseNext = false;
+          c = Character.toUpperCase(c);
+        }
+        sb.append(c);
+      } else {
+        upperCaseNext = true;
+      }
+    }
+    return sb.toString();
+  }
+
   public static String pathFromNamespace(String namespace) {
     return namespace.replace('.', '/');
   }
