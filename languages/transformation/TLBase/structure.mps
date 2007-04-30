@@ -181,12 +181,6 @@
       <property name="role" value="abandonRootRule" />
       <link role="target" targetNodeId="1114458327664" resolveInfo="ConceptDeclarationReference" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177715175777">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="0..n" />
-      <property name="role" value="alwaysCopyRootRule" />
-      <link role="target" targetNodeId="1114458327664" resolveInfo="ConceptDeclarationReference" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1163452921864">
       <property name="value" value="mapping configuration" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
@@ -753,6 +747,10 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1167514355419">
     <property name="name" value="Root_MappingRule" />
     <link role="extends" targetNodeId="1167169308231" resolveInfo="BaseMappingRule" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1177959072138">
+      <property name="name" value="keepSourceRoot" />
+      <link role="dataType" targetNodeId="2.1082983657063" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1167514355421">
       <property name="targetCardinality" value="0..n" />
       <property name="sourceCardinality" value="1" />
