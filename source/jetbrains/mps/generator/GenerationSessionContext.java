@@ -65,6 +65,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     myTransientModule = new TransientModule(invocationContext.getModule(), myGeneratorModules);
     if (prevContext != null) {
       myTransientModule.addDependency(prevContext.getModule());
+      myUsedNames = prevContext.myUsedNames; 
     }
   }
 
