@@ -62,13 +62,13 @@
     <link role="memberDataType" targetNodeId="1.1082983041843" />
     <link role="defaultMember" targetNodeId="1161807239262" resolveInfo="default_" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1161807239262">
-      <property name="externalValue" value="default" />
       <property name="name" value="default_" />
+      <property name="externalValue" value="&lt;default&gt;" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1161807432013">
+      <property name="name" value="custom_" />
       <property name="externalValue" value="custom" />
       <property name="internalValue" value="custom" />
-      <property name="name" value="custom_" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.EnumerationDataTypeDeclaration" id="1165007009656">
@@ -76,18 +76,32 @@
     <link role="memberDataType" targetNodeId="1.1082983041843" />
     <link role="defaultMember" targetNodeId="1165007009657" resolveInfo="default_" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1165007009657">
-      <property name="externalValue" value="&lt;default&gt;" />
       <property name="name" value="default_" />
+      <property name="externalValue" value="&lt;default&gt;" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1165007068491">
+      <property name="name" value="referent_" />
       <property name="externalValue" value="&lt;referent node&gt;" />
       <property name="internalValue" value="default_referent" />
-      <property name="name" value="referent_" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1165007009658">
+      <property name="name" value="custom_" />
       <property name="externalValue" value="&lt;custom&gt;" />
       <property name="internalValue" value="custom" />
-      <property name="name" value="custom_" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.EnumerationDataTypeDeclaration" id="1177964585679">
+    <property name="name" value="Options_DefaultTrue" />
+    <link role="memberDataType" targetNodeId="1.1082983041843" />
+    <link role="defaultMember" targetNodeId="1177964585680" resolveInfo="default_" />
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1177964585680">
+      <property name="name" value="default_" />
+      <property name="externalValue" value="&lt;default&gt;" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1177964653995">
+      <property name="name" value="true_" />
+      <property name="externalValue" value="true" />
+      <property name="internalValue" value="true" />
     </node>
   </node>
 </model>

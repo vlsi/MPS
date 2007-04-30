@@ -749,7 +749,7 @@
     <link role="extends" targetNodeId="1167169308231" resolveInfo="BaseMappingRule" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1177959072138">
       <property name="name" value="keepSourceRoot" />
-      <link role="dataType" targetNodeId="2.1082983657063" />
+      <link role="dataType" targetNodeId="8.1177964585679" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1167514355421">
       <property name="targetCardinality" value="0..n" />

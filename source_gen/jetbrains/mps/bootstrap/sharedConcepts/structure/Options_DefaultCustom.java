@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.LinkedList;
 
 public enum Options_DefaultCustom {
-  default_("default", null),
+  default_("<default>", null),
   custom_("custom", "custom");
 
   public String myName;
