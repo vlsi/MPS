@@ -76,7 +76,7 @@ public class GenerationSession implements IGenerationSession {
     myCurrentContext = context;
   }
 
-  public GenerationStatus generateModel(final SModelDescriptor sourceModel,
+  public GenerationStatus generateModel(final SModelDescriptor inputModel,
                                         final Language targetLanguage,
                                         final IGenerationScript script) throws Exception {
     GenerationStatus status;
@@ -84,14 +84,43 @@ public class GenerationSession implements IGenerationSession {
     Statistics.clear();
 
     status = script.doGenerate(new IGenerationScriptContext() {
-      public GenerationStatus doGenerate(@NotNull SModelDescriptor sourceModel,
+      public GenerationStatus doGenerate(@NotNull SModelDescriptor inputModel,
                                          Language targetLanguage,
                                          Set<MappingConfiguration> confs) throws Exception {
-        return generateModel_internal(sourceModel, targetLanguage, confs);
+        if (targetLanguage != null) {
+          // old
+          return generateModel_internal(inputModel, targetLanguage, confs, null);
+        }
+
+        // auto-plan
+        GenerationStepController generationStepController = new GenerationStepController(inputModel.getSModel());
+        GenerationStatus status;
+        boolean hasWarnings = false;
+        int stepCount = 1;
+        while (true) {
+          addMessage(new Message(MessageKind.INFORMATION, "execute step " + (stepCount++)));
+          status = generateModel_internal(inputModel, targetLanguage, confs, generationStepController);
+          hasWarnings |= status.hasWarnings();
+          if (status.isCanceled() || status.isError()) {
+            break;
+          }
+
+          // need more steps?
+          if (!generationStepController.advanceStep()) {
+            // generation complete
+            break;
+          }
+          if (generationStepController.getCurrentMappings().isEmpty()) {
+            break;
+          }
+          inputModel = status.getOutputModel().getModelDescriptor();
+        }
+
+        return new GenerationStatus(status.getSourceModel(), status.getOutputModel(), status.getTraceMap(), status.isError(), hasWarnings, status.isCanceled());
       }
 
       public SModelDescriptor getSourceModelDescriptor() {
-        return sourceModel;
+        return inputModel;
       }
 
 
@@ -106,7 +135,8 @@ public class GenerationSession implements IGenerationSession {
       public IMessageHandler getHandler() {
         return myHandler;
       }
-    });
+    }); // IGenerationScriptContext
+
     if (status.isError() || status.hasWarnings()) {
       // if ERROR - keep transient models: we need them to navigate to from error messages
       myDiscardTransients = false;
@@ -118,7 +148,8 @@ public class GenerationSession implements IGenerationSession {
 
   private GenerationStatus generateModel_internal(SModelDescriptor sourceModelDescriptor,
                                                   Language targetLanguage,
-                                                  Set<MappingConfiguration> mappings)
+                                                  Set<MappingConfiguration> mappings,
+                                                  GenerationStepController generationStepController)
           throws ClassNotFoundException,
           NoSuchMethodException,
           IllegalAccessException,
@@ -131,19 +162,20 @@ public class GenerationSession implements IGenerationSession {
     addProgressMessage(MessageKind.INFORMATION, "generating model \"" + sourceModel.getUID() + "\"");
 
     // -- replace context
-    GenerationSessionContext context = new GenerationSessionContext(targetLanguage, sourceModel, myInvocationContext, mappings, myCurrentContext);
-    if (context.getGenerationStepController() != null) {
+    GenerationSessionContext context = new GenerationSessionContext(targetLanguage, sourceModel, myInvocationContext, mappings, generationStepController, myCurrentContext);
+    if (generationStepController != null) {
       // auto-plan
-      if (!checkGenerationStep(context.getGenerationStepController())) {
+      if (!checkGenerationStep(generationStepController)) {
         throw new GenerationCanceledException();
       }
-      if (context.getGenerationStepController().getCurrentMappings().isEmpty()) {
+      if (generationStepController.getCurrentMappings().isEmpty()) {
         addProgressMessage(MessageKind.WARNING, "skip model \"" + sourceModel.getUID() + "\" : no generator avalable");
         return new GenerationStatus(sourceModel, null, null, false, false, false);
       }
-      printGenerationStepData(context.getGenerationStepController(), sourceModel);
+      printGenerationStepData(generationStepController, sourceModel);
 
     } else {
+      // old
       List<Generator> generators = context.getGeneratorModules();
       if (generators.isEmpty()) {
         addProgressMessage(MessageKind.WARNING, "skip model \"" + sourceModel.getUID() + "\" : no generator avalable");
@@ -157,7 +189,7 @@ public class GenerationSession implements IGenerationSession {
     ITemplateGenerator generator = new DefaultTemplateGenerator(context, myProgressMonitor, myHandler);
     GenerationStatus status;
     try {
-      SModel outputModel = generateModel(sourceModel, targetLanguage, generator);
+      SModel outputModel = generateModel(sourceModel, generator);
       boolean wasErrors = generator.getErrorCount() > 0;
       boolean hasWarnigns = generator.getWarningCount() > 0;
       status = new GenerationStatus(sourceModel, outputModel, context.getTraceMap(), wasErrors, hasWarnigns, false);
@@ -187,39 +219,39 @@ public class GenerationSession implements IGenerationSession {
     return status;
   }
 
-  private SModel generateModel(SModel inputModel, Language targetLanguage, ITemplateGenerator generator) {
+  private SModel generateModel(SModel inputModel, ITemplateGenerator generator) {
     GenerationSessionContext generationContext = generator.getGeneratorSessionContext();
     if (generationContext.getGenerationStepController() == null) {
       // old
-      return generateModel(inputModel, targetLanguage, generator, generationContext);
+      return generateModel(inputModel, generator, generationContext);
     }
 
-    // auto-plan
-    GenerationStepController generationStepController = generationContext.getGenerationStepController();
-    if (!checkGenerationStep(generationStepController)) {
-      throw new GenerationCanceledException();
-    }
-    SModel outputModel = null;
-    while (true) {
-      outputModel = generateModel(inputModel, targetLanguage, generator, generationContext);
-      inputModel = outputModel;
-      // need more steps?
-      if (!generationStepController.advanceStep()) {
-        // generation complete
-        break;
-      }
-      if (generationStepController.getCurrentMappings().isEmpty()) {
-        break;
-      }
-      printGenerationStepData(generationStepController, inputModel);
-      generationContext.replaceInputModel(inputModel.getModelDescriptor());
-      generationContext.updateGenerationStepData(generationStepController);
-    }
+//    // auto-plan
+//    GenerationStepController generationStepController = generationContext.getGenerationStepController();
+//    if (!checkGenerationStep(generationStepController)) {
+//      throw new GenerationCanceledException();
+//    }
+//    SModel outputModel = null;
+//    while (true) {
+//      outputModel = generateModel(inputModel, targetLanguage, generator, generationContext);
+//      inputModel = outputModel;
+//      // need more steps?
+//      if (!generationStepController.advanceStep()) {
+//        // generation complete
+//        break;
+//      }
+//      if (generationStepController.getCurrentMappings().isEmpty()) {
+//        break;
+//      }
+//      printGenerationStepData(generationStepController, inputModel);
+//      generationContext.replaceInputModel(inputModel.getModelDescriptor());
+//      generationContext.updateGenerationStepData(generationStepController);
+//    }
 
-    return outputModel;
+    return generateModel(inputModel, generator, generationContext);
   }
 
-  private SModel generateModel(SModel inputModel, Language targetLanguage, ITemplateGenerator generator, GenerationSessionContext generationContext) {
+  private SModel generateModel(SModel inputModel, ITemplateGenerator generator, GenerationSessionContext generationContext) {
     IModule module = generationContext.getModule();
     SModelDescriptor currentInputModel = inputModel.getModelDescriptor();
     SModelDescriptor currentOutputModel = createTransientModel(inputModel, module);
@@ -240,17 +272,6 @@ public class GenerationSession implements IGenerationSession {
     int secondaryMappingRepeatCount = 1;
     while (true) {
       currentOutputModel.getSModel().validateLanguagesAndImports();
-      // optimization trick:
-      // exit if target language is 'baseLanguage' and
-      // output model doesn't contain other languages
-      if (generationContext.getGenerationStepController() == null) { // with auto-plan the target langauge is NULL
-        if (targetLanguage.getNamespace().equals("jetbrains.mps.baseLanguage")) {
-          List<String> languageNamespaces = currentOutputModel.getSModel().getLanguageNamespaces(module.getScope());
-          if (languageNamespaces.size() == 1 && languageNamespaces.get(0).equals(targetLanguage.getNamespace())) {
-            break;
-          }
-        }
-      }
 
       // apply mapping to the output model
       addMessage(MessageKind.INFORMATION, "generating model \"" + currentOutputModel.getModelUID() + "\"");

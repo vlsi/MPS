@@ -44,6 +44,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
                                   SModel inputModel,
                                   IOperationContext invocationContext,
                                   Set<MappingConfiguration> configs,
+                                  GenerationStepController generationStepController,
                                   GenerationSessionContext prevContext) {
 
 
@@ -53,7 +54,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
     if (targetLanguage == null) {
       // auto-plan
-      myGenerationStepController = new GenerationStepController(inputModel);
+      myGenerationStepController = generationStepController;
       myGeneratorModules = myGenerationStepController.getGenerators();
       myTemplateModels = myGenerationStepController.getTemplateModels();
       myMappingConfigurations = new LinkedHashSet<MappingConfiguration>(myGenerationStepController.getCurrentMappings());
@@ -85,13 +86,13 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     }
   }
 
-  public void updateGenerationStepData(GenerationStepController generationStepController) {
-    myGenerationStepController = generationStepController;
-    myGeneratorModules = myGenerationStepController.getGenerators();
-    myTemplateModels = myGenerationStepController.getTemplateModels();
-    myMappingConfigurations = new LinkedHashSet<MappingConfiguration>(myGenerationStepController.getCurrentMappings());
-    myTransientModule.addGeneratorModules(myGeneratorModules);
-  }
+//  public void updateGenerationStepData(GenerationStepController generationStepController) {
+//    myGenerationStepController = generationStepController;
+//    myGeneratorModules = myGenerationStepController.getGenerators();
+//    myTemplateModels = myGenerationStepController.getTemplateModels();
+//    myMappingConfigurations = new LinkedHashSet<MappingConfiguration>(myGenerationStepController.getCurrentMappings());
+//    myTransientModule.addGeneratorModules(myGeneratorModules);
+//  }
 
   private void initTemplateModels() {
     assert myGenerationStepController == null : "method can't be used with 'auto-plan' generation";
@@ -251,13 +252,13 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     }
   }
 
-  public boolean registerCopiedRoot(SNode inputNode) {
+  public void registerCopiedRoot(SNode inputNode) {
     Set<SNode> set = (Set<SNode>) getSessionObject(COPYED_ROOTS);
     if (set == null) {
       set = new HashSet<SNode>();
       putSessionObject(COPYED_ROOTS, set);
     }
-    return set.contains(inputNode);
+    set.add(inputNode);
   }
 
   public boolean isCopiedRoot(SNode inputNode) {
