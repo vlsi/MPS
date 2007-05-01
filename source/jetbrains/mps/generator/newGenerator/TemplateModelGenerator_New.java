@@ -321,15 +321,19 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
 
 
   public INodeBuilder findFirstNodeBuilderForTemplate(SNode template) {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    throw new RuntimeException("not implemented");
+  }
+
+  public INodeBuilder findFirstNodeBuilderForSource(SNode inputNode) {
+    throw new RuntimeException("not implemented");
   }
 
   public INodeBuilder findNodeBuilder(Condition<INodeBuilder> condition) {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    throw new RuntimeException("not implemented");
   }
 
   public INodeBuilder findNodeBuilder(INodeBuilder fromBuilder, Condition<INodeBuilder> condition) {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    throw new RuntimeException("not implemented");
   }
 
   //todo remove this after going to new generator
