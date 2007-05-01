@@ -6,7 +6,11 @@ import jetbrains.mps.annotations.structure.PropertyAttributeConcept;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.nodeEditor.cellMenu.DefaultAttributeSubstituteInfo;
+import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeProxy;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
@@ -14,7 +18,6 @@ import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
-import jetbrains.mps.nodeEditor.cellMenu.DefaultAttributeSubstituteInfo;
 
 import java.awt.Color;
 import java.awt.event.KeyEvent;
@@ -124,8 +127,8 @@ public class EditorManager {
       DefaultAttributeSubstituteInfo substituteInfo = new DefaultAttributeSubstituteInfo(cellWithRole.getSNode(), roleAttribute, linkDeclaration, context);
       result.setSubstituteInfo(substituteInfo);
       if (result instanceof EditorCell_Collection) {
-        if (((EditorCell_Collection)result).containsCell(cellWithRole)) {
-          for (EditorCell cell : ((EditorCell_Collection)result).contentCells()) {
+        if (((EditorCell_Collection) result).containsCell(cellWithRole)) {
+          for (EditorCell cell : ((EditorCell_Collection) result).contentCells()) {
             if (cell != cellWithRole && cell.getSubstituteInfo() == null) {
               cell.setSubstituteInfo(substituteInfo);
             }
@@ -159,7 +162,15 @@ public class EditorManager {
         if (!myAttributesStack.contains(attribute)) {
           myAttributesStack.push(attribute);
           EditorCell nodeCell = createEditorCell(context, events, refContext.contextWithOneMoreAttribute(attribute));
-          EditorCell result = createNodeAttributeCell(context, attribute, nodeCell);
+          EditorCell result;
+          // hack: exclude link/property attributes
+          // imho node.getNodeAttributes() should return 'node attributes' only
+          String role_ = attribute.getRole_();
+          if (AttributesRolesUtil.isLinkAttributeRole(role_) || AttributesRolesUtil.isPropertyAttributeRole(role_)) {
+            result = nodeCell;
+          } else {
+            result = createNodeAttributeCell(context, attribute, nodeCell);
+          }
           SNode poppedAttribute = myAttributesStack.pop();
           LOG.assertLog(poppedAttribute == attribute);
           return result;
@@ -408,7 +419,7 @@ public class EditorManager {
     }
 */
 
-  /*  if (editor != null) {
+    /*  if (editor != null) {
       return editor;
     }*/
 
