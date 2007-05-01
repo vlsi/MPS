@@ -19,6 +19,8 @@ import java.util.*;
  */
 public class GenerationSessionContext extends StandaloneMPSContext {
 
+  private static final Object COPYED_ROOTS = new Object();
+
   private List<Generator> myGeneratorModules;
   private List<SModelDescriptor> myTemplateModels;
   private IOperationContext myInvocationContext;
@@ -27,7 +29,9 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private GenerationStepController myGenerationStepController;
 
   private Map<Object, Object> myTransientObjects = new HashMap<Object, Object>();
+  // object survive between transient models but not between generation steps 
   private Map<Object, Object> mySessionObjects = new HashMap<Object, Object>();
+
   private LinkedHashSet<MappingConfiguration> myCustomMappingConfigurations;
   private LinkedHashSet<MappingConfiguration> myMappingConfigurations;
 
@@ -65,7 +69,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     myTransientModule = new TransientModule(invocationContext.getModule(), myGeneratorModules);
     if (prevContext != null) {
       myTransientModule.addDependency(prevContext.getModule());
-      myUsedNames = prevContext.myUsedNames; 
+      myUsedNames = prevContext.myUsedNames;
     }
   }
 
@@ -238,6 +242,28 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   public GenerationStepController getGenerationStepController() {
     return myGenerationStepController;
+  }
+
+  public void clearCopiedRootsSet() {
+    Set<SNode> set = (Set<SNode>) getSessionObject(COPYED_ROOTS);
+    if (set != null) {
+      set.clear();
+    }
+  }
+
+  public boolean registerCopiedRoot(SNode inputNode) {
+    Set<SNode> set = (Set<SNode>) getSessionObject(COPYED_ROOTS);
+    if (set == null) {
+      set = new HashSet<SNode>();
+      putSessionObject(COPYED_ROOTS, set);
+    }
+    return set.contains(inputNode);
+  }
+
+  public boolean isCopiedRoot(SNode inputNode) {
+    Set<SNode> set = (Set<SNode>) getSessionObject(COPYED_ROOTS);
+    if (set == null) return false;
+    return set.contains(inputNode);
   }
 
   public class TransientModule extends AbstractModule {
