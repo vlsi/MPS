@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
@@ -41,7 +42,7 @@ public class Concept_IsExactlyOperation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
+    editorCell.setEditable(true);
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
@@ -57,6 +58,7 @@ public class Concept_IsExactlyOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.setFontType(MPSFonts.PLAIN);
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172326631531");
     editorCell.setLayoutConstraint("");
     return editorCell;
@@ -69,6 +71,7 @@ public class Concept_IsExactlyOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.setFontType(MPSFonts.PLAIN);
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172326633501");
     editorCell.setLayoutConstraint("");
     return editorCell;

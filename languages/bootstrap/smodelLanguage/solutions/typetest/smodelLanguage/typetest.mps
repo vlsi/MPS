@@ -2523,6 +2523,16 @@
       <property name="name" value="err_2" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1173394939915" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1173394939916">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1178066196302">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178066196303">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1178066266529">
+              <link role="variableDeclaration" targetNodeId="1178060901587" resolveInfo="node" />
+            </node>
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Concept_IsExactlyOperation" id="1178066247986">
+              <link role="conceptDeclaration" targetNodeId="6.1068580123157" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1173394949077">
           <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1173394949078">
             <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.ConceptRefExpression" id="1173394949079">
