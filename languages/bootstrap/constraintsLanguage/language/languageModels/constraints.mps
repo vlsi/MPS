@@ -496,6 +496,23 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1177681174380">
     <property name="package" value="Behavior" />
     <link role="concept" targetNodeId="1.1177673300966" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1178097134875">
+      <property name="name" value="findBehaviour" />
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1178097155191">
+        <link role="concept" targetNodeId="1.1177670533743" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178097134877">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1178097165441">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeTypeCastExpression" id="1178097186648">
+            <link role="concept" targetNodeId="1.1177670533743" />
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178097182694">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1178097178271" />
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetContainingRootOperation" id="1178097185584" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1177759451607">
       <property name="name" value="getOverridenMethod" />
       <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1177759453507">
@@ -738,7 +755,7 @@
                 <link role="elementConcept" targetNodeId="1.1177673300966" />
               </node>
               <node role="initializer" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodCall" id="1177698722477">
-                <link role="baseMethodDeclaration" targetNodeId="13.1177682774106" />
+                <link role="baseMethodDeclaration" targetNodeId="13.1178096836413" />
                 <node role="thisNode" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1177698722478">
                   <link role="variableDeclaration" targetNodeId="1177683051215" resolveInfo="concept" />
                 </node>
@@ -790,7 +807,7 @@
                 <link role="elementConcept" targetNodeId="1.1177673300966" />
               </node>
               <node role="initializer" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodCall" id="1177756547108">
-                <link role="baseMethodDeclaration" targetNodeId="13.1177756204400" />
+                <link role="baseMethodDeclaration" targetNodeId="13.1178096838976" />
                 <node role="thisNode" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1177756547109">
                   <link role="variableDeclaration" targetNodeId="1177756547100" resolveInfo="concept" />
                 </node>

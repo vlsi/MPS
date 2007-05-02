@@ -10,12 +10,12 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
 import java.util.List;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 public class ConceptBehavior extends BaseConcept implements INamedConcept {
-  public static String NAME = "name";
   public static String CONSTRUCTOR = "constructor";
   public static String METHOD = "method";
+  public static String NAME = "name";
   public static String CONCEPT = "concept";
 
   public  ConceptBehavior(SNode node) {
@@ -29,12 +29,6 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept {
     return ConceptBehavior.newInstance(sm, false);
   }
 
-  public String getName() {
-    return this.getProperty(ConceptBehavior.NAME);
-  }
-  public void setName(String value) {
-    this.setProperty(ConceptBehavior.NAME, value);
-  }
   public ConceptConstructorDeclaration getConstructor() {
     return (ConceptConstructorDeclaration)this.getChild(ConceptBehavior.CONSTRUCTOR);
   }
@@ -56,10 +50,16 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept {
   public void insertMethod(ConceptMethodDeclaration prev, ConceptMethodDeclaration node) {
     this.insertChild(prev, ConceptBehavior.METHOD, node);
   }
-  public ConceptDeclaration getConcept() {
-    return (ConceptDeclaration)this.getReferent(ConceptBehavior.CONCEPT);
+  public String getName() {
+    return this.getProperty(ConceptBehavior.NAME);
   }
-  public void setConcept(ConceptDeclaration node) {
+  public void setName(String value) {
+    this.setProperty(ConceptBehavior.NAME, value);
+  }
+  public AbstractConceptDeclaration getConcept() {
+    return (AbstractConceptDeclaration)this.getReferent(ConceptBehavior.CONCEPT);
+  }
+  public void setConcept(AbstractConceptDeclaration node) {
     super.setReferent(ConceptBehavior.CONCEPT, node);
   }
 }
