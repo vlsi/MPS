@@ -19,6 +19,7 @@ import jetbrains.mps.typesystem.ITypeChecker;
 import jetbrains.mps.util.Condition;
 
 import java.util.Map;
+import java.util.List;
 
 public interface ITemplateGenerator extends ITemplateLanguageConstants {
   void setStartState();
@@ -55,7 +56,7 @@ public interface ITemplateGenerator extends ITemplateLanguageConstants {
 
   INodeBuilder findFirstNodeBuilderForTemplate(SNode template);
 
-  INodeBuilder findFirstNodeBuilderForSource(SNode source);
+  List<INodeBuilder> findTopBuildersForSource(SNode sourceNode);
 
   INodeBuilder findNodeBuilder(Condition<INodeBuilder> condition);
 

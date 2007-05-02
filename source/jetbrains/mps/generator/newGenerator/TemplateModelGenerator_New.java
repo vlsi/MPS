@@ -324,7 +324,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     throw new RuntimeException("not implemented");
   }
 
-  public INodeBuilder findFirstNodeBuilderForSource(SNode inputNode) {
+  public List<INodeBuilder> findTopBuildersForSource(SNode sourceNode) {
     throw new RuntimeException("not implemented");
   }
 
