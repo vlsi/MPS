@@ -102,7 +102,7 @@ public class CloneModelDialog extends BaseNodeDialog {
         for (String language : mySModel.getEngagedOnGenerationLanguages()) {
           jetbrains.mps.projectLanguage.structure.Language lang = jetbrains.mps.projectLanguage.structure.Language.newInstance(myProjectModel);
           lang.setName(language);
-          myCloneModelProperties.addLanguageEngagedOnGeneration(lang);
+          myCloneModelProperties.addEngagedOnGenerationLanguage(lang);
         }
         return null;
       }
