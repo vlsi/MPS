@@ -2535,6 +2535,22 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1178060863678">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178060863679">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1178060907448">
+              <link role="variableDeclaration" targetNodeId="1178060901587" resolveInfo="node" />
+            </node>
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Concept_IsAssignableFromOperation" id="1178060863681">
+              <node role="sconceptExpression" type="jetbrains.mps.bootstrap.smodelLanguage.ConceptRefExpression" id="1178060863682">
+                <link role="conceptDeclaration" targetNodeId="6.1068580123157" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1178060901587">
+        <property name="name" value="node" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1178060901588" />
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1177012329419">
