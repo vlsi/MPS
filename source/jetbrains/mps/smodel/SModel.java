@@ -46,6 +46,7 @@ public class SModel implements Iterable<SNode> {
 
   private int myMaxImportIndex;
   private List<String> myLanguages = new ArrayList<String>();
+  private List<String> myLanguagesEngagedOnGeneration = new ArrayList<String>();
   private List<String> myDevKits = new ArrayList<String>();
   private List<ImportElement> myImports = new ArrayList<ImportElement>();
 
@@ -889,6 +890,16 @@ public class SModel implements Iterable<SNode> {
     myUID = newModelUID;
   }
 
+  public void addLanguageEngagedOnGeneration(String languageNamespace) {
+    if (!myLanguagesEngagedOnGeneration.contains(languageNamespace)) {
+      myLanguagesEngagedOnGeneration.add(languageNamespace);
+    }
+  }
+
+  @NotNull
+  public List<String> getLanguageEngagedOnGeneration() {
+    return new ArrayList<String>(myLanguagesEngagedOnGeneration);
+  }
 
   /*package*/
   static class ImportElement {

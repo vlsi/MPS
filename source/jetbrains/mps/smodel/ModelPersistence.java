@@ -43,6 +43,7 @@ public class ModelPersistence {
   public static final String MODEL_IMPORT_INDEX = "index";
   public static final String MAX_IMPORT_INDEX = "maxImportIndex";
   public static final String LANGUAGE = "language";
+  public static final String LANGUAGE_ENGAGED_ON_GENERATION = "language-engaged-on-generation";
   public static final String DEVKIT = "devkit";
   public static final String STEREOTYPE = "stereotype";
   public static final String MODEL_UID = "modelUID";
@@ -162,14 +163,21 @@ public class ModelPersistence {
             try {
               SModel structureModel = modelLanguage.getStructureModelDescriptor().getSModel();
               logs.add(new LogInfo(structureModel.getLog(), oldVersion, newVersion, element));
-            } catch(Throwable t) {
+            } catch (Throwable t) {
               LOG.error(t);
             }
           }
         }
       }
       model.addLanguage(languageNamespace);
+    }
 
+    // languages engaged on generation
+    List languagesEOG = rootElement.getChildren(LANGUAGE_ENGAGED_ON_GENERATION);
+    for (Object languageEOG : languagesEOG) {
+      Element element = (Element) languageEOG;
+      String languageNamespace = element.getAttributeValue(NAMESPACE);
+      model.addLanguageEngagedOnGeneration(languageNamespace);
     }
 
     //devkits
@@ -223,7 +231,7 @@ public class ModelPersistence {
             try {
               SModel importedModel = SModelRepository.getInstance().getModelDescriptor(importedModelUID).getSModel();
               logs.add(new LogInfo(importedModel.getLog(), importedModelVersion, newVersion, element));
-            } catch(Throwable t) {
+            } catch (Throwable t) {
               LOG.error(t);
             }
           }
@@ -238,7 +246,7 @@ public class ModelPersistence {
       for (LogInfo log : logs) {
         // todo test
         modelLogger.playRefactoringSequence(log.myNode, document, log.myOldVersion, log.myNewVersion);
-        log.myElement.setAttribute(VERSION, log.myNewVersion+"");
+        log.myElement.setAttribute(VERSION, log.myNewVersion + "");
       }
       SModel sModel = readModel(document, modelName, stereotype, false);
       SModelRepository.getInstance().markChanged(sModel, true);
@@ -348,7 +356,7 @@ public class ModelPersistence {
 
   @Nullable
   private static SNode createNodeInstance(@NotNull String type,
-                                         @NotNull SModel model) {
+                                          @NotNull SModel model) {
     return new SNode(model, type);
   }
 
@@ -412,8 +420,15 @@ public class ModelPersistence {
         version = modelLanguage.getVersion();
       }
       if (version > -1) {
-        languageElem.setAttribute(VERSION, version+"");
+        languageElem.setAttribute(VERSION, version + "");
       }
+      rootElement.addContent(languageElem);
+    }
+
+    // languages engaged on generation
+    for (String languageNamespace : sourceModel.getLanguageEngagedOnGeneration()) {
+      Element languageElem = new Element(LANGUAGE_ENGAGED_ON_GENERATION);
+      languageElem.setAttribute(NAMESPACE, languageNamespace);
       rootElement.addContent(languageElem);
     }
 
@@ -443,14 +458,14 @@ public class ModelPersistence {
         version = importedModelDescriptor.getVersion();
       }
       if (version > -1) {
-        importElem.setAttribute(VERSION, version+"");
+        importElem.setAttribute(VERSION, version + "");
       }
       rootElement.addContent(importElem);
     }
 
     // version & log
     if (sourceModel.usesLog()) {
-      rootElement.setAttribute(VERSION, sourceModel.getVersion()+"");
+      rootElement.setAttribute(VERSION, sourceModel.getVersion() + "");
       SNode log = sourceModel.getLog();
       if (log != null) {
         Element logElement = new Element(REFACTORING_LOG);
@@ -553,7 +568,7 @@ public class ModelPersistence {
       FileOutputStream fileOutputStream = new FileOutputStream(versionFile);
       fileOutputStream.write(version);
       fileOutputStream.close();
-    } catch(IOException ioe) {
+    } catch (IOException ioe) {
       LOG.error(ioe);
     }
   }
@@ -564,9 +579,9 @@ public class ModelPersistence {
       try {
         FileInputStream fileInputStream = new FileInputStream(versionFile);
         return new InputStreamReader(fileInputStream).read();
-      } catch(FileNotFoundException ex) {
+      } catch (FileNotFoundException ex) {
         LOG.error(ex);
-      } catch(IOException ex) {
+      } catch (IOException ex) {
         LOG.error(ex);
       }
     }
@@ -619,7 +634,7 @@ public class ModelPersistence {
       myMaxVisibleModelIndex++;
       myVisibleModelElements.put(myMaxVisibleModelIndex, modelUID);
       Element visibleElement = new Element(VISIBLE_ELEMENT);
-      visibleElement.setAttribute(MODEL_IMPORT_INDEX, myMaxVisibleModelIndex+"");
+      visibleElement.setAttribute(MODEL_IMPORT_INDEX, myMaxVisibleModelIndex + "");
       visibleElement.setAttribute(MODEL_UID, modelUID.toString());
       myModelElement.addContent(visibleElement);
       return myMaxVisibleModelIndex;
@@ -635,6 +650,7 @@ public class ModelPersistence {
     int myNewVersion;
     SNode myNode;
     Element myElement;
+
     public LogInfo(SNode node, int oldVersion, int newVersion, Element element) {
       myNode = node;
       myOldVersion = oldVersion;
