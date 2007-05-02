@@ -4,12 +4,9 @@ import jetbrains.mps.datatransfer.CloneModelUtil;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.projectLanguage.structure.CloneModelProperties;
-import jetbrains.mps.projectLanguage.structure.Model;
-import jetbrains.mps.projectLanguage.structure.ModelRoot;
-import jetbrains.mps.projectLanguage.structure.RootReference;
+import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.CommandRunnable;
 
 import java.util.HashSet;
@@ -95,6 +92,18 @@ public class CloneModelDialog extends BaseNodeDialog {
           m.setName(importedModelUID.toString());
           myCloneModelProperties.addImportedModel(m);
         }
+
+        for (String devKit : mySModel.getDevKitNamespaces()) {
+          jetbrains.mps.projectLanguage.structure.DevKit dk = DevKit.newInstance(myProjectModel);
+          dk.setName(devKit);
+          myCloneModelProperties.addDevKit(dk);
+        }
+
+        for (String language : mySModel.getEngagedOnGenerationLanguages()) {
+          jetbrains.mps.projectLanguage.structure.Language lang = jetbrains.mps.projectLanguage.structure.Language.newInstance(myProjectModel);
+          lang.setName(language);
+          myCloneModelProperties.addLanguageEngagedOnGeneration(lang);
+        }
         return null;
       }
     }.run();
@@ -123,20 +132,20 @@ public class CloneModelDialog extends BaseNodeDialog {
     assert module != null;
     SModelDescriptor modelDescriptor = module.createModel(new SModelUID(modelName, stereotype), modelRoot);
 
-    SModel SModel = modelDescriptor.getSModel();
+    SModel model = modelDescriptor.getSModel();
     Set<String> modelsInProps = getModelsInProperties();
     for (String modelUID : modelsInProps) {
-      SModel.addImportedModel(SModelUID.fromString(modelUID));
+      model.addImportedModel(SModelUID.fromString(modelUID));
     }
 
-    for (jetbrains.mps.projectLanguage.structure.Language l : CollectionUtil.iteratorAsIterable(myCloneModelProperties.languages())) {
+    for (jetbrains.mps.projectLanguage.structure.Language l : myCloneModelProperties.getLanguages()) {
       String name = l.getName();
       assert name != null;
       Language language = getOperationContext().getScope().getLanguage(name);
       assert language != null;
-      SModel.addLanguage(language);
+      model.addLanguage(language);
     }
-
+    
     CloneModelUtil.cloneModel(mySModel, modelDescriptor.getSModel(), getScope());
 
     MPSProject project = myIde.getProject();

@@ -878,16 +878,31 @@ public class SModel implements Iterable<SNode> {
     myUID = newModelUID;
   }
 
-  public void addLanguageEngagedOnGeneration(String languageNamespace) {
+  public void addEngagedOnGenerationLanguage(String languageNamespace) {
     if (!myLanguagesEngagedOnGeneration.contains(languageNamespace)) {
       myLanguagesEngagedOnGeneration.add(languageNamespace);
+      // don't send event but mark model as changed
+      if (!isLoading()) {
+        SModelRepository.getInstance().markChanged(this, true);
+      }
+    }
+  }
+
+  public void removeEngagedOnGenerationLanguage(String languageNamespace) {
+    if (myLanguagesEngagedOnGeneration.contains(languageNamespace)) {
+      myLanguagesEngagedOnGeneration.remove(languageNamespace);
+      // don't send event but mark model as changed
+      if (!isLoading()) {
+        SModelRepository.getInstance().markChanged(this, true);
+      }
     }
   }
 
   @NotNull
-  public List<String> getLanguageEngagedOnGeneration() {
+  public List<String> getEngagedOnGenerationLanguages() {
     return new ArrayList<String>(myLanguagesEngagedOnGeneration);
   }
+
 
   /*package*/
   static class ImportElement {

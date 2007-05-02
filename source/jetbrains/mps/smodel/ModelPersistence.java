@@ -177,7 +177,7 @@ public class ModelPersistence {
     for (Object languageEOG : languagesEOG) {
       Element element = (Element) languageEOG;
       String languageNamespace = element.getAttributeValue(NAMESPACE);
-      model.addLanguageEngagedOnGeneration(languageNamespace);
+      model.addEngagedOnGenerationLanguage(languageNamespace);
     }
 
     //devkits
@@ -426,7 +426,7 @@ public class ModelPersistence {
     }
 
     // languages engaged on generation
-    for (String languageNamespace : sourceModel.getLanguageEngagedOnGeneration()) {
+    for (String languageNamespace : sourceModel.getEngagedOnGenerationLanguages()) {
       Element languageElem = new Element(LANGUAGE_ENGAGED_ON_GENERATION);
       languageElem.setAttribute(NAMESPACE, languageNamespace);
       rootElement.addContent(languageElem);
