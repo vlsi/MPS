@@ -89,8 +89,8 @@ public class GenerationPartitioningUtil {
   }
 
 
-  public static List<Language> getUsedLanguages(SModel model, boolean excludeTLBase, IScope scope) {
-    Set<String> namespaces = new HashSet<String>();
+  private static List<Language> getUsedLanguages(SModel model, boolean excludeTLBase, IScope scope) {
+    Set<String> namespaces = new HashSet<String>(model.getEngagedOnGenerationLanguages());
     for (SNode root : model.getRoots()) {
       collectLanguageNamespaces(root, namespaces, excludeTLBase);
     }
@@ -107,7 +107,7 @@ public class GenerationPartitioningUtil {
   }
 
   public static List<String> getUsedLanguageNamespaces(SModel model, boolean excludeTLBase) {
-    Set<String> namespaces = new HashSet<String>();
+    Set<String> namespaces = new HashSet<String>(model.getEngagedOnGenerationLanguages());
     for (SNode root : model.getRoots()) {
       collectLanguageNamespaces(root, namespaces, excludeTLBase);
     }
