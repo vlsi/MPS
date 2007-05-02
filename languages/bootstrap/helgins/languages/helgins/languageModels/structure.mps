@@ -558,5 +558,13 @@
       <link role="target" targetNodeId="2.1068580123136" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1178114971860">
+    <property name="name" value="CheckedTypeOfExpression" />
+    <link role="extends" targetNodeId="1174657487114" resolveInfo="TypeOfExpression" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1178114992049">
+      <property name="value" value="CHECK_TYPEOF" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
 </model>
 

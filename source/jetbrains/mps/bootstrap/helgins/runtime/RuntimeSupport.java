@@ -87,6 +87,11 @@ public class RuntimeSupport {
     myTypeChecker.checkTypesForNodeAndSolveInequations(node);
   }
 
+  public SNode checkedTypeOf(SNode node) {
+    check(node);
+    return typeOf(node);
+  }
+
   public SNode coerce(SNode subtype, IMatchingPattern pattern) {
     return myTypeChecker.getSubtypingManager().coerceSubtyping(subtype, pattern);
   }

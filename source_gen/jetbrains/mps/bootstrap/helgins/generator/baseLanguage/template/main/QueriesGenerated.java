@@ -725,4 +725,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1177667721520(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "ifFalseStatement", true);
   }
+  public static SNode sourceNodeQuery_1178115389345(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "term", true);
+  }
 }
