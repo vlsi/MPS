@@ -5,6 +5,7 @@ import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.event.SModelCommandListener;
@@ -97,7 +98,7 @@ public class SModelRepository extends SModelAdapter {
   private void someModelChangedInCommand(List<SModelEvent> events) {
     if (events.size() == 0) return;
     SModelDescriptor model = events.get(0).getModel().getModelDescriptor();
-    for (String language : model.getSModel().getLanguageNamespaces()) {
+    for (String language : model.getSModel().getLanguageNamespaces(GlobalScope.getInstance())) {
       List<SModelCommandListener> listeners = myCommandListeners.get(language);
       if (listeners != null) {
         for (SModelCommandListener l : listeners) {

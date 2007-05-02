@@ -5,6 +5,7 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.GlobalScope;
 
 import java.util.*;
 import java.awt.event.KeyEvent;
@@ -65,7 +66,7 @@ public class KeyMapUtil {
     SNode node = editorContext.getNodeEditorComponent().getEditedNode();
     if (node != null) {
       SModel model = node.getModel();
-      for (String namespace : model.getLanguageNamespaces()) {
+      for (String namespace : model.getLanguageNamespaces(GlobalScope.getInstance())) {
         List<EditorCellKeyMap> keyMapsForNamespace = LanguagesKeymapManager.getInstance().getKeyMapsForLanguage(namespace);
         if (keyMapsForNamespace != null) {
           for (EditorCellKeyMap keymap : keyMapsForNamespace) {

@@ -8,6 +8,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.GlobalScope;
 
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
@@ -343,7 +344,7 @@ public class CopyPasteUtil {
 
   @Hack
   public static boolean canReceiveText(SModel model) {
-    return (model.getLanguageNamespaces().contains("jetbrains.textLanguage")
-            || model.getLanguageNamespaces().contains("jetbrains.mpswiki"));
+    return (model.getLanguageNamespaces(GlobalScope.getInstance()).contains("jetbrains.textLanguage")
+            || model.getLanguageNamespaces(GlobalScope.getInstance()).contains("jetbrains.mpswiki"));
   }
 }

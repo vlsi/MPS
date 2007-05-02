@@ -1,5 +1,7 @@
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.ide.command.CommandEvent;
 import jetbrains.mps.ide.command.CommandProcessor;
@@ -8,16 +10,14 @@ import jetbrains.mps.ide.command.undo.IUndoableAction;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.languageLog.ModelLogger;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.ForDebug;
-import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -329,7 +329,7 @@ public class SModel implements Iterable<SNode> {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
       sModelListener.childAdded(new SModelChildEvent(this, true, parent, role, childIndex, child));
-    }                                                                 
+    }
   }
 
   void fireChildRemovedEvent(@NotNull SNode parent,
@@ -406,7 +406,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public boolean hasLanguage(@NotNull String languageNamespace) {
-    for (String languageNamespase : getLanguageNamespaces()) {
+    for (String languageNamespase : getLanguageNamespaces(GlobalScope.getInstance())) {
       if (languageNamespase.equals(languageNamespace)) return true;
     }
     return false;
@@ -429,7 +429,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void deleteAllLanguages() {
-    ArrayList <String> languages = new ArrayList<String>(myLanguages);
+    ArrayList<String> languages = new ArrayList<String>(myLanguages);
     for (String language : languages) {
       deleteLanguage(language);
     }
@@ -503,18 +503,6 @@ public class SModel implements Iterable<SNode> {
       }
     }
     return result;
-  }
-
-
-  /**
-   * @deprecated
-   * If you want to get all explicitly imported languagese getExplicitlyImportedLanguages()
-   * If you want to get all imported languages use the method with the same name but with
-   * IScope parameter
-   */
-  @NotNull
-  public List<String> getLanguageNamespaces() {
-    return getLanguageNamespaces(GlobalScope.getInstance());
   }
 
   @NotNull
@@ -670,7 +658,7 @@ public class SModel implements Iterable<SNode> {
         list.add(importedModel);
       }
     }
-    
+
     return list;
   }
 
@@ -1068,7 +1056,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public List<INodeAdapter> allAdapters(Condition<INodeAdapter> condition) {
-    return allAdapters(INodeAdapter.class,  condition);
+    return allAdapters(INodeAdapter.class, condition);
   }
 
   public <E extends INodeAdapter> List<E> allAdapters(final Class<E> cls, Condition<E> condition) {
@@ -1082,7 +1070,6 @@ public class SModel implements Iterable<SNode> {
     }
     return result;
   }
-
 
 
   public <SN extends INodeAdapter> List<SN> allAdaptersIncludingImported(IScope scope, final Class<SN> snodeClass) {
