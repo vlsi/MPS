@@ -4,9 +4,9 @@ package jetbrains.mps.bootstrap.constraintsLanguage.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -14,21 +14,26 @@ import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class typeof_ThisNodeExpression_InferenceRule implements InferenceRule_Runtime {
+public class typeof_ConstraintFunctionParameter_referenceNode_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_ThisNodeExpression_InferenceRule() {
+  public  typeof_ConstraintFunctionParameter_referenceNode_InferenceRule() {
   }
 
   public void applyRule(SNode argument) {
-    SNode behaviour = SNodeOperations.getAncestor(argument, "jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior", true, false);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_10().createNode(SLinkOperations.getTarget(behaviour, "concept", false)), argument);
+    Object applicableConcept = SLinkOperations.getTarget(SNodeOperations.getAncestor(argument, "jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint", false, false), "applicableConcept", false);
+    if((applicableConcept == null)) {
+      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_4().createNode(), argument);
+    } else 
+    {
+      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_5().createNode(applicableConcept), argument);
+    }
   }
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression";
+    return "jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_referenceNode";
   }
   public ApplicableNodeCondition getNodeCondition() {
     SModel model = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.bootstrap.constraintsLanguage.helgins")).getSModel();
-    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1178176661261"));
+    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1178176661254"));
   }
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());

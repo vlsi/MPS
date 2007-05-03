@@ -376,8 +376,8 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177670533743">
     <property name="name" value="ConceptBehavior" />
-    <property name="package" value="Behavior" />
     <property name="rootable" value="true" />
+    <property name="package" value="Behavior" />
     <link role="extends" targetNodeId="1.1133920641626" />
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1177670964896">
       <link role="intfc" targetNodeId="1.1169194658468" />
@@ -391,6 +391,12 @@
       <property name="sourceCardinality" value="1" />
       <property name="role" value="constructor" />
       <link role="target" targetNodeId="1177671617671" resolveInfo="Constructor" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1178177353916">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="properties" />
+      <link role="target" targetNodeId="1147467115080" resolveInfo="NodePropertyConstraint" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177676340319">
       <property name="metaClass" value="aggregation" />

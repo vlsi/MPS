@@ -14,6 +14,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 
 public class ConceptBehavior extends BaseConcept implements INamedConcept {
   public static String CONSTRUCTOR = "constructor";
+  public static String PROPERTIES = "properties";
   public static String METHOD = "method";
   public static String NAME = "name";
   public static String CONCEPT = "concept";
@@ -34,6 +35,21 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept {
   }
   public void setConstructor(ConceptConstructorDeclaration node) {
     super.setChild(ConceptBehavior.CONSTRUCTOR, node);
+  }
+  public int getPropertiesesCount() {
+    return this.getChildCount(ConceptBehavior.PROPERTIES);
+  }
+  public Iterator<NodePropertyConstraint> propertieses() {
+    return this.children(ConceptBehavior.PROPERTIES);
+  }
+  public List<NodePropertyConstraint> getPropertieses() {
+    return this.getChildren(ConceptBehavior.PROPERTIES);
+  }
+  public void addProperties(NodePropertyConstraint node) {
+    this.addChild(ConceptBehavior.PROPERTIES, node);
+  }
+  public void insertProperties(NodePropertyConstraint prev, NodePropertyConstraint node) {
+    this.insertChild(prev, ConceptBehavior.PROPERTIES, node);
   }
   public int getMethodsCount() {
     return this.getChildCount(ConceptBehavior.METHOD);
