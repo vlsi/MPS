@@ -34,6 +34,12 @@ public class RulesUtil {
       TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to concept");
     }
   }
+  public static void checkAppliedTo_SModel(SNode op) {
+    SNode type = RulesUtil.typeOf_leftExpression(op);
+    if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(type, new QuotationClass_4().createNode()))) {
+      TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to model");
+    }
+  }
   public static boolean checkAppliedTo_LinkListAccess_aggregation(SNode op) {
     SNode leftExpression = RulesUtil.leftExpression(op);
     if(SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
@@ -71,6 +77,15 @@ public class RulesUtil {
     TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to aggregation-link-access");
     return false;
   }
+  public static boolean checkAppliedTo_LinkAccess(SNode op) {
+    SNode leftExpression = RulesUtil.leftExpression(op);
+    if(SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
+      SNode leftOp = SLinkOperations.getTarget(leftExpression, "nodeOperation", true);
+      return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOp), "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess");
+    }
+    TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to link-access");
+    return false;
+  }
   public static boolean checkAssignableConcept(SNode fromConcept, SNode toConcept, SNode nodeToReportError, String errorTextPrefix) {
     if(fromConcept == null || toConcept == null) {
       return false;
@@ -100,7 +115,7 @@ public class RulesUtil {
   }
   public static SNode get_typeOfTarget_from_LinkOrLinkListAccess(SNode expression) {
     SNode targetConcept = RulesUtil.get_targetConcept_from_LinkOrLinkListAccess(expression);
-    SNode targetType = new QuotationClass_4().createNode();
+    SNode targetType = new QuotationClass_5().createNode();
     SLinkOperations.setTarget(targetType, "concept", targetConcept, false);
     return targetType;
   }

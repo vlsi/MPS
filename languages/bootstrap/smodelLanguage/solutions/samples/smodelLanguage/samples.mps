@@ -2984,9 +2984,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1171321770453">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1171321770454">
             <property name="name" value="roots1" />
-            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1171321770456">
-              <link role="elementConcept" targetNodeId="6.1133920641626" />
-            </node>
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1171321770456" />
             <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1171316178370">
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Model_RootsOperation" id="1171316180295" />
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1171316177134">
@@ -3074,7 +3072,9 @@
             </node>
             <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Model_RootsIncludingImportedOperation" id="1177021470467">
               <link role="concept" targetNodeId="1.1068580123159" />
-              <node role="scope" type="jetbrains.mps.baseLanguage.NullLiteral" id="1177024917700" />
+              <node role="scope" type="jetbrains.mps.baseLanguage.StringLiteral" id="1178232299913">
+                <property name="value" value="aaa" />
+              </node>
             </node>
           </node>
         </node>
@@ -3091,9 +3091,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1171324292577">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1171324292578">
             <property name="name" value="nodes1" />
-            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1171324292580">
-              <link role="elementConcept" targetNodeId="6.1133920641626" />
-            </node>
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1171324292580" />
             <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1171324283588">
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Model_NodesOperation" id="1171324285294" />
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1171324281040">
