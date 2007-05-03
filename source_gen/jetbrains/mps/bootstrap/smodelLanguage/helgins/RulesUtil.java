@@ -34,7 +34,7 @@ public class RulesUtil {
       TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to concept");
     }
   }
-  public static boolean checkAppliedTo_SLinkListAccess_aggregation(SNode op) {
+  public static boolean checkAppliedTo_LinkListAccess_aggregation(SNode op) {
     SNode leftExpression = RulesUtil.leftExpression(op);
     if(SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
       SNode leftOp = SLinkOperations.getTarget(leftExpression, "nodeOperation", true);
@@ -46,6 +46,29 @@ public class RulesUtil {
       }
     }
     TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to aggregation-link-list-access");
+    return false;
+  }
+  public static boolean checkAppliedTo_LinkListAccess(SNode op) {
+    SNode leftExpression = RulesUtil.leftExpression(op);
+    if(SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
+      SNode leftOp = SLinkOperations.getTarget(leftExpression, "nodeOperation", true);
+      return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOp), "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess");
+    }
+    TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to link-list-access");
+    return false;
+  }
+  public static boolean checkAppliedTo_LinkAccess_aggregation(SNode op) {
+    SNode leftExpression = RulesUtil.leftExpression(op);
+    if(SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
+      SNode leftOp = SLinkOperations.getTarget(leftExpression, "nodeOperation", true);
+      if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOp), "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess")) {
+        SNode link = SLinkOperations.getTarget(leftOp, "link", false);
+        if(SPropertyOperations.hasValue(link, "metaClass", "aggregation", null)) {
+          return true;
+        }
+      }
+    }
+    TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to aggregation-link-access");
     return false;
   }
   public static boolean checkAssignableConcept(SNode fromConcept, SNode toConcept, SNode nodeToReportError, String errorTextPrefix) {
@@ -60,7 +83,7 @@ public class RulesUtil {
     }
     return true;
   }
-  public static SNode get_targetConcept_from_LinkAccess(SNode expression) {
+  public static SNode get_targetConcept_from_LinkOrLinkListAccess(SNode expression) {
     // todo: just compute type of the expression
     // now: the expression is expected to be SNodeOperationExpression with Link/LinkList access operation
     if(!(SNodeOperations.isInstanceOf(expression, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression"))) {
@@ -75,8 +98,8 @@ public class RulesUtil {
     }
     return null;
   }
-  public static SNode get_typeOfTarget_from_LinkAccess(SNode expression) {
-    SNode targetConcept = RulesUtil.get_targetConcept_from_LinkAccess(expression);
+  public static SNode get_typeOfTarget_from_LinkOrLinkListAccess(SNode expression) {
+    SNode targetConcept = RulesUtil.get_targetConcept_from_LinkOrLinkListAccess(expression);
     SNode targetType = new QuotationClass_4().createNode();
     SLinkOperations.setTarget(targetType, "concept", targetConcept, false);
     return targetType;

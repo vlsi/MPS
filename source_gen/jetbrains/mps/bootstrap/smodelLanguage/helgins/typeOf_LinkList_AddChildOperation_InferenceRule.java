@@ -19,14 +19,14 @@ public class typeOf_LinkList_AddChildOperation_InferenceRule implements Inferenc
   }
 
   public void applyRule(SNode argument) {
-    if(RulesUtil.checkAppliedTo_SLinkListAccess_aggregation(argument)) {
+    if(RulesUtil.checkAppliedTo_LinkListAccess_aggregation(argument)) {
       SNode parameter = SLinkOperations.getTarget(argument, "parameter", true);
       if((parameter != null)) {
         SNode parmType = TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(parameter);
         if(!((parmType != null))) {
           TypeChecker.getInstance().reportTypeError(parameter, "no type");
         }
-        SNode expectedType = RulesUtil.get_typeOfTarget_from_LinkAccess(RulesUtil.leftExpression(argument));
+        SNode expectedType = RulesUtil.get_typeOfTarget_from_LinkOrLinkListAccess(RulesUtil.leftExpression(argument));
         if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(parmType, expectedType))) {
           TypeChecker.getInstance().reportTypeError(parameter, "incompatible type\nexpected: " + expectedType + "\nwas: " + parmType);
         }
