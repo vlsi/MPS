@@ -11,11 +11,13 @@
   <import index="5" modelUID="java.util@java_stub" />
   <import index="6" modelUID="jetbrains.mps.smodel.search@java_stub" />
   <import index="8" modelUID="jetbrains.mps.smodel@java_stub" />
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraintSet" id="1149011699843">
-    <property name="name" value="ACTL_reference" />
-    <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1158791522696">
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1178192141332">
+    <link role="concept" targetNodeId="1.1158700725281" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1178192141333">
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178192141334" />
+    </node>
+    <node role="references" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1158791522696">
       <property name="searchScopeDescription" value="concepts from this language" />
-      <link role="applicableConcept" targetNodeId="1.1158700725281" />
       <link role="applicableLink" targetNodeId="1.1158700943156" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Factory" id="1158791522697">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1158791522698">

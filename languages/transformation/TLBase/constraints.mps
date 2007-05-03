@@ -7,10 +7,12 @@
   <maxImportIndex value="2" />
   <import index="1" modelUID="jetbrains.mps.transformation.TLBase.structure" />
   <import index="2" modelUID="jetbrains.mps.transformation.TLBase.constraints@java_stub" />
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraintSet" id="1149121320241">
-    <property name="name" value="TL_reference" />
-    <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1149121363367">
-      <link role="applicableConcept" targetNodeId="1.1095416572297" />
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1178192141140">
+    <link role="concept" targetNodeId="1.1095416572297" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1178192141141">
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178192141142" />
+    </node>
+    <node role="references" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1149121363367">
       <link role="applicableLink" targetNodeId="1.1095417265990" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Factory" id="1149121363368">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1149121363369">
@@ -24,8 +26,13 @@
         </node>
       </node>
     </node>
-    <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1167515244838">
-      <link role="applicableConcept" targetNodeId="1.1167514355419" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1178192141231">
+    <link role="concept" targetNodeId="1.1167514355419" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1178192141232">
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178192141233" />
+    </node>
+    <node role="references" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1167515244838">
       <link role="applicableLink" targetNodeId="1.1167514355421" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Factory" id="1167515244839">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1167515244840">
@@ -39,8 +46,13 @@
         </node>
       </node>
     </node>
-    <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1167087940296">
-      <link role="applicableConcept" targetNodeId="1.1167087469898" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1178192141381">
+    <link role="concept" targetNodeId="1.1167087469898" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1178192141382">
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178192141383" />
+    </node>
+    <node role="references" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1167087940296">
       <link role="applicableLink" targetNodeId="1.1167087469901" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Factory" id="1167087940297">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1167087940298">
