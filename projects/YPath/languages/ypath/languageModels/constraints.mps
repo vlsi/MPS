@@ -9,8 +9,13 @@
   <import index="2" modelUID="jetbrains.mps.core.structure" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraintSet" id="1177410533938">
     <property name="name" value="name_TreePathType" />
-    <node role="nodePropertyConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraint" id="1177410539875">
-      <link role="applicableConcept" targetNodeId="1.1168428529658" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1178187486791">
+    <link role="concept" targetNodeId="1.1168428529658" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1178187486792">
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178187486793" />
+    </node>
+    <node role="properties" type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraint" id="1177410539875">
       <link role="applicableProperty" targetNodeId="2.1169194664001" />
       <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_PropertyGetter" id="1177410564083">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177410564084">
