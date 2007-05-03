@@ -404,6 +404,11 @@
       <property name="role" value="references" />
       <link role="target" targetNodeId="1148687176410" resolveInfo="NodeReferentConstraint" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1178194446271">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="defaultScope" />
+      <link role="target" targetNodeId="1159285995602" resolveInfo="NodeDefaultSearchScope" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177676340319">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="0..n" />

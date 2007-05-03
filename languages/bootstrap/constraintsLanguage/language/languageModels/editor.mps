@@ -956,6 +956,25 @@
             </node>
           </node>
         </node>
+        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1178194465640">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178194465641">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1178194468108">
+              <node role="expression" type="jetbrains.mps.baseLanguage.NotExpression" id="1178194490539">
+                <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178194490540">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178194490541">
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_node" id="1178194490542" />
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetContainingRootOperation" id="1178194490543" />
+                  </node>
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1178194490544">
+                    <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.RefConcept_Reference" id="1178194490545">
+                      <link role="conceptDeclaration" targetNodeId="1.1177670533743" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1159289834201">
         <property name="drawBorder" value="false" />
@@ -1206,6 +1225,17 @@
             <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1178190835146">
               <property name="text" value="&lt;&lt;concept references&gt;&gt;" />
             </node>
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1178194517766">
+            <property name="selectable" value="false" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1178194519033">
+            <property name="textFgColor" value="DARK_BLUE" />
+            <property name="text" value="default scope" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1178194523271">
+            <property name="noTargetText" value="&lt;no default scope&gt;" />
+            <link role="relationDeclaration" targetNodeId="1.1178194446271" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1178177376004">
             <property name="selectable" value="false" />
