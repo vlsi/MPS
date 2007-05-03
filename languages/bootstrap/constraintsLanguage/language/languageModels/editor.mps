@@ -1577,6 +1577,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1177678231842">
         <property name="noTargetText" value="&lt;no method&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1177677685711" />
+        <link role="actionMap" targetNodeId="1178178780611" resolveInfo="ConceptMethodCall_ActionMap" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1177678231843">
           <link role="conceptDeclaration" targetNodeId="1.1177673300966" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1177678236001">
@@ -1588,6 +1589,31 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1177678214091">
         <property name="drawBorder" value="false" />
         <link role="editorComponent" targetNodeId="11.1173990860683" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.CellActionMapDeclaration" id="1178178780611">
+    <property name="name" value="ConceptMethodCall_ActionMap" />
+    <property name="package" value="Behaviour" />
+    <link role="applicableConcept" targetNodeId="1.1177677612101" />
+    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMapItem" id="1178178794474">
+      <property name="actionId" value="delete_action_id" />
+      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_ExecuteFunction" id="1178178794475">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178178794476">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1178178800247">
+            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178178802179">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_FunctionParm_selectedNode" id="1178178800248" />
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_ReplaceWithAnotherOperation" id="1178178803695">
+                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178178807186">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_FunctionParm_selectedNode" id="1178178805358" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1178178809795">
+                    <link role="link" targetNodeId="1.1177677641911" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
