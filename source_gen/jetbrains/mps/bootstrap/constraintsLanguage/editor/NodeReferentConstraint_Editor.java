@@ -5,6 +5,7 @@ package jetbrains.mps.bootstrap.constraintsLanguage.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -22,6 +23,12 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 
 public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
 
+  public static boolean _QueryFunction_NodeCondition_1178190908950(SNode node, IScope scope) {
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(node), "jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior"));
+  }
+  public static boolean _QueryFunction_NodeCondition_1178190939522(SNode node, IScope scope) {
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(node), "jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior"));
+  }
   public static boolean _QueryFunction_NodeCondition_1167949001319(SNode node, IScope scope) {
     return SLinkOperations.getTarget(node, "searchScopeFactory", true) != null;
   }
@@ -59,8 +66,12 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell(context, node, "link"));
     editorCell.addEditorCell(this.createConstantCell1(context, node, "{"));
-    editorCell.addEditorCell(this.createApplicableConceptReferenceCell(context, node));
-    editorCell.addEditorCell(this.createConstantCell2(context, node, ":"));
+    if(NodeReferentConstraint_Editor._QueryFunction_NodeCondition_1178190908950(node, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createApplicableConceptReferenceCell(context, node));
+    }
+    if(NodeReferentConstraint_Editor._QueryFunction_NodeCondition_1178190939522(node, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstantCell2(context, node, ":"));
+    }
     editorCell.addEditorCell(this.createApplicableLinkReferenceCell(context, node));
     editorCell.addEditorCell(this.createConstantCell3(context, node, "}"));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1148929633721");
@@ -218,6 +229,7 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1148929648238");
     editorCell.setLayoutConstraint("");
     return editorCell;
@@ -280,6 +292,7 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1167949001312");
     editorCell.setLayoutConstraint("");
     return editorCell;
@@ -304,6 +317,7 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1167949001316");
     editorCell.setLayoutConstraint("");
     return editorCell;
@@ -340,6 +354,7 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1167948880548");
     editorCell.setLayoutConstraint("");
     return editorCell;
@@ -364,6 +379,7 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1167948880560");
     editorCell.setLayoutConstraint("");
     return editorCell;

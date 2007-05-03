@@ -22,6 +22,7 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 public class ConceptBehavior_Editor extends DefaultNodeEditor {
 
   public AbstractCellListHandler myPropertiesListHandler_propertiesList_;
+  public AbstractCellListHandler myReferencesListHandler_referencesList_;
   public AbstractCellListHandler myMethodListHandler_methodList_;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
@@ -56,6 +57,8 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell3(context, node, ""));
     editorCell.addEditorCell(this.createPropertiesList(context, node));
     editorCell.addEditorCell(this.createConstantCell5(context, node, ""));
+    editorCell.addEditorCell(this.createReferencesList(context, node));
+    editorCell.addEditorCell(this.createConstantCell7(context, node, ""));
     editorCell.addEditorCell(this.createMethodList(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177670628052");
     editorCell.setLayoutConstraint("");
@@ -87,7 +90,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRowCell(context, node));
     editorCell.addEditorCell(this.createRowCell1(context, node));
-    editorCell.addEditorCell(this.createConstantCell7(context, node, "}"));
+    editorCell.addEditorCell(this.createConstantCell9(context, node, "}"));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177670598279");
     editorCell.setLayoutConstraint("");
     return editorCell;
@@ -149,11 +152,23 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178177376004");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178190807854");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell7(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178177376004");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createConstantCell9(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -178,6 +193,22 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.putUserObject(EditorCell.ROLE, this.myPropertiesListHandler_propertiesList_.getElementRole());
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createReferencesList(EditorContext context, SNode node) {
+    if(this.myReferencesListHandler_referencesList_ == null) {
+      this.myReferencesListHandler_referencesList_ = new ConceptBehavior_Editor_ReferencesListHandler_referencesList_(node, "references", context);
+    }
+    EditorCell_Collection editorCell = this.myReferencesListHandler_referencesList_.createCells(context, new CellLayout_Vertical(), false);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+    editorCell.setGridLayout(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.putUserObject(EditorCell.ROLE, this.myReferencesListHandler_referencesList_.getElementRole());
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
