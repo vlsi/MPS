@@ -15,9 +15,6 @@
   <import index="8" modelUID="jetbrains.mps.ide@java_stub" />
   <import index="9" modelUID="jetbrains.mps.smodel.constraints@java_stub" />
   <import index="10" modelUID="jetbrains.mps.bootstrap.editorLanguage.constraints@java_stub" />
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraintSet" id="1147473568712">
-    <property name="name" value="EDTL_property" />
-  </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraintSet" id="1148925938735">
     <property name="name" value="EDTL_reference" />
     <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1148937952591">

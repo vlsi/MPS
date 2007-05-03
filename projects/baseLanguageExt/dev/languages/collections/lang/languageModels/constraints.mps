@@ -72,9 +72,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraintSet" id="1174067458668">
-    <property name="name" value="BLC_typeNames" />
-  </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1174067603069">
     <property name="name" value="QueriesUtil" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1174067612898">

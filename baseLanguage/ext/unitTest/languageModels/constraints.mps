@@ -8,9 +8,6 @@
   <import index="1" modelUID="jetbrains.mps.baseLanguage.unitTest.structure" />
   <import index="2" modelUID="jetbrains.mps.core.structure" />
   <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" />
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraintSet" id="1171931968233">
-    <property name="name" value="unitTest_property" />
-  </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1178187486782">
     <link role="concept" targetNodeId="1.1171931690126" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1178187486783">

@@ -19,9 +19,6 @@
   <import index="13" modelUID="java.lang@java_stub" />
   <import index="23" modelUID="jetbrains.mps.baseLanguage.structure@java_stub" />
   <import index="25" modelUID="jetbrains.mps.baseLanguage.constraints" />
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraintSet" id="1147487178789">
-    <property name="name" value="BL_property" />
-  </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraintSet" id="1149122036826">
     <property name="name" value="BL_reference" />
     <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1149122067639">

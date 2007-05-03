@@ -7,9 +7,6 @@
   <maxImportIndex value="2" />
   <import index="1" modelUID="jetbrains.mps.ide.scriptLanguage.structure" />
   <import index="2" modelUID="jetbrains.mps.core.structure" />
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraintSet" id="1172274006147">
-    <property name="name" value="scriptLanguage_property" />
-  </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1178181704894">
     <link role="concept" targetNodeId="1.1172272794406" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1178181704895">
