@@ -180,6 +180,7 @@
         <property name="drawBorder" value="false" />
         <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1172234350118">
           <property name="drawBorder" value="false" />
+          <property name="attractsFocus" value="1" />
           <property name="text" value="&lt;&lt;" />
         </node>
         <node role="alternationCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1172234185083">
@@ -228,6 +229,7 @@
           </node>
           <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1172234381976">
             <property name="drawBorder" value="false" />
+            <property name="attractsFocus" value="1" />
             <property name="text" value="&gt;" />
           </node>
           <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Alternation" id="1172234197010">
@@ -255,6 +257,7 @@
             </node>
             <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1172234412771">
               <property name="drawBorder" value="false" />
+              <property name="attractsFocus" value="1" />
               <property name="text" value="&gt;&gt;" />
             </node>
             <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Alternation" id="1172234200400">
@@ -282,6 +285,7 @@
               </node>
               <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1172234496855">
                 <property name="drawBorder" value="false" />
+                <property name="attractsFocus" value="1" />
                 <property name="text" value="v" />
               </node>
               <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Alternation" id="1172234202202">
@@ -309,6 +313,7 @@
                 </node>
                 <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1172234540338">
                   <property name="drawBorder" value="false" />
+                  <property name="attractsFocus" value="1" />
                   <property name="text" value="^" />
                 </node>
                 <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Alternation" id="1172234204414">
@@ -336,6 +341,7 @@
                   </node>
                   <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1172234569266">
                     <property name="drawBorder" value="false" />
+                    <property name="attractsFocus" value="1" />
                     <property name="text" value="^=" />
                   </node>
                   <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Alternation" id="1172234578988">
@@ -363,6 +369,7 @@
                     </node>
                     <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1172234598644">
                       <property name="drawBorder" value="false" />
+                      <property name="attractsFocus" value="1" />
                       <property name="text" value="&lt;&lt;=" />
                     </node>
                     <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Alternation" id="1172234633983">
@@ -390,6 +397,7 @@
                       </node>
                       <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1172234657854">
                         <property name="drawBorder" value="false" />
+                        <property name="attractsFocus" value="1" />
                         <property name="text" value="&gt;&gt;=" />
                       </node>
                       <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Alternation" id="1172234666148">
@@ -417,6 +425,7 @@
                         </node>
                         <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1172234692026">
                           <property name="drawBorder" value="false" />
+                          <property name="attractsFocus" value="1" />
                           <property name="text" value="v=" />
                         </node>
                         <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1172234701990">
@@ -731,6 +740,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Alternation" id="1175165292597">
         <property name="vertical" value="true" />
         <property name="drawBorder" value="false" />
+        <property name="attractsFocus" value="1" />
         <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1175165335007">
           <property name="drawBorder" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1175165339571">
@@ -770,6 +780,7 @@
         <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1175166625464">
           <property name="selectable" value="false" />
           <property name="drawBorder" value="false" />
+          <property name="attractsFocus" value="0" />
           <link role="relationDeclaration" targetNodeId="1.1175165403535" />
         </node>
       </node>
@@ -777,6 +788,7 @@
         <property name="rightTransformAnchorTag" value="default_RTransform" />
         <property name="drawBorder" value="false" />
         <property name="text" value="]" />
+        <property name="attractsFocus" value="0" />
       </node>
     </node>
   </node>
@@ -835,6 +847,7 @@
         <property name="rightTransformAnchorTag" value="default_RTransform" />
         <property name="drawBorder" value="false" />
         <property name="noTargetText" value="kind?" />
+        <property name="attractsFocus" value="2" />
         <link role="relationDeclaration" targetNodeId="1.1175167444487" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1175256342831">
           <link role="conceptDeclaration" targetNodeId="1.1172240563057" />
@@ -868,8 +881,8 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1175169875861">
         <property name="drawBorder" value="false" />
-        <property name="attractsFocus" value="1" />
         <property name="noTargetText" value="property?" />
+        <property name="attractsFocus" value="1" />
         <link role="relationDeclaration" targetNodeId="1.1175169795791" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1175169875862">
           <link role="conceptDeclaration" targetNodeId="1.1175160940972" />
@@ -994,11 +1007,11 @@
       <property name="drawBorder" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1175879269465">
         <property name="drawBorder" value="false" />
-        <property name="selectable" value="false" />
         <property name="text" value="[[" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1175879269472">
         <property name="drawBorder" value="false" />
+        <property name="attractsFocus" value="1" />
         <link role="relationDeclaration" targetNodeId="1.1175170018451" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1175879269473">

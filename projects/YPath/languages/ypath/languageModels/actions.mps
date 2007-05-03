@@ -143,7 +143,7 @@
     <property name="name" value="YPath_subs" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1169037620751">
       <property name="description" value="Allow only &quot;from&quot; as the first treepath operation" />
-      <property name="actionsFactoryAspectId" value="AllowOnlyFromOperation" />
+      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1168468681335" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionFunction" id="1169038348122">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1169038348123">
@@ -214,10 +214,26 @@
           </node>
         </node>
       </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.RemoveByConditionPart" id="1178108596882">
+        <node role="condition" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_RemoveBy_Condition" id="1178108596883">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178108596884">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1178108598849">
+              <node role="expression" type="jetbrains.mps.baseLanguage.NotExpression" id="1178108600810">
+                <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178108604754">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_childConcept" id="1178184994472" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Concept_IsExactlyOperation" id="1178108606185">
+                    <link role="conceptDeclaration" targetNodeId="1.1168513806633" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1169038110957">
       <property name="description" value="Allow only &quot;iterate&quot; as the first tree traversal operation" />
-      <property name="actionsFactoryAspectId" value="AllowOnlyIterateOperation" />
+      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1168468681335" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionFunction" id="1169038722084">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1169038722085">
@@ -274,10 +290,26 @@
           </node>
         </node>
       </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.RemoveByConditionPart" id="1178108370239">
+        <node role="condition" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_RemoveBy_Condition" id="1178108370240">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178108370241">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1178108450856">
+              <node role="expression" type="jetbrains.mps.baseLanguage.NotExpression" id="1178108452746">
+                <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178108468427">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_childConcept" id="1178184988048" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Concept_IsExactlyOperation" id="1178108469924">
+                    <link role="conceptDeclaration" targetNodeId="1.1168524996431" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1169038203232">
       <property name="description" value="Disallow &quot;from&quot; as a tree traversal operations" />
-      <property name="actionsFactoryAspectId" value="DisallowFromOperation" />
+      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1168468681335" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionFunction" id="1169039090800">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1169039090801">
@@ -326,6 +358,9 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1169039176162" />
           </node>
         </node>
+      </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.RemovePart" id="1178108679087">
+        <link role="conceptToRemove" targetNodeId="1.1168513806633" />
       </node>
     </node>
   </node>
