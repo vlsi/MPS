@@ -980,6 +980,22 @@
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1178192141312">
     <link role="concept" targetNodeId="1.1159285995602" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1178193833041">
+      <property name="name" value="getReferentConcept" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178193833043">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1178193880598">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178193882939">
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1178193881194" />
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1178193884702">
+              <link role="link" targetNodeId="1.1159286114223" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1178193860760">
+        <link role="concept" targetNodeId="5.1071489090640" />
+      </node>
+    </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1178192141313">
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178192141314" />
     </node>
