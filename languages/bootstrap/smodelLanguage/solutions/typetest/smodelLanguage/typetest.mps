@@ -2442,11 +2442,8 @@
               </node>
             </node>
             <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.LinkList_AddChildOperation" id="1178214665755">
-              <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeTypeCastExpression" id="1178216057301">
-                <link role="concept" targetNodeId="6.1068431790191" />
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1178214809272">
-                  <link role="variableDeclaration" targetNodeId="1178214801417" resolveInfo="expr" />
-                </node>
+              <node role="parameter" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1178214809272">
+                <link role="variableDeclaration" targetNodeId="1178214801417" resolveInfo="expr" />
               </node>
             </node>
           </node>

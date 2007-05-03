@@ -13,32 +13,32 @@ import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class typeOf_LinkList_AddChildOperation_InferenceRule implements InferenceRule_Runtime {
+public class typeOf_LinkList_AddNewChildOperation_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeOf_LinkList_AddChildOperation_InferenceRule() {
+  public  typeOf_LinkList_AddNewChildOperation_InferenceRule() {
   }
 
   public void applyRule(SNode argument) {
+    SNode resultConcept = null;
     if(RulesUtil.checkAppliedTo_SLinkListAccess_aggregation(argument)) {
-      SNode parameter = SLinkOperations.getTarget(argument, "parameter", true);
-      if((parameter != null)) {
-        SNode parmType = TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(parameter);
-        if(!((parmType != null))) {
-          TypeChecker.getInstance().reportTypeError(parameter, "no type");
-        }
-        SNode expectedType = RulesUtil.get_typeOfTarget_from_LinkAccess(RulesUtil.leftExpression(argument));
-        if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(parmType, expectedType))) {
-          TypeChecker.getInstance().reportTypeError(parameter, "incompatible type\nexpected: " + expectedType + "\nwas: " + parmType);
-        }
+      SNode expectedConcept = RulesUtil.get_targetConcept_from_LinkAccess(RulesUtil.leftExpression(argument));
+      SNode parameterConcept = SLinkOperations.getTarget(argument, "concept", false);
+      if(parameterConcept == null) {
+        resultConcept = expectedConcept;
+      } else 
+      {
+        resultConcept = parameterConcept;
+        RulesUtil.checkAssignableConcept(parameterConcept, expectedConcept, argument, "incompatibel parameter concept");
       }
     }
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_7().createNode(resultConcept), argument);
   }
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddChildOperation";
+    return "jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddNewChildOperation";
   }
   public ApplicableNodeCondition getNodeCondition() {
     SModel model = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.bootstrap.smodelLanguage.helgins")).getSModel();
-    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1178156073878"));
+    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1178227092732"));
   }
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());

@@ -8,6 +8,8 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 
 public class RulesUtil {
 
@@ -45,6 +47,18 @@ public class RulesUtil {
     }
     TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to aggregation-link-list-access");
     return false;
+  }
+  public static boolean checkAssignableConcept(SNode fromConcept, SNode toConcept, SNode nodeToReportError, String errorTextPrefix) {
+    if(fromConcept == null || toConcept == null) {
+      return false;
+    }
+    String toConceptFqName = NameUtil.nodeFQName(toConcept);
+    String fromConcepFqName = NameUtil.nodeFQName(fromConcept);
+    if(!(SModelUtil_new.isAssignableConcept(fromConcepFqName, toConceptFqName))) {
+      TypeChecker.getInstance().reportTypeError(nodeToReportError, "" + errorTextPrefix + "\nexpected: " + toConceptFqName + "\nwas: " + fromConcepFqName);
+      return false;
+    }
+    return true;
   }
   public static SNode get_targetConcept_from_LinkAccess(SNode expression) {
     // todo: just compute type of the expression
