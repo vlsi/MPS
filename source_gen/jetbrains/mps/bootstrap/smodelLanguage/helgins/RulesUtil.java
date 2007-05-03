@@ -6,24 +6,59 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 
 public class RulesUtil {
 
-  public static SNode typeOf_leftExpression_for_SNodeOperation(SNode op) {
+  public static SNode leftExpression(SNode op) {
     SNode parent = SNodeOperations.getParent(op, null, false, false);
     if(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
-      SNode leftExpression = SLinkOperations.getTarget(parent, "leftExpression", true);
-      if((leftExpression != null)) {
-        TypeChecker.getInstance().getRuntimeSupport().check(leftExpression);
-        return TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpression);
-      }
+      return SLinkOperations.getTarget(parent, "leftExpression", true);
     }
     return null;
   }
-  public static void check_isAppliedToConcept(SNode op) {
-    SNode type = RulesUtil.typeOf_leftExpression_for_SNodeOperation(op);
+  public static SNode typeOf_leftExpression(SNode op) {
+    SNode leftExpression = RulesUtil.leftExpression(op);
+    if((leftExpression != null)) {
+      TypeChecker.getInstance().getRuntimeSupport().check(leftExpression);
+      return TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpression);
+    }
+    return null;
+  }
+  public static void checkAppliedTo_SConcept(SNode op) {
+    SNode type = RulesUtil.typeOf_leftExpression(op);
     if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(type, new QuotationClass_3().createNode()))) {
       TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to concept");
     }
+  }
+  public static boolean checkAppliedTo_SLinkListAccess_aggregation(SNode op) {
+    SNode leftExpression = RulesUtil.leftExpression(op);
+    if(SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
+      SNode leftOp = SLinkOperations.getTarget(leftExpression, "nodeOperation", true);
+      if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOp), "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess")) {
+        SNode link = SLinkOperations.getTarget(leftOp, "link", false);
+        if(SPropertyOperations.hasValue(link, "metaClass", "aggregation", null)) {
+          return true;
+        }
+      }
+    }
+    TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to aggregation-link-list-access");
+    return false;
+  }
+  public static SNode get_targetConcept_from_LinkAccessOp(SNode op) {
+    if(SNodeOperations.isInstanceOf(op, "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess")) {
+      return SLinkOperations.getTarget(SLinkOperations.getTarget(op, "link", false), "target", false);
+    }
+    if(SNodeOperations.isInstanceOf(op, "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess")) {
+      return SLinkOperations.getTarget(SLinkOperations.getTarget(op, "link", false), "target", false);
+    }
+    return null;
+  }
+  public static SNode get_typeOfTarget_from_LinkAccessOp(SNode op) {
+    SNode targetConcept = RulesUtil.get_targetConcept_from_LinkAccessOp(op);
+    SNode targetType = new QuotationClass_4().createNode();
+    SLinkOperations.setTarget(targetType, "concept", targetConcept, false);
+    return targetType;
   }
 }
