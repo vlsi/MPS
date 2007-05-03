@@ -510,7 +510,7 @@
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1178096833563">
       <property name="name" value="getParentConcepts" />
       <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1178096833564">
-        <link role="elementConcept" targetNodeId="1.1071489090640" />
+        <link role="elementConcept" targetNodeId="1.1169125787135" />
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178096833565">
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1178096833566">
@@ -536,8 +536,8 @@
                   <link role="variableDeclaration" targetNodeId="1178096833561" resolveInfo="node" />
                 </node>
                 <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1178096833577">
-                  <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.RefConcept_Reference" id="1178096833578">
-                    <link role="conceptDeclaration" targetNodeId="1.1071489090640" />
+                  <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.RefConcept_Reference" id="1178174990486">
+                    <link role="conceptDeclaration" targetNodeId="1.1169125787135" />
                   </node>
                 </node>
               </node>
@@ -549,7 +549,7 @@
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.AddElementOperation" id="1178096833583">
                       <node role="argument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeTypeCastExpression" id="1178096833584">
-                        <link role="concept" targetNodeId="1.1071489090640" />
+                        <link role="concept" targetNodeId="1.1169125787135" />
                         <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1178096833585">
                           <link role="variableDeclaration" targetNodeId="1178096833561" resolveInfo="node" />
                         </node>
@@ -642,7 +642,7 @@
           <node role="variable" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1178096836407">
             <property name="name" value="concept" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1178096836433">
-              <link role="concept" targetNodeId="1.1071489090640" />
+              <link role="concept" targetNodeId="1.1169125787135" />
             </node>
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178096836434">
@@ -804,7 +804,7 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1178096838970">
             <property name="name" value="parentConcepts" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1178096838986">
-              <link role="elementConcept" targetNodeId="1.1071489090640" />
+              <link role="elementConcept" targetNodeId="1.1169125787135" />
             </node>
             <node role="initializer" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodCall" id="1178096838987">
               <link role="baseMethodDeclaration" targetNodeId="1178096833563" resolveInfo="getParentConcepts" />
@@ -831,7 +831,7 @@
           <node role="variable" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1178096838971">
             <property name="name" value="concept" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1178096838996">
-              <link role="concept" targetNodeId="1.1071489090640" />
+              <link role="concept" targetNodeId="1.1169125787135" />
             </node>
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178096838997">
