@@ -18,7 +18,7 @@ public class typeOf_ImmediateSupertypes_InferenceRule implements InferenceRule_R
   }
 
   public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_4().createNode(), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_5().createNode(), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.helgins.structure.ImmediateSupertypesExpression";
