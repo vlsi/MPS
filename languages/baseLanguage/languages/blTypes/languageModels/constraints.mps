@@ -10,9 +10,14 @@
   <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraintSet" id="1159269116889">
     <property name="name" value="BlTypesProperty" />
-    <node role="nodePropertyConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraint" id="1159269119376">
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1178181704994">
+    <link role="concept" targetNodeId="1.1161696749760" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1178181704995">
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178181704996" />
+    </node>
+    <node role="properties" type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraint" id="1159269119376">
       <link role="applicableProperty" targetNodeId="2.1169194664001" />
-      <link role="applicableConcept" targetNodeId="1.1161696749760" />
       <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_PropertyGetter" id="1159269119377">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1159269119378">
           <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1159269119379">
