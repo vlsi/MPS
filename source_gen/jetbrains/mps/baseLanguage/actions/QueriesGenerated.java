@@ -34,9 +34,9 @@ import jetbrains.mps.baseLanguage.BaseLanguageSearchUtil_new;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
@@ -266,14 +266,7 @@ public class QueriesGenerated {
 
         public Object calculate() {
           SNode classConcept = SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-          List<SNode> result = ListOperations.createList(new SNode[]{});
-          List<SNode> alreadyVisited = ListOperations.createList(new SNode[]{});
-          while(classConcept != null && !(SequenceOperations.contains(alreadyVisited, classConcept))) {
-            ListOperations.addAllElements(result, SLinkOperations.getTargets(classConcept, "method", true));
-            ListOperations.addElement(alreadyVisited, classConcept);
-            classConcept = SLinkOperations.getTarget(SLinkOperations.getTarget(classConcept, "superclass", true), "classifier", false);
-          }
-          return result;
+          return BaseLanguageSearchUtil_new.getVisibleInstanceMethods(((ClassConcept)SNodeOperations.getAdapter(classConcept)), ((BaseConcept)SNodeOperations.getAdapter(parentNode)));
         }
       };
       Iterable<SNode> queryResult = (Iterable)calc.calculate();

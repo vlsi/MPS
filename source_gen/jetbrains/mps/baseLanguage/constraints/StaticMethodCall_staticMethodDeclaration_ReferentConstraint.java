@@ -26,7 +26,7 @@ public class StaticMethodCall_staticMethodDeclaration_ReferentConstraint impleme
     return (SLinkOperations.getTarget(referenceNode, "classConcept", false) != null);
   }
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    return ReferenceUtil.getMethodScope(SLinkOperations.getTarget(referenceNode, "classConcept", false));
+    return ReferenceUtil.getMethodScope(SLinkOperations.getTarget(referenceNode, "classConcept", false), enclosingNode);
   }
   public String getNodeReferentSearchScopeDescription() {
     return "static methods from hierarchy of specified class";

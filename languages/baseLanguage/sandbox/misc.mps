@@ -873,6 +873,12 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1178286296188">
     <property name="name" value="TestXXXX" />
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1178291097857">
+      <property name="name" value="privateMethod" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1178291097858" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178291097859" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PrivateVisibility" id="1178291133455" />
+    </node>
     <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1178286318458">
       <property name="name" value="testField" />
       <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1178286326413" />
@@ -889,6 +895,12 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1178287104140">
             <link role="baseMethodDeclaration" targetNodeId="1178287019178" resolveInfo="abcedf" />
             <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1178287024638" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1178291122827">
+          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1178291122828">
+            <link role="baseMethodDeclaration" targetNodeId="1178291097857" resolveInfo="privateMethod" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1178291122829" />
           </node>
         </node>
       </node>

@@ -26,7 +26,7 @@ public class StaticFieldReference_staticFieldDeclaration_ReferentConstraint impl
     return (SLinkOperations.getTarget(referenceNode, "classifier", false) != null);
   }
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    return ReferenceUtil.getFieldScope(SLinkOperations.getTarget(referenceNode, "classifier", false));
+    return ReferenceUtil.getFieldScope(SLinkOperations.getTarget(referenceNode, "classifier", false), enclosingNode);
   }
   public String getNodeReferentSearchScopeDescription() {
     return "static fields from hierarchy of specified class";
