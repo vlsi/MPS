@@ -38,7 +38,7 @@ public class typeOf_Link_SetTargetOperation_InferenceRule implements InferenceRu
   }
   public ApplicableNodeCondition getNodeCondition() {
     SModel model = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.bootstrap.smodelLanguage.helgins")).getSModel();
-    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1178231675828"));
+    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1178287490343"));
   }
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());

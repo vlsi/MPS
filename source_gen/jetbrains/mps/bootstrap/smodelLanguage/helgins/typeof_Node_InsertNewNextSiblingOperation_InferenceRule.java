@@ -13,32 +13,23 @@ import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class typeOf_LinkList_AddChildOperation_InferenceRule implements InferenceRule_Runtime {
+public class typeof_Node_InsertNewNextSiblingOperation_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeOf_LinkList_AddChildOperation_InferenceRule() {
+  public  typeof_Node_InsertNewNextSiblingOperation_InferenceRule() {
   }
 
   public void applyRule(SNode argument) {
-    if(RulesUtil.checkAppliedTo_LinkListAccess_aggregation(argument)) {
-      SNode parameter = SLinkOperations.getTarget(argument, "parameter", true);
-      if((parameter != null)) {
-        SNode parmType = TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(parameter);
-        if(!((parmType != null))) {
-          TypeChecker.getInstance().reportTypeError(parameter, "no type");
-        }
-        SNode expectedType = RulesUtil.get_typeOfTarget_from_LinkOrLinkListAccess(RulesUtil.leftExpression(argument));
-        if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(parmType, expectedType))) {
-          TypeChecker.getInstance().reportTypeError(parameter, "incompatible type\nexpected: " + expectedType + "\nwas: " + parmType);
-        }
-      }
+    RulesFunctions.fun_check_isAppliedTo_Node(argument);
+    if(!((SLinkOperations.getTarget(argument, "concept", false) == null))) {
+      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_25().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument);
     }
   }
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddChildOperation";
+    return "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_InsertNewNextSiblingOperation";
   }
   public ApplicableNodeCondition getNodeCondition() {
     SModel model = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.bootstrap.smodelLanguage.helgins")).getSModel();
-    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1178287490320"));
+    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1178287490237"));
   }
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());

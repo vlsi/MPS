@@ -20,15 +20,15 @@ public class typeOf_Model_RootsIncludingImportedOperation_InferenceRule implemen
 
   public void applyRule(SNode argument) {
     RulesUtil.checkAppliedTo_SModel(argument);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_16().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "scope", true)), new QuotationClass_17().createNode(), SLinkOperations.getTarget(argument, "scope", true));
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_61().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "scope", true)), new QuotationClass_62().createNode(), SLinkOperations.getTarget(argument, "scope", true));
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.Model_RootsIncludingImportedOperation";
   }
   public ApplicableNodeCondition getNodeCondition() {
     SModel model = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.bootstrap.smodelLanguage.helgins")).getSModel();
-    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1178232441088"));
+    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1178287490351"));
   }
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());

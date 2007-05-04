@@ -13,21 +13,20 @@ import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class typeOf_Model_CreateNewNodeOperation_InferenceRule implements InferenceRule_Runtime {
+public class typeof_SNodeListCreator_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeOf_Model_CreateNewNodeOperation_InferenceRule() {
+  public  typeof_SNodeListCreator_InferenceRule() {
   }
 
   public void applyRule(SNode argument) {
-    RulesUtil.checkAppliedTo_SModel(argument);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_59().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(argument, "createdType", true), argument);
   }
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.bootstrap.smodelLanguage.structure.Model_CreateNewNodeOperation";
+    return "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListCreator";
   }
   public ApplicableNodeCondition getNodeCondition() {
     SModel model = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.bootstrap.smodelLanguage.helgins")).getSModel();
-    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1178287490349"));
+    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1178287490185"));
   }
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());

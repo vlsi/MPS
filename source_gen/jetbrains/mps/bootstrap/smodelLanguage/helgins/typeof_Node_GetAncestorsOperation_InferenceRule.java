@@ -4,6 +4,7 @@ package jetbrains.mps.bootstrap.smodelLanguage.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
@@ -13,32 +14,34 @@ import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class typeOf_LinkList_AddChildOperation_InferenceRule implements InferenceRule_Runtime {
+public class typeof_Node_GetAncestorsOperation_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeOf_LinkList_AddChildOperation_InferenceRule() {
+  public  typeof_Node_GetAncestorsOperation_InferenceRule() {
   }
 
   public void applyRule(SNode argument) {
-    if(RulesUtil.checkAppliedTo_LinkListAccess_aggregation(argument)) {
-      SNode parameter = SLinkOperations.getTarget(argument, "parameter", true);
-      if((parameter != null)) {
-        SNode parmType = TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(parameter);
-        if(!((parmType != null))) {
-          TypeChecker.getInstance().reportTypeError(parameter, "no type");
+    RulesFunctions.fun_check_isAppliedTo_SLinkAccessOrNode(argument);
+    {
+      SNode parm;
+      Iterator<SNode> parm_iterator = SLinkOperations.getTargets(argument, "parameter", true).iterator();
+      while(true) {
+        if(!(parm_iterator.hasNext())) {
+          break;
         }
-        SNode expectedType = RulesUtil.get_typeOfTarget_from_LinkOrLinkListAccess(RulesUtil.leftExpression(argument));
-        if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(parmType, expectedType))) {
-          TypeChecker.getInstance().reportTypeError(parameter, "incompatible type\nexpected: " + expectedType + "\nwas: " + parmType);
+        parm = parm_iterator.next();
+        if(!((Boolean)Queries.CustomExpression_check_isApplicableOperationParameter(argument, parm))) {
+          TypeChecker.getInstance().reportTypeError(parm, "not expected here");
         }
       }
     }
+    TypeChecker.getInstance().getRuntimeSupport().givetype((SNode)Queries.CustomExpression_get_SNodeListType_forOperation_withOpeartionParameter_concept(argument), argument);
   }
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddChildOperation";
+    return "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorsOperation";
   }
   public ApplicableNodeCondition getNodeCondition() {
     SModel model = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.bootstrap.smodelLanguage.helgins")).getSModel();
-    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1178287490320"));
+    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1178287490220"));
   }
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());

@@ -39,7 +39,7 @@ public class typeOf_LinkList_InsertChildFirstOperation_InferenceRule implements 
   }
   public ApplicableNodeCondition getNodeCondition() {
     SModel model = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.bootstrap.smodelLanguage.helgins")).getSModel();
-    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1178230656692"));
+    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1178287490333"));
   }
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());

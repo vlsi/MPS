@@ -77,6 +77,7 @@ public class StructuralNodeSet implements Set<SNode> {
 
   public boolean addAllStructurally(Collection<? extends SNode> ourNodes) {
     boolean result = false;
+    if (ourNodes == null) return false;
     for (SNode ourNode : ourNodes) {
       boolean someResult = addStructurally(ourNode);
       result = result || someResult;

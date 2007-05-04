@@ -22,7 +22,7 @@ public class typeOf_Node_CopyOperation_InferenceRule implements InferenceRule_Ru
       TypeChecker.getInstance().getRuntimeSupport().givetype(RulesUtil.typeOf_leftExpression(argument), argument);
     } else 
     {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_19().createNode(), argument);
+      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_64().createNode(), argument);
     }
   }
   public String getApplicableConceptFQName() {
@@ -30,7 +30,7 @@ public class typeOf_Node_CopyOperation_InferenceRule implements InferenceRule_Ru
   }
   public ApplicableNodeCondition getNodeCondition() {
     SModel model = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.bootstrap.smodelLanguage.helgins")).getSModel();
-    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1178234532873"));
+    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1178287490353"));
   }
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());

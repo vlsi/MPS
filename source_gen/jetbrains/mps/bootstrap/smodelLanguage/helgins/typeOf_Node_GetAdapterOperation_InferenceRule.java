@@ -27,7 +27,7 @@ public class typeOf_Node_GetAdapterOperation_InferenceRule implements InferenceR
       TypeChecker.getInstance().getRuntimeSupport().givetype(RulesUtil.get_AdapterClassType_for_Concept(concept), argument);
     } else 
     {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_20().createNode(), argument);
+      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_65().createNode(), argument);
     }
   }
   public String getApplicableConceptFQName() {
@@ -35,7 +35,7 @@ public class typeOf_Node_GetAdapterOperation_InferenceRule implements InferenceR
   }
   public ApplicableNodeCondition getNodeCondition() {
     SModel model = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.bootstrap.smodelLanguage.helgins")).getSModel();
-    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1178235059937"));
+    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1178287490356"));
   }
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
