@@ -133,7 +133,9 @@
               <link role="concept" targetNodeId="6.1068580123157" />
             </node>
             <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1170377291197">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1178293488008" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1178295504820">
+                <link role="variableDeclaration" targetNodeId="1170376997552" resolveInfo="model" />
+              </node>
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Model_CreateNewNodeOperation" id="1170377297010">
                 <link role="concept" targetNodeId="6.1068580123157" />
               </node>
