@@ -189,8 +189,8 @@ public class _QueriesUtil {
   public static SNode create_enclosingClassObject(SNode nodeInsideClosure, ITemplateGenerator generator) {
     Class[] classes = new Class[]{BaseMethodDeclaration.class, Closure.class};
     INodeAdapter enclosingNode = nodeInsideClosure.getAdapter().findFirstParent(classes);
-    if (enclosingNode instanceof BaseMethodDeclaration &&
-            !(enclosingNode instanceof StaticMethodDeclaration)) {
+    if (enclosingNode instanceof InstanceMethodDeclaration ||
+            enclosingNode instanceof ConstructorDeclaration) {
       return ThisExpression.newInstance(generator.getTargetModel()).getNode();
     }
     if (enclosingNode instanceof Closure) {
