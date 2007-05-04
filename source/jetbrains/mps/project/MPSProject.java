@@ -614,7 +614,13 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
         for (BaseGeneratorConfiguration t : myProjectDescriptor.getRunConfigurations()) {
           if (!t.getTest()) continue;
 
-          GenParameters parms = GeneratorConfigUtil.calculate(MPSProject.this, t);
+          GenParameters parms;
+          try {
+            parms = GeneratorConfigUtil.calculate(MPSProject.this, t);
+          } catch (GeneratorConfigUtil.GeneratorConfigurationException e) {            
+            errors.add(new Message(MessageKind.ERROR, "Can't create a generator configuration : " + e.getMessage()));
+            return;
+          }
           getComponentSafe(GeneratorManager.class)
                   .generateModels(
                           parms.getModels(),
