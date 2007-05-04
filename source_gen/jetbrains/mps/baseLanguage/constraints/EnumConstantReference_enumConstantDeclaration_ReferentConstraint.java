@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.baseLanguage.BaseLanguageSearchUtil_new;
 import jetbrains.mps.baseLanguage.structure.EnumClass;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.structure.EnumConstantReference;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 
 public class EnumConstantReference_enumConstantDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
@@ -30,7 +31,7 @@ public class EnumConstantReference_enumConstantDeclaration_ReferentConstraint im
     return SLinkOperations.getTarget(referenceNode, "enumClass", false) != null;
   }
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    return BaseLanguageSearchUtil_new.createClassifierHierarchyScope(((EnumClass)SNodeOperations.getAdapter(SLinkOperations.getTarget(referenceNode, "enumClass", false))), IClassifiersSearchScope.ENUM_CONSTANT);
+    return BaseLanguageSearchUtil_new.createClassifierHierarchyScope(((EnumClass)SNodeOperations.getAdapter(SLinkOperations.getTarget(referenceNode, "enumClass", false))), ((EnumConstantReference)SNodeOperations.getAdapter(referenceNode)), IClassifiersSearchScope.ENUM_CONSTANT);
   }
   public String getNodeReferentSearchScopeDescription() {
     return "constants declared in the specified class";

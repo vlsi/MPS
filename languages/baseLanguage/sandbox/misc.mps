@@ -861,6 +861,31 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.EnumClass" id="1173881467772">
     <property name="name" value="ArrrEnum" />
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1178292050079">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1178292050080" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178292050081" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178292050082" />
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1178292048871">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1178292048872" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178292048873" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178292048874" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.baseLanguage.ConstructorDeclaration" id="1178292047805">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1178292047806" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178292047807" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178292047808" />
+    </node>
+    <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1178292038531">
+      <property name="name" value="a" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PrivateVisibility" id="1178292038532" />
+      <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1178292041440" />
+    </node>
+    <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1178292042441">
+      <property name="name" value="b" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PrivateVisibility" id="1178292042442" />
+      <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1178292043929" />
+    </node>
     <node role="enumConstant" type="jetbrains.mps.baseLanguage.EnumConstantDeclaration" id="1173881475523">
       <property name="name" value="a" />
     </node>
