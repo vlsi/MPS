@@ -23,6 +23,8 @@ import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept;
+import jetbrains.mps.bootstrap.smodelLanguage.SModelLanguageUtil;
 
 public class RulesUtil {
 
@@ -184,5 +186,14 @@ public class RulesUtil {
     SNode adapterClassType = SModelOperations.createNewNode(SNodeOperations.getModel(new QuotationClass_52().createNode()), "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(adapterClassType, "classifier", adapterClass, false);
     return adapterClassType;
+  }
+  public static void get_SNodeType_fromOperationParameter(SNode op) {
+    SNode type = new QuotationClass_53().createNode();
+    SequenceOperations.getFirst(SLinkOperations.getTargets(op, "parameter", true));
+    OperationParm_Concept parm_ = SModelLanguageUtil.findNodeOperationParameter(((SNodeOperation)SNodeOperations.getAdapter(op)), OperationParm_Concept.class);
+    SNode parm = parm_.getNode();
+    if(parm != null) {
+      SLinkOperations.setTarget(type, "concept", SLinkOperations.getTarget(parm, "concept", false), false);
+    }
   }
 }
