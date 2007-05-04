@@ -7,7 +7,8 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ConstructorDeclaration extends BaseMethodDeclaration {
+public class ConstructorDeclaration extends BaseMethodDeclaration implements ClassifierMember {
+  public static String VISIBILITY = "visibility";
 
   public  ConstructorDeclaration(SNode node) {
     super(node);
@@ -18,5 +19,12 @@ public class ConstructorDeclaration extends BaseMethodDeclaration {
   }
   public static ConstructorDeclaration newInstance(SModel sm) {
     return ConstructorDeclaration.newInstance(sm, false);
+  }
+
+  public Visibility getVisibility() {
+    return (Visibility)this.getChild(ConstructorDeclaration.VISIBILITY);
+  }
+  public void setVisibility(Visibility node) {
+    super.setChild(ConstructorDeclaration.VISIBILITY, node);
   }
 }

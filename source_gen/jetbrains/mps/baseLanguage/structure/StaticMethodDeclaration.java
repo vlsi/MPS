@@ -7,7 +7,8 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class StaticMethodDeclaration extends BaseMethodDeclaration {
+public class StaticMethodDeclaration extends BaseMethodDeclaration implements ClassifierMember {
+  public static String VISIBILITY = "visibility";
 
   public  StaticMethodDeclaration(SNode node) {
     super(node);
@@ -18,5 +19,12 @@ public class StaticMethodDeclaration extends BaseMethodDeclaration {
   }
   public static StaticMethodDeclaration newInstance(SModel sm) {
     return StaticMethodDeclaration.newInstance(sm, false);
+  }
+
+  public Visibility getVisibility() {
+    return (Visibility)this.getChild(StaticMethodDeclaration.VISIBILITY);
+  }
+  public void setVisibility(Visibility node) {
+    super.setChild(StaticMethodDeclaration.VISIBILITY, node);
   }
 }

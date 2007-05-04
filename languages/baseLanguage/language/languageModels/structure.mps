@@ -278,6 +278,9 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068580123140">
     <property name="name" value="ConstructorDeclaration" />
     <link role="extends" targetNodeId="1068580123132" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1178289057572">
+      <link role="intfc" targetNodeId="1178285077437" resolveInfo="ClassifierMember" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068580123152">
     <property name="name" value="EqualsExpression" />
@@ -408,6 +411,9 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068580123165">
     <property name="name" value="InstanceMethodDeclaration" />
     <link role="extends" targetNodeId="1068580123132" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1178289079552">
+      <link role="intfc" targetNodeId="1178285077437" resolveInfo="ClassifierMember" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068580320020">
     <property name="name" value="IntegerConstant" />
@@ -906,6 +912,9 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1081236700938">
     <property name="name" value="StaticMethodDeclaration" />
     <link role="extends" targetNodeId="1068580123132" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1178289092936">
+      <link role="intfc" targetNodeId="1178285077437" resolveInfo="ClassifierMember" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1081256982272">
     <property name="name" value="InstanceOfExpression" />
