@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.DataTypeUtil;
+import jetbrains.mps.bootstrap.structureLanguage.structure.DataTypeDeclaration;
 import java.util.Iterator;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
@@ -81,6 +83,22 @@ public class RulesUtil {
         return true;
       }
       applicables.add("link-list-access");
+    }
+    if(SConceptPropertyOperations.getBoolean(op, "applicable_to_simple_property")) {
+      // ???
+    }
+    if(SConceptPropertyOperations.getBoolean(op, "applicable_to_concept_property")) {
+      // ???
+    }
+    if(SConceptPropertyOperations.getBoolean(op, "applicable_to_enum_property")) {
+      SNode leftOp = SLinkOperations.getTarget(leftExpression, "nodeOperation", true);
+      if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOp), "jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess")) {
+        SNode propertyDecl = SLinkOperations.getTarget(leftOp, "property", false);
+        if(DataTypeUtil.isEnum(((DataTypeDeclaration)SNodeOperations.getAdapter(SLinkOperations.getTarget(propertyDecl, "dataType", false))))) {
+          return true;
+        }
+      }
+      applicables.add("enum-property-access");
     }
     // ===========
     String applicableTo = "";

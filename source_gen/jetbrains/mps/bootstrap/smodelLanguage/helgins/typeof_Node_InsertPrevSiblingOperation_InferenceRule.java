@@ -19,14 +19,15 @@ public class typeof_Node_InsertPrevSiblingOperation_InferenceRule implements Inf
   }
 
   public void applyRule(SNode argument) {
-    RulesFunctions.fun_check_isAppliedTo_Node(argument);
-    if(!((SLinkOperations.getTarget(argument, "parameter", true) == null))) {
-      TypeChecker.getInstance().getRuntimeSupport().check(SLinkOperations.getTarget(argument, "parameter", true));
-      if(!(!((TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "parameter", true)) == null)))) {
-        TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(argument, "parameter", true), "no type");
+    RulesUtil.checkAppliedCorrectly_generic(argument);
+    SNode parameter = SLinkOperations.getTarget(argument, "parameter", true);
+    if(!((parameter == null))) {
+      TypeChecker.getInstance().getRuntimeSupport().check(parameter);
+      if(!(!((TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter) == null)))) {
+        TypeChecker.getInstance().reportTypeError(parameter, "no type");
       }
-      if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "parameter", true)), new QuotationClass_26().createNode()))) {
-        TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(argument, "parameter", true), "incompatible type: snode expected");
+      if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter), new QuotationClass_26().createNode()))) {
+        TypeChecker.getInstance().reportTypeError(parameter, "incompatible type: snode expected");
       }
     }
   }
