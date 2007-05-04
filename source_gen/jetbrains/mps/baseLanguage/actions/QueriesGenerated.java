@@ -97,6 +97,21 @@ public class QueriesGenerated {
   }
   public static void nodeFactory_NodeSetup_InstanceMethodDeclaration_1158793299786(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
     SLinkOperations.setNewChild(newNode, "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
+    SLinkOperations.setNewChild(newNode, "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
+  }
+  public static void nodeFactory_NodeSetup_StaticFieldDeclaration_1178291730240(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
+    SLinkOperations.setNewChild(newNode, "visibility", "jetbrains.mps.baseLanguage.structure.PrivateVisibility");
+  }
+  public static void nodeFactory_NodeSetup_FieldDeclaration_1178291791625(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
+    SLinkOperations.setNewChild(newNode, "visibility", "jetbrains.mps.baseLanguage.structure.PrivateVisibility");
+  }
+  public static void nodeFactory_NodeSetup_StaticMethodDeclaration_1178291583640(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
+    SLinkOperations.setNewChild(newNode, "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
+    SLinkOperations.setNewChild(newNode, "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
+  }
+  public static void nodeFactory_NodeSetup_ConstructorDeclaration_1178291598890(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
+    SLinkOperations.setNewChild(newNode, "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
+    SLinkOperations.setNewChild(newNode, "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
   }
   public static void nodeFactory_NodeSetup_BinaryOperation_1158797366355(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
     if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {

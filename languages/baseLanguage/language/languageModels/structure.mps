@@ -608,6 +608,9 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1070462154015">
     <property name="name" value="StaticFieldDeclaration" />
     <link role="extends" targetNodeId="1068431474542" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1178291753349">
+      <link role="intfc" targetNodeId="1178285077437" resolveInfo="ClassifierMember" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107223377482">
       <property name="value" value="static field declaration" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
