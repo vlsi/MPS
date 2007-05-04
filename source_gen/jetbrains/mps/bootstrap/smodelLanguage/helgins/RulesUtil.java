@@ -23,8 +23,6 @@ import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept;
-import jetbrains.mps.bootstrap.smodelLanguage.SModelLanguageUtil;
 
 public class RulesUtil {
 
@@ -48,14 +46,14 @@ public class RulesUtil {
     // ===========
     if(SConceptPropertyOperations.getBoolean(op, "applicable_to_model")) {
       SNode leftType = RulesUtil.typeOf_leftExpression(op);
-      if(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new QuotationClass_47().createNode())) {
+      if(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new QuotationClass_46().createNode())) {
         return true;
       }
       applicables.add("model");
     }
     if(SConceptPropertyOperations.getBoolean(op, "applicable_to_concept")) {
       SNode leftType = RulesUtil.typeOf_leftExpression(op);
-      if(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new QuotationClass_48().createNode())) {
+      if(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new QuotationClass_47().createNode())) {
         return true;
       }
       applicables.add("concept");
@@ -63,7 +61,7 @@ public class RulesUtil {
     if(SConceptPropertyOperations.getBoolean(op, "applicable_to_node")) {
       // todo: get type of left expression and try to 'adapt' to snode
       SNode leftType = RulesUtil.typeOf_leftExpression(op);
-      if(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new QuotationClass_49().createNode())) {
+      if(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new QuotationClass_48().createNode())) {
         return true;
       }
       applicables.add("node");
@@ -172,28 +170,27 @@ public class RulesUtil {
   }
   public static SNode get_typeOfTarget_from_LinkOrLinkListAccess(SNode expression) {
     SNode targetConcept = RulesUtil.get_targetConcept_from_LinkOrLinkListAccess(expression);
-    SNode targetType = new QuotationClass_50().createNode();
+    SNode targetType = new QuotationClass_49().createNode();
     SLinkOperations.setTarget(targetType, "concept", targetConcept, false);
     return targetType;
   }
   public static SNode get_AdapterClassType_for_Concept(SNode concept) {
     if(concept == null) {
-      return new QuotationClass_51().createNode();
+      return new QuotationClass_50().createNode();
     }
     String adapterClassFqName = NameUtil.nodeFQName(concept);
     Object adapterClassAdapter = SModelUtil_new.findNodeByFQName(adapterClassFqName, Classifier.class, GlobalScope.getInstance());
     SNode adapterClass = BaseAdapter.fromAdapter((INodeAdapter)adapterClassAdapter);
-    SNode adapterClassType = SModelOperations.createNewNode(SNodeOperations.getModel(new QuotationClass_52().createNode()), "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+    SNode adapterClassType = SModelOperations.createNewNode(SNodeOperations.getModel(new QuotationClass_51().createNode()), "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(adapterClassType, "classifier", adapterClass, false);
     return adapterClassType;
   }
-  public static void get_SNodeType_fromOperationParameter(SNode op) {
-    SNode type = new QuotationClass_53().createNode();
-    SequenceOperations.getFirst(SLinkOperations.getTargets(op, "parameter", true));
-    OperationParm_Concept parm_ = SModelLanguageUtil.findNodeOperationParameter(((SNodeOperation)SNodeOperations.getAdapter(op)), OperationParm_Concept.class);
-    SNode parm = parm_.getNode();
+  public static SNode get_SNodeType_fromOperationParameter(SNode op) {
+    SNode type = new QuotationClass_52().createNode();
+    SNode parm = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(op, "parameter", true), new zPredicate(null, null)));
     if(parm != null) {
       SLinkOperations.setTarget(type, "concept", SLinkOperations.getTarget(parm, "concept", false), false);
     }
+    return type;
   }
 }

@@ -4,11 +4,6 @@ package jetbrains.mps.bootstrap.smodelLanguage.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept;
-import jetbrains.mps.bootstrap.smodelLanguage.SModelLanguageUtil;
-import jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
@@ -25,13 +20,7 @@ public class typeOf_Node_GetAncestorOperation_InferenceRule implements Inference
   public void applyRule(SNode argument) {
     RulesUtil.checkAppliedCorrectly_generic(argument);
     RulesUtil.checkOperationParameters_generic(argument);
-    SNode type = new QuotationClass_14().createNode();
-    OperationParm_Concept parm_ = SModelLanguageUtil.findNodeOperationParameter(((Node_GetAncestorOperation)SNodeOperations.getAdapter(argument)), OperationParm_Concept.class);
-    SNode parm = parm_.getNode();
-    if(parm != null) {
-      SLinkOperations.setTarget(type, "concept", SLinkOperations.getTarget(parm, "concept", false), false);
-    }
-    TypeChecker.getInstance().getRuntimeSupport().givetype(type, argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(RulesUtil.get_SNodeType_fromOperationParameter(argument), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation";

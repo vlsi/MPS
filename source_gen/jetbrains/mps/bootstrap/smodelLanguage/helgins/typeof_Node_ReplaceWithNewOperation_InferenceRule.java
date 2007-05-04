@@ -21,7 +21,7 @@ public class typeof_Node_ReplaceWithNewOperation_InferenceRule implements Infere
   public void applyRule(SNode argument) {
     RulesFunctions.fun_check_isAppliedTo_Node(argument);
     if(!((SLinkOperations.getTarget(argument, "concept", false) == null))) {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_28().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument);
+      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_27().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument);
     }
   }
   public String getApplicableConceptFQName() {

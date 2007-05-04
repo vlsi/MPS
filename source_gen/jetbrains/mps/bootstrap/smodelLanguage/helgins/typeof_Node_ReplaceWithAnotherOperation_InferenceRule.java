@@ -25,7 +25,7 @@ public class typeof_Node_ReplaceWithAnotherOperation_InferenceRule implements In
       if(!(!((TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "parameter", true)) == null)))) {
         TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(argument, "parameter", true), "no type");
       }
-      if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "parameter", true)), new QuotationClass_29().createNode()))) {
+      if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "parameter", true)), new QuotationClass_28().createNode()))) {
         TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(argument, "parameter", true), "incompatible type: snode expected");
       }
     }
