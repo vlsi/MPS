@@ -71,6 +71,13 @@ public class RulesUtil {
       }
       applicables.add("link-access");
     }
+    if(SConceptPropertyOperations.getBoolean(op, "applicable_to_linkList")) {
+      SNode leftOp = SLinkOperations.getTarget(leftExpression, "nodeOperation", true);
+      if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOp), "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess")) {
+        return true;
+      }
+      applicables.add("link-list-access");
+    }
     // ===========
     String applicableTo = "";
     Iterator<String> iter = applicables.iterator();
@@ -95,15 +102,6 @@ public class RulesUtil {
       }
     }
     TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to aggregation-link-list-access");
-    return false;
-  }
-  public static boolean checkAppliedTo_LinkListAccess(SNode op) {
-    SNode leftExpression = RulesUtil.leftExpression(op);
-    if(SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
-      SNode leftOp = SLinkOperations.getTarget(leftExpression, "nodeOperation", true);
-      return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOp), "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess");
-    }
-    TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to link-list-access");
     return false;
   }
   public static boolean checkAppliedTo_LinkAccess_aggregation(SNode op) {
