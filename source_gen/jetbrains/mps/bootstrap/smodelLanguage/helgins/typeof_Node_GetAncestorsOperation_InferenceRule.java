@@ -4,8 +4,6 @@ package jetbrains.mps.bootstrap.smodelLanguage.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import java.util.Iterator;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
@@ -20,21 +18,9 @@ public class typeof_Node_GetAncestorsOperation_InferenceRule implements Inferenc
   }
 
   public void applyRule(SNode argument) {
-    RulesFunctions.fun_check_isAppliedTo_SLinkAccessOrNode(argument);
-    {
-      SNode parm;
-      Iterator<SNode> parm_iterator = SLinkOperations.getTargets(argument, "parameter", true).iterator();
-      while(true) {
-        if(!(parm_iterator.hasNext())) {
-          break;
-        }
-        parm = parm_iterator.next();
-        if(!((Boolean)Queries.CustomExpression_check_isApplicableOperationParameter(argument, parm))) {
-          TypeChecker.getInstance().reportTypeError(parm, "not expected here");
-        }
-      }
-    }
-    TypeChecker.getInstance().getRuntimeSupport().givetype((SNode)Queries.CustomExpression_get_SNodeListType_forOperation_withOpeartionParameter_concept(argument), argument);
+    RulesUtil.checkAppliedCorrectly_generic(argument);
+    RulesUtil.checkOpParameters_generic(argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(RulesUtil.get_SNodeListType_fromOpParameter(argument), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorsOperation";

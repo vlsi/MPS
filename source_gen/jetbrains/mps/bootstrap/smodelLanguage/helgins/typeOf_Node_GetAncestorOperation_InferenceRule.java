@@ -19,8 +19,8 @@ public class typeOf_Node_GetAncestorOperation_InferenceRule implements Inference
 
   public void applyRule(SNode argument) {
     RulesUtil.checkAppliedCorrectly_generic(argument);
-    RulesUtil.checkOperationParameters_generic(argument);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(RulesUtil.get_SNodeType_fromOperationParameter(argument), argument);
+    RulesUtil.checkOpParameters_generic(argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(RulesUtil.get_SNodeType_fromOpParameter(argument), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation";

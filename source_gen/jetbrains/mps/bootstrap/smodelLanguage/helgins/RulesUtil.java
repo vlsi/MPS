@@ -134,7 +134,7 @@ public class RulesUtil {
     }
     return true;
   }
-  public static boolean checkOperationParameters_generic(SNode op) {
+  public static boolean checkOpParameters_generic(SNode op) {
     boolean noProblem = true;
     List<SNode> applicableParmConcepts = op.getConceptLinkTargets(SNodeOperation.CLNK_ApplicableParameter, true, GlobalScope.getInstance());
     {
@@ -185,11 +185,19 @@ public class RulesUtil {
     SLinkOperations.setTarget(adapterClassType, "classifier", adapterClass, false);
     return adapterClassType;
   }
-  public static SNode get_SNodeType_fromOperationParameter(SNode op) {
+  public static SNode get_SNodeType_fromOpParameter(SNode op) {
     SNode type = new QuotationClass_52().createNode();
     SNode parm = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(op, "parameter", true), new zPredicate(null, null)));
     if(parm != null) {
       SLinkOperations.setTarget(type, "concept", SLinkOperations.getTarget(parm, "concept", false), false);
+    }
+    return type;
+  }
+  public static SNode get_SNodeListType_fromOpParameter(SNode op) {
+    SNode type = new QuotationClass_53().createNode();
+    SNode parm = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(op, "parameter", true), new zPredicate1(null, null)));
+    if(parm != null) {
+      SLinkOperations.setTarget(type, "elementConcept", SLinkOperations.getTarget(parm, "concept", false), false);
     }
     return type;
   }
