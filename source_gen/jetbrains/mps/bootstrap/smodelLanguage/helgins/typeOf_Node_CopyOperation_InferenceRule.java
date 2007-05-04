@@ -18,7 +18,7 @@ public class typeOf_Node_CopyOperation_InferenceRule implements InferenceRule_Ru
   }
 
   public void applyRule(SNode argument) {
-    if(RulesUtil.checkAppliedTo_SNode(argument)) {
+    if(RulesUtil.checkAppliedCorrectly_generic(argument)) {
       TypeChecker.getInstance().getRuntimeSupport().givetype(RulesUtil.typeOf_leftExpression(argument), argument);
     } else 
     {

@@ -19,7 +19,7 @@ public class typeOf_Node_GetAdapterOperation_InferenceRule implements InferenceR
   }
 
   public void applyRule(SNode argument) {
-    if(RulesUtil.checkAppliedTo_SNode(argument)) {
+    if(RulesUtil.checkAppliedCorrectly_generic(argument)) {
       SNode leftExpressionType = RulesUtil.typeOf_leftExpression(argument);
       // to do: type adapt to nodeType
       SNode leftExpressionTypeAsSNodeType = leftExpressionType;

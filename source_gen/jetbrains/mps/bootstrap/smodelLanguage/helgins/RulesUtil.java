@@ -9,8 +9,8 @@ import jetbrains.mps.helgins.inference.TypeChecker;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
-import java.util.Iterator;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import java.util.Iterator;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -39,13 +39,14 @@ public class RulesUtil {
   }
   public static boolean checkAppliedCorrectly_generic(SNode op) {
     List<String> applicables = new ArrayList<String>();
+    // ===========
     if(SConceptPropertyOperations.getBoolean(op, "applicable_to_model")) {
       SNode leftType = RulesUtil.typeOf_leftExpression(op);
       if(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new QuotationClass_48().createNode())) {
         return true;
       }
       applicables.add("model");
-    } else 
+    }
     if(SConceptPropertyOperations.getBoolean(op, "applicable_to_concept")) {
       SNode leftType = RulesUtil.typeOf_leftExpression(op);
       if(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new QuotationClass_49().createNode())) {
@@ -53,6 +54,24 @@ public class RulesUtil {
       }
       applicables.add("concept");
     }
+    if(SConceptPropertyOperations.getBoolean(op, "applicable_to_node")) {
+      // todo: get type of left expression and try to 'adapt' to snode
+      SNode leftType = RulesUtil.typeOf_leftExpression(op);
+      if(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new QuotationClass_50().createNode())) {
+        return true;
+      }
+      applicables.add("node");
+    }
+    // ===========
+    SNode leftExpression = RulesUtil.leftExpression(op);
+    if(SConceptPropertyOperations.getBoolean(op, "applicable_to_link")) {
+      SNode leftOp = SLinkOperations.getTarget(leftExpression, "nodeOperation", true);
+      if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOp), "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess")) {
+        return true;
+      }
+      applicables.add("link-access");
+    }
+    // ===========
     String applicableTo = "";
     Iterator<String> iter = applicables.iterator();
     while(iter.hasNext()) {
@@ -63,15 +82,6 @@ public class RulesUtil {
     }
     TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to " + applicableTo);
     return false;
-  }
-  public static boolean checkAppliedTo_SNode(SNode op) {
-    // todo: get type of left expression and try to 'adapt' to snode
-    SNode type = RulesUtil.typeOf_leftExpression(op);
-    if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(type, new QuotationClass_50().createNode()))) {
-      TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to node");
-      return false;
-    }
-    return true;
   }
   public static boolean checkAppliedTo_LinkListAccess_aggregation(SNode op) {
     SNode leftExpression = RulesUtil.leftExpression(op);
@@ -108,15 +118,6 @@ public class RulesUtil {
       }
     }
     TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to aggregation-link-access");
-    return false;
-  }
-  public static boolean checkAppliedTo_LinkAccess(SNode op) {
-    SNode leftExpression = RulesUtil.leftExpression(op);
-    if(SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
-      SNode leftOp = SLinkOperations.getTarget(leftExpression, "nodeOperation", true);
-      return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOp), "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess");
-    }
-    TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to link-access");
     return false;
   }
   public static boolean checkAssignableConcept(SNode fromConcept, SNode toConcept, SNode nodeToReportError, String errorTextPrefix) {

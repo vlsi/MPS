@@ -19,7 +19,7 @@ public class typeOf_Link_SetTargetOperation_InferenceRule implements InferenceRu
   }
 
   public void applyRule(SNode argument) {
-    if(RulesUtil.checkAppliedTo_LinkAccess(argument)) {
+    if(RulesUtil.checkAppliedCorrectly_generic(argument)) {
       SNode parameter = SLinkOperations.getTarget(argument, "parameter", true);
       if((parameter != null)) {
         SNode parmType = TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(parameter);
