@@ -4,8 +4,8 @@ package jetbrains.mps.bootstrap.smodelLanguage.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -19,10 +19,8 @@ public class typeof_Node_InsertNewNextSiblingOperation_InferenceRule implements 
   }
 
   public void applyRule(SNode argument) {
-    RulesFunctions.fun_check_isAppliedTo_Node(argument);
-    if(!((SLinkOperations.getTarget(argument, "concept", false) == null))) {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_23().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument);
-    }
+    RulesUtil.checkAppliedCorrectly_generic(argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_23().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_InsertNewNextSiblingOperation";
