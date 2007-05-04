@@ -14,8 +14,12 @@ import java.util.Iterator;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.baseLanguage.structure.Classifier;
+import jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
+import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
@@ -129,6 +133,25 @@ public class RulesUtil {
       return false;
     }
     return true;
+  }
+  public static boolean checkOperationParameters_generic(SNode op) {
+    boolean noProblem = true;
+    List<SNode> applicableParmConcepts = op.getConceptLinkTargets(SNodeOperation.CLNK_ApplicableParameter, true, GlobalScope.getInstance());
+    {
+      ICursor<SNode> _zCursor = CursorFactory.createCursor(SLinkOperations.getTargets(op, "parameter", true));
+      try {
+        while(_zCursor.moveToNext()) {
+          SNode parm = _zCursor.getCurrent();
+          if(!(SequenceOperations.contains(applicableParmConcepts, SNodeOperations.getConceptDeclaration(parm)))) {
+            TypeChecker.getInstance().reportTypeError(parm, "not applicable here");
+            noProblem = false;
+          }
+        }
+      } finally {
+        _zCursor.release();
+      }
+    }
+    return noProblem;
   }
   public static SNode get_targetConcept_from_LinkOrLinkListAccess(SNode expression) {
     // todo: just compute type of the expression
