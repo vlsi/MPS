@@ -876,7 +876,7 @@
     <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1178286318458">
       <property name="name" value="testField" />
       <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1178286326413" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178288180192" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PrivateVisibility" id="1178290753385" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1178286799445">
