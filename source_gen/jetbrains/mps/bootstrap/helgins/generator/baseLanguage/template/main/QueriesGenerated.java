@@ -453,6 +453,13 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_1177668739705(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "condition", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
   }
+  public static boolean ifMacro_Condition_1178292211244(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    List<SNode> statementList = SLinkOperations.getTargets(SLinkOperations.getTarget(node, "ifTrue", true), "statement", true);
+    if(statementList.isEmpty()) {
+      return true;
+    }
+    return !(SNodeOperations.isInstanceOf(((SNode)statementList.get(statementList.size() - 1)), "jetbrains.mps.baseLanguage.structure.ReturnStatement"));
+  }
   public static boolean ifMacro_Condition_1177667696869(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return (SLinkOperations.getTarget(node, "ifFalseStatement", true) != null);
   }
