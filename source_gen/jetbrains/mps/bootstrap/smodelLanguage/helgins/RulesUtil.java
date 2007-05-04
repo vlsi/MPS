@@ -6,6 +6,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import java.util.List;
+import java.util.ArrayList;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
+import java.util.Iterator;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
@@ -33,9 +37,29 @@ public class RulesUtil {
     }
     return null;
   }
+  public static boolean checkAppliedCorrectly_generic(SNode op) {
+    List<String> applicables = new ArrayList<String>();
+    if(SConceptPropertyOperations.getBoolean(op, "applicable_to_model")) {
+      SNode leftType = RulesUtil.typeOf_leftExpression(op);
+      if(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new QuotationClass_48().createNode())) {
+        return true;
+      }
+      applicables.add("model");
+    }
+    String applicableTo = "";
+    Iterator<String> iter = applicables.iterator();
+    while(iter.hasNext()) {
+      applicableTo = applicableTo + iter.next();
+      if(iter.hasNext()) {
+        applicableTo = applicableTo + ",";
+      }
+    }
+    TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to " + applicableTo);
+    return false;
+  }
   public static boolean checkAppliedTo_SConcept(SNode op) {
     SNode type = RulesUtil.typeOf_leftExpression(op);
-    if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(type, new QuotationClass_48().createNode()))) {
+    if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(type, new QuotationClass_49().createNode()))) {
       TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to concept");
       return false;
     }
@@ -43,7 +67,7 @@ public class RulesUtil {
   }
   public static boolean checkAppliedTo_SModel(SNode op) {
     SNode type = RulesUtil.typeOf_leftExpression(op);
-    if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(type, new QuotationClass_49().createNode()))) {
+    if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(type, new QuotationClass_50().createNode()))) {
       TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to model");
       return false;
     }
@@ -52,7 +76,7 @@ public class RulesUtil {
   public static boolean checkAppliedTo_SNode(SNode op) {
     // todo: get type of left expression and try to 'adapt' to snode
     SNode type = RulesUtil.typeOf_leftExpression(op);
-    if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(type, new QuotationClass_50().createNode()))) {
+    if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(type, new QuotationClass_51().createNode()))) {
       TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to node");
       return false;
     }
@@ -133,18 +157,18 @@ public class RulesUtil {
   }
   public static SNode get_typeOfTarget_from_LinkOrLinkListAccess(SNode expression) {
     SNode targetConcept = RulesUtil.get_targetConcept_from_LinkOrLinkListAccess(expression);
-    SNode targetType = new QuotationClass_51().createNode();
+    SNode targetType = new QuotationClass_52().createNode();
     SLinkOperations.setTarget(targetType, "concept", targetConcept, false);
     return targetType;
   }
   public static SNode get_AdapterClassType_for_Concept(SNode concept) {
     if(concept == null) {
-      return new QuotationClass_52().createNode();
+      return new QuotationClass_53().createNode();
     }
     String adapterClassFqName = NameUtil.nodeFQName(concept);
     Object adapterClassAdapter = SModelUtil_new.findNodeByFQName(adapterClassFqName, Classifier.class, GlobalScope.getInstance());
     SNode adapterClass = BaseAdapter.fromAdapter((INodeAdapter)adapterClassAdapter);
-    SNode adapterClassType = SModelOperations.createNewNode(SNodeOperations.getModel(new QuotationClass_53().createNode()), "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+    SNode adapterClassType = SModelOperations.createNewNode(SNodeOperations.getModel(new QuotationClass_54().createNode()), "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(adapterClassType, "classifier", adapterClass, false);
     return adapterClassType;
   }

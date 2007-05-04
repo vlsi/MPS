@@ -20,7 +20,7 @@ public class typeOf_Model_RootsOperation_InferenceRule implements InferenceRule_
 
   public void applyRule(SNode argument) {
     RulesUtil.checkAppliedTo_SModel(argument);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_63().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_64().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.Model_RootsOperation";
