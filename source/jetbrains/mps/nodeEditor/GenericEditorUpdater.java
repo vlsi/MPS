@@ -68,25 +68,25 @@ public abstract class GenericEditorUpdater implements IComponentLifecycle {
             if (myProjects == null) return;
             MPSProjects projects = myProjects;
             for (MPSProject project : projects.getProjects()) {
-              if (project.getComponent(IDEProjectFrame.class) == null) continue;
+              IDEProjectFrame projectFrame = project.getComponent(IDEProjectFrame.class);
+              if (projectFrame == null) continue;
 
               EditorsPane editorsPane = project.getComponentSafe(AbstractProjectFrame.class).getEditorsPane();
               boolean isUpdated = false;
               for (IEditor editor : editorsPane.getEditors()) {
                 AbstractEditorComponent component = editor.getCurrentEditorComponent();
                 if (component != null) {
-                  SNode editedNode = component.getEditedNode();
-                  if (editedNode != null) {
-                    if (System.currentTimeMillis() -
-                            editedNode.getModel().getModelDescriptor().lastStructuralChange() > getCheckDelay()) {
-                      if ( updateEditor(component) ) {
-                        isUpdated = true;
-                      }
-                    }
+                  if (updateEditorComponent(component)) {
+                    isUpdated = true;
                   }
                 }
               }
-              if (isUpdated) {
+
+              updateEditorComponent(projectFrame.getInspectorPane().getInspector());
+              InspectorTool inspectorTool = projectFrame.getToolsPane().getTool(InspectorTool.class);
+              updateEditorComponent(inspectorTool.getInspector());
+
+              if (isUpdated) { //why do we need this code? it's looks like a hack.
                 IEditor currentEditor = editorsPane.getCurrentEditor();
                 if (currentEditor != null) {
                   currentEditor.repaint();
@@ -101,6 +101,37 @@ public abstract class GenericEditorUpdater implements IComponentLifecycle {
         }, "editor update");
       }
     });
+  }
+
+  private boolean updateEditorComponent(AbstractEditorComponent component) {
+    SNode editedNode = component.getEditedNode();
+    if (editedNode != null) {
+      long lastChangeTime = editedNode.getModel().getModelDescriptor().lastStructuralChange();
+      if (System.currentTimeMillis() - lastChangeTime > getCheckDelay()) {
+        if (lastChangeTime > getLastUpdateTime(component)) {
+          try {
+            if (updateEditor(component)) {
+              return true;
+            }
+          } finally {
+            component.putUserData(getLastUpdateKey(), System.currentTimeMillis());
+          }
+        }
+      }
+    }
+    return false;
+  }
+
+  private long getLastUpdateTime(AbstractEditorComponent component) {
+    Long lastUpdate = (Long) component.getUserData(getLastUpdateKey());
+    if (lastUpdate == null) {
+      lastUpdate = (long) 0;
+    }
+    return lastUpdate;
+  }
+
+  private String getLastUpdateKey() {
+    return "LAST_UPDATE_" + getClass().getName();
   }
 
   protected abstract boolean updateEditor(AbstractEditorComponent editor);

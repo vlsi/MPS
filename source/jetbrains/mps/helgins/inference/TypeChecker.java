@@ -394,6 +394,8 @@ public class TypeChecker {
   }
 
   public void checkRoot(SNode node) {
+    assert node.isRoot();
+
     try {
       MyReadAccessListener listener = new MyReadAccessListener();
       NodeReadAccessCaster.setNodeAccessListener(listener);

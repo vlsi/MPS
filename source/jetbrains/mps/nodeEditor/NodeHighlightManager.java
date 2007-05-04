@@ -89,6 +89,14 @@ public class NodeHighlightManager implements IGutterMessageOwner {
     myEditor.getExternalComponent().repaint();
   }
 
+  public Set<HighlighterMessage> getMessages() {
+    Set<HighlighterMessage> result = new HashSet<HighlighterMessage>();
+    for (IGutterMessageOwner owner : myMessages.keySet()) {
+      result.addAll(myMessages.get(owner));
+    }
+    return result;
+  }
+
 
   public void markOverlaplessly(SNode nodeToHighlight, Color color, String messageText, IGutterMessageOwner owner) {
     if (nodeToHighlight == null) return;
