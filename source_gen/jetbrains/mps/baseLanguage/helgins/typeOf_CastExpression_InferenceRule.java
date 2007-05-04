@@ -4,8 +4,8 @@ package jetbrains.mps.baseLanguage.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -19,8 +19,10 @@ public class typeOf_CastExpression_InferenceRule implements InferenceRule_Runtim
   }
 
   public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(argument, "type", true), argument);
-    TypeChecker.getInstance().getRuntimeSupport().createComparableEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expression", true)), SLinkOperations.getTarget(argument, "type", true), argument);
+    if((SLinkOperations.getTarget(argument, "type", true) != null)) {
+      TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(argument, "type", true), argument);
+      TypeChecker.getInstance().getRuntimeSupport().createComparableEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expression", true)), SLinkOperations.getTarget(argument, "type", true), argument);
+    }
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.CastExpression";
