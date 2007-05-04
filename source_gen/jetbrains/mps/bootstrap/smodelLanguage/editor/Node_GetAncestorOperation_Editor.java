@@ -17,7 +17,7 @@ import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
 
 public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
 
-  public AbstractCellProvider myOperationParameters_Component5;
+  /* package */AbstractCellProvider myOperationParameters_Component5;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell4(context, node);

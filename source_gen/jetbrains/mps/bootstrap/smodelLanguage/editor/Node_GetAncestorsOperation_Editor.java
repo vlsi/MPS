@@ -13,7 +13,7 @@ import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class Node_GetAncestorsOperation_Editor extends DefaultNodeEditor {
 
-  public AbstractCellProvider myOperationParameters_Component6;
+  /* package */AbstractCellProvider myOperationParameters_Component6;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);

@@ -15,7 +15,7 @@ import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class Node_GetDescendantsOperation_Editor extends DefaultNodeEditor {
 
-  public AbstractCellProvider myOperationParameters_Component4;
+  /* package */AbstractCellProvider myOperationParameters_Component4;
 
   public static boolean _QueryFunction_NodeCondition_1171305552391(SNode node, IScope scope) {
     return SLinkOperations.getCount(node, "parameter") == 0;

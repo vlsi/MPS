@@ -19,7 +19,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
 
-  public AbstractCellProvider myOperationParameters_Component;
+  /* package */AbstractCellProvider myOperationParameters_Component;
 
   public static boolean _QueryFunction_NodeCondition_1146258619668(SNode node, IScope scope) {
     return SLinkOperations.getCount(node, "parameter") == 0;

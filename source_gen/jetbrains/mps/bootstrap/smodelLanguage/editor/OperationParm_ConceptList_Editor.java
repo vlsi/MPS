@@ -14,7 +14,7 @@ import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
 
 public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
 
-  public AbstractCellListHandler myConceptListHandler_conceptList_;
+  /* package */AbstractCellListHandler myConceptListHandler_conceptList_;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
