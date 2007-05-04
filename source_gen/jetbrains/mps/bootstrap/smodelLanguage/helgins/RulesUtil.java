@@ -65,18 +65,10 @@ public class RulesUtil {
     }
     return true;
   }
-  public static boolean checkAppliedTo_SModel(SNode op) {
-    SNode type = RulesUtil.typeOf_leftExpression(op);
-    if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(type, new QuotationClass_50().createNode()))) {
-      TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to model");
-      return false;
-    }
-    return true;
-  }
   public static boolean checkAppliedTo_SNode(SNode op) {
     // todo: get type of left expression and try to 'adapt' to snode
     SNode type = RulesUtil.typeOf_leftExpression(op);
-    if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(type, new QuotationClass_51().createNode()))) {
+    if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(type, new QuotationClass_50().createNode()))) {
       TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to node");
       return false;
     }
@@ -157,18 +149,18 @@ public class RulesUtil {
   }
   public static SNode get_typeOfTarget_from_LinkOrLinkListAccess(SNode expression) {
     SNode targetConcept = RulesUtil.get_targetConcept_from_LinkOrLinkListAccess(expression);
-    SNode targetType = new QuotationClass_52().createNode();
+    SNode targetType = new QuotationClass_51().createNode();
     SLinkOperations.setTarget(targetType, "concept", targetConcept, false);
     return targetType;
   }
   public static SNode get_AdapterClassType_for_Concept(SNode concept) {
     if(concept == null) {
-      return new QuotationClass_53().createNode();
+      return new QuotationClass_52().createNode();
     }
     String adapterClassFqName = NameUtil.nodeFQName(concept);
     Object adapterClassAdapter = SModelUtil_new.findNodeByFQName(adapterClassFqName, Classifier.class, GlobalScope.getInstance());
     SNode adapterClass = BaseAdapter.fromAdapter((INodeAdapter)adapterClassAdapter);
-    SNode adapterClassType = SModelOperations.createNewNode(SNodeOperations.getModel(new QuotationClass_54().createNode()), "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+    SNode adapterClassType = SModelOperations.createNewNode(SNodeOperations.getModel(new QuotationClass_53().createNode()), "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(adapterClassType, "classifier", adapterClass, false);
     return adapterClassType;
   }

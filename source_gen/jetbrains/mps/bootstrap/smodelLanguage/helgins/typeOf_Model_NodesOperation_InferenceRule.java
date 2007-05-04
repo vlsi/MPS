@@ -19,8 +19,8 @@ public class typeOf_Model_NodesOperation_InferenceRule implements InferenceRule_
   }
 
   public void applyRule(SNode argument) {
-    RulesUtil.checkAppliedTo_SModel(argument);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_61().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument);
+    RulesUtil.checkAppliedCorrectly_generic(argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_60().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.Model_NodesOperation";
