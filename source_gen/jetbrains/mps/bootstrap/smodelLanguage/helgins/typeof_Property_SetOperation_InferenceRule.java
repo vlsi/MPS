@@ -26,23 +26,23 @@ public class typeof_Property_SetOperation_InferenceRule implements InferenceRule
     if(!((SLinkOperations.getTarget(argument, "value", true) == null))) {
       TypeChecker.getInstance().getRuntimeSupport().check(SLinkOperations.getTarget(argument, "value", true));
       if((Boolean)Queries.CustomExpression_check_isAppliedTo_SPropertyAccess_simpleStringProperty(argument)) {
-        if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "value", true)), new QuotationClass_3().createNode()))) {
+        if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "value", true)), new QuotationClass_1().createNode()))) {
           TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(argument, "value", true), "java.lang.String is expected");
         }
       }
       if((Boolean)Queries.CustomExpression_check_isAppliedTo_SPropertyAccess_simpleIntegerProperty(argument)) {
-        if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "value", true)), new QuotationClass_4().createNode()))) {
+        if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "value", true)), new QuotationClass_2().createNode()))) {
           TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(argument, "value", true), "integer is expected");
         }
       }
       if((Boolean)Queries.CustomExpression_check_isAppliedTo_SPropertyAccess_simpleBooleanProperty(argument)) {
-        if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "value", true)), new QuotationClass_5().createNode()))) {
+        if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "value", true)), new QuotationClass_3().createNode()))) {
           TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(argument, "value", true), "boolean is expected");
         }
       }
       if((Boolean)Queries.CustomExpression_check_isAppliedTo_SPropertyAccess_enumProperty(argument)) {
         if(!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(argument, "value", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference"))) {
-          if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "value", true)), new QuotationClass_6().createNode()))) {
+          if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "value", true)), new QuotationClass_4().createNode()))) {
             TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(argument, "value", true), "<enum member> or java.lang.String is expected");
           }
         }

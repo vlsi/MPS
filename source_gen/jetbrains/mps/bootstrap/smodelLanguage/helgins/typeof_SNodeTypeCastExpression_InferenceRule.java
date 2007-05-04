@@ -21,7 +21,7 @@ public class typeof_SNodeTypeCastExpression_InferenceRule implements InferenceRu
   public void applyRule(SNode argument) {
     TypeChecker.getInstance().getRuntimeSupport().check(SLinkOperations.getTarget(argument, "leftExpression", true));
     if(!((SLinkOperations.getTarget(argument, "concept", false) == null))) {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_2().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument);
+      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument);
     }
   }
   public String getApplicableConceptFQName() {

@@ -27,7 +27,7 @@ public class typeOf_Node_GetAdapterOperation_InferenceRule implements InferenceR
       TypeChecker.getInstance().getRuntimeSupport().givetype(RulesUtil.get_AdapterClassType_for_Concept(concept), argument);
     } else 
     {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_65().createNode(), argument);
+      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_64().createNode(), argument);
     }
   }
   public String getApplicableConceptFQName() {

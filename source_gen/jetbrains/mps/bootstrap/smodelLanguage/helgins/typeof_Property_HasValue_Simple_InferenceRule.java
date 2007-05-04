@@ -25,22 +25,22 @@ public class typeof_Property_HasValue_Simple_InferenceRule implements InferenceR
     if(!((SLinkOperations.getTarget(argument, "value", true) == null))) {
       TypeChecker.getInstance().getRuntimeSupport().check(SLinkOperations.getTarget(argument, "value", true));
       if((Boolean)Queries.CustomExpression_check_isAppliedTo_SPropertyAccess_simpleStringProperty(argument)) {
-        if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "value", true)), new QuotationClass_7().createNode()))) {
+        if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "value", true)), new QuotationClass_5().createNode()))) {
           TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(argument, "value", true), "java.lang.String is expected");
         }
       }
       if((Boolean)Queries.CustomExpression_check_isAppliedTo_SPropertyAccess_simpleIntegerProperty(argument)) {
-        if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "value", true)), new QuotationClass_8().createNode()))) {
+        if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "value", true)), new QuotationClass_6().createNode()))) {
           TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(argument, "value", true), "integer is expected");
         }
       }
       if((Boolean)Queries.CustomExpression_check_isAppliedTo_SPropertyAccess_simpleBooleanProperty(argument)) {
-        if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "value", true)), new QuotationClass_9().createNode()))) {
+        if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "value", true)), new QuotationClass_7().createNode()))) {
           TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(argument, "value", true), "boolean is expected");
         }
       }
     }
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_10().createNode(), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_8().createNode(), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Simple";

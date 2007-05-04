@@ -25,7 +25,7 @@ public class typeof_Node_InsertNextSiblingOperation_InferenceRule implements Inf
       if(!(!((TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "parameter", true)) == null)))) {
         TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(argument, "parameter", true), "no type");
       }
-      if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "parameter", true)), new QuotationClass_27().createNode()))) {
+      if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "parameter", true)), new QuotationClass_26().createNode()))) {
         TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(argument, "parameter", true), "incompatible type: snode expected");
       }
     }

@@ -22,7 +22,7 @@ public class typeOf_Node_CopyOperation_InferenceRule implements InferenceRule_Ru
       TypeChecker.getInstance().getRuntimeSupport().givetype(RulesUtil.typeOf_leftExpression(argument), argument);
     } else 
     {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_64().createNode(), argument);
+      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_63().createNode(), argument);
     }
   }
   public String getApplicableConceptFQName() {
