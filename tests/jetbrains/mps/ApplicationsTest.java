@@ -18,4 +18,8 @@ public class ApplicationsTest extends TestCase {
   public void testSearchWatch() {
     assertTrue(TestMain.testProject(new File("app/search-watch/search-watch.mpr")));    
   }
+
+  public void testProjectHalo() {
+    assertTrue(TestMain.testProject(new File("projects/ProjectHalo/ProjectHalo.mpr")));
+  }
 }
