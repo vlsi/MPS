@@ -4,8 +4,11 @@ package jetbrains.mps.bootstrap.smodelLanguage.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.smodel.DataTypeUtil;
+import jetbrains.mps.bootstrap.structureLanguage.structure.DataTypeDeclaration;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -19,24 +22,25 @@ public class typeof_Property_HasValue_Simple_InferenceRule implements InferenceR
   }
 
   public void applyRule(SNode argument) {
-    if(!((Boolean)Queries.CustomExpression_check_isAppliedTo_SPropertyAccess_simpleProperty(argument))) {
-      TypeChecker.getInstance().reportTypeError(argument, "\"'has value (simple)' is not expected here\"");
-    }
-    if(!((SLinkOperations.getTarget(argument, "value", true) == null))) {
-      TypeChecker.getInstance().getRuntimeSupport().check(SLinkOperations.getTarget(argument, "value", true));
-      if((Boolean)Queries.CustomExpression_check_isAppliedTo_SPropertyAccess_simpleStringProperty(argument)) {
-        if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "value", true)), new QuotationClass_5().createNode()))) {
-          TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(argument, "value", true), "java.lang.String is expected");
-        }
+    if(RulesUtil.checkAppliedCorrectly_generic(argument)) {
+      SNode propertyAccessOp = SLinkOperations.getTarget(RulesUtil.leftExpression(argument), "nodeOperation", true);
+      SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(propertyAccessOp, "property", false), "dataType", false);
+      if(!((dataType != null))) {
+        TypeChecker.getInstance().reportTypeError(argument, "couldn't define accessed property datatype");
       }
-      if((Boolean)Queries.CustomExpression_check_isAppliedTo_SPropertyAccess_simpleIntegerProperty(argument)) {
-        if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "value", true)), new QuotationClass_6().createNode()))) {
-          TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(argument, "value", true), "integer is expected");
-        }
-      }
-      if((Boolean)Queries.CustomExpression_check_isAppliedTo_SPropertyAccess_simpleBooleanProperty(argument)) {
-        if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "value", true)), new QuotationClass_7().createNode()))) {
-          TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(argument, "value", true), "boolean is expected");
+      SNode value = SLinkOperations.getTarget(argument, "value", true);
+      if((value != null)) {
+        if(DataTypeUtil.isSimpleString(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
+          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value), new QuotationClass_5().createNode(), value);
+        } else 
+        if(DataTypeUtil.isSimpleInteger(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
+          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value), new QuotationClass_6().createNode(), value);
+        } else 
+        if(DataTypeUtil.isSimpleBoolean(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
+          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value), new QuotationClass_7().createNode(), value);
+        } else 
+        {
+          TypeChecker.getInstance().reportTypeError(argument, "unknown property datatype: " + dataType);
         }
       }
     }

@@ -85,10 +85,14 @@ public class RulesUtil {
       applicables.add("link-list-access");
     }
     if(SConceptPropertyOperations.getBoolean(op, "applicable_to_simple_property")) {
-      // ???
-    }
-    if(SConceptPropertyOperations.getBoolean(op, "applicable_to_concept_property")) {
-      // ???
+      SNode leftOp = SLinkOperations.getTarget(leftExpression, "nodeOperation", true);
+      if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOp), "jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess")) {
+        SNode propertyDecl = SLinkOperations.getTarget(leftOp, "property", false);
+        if(DataTypeUtil.isSimple(((DataTypeDeclaration)SNodeOperations.getAdapter(SLinkOperations.getTarget(propertyDecl, "dataType", false))))) {
+          return true;
+        }
+      }
+      applicables.add("simple-property-access");
     }
     if(SConceptPropertyOperations.getBoolean(op, "applicable_to_enum_property")) {
       SNode leftOp = SLinkOperations.getTarget(leftExpression, "nodeOperation", true);
@@ -99,6 +103,9 @@ public class RulesUtil {
         }
       }
       applicables.add("enum-property-access");
+    }
+    if(SConceptPropertyOperations.getBoolean(op, "applicable_to_concept_property")) {
+      // ???
     }
     // ===========
     String applicableTo = "";
