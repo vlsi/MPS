@@ -45,4 +45,8 @@ public class BootstrapTest extends TestCase {
   public void testSharedConcepts() {
     assertTrue(TestMain.testProject(new File("languages/bootstrap/sharedConcepts/sharedConcepts.mpr")));
   }
+
+  public void testRegexps() {
+    assertTrue(TestMain.testProject(new File("platform/regexp/regexp.mpr")));    
+  }
 }
