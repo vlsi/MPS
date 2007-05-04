@@ -10,6 +10,7 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
 import org.jdom.DataConversionException;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 
 import java.awt.Rectangle;
 
@@ -65,7 +66,7 @@ public class ComponentsUtil {
     }
   }
 
-  public static Element nodeToElement(SNode node, IModule module) {
+  public static Element nodeToElement(SNode node, @NotNull IModule module) {
     Element nodeElement = new Element(NODE);
     SModel model = node.getModel();
     nodeElement.setAttribute(MODEL, model.getUID().toString());
