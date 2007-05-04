@@ -33,11 +33,11 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   private HashMap<Pair<SNode, SNode>, INodeBuilder> myTemplateNodeAndInputNodeToBuilderMap = new HashMap<Pair<SNode, SNode>, INodeBuilder>();
   private HashMap<Pair<String, SNode>, INodeBuilder> myRuleNameAndInputNodeToBuilderMap = new HashMap<Pair<String, SNode>, INodeBuilder>();
   private HashMap<SNode, SNode> myOutputNodeToTemplateNodeMap = new HashMap<SNode, SNode>();
+  private HashMap<SNode, SNode> myTemplateNodeToOutputNodeMap = new HashMap<SNode, SNode>();
   private DelayedChanges myDelayedChanges = new DelayedChanges();
   private TemplateSwitchGraph myTemplateSwitchGraph;
   private Map<TemplateSwitch, List<TemplateSwitch>> myTemplateSwitchToListCache;
   private boolean isChanged = false;
-
 
   public TemplateModelGenerator_New( GenerationSessionContext operationContext,
                                      IAdaptiveProgressMonitor progressMonitor,
@@ -105,7 +105,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
       ruleUtil.applyWeavingMappingRule(weavingMappingRule);
     }
 
-    updateAllReferences();
+//    updateAllReferences();
 
     for (SNode outputRootNode : copiedRoots) {
       ruleManager.getReductionRuleManager().applyReductionRules(findInputNodeByOutputNodeWithSameId(outputRootNode));
@@ -122,6 +122,9 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
 
     validateReferencesInCopiedRoots(copiedRoots);
 
+  }
+
+  private void doFinalValidateReferences() {
 
   }
 
@@ -191,6 +194,18 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
       referenceInfos = newReferenceInfos;
       newReferenceInfos = new ArrayList<ReferenceInfo>(referenceInfos.size());
     }
+
+    if (newReferenceInfos.size() > 0) {
+//try to resolve all the rest references using template to output node map
+      referenceInfos = new ArrayList<ReferenceInfo>(newReferenceInfos);
+      newReferenceInfos = new ArrayList<ReferenceInfo>(referenceInfos.size());
+      for (ReferenceInfo referenceInfo : referenceInfos) {
+        referenceInfo.tryToResolveUsingTemplateNodeToOutputNodeMap(this);
+        if(!referenceInfo.isSuccess()) {
+          newReferenceInfos.add(referenceInfo);
+        }
+      }
+    }
     myReferenceInfos = newReferenceInfos;
   }
 
@@ -223,6 +238,9 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     if(myTemplateNodeAndInputNodeToBuilderMap.get(key) != null) {
 //      showErrorMessage(inputNode, templateNode, "The output node already exists, that was build by this template and source node");
       showWarningMessage(inputNode, "The output node already exists, that was build by this template and source node");
+      System.out.println("The output node already exists, that was build by this template and source node");
+      System.out.println("templateNodeId="+templateNode.getId()+",   inputNodeId="+inputNode.getId());
+      System.out.println("prevId="+myTemplateNodeAndInputNodeToBuilderMap.get(key).getTargetNode().getId()+",   newId="+outputNode.getId());
     }
     myTemplateNodeAndInputNodeToBuilderMap.put(key, new SimpleNodeBuilder(this, outputNode, templateNode, inputNode));
   }
@@ -249,7 +267,24 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     myOutputNodeToTemplateNodeMap.put(outputNode, templateNode);
   }
 
+  public void addOutputNodeByTemplateNode(SNode templateNode, SNode outputNode) {
+    SNode prevOutputNode = myTemplateNodeToOutputNodeMap.get(templateNode);
+    // that means that there were more than one output node for given template node
+    if(prevOutputNode == templateNode) {
+      return;
+    }
+    if(prevOutputNode != null) {
+      // that means that there are more than one output node for given node, and we cannot resolve reference to it.
+      myTemplateNodeToOutputNodeMap.put(templateNode, templateNode);
+    }
+    else {
+      myTemplateNodeToOutputNodeMap.put(templateNode, outputNode);
+    }
+  }
 
+  public SNode findOutputNodeByTemplateNode(SNode templateNode) {
+    return myTemplateNodeToOutputNodeMap.get(templateNode);
+  }
 
   public void addReferenceInfo(ReferenceInfo referenceInfo) {
     myReferenceInfos.add(referenceInfo);

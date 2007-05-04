@@ -4,14 +4,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.generator.template.IReferenceResolver;
-import jetbrains.mps.generator.template.INodeBuilder;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.baseLanguage.structure.StaticFieldReference;
-import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro;
-import jetbrains.mps.util.Condition;
-import jetbrains.mpswiki.queryLanguage.structure.LoopVariableReference;
 
 import java.util.List;
 
@@ -128,5 +123,17 @@ public class ReferenceInfo_Default extends ReferenceInfo {
       conceptDeclaration = conceptDeclaration.getExtends();
     }
     return null;
+  }
+
+
+  public void tryToResolveUsingTemplateNodeToOutputNodeMap(TemplateModelGenerator_New generator) {
+    SNode outputTargetNode = generator.findOutputNodeByTemplateNode(myTemplateTargetNode);
+    //that means that there were more than one target node for given template node
+    if(outputTargetNode == myTemplateTargetNode) {
+      generator.showErrorMessage(myInputNode, myTemplateTargetNode, "Can't resolve reference: there more than one possible target node generated from the template node");
+      return;
+    }
+    myOutputNode.addReferent(myTemplateReference.getRole(), outputTargetNode);
+    setSuccess(true);
   }
 }

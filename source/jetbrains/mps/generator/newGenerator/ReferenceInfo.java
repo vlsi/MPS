@@ -23,4 +23,7 @@ public abstract class ReferenceInfo {
   public boolean isSuccess() {
     return mySuccess;
   }
+
+  public void tryToResolveUsingTemplateNodeToOutputNodeMap(TemplateModelGenerator_New generator) {
+  }
 }

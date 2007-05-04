@@ -4,9 +4,7 @@ import jetbrains.mps.transformation.TLBase.structure.*;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.util.QueryMethod;
-import jetbrains.mps.generator.template.TemplateGenUtil;
-import jetbrains.mps.generator.template.INodeBuilder;
-import jetbrains.mps.generator.template.ReductionNotNeededException;
+import jetbrains.mps.generator.template.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.core.structure.BaseConcept;
@@ -389,7 +387,7 @@ public class RuleUtil {
           if (mapperId != null || macro_mapperFunction != null) {
             SNode childToReplace = SModelUtil_new.instantiateConceptDeclaration(templateNode.getConceptFqName(), myOutputModel, myGenerator.getScope(), false);
             outputParentNode.addChild(childRole, childToReplace);
-            myGenerator.getDelayedChanges().addExecuteMapSrcNodeMacroChange(outputParentNode, nodeMacro, childToReplace, inputNode, myGenerator);
+            myGenerator.getDelayedChanges().addExecuteMapSrcNodeMacroChange(outputParentNode, nodeMacro, childToReplace, newInputNode, myGenerator);
           } else {
             List<SNode> outputChildNodes = createNodeFromTemplate(nodeMacro.getMappingId(), templateNode, newInputNode, outputParentNode, childRole, nodeMacrosToSkip + 1);
             if (outputChildNodes != null) {
@@ -403,23 +401,34 @@ public class RuleUtil {
         List<SNode> newInputNodes = TemplateGenUtil.createSourceNodeListForTemplateNode_ForNewGenerator(inputNode, templateNode, 0, myGenerator);
         boolean isProcessed = false;
         for (SNode newInputNode : newInputNodes) {
-          TemplateDeclaration templateForSwitchCase = (TemplateDeclaration) myGenerator.getTemplateForSwitchCase_deprecated(newInputNode, templateSwitch);
-          if (templateForSwitchCase == null) {
-            LOG.errorWithTrace("SWITCH PROCESSING HAS BEEN CHANGED! see new method 'getConsequenceForSwitchCase'");
-            continue;
+          RuleConsequence consequenceForCase = (RuleConsequence) myGenerator.getConsequenceForSwitchCase(newInputNode, templateSwitch);
+          SNode templateNodeForCase = null;
+          if (consequenceForCase != null) {
+            if (consequenceForCase instanceof DismissTopMappingRule) {
+              TemplateGenUtil.showGeneratorMessage((GeneratorMessage) ((DismissTopMappingRule) consequenceForCase).getGeneratorMessage(), newInputNode, consequenceForCase.getNode(), myGenerator);
+              throw new ReductionNotNeededException();
+            } else if (consequenceForCase instanceof TemplateDeclarationReference) {
+              TemplateDeclaration templateForSwitchCase = ((TemplateDeclarationReference) consequenceForCase).getTemplate();
+              templateNodeForCase = getTemplateNodeForSwitchCaseTemplate(newInputNode, templateForSwitchCase, templateSwitch, myGenerator);
+            } else if (consequenceForCase instanceof InlineTemplate_RuleConsequence) {
+              templateNodeForCase = BaseAdapter.fromAdapter(((InlineTemplate_RuleConsequence) consequenceForCase).getTemplateNode());
+            } else {
+              myGenerator.showErrorMessage(newInputNode, null, consequenceForCase.getNode(), "unsupported rule consequence");
+            }
+          } else {
+            // for back compatibility
+            TemplateDeclaration templateForSwitchCase = myGenerator.getTemplateForSwitchCase_deprecated(newInputNode, templateSwitch);
+            if (templateForSwitchCase != null) {
+              templateNodeForCase = getTemplateNodeForSwitchCaseTemplate(newInputNode, templateForSwitchCase, templateSwitch, myGenerator);
+            }
           }
-          isProcessed = true;
-          List<TemplateFragment> templateFragments = getTemplateFragments(templateForSwitchCase);
-          if (templateFragments.isEmpty()) {
-            myGenerator.showErrorMessage(newInputNode, BaseAdapter.fromAdapter(templateForSwitchCase), BaseAdapter.fromAdapter(templateSwitch), "couldn't create builder for switch: no template fragments found");
-            continue;
+
+          if (templateNodeForCase == null) {
+            myGenerator.showErrorMessage(newInputNode, null, BaseAdapter.fromAdapter(templateSwitch), "failed to process switch");
           }
-          if (templateFragments.size() > 1) {
-            myGenerator.showErrorMessage(newInputNode, BaseAdapter.fromAdapter(templateForSwitchCase), BaseAdapter.fromAdapter(templateSwitch), "couldn't create builder for switch: more than one (" + templateFragments.size() + ") fragments found");
-            continue;
+          else {
+            isProcessed = true;
           }
-          TemplateFragment templateFragment = templateFragments.get(0);
-          SNode templateNodeForCase = BaseAdapter.fromAdapter(templateFragment.getParent());
           List<SNode> outputChildNodes = createNodeFromTemplate(nodeMacro.getMappingId(), templateNodeForCase, newInputNode, outputParentNode, childRole, 0);
           if (outputChildNodes != null) {
             outputNodes.addAll(outputChildNodes);
@@ -451,6 +460,7 @@ public class RuleUtil {
     myGenerator.addOutputNodeByTemplateNodeAndInputNode(templateNode, inputNode, outputNode);
     myGenerator.addOutputNodeByRuleNameAndInputNode(templateNode, ruleName, inputNode, outputNode);
     myGenerator.addTemplateNodeByOutputNode(outputNode, templateNode);
+    myGenerator.addOutputNodeByTemplateNode(templateNode, outputNode);
     myOutputModel.addLanguage(templateNode.getLanguage(myGenerator.getScope()));
     for (String property : templateNode.getProperties().keySet()) {
       outputNode.setProperty(property, templateNode.getProperty(property), false);
@@ -528,6 +538,8 @@ public class RuleUtil {
     myGenerator.addOutputNodeByRuleNameAndInputNode(templateNode, ruleName, inputNode, outputNode);
     //Here the inputNode plays role of template node
     myGenerator.addTemplateNodeByOutputNode(outputNode, inputNode);
+//    myGenerator.addOutputNodeByTemplateNode(templateNode, outputNode);
+    myGenerator.addOutputNodeByTemplateNode(inputNode, outputNode);
     myOutputModel.addLanguage(inputNode.getLanguage(myGenerator.getScope()));
     for (String property : inputNode.getProperties().keySet()) {
       outputNode.setProperty(property, inputNode.getProperty(property), false);
@@ -560,6 +572,22 @@ public class RuleUtil {
     outputNodes = new LinkedList<SNode>();
     outputNodes.add(outputNode);
     return outputNodes;
+  }
+
+  private static SNode getTemplateNodeForSwitchCaseTemplate(SNode inputNode, TemplateDeclaration template, TemplateSwitch templateSwitch, ITemplateGenerator generator) {
+    List<TemplateFragment> templateFragments = getTemplateFragments(template);
+    if (templateFragments.isEmpty()) {
+      generator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), BaseAdapter.fromAdapter(templateSwitch), "couldn't create builder for switch: no template fragments found");
+      return null;
+    }
+    if (templateFragments.size() > 1) {
+      generator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), BaseAdapter.fromAdapter(templateSwitch), "couldn't create builder for switch: more than one (" + templateFragments.size() + ") fragments found");
+      return null;
+    }
+
+    TemplateFragment templateFragment = templateFragments.get(0);
+    SNode templateNode = BaseAdapter.fromAdapter(templateFragment.getParent());
+    return templateNode;
   }
 
 
