@@ -14,4 +14,8 @@ public class ApplicationsTest extends TestCase {
   public void testMForum() {    
     assertTrue(TestMain.testProject(new File("platform/webr/extensions/discussion/Discussion.mpr")));
   }
+
+  public void testSearchWatch() {
+    assertTrue(TestMain.testProject(new File("app/search-watch/search-watch.mpr")));    
+  }
 }
