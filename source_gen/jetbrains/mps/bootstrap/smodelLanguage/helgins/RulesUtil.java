@@ -45,6 +45,13 @@ public class RulesUtil {
         return true;
       }
       applicables.add("model");
+    } else 
+    if(SConceptPropertyOperations.getBoolean(op, "applicable_to_concept")) {
+      SNode leftType = RulesUtil.typeOf_leftExpression(op);
+      if(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new QuotationClass_49().createNode())) {
+        return true;
+      }
+      applicables.add("concept");
     }
     String applicableTo = "";
     Iterator<String> iter = applicables.iterator();
@@ -56,14 +63,6 @@ public class RulesUtil {
     }
     TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to " + applicableTo);
     return false;
-  }
-  public static boolean checkAppliedTo_SConcept(SNode op) {
-    SNode type = RulesUtil.typeOf_leftExpression(op);
-    if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(type, new QuotationClass_49().createNode()))) {
-      TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to concept");
-      return false;
-    }
-    return true;
   }
   public static boolean checkAppliedTo_SNode(SNode op) {
     // todo: get type of left expression and try to 'adapt' to snode
