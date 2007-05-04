@@ -31,13 +31,13 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 
 public class ConceptDeclaration_Editor extends DefaultNodeEditor {
 
-  public AbstractCellListHandler myImplementsListHandler_implementsList_;
-  public AbstractCellListHandler myPropertyDeclarationListHandler_propertyDeclarationList_;
-  public AbstractCellListHandler myLinkDeclarationListHandler_linkDeclarationList_;
-  public AbstractCellListHandler myConceptPropertyListHandler_conceptPropertyList_;
-  public AbstractCellListHandler myConceptLinkListHandler_conceptLinkList_;
-  public AbstractCellListHandler myConceptPropertyDeclarationListHandler_conceptPropertyDeclarationList_;
-  public AbstractCellListHandler myConceptLinkDeclarationListHandler_conceptLinkDeclarationList_;
+  /* package */AbstractCellListHandler myImplementsListHandler_implementsList_;
+  /* package */AbstractCellListHandler myPropertyDeclarationListHandler_propertyDeclarationList_;
+  /* package */AbstractCellListHandler myLinkDeclarationListHandler_linkDeclarationList_;
+  /* package */AbstractCellListHandler myConceptPropertyListHandler_conceptPropertyList_;
+  /* package */AbstractCellListHandler myConceptLinkListHandler_conceptLinkList_;
+  /* package */AbstractCellListHandler myConceptPropertyDeclarationListHandler_conceptPropertyDeclarationList_;
+  /* package */AbstractCellListHandler myConceptLinkDeclarationListHandler_conceptLinkDeclarationList_;
 
   public static String _image_provider_1161165534970(SNode node, EditorContext editorContext) {
     Language language = SModelUtil_new.getDeclaringLanguage(((ConceptDeclaration)SNodeOperations.getAdapter(node)), editorContext.getScope());

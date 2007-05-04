@@ -20,7 +20,7 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 
 public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
-  public AbstractCellListHandler myMemberListHandler_memberList_;
+  /* package */AbstractCellListHandler myMemberListHandler_memberList_;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createNodeBox(context, node);

@@ -11,8 +11,8 @@ public enum Cardinality {
   _0_n("0..n", "0..n"),
   _1_n("1..n", "1..n");
 
-  public String myName;
-  public String myValue;
+  /* package */String myName;
+  /* package */String myValue;
 
  Cardinality(String name, String value) {
     this.myName = name;

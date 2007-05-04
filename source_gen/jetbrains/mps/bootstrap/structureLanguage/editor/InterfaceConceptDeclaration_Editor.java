@@ -19,13 +19,13 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
 
-  public AbstractCellListHandler myExtendsListHandler_extendsList_;
-  public AbstractCellListHandler myPropertyDeclarationListHandler_propertyDeclarationList_;
-  public AbstractCellListHandler myLinkDeclarationListHandler_linkDeclarationList_;
-  public AbstractCellListHandler myConceptPropertyListHandler_conceptPropertyList_;
-  public AbstractCellListHandler myConceptLinkListHandler_conceptLinkList_;
-  public AbstractCellListHandler myConceptPropertyDeclarationListHandler_conceptPropertyDeclarationList_;
-  public AbstractCellListHandler myConceptLinkDeclarationListHandler_conceptLinkDeclarationList_;
+  /* package */AbstractCellListHandler myExtendsListHandler_extendsList_;
+  /* package */AbstractCellListHandler myPropertyDeclarationListHandler_propertyDeclarationList_;
+  /* package */AbstractCellListHandler myLinkDeclarationListHandler_linkDeclarationList_;
+  /* package */AbstractCellListHandler myConceptPropertyListHandler_conceptPropertyList_;
+  /* package */AbstractCellListHandler myConceptLinkListHandler_conceptLinkList_;
+  /* package */AbstractCellListHandler myConceptPropertyDeclarationListHandler_conceptPropertyDeclarationList_;
+  /* package */AbstractCellListHandler myConceptLinkDeclarationListHandler_conceptLinkDeclarationList_;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createNodeBox(context, node);

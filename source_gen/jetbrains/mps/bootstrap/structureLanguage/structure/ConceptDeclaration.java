@@ -10,10 +10,10 @@ import java.util.Iterator;
 import java.util.List;
 
 public class ConceptDeclaration extends AbstractConceptDeclaration {
-  public static String EXTENDS = "extends";
-  public static String IMPLEMENTS = "implements";
   public static String ICON_PATH = "iconPath";
   public static String ROOTABLE = "rootable";
+  public static String IMPLEMENTS = "implements";
+  public static String EXTENDS = "extends";
 
   public  ConceptDeclaration(SNode node) {
     super(node);
@@ -26,11 +26,17 @@ public class ConceptDeclaration extends AbstractConceptDeclaration {
     return ConceptDeclaration.newInstance(sm, false);
   }
 
-  public ConceptDeclaration getExtends() {
-    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.EXTENDS);
+  public String getIconPath() {
+    return this.getProperty(ConceptDeclaration.ICON_PATH);
   }
-  public void setExtends(ConceptDeclaration node) {
-    super.setReferent(ConceptDeclaration.EXTENDS, node);
+  public void setIconPath(String value) {
+    this.setProperty(ConceptDeclaration.ICON_PATH, value);
+  }
+  public boolean getRootable() {
+    return this.getBooleanProperty(ConceptDeclaration.ROOTABLE);
+  }
+  public void setRootable(boolean value) {
+    this.setBooleanProperty(ConceptDeclaration.ROOTABLE, value);
   }
   public int getImplementsesCount() {
     return this.getChildCount(ConceptDeclaration.IMPLEMENTS);
@@ -47,16 +53,10 @@ public class ConceptDeclaration extends AbstractConceptDeclaration {
   public void insertImplements(InterfaceConceptReference prev, InterfaceConceptReference node) {
     this.insertChild(prev, ConceptDeclaration.IMPLEMENTS, node);
   }
-  public String getIconPath() {
-    return this.getProperty(ConceptDeclaration.ICON_PATH);
+  public ConceptDeclaration getExtends() {
+    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.EXTENDS);
   }
-  public void setIconPath(String value) {
-    this.setProperty(ConceptDeclaration.ICON_PATH, value);
-  }
-  public boolean getRootable() {
-    return this.getBooleanProperty(ConceptDeclaration.ROOTABLE);
-  }
-  public void setRootable(boolean value) {
-    this.setBooleanProperty(ConceptDeclaration.ROOTABLE, value);
+  public void setExtends(ConceptDeclaration node) {
+    super.setReferent(ConceptDeclaration.EXTENDS, node);
   }
 }
