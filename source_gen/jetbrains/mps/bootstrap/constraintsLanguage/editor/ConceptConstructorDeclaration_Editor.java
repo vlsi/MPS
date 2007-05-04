@@ -30,7 +30,22 @@ public class ConceptConstructorDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell1(context, node, "  "));
+    editorCell.addEditorCell(this.createConstantCell(context, node, "constructor"));
+    editorCell.addEditorCell(this.createConstantCell1(context, node, "{"));
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178272894395");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createRowCell1(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setGridLayout(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstantCell2(context, node, "  "));
     editorCell.addEditorCell(this.createBodyCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177671919919");
     editorCell.setLayoutConstraint("");
@@ -45,8 +60,9 @@ public class ConceptConstructorDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "constructor"));
     editorCell.addEditorCell(this.createRowCell(context, node));
+    editorCell.addEditorCell(this.createRowCell1(context, node));
+    editorCell.addEditorCell(this.createConstantCell3(context, node, "}"));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177671915322");
     editorCell.setLayoutConstraint("");
     return editorCell;
@@ -60,11 +76,23 @@ public class ConceptConstructorDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177671916370");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178272894396");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178272897602");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
@@ -76,13 +104,25 @@ public class ConceptConstructorDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
+  public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178272901854");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
   public EditorCell createBodyCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
-    editorCell.setDrawBrackets(true);
+    editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     if(editorCell instanceof EditorCell_Label) {
       EditorCell_Label editorCellLabel = (EditorCell_Label)editorCell;

@@ -101,7 +101,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createNameCell(context, node));
     editorCell.addEditorCell(this.createConstantCell4(context, node, "("));
     editorCell.addEditorCell(this.createParameterList(context, node));
-    editorCell.addEditorCell(this.createConstantCell5(context, node, ")"));
+    editorCell.addEditorCell(this.createConstantCell6(context, node, ")"));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177755613135");
     editorCell.setLayoutConstraint("");
     return editorCell;
@@ -115,8 +115,8 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell6(context, node, "  "));
-    editorCell.addEditorCell(this.createConstantCell7(context, node, "overrides"));
+    editorCell.addEditorCell(this.createConstantCell7(context, node, "  "));
+    editorCell.addEditorCell(this.createConstantCell8(context, node, "overrides"));
     editorCell.addEditorCell(this.createOverridenMethodReferenceCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177755630514");
     editorCell.setLayoutConstraint("");
@@ -150,10 +150,10 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createColumnCell1(context, node));
     if(ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177758985554(node, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstantCell8(context, node, "{"));
+      editorCell.addEditorCell(this.createConstantCell9(context, node, "{"));
     }
     if(ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177759001115(node, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstantCell9(context, node, ";"));
+      editorCell.addEditorCell(this.createConstantCell10(context, node, ";"));
     }
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177675860858");
     editorCell.setLayoutConstraint("");
@@ -168,7 +168,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell10(context, node, "  "));
+    editorCell.addEditorCell(this.createConstantCell11(context, node, "  "));
     editorCell.addEditorCell(this.createBodyCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177675976418");
     editorCell.setLayoutConstraint("");
@@ -188,10 +188,10 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createRowCell3(context, node));
     }
     if(ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177758958929(node, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstantCell11(context, node, "}"));
+      editorCell.addEditorCell(this.createConstantCell12(context, node, "}"));
     }
     if(ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177760244173(node, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstantCell12(context, node, ""));
+      editorCell.addEditorCell(this.createConstantCell13(context, node, ""));
     }
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177675859311");
     editorCell.setLayoutConstraint("");
@@ -206,7 +206,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell13(context, node, "virtual"));
+    editorCell.addEditorCell(this.createConstantCell14(context, node, "virtual"));
     editorCell.addEditorCell(this.createIsVirtualCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177676229923");
     editorCell.setLayoutConstraint("");
@@ -221,7 +221,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell14(context, node, "private"));
+    editorCell.addEditorCell(this.createConstantCell15(context, node, "private"));
     editorCell.addEditorCell(this.createIsPrivateCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177698443041");
     editorCell.setLayoutConstraint("");
@@ -236,7 +236,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell15(context, node, "abstract"));
+    editorCell.addEditorCell(this.createConstantCell16(context, node, "abstract"));
     editorCell.addEditorCell(this.createIsAbstractCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177758853512");
     editorCell.setLayoutConstraint("");
@@ -251,7 +251,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell16(context, node, "overrides"));
+    editorCell.addEditorCell(this.createConstantCell17(context, node, "overrides"));
     editorCell.addEditorCell(this.createOverridenMethodReferenceCell1(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177755557038");
     editorCell.setLayoutConstraint("");
@@ -346,7 +346,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createConstantCell5(EditorContext context, SNode node, String text) {
+  public EditorCell createConstantCell6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -358,7 +358,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createConstantCell6(EditorContext context, SNode node, String text) {
+  public EditorCell createConstantCell7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
@@ -370,7 +370,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createConstantCell7(EditorContext context, SNode node, String text) {
+  public EditorCell createConstantCell8(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -383,7 +383,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createConstantCell8(EditorContext context, SNode node, String text) {
+  public EditorCell createConstantCell9(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -395,7 +395,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createConstantCell9(EditorContext context, SNode node, String text) {
+  public EditorCell createConstantCell10(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -407,7 +407,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createConstantCell10(EditorContext context, SNode node, String text) {
+  public EditorCell createConstantCell11(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
@@ -419,7 +419,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createConstantCell11(EditorContext context, SNode node, String text) {
+  public EditorCell createConstantCell12(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -431,7 +431,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createConstantCell12(EditorContext context, SNode node, String text) {
+  public EditorCell createConstantCell13(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
@@ -443,7 +443,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createConstantCell13(EditorContext context, SNode node, String text) {
+  public EditorCell createConstantCell14(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -455,7 +455,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createConstantCell14(EditorContext context, SNode node, String text) {
+  public EditorCell createConstantCell15(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -467,7 +467,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createConstantCell15(EditorContext context, SNode node, String text) {
+  public EditorCell createConstantCell16(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -479,7 +479,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createConstantCell16(EditorContext context, SNode node, String text) {
+  public EditorCell createConstantCell17(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);

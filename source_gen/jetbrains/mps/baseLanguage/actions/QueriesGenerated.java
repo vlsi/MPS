@@ -119,6 +119,11 @@ public class QueriesGenerated {
       SLinkOperations.setTarget(newNode, "expression", SNodeOperations.copyNode(SLinkOperations.getTarget(sampleNode, "expression", true)), true);
     }
   }
+  public static void nodeFactory_NodeSetup_IfStatement_1178272045314(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
+    if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Statement")) {
+      SLinkOperations.addChild(SLinkOperations.setNewChild(newNode, "ifTrue", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", sampleNode);
+    }
+  }
   public static void nodeFactory_NodeSetup_NotExpression_1159218040861(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
     if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Expression")) {
       SLinkOperations.setTarget(newNode, "expression", SNodeOperations.copyNode(sampleNode), true);
