@@ -19,7 +19,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
 
-  public AbstractCellListHandler myActualArgumentListHandler_actualArgumentList_;
+  /* package */AbstractCellListHandler myActualArgumentListHandler_actualArgumentList_;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);

@@ -19,7 +19,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
 
-  public AbstractCellListHandler myInitValueListHandler_initValueList_;
+  /* package */AbstractCellListHandler myInitValueListHandler_initValueList_;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);

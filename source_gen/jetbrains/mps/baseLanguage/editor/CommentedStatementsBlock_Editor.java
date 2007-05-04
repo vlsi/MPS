@@ -14,7 +14,7 @@ import jetbrains.mps.nodeEditor.CellLayout_Vertical;
 
 public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
 
-  public AbstractCellListHandler myStatementListHandler_statementList_;
+  /* package */AbstractCellListHandler myStatementListHandler_statementList_;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createColumnCell(context, node);

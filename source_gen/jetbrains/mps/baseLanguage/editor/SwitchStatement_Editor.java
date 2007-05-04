@@ -20,7 +20,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class SwitchStatement_Editor extends DefaultNodeEditor {
 
-  public AbstractCellListHandler myCaseListHandler_caseList_;
+  /* package */AbstractCellListHandler myCaseListHandler_caseList_;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createColumnCell(context, node);

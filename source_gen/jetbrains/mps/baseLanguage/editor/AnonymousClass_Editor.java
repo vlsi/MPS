@@ -21,10 +21,10 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class AnonymousClass_Editor extends DefaultNodeEditor {
 
-  public AbstractCellListHandler myParameterListHandler_parameterList_;
-  public AbstractCellListHandler myFieldListHandler_fieldsList_;
-  public AbstractCellListHandler myMethodListHandler_methodsList_;
-  public AbstractCellListHandler myStaticMethodListHandler_staticMethodList_;
+  /* package */AbstractCellListHandler myParameterListHandler_parameterList_;
+  /* package */AbstractCellListHandler myFieldListHandler_fieldsList_;
+  /* package */AbstractCellListHandler myMethodListHandler_methodsList_;
+  /* package */AbstractCellListHandler myStaticMethodListHandler_staticMethodList_;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createClassBox(context, node);

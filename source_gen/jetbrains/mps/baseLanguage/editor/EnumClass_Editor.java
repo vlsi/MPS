@@ -20,12 +20,12 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class EnumClass_Editor extends DefaultNodeEditor {
 
-  public AbstractCellListHandler myImplementedInterfaceListHandler_implementedInterfaceList_;
-  public AbstractCellListHandler myEnumConstantListHandler_enumConstantList_;
-  public AbstractCellListHandler myFieldListHandler_fieldList_;
-  public AbstractCellListHandler myConstructorListHandler_constructorList_;
-  public AbstractCellListHandler myMethodListHandler_methodList_;
-  public AbstractCellListHandler myStaticMethodListHandler_staticMethodList_;
+  /* package */AbstractCellListHandler myImplementedInterfaceListHandler_implementedInterfaceList_;
+  /* package */AbstractCellListHandler myEnumConstantListHandler_enumConstantList_;
+  /* package */AbstractCellListHandler myFieldListHandler_fieldList_;
+  /* package */AbstractCellListHandler myConstructorListHandler_constructorList_;
+  /* package */AbstractCellListHandler myMethodListHandler_methodList_;
+  /* package */AbstractCellListHandler myStaticMethodListHandler_staticMethodList_;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createColumnCell(context, node);

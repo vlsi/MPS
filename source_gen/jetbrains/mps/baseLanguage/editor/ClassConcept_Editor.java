@@ -25,13 +25,13 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 
 public class ClassConcept_Editor extends DefaultNodeEditor {
 
-  public AbstractCellProvider my_GenericDeclaration_TypeVariables_Component;
-  public AbstractCellListHandler myImplementedInterfaceListHandler_implementedInterfaceList_;
-  public AbstractCellListHandler myStaticFieldListHandler_staticFieldList_;
-  public AbstractCellListHandler myFieldListHandler_fieldsList_;
-  public AbstractCellListHandler myConstructorListHandler_constructorsList_;
-  public AbstractCellListHandler myMethodListHandler_methodsList_;
-  public AbstractCellListHandler myStaticMethodListHandler_staticMethodList_;
+  /* package */AbstractCellProvider my_GenericDeclaration_TypeVariables_Component;
+  /* package */AbstractCellListHandler myImplementedInterfaceListHandler_implementedInterfaceList_;
+  /* package */AbstractCellListHandler myStaticFieldListHandler_staticFieldList_;
+  /* package */AbstractCellListHandler myFieldListHandler_fieldsList_;
+  /* package */AbstractCellListHandler myConstructorListHandler_constructorsList_;
+  /* package */AbstractCellListHandler myMethodListHandler_methodsList_;
+  /* package */AbstractCellListHandler myStaticMethodListHandler_staticMethodList_;
 
   public static boolean _QueryFunction_NodeCondition_1145916139208(SNode node, IScope scope) {
     return SLinkOperations.getCount(node, "typeVariableDeclaration") > 0;

@@ -23,10 +23,10 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class Interface_Editor extends DefaultNodeEditor {
 
-  public AbstractCellProvider my_GenericDeclaration_TypeVariables_Component1;
-  public AbstractCellListHandler myExtendedInterfaceListHandler_extendedInterfaceList_;
-  public AbstractCellListHandler myStaticFieldListHandler_staticFieldList_;
-  public AbstractCellListHandler myMethodListHandler_methodsList_;
+  /* package */AbstractCellProvider my_GenericDeclaration_TypeVariables_Component1;
+  /* package */AbstractCellListHandler myExtendedInterfaceListHandler_extendedInterfaceList_;
+  /* package */AbstractCellListHandler myStaticFieldListHandler_staticFieldList_;
+  /* package */AbstractCellListHandler myMethodListHandler_methodsList_;
 
   public static boolean _QueryFunction_NodeCondition_1145916182768(SNode node, IScope scope) {
     return SLinkOperations.getCount(node, "typeVariableDeclaration") > 0;

@@ -8,6 +8,16 @@
   <import index="3" modelUID="java.lang.reflect@java_stub" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1171627004550">
     <property name="name" value="A" />
+    <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1178285026132">
+      <property name="name" value="abcdef" />
+      <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1178285039578" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PrivateVisibility" id="1178285050783" />
+    </node>
+    <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1178285041751">
+      <property name="name" value="cdef" />
+      <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1178285043500" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PrivateVisibility" id="1178285048954" />
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1173992785000">
       <property name="name" value="f" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1173992785001" />

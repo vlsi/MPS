@@ -20,7 +20,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class TryCatchStatement_Editor extends DefaultNodeEditor {
 
-  public AbstractCellListHandler myCatchClauseListHandler_catchClauseList_;
+  /* package */AbstractCellListHandler myCatchClauseListHandler_catchClauseList_;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createColumnCell(context, node);

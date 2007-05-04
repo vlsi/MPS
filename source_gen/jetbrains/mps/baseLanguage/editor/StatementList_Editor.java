@@ -13,7 +13,7 @@ import java.awt.Color;
 
 public class StatementList_Editor extends DefaultNodeEditor {
 
-  public AbstractCellListHandler myStatementListHandler_statementList_;
+  /* package */AbstractCellListHandler myStatementListHandler_statementList_;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createStatementList(context, node);

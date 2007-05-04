@@ -828,6 +828,22 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1178286350817">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1178286350818">
+            <property name="name" value="t" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1178286365329">
+              <link role="classifier" targetNodeId="1178286296188" resolveInfo="TestXXXX" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1178286353701">
+          <node role="expression" type="jetbrains.mps.baseLanguage.FieldReference" id="1178288182444">
+            <link role="variableDeclaration" targetNodeId="1178286318458" resolveInfo="testField" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1178286353702">
+              <link role="variableDeclaration" targetNodeId="1178286350818" resolveInfo="t" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1176124257537">
           <node role="expression" type="jetbrains.mps.baseLanguage.TernaryOperatorExpression" id="1176124259773">
             <node role="condition" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1176124309916">
@@ -853,6 +869,32 @@
     </node>
     <node role="enumConstant" type="jetbrains.mps.baseLanguage.EnumConstantDeclaration" id="1173881480040">
       <property name="name" value="c" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1178286296188">
+    <property name="name" value="TestXXXX" />
+    <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1178286318458">
+      <property name="name" value="testField" />
+      <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1178286326413" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178288180192" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1178286799445">
+    <property name="name" value="TestYYY" />
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1178287019178">
+      <property name="name" value="abcedf" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1178287019179" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178287019180">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1178287024637">
+          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1178287104140">
+            <link role="baseMethodDeclaration" targetNodeId="1178287019178" resolveInfo="abcedf" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1178287024638" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="superclass" type="jetbrains.mps.baseLanguage.ClassifierType" id="1178286841083">
+      <link role="classifier" targetNodeId="1178286296188" resolveInfo="TestXXXX" />
     </node>
   </node>
 </model>

@@ -20,7 +20,7 @@ import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
 
 public class StaticMethodCall_Editor extends DefaultNodeEditor {
 
-  public AbstractCellProvider myBaseMethodCall_actualArgumentList;
+  /* package */AbstractCellProvider myBaseMethodCall_actualArgumentList;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);

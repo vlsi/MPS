@@ -15,7 +15,7 @@ import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
 
 public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
 
-  public AbstractCellListHandler myActualArgumentListHandler_actualArgumentList_;
+  /* package */AbstractCellListHandler myActualArgumentListHandler_actualArgumentList_;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);

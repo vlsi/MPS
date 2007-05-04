@@ -21,7 +21,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ClassifierType_Editor extends DefaultNodeEditor {
 
-  public AbstractCellListHandler myParameterListHandler_parameterList_;
+  /* package */AbstractCellListHandler myParameterListHandler_parameterList_;
 
   public static boolean _QueryFunction_NodeCondition_1145920376960(SNode node, IScope scope) {
     return SLinkOperations.getCount(node, "parameter") > 0;

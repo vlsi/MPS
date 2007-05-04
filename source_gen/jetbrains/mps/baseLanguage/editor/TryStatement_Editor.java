@@ -22,7 +22,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class TryStatement_Editor extends DefaultNodeEditor {
 
-  public AbstractCellListHandler myCatchClauseListHandler_catchClauseList_;
+  /* package */AbstractCellListHandler myCatchClauseListHandler_catchClauseList_;
 
   public static boolean _QueryFunction_NodeCondition_1164881171029(SNode node, IScope scope) {
     return SLinkOperations.getCount(node, "catchClause") > 0;

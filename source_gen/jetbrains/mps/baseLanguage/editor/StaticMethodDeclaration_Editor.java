@@ -23,8 +23,8 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 
 public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
 
-  public AbstractCellListHandler myParameterListHandler_parameterList_;
-  public AbstractCellListHandler myThrowsItemListHandler_throwsItemList_;
+  /* package */AbstractCellListHandler myParameterListHandler_parameterList_;
+  /* package */AbstractCellListHandler myThrowsItemListHandler_throwsItemList_;
 
   public static boolean _QueryFunction_NodeCondition_1164890626616(SNode node, IScope scope) {
     return SLinkOperations.getCount(node, "throwsItem") > 0;

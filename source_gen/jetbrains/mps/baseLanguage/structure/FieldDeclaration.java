@@ -7,7 +7,8 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class FieldDeclaration extends VariableDeclaration {
+public class FieldDeclaration extends VariableDeclaration implements ClassifierMember {
+  public static String VISIBILITY = "visibility";
 
   public  FieldDeclaration(SNode node) {
     super(node);
@@ -18,5 +19,12 @@ public class FieldDeclaration extends VariableDeclaration {
   }
   public static FieldDeclaration newInstance(SModel sm) {
     return FieldDeclaration.newInstance(sm, false);
+  }
+
+  public Visibility getVisibility() {
+    return (Visibility)this.getChild(FieldDeclaration.VISIBILITY);
+  }
+  public void setVisibility(Visibility node) {
+    super.setChild(FieldDeclaration.VISIBILITY, node);
   }
 }
