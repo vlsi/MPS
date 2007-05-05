@@ -31,7 +31,7 @@ public class typeOf_LinkList_AddNewChildOperation_InferenceRule implements Infer
         RulesUtil.checkAssignableConcept(parameterConcept, expectedConcept, argument, "incompatibel parameter concept");
       }
     }
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_56().createNode(resultConcept), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_59().createNode(resultConcept), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddNewChildOperation";
