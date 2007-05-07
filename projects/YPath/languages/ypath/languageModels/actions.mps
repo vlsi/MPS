@@ -135,8 +135,22 @@
       </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1168520070283">
-      <property name="actionsFactoryAspectId" value="DelegateToParent" />
+      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1168468681335" />
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddMenuPart" id="1178537340809">
+        <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.IncludeRightTransformForNodeMenuPart" id="1178537429683">
+          <node role="nodeBlock" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_RightTransform_NodeQuery" id="1178537429684">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178537429685">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1178537675879">
+                <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178537679533">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_sourceNode" id="1178537677301" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetParentOperation" id="1178537680610" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions" id="1169037619065">
