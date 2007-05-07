@@ -32,7 +32,7 @@ import java.util.regex.Matcher;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.baseLanguage.BaseLanguageSearchUtil_new;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
-import jetbrains.mps.core.structure.BaseConcept;
+import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
@@ -43,7 +43,6 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOp
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
-import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.baseLanguage.editor.ParenthesisUtil;
 
 public class QueriesGenerated {
@@ -255,7 +254,7 @@ public class QueriesGenerated {
 
         public Object calculate() {
           SNode classConcept = SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-          return BaseLanguageSearchUtil_new.getVisibleInstanceFields(((ClassConcept)SNodeOperations.getAdapter(classConcept)), ((BaseConcept)SNodeOperations.getAdapter(parentNode)));
+          return BaseLanguageSearchUtil_new.getVisibleInstanceFields(((ClassConcept)SNodeOperations.getAdapter(classConcept)), ((INodeAdapter)SNodeOperations.getAdapter(parentNode)));
         }
       };
       Iterable<SNode> queryResult = (Iterable)calc.calculate();
@@ -281,7 +280,7 @@ public class QueriesGenerated {
 
         public Object calculate() {
           SNode classConcept = SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-          return BaseLanguageSearchUtil_new.getVisibleInstanceMethods(((ClassConcept)SNodeOperations.getAdapter(classConcept)), ((BaseConcept)SNodeOperations.getAdapter(parentNode)));
+          return BaseLanguageSearchUtil_new.getVisibleInstanceMethods(((ClassConcept)SNodeOperations.getAdapter(classConcept)), ((INodeAdapter)SNodeOperations.getAdapter(parentNode)));
         }
       };
       Iterable<SNode> queryResult = (Iterable)calc.calculate();
