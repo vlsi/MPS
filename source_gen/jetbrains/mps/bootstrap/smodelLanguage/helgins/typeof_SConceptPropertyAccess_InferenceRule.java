@@ -39,13 +39,13 @@ public class typeof_SConceptPropertyAccess_InferenceRule implements InferenceRul
       RulesUtil.checkAssignableConcept(leftConcept, declaringConcept, argument, "operation is applied to wrong concept");
       // ==========
       if(SNodeOperations.isInstanceOf(conceptPropertyDecl, "jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration")) {
-        TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_31().createNode(), argument);
-      } else 
-      if(SNodeOperations.isInstanceOf(conceptPropertyDecl, "jetbrains.mps.bootstrap.structureLanguage.structure.IntegerConceptPropertyDeclaration")) {
         TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_32().createNode(), argument);
       } else 
-      if(SNodeOperations.isInstanceOf(conceptPropertyDecl, "jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptPropertyDeclaration")) {
+      if(SNodeOperations.isInstanceOf(conceptPropertyDecl, "jetbrains.mps.bootstrap.structureLanguage.structure.IntegerConceptPropertyDeclaration")) {
         TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_33().createNode(), argument);
+      } else 
+      if(SNodeOperations.isInstanceOf(conceptPropertyDecl, "jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptPropertyDeclaration")) {
+        TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_34().createNode(), argument);
       } else 
       {
         TypeChecker.getInstance().reportTypeError(argument, "unknown type of concept property: " + conceptPropertyDecl);

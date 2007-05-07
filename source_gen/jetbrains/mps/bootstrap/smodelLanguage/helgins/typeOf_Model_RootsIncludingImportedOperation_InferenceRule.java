@@ -20,8 +20,8 @@ public class typeOf_Model_RootsIncludingImportedOperation_InferenceRule implemen
 
   public void applyRule(SNode argument) {
     RulesUtil.checkAppliedCorrectly_generic(argument);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_65().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "scope", true)), new QuotationClass_66().createNode(), SLinkOperations.getTarget(argument, "scope", true));
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_66().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "scope", true)), new QuotationClass_67().createNode(), SLinkOperations.getTarget(argument, "scope", true));
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.Model_RootsIncludingImportedOperation";

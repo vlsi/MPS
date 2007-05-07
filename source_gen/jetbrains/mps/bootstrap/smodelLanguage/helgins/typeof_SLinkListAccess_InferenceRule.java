@@ -4,7 +4,14 @@ package jetbrains.mps.bootstrap.smodelLanguage.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import java.util.List;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.smodel.search.SModelSearchUtil_new;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -18,11 +25,18 @@ public class typeof_SLinkListAccess_InferenceRule implements InferenceRule_Runti
   }
 
   public void applyRule(SNode argument) {
-    Object concept = RulesFunctions.fun_get_NodeConceptFromLeftExpression(argument);
-    if(!(!((concept == null)))) {
-      TypeChecker.getInstance().reportTypeError(argument, "couldn't define node concept from left expression");
+    if(RulesUtil.checkAppliedCorrectly_generic(argument) && (SLinkOperations.getTarget(argument, "link", false) != null)) {
+      SNode inputNodeConcept = RulesUtil.get_inputNodeConcept(argument);
+      if(!((inputNodeConcept != null))) {
+        TypeChecker.getInstance().reportTypeError(argument, "couldn't define node concept from left expression");
+      }
+      List<LinkDeclaration> declaredLinks = SModelSearchUtil_new.getLinkDeclarationsExcludingOverridden(((AbstractConceptDeclaration)SNodeOperations.getAdapter(inputNodeConcept)));
+      SNode linkDecl = SLinkOperations.getTarget(argument, "link", false);
+      if(!(declaredLinks.contains(((LinkDeclaration)SNodeOperations.getAdapter(linkDecl))))) {
+        TypeChecker.getInstance().reportTypeError(argument, "access to link '" + SPropertyOperations.getString(linkDecl, "role") + "' is not expected here");
+      }
     }
-    TypeChecker.getInstance().getRuntimeSupport().givetype((SNode)Queries.CustomExpression_typeof_SLinkListAccess(argument, concept), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_11().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(argument, "link", false), "target", false)), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess";
