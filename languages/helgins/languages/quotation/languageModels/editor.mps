@@ -23,8 +23,8 @@
       <property name="drawBorder" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1141045252204">
         <property name="textFgColor" value="query" />
-        <property name="drawBorder" value="false" />
         <property name="text" value="%(" />
+        <property name="drawBorder" value="false" />
         <node role="cellForegroundFunction" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_Color" id="1176891191270">
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176891191271">
             <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176891192600">
@@ -43,8 +43,8 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1142538426700">
         <property name="textFgColor" value="query" />
-        <property name="drawBorder" value="false" />
         <property name="text" value=")%" />
+        <property name="drawBorder" value="false" />
         <node role="cellForegroundFunction" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_Color" id="1176891200728">
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176891200729">
             <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176891201934">
@@ -666,8 +666,8 @@
       <property name="drawBorder" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1150896623142">
         <property name="textFgColor" value="query" />
-        <property name="drawBorder" value="false" />
         <property name="text" value="*(" />
+        <property name="drawBorder" value="false" />
         <node role="cellForegroundFunction" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_Color" id="1176891220734">
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176891220735">
             <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176891221939">
@@ -686,8 +686,8 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1150896623144">
         <property name="textFgColor" value="query" />
-        <property name="drawBorder" value="false" />
         <property name="text" value=")*" />
+        <property name="drawBorder" value="false" />
         <node role="cellForegroundFunction" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_Color" id="1176891233365">
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176891233366">
             <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176891234523">
@@ -707,8 +707,8 @@
       <property name="drawBorder" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1155904240524">
         <property name="textFgColor" value="query" />
-        <property name="drawBorder" value="false" />
         <property name="text" value="^(" />
+        <property name="drawBorder" value="false" />
         <node role="cellForegroundFunction" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_Color" id="1176891242979">
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176891242980">
             <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176891244247">
@@ -727,8 +727,8 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1155904240526">
         <property name="textFgColor" value="query" />
-        <property name="drawBorder" value="false" />
         <property name="text" value=")^" />
+        <property name="drawBorder" value="false" />
         <node role="cellForegroundFunction" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_Color" id="1176891250500">
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176891250501">
             <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176891252690">
@@ -762,6 +762,7 @@
         </node>
       </node>
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178550081138" />
   </node>
 </model>
 

@@ -67,6 +67,7 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546094937" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178550080889" />
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1149153108889">
     <property name="name" value="Main" />
@@ -131,6 +132,7 @@
     <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.TypeVariableDeclaration" id="1159202674978">
       <property name="name" value="T" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178550081003" />
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1154543408784">
     <property name="name" value="Arraysss" />
@@ -648,6 +650,7 @@
       <property name="name" value="aaa" />
       <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1170238601349" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178550081395" />
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1158864428674">
     <property name="name" value="Test_TypeCastKeymap" />
@@ -822,6 +825,7 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095244" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178550081375" />
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1165851331399">
     <property name="name" value="TestTypes" />
@@ -867,6 +871,7 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1165851338028" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546094963" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178550081537" />
   </node>
   <node type="jetbrains.mps.baseLanguage.EnumClass" id="1173881467772">
     <property name="name" value="ArrrEnum" />
@@ -904,6 +909,7 @@
     <node role="enumConstant" type="jetbrains.mps.baseLanguage.EnumConstantDeclaration" id="1173881480040">
       <property name="name" value="c" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178550081280" />
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1178286296188">
     <property name="name" value="TestXXXX" />
@@ -918,6 +924,7 @@
       <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1178286326413" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.PrivateVisibility" id="1178290753385" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178550081329" />
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1178286799445">
     <property name="name" value="TestYYY" />
@@ -943,6 +950,7 @@
     <node role="superclass" type="jetbrains.mps.baseLanguage.ClassifierType" id="1178286841083">
       <link role="classifier" targetNodeId="1178286296188" resolveInfo="TestXXXX" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178550081069" />
   </node>
 </model>
 

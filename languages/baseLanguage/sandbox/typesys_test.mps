@@ -87,6 +87,7 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1165629053277" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095697" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178550081051" />
   </node>
 </model>
 

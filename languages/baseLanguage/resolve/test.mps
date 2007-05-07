@@ -198,6 +198,7 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095343" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178550081563" />
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1121167096060">
     <property name="name" value="New1" />
@@ -670,6 +671,7 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546094982" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178550081349" />
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1122810884186">
     <property name="name" value="TestExternalResolver1" />
@@ -769,6 +771,7 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546097087" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178550081424" />
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1122811255194">
     <property name="name" value="TestExternalResolver2" />
@@ -868,6 +871,7 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095557" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178550081285" />
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1122983374125">
     <property name="name" value="TestJavaStub" />
@@ -903,6 +907,7 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1122983393504" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095338" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178550081305" />
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1123686506460">
     <property name="name" value="TestSubstitution" />
@@ -1037,6 +1042,7 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095742" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178550080934" />
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1175862165829">
     <property name="name" value="Test" />
@@ -1049,6 +1055,7 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096291" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178550080888" />
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1175862194311">
     <property name="name" value="Test2" />
@@ -1064,6 +1071,7 @@
     <node role="superclass" type="jetbrains.mps.baseLanguage.ClassifierType" id="1175862198297">
       <link role="classifier" targetNodeId="1175862165829" resolveInfo="Test" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178550081564" />
   </node>
 </model>
 

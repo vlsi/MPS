@@ -650,6 +650,7 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096769" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178550081539" />
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeFactories" id="1171415341604">
     <property name="name" value="SModelLang_factories" />
