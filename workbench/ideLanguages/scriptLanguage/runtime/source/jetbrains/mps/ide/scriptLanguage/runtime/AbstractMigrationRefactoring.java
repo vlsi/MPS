@@ -32,7 +32,7 @@ public abstract class AbstractMigrationRefactoring extends DefaultRefactoring {
 
   public String getAdditionalInfo() {
     return super.getAdditionalInfo();
-  }
+  }                                                   
 
   public abstract String getFqNameOfConceptToSearchInstances();
 
