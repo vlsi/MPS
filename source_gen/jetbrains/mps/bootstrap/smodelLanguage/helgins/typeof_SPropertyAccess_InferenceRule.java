@@ -4,7 +4,15 @@ package jetbrains.mps.bootstrap.smodelLanguage.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import java.util.List;
+import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
+import jetbrains.mps.smodel.search.SModelSearchUtil_new;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.bootstrap.structureLanguage.StructureLanguageUtil;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -18,12 +26,18 @@ public class typeof_SPropertyAccess_InferenceRule implements InferenceRule_Runti
   }
 
   public void applyRule(SNode argument) {
-    Object concept = RulesFunctions.fun_get_NodeConceptFromLeftExpression(argument);
-    if(!(!((concept == null)))) {
-      TypeChecker.getInstance().reportTypeError(argument, "couldn't define node concept from left expression");
+    if(RulesUtil.checkAppliedCorrectly_generic(argument) && (SLinkOperations.getTarget(argument, "property", false) != null)) {
+      SNode inputNodeConcept = RulesUtil.get_inputNodeConcept(argument);
+      if(!((inputNodeConcept != null))) {
+        TypeChecker.getInstance().reportTypeError(argument, "couldn't define node concept from left expression");
+      }
+      List<PropertyDeclaration> declaredProperties = SModelSearchUtil_new.getPropertyDeclarationsExcludingOverridden(((AbstractConceptDeclaration)SNodeOperations.getAdapter(inputNodeConcept)));
+      SNode propertyDecl = SLinkOperations.getTarget(argument, "property", false);
+      if(!(declaredProperties.contains(((PropertyDeclaration)SNodeOperations.getAdapter(propertyDecl))))) {
+        TypeChecker.getInstance().reportTypeError(argument, "access to property '" + SPropertyOperations.getString(propertyDecl, "name") + "' is not expected here");
+      }
     }
-    Queries.CustomExpression_check_SPropertyAccess(argument, concept);
-    TypeChecker.getInstance().getRuntimeSupport().givetype((SNode)Queries.CustomExpression_typeof_SPropertyAccess(argument), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(StructureLanguageUtil.adapt_PropertyDeclaration_to_Type(((PropertyDeclaration)SNodeOperations.getAdapter(SLinkOperations.getTarget(argument, "property", false)))), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess";
