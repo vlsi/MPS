@@ -52,6 +52,7 @@
         <property name="name" value="b" />
         <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1121172596091" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095532" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1121172619861">
       <property name="name" value="boo" />
@@ -98,6 +99,7 @@
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.BooleanType" id="1121172625567" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095723" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1121438897509">
       <property name="name" value="method" />
@@ -127,6 +129,7 @@
         <property name="name" value="k" />
         <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1121438897512" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095317" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1144313193353">
       <property name="name" value="test" />
@@ -193,6 +196,7 @@
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1158936076230" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095343" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1121167096060">
@@ -539,6 +543,7 @@
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.BooleanType" id="1121172827474" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095243" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1121253849301">
       <property name="name" value="method" />
@@ -610,6 +615,7 @@
         <property name="name" value="k" />
         <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1121253857103" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095340" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1121187219606">
       <property name="name" value="method" />
@@ -662,6 +668,7 @@
         <property name="name" value="b" />
         <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1121187219609" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546094982" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1122810884186">
@@ -674,6 +681,7 @@
         <property name="name" value="k" />
         <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1122811043956" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095648" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1122811049785">
       <property name="name" value="method" />
@@ -683,6 +691,7 @@
         <property name="name" value="k" />
         <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1122811058822" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095765" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1122811070354">
       <property name="name" value="method" />
@@ -696,6 +705,7 @@
         <property name="name" value="b" />
         <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1122811089439" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095531" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1122811099050">
       <property name="name" value="foo" />
@@ -709,6 +719,7 @@
         <property name="name" value="b" />
         <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1122811112963" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546094938" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1122810898062">
       <property name="name" value="method" />
@@ -718,6 +729,7 @@
         <property name="name" value="k" />
         <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1122810910176" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096870" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1122810915724">
       <property name="name" value="method" />
@@ -727,6 +739,7 @@
         <property name="name" value="k" />
         <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1122810934026" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096793" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1122810990512">
       <property name="name" value="method" />
@@ -740,6 +753,7 @@
         <property name="name" value="b" />
         <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1122811009207" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096912" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1122811015943">
       <property name="name" value="foo" />
@@ -753,6 +767,7 @@
         <property name="name" value="b" />
         <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1122811030122" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546097087" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1122811255194">
@@ -765,6 +780,7 @@
         <property name="name" value="k" />
         <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1122811350765" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096967" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1122811350766">
       <property name="name" value="method" />
@@ -774,6 +790,7 @@
         <property name="name" value="k" />
         <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1122811350770" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096837" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1122811350771">
       <property name="name" value="method" />
@@ -787,6 +804,7 @@
         <property name="name" value="b" />
         <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1122811350777" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096790" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1122811350778">
       <property name="name" value="foo" />
@@ -800,6 +818,7 @@
         <property name="name" value="b" />
         <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1122811350784" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096819" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1122811296075">
       <property name="name" value="method" />
@@ -809,6 +828,7 @@
         <property name="name" value="k" />
         <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1122811296079" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095770" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1122811296080">
       <property name="name" value="method" />
@@ -818,6 +838,7 @@
         <property name="name" value="k" />
         <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1122811296084" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095530" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1122811296085">
       <property name="name" value="method" />
@@ -831,6 +852,7 @@
         <property name="name" value="b" />
         <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1122811296091" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095221" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1122811296092">
       <property name="name" value="foo" />
@@ -844,6 +866,7 @@
         <property name="name" value="b" />
         <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1122811296098" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095557" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1122983374125">
@@ -878,6 +901,7 @@
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1122983393504" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095338" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1123686506460">
@@ -923,6 +947,7 @@
         <property name="name" value="k" />
         <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1123686600436" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095692" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1123686657150">
       <property name="name" value="boo" />
@@ -986,6 +1011,7 @@
         <property name="name" value="u" />
         <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1123686797001" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546094877" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1124801169522">
       <property name="name" value="method" />
@@ -999,6 +1025,7 @@
         <property name="name" value="b" />
         <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1124801169528" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095127" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1124801204468">
       <property name="name" value="method" />
@@ -1008,6 +1035,7 @@
         <property name="name" value="k" />
         <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1124801204472" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095742" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1175862165829">
@@ -1019,6 +1047,7 @@
           <link role="constructorDeclaration" extResolveInfo="2.constructor [Classifier]Object[ConstructorDeclaration] ()" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096291" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1175862194311">
@@ -1030,6 +1059,7 @@
           <link role="constructorDeclaration" targetNodeId="1175862168518" resolveInfo="Test" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096214" />
     </node>
     <node role="superclass" type="jetbrains.mps.baseLanguage.ClassifierType" id="1175862198297">
       <link role="classifier" targetNodeId="1175862165829" resolveInfo="Test" />

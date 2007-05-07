@@ -49,6 +49,7 @@
           <link role="concept" targetNodeId="4.1068431790189" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096965" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1178181704967">

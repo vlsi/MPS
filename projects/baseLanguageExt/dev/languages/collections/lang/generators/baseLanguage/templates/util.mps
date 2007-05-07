@@ -103,6 +103,7 @@
           <link role="classifier" extResolveInfo="3.[Classifier]IScope" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546097156" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1170956697197">
       <property name="name" value="create_Closure_returnedType" />
@@ -204,6 +205,7 @@
           <link role="classifier" extResolveInfo="7.[Classifier]ITypeChecker" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546097010" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1170975665472">
       <property name="name" value="create_ClosureWithInput_inputElementType" />
@@ -307,6 +309,7 @@
           <link role="classifier" extResolveInfo="10.[Classifier]ITemplateGenerator" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096787" />
     </node>
   </node>
 </model>

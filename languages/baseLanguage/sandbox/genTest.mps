@@ -52,6 +52,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095510" />
     </node>
   </node>
 </model>

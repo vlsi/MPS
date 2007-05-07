@@ -157,6 +157,7 @@
           <link role="concept" targetNodeId="1.1174565027678" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096763" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1174922475299">
       <property name="name" value="findBuilderForMatcher" />
@@ -194,6 +195,7 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1174922491646">
         <link role="classifier" extResolveInfo="2.[Classifier]INodeBuilder" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096739" />
     </node>
   </node>
 </model>

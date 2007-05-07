@@ -92,6 +92,7 @@
           <link role="concept" targetNodeId="1.1138411891628" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096892" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1168969209239">
       <property name="name" value="nodeOp_hasParm_conceptList" />
@@ -166,6 +167,7 @@
           <link role="concept" targetNodeId="1.1138411891628" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096893" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1168976201873">
       <property name="name" value="isPropertyAccess_simple" />
@@ -224,6 +226,7 @@
           <link role="concept" targetNodeId="1.1138056022639" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546097236" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1168976514329">
       <property name="name" value="isPropertyAccess_enum_notNullDefaultValue" />
@@ -333,6 +336,7 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1170463784617" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096742" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1168977078010">
       <property name="name" value="isPropertyAccess_enum_nullDefaultValue" />
@@ -442,6 +446,7 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1170464225523" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096766" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1168977771366">
       <property name="name" value="isProperty_set_stringValue" />
@@ -551,6 +556,7 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1168977842420" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546097140" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1168978712427">
       <property name="name" value="isProperty_set_notStringValue" />
@@ -662,6 +668,7 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1168978712481" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546097065" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1168979165563">
       <property name="name" value="isProperty_hasValueEnum_notNullDefaultValue" />
@@ -745,6 +752,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096795" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1168979519274">
       <property name="name" value="isProperty_hasValueEnum_nullDefaultValue" />
@@ -828,6 +836,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546097238" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1169051763393">
       <property name="name" value="linkOpExpression_genuineLink" />
@@ -938,6 +947,7 @@
           <link role="concept" targetNodeId="1.1138055978872" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546097231" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1169057553830">
       <property name="name" value="linkListOpExpression_genuineLink" />
@@ -1048,6 +1058,7 @@
           <link role="concept" targetNodeId="1.1138055978872" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546097113" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1172323746593">
       <property name="name" value="getLeftExpression" />
@@ -1078,6 +1089,7 @@
           <link role="concept" targetNodeId="1.1138411891628" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096815" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1172424541766">
       <property name="name" value="getConceptFqName" />
@@ -1101,6 +1113,7 @@
           <link role="concept" targetNodeId="5.1071489090640" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096743" />
     </node>
   </node>
 </model>

@@ -45,6 +45,7 @@
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1165623909331" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095505" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1165629053275">
       <property name="name" value="foo2" />
@@ -84,6 +85,7 @@
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1165629053277" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095697" />
     </node>
   </node>
 </model>

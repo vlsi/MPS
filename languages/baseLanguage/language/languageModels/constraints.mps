@@ -120,6 +120,7 @@
         <property name="name" value="node" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1170384086315" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546097058" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1171331618660">
       <property name="name" value="getMatchingText_BaseMethodDeclaration" />
@@ -313,6 +314,7 @@
           <link role="concept" targetNodeId="1.1068580123132" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096914" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1171330436701">
       <property name="name" value="getMatchingText_Type" />
@@ -521,6 +523,7 @@
           <link role="concept" targetNodeId="1.1068431790189" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546097237" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1172059749526">
@@ -596,6 +599,7 @@
         <property name="name" value="context" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1178291314892" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096764" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1172059907028">
       <property name="name" value="getMethodScope" />
@@ -668,6 +672,7 @@
         <property name="name" value="context" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1178291210595" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546097110" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1178180387775">

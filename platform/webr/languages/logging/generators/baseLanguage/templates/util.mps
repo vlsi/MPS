@@ -139,6 +139,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546172446" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1169469145122">
       <property name="name" value="findLogFieldDeclaration" />
@@ -267,6 +268,7 @@
           <link role="classifier" extResolveInfo="3.[Classifier]ITemplateGenerator" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546172495" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1169470726951">
       <property name="name" value="findEnabledMethod" />
@@ -330,6 +332,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546172177" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1169471754897">
       <property name="name" value="findLogMethod" />
@@ -385,6 +388,7 @@
           <link role="concept" targetNodeId="2.1167227138527" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546172371" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1169470832905">
       <property name="name" value="findLoggerMethod" />
@@ -463,6 +467,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546171955" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1169471502561">
       <property name="name" value="firstToUpper" />
@@ -547,6 +552,7 @@
           <link role="classifier" extResolveInfo="7.[Classifier]String" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546172154" />
     </node>
   </node>
 </model>

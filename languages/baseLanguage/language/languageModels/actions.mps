@@ -832,6 +832,7 @@
           <link role="concept" targetNodeId="1.1070534934090" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096838" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1158872840752">
       <property name="name" value="computeCastType" />
@@ -1069,6 +1070,7 @@
           <link role="concept" targetNodeId="1.1068431790191" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546097210" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions" id="1177334745415">

@@ -9,11 +9,12 @@
       <property name="name" value="baseInterfaceMethod" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1115766147565" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1115766151082" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095217" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.Interface" id="1115766166286">
-    <property name="todo" value="this is a test interface" />
     <property name="name" value="AnInterface" />
+    <property name="todo" value="this is a test interface" />
     <node role="staticField" type="jetbrains.mps.baseLanguage.StaticFieldDeclaration" id="1128642293906">
       <property name="name" value="AAA" />
       <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1128642300361">
@@ -27,11 +28,13 @@
       <property name="name" value="baseInterfaceMethod" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1115766214540" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1115766218166" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095629" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1115766241542">
       <property name="name" value="anInterfaceMethod" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1115766241544" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1115766243764" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095436" />
     </node>
     <node role="extendedInterface" type="jetbrains.mps.baseLanguage.ClassifierType" id="1115766202021">
       <link role="classifier" targetNodeId="1115766127296" />
@@ -51,6 +54,7 @@
       <property name="name" value="STM1" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1137896405234" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1137896398514" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096770" />
     </node>
     <node role="staticField" type="jetbrains.mps.baseLanguage.StaticFieldDeclaration" id="1137892410631">
       <property name="name" value="STF1" />
@@ -74,16 +78,19 @@
       <property name="name" value="baseInterfaceMethod" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1115766285315" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1115766288301" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095341" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1115766295021">
       <property name="name" value="anInterfaceMethod" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1115766295023" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1115766297524" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095198" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1115766326104">
       <property name="name" value="baseClassMethod" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1115766326106" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1115766328169" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546094920" />
     </node>
     <node role="implementedInterface" type="jetbrains.mps.baseLanguage.ClassifierType" id="1115766274125">
       <link role="classifier" targetNodeId="1115766166286" />
@@ -226,6 +233,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546097011" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1144185153675">
       <property name="name" value="testCastOp" />
@@ -270,6 +278,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546097158" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1144188002436">
       <property name="name" value="testCastOp2" />
@@ -286,6 +295,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546097061" />
     </node>
     <node role="constructor" type="jetbrains.mps.baseLanguage.ConstructorDeclaration" id="1137820838257">
       <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1137820900216" />
@@ -341,6 +351,7 @@
         <property name="name" value="ii" />
         <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1140566443865" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096311" />
     </node>
     <node role="constructor" type="jetbrains.mps.baseLanguage.ConstructorDeclaration" id="1136027151595">
       <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1136027212036" />
@@ -411,6 +422,7 @@
           <node role="componentType" type="jetbrains.mps.baseLanguage.IntegerType" id="1138061178325" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096339" />
     </node>
     <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1127094836077">
       <property name="name" value="aaa" />
@@ -540,6 +552,7 @@
           <link role="classifier" targetNodeId="1115766310400" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095481" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1130270268759">
       <property name="name" value="callStatic" />
@@ -576,6 +589,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095577" />
     </node>
     <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.TypeVariableDeclaration" id="1140819423550">
       <property name="name" value="T1" />
@@ -592,6 +606,7 @@
     <node role="constructor" type="jetbrains.mps.baseLanguage.ConstructorDeclaration" id="1149095908682">
       <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1149095908683" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1149095908684" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096167" />
     </node>
     <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1141251199520">
       <property name="name" value="int_field1" />
@@ -636,6 +651,7 @@
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1115766375256" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096843" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1141169035607">
       <property name="name" value="mmm1" />
@@ -671,6 +687,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096863" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1141261088482">
       <property name="name" value="aaaaaaa" />
@@ -707,6 +724,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546097089" />
     </node>
     <node role="superclass" type="jetbrains.mps.baseLanguage.ClassifierType" id="1165789484625">
       <link role="classifier" targetNodeId="1115766267843" resolveInfo="BaseClass" />
@@ -718,6 +736,7 @@
       <property name="name" value="aaa_static" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1120075189581" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1120075201350" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546097041" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1119993863122">
       <property name="name" value="aaa" />
@@ -744,6 +763,7 @@
         <property name="name" value="iii" />
         <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1119993881456" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095175" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1127501659937">
@@ -768,6 +788,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096316" />
     </node>
     <node role="staticField" type="jetbrains.mps.baseLanguage.StaticFieldDeclaration" id="1127521372765">
       <property name="name" value="bbb" />
@@ -799,6 +820,7 @@
           <link role="typeVariableDeclaration" targetNodeId="1127509349664" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546094919" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1127754693390">
       <property name="name" value="wqwe" />
@@ -839,6 +861,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095004" />
     </node>
     <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.TypeVariableDeclaration" id="1127509349664">
       <property name="name" value="T1" />
@@ -861,6 +884,7 @@
         <link role="classifier" extResolveInfo="1.[Classifier]String" />
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1130270248257" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096986" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.EnumClass" id="1137816471209">
@@ -869,6 +893,7 @@
       <property name="name" value="STM1" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1137892370622" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1137892365933" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096966" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1137892377201">
       <property name="name" value="STM1" />
@@ -878,6 +903,7 @@
         <property name="name" value="i" />
         <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1137892388519" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096792" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1137816490149">
       <property name="name" value="get" />
@@ -885,6 +911,7 @@
         <link role="classifier" targetNodeId="1137816471209" />
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1137816490182" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095561" />
     </node>
     <node role="enumConstant" type="jetbrains.mps.baseLanguage.EnumConstantDeclaration" id="1137816482507">
       <property name="name" value="EC1" />
@@ -935,6 +962,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096988" />
     </node>
     <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1158760427175">
       <property name="name" value="myT" />
@@ -984,6 +1012,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095483" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1158760365773">
       <property name="name" value="foo" />
@@ -1001,6 +1030,7 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.TypeVariableReference" id="1158760369855">
         <link role="typeVariableDeclaration" targetNodeId="1137951638585" resolveInfo="T1" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546095151" />
     </node>
     <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.TypeVariableDeclaration" id="1137951638585">
       <property name="name" value="T1" />
@@ -1054,6 +1084,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096862" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1154983906165">
@@ -1079,6 +1110,7 @@
           <link role="classifier" targetNodeId="1115766310400" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546094916" />
     </node>
   </node>
 </model>

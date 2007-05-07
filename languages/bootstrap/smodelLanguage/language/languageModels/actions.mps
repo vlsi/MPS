@@ -484,6 +484,7 @@
           <link role="concept" targetNodeId="3.1068431790191" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546097106" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1173978587590">
       <property name="name" value="isExpression_appropriateFor_SemanticDowncast" />
@@ -580,6 +581,7 @@
           <link role="concept" targetNodeId="3.1068431790191" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546097084" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1173918371841">
       <property name="name" value="isExpression_ofType_SNodeType" />
@@ -646,6 +648,7 @@
           <link role="concept" targetNodeId="3.1068431790191" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096769" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeFactories" id="1171415341604">

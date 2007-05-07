@@ -205,6 +205,7 @@
           <link role="classifier" extResolveInfo="5.[Classifier]ITemplateGenerator" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096888" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1170874151016">
       <property name="name" value="getTypeVars_from_Closure_enclosingClass" />
@@ -305,6 +306,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546097230" />
     </node>
   </node>
 </model>

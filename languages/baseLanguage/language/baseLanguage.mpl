@@ -15,6 +15,9 @@
   <constraints>
     <model modelUID="jetbrains.mps.baseLanguage.constraints" />
   </constraints>
+  <scripts>
+    <model modelUID="jetbrains.mps.baseLanguage.scripts" />
+  </scripts>
   <editor>
     <model modelUID="jetbrains.mps.baseLanguage.editor" />
   </editor>
