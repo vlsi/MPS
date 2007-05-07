@@ -21,7 +21,7 @@ public class typeOf_Link_SetNewChildOperation_InferenceRule implements Inference
   public void applyRule(SNode argument) {
     SNode resultConcept = null;
     if(RulesUtil.checkAppliedTo_LinkAccess_aggregation(argument)) {
-      SNode expectedConcept = RulesUtil.get_targetConcept_from_LinkOrLinkListAccess(RulesUtil.leftExpression(argument));
+      SNode expectedConcept = RulesUtil.get_inputNodeConcept(argument);
       SNode parameterConcept = SLinkOperations.getTarget(argument, "concept", false);
       if(parameterConcept == null) {
         resultConcept = expectedConcept;
@@ -31,7 +31,7 @@ public class typeOf_Link_SetNewChildOperation_InferenceRule implements Inference
         RulesUtil.checkAssignableConcept(parameterConcept, expectedConcept, argument, "incompatibel parameter concept");
       }
     }
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_61().createNode(resultConcept), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_62().createNode(resultConcept), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation";

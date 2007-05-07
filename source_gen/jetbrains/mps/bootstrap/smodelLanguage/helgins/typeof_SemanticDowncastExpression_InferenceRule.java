@@ -33,7 +33,7 @@ public class typeof_SemanticDowncastExpression_InferenceRule implements Inferenc
         boolean matches_1178287491308 = false;
         matches_1178287491308 = SModelUtil_new.isAssignableConcept(TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpr).getConceptFqName(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SModelType");
         if(matches_1178287491308) {
-          TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_33().createNode(), argument);
+          TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_34().createNode(), argument);
           break;
         }
       }
@@ -43,7 +43,7 @@ public class typeof_SemanticDowncastExpression_InferenceRule implements Inferenc
           boolean matches_1178287491320 = false;
           matches_1178287491320 = SModelUtil_new.isAssignableConcept(TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpr).getConceptFqName(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType");
           if(matches_1178287491320) {
-            TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_34().createNode(), argument);
+            TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_35().createNode(), argument);
             break;
           }
         }

@@ -26,7 +26,7 @@ public class typeof_Node_InsertPrevSiblingOperation_InferenceRule implements Inf
       if(!(!((TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter) == null)))) {
         TypeChecker.getInstance().reportTypeError(parameter, "no type");
       }
-      if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter), new QuotationClass_26().createNode()))) {
+      if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter), new QuotationClass_27().createNode()))) {
         TypeChecker.getInstance().reportTypeError(parameter, "incompatible type: snode expected");
       }
     }

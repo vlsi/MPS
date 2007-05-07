@@ -26,7 +26,7 @@ public class typeOf_LinkList_AddChildOperation_InferenceRule implements Inferenc
         if(!((parmType != null))) {
           TypeChecker.getInstance().reportTypeError(parameter, "no type");
         }
-        SNode expectedType = RulesUtil.get_typeOfTarget_from_LinkOrLinkListAccess(RulesUtil.leftExpression(argument));
+        SNode expectedType = RulesUtil.get_inputNodeType(argument);
         if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(parmType, expectedType))) {
           TypeChecker.getInstance().reportTypeError(parameter, "incompatible type\nexpected: " + expectedType + "\nwas: " + parmType);
         }
