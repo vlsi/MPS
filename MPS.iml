@@ -20,7 +20,6 @@
     <orderEntry type="library" name="XStream" level="project" />
     <orderEntry type="library" name="JUnit" level="project" />
     <orderEntry type="library" name="JDOM" level="project" />
-    <orderEntry type="library" name="XMLRPC" level="project" />
     <orderEntry type="library" name="Log4j" level="project" />
     <orderEntry type="module" module-name="MPSSupport" exported="" />
     <orderEntry type="library" name="Eclipse-compiler" level="project" />
