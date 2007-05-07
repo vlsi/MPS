@@ -3209,6 +3209,20 @@
           </node>
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1173133630405" />
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1178552852309">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1178552852310">
+            <property name="name" value="adapter" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1178552852311">
+              <link role="classifier" extResolveInfo="4.[Classifier]INodeAdapter" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178552830314">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1178552827747">
+                <link role="variableDeclaration" targetNodeId="1173133388685" resolveInfo="concept1" />
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1178552849257" />
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1173133606677">
         <property name="name" value="node" />
