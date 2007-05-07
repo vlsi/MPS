@@ -10,6 +10,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Classifier extends GenericDeclaration {
+  public static String VISIBILITY = "visibility";
   public static String STATIC_FIELD = "staticField";
   public static String METHOD = "method";
 
@@ -24,6 +25,12 @@ public class Classifier extends GenericDeclaration {
     return Classifier.newInstance(sm, false);
   }
 
+  public Visibility getVisibility() {
+    return (Visibility)this.getChild(Classifier.VISIBILITY);
+  }
+  public void setVisibility(Visibility node) {
+    super.setChild(Classifier.VISIBILITY, node);
+  }
   public int getStaticFieldsCount() {
     return this.getChildCount(Classifier.STATIC_FIELD);
   }

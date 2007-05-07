@@ -525,6 +525,7 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546097237" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178549561824" />
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1172059749526">
     <property name="name" value="ReferenceUtil" />
@@ -953,7 +954,21 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1178181704931">
     <link role="concept" targetNodeId="1.1107461130800" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1178181704932">
-      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178181704933" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178181704933">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1178550133303">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178550137466">
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178550134889">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1178550133304" />
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1178550136209">
+                <link role="link" targetNodeId="1.1178549650460" />
+              </node>
+            </node>
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Link_SetNewChildOperation" id="1178550138723">
+              <link role="concept" targetNodeId="1.1146644602865" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="properties" type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraint" id="1156245967001">
       <link role="applicableProperty" targetNodeId="2.1156234966388" />

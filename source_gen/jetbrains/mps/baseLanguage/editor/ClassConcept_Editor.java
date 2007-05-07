@@ -17,14 +17,15 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
-import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 
 public class ClassConcept_Editor extends DefaultNodeEditor {
 
+  /* package */AbstractCellProvider my_Component_Visibility;
   /* package */AbstractCellProvider my_GenericDeclaration_TypeVariables_Component;
   /* package */AbstractCellListHandler myImplementedInterfaceListHandler_implementedInterfaceList_;
   /* package */AbstractCellListHandler myStaticFieldListHandler_staticFieldList_;
@@ -105,7 +106,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createVisibilityCell(context, node));
+    editorCell.addEditorCell(this.create_Component_VisibilityCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "class"));
     editorCell.addEditorCell(this.createNameCell(context, node));
     if(ClassConcept_Editor._QueryFunction_NodeCondition_1145916139208(node, context.getOperationContext().getScope())) {
@@ -325,6 +326,21 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRowCell8(context, node));
     editorCell.addEditorCell(this.createConstantCell24(context, node, "}"));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171628247797");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell create_Component_VisibilityCell(EditorContext context, SNode node) {
+    if(this.my_Component_Visibility == null) {
+      this.my_Component_Visibility = new _Component_Visibility(node);
+    }
+    EditorCell componentCell = this.my_Component_Visibility.createEditorCell(context);
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.addEditorCell(componentCell);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178550101404");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -732,39 +748,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.ROLE, this.myStaticMethodListHandler_staticMethodList_.getElementRole());
     editorCell.setLayoutConstraint("");
     return editorCell;
-  }
-  public EditorCell createVisibilityCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
-    EditorCell editorCell = provider.createEditorCell(context);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    if(editorCell instanceof EditorCell_Label) {
-      EditorCell_Label editorCellLabel = (EditorCell_Label)editorCell;
-      editorCellLabel.setEditable(true);
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1146646520730");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
-  public EditorCell createVisibilityCell(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("visibility");
-    provider.setNoTargetText("/*package*/");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createVisibilityCellinternal(context, node, provider);
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else 
-    return cellWithRole;
   }
   public EditorCell createNameCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;

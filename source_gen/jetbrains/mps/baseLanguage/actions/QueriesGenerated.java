@@ -58,6 +58,9 @@ public class QueriesGenerated {
     }
     return false;
   }
+  public static boolean nodeSubstituteActionsBuilder_Precondition_Visibility_1178549461018(SNode parentNode, IScope scope, IOperationContext operationContext) {
+    return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.Classifier");
+  }
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1177499026996(SNode sourceNode, IScope scope, IOperationContext operationContext) {
     ClassifierType ct = BaseLanguageTypesUtil_new.tryObtain_ClassifierType(((Expression)SNodeOperations.getAdapter(sourceNode)));
     return ct != null;
@@ -474,6 +477,10 @@ public class QueriesGenerated {
       };
       result.addAll(ModelActions.createChildSubstituteActions(parentNode, currentTargetNode, wrappedConcept, setter, operationContext));
     }
+    return result;
+  }
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Visibility_1178549410741(final SNode parentNode, final SNode currentTargetNode, final ConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     return result;
   }
   public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1138168906052(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {

@@ -23,6 +23,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class Interface_Editor extends DefaultNodeEditor {
 
+  /* package */AbstractCellProvider my_Component_Visibility6;
   /* package */AbstractCellProvider my_GenericDeclaration_TypeVariables_Component1;
   /* package */AbstractCellListHandler myExtendedInterfaceListHandler_extendedInterfaceList_;
   /* package */AbstractCellListHandler myStaticFieldListHandler_staticFieldList_;
@@ -44,6 +45,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.create_Component_VisibilityCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "interface"));
     editorCell.addEditorCell(this.createNameCell(context, node));
     if(Interface_Editor._QueryFunction_NodeCondition_1145916182768(node, context.getOperationContext().getScope())) {
@@ -102,6 +104,21 @@ public class Interface_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell8(context, node, ""));
     editorCell.addEditorCell(this.createConstantCell9(context, node, "}"));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1107796852505");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell create_Component_VisibilityCell(EditorContext context, SNode node) {
+    if(this.my_Component_Visibility6 == null) {
+      this.my_Component_Visibility6 = new _Component_Visibility(node);
+    }
+    EditorCell componentCell = this.my_Component_Visibility6.createEditorCell(context);
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.addEditorCell(componentCell);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178550117011");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

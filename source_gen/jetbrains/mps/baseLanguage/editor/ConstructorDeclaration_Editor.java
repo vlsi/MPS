@@ -24,7 +24,7 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 
 public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider my_Component_Visibility;
+  /* package */AbstractCellProvider my_Component_Visibility1;
   /* package */AbstractCellListHandler myParameterListHandler_parameterList_;
   /* package */AbstractCellListHandler myThrowsItemListHandler_throwsItemList_;
 
@@ -119,10 +119,10 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell create_Component_VisibilityCell(EditorContext context, SNode node) {
-    if(this.my_Component_Visibility == null) {
-      this.my_Component_Visibility = new _Component_Visibility(node);
+    if(this.my_Component_Visibility1 == null) {
+      this.my_Component_Visibility1 = new _Component_Visibility(node);
     }
-    EditorCell componentCell = this.my_Component_Visibility.createEditorCell(context);
+    EditorCell componentCell = this.my_Component_Visibility1.createEditorCell(context);
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.addEditorCell(componentCell);
     editorCell.setSelectable(true);

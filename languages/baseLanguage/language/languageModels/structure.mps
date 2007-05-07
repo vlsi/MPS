@@ -131,11 +131,6 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1107535904670" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1146646494462">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="visibility" />
-      <link role="target" targetNodeId="1146644584814" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1171626359898">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="0..1" />
@@ -1194,6 +1189,11 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1068580123165" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1178549650460">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="visibility" />
+      <link role="target" targetNodeId="1146644584814" resolveInfo="Visibility" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1107535904670">
     <property name="name" value="ClassifierType" />
@@ -1979,7 +1979,13 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptDeclaration" id="1178285077437">
     <property name="name" value="ClassifierMember" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1178285332900">
+    <node role="extends" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1178549989306">
+      <link role="intfc" targetNodeId="1178549954367" resolveInfo="Visible" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptDeclaration" id="1178549954367">
+    <property name="name" value="Visible" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1178549979242">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="0..1" />
       <property name="role" value="visibility" />
