@@ -19,7 +19,7 @@ public class typeof_SConceptLinkAccess_InferenceRule implements InferenceRule_Ru
   }
 
   public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_37().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(argument, "conceptLinkDeclaration", false), "targetType", false)), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_38().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(argument, "conceptLinkDeclaration", false), "targetType", false)), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptLinkAccess";

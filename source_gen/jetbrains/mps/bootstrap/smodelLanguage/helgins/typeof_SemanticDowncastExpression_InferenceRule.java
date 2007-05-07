@@ -6,12 +6,13 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_SemanticDowncastExpression_InferenceRule implements InferenceRule_Runtime {
 
@@ -19,36 +20,18 @@ public class typeof_SemanticDowncastExpression_InferenceRule implements Inferenc
   }
 
   public void applyRule(SNode argument) {
-    SNode leftExpr = SLinkOperations.getTarget(argument, "leftExpression", true);
-    if(!(!((leftExpr == null)))) {
-      TypeChecker.getInstance().reportTypeError(argument, "not expected here");
-    }
-    TypeChecker.getInstance().getRuntimeSupport().check(leftExpr);
-    if(!(!((TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpr) == null)))) {
-      TypeChecker.getInstance().reportTypeError(leftExpr, "no type");
-    }
-    do {
-      SNode matchedNode_1178287491305 = TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpr);
-      {
-        boolean matches_1178287491308 = false;
-        matches_1178287491308 = SModelUtil_new.isAssignableConcept(TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpr).getConceptFqName(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SModelType");
-        if(matches_1178287491308) {
-          TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_35().createNode(), argument);
-          break;
-        }
+    if((SLinkOperations.getTarget(argument, "leftExpression", true) != null)) {
+      SNode leftType = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "leftExpression", true));
+      if(SNodeOperations.isInstanceOf(leftType, "jetbrains.mps.bootstrap.smodelLanguage.structure.SModelType")) {
+        TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_35().createNode(), argument);
+      } else 
+      if(SNodeOperations.isInstanceOf(leftType, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType")) {
+        TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_36().createNode(), argument);
+      } else 
+      if(SNodeOperations.isInstanceOf(leftType, "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType")) {
+        TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_37().createNode(), argument);
       }
-      do {
-        SNode matchedNode_1178287491317 = TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpr);
-        {
-          boolean matches_1178287491320 = false;
-          matches_1178287491320 = SModelUtil_new.isAssignableConcept(TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpr).getConceptFqName(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType");
-          if(matches_1178287491320) {
-            TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_36().createNode(), argument);
-            break;
-          }
-        }
-      } while(false);
-    } while(false);
+    }
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression";

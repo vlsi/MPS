@@ -18,7 +18,7 @@ public class typeOf_EnumMemberReference_InferenceRule implements InferenceRule_R
   }
 
   public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_60().createNode(), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_61().createNode(), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference";
