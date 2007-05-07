@@ -952,5 +952,8 @@
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178550081069" />
   </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1178551248023">
+    <property name="name" value="ClassVisibilityTest" />
+  </node>
 </model>
 

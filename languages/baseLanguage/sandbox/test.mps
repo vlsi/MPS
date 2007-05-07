@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.sandbox.test">
   <language namespace="jetbrains.mps.baseLanguage" />
-  <maxImportIndex value="25" />
+  <maxImportIndex value="26" />
   <import index="1" modelUID="java.lang@java_stub" />
+  <import index="26" modelUID="jetbrains.mps.baseLanguage.sandbox.misc" />
   <node type="jetbrains.mps.baseLanguage.Interface" id="1115766127296">
     <property name="name" value="IBaseInterface" />
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1115766147547">
@@ -303,6 +304,13 @@
     <node role="constructor" type="jetbrains.mps.baseLanguage.ConstructorDeclaration" id="1137820838257">
       <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1137820900216" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1137820838258">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1178551432379">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1178551432380">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1178551432381">
+              <link role="classifier" targetNodeId="26.1178551248023" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1140484304846">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1140484304845">
             <property name="name" value="aaa" />
