@@ -439,8 +439,8 @@ public class MergeResultView extends JPanel {
     public ConflictNode(Conflict conflict) {
       super(null);
 
-      add(new ChangeNode(conflict.getC1()));
-      add(new ChangeNode(conflict.getC2()));
+      add(new ChangeNode(conflict.getC1(), "mine"));
+      add(new ChangeNode(conflict.getC2(), "theirs"));
     }
 
     public String getNodeIdentifier () {
@@ -475,11 +475,16 @@ public class MergeResultView extends JPanel {
 
   private class ChangeNode extends MPSTreeNode {
     private Change myChange;
-
+    private String myAdditionalText;
 
     public ChangeNode(Change change) {
+      this(change, null);
+    }
+
+    public ChangeNode(Change change, String additionalText) {
       super(null);
       myChange = change;
+      myAdditionalText = additionalText;
     }
 
     public JPopupMenu getPopupMenu() {
@@ -526,12 +531,19 @@ public class MergeResultView extends JPanel {
 
 
     public String toString() {
+
+      String result;
       if (myExcludedChanges.contains(myChange)) {
-        return "<html><s>" + myChange + "</s>";
+        result = "<html><s>" + myChange +  "</s>";
 
       } else {
-        return "" + myChange;
+        result = "" + myChange;
       }
+      if (myAdditionalText != null) {
+        result += " " + myAdditionalText;
+      }
+
+      return result;
     }
 
     public String getNodeIdentifier() {
