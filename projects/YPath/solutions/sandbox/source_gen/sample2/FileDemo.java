@@ -8,7 +8,7 @@ import ypath.util.TreeTraversalFactory;
 
 public class FileDemo {
 
-  public static void main(String[] args) {
+  /* package */static void main(String[] args) {
     File f = new File(Arrays.asList(args).get(0));
     for(File dir : TreeTraversalFactory.Filter(TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new File_TreePath().from(f), TreeTraversalFactory.Axis("DESCENDANTS")), new TreePath_nodeKind_1172248995401()), new WhereFilter_1172249139028(null, null))) {
       System.out.println(dir);

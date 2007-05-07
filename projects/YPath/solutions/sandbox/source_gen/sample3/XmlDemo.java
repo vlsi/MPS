@@ -15,7 +15,7 @@ import treepath_dom.TreePath_nodeKind_propertyMatcher_1175164263587;
 
 public class XmlDemo {
 
-  public static void main(String[] args) {
+  /* package */static void main(String[] args) {
     String INPUT = new String("<doc> <a><b><foobar/><findme baz=\"fooblin\"/></b><c></c></a> </doc>");
     try {
       InputStream is = new ByteArrayInputStream(INPUT.getBytes());
