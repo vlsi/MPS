@@ -102,6 +102,32 @@
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1160601253343" />
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1178565654462">
+      <property name="name" value="ccc" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1178565654463" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178565654464" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178565654465">
+        <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1178565662971">
+          <node role="condition" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1178565665837">
+            <property name="value" value="true" />
+          </node>
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1178565662973">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1178565697507">
+              <node role="expression" type="jetbrains.mps.baseLanguage.AssignmentExpression" id="1178565697779">
+                <node role="rValue" type="jetbrains.mps.baseLanguage.StringLiteral" id="1178565699318" />
+                <node role="lValue" type="jetbrains.mps.baseLanguage.ParameterReference" id="1178565697508">
+                  <link role="variableDeclaration" targetNodeId="1178565693703" resolveInfo="b" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1178565693703">
+        <property name="name" value="b" />
+        <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1178565693704" />
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1160672461641">
     <property name="name" value="Blocks" />
