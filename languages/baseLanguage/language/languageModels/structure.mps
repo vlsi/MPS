@@ -254,7 +254,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068580123136">
     <property name="name" value="StatementList" />
-    <link role="extends" targetNodeId="4.1078489098625" />
+    <link role="extends" targetNodeId="4.1133920641626" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1068581517665">
       <property name="targetCardinality" value="1" />
       <property name="sourceCardinality" value="0..n" />

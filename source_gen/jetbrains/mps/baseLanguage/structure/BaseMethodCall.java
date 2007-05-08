@@ -7,13 +7,13 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import java.util.Iterator;
 import java.util.List;
-import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 
 public class BaseMethodCall extends Expression {
-  public static String ACTUAL_ARGUMENT = "actualArgument";
   public static String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
+  public static String ACTUAL_ARGUMENT = "actualArgument";
 
   public  BaseMethodCall(SNode node) {
     super(node);
@@ -26,6 +26,12 @@ public class BaseMethodCall extends Expression {
     return BaseMethodCall.newInstance(sm, false);
   }
 
+  public BaseMethodDeclaration getBaseMethodDeclaration() {
+    return (BaseMethodDeclaration)this.getReferent(BaseMethodCall.BASE_METHOD_DECLARATION);
+  }
+  public void setBaseMethodDeclaration(BaseMethodDeclaration node) {
+    super.setReferent(BaseMethodCall.BASE_METHOD_DECLARATION, node);
+  }
   public int getActualArgumentsCount() {
     return this.getChildCount(BaseMethodCall.ACTUAL_ARGUMENT);
   }
@@ -40,11 +46,5 @@ public class BaseMethodCall extends Expression {
   }
   public void insertActualArgument(Expression prev, Expression node) {
     this.insertChild(prev, BaseMethodCall.ACTUAL_ARGUMENT, node);
-  }
-  public BaseMethodDeclaration getBaseMethodDeclaration() {
-    return (BaseMethodDeclaration)this.getReferent(BaseMethodCall.BASE_METHOD_DECLARATION);
-  }
-  public void setBaseMethodDeclaration(BaseMethodDeclaration node) {
-    super.setReferent(BaseMethodCall.BASE_METHOD_DECLARATION, node);
   }
 }
