@@ -1,12 +1,8 @@
 package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.helgins.runtime.RuntimeSupport;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
-import jetbrains.mps.bootstrap.helgins.runtime.incremental.SNodeReadEvent;
-import jetbrains.mps.bootstrap.helgins.runtime.incremental.HelginsNodesReadListener;
-import jetbrains.mps.helgins.evaluator.CopyEvaluator;
 import jetbrains.mps.helgins.evaluator.QuotationEvaluator;
 import jetbrains.mps.helgins.structure.*;
 import jetbrains.mps.ide.IStatus;
@@ -53,9 +49,7 @@ public class TypeChecker {
   private TypeVariablesManager myTypeVariablesManager;
   private HInterpreter myHInterpreter;
   private SubtypingManager mySubtypingManager;
-  private AdaptationManager myAdaptationManager;
   private QuotationEvaluator myQuotationEvaluator;
-  private CopyEvaluator myCopyEvaluator;
   private RuntimeSupport myRuntimeSupport;
   private RulesManager myRulesManager;
   private boolean myUsedForBLCompletion = true;
@@ -65,9 +59,7 @@ public class TypeChecker {
     myHInterpreter = new HInterpreter(this);
     myTypeVariablesManager = new TypeVariablesManager(this);
     mySubtypingManager = new SubtypingManager(this);
-    myAdaptationManager = new AdaptationManager(this);
     myQuotationEvaluator = new QuotationEvaluator(this);
-    myCopyEvaluator = new CopyEvaluator(this);
     myRuntimeSupport = new RuntimeSupport(this);
     myRulesManager = new RulesManager(this);
   }
@@ -92,20 +84,12 @@ public class TypeChecker {
     return mySubtypingManager;
   }
 
-  public AdaptationManager  getAdaptationManager() {
-    return myAdaptationManager;
-  }
-
   public HInterpreter getInterpreter() {
     return myHInterpreter;
   }
 
   public QuotationEvaluator getQuotationEvaluator() {
     return myQuotationEvaluator;
-  }
-
-  public CopyEvaluator getCopyEvaluator() {
-    return myCopyEvaluator;
   }
 
   public RuntimeSupport getRuntimeSupport() {
@@ -118,12 +102,10 @@ public class TypeChecker {
 
   public void clear() {
     myMainContext.clear();
-    myAdaptationManager.clear();
     myEquationManagersStack.clear();
     myEquationManagersStack.push(new EquationManager(this));
     myTypeVariablesManager.clearVariables();
     myHInterpreter.clear();
-    myAdaptationManager.clear();
     myConceptsToRulesCache.clear();
     myNodesWithErrors.clear();
     myNodesWithErrorStrings.clear();
@@ -134,7 +116,7 @@ public class TypeChecker {
     myRulesManager.clear();
     mySubtypingManager.clearCaches();
 
-    //todo remove two strings below
+    //todo remove a string below
     myNodesToDependentRoots.clear();
     clear();
   }
@@ -142,7 +124,7 @@ public class TypeChecker {
   public void checkTypes(SNode root) {
     //clear
     clear();
-    NodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance().getNodeTypesComponent(root);
+    NodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance().getNodeTypesComponent(root.getContainingRoot());
     if (nodeTypesComponent != null) {
       nodeTypesComponent.clear();
     }
@@ -176,7 +158,7 @@ public class TypeChecker {
       String errorString = "HELGINS ERROR: " + myNodesWithErrors.get(node).reportError();
       myNodesWithErrorStrings.put(node, errorString);
       IStatus status = new Status(IStatus.Code.ERROR, errorString);
-       NodeTypesComponentsRepository.getInstance().
+      NodeTypesComponentsRepository.getInstance().
               getNodeTypesComponent(node.getContainingRoot()).setErrorToNode(node, errorString);
     }
   }
@@ -328,6 +310,7 @@ public class TypeChecker {
   }
 
   public void checkTypesForNodeAndSolveInequations(SNode node) {
+    if (node == null) return;
     EquationManager oldSlave = new EquationManager(this);
     myEquationManagersStack.push(oldSlave);
     try {
@@ -341,7 +324,9 @@ public class TypeChecker {
     }
     slave.solveInequations();
     myEquationManagersStack.peek().putAllEquations(slave);
-    NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(node.getContainingRoot()).markNodeAsChecked(node);
+    NodeTypesComponentsRepository.getInstance()
+            .createNodeTypesComponent(node.getContainingRoot())
+            .markNodeAsChecked(node);
   }
 
   public static SNode asType(Object o) {
@@ -430,26 +415,23 @@ public class TypeChecker {
   @Nullable
   public SNode getTypeDontCheck(SNode node) {
     if (node == null) return null;
-   /* Object typeObject = node.getUserObject(TYPE_OF_TERM);
-    if (typeObject instanceof SNode) return (SNode) typeObject;
-    return null;*/
+    /* Object typeObject = node.getUserObject(TYPE_OF_TERM);
+   if (typeObject instanceof SNode) return (SNode) typeObject;
+   return null;*/
     return NodeTypesComponentsRepository.getInstance().
             getNodeTypesComponent(node.getContainingRoot()).getType(node);
   }
 
-  @Nullable
-  public String getNodeErrorDontCheck(SNode node) {
-    return NodeTypesComponentsRepository.getInstance().
-            getNodeTypesComponent(node.getContainingRoot()).getError(node);
-  }
 
   public SModel getRuntimeTypesModel() {
     return myHInterpreter.getRuntimeTypesModel();
   }
 
+  @Nullable
   public String getTypeErrorDontCheck(SNode node) {
     if (node == null) return null;
-    return myNodesWithErrorStrings.get(node);
+    return NodeTypesComponentsRepository.getInstance().
+            getNodeTypesComponent(node.getContainingRoot()).getError(node);
   }
 
   @Hack

@@ -1,6 +1,7 @@
 package jetbrains.mps.bootstrap.helgins.runtime;
 
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
 import jetbrains.mps.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.patterns.IMatchingPattern;
@@ -29,8 +30,13 @@ public class RuntimeSupport {
   }
 
   public SNode typeOf(SNode node) {
+    if (node == null) return null;
+    SNode type = NodeTypesComponentsRepository.getInstance()
+            .getNodeTypesComponent(node.getContainingRoot()).getType(node);
+    if (type != null) return type;
+
     Map<SNode, SNode> typesContext = myTypeChecker.getMainContext();
-    SNode type = typesContext.get(node);
+    type = typesContext.get(node);
     if (type == null) {
       SNode var = createNewRuntimeTypesVariable(false);
       type = TypeChecker.asType(var);

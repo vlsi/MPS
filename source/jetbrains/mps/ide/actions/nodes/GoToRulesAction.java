@@ -80,10 +80,7 @@ public class GoToRulesAction extends MPSAction {
             if (object instanceof SupertypingRule) {
               analyzedTermDeclaration = ((SupertypingRule)object).getApplicableNode();
             }
-            if (object instanceof TypeAdaptationRule) {
-              analyzedTermDeclaration = ((TypeAdaptationRule)object).getApplicableNodes().get(0);
-            }
-
+           
             if (maybeApplicable(conceptDeclaration, analyzedTermDeclaration, operationContext.getScope())) {
               return true;
             }
