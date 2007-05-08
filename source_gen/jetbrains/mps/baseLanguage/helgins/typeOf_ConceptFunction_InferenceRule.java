@@ -38,16 +38,16 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
     if(noReturnExpected) {
       // shouldn't return any values
       {
-        ICursor<SNode> _zCursor1 = CursorFactory.createCursor(returnStatements);
+        ICursor<SNode> _zCursor = CursorFactory.createCursor(returnStatements);
         try {
-          while(_zCursor1.moveToNext()) {
-            SNode returnStatement = _zCursor1.getCurrent();
+          while(_zCursor.moveToNext()) {
+            SNode returnStatement = _zCursor.getCurrent();
             if((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
               TypeChecker.getInstance().reportTypeError(returnStatement, "no return value expected");
             }
           }
         } finally {
-          _zCursor1.release();
+          _zCursor.release();
         }
       }
     } else 
@@ -55,10 +55,10 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
       // should return subtypes of the 'expected type'
       // if 'expected typeis null - should still return some value (of any type)
       {
-        ICursor<SNode> _zCursor2 = CursorFactory.createCursor(returnStatements);
+        ICursor<SNode> _zCursor1 = CursorFactory.createCursor(returnStatements);
         try {
-          while(_zCursor2.moveToNext()) {
-            SNode returnStatement = _zCursor2.getCurrent();
+          while(_zCursor1.moveToNext()) {
+            SNode returnStatement = _zCursor1.getCurrent();
             if((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
               TypeChecker.getInstance().reportTypeError(returnStatement, "should return value");
             } else 
@@ -67,7 +67,7 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
             }
           }
         } finally {
-          _zCursor2.release();
+          _zCursor1.release();
         }
       }
       if(leastCommonSupertype == null) {
