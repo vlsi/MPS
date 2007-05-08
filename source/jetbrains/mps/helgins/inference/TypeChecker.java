@@ -40,9 +40,6 @@ import java.util.*;
 public class TypeChecker {
   private static final Logger LOG = Logger.getLogger(TypeChecker.class);
 
-  public static final Object HELGINS_ERROR_STATUS = new Object();
-  public static final Object TYPE_OF_TERM = new Object();
-
   private Set<SNode> myCheckedRoots = new WeakSet<SNode>();
   private Map<SNode, Set<SNode>> myNodesToDependentRoots = new WeakHashMap<SNode, Set<SNode>>();
 
@@ -145,7 +142,6 @@ public class TypeChecker {
   public void checkTypes(SNode root) {
     //clear
     clear();
-    clearTypeUserObjects(root);
     NodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance().getNodeTypesComponent(root);
     if (nodeTypesComponent != null) {
       nodeTypesComponent.clear();
@@ -171,7 +167,8 @@ public class TypeChecker {
       if (BaseAdapter.isInstance(type, RuntimeErrorType.class)) {
         reportTypeError(term, ((RuntimeErrorType) BaseAdapter.fromNode(type)).getErrorText());
       }
-      term.putUserObject(TYPE_OF_TERM, type);
+      NodeTypesComponentsRepository.getInstance().
+              getNodeTypesComponent(term.getContainingRoot()).setTypeToNode(term, type);
     }
 
     // setting errors
@@ -179,7 +176,8 @@ public class TypeChecker {
       String errorString = "HELGINS ERROR: " + myNodesWithErrors.get(node).reportError();
       myNodesWithErrorStrings.put(node, errorString);
       IStatus status = new Status(IStatus.Code.ERROR, errorString);
-      node.putUserObject(HELGINS_ERROR_STATUS, status);
+       NodeTypesComponentsRepository.getInstance().
+              getNodeTypesComponent(node.getContainingRoot()).setErrorToNode(node, errorString);
     }
   }
 
@@ -301,7 +299,7 @@ public class TypeChecker {
     NodeTypesComponent nodeTypesComponent =
             NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(node.getContainingRoot());
     if (nodeTypesComponent == null) return;
-    nodeTypesComponent.computeTypesForNode(node, null);
+    nodeTypesComponent.computeTypesForNode(node);
   }
 
   /*package*/ void applyRulesToNode(SNode node) {
@@ -373,15 +371,6 @@ public class TypeChecker {
     return myCheckedRoots.contains(node);
   }
 
-  private void clearTypeUserObjects(SNode node) {
-    node.removeUserObject(HELGINS_ERROR_STATUS);
-    node.removeUserObject(TYPE_OF_TERM);
-
-    for (SNode child : node.getChildren()) {
-      clearTypeUserObjects(child);
-    }
-  }
-
   public void checkRoot(SNode node) {
     assert node.isRoot();
 
@@ -441,9 +430,17 @@ public class TypeChecker {
   @Nullable
   public SNode getTypeDontCheck(SNode node) {
     if (node == null) return null;
-    Object typeObject = node.getUserObject(TYPE_OF_TERM);
+   /* Object typeObject = node.getUserObject(TYPE_OF_TERM);
     if (typeObject instanceof SNode) return (SNode) typeObject;
-    return null;
+    return null;*/
+    return NodeTypesComponentsRepository.getInstance().
+            getNodeTypesComponent(node.getContainingRoot()).getType(node);
+  }
+
+  @Nullable
+  public String getNodeErrorDontCheck(SNode node) {
+    return NodeTypesComponentsRepository.getInstance().
+            getNodeTypesComponent(node.getContainingRoot()).getError(node);
   }
 
   public SModel getRuntimeTypesModel() {

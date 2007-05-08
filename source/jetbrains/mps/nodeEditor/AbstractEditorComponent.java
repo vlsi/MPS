@@ -1206,15 +1206,15 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         SNode selectedNode = getSelectedCell().getSNode();
         while (selectedNode != null) {
           final IStatus status = (IStatus) selectedNode.getUserObject(SNode.ERROR_STATUS);
-          final IStatus hstatus = (IStatus) selectedNode.getUserObject(TypeChecker.HELGINS_ERROR_STATUS);
-          if (status != null || hstatus != null) {
+          final String herror = TypeChecker.getInstance().getTypeErrorDontCheck(selectedNode);
+          if (status != null || herror != null) {
             final SNode selectedNode1 = selectedNode;
             SwingUtilities.invokeLater(new Runnable() {
               public void run() {
                 String nodeClasName = JavaNameUtil.shortName(selectedNode1.getClass().getName());
                 String s = "";
-                if (hstatus != null) {
-                  s += hstatus.getMessage() + "\n";
+                if (herror != null) {
+                  s += herror + "\n";
                 }
                 if (status != null) {
                   s += status.getMessage();
