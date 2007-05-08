@@ -31,22 +31,19 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
     // =============
     SNode expectedRetType = BehaviorManager.getInstance().invoke(SNode.class, argument, "virtual_getExpectedReturnType_1178571276073");
     boolean noReturnExpected = TypeChecker.getInstance().getSubtypingManager().isSubtype(expectedRetType, new QuotationClass_74().createNode());
-    SNode leastCommonSupertype = expectedRetType;
+    SNode leastCommonSupertype = null;
     // =============
     Iterable<SNode> returnStatements = RulesFunctions.collectReturnStatements(SLinkOperations.getTarget(argument, "body", true));
     boolean somethingReturned = !(SequenceOperations.isEmpty(returnStatements));
-    if((expectedRetType == null)) {
-      // should return some value (any type)
+    if(noReturnExpected) {
+      // shouldn't return any values
       {
         ICursor<SNode> _zCursor1 = CursorFactory.createCursor(returnStatements);
         try {
           while(_zCursor1.moveToNext()) {
             SNode returnStatement = _zCursor1.getCurrent();
-            if((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
-              TypeChecker.getInstance().reportTypeError(returnStatement, "should return value");
-            } else 
-            {
-              leastCommonSupertype = RulesFunctions.computeLeastCommonSupertype(SLinkOperations.getTarget(returnStatement, "expression", true), leastCommonSupertype, null);
+            if((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
+              TypeChecker.getInstance().reportTypeError(returnStatement, "no return value expected");
             }
           }
         } finally {
@@ -54,29 +51,14 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
         }
       }
     } else 
-    if(noReturnExpected) {
-      // shouldn't return any values
+    {
+      // should return subtypes of the 'expected type'
+      // if 'expected typeis null - should still return some value (of any type)
       {
         ICursor<SNode> _zCursor2 = CursorFactory.createCursor(returnStatements);
         try {
           while(_zCursor2.moveToNext()) {
             SNode returnStatement = _zCursor2.getCurrent();
-            if((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
-              TypeChecker.getInstance().reportTypeError(returnStatement, "no return value expected");
-            }
-          }
-        } finally {
-          _zCursor2.release();
-        }
-      }
-    } else 
-    {
-      // should return subtypes of the expected type
-      {
-        ICursor<SNode> _zCursor3 = CursorFactory.createCursor(returnStatements);
-        try {
-          while(_zCursor3.moveToNext()) {
-            SNode returnStatement = _zCursor3.getCurrent();
             if((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
               TypeChecker.getInstance().reportTypeError(returnStatement, "should return value");
             } else 
@@ -85,11 +67,14 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
             }
           }
         } finally {
-          _zCursor3.release();
+          _zCursor2.release();
         }
       }
+      if(leastCommonSupertype == null) {
+        leastCommonSupertype = expectedRetType;
+      }
     }
-    // ------
+    // =============
     if(!(noReturnExpected)) {
       // last expression statement can serve as return statement
       SNode lastStatement = SequenceOperations.getLast(SLinkOperations.getTargets(SLinkOperations.getTarget(argument, "body", true), "statement", true));
