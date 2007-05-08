@@ -29,7 +29,6 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
     // generic check
     TypeChecker.getInstance().getRuntimeSupport().check(SLinkOperations.getTarget(argument, "body", true));
     // =============
-    SNode funcType_typevar_1178587480938 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
     SNode expectedRetType = BehaviorManager.getInstance().invoke(SNode.class, argument, "virtual_getExpectedReturnType_1178571276073");
     boolean noReturnExpected = TypeChecker.getInstance().getSubtypingManager().isSubtype(expectedRetType, new QuotationClass_74().createNode());
     // =============
@@ -46,7 +45,7 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
               TypeChecker.getInstance().reportTypeError(returnStatement, "should return value");
             } else 
             {
-              TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(funcType_typevar_1178587480938, TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(returnStatement, "expression", true)), SLinkOperations.getTarget(returnStatement, "expression", true));
+              TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(returnStatement, "expression", true)), TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), SLinkOperations.getTarget(returnStatement, "expression", true));
             }
           }
         } finally {
@@ -72,7 +71,7 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
     } else 
     {
       // should return subtypes of the expected type
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(funcType_typevar_1178587480938, expectedRetType, argument);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(expectedRetType, TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), argument);
       {
         ICursor<SNode> _zCursor3 = CursorFactory.createCursor(returnStatements);
         try {
@@ -81,8 +80,11 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
             if((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
               TypeChecker.getInstance().reportTypeError(returnStatement, "should return value");
             } else 
+            if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(returnStatement, "expression", true)), expectedRetType))) {
+              TypeChecker.getInstance().reportTypeError(returnStatement, "" + expectedRetType + " is expected");
+            } else 
             {
-              TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(funcType_typevar_1178587480938, TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(returnStatement, "expression", true)), SLinkOperations.getTarget(returnStatement, "expression", true));
+              TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(returnStatement, "expression", true)), TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), SLinkOperations.getTarget(returnStatement, "expression", true));
             }
           }
         } finally {
@@ -95,19 +97,21 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
       // last expression statement can serve as return statement
       SNode lastStatement = SequenceOperations.getLast(SLinkOperations.getTargets(SLinkOperations.getTarget(argument, "body", true), "statement", true));
       if(SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(funcType_typevar_1178587480938, TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(lastStatement, "expression", true)), SLinkOperations.getTarget(lastStatement, "expression", true));
+        SNode expression = SLinkOperations.getTarget(lastStatement, "expression", true);
+        if(expectedRetType != null && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(expression), expectedRetType))) {
+          TypeChecker.getInstance().reportTypeError(expression, "" + expectedRetType + " is expected");
+        } else 
+        {
+          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(expression), TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), expression);
+        }
         somethingReturned = true;
       }
-      if(somethingReturned) {
-        TypeChecker.getInstance().getRuntimeSupport().givetype(funcType_typevar_1178587480938, argument);
-      } else 
-      {
+      if(!(somethingReturned)) {
         String whatExpected = ((expectedRetType == null) ?
           "some value" :
           "" + expectedRetType
         );
         TypeChecker.getInstance().reportTypeError(argument, "function should return " + whatExpected);
-        TypeChecker.getInstance().getRuntimeSupport().givetype(expectedRetType, argument);
       }
     }
   }
