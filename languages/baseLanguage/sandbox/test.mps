@@ -1109,12 +1109,32 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1154983906165">
     <property name="name" value="BClass" />
+    <node role="staticInnerClassifiers" type="jetbrains.mps.baseLanguage.ClassConcept" id="1178620483811">
+      <property name="name" value="ABCDEF" />
+      <node role="constructor" type="jetbrains.mps.baseLanguage.ConstructorDeclaration" id="1178620515084">
+        <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1178620515085" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178620515086" />
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178620515087" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178620483812" />
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1154983913134">
       <property name="name" value="a" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1154984176523">
         <link role="classifier" targetNodeId="1115766310400" />
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1154983913136">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1178620497235">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1178620497236">
+            <property name="name" value="abcedf" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1178620497237">
+              <link role="classifier" targetNodeId="1178620483811" resolveInfo="ABCDEF" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.NewExpression" id="1178620504501">
+              <link role="baseMethodDeclaration" targetNodeId="1178620515084" resolveInfo="ABCDEF" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1154983993574">
           <node role="expression" type="jetbrains.mps.baseLanguage.FieldReference" id="1154984278606">
             <link role="variableDeclaration" targetNodeId="1127094836077" />
