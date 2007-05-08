@@ -1707,7 +1707,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   public boolean isAcceptableReferent(String role, SNode referentNode, IScope scope) {
     AbstractConceptDeclaration conceptDeclaration = getConceptDeclarationAdapter();
-    LinkDeclaration linkDeclaration = SModelUtil_new.findSpecializingLink((ConceptDeclaration) conceptDeclaration, role, new HashSet());
+    LinkDeclaration linkDeclaration = SModelUtil_new.findSpecializingLink((ConceptDeclaration) conceptDeclaration, role);
     LOG.assertLog(linkDeclaration != null, "Couldn't find link declaration for role \"" + role + "\" in hierarchy of concept " + conceptDeclaration.getDebugText());
     return SModelUtil_new.isAcceptableReferent(linkDeclaration, referentNode);
   }
