@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class InstanceMethodDeclaration extends BaseMethodDeclaration implements ClassifierMember {
   public static String VISIBILITY = "visibility";
+  public static String IS_ABSTRACT = "isAbstract";
 
   public  InstanceMethodDeclaration(SNode node) {
     super(node);
@@ -26,5 +27,11 @@ public class InstanceMethodDeclaration extends BaseMethodDeclaration implements 
   }
   public void setVisibility(Visibility node) {
     super.setChild(InstanceMethodDeclaration.VISIBILITY, node);
+  }
+  public boolean getIsAbstract() {
+    return this.getBooleanProperty(InstanceMethodDeclaration.IS_ABSTRACT);
+  }
+  public void setIsAbstract(boolean value) {
+    this.setBooleanProperty(InstanceMethodDeclaration.IS_ABSTRACT, value);
   }
 }

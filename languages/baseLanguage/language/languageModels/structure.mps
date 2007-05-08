@@ -406,6 +406,10 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068580123165">
     <property name="name" value="InstanceMethodDeclaration" />
     <link role="extends" targetNodeId="1068580123132" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1178608670077">
+      <property name="name" value="isAbstract" />
+      <link role="dataType" targetNodeId="4.1082983657063" />
+    </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1178289079552">
       <link role="intfc" targetNodeId="1178285077437" resolveInfo="ClassifierMember" />
     </node>
