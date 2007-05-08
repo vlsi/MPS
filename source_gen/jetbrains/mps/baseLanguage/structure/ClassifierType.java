@@ -7,13 +7,13 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.Classifier;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.baseLanguage.structure.Classifier;
 
 public class ClassifierType extends Type {
-  public static String CLASSIFIER = "classifier";
   public static String PARAMETER = "parameter";
+  public static String CLASSIFIER = "classifier";
 
   public  ClassifierType(SNode node) {
     super(node);
@@ -26,12 +26,6 @@ public class ClassifierType extends Type {
     return ClassifierType.newInstance(sm, false);
   }
 
-  public Classifier getClassifier() {
-    return (Classifier)this.getReferent(ClassifierType.CLASSIFIER);
-  }
-  public void setClassifier(Classifier node) {
-    super.setReferent(ClassifierType.CLASSIFIER, node);
-  }
   public int getParametersCount() {
     return this.getChildCount(ClassifierType.PARAMETER);
   }
@@ -46,5 +40,11 @@ public class ClassifierType extends Type {
   }
   public void insertParameter(Type prev, Type node) {
     this.insertChild(prev, ClassifierType.PARAMETER, node);
+  }
+  public Classifier getClassifier() {
+    return (Classifier)this.getReferent(ClassifierType.CLASSIFIER);
+  }
+  public void setClassifier(Classifier node) {
+    super.setReferent(ClassifierType.CLASSIFIER, node);
   }
 }

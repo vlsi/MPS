@@ -6,7 +6,6 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -21,11 +20,6 @@ public class typeOf_ReturnStatement_InferenceRule implements InferenceRule_Runti
 
   public void applyRule(SNode argument) {
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expression", true)), argument);
-    if((SNodeOperations.getAncestor(argument, "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false) == null)) {
-      if((SNodeOperations.getAncestor(argument, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false) != null)) {
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expression", true)), SLinkOperations.getTarget(SNodeOperations.getAncestor(argument, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), "returnType", true), SLinkOperations.getTarget(argument, "expression", true));
-      }
-    }
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ReturnStatement";
