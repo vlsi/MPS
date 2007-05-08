@@ -137,6 +137,12 @@
       <property name="role" value="staticInitializer" />
       <link role="target" targetNodeId="1068580123136" resolveInfo="StatementList" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1178616825527">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="staticInnerClassifiers" />
+      <link role="target" targetNodeId="1107461130800" resolveInfo="Classifier" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068390468204">
     <property name="name" value="MethodDeclaration" />

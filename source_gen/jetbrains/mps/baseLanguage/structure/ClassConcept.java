@@ -10,13 +10,14 @@ import java.util.Iterator;
 import java.util.List;
 
 public class ClassConcept extends Classifier {
-  public static String EXTENDED_CLASS = "extendedClass";
   public static String SUPERCLASS = "superclass";
   public static String STATIC_INITIALIZER = "staticInitializer";
   public static String FIELD = "field";
   public static String CONSTRUCTOR = "constructor";
   public static String STATIC_METHOD = "staticMethod";
   public static String IMPLEMENTED_INTERFACE = "implementedInterface";
+  public static String STATIC_INNER_CLASSIFIERS = "staticInnerClassifiers";
+  public static String EXTENDED_CLASS = "extendedClass";
   public static String NAME = "name";
   public static String ABSTRACT_CLASS = "abstractClass";
 
@@ -31,12 +32,6 @@ public class ClassConcept extends Classifier {
     return ClassConcept.newInstance(sm, false);
   }
 
-  public ClassConcept getExtendedClass() {
-    return (ClassConcept)this.getReferent(ClassConcept.EXTENDED_CLASS);
-  }
-  public void setExtendedClass(ClassConcept node) {
-    super.setReferent(ClassConcept.EXTENDED_CLASS, node);
-  }
   public ClassifierType getSuperclass() {
     return (ClassifierType)this.getChild(ClassConcept.SUPERCLASS);
   }
@@ -108,6 +103,27 @@ public class ClassConcept extends Classifier {
   }
   public void insertImplementedInterface(ClassifierType prev, ClassifierType node) {
     this.insertChild(prev, ClassConcept.IMPLEMENTED_INTERFACE, node);
+  }
+  public int getStaticInnerClassifiersesCount() {
+    return this.getChildCount(ClassConcept.STATIC_INNER_CLASSIFIERS);
+  }
+  public Iterator<Classifier> staticInnerClassifierses() {
+    return this.children(ClassConcept.STATIC_INNER_CLASSIFIERS);
+  }
+  public List<Classifier> getStaticInnerClassifierses() {
+    return this.getChildren(ClassConcept.STATIC_INNER_CLASSIFIERS);
+  }
+  public void addStaticInnerClassifiers(Classifier node) {
+    this.addChild(ClassConcept.STATIC_INNER_CLASSIFIERS, node);
+  }
+  public void insertStaticInnerClassifiers(Classifier prev, Classifier node) {
+    this.insertChild(prev, ClassConcept.STATIC_INNER_CLASSIFIERS, node);
+  }
+  public ClassConcept getExtendedClass() {
+    return (ClassConcept)this.getReferent(ClassConcept.EXTENDED_CLASS);
+  }
+  public void setExtendedClass(ClassConcept node) {
+    super.setReferent(ClassConcept.EXTENDED_CLASS, node);
   }
   public String getName() {
     return this.getProperty(ClassConcept.NAME);

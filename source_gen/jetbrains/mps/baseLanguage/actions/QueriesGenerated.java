@@ -59,7 +59,7 @@ public class QueriesGenerated {
     return false;
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_Visibility_1178549461018(SNode parentNode, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.Classifier");
+    return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.Classifier") && SNodeOperations.getParent(parentNode, null, false, false) == null;
   }
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1177499026996(SNode sourceNode, IScope scope, IOperationContext operationContext) {
     ClassifierType ct = BaseLanguageTypesUtil_new.tryObtain_ClassifierType(((Expression)SNodeOperations.getAdapter(sourceNode)));

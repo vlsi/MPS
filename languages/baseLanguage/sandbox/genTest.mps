@@ -8,6 +8,14 @@
   <import index="3" modelUID="java.lang.reflect@java_stub" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1171627004550">
     <property name="name" value="A" />
+    <node role="staticInnerClassifiers" type="jetbrains.mps.baseLanguage.ClassConcept" id="1178617481415">
+      <property name="name" value="ABCDEF" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PrivateVisibility" id="1178617702936" />
+    </node>
+    <node role="staticInnerClassifiers" type="jetbrains.mps.baseLanguage.ClassConcept" id="1178617489401">
+      <property name="name" value="CDEF" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PrivateVisibility" id="1178617699249" />
+    </node>
     <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1178285026132">
       <property name="name" value="abcdef" />
       <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1178285039578" />
@@ -48,6 +56,22 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.StringLiteral" id="1174499144394">
               <property name="value" value="hi" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1178617864552">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1178617864553">
+            <property name="name" value="i" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1178617864554" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1178617866749">
+              <property name="value" value="23" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1178617872955">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1178617872956">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1178617872957">
+              <link role="classifier" targetNodeId="1178617481415" resolveInfo="ABCDEF" />
             </node>
           </node>
         </node>
