@@ -3,11 +3,9 @@
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
-  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <maxImportIndex value="9" />
   <import index="2" modelUID="jetbrains.mps.core.structure" />
   <import index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
-  <import index="5" modelUID="jetbrains.mps.transformation.TLBase.structure" />
   <import index="6" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="7" modelUID="jetbrains.mps.generator.template@java_stub" />
   <import index="8" modelUID="jetbrains.mps.bootstrap.sharedConcepts.structure" />
@@ -935,9 +933,7 @@
     <link role="extends" targetNodeId="6.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1167954020900">
       <link role="conceptLinkDeclaration" targetNodeId="6.1137545148427" />
-      <node role="target" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListType" id="1167954030247">
-        <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1167954032905" />
-      </node>
+      <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1178640291186" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1167951910406">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
