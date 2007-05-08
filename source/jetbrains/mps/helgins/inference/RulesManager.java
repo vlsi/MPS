@@ -39,12 +39,12 @@ public class RulesManager {
     mySupertypingRules.clear();
   }
 
-  public void loadLanguage(Language l) {
+  public boolean loadLanguage(Language l) {
     if (myLoadedLanguages.contains(l.getNamespace())) {
-      return;
+      return true;
     }
     SModelDescriptor helginsModelDescriptor = l.getHelginsTypesystemModelDescriptor();
-    if (helginsModelDescriptor == null) return;
+    if (helginsModelDescriptor == null) return false;
     String packageName = helginsModelDescriptor.getLongName();
     String classname = "HelginsDescriptor";
     try {
@@ -59,9 +59,11 @@ public class RulesManager {
       mySubtypingRules.makeConsistent();
       mySupertypingRules.makeConsistent();
       myLoadedLanguages.add(l.getNamespace());
+      return true;
     } catch(Throwable t) {
  //     LOG.error("fail to instantiate HelginsDescriptor for language " + l.getNamespace());
       myLoadedLanguages.add(l.getNamespace());
+      return false;
     }
   }
 

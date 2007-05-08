@@ -48,7 +48,6 @@ public class TypeChecker {
 
   private MySModelCommandListener myListener = new MySModelCommandListener();
   private ConceptToRulesMap<Rule> myConceptsToRulesCache = new ConceptToRulesMap<Rule>();
-  private Set<SNode> myCheckedNodes = new HashSet<SNode>();
 
   private WeakHashMap<SNode, IErrorReporter> myNodesWithErrors = new WeakHashMap<SNode, IErrorReporter>();
   private WeakHashMap<SNode, String> myNodesWithErrorStrings = new WeakHashMap<SNode, String>();
@@ -63,9 +62,6 @@ public class TypeChecker {
   private RuntimeSupport myRuntimeSupport;
   private RulesManager myRulesManager;
   private boolean myUsedForBLCompletion = true;
-
-  // cache
-  private WeakHashMap<SNode, Set<Pair<SNode, SNodeReadEvent>>> myNodesToDependentNodes = new WeakHashMap<SNode, Set<Pair<SNode, SNodeReadEvent>>>();
 
   public TypeChecker() {
     myEquationManagersStack.push(new EquationManager(this));
@@ -132,7 +128,6 @@ public class TypeChecker {
     myHInterpreter.clear();
     myAdaptationManager.clear();
     myConceptsToRulesCache.clear();
-    myCheckedNodes.clear();
     myNodesWithErrors.clear();
     myNodesWithErrorStrings.clear();
   }
@@ -141,7 +136,8 @@ public class TypeChecker {
     myCheckedRoots.clear();
     myRulesManager.clear();
     mySubtypingManager.clearCaches();
-    myNodesToDependentNodes.clear();
+
+    //todo remove two strings below
     myNodesToDependentRoots.clear();
     clear();
   }
@@ -150,40 +146,12 @@ public class TypeChecker {
     //clear
     clear();
     clearTypeUserObjects(root);
-    List<Language> languages = root.getModel().getLanguages(GlobalScope.getInstance());
-    Set<SModel> typesModels = new HashSet<SModel>();
-    for (Language language : languages) {
-      myRulesManager.loadLanguage(language);
-      SModelDescriptor helginsModelDescriptor = language.getHelginsTypesystemModelDescriptor();
-      if (helginsModelDescriptor != null) {
-        typesModels.add(helginsModelDescriptor.getSModel());
-      }
+    NodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance().getNodeTypesComponent(root);
+    if (nodeTypesComponent != null) {
+      nodeTypesComponent.clear();
     }
-    if (typesModels.isEmpty()) return;
-
-    //loading typesystems
-    myConceptsToRulesCache = new ConceptToRulesMap<Rule>();
-    for (SModel typesModel : typesModels) {
-
-      //register global varsets
-      for (VariableSetDeclaration varset : typesModel.getRootsAdapters(VariableSetDeclaration.class)) {
-        myTypeVariablesManager.registerNewVarset(varset);
-      }
-
-      // load rules (legacy)
-      for (Rule rule : typesModel.getRootsAdapters(Rule.class)) {
-        if (!rule.applicableNodes().hasNext()) continue;
-        AnalyzedTermDeclaration analyzedTermDeclaration = rule.applicableNodes().next();
-        AbstractConceptDeclaration ruleConcept = ConditionMatcher.getConcept(analyzedTermDeclaration.getCondition());
-        myConceptsToRulesCache.putRule(ruleConcept, rule);
-      }
-      myConceptsToRulesCache.makeConsistent();
-
-      // load subtyping rules
-      mySubtypingManager.initiate(typesModel);
-
-      // load adaptation rules
-      myAdaptationManager.initiate(typesModel);
+    if (!loadTypesystemRules(root)) {
+      return;
     }
 
     // check types
@@ -213,6 +181,48 @@ public class TypeChecker {
       IStatus status = new Status(IStatus.Code.ERROR, errorString);
       node.putUserObject(HELGINS_ERROR_STATUS, status);
     }
+  }
+
+  /*package*/ boolean loadTypesystemRules(SNode root) {
+    List<Language> languages = root.getModel().getLanguages(GlobalScope.getInstance());
+    boolean isLoadedAnyLanguage = false;
+    for (Language language : languages) {
+      boolean b = myRulesManager.loadLanguage(language);
+      isLoadedAnyLanguage = isLoadedAnyLanguage || b;
+    }
+    boolean isLoadedAnyLegacyRule = loadLegacyRules(languages);
+    if (!isLoadedAnyLanguage && !isLoadedAnyLegacyRule) return false;
+    return true;
+  }
+
+  private @Deprecated boolean loadLegacyRules(List<Language> languages) {
+    Set<SModel> typesModels = new HashSet<SModel>();
+    for (Language language : languages) {
+      SModelDescriptor helginsModelDescriptor = language.getHelginsTypesystemModelDescriptor();
+      if (helginsModelDescriptor != null) {
+        typesModels.add(helginsModelDescriptor.getSModel());
+      }
+    }
+    if (typesModels.isEmpty()) return false;
+
+    //loading typesystems
+    myConceptsToRulesCache = new ConceptToRulesMap<Rule>();
+    for (SModel typesModel : typesModels) {
+
+      // load rules (legacy)
+      for (Rule rule : typesModel.getRootsAdapters(Rule.class)) {
+        if (!rule.applicableNodes().hasNext()) continue;
+        AnalyzedTermDeclaration analyzedTermDeclaration = rule.applicableNodes().next();
+        AbstractConceptDeclaration ruleConcept = ConditionMatcher.getConcept(analyzedTermDeclaration.getCondition());
+        myConceptsToRulesCache.putRule(ruleConcept, rule);
+      }
+      myConceptsToRulesCache.makeConsistent();
+
+      // load subtyping rules
+      mySubtypingManager.initiate(typesModel);
+
+    }
+    return true;
   }
 
   public Set<Pair<SNode, String>> getNodesWithErrors() {
@@ -287,26 +297,16 @@ public class TypeChecker {
   }
 
 
-  private void doCheckTypes(SNode root) {
-    // bfs from root
-    if (root == null) return;
-    List<SNode> frontier = new ArrayList<SNode>();
-    List<SNode> newFrontier = new ArrayList<SNode>();
-    frontier.add(root);
-    while (!(frontier.isEmpty())) {
-      for (SNode node : frontier) {
-        if (myCheckedNodes.contains(node)) continue;
-        newFrontier.addAll(node.getChildren());
-        applyRulesToNode(node);
-      }
-      frontier = newFrontier;
-      newFrontier = new ArrayList<SNode>();
-    }
+  private void doCheckTypes(SNode node) {
+    NodeTypesComponent nodeTypesComponent =
+            NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(node.getContainingRoot());
+    if (nodeTypesComponent == null) return;
+    nodeTypesComponent.computeTypesForNode(node, null);
   }
 
-  private void applyRulesToNode(SNode node) {
-    HelginsNodesReadListener readAccessListener = new HelginsNodesReadListener(node, myNodesToDependentNodes);
-    NodeReadEventsCaster.setNodesReadListener(readAccessListener);
+  /*package*/ void applyRulesToNode(SNode node) {
+    //NodeReadEventsCaster.setNodesReadListener(readAccessListener);
+
     // new rules:
     Set<InferenceRule_Runtime> newRules = myRulesManager.getInferenceRules(node);
     if (newRules != null) {
@@ -314,7 +314,12 @@ public class TypeChecker {
         rule.applyRule(node);
       }
     }
+    applyLegacyRulesToNode(node);
 
+    //NodeReadEventsCaster.removeNodesReadListener();
+  }
+
+  private @Deprecated void applyLegacyRulesToNode(SNode node) {
     // legacy rules:
     Set<Rule> rules = myConceptsToRulesCache.get(node.getConceptDeclarationAdapter());
     if (rules != null) {
@@ -322,22 +327,6 @@ public class TypeChecker {
         myHInterpreter.interpret(node, rule);
       }
     }
-    NodeReadEventsCaster.removeNodesReadListener();
-  }
-
-  public void dumpHelginsCache() {
-    System.err.println("");
-    System.err.println("---------------------");
-    System.err.println("helgins cache dump:");
-    for (Map.Entry<SNode, Set<Pair<SNode, SNodeReadEvent>>> entry : myNodesToDependentNodes.entrySet()) {
-      System.err.println("---");
-      System.err.println("recorded node : " + entry.getKey());
-      for (Pair<SNode, SNodeReadEvent> pair : entry.getValue()) {
-        System.err.println("   dependent node: " + pair.o1 + " event: " + pair.o2);
-      }
-    }
-    System.err.println("---------------------");
-    System.err.println("");
   }
 
   public void checkTypesForNodeAndSolveInequations(SNode node) {
@@ -354,7 +343,7 @@ public class TypeChecker {
     }
     slave.solveInequations();
     myEquationManagersStack.peek().putAllEquations(slave);
-    myCheckedNodes.add(node); // for not to check it again
+    NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(node.getContainingRoot()).markNodeAsChecked(node);
   }
 
   public static SNode asType(Object o) {
@@ -384,7 +373,7 @@ public class TypeChecker {
     return myCheckedRoots.contains(node);
   }
 
-   private void clearTypeUserObjects(SNode node) {
+  private void clearTypeUserObjects(SNode node) {
     node.removeUserObject(HELGINS_ERROR_STATUS);
     node.removeUserObject(TYPE_OF_TERM);
 
@@ -511,7 +500,7 @@ public class TypeChecker {
       }
 
       public void visitPropertyEvent(SModelPropertyEvent event) {
-      /*  Set<SNode> dependentRoots = myNodesToDependentRoots.get(event.getNode());
+        /*  Set<SNode> dependentRoots = myNodesToDependentRoots.get(event.getNode());
         if (dependentRoots != null) {
           myCheckedRoots.removeAll(dependentRoots);
         }
