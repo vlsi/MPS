@@ -492,7 +492,7 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1164075315659">
               <property name="name" value="editedConcept" />
               <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1164075315660">
-                <link role="concept" targetNodeId="4.1071489090640" />
+                <link role="concept" targetNodeId="4.1169125787135" />
               </node>
               <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1164075315661">
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1164075315662">
