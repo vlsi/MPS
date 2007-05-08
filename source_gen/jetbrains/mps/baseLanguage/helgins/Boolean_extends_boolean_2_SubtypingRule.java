@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.BaseAdapter;
 
 public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
-  public Pattern_ myMatchingPattern;
+  /* package */Pattern_ myMatchingPattern;
 
   public  Boolean_extends_boolean_2_SubtypingRule() {
   }

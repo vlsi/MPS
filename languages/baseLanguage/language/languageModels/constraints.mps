@@ -2311,5 +2311,31 @@
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178551970217" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1178571253851">
+    <link role="concept" targetNodeId="1.1137021947720" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1178571276073">
+      <property name="isVirtual" value="true" />
+      <property name="name" value="getExpectedReturnType" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1178587070052">
+        <link role="classifier" extResolveInfo="7.[Classifier]SNode" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178571276075">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1178571550000">
+          <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1178571625232">
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178571596738">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1178571571299" />
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SConceptLinkAccess" id="1178571606129">
+                <link role="conceptLinkDeclaration" targetNodeId="1.1137545148427" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.GetFirstOperation" id="1178571627999" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1178571253852">
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178571253853" />
+    </node>
+  </node>
 </model>
 

@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.BaseAdapter;
 
 public class long_unboxing_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
-  public Pattern_7 myMatchingPattern;
+  /* package */Pattern_7 myMatchingPattern;
 
   public  long_unboxing_SubtypingRule() {
   }
