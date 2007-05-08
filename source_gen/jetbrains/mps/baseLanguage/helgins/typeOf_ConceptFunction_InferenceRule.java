@@ -31,6 +31,7 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
     // =============
     SNode expectedRetType = BehaviorManager.getInstance().invoke(SNode.class, argument, "virtual_getExpectedReturnType_1178571276073");
     boolean noReturnExpected = TypeChecker.getInstance().getSubtypingManager().isSubtype(expectedRetType, new QuotationClass_74().createNode());
+    SNode leastCommonSupertype = expectedRetType;
     // =============
     Iterable<SNode> returnStatements = RulesFunctions.collectReturnStatements(SLinkOperations.getTarget(argument, "body", true));
     boolean somethingReturned = !(SequenceOperations.isEmpty(returnStatements));
@@ -45,7 +46,7 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
               TypeChecker.getInstance().reportTypeError(returnStatement, "should return value");
             } else 
             {
-              TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(returnStatement, "expression", true)), TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), SLinkOperations.getTarget(returnStatement, "expression", true));
+              leastCommonSupertype = RulesFunctions.computeLeastCommonSupertype(SLinkOperations.getTarget(returnStatement, "expression", true), leastCommonSupertype, null);
             }
           }
         } finally {
@@ -71,7 +72,6 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
     } else 
     {
       // should return subtypes of the expected type
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(expectedRetType, TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), argument);
       {
         ICursor<SNode> _zCursor3 = CursorFactory.createCursor(returnStatements);
         try {
@@ -80,11 +80,8 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
             if((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
               TypeChecker.getInstance().reportTypeError(returnStatement, "should return value");
             } else 
-            if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(returnStatement, "expression", true)), expectedRetType))) {
-              TypeChecker.getInstance().reportTypeError(returnStatement, "" + expectedRetType + " is expected");
-            } else 
             {
-              TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(returnStatement, "expression", true)), TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), SLinkOperations.getTarget(returnStatement, "expression", true));
+              leastCommonSupertype = RulesFunctions.computeLeastCommonSupertype(SLinkOperations.getTarget(returnStatement, "expression", true), leastCommonSupertype, expectedRetType);
             }
           }
         } finally {
@@ -98,12 +95,7 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
       SNode lastStatement = SequenceOperations.getLast(SLinkOperations.getTargets(SLinkOperations.getTarget(argument, "body", true), "statement", true));
       if(SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
         SNode expression = SLinkOperations.getTarget(lastStatement, "expression", true);
-        if(expectedRetType != null && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(expression), expectedRetType))) {
-          TypeChecker.getInstance().reportTypeError(expression, "" + expectedRetType + " is expected");
-        } else 
-        {
-          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(expression), TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), expression);
-        }
+        leastCommonSupertype = RulesFunctions.computeLeastCommonSupertype(expression, leastCommonSupertype, expectedRetType);
         somethingReturned = true;
       }
       if(!(somethingReturned)) {
@@ -113,6 +105,7 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
         );
         TypeChecker.getInstance().reportTypeError(argument, "function should return " + whatExpected);
       }
+      TypeChecker.getInstance().getRuntimeSupport().givetype(leastCommonSupertype, argument);
     }
   }
   public String getApplicableConceptFQName() {
