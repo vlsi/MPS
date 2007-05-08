@@ -908,10 +908,6 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1139535439104">
     <property name="name" value="CellActionMap_ExecuteFunction" />
     <link role="extends" targetNodeId="4.1137021947720" />
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1178647320409">
-      <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" />
-      <node role="target" type="jetbrains.mps.baseLanguage.VoidType" id="1178647363943" />
-    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1161630496596">
       <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
       <link role="target" targetNodeId="1161622981231" resolveInfo="ConceptFunctionParameter_editorContext" />
