@@ -25,7 +25,7 @@ public class typeof_ForEachStatement_InferenceRule implements InferenceRule_Runt
       return;
     }
     SNode sequenceType = RulesFunctions.tryObtainSequenceType(inputSequenceExpr);
-    if(!(sequenceType == null)) {
+    if(!(sequenceType != null)) {
       TypeChecker.getInstance().reportTypeError(inputSequenceExpr, "sequence is expected");
     }
     if(SLinkOperations.getTarget(argument, "variable", true) != null) {
