@@ -808,10 +808,6 @@
       <property name="value" value="execute block" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1178647527277">
-      <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" />
-      <node role="target" type="jetbrains.mps.baseLanguage.VoidType" id="1178647530754" />
-    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1137553248617">
     <property name="name" value="CellModel_ConceptProperty" />
