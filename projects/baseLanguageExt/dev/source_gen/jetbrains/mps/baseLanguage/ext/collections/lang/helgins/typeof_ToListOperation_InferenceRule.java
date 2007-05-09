@@ -6,7 +6,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.RulesFunctions;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_8;
+import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_6;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -21,7 +21,7 @@ public class typeof_ToListOperation_InferenceRule implements InferenceRule_Runti
 
   public void applyRule(SNode argument) {
     SNode inputElementType = RulesFunctions.get_InputSequenceType_elementType(argument);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_8().createNode(inputElementType), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_6().createNode(inputElementType), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ToListOperation";
