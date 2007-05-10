@@ -23,6 +23,7 @@ import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mpswiki.queryLanguage.evaluator.ConditionMatcher;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.objectweb.asm.commons.AnalyzerAdapter;
 
 import java.util.*;
 
@@ -53,6 +54,7 @@ public class TypeChecker {
   private RuntimeSupport myRuntimeSupport;
   private RulesManager myRulesManager;
   private boolean myUsedForBLCompletion = true;
+  private Stack<SNode> myNodesBeingChecked = new Stack<SNode>();
 
   public TypeChecker() {
     myEquationManagersStack.push(new EquationManager(this));
@@ -109,6 +111,7 @@ public class TypeChecker {
     myConceptsToRulesCache.clear();
     myNodesWithErrors.clear();
     myNodesWithErrorStrings.clear();
+    myNodesBeingChecked.clear();
   }
 
   public void clearForReload() {
@@ -441,6 +444,18 @@ public class TypeChecker {
 
   public void setUsedForBLCompletion(boolean b) {
     myUsedForBLCompletion = b;
+  }
+
+  /*package*/ void pushNodeBeingChecked(SNode node) {
+    myNodesBeingChecked.push(node);
+  }
+
+  /*package*/ SNode popNodeBeingChecked() {
+    return myNodesBeingChecked.pop();
+  }
+
+  public boolean isNodeBeingChecked(SNode node) {
+    return myNodesBeingChecked.contains(node);
   }
 
   private static class MyReadAccessListener implements INodeReadAccessListener {
