@@ -11,6 +11,10 @@ public class ApplicationsTest extends TestCase {
     assertTrue(TestMain.testProject(new File("platform/web-query/jetbrains.mps.web-query.mpr")));
   }
 
+  public void testYPath() {
+    assertTrue(TestMain.testProject(new File("projects/YPath/YPath.mpr")));    
+  }
+
   public void testPubMedDB() {
     assertTrue(TestMain.testProject(new File("app/PubMedDB/pubMedDB.mpr")));
   }
