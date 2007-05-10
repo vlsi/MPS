@@ -15,7 +15,6 @@ import jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariable
 import java.util.List;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.baseLanguage.ext.collections.lang.generator.baseLanguage.template.util.QueriesUtil;
-import jetbrains.mps.baseLanguage.BaseLanguageUtil_new;
 import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class QueriesGenerated {
@@ -294,12 +293,7 @@ public class QueriesGenerated {
   public static SNode mapSrcMacro_mapper_1170980972538(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode creator = SLinkOperations.getTarget(node, "creator", true);
     SNode supplier = SLinkOperations.getTarget(creator, "supplier", true);
-    SModel outputModel = generator.getTargetModel();
-    SNode type = generator.getTypeChecker().getNodeTypeAsNode(supplier, outputModel);
-    if(type != null) {
-      return type;
-    }
-    return BaseLanguageUtil_new.createObjectClassType(outputModel, scope).getNode();
+    return QueriesUtil.create_Closure_returnedType(supplier, generator);
   }
   public static SNode mapSrcMacro_mapper_1170976176384(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return QueriesUtil.create_ClosureWithInput_inputElementType(node, generator);

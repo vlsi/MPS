@@ -79,8 +79,11 @@ public interface ITemplateGenerator extends ITemplateLanguageConstants {
 
   void showErrorMessage(SNode sourceNode, SNode templateNode, String message);
 
-  void showErrorMessage(SNode sourceNode, SNode templateNode, SNode ruleNode, String message);    
+  void showErrorMessage(SNode sourceNode, SNode templateNode, SNode ruleNode, String message);
 
+  /**
+   * @deprecated 
+   */
   ITypeChecker getTypeChecker();
 
   GenerationSessionContext getGeneratorSessionContext();
