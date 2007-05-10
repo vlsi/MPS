@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.RulesFunctions;
+import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.RulesFunctions_Collections;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
@@ -19,7 +19,7 @@ public class typeof_GetLastOperation_InferenceRule implements InferenceRule_Runt
   }
 
   public void applyRule(SNode argument) {
-    SNode inputElementType = RulesFunctions.get_InputSequenceType_elementType(argument);
+    SNode inputElementType = RulesFunctions_Collections.get_inputSequenceType_elementType(argument);
     TypeChecker.getInstance().getRuntimeSupport().givetype(inputElementType, argument);
   }
   public String getApplicableConceptFQName() {

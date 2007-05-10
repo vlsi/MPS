@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.RulesFunctions;
+import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.RulesFunctions_Collections;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
@@ -20,7 +20,7 @@ public class typeof_BinaryOperation_InferenceRule implements InferenceRule_Runti
   }
 
   public void applyRule(SNode argument) {
-    SNode inputSequenceType = RulesFunctions.get_InputSequenceType(argument);
+    SNode inputSequenceType = RulesFunctions_Collections.get_inputSequenceType(argument);
     TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "rightExpression", true)), inputSequenceType, SLinkOperations.getTarget(argument, "rightExpression", true));
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), inputSequenceType, argument);
   }

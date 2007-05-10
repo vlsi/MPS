@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.RulesFunctions;
+import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.RulesFunctions_Collections;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
@@ -24,7 +24,7 @@ public class typeof_ForEachStatement_InferenceRule implements InferenceRule_Runt
     if((inputSequenceExpr == null)) {
       return;
     }
-    SNode sequenceType = RulesFunctions.tryObtainSequenceType(inputSequenceExpr);
+    SNode sequenceType = RulesFunctions_Collections.tryObtain_SequenceType(inputSequenceExpr);
     if(!(sequenceType != null)) {
       TypeChecker.getInstance().reportTypeError(inputSequenceExpr, "sequence is expected");
     }

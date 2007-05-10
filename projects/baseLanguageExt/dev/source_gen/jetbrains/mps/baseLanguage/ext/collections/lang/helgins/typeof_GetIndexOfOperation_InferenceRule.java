@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.RulesFunctions;
+import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.RulesFunctions_Collections;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_26;
@@ -21,7 +21,7 @@ public class typeof_GetIndexOfOperation_InferenceRule implements InferenceRule_R
   }
 
   public void applyRule(SNode argument) {
-    SNode expectedElementType = RulesFunctions.getElementType_fromInputListType(argument);
+    SNode expectedElementType = RulesFunctions_Collections.get_inputListType_elementType(argument);
     SNode arg = SLinkOperations.getTarget(argument, "argument", true);
     if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(arg), expectedElementType))) {
       TypeChecker.getInstance().reportTypeError(arg, "" + expectedElementType + " is expected");

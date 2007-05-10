@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.RulesFunctions;
+import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.RulesFunctions_Collections;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_12;
@@ -21,7 +21,7 @@ public class typeof_TakeOperation_InferenceRule implements InferenceRule_Runtime
   }
 
   public void applyRule(SNode argument) {
-    SNode inputSequenceType = RulesFunctions.get_InputSequenceType(argument);
+    SNode inputSequenceType = RulesFunctions_Collections.get_inputSequenceType(argument);
     if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(SLinkOperations.getTarget(argument, "elementsToTake", true)), new QuotationClass_12().createNode()))) {
       TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(argument, "elementsToTake", true), "integer is expected");
     }
