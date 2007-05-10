@@ -7,6 +7,10 @@ import java.io.File;
 
 public class ApplicationsTest extends TestCase {
 
+  public void testWebQuery() {
+    assertTrue(TestMain.testProject(new File("platform/web-query/jetbrains.mps.web-query.mpr")));
+  }
+
   public void testPubMedDB() {
     assertTrue(TestMain.testProject(new File("app/PubMedDB/pubMedDB.mpr")));
   }
