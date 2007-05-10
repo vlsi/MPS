@@ -7,7 +7,6 @@
     <output-test url="file://$MODULE_DIR$/classes" />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/languages/regexp/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.regexp.sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
