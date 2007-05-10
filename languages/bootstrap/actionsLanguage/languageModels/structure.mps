@@ -77,6 +77,11 @@
       <property name="role" value="variable" />
       <link role="target" targetNodeId="1178539929008" resolveInfo="SubstituteNodeBuilderVariableDeclaration" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1178781708614">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="commonInitializer" />
+      <link role="target" targetNodeId="1178781654714" resolveInfo="QueryFunction_Substitute_CommonInitializer" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1154621882785">
       <property name="value" value="'preconditionAspectId' property is replaced with 'precondition block'" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1154621836409" />
@@ -1189,6 +1194,27 @@
       <property name="role" value="nodeBuilderVariableDeclaration" />
       <link role="specializedLink" targetNodeId="3.1068581517664" />
       <link role="target" targetNodeId="1178539929008" resolveInfo="SubstituteNodeBuilderVariableDeclaration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1178781654714">
+    <property name="name" value="QueryFunction_Substitute_CommonInitializer" />
+    <property name="package" value="QueryFunctions" />
+    <link role="extends" targetNodeId="3.1137021947720" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1178781654715">
+      <link role="target" targetNodeId="5.1161622753914" />
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1178781654716">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" />
+      <link role="target" targetNodeId="1154465273778" resolveInfo="ConceptFunctionParameter_parentNode" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1178781654717">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" />
+      <link role="target" targetNodeId="1177568407352" resolveInfo="ConceptFunctionParameter_currentTargetNode" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1178781678039">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" />
+      <node role="target" type="jetbrains.mps.baseLanguage.VoidType" id="1178781679354" />
     </node>
   </node>
 </model>
