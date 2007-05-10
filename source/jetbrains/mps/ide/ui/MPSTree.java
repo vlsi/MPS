@@ -121,6 +121,14 @@ public abstract class MPSTree extends JTree {
             action.execute(context);
           }
         } else {
+          if (MPSTree.this.getInputMap().get(KeyStroke.getKeyStrokeForEvent(e)) != null) {
+            // This is a fix for a performance problem. DO NOT REMOVE IT
+            // Because some actions require time to analyze whether they can be executed and
+            // to build child actions, we skip their testing if we know, that the event can
+            // be handled by the tree component
+            return;
+          }
+
           for (TreePath p : paths) {
             MPSTreeNode lastNode = (MPSTreeNode) p.getLastPathComponent();
             JPopupMenu menu = lastNode.getPopupMenu();
