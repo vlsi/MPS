@@ -869,6 +869,10 @@ public class SNode implements Cloneable, Iterable<SNode> {
     if (parentOfChild != null) {
       throw new RuntimeException(child.getDebugText() + " already has parent: " + parentOfChild.getDebugText() + "\n" +
               "Couldn't add it to: " + this.getDebugText());
+    }               
+
+    if (child.isRoot()) {
+      throw new RuntimeException(child.getDebugText() + " is root node. Can't add it as a child");
     }
 
     if (child.getModel() != getModel()) {
