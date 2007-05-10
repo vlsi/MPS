@@ -204,6 +204,10 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1153779885165">
     <property name="name" value="SelectorBlock" />
     <link role="extends" targetNodeId="1153509719989" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1178759685882">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" />
+      <node role="target" type="jetbrains.mps.baseLanguage.WildCardType" id="1178759689025" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1153779905654">
     <property name="name" value="SelectOperation" />
