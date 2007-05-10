@@ -402,6 +402,10 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1168502774204">
     <property name="name" value="SortBlock" />
     <link role="extends" targetNodeId="1153509719989" resolveInfo="ClosureWithInputElement" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1178763646277">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" />
+      <node role="target" type="jetbrains.mps.baseLanguage.WildCardType" id="1178763648998" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1171391069720">
     <property name="name" value="GetIndexOfOperation" />

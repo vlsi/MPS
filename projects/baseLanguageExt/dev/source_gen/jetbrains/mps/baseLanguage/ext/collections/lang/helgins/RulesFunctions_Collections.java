@@ -9,7 +9,6 @@ import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.ext.collections.lang.CollectionsLanguageUtil;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.zMapper;
-import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.zMapper1;
 import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_;
 import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_1;
 import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_2;
@@ -84,12 +83,8 @@ public class RulesFunctions_Collections {
     SNode listType = CollectionsLanguageUtil.coerceTo_ListType(type);
     return listType;
   }
-  public static Iterable<SNode> collectReturnStatements(SNode node) {
-    Iterable<SNode> returnStatements = SequenceOperations.map(SNodeOperations.getChildren(node), new zMapper(null, null));
-    return returnStatements;
-  }
   public static Iterable<SNode> collectYieldStatements(SNode node) {
-    Iterable<SNode> yieldStatements = SequenceOperations.map(SNodeOperations.getChildren(node), new zMapper1(null, null));
+    Iterable<SNode> yieldStatements = SequenceOperations.map(SNodeOperations.getChildren(node), new zMapper(null, null));
     return yieldStatements;
   }
   public static SNode computeLeastCommonSupertype(SNode exprWithType, SNode currentLeastCommonSupertype) {

@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.baseLanguage.helgins.QuotationClass_74;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.helgins.RulesFunctions;
+import jetbrains.mps.baseLanguage.helgins.RulesFunctions_BaseLanguage;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
@@ -38,21 +38,21 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
     }
     SNode leastCommonSupertype = null;
     // =============
-    Iterable<SNode> returnStatements = RulesFunctions.collectReturnStatements(SLinkOperations.getTarget(argument, "body", true));
+    Iterable<SNode> returnStatements = RulesFunctions_BaseLanguage.collectReturnStatements(SLinkOperations.getTarget(argument, "body", true));
     boolean somethingReturned = !(SequenceOperations.isEmpty(returnStatements));
     if(noReturnExpected) {
       // shouldn't return any values
       {
-        ICursor<SNode> _zCursor1 = CursorFactory.createCursor(returnStatements);
+        ICursor<SNode> _zCursor = CursorFactory.createCursor(returnStatements);
         try {
-          while(_zCursor1.moveToNext()) {
-            SNode returnStatement = _zCursor1.getCurrent();
+          while(_zCursor.moveToNext()) {
+            SNode returnStatement = _zCursor.getCurrent();
             if((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
               TypeChecker.getInstance().reportTypeError(returnStatement, "no return value expected");
             }
           }
         } finally {
-          _zCursor1.release();
+          _zCursor.release();
         }
       }
     } else 
@@ -60,19 +60,19 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
       // should return subtypes of the 'expected type'
       // if 'expected type' is null - should still return some value (of any type)
       {
-        ICursor<SNode> _zCursor2 = CursorFactory.createCursor(returnStatements);
+        ICursor<SNode> _zCursor1 = CursorFactory.createCursor(returnStatements);
         try {
-          while(_zCursor2.moveToNext()) {
-            SNode returnStatement = _zCursor2.getCurrent();
+          while(_zCursor1.moveToNext()) {
+            SNode returnStatement = _zCursor1.getCurrent();
             if((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
               TypeChecker.getInstance().reportTypeError(returnStatement, "should return value");
             } else 
             {
-              leastCommonSupertype = RulesFunctions.computeLeastCommonSupertype(SLinkOperations.getTarget(returnStatement, "expression", true), leastCommonSupertype, expectedRetType);
+              leastCommonSupertype = RulesFunctions_BaseLanguage.computeLeastCommonSupertype(SLinkOperations.getTarget(returnStatement, "expression", true), leastCommonSupertype, expectedRetType);
             }
           }
         } finally {
-          _zCursor2.release();
+          _zCursor1.release();
         }
       }
       if(leastCommonSupertype == null) {
@@ -85,7 +85,7 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
       SNode lastStatement = SequenceOperations.getLast(SLinkOperations.getTargets(SLinkOperations.getTarget(argument, "body", true), "statement", true));
       if(SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
         SNode expression = SLinkOperations.getTarget(lastStatement, "expression", true);
-        leastCommonSupertype = RulesFunctions.computeLeastCommonSupertype(expression, leastCommonSupertype, expectedRetType);
+        leastCommonSupertype = RulesFunctions_BaseLanguage.computeLeastCommonSupertype(expression, leastCommonSupertype, expectedRetType);
         somethingReturned = true;
       }
       if(!(somethingReturned)) {
