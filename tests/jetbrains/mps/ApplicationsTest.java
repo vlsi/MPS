@@ -15,6 +15,12 @@ public class ApplicationsTest extends TestCase {
     assertTrue(TestMain.testProject(new File("projects/YPath/YPath.mpr")));    
   }
 
+  /*
+  public void testPanacea() {
+    assertTrue(TestMain.testProject(new File("projects/Panacea/Panacea.mpr")));
+  }
+  */
+
   public void testPubMedDB() {
     assertTrue(TestMain.testProject(new File("app/PubMedDB/pubMedDB.mpr")));
   }
