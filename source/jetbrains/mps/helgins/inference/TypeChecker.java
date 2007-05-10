@@ -150,16 +150,15 @@ public class TypeChecker {
         reportTypeError(term, ((RuntimeErrorType) BaseAdapter.fromNode(type)).getErrorText());
       }
       NodeTypesComponentsRepository.getInstance().
-              getNodeTypesComponent(term.getContainingRoot()).setTypeToNode(term, type);
+              createNodeTypesComponent(term.getContainingRoot()).setTypeToNode(term, type);
     }
 
     // setting errors
     for (SNode node : myNodesWithErrors.keySet()) {
       String errorString = "HELGINS ERROR: " + myNodesWithErrors.get(node).reportError();
       myNodesWithErrorStrings.put(node, errorString);
-      IStatus status = new Status(IStatus.Code.ERROR, errorString);
       NodeTypesComponentsRepository.getInstance().
-              getNodeTypesComponent(node.getContainingRoot()).setErrorToNode(node, errorString);
+              createNodeTypesComponent(node.getContainingRoot()).setErrorToNode(node, errorString);
     }
   }
 
@@ -415,11 +414,10 @@ public class TypeChecker {
   @Nullable
   public SNode getTypeDontCheck(SNode node) {
     if (node == null) return null;
-    /* Object typeObject = node.getUserObject(TYPE_OF_TERM);
-   if (typeObject instanceof SNode) return (SNode) typeObject;
-   return null;*/
-    return NodeTypesComponentsRepository.getInstance().
-            getNodeTypesComponent(node.getContainingRoot()).getType(node);
+    NodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance().
+            getNodeTypesComponent(node.getContainingRoot());
+    if (nodeTypesComponent == null) return null;
+    return nodeTypesComponent.getType(node);
   }
 
 
