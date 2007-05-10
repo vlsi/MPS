@@ -7,8 +7,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.RulesFunctions;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_3;
-import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_4;
+import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_13;
+import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_14;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -23,10 +23,10 @@ public class typeof_PageOperation_InferenceRule implements InferenceRule_Runtime
 
   public void applyRule(SNode argument) {
     SNode inputSequenceType = RulesFunctions.get_InputSequenceType(argument);
-    if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(SLinkOperations.getTarget(argument, "fromElement", true)), new QuotationClass_3().createNode()))) {
+    if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(SLinkOperations.getTarget(argument, "fromElement", true)), new QuotationClass_13().createNode()))) {
       TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(argument, "fromElement", true), "integer is expected");
     }
-    if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(SLinkOperations.getTarget(argument, "toElement", true)), new QuotationClass_4().createNode()))) {
+    if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(SLinkOperations.getTarget(argument, "toElement", true)), new QuotationClass_14().createNode()))) {
       TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(argument, "toElement", true), "integer is expected");
     }
     TypeChecker.getInstance().getRuntimeSupport().givetype(inputSequenceType, argument);

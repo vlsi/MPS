@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.RulesFunctions;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_2;
+import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_12;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -22,7 +22,7 @@ public class typeof_TakeOperation_InferenceRule implements InferenceRule_Runtime
 
   public void applyRule(SNode argument) {
     SNode inputSequenceType = RulesFunctions.get_InputSequenceType(argument);
-    if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(SLinkOperations.getTarget(argument, "elementsToTake", true)), new QuotationClass_2().createNode()))) {
+    if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(SLinkOperations.getTarget(argument, "elementsToTake", true)), new QuotationClass_12().createNode()))) {
       TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(argument, "elementsToTake", true), "integer is expected");
     }
     TypeChecker.getInstance().getRuntimeSupport().givetype(inputSequenceType, argument);

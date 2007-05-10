@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.RulesFunctions;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_13;
+import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_23;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -23,7 +23,7 @@ public class typeof_GetElementOperation_InferenceRule implements InferenceRule_R
   public void applyRule(SNode argument) {
     SNode elementType = RulesFunctions.getElementType_fromInputListType(argument);
     SNode arg = SLinkOperations.getTarget(argument, "argument", true);
-    if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(arg), new QuotationClass_13().createNode()))) {
+    if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(arg), new QuotationClass_23().createNode()))) {
       TypeChecker.getInstance().reportTypeError(arg, "integer is expected");
     }
     TypeChecker.getInstance().getRuntimeSupport().givetype(elementType, argument);

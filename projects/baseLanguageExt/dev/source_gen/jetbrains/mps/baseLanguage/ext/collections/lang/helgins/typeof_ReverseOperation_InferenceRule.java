@@ -6,7 +6,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.RulesFunctions;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_16;
+import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_26;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -21,7 +21,7 @@ public class typeof_ReverseOperation_InferenceRule implements InferenceRule_Runt
 
   public void applyRule(SNode argument) {
     SNode inputElementType = RulesFunctions.getElementType_fromInputListType(argument);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_16().createNode(inputElementType), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_26().createNode(inputElementType), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ReverseOperation";
