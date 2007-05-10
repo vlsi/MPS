@@ -640,7 +640,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       progress.finishSomehow();
     } finally {
       //todo this is tmp anti memory leak hack:
-/*
       progress.addText("Invalidate caches");
       ReloadUtils.invalidateCaches();
 
@@ -648,7 +647,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       SModelRepository.getInstance().refreshModels();
 
       System.gc();
-*/
     }    
   }
 

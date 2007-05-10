@@ -15,7 +15,7 @@ import jetbrains.mps.refactoring.CopyUtil;
 public class HUtil {
 
   public static SNode copyIfNecessary ( SNode node, SModel model ) {
-     if ( node . getParent (  ) != null ) {
+     if ( node != null && node . getParent (  ) != null ) {
         return CopyUtil. copy ( node , model ) ;
      } else {
         return node ;

@@ -6,7 +6,10 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.RulesFunctions_Collections;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_16;
+import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_17;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -21,7 +24,13 @@ public class typeof_ToListOperation_InferenceRule implements InferenceRule_Runti
 
   public void applyRule(SNode argument) {
     SNode inputElementType = RulesFunctions_Collections.get_inputSequenceType_elementType(argument);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_16().createNode(inputElementType), argument);
+    if(inputElementType == null) {
+      TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(SNodeOperations.getParent(argument, null, false, false), "leftExpression", true), "Can't compute input sequence element type");
+      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_16().createNode(), argument);
+    } else 
+    {
+      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_17().createNode(inputElementType), argument);
+    }
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ToListOperation";

@@ -6,7 +6,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.RulesFunctions_Collections;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_25;
+import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_26;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -21,7 +21,7 @@ public class typeof_GetSizeOperation_InferenceRule implements InferenceRule_Runt
 
   public void applyRule(SNode argument) {
     RulesFunctions_Collections.get_inputSequenceType(argument);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_25().createNode(), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_26().createNode(), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetSizeOperation";
