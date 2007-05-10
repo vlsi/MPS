@@ -428,8 +428,10 @@ public class TypeChecker {
   @Nullable
   public String getTypeErrorDontCheck(SNode node) {
     if (node == null) return null;
-    return NodeTypesComponentsRepository.getInstance().
-            getNodeTypesComponent(node.getContainingRoot()).getError(node);
+    NodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance().
+            getNodeTypesComponent(node.getContainingRoot());
+    if (nodeTypesComponent == null) return null;
+    return nodeTypesComponent.getError(node);
   }
 
   @Hack
