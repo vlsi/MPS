@@ -2,6 +2,7 @@ package jetbrains.mps.bootstrap.helgins.runtime;
 
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
+import jetbrains.mps.helgins.inference.NodeTypesComponent;
 import jetbrains.mps.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.patterns.IMatchingPattern;
@@ -31,9 +32,13 @@ public class RuntimeSupport {
 
   public SNode typeOf(SNode node) {
     if (node == null) return null;
-    SNode type = NodeTypesComponentsRepository.getInstance()
-            .getNodeTypesComponent(node.getContainingRoot()).getType(node);
-    if (type != null) return type;
+    NodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance()
+            .getNodeTypesComponent(node.getContainingRoot());
+    SNode type;
+    if (nodeTypesComponent != null) {
+      type = nodeTypesComponent.getType(node);
+      if (type != null) return type;
+    }
 
     Map<SNode, SNode> typesContext = myTypeChecker.getMainContext();
     type = typesContext.get(node);
@@ -46,15 +51,15 @@ public class RuntimeSupport {
   }
 
   private String getNewVarName() {
-     String result = myVariableChar + (myVariableIndex == 0 ? "" : ""+ myVariableIndex);
-     if (myVariableChar == Z_CHAR) {
-       myVariableIndex++;
-       myVariableChar = A_CHAR;
-     } else {
-       myVariableChar++;
-     }
-     return result;
-   }
+    String result = myVariableChar + (myVariableIndex == 0 ? "" : ""+ myVariableIndex);
+    if (myVariableChar == Z_CHAR) {
+      myVariableIndex++;
+      myVariableChar = A_CHAR;
+    } else {
+      myVariableChar++;
+    }
+    return result;
+  }
 
   public SNode createNewRuntimeTypesVariable(boolean isNullable) {
     RuntimeTypeVariable typeVar = RuntimeTypeVariable.newInstance(myTypeChecker.getRuntimeTypesModel());
