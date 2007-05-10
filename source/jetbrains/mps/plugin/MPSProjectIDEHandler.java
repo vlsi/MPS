@@ -6,6 +6,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.EditorsPane;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.ide.usageView.UsagesModel_AspectMethods;
@@ -47,23 +48,26 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     return getProjectWindow().getMainFrame();
   }
 
-  public void showNode(String namespace, String id) throws RemoteException {
-    List<SModelDescriptor> modelDescriptors = myProject.getScope().getModelDescriptors(namespace);
-    for (SModelDescriptor descriptor : modelDescriptors) {
-      if (descriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) continue;
+  public void showNode(final String namespace, final String id) throws RemoteException {
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        List<SModelDescriptor> modelDescriptors = myProject.getScope().getModelDescriptors(namespace);
+        for (SModelDescriptor descriptor : modelDescriptors) {
+          if (descriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) continue;
 
-      SNode node = descriptor.getSModel().getNodeById(id);
-      if (node != null) {
-        IDEProjectFrame frame = getProjectWindow();
-        ModuleContext operationContext = ModuleContext.create(node, getProjectWindow());
-        EditorsPane pane = frame.getEditorsPane();
-        IEditor editor = pane.openEditor(node, operationContext);
-        NavigationActionProcessor.executeNavigationAction(new EditorNavigationCommand(node, editor, pane), operationContext);
+          SNode node = descriptor.getSModel().getNodeById(id);
+          if (node != null) {
+            IDEProjectFrame frame = getProjectWindow();
+            ModuleContext operationContext = ModuleContext.create(node, getProjectWindow());
+            EditorsPane pane = frame.getEditorsPane();
+            IEditor editor = pane.openEditor(node, operationContext);
+            NavigationActionProcessor.executeNavigationAction(new EditorNavigationCommand(node, editor, pane), operationContext);
+          }
+        }
+
+        FrameUtil.activateFrame(getMainFrame());
       }
-    }
-
-    FrameUtil.activateFrame(getMainFrame());
-    
+    });
   }
 
   public void showAspectMethodUsages(String namespace, String name) throws RemoteException {
