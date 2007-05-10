@@ -5,7 +5,7 @@ package jetbrains.mps.bootstrap.helgins.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.bootstrap.helgins.helgins.QuotationClass_2;
+import jetbrains.mps.bootstrap.helgins.helgins.QuotationClass_13;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -13,20 +13,20 @@ import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class typeOf_TypeCheckerAccess_InferenceRule implements InferenceRule_Runtime {
+public class typeOf_IsSubtypeExpression_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeOf_TypeCheckerAccess_InferenceRule() {
+  public  typeOf_IsSubtypeExpression_InferenceRule() {
   }
 
   public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_2().createNode(), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_13().createNode(), argument);
   }
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.bootstrap.helgins.structure.TypeCheckerAccessExpression";
+    return "jetbrains.mps.bootstrap.helgins.structure.IsSubtypeExpression";
   }
   public ApplicableNodeCondition getNodeCondition() {
     SModel model = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.bootstrap.helgins.helgins")).getSModel();
-    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1175595978130"));
+    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1178819889762"));
   }
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
