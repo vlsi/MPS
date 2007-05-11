@@ -27,7 +27,7 @@
     <orderEntry type="module" module-name="baseLanguageExt" exported="" />
     <orderEntry type="library" name="asm" level="project" />
     <orderEntry type="module" module-name="scriptLanguage" />
-    <orderEntry type="module" module-name="scriptLanguage_runtime" />
+    <orderEntry type="module" module-name="scriptLanguage_runtime" exported="" />
     <orderEntry type="module" module-name="scriptLanguageInternal" />
     <orderEntry type="library" name="commons-logging" level="project" />
     <orderEntryProperties />
