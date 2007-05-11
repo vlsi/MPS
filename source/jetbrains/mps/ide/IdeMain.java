@@ -3,6 +3,7 @@ package jetbrains.mps.ide;
 import jetbrains.mps.logging.LoggerUtil;
 import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.project.ApplicationComponents;
+import jetbrains.mps.util.PathManager;
 
 import javax.swing.JOptionPane;
 import javax.swing.UIDefaults;
