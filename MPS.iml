@@ -29,6 +29,7 @@
     <orderEntry type="module" module-name="scriptLanguage" />
     <orderEntry type="module" module-name="scriptLanguage_runtime" />
     <orderEntry type="module" module-name="scriptLanguageInternal" />
+    <orderEntry type="library" name="commons-logging" level="project" />
     <orderEntryProperties />
   </component>
   <component name="copyright">

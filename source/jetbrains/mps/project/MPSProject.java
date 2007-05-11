@@ -41,16 +41,22 @@ import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import java.io.File;
 import java.rmi.RemoteException;
 import java.util.*;
+import java.text.DateFormat;
 
 /**
  * Author: Sergey Dmitriev
  * Created Apr 29, 2004
  */
 public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComponentWithPreferences {
+
+  private static final Log log = LogFactory.getLog(MPSProject.class);
+
   public static final String COMPONENTS = "components";
   public static final String COMPONENT = "component";
   public static final String CLASS = "class";
@@ -604,7 +610,19 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
           errors.add(msg);
         }
 
-        System.out.println(msg.getKind() + " : " + msg.getText());
+        switch(msg.getKind()) {
+          case ERROR:
+            log.error(msg.getText());
+            break;
+
+          case INFORMATION:
+            log.info(msg.getText());
+            break;
+
+          case WARNING:
+            log.warn(msg.getText());
+            break;
+        }
       }
     };
 
