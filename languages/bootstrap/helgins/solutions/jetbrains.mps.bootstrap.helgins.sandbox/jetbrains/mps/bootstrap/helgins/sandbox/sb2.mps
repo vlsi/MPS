@@ -138,18 +138,18 @@
   <node type="jetbrains.mps.bootstrap.helgins.InferenceRule" id="1178810023126">
     <property name="name" value="test" />
     <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178810023127">
-      <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1178810049946">
-        <node role="expression" type="jetbrains.mps.baseLanguage.CastExpression" id="1178810054151">
-          <node role="expression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1178810059530" />
-          <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1178810057529">
+      <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1178811020035">
+        <node role="expression" type="jetbrains.mps.baseLanguage.CastExpression" id="1178811022756">
+          <node role="expression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1178811027150" />
+          <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1178811295721">
             <link role="classifier" extResolveInfo="6.[Classifier]List" />
           </node>
         </node>
       </node>
-      <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1178810063071">
-        <node role="expression" type="jetbrains.mps.baseLanguage.CastExpression" id="1178810066889">
-          <node role="expression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1178810071825" />
-          <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1178810069619">
+      <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1178811029863">
+        <node role="expression" type="jetbrains.mps.baseLanguage.CastExpression" id="1178811032674">
+          <node role="expression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1178811037063" />
+          <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1178811338290">
             <link role="classifier" extResolveInfo="6.[Classifier]ArrayList" />
           </node>
         </node>

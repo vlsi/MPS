@@ -4,6 +4,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.refactoring.CopyUtil;
+import jetbrains.mps.patterns.IMatchingPattern;
+import jetbrains.mps.project.GlobalScope;
 
 /**
  * Created by IntelliJ IDEA.
@@ -20,6 +22,14 @@ public class HUtil {
      } else {
         return node ;
      }
+  }
+
+  public static IMatchingPattern createMatchingPatternByConceptFQName(final String conceptFQName) {
+    return new IMatchingPattern() {
+      public boolean match(SNode nodeToMatch) {
+        return nodeToMatch.isInstanceOfConcept(conceptFQName, GlobalScope.getInstance());
+      }
+    };
   }
 
 }

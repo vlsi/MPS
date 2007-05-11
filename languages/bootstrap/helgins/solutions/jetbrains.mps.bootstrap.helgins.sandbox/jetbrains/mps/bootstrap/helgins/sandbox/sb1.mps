@@ -15,34 +15,37 @@
   <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="5" modelUID="java.io@java_stub" />
   <import index="6" modelUID="jetbrains.mps.bootstrap.helgins.structure" />
-  <node type="jetbrains.mps.helgins.Rule" id="1177681456834">
-    <property name="name" value="rrr" />
-    <node role="applicableNode" type="jetbrains.mps.helgins.AnalyzedTermDeclaration" id="1177681456836">
-      <property name="name" value="sss" />
-      <node role="condition" type="jetbrains.mpswiki.queryLanguage.QueryPattern" id="1177681564196">
-        <node role="pattern" type="jetbrains.mps.patterns.PatternExpression" id="1177681564197">
-          <node role="patternNode" type="jetbrains.mps.baseLanguage.ClassifierType" id="1177681575411">
-            <link role="classifier" extResolveInfo="1.[Classifier]String" />
+  <node type="jetbrains.mps.bootstrap.helgins.InferenceRule" id="1178874877691">
+    <property name="name" value="sss" />
+    <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178874877692">
+      <node role="statement" type="jetbrains.mps.bootstrap.helgins.CoerceStatement" id="1178874909096">
+        <node role="pattern" type="jetbrains.mps.bootstrap.helgins.ConceptReference" id="1178874952255">
+          <property name="name" value="ddd" />
+          <link role="concept" targetNodeId="4.1107535904670" />
+        </node>
+        <node role="nodeToCoerce" type="jetbrains.mps.bootstrap.helgins.TypeOfExpression" id="1178874947956">
+          <node role="term" type="jetbrains.mps.bootstrap.helgins.ApplicableNodeReference" id="1178874949895">
+            <link role="applicableNode" targetNodeId="1178874883881" resolveInfo="bmd" />
+          </node>
+        </node>
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178874909099">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1178874965647">
+            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178874987334">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.ApplicableNodeReference" id="1178874965648">
+                <link role="applicableNode" targetNodeId="1178874952255" resolveInfo="ddd" />
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1178874988788">
+                <link role="link" targetNodeId="4.1107535924139" />
+              </node>
+            </node>
           </node>
         </node>
       </node>
     </node>
-    <node role="statements" type="jetbrains.mps.helgins.StatementList" id="1177767960894">
-      <node role="statement" type="jetbrains.mps.helgins.EvaluateStatement" id="1177776776686">
-        <node role="expression" type="jetbrains.mpswiki.queryLanguage.QueryVariableReference" id="1177776800467">
-          <link role="variable" targetNodeId="1177681456836" resolveInfo="sss" />
-        </node>
-      </node>
-      <node role="statement" type="jetbrains.mps.helgins.EvaluateStatement" id="1177778644667">
-        <node role="expression" type="jetbrains.mps.helgins.CustomFunctionCall" id="1177778666499">
-          <link role="function" targetNodeId="1177778634039" resolveInfo="foo" />
-        </node>
-      </node>
+    <node role="applicableNode" type="jetbrains.mps.bootstrap.helgins.ConceptReference" id="1178874883881">
+      <property name="name" value="bmd" />
+      <link role="concept" targetNodeId="4.1068580123132" />
     </node>
-  </node>
-  <node type="jetbrains.mps.helgins.CustomFunction" id="1177778634039">
-    <property name="name" value="foo" />
-    <node role="statements" type="jetbrains.mps.helgins.StatementList" id="1177778634040" />
   </node>
 </model>
 

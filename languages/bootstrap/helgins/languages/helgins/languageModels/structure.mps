@@ -566,5 +566,33 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1178870617262">
+    <property name="name" value="CoerceExpression" />
+    <link role="extends" targetNodeId="2.1068431790191" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1178870894644">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="pattern" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1174642743670" resolveInfo="ApplicableNodeCondition" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1178870894645">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="nodeToCoerce" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="2.1068431790191" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1178870637014">
+      <property name="value" value="coerce" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1178871491133">
+    <property name="name" value="CoerceStrongExpression" />
+    <link role="extends" targetNodeId="1178870617262" resolveInfo="CoerceExpression" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1178871544415">
+      <property name="value" value="coerceStrong" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
 </model>
 
