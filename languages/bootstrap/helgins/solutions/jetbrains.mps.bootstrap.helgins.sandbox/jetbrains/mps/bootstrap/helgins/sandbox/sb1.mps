@@ -41,6 +41,40 @@
           </node>
         </node>
       </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1178877551432">
+        <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1178877551433">
+          <property name="name" value="n" />
+          <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1178877551434" />
+          <node role="initializer" type="jetbrains.mps.bootstrap.helgins.CoerceExpression" id="1178877558391">
+            <node role="pattern" type="jetbrains.mps.bootstrap.helgins.ConceptReference" id="1178877572774">
+              <property name="name" value="clt" />
+              <link role="concept" targetNodeId="4.1107535904670" />
+            </node>
+            <node role="nodeToCoerce" type="jetbrains.mps.bootstrap.helgins.ApplicableNodeReference" id="1178877566178">
+              <link role="applicableNode" targetNodeId="1178874883881" resolveInfo="bmd" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1178878122767">
+        <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1178878122768">
+          <property name="name" value="m" />
+          <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1178878122769" />
+          <node role="initializer" type="jetbrains.mps.bootstrap.helgins.CoerceExpression" id="1178878129425">
+            <node role="pattern" type="jetbrains.mps.bootstrap.helgins.PatternCondition" id="1178878144989">
+              <property name="name" value="_" />
+              <node role="pattern" type="jetbrains.mps.patterns.PatternExpression" id="1178878144990">
+                <node role="patternNode" type="jetbrains.mps.baseLanguage.IntegerType" id="1178878156461" />
+              </node>
+            </node>
+            <node role="nodeToCoerce" type="jetbrains.mps.bootstrap.helgins.TypeOfExpression" id="1178878131417">
+              <node role="term" type="jetbrains.mps.bootstrap.helgins.ApplicableNodeReference" id="1178878133251">
+                <link role="applicableNode" targetNodeId="1178874883881" resolveInfo="bmd" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="applicableNode" type="jetbrains.mps.bootstrap.helgins.ConceptReference" id="1178874883881">
       <property name="name" value="bmd" />
