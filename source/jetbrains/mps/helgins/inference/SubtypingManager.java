@@ -15,6 +15,7 @@ import jetbrains.mps.patterns.util.IMatchModifier;
 import jetbrains.mps.patterns.IMatchingPattern;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.util.Pair;
 import jetbrains.mpswiki.queryLanguage.structure.VariableCondition;
 import jetbrains.mpswiki.queryLanguage.structure.QueryPattern;
 import jetbrains.mpswiki.queryLanguage.structure.ConceptReference;
@@ -128,13 +129,13 @@ public class SubtypingManager {
   }
 
   private boolean searchInSubtypes(SNode superRepresentator, Matcher m, boolean isWeak) {
-    StructuralNodeSet frontier = new StructuralNodeSet();
-    StructuralNodeSet newFrontier = new StructuralNodeSet();
-    StructuralNodeSet yetPassed = new StructuralNodeSet();
+    StructuralNodeSet<?> frontier = new StructuralNodeSet();
+    StructuralNodeSet<?> newFrontier = new StructuralNodeSet();
+    StructuralNodeSet<?> yetPassed = new StructuralNodeSet();
     frontier.add(superRepresentator);
     while (!frontier.isEmpty()) {
       for (SNode node : frontier) {
-        StructuralNodeSet descendants = collectImmediateSubtypes(node, isWeak);
+        StructuralNodeSet<?> descendants = collectImmediateSubtypes(node, isWeak);
         if (descendants == null) continue;
         for (SNode passedNode : yetPassed) {
           descendants.removeStructurally(passedNode);
@@ -145,8 +146,8 @@ public class SubtypingManager {
             return true;
           }
         }
-        newFrontier.addAllStructurally(descendants);
-        yetPassed.addAllStructurally(descendants);
+        newFrontier.addAllStructurally((StructuralNodeSet) descendants);
+        yetPassed.addAllStructurally((StructuralNodeSet) descendants);
       }
       frontier = newFrontier;
       newFrontier = new StructuralNodeSet();
@@ -159,13 +160,13 @@ public class SubtypingManager {
   }
 
   private boolean searchInSupertypes(SNode subRepresentator, Matcher m, boolean isWeak) {
-    StructuralNodeSet frontier = new StructuralNodeSet();
-    StructuralNodeSet newFrontier = new StructuralNodeSet();
-    StructuralNodeSet yetPassed = new StructuralNodeSet();
+    StructuralNodeSet<?> frontier = new StructuralNodeSet();
+    StructuralNodeSet<?> newFrontier = new StructuralNodeSet();
+    StructuralNodeSet<?> yetPassed = new StructuralNodeSet();
     frontier.add(subRepresentator);
     while (!frontier.isEmpty()) {
       for (SNode node : frontier) {
-        StructuralNodeSet ancestors = collectImmediateSupertypes(node, isWeak);
+        StructuralNodeSet<?> ancestors = collectImmediateSupertypes(node, isWeak);
         if (ancestors == null) continue;
         for (SNode passedNode : yetPassed) {
           ancestors.removeStructurally(passedNode);
@@ -327,10 +328,10 @@ public class SubtypingManager {
 
   public Set<SNode> leastCommonSupertypes(Set<? extends SNode> types) {
     if (types.size() == 1) return new HashSet<SNode>(types);
-    StructuralNodeSet allTypes = new StructuralNodeSet();
-    StructuralNodeSet result = new StructuralNodeSet(types);
+    StructuralNodeSet<?> allTypes = new StructuralNodeSet();
+    StructuralNodeSet<?> result = new StructuralNodeSet(types);
 
-    allTypes.addAllStructurally((Set<SNode>) types);
+    allTypes.addCollectionStructurally((Set<SNode>) types);
 
     HashMap<SNode, StructuralNodeSet> subTypesToSupertypes = new HashMap<SNode, StructuralNodeSet>();
 
@@ -388,12 +389,12 @@ public class SubtypingManager {
       return result;
     }
 
-    StructuralNodeSet superTypesA = subTypesToSuperTypes.get(a) != null ?
+    StructuralNodeSet<?> superTypesA = subTypesToSuperTypes.get(a) != null ?
             new StructuralNodeSet(subTypesToSuperTypes.get(a)) :
             new StructuralNodeSet();
     superTypesA.add(a);
 
-    StructuralNodeSet superTypesB = subTypesToSuperTypes.get(b) != null ?
+    StructuralNodeSet<?> superTypesB = subTypesToSuperTypes.get(b) != null ?
             new StructuralNodeSet(subTypesToSuperTypes.get(b)) :
             new StructuralNodeSet();
     superTypesB.add(b);

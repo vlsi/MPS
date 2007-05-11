@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.sandbox.test">
   <language namespace="jetbrains.mps.baseLanguage" />
-  <maxImportIndex value="26" />
+  <maxImportIndex value="27" />
   <import index="1" modelUID="java.lang@java_stub" />
   <import index="26" modelUID="jetbrains.mps.baseLanguage.sandbox.misc" />
+  <import index="27" modelUID="java.util@java_stub" />
   <node type="jetbrains.mps.baseLanguage.Interface" id="1115766127296">
     <property name="name" value="IBaseInterface" />
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1115766147547">
@@ -770,6 +771,39 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1178898075315">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1178898075316">
+            <property name="name" value="sssss" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1178898075317">
+              <link role="classifier" extResolveInfo="1.[Classifier]Iterable" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1178898081124">
+                <link role="classifier" extResolveInfo="1.[Classifier]String" />
+              </node>
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.NewExpression" id="1178898104152">
+              <link role="baseMethodDeclaration" extResolveInfo="27.constructor [Classifier]ArrayList[ConstructorDeclaration] ()" />
+              <node role="typeParameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1178898110130">
+                <link role="classifier" extResolveInfo="1.[Classifier]String" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ForeachStatement" id="1178898010330">
+          <node role="iterable" type="jetbrains.mps.baseLanguage.NewExpression" id="1178898125438">
+            <link role="baseMethodDeclaration" extResolveInfo="27.constructor [Classifier]ArrayList[ConstructorDeclaration] ()" />
+            <node role="typeParameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1178898132952">
+              <link role="classifier" extResolveInfo="1.[Classifier]String" />
+            </node>
+          </node>
+          <node role="variable" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1178898010332">
+            <property name="name" value="s" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1178898013078">
+              <link role="classifier" extResolveInfo="1.[Classifier]String" />
+            </node>
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178898010334" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.Statement" id="1178898066208" />
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1178809320465">
           <node role="expression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1178809320466">
             <property name="value" value="3" />

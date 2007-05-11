@@ -3,10 +3,7 @@ package jetbrains.mps.helgins.inference.util;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.patterns.util.MatchingUtil;
 
-import java.util.Set;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Collection;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -15,38 +12,41 @@ import java.util.Collection;
  * Time: 19:35:25
  * To change this template use File | Settings | File Templates.
  */
-public class StructuralNodeSet implements Set<SNode> {
-  Set<SNode> myNodes = new HashSet<SNode>();
-  Set<SNode> myAbsentNodes = new HashSet<SNode>();
-  Set<SNode> myPresentNodes = new HashSet<SNode>();
+public class StructuralNodeSet<T> implements Set<SNode> {
+  protected Map<SNode, T> myNodes = new HashMap<SNode,T>();
+  protected Set<SNode> myAbsentNodes = new HashSet<SNode>();
+  protected Map<SNode, T> myPresentNodes = new HashMap<SNode,T>();
 
   public StructuralNodeSet() {
 
   }
 
-  public StructuralNodeSet(StructuralNodeSet set) {
-    myNodes = new HashSet<SNode>(set.myNodes);
+  public StructuralNodeSet(StructuralNodeSet<T> set) {
+    myNodes = new HashMap<SNode, T>(set.myNodes);
     myAbsentNodes = new HashSet<SNode>(set.myAbsentNodes);
-    myPresentNodes = new HashSet<SNode>(set.myPresentNodes);
+    myPresentNodes = new HashMap<SNode, T>(set.myPresentNodes);
   }
 
   public StructuralNodeSet(Collection<? extends SNode> collection) {
-    myNodes = new HashSet<SNode>(collection);
+    myNodes = new HashMap<SNode,T>();
+    for (SNode node : collection) {
+      myNodes.put(node, null);
+    }
   }
 
   public boolean containsStructurally(SNode ourNode) {
-    if (myNodes.contains(ourNode)) {
+    if (myNodes.containsKey(ourNode)) {
       return true;
     }
-    if (myPresentNodes.contains(ourNode)) {
+    if (myPresentNodes.containsKey(ourNode)) {
       return true;
     }
     if (myAbsentNodes.contains(ourNode)) {
       return false;
     }
-    for (SNode node : myNodes) {
+    for (SNode node : myNodes.keySet()) {
       if (MatchingUtil.matchNodes(node, ourNode)) {
-        myPresentNodes.add(ourNode);
+        myPresentNodes.put(ourNode, null);
         return true;
       }
     }
@@ -56,7 +56,7 @@ public class StructuralNodeSet implements Set<SNode> {
 
   public boolean removeStructurally(SNode ourNode) {
     if (!containsStructurally(ourNode)) return false;
-    for (SNode node : new HashSet<SNode>(myNodes)) {
+    for (SNode node : new HashSet<SNode>(myNodes.keySet())) {
       if (MatchingUtil.matchNodes(node, ourNode)) {
         myNodes.remove(node);
         myPresentNodes.remove(node);
@@ -68,14 +68,14 @@ public class StructuralNodeSet implements Set<SNode> {
 
   public boolean addStructurally(SNode ourNode) {
     if (!containsStructurally(ourNode)) {
-      myNodes.add(ourNode);
+      myNodes.put(ourNode, null);
       myAbsentNodes.remove(ourNode);
       return true;
     }
     return false;
   }
 
-  public boolean addAllStructurally(Collection<? extends SNode> ourNodes) {
+  public boolean addCollectionStructurally(Collection<? extends SNode> ourNodes) {
     boolean result = false;
     if (ourNodes == null) return false;
     for (SNode ourNode : ourNodes) {
@@ -86,13 +86,60 @@ public class StructuralNodeSet implements Set<SNode> {
   }
 
   public boolean addAllStructurally(StructuralNodeSet ourNodes) {
-    boolean result = addAllStructurally((Collection<? extends SNode>) ourNodes);
-    myPresentNodes.addAll(ourNodes.myPresentNodes);
+    boolean result = addCollectionStructurally((Collection<? extends SNode>) ourNodes);
+    for (SNode node : (Iterable<? extends SNode>) ourNodes.myPresentNodes.keySet()) {
+      myPresentNodes.put(node, null);
+    }
     Set<SNode> nodes = new HashSet<SNode>(ourNodes.myAbsentNodes);
-    nodes.removeAll(myNodes);
-    nodes.removeAll(myPresentNodes);
-    myAbsentNodes.addAll(nodes);
+    nodes.removeAll(myNodes.keySet());
+    nodes.removeAll(myPresentNodes.keySet());
+    for (SNode node : nodes) {
+      myAbsentNodes.add(node);
+    }
     return result;
+  }
+
+   public void putAllStructurally(StructuralNodeSet<T> ourNodes) {
+    for (SNode ourNode : ourNodes) {
+      putStructurally(ourNode, ourNodes.getTag(ourNode));
+    }
+     myPresentNodes.putAll(ourNodes.myPresentNodes);
+     Set<SNode> nodes = new HashSet<SNode>(ourNodes.myAbsentNodes);
+     nodes.removeAll(myNodes.keySet());
+     nodes.removeAll(myPresentNodes.keySet());
+     for (SNode node : nodes) {
+       myAbsentNodes.add(node);
+     }
+  }
+
+  public T getTag(SNode ourNode) {
+    if (myNodes.containsKey(ourNode)) {
+      return myNodes.get(ourNode);
+    }
+    if (myPresentNodes.containsKey(ourNode)) {
+      return myPresentNodes.get(ourNode);
+    }
+    if (myAbsentNodes.contains(ourNode)) {
+      return null;
+    }
+    for (SNode node : myNodes.keySet()) {
+      if (MatchingUtil.matchNodes(node, ourNode)) {
+        T tag = myNodes.get(node);
+        myPresentNodes.put(ourNode, tag);
+        return tag;
+      }
+    }
+    myAbsentNodes.add(ourNode);
+    return null;
+  }
+
+  public void putStructurally(SNode ourNode, T tag) {
+    if (!containsStructurally(ourNode)) {
+      myNodes.put(ourNode, tag);
+      myAbsentNodes.remove(ourNode);
+    } else {
+      myPresentNodes.put(ourNode, tag);
+    }
   }
 
 
@@ -106,6 +153,8 @@ public class StructuralNodeSet implements Set<SNode> {
 
   public void clear() {
     myNodes.clear();
+    myPresentNodes.clear();
+    myAbsentNodes.clear();
   }
 
   public boolean contains(Object o) {
@@ -114,7 +163,7 @@ public class StructuralNodeSet implements Set<SNode> {
   }
 
   public Iterator<SNode> iterator() {
-    return myNodes.iterator();
+    return myNodes.keySet().iterator();
   }
 
   public boolean add(SNode o) {
@@ -122,7 +171,7 @@ public class StructuralNodeSet implements Set<SNode> {
   }
 
   public boolean addAll(Collection<? extends SNode> c) {
-    return addAllStructurally(c);
+    return addCollectionStructurally(c);
   }
 
 
