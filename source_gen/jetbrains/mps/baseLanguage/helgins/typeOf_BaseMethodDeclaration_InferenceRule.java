@@ -7,6 +7,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.helgins.QuotationClass_31;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.helgins.RulesFunctions_BaseLanguage;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
@@ -32,10 +34,17 @@ public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule
     if(SLinkOperations.getTarget(argument, "body", true) == null) {
       return;
     }
+    if(SConceptPropertyOperations.getBoolean(argument, "abstract")) {
+      return;
+    }
     // generic check
     TypeChecker.getInstance().getRuntimeSupport().check(SLinkOperations.getTarget(argument, "body", true));
     // =============
     SNode expectedRetType = SLinkOperations.getTarget(argument, "returnType", true);
+    if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(expectedRetType), "jetbrains.mps.baseLanguage.structure.Type")) {
+      // actually - no return type
+      expectedRetType = null;
+    }
     if(SNodeOperations.isInstanceOf(expectedRetType, "jetbrains.mps.baseLanguage.structure.VoidType")) {
       expectedRetType = null;
     }
