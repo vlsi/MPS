@@ -589,7 +589,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1178827244122">
           <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1178827257414">
-            <link role="baseMethodDeclaration" extResolveInfo="10.method ([Classifier]ITemplateGenerator).([InstanceMethodDeclaration]showInformationMessage((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
+            <link role="baseMethodDeclaration" extResolveInfo="10.method ([Classifier]ITemplateGenerator).([InstanceMethodDeclaration]showErrorMessage((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
             <node role="instance" type="jetbrains.mps.baseLanguage.ParameterReference" id="1178827244123">
               <link role="variableDeclaration" targetNodeId="1178826373826" resolveInfo="generator" />
             </node>

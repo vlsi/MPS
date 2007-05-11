@@ -28,13 +28,17 @@ public class typeof_SemanticDowncastExpression_InferenceRule implements Inferenc
       SNode leftType = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "leftExpression", true));
       if(SNodeOperations.isInstanceOf(leftType, "jetbrains.mps.bootstrap.smodelLanguage.structure.SModelType")) {
         TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_35().createNode(), argument);
-      } else 
+        return;
+      }
       if(SNodeOperations.isInstanceOf(leftType, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType")) {
         TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_36().createNode(), argument);
-      } else 
+        return;
+      }
       if(SNodeOperations.isInstanceOf(leftType, "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType")) {
         TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_37().createNode(), argument);
+        return;
       }
+      TypeChecker.getInstance().getRuntimeSupport().givetype(leftType, argument);
     }
   }
   public String getApplicableConceptFQName() {

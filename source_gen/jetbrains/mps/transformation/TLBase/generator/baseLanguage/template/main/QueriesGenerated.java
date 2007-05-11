@@ -18,12 +18,12 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.transformation.TemplateLanguageTypesUtil;
-import jetbrains.mps.transformation.TLBase.structure.PropertyMacro_GetPropertyValue;
 import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent;
 import jetbrains.mps.transformation.TLBase.structure.IfMacro_Condition;
 import jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodesQuery;
 import jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodeQuery;
 import jetbrains.mps.transformation.TLBase.structure.MapSrcMacro_MapperFunction;
+import jetbrains.mps.transformation.TLBase.helgins.Util_TLBase_types;
 
 public class QueriesGenerated {
 
@@ -79,13 +79,6 @@ public class QueriesGenerated {
   }
   public static SNode referenceMacro_GetReferent_1167771845166(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.transformation.TLBase.structure.BaseMappingRule", false, false), "applicableConcept", false);
-  }
-  public static SNode referenceMacro_GetReferent_1170806025025(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    AbstractConceptDeclaration concept = TemplateLanguageTypesUtil.get_sourceNode_concept(((PropertyMacro_GetPropertyValue)SNodeOperations.getAdapter(node)), generator.getTypeChecker());
-    if(concept != null) {
-      return concept.getNode();
-    }
-    return templateValue;
   }
   public static SNode referenceMacro_GetReferent_1170795079215(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     AbstractConceptDeclaration concept = TemplateLanguageTypesUtil.get_sourceNode_concept(((ReferenceMacro_GetReferent)SNodeOperations.getAdapter(node)), generator.getTypeChecker());
@@ -145,5 +138,8 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_1170727064418(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "body", true);
+  }
+  public static SNode mapSrcMacro_mapper_1178910515264(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SNodeOperations.copyNode(Util_TLBase_types.get_templateFunction_inputNodeType(node));
   }
 }
