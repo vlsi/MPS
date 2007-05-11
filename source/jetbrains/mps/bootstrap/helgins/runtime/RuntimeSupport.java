@@ -103,6 +103,10 @@ public class RuntimeSupport {
     return typeOf(node);
   }
 
+  public SNode coerce(SNode subtype, IMatchingPattern pattern, boolean isWeak) {
+    return myTypeChecker.getSubtypingManager().coerceSubtyping(subtype, pattern, isWeak);
+  }
+
   public SNode coerce(SNode subtype, IMatchingPattern pattern) {
     return myTypeChecker.getSubtypingManager().coerceSubtyping(subtype, pattern);
   }

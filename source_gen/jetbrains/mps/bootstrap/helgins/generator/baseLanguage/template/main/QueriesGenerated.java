@@ -206,6 +206,12 @@ public class QueriesGenerated {
     SNode concept = SLinkOperations.getTarget(SLinkOperations.getTarget(node, "pattern", true), "concept", false);
     return concept.getModel().getLongName() + "." + SPropertyOperations.getString(concept, "name");
   }
+  public static String propertyMacro_GetPropertyValue_1178882097380(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.CoerceStrongExpression")) + "";
+  }
+  public static String propertyMacro_GetPropertyValue_1178880461203(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.CoerceStrongExpression")) + "";
+  }
   public static SNode referenceMacro_GetReferent_1174599415255(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode quotation = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.helgins.structure.Quotation", false, false);
     SNode antiquotation = node;
