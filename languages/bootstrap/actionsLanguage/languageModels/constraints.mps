@@ -146,5 +146,49 @@
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178541797904" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1178895341658">
+    <link role="concept" targetNodeId="1.1112058030570" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1178895341659">
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178895341660">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1178895358029">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178895364394">
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178895359843">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1178895358030" />
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1178895361578">
+                <link role="property" targetNodeId="1.1177324100501" />
+              </node>
+            </node>
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Property_SetOperation" id="1178895365413">
+              <node role="value" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1178895366604">
+                <property name="value" value="true" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1178895377873">
+    <link role="concept" targetNodeId="1.1138079221458" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1178895377874">
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178895377875">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1178895379799">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178895383867">
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178895381004">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1178895379800" />
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1178895382927">
+                <link role="property" targetNodeId="1.1177442244383" />
+              </node>
+            </node>
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Property_SetOperation" id="1178895384620">
+              <node role="value" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1178895385515">
+                <property name="value" value="true" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
