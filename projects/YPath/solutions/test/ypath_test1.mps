@@ -65,10 +65,12 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178883069632" />
     </node>
     <node role="superclass" type="jetbrains.mps.baseLanguage.ClassifierType" id="1177412592460">
       <link role="classifier" extResolveInfo="1.[Classifier]TestCase" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178883054819" />
   </node>
 </model>
 

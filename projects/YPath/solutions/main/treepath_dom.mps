@@ -126,9 +126,6 @@
         </node>
       </node>
     </node>
-    <node role="nodeType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1175083450262">
-      <link role="classifier" extResolveInfo="1.[Classifier]Node" />
-    </node>
     <node role="parentBlock" type="ypath.ParentBlock" id="1175083364495">
       <node role="parameter" type="ypath.LambdaMethodParameter" id="1175083364496">
         <property name="name" value="node" />
@@ -163,6 +160,11 @@
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178558211779" />
+    <node role="treePathType" type="ypath.TreePathType" id="1178882722893">
+      <node role="nodeType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1178882722896">
+        <link role="classifier" extResolveInfo="1.[Classifier]Node" />
+      </node>
+    </node>
   </node>
 </model>
 

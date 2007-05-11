@@ -42,6 +42,7 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1168436296928">
         <link role="classifier" targetNodeId="1168429752169" resolveInfo="Foo" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178883069636" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1168436332520">
       <property name="name" value="getChildren" />
@@ -63,6 +64,7 @@
           <link role="classifier" targetNodeId="1168429752169" resolveInfo="Foo" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178883069637" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1168528869781">
       <property name="name" value="getName" />
@@ -77,6 +79,7 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1168528873460">
         <link role="classifier" extResolveInfo="2.[Classifier]String" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178883069634" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1168436246009">
       <property name="name" value="main" />
@@ -92,9 +95,6 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1168436278144">
               <node role="creator" type="ypath.TreePathCreator" id="1168436278145">
-                <node role="nodeType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1177357362887">
-                  <link role="classifier" targetNodeId="1168429752169" resolveInfo="Foo" />
-                </node>
                 <node role="parentBlock" type="ypath.ParentBlock" id="1168436278147">
                   <node role="parameter" type="ypath.LambdaMethodParameter" id="1168436278148">
                     <property name="name" value="foo" />
@@ -123,6 +123,11 @@
                         </node>
                       </node>
                     </node>
+                  </node>
+                </node>
+                <node role="treePathType" type="ypath.TreePathType" id="1178882723113">
+                  <node role="nodeType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1178882723115">
+                    <link role="classifier" targetNodeId="1168429752169" resolveInfo="Foo" />
                   </node>
                 </node>
               </node>
@@ -212,11 +217,14 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178883069987" />
     </node>
     <node role="constructor" type="jetbrains.mps.baseLanguage.ConstructorDeclaration" id="1168432038098">
       <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1168432038099" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1168432038100" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178883069822" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178883054821" />
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1168540876032">
     <property name="name" value="Dir" />
@@ -255,9 +263,6 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1168540977694">
               <node role="creator" type="ypath.TreePathCreator" id="1168540986453">
-                <node role="nodeType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1168540989637">
-                  <link role="classifier" extResolveInfo="3.[Classifier]File" />
-                </node>
                 <node role="parentBlock" type="ypath.ParentBlock" id="1168540986455">
                   <node role="parameter" type="ypath.LambdaMethodParameter" id="1168540986456">
                     <property name="name" value="n" />
@@ -286,6 +291,11 @@
                         </node>
                       </node>
                     </node>
+                  </node>
+                </node>
+                <node role="treePathType" type="ypath.TreePathType" id="1178882723117">
+                  <node role="nodeType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1178882723119">
+                    <link role="classifier" extResolveInfo="3.[Classifier]File" />
                   </node>
                 </node>
               </node>
@@ -420,7 +430,9 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178883069990" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178883054828" />
   </node>
 </model>
 

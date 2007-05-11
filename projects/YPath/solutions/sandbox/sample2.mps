@@ -92,8 +92,10 @@
         </node>
       </node>
     </node>
-    <node role="nodeType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1168884963586">
-      <link role="classifier" extResolveInfo="1.[Classifier]File" />
+    <node role="treePathType" type="ypath.TreePathType" id="1178882722898">
+      <node role="nodeType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1178882722900">
+        <link role="classifier" extResolveInfo="1.[Classifier]File" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1168894188335">
@@ -196,7 +198,9 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178883069985" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178883054824" />
   </node>
 </model>
 

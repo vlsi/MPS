@@ -249,7 +249,9 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178883069989" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178883054823" />
   </node>
 </model>
 

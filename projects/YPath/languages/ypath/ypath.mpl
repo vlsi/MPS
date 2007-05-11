@@ -12,6 +12,9 @@
   <constraints>
     <model modelUID="ypath.constraints" />
   </constraints>
+  <scripts>
+    <model modelUID="ypath.scripts" />
+  </scripts>
   <editor>
     <model modelUID="ypath.editor" />
   </editor>
