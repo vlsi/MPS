@@ -3683,5 +3683,36 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions" id="1178893901690">
+    <property name="name" value="thisConstructor" />
+    <property name="package" value="substitute.expression" />
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1178893908066">
+      <property name="useNewActions" value="true" />
+      <link role="applicableConcept" targetNodeId="1.1068431790191" />
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddMenuPart" id="1178893962582">
+        <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptSubstituteMenuPart" id="1178893965911">
+          <link role="concept" targetNodeId="1.1178893518978" />
+        </node>
+      </node>
+      <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionFunction" id="1178893978039">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178893978040">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1178894011004">
+            <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1178894004511">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1178894005688" />
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178893984447">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parentNode" id="1178893982567" />
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAncestorOperation" id="1178893986606">
+                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Concept" id="1178893993518">
+                    <link role="concept" targetNodeId="1.1068580123140" />
+                  </node>
+                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Inclusion" id="1178894585188" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

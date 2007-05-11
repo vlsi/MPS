@@ -11,10 +11,10 @@ import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.baseLanguage.editor.SuperConstructorInvocation_Editor_ActualArgumentListHandler_actualArgumentList_;
+import jetbrains.mps.baseLanguage.editor.ThisConstructorInvocation_Editor_ActualArgumentListHandler_actualArgumentList_;
 import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
 
-public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
+public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myActualArgumentListHandler_actualArgumentList_;
 
@@ -30,11 +30,11 @@ public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "super"));
+    editorCell.addEditorCell(this.createConstantCell(context, node, "this"));
     editorCell.addEditorCell(this.createConstantCell1(context, node, "("));
     editorCell.addEditorCell(this.createActualArgumentList(context, node));
     editorCell.addEditorCell(this.createConstantCell3(context, node, ")"));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1085059533049");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178893550245");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -47,7 +47,7 @@ public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1085059604178");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178893550246");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -59,7 +59,7 @@ public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178893571584");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178893553751");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -71,13 +71,13 @@ public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1085140612097");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178893550249");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createActualArgumentList(EditorContext context, SNode node) {
     if(this.myActualArgumentListHandler_actualArgumentList_ == null) {
-      this.myActualArgumentListHandler_actualArgumentList_ = new SuperConstructorInvocation_Editor_ActualArgumentListHandler_actualArgumentList_(node, "actualArgument", context);
+      this.myActualArgumentListHandler_actualArgumentList_ = new ThisConstructorInvocation_Editor_ActualArgumentListHandler_actualArgumentList_(node, "actualArgument", context);
     }
     EditorCell_Collection editorCell = this.myActualArgumentListHandler_actualArgumentList_.createCells(context, new CellLayout_Horizontal(), false);
     editorCell.setSelectable(false);
