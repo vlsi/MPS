@@ -557,5 +557,13 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1178894719932">
+    <property name="name" value="DistinctOperation" />
+    <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1178896388823">
+      <property name="value" value="distinct" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
 </model>
 
