@@ -1766,6 +1766,11 @@
       <property name="selectable" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1178870989474">
         <property name="text" value="coerce" />
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1178879252450">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1178879258086">
+            <link role="replacementConcept" targetNodeId="1.1178870617262" />
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1178870989475">
         <property name="text" value="(" />
@@ -1790,6 +1795,11 @@
       <property name="selectable" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1178871557634">
         <property name="text" value="coerceStrong" />
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1178879288682">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1178879298074">
+            <link role="replacementConcept" targetNodeId="1.1178870617262" />
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1178871557635">
         <property name="text" value="(" />

@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
+import jetbrains.mps.bootstrap.helgins.editor.CoerceStrongExpression_replaceWith_CoerceExpression_cellMenu;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
@@ -47,6 +51,7 @@ public class CoerceStrongExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new ISubstituteInfoPart[]{new CoerceStrongExpression_replaceWith_CoerceExpression_cellMenu()}));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178871557634");
     editorCell.setLayoutConstraint("");
     return editorCell;
