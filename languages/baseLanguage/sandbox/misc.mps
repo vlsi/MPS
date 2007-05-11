@@ -17,17 +17,15 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1178894848912" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178894848913" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178894848914">
-        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1178894885122">
-          <node role="expression" type="jetbrains.mps.baseLanguage.ThisConstructorInvocation" id="1178894885123">
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1178894897600">
-              <property name="value" value="1" />
-            </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1178894903134">
-              <property name="value" value="23" />
-            </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1178894904089">
-              <property name="value" value="23" />
-            </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ThisConstructorInvocation" id="1178906972349">
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1178906974137">
+            <property name="value" value="1" />
+          </node>
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1178906974877">
+            <property name="value" value="2" />
+          </node>
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1178906975647">
+            <property name="value" value="3" />
           </node>
         </node>
       </node>

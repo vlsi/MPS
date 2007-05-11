@@ -2,31 +2,6 @@
 <project relativePaths="true" version="4">
   <component name="AntConfiguration">
     <defaultAnt bundledAnt="true" />
-    <buildFile url="file://$PROJECT_DIR$/distrib-build.xml">
-      <additionalClassPath>
-        <entry path="file://$PROJECT_DIR$/build/commons-net-1.4.0.jar" />
-      </additionalClassPath>
-      <antReference projectDefault="true" />
-      <customJdkName value="" />
-      <maximumHeapSize value="128" />
-      <properties />
-    </buildFile>
-    <buildFile url="file://$PROJECT_DIR$/mps.xml">
-      <additionalClassPath />
-      <antReference projectDefault="true" />
-      <customJdkName value="" />
-      <maximumHeapSize value="128" />
-      <properties />
-    </buildFile>
-    <buildFile url="file://$PROJECT_DIR$/tests.xml">
-      <additionalClassPath>
-        <entry path="file://$PROJECT_DIR$/lib/junit/junit.jar" />
-      </additionalClassPath>
-      <antReference projectDefault="true" />
-      <customJdkName value="" />
-      <maximumHeapSize value="128" />
-      <properties />
-    </buildFile>
     <buildFile url="file://$PROJECT_DIR$/charisma.xml">
       <additionalClassPath />
       <antReference projectDefault="true" />
@@ -1022,7 +997,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <module name="MPS" />
+      <module name="regexp" />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="1478" />
         <option name="TRANSPORT" value="0" />
@@ -1039,7 +1014,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="Charisma" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
+    <configuration default="false" name="Charisma" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
@@ -1052,15 +1027,15 @@
         <option name="MODULE_NAME" value="webrSamples_hello" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="Charisma" />
-        <option name="DEPLOY" value="true" />
-      </J2EE_MODULE>
       <J2EE_MODULE>
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="MForum" />
         <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="Charisma" />
+        <option name="DEPLOY" value="true" />
       </J2EE_MODULE>
       <J2EE_MODULE>
         <option name="CONTEXT_PATH" value="/" />
@@ -1077,14 +1052,14 @@
         <option name="MODULE_NAME" value="webrSamples_depot" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSample_fileUpload" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
       <J2EE_MODULE>
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="PubMedDB" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="webrSample_fileUpload" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <option name="DEPLOY_TOMCAT_MANAGER" value="false" />
@@ -1163,12 +1138,12 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="Charisma" />
+        <option name="MODULE_NAME" value="MForum" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="MForum" />
+        <option name="MODULE_NAME" value="Charisma" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1188,12 +1163,12 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSample_fileUpload" />
+        <option name="MODULE_NAME" value="PubMedDB" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="PubMedDB" />
+        <option name="MODULE_NAME" value="webrSample_fileUpload" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <option name="DEPLOY_TOMCAT_MANAGER" value="true" />
@@ -1272,12 +1247,12 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="Charisma" />
+        <option name="MODULE_NAME" value="MForum" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="MForum" />
+        <option name="MODULE_NAME" value="Charisma" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1297,12 +1272,12 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSample_fileUpload" />
+        <option name="MODULE_NAME" value="PubMedDB" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="PubMedDB" />
+        <option name="MODULE_NAME" value="webrSample_fileUpload" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <option name="DEPLOY_TOMCAT_MANAGER" value="true" />
@@ -1363,13 +1338,13 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="Charisma" />
-        <option name="DEPLOY" value="false" />
+        <option name="MODULE_NAME" value="MForum" />
+        <option name="DEPLOY" value="true" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="MForum" />
-        <option name="DEPLOY" value="true" />
+        <option name="MODULE_NAME" value="Charisma" />
+        <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE>
         <option name="CONTEXT_PATH" value="/" />
@@ -1388,12 +1363,12 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSample_fileUpload" />
+        <option name="MODULE_NAME" value="PubMedDB" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="PubMedDB" />
+        <option name="MODULE_NAME" value="webrSample_fileUpload" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <option name="DEPLOY_TOMCAT_MANAGER" value="false" />
@@ -1472,12 +1447,12 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="Charisma" />
+        <option name="MODULE_NAME" value="MForum" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="MForum" />
+        <option name="MODULE_NAME" value="Charisma" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE>
@@ -1497,12 +1472,12 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSample_fileUpload" />
+        <option name="MODULE_NAME" value="PubMedDB" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="PubMedDB" />
+        <option name="MODULE_NAME" value="webrSample_fileUpload" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <option name="DEPLOY_TOMCAT_MANAGER" value="false" />

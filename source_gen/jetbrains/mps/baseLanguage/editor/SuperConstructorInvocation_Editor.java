@@ -34,6 +34,7 @@ public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell1(context, node, "("));
     editorCell.addEditorCell(this.createActualArgumentList(context, node));
     editorCell.addEditorCell(this.createConstantCell3(context, node, ")"));
+    editorCell.addEditorCell(this.createConstantCell4(context, node, ";"));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1085059533049");
     editorCell.setLayoutConstraint("");
     return editorCell;
@@ -72,6 +73,18 @@ public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1085140612097");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createConstantCell4(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178906633172");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

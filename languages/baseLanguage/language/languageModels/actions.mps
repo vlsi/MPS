@@ -3685,10 +3685,10 @@
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions" id="1178893901690">
     <property name="name" value="thisConstructor" />
-    <property name="package" value="substitute.expression" />
+    <property name="package" value="substitute.statements" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1178893908066">
       <property name="useNewActions" value="true" />
-      <link role="applicableConcept" targetNodeId="1.1068431790191" />
+      <link role="applicableConcept" targetNodeId="1.1068580123157" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddMenuPart" id="1178893962582">
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptSubstituteMenuPart" id="1178893965911">
           <link role="concept" targetNodeId="1.1178893518978" />

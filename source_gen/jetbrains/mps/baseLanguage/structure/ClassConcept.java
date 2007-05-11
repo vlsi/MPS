@@ -16,9 +16,9 @@ import jetbrains.mps.baseLanguage.structure.ConstructorDeclaration;
 import jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration;
 
 public class ClassConcept extends Classifier {
-  public static String EXTENDED_CLASS = "extendedClass";
   public static String NAME = "name";
   public static String ABSTRACT_CLASS = "abstractClass";
+  public static String EXTENDED_CLASS = "extendedClass";
   public static String SUPERCLASS = "superclass";
   public static String STATIC_INITIALIZER = "staticInitializer";
   public static String FIELD = "field";
@@ -38,12 +38,6 @@ public class ClassConcept extends Classifier {
     return ClassConcept.newInstance(sm, false);
   }
 
-  public ClassConcept getExtendedClass() {
-    return (ClassConcept)this.getReferent(ClassConcept.EXTENDED_CLASS);
-  }
-  public void setExtendedClass(ClassConcept node) {
-    super.setReferent(ClassConcept.EXTENDED_CLASS, node);
-  }
   public String getName() {
     return this.getProperty(ClassConcept.NAME);
   }
@@ -55,6 +49,12 @@ public class ClassConcept extends Classifier {
   }
   public void setAbstractClass(boolean value) {
     this.setBooleanProperty(ClassConcept.ABSTRACT_CLASS, value);
+  }
+  public ClassConcept getExtendedClass() {
+    return (ClassConcept)this.getReferent(ClassConcept.EXTENDED_CLASS);
+  }
+  public void setExtendedClass(ClassConcept node) {
+    super.setReferent(ClassConcept.EXTENDED_CLASS, node);
   }
   public ClassifierType getSuperclass() {
     return (ClassifierType)this.getChild(ClassConcept.SUPERCLASS);
