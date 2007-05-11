@@ -84,7 +84,7 @@ public class IdeMain {
   }
 
   public static Date expirationDate() {
-    GregorianCalendar calendar = new GregorianCalendar(2007, Calendar.MAY, 31);
+    GregorianCalendar calendar = new GregorianCalendar(2007, Calendar.OCTOBER, 31);
     return new Date(calendar.getTimeInMillis());
   }
 
