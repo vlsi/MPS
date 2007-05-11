@@ -190,7 +190,7 @@ public class SubtypingManager {
     return searchInSupertypes(subRepresentator, m, true);
   }
 
-  public StructuralNodeSet collectImmediateSupertypes(SNode term) {
+  public StructuralNodeSet<?> collectImmediateSupertypes(SNode term) {
     return collectImmediateSupertypes(term, true);
   }
 
