@@ -252,6 +252,9 @@
       <property name="role" value="childrenBlock" />
       <link role="target" targetNodeId="1168428680123" resolveInfo="ChildrenBlock" />
     </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1178984019279">
+      <link role="intfc" targetNodeId="1.1169194658468" />
+    </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1178557735753">
       <link role="intfc" targetNodeId="2.1178549954367" />
     </node>
