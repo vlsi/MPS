@@ -6,7 +6,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.Pattern_1;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_33;
+import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_34;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -21,7 +21,7 @@ public class supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule exte
   }
 
   public SNode getSubOrSuperType(SNode type) {
-    return new QuotationClass_33().createNode(this.myMatchingPattern.PatternVar1);
+    return new QuotationClass_34().createNode(this.myMatchingPattern.PatternVar1);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";

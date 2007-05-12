@@ -18,6 +18,8 @@ import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_5;
 import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_6;
 import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_7;
 import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_8;
+import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
+import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_9;
 
 public class RulesFunctions_Collections {
 
@@ -132,5 +134,13 @@ public class RulesFunctions_Collections {
     }
     TypeChecker.getInstance().reportTypeError(nodeToReportError, "couldn't coerse " + primitiveType + " to classifier");
     return new QuotationClass_8().createNode();
+  }
+  public static SNode boxPrimitive2(SNode primitiveType, SNode nodeToReportError) {
+    SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce(primitiveType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
+    if(classifierType != null) {
+      return classifierType;
+    }
+    TypeChecker.getInstance().reportTypeError(nodeToReportError, "couldn't coerse " + primitiveType + " to classifier");
+    return new QuotationClass_9().createNode();
   }
 }
