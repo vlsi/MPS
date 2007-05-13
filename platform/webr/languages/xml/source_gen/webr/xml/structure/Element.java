@@ -8,15 +8,17 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import webr.xml.structure.ContentList;
+import webr.xml.structure.ElementDeclarationReference;
 import java.util.Iterator;
 import webr.xml.structure.BaseAttribute;
 import java.util.List;
 import webr.xmlSchema.structure.ElementDeclaration;
 
 public class Element extends Content {
-  public static String IS_EMPTY = "isEmpty";
   public static String CONTENT_LIST = "contentList";
+  public static String ELEMENT_DECLARATION_REFERENCE = "elementDeclarationReference";
   public static String ATTRIBUTE = "attribute";
+  public static String IS_EMPTY = "isEmpty";
   public static String ELEMENT_DECLARATION = "elementDeclaration";
 
   public  Element(SNode node) {
@@ -30,17 +32,17 @@ public class Element extends Content {
     return Element.newInstance(sm, false);
   }
 
-  public boolean getIsEmpty() {
-    return this.getBooleanProperty(Element.IS_EMPTY);
-  }
-  public void setIsEmpty(boolean value) {
-    this.setBooleanProperty(Element.IS_EMPTY, value);
-  }
   public ContentList getContentList() {
     return (ContentList)this.getChild(Element.CONTENT_LIST);
   }
   public void setContentList(ContentList node) {
     super.setChild(Element.CONTENT_LIST, node);
+  }
+  public ElementDeclarationReference getElementDeclarationReference() {
+    return (ElementDeclarationReference)this.getChild(Element.ELEMENT_DECLARATION_REFERENCE);
+  }
+  public void setElementDeclarationReference(ElementDeclarationReference node) {
+    super.setChild(Element.ELEMENT_DECLARATION_REFERENCE, node);
   }
   public int getAttributesCount() {
     return this.getChildCount(Element.ATTRIBUTE);
@@ -56,6 +58,12 @@ public class Element extends Content {
   }
   public void insertAttribute(BaseAttribute prev, BaseAttribute node) {
     this.insertChild(prev, Element.ATTRIBUTE, node);
+  }
+  public boolean getIsEmpty() {
+    return this.getBooleanProperty(Element.IS_EMPTY);
+  }
+  public void setIsEmpty(boolean value) {
+    this.setBooleanProperty(Element.IS_EMPTY, value);
   }
   public ElementDeclaration getElementDeclaration() {
     return (ElementDeclaration)this.getReferent(Element.ELEMENT_DECLARATION);
