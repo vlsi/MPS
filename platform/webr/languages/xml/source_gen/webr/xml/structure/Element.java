@@ -7,17 +7,17 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import webr.xmlSchema.structure.ElementDeclaration;
 import webr.xml.structure.ContentList;
 import java.util.Iterator;
 import webr.xml.structure.BaseAttribute;
 import java.util.List;
+import webr.xmlSchema.structure.ElementDeclaration;
 
 public class Element extends Content {
-  public static String ELEMENT_DECLARATION = "elementDeclaration";
+  public static String IS_EMPTY = "isEmpty";
   public static String CONTENT_LIST = "contentList";
   public static String ATTRIBUTE = "attribute";
-  public static String IS_EMPTY = "isEmpty";
+  public static String ELEMENT_DECLARATION = "elementDeclaration";
 
   public  Element(SNode node) {
     super(node);
@@ -30,11 +30,11 @@ public class Element extends Content {
     return Element.newInstance(sm, false);
   }
 
-  public ElementDeclaration getElementDeclaration() {
-    return (ElementDeclaration)this.getReferent(Element.ELEMENT_DECLARATION);
+  public boolean getIsEmpty() {
+    return this.getBooleanProperty(Element.IS_EMPTY);
   }
-  public void setElementDeclaration(ElementDeclaration node) {
-    super.setReferent(Element.ELEMENT_DECLARATION, node);
+  public void setIsEmpty(boolean value) {
+    this.setBooleanProperty(Element.IS_EMPTY, value);
   }
   public ContentList getContentList() {
     return (ContentList)this.getChild(Element.CONTENT_LIST);
@@ -57,10 +57,10 @@ public class Element extends Content {
   public void insertAttribute(BaseAttribute prev, BaseAttribute node) {
     this.insertChild(prev, Element.ATTRIBUTE, node);
   }
-  public boolean getIsEmpty() {
-    return this.getBooleanProperty(Element.IS_EMPTY);
+  public ElementDeclaration getElementDeclaration() {
+    return (ElementDeclaration)this.getReferent(Element.ELEMENT_DECLARATION);
   }
-  public void setIsEmpty(boolean value) {
-    this.setBooleanProperty(Element.IS_EMPTY, value);
+  public void setElementDeclaration(ElementDeclaration node) {
+    super.setReferent(Element.ELEMENT_DECLARATION, node);
   }
 }

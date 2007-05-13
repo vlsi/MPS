@@ -7,12 +7,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import webr.xmlSchema.structure.AttributeDeclaration;
 import webr.xml.structure.BaseText;
+import webr.xmlSchema.structure.AttributeDeclaration;
 
 public class Attribute extends BaseAttribute {
-  public static String ATTRIBUTE_DECLARATION = "attributeDeclaration";
   public static String VALUE = "value";
+  public static String ATTRIBUTE_DECLARATION = "attributeDeclaration";
 
   public  Attribute(SNode node) {
     super(node);
@@ -25,16 +25,16 @@ public class Attribute extends BaseAttribute {
     return Attribute.newInstance(sm, false);
   }
 
-  public AttributeDeclaration getAttributeDeclaration() {
-    return (AttributeDeclaration)this.getReferent(Attribute.ATTRIBUTE_DECLARATION);
-  }
-  public void setAttributeDeclaration(AttributeDeclaration node) {
-    super.setReferent(Attribute.ATTRIBUTE_DECLARATION, node);
-  }
   public BaseText getValue() {
     return (BaseText)this.getChild(Attribute.VALUE);
   }
   public void setValue(BaseText node) {
     super.setChild(Attribute.VALUE, node);
+  }
+  public AttributeDeclaration getAttributeDeclaration() {
+    return (AttributeDeclaration)this.getReferent(Attribute.ATTRIBUTE_DECLARATION);
+  }
+  public void setAttributeDeclaration(AttributeDeclaration node) {
+    super.setReferent(Attribute.ATTRIBUTE_DECLARATION, node);
   }
 }
