@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.ext.collections.lang.CollectionsLanguageUtil;
+import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.TypeUtil_Collections;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.baseLanguage.ext.collections.lang.CollectionsLanguageUtil;
 
 public class QueriesGenerated {
 
@@ -34,8 +35,8 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortOperation");
   }
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1161719130431(SNode sourceNode, IScope scope, IOperationContext operationContext) {
-    SNode type = TypeChecker.getInstance().getTypeDontCheck(sourceNode);
-    SNode sequenceType = CollectionsLanguageUtil.coerceTo_SequenceType(type);
+    SNode type = SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(sourceNode));
+    SNode sequenceType = TypeUtil_Collections.coerceTo_SequenceType(type);
     return (sequenceType != null);
   }
   public static void nodeFactory_NodeSetup_DefaultInputElement_1174261447073(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
@@ -136,8 +137,8 @@ public class QueriesGenerated {
     boolean applicableToList = false;
     if(SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression")) {
       SNode leftExpression = SLinkOperations.getTarget(parentNode, "leftExpression", true);
-      SNode leftType = TypeChecker.getInstance().getTypeDontCheck(leftExpression);
-      if(CollectionsLanguageUtil.coerceTo_SequenceType(leftType) != null) {
+      SNode leftType = SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(leftExpression));
+      if(TypeUtil_Collections.coerceTo_SequenceType(leftType) != null) {
         applicableToSequence = true;
       }
       if(CollectionsLanguageUtil.coerceTo_ListType(leftType) != null) {
