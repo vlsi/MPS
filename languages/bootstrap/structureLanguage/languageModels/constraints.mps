@@ -5,7 +5,7 @@
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
-  <maxImportIndex value="16" />
+  <maxImportIndex value="17" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <import index="2" modelUID="jetbrains.mps.smodel.search@java_stub" />
   <import index="4" modelUID="java.util@java_stub" />
@@ -16,8 +16,127 @@
   <import index="14" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" />
   <import index="15" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" />
   <import index="16" modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" />
+  <import index="17" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1177681747210">
     <link role="concept" targetNodeId="1.1071489090640" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1179140603077">
+      <property name="name" value="findEditor" />
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1179140626588">
+        <link role="concept" targetNodeId="17.1071666914219" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179140603079">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1179140662307">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1179140662308">
+            <property name="name" value="language" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179140662309">
+              <link role="classifier" extResolveInfo="5.[Classifier]Language" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1179140662310">
+              <link role="baseMethodDeclaration" extResolveInfo="5.static method ([Classifier]SModelUtil_new).([StaticMethodDeclaration]getDeclaringLanguage((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [AbstractConceptDeclaration]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IScope])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Language]))" />
+              <link role="classConcept" extResolveInfo="5.[Classifier]SModelUtil_new" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.CastExpression" id="1179140662311">
+                <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1179140662312">
+                  <link role="baseMethodDeclaration" extResolveInfo="5.method ([Classifier]SNode).([InstanceMethodDeclaration]getAdapter() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [BaseAdapter]))" />
+                  <node role="instance" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1179140662313" />
+                </node>
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179140662314">
+                  <link role="classifier" extResolveInfo="15.[Classifier]AbstractConceptDeclaration" />
+                </node>
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1179140662315">
+                <link role="variableDeclaration" targetNodeId="1179140646596" resolveInfo="scope" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1179140662316">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1179140662317">
+            <property name="name" value="constraints" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179140662318">
+              <link role="classifier" extResolveInfo="5.[Classifier]SModelDescriptor" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1179140662319">
+              <link role="baseMethodDeclaration" extResolveInfo="5.method ([Classifier]Language).([InstanceMethodDeclaration]getConstraintsModelDescriptor() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SModelDescriptor]))" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179140662320">
+                <link role="variableDeclaration" targetNodeId="1179140662308" resolveInfo="language" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1179140662321">
+          <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1179140662322">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1179140662323" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179140662324">
+              <link role="variableDeclaration" targetNodeId="1179140662317" resolveInfo="constraints" />
+            </node>
+          </node>
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1179140662325">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1179140662326">
+              <node role="expression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1179140662327" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1179140662328">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1179140662329">
+            <property name="name" value="model" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SModelType" id="1179140662330" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1179140662331">
+              <link role="baseMethodDeclaration" extResolveInfo="5.method ([Classifier]SModelDescriptor).([InstanceMethodDeclaration]getSModel() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SModel]))" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179140662332">
+                <link role="variableDeclaration" targetNodeId="1179140662317" resolveInfo="constraints" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ForeachStatement" id="1179140662333">
+          <node role="iterable" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179140662334">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179140662335">
+              <link role="variableDeclaration" targetNodeId="1179140662329" resolveInfo="model" />
+            </node>
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Model_RootsOperation" id="1179140662336">
+              <link role="concept" targetNodeId="17.1071666914219" />
+            </node>
+          </node>
+          <node role="variable" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1179140662337">
+            <property name="name" value="editor" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1179140662338">
+              <link role="concept" targetNodeId="17.1071666914219" />
+            </node>
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179140662339">
+            <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1179140662340">
+              <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1179140662341">
+                <node role="rightExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1179140662342" />
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179140662343">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179140662344">
+                    <link role="variableDeclaration" targetNodeId="1179140662337" resolveInfo="behaviour" />
+                  </node>
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1179140681207">
+                    <link role="link" targetNodeId="17.1166049300910" />
+                  </node>
+                </node>
+              </node>
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1179140662346">
+                <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1179140662347">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179140662348">
+                    <link role="variableDeclaration" targetNodeId="1179140662337" resolveInfo="behaviour" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1179140662349">
+          <node role="expression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1179140662350" />
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1179140646596">
+        <property name="name" value="scope" />
+        <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179140646597">
+          <link role="classifier" extResolveInfo="5.[Classifier]IScope" />
+        </node>
+      </node>
+    </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1177681747211">
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177681747212" />
     </node>
