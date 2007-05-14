@@ -7,8 +7,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import webr.xml.structure.ContentList;
 
 public class BaseElement extends Content {
+  public static String CONTENT_LIST = "contentList";
 
   public  BaseElement(SNode node) {
     super(node);
@@ -19,5 +21,12 @@ public class BaseElement extends Content {
   }
   public static BaseElement newInstance(SModel sm) {
     return BaseElement.newInstance(sm, false);
+  }
+
+  public ContentList getContentList() {
+    return (ContentList)this.getChild(BaseElement.CONTENT_LIST);
+  }
+  public void setContentList(ContentList node) {
+    super.setChild(BaseElement.CONTENT_LIST, node);
   }
 }

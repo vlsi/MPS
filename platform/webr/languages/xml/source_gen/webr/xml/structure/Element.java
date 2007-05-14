@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import webr.xmlSchema.structure.ElementDeclaration;
-import webr.xml.structure.ContentList;
 import java.util.Iterator;
 import webr.xml.structure.BaseAttribute;
 import java.util.List;
@@ -16,7 +15,6 @@ import java.util.List;
 public class Element extends BaseElement {
   public static String ELEMENT_DECLARATION = "elementDeclaration";
   public static String IS_EMPTY = "isEmpty";
-  public static String CONTENT_LIST = "contentList";
   public static String ATTRIBUTE = "attribute";
 
   public  Element(SNode node) {
@@ -41,12 +39,6 @@ public class Element extends BaseElement {
   }
   public void setIsEmpty(boolean value) {
     this.setBooleanProperty(Element.IS_EMPTY, value);
-  }
-  public ContentList getContentList() {
-    return (ContentList)this.getChild(Element.CONTENT_LIST);
-  }
-  public void setContentList(ContentList node) {
-    super.setChild(Element.CONTENT_LIST, node);
   }
   public int getAttributesCount() {
     return this.getChildCount(Element.ATTRIBUTE);
