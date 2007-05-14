@@ -521,7 +521,7 @@
                   </node>
                   <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Property_SetOperation" id="1178628635165">
                     <node role="value" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1178628703882">
-                      <link role="baseMethodDeclaration" extResolveInfo="25.method ([Classifier]Enum).([InstanceMethodDeclaration]toString() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                      <link role="baseMethodDeclaration" extResolveInfo="26.method ([Classifier]TraversalAxis).([InstanceMethodDeclaration]getName() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
                       <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1178628701200">
                         <link role="variableDeclaration" targetNodeId="1178628679006" resolveInfo="axis" />
                       </node>

@@ -269,6 +269,7 @@
       <link role="target" targetNodeId="2.1068431790191" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1168890235188">
+      <property name="sourceCardinality" value="1" />
       <property name="role" value="treepathAspect" />
       <link role="target" targetNodeId="1168879975004" resolveInfo="TreePathAspect" />
     </node>
