@@ -20,13 +20,13 @@ public class XmlDemo {
     try {
       InputStream is = new ByteArrayInputStream(INPUT.getBytes());
       Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(is);
-      for(Node node : TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new DOM().from(doc), TreeTraversalFactory.Axis("DESCENDANTS")), new TreePath_nodeKind_1175164209844())) {
+      for(Node node : TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS")), new TreePath_nodeKind_1175164209844())) {
         System.out.println(node);
       }
-      for(Node node : TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new DOM().from(doc), TreeTraversalFactory.Axis("DESCENDANTS")), new CompositeFilter<Node>(new TreePath_nodeKind_1175164209844(), new TreePath_nodeKind_propertyMatcher_1175164263587("a"))), TreeTraversalFactory.Axis("DESCENDANTS")), new CompositeFilter<Node>(new TreePath_nodeKind_1175164209844(), new TreePath_nodeKind_propertyMatcher_1175164263587("findme")))) {
+      for(Node node : TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS")), new CompositeFilter<Node>(new TreePath_nodeKind_1175164209844(), new TreePath_nodeKind_propertyMatcher_1175164263587("a"))), TreeTraversalFactory.Axis("DESCENDANTS")), new CompositeFilter<Node>(new TreePath_nodeKind_1175164209844(), new TreePath_nodeKind_propertyMatcher_1175164263587("findme")))) {
         System.out.println("Found: " + node);
       }
-      for(Node node : TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new DOM().from(doc), TreeTraversalFactory.Axis("DESCENDANTS")), new CompositeFilter<Node>(new TreePath_nodeKind_1175164209844(), new TreePath_nodeKind_propertyMatcher_1175164263587("a"))), TreeTraversalFactory.Axis("DESCENDANTS")), new CompositeFilter<Node>(new TreePath_nodeKind_1175164209844(), new TreePath_nodeKind_propertyMatcher_1175164263587("findme")))) {
+      for(Node node : TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS")), new CompositeFilter<Node>(new TreePath_nodeKind_1175164209844(), new TreePath_nodeKind_propertyMatcher_1175164263587("a"))), TreeTraversalFactory.Axis("DESCENDANTS")), new CompositeFilter<Node>(new TreePath_nodeKind_1175164209844(), new TreePath_nodeKind_propertyMatcher_1175164263587("findme")))) {
         System.out.println("Found again: " + node);
       }
     } catch (Exception ignored) {

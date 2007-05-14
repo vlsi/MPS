@@ -8,13 +8,21 @@ import ypath.util.TreeTraversalFactory;
 import sample2.File_TreePath;
 import sample2.TreePath_nodeKind_1172248995401;
 import sample2.WhereFilter_1172249139028;
+import java.util.List;
+import java.util.ArrayList;
 
 public class FileDemo {
 
   public static void main(String[] args) {
     File f = new File(Arrays.asList(args).get(0));
-    for(File dir : TreeTraversalFactory.Filter(TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new File_TreePath().from(f), TreeTraversalFactory.Axis("DESCENDANTS")), new TreePath_nodeKind_1172248995401()), new WhereFilter_1172249139028(null, null))) {
+    for(File dir : TreeTraversalFactory.Filter(TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new File_TreePath().startTraversal(f), TreeTraversalFactory.Axis(">>")), new TreePath_nodeKind_1172248995401()), new WhereFilter_1172249139028(null, null))) {
       System.out.println(dir);
+    }
+    List<File> listOfFiles = new ArrayList();
+    listOfFiles.add(f);
+    System.out.println("All subdirectories");
+    for(File d : TreeTraversalFactory.Traverse(new File_TreePath().startTraversal(listOfFiles), TreeTraversalFactory.Axis(">"))) {
+      System.out.println(d);
     }
   }
 }
