@@ -59,6 +59,31 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1179159662628">
+      <property name="name" value="m3" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179159662629">
+        <link role="classifier" extResolveInfo="1.[Classifier]Object" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1179159662630" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179159662631">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1179159662632">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1179159662633">
+            <property name="name" value="iterable" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179159662634">
+              <link role="classifier" extResolveInfo="1.[Classifier]Iterable" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179159662635">
+                <link role="classifier" extResolveInfo="1.[Classifier]String" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1179159662636">
+          <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179159662637">
+            <link role="variableDeclaration" targetNodeId="1179159662633" resolveInfo="list" />
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
