@@ -388,26 +388,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179165234870">
-          <node role="expression" type="ypath.TreePathOperationExpression" id="1179165244196">
-            <node role="expression" type="ypath.TreePathOperationExpression" id="1179165240855">
-              <node role="expression" type="ypath.TreePathAdapterExpression" id="1179165236854">
-                <link role="treepathAspect" targetNodeId="1168883727781" resolveInfo="File_TreePath" />
-                <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179165234871">
-                  <link role="variableDeclaration" targetNodeId="1179163652405" resolveInfo="sequenceOfFiles" />
-                </node>
-              </node>
-              <node role="operation" type="ypath.IterateOperation" id="1179165240859">
-                <property name="axis" value="CHILDREN" />
-              </node>
-            </node>
-            <node role="operation" type="ypath.MatchKindOperation" id="1179165244201">
-              <node role="nodeKindOccurrence" type="ypath.TreeNodeKindOccurrence" id="1179165244202">
-                <link role="nodeKind" targetNodeId="1172248995400" resolveInfo="DIR" />
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1168894275019">
         <property name="name" value="args" />

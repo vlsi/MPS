@@ -38,6 +38,5 @@ public class FileDemo {
     for(File d : TreeTraversalFactory.Filter(new File_TreePath().startTraversal(sequenceOfFiles), new TreePath_nodeKind_1172248995401())) {
       System.out.println("Is a directory too");
     }
-    TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new File_TreePath().startTraversal(sequenceOfFiles), TreeTraversalFactory.Axis("CHILDREN")), new TreePath_nodeKind_1172248995401());
   }
 }
