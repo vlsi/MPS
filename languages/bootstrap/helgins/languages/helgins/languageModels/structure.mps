@@ -562,7 +562,7 @@
     <property name="name" value="CheckedTypeOfExpression" />
     <link role="extends" targetNodeId="1174657487114" resolveInfo="TypeOfExpression" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1178114992049">
-      <property name="value" value="CHECK_TYPEOF" />
+      <property name="value" value="CHECKED_TYPEOF" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>
