@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_20;
+import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_11;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -27,7 +27,7 @@ public class typeof_ContainsOperation_InferenceRule implements InferenceRule_Run
         boolean matches_1178725705171 = false;
         matches_1178725705171 = SModelUtil_new.isAssignableConcept(parent.getConceptFqName(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression");
         if(matches_1178725705171) {
-          TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_20().createNode(), argument);
+          TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_11().createNode(), argument);
           break;
         }
       }

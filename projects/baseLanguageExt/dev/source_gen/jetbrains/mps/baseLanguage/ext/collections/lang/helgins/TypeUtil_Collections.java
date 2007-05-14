@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.helgins;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
-import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_35;
+import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_26;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.GlobalScope;
@@ -14,8 +14,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_36;
-import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_37;
+import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_27;
+import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_28;
 
 public class TypeUtil_Collections {
 
@@ -31,7 +31,7 @@ public class TypeUtil_Collections {
     // TEMP FIX FOR DNQ 1
     if("jetbrains.teamsys.dnq.structure.PListType".equals(type.getConceptFqName())) {
       SNode classifierType = type.getChild("classifierType");
-      return new QuotationClass_35().createNode(SNodeOperations.copyNode(classifierType));
+      return new QuotationClass_26().createNode(SNodeOperations.copyNode(classifierType));
     }
     // END TEMP FIX
     // ==========
@@ -49,14 +49,14 @@ public class TypeUtil_Collections {
       SLinkOperations.setTarget(javaIterableType, "classifier", javaIterable, false);
       SLinkOperations.addChild(javaIterableType, "parameter", entityType);
       if(TypeChecker.getInstance().getSubtypingManager().isSubtype(type, javaIterableType)) {
-        return new QuotationClass_36().createNode(SNodeOperations.copyNode(entity));
+        return new QuotationClass_27().createNode(SNodeOperations.copyNode(entity));
       }
       // ==========
       SNode entityIterable = BaseAdapter.fromAdapter(SModelUtil_new.findNodeByFQName("com.jetbrains.teamsys.database.EntityIterable", Classifier.class, scope));
       SNode entityIterableType = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
       SLinkOperations.setTarget(entityIterableType, "classifier", entityIterable, false);
       if(TypeChecker.getInstance().getSubtypingManager().isSubtype(type, entityIterableType)) {
-        return new QuotationClass_37().createNode(SNodeOperations.copyNode(entity));
+        return new QuotationClass_28().createNode(SNodeOperations.copyNode(entity));
       }
     }
     // END FIX

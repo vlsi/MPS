@@ -5,21 +5,13 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.helgins;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.TypeUtil_Collections;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.ext.collections.lang.CollectionsLanguageUtil;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.zMapper;
-import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_;
-import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_1;
-import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_2;
-import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_3;
-import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_4;
-import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_5;
-import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_6;
-import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_7;
-import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_8;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
-import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_9;
+import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_;
 
 public class RulesFunctions_Collections {
 
@@ -31,7 +23,7 @@ public class RulesFunctions_Collections {
     SNode parent = SNodeOperations.getParent(op, null, false, false);
     if(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression")) {
       SNode leftExpression = SLinkOperations.getTarget(parent, "leftExpression", true);
-      SNode sequenceType = RulesFunctions_Collections.tryObtain_SequenceType(leftExpression);
+      SNode sequenceType = TypeUtil_Collections.coerceTo_SequenceType(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(leftExpression));
       if(sequenceType != null) {
         return sequenceType;
       } else 
@@ -44,16 +36,8 @@ public class RulesFunctions_Collections {
     }
     return null;
   }
-  public static SNode tryObtain_SequenceType(SNode expression) {
-    if(expression == null) {
-      return null;
-    }
-    SNode type = TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(expression);
-    SNode sequenceType = CollectionsLanguageUtil.coerceTo_SequenceType(type);
-    return sequenceType;
-  }
   public static SNode tryObtain_Sequence_elementType(SNode expression) {
-    SNode sequenceType = RulesFunctions_Collections.tryObtain_SequenceType(expression);
+    SNode sequenceType = TypeUtil_Collections.coerceTo_SequenceType(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(expression));
     return SLinkOperations.getTarget(sequenceType, "elementType", true);
   }
   public static SNode get_inputListType_elementType(SNode op) {
@@ -107,40 +91,12 @@ public class RulesFunctions_Collections {
     TypeChecker.getInstance().reportTypeError(exprWithType, "type " + exprType + " is not compatible with infered " + currentLeastCommonSupertype);
     return currentLeastCommonSupertype;
   }
-  public static SNode boxPrimitive1(SNode primitiveType, SNode nodeToReportError) {
-    if(SNodeOperations.isInstanceOf(primitiveType, "jetbrains.mps.baseLanguage.structure.IntegerType")) {
-      return new QuotationClass_().createNode();
-    }
-    if(SNodeOperations.isInstanceOf(primitiveType, "jetbrains.mps.baseLanguage.structure.BooleanType")) {
-      return new QuotationClass_1().createNode();
-    }
-    if(SNodeOperations.isInstanceOf(primitiveType, "jetbrains.mps.baseLanguage.structure.ByteType")) {
-      return new QuotationClass_2().createNode();
-    }
-    if(SNodeOperations.isInstanceOf(primitiveType, "jetbrains.mps.baseLanguage.structure.CharType")) {
-      return new QuotationClass_3().createNode();
-    }
-    if(SNodeOperations.isInstanceOf(primitiveType, "jetbrains.mps.baseLanguage.structure.DoubleType")) {
-      return new QuotationClass_4().createNode();
-    }
-    if(SNodeOperations.isInstanceOf(primitiveType, "jetbrains.mps.baseLanguage.structure.FloatType")) {
-      return new QuotationClass_5().createNode();
-    }
-    if(SNodeOperations.isInstanceOf(primitiveType, "jetbrains.mps.baseLanguage.structure.LongType")) {
-      return new QuotationClass_6().createNode();
-    }
-    if(SNodeOperations.isInstanceOf(primitiveType, "jetbrains.mps.baseLanguage.structure.ShortType")) {
-      return new QuotationClass_7().createNode();
-    }
-    TypeChecker.getInstance().reportTypeError(nodeToReportError, "couldn't coerse " + primitiveType + " to classifier");
-    return new QuotationClass_8().createNode();
-  }
-  public static SNode boxPrimitive2(SNode primitiveType, SNode nodeToReportError) {
+  public static SNode boxPrimitive(SNode primitiveType, SNode nodeToReportError) {
     SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce(primitiveType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
     if(classifierType != null) {
       return classifierType;
     }
     TypeChecker.getInstance().reportTypeError(nodeToReportError, "couldn't coerse " + primitiveType + " to classifier");
-    return new QuotationClass_9().createNode();
+    return new QuotationClass_().createNode();
   }
 }
