@@ -11,8 +11,8 @@ import java.util.Iterator;
 import java.util.List;
 
 public class ContentList extends Content {
-  public static String CONTENT = "content";
   public static String IS_HORIZONTAL = "isHorizontal";
+  public static String CONTENT = "content";
 
   public  ContentList(SNode node) {
     super(node);
@@ -25,6 +25,12 @@ public class ContentList extends Content {
     return ContentList.newInstance(sm, false);
   }
 
+  public boolean getIsHorizontal() {
+    return this.getBooleanProperty(ContentList.IS_HORIZONTAL);
+  }
+  public void setIsHorizontal(boolean value) {
+    this.setBooleanProperty(ContentList.IS_HORIZONTAL, value);
+  }
   public int getContentsCount() {
     return this.getChildCount(ContentList.CONTENT);
   }
@@ -39,11 +45,5 @@ public class ContentList extends Content {
   }
   public void insertContent(Content prev, Content node) {
     this.insertChild(prev, ContentList.CONTENT, node);
-  }
-  public boolean getIsHorizontal() {
-    return this.getBooleanProperty(ContentList.IS_HORIZONTAL);
-  }
-  public void setIsHorizontal(boolean value) {
-    this.setBooleanProperty(ContentList.IS_HORIZONTAL, value);
   }
 }
