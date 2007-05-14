@@ -8,7 +8,7 @@
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.patterns" />
-  <maxImportIndex value="30" />
+  <maxImportIndex value="37" />
   <import index="1" modelUID="ypath.structure" />
   <import index="2" modelUID="jetbrains.mps.core.structure" />
   <import index="3" modelUID="jetbrains.mps.typesystem@java_stub" />
@@ -22,11 +22,11 @@
   <import index="23" modelUID="jetbrains.mps.helgins.inference@java_stub" />
   <import index="24" modelUID="jetbrains.mps.util@java_stub" />
   <import index="25" modelUID="java.lang@java_stub" />
-  <import index="26" modelUID="ypath.util@java_stub" />
   <import index="27" modelUID="jetbrains.mps.findUsages@java_stub" />
   <import index="28" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.actions@java_stub" />
   <import index="29" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang@java_stub" />
   <import index="30" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" />
+  <import index="31" modelUID="ypath.structure@java_stub" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActions" id="1168462842641">
     <property name="name" value="YPath_rhint" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1168893677147">
@@ -213,8 +213,8 @@
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178629631874">
               <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1179155635092">
                 <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1179155657005">
-                  <link role="baseMethodDeclaration" extResolveInfo="26.static method ([Classifier]TraversalAxis).([StaticMethodDeclaration]getConstants() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [TraversalAxis]&gt;]))" />
-                  <link role="classConcept" extResolveInfo="26.[Classifier]TraversalAxis" />
+                  <link role="classConcept" extResolveInfo="31.[Classifier]TraversalAxis" />
+                  <link role="baseMethodDeclaration" extResolveInfo="31.static method ([Classifier]TraversalAxis).([StaticMethodDeclaration]getConstants() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [TraversalAxis]&gt;]))" />
                 </node>
               </node>
             </node>
@@ -285,9 +285,9 @@
                     </node>
                   </node>
                   <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Property_SetOperation" id="1179156806329">
-                    <node role="value" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1179156823170">
-                      <link role="baseMethodDeclaration" extResolveInfo="26.method ([Classifier]TraversalAxis).([InstanceMethodDeclaration]getValue() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
-                      <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parameterObject" id="1179156814539" />
+                    <node role="value" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1179162577984">
+                      <link role="baseMethodDeclaration" extResolveInfo="31.method ([Classifier]TraversalAxis).([InstanceMethodDeclaration]getValue() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                      <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parameterObject" id="1179162564440" />
                     </node>
                   </node>
                 </node>
@@ -299,42 +299,29 @@
               </node>
             </node>
           </node>
-          <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1178630343475">
-            <link role="classifier" extResolveInfo="26.[Classifier]TraversalAxis" />
+          <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179162435753">
+            <link role="classifier" extResolveInfo="31.[Classifier]TraversalAxis" />
           </node>
           <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_RightTransform_String" id="1178629632042">
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178629632043">
               <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1179155773561">
-                <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1179155783635">
-                  <link role="baseMethodDeclaration" extResolveInfo="26.method ([Classifier]TraversalAxis).([InstanceMethodDeclaration]getValue() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
-                  <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parameterObject" id="1179155814530" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1179162504897">
+                  <link role="baseMethodDeclaration" targetNodeId="1179161831408" resolveInfo="getOperationSign" />
+                  <link role="classConcept" targetNodeId="1179161788761" resolveInfo="TraversalAxisUtil" />
+                  <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parameterObject" id="1179162508929" />
                 </node>
               </node>
             </node>
           </node>
           <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_RightTransform_String" id="1178629632054">
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178629632055">
-              <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1178629632056">
-                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1178629632057">
-                  <property name="name" value="axis" />
-                  <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1178629632058">
-                    <link role="classifier" extResolveInfo="26.[Classifier]TraversalAxis" />
-                  </node>
-                  <node role="initializer" type="jetbrains.mps.baseLanguage.CastExpression" id="1178629632059">
-                    <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1178629632060">
-                      <link role="classifier" extResolveInfo="26.[Classifier]TraversalAxis" />
-                    </node>
-                    <node role="expression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parameterObject" id="1178629632062" />
-                  </node>
-                </node>
-              </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1178629632063">
                 <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1179156603194">
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1179156596940">
                     <property name="value" value="find " />
                   </node>
                   <node role="rightExpression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1179156604847">
-                    <link role="baseMethodDeclaration" extResolveInfo="26.method ([Classifier]TraversalAxis).([InstanceMethodDeclaration]getName() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                    <link role="baseMethodDeclaration" extResolveInfo="31.method ([Classifier]TraversalAxis).([InstanceMethodDeclaration]getName() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
                     <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parameterObject" id="1179156604848" />
                   </node>
                 </node>
@@ -1237,6 +1224,196 @@
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178974535834" />
+  </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1179161788761">
+    <property name="name" value="TraversalAxisUtil" />
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1179161831408">
+      <property name="name" value="getOperationSign" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179161889730">
+        <link role="classifier" extResolveInfo="25.[Classifier]String" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1179161831410" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179161831411">
+        <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1179161932890">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1179161932891">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1179161932892">
+              <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1179161932893">
+                <property name="value" value="&lt;&lt;" />
+              </node>
+            </node>
+          </node>
+          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.IfStatement" id="1179161932900">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1179161932901">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1179161932902">
+                <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1179161932903">
+                  <property name="value" value="&gt;" />
+                </node>
+              </node>
+            </node>
+            <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.IfStatement" id="1179161932910">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1179161932911">
+                <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1179161932912">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1179161932913">
+                    <property name="value" value="&gt;&gt;" />
+                  </node>
+                </node>
+              </node>
+              <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.IfStatement" id="1179161932920">
+                <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1179161932921">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1179161932922">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1179161932923">
+                      <property name="value" value="&gt;&gt;=" />
+                    </node>
+                  </node>
+                </node>
+                <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.IfStatement" id="1179161932930">
+                  <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1179161932931">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1179161932932">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1179161932933">
+                        <property name="value" value="^" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.IfStatement" id="1179161932940">
+                    <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1179161932941">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1179161932942">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1179161932943">
+                          <property name="value" value="^=" />
+                        </node>
+                      </node>
+                    </node>
+                    <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.IfStatement" id="1179161932950">
+                      <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1179161932951">
+                        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1179161932952">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1179161932953">
+                            <property name="value" value="v" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.IfStatement" id="1179161932960">
+                        <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1179161932961">
+                          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1179161932962">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1179161932963">
+                              <property name="value" value="v=" />
+                            </node>
+                          </node>
+                        </node>
+                        <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.IfStatement" id="1179161932970">
+                          <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1179161932971">
+                            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1179161932972">
+                              <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1179161932973">
+                                <property name="value" value="&lt;&lt;=" />
+                              </node>
+                            </node>
+                          </node>
+                          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.BlockStatement" id="1179161932980">
+                            <node role="statements" type="jetbrains.mps.baseLanguage.StatementList" id="1179161932981">
+                              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1179161932982">
+                                <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1179161932983">
+                                  <property name="value" value="???" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1179162032858">
+                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1179162032859">
+                              <link role="classifier" extResolveInfo="31.[Classifier]TraversalAxis" />
+                              <link role="variableDeclaration" extResolveInfo="31.static field ([Classifier]TraversalAxis).([StaticFieldDeclaration]SELF_ANCESTORS : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [TraversalAxis]))" />
+                            </node>
+                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1179162032860">
+                              <link role="variableDeclaration" targetNodeId="1179161879728" resolveInfo="axis" />
+                            </node>
+                          </node>
+                        </node>
+                        <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1179162020391">
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1179162020392">
+                            <link role="classifier" extResolveInfo="31.[Classifier]TraversalAxis" />
+                            <link role="variableDeclaration" extResolveInfo="31.static field ([Classifier]TraversalAxis).([StaticFieldDeclaration]SELF_FOLLOWING_SIBLINGS : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [TraversalAxis]))" />
+                          </node>
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1179162020393">
+                            <link role="variableDeclaration" targetNodeId="1179161879728" resolveInfo="axis" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1179162010092">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1179162010093">
+                          <link role="classifier" extResolveInfo="31.[Classifier]TraversalAxis" />
+                          <link role="variableDeclaration" extResolveInfo="31.static field ([Classifier]TraversalAxis).([StaticFieldDeclaration]FOLLOWING_SIBLINGS : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [TraversalAxis]))" />
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1179162010094">
+                          <link role="variableDeclaration" targetNodeId="1179161879728" resolveInfo="axis" />
+                        </node>
+                      </node>
+                    </node>
+                    <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1179162000570">
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1179162000571">
+                        <link role="classifier" extResolveInfo="31.[Classifier]TraversalAxis" />
+                        <link role="variableDeclaration" extResolveInfo="31.static field ([Classifier]TraversalAxis).([StaticFieldDeclaration]PRECEDING_SIBLINGS_SELF : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [TraversalAxis]))" />
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1179162000572">
+                        <link role="variableDeclaration" targetNodeId="1179161879728" resolveInfo="axis" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1179161993419">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1179161993420">
+                      <link role="classifier" extResolveInfo="31.[Classifier]TraversalAxis" />
+                      <link role="variableDeclaration" extResolveInfo="31.static field ([Classifier]TraversalAxis).([StaticFieldDeclaration]PRECEDING_SIBLINGS : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [TraversalAxis]))" />
+                    </node>
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1179161993421">
+                      <link role="variableDeclaration" targetNodeId="1179161879728" resolveInfo="axis" />
+                    </node>
+                  </node>
+                </node>
+                <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1179161981503">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1179161981504">
+                    <link role="classifier" extResolveInfo="31.[Classifier]TraversalAxis" />
+                    <link role="variableDeclaration" extResolveInfo="31.static field ([Classifier]TraversalAxis).([StaticFieldDeclaration]SELF_DESCENDANTS : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [TraversalAxis]))" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1179161981505">
+                    <link role="variableDeclaration" targetNodeId="1179161879728" resolveInfo="axis" />
+                  </node>
+                </node>
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1179161972516">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1179161972517">
+                  <link role="classifier" extResolveInfo="31.[Classifier]TraversalAxis" />
+                  <link role="variableDeclaration" extResolveInfo="31.static field ([Classifier]TraversalAxis).([StaticFieldDeclaration]DESCENDANTS : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [TraversalAxis]))" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1179161972518">
+                  <link role="variableDeclaration" targetNodeId="1179161879728" resolveInfo="axis" />
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1179161965837">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1179161965839">
+                <link role="variableDeclaration" targetNodeId="1179161879728" resolveInfo="axis" />
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1179162384749">
+                <link role="classifier" extResolveInfo="31.[Classifier]TraversalAxis" />
+                <link role="variableDeclaration" extResolveInfo="31.static field ([Classifier]TraversalAxis).([StaticFieldDeclaration]CHILDREN : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [TraversalAxis]))" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1179162369093">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1179162373396">
+              <link role="classifier" extResolveInfo="31.[Classifier]TraversalAxis" />
+              <link role="variableDeclaration" extResolveInfo="31.static field ([Classifier]TraversalAxis).([StaticFieldDeclaration]ANCESTORS : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [TraversalAxis]))" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1179161948346">
+              <link role="variableDeclaration" targetNodeId="1179161879728" resolveInfo="axis" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1179161879728">
+        <property name="name" value="axis" />
+        <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179162241745">
+          <link role="classifier" extResolveInfo="31.[Classifier]TraversalAxis" />
+        </node>
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1179161788762" />
   </node>
 </model>
 

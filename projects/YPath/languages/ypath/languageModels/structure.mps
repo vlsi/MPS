@@ -81,47 +81,47 @@
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1168457888646">
       <property name="name" value="DESCENDANTS" />
       <property name="externalValue" value="descendants" />
-      <property name="internalValue" value="&gt;&gt;" />
+      <property name="internalValue" value="DESCENDANTS" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1169310540136">
       <property name="name" value="SELF_DESCENDANTS" />
       <property name="externalValue" value="self and descendants" />
-      <property name="internalValue" value="&gt;&gt;=" />
+      <property name="internalValue" value="SELF_DESCENDANTS" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1168458386233">
       <property name="name" value="CHILDREN" />
       <property name="externalValue" value="children" />
-      <property name="internalValue" value="&gt;" />
+      <property name="internalValue" value="CHILDREN" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1168458451203">
       <property name="name" value="ANCESTORS" />
       <property name="externalValue" value="ancestors" />
-      <property name="internalValue" value="&lt;&lt;" />
+      <property name="internalValue" value="ANCESTORS" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1169311161978">
       <property name="name" value="SELF_ANCESTORS" />
       <property name="externalValue" value="self and ancestors" />
-      <property name="internalValue" value="&lt;&lt;=" />
+      <property name="internalValue" value="SELF_ANCESTORS" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1168458468740">
       <property name="name" value="FOLLOWING_SIBLINGS" />
       <property name="externalValue" value="following siblings" />
-      <property name="internalValue" value="v" />
+      <property name="internalValue" value="FOLLOWING_SIBLINGS" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1169311210596">
       <property name="name" value="SELF_FOLLOWING_SIBLINGS" />
       <property name="externalValue" value="self and following siblings" />
-      <property name="internalValue" value="v=" />
+      <property name="internalValue" value="SELF_FOLLOWING_SIBLINGS" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1168458479924">
       <property name="name" value="PRECEDING_SIBLINGS" />
       <property name="externalValue" value="preceding siblings" />
-      <property name="internalValue" value="^" />
+      <property name="internalValue" value="PRECEDING_SIBLINGS" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1169311237643">
       <property name="name" value="PRECEDING_SIBLINGS_SELF" />
       <property name="externalValue" value="preceding siblings and self" />
-      <property name="internalValue" value="^=" />
+      <property name="internalValue" value="PRECEDING_SIBLINGS_SELF" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1168468602533">
