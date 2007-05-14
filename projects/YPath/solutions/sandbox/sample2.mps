@@ -2,6 +2,7 @@
 <model name="sample2">
   <language namespace="ypath" />
   <language namespace="jetbrains.mps.baseLanguage" />
+  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <maxImportIndex value="3" />
   <import index="1" modelUID="java.io@java_stub" />
   <import index="2" modelUID="java.lang@java_stub" />
@@ -189,6 +190,41 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ForeachStatement" id="1179163377132">
+          <node role="iterable" type="ypath.TreePathOperationExpression" id="1179163393906">
+            <node role="expression" type="ypath.TreePathAdapterExpression" id="1179163388888">
+              <link role="treepathAspect" targetNodeId="1168883727781" resolveInfo="File_TreePath" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179163385799">
+                <link role="variableDeclaration" targetNodeId="1168894296987" resolveInfo="f" />
+              </node>
+            </node>
+            <node role="operation" type="ypath.MatchKindOperation" id="1179163393910">
+              <node role="nodeKindOccurrence" type="ypath.TreeNodeKindOccurrence" id="1179163393911">
+                <link role="nodeKind" targetNodeId="1172248995400" resolveInfo="DIR" />
+              </node>
+            </node>
+          </node>
+          <node role="variable" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1179163377134">
+            <property name="name" value="d" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179163379575">
+              <link role="classifier" extResolveInfo="1.[Classifier]File" />
+            </node>
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179163377136">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179163402506">
+              <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1179163407601">
+                <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]PrintStream).([InstanceMethodDeclaration]println() : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1179163402507">
+                  <link role="classifier" extResolveInfo="2.[Classifier]System" />
+                  <link role="variableDeclaration" extResolveInfo="2.static field ([Classifier]System).([StaticFieldDeclaration]out : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [PrintStream]))" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1179163408599">
+                  <property name="value" value="Is a directory" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1179154059933">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1179154059934">
             <property name="name" value="listOfFiles" />
@@ -256,6 +292,119 @@
             </node>
             <node role="operation" type="ypath.IterateOperation" id="1179159914954">
               <property name="axis" value="&gt;" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ForeachStatement" id="1179163307050">
+          <node role="iterable" type="ypath.TreePathOperationExpression" id="1179163323066">
+            <node role="expression" type="ypath.TreePathAdapterExpression" id="1179163318853">
+              <link role="treepathAspect" targetNodeId="1168883727781" resolveInfo="File_TreePath" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179163314905">
+                <link role="variableDeclaration" targetNodeId="1179154059934" resolveInfo="listOfFiles" />
+              </node>
+            </node>
+            <node role="operation" type="ypath.MatchKindOperation" id="1179163323071">
+              <node role="nodeKindOccurrence" type="ypath.TreeNodeKindOccurrence" id="1179163323072">
+                <link role="nodeKind" targetNodeId="1172248995400" resolveInfo="DIR" />
+              </node>
+            </node>
+          </node>
+          <node role="variable" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1179163307052">
+            <property name="name" value="d" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179163308869">
+              <link role="classifier" extResolveInfo="1.[Classifier]File" />
+            </node>
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179163307054">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179163349000">
+              <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1179163362009">
+                <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]PrintStream).([InstanceMethodDeclaration]println() : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1179163349001">
+                  <link role="classifier" extResolveInfo="2.[Classifier]System" />
+                  <link role="variableDeclaration" extResolveInfo="2.static field ([Classifier]System).([StaticFieldDeclaration]out : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [PrintStream]))" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1179163364152">
+                  <property name="value" value="Is a directory" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1179163652404">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1179163652405">
+            <property name="name" value="sequenceOfFiles" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceType" id="1179163652406">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179163655230">
+                <link role="classifier" extResolveInfo="1.[Classifier]File" />
+              </node>
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1179163661880">
+              <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceCreatorWithSupplier" id="1179163662924">
+                <node role="supplier" type="jetbrains.mps.baseLanguage.ext.collections.lang.ValueSupplierBlock" id="1179163662925">
+                  <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179163662926">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.TraversalYieldStatement" id="1179163682942">
+                      <node role="value" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179163686435">
+                        <link role="variableDeclaration" targetNodeId="1168894296987" resolveInfo="f" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ForeachStatement" id="1179164801876">
+          <node role="iterable" type="ypath.TreePathOperationExpression" id="1179164818110">
+            <node role="expression" type="ypath.TreePathAdapterExpression" id="1179164811722">
+              <link role="treepathAspect" targetNodeId="1168883727781" resolveInfo="File_TreePath" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179164809717">
+                <link role="variableDeclaration" targetNodeId="1179163652405" resolveInfo="foobar" />
+              </node>
+            </node>
+            <node role="operation" type="ypath.MatchKindOperation" id="1179164818114">
+              <node role="nodeKindOccurrence" type="ypath.TreeNodeKindOccurrence" id="1179164818115">
+                <link role="nodeKind" targetNodeId="1172248995400" resolveInfo="DIR" />
+              </node>
+            </node>
+          </node>
+          <node role="variable" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1179164801878">
+            <property name="name" value="d" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179164804249">
+              <link role="classifier" extResolveInfo="1.[Classifier]File" />
+            </node>
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179164801880">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179164826722">
+              <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1179164833532">
+                <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]PrintStream).([InstanceMethodDeclaration]println() : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1179164826723">
+                  <link role="classifier" extResolveInfo="2.[Classifier]System" />
+                  <link role="variableDeclaration" extResolveInfo="2.static field ([Classifier]System).([StaticFieldDeclaration]out : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [PrintStream]))" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1179164834809">
+                  <property name="value" value="Is a directory too" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179165234870">
+          <node role="expression" type="ypath.TreePathOperationExpression" id="1179165244196">
+            <node role="expression" type="ypath.TreePathOperationExpression" id="1179165240855">
+              <node role="expression" type="ypath.TreePathAdapterExpression" id="1179165236854">
+                <link role="treepathAspect" targetNodeId="1168883727781" resolveInfo="File_TreePath" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179165234871">
+                  <link role="variableDeclaration" targetNodeId="1179163652405" resolveInfo="sequenceOfFiles" />
+                </node>
+              </node>
+              <node role="operation" type="ypath.IterateOperation" id="1179165240859">
+                <property name="axis" value="CHILDREN" />
+              </node>
+            </node>
+            <node role="operation" type="ypath.MatchKindOperation" id="1179165244201">
+              <node role="nodeKindOccurrence" type="ypath.TreeNodeKindOccurrence" id="1179165244202">
+                <link role="nodeKind" targetNodeId="1172248995400" resolveInfo="DIR" />
+              </node>
             </node>
           </node>
         </node>
