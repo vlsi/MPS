@@ -31,6 +31,7 @@ public class PathManager {
   private static String ourHomePath;
   private static String ourConfigPath;
   private static String ourHelpPath;
+  private static String ourHelpIndexPath;
   private static String ourTutorialPath;
 
   public static boolean ourServer;
@@ -139,16 +140,16 @@ public class PathManager {
     if (ourTutorialPath != null) {
       return ourTutorialPath;
     }
-    ourTutorialPath = getHomePath() + File.separator + "help" + File.separator + "tutorial.html";
+    ourTutorialPath = getHomePath() + File.separator + "help" + File.separator + "regexps.html";
     return ourTutorialPath;
   }
 
   public static String getHelpIndexPath() {
-    if (ourTutorialPath != null) {
-      return ourTutorialPath;
+    if (ourHelpIndexPath != null) {
+      return ourHelpIndexPath;
     }
-    ourTutorialPath = getHomePath() + File.separator + "help" + File.separator + "index.html";
-    return ourTutorialPath;
+    ourHelpIndexPath = getHomePath() + File.separator + "help" + File.separator + "index.html";
+    return ourHelpIndexPath;
   }
 
   public static String getAcknowledgementsPath() {
