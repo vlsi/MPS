@@ -1,29 +1,26 @@
 package jetbrains.mps.ide.projectPane;
 
+import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.helgins.uiActions.PresentationManager;
+import jetbrains.mps.ide.AbstractProjectFrame;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.ide.toolsPane.ToolsPane;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
-import jetbrains.mps.ide.AbstractProjectFrame;
-import jetbrains.mps.smodel.SNodeProxy;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.helgins.uiActions.PresentationManager;
-import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.typesystem.ITypeChecker;
-import jetbrains.mps.typesystem.TypeCheckerAccess;
-import jetbrains.mps.typesystem.TSStatus;
-import jetbrains.mps.typesystem.ITypeObject;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeProxy;
+import jetbrains.mps.smodel.SReference;
 
-import javax.swing.*;
+import javax.swing.Icon;
+import javax.swing.JComponent;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-import java.awt.event.ActionEvent;
 
 /**
  * Created by IntelliJ IDEA.
@@ -33,14 +30,13 @@ import java.awt.event.ActionEvent;
  * To change this template use File | Settings | File Templates.
  */
 public class NodeExplorerView extends DefaultTool {
-  MyTree myTree = new MyTree();
-  SNodeProxy myNode;
+  private MyTree myTree = new MyTree();
+  private SNodeProxy myNode;
   private JPanel myComponent = new JPanel(new BorderLayout());
   private AbstractProjectFrame myAbstractProjectFrame;
-  private JCheckBox myHelginsCheckBox;
-  private JCheckBox myTypeCheckBox;
-  private boolean myShowHelgins = true;
-  private boolean myShowLegacyTypes = false;
+//  private JCheckBox myHelginsCheckBox;
+//  private JCheckBox myTypeCheckBox;
+//  private boolean myShowHelgins = true;
 
   public NodeExplorerView(AbstractProjectFrame projectFrame) {
     myAbstractProjectFrame = projectFrame;
@@ -48,22 +44,22 @@ public class NodeExplorerView extends DefaultTool {
     myTree.rebuildTree();
     myComponent.add(new JScrollPane(myTree), BorderLayout.CENTER);
 
-    myHelginsCheckBox = new JCheckBox(new AbstractAction("show HELGINS type info") {
-      public void actionPerformed(ActionEvent e) {
-        setShowHelgins(myHelginsCheckBox.isSelected());
-      }
-    });
-    myTypeCheckBox = new JCheckBox(new AbstractAction("show legacy type info") {
-      public void actionPerformed(ActionEvent e) {
-        setShowLegacyTypes(myTypeCheckBox.isSelected());
-      }
-    });
+//    myHelginsCheckBox = new JCheckBox(new AbstractAction("show HELGINS type info") {
+//      public void actionPerformed(ActionEvent e) {
+//        setShowHelgins(myHelginsCheckBox.isSelected());
+//      }
+//    });
+//    myTypeCheckBox = new JCheckBox(new AbstractAction("show legacy type info") {
+//      public void actionPerformed(ActionEvent e) {
+//        setShowLegacyTypes(myTypeCheckBox.isSelected());
+//      }
+//    });
 
-    myHelginsCheckBox.setSelected(true);
-    JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-    panel.add(myHelginsCheckBox);
-    panel.add(myTypeCheckBox);
-    myComponent.add(panel, BorderLayout.NORTH);
+//    myHelginsCheckBox.setSelected(true);
+//    JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+//    panel.add(myHelginsCheckBox);
+//    panel.add(myTypeCheckBox);
+//    myComponent.add(panel, BorderLayout.NORTH);
   }
 
   public String getName() {
@@ -87,15 +83,10 @@ public class NodeExplorerView extends DefaultTool {
     myTree.rebuildTree();
   }
 
-  public void setShowHelgins(boolean show) {
-    myShowHelgins = show;
-    myTree.rebuildTree();
-  }
-
-  public void setShowLegacyTypes(boolean  show) {
-    myShowLegacyTypes = show;
-    myTree.rebuildTree();
-  }
+//  public void setShowHelgins(boolean show) {
+//    myShowHelgins = show;
+//    myTree.rebuildTree();
+//  }
 
   public void clear() {
     myNode = null;
@@ -144,30 +135,9 @@ public class NodeExplorerView extends DefaultTool {
     public String toString() {
       String string = super.toString();
 
-      String helginsTypeInfo = myShowHelgins ? " {" + PresentationManager.toString(TypeChecker.getInstance().getTypeOf(getSNode())) + "}" : "";
-
-      String legacyTypeInfo = "";
-      if (myShowLegacyTypes) {
-        SNode node = getSNode();
-        ITypeChecker typeChecker = TypeCheckerAccess.getTypeChecker();
-        StringBuffer sb = new StringBuffer(" [");
-        TSStatus status = typeChecker.checkNodeType(node, true);
-        if (status.isOk()) {
-          ITypeObject typeObject = status.getTypeObject();
-          if (typeObject != null) {
-            sb.append(typeObject.getSignature());
-          } else {
-            sb.append("<no type>");
-          }
-        } else {
-          sb.append("ERROR");
-          sb.append(" Message: ").append(status.getMessage());
-        }
-        sb.append("]");
-        legacyTypeInfo = sb.toString();
-      }
-
-      return string + helginsTypeInfo + legacyTypeInfo;
+//      String helginsTypeInfo = myShowHelgins ? " {" + PresentationManager.toString(TypeChecker.getInstance().getTypeOf(getSNode())) + "}" : "";
+      String helginsTypeInfo = " {" + PresentationManager.toString(TypeChecker.getInstance().getTypeOf(getSNode())) + "}";
+      return string + helginsTypeInfo;
     }
 
     public void init() {
