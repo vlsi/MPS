@@ -7,10 +7,9 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.TypeUtil_Collections;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.ext.collections.lang.CollectionsLanguageUtil;
+import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.zMapper;
-import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_;
 
 public class RulesFunctions_Collections {
@@ -48,26 +47,19 @@ public class RulesFunctions_Collections {
     SNode parent = SNodeOperations.getParent(op, null, false, false);
     if(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression")) {
       SNode leftExpression = SLinkOperations.getTarget(parent, "leftExpression", true);
-      SNode listType = RulesFunctions_Collections.tryObtain_ListType(leftExpression);
+      SNode leftExpressionType = TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(leftExpression);
+      SNode listType = TypeChecker.getInstance().getRuntimeSupport().coerce(leftExpressionType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType"), true);
       if(listType != null) {
         return listType;
       } else 
       {
-        TypeChecker.getInstance().reportTypeError(leftExpression, "list is expected");
+        TypeChecker.getInstance().reportTypeError(leftExpression, "list is expected but was " + leftExpressionType);
       }
     } else 
     {
       TypeChecker.getInstance().reportTypeError(op, "not expected here: is only applicable to list");
     }
     return null;
-  }
-  public static SNode tryObtain_ListType(SNode expression) {
-    if(expression == null) {
-      return null;
-    }
-    SNode type = TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(expression);
-    SNode listType = CollectionsLanguageUtil.coerceTo_ListType(type);
-    return listType;
   }
   public static Iterable<SNode> collectYieldStatements(SNode node) {
     Iterable<SNode> yieldStatements = SequenceOperations.map(SNodeOperations.getChildren(node), new zMapper(null, null));
