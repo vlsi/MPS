@@ -35,7 +35,7 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortOperation");
   }
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1161719130431(SNode sourceNode, IScope scope, IOperationContext operationContext) {
-    SNode type = SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(sourceNode));
+    SNode type = TypeChecker.getInstance().getTypeOf(sourceNode);
     SNode sequenceType = TypeUtil_Collections.coerceTo_SequenceType(type);
     return (sequenceType != null);
   }
