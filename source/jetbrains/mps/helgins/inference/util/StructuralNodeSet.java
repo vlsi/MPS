@@ -182,11 +182,11 @@ public class StructuralNodeSet<T> implements Set<SNode> {
 
 
   public Object[] toArray() {
-    throw new UnsupportedOperationException();
+    return myNodes.keySet().toArray();
   }
 
   public <T> T[] toArray(T[] a) {
-    throw new UnsupportedOperationException();
+    return myNodes.keySet().toArray(a);
   }
 
   public boolean containsAll(Collection<?> c) {

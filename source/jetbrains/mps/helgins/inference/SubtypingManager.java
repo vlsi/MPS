@@ -389,7 +389,7 @@ public class SubtypingManager {
     return result;
   }
 
-  private StructuralNodeSet leastCommonSupertypes(SNode a, SNode b, Map<SNode, StructuralNodeSet<Integer>> subTypesToSuperTypes) {
+  private StructuralNodeSet leastCommonSupertypes(final SNode a, final SNode b, final Map<SNode, StructuralNodeSet<Integer>> subTypesToSuperTypes) {
     // System.err.println("lcs inner, types are: " + PresentationManager.toString(a) + " , " + PresentationManager.toString(b));
     StructuralNodeSet result = new StructuralNodeSet();
     if (MatchingUtil.matchNodes(a,b)) {
@@ -419,7 +419,18 @@ public class SubtypingManager {
       }
     }
     StructuralNodeSet commonSupertypes = superTypesA;
-    for (SNode commonSupertype : new HashSet<SNode>(commonSupertypes)) {
+    List<SNode> commonSupertypesSorted = new ArrayList<SNode>(commonSupertypes);
+    Collections.sort(commonSupertypesSorted, new Comparator<SNode>() {
+      public int compare(SNode o1, SNode o2) {
+        Integer distA1 = subTypesToSuperTypes.get(a).getTag(o1);
+        Integer distA2 = subTypesToSuperTypes.get(a).getTag(o2);
+        Integer distB1 = subTypesToSuperTypes.get(b).getTag(o1);
+        Integer distB2 = subTypesToSuperTypes.get(b).getTag(o2);
+        return (distA1 + distB1) - (distA2 + distB2);
+      }
+    });
+
+    for (SNode commonSupertype : commonSupertypesSorted) {
       Set<SNode> superTypes = subTypesToSuperTypes.get(commonSupertype);
       if (superTypes != null) {
         for (SNode superType : superTypes) {
