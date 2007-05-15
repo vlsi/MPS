@@ -42,6 +42,9 @@ public class TypeUtil_Collections {
       SModel model = TypeChecker.getInstance().getRuntimeTypesModel();
       GlobalScope scope = GlobalScope.getInstance();
       SNode entity = BaseAdapter.fromAdapter(SModelUtil_new.findNodeByFQName("com.jetbrains.teamsys.database.Entity", Classifier.class, scope));
+      if(entity == null) {
+        return null;
+      }
       SNode entityType = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
       SLinkOperations.setTarget(entityType, "classifier", entity, false);
       SNode javaIterable = BaseAdapter.fromAdapter(SModelUtil_new.findNodeByFQName("java.lang.Iterable", Classifier.class, scope));
