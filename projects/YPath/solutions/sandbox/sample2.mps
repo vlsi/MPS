@@ -388,6 +388,29 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1179215603350">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1179215603351">
+            <property name="name" value="foo" />
+            <node role="type" type="ypath.TreePathType" id="1179215603352">
+              <node role="nodeType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179215605272">
+                <link role="classifier" extResolveInfo="1.[Classifier]File" />
+              </node>
+            </node>
+            <node role="initializer" type="ypath.TreePathOperationExpression" id="1179215627025">
+              <node role="expression" type="ypath.TreePathAdapterExpression" id="1179215618544">
+                <link role="treepathAspect" targetNodeId="1168883727781" resolveInfo="File_TreePath" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179215615741">
+                  <link role="variableDeclaration" targetNodeId="1168894296987" resolveInfo="f" />
+                </node>
+              </node>
+              <node role="operation" type="ypath.MatchKindOperation" id="1179215627029">
+                <node role="nodeKindOccurrence" type="ypath.TreeNodeKindOccurrence" id="1179215627030">
+                  <link role="nodeKind" targetNodeId="1172248995400" resolveInfo="DIR" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1168894275019">
         <property name="name" value="args" />
