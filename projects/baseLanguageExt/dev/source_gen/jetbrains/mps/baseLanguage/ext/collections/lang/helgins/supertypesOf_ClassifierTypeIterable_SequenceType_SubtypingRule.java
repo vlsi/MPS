@@ -38,6 +38,6 @@ public class supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule exte
     return false;
   }
   public boolean isWeak() {
-    return false;
+    return true;
   }
 }

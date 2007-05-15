@@ -4,35 +4,33 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.ISubtypingRule_Runtime;
-import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.Pattern_;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_24;
+import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_29;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.SModelUtil_new;
 
-public class supertypesOf_ClassifierTypeList_ListType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
+public class supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
-  /* package */Pattern_ myMatchingPattern;
-
-  public  supertypesOf_ClassifierTypeList_ListType_SubtypingRule() {
+  public  supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode type) {
-    return new QuotationClass_24().createNode(this.myMatchingPattern.PatternVar);
+    return new QuotationClass_29().createNode(SLinkOperations.getTarget(type, "elementType", true));
   }
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.baseLanguage.structure.ClassifierType";
+    return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType";
   }
   public ApplicableNodeCondition getNodeCondition() {
     SModel model = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.baseLanguage.ext.collections.lang.helgins")).getSModel();
-    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1178725705727"));
+    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1179262360692"));
   }
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new Pattern_();
-    return this.myMatchingPattern.match(argument);
+    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
   public boolean isSupertyping() {
     return false;
