@@ -23,7 +23,7 @@ import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.baseLanguage.ext.collections.lang.CollectionsLanguageUtil;
+import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 
 public class QueriesGenerated {
 
@@ -141,7 +141,7 @@ public class QueriesGenerated {
       if(TypeUtil_Collections.coerceTo_SequenceType(leftType) != null) {
         applicableToSequence = true;
       }
-      if(CollectionsLanguageUtil.coerceTo_ListType(leftType) != null) {
+      if(TypeChecker.getInstance().getRuntimeSupport().coerce(leftExpression, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType"), true) != null) {
         applicableToList = true;
       }
     }

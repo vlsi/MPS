@@ -9,7 +9,6 @@
   <import index="1" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="3" modelUID="jetbrains.mps.core.structure" />
-  <import index="6" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang@java_stub" />
   <import index="7" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <import index="8" modelUID="java.util@java_stub" />
   <import index="10" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.helgins" />
@@ -586,11 +585,13 @@
                 <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1177414494034">
                   <node role="condition" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1177414503390">
                     <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1177414504276" />
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1177414499515">
-                      <link role="baseMethodDeclaration" extResolveInfo="6.static method ([Classifier]CollectionsLanguageUtil).([StaticMethodDeclaration]coerceTo_ListType((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
-                      <link role="classConcept" extResolveInfo="6.[Classifier]CollectionsLanguageUtil" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1177414501943">
-                        <link role="variableDeclaration" targetNodeId="1177414439676" resolveInfo="leftType" />
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.CoerceExpression" id="1179192033804">
+                      <node role="pattern" type="jetbrains.mps.bootstrap.helgins.ConceptReference" id="1179192045611">
+                        <property name="name" value="notused" />
+                        <link role="concept" targetNodeId="1.1151688443754" />
+                      </node>
+                      <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179192041040">
+                        <link role="variableDeclaration" targetNodeId="1177414395713" resolveInfo="leftExpression" />
                       </node>
                     </node>
                   </node>
