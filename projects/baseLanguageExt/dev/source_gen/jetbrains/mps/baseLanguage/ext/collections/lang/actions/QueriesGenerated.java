@@ -141,7 +141,7 @@ public class QueriesGenerated {
       if(TypeUtil_Collections.coerceTo_SequenceType(leftType) != null) {
         applicableToSequence = true;
       }
-      if(TypeChecker.getInstance().getRuntimeSupport().coerce(leftExpression, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType"), true) != null) {
+      if(TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType"), true) != null) {
         applicableToList = true;
       }
     }

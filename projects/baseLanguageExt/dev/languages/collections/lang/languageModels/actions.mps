@@ -584,8 +584,8 @@
                         <property name="name" value="notused" />
                         <link role="concept" targetNodeId="1.1151688443754" />
                       </node>
-                      <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179192041040">
-                        <link role="variableDeclaration" targetNodeId="1177414395713" resolveInfo="leftExpression" />
+                      <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179258082965">
+                        <link role="variableDeclaration" targetNodeId="1177414439676" resolveInfo="leftType" />
                       </node>
                     </node>
                   </node>
