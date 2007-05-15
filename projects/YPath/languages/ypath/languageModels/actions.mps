@@ -2,31 +2,22 @@
 <model name="ypath.actions">
   <language namespace="jetbrains.mps.bootstrap.actionsLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
-  <language namespace="jetbrains.mps.core" />
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
-  <language namespace="jetbrains.mps.patterns" />
-  <maxImportIndex value="37" />
+  <maxImportIndex value="38" />
   <import index="1" modelUID="ypath.structure" />
   <import index="2" modelUID="jetbrains.mps.core.structure" />
-  <import index="3" modelUID="jetbrains.mps.typesystem@java_stub" />
   <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="5" modelUID="java.util@java_stub" />
   <import index="6" modelUID="jetbrains.mps.smodel@java_stub" />
-  <import index="7" modelUID="ypath.actions@java_stub" />
-  <import index="10" modelUID="ypath@java_stub" />
   <import index="21" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
-  <import index="22" modelUID="jetbrains.mps.core.structure@java_stub" />
-  <import index="23" modelUID="jetbrains.mps.helgins.inference@java_stub" />
-  <import index="24" modelUID="jetbrains.mps.util@java_stub" />
   <import index="25" modelUID="java.lang@java_stub" />
   <import index="27" modelUID="jetbrains.mps.findUsages@java_stub" />
-  <import index="28" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.actions@java_stub" />
-  <import index="29" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang@java_stub" />
   <import index="30" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" />
   <import index="31" modelUID="ypath.structure@java_stub" />
+  <import index="38" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.helgins" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActions" id="1168462842641">
     <property name="name" value="YPath_rhint" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1168893677147">
@@ -1000,8 +991,8 @@
                   <link role="concept" targetNodeId="30.1151689724996" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1179164662975">
-                  <link role="baseMethodDeclaration" extResolveInfo="29.static method ([Classifier]CollectionsLanguageUtil).([StaticMethodDeclaration]coerceTo_SequenceType((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
-                  <link role="classConcept" extResolveInfo="29.[Classifier]CollectionsLanguageUtil" />
+                  <link role="classConcept" targetNodeId="38.1179160244196" />
+                  <link role="baseMethodDeclaration" targetNodeId="38.1179160336886" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179164662976">
                     <link role="variableDeclaration" targetNodeId="1178975568242" resolveInfo="expType" />
                   </node>
