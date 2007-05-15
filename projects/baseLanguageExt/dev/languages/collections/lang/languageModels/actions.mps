@@ -547,14 +547,11 @@
                   <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1177414439676">
                     <property name="name" value="leftType" />
                     <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1177414439677" />
-                    <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179172888349">
-                      <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179172883629">
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179172879479">
-                          <link role="variableDeclaration" targetNodeId="1177414395713" resolveInfo="leftExpression" />
-                        </node>
-                        <node role="nodeOperation" type="jetbrains.mps.bootstrap.helgins.Node_TypeOperation" id="1179172884966" />
+                    <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179172883629">
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179172879479">
+                        <link role="variableDeclaration" targetNodeId="1177414395713" resolveInfo="leftExpression" />
                       </node>
-                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_CopyOperation" id="1179172890217" />
+                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.helgins.Node_TypeOperation" id="1179172884966" />
                     </node>
                   </node>
                 </node>

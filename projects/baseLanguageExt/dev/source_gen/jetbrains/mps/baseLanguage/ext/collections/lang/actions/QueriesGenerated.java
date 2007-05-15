@@ -137,7 +137,7 @@ public class QueriesGenerated {
     boolean applicableToList = false;
     if(SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression")) {
       SNode leftExpression = SLinkOperations.getTarget(parentNode, "leftExpression", true);
-      SNode leftType = SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(leftExpression));
+      SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
       if(TypeUtil_Collections.coerceTo_SequenceType(leftType) != null) {
         applicableToSequence = true;
       }
