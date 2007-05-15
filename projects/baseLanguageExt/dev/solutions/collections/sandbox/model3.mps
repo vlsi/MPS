@@ -84,6 +84,31 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1179271687151">
+      <property name="name" value="m4" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1179271687152" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1179271687153" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179271687154">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1179271692696">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1179271692697">
+            <property name="name" value="list" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListType" id="1179271708883">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179271712818">
+                <link role="classifier" extResolveInfo="1.[Classifier]String" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179271724094">
+          <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1179271725885">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179271724095">
+              <link role="variableDeclaration" targetNodeId="1179271692697" resolveInfo="list" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.GetFirstOperation" id="1179271729004" />
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
