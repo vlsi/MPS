@@ -6,10 +6,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.structure.ClassifierType;
-import jetbrains.mps.baseLanguage.types.BaseLanguageTypesUtil_new;
-import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.baseLanguage.structure.ArrayType;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
@@ -66,7 +64,7 @@ public class QueriesGenerated {
     return SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", true, false) != null;
   }
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1177499026996(SNode sourceNode, IScope scope, IOperationContext operationContext) {
-    ClassifierType ct = BaseLanguageTypesUtil_new.tryObtain_ClassifierType(((Expression)SNodeOperations.getAdapter(sourceNode)));
+    SNode ct = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(sourceNode), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
     return ct != null;
   }
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1177503884613(SNode sourceNode, IScope scope, IOperationContext operationContext) {
