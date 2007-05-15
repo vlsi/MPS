@@ -746,31 +746,9 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1119992601482">
     <property name="name" value="TestInt" />
-    <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1120075189455">
-      <property name="name" value="aaa_static" />
-      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1120075189581" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1120075201350" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546097041" />
-    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1119993863122">
       <property name="name" value="aaa" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1119993863499">
-        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1120147044954">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1120147044955">
-            <property name="name" value="aaa" />
-            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1120147044956" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.ParenthesizedExpression" id="1120166093665">
-              <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1120166075736">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1120166080849">
-                  <property name="value" value="10" />
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.FloatingPointConstant" id="1120233244547">
-                  <property name="value" value="10.0" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1178898075315">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1178898075316">
             <property name="name" value="sssss" />
@@ -789,9 +767,9 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ForeachStatement" id="1178898010330">
-          <node role="iterable" type="jetbrains.mps.baseLanguage.NewExpression" id="1178898125438">
+          <node role="iterable" type="jetbrains.mps.baseLanguage.NewExpression" id="1179231217598">
             <link role="baseMethodDeclaration" extResolveInfo="27.constructor [Classifier]ArrayList[ConstructorDeclaration] ()" />
-            <node role="typeParameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1178898132952">
+            <node role="typeParameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179231226653">
               <link role="classifier" extResolveInfo="1.[Classifier]String" />
             </node>
           </node>
@@ -802,12 +780,6 @@
             </node>
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178898010334" />
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.Statement" id="1178898066208" />
-        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1178809320465">
-          <node role="expression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1178809320466">
-            <property name="value" value="3" />
-          </node>
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1119993866157" />
@@ -1192,6 +1164,33 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546094916" />
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178550081260" />
+  </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1179231288895">
+    <property name="name" value="TestInts" />
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1179231297631">
+      <property name="name" value="foo" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1179231297632" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1179231297633" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179231297634">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1179231383420">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1179231383421">
+            <property name="name" value="aaa" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1179231383422" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.ParenthesizedExpression" id="1179231383423">
+              <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1179231383424">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1179231383425">
+                  <property name="value" value="10" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.FloatingPointConstant" id="1179231383426">
+                  <property name="value" value="10.0" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1179231288896" />
   </node>
 </model>
 

@@ -46,7 +46,7 @@ public class StructuralNodeSet<T> implements Set<SNode> {
     }
     for (SNode node : myNodes.keySet()) {
       if (MatchingUtil.matchNodes(node, ourNode)) {
-        myPresentNodes.put(ourNode, null);
+        myPresentNodes.put(ourNode, myNodes.get(node));
         return true;
       }
     }
@@ -199,5 +199,14 @@ public class StructuralNodeSet<T> implements Set<SNode> {
 
   public boolean removeAll(Collection<?> c) {
     throw new UnsupportedOperationException();
+  }
+
+  public void setAllTags(T tag) {
+    for (SNode node : new HashSet<SNode>(myNodes.keySet())) {
+      myNodes.put(node, tag);
+    }
+    for (SNode node : new HashSet<SNode>(myPresentNodes.keySet())) {
+      myPresentNodes.put(node, tag);
+    }
   }
 }

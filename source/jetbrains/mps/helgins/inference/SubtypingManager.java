@@ -333,7 +333,7 @@ public class SubtypingManager {
 
     allTypes.addCollectionStructurally((Set<SNode>) types);
 
-    HashMap<SNode, StructuralNodeSet> subTypesToSupertypes = new HashMap<SNode, StructuralNodeSet>();
+    HashMap<SNode, StructuralNodeSet<Integer>> subTypesToSupertypes = new HashMap<SNode, StructuralNodeSet<Integer>>();
 
     Set<SNode> frontier = new HashSet<SNode>(types);
     Set<SNode> newFrontier = new HashSet<SNode>();
@@ -345,6 +345,7 @@ public class SubtypingManager {
           continue;
         }
         StructuralNodeSet superTypes = collectImmediateSupertypes(type);
+        superTypes.setAllTags(1);
         subTypesToSupertypes.put(type, superTypes);
         subTypesToSupertypesKeySet.addStructurally(type);
         newFrontier.addAll(superTypes);
@@ -358,12 +359,19 @@ public class SubtypingManager {
     for (SNode node2 : allTypes) { // transitive closure
       for (SNode node1 : allTypes) {
         for (SNode node3 : allTypes) {
-          StructuralNodeSet supertypes1 = subTypesToSupertypes.get(node1);
+          StructuralNodeSet<Integer> supertypes1 = subTypesToSupertypes.get(node1);
           if (supertypes1 == null) continue;
-          StructuralNodeSet supertypes2 = subTypesToSupertypes.get(node2);
+          StructuralNodeSet<Integer> supertypes2 = subTypesToSupertypes.get(node2);
           if (supertypes2 == null) continue;
           if (supertypes1.containsStructurally(node2) && supertypes2.containsStructurally(node3)) {
-            supertypes1.addStructurally(node3);
+            Integer dist1_2 = supertypes1.getTag(node2);
+            Integer dist2_3 = supertypes2.getTag(node3);
+            Integer sum = 0;
+            sum = dist1_2 + dist2_3; 
+            Integer dist1_3 = supertypes1.getTag(node3);
+            if (dist1_3 == null || dist1_3 > sum) {
+              supertypes1.putStructurally(node3, sum);
+            }
           }
         }
       }
@@ -381,7 +389,7 @@ public class SubtypingManager {
     return result;
   }
 
-  private StructuralNodeSet leastCommonSupertypes(SNode a, SNode b, Map<SNode, StructuralNodeSet> subTypesToSuperTypes) {
+  private StructuralNodeSet leastCommonSupertypes(SNode a, SNode b, Map<SNode, StructuralNodeSet<Integer>> subTypesToSuperTypes) {
     // System.err.println("lcs inner, types are: " + PresentationManager.toString(a) + " , " + PresentationManager.toString(b));
     StructuralNodeSet result = new StructuralNodeSet();
     if (MatchingUtil.matchNodes(a,b)) {
