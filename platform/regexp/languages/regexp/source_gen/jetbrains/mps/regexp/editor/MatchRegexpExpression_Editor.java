@@ -30,7 +30,7 @@ public class MatchRegexpExpression_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createExpressionCell(context, node));
+    editorCell.addEditorCell(this.createInputExpressionCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "matches"));
     editorCell.addEditorCell(this.createRegexpCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1179357344403");
@@ -50,7 +50,7 @@ public class MatchRegexpExpression_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createExpressionCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createInputExpressionCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -67,13 +67,13 @@ public class MatchRegexpExpression_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createExpressionCell(EditorContext context, SNode node) {
+  public EditorCell createInputExpressionCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("expression");
+    provider.setRole("inputExpression");
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createExpressionCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.createInputExpressionCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if(attributeConcept != null) {

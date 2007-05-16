@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.regexp.structure.RegexpExpression;
 
 public class MatchRegexpExpression extends Expression implements RegexpUsingConstruction {
-  public static String EXPRESSION = "expression";
+  public static String INPUT_EXPRESSION = "inputExpression";
   public static String REGEXP = "regexp";
 
   public  MatchRegexpExpression(SNode node) {
@@ -25,11 +25,11 @@ public class MatchRegexpExpression extends Expression implements RegexpUsingCons
     return MatchRegexpExpression.newInstance(sm, false);
   }
 
-  public Expression getExpression() {
-    return (Expression)this.getChild(MatchRegexpExpression.EXPRESSION);
+  public Expression getInputExpression() {
+    return (Expression)this.getChild(MatchRegexpExpression.INPUT_EXPRESSION);
   }
-  public void setExpression(Expression node) {
-    super.setChild(MatchRegexpExpression.EXPRESSION, node);
+  public void setInputExpression(Expression node) {
+    super.setChild(MatchRegexpExpression.INPUT_EXPRESSION, node);
   }
   public RegexpExpression getRegexp() {
     return (RegexpExpression)this.getChild(MatchRegexpExpression.REGEXP);
