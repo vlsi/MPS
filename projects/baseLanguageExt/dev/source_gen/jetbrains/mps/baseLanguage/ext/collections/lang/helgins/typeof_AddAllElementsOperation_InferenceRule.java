@@ -21,7 +21,7 @@ public class typeof_AddAllElementsOperation_InferenceRule implements InferenceRu
   }
 
   public void applyRule(SNode argument) {
-    SNode expectedElementType = (SNode)RulesFunctions_Collections.get_inputListType_elementType(argument);
+    SNode expectedElementType = RulesFunctions_Collections.get_inputListType_elementType(argument);
     if(!(expectedElementType != null)) {
       TypeChecker.getInstance().reportTypeError(argument, "couldn't define input list element type");
     }
