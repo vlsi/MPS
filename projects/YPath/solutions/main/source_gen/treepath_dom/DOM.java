@@ -4,21 +4,43 @@ package treepath_dom;
 
 import ypath.util.TreePath;
 import org.w3c.dom.Node;
-import treepath_dom.TreePath_parent_1175083364495;
-import treepath_dom.Treepath_1175083364498;
+import ypath.util.xml.NodeListIterableAdapter;
 
 public class DOM extends TreePath<Node> {
 
-  public  DOM() {
-  }
-
-  public Node parent(Node n) {
-    return TreePath_parent_1175083364495.parent(n);
-  }
-  public Node[] childrenArray(Node n) {
-    return Treepath_1175083364498.childrenArray(n);
+  public Node parent(Node node) {
+    return Parent.parent(node);
   }
   public Iterable<Node> children(Node n) {
-    return Treepath_1175083364498.children(n);
+    return Children.children(n);
   }
+  private static class Parent {
+
+    /* package */Object _enclosingClass;
+    /* package */Object _closureContext;
+
+    public  Parent(Object enclosingClass, Object closureContext) {
+      this._enclosingClass = enclosingClass;
+      this._closureContext = (Object)closureContext;
+    }
+
+    public static Node parent(Node node) {
+      return node.getParentNode();
+    }
+}
+  private static class Children {
+
+    /* package */Object _enclosingClass;
+    /* package */Object _closureContext;
+
+    public  Children(Object enclosingClass, Object closureContext) {
+      this._enclosingClass = enclosingClass;
+      this._closureContext = (Object)closureContext;
+    }
+
+    public static Iterable<Node> children(Node node) {
+      return new NodeListIterableAdapter(node.getChildNodes());
+    }
+}
+
 }

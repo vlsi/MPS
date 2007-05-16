@@ -141,8 +141,10 @@
                 </node>
                 <node role="operation" type="ypath.IterateOperation" id="1169043577977" />
               </node>
-              <node role="operation" type="ypath.MatchKindOperation" id="1172249037936">
-                <link role="nodeKind" targetNodeId="1172248995400" resolveInfo="DIR" />
+              <node role="operation" type="ypath.MatchKindOperation" id="1179325799905">
+                <node role="nodeKindOccurrence" type="ypath.TreeNodeKindOccurrence" id="1179325799906">
+                  <link role="nodeKind" targetNodeId="1172248995400" resolveInfo="DIR" />
+                </node>
               </node>
             </node>
             <node role="operation" type="ypath.WhereOperation" id="1172249135486">
@@ -213,7 +215,7 @@
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179163377136">
             <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179163402506">
               <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1179163407601">
-                <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]PrintStream).([InstanceMethodDeclaration]println() : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
+                <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]PrintStream).([InstanceMethodDeclaration]println((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1179163402507">
                   <link role="classifier" extResolveInfo="2.[Classifier]System" />
                   <link role="variableDeclaration" extResolveInfo="2.static field ([Classifier]System).([StaticFieldDeclaration]out : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [PrintStream]))" />
@@ -252,7 +254,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179156894470">
           <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1179156894471">
-            <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]PrintStream).([InstanceMethodDeclaration]println() : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
+            <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]PrintStream).([InstanceMethodDeclaration]println((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
             <node role="instance" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1179156894472">
               <link role="classifier" extResolveInfo="2.[Classifier]System" />
               <link role="variableDeclaration" extResolveInfo="2.static field ([Classifier]System).([StaticFieldDeclaration]out : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [PrintStream]))" />
@@ -272,7 +274,7 @@
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179156837827">
             <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179156898790">
               <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1179156906326">
-                <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]PrintStream).([InstanceMethodDeclaration]println() : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
+                <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]PrintStream).([InstanceMethodDeclaration]println((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1179156898791">
                   <link role="classifier" extResolveInfo="2.[Classifier]System" />
                   <link role="variableDeclaration" extResolveInfo="2.static field ([Classifier]System).([StaticFieldDeclaration]out : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [PrintStream]))" />
@@ -318,7 +320,7 @@
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179163307054">
             <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179163349000">
               <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1179163362009">
-                <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]PrintStream).([InstanceMethodDeclaration]println() : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
+                <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]PrintStream).([InstanceMethodDeclaration]println((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1179163349001">
                   <link role="classifier" extResolveInfo="2.[Classifier]System" />
                   <link role="variableDeclaration" extResolveInfo="2.static field ([Classifier]System).([StaticFieldDeclaration]out : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [PrintStream]))" />
@@ -376,7 +378,7 @@
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179164801880">
             <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179164826722">
               <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1179164833532">
-                <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]PrintStream).([InstanceMethodDeclaration]println() : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
+                <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]PrintStream).([InstanceMethodDeclaration]println((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1179164826723">
                   <link role="classifier" extResolveInfo="2.[Classifier]System" />
                   <link role="variableDeclaration" extResolveInfo="2.static field ([Classifier]System).([StaticFieldDeclaration]out : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [PrintStream]))" />

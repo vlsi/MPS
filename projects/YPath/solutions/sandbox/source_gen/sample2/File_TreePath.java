@@ -4,21 +4,42 @@ package sample2;
 
 import ypath.util.TreePath;
 import java.io.File;
-import sample2.TreePath_parent_1168883727783;
-import sample2.Treepath_1168883727786;
 
 public class File_TreePath extends TreePath<File> {
 
-  public  File_TreePath() {
-  }
-
-  public File parent(File n) {
-    return TreePath_parent_1168883727783.parent(n);
+  public File parent(File node) {
+    return Parent.parent(node);
   }
   public File[] childrenArray(File n) {
-    return Treepath_1168883727786.childrenArray(n);
+    return Children.childrenArray(n);
   }
-  public Iterable<File> children(File n) {
-    return Treepath_1168883727786.children(n);
-  }
+  private static class Parent {
+
+    /* package */Object _enclosingClass;
+    /* package */Object _closureContext;
+
+    public  Parent(Object enclosingClass, Object closureContext) {
+      this._enclosingClass = enclosingClass;
+      this._closureContext = (Object)closureContext;
+    }
+
+    public static File parent(File n) {
+      return n;
+    }
+}
+  private static class Children {
+
+    /* package */Object _enclosingClass;
+    /* package */Object _closureContext;
+
+    public  Children(Object enclosingClass, Object closureContext) {
+      this._enclosingClass = enclosingClass;
+      this._closureContext = (Object)closureContext;
+    }
+
+    public static File[] childrenArray(File n) {
+      return n.listFiles();
+    }
+}
+
 }

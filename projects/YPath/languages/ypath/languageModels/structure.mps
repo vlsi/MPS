@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="ypath.structure">
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
+  <language namespace="jetbrains.mps.baseLanguage" />
   <maxImportIndex value="2" />
   <import index="1" modelUID="jetbrains.mps.core.structure" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" />
@@ -181,6 +182,10 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1168527733553">
     <property name="name" value="WhereBlock" />
     <link role="extends" targetNodeId="1168428649324" resolveInfo="LambdaMethod" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1179325851058">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" />
+      <node role="target" type="jetbrains.mps.baseLanguage.BooleanType" id="1179325876810" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1168879975004">
     <property name="name" value="TreePathAspect" />

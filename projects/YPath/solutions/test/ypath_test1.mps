@@ -64,7 +64,6 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.Statement" id="1178888310280" />
         </node>
       </node>
     </node>
