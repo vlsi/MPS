@@ -8,10 +8,10 @@ import java.io.File;
 public class File_TreePath extends TreePath<File> {
 
   public File parent(File node) {
-    return Parent.parent(node);
+    return File_TreePath.Parent.parent(node);
   }
   public File[] childrenArray(File n) {
-    return Children.childrenArray(n);
+    return File_TreePath.Children.childrenArray(n);
   }
   private static class Parent {
 
