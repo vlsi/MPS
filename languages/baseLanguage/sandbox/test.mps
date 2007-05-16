@@ -1175,7 +1175,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1179231383420">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1179231383421">
             <property name="name" value="aaa" />
-            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1179231383422" />
+            <node role="type" type="jetbrains.mps.baseLanguage.FloatType" id="1179316606481" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.ParenthesizedExpression" id="1179231383423">
               <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1179231383424">
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1179231383425">

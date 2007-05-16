@@ -9,6 +9,7 @@ import jetbrains.mps.formulaLanguage.evaluator.ExpressionEvaluatorManager;
 import jetbrains.mps.formulaLanguage.structure.Expression;
 import jetbrains.mps.helgins.structure.*;
 import jetbrains.mps.helgins.inference.util.StructuralNodeSet;
+import jetbrains.mps.helgins.inference.util.StructuralNodeSetView;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.patterns.util.MatchingUtil;
 import jetbrains.mps.patterns.util.IMatchModifier;
@@ -350,6 +351,7 @@ public class SubtypingManager {
         subTypesToSupertypesKeySet.addStructurally(type);
         newFrontier.addAll(superTypes);
         allTypes.addAllStructurally(superTypes);
+        superTypes.putStructurally(type, 0);
       }
 
       frontier = newFrontier;
@@ -420,7 +422,7 @@ public class SubtypingManager {
     }
     StructuralNodeSet commonSupertypes = superTypesA;
     List<SNode> commonSupertypesSorted = new ArrayList<SNode>(commonSupertypes);
-   /* Collections.sort(commonSupertypesSorted, new Comparator<SNode>() {
+    Collections.sort(commonSupertypesSorted, new Comparator<SNode>() {
       public int compare(SNode o1, SNode o2) {
         Integer distA1 = subTypesToSuperTypes.get(a).getTag(o1);
         Integer distA2 = subTypesToSuperTypes.get(a).getTag(o2);
@@ -428,9 +430,12 @@ public class SubtypingManager {
         Integer distB2 = subTypesToSuperTypes.get(b).getTag(o2);
         return (distA1 + distB1) - (distA2 + distB2);
       }
-    });*/
+    });
 
     for (SNode commonSupertype : commonSupertypesSorted) {
+      if (!commonSupertypes.contains(commonSupertype)) {
+        continue;
+      }
       Set<SNode> superTypes = subTypesToSuperTypes.get(commonSupertype);
       if (superTypes != null) {
         for (SNode superType : superTypes) {
