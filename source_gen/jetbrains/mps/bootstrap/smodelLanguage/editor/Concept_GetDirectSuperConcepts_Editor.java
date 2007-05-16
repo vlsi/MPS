@@ -8,13 +8,11 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import java.awt.Color;
-import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.nodeEditor.MPSColors;
 
-public class SModelType_Editor extends DefaultNodeEditor {
+public class Concept_GetDirectSuperConcepts_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstantCell(context, node, "smodel");
+    return this.createConstantCell(context, node, "direct super-concepts");
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
@@ -24,9 +22,7 @@ public class SModelType_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.setFontType(MPSFonts.BOLD);
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1143226143282");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1179350244560");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

@@ -659,6 +659,9 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1172323662440(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return QueriesUtil.getLeftExpression(node);
   }
+  public static SNode sourceNodeQuery_1179350705044(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.getLeftExpression(node);
+  }
   public static SNode sourceNodeQuery_1172329130127(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return QueriesUtil.getLeftExpression(node);
   }
