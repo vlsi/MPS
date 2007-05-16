@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_22;
+import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_23;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
@@ -20,7 +20,7 @@ public class supertypesOf_ListType_SequenceType_SubtypingRule extends SubtypingR
   }
 
   public SNode getSubOrSuperType(SNode type) {
-    return new QuotationClass_22().createNode(SLinkOperations.getTarget(type, "elementType", true));
+    return new QuotationClass_23().createNode(SLinkOperations.getTarget(type, "elementType", true));
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType";

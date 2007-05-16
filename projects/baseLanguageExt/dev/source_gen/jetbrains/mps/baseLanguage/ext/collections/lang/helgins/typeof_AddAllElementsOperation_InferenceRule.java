@@ -5,8 +5,9 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.RulesFunctions_Collections;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_17;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -21,14 +22,16 @@ public class typeof_AddAllElementsOperation_InferenceRule implements InferenceRu
 
   public void applyRule(SNode argument) {
     SNode expectedElementType = (SNode)RulesFunctions_Collections.get_inputListType_elementType(argument);
+    if(!(expectedElementType != null)) {
+      TypeChecker.getInstance().reportTypeError(argument, "couldn't define input list element type");
+    }
+    // ==========
     SNode arg = SLinkOperations.getTarget(argument, "argument", true);
     if(arg != null) {
-      SNode argumentElementType = RulesFunctions_Collections.tryObtain_Sequence_elementType(arg);
-      if(!(argumentElementType != null)) {
-        TypeChecker.getInstance().reportTypeError(arg, "sequence is expected");
-      }
-      if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(argumentElementType, expectedElementType))) {
-        TypeChecker.getInstance().reportTypeError(arg, "" + expectedElementType + " is expected");
+      SNode expectedArgumentType = new QuotationClass_17().createNode(expectedElementType);
+      SNode actualArgumentType = TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(arg);
+      if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(actualArgumentType, expectedArgumentType))) {
+        TypeChecker.getInstance().reportTypeError(arg, "" + expectedArgumentType + " is expected");
       }
     }
   }
