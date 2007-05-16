@@ -6,9 +6,9 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.bootstrap.helgins.helgins.QuotationClass_9;
 import jetbrains.mps.bootstrap.helgins.helgins.QuotationClass_10;
 import jetbrains.mps.bootstrap.helgins.helgins.QuotationClass_11;
-import jetbrains.mps.bootstrap.helgins.helgins.QuotationClass_12;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -22,9 +22,9 @@ public class typeOf_AssertStatement_InferenceRule implements InferenceRule_Runti
   }
 
   public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "condition", true)), new QuotationClass_10().createNode(), SLinkOperations.getTarget(argument, "condition", true));
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "errorString", true)), new QuotationClass_11().createNode(), SLinkOperations.getTarget(argument, "errorString", true));
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "nodeToReport", true)), new QuotationClass_12().createNode(), SLinkOperations.getTarget(argument, "nodeToReport", true));
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "condition", true)), new QuotationClass_9().createNode(), SLinkOperations.getTarget(argument, "condition", true));
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "errorString", true)), new QuotationClass_10().createNode(), SLinkOperations.getTarget(argument, "errorString", true));
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "nodeToReport", true)), new QuotationClass_11().createNode(), SLinkOperations.getTarget(argument, "nodeToReport", true));
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.helgins.structure.AssertStatement";
