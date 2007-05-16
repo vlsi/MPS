@@ -9,6 +9,8 @@ import jetbrains.mps.util.Pair;
 
 import java.util.*;
 
+import com.sun.corba.se.spi.monitoring.MonitoredObject;
+
 /**
  * Created by IntelliJ IDEA.
  * User: User
@@ -68,7 +70,14 @@ public class EquationManager {
   }
 
   public SNode getParent(SNode type) {
-    return myEquations.get(type);
+    SNode parent = myEquations.get(type);
+    if (parent == null) {
+      EquationManager equationManager = getMaster();
+      if (equationManager != null) {
+        parent = equationManager.getParent(type);
+      }
+    }
+    return parent;
   }
 
   public void setParent(SNode type, SNode parent) {
@@ -461,4 +470,7 @@ public class EquationManager {
     addEquation(type, supertype, nodeToCheck);
   }
 
+  public EquationManager getMaster() {
+    return myTypeChecker.getMaster(this);
+  }
 }

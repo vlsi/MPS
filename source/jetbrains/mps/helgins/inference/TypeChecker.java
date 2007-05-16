@@ -458,6 +458,15 @@ public class TypeChecker {
     return myNodesBeingChecked.contains(node);
   }
 
+  public EquationManager getMaster(EquationManager equationManager) {
+    int i = myEquationManagersStack.indexOf(equationManager);
+    if (i > 0) {
+      return myEquationManagersStack.get(i-1);
+    } else {
+      return null;
+    }
+  }
+
   private static class MyReadAccessListener implements INodeReadAccessListener {
     protected HashSet<SNode> myNodesToDependOn = new HashSet<SNode>();
     private final Object myLock = new Object();
