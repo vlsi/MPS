@@ -35,10 +35,6 @@ public class RulesFunctions_Collections {
     }
     return null;
   }
-  public static SNode tryObtain_Sequence_elementType(SNode expression) {
-    SNode sequenceType = TypeUtil_Collections.coerceTo_SequenceType(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(expression));
-    return SLinkOperations.getTarget(sequenceType, "elementType", true);
-  }
   public static SNode get_inputListType_elementType(SNode op) {
     SNode listType = RulesFunctions_Collections.get_inputListType(op);
     return SLinkOperations.getTarget(listType, "elementType", true);
