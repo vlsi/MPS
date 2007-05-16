@@ -6,9 +6,9 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.RulesUtil;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_65;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_69;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_66;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_70;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -23,8 +23,8 @@ public class typeOf_Model_RootsIncludingImportedOperation_InferenceRule implemen
 
   public void applyRule(SNode argument) {
     RulesUtil.checkAppliedCorrectly_generic(argument);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_65().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "scope", true)), new QuotationClass_66().createNode(), SLinkOperations.getTarget(argument, "scope", true));
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_69().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "scope", true)), new QuotationClass_70().createNode(), SLinkOperations.getTarget(argument, "scope", true));
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.Model_RootsIncludingImportedOperation";

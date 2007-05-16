@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.RulesUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_69;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_73;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -29,7 +29,7 @@ public class typeOf_Node_GetAdapterOperation_InferenceRule implements InferenceR
       TypeChecker.getInstance().getRuntimeSupport().givetype(RulesUtil.get_AdapterClassType_for_Concept(concept), argument);
     } else 
     {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_69().createNode(), argument);
+      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_73().createNode(), argument);
     }
   }
   public String getApplicableConceptFQName() {
