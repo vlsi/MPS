@@ -4,15 +4,14 @@ package treepath_dom;
 
 import ypath.util.TreePath;
 import org.w3c.dom.Node;
-import ypath.util.xml.NodeListIterableAdapter;
+import ypath.util.IFilter;
+import org.w3c.dom.Element;
+import org.w3c.dom.Attr;
 
 public class DOM extends TreePath<Node> {
 
   public Node parent(Node node) {
     return DOM.Parent.parent(node);
-  }
-  public Iterable<Node> children(Node n) {
-    return DOM.Children.children(n);
   }
   private static class Parent {
 
@@ -37,9 +36,33 @@ public class DOM extends TreePath<Node> {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
     }
+}
+  public static class ELEMENT_NodeKindTrigger implements IFilter<Node> {
 
-    public static Iterable<Node> children(Node node) {
-      return new NodeListIterableAdapter(node.getChildNodes());
+    /* package */Object _enclosingClass;
+    /* package */Object _closureContext;
+
+    public  ELEMENT_NodeKindTrigger(Object enclosingClass, Object closureContext) {
+      this._enclosingClass = enclosingClass;
+      this._closureContext = (Object)closureContext;
+    }
+
+    public boolean accept(Node e) {
+      return e instanceof Element;
+    }
+}
+  public static class ATTR_NodeKindTrigger implements IFilter<Node> {
+
+    /* package */Object _enclosingClass;
+    /* package */Object _closureContext;
+
+    public  ATTR_NodeKindTrigger(Object enclosingClass, Object closureContext) {
+      this._enclosingClass = enclosingClass;
+      this._closureContext = (Object)closureContext;
+    }
+
+    public boolean accept(Node a) {
+      return a instanceof Attr;
     }
 }
 

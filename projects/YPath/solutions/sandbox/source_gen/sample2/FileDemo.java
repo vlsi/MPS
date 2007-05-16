@@ -7,7 +7,6 @@ import java.io.File;
 import java.util.Arrays;
 import ypath.util.TreeTraversalFactory;
 import sample2.File_TreePath;
-import sample2.TreePath_nodeKind_1172248995401;
 import sample2.WhereFilter_1172249139028;
 import java.util.List;
 import java.util.ArrayList;
@@ -20,10 +19,10 @@ public class FileDemo {
   public static void main(String[] args) {
     zClosureContext _zClosureContext = new zClosureContext();
     _zClosureContext.f = new File(Arrays.asList(args).get(0));
-    for(File dir : TreeTraversalFactory.Filter(TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new File_TreePath().startTraversal(_zClosureContext.f), TreeTraversalFactory.Axis("DESCENDANTS")), new TreePath_nodeKind_1172248995401()), new WhereFilter_1172249139028(null, _zClosureContext))) {
+    for(File dir : TreeTraversalFactory.Filter(TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new File_TreePath().startTraversal(_zClosureContext.f), TreeTraversalFactory.Axis("DESCENDANTS")), new File_TreePath.DIR_NodeKindTrigger(null, null)), new WhereFilter_1172249139028(null, _zClosureContext))) {
       System.out.println(dir);
     }
-    for(File d : TreeTraversalFactory.Filter(new File_TreePath().startTraversal(_zClosureContext.f), new TreePath_nodeKind_1172248995401())) {
+    for(File d : TreeTraversalFactory.Filter(new File_TreePath().startTraversal(_zClosureContext.f), new File_TreePath.DIR_NodeKindTrigger(null, null))) {
       System.out.println("Is a directory");
     }
     List<File> listOfFiles = new ArrayList();
@@ -32,13 +31,13 @@ public class FileDemo {
     for(File d : TreeTraversalFactory.Traverse(new File_TreePath().startTraversal(listOfFiles), TreeTraversalFactory.Axis(">"))) {
       System.out.println(d);
     }
-    for(File d : TreeTraversalFactory.Filter(new File_TreePath().startTraversal(listOfFiles), new TreePath_nodeKind_1172248995401())) {
+    for(File d : TreeTraversalFactory.Filter(new File_TreePath().startTraversal(listOfFiles), new File_TreePath.DIR_NodeKindTrigger(null, null))) {
       System.out.println("Is a directory");
     }
     Iterable<File> sequenceOfFiles = new SequenceWithSupplier<File>(new zValueSupplier(null, _zClosureContext));
-    for(File d : TreeTraversalFactory.Filter(new File_TreePath().startTraversal(sequenceOfFiles), new TreePath_nodeKind_1172248995401())) {
+    for(File d : TreeTraversalFactory.Filter(new File_TreePath().startTraversal(sequenceOfFiles), new File_TreePath.DIR_NodeKindTrigger(null, null))) {
       System.out.println("Is a directory too");
     }
-    ITreeTraversal<File> foo = TreeTraversalFactory.Filter(new File_TreePath().startTraversal(_zClosureContext.f), new TreePath_nodeKind_1172248995401());
+    ITreeTraversal<File> foo = TreeTraversalFactory.Filter(new File_TreePath().startTraversal(_zClosureContext.f), new File_TreePath.DIR_NodeKindTrigger(null, null));
   }
 }

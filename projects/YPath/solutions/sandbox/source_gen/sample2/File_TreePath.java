@@ -4,6 +4,7 @@ package sample2;
 
 import ypath.util.TreePath;
 import java.io.File;
+import ypath.util.IFilter;
 
 public class File_TreePath extends TreePath<File> {
 
@@ -39,6 +40,34 @@ public class File_TreePath extends TreePath<File> {
 
     public static File[] childrenArray(File n) {
       return n.listFiles();
+    }
+}
+  public static class FILE_NodeKindTrigger implements IFilter<File> {
+
+    /* package */Object _enclosingClass;
+    /* package */Object _closureContext;
+
+    public  FILE_NodeKindTrigger(Object enclosingClass, Object closureContext) {
+      this._enclosingClass = enclosingClass;
+      this._closureContext = (Object)closureContext;
+    }
+
+    public boolean accept(File f) {
+      return f.isFile();
+    }
+}
+  public static class DIR_NodeKindTrigger implements IFilter<File> {
+
+    /* package */Object _enclosingClass;
+    /* package */Object _closureContext;
+
+    public  DIR_NodeKindTrigger(Object enclosingClass, Object closureContext) {
+      this._enclosingClass = enclosingClass;
+      this._closureContext = (Object)closureContext;
+    }
+
+    public boolean accept(File f) {
+      return f.isDirectory();
     }
 }
 
