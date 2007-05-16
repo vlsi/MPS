@@ -20,8 +20,8 @@
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1178881292950" />
               <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178881270984">
                 <node role="leftExpression" type="jetbrains.mps.ide.scriptLanguage.MigrationScriptPart_node" id="1178881268523" />
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1178881289893">
-                  <link role="link" targetNodeId="1.1176734461230" />
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1179303871615">
+                  <link role="link" targetNodeId="1.1179235945873" />
                 </node>
               </node>
             </node>
@@ -38,8 +38,8 @@
               </node>
               <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178881635226">
                 <node role="leftExpression" type="jetbrains.mps.ide.scriptLanguage.MigrationScriptPart_node" id="1178881633458" />
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1178881637763">
-                  <link role="link" targetNodeId="1.1168881500048" />
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1179303876648">
+                  <link role="link" targetNodeId="1.1179236289453" />
                 </node>
               </node>
             </node>
@@ -65,8 +65,8 @@
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178881665234">
               <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178881656929">
                 <node role="leftExpression" type="jetbrains.mps.ide.scriptLanguage.MigrationScriptPart_node" id="1178881655445" />
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1178881663184">
-                  <link role="link" targetNodeId="1.1176734461230" />
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1179305171621">
+                  <link role="link" targetNodeId="1.1179235945873" />
                 </node>
               </node>
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Link_SetTargetOperation" id="1178881666101">
@@ -129,8 +129,8 @@
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1178882307075" />
               <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178882299442">
                 <node role="leftExpression" type="jetbrains.mps.ide.scriptLanguage.MigrationScriptPart_node" id="1178882298113" />
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1178882305177">
-                  <link role="link" targetNodeId="1.1176741601335" />
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1179236109758">
+                  <link role="link" targetNodeId="1.1179235945873" />
                 </node>
               </node>
             </node>
@@ -147,8 +147,8 @@
               </node>
               <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178882322139">
                 <node role="leftExpression" type="jetbrains.mps.ide.scriptLanguage.MigrationScriptPart_node" id="1178882322140" />
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1178882371323">
-                  <link role="link" targetNodeId="1.1168428628024" />
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1179236347881">
+                  <link role="link" targetNodeId="1.1179236289453" />
                 </node>
               </node>
             </node>
@@ -174,8 +174,8 @@
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178882322152">
               <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178882322153">
                 <node role="leftExpression" type="jetbrains.mps.ide.scriptLanguage.MigrationScriptPart_node" id="1178882322154" />
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1178882351240">
-                  <link role="link" targetNodeId="1.1176741601335" />
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1179236114690">
+                  <link role="link" targetNodeId="1.1179235945873" />
                 </node>
               </node>
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Link_SetTargetOperation" id="1178882322156">

@@ -1095,8 +1095,8 @@
                                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.ClosureParameterReference" id="1178975709865">
                                   <link role="closureParameter" targetNodeId="1178975709857" resolveInfo="it" />
                                 </node>
-                                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1178975709866">
-                                  <link role="link" targetNodeId="1.1176734461230" />
+                                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1179303835781">
+                                  <link role="link" targetNodeId="1.1179235945873" />
                                 </node>
                               </node>
                               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsNotNullOperation" id="1178975709867" />
@@ -1109,8 +1109,8 @@
                                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.ClosureParameterReference" id="1178975709873">
                                         <link role="closureParameter" targetNodeId="1178975709857" resolveInfo="it" />
                                       </node>
-                                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1178975709874">
-                                        <link role="link" targetNodeId="1.1176734461230" />
+                                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1179303831937">
+                                        <link role="link" targetNodeId="1.1179235945873" />
                                       </node>
                                     </node>
                                     <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1178975709875">
@@ -1131,8 +1131,8 @@
                                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.ClosureParameterReference" id="1178975709882">
                                         <link role="closureParameter" targetNodeId="1178975709857" resolveInfo="it" />
                                       </node>
-                                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1178975709883">
-                                        <link role="link" targetNodeId="1.1168881500048" />
+                                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1179303827981">
+                                        <link role="link" targetNodeId="1.1179236289453" />
                                       </node>
                                     </node>
                                     <node role="lValue" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1178975709884">
