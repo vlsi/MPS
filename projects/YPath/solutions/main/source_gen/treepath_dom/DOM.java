@@ -9,10 +9,10 @@ import ypath.util.xml.NodeListIterableAdapter;
 public class DOM extends TreePath<Node> {
 
   public Node parent(Node node) {
-    return Parent.parent(node);
+    return DOM.Parent.parent(node);
   }
   public Iterable<Node> children(Node n) {
-    return Children.children(n);
+    return DOM.Children.children(n);
   }
   private static class Parent {
 
