@@ -5,8 +5,7 @@ package jetbrains.mps.regexp.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.regexp.helgins.QuotationClass_6;
+import jetbrains.mps.regexp.helgins.QuotationClass_7;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -14,20 +13,20 @@ import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class FindMatchStatement_InferenceRule implements InferenceRule_Runtime {
+public class MatchRegexpExpression_InferenceRule implements InferenceRule_Runtime {
 
-  public  FindMatchStatement_InferenceRule() {
+  public  MatchRegexpExpression_InferenceRule() {
   }
 
   public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expr", true)), new QuotationClass_6().createNode(), SLinkOperations.getTarget(argument, "expr", true));
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_7().createNode(), argument);
   }
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.regexp.structure.FindMatchStatement";
+    return "jetbrains.mps.regexp.structure.MatchRegexpExpression";
   }
   public ApplicableNodeCondition getNodeCondition() {
     SModel model = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.regexp.helgins")).getSModel();
-    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1178179183606"));
+    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1179358916528"));
   }
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());

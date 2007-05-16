@@ -27,7 +27,6 @@ import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import java.util.regex.Pattern;
-import java.util.regex.Matcher;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.baseLanguage.BaseLanguageSearchUtil_new;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
@@ -186,14 +185,7 @@ public class QueriesGenerated {
           return true;
         }
         public boolean canSubstitute_internal(String pattern) {
-          {
-            Pattern _pattern_0 = Pattern.compile("(?:\\d)+", 0);
-            Matcher _matcher_0 = _pattern_0.matcher(pattern);
-            if(_matcher_0.matches()) {
-              return true;
-            }
-          }
-          return false;
+          return Pattern.compile("(?:\\d)+", 0).matcher(pattern).matches();
         }
       });
     }
@@ -238,14 +230,7 @@ public class QueriesGenerated {
           return true;
         }
         public boolean canSubstitute_internal(String pattern) {
-          {
-            Pattern _pattern_0 = Pattern.compile("(?:(?:(?:-)?))(?:(?:(?:\\d)+)(?:(?:\\.)(?:(?:\\d)*)))", 0);
-            Matcher _matcher_0 = _pattern_0.matcher(pattern);
-            if(_matcher_0.matches()) {
-              return true;
-            }
-          }
-          return false;
+          return Pattern.compile("(?:(?:(?:-)?))(?:(?:(?:\\d)+)(?:(?:\\.)(?:(?:\\d)*)))", 0).matcher(pattern).matches();
         }
       });
     }
