@@ -408,7 +408,8 @@ public class TypeChecker {
     if (node == null) return null;
     SNode containingRoot = node.getContainingRoot();
     if (containingRoot == null) return null;
-    if (!myCheckedRoots.contains(containingRoot)) {
+    if (!myCheckedRoots.contains(containingRoot) || NodeTypesComponentsRepository.getInstance().
+            getNodeTypesComponent(node.getContainingRoot()) == null) {
       checkRoot(containingRoot);
     }
     return getTypeDontCheck(node);
