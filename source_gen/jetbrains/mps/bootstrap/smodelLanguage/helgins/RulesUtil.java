@@ -9,9 +9,9 @@ import jetbrains.mps.helgins.inference.TypeChecker;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_50;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_51;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_52;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_53;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_54;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.DataTypeUtil;
 import jetbrains.mps.bootstrap.structureLanguage.structure.DataTypeDeclaration;
@@ -24,16 +24,16 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_55;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_56;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_53;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_54;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_57;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_58;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_55;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_56;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.zPredicate;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_59;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_57;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.zPredicate1;
 
 public class RulesUtil {
@@ -58,14 +58,14 @@ public class RulesUtil {
     // ===========
     if(SConceptPropertyOperations.getBoolean(op, "applicable_to_model")) {
       SNode leftType = RulesUtil.typeOf_leftExpression(op);
-      if(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new QuotationClass_52().createNode())) {
+      if(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new QuotationClass_50().createNode())) {
         return true;
       }
       applicables.add("model");
     }
     if(SConceptPropertyOperations.getBoolean(op, "applicable_to_concept")) {
       SNode leftType = RulesUtil.typeOf_leftExpression(op);
-      if(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new QuotationClass_53().createNode())) {
+      if(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new QuotationClass_51().createNode())) {
         return true;
       }
       applicables.add("concept");
@@ -73,7 +73,7 @@ public class RulesUtil {
     if(SConceptPropertyOperations.getBoolean(op, "applicable_to_node")) {
       // todo: get type of left expression and try to 'adapt' to snode
       SNode leftType = RulesUtil.typeOf_leftExpression(op);
-      if(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new QuotationClass_54().createNode())) {
+      if(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new QuotationClass_52().createNode())) {
         return true;
       }
       applicables.add("node");
@@ -216,22 +216,22 @@ public class RulesUtil {
   }
   public static SNode get_inputNodeType(SNode op) {
     SNode inputNodeConcept = RulesUtil.get_inputNodeConcept(op);
-    SNode inputNodeType = new QuotationClass_55().createNode(inputNodeConcept);
+    SNode inputNodeType = new QuotationClass_53().createNode(inputNodeConcept);
     return inputNodeType;
   }
   public static SNode get_AdapterClassType_for_Concept(SNode concept) {
     if(concept == null) {
-      return new QuotationClass_56().createNode();
+      return new QuotationClass_54().createNode();
     }
     String adapterClassFqName = NameUtil.nodeFQName(concept);
     Object adapterClassAdapter = SModelUtil_new.findNodeByFQName(adapterClassFqName, Classifier.class, GlobalScope.getInstance());
     SNode adapterClass = BaseAdapter.fromAdapter((INodeAdapter)adapterClassAdapter);
-    SNode adapterClassType = SModelOperations.createNewNode(SNodeOperations.getModel(new QuotationClass_57().createNode()), "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+    SNode adapterClassType = SModelOperations.createNewNode(SNodeOperations.getModel(new QuotationClass_55().createNode()), "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(adapterClassType, "classifier", adapterClass, false);
     return adapterClassType;
   }
   public static SNode get_SNodeType_fromOpParameter(SNode op) {
-    SNode type = new QuotationClass_58().createNode();
+    SNode type = new QuotationClass_56().createNode();
     SNode parm = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(op, "parameter", true), new zPredicate(null, null)));
     if(parm != null) {
       SLinkOperations.setTarget(type, "concept", SLinkOperations.getTarget(parm, "concept", false), false);
@@ -239,7 +239,7 @@ public class RulesUtil {
     return type;
   }
   public static SNode get_SNodeListType_fromOpParameter(SNode op) {
-    SNode type = new QuotationClass_59().createNode();
+    SNode type = new QuotationClass_57().createNode();
     SNode parm = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(op, "parameter", true), new zPredicate1(null, null)));
     if(parm != null) {
       SLinkOperations.setTarget(type, "elementConcept", SLinkOperations.getTarget(parm, "concept", false), false);
