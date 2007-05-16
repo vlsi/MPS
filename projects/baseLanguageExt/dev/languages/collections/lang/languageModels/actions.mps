@@ -34,10 +34,12 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1174260182949">
               <property name="name" value="sequenceType" />
               <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1174260182950" />
-              <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1179173012060">
-                <link role="baseMethodDeclaration" targetNodeId="10.1179160336886" />
-                <link role="classConcept" targetNodeId="10.1179160244196" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179173015425">
+              <node role="initializer" type="jetbrains.mps.bootstrap.helgins.CoerceStrongExpression" id="1179274746760">
+                <node role="pattern" type="jetbrains.mps.bootstrap.helgins.ConceptReference" id="1179274759357">
+                  <property name="name" value="v1" />
+                  <link role="concept" targetNodeId="1.1151689724996" />
+                </node>
+                <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179274756461">
                   <link role="variableDeclaration" targetNodeId="1174260103020" resolveInfo="type" />
                 </node>
               </node>
@@ -555,10 +557,12 @@
                 <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1177414460091">
                   <node role="condition" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1177414483994">
                     <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1177414485051" />
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1179172946126">
-                      <link role="baseMethodDeclaration" targetNodeId="10.1179160336886" />
-                      <link role="classConcept" targetNodeId="10.1179160244196" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179172952682">
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.CoerceStrongExpression" id="1179274500777">
+                      <node role="pattern" type="jetbrains.mps.bootstrap.helgins.ConceptReference" id="1179274511955">
+                        <property name="name" value="v1" />
+                        <link role="concept" targetNodeId="1.1151689724996" />
+                      </node>
+                      <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179274504847">
                         <link role="variableDeclaration" targetNodeId="1177414439676" resolveInfo="leftType" />
                       </node>
                     </node>
@@ -579,13 +583,13 @@
                 <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1177414494034">
                   <node role="condition" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1177414503390">
                     <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1177414504276" />
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.CoerceExpression" id="1179192033804">
-                      <node role="pattern" type="jetbrains.mps.bootstrap.helgins.ConceptReference" id="1179192045611">
-                        <property name="name" value="notused" />
-                        <link role="concept" targetNodeId="1.1151688443754" />
-                      </node>
-                      <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179258082965">
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.CoerceStrongExpression" id="1179274378101">
+                      <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179274378099">
                         <link role="variableDeclaration" targetNodeId="1177414439676" resolveInfo="leftType" />
+                      </node>
+                      <node role="pattern" type="jetbrains.mps.bootstrap.helgins.ConceptReference" id="1179274378100">
+                        <property name="name" value="v2" />
+                        <link role="concept" targetNodeId="1.1151688443754" />
                       </node>
                     </node>
                   </node>
