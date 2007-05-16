@@ -41,11 +41,8 @@ public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule
     TypeChecker.getInstance().getRuntimeSupport().check(SLinkOperations.getTarget(argument, "body", true));
     // =============
     SNode expectedRetType = SLinkOperations.getTarget(argument, "returnType", true);
-    if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(expectedRetType), "jetbrains.mps.baseLanguage.structure.Type")) {
+    if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(expectedRetType), "jetbrains.mps.baseLanguage.structure.Type") || SNodeOperations.isInstanceOf(expectedRetType, "jetbrains.mps.baseLanguage.structure.VoidType")) {
       // actually - no return type
-      expectedRetType = null;
-    }
-    if(SNodeOperations.isInstanceOf(expectedRetType, "jetbrains.mps.baseLanguage.structure.VoidType")) {
       expectedRetType = null;
     }
     // =============

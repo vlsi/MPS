@@ -10,8 +10,8 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.helgins.QuotationClass_4;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.helgins.QuotationClass_4;
 import jetbrains.mps.baseLanguage.helgins.QuotationClass_5;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModelRepository;
@@ -28,7 +28,6 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
     SNode classifier = SLinkOperations.getTarget(type, "classifier", false);
     SModel runtimeTypesModel = TypeChecker.getInstance().getRuntimeTypesModel();
     List<SNode> result = new ArrayList<SNode>();
-    result.add(new QuotationClass_4().createNode());
     List<SNode> supertypes = new ArrayList<SNode>();
     if(SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
       SNode classConcept = classifier;
@@ -37,12 +36,15 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
       }
       supertypes.addAll(SLinkOperations.getTargets(classConcept, "implementedInterface", true));
       if(!((SLinkOperations.getTarget(classConcept, "extendedClass", false) == null))) {
-        supertypes.add(new QuotationClass_5().createNode(SLinkOperations.getTarget(classConcept, "extendedClass", false)));
+        supertypes.add(new QuotationClass_4().createNode(SLinkOperations.getTarget(classConcept, "extendedClass", false)));
       }
     }
     if(SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
       SNode interfaceConcept = classifier;
       supertypes.addAll(SLinkOperations.getTargets(interfaceConcept, "extendedInterface", true));
+    }
+    if(supertypes.isEmpty()) {
+      result.add(new QuotationClass_5().createNode());
     }
     for(SNode supertype : supertypes) {
       SNode supertypeCopy = SNodeOperations.copyNode(supertype, runtimeTypesModel);

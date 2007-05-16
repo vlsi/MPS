@@ -27,6 +27,7 @@ public class HUtil {
   public static IMatchingPattern createMatchingPatternByConceptFQName(final String conceptFQName) {
     return new IMatchingPattern() {
       public boolean match(SNode nodeToMatch) {
+        if (nodeToMatch == null) return false;
         return nodeToMatch.isInstanceOfConcept(conceptFQName, GlobalScope.getInstance());
       }
     };

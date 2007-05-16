@@ -10,6 +10,7 @@ import jetbrains.mps.formulaLanguage.structure.Expression;
 import jetbrains.mps.helgins.structure.*;
 import jetbrains.mps.helgins.inference.util.StructuralNodeSet;
 import jetbrains.mps.helgins.inference.util.StructuralNodeSetView;
+import jetbrains.mps.helgins.inference.util.StructuralNodeMap;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.patterns.util.MatchingUtil;
 import jetbrains.mps.patterns.util.IMatchModifier;
@@ -334,7 +335,7 @@ public class SubtypingManager {
 
     allTypes.addCollectionStructurally((Set<SNode>) types);
 
-    HashMap<SNode, StructuralNodeSet<Integer>> subTypesToSupertypes = new HashMap<SNode, StructuralNodeSet<Integer>>();
+    StructuralNodeMap<StructuralNodeSet<Integer>> subTypesToSupertypes = new StructuralNodeMap<StructuralNodeSet<Integer>>();
 
     Set<SNode> frontier = new HashSet<SNode>(types);
     Set<SNode> newFrontier = new HashSet<SNode>();
@@ -391,7 +392,7 @@ public class SubtypingManager {
     return result;
   }
 
-  private StructuralNodeSet leastCommonSupertypes(final SNode a, final SNode b, final Map<SNode, StructuralNodeSet<Integer>> subTypesToSuperTypes) {
+  private StructuralNodeSet leastCommonSupertypes(final SNode a, final SNode b, final StructuralNodeMap<StructuralNodeSet<Integer>> subTypesToSuperTypes) {
     // System.err.println("lcs inner, types are: " + PresentationManager.toString(a) + " , " + PresentationManager.toString(b));
     StructuralNodeSet result = new StructuralNodeSet();
     if (MatchingUtil.matchNodes(a,b)) {

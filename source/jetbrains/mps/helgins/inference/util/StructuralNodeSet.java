@@ -15,7 +15,7 @@ import java.util.*;
 public class StructuralNodeSet<T> implements Set<SNode> {
   protected Map<SNode, T> myNodes = new HashMap<SNode,T>();
   protected Set<SNode> myAbsentNodes = new HashSet<SNode>();
-  protected Map<SNode, T> myPresentNodes = new HashMap<SNode,T>();
+  protected Map<SNode, SNode> myRepresentatorsMap = new HashMap<SNode, SNode>();
 
   public StructuralNodeSet() {
 
@@ -24,7 +24,7 @@ public class StructuralNodeSet<T> implements Set<SNode> {
   public StructuralNodeSet(StructuralNodeSet<T> set) {
     myNodes = new HashMap<SNode, T>(set.myNodes);
     myAbsentNodes = new HashSet<SNode>(set.myAbsentNodes);
-    myPresentNodes = new HashMap<SNode, T>(set.myPresentNodes);
+    myRepresentatorsMap = new HashMap<SNode, SNode>(set.myRepresentatorsMap);
   }
 
   public StructuralNodeSet(Collection<? extends SNode> collection) {
@@ -35,10 +35,7 @@ public class StructuralNodeSet<T> implements Set<SNode> {
   }
 
   public boolean containsStructurally(SNode ourNode) {
-    if (myNodes.containsKey(ourNode)) {
-      return true;
-    }
-    if (myPresentNodes.containsKey(ourNode)) {
+    if (myNodes.containsKey(getRepresentator(ourNode))) {
       return true;
     }
     if (myAbsentNodes.contains(ourNode)) {
@@ -46,7 +43,7 @@ public class StructuralNodeSet<T> implements Set<SNode> {
     }
     for (SNode node : myNodes.keySet()) {
       if (MatchingUtil.matchNodes(node, ourNode)) {
-        myPresentNodes.put(ourNode, myNodes.get(node));
+        myRepresentatorsMap.put(ourNode, node);
         return true;
       }
     }
@@ -54,12 +51,16 @@ public class StructuralNodeSet<T> implements Set<SNode> {
     return false;
   }
 
+  public SNode getRepresentator(SNode node) {
+    return myRepresentatorsMap.get(node);
+  }
+
   public boolean removeStructurally(SNode ourNode) {
     if (!containsStructurally(ourNode)) return false;
     for (SNode node : new HashSet<SNode>(myNodes.keySet())) {
       if (MatchingUtil.matchNodes(node, ourNode)) {
         myNodes.remove(node);
-        myPresentNodes.remove(node);
+        myRepresentatorsMap.remove(node);
         myAbsentNodes.add(node);
       }
     }
@@ -69,6 +70,7 @@ public class StructuralNodeSet<T> implements Set<SNode> {
   public boolean addStructurally(SNode ourNode) {
     if (!containsStructurally(ourNode)) {
       myNodes.put(ourNode, null);
+      myRepresentatorsMap.put(ourNode, ourNode);
       myAbsentNodes.remove(ourNode);
       return true;
     }
@@ -87,37 +89,43 @@ public class StructuralNodeSet<T> implements Set<SNode> {
 
   public boolean addAllStructurally(StructuralNodeSet ourNodes) {
     boolean result = addCollectionStructurally((Collection<? extends SNode>) ourNodes);
-    for (SNode node : (Iterable<? extends SNode>) ourNodes.myPresentNodes.keySet()) {
-      myPresentNodes.put(node, null);
+    for (SNode node : (Iterable<? extends SNode>) ourNodes.myRepresentatorsMap.keySet()) {
+      SNode representator = (SNode) ourNodes.myRepresentatorsMap.get(node);
+      if (myRepresentatorsMap.get(node) == null) {
+        myRepresentatorsMap.put(node, myRepresentatorsMap.get(representator));
+      }
     }
     Set<SNode> nodes = new HashSet<SNode>(ourNodes.myAbsentNodes);
     nodes.removeAll(myNodes.keySet());
-    nodes.removeAll(myPresentNodes.keySet());
+    nodes.removeAll(myRepresentatorsMap.keySet());
     for (SNode node : nodes) {
       myAbsentNodes.add(node);
     }
     return result;
   }
 
-   public void putAllStructurally(StructuralNodeSet<T> ourNodes) {
+  public void putAllStructurally(StructuralNodeSet<T> ourNodes) {
     for (SNode ourNode : ourNodes) {
       putStructurally(ourNode, ourNodes.getTag(ourNode));
     }
-     myPresentNodes.putAll(ourNodes.myPresentNodes);
-     Set<SNode> nodes = new HashSet<SNode>(ourNodes.myAbsentNodes);
-     nodes.removeAll(myNodes.keySet());
-     nodes.removeAll(myPresentNodes.keySet());
-     for (SNode node : nodes) {
-       myAbsentNodes.add(node);
-     }
+    for (SNode node : (Iterable<? extends SNode>) ourNodes.myRepresentatorsMap.keySet()) {
+      SNode representator = ourNodes.myRepresentatorsMap.get(node);
+      if (myRepresentatorsMap.get(node) == null) {
+        myRepresentatorsMap.put(node, myRepresentatorsMap.get(representator));
+      }
+    }
+    Set<SNode> nodes = new HashSet<SNode>(ourNodes.myAbsentNodes);
+    nodes.removeAll(myNodes.keySet());
+    nodes.removeAll(myRepresentatorsMap.keySet());
+    for (SNode node : nodes) {
+      myAbsentNodes.add(node);
+    }
   }
 
   public T getTag(SNode ourNode) {
-    if (myNodes.containsKey(ourNode)) {
-      return myNodes.get(ourNode);
-    }
-    if (myPresentNodes.containsKey(ourNode)) {
-      return myPresentNodes.get(ourNode);
+    SNode representator = getRepresentator(ourNode);
+    if (myNodes.containsKey(representator)) {
+      return myNodes.get(representator);
     }
     if (myAbsentNodes.contains(ourNode)) {
       return null;
@@ -125,7 +133,7 @@ public class StructuralNodeSet<T> implements Set<SNode> {
     for (SNode node : myNodes.keySet()) {
       if (MatchingUtil.matchNodes(node, ourNode)) {
         T tag = myNodes.get(node);
-        myPresentNodes.put(ourNode, tag);
+        myRepresentatorsMap.put(ourNode, node);
         return tag;
       }
     }
@@ -137,8 +145,6 @@ public class StructuralNodeSet<T> implements Set<SNode> {
     if (!containsStructurally(ourNode)) {
       myNodes.put(ourNode, tag);
       myAbsentNodes.remove(ourNode);
-    } else {
-      myPresentNodes.put(ourNode, tag);
     }
   }
 
@@ -153,8 +159,8 @@ public class StructuralNodeSet<T> implements Set<SNode> {
 
   public void clear() {
     myNodes.clear();
-    myPresentNodes.clear();
     myAbsentNodes.clear();
+    myRepresentatorsMap.clear();
   }
 
   public boolean contains(Object o) {
@@ -205,8 +211,17 @@ public class StructuralNodeSet<T> implements Set<SNode> {
     for (SNode node : new HashSet<SNode>(myNodes.keySet())) {
       myNodes.put(node, tag);
     }
-    for (SNode node : new HashSet<SNode>(myPresentNodes.keySet())) {
-      myPresentNodes.put(node, tag);
+  }
+
+  public void addAndRewrite(SNode node) {
+    if (!containsStructurally(node)) {
+      myNodes.put(node, null);
+      myAbsentNodes.remove(node);
+    } else {
+      SNode key = getRepresentator(node);
+      T tag = myNodes.get(key);
+      myNodes.remove(key);
+      myNodes.put(node, tag);
     }
   }
 }
