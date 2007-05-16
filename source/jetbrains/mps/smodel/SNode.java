@@ -1052,6 +1052,15 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   @NotNull
   public SReference addReferent(@NotNull String role, SNode target) {
+//    //test
+//    if(role.equals("concept")) {
+//      if(target != null && target.getConceptFqName().equals("jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference")) {
+//        if(this.getConceptFqName().equals("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType")) {
+//          System.out.println("aaaaaa!");
+//        }
+//      }
+//    }
+//    //test
     SReference reference = SReference.newInstance(role, this, target);
     insertReferenceAt(myReferences == null ? 0 : myReferences.size(), reference);
     return reference;
