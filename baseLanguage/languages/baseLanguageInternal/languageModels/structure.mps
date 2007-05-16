@@ -53,6 +53,12 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1173996401517">
     <property name="name" value="InternalNewExpression" />
     <link role="extends" targetNodeId="2.1068499141036" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1179332974947">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="0..1" />
+      <property name="role" value="type" />
+      <link role="target" targetNodeId="2.1068431790189" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1173996588177">
       <property name="name" value="fqClassName" />
       <link role="dataType" targetNodeId="1.1082983041843" />
