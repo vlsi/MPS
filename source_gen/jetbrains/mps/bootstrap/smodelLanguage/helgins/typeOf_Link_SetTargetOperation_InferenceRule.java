@@ -45,6 +45,6 @@ public class typeOf_Link_SetTargetOperation_InferenceRule implements InferenceRu
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
   public boolean overrides() {
-    return false;
+    return true;
   }
 }

@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.RulesUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_28;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_14;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -28,7 +28,7 @@ public class typeof_Node_InsertPrevSiblingOperation_InferenceRule implements Inf
       if(!(!((TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter) == null)))) {
         TypeChecker.getInstance().reportTypeError(parameter, "no type");
       }
-      if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter), new QuotationClass_28().createNode()))) {
+      if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter), new QuotationClass_14().createNode()))) {
         TypeChecker.getInstance().reportTypeError(parameter, "incompatible type: snode expected");
       }
     }
@@ -44,6 +44,6 @@ public class typeof_Node_InsertPrevSiblingOperation_InferenceRule implements Inf
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
   public boolean overrides() {
-    return false;
+    return true;
   }
 }

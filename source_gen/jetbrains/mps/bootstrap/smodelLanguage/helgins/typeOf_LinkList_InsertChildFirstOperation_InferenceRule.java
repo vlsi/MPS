@@ -46,6 +46,6 @@ public class typeOf_LinkList_InsertChildFirstOperation_InferenceRule implements 
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
   public boolean overrides() {
-    return false;
+    return true;
   }
 }

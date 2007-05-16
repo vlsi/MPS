@@ -51,6 +51,6 @@ public class typeof_SPropertyAccess_InferenceRule implements InferenceRule_Runti
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
   public boolean overrides() {
-    return false;
+    return true;
   }
 }

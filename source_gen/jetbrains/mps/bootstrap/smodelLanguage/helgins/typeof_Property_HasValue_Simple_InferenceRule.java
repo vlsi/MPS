@@ -62,6 +62,6 @@ public class typeof_Property_HasValue_Simple_InferenceRule implements InferenceR
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
   public boolean overrides() {
-    return false;
+    return true;
   }
 }

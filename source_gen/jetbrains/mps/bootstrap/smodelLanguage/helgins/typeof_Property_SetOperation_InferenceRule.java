@@ -68,6 +68,6 @@ public class typeof_Property_SetOperation_InferenceRule implements InferenceRule
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
   public boolean overrides() {
-    return false;
+    return true;
   }
 }

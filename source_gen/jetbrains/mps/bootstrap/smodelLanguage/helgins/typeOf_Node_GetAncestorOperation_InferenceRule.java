@@ -34,6 +34,6 @@ public class typeOf_Node_GetAncestorOperation_InferenceRule implements Inference
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
   public boolean overrides() {
-    return false;
+    return true;
   }
 }

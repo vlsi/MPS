@@ -9,9 +9,9 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_32;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_33;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_34;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_17;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_18;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_19;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -43,13 +43,13 @@ public class typeof_SConceptPropertyAccess_InferenceRule implements InferenceRul
       RulesUtil.checkAssignableConcept(leftConcept, declaringConcept, argument, "operation is applied to wrong concept");
       // ==========
       if(SNodeOperations.isInstanceOf(conceptPropertyDecl, "jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration")) {
-        TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_32().createNode(), argument);
+        TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_17().createNode(), argument);
       } else 
       if(SNodeOperations.isInstanceOf(conceptPropertyDecl, "jetbrains.mps.bootstrap.structureLanguage.structure.IntegerConceptPropertyDeclaration")) {
-        TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_33().createNode(), argument);
+        TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_18().createNode(), argument);
       } else 
       if(SNodeOperations.isInstanceOf(conceptPropertyDecl, "jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptPropertyDeclaration")) {
-        TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_34().createNode(), argument);
+        TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_19().createNode(), argument);
       } else 
       {
         TypeChecker.getInstance().reportTypeError(argument, "unknown type of concept property: " + conceptPropertyDecl);
@@ -67,6 +67,6 @@ public class typeof_SConceptPropertyAccess_InferenceRule implements InferenceRul
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
   public boolean overrides() {
-    return false;
+    return true;
   }
 }

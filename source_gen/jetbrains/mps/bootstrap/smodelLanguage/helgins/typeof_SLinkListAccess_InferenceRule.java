@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_11;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_10;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -38,7 +38,7 @@ public class typeof_SLinkListAccess_InferenceRule implements InferenceRule_Runti
         TypeChecker.getInstance().reportTypeError(argument, "access to link '" + SPropertyOperations.getString(linkDecl, "role") + "' is not expected here");
       }
     }
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_11().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(argument, "link", false), "target", false)), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_10().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(argument, "link", false), "target", false)), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess";
@@ -51,6 +51,6 @@ public class typeof_SLinkListAccess_InferenceRule implements InferenceRule_Runti
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
   public boolean overrides() {
-    return false;
+    return true;
   }
 }

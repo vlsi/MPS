@@ -21,6 +21,7 @@ public class SNodeOperation extends BaseConcept {
   public static String CPR_Applicable_to_linkList = "applicable_to_linkList";
   public static String CPR_Applicable_to_concept = "applicable_to_concept";
   public static String CLNK_ApplicableParameter = "applicableParameter";
+  public static String CLNK_ReturnType = "returnType";
   public static String PARAMETER = "parameter";
 
   public  SNodeOperation(SNode node) {

@@ -31,6 +31,6 @@ public class typeOf_Link_DeleteChildOperation_InferenceRule implements Inference
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
   public boolean overrides() {
-    return false;
+    return true;
   }
 }

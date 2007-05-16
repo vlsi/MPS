@@ -4,8 +4,9 @@ package jetbrains.mps.bootstrap.smodelLanguage.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.RulesUtil;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_38;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_23;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
@@ -20,7 +21,8 @@ public class typeof_SConceptLinkAccess_InferenceRule implements InferenceRule_Ru
   }
 
   public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_38().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(argument, "conceptLinkDeclaration", false), "targetType", false)), argument);
+    RulesUtil.checkAppliedCorrectly_generic(argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_23().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(argument, "conceptLinkDeclaration", false), "targetType", false)), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptLinkAccess";
@@ -33,6 +35,6 @@ public class typeof_SConceptLinkAccess_InferenceRule implements InferenceRule_Ru
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
   public boolean overrides() {
-    return false;
+    return true;
   }
 }

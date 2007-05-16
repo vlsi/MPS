@@ -45,6 +45,6 @@ public class typeOf_LinkList_AddChildOperation_InferenceRule implements Inferenc
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
   public boolean overrides() {
-    return false;
+    return true;
   }
 }

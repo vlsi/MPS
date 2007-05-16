@@ -6,7 +6,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.RulesUtil;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_25;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_11;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
@@ -22,7 +22,7 @@ public class typeof_Node_InsertNewNextSiblingOperation_InferenceRule implements 
 
   public void applyRule(SNode argument) {
     RulesUtil.checkAppliedCorrectly_generic(argument);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_25().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_11().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_InsertNewNextSiblingOperation";
@@ -35,6 +35,6 @@ public class typeof_Node_InsertNewNextSiblingOperation_InferenceRule implements 
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
   public boolean overrides() {
-    return false;
+    return true;
   }
 }

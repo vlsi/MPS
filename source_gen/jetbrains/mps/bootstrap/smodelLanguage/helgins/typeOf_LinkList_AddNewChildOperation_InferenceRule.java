@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.RulesUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_64;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_48;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -33,7 +33,7 @@ public class typeOf_LinkList_AddNewChildOperation_InferenceRule implements Infer
         RulesUtil.checkAssignableConcept(parameterConcept, expectedConcept, argument, "incompatibel parameter concept");
       }
     }
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_64().createNode(resultConcept), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_48().createNode(resultConcept), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddNewChildOperation";
@@ -46,6 +46,6 @@ public class typeOf_LinkList_AddNewChildOperation_InferenceRule implements Infer
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
   public boolean overrides() {
-    return false;
+    return true;
   }
 }
