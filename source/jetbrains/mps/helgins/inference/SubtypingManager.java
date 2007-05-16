@@ -420,7 +420,7 @@ public class SubtypingManager {
     }
     StructuralNodeSet commonSupertypes = superTypesA;
     List<SNode> commonSupertypesSorted = new ArrayList<SNode>(commonSupertypes);
-    Collections.sort(commonSupertypesSorted, new Comparator<SNode>() {
+   /* Collections.sort(commonSupertypesSorted, new Comparator<SNode>() {
       public int compare(SNode o1, SNode o2) {
         Integer distA1 = subTypesToSuperTypes.get(a).getTag(o1);
         Integer distA2 = subTypesToSuperTypes.get(a).getTag(o2);
@@ -428,7 +428,7 @@ public class SubtypingManager {
         Integer distB2 = subTypesToSuperTypes.get(b).getTag(o2);
         return (distA1 + distB1) - (distA2 + distB2);
       }
-    });
+    });*/
 
     for (SNode commonSupertype : commonSupertypesSorted) {
       Set<SNode> superTypes = subTypesToSuperTypes.get(commonSupertype);
