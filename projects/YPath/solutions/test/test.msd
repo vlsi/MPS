@@ -5,7 +5,7 @@
   </models>
   <module>
     <moduleRoot path="${mps_home}\baseLanguage\ext\unitTest\unitTest.mpl" />
-    <moduleRoot path="${mps_home}\projects\YPath\solutions\main\main.msd" />
+    <moduleRoot path="${mps_home}\platform\webr\languages\xml\xml.mpl" />
   </module>
   <languages>
     <moduleRoot path="${mps_home}\projects\YPath\languages\ypath\ypath.mpl" />
