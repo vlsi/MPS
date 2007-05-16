@@ -254,6 +254,55 @@
             </node>
           </node>
         </node>
+        <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.SimpleRightTransformMenuPart" id="1179357720475">
+          <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_RightTransform_Handler" id="1179357720476">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179357720477">
+              <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1179357790223">
+                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1179357790224">
+                  <property name="name" value="matchRegexpExpression" />
+                  <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1179357790225">
+                    <link role="concept" targetNodeId="1.1179357154354" />
+                  </node>
+                  <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179357766636">
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_sourceNode" id="1179357765896" />
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_ReplaceWithNewOperation" id="1179357768841">
+                      <link role="concept" targetNodeId="1.1179357154354" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179357799384">
+                <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179357805245">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179357800077">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179357799385">
+                      <link role="variableDeclaration" targetNodeId="1179357790224" resolveInfo="matchRegexpExpression" />
+                    </node>
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1179357804566">
+                      <link role="link" targetNodeId="1.1179357286898" />
+                    </node>
+                  </node>
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Link_SetTargetOperation" id="1179357808704">
+                    <node role="parameter" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_sourceNode" id="1179357809775" />
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179357795388">
+                <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179357795389">
+                  <link role="variableDeclaration" targetNodeId="1179357790224" resolveInfo="matchRegexpExpression" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_RightTransform_String" id="1179357726915">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179357726916">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179357732016">
+                <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1179357732017">
+                  <property name="value" value="matches" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>

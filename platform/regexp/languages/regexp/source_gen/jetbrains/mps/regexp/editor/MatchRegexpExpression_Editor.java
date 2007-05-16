@@ -16,7 +16,7 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
-public class SplitExpression_Editor extends DefaultNodeEditor {
+public class MatchRegexpExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
@@ -30,10 +30,10 @@ public class SplitExpression_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createExprCell(context, node));
-    editorCell.addEditorCell(this.createConstantCell(context, node, "split with"));
+    editorCell.addEditorCell(this.createExpressionCell(context, node));
+    editorCell.addEditorCell(this.createConstantCell(context, node, "matches"));
     editorCell.addEditorCell(this.createRegexpCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175164439982");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1179357344403");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -46,11 +46,11 @@ public class SplitExpression_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175164452268");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1179357356391");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createExprCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createExpressionCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -63,17 +63,17 @@ public class SplitExpression_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175164450235");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1179357352405");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createExprCell(EditorContext context, SNode node) {
+  public EditorCell createExpressionCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("expr");
+    provider.setRole("expression");
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createExprCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.createExpressionCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if(attributeConcept != null) {
@@ -96,7 +96,7 @@ public class SplitExpression_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175164456786");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1179357385221");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
