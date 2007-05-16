@@ -154,22 +154,6 @@
           </node>
         </node>
       </node>
-      <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179324626372">
-        <node role="expression" type="jetbrains.mps.baseLanguage.TernaryOperatorExpression" id="1179324626452">
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.NewExpression" id="1179324742698">
-            <link role="baseMethodDeclaration" extResolveInfo="2.constructor [Classifier]Integer[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1179324748467">
-              <property name="value" value="3" />
-            </node>
-          </node>
-          <node role="ifFalse" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1179324756004">
-            <property name="value" value="2" />
-          </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1179324626373">
-            <property name="value" value="true" />
-          </node>
-        </node>
-      </node>
     </node>
     <node role="applicableNode" type="jetbrains.mps.bootstrap.helgins.ApplicableNodeCondition" id="1178810023128" />
   </node>
