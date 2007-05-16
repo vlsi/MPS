@@ -178,9 +178,9 @@ public class QueriesGenerated {
       result.add(new DefaultSimpleSubstituteAction(concept, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
 
         public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-          SNode boolConst = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
-          SPropertyOperations.set(boolConst, "value", "" + (Integer.parseInt(pattern)));
-          return boolConst;
+          SNode intConst = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
+          SPropertyOperations.set(intConst, "value", "" + (Integer.parseInt(pattern)));
+          return intConst;
         }
         public boolean hasSubstitute() {
           return true;
