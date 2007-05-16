@@ -1173,5 +1173,12 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1179358159391">
+    <property name="package" value="Regexps" />
+    <link role="conceptDeclaration" targetNodeId="1.1174482743037" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Error" id="1179358161315">
+      <property name="text" value="regexp" />
+    </node>
+  </node>
 </model>
 
