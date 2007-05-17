@@ -718,5 +718,27 @@
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179394818390" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1179420058058">
+    <link role="concept" targetNodeId="1.1168428709096" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1179420058059">
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179420058060">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179420068550">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179420129643">
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179420069505">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1179420068551" />
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1179420117256">
+                <link role="property" targetNodeId="2.1169194664001" />
+              </node>
+            </node>
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Property_SetOperation" id="1179420131084">
+              <node role="value" type="jetbrains.mps.baseLanguage.StringLiteral" id="1179420158139">
+                <property name="value" value="node" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
