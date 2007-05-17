@@ -174,7 +174,7 @@ public class SModelSearchUtil_new {
 
   private static class _ConceptHierarchyScope extends AbstractSearchScope implements IConceptHierarchyScope {
     private AbstractConceptDeclaration myConcept;
-    private List<AbstractConceptDeclaration> myConceptHierarchy;
+    private Set<AbstractConceptDeclaration> myConceptHierarchy;
 
     public _ConceptHierarchyScope(AbstractConceptDeclaration concept) {
       myConcept = concept;
@@ -196,8 +196,7 @@ public class SModelSearchUtil_new {
 
     private void ensureHierarchyInitialized() {
       if (myConceptHierarchy == null) {
-        myConceptHierarchy = new ArrayList<AbstractConceptDeclaration>();
-        myConceptHierarchy.addAll(SModelUtil_new.getConceptHierarchy(myConcept));
+        myConceptHierarchy = SModelUtil_new.getConceptHierarchy(myConcept);
       }
     }
   } // private static class _ConceptHierarchyScope

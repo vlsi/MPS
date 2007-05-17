@@ -3,7 +3,7 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
-  <maxImportIndex value="14" />
+  <maxImportIndex value="15" />
   <import index="1" modelUID="java.lang@java_stub" />
   <import index="3" modelUID="jetbrains.mps.smodel@java_stub" />
   <import index="6" modelUID="jetbrains.mps.baseLanguage.structure" />
@@ -11,6 +11,7 @@
   <import index="8" modelUID="jetbrains.mps.baseLanguage@java_stub" />
   <import index="13" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <import index="14" modelUID="jetbrains.mps.baseLanguage.structure@java_stub" />
+  <import index="15" modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1170371320095">
     <property name="name" value="smodel_test" />
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1170371357833">
@@ -2795,6 +2796,14 @@
             <node role="rValue" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1177013070918">
               <link role="variableDeclaration" targetNodeId="1177012865428" resolveInfo="interfaceConcept" />
             </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179442940009">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179442942304">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179442940010">
+              <link role="variableDeclaration" targetNodeId="1177012907562" resolveInfo="concept" />
+            </node>
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsNotNullOperation" id="1179443701897" />
           </node>
         </node>
       </node>

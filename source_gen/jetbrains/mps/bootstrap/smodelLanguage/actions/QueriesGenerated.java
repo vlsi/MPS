@@ -6,7 +6,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.actions.QueriesUtil;
+import jetbrains.mps.bootstrap.smodelLanguage.actions.ActionUtil_smodel;
+import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
@@ -21,24 +23,27 @@ public class QueriesGenerated {
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_SNodeOperation_1161715685433(SNode parentNode, IScope scope, IOperationContext operationContext) {
     SNode leftExpression = SLinkOperations.getTarget(parentNode, "leftExpression", true);
-    return QueriesUtil.isExpression_appropriateFor_ourOperations(leftExpression);
+    return ActionUtil_smodel.isExpression_appropriateFor_ourOperations(leftExpression);
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_SNodeOperation_1173979326981(SNode parentNode, IScope scope, IOperationContext operationContext) {
     SNode leftExpression = SLinkOperations.getTarget(parentNode, "leftExpression", true);
-    return QueriesUtil.isExpression_ofType_SNodeType(leftExpression);
+    SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(leftExpression), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
+    return nodeType != null;
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_SNodeOperation_1173980551143(SNode parentNode, IScope scope, IOperationContext operationContext) {
     SNode leftExpression = SLinkOperations.getTarget(parentNode, "leftExpression", true);
-    return QueriesUtil.isExpression_ofType_SNodeType(leftExpression);
+    SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(leftExpression), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
+    return nodeType != null;
   }
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1154624855279(SNode sourceNode, IScope scope, IOperationContext operationContext) {
-    return QueriesUtil.isExpression_appropriateFor_ourOperations(sourceNode);
+    return ActionUtil_smodel.isExpression_appropriateFor_ourOperations(sourceNode);
   }
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1154634535241(SNode sourceNode, IScope scope, IOperationContext operationContext) {
-    return QueriesUtil.isExpression_ofType_SNodeType(sourceNode);
+    SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(sourceNode), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), true);
+    return nodeType != null;
   }
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1154636612745(SNode sourceNode, IScope scope, IOperationContext operationContext) {
-    return QueriesUtil.isExpression_appropriateFor_SemanticDowncast(sourceNode);
+    return ActionUtil_smodel.isExpression_appropriateFor_SemanticDowncast(sourceNode);
   }
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_SNodeOperation_1154637518825(SNode sourceNode, IScope scope, IOperationContext operationContext) {
     boolean alreadyHasParms = SLinkOperations.getCount(sourceNode, "parameter") > 0;
