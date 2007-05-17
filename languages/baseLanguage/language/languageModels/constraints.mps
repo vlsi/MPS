@@ -1132,10 +1132,12 @@
                 <property name="value" value="." />
               </node>
             </node>
-            <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodCall" id="1178620658108">
-              <link role="baseMethodDeclaration" targetNodeId="1178620561746" resolveInfo="getQualifiedNameInAPackage" />
-              <node role="thisNode" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1178620655810">
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179419283718">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1178620655810">
                 <link role="variableDeclaration" targetNodeId="1178620630361" resolveInfo="parentClassifier" />
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_ConceptMethodCall" id="1179419283721">
+                <link role="conceptMethodDeclaration" targetNodeId="1178620561746" resolveInfo="getQualifiedNameInAPackage" />
               </node>
             </node>
           </node>
@@ -1184,10 +1186,12 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1179330481676">
-          <node role="expression" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodCall" id="1179330487466">
-            <link role="baseMethodDeclaration" targetNodeId="1178620561746" resolveInfo="getQualifiedNameInAPackage" />
-            <node role="thisNode" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179330483969">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179419285049">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179330483969">
               <link role="variableDeclaration" targetNodeId="1179330451704" resolveInfo="parentClassifier" />
+            </node>
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_ConceptMethodCall" id="1179419285052">
+              <link role="conceptMethodDeclaration" targetNodeId="1178620561746" resolveInfo="getQualifiedNameInAPackage" />
             </node>
           </node>
         </node>
