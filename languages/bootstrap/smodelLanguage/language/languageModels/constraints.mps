@@ -553,12 +553,14 @@
                   <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1179409792760">
                     <link role="elementConcept" targetNodeId="12.1177673300966" />
                   </node>
-                  <node role="initializer" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodCall" id="1179409828340">
-                    <link role="baseMethodDeclaration" targetNodeId="13.1178096836413" />
-                    <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptParameter_ReferentSearchScope_enclosingNode" id="1179410001386" />
-                    <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_scope" id="1179409937715" />
-                    <node role="thisNode" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179409822467">
+                  <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179419284895">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179409822467">
                       <link role="variableDeclaration" targetNodeId="1179409747477" resolveInfo="concept" />
+                    </node>
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_ConceptMethodCall" id="1179419284898">
+                      <link role="conceptMethodDeclaration" targetNodeId="13.1178096836413" />
+                      <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptParameter_ReferentSearchScope_enclosingNode" id="1179410001386" />
+                      <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_scope" id="1179409937715" />
                     </node>
                   </node>
                 </node>
