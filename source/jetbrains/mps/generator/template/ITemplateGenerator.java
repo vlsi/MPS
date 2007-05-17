@@ -94,6 +94,8 @@ public interface ITemplateGenerator extends ITemplateLanguageConstants {
 
   int getWarningCount();
 
+  void clearErrorsAndWarnings();
+
   AbstractNodeBuilderManager getNodeBuilderManager();
 
   void notifyBuilderCreated(INodeBuilder builder);

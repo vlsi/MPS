@@ -194,6 +194,7 @@ public class GenerationSession implements IGenerationSession {
       boolean hasWarnigns = generator.getWarningCount() > 0;
       status = new GenerationStatus(sourceModel, outputModel, context.getTraceMap(), wasErrors, hasWarnigns, false);
       addMessage(status.isError() ? MessageKind.WARNING : MessageKind.INFORMATION, "model \"" + sourceModel.getUID() + "\" has been generated " + (status.isError() ? "with errors" : "successfully"));
+//      generator.clearErrorsAndWarnings();
       generator.reset();
     } catch (GenerationCanceledException gce) {
       throw gce;//rethrow it for not to be caught in the last catch block

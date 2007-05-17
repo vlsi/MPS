@@ -130,13 +130,12 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     return myErrorsCount;
   }
 
-  public void setErrorCount(int errorCount) {
-    myErrorsCount = errorCount;
-  }
-
   public int getWarningCount() {
     return myWarningsCount;
   }
 
-
+  public void clearErrorsAndWarnings() {
+    myErrorsCount = 0;
+    myWarningsCount = 0;
+  }
 }
