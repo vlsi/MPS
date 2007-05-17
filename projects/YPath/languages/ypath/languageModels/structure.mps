@@ -2,9 +2,11 @@
 <model name="ypath.structure">
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
-  <maxImportIndex value="2" />
+  <maxImportIndex value="4" />
   <import index="1" modelUID="jetbrains.mps.core.structure" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" />
+  <import index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
+  <import index="4" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1168428529658">
     <property name="name" value="TreePathType" />
     <link role="extends" targetNodeId="2.1068431790189" />
@@ -14,8 +16,8 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1168428551640">
       <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
       <property name="role" value="nodeType" />
+      <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1068431790189" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1177410640776">
@@ -38,8 +40,8 @@
     <link role="extends" targetNodeId="2.1152728232947" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1168428725556">
       <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
       <property name="role" value="parameter" />
+      <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1168428709096" resolveInfo="LambdaParameter" />
     </node>
   </node>
@@ -59,49 +61,49 @@
     <property name="name" value="TraversalAxis" />
     <link role="memberDataType" targetNodeId="1.1082983041843" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1168457888646">
-      <property name="name" value="DESCENDANTS" />
-      <property name="externalValue" value="descendants" />
       <property name="internalValue" value="DESCENDANTS" />
+      <property name="externalValue" value="descendants" />
+      <property name="name" value="DESCENDANTS" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1169310540136">
-      <property name="name" value="SELF_DESCENDANTS" />
-      <property name="externalValue" value="self and descendants" />
       <property name="internalValue" value="SELF_DESCENDANTS" />
+      <property name="externalValue" value="self and descendants" />
+      <property name="name" value="SELF_DESCENDANTS" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1168458386233">
-      <property name="name" value="CHILDREN" />
-      <property name="externalValue" value="children" />
       <property name="internalValue" value="CHILDREN" />
+      <property name="externalValue" value="children" />
+      <property name="name" value="CHILDREN" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1168458451203">
-      <property name="name" value="ANCESTORS" />
-      <property name="externalValue" value="ancestors" />
       <property name="internalValue" value="ANCESTORS" />
+      <property name="externalValue" value="ancestors" />
+      <property name="name" value="ANCESTORS" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1169311161978">
-      <property name="name" value="SELF_ANCESTORS" />
-      <property name="externalValue" value="self and ancestors" />
       <property name="internalValue" value="SELF_ANCESTORS" />
+      <property name="externalValue" value="self and ancestors" />
+      <property name="name" value="SELF_ANCESTORS" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1168458468740">
-      <property name="name" value="FOLLOWING_SIBLINGS" />
-      <property name="externalValue" value="following siblings" />
       <property name="internalValue" value="FOLLOWING_SIBLINGS" />
+      <property name="externalValue" value="following siblings" />
+      <property name="name" value="FOLLOWING_SIBLINGS" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1169311210596">
-      <property name="name" value="SELF_FOLLOWING_SIBLINGS" />
-      <property name="externalValue" value="self and following siblings" />
       <property name="internalValue" value="SELF_FOLLOWING_SIBLINGS" />
+      <property name="externalValue" value="self and following siblings" />
+      <property name="name" value="SELF_FOLLOWING_SIBLINGS" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1168458479924">
-      <property name="name" value="PRECEDING_SIBLINGS" />
-      <property name="externalValue" value="preceding siblings" />
       <property name="internalValue" value="PRECEDING_SIBLINGS" />
+      <property name="externalValue" value="preceding siblings" />
+      <property name="name" value="PRECEDING_SIBLINGS" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1169311237643">
-      <property name="name" value="PRECEDING_SIBLINGS_SELF" />
-      <property name="externalValue" value="preceding siblings and self" />
       <property name="internalValue" value="PRECEDING_SIBLINGS_SELF" />
+      <property name="externalValue" value="preceding siblings and self" />
+      <property name="name" value="PRECEDING_SIBLINGS_SELF" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1168468602533">
@@ -109,14 +111,14 @@
     <link role="extends" targetNodeId="2.1068431790191" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1168468622494">
       <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
       <property name="role" value="expression" />
+      <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1068431790191" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1168468671991">
       <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
       <property name="role" value="operation" />
+      <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1168468681335" resolveInfo="TreePathOperation" />
     </node>
   </node>
@@ -140,8 +142,8 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1168526996090">
       <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
       <property name="role" value="fromExpression" />
+      <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1068431790191" />
     </node>
   </node>
@@ -174,8 +176,8 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1168527754706">
       <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
       <property name="role" value="whereBlock" />
+      <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1168527733553" resolveInfo="WhereBlock" />
     </node>
   </node>
@@ -188,14 +190,14 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1168879975004">
-    <property name="name" value="TreePathAspect" />
-    <property name="iconPath" value="${language_descriptor}\icons\treepath.png" />
     <property name="rootable" value="true" />
+    <property name="iconPath" value="${language_descriptor}\icons\treepath.png" />
+    <property name="name" value="TreePathAspect" />
     <link role="extends" targetNodeId="1.1133920641626" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1172240749936">
       <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="0..n" />
       <property name="role" value="nodeKinds" />
+      <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1172240563057" resolveInfo="TreeNodeKind" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1178984019279">
@@ -213,13 +215,13 @@
     <link role="extends" targetNodeId="2.1068431790191" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1168890213786">
       <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
       <property name="role" value="expression" />
+      <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1068431790191" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1168890235188">
-      <property name="sourceCardinality" value="1" />
       <property name="role" value="treepathAspect" />
+      <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1168879975004" resolveInfo="TreePathAspect" />
     </node>
   </node>
@@ -231,14 +233,14 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1172240613817">
       <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
       <property name="role" value="trigger" />
+      <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1172243209751" resolveInfo="KindBlock" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1175162866857">
       <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="0..n" />
       <property name="role" value="properties" />
+      <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1175160940972" resolveInfo="KindProperty" />
     </node>
   </node>
@@ -246,14 +248,14 @@
     <property name="name" value="MatchKindOperation" />
     <link role="extends" targetNodeId="1168468681335" resolveInfo="TreePathOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1172242802393">
-      <property name="sourceCardinality" value="0..1" />
       <property name="role" value="nodeKind" />
+      <property name="sourceCardinality" value="0..1" />
       <link role="target" targetNodeId="1172240563057" resolveInfo="TreeNodeKind" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1175165403535">
       <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
       <property name="role" value="nodeKindOccurrence" />
+      <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1175165417012" resolveInfo="TreeNodeKindOccurrence" />
     </node>
   </node>
@@ -270,8 +272,8 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1175160966691">
       <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
       <property name="role" value="getter" />
+      <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1175161007000" resolveInfo="PropertyGetter" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1175161056224">
@@ -299,8 +301,8 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1175170018451">
       <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
       <property name="role" value="matchExpression" />
+      <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1068431790191" />
     </node>
   </node>
@@ -309,8 +311,8 @@
     <link role="extends" targetNodeId="1168468681335" resolveInfo="TreePathOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1175879605156">
       <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
       <property name="role" value="matchExpression" />
+      <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1068431790191" />
     </node>
   </node>
@@ -318,26 +320,26 @@
     <property name="name" value="TreePath" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1179236289453">
       <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
       <property name="role" value="nodeType" />
+      <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1068431790189" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1179235945873">
       <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
       <property name="role" value="treePathType" />
+      <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1168428529658" resolveInfo="TreePathType" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1179298507919">
       <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
       <property name="role" value="parentBlock" />
+      <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1168428668253" resolveInfo="ParentBlock" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1179298620994">
       <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
       <property name="role" value="childrenBlock" />
+      <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1168428680123" resolveInfo="ChildrenBlock" />
     </node>
   </node>

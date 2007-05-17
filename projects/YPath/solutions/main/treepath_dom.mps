@@ -164,6 +164,9 @@
       <node role="nodeType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1178882722896">
         <link role="classifier" extResolveInfo="1.[Classifier]Node" />
       </node>
+      <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179351339513">
+        <link role="classifier" extResolveInfo="1.[Classifier]Node" />
+      </node>
     </node>
   </node>
 </model>

@@ -7,7 +7,6 @@
   <import index="2" modelUID="org.w3c.dom@java_stub" />
   <import index="3" modelUID="javax.xml.parsers@java_stub" />
   <import index="4" modelUID="java.io@java_stub" />
-  <import index="5" modelUID="ypath.util.xml@java_stub" />
   <import index="7" modelUID="treepath_dom" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1169047366677">
     <property name="name" value="XmlDemo" />
