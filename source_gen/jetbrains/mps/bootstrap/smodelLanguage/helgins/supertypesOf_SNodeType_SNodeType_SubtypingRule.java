@@ -9,7 +9,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_38;
+import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
+import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_34;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_35;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -17,16 +20,28 @@ import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class supertypesOf_SNodeType_SConceptType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
+public class supertypesOf_SNodeType_SNodeType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
-  public  supertypesOf_SNodeType_SConceptType_SubtypingRule() {
+  public  supertypesOf_SNodeType_SNodeType_SubtypingRule() {
   }
 
   public List<SNode> getSubOrSuperTypes(SNode type) {
     List<SNode> list = ListOperations.createList(new SNode[]{});
     SNode concept = SLinkOperations.getTarget(type, "concept", false);
-    if(SConceptOperations.isAssignableFrom(SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration"), concept)) {
-      ListOperations.addElement(list, new QuotationClass_38().createNode());
+    if(concept != null) {
+      List<SNode> superConcepts = SConceptOperations.getDirectSuperConcepts(concept);
+      {
+        ICursor<SNode> _zCursor1 = CursorFactory.createCursor(superConcepts);
+        try {
+          while(_zCursor1.moveToNext()) {
+            SNode superConcept = _zCursor1.getCurrent();
+            ListOperations.addElement(list, new QuotationClass_34().createNode(superConcept));
+          }
+        } finally {
+          _zCursor1.release();
+        }
+      }
+      ListOperations.addElement(list, new QuotationClass_35().createNode());
     }
     return list;
   }
@@ -35,7 +50,7 @@ public class supertypesOf_SNodeType_SConceptType_SubtypingRule extends Subtyping
   }
   public ApplicableNodeCondition getNodeCondition() {
     SModel model = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.bootstrap.smodelLanguage.helgins")).getSModel();
-    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1178287490254"));
+    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1178287490251"));
   }
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
