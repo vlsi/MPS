@@ -197,7 +197,7 @@ public class SModelSearchUtil_new {
     private void ensureHierarchyInitialized() {
       if (myConceptHierarchy == null) {
         myConceptHierarchy = new ArrayList<AbstractConceptDeclaration>();
-        myConceptHierarchy.addAll(SModelUtil_new.getImplementedAndExtendedConcepts(myConcept));
+        myConceptHierarchy.addAll(SModelUtil_new.getConceptHierarchy(myConcept));
       }
     }
   } // private static class _ConceptHierarchyScope

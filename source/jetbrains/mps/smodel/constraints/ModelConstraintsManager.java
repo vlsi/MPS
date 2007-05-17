@@ -122,6 +122,7 @@ public class ModelConstraintsManager {
 
   public INodeReferentSetEventHandler getNodeReferentSetEventHandler(SNode node, String referentRole) {
     // todo: optimization needed?
+    // todo: hierarchy
     AbstractConceptDeclaration nodeConcept = node.getConceptDeclarationAdapter();
     if (nodeConcept instanceof ConceptDeclaration) {
       while (nodeConcept != null) {
