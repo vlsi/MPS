@@ -191,21 +191,22 @@ public class ModelConstraintsManager {
 
 //    System.out.println("find getter for <" + propertyName + "> in " + node.getDebugText());
 
-    String sourceConceptFqName = node.getNode().getConceptFqName();
-    String sourceKey = sourceConceptFqName + "#" + propertyName;
-
+    String nodeConceptFqName = node.getConceptFQName();
+    String originalKey = nodeConceptFqName + "#" + propertyName;
     if (isSetter) {
-      INodePropertySetter setter = myNodePropertySettersCache.get(sourceKey);
-      if (setter != null || myNodePropertySettersCache.containsKey(sourceKey)) return setter;
+      if(myNodePropertySettersCache.containsKey(originalKey)) {
+        return myNodePropertySettersCache.get(originalKey);
+      }
     } else {
-      INodePropertyGetter getter = myNodePropertyGettersCache.get(sourceKey);
-      if (getter != null || myNodePropertyGettersCache.containsKey(sourceKey)) return getter;
+      if(myNodePropertyGettersCache.containsKey(originalKey)) {
+        return myNodePropertyGettersCache.get(originalKey);
+      }
     }
 
-    AbstractConceptDeclaration abstractConcept = node.getConceptDeclarationAdapter();
-    ConceptDeclaration concreteConcept = (abstractConcept instanceof ConceptDeclaration) ? (ConceptDeclaration) abstractConcept : (ConceptDeclaration) null;
-    while (concreteConcept != null) {
-      String conceptFqName = NameUtil.nodeFQName(concreteConcept);
+    // find getter/setter and put to cache
+    Set<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptHierarchy(node.getConceptDeclarationAdapter());
+    for (AbstractConceptDeclaration concept : hierarchy) {
+      String conceptFqName = NameUtil.nodeFQName(concept);
       IModelConstraints result;
       if (isSetter) {
         result = myNodePropertySettersMap.get(conceptFqName + "#" + propertyName);
@@ -214,22 +215,20 @@ public class ModelConstraintsManager {
       }
       if (result != null) {
         if (isSetter) {
-          myNodePropertySettersCache.put(sourceKey, (INodePropertySetter) result);
+          myNodePropertySettersCache.put(originalKey, (INodePropertySetter) result);
         } else {
-          myNodePropertyGettersCache.put(sourceKey, (INodePropertyGetter) result);
+          myNodePropertyGettersCache.put(originalKey, (INodePropertyGetter) result);
         }
-
         return result;
       }
-      concreteConcept = concreteConcept.getExtends();
     }
 
+    // no setter/getter found
     if (isSetter) {
-      myNodePropertySettersCache.put(sourceKey, null);
+      myNodePropertySettersCache.put(originalKey, null);
     } else {
-      myNodePropertyGettersCache.put(sourceKey, null);
+      myNodePropertyGettersCache.put(originalKey, null);
     }
-
     return null;
   }
 
