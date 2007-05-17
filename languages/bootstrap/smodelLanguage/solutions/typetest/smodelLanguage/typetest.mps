@@ -2799,11 +2799,21 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179442940009">
-          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179442942304">
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179442940010">
-              <link role="variableDeclaration" targetNodeId="1177012907562" resolveInfo="concept" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179442940010">
+            <link role="variableDeclaration" targetNodeId="1177012907562" resolveInfo="concept" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179444780176">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179444819153">
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeTypeCastExpression" id="1179444782362">
+              <link role="concept" targetNodeId="13.1169125989551" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179444780177">
+                <link role="variableDeclaration" targetNodeId="1177012907562" resolveInfo="concept" />
+              </node>
             </node>
-            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsNotNullOperation" id="1179443701897" />
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1179444836120">
+              <link role="property" targetNodeId="7.1169194664001" />
+            </node>
           </node>
         </node>
       </node>

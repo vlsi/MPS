@@ -188,6 +188,7 @@
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1145405559673">
       <property name="actionsFactoryAspectId" value="Expression_NodeTypeCast" />
+      <property name="description" value="node type cast" />
       <link role="applicableConcept" targetNodeId="3.1068431790191" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionFunction" id="1154634535241">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1154634535242">
@@ -197,14 +198,14 @@
               <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1179444496151">
                 <link role="concept" targetNodeId="1.1138055754698" />
               </node>
-              <node role="initializer" type="jetbrains.mps.bootstrap.helgins.CoerceExpression" id="1179444496152">
-                <node role="pattern" type="jetbrains.mps.bootstrap.helgins.ConceptReference" id="1179444496153">
+              <node role="initializer" type="jetbrains.mps.bootstrap.helgins.CoerceStrongExpression" id="1179444682232">
+                <node role="nodeToCoerce" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179444682230">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_sourceNode" id="1179444682233" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.helgins.Node_TypeOperation" id="1179444682234" />
+                </node>
+                <node role="pattern" type="jetbrains.mps.bootstrap.helgins.ConceptReference" id="1179444682231">
                   <property name="name" value="v1" />
                   <link role="concept" targetNodeId="1.1138055754698" />
-                </node>
-                <node role="nodeToCoerce" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179444496154">
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_sourceNode" id="1179444502387" />
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.helgins.Node_TypeOperation" id="1179444496156" />
                 </node>
               </node>
             </node>
