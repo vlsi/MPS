@@ -11,8 +11,6 @@ import junit.framework.Assert;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import ypath.util.TreeTraversalFactory;
 import ypath.util.CompositeFilter;
-import treepath_dom.TreePath_nodeKind_1175164209844;
-import treepath_dom.TreePath_nodeKind_propertyMatcher_1175164263587;
 import java.io.InputStream;
 import java.io.ByteArrayInputStream;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -38,7 +36,7 @@ public class XMLTreeSimple_Test extends TestCase {
   }
   public void test_defautProperty() throws Exception {
     Document doc = this.parse(SIMPLE_TREE);
-    Assert.assertSame(SequenceOperations.getSize(TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS")), new CompositeFilter<Node>(new TreePath_nodeKind_1175164209844(), new TreePath_nodeKind_propertyMatcher_1175164263587("b3")))), 1);
+    Assert.assertSame(SequenceOperations.getSize(TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS")), new CompositeFilter<Node>(new DOM.ELEMENT_NodeKindTrigger(null, null), DOM.ELEMENT_tag_Property.getMatcher("b3")))), 1);
   }
   public Document parse(String xml) throws Exception {
     InputStream is = new ByteArrayInputStream(xml.getBytes());
