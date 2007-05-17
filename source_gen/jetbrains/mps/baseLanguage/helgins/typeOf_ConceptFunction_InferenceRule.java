@@ -75,12 +75,12 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
           _zCursor4.release();
         }
       }
-      if(leastCommonSupertype == null) {
-        leastCommonSupertype = expectedRetType;
-      }
     }
     // =============
-    if(!(noReturnExpected)) {
+    if(noReturnExpected) {
+      TypeChecker.getInstance().getRuntimeSupport().givetype(null, argument);
+    } else 
+    {
       // last expression statement can serve as return statement
       SNode lastStatement = SequenceOperations.getLast(SLinkOperations.getTargets(SLinkOperations.getTarget(argument, "body", true), "statement", true));
       if(SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
@@ -95,7 +95,12 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
         );
         TypeChecker.getInstance().reportTypeError(argument, "function should return " + whatExpected);
       }
-      TypeChecker.getInstance().getRuntimeSupport().givetype(leastCommonSupertype, argument);
+      if(leastCommonSupertype == null) {
+        TypeChecker.getInstance().getRuntimeSupport().givetype(expectedRetType, argument);
+      } else 
+      {
+        TypeChecker.getInstance().getRuntimeSupport().givetype(leastCommonSupertype, argument);
+      }
     }
   }
   public String getApplicableConceptFQName() {
