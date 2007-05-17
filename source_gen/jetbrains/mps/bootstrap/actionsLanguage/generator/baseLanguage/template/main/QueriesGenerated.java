@@ -154,6 +154,9 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1178541085974(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "type", true);
   }
+  public static SNode sourceNodeQuery_1179373799654(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "initializer", true);
+  }
   public static SNode sourceNodeQuery_1178541194458(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "initializerBlock", true), "body", true);
   }
