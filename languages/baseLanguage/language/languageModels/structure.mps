@@ -422,7 +422,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068580320020">
     <property name="name" value="IntegerConstant" />
-    <link role="extends" targetNodeId="1068431790191" />
+    <link role="extends" targetNodeId="1179362310214" resolveInfo="IntegerLiteral" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1120154379158">
       <property name="value" value="integer constant" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
@@ -2032,7 +2032,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1179360813171">
     <property name="name" value="HexIntegerLiteral" />
-    <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
+    <link role="extends" targetNodeId="1179362310214" resolveInfo="IntegerLiteral" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1179360856892">
       <property name="name" value="value" />
       <link role="dataType" targetNodeId="4.1082983041843" />
@@ -2040,6 +2040,13 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1179360836875">
       <property name="value" value="0x" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1179362310214">
+    <property name="name" value="IntegerLiteral" />
+    <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1179362320434">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" />
     </node>
   </node>
 </model>
