@@ -121,17 +121,25 @@ public class ModelConstraintsManager {
   }
 
   public INodeReferentSetEventHandler getNodeReferentSetEventHandler(SNode node, String referentRole) {
-    // todo: optimization needed?
-    // todo: hierarchy
-    AbstractConceptDeclaration nodeConcept = node.getConceptDeclarationAdapter();
-    if (nodeConcept instanceof ConceptDeclaration) {
-      while (nodeConcept != null) {
-        String conceptFqName = NameUtil.nodeFQName(nodeConcept);
-        INodeReferentSetEventHandler handler = myNodeReferentSetEventHandlersMap.get(conceptFqName + "#" + referentRole);
-        if (handler != null) return handler;
-        nodeConcept = ((ConceptDeclaration) nodeConcept).getExtends();
+    String nodeConceptFqName = node.getConceptFqName();
+    String originalKey = nodeConceptFqName + "#" + referentRole;
+    if (myNodeReferentSetEventHandlersMap.containsKey(originalKey)) {
+      return myNodeReferentSetEventHandlersMap.get(originalKey);
+    }
+
+    // find set-event-handler and put to cache
+    Set<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptHierarchy(node.getConceptDeclarationAdapter());
+    for (AbstractConceptDeclaration concept : hierarchy) {
+      String conceptFqName = NameUtil.nodeFQName(concept);
+      INodeReferentSetEventHandler result = myNodeReferentSetEventHandlersMap.get(conceptFqName + "#" + referentRole);
+      if (result != null) {
+        myNodeReferentSetEventHandlersMap.put(originalKey, result);
+        return result;
       }
     }
+
+    // no set-event-handler found
+    myNodeReferentSetEventHandlersMap.put(originalKey, null);
     return null;
   }
 
@@ -189,16 +197,14 @@ public class ModelConstraintsManager {
       return null;
     }
 
-//    System.out.println("find getter for <" + propertyName + "> in " + node.getDebugText());
-
     String nodeConceptFqName = node.getConceptFQName();
     String originalKey = nodeConceptFqName + "#" + propertyName;
     if (isSetter) {
-      if(myNodePropertySettersCache.containsKey(originalKey)) {
+      if (myNodePropertySettersCache.containsKey(originalKey)) {
         return myNodePropertySettersCache.get(originalKey);
       }
     } else {
-      if(myNodePropertyGettersCache.containsKey(originalKey)) {
+      if (myNodePropertyGettersCache.containsKey(originalKey)) {
         return myNodePropertyGettersCache.get(originalKey);
       }
     }
