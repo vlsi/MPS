@@ -168,13 +168,13 @@
     <link role="extends" targetNodeId="2.1068580123157" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1179444178379">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="oldExpression" />
+      <property name="role" value="oldNode" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1068431790191" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1179444189411">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="newExpression" />
+      <property name="role" value="newNode" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1068431790191" />
     </node>

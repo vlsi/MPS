@@ -70,4 +70,10 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1177466489905(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "affectedInstanceUpdater", true), "body", true);
   }
+  public static SNode sourceNodeQuery_1179444592655(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "oldNode", true);
+  }
+  public static SNode sourceNodeQuery_1179444604084(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "newNode", true);
+  }
 }
