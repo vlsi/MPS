@@ -1089,10 +1089,12 @@
                             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1178975709860">
                               <property name="name" value="type" />
                               <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1178975709861" />
-                              <node role="initializer" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodCall" id="1179306583873">
-                                <link role="baseMethodDeclaration" targetNodeId="39.1179306333014" />
-                                <node role="thisNode" type="jetbrains.mps.baseLanguage.ClosureParameterReference" id="1179306566850">
+                              <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179418760107">
+                                <node role="leftExpression" type="jetbrains.mps.baseLanguage.ClosureParameterReference" id="1179306566850">
                                   <link role="closureParameter" targetNodeId="1178975709857" resolveInfo="it" />
+                                </node>
+                                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_ConceptMethodCall" id="1179418760110">
+                                  <link role="conceptMethodDeclaration" targetNodeId="39.1179306333014" />
                                 </node>
                               </node>
                             </node>

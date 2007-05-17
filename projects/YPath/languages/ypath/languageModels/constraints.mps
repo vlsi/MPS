@@ -378,15 +378,17 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1179336652757">
-          <node role="expression" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodCall" id="1179336669800">
-            <link role="baseMethodDeclaration" targetNodeId="1179335433937" resolveInfo="getDefaultProperty" />
-            <node role="thisNode" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179336656927">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179418761514">
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179336656927">
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179336655431">
                 <link role="variableDeclaration" targetNodeId="1179336602791" resolveInfo="tpae" />
               </node>
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1179336660764">
                 <link role="link" targetNodeId="1.1168890235188" />
               </node>
+            </node>
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_ConceptMethodCall" id="1179418761517">
+              <link role="conceptMethodDeclaration" targetNodeId="1179335433937" resolveInfo="getDefaultProperty" />
             </node>
           </node>
         </node>
@@ -470,9 +472,11 @@
             <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179337584930">
               <link role="classifier" extResolveInfo="3.[Classifier]String" />
             </node>
-            <node role="initializer" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodCall" id="1179337584931">
-              <link role="baseMethodDeclaration" targetNodeId="1179337009627" resolveInfo="getTriggerClassName" />
-              <node role="thisNode" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1179337632741" />
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179418762158">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1179337632741" />
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_ConceptMethodCall" id="1179418762161">
+                <link role="conceptMethodDeclaration" targetNodeId="1179337009627" resolveInfo="getTriggerClassName" />
+              </node>
             </node>
           </node>
         </node>
@@ -675,9 +679,11 @@
             <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179398830369">
               <link role="classifier" extResolveInfo="3.[Classifier]String" />
             </node>
-            <node role="initializer" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodCall" id="1179398830370">
-              <link role="baseMethodDeclaration" targetNodeId="1179394820016" resolveInfo="getClassName" />
-              <node role="thisNode" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1179398830371" />
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179418761025">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1179398830371" />
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_ConceptMethodCall" id="1179418761028">
+                <link role="conceptMethodDeclaration" targetNodeId="1179394820016" resolveInfo="getClassName" />
+              </node>
             </node>
           </node>
         </node>
