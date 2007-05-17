@@ -5,6 +5,7 @@ package sample2;
 import ypath.util.TreePath;
 import java.io.File;
 import ypath.util.IFilter;
+import sample2.File_TreePath.FILE_name_Property;
 
 public class File_TreePath extends TreePath<File> {
 
@@ -69,6 +70,48 @@ public class File_TreePath extends TreePath<File> {
     public boolean accept(File f) {
       return f.isDirectory();
     }
+}
+  public static class FILE_name_Property {
+
+    public static IFilter<File> getMatcher(final String matchValue) {
+      IFilter filter;
+      if(matchValue != null) {
+        filter = new IFilter() {
+
+          public boolean accept(Object n) {
+            File node = (File)n;
+            String actualValue = File_TreePath.FILE_name_Property.Getter.getValue(node);
+            return matchValue.equals(actualValue);
+          }
+        };
+      } else 
+      {
+        filter = new IFilter() {
+
+          public boolean accept(Object n) {
+            File node = (File)n;
+            String actualValue = File_TreePath.FILE_name_Property.Getter.getValue(node);
+            return actualValue == null;
+          }
+        };
+      }
+      return (IFilter<File>)filter;
+    }
+    private static class Getter {
+
+      /* package */Object _enclosingClass;
+      /* package */Object _closureContext;
+
+      public  Getter(Object enclosingClass, Object closureContext) {
+        this._enclosingClass = enclosingClass;
+        this._closureContext = (Object)closureContext;
+      }
+
+      public static String getValue(File f) {
+        return f.getName();
+      }
+}
+
 }
 
 }

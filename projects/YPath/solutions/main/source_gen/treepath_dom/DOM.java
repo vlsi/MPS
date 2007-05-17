@@ -7,6 +7,9 @@ import org.w3c.dom.Node;
 import ypath.util.IFilter;
 import org.w3c.dom.Element;
 import org.w3c.dom.Attr;
+import treepath_dom.DOM.ELEMENT_tag_Property;
+import treepath_dom.DOM.ATTR_name_Property;
+import treepath_dom.DOM.ATTR_value_Property;
 
 public class DOM extends TreePath<Node> {
 
@@ -64,6 +67,132 @@ public class DOM extends TreePath<Node> {
     public boolean accept(Node a) {
       return a instanceof Attr;
     }
+}
+  public static class ELEMENT_tag_Property {
+
+    public static IFilter<Node> getMatcher(final String matchValue) {
+      IFilter filter;
+      if(matchValue != null) {
+        filter = new IFilter() {
+
+          public boolean accept(Object n) {
+            Node node = (Node)n;
+            String actualValue = DOM.ELEMENT_tag_Property.Getter.getValue(node);
+            return matchValue.equals(actualValue);
+          }
+        };
+      } else 
+      {
+        filter = new IFilter() {
+
+          public boolean accept(Object n) {
+            Node node = (Node)n;
+            String actualValue = DOM.ELEMENT_tag_Property.Getter.getValue(node);
+            return actualValue == null;
+          }
+        };
+      }
+      return (IFilter<Node>)filter;
+    }
+    private static class Getter {
+
+      /* package */Object _enclosingClass;
+      /* package */Object _closureContext;
+
+      public  Getter(Object enclosingClass, Object closureContext) {
+        this._enclosingClass = enclosingClass;
+        this._closureContext = (Object)closureContext;
+      }
+
+      public static String getValue(Node e) {
+        return ((Element)e).getTagName();
+      }
+}
+
+}
+  public static class ATTR_name_Property {
+
+    public static IFilter<Node> getMatcher(final String matchValue) {
+      IFilter filter;
+      if(matchValue != null) {
+        filter = new IFilter() {
+
+          public boolean accept(Object n) {
+            Node node = (Node)n;
+            String actualValue = DOM.ATTR_name_Property.Getter.getValue(node);
+            return matchValue.equals(actualValue);
+          }
+        };
+      } else 
+      {
+        filter = new IFilter() {
+
+          public boolean accept(Object n) {
+            Node node = (Node)n;
+            String actualValue = DOM.ATTR_name_Property.Getter.getValue(node);
+            return actualValue == null;
+          }
+        };
+      }
+      return (IFilter<Node>)filter;
+    }
+    private static class Getter {
+
+      /* package */Object _enclosingClass;
+      /* package */Object _closureContext;
+
+      public  Getter(Object enclosingClass, Object closureContext) {
+        this._enclosingClass = enclosingClass;
+        this._closureContext = (Object)closureContext;
+      }
+
+      public static String getValue(Node a) {
+        return ((Attr)a).getName();
+      }
+}
+
+}
+  public static class ATTR_value_Property {
+
+    public static IFilter<Node> getMatcher(final String matchValue) {
+      IFilter filter;
+      if(matchValue != null) {
+        filter = new IFilter() {
+
+          public boolean accept(Object n) {
+            Node node = (Node)n;
+            String actualValue = DOM.ATTR_value_Property.Getter.getValue(node);
+            return matchValue.equals(actualValue);
+          }
+        };
+      } else 
+      {
+        filter = new IFilter() {
+
+          public boolean accept(Object n) {
+            Node node = (Node)n;
+            String actualValue = DOM.ATTR_value_Property.Getter.getValue(node);
+            return actualValue == null;
+          }
+        };
+      }
+      return (IFilter<Node>)filter;
+    }
+    private static class Getter {
+
+      /* package */Object _enclosingClass;
+      /* package */Object _closureContext;
+
+      public  Getter(Object enclosingClass, Object closureContext) {
+        this._enclosingClass = enclosingClass;
+        this._closureContext = (Object)closureContext;
+      }
+
+      public static String getValue(Node a) {
+        return ((Attr)a).getValue();
+      }
+}
+
 }
 
 }
