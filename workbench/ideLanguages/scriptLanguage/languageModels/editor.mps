@@ -252,12 +252,14 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1179444142985">
         <property name="text" value="old:" />
+        <property name="fontStyle" value="BOLD_ITALIC" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1179444202522">
         <link role="relationDeclaration" targetNodeId="1.1179444178379" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1179444146628">
         <property name="text" value="new:" />
+        <property name="fontStyle" value="BOLD_ITALIC" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1179444207790">
         <link role="relationDeclaration" targetNodeId="1.1179444189411" />
