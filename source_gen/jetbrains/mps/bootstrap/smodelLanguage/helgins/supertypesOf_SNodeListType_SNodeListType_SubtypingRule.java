@@ -11,8 +11,8 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_30;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_31;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_27;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_28;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -20,37 +20,38 @@ import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class supertypesOf_SNodeType_SNodeType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
+public class supertypesOf_SNodeListType_SNodeListType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
-  public  supertypesOf_SNodeType_SNodeType_SubtypingRule() {
+  public  supertypesOf_SNodeListType_SNodeListType_SubtypingRule() {
   }
 
   public List<SNode> getSubOrSuperTypes(SNode type) {
-    List<SNode> list = ListOperations.createList(new SNode[]{});
-    SNode concept = SLinkOperations.getTarget(type, "concept", false);
-    if(concept != null) {
-      List<SNode> superConcepts = SConceptOperations.getDirectSuperConcepts(concept);
+    List<SNode> supertypes = ListOperations.createList(new SNode[]{});
+    SNode elementConcept = SLinkOperations.getTarget(type, "elementConcept", false);
+    if(elementConcept != null) {
+      List<SNode> superConcepts = SConceptOperations.getDirectSuperConcepts(elementConcept);
       {
-        ICursor<SNode> _zCursor1 = CursorFactory.createCursor(superConcepts);
+        ICursor<SNode> _zCursor = CursorFactory.createCursor(superConcepts);
         try {
-          while(_zCursor1.moveToNext()) {
-            SNode superConcept = _zCursor1.getCurrent();
-            ListOperations.addElement(list, new QuotationClass_30().createNode(superConcept));
+          while(_zCursor.moveToNext()) {
+            SNode superConcept = _zCursor.getCurrent();
+            ListOperations.addElement(supertypes, new QuotationClass_27().createNode(superConcept));
           }
         } finally {
-          _zCursor1.release();
+          _zCursor.release();
         }
       }
-      ListOperations.addElement(list, new QuotationClass_31().createNode());
+      // ==========
+      ListOperations.addElement(supertypes, new QuotationClass_28().createNode());
     }
-    return list;
+    return supertypes;
   }
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType";
+    return "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType";
   }
   public ApplicableNodeCondition getNodeCondition() {
     SModel model = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.bootstrap.smodelLanguage.helgins")).getSModel();
-    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1178287490251"));
+    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1178287491373"));
   }
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
