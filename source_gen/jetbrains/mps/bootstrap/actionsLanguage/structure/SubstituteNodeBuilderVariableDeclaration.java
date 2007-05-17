@@ -7,10 +7,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_SubstituteVariableInitializer;
 
 public class SubstituteNodeBuilderVariableDeclaration extends VariableDeclaration {
-  public static String INITIALIZER_BLOCK = "initializerBlock";
 
   public  SubstituteNodeBuilderVariableDeclaration(SNode node) {
     super(node);
@@ -21,12 +19,5 @@ public class SubstituteNodeBuilderVariableDeclaration extends VariableDeclaratio
   }
   public static SubstituteNodeBuilderVariableDeclaration newInstance(SModel sm) {
     return SubstituteNodeBuilderVariableDeclaration.newInstance(sm, false);
-  }
-
-  public QueryFunction_SubstituteVariableInitializer getInitializerBlock() {
-    return (QueryFunction_SubstituteVariableInitializer)this.getChild(SubstituteNodeBuilderVariableDeclaration.INITIALIZER_BLOCK);
-  }
-  public void setInitializerBlock(QueryFunction_SubstituteVariableInitializer node) {
-    super.setChild(SubstituteNodeBuilderVariableDeclaration.INITIALIZER_BLOCK, node);
   }
 }
