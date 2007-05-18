@@ -1840,4 +1840,13 @@ public class SNode implements Cloneable, Iterable<SNode> {
     myRoleInParent = newRoleInParent;
   }
 
+  public int depth() {
+    int childDepth = 0;
+    for (SNode child : getChildren()) {
+      if (childDepth < child.depth()) {
+        childDepth = child.depth();
+      }
+    }
+    return childDepth + 1;
+  }
 }

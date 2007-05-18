@@ -6,13 +6,14 @@
   <language namespace="jetbrains.mps.bootstrap.helgins.test" />
   <language namespace="jetbrains.mps.patterns" />
   <language namespace="jetbrains.mps.baseLanguage.blTypes" />
-  <maxImportIndex value="6" />
+  <maxImportIndex value="7" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="2" modelUID="java.lang@java_stub" />
   <import index="3" modelUID="jetbrains.mps.baseLanguage.helgins" />
   <import index="4" modelUID="jetbrains.mps.baseLanguage.blTypes.structure" />
   <import index="5" modelUID="jetbrains.mps.smodel@java_stub" />
   <import index="6" modelUID="java.util@java_stub" />
+  <import index="7" modelUID="java.io@java_stub" />
   <node type="jetbrains.mps.bootstrap.helgins.SubtypingRule" id="1175148572517">
     <property name="name" value="subtyping_a" />
     <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1175148572518">
@@ -80,19 +81,23 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1176894317802">
     <property name="name" value="C" />
-    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1176894339711">
-      <property name="name" value="foobar" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.TypeVariableReference" id="1176894356058">
-        <link role="typeVariableDeclaration" targetNodeId="1176894334335" resolveInfo="T" />
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1179471671431">
+      <property name="name" value="t" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1179471671432" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1179471671433" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179471671434">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1179471714115">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1179471714116">
+            <property name="name" value="col" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179471714117">
+              <link role="classifier" extResolveInfo="6.[Classifier]Collection" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179471741533">
+                <link role="classifier" extResolveInfo="7.[Classifier]Serializable" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
-      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176894339713" />
-    </node>
-    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1177339564596">
-      <property name="name" value="barfoo" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.TypeVariableReference" id="1177339571960">
-        <link role="typeVariableDeclaration" targetNodeId="1176894336914" resolveInfo="S" />
-      </node>
-      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177339564598" />
     </node>
     <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.TypeVariableDeclaration" id="1176894334335">
       <property name="name" value="T" />
