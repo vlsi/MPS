@@ -20,10 +20,10 @@ import jetbrains.mps.smodel.action.IChildNodeSetter;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.search.IConceptHierarchyScope;
 import jetbrains.mps.util.Calculable;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
@@ -89,8 +89,33 @@ public class QueriesGenerated {
   }
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_SNodeOperation_1173979260328(final SNode parentNode, final SNode currentTargetNode, final ConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    final SNode leftNodeConcept;
+    final IConceptHierarchyScope hierarhyScope;
     final List<SNode> leftNodeConceptS;
     final List<IConceptHierarchyScope> hierarchyScopeS;
+    {
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          SNode leftExpression = SLinkOperations.getTarget(parentNode, "leftExpression", true);
+          SNode leftNodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(leftExpression), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
+          if(SLinkOperations.getTarget(leftNodeType, "concept", false) == null) {
+            return SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept");
+          }
+          return SLinkOperations.getTarget(leftNodeType, "concept", false);
+        }
+      };
+      leftNodeConcept = (SNode)calc.calculate();
+    }
+    {
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          return SModelSearchUtil_new.createConceptHierarchyScope(((AbstractConceptDeclaration)SNodeOperations.getAdapter(leftNodeConcept)));
+        }
+      };
+      hierarhyScope = (IConceptHierarchyScope)calc.calculate();
+    }
     {
       Calculable calc = new Calculable() {
 

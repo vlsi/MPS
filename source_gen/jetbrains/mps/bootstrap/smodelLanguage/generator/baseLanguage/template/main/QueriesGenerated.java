@@ -26,7 +26,7 @@ import jetbrains.mps.bootstrap.constraintsLanguage.constraints.ConceptMethodDecl
 import jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.TypeUtil_smodel;
+import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
 import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation;
 
@@ -412,7 +412,7 @@ public class QueriesGenerated {
     SNode opExpression = SNodeOperations.getParent(node, null, false, false);
     SNode leftExpression = SLinkOperations.getTarget(opExpression, "leftExpression", true);
     SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(leftExpression), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
-    SNode adapterClassifierType = TypeUtil_smodel.get_adapterType_for_concept(SLinkOperations.getTarget(nodeType, "concept", false));
+    SNode adapterClassifierType = AbstractConceptDeclaration_Behavior.getAdapterType_1179511141975(SLinkOperations.getTarget(nodeType, "concept", false));
     return SLinkOperations.getTarget(adapterClassifierType, "classifier", false);
   }
   public static boolean ifMacro_Condition_1175594466810(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
