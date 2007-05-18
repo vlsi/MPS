@@ -343,8 +343,8 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1179505674292">
                 <link role="baseMethodDeclaration" extResolveInfo="13.static method ([Classifier]SModelSearchUtil_new).([StaticMethodDeclaration]createConceptHierarchyScope((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [AbstractConceptDeclaration])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IConceptHierarchyScope]))" />
                 <link role="classConcept" extResolveInfo="13.[Classifier]SModelSearchUtil_new" />
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179505690297">
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1179505707543" />
+                <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179506091159">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1179506940757" />
                   <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.SubstituteNodeBuilderVariableReference" id="1179505687358">
                     <link role="variableDeclaration" targetNodeId="1179504557944" resolveInfo="leftNodeConcept" />
                   </node>

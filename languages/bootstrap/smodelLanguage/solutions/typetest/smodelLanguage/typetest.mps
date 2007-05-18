@@ -3,7 +3,7 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
-  <maxImportIndex value="15" />
+  <maxImportIndex value="16" />
   <import index="1" modelUID="java.lang@java_stub" />
   <import index="3" modelUID="jetbrains.mps.smodel@java_stub" />
   <import index="6" modelUID="jetbrains.mps.baseLanguage.structure" />
@@ -12,6 +12,7 @@
   <import index="13" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <import index="14" modelUID="jetbrains.mps.baseLanguage.structure@java_stub" />
   <import index="15" modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" />
+  <import index="16" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1170371320095">
     <property name="name" value="smodel_test" />
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1170371357833">
@@ -2819,6 +2820,20 @@
                 <link role="property" targetNodeId="7.1169194664001" />
               </node>
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179442940010">
+                <link role="variableDeclaration" targetNodeId="1177012907562" resolveInfo="concept" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1179506903631">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1179506903632">
+            <property name="name" value="adapter" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179506903633">
+              <link role="classifier" extResolveInfo="16.[Classifier]AbstractConceptDeclaration" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179506177013">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1179506220098" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179506174968">
                 <link role="variableDeclaration" targetNodeId="1177012907562" resolveInfo="concept" />
               </node>
             </node>

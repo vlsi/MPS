@@ -5,8 +5,9 @@ package jetbrains.mps.bootstrap.smodelLanguage.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.RulesUtil;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_54;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
@@ -23,10 +24,9 @@ public class typeOf_Node_GetAdapterOperation_InferenceRule implements InferenceR
   public void applyRule(SNode argument) {
     if(RulesUtil.checkAppliedCorrectly_generic(argument)) {
       SNode leftExpressionType = RulesUtil.typeOf_leftExpression(argument);
-      // to do: type adapt to nodeType
-      SNode leftExpressionTypeAsSNodeType = leftExpressionType;
-      SNode concept = SLinkOperations.getTarget(leftExpressionTypeAsSNodeType, "concept", false);
-      TypeChecker.getInstance().getRuntimeSupport().givetype(RulesUtil.get_AdapterClassType_for_Concept(concept), argument);
+      SNode leftNodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(leftExpressionType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
+      SNode leftNodeConcept = SLinkOperations.getTarget(leftNodeType, "concept", false);
+      TypeChecker.getInstance().getRuntimeSupport().givetype(RulesUtil.get_AdapterClassType_for_Concept(leftNodeConcept), argument);
     } else 
     {
       TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_54().createNode(), argument);

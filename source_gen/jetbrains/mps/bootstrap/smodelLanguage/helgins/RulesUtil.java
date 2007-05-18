@@ -17,13 +17,13 @@ import jetbrains.mps.smodel.DataTypeUtil;
 import jetbrains.mps.bootstrap.structureLanguage.structure.DataTypeDeclaration;
 import java.util.Iterator;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_40;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_41;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.BaseAdapter;
@@ -161,16 +161,11 @@ public class RulesUtil {
     return false;
   }
   public static boolean checkAssignableConcept(SNode fromConcept, SNode toConcept, SNode nodeToReportError, String errorTextPrefix) {
-    if(fromConcept == null || toConcept == null) {
-      return false;
+    if(SConceptOperations.isAssignableFrom(toConcept, fromConcept)) {
+      return true;
     }
-    String toConceptFqName = NameUtil.nodeFQName(toConcept);
-    String fromConcepFqName = NameUtil.nodeFQName(fromConcept);
-    if(!(SModelUtil_new.isAssignableConcept(fromConcepFqName, toConceptFqName))) {
-      TypeChecker.getInstance().reportTypeError(nodeToReportError, "" + errorTextPrefix + "\nexpected: " + toConceptFqName + "\nwas: " + fromConcepFqName);
-      return false;
-    }
-    return true;
+    TypeChecker.getInstance().reportTypeError(nodeToReportError, "" + errorTextPrefix + "\nexpected: " + SPropertyOperations.getString(toConcept, "name") + "\nwas: " + SPropertyOperations.getString(fromConcept, "name"));
+    return false;
   }
   public static boolean checkOpParameters_generic(SNode op) {
     boolean noProblem = true;
