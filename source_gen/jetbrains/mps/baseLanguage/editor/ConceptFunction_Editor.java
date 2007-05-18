@@ -11,14 +11,17 @@ import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.ModelAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
+import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
 import java.util.List;
-import jetbrains.mps.baseLanguage.structure.ConceptFunction;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
@@ -68,6 +71,8 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.setCellBackgroundColor(Color.lightGray);
+    editorCell.getTextLine().setTextBackgroundColor(Color.lightGray);
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176906091983");
     editorCell.setLayoutConstraint("");
     return editorCell;
@@ -81,6 +86,10 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.setCellBackgroundColor(Color.lightGray);
+    editorCell.setFontType(MPSFonts.ITALIC);
+    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.getTextLine().setTextBackgroundColor(Color.lightGray);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176906095407");
     editorCell.setLayoutConstraint("");
@@ -92,8 +101,8 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
       public String getText() {
         StringBuilder result = new StringBuilder();
         result.append("(");
-        List<SNode> parameters = node.getConceptLinkTargets(ConceptFunction.CLNK_ApplicableConceptFunctionParameter, true, editorContext.getScope());
-        ListOperations.addAllElements(parameters, node.getConceptLinkTargets(ConceptFunction.CLNK_ConceptFunctionParameter, true, editorContext.getScope()));
+        List<SNode> parameters = SLinkOperations.getConceptLinkTargets(node, "applicableConceptFunctionParameter");
+        ListOperations.addAllElements(parameters, SLinkOperations.getConceptLinkTargets(node, "conceptFunctionParameter"));
         boolean isFirst = true;
         for(SNode cfp : parameters) {
           if(!(isFirst)) {
@@ -103,12 +112,12 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
           result.append(SConceptPropertyOperations.getString(cfp, "alias"));
         }
         result.append(")->");
-        SNode retType = SequenceOperations.getFirst(node.getConceptLinkTargets(ConceptFunction.CLNK_ConceptFunctionReturnType, false, editorContext.getScope()));
-        if(retType == null) {
-          result.append("???");
+        SNode expectedReturnType = BehaviorManager.getInstance().invoke(SNode.class, node, "virtual_getExpectedReturnType_1178571276073");
+        if(expectedReturnType == null) {
+          result.append("void");
         } else 
         {
-          result.append(NameUtil.shortNameFromLongName(retType.getName()));
+          result.append(NameUtil.shortNameFromLongName(SPropertyOperations.getString(expectedReturnType, "name")));
         }
         return result.toString();
       }

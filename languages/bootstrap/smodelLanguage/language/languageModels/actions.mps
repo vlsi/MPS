@@ -171,6 +171,7 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActions" id="1138079717967">
     <property name="name" value="SModelLang_rtransform" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1138079721624">
+      <property name="description" value="&lt;expr&gt; --&gt; &lt;expr&gt;.&lt;op&gt; " />
       <property name="actionsFactoryAspectId" value="Expression_to_SmodelLangOperation" />
       <link role="applicableConcept" targetNodeId="3.1068431790191" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionFunction" id="1154624855279">
@@ -180,6 +181,36 @@
               <link role="classConcept" targetNodeId="1154643386654" />
               <link role="baseMethodDeclaration" targetNodeId="1173912496513" resolveInfo="isTypeOf_Expression_is_snode_or_snodelist" />
               <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_sourceNode" id="1173906822604" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddMenuPart" id="1179445736561">
+        <link role="concept" targetNodeId="1.1138055978872" />
+        <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.SimpleRightTransformMenuPart" id="1179445868318">
+          <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_RightTransform_Handler" id="1179445868319">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179445868320">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179446057056">
+                <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1179446057057" />
+              </node>
+            </node>
+          </node>
+          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_RightTransform_String" id="1179445897488">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179445897489">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179445907999">
+                <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1179445908000">
+                  <property name="value" value="." />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_RightTransform_String" id="1179446003410">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179446003411">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179446028865">
+                <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1179446028866">
+                  <property name="value" value="smodel language operation" />
+                </node>
+              </node>
             </node>
           </node>
         </node>

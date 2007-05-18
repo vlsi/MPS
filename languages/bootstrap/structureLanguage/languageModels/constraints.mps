@@ -397,6 +397,19 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1179449079381">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1179449079382">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1179449088611">
+              <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179449102727">
+                <link role="variableDeclaration" targetNodeId="1178096836411" resolveInfo="methods" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1179449083930">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1179449086209" />
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1179449081871" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1178096836423">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1178096836412">
             <property name="name" value="contextBehaviour" />
