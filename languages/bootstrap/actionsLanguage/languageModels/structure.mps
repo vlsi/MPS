@@ -20,8 +20,8 @@
       <link role="intfc" targetNodeId="1.1169194658468" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1112058057696">
-      <property name="metaClass" value="aggregation" />
       <property name="targetCardinality" value="1" />
+      <property name="metaClass" value="aggregation" />
       <property name="role" value="actionsBuilder" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1112058030570" />
@@ -153,8 +153,8 @@
       <link role="intfc" targetNodeId="1.1169194658468" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1138079416599">
-      <property name="metaClass" value="aggregation" />
       <property name="targetCardinality" value="1" />
+      <property name="metaClass" value="aggregation" />
       <property name="role" value="actionsBuilder" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1138079221458" />
@@ -170,33 +170,33 @@
     <link role="defaultMember" targetNodeId="1140829274114" resolveInfo="default_" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1140829274114">
       <property name="internalValue" value="default_RTransform" />
-      <property name="externalValue" value="DEFAULT" />
       <property name="name" value="default_" />
+      <property name="externalValue" value="DEFAULT" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1140829274115">
       <property name="internalValue" value="ext_1_RTransform" />
-      <property name="externalValue" value="EXT 1" />
       <property name="name" value="ext_1" />
+      <property name="externalValue" value="EXT 1" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1140829274116">
       <property name="internalValue" value="ext_2_RTransform" />
-      <property name="externalValue" value="EXT 2" />
       <property name="name" value="ext_2" />
+      <property name="externalValue" value="EXT 2" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1140829274117">
       <property name="internalValue" value="ext_3_RTransform" />
-      <property name="externalValue" value="EXT 3" />
       <property name="name" value="ext_3" />
+      <property name="externalValue" value="EXT 3" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1140829274118">
       <property name="internalValue" value="ext_4_RTransform" />
-      <property name="externalValue" value="EXT 4" />
       <property name="name" value="ext_4" />
+      <property name="externalValue" value="EXT 4" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1140829274119">
       <property name="internalValue" value="ext_5_RTransform" />
-      <property name="externalValue" value="EXT 5" />
       <property name="name" value="ext_5" />
+      <property name="externalValue" value="EXT 5" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1154465102724">
@@ -1196,6 +1196,23 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1178781678039">
       <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" />
       <node role="target" type="jetbrains.mps.baseLanguage.VoidType" id="1178781679354" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1179456248444">
+    <property name="name" value="QueryFunction_SubstituteVariableInitializer" />
+    <property name="package" value="QueryFunctions" />
+    <link role="extends" targetNodeId="3.1137021947720" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1179456248445">
+      <link role="target" targetNodeId="5.1161622753914" />
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1179456248446">
+      <link role="target" targetNodeId="1154465273778" />
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1179456248447">
+      <link role="target" targetNodeId="1177568407352" />
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" />
     </node>
   </node>
 </model>
