@@ -21,11 +21,10 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.search.IConceptHierarchyScope;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.search.SModelSearchUtil_new;
+import jetbrains.mps.smodel.search.ConceptHierarchyScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
@@ -111,7 +110,7 @@ public class QueriesGenerated {
       Calculable calc = new Calculable() {
 
         public Object calculate() {
-          return SModelSearchUtil_new.createConceptHierarchyScope(((AbstractConceptDeclaration)SNodeOperations.getAdapter(leftNodeConcept)));
+          return new ConceptHierarchyScope(((AbstractConceptDeclaration)SNodeOperations.getAdapter(leftNodeConcept)));
         }
       };
       hierarhyScope = (IConceptHierarchyScope)calc.calculate();
@@ -135,22 +134,11 @@ public class QueriesGenerated {
       hierarchyScopeS = (List<IConceptHierarchyScope>)calc.calculate();
     }
     {
-      SNode leftExpression = SLinkOperations.getTarget(parentNode, "leftExpression", true);
-      SNode leftNodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(leftExpression), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
-      SNode leftConcept = SLinkOperations.getTarget(leftNodeType, "concept", false);
-      if(leftConcept == null) {
-        leftConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept");
-      }
-      ListOperations.addElement(leftNodeConceptS, leftConcept);
-      ListOperations.addElement(hierarchyScopeS, SModelSearchUtil_new.createConceptHierarchyScope(((AbstractConceptDeclaration)SNodeOperations.getAdapter(leftConcept))));
-    }
-    {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess", operationContext.getScope());
       Calculable calc = new Calculable() {
 
         public Object calculate() {
-          SNode leftConcept = SequenceOperations.getFirst(leftNodeConceptS);
-          List<PropertyDeclaration> adapters = SModelSearchUtil_new.getPropertyDeclarationsExcludingOverridden(((AbstractConceptDeclaration)SNodeOperations.getAdapter(leftConcept)));
+          List<PropertyDeclaration> adapters = hierarhyScope.getPropertyDeclarationsExcludingOverridden();
           return (List<SNode>)BaseAdapter.toNodes(adapters);
         }
       };
@@ -171,8 +159,7 @@ public class QueriesGenerated {
       Calculable calc = new Calculable() {
 
         public Object calculate() {
-          IConceptHierarchyScope hierarchyScope = SequenceOperations.getFirst(hierarchyScopeS);
-          List<ConceptPropertyDeclaration> adapters = hierarchyScope.getAdapters(ConceptPropertyDeclaration.class);
+          List<ConceptPropertyDeclaration> adapters = hierarhyScope.getAdapters(ConceptPropertyDeclaration.class);
           return (List<SNode>)BaseAdapter.toNodes(adapters);
         }
       };
