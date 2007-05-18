@@ -32,22 +32,19 @@ public class SModelSearchUtil_new {
   }
 
   public static IConceptHierarchyScope createConceptHierarchyScope(AbstractConceptDeclaration concept) {
-    return new SModelSearchUtil_new._ConceptHierarchyScope(concept);
+    return new ConceptHierarchyScope(concept);
   }
 
   public static List<LinkDeclaration> getLinkDeclarationsExcludingOverridden(AbstractConceptDeclaration concept) {
-    IConceptHierarchyScope searchScope = createConceptHierarchyScope(concept);
-    return getLinkDeclarationsExcludingOverridden(searchScope);
+    return new ConceptHierarchyScope(concept).getLinkDeclarationsExcludingOverridden();
   }
 
   public static List<LinkDeclaration> getAggregationLinkDeclarationsExcludingOverridden(AbstractConceptDeclaration concept) {
-    IConceptHierarchyScope searchScope = createConceptHierarchyScope(concept);
-    return getAggregationLinkDeclarationsExcludingOverridden(searchScope);
+    return new ConceptHierarchyScope(concept).getAggregationLinkDeclarationsExcludingOverridden();
   }
 
   public static List<LinkDeclaration> getReferenceLinkDeclarationsExcludingOverridden(ConceptDeclaration concept) {
-    IConceptHierarchyScope searchScope = createConceptHierarchyScope(concept);
-    return getReferenceLinkDeclarationsExcludingOverridden(searchScope);
+    return new ConceptHierarchyScope(concept).getReferenceLinkDeclarationsExcludingOverridden();
   }
 
   public static List<PropertyDeclaration> getPropertyDeclarationsExcludingOverridden(AbstractConceptDeclaration concept) {
@@ -55,30 +52,30 @@ public class SModelSearchUtil_new {
     return getPropertyDeclarationsExcludingOverridden(searchScope);
   }
 
-  public static List<LinkDeclaration> getLinkDeclarationsExcludingOverridden(IConceptHierarchyScope searchScope) {
-    return BaseAdapter.toAdapters(LinkDeclaration.class, searchScope.getNodes(new SModelSearchUtil_new._LinkDeclarationsExcludingOverridden()));
-  }
+//  public static List<LinkDeclaration> getLinkDeclarationsExcludingOverridden(IConceptHierarchyScope searchScope) {
+//    return BaseAdapter.toAdapters(LinkDeclaration.class, searchScope.getNodes(new SModelSearchUtil_new._LinkDeclarationsExcludingOverridden()));
+//  }
 
-  public static List<LinkDeclaration> getAggregationLinkDeclarationsExcludingOverridden(IConceptHierarchyScope searchScope) {
-    Condition<SNode> condition = new AndCondition<SNode>(new Condition<SNode>() {
-      public boolean met(SNode node) {
-        INodeAdapter nodeAdapter = BaseAdapter.fromNode(node);
-        return nodeAdapter instanceof LinkDeclaration &&
-                ((LinkDeclaration) nodeAdapter).getMetaClass() == LinkMetaclass.aggregation;
-      }
-    }, new SModelSearchUtil_new._LinkDeclarationsExcludingOverridden());
-    return BaseAdapter.toAdapters(LinkDeclaration.class, searchScope.getNodes(condition));
-  }
+//  public static List<LinkDeclaration> getAggregationLinkDeclarationsExcludingOverridden(IConceptHierarchyScope searchScope) {
+//    Condition<SNode> condition = new AndCondition<SNode>(new Condition<SNode>() {
+//      public boolean met(SNode node) {
+//        INodeAdapter nodeAdapter = BaseAdapter.fromNode(node);
+//        return nodeAdapter instanceof LinkDeclaration &&
+//                ((LinkDeclaration) nodeAdapter).getMetaClass() == LinkMetaclass.aggregation;
+//      }
+//    }, new SModelSearchUtil_new._LinkDeclarationsExcludingOverridden());
+//    return BaseAdapter.toAdapters(LinkDeclaration.class, searchScope.getNodes(condition));
+//  }
 
-  public static List<LinkDeclaration> getReferenceLinkDeclarationsExcludingOverridden(IConceptHierarchyScope searchScope) {
-    Condition<SNode> condition = new AndCondition<SNode>(new Condition<SNode>() {
-      public boolean met(SNode object) {
-        return BaseAdapter.fromNode(object) instanceof LinkDeclaration &&
-                ((LinkDeclaration) BaseAdapter.fromNode(object)).getMetaClass() == LinkMetaclass.reference;
-      }
-    }, new SModelSearchUtil_new._LinkDeclarationsExcludingOverridden());
-    return BaseAdapter.toAdapters(LinkDeclaration.class, searchScope.getNodes(condition));
-  }
+//  public static List<LinkDeclaration> getReferenceLinkDeclarationsExcludingOverridden(IConceptHierarchyScope searchScope) {
+//    Condition<SNode> condition = new AndCondition<SNode>(new Condition<SNode>() {
+//      public boolean met(SNode object) {
+//        return BaseAdapter.fromNode(object) instanceof LinkDeclaration &&
+//                ((LinkDeclaration) BaseAdapter.fromNode(object)).getMetaClass() == LinkMetaclass.reference;
+//      }
+//    }, new SModelSearchUtil_new._LinkDeclarationsExcludingOverridden());
+//    return BaseAdapter.toAdapters(LinkDeclaration.class, searchScope.getNodes(condition));
+//  }
 
   public static List<PropertyDeclaration> getPropertyDeclarationsExcludingOverridden(IConceptHierarchyScope searchScope) {
     return BaseAdapter.toAdapters(PropertyDeclaration.class, searchScope.getNodes(new SModelSearchUtil_new._PropertyDeclarationsExcludingOverridden()));
@@ -172,53 +169,23 @@ public class SModelSearchUtil_new {
     }
   } // private static class _ModelAndImportedModelsScope
 
-  private static class _ConceptHierarchyScope extends AbstractSearchScope implements IConceptHierarchyScope {
-    private AbstractConceptDeclaration myConcept;
-    private Set<AbstractConceptDeclaration> myConceptHierarchy;
-
-    public _ConceptHierarchyScope(AbstractConceptDeclaration concept) {
-      myConcept = concept;
-    }
-
-    public List<SNode> getOwnNodes(Condition<SNode> condition) {
-      ensureHierarchyInitialized();
-      List<SNode> result = new ArrayList<SNode>();
-      // filter by condition
-      for (INodeAdapter node : myConceptHierarchy) {
-        if (node == null) continue;
-        if (condition.met(node.getNode())) {
-          result.add(node.getNode());
-        }
-        result.addAll(node.getNode().getSubnodes(condition));
-      }
-      return result;
-    }
-
-    private void ensureHierarchyInitialized() {
-      if (myConceptHierarchy == null) {
-        myConceptHierarchy = SModelUtil_new.getConceptHierarchy(myConcept);
-      }
-    }
-  } // private static class _ConceptHierarchyScope
-
-
-  private static class _LinkDeclarationsExcludingOverridden implements Condition<SNode> {
-    private Set<LinkDeclaration> myOverriddenLinks = new HashSet<LinkDeclaration>();
-
-    public boolean met(SNode node) {
-      INodeAdapter nodeAdapter = BaseAdapter.fromNode(node);
-      if (!(nodeAdapter instanceof LinkDeclaration)) return false;
-      LinkDeclaration linkDeclaration = (LinkDeclaration) nodeAdapter;
-      if (myOverriddenLinks.contains(linkDeclaration)) return false;
-
-      LinkDeclaration specializedLink = linkDeclaration.getSpecializedLink();
-      while (specializedLink != null) {
-        myOverriddenLinks.add(specializedLink);
-        specializedLink = specializedLink.getSpecializedLink();
-      }
-      return true;
-    }
-  }
+//  private static class _LinkDeclarationsExcludingOverridden implements Condition<SNode> {
+//    private Set<LinkDeclaration> myOverriddenLinks = new HashSet<LinkDeclaration>();
+//
+//    public boolean met(SNode node) {
+//      INodeAdapter nodeAdapter = BaseAdapter.fromNode(node);
+//      if (!(nodeAdapter instanceof LinkDeclaration)) return false;
+//      LinkDeclaration linkDeclaration = (LinkDeclaration) nodeAdapter;
+//      if (myOverriddenLinks.contains(linkDeclaration)) return false;
+//
+//      LinkDeclaration specializedLink = linkDeclaration.getSpecializedLink();
+//      while (specializedLink != null) {
+//        myOverriddenLinks.add(specializedLink);
+//        specializedLink = specializedLink.getSpecializedLink();
+//      }
+//      return true;
+//    }
+//  }
 
   private static class _PropertyDeclarationsExcludingOverridden implements Condition<SNode> {
     private Set<String> myFoundProperties = new HashSet<String>();
