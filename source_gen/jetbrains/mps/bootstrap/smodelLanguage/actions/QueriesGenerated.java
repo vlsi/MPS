@@ -18,6 +18,10 @@ import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
+import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 
 public class QueriesGenerated {
 
@@ -71,6 +75,30 @@ public class QueriesGenerated {
   }
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_SNodeOperation_1173984362064(final SNode parentNode, final SNode currentTargetNode, final ConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    return result;
+  }
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1138079721624(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression", operationContext.getScope());
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
+
+        public SNode doSubstitute(String pattern) {
+          // replace expression with snode-operation-expression
+          SNode expression = sourceNode;
+          SNode opExpression = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression", null);
+          SNodeOperations.replaceWithAnother(expression, opExpression);
+          SLinkOperations.setTarget(opExpression, "leftExpression", expression, true);
+          return opExpression;
+        }
+        public String getMatchingText(String pattern) {
+          return ".";
+        }
+        public String getDescriptionText(String pattern) {
+          return "smodel language operation";
+        }
+      });
+    }
     return result;
   }
 }
