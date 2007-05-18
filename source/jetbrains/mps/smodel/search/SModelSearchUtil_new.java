@@ -31,7 +31,7 @@ public class SModelSearchUtil_new {
     return new SModelSearchUtil_new._ConceptsFromModelLanguagesScope(model, rootsOnly, scope);
   }
 
-  public static ConceptHierarchyScope createConceptHierarchyScope(AbstractConceptDeclaration concept) {
+  public static IConceptHierarchyScope createConceptHierarchyScope(AbstractConceptDeclaration concept) {
     return new ConceptHierarchyScope(concept);
   }
 
