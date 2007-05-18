@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.search.SModelSearchUtil_new;
+import jetbrains.mps.smodel.search.ConceptHierarchyScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
 public class ConceptLink_conceptLinkDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
@@ -29,7 +29,7 @@ public class ConceptLink_conceptLinkDeclaration_ReferentConstraint implements IM
   }
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     SNode enclosingConcept = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration", true, false);
-    return SModelSearchUtil_new.createConceptHierarchyScope(((ConceptDeclaration)SNodeOperations.getAdapter(enclosingConcept)));
+    return new ConceptHierarchyScope(((ConceptDeclaration)SNodeOperations.getAdapter(enclosingConcept)));
   }
   public String getNodeReferentSearchScopeDescription() {
     return "concept links declared in hierarchy of enclosing concept";
