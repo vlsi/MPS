@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.constraints.INodePropertySetter;
 import jetbrains.mps.smodel.constraints.INodeReferentSetEventHandler;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
+import jetbrains.mps.smodel.search.ConceptHierarchyScope;
 import jetbrains.mps.util.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -1614,7 +1615,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
     }
 
     if (lookupHierarchy) {
-      return (List) SModelSearchUtil_new.createConceptHierarchyScope(conceptDeclaration).
+      return (List) new ConceptHierarchyScope(conceptDeclaration).
               getAdapters(new Condition<INodeAdapter>() {
                 public boolean met(INodeAdapter n) {
                   if (n instanceof ConceptLink) {
