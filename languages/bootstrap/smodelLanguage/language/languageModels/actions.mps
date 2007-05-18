@@ -320,46 +320,8 @@
             </node>
           </node>
         </node>
-        <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179505500882">
-          <link role="classifier" extResolveInfo="13.[Classifier]IConceptHierarchyScope" />
-        </node>
-      </node>
-      <node role="variable" type="jetbrains.mps.bootstrap.actionsLanguage.SubstituteNodeBuilderVariableDeclaration" id="1179455000594">
-        <property name="name" value="leftNodeConceptS" />
-        <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListType" id="1179455003335">
-          <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.SConceptType" id="1179455010890" />
-        </node>
-        <node role="initializerBlock" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_SubstituteVariableInitializer" id="1179457227337">
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179457227338">
-            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179458462445">
-              <node role="expression" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1179458464136">
-                <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListCreatorWithInit" id="1179458464137">
-                  <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.SConceptType" id="1179458464138" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="variable" type="jetbrains.mps.bootstrap.actionsLanguage.SubstituteNodeBuilderVariableDeclaration" id="1179455134534">
-        <property name="name" value="hierarchyScopeS" />
-        <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListType" id="1179455141894">
-          <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179455151550">
-            <link role="classifier" extResolveInfo="13.[Classifier]IConceptHierarchyScope" />
-          </node>
-        </node>
-        <node role="initializerBlock" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_SubstituteVariableInitializer" id="1179457230979">
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179457230980">
-            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179458468276">
-              <node role="expression" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1179458475747">
-                <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListCreatorWithInit" id="1179458475748">
-                  <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179458475749">
-                    <link role="classifier" extResolveInfo="13.[Classifier]IConceptHierarchyScope" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
+        <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179516867733">
+          <link role="classifier" extResolveInfo="13.[Classifier]ConceptHierarchyScope" />
         </node>
       </node>
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionFunction" id="1173979326981">

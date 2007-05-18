@@ -31,10 +31,6 @@ public class SModelSearchUtil_new {
     return new SModelSearchUtil_new._ConceptsFromModelLanguagesScope(model, rootsOnly, scope);
   }
 
-  public static IConceptHierarchyScope createConceptHierarchyScope(AbstractConceptDeclaration concept) {
-    return new ConceptHierarchyScope(concept);
-  }
-
   public static List<LinkDeclaration> getLinkDeclarationsExcludingOverridden(AbstractConceptDeclaration concept) {
     return new ConceptHierarchyScope(concept).getLinkDeclarationsExcludingOverridden();
   }
