@@ -410,8 +410,13 @@ public class QueriesGenerated {
   }
   public static SNode referenceMacro_GetReferent_1170386916206(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode opExpression = SNodeOperations.getParent(node, null, false, false);
+    if(node != null) {
+      // always true
+      return SModelLanguageUtil.tryObtain_snode_adapterClass(SLinkOperations.getTarget(opExpression, "leftExpression", true), scope);
+    }
     SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(opExpression), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), true);
-    return TypeUtil_smodel.get_adapterType_for_concept(SLinkOperations.getTarget(nodeType, "concept", false));
+    SNode adapterClassifierType = TypeUtil_smodel.get_adapterType_for_concept(SLinkOperations.getTarget(nodeType, "concept", false));
+    return SLinkOperations.getTarget(adapterClassifierType, "classifier", false);
   }
   public static boolean ifMacro_Condition_1175594466810(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "modelToCopy", true) != null;
