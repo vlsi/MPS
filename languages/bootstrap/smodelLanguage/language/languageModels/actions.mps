@@ -61,7 +61,6 @@
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1173979260328">
       <property name="description" value="all appropriate 'property access' operations" />
-      <property name="actionsFactoryAspectId" value="PropertyAccess_for_leftExpression" />
       <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1138411891628" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddMenuPart" id="1179452816028">
@@ -259,6 +258,103 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+      <node role="variable" type="jetbrains.mps.bootstrap.actionsLanguage.SubstituteNodeBuilderVariableDeclaration" id="1179504557944">
+        <property name="name" value="leftNodeConcept" />
+        <node role="initializerBlock" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_SubstituteVariableInitializer" id="1179504557945">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179504557946">
+            <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1179504958602">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1179504958603">
+                <property name="name" value="leftExpression" />
+                <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1179504958604">
+                  <link role="concept" targetNodeId="3.1068431790191" />
+                </node>
+                <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179504958605">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1179504958606">
+                    <link role="link" targetNodeId="1.1138056667223" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeTypeCastExpression" id="1179504958607">
+                    <link role="concept" targetNodeId="1.1138055978872" />
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parentNode" id="1179504958608" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1179504958609">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1179504958610">
+                <property name="name" value="leftNodeType" />
+                <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1179504958611">
+                  <link role="concept" targetNodeId="1.1138055754698" />
+                </node>
+                <node role="initializer" type="jetbrains.mps.bootstrap.helgins.CoerceStrongExpression" id="1179504958612">
+                  <node role="nodeToCoerce" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179504958613">
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.helgins.Node_TypeOperation" id="1179504958614" />
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179504958615">
+                      <link role="variableDeclaration" targetNodeId="1179504958603" resolveInfo="leftExpression" />
+                    </node>
+                  </node>
+                  <node role="pattern" type="jetbrains.mps.bootstrap.helgins.ConceptReference" id="1179504958616">
+                    <property name="name" value="v" />
+                    <link role="concept" targetNodeId="1.1138055754698" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1179504994901">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1179504994902">
+                <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1179505017934">
+                  <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.ConceptRefExpression" id="1179505022250">
+                    <link role="conceptDeclaration" targetNodeId="15.1133920641626" />
+                  </node>
+                </node>
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1179505009826">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1179505013932" />
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179505000644">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1179505007152">
+                    <link role="link" targetNodeId="1.1138405853777" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179504998761">
+                    <link role="variableDeclaration" targetNodeId="1179504958610" resolveInfo="leftNodeType" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1179505048927">
+              <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179505058869">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1179505065772">
+                  <link role="link" targetNodeId="1.1138405853777" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179505054697">
+                  <link role="variableDeclaration" targetNodeId="1179504958610" resolveInfo="leftNodeType" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SConceptType" id="1179504582924" />
+      </node>
+      <node role="variable" type="jetbrains.mps.bootstrap.actionsLanguage.SubstituteNodeBuilderVariableDeclaration" id="1179505493203">
+        <property name="name" value="hierarhyScope" />
+        <node role="initializerBlock" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_SubstituteVariableInitializer" id="1179505493204">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179505493205">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179505666465">
+              <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1179505674292">
+                <link role="baseMethodDeclaration" extResolveInfo="13.static method ([Classifier]SModelSearchUtil_new).([StaticMethodDeclaration]createConceptHierarchyScope((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [AbstractConceptDeclaration])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IConceptHierarchyScope]))" />
+                <link role="classConcept" extResolveInfo="13.[Classifier]SModelSearchUtil_new" />
+                <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179505690297">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1179505707543" />
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.SubstituteNodeBuilderVariableReference" id="1179505687358">
+                    <link role="variableDeclaration" targetNodeId="1179504557944" resolveInfo="leftNodeConcept" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179505500882">
+          <link role="classifier" extResolveInfo="13.[Classifier]IConceptHierarchyScope" />
         </node>
       </node>
       <node role="variable" type="jetbrains.mps.bootstrap.actionsLanguage.SubstituteNodeBuilderVariableDeclaration" id="1179455000594">
