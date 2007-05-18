@@ -6,7 +6,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.bootstrap.actionsLanguage.helgins.QuotationClass_3;
+import jetbrains.mps.bootstrap.actionsLanguage.helgins.QuotationClass_1;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
@@ -22,7 +22,7 @@ public class typeof_ConceptFunctionParameter_result_InferenceRule implements Inf
 
   public void applyRule(SNode argument) {
     SNode menu = SNodeOperations.getAncestor(argument, "jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptRightTransformMenuPart", false, false);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_3().createNode(SLinkOperations.getTarget(menu, "baseConcept", false)), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_1().createNode(SLinkOperations.getTarget(menu, "baseConcept", false)), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_result";

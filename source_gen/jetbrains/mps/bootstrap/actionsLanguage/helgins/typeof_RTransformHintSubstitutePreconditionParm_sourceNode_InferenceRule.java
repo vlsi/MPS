@@ -25,8 +25,8 @@ public class typeof_RTransformHintSubstitutePreconditionParm_sourceNode_Inferenc
     return "jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode";
   }
   public ApplicableNodeCondition getNodeCondition() {
-    SModel model = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.bootstrap.actionsLanguage.helgins@6_0_1179373504893")).getSModel();
-    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1179373571550"));
+    SModel model = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.bootstrap.actionsLanguage.helgins@1_0_1179521399906")).getSModel();
+    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1179521889161"));
   }
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());

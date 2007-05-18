@@ -35,7 +35,7 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
   }
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(true);
+    editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
     editorCell.setDrawBrackets(false);
@@ -80,7 +80,7 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
   public EditorCell createCellModel_ModelAccess(EditorContext editorContext, SNode node) {
     ModelAccessor modelAccessor = this._modelAcessorFactory_1176906095407(editorContext, node);
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
-    editorCell.setSelectable(false);
+    editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
