@@ -18,13 +18,13 @@ import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.smodel.search.IConceptHierarchyScope;
+import jetbrains.mps.util.Calculable;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.util.Calculable;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
@@ -89,8 +89,26 @@ public class QueriesGenerated {
   }
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_SNodeOperation_1173979260328(final SNode parentNode, final SNode currentTargetNode, final ConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
-    final List<SNode> leftNodeConceptS = ListOperations.createList(new SNode[]{});
-    final List<IConceptHierarchyScope> hierarchyScopeS = ListOperations.createList(new IConceptHierarchyScope[]{});
+    final List<SNode> leftNodeConceptS;
+    final List<IConceptHierarchyScope> hierarchyScopeS;
+    {
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          return ListOperations.createList(new SNode[]{});
+        }
+      };
+      leftNodeConceptS = (List<SNode>)calc.calculate();
+    }
+    {
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          return ListOperations.createList(new IConceptHierarchyScope[]{});
+        }
+      };
+      hierarchyScopeS = (List<IConceptHierarchyScope>)calc.calculate();
+    }
     {
       SNode leftExpression = SLinkOperations.getTarget(parentNode, "leftExpression", true);
       SNode leftNodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(leftExpression), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
