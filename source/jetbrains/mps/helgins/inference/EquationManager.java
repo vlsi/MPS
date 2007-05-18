@@ -64,8 +64,11 @@ public class EquationManager {
     }
 
     for (SNode type : slave.myEquations.keySet()) {
+
       SNode parentType = slave.myEquations.get(type);
-      processEquation(type, parentType, null);
+      if (parentType != null) {
+        processEquation(type, parentType, null);
+      }
     }
   }
 
@@ -193,11 +196,6 @@ public class EquationManager {
   }
 
   private void processEquation(SNode var, SNode type, SNode nodeToCheck) {
-    if (type == null) {
-      if (((RuntimeTypeVariable) BaseAdapter.fromNode(var)).getNullable()) {
-        return;
-      }
-    }
     setParent(var, type);
     keepInequation(var, type);
     myTypeChecker.getTypeVariablesManager().addAllVarSetsOfSourceAndRemoveSourceFromThem(type, var);
