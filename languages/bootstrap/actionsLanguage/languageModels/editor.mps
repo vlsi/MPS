@@ -23,7 +23,7 @@
         <property name="selectable" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1177583946054">
           <property name="drawBorder" value="false" />
-          <property name="text" value="applicable node:" />
+          <property name="text" value="substitute node:" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1177583946055">
           <property name="drawBorder" value="false" />
@@ -330,15 +330,14 @@
               <property name="text" value="  " />
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1179519758066">
-              <property name="noTargetText" value="&lt;no common initializer&gt;" />
+              <property name="noTargetText" value="&lt;none&gt;" />
               <link role="relationDeclaration" targetNodeId="1.1154465386371" />
             </node>
           </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1178540096960">
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1178781739596">
             <property name="vertical" value="false" />
-            <property name="selectable" value="false" />
-            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1178540098779">
-              <property name="text" value="variables :" />
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1178781740855">
+              <property name="text" value="common initializer :" />
             </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1178540161159">
@@ -350,12 +349,22 @@
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1178540165456">
               <property name="vertical" value="true" />
               <link role="relationDeclaration" targetNodeId="1.1178540170602" />
+              <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1179522505126">
+                <property name="editable" value="true" />
+                <property name="nullText" value="&lt;no common variables&gt;" />
+              </node>
             </node>
           </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1178781739596">
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1179522468307">
             <property name="vertical" value="false" />
-            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1178781740855">
-              <property name="text" value="common initializer :" />
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1179522468308">
+              <property name="text" value="  " />
+              <property name="selectable" value="false" />
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1179522473990">
+              <property name="selectable" value="false" />
+              <property name="text" value="...................................." />
+              <property name="textFgColor" value="gray" />
             </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1178781753907">
@@ -365,9 +374,12 @@
               <property name="text" value="  " />
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1178781758617">
-              <property name="noTargetText" value="&lt;no common initializer&gt;" />
+              <property name="noTargetText" value="&lt;no supplemental initializer&gt;" />
               <link role="relationDeclaration" targetNodeId="1.1178781708614" />
             </node>
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1179523570000">
+            <property name="selectable" value="false" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1177583946165">
             <property name="selectable" value="false" />
@@ -383,6 +395,7 @@
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1177583946170">
               <property name="vertical" value="true" />
+              <property name="separatorText" value="----------" />
               <link role="relationDeclaration" targetNodeId="1.1177324142645" />
             </node>
           </node>
@@ -426,7 +439,7 @@
           <property name="vertical" value="true" />
           <property name="drawBorder" value="false" />
           <property name="selectable" value="false" />
-          <property name="separatorText" value="====================" />
+          <property name="separatorText" value="----------" />
           <property name="gridLayout" value="true" />
           <link role="relationDeclaration" targetNodeId="1.1112058057696" />
         </node>
