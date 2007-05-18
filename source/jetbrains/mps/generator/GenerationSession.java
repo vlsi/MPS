@@ -113,6 +113,9 @@ public class GenerationSession implements IGenerationSession {
           if (generationStepController.getCurrentMappings().isEmpty()) {
             break;
           }
+          if (status.getOutputModel() == null) {
+            System.err.println("Oy vey");
+          }
           inputModel = status.getOutputModel().getModelDescriptor();
         }
 
