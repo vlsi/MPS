@@ -271,6 +271,9 @@
             <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.SConceptType" id="1179455051007" />
           </node>
         </node>
+        <node role="initializerBlock" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_SubstituteVariableInitializer" id="1179457227337">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179457227338" />
+        </node>
       </node>
       <node role="variable" type="jetbrains.mps.bootstrap.actionsLanguage.SubstituteNodeBuilderVariableDeclaration" id="1179455134534">
         <property name="name" value="hierarchyScopeS" />
@@ -285,6 +288,9 @@
               <link role="classifier" extResolveInfo="13.[Classifier]IConceptHierarchyScope" />
             </node>
           </node>
+        </node>
+        <node role="initializerBlock" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_SubstituteVariableInitializer" id="1179457230979">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179457230980" />
         </node>
       </node>
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionFunction" id="1173979326981">
