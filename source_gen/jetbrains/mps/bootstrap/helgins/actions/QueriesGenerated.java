@@ -28,4 +28,14 @@ public class QueriesGenerated {
       SLinkOperations.setTarget(newNode, "pattern", SLinkOperations.getTarget(sampleNode, "pattern", true), true);
     }
   }
+  public static void nodeFactory_NodeSetup_TypeOfExpression_1179476271704(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
+    if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Expression")) {
+      if(!(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression"))) {
+        SLinkOperations.setTarget(newNode, "term", sampleNode, true);
+      } else 
+      {
+        SLinkOperations.setTarget(newNode, "term", SLinkOperations.getTarget(sampleNode, "term", true), true);
+      }
+    }
+  }
 }
