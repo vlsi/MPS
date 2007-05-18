@@ -25,6 +25,8 @@ import jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddNewChildOper
 import jetbrains.mps.bootstrap.constraintsLanguage.constraints.ConceptMethodDeclaration_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess;
+import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.TypeUtil_smodel;
 import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation;
 
@@ -407,8 +409,9 @@ public class QueriesGenerated {
     return _QueriesUtil.get_SConceptPropertyAccess_GetMethod(((SConceptPropertyAccess)SNodeOperations.getAdapter(node)), scope);
   }
   public static SNode referenceMacro_GetReferent_1170386916206(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode noe = SNodeOperations.getParent(node, null, false, false);
-    return SModelLanguageUtil.tryObtain_snode_adapterClass(SLinkOperations.getTarget(noe, "leftExpression", true), scope);
+    SNode opExpression = SNodeOperations.getParent(node, null, false, false);
+    SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(opExpression), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), true);
+    return TypeUtil_smodel.get_adapterType_for_concept(SLinkOperations.getTarget(nodeType, "concept", false));
   }
   public static boolean ifMacro_Condition_1175594466810(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "modelToCopy", true) != null;

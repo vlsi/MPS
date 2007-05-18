@@ -22,17 +22,8 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_40;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_41;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_42;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_43;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.zPredicate;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_44;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_42;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.zPredicate1;
 
 public class RulesUtil {
@@ -213,19 +204,8 @@ public class RulesUtil {
     SNode inputNodeType = new QuotationClass_40().createNode(inputNodeConcept);
     return inputNodeType;
   }
-  public static SNode get_AdapterClassType_for_Concept(SNode concept) {
-    if(concept == null) {
-      return new QuotationClass_41().createNode();
-    }
-    String adapterClassFqName = NameUtil.nodeFQName(concept);
-    Object adapterClassAdapter = SModelUtil_new.findNodeByFQName(adapterClassFqName, Classifier.class, GlobalScope.getInstance());
-    SNode adapterClass = BaseAdapter.fromAdapter((INodeAdapter)adapterClassAdapter);
-    SNode adapterClassType = SModelOperations.createNewNode(SNodeOperations.getModel(new QuotationClass_42().createNode()), "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
-    SLinkOperations.setTarget(adapterClassType, "classifier", adapterClass, false);
-    return adapterClassType;
-  }
   public static SNode get_SNodeType_fromOpParameter(SNode op) {
-    SNode type = new QuotationClass_43().createNode();
+    SNode type = new QuotationClass_41().createNode();
     SNode parm = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(op, "parameter", true), new zPredicate(null, null)));
     if(parm != null) {
       SLinkOperations.setTarget(type, "concept", SLinkOperations.getTarget(parm, "concept", false), false);
@@ -233,7 +213,7 @@ public class RulesUtil {
     return type;
   }
   public static SNode get_SNodeListType_fromOpParameter(SNode op) {
-    SNode type = new QuotationClass_44().createNode();
+    SNode type = new QuotationClass_42().createNode();
     SNode parm = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(op, "parameter", true), new zPredicate1(null, null)));
     if(parm != null) {
       SLinkOperations.setTarget(type, "elementConcept", SLinkOperations.getTarget(parm, "concept", false), false);
