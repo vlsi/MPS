@@ -91,6 +91,9 @@ public class QueriesGenerated {
   public static String propertyMacro_GetPropertyValue_1178542556851(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(node, "variableDeclaration", false), "name");
   }
+  public static SNode referenceMacro_GetReferent_1179457640879(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return generator.findNodeBuilderForSource(node, "variable").getTargetNode();
+  }
   public static boolean ifMacro_Condition_1178782034640(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "commonInitializer", true) != null;
   }
@@ -127,6 +130,9 @@ public class QueriesGenerated {
   public static List sourceNodesQuery_1178541065624(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTargets(node, "variable", true);
   }
+  public static List sourceNodesQuery_1179457640889(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTargets(node, "variable", true);
+  }
   public static List sourceNodesQuery_1177330914926(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.getDescendants(node, "jetbrains.mps.bootstrap.actionsLanguage.structure.SubstituteMenuPart", false);
   }
@@ -148,8 +154,11 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1178541085974(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "type", true);
   }
-  public static SNode sourceNodeQuery_1179373799654(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "initializer", true);
+  public static SNode sourceNodeQuery_1179457640853(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "initializerBlock", true), "body", true);
+  }
+  public static SNode sourceNodeQuery_1179457640870(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "type", true);
   }
   public static SNode sourceNodeQuery_1178782016772(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "commonInitializer", true), "body", true);
