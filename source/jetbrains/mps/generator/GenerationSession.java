@@ -101,7 +101,7 @@ public class GenerationSession implements IGenerationSession {
           addMessage(new Message(MessageKind.INFORMATION, "execute step " + (stepCount++)));
           status = generateModel_internal(inputModel, targetLanguage, confs, generationStepController);
           hasWarnings |= status.hasWarnings();
-          if (status.isCanceled() || status.isError()) {
+          if (status.isCanceled() /*|| status.isError()*/) {
             break;
           }
 
@@ -194,7 +194,7 @@ public class GenerationSession implements IGenerationSession {
       boolean hasWarnigns = generator.getWarningCount() > 0;
       status = new GenerationStatus(sourceModel, outputModel, context.getTraceMap(), wasErrors, hasWarnigns, false);
       addMessage(status.isError() ? MessageKind.WARNING : MessageKind.INFORMATION, "model \"" + sourceModel.getUID() + "\" has been generated " + (status.isError() ? "with errors" : "successfully"));
-//      generator.clearErrorsAndWarnings();
+      generator.clearErrorsAndWarnings();
       generator.reset();
     } catch (GenerationCanceledException gce) {
       throw gce;//rethrow it for not to be caught in the last catch block
@@ -227,28 +227,7 @@ public class GenerationSession implements IGenerationSession {
       return generateModel(inputModel, generator, generationContext);
     }
 
-//    // auto-plan
-//    GenerationStepController generationStepController = generationContext.getGenerationStepController();
-//    if (!checkGenerationStep(generationStepController)) {
-//      throw new GenerationCanceledException();
-//    }
-//    SModel outputModel = null;
-//    while (true) {
-//      outputModel = generateModel(inputModel, targetLanguage, generator, generationContext);
-//      inputModel = outputModel;
-//      // need more steps?
-//      if (!generationStepController.advanceStep()) {
-//        // generation complete
-//        break;
-//      }
-//      if (generationStepController.getCurrentMappings().isEmpty()) {
-//        break;
-//      }
-//      printGenerationStepData(generationStepController, inputModel);
-//      generationContext.replaceInputModel(inputModel.getModelDescriptor());
-//      generationContext.updateGenerationStepData(generationStepController);
-//    }
-
+    // auto-plan
     return generateModel(inputModel, generator, generationContext);
   }
 
