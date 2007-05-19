@@ -52,16 +52,6 @@ public class QueriesGenerated {
     SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(leftExpression), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
     return nodeType != null;
   }
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1154624855279(SNode sourceNode, IScope scope, IOperationContext operationContext) {
-    return ActionUtil_smodel.isExpression_appropriateFor_ourOperations(sourceNode);
-  }
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1154634535241(SNode sourceNode, IScope scope, IOperationContext operationContext) {
-    SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(sourceNode), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
-    return nodeType != null;
-  }
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1154636612745(SNode sourceNode, IScope scope, IOperationContext operationContext) {
-    return ActionUtil_smodel.isExpression_appropriateFor_SemanticDowncast(sourceNode);
-  }
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_SNodeOperation_1154637518825(SNode sourceNode, IScope scope, IOperationContext operationContext) {
     boolean alreadyHasParms = SLinkOperations.getCount(sourceNode, "parameter") > 0;
     if(alreadyHasParms) {
@@ -69,6 +59,16 @@ public class QueriesGenerated {
     }
     List<SNode> applicableParms = sourceNode.getConceptLinkTargets("applicableParameter", true, scope);
     return applicableParms.size() > 0;
+  }
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1179535189083(SNode sourceNode, IScope scope, IOperationContext operationContext) {
+    return ActionUtil_smodel.isExpression_appropriateFor_ourOperations(sourceNode);
+  }
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1179535189126(SNode sourceNode, IScope scope, IOperationContext operationContext) {
+    SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(sourceNode), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
+    return nodeType != null;
+  }
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1179535648215(SNode sourceNode, IScope scope, IOperationContext operationContext) {
+    return ActionUtil_smodel.isExpression_appropriateFor_SemanticDowncast(sourceNode);
   }
   public static void nodeFactory_NodeSetup_Node_GetAncestorOperation_1171415364778(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
     if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation")) {
@@ -328,7 +328,7 @@ public class QueriesGenerated {
     }
     return result;
   }
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1138079721624(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1179535189082(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression", operationContext.getScope());
@@ -347,6 +347,48 @@ public class QueriesGenerated {
         }
         public String getDescriptionText(String pattern) {
           return "smodel language operation";
+        }
+      });
+    }
+    return result;
+  }
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1179535189125(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression", operationContext.getScope());
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
+
+        public SNode doSubstitute(String pattern) {
+          SNode newNode = SNodeOperations.replaceWithNewChild(sourceNode, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression");
+          SLinkOperations.setTarget(newNode, "leftExpression", sourceNode, true);
+          return newNode;
+        }
+        public String getMatchingText(String pattern) {
+          return ":";
+        }
+        public String getDescriptionText(String pattern) {
+          return "node type cast";
+        }
+      });
+    }
+    return result;
+  }
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1179535648214(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression", operationContext.getScope());
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
+
+        public SNode doSubstitute(String pattern) {
+          SNode newNode = SNodeOperations.replaceWithNewChild(sourceNode, "jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression");
+          SLinkOperations.setTarget(newNode, "leftExpression", sourceNode, true);
+          return newNode;
+        }
+        public String getMatchingText(String pattern) {
+          return "/";
+        }
+        public String getDescriptionText(String pattern) {
+          return "downcast to lower semantic level";
         }
       });
     }
