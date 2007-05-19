@@ -5,7 +5,8 @@
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
-  <maxImportIndex value="9" />
+  <language namespace="ypath" />
+  <maxImportIndex value="10" />
   <import index="1" modelUID="ypath.structure" />
   <import index="2" modelUID="jetbrains.mps.core.structure" />
   <import index="3" modelUID="java.lang@java_stub" />
@@ -15,6 +16,7 @@
   <import index="7" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" />
   <import index="8" modelUID="jetbrains.mps.smodel@java_stub" />
   <import index="9" modelUID="ypath.generator.baseLanguage.template.main@templates" />
+  <import index="10" modelUID="jetbrains.mps.baseLanguage.constraints" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1178187486791">
     <link role="concept" targetNodeId="1.1168428529658" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1178187486792">
@@ -193,6 +195,39 @@
             <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsNotNullOperation" id="1179320200797" />
           </node>
         </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1179573502028">
+      <property name="name" value="getExpectedReturnType" />
+      <link role="overridenMethod" targetNodeId="10.1178571276073" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179573502030">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1179573516536">
+          <node role="expression" type="jetbrains.mps.bootstrap.helgins.Quotation" id="1179573519198">
+            <node role="quotedNode" type="ypath.ArrayOrSequenceType" id="1179573545499">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179573573517">
+                <link role="classifier" extResolveInfo="3.[Classifier]Object" />
+                <node role="_attr_$attribute" type="jetbrains.mps.bootstrap.helgins.Antiquotation" id="1179573575677">
+                  <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179573592406">
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_ConceptMethodCall" id="1179573597583">
+                      <link role="conceptMethodDeclaration" targetNodeId="1179306333014" resolveInfo="getNodeType" />
+                    </node>
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179573580313">
+                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAncestorOperation" id="1179573582068">
+                        <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Concept" id="1179573584774">
+                          <link role="concept" targetNodeId="1.1179235924605" />
+                        </node>
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1179573578446" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179573508423">
+        <link role="classifier" extResolveInfo="8.[Classifier]SNode" />
       </node>
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1179319915908">
@@ -738,6 +773,36 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1179573613932">
+    <link role="concept" targetNodeId="1.1168428668253" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1179573615575">
+      <property name="name" value="getExpectedReturnType" />
+      <link role="overridenMethod" targetNodeId="10.1178571276073" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179573615577">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1179573626907">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179573678364">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_ConceptMethodCall" id="1179573680649">
+              <link role="conceptMethodDeclaration" targetNodeId="1179306333014" resolveInfo="getNodeType" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179573644498">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAncestorOperation" id="1179573646235">
+                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Concept" id="1179573649267">
+                  <link role="concept" targetNodeId="1.1179235924605" />
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1179573643415" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179573621078">
+        <link role="classifier" extResolveInfo="8.[Classifier]SNode" />
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1179573613933">
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179573613934" />
     </node>
   </node>
 </model>
