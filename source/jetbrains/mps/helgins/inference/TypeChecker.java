@@ -37,6 +37,11 @@ import java.util.*;
 public class TypeChecker {
   private static final Logger LOG = Logger.getLogger(TypeChecker.class);
 
+  private static final String RUNTIME_TYPES = "$runtimeTypes$";
+  private static final String TYPES_MODEL_NAME = "typesModel";
+  public static final SModelUID TYPES_MODEL_UID = new SModelUID(TYPES_MODEL_NAME, RUNTIME_TYPES);
+  private static final ModelOwner RUNTIME_TYPES_MODEL_OWNER = new ModelOwner() {};
+
   private Set<SNode> myCheckedRoots = new WeakSet<SNode>();
   private Map<SNode, Set<SNode>> myNodesToDependentRoots = new WeakHashMap<SNode, Set<SNode>>();
 
@@ -47,8 +52,6 @@ public class TypeChecker {
   private WeakHashMap<SNode, String> myNodesWithErrorStrings = new WeakHashMap<SNode, String>();
   private Map<SNode, SNode> myMainContext = new HashMap<SNode, SNode>();
   private Stack<EquationManager> myEquationManagersStack = new Stack<EquationManager>();
-  private TypeVariablesManager myTypeVariablesManager;
-  private HInterpreter myHInterpreter;
   private SubtypingManager mySubtypingManager;
   private QuotationEvaluator myQuotationEvaluator;
   private RuntimeSupport myRuntimeSupport;
@@ -58,8 +61,6 @@ public class TypeChecker {
 
   public TypeChecker() {
     myEquationManagersStack.push(new EquationManager(this));
-    myHInterpreter = new HInterpreter(this);
-    myTypeVariablesManager = new TypeVariablesManager(this);
     mySubtypingManager = new SubtypingManager(this);
     myQuotationEvaluator = new QuotationEvaluator(this);
     myRuntimeSupport = new RuntimeSupport(this);
@@ -78,16 +79,8 @@ public class TypeChecker {
     return myEquationManagersStack.peek();
   }
 
-  public TypeVariablesManager getTypeVariablesManager() {
-    return myTypeVariablesManager;
-  }
-
   public SubtypingManager getSubtypingManager() {
     return mySubtypingManager;
-  }
-
-  public HInterpreter getInterpreter() {
-    return myHInterpreter;
   }
 
   public QuotationEvaluator getQuotationEvaluator() {
@@ -106,8 +99,14 @@ public class TypeChecker {
     myMainContext.clear();
     myEquationManagersStack.clear();
     myEquationManagersStack.push(new EquationManager(this));
-    myTypeVariablesManager.clearVariables();
-    myHInterpreter.clear();
+    {
+      SModelUID uid = getRuntimeTypesModelUID();
+      SModelDescriptor modelDescriptor = (SModelRepository.getInstance().getModelDescriptor(uid));
+      if (modelDescriptor != null) {
+        SModel runtimeTypesModel = getRuntimeTypesModel();
+        runtimeTypesModel.clear();
+      }
+    }
     myConceptsToRulesCache.clear();
     myNodesWithErrors.clear();
     myNodesWithErrorStrings.clear();
@@ -148,7 +147,7 @@ public class TypeChecker {
     for (Map.Entry<SNode, SNode> contextEntry : mainContext.entrySet()) {
       SNode term = contextEntry.getKey();
       if (term == null) continue;
-      SNode type = expandType(contextEntry.getValue(), myHInterpreter.getRuntimeTypesModel());
+      SNode type = expandType(contextEntry.getValue(), getRuntimeTypesModel());
       if (BaseAdapter.isInstance(type, RuntimeErrorType.class)) {
         reportTypeError(term, ((RuntimeErrorType) BaseAdapter.fromNode(type)).getErrorText());
       }
@@ -296,19 +295,8 @@ public class TypeChecker {
         rule.applyRule(node);
       }
     }
-    applyLegacyRulesToNode(node);
 
     //NodeReadEventsCaster.removeNodesReadListener();
-  }
-
-  private @Deprecated void applyLegacyRulesToNode(SNode node) {
-    // legacy rules:
-    Set<Rule> rules = myConceptsToRulesCache.get(node.getConceptDeclarationAdapter());
-    if (rules != null) {
-      for (Rule rule : rules) {
-        myHInterpreter.interpret(node, rule);
-      }
-    }
   }
 
   public void checkTypesForNodeAndSolveInequations(SNode node) {
@@ -425,8 +413,28 @@ public class TypeChecker {
   }
 
 
+  public SModelUID getRuntimeTypesModelUID() {
+    return TYPES_MODEL_UID;
+  }
+
   public SModel getRuntimeTypesModel() {
-    return myHInterpreter.getRuntimeTypesModel();
+    SModelUID uid = getRuntimeTypesModelUID();
+    SModelDescriptor modelDescriptor = (SModelRepository.getInstance().getModelDescriptor(uid));
+
+    if (modelDescriptor == null) { // then create and register model descriptor
+      modelDescriptor = new DefaultSModelDescriptor(IModelRootManager.NULL_MANAGER, null, uid) {
+        {
+          mySModel = new SModel(getModelUID());
+        }
+
+        public void save() {
+          //do-nothing
+        }
+      };
+      SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, RUNTIME_TYPES_MODEL_OWNER);
+    }
+
+    return modelDescriptor.getSModel();
   }
 
   @Nullable

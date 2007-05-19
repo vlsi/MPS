@@ -6,10 +6,9 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.bootstrap.helgins.runtime.RuntimeSupport;
 
 import java.util.*;
-
-import com.sun.corba.se.spi.monitoring.MonitoredObject;
 
 /**
  * Created by IntelliJ IDEA.
@@ -113,8 +112,8 @@ public class EquationManager {
     if (subtypeRepresentator == supertypeRepresentator) return;
 
     // if one of them is a var
-    RuntimeTypeVariable varSubtype = TypeVariablesManager.getTypeVar(subtypeRepresentator);
-    RuntimeTypeVariable varSupertype = TypeVariablesManager.getTypeVar(supertypeRepresentator);
+    RuntimeTypeVariable varSubtype = RuntimeSupport.getTypeVar(subtypeRepresentator);
+    RuntimeTypeVariable varSupertype = RuntimeSupport.getTypeVar(supertypeRepresentator);
     if (varSubtype != null || varSupertype != null) {
       addSubtyping(subtypeRepresentator, supertypeRepresentator, nodeToCheck);
       return;
@@ -138,8 +137,8 @@ public class EquationManager {
     if (representator1 == representator2) return;
 
     // if one of them is a var
-    RuntimeTypeVariable varSubtype = TypeVariablesManager.getTypeVar(representator1);
-    RuntimeTypeVariable varSupertype = TypeVariablesManager.getTypeVar(representator2);
+    RuntimeTypeVariable varSubtype = RuntimeSupport.getTypeVar(representator1);
+    RuntimeTypeVariable varSupertype = RuntimeSupport.getTypeVar(representator2);
     if (varSubtype != null || varSupertype != null) {
       addComparable(representator1, representator2, nodeToCheck);
       return;
@@ -170,8 +169,8 @@ public class EquationManager {
     if (rhsRepresentator == lhsRepresentator) return;
 
     // add var to type's multieq
-    RuntimeTypeVariable varRhs = TypeVariablesManager.getTypeVar(rhsRepresentator);
-    RuntimeTypeVariable varLhs = TypeVariablesManager.getTypeVar(lhsRepresentator);
+    RuntimeTypeVariable varRhs = RuntimeSupport.getTypeVar(rhsRepresentator);
+    RuntimeTypeVariable varLhs = RuntimeSupport.getTypeVar(lhsRepresentator);
     if (varRhs != null) {
       processEquation(rhsRepresentator, lhsRepresentator, nodeToCheck);
       return;
@@ -198,8 +197,7 @@ public class EquationManager {
   private void processEquation(SNode var, SNode type, SNode nodeToCheck) {
     setParent(var, type);
     keepInequation(var, type);
-    myTypeChecker.getTypeVariablesManager().addAllVarSetsOfSourceAndRemoveSourceFromThem(type, var);
-    RuntimeTypeVariable typeVar = TypeVariablesManager.getTypeVar(var);
+    RuntimeTypeVariable typeVar = RuntimeSupport.getTypeVar(var);
     if (typeVar instanceof RuntimeErrorType) {
       TypeChecker.getInstance().reportTypeError(nodeToCheck,((RuntimeErrorType)typeVar).getErrorText());
     }
@@ -250,7 +248,6 @@ public class EquationManager {
 
   private void processErrorEquation(SNode type, SNode error, IErrorReporter errorReporter, SNode nodeToCheck) {
     setParent(error, type); //type
-    myTypeChecker.getTypeVariablesManager().addAllVarSetsOfSourceAndRemoveSourceFromThem(type, error);
     myTypeChecker.reportTypeError(nodeToCheck, errorReporter);
   }
 

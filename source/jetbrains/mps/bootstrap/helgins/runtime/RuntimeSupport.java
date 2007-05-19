@@ -5,6 +5,8 @@ import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
 import jetbrains.mps.helgins.inference.NodeTypesComponent;
 import jetbrains.mps.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.patterns.IMatchingPattern;
 
 import java.util.Map;
@@ -113,5 +115,13 @@ public class RuntimeSupport {
 
   public SNode coerceStrong(SNode subtype, IMatchingPattern pattern) {
     return myTypeChecker.getSubtypingManager().coerceSubtyping(subtype, pattern, false);
+  }
+
+  public static RuntimeTypeVariable getTypeVar(SNode type) {
+    INodeAdapter baseAdapter = BaseAdapter.fromNode(type);
+    if (baseAdapter instanceof RuntimeTypeVariable) {
+      return (RuntimeTypeVariable) baseAdapter;
+    }
+    return null;
   }
 }
