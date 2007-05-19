@@ -9,9 +9,10 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.bootstrap.smodelLanguage.actions.ActionUtil_smodel;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
-import java.util.List;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import java.util.List;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
@@ -29,11 +30,11 @@ import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptPropertyDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.actions.zPredicate;
 import jetbrains.mps.bootstrap.smodelLanguage.actions.zPredicate1;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptLinkDeclaration;
+import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
 
 public class QueriesGenerated {
@@ -57,8 +58,7 @@ public class QueriesGenerated {
     if(alreadyHasParms) {
       return false;
     }
-    List<SNode> applicableParms = sourceNode.getConceptLinkTargets("applicableParameter", true, scope);
-    return applicableParms.size() > 0;
+    return SequenceOperations.getSize(SLinkOperations.getConceptLinkTargets(sourceNode, "applicableParameter")) > 0;
   }
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1179535189083(SNode sourceNode, IScope scope, IOperationContext operationContext) {
     return ActionUtil_smodel.isExpression_appropriateFor_ourOperations(sourceNode);
@@ -325,6 +325,40 @@ public class QueriesGenerated {
           }
         });
       }
+    }
+    return result;
+  }
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_SNodeOperation_1138669164825(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation", operationContext.getScope());
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          return SNodeOperations.getParent(sourceNode, null, false, false);
+        }
+      };
+      SNode node = (SNode)calc.calculate();
+      result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, transformationTag, operationContext));
+    }
+    return result;
+  }
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_SNodeOperation_1144103719164(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.AbstractOperationParameter", operationContext.getScope());
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
+
+        public SNode doSubstitute(String pattern) {
+          return SLinkOperations.addNewChild(sourceNode, "parameter", "jetbrains.mps.bootstrap.smodelLanguage.structure.AbstractOperationParameter");
+        }
+        public String getMatchingText(String pattern) {
+          return "< .. >";
+        }
+        public String getDescriptionText(String pattern) {
+          return "add operation parameters";
+        }
+      });
     }
     return result;
   }
