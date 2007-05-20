@@ -289,13 +289,11 @@ public class EquationManager {
     return true;
   }
 
-  public static Set<Pair<SNode, SNode>> createChildEquations(SNode node1, SNode node2) {
-    Set<Pair<SNode, SNode>> result = new HashSet<Pair<SNode, SNode>>();
-    Set<String> childRoles1 = node1.getChildRoles();
-    Set<String> childRoles2 = node2.getChildRoles();
+  public static Set<Pair<SNode, SNode>> createChildEquations(final SNode node1, final SNode node2) {
+    final Set<Pair<SNode, SNode>> result = new HashSet<Pair<SNode, SNode>>();
 
-    Set<String> allChildRoles = new HashSet<String>(childRoles1);
-    allChildRoles.addAll(childRoles2);
+    Set<String> allChildRoles = node1.getChildRoles();
+    node2.addChildRoles(allChildRoles);
 
     for (String childRole : allChildRoles) {
       List<SNode> childrenInNode1 = node1.getChildren(childRole);

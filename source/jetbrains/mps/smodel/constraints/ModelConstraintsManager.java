@@ -12,6 +12,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -176,7 +177,7 @@ public class ModelConstraintsManager {
     return (INodePropertySetter) getNodePropertyGetterOrSetter(node.getAdapter(), propertyName, true);
   }
 
-  public IModelConstraints getNodePropertyGetterOrSetter(@NotNull INodeAdapter node, @NotNull String propertyName, boolean isSetter) {
+  public IModelConstraints getNodePropertyGetterOrSetter(@NotNull final INodeAdapter node, @NotNull final String propertyName, boolean isSetter) {
     String namespace = node.getNode().getLanguageNamespace();
 
     // 'bootstrap' properties
@@ -197,45 +198,61 @@ public class ModelConstraintsManager {
       return null;
     }
 
-    String nodeConceptFqName = node.getConceptFQName();
-    String originalKey = nodeConceptFqName + "#" + propertyName;
-    if (isSetter) {
-      if (myNodePropertySettersCache.containsKey(originalKey)) {
-        return myNodePropertySettersCache.get(originalKey);
-      }
-    } else {
-      if (myNodePropertyGettersCache.containsKey(originalKey)) {
-        return myNodePropertyGettersCache.get(originalKey);
-      }
-    }
+    final StringBuilder builder = StringBuilderSpinAllocator.alloc();
+    try {
+      builder.append('#');
+      builder.append(propertyName);
+      final String prefixedPropertyName = builder.toString();
+      builder.setLength(0);
 
-    // find getter/setter and put to cache
-    Set<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptHierarchy(node.getConceptDeclarationAdapter());
-    for (AbstractConceptDeclaration concept : hierarchy) {
-      String conceptFqName = NameUtil.nodeFQName(concept);
-      IModelConstraints result;
+      final String nodeConceptFqName = node.getConceptFQName();
+      builder.append(nodeConceptFqName);
+      builder.append(prefixedPropertyName);
+      String originalKey = builder.toString();
       if (isSetter) {
-        result = myNodePropertySettersMap.get(conceptFqName + "#" + propertyName);
-      } else {
-        result = myNodePropertyGettersMap.get(conceptFqName + "#" + propertyName);
-      }
-      if (result != null) {
-        if (isSetter) {
-          myNodePropertySettersCache.put(originalKey, (INodePropertySetter) result);
-        } else {
-          myNodePropertyGettersCache.put(originalKey, (INodePropertyGetter) result);
+        if (myNodePropertySettersCache.containsKey(originalKey)) {
+          return myNodePropertySettersCache.get(originalKey);
         }
-        return result;
+      } else {
+        if (myNodePropertyGettersCache.containsKey(originalKey)) {
+          return myNodePropertyGettersCache.get(originalKey);
+        }
       }
-    }
 
-    // no setter/getter found
-    if (isSetter) {
-      myNodePropertySettersCache.put(originalKey, null);
-    } else {
-      myNodePropertyGettersCache.put(originalKey, null);
+      // find getter/setter and put to cache
+      Set<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptHierarchy(node.getConceptDeclarationAdapter());
+      for (final AbstractConceptDeclaration concept : hierarchy) {
+        final String conceptFqName = NameUtil.nodeFQName(concept);
+        final IModelConstraints result;
+        builder.setLength(0);
+        builder.append(conceptFqName);
+        builder.append(prefixedPropertyName);
+        if (isSetter) {
+          result = myNodePropertySettersMap.get(builder.toString());
+        } else {
+          result = myNodePropertyGettersMap.get(builder.toString());
+        }
+        if (result != null) {
+          if (isSetter) {
+            myNodePropertySettersCache.put(originalKey, (INodePropertySetter) result);
+          } else {
+            myNodePropertyGettersCache.put(originalKey, (INodePropertyGetter) result);
+          }
+          return result;
+        }
+      }
+
+      // no setter/getter found
+      if (isSetter) {
+        myNodePropertySettersCache.put(originalKey, null);
+      } else {
+        myNodePropertyGettersCache.put(originalKey, null);
+      }
+      return null;
     }
-    return null;
+    finally {
+      StringBuilderSpinAllocator.dispose(builder);
+    }
   }
 
   public INodeReferentSearchScopeProvider getNodeDefaultSearchScopeProvider(AbstractConceptDeclaration referentConcept) {

@@ -190,8 +190,25 @@ public class SNode implements Cloneable, Iterable<SNode> {
   }
 
   @NotNull
+  public Set<String> addChildRoles(@NotNull final Set<String> augend, boolean includeAttributeRoles) {
+    NodeReadAccessCaster.fireNodeReadAccessed(this);
+    for (SNode child : getChildren()) {
+      String roleOf = getRoleOf(child);
+      if (includeAttributeRoles || !(roleOf.contains(AttributesRolesUtil.STEREOTYPE_DELIM))) {
+        augend.add(roleOf);
+      }
+    }
+    return augend;
+  }
+
+  @NotNull
   public Set<String> getChildRoles() {
     return getChildRoles(false);
+  }
+
+  @NotNull
+  public Set<String> addChildRoles(@NotNull final Set<String> augend) {
+    return addChildRoles(augend, false);
   }
 
   @NotNull

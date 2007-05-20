@@ -1,13 +1,14 @@
 package jetbrains.mps.externalResolve;
 
 import jetbrains.mps.baseLanguage.structure.*;
+import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
 
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.HashMap;
 
 /**
  * Created by IntelliJ IDEA.
@@ -66,14 +67,14 @@ public class ExternalResolveInfoProvider {
   }
 
   private static String toString(Type t) {
-    String result = ourTypeNames.get(t.getClass().getName());    
+    String result = ourTypeNames.get(t.getClass().getName());
     if (result != null) {
       return result;
     }
     return adaptType(t).o2;
   }
 
-  private static Pair<String,String> adaptType(Type t) {
+  private static Pair<String, String> adaptType(Type t) {
     String s = ourPrimitiveAdaptationNames.get(t.getClass().getName());
     if (s != null) {
       return new Pair<String, String>(s, s);
@@ -87,7 +88,7 @@ public class ExternalResolveInfoProvider {
         sb.append(", ");
         sb.append("<");
       }
-      int i=0;
+      int i = 0;
       for (Type parameter : CollectionUtil.iteratorAsIterable(classifierType.parameters())) {
         String componentString = toString(parameter);
         if (componentString == null) {
@@ -139,8 +140,15 @@ public class ExternalResolveInfoProvider {
   }
 
   public static String getExtResolveInfoForTargetClassGenericDeclaration(GenericDeclaration genericDeclaration) {
-    String name = genericDeclaration.getName();
-    return "[Classifier]" + name;
+    final StringBuilder builder = StringBuilderSpinAllocator.alloc();
+    try {
+      builder.append("[Classifier]");
+      builder.append(genericDeclaration.getName());
+      return builder.toString();
+    }
+    finally {
+      StringBuilderSpinAllocator.dispose(builder);
+    }
   }
 
   public static String getExtResolveInfoForTargetClassConstructorDeclaration(ConstructorDeclaration constructorDeclaration) {
@@ -149,7 +157,7 @@ public class ExternalResolveInfoProvider {
     ClassConcept classConcept = (ClassConcept) constructorDeclaration.getParent();
     String classifierExtResolveInfo = getExtResolveInfoForTargetClassGenericDeclaration(classConcept);
 
-    String result  = "[" + conceptName + "] (";
+    String result = "[" + conceptName + "] (";
 
     Iterator<ParameterDeclaration> pIterator = constructorDeclaration.parameters();
 
@@ -166,46 +174,69 @@ public class ExternalResolveInfoProvider {
     return ExternalResolver.CONSTRUCTOR + classifierExtResolveInfo + result;
   }
 
-  public static String getExtResolveInfoForTargetClassBaseMethodDeclaration(BaseMethodDeclaration baseMethodDeclaration) {
-    String name = baseMethodDeclaration.getName();
-    String conceptName = baseMethodDeclaration.getShortConceptName();
-
+  public static String getExtResolveInfoForTargetClassBaseMethodDeclaration(final BaseMethodDeclaration baseMethodDeclaration) {
+    final String name = baseMethodDeclaration.getName();
+    final String conceptName = baseMethodDeclaration.getShortConceptName();
 
     Pair<String, String> typeObject = adaptNode(baseMethodDeclaration.getReturnType());
     if (typeObject == null) return ExternalResolver.NO_MEMBER_TYPE;
-    String methodTypeName = typeObject.o1;
-    String methodTypeSignature = typeObject.o2;
-    String methodType = "(" + methodTypeName + "/" + methodTypeSignature + ")";
+    final String methodTypeName = typeObject.o1;
+    final String methodTypeSignature = typeObject.o2;
 
-    String result  = "[" + conceptName + "]" + name + "(";
+    final StringBuilder builder = StringBuilderSpinAllocator.alloc();
+    try {
 
-    Iterator<ParameterDeclaration> pIterator = baseMethodDeclaration.parameters();
+      builder.append('(');
+      builder.append(methodTypeName);
+      builder.append('/');
+      builder.append(methodTypeSignature);
+      builder.append(')');
+      final String methodType = builder.toString();
 
-    while (pIterator.hasNext()) {
-      ParameterDeclaration parameterDeclaration = pIterator.next();
-      typeObject = adaptNode(parameterDeclaration.getType());
-      if (typeObject == null) return ExternalResolver.NO_MEMBER_TYPE;
-      result += "(" + typeObject.o1 + "/" + typeObject.o2 + ")";
-      if (pIterator.hasNext()) result += ", ";
+      builder.setLength(0);
+      builder.append('[');
+      builder.append(conceptName);
+      builder.append(']');
+      builder.append(name);
+      builder.append('(');
+
+      Iterator<ParameterDeclaration> pIterator = baseMethodDeclaration.parameters();
+
+      while (pIterator.hasNext()) {
+        ParameterDeclaration parameterDeclaration = pIterator.next();
+        typeObject = adaptNode(parameterDeclaration.getType());
+        if (typeObject == null) return ExternalResolver.NO_MEMBER_TYPE;
+        builder.append('(');
+        builder.append(typeObject.o1);
+        builder.append('/');
+        builder.append(typeObject.o2);
+        builder.append(')');
+        if (pIterator.hasNext())  {
+          builder.append(", ");
+        }
+      }
+
+      builder.append(") : ");
+      builder.append(methodType);
+      return builder.toString();
     }
-
-    result += ") : ";
-    result += methodType;
-    return result;
+    finally {
+      StringBuilderSpinAllocator.dispose(builder);
+    }
   }
 
   public static String getExtResolveInfoForTargetClassInstanceMethodDeclaration(InstanceMethodDeclaration instanceMethodDeclaration) {
     Classifier classifier = (Classifier) instanceMethodDeclaration.getParent();
     String classifierExtResolveInfo = getExtResolveInfoForTargetClassGenericDeclaration(classifier);
     String myExtResolveInfo = getExtResolveInfoForTargetClassBaseMethodDeclaration(instanceMethodDeclaration);
-    return ExternalResolver.METHOD + "("+ classifierExtResolveInfo + ")." + "(" + myExtResolveInfo + ")";
+    return ExternalResolver.METHOD + "(" + classifierExtResolveInfo + ")." + "(" + myExtResolveInfo + ")";
   }
 
   public static String getExtResolveInfoForTargetClassStaticMethodDeclaration(StaticMethodDeclaration staticMethodDeclaration) {
     ClassConcept classConcept = (ClassConcept) staticMethodDeclaration.getParent();
     String classExtResolveInfo = getExtResolveInfoForTargetClassGenericDeclaration(classConcept);
     String myExtResolveInfo = getExtResolveInfoForTargetClassBaseMethodDeclaration(staticMethodDeclaration);
-    return ExternalResolver.STATIC_METHOD + "("+ classExtResolveInfo + ")." + "(" + myExtResolveInfo + ")";
+    return ExternalResolver.STATIC_METHOD + "(" + classExtResolveInfo + ")." + "(" + myExtResolveInfo + ")";
   }
 
   private static String getExtResolveInfoForClassFields(VariableDeclaration variableDeclaration) {
@@ -217,10 +248,10 @@ public class ExternalResolveInfoProvider {
 
     String myExtResolveInfo = "[" + conceptName + "]" + name + " : ";
     Pair<String, String> typeObject = adaptNode(variableDeclaration.getType());
-     if (typeObject == null) return ExternalResolver.NO_MEMBER_TYPE;
-    myExtResolveInfo+= "(" + typeObject.o1 + "/" + typeObject.o2 + ")";
+    if (typeObject == null) return ExternalResolver.NO_MEMBER_TYPE;
+    myExtResolveInfo += "(" + typeObject.o1 + "/" + typeObject.o2 + ")";
 
-    return "("+ classExtResolveInfo + ")." + "(" + myExtResolveInfo + ")";
+    return "(" + classExtResolveInfo + ")." + "(" + myExtResolveInfo + ")";
   }
 
   public static String getExtResolveInfoForTargetClassFieldDeclaration(FieldDeclaration fieldDeclaration) {
@@ -238,8 +269,8 @@ public class ExternalResolveInfoProvider {
     String name = enumConstantDeclaration.getName();
     String conceptName = enumConstantDeclaration.getShortConceptName();
 
-    String myExtResolveInfo  = "[" + conceptName + "]" + name;
-    return ExternalResolver.ENUM_CONST + "("+ classExtResolveInfo + ")." + "(" + myExtResolveInfo + ")";
+    String myExtResolveInfo = "[" + conceptName + "]" + name;
+    return ExternalResolver.ENUM_CONST + "(" + classExtResolveInfo + ")." + "(" + myExtResolveInfo + ")";
   }
 
 

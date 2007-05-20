@@ -1,10 +1,10 @@
 package jetbrains.mps.util;
 
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
 import org.jetbrains.annotations.NotNull;
 
 
@@ -81,14 +81,23 @@ public class NameUtil {
     }
     return fqName.substring(0, offset);
   }
-  
+
   public static String removeStructureFromFqName(@NotNull String fqName) {
     String namespace = namespaceFromLongName(fqName);
     String shortName = shortNameFromLongName(fqName);
     if (namespace.endsWith(".structure")) {
       namespace = namespace.substring(0, namespace.length() - ".structure".length());
     }
-    return namespace + "." + shortName;
+    final StringBuilder builder = StringBuilderSpinAllocator.alloc();
+    try {
+      builder.append(namespace);
+      builder.append('.');
+      builder.append(shortName);
+      return builder.toString();
+    }
+    finally {
+      StringBuilderSpinAllocator.dispose(builder);
+    }
   }
 
   public static String conceptFqName(AbstractConceptDeclaration cd) {

@@ -77,8 +77,7 @@ public class MatchingUtil {
     }
 
     //-- matching children
-    Set<String> childRoles = patternNode.getChildRoles();
-    for (String role : childRoles) {
+    for (String role : patternNode.getChildRoles()) {
       List<SNode> children = node.getChildren(role);
       List<SNode> patternChildren = patternNode.getChildren(role);
 
@@ -151,7 +150,7 @@ public class MatchingUtil {
 
     // children
     Set<String> childRoles = node1.getChildRoles();
-    childRoles.addAll(node2.getChildRoles());
+    node2.addChildRoles(childRoles);
     for (String role : childRoles) {
       List<SNode> children1 = node1.getChildren(role);
       List<SNode> children2 = node2.getChildren(role);
