@@ -9,6 +9,10 @@ import jetbrains.mps.refactoring.IRefactoring;
 import jetbrains.mps.refactoring.RefactoringContext;
 import jetbrains.mps.refactoring.common.RefactoringAction;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SModelUID;
+
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
@@ -21,7 +25,8 @@ import java.lang.reflect.InvocationTargetException;
  * Date: Apr 24, 2007
  */
 public class RunMigrationScriptAction extends RefactoringAction {
-  private MigrationScript myScript;
+  private static final String SMODEL_UID = "SMODEL_UID";
+private MigrationScript myScript;
   private BaseMigrationScript myScriptInstance;
 
   public RunMigrationScriptAction(MigrationScript script) {
@@ -54,9 +59,24 @@ public class RunMigrationScriptAction extends RefactoringAction {
 
     super.execute(actionContext);
   }
-
+  
   protected IRefactoring createRefactoring(ActionContext context) {
     RefactoringContext refactoringContext = new RefactoringContext(context.getOperationContext());
+
+    List selection = context.get(List.class);
+    if (selection != null && !selection.isEmpty()) {
+        StringBuilder sb = new StringBuilder ();
+        String sep = "";
+        for (Object o : selection) {
+            if (o instanceof SModelDescriptor) {
+                SModelUID uid = ((SModelDescriptor) o).getModelUID();
+                sb.append (sep).append(uid.toString());
+                sep = "\n";
+            }
+        }
+        refactoringContext.put(SMODEL_UID, sb.toString());
+    }
+
     CompositeRefactoring compositeRefactoring = new CompositeRefactoring(refactoringContext);
     List<IRefactoring> list = myScriptInstance.getRefactorings();
     for (IRefactoring refactoring : list) {

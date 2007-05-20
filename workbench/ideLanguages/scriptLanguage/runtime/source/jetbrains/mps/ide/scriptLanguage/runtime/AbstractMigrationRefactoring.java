@@ -8,11 +8,17 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.refactoring.DefaultRefactoring;
 import jetbrains.mps.refactoring.RefactoringContext;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -20,7 +26,9 @@ import java.util.Set;
  * Date: Apr 24, 2007
  */
 public abstract class AbstractMigrationRefactoring extends DefaultRefactoring {
-  public AbstractMigrationRefactoring(IOperationContext context) {
+  private static final String SMODEL_UID = "SMODEL_UID";
+
+public AbstractMigrationRefactoring(IOperationContext context) {
     super(new RefactoringContext(context));
   }
 
@@ -46,8 +54,20 @@ public abstract class AbstractMigrationRefactoring extends DefaultRefactoring {
     ConceptDeclaration conceptDeclaration = SModelUtil_new.findConceptDeclaration(getFqNameOfConceptToSearchInstances(), scope);
     Set<SNode> instances = usages.findInstances(conceptDeclaration, scope, monitor);
     HashSet<SNode> affectedInstances = new HashSet<SNode>();
+    
+    List<SModel> matchModels = new ArrayList<SModel> ();
+    String uids = getRefactoringContext().get(SMODEL_UID);
+    if (uids != null) {
+        for (String uidString : uids.split("\n")) {
+            SModelDescriptor desc = scope.getModelDescriptor(SModelUID.fromString(uidString));
+            matchModels.add (desc.getSModel());
+        }
+    }
+    
     for (SNode instance : instances) {
-      if (isApplicableInstanceNode(instance)) {
+      if ((matchModels.isEmpty() || matchModels.contains(instance.getModel())) 
+              && isApplicableInstanceNode(instance)) 
+      {
         affectedInstances.add(instance);
       }
     }
