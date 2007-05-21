@@ -172,18 +172,16 @@ public class SubtypingManager {
           ancestors.removeStructurally(passedNode);
         }
         ancestors.removeStructurally(node);
-        boolean matches = false;
-        for (SNode ancestor : ancestors) {
-          if (m.matches(ancestor)) {
-            if (m.onlyFirst()) {
-              return true;
-            } else {
-              matches = true;
-            }
+        ArrayList<SNode> ancestorsSorted = new ArrayList<SNode>(ancestors);
+        Collections.sort(ancestorsSorted, new Comparator<SNode>() {
+          public int compare(SNode o1, SNode o2) {
+            return o2.depth() - o1.depth();
           }
-        }
-        if (matches) {
-          return true;
+        });
+        for (SNode ancestor : ancestorsSorted) {
+          if (m.matches(ancestor)) {
+            return true;
+          }
         }
         newFrontier.addAllStructurally(ancestors);
         yetPassed.addAllStructurally(ancestors);
@@ -479,7 +477,6 @@ public class SubtypingManager {
 
   private static interface Matcher {
     boolean matches(SNode nodeToMatch);
-    boolean onlyFirst();
   }
 
 
@@ -495,44 +492,26 @@ public class SubtypingManager {
     public boolean matches(SNode nodeToMatch) {
       return MatchingUtil.matchNodes(nodeToMatch, myPattern, myMatchModifier);
     }
-
-    public boolean onlyFirst() {
-      return true;
-    }
   }
 
   private static class MyCoersionMatcher2 implements Matcher {
     private final IMatchingPattern myPattern;
-    private Set<SNode> myResult = new HashSet<SNode>();
+    private SNode myResult;
 
     public MyCoersionMatcher2(IMatchingPattern pattern) {
       myPattern = pattern;
     }
 
-    public boolean onlyFirst() {
-      return false;
-    }
-
     public boolean matches(SNode nodeToMatch) {
       boolean b = myPattern.match(nodeToMatch);
       if (b) {
-        myResult.add(nodeToMatch);
+        myResult = nodeToMatch;
       }
       return b;
     }
 
     public SNode getResult() {
-      SNode deepest = null;
-      for (SNode node : myResult) {
-        if (deepest == null) {
-          deepest = node;
-        } else {
-          if (deepest.depth() < node.depth()) {
-            deepest = node;
-          }
-        }
-      }
-      return deepest;
+      return myResult;
     }
   }
 }
