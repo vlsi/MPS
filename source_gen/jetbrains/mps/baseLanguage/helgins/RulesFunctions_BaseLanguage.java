@@ -5,11 +5,11 @@ package jetbrains.mps.baseLanguage.helgins;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.helgins.QuotationClass_25;
 import jetbrains.mps.baseLanguage.helgins.QuotationClass_26;
 import jetbrains.mps.baseLanguage.helgins.QuotationClass_27;
 import jetbrains.mps.baseLanguage.helgins.QuotationClass_28;
 import jetbrains.mps.baseLanguage.helgins.QuotationClass_29;
+import jetbrains.mps.baseLanguage.helgins.QuotationClass_30;
 import jetbrains.mps.baseLanguage.helgins.Queries;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
@@ -18,17 +18,17 @@ import jetbrains.mps.baseLanguage.helgins.zMapper;
 public class RulesFunctions_BaseLanguage {
 
   public static void comparisonOp(SNode binOp) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "rightExpression", true)), SLinkOperations.getTarget(new QuotationClass_25().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "rightExpression", true));
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "leftExpression", true)), SLinkOperations.getTarget(new QuotationClass_26().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "leftExpression", true));
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_27().createNode(), binOp);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "rightExpression", true)), SLinkOperations.getTarget(new QuotationClass_26().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "rightExpression", true));
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "leftExpression", true)), SLinkOperations.getTarget(new QuotationClass_27().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "leftExpression", true));
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_28().createNode(), binOp);
   }
   public static void numericOp(SNode binOp) {
     TypeChecker.getInstance().getRuntimeSupport().check(SLinkOperations.getTarget(binOp, "leftExpression", true));
     TypeChecker.getInstance().getRuntimeSupport().check(SLinkOperations.getTarget(binOp, "rightExpression", true));
     SNode rightExpressionType = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "rightExpression", true));
     SNode leftExpressionType = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "leftExpression", true));
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(rightExpressionType, SLinkOperations.getTarget(new QuotationClass_28().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "rightExpression", true));
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(leftExpressionType, SLinkOperations.getTarget(new QuotationClass_29().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "leftExpression", true));
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(rightExpressionType, SLinkOperations.getTarget(new QuotationClass_29().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "rightExpression", true));
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(leftExpressionType, SLinkOperations.getTarget(new QuotationClass_30().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "leftExpression", true));
     TypeChecker.getInstance().getRuntimeSupport().givetype(Queries.getBinaryOperationType(leftExpressionType, rightExpressionType), binOp);
   }
   public static Iterable<SNode> collectReturnStatements(SNode node) {

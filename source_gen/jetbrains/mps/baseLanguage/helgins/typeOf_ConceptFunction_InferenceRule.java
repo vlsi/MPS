@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.baseLanguage.helgins.QuotationClass_73;
+import jetbrains.mps.baseLanguage.helgins.QuotationClass_74;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.helgins.RulesFunctions_BaseLanguage;
@@ -31,7 +31,7 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
     TypeChecker.getInstance().getRuntimeSupport().check(SLinkOperations.getTarget(argument, "body", true));
     // =============
     SNode expectedRetType = BehaviorManager.getInstance().invoke(SNode.class, argument, "virtual_getExpectedReturnType_1178571276073");
-    boolean noReturnExpected = ((expectedRetType == null) || TypeChecker.getInstance().getSubtypingManager().isSubtype(expectedRetType, new QuotationClass_73().createNode()));
+    boolean noReturnExpected = ((expectedRetType == null) || TypeChecker.getInstance().getSubtypingManager().isSubtype(expectedRetType, new QuotationClass_74().createNode()));
     if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(expectedRetType), "jetbrains.mps.baseLanguage.structure.WildCardType")) {
       // function is expected to return value of any type
       expectedRetType = null;

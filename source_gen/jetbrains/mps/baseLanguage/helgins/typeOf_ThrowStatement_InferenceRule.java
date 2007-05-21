@@ -6,7 +6,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.helgins.QuotationClass_23;
+import jetbrains.mps.baseLanguage.helgins.QuotationClass_24;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -20,7 +20,7 @@ public class typeOf_ThrowStatement_InferenceRule implements InferenceRule_Runtim
   }
 
   public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "throwable", true)), new QuotationClass_23().createNode(), SLinkOperations.getTarget(argument, "throwable", true));
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "throwable", true)), new QuotationClass_24().createNode(), SLinkOperations.getTarget(argument, "throwable", true));
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ThrowStatement";

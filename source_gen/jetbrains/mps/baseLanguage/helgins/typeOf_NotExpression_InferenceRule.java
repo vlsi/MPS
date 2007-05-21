@@ -5,9 +5,9 @@ package jetbrains.mps.baseLanguage.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.helgins.QuotationClass_37;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.helgins.QuotationClass_38;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.helgins.QuotationClass_39;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -21,8 +21,8 @@ public class typeOf_NotExpression_InferenceRule implements InferenceRule_Runtime
   }
 
   public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_37().createNode(), argument);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expression", true)), new QuotationClass_38().createNode(), SLinkOperations.getTarget(argument, "expression", true));
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_38().createNode(), argument);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expression", true)), new QuotationClass_39().createNode(), SLinkOperations.getTarget(argument, "expression", true));
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.NotExpression";

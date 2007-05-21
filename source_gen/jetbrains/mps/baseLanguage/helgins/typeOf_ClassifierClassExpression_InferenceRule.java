@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.helgins.QuotationClass_33;
+import jetbrains.mps.baseLanguage.helgins.QuotationClass_34;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
@@ -20,7 +20,7 @@ public class typeOf_ClassifierClassExpression_InferenceRule implements Inference
   }
 
   public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_33().createNode(SLinkOperations.getTarget(argument, "classifier", false)), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_34().createNode(SLinkOperations.getTarget(argument, "classifier", false)), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierClassExpression";

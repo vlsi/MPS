@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.helgins.QuotationClass_44;
+import jetbrains.mps.baseLanguage.helgins.QuotationClass_45;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
@@ -20,7 +20,7 @@ public class typeOf_EnumConstantDeclaration_InferenceRule implements InferenceRu
   }
 
   public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_44().createNode(SNodeOperations.getAncestor(argument, "jetbrains.mps.baseLanguage.structure.EnumClass", false, false)), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_45().createNode(SNodeOperations.getAncestor(argument, "jetbrains.mps.baseLanguage.structure.EnumClass", false, false)), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration";

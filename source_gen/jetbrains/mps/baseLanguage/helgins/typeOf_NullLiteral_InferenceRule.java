@@ -6,7 +6,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.helgins.QuotationClass_30;
+import jetbrains.mps.baseLanguage.helgins.QuotationClass_31;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -20,7 +20,7 @@ public class typeOf_NullLiteral_InferenceRule implements InferenceRule_Runtime {
   }
 
   public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(new QuotationClass_30().createNode(), "descriptor", false), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(new QuotationClass_31().createNode(), "descriptor", false), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.NullLiteral";

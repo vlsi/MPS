@@ -6,7 +6,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.helgins.QuotationClass_31;
+import jetbrains.mps.baseLanguage.helgins.QuotationClass_32;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
@@ -28,7 +28,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule
 
   public void applyRule(SNode argument) {
     for(SNode throwsItem : SLinkOperations.getTargets(argument, "throwsItem", true)) {
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(throwsItem, new QuotationClass_31().createNode(), argument);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(throwsItem, new QuotationClass_32().createNode(), argument);
     }
     // ==========
     if(SLinkOperations.getTarget(argument, "body", true) == null) {
