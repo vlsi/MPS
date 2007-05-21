@@ -40,6 +40,8 @@ public class SubtypingManager {
 
   private TypeChecker myTypeChecker;
 
+  private StructuralNodeMap<StructuralNodeSet<?>> mySupertypesCache = new StructuralNodeMap<StructuralNodeSet<?>>();
+
   private IMatchModifier myMatchModifier = new IMatchModifier() {
     public boolean accept(SNode node1, SNode node2) {
       return BaseAdapter.isInstance(node1, RuntimeTypeVariable.class) ||
@@ -57,6 +59,10 @@ public class SubtypingManager {
 
   public TypeChecker getTypeChecker() {
     return myTypeChecker;
+  }
+
+  /*package*/ void clearSupertypesCache() {
+    mySupertypesCache.clear();
   }
 
   public boolean isSubtype(SNode subtype, SNode supertype) {
@@ -143,7 +149,11 @@ public class SubtypingManager {
     frontier.add(subRepresentator);
     while (!frontier.isEmpty()) {
       for (SNode node : frontier) {
-        StructuralNodeSet<?> ancestors = collectImmediateSupertypes(node, isWeak);
+        StructuralNodeSet<?> ancestors = mySupertypesCache.get(node);
+        if (ancestors == null) {
+          ancestors = collectImmediateSupertypes(node, isWeak);
+          mySupertypesCache.put(node, ancestors);
+        }
         if (ancestors == null) continue;
         for (SNode passedNode : yetPassed) {
           ancestors.removeStructurally(passedNode);

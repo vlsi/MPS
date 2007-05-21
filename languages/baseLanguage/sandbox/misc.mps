@@ -71,6 +71,34 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1179756360369">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1179756360370">
+            <property name="name" value="l" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179756360371">
+              <link role="classifier" extResolveInfo="3.[Classifier]List" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179756366841">
+                <link role="classifier" extResolveInfo="1.[Classifier]String" />
+              </node>
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.NewExpression" id="1179756372925">
+              <link role="baseMethodDeclaration" extResolveInfo="3.constructor [Classifier]ArrayList[ConstructorDeclaration] ()" />
+              <node role="typeParameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179756379554">
+                <link role="classifier" extResolveInfo="1.[Classifier]String" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179756384075">
+          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1179756388448">
+            <link role="baseMethodDeclaration" extResolveInfo="3.method ([Classifier]List).([InstanceMethodDeclaration]get((jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int)) : (jetbrains.mps.baseLanguage.types.any/jetbrains.mps.baseLanguage.types.any))" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179756386117">
+              <link role="variableDeclaration" targetNodeId="1179756360370" resolveInfo="l" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1179756390226">
+              <property name="value" value="0" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178894846582" />
