@@ -53,6 +53,11 @@ public class _QueriesUtil {
   public static SNode resolve_ClosureParameterReference(SNode closureParmRef, SNode templateReferenceNode, ITemplateGenerator generator) {
     ClosureParameterReference closureParmRefAdapter = (ClosureParameterReference) closureParmRef.getAdapter();
     ClosureParameter closureParameter = closureParmRefAdapter.getClosureParameter();
+//    if(closureParameter == null) {
+//      // ok, probably not all references are resolved yet
+//      // try next time
+//      return null;
+//    }
     String parameterName = closureParameter.getName();
     assert parameterName != null;
 
