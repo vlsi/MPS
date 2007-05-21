@@ -371,5 +371,27 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1179740189248">
+    <property name="name" value="TreeNodeKindReference" />
+    <link role="extends" targetNodeId="2.1068431790191" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1179740264586">
+      <property name="value" value="treeNodeKindFilter" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1179740276628">
+      <property name="value" value="reference to tree node kind" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1179740217128">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="treePathAspect" />
+      <link role="target" targetNodeId="1168879975004" resolveInfo="TreePathAspect" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1179740244195">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="treeNodeKind" />
+      <link role="target" targetNodeId="1172240563057" resolveInfo="TreeNodeKind" />
+    </node>
+  </node>
 </model>
 

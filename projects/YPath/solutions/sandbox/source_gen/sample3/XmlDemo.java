@@ -18,13 +18,13 @@ public class XmlDemo {
     try {
       InputStream is = new ByteArrayInputStream(INPUT.getBytes());
       Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(is);
-      for(Node node : TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS")), new DOM.ELEMENT_NodeKindTrigger(null, null))) {
+      for(Node node : TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS")), DOM.ELEMENT_NodeKindTrigger.getInstance())) {
         System.out.println(node);
       }
-      for(Node node : TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS")), new CompositeFilter<Node>(new DOM.ELEMENT_NodeKindTrigger(null, null), DOM.ELEMENT_tag_Property.getMatcher("a"))), TreeTraversalFactory.Axis("DESCENDANTS")), new CompositeFilter<Node>(new DOM.ELEMENT_NodeKindTrigger(null, null), DOM.ELEMENT_tag_Property.getMatcher("findme")))) {
+      for(Node node : TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS")), new CompositeFilter<Node>(DOM.ELEMENT_NodeKindTrigger.getInstance(), DOM.ELEMENT_tag_Property.getMatcher("a"))), TreeTraversalFactory.Axis("DESCENDANTS")), new CompositeFilter<Node>(DOM.ELEMENT_NodeKindTrigger.getInstance(), DOM.ELEMENT_tag_Property.getMatcher("findme")))) {
         System.out.println("Found: " + node);
       }
-      for(Node node : TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS")), new CompositeFilter<Node>(new DOM.ELEMENT_NodeKindTrigger(null, null), DOM.ELEMENT_tag_Property.getMatcher("a"))), TreeTraversalFactory.Axis("DESCENDANTS")), new CompositeFilter<Node>(new DOM.ELEMENT_NodeKindTrigger(null, null), DOM.ELEMENT_tag_Property.getMatcher("findme")))) {
+      for(Node node : TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS")), new CompositeFilter<Node>(DOM.ELEMENT_NodeKindTrigger.getInstance(), DOM.ELEMENT_tag_Property.getMatcher("a"))), TreeTraversalFactory.Axis("DESCENDANTS")), new CompositeFilter<Node>(DOM.ELEMENT_NodeKindTrigger.getInstance(), DOM.ELEMENT_tag_Property.getMatcher("findme")))) {
         System.out.println("Found again: " + node);
       }
     } catch (Exception ignored) {

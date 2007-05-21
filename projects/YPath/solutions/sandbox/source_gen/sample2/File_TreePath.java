@@ -44,13 +44,23 @@ public class File_TreePath extends TreePath<File> {
     }
 }
   public static class FILE_NodeKindTrigger implements IFilter<File> {
+    public static File_TreePath.FILE_NodeKindTrigger instance;
 
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;
 
+    private  FILE_NodeKindTrigger() {
+    }
     public  FILE_NodeKindTrigger(Object enclosingClass, Object closureContext) {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
+    }
+
+    public static IFilter<File> getInstance() {
+      if(instance == null) {
+        instance = new File_TreePath.FILE_NodeKindTrigger();
+      }
+      return instance;
     }
 
     public boolean accept(File f) {
@@ -58,13 +68,23 @@ public class File_TreePath extends TreePath<File> {
     }
 }
   public static class DIR_NodeKindTrigger implements IFilter<File> {
+    public static File_TreePath.DIR_NodeKindTrigger instance;
 
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;
 
+    private  DIR_NodeKindTrigger() {
+    }
     public  DIR_NodeKindTrigger(Object enclosingClass, Object closureContext) {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
+    }
+
+    public static IFilter<File> getInstance() {
+      if(instance == null) {
+        instance = new File_TreePath.DIR_NodeKindTrigger();
+      }
+      return instance;
     }
 
     public boolean accept(File f) {

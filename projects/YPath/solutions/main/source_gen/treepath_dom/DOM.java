@@ -4,7 +4,6 @@ package treepath_dom;
 
 import ypath.util.TreePath;
 import org.w3c.dom.Node;
-import ypath.util.xml.NodeListIterableAdapter;
 import ypath.util.IFilter;
 import org.w3c.dom.Element;
 import org.w3c.dom.Attr;
@@ -16,9 +15,6 @@ public class DOM extends TreePath<Node> {
 
   public Node parent(Node node) {
     return DOM.Parent.parent(node);
-  }
-  public Iterable<Node> children(Node n) {
-    return DOM.Children.children(n);
   }
   private static class Parent {
 
@@ -43,19 +39,25 @@ public class DOM extends TreePath<Node> {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
     }
-
-    public static Iterable<Node> children(Node node) {
-      return new NodeListIterableAdapter(node.getChildNodes());
-    }
 }
   public static class ELEMENT_NodeKindTrigger implements IFilter<Node> {
+    public static DOM.ELEMENT_NodeKindTrigger instance;
 
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;
 
+    private  ELEMENT_NodeKindTrigger() {
+    }
     public  ELEMENT_NodeKindTrigger(Object enclosingClass, Object closureContext) {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
+    }
+
+    public static IFilter<Node> getInstance() {
+      if(instance == null) {
+        instance = new DOM.ELEMENT_NodeKindTrigger();
+      }
+      return instance;
     }
 
     public boolean accept(Node e) {
@@ -63,13 +65,23 @@ public class DOM extends TreePath<Node> {
     }
 }
   public static class ATTR_NodeKindTrigger implements IFilter<Node> {
+    public static DOM.ATTR_NodeKindTrigger instance;
 
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;
 
+    private  ATTR_NodeKindTrigger() {
+    }
     public  ATTR_NodeKindTrigger(Object enclosingClass, Object closureContext) {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
+    }
+
+    public static IFilter<Node> getInstance() {
+      if(instance == null) {
+        instance = new DOM.ATTR_NodeKindTrigger();
+      }
+      return instance;
     }
 
     public boolean accept(Node a) {

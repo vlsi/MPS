@@ -36,7 +36,7 @@ public class XMLTreeSimple_Test extends TestCase {
   }
   public void test_defautProperty() throws Exception {
     Document doc = this.parse(SIMPLE_TREE);
-    Assert.assertSame(SequenceOperations.getSize(TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS")), new CompositeFilter<Node>(new DOM.ELEMENT_NodeKindTrigger(null, null), DOM.ELEMENT_tag_Property.getMatcher("b3")))), 1);
+    Assert.assertSame(SequenceOperations.getSize(TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS")), new CompositeFilter<Node>(DOM.ELEMENT_NodeKindTrigger.getInstance(), DOM.ELEMENT_tag_Property.getMatcher("b3")))), 1);
   }
   public Document parse(String xml) throws Exception {
     InputStream is = new ByteArrayInputStream(xml.getBytes());
