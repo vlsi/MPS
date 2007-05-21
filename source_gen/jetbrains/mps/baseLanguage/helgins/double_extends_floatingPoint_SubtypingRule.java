@@ -6,7 +6,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.helgins.QuotationClass_56;
+import jetbrains.mps.baseLanguage.helgins.QuotationClass_57;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -20,7 +20,7 @@ public class double_extends_floatingPoint_SubtypingRule extends SubtypingRule_Ru
   }
 
   public SNode getSubOrSuperType(SNode type) {
-    return SLinkOperations.getTarget(new QuotationClass_56().createNode(), "descriptor", false);
+    return SLinkOperations.getTarget(new QuotationClass_57().createNode(), "descriptor", false);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.DoubleType";

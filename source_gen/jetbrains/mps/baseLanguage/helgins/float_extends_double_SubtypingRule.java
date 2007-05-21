@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.helgins.QuotationClass_55;
+import jetbrains.mps.baseLanguage.helgins.QuotationClass_56;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -19,7 +19,7 @@ public class float_extends_double_SubtypingRule extends SubtypingRule_Runtime im
   }
 
   public SNode getSubOrSuperType(SNode type) {
-    return new QuotationClass_55().createNode();
+    return new QuotationClass_56().createNode();
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.FloatType";

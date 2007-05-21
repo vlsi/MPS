@@ -11,7 +11,7 @@ import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
-import jetbrains.mps.baseLanguage.helgins.QuotationClass_58;
+import jetbrains.mps.baseLanguage.helgins.QuotationClass_59;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -28,7 +28,7 @@ public class subtyping_arrayType_SubtypingRule extends SubtypingRule_Runtime imp
     List<SNode> result = new ArrayList<SNode>();
     for(SNode componentTypeSupertype : TypeChecker.getInstance().getSubtypingManager().collectImmediateSupertypes(SLinkOperations.getTarget(type, "componentType", true))) {
       if(SNodeOperations.isInstanceOf(componentTypeSupertype, "jetbrains.mps.baseLanguage.structure.Type")) {
-        ListOperations.addElement(result, new QuotationClass_58().createNode(componentTypeSupertype));
+        ListOperations.addElement(result, new QuotationClass_59().createNode(componentTypeSupertype));
       }
     }
     return result;

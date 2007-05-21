@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.helgins.QuotationClass_51;
+import jetbrains.mps.baseLanguage.helgins.QuotationClass_52;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -19,7 +19,7 @@ public class int_extends_long_SubtypingRule extends SubtypingRule_Runtime implem
   }
 
   public SNode getSubOrSuperType(SNode type) {
-    return new QuotationClass_51().createNode();
+    return new QuotationClass_52().createNode();
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.IntegerType";

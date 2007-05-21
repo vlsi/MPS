@@ -6,7 +6,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.baseLanguage.helgins.Pattern_2;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.helgins.QuotationClass_66;
+import jetbrains.mps.baseLanguage.helgins.QuotationClass_67;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -21,7 +21,7 @@ public class char_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
   }
 
   public SNode getSubOrSuperType(SNode type) {
-    return new QuotationClass_66().createNode();
+    return new QuotationClass_67().createNode();
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
