@@ -23,10 +23,6 @@ public class ApplicationsTest extends TestCase {
     assertTrue(TestMain.testProject(new File("app/PubMedDB/pubMedDB.mpr")));
   }
 
-  public void testMForum() {    
-    assertTrue(TestMain.testProject(new File("platform/webr/extensions/discussion/Discussion.mpr")));
-  }
-
   public void testSearchWatch() {
     assertTrue(TestMain.testProject(new File("app/search-watch/search-watch.mpr")));    
   }
