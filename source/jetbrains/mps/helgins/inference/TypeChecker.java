@@ -46,7 +46,6 @@ public class TypeChecker {
   private Map<SNode, Set<SNode>> myNodesToDependentRoots = new WeakHashMap<SNode, Set<SNode>>();
 
   private MySModelCommandListener myListener = new MySModelCommandListener();
-  private ConceptToRulesMap<Rule> myConceptsToRulesCache = new ConceptToRulesMap<Rule>();
 
   private WeakHashMap<SNode, IErrorReporter> myNodesWithErrors = new WeakHashMap<SNode, IErrorReporter>();
   private WeakHashMap<SNode, String> myNodesWithErrorStrings = new WeakHashMap<SNode, String>();
@@ -107,7 +106,6 @@ public class TypeChecker {
         runtimeTypesModel.clear();
       }
     }
-    myConceptsToRulesCache.clear();
     myNodesWithErrors.clear();
     myNodesWithErrorStrings.clear();
     myNodesBeingChecked.clear();
@@ -116,7 +114,6 @@ public class TypeChecker {
   public void clearForReload() {
     myCheckedRoots.clear();
     myRulesManager.clear();
-    mySubtypingManager.clearCaches();
 
     //todo remove a string below
     myNodesToDependentRoots.clear();
@@ -171,38 +168,7 @@ public class TypeChecker {
       boolean b = myRulesManager.loadLanguage(language);
       isLoadedAnyLanguage = isLoadedAnyLanguage || b;
     }
-    boolean isLoadedAnyLegacyRule = loadLegacyRules(languages);
-    if (!isLoadedAnyLanguage && !isLoadedAnyLegacyRule) return false;
-    return true;
-  }
-
-  private @Deprecated boolean loadLegacyRules(List<Language> languages) {
-    Set<SModel> typesModels = new HashSet<SModel>();
-    for (Language language : languages) {
-      SModelDescriptor helginsModelDescriptor = language.getHelginsTypesystemModelDescriptor();
-      if (helginsModelDescriptor != null) {
-        typesModels.add(helginsModelDescriptor.getSModel());
-      }
-    }
-    if (typesModels.isEmpty()) return false;
-
-    //loading typesystems
-    myConceptsToRulesCache = new ConceptToRulesMap<Rule>();
-    for (SModel typesModel : typesModels) {
-
-      // load rules (legacy)
-      for (Rule rule : typesModel.getRootsAdapters(Rule.class)) {
-        if (!rule.applicableNodes().hasNext()) continue;
-        AnalyzedTermDeclaration analyzedTermDeclaration = rule.applicableNodes().next();
-        AbstractConceptDeclaration ruleConcept = ConditionMatcher.getConcept(analyzedTermDeclaration.getCondition());
-        myConceptsToRulesCache.putRule(ruleConcept, rule);
-      }
-      myConceptsToRulesCache.makeConsistent();
-
-      // load subtyping rules
-      mySubtypingManager.initiate(typesModel);
-
-    }
+    if (!isLoadedAnyLanguage) return false;
     return true;
   }
 

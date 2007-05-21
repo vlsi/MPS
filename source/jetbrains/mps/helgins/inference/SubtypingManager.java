@@ -38,9 +38,6 @@ import java.util.*;
 public class SubtypingManager {
   private static final Logger LOG = Logger.getLogger(SubtypingManager.class);
 
-  private ConceptToRulesMap<SubtypingRule> myConceptsToSubtypingRulesCache = new ConceptToRulesMap<SubtypingRule>();
-  private ConceptToRulesMap<SupertypingRule> myConceptsToSupertypingRulesCache = new ConceptToRulesMap<SupertypingRule>();
-
   private TypeChecker myTypeChecker;
 
   private IMatchModifier myMatchModifier = new IMatchModifier() {
@@ -60,26 +57,6 @@ public class SubtypingManager {
 
   public TypeChecker getTypeChecker() {
     return myTypeChecker;
-  }
-
-  public void initiate(SModel typesModel) {
-    for (SubtypingRule rule : typesModel.getRootsAdapters(SubtypingRule.class)) {
-      VariableCondition condition = rule.getApplicableNode().getCondition();
-      AbstractConceptDeclaration ruleConcept = ConditionMatcher.getConcept(condition);
-      myConceptsToSubtypingRulesCache.putRule(ruleConcept, rule);
-    }
-    for (SupertypingRule rule : typesModel.getRootsAdapters(SupertypingRule.class)) {
-      VariableCondition condition = rule.getApplicableNode().getCondition();
-      AbstractConceptDeclaration ruleConcept = ConditionMatcher.getConcept(condition);
-      myConceptsToSupertypingRulesCache.putRule(ruleConcept, rule);
-    }
-    myConceptsToSubtypingRulesCache.makeConsistent();
-    myConceptsToSupertypingRulesCache.makeConsistent();
-  }
-
-  public void clearCaches() {
-    myConceptsToSubtypingRulesCache.clear();
-    myConceptsToSupertypingRulesCache.clear();
   }
 
   public boolean isSubtype(SNode subtype, SNode supertype) {
@@ -214,20 +191,6 @@ public class SubtypingManager {
       }
     }
 
-    //legacy:
-    Set<SubtypingRule> subtypingRules = myConceptsToSubtypingRulesCache.get((ConceptDeclaration) term.getConceptDeclarationAdapter());
-    if (subtypingRules != null)  {
-      for (SubtypingRule rule : subtypingRules) {
-        AnalyzedTermDeclaration applicableNode = rule.getApplicableNode();
-        if (applicableNode == null) continue;
-        Expression expression = rule.getSupertype();
-        if (expression == null) continue;
-        List<SNode> supertypes = getSupertypesOrSubtypes(term, applicableNode, expression);
-        if (supertypes != null) {
-          result.addAll(supertypes);
-        }
-      }
-    }
     return result;
   }
 
@@ -243,77 +206,7 @@ public class SubtypingManager {
       }
     }
 
-    //legacy:
-    Set<SupertypingRule> supertypingRules = myConceptsToSupertypingRulesCache.get((ConceptDeclaration) term.getConceptDeclarationAdapter());
-    if (supertypingRules == null) return result;
-    for (SupertypingRule rule : supertypingRules) {
-      AnalyzedTermDeclaration applicableNode = rule.getApplicableNode();
-      if (applicableNode == null) continue;
-      Expression expression = rule.getSubtype();
-      if (expression == null) continue;
-      List<SNode> subtypes = getSupertypesOrSubtypes(term, applicableNode, expression);
-      if (subtypes != null) {
-        result.addAll(subtypes);
-      }
-    }
     return result;
-  }
-
-  private List<SNode> getSupertypesOrSubtypes(SNode term, AnalyzedTermDeclaration analyzedTermDeclaration, Expression targetExpression) {
-
-    /*
-    matching
-    */
-
-    ExpressionContext expressionContext = new ExpressionContext();
-
-    VariableCondition termCondition = analyzedTermDeclaration.getCondition();
-    if (termCondition instanceof QueryPattern) {
-      ConditionMatcher conditionMatcher;
-      try {
-        conditionMatcher = new ConditionMatcher(termCondition);
-      } catch(InvalidConditionException ex) {
-        error("invalid condition", ex);
-        return null;
-      }
-      // fills the expression context if matches
-      if (!(conditionMatcher.matchesCondition(term, expressionContext))) return null;
-    }
-    //puts term variable into the expression context
-    expressionContext.putNode(analyzedTermDeclaration, term);
-
-    Object supertypeO = ExpressionEvaluatorManager.evaluate(expressionContext, targetExpression);
-    List<SNode> result = new ArrayList<SNode>();
-    if (supertypeO instanceof SNode) {
-      SNode supernode = (SNode) supertypeO;
-      if (!MatchingUtil.matchNodes(supernode, term)) {
-        result.add(supernode);
-      }
-      return result;
-    }
-    if (supertypeO instanceof List) {
-      boolean isCorrect = true;
-      for (Object o : (List)supertypeO) {
-        if (!(o instanceof SNode)) {
-          isCorrect = false;
-          break;
-        } else {
-          if (!MatchingUtil.matchNodes((SNode) o, term)) {
-            result.add((SNode) o);
-          }
-        }
-      }
-      if (isCorrect) return result;
-    }
-    return null;
-  }
-
-  private static void error(String s, Throwable t) {
-    if (t != null) {
-      LOG.error(s,t);
-    } else {
-      LOG.error(s);
-    }
   }
 
   public SNode leastCommonSupertype(Set<? extends SNode> types) {
