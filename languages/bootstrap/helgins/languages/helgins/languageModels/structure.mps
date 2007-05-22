@@ -616,5 +616,17 @@
       <link role="target" targetNodeId="1.1133920641626" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1179832490862">
+    <property name="name" value="CreateStrongLessThanInequationStatement" />
+    <link role="extends" targetNodeId="1174660718586" resolveInfo="AbstractEquationStatement" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1179832533723">
+      <property name="value" value=":&lt;&lt;=:" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1179832547147">
+      <property name="value" value="strong subtyping" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
+    </node>
+  </node>
 </model>
 

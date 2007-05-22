@@ -23,6 +23,9 @@ public class EquationManager {
 
   private Map<SNode, Map<SNode,SNode>> mySubtypesToSupertypesMap = new HashMap<SNode, Map<SNode, SNode>>();
   private Map<SNode, Map<SNode, SNode>> mySupertypesToSubtypesMap = new HashMap<SNode, Map<SNode, SNode>>();
+  private Map<SNode, Map<SNode,SNode>> mySubtypesToSupertypesMapStrong = new HashMap<SNode, Map<SNode, SNode>>();
+  private Map<SNode, Map<SNode, SNode>> mySupertypesToSubtypesMapStrong = new HashMap<SNode, Map<SNode, SNode>>();
+
   private Map<SNode, Map<SNode, SNode>> myComparableTypesMap = new HashMap<SNode, Map<SNode, SNode>>();
   private Map<SNode, SNode> myEquations = new HashMap<SNode, SNode>();
 
@@ -51,6 +54,24 @@ public class EquationManager {
         mySupertypesToSubtypesMap.put(key, map);
       }
       map.putAll(slave.mySupertypesToSubtypesMap.get(key));
+    }
+
+    for (SNode key : slave.mySubtypesToSupertypesMapStrong.keySet()) {
+      Map<SNode, SNode> map = mySubtypesToSupertypesMapStrong.get(key);
+      if (map == null) {
+        map = new HashMap<SNode, SNode>();
+        mySubtypesToSupertypesMapStrong.put(key, map);
+      }
+      map.putAll(slave.mySubtypesToSupertypesMapStrong.get(key));
+    }
+
+    for (SNode key : slave.mySupertypesToSubtypesMapStrong.keySet()) {
+      Map<SNode, SNode> map = mySupertypesToSubtypesMapStrong.get(key);
+      if (map == null) {
+        map = new HashMap<SNode, SNode>();
+        mySupertypesToSubtypesMapStrong.put(key, map);
+      }
+      map.putAll(slave.mySupertypesToSubtypesMapStrong.get(key));
     }
 
     for (SNode key : slave.myComparableTypesMap.keySet()) {
@@ -105,6 +126,10 @@ public class EquationManager {
   }
 
   public void addInequation(SNode subType, SNode supertype, SNode nodeToCheck) {
+    addInequation(subType, supertype, nodeToCheck, true);
+  }
+
+  public void addInequation(SNode subType, SNode supertype, SNode nodeToCheck, boolean isWeak) {
     SNode subtypeRepresentator = getRepresentator(subType);
     SNode supertypeRepresentator = getRepresentator(supertype);
 
@@ -115,17 +140,22 @@ public class EquationManager {
     RuntimeTypeVariable varSubtype = RuntimeSupport.getTypeVar(subtypeRepresentator);
     RuntimeTypeVariable varSupertype = RuntimeSupport.getTypeVar(supertypeRepresentator);
     if (varSubtype != null || varSupertype != null) {
-      addSubtyping(subtypeRepresentator, supertypeRepresentator, nodeToCheck);
+      if (isWeak) {
+        addSubtyping(subtypeRepresentator, supertypeRepresentator, nodeToCheck);
+      } else {
+        addStrongSubtyping(subtypeRepresentator, supertypeRepresentator, nodeToCheck);
+      }
       return;
     }
 
     // if strict subtyping
-    if (myTypeChecker.getSubtypingManager().isSubtype(subtypeRepresentator, supertypeRepresentator, true)) {
+    if (myTypeChecker.getSubtypingManager().isSubtype(subtypeRepresentator, supertypeRepresentator, true, isWeak)) {
       return;
     }
 
+    String strongString = isWeak ? "" : " strong";
     IErrorReporter errorReporter =
-            new EquationErrorReporter(this, "type ", subtypeRepresentator, " should be a subtype of ", supertypeRepresentator, "");
+            new EquationErrorReporter(this, "type ", subtypeRepresentator, " should be a" + strongString + " subtype of ", supertypeRepresentator, "");
     myTypeChecker.reportTypeError(nodeToCheck, errorReporter);
   }
 
@@ -254,6 +284,8 @@ public class EquationManager {
   public void clear() {
     mySubtypesToSupertypesMap.clear();
     mySupertypesToSubtypesMap.clear();
+    mySubtypesToSupertypesMapStrong.clear();
+    mySupertypesToSubtypesMapStrong.clear();
     myComparableTypesMap.clear();
     myEquations.clear();
   }
@@ -327,6 +359,23 @@ public class EquationManager {
     subtypes.put(subtype, nodeToCheck);
   }
 
+  private void addStrongSubtyping(SNode subtype, SNode supertype, SNode nodeToCheck) {
+    Map<SNode,SNode> supertypes = mySubtypesToSupertypesMapStrong.get(subtype);
+    if (supertypes == null) {
+      supertypes = new HashMap<SNode, SNode>();
+      mySubtypesToSupertypesMapStrong.put(subtype, supertypes);
+    }
+    supertypes.put(supertype, nodeToCheck);
+
+    Map<SNode,SNode> subtypes = mySupertypesToSubtypesMapStrong.get(supertype);
+    if (subtypes == null) {
+      subtypes = new HashMap<SNode, SNode>();
+      mySupertypesToSubtypesMapStrong.put(supertype, subtypes);
+    }
+    subtypes.put(subtype, nodeToCheck);
+    addSubtyping(subtype, supertype, nodeToCheck);
+  }
+
   private void addComparable(SNode type1, SNode type2, SNode nodeToCheck) {
     Map<SNode,SNode> comparables1 = myComparableTypesMap.get(type1);
     if (comparables1 == null) {
@@ -363,6 +412,24 @@ public class EquationManager {
         result.add(node);
       }
     }
+    nodes = new HashSet<SNode>(mySubtypesToSupertypesMapStrong.keySet());
+    for (SNode node : nodes) {
+      Map<SNode, SNode> map = mySubtypesToSupertypesMapStrong.get(node);
+      if (map == null || map.isEmpty()) {
+        mySubtypesToSupertypesMapStrong.remove(node);
+      } else {
+        result.add(node);
+      }
+    }
+    nodes = new HashSet<SNode>(mySupertypesToSubtypesMapStrong.keySet());
+    for (SNode node : nodes) {
+      Map<SNode, SNode> map = mySupertypesToSubtypesMapStrong.get(node);
+      if (map == null || map.isEmpty()) {
+        mySupertypesToSubtypesMapStrong.remove(node);
+      } else {
+        result.add(node);
+      }
+    }
 
     return result;
   }
@@ -376,8 +443,10 @@ public class EquationManager {
       hasConcreteTypes = false;
       for (SNode type : types) {
         if (BaseAdapter.isInstance(type, RuntimeTypeVariable.class)) {
-          varLessThanType(type);
-          typeLessThanVar(type);
+          varLessThanType(type, true);
+          typeLessThanVar(type, true);
+          varLessThanType(type, false);
+          varLessThanType(type, false);
         } else {
           hasConcreteTypes = true;
         }
@@ -388,7 +457,7 @@ public class EquationManager {
 
     for (SNode type : types) {
       assert BaseAdapter.isInstance(type, RuntimeTypeVariable.class);
-    
+
       Map<SNode, SNode> supertypes = mySubtypesToSupertypesMap.get(type);
       if (supertypes != null) {
         mySubtypesToSupertypesMap.remove(type);
@@ -405,16 +474,43 @@ public class EquationManager {
           addEquation(type,  subtype, subtypes.get(subtype));
         }
       }
+      Map<SNode, SNode> supertypesStrong = mySubtypesToSupertypesMapStrong.get(type);
+      if (supertypesStrong != null) {
+        mySubtypesToSupertypesMapStrong.remove(type);
+        for (SNode supertype : supertypesStrong.keySet()) {
+          mySupertypesToSubtypesMapStrong.get(supertype).remove(type);
+          addEquation(type, supertype, supertypesStrong.get(supertype));
+        }
+      }
+      Map<SNode, SNode> subtypesStrong = mySupertypesToSubtypesMapStrong.get(type);
+      if (subtypesStrong != null) {
+        mySupertypesToSubtypesMapStrong.remove(type);
+        for (SNode subtype : subtypesStrong.keySet()) {
+          mySubtypesToSupertypesMapStrong.get(subtype).remove(type);
+          addEquation(type,  subtype, subtypesStrong.get(subtype));
+        }
+      }
     }
   }
 
-  private void typeLessThanVar(SNode type) {
-    Map<SNode, SNode> subtypes = mySupertypesToSubtypesMap.get(type);
+  private void typeLessThanVar(SNode type, boolean isWeak) { //todo strong also
+    final Map<SNode, Map<SNode, SNode>> supertypesToSubtypesMap;
+    final Map<SNode, Map<SNode, SNode>> subtypesToSupertypesMap;
+    if (isWeak) {
+      supertypesToSubtypesMap = mySupertypesToSubtypesMap;
+      subtypesToSupertypesMap = mySubtypesToSupertypesMap;
+    } else {
+      supertypesToSubtypesMap = mySupertypesToSubtypesMapStrong;
+      subtypesToSupertypesMap = mySubtypesToSupertypesMapStrong;
+    }
+
+
+    Map<SNode, SNode> subtypes = supertypesToSubtypesMap.get(type);
     if (subtypes == null) {
       return;
     }
     if (subtypes.isEmpty()) {
-      mySupertypesToSubtypesMap.remove(type);
+      supertypesToSubtypesMap.remove(type);
       return;
     }
     Set<SNode> concreteSubtypes = new HashSet<SNode>();
@@ -425,23 +521,33 @@ public class EquationManager {
     }
     if (concreteSubtypes.isEmpty()) return;
 
-    SNode nodeToCheck = mySubtypesToSupertypesMap.get(concreteSubtypes.iterator().next()).get(type);
+    SNode nodeToCheck = subtypesToSupertypesMap.get(concreteSubtypes.iterator().next()).get(type);
 
     for (SNode subtypeNode : concreteSubtypes) {
-      mySupertypesToSubtypesMap.get(type).remove(subtypeNode);
-      mySubtypesToSupertypesMap.get(subtypeNode).remove(type);
+      supertypesToSubtypesMap.get(type).remove(subtypeNode);
+      subtypesToSupertypesMap.get(subtypeNode).remove(type);
     }
     //  T,S <: c => c = lcs(T,S)
     addEquation(type, myTypeChecker.getSubtypingManager().leastCommonSupertype(concreteSubtypes), nodeToCheck);
   }
 
-  private void varLessThanType(SNode type) {
-    Map<SNode, SNode> supertypes = mySubtypesToSupertypesMap.get(type);
+  private void varLessThanType(SNode type, boolean isWeak) { //todo strong also
+    final Map<SNode, Map<SNode, SNode>> supertypesToSubtypesMap;
+    final Map<SNode, Map<SNode, SNode>> subtypesToSupertypesMap;
+    if (isWeak) {
+      supertypesToSubtypesMap = mySupertypesToSubtypesMap;
+      subtypesToSupertypesMap = mySubtypesToSupertypesMap;
+    } else {
+      supertypesToSubtypesMap = mySupertypesToSubtypesMapStrong;
+      subtypesToSupertypesMap = mySubtypesToSupertypesMapStrong;
+    }
+
+    Map<SNode, SNode> supertypes = subtypesToSupertypesMap.get(type);
     if (supertypes == null) {
       return;
     }
     if (supertypes.isEmpty()) {
-      mySubtypesToSupertypesMap.remove(type);
+      subtypesToSupertypesMap.remove(type);
       return;
     }
     Set<SNode> concreteSupertypes = new HashSet<SNode>();
@@ -456,8 +562,8 @@ public class EquationManager {
     SNode nodeToCheck = supertypes.get(supertype);
 
     for (SNode supertypeNode : concreteSupertypes) {
-      mySubtypesToSupertypesMap.get(type).remove(supertypeNode);
-      mySupertypesToSubtypesMap.get(supertypeNode).remove(type);
+      subtypesToSupertypesMap.get(type).remove(supertypeNode);
+      supertypesToSubtypesMap.get(supertypeNode).remove(type);
     }
     // c :< T => c = T
     addEquation(type, supertype, nodeToCheck);
