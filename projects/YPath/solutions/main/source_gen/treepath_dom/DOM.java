@@ -4,6 +4,7 @@ package treepath_dom;
 
 import ypath.util.TreePath;
 import org.w3c.dom.Node;
+import ypath.util.xml.NodeListIterableAdapter;
 import ypath.util.IFilter;
 import org.w3c.dom.Element;
 import org.w3c.dom.Attr;
@@ -15,6 +16,9 @@ public class DOM extends TreePath<Node> {
 
   public Node parent(Node node) {
     return DOM.Parent.parent(node);
+  }
+  public Iterable<Node> children(Node n) {
+    return DOM.Children.children(n);
   }
   private static class Parent {
 
@@ -38,6 +42,10 @@ public class DOM extends TreePath<Node> {
     public  Children(Object enclosingClass, Object closureContext) {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
+    }
+
+    public static Iterable<Node> children(Node node) {
+      return new NodeListIterableAdapter(node.getChildNodes());
     }
 }
   public static class ELEMENT_NodeKindTrigger implements IFilter<Node> {
