@@ -41,16 +41,19 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
 
   public TemplateModelGenerator_New( GenerationSessionContext operationContext,
                                      IAdaptiveProgressMonitor progressMonitor,
-                                     IMessageHandler handler,
-                                     SModel inputModel,
-                                     SModel outputModel) {
+                                     IMessageHandler handler) {
     super(operationContext, progressMonitor, handler);
-    myInputModel = inputModel;
-    myOutputModel = outputModel;
   }
 
   public GenerationSessionContext getGeneratorSessionContext() {
     return (GenerationSessionContext) getOperationContext();
+  }
+
+  public boolean doPrimaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailedException {
+    myInputModel = inputModel;
+    myOutputModel = outputModel;
+    doMapping(true);
+    return false;
   }
 
   public void doPrimaryMapping() {
@@ -292,10 +295,6 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
 
   public DelayedChanges getDelayedChanges() {
     return myDelayedChanges;
-  }
-
-  public boolean doPrimaryMapping(SModel inputModel, SModel model) throws GenerationFailedException {
-    return false;
   }
 
   public void setStartState() {

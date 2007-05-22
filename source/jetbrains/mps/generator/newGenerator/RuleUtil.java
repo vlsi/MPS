@@ -536,6 +536,7 @@ public class RuleUtil {
     }
     myGenerator.addOutputNodeByTemplateNodeAndInputNode(templateNode, inputNode, outputNode);
     myGenerator.addOutputNodeByRuleNameAndInputNode(templateNode, ruleName, inputNode, outputNode);
+    myGenerator.addOutputNodeByTemplateNodeAndInputNode(inputNode, inputNode, outputNode);
     //Here the inputNode plays role of template node
     myGenerator.addTemplateNodeByOutputNode(outputNode, inputNode);
 //    myGenerator.addOutputNodeByTemplateNode(templateNode, outputNode);

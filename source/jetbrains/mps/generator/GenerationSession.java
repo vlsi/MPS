@@ -5,6 +5,7 @@ import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.Statistics;
 import jetbrains.mps.generator.plan.GenerationStepController;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
+import jetbrains.mps.generator.newGenerator.TemplateModelGenerator_New;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
@@ -34,6 +35,7 @@ public class GenerationSession implements IGenerationSession {
   public static final Logger LOG = Logger.getLogger(GenerationSession.class);
 
   private IOperationContext myInvocationContext;
+  private boolean isNew;
   private boolean myDiscardTransients;
   private IAdaptiveProgressMonitor myProgressMonitor;
   private IMessageHandler myHandler;
@@ -46,8 +48,9 @@ public class GenerationSession implements IGenerationSession {
   private int myTransientModelsCount = 0;
 
 
-  public GenerationSession(IOperationContext invocationContext, boolean saveTransientModels, IAdaptiveProgressMonitor progressMonitor, IMessageHandler handler) {
+  public GenerationSession(IOperationContext invocationContext, boolean saveTransientModels, IAdaptiveProgressMonitor progressMonitor, IMessageHandler handler, boolean isNew) {
     myInvocationContext = invocationContext;
+    this.isNew = isNew;
     myDiscardTransients = !saveTransientModels;
     myProgressMonitor = progressMonitor;
     myHandler = handler;
@@ -189,7 +192,11 @@ public class GenerationSession implements IGenerationSession {
     setGenerationSessionContext(context);
 
     // -- replace generator
-    ITemplateGenerator generator = new DefaultTemplateGenerator(context, myProgressMonitor, myHandler);
+
+    ITemplateGenerator generator = isNew ?
+                                   new TemplateModelGenerator_New(context, myProgressMonitor, myHandler):
+                                   new DefaultTemplateGenerator(context, myProgressMonitor, myHandler);
+
     GenerationStatus status;
     try {
       SModel outputModel = generateModel(sourceModel, generator);

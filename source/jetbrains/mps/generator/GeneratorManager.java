@@ -514,10 +514,10 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       //++ generation
       IGenerationSession generationSession;
       if(generatingEngine == GeneratingEngine.old) {
-        generationSession = new GenerationSession(invocationContext, isSaveTransientModels(), progress, handler);
+        generationSession = new GenerationSession(invocationContext, isSaveTransientModels(), progress, handler, false);
       }
       else {
-        generationSession = new GenerationSession_New(invocationContext, isSaveTransientModels(), progress, handler);
+        generationSession = new GenerationSession(invocationContext, isSaveTransientModels(), progress, handler, true);
       }
       for (SModelDescriptor sourceModelDescriptor : sourceModels) {
         progress.addText("");
