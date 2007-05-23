@@ -149,11 +149,11 @@ public class SubtypingManager {
     frontier.add(subRepresentator);
     while (!frontier.isEmpty()) {
       for (SNode node : frontier) {
-        StructuralNodeSet<?> ancestors = mySupertypesCache.get(node);
-        if (ancestors == null) {
-          ancestors = collectImmediateSupertypes(node, isWeak);
-          mySupertypesCache.put(node, ancestors);
-        }
+        StructuralNodeSet<?> ancestors =/* mySupertypesCache.get(node);
+        if (ancestors == null || ancestors.isEmpty()) {
+          ancestors = */ collectImmediateSupertypes(node, isWeak);
+     //     mySupertypesCache.put(node, new StructuralNodeSet<Object>(ancestors));
+     //   }
         if (ancestors == null) continue;
         for (SNode passedNode : yetPassed) {
           ancestors.removeStructurally(passedNode);
