@@ -14,11 +14,6 @@ import jetbrains.mps.baseLanguage.helgins.RulesFunctions_BaseLanguage;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
-import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelUID;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule_Runtime {
@@ -51,29 +46,29 @@ public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule
     if(expectedRetType == null) {
       // shouldn't return any values
       {
-        ICursor<SNode> _zCursor1 = CursorFactory.createCursor(returnStatements);
+        ICursor<SNode> _zCursor = CursorFactory.createCursor(returnStatements);
         try {
-          while(_zCursor1.moveToNext()) {
-            SNode returnStatement = _zCursor1.getCurrent();
+          while(_zCursor.moveToNext()) {
+            SNode returnStatement = _zCursor.getCurrent();
             if((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
               TypeChecker.getInstance().reportTypeError(returnStatement, "no return value expected");
             }
           }
         } finally {
-          _zCursor1.release();
+          _zCursor.release();
         }
       }
-    } else 
+    } else
     {
       // should return subtypes of the 'expected type'
       {
-        ICursor<SNode> _zCursor2 = CursorFactory.createCursor(returnStatements);
+        ICursor<SNode> _zCursor1 = CursorFactory.createCursor(returnStatements);
         try {
-          while(_zCursor2.moveToNext()) {
-            SNode returnStatement = _zCursor2.getCurrent();
+          while(_zCursor1.moveToNext()) {
+            SNode returnStatement = _zCursor1.getCurrent();
             if((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
               TypeChecker.getInstance().reportTypeError(returnStatement, "should return value");
-            } else 
+            } else
             {
               SNode returnType = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(returnStatement, "expression", true));
               if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(returnType, expectedRetType))) {
@@ -82,7 +77,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule
             }
           }
         } finally {
-          _zCursor2.release();
+          _zCursor1.release();
         }
       }
     }
@@ -104,10 +99,6 @@ public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration";
-  }
-  public ApplicableNodeCondition getNodeCondition() {
-    SModel model = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.baseLanguage.helgins")).getSModel();
-    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1176897980059"));
   }
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());

@@ -305,13 +305,6 @@
     <node role="constructor" type="jetbrains.mps.baseLanguage.ConstructorDeclaration" id="1137820838257">
       <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1137820900216" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1137820838258">
-        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1178551432379">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1178551432380">
-            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1178551432381">
-              <link role="classifier" targetNodeId="26.1178551248023" />
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1140484304846">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1140484304845">
             <property name="name" value="aaa" />

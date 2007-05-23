@@ -7,11 +7,6 @@ import jetbrains.mps.bootstrap.helgins.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.baseLanguage.helgins.Pattern_7;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.helgins.QuotationClass_72;
-import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelUID;
-import jetbrains.mps.smodel.BaseAdapter;
 
 public class long_unboxing_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
@@ -25,10 +20,6 @@ public class long_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
-  }
-  public ApplicableNodeCondition getNodeCondition() {
-    SModel model = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.baseLanguage.helgins")).getSModel();
-    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1177077239781"));
   }
   public boolean isApplicable(SNode argument) {
     this.myMatchingPattern = new Pattern_7();

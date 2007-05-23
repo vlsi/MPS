@@ -14,11 +14,6 @@ import jetbrains.mps.baseLanguage.helgins.RulesFunctions_BaseLanguage;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
-import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelUID;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runtime {
@@ -43,43 +38,43 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
     if(noReturnExpected) {
       // shouldn't return any values
       {
+        ICursor<SNode> _zCursor2 = CursorFactory.createCursor(returnStatements);
+        try {
+          while(_zCursor2.moveToNext()) {
+            SNode returnStatement = _zCursor2.getCurrent();
+            if((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
+              TypeChecker.getInstance().reportTypeError(returnStatement, "no return value expected");
+            }
+          }
+        } finally {
+          _zCursor2.release();
+        }
+      }
+    } else
+    {
+      // should return subtypes of the 'expected type'
+      // if 'expected type' is null - should still return some value (of any type)
+      {
         ICursor<SNode> _zCursor3 = CursorFactory.createCursor(returnStatements);
         try {
           while(_zCursor3.moveToNext()) {
             SNode returnStatement = _zCursor3.getCurrent();
-            if((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
-              TypeChecker.getInstance().reportTypeError(returnStatement, "no return value expected");
+            if((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
+              TypeChecker.getInstance().reportTypeError(returnStatement, "should return value");
+            } else
+            {
+              leastCommonSupertype = RulesFunctions_BaseLanguage.computeLeastCommonSupertype(SLinkOperations.getTarget(returnStatement, "expression", true), leastCommonSupertype, expectedRetType);
             }
           }
         } finally {
           _zCursor3.release();
         }
       }
-    } else 
-    {
-      // should return subtypes of the 'expected type'
-      // if 'expected type' is null - should still return some value (of any type)
-      {
-        ICursor<SNode> _zCursor4 = CursorFactory.createCursor(returnStatements);
-        try {
-          while(_zCursor4.moveToNext()) {
-            SNode returnStatement = _zCursor4.getCurrent();
-            if((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
-              TypeChecker.getInstance().reportTypeError(returnStatement, "should return value");
-            } else 
-            {
-              leastCommonSupertype = RulesFunctions_BaseLanguage.computeLeastCommonSupertype(SLinkOperations.getTarget(returnStatement, "expression", true), leastCommonSupertype, expectedRetType);
-            }
-          }
-        } finally {
-          _zCursor4.release();
-        }
-      }
     }
     // =============
     if(noReturnExpected) {
       TypeChecker.getInstance().getRuntimeSupport().givetype(null, argument);
-    } else 
+    } else
     {
       // last expression statement can serve as return statement
       SNode lastStatement = SequenceOperations.getLast(SLinkOperations.getTargets(SLinkOperations.getTarget(argument, "body", true), "statement", true));
@@ -97,7 +92,7 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
       }
       if(leastCommonSupertype == null) {
         TypeChecker.getInstance().getRuntimeSupport().givetype(expectedRetType, argument);
-      } else 
+      } else
       {
         TypeChecker.getInstance().getRuntimeSupport().givetype(leastCommonSupertype, argument);
       }
@@ -105,10 +100,6 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ConceptFunction";
-  }
-  public ApplicableNodeCondition getNodeCondition() {
-    SModel model = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.baseLanguage.helgins")).getSModel();
-    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1178585414969"));
   }
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());

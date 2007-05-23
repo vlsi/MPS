@@ -99,6 +99,30 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1179925736423">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1179925736424">
+            <property name="name" value="i" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179925736425">
+              <link role="classifier" extResolveInfo="1.[Classifier]Integer" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179925739358">
+          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1179925745604">
+            <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]Integer).([InstanceMethodDeclaration]byteValue() : (jetbrains.mps.baseLanguage.types.byte/jetbrains.mps.baseLanguage.types.byte))" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179925741575">
+              <link role="variableDeclaration" targetNodeId="1179925736424" resolveInfo="i" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179925751189">
+          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1179925751190">
+            <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]Integer).([InstanceMethodDeclaration]byteValue() : (jetbrains.mps.baseLanguage.types.byte/jetbrains.mps.baseLanguage.types.byte))" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1179925763091">
+              <property name="value" value="2" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178894846582" />

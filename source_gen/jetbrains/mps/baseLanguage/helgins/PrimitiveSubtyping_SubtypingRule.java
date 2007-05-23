@@ -9,11 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
-import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelUID;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class PrimitiveSubtyping_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -30,10 +25,6 @@ public class PrimitiveSubtyping_SubtypingRule extends SubtypingRule_Runtime impl
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor";
-  }
-  public ApplicableNodeCondition getNodeCondition() {
-    SModel model = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.baseLanguage.helgins")).getSModel();
-    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1177066876251"));
   }
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
