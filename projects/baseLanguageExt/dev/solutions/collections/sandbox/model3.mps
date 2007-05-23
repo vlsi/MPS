@@ -7,6 +7,11 @@
   <import index="2" modelUID="java.util@java_stub" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1172275558607">
     <property name="name" value="C1" />
+    <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1179942913358">
+      <property name="name" value="fff" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PrivateVisibility" id="1179942913359" />
+      <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1179942915751" />
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1172275562561">
       <property name="name" value="m1" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1172275562562" />
@@ -108,7 +113,15 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179939338524">
-          <node role="expression" type="jetbrains.mps.baseLanguage.ThisExpression" id="1179939338525" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.FieldReference" id="1179942907357">
+            <link role="variableDeclaration" targetNodeId="1179942913358" resolveInfo="fff" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1179939338525" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179944812539">
+          <node role="expression" type="jetbrains.mps.baseLanguage.FieldReference" id="1179944814448">
+            <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1179944812540" />
+          </node>
         </node>
       </node>
     </node>
