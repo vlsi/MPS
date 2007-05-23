@@ -596,6 +596,10 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     }
   }
 
+  public boolean testProject() {
+    return testProject(false);
+  }
+
   //todo find a better place for this method
   public boolean testProject(final boolean treatWarningsAsErrors) {
     final List<Message> errors = new ArrayList<Message>();
