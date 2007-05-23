@@ -107,6 +107,9 @@
             <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.GetFirstOperation" id="1179271729004" />
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179939338524">
+          <node role="expression" type="jetbrains.mps.baseLanguage.ThisExpression" id="1179939338525" />
+        </node>
       </node>
     </node>
   </node>
