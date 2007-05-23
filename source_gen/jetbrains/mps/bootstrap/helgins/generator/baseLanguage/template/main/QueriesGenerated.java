@@ -548,7 +548,7 @@ public class QueriesGenerated {
       if(extResolveInfo != null) {
         targetInfo = extResolveInfo;
         isExternalInfo = true;
-      } else 
+      } else
       {
         targetInfo = reference.getTargetNodeId();
       }
@@ -804,5 +804,11 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_1178876429136(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return node;
+  }
+  public static SNode sourceNodeQuery_1179920774636(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "leftExpression", true);
+  }
+  public static SNode sourceNodeQuery_1179920774644(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "rightExpression", true);
   }
 }

@@ -78,6 +78,10 @@ public class RuntimeSupport {
     myTypeChecker.getEquationManager().addInequation(node1, node2, nodeToCheck);
   }
 
+  public void createLessThanInequationStrong(SNode node1, SNode node2, SNode nodeToCheck) {
+    myTypeChecker.getEquationManager().addInequation(node1, node2, nodeToCheck, false);
+  }
+
   public void createGreaterThanInequation(SNode node1, SNode node2, SNode nodeToCheck) {
     myTypeChecker.getEquationManager().addInequation(node2, node1, nodeToCheck);
   }
