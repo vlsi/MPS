@@ -597,7 +597,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
   }
 
   //todo find a better place for this method
-  public boolean testProject() {
+  public boolean testProject(final boolean treatWarningsAsErrors) {
     final List<Message> errors = new ArrayList<Message>();
     final IMessageHandler handler = new IMessageHandler() {
       public void handle(Message msg) {
@@ -616,7 +616,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
             break;
 
           case WARNING:
-            if(message.startsWith("expression can't be optimized for DB access and will be executed by collection language in-memory")) {
+            if(treatWarningsAsErrors && message.startsWith("expression can't be optimized for DB access and will be executed by collection language in-memory")) {
               LOG.error(message);
               errors.add(msg);
             }
