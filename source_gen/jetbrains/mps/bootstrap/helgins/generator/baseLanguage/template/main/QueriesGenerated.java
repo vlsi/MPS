@@ -144,13 +144,6 @@ public class QueriesGenerated {
     SNode conceptDecl = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(patternExpr, "patternNode", true));
     return SNodeOperations.getModel(conceptDecl).toString() + "." + SPropertyOperations.getString(conceptDecl, "name");
   }
-  public static String propertyMacro_GetPropertyValue_1174647504808(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.getModel(node).toString();
-  }
-  public static String propertyMacro_GetPropertyValue_1174647592321(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode applicableNode = SLinkOperations.getTarget(node, "applicableNode", true);
-    return applicableNode.getId();
-  }
   public static String propertyMacro_GetPropertyValue_1175162990835(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.SupertypingRule") + "";
   }
