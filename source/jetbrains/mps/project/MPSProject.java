@@ -605,17 +605,24 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
           errors.add(msg);
         }
 
+        final String message = msg.getText();
         switch(msg.getKind()) {
           case ERROR:
-            LOG.error(msg.getText());
+            LOG.error(message);
             break;
 
           case INFORMATION:
-            LOG.info(msg.getText());
+            LOG.info(message);
             break;
 
           case WARNING:
-            LOG.warning(msg.getText());
+            if(message.startsWith("expression can't be optimized for DB access and will be executed by collection language in-memory")) {
+              LOG.error(message);
+              errors.add(msg);
+            }
+            else {
+              LOG.warning(message);
+            }
             break;
         }
       }
