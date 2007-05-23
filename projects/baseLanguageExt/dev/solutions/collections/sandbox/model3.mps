@@ -119,7 +119,8 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179944812539">
-          <node role="expression" type="jetbrains.mps.baseLanguage.FieldReference" id="1179944814448">
+          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1179960582082">
+            <link role="baseMethodDeclaration" targetNodeId="1179159662628" resolveInfo="m3" />
             <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1179944812540" />
           </node>
         </node>
