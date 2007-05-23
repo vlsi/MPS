@@ -10,11 +10,6 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_8;
 import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_9;
-import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelUID;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ToListOperation_InferenceRule implements InferenceRule_Runtime {
@@ -27,17 +22,13 @@ public class typeof_ToListOperation_InferenceRule implements InferenceRule_Runti
     if(inputElementType == null) {
       TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(SNodeOperations.getParent(argument, null, false, false), "leftExpression", true), "Can't compute input sequence element type");
       TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_8().createNode(), argument);
-    } else 
+    } else
     {
       TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_9().createNode(inputElementType), argument);
     }
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ToListOperation";
-  }
-  public ApplicableNodeCondition getNodeCondition() {
-    SModel model = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.baseLanguage.ext.collections.lang.helgins")).getSModel();
-    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1178725704677"));
   }
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());

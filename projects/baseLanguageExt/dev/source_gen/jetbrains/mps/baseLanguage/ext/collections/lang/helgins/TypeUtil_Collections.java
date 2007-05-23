@@ -24,6 +24,10 @@ public class TypeUtil_Collections {
     if(sequenceType != null) {
       return sequenceType;
     }
+    if(sequenceType == null) {
+      return null;
+    }
+    // the following code is not reachable 
     if(type == null) {
       return null;
     }

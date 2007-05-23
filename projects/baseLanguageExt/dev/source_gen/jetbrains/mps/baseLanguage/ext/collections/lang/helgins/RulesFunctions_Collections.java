@@ -25,11 +25,11 @@ public class RulesFunctions_Collections {
       SNode sequenceType = TypeUtil_Collections.coerceTo_SequenceType(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(leftExpression));
       if(sequenceType != null) {
         return sequenceType;
-      } else 
+      } else
       {
         TypeChecker.getInstance().reportTypeError(leftExpression, "sequence is expected");
       }
-    } else 
+    } else
     {
       TypeChecker.getInstance().reportTypeError(op, "not expected here: is only applicable to sequence");
     }
@@ -47,11 +47,11 @@ public class RulesFunctions_Collections {
       SNode listType = TypeChecker.getInstance().getRuntimeSupport().coerce(leftExpressionType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType"), true);
       if(listType != null) {
         return listType;
-      } else 
+      } else
       {
         TypeChecker.getInstance().reportTypeError(leftExpression, "list is expected but was " + leftExpressionType);
       }
-    } else 
+    } else
     {
       TypeChecker.getInstance().reportTypeError(op, "not expected here: is only applicable to list");
     }
