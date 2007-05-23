@@ -78,7 +78,6 @@ public class StructuralNodeMap<T> implements Map<SNode, T> {
   public T put(SNode keyNode, T value) {
     SNode representator = getKeyRepresentator(keyNode);
     if (representator == null) {
-      if (myAbsentNodes.contains(keyNode)) return null;
       for (SNode node : myMap.keySet()) {
         if (MatchingUtil.matchNodes(node, keyNode)) {
           myRepresentatorsMap.put(keyNode, node);
