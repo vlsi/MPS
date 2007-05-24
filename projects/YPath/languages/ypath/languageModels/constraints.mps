@@ -63,6 +63,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1178980575228">
+    <property name="package" value="treeOperation.traverse" />
     <link role="concept" targetNodeId="1.1168524996431" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1178980580496">
       <property name="name" value="getAxisInternalValue" />
@@ -93,6 +94,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1179306328870">
+    <property name="package" value="treePath" />
     <link role="concept" targetNodeId="1.1179235924605" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1179306333014">
       <property name="name" value="getNodeType" />
@@ -157,6 +159,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1179319915907">
+    <property name="package" value="treePath" />
     <link role="concept" targetNodeId="1.1168428680123" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1179319917738">
       <property name="name" value="returnsArray" />
@@ -236,6 +239,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1179335431996">
+    <property name="package" value="treePath" />
     <link role="concept" targetNodeId="1.1168879975004" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1179335433937">
       <property name="name" value="getDefaultProperty" />
@@ -310,6 +314,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1179336361256">
+    <property name="package" value="treeOperation.filter" />
     <link role="concept" targetNodeId="1.1175879071372" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1179336363244">
       <property name="name" value="getDefaultProperty" />
@@ -435,6 +440,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1179337007888">
+    <property name="package" value="treePath" />
     <link role="concept" targetNodeId="1.1172240563057" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1179337009627">
       <property name="name" value="getTriggerClassName" />
@@ -548,6 +554,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1179341922990">
+    <property name="package" value="treeOperation.filter" />
     <link role="concept" targetNodeId="1.1172242735136" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1179341925025">
       <property name="name" value="getTreeNodeKind" />
@@ -623,6 +630,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1179394818388">
+    <property name="package" value="treePath" />
     <link role="concept" targetNodeId="1.1175160940972" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1179394820016">
       <property name="name" value="getClassName" />
@@ -777,6 +785,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1179573613932">
+    <property name="package" value="treePath" />
     <link role="concept" targetNodeId="1.1168428668253" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1179573615575">
       <property name="name" value="getExpectedReturnType" />
@@ -884,6 +893,31 @@
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1179740632549">
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179740632550" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1180014791481">
+    <property name="package" value="treeOperation.visit" />
+    <link role="concept" targetNodeId="1.1180011113930" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1180014794484">
+      <property name="name" value="getEnclosingVisitNodesStatement" />
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1180014799128">
+        <link role="concept" targetNodeId="1.1180006635472" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180014794486">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1180014819661">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1180014821029">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAncestorOperation" id="1180014822454">
+              <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Concept" id="1180014824863">
+                <link role="concept" targetNodeId="1.1180006635472" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1180014819662" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1180014791482">
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180014791483" />
     </node>
   </node>
 </model>
