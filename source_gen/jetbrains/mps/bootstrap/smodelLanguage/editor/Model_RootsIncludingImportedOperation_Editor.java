@@ -108,7 +108,7 @@ public class Model_RootsIncludingImportedOperation_Editor extends DefaultNodeEdi
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else 
+    } else
     return cellWithRole;
   }
   public EditorCell createScopeCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -141,7 +141,7 @@ public class Model_RootsIncludingImportedOperation_Editor extends DefaultNodeEdi
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else 
+    } else
     return cellWithRole;
   }
   public EditorCell createConceptReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -174,7 +174,7 @@ public class Model_RootsIncludingImportedOperation_Editor extends DefaultNodeEdi
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else 
+    } else
     return cellWithRole;
   }
 }

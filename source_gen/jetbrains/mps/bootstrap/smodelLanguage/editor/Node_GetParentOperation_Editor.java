@@ -40,7 +40,7 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
     EditorCell editorCell = null;
     if(alternationCondition) {
       editorCell = this.createConstantCell(context, node, "parent");
-    } else 
+    } else
     {
       editorCell = this.createRowCell(context, node);
     }

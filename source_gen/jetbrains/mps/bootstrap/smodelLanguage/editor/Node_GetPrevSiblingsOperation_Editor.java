@@ -31,7 +31,7 @@ public class Node_GetPrevSiblingsOperation_Editor extends DefaultNodeEditor {
     EditorCell editorCell = null;
     if(alternationCondition) {
       editorCell = this.createConstantCell(context, node, "prev-siblings");
-    } else 
+    } else
     {
       editorCell = this.createRowCell(context, node);
     }

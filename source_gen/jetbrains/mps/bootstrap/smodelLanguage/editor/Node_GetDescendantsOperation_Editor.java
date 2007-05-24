@@ -31,7 +31,7 @@ public class Node_GetDescendantsOperation_Editor extends DefaultNodeEditor {
     EditorCell editorCell = null;
     if(alternationCondition) {
       editorCell = this.createConstantCell(context, node, "descendants");
-    } else 
+    } else
     {
       editorCell = this.createRowCell(context, node);
     }
