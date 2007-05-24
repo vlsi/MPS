@@ -153,7 +153,7 @@ public class RulesUtil {
     return false;
   }
   public static boolean checkAssignableConcept(SNode fromConcept, SNode toConcept, SNode nodeToReportError, String errorTextPrefix) {
-    if(SConceptOperations.isSuperConceptOf(toConcept, NameUtil.nodeFQName(fromConcept))) {
+    if(SConceptOperations.isSubConceptOf(fromConcept, NameUtil.nodeFQName(toConcept))) {
       return true;
     }
     TypeChecker.getInstance().reportTypeError(nodeToReportError, "" + errorTextPrefix + "\nexpected: " + SPropertyOperations.getString(toConcept, "name") + "\nwas: " + SPropertyOperations.getString(fromConcept, "name"));
