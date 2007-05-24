@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.action.IChildNodeSetter;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.util.Calculable;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.smodel.BaseAdapter;
@@ -70,13 +71,13 @@ public class QueriesGenerated {
           }
           List<SNode> concepts = new ArrayList<SNode>();
           if(yieldAllowed) {
-            concepts.add(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.TraversalYieldStatement"));
+            ListOperations.addElement(concepts, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.TraversalYieldStatement"));
           }
           if(stopAllowed) {
-            concepts.add(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.TraversalStopStatement"));
+            ListOperations.addElement(concepts, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.TraversalStopStatement"));
           }
           if(skipAllowed) {
-            concepts.add(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.TraversalSkipStatement"));
+            ListOperations.addElement(concepts, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.TraversalSkipStatement"));
           }
           return concepts;
         }

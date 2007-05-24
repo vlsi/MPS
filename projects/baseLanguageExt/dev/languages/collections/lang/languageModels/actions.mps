@@ -5,6 +5,7 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
+  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <maxImportIndex value="10" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" />
@@ -62,7 +63,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions" id="1152143990738">
-    <property name="name" value="BLC_node_substitute" />
+    <property name="name" value="BLC_substitute" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1152144005896">
       <property name="description" value="some blocks allows using of stop/skip/yield statements" />
       <property name="useNewActions" value="true" />
@@ -250,14 +251,15 @@
                   <link role="variableDeclaration" targetNodeId="1177410712555" resolveInfo="yieldAllowed" />
                 </node>
                 <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1177410874542">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1177410878179">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1177410879918">
-                      <link role="baseMethodDeclaration" extResolveInfo="8.method ([Classifier]List).([InstanceMethodDeclaration]add((jetbrains.mps.baseLanguage.types.any/jetbrains.mps.baseLanguage.types.any)) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
-                      <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1177410878180">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1180049679692">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1180049827944">
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1180049679693">
                         <link role="variableDeclaration" targetNodeId="1177410837285" resolveInfo="concepts" />
                       </node>
-                      <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.ConceptRefExpression" id="1177410881383">
-                        <link role="conceptDeclaration" targetNodeId="1.1152141063573" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.AddElementOperation" id="1180049831399">
+                        <node role="argument" type="jetbrains.mps.bootstrap.smodelLanguage.ConceptRefExpression" id="1180049838905">
+                          <link role="conceptDeclaration" targetNodeId="1.1152141063573" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -269,13 +271,14 @@
                 </node>
                 <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1177410955501">
                   <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1177410961489">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1177410963051">
-                      <link role="baseMethodDeclaration" extResolveInfo="8.method ([Classifier]List).([InstanceMethodDeclaration]add((jetbrains.mps.baseLanguage.types.any/jetbrains.mps.baseLanguage.types.any)) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
-                      <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1177410961490">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1180049888392">
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1177410961490">
                         <link role="variableDeclaration" targetNodeId="1177410837285" resolveInfo="concepts" />
                       </node>
-                      <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.ConceptRefExpression" id="1177410964107">
-                        <link role="conceptDeclaration" targetNodeId="1.1152141130888" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.AddElementOperation" id="1180049891519">
+                        <node role="argument" type="jetbrains.mps.bootstrap.smodelLanguage.ConceptRefExpression" id="1180049896837">
+                          <link role="conceptDeclaration" targetNodeId="1.1152141130888" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -287,13 +290,14 @@
                 </node>
                 <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1177410967311">
                   <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1177410972320">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1177410973862">
-                      <link role="baseMethodDeclaration" extResolveInfo="8.method ([Classifier]List).([InstanceMethodDeclaration]add((jetbrains.mps.baseLanguage.types.any/jetbrains.mps.baseLanguage.types.any)) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
-                      <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1177410972321">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1180049906247">
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1177410972321">
                         <link role="variableDeclaration" targetNodeId="1177410837285" resolveInfo="concepts" />
                       </node>
-                      <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.ConceptRefExpression" id="1177410975167">
-                        <link role="conceptDeclaration" targetNodeId="1.1152141160639" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.AddElementOperation" id="1180049909248">
+                        <node role="argument" type="jetbrains.mps.bootstrap.smodelLanguage.ConceptRefExpression" id="1180049916441">
+                          <link role="conceptDeclaration" targetNodeId="1.1152141160639" />
+                        </node>
                       </node>
                     </node>
                   </node>
