@@ -14,15 +14,13 @@ import org.eclipse.jdt.internal.compiler.env.INameEnvironment;
 import org.eclipse.jdt.internal.compiler.env.NameEnvironmentAnswer;
 import org.eclipse.jdt.internal.compiler.impl.CompilerOptions;
 import org.eclipse.jdt.internal.compiler.problem.DefaultProblemFactory;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class JavaCompiler {
   private static final Logger LOG = Logger.getLogger(JavaCompiler.class);
@@ -30,6 +28,7 @@ public class JavaCompiler {
   private MapClassLoader myClassLoader = new MapClassLoader();
   private Map<String, CompilationUnit> myCompilationUnits = new HashMap<String, CompilationUnit>();
   private IClassPathItem myClassPathItem;
+  private List<CompilationResult> myCompilationResults = new ArrayList<CompilationResult>();
 
   public JavaCompiler() {
     this(ClassLoaderManager.getInstance().getClassPathItem());
@@ -45,8 +44,12 @@ public class JavaCompiler {
   }
 
   public void compile() {
-    org.eclipse.jdt.internal.compiler.Compiler c = new Compiler(new MyNameEnvironment(), new MyErrorHandlingPolicy(), new CompilerOptions(), new MyCompilerRequestor(), new DefaultProblemFactory(), new PrintWriter(System.out));
-    c.options.sourceLevel = ClassFileConstants.JDK1_6;
+    CompilerOptions options = new CompilerOptions();
+    options.sourceLevel = ClassFileConstants.JDK1_6;
+    options.targetJDK = ClassFileConstants.JDK1_6;
+
+    org.eclipse.jdt.internal.compiler.Compiler c = new Compiler(new MyNameEnvironment(), new MyErrorHandlingPolicy(), options, new MyCompilerRequestor(), new DefaultProblemFactory(), null);
+    //c.options.verbose = true;
     c.compile(myCompilationUnits.values().toArray(new CompilationUnit[0]));
   }
 
@@ -54,6 +57,9 @@ public class JavaCompiler {
     return myClassLoader;
   }
 
+  public List<CompilationResult> getCompilationResults() {
+    return myCompilationResults;
+  }
 
   public void putResultToDir(String packName, File baseClassesDir) {
     String packPath = packName.replace('.', File.separatorChar);
@@ -89,6 +95,8 @@ public class JavaCompiler {
   private Set<String> getCompiledClasses() {
     return new HashSet<String>(myClassLoader.myClasses.keySet());
   }
+
+
 
   private byte[] getClass(String name) {
     byte[] bytes = myClassLoader.myClasses.get(name);
@@ -142,6 +150,7 @@ public class JavaCompiler {
   }
 
   private class MyCompilerRequestor implements ICompilerRequestor {
+
     public void acceptResult(CompilationResult result) {
       for (ClassFile file : result.getClassFiles()) {
         String name = "";
@@ -153,6 +162,8 @@ public class JavaCompiler {
         }
         myClassLoader.put(name, file.getBytes());
       }
+
+      myCompilationResults.add(result);
     }
   }
 }

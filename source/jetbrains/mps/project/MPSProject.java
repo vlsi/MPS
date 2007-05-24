@@ -6,6 +6,9 @@ import jetbrains.mps.components.IContainer;
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.generationTypes.GenerateClassesGenerationType;
+import jetbrains.mps.generator.generationTypes.GenerateTextGenerationType;
+import jetbrains.mps.generator.generationTypes.GenerateFilesGenerationType;
+import jetbrains.mps.generator.generationTypes.GenerateFilesAndClassesGenerationType;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.ide.AbstractProjectFrame;
 import jetbrains.mps.ide.BootstrapLanguages;
@@ -37,12 +40,19 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IDisposable;
 import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.baseLanguage.plugin.JavaFileGenerator;
+import jetbrains.mps.baseLanguage.plugin.BaseLanguagePlugin;
+import jetbrains.mps.xml.plugin.XmlPlugin;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.eclipse.jdt.internal.compiler.CompilationResult;
+import org.eclipse.jdt.core.compiler.CategorizedProblem;
 
 import java.io.File;
+import java.io.PrintWriter;
+import java.io.PrintStream;
 import java.rmi.RemoteException;
 import java.util.*;
 import java.text.DateFormat;
@@ -596,45 +606,126 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     }
   }
 
-  public boolean testProject() {
-    return testProject(false);
+  public static class TestResult {
+    public List<Message> generationErrors;
+    public List<Message> generationWarnings;
+    public List<String> compilationProblems;
+
+    public TestResult(List<Message> generationErrors, List<Message> generationWarnings, List<String> compilationProblems) {
+      this.generationErrors = generationErrors;
+      this.generationWarnings = generationWarnings;
+      this.compilationProblems = compilationProblems;
+    }
+
+    public boolean isOk() {
+      return !hasGenerationErrors() && !hasCompilationProblems();
+    }
+
+    public int warningsStartsWith(String warn) {
+      int i = 0;
+      for (Message w : generationWarnings) {
+        if (w.getText().startsWith(warn)) {
+          i++;
+        }
+      }
+
+      return i;
+    }
+
+    public boolean hasGenerationErrors() {
+      return generationErrors.size() != 0;
+    }
+
+    public boolean hasGenerationWarnings() {
+      return generationWarnings.size() != 0;
+    }
+
+    public boolean hasCompilationProblems() {
+      return compilationProblems.size() != 0;
+    }
+
+    public void dump(PrintStream out) {
+      out.println("[Test Resuls]============================================================");
+
+      if (hasGenerationErrors()) {
+        out.println("Generation errors:");
+        for (Message e: generationErrors) {
+          out.println("  "  + e.getText());
+        }
+      } else {
+        out.println("No generation errors.");
+      }
+      out.println("");
+
+      if (hasGenerationWarnings()) {
+        out.println("Generation warnings:");
+        for (Message w: generationWarnings) {
+          out.println("  "  + w.getText());
+        }
+      } else {
+        out.println("No generation warnings.");
+      }
+      out.println("");
+
+      if (hasCompilationProblems()) {
+        out.println("Compilation problems:");
+        for (String c: compilationProblems) {
+          out.println("  "  + c);
+        }
+      } else {
+        out.println("No compilation problems.");
+      }
+      out.println("=========================================================================");
+    }
+
   }
 
   //todo find a better place for this method
-  public boolean testProject(final boolean treatWarningsAsErrors) {
+  public TestResult testProject() {
     final List<Message> errors = new ArrayList<Message>();
+    final List<Message> warnings = new ArrayList<Message>();
+
     final IMessageHandler handler = new IMessageHandler() {
       public void handle(Message msg) {
-        if (msg.getKind() == MessageKind.ERROR) {
-          errors.add(msg);
-        }
-
         final String message = msg.getText();
         switch(msg.getKind()) {
           case ERROR:
+            errors.add(msg);
             LOG.error(message);
+            break;
+
+          case WARNING:
+            warnings.add(msg);
+            LOG.warning(message);
             break;
 
           case INFORMATION:
             LOG.info(message);
             break;
 
-          case WARNING:
-            if(treatWarningsAsErrors && message.startsWith("expression can't be optimized for DB access and will be executed by collection language in-memory")) {
-              LOG.error(message);
-              errors.add(msg);
-            }
-            else {
-              LOG.warning(message);
-            }
-            break;
         }
       }
     };
 
+    final GenerateFilesAndClassesGenerationType generationType = new GenerateFilesAndClassesGenerationType(false) {
+      public boolean requiresCompilationInIDEABeforeGeneration() {
+        return false;
+      }
+
+      public boolean requiresCompilationInIDEAfterGeneration() {
+        return false;
+      }
+
+      protected boolean isPutClassesOnTheDisk() {
+        return false;
+      }
+    };
 
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
+
+        addTextGenerators();
+
         for (BaseGeneratorConfiguration t : myProjectDescriptor.getRunConfigurations()) {
           if (!t.getTest()) continue;
 
@@ -645,27 +736,19 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
             errors.add(new Message(MessageKind.ERROR, "Can't create a generator configuration : " + e.getMessage()));
             return;
           }
+
           getComponentSafe(GeneratorManager.class)
                   .generateModels(
                           parms.getModels(),
                           parms.getTarget(),
                           new ModuleContext(parms.getModule(), MPSProject.this),
-                          new GenerateClassesGenerationType(false) {
-                            public boolean requiresCompilationInIDEABeforeGeneration() {
-                              return false;
-                            }
-
-                            public boolean requiresCompilationInIDEAfterGeneration() {
-                              return false;
-                            }
-
-                            protected boolean isPutClassesOnTheDisk() {
-                              return false;
-                            }
-                          },
+                          generationType,
                           parms.getScript(),
                           IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR,
                           handler);
+
+          // during generation all source files was collected, now we may compile them all together
+          generationType.compile(IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR);
 
           System.out.println("");
           System.out.println("");
@@ -674,7 +757,33 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
       }
     });
 
-    return errors.size() == 0;
+    return new TestResult(errors, warnings, createCompilationProblemsList(generationType.getCompilationResults()));
+  }
+
+  // TODO: rid off this method when plugins will be automatically installed during headless generation
+  private void addTextGenerators() {
+    // java
+    new BaseLanguagePlugin().init(this);
+
+    // xml
+    new XmlPlugin().init(this);
+  }
+
+  private List<String> createCompilationProblemsList(List<CompilationResult> compilationResults) {
+    List<String> res = new ArrayList<String>();
+
+    for (CompilationResult r : compilationResults) {
+      if (r.getErrors() != null) {
+        for (CategorizedProblem p: r.getErrors()) {
+          res.add(new String(
+                  r.getCompilationUnit().getFileName()) +
+                  " (" + p.getSourceLineNumber() + "): " +
+                  p.getMessage());
+        }
+      }
+    }
+
+    return res;
   }
 
   @NotNull

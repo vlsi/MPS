@@ -8,26 +8,32 @@ import java.io.File;
 public class ApplicationsTest extends TestCase {
 
   public void testWebQuery() {
-    assertTrue(TestMain.testProject(new File("platform/web-query/jetbrains.mps.web-query.mpr")));
+    String res = TestMain.testProject(new File("platform/web-query/jetbrains.mps.web-query.mpr"));
+    assertTrue(res, res == null);
   }
 
   public void testYPath() {
-    assertTrue(TestMain.testProject(new File("projects/YPath/YPath.mpr")));    
+    String res = TestMain.testProject(new File("projects/YPath/YPath.mpr"));
+    assertTrue(res, res == null);
   }
 
   public void testPanacea() {
-    assertTrue(TestMain.testProject(new File("projects/Panacea/Panacea.mpr")));
+    String res = TestMain.testProject(new File("projects/Panacea/Panacea.mpr"));
+    assertTrue(res, res == null);
   }
 
   public void testPubMedDB() {
-    assertTrue(TestMain.testProject(new File("app/PubMedDB/pubMedDB.mpr")));
+    String res = TestMain.testProject(new File("app/PubMedDB/pubMedDB.mpr"));
+    assertTrue(res, res == null);
   }
 
   public void testSearchWatch() {
-    assertTrue(TestMain.testProject(new File("app/search-watch/search-watch.mpr")));    
+    String res = TestMain.testProject(new File("app/search-watch/search-watch.mpr"));
+    assertTrue(res, res == null);
   }
 
   public void testProjectHalo() {
-    assertTrue(TestMain.testProject(new File("projects/ProjectHalo/ProjectHalo.mpr")));
+    String res = TestMain.testProject(new File("projects/ProjectHalo/ProjectHalo.mpr"));
+    assertTrue(res, res == null);
   }
 }
