@@ -4,13 +4,10 @@ package jetbrains.mps.bootstrap.actionsLanguage.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.bootstrap.actionsLanguage.helgins.Queries;
-import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelUID;
-import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.bootstrap.actionsLanguage.helgins.QuotationClass_4;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_NodeSetupFunction_NewNode_InferenceRule implements InferenceRule_Runtime {
@@ -19,14 +16,12 @@ public class typeof_NodeSetupFunction_NewNode_InferenceRule implements Inference
   }
 
   public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype((SNode)Queries.CustomExpression_typeof_NodeSetupFunction_NewNode(argument), argument);
+    SNode hostFactory = SNodeOperations.getAncestor(argument, "jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactory", false, false);
+    SNode applicableConcept = SLinkOperations.getTarget(hostFactory, "applicableConcept", false);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_4().createNode(applicableConcept), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction_NewNode";
-  }
-  public ApplicableNodeCondition getNodeCondition() {
-    SModel model = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.bootstrap.actionsLanguage.helgins@1_0_1179521399906")).getSModel();
-    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1179521889153"));
   }
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
