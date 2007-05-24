@@ -126,6 +126,9 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1180028862087(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "conceptArgument", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Expression");
   }
+  public static boolean baseMappingRule_Condition_1180031948686(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "conceptArgument", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Expression");
+  }
   public static boolean baseMappingRule_Condition_1177701505375(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return (SLinkOperations.getTarget(node, "prototypeNode", true) != null);
   }
@@ -389,6 +392,13 @@ public class QueriesGenerated {
     return ConceptMethodDeclaration_Behavior.getGeneratedName_1177681178696(Node_ConceptMethodCall_Behavior.getVirtualMethodDeclaration_1179412993748(node));
   }
   public static String propertyMacro_GetPropertyValue_1180028472291(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "conceptArgument", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference")) {
+      return NameUtil.nodeFQName(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "conceptArgument", true), "conceptDeclaration", false));
+    }
+    generator.showErrorMessage(node, templateNode, "unexpected type of 'conceptArgumant' : " + SLinkOperations.getTarget(node, "conceptArgument", true));
+    return "???";
+  }
+  public static String propertyMacro_GetPropertyValue_1180032004502(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "conceptArgument", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference")) {
       return NameUtil.nodeFQName(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "conceptArgument", true), "conceptDeclaration", false));
     }
@@ -729,6 +739,9 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1180028900509(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "conceptArgument", true), "expression", true);
   }
+  public static SNode sourceNodeQuery_1180031948699(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "conceptArgument", true), "expression", true);
+  }
   public static SNode sourceNodeQuery_1177701501920(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "prototypeNode", true);
   }
@@ -748,6 +761,9 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
   }
   public static SNode sourceNodeQuery_1180028472280(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
+  }
+  public static SNode sourceNodeQuery_1180032004491(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
   }
 }
