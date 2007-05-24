@@ -11,8 +11,6 @@
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="3" modelUID="jetbrains.mps.core.structure" />
   <import index="7" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
-  <import index="8" modelUID="java.util@java_stub" />
-  <import index="10" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.helgins" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActions" id="1151703690959">
     <property name="name" value="BLC_rtansform" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1151703707960">
@@ -235,12 +233,12 @@
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1177410837285">
                   <property name="name" value="concepts" />
                   <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1177410837286">
-                    <link role="elementConcept" targetNodeId="7.1071489090640" />
+                    <link role="elementConcept" targetNodeId="7.1169125787135" />
                   </node>
                   <node role="initializer" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1177410868314">
                     <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListCreator" id="1177410869943">
                       <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1177410869944">
-                        <link role="elementConcept" targetNodeId="7.1071489090640" />
+                        <link role="elementConcept" targetNodeId="7.1169125787135" />
                       </node>
                     </node>
                   </node>
@@ -257,7 +255,7 @@
                         <link role="variableDeclaration" targetNodeId="1177410837285" resolveInfo="concepts" />
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.AddElementOperation" id="1180049831399">
-                        <node role="argument" type="jetbrains.mps.bootstrap.smodelLanguage.ConceptRefExpression" id="1180049838905">
+                        <node role="argument" type="jetbrains.mps.bootstrap.smodelLanguage.ConceptRefExpression" id="1180050201907">
                           <link role="conceptDeclaration" targetNodeId="1.1152141063573" />
                         </node>
                       </node>
