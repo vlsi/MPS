@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.DataTypeUtil;
 import jetbrains.mps.bootstrap.structureLanguage.structure.DataTypeDeclaration;
 import java.util.Iterator;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
@@ -152,7 +153,7 @@ public class RulesUtil {
     return false;
   }
   public static boolean checkAssignableConcept(SNode fromConcept, SNode toConcept, SNode nodeToReportError, String errorTextPrefix) {
-    if(SConceptOperations.isAssignableFrom(toConcept, fromConcept)) {
+    if(SConceptOperations.isSuperConceptOf(toConcept, NameUtil.nodeFQName(fromConcept))) {
       return true;
     }
     TypeChecker.getInstance().reportTypeError(nodeToReportError, "" + errorTextPrefix + "\nexpected: " + SPropertyOperations.getString(toConcept, "name") + "\nwas: " + SPropertyOperations.getString(fromConcept, "name"));

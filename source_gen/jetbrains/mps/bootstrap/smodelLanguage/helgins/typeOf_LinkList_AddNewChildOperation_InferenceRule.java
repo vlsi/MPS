@@ -25,7 +25,7 @@ public class typeOf_LinkList_AddNewChildOperation_InferenceRule implements Infer
       } else
       {
         resultConcept = parameterConcept;
-        RulesUtil.checkAssignableConcept(parameterConcept, expectedConcept, argument, "incompatibel parameter concept");
+        RulesUtil.checkAssignableConcept(parameterConcept, expectedConcept, argument, "incompatible parameter concept");
       }
     }
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_44().createNode(resultConcept), argument);

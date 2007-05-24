@@ -2273,6 +2273,34 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1180031223493">
+      <property name="name" value="err_child_1" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1180031223494" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1180031223495" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180031223496">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1180031250149">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1180031269101">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Link_SetNewChildOperation" id="1180031272437">
+              <link role="concept" targetNodeId="6.1145552809883" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1180031251669">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1180031266705">
+                <link role="link" targetNodeId="6.1068580123160" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1180031250150">
+                <link role="variableDeclaration" targetNodeId="1180031238327" resolveInfo="node" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1180031238327">
+        <property name="name" value="node" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1180031238328">
+          <link role="concept" targetNodeId="6.1068580123159" />
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1173297988874">
       <property name="name" value="ok_children_1" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1173297988875" />
