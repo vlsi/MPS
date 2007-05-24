@@ -14,11 +14,6 @@ import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_5;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_6;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_7;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_8;
-import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelUID;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_Property_HasValue_Simple_InferenceRule implements InferenceRule_Runtime {
@@ -37,13 +32,13 @@ public class typeof_Property_HasValue_Simple_InferenceRule implements InferenceR
       if((value != null)) {
         if(DataTypeUtil.isSimpleString(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
           TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value), new QuotationClass_5().createNode(), value);
-        } else 
+        } else
         if(DataTypeUtil.isSimpleInteger(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
           TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value), new QuotationClass_6().createNode(), value);
-        } else 
+        } else
         if(DataTypeUtil.isSimpleBoolean(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
           TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value), new QuotationClass_7().createNode(), value);
-        } else 
+        } else
         {
           TypeChecker.getInstance().reportTypeError(argument, "unknown property datatype: " + dataType);
         }
@@ -53,10 +48,6 @@ public class typeof_Property_HasValue_Simple_InferenceRule implements InferenceR
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Simple";
-  }
-  public ApplicableNodeCondition getNodeCondition() {
-    SModel model = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.bootstrap.smodelLanguage.helgins")).getSModel();
-    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1178287490190"));
   }
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());

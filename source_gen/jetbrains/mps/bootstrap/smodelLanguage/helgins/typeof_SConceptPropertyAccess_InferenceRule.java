@@ -12,11 +12,6 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOp
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_17;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_18;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_19;
-import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelUID;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_SConceptPropertyAccess_InferenceRule implements InferenceRule_Runtime {
@@ -44,13 +39,13 @@ public class typeof_SConceptPropertyAccess_InferenceRule implements InferenceRul
       // ==========
       if(SNodeOperations.isInstanceOf(conceptPropertyDecl, "jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration")) {
         TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_17().createNode(), argument);
-      } else 
+      } else
       if(SNodeOperations.isInstanceOf(conceptPropertyDecl, "jetbrains.mps.bootstrap.structureLanguage.structure.IntegerConceptPropertyDeclaration")) {
         TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_18().createNode(), argument);
-      } else 
+      } else
       if(SNodeOperations.isInstanceOf(conceptPropertyDecl, "jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptPropertyDeclaration")) {
         TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_19().createNode(), argument);
-      } else 
+      } else
       {
         TypeChecker.getInstance().reportTypeError(argument, "unknown type of concept property: " + conceptPropertyDecl);
       }
@@ -58,10 +53,6 @@ public class typeof_SConceptPropertyAccess_InferenceRule implements InferenceRul
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess";
-  }
-  public ApplicableNodeCondition getNodeCondition() {
-    SModel model = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.bootstrap.smodelLanguage.helgins")).getSModel();
-    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1178287490244"));
   }
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());

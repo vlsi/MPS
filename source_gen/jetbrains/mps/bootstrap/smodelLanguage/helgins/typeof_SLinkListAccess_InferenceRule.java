@@ -14,11 +14,6 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_10;
-import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelUID;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_SLinkListAccess_InferenceRule implements InferenceRule_Runtime {
@@ -42,10 +37,6 @@ public class typeof_SLinkListAccess_InferenceRule implements InferenceRule_Runti
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess";
-  }
-  public ApplicableNodeCondition getNodeCondition() {
-    SModel model = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.bootstrap.smodelLanguage.helgins")).getSModel();
-    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1178287490194"));
   }
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());

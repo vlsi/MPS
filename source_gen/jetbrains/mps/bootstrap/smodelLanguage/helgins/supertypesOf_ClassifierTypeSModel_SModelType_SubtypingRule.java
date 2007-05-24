@@ -7,11 +7,6 @@ import jetbrains.mps.bootstrap.helgins.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.Pattern_1;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_56;
-import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelUID;
-import jetbrains.mps.smodel.BaseAdapter;
 
 public class supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
@@ -25,10 +20,6 @@ public class supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule extends 
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
-  }
-  public ApplicableNodeCondition getNodeCondition() {
-    SModel model = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.bootstrap.smodelLanguage.helgins")).getSModel();
-    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1179273814679"));
   }
   public boolean isApplicable(SNode argument) {
     this.myMatchingPattern = new Pattern_1();

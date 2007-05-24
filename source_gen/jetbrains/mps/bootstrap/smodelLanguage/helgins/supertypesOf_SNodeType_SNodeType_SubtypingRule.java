@@ -13,11 +13,6 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_30;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_31;
-import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelUID;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class supertypesOf_SNodeType_SNodeType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -47,10 +42,6 @@ public class supertypesOf_SNodeType_SNodeType_SubtypingRule extends SubtypingRul
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType";
-  }
-  public ApplicableNodeCondition getNodeCondition() {
-    SModel model = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.bootstrap.smodelLanguage.helgins")).getSModel();
-    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1178287490251"));
   }
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());

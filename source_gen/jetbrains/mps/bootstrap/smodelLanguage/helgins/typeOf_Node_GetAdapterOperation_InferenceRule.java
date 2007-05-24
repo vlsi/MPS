@@ -10,11 +10,6 @@ import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_52;
-import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelUID;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_Node_GetAdapterOperation_InferenceRule implements InferenceRule_Runtime {
@@ -28,17 +23,13 @@ public class typeOf_Node_GetAdapterOperation_InferenceRule implements InferenceR
       SNode leftNodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(leftExpressionType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
       SNode leftNodeConcept = SLinkOperations.getTarget(leftNodeType, "concept", false);
       TypeChecker.getInstance().getRuntimeSupport().givetype(AbstractConceptDeclaration_Behavior.getAdapterType_1179511141975(leftNodeConcept), argument);
-    } else 
+    } else
     {
       TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_52().createNode(), argument);
     }
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation";
-  }
-  public ApplicableNodeCondition getNodeCondition() {
-    SModel model = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.bootstrap.smodelLanguage.helgins")).getSModel();
-    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1178287490356"));
   }
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
