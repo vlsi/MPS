@@ -20,7 +20,6 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
@@ -150,7 +149,7 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
           result.append("void");
         } else
         {
-          result.append(NameUtil.shortNameFromLongName(SPropertyOperations.getString(expectedReturnType, "name")));
+          result.append(SPropertyOperations.getString(expectedReturnType, "name"));
         }
         return result.toString();
       }
