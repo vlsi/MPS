@@ -260,6 +260,32 @@ public class EquationManager {
         addInequation(subtype, type, subtypes.get(subtype));
       }
     }
+     if (mySubtypesToSupertypesMapStrong.get(var) != null) {
+      Map<SNode,SNode> supertypes = mySubtypesToSupertypesMapStrong.get(var);
+      mySubtypesToSupertypesMapStrong.remove(var);
+      for (SNode supertype : supertypes.keySet()) {
+        Map<SNode, SNode> map = mySupertypesToSubtypesMapStrong.get(supertype);
+        if (map != null) {
+          map.remove(var);
+        }
+      }
+      for (SNode supertype : supertypes.keySet()) {
+        addInequation(type, supertype, supertypes.get(supertype));
+      }
+    }
+    if (mySupertypesToSubtypesMapStrong.get(var) != null) {
+      Map<SNode,SNode> subtypes = mySupertypesToSubtypesMapStrong.get(var);
+      mySupertypesToSubtypesMapStrong.remove(var);
+      for (SNode subtype : subtypes.keySet()) {
+        Map<SNode, SNode> map = mySubtypesToSupertypesMapStrong.get(subtype);
+        if (map != null) {
+          map.remove(var);
+        }
+      }
+      for (SNode subtype : subtypes.keySet()) {
+        addInequation(subtype, type, subtypes.get(subtype));
+      }
+    }
 
     if (myComparableTypesMap.get(var) != null) {
       Map<SNode,SNode> comparables = myComparableTypesMap.get(var);
