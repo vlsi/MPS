@@ -38,7 +38,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     EditorCell editorCell = null;
     if(alternationCondition) {
       editorCell = this.createColumnCell(context, node);
-    } else 
+    } else
     {
       editorCell = this.createIfTrueBox(context, node);
     }
@@ -286,7 +286,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else 
+    } else
     return cellWithRole;
   }
   public EditorCell createBodyCell1internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -319,7 +319,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else 
+    } else
     return cellWithRole;
   }
   public EditorCell createFinallyBodyCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -352,7 +352,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else 
+    } else
     return cellWithRole;
   }
 }

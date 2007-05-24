@@ -20,9 +20,9 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOper
 import jetbrains.mps.baseLanguage.structure.StaticMethodCall;
 import jetbrains.mps.baseLanguage.editor.zPredicate1;
 import jetbrains.mps.baseLanguage.structure.EnumConstantReference;
+import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
-import jetbrains.mps.baseLanguage.types.BaseLanguageTypesUtil_new;
-import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.baseLanguage.structure.FieldReference;
 import jetbrains.mps.baseLanguage.structure.InstanceMethodCall;
 
@@ -114,14 +114,11 @@ public class QueriesUtil {
   }
   public static List<SNode> replaceNodeMenu_FieldReference_getParameterObjects(SNode node) {
     SNode instance = SLinkOperations.getTarget(node, "instance", true);
-    if(instance == null) {
-      return new ArrayList<SNode>();
-    }
-    ClassifierType instanceType = BaseLanguageTypesUtil_new.tryObtain_ClassifierType(((Expression)SNodeOperations.getAdapter(instance)));
+    SNode instanceType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(instance), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
     if(instanceType == null) {
       return new ArrayList<SNode>();
     }
-    ISearchScope classHierarchy = BaseLanguageSearchUtil_new.createClassifierHierarchyScope(instanceType, ((FieldReference)SNodeOperations.getAdapter(node)), IClassifiersSearchScope.INSTANCE_METHOD);
+    ISearchScope classHierarchy = BaseLanguageSearchUtil_new.createClassifierHierarchyScope(((ClassifierType)SNodeOperations.getAdapter(instanceType)), ((FieldReference)SNodeOperations.getAdapter(node)), IClassifiersSearchScope.INSTANCE_METHOD);
     return BaseAdapter.toNodes(BaseLanguageSearchUtil_new.getMethodsExcludingOverridden(classHierarchy));
   }
   public static SNode replaceNodeMenu_FieldReference_createReplacementNode(SNode node, SNode parameterObject) {
@@ -135,14 +132,11 @@ public class QueriesUtil {
   }
   public static List<SNode> replaceNodeMenu_InstanceMethodCall_getParameterObjects(SNode referenceNode) {
     SNode instance = SLinkOperations.getTarget(referenceNode, "instance", true);
-    if(instance == null) {
-      return new ArrayList<SNode>();
-    }
-    ClassifierType instanceType = BaseLanguageTypesUtil_new.tryObtain_ClassifierType(((Expression)SNodeOperations.getAdapter(instance)));
+    SNode instanceType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(instance), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
     if(instanceType == null) {
       return new ArrayList<SNode>();
     }
-    ISearchScope classHierarchy = BaseLanguageSearchUtil_new.createClassifierHierarchyScope(instanceType, ((InstanceMethodCall)SNodeOperations.getAdapter(referenceNode)), IClassifiersSearchScope.INSTANCE_FIELD);
+    ISearchScope classHierarchy = BaseLanguageSearchUtil_new.createClassifierHierarchyScope(((ClassifierType)SNodeOperations.getAdapter(instanceType)), ((InstanceMethodCall)SNodeOperations.getAdapter(referenceNode)), IClassifiersSearchScope.INSTANCE_FIELD);
     return BaseAdapter.toNodes(BaseLanguageSearchUtil_new.getFieldsExcludingOverridden(classHierarchy));
   }
   public static SNode replaceNodeMenu_InstanceMethodCall_createReplacementNode(SNode node, SNode parameterObject) {

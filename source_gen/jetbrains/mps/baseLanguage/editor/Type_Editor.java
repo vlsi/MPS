@@ -32,7 +32,7 @@ public class Type_Editor extends DefaultNodeEditor {
     EditorCell editorCell = null;
     if(alternationCondition) {
       editorCell = this.createErrorCell(context, node);
-    } else 
+    } else
     {
       editorCell = this.createCellModel_ConceptProperty(context, node);
     }
@@ -84,7 +84,7 @@ public class Type_Editor extends DefaultNodeEditor {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else 
+    } else
     return cellWithRole;
   }
 }

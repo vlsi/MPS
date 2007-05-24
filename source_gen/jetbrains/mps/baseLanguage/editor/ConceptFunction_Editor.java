@@ -148,7 +148,7 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
         SNode expectedReturnType = BehaviorManager.getInstance().invoke(SNode.class, node, "virtual_getExpectedReturnType_1178571276073");
         if(expectedReturnType == null) {
           result.append("void");
-        } else 
+        } else
         {
           result.append(NameUtil.shortNameFromLongName(SPropertyOperations.getString(expectedReturnType, "name")));
         }
@@ -191,7 +191,7 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else 
+    } else
     return cellWithRole;
   }
 }
