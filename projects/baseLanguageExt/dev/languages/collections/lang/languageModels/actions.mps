@@ -634,14 +634,14 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1177414624700">
-              <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1177417185717">
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.ConceptRefExpression" id="1177417185718">
-                  <link role="conceptDeclaration" targetNodeId="1.1160612356232" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1180048264191">
+              <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1180048282601">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Concept_IsSubConceptOfOperation" id="1180048295062">
+                  <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.RefConcept_Reference" id="1180048305522">
+                    <link role="conceptDeclaration" targetNodeId="1.1160612356232" />
+                  </node>
                 </node>
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Concept_IsAssignableFromOperation" id="1177417185719">
-                  <node role="sconceptExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_concept" id="1177417185720" />
-                </node>
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_concept" id="1180048280828" />
               </node>
             </node>
           </node>

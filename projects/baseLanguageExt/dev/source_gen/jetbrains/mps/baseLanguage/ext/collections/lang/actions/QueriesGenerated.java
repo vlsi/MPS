@@ -150,6 +150,6 @@ public class QueriesGenerated {
     if(applicableToList) {
       return false;
     }
-    return SConceptOperations.isAssignableFrom(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.AbstractListOperation"), concept);
+    return SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.AbstractListOperation");
   }
 }

@@ -45,9 +45,9 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean removeConceptByCondition_1177495897822(SNode concept, SNode parentNode, SNode currentChild, SNode childConcept, IOperationContext operationContext) {
-    return !(SConceptOperations.isAssignableFrom(SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.SubstituteMenuPart"), concept));
+    return !(SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.bootstrap.actionsLanguage.structure.SubstituteMenuPart"));
   }
   public static boolean removeConceptByCondition_1177496231840(SNode concept, SNode parentNode, SNode currentChild, SNode childConcept, IOperationContext operationContext) {
-    return !(SConceptOperations.isAssignableFrom(SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransformMenuPart"), concept));
+    return !(SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransformMenuPart"));
   }
 }
