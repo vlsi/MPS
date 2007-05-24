@@ -3,9 +3,6 @@
   <structure>
     <model modelUID="jetbrains.mps.bootstrap.actionsLanguage.structure" />
   </structure>
-  <typeSystem>
-    <model modelUID="jetbrains.mps.bootstrap.actionsLanguage.types" />
-  </typeSystem>
   <helginsTypeSystem>
     <model modelUID="jetbrains.mps.bootstrap.actionsLanguage.helgins" />
   </helginsTypeSystem>
