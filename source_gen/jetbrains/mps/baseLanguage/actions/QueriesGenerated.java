@@ -187,6 +187,12 @@ public class QueriesGenerated {
         public boolean canSubstitute_internal(String pattern) {
           return Pattern.compile("(?:\\d)+", 0).matcher(pattern).matches();
         }
+        public String getDescriptionText(String pattern) {
+          return "integer constant";
+        }
+        public String getMatchingText(String pattern) {
+          return pattern;
+        }
       });
     }
     {
