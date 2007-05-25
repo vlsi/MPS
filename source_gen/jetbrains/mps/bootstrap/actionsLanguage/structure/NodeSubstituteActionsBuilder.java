@@ -11,7 +11,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction;
 import jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_Substitute_CommonInitializer;
 import java.util.Iterator;
-import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeBuilderPart;
+import jetbrains.mps.bootstrap.actionsLanguage.structure.MenuBuilderPart;
 import java.util.List;
 import jetbrains.mps.bootstrap.actionsLanguage.structure.SubstituteNodeBuilderVariableDeclaration;
 
@@ -59,16 +59,16 @@ public class NodeSubstituteActionsBuilder extends BaseConcept {
   public int getPartsCount() {
     return this.getChildCount(NodeSubstituteActionsBuilder.PART);
   }
-  public Iterator<NodeBuilderPart> parts() {
+  public Iterator<MenuBuilderPart> parts() {
     return this.children(NodeSubstituteActionsBuilder.PART);
   }
-  public List<NodeBuilderPart> getParts() {
+  public List<MenuBuilderPart> getParts() {
     return this.getChildren(NodeSubstituteActionsBuilder.PART);
   }
-  public void addPart(NodeBuilderPart node) {
+  public void addPart(MenuBuilderPart node) {
     this.addChild(NodeSubstituteActionsBuilder.PART, node);
   }
-  public void insertPart(NodeBuilderPart prev, NodeBuilderPart node) {
+  public void insertPart(MenuBuilderPart prev, MenuBuilderPart node) {
     this.insertChild(prev, NodeSubstituteActionsBuilder.PART, node);
   }
   public int getVariablesCount() {

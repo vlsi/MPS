@@ -67,16 +67,13 @@
       <property name="description" value="delegate to parent (SNodeOperationExpression)" />
       <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1138411891628" />
-      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddMenuPart" id="1179535885741">
-        <link role="concept" targetNodeId="1.1138411891628" />
-        <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.IncludeRightTransformForNodeMenuPart" id="1179535894747">
-          <node role="nodeBlock" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_RightTransform_NodeQuery" id="1179535894748">
-            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179535894749">
-              <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179535951183">
-                <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179535955380">
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetParentOperation" id="1179535959435" />
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_sourceNode" id="1179535951184" />
-                </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.IncludeRightTransformForNodePart" id="1180112896209">
+        <node role="nodeBlock" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_RightTransform_NodeQuery" id="1180112896210">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180112896211">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1180112905791">
+              <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1180115509900">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetParentOperation" id="1180115515854" />
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_sourceNode" id="1180112905792" />
               </node>
             </node>
           </node>

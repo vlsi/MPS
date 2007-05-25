@@ -23,8 +23,11 @@ public class QueriesGenerated {
   public static boolean nodeSubstituteActionsBuilder_Precondition_MenuPart_1177496214780(SNode parentNode, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.getAncestor(parentNode, "jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActionsBuilder", false, false) != null;
   }
-  public static boolean nodeSubstituteActionsBuilder_Precondition_NodeBuilderPart_1177615035800(SNode parentNode, IScope scope, IOperationContext operationContext) {
+  public static boolean nodeSubstituteActionsBuilder_Precondition_MenuBuilderPart_1180112146090(SNode parentNode, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.getAncestor(parentNode, "jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder", true, false) != null;
+  }
+  public static boolean nodeSubstituteActionsBuilder_Precondition_MenuBuilderPart_1180112503623(SNode parentNode, IScope scope, IOperationContext operationContext) {
+    return SNodeOperations.getAncestor(parentNode, "jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActionsBuilder", true, false) != null;
   }
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_MenuPart_1177495821852(final SNode parentNode, final SNode currentTargetNode, final ConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
@@ -34,11 +37,21 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     return result;
   }
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_NodeBuilderPart_1177615006919(final SNode parentNode, final SNode currentTargetNode, final ConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_MenuBuilderPart_1180112146087(final SNode parentNode, final SNode currentTargetNode, final ConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
       ConceptDeclaration conceptToAdd = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.RemoveDefaultsPart", operationContext.getScope());
+      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, parentNode, currentTargetNode, childSetter, operationContext.getScope());
+      result.addAll(defaultActions);
+    }
+    return result;
+  }
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_MenuBuilderPart_1180112212391(final SNode parentNode, final SNode currentTargetNode, final ConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
+      ConceptDeclaration conceptToAdd = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.IncludeRightTransformForNodePart", operationContext.getScope());
       List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, parentNode, currentTargetNode, childSetter, operationContext.getScope());
       result.addAll(defaultActions);
     }

@@ -137,7 +137,7 @@ public class QueriesGenerated {
     return SNodeOperations.getDescendants(node, "jetbrains.mps.bootstrap.actionsLanguage.structure.SubstituteMenuPart", false);
   }
   public static List sourceNodesQuery_1177441873770(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.getDescendants(node, "jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransformMenuPart", false);
+    return SNodeOperations.getDescendantsWhereConceptInList(node, new String[]{"jetbrains.mps.bootstrap.actionsLanguage.structure.IncludeRightTransformForNodePart","jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransformMenuPart"}, false);
   }
   public static List sourceNodesQuery_1177530541055(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTargets(node, "exclude", true);
@@ -249,5 +249,8 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_1178542510747(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "variableDeclaration", false), "type", true);
+  }
+  public static SNode sourceNodeQuery_1180114556480(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "nodeBlock", true), "body", true);
   }
 }
