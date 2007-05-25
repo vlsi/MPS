@@ -3,6 +3,7 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
+  <language namespace="jetbrains.mps.baseLanguage.strings" />
   <maxImportIndex value="120" />
   <import index="1" modelUID="java.lang@java_stub" />
   <import index="3" modelUID="java.util@java_stub" />
@@ -79,6 +80,16 @@
             </node>
             <node role="array" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1180015023323">
               <link role="variableDeclaration" targetNodeId="1180014992667" resolveInfo="is" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1180091167910">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1180091167911">
+            <property name="name" value="s" />
+            <node role="type" type="jetbrains.mps.baseLanguage.strings.StringType" id="1180091167912" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.CastExpression" id="1180091186704">
+              <node role="expression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1180091186705" />
+              <node role="type" type="jetbrains.mps.baseLanguage.strings.StringType" id="1180091188949" />
             </node>
           </node>
         </node>

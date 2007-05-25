@@ -7,6 +7,7 @@
   <languages>
     <moduleRoot path="${mps_home}\languages\baseLanguage\language\baseLanguage.mpl" />
     <moduleRoot path="${mps_home}\baseLanguage\languages\baseLanguageInternal\baseLanguageInternal.mpl" />
+    <moduleRoot path="${mps_home}\baseLanguage\ext\strings\strings.mpl" />
   </languages>
   <classPath />
 </solution>
