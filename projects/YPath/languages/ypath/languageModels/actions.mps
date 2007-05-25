@@ -31,9 +31,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1169052347228">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1169052347229">
               <property name="name" value="block" />
-              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1169052347230">
-                <link role="concept" targetNodeId="2.1133920641626" />
-              </node>
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1169052347230" />
               <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1169052366957">
                 <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_sourceNode" id="1169052364376" />
                 <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAncestorOperation" id="1172067848912">
@@ -81,11 +79,11 @@
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1176976851567">
             <node role="expression" type="jetbrains.mps.baseLanguage.GreaterThanExpression" id="1179155161025">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1179155161023">
-                <link role="baseMethodDeclaration" extResolveInfo="5.method ([Classifier]List).([InstanceMethodDeclaration]size() : (jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int))" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179155161026">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1180116669561">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179155161026">
                   <link role="variableDeclaration" targetNodeId="1176976767192" resolveInfo="aspects" />
                 </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.GetSizeOperation" id="1180116671216" />
               </node>
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1179155161024">
                 <property name="value" value="0" />
@@ -563,15 +561,13 @@
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1168520070283">
       <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1168468681335" />
-      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddMenuPart" id="1178537340809">
-        <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.IncludeRightTransformForNodeMenuPart" id="1178537429683">
-          <node role="nodeBlock" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_RightTransform_NodeQuery" id="1178537429684">
-            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178537429685">
-              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1178537675879">
-                <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178537679533">
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_sourceNode" id="1178537677301" />
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetParentOperation" id="1178537680610" />
-                </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.IncludeRightTransformForNodePart" id="1180116801106">
+        <node role="nodeBlock" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_RightTransform_NodeQuery" id="1180116801107">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180116801108">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1180116831425">
+              <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1180116834821">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetParentOperation" id="1180116836542" />
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_sourceNode" id="1180116831426" />
               </node>
             </node>
           </node>
