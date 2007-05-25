@@ -28,13 +28,14 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOper
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import java.util.regex.Pattern;
 import jetbrains.mps.util.Calculable;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
+import java.util.regex.Matcher;
 import jetbrains.mps.baseLanguage.BaseLanguageSearchUtil_new;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
@@ -187,9 +188,6 @@ public class QueriesGenerated {
         public boolean canSubstitute_internal(String pattern) {
           return Pattern.compile("(?:\\d)+", 0).matcher(pattern).matches();
         }
-        public String getDescriptionText(String pattern) {
-          return "integer constant";
-        }
         public String getMatchingText(String pattern) {
           return pattern;
         }
@@ -197,31 +195,26 @@ public class QueriesGenerated {
     }
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", operationContext.getScope());
-      result.add(new DefaultSimpleSubstituteAction(concept, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
+      Calculable calc = new Calculable() {
 
-        public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-          SNode integerConst = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
-          SPropertyOperations.set(integerConst, "value", "" + (true));
-          return integerConst;
+        public Object calculate() {
+          return ListOperations.createList(new Boolean[]{Boolean.TRUE,Boolean.FALSE});
         }
-        public String getMatchingText(String pattern) {
-          return "true";
-        }
-      });
-    }
-    {
-      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", operationContext.getScope());
-      result.add(new DefaultSimpleSubstituteAction(concept, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
+      };
+      Iterable<Boolean> queryResult = (Iterable)calc.calculate();
+      for(Boolean item : queryResult) {
+        result.add(new DefaultChildNodeSubstituteAction(item, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
 
-        public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-          SNode boolConst = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
-          SPropertyOperations.set(boolConst, "value", "" + (false));
-          return boolConst;
-        }
-        public String getMatchingText(String pattern) {
-          return "false";
-        }
-      });
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode integerConst = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
+            SPropertyOperations.set(integerConst, "value", "" + (((Boolean)this.getParameterObject()).booleanValue()));
+            return integerConst;
+          }
+          public String getMatchingText(String pattern) {
+            return ((Boolean)this.getParameterObject()).toString();
+          }
+        });
+      }
     }
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatingPointConstant", operationContext.getScope());
@@ -237,6 +230,35 @@ public class QueriesGenerated {
         }
         public boolean canSubstitute_internal(String pattern) {
           return Pattern.compile("(?:(?:(?:-)?))(?:(?:(?:\\d)+)(?:(?:\\.)(?:(?:\\d)*)))", 0).matcher(pattern).matches();
+        }
+        public String getMatchingText(String pattern) {
+          return pattern;
+        }
+      });
+    }
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", operationContext.getScope());
+      result.add(new DefaultSimpleSubstituteAction(concept, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
+
+        public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+          SNode stringLiteral = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.StringLiteral", null);
+          {
+            Pattern _pattern_0 = Pattern.compile("(?:(?:\")(?:((?:[^\\\"])*)))(?:(?:\")?)", 0);
+            Matcher _matcher_0 = _pattern_0.matcher(pattern);
+            if(_matcher_0.matches()) {
+              SPropertyOperations.set(stringLiteral, "value", _matcher_0.group(1));
+            }
+          }
+          return stringLiteral;
+        }
+        public boolean hasSubstitute() {
+          return true;
+        }
+        public boolean canSubstitute_internal(String pattern) {
+          return Pattern.compile("(?:\")(?:(?:(?:[^\\\"])*)(?:(?:\")?))", 0).matcher(pattern).matches();
+        }
+        public String getMatchingText(String pattern) {
+          return pattern;
         }
       });
     }
