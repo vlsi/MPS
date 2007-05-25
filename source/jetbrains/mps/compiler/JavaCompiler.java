@@ -45,8 +45,8 @@ public class JavaCompiler {
 
   public void compile() {
     CompilerOptions options = new CompilerOptions();
-    options.sourceLevel = ClassFileConstants.JDK1_6;
-    options.targetJDK = ClassFileConstants.JDK1_6;
+    options.sourceLevel = ClassFileConstants.JDK1_5;
+    options.targetJDK = ClassFileConstants.JDK1_5;
 
     org.eclipse.jdt.internal.compiler.Compiler c = new Compiler(new MyNameEnvironment(), new MyErrorHandlingPolicy(), options, new MyCompilerRequestor(), new DefaultProblemFactory(), null);
     //c.options.verbose = true;
