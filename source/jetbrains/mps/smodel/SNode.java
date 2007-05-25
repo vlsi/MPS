@@ -639,6 +639,12 @@ public class SNode implements Cloneable, Iterable<SNode> {
     } else {
       myProperties.put(propertyName, propertyValue);
     }
+
+    if (!myRegisteredInModelFlag) {
+      // node 'doesn't exist' : don't register undo, don't fire events
+      return;
+    }
+
     if (!getModel().isLoading()) {
       UndoManager.instance().undoableActionPerformed(new IUndoableAction() {
         public void undo() throws UnexpectedUndoException {
@@ -871,6 +877,11 @@ public class SNode implements Cloneable, Iterable<SNode> {
     wasChild.myRoleInParent = null;
     wasChild.unRegisterFromModel();
 
+    if (!myRegisteredInModelFlag) {
+      // node 'doesn't exist' : don't register undo, don't fire events
+      return;
+    }
+
     if (!getModel().isLoading()) {
       UndoManager.instance().undoableActionPerformed(new IUndoableAction() {
         public void undo() {
@@ -887,7 +898,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
     if (parentOfChild != null) {
       throw new RuntimeException(child.getDebugText() + " already has parent: " + parentOfChild.getDebugText() + "\n" +
               "Couldn't add it to: " + this.getDebugText());
-    }               
+    }
 
     if (child.isRoot()) {
       throw new RuntimeException(child.getDebugText() + " is root node. Can't add it as a child");
@@ -903,6 +914,9 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
     if (myRegisteredInModelFlag) {
       child.registerInModel(getModel());
+    } else {
+      // node 'doesn't exist' : don't register undo, don't fire events
+      return;
     }
 
     if (!getModel().isLoading()) {
@@ -937,6 +951,10 @@ public class SNode implements Cloneable, Iterable<SNode> {
         }
       }
     }
+  }
+
+  public boolean isRegistered() {
+    return myRegisteredInModelFlag;
   }
 
   // ---------------------------------
@@ -1164,6 +1182,12 @@ public class SNode implements Cloneable, Iterable<SNode> {
   private void insertReferenceAt(final int i, @NotNull final SReference reference) {
     if (myReferences == null) myReferences = new ArrayList<SReference>(1);
     myReferences.add(i, reference);
+
+    if (!myRegisteredInModelFlag) {
+      // node 'doesn't exist': don't register undo, don't fire events
+      return;
+    }
+
     if (!getModel().isLoading()) {
       UndoManager.instance().undoableActionPerformed(new IUndoableAction() {
         public void undo() throws UnexpectedUndoException {
@@ -1178,6 +1202,12 @@ public class SNode implements Cloneable, Iterable<SNode> {
     if (myReferences == null) return;
     final SReference reference = myReferences.get(i);
     myReferences.remove(reference);
+
+    if (!myRegisteredInModelFlag) {
+      // node 'doesn't exist': don't register undo, don't fire events
+      return;
+    }
+
     if (!getModel().isLoading()) {
       UndoManager.instance().undoableActionPerformed(new IUndoableAction() {
         public void undo() {
@@ -1461,7 +1491,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
   }
 
   /**
-   * todo: remove the 'scope' parm 
+   * todo: remove the 'scope' parm
    */
   public boolean isInstanceOfConcept(String conceptFqName, IScope scope) {
     String thisConceptFqName = NameUtil.nodeConceptFQName(this);
