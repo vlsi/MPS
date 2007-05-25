@@ -171,6 +171,10 @@ public class EquationManager {
   }
 
   public void addInequationComparable(SNode type1, SNode type2, SNode nodeToCheck) {
+    addInequationComparable(type1, type2, nodeToCheck, true);
+  }
+
+  public void addInequationComparable(SNode type1, SNode type2, SNode nodeToCheck, boolean isWeak) {
     SNode representator1 = getRepresentator(type1);
     SNode representator2 = getRepresentator(type2);
 
@@ -181,7 +185,11 @@ public class EquationManager {
     RuntimeTypeVariable varSubtype = RuntimeSupport.getTypeVar(representator1);
     RuntimeTypeVariable varSupertype = RuntimeSupport.getTypeVar(representator2);
     if (varSubtype != null || varSupertype != null) {
-      addComparable(representator1, representator2, nodeToCheck);
+      if (isWeak) {
+        addComparable(representator1, representator2, nodeToCheck);
+      } else {
+        addStrongComparable(representator1, representator2, nodeToCheck);
+      }
       return;
     }
 
@@ -189,15 +197,16 @@ public class EquationManager {
     if (myTypeChecker.getSubtypingManager().isComparableWRTRules(representator1, representator2)) {
       return;
     }
-    if (myTypeChecker.getSubtypingManager().isSubtype(representator1, representator2, true)) {
+    if (myTypeChecker.getSubtypingManager().isSubtype(representator1, representator2, isWeak)) {
       return;
     }
-    if (myTypeChecker.getSubtypingManager().isSubtype(representator2, representator1, true)) {
+    if (myTypeChecker.getSubtypingManager().isSubtype(representator2, representator1, isWeak)) {
       return;
     }
 
+    String strongString = isWeak ? "" : " strong";
     IErrorReporter errorReporter =
-            new EquationErrorReporter(this, "type ", representator1, " should be comparable with ", representator2, "");
+            new EquationErrorReporter(this, "type ", representator1, " should be" + strongString + " comparable with ", representator2, "");
     myTypeChecker.reportTypeError(nodeToCheck, errorReporter);
   }
 
@@ -271,7 +280,7 @@ public class EquationManager {
         addInequation(subtype, type, subtypes.get(subtype));
       }
     }
-     if (mySubtypesToSupertypesMapStrong.get(var) != null) {
+    if (mySubtypesToSupertypesMapStrong.get(var) != null) {
       Map<SNode,SNode> supertypes = mySubtypesToSupertypesMapStrong.get(var);
       mySubtypesToSupertypesMapStrong.remove(var);
       for (SNode supertype : supertypes.keySet()) {
@@ -309,6 +318,20 @@ public class EquationManager {
       }
       for (SNode subtype : comparables.keySet()) {
         addInequationComparable(subtype, type, comparables.get(subtype));
+      }
+    }
+
+    if (myComparableTypesMapStrong.get(var) != null) {
+      Map<SNode,SNode> comparables = myComparableTypesMapStrong.get(var);
+      myComparableTypesMapStrong.remove(var);
+      for (SNode comparable : comparables.keySet()) {
+        Map<SNode, SNode> map = myComparableTypesMapStrong.get(comparable);
+        if (map != null) {
+          map.remove(var);
+        }
+      }
+      for (SNode subtype : comparables.keySet()) {
+        addInequationComparable(subtype, type, comparables.get(subtype), false);
       }
     }
   }
@@ -425,6 +448,22 @@ public class EquationManager {
     if (comparables2 == null) {
       comparables2 = new HashMap<SNode, SNode>();
       myComparableTypesMap.put(type2, comparables2);
+    }
+    comparables2.put(type1, nodeToCheck);
+  }
+
+  private void addStrongComparable(SNode type1, SNode type2, SNode nodeToCheck) {
+    Map<SNode,SNode> comparables1 = myComparableTypesMapStrong.get(type1);
+    if (comparables1 == null) {
+      comparables1 = new HashMap<SNode, SNode>();
+      myComparableTypesMapStrong.put(type1, comparables1);
+    }
+    comparables1.put(type2, nodeToCheck);
+
+    Map<SNode,SNode> comparables2 = myComparableTypesMapStrong.get(type2);
+    if (comparables2 == null) {
+      comparables2 = new HashMap<SNode, SNode>();
+      myComparableTypesMapStrong.put(type2, comparables2);
     }
     comparables2.put(type1, nodeToCheck);
   }
