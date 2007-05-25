@@ -1246,5 +1246,22 @@
       <link role="target" targetNodeId="1178537049112" resolveInfo="QueryFunction_RightTransform_NodeQuery" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1180134965967">
+    <property name="package" value="MenuBuilderParts.Substitute" />
+    <property name="name" value="ConceptSubstitutePart" />
+    <link role="extends" targetNodeId="1177323240852" resolveInfo="MenuBuilderPart" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1180135092669">
+      <property name="role" value="concept" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1071489090640" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1180135109717">
+      <property name="value" value="add concept" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1180135201711">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
+    </node>
+  </node>
 </model>
 

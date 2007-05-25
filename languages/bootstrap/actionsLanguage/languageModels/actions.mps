@@ -103,6 +103,9 @@
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptSubstituteMenuPart" id="1180112146089">
           <link role="concept" targetNodeId="1.1177614709184" />
         </node>
+        <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptSubstituteMenuPart" id="1180135554494">
+          <link role="concept" targetNodeId="1.1180134965967" />
+        </node>
       </node>
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionFunction" id="1180112146090">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180112146091">

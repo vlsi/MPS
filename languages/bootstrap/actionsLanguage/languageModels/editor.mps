@@ -1703,6 +1703,10 @@
           </node>
         </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1180135488375">
+        <property name="text" value="(deprecated!)" />
+        <property name="textFgColor" value="red" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1177614730362">
@@ -1796,6 +1800,29 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1180111544817">
           <link role="relationDeclaration" targetNodeId="1.1180111489972" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1180135218889">
+    <property name="package" value="MenuBuilderParts.Substitute" />
+    <link role="conceptDeclaration" targetNodeId="1.1180134965967" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1180135221562">
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_ConceptProperty" id="1180135221563">
+        <property name="textFgColor" value="DARK_BLUE" />
+        <property name="editable" value="false" />
+        <link role="relationDeclaration" targetNodeId="3.1137473891462" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1180135221564">
+        <property name="noTargetText" value="&lt;no concept&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1180135092669" />
+        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1180135221565">
+          <link role="conceptDeclaration" targetNodeId="2.1071489090640" />
+          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1180135221566">
+            <property name="readOnly" value="true" />
+            <property name="textFgColor" value="DARK_MAGENTA" />
+            <link role="relationDeclaration" targetNodeId="3.1169194664001" />
+          </node>
         </node>
       </node>
     </node>

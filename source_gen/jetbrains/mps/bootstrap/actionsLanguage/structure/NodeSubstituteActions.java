@@ -13,8 +13,8 @@ import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBu
 import java.util.List;
 
 public class NodeSubstituteActions extends BaseConcept implements INamedConcept {
-  public static String ACTIONS_BUILDER = "actionsBuilder";
   public static String NAME = "name";
+  public static String ACTIONS_BUILDER = "actionsBuilder";
 
   public  NodeSubstituteActions(SNode node) {
     super(node);
@@ -27,6 +27,12 @@ public class NodeSubstituteActions extends BaseConcept implements INamedConcept 
     return NodeSubstituteActions.newInstance(sm, false);
   }
 
+  public String getName() {
+    return this.getProperty(NodeSubstituteActions.NAME);
+  }
+  public void setName(String value) {
+    this.setProperty(NodeSubstituteActions.NAME, value);
+  }
   public int getActionsBuildersCount() {
     return this.getChildCount(NodeSubstituteActions.ACTIONS_BUILDER);
   }
@@ -41,11 +47,5 @@ public class NodeSubstituteActions extends BaseConcept implements INamedConcept 
   }
   public void insertActionsBuilder(NodeSubstituteActionsBuilder prev, NodeSubstituteActionsBuilder node) {
     this.insertChild(prev, NodeSubstituteActions.ACTIONS_BUILDER, node);
-  }
-  public String getName() {
-    return this.getProperty(NodeSubstituteActions.NAME);
-  }
-  public void setName(String value) {
-    this.setProperty(NodeSubstituteActions.NAME, value);
   }
 }

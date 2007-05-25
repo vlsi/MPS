@@ -88,6 +88,9 @@ public class QueriesGenerated {
   public static String propertyMacro_GetPropertyValue_1178542556851(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(node, "variableDeclaration", false), "name");
   }
+  public static String propertyMacro_GetPropertyValue_1180136156113(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return NameUtil.nodeFQName(SLinkOperations.getTarget(node, "concept", false));
+  }
   public static SNode referenceMacro_GetReferent_1179457640879(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return generator.findNodeBuilderForSource(node, "variable").getTargetNode();
   }
@@ -131,7 +134,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(node, "variable", true);
   }
   public static List sourceNodesQuery_1177330914926(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.getDescendants(node, "jetbrains.mps.bootstrap.actionsLanguage.structure.SubstituteMenuPart", false);
+    return SNodeOperations.getDescendantsWhereConceptInList(node, new String[]{"jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSubstitutePart","jetbrains.mps.bootstrap.actionsLanguage.structure.SubstituteMenuPart"}, false);
   }
   public static List sourceNodesQuery_1177441873770(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.getDescendantsWhereConceptInList(node, new String[]{"jetbrains.mps.bootstrap.actionsLanguage.structure.IncludeRightTransformForNodePart","jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransformMenuPart"}, false);
