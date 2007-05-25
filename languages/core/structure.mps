@@ -53,7 +53,10 @@
       <property name="name" value="deprecated_339" />
     </node>
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptPropertyDeclaration" id="1170898673630">
-      <property name="name" value="deprecated_next_after_339" />
+      <property name="name" value="deprecated_415" />
+    </node>
+    <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptPropertyDeclaration" id="1180129508254">
+      <property name="name" value="deprecated_next_after_415" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1133922314101">
       <link role="conceptPropertyDeclaration" targetNodeId="1137473854053" />
