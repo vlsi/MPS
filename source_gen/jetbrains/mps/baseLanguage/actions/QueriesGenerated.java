@@ -660,7 +660,7 @@ public class QueriesGenerated {
         public SNode doSubstitute(String pattern) {
           SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.Expression", null);
           SLinkOperations.setTarget(sourceNode, "initializer", result, true);
-          return result;
+          return sourceNode;
         }
         public String getMatchingText(String pattern) {
           return "=";
