@@ -27,6 +27,8 @@ public class EquationManager {
   private Map<SNode, Map<SNode, SNode>> mySupertypesToSubtypesMapStrong = new HashMap<SNode, Map<SNode, SNode>>();
 
   private Map<SNode, Map<SNode, SNode>> myComparableTypesMap = new HashMap<SNode, Map<SNode, SNode>>();
+  private Map<SNode, Map<SNode, SNode>> myComparableTypesMapStrong = new HashMap<SNode, Map<SNode, SNode>>();
+
   private Map<SNode, SNode> myEquations = new HashMap<SNode, SNode>();
 
   public EquationManager(TypeChecker typeChecker) {
@@ -81,6 +83,15 @@ public class EquationManager {
         myComparableTypesMap.put(key, map);
       }
       map.putAll(slave.myComparableTypesMap.get(key));
+    }
+
+    for (SNode key : slave.myComparableTypesMapStrong.keySet()) {
+      Map<SNode, SNode> map = myComparableTypesMapStrong.get(key);
+      if (map == null) {
+        map = new HashMap<SNode, SNode>();
+        myComparableTypesMapStrong.put(key, map);
+      }
+      map.putAll(slave.myComparableTypesMapStrong.get(key));
     }
 
     for (SNode type : slave.myEquations.keySet()) {
@@ -270,7 +281,7 @@ public class EquationManager {
         }
       }
       for (SNode supertype : supertypes.keySet()) {
-        addInequation(type, supertype, supertypes.get(supertype));
+        addInequation(type, supertype, supertypes.get(supertype), false);
       }
     }
     if (mySupertypesToSubtypesMapStrong.get(var) != null) {
@@ -283,7 +294,7 @@ public class EquationManager {
         }
       }
       for (SNode subtype : subtypes.keySet()) {
-        addInequation(subtype, type, subtypes.get(subtype));
+        addInequation(subtype, type, subtypes.get(subtype), false);
       }
     }
 
@@ -519,7 +530,7 @@ public class EquationManager {
     }
   }
 
-  private void typeLessThanVar(SNode type, boolean isWeak) { //todo strong also
+  private void typeLessThanVar(SNode type, boolean isWeak) {
     final Map<SNode, Map<SNode, SNode>> supertypesToSubtypesMap;
     final Map<SNode, Map<SNode, SNode>> subtypesToSupertypesMap;
     if (isWeak) {
@@ -557,7 +568,7 @@ public class EquationManager {
     addEquation(type, myTypeChecker.getSubtypingManager().leastCommonSupertype(concreteSubtypes), nodeToCheck);
   }
 
-  private void varLessThanType(SNode type, boolean isWeak) { //todo strong also
+  private void varLessThanType(SNode type, boolean isWeak) {
     final Map<SNode, Map<SNode, SNode>> supertypesToSubtypesMap;
     final Map<SNode, Map<SNode, SNode>> subtypesToSupertypesMap;
     if (isWeak) {
