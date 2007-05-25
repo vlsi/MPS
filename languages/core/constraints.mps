@@ -10,6 +10,7 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1180102191497">
     <link role="concept" targetNodeId="1.1133920641626" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1180102203531">
+      <property name="isVirtual" value="true" />
       <property name="name" value="getPresentation" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1180102231746">
         <link role="classifier" extResolveInfo="2.[Classifier]String" />

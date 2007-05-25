@@ -5,6 +5,7 @@ import jetbrains.mps.helgins.structure.RuntimeErrorType;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.reloading.ClassLoaderManager;
 
 import java.lang.reflect.Method;
@@ -46,6 +47,8 @@ public class PresentationManager {
     if (typeAdapter instanceof RuntimeTypeVariable) {
       return toString(type);
     }
+ //   return BehaviorManager.getInstance().invoke(String.class, type, "getPresentation");
+
     String packageName = type.getLanguageNamespace();
     String presentationUtilName = packageName + ".PresentationUtil";
     try {
