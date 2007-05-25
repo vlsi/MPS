@@ -41,7 +41,7 @@ public class typeof_Property_SetOperation_InferenceRule implements InferenceRule
         } else
         if(DataTypeUtil.isEnum(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
           if(!(SNodeOperations.isInstanceOf(value, "jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference"))) {
-            if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "value", true)), new QuotationClass_4().createNode()))) {
+            if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(SLinkOperations.getTarget(argument, "value", true)), new QuotationClass_4().createNode()))) {
               TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(argument, "value", true), "<enum member> or String is expected");
             }
           }
