@@ -804,4 +804,10 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1179920774644(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "rightExpression", true);
   }
+  public static SNode sourceNodeQuery_1180100048884(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "leftExpression", true);
+  }
+  public static SNode sourceNodeQuery_1180100048892(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "rightExpression", true);
+  }
 }

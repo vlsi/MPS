@@ -41,10 +41,14 @@
           </node>
         </node>
       </node>
-      <node role="statement" type="jetbrains.mps.bootstrap.helgins.CreateLessThanInequationStatement" id="1179832715195">
-        <node role="rightExpression" type="jetbrains.mps.baseLanguage.Expression" id="1179832715196" />
-        <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.TypeOfExpression" id="1179832709390">
-          <node role="term" type="jetbrains.mps.bootstrap.helgins.ApplicableNodeReference" id="1179832711925">
+      <node role="statement" type="jetbrains.mps.bootstrap.helgins.CreateComparableEquationStatementStrong" id="1180100239854">
+        <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.TypeOfExpression" id="1180100239852">
+          <node role="term" type="jetbrains.mps.bootstrap.helgins.ApplicableNodeReference" id="1180100239855">
+            <link role="applicableNode" targetNodeId="1178874883881" resolveInfo="bmd" />
+          </node>
+        </node>
+        <node role="rightExpression" type="jetbrains.mps.bootstrap.helgins.TypeOfExpression" id="1180100239853">
+          <node role="term" type="jetbrains.mps.bootstrap.helgins.ApplicableNodeReference" id="1180100239856">
             <link role="applicableNode" targetNodeId="1178874883881" resolveInfo="bmd" />
           </node>
         </node>

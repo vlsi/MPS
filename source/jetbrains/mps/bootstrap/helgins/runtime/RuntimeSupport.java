@@ -90,6 +90,10 @@ public class RuntimeSupport {
     myTypeChecker.getEquationManager().addInequationComparable(node1, node2, nodeToCheck);
   }
 
+  public void createComparableEquationStrong(SNode node1, SNode node2, SNode nodeToCheck) {
+    myTypeChecker.getEquationManager().addInequationComparable(node1, node2, nodeToCheck, false);
+  }
+
   public void givetype(SNode type, SNode node) {
     Map<SNode, SNode> typesContext = myTypeChecker.getMainContext();
     SNode nodesType = typesContext.get(node);
