@@ -414,9 +414,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1180006635472">
-    <property name="name" value="VisitNodesStatement" />
+    <property name="name" value="VisitBlock" />
     <property name="package" value="treeOperation.visit" />
-    <link role="extends" targetNodeId="2.1068580123157" />
+    <link role="extends" targetNodeId="1168428649324" resolveInfo="LambdaMethod" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1180007981312">
       <property name="value" value="visit" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
@@ -427,33 +427,29 @@
       <property name="role" value="expression" />
       <link role="target" targetNodeId="2.1068431790191" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1180013989808">
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1180025154301">
       <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="0..n" />
-      <property name="role" value="visitParameterDeclaration" />
-      <link role="target" targetNodeId="1180013705438" resolveInfo="VisitParameterDeclaration" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1180007604604">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1..n" />
-      <property name="role" value="visitNodeCase" />
-      <link role="target" targetNodeId="1180007355512" resolveInfo="VisitNodeCase" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="visitParameterDeclarationList" />
+      <link role="target" targetNodeId="1180025029823" resolveInfo="VisitParameterDeclarationList" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1180007355512">
-    <property name="name" value="VisitNodeCase" />
+    <property name="name" value="NodeKindCase" />
     <property name="package" value="treeOperation.visit" />
-    <link role="extends" targetNodeId="1168428649324" resolveInfo="LambdaMethod" />
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1180007511326">
-      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" />
-      <node role="target" type="jetbrains.mps.baseLanguage.VoidType" id="1180007513250" />
+    <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1180024059811">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="statementList" />
+      <link role="target" targetNodeId="2.1068580123136" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1180007371825">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1180007382905">
-    <property name="name" value="VisitNodeKindCase" />
+    <property name="name" value="NodeKindSpecificCase" />
     <property name="package" value="treeOperation.visit" />
     <link role="extends" targetNodeId="1180007355512" resolveInfo="VisitNodeCase" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1180007405188">
@@ -467,7 +463,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1180007571027">
-    <property name="name" value="VisitNodeDefaultCase" />
+    <property name="name" value="NodeKindDefaultCase" />
     <property name="package" value="treeOperation.visit" />
     <link role="extends" targetNodeId="1180007355512" resolveInfo="VisitNodeCase" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1180007571029">
@@ -505,6 +501,56 @@
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1180014281395">
       <property name="role" value="visitParameterDeclaration" />
       <link role="specializedLink" targetNodeId="2.1068581517664" />
+      <link role="target" targetNodeId="1180013705438" resolveInfo="VisitParameterDeclaration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1180023776692">
+    <property name="name" value="SwitchNodeKindStatement" />
+    <property name="package" value="treeOperation.visit" />
+    <link role="extends" targetNodeId="2.1068580123157" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1180023956589">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="nodeExpression" />
+      <link role="target" targetNodeId="1168890168054" resolveInfo="TreePathAdapterExpression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1180023812423">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="nodeKindCase" />
+      <link role="target" targetNodeId="1180007355512" resolveInfo="NodeKindCase" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1180023792261">
+      <property name="value" value="switch node kind" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1180023790290">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1180024940230">
+    <property name="name" value="VisitNodesStatement" />
+    <property name="package" value="treeOperation.visit" />
+    <link role="extends" targetNodeId="2.1068580123157" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1180024958680">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="visitBlock" />
+      <link role="target" targetNodeId="1180006635472" resolveInfo="VisitBlock" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1180024953774">
+      <property name="value" value="visit" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1180025029823">
+    <property name="name" value="VisitParameterDeclarationList" />
+    <property name="package" value="treeOperation.visit" />
+    <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1180025054224">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="visitParameterDeclaration" />
       <link role="target" targetNodeId="1180013705438" resolveInfo="VisitParameterDeclaration" />
     </node>
   </node>

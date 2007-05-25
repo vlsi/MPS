@@ -815,7 +815,7 @@
               <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1180011291719">
                 <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAncestorOperation" id="1180011293398">
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Concept" id="1180011296234">
-                    <link role="concept" targetNodeId="1.1180006635472" />
+                    <link role="concept" targetNodeId="1.1180024940230" />
                   </node>
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Inclusion" id="1180011307255" />
                 </node>
@@ -829,6 +829,35 @@
         <link role="concept" targetNodeId="1.1180011113930" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptSubstituteMenuPart" id="1180011336088">
           <link role="concept" targetNodeId="1.1180011113930" />
+        </node>
+      </node>
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1180026401346">
+      <property name="description" value="Allow &quot;switch node kind&quot; in visit statement" />
+      <property name="useNewActions" value="true" />
+      <link role="applicableConcept" targetNodeId="4.1068580123157" />
+      <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionFunction" id="1180026445925">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180026445926">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1180026448924">
+            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1180026467860">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsNotNullOperation" id="1180026470125" />
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1180026450003">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAncestorOperation" id="1180026452987">
+                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Concept" id="1180026457690">
+                    <link role="concept" targetNodeId="1.1180024940230" />
+                  </node>
+                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Inclusion" id="1180026465454" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parentNode" id="1180026448925" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddMenuPart" id="1180026475125">
+        <link role="concept" targetNodeId="1.1180023776692" />
+        <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptSubstituteMenuPart" id="1180026487749">
+          <link role="concept" targetNodeId="1.1180023776692" />
         </node>
       </node>
     </node>
