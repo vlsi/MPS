@@ -1,30 +1,17 @@
 package jetbrains.mps.helgins.inference;
 
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.helgins.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.SupertypingRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
-import jetbrains.mps.formulaLanguage.evaluator.ExpressionContext;
-import jetbrains.mps.formulaLanguage.evaluator.ExpressionEvaluatorManager;
-import jetbrains.mps.formulaLanguage.structure.Expression;
 import jetbrains.mps.helgins.structure.*;
 import jetbrains.mps.helgins.inference.util.StructuralNodeSet;
-import jetbrains.mps.helgins.inference.util.StructuralNodeSetView;
 import jetbrains.mps.helgins.inference.util.StructuralNodeMap;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.patterns.util.MatchingUtil;
 import jetbrains.mps.patterns.util.IMatchModifier;
 import jetbrains.mps.patterns.IMatchingPattern;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mpswiki.queryLanguage.structure.VariableCondition;
-import jetbrains.mpswiki.queryLanguage.structure.QueryPattern;
-import jetbrains.mpswiki.queryLanguage.structure.ConceptReference;
-import jetbrains.mpswiki.queryLanguage.evaluator.ConditionMatcher;
-import jetbrains.mpswiki.queryLanguage.evaluator.InvalidConditionException;
 
 import java.util.*;
 
@@ -40,7 +27,7 @@ public class SubtypingManager {
 
   private TypeChecker myTypeChecker;
 
-  private StructuralNodeMap<StructuralNodeSet<?>> mySupertypesCache = new StructuralNodeMap<StructuralNodeSet<?>>();
+  //private StructuralNodeMap<StructuralNodeSet<?>> mySupertypesCache = new StructuralNodeMap<StructuralNodeSet<?>>();
 
   private IMatchModifier myMatchModifier = new IMatchModifier() {
     public boolean accept(SNode node1, SNode node2) {
@@ -62,7 +49,7 @@ public class SubtypingManager {
   }
 
   /*package*/ void clearSupertypesCache() {
-    mySupertypesCache.clear();
+ //   mySupertypesCache.clear();
   }
 
   public boolean isSubtype(SNode subtype, SNode supertype) {
@@ -110,34 +97,20 @@ public class SubtypingManager {
 
     //subtypes
     Matcher m2 = new MySimpleMatcher(subRepresentator, myMatchModifier);
-    if (searchInSubtypes(superRepresentator, m2, isWeak)) return true;
+    if (searchInBottom(superRepresentator, m2, isWeak)) return true;
 
     return false;
   }
 
-  private boolean searchInSubtypes(SNode superRepresentator, Matcher m, boolean isWeak) {
-    StructuralNodeSet<?> frontier = new StructuralNodeSet();
-    StructuralNodeSet<?> newFrontier = new StructuralNodeSet();
-    StructuralNodeSet<?> yetPassed = new StructuralNodeSet();
-    frontier.add(superRepresentator);
-    while (!frontier.isEmpty()) {
-      for (SNode node : frontier) {
-        StructuralNodeSet<?> descendants = collectImmediateSubtypes(node, isWeak);
-        if (descendants == null) continue;
-        for (SNode passedNode : yetPassed) {
-          descendants.removeStructurally(passedNode);
-        }
-        descendants.removeStructurally(node);
-        for (SNode descendant : descendants) {
-          if (m.matches(descendant)) {
-            return true;
-          }
-        }
-        newFrontier.addAllStructurally((StructuralNodeSet) descendants);
-        yetPassed.addAllStructurally((StructuralNodeSet) descendants);
+  // without any transitivity now
+  private boolean searchInBottom(SNode superRepresentator, Matcher m, boolean isWeak) {
+    StructuralNodeSet<?> descendants = collectBottoms(superRepresentator, isWeak);
+    if (descendants == null) return false;
+    descendants.removeStructurally(superRepresentator);
+    for (SNode descendant : descendants) {
+      if (m.matches(descendant)) {
+        return true;
       }
-      frontier = newFrontier;
-      newFrontier = new StructuralNodeSet();
     }
     return false;
   }
@@ -183,10 +156,6 @@ public class SubtypingManager {
     return collectImmediateSupertypes(term, true);
   }
 
-  public StructuralNodeSet collectImmediateSubtypes(SNode term) {
-    return collectImmediateSubtypes(term, true);
-  }
-
   public StructuralNodeSet collectImmediateSupertypes(SNode term, boolean isWeak) {
     StructuralNodeSet result = new StructuralNodeSet();
     if (term == null) {
@@ -204,10 +173,9 @@ public class SubtypingManager {
     return result;
   }
 
-  public StructuralNodeSet collectImmediateSubtypes(SNode term, boolean isWeak) {
+  public StructuralNodeSet collectBottoms(SNode term, boolean isWeak) {
     StructuralNodeSet result = new StructuralNodeSet();
     if (term == null) return result;
-
     Set<SupertypingRule_Runtime> supertypingRule_runtimes = myTypeChecker.getRulesManager().getSupertypingRules(term, isWeak);
     if (supertypingRule_runtimes != null) {
       for (SupertypingRule_Runtime supertypingRule : supertypingRule_runtimes) {
