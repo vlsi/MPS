@@ -16,11 +16,6 @@
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1177671806653">
       <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="2.1068431790191" />
-      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddMenuPart" id="1177671818842">
-        <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptSubstituteMenuPart" id="1177671820046">
-          <link role="concept" targetNodeId="1.1177671741405" />
-        </node>
-      </node>
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.RemovePart" id="1177673390932">
         <link role="conceptToRemove" targetNodeId="2.1070475354124" />
       </node>
@@ -41,6 +36,9 @@
             </node>
           </node>
         </node>
+      </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptSubstitutePart" id="1180137890394">
+        <link role="concept" targetNodeId="1.1177671741405" />
       </node>
     </node>
   </node>
