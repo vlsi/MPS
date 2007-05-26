@@ -377,7 +377,7 @@
     <property name="name" value="AddMenuPart" />
     <link role="extends" targetNodeId="1177333529597" resolveInfo="ConceptPart" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1177324874604">
-      <property name="value" value="add" />
+      <property name="value" value="add custom items" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>
@@ -490,7 +490,7 @@
     <link role="extends" targetNodeId="1177323240852" resolveInfo="NodeBuilderPart" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177333551023">
       <property name="role" value="concept" />
-      <property name="sourceCardinality" value="0..1" />
+      <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1071489090640" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177333559040">

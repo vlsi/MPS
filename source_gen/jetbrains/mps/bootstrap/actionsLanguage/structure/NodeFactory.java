@@ -11,8 +11,8 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction;
 
 public class NodeFactory extends BaseConcept {
-  public static String APPLICABLE_CONCEPT = "applicableConcept";
   public static String DESCRIPTION = "description";
+  public static String APPLICABLE_CONCEPT = "applicableConcept";
   public static String SETUP_FUNCTION = "setupFunction";
 
   public  NodeFactory(SNode node) {
@@ -26,17 +26,17 @@ public class NodeFactory extends BaseConcept {
     return NodeFactory.newInstance(sm, false);
   }
 
-  public ConceptDeclaration getApplicableConcept() {
-    return (ConceptDeclaration)this.getReferent(NodeFactory.APPLICABLE_CONCEPT);
-  }
-  public void setApplicableConcept(ConceptDeclaration node) {
-    super.setReferent(NodeFactory.APPLICABLE_CONCEPT, node);
-  }
   public String getDescription() {
     return this.getProperty(NodeFactory.DESCRIPTION);
   }
   public void setDescription(String value) {
     this.setProperty(NodeFactory.DESCRIPTION, value);
+  }
+  public ConceptDeclaration getApplicableConcept() {
+    return (ConceptDeclaration)this.getReferent(NodeFactory.APPLICABLE_CONCEPT);
+  }
+  public void setApplicableConcept(ConceptDeclaration node) {
+    super.setReferent(NodeFactory.APPLICABLE_CONCEPT, node);
   }
   public NodeSetupFunction getSetupFunction() {
     return (NodeSetupFunction)this.getChild(NodeFactory.SETUP_FUNCTION);

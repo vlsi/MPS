@@ -1076,7 +1076,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1177324036612">
         <property name="selectable" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1177324036613">
-          <property name="text" value="add" />
+          <property name="text" value="add custom items (output:" />
           <property name="textFgColor" value="DARK_BLUE" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1177324036614">
@@ -1090,6 +1090,10 @@
               <link role="relationDeclaration" targetNodeId="3.1169194664001" />
             </node>
           </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1180140769603">
+          <property name="text" value=")" />
+          <property name="textFgColor" value="DARK_BLUE" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1177324036617">
