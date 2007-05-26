@@ -3376,8 +3376,8 @@
     <property name="name" value="newExpressionTypeParameter" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1177506323525">
       <property name="description" value="add type parameters to new-expression" />
-      <property name="transformTag" value="ext_1_RTransform" />
       <property name="useNewActions" value="true" />
+      <property name="transformTag" value="ext_1_RTransform" />
       <link role="applicableConcept" targetNodeId="1.1068581242872" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionFunction" id="1177506323526">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177506323527">
