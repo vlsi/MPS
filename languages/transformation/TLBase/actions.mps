@@ -27,9 +27,7 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1177413017371">
                 <node role="expression" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1177413019329">
                   <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListCreatorWithInit" id="1177413022072">
-                    <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1177413023778">
-                      <link role="concept" targetNodeId="2.1071489090640" />
-                    </node>
+                    <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.SConceptType" id="1180142681839" />
                     <node role="initValue" type="jetbrains.mps.bootstrap.smodelLanguage.ConceptRefExpression" id="1177413075915">
                       <link role="conceptDeclaration" targetNodeId="1.1169569792945" />
                     </node>
