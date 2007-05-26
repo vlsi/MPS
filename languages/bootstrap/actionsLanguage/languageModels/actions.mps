@@ -99,14 +99,6 @@
       <property name="description" value="builder parts available for node-substitute (apart from defaults)" />
       <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1177323240852" />
-      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddMenuPart" id="1180112146088">
-        <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptSubstituteMenuPart" id="1180112146089">
-          <link role="concept" targetNodeId="1.1177614709184" />
-        </node>
-        <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptSubstituteMenuPart" id="1180135554494">
-          <link role="concept" targetNodeId="1.1180134965967" />
-        </node>
-      </node>
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionFunction" id="1180112146090">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180112146091">
           <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1180112146092">
@@ -124,6 +116,12 @@
             </node>
           </node>
         </node>
+      </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptSubstitutePart" id="1180137769604">
+        <link role="concept" targetNodeId="1.1177614709184" />
+      </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptSubstitutePart" id="1180137769605">
+        <link role="concept" targetNodeId="1.1180134965967" />
       </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1180112212391">
@@ -148,10 +146,8 @@
           </node>
         </node>
       </node>
-      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddMenuPart" id="1180112563960">
-        <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptSubstituteMenuPart" id="1180112570418">
-          <link role="concept" targetNodeId="1.1180111159572" />
-        </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptSubstitutePart" id="1180137769606">
+        <link role="concept" targetNodeId="1.1180111159572" />
       </node>
     </node>
   </node>
