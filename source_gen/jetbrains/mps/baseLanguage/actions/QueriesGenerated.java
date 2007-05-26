@@ -398,9 +398,7 @@ public class QueriesGenerated {
       Calculable calc = new Calculable() {
 
         public Object calculate() {
-          List<SNode> concepts = new ArrayList<SNode>();
-          ListOperations.addElement(concepts, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BreakStatement"));
-          ListOperations.addElement(concepts, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ContinueStatement"));
+          List<SNode> concepts = ListOperations.createList(new SNode[]{SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BreakStatement"),SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ContinueStatement")});
           return concepts;
         }
       };
