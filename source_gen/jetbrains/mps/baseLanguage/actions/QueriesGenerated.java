@@ -378,8 +378,8 @@ public class QueriesGenerated {
           if(parentFunction == null) {
             return result;
           }
-          ListOperations.addAllElements(result, parentFunction.getConceptLinkTargets("conceptFunctionParameter", true, operationContext.getScope()));
-          ListOperations.addAllElements(result, parentFunction.getConceptLinkTargets("applicableConceptFunctionParameter", true, operationContext.getScope()));
+          ListOperations.addAllElements(result, SLinkOperations.getConceptLinkTargets(parentFunction, "conceptFunctionParameter"));
+          ListOperations.addAllElements(result, SLinkOperations.getConceptLinkTargets(parentFunction, "applicableConceptFunctionParameter"));
           return result;
         }
       };
