@@ -778,24 +778,13 @@
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.SimpleItemSubstitutePart" id="1177680987113">
           <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_Substitute_Handler" id="1177680987114">
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177680987115">
-              <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1177681018065">
-                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1177681018066">
-                  <property name="name" value="result" />
-                  <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1177681018067">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1180268894879">
+                <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1180268888975">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_model" id="1180268888976" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Model_CreateNewNodeOperation" id="1180268888977">
                     <link role="concept" targetNodeId="1.1073389658414" />
+                    <node role="prototypeNode" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_currentTargetNode" id="1180268888978" />
                   </node>
-                  <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1177681031447">
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_model" id="1177681029319" />
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Model_CreateNewNodeOperation" id="1177681033777">
-                      <link role="concept" targetNodeId="1.1073389658414" />
-                      <node role="prototypeNode" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_currentTargetNode" id="1177703520333" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1177681043919">
-                <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1177681046515">
-                  <link role="variableDeclaration" targetNodeId="1177681018066" resolveInfo="result" />
                 </node>
               </node>
             </node>
@@ -804,15 +793,6 @@
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177680992617">
               <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1177680995540">
                 <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1177680996917">
-                  <property name="value" value="{" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_SubstituteString" id="1177681002808">
-            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177681002809">
-              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1177681004670">
-                <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1177681005937">
                   <property name="value" value="property" />
                 </node>
               </node>
@@ -865,15 +845,6 @@
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177681080348">
               <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1177681080349">
                 <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1177681080350">
-                  <property name="value" value="{{" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_SubstituteString" id="1177681080351">
-            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177681080352">
-              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1177681080353">
-                <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1177681080354">
                   <property name="value" value="concept property" />
                 </node>
               </node>
