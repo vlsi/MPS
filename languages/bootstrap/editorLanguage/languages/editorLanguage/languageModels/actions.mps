@@ -775,6 +775,54 @@
             </node>
           </node>
         </node>
+        <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.SimpleItemSubstitutePart" id="1180296452120">
+          <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_Substitute_Handler" id="1180296452121">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180296452122">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1180296485851">
+                <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1180296486973">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Model_CreateNewNodeOperation" id="1180296489352">
+                    <link role="concept" targetNodeId="1.1088013125922" />
+                    <node role="prototypeNode" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_currentTargetNode" id="1180296500461" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_model" id="1180296485852" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_SubstituteString" id="1180296457202">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180296457203">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1180296472475">
+                <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1180296472476">
+                  <property name="value" value="ref.cell" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.SimpleItemSubstitutePart" id="1180297607413">
+          <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_Substitute_Handler" id="1180297607414">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180297607415">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1180297627927">
+                <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1180297629154">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Model_CreateNewNodeOperation" id="1180297631538">
+                    <link role="concept" targetNodeId="1.1073389882823" />
+                    <node role="prototypeNode" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_currentTargetNode" id="1180297642692" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_model" id="1180297627928" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_SubstituteString" id="1180297613944">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180297613945">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1180297620293">
+                <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1180297620294">
+                  <property name="value" value="ref.node" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.SimpleItemSubstitutePart" id="1177680987113">
           <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_Substitute_Handler" id="1177680987114">
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177680987115">
