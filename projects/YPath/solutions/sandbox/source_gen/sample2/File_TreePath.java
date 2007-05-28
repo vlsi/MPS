@@ -104,7 +104,7 @@ public class File_TreePath extends TreePath<File> {
             return matchValue.equals(actualValue);
           }
         };
-      } else 
+      } else
       {
         filter = new IFilter() {
 

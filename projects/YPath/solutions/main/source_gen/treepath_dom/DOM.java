@@ -109,7 +109,7 @@ public class DOM extends TreePath<Node> {
             return matchValue.equals(actualValue);
           }
         };
-      } else 
+      } else
       {
         filter = new IFilter() {
 
@@ -151,7 +151,7 @@ public class DOM extends TreePath<Node> {
             return matchValue.equals(actualValue);
           }
         };
-      } else 
+      } else
       {
         filter = new IFilter() {
 
@@ -193,7 +193,7 @@ public class DOM extends TreePath<Node> {
             return matchValue.equals(actualValue);
           }
         };
-      } else 
+      } else
       {
         filter = new IFilter() {
 

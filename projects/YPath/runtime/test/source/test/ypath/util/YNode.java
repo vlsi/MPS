@@ -25,11 +25,6 @@ public class YNode {
             return t.getSubnodes();
         }
     
-        @Override
-        protected Iterable<YNode> children(YNode t) {
-            return null;
-        }
-    
     };
     
     private String name;
