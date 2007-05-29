@@ -49,14 +49,14 @@ public class RulesUtil {
     // ===========
     if(SConceptPropertyOperations.getBoolean(op, "applicable_to_model")) {
       SNode leftType = RulesUtil.typeOf_leftExpression(op);
-      if(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new QuotationClass_36().createNode())) {
+      if(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new QuotationClass_36().createNode(), false, false)) {
         return true;
       }
       applicables.add("model");
     }
     if(SConceptPropertyOperations.getBoolean(op, "applicable_to_concept")) {
       SNode leftType = RulesUtil.typeOf_leftExpression(op);
-      if(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new QuotationClass_37().createNode())) {
+      if(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new QuotationClass_37().createNode(), false, false)) {
         return true;
       }
       applicables.add("concept");
@@ -64,7 +64,7 @@ public class RulesUtil {
     if(SConceptPropertyOperations.getBoolean(op, "applicable_to_node")) {
       // todo: get type of left expression and try to 'adapt' to snode
       SNode leftType = RulesUtil.typeOf_leftExpression(op);
-      if(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new QuotationClass_38().createNode())) {
+      if(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new QuotationClass_38().createNode(), false, false)) {
         return true;
       }
       applicables.add("node");

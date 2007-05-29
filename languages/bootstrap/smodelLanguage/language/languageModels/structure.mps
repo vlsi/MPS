@@ -1238,6 +1238,10 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1172420572800">
     <property name="name" value="SConceptType" />
     <link role="extends" targetNodeId="2.1068431790189" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1180481110358">
+      <property name="role" value="conceptDeclaraton" />
+      <link role="target" targetNodeId="3.1169125787135" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1172420572801">
       <property name="value" value="sconcept" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />

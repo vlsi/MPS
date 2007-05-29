@@ -168,9 +168,55 @@
       <link role="applicableProperty" targetNodeId="9.1169194664001" />
       <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_PropertyGetter" id="1172422708631">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1172422708632">
-          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1172422712448">
-            <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1172422713637">
-              <property name="value" value="sconcept" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1180481236300">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1180481236301">
+              <property name="name" value="concept" />
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SConceptType" id="1180481621611" />
+              <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1180481236303">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1180481590954">
+                  <link role="link" targetNodeId="1.1180481110358" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.PropertyGetter_FunctionParm_node" id="1180481236305" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1180481236306">
+            <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1180481236307">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1180481236308" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1180481236309">
+                <link role="variableDeclaration" targetNodeId="1180481236301" resolveInfo="concept" />
+              </node>
+            </node>
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1180481236310">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1180481236311">
+                <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1180481236312">
+                  <property name="value" value="sconcept&lt; &gt;" />
+                </node>
+              </node>
+            </node>
+            <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.BlockStatement" id="1180481236313">
+              <node role="statements" type="jetbrains.mps.baseLanguage.StatementList" id="1180481236314">
+                <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1180481236315">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1180481236316">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1180481236317">
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1180481236318">
+                        <property name="value" value="&gt;" />
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1180481236319">
+                        <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1180481236320">
+                          <link role="property" targetNodeId="9.1169194664001" />
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1180481236321">
+                          <link role="variableDeclaration" targetNodeId="1180481236301" resolveInfo="concept" />
+                        </node>
+                      </node>
+                    </node>
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1180481236322">
+                      <property name="value" value="sconcept&lt;" />
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>

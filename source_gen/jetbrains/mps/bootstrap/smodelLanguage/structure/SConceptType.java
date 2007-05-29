@@ -7,8 +7,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 public class SConceptType extends Type {
+  public static String CONCEPT_DECLARATON = "conceptDeclaraton";
 
   public  SConceptType(SNode node) {
     super(node);
@@ -19,5 +21,12 @@ public class SConceptType extends Type {
   }
   public static SConceptType newInstance(SModel sm) {
     return SConceptType.newInstance(sm, false);
+  }
+
+  public AbstractConceptDeclaration getConceptDeclaraton() {
+    return (AbstractConceptDeclaration)this.getReferent(SConceptType.CONCEPT_DECLARATON);
+  }
+  public void setConceptDeclaraton(AbstractConceptDeclaration node) {
+    super.setReferent(SConceptType.CONCEPT_DECLARATON, node);
   }
 }
