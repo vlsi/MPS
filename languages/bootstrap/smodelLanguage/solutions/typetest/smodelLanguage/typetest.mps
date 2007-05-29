@@ -2902,16 +2902,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179449005123">
-          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179449006934">
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179449005124">
-              <link role="variableDeclaration" targetNodeId="1177012844517" resolveInfo="abstrConcept" />
-            </node>
-            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_ConceptMethodCall" id="1179449012885">
-              <link role="conceptMethodDeclaration" targetNodeId="15.1178096836413" />
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1177013050325">
           <node role="expression" type="jetbrains.mps.baseLanguage.AssignmentExpression" id="1177013051376">
             <node role="lValue" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1177013050326">
