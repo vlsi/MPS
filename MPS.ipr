@@ -74,7 +74,7 @@
       <entry name="?*.png" />
       <entry name="?*.jpeg" />
       <entry name="?*.jpg" />
-      <entry name=" ?*.txt" />
+      <entry name="?*.txt" />
       <entry name="?*.js" />
       <entry name="?*.css" />
     </wildcardResourcePatterns>
