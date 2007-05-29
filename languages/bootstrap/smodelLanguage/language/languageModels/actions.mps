@@ -22,8 +22,8 @@
     <property name="name" value="snodeOperation" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1138413233760">
       <property name="description" value="all operations appropriate for expression before'.'" />
-      <property name="applicableLinkMetaclass" value="aggregation" />
       <property name="useNewActions" value="true" />
+      <property name="applicableLinkMetaclass" value="aggregation" />
       <link role="applicableConcept" targetNodeId="1.1138411891628" />
       <node role="variable" type="jetbrains.mps.bootstrap.actionsLanguage.SubstituteNodeBuilderVariableDeclaration" id="1180466611084">
         <property name="name" value="leftExpressionType" />
