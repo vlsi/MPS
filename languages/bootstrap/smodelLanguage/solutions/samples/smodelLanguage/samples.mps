@@ -3322,6 +3322,59 @@
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SConceptType" id="1177034225591" />
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1180456939140">
+      <property name="name" value="concept_hierarchy" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1180456939141" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1180456939142" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180456939143">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1180457401011">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1180457401012">
+            <property name="name" value="supers_direct" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListType" id="1180457401013">
+              <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.SConceptType" id="1180457401014" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1180457386702">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Concept_GetDirectSuperConcepts" id="1180457388178" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1180457385604">
+                <link role="variableDeclaration" targetNodeId="1180457006292" resolveInfo="concept" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1180458007462">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1180458007463">
+            <property name="name" value="supers_all" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListType" id="1180458007464">
+              <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.SConceptType" id="1180458007465" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1180457990856">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Concept_GetAllSuperConcepts" id="1180457994332" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1180457989335">
+                <link role="variableDeclaration" targetNodeId="1180457006292" resolveInfo="concept" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1180459854659">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1180459854660">
+            <property name="name" value="hierarchy" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListType" id="1180459854661">
+              <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.SConceptType" id="1180459854662" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1180459849975">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Concept_GetHierarchy" id="1180459851919" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1180459848688">
+                <link role="variableDeclaration" targetNodeId="1180457006292" resolveInfo="concept" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1180457006292">
+        <property name="name" value="concept" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SConceptType" id="1180457006293" />
+      </node>
+    </node>
   </node>
 </model>
 
