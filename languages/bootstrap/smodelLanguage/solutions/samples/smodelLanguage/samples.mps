@@ -3,7 +3,7 @@
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
-  <maxImportIndex value="24" />
+  <maxImportIndex value="25" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="3" modelUID="java.lang@java_stub" />
   <import index="4" modelUID="jetbrains.mps.smodel@java_stub" />
@@ -12,6 +12,7 @@
   <import index="9" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <import index="11" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" />
   <import index="13" modelUID="jetbrains.mps.baseLanguage.structure@java_stub" />
+  <import index="25" modelUID="jetbrains.mps.core.constraints" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1145576838780">
     <property name="name" value="SemanticDowncast" />
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1145576838781">
@@ -1122,6 +1123,16 @@
       <property name="name" value="accessToChildren_1" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1145580963609" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1145580957389">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1180478737036">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1180478738817">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_ConceptMethodCall" id="1180478779295">
+              <link role="conceptMethodDeclaration" targetNodeId="25.1180102203531" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1180478737037">
+              <link role="variableDeclaration" targetNodeId="1145580983579" resolveInfo="statementList" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1145581051477">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1145581051478">
             <property name="name" value="count1" />

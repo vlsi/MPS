@@ -113,18 +113,19 @@
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1178541894245">
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1178541894246">
-              <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1178541907035">
-                <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1178541909732">
-                  <link role="baseMethodDeclaration" extResolveInfo="5.method ([Classifier]List).([InstanceMethodDeclaration]addAll((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Collection, &lt;? extends jetbrains.mps.baseLanguage.types.any&gt;])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
-                  <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1178541907036">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1180470427156">
+                <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1180470429238">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1180470427157">
                     <link role="variableDeclaration" targetNodeId="1178541862121" resolveInfo="vars" />
                   </node>
-                  <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178541914936">
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1178541912395">
-                      <link role="variableDeclaration" targetNodeId="1178541824322" resolveInfo="builder" />
-                    </node>
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkListAccess" id="1178541916380">
-                      <link role="link" targetNodeId="1.1178540170602" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.AddAllElementsOperation" id="1180470431992">
+                    <node role="argument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1180470441236">
+                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkListAccess" id="1180470446289">
+                        <link role="link" targetNodeId="1.1178540170602" />
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1180470439246">
+                        <link role="variableDeclaration" targetNodeId="1178541824322" resolveInfo="builder" />
+                      </node>
                     </node>
                   </node>
                 </node>
