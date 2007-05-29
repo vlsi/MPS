@@ -5,7 +5,7 @@ package jetbrains.mps.bootstrap.smodelLanguage.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_43;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_42;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_EnumMemberReference_InferenceRule implements InferenceRule_Runtime {
@@ -14,7 +14,7 @@ public class typeOf_EnumMemberReference_InferenceRule implements InferenceRule_R
   }
 
   public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_43().createNode(), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_42().createNode(), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference";

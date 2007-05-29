@@ -4,32 +4,26 @@ package jetbrains.mps.bootstrap.smodelLanguage.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.ISubtypingRule_Runtime;
-import java.util.List;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.Pattern_2;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_33;
-import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_58;
 
 public class supertypesOf_SNodeType_SConceptType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
+
+  /* package */Pattern_2 myMatchingPattern;
 
   public  supertypesOf_SNodeType_SConceptType_SubtypingRule() {
   }
 
-  public List<SNode> getSubOrSuperTypes(SNode type) {
-    List<SNode> list = ListOperations.createList(new SNode[]{});
-    SNode concept = SLinkOperations.getTarget(type, "concept", false);
-    if(SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration")) {
-      ListOperations.addElement(list, new QuotationClass_33().createNode());
-    }
-    return list;
+  public SNode getSubOrSuperType(SNode type) {
+    return new QuotationClass_58().createNode();
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType";
   }
   public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+    this.myMatchingPattern = new Pattern_2();
+    return this.myMatchingPattern.match(argument);
   }
   public boolean isSupertyping() {
     return false;

@@ -9,7 +9,7 @@ import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_52;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_51;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_Node_GetAdapterOperation_InferenceRule implements InferenceRule_Runtime {
@@ -25,7 +25,7 @@ public class typeOf_Node_GetAdapterOperation_InferenceRule implements InferenceR
       TypeChecker.getInstance().getRuntimeSupport().givetype(AbstractConceptDeclaration_Behavior.getAdapterType_1179511141975(leftNodeConcept), argument);
     } else
     {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_52().createNode(), argument);
+      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_51().createNode(), argument);
     }
   }
   public String getApplicableConceptFQName() {

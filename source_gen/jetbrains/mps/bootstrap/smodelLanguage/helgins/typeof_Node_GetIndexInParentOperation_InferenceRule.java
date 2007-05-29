@@ -5,7 +5,7 @@ package jetbrains.mps.bootstrap.smodelLanguage.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_53;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_52;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_Node_GetIndexInParentOperation_InferenceRule implements InferenceRule_Runtime {
@@ -14,7 +14,7 @@ public class typeof_Node_GetIndexInParentOperation_InferenceRule implements Infe
   }
 
   public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), new QuotationClass_53().createNode(), argument);
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), new QuotationClass_52().createNode(), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetIndexInParentOperation";

@@ -198,9 +198,9 @@
               <link role="baseMethodDeclaration" extResolveInfo="5.static method ([Classifier]SModelUtil_new).([StaticMethodDeclaration]getDeclaringLanguage((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [AbstractConceptDeclaration]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IScope])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Language]))" />
               <link role="classConcept" extResolveInfo="5.[Classifier]SModelUtil_new" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.CastExpression" id="1178096832149">
-                <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1178096832150">
-                  <link role="baseMethodDeclaration" extResolveInfo="5.method ([Classifier]SNode).([InstanceMethodDeclaration]getAdapter() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [BaseAdapter]))" />
-                  <node role="instance" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1178096832151" />
+                <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1180462426049">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1180462429173" />
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1178096832151" />
                 </node>
                 <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1178096832152">
                   <link role="classifier" extResolveInfo="15.[Classifier]AbstractConceptDeclaration" />
