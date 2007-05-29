@@ -25,7 +25,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
     return this.createRowCell(context, node);
   }
   public EditorCell createInspectedCell(EditorContext context, SNode node) {
-    return this.createRowCell1(context, node);
+    return this.createColumnCell(context, node);
   }
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
@@ -55,7 +55,37 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell1(context, node, "node to check ="));
     editorCell.addEditorCell(this.createNodeToCheckCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174664133789");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1180447328717");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createRowCell2(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setGridLayout(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstantCell2(context, node, "error string ="));
+    editorCell.addEditorCell(this.createErrorStringCell(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1180447332768");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createColumnCell(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setGridLayout(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createRowCell1(context, node));
+    editorCell.addEditorCell(this.createRowCell2(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1180447328716");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -79,7 +109,19 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174664133790");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1180447328718");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1180447335645");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -113,7 +155,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else 
+    } else
     return cellWithRole;
   }
   public EditorCell createCellModel_ConceptPropertyinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -147,7 +189,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else 
+    } else
     return cellWithRole;
   }
   public EditorCell createRightExpressionCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -180,7 +222,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else 
+    } else
     return cellWithRole;
   }
   public EditorCell createNodeToCheckCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -196,7 +238,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174664133791");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1180447328719");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -213,7 +255,40 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else 
+    } else
+    return cellWithRole;
+  }
+  public EditorCell createErrorStringCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(null);
+    EditorCell editorCell = provider.createEditorCell(context);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    if(editorCell instanceof EditorCell_Label) {
+      EditorCell_Label editorCellLabel = (EditorCell_Label)editorCell;
+      editorCellLabel.setEditable(true);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1180447348975");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createErrorStringCell(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+    provider.setRole("errorString");
+    provider.setNoTargetText("");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(false);
+    EditorCell cellWithRole = this.createErrorStringCellinternal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if(attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else
     return cellWithRole;
   }
 }

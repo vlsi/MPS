@@ -13,6 +13,7 @@ public class AbstractEquationStatement extends Statement {
   public static String LEFT_EXPRESSION = "leftExpression";
   public static String RIGHT_EXPRESSION = "rightExpression";
   public static String NODE_TO_CHECK = "nodeToCheck";
+  public static String ERROR_STRING = "errorString";
 
   public  AbstractEquationStatement(SNode node) {
     super(node);
@@ -42,5 +43,11 @@ public class AbstractEquationStatement extends Statement {
   }
   public void setNodeToCheck(Expression node) {
     super.setChild(AbstractEquationStatement.NODE_TO_CHECK, node);
+  }
+  public Expression getErrorString() {
+    return (Expression)this.getChild(AbstractEquationStatement.ERROR_STRING);
+  }
+  public void setErrorString(Expression node) {
+    super.setChild(AbstractEquationStatement.ERROR_STRING, node);
   }
 }

@@ -665,7 +665,7 @@ public class EquationManager {
     return myTypeChecker.getMaster(this);
   }
 
-  private static class ErrorInfo {
+  public static class ErrorInfo {
     private String myErrorString;
     private SNode myNodeWithError;
 

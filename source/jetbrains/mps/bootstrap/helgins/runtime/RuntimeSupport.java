@@ -3,6 +3,7 @@ package jetbrains.mps.bootstrap.helgins.runtime;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
 import jetbrains.mps.helgins.inference.NodeTypesComponent;
+import jetbrains.mps.helgins.inference.EquationManager.ErrorInfo;
 import jetbrains.mps.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.INodeAdapter;
@@ -92,6 +93,26 @@ public class RuntimeSupport {
 
   public void createComparableEquationStrong(SNode node1, SNode node2, SNode nodeToCheck) {
     myTypeChecker.getEquationManager().addInequationComparable(node1, node2, nodeToCheck, false);
+  }
+
+   public void createLessThanInequation(SNode node1, SNode node2, SNode nodeToCheck, String errorString) {
+    myTypeChecker.getEquationManager().addInequation(node1, node2, new ErrorInfo(nodeToCheck, errorString));
+  }
+
+  public void createLessThanInequationStrong(SNode node1, SNode node2, SNode nodeToCheck, String errorString) {
+    myTypeChecker.getEquationManager().addInequation(node1, node2, new ErrorInfo(nodeToCheck, errorString), false);
+  }
+
+  public void createGreaterThanInequation(SNode node1, SNode node2, SNode nodeToCheck, String errorString) {
+    myTypeChecker.getEquationManager().addInequation(node2, node1, new ErrorInfo(nodeToCheck, errorString));
+  }
+
+  public void createComparableEquation(SNode node1, SNode node2, SNode nodeToCheck, String errorString) {
+    myTypeChecker.getEquationManager().addInequationComparable(node1, node2, new ErrorInfo(nodeToCheck, errorString));
+  }
+
+  public void createComparableEquationStrong(SNode node1, SNode node2, SNode nodeToCheck, String errorString) {
+    myTypeChecker.getEquationManager().addInequationComparable(node1, node2, new ErrorInfo(nodeToCheck, errorString), false);
   }
 
   public void givetype(SNode type, SNode node) {

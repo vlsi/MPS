@@ -179,6 +179,11 @@
       <property name="role" value="nodeToCheck" />
       <link role="target" targetNodeId="2.1068431790191" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1180447237840">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="errorString" />
+      <link role="target" targetNodeId="2.1068431790191" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1174664393854">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
     </node>
