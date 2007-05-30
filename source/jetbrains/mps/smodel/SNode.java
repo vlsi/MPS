@@ -1655,8 +1655,8 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   public List<ConceptLink> getConceptLinks(final String linkName, boolean lookupHierarchy, IScope scope) {
     AbstractConceptDeclaration conceptDeclaration;
-    if (getAdapter() instanceof ConceptDeclaration) {
-      conceptDeclaration = (ConceptDeclaration) getAdapter();
+    if (getAdapter() instanceof AbstractConceptDeclaration) {
+      conceptDeclaration = (AbstractConceptDeclaration) getAdapter();
     } else {
       conceptDeclaration = getConceptDeclarationAdapter();
     }
