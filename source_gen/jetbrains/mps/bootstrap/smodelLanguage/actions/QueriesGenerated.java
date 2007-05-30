@@ -28,15 +28,17 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptPropertyDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.actions.zPredicate;
 import jetbrains.mps.bootstrap.smodelLanguage.actions.zPredicate1;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptPropertyDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptLinkDeclaration;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 
 public class QueriesGenerated {
 
@@ -174,27 +176,6 @@ public class QueriesGenerated {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess", null);
             SLinkOperations.setTarget(newNode, "property", ((SNode)this.getParameterObject()), false);
-            return newNode;
-          }
-        });
-      }
-    }
-    {
-      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess", operationContext.getScope());
-      Calculable calc = new Calculable() {
-
-        public Object calculate() {
-          List<ConceptPropertyDeclaration> adapters = hierarhyScope.getAdapters(ConceptPropertyDeclaration.class);
-          return (List<SNode>)BaseAdapter.toNodes(adapters);
-        }
-      };
-      Iterable<SNode> queryResult = (Iterable)calc.calculate();
-      for(SNode item : queryResult) {
-        result.add(new DefaultChildNodeSubstituteAction(item, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
-
-          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess", null);
-            SLinkOperations.setTarget(newNode, "conceptProperty", ((SNode)this.getParameterObject()), false);
             return newNode;
           }
         });
@@ -346,12 +327,76 @@ public class QueriesGenerated {
         });
       }
     }
+    return result;
+  }
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_SNodeOperation_1180538139816(final SNode parentNode, final SNode currentTargetNode, final ConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    final SNode leftConcept;
+    final ISearchScope hierarchyScope;
+    {
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          SNode leftExpression = SLinkOperations.getTarget(parentNode, "leftExpression", true);
+          SNode maybeConceptType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(leftExpression), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType"), false);
+          if(maybeConceptType != null) {
+            if(SLinkOperations.getTarget(maybeConceptType, "conceptDeclaraton", false) != null) {
+              return SLinkOperations.getTarget(maybeConceptType, "conceptDeclaraton", false);
+            } else
+            {
+              return SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration");
+            }
+          }
+          SNode maybeNodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(leftExpression), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
+          if(maybeNodeType != null) {
+            if(SLinkOperations.getTarget(maybeNodeType, "concept", false) != null) {
+              return SLinkOperations.getTarget(maybeNodeType, "concept", false);
+            } else
+            {
+              return SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept");
+            }
+          }
+          return null;
+        }
+      };
+      leftConcept = (SNode)calc.calculate();
+    }
+    {
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          return new ConceptHierarchyScope(((AbstractConceptDeclaration)SNodeOperations.getAdapter(leftConcept)));
+        }
+      };
+      hierarchyScope = (ISearchScope)calc.calculate();
+    }
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess", operationContext.getScope());
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          List<ConceptPropertyDeclaration> adapters = hierarchyScope.getAdapters(ConceptPropertyDeclaration.class);
+          return (List<SNode>)BaseAdapter.toNodes(adapters);
+        }
+      };
+      Iterable<SNode> queryResult = (Iterable)calc.calculate();
+      for(SNode item : queryResult) {
+        result.add(new DefaultChildNodeSubstituteAction(item, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
+
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess", currentTargetNode);
+            SLinkOperations.setTarget(newNode, "conceptProperty", ((SNode)this.getParameterObject()), false);
+            return newNode;
+          }
+        });
+      }
+    }
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptLinkAccess", operationContext.getScope());
       Calculable calc = new Calculable() {
 
         public Object calculate() {
-          List<ConceptLinkDeclaration> adapters = hierarhyScope.getAdapters(ConceptLinkDeclaration.class);
+          List<ConceptLinkDeclaration> adapters = hierarchyScope.getAdapters(ConceptLinkDeclaration.class);
           return (List<SNode>)BaseAdapter.toNodes(adapters);
         }
       };
@@ -470,6 +515,10 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean removeConceptByCondition_1180467401112(SNode concept, SNode parentNode, SNode currentChild, SNode childConcept, IOperationContext operationContext) {
+    if(!(SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation"))) {
+      return false;
+    }
+    SNode parameterOp = concept;
     SNode leftExpression = SLinkOperations.getTarget(parentNode, "leftExpression", true);
     if(SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
       SNode nodeOperation = SLinkOperations.getTarget(leftExpression, "nodeOperation", true);
@@ -486,7 +535,7 @@ public class QueriesGenerated {
         return !(concept.hasConceptProperty(SNodeOperation.CPR_Applicable_to_concept_property, operationContext.getScope()));
       }
       if(SNodeOperations.isInstanceOf(nodeOperation, "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess")) {
-        return !(concept.hasConceptProperty(SNodeOperation.CPR_Applicable_to_link, operationContext.getScope()));
+        return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_link"));
       }
       if(SNodeOperations.isInstanceOf(nodeOperation, "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess")) {
         return !(concept.hasConceptProperty(SNodeOperation.CPR_Applicable_to_linkList, operationContext.getScope()));
