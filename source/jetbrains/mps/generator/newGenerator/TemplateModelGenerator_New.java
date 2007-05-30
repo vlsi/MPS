@@ -53,7 +53,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     myInputModel = inputModel;
     myOutputModel = outputModel;
     doMapping(true);
-    return false;
+    return isChanged();
   }
 
   public void doPrimaryMapping() {
@@ -238,13 +238,13 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
 
   public void addOutputNodeByTemplateNodeAndInputNode(SNode templateNode, SNode inputNode, SNode outputNode) {
     Pair key = new Pair(templateNode, inputNode);
-    if(myTemplateNodeAndInputNodeToBuilderMap.get(key) != null) {
+//    if(myTemplateNodeAndInputNodeToBuilderMap.get(key) != null) {
 //      showErrorMessage(inputNode, templateNode, "The output node already exists, that was build by this template and source node");
-      showWarningMessage(inputNode, "The output node already exists, that was build by this template and source node");
-      System.out.println("The output node already exists, that was build by this template and source node");
-      System.out.println("templateNodeId="+templateNode.getId()+",   inputNodeId="+inputNode.getId());
-      System.out.println("prevId="+myTemplateNodeAndInputNodeToBuilderMap.get(key).getTargetNode().getId()+",   newId="+outputNode.getId());
-    }
+//      showWarningMessage(inputNode, "The output node already exists, that was build by this template and source node");
+//      System.out.println("The output node already exists, that was build by this template and source node");
+//      System.out.println("templateNodeId="+templateNode.getId()+",   inputNodeId="+inputNode.getId());
+//      System.out.println("prevId="+myTemplateNodeAndInputNodeToBuilderMap.get(key).getTargetNode().getId()+",   newId="+outputNode.getId());
+//    }
     myTemplateNodeAndInputNodeToBuilderMap.put(key, new SimpleNodeBuilder(this, outputNode, templateNode, inputNode));
   }
 
@@ -264,9 +264,9 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   }
 
   public void addTemplateNodeByOutputNode(SNode outputNode, SNode templateNode) {
-    if(myOutputNodeToTemplateNodeMap.get(outputNode) != null) {
-      showWarningMessage(templateNode, "The template node already exists, that was build by this output node");
-    }
+//    if(myOutputNodeToTemplateNodeMap.get(outputNode) != null) {
+//     showWarningMessage(templateNode, "The template node already exists, that was build by this output node");
+//    }
     myOutputNodeToTemplateNodeMap.put(outputNode, templateNode);
   }
 
