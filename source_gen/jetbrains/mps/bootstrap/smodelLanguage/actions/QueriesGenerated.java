@@ -471,6 +471,27 @@ public class QueriesGenerated {
   }
   public static boolean removeConceptByCondition_1180467401112(SNode concept, SNode parentNode, SNode currentChild, SNode childConcept, IOperationContext operationContext) {
     SNode leftExpression = SLinkOperations.getTarget(parentNode, "leftExpression", true);
+    if(SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
+      SNode nodeOperation = SLinkOperations.getTarget(leftExpression, "nodeOperation", true);
+      if(SNodeOperations.isInstanceOf(nodeOperation, "jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess")) {
+        SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(nodeOperation, "property", false), "dataType", false);
+        if(SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration")) {
+          return !(concept.hasConceptProperty(SNodeOperation.CPR_Applicable_to_enum_property, operationContext.getScope()));
+        } else
+        {
+          return !(concept.hasConceptProperty(SNodeOperation.CPR_Applicable_to_simple_property, operationContext.getScope()));
+        }
+      }
+      if(SNodeOperations.isInstanceOf(nodeOperation, "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess")) {
+        return !(concept.hasConceptProperty(SNodeOperation.CPR_Applicable_to_concept_property, operationContext.getScope()));
+      }
+      if(SNodeOperations.isInstanceOf(nodeOperation, "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess")) {
+        return !(concept.hasConceptProperty(SNodeOperation.CPR_Applicable_to_link, operationContext.getScope()));
+      }
+      if(SNodeOperations.isInstanceOf(nodeOperation, "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess")) {
+        return !(concept.hasConceptProperty(SNodeOperation.CPR_Applicable_to_linkList, operationContext.getScope()));
+      }
+    }
     if(SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess")) {
       SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(leftExpression, "property", false), "dataType", false);
       if(SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration")) {
