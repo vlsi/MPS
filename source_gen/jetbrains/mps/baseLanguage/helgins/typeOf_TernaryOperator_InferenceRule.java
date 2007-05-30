@@ -15,9 +15,9 @@ public class typeOf_TernaryOperator_InferenceRule implements InferenceRule_Runti
   }
 
   public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "condition", true)), new QuotationClass_3().createNode(), SLinkOperations.getTarget(argument, "condition", true));
-    TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "ifTrue", true)), argument);
-    TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "ifFalse", true)), argument);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "condition", true)), new QuotationClass_3().createNode(), SLinkOperations.getTarget(argument, "condition", true), null);
+    TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "ifTrue", true)), argument, null);
+    TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "ifFalse", true)), argument, null);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression";

@@ -15,7 +15,7 @@ public class typeOf_equalsExpression_InferenceRule implements InferenceRule_Runt
   }
 
   public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createComparableEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "leftExpression", true)), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "rightExpression", true)), argument);
+    TypeChecker.getInstance().getRuntimeSupport().createComparableEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "leftExpression", true)), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "rightExpression", true)), argument, null);
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_13().createNode(), argument);
   }
   public String getApplicableConceptFQName() {

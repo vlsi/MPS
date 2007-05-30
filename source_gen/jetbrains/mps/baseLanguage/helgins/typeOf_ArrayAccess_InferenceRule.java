@@ -17,9 +17,9 @@ public class typeOf_ArrayAccess_InferenceRule implements InferenceRule_Runtime {
 
   public void applyRule(SNode argument) {
     SNode T_typevar_1175601836165 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "array", true)), new QuotationClass_10().createNode(T_typevar_1175601836165), SLinkOperations.getTarget(argument, "array", true));
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "array", true)), new QuotationClass_10().createNode(T_typevar_1175601836165), SLinkOperations.getTarget(argument, "array", true), null);
     TypeChecker.getInstance().getRuntimeSupport().givetype(T_typevar_1175601836165, argument);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "index", true)), new QuotationClass_11().createNode(), SLinkOperations.getTarget(argument, "index", true));
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "index", true)), new QuotationClass_11().createNode(), SLinkOperations.getTarget(argument, "index", true), null);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ArrayAccessExpression";

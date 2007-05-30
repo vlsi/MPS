@@ -18,8 +18,8 @@ public class typeOf_andExpression_InferenceRule implements InferenceRule_Runtime
 
   public void applyRule(SNode argument) {
     SNode ae = argument;
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(ae, "leftExpression", true)), new QuotationClass_().createNode(), SLinkOperations.getTarget(ae, "leftExpression", true));
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(ae, "rightExpression", true)), new QuotationClass_1().createNode(), SLinkOperations.getTarget(ae, "rightExpression", true));
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(ae, "leftExpression", true)), new QuotationClass_().createNode(), SLinkOperations.getTarget(ae, "leftExpression", true), null);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(ae, "rightExpression", true)), new QuotationClass_1().createNode(), SLinkOperations.getTarget(ae, "rightExpression", true), null);
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_2().createNode(), ae);
   }
   public String getApplicableConceptFQName() {

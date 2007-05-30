@@ -93,6 +93,18 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1180521278353">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1180521278354">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1180521278355">
+              <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1180521278356">
+                <link role="variableDeclaration" targetNodeId="1180014981377" resolveInfo="i" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1180521280178">
+            <property name="value" value="2" />
+          </node>
+        </node>
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178894846582" />

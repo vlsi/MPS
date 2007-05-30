@@ -172,6 +172,10 @@ public class EquationManager {
       return;
     }
 
+    if (errorInfo.getErrorString() != null) {
+      myTypeChecker.reportTypeError(errorInfo.getNodeWithError(), errorInfo.getErrorString());
+      return;
+    }
     String strongString = isWeak ? "" : " strong";
     IErrorReporter errorReporter =
             new EquationErrorReporter(this, "type ", subtypeRepresentator, " should be a" + strongString + " subtype of ", supertypeRepresentator, "");
@@ -220,6 +224,10 @@ public class EquationManager {
       return;
     }
 
+    if (errorInfo.getErrorString() != null) {
+      myTypeChecker.reportTypeError(errorInfo.getNodeWithError(), errorInfo.getErrorString());
+      return;
+    }
     String strongString = isWeak ? "" : " strong";
     IErrorReporter errorReporter =
             new EquationErrorReporter(this, "type ", representator1, " should be" + strongString + " comparable with ", representator2, "");
