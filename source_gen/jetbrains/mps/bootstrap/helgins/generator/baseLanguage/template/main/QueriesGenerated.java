@@ -465,6 +465,12 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_1175149440226(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.AbstractSubtypingRule");
   }
+  public static boolean ifMacro_Condition_1180522111446(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return (SLinkOperations.getTarget(node, "errorString", true) == null);
+  }
+  public static boolean ifMacro_Condition_1180522135989(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return (SLinkOperations.getTarget(node, "errorString", true) != null);
+  }
   public static boolean ifMacro_Condition_1180520485182(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return (SLinkOperations.getTarget(node, "errorString", true) == null);
   }
@@ -693,6 +699,9 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_1174659256692(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "rightExpression", true);
+  }
+  public static SNode sourceNodeQuery_1180522147619(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "errorString", true);
   }
   public static SNode sourceNodeQuery_1174661816168(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode toe = SLinkOperations.getTarget(node, "leftExpression", true);

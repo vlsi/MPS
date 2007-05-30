@@ -95,6 +95,10 @@ public class RuntimeSupport {
     myTypeChecker.getEquationManager().addInequationComparable(node1, node2, nodeToCheck, false);
   }
 
+  public void createEquation(SNode node1, SNode node2, SNode nodeToCheck, String errorString) {
+    myTypeChecker.getEquationManager().addEquation(node1, node2, nodeToCheck, errorString);
+  }
+
    public void createLessThanInequation(SNode node1, SNode node2, SNode nodeToCheck, String errorString) {
     myTypeChecker.getEquationManager().addInequation(node1, node2, new ErrorInfo(nodeToCheck, errorString));
   }

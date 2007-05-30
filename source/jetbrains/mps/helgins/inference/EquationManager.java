@@ -234,8 +234,11 @@ public class EquationManager {
     myTypeChecker.reportTypeError(errorInfo.getNodeWithError(), errorReporter);
   }
 
-
   public void addEquation(SNode lhs, SNode rhs, SNode nodeToCheck) {
+    addEquation(lhs, rhs, nodeToCheck, null);
+  }
+
+  public void addEquation(SNode lhs, SNode rhs, SNode nodeToCheck, String errorString) {
     SNode rhsRepresentator = getRepresentator(lhs);
     SNode lhsRepresentator = getRepresentator(rhs);
 
@@ -257,14 +260,19 @@ public class EquationManager {
 
     // solve equation
     if (!compareNodes(rhsRepresentator, lhsRepresentator)) {
-      IErrorReporter errorReporter =
-              new EquationErrorReporter(this, "incompatible types: ", rhsRepresentator, " and ", lhsRepresentator, "");
+      IErrorReporter errorReporter;
+      if (errorString != null) {
+        errorReporter = new SimpleErrorReporter(errorString);
+      } else {
+        errorReporter =
+                new EquationErrorReporter(this, "incompatible types: ", rhsRepresentator, " and ", lhsRepresentator, "");
+      }
       processErrorEquation(lhsRepresentator, rhsRepresentator, errorReporter, nodeToCheck);
       return;
     }
     Set<Pair<SNode, SNode>> childEQs = createChildEquations(rhsRepresentator, lhsRepresentator);
     for (Pair<SNode, SNode> eq : childEQs) {
-      addEquation(eq.o2, eq.o1, nodeToCheck);
+      addEquation(eq.o2, eq.o1, nodeToCheck, errorString);
     }
   }
 
