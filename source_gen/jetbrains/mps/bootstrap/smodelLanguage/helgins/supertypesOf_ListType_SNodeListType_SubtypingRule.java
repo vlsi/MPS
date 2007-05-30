@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_53;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_55;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class supertypesOf_ListType_SNodeListType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -21,7 +21,7 @@ public class supertypesOf_ListType_SNodeListType_SubtypingRule extends Subtyping
     List<SNode> supertypes = ListOperations.createList(new SNode[]{});
     SNode elementType = SLinkOperations.getTarget(type, "elementType", true);
     if(SNodeOperations.isInstanceOf(elementType, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType")) {
-      ListOperations.addElement(supertypes, new QuotationClass_53().createNode(SLinkOperations.getTarget(elementType, "concept", false)));
+      ListOperations.addElement(supertypes, new QuotationClass_55().createNode(SLinkOperations.getTarget(elementType, "concept", false)));
     }
     return supertypes;
   }

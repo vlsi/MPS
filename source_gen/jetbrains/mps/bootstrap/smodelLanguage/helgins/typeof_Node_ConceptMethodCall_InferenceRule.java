@@ -38,10 +38,10 @@ public class typeof_Node_ConceptMethodCall_InferenceRule implements InferenceRul
         arg = arg_iterator.next();
         parameter = parameter_iterator.next();
         TypeChecker.getInstance().getRuntimeSupport().check(parameter);
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(arg), TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter), arg);
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(arg), TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter), arg, null);
       }
     }
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), SLinkOperations.getTarget(SLinkOperations.getTarget(argument, "conceptMethodDeclaration", false), "returnType", true), argument);
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), SLinkOperations.getTarget(SLinkOperations.getTarget(argument, "conceptMethodDeclaration", false), "returnType", true), argument, null);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall";

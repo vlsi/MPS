@@ -518,7 +518,7 @@ public class QueriesGenerated {
     if(!(SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation"))) {
       return false;
     }
-    SNode parameterOp = concept;
+    SNode parameterOp = (SNode)concept;
     SNode leftExpression = SLinkOperations.getTarget(parentNode, "leftExpression", true);
     if(SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
       SNode nodeOperation = SLinkOperations.getTarget(leftExpression, "nodeOperation", true);
