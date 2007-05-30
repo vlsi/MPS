@@ -3386,6 +3386,41 @@
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SConceptType" id="1180457006293" />
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1180482960664">
+      <property name="name" value="concept_conceptProperties" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1180482960665" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1180482960666" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180482960667">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1180485643169">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1180485643170">
+            <property name="name" value="b" />
+            <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1180485643171" />
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1180484710723">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SConceptPropertyAccess" id="1180484716539">
+                <link role="conceptProperty" targetNodeId="1.1146528679895" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1180484708641">
+                <link role="variableDeclaration" targetNodeId="1180482998701" resolveInfo="expressionConcept" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1180485657941">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1180485659944">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperation" id="1180485659946" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1180485657942">
+              <link role="variableDeclaration" targetNodeId="1180482998701" resolveInfo="expressionConcept" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1180482998701">
+        <property name="name" value="expressionConcept" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SConceptType" id="1180482998702">
+          <link role="conceptDeclaraton" targetNodeId="1.1068431790191" />
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 

@@ -5,10 +5,11 @@ package jetbrains.mps.bootstrap.smodelLanguage.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.RulesUtil;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_17;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_18;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_19;
@@ -21,15 +22,28 @@ public class typeof_SConceptPropertyAccess_InferenceRule implements InferenceRul
 
   public void applyRule(SNode argument) {
     if(RulesUtil.checkAppliedCorrectly_generic(argument)) {
+      SNode leftConcept = null;
       SNode leftType = RulesUtil.typeOf_leftExpression(argument);
-      // todo: if not SNodeType - try to adapt
-      if(!(SNodeOperations.isInstanceOf(leftType, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"))) {
-        TypeChecker.getInstance().reportTypeError(argument, "can't compute SNodeType from left expression");
+      // sconcept ?
+      SNode maybeSConceptType = TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType"), false);
+      if(maybeSConceptType != null) {
+        leftConcept = SLinkOperations.getTarget(maybeSConceptType, "conceptDeclaraton", false);
+      } else
+      {
+        SNode maybeSNodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
+        if(maybeSNodeType != null) {
+          leftConcept = SLinkOperations.getTarget(maybeSNodeType, "concept", false);
+          if(leftConcept == null) {
+            leftConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept");
+          }
+        } else
+        {
+          if(!(false)) {
+            TypeChecker.getInstance().reportTypeError(argument, "can't compute SNodeType from left expression");
+          }
+        }
       }
-      SNode leftConcept = SLinkOperations.getTarget(leftType, "concept", false);
-      if(leftConcept == null) {
-        leftConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept");
-      }
+      // ==================
       SNode conceptPropertyDecl = SLinkOperations.getTarget(argument, "conceptProperty", false);
       if(!((conceptPropertyDecl != null))) {
         TypeChecker.getInstance().reportTypeError(argument, "no concept property");

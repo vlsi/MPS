@@ -492,24 +492,6 @@ public class QueriesGenerated {
         return !(concept.hasConceptProperty(SNodeOperation.CPR_Applicable_to_linkList, operationContext.getScope()));
       }
     }
-    if(SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess")) {
-      SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(leftExpression, "property", false), "dataType", false);
-      if(SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration")) {
-        return !(concept.hasConceptProperty(SNodeOperation.CPR_Applicable_to_enum_property, operationContext.getScope()));
-      } else
-      {
-        return !(concept.hasConceptProperty(SNodeOperation.CPR_Applicable_to_simple_property, operationContext.getScope()));
-      }
-    }
-    if(SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess")) {
-      return !(concept.hasConceptProperty(SNodeOperation.CPR_Applicable_to_concept_property, operationContext.getScope()));
-    }
-    if(SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess")) {
-      return !(concept.hasConceptProperty(SNodeOperation.CPR_Applicable_to_link, operationContext.getScope()));
-    }
-    if(SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess")) {
-      return !(concept.hasConceptProperty(SNodeOperation.CPR_Applicable_to_linkList, operationContext.getScope()));
-    }
     // ==========
     SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
     // is concept ?
