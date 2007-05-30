@@ -11,8 +11,6 @@ import jetbrains.mps.baseLanguage.generator.java.closures.ClosuresUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.structure.VariableDeclaration;
-import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration;
 import jetbrains.mps.baseLanguage.generator.java.closures._QueriesUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
@@ -43,7 +41,7 @@ public class QueriesGenerated {
     SNode var = SLinkOperations.getTarget(node, "variableDeclaration", false);
     SNode contextOwner = ClosuresUtil.findEnclosingClosureContextOwner(var);
     if(contextOwner != null) {
-      return ClosuresUtil.isVariableUsedInClosure(contextOwner, (VariableDeclaration)((INodeAdapter)SNodeOperations.getAdapter(var)), generator);
+      return ClosuresUtil.isVariableUsedInClosure(contextOwner, ((VariableDeclaration)SNodeOperations.getAdapter(var)), generator);
     }
     return false;
   }
@@ -51,16 +49,16 @@ public class QueriesGenerated {
     SNode var = SLinkOperations.getTarget(node, "variableDeclaration", false);
     SNode contextOwner = ClosuresUtil.findEnclosingClosureContextOwner(var);
     if(contextOwner != null) {
-      return ClosuresUtil.isVariableUsedInClosure(contextOwner, (VariableDeclaration)((INodeAdapter)SNodeOperations.getAdapter(var)), generator);
+      return ClosuresUtil.isVariableUsedInClosure(contextOwner, ((VariableDeclaration)SNodeOperations.getAdapter(var)), generator);
     }
     return false;
   }
   public static boolean baseMappingRule_Condition_1170199119856(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode var = SLinkOperations.getTarget(node, "localVariableDeclaration", true);
     if(SLinkOperations.getTarget(var, "initializer", true) != null) {
-      SNode enclosingMethod = SNodeOperations.getAncestor(var, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
-      if(enclosingMethod != null) {
-        return ClosuresUtil.isVariableUsedInClosure(enclosingMethod, (VariableDeclaration)((LocalVariableDeclaration)SNodeOperations.getAdapter(var)), generator);
+      SNode contextOwner = ClosuresUtil.findEnclosingClosureContextOwner(var);
+      if(contextOwner != null) {
+        return ClosuresUtil.isVariableUsedInClosure(contextOwner, ((VariableDeclaration)SNodeOperations.getAdapter(var)), generator);
       }
     }
     return false;
