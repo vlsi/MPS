@@ -5,8 +5,10 @@ package jetbrains.mps.bootstrap.smodelLanguage.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_1;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_2;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_SNodeTypeCastExpression_InferenceRule implements InferenceRule_Runtime {
@@ -15,7 +17,13 @@ public class typeof_SNodeTypeCastExpression_InferenceRule implements InferenceRu
   }
 
   public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument);
+    SNode leftType = TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(SLinkOperations.getTarget(argument, "leftExpression", true));
+    if(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new QuotationClass_1().createNode(), false, false)) {
+      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument);
+    } else
+    {
+      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_2().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument);
+    }
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression";

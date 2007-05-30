@@ -6,7 +6,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_58;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_60;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class supertypesOf_SNodeListType_ListType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -16,7 +16,7 @@ public class supertypesOf_SNodeListType_ListType_SubtypingRule extends Subtyping
 
   public SNode getSubOrSuperType(SNode type) {
     SNode elementConcept = SLinkOperations.getTarget(type, "elementConcept", false);
-    return new QuotationClass_58().createNode(elementConcept);
+    return new QuotationClass_60().createNode(elementConcept);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType";

@@ -10,10 +10,10 @@ import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.DataTypeUtil;
 import jetbrains.mps.bootstrap.structureLanguage.structure.DataTypeDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_5;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_6;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_7;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_8;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_9;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_10;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_Property_HasValue_Simple_InferenceRule implements InferenceRule_Runtime {
@@ -31,20 +31,20 @@ public class typeof_Property_HasValue_Simple_InferenceRule implements InferenceR
       SNode value = SLinkOperations.getTarget(argument, "value", true);
       if((value != null)) {
         if(DataTypeUtil.isSimpleString(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
-          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value), new QuotationClass_5().createNode(), value, null);
+          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value), new QuotationClass_7().createNode(), value, null);
         } else
         if(DataTypeUtil.isSimpleInteger(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
-          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value), new QuotationClass_6().createNode(), value, null);
+          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value), new QuotationClass_8().createNode(), value, null);
         } else
         if(DataTypeUtil.isSimpleBoolean(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
-          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value), new QuotationClass_7().createNode(), value, null);
+          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value), new QuotationClass_9().createNode(), value, null);
         } else
         {
           TypeChecker.getInstance().reportTypeError(argument, "unknown property datatype: " + dataType);
         }
       }
     }
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_8().createNode(), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_10().createNode(), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Simple";

@@ -10,9 +10,9 @@ import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_17;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_18;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_19;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_20;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_21;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_SConceptPropertyAccess_InferenceRule implements InferenceRule_Runtime {
@@ -52,13 +52,13 @@ public class typeof_SConceptPropertyAccess_InferenceRule implements InferenceRul
       RulesUtil.checkAssignableConcept(leftConcept, declaringConcept, argument, "operation is applied to wrong concept");
       // ==========
       if(SNodeOperations.isInstanceOf(conceptPropertyDecl, "jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration")) {
-        TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_17().createNode(), argument);
+        TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_19().createNode(), argument);
       } else
       if(SNodeOperations.isInstanceOf(conceptPropertyDecl, "jetbrains.mps.bootstrap.structureLanguage.structure.IntegerConceptPropertyDeclaration")) {
-        TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_18().createNode(), argument);
+        TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_20().createNode(), argument);
       } else
       if(SNodeOperations.isInstanceOf(conceptPropertyDecl, "jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptPropertyDeclaration")) {
-        TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_19().createNode(), argument);
+        TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_21().createNode(), argument);
       } else
       {
         TypeChecker.getInstance().reportTypeError(argument, "unknown type of concept property: " + conceptPropertyDecl);

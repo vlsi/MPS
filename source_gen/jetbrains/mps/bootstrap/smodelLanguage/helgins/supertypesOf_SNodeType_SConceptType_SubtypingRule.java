@@ -6,7 +6,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.Pattern_2;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_60;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_62;
 
 public class supertypesOf_SNodeType_SConceptType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
@@ -16,7 +16,7 @@ public class supertypesOf_SNodeType_SConceptType_SubtypingRule extends Subtyping
   }
 
   public SNode getSubOrSuperType(SNode type) {
-    return new QuotationClass_60().createNode();
+    return new QuotationClass_62().createNode();
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType";

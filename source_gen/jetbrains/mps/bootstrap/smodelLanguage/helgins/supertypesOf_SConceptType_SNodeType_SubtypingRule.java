@@ -7,9 +7,9 @@ import jetbrains.mps.bootstrap.helgins.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_32;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_33;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_34;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_35;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_36;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class supertypesOf_SConceptType_SNodeType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -21,11 +21,11 @@ public class supertypesOf_SConceptType_SNodeType_SubtypingRule extends Subtyping
     SNode concept = SLinkOperations.getTarget(type, "conceptDeclaraton", false);
     if(concept != null) {
       if(SNodeOperations.isInstanceOf(concept, "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration")) {
-        return new QuotationClass_32().createNode();
+        return new QuotationClass_34().createNode();
       }
-      return new QuotationClass_33().createNode();
+      return new QuotationClass_35().createNode();
     }
-    return new QuotationClass_34().createNode();
+    return new QuotationClass_36().createNode();
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType";

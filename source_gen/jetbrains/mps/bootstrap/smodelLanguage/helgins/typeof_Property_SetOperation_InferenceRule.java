@@ -10,10 +10,10 @@ import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.DataTypeUtil;
 import jetbrains.mps.bootstrap.structureLanguage.structure.DataTypeDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_1;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_2;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_3;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_4;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_5;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_6;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_Property_SetOperation_InferenceRule implements InferenceRule_Runtime {
@@ -31,17 +31,17 @@ public class typeof_Property_SetOperation_InferenceRule implements InferenceRule
       SNode value = SLinkOperations.getTarget(argument, "value", true);
       if((value != null)) {
         if(DataTypeUtil.isSimpleString(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
-          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value), new QuotationClass_1().createNode(), value, null);
+          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value), new QuotationClass_3().createNode(), value, null);
         } else
         if(DataTypeUtil.isSimpleInteger(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
-          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value), new QuotationClass_2().createNode(), value, null);
+          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value), new QuotationClass_4().createNode(), value, null);
         } else
         if(DataTypeUtil.isSimpleBoolean(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
-          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value), new QuotationClass_3().createNode(), value, null);
+          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value), new QuotationClass_5().createNode(), value, null);
         } else
         if(DataTypeUtil.isEnum(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
           if(!(SNodeOperations.isInstanceOf(value, "jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference"))) {
-            if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(SLinkOperations.getTarget(argument, "value", true)), new QuotationClass_4().createNode()))) {
+            if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(SLinkOperations.getTarget(argument, "value", true)), new QuotationClass_6().createNode()))) {
               TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(argument, "value", true), "<enum member> or String is expected");
             }
           }

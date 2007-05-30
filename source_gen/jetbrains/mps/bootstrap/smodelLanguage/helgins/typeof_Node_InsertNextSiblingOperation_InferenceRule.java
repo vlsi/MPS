@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.RulesUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_13;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_15;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_Node_InsertNextSiblingOperation_InferenceRule implements InferenceRule_Runtime {
@@ -23,7 +23,7 @@ public class typeof_Node_InsertNextSiblingOperation_InferenceRule implements Inf
       if(!(!((TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter) == null)))) {
         TypeChecker.getInstance().reportTypeError(parameter, "no type");
       }
-      if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter), new QuotationClass_13().createNode()))) {
+      if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter), new QuotationClass_15().createNode()))) {
         TypeChecker.getInstance().reportTypeError(parameter, "incompatible type: snode expected");
       }
     }

@@ -11,8 +11,8 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_30;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_31;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_32;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_33;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class supertypesOf_SNodeType_SNodeType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -30,13 +30,13 @@ public class supertypesOf_SNodeType_SNodeType_SubtypingRule extends SubtypingRul
         try {
           while(_zCursor1.moveToNext()) {
             SNode superConcept = _zCursor1.getCurrent();
-            ListOperations.addElement(list, new QuotationClass_30().createNode(superConcept));
+            ListOperations.addElement(list, new QuotationClass_32().createNode(superConcept));
           }
         } finally {
           _zCursor1.release();
         }
       }
-      ListOperations.addElement(list, new QuotationClass_31().createNode());
+      ListOperations.addElement(list, new QuotationClass_33().createNode());
     }
     return list;
   }

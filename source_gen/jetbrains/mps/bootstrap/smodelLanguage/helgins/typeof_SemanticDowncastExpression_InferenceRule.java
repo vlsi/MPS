@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_20;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_21;
 import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_22;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_23;
+import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_24;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_SemanticDowncastExpression_InferenceRule implements InferenceRule_Runtime {
@@ -22,15 +22,15 @@ public class typeof_SemanticDowncastExpression_InferenceRule implements Inferenc
     if((SLinkOperations.getTarget(argument, "leftExpression", true) != null)) {
       SNode leftType = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "leftExpression", true));
       if(SNodeOperations.isInstanceOf(leftType, "jetbrains.mps.bootstrap.smodelLanguage.structure.SModelType")) {
-        TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_20().createNode(), argument);
+        TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_22().createNode(), argument);
         return;
       }
       if(SNodeOperations.isInstanceOf(leftType, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType")) {
-        TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_21().createNode(), argument);
+        TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_23().createNode(), argument);
         return;
       }
       if(SNodeOperations.isInstanceOf(leftType, "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType")) {
-        TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_22().createNode(), argument);
+        TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_24().createNode(), argument);
         return;
       }
       TypeChecker.getInstance().getRuntimeSupport().givetype(leftType, argument);
