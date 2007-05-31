@@ -28,8 +28,16 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1180014956835">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1180014956836">
-            <property name="name" value="s" />
+            <property name="name" value="string" />
             <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1180014956837">
+              <link role="classifier" extResolveInfo="1.[Classifier]String" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1180621183345">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1180621183346">
+            <property name="name" value="myString" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1180621183347">
               <link role="classifier" extResolveInfo="1.[Classifier]String" />
             </node>
           </node>
@@ -43,7 +51,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1180014981376">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1180014981377">
-            <property name="name" value="id" />
+            <property name="name" value="i" />
             <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1180014981378" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1180014984692">
               <property name="value" value="2" />
