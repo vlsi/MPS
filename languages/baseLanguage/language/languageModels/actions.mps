@@ -2549,10 +2549,11 @@
                   <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1177502445380">
                     <link role="concept" targetNodeId="1.1081256982272" />
                   </node>
-                  <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1177502454723">
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_model" id="1177502452827" />
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Model_CreateNewNodeOperation" id="1177502456272">
-                      <link role="concept" targetNodeId="1.1081256982272" />
+                  <node role="initializer" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1180649080490">
+                    <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeCreator" id="1180649085013">
+                      <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1180649085014">
+                        <link role="concept" targetNodeId="1.1081256982272" />
+                      </node>
                     </node>
                   </node>
                 </node>

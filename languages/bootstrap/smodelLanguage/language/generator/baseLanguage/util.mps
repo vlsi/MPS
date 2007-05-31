@@ -888,7 +888,7 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1172424560853">
         <property name="name" value="concept" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1172424560854">
-          <link role="concept" targetNodeId="5.1071489090640" />
+          <link role="concept" targetNodeId="5.1169125787135" />
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096743" />

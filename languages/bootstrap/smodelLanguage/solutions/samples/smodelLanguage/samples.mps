@@ -2807,6 +2807,26 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1180648407741">
+      <property name="name" value="newNode3" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1180648407742" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1180648407743" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180648407744">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1180648478076">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1180648478077">
+            <property name="name" value="ifStatement" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1180648478078">
+              <link role="concept" targetNodeId="1.1068580123159" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1180648443213">
+              <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeCreator" id="1180648455933">
+                <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1180648455934" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1169584463554">
     <property name="name" value="ListOfNodes" />
