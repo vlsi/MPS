@@ -224,6 +224,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1178192141098">
+    <property name="package" value="Operations.Node" />
     <link role="concept" targetNodeId="1.1144195091934" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1178192141099">
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178192141100" />
@@ -307,6 +308,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1178192141390">
+    <property name="package" value="Operations.Property" />
     <link role="concept" targetNodeId="1.1138676077309" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1178192141391">
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178192141392" />
@@ -434,6 +436,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1179409416623">
+    <property name="package" value="Operations.Node" />
     <link role="concept" targetNodeId="1.1179409122411" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1179412972990">
       <property name="name" value="isVirtualMethodCall" />

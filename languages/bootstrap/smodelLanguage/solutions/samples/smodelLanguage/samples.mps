@@ -3084,8 +3084,8 @@
             </node>
             <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Model_RootsIncludingImportedOperation" id="1177021470467">
               <link role="concept" targetNodeId="1.1068580123159" />
-              <node role="scope" type="jetbrains.mps.baseLanguage.StringLiteral" id="1178232299913">
-                <property name="value" value="aaa" />
+              <node role="scope" type="jetbrains.mps.baseLanguage.ParameterReference" id="1180635550955">
+                <link role="variableDeclaration" targetNodeId="1180635538871" resolveInfo="scope" />
               </node>
             </node>
           </node>
@@ -3094,6 +3094,12 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1177021446368">
         <property name="name" value="model" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SModelType" id="1177021446369" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1180635538871">
+        <property name="name" value="scope" />
+        <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1180635543598">
+          <link role="classifier" extResolveInfo="4.[Classifier]IScope" />
+        </node>
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1171324257150">
