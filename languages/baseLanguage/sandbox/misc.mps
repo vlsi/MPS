@@ -43,7 +43,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1180014981376">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1180014981377">
-            <property name="name" value="i" />
+            <property name="name" value="id" />
             <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1180014981378" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1180014984692">
               <property name="value" value="2" />

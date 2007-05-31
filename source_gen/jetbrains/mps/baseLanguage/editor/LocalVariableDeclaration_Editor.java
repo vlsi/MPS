@@ -20,6 +20,9 @@ import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
+import jetbrains.mps.baseLanguage.editor.LocalVariableDeclaration_name_postfixCellMenu;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 
 public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
@@ -173,6 +176,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new LocalVariableDeclaration_name_postfixCellMenu()}));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075303160503");
     editorCell.setLayoutConstraint("");
     return editorCell;
