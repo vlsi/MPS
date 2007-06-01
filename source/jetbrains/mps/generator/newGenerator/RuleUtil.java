@@ -389,11 +389,18 @@ public class RuleUtil {
         return outputNodes;
       } else if (templateChildNode instanceof MapSrcNodeMacro || templateChildNode instanceof MapSrcListMacro) {
         // $MAP-SRC$ or $MAP-SRCL$
+        MapSrcMacro_MapperFunction macro_mapperFunction;
+        String mapperId; // old
+        if (templateChildNode instanceof MapSrcNodeMacro) {
+          macro_mapperFunction = ((MapSrcNodeMacro) templateChildNode).getMapperFunction();
+          mapperId = ((MapSrcNodeMacro) templateChildNode).getSourceNodeMapperId();
+        } else {
+          macro_mapperFunction = ((MapSrcListMacro) templateChildNode).getMapperFunction();
+          mapperId = ((MapSrcListMacro) templateChildNode).getSourceNodeMapperId();
+        }
+
         List<SNode> newInputNodes = TemplateGenUtil.createSourceNodeListForTemplateNode_ForNewGenerator(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
         for (SNode newInputNode : newInputNodes) {
-          MapSrcNodeMacro mapSrcNodeMacro = (MapSrcNodeMacro) nodeMacro;
-          MapSrcMacro_MapperFunction macro_mapperFunction = mapSrcNodeMacro.getMapperFunction();
-          String mapperId = mapSrcNodeMacro.getSourceNodeMapperId();
           if (mapperId != null || macro_mapperFunction != null) {
             SNode childToReplace = SModelUtil_new.instantiateConceptDeclaration(templateNode.getConceptFqName(), myOutputModel, myGenerator.getScope(), false);
             outputParentNode.addChild(childRole, childToReplace);
