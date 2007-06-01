@@ -17,7 +17,7 @@ public class typeof_SNodeCreator_InferenceRule implements InferenceRule_Runtime 
     SNode createdType = SLinkOperations.getTarget(argument, "createdType", true);
     if(createdType != null) {
       if(!(SLinkOperations.getTarget(createdType, "concept", false) != null)) {
-        TypeChecker.getInstance().reportTypeError(createdType, "concrete node expected");
+        TypeChecker.getInstance().reportTypeError(createdType, "concrete node type is expected");
       }
     }
     TypeChecker.getInstance().getRuntimeSupport().givetype(createdType, argument);
