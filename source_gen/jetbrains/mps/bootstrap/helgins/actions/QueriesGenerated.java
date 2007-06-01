@@ -32,7 +32,7 @@ public class QueriesGenerated {
     if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Expression")) {
       if(!(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression"))) {
         SLinkOperations.setTarget(newNode, "term", sampleNode, true);
-      } else 
+      } else
       {
         SLinkOperations.setTarget(newNode, "term", SLinkOperations.getTarget(sampleNode, "term", true), true);
       }

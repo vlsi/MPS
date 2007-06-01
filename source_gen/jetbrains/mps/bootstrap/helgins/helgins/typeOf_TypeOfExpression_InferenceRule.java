@@ -8,11 +8,6 @@ import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.helgins.helgins.QuotationClass_3;
 import jetbrains.mps.bootstrap.helgins.helgins.QuotationClass_4;
-import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelUID;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_TypeOfExpression_InferenceRule implements InferenceRule_Runtime {
@@ -21,15 +16,11 @@ public class typeOf_TypeOfExpression_InferenceRule implements InferenceRule_Runt
   }
 
   public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "term", true)), new QuotationClass_3().createNode(), SLinkOperations.getTarget(argument, "term", true));
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "term", true)), new QuotationClass_3().createNode(), SLinkOperations.getTarget(argument, "term", true), null);
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_4().createNode(), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression";
-  }
-  public ApplicableNodeCondition getNodeCondition() {
-    SModel model = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.bootstrap.helgins.helgins")).getSModel();
-    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1176909544344"));
   }
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());

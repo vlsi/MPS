@@ -8,11 +8,6 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.helgins.QuotationClass_13;
-import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelUID;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_CoerceExpression_InferenceRule implements InferenceRule_Runtime {
@@ -25,7 +20,7 @@ public class typeOf_CoerceExpression_InferenceRule implements InferenceRule_Runt
     SNode pattern = SLinkOperations.getTarget(argument, "pattern", true);
     if(SNodeOperations.isInstanceOf(pattern, "jetbrains.mps.bootstrap.helgins.structure.ConceptReference")) {
       concept = SLinkOperations.getTarget(pattern, "concept", false);
-    } else 
+    } else
     {
       concept = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SLinkOperations.getTarget(pattern, "pattern", true), "patternNode", true));
     }
@@ -33,10 +28,6 @@ public class typeOf_CoerceExpression_InferenceRule implements InferenceRule_Runt
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.helgins.structure.CoerceExpression";
-  }
-  public ApplicableNodeCondition getNodeCondition() {
-    SModel model = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.bootstrap.helgins.helgins")).getSModel();
-    return (ApplicableNodeCondition)BaseAdapter.fromNode(model.getNodeById("1178872169357"));
   }
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
