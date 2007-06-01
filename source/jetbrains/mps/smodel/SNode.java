@@ -45,13 +45,13 @@ public class SNode implements Cloneable, Iterable<SNode> {
   private IChildrenLoader myChildrenLoader;
 
   private List<SReference> myReferences;
-  private HashMap<String, String> myProperties;
+  private Map<String, String> myProperties;
 
   private boolean myRegisteredInModelFlag;
   private SModel myModel;
   private SNodeId myId;
 
-  private HashMap<Object, Object> myUserObjects;
+  private Map<Object, Object> myUserObjects;
   private Set<String> myPropertySettersInProgress;
   private Set<String> myPropertyGettersInProgress;
   private Set<String> mySetReferentEventHandlersInProgress;
