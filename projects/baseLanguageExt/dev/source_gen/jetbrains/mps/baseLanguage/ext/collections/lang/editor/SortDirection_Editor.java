@@ -28,7 +28,7 @@ public class SortDirection_Editor extends DefaultNodeEditor {
     EditorCell editorCell = null;
     if(alternationCondition) {
       editorCell = this.createConstantCell(context, node, "asc");
-    } else 
+    } else
     {
       editorCell = this.createConstantCell1(context, node, "desc");
     }

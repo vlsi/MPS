@@ -16,8 +16,8 @@ public class typeof_BinaryOperation_InferenceRule implements InferenceRule_Runti
 
   public void applyRule(SNode argument) {
     SNode inputSequenceType = RulesFunctions_Collections.get_inputSequenceType(argument);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "rightExpression", true)), inputSequenceType, SLinkOperations.getTarget(argument, "rightExpression", true));
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), inputSequenceType, argument);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "rightExpression", true)), inputSequenceType, SLinkOperations.getTarget(argument, "rightExpression", true), null);
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), inputSequenceType, argument, null);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.BinaryOperation";
