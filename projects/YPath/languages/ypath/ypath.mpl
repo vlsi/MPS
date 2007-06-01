@@ -23,7 +23,9 @@
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="ypath" />
   </models>
   <module />
-  <accessoryModels />
+  <accessoryModels>
+    <model modelUID="ypath.treepaths" />
+  </accessoryModels>
   <generators>
     <generator generatorUID="ypath#1168438160182" targetLanguage="jetbrains.mps.baseLanguage">
       <models>
