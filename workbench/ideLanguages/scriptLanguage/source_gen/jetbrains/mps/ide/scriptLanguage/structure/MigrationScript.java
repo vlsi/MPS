@@ -13,9 +13,9 @@ import jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance;
 import java.util.List;
 
 public class MigrationScript extends BaseConcept implements INamedConcept {
+  public static String PART = "part";
   public static String TITLE = "title";
   public static String NAME = "name";
-  public static String PART = "part";
 
   public  MigrationScript(SNode node) {
     super(node);
@@ -28,18 +28,6 @@ public class MigrationScript extends BaseConcept implements INamedConcept {
     return MigrationScript.newInstance(sm, false);
   }
 
-  public String getTitle() {
-    return this.getProperty(MigrationScript.TITLE);
-  }
-  public void setTitle(String value) {
-    this.setProperty(MigrationScript.TITLE, value);
-  }
-  public String getName() {
-    return this.getProperty(MigrationScript.NAME);
-  }
-  public void setName(String value) {
-    this.setProperty(MigrationScript.NAME, value);
-  }
   public int getPartsCount() {
     return this.getChildCount(MigrationScript.PART);
   }
@@ -54,5 +42,17 @@ public class MigrationScript extends BaseConcept implements INamedConcept {
   }
   public void insertPart(MigrationScriptPart_Instance prev, MigrationScriptPart_Instance node) {
     this.insertChild(prev, MigrationScript.PART, node);
+  }
+  public String getTitle() {
+    return this.getProperty(MigrationScript.TITLE);
+  }
+  public void setTitle(String value) {
+    this.setProperty(MigrationScript.TITLE, value);
+  }
+  public String getName() {
+    return this.getProperty(MigrationScript.NAME);
+  }
+  public void setName(String value) {
+    this.setProperty(MigrationScript.NAME, value);
   }
 }
