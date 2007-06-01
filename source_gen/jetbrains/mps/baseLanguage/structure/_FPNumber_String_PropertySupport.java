@@ -10,7 +10,7 @@ public class _FPNumber_String_PropertySupport extends PropertySupport {
     String testValue = null;
     if(value == null) {
       testValue = "";
-    } else 
+    } else
     {
       testValue = value;
     }

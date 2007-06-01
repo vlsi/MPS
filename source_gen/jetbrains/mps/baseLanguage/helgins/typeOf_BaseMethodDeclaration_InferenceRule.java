@@ -46,26 +46,26 @@ public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule
     if(expectedRetType == null) {
       // shouldn't return any values
       {
-        ICursor<SNode> _zCursor = CursorFactory.createCursor(returnStatements);
+        ICursor<SNode> _zCursor1 = CursorFactory.createCursor(returnStatements);
         try {
-          while(_zCursor.moveToNext()) {
-            SNode returnStatement = _zCursor.getCurrent();
+          while(_zCursor1.moveToNext()) {
+            SNode returnStatement = _zCursor1.getCurrent();
             if((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
               TypeChecker.getInstance().reportTypeError(returnStatement, "no return value expected");
             }
           }
         } finally {
-          _zCursor.release();
+          _zCursor1.release();
         }
       }
     } else
     {
       // should return subtypes of the 'expected type'
       {
-        ICursor<SNode> _zCursor1 = CursorFactory.createCursor(returnStatements);
+        ICursor<SNode> _zCursor2 = CursorFactory.createCursor(returnStatements);
         try {
-          while(_zCursor1.moveToNext()) {
-            SNode returnStatement = _zCursor1.getCurrent();
+          while(_zCursor2.moveToNext()) {
+            SNode returnStatement = _zCursor2.getCurrent();
             if((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
               TypeChecker.getInstance().reportTypeError(returnStatement, "should return value");
             } else
@@ -77,7 +77,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule
             }
           }
         } finally {
-          _zCursor1.release();
+          _zCursor2.release();
         }
       }
     }
