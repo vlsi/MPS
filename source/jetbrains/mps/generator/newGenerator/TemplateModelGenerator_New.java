@@ -362,6 +362,14 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     throw new RuntimeException("not implemented");
   }
 
+  public INodeBuilder findRootNodeBuilder(Condition<INodeBuilder> condition) {
+    for (SNode rootNode : myNewRootNodes) {
+      SimpleNodeBuilder builder = new SimpleNodeBuilder(this, rootNode);
+      if(condition.met(builder)) return builder;
+    }
+    return null;  
+  }
+
   public INodeBuilder findNodeBuilder(Condition<INodeBuilder> condition) {
     throw new RuntimeException("not implemented");
   }

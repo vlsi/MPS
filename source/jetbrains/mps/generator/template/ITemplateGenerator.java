@@ -58,6 +58,8 @@ public interface ITemplateGenerator extends ITemplateLanguageConstants {
 
   List<INodeBuilder> findTopBuildersForSource(SNode sourceNode);
 
+  INodeBuilder findRootNodeBuilder(Condition<INodeBuilder> condition);
+
   INodeBuilder findNodeBuilder(Condition<INodeBuilder> condition);
 
   INodeBuilder findNodeBuilder(INodeBuilder fromBuilder, Condition<INodeBuilder> condition);
