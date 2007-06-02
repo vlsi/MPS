@@ -126,11 +126,11 @@ public class ReferenceInfo_Default extends ReferenceInfo {
   }
 
 
-  public void tryToResolveUsingTemplateNodeToOutputNodeMap(TemplateModelGenerator_New generator) {
+  public void tryToResolveUsingTemplateNodeToOutputNodeMap(TemplateModelGenerator_New generator, boolean reportError) {
     SNode outputTargetNode = generator.findOutputNodeByTemplateNode(myTemplateTargetNode);
     //that means that there were more than one target node for given template node
-    if(outputTargetNode == myTemplateTargetNode) {
-      generator.showErrorMessage(myInputNode, myTemplateTargetNode, "Can't resolve reference: there more than one possible target node generated from the template node");
+    if(outputTargetNode == myTemplateTargetNode && reportError) {
+      generator.showErrorMessage(myInputNode, myTemplateSourceNode, "Can't resolve reference: there more than one possible target node generated from the template node");
       return;
     }
     myOutputNode.addReferent(myTemplateReference.getRole(), outputTargetNode);

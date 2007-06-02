@@ -42,6 +42,10 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
     generator.setCurrentBuilder(null);
   }
 
+  public void tryToResolveUsingTemplateNodeToOutputNodeMap(TemplateModelGenerator_New generator, boolean reportError) {
+    // nothing
+  }
+
   public void expandReferenceMacro(ITemplateGenerator generator) {
     SNode referentNode;
     String linkRole = myReferenceMacro.getLink().getRole();

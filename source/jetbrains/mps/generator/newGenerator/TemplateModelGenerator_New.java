@@ -39,9 +39,9 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   private Map<TemplateSwitch, List<TemplateSwitch>> myTemplateSwitchToListCache;
   private boolean isChanged = false;
 
-  public TemplateModelGenerator_New( GenerationSessionContext operationContext,
-                                     IAdaptiveProgressMonitor progressMonitor,
-                                     IMessageHandler handler) {
+  public TemplateModelGenerator_New(GenerationSessionContext operationContext,
+                                    IAdaptiveProgressMonitor progressMonitor,
+                                    IMessageHandler handler) {
     super(operationContext, progressMonitor, handler);
   }
 
@@ -139,7 +139,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     for (SNode rootNode : myInputModel.getRoots()) {
       List<ConceptDeclaration> abandonedRootConcepts = ruleManager.getAbandonedRootConcepts();
       for (ConceptDeclaration abandonedRootConcept : abandonedRootConcepts) {
-        if(rootNode.isInstanceOfConcept(abandonedRootConcept)){
+        if (rootNode.isInstanceOfConcept(abandonedRootConcept)) {
           rootsToCopy.remove(rootNode);
         }
       }
@@ -161,21 +161,21 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   private void validateReferences(SNode node) {
     List<SReference> list = node.getReferences();
     for (SReference reference : list) {
-      vallidateReference(reference);
+      validateReference(reference);
     }
     for (SNode childNode : node.getChildren()) {
       validateReferences(childNode);
     }
   }
 
-  private void vallidateReference(SReference reference) {
-    if(reference.isExternal())return;
-    if(myOutputModel.getNodeById(reference.getTargetNodeId()) != null) return;
+  private void validateReference(SReference reference) {
+    if (reference.isExternal()) return;
+    if (myOutputModel.getNodeById(reference.getTargetNodeId()) != null) return;
     SNode outputNode = reference.getSourceNode();
     SNode inputNode = findInputNodeByOutputNodeWithSameId(outputNode);
-    if(inputNode == null)return;
+    if (inputNode == null) return;
     SReference inputReference = inputNode.getReference(reference.getRole());
-    if(inputReference == null) return;
+    if (inputReference == null) return;
     ReferenceInfo_Default refInfo = new ReferenceInfo_Default(outputNode, inputReference, inputNode, inputReference.getTargetNode(), inputNode);
     outputNode.removeReference(reference);
     refInfo.execute(this);
@@ -184,14 +184,17 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   private void updateAllReferences() {
     ArrayList<ReferenceInfo> referenceInfos = myReferenceInfos;
     ArrayList<ReferenceInfo> newReferenceInfos = new ArrayList<ReferenceInfo>(referenceInfos.size());
-    while(true) {
+    while (true) {
       for (ReferenceInfo referenceInfo : referenceInfos) {
         referenceInfo.execute(this);
-        if(!referenceInfo.isSuccess()) {
-          newReferenceInfos.add(referenceInfo);
+        if (!referenceInfo.isSuccess()) {
+          referenceInfo.tryToResolveUsingTemplateNodeToOutputNodeMap(this, false);
+          if (!referenceInfo.isSuccess()) {
+            newReferenceInfos.add(referenceInfo);
+          }
         }
       }
-      if(newReferenceInfos.size() == 0 || newReferenceInfos.size() == referenceInfos.size()) {
+      if (newReferenceInfos.size() == 0 || newReferenceInfos.size() == referenceInfos.size()) {
         break;
       }
       referenceInfos = newReferenceInfos;
@@ -199,12 +202,12 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     }
 
     if (newReferenceInfos.size() > 0) {
-//try to resolve all the rest references using template to output node map
+      //try to resolve all the rest references using template to output node map
       referenceInfos = new ArrayList<ReferenceInfo>(newReferenceInfos);
       newReferenceInfos = new ArrayList<ReferenceInfo>(referenceInfos.size());
       for (ReferenceInfo referenceInfo : referenceInfos) {
-        referenceInfo.tryToResolveUsingTemplateNodeToOutputNodeMap(this);
-        if(!referenceInfo.isSuccess()) {
+        referenceInfo.tryToResolveUsingTemplateNodeToOutputNodeMap(this, true);
+        if (!referenceInfo.isSuccess()) {
           newReferenceInfos.add(referenceInfo);
         }
       }
@@ -232,7 +235,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
 
   public SNode findOutputNodeByTemplateNodeAndInputNode(SNode templateNode, SNode inputNode) {
     INodeBuilder nodeBuilder = myTemplateNodeAndInputNodeToBuilderMap.get(new Pair(templateNode, inputNode));
-    if(nodeBuilder == null) return null;
+    if (nodeBuilder == null) return null;
     return nodeBuilder.getTargetNode();
   }
 
@@ -254,7 +257,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
 
   public void addOutputNodeByRuleNameAndInputNode(SNode templateNode, String ruleName, SNode inputNode, SNode outputNode) {
     Pair key = new Pair(ruleName, inputNode);
-    if(myRuleNameAndInputNodeToBuilderMap.get(key) == null) {
+    if (myRuleNameAndInputNodeToBuilderMap.get(key) == null) {
       myRuleNameAndInputNodeToBuilderMap.put(key, new SimpleNodeBuilder(this, outputNode, templateNode, inputNode));
     }
   }
@@ -273,14 +276,13 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   public void addOutputNodeByTemplateNode(SNode templateNode, SNode outputNode) {
     SNode prevOutputNode = myTemplateNodeToOutputNodeMap.get(templateNode);
     // that means that there were more than one output node for given template node
-    if(prevOutputNode == templateNode) {
+    if (prevOutputNode == templateNode) {
       return;
     }
-    if(prevOutputNode != null) {
+    if (prevOutputNode != null) {
       // that means that there are more than one output node for given node, and we cannot resolve reference to it.
       myTemplateNodeToOutputNodeMap.put(templateNode, templateNode);
-    }
-    else {
+    } else {
       myTemplateNodeToOutputNodeMap.put(templateNode, outputNode);
     }
   }
@@ -323,7 +325,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   }
 
   public INodeBuilder findNodeBuilderForSource(SNode inputNode, String mappingName) {
-    return  findOutputNodeByRuleNameAndInputNode(mappingName, inputNode);
+    return findOutputNodeByRuleNameAndInputNode(mappingName, inputNode);
   }
 
   //todo this method supposes that inputNode is not changed - it should be deprecated after going to new generator
@@ -334,18 +336,18 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
 
   public SNode findCopyingOutputNodeForInputNode(SNode inputNode) {
     INodeBuilder builder = findCopyingNodeBuilderForSource(inputNode);
-    if(builder == null) {
+    if (builder == null) {
       return null;
     }
     return builder.getTargetNode();
   }
 
   public INodeBuilder findNodeBuilderForSourceAndTemplate(SNode inputNode, SNode template) {
-    INodeBuilder builder =  myTemplateNodeAndInputNodeToBuilderMap.get(new Pair<SNode, SNode>(template, inputNode));
-    if(builder != null) return builder;
-    if(inputNode == template) {
+    INodeBuilder builder = myTemplateNodeAndInputNodeToBuilderMap.get(new Pair<SNode, SNode>(template, inputNode));
+    if (builder != null) return builder;
+    if (inputNode == template) {
       SNode outputNode = findOutputNodeByInputNodeWithSameId(inputNode);
-      if(outputNode == null) {
+      if (outputNode == null) {
         return null;
       }
       return new SimpleNodeBuilder(this, outputNode, inputNode, inputNode);
@@ -365,9 +367,9 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   public INodeBuilder findRootNodeBuilder(Condition<INodeBuilder> condition) {
     for (SNode rootNode : myNewRootNodes) {
       SimpleNodeBuilder builder = new SimpleNodeBuilder(this, rootNode);
-      if(condition.met(builder)) return builder;
+      if (condition.met(builder)) return builder;
     }
-    return null;  
+    return null;
   }
 
   public INodeBuilder findNodeBuilder(Condition<INodeBuilder> condition) {
@@ -380,10 +382,12 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
 
   //todo remove this after going to new generator
   private INodeBuilder myCurrentBuilder;
+
   //todo remove this after going to new generator
   public void setCurrentBuilder(SNode snode) {
     myCurrentBuilder = new SimpleNodeBuilder(this, snode);  //This is hack
   }
+
   //todo remove this after going to new generator
   public INodeBuilder getCurrentBuilder() {
     return myCurrentBuilder;  //This is hack
@@ -498,7 +502,6 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     //To change body of implemented methods use File | Settings | File Templates.
   }
 
-
 //  public Language getTargetLanguage() {
 //    return null;  //To change body of implemented methods use File | Settings | File Templates.
 //  }
@@ -512,12 +515,12 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   }
 
   public SNode findOutputNodeByInputNodeWithSameId(SNode inputNode) {
-    if(inputNode == null) return null;
+    if (inputNode == null) return null;
     return myOutputModel.getNodeById(inputNode.getId());
   }
 
   public SNode findInputNodeByOutputNodeWithSameId(SNode outputNode) {
-    if(outputNode == null) return null;
+    if (outputNode == null) return null;
     return myInputModel.getNodeById(outputNode.getId());
   }
 
