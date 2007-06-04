@@ -23,10 +23,13 @@
       <module>
         <moduleRoot path="${mps_home}\languages\baseLanguage\language\baseLanguage.mpl" />
       </module>
+      <external-templates />
+      <mapping-priorities />
     </generator>
   </generators>
   <classPath>
     <entry path="${language_descriptor}\classes" />
+    <entry path="${mps_home}\lib\junit4\junit-4.1.jar" />
   </classPath>
 </language>
 
