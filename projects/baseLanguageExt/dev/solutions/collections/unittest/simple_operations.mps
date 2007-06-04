@@ -1824,5 +1824,582 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.unitTest.BTestCase" id="1180974291460">
+    <property name="testCaseName" value="NaiveSetOperations" />
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1180976022795">
+      <property name="name" value="assertSameContents" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1180976038367">
+        <property name="name" value="seq1" />
+        <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceType" id="1180976040288">
+          <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1180976849293">
+            <link role="classifier" extResolveInfo="1.[Classifier]String" />
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1180976045400">
+        <property name="name" value="seq2" />
+        <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceType" id="1180976046457">
+          <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1180976853359">
+            <link role="classifier" extResolveInfo="1.[Classifier]String" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1180976022796" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1180976022797" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180976022798">
+        <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.AssertSame" id="1180976074080">
+          <node role="expected" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1180976077628">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1180976076925">
+              <link role="variableDeclaration" targetNodeId="1180976038367" resolveInfo="seq1" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.GetSizeOperation" id="1180976078642" />
+          </node>
+          <node role="actual" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1180976083137">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1180976082470">
+              <link role="variableDeclaration" targetNodeId="1180976045400" resolveInfo="seq2" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.GetSizeOperation" id="1180976084577" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.ForEachStatement" id="1180976086647">
+          <node role="variable" type="jetbrains.mps.baseLanguage.ext.collections.lang.ForEachVariable" id="1180976086648">
+            <property name="name" value="x" />
+          </node>
+          <node role="inputSequence" type="jetbrains.mps.baseLanguage.ParameterReference" id="1180976090133">
+            <link role="variableDeclaration" targetNodeId="1180976038367" resolveInfo="seq1" />
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180976086650">
+            <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.AssertTrue" id="1180976094308">
+              <node role="condition" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1180976099008">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1180976097614">
+                  <link role="variableDeclaration" targetNodeId="1180976045400" resolveInfo="seq2" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.ContainsOperation" id="1180976108513">
+                  <node role="argument" type="jetbrains.mps.baseLanguage.ext.collections.lang.ForEachVariableReference" id="1180976110333">
+                    <link role="variable" targetNodeId="1180976086648" resolveInfo="x" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.ForEachStatement" id="1180976112578">
+          <node role="variable" type="jetbrains.mps.baseLanguage.ext.collections.lang.ForEachVariable" id="1180976112579">
+            <property name="name" value="y" />
+          </node>
+          <node role="inputSequence" type="jetbrains.mps.baseLanguage.ParameterReference" id="1180976116233">
+            <link role="variableDeclaration" targetNodeId="1180976045400" resolveInfo="seq2" />
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180976112581">
+            <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.AssertTrue" id="1180976128877">
+              <node role="condition" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1180976133835">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1180976132508">
+                  <link role="variableDeclaration" targetNodeId="1180976038367" resolveInfo="seq1" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.ContainsOperation" id="1180976134708">
+                  <node role="argument" type="jetbrains.mps.baseLanguage.ext.collections.lang.ForEachVariableReference" id="1180976136871">
+                    <link role="variable" targetNodeId="1180976112579" resolveInfo="y" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="staticField" type="jetbrains.mps.baseLanguage.StaticFieldDeclaration" id="1180974321791">
+      <property name="name" value="aabbcc" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PrivateVisibility" id="1180974321792" />
+      <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceType" id="1180974333390">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1180974355608">
+          <link role="classifier" extResolveInfo="1.[Classifier]String" />
+        </node>
+      </node>
+      <node role="initializer" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1180974365159">
+        <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceCreatorWithSupplier" id="1180974366141">
+          <node role="supplier" type="jetbrains.mps.baseLanguage.ext.collections.lang.ValueSupplierBlock" id="1180974366142">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180974366143">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.TraversalYieldStatement" id="1180974373245">
+                <node role="value" type="jetbrains.mps.baseLanguage.StringLiteral" id="1180974374472">
+                  <property name="value" value="a" />
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.TraversalYieldStatement" id="1180975533817">
+                <node role="value" type="jetbrains.mps.baseLanguage.StringLiteral" id="1180975534769">
+                  <property name="value" value="a" />
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.TraversalYieldStatement" id="1180974378173">
+                <node role="value" type="jetbrains.mps.baseLanguage.StringLiteral" id="1180974380107">
+                  <property name="value" value="b" />
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.TraversalYieldStatement" id="1180975071888">
+                <node role="value" type="jetbrains.mps.baseLanguage.StringLiteral" id="1180975072930">
+                  <property name="value" value="b" />
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.TraversalYieldStatement" id="1180974382940">
+                <node role="value" type="jetbrains.mps.baseLanguage.StringLiteral" id="1180974384258">
+                  <property name="value" value="c" />
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.TraversalYieldStatement" id="1180974883901">
+                <node role="value" type="jetbrains.mps.baseLanguage.StringLiteral" id="1180974885439">
+                  <property name="value" value="c" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="staticField" type="jetbrains.mps.baseLanguage.StaticFieldDeclaration" id="1180976565097">
+      <property name="name" value="abc" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PrivateVisibility" id="1180976565098" />
+      <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceType" id="1180976566718">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1180976568717">
+          <link role="classifier" extResolveInfo="1.[Classifier]String" />
+        </node>
+      </node>
+      <node role="initializer" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1180976575386">
+        <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceCreatorWithSupplier" id="1180976576121">
+          <node role="supplier" type="jetbrains.mps.baseLanguage.ext.collections.lang.ValueSupplierBlock" id="1180976576122">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180976576123">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.TraversalYieldStatement" id="1180976578003">
+                <node role="value" type="jetbrains.mps.baseLanguage.StringLiteral" id="1180976578809">
+                  <property name="value" value="a" />
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.TraversalYieldStatement" id="1180976581033">
+                <node role="value" type="jetbrains.mps.baseLanguage.StringLiteral" id="1180976581727">
+                  <property name="value" value="b" />
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.TraversalYieldStatement" id="1180976584885">
+                <node role="value" type="jetbrains.mps.baseLanguage.StringLiteral" id="1180976586643">
+                  <property name="value" value="c" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="staticField" type="jetbrains.mps.baseLanguage.StaticFieldDeclaration" id="1180974394196">
+      <property name="name" value="cccdde" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PrivateVisibility" id="1180974394197" />
+      <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceType" id="1180974395905">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1180974397654">
+          <link role="classifier" extResolveInfo="1.[Classifier]String" />
+        </node>
+      </node>
+      <node role="initializer" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1180974408095">
+        <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceCreatorWithSupplier" id="1180974408864">
+          <node role="supplier" type="jetbrains.mps.baseLanguage.ext.collections.lang.ValueSupplierBlock" id="1180974408865">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180974408866">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.TraversalYieldStatement" id="1180974411198">
+                <node role="value" type="jetbrains.mps.baseLanguage.StringLiteral" id="1180974412486">
+                  <property name="value" value="c" />
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.TraversalYieldStatement" id="1180975496396">
+                <node role="value" type="jetbrains.mps.baseLanguage.StringLiteral" id="1180975497653">
+                  <property name="value" value="c" />
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.TraversalYieldStatement" id="1180975501568">
+                <node role="value" type="jetbrains.mps.baseLanguage.StringLiteral" id="1180975502595">
+                  <property name="value" value="c" />
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.TraversalYieldStatement" id="1180974425947">
+                <node role="value" type="jetbrains.mps.baseLanguage.StringLiteral" id="1180974427135">
+                  <property name="value" value="d" />
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.TraversalYieldStatement" id="1180975512383">
+                <node role="value" type="jetbrains.mps.baseLanguage.StringLiteral" id="1180975513481">
+                  <property name="value" value="d" />
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.TraversalYieldStatement" id="1180974429325">
+                <node role="value" type="jetbrains.mps.baseLanguage.StringLiteral" id="1180974431877">
+                  <property name="value" value="e" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="staticField" type="jetbrains.mps.baseLanguage.StaticFieldDeclaration" id="1180974557564">
+      <property name="name" value="abcde" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PrivateVisibility" id="1180974557565" />
+      <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceType" id="1180974562304">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1180974564001">
+          <link role="classifier" extResolveInfo="1.[Classifier]String" />
+        </node>
+      </node>
+      <node role="initializer" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1180974569867">
+        <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceCreatorWithSupplier" id="1180974570877">
+          <node role="supplier" type="jetbrains.mps.baseLanguage.ext.collections.lang.ValueSupplierBlock" id="1180974570878">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180974570879">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.TraversalYieldStatement" id="1180974573765">
+                <node role="value" type="jetbrains.mps.baseLanguage.StringLiteral" id="1180974574895">
+                  <property name="value" value="a" />
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.TraversalYieldStatement" id="1180974577237">
+                <node role="value" type="jetbrains.mps.baseLanguage.StringLiteral" id="1180974578534">
+                  <property name="value" value="b" />
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.TraversalYieldStatement" id="1180974581658">
+                <node role="value" type="jetbrains.mps.baseLanguage.StringLiteral" id="1180974584710">
+                  <property name="value" value="c" />
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.TraversalYieldStatement" id="1180974588246">
+                <node role="value" type="jetbrains.mps.baseLanguage.StringLiteral" id="1180974589473">
+                  <property name="value" value="d" />
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.TraversalYieldStatement" id="1180974591569">
+                <node role="value" type="jetbrains.mps.baseLanguage.StringLiteral" id="1180974592771">
+                  <property name="value" value="e" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="staticField" type="jetbrains.mps.baseLanguage.StaticFieldDeclaration" id="1180974964109">
+      <property name="name" value="aabb" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PrivateVisibility" id="1180974964110" />
+      <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceType" id="1180974968327">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1180974972858">
+          <link role="classifier" extResolveInfo="1.[Classifier]String" />
+        </node>
+      </node>
+      <node role="initializer" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1180974978049">
+        <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceCreatorWithSupplier" id="1180974978863">
+          <node role="supplier" type="jetbrains.mps.baseLanguage.ext.collections.lang.ValueSupplierBlock" id="1180974978864">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180974978865">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.TraversalYieldStatement" id="1180974980769">
+                <node role="value" type="jetbrains.mps.baseLanguage.StringLiteral" id="1180974981450">
+                  <property name="value" value="a" />
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.TraversalYieldStatement" id="1180975549509">
+                <node role="value" type="jetbrains.mps.baseLanguage.StringLiteral" id="1180975550357">
+                  <property name="value" value="a" />
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.TraversalYieldStatement" id="1180974983807">
+                <node role="value" type="jetbrains.mps.baseLanguage.StringLiteral" id="1180974984989">
+                  <property name="value" value="b" />
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.TraversalYieldStatement" id="1180975145628">
+                <node role="value" type="jetbrains.mps.baseLanguage.StringLiteral" id="1180975146797">
+                  <property name="value" value="b" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="staticField" type="jetbrains.mps.baseLanguage.StaticFieldDeclaration" id="1180977311679">
+      <property name="name" value="c" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PrivateVisibility" id="1180977311680" />
+      <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceType" id="1180977313398">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1180977315007">
+          <link role="classifier" extResolveInfo="1.[Classifier]String" />
+        </node>
+      </node>
+      <node role="initializer" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1180977320412">
+        <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceCreatorWithSupplier" id="1180977321384">
+          <node role="supplier" type="jetbrains.mps.baseLanguage.ext.collections.lang.ValueSupplierBlock" id="1180977321385">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180977321386">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.TraversalYieldStatement" id="1180977323331">
+                <node role="value" type="jetbrains.mps.baseLanguage.StringLiteral" id="1180977324634">
+                  <property name="value" value="c" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="staticField" type="jetbrains.mps.baseLanguage.StaticFieldDeclaration" id="1180975845066">
+      <property name="name" value="cc" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PrivateVisibility" id="1180975845067" />
+      <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceType" id="1180975846688">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1180975848176">
+          <link role="classifier" extResolveInfo="1.[Classifier]String" />
+        </node>
+      </node>
+      <node role="initializer" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1180975853351">
+        <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceCreatorWithSupplier" id="1180975854161">
+          <node role="supplier" type="jetbrains.mps.baseLanguage.ext.collections.lang.ValueSupplierBlock" id="1180975854162">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180975854163">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.TraversalYieldStatement" id="1180975856063">
+                <node role="value" type="jetbrains.mps.baseLanguage.StringLiteral" id="1180975856839">
+                  <property name="value" value="c" />
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.TraversalYieldStatement" id="1180975858972">
+                <node role="value" type="jetbrains.mps.baseLanguage.StringLiteral" id="1180975860466">
+                  <property name="value" value="c" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="staticField" type="jetbrains.mps.baseLanguage.StaticFieldDeclaration" id="1180975323102">
+      <property name="name" value="ccc" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PrivateVisibility" id="1180975323103" />
+      <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceType" id="1180975324263">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1180975325936">
+          <link role="classifier" extResolveInfo="1.[Classifier]String" />
+        </node>
+      </node>
+      <node role="initializer" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1180975334352">
+        <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceCreatorWithSupplier" id="1180975335579">
+          <node role="supplier" type="jetbrains.mps.baseLanguage.ext.collections.lang.ValueSupplierBlock" id="1180975335580">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180975335581">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.TraversalYieldStatement" id="1180975337520">
+                <node role="value" type="jetbrains.mps.baseLanguage.StringLiteral" id="1180975338697">
+                  <property name="value" value="c" />
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.TraversalYieldStatement" id="1180975674516">
+                <node role="value" type="jetbrains.mps.baseLanguage.StringLiteral" id="1180975676156">
+                  <property name="value" value="c" />
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.TraversalYieldStatement" id="1180975678341">
+                <node role="value" type="jetbrains.mps.baseLanguage.StringLiteral" id="1180975679254">
+                  <property name="value" value="c" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1180974291461" />
+    <node role="testMethodList" type="jetbrains.mps.baseLanguage.unitTest.TestMethodList" id="1180974291462">
+      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.TestMethod" id="1180974305208">
+        <property name="methodName" value="union" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1180974305209" />
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180974305210">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1180976152274">
+            <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1180976152275">
+              <link role="baseMethodDeclaration" targetNodeId="1180976022795" resolveInfo="assertSameSequence" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1180976152276" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalStaticFieldReference" id="1180976191861">
+                <link role="variableDeclaration" targetNodeId="1180974557564" resolveInfo="abcde" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1180976194679">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalStaticFieldReference" id="1180976162391">
+                  <link role="variableDeclaration" targetNodeId="1180974321791" resolveInfo="aabbcc" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.UnionOperation" id="1180976197421">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.LocalStaticFieldReference" id="1180976207309">
+                    <link role="variableDeclaration" targetNodeId="1180974394196" resolveInfo="cccdde" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1180976407190">
+            <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1180976407191">
+              <link role="baseMethodDeclaration" targetNodeId="1180976022795" resolveInfo="assertSameSequence" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1180976407192" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalStaticFieldReference" id="1180976409438">
+                <link role="variableDeclaration" targetNodeId="1180974557564" resolveInfo="abcde" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1180976415652">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalStaticFieldReference" id="1180976414466">
+                  <link role="variableDeclaration" targetNodeId="1180974394196" resolveInfo="cccdde" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.UnionOperation" id="1180976417176">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.LocalStaticFieldReference" id="1180976420640">
+                    <link role="variableDeclaration" targetNodeId="1180974321791" resolveInfo="aabbcc" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.TestMethod" id="1180974925059">
+        <property name="methodName" value="exclude" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1180974925060" />
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180974925061">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1180976233983">
+            <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1180976233984">
+              <link role="baseMethodDeclaration" targetNodeId="1180976022795" resolveInfo="assertSameSequence" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1180976233985" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalStaticFieldReference" id="1180976237925">
+                <link role="variableDeclaration" targetNodeId="1180974964109" resolveInfo="aabb" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1180976244122">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalStaticFieldReference" id="1180976243338">
+                  <link role="variableDeclaration" targetNodeId="1180974321791" resolveInfo="aabbcc" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.ExcludeOperation" id="1180976245637">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.LocalStaticFieldReference" id="1180976249427">
+                    <link role="variableDeclaration" targetNodeId="1180974394196" resolveInfo="cccdde" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1180976986221">
+            <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1180976986222">
+              <link role="baseMethodDeclaration" targetNodeId="1180976022795" resolveInfo="assertSameSequence" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1180976986223" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalStaticFieldReference" id="1180976994931">
+                <link role="variableDeclaration" targetNodeId="1180974964109" resolveInfo="aabb" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1180976999964">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalStaticFieldReference" id="1180976998651">
+                  <link role="variableDeclaration" targetNodeId="1180974321791" resolveInfo="aabbcc" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.ExcludeOperation" id="1180977001432">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.LocalStaticFieldReference" id="1180977007253">
+                    <link role="variableDeclaration" targetNodeId="1180975323102" resolveInfo="ccc" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1180977297085">
+            <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1180977297086">
+              <link role="baseMethodDeclaration" targetNodeId="1180976022795" resolveInfo="assertSameContents" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1180977297087" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalStaticFieldReference" id="1180977299638">
+                <link role="variableDeclaration" targetNodeId="1180974964109" resolveInfo="aabb" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1180977304781">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalStaticFieldReference" id="1180977302871">
+                  <link role="variableDeclaration" targetNodeId="1180974321791" resolveInfo="aabbcc" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.ExcludeOperation" id="1180977305614">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.LocalStaticFieldReference" id="1180977330570">
+                    <link role="variableDeclaration" targetNodeId="1180977311679" resolveInfo="c" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.AssertTrue" id="1180976886210">
+            <node role="condition" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1180976898829">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1180976892046">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalStaticFieldReference" id="1180976890830">
+                  <link role="variableDeclaration" targetNodeId="1180974321791" resolveInfo="aabbcc" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.ExcludeOperation" id="1180976893099">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.LocalStaticFieldReference" id="1180976897077">
+                    <link role="variableDeclaration" targetNodeId="1180976565097" resolveInfo="abc" />
+                  </node>
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.IsEmptyOperation" id="1180976901430" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.TestMethod" id="1180975293807">
+        <property name="methodName" value="intersect" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1180975293808" />
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180975293809">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1180976267767">
+            <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1180976267768">
+              <link role="baseMethodDeclaration" targetNodeId="1180976022795" resolveInfo="assertSameSequence" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1180976267769" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalStaticFieldReference" id="1180976272815">
+                <link role="variableDeclaration" targetNodeId="1180975323102" resolveInfo="ccc" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1180976304293">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalStaticFieldReference" id="1180976303548">
+                  <link role="variableDeclaration" targetNodeId="1180974321791" resolveInfo="aabbcc" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.IntersectOperation" id="1180976305597">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.LocalStaticFieldReference" id="1180976310867">
+                    <link role="variableDeclaration" targetNodeId="1180974394196" resolveInfo="cccdde" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1180976325909">
+            <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1180976325910">
+              <link role="baseMethodDeclaration" targetNodeId="1180976022795" resolveInfo="assertSameSequence" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1180976325911" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalStaticFieldReference" id="1180976328890">
+                <link role="variableDeclaration" targetNodeId="1180975845066" resolveInfo="cc" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1180976338033">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalStaticFieldReference" id="1180976335707">
+                  <link role="variableDeclaration" targetNodeId="1180974394196" resolveInfo="cccdde" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.IntersectOperation" id="1180976339767">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.LocalStaticFieldReference" id="1180976349313">
+                    <link role="variableDeclaration" targetNodeId="1180974321791" resolveInfo="aabbcc" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1180978098265">
+            <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1180978098266">
+              <link role="baseMethodDeclaration" targetNodeId="1180976022795" resolveInfo="assertSameContents" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1180978098267" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalStaticFieldReference" id="1180978100670">
+                <link role="variableDeclaration" targetNodeId="1180975845066" resolveInfo="cc" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1180978105548">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalStaticFieldReference" id="1180978104616">
+                  <link role="variableDeclaration" targetNodeId="1180975323102" resolveInfo="ccc" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.IntersectOperation" id="1180978107007">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.LocalStaticFieldReference" id="1180978109508">
+                    <link role="variableDeclaration" targetNodeId="1180975845066" resolveInfo="cc" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1180978118548">
+            <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1180978118549">
+              <link role="baseMethodDeclaration" targetNodeId="1180976022795" resolveInfo="assertSameContents" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1180978118550" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalStaticFieldReference" id="1180978121919">
+                <link role="variableDeclaration" targetNodeId="1180975323102" resolveInfo="ccc" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1180978128998">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalStaticFieldReference" id="1180978128285">
+                  <link role="variableDeclaration" targetNodeId="1180975845066" resolveInfo="cc" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.IntersectOperation" id="1180978130112">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.LocalStaticFieldReference" id="1180978134641">
+                    <link role="variableDeclaration" targetNodeId="1180975323102" resolveInfo="ccc" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
