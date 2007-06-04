@@ -565,5 +565,13 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1180964022718">
+    <property name="name" value="ConcatOperation" />
+    <link role="extends" targetNodeId="1176906603202" resolveInfo="BinaryOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1180964128658">
+      <property name="value" value="concat" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
 </model>
 
