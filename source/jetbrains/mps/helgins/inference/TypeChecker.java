@@ -443,6 +443,11 @@ public class TypeChecker {
     }
   }
 
+  @Hack
+  public void markUnchecked(SNode containingRoot) {
+    myCheckedRoots.remove(containingRoot);
+  }
+
   private static class MyReadAccessListener implements INodeReadAccessListener {
     protected HashSet<SNode> myNodesToDependOn = new HashSet<SNode>();
     private final Object myLock = new Object();
