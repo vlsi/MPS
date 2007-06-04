@@ -346,6 +346,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     INodeBuilder builder = myTemplateNodeAndInputNodeToBuilderMap.get(new Pair<SNode, SNode>(template, inputNode));
     if (builder != null) return builder;
     if (inputNode == template) {
+      // TODO: probably we don't need this
       SNode outputNode = findOutputNodeByInputNodeWithSameId(inputNode);
       if (outputNode == null) {
         return null;

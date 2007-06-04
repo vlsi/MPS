@@ -188,9 +188,9 @@ public class RuleUtil {
           LOG.error(e);
         }
         if (contextParentNode != null) {
-          String childRole = templateFragmentNode.getRole_();
-          List<SNode> outputNodesToWeave = createNodeFromTemplate(mappingName, templateFragmentNode, weavingInputNode, contextParentNode, childRole, 0);
+          List<SNode> outputNodesToWeave = createNodeFromTemplate(mappingName, templateFragmentNode, weavingInputNode, 0);
           if (outputNodesToWeave != null) {
+            String childRole = templateFragmentNode.getRole_();
             for (SNode outputNodeToWeave : outputNodesToWeave) {
               contextParentNode.addChild(childRole, outputNodeToWeave);
             }
@@ -333,7 +333,7 @@ public class RuleUtil {
 //----------------------------------------------------------------------------------------------------------------------
 
   private void createRootNodeFromTemplate(String ruleName, SNode templateNode, SNode inputNode) {
-    List<SNode> outputNodes = createNodeFromTemplate(ruleName, templateNode, inputNode, null, null, 0);
+    List<SNode> outputNodes = createNodeFromTemplate(ruleName, templateNode, inputNode, 0);
     if (outputNodes != null) {
       for (SNode outputNode : outputNodes) {
         myGenerator.addNewRootNode(outputNode);
@@ -343,8 +343,7 @@ public class RuleUtil {
   }
 
   protected List<SNode> createNodeFromTemplate(String ruleName, SNode templateNode,
-                                               SNode inputNode, SNode outputParentNode,
-                                               String childRole,
+                                               SNode inputNode,
                                                int nodeMacrosToSkip) {
     int i = 0;
     List<SNode> outputNodes = new LinkedList<SNode>();
@@ -358,7 +357,7 @@ public class RuleUtil {
         // $LOOP$
         List<SNode> newInputNodes = TemplateGenUtil.createSourceNodeListForTemplateNode_ForNewGenerator(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
         for (SNode newInputNode : newInputNodes) {
-          List<SNode> outputChildNodes = createNodeFromTemplate(nodeMacro.getMappingId(), templateNode, newInputNode, outputParentNode, childRole, nodeMacrosToSkip + 1);
+          List<SNode> outputChildNodes = createNodeFromTemplate(nodeMacro.getMappingId(), templateNode, newInputNode, nodeMacrosToSkip + 1);
           if (outputChildNodes != null) {
             outputNodes.addAll(outputChildNodes);
           }
@@ -380,7 +379,7 @@ public class RuleUtil {
         // $IF$
         List<SNode> newInputNodes = TemplateGenUtil.createSourceNodeListForTemplateNode_ForNewGenerator(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
         for (SNode newInputNode : newInputNodes) {
-          List<SNode> outputChildNodes = createNodeFromTemplate(nodeMacro.getMappingId(), templateNode, newInputNode, outputParentNode, childRole, nodeMacrosToSkip + 1);
+          List<SNode> outputChildNodes = createNodeFromTemplate(nodeMacro.getMappingId(), templateNode, newInputNode, nodeMacrosToSkip + 1);
           if (outputChildNodes != null) {
             outputNodes.addAll(outputChildNodes);
           }
@@ -401,12 +400,12 @@ public class RuleUtil {
         List<SNode> newInputNodes = TemplateGenUtil.createSourceNodeListForTemplateNode_ForNewGenerator(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
         for (SNode newInputNode : newInputNodes) {
           if (mapperId != null || macro_mapperFunction != null) {
-            SNode childToReplace = SModelUtil_new.instantiateConceptDeclaration(templateNode.getConceptFqName(), myOutputModel, myGenerator.getScope(), false);
-            outputParentNode.addChild(childRole, childToReplace);
+            SNode childToReplaceLater = SModelUtil_new.instantiateConceptDeclaration(templateNode.getConceptFqName(), myOutputModel, myGenerator.getScope(), false);
+            outputNodes.add(childToReplaceLater);
             // execute the 'mapper' function later
-            myGenerator.getDelayedChanges().addExecuteMapSrcNodeMacroChange(outputParentNode, nodeMacro, childToReplace, newInputNode, myGenerator);
+            myGenerator.getDelayedChanges().addExecuteMapSrcNodeMacroChange(nodeMacro, childToReplaceLater, newInputNode, myGenerator);
           } else {
-            List<SNode> outputChildNodes = createNodeFromTemplate(nodeMacro.getMappingId(), templateNode, newInputNode, outputParentNode, childRole, nodeMacrosToSkip + 1);
+            List<SNode> outputChildNodes = createNodeFromTemplate(nodeMacro.getMappingId(), templateNode, newInputNode, nodeMacrosToSkip + 1);
             if (outputChildNodes != null) {
               outputNodes.addAll(outputChildNodes);
             }
@@ -417,7 +416,6 @@ public class RuleUtil {
         // $SWITCH$
         TemplateSwitch templateSwitch = ((SwitchMacro) nodeMacro).getTemplateSwitch();
         List<SNode> newInputNodes = TemplateGenUtil.createSourceNodeListForTemplateNode_ForNewGenerator(inputNode, templateNode, 0, myGenerator);
-//        boolean isProcessed = false;
         for (SNode newInputNode : newInputNodes) {
           RuleConsequence consequenceForCase = (RuleConsequence) myGenerator.getConsequenceForSwitchCase(newInputNode, templateSwitch);
           SNode templateNodeForCase = null;
@@ -442,39 +440,30 @@ public class RuleUtil {
             }
           }
 
-//          if (templateNodeForCase == null) {
-//            myGenerator.showErrorMessage(newInputNode, null, BaseAdapter.fromAdapter(templateSwitch), "failed to process switch");
-//          }
-//          else {
-//            isProcessed = true;
-//          }
-//          List<SNode> outputChildNodes = createNodeFromTemplate(nodeMacro.getMappingId(), templateNodeForCase, newInputNode, outputParentNode, childRole, 0);
-//          if (outputChildNodes != null) {
-//            outputNodes.addAll(outputChildNodes);
-//          }
           if (templateNodeForCase != null) {
-            List<SNode> outputChildNodes = createNodeFromTemplate(nodeMacro.getMappingId(), templateNodeForCase, newInputNode, outputParentNode, childRole, 0);
+            List<SNode> outputChildNodes = createNodeFromTemplate(nodeMacro.getMappingId(), templateNodeForCase, newInputNode, 0);
             if (outputChildNodes != null) {
               outputNodes.addAll(outputChildNodes);
             }
           } else {
             // no switch-case found for the inputNode - continue with templateNode under the $switch$
-            List<SNode> outputChildNodes = createNodeFromTemplate(nodeMacro.getMappingId(), templateNode, newInputNode, outputParentNode, childRole, nodeMacrosToSkip + 1);
+            List<SNode> outputChildNodes = createNodeFromTemplate(nodeMacro.getMappingId(), templateNode, newInputNode, nodeMacrosToSkip + 1);
             if (outputChildNodes != null) {
               outputNodes.addAll(outputChildNodes);
             }
           }
         } // for (SNode newInputNode : newInputNodes)
-//        if (isProcessed) {
-//          return outputNodes;
-//        }
+
         return outputNodes;
       } else {
         // use user-defined node builder
         List<SNode> newInputNodes = TemplateGenUtil.createSourceNodeListForTemplateNode_ForNewGenerator(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
         for (SNode newInputNode : newInputNodes) {
-          if (processTargetBuilderAspectMethod(newInputNode, templateNode, ruleName, nodeMacro, outputParentNode, childRole) == null) {
-            List<SNode> outputChildNodes = createNodeFromTemplate(nodeMacro.getMappingId(), templateNode, newInputNode, outputParentNode, childRole, nodeMacrosToSkip + 1);
+          SNode newOutputChild = processTargetBuilderAspectMethod(newInputNode, templateNode, ruleName, nodeMacro);
+          if (newOutputChild != null) {
+            outputNodes.add(newOutputChild);
+          } else {
+            List<SNode> outputChildNodes = createNodeFromTemplate(nodeMacro.getMappingId(), templateNode, newInputNode, nodeMacrosToSkip + 1);
             if (outputChildNodes != null) {
               outputNodes.addAll(outputChildNodes);
             }
@@ -525,9 +514,9 @@ public class RuleUtil {
       } else if (templateChildNode instanceof ReferenceMacro) {
         myGenerator.addReferenceInfo(new ReferenceInfo_Macro((ReferenceMacro) templateChildNode, inputNode, templateNode, outputNode));
       } else {
-        String role = templateChildNode.getRole_();
-        List<SNode> outputChildNodes = createNodeFromTemplate(ruleName, templateChildNode.getNode(), inputNode, outputNode, role, 0);
+        List<SNode> outputChildNodes = createNodeFromTemplate(ruleName, templateChildNode.getNode(), inputNode, 0);
         if (outputChildNodes != null) {
+          String role = templateChildNode.getRole_();
           for (SNode outputChildNode : outputChildNodes) {
             outputNode.addChild(role, outputChildNode);
           }
@@ -537,7 +526,7 @@ public class RuleUtil {
     return outputNodes;
   }
 
-  private INodeBuilder processTargetBuilderAspectMethod(SNode inputNode, SNode templateNode, String ruleName, NodeMacro nodeMacro, SNode outputParentNode, String roleName) {
+  private SNode processTargetBuilderAspectMethod(SNode inputNode, SNode templateNode, String ruleName, NodeMacro nodeMacro) {
     String targetBuilderAspectMethodName = nodeMacro.getTargetBuilderAspectMethodName();
     if (targetBuilderAspectMethodName == null) {
       return null;
@@ -548,10 +537,9 @@ public class RuleUtil {
     rethrowSet.add(ReductionNotNeededException.class);
     INodeBuilder builder = (INodeBuilder) QueryMethod.invoke(methodName, args, nodeMacro.getModel(), rethrowSet);
     if (builder == null) return null;
-    SNode childToReplace = SModelUtil_new.instantiateConceptDeclaration(templateNode.getConceptFqName(), myOutputModel, myGenerator.getScope(), false);
-    outputParentNode.addChild(roleName, childToReplace);
-    myGenerator.getDelayedChanges().addExecuteNodeBuilderChange(outputParentNode, builder, childToReplace);
-    return builder;
+    SNode childToReplaceLater = SModelUtil_new.instantiateConceptDeclaration(templateNode.getConceptFqName(), myOutputModel, myGenerator.getScope(), false);
+    myGenerator.getDelayedChanges().addExecuteNodeBuilderChange(builder, childToReplaceLater);
+    return childToReplaceLater;
   }
 
 
