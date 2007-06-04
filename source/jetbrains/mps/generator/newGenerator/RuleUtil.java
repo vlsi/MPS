@@ -188,8 +188,7 @@ public class RuleUtil {
           LOG.error(e);
         }
         if (contextParentNode != null) {
-          SNode templateParentNode = templateFragmentNode.getParent();
-          String childRole = templateParentNode.getRoleOf(templateFragmentNode);
+          String childRole = templateFragmentNode.getRole_();
           List<SNode> outputNodesToWeave = createNodeFromTemplate(mappingName, templateFragmentNode, weavingInputNode, contextParentNode, childRole, 0);
           if (outputNodesToWeave != null) {
             for (SNode outputNodeToWeave : outputNodesToWeave) {
@@ -404,6 +403,7 @@ public class RuleUtil {
           if (mapperId != null || macro_mapperFunction != null) {
             SNode childToReplace = SModelUtil_new.instantiateConceptDeclaration(templateNode.getConceptFqName(), myOutputModel, myGenerator.getScope(), false);
             outputParentNode.addChild(childRole, childToReplace);
+            // execute the 'mapper' function later
             myGenerator.getDelayedChanges().addExecuteMapSrcNodeMacroChange(outputParentNode, nodeMacro, childToReplace, newInputNode, myGenerator);
           } else {
             List<SNode> outputChildNodes = createNodeFromTemplate(nodeMacro.getMappingId(), templateNode, newInputNode, outputParentNode, childRole, nodeMacrosToSkip + 1);
