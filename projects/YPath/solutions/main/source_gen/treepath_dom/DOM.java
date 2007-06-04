@@ -5,8 +5,10 @@ package treepath_dom;
 import ypath.util.TreePath;
 import org.w3c.dom.Node;
 import ypath.util.xml.NodeListIterableAdapter;
-import ypath.util.IFilter;
 import org.w3c.dom.Element;
+import ypath.util.xml.ChainedIterable;
+import ypath.util.xml.NamedNodeMapIterableAdapter;
+import ypath.util.IFilter;
 import org.w3c.dom.Attr;
 import treepath_dom.DOM.ELEMENT_tag_Property;
 import treepath_dom.DOM.ATTR_name_Property;
@@ -45,7 +47,11 @@ public class DOM extends TreePath<Node> {
     }
 
     public static Iterable<Node> children(Node node) {
-      return new NodeListIterableAdapter(node.getChildNodes());
+      Iterable<Node> children = new NodeListIterableAdapter(node.getChildNodes());
+      if(node instanceof Element) {
+        return new ChainedIterable(new NamedNodeMapIterableAdapter(node.getAttributes()), children);
+      }
+      return children;
     }
 }
   public static class ELEMENT_NodeKindTrigger implements IFilter<Node> {

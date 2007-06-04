@@ -2,6 +2,7 @@
 <model name="treepath_dom">
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="ypath" />
+  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <maxImportIndex value="4" />
   <import index="1" modelUID="org.w3c.dom@java_stub" />
   <import index="2" modelUID="ypath.util.xml@java_stub" />
@@ -146,15 +147,58 @@
         <property name="name" value="node" />
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1175083364500">
-        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1175083557712">
-          <node role="expression" type="jetbrains.mps.baseLanguage.NewExpression" id="1175083663846">
-            <link role="baseMethodDeclaration" extResolveInfo="2.constructor [Classifier]NodeListIterableAdapter[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [NodeList]))" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1175083670055">
-              <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]Node).([InstanceMethodDeclaration]getChildNodes() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [NodeList]))" />
-              <node role="instance" type="jetbrains.mps.baseLanguage.ClosureParameterReference" id="1175084694192">
-                <link role="closureParameter" targetNodeId="1175083364499" resolveInfo="node" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1180968449701">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1180968449702">
+            <property name="name" value="children" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.NewExpression" id="1175083663846">
+              <link role="baseMethodDeclaration" extResolveInfo="2.constructor [Classifier]NodeListIterableAdapter[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [NodeList]))" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1175083670055">
+                <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]Node).([InstanceMethodDeclaration]getChildNodes() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [NodeList]))" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.ClosureParameterReference" id="1175084694192">
+                  <link role="closureParameter" targetNodeId="1175083364499" resolveInfo="node" />
+                </node>
               </node>
             </node>
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1180970576295">
+              <link role="classifier" extResolveInfo="4.[Classifier]Iterable" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1180970583183">
+                <link role="classifier" extResolveInfo="1.[Classifier]Node" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1180970606891">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1180970606892">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1180970620212">
+              <node role="expression" type="jetbrains.mps.baseLanguage.NewExpression" id="1180970622172">
+                <link role="baseMethodDeclaration" extResolveInfo="2.constructor [Classifier]ChainedIterable[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.array/jetbrains.mps.baseLanguage.types.array [-1, jetbrains.mps.baseLanguage.types.classifier [Iterable, &lt;any_&gt;]]))" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.NewExpression" id="1180970687747">
+                  <link role="baseMethodDeclaration" extResolveInfo="2.constructor [Classifier]NamedNodeMapIterableAdapter[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [NamedNodeMap]))" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1180970699258">
+                    <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]Node).([InstanceMethodDeclaration]getAttributes() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [NamedNodeMap]))" />
+                    <node role="instance" type="jetbrains.mps.baseLanguage.ClosureParameterReference" id="1180970695421">
+                      <link role="closureParameter" targetNodeId="1175083364499" resolveInfo="node" />
+                    </node>
+                  </node>
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1180970708940">
+                  <link role="variableDeclaration" targetNodeId="1180968449702" resolveInfo="foo" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.InstanceOfExpression" id="1180970611740">
+            <node role="classType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1180970618018">
+              <link role="classifier" extResolveInfo="1.[Classifier]Element" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.ClosureParameterReference" id="1180970609403">
+              <link role="closureParameter" targetNodeId="1175083364499" resolveInfo="node" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1175083557712">
+          <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1180968449704">
+            <link role="variableDeclaration" targetNodeId="1180968449702" resolveInfo="foo" />
           </node>
         </node>
       </node>
