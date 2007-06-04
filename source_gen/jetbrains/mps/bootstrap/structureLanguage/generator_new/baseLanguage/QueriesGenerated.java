@@ -340,26 +340,26 @@ public class QueriesGenerated {
     if(SPropertyOperations.hasValue(memberDataType, "name", "string")) {
       if(internalValue == null) {
         targetInternalValueExpression = SModelOperations.createNewNode(targetModel, "jetbrains.mps.baseLanguage.structure.NullLiteral", null);
-      } else 
+      } else
       {
         targetInternalValueExpression = SModelOperations.createNewNode(targetModel, "jetbrains.mps.baseLanguage.structure.StringLiteral", null);
         SPropertyOperations.set(targetInternalValueExpression, "value", internalValue);
       }
-    } else 
+    } else
     if(SPropertyOperations.hasValue(memberDataType, "name", "boolean")) {
       targetInternalValueExpression = SModelOperations.createNewNode(targetModel, "jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
       if(internalValue == null) {
         SPropertyOperations.set(targetInternalValueExpression, "value", "" + (true));
-      } else 
+      } else
       {
         SPropertyOperations.set(targetInternalValueExpression, "value", "" + (Boolean.parseBoolean(internalValue)));
       }
-    } else 
+    } else
     if(SPropertyOperations.hasValue(memberDataType, "name", "integer")) {
       targetInternalValueExpression = SModelOperations.createNewNode(targetModel, "jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
       if(internalValue == null) {
         SPropertyOperations.set(targetInternalValueExpression, "value", "" + (0));
-      } else 
+      } else
       {
         SPropertyOperations.set(targetInternalValueExpression, "value", "" + (Integer.parseInt(internalValue)));
       }

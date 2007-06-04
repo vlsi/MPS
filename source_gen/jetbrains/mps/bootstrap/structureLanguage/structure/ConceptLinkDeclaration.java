@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
 public class ConceptLinkDeclaration extends BaseConcept implements INamedConcept {
-  public static String NAME = "name";
   public static String TARGET_TYPE = "targetType";
+  public static String NAME = "name";
 
   public  ConceptLinkDeclaration(SNode node) {
     super(node);
@@ -25,16 +25,16 @@ public class ConceptLinkDeclaration extends BaseConcept implements INamedConcept
     return ConceptLinkDeclaration.newInstance(sm, false);
   }
 
-  public String getName() {
-    return this.getProperty(ConceptLinkDeclaration.NAME);
-  }
-  public void setName(String value) {
-    this.setProperty(ConceptLinkDeclaration.NAME, value);
-  }
   public ConceptDeclaration getTargetType() {
     return (ConceptDeclaration)this.getReferent(ConceptLinkDeclaration.TARGET_TYPE);
   }
   public void setTargetType(ConceptDeclaration node) {
     super.setReferent(ConceptLinkDeclaration.TARGET_TYPE, node);
+  }
+  public String getName() {
+    return this.getProperty(ConceptLinkDeclaration.NAME);
+  }
+  public void setName(String value) {
+    this.setProperty(ConceptLinkDeclaration.NAME, value);
   }
 }
