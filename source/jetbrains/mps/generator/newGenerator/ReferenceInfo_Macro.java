@@ -65,7 +65,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
       try {
         referentNode = (SNode) QueryMethodGenerated.invoke(methodName, args, myReferenceMacro.getModel());
       } catch (Exception e) {
-        generator.showErrorMessage(myInputNode, myTemplateReferentNode, myReferenceMacro.getNode(), "couldn't evaluate reference macro");
+        generator.showErrorMessage(myInputNode, myReferenceMacro.getNode(), "couldn't evaluate reference macro");
         return;
       }
 
