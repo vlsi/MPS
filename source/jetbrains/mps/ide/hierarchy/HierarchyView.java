@@ -32,11 +32,8 @@ public class HierarchyView extends AbstractHierarchyView<ConceptDeclaration> {
     super(ide);
   }
 
-  protected void init() {
-    myHierarchyTree = new ConceptHierarchyTree(this);
-    myHierarchyTree.setRootVisible(true);
-    myComponent.add(new JScrollPane(myHierarchyTree), BorderLayout.CENTER);
-    showConceptInHierarchy(null, null);
+  protected AbstractHierarchyTree<ConceptDeclaration> createHierarchyTree() {
+    return new ConceptHierarchyTree(this);
   }
 
   public void activate() {

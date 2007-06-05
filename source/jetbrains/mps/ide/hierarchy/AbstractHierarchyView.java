@@ -10,6 +10,7 @@ import jetbrains.mps.project.MPSProject;
 
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
+import javax.swing.JScrollPane;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
@@ -35,7 +36,14 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Defa
     init();
   }
 
-  protected abstract void init();
+  protected abstract AbstractHierarchyTree<T> createHierarchyTree();
+
+ protected void init() {
+    myHierarchyTree = createHierarchyTree();
+    myHierarchyTree.setRootVisible(true);
+    myComponent.add(new JScrollPane(myHierarchyTree), BorderLayout.CENTER);
+    showConceptInHierarchy(null, null);
+  }
 
     protected JPopupMenu showHierarchyForFoundConceptPopupMenu(final Class<T> aClass) {
     JPopupMenu result = new JPopupMenu();
