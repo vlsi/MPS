@@ -68,11 +68,6 @@ public class HierarchyView extends AbstractHierarchyView<ConceptDeclaration> {
     return jetbrains.mps.ide.projectPane.Icons.HIERARCHY_ICON;
   }
 
-  public JComponent getComponent() {
-    return myComponent;
-  }
-
-
   public int getNumber() {
     return 8;
   }

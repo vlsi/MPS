@@ -11,6 +11,7 @@ import jetbrains.mps.project.MPSProject;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
+import javax.swing.JComponent;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
@@ -78,5 +79,9 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Defa
     myHierarchyTree.myHierarchyNode = node;
     myHierarchyTree.rebuildTree();
     if (myTreeNode != null) myHierarchyTree.selectNode(myTreeNode);
+  }
+
+  public JComponent getComponent() {
+    return myComponent;
   }
 }
