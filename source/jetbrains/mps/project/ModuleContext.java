@@ -70,7 +70,7 @@ public class ModuleContext extends StandaloneMPSContext {
     MPSProject project = frame.getProject();
 
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(node.getModel());
-    assert modelDescriptor != null;
+    assert modelDescriptor != null : "couldn't find model descriptor for node: " + node.getDebugText();
     Set<IModule> owningModules = SModelRepository.getInstance().getOwners(modelDescriptor, IModule.class);
     if (owningModules.isEmpty()) {
       LOG.errorWithTrace("Couldn't create module context for node: " + node.getDebugText() +
