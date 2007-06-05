@@ -34,10 +34,11 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   private HashMap<Pair<String, SNode>, INodeBuilder> myRuleNameAndInputNodeToBuilderMap = new HashMap<Pair<String, SNode>, INodeBuilder>();
   private HashMap<SNode, SNode> myOutputNodeToTemplateNodeMap = new HashMap<SNode, SNode>();
   private HashMap<SNode, SNode> myTemplateNodeToOutputNodeMap = new HashMap<SNode, SNode>();
+  private HashMap<SNode, List<SNode>> myInputeNodeToTopOutputNodesMap = new HashMap<SNode, List<SNode>>();
   private DelayedChanges myDelayedChanges = new DelayedChanges();
   private TemplateSwitchGraph myTemplateSwitchGraph;
   private Map<TemplateSwitch, List<TemplateSwitch>> myTemplateSwitchToListCache;
-  private boolean isChanged = false;
+  private boolean myChanged = false;
 
   public TemplateModelGenerator_New(GenerationSessionContext operationContext,
                                     IAdaptiveProgressMonitor progressMonitor,
@@ -75,10 +76,12 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     myTemplateNodeAndInputNodeToBuilderMap.clear();
     myRuleNameAndInputNodeToBuilderMap.clear();
     myOutputNodeToTemplateNodeMap.clear();
+    myTemplateNodeToOutputNodeMap.clear();
+    myInputeNodeToTopOutputNodesMap.clear();
     myDelayedChanges = new DelayedChanges();
     myTemplateSwitchGraph = null;
     myTemplateSwitchToListCache = null;
-    isChanged = false;
+    myChanged = false;
     myInputModel = null;
     myOutputModel = null;
   }
@@ -86,7 +89,6 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   private void doMapping(boolean isPrimary) {
     checkMonitorCanceled();
     int oldErrorCount = getErrorCount();
-//    addProgressMessage("apply rules ...");
 
     RuleManager ruleManager = new RuleManager(this);
     RuleUtil ruleUtil = new RuleUtil(ruleManager);
@@ -128,11 +130,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     checkMonitorCanceled();
     myDelayedChanges.doAllChanges();
 
-    reportWasErrors(getErrorCount() - oldErrorCount);
-    oldErrorCount = getErrorCount();
-
-//    addProgressMessage("update references ...");
-    //There could new unresolved references appear after applying reduction rules (all delayed changes should be done before this, like replacing children)
+    // There could new unresolved references appear after applying reduction rules (all delayed changes should be done before this, like replacing children)
     checkMonitorCanceled();
     updateAllReferences();
 
@@ -370,9 +368,36 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     throw new RuntimeException("not implemented");
   }
 
-  public List<INodeBuilder> findTopBuildersForSource(SNode sourceNode) {
-    throw new RuntimeException("not implemented");
+  public List<INodeBuilder> findTopBuildersForSource(SNode inputNode) {
+//    throw new RuntimeException("not implemented");
+    List<INodeBuilder> result = new ArrayList<INodeBuilder>();
+    List<SNode> list = myInputeNodeToTopOutputNodesMap.get(inputNode);
+    if (list != null) {
+      for (SNode outputNode : list) {
+        result.add(new SimpleNodeBuilder(this, outputNode));
+      }
+    }
+    return result;
   }
+
+  public void addTopOutputNodeByInputNode(SNode inputNode, SNode outputNode) {
+    List<SNode> list = myInputeNodeToTopOutputNodesMap.get(inputNode);
+    if (list == null) {
+      list = new ArrayList<SNode>();
+      myInputeNodeToTopOutputNodesMap.put(inputNode, list);
+    }
+    list.add(outputNode);
+  }
+
+  public void addTopOutputNodesByInputNode(SNode inputNode, List<SNode> outputNodes) {
+    List<SNode> list = myInputeNodeToTopOutputNodesMap.get(inputNode);
+    if (list == null) {
+      list = new ArrayList<SNode>();
+      myInputeNodeToTopOutputNodesMap.put(inputNode, list);
+    }
+    list.addAll(outputNodes);
+  }
+
 
   public INodeBuilder findRootNodeBuilder(Condition<INodeBuilder> condition) {
     for (SNode rootNode : myNewRootNodes) {
@@ -535,11 +560,11 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   }
 
   public boolean isChanged() {
-    return isChanged;
+    return myChanged;
   }
 
   public void setChanged(boolean b) {
-    isChanged = true;
+    myChanged = true;
   }
 
   private void addProgressMessage(String message) {
