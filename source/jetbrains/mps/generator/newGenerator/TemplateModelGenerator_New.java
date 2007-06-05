@@ -84,6 +84,10 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   }
 
   private void doMapping(boolean isPrimary) {
+    checkMonitorCanceled();
+    int oldErrorCount = getErrorCount();
+//    addProgressMessage("apply rules ...");
+
     RuleManager ruleManager = new RuleManager(this);
     RuleUtil ruleUtil = new RuleUtil(ruleManager);
     ruleManager.getReductionRuleManager().setRuleUtil(ruleUtil);
@@ -92,24 +96,27 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
         ruleUtil.applyRootRule(createRootRule);
       }
     }
+    checkMonitorCanceled();
     for (MappingRule mappingRule : ruleManager.getMappingRules()) {
       ruleUtil.applyMappingRule(mappingRule);
     }
+    checkMonitorCanceled();
     for (Root_MappingRule rootMappingRule : ruleManager.getRoot_MappingRules()) {
       ruleUtil.applyRoot_MappingRule(rootMappingRule);
     }
 
+    checkMonitorCanceled();
     List<SNode> copiedRoots = copyRootsFromInputModel(ruleManager);
 
+    checkMonitorCanceled();
     for (WeavingRule weavingRule : ruleManager.getWeavingRules()) {
       ruleUtil.applyWeavingRule(weavingRule);
     }
+    checkMonitorCanceled();
     for (Weaving_MappingRule weavingMappingRule : ruleManager.getWeaving_MappingRules()) {
       ruleUtil.applyWeavingMappingRule(weavingMappingRule);
     }
-
-//    updateAllReferences();
-
+    checkMonitorCanceled();
     for (SNode outputRootNode : copiedRoots) {
       ruleManager.getReductionRuleManager().applyReductionRules(findInputNodeByOutputNodeWithSameId(outputRootNode));
     }
@@ -118,17 +125,20 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
       myOutputModel.addRoot(rootNode);
     }
 
+    checkMonitorCanceled();
     myDelayedChanges.doAllChanges();
 
+    reportWasErrors(getErrorCount() - oldErrorCount);
+    oldErrorCount = getErrorCount();
+
+//    addProgressMessage("update references ...");
     //There could new unresolved references appear after applying reduction rules (all delayed changes should be done before this, like replacing children)
+    checkMonitorCanceled();
     updateAllReferences();
 
+    checkMonitorCanceled();
     validateReferencesInCopiedRoots(copiedRoots);
-
-  }
-
-  private void doFinalValidateReferences() {
-
+    reportWasErrors(getErrorCount() - oldErrorCount);
   }
 
   private List<SNode> copyRootsFromInputModel(RuleManager ruleManager) {
@@ -532,4 +542,13 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     isChanged = true;
   }
 
+  private void addProgressMessage(String message) {
+    getProgressMonitor().addText(message);
+  }
+
+  private void reportWasErrors(int errorCount) {
+    if (errorCount > 0) {
+      addProgressMessage(errorCount + " errors encountered. Look at messages for details.");
+    }
+  }
 }

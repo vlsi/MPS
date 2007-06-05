@@ -1,23 +1,25 @@
 package jetbrains.mps.generator;
 
+import jetbrains.mps.generator.newGenerator.TemplateModelGenerator_New;
+import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
+import jetbrains.mps.generator.plan.GenerationStepController;
 import jetbrains.mps.generator.template.DefaultTemplateGenerator;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.Statistics;
-import jetbrains.mps.generator.plan.GenerationStepController;
-import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
-import jetbrains.mps.generator.newGenerator.TemplateModelGenerator_New;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.projectLanguage.structure.*;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
+import jetbrains.mps.projectLanguage.structure.LanguageRoot;
+import jetbrains.mps.projectLanguage.structure.ModelRoot;
+import jetbrains.mps.projectLanguage.structure.ModuleRoot;
+import jetbrains.mps.projectLanguage.structure.SolutionDescriptor;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NotNull;
@@ -98,13 +100,15 @@ public class GenerationSession implements IGenerationSession {
         // auto-plan
         GenerationStepController generationStepController = new GenerationStepController(inputModel.getSModel());
         GenerationStatus status;
-        boolean hasWarnings = false;
+        boolean wasErrors = false;
+        boolean wasWarnings = false;
         int stepCount = 1;
         while (true) {
           addMessage(new Message(MessageKind.INFORMATION, "execute step " + (stepCount++)));
           status = generateModel_internal(inputModel, targetLanguage, confs, generationStepController);
-          hasWarnings |= status.hasWarnings();
-          if (status.isCanceled() /*|| status.isError()*/) {
+          wasErrors |= status.isError();
+          wasWarnings |= status.hasWarnings();
+          if (status.isCanceled()) {
             break;
           }
 
@@ -122,7 +126,7 @@ public class GenerationSession implements IGenerationSession {
           inputModel = status.getOutputModel().getModelDescriptor();
         }
 
-        return new GenerationStatus(status.getSourceModel(), status.getOutputModel(), status.getTraceMap(), status.isError(), hasWarnings, status.isCanceled());
+        return new GenerationStatus(status.getSourceModel(), status.getOutputModel(), status.getTraceMap(), wasErrors, wasWarnings, status.isCanceled());
       }
 
       public SModelDescriptor getSourceModelDescriptor() {
@@ -194,15 +198,15 @@ public class GenerationSession implements IGenerationSession {
     // -- replace generator
 
     ITemplateGenerator generator = isNew ?
-                                   new TemplateModelGenerator_New(context, myProgressMonitor, myHandler):
-                                   new DefaultTemplateGenerator(context, myProgressMonitor, myHandler);
+            new TemplateModelGenerator_New(context, myProgressMonitor, myHandler) :
+            new DefaultTemplateGenerator(context, myProgressMonitor, myHandler);
 
     GenerationStatus status;
     try {
       SModel outputModel = generateModel(sourceModel, generator);
       boolean wasErrors = generator.getErrorCount() > 0;
-      boolean hasWarnigns = generator.getWarningCount() > 0;
-      status = new GenerationStatus(sourceModel, outputModel, context.getTraceMap(), wasErrors, hasWarnigns, false);
+      boolean wasWarnigns = generator.getWarningCount() > 0;
+      status = new GenerationStatus(sourceModel, outputModel, context.getTraceMap(), wasErrors, wasWarnigns, false);
       addMessage(status.isError() ? MessageKind.WARNING : MessageKind.INFORMATION, "model \"" + sourceModel.getUID() + "\" has been generated " + (status.isError() ? "with errors" : "successfully"));
       generator.clearErrorsAndWarnings();
       generator.reset();
