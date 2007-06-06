@@ -47,9 +47,7 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
 
     public String getNodeIdentifier() {
       if (getNode() == null) return "null";
-      Language language = null;// SModelUtil_new.getDeclaringLanguage(getNode(), getOperationContext().getScope());
-      String namespace;
-     /* if (language == null)*/ namespace = " ? "; /*else namespace = language.getModuleUID();*/
+      String namespace = getNode().getModel().toString();
       return getNode().getName() + "  (" + namespace + ")";
     }
 
