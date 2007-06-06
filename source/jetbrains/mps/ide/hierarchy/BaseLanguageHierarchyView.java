@@ -3,6 +3,7 @@ package jetbrains.mps.ide.hierarchy;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
 import jetbrains.mps.baseLanguage.structure.Classifier;
+import jetbrains.mps.baseLanguage.icons.Icons;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
@@ -31,7 +32,7 @@ public class BaseLanguageHierarchyView extends AbstractHierarchyView<ClassConcep
   }
 
   public Icon getIcon() {
-    return null;
+    return Icons.HIERARCHY_VIEW_ICON;
   }
 
   protected AbstractHierarchyTree<ClassConcept> createHierarchyTree() {

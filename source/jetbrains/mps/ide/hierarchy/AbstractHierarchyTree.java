@@ -96,7 +96,7 @@ public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPST
       }
       myHierarchyView.myTreeNode = hierarchyTreeNode;
       assert myHierarchyView.myTreeNode != null;
-      TextTreeNode textRootNode = new RootTextTreeNode("<html>Hierarchy for concept <font color=\"#400090\"><b>" + TreeTextUtil.toHtml(((T) myHierarchyView.myTreeNode.getUserObject()).getName()) + "</b></font>");
+      TextTreeNode textRootNode = new RootTextTreeNode("<html>Hierarchy for <font color=\"#400090\"><b>" + TreeTextUtil.toHtml(((T) myHierarchyView.myTreeNode.getUserObject()).getName()) + "</b></font>");
       textRootNode.add(rootNode);
       return textRootNode;
     }
@@ -108,7 +108,7 @@ public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPST
     }
 
     public Icon getIcon(boolean expanded) {
-      return jetbrains.mps.ide.projectPane.Icons.HIERARCHY_ICON;
+      return myHierarchyView.getIcon();
     }
 
     public JPopupMenu getPopupMenu() {
