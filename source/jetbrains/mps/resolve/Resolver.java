@@ -2,8 +2,10 @@ package jetbrains.mps.resolve;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
@@ -11,11 +13,15 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.action.DefaultReferentNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Condition;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.logging.Logger;
 
 import java.util.*;
 
@@ -28,6 +34,7 @@ import java.util.*;
  */
 public class Resolver {
 
+  private static Logger LOG = Logger.getLogger(Resolver.class);
 
   /**
    * @return unresolved references
@@ -47,7 +54,7 @@ public class Resolver {
     while(true) {
       int size = referencesToSort.size();
       for (SReference reference : new ArrayList<SReference>(referencesToSort)) {
-        boolean resolved = resolve(reference, operationContext);
+        boolean resolved = resolve1(reference, operationContext);
         if (resolved) {
           referencesToSort.remove(reference);
         }
@@ -86,6 +93,37 @@ public class Resolver {
       }
     }, "resolve");
     return !(matchingActions.isEmpty());
+  }
+
+  public static boolean resolve1(final SReference reference, final IOperationContext operationContext) {
+    // search scope
+    SNode referenceNode = reference.getSourceNode();
+    ConceptDeclaration referenceNodeConcept = (ConceptDeclaration) referenceNode.getConceptDeclarationAdapter();
+    LinkDeclaration linkDeclaration = SModelUtil_new.findLinkDeclaration(referenceNodeConcept, reference.getRole());
+    final AbstractConceptDeclaration referentConcept = linkDeclaration.getTarget();
+    TypeChecker.getInstance().checkTypes(reference.getSourceNode().getParent()); //todo dirty hack
+    IStatus status = ModelConstraintsUtil.getReferentSearchScope(referenceNode.getParent(),
+            referenceNode, referenceNodeConcept, linkDeclaration, operationContext.getScope());
+    if (status.isError()) {
+      LOG.error("Couldn't create referent search scope : " + status.getMessage());
+      return false;
+    }
+    ISearchScope searchScope = (ISearchScope) status.getUserObject();
+    List<SNode> nodes = searchScope.getNodes(new Condition<SNode>() {
+      public boolean met(SNode node) {
+        return node.isInstanceOfConcept(referentConcept);
+      }
+    });
+    List<SNode> filtered = CollectionUtil.filter(nodes, new Condition<SNode>() {
+      public boolean met(SNode object) {
+        return reference.getResolveInfo().equals(object.getName());
+      }
+    });
+    if (filtered.isEmpty()) {
+      return false;
+    }
+    reference.getSourceNode().setReferent(reference.getRole(), filtered.get(0));
+    return true;
   }
 
   private static void processAction(INodeSubstituteAction action, String pattern, SReference reference) {
