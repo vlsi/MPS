@@ -29,40 +29,69 @@ public class ReferenceInfo_Default extends ReferenceInfo {
     myInputNode = inputNode;
   }
 
-  public void execute(TemplateModelGenerator_New generator) {
+  public void executeIndependentResolve(TemplateModelGenerator_New generator) {
+//    //test
+//    if ("actualArgument".equals(myTemplateSourceNode.getRole_())) {
+//      if ("class_EnumerationDataTypeDeclaration_Enum".equals(myTemplateTargetNode.getName())) {
+//        System.out.println("aaa");
+//      }
+//    }
+//    //test
 
-    //Try to find target node if it was reduced from the copied node
-    SNode referentNode = generator.findCopyingOutputNodeForInputNode(myTemplateTargetNode);
-    if(referentNode != null) {
-      myOutputNode.addReferent(myTemplateReference.getRole(), referentNode);
-      setSuccess(true);
-      return;
-    }
-
-    referentNode = generator.findOutputNodeByTemplateNodeAndInputNode(myTemplateTargetNode, myInputNode);
-    if(referentNode != null) {
-      myOutputNode.addReferent(myTemplateReference.getRole(), referentNode);
-      setSuccess(true);
-      return;
-    }
-    //Try to resolve if referent node is parent of source node.
-    SNode templateTargetNode = myTemplateSourceNode.getParent();
-    SNode outputTargetNode = myOutputNode.getParent();
-    while(templateTargetNode != null && outputTargetNode != null) {
-      if(templateTargetNode.equals(myTemplateTargetNode)) {
-        myOutputNode.addReferent(myTemplateReference.getRole(), outputTargetNode);
+    // todo: used when node is copied (?)
+    {
+      // try to find target node if it was reduced from the copied node
+      SNode referentNode = generator.findCopyingOutputNodeForInputNode(myTemplateTargetNode);
+      if (referentNode != null) {
+        myOutputNode.addReferent(myTemplateReference.getRole(), referentNode);
         setSuccess(true);
         return;
       }
-      templateTargetNode = templateTargetNode.getParent();
-      outputTargetNode = outputTargetNode.getParent();
     }
 
-    //Try to resolve using custom referense resolver for source node concept
+    // todo: used when node is copied (?)
+    {
+      SNode referentNode = generator.findOutputNodeByTemplateNodeAndInputNode(myTemplateTargetNode, myInputNode);
+      if (referentNode != null) {
+        myOutputNode.addReferent(myTemplateReference.getRole(), referentNode);
+        setSuccess(true);
+        return;
+      }
+    }
+
+    // todo: used when node is created from template node (?)
+    {
+      tryToResolveUsingTemplateNodeToOutputNodeMap(generator, false);
+      if (isSuccess()) {
+        return;
+      }
+    }
+
+    // todo: used when node is created from template node (?)
+    {
+      // try to resolve if referent node is parent of source node.
+      SNode templateTargetNode = myTemplateSourceNode.getParent();
+      SNode outputTargetNode = myOutputNode.getParent();
+      while (templateTargetNode != null && outputTargetNode != null) {
+        if (templateTargetNode.equals(myTemplateTargetNode)) {
+          myOutputNode.addReferent(myTemplateReference.getRole(), outputTargetNode);
+          setSuccess(true);
+          return;
+        }
+        templateTargetNode = templateTargetNode.getParent();
+        outputTargetNode = outputTargetNode.getParent();
+      }
+    }
+
+  }
+
+  public void executeDependentResolve(TemplateModelGenerator_New generator) {
+
+    // try to resolve using custom referense resolver for source node concept
     IReferenceResolver referenceResolver = loadReferenceResolver(generator.getScope());
-    if(referenceResolver != null) {
-      outputTargetNode  = referenceResolver.resolveTarget_New(myTemplateReference, new SimpleNodeBuilder(generator, myOutputNode, myTemplateSourceNode, myInputNode));
-      if(outputTargetNode != null) {
+    if (referenceResolver != null) {
+      SNode outputTargetNode = referenceResolver.resolveTarget_New(myTemplateReference, new SimpleNodeBuilder(generator, myOutputNode, myTemplateSourceNode, myInputNode));
+      if (outputTargetNode != null) {
         myOutputNode.addReferent(myTemplateReference.getRole(), outputTargetNode);
         setSuccess(true);
         return;
@@ -80,7 +109,7 @@ public class ReferenceInfo_Default extends ReferenceInfo {
         leastCommonOutputNode = leastCommonOutputNode.getParent();
       }
       if (leastCommonOutputNode != null) {
-        outputTargetNode = findOutputNodeByTemplateTarget(generator, leastCommonOutputNode);
+        SNode outputTargetNode = findOutputNodeByTemplateTarget(generator, leastCommonOutputNode);
         if (outputTargetNode != null) {
           myOutputNode.addReferent(myTemplateReference.getRole(), outputTargetNode);
           setSuccess(true);
@@ -92,11 +121,11 @@ public class ReferenceInfo_Default extends ReferenceInfo {
   }
 
   private SNode findOutputNodeByTemplateTarget(TemplateModelGenerator_New generator, SNode outputNode) {
-    if(generator.findTemplateNodeByOutputNode(outputNode) == myTemplateTargetNode) return outputNode;
+    if (generator.findTemplateNodeByOutputNode(outputNode) == myTemplateTargetNode) return outputNode;
     List<SNode> children = outputNode.getChildren();
     for (SNode childNode : children) {
       SNode outputTargetNode = findOutputNodeByTemplateTarget(generator, childNode);
-      if(outputTargetNode != null) {
+      if (outputTargetNode != null) {
         return outputTargetNode;
       }
     }
@@ -126,11 +155,19 @@ public class ReferenceInfo_Default extends ReferenceInfo {
   }
 
 
+  private boolean myWatchThis;
+
   public void tryToResolveUsingTemplateNodeToOutputNodeMap(TemplateModelGenerator_New generator, boolean reportError) {
     SNode outputTargetNode = generator.findOutputNodeByTemplateNode(myTemplateTargetNode);
+    if (outputTargetNode == null) {
+      return;
+    }
     //that means that there were more than one target node for given template node
-    if(outputTargetNode == myTemplateTargetNode && reportError) {
-      generator.showErrorMessage(myInputNode, myTemplateSourceNode, "Can't resolve reference: there more than one possible target node generated from the template node");
+    if (outputTargetNode == myTemplateTargetNode) {
+      if (reportError) {
+        generator.showErrorMessage(myInputNode, myTemplateSourceNode, "can't resolve reference '" + myTemplateReference.getRole() + "': there more than one possible target node generated from the template node");
+        myWatchThis = true;
+      }
       return;
     }
     myOutputNode.addReferent(myTemplateReference.getRole(), outputTargetNode);

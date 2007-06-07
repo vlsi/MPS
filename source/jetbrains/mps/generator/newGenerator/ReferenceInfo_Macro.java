@@ -32,7 +32,11 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
     myInputNode = inputNode;
   }
 
-  public void execute(TemplateModelGenerator_New generator) {
+  public void executeIndependentResolve(TemplateModelGenerator_New generator) {
+    // nothing
+  }
+
+  public void executeDependentResolve(TemplateModelGenerator_New generator) {
     //todo it should be removed after going to new generator
     generator.setCurrentBuilder(myOutputNode);
 

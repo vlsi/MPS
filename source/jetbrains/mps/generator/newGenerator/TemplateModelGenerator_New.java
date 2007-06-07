@@ -132,10 +132,11 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
 
     // There could new unresolved references appear after applying reduction rules (all delayed changes should be done before this, like replacing children)
     checkMonitorCanceled();
+    validateReferencesInCopiedRoots(copiedRoots);
     updateAllReferences();
 
     checkMonitorCanceled();
-    validateReferencesInCopiedRoots(copiedRoots);
+//    validateReferencesInCopiedRoots(copiedRoots);
     reportWasErrors(getErrorCount() - oldErrorCount);
   }
 
@@ -186,20 +187,31 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     if (inputReference == null) return;
     ReferenceInfo_Default refInfo = new ReferenceInfo_Default(outputNode, inputReference, inputNode, inputReference.getTargetNode(), inputNode);
     outputNode.removeReference(reference);
-    refInfo.execute(this);
+//    refInfo.execute(this);
+    addReferenceInfo(refInfo);
   }
 
   private void updateAllReferences() {
     ArrayList<ReferenceInfo> referenceInfos = myReferenceInfos;
     ArrayList<ReferenceInfo> newReferenceInfos = new ArrayList<ReferenceInfo>(referenceInfos.size());
+
+    for (ReferenceInfo referenceInfo : referenceInfos) {
+      referenceInfo.executeIndependentResolve(this);
+      if (!referenceInfo.isSuccess()) {
+        newReferenceInfos.add(referenceInfo);
+      }
+    }
+
+    referenceInfos = newReferenceInfos;
+    newReferenceInfos = new ArrayList<ReferenceInfo>(referenceInfos.size());
     while (true) {
       for (ReferenceInfo referenceInfo : referenceInfos) {
-        referenceInfo.execute(this);
+        referenceInfo.executeDependentResolve(this);
         if (!referenceInfo.isSuccess()) {
-          referenceInfo.tryToResolveUsingTemplateNodeToOutputNodeMap(this, false);
-          if (!referenceInfo.isSuccess()) {
+//          referenceInfo.tryToResolveUsingTemplateNodeToOutputNodeMap(this, false);
+//          if (!referenceInfo.isSuccess()) {
             newReferenceInfos.add(referenceInfo);
-          }
+//          }
         }
       }
       if (newReferenceInfos.size() == 0 || newReferenceInfos.size() == referenceInfos.size()) {
@@ -209,17 +221,17 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
       newReferenceInfos = new ArrayList<ReferenceInfo>(referenceInfos.size());
     }
 
-    if (newReferenceInfos.size() > 0) {
-      //try to resolve all the rest references using template to output node map
-      referenceInfos = new ArrayList<ReferenceInfo>(newReferenceInfos);
-      newReferenceInfos = new ArrayList<ReferenceInfo>(referenceInfos.size());
-      for (ReferenceInfo referenceInfo : referenceInfos) {
-        referenceInfo.tryToResolveUsingTemplateNodeToOutputNodeMap(this, true);
-        if (!referenceInfo.isSuccess()) {
-          newReferenceInfos.add(referenceInfo);
-        }
-      }
-    }
+//    if (newReferenceInfos.size() > 0) {
+//      //try to resolve all the rest references using template to output node map
+//      referenceInfos = new ArrayList<ReferenceInfo>(newReferenceInfos);
+//      newReferenceInfos = new ArrayList<ReferenceInfo>(referenceInfos.size());
+//      for (ReferenceInfo referenceInfo : referenceInfos) {
+//        referenceInfo.tryToResolveUsingTemplateNodeToOutputNodeMap(this, true);
+//        if (!referenceInfo.isSuccess()) {
+//          newReferenceInfos.add(referenceInfo);
+//        }
+//      }
+//    }
     myReferenceInfos = newReferenceInfos;
   }
 

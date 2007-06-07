@@ -14,7 +14,9 @@ public abstract class ReferenceInfo {
     myOutputNode = outputNode;
   }
 
-  public abstract void execute(TemplateModelGenerator_New generator);
+  public abstract void executeIndependentResolve(TemplateModelGenerator_New generator);
+
+  public abstract void executeDependentResolve(TemplateModelGenerator_New generator);
 
   protected void setSuccess(boolean value) {
     mySuccess = value;
