@@ -5,16 +5,16 @@ package jetbrains.mps.bootstrap.structureLanguage.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.util.Macros;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.util.Macros;
+import jetbrains.mps.smodel.IScope;
 import java.io.File;
 import javax.swing.JComponent;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.bootstrap.structureLanguage.editor.EditorUtil;
 import jetbrains.mps.nodeEditor.EditorCell;
 import java.awt.Color;
@@ -48,6 +48,11 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   /* package */AbstractCellListHandler myConceptPropertyDeclarationListHandler_conceptPropertyDeclarationList_;
   /* package */AbstractCellListHandler myConceptLinkDeclarationListHandler_conceptLinkDeclarationList_;
 
+  public static String _image_provider_1161165534970(SNode node, EditorContext editorContext) {
+    Language language = SModelUtil_new.getDeclaringLanguage(((ConceptDeclaration)SNodeOperations.getAdapter(node)), editorContext.getScope());
+    String iconPath = SPropertyOperations.getString(node, "iconPath");
+    return Macros.languageDescriptor().expandPath(iconPath, language.getDescriptorFile());
+  }
   public static boolean _QueryFunction_NodeCondition_1161165530948(SNode node, IScope scope) {
     Language l = SModelUtil_new.getDeclaringLanguage(((ConceptDeclaration)SNodeOperations.getAdapter(node)), scope);
     if(l == null) {
@@ -61,11 +66,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   }
   public static JComponent _QueryFunction_JComponent_1176492331666(SNode node, EditorContext editorContext) {
     return EditorUtil.createSelectIconButton(node, editorContext);
-  }
-  public static String _image_provider_1161165534970(SNode node, EditorContext editorContext) {
-    Language language = SModelUtil_new.getDeclaringLanguage(((ConceptDeclaration)SNodeOperations.getAdapter(node)), editorContext.getScope());
-    String iconPath = SPropertyOperations.getString(node, "iconPath");
-    return Macros.languageDescriptor().expandPath(iconPath, language.getDescriptorFile());
   }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
