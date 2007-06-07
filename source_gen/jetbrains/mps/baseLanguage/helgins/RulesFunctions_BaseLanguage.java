@@ -81,7 +81,11 @@ public class RulesFunctions_BaseLanguage {
               returnType = SNodeOperations.copyNode(actualParam, TypeChecker.getInstance().getRuntimeTypesModel());
             } else
             {
-              returnType.replaceChild(tvr, SNodeOperations.copyNode(actualParam, TypeChecker.getInstance().getRuntimeTypesModel()));
+              // in this code the 'tvr' is not necessarily *child* of the 'returnType'.
+              // in this case the replaceChild(old,new) fails with assertion.
+              // new code is safe but might be not correct
+              // returnType . replaceChild ( tvr , actualParam . copy ) ;
+              SNodeOperations.replaceWithAnother(tvr, SNodeOperations.copyNode(actualParam));
             }
           }
         }
