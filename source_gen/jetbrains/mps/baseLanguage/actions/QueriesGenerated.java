@@ -13,10 +13,6 @@ import jetbrains.mps.baseLanguage.structure.ArrayType;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.baseLanguage.actions.CastExpression_FactoryUtil;
-import jetbrains.mps.generator.JavaModelUtil_new;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
@@ -36,11 +32,17 @@ import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.action.ModelActions;
+import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
+import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.baseLanguage.constraints.QueriesUtil;
+import jetbrains.mps.generator.JavaModelUtil_new;
 import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
 import jetbrains.mps.baseLanguage.editor.ParenthesisUtil;
 
@@ -148,27 +150,6 @@ public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_NotExpression_1159218040861(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
     if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Expression")) {
       SLinkOperations.setTarget(newNode, "expression", SNodeOperations.copyNode(sampleNode), true);
-    }
-  }
-  public static void nodeFactory_NodeSetup_SuperConstructorInvocation_1175861783127(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-    SNode cls = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    SNode extendedClass = JavaModelUtil_new.findClassifier(Object.class).getNode();
-    if(SLinkOperations.getTarget(SLinkOperations.getTarget(cls, "superclass", true), "classifier", false) != null) {
-      extendedClass = SLinkOperations.getTarget(SLinkOperations.getTarget(cls, "superclass", true), "classifier", false);
-    }
-    {
-      ICursor<SNode> _zCursor = CursorFactory.createCursor(SLinkOperations.getTargets(extendedClass, "constructor", true));
-      try {
-        while(_zCursor.moveToNext()) {
-          SNode constructor = _zCursor.getCurrent();
-          if(SequenceOperations.isEmpty(SLinkOperations.getTargets(constructor, "parameter", true))) {
-            SLinkOperations.setTarget(newNode, "constructorDeclaration", constructor, false);
-            return;
-          }
-        }
-      } finally {
-        _zCursor.release();
-      }
     }
   }
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1177334764520(final SNode parentNode, final SNode currentTargetNode, final ConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
@@ -499,9 +480,97 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_1178893908066(final SNode parentNode, final SNode currentTargetNode, final ConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      ConceptDeclaration conceptToAdd = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation", operationContext.getScope());
-      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, parentNode, currentTargetNode, childSetter, operationContext.getScope());
-      result.addAll(defaultActions);
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation", operationContext.getScope());
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          SNode classConcept = SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+          SNode currentConstr = SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", true, false);
+          return SLinkOperations.getTargets(classConcept, "constructor", true);
+        }
+      };
+      Iterable<SNode> queryResult = (Iterable)calc.calculate();
+      for(SNode item : queryResult) {
+        result.add(new DefaultChildNodeSubstituteAction(item, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
+
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation", currentTargetNode);
+            SLinkOperations.setTarget(newNode, "constructorDeclaration", ((SNode)this.getParameterObject()), false);
+            if(SNodeOperations.isInstanceOf(currentTargetNode, "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation")) {
+              {
+                ICursor<SNode> _zCursor = CursorFactory.createCursor(SLinkOperations.getTargets(currentTargetNode, "actualArgument", true));
+                try {
+                  while(_zCursor.moveToNext()) {
+                    SNode argument = _zCursor.getCurrent();
+                    SLinkOperations.addChild(newNode, "actualArgument", argument);
+                  }
+                } finally {
+                  _zCursor.release();
+                }
+              }
+            }
+            return newNode;
+          }
+          public String getMatchingText(String pattern) {
+            StringBuilder builder = new StringBuilder(SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation"), "alias"));
+            QueriesUtil.appendParameterTypes_BaseMethodDeclaration(((SNode)this.getParameterObject()), builder);
+            return builder.toString();
+          }
+          public String getDescriptionText(String pattern) {
+            return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation"), "short_description");
+          }
+        });
+      }
+    }
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation", operationContext.getScope());
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          SNode classConcept = SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+          SNode superClass;
+          if((SLinkOperations.getTarget(classConcept, "superclass", true) != null) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(classConcept, "superclass", true), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+            superClass = SLinkOperations.getTarget(SLinkOperations.getTarget(classConcept, "superclass", true), "classifier", false);
+          } else
+          {
+            SNode node = JavaModelUtil_new.findClassifier(Object.class).getNode();
+            superClass = node;
+          }
+          return SLinkOperations.getTargets(superClass, "constructor", true);
+        }
+      };
+      Iterable<SNode> queryResult = (Iterable)calc.calculate();
+      for(SNode item : queryResult) {
+        result.add(new DefaultChildNodeSubstituteAction(item, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
+
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation", currentTargetNode);
+            SLinkOperations.setTarget(newNode, "constructorDeclaration", ((SNode)this.getParameterObject()), false);
+            if(SNodeOperations.isInstanceOf(currentTargetNode, "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation")) {
+              {
+                ICursor<SNode> _zCursor1 = CursorFactory.createCursor(SLinkOperations.getTargets(currentTargetNode, "actualArgument", true));
+                try {
+                  while(_zCursor1.moveToNext()) {
+                    SNode argument = _zCursor1.getCurrent();
+                    SLinkOperations.addChild(newNode, "actualArgument", argument);
+                  }
+                } finally {
+                  _zCursor1.release();
+                }
+              }
+            }
+            return newNode;
+          }
+          public String getMatchingText(String pattern) {
+            StringBuilder builder = new StringBuilder(SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation"), "alias"));
+            QueriesUtil.appendParameterTypes_BaseMethodDeclaration(((SNode)this.getParameterObject()), builder);
+            return builder.toString();
+          }
+          public String getDescriptionText(String pattern) {
+            return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation"), "short_description");
+          }
+        });
+      }
     }
     return result;
   }
