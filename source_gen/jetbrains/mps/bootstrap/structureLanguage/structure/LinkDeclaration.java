@@ -7,17 +7,17 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkMetaclass;
 import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 public class LinkDeclaration extends BaseConcept {
-  public static String SPECIALIZED_LINK = "specializedLink";
-  public static String TARGET = "target";
   public static String ROLE = "role";
   public static String META_CLASS = "metaClass";
   public static String SOURCE_CARDINALITY = "sourceCardinality";
   public static String TARGET_CARDINALITY = "targetCardinality";
+  public static String SPECIALIZED_LINK = "specializedLink";
+  public static String TARGET = "target";
 
   public  LinkDeclaration(SNode node) {
     super(node);
@@ -30,18 +30,6 @@ public class LinkDeclaration extends BaseConcept {
     return LinkDeclaration.newInstance(sm, false);
   }
 
-  public LinkDeclaration getSpecializedLink() {
-    return (LinkDeclaration)this.getReferent(LinkDeclaration.SPECIALIZED_LINK);
-  }
-  public void setSpecializedLink(LinkDeclaration node) {
-    super.setReferent(LinkDeclaration.SPECIALIZED_LINK, node);
-  }
-  public AbstractConceptDeclaration getTarget() {
-    return (AbstractConceptDeclaration)this.getReferent(LinkDeclaration.TARGET);
-  }
-  public void setTarget(AbstractConceptDeclaration node) {
-    super.setReferent(LinkDeclaration.TARGET, node);
-  }
   public String getRole() {
     return this.getProperty(LinkDeclaration.ROLE);
   }
@@ -68,5 +56,17 @@ public class LinkDeclaration extends BaseConcept {
   }
   public void setTargetCardinality(Cardinality value) {
     super.setProperty(LinkDeclaration.TARGET_CARDINALITY, value.getValueAsString());
+  }
+  public LinkDeclaration getSpecializedLink() {
+    return (LinkDeclaration)this.getReferent(LinkDeclaration.SPECIALIZED_LINK);
+  }
+  public void setSpecializedLink(LinkDeclaration node) {
+    super.setReferent(LinkDeclaration.SPECIALIZED_LINK, node);
+  }
+  public AbstractConceptDeclaration getTarget() {
+    return (AbstractConceptDeclaration)this.getReferent(LinkDeclaration.TARGET);
+  }
+  public void setTarget(AbstractConceptDeclaration node) {
+    super.setReferent(LinkDeclaration.TARGET, node);
   }
 }
