@@ -68,6 +68,25 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1181218596959">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1181218596960">
+            <property name="name" value="sList" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1181218596961">
+              <link role="classifier" extResolveInfo="3.[Classifier]List" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1181218794493">
+          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1181218796672">
+            <link role="baseMethodDeclaration" extResolveInfo="3.method ([Classifier]List).([InstanceMethodDeclaration]add((jetbrains.mps.baseLanguage.types.any/jetbrains.mps.baseLanguage.types.any)) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1181218794494">
+              <link role="variableDeclaration" targetNodeId="1181218596960" resolveInfo="sList" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1181218876614">
+              <property name="value" value="345" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1180014992666">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1180014992667">
             <property name="name" value="is" />

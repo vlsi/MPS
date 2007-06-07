@@ -6,7 +6,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.helgins.QuotationClass_25;
+import jetbrains.mps.baseLanguage.helgins.QuotationClass_24;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_CatchClause_InferenceRule implements InferenceRule_Runtime {
@@ -15,7 +15,7 @@ public class typeOf_CatchClause_InferenceRule implements InferenceRule_Runtime {
   }
 
   public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "throwable", true)), new QuotationClass_25().createNode(), SLinkOperations.getTarget(argument, "throwable", true), null);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "throwable", true)), new QuotationClass_24().createNode(), SLinkOperations.getTarget(argument, "throwable", true), null);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.CatchClause";

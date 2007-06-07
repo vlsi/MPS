@@ -5,30 +5,34 @@ package jetbrains.mps.baseLanguage.helgins;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.helgins.QuotationClass_25;
 import jetbrains.mps.baseLanguage.helgins.QuotationClass_26;
 import jetbrains.mps.baseLanguage.helgins.QuotationClass_27;
 import jetbrains.mps.baseLanguage.helgins.QuotationClass_28;
 import jetbrains.mps.baseLanguage.helgins.QuotationClass_29;
-import jetbrains.mps.baseLanguage.helgins.QuotationClass_30;
 import jetbrains.mps.baseLanguage.helgins.Queries;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.helgins.zMapper;
+import jetbrains.mps.baseLanguage.helgins.Pattern_1;
+import java.util.List;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.baseLanguage.helgins.QuotationClass_30;
 
 public class RulesFunctions_BaseLanguage {
 
   public static void comparisonOp(SNode binOp) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "rightExpression", true)), SLinkOperations.getTarget(new QuotationClass_26().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "rightExpression", true), null);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "leftExpression", true)), SLinkOperations.getTarget(new QuotationClass_27().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "leftExpression", true), null);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_28().createNode(), binOp);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "rightExpression", true)), SLinkOperations.getTarget(new QuotationClass_25().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "rightExpression", true), null);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "leftExpression", true)), SLinkOperations.getTarget(new QuotationClass_26().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "leftExpression", true), null);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_27().createNode(), binOp);
   }
   public static void numericOp(SNode binOp) {
     TypeChecker.getInstance().getRuntimeSupport().check(SLinkOperations.getTarget(binOp, "leftExpression", true));
     TypeChecker.getInstance().getRuntimeSupport().check(SLinkOperations.getTarget(binOp, "rightExpression", true));
     SNode rightExpressionType = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "rightExpression", true));
     SNode leftExpressionType = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "leftExpression", true));
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(rightExpressionType, SLinkOperations.getTarget(new QuotationClass_29().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "rightExpression", true), null);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(leftExpressionType, SLinkOperations.getTarget(new QuotationClass_30().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "leftExpression", true), null);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(rightExpressionType, SLinkOperations.getTarget(new QuotationClass_28().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "rightExpression", true), null);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(leftExpressionType, SLinkOperations.getTarget(new QuotationClass_29().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "leftExpression", true), null);
     TypeChecker.getInstance().getRuntimeSupport().givetype(Queries.getBinaryOperationType(leftExpressionType, rightExpressionType), binOp);
   }
   public static Iterable<SNode> collectReturnStatements(SNode node) {
@@ -56,5 +60,33 @@ public class RulesFunctions_BaseLanguage {
     }
     TypeChecker.getInstance().reportTypeError(exprWithType, "type " + exprType + " is not compatible with infered " + currentLeastCommonSupertype);
     return currentLeastCommonSupertype;
+  }
+  public static SNode concreteTypeFromGenericType(SNode type, SNode genericClassifier, SNode instanceType) {
+    SNode returnType = SNodeOperations.copyNode(type);
+    {
+      Pattern_1 pattern_1181217694220 = new Pattern_1(genericClassifier);
+      SNode coercedNode_1181217694219 = TypeChecker.getInstance().getRuntimeSupport().coerce(instanceType, pattern_1181217694220);
+      if(coercedNode_1181217694219 != null) {
+        List<SNode> actualParams = pattern_1181217694220.PatternVar2;
+        for(SNode child : SNodeOperations.getDescendants(returnType, null, true)) {
+          if(SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
+            SNode tvr = child;
+            SNode tvd = SLinkOperations.getTarget(tvr, "typeVariableDeclaration", false);
+            int index = ListOperations.indexOf(SLinkOperations.getTargets(genericClassifier, "typeVariableDeclaration", true), tvd);
+            SNode actualParam = (index < actualParams.size() ?
+              actualParams.get(index) :
+              new QuotationClass_30().createNode()
+            );
+            if(returnType == tvr) {
+              returnType = SNodeOperations.copyNode(actualParam, TypeChecker.getInstance().getRuntimeTypesModel());
+            } else
+            {
+              returnType.replaceChild(tvr, SNodeOperations.copyNode(actualParam, TypeChecker.getInstance().getRuntimeTypesModel()));
+            }
+          }
+        }
+      }
+    }
+    return returnType;
   }
 }

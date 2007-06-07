@@ -6,7 +6,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.helgins.QuotationClass_21;
+import jetbrains.mps.baseLanguage.helgins.QuotationClass_20;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_ForeachStatement_InferenceRule implements InferenceRule_Runtime {
@@ -16,7 +16,7 @@ public class typeOf_ForeachStatement_InferenceRule implements InferenceRule_Runt
 
   public void applyRule(SNode argument) {
     SNode T_typevar_1176561507041 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(SLinkOperations.getTarget(argument, "iterable", true)), new QuotationClass_21().createNode(T_typevar_1176561507041), SLinkOperations.getTarget(argument, "iterable", true), null);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(SLinkOperations.getTarget(argument, "iterable", true)), new QuotationClass_20().createNode(T_typevar_1176561507041), SLinkOperations.getTarget(argument, "iterable", true), null);
     TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(T_typevar_1176561507041, TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(SLinkOperations.getTarget(argument, "variable", true)), SLinkOperations.getTarget(argument, "variable", true), null);
   }
   public String getApplicableConceptFQName() {

@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.helgins.QuotationClass_23;
+import jetbrains.mps.baseLanguage.helgins.QuotationClass_22;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_StringLiteral_InferenceRule implements InferenceRule_Runtime {
@@ -14,7 +14,7 @@ public class typeOf_StringLiteral_InferenceRule implements InferenceRule_Runtime
   }
 
   public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_23().createNode(), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_22().createNode(), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.StringLiteral";

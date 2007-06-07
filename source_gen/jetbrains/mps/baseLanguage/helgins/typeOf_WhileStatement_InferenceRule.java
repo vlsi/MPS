@@ -6,7 +6,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.helgins.QuotationClass_22;
+import jetbrains.mps.baseLanguage.helgins.QuotationClass_21;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_WhileStatement_InferenceRule implements InferenceRule_Runtime {
@@ -15,7 +15,7 @@ public class typeOf_WhileStatement_InferenceRule implements InferenceRule_Runtim
   }
 
   public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "condition", true)), new QuotationClass_22().createNode(), SLinkOperations.getTarget(argument, "condition", true), null);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "condition", true)), new QuotationClass_21().createNode(), SLinkOperations.getTarget(argument, "condition", true), null);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.WhileStatement";
