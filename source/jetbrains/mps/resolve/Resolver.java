@@ -14,10 +14,10 @@ import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.smodel.search.IsInstanceCondition;
+import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
-import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
-import jetbrains.mps.smodel.action.DefaultReferentNodeSubstituteAction;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.smodel.action.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.helgins.inference.TypeChecker;
@@ -95,13 +95,31 @@ public class Resolver {
     return !(matchingActions.isEmpty());
   }
 
+
+   private static List<SNode> getSmartReferenceTargets(
+          final ConceptDeclaration referenceNodeConcept,
+          LinkDeclaration smartReference,
+          final SNode parentNode,
+          final IScope scope) {
+
+    // try to create referent-search-scope
+    IStatus status = ModelConstraintsUtil.getReferentSearchScope(parentNode, null, referenceNodeConcept, smartReference, scope);
+    if (status.isError()) return new ArrayList<SNode>();
+
+    ISearchScope searchScope = (ISearchScope) status.getUserObject();
+    final AbstractConceptDeclaration targetConcept = smartReference.getTarget();
+
+    List<SNode> referentNodes = searchScope.getNodes(new IsInstanceCondition(targetConcept));
+    return referentNodes;
+  }
+
   public static boolean resolve1(final SReference reference, final IOperationContext operationContext) {
     // search scope
     SNode referenceNode = reference.getSourceNode();
     ConceptDeclaration referenceNodeConcept = (ConceptDeclaration) referenceNode.getConceptDeclarationAdapter();
     LinkDeclaration linkDeclaration = SModelUtil_new.findLinkDeclaration(referenceNodeConcept, reference.getRole());
     final AbstractConceptDeclaration referentConcept = linkDeclaration.getTarget();
-    TypeChecker.getInstance().checkTypes(reference.getSourceNode().getParent()); //todo dirty hack
+    TypeChecker.getInstance().checkTypes(referenceNode.getParent()); //todo dirty hack
     IStatus status = ModelConstraintsUtil.getReferentSearchScope(referenceNode.getParent(),
             referenceNode, referenceNodeConcept, linkDeclaration, operationContext.getScope());
     if (status.isError()) {
@@ -114,16 +132,46 @@ public class Resolver {
         return node.isInstanceOfConcept(referentConcept);
       }
     });
-    List<SNode> filtered = CollectionUtil.filter(nodes, new Condition<SNode>() {
+    Condition<SNode> nameMatchesCondition = new Condition<SNode>() {
       public boolean met(SNode object) {
         return reference.getResolveInfo().equals(object.getName());
       }
-    });
-    if (filtered.isEmpty()) {
+    };
+    List<SNode> filtered = CollectionUtil.filter(nodes, nameMatchesCondition);
+    if (!filtered.isEmpty()) {
+      reference.getSourceNode().setReferent(reference.getRole(), filtered.get(0));
+      return true;
+    }
+    if (referenceNode.getParent() == null) {
       return false;
     }
-    reference.getSourceNode().setReferent(reference.getRole(), filtered.get(0));
-    return true;
+    SNode parent = referenceNode.getParent();
+    LinkDeclaration parentLinkDeclaration = SModelUtil_new.findLinkDeclaration(parent.getConceptDeclarationAdapter(),
+            referenceNode.getRole_());
+    final AbstractConceptDeclaration possibleChildConceptDeclaration = parentLinkDeclaration.getTarget();
+
+     ISearchScope conceptsSearchScope = SModelSearchUtil_new.createConceptsFromModelLanguagesScope(parent.getModel(), true, operationContext.getScope());
+     List<SNode> applicableConcepts = conceptsSearchScope.getNodes(new Condition<SNode>() {
+     public boolean met(SNode object) {
+       return SModelUtil_new.isAssignableConcept((ConceptDeclaration) BaseAdapter.fromNode(object), possibleChildConceptDeclaration);
+     }
+    });
+    for (SNode node : applicableConcepts) {
+      ConceptDeclaration applicableConcept = (ConceptDeclaration) BaseAdapter.fromNode(node);
+      LinkDeclaration smartReference = ChildSubstituteActionsHelper.getSmartReference(applicableConcept, operationContext.getScope());
+      if (smartReference == null) continue;
+      List<SNode> smartReferenceTargets = getSmartReferenceTargets(applicableConcept, smartReference, parent, operationContext.getScope());
+      List<SNode> filteredRefTargets = CollectionUtil.filter(smartReferenceTargets, nameMatchesCondition);
+      if (!filteredRefTargets.isEmpty()) {
+        SNode target = filteredRefTargets.get(0);
+        SNode newNode = SModelUtil_new.instantiateConceptDeclaration(applicableConcept, referenceNode.getModel()).getNode();
+        newNode.setReferent(SModelUtil_new.getGenuineLinkRole(smartReference), target);
+        parent.replace(referenceNode, newNode);
+        return true;
+      }
+    }
+
+    return false;
   }
 
   private static void processAction(INodeSubstituteAction action, String pattern, SReference reference) {

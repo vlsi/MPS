@@ -199,7 +199,7 @@ public class ChildSubstituteActionsHelper {
    *         3. no ref.links with cardinality '1' is declared (no patten, no customized matching text)
    *         4. several ref.links with cardinality '1' is declared (no patten, no customized matching text)
    */
-  private static LinkDeclaration getSmartReference(ConceptDeclaration referenceDeclaringConcept, IScope scope) {
+  public static LinkDeclaration getSmartReference(ConceptDeclaration referenceDeclaringConcept, IScope scope) {
     // trick : should be no custom 'matching text'
     String expectedReferentRole = null;
     String alias = referenceDeclaringConcept.getNode().getConceptProperty("alias", scope);
