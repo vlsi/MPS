@@ -349,7 +349,6 @@ public class RuleUtil {
         myGenerator.addNewRootNode(outputNode);
       }
     }
-//    if (inputNode != null && inputNode.isRoot()) myGenerator.addRootNotToCopy(inputNode);
   }
 
   protected List<SNode> createOutputNodesForTemplateNode(String ruleName,
@@ -549,13 +548,13 @@ public class RuleUtil {
     }
 
     for (INodeAdapter templateChildNode : templateNode.getAdapter().getChildren()) {
-      if (templateChildNode instanceof NodeMacro) continue;
-      if (templateChildNode instanceof TemplateFragment) continue;
+//      if (templateChildNode instanceof NodeMacro) continue;
+//      if (templateChildNode instanceof TemplateFragment) continue;
       if (templateChildNode instanceof PropertyMacro) {
         MacroUtil.expandPropertyMacro(myGenerator, (PropertyMacro) templateChildNode, inputNode, templateNode, outputNode);
       } else if (templateChildNode instanceof ReferenceMacro) {
         myGenerator.addReferenceInfo(new ReferenceInfo_Macro((ReferenceMacro) templateChildNode, inputNode, templateNode, outputNode));
-      } else {
+      } else if (!TemplateGenUtil.isTemplateLanguageElement(templateChildNode)) {
         List<SNode> outputChildNodes = createOutputNodesForTemplateNode(ruleName, templateChildNode.getNode(), inputNode, 0, false);
         if (outputChildNodes != null) {
           String role = templateChildNode.getRole_();

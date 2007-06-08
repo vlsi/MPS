@@ -218,7 +218,7 @@ public class TemplateGenUtil {
       for (SNode node : nodes) {
         // do not apply root mapping if root node has been copied from input model on previous micro-step
         // because some roots can be already mapped and copied as well (if some rule has 'keep root' = true)
-        if(generator.getGeneratorSessionContext().isCopiedRoot(node)) {
+        if (generator.getGeneratorSessionContext().isCopiedRoot(node)) {
 //          LOG.error("== skip copied root: " + node.getName());
           continue;
         }
@@ -429,12 +429,16 @@ public class TemplateGenUtil {
   }
 
   public static boolean isTemplateLanguageElement(SNode n) {
-    INodeAdapter templateNode = BaseAdapter.fromNode(n);
-    return templateNode instanceof NodeMacro ||
-            templateNode instanceof ReferenceMacro ||
-            templateNode instanceof PropertyMacro ||
-            templateNode instanceof TemplateFragment ||
-            templateNode instanceof RootTemplateAnnotation;
+    INodeAdapter na = BaseAdapter.fromNode(n);
+    return isTemplateLanguageElement(na);
+  }
+
+  public static boolean isTemplateLanguageElement(INodeAdapter n) {
+    return n instanceof NodeMacro ||
+            n instanceof ReferenceMacro ||
+            n instanceof PropertyMacro ||
+            n instanceof TemplateFragment ||
+            n instanceof RootTemplateAnnotation;
   }
 
   private static void createChildBuilders(INodeBuilder parentNodeBuilder) {
