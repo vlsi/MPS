@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguageInternal.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguageInternal.helgins.QuotationClass_;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -14,9 +15,14 @@ public class typeof_InternalNewExpression_InferenceRule implements InferenceRule
   }
 
   public void applyRule(SNode argument) {
+    SNode type;
     if((SLinkOperations.getTarget(argument, "type", true) != null)) {
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), SLinkOperations.getTarget(argument, "type", true), argument);
+      type = SLinkOperations.getTarget(argument, "type", true);
+    } else
+    {
+      type = new QuotationClass_().createNode();
     }
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), type, argument, null);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression";
@@ -25,6 +31,6 @@ public class typeof_InternalNewExpression_InferenceRule implements InferenceRule
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
   public boolean overrides() {
-    return false;
+    return true;
   }
 }

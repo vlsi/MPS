@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguageInternal.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.baseLanguageInternal.helgins.QuotationClass_;
+import jetbrains.mps.baseLanguageInternal.helgins.QuotationClass_1;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -15,7 +15,7 @@ public class typeof_InternalClassExpression_InferenceRule implements InferenceRu
   }
 
   public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), new QuotationClass_().createNode(SLinkOperations.getTarget(argument, "type", true)), argument);
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), new QuotationClass_1().createNode(SLinkOperations.getTarget(argument, "type", true)), argument, null);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression";
