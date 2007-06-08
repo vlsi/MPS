@@ -108,7 +108,12 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     }
 
     checkMonitorCanceled();
-    List<SNode> copiedRoots = copyRootsFromInputModel(ruleManager);
+    getGeneratorSessionContext().clearCopiedRootsSet();
+    List<SNode> copiedOutputRoots = copyRootsFromInputModel(ruleManager);
+    for (SNode copiedOutputRoot : copiedOutputRoots) {
+      getGeneratorSessionContext().registerCopiedRoot(copiedOutputRoot);
+      myOutputModel.addRoot(copiedOutputRoot);
+    }
 
     checkMonitorCanceled();
     for (WeavingRule weavingRule : ruleManager.getWeavingRules()) {
@@ -119,7 +124,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
       ruleUtil.applyWeavingMappingRule(weavingMappingRule);
     }
     checkMonitorCanceled();
-    for (SNode outputRootNode : copiedRoots) {
+    for (SNode outputRootNode : copiedOutputRoots) {
       ruleManager.getReductionRuleManager().applyReductionRules(findInputNodeByOutputNodeWithSameId(outputRootNode));
     }
 
@@ -132,11 +137,10 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
 
     // There could new unresolved references appear after applying reduction rules (all delayed changes should be done before this, like replacing children)
     checkMonitorCanceled();
-    validateReferencesInCopiedRoots(copiedRoots);
+    validateReferencesInCopiedRoots(copiedOutputRoots);
     updateAllReferences();
 
     checkMonitorCanceled();
-//    validateReferencesInCopiedRoots(copiedRoots);
     reportWasErrors(getErrorCount() - oldErrorCount);
   }
 
@@ -155,7 +159,6 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     }
     List<SNode> copiedRoots = new ArrayList<SNode>();
     for (SNode root : CloneUtil.copy(rootsToCopy, myOutputModel, getScope())) {
-      myOutputModel.addRoot(root);
       copiedRoots.add(root);
     }
     return copiedRoots;

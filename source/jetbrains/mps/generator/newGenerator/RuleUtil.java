@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.sharedConcepts.structure.Options_DefaultTrue;
 
 import java.util.*;
 
@@ -70,6 +71,9 @@ public class RuleUtil {
     if (inputNodes.size() > 0) myGenerator.setChanged(true);
     for (SNode inputNode : inputNodes) {
       createRootNodeFromTemplate(mappingRule.getName(), BaseAdapter.fromAdapter(templateNode), inputNode);
+      if (inputNode.isRoot()) {
+        myGenerator.addRootNotToCopy(inputNode);
+      }
     }
   }
 
@@ -90,10 +94,19 @@ public class RuleUtil {
     boolean includeInheritors = rule.getApplyToConceptInheritors();
     List<SNode> inputNodes = myGenerator.getSourceModel().getModelDescriptor().getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
     for (SNode inputNode : inputNodes) {
+      // do not apply root mapping if root node has been copied from input model on previous micro-step
+      // because some roots can be already mapped and copied as well (if some rule has 'keep root' = true)
+      if(myGenerator.getGeneratorSessionContext().isCopiedRoot(inputNode)) {
+        continue;
+      }
+
       if (checkConditionForBaseMappingRule(inputNode, rule)) {
         myGenerator.setChanged(true);
         SNode templateNode = BaseAdapter.fromAdapter(rule.getTemplate());
         createRootNodeFromTemplate(rule.getName(), templateNode, inputNode);
+        if (inputNode.isRoot() && rule.getKeepSourceRoot() == Options_DefaultTrue.default_) {
+          myGenerator.addRootNotToCopy(inputNode);
+        }
       }
     }
   }
@@ -336,7 +349,7 @@ public class RuleUtil {
         myGenerator.addNewRootNode(outputNode);
       }
     }
-    if (inputNode != null && inputNode.isRoot()) myGenerator.addRootNotToCopy(inputNode);
+//    if (inputNode != null && inputNode.isRoot()) myGenerator.addRootNotToCopy(inputNode);
   }
 
   protected List<SNode> createOutputNodesForTemplateNode(String ruleName,
