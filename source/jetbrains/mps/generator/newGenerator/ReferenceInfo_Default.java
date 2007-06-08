@@ -30,13 +30,6 @@ public class ReferenceInfo_Default extends ReferenceInfo {
   }
 
   public void executeIndependentResolve(TemplateModelGenerator_New generator) {
-//    //test
-//    if ("actualArgument".equals(myTemplateSourceNode.getRole_())) {
-//      if ("class_EnumerationDataTypeDeclaration_Enum".equals(myTemplateTargetNode.getName())) {
-//        System.out.println("aaa");
-//      }
-//    }
-//    //test
 
     // todo: used when node is copied (?)
     {
@@ -61,7 +54,7 @@ public class ReferenceInfo_Default extends ReferenceInfo {
 
     // todo: used when node is created from template node (?)
     {
-      tryToResolveUsingTemplateNodeToOutputNodeMap(generator, false);
+      tryToResolveUsingTemplateNodeToOutputNodeMap(generator);
       if (isSuccess()) {
         return;
       }
@@ -88,7 +81,7 @@ public class ReferenceInfo_Default extends ReferenceInfo {
   public void executeDependentResolve(TemplateModelGenerator_New generator) {
 
     // try to resolve using custom referense resolver for source node concept
-    IReferenceResolver referenceResolver = loadReferenceResolver(generator.getScope());
+    IReferenceResolver referenceResolver = loadReferenceResolver();
     if (referenceResolver != null) {
       SNode outputTargetNode = referenceResolver.resolveTarget_New(myTemplateReference, new SimpleNodeBuilder(generator, myOutputNode, myTemplateSourceNode, myInputNode));
       if (outputTargetNode != null) {
@@ -132,7 +125,7 @@ public class ReferenceInfo_Default extends ReferenceInfo {
     return null;
   }
 
-  private IReferenceResolver loadReferenceResolver(IScope scope) {
+  private IReferenceResolver loadReferenceResolver() {
     ConceptDeclaration conceptDeclaration = (ConceptDeclaration) myTemplateSourceNode.getConceptDeclarationAdapter();
     while (conceptDeclaration != null) {
       String modelPackageName = JavaNameUtil.packageNameForModelUID(conceptDeclaration.getModel().getUID());
@@ -155,19 +148,13 @@ public class ReferenceInfo_Default extends ReferenceInfo {
   }
 
 
-  private boolean myWatchThis;
-
-  public void tryToResolveUsingTemplateNodeToOutputNodeMap(TemplateModelGenerator_New generator, boolean reportError) {
+  private void tryToResolveUsingTemplateNodeToOutputNodeMap(TemplateModelGenerator_New generator) {
     SNode outputTargetNode = generator.findOutputNodeByTemplateNode(myTemplateTargetNode);
     if (outputTargetNode == null) {
       return;
     }
-    //that means that there were more than one target node for given template node
     if (outputTargetNode == myTemplateTargetNode) {
-      if (reportError) {
-        generator.showErrorMessage(myInputNode, myTemplateSourceNode, "can't resolve reference '" + myTemplateReference.getRole() + "': there more than one possible target node generated from the template node");
-        myWatchThis = true;
-      }
+      //that means that there were more than one target node for given template node
       return;
     }
     myOutputNode.addReferent(myTemplateReference.getRole(), outputTargetNode);
