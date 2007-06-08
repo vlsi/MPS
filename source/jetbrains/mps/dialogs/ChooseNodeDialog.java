@@ -8,12 +8,12 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.refactoring.common.move.MoveNodeRefactoring;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.ToStringComparator;
-import jetbrains.mps.refactoring.common.move.MoveNodeRefactoring;
 
 import javax.swing.*;
 import javax.swing.tree.TreePath;
@@ -21,18 +21,13 @@ import java.awt.BorderLayout;
 import java.awt.Frame;
 import java.util.*;
 
-
-public class ChooseNodeDialog extends BaseDialog {
+public final class ChooseNodeDialog extends BaseDialog {
   private JPanel myPanel = new JPanel(new BorderLayout());
   private MyTree myTree = new MyTree();
   private Set<SModelDescriptor> myModels = new HashSet<SModelDescriptor>();
   private IOperationContext myContext;
   private Object myResult;
   private List<SNode> mySourceNodes;
-
-  public ChooseNodeDialog(IOperationContext context, Frame mainFrame) {
-    this(context, mainFrame, getModelsFrom(context));
-  }
 
   public ChooseNodeDialog(String text, IOperationContext context, Frame mainFrame, List<SNode> sourceNodes) {
     this(text, context, mainFrame, getModelsFrom(context), sourceNodes);
@@ -50,12 +45,7 @@ public class ChooseNodeDialog extends BaseDialog {
     return models;
   }
 
-
-  public ChooseNodeDialog(IOperationContext context, Frame mainFrame, Set<SModelDescriptor> models) {
-    this("Choose Node", context, mainFrame, models, null);
-  }
-
-  public ChooseNodeDialog(String text, IOperationContext context, Frame mainFrame, Set<SModelDescriptor> models, List<SNode> sourceNodes) {
+  private ChooseNodeDialog(String text, IOperationContext context, Frame mainFrame, Set<SModelDescriptor> models, List<SNode> sourceNodes) {
     super(mainFrame, text);
 
     myContext = context;
@@ -120,7 +110,7 @@ public class ChooseNodeDialog extends BaseDialog {
     myResult = null;
   }
 
-  private class MyTree extends MPSTree {
+  private final class MyTree extends MPSTree {
     protected MPSTreeNode rebuild() {
       TextTreeNode root = new TextTreeNode("root");
 
