@@ -26,7 +26,7 @@ public class ChildHierarchyTreeNode<T extends INodeAdapter> extends HierarchyTre
     }
 
     public void init() {
-      List<T> descendants = new ArrayList<T>(myHierarchyTree.getDescendants((T) this.getUserObject()));
+      List<T> descendants = new ArrayList<T>(myHierarchyTree.getAbstractChildren((T) this.getUserObject()));
       Collections.sort(descendants, new Comparator<T>() {
         public int compare(T o1, T o2) {
           return ("" + o1.getName()).compareTo(o2.getName());

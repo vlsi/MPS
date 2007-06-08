@@ -35,13 +35,17 @@ public class BaseLanguageHierarchyView extends AbstractHierarchyView<ClassConcep
     return Icons.HIERARCHY_VIEW_ICON;
   }
 
-  protected AbstractHierarchyTree<ClassConcept> createHierarchyTree() {
-    return new BaseLanguageHierarchyTree(this, ClassConcept.class);
+  protected AbstractHierarchyTree<ClassConcept> createHierarchyTree(boolean isParentHierarchy) {
+    return new BaseLanguageHierarchyTree(this, ClassConcept.class, isParentHierarchy);
   }
 
   private static class BaseLanguageHierarchyTree extends AbstractHierarchyTree<ClassConcept> {
-    public BaseLanguageHierarchyTree(AbstractHierarchyView<ClassConcept> abstractHierarchyView, Class<ClassConcept> aClass) {
-      super(abstractHierarchyView, aClass);
+    public BaseLanguageHierarchyTree(AbstractHierarchyView<ClassConcept> abstractHierarchyView, Class<ClassConcept> aClass, boolean isParentHierarchy) {
+      super(abstractHierarchyView, aClass, isParentHierarchy);
+    }
+
+    protected Set<ClassConcept> getParents(ClassConcept node) {
+      return new HashSet<ClassConcept>(); //todo
     }
 
     protected String noNodeString() {

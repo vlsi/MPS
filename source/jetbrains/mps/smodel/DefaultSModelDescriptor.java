@@ -1,6 +1,9 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
 import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.event.*;
@@ -356,8 +359,8 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     return findUsages(CollectionUtil.asSet(node));
   }
 
-  public Set<ConceptDeclaration> findDescendants(ConceptDeclaration node, Set<ConceptDeclaration> descendantsKnownInModel) {
-    if (!myModelRootManager.isFindUsagesSupported()) return new HashSet<ConceptDeclaration>();
+  public Set<AbstractConceptDeclaration> findDescendants(AbstractConceptDeclaration node, Set<AbstractConceptDeclaration> descendantsKnownInModel) {
+    if (!myModelRootManager.isFindUsagesSupported()) return new HashSet<AbstractConceptDeclaration>();
     if (mySModel != null && !SModelRepository.getInstance().isChanged(mySModel) && !descendantsKnownInModel.isEmpty()) {
       return descendantsKnownInModel;
     }
@@ -366,7 +369,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
       if (!myModelRootManager.containsString(this, node.getId())) return descendantsKnownInModel;
     }
     getSModel();
-    Set<ConceptDeclaration> result = new HashSet<ConceptDeclaration>();
+    Set<AbstractConceptDeclaration> result = new HashSet<AbstractConceptDeclaration>();
     if (mySModel != null) {
       for (SNode root : mySModel.getRoots()) {
         addDescendants(root, node, result);
@@ -398,17 +401,34 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     }
   }
 
-  private void addDescendants(SNode current, ConceptDeclaration node, Set<ConceptDeclaration> result) {
+  private void addDescendants(SNode current, AbstractConceptDeclaration node, Set<AbstractConceptDeclaration> result) {
 
     if (BaseAdapter.fromNode(current) instanceof ConceptDeclaration) {
-      for (SReference ref : current.getReferences()) {
-        if (ref.getTargetNode() == BaseAdapter.fromAdapter(node) && ref.getRole().equals(ConceptDeclaration.EXTENDS)) {
-          result.add((ConceptDeclaration) BaseAdapter.fromNode(current));
+      ConceptDeclaration concept = (ConceptDeclaration) BaseAdapter.fromNode(current);
+      for (InterfaceConceptReference interfaceConceptReference : concept.getImplementses()) {
+        InterfaceConceptDeclaration declaration = interfaceConceptReference.getIntfc();
+        if (declaration != null && declaration.getNode() == BaseAdapter.fromAdapter(node)) {
+          result.add(concept);
+          break;
+        }
+      }
+      if (BaseAdapter.fromAdapter(concept.getExtends()) == BaseAdapter.fromAdapter(node)) {
+        result.add(concept);
+      }
+    }
+
+    if (BaseAdapter.fromNode(current) instanceof InterfaceConceptDeclaration) {
+      InterfaceConceptDeclaration interfaceConcept = (InterfaceConceptDeclaration) BaseAdapter.fromNode(current);
+      for (InterfaceConceptReference interfaceConceptReference : interfaceConcept.getExtendses()) {
+        InterfaceConceptDeclaration declaration = interfaceConceptReference.getIntfc();
+        if (declaration != null && declaration.getNode() == BaseAdapter.fromAdapter(node)) {
+          result.add(interfaceConcept);
           break;
         }
       }
     }
-    for (SNode child : current.getChildren()) {
+
+    for (SNode child : current.getChildren()) {  // are there any "inner" concepts?
       addDescendants(child, node, result);
     }
   }

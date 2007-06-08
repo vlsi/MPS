@@ -28,14 +28,24 @@ public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPST
   protected AbstractHierarchyView<T> myHierarchyView;
   protected T myHierarchyNode;
   protected Class<T> myClass;
+  protected boolean myIsParentHierarchy;
 
-  public AbstractHierarchyTree(AbstractHierarchyView<T> hierarchyView, Class<T> aClass) {
+  public AbstractHierarchyTree(AbstractHierarchyView<T> hierarchyView, Class<T> aClass, boolean isParentHierarchy) {
     myHierarchyView = hierarchyView;
     myClass = aClass;
+    myIsParentHierarchy = isParentHierarchy;
   }
 
   public AbstractHierarchyView<T> getHierarchyView() {
     return myHierarchyView;
+  }
+
+  public boolean isParentHierarchy() {
+    return myIsParentHierarchy;
+  }
+
+  /*package*/ void setParentHierarchy(boolean isParentHierarchy) {
+    myIsParentHierarchy = isParentHierarchy;
   }
 
   public void setOperationContext(IOperationContext operationContext) {
@@ -52,17 +62,35 @@ public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPST
 
   protected abstract String noNodeString();
 
-  public void rebuildTree() {
+ /* public void rebuildTree() {
      DefaultTreeModel model = new DefaultTreeModel(rebuild());
      setModel(model);
-  }
+  }*/
 
   protected abstract T getParent(T node);
 
+  protected abstract Set<T> getParents(T node);
+
   protected abstract Set<T> getDescendants(T node);
 
+  protected Set<T> getAbstractChildren(T node) {
+    if (myIsParentHierarchy) {
+      return getParents(node);
+    } else {
+      return getDescendants(node);
+    }
+  }
+
+  protected T getAbstractParent(T node) {
+    if (myIsParentHierarchy) {
+      return null;
+    } else {
+      return getParent(node);
+    }
+  }
+
     protected void rebuildChildrenHierarchy_internal(HierarchyTreeNode<T> hierarchyTreeNode) {
-      Set<T> descendants = getDescendants((T) hierarchyTreeNode.getUserObject());
+      Set<T> descendants = getAbstractChildren((T) hierarchyTreeNode.getUserObject());
       for (T descendant : descendants) {
         HierarchyTreeNode childHierarchyTreeNode = new HierarchyTreeNode(descendant, myOperationContext, this);
         hierarchyTreeNode.add(childHierarchyTreeNode);
@@ -79,7 +107,7 @@ public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPST
       T parentDeclaration = myHierarchyNode;
       while (parentDeclaration != null ) {
         parentHierarchy.add(parentDeclaration);
-        parentDeclaration = getParent(parentDeclaration);
+        parentDeclaration = getAbstractParent(parentDeclaration);
       }
 
       HierarchyTreeNode parentTreeNode = null;

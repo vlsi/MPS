@@ -1,6 +1,7 @@
 package jetbrains.mps.findUsages;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.project.ApplicationComponents;
@@ -21,23 +22,23 @@ public class FindUsagesManager {
   //---
   //caches
   //---
-  private HashMap<ConceptDeclaration, HashMap<SModelDescriptor, HashSet<ConceptDeclaration>>> myConceptsToKnownDescendantsInModelDescriptors = new HashMap<ConceptDeclaration, HashMap<SModelDescriptor, HashSet<ConceptDeclaration>>>();
+  private HashMap<AbstractConceptDeclaration, HashMap<SModelDescriptor, HashSet<AbstractConceptDeclaration>>> myConceptsToKnownDescendantsInModelDescriptors = new HashMap<AbstractConceptDeclaration, HashMap<SModelDescriptor, HashSet<AbstractConceptDeclaration>>>();
   //--
 
 
-  public Set<ConceptDeclaration> findDescendants(ConceptDeclaration node, IScope scope) {
-    HashMap<SModelDescriptor, HashSet<ConceptDeclaration>> knownDescendantsInModelDescriptors = myConceptsToKnownDescendantsInModelDescriptors.get(node);
+  public Set<AbstractConceptDeclaration> findDescendants(AbstractConceptDeclaration node, IScope scope) {
+    HashMap<SModelDescriptor, HashSet<AbstractConceptDeclaration>> knownDescendantsInModelDescriptors = myConceptsToKnownDescendantsInModelDescriptors.get(node);
     if (knownDescendantsInModelDescriptors == null) {
-      knownDescendantsInModelDescriptors = new HashMap<SModelDescriptor, HashSet<ConceptDeclaration>>();
+      knownDescendantsInModelDescriptors = new HashMap<SModelDescriptor, HashSet<AbstractConceptDeclaration>>();
       myConceptsToKnownDescendantsInModelDescriptors.put(node, knownDescendantsInModelDescriptors);
     }
-    Set<ConceptDeclaration> result = new HashSet<ConceptDeclaration>();
+    Set<AbstractConceptDeclaration> result = new HashSet<AbstractConceptDeclaration>();
     List<SModelDescriptor> models = scope.getModelDescriptors();
     for (SModelDescriptor model : models) {
       if (model.getStereotype().equals(SModelStereotype.JAVA_STUB)) continue;
-      HashSet<ConceptDeclaration> descendantsKnownInModel = knownDescendantsInModelDescriptors.get(model);
+      HashSet<AbstractConceptDeclaration> descendantsKnownInModel = knownDescendantsInModelDescriptors.get(model);
       if (descendantsKnownInModel == null) {
-        descendantsKnownInModel = new HashSet<ConceptDeclaration>();
+        descendantsKnownInModel = new HashSet<AbstractConceptDeclaration>();
         knownDescendantsInModelDescriptors.put(model, descendantsKnownInModel);
       }
       result.addAll(model.findDescendants(node, descendantsKnownInModel));

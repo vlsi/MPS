@@ -8,11 +8,9 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.project.MPSProject;
 
-import javax.swing.JPanel;
-import javax.swing.JPopupMenu;
-import javax.swing.JScrollPane;
-import javax.swing.JComponent;
+import javax.swing.*;
 import java.awt.BorderLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.Set;
@@ -29,24 +27,54 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Defa
   protected AbstractHierarchyTree<T> myHierarchyTree;
   protected HierarchyTreeNode<T> myTreeNode;
   protected JPanel myComponent = new JPanel(new BorderLayout());
+  protected JPanel myButtonsPanel = new JPanel(new GridLayout(1,2));
+  protected ButtonGroup myButtonGroup = new ButtonGroup();
+  protected JRadioButton myChildrenHierarchyButton;
+  protected JRadioButton myParentsHierarchyButton;
   protected IOperationContext myContext;
   protected IDEProjectFrame myIde;
+  public JScrollPane myScrollPane;
 
   public AbstractHierarchyView(IDEProjectFrame ide) {
     myIde = ide;
     init();
   }
 
-  protected abstract AbstractHierarchyTree<T> createHierarchyTree();
+  protected abstract AbstractHierarchyTree<T> createHierarchyTree(boolean isParentHierarchy);
 
- protected void init() {
-    myHierarchyTree = createHierarchyTree();
+  protected void init() {
+    myHierarchyTree = createHierarchyTree(false);
     myHierarchyTree.setRootVisible(true);
-    myComponent.add(new JScrollPane(myHierarchyTree), BorderLayout.CENTER);
+
+    myChildrenHierarchyButton = new JRadioButton(new AbstractAction("Children Hierarchy") {
+      public void actionPerformed(ActionEvent e) {
+        myHierarchyTree.setParentHierarchy(false);
+        myHierarchyTree.rebuildTree();
+      }
+    });
+
+    myParentsHierarchyButton = new JRadioButton(new AbstractAction("Parent Hierarchy") {
+      public void actionPerformed(ActionEvent e) {
+        myHierarchyTree.setParentHierarchy(true);
+        myHierarchyTree.rebuildTree();
+      }
+    });
+
+    myButtonGroup.add(myChildrenHierarchyButton);
+    myButtonGroup.add(myParentsHierarchyButton);
+    myChildrenHierarchyButton.setSelected(true);
+    myButtonsPanel.add(myChildrenHierarchyButton);
+    myButtonsPanel.add(myParentsHierarchyButton);
+    JPanel panel = new JPanel(new BorderLayout());
+    panel.add(myButtonsPanel, BorderLayout.WEST);
+    myComponent.add(panel, BorderLayout.NORTH);
+    myScrollPane = new JScrollPane(myHierarchyTree);
+    myComponent.add(myScrollPane, BorderLayout.CENTER);
     showConceptInHierarchy(null, null);
   }
 
-    protected JPopupMenu showHierarchyForFoundConceptPopupMenu(final Class<T> aClass) {
+
+  protected JPopupMenu showHierarchyForFoundConceptPopupMenu(final Class<T> aClass) {
     JPopupMenu result = new JPopupMenu();
     result.add(new AbstractActionWithEmptyIcon("Show Hierarchy For Concept") {
       public void actionPerformed(ActionEvent e) {
