@@ -22,7 +22,8 @@ import java.awt.Frame;
 import java.util.*;
 
 public final class ChooseNodeDialog extends BaseDialog {
-  private JPanel myPanel = new JPanel(new BorderLayout());
+  
+  private final JPanel myPanel = new JPanel(new BorderLayout());
   private MyTree myTree = new MyTree();
   private Set<SModelDescriptor> myModels = new HashSet<SModelDescriptor>();
   private IOperationContext myContext;
