@@ -96,7 +96,7 @@ public class RuleUtil {
     for (SNode inputNode : inputNodes) {
       // do not apply root mapping if root node has been copied from input model on previous micro-step
       // because some roots can be already mapped and copied as well (if some rule has 'keep root' = true)
-      if(myGenerator.getGeneratorSessionContext().isCopiedRoot(inputNode)) {
+      if (myGenerator.getGeneratorSessionContext().isCopiedRoot(inputNode)) {
         continue;
       }
 
@@ -372,7 +372,7 @@ public class RuleUtil {
           List<SNode> _outputNodes = createOutputNodesForTemplateNode(nodeMacro.getMappingId(), templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
           if (_outputNodes != null) {
             outputNodes.addAll(_outputNodes);
-            if(registerTopOutput && !inputChanged) {
+            if (registerTopOutput && !inputChanged) {
               myGenerator.addTopOutputNodesByInputNode(inputNode, _outputNodes);
             }
           }
@@ -384,6 +384,8 @@ public class RuleUtil {
         for (SNode newInputNode : newInputNodes) {
           List<SNode> _outputNodes = copyNodeFromInputNode(nodeMacro.getMappingId(), templateNode, newInputNode);
           if (_outputNodes.size() == 1) {
+            // todo: this is not needed - this is done inside copyNodeFromInputNode()
+            // todo: instead 'addTopOutputNodesByInputNode' (if input is changed)
             myGenerator.addOutputNodeByTemplateNodeAndInputNode(templateNode, inputNode, _outputNodes.get(0));
           }
           outputNodes.addAll(_outputNodes);
@@ -397,7 +399,7 @@ public class RuleUtil {
           List<SNode> _outputNodes = createOutputNodesForTemplateNode(nodeMacro.getMappingId(), templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
           if (_outputNodes != null) {
             outputNodes.addAll(_outputNodes);
-            if(registerTopOutput && !inputChanged) {
+            if (registerTopOutput && !inputChanged) {
               myGenerator.addTopOutputNodesByInputNode(inputNode, _outputNodes);
             }
           }
@@ -433,7 +435,7 @@ public class RuleUtil {
             }
           }
 
-          if(registerTopOutput && !inputChanged) {
+          if (registerTopOutput && !inputChanged) {
             myGenerator.addTopOutputNodesByInputNode(inputNode, outputNodes);
           }
         }
@@ -468,7 +470,7 @@ public class RuleUtil {
           }
 
           if (templateNodeForCase != null) {
-            List<SNode> outputChildNodes = createOutputNodesForTemplateNode(nodeMacro.getMappingId(), templateNodeForCase, newInputNode, 0, inputChanged );
+            List<SNode> outputChildNodes = createOutputNodesForTemplateNode(nodeMacro.getMappingId(), templateNodeForCase, newInputNode, 0, inputChanged);
             if (outputChildNodes != null) {
               outputNodes.addAll(outputChildNodes);
             }
@@ -480,7 +482,7 @@ public class RuleUtil {
             }
           }
 
-          if(registerTopOutput && !inputChanged) {
+          if (registerTopOutput && !inputChanged) {
             myGenerator.addTopOutputNodesByInputNode(inputNode, outputNodes);
           }
         } // for (SNode newInputNode : newInputNodes)
@@ -503,7 +505,7 @@ public class RuleUtil {
               outputNodes.addAll(_outputNodes);
             }
           }
-          if(registerTopOutput && !inputChanged) {
+          if (registerTopOutput && !inputChanged) {
             myGenerator.addTopOutputNodesByInputNode(inputNode, outputNodes);
           }
         }
@@ -518,7 +520,7 @@ public class RuleUtil {
       return null;
     }
     outputNodes.add(outputNode);
-    if(registerTopOutput) {
+    if (registerTopOutput) {
       myGenerator.addTopOutputNodeByInputNode(inputNode, outputNode);
     }
     myGenerator.addOutputNodeByTemplateNodeAndInputNode(templateNode, inputNode, outputNode);
@@ -548,8 +550,6 @@ public class RuleUtil {
     }
 
     for (INodeAdapter templateChildNode : templateNode.getAdapter().getChildren()) {
-//      if (templateChildNode instanceof NodeMacro) continue;
-//      if (templateChildNode instanceof TemplateFragment) continue;
       if (templateChildNode instanceof PropertyMacro) {
         MacroUtil.expandPropertyMacro(myGenerator, (PropertyMacro) templateChildNode, inputNode, templateNode, outputNode);
       } else if (templateChildNode instanceof ReferenceMacro) {
@@ -588,7 +588,15 @@ public class RuleUtil {
     List<SNode> outputNodes = myRuleManager.getReductionRuleManager().tryToReduce(inputNode);
     if (outputNodes != null) {
       if (outputNodes.size() == 1) {
-        myGenerator.addOutputNodeByTemplateNodeAndInputNode(templateNode, inputNode, outputNodes.get(0));
+        SNode outputNode = outputNodes.get(0);
+        { // register copied node
+          myGenerator.addOutputNodeByTemplateNodeAndInputNode(templateNode, inputNode, outputNode);
+          myGenerator.addOutputNodeByRuleNameAndInputNode(templateNode, ruleName, inputNode, outputNode);
+          // here the inputNode plays role of template node
+          myGenerator.addOutputNodeByTemplateNodeAndInputNode(inputNode, inputNode, outputNode);
+// do we really need this?          myGenerator.addTemplateNodeByOutputNode(outputNode, inputNode);
+// do we really need this?          myGenerator.addOutputNodeByTemplateNode(inputNode, outputNode);
+        }
       }
       return outputNodes;
     }
@@ -598,13 +606,16 @@ public class RuleUtil {
       myGenerator.showErrorMessage(inputNode, templateNode, "'copyNodeFromInputNode' cannot create output node");
       return null;
     }
-    myGenerator.addOutputNodeByTemplateNodeAndInputNode(templateNode, inputNode, outputNode);
-    myGenerator.addOutputNodeByRuleNameAndInputNode(templateNode, ruleName, inputNode, outputNode);
-    myGenerator.addOutputNodeByTemplateNodeAndInputNode(inputNode, inputNode, outputNode);
-    //Here the inputNode plays role of template node
-    myGenerator.addTemplateNodeByOutputNode(outputNode, inputNode);
-//    myGenerator.addOutputNodeByTemplateNode(templateNode, outputNode);
-    myGenerator.addOutputNodeByTemplateNode(inputNode, outputNode);
+
+    { // register copied node
+      myGenerator.addOutputNodeByTemplateNodeAndInputNode(templateNode, inputNode, outputNode);
+      myGenerator.addOutputNodeByRuleNameAndInputNode(templateNode, ruleName, inputNode, outputNode);
+      // here the inputNode plays role of template node
+      myGenerator.addOutputNodeByTemplateNodeAndInputNode(inputNode, inputNode, outputNode);
+      myGenerator.addTemplateNodeByOutputNode(outputNode, inputNode);
+      myGenerator.addOutputNodeByTemplateNode(inputNode, outputNode);
+    }
+
     myOutputModel.addLanguage(inputNode.getLanguage(myGenerator.getScope()));
     for (String property : inputNode.getProperties().keySet()) {
       outputNode.setProperty(property, inputNode.getProperty(property), false);

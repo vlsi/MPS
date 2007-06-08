@@ -279,6 +279,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   }
 
   public void addOutputNodeByRuleNameAndInputNode(SNode templateNode, String ruleName, SNode inputNode, SNode outputNode) {
+    // todo: don't regiser if rule-name == NULL
     Pair key = new Pair(ruleName, inputNode);
     if (myRuleNameAndInputNodeToBuilderMap.get(key) == null) {
       myRuleNameAndInputNodeToBuilderMap.put(key, new SimpleNodeBuilder(this, outputNode, templateNode, inputNode));
