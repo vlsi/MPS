@@ -18,6 +18,7 @@ import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.refactoring.logging.Marshallable;
 import jetbrains.mps.refactoring.languages.RenameModelRefactoring;
 import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.smodel.Language.LanguageAspectStatus.AspectKind;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.UseCarefully;
@@ -561,6 +562,34 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       return modelDescriptor;
     }
     return null;
+  }
+
+  public SModelDescriptor getModelDescriptor(AspectKind aspectKind) {
+    SModelDescriptor modelDescriptor = null;
+    switch (aspectKind) {
+      case ACTIONS:
+        modelDescriptor = getActionsModelDescriptor();
+        break;
+      case CONSTRAINTS:
+        modelDescriptor = getConstraintsModelDescriptor();
+        break;
+      case EDITOR:
+        modelDescriptor = getEditorModelDescriptor();
+        break;
+      case HELGINS_TYPESYSTEM:
+        modelDescriptor = getHelginsTypesystemModelDescriptor();
+        break;
+      case SCRIPTS:
+        modelDescriptor = getScriptsModelDescriptor();
+        break;
+      case STRUCTURE:
+        modelDescriptor = getStructureModelDescriptor();
+        break;
+      case TYPESYSTEM:
+        modelDescriptor = getTypesystemModelDescriptor();
+        break;
+    }
+    return modelDescriptor;
   }
 
   @Nullable
