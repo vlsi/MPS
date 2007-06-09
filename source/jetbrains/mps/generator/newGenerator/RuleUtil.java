@@ -450,7 +450,7 @@ public class RuleUtil {
           SNode templateNodeForCase = null;
           if (consequenceForCase != null) {
             if (consequenceForCase instanceof DismissTopMappingRule) {
-              TemplateGenUtil.showGeneratorMessage((GeneratorMessage) ((DismissTopMappingRule) consequenceForCase).getGeneratorMessage(), newInputNode, consequenceForCase.getNode(), myGenerator);
+              TemplateGenUtil.showGeneratorMessage(((DismissTopMappingRule) consequenceForCase).getGeneratorMessage(), newInputNode, consequenceForCase.getNode(), myGenerator);
               throw new ReductionNotNeededException();
             } else if (consequenceForCase instanceof TemplateDeclarationReference) {
               TemplateDeclaration templateForSwitchCase = ((TemplateDeclarationReference) consequenceForCase).getTemplate();

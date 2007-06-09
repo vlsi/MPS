@@ -524,18 +524,6 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     return null;
   }
 
-
-  private TemplateDeclaration processSwitchRuleConsequence(RuleConsequence ruleConsequence, SNode sourceNode, ITemplateGenerator generator) {
-    if (ruleConsequence instanceof DismissTopMappingRule) {
-      TemplateGenUtil.showGeneratorMessage((GeneratorMessage) ((DismissTopMappingRule) ruleConsequence).getGeneratorMessage(), sourceNode, ruleConsequence.getNode(), generator);
-      throw new ReductionNotNeededException();
-    } else if (ruleConsequence instanceof TemplateDeclarationReference) {
-      return ((TemplateDeclarationReference) ruleConsequence).getTemplate();
-    }
-    generator.showErrorMessage(sourceNode, null, ruleConsequence.getNode(), "unsapported rule consequence");
-    return null;
-  }
-
   public ITypeChecker getTypeChecker() {
     return TypeCheckerAccess.getTypeChecker();
   }
@@ -575,7 +563,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   }
 
   public void setChanged(boolean b) {
-    myChanged = true;
+    myChanged = b;
   }
 
   private void addProgressMessage(String message) {
