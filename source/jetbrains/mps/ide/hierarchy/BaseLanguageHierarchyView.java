@@ -3,6 +3,7 @@ package jetbrains.mps.ide.hierarchy;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
 import jetbrains.mps.baseLanguage.structure.Classifier;
+import jetbrains.mps.baseLanguage.structure.Interface;
 import jetbrains.mps.baseLanguage.icons.Icons;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.icons.IconManager;
@@ -22,7 +23,7 @@ import java.util.HashSet;
  * Time: 19:19:08
  * To change this template use File | Settings | File Templates.
  */
-public class BaseLanguageHierarchyView extends AbstractHierarchyView<ClassConcept> {
+public class BaseLanguageHierarchyView extends AbstractHierarchyView<Classifier> {
   public BaseLanguageHierarchyView(IDEProjectFrame ide) {
     super(ide);
   }
@@ -35,43 +36,78 @@ public class BaseLanguageHierarchyView extends AbstractHierarchyView<ClassConcep
     return Icons.HIERARCHY_VIEW_ICON;
   }
 
-  protected AbstractHierarchyTree<ClassConcept> createHierarchyTree(boolean isParentHierarchy) {
-    return new BaseLanguageHierarchyTree(this, ClassConcept.class, isParentHierarchy);
+  protected AbstractHierarchyTree<Classifier> createHierarchyTree(boolean isParentHierarchy) {
+    return new BaseLanguageHierarchyTree(this, Classifier.class, isParentHierarchy);
   }
 
-  private static class BaseLanguageHierarchyTree extends AbstractHierarchyTree<ClassConcept> {
-    public BaseLanguageHierarchyTree(AbstractHierarchyView<ClassConcept> abstractHierarchyView, Class<ClassConcept> aClass, boolean isParentHierarchy) {
+  private static class BaseLanguageHierarchyTree extends AbstractHierarchyTree<Classifier> {
+    public BaseLanguageHierarchyTree(AbstractHierarchyView<Classifier> abstractHierarchyView, Class<Classifier> aClass, boolean isParentHierarchy) {
       super(abstractHierarchyView, aClass, isParentHierarchy);
     }
 
-    protected Set<ClassConcept> getParents(ClassConcept node) {
-      return new HashSet<ClassConcept>(); //todo
+    protected Set<Classifier> getParents(Classifier node) {
+      HashSet<Classifier> result = new HashSet<Classifier>();
+      if (node instanceof ClassConcept) {
+        ClassConcept classConcept = (ClassConcept) node;
+        ClassifierType classifierType = classConcept.getSuperclass();
+        if (classifierType != null) {
+          Classifier classifier = classifierType.getClassifier();
+          if (classifier instanceof ClassConcept) {
+            result.add(classifier);
+          }
+        }
+        for (ClassifierType interfaceType : classConcept.getImplementedInterfaces()) {
+          Classifier interfaceClassifier = interfaceType.getClassifier();
+          if (interfaceClassifier instanceof Interface) {
+            result.add(interfaceClassifier);
+          }
+        }
+      }
+      if (node instanceof Interface) {
+        Interface anInterface = (Interface) node;
+        for (ClassifierType interfaceType : anInterface.getExtendedInterfaces()) {
+          Classifier interfaceClassifier = interfaceType.getClassifier();
+          if (interfaceClassifier instanceof Interface) {
+            result.add(interfaceClassifier);
+          }
+        }
+      }
+      return result;
     }
 
     protected String noNodeString() {
       return "(no classifier)";
     }
 
-    protected ClassConcept getParent(ClassConcept node) {
-      ClassifierType type = node.getSuperclass();
-      if (type == null) return null;
-      Classifier classifier = type.getClassifier();
-      if (classifier instanceof ClassConcept) {
-        return (ClassConcept) classifier;
+    protected Classifier getParent(Classifier node) {
+      if (node instanceof ClassConcept) {
+        ClassConcept classConcept = (ClassConcept) node;
+        ClassifierType type = classConcept.getSuperclass();
+        if (type == null) return null;
+        Classifier classifier = type.getClassifier();
+        if (classifier instanceof ClassConcept) {
+          return classifier;
+        }
       }
       return null;
     }
 
-    protected Set<ClassConcept> getDescendants(ClassConcept node) {
+    protected Set<Classifier> getDescendants(Classifier node) {
       Set<SReference> usages = myUsagesManager.findUsages(node.getNode(), myOperationContext.getScope(), IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR);
-      Set<ClassConcept> result = new HashSet<ClassConcept>();
+      Set<Classifier> result = new HashSet<Classifier>();
       for (SReference usage : usages) {
         if (ClassifierType.CLASSIFIER.equals(usage.getRole())) {
           SNode sourceNode = usage.getSourceNode();
           if (BaseAdapter.isInstance(sourceNode, ClassifierType.class)) {
             ClassifierType classifierType = (ClassifierType) sourceNode.getAdapter();
             if (classifierType.getParent() instanceof ClassConcept && ClassConcept.SUPERCLASS.equals(classifierType.getRole_())) {
-              result.add((ClassConcept) classifierType.getParent());
+              result.add((Classifier) classifierType.getParent());
+            }
+            if (classifierType.getParent() instanceof ClassConcept && ClassConcept.IMPLEMENTED_INTERFACE.equals(classifierType.getRole_())) {
+              result.add((Classifier) classifierType.getParent());
+            }
+            if (classifierType.getParent() instanceof Interface && Interface.EXTENDED_INTERFACE.equals(classifierType.getRole_())) {
+              result.add((Classifier) classifierType.getParent());
             }
           }
         }

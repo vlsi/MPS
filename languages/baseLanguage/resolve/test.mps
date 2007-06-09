@@ -1116,6 +1116,9 @@
       <link role="classifier" targetNodeId="1175862165829" resolveInfo="Test" />
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178550081564" />
+    <node role="implementedInterface" type="jetbrains.mps.baseLanguage.ClassifierType" id="1181402612992">
+      <link role="classifier" extResolveInfo="234.[Classifier]Serializable" />
+    </node>
   </node>
 </model>
 
