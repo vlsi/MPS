@@ -32,6 +32,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   private ArrayList<ReferenceInfo> myReferenceInfos = new ArrayList<ReferenceInfo>();
   private HashMap<Pair<SNode, SNode>, INodeBuilder> myTemplateNodeAndInputNodeToBuilderMap = new HashMap<Pair<SNode, SNode>, INodeBuilder>();
   private HashMap<Pair<String, SNode>, INodeBuilder> myRuleNameAndInputNodeToBuilderMap = new HashMap<Pair<String, SNode>, INodeBuilder>();
+  private HashMap<Pair<String, SNode>, SNode> myRuleNameAndOutputNodeToInputNode = new HashMap<Pair<String, SNode>, SNode>();
   private HashMap<SNode, SNode> myOutputNodeToTemplateNodeMap = new HashMap<SNode, SNode>();
   private HashMap<SNode, SNode> myTemplateNodeToOutputNodeMap = new HashMap<SNode, SNode>();
   private HashMap<SNode, List<SNode>> myInputeNodeToTopOutputNodesMap = new HashMap<SNode, List<SNode>>();
@@ -75,6 +76,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     myReferenceInfos.clear();
     myTemplateNodeAndInputNodeToBuilderMap.clear();
     myRuleNameAndInputNodeToBuilderMap.clear();
+    myRuleNameAndOutputNodeToInputNode.clear();
     myOutputNodeToTemplateNodeMap.clear();
     myTemplateNodeToOutputNodeMap.clear();
     myInputeNodeToTopOutputNodesMap.clear();
@@ -208,7 +210,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
         if (!referenceInfo.isSuccess()) {
 //          referenceInfo.tryToResolveUsingTemplateNodeToOutputNodeMap(this, false);
 //          if (!referenceInfo.isSuccess()) {
-            newReferenceInfos.add(referenceInfo);
+          newReferenceInfos.add(referenceInfo);
 //          }
         }
       }
@@ -273,11 +275,19 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     return myRuleNameAndInputNodeToBuilderMap.get(new Pair(ruleName, inputNode));
   }
 
+  /*package*/ SNode findInputNodeByRuleNameAndOutputNode(String ruleName, SNode outputNode) {
+    return myRuleNameAndOutputNodeToInputNode.get(new Pair(ruleName, outputNode));
+  }
+
   public void addOutputNodeByRuleNameAndInputNode(SNode templateNode, String ruleName, SNode inputNode, SNode outputNode) {
-    // todo: don't regiser if rule-name == NULL
+    if (ruleName == null) return;
     Pair key = new Pair(ruleName, inputNode);
-    if (myRuleNameAndInputNodeToBuilderMap.get(key) == null) {
+    if (!myRuleNameAndInputNodeToBuilderMap.containsKey(key)) {
       myRuleNameAndInputNodeToBuilderMap.put(key, new SimpleNodeBuilder(this, outputNode, templateNode, inputNode));
+      Pair key2 = new Pair(ruleName, outputNode);
+      if (!myRuleNameAndOutputNodeToInputNode.containsKey(key2)) {
+        myRuleNameAndOutputNodeToInputNode.put(key2, inputNode);
+      }
     }
   }
 
