@@ -34,7 +34,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   private HashMap<Pair<String, SNode>, INodeBuilder> myRuleNameAndInputNodeToBuilderMap = new HashMap<Pair<String, SNode>, INodeBuilder>();
   private HashMap<Pair<String, SNode>, SNode> myRuleNameAndOutputNodeToInputNode = new HashMap<Pair<String, SNode>, SNode>();
   private HashMap<SNode, SNode> myOutputNodeToTemplateNodeMap = new HashMap<SNode, SNode>();
-  private HashMap<SNode, SNode> myTemplateNodeToOutputNodeMap = new HashMap<SNode, SNode>();
+  private HashMap<SNode, Pair<SNode, Boolean>> myTemplateNodeToOutputNodeMap = new HashMap<SNode, Pair<SNode, Boolean>>();
   private HashMap<SNode, List<SNode>> myInputeNodeToTopOutputNodesMap = new HashMap<SNode, List<SNode>>();
   private DelayedChanges myDelayedChanges = new DelayedChanges();
   private TemplateSwitchGraph myTemplateSwitchGraph;
@@ -208,10 +208,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
       for (ReferenceInfo referenceInfo : referenceInfos) {
         referenceInfo.executeDependentResolve(this);
         if (!referenceInfo.isSuccess()) {
-//          referenceInfo.tryToResolveUsingTemplateNodeToOutputNodeMap(this, false);
-//          if (!referenceInfo.isSuccess()) {
           newReferenceInfos.add(referenceInfo);
-//          }
         }
       }
       if (newReferenceInfos.size() == 0 || newReferenceInfos.size() == referenceInfos.size()) {
@@ -221,18 +218,10 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
       newReferenceInfos = new ArrayList<ReferenceInfo>(referenceInfos.size());
     }
 
-//    if (newReferenceInfos.size() > 0) {
-//      //try to resolve all the rest references using template to output node map
-//      referenceInfos = new ArrayList<ReferenceInfo>(newReferenceInfos);
-//      newReferenceInfos = new ArrayList<ReferenceInfo>(referenceInfos.size());
-//      for (ReferenceInfo referenceInfo : referenceInfos) {
-//        referenceInfo.tryToResolveUsingTemplateNodeToOutputNodeMap(this, true);
-//        if (!referenceInfo.isSuccess()) {
-//          newReferenceInfos.add(referenceInfo);
-//        }
-//      }
-//    }
     myReferenceInfos = newReferenceInfos;
+    for (ReferenceInfo unresolvedReferenceInfo : newReferenceInfos) {
+      unresolvedReferenceInfo.showErrorMessage(this);
+    }
   }
 
 
@@ -303,21 +292,39 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   }
 
   public void addOutputNodeByTemplateNode(SNode templateNode, SNode outputNode) {
-    SNode prevOutputNode = myTemplateNodeToOutputNodeMap.get(templateNode);
-    // that means that there were more than one output node for given template node
-    if (prevOutputNode == templateNode) {
+//    SNode prevOutputNode = myTemplateNodeToOutputNodeMap.get(templateNode);
+//    // that means that there were more than one output node for given template node
+//    if (prevOutputNode == templateNode) {
+//      return;
+//    }
+//    if (prevOutputNode != null) {
+//      // that means that there are more than one output node for given node, and we cannot resolve reference to it.
+//      myTemplateNodeToOutputNodeMap.put(templateNode, templateNode);
+//    } else {
+//      myTemplateNodeToOutputNodeMap.put(templateNode, outputNode);
+//    }
+
+    Pair<SNode, Boolean> pair = myTemplateNodeToOutputNodeMap.get(templateNode);
+    if (pair == null) {
+      myTemplateNodeToOutputNodeMap.put(templateNode, new Pair<SNode, Boolean>(outputNode, true));
       return;
     }
-    if (prevOutputNode != null) {
-      // that means that there are more than one output node for given node, and we cannot resolve reference to it.
-      myTemplateNodeToOutputNodeMap.put(templateNode, templateNode);
-    } else {
-      myTemplateNodeToOutputNodeMap.put(templateNode, outputNode);
+
+    // that means that there were more than one output node for given template node
+    if (!pair.o2) {
+      return;
     }
+    myTemplateNodeToOutputNodeMap.put(templateNode, new Pair<SNode, Boolean>(pair.o1, false));
   }
 
-  public SNode findOutputNodeByTemplateNode(SNode templateNode) {
-    return myTemplateNodeToOutputNodeMap.get(templateNode);
+  public SNode findOutputNodeByTemplateNode(SNode templateNode, boolean unique) {
+    Pair<SNode, Boolean> pair = myTemplateNodeToOutputNodeMap.get(templateNode);
+    if (pair != null) {
+      if (pair.o2 || !unique) {
+        return pair.o1;
+      }
+    }
+    return null;
   }
 
   public void addReferenceInfo(ReferenceInfo referenceInfo) {

@@ -1,20 +1,13 @@
 package jetbrains.mps.generator.newGenerator;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro;
 import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent;
-import jetbrains.mps.transformation.TLBase.structure.NodeMacro;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.baseLanguage.structure.InstanceMethodCall;
-import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
-
-import java.util.List;
 
 /**
  * Created by: Sergey Dmitriev
@@ -22,14 +15,12 @@ import java.util.List;
  */
 public class ReferenceInfo_Macro extends ReferenceInfo {
   private SNode myTemplateReferentNode;
-  private SNode myInputNode;
   private ReferenceMacro myReferenceMacro;
 
   public ReferenceInfo_Macro(ReferenceMacro refMacro, SNode inputNode, SNode templateReferentNode, SNode outputNode) {
-    super(outputNode);
+    super(outputNode, inputNode);
     myTemplateReferentNode = templateReferentNode;
     myReferenceMacro = refMacro;
-    myInputNode = inputNode;
   }
 
   public void executeIndependentResolve(TemplateModelGenerator_New generator) {
@@ -38,7 +29,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
 
   public void executeDependentResolve(TemplateModelGenerator_New generator) {
     //todo it should be removed after going to new generator
-    generator.setCurrentBuilder(myOutputNode);
+    generator.setCurrentBuilder(getOutputNode());
 
     expandReferenceMacro(generator);
     setSuccess(true);
@@ -55,7 +46,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
       SNode templateValue = myTemplateReferentNode.getReferent(linkRole);
       String methodName = TemplateFunctionMethodName.referenceMacro_GetReferent(function.getNode());
       Object[] args = new Object[]{
-              myInputNode,
+              getInputNode(),
               templateValue,
               myTemplateReferentNode,
               generator.getSourceModel(),
@@ -65,14 +56,14 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
       try {
         referentNode = (SNode) QueryMethodGenerated.invoke(methodName, args, myReferenceMacro.getModel());
       } catch (Exception e) {
-        generator.showErrorMessage(myInputNode, myReferenceMacro.getNode(), "couldn't evaluate reference macro");
+        generator.showErrorMessage(getInputNode(), myReferenceMacro.getNode(), "couldn't evaluate reference macro");
         return;
       }
 
     } else {
       // try old query
       Object[] args = new Object[]{
-              myInputNode,
+              getInputNode(),
               myTemplateReferentNode,
               myReferenceMacro.getLink(),
               generator
@@ -81,27 +72,31 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
         referentNode = (SNode) QueryMethod.invoke("referenceMacro_" + myReferenceMacro.getAspectMethodName(), args, myReferenceMacro.getModel());
       } catch (Throwable t) {
         String message = NameUtil.shortNameFromLongName(t.getClass().getName()) + " occured while expanding reference macro with query: \"referenceMacro_" + myReferenceMacro.getAspectMethodName();
-        generator.showErrorMessage(myInputNode, myTemplateReferentNode, message);
+        generator.showErrorMessage(getInputNode(), myTemplateReferentNode, message);
         return;
       }
     }
 
     if (referentNode == null) {
-      if (myOutputNode.isReferentRequired(linkRole, generator.getScope())) {
-        generator.showErrorMessage(myInputNode, myTemplateReferentNode, "unresolved reference for role \"" + linkRole + "\" in " + myOutputNode.getDebugText());
+      if (getOutputNode().isReferentRequired(linkRole, generator.getScope())) {
+        generator.showErrorMessage(getInputNode(), myTemplateReferentNode, "unresolved reference for role \"" + linkRole + "\" in " + getOutputNode().getDebugText());
       }
       return;
     }
 
-    myOutputNode.setReferent(linkRole, referentNode);
-
+    getOutputNode().setReferent(linkRole, referentNode);
 
 //todo <Sergey Dmitriev> There should be different diagnostic that reference target to the node that will be deleted
 /*
-    if (TemplateGenUtil.checkResolvedReference(mySourceNode, myOutputNode, myTemplateReferenceNode, linkRole, myReferentNode, generator)) {
-      myOutputNode.setReferent(linkRole, referentNode);
+    if (TemplateGenUtil.checkResolvedReference(mySourceNode, getOutputNode(), myTemplateReferenceNode, linkRole, myReferentNode, generator)) {
+      getOutputNode().setReferent(linkRole, referentNode);
     }
 */
   }
 
+  public void showErrorMessage(TemplateModelGenerator_New generator) {
+    generator.showErrorMessage(getOutputNode(), "couldn't resolve reference in output node " + getOutputNode().getDebugText());
+    generator.showErrorMessage(myReferenceMacro.getParent().getNode(), "-- original reference was " + myReferenceMacro.getParent().getNode().getDebugText());
+    generator.showErrorMessage(getInputNode(), "-- input node was " + getInputNode().getDebugText());
+  }
 }
