@@ -129,6 +129,14 @@ public class ReferenceInfo_Default extends ReferenceInfo {
 
   }
 
+  public void resolveAnyhow(TemplateModelGenerator_New generator) {
+    SNode outputTargetNode = generator.findOutputNodeByTemplateNode(myTemplateTargetNode, false);
+    if (outputTargetNode != null) {
+      getOutputNode().addReferent(myTemplateReference.getRole(), outputTargetNode);
+      setSuccess(true);
+    }
+  }
+
   private SNode findOutputNodeByTemplateTarget(TemplateModelGenerator_New generator, SNode outputNode) {
     if (generator.findTemplateNodeByOutputNode(outputNode) == myTemplateTargetNode) return outputNode;
     List<SNode> children = outputNode.getChildren();
@@ -163,7 +171,7 @@ public class ReferenceInfo_Default extends ReferenceInfo {
     return null;
   }
 
-
+  // todo: inline
   private void tryToResolveUsingTemplateNodeToOutputNodeMap(TemplateModelGenerator_New generator) {
     SNode outputTargetNode = generator.findOutputNodeByTemplateNode(myTemplateTargetNode, true);
     if (outputTargetNode == null) {

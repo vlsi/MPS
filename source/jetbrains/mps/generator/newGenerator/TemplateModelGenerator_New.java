@@ -218,9 +218,13 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
       newReferenceInfos = new ArrayList<ReferenceInfo>(referenceInfos.size());
     }
 
-    myReferenceInfos = newReferenceInfos;
+//    myReferenceInfos = newReferenceInfos;
     for (ReferenceInfo unresolvedReferenceInfo : newReferenceInfos) {
-      unresolvedReferenceInfo.showErrorMessage(this);
+      // hack
+      unresolvedReferenceInfo.resolveAnyhow(this);
+      if (!unresolvedReferenceInfo.isSuccess()) {
+        unresolvedReferenceInfo.showErrorMessage(this);
+      }
     }
   }
 

@@ -28,6 +28,8 @@ public abstract class ReferenceInfo {
 
   public abstract void executeDependentResolve(TemplateModelGenerator_New generator);
 
+  public abstract void resolveAnyhow(TemplateModelGenerator_New generator);
+
   public abstract void showErrorMessage(TemplateModelGenerator_New generator);
 
   protected void setSuccess(boolean value) {
