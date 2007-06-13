@@ -61,6 +61,9 @@ public class QueriesGenerated {
   public static String propertyMacro_GetPropertyValue_1177415134316(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return "removeConceptByCondition_" + node.getId();
   }
+  public static String propertyMacro_GetPropertyValue_1181736567569(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return "removeConceptByCondition_" + node.getId();
+  }
   public static String propertyMacro_GetPropertyValue_1177441873740(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return ActionQueryMethodName.nodeFactory_RightTransformActionBuilder(((RTransformHintSubstituteActionsBuilder)SNodeOperations.getAdapter(node)));
   }
@@ -203,6 +206,9 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "wrapperBlock", true), "body", true);
   }
   public static SNode sourceNodeQuery_1177415030311(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "condition", true), "body", true);
+  }
+  public static SNode sourceNodeQuery_1181736318685(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "condition", true), "body", true);
   }
   public static SNode sourceNodeQuery_1177499792023(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
