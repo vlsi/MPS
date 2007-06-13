@@ -347,19 +347,20 @@ public class ChildSubstituteActionsHelper {
           if (conceptsToRemove.contains(action.getParameterObject())) {
             it.remove();
           }
-          for (RemoveByConditionPart part : removesByCondition) {
-            String methodName = "removeConceptByCondition_" + part.getId();
-            Object[] args = { (SNode) action.getParameterObject(), parentNode, currentChild, childConcept, context };
-            try {
-              if ((Boolean) QueryMethodGenerated.invoke(methodName, args, substituteActionsBuilder.getModel())) {
-                it.remove();
-              }
-            } catch (Exception e) {
-              LOG.error(e);
-            }
-          }
         }
       }
+
+      for (RemoveByConditionPart part : removesByCondition) {
+        String methodName = "removeActionsByCondition_" + part.getId();
+        Object[] args = { actions.iterator(), parentNode, currentChild, childConcept, context };
+        try {
+          QueryMethodGenerated.invoke(methodName, args, substituteActionsBuilder.getModel());
+        } catch (Exception e) {
+          LOG.error(e);
+        }
+
+      }
+
       return actions;
     }
   }

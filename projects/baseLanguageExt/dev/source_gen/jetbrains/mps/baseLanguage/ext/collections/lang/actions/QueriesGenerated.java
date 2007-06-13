@@ -13,9 +13,10 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
 import java.util.ArrayList;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
@@ -24,6 +25,8 @@ import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
+import java.util.Iterator;
+import jetbrains.mps.util.Condition;
 
 public class QueriesGenerated {
 
@@ -45,7 +48,7 @@ public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_SortOperation_1178286959323(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
     SPropertyOperations.set(SLinkOperations.setNewChild(newNode, "order", "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortDirection"), "value", "" + (true));
   }
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_1152144005896(final SNode parentNode, final SNode currentTargetNode, final ConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_1152144005896(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement", operationContext.getScope());
@@ -90,7 +93,7 @@ public class QueriesGenerated {
     }
     return result;
   }
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1178286508713(final SNode parentNode, final SNode currentTargetNode, final ConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1178286508713(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortDirection", operationContext.getScope());
@@ -128,29 +131,41 @@ public class QueriesGenerated {
     }
     return result;
   }
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_SequenceOperation_1160663024951(final SNode parentNode, final SNode currentTargetNode, final ConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_SequenceOperation_1160663024951(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     return result;
   }
-  public static boolean removeConceptByCondition_1177414262137(SNode concept, SNode parentNode, SNode currentChild, SNode childConcept, IOperationContext operationContext) {
-    boolean applicableToSequence = false;
-    boolean applicableToList = false;
-    if(SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression")) {
-      SNode leftExpression = SLinkOperations.getTarget(parentNode, "leftExpression", true);
-      SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
-      if(TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType"), false) != null) {
-        applicableToSequence = true;
+  public static void removeActionsByCondition_1177414262137(Iterator<INodeSubstituteAction> actions, final SNode parentNode, final SNode currentChild, final SNode childConcept, final IOperationContext operationContext) {
+    while(actions.hasNext()) {
+      INodeSubstituteAction current = actions.next();
+      final SNode concept = (SNode)current.getParameterObject();
+      Condition cond = new Condition() {
+
+        public boolean met(Object object) {
+          boolean applicableToSequence = false;
+          boolean applicableToList = false;
+          if(SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression")) {
+            SNode leftExpression = SLinkOperations.getTarget(parentNode, "leftExpression", true);
+            SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
+            if(TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType"), false) != null) {
+              applicableToSequence = true;
+            }
+            if(TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType"), false) != null) {
+              applicableToList = true;
+            }
+          }
+          if(!(applicableToSequence)) {
+            return true;
+          }
+          if(applicableToList) {
+            return false;
+          }
+          return SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.AbstractListOperation");
+        }
+      };
+      if(cond.met(null)) {
+        actions.remove();
       }
-      if(TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType"), false) != null) {
-        applicableToList = true;
-      }
     }
-    if(!(applicableToSequence)) {
-      return true;
-    }
-    if(applicableToList) {
-      return false;
-    }
-    return SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.AbstractListOperation");
   }
 }
