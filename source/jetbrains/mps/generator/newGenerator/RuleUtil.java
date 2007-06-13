@@ -529,9 +529,7 @@ public class RuleUtil {
     myGenerator.addTemplateNodeByOutputNode(outputNode, templateNode);
     myGenerator.addOutputNodeByTemplateNode(templateNode, outputNode);
     myOutputModel.addLanguage(templateNode.getLanguage(myGenerator.getScope()));
-    for (String property : templateNode.getProperties().keySet()) {
-      outputNode.setProperty(property, templateNode.getPersistentProperty(property), false);
-    }
+    CloneUtil.copyProperties(templateNode, outputNode );
 
     SModel templateModel = templateNode.getModel();
     for (SReference reference : templateNode.getReferences()) {
@@ -618,9 +616,7 @@ public class RuleUtil {
     }
 
     myOutputModel.addLanguage(inputNode.getLanguage(myGenerator.getScope()));
-    for (String property : inputNode.getProperties().keySet()) {
-      outputNode.setProperty(property, inputNode.getProperty(property), false);
-    }
+    CloneUtil.copyProperties(inputNode, outputNode);
 
     SModel inputModel = inputNode.getModel();
     for (SReference reference : inputNode.getReferences()) {
