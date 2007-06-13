@@ -438,7 +438,7 @@ public abstract class MPSTree extends JTree {
     String result = "";
     for (int i = 1; i < path.getPathCount(); i++) {
       MPSTreeNode node = (MPSTreeNode) path.getPathComponent(i);
-      result += TREE_PATH_SEPARATOR + node.getNodeIdentifier();
+      result += TREE_PATH_SEPARATOR + node.getNodeIdentifier().replaceAll(TREE_PATH_SEPARATOR, "-");
     }
     if (result.equals("")) result = TREE_PATH_SEPARATOR;
     return result;
