@@ -205,6 +205,13 @@ public abstract class MPSTree extends JTree {
     registerKeyboardAction(openNodeAction, KeyStroke.getKeyStroke("F4"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
 
+    AbstractAction refreshTreeAction = new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
+        rebuildTree();
+      }
+    };
+    registerKeyboardAction(refreshTreeAction, KeyStroke.getKeyStroke("F5"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
         TreePath path = getSelectionPath();
