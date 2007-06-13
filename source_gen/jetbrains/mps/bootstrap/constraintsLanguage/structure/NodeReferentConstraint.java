@@ -7,18 +7,18 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_CanCreate;
 import jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory;
 import jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSetHandler;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 
 public class NodeReferentConstraint extends BaseConcept {
-  public static String APPLICABLE_CONCEPT = "applicableConcept";
-  public static String APPLICABLE_LINK = "applicableLink";
   public static String SEARCH_SCOPE_CAN_CREATE = "searchScopeCanCreate";
   public static String SEARCH_SCOPE_FACTORY = "searchScopeFactory";
   public static String REFERENT_SET_HANDLER = "referentSetHandler";
+  public static String APPLICABLE_CONCEPT = "applicableConcept";
+  public static String APPLICABLE_LINK = "applicableLink";
   public static String SEARCH_SCOPE_DESCRIPTION = "searchScopeDescription";
 
   public  NodeReferentConstraint(SNode node) {
@@ -32,18 +32,6 @@ public class NodeReferentConstraint extends BaseConcept {
     return NodeReferentConstraint.newInstance(sm, false);
   }
 
-  public ConceptDeclaration getApplicableConcept() {
-    return (ConceptDeclaration)this.getReferent(NodeReferentConstraint.APPLICABLE_CONCEPT);
-  }
-  public void setApplicableConcept(ConceptDeclaration node) {
-    super.setReferent(NodeReferentConstraint.APPLICABLE_CONCEPT, node);
-  }
-  public LinkDeclaration getApplicableLink() {
-    return (LinkDeclaration)this.getReferent(NodeReferentConstraint.APPLICABLE_LINK);
-  }
-  public void setApplicableLink(LinkDeclaration node) {
-    super.setReferent(NodeReferentConstraint.APPLICABLE_LINK, node);
-  }
   public ConstraintFunction_ReferentSearchScope_CanCreate getSearchScopeCanCreate() {
     return (ConstraintFunction_ReferentSearchScope_CanCreate)this.getChild(NodeReferentConstraint.SEARCH_SCOPE_CAN_CREATE);
   }
@@ -61,6 +49,18 @@ public class NodeReferentConstraint extends BaseConcept {
   }
   public void setReferentSetHandler(ConstraintFunction_ReferentSetHandler node) {
     super.setChild(NodeReferentConstraint.REFERENT_SET_HANDLER, node);
+  }
+  public ConceptDeclaration getApplicableConcept() {
+    return (ConceptDeclaration)this.getReferent(NodeReferentConstraint.APPLICABLE_CONCEPT);
+  }
+  public void setApplicableConcept(ConceptDeclaration node) {
+    super.setReferent(NodeReferentConstraint.APPLICABLE_CONCEPT, node);
+  }
+  public LinkDeclaration getApplicableLink() {
+    return (LinkDeclaration)this.getReferent(NodeReferentConstraint.APPLICABLE_LINK);
+  }
+  public void setApplicableLink(LinkDeclaration node) {
+    super.setReferent(NodeReferentConstraint.APPLICABLE_LINK, node);
   }
   public String getSearchScopeDescription() {
     return this.getProperty(NodeReferentConstraint.SEARCH_SCOPE_DESCRIPTION);
