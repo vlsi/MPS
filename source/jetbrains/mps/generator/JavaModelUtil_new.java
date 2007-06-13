@@ -37,7 +37,7 @@ public class JavaModelUtil_new {
     while (methods.hasNext()) {
       InstanceMethodDeclaration method = methods.next();
       if (methodName.equals(method.getName())) {
-        if (isParametersCompatible(method, parmTypes)) {
+        if (areParametersCompatible(method, parmTypes)) {
           return method;
         }
       }
@@ -79,7 +79,7 @@ public class JavaModelUtil_new {
       while (methods.hasNext()) {
         StaticMethodDeclaration method = methods.next();
         if (methodName.equals(method.getName())) {
-          if (isParametersCompatible(method, parmTypes)) {
+          if (areParametersCompatible(method, parmTypes)) {
             return method;
           }
         }
@@ -113,7 +113,7 @@ public class JavaModelUtil_new {
     return null;
   }
 
-  private static boolean isParametersCompatible(BaseMethodDeclaration method, String[] parmTypes) {
+  private static boolean areParametersCompatible(BaseMethodDeclaration method, String[] parmTypes) {
     int parametersCount = method.getParametersCount();
     if (parametersCount == 0 && parmTypes.length == 0) {
       return true;
