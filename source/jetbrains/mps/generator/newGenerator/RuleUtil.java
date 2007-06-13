@@ -530,7 +530,7 @@ public class RuleUtil {
     myGenerator.addOutputNodeByTemplateNode(templateNode, outputNode);
     myOutputModel.addLanguage(templateNode.getLanguage(myGenerator.getScope()));
     for (String property : templateNode.getProperties().keySet()) {
-      outputNode.setProperty(property, templateNode.getProperty(property), false);
+      outputNode.setProperty(property, templateNode.getPersistentProperty(property), false);
     }
 
     SModel templateModel = templateNode.getModel();
