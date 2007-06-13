@@ -481,7 +481,7 @@ public abstract class MPSTree extends JTree {
       boolean found = false;
       for (int i = 0; i < current.getChildCount(); i++) {
         MPSTreeNode node = (MPSTreeNode) current.getChildAt(i);
-        if (node.getNodeIdentifier().equals(component)) {
+        if (node.getNodeIdentifier().replaceAll(TREE_PATH_SEPARATOR, "-").equals(component)) {
           current = node;
           path.add(current);
           if (!current.isInitialized() && j != components.length - 1) {
