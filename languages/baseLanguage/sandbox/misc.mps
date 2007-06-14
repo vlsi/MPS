@@ -177,7 +177,20 @@
       <node role="throwsItem" type="jetbrains.mps.baseLanguage.ClassifierType" id="1181809013093">
         <link role="classifier" extResolveInfo="1.[Classifier]Throwable" />
       </node>
-      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1181809013094" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1181809013094">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1181815744847">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1181815744848">
+            <property name="name" value="i" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1181815744849" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.AnonymousClassExpression" id="1181815755163">
+              <node role="cls" type="jetbrains.mps.baseLanguage.AnonymousClass" id="1181815755164">
+                <link role="classifier" extResolveInfo="1.[Classifier]Comparable" />
+                <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1181815755165" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1181809068544">
       <property name="name" value="a" />
