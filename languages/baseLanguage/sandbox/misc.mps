@@ -170,6 +170,21 @@
     <node role="implementedInterface" type="jetbrains.mps.baseLanguage.ClassifierType" id="1181805572798">
       <link role="classifier" targetNodeId="1181805521482" resolveInfo="ABCDEF" />
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1181809013090">
+      <property name="name" value="finalize" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1181809013091" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1181809013092" />
+      <node role="throwsItem" type="jetbrains.mps.baseLanguage.ClassifierType" id="1181809013093">
+        <link role="classifier" extResolveInfo="1.[Classifier]Throwable" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1181809013094" />
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1181809068544">
+      <property name="name" value="a" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1181809068545" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1181809068546" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1181809068547" />
+    </node>
   </node>
 </model>
 
