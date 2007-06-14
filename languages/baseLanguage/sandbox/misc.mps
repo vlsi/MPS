@@ -183,7 +183,19 @@
       <property name="name" value="a" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1181809068545" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1181809068546" />
-      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1181809068547" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1181809068547">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1181812713097">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1181812713098">
+            <property name="name" value="s" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1181812713099">
+              <link role="classifier" extResolveInfo="1.[Classifier]String" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.StringLiteral" id="1181812714445">
+              <property name="value" value="а" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>
