@@ -150,6 +150,32 @@
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178894846582" />
+    <node role="superclass" type="jetbrains.mps.baseLanguage.ClassifierType" id="1181805594287">
+      <link role="classifier" targetNodeId="1181805568790" resolveInfo="B" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.Interface" id="1181805521482">
+    <property name="name" value="ABCDEF" />
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1181805524781">
+      <property name="name" value="a" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1181805524782" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1181805524783" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1181805524784" />
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1181805521483" />
+  </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1181805568790">
+    <property name="name" value="B" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1181805568791" />
+    <node role="implementedInterface" type="jetbrains.mps.baseLanguage.ClassifierType" id="1181805572798">
+      <link role="classifier" targetNodeId="1181805521482" resolveInfo="ABCDEF" />
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1181806227014">
+      <property name="name" value="a" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1181806227015" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1181806227016" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1181806227017" />
+    </node>
   </node>
 </model>
 
