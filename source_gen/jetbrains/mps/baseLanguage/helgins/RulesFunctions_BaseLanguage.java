@@ -67,7 +67,7 @@ public class RulesFunctions_BaseLanguage {
       Pattern_1 pattern_1181217694220 = new Pattern_1(genericClassifier);
       SNode coercedNode_1181217694219 = TypeChecker.getInstance().getRuntimeSupport().coerce(instanceType, pattern_1181217694220);
       if(coercedNode_1181217694219 != null) {
-        List<SNode> actualParams = pattern_1181217694220.PatternVar;
+        List<SNode> actualParams = pattern_1181217694220.PatternVar2;
         for(SNode child : SNodeOperations.getDescendants(returnType, null, true)) {
           if(SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
             SNode tvr = child;
