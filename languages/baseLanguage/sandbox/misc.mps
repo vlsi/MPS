@@ -186,6 +186,18 @@
               <node role="cls" type="jetbrains.mps.baseLanguage.AnonymousClass" id="1181815755164">
                 <link role="classifier" extResolveInfo="1.[Classifier]Comparable" />
                 <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1181815755165" />
+                <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1181821583998">
+                  <property name="name" value="compareTo" />
+                  <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1181821583999" />
+                  <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1181821584000" />
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1181821584001">
+                    <property name="name" value="p0" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1181822183702">
+                      <link role="classifier" extResolveInfo="1.[Classifier]Object" />
+                    </node>
+                  </node>
+                  <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1181821584003" />
+                </node>
               </node>
             </node>
           </node>

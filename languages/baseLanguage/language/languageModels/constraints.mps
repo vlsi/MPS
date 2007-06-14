@@ -2921,7 +2921,9 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1181818424330">
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1181818424331">
                 <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1181818437037">
-                  <node role="expression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1181818438144" />
+                  <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1181822100242">
+                    <link role="variableDeclaration" targetNodeId="1181818411151" resolveInfo="node" />
+                  </node>
                 </node>
               </node>
               <node role="condition" type="jetbrains.mps.baseLanguage.AndExpression" id="1181818441328">
