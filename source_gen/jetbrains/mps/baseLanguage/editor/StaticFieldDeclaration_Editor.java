@@ -12,6 +12,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.baseLanguage.editor._Component_Visibility;
+import jetbrains.mps.baseLanguage.editor.VariableDeclaration_NameCellComponent;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -19,12 +20,11 @@ import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 
 public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellProvider my_Component_Visibility5;
+  /* package */AbstractCellProvider myVariableDeclaration_NameCellComponent3;
 
   public static boolean _QueryFunction_NodeCondition_1145916370724(SNode node, IScope scope) {
     return SLinkOperations.getTarget(node, "initializer", true) != null;
@@ -60,7 +60,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.create_Component_VisibilityCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "static"));
     editorCell.addEditorCell(this.createTypeCell(context, node));
-    editorCell.addEditorCell(this.createNameCell(context, node));
+    editorCell.addEditorCell(this.createVariableDeclaration_NameCellComponentCell(context, node));
     if(StaticFieldDeclaration_Editor._QueryFunction_NodeCondition_1145916370724(node, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createInitializerArea(context, node));
     }
@@ -81,6 +81,21 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178547822277");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createVariableDeclaration_NameCellComponentCell(EditorContext context, SNode node) {
+    if(this.myVariableDeclaration_NameCellComponent3 == null) {
+      this.myVariableDeclaration_NameCellComponent3 = new VariableDeclaration_NameCellComponent(node);
+    }
+    EditorCell componentCell = this.myVariableDeclaration_NameCellComponent3.createEditorCell(context);
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.addEditorCell(componentCell);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1181827143691");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -145,42 +160,6 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createTypeCellinternal(context, node, provider);
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else
-    return cellWithRole;
-  }
-  public EditorCell createNameCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
-    EditorCell editorCell = provider.createEditorCell(context);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.setFontType(MPSFonts.BOLD_ITALIC);
-    if(editorCell instanceof EditorCell_Label) {
-      EditorCell_Label editorCellLabel = (EditorCell_Label)editorCell;
-      editorCellLabel.setEditable(true);
-      editorCellLabel.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1084188979615");
-    editorCell.setLayoutConstraint("");
-    editorCell.setRightTransformAnchorTag("default_RTransform");
-    return editorCell;
-  }
-  public EditorCell createNameCell(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("name");
-    provider.setNoTargetText("<no name>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if(attributeConcept != null) {
