@@ -107,6 +107,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   };
 //  private CellSpeedSearch myCellSpeedSearch;
 
+  private Map<KeyStroke, MPSActionProxy> myActionProxies = new HashMap<KeyStroke, MPSActionProxy>();
+
   public AbstractEditorComponent(IOperationContext operationContext) {
     this(operationContext, false);
   }
@@ -313,6 +315,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private void updateMPSActionsWithKeyStrokes() {
+    myActionProxies.clear();
     for (MPSAction a : myMPSActionsWithShortcuts) {
       KeyStroke keyStroke = KeyStroke.getKeyStroke(a.getKeyStroke());
       if (keyStroke != null) unregisterKeyboardAction(keyStroke);
@@ -472,28 +475,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     AbstractAction result;
     KeyStroke stroke = KeyStroke.getKeyStroke(keyStroke);
     if (stroke != null) {
-      registerKeyboardAction(result = new AbstractAction(action.getName()) {
-        public void actionPerformed(ActionEvent e) {
-          if (mySelectedCell != null && mySelectedCell.getSNode() != null) {
-            final ActionContext context = createActionContext();
-            action.update(context);
-            if (!action.isVisible() || !action.isEnabled()) {
-              return;
-            }
-
-            if (action.executeInsideCommand()) {
-              CommandProcessor.instance().executeCommand(new Runnable() {
-                public void run() {
-                  action.execute(context);
-                }
-              });
-            } else {
-              action.execute(context);
-            }
-          }
-        }
-      }, stroke, WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-      return result;
+      if (!myActionProxies.containsKey(stroke)) {
+        AbstractEditorComponent.MPSActionProxy proxy = new MPSActionProxy();
+        myActionProxies.put(stroke, proxy);
+        registerKeyboardAction(proxy, stroke, WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+      }
+      AbstractEditorComponent.MPSActionProxy proxy = myActionProxies.get(stroke);
+      proxy.add(action);
+      return proxy;
     }
     return null;
   }
@@ -1963,5 +1952,38 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   public static interface CellSynchronizationWithModelListener {
     public void cellSynchronizedWithModel(EditorCell cell);
+  }
+
+  private class MPSActionProxy extends AbstractAction {
+    private List<MPSAction> myActions = new ArrayList<MPSAction>();
+
+    public void add(MPSAction a) {
+      myActions.add(a);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+      for (final MPSAction action : myActions) {
+        if (mySelectedCell != null && mySelectedCell.getSNode() != null) {
+          final ActionContext context = createActionContext();
+          action.update(context);
+          if (!action.isVisible() || !action.isEnabled()) {
+            continue;
+          }
+
+          if (action.executeInsideCommand()) {
+            CommandProcessor.instance().executeCommand(new Runnable() {
+              public void run() {
+                action.execute(context);
+              }
+            });
+          } else {
+            action.execute(context);
+          }
+
+          return;
+        }
+      }
+
+    }
   }
 }
