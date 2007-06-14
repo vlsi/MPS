@@ -3,11 +3,13 @@ package jetbrains.mps.generator.newGenerator;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.generator.template.IReferenceResolver;
+import jetbrains.mps.generator.template.INodeBuilder;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.reloading.ClassLoaderManager;
 
 import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Created by: Sergey Dmitriev
@@ -32,6 +34,20 @@ public class ReferenceInfo_Default extends ReferenceInfo {
 
   public void executeIndependentResolve(TemplateModelGenerator_New generator) {
 
+//    //test
+//    {
+//      String role = myTemplateReference.getRole();
+//      if (role.equals("baseMethodDeclaration")) {
+//        if (myTemplateReference.getSourceNode().getModel().getStereotype().startsWith("3_3")) {
+////        if (referenceNode_template.getModel().getLongName().endsWith("template.weblStep")) {
+//          if ("findInfo".equals(myTemplateReference.getTargetNode().getName())) {
+//            System.out.println("aaaa");
+//          }
+//        }
+//      }
+//    }
+//    //test
+//
     // todo: used when node is copied (?)
     {
       // try to find target node if it was reduced from the copied node
@@ -50,6 +66,33 @@ public class ReferenceInfo_Default extends ReferenceInfo {
         getOutputNode().addReferent(myTemplateReference.getRole(), outputTargetNode);
         setSuccess(true);
         return;
+      }
+    }
+
+    // todo: used when node is mapped/copied
+    {
+      List<INodeBuilder> builders = generator.findTopBuildersForSource(myTemplateTargetNode);
+      if (!builders.isEmpty()) {
+        String wasConcept = myTemplateTargetNode.getConceptFqName();
+        SNode outputTargetNode = null;
+        for (INodeBuilder builder : builders) {
+          SNode _outputNode = builder.getTargetNode();
+          // same concept?
+          if(_outputNode.getConceptFqName().equals(wasConcept)) {
+            if(outputTargetNode != null) {
+              // no uniquess
+              outputTargetNode = null;
+              break;
+            }
+            outputTargetNode = _outputNode;
+          }
+        }
+
+        if(outputTargetNode != null) {
+          getOutputNode().addReferent(myTemplateReference.getRole(), outputTargetNode);
+          setSuccess(true);
+          return;
+        }
       }
     }
 
