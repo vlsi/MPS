@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.core.constraints.BaseConcept_Behavior;
 
 import java.lang.reflect.Method;
 
@@ -47,9 +48,10 @@ public class PresentationManager {
     if (typeAdapter instanceof RuntimeTypeVariable) {
       return toString(type);
     }
- //   return BehaviorManager.getInstance().invoke(String.class, type, "getPresentation");
 
-    String packageName = type.getLanguageNamespace();
+    return BaseConcept_Behavior.callVirtual_getPresentation_1180102203531(type);
+
+   /* String packageName = type.getLanguageNamespace();
     String presentationUtilName = packageName + ".PresentationUtil";
     try {
       Class presentationUtil = Class.forName(presentationUtilName, true, ClassLoaderManager.getInstance().getClassLoader());
@@ -57,6 +59,6 @@ public class PresentationManager {
       return (String) presentationMethod.invoke(null, type);
     } catch(Throwable t) {
       return type.toString();
-    }
+    }*/
   }
 }
