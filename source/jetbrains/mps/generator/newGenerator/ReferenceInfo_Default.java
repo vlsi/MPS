@@ -34,6 +34,10 @@ public class ReferenceInfo_Default extends ReferenceInfo {
 
   public void executeIndependentResolve(TemplateModelGenerator_New generator) {
 
+    // test: do we need all these parameters?
+    assert myTemplateReference.getSourceNode() == myTemplateSourceNode;
+    assert myTemplateReference.getTargetNode() == myTemplateTargetNode;
+
 //    //test
 //    {
 //      String role = myTemplateReference.getRole();

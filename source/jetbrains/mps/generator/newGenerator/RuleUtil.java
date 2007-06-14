@@ -1,16 +1,19 @@
 package jetbrains.mps.generator.newGenerator;
 
-import jetbrains.mps.transformation.TLBase.structure.*;
-import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
-import jetbrains.mps.util.QueryMethodGenerated;
-import jetbrains.mps.util.QueryMethod;
-import jetbrains.mps.generator.template.*;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.bootstrap.sharedConcepts.structure.Options_DefaultTrue;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.bootstrap.sharedConcepts.structure.Options_DefaultTrue;
+import jetbrains.mps.generator.template.INodeBuilder;
+import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.generator.template.ReductionNotNeededException;
+import jetbrains.mps.generator.template.TemplateGenUtil;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
+import jetbrains.mps.transformation.TLBase.structure.*;
+import jetbrains.mps.util.QueryMethod;
+import jetbrains.mps.util.QueryMethodGenerated;
 
 import java.util.*;
 
@@ -191,24 +194,24 @@ public class RuleUtil {
       }
 //      List<SNode> weavingInputNodes = TemplateGenUtil.createSourceNodeListForTemplateNode_ForNewGenerator(inputNode, templateFragmentNode, 0, myGenerator);
 //      for (SNode weavingInputNode : weavingInputNodes) {
-        SNode contextParentNode = null;
-        try {
-          contextParentNode = getContextNodeForTemplateFragment(templateFragmentNode, contextNodeBuilder);
-        } catch (Exception e) {
-          LOG.error(e);
-        }
-        if (contextParentNode != null) {
+      SNode contextParentNode = null;
+      try {
+        contextParentNode = getContextNodeForTemplateFragment(templateFragmentNode, contextNodeBuilder);
+      } catch (Exception e) {
+        LOG.error(e);
+      }
+      if (contextParentNode != null) {
 //          List<SNode> outputNodesToWeave = createOutputNodesForTemplateNode(mappingName, templateFragmentNode, weavingInputNode, 0, true);
-          List<SNode> outputNodesToWeave = createOutputNodesForTemplateNode(mappingName, templateFragmentNode, inputNode, 0, true);
-          if (outputNodesToWeave != null) {
-            String childRole = templateFragmentNode.getRole_();
-            for (SNode outputNodeToWeave : outputNodesToWeave) {
-              contextParentNode.addChild(childRole, outputNodeToWeave);
-            }
+        List<SNode> outputNodesToWeave = createOutputNodesForTemplateNode(mappingName, templateFragmentNode, inputNode, 0, true);
+        if (outputNodesToWeave != null) {
+          String childRole = templateFragmentNode.getRole_();
+          for (SNode outputNodeToWeave : outputNodesToWeave) {
+            contextParentNode.addChild(childRole, outputNodeToWeave);
           }
-        } else {
-          myGenerator.showErrorMessage(inputNode, templateFragment.getNode(), ruleNode, "couldn't define 'context' for template fragment");
         }
+      } else {
+        myGenerator.showErrorMessage(inputNode, templateFragment.getNode(), ruleNode, "couldn't define 'context' for template fragment");
+      }
 //      }
     }
   }
@@ -529,7 +532,7 @@ public class RuleUtil {
     myGenerator.addTemplateNodeByOutputNode(outputNode, templateNode);
     myGenerator.addOutputNodeByTemplateNode(templateNode, outputNode);
     myOutputModel.addLanguage(templateNode.getLanguage(myGenerator.getScope()));
-    CloneUtil.copyProperties(templateNode, outputNode );
+    CloneUtil.copyProperties(templateNode, outputNode);
 
     SModel templateModel = templateNode.getModel();
     for (SReference reference : templateNode.getReferences()) {
@@ -548,18 +551,23 @@ public class RuleUtil {
       }
     }
 
+    // process property and reference macros, then children
+    List<INodeAdapter> templateChildNodes = new ArrayList<INodeAdapter>();
     for (INodeAdapter templateChildNode : templateNode.getAdapter().getChildren()) {
       if (templateChildNode instanceof PropertyMacro) {
         MacroUtil.expandPropertyMacro(myGenerator, (PropertyMacro) templateChildNode, inputNode, templateNode, outputNode);
       } else if (templateChildNode instanceof ReferenceMacro) {
         myGenerator.addReferenceInfo(new ReferenceInfo_Macro((ReferenceMacro) templateChildNode, inputNode, templateNode, outputNode));
       } else if (!TemplateGenUtil.isTemplateLanguageElement(templateChildNode)) {
-        List<SNode> outputChildNodes = createOutputNodesForTemplateNode(ruleName, templateChildNode.getNode(), inputNode, 0, false);
-        if (outputChildNodes != null) {
-          String role = templateChildNode.getRole_();
-          for (SNode outputChildNode : outputChildNodes) {
-            outputNode.addChild(role, outputChildNode);
-          }
+        templateChildNodes.add(templateChildNode);
+      }
+    }
+    for (INodeAdapter templateChildNode : templateChildNodes) {
+      List<SNode> outputChildNodes = createOutputNodesForTemplateNode(ruleName, templateChildNode.getNode(), inputNode, 0, false);
+      if (outputChildNodes != null) {
+        String role = templateChildNode.getRole_();
+        for (SNode outputChildNode : outputChildNodes) {
+          outputNode.addChild(role, outputChildNode);
         }
       }
     }
@@ -577,9 +585,12 @@ public class RuleUtil {
     rethrowSet.add(ReductionNotNeededException.class);
     INodeBuilder builder = (INodeBuilder) QueryMethod.invoke(methodName, args, nodeMacro.getModel(), rethrowSet);
     if (builder == null) return null;
-    SNode childToReplaceLater = SModelUtil_new.instantiateConceptDeclaration(templateNode.getConceptFqName(), myOutputModel, myGenerator.getScope(), false);
-    myGenerator.getDelayedChanges().addExecuteNodeBuilderChange(builder, childToReplaceLater);
-    return childToReplaceLater;
+//    SNode childToReplaceLater = SModelUtil_new.instantiateConceptDeclaration(templateNode.getConceptFqName(), myOutputModel, myGenerator.getScope(), false);
+//    myGenerator.getDelayedChanges().addExecuteNodeBuilderChange(builder, childToReplaceLater);
+//    return childToReplaceLater;
+    // test: try don't delay
+    builder.execute(null, null);
+    return builder.getTargetNode();
   }
 
 
