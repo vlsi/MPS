@@ -59,7 +59,8 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
   public static final String PROJECT_PANE_STUBS_ACTIONS = "project-pane-stubs-actions";
   public static final String PROJECT_PANE_GENERIC_MODULE_ACTIONS = "project-pane-generic-module-actions";
   public static final String SHOW_P_AND_R = "show-p-and-r";
-  public static final String AUTOSCROLL = "autoscroll";
+  public static final String AUTOSCROLL_TO_SOURCE = "autoscroll-to-source";
+  public static final String AUTOSCROLL_FROM_SOURCE = "autoscroll-from-source";
 
   private MyTree myTree = new MyTree();
   private IDEProjectFrame myIDE;
@@ -68,7 +69,8 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
 
   private JToolBar myToolbar = new MPSToolBar();
   private JToggleButton myPAndRToggle;
-  private JToggleButton myAutoscroll;
+  private JToggleButton myAutoscrollToSource;
+  private JToggleButton myAutoscrollFromSource;
 
   public ProjectPane(IDEProjectFrame ide) {
     myIDE = ide;
@@ -114,11 +116,20 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
       }
     });
 
-    myToolbar.add(myAutoscroll = new JToggleButton() {
+    myToolbar.add(myAutoscrollToSource = new JToggleButton() {
       {
-        setAction(new AbstractAction("", Icons.AUTOSCROLL) {
+        setAction(new AbstractAction("", Icons.AUTOSCROLL_TO_SOURCE) {
           public void actionPerformed(ActionEvent e) {
             myTree.setAutoOpen(!myTree.isAutoOpen());
+          }
+        });
+      }
+    });
+
+    myToolbar.add(myAutoscrollFromSource = new JToggleButton() {
+      {
+        setAction(new AbstractAction("", Icons.AUTOSCROLL_FROM_SOURCE) {
+          public void actionPerformed(ActionEvent e) {
           }
         });
       }
@@ -457,6 +468,10 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     return this;
   }
 
+  public boolean isAutoscrollFromSource() {
+    return myAutoscrollFromSource.getModel().isSelected();
+  }
+
   //externalization
   public void read(Element element, MPSProject project) {
     getTree().fromXML(element.getChild(MPSTree.MPS_TREE));
@@ -464,9 +479,12 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     if (element.getAttributeValue(SHOW_P_AND_R) != null) {
       setShowPropertiesAndReferences("true".equals(element.getAttributeValue(SHOW_P_AND_R)));
     }
-    if (element.getAttributeValue(AUTOSCROLL) != null) {
-      myTree.setAutoOpen("true".equals(element.getAttributeValue(AUTOSCROLL)));
-      myAutoscroll.getModel().setSelected(myTree.isAutoOpen());      
+    if (element.getAttributeValue(AUTOSCROLL_TO_SOURCE) != null) {
+      myTree.setAutoOpen("true".equals(element.getAttributeValue(AUTOSCROLL_TO_SOURCE)));
+      myAutoscrollToSource.getModel().setSelected(myTree.isAutoOpen());
+    }
+    if (element.getAttributeValue(AUTOSCROLL_FROM_SOURCE) != null) {
+      myAutoscrollFromSource.getModel().setSelected("true".equals(element.getAttributeValue(AUTOSCROLL_FROM_SOURCE)));
     }
   }
 
@@ -474,7 +492,8 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     element.addContent(getTree().toXML());
     element.addContent(ComponentsUtil.rectangleToElement(getTree().getVisibleRect()));
     element.setAttribute(SHOW_P_AND_R, "" + myShowProperties);
-    element.setAttribute(AUTOSCROLL, "" + myTree.isAutoOpen());
+    element.setAttribute(AUTOSCROLL_TO_SOURCE, "" + myTree.isAutoOpen());
+    element.setAttribute(AUTOSCROLL_FROM_SOURCE, "" + myAutoscrollFromSource.getModel().isSelected());
   }
 
   public class MyTree extends MPSTree {

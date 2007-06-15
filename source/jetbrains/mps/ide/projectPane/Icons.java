@@ -1,7 +1,7 @@
 package jetbrains.mps.ide.projectPane;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 /**
  * @author Kostik
@@ -101,5 +101,6 @@ public class Icons {
   public static final Icon PROPERTY_ICON = new ImageIcon(Icons.class.getResource("nodes/property.png"));
   public static final Icon REFERENCE_ICON = new ImageIcon(Icons.class.getResource("nodes/reference.png"));
   public static final Icon PROP_AND_REF = new ImageIcon(Icons.class.getResource("nodes/propAndRef.png"));
-  public static final Icon AUTOSCROLL = new ImageIcon(Icons.class.getResource("nodes/autoscrollToSource.png"));
+  public static final Icon AUTOSCROLL_TO_SOURCE = new ImageIcon(Icons.class.getResource("nodes/autoscrollToSource.png"));
+  public static final Icon AUTOSCROLL_FROM_SOURCE = new ImageIcon(Icons.class.getResource("nodes/autoscrollFromSource.png"));
 }
