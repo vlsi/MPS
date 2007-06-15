@@ -2845,9 +2845,41 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1181950351648">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1181950351649">
+            <property name="name" value="ifStatement2" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1181950351650">
+              <link role="concept" targetNodeId="1.1068580123159" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1181950412050">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Concept_NewInstance" id="1181950414928" />
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.ConceptRefExpression" id="1181950394873">
+                <link role="conceptDeclaration" targetNodeId="1.1068580123159" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1181950717271">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1181950717272">
+            <property name="name" value="ifStatement3" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1181950717273">
+              <link role="concept" targetNodeId="1.1068580123159" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1181950717274">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Concept_NewInstance" id="1181950717275">
+                <node role="prototypeNode" type="jetbrains.mps.baseLanguage.ParameterReference" id="1181950724699">
+                  <link role="variableDeclaration" targetNodeId="1181945499425" resolveInfo="sample" />
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.ConceptRefExpression" id="1181950717276">
+                <link role="conceptDeclaration" targetNodeId="1.1068580123159" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1181945499425">
-        <property name="name" value="prototype" />
+        <property name="name" value="sample" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1181945499426" />
       </node>
     </node>

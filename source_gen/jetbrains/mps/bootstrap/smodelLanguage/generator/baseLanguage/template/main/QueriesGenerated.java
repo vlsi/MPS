@@ -139,6 +139,9 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1181945965417(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return (SLinkOperations.getTarget(node, "prototypeNode", true) != null);
   }
+  public static boolean baseMappingRule_Condition_1181951427014(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return (SLinkOperations.getTarget(node, "prototypeNode", true) != null);
+  }
   public static String propertyMacro_GetPropertyValue_1177115336225(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return NameUtil.nodeFQName(SLinkOperations.getTarget(node, "conceptDeclaration", false));
   }
@@ -764,6 +767,9 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1181946191281(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "prototypeNode", true);
   }
+  public static SNode sourceNodeQuery_1181951452005(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "prototypeNode", true);
+  }
   public static SNode sourceNodeQuery_1179168430727(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
   }
@@ -787,5 +793,8 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_1181946268549(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "creator", true);
+  }
+  public static SNode sourceNodeQuery_1181951360017(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
   }
 }
