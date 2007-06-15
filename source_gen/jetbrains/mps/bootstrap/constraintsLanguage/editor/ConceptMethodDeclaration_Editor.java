@@ -14,6 +14,11 @@ import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
+import jetbrains.mps.bootstrap.constraintsLanguage.editor.ConceptMethodDeclaration_component_cellMenu;
+import jetbrains.mps.bootstrap.constraintsLanguage.editor.ConceptMethodDeclaration_component_cellMenu1;
 import jetbrains.mps.bootstrap.constraintsLanguage.editor.ConceptMethodDeclaration_Editor_ParameterListHandler_parameterList_;
 import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -294,6 +299,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new ISubstituteInfoPart[]{new ConceptMethodDeclaration_component_cellMenu()}));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177755613625");
     editorCell.setLayoutConstraint("");
     return editorCell;
@@ -307,6 +313,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new ISubstituteInfoPart[]{new ConceptMethodDeclaration_component_cellMenu1()}));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177755613632");
     editorCell.setLayoutConstraint("");
     return editorCell;
