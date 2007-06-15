@@ -517,6 +517,47 @@ public class QueriesGenerated {
     return result;
   }
   public static void removeActionsByCondition_1180467401112(Iterator<INodeSubstituteAction> actions, final SNode parentNode, final SNode currentChild, final SNode childConcept, final IOperationContext operationContext) {
+    final SNode leftExpressionType;
+    final Boolean leftIsModel;
+    final Boolean leftIsNode;
+    final Boolean leftIsConcept;
+    {
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(parentNode, "leftExpression", true));
+        }
+      };
+      leftExpressionType = (SNode)calc.calculate();
+    }
+    {
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          return TypeChecker.getInstance().getRuntimeSupport().coerce(leftExpressionType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SModelType"), false) != null;
+        }
+      };
+      leftIsModel = (Boolean)calc.calculate();
+    }
+    {
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          return TypeChecker.getInstance().getRuntimeSupport().coerce(leftExpressionType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false) != null;
+        }
+      };
+      leftIsNode = (Boolean)calc.calculate();
+    }
+    {
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          return TypeChecker.getInstance().getRuntimeSupport().coerce(leftExpressionType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType"), false) != null;
+        }
+      };
+      leftIsConcept = (Boolean)calc.calculate();
+    }
+    // TODO: The initializer doesn't work for 'remove by condition' action
     while(actions.hasNext()) {
       INodeSubstituteAction current = actions.next();
       final SNode concept = (SNode)current.getParameterObject();

@@ -2819,12 +2819,36 @@
               <link role="concept" targetNodeId="1.1068580123159" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1180648443213">
-              <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeCreator" id="1180648455933">
-                <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1180648455934" />
+              <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeCreator" id="1181943866727">
+                <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1181943866728">
+                  <link role="concept" targetNodeId="1.1068580123159" />
+                </node>
               </node>
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1181945517587">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1181945517588">
+            <property name="name" value="ifStatement1" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1181945517589">
+              <link role="concept" targetNodeId="1.1068580123159" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1181945517590">
+              <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeCreator" id="1181945517591">
+                <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1181945517592">
+                  <link role="concept" targetNodeId="1.1068580123159" />
+                </node>
+                <node role="prototypeNode" type="jetbrains.mps.baseLanguage.ParameterReference" id="1181945535358">
+                  <link role="variableDeclaration" targetNodeId="1181945499425" resolveInfo="prototype" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1181945499425">
+        <property name="name" value="prototype" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1181945499426" />
       </node>
     </node>
   </node>

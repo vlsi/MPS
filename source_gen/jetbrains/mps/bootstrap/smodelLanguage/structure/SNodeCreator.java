@@ -8,9 +8,11 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType;
+import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class SNodeCreator extends AbstractCreator {
   public static String CREATED_TYPE = "createdType";
+  public static String PROTOTYPE_NODE = "prototypeNode";
 
   public  SNodeCreator(SNode node) {
     super(node);
@@ -28,5 +30,11 @@ public class SNodeCreator extends AbstractCreator {
   }
   public void setCreatedType(SNodeType node) {
     super.setChild(SNodeCreator.CREATED_TYPE, node);
+  }
+  public Expression getPrototypeNode() {
+    return (Expression)this.getChild(SNodeCreator.PROTOTYPE_NODE);
+  }
+  public void setPrototypeNode(Expression node) {
+    super.setChild(SNodeCreator.PROTOTYPE_NODE, node);
   }
 }
