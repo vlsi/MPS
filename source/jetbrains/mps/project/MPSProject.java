@@ -5,6 +5,7 @@ import jetbrains.mps.component.IContext;
 import jetbrains.mps.components.IContainer;
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.GeneratingEngine;
 import jetbrains.mps.generator.generationTypes.GenerateClassesGenerationType;
 import jetbrains.mps.generator.generationTypes.GenerateTextGenerationType;
 import jetbrains.mps.generator.generationTypes.GenerateFilesGenerationType;
@@ -745,7 +746,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
                           generationType,
                           parms.getScript(),
                           IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR,
-                          handler);
+                          handler,
+                          GeneratingEngine.newest);
 
           // during generation all source files was collected, now we may compile them all together
           generationType.compile(IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR);

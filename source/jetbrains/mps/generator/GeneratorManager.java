@@ -259,16 +259,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     return generateModelsWithProgressWindow(sourceModels, targetLanguage, invocationContext, generationType, script, new Runnable() {
       public void run() {
       }
-    }, true, adaptiveProgressMonitor, GeneratingEngine.old);
-  }
-
-  public void generateModelsWithProgressWindowAsync(final List<SModel> sourceModels,
-                                                    final Language targetLanguage,
-                                                    final IOperationContext invocationContext,
-                                                    final IGenerationType generationType,
-                                                    final IGenerationScript script,
-                                                    final Runnable continuation) {
-    generateModelsWithProgressWindow(sourceModels, targetLanguage, invocationContext, generationType, script, continuation, true, null, GeneratingEngine.old);
+    }, true, adaptiveProgressMonitor, GeneratingEngine.newest);
   }
 
   public Thread generateModelsWithProgressWindowAsync(final List<SModel> sourceModels,
@@ -279,7 +270,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     return generateModelsWithProgressWindow(sourceModels, targetLanguage, invocationContext, generationType, script, new Runnable() {
       public void run() {
       }
-    }, true, null, GeneratingEngine.old);
+    }, true, null, GeneratingEngine.newest);
   }
 
   public void generateModelsWithProgressWindowAsync(final List<SModel> sourceModels,
@@ -308,7 +299,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           lock.notifyAll();
         }
       }
-    }, finishAnyway, monitor, GeneratingEngine.old);
+    }, finishAnyway, monitor, GeneratingEngine.newest);
 
     synchronized (lock) {
       try {
@@ -360,16 +351,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           IOperationContext invocationContext,
           IGenerationType generationType,
           IGenerationScript script,
-          IAdaptiveProgressMonitor progress) {
-    generateModels(_sourceModels, targetLanguage, invocationContext, generationType, script, progress, GeneratingEngine.old);
-  }
-
-  public void generateModels(
-          List<SModel> _sourceModels,
-          Language targetLanguage,
-          IOperationContext invocationContext,
-          IGenerationType generationType,
-          IGenerationScript script,
           IAdaptiveProgressMonitor progress,
           GeneratingEngine generatingEngine) {
 
@@ -396,17 +377,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           IGenerationType generationType,
           IGenerationScript script,
           IAdaptiveProgressMonitor progress,
-          IMessageHandler handler) {
-    generateModels(_sourceModels, targetLanguage, invocationContext, generationType, script, progress, handler, GeneratingEngine.old);
-  }
-
-  public void generateModels(
-          List<SModel> _sourceModels,
-          Language targetLanguage,
-          IOperationContext invocationContext,
-          IGenerationType generationType,
-          IGenerationScript script,
-          IAdaptiveProgressMonitor progress,
           IMessageHandler handler,
           GeneratingEngine generatingEngine) {
 
@@ -418,14 +388,12 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     for (SModel model : _sourceModels) {
       sourceModels.add(model.getModelDescriptor());
     }
+
     clearMessages();
-
-
     handler.handle(new Message(MessageKind.INFORMATION, generationType.getStartText()));
-//    handler.handle(new Message(MessageKind.INFORMATION, "    target language: \"" + targetLanguage.getNamespace() + "\""));
+    handler.handle(new Message(MessageKind.INFORMATION, "[ use " + (generatingEngine == GeneratingEngine.newest ? "NEW" : "OLD") + " generator engine ]"));
 
     String outputFolder = invocationContext.getModule().getGeneratorOutputPath();
-
     if (!new File(outputFolder).exists()) {
       new File(outputFolder).mkdirs();
 
@@ -444,12 +412,11 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
                     || (myCompileBeforeGeneration && generationType.requiresCompilationInIDEABeforeGeneration()));
 
     long totalJob = ModelsProgressUtil.estimateTotalGenerationJobMillis(compile, sourceModels);
-
     progress.startTaskAnyway("generating", null, totalJob);
+    progress.addText("[ use " + (generatingEngine == GeneratingEngine.newest ? "NEW" : "OLD") + " generator engine ]");
 
     try {
       boolean reloadClasses = true;
-
       if (!myCompileBeforeGeneration || !generationType.requiresCompilationInIDEABeforeGeneration()) {
         progress.addText("compilation in IntelliJ IDEA before generation is turned off or not needed");
         reloadClasses = false;
@@ -471,7 +438,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         if (!compilationResult.isOk()) {
           reloadClasses = false;
         }
-
 
         boolean needCompileSourceLanguageModules = false;
         if (invocationContext instanceof ModuleContext) {
@@ -506,15 +472,9 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         checkMonitorCanceled(progress);
       }
 
-
-      GenerationStatus status = null;
       //++ generation
-      IGenerationSession generationSession;
-      if (generatingEngine == GeneratingEngine.old) {
-        generationSession = new GenerationSession(invocationContext, isSaveTransientModels(), progress, handler, false);
-      } else {
-        generationSession = new GenerationSession(invocationContext, isSaveTransientModels(), progress, handler, true);
-      }
+      GenerationStatus status = null;
+      IGenerationSession generationSession = new GenerationSession(invocationContext, isSaveTransientModels(), progress, handler, generatingEngine == GeneratingEngine.newest);
       for (SModelDescriptor sourceModelDescriptor : sourceModels) {
         progress.addText("");
 
@@ -531,9 +491,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         String taskName = ModelsProgressUtil.generationModelTaskName(sourceModelDescriptor);
         progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_GENERATION);
 
-
         status = generationSession.generateModel(sourceModelDescriptor, targetLanguage, script);
-
         if (isDumpStatistics()) {
           Statistics.dump();
         }
@@ -596,7 +554,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           progress.addText("" + compilationResult);
           progress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
           checkMonitorCanceled(progress);
-
 
           if (compilationResult.isOk()) {
             progress.addText("reloading MPS classes...");
