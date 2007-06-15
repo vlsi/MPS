@@ -7,6 +7,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Arrays;
+
 
 /**
  * User: Dmitriev.
@@ -58,6 +63,23 @@ public class NameUtil {
       sb.append(Character.toUpperCase(c));
     }
     return sb.toString();
+  }
+
+  public static List<String> splitByCamels(String source) {
+    List<String> result = new ArrayList<String>();
+    StringBuffer current = new StringBuffer();
+    for (int i = source.length() - 1; i >= 0; i--) {
+      char c = source.charAt(i);
+      current.insert(0, c);
+      if (i>0 && Character.isUpperCase(c)) {
+        result.add(decapitalize(current.toString()));
+        //current = new StringBuffer();
+      }
+    }
+    if (current.length() > 0) {
+      result.add(current.toString());
+    }
+    return result;
   }
 
   public static String shortNameFromLongName(String fqName) {

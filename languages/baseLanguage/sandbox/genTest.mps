@@ -2,10 +2,11 @@
 <model name="jetbrains.mps.baseLanguage.sandbox.genTest">
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.baseLanguageInternal" />
-  <maxImportIndex value="3" />
+  <maxImportIndex value="4" />
   <import index="1" modelUID="java.lang@java_stub" />
   <import index="2" modelUID="java.io@java_stub" />
   <import index="3" modelUID="java.lang.reflect@java_stub" />
+  <import index="4" modelUID="java.util@java_stub" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1171627004550">
     <property name="name" value="A" />
     <node role="staticInnerClassifiers" type="jetbrains.mps.baseLanguage.ClassConcept" id="1178617481415">
@@ -70,8 +71,17 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1178617872955">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1178617872956">
+            <property name="name" value="ABCDEF" />
             <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1178617872957">
               <link role="classifier" targetNodeId="1178617481415" resolveInfo="ABCDEF" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1181922430184">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1181922430185">
+            <property name="name" value="list" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1181922448750">
+              <link role="classifier" extResolveInfo="4.[Classifier]ArrayList" />
             </node>
           </node>
         </node>
