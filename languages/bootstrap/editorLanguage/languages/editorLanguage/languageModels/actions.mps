@@ -197,6 +197,7 @@
       <property name="applicableLinkMetaclass" value="aggregation" />
       <link role="applicableConcept" targetNodeId="1.1073389214265" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.AddMenuPart" id="1177585776511">
+        <link role="concept" targetNodeId="1.1073389214265" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.SimpleItemSubstitutePart" id="1177585776512">
           <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_Substitute_Handler" id="1177585776513">
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177585776514">
@@ -206,11 +207,12 @@
                   <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1177585776516">
                     <link role="concept" targetNodeId="1.1073389446423" />
                   </node>
-                  <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1177703288270">
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_model" id="1177703288271" />
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Model_CreateNewNodeOperation" id="1177703288272">
-                      <link role="concept" targetNodeId="1.1073389446423" />
-                      <node role="prototypeNode" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_currentTargetNode" id="1177703288273" />
+                  <node role="initializer" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1181948809920">
+                    <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeCreator" id="1181948813653">
+                      <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1181948813654">
+                        <link role="concept" targetNodeId="1.1073389446423" />
+                      </node>
+                      <node role="prototypeNode" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_currentTargetNode" id="1181948864136" />
                     </node>
                   </node>
                 </node>

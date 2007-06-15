@@ -10,7 +10,7 @@
   <import index="3" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" />
   <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" />
   <node type="jetbrains.mps.ide.scriptLanguage.Script" id="1177432828777">
-    <property name="scriptName" value="SearchDepracatedUsages" />
+    <property name="scriptName" value="SearchDepracatedUsages_GetParentOp" />
     <node role="statementList" type="jetbrains.mps.baseLanguage.StatementList" id="1177432828778">
       <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1177553555988">
         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1177553555989">
