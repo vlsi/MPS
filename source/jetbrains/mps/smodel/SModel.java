@@ -875,7 +875,15 @@ public class SModel implements Iterable<SNode> {
   }
 
   /*package*/ void changeModelUID(SModelUID newModelUID) {
+    SModelUID oldUID = myUID;
     myUID = newModelUID;
+    for (SNode node : getAllNodesWithIds()) {
+      for (SReference reference : node.getReferences()) {
+        if (oldUID.equals(reference.getTargetModelUID())) {
+          reference.setTargetModelUID(newModelUID);
+        }
+      }
+    }
   }
 
   public void addEngagedOnGenerationLanguage(String languageNamespace) {
