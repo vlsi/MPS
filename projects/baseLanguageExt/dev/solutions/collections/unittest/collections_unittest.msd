@@ -5,8 +5,9 @@
   </models>
   <module />
   <languages>
-    <moduleRoot path="${mps_home}\projects\baseLanguageExt\dev\languages\collections\lang\collections.mpl" />
     <moduleRoot path="${mps_home}\baseLanguage\ext\unitTest\unitTest.mpl" />
+    <moduleRoot path="${mps_home}\projects\baseLanguageExt\dev\languages\collections\lang\collections.mpl" />
   </languages>
+  <classPath />
 </solution>
 
