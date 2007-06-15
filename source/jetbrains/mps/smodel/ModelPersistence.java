@@ -399,6 +399,11 @@ public class ModelPersistence {
 
   @NotNull
   public static Document saveModel(@NotNull SModel sourceModel) {
+    return saveModel(sourceModel, true);
+  }
+
+  @NotNull
+  public static Document saveModel(@NotNull SModel sourceModel, boolean validate) {
     Element rootElement = new Element(MODEL);
 
     VisibleModelElements visibleModelElements = new VisibleModelElements(rootElement);
@@ -408,7 +413,9 @@ public class ModelPersistence {
     Document document = new Document();
     document.setRootElement(rootElement);
 
-    sourceModel.validateLanguagesAndImports();
+    if (validate) {
+      sourceModel.validateLanguagesAndImports();
+    }
 
     // languages
     for (String languageNamespace : sourceModel.getExplicitlyImportedLanguages()) {
