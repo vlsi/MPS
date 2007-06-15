@@ -31,6 +31,7 @@ public abstract class MPSTree extends JTree {
   private MPSToolTipInfo myToolTipInfo;
   private int myTooltipManagerRecentInitialDelay;
   private boolean myAutoExpandEnabled = true;
+  private boolean myAutoOpen = false;
 
   protected MPSTree() {
     largeModel = true;
@@ -231,7 +232,8 @@ public abstract class MPSTree extends JTree {
     TreePath path = getPathForLocation(e.getX(), e.getY());
     if (path == null) return;
 
-    if (path.getLastPathComponent() instanceof MPSTreeNode && e.getClickCount() == 2) {
+    if (path.getLastPathComponent() instanceof MPSTreeNode && (e.getClickCount() == 2 ||
+                                                              (e.getClickCount() == 1 && myAutoOpen))) {
       setSelectionPath(path);
       MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
       node.doubleClick();
@@ -256,6 +258,13 @@ public abstract class MPSTree extends JTree {
 
   }
 
+  public boolean isAutoOpen() {
+    return myAutoOpen;
+  }
+
+  public void setAutoOpen(boolean autoOpen) {
+    myAutoOpen = autoOpen;
+  }
 
   public String getToolTipText(MouseEvent event) {
     TreePath path = getPathForLocation(event.getX(), event.getY());
