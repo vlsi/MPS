@@ -545,7 +545,7 @@ public class RuleUtil {
         continue;
       }
       if (templateReferentNode.getModel().equals(templateModel)) {
-        myGenerator.addReferenceInfo(new ReferenceInfo_Default(outputNode, reference, templateNode, templateReferentNode, inputNode));
+        myGenerator.addReferenceInfo(new ReferenceInfo_TemplateNode(outputNode, reference, templateNode, templateReferentNode, inputNode));
       } else {
         outputNode.addReferent(reference.getRole(), templateReferentNode);
       }
@@ -630,16 +630,16 @@ public class RuleUtil {
     CloneUtil.copyProperties(inputNode, outputNode);
 
     SModel inputModel = inputNode.getModel();
-    for (SReference reference : inputNode.getReferences()) {
-      SNode inputTargetNode = reference.getTargetNode();
+    for (SReference inputReference : inputNode.getReferences()) {
+      SNode inputTargetNode = inputReference.getTargetNode();
       if (inputTargetNode == null) {
         myGenerator.showErrorMessage(inputNode, templateNode, "'copyNodeFromInputNode' referent node is null in template model");
         continue;
       }
       if (inputTargetNode.getModel().equals(inputModel)) {
-        myGenerator.addReferenceInfo(new ReferenceInfo_Default(outputNode, reference, inputNode, inputTargetNode, inputNode));
+        myGenerator.addReferenceInfo(new ReferenceInfo_CopiedInputNode(outputNode, inputReference));
       } else {
-        outputNode.addReferent(reference.getRole(), inputTargetNode);
+        outputNode.addReferent(inputReference.getRole(), inputTargetNode);
       }
     }
 

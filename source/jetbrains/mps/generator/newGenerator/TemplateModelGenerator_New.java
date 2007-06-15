@@ -140,7 +140,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     // There could new unresolved references appear after applying reduction rules (all delayed changes should be done before this, like replacing children)
     checkMonitorCanceled();
     for (SNode copiedRoot : copiedOutputRoots) {
-      invalidateReferences(copiedRoot);
+      invalidateReferencesInCopiedNode(copiedRoot);
     }
     updateAllReferences();
 
@@ -168,17 +168,17 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     return copiedRoots;
   }
 
-  private void invalidateReferences(SNode node) {
+  private void invalidateReferencesInCopiedNode(SNode node) {
     List<SReference> list = node.getReferences();
     for (SReference reference : list) {
-      invalidateReference(reference);
+      invalidateReferenceInCopiedNode(reference);
     }
     for (SNode childNode : node.getChildren()) {
-      invalidateReferences(childNode);
+      invalidateReferencesInCopiedNode(childNode);
     }
   }
 
-  private void invalidateReference(SReference reference) {
+  private void invalidateReferenceInCopiedNode(SReference reference) {
     if (reference.isExternal()) return;
     if (myOutputModel.getNodeById(reference.getTargetNodeId()) != null) return;
     SNode outputNode = reference.getSourceNode();
@@ -186,7 +186,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     if (inputNode == null) return;
     SReference inputReference = inputNode.getReference(reference.getRole());
     if (inputReference == null) return;
-    ReferenceInfo_Default refInfo = new ReferenceInfo_Default(outputNode, inputReference, inputNode, inputReference.getTargetNode(), inputNode);
+    ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(outputNode, inputReference);
     outputNode.removeReference(reference);
     addReferenceInfo(refInfo);
   }
