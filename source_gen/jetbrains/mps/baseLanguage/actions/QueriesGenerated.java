@@ -583,9 +583,7 @@ public class QueriesGenerated {
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
-          SNode binaryOp = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation");
-          List<SNode> result = BaseAdapter.toNodes(SModelUtil_new.getSubconcepts(((AbstractConceptDeclaration)SNodeOperations.getAdapter(binaryOp)), SNodeOperations.getModel(sourceNode), operationContext.getScope()));
-          return result;
+          return SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation"));
         }
       };
       Iterable<SNode> parameterObjects = (Iterable<SNode>)calculable.calculate();
