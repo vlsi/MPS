@@ -45,6 +45,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPr
 import jetbrains.mps.baseLanguage.constraints.QueriesUtil;
 import jetbrains.mps.generator.JavaModelUtil_new;
 import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.editor.ParenthesisUtil;
 
 public class QueriesGenerated {
@@ -583,7 +584,7 @@ public class QueriesGenerated {
 
         public Object calculate() {
           SNode binaryOp = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation");
-          List<SNode> result = BaseAdapter.toNodes(SModelUtil_new.getSubconcepts(((ConceptDeclaration)SNodeOperations.getAdapter(binaryOp)), SNodeOperations.getModel(sourceNode), operationContext.getScope()));
+          List<SNode> result = BaseAdapter.toNodes(SModelUtil_new.getSubconcepts(((AbstractConceptDeclaration)SNodeOperations.getAdapter(binaryOp)), SNodeOperations.getModel(sourceNode), operationContext.getScope()));
           return result;
         }
       };
@@ -592,8 +593,7 @@ public class QueriesGenerated {
         result.add(new AbstractRTransformHintSubstituteAction(parameter, sourceNode) {
 
           public SNode doSubstitute(String pattern) {
-            INodeAdapter newNode = SModelUtil_new.instantiateConceptDeclaration(((ConceptDeclaration)SNodeOperations.getAdapter(((SNode)this.getParameterObject()))), model);
-            SNode result = newNode.getNode();
+            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(((SNode)this.getParameterObject())), null);
             SNodeOperations.replaceWithAnother(sourceNode, result);
             SLinkOperations.setTarget(result, "leftExpression", sourceNode, true);
             SNode boToCheck = (SNodeOperations.isInstanceOf(result, "jetbrains.mps.baseLanguage.structure.BinaryOperation") ?
