@@ -15,12 +15,12 @@ import java.util.List;
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
 
 public class BaseMethodDeclaration extends NamedConcept {
-  public static String NAME = "name";
-  public static String IS_FINAL = "isFinal";
   public static String RETURN_TYPE = "returnType";
   public static String BODY = "body";
   public static String PARAMETER = "parameter";
   public static String THROWS_ITEM = "throwsItem";
+  public static String NAME = "name";
+  public static String IS_FINAL = "isFinal";
 
   public  BaseMethodDeclaration(SNode node) {
     super(node);
@@ -33,18 +33,6 @@ public class BaseMethodDeclaration extends NamedConcept {
     return BaseMethodDeclaration.newInstance(sm, false);
   }
 
-  public String getName() {
-    return this.getProperty(BaseMethodDeclaration.NAME);
-  }
-  public void setName(String value) {
-    this.setProperty(BaseMethodDeclaration.NAME, value);
-  }
-  public boolean getIsFinal() {
-    return this.getBooleanProperty(BaseMethodDeclaration.IS_FINAL);
-  }
-  public void setIsFinal(boolean value) {
-    this.setBooleanProperty(BaseMethodDeclaration.IS_FINAL, value);
-  }
   public Type getReturnType() {
     return (Type)this.getChild(BaseMethodDeclaration.RETURN_TYPE);
   }
@@ -86,5 +74,17 @@ public class BaseMethodDeclaration extends NamedConcept {
   }
   public void insertThrowsItem(ClassifierType prev, ClassifierType node) {
     this.insertChild(prev, BaseMethodDeclaration.THROWS_ITEM, node);
+  }
+  public String getName() {
+    return this.getProperty(BaseMethodDeclaration.NAME);
+  }
+  public void setName(String value) {
+    this.setProperty(BaseMethodDeclaration.NAME, value);
+  }
+  public boolean getIsFinal() {
+    return this.getBooleanProperty(BaseMethodDeclaration.IS_FINAL);
+  }
+  public void setIsFinal(boolean value) {
+    this.setBooleanProperty(BaseMethodDeclaration.IS_FINAL, value);
   }
 }

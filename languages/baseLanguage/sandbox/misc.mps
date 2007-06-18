@@ -36,6 +36,16 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1182161113278">
+          <node role="expression" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1182161166343">
+            <node role="creator" type="jetbrains.mps.baseLanguage.AnonymousClassCreator" id="1182161166344">
+              <node role="cls" type="jetbrains.mps.baseLanguage.AnonymousClass" id="1182161113280">
+                <link role="classifier" extResolveInfo="3.[Classifier]AbstractList" />
+                <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1182161113281" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
