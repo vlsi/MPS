@@ -122,6 +122,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1073389446423">
     <property name="name" value="CellModel_Collection" />
+    <property name="package" value="CellModel" />
     <link role="extends" targetNodeId="1073389214265" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1073389446424">
       <property name="targetCardinality" value="1" />
@@ -166,6 +167,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1073389577006">
     <property name="name" value="CellModel_Constant" />
+    <property name="package" value="CellModel" />
     <link role="extends" targetNodeId="1079353555532" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1073389577007">
       <property name="name" value="text" />
@@ -188,6 +190,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1073389658414">
     <property name="name" value="CellModel_Property" />
+    <property name="package" value="CellModel" />
     <link role="extends" targetNodeId="1139848536355" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1073389964684">
       <property name="targetCardinality" value="0..n" />
@@ -207,6 +210,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1073389882823">
     <property name="name" value="CellModel_RefNode" />
+    <property name="package" value="CellModel" />
     <link role="extends" targetNodeId="1139848536355" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1073389882824">
       <property name="targetCardinality" value="0..n" />
@@ -226,6 +230,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1073390211982">
     <property name="name" value="CellModel_RefNodeList" />
+    <property name="package" value="CellModel" />
     <link role="extends" targetNodeId="1140524381322" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1145360728033">
       <property name="name" value="reverse" />
@@ -258,6 +263,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1074767920765">
     <property name="name" value="CellModel_ModelAccess" />
+    <property name="package" value="CellModel" />
     <link role="extends" targetNodeId="1079353555532" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1176718152741">
       <property name="metaClass" value="aggregation" />
@@ -281,6 +287,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1075375595203">
     <property name="name" value="CellModel_Error" />
+    <property name="package" value="CellModel" />
     <link role="extends" targetNodeId="1079353555532" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1075375595204">
       <property name="name" value="text" />
@@ -298,6 +305,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1078308402140">
     <property name="name" value="CellModel_Custom" />
+    <property name="package" value="CellModel" />
     <link role="extends" targetNodeId="1073389214265" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1176795024817">
       <property name="metaClass" value="aggregation" />
@@ -326,6 +334,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1078939183254">
     <property name="name" value="CellModel_Component" />
+    <property name="package" value="CellModel" />
     <link role="extends" targetNodeId="1073389214265" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1078939183255">
       <property name="targetCardinality" value="0..n" />
@@ -344,6 +353,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1079353555532">
     <property name="name" value="CellModel_AbstractLabel" />
+    <property name="package" value="CellModel" />
     <link role="extends" targetNodeId="1073389214265" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1176889772388">
       <property name="metaClass" value="aggregation" />
@@ -385,9 +395,10 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1081293058843">
-    <property name="name" value="CellKeyMapDeclaration" />
     <property name="iconPath" value="${language_descriptor}\icons\keyMap.png" />
     <property name="rootable" value="true" />
+    <property name="name" value="CellKeyMapDeclaration" />
+    <property name="package" value="CellKeyMap" />
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1173470710781">
       <link role="intfc" targetNodeId="3.1169194658468" />
     </node>
@@ -517,6 +528,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1088013125922">
     <property name="name" value="CellModel_RefCell" />
+    <property name="package" value="CellModel" />
     <link role="extends" targetNodeId="1139848536355" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1088013239202">
       <property name="targetCardinality" value="0..n" />
@@ -551,6 +563,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1088612959204">
     <property name="name" value="CellModel_Alternation" />
+    <property name="package" value="CellModel" />
     <link role="extends" targetNodeId="1073389214265" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1088613081987">
       <property name="name" value="vertical" />
@@ -617,6 +630,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1103016434866">
     <property name="name" value="CellModel_JComponent" />
+    <property name="package" value="CellModel" />
     <link role="extends" targetNodeId="1073389214265" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1176475119347">
       <property name="metaClass" value="aggregation" />
@@ -631,17 +645,21 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1106270491082">
     <property name="name" value="CellLayout" />
+    <property name="package" value="CellLayout" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1106270549637">
     <property name="name" value="CellLayout_Horizontal" />
+    <property name="package" value="CellLayout" />
     <link role="extends" targetNodeId="1106270491082" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1106270571710">
     <property name="name" value="CellLayout_Vertical" />
+    <property name="package" value="CellLayout" />
     <link role="extends" targetNodeId="1106270491082" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1106270637846">
     <property name="name" value="CellLayout_Flow" />
+    <property name="package" value="CellLayout" />
     <link role="extends" targetNodeId="1106270491082" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.EnumerationDataTypeDeclaration" id="1130847686886">
@@ -686,6 +704,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1134379236839">
     <property name="name" value="CellModel_AttributedPropertyCell" />
+    <property name="package" value="CellModel" />
     <link role="extends" targetNodeId="1073389214265" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1134380148394">
       <property name="value" value="attributed property" />
@@ -698,6 +717,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1136564507907">
     <property name="name" value="CellModel_AttributedLinkCell" />
+    <property name="package" value="CellModel" />
     <link role="extends" targetNodeId="1073389214265" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1136564532725">
       <property name="value" value="attributed link" />
@@ -710,6 +730,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1136916919141">
     <property name="name" value="CellKeyMapItem" />
+    <property name="package" value="CellKeyMap" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1136916998332">
       <property name="targetCardinality" value="1" />
       <property name="sourceCardinality" value="1..n" />
@@ -746,6 +767,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1136916976737">
     <property name="name" value="CellKeyMapKeystroke" />
+    <property name="package" value="CellKeyMap" />
     <link role="extends" targetNodeId="3.1133920641626" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1136923970223">
       <property name="name" value="modifiers" />
@@ -760,6 +782,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1136917155755">
     <property name="name" value="CellKeyMap_AbstractFunction" />
+    <property name="package" value="CellKeyMap" />
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1161630184985">
       <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
@@ -807,6 +830,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1136917249679">
     <property name="name" value="CellKeyMap_IsApplicableFunction" />
+    <property name="package" value="CellKeyMap" />
     <link role="extends" targetNodeId="1136917155755" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1137545690489">
       <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" />
@@ -819,6 +843,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1136917288805">
     <property name="name" value="CellKeyMap_ExecuteFunction" />
+    <property name="package" value="CellKeyMap" />
     <link role="extends" targetNodeId="1136917155755" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1158958837093">
       <property name="value" value="execute block" />
@@ -827,6 +852,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1137553248617">
     <property name="name" value="CellModel_ConceptProperty" />
+    <property name="package" value="CellModel" />
     <link role="extends" targetNodeId="1139848536355" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1137553248621">
       <property name="targetCardinality" value="0..n" />
@@ -970,6 +996,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1139744628335">
     <property name="name" value="CellModel_Image" />
+    <property name="package" value="CellModel" />
     <link role="extends" targetNodeId="1073389214265" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1176899909521">
       <property name="metaClass" value="aggregation" />
@@ -995,6 +1022,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1139848536355">
     <property name="name" value="CellModel_WithRole" />
+    <property name="package" value="CellModel" />
     <link role="extends" targetNodeId="1079353555532" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1139849308084">
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" />
@@ -1021,6 +1049,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1140524381322">
     <property name="name" value="CellModel_ListWithRole" />
+    <property name="package" value="CellModel" />
     <link role="extends" targetNodeId="1139848536355" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1140524467909">
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" />
@@ -1113,6 +1142,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.EnumerationDataTypeDeclaration" id="1141091053936">
     <property name="name" value="CellKeyMapCaretPolicy" />
+    <property name="package" value="CellKeyMap" />
     <link role="memberDataType" targetNodeId="3.1082983041843" />
     <link role="defaultMember" targetNodeId="1141091054266" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1141091054266">
@@ -1137,6 +1167,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1142886221719">
     <property name="name" value="QueryFunction_NodeCondition" />
+    <property name="package" value="QueryFunction" />
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1145652669910">
       <property name="value" value="condition" />
@@ -1191,6 +1222,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1149850725784">
     <property name="name" value="CellModel_AttributedNodeCell" />
+    <property name="package" value="CellModel" />
     <link role="extends" targetNodeId="1073389214265" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1149850757778">
       <property name="value" value="attributed node" />
@@ -1203,6 +1235,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1160493135005">
     <property name="name" value="CellMenuPart_PropertyValues_GetValues" />
+    <property name="package" value="CellMenu" />
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1160500373903">
       <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" />
@@ -1248,6 +1281,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1162497113192">
     <property name="name" value="CellMenuPart_ReplaceChild_currentChild" />
+    <property name="package" value="CellMenu" />
     <link role="extends" targetNodeId="4.1107135704075" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1162497113193">
       <property name="value" value="currentChild" />
@@ -1259,6 +1293,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1162498275506">
     <property name="name" value="CellMenuPart_ReplaceChild_defaultConceptOfChild" />
+    <property name="package" value="CellMenu" />
     <link role="extends" targetNodeId="4.1107135704075" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1162498325651">
       <link role="conceptLinkDeclaration" targetNodeId="4.1137545963098" />
@@ -1276,6 +1311,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1163613035599">
     <property name="name" value="CellMenuPart_AbstractGroup_Query" />
+    <property name="package" value="CellMenu" />
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1163613035600">
       <property name="value" value="get objects" />
@@ -1302,6 +1338,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1163613131943">
     <property name="name" value="CellMenuPart_ReplaceNode_Group_Create" />
+    <property name="package" value="CellMenu" />
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1163711457917">
       <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" />
@@ -1334,6 +1371,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1163613549566">
     <property name="name" value="CellMenuPart_AbstractGroup_parameterObject" />
+    <property name="package" value="CellMenu" />
     <link role="extends" targetNodeId="4.1107135704075" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1163613549567">
       <property name="value" value="parameterObject" />
@@ -1345,6 +1383,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1163613822479">
     <property name="name" value="CellMenuPart_Abstract_editedNode" />
+    <property name="package" value="CellMenu" />
     <link role="extends" targetNodeId="4.1107135704075" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1163613822480">
       <property name="value" value="node" />
@@ -1356,6 +1395,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1164052439493">
     <property name="name" value="CellMenuPart_AbstractGroup_MatchingText" />
+    <property name="package" value="CellMenu" />
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1164052439494">
       <property name="value" value="matching text" />
@@ -1374,6 +1414,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1164052588708">
     <property name="name" value="CellMenuPart_AbstractGroup_DescriptionText" />
+    <property name="package" value="CellMenu" />
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1164052588709">
       <property name="value" value="description text" />
@@ -1392,6 +1433,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1164824717996">
     <property name="name" value="CellMenuDescriptor" />
+    <property name="package" value="CellMenu" />
     <link role="extends" targetNodeId="3.1133920641626" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1164824815888">
       <property name="metaClass" value="aggregation" />
@@ -1406,6 +1448,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1164824854750">
     <property name="name" value="CellMenuPart_Abstract" />
+    <property name="package" value="CellMenu" />
     <link role="extends" targetNodeId="3.1133920641626" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1164824871502">
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" />
@@ -1413,6 +1456,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1164833692343">
     <property name="name" value="CellMenuPart_PropertyValues" />
+    <property name="package" value="CellMenu" />
     <link role="extends" targetNodeId="1164824854750" resolveInfo="CellMenuPart_Abstract" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1164833692344">
       <property name="metaClass" value="aggregation" />
@@ -1427,6 +1471,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1164914519156">
     <property name="name" value="CellMenuPart_ReplaceNode_CustomNodeConcept" />
+    <property name="package" value="CellMenu" />
     <link role="extends" targetNodeId="1164824854750" resolveInfo="CellMenuPart_Abstract" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1164914727930">
       <property name="sourceCardinality" value="1" />
@@ -1440,6 +1485,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1164996492011">
     <property name="name" value="CellMenuPart_ReferentPrimary" />
+    <property name="package" value="CellMenu" />
     <link role="extends" targetNodeId="1164824854750" resolveInfo="CellMenuPart_Abstract" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1164996492013">
       <property name="value" value="primary choose referent menu" />
@@ -1448,6 +1494,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1165004207520">
     <property name="name" value="CellMenuPart_ReplaceNode_Group" />
+    <property name="package" value="CellMenu" />
     <link role="extends" targetNodeId="1165253627126" resolveInfo="CellMenuPart_AbstractGroup" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1165004529292">
       <property name="metaClass" value="aggregation" />
@@ -1468,6 +1515,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1165253627126">
     <property name="name" value="CellMenuPart_AbstractGroup" />
+    <property name="package" value="CellMenu" />
     <link role="extends" targetNodeId="1164824854750" resolveInfo="CellMenuPart_Abstract" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1165253627127">
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" />
@@ -1495,6 +1543,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1165270418989">
     <property name="name" value="CellMenuPart_ReplaceChild_Group" />
+    <property name="package" value="CellMenu" />
     <link role="extends" targetNodeId="1165253627126" resolveInfo="CellMenuPart_AbstractGroup" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1165270418991">
       <property name="metaClass" value="aggregation" />
@@ -1514,6 +1563,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1165270662927">
     <property name="name" value="CellMenuPart_ReplaceChild_Group_Query" />
+    <property name="package" value="CellMenu" />
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1165270662928">
       <property name="value" value="get objects" />
@@ -1542,6 +1592,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1165270999881">
     <property name="name" value="CellMenuPart_ReplaceChild_Group_Create" />
+    <property name="package" value="CellMenu" />
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1165270999882">
       <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
@@ -1578,6 +1629,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1165280503630">
     <property name="name" value="CellMenuPart_ReplaceChild_CustomChildConcept" />
+    <property name="package" value="CellMenu" />
     <link role="extends" targetNodeId="1164824854750" resolveInfo="CellMenuPart_Abstract" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1165280503631">
       <property name="metaClass" value="aggregation" />
@@ -1592,6 +1644,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1165280856333">
     <property name="name" value="CellMenuPart_ReplaceChild_CustomChildConcept_Query" />
+    <property name="package" value="CellMenu" />
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1165280856334">
       <property name="value" value="get child concept" />
@@ -1626,6 +1679,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1165339175678">
     <property name="name" value="CellMenuPart_ReplaceChild_Item" />
+    <property name="package" value="CellMenu" />
     <link role="extends" targetNodeId="1164824854750" resolveInfo="CellMenuPart_Abstract" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1165339639991">
       <property name="name" value="matchingText" />
@@ -1647,6 +1701,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1165339307433">
     <property name="name" value="CellMenuPart_ReplaceChild_Item_Create" />
+    <property name="package" value="CellMenu" />
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1165339307434">
       <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
@@ -1675,6 +1730,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1165420413719">
     <property name="name" value="CellMenuPart_Generic_Group" />
+    <property name="package" value="CellMenu" />
     <link role="extends" targetNodeId="1165253627126" resolveInfo="CellMenuPart_AbstractGroup" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1165420413720">
       <property name="metaClass" value="aggregation" />
@@ -1695,6 +1751,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1165420626554">
     <property name="name" value="CellMenuPart_Generic_Group_Handler" />
+    <property name="package" value="CellMenu" />
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1165420626557">
       <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
@@ -1723,6 +1780,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1165424453110">
     <property name="name" value="CellMenuPart_Generic_Item" />
+    <property name="package" value="CellMenu" />
     <link role="extends" targetNodeId="1164824854750" resolveInfo="CellMenuPart_Abstract" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1165424453111">
       <property name="name" value="matchingText" />
@@ -1741,6 +1799,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1165424657443">
     <property name="name" value="CellMenuPart_Generic_Item_Handler" />
+    <property name="package" value="CellMenu" />
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1165424657444">
       <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
@@ -1760,9 +1819,10 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1166040637528">
-    <property name="name" value="CellMenuComponent" />
     <property name="iconPath" value="${language_descriptor}\icons\menuComponent.png" />
     <property name="rootable" value="true" />
+    <property name="name" value="CellMenuComponent" />
+    <property name="package" value="CellMenu" />
     <link role="extends" targetNodeId="1166049232041" resolveInfo="AbstractComponent" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1166040865497">
       <property name="metaClass" value="aggregation" />
@@ -1782,6 +1842,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1166041033436">
     <property name="name" value="CellMenuComponentFeature" />
+    <property name="package" value="CellMenu" />
     <link role="extends" targetNodeId="3.1133920641626" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1166054297096">
       <property name="sourceCardinality" value="1" />
@@ -1794,6 +1855,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1166041748520">
     <property name="name" value="CellMenuComponentFeature_Property" />
+    <property name="package" value="CellMenu" />
     <link role="extends" targetNodeId="1166041033436" resolveInfo="CellMenuComponentFeature" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1166041884271">
       <property name="sourceCardinality" value="1" />
@@ -1804,6 +1866,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1166042131867">
     <property name="name" value="CellMenuComponentFeature_Link" />
+    <property name="package" value="CellMenu" />
     <link role="extends" targetNodeId="1166041033436" resolveInfo="CellMenuComponentFeature" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1166042131869">
       <property name="sourceCardinality" value="1" />
@@ -1829,6 +1892,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1166059625718">
     <property name="name" value="CellMenuPart_CellMenuComponent" />
+    <property name="package" value="CellMenu" />
     <link role="extends" targetNodeId="1164824854750" resolveInfo="CellMenuPart_Abstract" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1166059677893">
       <property name="sourceCardinality" value="1" />
@@ -1842,6 +1906,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174088067129">
     <property name="name" value="CellMenuPart_ReplaceChildPrimary" />
+    <property name="package" value="CellMenu" />
     <link role="extends" targetNodeId="1164824854750" resolveInfo="CellMenuPart_Abstract" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174088067130">
       <property name="value" value="primary replace child menu" />
@@ -1850,6 +1915,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1176474535556">
     <property name="name" value="QueryFunction_JComponent" />
+    <property name="package" value="QueryFunction" />
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1176474588488">
       <property name="value" value="component" />
@@ -1897,6 +1963,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1176717841777">
     <property name="name" value="QueryFunction_ModelAccess_Getter" />
+    <property name="package" value="QueryFunction" />
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1176717841778">
       <property name="value" value="condition" />
@@ -1923,6 +1990,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1176717871254">
     <property name="name" value="QueryFunction_ModelAccess_Setter" />
+    <property name="package" value="QueryFunction" />
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1176717871255">
       <property name="value" value="condition" />
@@ -1951,6 +2019,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1176717888428">
     <property name="name" value="QueryFunction_ModelAccess_Validator" />
+    <property name="package" value="QueryFunction" />
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1176717888429">
       <property name="value" value="condition" />
@@ -2026,6 +2095,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1176749715029">
     <property name="name" value="QueryFunction_CellProvider" />
+    <property name="package" value="QueryFunction" />
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1176749779885">
       <property name="value" value="cell provider" />
@@ -2091,6 +2161,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1176809959526">
     <property name="name" value="QueryFunction_Color" />
+    <property name="package" value="QueryFunction" />
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1176809959527">
       <property name="value" value="color function" />
@@ -2117,6 +2188,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1176897764478">
     <property name="name" value="QueryFunction_NodeFactory" />
+    <property name="package" value="QueryFunction" />
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1176897764479">
       <property name="value" value="node factory" />
@@ -2141,6 +2213,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1176899348742">
     <property name="name" value="QueryFunction_ImagePath" />
+    <property name="package" value="QueryFunction" />
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1176899348743">
       <property name="value" value="string" />
@@ -2167,11 +2240,12 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1180615838666">
     <property name="name" value="CellMenuPart_PropertyPostfixHints" />
+    <property name="package" value="CellMenu" />
     <link role="extends" targetNodeId="1164824854750" resolveInfo="CellMenuPart_Abstract" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1180615838667">
+      <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="1" />
       <property name="role" value="postfixesFunction" />
-      <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1180616057533" resolveInfo="CellMenuPart_PropertyPostfixHints_GetPostfixes" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1180615838668">
@@ -2181,6 +2255,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1180616057533">
     <property name="name" value="CellMenuPart_PropertyPostfixHints_GetPostfixes" />
+    <property name="package" value="CellMenu" />
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1180616057534">
       <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" />

@@ -75,6 +75,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1178192141190">
+    <property name="package" value="CellMenu" />
     <link role="concept" targetNodeId="1.1166041748520" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1178192141191">
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178192141192" />
@@ -175,6 +176,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1178192141222">
+    <property name="package" value="CellMenu" />
     <link role="concept" targetNodeId="1.1164914519156" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1178192141223">
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178192141224" />
@@ -256,6 +258,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1178192141246">
+    <property name="package" value="CellMenu" />
     <link role="concept" targetNodeId="1.1166042131867" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1178192141247">
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178192141248" />
@@ -436,6 +439,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1178192141399">
+    <property name="package" value="CellModel" />
     <link role="concept" targetNodeId="1.1088013125922" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1178192141400">
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178192141401" />
@@ -582,6 +586,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1178192141418">
+    <property name="package" value="CellModel" />
     <link role="concept" targetNodeId="1.1139848536355" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1178192141419">
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178192141420" />
@@ -663,6 +668,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1179773564755">
+    <property name="package" value="CellMenu" />
     <link role="concept" targetNodeId="1.1165270999881" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1179773569680">
       <property name="name" value="getExpectedReturnType" />
@@ -763,6 +769,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1179777756150">
+    <property name="package" value="CellMenu" />
     <link role="concept" targetNodeId="1.1165270662927" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1179777761215">
       <property name="name" value="getExpectedReturnType" />
@@ -842,6 +849,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1179781299249">
+    <property name="package" value="CellMenu" />
     <link role="concept" targetNodeId="1.1165339307433" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1179781307736">
       <property name="name" value="getExpectedReturnType" />
@@ -942,6 +950,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1180022174725">
+    <property name="package" value="CellMenu" />
     <link role="concept" targetNodeId="1.1163613035599" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1180022177962">
       <property name="name" value="getExpectedReturnType" />
@@ -1015,6 +1024,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1180297355226">
+    <property name="package" value="CellModel" />
     <link role="concept" targetNodeId="1.1073389882823" />
     <node role="references" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1180297358480">
       <property name="searchScopeDescription" value="aggregation links declared in concept hierarchy and not overridden" />
@@ -1170,6 +1180,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1180297815104">
+    <property name="package" value="CellModel" />
     <link role="concept" targetNodeId="1.1073390211982" />
     <node role="references" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1180297824744">
       <link role="applicableLink" targetNodeId="1.1073390211987" />

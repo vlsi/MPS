@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.bootstrap.structureLanguage.constraints.ConceptDeclarationExtendedConceptSearchScope;
 
 public class ConceptDeclaration_extends_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 

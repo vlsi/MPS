@@ -61,7 +61,7 @@
               <link role="classifier" extResolveInfo="5.[Classifier]SModelDescriptor" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1179140662319">
-              <link role="baseMethodDeclaration" extResolveInfo="5.method ([Classifier]Language).([InstanceMethodDeclaration]getConstraintsModelDescriptor() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SModelDescriptor]))" />
+              <link role="baseMethodDeclaration" extResolveInfo="5.method ([Classifier]Language).([InstanceMethodDeclaration]getEditorModelDescriptor() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SModelDescriptor]))" />
               <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179140662320">
                 <link role="variableDeclaration" targetNodeId="1179140662308" resolveInfo="language" />
               </node>
@@ -177,8 +177,8 @@
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178096795260" />
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1178096832142">
-      <property name="isPrivate" value="true" />
       <property name="name" value="findBehaviour" />
+      <property name="isPrivate" value="true" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1178096832137">
         <property name="name" value="scope" />
         <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1178096832143">
