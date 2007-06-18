@@ -908,7 +908,6 @@
   <component name="ProjectFileVersion" converted="false" />
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/projects/Charisma/Charisma.iml" filepath="$PROJECT_DIR$/projects/Charisma/Charisma.iml" group="Charisma" />
       <module fileurl="file://$PROJECT_DIR$/app/MForum/MForum.iml" filepath="$PROJECT_DIR$/app/MForum/MForum.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/MPS.iml" filepath="$PROJECT_DIR$/MPS.iml" />
       <module fileurl="file://$PROJECT_DIR$/MPSPlugin/MPSPlugin.iml" filepath="$PROJECT_DIR$/MPSPlugin/MPSPlugin.iml" />
@@ -929,9 +928,10 @@
       <module fileurl="file://$PROJECT_DIR$/platform/webr/extensions/blogs/blogs.iml" filepath="$PROJECT_DIR$/platform/webr/extensions/blogs/blogs.iml" group="platform/webr/extensions" />
       <module fileurl="file://$PROJECT_DIR$/platform/businessRules/businessRules.iml" filepath="$PROJECT_DIR$/platform/businessRules/businessRules.iml" group="platform/businessRules" />
       <module fileurl="file://$PROJECT_DIR$/platform/businessRules/runtime/businessRules-runtime.iml" filepath="$PROJECT_DIR$/platform/businessRules/runtime/businessRules-runtime.iml" group="platform/businessRules" />
-      <module fileurl="file://$PROJECT_DIR$/projects/charisma-agent/charisma-agent.iml" filepath="$PROJECT_DIR$/projects/charisma-agent/charisma-agent.iml" group="Charisma" />
-      <module fileurl="file://$PROJECT_DIR$/projects/charisma-jira-client/charisma-jira-client.iml" filepath="$PROJECT_DIR$/projects/charisma-jira-client/charisma-jira-client.iml" group="Charisma" />
-      <module fileurl="file://$PROJECT_DIR$/projects/charisma-jira-plugin/charisma-jira-plugin.iml" filepath="$PROJECT_DIR$/projects/charisma-jira-plugin/charisma-jira-plugin.iml" group="Charisma" />
+      <module fileurl="file://$PROJECT_DIR$/app/charisma/charisma-agent/charisma-agent.iml" filepath="$PROJECT_DIR$/app/charisma/charisma-agent/charisma-agent.iml" group="charisma" />
+      <module fileurl="file://$PROJECT_DIR$/app/charisma/charisma-app/charisma-app.iml" filepath="$PROJECT_DIR$/app/charisma/charisma-app/charisma-app.iml" group="charisma" />
+      <module fileurl="file://$PROJECT_DIR$/app/charisma/charisma-jira-client/charisma-jira-client.iml" filepath="$PROJECT_DIR$/app/charisma/charisma-jira-client/charisma-jira-client.iml" group="charisma" />
+      <module fileurl="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/charisma-jira-plugin.iml" filepath="$PROJECT_DIR$/app/charisma/charisma-jira-plugin/charisma-jira-plugin.iml" group="charisma" />
       <module fileurl="file://$PROJECT_DIR$/projects/baseLanguageExt/collections-runtime/collections-runtime.iml" filepath="$PROJECT_DIR$/projects/baseLanguageExt/collections-runtime/collections-runtime.iml" group="Projects/BaseLanguageExt" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/core/core.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/core/core.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/projects/baseLanguageExt/dates-runtime/dates-runtime.iml" filepath="$PROJECT_DIR$/projects/baseLanguageExt/dates-runtime/dates-runtime.iml" group="Projects/BaseLanguageExt" />
@@ -1044,11 +1044,6 @@
         <option name="MODULE_NAME" value="MForum" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="Charisma" />
-        <option name="DEPLOY" value="true" />
-      </J2EE_MODULE>
       <J2EE_MODULE>
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="teamSysWebApp" />
@@ -1062,6 +1057,11 @@
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="webrSamples_tree" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="charisma-app" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE>
@@ -1165,11 +1165,6 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="Charisma" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="teamSysWebApp" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
@@ -1181,6 +1176,11 @@
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="webrSamples_tree" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="charisma-app" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1284,11 +1284,6 @@
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="Charisma" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="teamSysWebApp" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
@@ -1300,6 +1295,11 @@
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="webrSamples_tree" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="charisma-app" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1383,11 +1383,6 @@
         <option name="MODULE_NAME" value="MForum" />
         <option name="DEPLOY" value="true" />
       </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="Charisma" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
       <J2EE_MODULE>
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="teamSysWebApp" />
@@ -1401,6 +1396,11 @@
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="webrSamples_tree" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="charisma-app" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1502,11 +1502,6 @@
         <option name="MODULE_NAME" value="MForum" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="Charisma" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
       <J2EE_MODULE>
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="teamSysWebApp" />
@@ -1520,6 +1515,11 @@
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="webrSamples_tree" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="charisma-app" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1878,6 +1878,34 @@
     <library name="SAAJ">
       <CLASSES>
         <root url="jar://C:/Documents and Settings/Vadim.Gurov/.IntelliJIdea70/config/plugins/WebServices/lib/saaj.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Axis">
+      <CLASSES>
+        <root url="jar://C:/Documents and Settings/Vadim.Gurov/.IntelliJIdea70/config/plugins/WebServices/lib/axis.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Commons Discovery">
+      <CLASSES>
+        <root url="jar://C:/Documents and Settings/Vadim.Gurov/.IntelliJIdea70/config/plugins/WebServices/lib/commons-discovery-0.2.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Commons Logging">
+      <CLASSES>
+        <root url="jar://C:/Documents and Settings/Vadim.Gurov/.IntelliJIdea70/config/plugins/WebServices/lib/commons-logging-1.0.4.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="WSDL4J">
+      <CLASSES>
+        <root url="jar://C:/Documents and Settings/Vadim.Gurov/.IntelliJIdea70/config/plugins/WebServices/lib/wsdl4j-1.5.1.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
