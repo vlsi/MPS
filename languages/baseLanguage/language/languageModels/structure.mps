@@ -1865,6 +1865,13 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1170346941296">
     <property name="name" value="AnonymousClassExpression" />
     <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1182161702962">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182161715449">
+      <property name="value" value="use generic new expression instead" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1180129508254" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1170346979436">
       <property name="value" value="anonymous class" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
