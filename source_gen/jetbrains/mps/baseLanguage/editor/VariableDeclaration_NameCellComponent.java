@@ -44,6 +44,7 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new VariableDeclaration_name_postfixCellMenu()}));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1181823199382");
     editorCell.setLayoutConstraint("");
+    editorCell.setRightTransformAnchorTag("default_RTransform");
     return editorCell;
   }
   public EditorCell createNameCell(EditorContext context, SNode node) {
