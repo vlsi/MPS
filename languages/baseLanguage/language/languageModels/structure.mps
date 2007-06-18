@@ -2080,5 +2080,19 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182160077978">
+    <property name="name" value="AnonymousClassCreator" />
+    <link role="extends" targetNodeId="1145552809883" resolveInfo="AbstractCreator" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182160111638">
+      <property name="value" value="anonymous class" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182160096073">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="cls" />
+      <link role="target" targetNodeId="1170345865475" resolveInfo="AnonymousClass" />
+    </node>
+  </node>
 </model>
 

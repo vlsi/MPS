@@ -123,6 +123,19 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1182160436945">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1182160436946">
+            <node role="statement" type="jetbrains.mps.baseLanguage.Statement" id="1182160436947" />
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1182160439461">
+            <node role="creator" type="jetbrains.mps.baseLanguage.AnonymousClassCreator" id="1182160441365">
+              <node role="cls" type="jetbrains.mps.baseLanguage.AnonymousClass" id="1182160441366">
+                <link role="classifier" extResolveInfo="233.[Classifier]AbstractCollection" />
+                <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1182160441367" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1121438897510" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1121438897511">
