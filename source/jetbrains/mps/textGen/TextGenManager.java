@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.baseLanguage.textGen.JavaNodeTextGen;
 
 /**
  * User: Dmitriev.
@@ -29,6 +30,7 @@ public class TextGenManager {
 
   public TextGenerationResult generateText(SNode node) {
     TextGenBuffer buffer = new TextGenBuffer();
+    buffer.putUserObject(JavaNodeTextGen.PACKAGE_NAME, node.getModel().getLongName());
     appendNodeText(buffer, node);
     return new TextGenerationResult(buffer.getText(), buffer.hasErrors());
   }
