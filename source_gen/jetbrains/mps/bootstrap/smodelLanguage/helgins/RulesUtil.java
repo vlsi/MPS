@@ -9,9 +9,6 @@ import jetbrains.mps.helgins.inference.TypeChecker;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_40;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_41;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_42;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.DataTypeUtil;
 import jetbrains.mps.bootstrap.structureLanguage.structure.DataTypeDeclaration;
@@ -21,11 +18,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_43;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_44;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.zPredicate;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_45;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.zPredicate1;
 
 public class RulesUtil {
 

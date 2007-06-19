@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
-import jetbrains.mps.bootstrap.smodelLanguage.structure.AbstractOperationParameter;
 import java.util.List;
 
 public class SNodeOperation extends BaseConcept {

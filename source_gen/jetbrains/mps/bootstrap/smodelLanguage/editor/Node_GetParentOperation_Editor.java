@@ -11,13 +11,10 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
-import jetbrains.mps.bootstrap.smodelLanguage.editor.OperationParameters_Component;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
-import jetbrains.mps.bootstrap.smodelLanguage.editor.Node_GetParentOperation_replaceWith_SNodeOperation_cellMenu;
-import jetbrains.mps.bootstrap.smodelLanguage.editor.Node_GetParentOperation_replaceWith_SNodeOperation_cellMenu1;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class Node_GetParentOperation_Editor extends DefaultNodeEditor {

@@ -3777,6 +3777,55 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1182280228035">
+      <property name="name" value="concept_instances" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1182280228036" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1182280228037" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1182280228038">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1182280576926">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1182280576927">
+            <property name="name" value="instances" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1182280576928">
+              <link role="elementConcept" targetNodeId="1.1081773326031" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1182280280889">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Concept_FindInstances" id="1182280560369" />
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.ConceptRefExpression" id="1182280274277">
+                <link role="conceptDeclaration" targetNodeId="1.1081773326031" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1182280588605">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1182280588606">
+            <property name="name" value="aConcept" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SConceptType" id="1182280588607" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1182280646351">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1182280646352">
+            <property name="name" value="instances2" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1182280646353" />
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1182280622262">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Concept_FindInstances" id="1182280624413">
+                <node role="scope" type="jetbrains.mps.baseLanguage.ParameterReference" id="1182280637794">
+                  <link role="variableDeclaration" targetNodeId="1182280633502" resolveInfo="scope" />
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1182280620736">
+                <link role="variableDeclaration" targetNodeId="1182280588606" resolveInfo="aConcept" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1182280633502">
+        <property name="name" value="scope" />
+        <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1182280633503">
+          <link role="classifier" extResolveInfo="4.[Classifier]IScope" />
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 

@@ -9,7 +9,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
-import jetbrains.mps.bootstrap.smodelLanguage.editor.OperationParameters_Component;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class Node_GetAncestorsOperation_Editor extends DefaultNodeEditor {

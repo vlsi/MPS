@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_22;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_23;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_24;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_SemanticDowncastExpression_InferenceRule implements InferenceRule_Runtime {

@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
-import jetbrains.mps.bootstrap.smodelLanguage.editor.OperationParm_ConceptList_Editor_ConceptListHandler_conceptList_;
 import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
 
 public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {

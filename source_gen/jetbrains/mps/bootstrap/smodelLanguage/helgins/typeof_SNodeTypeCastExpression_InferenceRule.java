@@ -6,9 +6,6 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_1;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_2;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_SNodeTypeCastExpression_InferenceRule implements InferenceRule_Runtime {

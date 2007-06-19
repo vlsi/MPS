@@ -5,7 +5,6 @@ package jetbrains.mps.bootstrap.smodelLanguage.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_28;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class supertypesOf_SModelType_ClassifierTypeSModel_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {

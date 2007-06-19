@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
-import jetbrains.mps.bootstrap.smodelLanguage.editor.OperationParameters_Component;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class Node_GetAllSiblingsOperation_Editor extends DefaultNodeEditor {

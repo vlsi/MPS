@@ -5,7 +5,6 @@ package jetbrains.mps.bootstrap.smodelLanguage.editor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.bootstrap.smodelLanguage.editor.SNodeTypeCastExpression_Concept_Actions_DELETE;
 
 public class SNodeTypeCastExpression_Concept_Actions {
 

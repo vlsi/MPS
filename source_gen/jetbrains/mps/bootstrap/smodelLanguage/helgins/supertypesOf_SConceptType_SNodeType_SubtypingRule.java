@@ -7,9 +7,6 @@ import jetbrains.mps.bootstrap.helgins.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_34;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_35;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_36;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class supertypesOf_SConceptType_SNodeType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {

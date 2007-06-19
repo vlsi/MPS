@@ -15,7 +15,6 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.ConceptPropertyCellP
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.bootstrap.smodelLanguage.editor.Model_RootsIncludingImportedOperation_Editor_concept_InlineComponent;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 
 public class Model_RootsIncludingImportedOperation_Editor extends DefaultNodeEditor {

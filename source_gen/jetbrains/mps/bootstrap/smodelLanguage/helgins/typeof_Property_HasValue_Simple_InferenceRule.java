@@ -4,16 +4,11 @@ package jetbrains.mps.bootstrap.smodelLanguage.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.RulesUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.DataTypeUtil;
 import jetbrains.mps.bootstrap.structureLanguage.structure.DataTypeDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_7;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_8;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_9;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_10;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_Property_HasValue_Simple_InferenceRule implements InferenceRule_Runtime {

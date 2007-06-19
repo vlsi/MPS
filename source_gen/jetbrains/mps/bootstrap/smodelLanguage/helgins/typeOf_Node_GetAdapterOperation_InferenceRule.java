@@ -4,12 +4,10 @@ package jetbrains.mps.bootstrap.smodelLanguage.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.RulesUtil;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.QuotationClass_55;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_Node_GetAdapterOperation_InferenceRule implements InferenceRule_Runtime {

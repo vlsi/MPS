@@ -5,7 +5,6 @@ package jetbrains.mps.bootstrap.smodelLanguage.editor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.bootstrap.smodelLanguage.editor.SemanticDowncastExpression_Symbol_Actions_DELETE;
 
 public class SemanticDowncastExpression_Symbol_Actions {
 

@@ -4,7 +4,6 @@ package jetbrains.mps.bootstrap.smodelLanguage.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.smodelLanguage.helgins.RulesUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_Link_DeleteChildOperation_InferenceRule implements InferenceRule_Runtime {

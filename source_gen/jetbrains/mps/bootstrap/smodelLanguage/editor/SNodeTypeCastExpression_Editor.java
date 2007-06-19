@@ -14,8 +14,6 @@ import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.bootstrap.smodelLanguage.editor.SNodeTypeCastExpression_Editor_concept_InlineComponent;
-import jetbrains.mps.bootstrap.smodelLanguage.editor.SNodeTypeCastExpression_Concept_Actions;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 
 public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
