@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
-import jetbrains.mps.baseLanguage.editor.CommentedStatementsBlock_Editor_StatementListHandler_statementList_;
 import jetbrains.mps.nodeEditor.CellLayout_Vertical;
 
 public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {

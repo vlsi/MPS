@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.EditorCellKeyMap;
 import jetbrains.mps.nodeEditor.EditorCellKeyMapAction;
-import jetbrains.mps.baseLanguage.editor.TestCoercion_Keymap_Action0;
 
 public class TestCoercion_Keymap extends EditorCellKeyMap {
 

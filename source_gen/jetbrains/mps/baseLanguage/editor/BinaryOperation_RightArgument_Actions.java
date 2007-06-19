@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.baseLanguage.editor.BinaryOperation_RightArgument_Actions_DELETE;
 
 public class BinaryOperation_RightArgument_Actions {
 

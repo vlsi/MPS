@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.baseLanguage.editor.ArrayType_Brackets_Actions_DELETE;
 
 public class ArrayType_Brackets_Actions {
 

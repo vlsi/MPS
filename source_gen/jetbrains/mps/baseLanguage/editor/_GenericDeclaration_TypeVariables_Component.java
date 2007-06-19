@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
-import jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_Component_TypeVariableDeclarationListHandler_typeVariableDeclarationList_;
 import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
 
 public class _GenericDeclaration_TypeVariables_Component extends AbstractCellProvider {

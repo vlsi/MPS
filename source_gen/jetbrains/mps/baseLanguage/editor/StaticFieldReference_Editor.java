@@ -10,17 +10,12 @@ import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.baseLanguage.editor.StaticFieldReference_Editor_classifier_InlineComponent;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
-import jetbrains.mps.baseLanguage.editor.StaticFieldReference_Actions;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.baseLanguage.editor.StaticFieldReference_Editor_staticFieldDeclaration_InlineComponent;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
-import jetbrains.mps.baseLanguage.editor.StaticFieldReference_staticFieldDeclaration_cellMenu;
-import jetbrains.mps.baseLanguage.editor.StaticFieldReference_customReplace_cellMenu;
 
 public class StaticFieldReference_Editor extends DefaultNodeEditor {
 

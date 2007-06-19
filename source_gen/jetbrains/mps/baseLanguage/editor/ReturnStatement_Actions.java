@@ -5,8 +5,6 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.baseLanguage.editor.ReturnStatement_Actions_RIGHT_TRANSFORM;
-import jetbrains.mps.baseLanguage.editor.ReturnStatement_Actions_DELETE;
 
 public class ReturnStatement_Actions {
 

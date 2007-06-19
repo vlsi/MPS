@@ -4,8 +4,6 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.EditorCellKeyMap;
 import jetbrains.mps.nodeEditor.EditorCellKeyMapAction;
-import jetbrains.mps.baseLanguage.editor.CloseParenthesis_KeyMap_Action0;
-import jetbrains.mps.baseLanguage.editor.CloseParenthesis_KeyMap_Action1;
 
 public class CloseParenthesis_KeyMap extends EditorCellKeyMap {
 

@@ -9,20 +9,14 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
-import jetbrains.mps.baseLanguage.editor.BaseMethodCall_actualArgumentList;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.baseLanguage.editor.StaticMethodCall_Editor_classConcept_InlineComponent;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
-import jetbrains.mps.baseLanguage.editor.StaticMethodCall_Actions;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.baseLanguage.editor.StaticMethodCall_Editor_staticMethodDeclaration_InlineComponent;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
-import jetbrains.mps.baseLanguage.editor.StaticMethodCall_staticMethodDeclaration_cellMenu;
-import jetbrains.mps.baseLanguage.editor.StaticMethodCall_customReplace_cellMenu;
 
 public class StaticMethodCall_Editor extends DefaultNodeEditor {
 

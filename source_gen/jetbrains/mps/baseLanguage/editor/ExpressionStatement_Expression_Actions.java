@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.baseLanguage.editor.ExpressionStatement_Expression_Actions_DELETE;
 
 public class ExpressionStatement_Expression_Actions {
 

@@ -10,15 +10,12 @@ import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
-import jetbrains.mps.baseLanguage.editor.BinaryOperation_LeftArgument_Actions;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
-import jetbrains.mps.baseLanguage.editor.BinaryOperation_replaceWith_BinaryOperation_cellMenu;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.ConceptPropertyCellProvider;
-import jetbrains.mps.baseLanguage.editor.BinaryOperation_RightArgument_Actions;
 
 public class BinaryOperation_Editor extends DefaultNodeEditor {
 
@@ -89,6 +86,7 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new BinaryOperation_replaceWith_BinaryOperation_cellMenu()}));
+    editorCell.addKeyMap(new BinaryOperation_keyMap());
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1166063984223");
     editorCell.setLayoutConstraint("");
     return editorCell;

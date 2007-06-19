@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.baseLanguage.editor._InstanceMethodDeclaration_RemoveAbstract_DELETE;
 
 public class _InstanceMethodDeclaration_RemoveAbstract {
 

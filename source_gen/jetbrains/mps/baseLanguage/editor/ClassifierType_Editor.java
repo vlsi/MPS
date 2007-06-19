@@ -12,15 +12,12 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
-import jetbrains.mps.baseLanguage.editor.ClassifierType_Editor_ParameterListHandler_parameterList_;
 import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.baseLanguage.editor.ClassifierType_Editor_classifier_InlineComponent;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.baseLanguage.editor.ClassifierType_Editor_classifier_InlineComponent1;
 
 public class ClassifierType_Editor extends DefaultNodeEditor {
 

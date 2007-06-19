@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.baseLanguage.editor._BaseMethodDeclaration_Actions_RIGHT_TRANSFORM;
 
 public class _BaseMethodDeclaration_Actions {
 

@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.baseLanguage.editor.ThisConstructorInvocation_Editor_ActualArgumentListHandler_actualArgumentList_;
 import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
 
 public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
