@@ -80,6 +80,11 @@ public class FindUsagesManager {
     }
   }
 
+  public List<SNode> findInstances(SNode conceptDeclaration, IScope scope) {
+    Set<SNode> set = findInstances((ConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration), scope, null);
+    return new ArrayList<SNode>(set);
+  }
+
   public Set<SNode> findInstances(ConceptDeclaration concept, IScope scope, IAdaptiveProgressMonitor progress) {
     Set<SNode> result = new HashSet<SNode>();
     //noinspection EmptyFinallyBlock
