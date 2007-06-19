@@ -2327,10 +2327,6 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1182233342737">
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473994950" />
     </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1182233355488">
-      <link role="conceptLinkDeclaration" targetNodeId="4.1137545963098" />
-      <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1182233358877" />
-    </node>
   </node>
 </model>
 
