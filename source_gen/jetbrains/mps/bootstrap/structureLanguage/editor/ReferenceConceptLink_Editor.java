@@ -10,12 +10,10 @@ import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.bootstrap.structureLanguage.editor.ReferenceConceptLink_Editor_referenceConceptLinkDeclaration_InlineComponent;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.bootstrap.structureLanguage.editor.ReferenceConceptLink_Editor_target_InlineComponent;
 
 public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
 

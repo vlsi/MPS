@@ -14,9 +14,7 @@ import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.bootstrap.structureLanguage.editor.AnnotationLinkDeclaration_Editor_source_InlineComponent;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
-import jetbrains.mps.bootstrap.structureLanguage.editor.AnnotationLinkDeclaration_Editor_target_InlineComponent;
 
 public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
 

@@ -16,7 +16,6 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.bootstrap.structureLanguage.editor.PropertyDeclaration_Editor_dataType_InlineComponent;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 
 public class PropertyDeclaration_Editor extends DefaultNodeEditor {

@@ -4,7 +4,6 @@ package jetbrains.mps.bootstrap.structureLanguage.structure;
 
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkMetaclass;
 
 public class LinkMetaclass_PropertySupport extends PropertySupport {
 

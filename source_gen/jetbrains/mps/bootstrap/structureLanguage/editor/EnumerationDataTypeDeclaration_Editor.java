@@ -10,16 +10,13 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
-import jetbrains.mps.bootstrap.structureLanguage.editor.EnumerationDataTypeDeclaration_Editor_MemberListHandler_memberList_;
 import jetbrains.mps.nodeEditor.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.bootstrap.structureLanguage.editor.EnumerationDataTypeDeclaration_Editor_memberDataType_InlineComponent;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
-import jetbrains.mps.bootstrap.structureLanguage.editor.EnumerationDataTypeDeclaration_Editor_defaultMember_InlineComponent;
 
 public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
 

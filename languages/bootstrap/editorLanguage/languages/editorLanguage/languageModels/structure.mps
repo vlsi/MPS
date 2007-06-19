@@ -253,6 +253,11 @@
       <property name="role" value="elementActionMap" />
       <link role="target" targetNodeId="1139535219966" resolveInfo="CellActionMapDeclaration" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182233390675">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="filter" />
+      <link role="target" targetNodeId="1182191800432" resolveInfo="QueryFunction_NodeListFilter" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107223377710">
       <property name="value" value="%&lt;{linkDeclaration}&gt;%" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
@@ -2284,7 +2289,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182191800432">
-    <property name="name" value="QueryFunction_NodeListProvider" />
+    <property name="name" value="QueryFunction_NodeListFilter" />
     <property name="package" value="QueryFunction" />
     <link role="extends" targetNodeId="4.1137021947720" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182191800433">
@@ -2297,7 +2302,7 @@
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1182191800435">
       <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" />
-      <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1182191835605" />
+      <node role="target" type="jetbrains.mps.baseLanguage.BooleanType" id="1182234187657" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1182191800437">
       <link role="target" targetNodeId="37.1161622878565" />
@@ -2305,7 +2310,26 @@
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1182191800438">
       <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
-      <link role="target" targetNodeId="1142886811589" resolveInfo="ConceptFunctionParameter_node" />
+      <link role="target" targetNodeId="1182233249301" resolveInfo="ConceptFunctionParameter_childNode" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182233249301">
+    <property name="name" value="ConceptFunctionParameter_childNode" />
+    <link role="extends" targetNodeId="4.1107135704075" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182233331889">
+      <property name="value" value="childNode" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182233336391">
+      <property name="value" value="function parameter" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473914776" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1182233342737">
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473994950" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1182233355488">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1137545963098" />
+      <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1182233358877" />
     </node>
   </node>
 </model>

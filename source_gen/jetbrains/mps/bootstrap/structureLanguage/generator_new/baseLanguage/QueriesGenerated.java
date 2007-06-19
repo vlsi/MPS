@@ -15,27 +15,8 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.generator_new.util.QueriesUtil;
-import jetbrains.mps.bootstrap.structureLanguage.generator_new.baseLanguage._QueriesUtil;
 import java.util.List;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
-import jetbrains.mps.bootstrap.structureLanguage.generator_new.baseLanguage.zMapper;
-import jetbrains.mps.bootstrap.structureLanguage.generator_new.baseLanguage.zMapper1;
-import jetbrains.mps.bootstrap.structureLanguage.generator_new.baseLanguage.zMapper2;
-import jetbrains.mps.bootstrap.structureLanguage.generator_new.baseLanguage.zMapper3;
-import jetbrains.mps.bootstrap.structureLanguage.generator_new.baseLanguage.zMapper4;
-import jetbrains.mps.bootstrap.structureLanguage.generator_new.baseLanguage.zMapper5;
-import jetbrains.mps.bootstrap.structureLanguage.generator_new.baseLanguage.zMapper6;
-import jetbrains.mps.bootstrap.structureLanguage.generator_new.baseLanguage.zMapper7;
-import jetbrains.mps.bootstrap.structureLanguage.generator_new.baseLanguage.zMapper8;
-import jetbrains.mps.bootstrap.structureLanguage.generator_new.baseLanguage.zPredicate;
-import jetbrains.mps.bootstrap.structureLanguage.generator_new.baseLanguage.zPredicate1;
-import jetbrains.mps.bootstrap.structureLanguage.generator_new.baseLanguage.zPredicate2;
-import jetbrains.mps.bootstrap.structureLanguage.generator_new.baseLanguage.zPredicate3;
-import jetbrains.mps.bootstrap.structureLanguage.generator_new.baseLanguage.zPredicate4;
-import jetbrains.mps.bootstrap.structureLanguage.generator_new.baseLanguage.zPredicate5;
-import jetbrains.mps.bootstrap.structureLanguage.generator_new.baseLanguage.zPredicate6;
-import jetbrains.mps.bootstrap.structureLanguage.generator_new.baseLanguage.zPredicate7;
-import jetbrains.mps.bootstrap.structureLanguage.generator_new.baseLanguage.zPredicate8;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 
 public class QueriesGenerated {

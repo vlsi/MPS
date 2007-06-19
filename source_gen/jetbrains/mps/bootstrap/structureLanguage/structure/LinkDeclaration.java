@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkMetaclass;
-import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
 
 public class LinkDeclaration extends BaseConcept {
   public static String SPECIALIZED_LINK = "specializedLink";

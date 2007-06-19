@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptPropertyDeclaration;
 
 public class ConceptProperty extends BaseConcept {
   public static String CONCEPT_PROPERTY_DECLARATION = "conceptPropertyDeclaration";

@@ -9,13 +9,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import java.util.List;
-import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptProperty;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptLink;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptPropertyDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptLinkDeclaration;
 
 public class AbstractConceptDeclaration extends BaseConcept implements INamedConcept {
   public static String LINK_DECLARATION = "linkDeclaration";

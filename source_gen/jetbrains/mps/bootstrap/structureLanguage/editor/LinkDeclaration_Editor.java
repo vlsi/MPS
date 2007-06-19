@@ -15,30 +15,21 @@ import jetbrains.mps.nodeEditor.ModelAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkMetaclass;
+import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.bootstrap.structureLanguage.editor.LinkDeclaration_Editor_target_InlineComponent;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
-import jetbrains.mps.bootstrap.structureLanguage.editor.LinkDeclaration_Editor_specializedLink_InlineComponent;
 
 public class LinkDeclaration_Editor extends DefaultNodeEditor {
 
-  public static boolean _QueryFunction_NodeCondition_1146605577666(SNode node, IScope scope) {
-    return SLinkOperations.getTarget(node, "specializedLink", false) == null;
-  }
   public static boolean _QueryFunction_NodeCondition_1146605728892(SNode node, IScope scope) {
     return SLinkOperations.getTarget(node, "specializedLink", false) == null;
-  }
-  public static boolean _QueryFunction_NodeCondition_1146605762247(SNode node, IScope scope) {
-    return SLinkOperations.getTarget(node, "specializedLink", false) != null;
   }
   public static boolean _QueryFunction_NodeCondition_1146606011485(SNode node, IScope scope) {
     return SLinkOperations.getTarget(node, "specializedLink", false) != null;
@@ -72,17 +63,11 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRoleCell(context, node));
-    if(LinkDeclaration_Editor._QueryFunction_NodeCondition_1146605577666(node, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createMetaClassCell(context, node));
-    }
     if(LinkDeclaration_Editor._QueryFunction_NodeCondition_1146605728892(node, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createSourceCardinalityCell(context, node));
     }
-    if(LinkDeclaration_Editor._QueryFunction_NodeCondition_1146605762247(node, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCellModel_ModelAccess(context, node));
-    }
     if(LinkDeclaration_Editor._QueryFunction_NodeCondition_1146606011485(node, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCellModel_ModelAccess1(context, node));
+      editorCell.addEditorCell(this.createCellModel_ModelAccess(context, node));
     }
     editorCell.addEditorCell(this.createConstantCell(context, node, "target:"));
     editorCell.addEditorCell(this.createTargetReferenceCell(context, node));
@@ -116,35 +101,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createCellModel_ModelAccess(EditorContext editorContext, SNode node) {
-    ModelAccessor modelAccessor = this._modelAcessorFactory_1084205682784(editorContext, node);
-    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(true);
-    editorCell.setEditable(false);
-    editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.getTextLine().setTextBackgroundColor(Color.lightGray);
-    editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1084205682784");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
-  public ModelAccessor _modelAcessorFactory_1084205682784(final EditorContext editorContext, final SNode node) {
-    return new ModelAccessor() {
-
-      public String getText() {
-        LinkMetaclass lm = SModelUtil_new.getGenuineLinkMetaclass(((LinkDeclaration)SNodeOperations.getAdapter(node)));
-        return lm.getName();
-      }
-      public void setText(String text) {
-      }
-      public boolean isValidText(String text) {
-        return true;
-      }
-    };
-  }
-  public EditorCell createCellModel_ModelAccess1(EditorContext editorContext, SNode node) {
     ModelAccessor modelAccessor = this._modelAcessorFactory_1084205682785(editorContext, node);
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
     editorCell.setSelectable(true);
@@ -197,39 +153,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRoleCellinternal(context, node, provider);
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else
-    return cellWithRole;
-  }
-  public EditorCell createMetaClassCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
-    EditorCell editorCell = provider.createEditorCell(context);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(true);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    if(editorCell instanceof EditorCell_Label) {
-      EditorCell_Label editorCellLabel = (EditorCell_Label)editorCell;
-      editorCellLabel.setEditable(true);
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1084205682781");
-    editorCell.setLayoutConstraint("");
-    return editorCell;
-  }
-  public EditorCell createMetaClassCell(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("metaClass");
-    provider.setNoTargetText("");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createMetaClassCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if(attributeConcept != null) {

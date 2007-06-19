@@ -4,7 +4,6 @@ package jetbrains.mps.bootstrap.structureLanguage.structure;
 
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkStereotype;
 
 public class AnnotationLinkStereotype_PropertySupport extends PropertySupport {
 
