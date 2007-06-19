@@ -140,7 +140,7 @@ public class StructureView extends DefaultTool {
 
     public Color getColor() {
       if (!declaredInCurrentConcept()) {
-        return new Color(180, 180, 180);
+        return new Color(110, 110, 110);
       }
       return Color.BLACK;
     }
