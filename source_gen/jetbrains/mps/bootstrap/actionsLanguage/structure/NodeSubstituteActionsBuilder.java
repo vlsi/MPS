@@ -7,13 +7,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction;
-import jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_Substitute_CommonInitializer;
 import java.util.Iterator;
-import jetbrains.mps.bootstrap.actionsLanguage.structure.MenuBuilderPart;
 import java.util.List;
-import jetbrains.mps.bootstrap.actionsLanguage.structure.SubstituteNodeBuilderVariableDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 public class NodeSubstituteActionsBuilder extends BaseConcept {
   public static String DESCRIPTION = "description";
@@ -21,11 +17,11 @@ public class NodeSubstituteActionsBuilder extends BaseConcept {
   public static String ACTIONS_FILTER_ASPECT_ID = "actionsFilterAspectId";
   public static String PRECONDITION_ASPECT_ID = "preconditionAspectId";
   public static String USE_NEW_ACTIONS = "useNewActions";
-  public static String APPLICABLE_CONCEPT = "applicableConcept";
   public static String PRECONDITION = "precondition";
   public static String COMMON_INITIALIZER = "commonInitializer";
   public static String PART = "part";
   public static String VARIABLE = "variable";
+  public static String APPLICABLE_CONCEPT = "applicableConcept";
 
   public  NodeSubstituteActionsBuilder(SNode node) {
     super(node);
@@ -68,12 +64,6 @@ public class NodeSubstituteActionsBuilder extends BaseConcept {
   public void setUseNewActions(boolean value) {
     this.setBooleanProperty(NodeSubstituteActionsBuilder.USE_NEW_ACTIONS, value);
   }
-  public AbstractConceptDeclaration getApplicableConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(NodeSubstituteActionsBuilder.APPLICABLE_CONCEPT);
-  }
-  public void setApplicableConcept(AbstractConceptDeclaration node) {
-    super.setReferent(NodeSubstituteActionsBuilder.APPLICABLE_CONCEPT, node);
-  }
   public NodeSubstitutePreconditionFunction getPrecondition() {
     return (NodeSubstitutePreconditionFunction)this.getChild(NodeSubstituteActionsBuilder.PRECONDITION);
   }
@@ -115,5 +105,11 @@ public class NodeSubstituteActionsBuilder extends BaseConcept {
   }
   public void insertVariable(SubstituteNodeBuilderVariableDeclaration prev, SubstituteNodeBuilderVariableDeclaration node) {
     this.insertChild(prev, NodeSubstituteActionsBuilder.VARIABLE, node);
+  }
+  public AbstractConceptDeclaration getApplicableConcept() {
+    return (AbstractConceptDeclaration)this.getReferent(NodeSubstituteActionsBuilder.APPLICABLE_CONCEPT);
+  }
+  public void setApplicableConcept(AbstractConceptDeclaration node) {
+    super.setReferent(NodeSubstituteActionsBuilder.APPLICABLE_CONCEPT, node);
   }
 }

@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_SubstituteVariableInitializer;
 
 public class SubstituteNodeBuilderVariableDeclaration extends VariableDeclaration {
   public static String INITIALIZER_BLOCK = "initializerBlock";

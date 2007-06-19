@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
-import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder;
 import java.util.List;
 
 public class NodeSubstituteActions extends BaseConcept implements INamedConcept {

@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.bootstrap.actionsLanguage.helgins.QuotationClass_3;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_RTransformHintSubstitutePreconditionParm_sourceNode_InferenceRule implements InferenceRule_Runtime {
