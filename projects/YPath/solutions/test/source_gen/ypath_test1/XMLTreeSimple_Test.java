@@ -14,6 +14,8 @@ import ypath.util.CompositeFilter;
 import java.io.InputStream;
 import java.io.ByteArrayInputStream;
 import javax.xml.parsers.DocumentBuilderFactory;
+import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
+import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 
 public class XMLTreeSimple_Test extends TestCase {
   public static String SINGLE_NODE = "<foo/>";
@@ -27,20 +29,53 @@ public class XMLTreeSimple_Test extends TestCase {
   }
   public void test_children() throws Exception {
     Document doc = this.parse(SIMPLE_TREE);
-    Assert.assertSame(SequenceOperations.getSize(TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("CHILDREN"))), 1);
-    Assert.assertSame(SequenceOperations.getSize(TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("CHILDREN")), TreeTraversalFactory.Axis("CHILDREN"))), 2);
+    ITreeTraversal<Node> nodes1 = TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("CHILDREN"));
+    Assert.assertSame(SequenceOperations.getSize(nodes1), 1);
+    Assert.assertEquals("root", this.toString(nodes1));
+    ITreeTraversal<Node> nodes2 = TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("CHILDREN")), TreeTraversalFactory.Axis("CHILDREN"));
+    Assert.assertSame(SequenceOperations.getSize(nodes2), 2);
+    Assert.assertEquals("a1, a2", this.toString(nodes2));
   }
   public void test_descendants() throws Exception {
     Document doc = this.parse(SIMPLE_TREE);
-    Assert.assertSame(SequenceOperations.getSize(TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS"))), 7);
+    ITreeTraversal<Node> nodes = TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS"));
+    Assert.assertSame(SequenceOperations.getSize(nodes), 7);
+    Assert.assertEquals("root, a1, b1, b2, a2, b3, c1", this.toString(nodes));
   }
   public void test_defautProperty() throws Exception {
     Document doc = this.parse(SIMPLE_TREE);
-    Assert.assertSame(SequenceOperations.getSize(TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS")), new CompositeFilter<Node>(DOM.ELEMENT_NodeKindTrigger.getInstance(), DOM.ELEMENT_tag_Property.getMatcher("b3")))), 1);
+    ITreeTraversal<Node> nodes = TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS")), new CompositeFilter<Node>(DOM.ELEMENT_NodeKindTrigger.getInstance(), DOM.ELEMENT_tag_Property.getMatcher("b3")));
+    Assert.assertSame(SequenceOperations.getSize(nodes), 1);
+    Assert.assertEquals("b3", this.toString(nodes));
+  }
+  public void test_sibling_descendants() throws Exception {
+    Document doc = this.parse(SIMPLE_TREE);
+    Node a1 = SequenceOperations.getFirst(TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("CHILDREN")), TreeTraversalFactory.Axis("CHILDREN")));
+    Assert.assertEquals("a1", a1.getNodeName());
+    Iterable<Node> nodes = TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(new DOM().startTraversal(a1), TreeTraversalFactory.Axis("SELF_FOLLOWING_SIBLINGS")), TreeTraversalFactory.Axis("SELF_DESCENDANTS"));
+    Assert.assertSame(6, SequenceOperations.getSize(nodes));
+    Assert.assertEquals("a1, b1, b2, a2, b3, c1", this.toString(nodes));
   }
   public Document parse(String xml) throws Exception {
     InputStream is = new ByteArrayInputStream(xml.getBytes());
     Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(is);
     return doc;
+  }
+  public String toString(Iterable<Node> nodes) {
+    StringBuilder sb = new StringBuilder();
+    String sep = "";
+    {
+      ICursor<Node> _zCursor = CursorFactory.createCursor(nodes);
+      try {
+        while(_zCursor.moveToNext()) {
+          Node n = _zCursor.getCurrent();
+          sb.append(sep).append(n.getNodeName());
+          sep = ", ";
+        }
+      } finally {
+        _zCursor.release();
+      }
+    }
+    return sb.toString();
   }
 }
