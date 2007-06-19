@@ -2283,38 +2283,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182190819771">
-    <property name="name" value="CellModel_CustomNodeList" />
-    <property name="package" value="CellModel" />
-    <link role="extends" targetNodeId="1140524381322" resolveInfo="CellModel_ListWithRole" />
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1182190819772">
-      <property name="name" value="reverse" />
-      <link role="dataType" targetNodeId="3.1082983657063" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182191854419">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="listProvider" />
-      <link role="target" targetNodeId="1182191800432" resolveInfo="QueryFunction_NodeListProvider" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182190819774">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="elementMenuDescriptor" />
-      <link role="target" targetNodeId="1164824717996" resolveInfo="CellMenuDescriptor" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182190819775">
-      <property name="role" value="elementActionMap" />
-      <link role="target" targetNodeId="1139535219966" resolveInfo="CellActionMapDeclaration" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182190819776">
-      <property name="value" value="%custom%" />
-      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182190819777">
-      <property name="value" value="custom node list" />
-      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473914776" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182191800432">
     <property name="name" value="QueryFunction_NodeListProvider" />
     <property name="package" value="QueryFunction" />
