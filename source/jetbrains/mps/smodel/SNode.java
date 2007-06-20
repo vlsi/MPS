@@ -1840,7 +1840,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
       LOG.error(e);
     }
 
-    LOG.error("Can't find an adapter for " + getClass().getName() + ". Try generating adapters.");
+    LOG.error("Can't find an adapter for " + getClass().getName() + ". Try generating adapters.", this);
 
     return new BaseAdapter(this) {
     };
