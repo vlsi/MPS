@@ -7,6 +7,7 @@ import jetbrains.mps.nodeEditor.CellInfo;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import org.jdom.DataConversionException;
 import org.jdom.Element;
@@ -50,6 +51,10 @@ public class ComponentsUtil {
       nodeElement.setAttribute(ID, node.getId());
     }
     return nodeElement;
+  }
+
+  public static SNode nodeFromElement(Element nodeElement) {
+    return nodeFromElement(nodeElement, GlobalScope.getInstance());
   }
 
   //do not remove it. we need it for cell info
