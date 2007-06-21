@@ -1385,6 +1385,57 @@
             <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsNullOperation" id="1179330441206" />
           </node>
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1179330429514">
+            <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1182408065974">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1182408065975">
+                <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1182408110450">
+                  <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1182408110451">
+                    <property name="name" value="firstIndex" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1182408110452" />
+                    <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1182408125716">
+                      <link role="baseMethodDeclaration" extResolveInfo="13.method ([Classifier]String).([InstanceMethodDeclaration]indexOf((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int))" />
+                      <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1182408114481">
+                        <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1182408115277">
+                          <link role="property" targetNodeId="2.1169194664001" />
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1182408113451" />
+                      </node>
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1182408128869">
+                        <property name="value" value="." />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1182408081166">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1182408105641">
+                    <link role="baseMethodDeclaration" extResolveInfo="13.method ([Classifier]String).([InstanceMethodDeclaration]substring((jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int), (jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int)) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                    <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1182408099555">
+                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1182408100570">
+                        <link role="property" targetNodeId="2.1169194664001" />
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1182408098337" />
+                    </node>
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1182408138772">
+                      <property name="value" value="0" />
+                    </node>
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1182408141146">
+                      <link role="variableDeclaration" targetNodeId="1182408110451" resolveInfo="firstIndex" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1182408078626">
+                <link role="baseMethodDeclaration" extResolveInfo="13.method ([Classifier]String).([InstanceMethodDeclaration]contains((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [CharSequence])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
+                <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1182408067988">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1182408068814">
+                    <link role="property" targetNodeId="2.1169194664001" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1182408066974" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1182408079544">
+                  <property name="value" value="." />
+                </node>
+              </node>
+            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1179330443761">
               <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179330446984">
                 <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1179330445458" />
@@ -1521,8 +1572,8 @@
     <link role="concept" targetNodeId="1.1068431474542" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1182160839808">
       <property name="isVirtual" value="true" />
-      <property name="isAbstract" value="true" />
       <property name="name" value="inline" />
+      <property name="isAbstract" value="true" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1182160869063" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1182162555072">
         <property name="name" value="editorContext" />
