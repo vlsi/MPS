@@ -22,6 +22,13 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1182164226710">
     <property name="name" value="A" />
+    <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1182407705882">
+      <property name="name" value="entry" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PrivateVisibility" id="1182407705883" />
+      <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1182407743371">
+        <link role="classifier" extResolveInfo="3.[Classifier]Map$Entry" />
+      </node>
+    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1182164226711" />
   </node>
 </model>

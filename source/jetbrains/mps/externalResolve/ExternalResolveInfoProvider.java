@@ -83,7 +83,7 @@ public class ExternalResolveInfoProvider {
       StringBuffer sb = new StringBuffer(classifier_);
       sb.append(" [");
       ClassifierType classifierType = (ClassifierType) t;
-      sb.append(classifierType.getClassifier().getName());
+      sb.append(classifierType.getClassifier().getName().replace('.', '$'));
       if (classifierType.parameters().hasNext()) {
         sb.append(", ");
         sb.append("<");
@@ -143,7 +143,7 @@ public class ExternalResolveInfoProvider {
     final StringBuilder builder = StringBuilderSpinAllocator.alloc();
     try {
       builder.append("[Classifier]");
-      builder.append(genericDeclaration.getName());
+      builder.append(genericDeclaration.getName().replace('.', '$'));
       return builder.toString();
     }
     finally {
