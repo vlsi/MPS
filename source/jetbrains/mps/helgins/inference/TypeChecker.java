@@ -149,8 +149,11 @@ public class TypeChecker {
       if (BaseAdapter.isInstance(type, RuntimeErrorType.class)) {
         reportTypeError(term, ((RuntimeErrorType) BaseAdapter.fromNode(type)).getErrorText());
       }
-      NodeTypesComponentsRepository.getInstance().
-              createNodeTypesComponent(term.getContainingRoot()).setTypeToNode(term, type);
+      SNode containingRoot = term.getContainingRoot();
+      if (containingRoot != null) {
+          NodeTypesComponentsRepository.getInstance().
+                  createNodeTypesComponent(containingRoot).setTypeToNode(term, type);
+      } else LOG.error("containingRoot == null");
     }
 
     // setting errors
