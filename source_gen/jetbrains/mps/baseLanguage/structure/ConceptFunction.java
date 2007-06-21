@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.StatementList;
 
 public class ConceptFunction extends BaseConcept {
   public static String CLNK_ConceptFunctionReturnType = "conceptFunctionReturnType";

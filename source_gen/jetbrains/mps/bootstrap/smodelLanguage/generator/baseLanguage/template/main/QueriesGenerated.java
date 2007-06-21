@@ -27,6 +27,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
 import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation;
+import jetbrains.mps.baseLanguage.constraints.Type_Behavior;
 
 public class QueriesGenerated {
 
@@ -789,7 +790,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "conceptMethodDeclaration", false), "returnType", true);
   }
   public static SNode sourceNodeQuery_1179412706142(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "conceptMethodDeclaration", false), "returnType", true);
+    return Type_Behavior.removeGenerics_1182427963567(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "conceptMethodDeclaration", false), "returnType", true));
   }
   public static SNode sourceNodeQuery_1179412772989(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);

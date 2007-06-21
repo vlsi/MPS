@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
-import jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration;
 import java.util.List;
 
 public class GenericDeclaration extends NamedConcept {

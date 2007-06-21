@@ -7,12 +7,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.Type;
-import jetbrains.mps.baseLanguage.structure.StatementList;
 import java.util.Iterator;
-import jetbrains.mps.baseLanguage.structure.ParameterDeclaration;
 import java.util.List;
-import jetbrains.mps.baseLanguage.structure.ClassifierType;
 
 public class BaseMethodDeclaration extends NamedConcept {
   public static String RETURN_TYPE = "returnType";
