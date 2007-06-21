@@ -10,8 +10,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import java.util.List;
+import jetbrains.mps.smodel.search.SubnodesSearchScope;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 
 public class ForEachVariableReference_variable_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -28,8 +29,8 @@ public class ForEachVariableReference_variable_ReferentConstraint implements IMo
     return SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachStatement", true, false) != null;
   }
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    SNode forEach = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachStatement", true, false);
-    return new SimpleSearchScope(SLinkOperations.getTarget(forEach, "variable", true));
+    List<SNode> forEachStatements = SNodeOperations.getAncestors(enclosingNode, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachStatement", false);
+    return new SubnodesSearchScope(SequenceOperations.getLast(forEachStatements));
   }
   public String getNodeReferentSearchScopeDescription() {
     return "cycle-variable of enclosing 'foreach' cycle";
