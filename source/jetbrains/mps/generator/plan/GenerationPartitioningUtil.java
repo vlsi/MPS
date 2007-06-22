@@ -192,7 +192,7 @@ public class GenerationPartitioningUtil {
     List<String> list = new ArrayList<String>();
     for (MappingPriorityRule rule : priorityRules) {
       GeneratorDescriptor enclosingGenerator = rule.findParent(GeneratorDescriptor.class);
-      String text = asString(rule);
+      String text = asString(rule, moreDetails);
       if (moreDetails) {
         text = asString(enclosingGenerator) + ": " + text;
       } else {
@@ -206,11 +206,11 @@ public class GenerationPartitioningUtil {
     return list;
   }
 
-  private static String asString(MappingPriorityRule rule) {
-    return asString(rule.getGreaterPriorityMapping()) + " " + rule.getKind().getName() + " " + asString(rule.getLesserPriorityMapping());
+  private static String asString(MappingPriorityRule rule, boolean moreDetails) {
+    return asString(rule.getGreaterPriorityMapping(), moreDetails) + " " + rule.getKind().getName() + " " + asString(rule.getLesserPriorityMapping(), moreDetails);
   }
 
-  private static String asString(MappingConfig_AbstractRef mappingRef) {
+  private static String asString(MappingConfig_AbstractRef mappingRef, boolean moreDetails) {
     if (mappingRef instanceof MappingConfig_RefAllLocal) {
       return "*";
     }
@@ -224,7 +224,7 @@ public class GenerationPartitioningUtil {
       int count = ((MappingConfig_SimpleRefSet) mappingRef).getMappingConfigsCount();
       for (MappingConfig_SimpleRef mappingSimpleRef : ((MappingConfig_SimpleRefSet) mappingRef).getMappingConfigs()) {
         count--;
-        s = s + asString(mappingSimpleRef);
+        s = s + asString(mappingSimpleRef, moreDetails);
         if (count > 0) s += ", ";
       }
       return s + "}";
@@ -233,7 +233,8 @@ public class GenerationPartitioningUtil {
     if (mappingRef instanceof MappingConfig_SimpleRef) {
       String modelUID = ((MappingConfig_SimpleRef) mappingRef).getModelUID();
       String nodeID = ((MappingConfig_SimpleRef) mappingRef).getNodeID();
-      String s = SModelUID.fromString(modelUID).getShortName() + ".";
+      String modelName = moreDetails ? SModelUID.fromString(modelUID).getLongName() : SModelUID.fromString(modelUID).getShortName();
+      String s = modelName + ".";
       if (nodeID.equals("*")) {
         return s + "*";
       } else {
@@ -246,13 +247,13 @@ public class GenerationPartitioningUtil {
           }
         }
       }
-      return s + nodeID;
+      return s + nodeID + "!unresolved!";
     }
 
     if (mappingRef instanceof MappingConfig_ExtRef) {
       GeneratorReference generatorRef = ((MappingConfig_ExtRef) mappingRef).getGenerator();
       MappingConfig_AbstractRef extMappingRef = ((MappingConfig_ExtRef) mappingRef).getMappingConfig();
-      return "[" + asString(generatorRef) + ":" + asString(extMappingRef) + "]";
+      return "[" + asString(generatorRef) + ":" + asString(extMappingRef, moreDetails) + "]";
     }
 
     return "???";
