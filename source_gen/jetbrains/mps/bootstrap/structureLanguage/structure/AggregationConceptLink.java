@@ -22,16 +22,16 @@ public class AggregationConceptLink extends ConceptLink {
     return AggregationConceptLink.newInstance(sm, false);
   }
 
-  public BaseConcept getTarget() {
-    return (BaseConcept)this.getChild(AggregationConceptLink.TARGET);
-  }
-  public void setTarget(BaseConcept node) {
-    super.setChild(AggregationConceptLink.TARGET, node);
-  }
   public AggregationConceptLinkDeclaration getAggregationConceptLinkDeclaration() {
     return (AggregationConceptLinkDeclaration)this.getConceptLinkDeclaration();
   }
   public void setAggregationConceptLinkDeclaration(AggregationConceptLinkDeclaration node) {
     this.setConceptLinkDeclaration(node);
+  }
+  public BaseConcept getTarget() {
+    return (BaseConcept)this.getChild(AggregationConceptLink.TARGET);
+  }
+  public void setTarget(BaseConcept node) {
+    super.setChild(AggregationConceptLink.TARGET, node);
   }
 }
