@@ -693,7 +693,8 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   @NotNull
   public Set<String> getParentNames(String conceptFqName) {
     if (myParentsNamesMap.containsKey(conceptFqName)) {
-      return new HashSet<String>(myParentsNamesMap.get(conceptFqName));
+      //return new HashSet<String>(myParentsNamesMap.get(conceptFqName));
+      return myParentsNamesMap.get(conceptFqName);
     } else {
       Set<String> result = new HashSet<String>();
       AbstractConceptDeclaration declaration = findConceptDeclaration(NameUtil.shortNameFromLongName(conceptFqName));
@@ -728,7 +729,8 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       }
 
       myParentsNamesMap.put(conceptFqName, result);
-      return new HashSet<String>(result);
+      //return new HashSet<String>(result);
+      return result;
     }
   }
 
