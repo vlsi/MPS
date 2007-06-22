@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.bootstrap.structureLanguage.StructureLanguageUtil;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_SPropertyAccess_InferenceRule implements InferenceRule_Runtime {
@@ -27,12 +27,15 @@ public class typeof_SPropertyAccess_InferenceRule implements InferenceRule_Runti
         TypeChecker.getInstance().reportTypeError(argument, "couldn't define node concept from left expression");
       }
       List<PropertyDeclaration> declaredProperties = SModelSearchUtil_new.getPropertyDeclarationsExcludingOverridden(((AbstractConceptDeclaration)SNodeOperations.getAdapter(inputNodeConcept)));
-      SNode propertyDecl = SLinkOperations.getTarget(argument, "property", false);
-      if(!(declaredProperties.contains(((PropertyDeclaration)SNodeOperations.getAdapter(propertyDecl))))) {
-        TypeChecker.getInstance().reportTypeError(argument, "access to property '" + SPropertyOperations.getString(propertyDecl, "name") + "' is not expected here");
+      SNode property = SLinkOperations.getTarget(argument, "property", false);
+      if(!(declaredProperties.contains(((PropertyDeclaration)SNodeOperations.getAdapter(property))))) {
+        TypeChecker.getInstance().reportTypeError(argument, "access to property '" + SPropertyOperations.getString(property, "name") + "' is not expected here");
       }
     }
-    TypeChecker.getInstance().getRuntimeSupport().givetype(StructureLanguageUtil.adapt_PropertyDeclaration_to_Type(((PropertyDeclaration)SNodeOperations.getAdapter(SLinkOperations.getTarget(argument, "property", false)))), argument);
+    SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(argument, "property", false), "dataType", false);
+    if(dataType != null) {
+      TypeChecker.getInstance().getRuntimeSupport().givetype(BehaviorManager.getInstance().invoke(SNode.class, dataType, "virtual_toBaseLanguageType_1182472765133"), argument);
+    }
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess";
