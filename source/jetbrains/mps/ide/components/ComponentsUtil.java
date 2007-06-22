@@ -37,7 +37,7 @@ public class ComponentsUtil {
   public static final String CELL_INFO = "cellInfo";
 
   public static Element nodeToElement(SNode node) {
-    Element nodeElement = new Element(NODE);
+    Element nodeElement = new Element(NODE);    
     SModel model = node.getModel();
     nodeElement.setAttribute(MODEL, model.getUID().toString());
     if (model.isExternallyResolvable()) {
