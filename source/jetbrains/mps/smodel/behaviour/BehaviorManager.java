@@ -61,6 +61,10 @@ public class BehaviorManager {
   }
 
   public<T> T invoke(Class<T> returnType, SNode node, String methodName, Object... parameters) {
+    return invoke(returnType, node, methodName, new ArrayList<Class>(), parameters);
+  }
+
+  public<T> T invoke(Class<T> returnType, SNode node, String methodName, List<Class> parametersTypes, Object... parameters) {
     AbstractConceptDeclaration concept = node.getConceptDeclarationAdapter();
 
     while (concept != null) {
@@ -69,7 +73,10 @@ public class BehaviorManager {
 
       try {
         Class cls = Class.forName(behaviourClass, true, ClassLoaderManager.getInstance().getClassLoader());
-        Method method = cls.getMethod(methodName, SNode.class);
+        List<Class> paramTypes = new ArrayList<Class>();
+        paramTypes.add(SNode.class);
+        paramTypes.addAll(parametersTypes);
+        Method method = cls.getMethod(methodName, paramTypes.toArray(new Class[0]));
                         
         List<Object> params = new ArrayList<Object>();
         params.add(node);

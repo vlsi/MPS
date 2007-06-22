@@ -15,6 +15,32 @@
   <import index="120" modelUID="jetbrains.mps.baseLanguage.sandbox.misc" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1181913317169">
     <property name="name" value="B" />
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1182490480194">
+      <property name="name" value="n" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1182490480195" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1182490480196" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1182490480197">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1182490522964">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1182490522965">
+            <property name="name" value="a" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1182490522966" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1182490526750">
+              <property name="value" value="44" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1182490532596">
+          <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1182490534161">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1182490535516">
+              <link role="variableDeclaration" targetNodeId="1182490522965" resolveInfo="a" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1182490532597">
+              <link role="variableDeclaration" targetNodeId="1182490522965" resolveInfo="a" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1181913317170" />
     <node role="superclass" type="jetbrains.mps.baseLanguage.ClassifierType" id="1182164270558">
       <link role="classifier" targetNodeId="1182164226710" resolveInfo="A" />
