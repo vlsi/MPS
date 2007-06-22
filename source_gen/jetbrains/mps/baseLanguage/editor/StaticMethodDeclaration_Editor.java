@@ -144,6 +144,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.addKeyMap(new StaticMethodDeclaration_Keymap());
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1080826270968");
     editorCell.setLayoutConstraint("");
     return editorCell;
