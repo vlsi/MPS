@@ -7,19 +7,16 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_CanCreate;
-import jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory;
-import jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSetHandler;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 
 public class NodeReferentConstraint extends BaseConcept {
+  public static String SEARCH_SCOPE_DESCRIPTION = "searchScopeDescription";
   public static String SEARCH_SCOPE_CAN_CREATE = "searchScopeCanCreate";
   public static String SEARCH_SCOPE_FACTORY = "searchScopeFactory";
   public static String REFERENT_SET_HANDLER = "referentSetHandler";
   public static String APPLICABLE_CONCEPT = "applicableConcept";
   public static String APPLICABLE_LINK = "applicableLink";
-  public static String SEARCH_SCOPE_DESCRIPTION = "searchScopeDescription";
 
   public  NodeReferentConstraint(SNode node) {
     super(node);
@@ -32,6 +29,12 @@ public class NodeReferentConstraint extends BaseConcept {
     return NodeReferentConstraint.newInstance(sm, false);
   }
 
+  public String getSearchScopeDescription() {
+    return this.getProperty(NodeReferentConstraint.SEARCH_SCOPE_DESCRIPTION);
+  }
+  public void setSearchScopeDescription(String value) {
+    this.setProperty(NodeReferentConstraint.SEARCH_SCOPE_DESCRIPTION, value);
+  }
   public ConstraintFunction_ReferentSearchScope_CanCreate getSearchScopeCanCreate() {
     return (ConstraintFunction_ReferentSearchScope_CanCreate)this.getChild(NodeReferentConstraint.SEARCH_SCOPE_CAN_CREATE);
   }
@@ -61,11 +64,5 @@ public class NodeReferentConstraint extends BaseConcept {
   }
   public void setApplicableLink(LinkDeclaration node) {
     super.setReferent(NodeReferentConstraint.APPLICABLE_LINK, node);
-  }
-  public String getSearchScopeDescription() {
-    return this.getProperty(NodeReferentConstraint.SEARCH_SCOPE_DESCRIPTION);
-  }
-  public void setSearchScopeDescription(String value) {
-    this.setProperty(NodeReferentConstraint.SEARCH_SCOPE_DESCRIPTION, value);
   }
 }

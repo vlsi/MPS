@@ -8,23 +8,18 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration;
-import jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeDefaultSearchScope;
 import java.util.Iterator;
-import jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint;
 import java.util.List;
-import jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint;
-import jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 public class ConceptBehavior extends BaseConcept implements INamedConcept {
+  public static String NAME = "name";
   public static String CONSTRUCTOR = "constructor";
   public static String DEFAULT_SCOPE = "defaultScope";
   public static String PROPERTIES = "properties";
   public static String REFERENCES = "references";
   public static String METHOD = "method";
   public static String CONCEPT = "concept";
-  public static String NAME = "name";
 
   public  ConceptBehavior(SNode node) {
     super(node);
@@ -37,6 +32,12 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept {
     return ConceptBehavior.newInstance(sm, false);
   }
 
+  public String getName() {
+    return this.getProperty(ConceptBehavior.NAME);
+  }
+  public void setName(String value) {
+    this.setProperty(ConceptBehavior.NAME, value);
+  }
   public ConceptConstructorDeclaration getConstructor() {
     return (ConceptConstructorDeclaration)this.getChild(ConceptBehavior.CONSTRUCTOR);
   }
@@ -99,11 +100,5 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept {
   }
   public void setConcept(AbstractConceptDeclaration node) {
     super.setReferent(ConceptBehavior.CONCEPT, node);
-  }
-  public String getName() {
-    return this.getProperty(ConceptBehavior.NAME);
-  }
-  public void setName(String value) {
-    this.setProperty(ConceptBehavior.NAME, value);
   }
 }

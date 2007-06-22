@@ -17,9 +17,6 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
-import jetbrains.mps.bootstrap.constraintsLanguage.editor.ConceptMethodDeclaration_component_cellMenu;
-import jetbrains.mps.bootstrap.constraintsLanguage.editor.ConceptMethodDeclaration_component_cellMenu1;
-import jetbrains.mps.bootstrap.constraintsLanguage.editor.ConceptMethodDeclaration_Editor_ParameterListHandler_parameterList_;
 import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
@@ -27,9 +24,7 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
-import jetbrains.mps.bootstrap.constraintsLanguage.editor.ConceptMethodDeclaration_Editor_overridenMethod_InlineComponent;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
-import jetbrains.mps.bootstrap.constraintsLanguage.editor.ConceptMethodDeclaration_Editor_overridenMethod_InlineComponent1;
 
 public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
 

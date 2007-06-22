@@ -593,7 +593,8 @@ public class SNode implements Cloneable, Iterable<SNode> {
         myPropertyGettersInProgress.add(propertyName);
         String propertyValue;
         try {
-          propertyValue = String.valueOf(getter.execPropertyGet(this, propertyName, GlobalScope.getInstance()));
+          Object getterValue = getter.execPropertyGet(this, propertyName, GlobalScope.getInstance());
+          propertyValue = getterValue == null ? null : String.valueOf(getterValue);
         } finally {
           myPropertyGettersInProgress.remove(propertyName);
         }

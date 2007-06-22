@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults._QueriesUtil;
 
 public class QueriesGenerated {
 
