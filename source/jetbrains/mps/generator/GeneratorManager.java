@@ -592,14 +592,15 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       handler.handle(new Message(MessageKind.ERROR, text));
       progress.finishSomehow();
     } finally {
-      //todo this is tmp anti memory leak hack:
-      progress.addText("Invalidate caches");
-      ReloadUtils.invalidateCaches();
+      if (generationType.requiresCompilationInIDEAfterGeneration()) {
+        //todo this is tmp anti memory leak hack:
+        progress.addText("Invalidate caches");
+        ReloadUtils.invalidateCaches();
 
-      progress.addText("Resfresh models");
-      SModelRepository.getInstance().refreshModels();
-
-      System.gc();
+        progress.addText("Resfresh models");
+        SModelRepository.getInstance().refreshModels();
+          System.gc();
+      }
     }
   }
 

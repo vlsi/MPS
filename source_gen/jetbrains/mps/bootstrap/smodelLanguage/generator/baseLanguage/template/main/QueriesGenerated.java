@@ -143,10 +143,10 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1182281118286(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return (SLinkOperations.getTarget(node, "scope", true) != null);
   }
-  public static String propertyMacro_GetPropertyValue_1177115336225(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1177115336225(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return NameUtil.nodeFQName(SLinkOperations.getTarget(node, "conceptDeclaration", false));
   }
-  public static String propertyMacro_GetPropertyValue_1170467024360(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1170467024360(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     // <expr>.<property-access>.<operation>
     // <operation> : our input node
     SNode noe1 = SNodeOperations.getParent(node, null, false, false);
@@ -154,17 +154,17 @@ public class QueriesGenerated {
     SNode op = SLinkOperations.getTarget(noe2, "nodeOperation", true);
     return SPropertyOperations.getString(SLinkOperations.getTarget(op, "property", false), "name");
   }
-  public static String propertyMacro_GetPropertyValue_1170457795969(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1170457795969(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(node, "property", false), "name");
   }
-  public static String propertyMacro_GetPropertyValue_1168981884180(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1168981884180(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(node, "enumMember", false), "internalValue");
   }
-  public static String propertyMacro_GetPropertyValue_1168986363721(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1168986363721(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode link = SLinkOperations.getTarget(node, "link", false);
     return SModelUtil_new.getGenuineLinkRole(((LinkDeclaration)SNodeOperations.getAdapter(link)));
   }
-  public static String propertyMacro_GetPropertyValue_1168986509277(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1168986509277(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode link = SLinkOperations.getTarget(node, "link", false);
     link = SModelUtil_new.getGenuineLinkDeclaration(((LinkDeclaration)SNodeOperations.getAdapter(link))).getNode();
     if(SPropertyOperations.hasValue(link, "metaClass", "aggregation", null)) {
@@ -172,22 +172,22 @@ public class QueriesGenerated {
     }
     return "false";
   }
-  public static String propertyMacro_GetPropertyValue_1169054268385(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1169054268385(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode genuineLink = QueriesUtil.linkOpExpression_genuineLink(SNodeOperations.getParent(node, null, false, false));
     return SPropertyOperations.getString(genuineLink, "role");
   }
-  public static String propertyMacro_GetPropertyValue_1169054430478(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1169054430478(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode parmConcept = SLinkOperations.getTarget(node, "concept", false);
     if(parmConcept == null) {
       parmConcept = SModelLanguageUtil.getLinkTargetConceptForLinkOperation(((Link_SetNewChildOperation)SNodeOperations.getAdapter(node))).getNode();
     }
     return NameUtil.nodeFQName(parmConcept);
   }
-  public static String propertyMacro_GetPropertyValue_1169056926467(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1169056926467(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode link = SLinkOperations.getTarget(node, "link", false);
     return SModelUtil_new.getGenuineLinkRole(((LinkDeclaration)SNodeOperations.getAdapter(link)));
   }
-  public static String propertyMacro_GetPropertyValue_1169057010209(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1169057010209(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode link = SLinkOperations.getTarget(node, "link", false);
     link = SModelUtil_new.getGenuineLinkDeclaration(((LinkDeclaration)SNodeOperations.getAdapter(link))).getNode();
     if(SPropertyOperations.hasValue(link, "metaClass", "aggregation", null)) {
@@ -195,89 +195,89 @@ public class QueriesGenerated {
     }
     return "false";
   }
-  public static String propertyMacro_GetPropertyValue_1169057619361(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1169057619361(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode genuineLink = QueriesUtil.linkListOpExpression_genuineLink(SNodeOperations.getParent(node, null, false, false));
     return SPropertyOperations.getString(genuineLink, "role");
   }
-  public static String propertyMacro_GetPropertyValue_1169057685014(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1169057685014(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode parmConcept = SLinkOperations.getTarget(node, "concept", false);
     if(parmConcept == null) {
       parmConcept = SModelLanguageUtil.getLinkTargetConceptForLinkOperation(((LinkList_AddNewChildOperation)SNodeOperations.getAdapter(node))).getNode();
     }
     return NameUtil.nodeFQName(parmConcept);
   }
-  public static String propertyMacro_GetPropertyValue_1170703534251(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1170703534251(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return "" + _QueriesUtil.operationHasParm_Inclusion(node);
   }
-  public static String propertyMacro_GetPropertyValue_1170703604927(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1170703604927(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return "" + _QueriesUtil.operationHasParm_Root(node);
   }
-  public static String propertyMacro_GetPropertyValue_1170438409571(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1170438409571(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "conceptArgument", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference")) {
       return NameUtil.nodeFQName(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "conceptArgument", true), "conceptDeclaration", false));
     }
     // deprecated reference on concept
     return NameUtil.nodeFQName(SLinkOperations.getTarget(node, "concept", false));
   }
-  public static String propertyMacro_GetPropertyValue_1170443135014(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1170443135014(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return NameUtil.nodeFQName(SLinkOperations.getTarget(node, "concept", false));
   }
-  public static String propertyMacro_GetPropertyValue_1170443738936(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1170443738936(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return NameUtil.nodeFQName(SLinkOperations.getTarget(node, "concept", false));
   }
-  public static String propertyMacro_GetPropertyValue_1169058210501(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1169058210501(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode genuineLink = QueriesUtil.linkListOpExpression_genuineLink(SNodeOperations.getParent(node, null, false, false));
     return SPropertyOperations.getString(genuineLink, "role");
   }
-  public static String propertyMacro_GetPropertyValue_1169058658826(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1169058658826(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode genuineLink = QueriesUtil.linkListOpExpression_genuineLink(SNodeOperations.getParent(node, null, false, false));
     return SPropertyOperations.getString(genuineLink, "role");
   }
-  public static String propertyMacro_GetPropertyValue_1169056436910(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1169056436910(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode genuineLink = QueriesUtil.linkOpExpression_genuineLink(SNodeOperations.getParent(node, null, false, false));
     return SPropertyOperations.getString(genuineLink, "role");
   }
-  public static String propertyMacro_GetPropertyValue_1169055820374(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1169055820374(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode genuineLink = QueriesUtil.linkOpExpression_genuineLink(SNodeOperations.getParent(node, null, false, false));
     return SPropertyOperations.getString(genuineLink, "role");
   }
-  public static String propertyMacro_GetPropertyValue_1169055966769(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1169055966769(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode genuineLink = QueriesUtil.linkOpExpression_genuineLink(SNodeOperations.getParent(node, null, false, false));
     if(SPropertyOperations.hasValue(genuineLink, "metaClass", "aggregation", null)) {
       return "true";
     }
     return "false";
   }
-  public static String propertyMacro_GetPropertyValue_1170443309771(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1170443309771(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return NameUtil.nodeFQName(SLinkOperations.getTarget(node, "concept", false));
   }
-  public static String propertyMacro_GetPropertyValue_1169070256927(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1169070256927(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode parmConcept = SLinkOperations.getTarget(node, "concept", false);
     return NameUtil.nodeFQName(parmConcept);
   }
-  public static String propertyMacro_GetPropertyValue_1177115874157(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1177115874157(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return _QueriesUtil.operationGetParm_Concept_conceptFqName(node);
   }
-  public static String propertyMacro_GetPropertyValue_1170444074663(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1170444074663(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return NameUtil.nodeFQName(SLinkOperations.getTarget(node, "conceptOfParent", false));
   }
-  public static String propertyMacro_GetPropertyValue_1170444136064(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1170444136064(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SModelUtil_new.getGenuineLinkRole(((LinkDeclaration)SNodeOperations.getAdapter(SLinkOperations.getTarget(node, "linkInParent", false))));
   }
-  public static String propertyMacro_GetPropertyValue_1169069895463(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1169069895463(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode genuineLink = QueriesUtil.linkListOpExpression_genuineLink(SNodeOperations.getParent(node, null, false, false));
     return SPropertyOperations.getString(genuineLink, "role");
   }
-  public static String propertyMacro_GetPropertyValue_1170442611639(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1170442611639(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return "" + _QueriesUtil.operationHasParm_Inclusion(node);
   }
-  public static String propertyMacro_GetPropertyValue_1170442795984(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1170442795984(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return "" + _QueriesUtil.operationHasParm_Inclusion(node);
   }
-  public static String propertyMacro_GetPropertyValue_1170443045607(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1170443045607(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return "" + _QueriesUtil.operationHasParm_Inclusion(node);
   }
-  public static String propertyMacro_GetPropertyValue_1170698439209(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1170698439209(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     // <expr>.<property-access>.<operation>
     // <operation> : our input node
     SNode noe1 = SNodeOperations.getParent(node, null, false, false);
@@ -285,7 +285,7 @@ public class QueriesGenerated {
     SNode op = SLinkOperations.getTarget(noe2, "nodeOperation", true);
     return SPropertyOperations.getString(SLinkOperations.getTarget(op, "property", false), "name");
   }
-  public static String propertyMacro_GetPropertyValue_1170698820249(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1170698820249(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     // <expr>.<property-access>.<operation>
     // <operation> : our input node
     SNode noe1 = SNodeOperations.getParent(node, null, false, false);
@@ -293,7 +293,7 @@ public class QueriesGenerated {
     SNode op = SLinkOperations.getTarget(noe2, "nodeOperation", true);
     return _QueriesUtil.get_SPropertyAccess_enum_defaultValue(op);
   }
-  public static String propertyMacro_GetPropertyValue_1170700859294(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1170700859294(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     // <expr>.<property-access>.<operation>
     // <operation> : our input node
     SNode noe1 = SNodeOperations.getParent(node, null, false, false);
@@ -301,16 +301,16 @@ public class QueriesGenerated {
     SNode op = SLinkOperations.getTarget(noe2, "nodeOperation", true);
     return SPropertyOperations.getString(SLinkOperations.getTarget(op, "property", false), "name");
   }
-  public static String propertyMacro_GetPropertyValue_1170461331284(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1170461331284(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(node, "property", false), "name");
   }
-  public static String propertyMacro_GetPropertyValue_1170461506307(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1170461506307(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return _QueriesUtil.get_SPropertyAccess_enum_defaultValue(node);
   }
-  public static String propertyMacro_GetPropertyValue_1170462640580(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1170462640580(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(node, "property", false), "name");
   }
-  public static String propertyMacro_GetPropertyValue_1170635425166(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1170635425166(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     // <expr>.<property-access>.<operation>
     // <operation> : our input node
     SNode noe1 = SNodeOperations.getParent(node, null, false, false);
@@ -318,7 +318,7 @@ public class QueriesGenerated {
     SNode op = SLinkOperations.getTarget(noe2, "nodeOperation", true);
     return SPropertyOperations.getString(SLinkOperations.getTarget(op, "property", false), "name");
   }
-  public static String propertyMacro_GetPropertyValue_1170635043273(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1170635043273(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     // <expr>.<property-access>.<operation>
     // <operation> : our input node
     SNode noe1 = SNodeOperations.getParent(node, null, false, false);
@@ -326,97 +326,97 @@ public class QueriesGenerated {
     SNode op = SLinkOperations.getTarget(noe2, "nodeOperation", true);
     return SPropertyOperations.getString(SLinkOperations.getTarget(op, "property", false), "name");
   }
-  public static String propertyMacro_GetPropertyValue_1169070814788(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1169070814788(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode parmConcept = SLinkOperations.getTarget(node, "concept", false);
     return NameUtil.nodeFQName(parmConcept);
   }
-  public static String propertyMacro_GetPropertyValue_1168985327635(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1168985327635(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(node, "conceptProperty", false), "name");
   }
-  public static String propertyMacro_GetPropertyValue_1176946951445(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1176946951445(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return "" + _QueriesUtil.operationHasParm_Inclusion(node);
   }
-  public static String propertyMacro_GetPropertyValue_1171321933468(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1171321933468(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode parmConcept = SLinkOperations.getTarget(node, "concept", false);
     return NameUtil.nodeFQName(parmConcept);
   }
-  public static String propertyMacro_GetPropertyValue_1171322948496(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1171322948496(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode parmConcept = SLinkOperations.getTarget(node, "concept", false);
     return NameUtil.nodeFQName(parmConcept);
   }
-  public static String propertyMacro_GetPropertyValue_1171324405778(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1171324405778(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode parmConcept = SLinkOperations.getTarget(node, "concept", false);
     return NameUtil.nodeFQName(parmConcept);
   }
-  public static String propertyMacro_GetPropertyValue_1171415812330(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1171415812330(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return "" + _QueriesUtil.operationHasParm_Inclusion(node);
   }
-  public static String propertyMacro_GetPropertyValue_1171415812339(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1171415812339(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return "" + _QueriesUtil.operationHasParm_Root(node);
   }
-  public static String propertyMacro_GetPropertyValue_1171415960029(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1171415960029(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return NameUtil.nodeFQName(node);
   }
-  public static String propertyMacro_GetPropertyValue_1171415960036(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1171415960036(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return "" + _QueriesUtil.operationHasParm_Inclusion(node);
   }
-  public static String propertyMacro_GetPropertyValue_1171415960045(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1171415960045(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return "" + _QueriesUtil.operationHasParm_Root(node);
   }
-  public static String propertyMacro_GetPropertyValue_1172244978178(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1172244978178(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode genuineLink = QueriesUtil.linkListOpExpression_genuineLink(SNodeOperations.getParent(node, null, false, false));
     return SPropertyOperations.getString(genuineLink, "role");
   }
-  public static String propertyMacro_GetPropertyValue_1172329155840(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1172329155840(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return NameUtil.nodeFQName(SLinkOperations.getTarget(node, "conceptDeclaration", false));
   }
-  public static String propertyMacro_GetPropertyValue_1173119412100(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1173119412100(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return NameUtil.nodeFQName(node);
   }
-  public static String propertyMacro_GetPropertyValue_1176946990349(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1176946990349(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return "" + _QueriesUtil.operationHasParm_Inclusion(node);
   }
-  public static String propertyMacro_GetPropertyValue_1173123251549(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1173123251549(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return "" + _QueriesUtil.operationHasParm_Inclusion(node);
   }
-  public static String propertyMacro_GetPropertyValue_1173123284761(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1173123284761(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return NameUtil.nodeFQName(node);
   }
-  public static String propertyMacro_GetPropertyValue_1173123508505(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1173123508505(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return "" + _QueriesUtil.operationHasParm_Inclusion(node);
   }
-  public static String propertyMacro_GetPropertyValue_1175621470141(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1175621470141(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(node, "conceptLinkDeclaration", false), "name");
   }
-  public static String propertyMacro_GetPropertyValue_1176109882207(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1176109882207(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode parmConcept = SLinkOperations.getTarget(node, "concept", false);
     return NameUtil.nodeFQName(parmConcept);
   }
-  public static String propertyMacro_GetPropertyValue_1179412031170(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1179412031170(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode behavior = SNodeOperations.getContainingRoot(SLinkOperations.getTarget(node, "conceptMethodDeclaration", false));
     return NameUtil.nodeFQName(behavior);
   }
-  public static String propertyMacro_GetPropertyValue_1179412208413(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1179412208413(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return ConceptMethodDeclaration_Behavior.getGeneratedName_1177681178696(SLinkOperations.getTarget(node, "conceptMethodDeclaration", false));
   }
-  public static String propertyMacro_GetPropertyValue_1179412809845(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1179412809845(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return ConceptMethodDeclaration_Behavior.getGeneratedName_1177681178696(Node_ConceptMethodCall_Behavior.getVirtualMethodDeclaration_1179412993748(node));
   }
-  public static String propertyMacro_GetPropertyValue_1180028472291(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1180028472291(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "conceptArgument", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference")) {
       return NameUtil.nodeFQName(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "conceptArgument", true), "conceptDeclaration", false));
     }
     generator.showErrorMessage(node, templateNode, "unexpected type of 'conceptArgumant' : " + SLinkOperations.getTarget(node, "conceptArgument", true));
     return "???";
   }
-  public static String propertyMacro_GetPropertyValue_1180032004502(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1180032004502(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "conceptArgument", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference")) {
       return NameUtil.nodeFQName(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "conceptArgument", true), "conceptDeclaration", false));
     }
     generator.showErrorMessage(node, templateNode, "unexpected type of 'conceptArgumant' : " + SLinkOperations.getTarget(node, "conceptArgument", true));
     return "???";
   }
-  public static String propertyMacro_GetPropertyValue_1181945919715(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1181945919715(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return NameUtil.nodeFQName(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "creator", true), "createdType", true), "concept", false));
   }
   public static SNode referenceMacro_GetReferent_1170457360268(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -715,6 +715,12 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_1181954535083(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return QueriesUtil.getLeftExpression(node);
+  }
+  public static SNode sourceNodeQuery_1182506994281(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "smodel", true);
+  }
+  public static SNode sourceNodeQuery_1182506998122(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "scope", true);
   }
   public static SNode sourceNodeQuery_1182281034369(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return QueriesUtil.getLeftExpression(node);

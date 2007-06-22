@@ -41,7 +41,13 @@
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177509146003">
               <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1181954893694">
                 <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1181954900672">
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Concept_GetAllSubConcepts" id="1181954908114" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Concept_GetAllSubConcepts" id="1181954908114">
+                    <node role="scope" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1182507572509">
+                      <link role="baseMethodDeclaration" extResolveInfo="19.method ([Classifier]IOperationContext).([InstanceMethodDeclaration]getScope() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IScope]))" />
+                      <node role="instance" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_operationContext" id="1182507569514" />
+                    </node>
+                    <node role="smodel" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_model" id="1182507568180" />
+                  </node>
                   <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.ConceptRefExpression" id="1181954893695">
                     <link role="conceptDeclaration" targetNodeId="1.1081773326031" />
                   </node>

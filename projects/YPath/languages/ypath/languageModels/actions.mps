@@ -1147,22 +1147,19 @@
                     <link role="concept" targetNodeId="1.1168879975004" />
                   </node>
                 </node>
-                <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1178974931160">
-                  <link role="baseMethodDeclaration" extResolveInfo="27.method ([Classifier]FindUsagesManager).([InstanceMethodDeclaration]findInstances((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ConceptDeclaration]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IScope]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IAdaptiveProgressMonitor])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Set, &lt;jetbrains.mps.baseLanguage.types.classifier [SNode]&gt;]))" />
-                  <node role="instance" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1178974924027">
-                    <link role="baseMethodDeclaration" extResolveInfo="27.static method ([Classifier]FindUsagesManager).([StaticMethodDeclaration]getInstance() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [FindUsagesManager]))" />
-                    <link role="classConcept" extResolveInfo="27.[Classifier]FindUsagesManager" />
-                  </node>
-                  <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178975171739">
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1178975129796">
-                      <link role="variableDeclaration" targetNodeId="1178975129794" resolveInfo="concept" />
+                <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1182505840904">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Model_RootsIncludingImportedOperation" id="1182505845493">
+                    <link role="concept" targetNodeId="1.1168879975004" />
+                    <node role="scope" type="jetbrains.mps.baseLanguage.ParameterReference" id="1182505877669">
+                      <link role="variableDeclaration" targetNodeId="1178974593898" resolveInfo="scope" />
                     </node>
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1178975173352" />
                   </node>
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1178975073532">
-                    <link role="variableDeclaration" targetNodeId="1178974593898" resolveInfo="scope" />
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1182505837671">
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetModelOperation" id="1182505839819" />
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1182505836664">
+                      <link role="variableDeclaration" targetNodeId="1178974581903" resolveInfo="expression" />
+                    </node>
                   </node>
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.NullLiteral" id="1178975076351" />
                 </node>
               </node>
             </node>

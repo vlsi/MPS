@@ -6,8 +6,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class Concept_GetAllSubConcepts extends SNodeOperation {
+  public static String SMODEL = "smodel";
+  public static String SCOPE = "scope";
 
   public  Concept_GetAllSubConcepts(SNode node) {
     super(node);
@@ -18,5 +21,18 @@ public class Concept_GetAllSubConcepts extends SNodeOperation {
   }
   public static Concept_GetAllSubConcepts newInstance(SModel sm) {
     return Concept_GetAllSubConcepts.newInstance(sm, false);
+  }
+
+  public Expression getSmodel() {
+    return (Expression)this.getChild(Concept_GetAllSubConcepts.SMODEL);
+  }
+  public void setSmodel(Expression node) {
+    super.setChild(Concept_GetAllSubConcepts.SMODEL, node);
+  }
+  public Expression getScope() {
+    return (Expression)this.getChild(Concept_GetAllSubConcepts.SCOPE);
+  }
+  public void setScope(Expression node) {
+    super.setChild(Concept_GetAllSubConcepts.SCOPE, node);
   }
 }
