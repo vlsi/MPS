@@ -7,8 +7,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.bootstrap.constraintsLanguage.helgins.QuotationClass_8;
-import jetbrains.mps.bootstrap.constraintsLanguage.helgins.QuotationClass_9;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule implements InferenceRule_Runtime {
@@ -17,7 +15,7 @@ public class typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule im
   }
 
   public void applyRule(SNode argument) {
-    Object targetConcept = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(argument, "jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint", false, false), "applicableLink", false), "target", false);
+    SNode targetConcept = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(argument, "jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint", false, false), "applicableLink", false), "target", false);
     if((targetConcept == null)) {
       TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_8().createNode(), argument);
     } else
