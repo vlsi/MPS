@@ -6,8 +6,6 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.helgins.QuotationClass_10;
-import jetbrains.mps.baseLanguage.helgins.QuotationClass_11;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_ArrayAccess_InferenceRule implements InferenceRule_Runtime {

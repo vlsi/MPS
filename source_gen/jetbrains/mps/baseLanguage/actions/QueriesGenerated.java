@@ -225,7 +225,7 @@ public class QueriesGenerated {
         public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
           SNode stringLiteral = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.StringLiteral", null);
           {
-            Pattern _pattern_0 = Pattern.compile("(?:(?:\")(?:((?:[^\\\"])*)))(?:(?:\")?)", 0);
+            Pattern _pattern_0 = Pattern.compile("(?:(?:\")(?:((?:[^\"])*)))(?:(?:\")?)", 0);
             Matcher _matcher_0 = _pattern_0.matcher(pattern);
             if(_matcher_0.matches()) {
               SPropertyOperations.set(stringLiteral, "value", _matcher_0.group(1));
@@ -237,7 +237,7 @@ public class QueriesGenerated {
           return true;
         }
         public boolean canSubstitute_internal(String pattern) {
-          return Pattern.compile("(?:\")(?:(?:(?:[^\\\"])*)(?:(?:\")?))", 0).matcher(pattern).matches();
+          return Pattern.compile("(?:\")(?:(?:(?:[^\"])*)(?:(?:\")?))", 0).matcher(pattern).matches();
         }
         public String getMatchingText(String pattern) {
           return pattern;

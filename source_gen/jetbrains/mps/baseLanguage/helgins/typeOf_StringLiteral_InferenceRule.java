@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.helgins.QuotationClass_22;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_StringLiteral_InferenceRule implements InferenceRule_Runtime {

@@ -5,19 +5,10 @@ package jetbrains.mps.baseLanguage.helgins;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.helgins.QuotationClass_25;
-import jetbrains.mps.baseLanguage.helgins.QuotationClass_26;
-import jetbrains.mps.baseLanguage.helgins.QuotationClass_27;
-import jetbrains.mps.baseLanguage.helgins.QuotationClass_28;
-import jetbrains.mps.baseLanguage.helgins.QuotationClass_29;
-import jetbrains.mps.baseLanguage.helgins.Queries;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.helgins.zMapper;
-import jetbrains.mps.baseLanguage.helgins.Pattern_1;
 import java.util.List;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
-import jetbrains.mps.baseLanguage.helgins.QuotationClass_30;
 
 public class RulesFunctions_BaseLanguage {
 

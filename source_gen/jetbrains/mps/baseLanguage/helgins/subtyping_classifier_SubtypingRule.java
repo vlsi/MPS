@@ -11,8 +11,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import java.util.ArrayList;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.helgins.QuotationClass_4;
-import jetbrains.mps.baseLanguage.helgins.QuotationClass_5;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {

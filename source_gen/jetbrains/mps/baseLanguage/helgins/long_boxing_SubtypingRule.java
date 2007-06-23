@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.helgins.QuotationClass_65;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class long_boxing_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
