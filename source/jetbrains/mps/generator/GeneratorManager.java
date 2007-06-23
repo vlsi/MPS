@@ -592,7 +592,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       handler.handle(new Message(MessageKind.ERROR, text));
       progress.finishSomehow();
     } finally {
-      if (generationType.requiresCompilationInIDEAfterGeneration()) {
+      if (myCompileOnGeneration && ideaPresent && generationType.requiresCompilationInIDEAfterGeneration()) {
         //todo this is tmp anti memory leak hack:
         progress.addText("Invalidate caches");
         ReloadUtils.invalidateCaches();
