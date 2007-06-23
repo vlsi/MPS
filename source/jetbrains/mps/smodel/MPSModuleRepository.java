@@ -27,6 +27,8 @@ public class MPSModuleRepository {
   private List<ModuleRepositoryListener> myModuleListeners = new ArrayList<ModuleRepositoryListener>();
   private List<RepositoryListener> myListeners = new ArrayList<RepositoryListener>();
 
+  private boolean myDirtyFlag = false;
+
   private Map<String, Class<? extends IModule>> myExtensionsToModuleTypes = new HashMap<String, Class<? extends IModule>>();
   public static final String LANGUAGE_EXT = ".mpl";
   public static final String SOLUTION_EXT = ".msd";
@@ -151,6 +153,7 @@ public class MPSModuleRepository {
 
   @NotNull
   public <TM extends IModule> TM registerModule(File file, MPSModuleOwner owner, Class<TM> cls) {
+    myDirtyFlag = true;
     try {
       String canonicalPath = file.getCanonicalPath();
       IModule module = myFileToModuleMap.get(canonicalPath);
@@ -206,6 +209,7 @@ public class MPSModuleRepository {
   }
 
   public void addModule(@NotNull IModule module, @NotNull MPSModuleOwner owner) {
+    myDirtyFlag = true;
     if (existsModule(module, owner)) {
       throw new RuntimeException("Couldn't add module \"" + module.getModuleUID() + "\" : this module is already registered with this very owner: " + owner);
     }
@@ -226,6 +230,7 @@ public class MPSModuleRepository {
   }
 
   public void unRegisterModules(@NotNull MPSModuleOwner owner) {
+    myDirtyFlag = true;
     for (IModule module : myModuleToOwnersMap.keySet()) {
       Set owners = myModuleToOwnersMap.get(module);
       if (owners != null) {
@@ -237,6 +242,9 @@ public class MPSModuleRepository {
   }
 
   public void removeUnusedModules() {
+    if (!myDirtyFlag) return;
+
+    myDirtyFlag = false;
     for (IModule m : getModelsToBeRemoved(new HashSet<MPSModuleOwner>())) {
       fireBeforeModuleRemoved(m);
       m.dispose();
