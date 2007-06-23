@@ -7,6 +7,7 @@
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
+  <language namespace="jetbrains.mps.quotation" />
   <maxImportIndex value="27" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="2" modelUID="jetbrains.mps.core.structure" />
@@ -1157,6 +1158,21 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1182580547590">
+      <property name="isVirtual" value="true" />
+      <property name="name" value="getUnboxedType" />
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1182580626382">
+        <link role="concept" targetNodeId="1.1068431790189" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1182580547592">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1182580641141">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1182580642228">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_CopyOperation" id="1182580643300" />
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1182580641142" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1178181704919">
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178181704920" />
     </node>
@@ -1653,8 +1669,8 @@
     <link role="concept" targetNodeId="1.1068431474542" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1182160839808">
       <property name="isVirtual" value="true" />
-      <property name="isAbstract" value="true" />
       <property name="name" value="inline" />
+      <property name="isAbstract" value="true" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1182160869063" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1182162555072">
         <property name="name" value="editorContext" />
@@ -3570,6 +3586,182 @@
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1182417073822">
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1182417073823" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1182580680652">
+    <link role="concept" targetNodeId="1.1070534370425" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1182580682186">
+      <property name="name" value="getUnboxedType" />
+      <link role="overridenMethod" targetNodeId="1182580547590" resolveInfo="getUnboxedType" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1182580682188">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1182580695426">
+          <node role="expression" type="jetbrains.mps.bootstrap.helgins.Quotation" id="1182580695427">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.ClassifierType" id="1182580699837">
+              <link role="classifier" extResolveInfo="13.[Classifier]Integer" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1182580687424">
+        <link role="concept" targetNodeId="1.1068431790189" />
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1182580680653">
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1182580680654" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1182580714619">
+    <link role="concept" targetNodeId="1.1070534644030" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1182580716122">
+      <property name="name" value="getUnboxedType" />
+      <link role="overridenMethod" targetNodeId="1182580547590" resolveInfo="getUnboxedType" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1182580716124">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1182580724549">
+          <node role="expression" type="jetbrains.mps.bootstrap.helgins.Quotation" id="1182580724550">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.ClassifierType" id="1182580727164">
+              <link role="classifier" extResolveInfo="13.[Classifier]Boolean" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1182580721407">
+        <link role="concept" targetNodeId="1.1068431790189" />
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1182580714620">
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1182580714621" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1182580731555">
+    <link role="concept" targetNodeId="1.1070534604311" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1182580733121">
+      <property name="name" value="getUnboxedType" />
+      <link role="overridenMethod" targetNodeId="1182580547590" resolveInfo="getUnboxedType" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1182580733123">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1182580741298">
+          <node role="expression" type="jetbrains.mps.bootstrap.helgins.Quotation" id="1182580741299">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.ClassifierType" id="1182580744818">
+              <link role="classifier" extResolveInfo="13.[Classifier]Byte" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1182580738483">
+        <link role="concept" targetNodeId="1.1068431790189" />
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1182580731556">
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1182580731557" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1182580749554">
+    <link role="concept" targetNodeId="1.1070534555686" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1182580751166">
+      <property name="name" value="getUnboxedType" />
+      <link role="overridenMethod" targetNodeId="1182580547590" resolveInfo="getUnboxedType" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1182580751168">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1182580759015">
+          <node role="expression" type="jetbrains.mps.bootstrap.helgins.Quotation" id="1182580759016">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.ClassifierType" id="1182580765270">
+              <link role="classifier" extResolveInfo="13.[Classifier]Character" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1182580756060">
+        <link role="concept" targetNodeId="1.1068431790189" />
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1182580749555">
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1182580749556" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1182580774458">
+    <link role="concept" targetNodeId="1.1070534513062" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1182580775742">
+      <property name="name" value="getUnboxedType" />
+      <link role="overridenMethod" targetNodeId="1182580547590" resolveInfo="getUnboxedType" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1182580775744">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1182580783201">
+          <node role="expression" type="jetbrains.mps.bootstrap.helgins.Quotation" id="1182580783202">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.ClassifierType" id="1182580787409">
+              <link role="classifier" extResolveInfo="13.[Classifier]Double" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1182580779620">
+        <link role="concept" targetNodeId="1.1068431790189" />
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1182580774459">
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1182580774460" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1182580792347">
+    <link role="concept" targetNodeId="1.1070534436861" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1182580793788">
+      <property name="name" value="getUnboxedType" />
+      <link role="overridenMethod" targetNodeId="1182580547590" resolveInfo="getUnboxedType" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1182580793790">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1182580799574">
+          <node role="expression" type="jetbrains.mps.bootstrap.helgins.Quotation" id="1182580799575">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.ClassifierType" id="1182580802220">
+              <link role="classifier" extResolveInfo="13.[Classifier]Float" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1182580796525">
+        <link role="concept" targetNodeId="1.1068431790189" />
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1182580792348">
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1182580792349" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1182580809252">
+    <link role="concept" targetNodeId="1.1068581242867" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1182580810489">
+      <property name="name" value="getUnboxedType" />
+      <link role="overridenMethod" targetNodeId="1182580547590" resolveInfo="getUnboxedType" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1182580810491">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1182580816979">
+          <node role="expression" type="jetbrains.mps.bootstrap.helgins.Quotation" id="1182580816980">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.ClassifierType" id="1182580820546">
+              <link role="classifier" extResolveInfo="13.[Classifier]Long" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1182580813883">
+        <link role="concept" targetNodeId="1.1068431790189" />
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1182580809253">
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1182580809254" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1182580828906">
+    <link role="concept" targetNodeId="1.1070533982221" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1182580830253">
+      <property name="name" value="getUnboxedType" />
+      <link role="overridenMethod" targetNodeId="1182580547590" resolveInfo="getUnboxedType" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1182580830255">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1182580838055">
+          <node role="expression" type="jetbrains.mps.bootstrap.helgins.Quotation" id="1182580838056">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.ClassifierType" id="1182580841529">
+              <link role="classifier" extResolveInfo="13.[Classifier]Short" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1182580834116">
+        <link role="concept" targetNodeId="1.1068431790189" />
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1182580828907">
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1182580828908" />
     </node>
   </node>
 </model>

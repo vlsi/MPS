@@ -15,6 +15,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class QueriesGenerated {
 
@@ -100,7 +101,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(node, "type", true);
   }
   public static SNode sourceNodeQuery_1181727002179(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "returnType", true);
+    return BehaviorManager.getInstance().invoke(SNode.class, SLinkOperations.getTarget(node, "returnType", true), "virtual_getUnboxedType_1182580547590");
   }
   public static SNode sourceNodeQuery_1182162752928(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "type", true);
