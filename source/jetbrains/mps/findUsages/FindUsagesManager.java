@@ -51,6 +51,13 @@ public class FindUsagesManager {
     return findUsages(CollectionUtil.asSet(node), scope, progress);
   }
 
+  /**
+   * This method is long-running, don't use where execution time is critical.
+   * @param nodes
+   * @param scope
+   * @param progress
+   * @return
+   */
   public Set<SReference> findUsages(Set<SNode> nodes, IScope scope, IAdaptiveProgressMonitor progress) {
     Set<SReference> result = new HashSet<SReference>();
     //noinspection EmptyFinallyBlock
@@ -85,6 +92,13 @@ public class FindUsagesManager {
     return new ArrayList<SNode>(set);
   }
 
+  /**
+   * This method is long-running, don't use where execution time is critical.
+   * @param concept
+   * @param scope
+   * @param progress
+   * @return
+   */
   public Set<SNode> findInstances(ConceptDeclaration concept, IScope scope, IAdaptiveProgressMonitor progress) {
     Set<SNode> result = new HashSet<SNode>();
     //noinspection EmptyFinallyBlock
