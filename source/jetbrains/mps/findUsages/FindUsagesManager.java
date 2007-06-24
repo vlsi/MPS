@@ -47,12 +47,22 @@ public class FindUsagesManager {
     return result;
   }
 
+  /**
+   * Fully equivalent to <code>findUsages(CollectionsUtil.asSet(node),scope,progress)</code>
+   * <p>
+   * <strong>NB!</strong> This method is long-running, don't use where execution time is critical.
+   * </p>
+   * @param node
+   * @param scope
+   * @param progress
+   * @return
+   */
   public Set<SReference> findUsages(SNode node, IScope scope, IAdaptiveProgressMonitor progress) {
     return findUsages(CollectionUtil.asSet(node), scope, progress);
   }
 
   /**
-   * This method is long-running, don't use where execution time is critical.
+   * <strong>NB!</strong> This method is long-running, don't use where execution time is critical.
    * @param nodes
    * @param scope
    * @param progress
@@ -87,13 +97,22 @@ public class FindUsagesManager {
     }
   }
 
+  /**
+   * Fully equivalent to <code>findInstances((ConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration), scope, null)</code>
+   * <p>
+   * <strong>NB!</strong> This method is long-running, don't use where execution time is critical.
+   * </p>
+   * @param conceptDeclaration
+   * @param scope
+   * @return
+   */
   public List<SNode> findInstances(SNode conceptDeclaration, IScope scope) {
     Set<SNode> set = findInstances((ConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration), scope, null);
     return new ArrayList<SNode>(set);
   }
 
   /**
-   * This method is long-running, don't use where execution time is critical.
+   * <strong>NB!</strong> This method is long-running, don't use where execution time is critical.
    * @param concept
    * @param scope
    * @param progress
