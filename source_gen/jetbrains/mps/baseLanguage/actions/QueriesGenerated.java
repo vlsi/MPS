@@ -43,8 +43,8 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.baseLanguage.constraints.QueriesUtil;
 import jetbrains.mps.generator.JavaModelUtil_new;
+import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.editor.ParenthesisUtil;
 
 public class QueriesGenerated {
@@ -579,26 +579,28 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation", operationContext.getScope());
-      Calculable calculable = new Calculable() {
-
-        public Object calculate() {
-          return SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation"), model, operationContext.getScope());
+      ConceptDeclaration base = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation", operationContext.getScope());
+      for(final AbstractConceptDeclaration abstractConcept : SModelUtil_new.getSubconcepts(base, model, operationContext.getScope())) {
+        if(!(abstractConcept instanceof ConceptDeclaration)) {
+          continue;
         }
-      };
-      Iterable<SNode> parameterObjects = (Iterable<SNode>)calculable.calculate();
-      for(SNode parameter : parameterObjects) {
-        result.add(new AbstractRTransformHintSubstituteAction(parameter, sourceNode) {
+        if(abstractConcept.hasConceptProperty(BaseConcept.CPR_Abstract, operationContext.getScope())) {
+          continue;
+        }
+        final ConceptDeclaration currentConcept = (ConceptDeclaration)abstractConcept;
+        result.add(new AbstractRTransformHintSubstituteAction(currentConcept, sourceNode) {
 
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(((SNode)this.getParameterObject())), null);
+            SNode result = SModelUtil_new.instantiateConceptDeclaration(currentConcept, model).getNode();
             SNodeOperations.replaceWithAnother(sourceNode, result);
             SLinkOperations.setTarget(result, "leftExpression", sourceNode, true);
-            SNode boToCheck = (SNodeOperations.isInstanceOf(result, "jetbrains.mps.baseLanguage.structure.BinaryOperation") ?
-              SNodeOperations.getParent(result, null, false, false) :
-              result
-            );
-            ParenthesisUtil.checkOperationWRTPriority(boToCheck);
-            return boToCheck;
+            if(SNodeOperations.isInstanceOf(SNodeOperations.getParent(result, null, false, false), "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
+              ParenthesisUtil.checkOperationWRTPriority(SNodeOperations.getParent(result, null, false, false));
+            } else
+            {
+              ParenthesisUtil.checkOperationWRTPriority(result);
+            }
+            return result;
           }
         });
       }

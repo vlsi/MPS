@@ -39,6 +39,31 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1182805133365">
+          <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1182805136321">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.MinusExpression" id="1182805146716">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1182805618447">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1182805620504">
+                  <property name="value" value="20" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1182805151877">
+                  <property name="value" value="20" />
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.MulExpression" id="1182805164274">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1182805166243">
+                  <property name="value" value="10" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1182805140769">
+                  <property name="value" value="10" />
+                </node>
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1182805133366">
+              <link role="variableDeclaration" targetNodeId="1182490522965" resolveInfo="a" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1181913317170" />
