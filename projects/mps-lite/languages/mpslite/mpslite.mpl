@@ -20,7 +20,18 @@
   <accessoryModels>
     <model modelUID="jetbrains.mpslite.common" />
   </accessoryModels>
-  <generators />
+  <generators>
+    <generator generatorUID="jetbrains.mpslite#1182846582475" targetLanguage="jetbrains.mps.baseLanguage">
+      <models>
+        <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mpslite.generator.baseLanguage.template" />
+      </models>
+      <module>
+        <moduleRoot path="${mps_home}\languages\baseLanguage\language\baseLanguage.mpl" />
+      </module>
+      <external-templates />
+      <mapping-priorities />
+    </generator>
+  </generators>
   <classPath />
 </language>
 
