@@ -37,7 +37,6 @@ public class GenerationSession implements IGenerationSession {
   public static final Logger LOG = Logger.getLogger(GenerationSession.class);
 
   private IOperationContext myInvocationContext;
-  private boolean myUseNewGeneratorEngine;
   private boolean myDiscardTransients;
   private IAdaptiveProgressMonitor myProgressMonitor;
   private IMessageHandler myHandler;
@@ -50,9 +49,8 @@ public class GenerationSession implements IGenerationSession {
   private int myTransientModelsCount = 0;
 
 
-  public GenerationSession(IOperationContext invocationContext, boolean saveTransientModels, IAdaptiveProgressMonitor progressMonitor, IMessageHandler handler, boolean useNewGeneratorEngine) {
+  public GenerationSession(IOperationContext invocationContext, boolean saveTransientModels, IAdaptiveProgressMonitor progressMonitor, IMessageHandler handler) {
     myInvocationContext = invocationContext;
-    this.myUseNewGeneratorEngine = useNewGeneratorEngine;
     myDiscardTransients = !saveTransientModels;
     myProgressMonitor = progressMonitor;
     myHandler = handler;
@@ -197,10 +195,7 @@ public class GenerationSession implements IGenerationSession {
     setGenerationSessionContext(context);
 
     // -- replace generator
-    ITemplateGenerator generator = myUseNewGeneratorEngine ?
-            new TemplateModelGenerator_New(context, myProgressMonitor, myHandler) :
-            new DefaultTemplateGenerator(context, myProgressMonitor, myHandler);
-
+    ITemplateGenerator generator = new TemplateModelGenerator_New(context, myProgressMonitor, myHandler);
     GenerationStatus status;
     try {
       SModel outputModel = generateModel(sourceModel, generator);

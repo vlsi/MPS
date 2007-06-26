@@ -5,10 +5,6 @@ import jetbrains.mps.component.IContext;
 import jetbrains.mps.components.IContainer;
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.GeneratingEngine;
-import jetbrains.mps.generator.generationTypes.GenerateClassesGenerationType;
-import jetbrains.mps.generator.generationTypes.GenerateTextGenerationType;
-import jetbrains.mps.generator.generationTypes.GenerateFilesGenerationType;
 import jetbrains.mps.generator.generationTypes.GenerateFilesAndClassesGenerationType;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.ide.AbstractProjectFrame;
@@ -41,7 +37,6 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IDisposable;
 import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.baseLanguage.plugin.JavaFileGenerator;
 import jetbrains.mps.baseLanguage.plugin.BaseLanguagePlugin;
 import jetbrains.mps.xml.plugin.XmlPlugin;
 import org.jdom.Document;
@@ -52,11 +47,9 @@ import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 
 import java.io.File;
-import java.io.PrintWriter;
 import java.io.PrintStream;
 import java.rmi.RemoteException;
 import java.util.*;
-import java.text.DateFormat;
 
 /**
  * Author: Sergey Dmitriev
@@ -746,8 +739,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
                           generationType,
                           parms.getScript(),
                           IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR,
-                          handler,
-                          GeneratingEngine.newest);
+                          handler
+                  );
 
           // during generation all source files was collected, now we may compile them all together
           generationType.compile(IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR);
