@@ -38,6 +38,7 @@ public class IndentLinePart_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(Color.lightGray);
+    _LinePart_RT.setCellActions(editorCell, node, context);
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182512721419");
     editorCell.setLayoutConstraint("");
     return editorCell;

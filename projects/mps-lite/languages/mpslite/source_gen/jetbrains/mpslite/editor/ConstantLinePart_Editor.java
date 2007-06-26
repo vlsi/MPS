@@ -46,6 +46,7 @@ public class ConstantLinePart_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    _LinePart_RT.setCellActions(editorCell, node, context);
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182511294276");
     editorCell.setLayoutConstraint("");
     return editorCell;

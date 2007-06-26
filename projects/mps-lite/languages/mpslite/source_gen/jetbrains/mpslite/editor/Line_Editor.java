@@ -46,6 +46,7 @@ public class Line_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.putUserObject(EditorCell.ROLE, this.myLinePartListHandler_linePartList_.getElementRole());
     editorCell.setLayoutConstraint("");
+    editorCell.addKeyMap(new _Line_Actions());
     return editorCell;
   }
 }
