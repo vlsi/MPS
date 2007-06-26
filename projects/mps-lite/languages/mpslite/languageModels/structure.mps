@@ -58,8 +58,12 @@
     <property name="package" value="Parts" />
     <link role="extends" targetNodeId="1182511214735" resolveInfo="LinePart" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182843917675">
-      <property name="value" value="child declaration" />
+      <property name="value" value="[" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182845867418">
+      <property name="value" value="child declaration" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1182512224903">
       <property name="name" value="many" />
@@ -100,8 +104,12 @@
     <property name="package" value="Parts" />
     <link role="extends" targetNodeId="1182511214735" resolveInfo="LinePart" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182844248058">
-      <property name="value" value="property declaration" />
+      <property name="value" value="{" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182845912424">
+      <property name="value" value="property declaration" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182511996125">
       <property name="sourceCardinality" value="0..1" />
@@ -125,6 +133,17 @@
     <property name="name" value="ChildReferencePart" />
     <property name="package" value="Parts" />
     <link role="extends" targetNodeId="1182511214735" resolveInfo="LinePart" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1182845976691">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182845879639">
+      <property name="value" value="[" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182845882656">
+      <property name="value" value="child refeference" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182513081632">
       <property name="sourceCardinality" value="1" />
       <property name="role" value="declaration" />
@@ -139,6 +158,17 @@
       <property name="sourceCardinality" value="1" />
       <property name="role" value="declaration" />
       <link role="target" targetNodeId="1182511940438" resolveInfo="PropertyDeclarationPart" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1182845983630">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182845930320">
+      <property name="value" value="{" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182845932791">
+      <property name="value" value="property reference" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182513387723">
@@ -162,6 +192,44 @@
       <property name="sourceCardinality" value="0..n" />
       <property name="role" value="nodeTypeDeclaration" />
       <link role="target" targetNodeId="1182510906722" resolveInfo="NodeTypeDeclaration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182845659293">
+    <property name="name" value="ReferenceDeclarationPart" />
+    <property name="package" value="Parts" />
+    <link role="extends" targetNodeId="1182511214735" resolveInfo="LinePart" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182845809628">
+      <property name="role" value="type" />
+      <link role="target" targetNodeId="1182510906722" resolveInfo="NodeTypeDeclaration" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182845701266">
+      <property name="value" value="&lt;" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182845941777">
+      <property name="value" value="reference declaration" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1182845679857">
+      <link role="intfc" targetNodeId="1.1169194658468" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182846198025">
+    <property name="name" value="ReferenceReferencePart" />
+    <property name="package" value="Parts" />
+    <link role="extends" targetNodeId="1182511214735" resolveInfo="LinePart" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182846238634">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="declaration" />
+      <link role="target" targetNodeId="1182845659293" resolveInfo="ReferenceDeclarationPart" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182846208277">
+      <property name="value" value="&lt;" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182846211419">
+      <property name="value" value="reference reference" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
     </node>
   </node>
 </model>
