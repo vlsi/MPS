@@ -20,8 +20,8 @@
       <link role="intfc" targetNodeId="1.1169194658468" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1112058057696">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="actionsBuilder" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1112058030570" />
@@ -153,8 +153,8 @@
       <link role="intfc" targetNodeId="1.1169194658468" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1138079416599">
-      <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
+      <property name="targetCardinality" value="1" />
       <property name="role" value="actionsBuilder" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1138079221458" />
@@ -170,33 +170,33 @@
     <link role="defaultMember" targetNodeId="1140829274114" resolveInfo="default_" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1140829274114">
       <property name="internalValue" value="default_RTransform" />
-      <property name="name" value="default_" />
       <property name="externalValue" value="DEFAULT" />
+      <property name="name" value="default_" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1140829274115">
       <property name="internalValue" value="ext_1_RTransform" />
-      <property name="name" value="ext_1" />
       <property name="externalValue" value="EXT 1" />
+      <property name="name" value="ext_1" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1140829274116">
       <property name="internalValue" value="ext_2_RTransform" />
-      <property name="name" value="ext_2" />
       <property name="externalValue" value="EXT 2" />
+      <property name="name" value="ext_2" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1140829274117">
       <property name="internalValue" value="ext_3_RTransform" />
-      <property name="name" value="ext_3" />
       <property name="externalValue" value="EXT 3" />
+      <property name="name" value="ext_3" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1140829274118">
       <property name="internalValue" value="ext_4_RTransform" />
-      <property name="name" value="ext_4" />
       <property name="externalValue" value="EXT 4" />
+      <property name="name" value="ext_4" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1140829274119">
       <property name="internalValue" value="ext_5_RTransform" />
-      <property name="name" value="ext_5" />
       <property name="externalValue" value="EXT 5" />
+      <property name="name" value="ext_5" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1154465102724">
@@ -1001,6 +1001,13 @@
       <property name="value" value="concept" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182819631950">
+      <property name="value" value="replaced with ConceptRightTransformPart (action on top level)" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1180129508254" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1182819631951">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177526111818">
       <property name="role" value="baseConcept" />
       <property name="sourceCardinality" value="1" />
@@ -1023,6 +1030,10 @@
     <property name="package" value="MenuParts.RightTransform" />
     <property name="name" value="ConceptReference" />
     <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182819678832">
+      <property name="value" value="this concept is used in ConceptRightTransformMenuPart which is deprecated" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1180129508254" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177526149604">
       <property name="role" value="concept" />
       <property name="sourceCardinality" value="1" />
@@ -1268,6 +1279,29 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1180135201711">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182819125053">
+    <property name="package" value="MenuBuilderParts.RightTransform" />
+    <property name="name" value="ConceptRightTransformPart" />
+    <link role="extends" targetNodeId="1177323240852" resolveInfo="MenuBuilderPart" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182819256630">
+      <property name="value" value="add concept" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1182819256631">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182819234902">
+      <property name="role" value="concept" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1071489090640" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182819210322">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="handler" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1177526592562" resolveInfo="QueryFunction_RightTransform_ConceptHandler" />
     </node>
   </node>
 </model>

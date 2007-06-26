@@ -6,13 +6,13 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import java.util.Iterator;
 import java.util.List;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
 public class ConceptPart extends MenuBuilderPart {
-  public static String PART = "part";
   public static String CONCEPT = "concept";
+  public static String PART = "part";
 
   public  ConceptPart(SNode node) {
     super(node);
@@ -25,6 +25,12 @@ public class ConceptPart extends MenuBuilderPart {
     return ConceptPart.newInstance(sm, false);
   }
 
+  public ConceptDeclaration getConcept() {
+    return (ConceptDeclaration)this.getReferent(ConceptPart.CONCEPT);
+  }
+  public void setConcept(ConceptDeclaration node) {
+    super.setReferent(ConceptPart.CONCEPT, node);
+  }
   public int getPartsCount() {
     return this.getChildCount(ConceptPart.PART);
   }
@@ -39,11 +45,5 @@ public class ConceptPart extends MenuBuilderPart {
   }
   public void insertPart(MenuPart prev, MenuPart node) {
     this.insertChild(prev, ConceptPart.PART, node);
-  }
-  public ConceptDeclaration getConcept() {
-    return (ConceptDeclaration)this.getReferent(ConceptPart.CONCEPT);
-  }
-  public void setConcept(ConceptDeclaration node) {
-    super.setReferent(ConceptPart.CONCEPT, node);
   }
 }

@@ -579,8 +579,7 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation", operationContext.getScope());
-      ConceptDeclaration base = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation", operationContext.getScope());
-      for(final AbstractConceptDeclaration abstractConcept : SModelUtil_new.getSubconcepts(base, model, operationContext.getScope())) {
+      for(final AbstractConceptDeclaration abstractConcept : SModelUtil_new.getSubconcepts(concept, model, operationContext.getScope())) {
         if(!(abstractConcept instanceof ConceptDeclaration)) {
           continue;
         }

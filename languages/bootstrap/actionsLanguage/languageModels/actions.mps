@@ -149,6 +149,9 @@
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptSubstitutePart" id="1180137769606">
         <link role="concept" targetNodeId="1.1180111159572" />
       </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptSubstitutePart" id="1182819558622">
+        <link role="concept" targetNodeId="1.1182819125053" />
+      </node>
     </node>
   </node>
 </model>

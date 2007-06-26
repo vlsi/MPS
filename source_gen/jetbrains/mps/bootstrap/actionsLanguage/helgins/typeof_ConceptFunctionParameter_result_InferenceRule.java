@@ -5,8 +5,8 @@ package jetbrains.mps.bootstrap.actionsLanguage.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ConceptFunctionParameter_result_InferenceRule implements InferenceRule_Runtime {
@@ -15,8 +15,15 @@ public class typeof_ConceptFunctionParameter_result_InferenceRule implements Inf
   }
 
   public void applyRule(SNode argument) {
-    SNode menu = SNodeOperations.getAncestor(argument, "jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptRightTransformMenuPart", false, false);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_1().createNode(SLinkOperations.getTarget(menu, "baseConcept", false)), argument);
+    SNode conceptOfResult = null;
+    SNode ancestor = SNodeOperations.getAncestorWhereConceptInList(argument, new String[]{"jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptRightTransformPart","jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptRightTransformMenuPart"}, false, false);
+    if(SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptRightTransformPart")) {
+      conceptOfResult = SLinkOperations.getTarget(ancestor, "concept", false);
+    } else
+    {
+      conceptOfResult = SLinkOperations.getTarget(ancestor, "baseConcept", false);
+    }
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_1().createNode(conceptOfResult), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_result";
