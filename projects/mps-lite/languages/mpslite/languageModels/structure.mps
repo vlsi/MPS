@@ -5,7 +5,7 @@
   <import index="1" modelUID="jetbrains.mps.core.structure" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182510906722">
     <property name="name" value="NodeTypeDeclaration" />
-    <property name="rootable" value="true" />
+    <property name="rootable" value="false" />
     <link role="extends" targetNodeId="1.1133920641626" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182511234181">
       <property name="metaClass" value="aggregation" />
@@ -125,6 +125,20 @@
     <property name="name" value="ParentTextPart" />
     <property name="package" value="Parts" />
     <link role="extends" targetNodeId="1182511214735" resolveInfo="LinePart" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182840239135">
+    <property name="name" value="NodeTypeDeclarations" />
+    <property name="rootable" value="true" />
+    <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1182840278091">
+      <link role="intfc" targetNodeId="1.1169194658468" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182840264652">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="nodeTypeDeclaration" />
+      <link role="target" targetNodeId="1182510906722" resolveInfo="NodeTypeDeclaration" />
+    </node>
   </node>
 </model>
 
