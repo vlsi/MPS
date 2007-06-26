@@ -217,6 +217,7 @@
       <node role="line" type="jetbrains.mpslite.Line" id="1182842708669">
         <node role="linePart" type="jetbrains.mpslite.ChildDeclarationPart" id="1182842708670">
           <property name="name" value="statement" />
+          <property name="vertical" value="true" />
           <property name="many" value="true" />
           <link role="type" targetNodeId="1182840446827" resolveInfo="Statement" />
         </node>

@@ -70,6 +70,10 @@
       <property name="name" value="many" />
       <link role="dataType" targetNodeId="1.1082983657063" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1182859708874">
+      <property name="name" value="vertical" />
+      <link role="dataType" targetNodeId="1.1082983657063" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182511574977">
       <property name="sourceCardinality" value="0..1" />
       <property name="role" value="type" />
