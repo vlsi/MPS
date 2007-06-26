@@ -36,6 +36,9 @@
     <property name="name" value="LinePart" />
     <property name="package" value="Parts" />
     <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1182845007143">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182511276754">
     <property name="name" value="ConstantLinePart" />
@@ -45,17 +48,25 @@
       <property name="name" value="text" />
       <link role="dataType" targetNodeId="1.1082983041843" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182845257603">
+      <property name="value" value="constant text" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182511424766">
     <property name="name" value="ChildDeclarationPart" />
     <property name="package" value="Parts" />
     <link role="extends" targetNodeId="1182511214735" resolveInfo="LinePart" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182843917675">
+      <property name="value" value="child declaration" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1182512224903">
       <property name="name" value="many" />
       <link role="dataType" targetNodeId="1.1082983657063" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182511574977">
-      <property name="sourceCardinality" value="1" />
+      <property name="sourceCardinality" value="0..1" />
       <property name="role" value="type" />
       <link role="target" targetNodeId="1182510906722" resolveInfo="NodeTypeDeclaration" />
     </node>
@@ -88,6 +99,10 @@
     <property name="name" value="PropertyDeclarationPart" />
     <property name="package" value="Parts" />
     <link role="extends" targetNodeId="1182511214735" resolveInfo="LinePart" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182844248058">
+      <property name="value" value="property declaration" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182511996125">
       <property name="sourceCardinality" value="0..1" />
       <property name="role" value="type" />
@@ -101,6 +116,10 @@
     <property name="name" value="IndentLinePart" />
     <property name="package" value="Parts" />
     <link role="extends" targetNodeId="1182511214735" resolveInfo="LinePart" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182844232508">
+      <property name="value" value="indent" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182513065381">
     <property name="name" value="ChildReferencePart" />
@@ -117,6 +136,7 @@
     <property name="package" value="Parts" />
     <link role="extends" targetNodeId="1182511214735" resolveInfo="LinePart" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182513125929">
+      <property name="sourceCardinality" value="1" />
       <property name="role" value="declaration" />
       <link role="target" targetNodeId="1182511940438" resolveInfo="PropertyDeclarationPart" />
     </node>
@@ -125,6 +145,10 @@
     <property name="name" value="ParentTextPart" />
     <property name="package" value="Parts" />
     <link role="extends" targetNodeId="1182511214735" resolveInfo="LinePart" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182844239509">
+      <property name="value" value="&lt;parent text&gt;" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182840239135">
     <property name="name" value="NodeTypeDeclarations" />

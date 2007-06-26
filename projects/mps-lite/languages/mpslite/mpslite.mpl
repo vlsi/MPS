@@ -6,6 +6,9 @@
   <actions>
     <model modelUID="jetbrains.mpslite.actions" />
   </actions>
+  <constraints>
+    <model modelUID="jetbrains.mpslite.constraints" />
+  </constraints>
   <editor>
     <model modelUID="jetbrains.mpslite.editor" />
   </editor>
