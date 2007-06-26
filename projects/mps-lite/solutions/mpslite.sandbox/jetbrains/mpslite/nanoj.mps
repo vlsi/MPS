@@ -116,7 +116,7 @@
         </node>
         <node role="linePart" type="jetbrains.mpslite.ChildDeclarationPart" id="1182840399443">
           <property name="name" value="expr" />
-          <link role="type" targetNodeId="1182513486897" resolveInfo="Expression" />
+          <link role="type" targetNodeId="1182840584601" resolveInfo="Expression" />
         </node>
         <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182840399444">
           <property name="text" value=")" />
@@ -162,7 +162,7 @@
         </node>
         <node role="linePart" type="jetbrains.mpslite.ChildDeclarationPart" id="1182840421130">
           <property name="name" value="expr" />
-          <link role="type" targetNodeId="1182513486897" resolveInfo="Expression" />
+          <link role="type" targetNodeId="1182840584601" resolveInfo="Expression" />
         </node>
         <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182840421131">
           <property name="text" value=";" />
@@ -182,7 +182,7 @@
         </node>
         <node role="linePart" type="jetbrains.mpslite.ChildDeclarationPart" id="1182840432082">
           <property name="name" value="expr" />
-          <link role="type" targetNodeId="1182513486897" resolveInfo="Expression" />
+          <link role="type" targetNodeId="1182840584601" resolveInfo="Expression" />
         </node>
         <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182840432083">
           <property name="text" value=")" />
