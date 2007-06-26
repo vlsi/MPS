@@ -36,4 +36,9 @@ public class ApplicationsTest extends TestCase {
     String res = TestMain.testProject(new File("projects/ProjectHalo/ProjectHalo.mpr"));
     assertTrue(res, res == null);
   }
+
+  public void testMPSLite() {
+    String res = TestMain.testProject(new File("projects/mps-lite/mps-lite.mpr"));
+    assertTrue(res, res == null);
+  }
 }
