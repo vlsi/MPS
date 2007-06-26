@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mpslite.structure">
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
-  <maxImportIndex value="1" />
+  <maxImportIndex value="2" />
   <import index="1" modelUID="jetbrains.mps.core.structure" />
+  <import index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182510906722">
     <property name="name" value="NodeTypeDeclaration" />
     <property name="rootable" value="false" />
@@ -81,6 +82,11 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182511699557">
     <property name="name" value="PropertyTypeDeclaration" />
     <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182847886745">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="mapTo" />
+      <link role="target" targetNodeId="2.1082978164218" />
+    </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1182511748498">
       <link role="intfc" targetNodeId="1.1169194658468" />
     </node>
@@ -133,11 +139,8 @@
     <property name="name" value="ChildReferencePart" />
     <property name="package" value="Parts" />
     <link role="extends" targetNodeId="1182511214735" resolveInfo="LinePart" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1182845976691">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182845879639">
-      <property name="value" value="[" />
+      <property name="value" value="[&lt;{declaration}&gt;]" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182845882656">
@@ -163,7 +166,7 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182845930320">
-      <property name="value" value="{" />
+      <property name="value" value="{&lt;{declaration}&gt;}" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182845932791">
@@ -198,6 +201,10 @@
     <property name="name" value="ReferenceDeclarationPart" />
     <property name="package" value="Parts" />
     <link role="extends" targetNodeId="1182511214735" resolveInfo="LinePart" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1182849973412">
+      <property name="name" value="optional" />
+      <link role="dataType" targetNodeId="1.1082983657063" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182845809628">
       <property name="role" value="type" />
       <link role="target" targetNodeId="1182510906722" resolveInfo="NodeTypeDeclaration" />
@@ -224,7 +231,7 @@
       <link role="target" targetNodeId="1182845659293" resolveInfo="ReferenceDeclarationPart" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182846208277">
-      <property name="value" value="&lt;" />
+      <property name="value" value="&lt;&lt;{declaration}&gt;&gt;" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182846211419">

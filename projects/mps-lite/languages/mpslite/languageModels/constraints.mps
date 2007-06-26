@@ -4,10 +4,13 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
-  <language namespace="jetbrains.mps.quotation" />
-  <maxImportIndex value="2" />
+  <language namespace="jetbrains.mps.bootstrap.helgins" />
+  <language namespace="jetbrains.mpslite" />
+  <language namespace="jetbrains.mps.core" />
+  <maxImportIndex value="3" />
   <import index="1" modelUID="jetbrains.mpslite.structure" />
   <import index="2" modelUID="jetbrains.mps.smodel.search@java_stub" />
+  <import index="3" modelUID="jetbrains.mpslite.common" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1182844454978">
     <property name="package" value="Parts" />
     <link role="concept" targetNodeId="1.1182513065381" />
@@ -511,16 +514,6 @@
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1182847091939">
     <link role="concept" targetNodeId="1.1182511699557" />
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1182847097536">
-      <property name="name" value="getCorrespondingProperty" />
-      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1182847099287" />
-      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1182847097538">
-        <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1182847104179">
-          <node role="condition" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1182847105572" />
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1182847279405" />
-        </node>
-      </node>
-    </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1182847091940">
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1182847091941" />
     </node>

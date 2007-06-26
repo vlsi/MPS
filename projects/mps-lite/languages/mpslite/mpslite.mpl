@@ -16,7 +16,9 @@
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mpslite" />
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mpslite" />
   </models>
-  <module />
+  <module>
+    <moduleRoot path="${mps_home}\languages\helgins\languages\quotation\quotation.mpl" />
+  </module>
   <accessoryModels>
     <model modelUID="jetbrains.mpslite.common" />
   </accessoryModels>

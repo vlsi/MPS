@@ -117,6 +117,38 @@
       <property name="name" value="Expression" />
       <property name="package" value="Expressions" />
     </node>
+    <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182848730161">
+      <property name="name" value="BinaryExpression" />
+      <link role="extends" targetNodeId="1182840584601" resolveInfo="Expression" />
+      <node role="line" type="jetbrains.mpslite.Line" id="1182848739585">
+        <node role="linePart" type="jetbrains.mpslite.ChildDeclarationPart" id="1182848742150">
+          <property name="name" value="left" />
+          <link role="type" targetNodeId="1182840584601" resolveInfo="Expression" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182848748136">
+          <property name="text" value="sign" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.ChildDeclarationPart" id="1182848750591">
+          <property name="name" value="right" />
+          <link role="type" targetNodeId="1182840584601" resolveInfo="Expression" />
+        </node>
+      </node>
+    </node>
+    <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182848735131">
+      <property name="name" value="PlusExpression" />
+      <link role="extends" targetNodeId="1182848730161" resolveInfo="BinaryExpression" />
+      <node role="line" type="jetbrains.mpslite.Line" id="1182848754389">
+        <node role="linePart" type="jetbrains.mpslite.ChildReferencePart" id="1182848950983">
+          <link role="declaration" targetNodeId="1182848742150" resolveInfo="left" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182848954906">
+          <property name="text" value="+" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.ChildReferencePart" id="1182848958299">
+          <link role="declaration" targetNodeId="1182848750591" resolveInfo="right" />
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mpslite.NodeTypeDeclarations" id="1182842694872">
     <property name="name" value="Common" />
@@ -135,6 +167,7 @@
       <node role="line" type="jetbrains.mpslite.Line" id="1182842708656">
         <node role="linePart" type="jetbrains.mpslite.ChildDeclarationPart" id="1182842708657">
           <property name="name" value="type" />
+          <property name="many" value="false" />
           <link role="type" targetNodeId="1182842733306" resolveInfo="Type" />
         </node>
         <node role="linePart" type="jetbrains.mpslite.PropertyDeclarationPart" id="1182842708658">
