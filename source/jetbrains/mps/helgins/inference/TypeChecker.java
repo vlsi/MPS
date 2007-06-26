@@ -3,7 +3,6 @@ package jetbrains.mps.helgins.inference;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.helgins.runtime.RuntimeSupport;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
-import jetbrains.mps.helgins.evaluator.QuotationEvaluator;
 import jetbrains.mps.helgins.structure.*;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.Status;
@@ -53,7 +52,6 @@ public class TypeChecker {
   private Map<SNode, SNode> myMainContext = new HashMap<SNode, SNode>();
   private Stack<EquationManager> myEquationManagersStack = new Stack<EquationManager>();
   private SubtypingManager mySubtypingManager;
-  private QuotationEvaluator myQuotationEvaluator;
   private RuntimeSupport myRuntimeSupport;
   private RulesManager myRulesManager;
   private boolean myUsedForBLCompletion = true;
@@ -62,7 +60,6 @@ public class TypeChecker {
   public TypeChecker() {
     myEquationManagersStack.push(new EquationManager(this));
     mySubtypingManager = new SubtypingManager(this);
-    myQuotationEvaluator = new QuotationEvaluator(this);
     myRuntimeSupport = new RuntimeSupport(this);
     myRulesManager = new RulesManager(this);
   }
@@ -83,9 +80,6 @@ public class TypeChecker {
     return mySubtypingManager;
   }
 
-  public QuotationEvaluator getQuotationEvaluator() {
-    return myQuotationEvaluator;
-  }
 
   public RuntimeSupport getRuntimeSupport() {
     return myRuntimeSupport;
@@ -267,7 +261,7 @@ public class TypeChecker {
         try {
           rule.applyRule(node);
         } finally {
-          Statistics.getStatistic(Statistics.HELGINS).add(rule.getClass().getName(), System.currentTimeMillis() - t1, true);
+     //     Statistics.getStatistic(Statistics.HELGINS).add(rule.getClass().getName(), System.currentTimeMillis() - t1, true);
         }
       }
     }

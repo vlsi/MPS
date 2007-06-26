@@ -70,21 +70,6 @@ public class GoToRulesAction extends MPSAction {
         rules.addAll(helginsDescriptor.getSModel().getRoots(new Condition<SNode>() {
           public boolean met(SNode n) {
             INodeAdapter object = BaseAdapter.fromNode(n);
-            AnalyzedTermDeclaration analyzedTermDeclaration = null;
-            if (object instanceof Rule) {
-              analyzedTermDeclaration = ((Rule)object).getApplicableNodes().get(0);
-            }
-            if (object instanceof SubtypingRule) {
-              analyzedTermDeclaration = ((SubtypingRule)object).getApplicableNode();
-            }
-            if (object instanceof SupertypingRule) {
-              analyzedTermDeclaration = ((SupertypingRule)object).getApplicableNode();
-            }
-           
-            if (maybeApplicable(conceptDeclaration, analyzedTermDeclaration, operationContext.getScope())) {
-              return true;
-            }
-
             if (object instanceof AbstractRule) {
               AbstractRule rule = (AbstractRule) object;
               return (maybeApplicable_new(conceptDeclaration, rule.getApplicableNode(), operationContext.getScope()));
@@ -127,23 +112,6 @@ public class GoToRulesAction extends MPSAction {
       return SModelUtil_new.isAssignableConcept(conceptDeclaration, conceptReference.getConcept());
     } else if (applicableNode instanceof PatternCondition) {
       BaseConcept baseConcept = ((PatternCondition)applicableNode).getPattern().getPatternNode();
-      if (baseConcept == null) return false;
-      return SModelUtil_new.isAssignableConcept(conceptDeclaration, baseConcept.getConceptDeclarationAdapter());
-    }
-    return false;
-  }
-
-  private static boolean maybeApplicable(ConceptDeclaration conceptDeclaration, AnalyzedTermDeclaration analyzedTermDeclaration, IScope scope) {
-    if (analyzedTermDeclaration == null) return false;
-    VariableCondition condition = analyzedTermDeclaration.getCondition();
-    if (condition instanceof ConceptReference) {
-      ConceptReference conceptReference = (ConceptReference)condition;
-      return SModelUtil_new.isAssignableConcept(conceptDeclaration, conceptReference.getConcept());
-    } else if (condition instanceof QueryPattern) {
-      QueryPattern queryPattern = (QueryPattern)condition;
-      PatternExpression expression = queryPattern.getPattern();
-      if (expression == null) return false;
-      BaseConcept baseConcept = expression.getPatternNode();
       if (baseConcept == null) return false;
       return SModelUtil_new.isAssignableConcept(conceptDeclaration, baseConcept.getConceptDeclarationAdapter());
     }
