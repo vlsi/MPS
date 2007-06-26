@@ -703,7 +703,7 @@ public class TemplateGenUtil {
 
       return false;
     } finally {
-      Statistics.add(mappingRule.getModel().getLongName() + "." + methodName, System.currentTimeMillis() - t1, res);
+      Statistics.getStatistic(Statistics.TPL).add(mappingRule.getModel().getLongName() + "." + methodName, System.currentTimeMillis() - t1, res);
     }
   }
 

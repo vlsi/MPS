@@ -86,7 +86,7 @@ public class GenerationSession implements IGenerationSession {
                                         final IGenerationScript script) throws Exception {
     GenerationStatus status;
 
-    Statistics.clear();
+    Statistics.clearAll();
 
     status = script.doGenerate(new IGenerationScriptContext() {
       public GenerationStatus doGenerate(@NotNull SModelDescriptor inputModel,
@@ -122,6 +122,7 @@ public class GenerationSession implements IGenerationSession {
           }
           if (status.getOutputModel() == null) {
             System.err.println("Oy vey");
+            break;
           }
           inputModel = status.getOutputModel().getModelDescriptor();
         }

@@ -20,6 +20,7 @@ import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.Hack;
+import jetbrains.mps.generator.template.Statistics;
 import jetbrains.mpswiki.queryLanguage.evaluator.ConditionMatcher;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -262,7 +263,12 @@ public class TypeChecker {
     Set<InferenceRule_Runtime> newRules = myRulesManager.getInferenceRules(node);
     if (newRules != null) {
       for (InferenceRule_Runtime rule : newRules) {
-        rule.applyRule(node);
+        long t1 = System.currentTimeMillis();
+        try {
+          rule.applyRule(node);
+        } finally {
+          Statistics.getStatistic(Statistics.HELGINS).add(rule.getClass().getName(), System.currentTimeMillis() - t1, true);
+        }
       }
     }
 

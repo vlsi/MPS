@@ -493,7 +493,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
         status = generationSession.generateModel(sourceModelDescriptor, targetLanguage, script);
         if (isDumpStatistics()) {
-          Statistics.dump();
+          Statistics.dumpAll();
         }
 
         checkMonitorCanceled(progress);
