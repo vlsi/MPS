@@ -124,8 +124,8 @@
       <property name="name" value="CompilationUnit" />
       <node role="line" type="jetbrains.mpslite.Line" id="1182842708653">
         <node role="linePart" type="jetbrains.mpslite.ChildDeclarationPart" id="1182842708654">
-          <property name="many" value="true" />
           <property name="name" value="function" />
+          <property name="many" value="true" />
           <link role="type" targetNodeId="1182842708655" resolveInfo="Function" />
         </node>
       </node>
@@ -145,8 +145,8 @@
           <property name="text" value="(" />
         </node>
         <node role="linePart" type="jetbrains.mpslite.ChildDeclarationPart" id="1182842708660">
-          <property name="many" value="true" />
           <property name="name" value="param" />
+          <property name="many" value="true" />
           <link role="type" targetNodeId="1182842749522" resolveInfo="ParameterDeclaration" />
         </node>
         <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182842708661">
@@ -173,8 +173,8 @@
       <property name="name" value="StatementList" />
       <node role="line" type="jetbrains.mpslite.Line" id="1182842708669">
         <node role="linePart" type="jetbrains.mpslite.ChildDeclarationPart" id="1182842708670">
-          <property name="many" value="true" />
           <property name="name" value="statement" />
+          <property name="many" value="true" />
           <link role="type" targetNodeId="1182840446827" resolveInfo="Statement" />
         </node>
       </node>

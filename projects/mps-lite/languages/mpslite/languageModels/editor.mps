@@ -337,10 +337,12 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapDeclaration" id="1182843354789">
     <property name="name" value="_Line_Actions" />
     <property name="package" value="Parts" />
+    <property name="everyModel" value="false" />
     <link role="applicableConcept" targetNodeId="1.1182511208797" />
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1182843367478">
       <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1182843367479">
         <property name="keycode" value="VK_ENTER" />
+        <property name="modifiers" value="ctrl" />
       </node>
       <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_ExecuteFunction" id="1182843367480">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1182843367481">

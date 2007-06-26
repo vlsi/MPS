@@ -10,6 +10,6 @@ public class _Line_Actions extends EditorCellKeyMap {
   public  _Line_Actions() {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
-    this.putAction("any", "VK_ENTER", new _Line_Actions_Action0());
+    this.putAction("ctrl", "VK_ENTER", new _Line_Actions_Action0());
   }
 }
