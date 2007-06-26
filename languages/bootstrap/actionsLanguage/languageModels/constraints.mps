@@ -287,7 +287,21 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1180142055510">
               <node role="expression" type="jetbrains.mps.bootstrap.helgins.Quotation" id="1180142060594">
                 <node role="quotedNode" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListType" id="1180142064489">
-                  <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.SConceptType" id="1180142069665" />
+                  <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.SConceptType" id="1180142069665">
+                    <node role="referenceAntiquotation$link_attribute$conceptDeclaraton" type="jetbrains.mps.bootstrap.helgins.ReferenceAntiquotation" id="1182882890621">
+                      <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1182882923749">
+                        <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1182882927596">
+                          <link role="link" targetNodeId="1.1177333551023" />
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeTypeCastExpression" id="1182882918278">
+                          <link role="concept" targetNodeId="1.1177323996388" />
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1182882916261">
+                            <link role="variableDeclaration" targetNodeId="1179453383820" resolveInfo="ancestor" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
