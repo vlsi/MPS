@@ -117,6 +117,16 @@
       <property name="name" value="Expression" />
       <property name="package" value="Expressions" />
     </node>
+    <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182850929255">
+      <property name="name" value="VariableReference" />
+      <link role="extends" targetNodeId="1182840584601" resolveInfo="Expression" />
+      <node role="line" type="jetbrains.mpslite.Line" id="1182850935896">
+        <node role="linePart" type="jetbrains.mpslite.ReferenceDeclarationPart" id="1182850940742">
+          <property name="name" value="variable" />
+          <link role="type" targetNodeId="1182842749525" resolveInfo="VariableDeclaration" />
+        </node>
+      </node>
+    </node>
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182848730161">
       <property name="name" value="BinaryExpression" />
       <link role="extends" targetNodeId="1182840584601" resolveInfo="Expression" />
