@@ -273,6 +273,177 @@
         </node>
       </node>
     </node>
+    <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182969317058">
+      <property name="name" value="BinaryExpression" />
+      <link role="extends" targetNodeId="1182966285571" resolveInfo="Expression" />
+      <node role="line" type="jetbrains.mpslite.Line" id="1182969322965">
+        <node role="linePart" type="jetbrains.mpslite.ChildDeclarationPart" id="1182969324810">
+          <property name="name" value="left" />
+          <link role="type" targetNodeId="1182966285571" resolveInfo="Expression" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182969329593">
+          <property name="text" value="sign" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.ChildDeclarationPart" id="1182969330673">
+          <property name="name" value="right" />
+          <link role="type" targetNodeId="1182966285571" resolveInfo="Expression" />
+        </node>
+      </node>
+    </node>
+    <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182969334533">
+      <property name="name" value="PlusExpression" />
+      <link role="extends" targetNodeId="1182969317058" resolveInfo="BinaryExpression" />
+      <node role="line" type="jetbrains.mpslite.Line" id="1182969339644">
+        <node role="linePart" type="jetbrains.mpslite.ChildReferencePart" id="1182969444601">
+          <link role="declaration" targetNodeId="1182969324810" resolveInfo="left" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182969449400">
+          <property name="text" value="+" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.ChildReferencePart" id="1182969451480">
+          <link role="declaration" targetNodeId="1182969330673" resolveInfo="right" />
+        </node>
+      </node>
+    </node>
+    <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182969456013">
+      <property name="name" value="MinusExpression" />
+      <link role="extends" targetNodeId="1182969317058" resolveInfo="BinaryExpression" />
+      <node role="line" type="jetbrains.mpslite.Line" id="1182969456014">
+        <node role="linePart" type="jetbrains.mpslite.ChildReferencePart" id="1182969456015">
+          <link role="declaration" targetNodeId="1182969324810" resolveInfo="left" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182969456016">
+          <property name="text" value="*" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.ChildReferencePart" id="1182969456017">
+          <link role="declaration" targetNodeId="1182969330673" resolveInfo="right" />
+        </node>
+      </node>
+    </node>
+    <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182969465559">
+      <property name="name" value="MulExpression" />
+      <link role="extends" targetNodeId="1182969317058" resolveInfo="BinaryExpression" />
+      <node role="line" type="jetbrains.mpslite.Line" id="1182969465560">
+        <node role="linePart" type="jetbrains.mpslite.ChildReferencePart" id="1182969465561">
+          <link role="declaration" targetNodeId="1182969324810" resolveInfo="left" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182969465562">
+          <property name="text" value="*" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.ChildReferencePart" id="1182969465563">
+          <link role="declaration" targetNodeId="1182969330673" resolveInfo="right" />
+        </node>
+      </node>
+    </node>
+    <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182969470407">
+      <property name="name" value="DivExpression" />
+      <link role="extends" targetNodeId="1182969317058" resolveInfo="BinaryExpression" />
+      <node role="line" type="jetbrains.mpslite.Line" id="1182969470408">
+        <node role="linePart" type="jetbrains.mpslite.ChildReferencePart" id="1182969470409">
+          <link role="declaration" targetNodeId="1182969324810" resolveInfo="left" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182969470410">
+          <property name="text" value="/" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.ChildReferencePart" id="1182969470411">
+          <link role="declaration" targetNodeId="1182969330673" resolveInfo="right" />
+        </node>
+      </node>
+    </node>
+    <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182969474844">
+      <property name="name" value="AssignmentExpression" />
+      <link role="extends" targetNodeId="1182969317058" resolveInfo="BinaryExpression" />
+      <node role="line" type="jetbrains.mpslite.Line" id="1182969474845">
+        <node role="linePart" type="jetbrains.mpslite.ChildReferencePart" id="1182969474846">
+          <link role="declaration" targetNodeId="1182969324810" resolveInfo="left" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182969474847">
+          <property name="text" value="=" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.ChildReferencePart" id="1182969474848">
+          <link role="declaration" targetNodeId="1182969330673" resolveInfo="right" />
+        </node>
+      </node>
+    </node>
+    <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182969485238">
+      <property name="name" value="EqualsExpression" />
+      <link role="extends" targetNodeId="1182969317058" resolveInfo="BinaryExpression" />
+      <node role="line" type="jetbrains.mpslite.Line" id="1182969485239">
+        <node role="linePart" type="jetbrains.mpslite.ChildReferencePart" id="1182969485240">
+          <link role="declaration" targetNodeId="1182969324810" resolveInfo="left" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182969485241">
+          <property name="text" value="==" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.ChildReferencePart" id="1182969485242">
+          <link role="declaration" targetNodeId="1182969330673" resolveInfo="right" />
+        </node>
+      </node>
+    </node>
+    <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182969490290">
+      <property name="name" value="NotEqualsExpression" />
+      <link role="extends" targetNodeId="1182969317058" resolveInfo="BinaryExpression" />
+      <node role="line" type="jetbrains.mpslite.Line" id="1182969490291">
+        <node role="linePart" type="jetbrains.mpslite.ChildReferencePart" id="1182969490292">
+          <link role="declaration" targetNodeId="1182969324810" resolveInfo="left" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182969490293">
+          <property name="text" value="!=" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.ChildReferencePart" id="1182969490294">
+          <link role="declaration" targetNodeId="1182969330673" resolveInfo="right" />
+        </node>
+      </node>
+    </node>
+    <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182969716964">
+      <property name="name" value="InstanceMethodCallExpression" />
+      <link role="extends" targetNodeId="1182966285571" resolveInfo="Expression" />
+      <node role="line" type="jetbrains.mpslite.Line" id="1182969726512">
+        <node role="linePart" type="jetbrains.mpslite.ChildDeclarationPart" id="1182969745144">
+          <property name="name" value="instance" />
+          <link role="type" targetNodeId="1182966285571" resolveInfo="Expression" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182969748912">
+          <property name="text" value="." />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.ReferenceDeclarationPart" id="1182969728654">
+          <property name="name" value="method" />
+          <link role="type" targetNodeId="1182956481679" resolveInfo="InstanceMethod" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182969735000">
+          <property name="text" value="(" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182969738502">
+          <property name="text" value=")" />
+        </node>
+      </node>
+    </node>
+    <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182969841552">
+      <property name="name" value="NumberExpression" />
+      <link role="extends" targetNodeId="1182966285571" resolveInfo="Expression" />
+      <node role="line" type="jetbrains.mpslite.Line" id="1182969848709">
+        <node role="linePart" type="jetbrains.mpslite.PropertyDeclarationPart" id="1182969849632">
+          <property name="name" value="number" />
+          <link role="type" targetNodeId="1.1182511916107" />
+        </node>
+      </node>
+    </node>
+    <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182969854711">
+      <property name="name" value="StringLiteralExpression" />
+      <link role="extends" targetNodeId="1182966285571" resolveInfo="Expression" />
+      <node role="line" type="jetbrains.mpslite.Line" id="1182969870900">
+        <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182969872714">
+          <property name="text" value="&quot;" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.PropertyDeclarationPart" id="1182969874779">
+          <property name="name" value="text" />
+          <link role="type" targetNodeId="1.1182511871037" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182969878640">
+          <property name="text" value="&quot;" />
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
