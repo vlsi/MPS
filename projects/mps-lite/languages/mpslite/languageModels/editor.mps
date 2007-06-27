@@ -62,6 +62,9 @@
         <property name="vertical" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1182511263160" />
         <link role="keyMap" targetNodeId="1182843354789" resolveInfo="_Line_Actions" />
+        <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1182949641677">
+          <property name="text" value="&lt;parent text&gt;" />
+        </node>
       </node>
     </node>
   </node>
@@ -294,17 +297,6 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1182513149515">
         <property name="text" value="}" />
-        <link role="actionMap" targetNodeId="1182843155485" resolveInfo="_LinePart_RT" />
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1182513400665">
-    <property name="package" value="Parts" />
-    <link role="conceptDeclaration" targetNodeId="1.1182513387723" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1182513408948">
-      <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1182513411169">
-        <property name="text" value="&lt;parent text&gt;" />
         <link role="actionMap" targetNodeId="1182843155485" resolveInfo="_LinePart_RT" />
       </node>
     </node>

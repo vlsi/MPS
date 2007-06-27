@@ -236,17 +236,13 @@
       <property name="name" value="LocalVariableDeclaration" />
       <property name="package" value="Variables" />
       <link role="extends" targetNodeId="1182842749525" resolveInfo="VariableDeclaration" />
-      <node role="line" type="jetbrains.mpslite.Line" id="1182842749520">
-        <node role="linePart" type="jetbrains.mpslite.ParentTextPart" id="1182842749521" />
-      </node>
+      <node role="line" type="jetbrains.mpslite.Line" id="1182842749520" />
     </node>
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182842749522">
       <property name="name" value="ParameterDeclaration" />
       <property name="package" value="Variables" />
       <link role="extends" targetNodeId="1182842749525" resolveInfo="VariableDeclaration" />
-      <node role="line" type="jetbrains.mpslite.Line" id="1182842749523">
-        <node role="linePart" type="jetbrains.mpslite.ParentTextPart" id="1182842749524" />
-      </node>
+      <node role="line" type="jetbrains.mpslite.Line" id="1182842749523" />
     </node>
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182842749525">
       <property name="name" value="VariableDeclaration" />

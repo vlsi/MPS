@@ -178,15 +178,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182513387723">
-    <property name="name" value="ParentTextPart" />
-    <property name="package" value="Parts" />
-    <link role="extends" targetNodeId="1182511214735" resolveInfo="LinePart" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182844239509">
-      <property name="value" value="&lt;parent text&gt;" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182840239135">
     <property name="name" value="NodeTypeDeclarations" />
     <property name="rootable" value="true" />
