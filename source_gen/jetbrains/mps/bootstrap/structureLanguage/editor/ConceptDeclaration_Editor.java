@@ -258,7 +258,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "concept declaration"));
     editorCell.addEditorCell(this.createNameCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1087215312705");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createRowCell1(EditorContext context, SNode node) {
@@ -270,7 +269,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell1(context, node, "extends:"));
     editorCell.addEditorCell(this.createExtendsReferenceCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105726767723");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createRowCell2(EditorContext context, SNode node) {
@@ -282,7 +280,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell5(context, node, "is root:"));
     editorCell.addEditorCell(this.createRootableCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105726767729");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createContentArea(EditorContext context, SNode node) {
@@ -320,7 +317,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConceptLinkDeclarationList(context, node));
     editorCell.addEditorCell(this.createSeparator7(context, node, ""));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105726747113");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createRowCell(EditorContext context, SNode node) {
@@ -332,7 +328,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createIndent(context, node, "    "));
     editorCell.addEditorCell(this.createContentArea(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105726622986");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createNodeBox(EditorContext context, SNode node) {
@@ -345,7 +340,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createSeparator(context, node, ""));
     editorCell.addEditorCell(this.createRowCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1087215312704");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createRowCell3(EditorContext context, SNode node) {
@@ -358,7 +352,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createIconPathCell(context, node));
     editorCell.addEditorCell(EditorCell_Component.createComponentCell(context, node, ConceptDeclaration_Editor._QueryFunction_JComponent_1176492331666(node, context), "_1160492829178"));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1160492829175");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createColumnCell(EditorContext context, SNode node) {
@@ -370,7 +363,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCellAlternation(context, node));
     editorCell.addEditorCell(this.createRowCell3(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1160492784517");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {

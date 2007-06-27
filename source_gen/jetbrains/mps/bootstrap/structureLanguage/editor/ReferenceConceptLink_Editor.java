@@ -43,7 +43,6 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "="));
     editorCell.addEditorCell(this.createTargetReferenceCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105738878701");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {

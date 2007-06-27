@@ -6,10 +6,10 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import java.awt.Color;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
@@ -22,12 +22,14 @@ public class ReferenceConceptLinkDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setDrawBorder(false);
+    editorCell.setFontType(MPSFonts.BOLD);
   }
   private static void setupNameCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setDrawBorder(false);
+    editorCell.setFontType(MPSFonts.BOLD);
   }
   private static void setupTargetTypeReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setDrawBorder(false);
@@ -50,7 +52,6 @@ public class ReferenceConceptLinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell1(context, node, "target concept:"));
     editorCell.addEditorCell(this.createTargetTypeReferenceCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1137532689744");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {

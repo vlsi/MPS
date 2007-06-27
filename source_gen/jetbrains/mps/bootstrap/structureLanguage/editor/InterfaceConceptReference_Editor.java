@@ -34,7 +34,6 @@ public class InterfaceConceptReference_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createIntfcReferenceCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1169127650439");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createIntfcReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {

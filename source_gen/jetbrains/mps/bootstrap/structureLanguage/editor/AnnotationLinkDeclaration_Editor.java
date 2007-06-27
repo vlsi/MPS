@@ -74,7 +74,6 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell4(context, node, "stereotype:"));
     editorCell.addEditorCell(this.createStereotypeCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1149608664341");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createColumnCell(EditorContext context, SNode node) {
@@ -87,7 +86,6 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell1(context, node, "  "));
     editorCell.addEditorCell(this.createRowCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1149608637030");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {

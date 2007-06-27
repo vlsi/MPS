@@ -155,7 +155,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "interface concept declaration"));
     editorCell.addEditorCell(this.createNameCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1169126008914");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createContentArea(EditorContext context, SNode node) {
@@ -189,7 +188,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConceptLinkDeclarationList(context, node));
     editorCell.addEditorCell(this.createSeparator6(context, node, ""));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1169126008920");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createRowCell(EditorContext context, SNode node) {
@@ -201,7 +199,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createIndent(context, node, "    "));
     editorCell.addEditorCell(this.createContentArea(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1169126008918");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createNodeBox(EditorContext context, SNode node) {
@@ -214,7 +211,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createSeparator(context, node, ""));
     editorCell.addEditorCell(this.createRowCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1169126008913");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {

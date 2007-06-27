@@ -6,10 +6,10 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import java.awt.Color;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
@@ -21,6 +21,7 @@ public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
 
   private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setDrawBorder(false);
+    editorCell.setFontType(MPSFonts.BOLD);
   }
   private static void setupNameCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setDrawBorder(false);
@@ -41,7 +42,6 @@ public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     editorCell.addEditorCell(this.createConstantCell(context, node, "integer"));
     editorCell.addEditorCell(this.createNameCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105726994976");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {

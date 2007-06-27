@@ -9,10 +9,10 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import java.awt.Color;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -35,13 +35,16 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
   private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
+    editorCell.setFontType(MPSFonts.ITALIC);
   }
   private static void setupExternalValueCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setDrawBorder(false);
+    editorCell.setFontType(MPSFonts.BOLD);
   }
   private static void setupConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
+    editorCell.setFontType(MPSFonts.ITALIC);
   }
   private static void setupInternalValueCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setDrawBorder(false);
@@ -49,6 +52,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
   private static void setupConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
+    editorCell.setFontType(MPSFonts.PLAIN);
   }
   private static void setupRowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setDrawBorder(false);
@@ -72,7 +76,6 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createConstantCell2(context, node, "    (default)"));
     }
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083925414250");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {

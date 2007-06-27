@@ -6,6 +6,7 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import java.awt.Color;
@@ -14,7 +15,6 @@ import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 
@@ -29,6 +29,7 @@ public class StringConceptProperty_Editor extends DefaultNodeEditor {
   }
   private static void setupValueCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setDrawBorder(false);
+    editorCell.setFontType(MPSFonts.BOLD);
   }
   private static void setupNodeBox(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setDrawBorder(false);
@@ -47,7 +48,6 @@ public class StringConceptProperty_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "="));
     editorCell.addEditorCell(this.createValueCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105727525373");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {

@@ -46,7 +46,6 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "="));
     editorCell.addEditorCell(this.createValueCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105727243426");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
