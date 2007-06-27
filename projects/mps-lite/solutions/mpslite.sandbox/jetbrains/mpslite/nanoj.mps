@@ -89,9 +89,23 @@
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182956598488">
       <property name="name" value="Type" />
     </node>
+    <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182958613287">
+      <property name="name" value="ClassifierType" />
+      <link role="extends" targetNodeId="1182956598488" resolveInfo="Type" />
+      <node role="line" type="jetbrains.mpslite.Line" id="1182958668915">
+        <node role="linePart" type="jetbrains.mpslite.ReferenceDeclarationPart" id="1182958670869">
+          <property name="name" value="classifier" />
+          <link role="type" targetNodeId="1182956307043" resolveInfo="Classifier" />
+        </node>
+      </node>
+    </node>
+    <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182958625632">
+      <property name="name" value="PrimitiveType" />
+      <link role="extends" targetNodeId="1182956598488" resolveInfo="Type" />
+    </node>
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182956613900">
       <property name="name" value="VoidType" />
-      <link role="extends" targetNodeId="1182956598488" resolveInfo="Type" />
+      <link role="extends" targetNodeId="1182958625632" resolveInfo="PrimitiveType" />
       <node role="line" type="jetbrains.mpslite.Line" id="1182956616822">
         <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182956619449">
           <property name="text" value="void" />
@@ -100,7 +114,7 @@
     </node>
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182956624544">
       <property name="name" value="ByteType" />
-      <link role="extends" targetNodeId="1182956598488" resolveInfo="Type" />
+      <link role="extends" targetNodeId="1182958625632" resolveInfo="PrimitiveType" />
       <node role="line" type="jetbrains.mpslite.Line" id="1182956628514">
         <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182956632532">
           <property name="text" value="byte" />
@@ -109,7 +123,7 @@
     </node>
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182956634986">
       <property name="name" value="CharType" />
-      <link role="extends" targetNodeId="1182956598488" resolveInfo="Type" />
+      <link role="extends" targetNodeId="1182958625632" resolveInfo="PrimitiveType" />
       <node role="line" type="jetbrains.mpslite.Line" id="1182956640737">
         <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182956641957">
           <property name="text" value="char" />
@@ -118,7 +132,7 @@
     </node>
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182956670944">
       <property name="name" value="ShortType" />
-      <link role="extends" targetNodeId="1182956598488" resolveInfo="Type" />
+      <link role="extends" targetNodeId="1182958625632" resolveInfo="PrimitiveType" />
       <node role="line" type="jetbrains.mpslite.Line" id="1182956675555">
         <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182956677446">
           <property name="text" value="short" />
@@ -127,7 +141,7 @@
     </node>
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182956600677">
       <property name="name" value="IntType" />
-      <link role="extends" targetNodeId="1182956598488" resolveInfo="Type" />
+      <link role="extends" targetNodeId="1182958625632" resolveInfo="PrimitiveType" />
       <node role="line" type="jetbrains.mpslite.Line" id="1182956609725">
         <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182956612164">
           <property name="text" value="int" />
@@ -136,7 +150,7 @@
     </node>
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182956620950">
       <property name="name" value="LongType" />
-      <link role="extends" targetNodeId="1182956598488" resolveInfo="Type" />
+      <link role="extends" targetNodeId="1182958625632" resolveInfo="PrimitiveType" />
       <node role="line" type="jetbrains.mpslite.Line" id="1182956662005">
         <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182956663209">
           <property name="text" value="long" />
@@ -145,7 +159,7 @@
     </node>
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182956682010">
       <property name="name" value="FloatType" />
-      <link role="extends" targetNodeId="1182956598488" resolveInfo="Type" />
+      <link role="extends" targetNodeId="1182958625632" resolveInfo="PrimitiveType" />
       <node role="line" type="jetbrains.mpslite.Line" id="1182956689105">
         <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182956692871">
           <property name="text" value="float" />
@@ -154,7 +168,7 @@
     </node>
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182956695013">
       <property name="name" value="DoubleType" />
-      <link role="extends" targetNodeId="1182956598488" resolveInfo="Type" />
+      <link role="extends" targetNodeId="1182958625632" resolveInfo="PrimitiveType" />
       <node role="line" type="jetbrains.mpslite.Line" id="1182956700483">
         <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182956701812">
           <property name="text" value="double" />
