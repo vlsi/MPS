@@ -4,8 +4,8 @@ package jetbrains.mps.bootstrap.structureLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
@@ -17,15 +17,28 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class PrimitiveDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
+  private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupNameCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupHeaderRow(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupNodeBox(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setDrawBorder(false);
+  }
+
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createNodeBox(context, node);
   }
   public EditorCell createHeaderRow(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    PrimitiveDataTypeDeclaration_Editor.setupHeaderRow(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -37,10 +50,8 @@ public class PrimitiveDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createNodeBox(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
+    PrimitiveDataTypeDeclaration_Editor.setupNodeBox(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);

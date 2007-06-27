@@ -4,18 +4,18 @@ package jetbrains.mps.bootstrap.structureLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
+import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.util.Macros;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.util.Macros;
+import jetbrains.mps.smodel.IScope;
 import java.io.File;
 import javax.swing.JComponent;
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.EditorCell;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Component;
@@ -40,6 +40,178 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   /* package */AbstractCellListHandler myConceptPropertyDeclarationListHandler_conceptPropertyDeclarationList_;
   /* package */AbstractCellListHandler myConceptLinkDeclarationListHandler_conceptLinkDeclarationList_;
 
+  private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupNameCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupHeaderRow(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupSeparator(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupIndent(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupExtendsReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupRowCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupConstantCell3(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupImplementsList(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupConstantCell4(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupConstantCell5(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupRootableCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupRowCell2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupSeparator1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupConstantCell6(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupPropertyDeclarationList(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupSeparator2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupConstantCell7(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupLinkDeclarationList(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupSeparator3(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupConstantCell8(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupLinkDeclarationList1(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupConstantCell9(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setSelectable(false);
+  }
+  private static void setupConstantCell10(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupConceptPropertyList(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupSeparator4(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupConstantCell11(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupConceptLinkList(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupSeparator5(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupConstantCell12(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupConceptPropertyDeclarationList(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupSeparator6(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupConstantCell13(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupConceptLinkDeclarationList(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupSeparator7(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupContentArea(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupRowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupNodeBox(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupImageCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupConstantCell14(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupCellAlternation(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupConstantCell15(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupIconPathCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupCellModel_JComponent(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupRowCell3(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setDrawBorder(false);
+  }
+  public static String _image_provider_1161165534970(SNode node, EditorContext editorContext) {
+    Language language = SModelUtil_new.getDeclaringLanguage(((ConceptDeclaration)SNodeOperations.getAdapter(node)), editorContext.getScope());
+    String iconPath = SPropertyOperations.getString(node, "iconPath");
+    return Macros.languageDescriptor().expandPath(iconPath, language.getDescriptorFile());
+  }
   public static boolean _QueryFunction_NodeCondition_1161165530948(SNode node, IScope scope) {
     Language l = SModelUtil_new.getDeclaringLanguage(((ConceptDeclaration)SNodeOperations.getAdapter(node)), scope);
     if(l == null) {
@@ -53,11 +225,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   }
   public static JComponent _QueryFunction_JComponent_1176492331666(SNode node, EditorContext editorContext) {
     return EditorUtil.createSelectIconButton(node, editorContext);
-  }
-  public static String _image_provider_1161165534970(SNode node, EditorContext editorContext) {
-    Language language = SModelUtil_new.getDeclaringLanguage(((ConceptDeclaration)SNodeOperations.getAdapter(node)), editorContext.getScope());
-    String iconPath = SPropertyOperations.getString(node, "iconPath");
-    return Macros.languageDescriptor().expandPath(iconPath, language.getDescriptorFile());
   }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
@@ -84,10 +251,8 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createHeaderRow(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    ConceptDeclaration_Editor.setupHeaderRow(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -99,10 +264,8 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createRowCell1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    ConceptDeclaration_Editor.setupRowCell1(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -114,10 +277,8 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createRowCell2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    ConceptDeclaration_Editor.setupRowCell2(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -129,10 +290,8 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createContentArea(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    ConceptDeclaration_Editor.setupContentArea(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -170,10 +329,8 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    ConceptDeclaration_Editor.setupRowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -185,10 +342,8 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createNodeBox(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
+    ConceptDeclaration_Editor.setupNodeBox(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -201,10 +356,8 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createRowCell3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    ConceptDeclaration_Editor.setupRowCell3(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -217,10 +370,8 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createColumnCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
+    ConceptDeclaration_Editor.setupColumnCell(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
