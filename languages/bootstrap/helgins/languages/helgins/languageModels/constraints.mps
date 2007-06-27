@@ -5,7 +5,7 @@
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
-  <maxImportIndex value="8" />
+  <maxImportIndex value="10" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.helgins.structure" />
   <import index="2" modelUID="jetbrains.mps.smodel.search@java_stub" />
   <import index="3" modelUID="jetbrains.mps.bootstrap.helgins.search@java_stub" />
@@ -14,6 +14,8 @@
   <import index="6" modelUID="jetbrains.mps.patterns.util@java_stub" />
   <import index="7" modelUID="junit.framework@java_stub" />
   <import index="8" modelUID="jetbrains.mps.core.structure" />
+  <import index="9" modelUID="java.lang@java_stub" />
+  <import index="10" modelUID="java.io@java_stub" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1178192141173">
     <link role="concept" targetNodeId="1.1174989799417" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1178192141174">
@@ -915,6 +917,22 @@
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1182946652147">
                 <link role="variableDeclaration" targetNodeId="1182946652145" resolveInfo="correctType" />
+              </node>
+            </node>
+          </node>
+          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.BlockStatement" id="1182960238941">
+            <node role="statements" type="jetbrains.mps.baseLanguage.StatementList" id="1182960238942">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1182960262953">
+                <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1182960271930">
+                  <link role="baseMethodDeclaration" extResolveInfo="10.method ([Classifier]PrintStream).([InstanceMethodDeclaration]println((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
+                  <node role="instance" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1182960262954">
+                    <link role="classifier" extResolveInfo="9.[Classifier]System" />
+                    <link role="variableDeclaration" extResolveInfo="9.static field ([Classifier]System).([StaticFieldDeclaration]out : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [PrintStream]))" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1182960280297">
+                    <property name="value" value="ok" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
