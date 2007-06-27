@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mpslite">
+<language namespace="jetbrains.mpslite" pluginClass="jetbrains.mpslite.MPSLitePlugin">
   <structure>
     <model modelUID="jetbrains.mpslite.structure" />
   </structure>
