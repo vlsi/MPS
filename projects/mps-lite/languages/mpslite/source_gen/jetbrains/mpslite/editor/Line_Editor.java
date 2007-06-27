@@ -16,8 +16,10 @@ public class Line_Editor extends DefaultNodeEditor {
   /* package */AbstractCellListHandler myLinePartListHandler_linePartList_;
 
   private static void setupLinePartList(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setDrawBorder(false);
   }
   private static void setupRowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setDrawBorder(false);
   }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {

@@ -13,8 +13,10 @@ import jetbrains.mps.nodeEditor.EditorCell_Constant;
 public class IndentLinePart_Editor extends DefaultNodeEditor {
 
   private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setDrawBorder(false);
   }
   private static void setupRowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setDrawBorder(false);
   }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {

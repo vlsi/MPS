@@ -17,8 +17,10 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class ConstantLinePart_Editor extends DefaultNodeEditor {
 
   private static void setupTextCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setDrawBorder(false);
   }
   private static void setupRowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setDrawBorder(false);
   }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
