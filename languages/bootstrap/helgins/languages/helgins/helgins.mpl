@@ -37,6 +37,8 @@
       <mapping-priorities />
     </generator>
   </generators>
-  <classPath />
+  <classPath>
+    <entry path="${mps_home}\lib\junit\junit.jar" />
+  </classPath>
 </language>
 

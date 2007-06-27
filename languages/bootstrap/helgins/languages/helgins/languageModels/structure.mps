@@ -660,12 +660,6 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182937366968">
     <property name="name" value="HelginsJudgement" />
     <link role="extends" targetNodeId="1.1133920641626" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182937412610">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="term" />
-      <link role="target" targetNodeId="1.1133920641626" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182937420689">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="1" />
@@ -683,6 +677,11 @@
       <property name="role" value="judgement" />
       <link role="target" targetNodeId="1182937366968" resolveInfo="HelginsJudgement" />
     </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.AnnotationLinkDeclaration" id="1182950852687">
+    <property name="role" value="helginsJudgement" />
+    <link role="source" targetNodeId="1.1133920641626" />
+    <link role="target" targetNodeId="1182937366968" resolveInfo="HelginsJudgement" />
   </node>
 </model>
 
