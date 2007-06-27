@@ -4,7 +4,7 @@
   <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
-  <maxImportIndex value="16" />
+  <maxImportIndex value="19" />
   <import index="1" modelUID="jetbrains.mps.core.structure" />
   <import index="2" modelUID="jetbrains.mpslite.nanoj@1_0_1182955820226" />
   <import index="3" modelUID="jetbrains.mps.smodel@java_stub" />
@@ -21,122 +21,183 @@
   <import index="14" modelUID="jetbrains.mpslite.nanoj@1_0_1182958511502" />
   <import index="15" modelUID="jetbrains.mpslite.nanoj@1_0_1182958638113" />
   <import index="16" modelUID="jetbrains.mpslite.nanoj@1_0_1182958727364" />
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182958781079">
-    <property name="name" value="Classifier" />
+  <import index="17" modelUID="jetbrains.mpslite.nanoj@1_0_1182964941125" />
+  <import index="18" modelUID="jetbrains.mpslite.nanoj@1_0_1182966182734" />
+  <import index="19" modelUID="jetbrains.mpslite.nanoj@1_0_1182966424031" />
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182966437732">
+    <property name="name" value="ClassConcept" />
     <property name="package" value="Structure" />
     <property name="rootable" value="true" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182958781082">
+    <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182966437736">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="0..n" />
       <property name="role" value="method" />
-      <link role="target" targetNodeId="1182958781075" resolveInfo="InstanceMethod" />
+      <link role="target" targetNodeId="1182966437727" resolveInfo="InstanceMethod" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1182958781081">
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1182966437735">
       <property name="name" value="name" />
       <link role="dataType" targetNodeId="1.1082983041843" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182958781078">
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182966437730">
     <property name="name" value="BaseMethod" />
     <property name="package" value="Structure" />
     <property name="rootable" value="false" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182958781083">
+    <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182966437737">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="1" />
       <property name="role" value="type" />
-      <link role="target" targetNodeId="1182958781076" resolveInfo="Type" />
+      <link role="target" targetNodeId="1182966437728" resolveInfo="Type" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182958781085">
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182966437739">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="1" />
       <property name="role" value="body" />
-      <link role="target" targetNodeId="1182958781077" resolveInfo="StatementList" />
+      <link role="target" targetNodeId="1182966437729" resolveInfo="StatementList" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1182958781084">
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1182966437738">
       <property name="name" value="name" />
       <link role="dataType" targetNodeId="1.1082983041843" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182958781075">
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182966437727">
     <property name="name" value="InstanceMethod" />
     <property name="package" value="Structure" />
     <property name="rootable" value="false" />
-    <link role="extends" targetNodeId="1182958781078" resolveInfo="BaseMethod" />
+    <link role="extends" targetNodeId="1182966437730" resolveInfo="BaseMethod" />
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182958781077">
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182966437729">
     <property name="name" value="StatementList" />
     <property name="package" value="Structure" />
     <property name="rootable" value="false" />
+    <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182966437746">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="statement" />
+      <link role="target" targetNodeId="1182966437731" resolveInfo="Statement" />
+    </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182958781076">
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182966437728">
     <property name="name" value="Type" />
     <property name="package" value="Structure" />
     <property name="rootable" value="false" />
+    <link role="extends" targetNodeId="1.1133920641626" />
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182958781086">
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182966437747">
     <property name="name" value="ClassifierType" />
     <property name="package" value="Structure" />
     <property name="rootable" value="false" />
-    <link role="extends" targetNodeId="1182958781076" resolveInfo="Type" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182958781087">
+    <link role="extends" targetNodeId="1182966437728" resolveInfo="Type" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182966437748">
       <property name="sourceCardinality" value="1" />
       <property name="role" value="classifier" />
-      <link role="target" targetNodeId="1182958781079" resolveInfo="Classifier" />
+      <link role="target" targetNodeId="1182966437732" resolveInfo="ClassConcept" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182958781080">
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182966437733">
     <property name="name" value="PrimitiveType" />
     <property name="package" value="Structure" />
     <property name="rootable" value="false" />
-    <link role="extends" targetNodeId="1182958781076" resolveInfo="Type" />
+    <link role="extends" targetNodeId="1182966437728" resolveInfo="Type" />
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182958781088">
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182966437749">
     <property name="name" value="VoidType" />
     <property name="package" value="Structure" />
     <property name="rootable" value="false" />
-    <link role="extends" targetNodeId="1182958781080" resolveInfo="PrimitiveType" />
+    <link role="extends" targetNodeId="1182966437733" resolveInfo="PrimitiveType" />
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182958781089">
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182966437750">
     <property name="name" value="ByteType" />
     <property name="package" value="Structure" />
     <property name="rootable" value="false" />
-    <link role="extends" targetNodeId="1182958781080" resolveInfo="PrimitiveType" />
+    <link role="extends" targetNodeId="1182966437733" resolveInfo="PrimitiveType" />
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182958781090">
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182966437751">
     <property name="name" value="CharType" />
     <property name="package" value="Structure" />
     <property name="rootable" value="false" />
-    <link role="extends" targetNodeId="1182958781080" resolveInfo="PrimitiveType" />
+    <link role="extends" targetNodeId="1182966437733" resolveInfo="PrimitiveType" />
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182958781091">
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182966437752">
     <property name="name" value="ShortType" />
     <property name="package" value="Structure" />
     <property name="rootable" value="false" />
-    <link role="extends" targetNodeId="1182958781080" resolveInfo="PrimitiveType" />
+    <link role="extends" targetNodeId="1182966437733" resolveInfo="PrimitiveType" />
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182958781092">
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182966437753">
     <property name="name" value="IntType" />
     <property name="package" value="Structure" />
     <property name="rootable" value="false" />
-    <link role="extends" targetNodeId="1182958781080" resolveInfo="PrimitiveType" />
+    <link role="extends" targetNodeId="1182966437733" resolveInfo="PrimitiveType" />
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182958781093">
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182966437754">
     <property name="name" value="LongType" />
     <property name="package" value="Structure" />
     <property name="rootable" value="false" />
-    <link role="extends" targetNodeId="1182958781080" resolveInfo="PrimitiveType" />
+    <link role="extends" targetNodeId="1182966437733" resolveInfo="PrimitiveType" />
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182958781094">
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182966437755">
     <property name="name" value="FloatType" />
     <property name="package" value="Structure" />
     <property name="rootable" value="false" />
-    <link role="extends" targetNodeId="1182958781080" resolveInfo="PrimitiveType" />
+    <link role="extends" targetNodeId="1182966437733" resolveInfo="PrimitiveType" />
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182958781095">
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182966437756">
     <property name="name" value="DoubleType" />
     <property name="package" value="Structure" />
     <property name="rootable" value="false" />
-    <link role="extends" targetNodeId="1182958781080" resolveInfo="PrimitiveType" />
+    <link role="extends" targetNodeId="1182966437733" resolveInfo="PrimitiveType" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182966437731">
+    <property name="name" value="Statement" />
+    <property name="package" value="Structure" />
+    <property name="rootable" value="false" />
+    <link role="extends" targetNodeId="1.1133920641626" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182966437740">
+    <property name="name" value="IfStatement" />
+    <property name="package" value="Structure" />
+    <property name="rootable" value="false" />
+    <link role="extends" targetNodeId="1182966437731" resolveInfo="Statement" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182966437741">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="condition" />
+      <link role="target" targetNodeId="1182966437734" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182966437742">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="body" />
+      <link role="target" targetNodeId="1182966437729" resolveInfo="StatementList" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182966437743">
+    <property name="name" value="WhileStatement" />
+    <property name="package" value="Structure" />
+    <property name="rootable" value="false" />
+    <link role="extends" targetNodeId="1182966437731" resolveInfo="Statement" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182966437744">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="condition" />
+      <link role="target" targetNodeId="1182966437734" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182966437745">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="body" />
+      <link role="target" targetNodeId="1182966437729" resolveInfo="StatementList" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182966437734">
+    <property name="name" value="Expression" />
+    <property name="package" value="Structure" />
+    <property name="rootable" value="false" />
+    <link role="extends" targetNodeId="1.1133920641626" />
   </node>
 </model>
 
