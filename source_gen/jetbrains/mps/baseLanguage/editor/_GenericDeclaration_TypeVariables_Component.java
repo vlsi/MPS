@@ -9,8 +9,8 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
+import java.awt.Color;
 
 public class _GenericDeclaration_TypeVariables_Component extends AbstractCellProvider {
 
@@ -59,26 +59,16 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    _GenericDeclaration_TypeVariables_Component.setupConstantCell(editorCell, node, context);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140573670192");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    _GenericDeclaration_TypeVariables_Component.setupConstantCell1(editorCell, node, context);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140573670194");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createTypeVariableDeclarationList(EditorContext context, SNode node) {

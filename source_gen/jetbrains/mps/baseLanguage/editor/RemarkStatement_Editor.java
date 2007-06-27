@@ -45,15 +45,10 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
+    RemarkStatement_Editor.setupConstantCell(editorCell, node, context);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(Color.gray);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1168623096233");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createValueCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
