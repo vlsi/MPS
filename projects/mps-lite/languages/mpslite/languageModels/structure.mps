@@ -8,6 +8,10 @@
     <property name="name" value="NodeTypeDeclaration" />
     <property name="rootable" value="false" />
     <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1182956098221">
+      <property name="name" value="root" />
+      <link role="dataType" targetNodeId="1.1082983657063" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182511234181">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="0..n" />
@@ -97,7 +101,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182511753827">
     <property name="name" value="PropertyTypes" />
-    <property name="rootable" value="true" />
+    <property name="rootable" value="false" />
     <link role="extends" targetNodeId="1.1133920641626" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182511762813">
       <property name="metaClass" value="aggregation" />
