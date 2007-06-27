@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Expression;
 import java.util.Iterator;
-import jetbrains.mps.bootstrap.helgins.structure.MatchStatementItem;
 import java.util.List;
 
 public class MatchStatement extends Statement {

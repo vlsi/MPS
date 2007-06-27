@@ -4,10 +4,9 @@ package jetbrains.mps.bootstrap.helgins.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.bootstrap.helgins.editor.PatternVariableReference_Editor_patternVarDecl_InlineComponent;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
@@ -15,6 +14,10 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class PatternVariableReference_Editor extends DefaultNodeEditor {
+
+  private static void setupPatternVarDeclReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setDrawBorder(false);
+  }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createPatternVarDeclReferenceCell(context, node);

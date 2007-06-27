@@ -4,12 +4,15 @@ package jetbrains.mps.bootstrap.helgins.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 import java.awt.Color;
 
 public class ApplicableNodeCondition_Editor extends DefaultNodeEditor {
+
+  private static void setupErrorCell(EditorCell editorCell, SNode node, EditorContext context) {
+  }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createErrorCell(context, node);

@@ -4,12 +4,15 @@ package jetbrains.mps.bootstrap.helgins.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import java.awt.Color;
 
 public class TypeCheckerAccessExpression_Editor extends DefaultNodeEditor {
+
+  private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+  }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createConstantCell(context, node, "typechecker");

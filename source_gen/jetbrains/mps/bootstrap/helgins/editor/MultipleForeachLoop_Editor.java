@@ -5,13 +5,12 @@ package jetbrains.mps.bootstrap.helgins.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.bootstrap.helgins.editor.MultipleForeachLoop_Editor_LoopVariableListHandler_loopVariableList_;
 import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
@@ -23,15 +22,37 @@ public class MultipleForeachLoop_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myLoopVariableListHandler_loopVariableList_;
 
+  private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupLoopVariableList(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupRowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setSelectable(false);
+  }
+  private static void setupConstantCell3(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setSelectable(false);
+  }
+  private static void setupBodyCell(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupRowCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setSelectable(false);
+  }
+  private static void setupConstantCell4(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createColumnCell(context, node);
   }
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    MultipleForeachLoop_Editor.setupRowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -45,10 +66,8 @@ public class MultipleForeachLoop_Editor extends DefaultNodeEditor {
   }
   public EditorCell createRowCell1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    MultipleForeachLoop_Editor.setupRowCell1(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -60,10 +79,8 @@ public class MultipleForeachLoop_Editor extends DefaultNodeEditor {
   }
   public EditorCell createColumnCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
+    MultipleForeachLoop_Editor.setupColumnCell(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);

@@ -657,5 +657,32 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182937366968">
+    <property name="name" value="HelginsJudgement" />
+    <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182937412610">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="term" />
+      <link role="target" targetNodeId="1.1133920641626" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182937420689">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="type" />
+      <link role="target" targetNodeId="1.1133920641626" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182937959055">
+    <property name="name" value="HelginsTestSuite" />
+    <property name="rootable" value="true" />
+    <link role="extends" targetNodeId="1.1078489098625" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182937980212">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="judgement" />
+      <link role="target" targetNodeId="1182937366968" resolveInfo="HelginsJudgement" />
+    </node>
+  </node>
 </model>
 

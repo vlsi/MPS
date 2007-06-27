@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 
 public class ApplicableNodeReference extends Expression {
   public static String APPLICABLE_NODE = "applicableNode";

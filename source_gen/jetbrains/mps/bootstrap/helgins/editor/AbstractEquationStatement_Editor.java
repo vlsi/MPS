@@ -4,8 +4,8 @@ package jetbrains.mps.bootstrap.helgins.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
@@ -16,10 +16,42 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
-import jetbrains.mps.bootstrap.helgins.editor.AbstractEquationStatement_replaceWith_AbstractEquationStatement_cellMenu;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.ConceptPropertyCellProvider;
 
 public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
+
+  private static void setupLeftExpressionCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupCellModel_ConceptProperty(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupRightExpressionCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupRowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupNodeToCheckCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupRowCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupErrorStringCell(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupRowCell2(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
+  }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
@@ -29,10 +61,8 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
   }
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
+    AbstractEquationStatement_Editor.setupRowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -46,10 +76,8 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
   }
   public EditorCell createRowCell1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
+    AbstractEquationStatement_Editor.setupRowCell1(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -61,10 +89,8 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
   }
   public EditorCell createRowCell2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
+    AbstractEquationStatement_Editor.setupRowCell2(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -76,10 +102,8 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
   }
   public EditorCell createColumnCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
+    AbstractEquationStatement_Editor.setupColumnCell(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);

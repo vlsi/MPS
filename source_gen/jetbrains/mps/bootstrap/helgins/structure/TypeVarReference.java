@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.helgins.structure.TypeVarDeclaration;
 
 public class TypeVarReference extends Expression {
   public static String TYPE_VAR_DECLARATION = "typeVarDeclaration";

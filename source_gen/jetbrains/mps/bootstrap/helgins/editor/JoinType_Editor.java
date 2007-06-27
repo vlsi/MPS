@@ -5,27 +5,31 @@ package jetbrains.mps.bootstrap.helgins.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
-import jetbrains.mps.bootstrap.helgins.editor.JoinType_Editor_ArgumentListHandler_argumentList_;
 import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
 
 public class JoinType_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myArgumentListHandler_argumentList_;
 
+  private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupArgumentList(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupRowCell(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
   }
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
+    JoinType_Editor.setupRowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
