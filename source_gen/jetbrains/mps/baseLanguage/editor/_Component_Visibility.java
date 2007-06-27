@@ -19,6 +19,9 @@ public class _Component_Visibility extends AbstractCellProvider {
     super(node);
   }
 
+  private static void setupVisibilityCell(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
   public EditorCell createEditorCell(EditorContext context) {
     return this.createEditorCell(context, this.getSNode());
   }

@@ -21,6 +21,10 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
     super(node);
   }
 
+  private static void setupNameCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setDrawBorder(false);
+  }
+
   public EditorCell createEditorCell(EditorContext context) {
     return this.createEditorCell(context, this.getSNode());
   }
