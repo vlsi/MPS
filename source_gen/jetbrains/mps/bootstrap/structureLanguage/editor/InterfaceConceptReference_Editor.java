@@ -17,9 +17,11 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class InterfaceConceptReference_Editor extends DefaultNodeEditor {
 
   private static void setupIntfcReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1169127655072");
     editorCell.setDrawBorder(false);
   }
   private static void setupRowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1169127650439");
     editorCell.setDrawBorder(false);
   }
 
@@ -33,7 +35,6 @@ public class InterfaceConceptReference_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createIntfcReferenceCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1169127650439");
     return editorCell;
   }
   public EditorCell createIntfcReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {

@@ -21,15 +21,19 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 public class AggregationConceptLink_Editor extends DefaultNodeEditor {
 
   private static void setupAggregationConceptLinkDeclarationReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105739124744");
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105739124746");
     editorCell.setDrawBorder(false);
   }
   private static void setupTargetCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105987989392");
     editorCell.setDrawBorder(false);
   }
   private static void setupRowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105739124743");
     editorCell.setDrawBorder(false);
   }
 
@@ -45,7 +49,6 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createAggregationConceptLinkDeclarationReferenceCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "="));
     editorCell.addEditorCell(this.createTargetCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105739124743");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {

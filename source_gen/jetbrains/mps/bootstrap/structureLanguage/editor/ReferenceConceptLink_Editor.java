@@ -18,15 +18,19 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
 
   private static void setupReferenceConceptLinkDeclarationReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105739062907");
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105739062909");
     editorCell.setDrawBorder(false);
   }
   private static void setupTargetReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1141943896680");
     editorCell.setDrawBorder(false);
   }
   private static void setupRowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105738878701");
     editorCell.setDrawBorder(false);
   }
 
@@ -42,7 +46,6 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createReferenceConceptLinkDeclarationReferenceCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "="));
     editorCell.addEditorCell(this.createTargetReferenceCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105738878701");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {

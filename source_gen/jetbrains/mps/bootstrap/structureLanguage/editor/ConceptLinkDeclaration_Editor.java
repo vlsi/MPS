@@ -12,6 +12,7 @@ import java.awt.Color;
 public class ConceptLinkDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupErrorCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1137532945724");
     editorCell.setDrawBorder(false);
   }
 

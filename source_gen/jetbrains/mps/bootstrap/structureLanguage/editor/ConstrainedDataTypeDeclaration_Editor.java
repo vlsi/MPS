@@ -18,31 +18,39 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1082979388815");
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
   }
   private static void setupNameCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1082979388816");
     editorCell.setDrawBorder(false);
   }
   private static void setupHeaderRow(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1082979388814");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
   private static void setupSeparator(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083066231719");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083066231721");
     editorCell.setDrawBorder(false);
   }
   private static void setupConstraintCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083066231722");
     editorCell.setDrawBorder(false);
   }
   private static void setupRowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083066231720");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
   private static void setupNodeBox(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1082979388797");
     editorCell.setDrawBorder(false);
   }
 
@@ -57,7 +65,6 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell(context, node, "constrained string datatype:"));
     editorCell.addEditorCell(this.createNameCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1082979388814");
     return editorCell;
   }
   public EditorCell createRowCell(EditorContext context, SNode node) {
@@ -68,7 +75,6 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell1(context, node, "    matching regexp:"));
     editorCell.addEditorCell(this.createConstraintCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083066231720");
     return editorCell;
   }
   public EditorCell createNodeBox(EditorContext context, SNode node) {
@@ -80,7 +86,6 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createHeaderRow(context, node));
     editorCell.addEditorCell(this.createSeparator(context, node, ""));
     editorCell.addEditorCell(this.createRowCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1082979388797");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {

@@ -19,40 +19,52 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1149608640829");
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1149608660300");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
   private static void setupRoleCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1149608664342");
     editorCell.setDrawBorder(false);
   }
   private static void setupSourceCardinalityCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1149608664343");
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1149608664344");
     editorCell.setDrawBorder(false);
   }
   private static void setupSourceReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1149608664345");
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell3(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1149608664348");
     editorCell.setDrawBorder(false);
   }
   private static void setupTargetReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1149608664349");
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell4(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1149608664352");
     editorCell.setDrawBorder(false);
   }
   private static void setupStereotypeCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1149608664353");
     editorCell.setDrawBorder(false);
   }
   private static void setupRowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1149608664341");
     editorCell.setDrawBorder(false);
   }
   private static void setupColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1149608637030");
     editorCell.setDrawBorder(false);
   }
 
@@ -73,7 +85,6 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createTargetReferenceCell(context, node));
     editorCell.addEditorCell(this.createConstantCell4(context, node, "stereotype:"));
     editorCell.addEditorCell(this.createStereotypeCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1149608664341");
     return editorCell;
   }
   public EditorCell createColumnCell(EditorContext context, SNode node) {
@@ -85,7 +96,6 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "annotation link declaration"));
     editorCell.addEditorCell(this.createConstantCell1(context, node, "  "));
     editorCell.addEditorCell(this.createRowCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1149608637030");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {

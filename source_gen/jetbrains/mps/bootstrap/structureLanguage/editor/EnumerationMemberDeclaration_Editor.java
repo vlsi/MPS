@@ -30,31 +30,38 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return node == defMember;
   }
   private static void setupNameCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083925414252");
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162585934258");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.ITALIC);
   }
   private static void setupExternalValueCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083925414254");
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
   }
   private static void setupConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162585954651");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.ITALIC);
   }
   private static void setupInternalValueCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083925414256");
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083925414258");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
   private static void setupRowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083925414250");
     editorCell.setDrawBorder(false);
   }
 
@@ -75,7 +82,6 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     if(EnumerationMemberDeclaration_Editor._QueryFunction_NodeCondition_1162585619940(node, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstantCell2(context, node, "    (default)"));
     }
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083925414250");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {

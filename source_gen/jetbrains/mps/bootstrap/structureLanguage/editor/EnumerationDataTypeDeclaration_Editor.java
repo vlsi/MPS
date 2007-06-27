@@ -23,74 +23,93 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   /* package */AbstractCellListHandler myMemberListHandler_memberList_;
 
   private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083172476030");
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
   }
   private static void setupNameCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083172476031");
     editorCell.setDrawBorder(false);
   }
   private static void setupHeaderRow(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083172476029");
     editorCell.setSelectable(false);
   }
   private static void setupIndent(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162581300246");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162581349092");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
   private static void setupIndent1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162581845504");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
   private static void setupMemberDataTypeReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162581349093");
     editorCell.setDrawBorder(false);
   }
   private static void setupRowCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162581349091");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162581349097");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
   private static void setupIndent2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162581855288");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
   private static void setupDefaultMemberReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162581349098");
     editorCell.setDrawBorder(false);
   }
   private static void setupRowCell2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162581349096");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
   private static void setupColumnCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162581349090");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
   private static void setupIndent3(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162582323023");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
   private static void setupIndent4(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162582337073");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
   private static void setupMemberList(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162581824142");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
   private static void setupColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162581349089");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
   private static void setupRowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162581284214");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
   private static void setupNodeBox(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083172476028");
   }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
@@ -104,7 +123,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell(context, node, "enumeration datatype:"));
     editorCell.addEditorCell(this.createNameCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083172476029");
     return editorCell;
   }
   public EditorCell createRowCell1(EditorContext context, SNode node) {
@@ -116,7 +134,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell1(context, node, "member type"));
     editorCell.addEditorCell(this.createIndent1(context, node, ":"));
     editorCell.addEditorCell(this.createMemberDataTypeReferenceCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162581349091");
     return editorCell;
   }
   public EditorCell createRowCell2(EditorContext context, SNode node) {
@@ -128,7 +145,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell2(context, node, "default"));
     editorCell.addEditorCell(this.createIndent2(context, node, ":"));
     editorCell.addEditorCell(this.createDefaultMemberReferenceCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162581349096");
     return editorCell;
   }
   public EditorCell createColumnCell1(EditorContext context, SNode node) {
@@ -139,7 +155,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRowCell1(context, node));
     editorCell.addEditorCell(this.createRowCell2(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162581349090");
     return editorCell;
   }
   public EditorCell createColumnCell(EditorContext context, SNode node) {
@@ -152,7 +167,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createIndent3(context, node, ""));
     editorCell.addEditorCell(this.createIndent4(context, node, ""));
     editorCell.addEditorCell(this.createMemberList(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162581349089");
     return editorCell;
   }
   public EditorCell createRowCell(EditorContext context, SNode node) {
@@ -163,7 +177,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createIndent(context, node, "    "));
     editorCell.addEditorCell(this.createColumnCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162581284214");
     return editorCell;
   }
   public EditorCell createNodeBox(EditorContext context, SNode node) {
@@ -174,7 +187,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createHeaderRow(context, node));
     editorCell.addEditorCell(this.createRowCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083172476028");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {

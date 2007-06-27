@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class BooleanConceptProperty_Editor extends DefaultNodeEditor {
 
   private static void setupBooleanConceptPropertyDeclarationReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1146699642295");
     editorCell.setDrawBorder(false);
   }
 

@@ -20,13 +20,16 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class StringConceptPropertyDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105727123122");
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
   }
   private static void setupNameCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105727123123");
     editorCell.setDrawBorder(false);
   }
   private static void setupNodeBox(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105727123121");
     editorCell.setDrawBorder(false);
   }
 
@@ -41,7 +44,6 @@ public class StringConceptPropertyDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell(context, node, "string"));
     editorCell.addEditorCell(this.createNameCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105727123121");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {

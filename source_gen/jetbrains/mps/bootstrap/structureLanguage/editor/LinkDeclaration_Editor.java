@@ -35,33 +35,42 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return SLinkOperations.getTarget(node, "specializedLink", false) != null;
   }
   private static void setupRoleCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1084189569972");
     editorCell.setDrawBorder(true);
   }
   private static void setupSourceCardinalityCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1084205682782");
     editorCell.setDrawBorder(true);
   }
   private static void setupCellModel_ModelAccess(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1084205682785");
     editorCell.setDrawBorder(true);
   }
   private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1084192678902");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
   private static void setupTargetReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1096455263454");
     editorCell.setDrawBorder(true);
   }
   private static void setupConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164661317302");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
   private static void setupSpecializedLinkReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164661343825");
     editorCell.setDrawBorder(true);
   }
   private static void setupRowCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164661317301");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
   }
   private static void setupRowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1084189569970");
     editorCell.setDrawBorder(true);
   }
 
@@ -76,7 +85,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell1(context, node, "specializes:"));
     editorCell.addEditorCell(this.createSpecializedLinkReferenceCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164661317301");
     return editorCell;
   }
   public EditorCell createRowCell(EditorContext context, SNode node) {
@@ -95,7 +103,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "target:"));
     editorCell.addEditorCell(this.createTargetReferenceCell(context, node));
     editorCell.addEditorCell(this.createRowCell1(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1084189569970");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {

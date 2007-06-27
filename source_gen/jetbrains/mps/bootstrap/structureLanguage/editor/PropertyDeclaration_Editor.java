@@ -21,17 +21,21 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 public class PropertyDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupNameCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1082985570614");
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
   }
   private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1082987076546");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
   private static void setupDataTypeReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1106002077142");
     editorCell.setDrawBorder(false);
   }
   private static void setupRowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1082985570613");
     editorCell.setDrawBorder(false);
   }
 
@@ -47,7 +51,6 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createNameCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, ":"));
     editorCell.addEditorCell(this.createDataTypeReferenceCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1082985570613");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
