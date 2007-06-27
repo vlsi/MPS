@@ -3,7 +3,6 @@ package jetbrains.mps.generator;
 import jetbrains.mps.generator.newGenerator.TemplateModelGenerator_New;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.plan.GenerationStepController;
-import jetbrains.mps.generator.template.DefaultTemplateGenerator;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.Statistics;
 import jetbrains.mps.ide.messages.IMessageHandler;

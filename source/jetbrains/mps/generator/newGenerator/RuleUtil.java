@@ -192,8 +192,6 @@ public class RuleUtil {
       if (mappingName == null) {
         mappingName = ruleMappingName;
       }
-//      List<SNode> weavingInputNodes = TemplateGenUtil.createSourceNodeListForTemplateNode_ForNewGenerator(inputNode, templateFragmentNode, 0, myGenerator);
-//      for (SNode weavingInputNode : weavingInputNodes) {
       SNode contextParentNode = null;
       try {
         contextParentNode = getContextNodeForTemplateFragment(templateFragmentNode, contextNodeBuilder);
@@ -201,7 +199,6 @@ public class RuleUtil {
         LOG.error(e);
       }
       if (contextParentNode != null) {
-//          List<SNode> outputNodesToWeave = createOutputNodesForTemplateNode(mappingName, templateFragmentNode, weavingInputNode, 0, true);
         List<SNode> outputNodesToWeave = createOutputNodesForTemplateNode(mappingName, templateFragmentNode, inputNode, 0, true);
         if (outputNodesToWeave != null) {
           String childRole = templateFragmentNode.getRole_();
@@ -212,7 +209,6 @@ public class RuleUtil {
       } else {
         myGenerator.showErrorMessage(inputNode, templateFragment.getNode(), ruleNode, "couldn't define 'context' for template fragment");
       }
-//      }
     }
   }
 

@@ -549,10 +549,6 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     return TypeCheckerAccess.getTypeChecker();
   }
 
-  public AbstractNodeBuilderManager getNodeBuilderManager() {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
-  }
-
   public void notifyBuilderCreated(INodeBuilder builder) {
     //To change body of implemented methods use File | Settings | File Templates.
   }
