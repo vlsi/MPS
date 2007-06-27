@@ -29,69 +29,91 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
   /* package */AbstractCellListHandler myThrowsItemListHandler_throwsItemList_;
 
   private static void setup_Component_VisibilityCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178547832236");
   }
   private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1080826270968");
     editorCell.setDrawBorder(false);
+    editorCell.addKeyMap(new StaticMethodDeclaration_Keymap());
   }
   private static void setupReturnType(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075287750861");
     editorCell.setDrawBorder(false);
   }
   private static void setupMethodName(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075287750862");
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075287750863");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
   private static void setupParameterList(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138337151587");
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell3(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075287750856");
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
+    _BaseMethodDeclaration_Actions.setCellActions(editorCell, node, context);
   }
   private static void setupConstantCell4(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164890632759");
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell5(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164891194929");
     editorCell.setDrawBorder(false);
   }
   private static void setupThrowsItemList(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164891084596");
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell6(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164891084597");
     editorCell.setDrawBorder(false);
   }
   private static void setupRowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164891084595");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
   private static void setupCellAlternation(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164890626615");
     editorCell.setDrawBorder(false);
   }
   private static void setupHeaderRow(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075287750860");
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
   }
   private static void setupIndentCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075287750858");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
   private static void setupBodyCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075287750859");
     editorCell.setDrawBorder(false);
   }
   private static void setupBodyArea(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075287750857");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell7(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075287750864");
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell8(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171332369936");
     editorCell.setDrawBorder(false);
   }
   private static void setupMethodBox(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075287750849");
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
   }
@@ -127,8 +149,6 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell5(context, node, "throws"));
     editorCell.addEditorCell(this.createThrowsItemList(context, node));
     editorCell.addEditorCell(this.createConstantCell6(context, node, "{"));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164891084595");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createHeaderRow(EditorContext context, SNode node) {
@@ -145,8 +165,6 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createParameterList(context, node));
     editorCell.addEditorCell(this.createConstantCell3(context, node, ")"));
     editorCell.addEditorCell(this.createCellAlternation(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075287750860");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createBodyArea(EditorContext context, SNode node) {
@@ -157,8 +175,6 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createIndentCell(context, node, "  "));
     editorCell.addEditorCell(this.createBodyCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075287750857");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createMethodBox(EditorContext context, SNode node) {
@@ -171,8 +187,6 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createBodyArea(context, node));
     editorCell.addEditorCell(this.createConstantCell7(context, node, "}"));
     editorCell.addEditorCell(this.createConstantCell8(context, node, ""));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075287750849");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell create_Component_VisibilityCell(EditorContext context, SNode node) {

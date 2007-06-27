@@ -20,16 +20,23 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.ConceptPropertyCellP
 public class BinaryOperation_Editor extends DefaultNodeEditor {
 
   private static void setupLeftExpressionCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1166063955821");
     editorCell.setDrawBorder(false);
+    BinaryOperation_LeftArgument_Actions.setCellActions(editorCell, node, context);
   }
   private static void setupCellModel_ConceptProperty(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1166063984223");
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
+    editorCell.addKeyMap(new BinaryOperation_keyMap());
   }
   private static void setupRightExpressionCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1166063955825");
     editorCell.setDrawBorder(false);
+    BinaryOperation_RightArgument_Actions.setCellActions(editorCell, node, context);
   }
   private static void setupRowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1166063955820");
     editorCell.setDrawBorder(false);
   }
 
@@ -45,8 +52,6 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createLeftExpressionCell(context, node));
     editorCell.addEditorCell(this.createCellModel_ConceptProperty(context, node));
     editorCell.addEditorCell(this.createRightExpressionCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1166063955820");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createLeftExpressionCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {

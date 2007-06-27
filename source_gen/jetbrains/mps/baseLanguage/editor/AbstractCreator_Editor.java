@@ -12,6 +12,7 @@ import java.awt.Color;
 public class AbstractCreator_Editor extends DefaultNodeEditor {
 
   private static void setupErrorCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145552947529");
     editorCell.setDrawBorder(false);
   }
 

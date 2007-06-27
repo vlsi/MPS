@@ -31,71 +31,96 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   /* package */AbstractCellListHandler myThrowsItemListHandler_throwsItemList_;
 
   private static void setup_Component_VisibilityCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178547804783");
+    _InstanceMethodDeclaration_AddAbstract.setCellActions(editorCell, node, context);
   }
   private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178608691960");
+    _InstanceMethodDeclaration_RemoveAbstract.setCellActions(editorCell, node, context);
   }
   private static void setupReturnType(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075233539828");
     editorCell.setDrawBorder(false);
   }
   private static void setupMethodName(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075233459441");
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075233459442");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
   private static void setupParameterList(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138337135190");
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell3(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075233459445");
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
+    _BaseMethodDeclaration_Actions.setCellActions(editorCell, node, context);
   }
   private static void setupConstantCell4(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178609159856");
     editorCell.setDrawBorder(false);
   }
   private static void setupThrowsItemList(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178609159857");
     editorCell.setDrawBorder(false);
   }
   private static void setupRowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178609159855");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell5(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178609271729");
   }
   private static void setupConstantCell6(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178609157560");
   }
   private static void setupHeaderRow(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075233459439");
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
   }
   private static void setupIndentCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075233459447");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
   private static void setupBodyCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075233459448");
     editorCell.setDrawBorder(false);
   }
   private static void setupBodyArea(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075233459446");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell7(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075233459449");
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell8(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171332353715");
     editorCell.setDrawBorder(false);
   }
   private static void setupMethodBox(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075233459438");
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell9(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178608704137");
   }
   private static void setupIsAbstractCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178608708696");
   }
   private static void setupRowCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178608701146");
   }
   public static boolean _QueryFunction_NodeCondition_1178608724220(SNode node, IScope scope) {
     return SPropertyOperations.getBoolean(node, "isAbstract");
@@ -130,8 +155,6 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell4(context, node, "throws"));
     editorCell.addEditorCell(this.createThrowsItemList(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178609159855");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createHeaderRow(EditorContext context, SNode node) {
@@ -158,8 +181,6 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     if(InstanceMethodDeclaration_Editor._QueryFunction_NodeCondition_1178609161098(node, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstantCell6(context, node, ";"));
     }
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075233459439");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createBodyArea(EditorContext context, SNode node) {
@@ -170,8 +191,6 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createIndentCell(context, node, "  "));
     editorCell.addEditorCell(this.createBodyCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075233459446");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createMethodBox(EditorContext context, SNode node) {
@@ -188,8 +207,6 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createConstantCell7(context, node, "}"));
     }
     editorCell.addEditorCell(this.createConstantCell8(context, node, ""));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075233459438");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createRowCell1(EditorContext context, SNode node) {
@@ -200,8 +217,6 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell9(context, node, "abstract : "));
     editorCell.addEditorCell(this.createIsAbstractCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178608701146");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell create_Component_VisibilityCell(EditorContext context, SNode node) {

@@ -18,16 +18,24 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
 
   private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081880010410");
     editorCell.setDrawBorder(false);
+    DeleteParenthesis_Actions.setCellActions(editorCell, node, context);
+    editorCell.addKeyMap(new OpenParenthesis_KeyMap());
   }
   private static void setupExpressionCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081880010411");
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081880010412");
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
+    DeleteParenthesis_Actions.setCellActions(editorCell, node, context);
+    editorCell.addKeyMap(new CloseParenthesis_KeyMap());
   }
   private static void setupNodeBox(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081880010409");
     editorCell.setDrawBorder(false);
   }
 
@@ -43,8 +51,6 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "("));
     editorCell.addEditorCell(this.createExpressionCell(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, ")"));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081880010409");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {

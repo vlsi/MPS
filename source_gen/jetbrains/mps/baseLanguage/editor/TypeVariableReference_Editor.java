@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class TypeVariableReference_Editor extends DefaultNodeEditor {
 
   private static void setupTypeVariableDeclarationReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1109283721555");
     editorCell.setDrawBorder(false);
   }
 

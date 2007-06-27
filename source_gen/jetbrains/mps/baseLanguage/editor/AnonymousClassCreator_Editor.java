@@ -17,8 +17,10 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class AnonymousClassCreator_Editor extends DefaultNodeEditor {
 
   private static void setupClsCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182160175805");
   }
   private static void setupRowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182160175804");
   }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
@@ -31,8 +33,6 @@ public class AnonymousClassCreator_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createClsCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182160175804");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createClsCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {

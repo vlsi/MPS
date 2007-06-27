@@ -18,22 +18,28 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
 
   private static void setupConditionCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1163668952186");
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1163668954406");
     editorCell.setDrawBorder(false);
   }
   private static void setupIfTrueCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1163668956502");
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1163668958738");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
   private static void setupIfFalseCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1163668962067");
     editorCell.setDrawBorder(false);
   }
   private static void setupRowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1163668947305");
     editorCell.setDrawBorder(false);
   }
 
@@ -51,8 +57,6 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createIfTrueCell(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, ":"));
     editorCell.addEditorCell(this.createIfFalseCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1163668947305");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {

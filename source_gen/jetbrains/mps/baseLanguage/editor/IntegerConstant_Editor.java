@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class IntegerConstant_Editor extends DefaultNodeEditor {
 
   private static void setupValueCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083091696640");
     editorCell.setDrawBorder(false);
   }
 

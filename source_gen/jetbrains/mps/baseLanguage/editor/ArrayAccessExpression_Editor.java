@@ -18,18 +18,24 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class ArrayAccessExpression_Editor extends DefaultNodeEditor {
 
   private static void setupArrayCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173175602450");
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173175604827");
     editorCell.setDrawBorder(false);
+    ArrayAccessExpression_Actions.setCellActions(editorCell, node, context);
   }
   private static void setupIndexCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173175607861");
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173175610988");
     editorCell.setDrawBorder(false);
   }
   private static void setupRowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173175599366");
     editorCell.setDrawBorder(false);
   }
 
@@ -46,8 +52,6 @@ public class ArrayAccessExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "["));
     editorCell.addEditorCell(this.createIndexCell(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, "]"));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173175599366");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {

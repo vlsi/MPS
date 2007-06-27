@@ -18,13 +18,16 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class LocalVariableDeclarationStatement_Editor extends DefaultNodeEditor {
 
   private static void setupLocalVariableDeclarationCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075380566830");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075380566831");
     editorCell.setDrawBorder(false);
   }
   private static void setupStatementBox(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075380566829");
     editorCell.setDrawBorder(false);
   }
 
@@ -39,8 +42,6 @@ public class LocalVariableDeclarationStatement_Editor extends DefaultNodeEditor 
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createLocalVariableDeclarationCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, ";"));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075380566829");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {

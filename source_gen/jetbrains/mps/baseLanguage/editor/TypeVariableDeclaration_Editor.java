@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupNameCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1109281432641");
     editorCell.setDrawBorder(false);
   }
 

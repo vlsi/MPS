@@ -25,23 +25,31 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
   /* package */AbstractCellProvider myVariableDeclaration_NameCellComponent1;
 
   private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176719480878");
   }
   private static void setupTypeCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075302295736");
     editorCell.setDrawBorder(false);
   }
   private static void setupVariableDeclaration_NameCellComponentCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1181827045361");
   }
   private static void setupDeclarationBox(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075302295735");
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176719472468");
   }
   private static void setupIsFinalCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176719475501");
   }
   private static void setupRowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176718960811");
     editorCell.setSelectable(false);
   }
   private static void setupColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176718956231");
   }
   public static boolean _QueryFunction_NodeCondition_1176719487941(SNode node, IScope scope) {
     return SPropertyOperations.getBoolean(node, "isFinal");
@@ -64,8 +72,6 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createTypeCell(context, node));
     editorCell.addEditorCell(this.createVariableDeclaration_NameCellComponentCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075302295735");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createRowCell(EditorContext context, SNode node) {
@@ -76,8 +82,6 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell1(context, node, "final :"));
     editorCell.addEditorCell(this.createIsFinalCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176718960811");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createColumnCell(EditorContext context, SNode node) {
@@ -87,8 +91,6 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRowCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176718956231");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createVariableDeclaration_NameCellComponentCell(EditorContext context, SNode node) {

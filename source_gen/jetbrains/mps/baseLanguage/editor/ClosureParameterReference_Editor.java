@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class ClosureParameterReference_Editor extends DefaultNodeEditor {
 
   private static void setupClosureParameterReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1153179576790");
     editorCell.setDrawBorder(false);
   }
 

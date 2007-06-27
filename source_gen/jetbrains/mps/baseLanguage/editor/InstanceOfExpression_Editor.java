@@ -19,17 +19,21 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class InstanceOfExpression_Editor extends DefaultNodeEditor {
 
   private static void setupLeftExpressionCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081257097746");
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081257097747");
     editorCell.setDrawBorder(false);
   }
   private static void setupClassTypeCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081257097748");
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
   }
   private static void setupExpressionBox(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081257073129");
     editorCell.setDrawBorder(false);
   }
 
@@ -45,8 +49,6 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createLeftExpressionCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "instanceof"));
     editorCell.addEditorCell(this.createClassTypeCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081257073129");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {

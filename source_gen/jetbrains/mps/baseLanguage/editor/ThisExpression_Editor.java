@@ -13,6 +13,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
 public class ThisExpression_Editor extends DefaultNodeEditor {
 
   private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075374365334");
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
   }

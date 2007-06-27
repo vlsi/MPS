@@ -22,7 +22,9 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
   }
 
   private static void setupNameCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1181823199382");
     editorCell.setDrawBorder(false);
+    editorCell.setRightTransformAnchorTag("default_RTransform");
   }
 
   public EditorCell createEditorCell(EditorContext context) {

@@ -23,18 +23,24 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
   /* package */AbstractCellProvider myBaseMethodCall_actualArgumentList;
 
   private static void setupClassConceptReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1144433246063");
     editorCell.setDrawBorder(false);
+    StaticMethodCall_Actions.setCellActions(editorCell, node, context);
   }
   private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081149570778");
     editorCell.setDrawBorder(false);
   }
   private static void setupStaticMethodDeclarationReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1088427863670");
     editorCell.setDrawBorder(false);
   }
   private static void setupBaseMethodCall_actualArgumentListCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173991610903");
     editorCell.setDrawBorder(false);
   }
   private static void setupRowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081149310028");
     editorCell.setDrawBorder(false);
   }
 
@@ -51,8 +57,6 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "."));
     editorCell.addEditorCell(this.createStaticMethodDeclarationReferenceCell(context, node));
     editorCell.addEditorCell(this.createBaseMethodCall_actualArgumentListCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081149310028");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createBaseMethodCall_actualArgumentListCell(EditorContext context, SNode node) {

@@ -17,19 +17,25 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
   /* package */AbstractCellListHandler myStatementListHandler_statementList_;
 
   private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177326606089");
   }
   private static void setupConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177326628329");
     editorCell.setSelectable(false);
   }
   private static void setupStatementList(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177326980923");
     editorCell.setCellBackgroundColor(Color.lightGray);
   }
   private static void setupRowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177326628328");
     editorCell.setSelectable(false);
   }
   private static void setupConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177326622077");
   }
   private static void setupColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177326571087");
   }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
@@ -43,8 +49,6 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell1(context, node, "  "));
     editorCell.addEditorCell(this.createStatementList(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177326628328");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createColumnCell(EditorContext context, SNode node) {
@@ -56,8 +60,6 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "/*"));
     editorCell.addEditorCell(this.createRowCell(context, node));
     editorCell.addEditorCell(this.createConstantCell2(context, node, "*/"));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177326571087");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {

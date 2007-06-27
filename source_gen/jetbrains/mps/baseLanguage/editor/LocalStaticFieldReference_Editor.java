@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class LocalStaticFieldReference_Editor extends DefaultNodeEditor {
 
   private static void setupStaticFieldDeclarationReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172009002550");
     editorCell.setDrawBorder(false);
   }
 

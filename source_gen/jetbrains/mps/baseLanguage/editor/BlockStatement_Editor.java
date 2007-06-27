@@ -20,23 +20,29 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class BlockStatement_Editor extends DefaultNodeEditor {
 
   private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1144224544543");
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1119291719345");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
   private static void setupStatementsCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1119291719346");
     editorCell.setDrawBorder(false);
   }
   private static void setupRowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1119291719344");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1119291721269");
     editorCell.setDrawBorder(false);
   }
   private static void setupColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1119291654779");
     editorCell.setDrawBorder(false);
   }
   public static boolean _QueryFunction_NodeCondition_1145916598814(SNode node, IScope scope) {
@@ -62,8 +68,6 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createConstantCell1(context, node, "  "));
     }
     editorCell.addEditorCell(this.createStatementsCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1119291719344");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createColumnCell(EditorContext context, SNode node) {
@@ -79,8 +83,6 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
     if(BlockStatement_Editor._QueryFunction_NodeCondition_1145916702929(node, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstantCell2(context, node, "}"));
     }
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1119291654779");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {

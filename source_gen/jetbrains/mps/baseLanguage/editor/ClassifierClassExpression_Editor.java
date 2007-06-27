@@ -19,12 +19,15 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
 
   private static void setupClassifierReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1116615277650");
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1116615336905");
     editorCell.setDrawBorder(false);
   }
   private static void setupRowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1116615268507");
     editorCell.setDrawBorder(false);
   }
 
@@ -39,8 +42,6 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createClassifierReferenceCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, ".class"));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1116615268507");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {

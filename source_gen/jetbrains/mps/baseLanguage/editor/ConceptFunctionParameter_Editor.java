@@ -6,9 +6,9 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import java.awt.Color;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.ConceptPropertyCellProvider;
@@ -18,7 +18,9 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class ConceptFunctionParameter_Editor extends DefaultNodeEditor {
 
   private static void setupCellModel_ConceptProperty(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139533905854");
     editorCell.setDrawBorder(false);
+    editorCell.setFontType(MPSFonts.ITALIC);
   }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {

@@ -12,6 +12,7 @@ import java.awt.Color;
 public class Statement_Editor extends DefaultNodeEditor {
 
   private static void setupNodeBox(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1078746085984");
     editorCell.setDrawBorder(false);
   }
 

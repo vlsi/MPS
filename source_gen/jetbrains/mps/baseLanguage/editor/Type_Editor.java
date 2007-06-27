@@ -20,12 +20,15 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class Type_Editor extends DefaultNodeEditor {
 
   private static void setupErrorCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138060384542");
     editorCell.setDrawBorder(false);
   }
   private static void setupCellModel_ConceptProperty(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138060501183");
     editorCell.setDrawBorder(false);
   }
   private static void setupCellAlternation(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138060380694");
     editorCell.setDrawBorder(false);
   }
   public static boolean _QueryFunction_NodeCondition_1146070379313(SNode node, IScope scope) {

@@ -21,16 +21,21 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class ReturnStatement_Editor extends DefaultNodeEditor {
 
   private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075722075640");
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
+    ReturnStatement_Actions.setCellActions(editorCell, node, context);
   }
   private static void setupExpressionCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075380723767");
     editorCell.setDrawBorder(false);
   }
   private static void setupConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075380723768");
     editorCell.setDrawBorder(false);
   }
   private static void setupStatementBox(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075380723766");
     editorCell.setDrawBorder(false);
   }
   public static boolean _QueryFunction_NodeCondition_1152310298068(SNode node, IScope scope) {
@@ -51,8 +56,6 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createExpressionCell(context, node));
     }
     editorCell.addEditorCell(this.createConstantCell1(context, node, ";"));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075380723766");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {

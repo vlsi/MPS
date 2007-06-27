@@ -16,6 +16,7 @@ public class StatementList_Editor extends DefaultNodeEditor {
   /* package */AbstractCellListHandler myStatementListHandler_statementList_;
 
   private static void setupStatementList(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1073416106126");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }

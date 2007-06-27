@@ -20,15 +20,20 @@ import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
 public class StaticFieldReference_Editor extends DefaultNodeEditor {
 
   private static void setupClassifierReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1144433124322");
     editorCell.setDrawBorder(false);
+    StaticFieldReference_Actions.setCellActions(editorCell, node, context);
   }
   private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1082740154394");
     editorCell.setDrawBorder(false);
   }
   private static void setupStaticFieldDeclarationReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1088427644683");
     editorCell.setDrawBorder(false);
   }
   private static void setupRowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1082740154392");
     editorCell.setDrawBorder(false);
   }
 
@@ -44,8 +49,6 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createClassifierReferenceCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "."));
     editorCell.addEditorCell(this.createStaticFieldDeclarationReferenceCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1082740154392");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
