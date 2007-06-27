@@ -111,8 +111,7 @@ public class NodePresentationUtil {
       return alias;
     }
     
-    //TODO this is tmp fix for mps-lite
-    return node.toString();
+    return node.getShortConceptName();
   }
 
   public static String getRoleInParentOrConceptName(SNode node) {
