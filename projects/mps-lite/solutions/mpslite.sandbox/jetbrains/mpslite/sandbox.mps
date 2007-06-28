@@ -89,6 +89,30 @@
                 </node>
               </node>
             </node>
+            <node role="statement" type="jetbrains.mps.nanoj.LocalVariableDeclarationStatement" id="1183029030712">
+              <node role="declaration" type="jetbrains.mps.nanoj.LocalVariableDeclaration" id="1183029030713">
+                <property name="name" value="abcdef" />
+                <node role="type" type="jetbrains.mps.nanoj.ByteType" id="1183029033638" />
+                <node role="initializer" type="jetbrains.mps.nanoj.PlusExpression" id="1183029038593">
+                  <node role="right" type="jetbrains.mps.nanoj.PlusExpression" id="1183029042222">
+                    <node role="right" type="jetbrains.mps.nanoj.PlusExpression" id="1183029045132">
+                      <node role="right" type="jetbrains.mps.nanoj.NumberExpression" id="1183029046182">
+                        <property name="number" value="239" />
+                      </node>
+                      <node role="left" type="jetbrains.mps.nanoj.NumberExpression" id="1183029043335">
+                        <property name="number" value="23" />
+                      </node>
+                    </node>
+                    <node role="left" type="jetbrains.mps.nanoj.NumberExpression" id="1183029040815">
+                      <property name="number" value="23" />
+                    </node>
+                  </node>
+                  <node role="left" type="jetbrains.mps.nanoj.NumberExpression" id="1183029037373">
+                    <property name="number" value="23" />
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>

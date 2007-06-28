@@ -270,6 +270,9 @@
           <property name="name" value="declaration" />
           <link role="type" targetNodeId="1183027574668" resolveInfo="LocalVariableDeclaration" />
         </node>
+        <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1183028618610">
+          <property name="text" value=";" />
+        </node>
       </node>
     </node>
   </node>
@@ -457,6 +460,26 @@
         </node>
         <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182969878640">
           <property name="text" value="&quot;" />
+        </node>
+      </node>
+    </node>
+    <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1183028652393">
+      <property name="name" value="LocalVariableReference" />
+      <link role="extends" targetNodeId="1182966285571" resolveInfo="Expression" />
+      <node role="line" type="jetbrains.mpslite.Line" id="1183028662754">
+        <node role="linePart" type="jetbrains.mpslite.ReferenceDeclarationPart" id="1183028664818">
+          <property name="name" value="variable" />
+          <link role="type" targetNodeId="1183027574668" resolveInfo="LocalVariableDeclaration" />
+        </node>
+      </node>
+    </node>
+    <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1183028672226">
+      <property name="name" value="ParameterReference" />
+      <link role="extends" targetNodeId="1182966285571" resolveInfo="Expression" />
+      <node role="line" type="jetbrains.mpslite.Line" id="1183028678773">
+        <node role="linePart" type="jetbrains.mpslite.ReferenceDeclarationPart" id="1183028680338">
+          <property name="name" value="parameter" />
+          <link role="type" targetNodeId="1183027852869" resolveInfo="ParameterDeclaration" />
         </node>
       </node>
     </node>
