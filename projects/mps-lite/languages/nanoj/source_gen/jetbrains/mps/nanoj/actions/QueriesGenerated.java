@@ -18,7 +18,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class QueriesGenerated {
 
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1183019630352(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1183027336540(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.nanoj.structure.BinaryExpression", operationContext.getScope());
@@ -37,7 +37,7 @@ public class QueriesGenerated {
     }
     return result;
   }
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1183019630381(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1183027336569(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.nanoj.structure.PlusExpression", operationContext.getScope());
@@ -56,7 +56,7 @@ public class QueriesGenerated {
     }
     return result;
   }
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1183019630410(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1183027336598(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.nanoj.structure.MinusExpression", operationContext.getScope());
@@ -75,7 +75,7 @@ public class QueriesGenerated {
     }
     return result;
   }
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1183019630439(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1183027336627(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.nanoj.structure.MulExpression", operationContext.getScope());
@@ -94,7 +94,7 @@ public class QueriesGenerated {
     }
     return result;
   }
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1183019630468(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1183027336656(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.nanoj.structure.DivExpression", operationContext.getScope());
@@ -113,7 +113,7 @@ public class QueriesGenerated {
     }
     return result;
   }
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1183019630497(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1183027336685(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.nanoj.structure.AssignmentExpression", operationContext.getScope());
@@ -132,7 +132,7 @@ public class QueriesGenerated {
     }
     return result;
   }
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1183019630526(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1183027336714(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.nanoj.structure.EqualsExpression", operationContext.getScope());
@@ -151,7 +151,7 @@ public class QueriesGenerated {
     }
     return result;
   }
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1183019630555(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1183027336743(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.nanoj.structure.NotEqualsExpression", operationContext.getScope());
@@ -170,7 +170,7 @@ public class QueriesGenerated {
     }
     return result;
   }
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1183019630584(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1183027336772(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.nanoj.structure.InstanceMethodCallExpression", operationContext.getScope());

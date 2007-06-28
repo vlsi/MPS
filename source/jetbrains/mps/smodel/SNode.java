@@ -328,6 +328,47 @@ public class SNode implements Cloneable, Iterable<SNode> {
     return myRoleInParent;
   }
 
+  public SNode getRoleLink(IScope scope) {
+    return BaseAdapter.fromAdapter(getRoleLinkAdapter(scope));
+  }
+
+  public LinkDeclaration getRoleLinkAdapter(IScope scope) {
+    if (getParent() == null) {
+      return null;
+    }
+
+    return getParent().getLinkDeclaration(getRole_(), scope);    
+  }
+
+  public List<LinkDeclaration> getChildLinkAdapters(IScope scope) {
+    List<LinkDeclaration> result = new ArrayList<LinkDeclaration>();
+    for (LinkDeclaration link : SModelSearchUtil_new.getLinkDeclarationsExcludingOverridden(getConceptDeclarationAdapter())) {
+      if (link.getMetaClass() == LinkMetaclass.aggregation) {
+        result.add(link);
+      }
+    }
+    return result;
+  }
+
+  public List<SNode> getChildLinks(IScope scope) {
+    return BaseAdapter.toNodes(getChildLinkAdapters(scope));
+  }
+
+
+  public List<LinkDeclaration> getReferenceLinkAdapters(IScope scope) {
+    List<LinkDeclaration> result = new ArrayList<LinkDeclaration>();
+    for (LinkDeclaration link : SModelSearchUtil_new.getLinkDeclarationsExcludingOverridden(getConceptDeclarationAdapter())) {
+      if (link.getMetaClass() == LinkMetaclass.reference) {
+        result.add(link);
+      }
+    }
+    return result;
+  }
+
+  public List<SNode> getReferenceLinks(IScope scope) {
+    return BaseAdapter.toNodes(getReferenceLinkAdapters(scope));
+  }
+  
   //
   //----- attributes
   //

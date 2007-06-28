@@ -239,7 +239,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1183015764815">
-    <property name="name" value="RightTransformablePart" />
+    <property name="name" value="ChildPart" />
     <property name="package" value="Parts" />
     <link role="extends" targetNodeId="1182511214735" resolveInfo="LinePart" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1183015786255">
