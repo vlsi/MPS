@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
-import java.awt.Color;
 
 public class Statement_Editor extends DefaultNodeEditor {
 
@@ -23,14 +22,9 @@ public class Statement_Editor extends DefaultNodeEditor {
     return this.createNodeBox(context, node);
   }
   public EditorCell createNodeBox(EditorContext context, SNode node) {
-    EditorCell_Error editorCell = EditorCell_Error.create(context, node, "<statement>");
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(true);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1078746085984");
-    editorCell.setLayoutConstraint("");
+    EditorCell_Error editorCell = new EditorCell_Error(context, node, "<statement>");
+    Statement_Editor.setupBasic_NodeBox(editorCell, node, context);
+    Statement_Editor.setupLabel_NodeBox(editorCell, node, context);
     return editorCell;
   }
 }
