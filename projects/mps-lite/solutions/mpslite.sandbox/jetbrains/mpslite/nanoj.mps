@@ -188,11 +188,7 @@
     <property name="name" value="Statements" />
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182966087965">
       <property name="name" value="Statement" />
-      <node role="line" type="jetbrains.mpslite.Line" id="1182966298619">
-        <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182966304949">
-          <property name="text" value="&lt;statement&gt;" />
-        </node>
-      </node>
+      <node role="line" type="jetbrains.mpslite.Line" id="1182966298619" />
     </node>
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182966322282">
       <property name="name" value="IfStatement" />
@@ -267,11 +263,6 @@
     <property name="name" value="Expressions" />
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182966285571">
       <property name="name" value="Expression" />
-      <node role="line" type="jetbrains.mpslite.Line" id="1182966309170">
-        <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182966313203">
-          <property name="text" value="&lt;expression&gt;" />
-        </node>
-      </node>
     </node>
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182969317058">
       <property name="name" value="BinaryExpression" />

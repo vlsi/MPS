@@ -177,8 +177,8 @@
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178096795260" />
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1178096832142">
-      <property name="isPrivate" value="true" />
       <property name="name" value="findBehaviour" />
+      <property name="isPrivate" value="true" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1178096832137">
         <property name="name" value="scope" />
         <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1178096832143">
@@ -205,6 +205,19 @@
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1178096832153">
                 <link role="variableDeclaration" targetNodeId="1178096832137" resolveInfo="scope" />
               </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1183015610768">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1183015610769">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1183015614442">
+              <node role="expression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1183015615257" />
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1183015612501">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1183015613473" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1183015611882">
+              <link role="variableDeclaration" targetNodeId="1178096832138" resolveInfo="language" />
             </node>
           </node>
         </node>

@@ -11,7 +11,19 @@
       </node>
       <node role="body" type="jetbrains.mps.nanoj.StatementList" id="1182965191301">
         <node role="statement" type="jetbrains.mps.nanoj.IfStatement" id="1182966479686">
-          <node role="condition" type="jetbrains.mps.nanoj.Expression" id="1182966479687" />
+          <node role="condition" type="jetbrains.mps.nanoj.PlusExpression" id="1183019739300">
+            <node role="right" type="jetbrains.mps.nanoj.PlusExpression" id="1183019745804">
+              <node role="right" type="jetbrains.mps.nanoj.NumberExpression" id="1183019747573">
+                <property name="number" value="3" />
+              </node>
+              <node role="left" type="jetbrains.mps.nanoj.NumberExpression" id="1183019744444">
+                <property name="number" value="2" />
+              </node>
+            </node>
+            <node role="left" type="jetbrains.mps.nanoj.NumberExpression" id="1183019737627">
+              <property name="number" value="1" />
+            </node>
+          </node>
           <node role="body" type="jetbrains.mps.nanoj.StatementList" id="1182966479688" />
         </node>
       </node>
@@ -27,12 +39,21 @@
             <link role="method" targetNodeId="1182965183761" resolveInfo="abcdef" />
             <node role="instance" type="jetbrains.mps.nanoj.InstanceMethodCallExpression" id="1182969823081">
               <link role="method" targetNodeId="1182968897745" resolveInfo="Name" />
-              <node role="instance" type="jetbrains.mps.nanoj.StringLiteralExpression" id="1182969911837">
-                <property name="text" value="some text is here" />
+            </node>
+          </node>
+          <node role="body" type="jetbrains.mps.nanoj.StatementList" id="1182968906269">
+            <node role="statement" type="jetbrains.mps.nanoj.IfStatement" id="1183019252117">
+              <node role="body" type="jetbrains.mps.nanoj.StatementList" id="1183019252119" />
+              <node role="condition" type="jetbrains.mps.nanoj.PlusExpression" id="1183019587126">
+                <node role="right" type="jetbrains.mps.nanoj.NumberExpression" id="1183019590520">
+                  <property name="number" value="23" />
+                </node>
+                <node role="left" type="jetbrains.mps.nanoj.NumberExpression" id="1183019585516">
+                  <property name="number" value="123" />
+                </node>
               </node>
             </node>
           </node>
-          <node role="body" type="jetbrains.mps.nanoj.StatementList" id="1182968906269" />
         </node>
       </node>
     </node>

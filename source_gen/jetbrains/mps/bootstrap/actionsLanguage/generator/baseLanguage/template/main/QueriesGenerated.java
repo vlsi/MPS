@@ -25,6 +25,14 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1177442255229(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SPropertyOperations.getBoolean(node, "useNewActions");
   }
+  public static Object propertyMacro_GetPropertyValue_1183017316762(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    if(sourceModel.getLongName().endsWith(".actions")) {
+      return "QueriesGenerated";
+    } else
+    {
+      return "ActionsQueriesGenerated";
+    }
+  }
   public static Object propertyMacro_GetPropertyValue_1172253230032(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode builder = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder", false, false);
     return ActionQueryMethodName.nodeSubstituteActionsBuilder_Precondition(((NodeSubstituteActionsBuilder)SNodeOperations.getAdapter(builder)));
