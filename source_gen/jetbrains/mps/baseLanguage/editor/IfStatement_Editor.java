@@ -12,10 +12,10 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import java.awt.Color;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -203,10 +203,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     {
       editorCell = this.createColumnCell(context, node);
     }
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177555034688");
-    editorCell.setLayoutConstraint("");
+    IfStatement_Editor.setupBasic_CellAlternation(editorCell, node, context);
     return editorCell;
   }
   public EditorCell createRowCell(EditorContext context, SNode node) {

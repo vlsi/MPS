@@ -10,8 +10,8 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -53,10 +53,7 @@ public class Type_Editor extends DefaultNodeEditor {
     {
       editorCell = this.createCellModel_ConceptProperty(context, node);
     }
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138060380694");
-    editorCell.setLayoutConstraint("");
+    Type_Editor.setupBasic_CellAlternation(editorCell, node, context);
     return editorCell;
   }
   public EditorCell createErrorCell(EditorContext context, SNode node) {

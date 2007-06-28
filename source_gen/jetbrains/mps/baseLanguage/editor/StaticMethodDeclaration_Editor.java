@@ -166,10 +166,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     {
       editorCell = this.createConstantCell4(context, node, "{");
     }
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164890626615");
-    editorCell.setLayoutConstraint("");
+    StaticMethodDeclaration_Editor.setupBasic_CellAlternation(editorCell, node, context);
     return editorCell;
   }
   public EditorCell createRowCell(EditorContext context, SNode node) {
