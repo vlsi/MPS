@@ -96,7 +96,7 @@ public abstract class AbstractCellListHandler implements IKeyboardHandler {
       return cellsCollection;
     }
 
-    // if the list compartment is selectable - create wropping cell collection around it so
+    // if the list compartment is selectable - create wrapping cell collection around it so
     // that actions intended to work for the list element do not work for the list owner.
     EditorCell_Collection wrapperCell = EditorCell_Collection.create(editorContext, myOwnerNode, new CellLayout_Horizontal(), null);
     wrapperCell.setSelectable(true);
