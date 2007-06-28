@@ -376,7 +376,7 @@ public class EditorManager {
     private EditorCell myAnchorCell;
 
     protected EditorCell_RTHint(EditorContext editorContext, SNode node) {
-      super(editorContext, node, "", true);
+      super(editorContext, node, "");
       putUserObject(EditorCell.CELL_ID, node.getId());
       setEditable(true);
       setDrawBorder(false);

@@ -364,7 +364,7 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
 
   private class EditorCell_Demo extends EditorCell_Constant {
     public EditorCell_Demo(EditorContext editorContext, String text) {
-      super(editorContext, null, text, true);
+      super(editorContext, null, text);
       this.getRenderedTextLine().setCaretPosition(3);
       this.setDrawBorder(false);
     }
