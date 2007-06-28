@@ -35,27 +35,21 @@ public class RuntimeSupport {
 
   public SNode typeOf(SNode node) {
     if (node == null) return null;
-    SNode type;
-    NodeTypesComponent currentTypesComponent = myTypeChecker.getCurrentTypesComponent();   //first, in current component
-     if (currentTypesComponent != null) {
-      type = currentTypesComponent.getType(node);
-      if (type != null) return type;
-    }
-
-    NodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance()  // then, in appropriate component
+    NodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance()
             .getNodeTypesComponent(node.getContainingRoot());
-    if (nodeTypesComponent != null && nodeTypesComponent != currentTypesComponent) {
+    SNode type;
+    if (nodeTypesComponent != null) {
       type = nodeTypesComponent.getType(node);
       if (type != null) return type;
     }
 
-   // Map<SNode, SNode> typesContext = myTypeChecker.getMainContext();
-   // type = typesContext.get(node);
-  //  if (type == null) {
+    Map<SNode, SNode> typesContext = myTypeChecker.getMainContext();
+    type = typesContext.get(node);
+    if (type == null) {
       SNode var = createNewRuntimeTypesVariable(false);
       type = TypeChecker.asType(var);
-      myTypeChecker.getMainContext().put(node, type);
-  //  }
+      typesContext.put(node, type);
+    }
     return myTypeChecker.getEquationManager().getRepresentator(type);
   }
 
@@ -136,7 +130,7 @@ public class RuntimeSupport {
   }
 
   public void check(SNode node) {
-    myTypeChecker.getCurrentTypesComponent().checkTypesForNodeAndSolveInequations(node);
+    myTypeChecker.checkTypesForNodeAndSolveInequations(node);
   }
 
   public SNode checkedTypeOf(SNode node) {

@@ -47,12 +47,18 @@ public class TypeChecker {
 
   private MySModelCommandListener myListener = new MySModelCommandListener();
 
+  private WeakHashMap<SNode, IErrorReporter> myNodesWithErrors = new WeakHashMap<SNode, IErrorReporter>();
+  private WeakHashMap<SNode, String> myNodesWithErrorStrings = new WeakHashMap<SNode, String>();
+  private Map<SNode, SNode> myMainContext = new HashMap<SNode, SNode>();
+  private Stack<EquationManager> myEquationManagersStack = new Stack<EquationManager>();
   private SubtypingManager mySubtypingManager;
   private RuntimeSupport myRuntimeSupport;
   private RulesManager myRulesManager;
-  private NodeTypesComponent myCurrentTypesComponent = null;
+  private boolean myUsedForBLCompletion = true;
+  private Stack<SNode> myNodesBeingChecked = new Stack<SNode>();
 
   public TypeChecker() {
+    myEquationManagersStack.push(new EquationManager(this));
     mySubtypingManager = new SubtypingManager(this);
     myRuntimeSupport = new RuntimeSupport(this);
     myRulesManager = new RulesManager(this);
@@ -63,11 +69,11 @@ public class TypeChecker {
   }
 
   public Map<SNode, SNode> getMainContext() {
-    return myCurrentTypesComponent.getMainContext();
+    return myMainContext;
   }
 
   public EquationManager getEquationManager() {
-    return myCurrentTypesComponent.getEquationManager();
+    return myEquationManagersStack.peek();
   }
 
   public SubtypingManager getSubtypingManager() {
@@ -83,25 +89,204 @@ public class TypeChecker {
     return myRulesManager;
   }
 
-  /*package*/ void setCurrentTypesComponent(NodeTypesComponent component) {
-    myCurrentTypesComponent = component;
-  }
-
-  /*package*/ void clearCurrentTypesComponent() {
-    myCurrentTypesComponent = null;
+  public void clear() {
+    myMainContext.clear();
+    myEquationManagersStack.clear();
+    myEquationManagersStack.push(new EquationManager(this));
+    {
+      SModelUID uid = getRuntimeTypesModelUID();
+      SModelDescriptor modelDescriptor = (SModelRepository.getInstance().getModelDescriptor(uid));
+      if (modelDescriptor != null) {
+        SModel runtimeTypesModel = getRuntimeTypesModel();
+        runtimeTypesModel.clear();
+      }
+    }
+    myNodesWithErrors.clear();
+    myNodesWithErrorStrings.clear();
+    myNodesBeingChecked.clear();
   }
 
   public void clearForReload() {
+    myCheckedRoots.clear();
     myRulesManager.clear();
     mySubtypingManager.clearSupertypesCache();
+
+    //todo remove a string below
+    myNodesToDependentRoots.clear();
+    clear();
+  }
+
+  public void checkTypes(SNode root) {
+    //clear
+    clear();
+    NodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance().getNodeTypesComponent(root.getContainingRoot());
+    if (nodeTypesComponent != null) {
+      nodeTypesComponent.clear();
+    }
+    if (!loadTypesystemRules(root)) {
+      return;
+    }
+
+    // check types
+    doCheckTypes(root);
+
+    // solve residual inequations
+    myEquationManagersStack.peek().solveInequations();
+
+    // main context
+    Map<SNode, SNode> mainContext = getMainContext();
+
+    // setting types to nodes
+    for (Map.Entry<SNode, SNode> contextEntry : mainContext.entrySet()) {
+      SNode term = contextEntry.getKey();
+      if (term == null) continue;
+      SNode type = expandType(contextEntry.getValue(), getRuntimeTypesModel());
+      if (BaseAdapter.isInstance(type, RuntimeErrorType.class)) {
+        reportTypeError(term, ((RuntimeErrorType) BaseAdapter.fromNode(type)).getErrorText());
+      }
+      SNode containingRoot = term.getContainingRoot();
+      if (containingRoot != null) {
+          NodeTypesComponentsRepository.getInstance().
+                  createNodeTypesComponent(containingRoot).setTypeToNode(term, type);
+      } else LOG.error("containingRoot == null");
+    }
+
+    // setting errors
+    for (SNode node : myNodesWithErrors.keySet()) {
+      String errorString = "HELGINS ERROR: " + myNodesWithErrors.get(node).reportError();
+      myNodesWithErrorStrings.put(node, errorString);
+      NodeTypesComponentsRepository.getInstance().
+              createNodeTypesComponent(node.getContainingRoot()).setErrorToNode(node, errorString);
+    }
+  }
+
+  /*package*/ boolean loadTypesystemRules(SNode root) {
+    List<Language> languages = root.getModel().getLanguages(GlobalScope.getInstance());
+    boolean isLoadedAnyLanguage = false;
+    for (Language language : languages) {
+      boolean b = myRulesManager.loadLanguage(language);
+      isLoadedAnyLanguage = isLoadedAnyLanguage || b;
+    }
+    if (!isLoadedAnyLanguage) return false;
+    return true;
+  }
+
+  public Set<Pair<SNode, String>> getNodesWithErrors() {
+    return CollectionUtil.map(myNodesWithErrorStrings.keySet(), new Mapper<SNode, Pair<SNode, String>>() {
+      public Pair<SNode, String> map(SNode p) {
+        return new Pair<SNode, String>(p, myNodesWithErrorStrings.get(p));
+      }
+    });
   }
 
   public void reportTypeError(SNode nodeWithError, String errorString) {
-    myCurrentTypesComponent.reportTypeError(nodeWithError, errorString);
+    if (nodeWithError != null) {
+      myNodesWithErrors.put(nodeWithError, new SimpleErrorReporter(errorString));
+    }
   }
 
   public void reportTypeError(SNode nodeWithError, IErrorReporter errorReporter) {
-    myCurrentTypesComponent.reportTypeError(nodeWithError, errorReporter);
+    if (nodeWithError != null) {
+      myNodesWithErrors.put(nodeWithError, errorReporter);
+    }
+  }
+
+  private SNode expandType(SNode node, SModel typesModel) {
+    SNode representator = myEquationManagersStack.peek().getRepresentator(node);
+    return expandNode(representator, representator, 0, new HashSet<RuntimeTypeVariable>(), typesModel);
+  }
+
+  private SNode expandNode(SNode node, SNode representator, int depth, Set<RuntimeTypeVariable> variablesMet, SModel typesModel) {
+    if (node == null) return null;
+    if (BaseAdapter.isInstance(node, RuntimeTypeVariable.class)) {
+      RuntimeTypeVariable var = (RuntimeTypeVariable) BaseAdapter.fromNode(node);
+      SNode type = myEquationManagersStack.peek().getRepresentator(node);
+      if (type != representator || depth > 0) {
+
+        if (variablesMet.contains(var)) {
+          //recursion!!
+          RuntimeErrorType error = RuntimeErrorType.newInstance(typesModel);
+          error.setErrorText("recursion types not allowed");
+          return BaseAdapter.fromAdapter(error);
+        }
+        variablesMet.add(var);
+        node = expandNode(type, type, 0, variablesMet, typesModel);
+        variablesMet.remove(var);
+      }
+      return node;
+    }
+    Map<SNode, SNode> childrenReplacement = new HashMap<SNode, SNode>();
+    List<SNode> children = new ArrayList<SNode>(node.getChildren());
+    for (SNode child : children) {
+      SNode newChild = expandNode(child, representator, depth+1, variablesMet, typesModel);
+      if (newChild != child) {
+        childrenReplacement.put(child, newChild);
+      }
+    }
+    for (SNode child : new ArrayList<SNode>(children)) {
+      if (!childrenReplacement.keySet().contains(child)) continue;
+      if (child.getParent() == null) {
+        RuntimeErrorType error = RuntimeErrorType.newInstance(typesModel);
+        error.setErrorText("recursion types not allowed");
+        return BaseAdapter.fromAdapter(error);
+      }
+      SNode parent = child.getParent();
+      assert parent != null;
+      String roleInParent = child.getRole_();
+      assert roleInParent != null;
+      parent.removeChild(child);
+      SNode childReplacement = childrenReplacement.get(child);
+      childReplacement = CopyUtil.copy(childReplacement, parent.getModel());
+      parent.addChild(roleInParent, childReplacement);
+    }
+    return node;
+  }
+
+
+  private void doCheckTypes(SNode node) {
+    NodeTypesComponent nodeTypesComponent =
+            NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(node.getContainingRoot());
+    if (nodeTypesComponent == null) return;
+    nodeTypesComponent.computeTypesForNode(node);
+  }
+
+  /*package*/ void applyRulesToNode(SNode node) {
+    //NodeReadEventsCaster.setNodesReadListener(readAccessListener);
+
+    // new rules:
+    Set<InferenceRule_Runtime> newRules = myRulesManager.getInferenceRules(node);
+    if (newRules != null) {
+      for (InferenceRule_Runtime rule : newRules) {
+        long t1 = System.currentTimeMillis();
+        try {
+          rule.applyRule(node);
+        } finally {
+     //     Statistics.getStatistic(Statistics.HELGINS).add(rule.getClass().getName(), System.currentTimeMillis() - t1, true);
+        }
+      }
+    }
+
+    //NodeReadEventsCaster.removeNodesReadListener();
+  }
+
+  public void checkTypesForNodeAndSolveInequations(SNode node) {
+    if (node == null) return;
+    EquationManager oldSlave = new EquationManager(this);
+    myEquationManagersStack.push(oldSlave);
+    try {
+      doCheckTypes(node);
+    } catch(Throwable t) {
+      LOG.error(t);
+    }
+    EquationManager slave = myEquationManagersStack.pop();
+    if (slave != oldSlave) {
+      LOG.error("equation managers' stack violated");
+    }
+    slave.solveInequations();
+    myEquationManagersStack.peek().putAllEquations(slave);
+    NodeTypesComponentsRepository.getInstance()
+            .createNodeTypesComponent(node.getContainingRoot())
+            .markNodeAsChecked(node);
   }
 
   public static SNode asType(Object o) {
@@ -114,6 +299,19 @@ public class TypeChecker {
     return null;
   }
 
+  @NotNull
+  public static List<SModelDescriptor> getTypesModels(SNode node) {
+    List<Language> languages = node.getModel().getLanguages(GlobalScope.getInstance());
+    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
+    for (Language l : languages) {
+      SModelDescriptor modelDescriptor = l.getHelginsTypesystemModelDescriptor();
+      if (modelDescriptor != null) {
+        result.add(modelDescriptor);
+      }
+    }
+    return result;
+  }
+
   public boolean isCheckedRoot(SNode node) {
     return myCheckedRoots.contains(node);
   }
@@ -124,7 +322,7 @@ public class TypeChecker {
     try {
       MyReadAccessListener listener = new MyReadAccessListener();
       NodeReadAccessCaster.setNodeAccessListener(listener);
-      NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(node).computeTypes();
+      checkTypes(node);
       myCheckedRoots.add(node);
 
       for (SNode nodeToDependOn : listener.getNodesToDependOn()) {
@@ -150,7 +348,13 @@ public class TypeChecker {
   @Hack
   @Nullable
   public SNode hackTypeOf(SNode node) {
-    return getTypeOf(node);
+    if (node == null) return null;
+    if (myCheckedRoots.contains(node.getContainingRoot())) {
+      SNode type = getTypeDontCheck(node);
+      return type;
+    }
+    checkTypes(node);
+    return getTypeDontCheck(node);
   }
 
   public void markAsChecked(SNode node) {
@@ -203,17 +407,48 @@ public class TypeChecker {
     return modelDescriptor.getSModel();
   }
 
+  @Nullable
+  public String getTypeErrorDontCheck(SNode node) {
+    if (node == null) return null;
+    NodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance().
+            getNodeTypesComponent(node.getContainingRoot());
+    if (nodeTypesComponent == null) return null;
+    return nodeTypesComponent.getError(node);
+  }
+
+  @Hack
+  public boolean isUsedForBLCompletion() {
+    return myUsedForBLCompletion;
+  }
+
+  public void setUsedForBLCompletion(boolean b) {
+    myUsedForBLCompletion = b;
+  }
+
+  /*package*/ void pushNodeBeingChecked(SNode node) {
+    myNodesBeingChecked.push(node);
+  }
+
+  /*package*/ SNode popNodeBeingChecked() {
+    return myNodesBeingChecked.pop();
+  }
+
+  public boolean isNodeBeingChecked(SNode node) {
+    return myNodesBeingChecked.contains(node);
+  }
+
+  public EquationManager getMaster(EquationManager equationManager) {
+    int i = myEquationManagersStack.indexOf(equationManager);
+    if (i > 0) {
+      return myEquationManagersStack.get(i-1);
+    } else {
+      return null;
+    }
+  }
+
   @Hack
   public void markUnchecked(SNode containingRoot) {
     myCheckedRoots.remove(containingRoot);
-  }
-
-  public NodeTypesComponent getCurrentTypesComponent() {
-    return myCurrentTypesComponent;
-  }
-
-  public String getTypeErrorDontCheck(SNode node) {
-    return NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(node.getContainingRoot()).getError(node);
   }
 
   private static class MyReadAccessListener implements INodeReadAccessListener {

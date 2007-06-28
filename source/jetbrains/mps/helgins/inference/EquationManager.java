@@ -20,7 +20,6 @@ import java.util.*;
 public class EquationManager {
 
   private TypeChecker myTypeChecker;
-  private NodeTypesComponent myNodeTypesComponent;
 
   private Map<SNode, Map<SNode, ErrorInfo>> mySubtypesToSupertypesMap = new HashMap<SNode, Map<SNode, ErrorInfo>>();
   private Map<SNode, Map<SNode, ErrorInfo>> mySupertypesToSubtypesMap = new HashMap<SNode, Map<SNode, ErrorInfo>>();
@@ -32,9 +31,8 @@ public class EquationManager {
 
   private Map<SNode, SNode> myEquations = new HashMap<SNode, SNode>();
 
-  public EquationManager(TypeChecker typeChecker, NodeTypesComponent nodeTypesComponent) {
+  public EquationManager(TypeChecker typeChecker) {
     myTypeChecker = typeChecker;
-    myNodeTypesComponent = nodeTypesComponent;
   }
 
   public TypeChecker getTypeChecker() {
@@ -680,7 +678,7 @@ public class EquationManager {
   }
 
   public EquationManager getMaster() {
-    return myNodeTypesComponent.getMaster(this);
+    return myTypeChecker.getMaster(this);
   }
 
   public static class ErrorInfo {

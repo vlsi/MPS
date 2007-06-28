@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.action.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
 import jetbrains.mps.logging.Logger;
 
 import java.util.*;
@@ -89,9 +88,7 @@ public class Resolver {
           String resolveInfo = reference.getResolveInfo();
           processAction(matchingActions.get(0), resolveInfo, reference);
           // TypeChecker.getInstance().checkRoot(containingRoot);
-          SNode sNode = reference.getSourceNode().getParent();
-          NodeTypesComponentsRepository.getInstance().
-                  createNodeTypesComponent(sNode.getContainingRoot()).computeTypesForNode(sNode); //todo dirty hack
+          TypeChecker.getInstance().checkTypes(reference.getSourceNode().getParent()); //todo dirty hack
         }
       }
     }, "resolve");
@@ -99,7 +96,7 @@ public class Resolver {
   }
 
 
-  private static List<SNode> getSmartReferenceTargets(
+   private static List<SNode> getSmartReferenceTargets(
           final ConceptDeclaration referenceNodeConcept,
           LinkDeclaration smartReference,
           final SNode parentNode,
@@ -122,11 +119,7 @@ public class Resolver {
     ConceptDeclaration referenceNodeConcept = (ConceptDeclaration) referenceNode.getConceptDeclarationAdapter();
     LinkDeclaration linkDeclaration = SModelUtil_new.findLinkDeclaration(referenceNodeConcept, reference.getRole());
     final AbstractConceptDeclaration referentConcept = linkDeclaration.getTarget();
-
-    SNode sNode = referenceNode.getParent();
-    NodeTypesComponentsRepository.getInstance().
-            createNodeTypesComponent(sNode.getContainingRoot()).computeTypesForNode(sNode); //todo dirty hack
-
+    TypeChecker.getInstance().checkTypes(referenceNode.getParent()); //todo dirty hack
     IStatus status = ModelConstraintsUtil.getReferentSearchScope(referenceNode.getParent(),
             referenceNode, referenceNodeConcept, linkDeclaration, operationContext.getScope());
     if (status.isError()) {
@@ -157,11 +150,11 @@ public class Resolver {
             referenceNode.getRole_());
     final AbstractConceptDeclaration possibleChildConceptDeclaration = parentLinkDeclaration.getTarget();
 
-    ISearchScope conceptsSearchScope = SModelSearchUtil_new.createConceptsFromModelLanguagesScope(parent.getModel(), true, operationContext.getScope());
-    List<SNode> applicableConcepts = conceptsSearchScope.getNodes(new Condition<SNode>() {
-      public boolean met(SNode object) {
-        return SModelUtil_new.isAssignableConcept((ConceptDeclaration) BaseAdapter.fromNode(object), possibleChildConceptDeclaration);
-      }
+     ISearchScope conceptsSearchScope = SModelSearchUtil_new.createConceptsFromModelLanguagesScope(parent.getModel(), true, operationContext.getScope());
+     List<SNode> applicableConcepts = conceptsSearchScope.getNodes(new Condition<SNode>() {
+     public boolean met(SNode object) {
+       return SModelUtil_new.isAssignableConcept((ConceptDeclaration) BaseAdapter.fromNode(object), possibleChildConceptDeclaration);
+     }
     });
     for (SNode node : applicableConcepts) {
       ConceptDeclaration applicableConcept = (ConceptDeclaration) BaseAdapter.fromNode(node);
