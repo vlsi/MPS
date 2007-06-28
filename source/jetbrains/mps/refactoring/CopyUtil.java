@@ -35,7 +35,7 @@ public class CopyUtil  {
 
   public static <SN extends SNode> List<SN> copy(List<SN> nodes, SModel targetModel, Map<SNode, SNode> mapping, IScope scope) {
     List<SN> result = (List<SN>) clone(nodes, targetModel, mapping, scope);
-    fixReferences(result, mapping);
+    addReferences(nodes, mapping);
     return result;
   }
 
@@ -49,8 +49,8 @@ public class CopyUtil  {
   public static <SN extends SNode> SN copy(SN node, SModel targetModel, Map<SNode, SNode> mapping, IScope scope) {
     SN result = (SN) clone(node, targetModel, mapping, scope);
     List<SN> nodes = new ArrayList<SN>();
-    nodes.add(result);
-    fixReferences(nodes, mapping);
+    nodes.add(node);
+    addReferences(nodes, mapping);
     return result;
   }
 
@@ -63,10 +63,6 @@ public class CopyUtil  {
 
     for (String property : node.getProperties().keySet()) {
       result.setProperty(property, node.getProperty(property), false);
-    }
-
-    for (SReference reference : node.getReferences()) {
-      result.addReferent(reference.getRole(), reference.getTargetNode());
     }
 
     for (SNode child : node.getChildren()) {
@@ -84,13 +80,15 @@ public class CopyUtil  {
      return results;
    }
 
-  private static void fixReferences(List<? extends SNode> nodes, Map<SNode, SNode> mapping) {
-    for (SNode node : nodes) {
+  private static void addReferences(List<? extends SNode> sourceNodes, Map<SNode, SNode> mapping) {
+    for (SNode node : sourceNodes) {
+      SNode target = mapping.get(node);
+
       for (SReference ref : node.getReferences()) {
         if (mapping.containsKey(ref.getTargetNode())) {
-          node.replace(ref.getTargetNode(), mapping.get(ref.getTargetNode()));
+          target.addReferent(ref.getRole(), mapping.get(ref.getTargetNode()));
         } else {
-          node.getModel().addImportedModel(ref.getSourceNode().getModel().getUID());
+          target.addReferent(ref.getRole(), ref.getTargetNode());
         }
       }
 
@@ -98,7 +96,7 @@ public class CopyUtil  {
       for (SNode child : node.getChildren()) {
         childList.add(child);
       }
-      fixReferences(childList, mapping);
+      addReferences(childList, mapping);
     }
   }
 }
