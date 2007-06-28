@@ -8,6 +8,7 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Vertical;
@@ -16,26 +17,36 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myStatementListHandler_statementList_;
 
-  private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177326606089");
   }
-  private static void setupConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177326628329");
     editorCell.setSelectable(false);
   }
-  private static void setupStatementList(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_StatementList(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177326980923");
     editorCell.setCellBackgroundColor(Color.lightGray);
   }
-  private static void setupRowCell(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177326628328");
     editorCell.setSelectable(false);
   }
-  private static void setupConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177326622077");
   }
-  private static void setupColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177326571087");
+  }
+  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    editorCell.getTextLine().setTextColor(Color.gray);
+  }
+  private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupLabel_StatementList(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    editorCell.getTextLine().setTextColor(Color.gray);
   }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
@@ -43,7 +54,7 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
   }
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    CommentedStatementsBlock_Editor.setupRowCell(editorCell, node, context);
+    CommentedStatementsBlock_Editor.setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -53,7 +64,7 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
   }
   public EditorCell createColumnCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    CommentedStatementsBlock_Editor.setupColumnCell(editorCell, node, context);
+    CommentedStatementsBlock_Editor.setupBasic_ColumnCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -64,25 +75,23 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    CommentedStatementsBlock_Editor.setupConstantCell(editorCell, node, context);
-    editorCell.setEditable(false);
+    CommentedStatementsBlock_Editor.setupBasic_ConstantCell(editorCell, node, context);
+    CommentedStatementsBlock_Editor.setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.getTextLine().setTextColor(Color.gray);
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    CommentedStatementsBlock_Editor.setupConstantCell1(editorCell, node, context);
-    editorCell.setEditable(false);
+    CommentedStatementsBlock_Editor.setupBasic_ConstantCell1(editorCell, node, context);
+    CommentedStatementsBlock_Editor.setupLabel_ConstantCell1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
   public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    CommentedStatementsBlock_Editor.setupConstantCell2(editorCell, node, context);
-    editorCell.setEditable(false);
+    CommentedStatementsBlock_Editor.setupBasic_ConstantCell2(editorCell, node, context);
+    CommentedStatementsBlock_Editor.setupLabel_ConstantCell2(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.getTextLine().setTextColor(Color.gray);
     return editorCell;
   }
   public EditorCell createStatementList(EditorContext context, SNode node) {

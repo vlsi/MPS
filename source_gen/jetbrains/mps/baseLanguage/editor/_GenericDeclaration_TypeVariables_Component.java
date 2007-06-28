@@ -7,6 +7,7 @@ import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
@@ -20,24 +21,30 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     super(node);
   }
 
-  private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140573670192");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
-  private static void setupTypeVariableDeclarationList(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_TypeVariableDeclarationList(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140573670193");
     editorCell.setDrawBorder(false);
   }
-  private static void setupConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140573670194");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
-  private static void setupRowCell(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140573670191");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
+  }
+  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupLabel_TypeVariableDeclarationList(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public EditorCell createEditorCell(EditorContext context) {
@@ -48,7 +55,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
   }
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    _GenericDeclaration_TypeVariables_Component.setupRowCell(editorCell, node, context);
+    _GenericDeclaration_TypeVariables_Component.setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -59,15 +66,15 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    _GenericDeclaration_TypeVariables_Component.setupConstantCell(editorCell, node, context);
-    editorCell.setEditable(false);
+    _GenericDeclaration_TypeVariables_Component.setupBasic_ConstantCell(editorCell, node, context);
+    _GenericDeclaration_TypeVariables_Component.setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    _GenericDeclaration_TypeVariables_Component.setupConstantCell1(editorCell, node, context);
-    editorCell.setEditable(false);
+    _GenericDeclaration_TypeVariables_Component.setupBasic_ConstantCell1(editorCell, node, context);
+    _GenericDeclaration_TypeVariables_Component.setupLabel_ConstantCell1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }

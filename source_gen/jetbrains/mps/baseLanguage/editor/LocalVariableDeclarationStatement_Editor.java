@@ -6,29 +6,33 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import java.awt.Color;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class LocalVariableDeclarationStatement_Editor extends DefaultNodeEditor {
 
-  private static void setupLocalVariableDeclarationCell(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_LocalVariableDeclarationCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075380566830");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
-  private static void setupConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075380566831");
     editorCell.setDrawBorder(false);
   }
-  private static void setupStatementBox(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_StatementBox(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075380566829");
     editorCell.setDrawBorder(false);
+  }
+  private static void setupLabel_LocalVariableDeclarationCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
@@ -36,7 +40,7 @@ public class LocalVariableDeclarationStatement_Editor extends DefaultNodeEditor 
   }
   public EditorCell createStatementBox(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    LocalVariableDeclarationStatement_Editor.setupStatementBox(editorCell, node, context);
+    LocalVariableDeclarationStatement_Editor.setupBasic_StatementBox(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -46,8 +50,8 @@ public class LocalVariableDeclarationStatement_Editor extends DefaultNodeEditor 
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    LocalVariableDeclarationStatement_Editor.setupConstantCell(editorCell, node, context);
-    editorCell.setEditable(false);
+    LocalVariableDeclarationStatement_Editor.setupBasic_ConstantCell(editorCell, node, context);
+    LocalVariableDeclarationStatement_Editor.setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }

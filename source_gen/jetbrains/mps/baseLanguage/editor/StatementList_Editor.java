@@ -7,6 +7,7 @@ import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.CellLayout_Vertical;
 import java.awt.Color;
@@ -15,10 +16,12 @@ public class StatementList_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myStatementListHandler_statementList_;
 
-  private static void setupStatementList(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_StatementList(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1073416106126");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
+  }
+  private static void setupLabel_StatementList(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {

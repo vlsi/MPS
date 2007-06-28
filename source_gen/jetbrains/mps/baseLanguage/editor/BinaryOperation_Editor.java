@@ -6,10 +6,10 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import java.awt.Color;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -19,25 +19,32 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.ConceptPropertyCellP
 
 public class BinaryOperation_Editor extends DefaultNodeEditor {
 
-  private static void setupLeftExpressionCell(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_LeftExpressionCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1166063955821");
     editorCell.setDrawBorder(false);
     BinaryOperation_LeftArgument_Actions.setCellActions(editorCell, node, context);
   }
-  private static void setupCellModel_ConceptProperty(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_CellModel_ConceptProperty(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1166063984223");
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
     editorCell.addKeyMap(new BinaryOperation_keyMap());
   }
-  private static void setupRightExpressionCell(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RightExpressionCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1166063955825");
     editorCell.setDrawBorder(false);
     BinaryOperation_RightArgument_Actions.setCellActions(editorCell, node, context);
   }
-  private static void setupRowCell(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1166063955820");
     editorCell.setDrawBorder(false);
+  }
+  private static void setupLabel_LeftExpressionCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupLabel_CellModel_ConceptProperty(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    editorCell.setEditable(true);
+  }
+  private static void setupLabel_RightExpressionCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
@@ -45,7 +52,7 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
   }
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    BinaryOperation_Editor.setupRowCell(editorCell, node, context);
+    BinaryOperation_Editor.setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
