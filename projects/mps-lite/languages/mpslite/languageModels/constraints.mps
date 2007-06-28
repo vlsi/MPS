@@ -609,9 +609,7 @@
           </node>
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1183031298647">
             <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1183031298648">
-              <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1183031298649">
-                <property name="value" value="false" />
-              </node>
+              <node role="expression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1183062229051" />
             </node>
           </node>
         </node>
@@ -953,8 +951,8 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1182966580931">
       <property name="isVirtual" value="true" />
-      <property name="name" value="toString" />
       <property name="isAbstract" value="true" />
+      <property name="name" value="toString" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1182966589730">
         <link role="classifier" extResolveInfo="4.[Classifier]String" />
       </node>
@@ -1318,8 +1316,8 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1183016071761">
       <property name="isVirtual" value="true" />
-      <property name="isAbstract" value="true" />
       <property name="name" value="getChildDeclaration" />
+      <property name="isAbstract" value="true" />
       <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1183016092623">
         <link role="concept" targetNodeId="1.1182511424766" />
       </node>
