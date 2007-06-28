@@ -127,28 +127,28 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     TryCatchStatement_Editor.setupBasic_ConstantCell(editorCell, node, context);
     TryCatchStatement_Editor.setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     TryCatchStatement_Editor.setupBasic_ConstantCell1(editorCell, node, context);
     TryCatchStatement_Editor.setupLabel_ConstantCell1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
   public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     TryCatchStatement_Editor.setupBasic_ConstantCell2(editorCell, node, context);
     TryCatchStatement_Editor.setupLabel_ConstantCell2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
   public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     TryCatchStatement_Editor.setupBasic_ConstantCell3(editorCell, node, context);
     TryCatchStatement_Editor.setupLabel_ConstantCell3(editorCell, node, context);
     editorCell.setDefaultText("");

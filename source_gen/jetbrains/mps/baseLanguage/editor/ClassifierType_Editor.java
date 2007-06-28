@@ -4,12 +4,12 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
@@ -23,6 +23,9 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myParameterListHandler_parameterList_;
 
+  public static boolean _QueryFunction_NodeCondition_1145920376960(SNode node, IScope scope) {
+    return SLinkOperations.getCount(node, "parameter") > 0;
+  }
   private static void setupBasic_ClassifierReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140569208432");
     editorCell.setDrawBorder(false);
@@ -63,9 +66,6 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
   }
   private static void setupLabel_ClassifierReferenceCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
-  public static boolean _QueryFunction_NodeCondition_1145920376960(SNode node, IScope scope) {
-    return SLinkOperations.getCount(node, "parameter") > 0;
-  }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCellAlternation(context, node);
@@ -99,14 +99,14 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     ClassifierType_Editor.setupBasic_ConstantCell(editorCell, node, context);
     ClassifierType_Editor.setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     ClassifierType_Editor.setupBasic_ConstantCell1(editorCell, node, context);
     ClassifierType_Editor.setupLabel_ConstantCell1(editorCell, node, context);
     editorCell.setDefaultText("");

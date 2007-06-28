@@ -273,91 +273,91 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     EnumClass_Editor.setupBasic_ConstantCell(editorCell, node, context);
     EnumClass_Editor.setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     EnumClass_Editor.setupBasic_ConstantCell1(editorCell, node, context);
     EnumClass_Editor.setupLabel_ConstantCell1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
   public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     EnumClass_Editor.setupBasic_ConstantCell3(editorCell, node, context);
     EnumClass_Editor.setupLabel_ConstantCell3(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
   public EditorCell createConstantCell4(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     EnumClass_Editor.setupBasic_ConstantCell4(editorCell, node, context);
     EnumClass_Editor.setupLabel_ConstantCell4(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
   public EditorCell createConstantCell6(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     EnumClass_Editor.setupBasic_ConstantCell6(editorCell, node, context);
     EnumClass_Editor.setupLabel_ConstantCell6(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
   public EditorCell createConstantCell7(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     EnumClass_Editor.setupBasic_ConstantCell7(editorCell, node, context);
     EnumClass_Editor.setupLabel_ConstantCell7(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
   public EditorCell createConstantCell9(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     EnumClass_Editor.setupBasic_ConstantCell9(editorCell, node, context);
     EnumClass_Editor.setupLabel_ConstantCell9(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
   public EditorCell createConstantCell10(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     EnumClass_Editor.setupBasic_ConstantCell10(editorCell, node, context);
     EnumClass_Editor.setupLabel_ConstantCell10(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
   public EditorCell createConstantCell12(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     EnumClass_Editor.setupBasic_ConstantCell12(editorCell, node, context);
     EnumClass_Editor.setupLabel_ConstantCell12(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
   public EditorCell createConstantCell13(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     EnumClass_Editor.setupBasic_ConstantCell13(editorCell, node, context);
     EnumClass_Editor.setupLabel_ConstantCell13(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
   public EditorCell createConstantCell15(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     EnumClass_Editor.setupBasic_ConstantCell15(editorCell, node, context);
     EnumClass_Editor.setupLabel_ConstantCell15(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
   public EditorCell createConstantCell16(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     EnumClass_Editor.setupBasic_ConstantCell16(editorCell, node, context);
     EnumClass_Editor.setupLabel_ConstantCell16(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
   public EditorCell createConstantCell18(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     EnumClass_Editor.setupBasic_ConstantCell18(editorCell, node, context);
     EnumClass_Editor.setupLabel_ConstantCell18(editorCell, node, context);
     editorCell.setDefaultText("");

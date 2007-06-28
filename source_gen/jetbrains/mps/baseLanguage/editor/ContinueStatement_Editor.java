@@ -45,14 +45,14 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     ContinueStatement_Editor.setupBasic_ConstantCell(editorCell, node, context);
     ContinueStatement_Editor.setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     ContinueStatement_Editor.setupBasic_ConstantCell1(editorCell, node, context);
     ContinueStatement_Editor.setupLabel_ConstantCell1(editorCell, node, context);
     editorCell.setDefaultText("");

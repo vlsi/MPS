@@ -45,14 +45,14 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     BreakStatement_Editor.setupBasic_ConstantCell(editorCell, node, context);
     BreakStatement_Editor.setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     BreakStatement_Editor.setupBasic_ConstantCell1(editorCell, node, context);
     BreakStatement_Editor.setupLabel_ConstantCell1(editorCell, node, context);
     editorCell.setDefaultText("");

@@ -26,7 +26,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
     return this.createConstantCell(context, node, "this");
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     ThisExpression_Editor.setupBasic_ConstantCell(editorCell, node, context);
     ThisExpression_Editor.setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
