@@ -279,6 +279,7 @@
       <node role="line" type="jetbrains.mpslite.Line" id="1182969322965">
         <node role="linePart" type="jetbrains.mpslite.ChildDeclarationPart" id="1182969324810">
           <property name="name" value="left" />
+          <property name="rightTransformable" value="true" />
           <link role="type" targetNodeId="1182966285571" resolveInfo="Expression" />
         </node>
         <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182969329593">
@@ -295,6 +296,7 @@
       <link role="extends" targetNodeId="1182969317058" resolveInfo="BinaryExpression" />
       <node role="line" type="jetbrains.mpslite.Line" id="1182969339644">
         <node role="linePart" type="jetbrains.mpslite.ChildReferencePart" id="1182969444601">
+          <property name="rightTransformable" value="true" />
           <link role="declaration" targetNodeId="1182969324810" resolveInfo="left" />
         </node>
         <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182969449400">
@@ -310,6 +312,7 @@
       <link role="extends" targetNodeId="1182969317058" resolveInfo="BinaryExpression" />
       <node role="line" type="jetbrains.mpslite.Line" id="1182969456014">
         <node role="linePart" type="jetbrains.mpslite.ChildReferencePart" id="1182969456015">
+          <property name="rightTransformable" value="true" />
           <link role="declaration" targetNodeId="1182969324810" resolveInfo="left" />
         </node>
         <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182969456016">
@@ -325,6 +328,7 @@
       <link role="extends" targetNodeId="1182969317058" resolveInfo="BinaryExpression" />
       <node role="line" type="jetbrains.mpslite.Line" id="1182969465560">
         <node role="linePart" type="jetbrains.mpslite.ChildReferencePart" id="1182969465561">
+          <property name="rightTransformable" value="true" />
           <link role="declaration" targetNodeId="1182969324810" resolveInfo="left" />
         </node>
         <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182969465562">
@@ -340,6 +344,7 @@
       <link role="extends" targetNodeId="1182969317058" resolveInfo="BinaryExpression" />
       <node role="line" type="jetbrains.mpslite.Line" id="1182969470408">
         <node role="linePart" type="jetbrains.mpslite.ChildReferencePart" id="1182969470409">
+          <property name="rightTransformable" value="true" />
           <link role="declaration" targetNodeId="1182969324810" resolveInfo="left" />
         </node>
         <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182969470410">
@@ -355,6 +360,7 @@
       <link role="extends" targetNodeId="1182969317058" resolveInfo="BinaryExpression" />
       <node role="line" type="jetbrains.mpslite.Line" id="1182969474845">
         <node role="linePart" type="jetbrains.mpslite.ChildReferencePart" id="1182969474846">
+          <property name="rightTransformable" value="true" />
           <link role="declaration" targetNodeId="1182969324810" resolveInfo="left" />
         </node>
         <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182969474847">
@@ -370,6 +376,7 @@
       <link role="extends" targetNodeId="1182969317058" resolveInfo="BinaryExpression" />
       <node role="line" type="jetbrains.mpslite.Line" id="1182969485239">
         <node role="linePart" type="jetbrains.mpslite.ChildReferencePart" id="1182969485240">
+          <property name="rightTransformable" value="true" />
           <link role="declaration" targetNodeId="1182969324810" resolveInfo="left" />
         </node>
         <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182969485241">
@@ -385,6 +392,7 @@
       <link role="extends" targetNodeId="1182969317058" resolveInfo="BinaryExpression" />
       <node role="line" type="jetbrains.mpslite.Line" id="1182969490291">
         <node role="linePart" type="jetbrains.mpslite.ChildReferencePart" id="1182969490292">
+          <property name="rightTransformable" value="true" />
           <link role="declaration" targetNodeId="1182969324810" resolveInfo="left" />
         </node>
         <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182969490293">
@@ -401,6 +409,7 @@
       <node role="line" type="jetbrains.mpslite.Line" id="1182969726512">
         <node role="linePart" type="jetbrains.mpslite.ChildDeclarationPart" id="1182969745144">
           <property name="name" value="instance" />
+          <property name="rightTransformable" value="true" />
           <link role="type" targetNodeId="1182966285571" resolveInfo="Expression" />
         </node>
         <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182969748912">

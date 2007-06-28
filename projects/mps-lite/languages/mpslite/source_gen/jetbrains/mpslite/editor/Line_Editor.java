@@ -7,19 +7,25 @@ import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
+import java.awt.Color;
 
 public class Line_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myLinePartListHandler_linePartList_;
 
-  private static void setupLinePartList(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_LinePartList(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182511258456");
+    editorCell.setDrawBorder(false);
+    editorCell.addKeyMap(new _Line_Actions());
+  }
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182511256407");
     editorCell.setDrawBorder(false);
   }
-  private static void setupRowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setDrawBorder(false);
+  private static void setupLabel_LinePartList(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
@@ -27,14 +33,11 @@ public class Line_Editor extends DefaultNodeEditor {
   }
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    Line_Editor.setupRowCell(editorCell, node, context);
+    Line_Editor.setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createLinePartList(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182511256407");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createLinePartList(EditorContext context, SNode node) {

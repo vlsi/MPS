@@ -86,6 +86,9 @@
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1182511442830">
       <link role="intfc" targetNodeId="1.1169194658468" />
     </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1183013679293">
+      <link role="intfc" targetNodeId="1183013629275" resolveInfo="IRightTransformable" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182511699557">
     <property name="name" value="PropertyTypeDeclaration" />
@@ -147,6 +150,9 @@
     <property name="name" value="ChildReferencePart" />
     <property name="package" value="Parts" />
     <link role="extends" targetNodeId="1182511214735" resolveInfo="LinePart" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1183013685310">
+      <link role="intfc" targetNodeId="1183013629275" resolveInfo="IRightTransformable" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182845879639">
       <property name="value" value="[&lt;{declaration}&gt;]" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
@@ -236,6 +242,14 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182846211419">
       <property name="value" value="reference reference" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptDeclaration" id="1183013629275">
+    <property name="name" value="IRightTransformable" />
+    <property name="package" value="Parts" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1183013651198">
+      <property name="name" value="rightTransformable" />
+      <link role="dataType" targetNodeId="1.1082983657063" />
     </node>
   </node>
 </model>
