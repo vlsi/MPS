@@ -136,20 +136,13 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-  public EditorCell createCellModel_ModelAccess(EditorContext editorContext, SNode node) {
-    ModelAccessor modelAccessor = this._modelAcessorFactory_1180024314810(editorContext, node);
-    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
+  public EditorCell createCellModel_ModelAccess(EditorContext context, SNode node) {
+    ModelAccessor modelAccessor = this._modelAcessorFactory_1180024314810(context, node);
+    EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
+    ConceptFunction_Editor.setupBasic_CellModel_ModelAccess(editorCell, node, context);
+    ConceptFunction_Editor.setupLabel_CellModel_ModelAccess(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.setFontType(MPSFonts.ITALIC);
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1180024314810");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public ModelAccessor _modelAcessorFactory_1180024314810(final EditorContext editorContext, final SNode node) {
