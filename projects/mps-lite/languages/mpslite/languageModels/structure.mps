@@ -12,6 +12,10 @@
       <property name="name" value="root" />
       <link role="dataType" targetNodeId="1.1082983657063" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1183028098253">
+      <property name="name" value="abstract" />
+      <link role="dataType" targetNodeId="1.1082983657063" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182511234181">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="0..n" />
@@ -169,9 +173,6 @@
       <property name="sourceCardinality" value="1" />
       <property name="role" value="declaration" />
       <link role="target" targetNodeId="1182511940438" resolveInfo="PropertyDeclarationPart" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1182845983630">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1182845930320">
       <property name="value" value="{&lt;{declaration}&gt;}" />

@@ -41,6 +41,7 @@
     <property name="name" value="Methods" />
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182956481186">
       <property name="name" value="BaseMethod" />
+      <property name="abstract" value="true" />
       <node role="line" type="jetbrains.mpslite.Line" id="1182956481187">
         <node role="linePart" type="jetbrains.mpslite.ChildDeclarationPart" id="1182956481188">
           <property name="name" value="type" />
@@ -96,6 +97,7 @@
     <property name="name" value="Types" />
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182956598488">
       <property name="name" value="Type" />
+      <property name="abstract" value="true" />
     </node>
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182958613287">
       <property name="name" value="ClassifierType" />
@@ -109,6 +111,7 @@
     </node>
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182958625632">
       <property name="name" value="PrimitiveType" />
+      <property name="abstract" value="true" />
       <link role="extends" targetNodeId="1182956598488" resolveInfo="Type" />
     </node>
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182956613900">
@@ -188,6 +191,7 @@
     <property name="name" value="Statements" />
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182966087965">
       <property name="name" value="Statement" />
+      <property name="abstract" value="true" />
       <node role="line" type="jetbrains.mpslite.Line" id="1182966298619" />
     </node>
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182966322282">
@@ -258,14 +262,26 @@
         </node>
       </node>
     </node>
+    <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1183027955959">
+      <property name="name" value="LocalVariableDeclarationStatement" />
+      <link role="extends" targetNodeId="1182966087965" resolveInfo="Statement" />
+      <node role="line" type="jetbrains.mpslite.Line" id="1183027963491">
+        <node role="linePart" type="jetbrains.mpslite.ChildDeclarationPart" id="1183027964867">
+          <property name="name" value="declaration" />
+          <link role="type" targetNodeId="1183027574668" resolveInfo="LocalVariableDeclaration" />
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mpslite.NodeTypeDeclarations" id="1182966282304">
     <property name="name" value="Expressions" />
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182966285571">
       <property name="name" value="Expression" />
+      <property name="abstract" value="true" />
     </node>
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182969317058">
       <property name="name" value="BinaryExpression" />
+      <property name="abstract" value="true" />
       <link role="extends" targetNodeId="1182966285571" resolveInfo="Expression" />
       <node role="line" type="jetbrains.mpslite.Line" id="1182969322965">
         <node role="linePart" type="jetbrains.mpslite.ChildDeclarationPart" id="1182969324810">
@@ -441,6 +457,60 @@
         </node>
         <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182969878640">
           <property name="text" value="&quot;" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mpslite.NodeTypeDeclarations" id="1183027540955">
+    <property name="name" value="Variables" />
+    <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1183027543503">
+      <property name="name" value="VariableDeclaration" />
+      <property name="abstract" value="true" />
+      <node role="line" type="jetbrains.mpslite.Line" id="1183027547910">
+        <node role="linePart" type="jetbrains.mpslite.ChildDeclarationPart" id="1183027551224">
+          <property name="name" value="type" />
+          <link role="type" targetNodeId="1182956598488" resolveInfo="Type" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.PropertyDeclarationPart" id="1183027558523">
+          <property name="name" value="name" />
+          <link role="type" targetNodeId="1.1182511871037" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1183027564447">
+          <property name="text" value="=" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.ChildDeclarationPart" id="1183027566667">
+          <property name="name" value="initializer" />
+          <link role="type" targetNodeId="1182966285571" resolveInfo="Expression" />
+        </node>
+      </node>
+    </node>
+    <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1183027574668">
+      <property name="name" value="LocalVariableDeclaration" />
+      <link role="extends" targetNodeId="1183027543503" resolveInfo="VariableDeclaration" />
+      <node role="line" type="jetbrains.mpslite.Line" id="1183027580482">
+        <node role="linePart" type="jetbrains.mpslite.ChildReferencePart" id="1183027591343">
+          <link role="declaration" targetNodeId="1183027551224" resolveInfo="type" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.PropertyReferencePart" id="1183027770091">
+          <link role="declaration" targetNodeId="1183027558523" resolveInfo="name" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1183027612287">
+          <property name="text" value="=" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.ChildReferencePart" id="1183027614242">
+          <link role="declaration" targetNodeId="1183027566667" resolveInfo="initializer" />
+        </node>
+      </node>
+    </node>
+    <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1183027852869">
+      <property name="name" value="ParameterDeclaration" />
+      <link role="extends" targetNodeId="1183027543503" resolveInfo="VariableDeclaration" />
+      <node role="line" type="jetbrains.mpslite.Line" id="1183027923778">
+        <node role="linePart" type="jetbrains.mpslite.ChildReferencePart" id="1183027924129">
+          <link role="declaration" targetNodeId="1183027551224" resolveInfo="type" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.PropertyReferencePart" id="1183027924130">
+          <link role="declaration" targetNodeId="1183027558523" resolveInfo="name" />
         </node>
       </node>
     </node>
