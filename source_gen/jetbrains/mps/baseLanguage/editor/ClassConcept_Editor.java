@@ -836,15 +836,11 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       this.myImplementedInterfaceListHandler_implementedInterfaceList_ = new ClassConcept_Editor_ImplementedInterfaceListHandler_implementedInterfaceList_(node, "implementedInterface", context);
     }
     EditorCell_Collection editorCell = this.myImplementedInterfaceListHandler_implementedInterfaceList_.createCells(context, new CellLayout_Vertical(), false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    ClassConcept_Editor.setupBasic_ImplementedInterfaceList(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.putUserObject(EditorCell.ROLE, this.myImplementedInterfaceListHandler_implementedInterfaceList_.getElementRole());
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createStaticFieldList(EditorContext context, SNode node) {
@@ -852,15 +848,11 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       this.myStaticFieldListHandler_staticFieldList_ = new ClassConcept_Editor_StaticFieldListHandler_staticFieldList_(node, "staticField", context);
     }
     EditorCell_Collection editorCell = this.myStaticFieldListHandler_staticFieldList_.createCells(context, new CellLayout_Vertical(), false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    ClassConcept_Editor.setupBasic_StaticFieldList(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.putUserObject(EditorCell.ROLE, this.myStaticFieldListHandler_staticFieldList_.getElementRole());
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createFieldsList(EditorContext context, SNode node) {
@@ -868,15 +860,11 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       this.myFieldListHandler_fieldsList_ = new ClassConcept_Editor_FieldListHandler_fieldsList_(node, "field", context);
     }
     EditorCell_Collection editorCell = this.myFieldListHandler_fieldsList_.createCells(context, new CellLayout_Vertical(), false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    ClassConcept_Editor.setupBasic_FieldsList(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.putUserObject(EditorCell.ROLE, this.myFieldListHandler_fieldsList_.getElementRole());
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstructorsList(EditorContext context, SNode node) {
@@ -884,15 +872,11 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       this.myConstructorListHandler_constructorsList_ = new ClassConcept_Editor_ConstructorListHandler_constructorsList_(node, "constructor", context);
     }
     EditorCell_Collection editorCell = this.myConstructorListHandler_constructorsList_.createCells(context, new CellLayout_Vertical(), false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    ClassConcept_Editor.setupBasic_ConstructorsList(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.putUserObject(EditorCell.ROLE, this.myConstructorListHandler_constructorsList_.getElementRole());
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createMethodsList(EditorContext context, SNode node) {
@@ -900,15 +884,11 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       this.myMethodListHandler_methodsList_ = new ClassConcept_Editor_MethodListHandler_methodsList_(node, "method", context);
     }
     EditorCell_Collection editorCell = this.myMethodListHandler_methodsList_.createCells(context, new CellLayout_Vertical(), false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    ClassConcept_Editor.setupBasic_MethodsList(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.putUserObject(EditorCell.ROLE, this.myMethodListHandler_methodsList_.getElementRole());
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createStaticMethodList(EditorContext context, SNode node) {
@@ -916,15 +896,11 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       this.myStaticMethodListHandler_staticMethodList_ = new ClassConcept_Editor_StaticMethodListHandler_staticMethodList_(node, "staticMethod", context);
     }
     EditorCell_Collection editorCell = this.myStaticMethodListHandler_staticMethodList_.createCells(context, new CellLayout_Vertical(), false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    ClassConcept_Editor.setupBasic_StaticMethodList(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.putUserObject(EditorCell.ROLE, this.myStaticMethodListHandler_staticMethodList_.getElementRole());
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createStaticMethodList1(EditorContext context, SNode node) {
@@ -932,15 +908,11 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       this.myStaticInnerClassifiersListHandler_staticMethodList1_ = new ClassConcept_Editor_StaticInnerClassifiersListHandler_staticMethodList1_(node, "staticInnerClassifiers", context);
     }
     EditorCell_Collection editorCell = this.myStaticInnerClassifiersListHandler_staticMethodList1_.createCells(context, new CellLayout_Vertical(), false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    ClassConcept_Editor.setupBasic_StaticMethodList1(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.putUserObject(EditorCell.ROLE, this.myStaticInnerClassifiersListHandler_staticMethodList1_.getElementRole());
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createNameCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {

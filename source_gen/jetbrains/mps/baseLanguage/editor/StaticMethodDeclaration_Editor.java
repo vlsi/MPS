@@ -296,15 +296,11 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
       this.myParameterListHandler_parameterList_ = new StaticMethodDeclaration_Editor_ParameterListHandler_parameterList_(node, "parameter", context);
     }
     EditorCell_Collection editorCell = this.myParameterListHandler_parameterList_.createCells(context, new CellLayout_Horizontal(), false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    StaticMethodDeclaration_Editor.setupBasic_ParameterList(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.putUserObject(EditorCell.ROLE, this.myParameterListHandler_parameterList_.getElementRole());
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createThrowsItemList(EditorContext context, SNode node) {
@@ -312,15 +308,11 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
       this.myThrowsItemListHandler_throwsItemList_ = new StaticMethodDeclaration_Editor_ThrowsItemListHandler_throwsItemList_(node, "throwsItem", context);
     }
     EditorCell_Collection editorCell = this.myThrowsItemListHandler_throwsItemList_.createCells(context, new CellLayout_Horizontal(), false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    StaticMethodDeclaration_Editor.setupBasic_ThrowsItemList(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.putUserObject(EditorCell.ROLE, this.myThrowsItemListHandler_throwsItemList_.getElementRole());
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createReturnTypeinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {

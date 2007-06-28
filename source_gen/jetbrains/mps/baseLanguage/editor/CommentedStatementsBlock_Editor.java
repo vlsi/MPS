@@ -99,16 +99,11 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
       this.myStatementListHandler_statementList_ = new CommentedStatementsBlock_Editor_StatementListHandler_statementList_(node, "statement", context);
     }
     EditorCell_Collection editorCell = this.myStatementListHandler_statementList_.createCells(context, new CellLayout_Vertical(), false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    CommentedStatementsBlock_Editor.setupBasic_StatementList(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.setCellBackgroundColor(Color.lightGray);
     editorCell.putUserObject(EditorCell.ROLE, this.myStatementListHandler_statementList_.getElementRole());
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
 }

@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.CellLayout_Vertical;
-import java.awt.Color;
 
 public class StatementList_Editor extends DefaultNodeEditor {
 
@@ -32,15 +31,11 @@ public class StatementList_Editor extends DefaultNodeEditor {
       this.myStatementListHandler_statementList_ = new StatementList_Editor_StatementListHandler_statementList_(node, "statement", context);
     }
     EditorCell_Collection editorCell = this.myStatementListHandler_statementList_.createCells(context, new CellLayout_Vertical(), false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    StatementList_Editor.setupBasic_StatementList(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(true);
     editorCell.putUserObject(EditorCell.ROLE, this.myStatementListHandler_statementList_.getElementRole());
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
 }
