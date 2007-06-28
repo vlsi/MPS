@@ -25,11 +25,8 @@
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.baseLanguage" />
   </models>
   <module>
-    <moduleRoot path="${mps_home}\projects\query\queryLanguage.mpl" />
     <moduleRoot path="${mps_home}\languages\patternLanguage\languages\patterns\patterns.mpl" />
-    <moduleRoot path="${mps_home}\languages\formulaLanguage\language\formulaLanguage.mpl" />
     <moduleRoot path="${mps_home}\languages\helgins\languages\quotation\quotation.mpl" />
-    <moduleRoot path="${mps_home}\languages\helgins\helgins.mpl" />
     <moduleRoot path="${mps_home}\languages\baseLanguage\languages\blTypes\blTypes.mpl" />
     <moduleRoot path="${mps_home}\platform\regexp\languages\regexp\regexp.mpl" />
     <moduleRoot path="${mps_home}\projects\baseLanguageExt\dev\languages\collections\lang\collections.mpl" />
