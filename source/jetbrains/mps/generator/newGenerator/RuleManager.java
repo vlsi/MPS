@@ -11,8 +11,8 @@ import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.transformation.TLBase.structure.*;
 
 import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
+import java.util.ArrayList;
 
 public class RuleManager {
 
@@ -47,18 +47,18 @@ public class RuleManager {
 
 
   protected void initialize() {
-    myCreateRootRules = new LinkedList<CreateRootRule>();
-    myMappingRules = new LinkedList<MappingRule>();
-    myRoot_MappingRules = new LinkedList<Root_MappingRule>();
-    myWeavingRules = new LinkedList<WeavingRule>();
-    myWeaving_MappingRules = new LinkedList<Weaving_MappingRule>();
-    myOutputRootConcepts = new LinkedList<ConceptDeclaration>();
-    myAbandonedRootConcepts = new LinkedList<ConceptDeclaration>();
+    myCreateRootRules = new ArrayList<CreateRootRule>();
+    myMappingRules = new ArrayList<MappingRule>();
+    myRoot_MappingRules = new ArrayList<Root_MappingRule>();
+    myWeavingRules = new ArrayList<WeavingRule>();
+    myWeaving_MappingRules = new ArrayList<Weaving_MappingRule>();
+    myOutputRootConcepts = new ArrayList<ConceptDeclaration>();
+    myAbandonedRootConcepts = new ArrayList<ConceptDeclaration>();
     initRules();
   }
 
   private void initRules() {
-    List<MappingConfiguration> mappingConfigs = new LinkedList<MappingConfiguration>();
+    List<MappingConfiguration> mappingConfigs = new ArrayList<MappingConfiguration>();
 
     mappingConfigs.addAll(getGenerator().getGeneratorSessionContext().getMappingConfigurations());
 
