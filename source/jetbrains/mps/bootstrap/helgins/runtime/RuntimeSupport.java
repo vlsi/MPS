@@ -140,6 +140,9 @@ public class RuntimeSupport {
   }
 
   public SNode checkedTypeOf(SNode node) {
+    if (myTypeChecker.getCurrentTypesComponent() == null) { //preved Igor!
+      return myTypeChecker.getTypeOf(node);
+    }
     check(node);
     return typeOf(node);
   }
