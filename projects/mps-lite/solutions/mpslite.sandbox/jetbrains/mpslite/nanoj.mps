@@ -191,6 +191,7 @@
     <property name="name" value="Statements" />
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182966087965">
       <property name="name" value="Statement" />
+      <property name="role" value="true" />
       <property name="abstract" value="true" />
       <node role="line" type="jetbrains.mpslite.Line" id="1182966298619" />
     </node>
@@ -280,6 +281,7 @@
     <property name="name" value="Expressions" />
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182966285571">
       <property name="name" value="Expression" />
+      <property name="role" value="true" />
       <property name="abstract" value="true" />
     </node>
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182969317058">

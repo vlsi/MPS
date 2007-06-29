@@ -12,6 +12,10 @@
       <property name="name" value="root" />
       <link role="dataType" targetNodeId="1.1082983657063" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1183115106535">
+      <property name="name" value="role" />
+      <link role="dataType" targetNodeId="1.1082983657063" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1183028098253">
       <property name="name" value="abstract" />
       <link role="dataType" targetNodeId="1.1082983657063" />

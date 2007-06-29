@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
-import java.awt.Color;
 
 public class Line_Editor extends DefaultNodeEditor {
 
@@ -45,16 +44,11 @@ public class Line_Editor extends DefaultNodeEditor {
       this.myLinePartListHandler_linePartList_ = new Line_Editor_LinePartListHandler_linePartList_(node, "linePart", context);
     }
     EditorCell_Collection editorCell = this.myLinePartListHandler_linePartList_.createCells(context, new CellLayout_Horizontal(), false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    Line_Editor.setupBasic_LinePartList(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.putUserObject(EditorCell.ROLE, this.myLinePartListHandler_linePartList_.getElementRole());
-    editorCell.setLayoutConstraint("");
-    editorCell.addKeyMap(new _Line_Actions());
     return editorCell;
   }
 }
