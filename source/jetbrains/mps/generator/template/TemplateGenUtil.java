@@ -7,6 +7,7 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.generator.GenerationFailedException;
@@ -359,7 +360,7 @@ public class TemplateGenUtil {
   }
 
   public static boolean checkPremiseForBaseMappingRule(SNode sourceNode, ConceptDeclaration sourceNodeConcept, BaseMappingRule mappingRule, ITemplateGenerator generator) {
-    ConceptDeclaration applicableConcept = mappingRule.getApplicableConcept();
+    AbstractConceptDeclaration applicableConcept = mappingRule.getApplicableConcept();
     if (applicableConcept != null) {
       if (mappingRule.getApplyToConceptInheritors()) {
         if (!SModelUtil_new.isAssignableConcept(sourceNodeConcept, applicableConcept)) return false;

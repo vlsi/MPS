@@ -2,6 +2,7 @@ package jetbrains.mps.generator.newGenerator;
 
 import jetbrains.mps.bootstrap.sharedConcepts.structure.Options_DefaultTrue;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.generator.template.INodeBuilder;
@@ -89,7 +90,7 @@ public class RuleUtil {
   }
 
   public void applyRoot_MappingRule(Root_MappingRule rule) {
-    ConceptDeclaration applicableConcept = rule.getApplicableConcept();
+    AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
     if (applicableConcept == null) {
       myGenerator.showErrorMessage(null, null, BaseAdapter.fromAdapter(rule), "rule has no applicable concept defined");
       return;
@@ -272,7 +273,7 @@ public class RuleUtil {
   //
 
   public void applyWeavingMappingRule(Weaving_MappingRule rule) {
-    ConceptDeclaration applicableConcept = rule.getApplicableConcept();
+    AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
     if (applicableConcept == null) {
       myGenerator.showErrorMessage(null, rule.getNode(), "rule has no applicable concept defined");
       return;

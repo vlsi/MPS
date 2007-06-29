@@ -29,13 +29,13 @@ public class FastRuleFinder {
 
     // group rules by concept
     for (Reduction_MappingRule rule : reductionRules) {
-      ConceptDeclaration applicableConcept = rule.getApplicableConcept();
+      AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
       if (applicableConcept == null) applicableConcept = baseConcept;
       addRule_applicableExactly(applicableConcept, rule);
     }
   }
 
-  private void addRule_applicableExactly(ConceptDeclaration concept, Reduction_MappingRule rule) {
+  private void addRule_applicableExactly(AbstractConceptDeclaration concept, Reduction_MappingRule rule) {
     if (!myRules_applicableExactly.containsKey(concept)) {
       myRules_applicableExactly.put(concept, new ArrayList<Reduction_MappingRule>());
     }
@@ -71,15 +71,15 @@ public class FastRuleFinder {
     hierarchy.addAll(interfacesHierarchy);
     Collections.reverse(hierarchy);
 
-    // test
-    if(!interfacesHierarchy.isEmpty()) {
-      System.out.println("---------");
-      for (AbstractConceptDeclaration cd : hierarchy) {
-        System.out.println(cd.getName());
-      }
-      System.out.println("---------");
-    }
-    // test
+//    // test
+//    if(!interfacesHierarchy.isEmpty()) {
+//      System.out.println("---------");
+//      for (AbstractConceptDeclaration cd : hierarchy) {
+//        System.out.println(cd.getName());
+//      }
+//      System.out.println("---------");
+//    }
+//    // test
 
     // rules for inheritor
     List<Reduction_MappingRule> rulesForInheritor = null;
