@@ -1,11 +1,16 @@
 package jetbrains.mps.smodel.constraints;
 
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.Status;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.ide.Status.OK;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.search.EmptySearchScope;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 
@@ -31,7 +36,7 @@ public class ModelConstraintsUtil {
     if (scopeProvider != null) {
       if (scopeProvider.canCreateNodeReferentSearchScope(model, enclosingNode, referenceNode, scope)) {
         ISearchScope searchScope = scopeProvider.createNodeReferentSearchScope(model, enclosingNode, referenceNode, scope);
-        return new Status.OK(searchScope);
+        return newOK(searchScope);
       }
       return new Status.ERROR("can't create referent search scope: " + scopeProvider.getNodeReferentSearchScopeDescription());
     }
@@ -42,13 +47,21 @@ public class ModelConstraintsUtil {
     if (scopeProvider != null) {
       if (scopeProvider.canCreateNodeReferentSearchScope(model, enclosingNode, referenceNode, scope)) {
         ISearchScope searchScope = scopeProvider.createNodeReferentSearchScope(model, enclosingNode, referenceNode, scope);
-        return new Status.OK(searchScope);
+        return newOK(searchScope);
       }
       return new Status.ERROR("can't create default search scope: " + scopeProvider.getNodeReferentSearchScopeDescription());
     }
 
     // global search scope
     ISearchScope searchScope = SModelSearchUtil_new.createModelAndImportedModelsScope(model, false, scope);
-    return new Status.OK(searchScope);
+    return newOK(searchScope);
   }
+
+  private static OK newOK(ISearchScope searchScope) {
+    if (searchScope == null) {
+      searchScope = new EmptySearchScope();
+    }
+    return new OK(searchScope);
+  }
+
 }
