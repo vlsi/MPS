@@ -21,8 +21,8 @@ public class FastRuleFinder {
   public FastRuleFinder(List<Reduction_MappingRule> reductionRules) {
     myRuleList = reductionRules;
     ConceptDeclaration baseConcept = SModelUtil_new.getBaseConcept();
-    myRules_applicableExactly.put(baseConcept, new LinkedList<Reduction_MappingRule>());
-    myRules_applicableInheritor.put(baseConcept, new LinkedList<Reduction_MappingRule>());
+    myRules_applicableExactly.put(baseConcept, new ArrayList<Reduction_MappingRule>(3));
+    myRules_applicableInheritor.put(baseConcept, new ArrayList<Reduction_MappingRule>(5));
 
     // group rules by concept
     for (Reduction_MappingRule rule : reductionRules) {
@@ -34,7 +34,7 @@ public class FastRuleFinder {
 
   private void addRule_applicableExactly(ConceptDeclaration concept, Reduction_MappingRule rule) {
     if (!myRules_applicableExactly.containsKey(concept)) {
-      myRules_applicableExactly.put(concept, new LinkedList<Reduction_MappingRule>());
+      myRules_applicableExactly.put(concept, new ArrayList<Reduction_MappingRule>());
     }
     myRules_applicableExactly.get(concept).add(rule);
   }
@@ -46,17 +46,17 @@ public class FastRuleFinder {
     return baseConcept;
   }
 
-  private void cacheAllApplicableRules(ConceptDeclaration concept, ConceptDeclaration baseConcept) {
-    if (myRules_all.containsKey(concept)) return;
+  private void cacheAllApplicableRules(ConceptDeclaration inputConcept, ConceptDeclaration baseConcept) {
+    if (myRules_all.containsKey(inputConcept)) return;
 
-    List<ConceptDeclaration> hierarchy = new LinkedList<ConceptDeclaration>();
-    while (concept != null) {
-      hierarchy.add(concept);
-      if (myRules_all.containsKey(concept)) {
+    List<ConceptDeclaration> hierarchy = new ArrayList<ConceptDeclaration>(5);
+    while (inputConcept != null) {
+      hierarchy.add(inputConcept);
+      if (myRules_all.containsKey(inputConcept)) {
         break;
       }
-      myRules_applicableInheritor.put(concept, new LinkedList<Reduction_MappingRule>());
-      concept = getExtendedConcept(concept, baseConcept);
+      myRules_applicableInheritor.put(inputConcept, new ArrayList<Reduction_MappingRule>());
+      inputConcept = getExtendedConcept(inputConcept, baseConcept);
     }
     Collections.reverse(hierarchy);
 
@@ -79,7 +79,7 @@ public class FastRuleFinder {
       if (myRules_all.containsKey(hrrConcept)) {
         continue;
       }
-      myRules_all.put(hrrConcept, new LinkedList<Reduction_MappingRule>());
+      myRules_all.put(hrrConcept, new ArrayList<Reduction_MappingRule>(5));
       List<Reduction_MappingRule> rulesExectly = myRules_applicableExactly.get(hrrConcept);
       if (rulesExectly != null) {
         myRules_all.get(hrrConcept).addAll(rulesExectly);
