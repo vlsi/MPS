@@ -38,7 +38,7 @@ public class RuntimeSupport {
     SNode type;
     NodeTypesComponent currentTypesComponent = myTypeChecker.getCurrentTypesComponent();   //first, in current component
      if (currentTypesComponent != null) {
-      type = currentTypesComponent.getType(node);
+      type = currentTypesComponent.getRawTypeFromContext(node);
       if (type != null) return type;
     }
 
