@@ -65,6 +65,9 @@
           </node>
         </node>
       </node>
+      <node role="throwsItem" type="jetbrains.mps.baseLanguage.ClassifierType" id="1183120689801">
+        <link role="classifier" extResolveInfo="1.[Classifier]Exception" />
+      </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1181913317170" />
     <node role="superclass" type="jetbrains.mps.baseLanguage.ClassifierType" id="1182164270558">

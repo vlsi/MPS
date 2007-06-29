@@ -82,6 +82,7 @@
     </node>
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182956481679">
       <property name="name" value="InstanceMethod" />
+      <property name="role" value="true" />
       <link role="extends" targetNodeId="1182956481186" resolveInfo="BaseMethod" />
     </node>
   </node>
@@ -103,8 +104,8 @@
     <property name="name" value="Types" />
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182956598488">
       <property name="name" value="Type" />
-      <property name="role" value="true" />
       <property name="abstract" value="true" />
+      <property name="role" value="true" />
     </node>
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182958613287">
       <property name="name" value="ClassifierType" />
@@ -198,8 +199,8 @@
     <property name="name" value="Statements" />
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182966087965">
       <property name="name" value="Statement" />
-      <property name="abstract" value="true" />
       <property name="role" value="true" />
+      <property name="abstract" value="true" />
       <node role="line" type="jetbrains.mpslite.Line" id="1182966298619" />
     </node>
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182966322282">
@@ -283,13 +284,26 @@
         </node>
       </node>
     </node>
+    <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1183120785728">
+      <property name="name" value="ExpressionStatement" />
+      <link role="extends" targetNodeId="1182966087965" resolveInfo="Statement" />
+      <node role="line" type="jetbrains.mpslite.Line" id="1183120799273">
+        <node role="linePart" type="jetbrains.mpslite.ChildDeclarationPart" id="1183120799993">
+          <property name="name" value="expr" />
+          <link role="type" targetNodeId="1182966285571" resolveInfo="Expression" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1183120811052">
+          <property name="text" value=";" />
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mpslite.NodeTypeDeclarations" id="1182966282304">
     <property name="name" value="Expressions" />
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182966285571">
       <property name="name" value="Expression" />
-      <property name="abstract" value="true" />
       <property name="role" value="true" />
+      <property name="abstract" value="true" />
     </node>
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1182969317058">
       <property name="name" value="BinaryExpression" />

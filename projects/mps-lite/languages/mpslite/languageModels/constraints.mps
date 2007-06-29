@@ -748,6 +748,60 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1183121008941">
+      <property name="name" value="startsWithChild" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.BooleanType" id="1183121010522" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1183121008943">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1183121020503">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1183121020504">
+            <property name="name" value="start" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1183121020505">
+              <link role="concept" targetNodeId="1.1182511214735" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1183121020506">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_ConceptMethodCall" id="1183121020507">
+                <link role="conceptMethodDeclaration" targetNodeId="1183031286388" resolveInfo="getStart" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1183121020508" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1183121023748">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1183121023749">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1183121033102">
+              <node role="expression" type="jetbrains.mps.baseLanguage.NotExpression" id="1183121043612">
+                <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1183121043613">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1183121043614">
+                    <link role="property" targetNodeId="1.1182512224903" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeTypeCastExpression" id="1183121043615">
+                    <link role="concept" targetNodeId="1.1182511424766" />
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1183121043616">
+                      <link role="variableDeclaration" targetNodeId="1183121020504" resolveInfo="start" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1183121026227">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1183121028114">
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.RefConcept_Reference" id="1183121031226">
+                <link role="conceptDeclaration" targetNodeId="1.1182511424766" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1183121025111">
+              <link role="variableDeclaration" targetNodeId="1183121020504" resolveInfo="start" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1183121045837">
+          <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1183121046636">
+            <property name="value" value="false" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1183029183761">
       <property name="name" value="isSubtitutableByDefault" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.BooleanType" id="1183029185851" />
@@ -1010,8 +1064,8 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1182966580931">
       <property name="isVirtual" value="true" />
-      <property name="isAbstract" value="true" />
       <property name="name" value="toString" />
+      <property name="isAbstract" value="true" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1182966589730">
         <link role="classifier" extResolveInfo="4.[Classifier]String" />
       </node>
@@ -1459,8 +1513,8 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1183016071761">
       <property name="isVirtual" value="true" />
-      <property name="name" value="getChildDeclaration" />
       <property name="isAbstract" value="true" />
+      <property name="name" value="getChildDeclaration" />
       <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1183016092623">
         <link role="concept" targetNodeId="1.1182511424766" />
       </node>
