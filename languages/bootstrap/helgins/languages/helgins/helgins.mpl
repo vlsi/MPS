@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.bootstrap.helgins" pluginClass="jetbrains.mps.bootstrap.helgins.plugin.HPlugin" generatorOutputPath="${mps_home}\source_gen">
+<language namespace="jetbrains.mps.bootstrap.helgins" pluginClass="jetbrains.mps.helgins.integration.HelginsLangPlugin" generatorOutputPath="${mps_home}\source_gen">
   <structure>
     <model modelUID="jetbrains.mps.bootstrap.helgins.structure" />
   </structure>
