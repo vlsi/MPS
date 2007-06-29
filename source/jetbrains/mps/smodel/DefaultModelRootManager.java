@@ -5,12 +5,16 @@ import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.smodel.event.SModelsMulticaster;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.Merger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.plugin.IProjectHandler;
+import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.refactoring.CopyUtil;
 import org.jetbrains.annotations.NotNull;
 
+import javax.swing.SwingUtilities;
 import java.io.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -30,13 +34,19 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
   }
 
   @NotNull
-  public SModel loadModel(@NotNull SModelDescriptor modelDescriptor) {
-    File file = modelDescriptor.getModelFile();
+  public SModel loadModel(final @NotNull SModelDescriptor modelDescriptor) {
+    final File file = modelDescriptor.getModelFile();
 
     File mineFile = new File(file.getPath() + ".mine");
 
     if (mineFile.exists()) {
-      Merger.merge(file);
+      FileUtil.copyFile(mineFile, file);
+      ThreadUtils.runInUIThreadNoWait(new Runnable() {
+        public void run() {
+          Merger.merge(file);
+          modelDescriptor.reloadFromDisk();
+        }
+      });
     }
 
     if (!file.exists()) {

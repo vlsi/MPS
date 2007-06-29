@@ -110,7 +110,7 @@ public class DiffBuilder {
 
       if (oldNode == null) {
         for (String prop : newNode.getProperties().keySet()) {
-          myChanges.add(new SetPropertyChange(id, prop, newNode.getProperty(prop)));
+          myChanges.add(new SetPropertyChange(id, prop, newNode.getProperties().get(prop)));
         }
       } else {
         Set<String> newNodeProps = newNode.getPropertyNames();
