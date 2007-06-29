@@ -6,10 +6,43 @@
     <property name="name" value="ABCDEF" />
     <node role="method" type="jetbrains.mps.nanoj.InstanceMethod" id="1182965183761">
       <property name="name" value="abcdef" />
+      <node role="parameter" type="jetbrains.mps.nanoj.ParameterDeclaration" id="1183118825115">
+        <property name="name" value="i" />
+        <node role="type" type="jetbrains.mps.nanoj.IntType" id="1183119206991" />
+        <node role="initializer" type="jetbrains.mps.nanoj.Expression" id="1183118825117" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.nanoj.ParameterDeclaration" id="1183119207851">
+        <property name="name" value="j" />
+        <node role="type" type="jetbrains.mps.nanoj.IntType" id="1183119209635" />
+        <node role="initializer" type="jetbrains.mps.nanoj.Expression" id="1183119207853" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.nanoj.ParameterDeclaration" id="1183119210308">
+        <property name="name" value="k" />
+        <node role="type" type="jetbrains.mps.nanoj.IntType" id="1183119211607" />
+        <node role="initializer" type="jetbrains.mps.nanoj.Expression" id="1183119210310" />
+      </node>
       <node role="type" type="jetbrains.mps.nanoj.ClassifierType" id="1182968136618">
         <link role="classifier" targetNodeId="1182965040933" resolveInfo="ABCDEF" />
       </node>
       <node role="body" type="jetbrains.mps.nanoj.StatementList" id="1182965191301">
+        <node role="statement" type="jetbrains.mps.nanoj.LocalVariableDeclarationStatement" id="1183119219186">
+          <node role="declaration" type="jetbrains.mps.nanoj.LocalVariableDeclaration" id="1183119219187">
+            <property name="name" value="a" />
+            <node role="type" type="jetbrains.mps.nanoj.IntType" id="1183119222002" />
+            <node role="initializer" type="jetbrains.mps.nanoj.NumberExpression" id="1183119226627">
+              <property name="number" value="23" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.nanoj.LocalVariableDeclarationStatement" id="1183120322559">
+          <node role="declaration" type="jetbrains.mps.nanoj.LocalVariableDeclaration" id="1183120322560">
+            <property name="name" value="abc" />
+            <node role="type" type="jetbrains.mps.nanoj.IntType" id="1183120324406" />
+            <node role="initializer" type="jetbrains.mps.nanoj.NumberExpression" id="1183120327235">
+              <property name="number" value="23" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.nanoj.IfStatement" id="1182966479686">
           <node role="condition" type="jetbrains.mps.nanoj.PlusExpression" id="1183022931763">
             <node role="right" type="jetbrains.mps.nanoj.PlusExpression" id="1183022934595">
@@ -29,13 +62,25 @@
           </node>
           <node role="body" type="jetbrains.mps.nanoj.StatementList" id="1183027517453" />
         </node>
+        <node role="statement" type="jetbrains.mps.nanoj.IfStatement" id="1183120332471">
+          <node role="condition" type="jetbrains.mps.nanoj.Expression" id="1183120332472" />
+          <node role="body" type="jetbrains.mps.nanoj.StatementList" id="1183120332473">
+            <node role="statement" type="jetbrains.mps.nanoj.LocalVariableDeclarationStatement" id="1183120337442">
+              <node role="declaration" type="jetbrains.mps.nanoj.LocalVariableDeclaration" id="1183120337443">
+                <property name="name" value="abcdef" />
+                <node role="type" type="jetbrains.mps.nanoj.IntType" id="1183120339185" />
+                <node role="initializer" type="jetbrains.mps.nanoj.StringLiteralExpression" id="1183120342963">
+                  <property name="text" value="oy vey" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="method" type="jetbrains.mps.nanoj.InstanceMethod" id="1182968897745">
       <property name="name" value="Name" />
-      <node role="type" type="jetbrains.mps.nanoj.ClassifierType" id="1183028558662">
-        <link role="classifier" targetNodeId="1183028555504" resolveInfo="ZZZ" />
-      </node>
+      <node role="type" type="jetbrains.mps.nanoj.CharType" id="1183119202100" />
       <node role="body" type="jetbrains.mps.nanoj.StatementList" id="1182968897747">
         <node role="statement" type="jetbrains.mps.nanoj.IfStatement" id="1182968906267">
           <node role="condition" type="jetbrains.mps.nanoj.InstanceMethodCallExpression" id="1182969814595">
@@ -65,8 +110,18 @@
                     <property name="name" value="abc" />
                     <node role="type" type="jetbrains.mps.nanoj.ByteType" id="1183028059231" />
                     <node role="initializer" type="jetbrains.mps.nanoj.PlusExpression" id="1183028063936">
-                      <node role="right" type="jetbrains.mps.nanoj.NumberExpression" id="1183028066939">
-                        <property name="number" value="21" />
+                      <node role="right" type="jetbrains.mps.nanoj.PlusExpression" id="1183117599761">
+                        <node role="right" type="jetbrains.mps.nanoj.PlusExpression" id="1183117602530">
+                          <node role="right" type="jetbrains.mps.nanoj.NumberExpression" id="1183117603190">
+                            <property name="number" value="1" />
+                          </node>
+                          <node role="left" type="jetbrains.mps.nanoj.NumberExpression" id="1183117601045">
+                            <property name="number" value="23" />
+                          </node>
+                        </node>
+                        <node role="left" type="jetbrains.mps.nanoj.NumberExpression" id="1183028066939">
+                          <property name="number" value="21" />
+                        </node>
                       </node>
                       <node role="left" type="jetbrains.mps.nanoj.NumberExpression" id="1183028062748">
                         <property name="number" value="23" />
@@ -96,8 +151,23 @@
                 <node role="initializer" type="jetbrains.mps.nanoj.PlusExpression" id="1183029038593">
                   <node role="right" type="jetbrains.mps.nanoj.PlusExpression" id="1183029042222">
                     <node role="right" type="jetbrains.mps.nanoj.PlusExpression" id="1183029045132">
-                      <node role="right" type="jetbrains.mps.nanoj.NumberExpression" id="1183029046182">
-                        <property name="number" value="239" />
+                      <node role="right" type="jetbrains.mps.nanoj.PlusExpression" id="1183120180463">
+                        <node role="right" type="jetbrains.mps.nanoj.PlusExpression" id="1183120311005">
+                          <node role="right" type="jetbrains.mps.nanoj.MinusExpression" id="1183120313227">
+                            <node role="right" type="jetbrains.mps.nanoj.NumberExpression" id="1183120314558">
+                              <property name="number" value="2" />
+                            </node>
+                            <node role="left" type="jetbrains.mps.nanoj.NumberExpression" id="1183120312086">
+                              <property name="number" value="23" />
+                            </node>
+                          </node>
+                          <node role="left" type="jetbrains.mps.nanoj.NumberExpression" id="1183120181482">
+                            <property name="number" value="23" />
+                          </node>
+                        </node>
+                        <node role="left" type="jetbrains.mps.nanoj.NumberExpression" id="1183029046182">
+                          <property name="number" value="239" />
+                        </node>
                       </node>
                       <node role="left" type="jetbrains.mps.nanoj.NumberExpression" id="1183029043335">
                         <property name="number" value="23" />

@@ -251,6 +251,10 @@
       <property name="name" value="rightTransformable" />
       <link role="dataType" targetNodeId="1.1082983657063" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1183118217589">
+      <property name="name" value="separator" />
+      <link role="dataType" targetNodeId="1.1082983041843" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1183015797303">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
     </node>

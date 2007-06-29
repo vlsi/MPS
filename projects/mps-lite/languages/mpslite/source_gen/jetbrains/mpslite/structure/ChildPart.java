@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ChildPart extends LinePart {
+  public static String SEPARATOR = "separator";
   public static String RIGHT_TRANSFORMABLE = "rightTransformable";
 
   public  ChildPart(SNode node) {
@@ -21,6 +22,12 @@ public class ChildPart extends LinePart {
     return ChildPart.newInstance(sm, false);
   }
 
+  public String getSeparator() {
+    return this.getProperty(ChildPart.SEPARATOR);
+  }
+  public void setSeparator(String value) {
+    this.setProperty(ChildPart.SEPARATOR, value);
+  }
   public boolean getRightTransformable() {
     return this.getBooleanProperty(ChildPart.RIGHT_TRANSFORMABLE);
   }

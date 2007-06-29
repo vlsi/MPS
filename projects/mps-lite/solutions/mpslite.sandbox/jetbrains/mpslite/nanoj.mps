@@ -54,6 +54,12 @@
         <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182956481190">
           <property name="text" value="(" />
         </node>
+        <node role="linePart" type="jetbrains.mpslite.ChildDeclarationPart" id="1183118666129">
+          <property name="separator" value="," />
+          <property name="name" value="parameter" />
+          <property name="many" value="true" />
+          <link role="type" targetNodeId="1183027852869" resolveInfo="ParameterDeclaration" />
+        </node>
         <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182956481191">
           <property name="text" value=")" />
         </node>
@@ -329,7 +335,7 @@
           <link role="declaration" targetNodeId="1182969324810" resolveInfo="left" />
         </node>
         <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1182969456016">
-          <property name="text" value="*" />
+          <property name="text" value="-" />
         </node>
         <node role="linePart" type="jetbrains.mpslite.ChildReferencePart" id="1182969456017">
           <link role="declaration" targetNodeId="1182969330673" resolveInfo="right" />
@@ -512,6 +518,7 @@
     </node>
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1183027574668">
       <property name="name" value="LocalVariableDeclaration" />
+      <property name="role" value="true" />
       <link role="extends" targetNodeId="1183027543503" resolveInfo="VariableDeclaration" />
       <node role="line" type="jetbrains.mpslite.Line" id="1183027580482">
         <node role="linePart" type="jetbrains.mpslite.ChildReferencePart" id="1183027591343">
@@ -530,6 +537,7 @@
     </node>
     <node role="nodeTypeDeclaration" type="jetbrains.mpslite.NodeTypeDeclaration" id="1183027852869">
       <property name="name" value="ParameterDeclaration" />
+      <property name="role" value="true" />
       <link role="extends" targetNodeId="1183027543503" resolveInfo="VariableDeclaration" />
       <node role="line" type="jetbrains.mpslite.Line" id="1183027923778">
         <node role="linePart" type="jetbrains.mpslite.ChildReferencePart" id="1183027924129">
