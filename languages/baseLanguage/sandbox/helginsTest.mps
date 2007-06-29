@@ -102,9 +102,50 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1183121968326">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1183121968327">
+            <property name="name" value="s" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1183121968328">
+              <link role="classifier" extResolveInfo="2.[Classifier]String" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1183121979332">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1183121979333">
+            <property name="name" value="n" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1183121979334">
+              <link role="classifier" extResolveInfo="1.[Classifier]Map" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1183121987992">
+                <link role="classifier" extResolveInfo="2.[Classifier]String" />
+              </node>
+              <node role="parameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1183121992416">
+                <link role="classifier" extResolveInfo="2.[Classifier]String" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1182952452381" />
+  </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1183122071960">
+    <property name="name" value="U" />
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1183122078415">
+      <property name="name" value="m" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1183122078416" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1183122078417" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1183122078418">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1183122105557">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1183122105558">
+            <property name="name" value="s" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1183122105559">
+              <link role="classifier" extResolveInfo="2.[Classifier]String" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1183122071961" />
   </node>
 </model>
 
