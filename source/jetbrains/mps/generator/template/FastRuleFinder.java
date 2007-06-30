@@ -69,14 +69,17 @@ public class FastRuleFinder {
         continue;  // skip first
       }
 
-      myRules_all.put(hrrConcept, new ArrayList<Reduction_MappingRule>(rulesForInheritor));
-
+      myRules_all.put(hrrConcept, new ArrayList<Reduction_MappingRule>(5));
       List<Reduction_MappingRule> rulesApplicableExactly = myRules_applicableExactly.get(hrrConcept);
-      if (rulesApplicableExactly != null) {
+      if (rulesApplicableExactly == null) {
+        myRules_all.get(hrrConcept).addAll(rulesForInheritor);
+      } else {
         myRules_all.get(hrrConcept).addAll(rulesApplicableExactly);
+        myRules_all.get(hrrConcept).addAll(rulesForInheritor);
+
         for (Reduction_MappingRule rule : rulesApplicableExactly) {
           if (rule.getApplyToConceptInheritors()) {
-            rulesForInheritor.add(rule);
+            rulesForInheritor.add(rule);  // may be more concrete rules must go first?
           }
         }
       }
@@ -99,13 +102,13 @@ public class FastRuleFinder {
     }
   }
 
-  private List<Reduction_MappingRule> updateRulesForInheritor(ConceptDeclaration concept, List<Reduction_MappingRule> addRulesForInheritor) {
-    List<Reduction_MappingRule> currentRulesForInheritor = myRules_applicableInheritor.get(concept);
-    if (addRulesForInheritor != null) {
-      currentRulesForInheritor.addAll(addRulesForInheritor);
-    }
-    return currentRulesForInheritor;
-  }
+//  private List<Reduction_MappingRule> updateRulesForInheritor(ConceptDeclaration concept, List<Reduction_MappingRule> addRulesForInheritor) {
+//    List<Reduction_MappingRule> currentRulesForInheritor = myRules_applicableInheritor.get(concept);
+//    if (addRulesForInheritor != null) {
+//      currentRulesForInheritor.addAll(addRulesForInheritor);
+//    }
+//    return currentRulesForInheritor;
+//  }
 
   public SNode findReductionRule(SNode node, ITemplateGenerator generator) {
     ConceptDeclaration concept = (ConceptDeclaration) node.getConceptDeclarationAdapter();
