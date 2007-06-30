@@ -97,20 +97,6 @@ public class FastRuleFinder {
 
       myRules_applicableInheritor.put(hrrConcept, new ArrayList<Reduction_MappingRule>(rulesForInheritor));
     }
-
-    // all rules
-//    for (ConceptDeclaration hrrConcept : partialHierarchy) {
-//      if (myRules_all.containsKey(hrrConcept)) {
-//        continue; // skip first
-//      }
-//      myRules_all.put(hrrConcept, new ArrayList<Reduction_MappingRule>(5));
-//      List<Reduction_MappingRule> rulesExectly = myRules_applicableExactly.get(hrrConcept);
-//      if (rulesExectly != null) {
-//        myRules_all.get(hrrConcept).addAll(rulesExectly);
-//      }
-//      myRules_all.get(hrrConcept).addAll(myRules_applicableInheritor.get(hrrConcept));
-//
-//    }
   }
 
   private List<Reduction_MappingRule> updateRulesForInheritor(ConceptDeclaration concept, List<Reduction_MappingRule> addRulesForInheritor) {
