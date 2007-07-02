@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
-import jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance;
 import java.util.List;
 
 public class MigrationScript extends BaseConcept implements INamedConcept {

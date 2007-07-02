@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.ide.scriptLanguage.helgins.QuotationClass_;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_MigrationScriptPart_node_InferenceRule implements InferenceRule_Runtime {

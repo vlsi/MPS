@@ -8,8 +8,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Predicate;
-import jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Updater;
 
 public class MigrationScriptPart_Instance extends BaseConcept {
   public static String AFFECTED_INSTANCE_CONCEPT = "affectedInstanceConcept";

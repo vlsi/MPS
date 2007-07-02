@@ -34,7 +34,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1172277120423">
       <property name="role" value="conceptDeclaration" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="3.1071489090640" />
+      <link role="target" targetNodeId="3.1169125787135" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1172277228410">
       <property name="value" value="findConceptInstances" />

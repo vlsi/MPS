@@ -4,255 +4,269 @@ package jetbrains.mps.ide.scriptLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.EditorContext;
 import java.awt.Color;
-import jetbrains.mps.nodeEditor.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.ide.scriptLanguage.editor.MigrationScriptPart_Instance_Editor_affectedInstanceConcept_InlineComponent;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 
 public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
+
+  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551421960");
+  }
+  private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551421961");
+    editorCell.setSelectable(false);
+  }
+  private static void setupBasic_DescriptionCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551421962");
+  }
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551421959");
+    editorCell.setSelectable(false);
+  }
+  private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551438476");
+  }
+  private static void setupBasic_ConstantCell3(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551438477");
+    editorCell.setSelectable(false);
+  }
+  private static void setupBasic_AffectedInstanceConceptReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551438478");
+  }
+  private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551438475");
+    editorCell.setSelectable(false);
+  }
+  private static void setupBasic_ConstantCell4(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551438482");
+  }
+  private static void setupBasic_ConstantCell5(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551438483");
+    editorCell.setSelectable(false);
+  }
+  private static void setupBasic_AffectedInstancePredicateCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551438484");
+  }
+  private static void setupBasic_RowCell2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551438481");
+    editorCell.setSelectable(false);
+  }
+  private static void setupBasic_ConstantCell6(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551438486");
+  }
+  private static void setupBasic_ConstantCell7(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551438487");
+    editorCell.setSelectable(false);
+  }
+  private static void setupBasic_AffectedInstanceUpdaterCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551438488");
+  }
+  private static void setupBasic_RowCell3(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551438485");
+    editorCell.setSelectable(false);
+  }
+  private static void setupBasic_ColumnCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551421958");
+    editorCell.setSelectable(false);
+    editorCell.setDrawBrackets(true);
+    editorCell.setBracketsColor(Color.lightGray);
+  }
+  private static void setupBasic_ConstantCell8(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177461567284");
+  }
+  private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177460842247");
+  }
+  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+  }
+  private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+  }
+  private static void setupLabel_DescriptionCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
+  }
+  private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+  }
+  private static void setupLabel_ConstantCell3(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+  }
+  private static void setupLabel_AffectedInstanceConceptReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupLabel_ConstantCell4(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+  }
+  private static void setupLabel_ConstantCell5(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+  }
+  private static void setupLabel_AffectedInstancePredicateCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupLabel_ConstantCell6(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+  }
+  private static void setupLabel_ConstantCell7(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+  }
+  private static void setupLabel_AffectedInstanceUpdaterCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupLabel_ConstantCell8(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    editorCell.setEditable(false);
+    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+  }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createColumnCell(context, node);
   }
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    MigrationScriptPart_Instance_Editor.setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell(context, node, "description"));
     editorCell.addEditorCell(this.createConstantCell1(context, node, ":"));
     editorCell.addEditorCell(this.createDescriptionCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551421959");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createRowCell1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    MigrationScriptPart_Instance_Editor.setupBasic_RowCell1(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell2(context, node, "for each"));
     editorCell.addEditorCell(this.createConstantCell3(context, node, ":"));
     editorCell.addEditorCell(this.createAffectedInstanceConceptReferenceCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551438475");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createRowCell2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    MigrationScriptPart_Instance_Editor.setupBasic_RowCell2(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell4(context, node, "where"));
     editorCell.addEditorCell(this.createConstantCell5(context, node, ":"));
     editorCell.addEditorCell(this.createAffectedInstancePredicateCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551438481");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createRowCell3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    MigrationScriptPart_Instance_Editor.setupBasic_RowCell3(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell6(context, node, "do"));
     editorCell.addEditorCell(this.createConstantCell7(context, node, ":"));
     editorCell.addEditorCell(this.createAffectedInstanceUpdaterCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551438485");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createColumnCell1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    MigrationScriptPart_Instance_Editor.setupBasic_ColumnCell1(editorCell, node, context);
     editorCell.setGridLayout(true);
-    editorCell.setDrawBrackets(true);
-    editorCell.setBracketsColor(Color.lightGray);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRowCell(context, node));
     editorCell.addEditorCell(this.createRowCell1(context, node));
     editorCell.addEditorCell(this.createRowCell2(context, node));
     editorCell.addEditorCell(this.createRowCell3(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551421958");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createColumnCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
+    MigrationScriptPart_Instance_Editor.setupBasic_ColumnCell(editorCell, node, context);
     editorCell.setGridLayout(true);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createColumnCell1(context, node));
     editorCell.addEditorCell(this.createConstantCell8(context, node, ";"));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177460842247");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    MigrationScriptPart_Instance_Editor.setupBasic_ConstantCell(editorCell, node, context);
+    MigrationScriptPart_Instance_Editor.setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551421960");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    MigrationScriptPart_Instance_Editor.setupBasic_ConstantCell1(editorCell, node, context);
+    MigrationScriptPart_Instance_Editor.setupLabel_ConstantCell1(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551421961");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    MigrationScriptPart_Instance_Editor.setupBasic_ConstantCell2(editorCell, node, context);
+    MigrationScriptPart_Instance_Editor.setupLabel_ConstantCell2(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551438476");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    MigrationScriptPart_Instance_Editor.setupBasic_ConstantCell3(editorCell, node, context);
+    MigrationScriptPart_Instance_Editor.setupLabel_ConstantCell3(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551438477");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell4(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    MigrationScriptPart_Instance_Editor.setupBasic_ConstantCell4(editorCell, node, context);
+    MigrationScriptPart_Instance_Editor.setupLabel_ConstantCell4(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551438482");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell5(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    MigrationScriptPart_Instance_Editor.setupBasic_ConstantCell5(editorCell, node, context);
+    MigrationScriptPart_Instance_Editor.setupLabel_ConstantCell5(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551438483");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell6(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    MigrationScriptPart_Instance_Editor.setupBasic_ConstantCell6(editorCell, node, context);
+    MigrationScriptPart_Instance_Editor.setupLabel_ConstantCell6(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551438486");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell7(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    MigrationScriptPart_Instance_Editor.setupBasic_ConstantCell7(editorCell, node, context);
+    MigrationScriptPart_Instance_Editor.setupLabel_ConstantCell7(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551438487");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell8(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    MigrationScriptPart_Instance_Editor.setupBasic_ConstantCell8(editorCell, node, context);
+    MigrationScriptPart_Instance_Editor.setupLabel_ConstantCell8(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177461567284");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createDescriptionCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
+    MigrationScriptPart_Instance_Editor.setupBasic_DescriptionCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      EditorCell_Label editorCellLabel = (EditorCell_Label)editorCell;
-      editorCellLabel.setEditable(true);
-      editorCellLabel.getTextLine().setTextColor(MPSColors.DARK_GREEN);
+      MigrationScriptPart_Instance_Editor.setupLabel_DescriptionCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551421962");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createDescriptionCell(EditorContext context, SNode node) {
@@ -275,17 +289,11 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new MigrationScriptPart_Instance_Editor_affectedInstanceConcept_InlineComponent());
     EditorCell editorCell = provider.createEditorCell(context);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
+    MigrationScriptPart_Instance_Editor.setupBasic_AffectedInstanceConceptReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      EditorCell_Label editorCellLabel = (EditorCell_Label)editorCell;
-      editorCellLabel.setEditable(true);
+      MigrationScriptPart_Instance_Editor.setupLabel_AffectedInstanceConceptReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551438478");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createAffectedInstanceConceptReferenceCell(EditorContext context, SNode node) {
@@ -308,17 +316,11 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
+    MigrationScriptPart_Instance_Editor.setupBasic_AffectedInstancePredicateCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      EditorCell_Label editorCellLabel = (EditorCell_Label)editorCell;
-      editorCellLabel.setEditable(true);
+      MigrationScriptPart_Instance_Editor.setupLabel_AffectedInstancePredicateCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551438484");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createAffectedInstancePredicateCell(EditorContext context, SNode node) {
@@ -341,17 +343,11 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
+    MigrationScriptPart_Instance_Editor.setupBasic_AffectedInstanceUpdaterCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      EditorCell_Label editorCellLabel = (EditorCell_Label)editorCell;
-      editorCellLabel.setEditable(true);
+      MigrationScriptPart_Instance_Editor.setupLabel_AffectedInstanceUpdaterCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551438488");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createAffectedInstanceUpdaterCell(EditorContext context, SNode node) {
