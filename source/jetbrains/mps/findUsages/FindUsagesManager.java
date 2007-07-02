@@ -118,7 +118,7 @@ public class FindUsagesManager {
    * @param progress
    * @return
    */
-  public Set<SNode> findInstances(ConceptDeclaration concept, IScope scope, IAdaptiveProgressMonitor progress) {
+  public Set<SNode> findInstances(AbstractConceptDeclaration concept, IScope scope, IAdaptiveProgressMonitor progress) {
     Set<SNode> result = new HashSet<SNode>();
     //noinspection EmptyFinallyBlock
     try {
