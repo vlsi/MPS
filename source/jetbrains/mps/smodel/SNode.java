@@ -626,23 +626,30 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   public final String getProperty(@NotNull String propertyName) {
     NodeReadAccessCaster.firePropertyReadAccessed(this, propertyName);
+    String propertyValue = null;
 
     if (myPropertyGettersInProgress == null || !myPropertyGettersInProgress.contains(propertyName)) {
       INodePropertyGetter getter = ModelConstraintsManager.getInstance().getNodePropertyGetter(this, propertyName);
       if (getter != null) {
         if (myPropertyGettersInProgress == null) myPropertyGettersInProgress = new HashSet<String>(1);
         myPropertyGettersInProgress.add(propertyName);
-        String propertyValue;
         try {
           Object getterValue = getter.execPropertyGet(this, propertyName, GlobalScope.getInstance());
           propertyValue = getterValue == null ? null : String.valueOf(getterValue);
         } finally {
           myPropertyGettersInProgress.remove(propertyName);
         }
-        return propertyValue;
+      } else {
+        propertyValue = getRawProperty(propertyName);
       }
+    } else {
+      propertyValue = getRawProperty(propertyName);
     }
-    NodeReadEventsCaster.fireNodePropertyReadAccess(this, propertyName);
+    NodeReadEventsCaster.fireNodePropertyReadAccess(this, propertyName, propertyValue);
+    return propertyValue;
+  }
+
+  private String getRawProperty(String propertyName) {
     if (myProperties == null) return null;
     return myProperties.get(propertyName);
   }
@@ -727,6 +734,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   @Nullable
   public SNode getChild(@NotNull String role) {
+    NodeReadAccessCaster.fireNodeReadAccessed(this);
     int count = 0;
     SNode foundChild = null;
     for (SNode child : _children()) {
@@ -741,6 +749,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
       LOG.error(errorMessage, this);
 
     }
+    NodeReadEventsCaster.fireNodeChildReadAccess(this, role, foundChild);
     return foundChild;
   }
 
@@ -839,7 +848,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
   @NotNull
   public <T extends SNode> List<T> getChildren(@NotNull String role) {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
-    NodeReadEventsCaster.fireNodeChildReadAccess(this, role);
+    NodeReadEventsCaster.fireNodeUnclassifiedReadAccess(this);
     List<T> result = new ArrayList<T>();
     for (SNode child : _children()) {
       if (role.equals(child.getRole_())) result.add((T) child);
@@ -1014,7 +1023,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
   @NotNull
   public List<SReference> getReferences(@NotNull String role) {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
-    NodeReadEventsCaster.fireNodeReferentReadAccess(this, role);
+    NodeReadEventsCaster.fireNodeUnclassifiedReadAccess(this);
     if (myReferences == null) return new ArrayList<SReference>(0);
     List<SReference> refs = new ArrayList<SReference>(1);
     for (SReference ref : myReferences) {
@@ -1097,20 +1106,22 @@ public class SNode implements Cloneable, Iterable<SNode> {
     }
     // tmp check
 
+    SNode referent = null;
     if (myReferences != null) {
       for (SReference sReference : myReferences) {
         if (sReference.getRole().equals(role)) {
-          return sReference.getTargetNode();
+          referent = sReference.getTargetNode();
+          break;
         }
       }
     }
-    return null;
+    NodeReadEventsCaster.fireNodeReferentReadAccess(this, role, referent);
+    return referent;
   }
 
   @Nullable
   public SReference getReference(@NotNull String role) {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
-    NodeReadEventsCaster.fireNodeReferentReadAccess(this, role);
     // tmp check
     int count = getReferentCount(role);
     if (count > 1) {
@@ -1118,14 +1129,17 @@ public class SNode implements Cloneable, Iterable<SNode> {
     }
     // tmp check
 
+    SReference result = null;
     if (myReferences != null) {
-      for (SReference semanticReference : myReferences) {
-        if (semanticReference.getRole().equals(role)) {
-          return semanticReference;
+      for (SReference sReference : myReferences) {
+        if (sReference.getRole().equals(role)) {
+          result = sReference;
+          break;
         }
       }
     }
-    return null;
+    NodeReadEventsCaster.fireNodeReferentReadAccess(this, role, result == null ? null : result.getTargetNode());
+    return result;
   }
 
   @NotNull
@@ -1182,7 +1196,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   public int getReferentCount(@NotNull String role) {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
-    NodeReadEventsCaster.fireNodeReferentReadAccess(this, role);
+    NodeReadEventsCaster.fireNodeUnclassifiedReadAccess(this);
     if (myReferences == null) return 0;
     int count = 0;
     for (SReference reference : myReferences) {
@@ -1196,7 +1210,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
   @NotNull
   public List<SNode> getReferents(@NotNull String role) {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
-    NodeReadEventsCaster.fireNodeReferentReadAccess(this, role);
+    NodeReadEventsCaster.fireNodeUnclassifiedReadAccess(this);
     List<SNode> result = new ArrayList<SNode>();
     if (myReferences == null) return result;
     for (SReference reference : myReferences) {
@@ -1509,8 +1523,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   @Nullable
   public String getPersistentProperty(@NotNull String propertyName) {
-    if (myProperties == null) return null;
-    return myProperties.get(propertyName);
+    return getRawProperty(propertyName);
   }
 
   @NotNull

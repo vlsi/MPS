@@ -13,21 +13,21 @@ import jetbrains.mps.bootstrap.helgins.runtime.incremental.INodesReadListener;
 public class NodeReadEventsCaster {
   private static INodesReadListener myNodesReadListener;
 
-  public static void fireNodeChildReadAccess(SNode node, String childRole){
+  public static void fireNodeChildReadAccess(SNode node, String childRole, SNode child){
     if (myNodesReadListener != null) {
-      myNodesReadListener.nodeChildReadAccess(node, childRole);
+      myNodesReadListener.nodeChildReadAccess(node, childRole, child);
     }
   }
 
-  public static void fireNodePropertyReadAccess(SNode node, String propertyName) {
+  public static void fireNodePropertyReadAccess(SNode node, String propertyName, String value) {
     if (myNodesReadListener != null) {
-      myNodesReadListener.nodePropertyReadAccess(node, propertyName);
+      myNodesReadListener.nodePropertyReadAccess(node, propertyName, value);
     }
   }
 
-  public static void fireNodeReferentReadAccess(SNode node, String referentRole) {
+  public static void fireNodeReferentReadAccess(SNode node, String referentRole, SNode referent) {
     if (myNodesReadListener != null) {
-      myNodesReadListener.nodeReferentReadAccess(node, referentRole);
+      myNodesReadListener.nodeReferentReadAccess(node, referentRole, referent);
     }
   }
 

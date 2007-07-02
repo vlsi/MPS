@@ -14,8 +14,8 @@ import java.util.HashSet;
  * To change this template use File | Settings | File Templates.
  */
 public interface INodesReadListener {
-  public void nodeChildReadAccess(SNode node, String childRole);
-  public void nodePropertyReadAccess(SNode node, String propertyName);
-  public void nodeReferentReadAccess(SNode node, String referentRole);
+  public void nodeChildReadAccess(SNode node, String childRole, SNode child);
+  public void nodePropertyReadAccess(SNode node, String propertyName, String value);
+  public void nodeReferentReadAccess(SNode node, String referentRole, SNode referent);
   public void nodeUnclassifiedReadAccess(SNode node);
 }

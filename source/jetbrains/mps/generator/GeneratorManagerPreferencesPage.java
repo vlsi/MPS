@@ -19,7 +19,7 @@ class GeneratorManagerPreferencesPage implements IPreferencesPage {
   private JCheckBox myCompileInIdeaBeforeGeneration = new JCheckBox("Compile in IntelliJ IDEA before generation");
   private JCheckBox myCompileInIdeaOnGeneration = new JCheckBox("Compile in IntelliJ IDEA after generation");
   private JCheckBox mySaveTransientModelsCheckBox = new JCheckBox("Save transient models on generation (experts only)");
-  private JCheckBox myDumpQueriesStatisticsCheckBox = new JCheckBox("Dump query execution statistic in concole (experts only)");
+  private JCheckBox myDumpQueriesStatisticsCheckBox = new JCheckBox("Dump query execution statistic in console (experts only)");
   private JCheckBox myCompileSourceLanguagesModules = new JCheckBox("Compile source languages' modules before generation");
   private JCheckBox myCheckBeforeGeneration = new JCheckBox("Check before generation");
   private GeneratorManager myGeneratorManager;
