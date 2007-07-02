@@ -47,7 +47,7 @@ public interface SModelDescriptor {
   Set<SReference> findUsages(Set<SNode> node);
   Set<SReference> findUsages(SNode node);
   Set<AbstractConceptDeclaration> findDescendants(AbstractConceptDeclaration node, Set<AbstractConceptDeclaration> descendantsKnownInModel);
-  Set<SNode> findInstances(ConceptDeclaration concept, IScope scope);
+  Set<SNode> findInstances(AbstractConceptDeclaration concept, IScope scope);
 
   boolean hasImportedModel(SModelDescriptor modelDescriptor);
   boolean hasLanguage(Language language);

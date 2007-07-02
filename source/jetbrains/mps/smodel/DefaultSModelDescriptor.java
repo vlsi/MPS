@@ -433,7 +433,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     }
   }
 
-  public Set<SNode> findInstances(ConceptDeclaration concept, IScope scope) {
+  public Set<SNode> findInstances(AbstractConceptDeclaration concept, IScope scope) {
     if (!myModelRootManager.isFindUsagesSupported()) return new HashSet<SNode>();
 /*
     // this optimization is incorrect and slow (overall)   :)
