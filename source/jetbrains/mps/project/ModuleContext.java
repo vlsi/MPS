@@ -22,6 +22,7 @@ import java.awt.HeadlessException;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.Iterator;
 
 /**
  * Created by IntelliJ IDEA.
@@ -79,6 +80,16 @@ public class ModuleContext extends StandaloneMPSContext {
     }
 
     IModule module;
+
+    Iterator<IModule> it = owningModules.iterator();
+
+    while (it.hasNext()) {
+      IModule m = it.next();
+      if (m instanceof Solution && "outputModels".equals(((Solution) m).getSolutionDescriptor().getName())) {
+        it.remove();
+      }
+    }
+    
     if (owningModules.size() == 1) {
       module = owningModules.iterator().next();
     } else {
