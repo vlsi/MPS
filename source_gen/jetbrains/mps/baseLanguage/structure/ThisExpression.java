@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ThisExpression extends Expression {
+  public static String CLASS_CONCEPT = "classConcept";
 
   public  ThisExpression(SNode node) {
     super(node);
@@ -18,5 +19,12 @@ public class ThisExpression extends Expression {
   }
   public static ThisExpression newInstance(SModel sm) {
     return ThisExpression.newInstance(sm, false);
+  }
+
+  public ClassConcept getClassConcept() {
+    return (ClassConcept)this.getReferent(ThisExpression.CLASS_CONCEPT);
+  }
+  public void setClassConcept(ClassConcept node) {
+    super.setReferent(ThisExpression.CLASS_CONCEPT, node);
   }
 }

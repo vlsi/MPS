@@ -1,6 +1,7 @@
 package jetbrains.mps.baseLanguage.generator.java.closures;
 
 import jetbrains.mps.baseLanguage.structure.*;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.INodeBuilder;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.JavaModelUtil_new;
@@ -195,8 +196,17 @@ public class _QueriesUtil {
     Class[] classes = new Class[]{BaseMethodDeclaration.class, Closure.class};
     INodeAdapter enclosingNode = nodeInsideClosure.getAdapter().findFirstParent(classes);
     if (enclosingNode instanceof InstanceMethodDeclaration ||
-            enclosingNode instanceof ConstructorDeclaration) {
-      return ThisExpression.newInstance(generator.getTargetModel()).getNode();
+            enclosingNode instanceof ConstructorDeclaration) 
+    {
+      ThisExpression thisExpr = ThisExpression.newInstance(generator.getTargetModel());
+      SNode enclosingClass = SNodeOperations.getAncestor(nodeInsideClosure, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+      if(enclosingClass == null) {
+        // closure is not in class
+        ClassConcept adapter = (ClassConcept)SModelUtil_new.findNodeByFQName("java.lang.Object", ClassConcept.class, generator.getScope());
+        enclosingClass = adapter.getNode();
+      }
+      thisExpr.setClassConcept((ClassConcept) enclosingClass.getAdapter());
+      return thisExpr.getNode();
     }
     if (enclosingNode instanceof Closure) {
       INodeBuilder builder = generator.findNodeBuilderForSource(enclosingNode, ClosuresMappingId.CLOSURE__ADAPTER_CLASS);

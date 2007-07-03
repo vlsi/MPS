@@ -13,7 +13,7 @@ public class long_extends_float_SubtypingRule extends SubtypingRule_Runtime impl
   }
 
   public SNode getSubOrSuperType(SNode type) {
-    return new QuotationClass_55().createNode();
+    return new QuotationClass_56().createNode();
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.LongType";

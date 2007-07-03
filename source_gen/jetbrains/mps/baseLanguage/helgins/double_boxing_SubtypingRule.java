@@ -13,7 +13,7 @@ public class double_boxing_SubtypingRule extends SubtypingRule_Runtime implement
   }
 
   public SNode getSubOrSuperType(SNode type) {
-    return new QuotationClass_62().createNode();
+    return new QuotationClass_63().createNode();
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.DoubleType";

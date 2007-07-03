@@ -13,7 +13,7 @@ public class short_extends_int_SubtypingRule extends SubtypingRule_Runtime imple
   }
 
   public SNode getSubOrSuperType(SNode type) {
-    return new QuotationClass_51().createNode();
+    return new QuotationClass_52().createNode();
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ShortType";

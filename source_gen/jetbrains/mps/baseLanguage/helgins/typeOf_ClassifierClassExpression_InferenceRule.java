@@ -14,7 +14,7 @@ public class typeOf_ClassifierClassExpression_InferenceRule implements Inference
   }
 
   public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_34().createNode(SLinkOperations.getTarget(argument, "classifier", false)), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_35().createNode(SLinkOperations.getTarget(argument, "classifier", false)), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierClassExpression";

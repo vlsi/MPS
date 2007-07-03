@@ -13,17 +13,17 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 public class RulesFunctions_BaseLanguage {
 
   public static void comparisonOp(SNode binOp) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "rightExpression", true)), SLinkOperations.getTarget(new QuotationClass_25().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "rightExpression", true), null);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "leftExpression", true)), SLinkOperations.getTarget(new QuotationClass_26().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "leftExpression", true), null);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_27().createNode(), binOp);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "rightExpression", true)), SLinkOperations.getTarget(new QuotationClass_26().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "rightExpression", true), null);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "leftExpression", true)), SLinkOperations.getTarget(new QuotationClass_27().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "leftExpression", true), null);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_28().createNode(), binOp);
   }
   public static void numericOp(SNode binOp) {
     TypeChecker.getInstance().getRuntimeSupport().check(SLinkOperations.getTarget(binOp, "leftExpression", true));
     TypeChecker.getInstance().getRuntimeSupport().check(SLinkOperations.getTarget(binOp, "rightExpression", true));
     SNode rightExpressionType = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "rightExpression", true));
     SNode leftExpressionType = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "leftExpression", true));
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(rightExpressionType, SLinkOperations.getTarget(new QuotationClass_28().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "rightExpression", true), null);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(leftExpressionType, SLinkOperations.getTarget(new QuotationClass_29().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "leftExpression", true), null);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(rightExpressionType, SLinkOperations.getTarget(new QuotationClass_29().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "rightExpression", true), null);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(leftExpressionType, SLinkOperations.getTarget(new QuotationClass_30().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "leftExpression", true), null);
     TypeChecker.getInstance().getRuntimeSupport().givetype(Queries.getBinaryOperationType(leftExpressionType, rightExpressionType), binOp);
   }
   public static Iterable<SNode> collectReturnStatements(SNode node) {
@@ -66,7 +66,7 @@ public class RulesFunctions_BaseLanguage {
             int index = ListOperations.indexOf(SLinkOperations.getTargets(genericClassifier, "typeVariableDeclaration", true), tvd);
             SNode actualParam = (index < actualParams.size() ?
               actualParams.get(index) :
-              new QuotationClass_30().createNode()
+              new QuotationClass_31().createNode()
             );
             if(returnType == tvr) {
               returnType = SNodeOperations.copyNode(actualParam, TypeChecker.getInstance().getRuntimeTypesModel());

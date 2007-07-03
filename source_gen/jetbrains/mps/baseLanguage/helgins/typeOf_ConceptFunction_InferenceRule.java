@@ -24,7 +24,7 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
     TypeChecker.getInstance().getRuntimeSupport().check(SLinkOperations.getTarget(argument, "body", true));
     // =============
     SNode expectedRetType = BehaviorManager.getInstance().invoke(SNode.class, argument, "virtual_getExpectedReturnType_1178571276073");
-    boolean noReturnExpected = ((expectedRetType == null) || TypeChecker.getInstance().getSubtypingManager().isSubtype(expectedRetType, new QuotationClass_75().createNode()));
+    boolean noReturnExpected = ((expectedRetType == null) || TypeChecker.getInstance().getSubtypingManager().isSubtype(expectedRetType, new QuotationClass_76().createNode()));
     if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(expectedRetType), "jetbrains.mps.baseLanguage.structure.WildCardType")) {
       // function is expected to return value of any type
       expectedRetType = null;
@@ -36,16 +36,16 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
     if(noReturnExpected) {
       // shouldn't return any values
       {
-        ICursor<SNode> _zCursor2 = CursorFactory.createCursor(returnStatements);
+        ICursor<SNode> _zCursor3 = CursorFactory.createCursor(returnStatements);
         try {
-          while(_zCursor2.moveToNext()) {
-            SNode returnStatement = _zCursor2.getCurrent();
+          while(_zCursor3.moveToNext()) {
+            SNode returnStatement = _zCursor3.getCurrent();
             if((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
               TypeChecker.getInstance().reportTypeError(returnStatement, "no return value expected");
             }
           }
         } finally {
-          _zCursor2.release();
+          _zCursor3.release();
         }
       }
     } else
@@ -53,10 +53,10 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
       // should return subtypes of the 'expected type'
       // if 'expected type' is null - should still return some value (of any type)
       {
-        ICursor<SNode> _zCursor3 = CursorFactory.createCursor(returnStatements);
+        ICursor<SNode> _zCursor4 = CursorFactory.createCursor(returnStatements);
         try {
-          while(_zCursor3.moveToNext()) {
-            SNode returnStatement = _zCursor3.getCurrent();
+          while(_zCursor4.moveToNext()) {
+            SNode returnStatement = _zCursor4.getCurrent();
             if((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
               TypeChecker.getInstance().reportTypeError(returnStatement, "should return value");
             } else
@@ -65,7 +65,7 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
             }
           }
         } finally {
-          _zCursor3.release();
+          _zCursor4.release();
         }
       }
     }

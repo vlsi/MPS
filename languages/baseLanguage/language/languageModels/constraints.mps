@@ -1669,8 +1669,8 @@
     <link role="concept" targetNodeId="1.1068431474542" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1182160839808">
       <property name="isVirtual" value="true" />
-      <property name="name" value="inline" />
       <property name="isAbstract" value="true" />
+      <property name="name" value="inline" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1182160869063" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1182162555072">
         <property name="name" value="editorContext" />
@@ -3762,6 +3762,32 @@
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1182580828907">
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1182580828908" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1182955301909">
+    <link role="concept" targetNodeId="1.1070475354124" />
+    <node role="references" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1182955306411">
+      <link role="applicableLink" targetNodeId="1.1182955020723" />
+      <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Factory" id="1182955310831">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1182955310832">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1182955331571">
+            <node role="expression" type="jetbrains.mps.baseLanguage.NewExpression" id="1182955331572">
+              <link role="baseMethodDeclaration" extResolveInfo="5.constructor [Classifier]SimpleSearchScope[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List]))" />
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1182955372520">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAncestorsOperation" id="1182955376160">
+                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Concept" id="1182955380079">
+                    <link role="concept" targetNodeId="1.1068390468198" />
+                  </node>
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptParameter_ReferentSearchScope_enclosingNode" id="1182955371700" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1182955301910">
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1182955301911" />
     </node>
   </node>
 </model>

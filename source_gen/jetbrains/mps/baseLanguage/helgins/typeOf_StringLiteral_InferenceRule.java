@@ -13,7 +13,7 @@ public class typeOf_StringLiteral_InferenceRule implements InferenceRule_Runtime
   }
 
   public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_22().createNode(), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_23().createNode(), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.StringLiteral";

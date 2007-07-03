@@ -22,7 +22,7 @@ public class subtyping_arrayType_SubtypingRule extends SubtypingRule_Runtime imp
     List<SNode> result = new ArrayList<SNode>();
     for(SNode componentTypeSupertype : TypeChecker.getInstance().getSubtypingManager().collectImmediateSupertypes(SLinkOperations.getTarget(type, "componentType", true))) {
       if(SNodeOperations.isInstanceOf(componentTypeSupertype, "jetbrains.mps.baseLanguage.structure.Type")) {
-        ListOperations.addElement(result, new QuotationClass_59().createNode(componentTypeSupertype));
+        ListOperations.addElement(result, new QuotationClass_60().createNode(componentTypeSupertype));
       }
     }
     return result;
