@@ -130,6 +130,14 @@ public abstract class MPSTree extends JTree {
             return;
           }
 
+          KeyStroke stroke = KeyStroke.getKeyStrokeForEvent(e);
+          if (stroke.getKeyCode() == KeyEvent.VK_CONTROL ||
+                  stroke.getKeyCode() == KeyEvent.VK_SHIFT ||
+                  stroke.getKeyCode() == KeyEvent.VK_ALT) {
+            return;
+          }
+          stroke.toString();
+
           for (TreePath p : paths) {
             MPSTreeNode lastNode = (MPSTreeNode) p.getLastPathComponent();
             JPopupMenu menu = lastNode.getPopupMenu();
