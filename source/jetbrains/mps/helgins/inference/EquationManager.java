@@ -137,7 +137,7 @@ public class EquationManager {
     // shortening the paths
     if (pathLength > 1) {
       for (NodeWrapper typeOnPath : path) {
-        setParent(typeOnPath, type.getNode());
+        setParent(typeOnPath, fromWrapper(type));
       }
     }
     return type;
@@ -145,7 +145,7 @@ public class EquationManager {
 
   public SNode getRepresentator(SNode type_) {
     if (type_ == null) return null;
-    return getRepresentatorWrapper(fromNode(type_)).getNode();
+    return fromWrapper(getRepresentatorWrapper(fromNode(type_)));
   }
 
 
@@ -189,11 +189,11 @@ public class EquationManager {
     NodeWrapper supertypeRepresentator = getRepresentatorWrapper(supertype);
 
     // no equation needed
-    if (subtypeRepresentator.getNode() == supertypeRepresentator.getNode()) return;
+    if (fromWrapper(subtypeRepresentator) == fromWrapper(supertypeRepresentator)) return;
 
     // if one of them is a var
-    RuntimeTypeVariable varSubtype = RuntimeSupport.getTypeVar(subtypeRepresentator.getNode());
-    RuntimeTypeVariable varSupertype = RuntimeSupport.getTypeVar(supertypeRepresentator.getNode());
+    RuntimeTypeVariable varSubtype = RuntimeSupport.getTypeVar(fromWrapper(subtypeRepresentator));
+    RuntimeTypeVariable varSupertype = RuntimeSupport.getTypeVar(fromWrapper(supertypeRepresentator));
     if (varSubtype != null || varSupertype != null) {
       if (isWeak) {
         addSubtyping(subtypeRepresentator, supertypeRepresentator, errorInfo);
@@ -204,7 +204,7 @@ public class EquationManager {
     }
 
     // if strict subtyping
-    if (myTypeChecker.getSubtypingManager().isSubtype(subtypeRepresentator.getNode(), supertypeRepresentator.getNode(), true, isWeak)) {
+    if (myTypeChecker.getSubtypingManager().isSubtype(fromWrapper(subtypeRepresentator), fromWrapper(supertypeRepresentator), true, isWeak)) {
       return;
     }
 
@@ -214,7 +214,7 @@ public class EquationManager {
     }
     String strongString = isWeak ? "" : " strong";
     IErrorReporter errorReporter =
-            new EquationErrorReporter(this, "type ", subtypeRepresentator.getNode(), " is not" + strongString + " subtype of ", supertypeRepresentator.getNode(), "");
+            new EquationErrorReporter(this, "type ", fromWrapper(subtypeRepresentator), " is not" + strongString + " subtype of ", fromWrapper(supertypeRepresentator), "");
     myTypeChecker.reportTypeError(errorInfo.getNodeWithError(), errorReporter);
   }
 
@@ -253,11 +253,11 @@ public class EquationManager {
     NodeWrapper representator2 = getRepresentatorWrapper(type2);
 
     // no equation needed
-    if (representator1.getNode() == representator2.getNode()) return;
+    if (fromWrapper(representator1) == fromWrapper(representator2)) return;
 
     // if one of them is a var
-    RuntimeTypeVariable varSubtype = RuntimeSupport.getTypeVar(representator1.getNode());
-    RuntimeTypeVariable varSupertype = RuntimeSupport.getTypeVar(representator2.getNode());
+    RuntimeTypeVariable varSubtype = RuntimeSupport.getTypeVar(fromWrapper(representator1));
+    RuntimeTypeVariable varSupertype = RuntimeSupport.getTypeVar(fromWrapper(representator2));
     if (varSubtype != null || varSupertype != null) {
       if (isWeak) {
         addComparable(representator1, representator2, errorInfo);
@@ -268,13 +268,13 @@ public class EquationManager {
     }
 
     // if subtype or supertype
-    if (myTypeChecker.getSubtypingManager().isComparableWRTRules(representator1.getNode(), representator2.getNode())) {
+    if (myTypeChecker.getSubtypingManager().isComparableWRTRules(fromWrapper(representator1), fromWrapper(representator2))) {
       return;
     }
-    if (myTypeChecker.getSubtypingManager().isSubtype(representator1.getNode(), representator2.getNode(), isWeak)) {
+    if (myTypeChecker.getSubtypingManager().isSubtype(fromWrapper(representator1), fromWrapper(representator2), isWeak)) {
       return;
     }
-    if (myTypeChecker.getSubtypingManager().isSubtype(representator2.getNode(), representator1.getNode(), isWeak)) {
+    if (myTypeChecker.getSubtypingManager().isSubtype(fromWrapper(representator2), fromWrapper(representator1), isWeak)) {
       return;
     }
 
@@ -284,7 +284,7 @@ public class EquationManager {
     }
     String strongString = isWeak ? "" : " strongly";
     IErrorReporter errorReporter =
-            new EquationErrorReporter(this, "type ", representator1.getNode()," is not" + strongString + " comparable with ", representator2.getNode(), "");
+            new EquationErrorReporter(this, "type ", fromWrapper(representator1)," is not" + strongString + " comparable with ", fromWrapper(representator2), "");
     myTypeChecker.reportTypeError(errorInfo.getNodeWithError(), errorReporter);
   }
 
@@ -301,8 +301,8 @@ public class EquationManager {
   }
 
   public void addEquation(NodeWrapper lhs, NodeWrapper rhs, SNode nodeToCheck, String errorString) {
-    SNode rhsRepresentator = getRepresentator(lhs.getNode());
-    SNode lhsRepresentator = getRepresentator(rhs.getNode());
+    SNode rhsRepresentator = getRepresentator(fromWrapper(lhs));
+    SNode lhsRepresentator = getRepresentator(fromWrapper(rhs));
 
     // no equation needed
     if (rhsRepresentator == lhsRepresentator) return;
@@ -338,10 +338,15 @@ public class EquationManager {
     }
   }
 
+  private SNode fromWrapper(NodeWrapper lhs) {
+    if (lhs == null) return null;
+    return lhs.getNode();
+  }
+
   private void processEquation(NodeWrapper var, SNode type, SNode nodeToCheck) {
     setParent(var, type);
     keepInequation(var, fromNode(type));
-    RuntimeTypeVariable typeVar = RuntimeSupport.getTypeVar(var.getNode());
+    RuntimeTypeVariable typeVar = RuntimeSupport.getTypeVar(fromWrapper(var));
     if (typeVar instanceof RuntimeErrorType) {
       TypeChecker.getInstance().reportTypeError(nodeToCheck,((RuntimeErrorType)typeVar).getErrorText());
     }
@@ -612,7 +617,7 @@ public class EquationManager {
     while (hasConcreteTypes) {
       hasConcreteTypes = false;
       for (NodeWrapper type : types) {
-        if (BaseAdapter.isInstance(type.getNode(), RuntimeTypeVariable.class)) {
+        if (BaseAdapter.isInstance(fromWrapper(type), RuntimeTypeVariable.class)) {
           varLessThanType(type, true);
           typeLessThanVar(type, true);
           varLessThanType(type, false);
@@ -626,7 +631,7 @@ public class EquationManager {
 
 
     for (NodeWrapper type : types) {
-      assert BaseAdapter.isInstance(type.getNode(), RuntimeTypeVariable.class);
+      assert BaseAdapter.isInstance(fromWrapper(type), RuntimeTypeVariable.class);
 
       Map<NodeWrapper, ErrorInfo> supertypes = mySubtypesToSupertypesMap.get(type);
       if (supertypes != null) {
@@ -685,7 +690,7 @@ public class EquationManager {
     }
     Set<NodeWrapper> concreteSubtypes = new HashSet<NodeWrapper>();
     for (NodeWrapper subtypeNode : subtypes.keySet()) {
-      if (!BaseAdapter.isInstance(subtypeNode.getNode(), RuntimeTypeVariable.class)) {
+      if (!BaseAdapter.isInstance(fromWrapper(subtypeNode), RuntimeTypeVariable.class)) {
         concreteSubtypes.add(subtypeNode);
       }
     }
@@ -704,7 +709,7 @@ public class EquationManager {
   private Set<SNode> toNodes(Set<NodeWrapper> wrappers) {
     return CollectionUtil.map(wrappers, new Mapper<NodeWrapper, SNode>() {
       public SNode map(NodeWrapper nodeWrapper) {
-        return nodeWrapper.getNode();
+        return fromWrapper(nodeWrapper);
       }
     });
   }
@@ -730,7 +735,7 @@ public class EquationManager {
     }
     Set<NodeWrapper> concreteSupertypes = new HashSet<NodeWrapper>();
     for (NodeWrapper supertypeNode : supertypes.keySet()) {
-      if (!BaseAdapter.isInstance(supertypeNode.getNode(), RuntimeTypeVariable.class)) {
+      if (!BaseAdapter.isInstance(fromWrapper(supertypeNode), RuntimeTypeVariable.class)) {
         concreteSupertypes.add(supertypeNode);
       }
     }
