@@ -99,7 +99,7 @@
             <node role="instance" type="jetbrains.mps.nanoj.InstanceMethodCallExpression" id="1182969823081">
               <link role="method" targetNodeId="1182968897745" resolveInfo="Name" />
               <node role="instance" type="jetbrains.mps.nanoj.EqualsExpression" id="1183028566303">
-                <node role="left" type="jetbrains.mps.nanoj.NumberExpression" id="1183028569353">
+                <node role="left" type="jetbrains.mps.nanoj.NumberExpression" id="1183474800721">
                   <property name="number" value="239" />
                 </node>
                 <node role="right" type="jetbrains.mps.nanoj.PlusExpression" id="1183028574293">
