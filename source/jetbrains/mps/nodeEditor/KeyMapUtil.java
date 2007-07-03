@@ -33,7 +33,9 @@ public class KeyMapUtil {
     if ((keyEvent.getModifiers() & (KeyEvent.CTRL_MASK | KeyEvent.ALT_MASK | KeyEvent.SHIFT_MASK)) == 0) {
       // no modifiers - ignore letters/digits etc.
       char keyChar = keyEvent.getKeyChar();
-      if (Character.isLetterOrDigit(keyChar) || Character.isSpaceChar(keyChar) || Character.isWhitespace(keyChar)) {
+      if (Character.isLetterOrDigit(keyChar)
+              /* || Character.isSpaceChar(keyChar) || Character.isWhitespace(keyChar)  
+                Sorry, I need to handle space manually in textLanguage */) {
         return Collections.emptyList(); //TODO why?!
       }
     }
