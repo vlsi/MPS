@@ -104,8 +104,8 @@
     <property name="name" value="Types" />
     <node role="conceptDeclaration" type="jetbrains.mpslite.ConceptDeclaration" id="1182956598488">
       <property name="name" value="Type" />
-      <property name="abstract" value="true" />
       <property name="role" value="true" />
+      <property name="abstract" value="true" />
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.ConceptDeclaration" id="1182958613287">
       <property name="name" value="ClassifierType" />
@@ -199,8 +199,8 @@
     <property name="name" value="Statements" />
     <node role="conceptDeclaration" type="jetbrains.mpslite.ConceptDeclaration" id="1182966087965">
       <property name="name" value="Statement" />
-      <property name="role" value="true" />
       <property name="abstract" value="true" />
+      <property name="role" value="true" />
       <node role="line" type="jetbrains.mpslite.Line" id="1182966298619" />
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.ConceptDeclaration" id="1182966322282">
@@ -302,8 +302,8 @@
     <property name="name" value="Expressions" />
     <node role="conceptDeclaration" type="jetbrains.mpslite.ConceptDeclaration" id="1182966285571">
       <property name="name" value="Expression" />
-      <property name="role" value="true" />
       <property name="abstract" value="true" />
+      <property name="role" value="true" />
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.ConceptDeclaration" id="1182969317058">
       <property name="name" value="BinaryExpression" />
@@ -433,6 +433,22 @@
         </node>
         <node role="linePart" type="jetbrains.mpslite.ChildReferencePart" id="1182969490294">
           <link role="declaration" targetNodeId="1182969330673" resolveInfo="right" />
+        </node>
+      </node>
+    </node>
+    <node role="conceptDeclaration" type="jetbrains.mpslite.ConceptDeclaration" id="1183460721462">
+      <property name="name" value="ParensExpression" />
+      <link role="extends" targetNodeId="1182966285571" resolveInfo="Expression" />
+      <node role="line" type="jetbrains.mpslite.Line" id="1183460731478">
+        <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1183460733479">
+          <property name="text" value="(" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.ChildDeclarationPart" id="1183460735684">
+          <property name="name" value="expr" />
+          <link role="type" targetNodeId="1182966285571" resolveInfo="Expression" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.ConstantLinePart" id="1183460745296">
+          <property name="text" value=")" />
         </node>
       </node>
     </node>
