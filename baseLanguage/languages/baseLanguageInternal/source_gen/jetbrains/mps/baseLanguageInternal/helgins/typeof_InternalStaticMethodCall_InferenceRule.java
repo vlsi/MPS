@@ -23,6 +23,6 @@ public class typeof_InternalStaticMethodCall_InferenceRule implements InferenceR
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
   public boolean overrides() {
-    return false;
+    return true;
   }
 }

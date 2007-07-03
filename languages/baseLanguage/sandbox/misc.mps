@@ -4,6 +4,7 @@
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.baseLanguage.strings" />
+  <language namespace="jetbrains.mps.baseLanguageInternal" />
   <maxImportIndex value="120" />
   <import index="1" modelUID="java.lang@java_stub" />
   <import index="3" modelUID="java.util@java_stub" />
@@ -53,6 +54,31 @@
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1182164226711" />
+  </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1183457785427">
+    <property name="name" value="C" />
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1183457790851">
+      <property name="name" value="f" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1183457790852" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1183457790853" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1183457790854">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1183457888820">
+          <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1183458162704">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguageInternal.InternalStaticMethodCall" id="1183457918107">
+              <property name="methodName" value="efgh" />
+              <property name="fqClassName" value="abcd" />
+              <node role="returnType" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceType" id="1183457920140">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1183457924767">
+                  <link role="classifier" extResolveInfo="1.[Classifier]Object" />
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.ToListOperation" id="1183458166377" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1183457785428" />
   </node>
 </model>
 
