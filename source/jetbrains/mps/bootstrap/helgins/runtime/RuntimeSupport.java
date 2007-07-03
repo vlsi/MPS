@@ -21,11 +21,7 @@ import java.util.Map;
  */
 public class RuntimeSupport {
 
-  private static final char A_CHAR = 'a';
-  private static final char Z_CHAR = 'z';
 
-  private int myVariableIndex = 0;
-  private char myVariableChar = A_CHAR;
 
   private TypeChecker myTypeChecker;
 
@@ -59,22 +55,17 @@ public class RuntimeSupport {
     return myTypeChecker.getEquationManager().getRepresentator(type);
   }
 
-  private String getNewVarName() {
-    String result = myVariableChar + (myVariableIndex == 0 ? "" : ""+ myVariableIndex);
-    if (myVariableChar == Z_CHAR) {
-      myVariableIndex++;
-      myVariableChar = A_CHAR;
-    } else {
-      myVariableChar++;
-    }
-    return result;
-  }
+
 
   public SNode createNewRuntimeTypesVariable(boolean isNullable) {
     RuntimeTypeVariable typeVar = RuntimeTypeVariable.newInstance(myTypeChecker.getRuntimeTypesModel());
     typeVar.setNullable(isNullable);
     typeVar.setName(getNewVarName());
     return typeVar.getNode();
+  }
+
+  private String getNewVarName() {
+    return myTypeChecker.getCurrentTypesComponent().getNewVarName();
   }
 
   public void createEquation(SNode node1, SNode node2, SNode nodeToCheck) {
