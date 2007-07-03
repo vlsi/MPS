@@ -15,8 +15,8 @@ public class typeOf_ForeachStatement_InferenceRule implements InferenceRule_Runt
 
   public void applyRule(SNode argument) {
     SNode T_typevar_1176561507041 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(SLinkOperations.getTarget(argument, "iterable", true)), new QuotationClass_20().createNode(T_typevar_1176561507041), SLinkOperations.getTarget(argument, "iterable", true), null);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(T_typevar_1176561507041, TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(SLinkOperations.getTarget(argument, "variable", true)), SLinkOperations.getTarget(argument, "variable", true), null);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "iterable", true)), new QuotationClass_20().createNode(T_typevar_1176561507041), SLinkOperations.getTarget(argument, "iterable", true), null);
+    TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "variable", true)), T_typevar_1176561507041, SLinkOperations.getTarget(argument, "variable", true), null);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ForeachStatement";
