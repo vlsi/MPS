@@ -1669,8 +1669,8 @@
     <link role="concept" targetNodeId="1.1068431474542" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1182160839808">
       <property name="isVirtual" value="true" />
-      <property name="isAbstract" value="true" />
       <property name="name" value="inline" />
+      <property name="isAbstract" value="true" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1182160869063" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1182162555072">
         <property name="name" value="editorContext" />
@@ -3083,21 +3083,6 @@
                     </node>
                   </node>
                 </node>
-              </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1183458553878">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1183458553879">
-              <property name="name" value="aaa" />
-              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1183458553880">
-                <link role="elementConcept" targetNodeId="2.1133920641626" />
-              </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1183458561861">
-            <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1183458578603">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1183458561862">
-                <link role="variableDeclaration" targetNodeId="1183458553879" resolveInfo="aaa" />
               </node>
             </node>
           </node>
