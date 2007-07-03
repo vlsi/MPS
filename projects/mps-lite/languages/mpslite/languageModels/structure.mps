@@ -5,7 +5,7 @@
   <import index="1" modelUID="jetbrains.mps.core.structure" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182510906722">
-    <property name="name" value="NodeTypeDeclaration" />
+    <property name="name" value="ConceptDeclaration" />
     <property name="rootable" value="false" />
     <link role="extends" targetNodeId="1.1133920641626" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1182956098221">
@@ -188,7 +188,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1182840239135">
-    <property name="name" value="NodeTypeDeclarations" />
+    <property name="name" value="ConceptDeclarations" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="1.1133920641626" />
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1182840278091">
@@ -197,7 +197,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1182840264652">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="0..n" />
-      <property name="role" value="nodeTypeDeclaration" />
+      <property name="role" value="conceptDeclaration" />
       <link role="target" targetNodeId="1182510906722" resolveInfo="NodeTypeDeclaration" />
     </node>
   </node>
@@ -247,10 +247,6 @@
     <property name="name" value="ChildPart" />
     <property name="package" value="Parts" />
     <link role="extends" targetNodeId="1182511214735" resolveInfo="LinePart" />
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1183015786255">
-      <property name="name" value="rightTransformable" />
-      <link role="dataType" targetNodeId="1.1082983657063" />
-    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1183118217589">
       <property name="name" value="separator" />
       <link role="dataType" targetNodeId="1.1082983041843" />

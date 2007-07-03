@@ -9,7 +9,6 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ChildPart extends LinePart {
   public static String SEPARATOR = "separator";
-  public static String RIGHT_TRANSFORMABLE = "rightTransformable";
 
   public  ChildPart(SNode node) {
     super(node);
@@ -27,11 +26,5 @@ public class ChildPart extends LinePart {
   }
   public void setSeparator(String value) {
     this.setProperty(ChildPart.SEPARATOR, value);
-  }
-  public boolean getRightTransformable() {
-    return this.getBooleanProperty(ChildPart.RIGHT_TRANSFORMABLE);
-  }
-  public void setRightTransformable(boolean value) {
-    this.setBooleanProperty(ChildPart.RIGHT_TRANSFORMABLE, value);
   }
 }
