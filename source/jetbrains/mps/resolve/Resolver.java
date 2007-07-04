@@ -22,6 +22,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
+import jetbrains.mps.helgins.inference.NodeTypesComponent;
 import jetbrains.mps.logging.Logger;
 
 import java.util.*;
@@ -74,30 +75,6 @@ public class Resolver {
     reference.setResolveInfo(name);
   }
 
-  public static boolean resolve(final SReference reference, final IOperationContext operationContext) {
-    EditorsPane editorsPane = operationContext.getComponent(EditorsPane.class);
-    //InspectorPane inspectorPane = operationContext.getComponent(InspectorPane.class);
-    final SNode containingRoot = reference.getSourceNode().getContainingRoot();
-    assert containingRoot != null;
-    IEditor editorFor = editorsPane.getEditorForCurrentComponentNode(containingRoot);
-    assert editorFor != null;
-    EditorContext editorContext = editorFor.getEditorContext();
-    final List<INodeSubstituteAction> matchingActions = createResolveActions(reference, operationContext, editorContext);
-    CommandProcessor.instance().executeCommand(new Runnable() {
-      public void run() {
-        if (!(matchingActions.isEmpty())) {
-          String resolveInfo = reference.getResolveInfo();
-          processAction(matchingActions.get(0), resolveInfo, reference);
-          // TypeChecker.getInstance().checkRoot(containingRoot);
-          SNode sNode = reference.getSourceNode().getParent();
-          NodeTypesComponentsRepository.getInstance().
-                  createNodeTypesComponent(sNode.getContainingRoot()).computeTypesForNode(sNode); //todo dirty hack
-        }
-      }
-    }, "resolve");
-    return !(matchingActions.isEmpty());
-  }
-
 
   private static List<SNode> getSmartReferenceTargets(
           final ConceptDeclaration referenceNodeConcept,
@@ -124,8 +101,12 @@ public class Resolver {
     final AbstractConceptDeclaration referentConcept = linkDeclaration.getTarget();
 
     SNode sNode = referenceNode.getParent();
-    NodeTypesComponentsRepository.getInstance().
-            createNodeTypesComponent(sNode.getContainingRoot()).computeTypesForNode(sNode); //todo dirty hack
+
+    NodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance().
+            createNodeTypesComponent(sNode.getContainingRoot());
+    TypeChecker.getInstance().setCurrentTypesComponent(nodeTypesComponent);
+    nodeTypesComponent.computeTypesForNode(sNode); //todo dirty hack
+    TypeChecker.getInstance().clearCurrentTypesComponent();
 
     IStatus status = ModelConstraintsUtil.getReferentSearchScope(referenceNode.getParent(),
             referenceNode, referenceNodeConcept, linkDeclaration, operationContext.getScope());

@@ -19,6 +19,7 @@ import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.Hack;
+import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.generator.template.Statistics;
 import jetbrains.mpswiki.queryLanguage.evaluator.ConditionMatcher;
 import org.jetbrains.annotations.NotNull;
@@ -84,11 +85,13 @@ public class TypeChecker {
     return myRulesManager;
   }
 
-  /*package*/ void setCurrentTypesComponent(NodeTypesComponent component) {
+  @UseCarefully
+  public void setCurrentTypesComponent(NodeTypesComponent component) {
     myCurrentTypesComponent = component;
   }
 
-  /*package*/ void clearCurrentTypesComponent() {
+  @UseCarefully
+  public void clearCurrentTypesComponent() {
     myCurrentTypesComponent = null;
   }
 

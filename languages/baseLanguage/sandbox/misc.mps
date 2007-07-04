@@ -62,18 +62,13 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1183457790852" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1183457790853" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1183457790854">
-        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1183457888820">
-          <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1183458162704">
-            <node role="leftExpression" type="jetbrains.mps.baseLanguageInternal.InternalStaticMethodCall" id="1183457918107">
-              <property name="methodName" value="efgh" />
-              <property name="fqClassName" value="abcd" />
-              <node role="returnType" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceType" id="1183457920140">
-                <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1183457924767">
-                  <link role="classifier" extResolveInfo="1.[Classifier]Object" />
-                </node>
-              </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1183544182576">
+          <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1183544186844">
+            <link role="baseMethodDeclaration" extResolveInfo="1.static method ([Classifier]String).([StaticMethodDeclaration]valueOf((jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean)) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+            <link role="classConcept" extResolveInfo="1.[Classifier]String" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1183544188079">
+              <property name="value" value="true" />
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.ToListOperation" id="1183458166377" />
           </node>
         </node>
       </node>
