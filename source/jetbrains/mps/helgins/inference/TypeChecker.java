@@ -98,6 +98,8 @@ public class TypeChecker {
   public void clearForReload() {
     myRulesManager.clear();
     mySubtypingManager.clearSupertypesCache();
+    myCurrentTypesComponent = null;
+    myCheckedRoots.clear();
   }
 
   public void reportTypeError(SNode nodeWithError, String errorString) {
