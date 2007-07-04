@@ -27,6 +27,11 @@ import java.util.*;
  * Date: Aug 2, 2003
  */
 public class SNode implements Cloneable, Iterable<SNode> {
+
+  public static boolean unregisteredNodesDontTriggerEvents() {
+    return false;
+  }
+
   private static final Logger LOG = Logger.getLogger(SNode.class);
 
   public static final Object STATUS = new Object();
@@ -689,7 +694,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
       myProperties.put(propertyName, propertyValue);
     }
 
-    if (!isRegistered()) {
+    if (!isRegistered() && unregisteredNodesDontTriggerEvents()) {
       // node 'doesn't exist' : don't register undo, don't fire events
       return;
     }
@@ -933,7 +938,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
     wasChild.myRoleInParent = null;
     wasChild.unRegisterFromModel();
 
-    if (!isRegistered()) {
+    if (!isRegistered() && unregisteredNodesDontTriggerEvents()) {
       // node 'doesn't exist' : don't register undo, don't fire events
       return;
     }
@@ -974,7 +979,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
     if (isRegistered()) {
       child.registerInModel(getModel());
-    } else {
+    } else if (unregisteredNodesDontTriggerEvents()) {
       // node 'doesn't exist' : don't register undo, don't fire events
       return;
     }
@@ -1252,7 +1257,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
     if (myReferences == null) myReferences = new ArrayList<SReference>(1);
     myReferences.add(i, reference);
 
-    if (!isRegistered()) {
+    if (!isRegistered() && unregisteredNodesDontTriggerEvents()) {
       // node 'doesn't exist': don't register undo, don't fire events
       return;
     }
@@ -1276,7 +1281,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
     final SReference reference = myReferences.get(i);
     myReferences.remove(reference);
 
-    if (!isRegistered()) {
+    if (!isRegistered() && unregisteredNodesDontTriggerEvents()) {
       // node 'doesn't exist': don't register undo, don't fire events
       return;
     }
