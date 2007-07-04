@@ -311,14 +311,8 @@ public class SModel implements Iterable<SNode> {
                                 boolean addedOrRemoved,
                                 boolean isRemoved) {
     if (!canFireEvent()) return;
-    if (addedOrRemoved) {
-      for (SModelListener sModelListener : copyListeners()) {
-        sModelListener.propertyChanged(new SModelPropertyAddedOrRemovedEvent(this, property, node, oldValue, newValue, isRemoved));
-      }
-    } else {
-      for (SModelListener sModelListener : copyListeners()) {
-        sModelListener.propertyChanged(new SModelPropertyEvent(this, property, node, oldValue, newValue));
-      }
+    for (SModelListener sModelListener : copyListeners()) {
+      sModelListener.propertyChanged(new SModelPropertyEvent(this, property, node, oldValue, newValue));
     }
   }
 
