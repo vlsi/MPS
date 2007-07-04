@@ -143,6 +143,25 @@ public class EditorContext {
     return false;
   }
 
+  public void selectLater(final SNode node) {
+    CommandProcessor.instance().invokeLater(new Runnable() {
+      public void run() {
+        getNodeEditorComponent().selectNode(node);
+      }
+    });
+  }
+
+  public void selectAndSetCaretLater(final SNode node, final int position) {
+    CommandProcessor.instance().invokeLater(new Runnable() {
+      public void run() {
+        getNodeEditorComponent().selectNode(node);
+        EditorCell_Label label = (EditorCell_Label) getNodeEditorComponent().getSelectedCell();
+        label.getTextLine().setCaretPosition(position);
+      }
+    });
+
+  }
+
   public boolean setMemento(Object o) {
     if (o instanceof Memento) {
       Memento memento = (Memento) o;
