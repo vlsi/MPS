@@ -1094,6 +1094,13 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     LOG.debug("Rebuild of " + getEditedNode() + "'s editor took " + (System.currentTimeMillis() - start) + " ms");
   }
 
+  public SNode getRootNode() {
+    if (myNodeProxy == null) {
+      return null;
+    }
+    return myNodeProxy.getNode();
+  }
+
   void updateModelCheckerMessages() {
     if (myNodeProxy == null) {
       return;
