@@ -26,8 +26,8 @@ public class KeyMapUtil {
     int keyCode = keyEvent.getKeyCode();
     if (keyCode == KeyEvent.VK_CONTROL || keyCode == KeyEvent.VK_ALT || keyCode == KeyEvent.VK_SHIFT ||
             /*keyCode == KeyEvent.VK_UP || keyCode == KeyEvent.VK_DOWN || keyCode == KeyEvent.VK_LEFT || keyCode == KeyEvent.VK_RIGHT || */ //TODO why?!
-            keyCode == KeyEvent.VK_PAGE_UP || keyCode == KeyEvent.VK_PAGE_DOWN ||
-            keyCode == KeyEvent.VK_BACK_SPACE) {
+            keyCode == KeyEvent.VK_PAGE_UP || keyCode == KeyEvent.VK_PAGE_DOWN
+            /* || keyCode == KeyEvent.VK_BACK_SPACE*/) {
       return Collections.emptyList();
     }
     if ((keyEvent.getModifiers() & (KeyEvent.CTRL_MASK | KeyEvent.ALT_MASK | KeyEvent.SHIFT_MASK)) == 0) {
