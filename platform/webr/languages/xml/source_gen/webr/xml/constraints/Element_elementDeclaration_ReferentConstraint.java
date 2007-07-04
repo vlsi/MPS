@@ -36,7 +36,7 @@ public class Element_elementDeclaration_ReferentConstraint implements IModelCons
     List<SNode> elementDeclarations = _ElementUtil.getElementDeclarations(element, enclosingNode);
     if(SequenceOperations.isEmpty(elementDeclarations)) {
       searchScope = SModelSearchUtil_new.createModelAndImportedModelsScope(model, scope);
-    } else 
+    } else
     {
       searchScope = new SimpleSearchScope(elementDeclarations);
     }
