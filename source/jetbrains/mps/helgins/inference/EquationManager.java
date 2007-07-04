@@ -25,7 +25,7 @@ public class EquationManager {
   private static Logger LOG = Logger.getLogger(EquationManager.class);
 
   private TypeChecker myTypeChecker;
-  private NodeTypesComponent myNodeTypesComponent;
+  private INodeTypesComponent myNodeTypesComponent;
 
   private Map<NodeWrapper, Map<NodeWrapper, ErrorInfo>> mySubtypesToSupertypesMap = new HashMap<NodeWrapper, Map<NodeWrapper, ErrorInfo>>();
   private Map<NodeWrapper, Map<NodeWrapper, ErrorInfo>> mySupertypesToSubtypesMap = new HashMap<NodeWrapper, Map<NodeWrapper, ErrorInfo>>();
@@ -37,7 +37,7 @@ public class EquationManager {
 
   private Map<NodeWrapper, SNode> myEquations = new HashMap<NodeWrapper, SNode>();
 
-  public EquationManager(TypeChecker typeChecker, NodeTypesComponent nodeTypesComponent) {
+  public EquationManager(TypeChecker typeChecker, INodeTypesComponent nodeTypesComponent) {
     myTypeChecker = typeChecker;
     myNodeTypesComponent = nodeTypesComponent;
   }

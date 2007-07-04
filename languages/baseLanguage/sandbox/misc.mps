@@ -71,6 +71,15 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1183552207957">
+          <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1183552207958">
+            <link role="classConcept" extResolveInfo="1.[Classifier]String" />
+            <link role="baseMethodDeclaration" extResolveInfo="1.static method ([Classifier]String).([StaticMethodDeclaration]valueOf((jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean)) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1183552207959">
+              <property name="value" value="true" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1183457785428" />

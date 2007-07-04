@@ -2,7 +2,7 @@ package jetbrains.mps.bootstrap.helgins.runtime;
 
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
-import jetbrains.mps.helgins.inference.NodeTypesComponent;
+import jetbrains.mps.helgins.inference.INodeTypesComponent;
 import jetbrains.mps.helgins.inference.EquationManager.ErrorInfo;
 import jetbrains.mps.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.smodel.SNode;
@@ -32,13 +32,13 @@ public class RuntimeSupport {
   public SNode typeOf(SNode node) {
     if (node == null) return null;
     SNode type;
-    NodeTypesComponent currentTypesComponent = myTypeChecker.getCurrentTypesComponent();   //first, in current component
+    INodeTypesComponent currentTypesComponent = myTypeChecker.getCurrentTypesComponent();   //first, in current component
      if (currentTypesComponent != null) {
       type = currentTypesComponent.getRawTypeFromContext(node);
       if (type != null) return type;
     }
 
-    NodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance()  // then, in appropriate component
+    INodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance()  // then, in appropriate component
             .getNodeTypesComponent(node.getContainingRoot());
     if (nodeTypesComponent != null && nodeTypesComponent != currentTypesComponent) {
       type = nodeTypesComponent.getType(node);

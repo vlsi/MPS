@@ -15,7 +15,7 @@ import java.util.HashSet;
  * To change this template use File | Settings | File Templates.
  */
 public class NodeTypesComponentsRepository {
-  private Set<NodeTypesComponent> myNodeTypesComponents = new HashSet<NodeTypesComponent>();
+  private Set<INodeTypesComponent> myNodeTypesComponents = new HashSet<INodeTypesComponent>();
   private TypeChecker myTypeChecker;
 
   public NodeTypesComponentsRepository() {
@@ -30,10 +30,10 @@ public class NodeTypesComponentsRepository {
     return ApplicationComponents.getInstance().getComponent(NodeTypesComponentsRepository.class);
   }
 
-  public NodeTypesComponent getNodeTypesComponent(SNode node) {
+  public INodeTypesComponent getNodeTypesComponent(SNode node) {
     if (node == null) return null;
     SNode root = node.getContainingRoot();
-    for (NodeTypesComponent nodeTypesComponent : myNodeTypesComponents) {
+    for (INodeTypesComponent nodeTypesComponent : myNodeTypesComponents) {
       if (nodeTypesComponent.getNode() == root) {
         return nodeTypesComponent;
       }
@@ -41,14 +41,14 @@ public class NodeTypesComponentsRepository {
     return null;
   }
 
-  public NodeTypesComponent createNodeTypesComponent(SNode node) {
+  public INodeTypesComponent createNodeTypesComponent(SNode node) {
     if (node == null) return null;
     SNode root = node.getContainingRoot();
-    NodeTypesComponent nodeTypesComponent = getNodeTypesComponent(root);
+    INodeTypesComponent nodeTypesComponent = getNodeTypesComponent(root);
     if (nodeTypesComponent != null) {
       return nodeTypesComponent;
     }
-    nodeTypesComponent = new NodeTypesComponent(root, myTypeChecker);
+    nodeTypesComponent = NodeTypesComponentsFactory.createNodeTypesComponent(root, myTypeChecker);
     myNodeTypesComponents.add(nodeTypesComponent);
     return nodeTypesComponent;
   }

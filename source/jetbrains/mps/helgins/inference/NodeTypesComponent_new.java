@@ -25,7 +25,7 @@ import java.util.Map.Entry;
  * Time: 13:50:13
  * To change this template use File | Settings | File Templates.
  */
-public class NodeTypesComponent_new extends NodeTypesComponent {
+public class NodeTypesComponent_new implements INodeTypesComponent {
 
   private static final char A_CHAR = 'a';
   private static final char Z_CHAR = 'z';
@@ -53,7 +53,6 @@ public class NodeTypesComponent_new extends NodeTypesComponent {
   private static final Logger LOG = Logger.getLogger(NodeTypesComponent_new.class);
 
   public NodeTypesComponent_new(SNode rootNode, TypeChecker typeChecker) {
-    super(rootNode, typeChecker);
     myRootNode = rootNode;
     myTypeChecker = typeChecker;
     myEquationManagersStack.push(new EquationManager(myTypeChecker, this));
@@ -103,6 +102,9 @@ public class NodeTypesComponent_new extends NodeTypesComponent {
     }
   }
 
+  public boolean isInCheckedNodes(SNode node) {
+    return myFullyCheckedNodes.contains(node);
+  }
 
   boolean loadTypesystemRules(SNode root) {
     List<Language> languages = root.getModel().getLanguages(GlobalScope.getInstance());
@@ -238,7 +240,7 @@ public class NodeTypesComponent_new extends NodeTypesComponent {
       // if in our component
       return;
     }
-    if (((NodeTypesComponent_new)NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(node)).myFullyCheckedNodes.contains(node)) {
+    if ((NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(node)).isInCheckedNodes(node)) {
       //if in another component
       return;
     }

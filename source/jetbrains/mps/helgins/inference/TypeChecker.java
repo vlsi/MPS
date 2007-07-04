@@ -51,7 +51,7 @@ public class TypeChecker {
   private SubtypingManager mySubtypingManager;
   private RuntimeSupport myRuntimeSupport;
   private RulesManager myRulesManager;
-  private NodeTypesComponent myCurrentTypesComponent = null;
+  private INodeTypesComponent myCurrentTypesComponent = null;
 
   public TypeChecker() {
     mySubtypingManager = new SubtypingManager(this);
@@ -86,7 +86,7 @@ public class TypeChecker {
   }
 
   @UseCarefully
-  public void setCurrentTypesComponent(NodeTypesComponent component) {
+  public void setCurrentTypesComponent(INodeTypesComponent component) {
     myCurrentTypesComponent = component;
   }
 
@@ -176,7 +176,7 @@ public class TypeChecker {
   @Nullable
   public SNode getTypeDontCheck(SNode node) {
     if (node == null) return null;
-    NodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance().
+    INodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance().
             getNodeTypesComponent(node.getContainingRoot());
     if (nodeTypesComponent == null) return null;
     return nodeTypesComponent.getType(node);
@@ -212,7 +212,7 @@ public class TypeChecker {
     myCheckedRoots.remove(containingRoot);
   }
 
-  public NodeTypesComponent getCurrentTypesComponent() {
+  public INodeTypesComponent getCurrentTypesComponent() {
     return myCurrentTypesComponent;
   }
 

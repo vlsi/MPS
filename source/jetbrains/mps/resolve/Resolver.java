@@ -22,7 +22,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
-import jetbrains.mps.helgins.inference.NodeTypesComponent;
+import jetbrains.mps.helgins.inference.INodeTypesComponent;
 import jetbrains.mps.logging.Logger;
 
 import java.util.*;
@@ -102,7 +102,7 @@ public class Resolver {
 
     SNode sNode = referenceNode.getParent();
 
-    NodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance().
+    INodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance().
             createNodeTypesComponent(sNode.getContainingRoot());
     TypeChecker.getInstance().setCurrentTypesComponent(nodeTypesComponent);
     nodeTypesComponent.computeTypesForNode(sNode); //todo dirty hack
