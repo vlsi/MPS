@@ -27,16 +27,26 @@ import java.util.*;
   }
 
   public static List<INodeSubstituteAction> createActions(SNode sourceNode, String transformTag, IOperationContext context) {
-    List<INodeSubstituteAction> resultActions = new LinkedList<INodeSubstituteAction>();
-    List<RTransformHintSubstituteActionsBuilder> actionsBuilders = getActionBuilders(sourceNode, transformTag, context);
+    SModel model = sourceNode.getModel();
 
-    // for each builder create actions and apply all filters
-    for (RTransformHintSubstituteActionsBuilder builder : actionsBuilders) {
-      List<INodeSubstituteAction> addActions = invokeActionFactory(builder, sourceNode, context);
-      addActions = applyActionFilters(addActions, actionsBuilders, builder, context);
-      resultActions.addAll(addActions);
+    model.setLoading(true);
+    model.setRegistrationsForbidden(true);
+
+    try {
+      List<INodeSubstituteAction> resultActions = new LinkedList<INodeSubstituteAction>();
+      List<RTransformHintSubstituteActionsBuilder> actionsBuilders = getActionBuilders(sourceNode, transformTag, context);
+
+      // for each builder create actions and apply all filters
+      for (RTransformHintSubstituteActionsBuilder builder : actionsBuilders) {
+        List<INodeSubstituteAction> addActions = invokeActionFactory(builder, sourceNode, context);
+        addActions = applyActionFilters(addActions, actionsBuilders, builder, context);
+        resultActions.addAll(addActions);
+      }
+      return resultActions;
+    } finally {
+      model.setLoading(false);
+      model.setRegistrationsForbidden(false);
     }
-    return resultActions;
   }
 
   private static List<RTransformHintSubstituteActionsBuilder> getActionBuilders(final SNode sourceNode, String transformTag, final IOperationContext context) {

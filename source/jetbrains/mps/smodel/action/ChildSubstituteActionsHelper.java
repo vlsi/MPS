@@ -46,56 +46,66 @@ public class ChildSubstituteActionsHelper {
   }
 
   public static List<INodeSubstituteAction> createActions(SNode parentNode, SNode currentChild, AbstractConceptDeclaration childConcept, IChildNodeSetter childSetter, IOperationContext context) {
-    List<INodeSubstituteAction> resultActions = new ArrayList<INodeSubstituteAction>();
-    if (childConcept == null) {
-      return resultActions;
-    }
-    IScope scope = context.getScope();
-    Language primaryLanguage = SModelUtil_new.getDeclaringLanguage(childConcept, scope);
-    if (primaryLanguage == null) {
-      LOG.error("Couldn't build actions : couldn't get declaring language for concept " + childConcept.getDebugText());
-      return resultActions;
-    }
+    SModel model = parentNode.getModel();
 
-    // add actions from 'primary' language
-    List<NodeSubstituteActionsBuilder> primaryBuilders = getActionBuilders(parentNode, primaryLanguage, childConcept, context);
-    if (primaryBuilders.isEmpty()) {
-      // if 'primary' language hasn't defined actions for that target - create 'default' actions
-      resultActions = createPrimaryChildSubstituteActions(parentNode, currentChild, childConcept, childSetter, TRUE_CONDITION, context);
-    } else {      
-      if (!containsLegacyQueries(primaryBuilders) && !containsRemoveDefaults(primaryBuilders)) {
-        // if 'primary' language doesn't contain legacy queries, than default actions will be created by default
-        resultActions.addAll(createPrimaryChildSubstituteActions(parentNode, currentChild, childConcept, childSetter, TRUE_CONDITION, context));
+    model.setLoading(true);
+    model.setRegistrationsForbidden(true);
+
+    try {
+      List<INodeSubstituteAction> resultActions = new ArrayList<INodeSubstituteAction>();
+      if (childConcept == null) {
+        return resultActions;
+      }
+      IScope scope = context.getScope();
+      Language primaryLanguage = SModelUtil_new.getDeclaringLanguage(childConcept, scope);
+      if (primaryLanguage == null) {
+        LOG.error("Couldn't build actions : couldn't get declaring language for concept " + childConcept.getDebugText());
+        return resultActions;
       }
 
+      // add actions from 'primary' language
+      List<NodeSubstituteActionsBuilder> primaryBuilders = getActionBuilders(parentNode, primaryLanguage, childConcept, context);
+      if (primaryBuilders.isEmpty()) {
+        // if 'primary' language hasn't defined actions for that target - create 'default' actions
+        resultActions = createPrimaryChildSubstituteActions(parentNode, currentChild, childConcept, childSetter, TRUE_CONDITION, context);
+      } else {
+        if (!containsLegacyQueries(primaryBuilders) && !containsRemoveDefaults(primaryBuilders)) {
+          // if 'primary' language doesn't contain legacy queries, than default actions will be created by default
+          resultActions.addAll(createPrimaryChildSubstituteActions(parentNode, currentChild, childConcept, childSetter, TRUE_CONDITION, context));
+        }
+
+        for (NodeSubstituteActionsBuilder builder : primaryBuilders) {
+          resultActions.addAll(invokeActionFactory(builder, parentNode, currentChild, childConcept, childSetter, context));
+        }
+      }
+
+      // search 'extending' builders
+      List<NodeSubstituteActionsBuilder> extendedBuilders = new ArrayList<NodeSubstituteActionsBuilder>();
+      List<Language> languages = parentNode.getModel().getLanguages(scope);
+      for (Language language : languages) {
+        if (language == primaryLanguage) {
+          continue;
+        }
+        extendedBuilders.addAll(getActionBuilders(parentNode, language, childConcept, context));
+      }
+
+      // for each builder create actions and apply all filters
+      for (NodeSubstituteActionsBuilder builder : extendedBuilders) {
+        List<INodeSubstituteAction> addActions = invokeActionFactory(builder, parentNode, currentChild, childConcept, childSetter, context);
+        resultActions.addAll(addActions);
+      }
+
+      // apply all filters
+      primaryBuilders.addAll(extendedBuilders);
       for (NodeSubstituteActionsBuilder builder : primaryBuilders) {
-        resultActions.addAll(invokeActionFactory(builder, parentNode, currentChild, childConcept, childSetter, context));
+        resultActions = applyActionFilter(builder, resultActions, parentNode, currentChild, childConcept.getNode(), context);
       }
-    }
 
-    // search 'extending' builders
-    List<NodeSubstituteActionsBuilder> extendedBuilders = new ArrayList<NodeSubstituteActionsBuilder>();
-    List<Language> languages = parentNode.getModel().getLanguages(scope);
-    for (Language language : languages) {
-      if (language == primaryLanguage) {
-        continue;
-      }
-      extendedBuilders.addAll(getActionBuilders(parentNode, language, childConcept, context));
+      return resultActions;
+    } finally {
+      model.setLoading(false);
+      model.setRegistrationsForbidden(false);
     }
-
-    // for each builder create actions and apply all filters
-    for (NodeSubstituteActionsBuilder builder : extendedBuilders) {
-      List<INodeSubstituteAction> addActions = invokeActionFactory(builder, parentNode, currentChild, childConcept, childSetter, context);
-      resultActions.addAll(addActions);
-    }
-
-    // apply all filters
-    primaryBuilders.addAll(extendedBuilders);
-    for (NodeSubstituteActionsBuilder builder : primaryBuilders) {
-      resultActions = applyActionFilter(builder, resultActions, parentNode, currentChild, childConcept.getNode(), context);
-    }
-
-    return resultActions;
   }
 
   private static boolean containsLegacyQueries(List<NodeSubstituteActionsBuilder> list) {

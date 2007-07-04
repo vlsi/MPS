@@ -58,6 +58,7 @@ public class SModel implements Iterable<SNode> {
   private HashMap<Object, Object> myUserObjects = new HashMap<Object, Object>();
   private SNode myLog;
   private boolean myUsesLog;
+  private boolean myRegistrationsForbidden = false;
 
   public SModel(@NotNull SModelUID modelUID) {
     addSModelListener(myEventTranslator);
@@ -745,6 +746,11 @@ public class SModel implements Iterable<SNode> {
 
 
   void setNodeId(@NotNull SNodeId id, @NotNull SNode node) {
+    if (myRegistrationsForbidden) {
+      LOG.error("Registration in model " + getUID() + " is temporarely forbidden");
+    }
+
+
     SNode existingNode = myIdToNodeMap.get(id);
     if (existingNode != null && existingNode != node) {
       LOG.errorWithTrace("couldn't set id=" + id + " to node: " + node.getDebugText() + "\nnode with this id exists: " + existingNode.getDebugText());
@@ -1066,6 +1072,19 @@ public class SModel implements Iterable<SNode> {
     }
 
     return resultNodes;
+  }
+
+  public void runRegistrationFreeAction(Runnable runnable) {
+    myRegistrationsForbidden = true;
+    try {
+      runnable.run();
+    } finally {
+      myRegistrationsForbidden = false;
+    }
+  }
+
+  public void setRegistrationsForbidden(boolean registrationsForbidden) {
+    myRegistrationsForbidden = registrationsForbidden;
   }
 
   public <E extends INodeAdapter> List<E> allAdapters(final Class<E> cls) {
