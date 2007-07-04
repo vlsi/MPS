@@ -946,6 +946,10 @@ public class SModel implements Iterable<SNode> {
       }
       UndoManager.instance().undoableActionPerformed(new UndoRootAddOrDelete(myRoot, null, !myAdd));
     }
+
+    public String toString() {
+      return (myAdd ? "add" : "delete") + " root " + myRoot;
+    }
   }
 
   private class SModelEventTranslator implements ICommandListener, SModelListener {

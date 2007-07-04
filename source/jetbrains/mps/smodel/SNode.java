@@ -689,15 +689,20 @@ public class SNode implements Cloneable, Iterable<SNode> {
       myProperties.put(propertyName, propertyValue);
     }
 
-    if (!myRegisteredInModelFlag) {
+    if (!isRegistered()) {
       // node 'doesn't exist' : don't register undo, don't fire events
       return;
     }
 
+    final String pv = propertyValue;
     if (!getModel().isLoading()) {
-      UndoManager.instance().undoableActionPerformed(new IUndoableAction() {
+      UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
         public void undo() throws UnexpectedUndoException {
           setProperty(propertyName, oldValue);
+        }
+
+        public String toString() {
+          return "set property " + propertyName + " in " + SNode.this + " to " + pv;
         }
       });
     }
@@ -928,7 +933,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
     wasChild.myRoleInParent = null;
     wasChild.unRegisterFromModel();
 
-    if (!myRegisteredInModelFlag) {
+    if (!isRegistered()) {
       // node 'doesn't exist' : don't register undo, don't fire events
       return;
     }
@@ -939,12 +944,16 @@ public class SNode implements Cloneable, Iterable<SNode> {
           insertChildAt(index, wasRole, wasChild);
           wasChild.setId(wasId);
         }
+
+        public String toString() {
+          return "remove child " + wasChild.getId() + " at role " + wasRole;
+        }
       });
     }
     getModel().fireChildRemovedEvent(this, wasRole, wasChild, index);
   }
 
-  private void insertChildAt(final int index, @NotNull String role, @NotNull SNode child) {
+  private void insertChildAt(final int index, final @NotNull String role, final @NotNull SNode child) {
     SNode parentOfChild = child.getParent();
     if (parentOfChild != null) {
       throw new RuntimeException(child.getDebugText() + " already has parent: " + parentOfChild.getDebugText() + "\n" +
@@ -963,7 +972,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
     child.myRoleInParent = InternUtil.intern(role);
     child.myParent = this;
 
-    if (myRegisteredInModelFlag) {
+    if (isRegistered()) {
       child.registerInModel(getModel());
     } else {
       // node 'doesn't exist' : don't register undo, don't fire events
@@ -971,9 +980,13 @@ public class SNode implements Cloneable, Iterable<SNode> {
     }
 
     if (!getModel().isLoading()) {
-      UndoManager.instance().undoableActionPerformed(new IUndoableAction() {
+      UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
         public void undo() throws UnexpectedUndoException {
           removeChildAt(index);
+        }
+
+        public String toString() {
+          return "insert child " + child.getId() + " at role " + role;
         }
       });
     }
@@ -1239,15 +1252,19 @@ public class SNode implements Cloneable, Iterable<SNode> {
     if (myReferences == null) myReferences = new ArrayList<SReference>(1);
     myReferences.add(i, reference);
 
-    if (!myRegisteredInModelFlag) {
+    if (!isRegistered()) {
       // node 'doesn't exist': don't register undo, don't fire events
       return;
     }
 
     if (!getModel().isLoading()) {
-      UndoManager.instance().undoableActionPerformed(new IUndoableAction() {
+      UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
         public void undo() throws UnexpectedUndoException {
           removeReferenceAt(i);
+        }
+
+        public String toString() {
+          return "add reference " + reference;
         }
       });
     }
@@ -1259,15 +1276,19 @@ public class SNode implements Cloneable, Iterable<SNode> {
     final SReference reference = myReferences.get(i);
     myReferences.remove(reference);
 
-    if (!myRegisteredInModelFlag) {
+    if (!isRegistered()) {
       // node 'doesn't exist': don't register undo, don't fire events
       return;
     }
 
     if (!getModel().isLoading()) {
-      UndoManager.instance().undoableActionPerformed(new IUndoableAction() {
+      UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
         public void undo() {
           insertReferenceAt(i, reference);
+        }
+
+        public String toString() {
+          return "remove reference " + reference;
         }
       });
     }
@@ -1496,9 +1517,13 @@ public class SNode implements Cloneable, Iterable<SNode> {
     putUserObject(RIGHT_TRANSFORM_HINT, RIGHT_TRANSFORM_HINT);
     getModel().firePropertyChangedEvent(this, RIGHT_TRANSFORM_HINT, null, "", true, false);
     if (!getModel().isLoading()) {
-      UndoManager.instance().undoableActionPerformed(new IUndoableAction() {
+      UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
         public void undo() throws UnexpectedUndoException {
           removeRightTransformHint();
+        }
+
+        public String toString() {
+          return "add RTHint";
         }
       });
     }
@@ -1513,9 +1538,13 @@ public class SNode implements Cloneable, Iterable<SNode> {
     removeUserObject(RIGHT_TRANSFORM_HINT);
     getModel().firePropertyChangedEvent(this, RIGHT_TRANSFORM_HINT, "", null, true, true);
     if (!getModel().isLoading()) {
-      UndoManager.instance().undoableActionPerformed(new IUndoableAction() {
+      UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
         public void undo() throws UnexpectedUndoException {
           addRightTransformHint();
+        }
+
+        public String toString() {
+          return "removeRTHint";
         }
       });
     }
@@ -1951,5 +1980,11 @@ public class SNode implements Cloneable, Iterable<SNode> {
       }
     }
     return childDepth + 1;
+  }
+
+  abstract class NodeUndoableAction implements IUndoableAction {
+    public SNode getNode() {
+      return SNode.this;
+    }
   }
 }

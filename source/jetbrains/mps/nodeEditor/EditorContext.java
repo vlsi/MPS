@@ -162,7 +162,7 @@ public class EditorContext {
 
   }
 
-  public boolean setMemento(Object o) {
+  public boolean setMemento(Object o) {        
     if (o instanceof Memento) {
       Memento memento = (Memento) o;
       if (myNodeEditorComponent == memento.myNodeEditor) {
