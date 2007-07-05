@@ -29,6 +29,7 @@ import java.util.*;
   public static List<INodeSubstituteAction> createActions(SNode sourceNode, String transformTag, IOperationContext context) {
     SModel model = sourceNode.getModel();
 
+    boolean wasLoading = model.isLoading();
     model.setLoading(true);
     model.setRegistrationsForbidden(true);
 
@@ -44,7 +45,7 @@ import java.util.*;
       }
       return resultActions;
     } finally {
-      model.setLoading(false);
+      model.setLoading(wasLoading);
       model.setRegistrationsForbidden(false);
     }
   }

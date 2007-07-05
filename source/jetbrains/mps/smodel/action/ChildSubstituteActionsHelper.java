@@ -48,6 +48,7 @@ public class ChildSubstituteActionsHelper {
   public static List<INodeSubstituteAction> createActions(SNode parentNode, SNode currentChild, AbstractConceptDeclaration childConcept, IChildNodeSetter childSetter, IOperationContext context) {
     SModel model = parentNode.getModel();
 
+    boolean wasLoading = model.isLoading();
     model.setLoading(true);
     model.setRegistrationsForbidden(true);
 
@@ -103,7 +104,7 @@ public class ChildSubstituteActionsHelper {
 
       return resultActions;
     } finally {
-      model.setLoading(false);
+      model.setLoading(wasLoading);
       model.setRegistrationsForbidden(false);
     }
   }
