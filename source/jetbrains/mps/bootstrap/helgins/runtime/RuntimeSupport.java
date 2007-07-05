@@ -8,6 +8,7 @@ import jetbrains.mps.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.NodeReadEventsCaster;
 import jetbrains.mps.patterns.IMatchingPattern;
 
 import java.util.Map;

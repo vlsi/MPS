@@ -184,8 +184,11 @@ public class NodeTypesComponent_new implements INodeTypesComponent {
           pushNodeBeingChecked(sNode);
           myNodesReadListener.clear();
           NodeReadEventsCaster.setNodesReadListener(myNodesReadListener);
-          applyRulesToNode(sNode);
-          NodeReadEventsCaster.removeNodesReadListener();
+          try {
+            applyRulesToNode(sNode);
+          } finally{
+            NodeReadEventsCaster.removeNodesReadListener();
+          }
           addDepedentNodes(sNode, myNodesReadListener.myAcessedNodes);
           myNodesReadListener.clear();
           SNode poppedCheckedNode = popNodeBeingChecked();
@@ -200,19 +203,22 @@ public class NodeTypesComponent_new implements INodeTypesComponent {
   }
 
 
-  private void addDepedentNodes(SNode sNode, Set<SNode> nodesToAdd) {
-    WeakSet<SNode> dependentNodes = myNodesToDependentNodes.get(sNode);
-    if (dependentNodes == null) {
-      dependentNodes = new WeakSet<SNode>();
-      myNodesToDependentNodes.put(sNode, dependentNodes);
+  private void addDepedentNodes(SNode sNode, Set<SNode> nodesToDependOn) {
+    for (SNode nodeToDependOn : nodesToDependOn) {
+      if (nodeToDependOn == null) continue;
+      WeakSet<SNode> dependentNodes = myNodesToDependentNodes.get(nodeToDependOn);
+      if (dependentNodes == null) {
+        dependentNodes = new WeakSet<SNode>();
+        myNodesToDependentNodes.put(nodeToDependOn, dependentNodes);
+      }
+      dependentNodes.add(sNode);
     }
-    dependentNodes.addAll(nodesToAdd);
 
     // temporary solution
-    SNode parent = sNode.getParent();
+    /*  SNode parent = sNode.getParent();
     if (parent != null) {
-      addDepedentNodes(parent, nodesToAdd);
-    }
+      addDepedentNodes(parent, nodesToDependOn);
+    }*/
   }
 
   public Map<SNode, SNode> getMainContext() {
@@ -375,7 +381,7 @@ public class NodeTypesComponent_new implements INodeTypesComponent {
     });
   }
 
-   public String getNewVarName() {
+  public String getNewVarName() {
     String result = myVariableChar + (myVariableIndex == 0 ? "" : ""+ myVariableIndex);
     if (myVariableChar == Z_CHAR) {
       myVariableIndex++;
