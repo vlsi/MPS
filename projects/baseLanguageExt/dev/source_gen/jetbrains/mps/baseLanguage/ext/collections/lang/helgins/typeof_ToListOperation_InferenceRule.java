@@ -4,12 +4,9 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.RulesFunctions_Collections;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_8;
-import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.QuotationClass_9;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ToListOperation_InferenceRule implements InferenceRule_Runtime {

@@ -45,6 +45,7 @@ public class HelginsPreferencesComponent extends DefaultExternalizableComponent 
 
     public MyPreferencesPage() {
       JPanel panel = new JPanel(new GridLayout(1,1));
+      myCheckBox.setSelected(myUsesIncrementalAlgorithm);
       panel.add(myCheckBox);
       myComponent.add(panel, BorderLayout.NORTH);
     }
