@@ -11,9 +11,9 @@ import java.util.List;
 import webr.xmlSchema.structure.ElementDeclaration;
 
 public class Element extends BaseElement {
-  public static String IS_EMPTY = "isEmpty";
   public static String ATTRIBUTE = "attribute";
   public static String ELEMENT_DECLARATION = "elementDeclaration";
+  public static String IS_EMPTY = "isEmpty";
 
   public  Element(SNode node) {
     super(node);
@@ -26,12 +26,6 @@ public class Element extends BaseElement {
     return Element.newInstance(sm, false);
   }
 
-  public boolean getIsEmpty() {
-    return this.getBooleanProperty(Element.IS_EMPTY);
-  }
-  public void setIsEmpty(boolean value) {
-    this.setBooleanProperty(Element.IS_EMPTY, value);
-  }
   public int getAttributesCount() {
     return this.getChildCount(Element.ATTRIBUTE);
   }
@@ -52,5 +46,11 @@ public class Element extends BaseElement {
   }
   public void setElementDeclaration(ElementDeclaration node) {
     super.setReferent(Element.ELEMENT_DECLARATION, node);
+  }
+  public boolean getIsEmpty() {
+    return this.getBooleanProperty(Element.IS_EMPTY);
+  }
+  public void setIsEmpty(boolean value) {
+    this.setBooleanProperty(Element.IS_EMPTY, value);
   }
 }
