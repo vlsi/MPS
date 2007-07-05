@@ -155,8 +155,11 @@ public class EditorContext {
     CommandProcessor.instance().invokeLater(new Runnable() {
       public void run() {
         getNodeEditorComponent().selectNode(node);
-        EditorCell_Label label = (EditorCell_Label) getNodeEditorComponent().getSelectedCell();
-        label.getTextLine().setCaretPosition(position);
+        EditorCell selectedCell = getNodeEditorComponent().getSelectedCell();
+        if (selectedCell instanceof EditorCell_Label) {
+          EditorCell_Label label = (EditorCell_Label) selectedCell;
+          label.getTextLine().setCaretPosition(position);
+        }
       }
     });
 
