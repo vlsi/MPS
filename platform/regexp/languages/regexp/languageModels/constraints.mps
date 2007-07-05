@@ -14,8 +14,8 @@
     <link role="concept" targetNodeId="1.1174482743037" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1177760132955">
       <property name="isVirtual" value="true" />
-      <property name="name" value="toString" />
       <property name="isAbstract" value="false" />
+      <property name="name" value="toString" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1177760144630">
         <link role="classifier" extResolveInfo="5.[Classifier]String" />
       </node>

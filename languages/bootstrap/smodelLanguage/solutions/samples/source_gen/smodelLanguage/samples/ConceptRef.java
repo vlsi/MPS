@@ -11,6 +11,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.IScope;
 
 /* package */class ConceptRef {
 
@@ -54,7 +55,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
     // -- not ok --
     bExprConc = exprConc;
   }
-  public void concept_hierarchy(SNode concept) {
+  public void concept_hierarchy1(SNode concept) {
     // concept and all its supers
     List<SNode> hierarchy = SConceptOperations.getConceptHierarchy(concept);
     // supers

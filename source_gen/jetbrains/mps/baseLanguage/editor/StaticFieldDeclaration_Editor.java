@@ -4,13 +4,13 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -23,9 +23,6 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   /* package */AbstractCellProvider my_Component_Visibility5;
   /* package */AbstractCellProvider myVariableDeclaration_NameCellComponent3;
 
-  public static boolean _QueryFunction_NodeCondition_1145916370724(SNode node, IScope scope) {
-    return SLinkOperations.getTarget(node, "initializer", true) != null;
-  }
   private static void setupBasic__Component_VisibilityCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178547822277");
   }
@@ -72,6 +69,9 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   }
   private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+  public static boolean _QueryFunction_NodeCondition_1145916370724(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "initializer", true) != null;
+  }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
@@ -96,7 +96,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "static"));
     editorCell.addEditorCell(this.createTypeCell(context, node));
     editorCell.addEditorCell(this.createVariableDeclaration_NameCellComponentCell(context, node));
-    if(StaticFieldDeclaration_Editor._QueryFunction_NodeCondition_1145916370724(node, context.getOperationContext().getScope())) {
+    if(StaticFieldDeclaration_Editor._QueryFunction_NodeCondition_1145916370724(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createInitializerArea(context, node));
     }
     editorCell.addEditorCell(this.createConstantCell2(context, node, ";"));

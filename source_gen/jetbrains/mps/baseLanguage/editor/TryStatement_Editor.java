@@ -4,13 +4,13 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Vertical;
@@ -23,9 +23,6 @@ public class TryStatement_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myCatchClauseListHandler_catchClauseList_;
 
-  public static boolean _QueryFunction_NodeCondition_1164881171029(SNode node, IScope scope) {
-    return SLinkOperations.getCount(node, "catchClause") > 0;
-  }
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1153952537425");
     editorCell.setDrawBorder(false);
@@ -137,13 +134,16 @@ public class TryStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell4(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(true);
   }
+  public static boolean _QueryFunction_NodeCondition_1164881171029(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getCount(node, "catchClause") > 0;
+  }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createStatementBox(context, node);
   }
   public EditorCell createCellAlternation(EditorContext context, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = TryStatement_Editor._QueryFunction_NodeCondition_1164881171029(node, context.getOperationContext().getScope());
+    alternationCondition = TryStatement_Editor._QueryFunction_NodeCondition_1164881171029(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
     if(alternationCondition) {
       editorCell = this.createColumnCell(context, node);

@@ -7,7 +7,6 @@ import java.util.List;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import smodelLanguage.samples.zPredicate1;
 
 /* package */class ListOfNodes {
 
@@ -16,6 +15,6 @@ import smodelLanguage.samples.zPredicate1;
   }
   /* package */void first(SNode sl) {
     SequenceOperations.getFirst(SLinkOperations.getTargets(sl, "statement", true));
-    Iterable<SNode> nodes = SequenceOperations.where(SLinkOperations.getTargets(sl, "statement", true), new zPredicate1(this, null));
+    Iterable<SNode> nodes = SequenceOperations.where(SLinkOperations.getTargets(sl, "statement", true), new zPredicate1(ListOfNodes.this, null));
   }
 }

@@ -4,17 +4,22 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.baseLanguage.ext.collections.lang.editor.ForEachVariableReference_Editor_variable_InlineComponent;
-import java.awt.Color;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ForEachVariableReference_Editor extends DefaultNodeEditor {
+
+  private static void setupBasic_VariableReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1153944293571");
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupLabel_VariableReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createVariableReferenceCell(context, node);
@@ -23,17 +28,11 @@ public class ForEachVariableReference_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new ForEachVariableReference_Editor_variable_InlineComponent());
     EditorCell editorCell = provider.createEditorCell(context);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
+    ForEachVariableReference_Editor.setupBasic_VariableReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      EditorCell_Label editorCellLabel = (EditorCell_Label)editorCell;
-      editorCellLabel.setEditable(true);
+      ForEachVariableReference_Editor.setupLabel_VariableReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1153944293571");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createVariableReferenceCell(EditorContext context, SNode node) {

@@ -5,15 +5,15 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
+import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
@@ -29,24 +29,6 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   /* package */AbstractCellListHandler myParameterListHandler_parameterList_;
   /* package */AbstractCellListHandler myThrowsItemListHandler_throwsItemList_;
 
-  public static boolean _QueryFunction_NodeCondition_1178608724220(SNode node, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isAbstract");
-  }
-  public static boolean _QueryFunction_NodeCondition_1178609166621(SNode node, IScope scope) {
-    return SequenceOperations.getSize(SLinkOperations.getTargets(node, "throwsItem", true)) > 0;
-  }
-  public static boolean _QueryFunction_NodeCondition_1178609275710(SNode node, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "isAbstract"));
-  }
-  public static boolean _QueryFunction_NodeCondition_1178609161098(SNode node, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isAbstract");
-  }
-  public static boolean _QueryFunction_NodeCondition_1178609059858(SNode node, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "isAbstract"));
-  }
-  public static boolean _QueryFunction_NodeCondition_1178609091789(SNode node, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "isAbstract"));
-  }
   private static void setupBasic__Component_VisibilityCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178547804783");
     _InstanceMethodDeclaration_AddAbstract.setCellActions(editorCell, node, context);
@@ -174,6 +156,24 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   }
   private static void setupLabel_IsAbstractCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+  public static boolean _QueryFunction_NodeCondition_1178608724220(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isAbstract");
+  }
+  public static boolean _QueryFunction_NodeCondition_1178609166621(SNode node, EditorContext editorContext, IScope scope) {
+    return SequenceOperations.getSize(SLinkOperations.getTargets(node, "throwsItem", true)) > 0;
+  }
+  public static boolean _QueryFunction_NodeCondition_1178609275710(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "isAbstract"));
+  }
+  public static boolean _QueryFunction_NodeCondition_1178609161098(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isAbstract");
+  }
+  public static boolean _QueryFunction_NodeCondition_1178609059858(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "isAbstract"));
+  }
+  public static boolean _QueryFunction_NodeCondition_1178609091789(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "isAbstract"));
+  }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createMethodBox(context, node);
@@ -198,7 +198,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.create_Component_VisibilityCell(context, node));
-    if(InstanceMethodDeclaration_Editor._QueryFunction_NodeCondition_1178608724220(node, context.getOperationContext().getScope())) {
+    if(InstanceMethodDeclaration_Editor._QueryFunction_NodeCondition_1178608724220(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstantCell(context, node, "abstract"));
     }
     editorCell.addEditorCell(this.createReturnType(context, node));
@@ -206,13 +206,13 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell1(context, node, "("));
     editorCell.addEditorCell(this.createParameterList(context, node));
     editorCell.addEditorCell(this.createConstantCell3(context, node, ")"));
-    if(InstanceMethodDeclaration_Editor._QueryFunction_NodeCondition_1178609166621(node, context.getOperationContext().getScope())) {
+    if(InstanceMethodDeclaration_Editor._QueryFunction_NodeCondition_1178609166621(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRowCell(context, node));
     }
-    if(InstanceMethodDeclaration_Editor._QueryFunction_NodeCondition_1178609275710(node, context.getOperationContext().getScope())) {
+    if(InstanceMethodDeclaration_Editor._QueryFunction_NodeCondition_1178609275710(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstantCell5(context, node, "{"));
     }
-    if(InstanceMethodDeclaration_Editor._QueryFunction_NodeCondition_1178609161098(node, context.getOperationContext().getScope())) {
+    if(InstanceMethodDeclaration_Editor._QueryFunction_NodeCondition_1178609161098(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstantCell6(context, node, ";"));
     }
     return editorCell;
@@ -234,10 +234,10 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createHeaderRow(context, node));
-    if(InstanceMethodDeclaration_Editor._QueryFunction_NodeCondition_1178609059858(node, context.getOperationContext().getScope())) {
+    if(InstanceMethodDeclaration_Editor._QueryFunction_NodeCondition_1178609059858(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createBodyArea(context, node));
     }
-    if(InstanceMethodDeclaration_Editor._QueryFunction_NodeCondition_1178609091789(node, context.getOperationContext().getScope())) {
+    if(InstanceMethodDeclaration_Editor._QueryFunction_NodeCondition_1178609091789(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstantCell7(context, node, "}"));
     }
     editorCell.addEditorCell(this.createConstantCell8(context, node, ""));

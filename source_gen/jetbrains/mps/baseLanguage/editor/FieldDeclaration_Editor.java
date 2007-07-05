@@ -4,12 +4,12 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -22,9 +22,6 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   /* package */AbstractCellProvider my_Component_Visibility4;
   /* package */AbstractCellProvider myVariableDeclaration_NameCellComponent;
 
-  public static boolean _QueryFunction_NodeCondition_1145916298341(SNode node, IScope scope) {
-    return SLinkOperations.getTarget(node, "initializer", true) != null;
-  }
   private static void setupBasic__Component_VisibilityCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178547814213");
   }
@@ -64,6 +61,9 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   }
   private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+  public static boolean _QueryFunction_NodeCondition_1145916298341(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "initializer", true) != null;
+  }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createDeclarationBox(context, node);
@@ -87,7 +87,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.create_Component_VisibilityCell(context, node));
     editorCell.addEditorCell(this.createTypeCell(context, node));
     editorCell.addEditorCell(this.createVariableDeclaration_NameCellComponentCell(context, node));
-    if(FieldDeclaration_Editor._QueryFunction_NodeCondition_1145916298341(node, context.getOperationContext().getScope())) {
+    if(FieldDeclaration_Editor._QueryFunction_NodeCondition_1145916298341(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createInitializerArea(context, node));
     }
     editorCell.addEditorCell(this.createConstantCell1(context, node, ";"));

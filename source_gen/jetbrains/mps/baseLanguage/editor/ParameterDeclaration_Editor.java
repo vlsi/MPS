@@ -4,13 +4,13 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -23,9 +23,6 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellProvider myVariableDeclaration_NameCellComponent1;
 
-  public static boolean _QueryFunction_NodeCondition_1176719487941(SNode node, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isFinal");
-  }
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176719480878");
   }
@@ -62,6 +59,9 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
   }
   private static void setupLabel_IsFinalCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+  public static boolean _QueryFunction_NodeCondition_1176719487941(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isFinal");
+  }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createDeclarationBox(context, node);
@@ -75,7 +75,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if(ParameterDeclaration_Editor._QueryFunction_NodeCondition_1176719487941(node, context.getOperationContext().getScope())) {
+    if(ParameterDeclaration_Editor._QueryFunction_NodeCondition_1176719487941(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstantCell(context, node, "final"));
     }
     editorCell.addEditorCell(this.createTypeCell(context, node));

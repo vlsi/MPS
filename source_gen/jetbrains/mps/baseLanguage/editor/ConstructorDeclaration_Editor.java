@@ -5,13 +5,13 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
@@ -27,9 +27,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
   /* package */AbstractCellListHandler myParameterListHandler_parameterList_;
   /* package */AbstractCellListHandler myThrowsItemListHandler_throwsItemList_;
 
-  public static boolean _QueryFunction_NodeCondition_1165410808113(SNode node, IScope scope) {
-    return SLinkOperations.getCount(node, "throwsItem") > 0;
-  }
   private static void setupBasic__Component_VisibilityCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178547839561");
   }
@@ -137,13 +134,16 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
   }
   private static void setupLabel_ConstantCell7(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+  public static boolean _QueryFunction_NodeCondition_1165410808113(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getCount(node, "throwsItem") > 0;
+  }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createMethodBox(context, node);
   }
   public EditorCell createCellAlternation(EditorContext context, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = ConstructorDeclaration_Editor._QueryFunction_NodeCondition_1165410808113(node, context.getOperationContext().getScope());
+    alternationCondition = ConstructorDeclaration_Editor._QueryFunction_NodeCondition_1165410808113(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
     if(alternationCondition) {
       editorCell = this.createRowCell(context, node);

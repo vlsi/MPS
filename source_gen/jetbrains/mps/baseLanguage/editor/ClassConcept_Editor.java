@@ -5,15 +5,15 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.baseLanguage.constraints.ClassConcept_Behavior;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
 import java.awt.Color;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.baseLanguage.constraints.ClassConcept_Behavior;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Vertical;
@@ -36,18 +36,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   /* package */AbstractCellListHandler myStaticMethodListHandler_staticMethodList_;
   /* package */AbstractCellListHandler myStaticInnerClassifiersListHandler_staticMethodList1_;
 
-  public static boolean _QueryFunction_NodeCondition_1178610229481(SNode node, IScope scope) {
-    return ClassConcept_Behavior.isAbstract_1178610171302(node);
-  }
-  public static boolean _QueryFunction_NodeCondition_1145916139208(SNode node, IScope scope) {
-    return SLinkOperations.getCount(node, "typeVariableDeclaration") > 0;
-  }
-  public static boolean _QueryFunction_NodeCondition_1165625641774(SNode node, IScope scope) {
-    return SLinkOperations.getTarget(node, "extendedClass", false) != null;
-  }
-  public static boolean _QueryFunction_NodeCondition_1171628086722(SNode node, IScope scope) {
-    return SLinkOperations.getTarget(node, "staticInitializer", true) != null;
-  }
   private static void setupBasic__Component_VisibilityCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178550101404");
   }
@@ -406,6 +394,18 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
   private static void setupLabel_ConstantCell27(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+  public static boolean _QueryFunction_NodeCondition_1178610229481(SNode node, EditorContext editorContext, IScope scope) {
+    return ClassConcept_Behavior.isAbstract_1178610171302(node);
+  }
+  public static boolean _QueryFunction_NodeCondition_1145916139208(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getCount(node, "typeVariableDeclaration") > 0;
+  }
+  public static boolean _QueryFunction_NodeCondition_1165625641774(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "extendedClass", false) != null;
+  }
+  public static boolean _QueryFunction_NodeCondition_1171628086722(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "staticInitializer", true) != null;
+  }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createClassBox(context, node);
@@ -439,7 +439,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if(ClassConcept_Editor._QueryFunction_NodeCondition_1165625641774(node, context.getOperationContext().getScope())) {
+    if(ClassConcept_Editor._QueryFunction_NodeCondition_1165625641774(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRowCell(context, node));
     }
     editorCell.addEditorCell(this.createRowCell1(context, node));
@@ -452,12 +452,12 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.create_Component_VisibilityCell(context, node));
-    if(ClassConcept_Editor._QueryFunction_NodeCondition_1178610229481(node, context.getOperationContext().getScope())) {
+    if(ClassConcept_Editor._QueryFunction_NodeCondition_1178610229481(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstantCell(context, node, "abstract"));
     }
     editorCell.addEditorCell(this.createConstantCell1(context, node, "class"));
     editorCell.addEditorCell(this.createNameCell(context, node));
-    if(ClassConcept_Editor._QueryFunction_NodeCondition_1145916139208(node, context.getOperationContext().getScope())) {
+    if(ClassConcept_Editor._QueryFunction_NodeCondition_1145916139208(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_GenericDeclaration_TypeVariables_ComponentCell(context, node));
     }
     editorCell.addEditorCell(this.createColumnCell(context, node));
@@ -585,7 +585,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell16(context, node, ""));
     editorCell.addEditorCell(this.createRowCell4(context, node));
     editorCell.addEditorCell(this.createConstantCell18(context, node, ""));
-    if(ClassConcept_Editor._QueryFunction_NodeCondition_1171628086722(node, context.getOperationContext().getScope())) {
+    if(ClassConcept_Editor._QueryFunction_NodeCondition_1171628086722(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRowCell5(context, node));
     }
     editorCell.addEditorCell(this.createConstantCell23(context, node, "}"));

@@ -16,7 +16,7 @@ import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactory;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.baseLanguage.constraints.Type_Behavior;
 
 public class QueriesGenerated {
 
@@ -179,7 +179,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "initializerBlock", true), "body", true);
   }
   public static SNode sourceNodeQuery_1179457640870(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return BehaviorManager.getInstance().invoke_old(SNode.class, SLinkOperations.getTarget(node, "type", true), "virtual_getUnboxedType_1182580547590");
+    return Type_Behavior.callVirtual_getUnboxedType_1182580547590(SLinkOperations.getTarget(node, "type", true));
   }
   public static SNode sourceNodeQuery_1178782016772(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "commonInitializer", true), "body", true);
@@ -236,7 +236,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "initializerBlock", true), "body", true);
   }
   public static SNode sourceNodeQuery_1181738985228(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return BehaviorManager.getInstance().invoke_old(SNode.class, SLinkOperations.getTarget(node, "type", true), "virtual_getUnboxedType_1182580547590");
+    return Type_Behavior.callVirtual_getUnboxedType_1182580547590(SLinkOperations.getTarget(node, "type", true));
   }
   public static SNode sourceNodeQuery_1181738763214(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "commonInitializer", true), "body", true);

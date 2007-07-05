@@ -5,13 +5,13 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Vertical;
@@ -28,9 +28,6 @@ public class Interface_Editor extends DefaultNodeEditor {
   /* package */AbstractCellListHandler myStaticFieldListHandler_staticFieldList_;
   /* package */AbstractCellListHandler myMethodListHandler_methodsList_;
 
-  public static boolean _QueryFunction_NodeCondition_1145916182768(SNode node, IScope scope) {
-    return SLinkOperations.getCount(node, "typeVariableDeclaration") > 0;
-  }
   private static void setupBasic__Component_VisibilityCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178550117011");
   }
@@ -140,6 +137,9 @@ public class Interface_Editor extends DefaultNodeEditor {
   }
   private static void setupLabel_ConstantCell9(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+  public static boolean _QueryFunction_NodeCondition_1145916182768(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getCount(node, "typeVariableDeclaration") > 0;
+  }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createClassBox(context, node);
@@ -153,7 +153,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.create_Component_VisibilityCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "interface"));
     editorCell.addEditorCell(this.createNameCell(context, node));
-    if(Interface_Editor._QueryFunction_NodeCondition_1145916182768(node, context.getOperationContext().getScope())) {
+    if(Interface_Editor._QueryFunction_NodeCondition_1145916182768(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.create_GenericDeclaration_TypeVariables_ComponentCell(context, node));
     }
     editorCell.addEditorCell(this.createConstantCell1(context, node, "extends"));
