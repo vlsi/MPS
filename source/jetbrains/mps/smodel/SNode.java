@@ -27,6 +27,11 @@ import java.util.*;
  * Date: Aug 2, 2003
  */
 public class SNode implements Cloneable, Iterable<SNode> {
+
+  public static boolean unregisteredNodesDontTriggerEvents() {
+    return false;
+  }
+
   private static final Logger LOG = Logger.getLogger(SNode.class);
 
   public static final Object STATUS = new Object();
@@ -337,7 +342,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
       return null;
     }
 
-    return getParent().getLinkDeclaration(getRole_(), scope);    
+    return getParent().getLinkDeclaration(getRole_(), scope);
   }
 
   public List<LinkDeclaration> getChildLinkAdapters(IScope scope) {
@@ -368,7 +373,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
   public List<SNode> getReferenceLinks(IScope scope) {
     return BaseAdapter.toNodes(getReferenceLinkAdapters(scope));
   }
-  
+
   //
   //----- attributes
   //
@@ -689,6 +694,11 @@ public class SNode implements Cloneable, Iterable<SNode> {
       myProperties.put(propertyName, propertyValue);
     }
 
+    if (!isRegistered() && unregisteredNodesDontTriggerEvents()) {
+      // node 'doesn't exist' : don't register undo, don't fire events
+      return;
+    }
+
     final String pv = propertyValue;
     if (!getModel().isLoading()) {
       UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
@@ -928,6 +938,11 @@ public class SNode implements Cloneable, Iterable<SNode> {
     wasChild.myRoleInParent = null;
     wasChild.unRegisterFromModel();
 
+    if (!isRegistered() && unregisteredNodesDontTriggerEvents()) {
+      // node 'doesn't exist' : don't register undo, don't fire events
+      return;
+    }
+
     if (!getModel().isLoading()) {
       UndoManager.instance().undoableActionPerformed(new IUndoableAction() {
         public void undo() {
@@ -958,12 +973,16 @@ public class SNode implements Cloneable, Iterable<SNode> {
       child.changeModel(getModel());
     }
 
+
     _children().add(index, child);
     child.myRoleInParent = InternUtil.intern(role);
     child.myParent = this;
 
     if (isRegistered()) {
       child.registerInModel(getModel());
+    } else if (unregisteredNodesDontTriggerEvents()) {
+      // node 'doesn't exist' : don't register undo, don't fire events
+      return;
     }
 
     if (!getModel().isLoading()) {
@@ -978,6 +997,10 @@ public class SNode implements Cloneable, Iterable<SNode> {
       });
     }
     getModel().fireChildAddedEvent(this, role, child, index);
+  }
+
+  void registerTheWholeRoot() {
+    getContainingRoot().registerInModel(getModel());
   }
 
   /*package*/ void unRegisterFromModel() {
@@ -1078,7 +1101,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
     }
 
     if (!getModel().isLoading()) {
-      // invoke_old custom referent set event handler
+      // invoke custom referent set event handler
       if (mySetReferentEventHandlersInProgress == null || !mySetReferentEventHandlersInProgress.contains(role)) {
         INodeReferentSetEventHandler handler = ModelConstraintsManager.getInstance().getNodeReferentSetEventHandler(this, role);
         if (handler != null) {
@@ -1239,6 +1262,11 @@ public class SNode implements Cloneable, Iterable<SNode> {
     if (myReferences == null) myReferences = new ArrayList<SReference>(1);
     myReferences.add(i, reference);
 
+    if (!isRegistered() && unregisteredNodesDontTriggerEvents()) {
+      // node 'doesn't exist': don't register undo, don't fire events
+      return;
+    }
+
     if (!getModel().isLoading()) {
       UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
         public void undo() throws UnexpectedUndoException {
@@ -1257,6 +1285,11 @@ public class SNode implements Cloneable, Iterable<SNode> {
     if (myReferences == null) return;
     final SReference reference = myReferences.get(i);
     myReferences.remove(reference);
+
+    if (!isRegistered() && unregisteredNodesDontTriggerEvents()) {
+      // node 'doesn't exist': don't register undo, don't fire events
+      return;
+    }
 
     if (!getModel().isLoading()) {
       UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
