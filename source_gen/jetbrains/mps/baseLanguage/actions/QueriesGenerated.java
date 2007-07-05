@@ -128,19 +128,23 @@ public class QueriesGenerated {
   }
   public static void nodeFactory_NodeSetup_ParenthesizedExpression_1158857529259(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
     if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Expression")) {
-      SLinkOperations.setTarget(newNode, "expression", SNodeOperations.copyNode(sampleNode), true);
+      SLinkOperations.setTarget(newNode, "expression", sampleNode, true);
     }
   }
   public static void nodeFactory_NodeSetup_CastExpression_1158871408598(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
     if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Expression")) {
-      SLinkOperations.setTarget(newNode, "expression", SNodeOperations.copyNode(sampleNode), true);
-      SNode castType = CastExpression_FactoryUtil.computeCastType(sampleNode);
-      SLinkOperations.setTarget(newNode, "type", castType, true);
+      // Looking for the original node is required as sampleNode is just a copy
+      SNode originalExpression = CastExpression_FactoryUtil.getOriginalExpression(enclosingNode, sampleNode);
+      if((originalExpression != null)) {
+        SNode castType = CastExpression_FactoryUtil.computeCastType(originalExpression);
+        SLinkOperations.setTarget(newNode, "type", castType, true);
+      }
+      SLinkOperations.setTarget(newNode, "expression", sampleNode, true);
     }
   }
   public static void nodeFactory_NodeSetup_ReturnStatement_1158938591702(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
     if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
-      SLinkOperations.setTarget(newNode, "expression", SNodeOperations.copyNode(SLinkOperations.getTarget(sampleNode, "expression", true)), true);
+      SLinkOperations.setTarget(newNode, "expression", SLinkOperations.getTarget(sampleNode, "expression", true), true);
     }
   }
   public static void nodeFactory_NodeSetup_IfStatement_1178272045314(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
@@ -150,7 +154,7 @@ public class QueriesGenerated {
   }
   public static void nodeFactory_NodeSetup_NotExpression_1159218040861(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
     if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Expression")) {
-      SLinkOperations.setTarget(newNode, "expression", SNodeOperations.copyNode(sampleNode), true);
+      SLinkOperations.setTarget(newNode, "expression", sampleNode, true);
     }
   }
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1177334764520(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
