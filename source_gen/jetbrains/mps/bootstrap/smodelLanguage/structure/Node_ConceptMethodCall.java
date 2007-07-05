@@ -6,14 +6,14 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.structure.Expression;
 import java.util.List;
-import jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration;
 
 public class Node_ConceptMethodCall extends SNodeOperation {
-  public static String ACTUAL_ARGUMENT = "actualArgument";
   public static String CONCEPT_METHOD_DECLARATION = "conceptMethodDeclaration";
+  public static String ACTUAL_ARGUMENT = "actualArgument";
 
   public  Node_ConceptMethodCall(SNode node) {
     super(node);
@@ -26,6 +26,12 @@ public class Node_ConceptMethodCall extends SNodeOperation {
     return Node_ConceptMethodCall.newInstance(sm, false);
   }
 
+  public ConceptMethodDeclaration getConceptMethodDeclaration() {
+    return (ConceptMethodDeclaration)this.getReferent(Node_ConceptMethodCall.CONCEPT_METHOD_DECLARATION);
+  }
+  public void setConceptMethodDeclaration(ConceptMethodDeclaration node) {
+    super.setReferent(Node_ConceptMethodCall.CONCEPT_METHOD_DECLARATION, node);
+  }
   public int getActualArgumentsCount() {
     return this.getChildCount(Node_ConceptMethodCall.ACTUAL_ARGUMENT);
   }
@@ -40,11 +46,5 @@ public class Node_ConceptMethodCall extends SNodeOperation {
   }
   public void insertActualArgument(Expression prev, Expression node) {
     this.insertChild(prev, Node_ConceptMethodCall.ACTUAL_ARGUMENT, node);
-  }
-  public ConceptMethodDeclaration getConceptMethodDeclaration() {
-    return (ConceptMethodDeclaration)this.getReferent(Node_ConceptMethodCall.CONCEPT_METHOD_DECLARATION);
-  }
-  public void setConceptMethodDeclaration(ConceptMethodDeclaration node) {
-    super.setReferent(Node_ConceptMethodCall.CONCEPT_METHOD_DECLARATION, node);
   }
 }

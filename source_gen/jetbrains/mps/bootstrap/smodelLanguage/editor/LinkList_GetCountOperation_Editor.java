@@ -4,26 +4,29 @@ package jetbrains.mps.bootstrap.smodelLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
-import java.awt.Color;
 
 public class LinkList_GetCountOperation_Editor extends DefaultNodeEditor {
+
+  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145468793690");
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    editorCell.setEditable(true);
+  }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createConstantCell(context, node, "count");
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(true);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    LinkList_GetCountOperation_Editor.setupBasic_ConstantCell(editorCell, node, context);
+    LinkList_GetCountOperation_Editor.setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145468793690");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
 }

@@ -162,7 +162,7 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
           result.append(SConceptPropertyOperations.getString(cfp, "alias"));
         }
         result.append(")->");
-        SNode expectedReturnType = BehaviorManager.getInstance().invoke(SNode.class, node, "virtual_getExpectedReturnType_1178571276073");
+        SNode expectedReturnType = BehaviorManager.getInstance().invoke_old(SNode.class, node, "virtual_getExpectedReturnType_1178571276073");
         if(expectedReturnType == null) {
           result.append("void");
         } else

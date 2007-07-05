@@ -23,7 +23,7 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
     // generic check
     TypeChecker.getInstance().getRuntimeSupport().check(SLinkOperations.getTarget(argument, "body", true));
     // =============
-    SNode expectedRetType = BehaviorManager.getInstance().invoke(SNode.class, argument, "virtual_getExpectedReturnType_1178571276073");
+    SNode expectedRetType = BehaviorManager.getInstance().invoke_old(SNode.class, argument, "virtual_getExpectedReturnType_1178571276073");
     boolean noReturnExpected = ((expectedRetType == null) || TypeChecker.getInstance().getSubtypingManager().isSubtype(expectedRetType, new QuotationClass_76().createNode()));
     if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(expectedRetType), "jetbrains.mps.baseLanguage.structure.WildCardType")) {
       // function is expected to return value of any type

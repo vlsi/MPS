@@ -13,7 +13,7 @@ import smodelLanguage.samples.zPredicate;
 /* package */class Children {
 
   /* package */void accessToChildren_1(SNode statementList) {
-    BehaviorManager.getInstance().invoke(String.class, statementList, "virtual_getPresentation_1180102203531");
+    BehaviorManager.getInstance().invoke_old(String.class, statementList, "virtual_getPresentation_1180102203531");
     int count1 = SLinkOperations.getCount(statementList, "statement");
     List<SNode> statements = SLinkOperations.getTargets(statementList, "statement", true);
     int count2 = SequenceOperations.getSize(statements);

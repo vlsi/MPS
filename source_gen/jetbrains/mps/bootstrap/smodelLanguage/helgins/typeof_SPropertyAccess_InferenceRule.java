@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.bootstrap.structureLanguage.constraints.DataTypeDeclaration_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_SPropertyAccess_InferenceRule implements InferenceRule_Runtime {
@@ -34,7 +34,7 @@ public class typeof_SPropertyAccess_InferenceRule implements InferenceRule_Runti
     }
     SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(argument, "property", false), "dataType", false);
     if(dataType != null) {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(BehaviorManager.getInstance().invoke(SNode.class, dataType, "virtual_toBaseLanguageType_1182472765133"), argument);
+      TypeChecker.getInstance().getRuntimeSupport().givetype(DataTypeDeclaration_Behavior.callVirtual_toBaseLanguageType_1182472765133(dataType), argument);
     }
   }
   public String getApplicableConceptFQName() {

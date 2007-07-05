@@ -5,11 +5,7 @@ import jetbrains.mps.helgins.structure.RuntimeErrorType;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.core.constraints.BaseConcept_Behavior;
-
-import java.lang.reflect.Method;
 
 /**
  * Created by IntelliJ IDEA.
@@ -56,7 +52,7 @@ public class PresentationManager {
     try {
       Class presentationUtil = Class.forName(presentationUtilName, true, ClassLoaderManager.getInstance().getClassLoader());
       Method presentationMethod = presentationUtil.getMethod("toString", SNode.class);
-      return (String) presentationMethod.invoke(null, type);
+      return (String) presentationMethod.invoke_old(null, type);
     } catch(Throwable t) {
       return type.toString();
     }*/

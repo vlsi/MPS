@@ -1078,7 +1078,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
     }
 
     if (!getModel().isLoading()) {
-      // invoke custom referent set event handler
+      // invoke_old custom referent set event handler
       if (mySetReferentEventHandlersInProgress == null || !mySetReferentEventHandlersInProgress.contains(role)) {
         INodeReferentSetEventHandler handler = ModelConstraintsManager.getInstance().getNodeReferentSetEventHandler(this, role);
         if (handler != null) {

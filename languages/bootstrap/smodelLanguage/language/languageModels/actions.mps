@@ -17,12 +17,12 @@
   <import index="16" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" />
   <import index="17" modelUID="java.lang@java_stub" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions" id="1138078942005">
-    <property name="package" value="substitute" />
     <property name="name" value="snodeOperation" />
+    <property name="package" value="substitute" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1138413233760">
       <property name="description" value="all operations appropriate for expression before'.'" />
-      <property name="useNewActions" value="true" />
       <property name="applicableLinkMetaclass" value="aggregation" />
+      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1138411891628" />
       <node role="variable" type="jetbrains.mps.bootstrap.actionsLanguage.SubstituteNodeBuilderVariableDeclaration" id="1180466611084">
         <property name="name" value="leftExpressionType" />
@@ -518,8 +518,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActions" id="1138079717967">
-    <property name="package" value="rightTransform" />
     <property name="name" value="snodeOperation" />
+    <property name="package" value="rightTransform" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1138669164825">
       <property name="description" value="delegate to parent (SNodeOperationExpression)" />
       <property name="useNewActions" value="true" />
@@ -983,8 +983,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions" id="1179529749850">
-    <property name="package" value="substitute" />
     <property name="name" value="propertyAccess" />
+    <property name="package" value="substitute" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1179529852420">
       <property name="description" value="substitute with property-access or concept-property-access operations" />
       <property name="useNewActions" value="true" />
@@ -1218,8 +1218,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions" id="1179530017718">
-    <property name="package" value="substitute" />
     <property name="name" value="linkAccess" />
+    <property name="package" value="substitute" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1179530205323">
       <property name="description" value="substitute with link-access, linkList-access or concept-link-access operations" />
       <property name="useNewActions" value="true" />
@@ -1805,8 +1805,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActions" id="1179535152689">
-    <property name="package" value="rightTransform" />
     <property name="name" value="expression" />
+    <property name="package" value="rightTransform" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1179535189082">
       <property name="description" value="&lt;expr&gt; --&gt; &lt;expr&gt;.&lt;op&gt; " />
       <property name="useNewActions" value="true" />
@@ -2085,8 +2085,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions" id="1180538117573">
-    <property name="package" value="substitute" />
     <property name="name" value="conceptLinkAndPropertyAccess" />
+    <property name="package" value="substitute" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1180538139816">
       <property name="description" value="substitute with concept-property/link-access operations" />
       <property name="useNewActions" value="true" />

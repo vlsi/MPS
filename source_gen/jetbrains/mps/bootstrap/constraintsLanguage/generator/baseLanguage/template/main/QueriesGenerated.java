@@ -101,7 +101,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(node, "type", true);
   }
   public static SNode sourceNodeQuery_1181727002179(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return BehaviorManager.getInstance().invoke(SNode.class, SLinkOperations.getTarget(node, "returnType", true), "virtual_getUnboxedType_1182580547590");
+    return BehaviorManager.getInstance().invoke_old(SNode.class, SLinkOperations.getTarget(node, "returnType", true), "virtual_getUnboxedType_1182580547590");
   }
   public static SNode sourceNodeQuery_1182162752928(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "type", true);

@@ -4,16 +4,22 @@ package jetbrains.mps.bootstrap.smodelLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import java.awt.Color;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class SLinkAccess_Editor extends DefaultNodeEditor {
+
+  private static void setupBasic_LinkReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138412329756");
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupLabel_LinkReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createLinkReferenceCell(context, node);
@@ -22,17 +28,11 @@ public class SLinkAccess_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new SLinkAccess_Editor_link_InlineComponent());
     EditorCell editorCell = provider.createEditorCell(context);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
+    SLinkAccess_Editor.setupBasic_LinkReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      EditorCell_Label editorCellLabel = (EditorCell_Label)editorCell;
-      editorCellLabel.setEditable(true);
+      SLinkAccess_Editor.setupLabel_LinkReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138412329756");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createLinkReferenceCell(EditorContext context, SNode node) {

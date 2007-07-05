@@ -35,7 +35,7 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SNodeOperations.getAncestor(node, "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false, false), "jetbrains.mps.regexp.structure.FindMatchStatement");
   }
   public static String propertyMacro_GetPropertyValue_1174511161822(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return BehaviorManager.getInstance().invoke(String.class, SLinkOperations.getTarget(node, "regexp", true), "virtual_toString_1177760132955");
+    return BehaviorManager.getInstance().invoke_old(String.class, SLinkOperations.getTarget(node, "regexp", true), "virtual_toString_1177760132955");
   }
   public static String propertyMacro_GetPropertyValue_1175160038498(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     int result = 0;

@@ -557,6 +557,9 @@ public class QueriesGenerated {
     // TODO: The initializer doesn't work for 'remove by condition' action
     while(actions.hasNext()) {
       INodeSubstituteAction current = actions.next();
+      if(!(current.getParameterObject() instanceof SNode)) {
+        continue;
+      }
       final SNode concept = (SNode)current.getParameterObject();
       Condition cond = new Condition() {
 

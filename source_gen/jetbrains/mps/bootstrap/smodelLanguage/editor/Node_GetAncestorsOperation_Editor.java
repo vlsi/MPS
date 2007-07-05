@@ -5,32 +5,43 @@ package jetbrains.mps.bootstrap.smodelLanguage.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class Node_GetAncestorsOperation_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellProvider myOperationParameters_Component6;
 
+  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173122851697");
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupBasic_OperationParameters_ComponentCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173122851698");
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173122851696");
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    editorCell.setEditable(true);
+  }
+
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
   }
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
+    Node_GetAncestorsOperation_Editor.setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell(context, node, "ancestors"));
     editorCell.addEditorCell(this.createOperationParameters_ComponentCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173122851696");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createOperationParameters_ComponentCell(EditorContext context, SNode node) {
@@ -40,24 +51,14 @@ public class Node_GetAncestorsOperation_Editor extends DefaultNodeEditor {
     EditorCell componentCell = this.myOperationParameters_Component6.createEditorCell(context);
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.addEditorCell(componentCell);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173122851698");
-    editorCell.setLayoutConstraint("");
+    Node_GetAncestorsOperation_Editor.setupBasic_OperationParameters_ComponentCell(editorCell, node, context);
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(true);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    Node_GetAncestorsOperation_Editor.setupBasic_ConstantCell(editorCell, node, context);
+    Node_GetAncestorsOperation_Editor.setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173122851697");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
 }

@@ -60,7 +60,7 @@ public class BehaviorManager {
     return behaviourClass;
   }
 
-  public<T> T invoke(Class<T> returnType, SNode node, String methodName, Object... parameters) {
+  public<T> T invoke_old(Class<T> returnType, SNode node, String methodName, Object... parameters) {
     return invoke(returnType, node, methodName, new ArrayList<Class>(), parameters);
   }
 
@@ -82,6 +82,10 @@ public class BehaviorManager {
         params.add(node);
         params.addAll(Arrays.asList(parameters));
 
+        if (params.size() != paramTypes.size()) {
+          System.out.println("!!!!");
+        }
+
         return (T) method.invoke(null, params.toArray());
       } catch (ClassNotFoundException e) {
         //ignore
@@ -96,7 +100,7 @@ public class BehaviorManager {
       concept = ((ConceptDeclaration) concept).getExtends();
     }
 
-    throw new RuntimeException("Can't invoke a method " + methodName + " on node " + node);
+    throw new RuntimeException("Can't invoke_old a method " + methodName + " on node " + node);
   }
 
 
