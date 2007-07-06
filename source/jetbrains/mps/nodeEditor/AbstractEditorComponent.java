@@ -1793,6 +1793,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private class MyModelListener implements SModelCommandListener {
     public void modelChangedInCommand(List<SModelEvent> events) {
+      if (EventUtil.isDetachedOnlyChange(events)) {
+        return;
+      }
+            
       if (!EventUtil.isDramaticalChange(events)) {
         if (EventUtil.isPropertyChange(events)) {
           String propertyName = ((SModelPropertyEvent) events.get(0)).getPropertyName();

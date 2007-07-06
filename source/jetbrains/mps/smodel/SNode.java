@@ -11,8 +11,8 @@ import jetbrains.mps.smodel.constraints.INodePropertyGetter;
 import jetbrains.mps.smodel.constraints.INodePropertySetter;
 import jetbrains.mps.smodel.constraints.INodeReferentSetEventHandler;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.smodel.search.ConceptHierarchyScope;
+import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.util.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -1025,6 +1025,10 @@ public class SNode implements Cloneable, Iterable<SNode> {
         }
       }
     }
+  }
+
+  public boolean isDetached() {
+    return getContainingRoot() == null;
   }
 
   public boolean isRegistered() {
