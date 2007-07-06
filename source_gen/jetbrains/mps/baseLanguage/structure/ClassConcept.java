@@ -10,6 +10,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class ClassConcept extends Classifier {
+  public static String EXTENDED_CLASS = "extendedClass";
   public static String NAME = "name";
   public static String ABSTRACT_CLASS = "abstractClass";
   public static String SUPERCLASS = "superclass";
@@ -19,7 +20,6 @@ public class ClassConcept extends Classifier {
   public static String STATIC_METHOD = "staticMethod";
   public static String IMPLEMENTED_INTERFACE = "implementedInterface";
   public static String STATIC_INNER_CLASSIFIERS = "staticInnerClassifiers";
-  public static String EXTENDED_CLASS = "extendedClass";
 
   public  ClassConcept(SNode node) {
     super(node);
@@ -32,6 +32,12 @@ public class ClassConcept extends Classifier {
     return ClassConcept.newInstance(sm, false);
   }
 
+  public ClassConcept getExtendedClass() {
+    return (ClassConcept)this.getReferent(ClassConcept.EXTENDED_CLASS);
+  }
+  public void setExtendedClass(ClassConcept node) {
+    super.setReferent(ClassConcept.EXTENDED_CLASS, node);
+  }
   public String getName() {
     return this.getProperty(ClassConcept.NAME);
   }
@@ -130,11 +136,5 @@ public class ClassConcept extends Classifier {
   }
   public void insertStaticInnerClassifiers(Classifier prev, Classifier node) {
     this.insertChild(prev, ClassConcept.STATIC_INNER_CLASSIFIERS, node);
-  }
-  public ClassConcept getExtendedClass() {
-    return (ClassConcept)this.getReferent(ClassConcept.EXTENDED_CLASS);
-  }
-  public void setExtendedClass(ClassConcept node) {
-    super.setReferent(ClassConcept.EXTENDED_CLASS, node);
   }
 }

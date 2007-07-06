@@ -191,5 +191,8 @@
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1183457785428" />
   </node>
+  <node type="jetbrains.mps.baseLanguage._A" id="1183718930765">
+    <node role="c" type="jetbrains.mps.baseLanguage._C" id="1183718930766" />
+  </node>
 </model>
 

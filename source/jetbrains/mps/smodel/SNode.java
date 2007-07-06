@@ -816,6 +816,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   @NotNull
   public <T extends SNode> Iterator<T> children(@NotNull String role) {
+    NodeReadAccessCaster.fireNodeReadAccessed(this);
     List<T> list = new ArrayList<T>();
     for (SNode child : _children()) {
       if (role.equals(child.getRole_())) {
@@ -827,6 +828,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   @NotNull
   public Iterator<SNode> reverseChildren(@NotNull String role) {
+    NodeReadAccessCaster.fireNodeReadAccessed(this);
     List<SNode> list = new ArrayList<SNode>();
     for (SNode child : _children()) {
       if (role.equals(child.getRole_())) {
