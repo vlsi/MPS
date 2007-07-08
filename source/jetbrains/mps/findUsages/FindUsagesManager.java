@@ -107,7 +107,7 @@ public class FindUsagesManager {
    * @return
    */
   public List<SNode> findInstances(SNode conceptDeclaration, IScope scope) {
-    Set<SNode> set = findInstances((ConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration), scope, null);
+    Set<SNode> set = findInstances((AbstractConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration), scope, null);
     return new ArrayList<SNode>(set);
   }
 
