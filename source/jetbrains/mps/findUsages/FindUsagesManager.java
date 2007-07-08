@@ -47,6 +47,10 @@ public class FindUsagesManager {
     return result;
   }
 
+  public Set<SReference> findUsages(SNode node, IScope scope) {
+    return findUsages(node, scope, null);
+  }
+
   /**
    * Fully equivalent to <code>findUsages(CollectionsUtil.asSet(node),scope,progress)</code>
    * <p>
