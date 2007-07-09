@@ -1,6 +1,6 @@
 package jetbrains.mps.helgins.inference;
 
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.component.Dependency;
 
@@ -17,6 +17,15 @@ import java.util.HashSet;
 public class NodeTypesComponentsRepository {
   private Set<INodeTypesComponent> myNodeTypesComponents = new HashSet<INodeTypesComponent>();
   private TypeChecker myTypeChecker;
+  private SModelRepositoryListener myModelRepositoryListener = new SModelRepositoryListener() {
+    public void modelRemoved(SModelDescriptor modelDescriptor) {
+      for (INodeTypesComponent nodeTypesComponent : new HashSet<INodeTypesComponent>(myNodeTypesComponents)) {
+        if (nodeTypesComponent.getNode().getModel().getModelDescriptor() == modelDescriptor) {
+          myNodeTypesComponents.remove(nodeTypesComponent);
+        }
+      }
+    }
+  };
 
   public NodeTypesComponentsRepository() {
 
@@ -50,6 +59,8 @@ public class NodeTypesComponentsRepository {
     }
     nodeTypesComponent = NodeTypesComponentsFactory.createNodeTypesComponent(root, myTypeChecker);
     myNodeTypesComponents.add(nodeTypesComponent);
+    SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
+    SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
     return nodeTypesComponent;
   }
 

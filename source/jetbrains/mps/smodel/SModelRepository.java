@@ -33,6 +33,7 @@ public class SModelRepository extends SModelAdapter {
   private Map<SModelDescriptor, HashSet<ModelOwner>> myModelToOwnerMap = new HashMap<SModelDescriptor, HashSet<ModelOwner>>();
   private Set<SModelDescriptor> myModelsWithNoOwners = new HashSet<SModelDescriptor>();
   private List<RepositoryListener> myListeners = new ArrayList<RepositoryListener>();
+  private List<SModelRepositoryListener> mySModelRepositoryListeners = new ArrayList<SModelRepositoryListener>();
 
   private MPSModuleRepository myModuleRepository;
   private ClassLoaderManager myClassLoaderManager;
@@ -149,6 +150,14 @@ public class SModelRepository extends SModelAdapter {
     myListeners.remove(l);
   }
 
+  public void addModelRepositoryListener(@NotNull SModelRepositoryListener l) {
+    mySModelRepositoryListeners.add(l);
+  }
+
+  public void removeModelRepositoryListener(@NotNull SModelRepositoryListener l) {
+    mySModelRepositoryListeners.remove(l);
+  }
+
   @NotNull
   public List<SModelDescriptor> getAllModelDescriptors() {
     return new ArrayList<SModelDescriptor>(myModelDescriptors);
@@ -238,8 +247,10 @@ public class SModelRepository extends SModelAdapter {
     myChangedModels.remove(modelDescriptor);
     myModelToOwnerMap.remove(modelDescriptor);
     myModelsWithNoOwners.remove(modelDescriptor);
+    fireModelRemoved(modelDescriptor);
 //    modelDescriptor.removeSModelListener(this);
     modelDescriptor.dispose();
+
   }
 
   public void removeUnusedDescriptors() {
@@ -573,6 +584,12 @@ public class SModelRepository extends SModelAdapter {
   private void fireRepositoryChanged() {
     for (RepositoryListener l : myListeners) {
       l.repositoryChanged();
+    }
+  }
+
+  private void fireModelRemoved(SModelDescriptor modelDescriptor) {
+    for (SModelRepositoryListener l : mySModelRepositoryListeners) {
+      l.modelRemoved(modelDescriptor);
     }
   }
 }
