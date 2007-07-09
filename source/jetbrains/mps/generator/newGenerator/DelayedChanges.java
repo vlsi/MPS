@@ -15,7 +15,7 @@ public class DelayedChanges {
 //  private ArrayList<AddChildChange> myAddChildChanges = new ArrayList<AddChildChange>();
 //  private ArrayList<RemoveNodeChange> myRemoveNodeChanges = new ArrayList<RemoveNodeChange>();
 //  private ArrayList<ReplaceChildrenChange> myReplaceChildrenChanges = new ArrayList<ReplaceChildrenChange>();
-  private ArrayList<ExecuteNodebuilderChange> myExecuteNodeBuilderChanges = new ArrayList<ExecuteNodebuilderChange>();
+//  private ArrayList<ExecuteNodebuilderChange> myExecuteNodeBuilderChanges = new ArrayList<ExecuteNodebuilderChange>();
   private ArrayList<ExecuteMapSrcNodeMacroChange> myExecuteMapSrcNodeMacroChanges = new ArrayList<ExecuteMapSrcNodeMacroChange>();
 
 
@@ -31,9 +31,9 @@ public class DelayedChanges {
 //    }
 //  }
 
-  public void addExecuteNodeBuilderChange(INodeBuilder builder, SNode childToReplace) {
-    myExecuteNodeBuilderChanges.add(new ExecuteNodebuilderChange(builder, childToReplace));
-  }
+//  public void addExecuteNodeBuilderChange(INodeBuilder builder, SNode childToReplace) {
+//    myExecuteNodeBuilderChanges.add(new ExecuteNodebuilderChange(builder, childToReplace));
+//  }
 
   public void addExecuteMapSrcNodeMacroChange(NodeMacro mapSrcMacro, SNode childToReplace, SNode inputNode, TemplateModelGenerator_New generator) {
     myExecuteMapSrcNodeMacroChanges.add(new ExecuteMapSrcNodeMacroChange(mapSrcMacro, childToReplace, inputNode, generator));
@@ -49,9 +49,9 @@ public class DelayedChanges {
 //    for (ReplaceChildrenChange replaceChildrenChange : myReplaceChildrenChanges) {
 //      replaceChildrenChange.doChange();
 //    }
-    for (ExecuteNodebuilderChange executeNodebuilderChange : myExecuteNodeBuilderChanges) {
-      executeNodebuilderChange.doChange();
-    }
+//    for (ExecuteNodebuilderChange executeNodebuilderChange : myExecuteNodeBuilderChanges) {
+//      executeNodebuilderChange.doChange();
+//    }
     for (ExecuteMapSrcNodeMacroChange executeMapSrcNodeMacroChange : myExecuteMapSrcNodeMacroChanges) {
       executeMapSrcNodeMacroChange.doChange();
     }
@@ -108,25 +108,25 @@ public class DelayedChanges {
 //    }
 //  }
 
-  private class ExecuteNodebuilderChange {
-    protected SNode myChildToReplace;
-    private INodeBuilder myNodeBuilder;
-
-    public ExecuteNodebuilderChange(INodeBuilder nodeBuilder, SNode childToReplace) {
-      myNodeBuilder = nodeBuilder;
-      myChildToReplace = childToReplace;
-    }
-
-    public void doChange() {
-      myNodeBuilder.setParent(new SimpleNodeBuilder(myNodeBuilder.getGenerator(), myChildToReplace.getParent()));
-      myNodeBuilder.execute(null, null);
-      SNode child = myNodeBuilder.getTargetNode();
-      if (child != null) {
-        myChildToReplace.getParent().replaceChild(myChildToReplace, child);
-      }
-    }
-
-  }
+//  private class ExecuteNodebuilderChange {
+//    protected SNode myChildToReplace;
+//    private INodeBuilder myNodeBuilder;
+//
+//    public ExecuteNodebuilderChange(INodeBuilder nodeBuilder, SNode childToReplace) {
+//      myNodeBuilder = nodeBuilder;
+//      myChildToReplace = childToReplace;
+//    }
+//
+//    public void doChange() {
+//      myNodeBuilder.setParent(new SimpleNodeBuilder(myNodeBuilder.getGenerator(), myChildToReplace.getParent()));
+//      myNodeBuilder.execute(null, null);
+//      SNode child = myNodeBuilder.getTargetNode();
+//      if (child != null) {
+//        myChildToReplace.getParent().replaceChild(myChildToReplace, child);
+//      }
+//    }
+//
+//  }
 
   private class ExecuteMapSrcNodeMacroChange {
     private NodeMacro myMapSrcMacro;
