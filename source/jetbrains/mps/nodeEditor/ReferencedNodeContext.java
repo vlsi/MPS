@@ -20,6 +20,7 @@ public class ReferencedNodeContext {
   private Stack<SNodeProxy> myAttributesStack = new Stack<SNodeProxy>();
 
   private ReferencedNodeContext(SNode node) {
+    assert node != null;
     myNodeProxy = new SNodeProxy(node);
     node.putUserObject(this, this); //context must be collected only after its target node is collected
   }

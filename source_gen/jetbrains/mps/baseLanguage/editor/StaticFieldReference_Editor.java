@@ -30,6 +30,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
   private static void setupBasic_StaticFieldDeclarationReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1088427644683");
     editorCell.setDrawBorder(false);
+    editorCell.setRightTransformAnchorTag("default_RTransform");
   }
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1082740154392");

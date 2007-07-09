@@ -286,6 +286,10 @@ public class NodeTypesComponent_new implements INodeTypesComponent {
     return null;
   }
 
+  public void markUnchecked(SNode node) {
+    invalidateNode(node);
+  }
+
   public SNode getRawTypeFromContext(SNode node) {
     return getEquationManager().getRepresentator(myNodesToTypesMap.get(node));
   }

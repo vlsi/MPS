@@ -7,6 +7,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
+import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.helgins.inference.INodeTypesComponent;
+import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,12 +55,26 @@ public class IntelligentInputUtil {
       List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(smallPattern, true);
       INodeSubstituteAction item = matchingActions.get(0);
       newNode = item.doSubstitute(smallPattern);
+      assert newNode != null;
       cellForNewNode = editorContext.createNodeCellInAir(newNode, ourServiceEditorManager);
     } else {
       return;
     }
 
-    EditorCellAction rtAction = EditorUtil.getCellAction(cellForNewNode, EditorCellAction.RIGHT_TRANSFORM, editorContext);
+
+    //warning If you aren't Cyril
+    // , DO NOT edit this code
+    SNode nodeToCheck = cellForNewNode.getSNode();
+    INodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance().
+            createNodeTypesComponent(nodeToCheck
+                    .getContainingRoot());
+    TypeChecker.getInstance().setCurrentTypesComponent(nodeTypesComponent);
+    SNode sNode = nodeToCheck.getParent() == null ? nodeToCheck : nodeToCheck.getParent();
+    nodeTypesComponent.markUnchecked(sNode);
+    nodeTypesComponent.computeTypesForNode(sNode); //todo dirty hack
+    TypeChecker.getInstance().clearCurrentTypesComponent();
+
+    EditorCellAction rtAction = EditorUtil.getCellAction(EditorUtil.findLastSelectableCell(cellForNewNode), EditorCellAction.RIGHT_TRANSFORM, editorContext);
     if (rtAction == null) {
       final CellInfo cellInfo = cellForNewNode.getCellInfo();
       CommandProcessor.instance().invokeNowOrLater(new Runnable() {

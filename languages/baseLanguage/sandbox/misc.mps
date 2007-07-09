@@ -38,7 +38,11 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1183651864870">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1183651864871">
-            <node role="statement" type="jetbrains.mps.baseLanguage.Statement" id="1183651864872" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1183975023631">
+              <node role="expression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1183975023632">
+                <link role="classifier" extResolveInfo="1.[Classifier]System" />
+              </node>
+            </node>
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1183651875403">
             <property name="value" value="true" />
