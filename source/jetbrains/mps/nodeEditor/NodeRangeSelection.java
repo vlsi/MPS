@@ -85,6 +85,9 @@ public class NodeRangeSelection implements IKeyboardHandler {
     myLastNode = childNode;
     myEditorComponent.repaint();
     myEditorComponent.pushKeyboardHandler(this);
+
+    myEditorComponent.scrollToNode(myFirstNode);
+
     if (selectedCell != myEditorComponent.findNodeCell(childNode)) {
       return true;
     }
@@ -188,6 +191,9 @@ public class NodeRangeSelection implements IKeyboardHandler {
 
     if (newLastNode != null) {
       myLastNode = newLastNode;
+
+      myEditorComponent.scrollToNode(myLastNode);
+
       myEditorComponent.repaint();
     }
 

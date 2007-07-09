@@ -1345,6 +1345,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
 
+  public void scrollToNode(SNode node) {
+    EditorCell cell = findNodeCell(node);
+    if (cell != null) {
+      scrollRectToVisible(cell.getBounds());
+    }
+  }
+
+
   public void addCellSelectionListener(ICellSelectionListener l) {
     mySelectionListeners.add(l);
   }
