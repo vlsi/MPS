@@ -139,6 +139,8 @@ public class IntelligentInputUtil {
         cell.changeText(smallPattern);
       }
 
+      cellFounder.setCallSelect(true);
+
       if (!uniqueAction(rtSubstituteInfo, tail, "")) { //don't execute non-unique action on RT hint cell
         CommandProcessor.instance().invokeLater(cellFounder);
         return;
@@ -173,6 +175,7 @@ public class IntelligentInputUtil {
     private final EditorContext myEditorContext;
     private final SNode myNode;
     private final String myFoundCellText;
+    private boolean myCallSelect = false;
 
     public CellFounder(EditorContext editorContext, SNode node, String foundCellText) {
       myEditorContext = editorContext;
@@ -182,6 +185,10 @@ public class IntelligentInputUtil {
 
     public EditorCell_Label getFoundCell() {
       return myFoundCell;
+    }
+
+    public void setCallSelect(boolean newCallSelect) {
+      myCallSelect = newCallSelect;
     }
 
 
@@ -205,7 +212,9 @@ public class IntelligentInputUtil {
       }
       nextCell_.changeText(myFoundCellText);
       nextCell_.getRenderedTextLine().setCaretPositionToLast();
-      nodeEditorComponent.changeSelection(nextCell_);
+      if (myCallSelect) {
+        nodeEditorComponent.changeSelection(nextCell_);
+      }
       nodeEditorComponent.relayout();
     }
   }
