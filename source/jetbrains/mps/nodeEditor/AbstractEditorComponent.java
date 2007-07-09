@@ -30,6 +30,7 @@ import jetbrains.mps.util.ColorAndGraphicsUtil;
 import jetbrains.mps.util.NodesParetoFrontier;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.annotation.UseCarefully;
+import jetbrains.mps.project.ApplicationComponents;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -1348,7 +1349,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   public void scrollToNode(SNode node) {
     EditorCell cell = findNodeCell(node);
     if (cell != null) {
-      scrollRectToVisible(cell.getBounds());
+      Font defaultFont = ApplicationComponents.getInstance().getComponentSafe(EditorSettings.class).getDefaultEditorFont();
+      FontMetrics fontMetrics = getFontMetrics(defaultFont);
+      int height = fontMetrics.getHeight();
+      Rectangle r = cell.getBounds();
+      scrollRectToVisible(new Rectangle(r.x, r.y - height, r.width, r.height + 2 * height));
     }
   }
 
