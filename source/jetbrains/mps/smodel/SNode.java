@@ -136,7 +136,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
       newNode.myReferences = null;
       newNode.myChildren = null;
       if (myProperties != null) {
-        newNode.myProperties = new HashMap<String, String>();
+        newNode.myProperties = new LinkedHashMap<String, String>();
         newNode.myProperties.putAll(this.myProperties);
       }
       newNode.myUserObjects = null;
