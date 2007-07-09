@@ -1337,7 +1337,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       //Rectangle fakeRect = new Rectangle(0,cell.getY(), 30, cell.getHeight());
       //scrollRectToVisible(fakeRect);
        if (!getVisibleRect().contains(x, y) || !getVisibleRect().contains(x, y + cell.getHeight())) {
-         scrollRectToVisible(selectionRect);
+         scrollRectToVisible(expandRectangleOneLine(selectionRect));
        }
     }
     repaint();
@@ -1349,12 +1349,16 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   public void scrollToNode(SNode node) {
     EditorCell cell = findNodeCell(node);
     if (cell != null) {
-      Font defaultFont = ApplicationComponents.getInstance().getComponentSafe(EditorSettings.class).getDefaultEditorFont();
-      FontMetrics fontMetrics = getFontMetrics(defaultFont);
-      int height = fontMetrics.getHeight();
-      Rectangle r = cell.getBounds();
-      scrollRectToVisible(new Rectangle(r.x, r.y - height, r.width, r.height + 2 * height));
+      scrollRectToVisible(expandRectangleOneLine(cell.getBounds()));
     }
+  }
+
+  private Rectangle expandRectangleOneLine(Rectangle r) {
+    Font defaultFont = ApplicationComponents.getInstance().getComponentSafe(EditorSettings.class).getDefaultEditorFont();
+    FontMetrics fontMetrics = getFontMetrics(defaultFont);
+    int height = fontMetrics.getHeight();
+    Rectangle rectangle = new Rectangle(r.x, r.y - height, r.width, r.height + 2 * height);
+    return rectangle;
   }
 
 
