@@ -28,9 +28,9 @@ import java.util.*;
  */
 public class SNode implements Cloneable, Iterable<SNode> {
 
-  public static boolean unregisteredNodesDontTriggerEvents() {
-    return false;
-  }
+//  public static boolean unregisteredNodesDontTriggerEvents() {
+//    return false;
+//  }
 
   private static final Logger LOG = Logger.getLogger(SNode.class);
 
@@ -694,11 +694,6 @@ public class SNode implements Cloneable, Iterable<SNode> {
       myProperties.put(propertyName, propertyValue);
     }
 
-    if (!isRegistered() && unregisteredNodesDontTriggerEvents()) {
-      // node 'doesn't exist' : don't register undo, don't fire events
-      return;
-    }
-
     final String pv = propertyValue;
     if (!getModel().isLoading()) {
       UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
@@ -711,6 +706,12 @@ public class SNode implements Cloneable, Iterable<SNode> {
         }
       });
     }
+
+    if (!isRegistered() /*&& unregisteredNodesDontTriggerEvents()*/) {
+      // node 'doesn't exist' : don't fire events
+      return;
+    }
+
     boolean addedOrRemoved = false;
     boolean isRemoved = false;
     if (isEmptyPropertyValue(oldValue)) {
@@ -940,11 +941,6 @@ public class SNode implements Cloneable, Iterable<SNode> {
     wasChild.myRoleInParent = null;
     wasChild.unRegisterFromModel();
 
-    if (!isRegistered() && unregisteredNodesDontTriggerEvents()) {
-      // node 'doesn't exist' : don't register undo, don't fire events
-      return;
-    }
-
     if (!getModel().isLoading()) {
       UndoManager.instance().undoableActionPerformed(new IUndoableAction() {
         public void undo() {
@@ -957,6 +953,12 @@ public class SNode implements Cloneable, Iterable<SNode> {
         }
       });
     }
+
+    if (!isRegistered() /*&& unregisteredNodesDontTriggerEvents()*/) {
+      // node 'doesn't exist' : don't fire events
+      return;
+    }
+
     getModel().fireChildRemovedEvent(this, wasRole, wasChild, index);
   }
 
@@ -982,10 +984,10 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
     if (isRegistered()) {
       child.registerInModel(getModel());
-    } else if (unregisteredNodesDontTriggerEvents()) {
+    } /*else if (unregisteredNodesDontTriggerEvents()) {
       // node 'doesn't exist' : don't register undo, don't fire events
       return;
-    }
+    }*/
 
     if (!getModel().isLoading()) {
       UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
@@ -998,6 +1000,12 @@ public class SNode implements Cloneable, Iterable<SNode> {
         }
       });
     }
+
+    if (!isRegistered() /*&& unregisteredNodesDontTriggerEvents()*/) {
+      // node 'doesn't exist': don't fire events
+      return;
+    }
+
     getModel().fireChildAddedEvent(this, role, child, index);
   }
 
@@ -1268,11 +1276,6 @@ public class SNode implements Cloneable, Iterable<SNode> {
     if (myReferences == null) myReferences = new ArrayList<SReference>(1);
     myReferences.add(i, reference);
 
-    if (!isRegistered() && unregisteredNodesDontTriggerEvents()) {
-      // node 'doesn't exist': don't register undo, don't fire events
-      return;
-    }
-
     if (!getModel().isLoading()) {
       UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
         public void undo() throws UnexpectedUndoException {
@@ -1284,6 +1287,12 @@ public class SNode implements Cloneable, Iterable<SNode> {
         }
       });
     }
+
+    if (!isRegistered() /*&& unregisteredNodesDontTriggerEvents()*/) {
+      // node 'doesn't exist': don't fire events
+      return;
+    }
+
     getModel().fireReferenceAddedEvent(reference);
   }
 
@@ -1291,11 +1300,6 @@ public class SNode implements Cloneable, Iterable<SNode> {
     if (myReferences == null) return;
     final SReference reference = myReferences.get(i);
     myReferences.remove(reference);
-
-    if (!isRegistered() && unregisteredNodesDontTriggerEvents()) {
-      // node 'doesn't exist': don't register undo, don't fire events
-      return;
-    }
 
     if (!getModel().isLoading()) {
       UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
@@ -1308,6 +1312,12 @@ public class SNode implements Cloneable, Iterable<SNode> {
         }
       });
     }
+
+    if (!isRegistered()/* && unregisteredNodesDontTriggerEvents()*/) {
+      // node 'doesn't exist': don't fire events
+      return;
+    }
+
     getModel().fireReferenceRemovedEvent(reference);
   }
 
