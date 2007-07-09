@@ -41,4 +41,9 @@ public class ApplicationsTest extends TestCase {
     String res = TestMain.testProject(new File("projects/mps-lite/mps-lite.mpr"));
     assertTrue(res, res == null);
   }
+
+  public void testTextLanguage() {
+    String res = TestMain.testProject(new File("platform/textLanguage/jetbrains.mps.textLanguage.mpr"));
+    assertTrue(res, res == null);
+  }
 }
