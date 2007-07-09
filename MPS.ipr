@@ -20,7 +20,6 @@
   <component name="BuildJarProjectSettings">
     <option name="BUILD_JARS_ON_MAKE" value="false" />
   </component>
-  <component name="ClearCase" />
   <component name="CodeStyleProjectProfileManger">
     <option name="PROJECT_PROFILE" />
     <option name="USE_PROJECT_LEVEL_SETTINGS" value="false" />
@@ -79,11 +78,11 @@
       <entry name="?*.css" />
     </wildcardResourcePatterns>
   </component>
-  <component name="DataSourceManagerImpl" />
   <component name="DependenciesAnalyzeManager">
     <option name="myForwardDirection" value="false" />
   </component>
   <component name="DependencyValidationManager">
+    <option name="SKIP_IMPORT_STATEMENTS" value="false" />
     <scope name="Generated Files" pattern="file:*source_gen/**/*.java||file:*tests_gen/**/*.java" />
     <scope name="Query Methods" pattern="file:*/Queries.java" />
     <scope name="Icons Java Files" pattern="file:*/Icons.java" />
@@ -324,7 +323,6 @@
         <inspection_tool class="RedundantThrows" level="WARNING" enabled="false" />
         <inspection_tool class="UnusedDeclaration" level="WARNING" enabled="false">
           <option name="ADD_MAINS_TO_ENTRIES" value="true" />
-          <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
           <option name="ADD_APPLET_TO_ENTRIES" value="true" />
           <option name="ADD_SERVLET_TO_ENTRIES" value="true" />
           <option name="ADD_NONJAVA_TO_ENTRIES" value="true" />
@@ -334,6 +332,8 @@
             </value>
           </option>
           <option name="ADD_EJB_TO_ENTRIES" value="true" />
+          <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
+          <option name="ADD_TESTNG_TO_ENTRIES" value="true" />
         </inspection_tool>
         <inspection_tool class="ConstantConditions" level="ERROR" enabled="true">
           <option name="SUGGEST_NULLABLE_ANNOTATIONS" value="false" />
@@ -497,7 +497,6 @@
         <inspection_tool class="WhileCanBeForeach" level="WARNING" enabled="false" />
         <inspection_tool class="UnusedDeclaration" level="WARNING" enabled="false">
           <option name="ADD_MAINS_TO_ENTRIES" value="true" />
-          <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
           <option name="ADD_APPLET_TO_ENTRIES" value="true" />
           <option name="ADD_SERVLET_TO_ENTRIES" value="true" />
           <option name="ADD_NONJAVA_TO_ENTRIES" value="true" />
@@ -507,6 +506,8 @@
             </value>
           </option>
           <option name="ADD_EJB_TO_ENTRIES" value="true" />
+          <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
+          <option name="ADD_TESTNG_TO_ENTRIES" value="true" />
         </inspection_tool>
         <inspection_tool class="UnusedParameters" level="WARNING" enabled="false" />
         <inspection_tool class="SameReturnValue" level="WARNING" enabled="false" />
@@ -719,7 +720,6 @@
         <inspection_tool class="FieldCanBeLocal" level="WARNING" enabled="false" />
         <inspection_tool class="UnusedDeclaration" level="WARNING" enabled="false">
           <option name="ADD_MAINS_TO_ENTRIES" value="true" />
-          <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
           <option name="ADD_APPLET_TO_ENTRIES" value="true" />
           <option name="ADD_SERVLET_TO_ENTRIES" value="true" />
           <option name="ADD_NONJAVA_TO_ENTRIES" value="true" />
@@ -729,6 +729,8 @@
             </value>
           </option>
           <option name="ADD_EJB_TO_ENTRIES" value="true" />
+          <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
+          <option name="ADD_TESTNG_TO_ENTRIES" value="true" />
         </inspection_tool>
         <inspection_tool class="UnnecessaryLocalVariable" level="WARNING" enabled="false">
           <option name="m_ignoreImmediatelyReturnedVariables" value="false" />
@@ -917,7 +919,6 @@
       <module fileurl="file://$PROJECT_DIR$/projects/ProjectHalo/ProjectHalo.iml" filepath="$PROJECT_DIR$/projects/ProjectHalo/ProjectHalo.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/app/PubMedDB/pubmed-ws/PubMed-WS.iml" filepath="$PROJECT_DIR$/app/PubMedDB/pubmed-ws/PubMed-WS.iml" group="app/PubMedDB" />
       <module fileurl="file://$PROJECT_DIR$/app/PubMedDB/PubMedDB.iml" filepath="$PROJECT_DIR$/app/PubMedDB/PubMedDB.iml" group="app/PubMedDB" />
-      <module fileurl="file://$PROJECT_DIR$/projects/textLanguage/TextLanguage.iml" filepath="$PROJECT_DIR$/projects/textLanguage/TextLanguage.iml" group="DataLanguages" />
       <module fileurl="file://$PROJECT_DIR$/projects/YPath/YPath.iml" filepath="$PROJECT_DIR$/projects/YPath/YPath.iml" group="platform/YPath-Panacea" />
       <module fileurl="file://$PROJECT_DIR$/projects/YPath/runtime/YPath-runtime.iml" filepath="$PROJECT_DIR$/projects/YPath/runtime/YPath-runtime.iml" group="platform/YPath-Panacea" />
       <module fileurl="file://$PROJECT_DIR$/projects/agreement/agreement.iml" filepath="$PROJECT_DIR$/projects/agreement/agreement.iml" group="Projects" />
@@ -1000,12 +1001,13 @@
   <component name="ProjectRunConfigurationManager">
     <configuration default="false" name="IdeMain" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="jetbrains.mps.ide.IdeMain" />
-      <option name="VM_PARAMETERS" value="-Xms400m -Xmx1300m -ea" />
+      <option name="VM_PARAMETERS" value="-Xmx512m" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
       <module name="textLanguage" />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="1478" />
@@ -1028,59 +1030,9 @@
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
       <option name="LOCAL" value="true" />
-      <option name="OPEN_IN_BROWSER" value="true" />
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/charisma/" />
+      <option name="OPEN_IN_BROWSER" value="false" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/app" />
       <option name="COMMON_VM_ARGUMENTS" value="-Xms256m -Xmx1024m" />
-      <J2EE_MODULE>
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE>
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_sandbox" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE>
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="MForum" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE>
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="teamSysWebApp" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE>
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="search-watch" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_tree" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="charisma-app" />
-        <option name="DEPLOY" value="true" />
-      </J2EE_MODULE>
-      <J2EE_MODULE>
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_depot" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE>
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="PubMedDB" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE>
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSample_fileUpload" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
       <option name="DEPLOY_TOMCAT_MANAGER" value="false" />
       <option name="BASE_DIRECTORY_NAME" value="tomcat_Unnamed_e7d78b7c4" />
       <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
@@ -1148,58 +1100,8 @@
       <option name="PORT" value="8080" />
       <option name="LOCAL" value="true" />
       <option name="OPEN_IN_BROWSER" value="true" />
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/app" />
       <option name="COMMON_VM_ARGUMENTS" value="" />
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_sandbox" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE>
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="MForum" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE>
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="teamSysWebApp" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="search-watch" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_tree" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="charisma-app" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_depot" />
-        <option name="DEPLOY" value="true" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="PubMedDB" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSample_fileUpload" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
       <option name="DEPLOY_TOMCAT_MANAGER" value="true" />
       <option name="BASE_DIRECTORY_NAME" value="tomcat_Unnamed_e7d78b7c1" />
       <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
@@ -1269,56 +1171,6 @@
       <option name="OPEN_IN_BROWSER" value="true" />
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/app" />
       <option name="COMMON_VM_ARGUMENTS" value="" />
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello" />
-        <option name="DEPLOY" value="true" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_sandbox" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE>
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="MForum" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE>
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="teamSysWebApp" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="search-watch" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_tree" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="charisma-app" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_depot" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="PubMedDB" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSample_fileUpload" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
       <option name="DEPLOY_TOMCAT_MANAGER" value="true" />
       <option name="BASE_DIRECTORY_NAME" value="tomcat_Unnamed_e7d78b7c3" />
       <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
@@ -1370,56 +1222,6 @@
       <option name="OPEN_IN_BROWSER" value="true" />
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
       <option name="COMMON_VM_ARGUMENTS" value="" />
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_sandbox" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="MForum" />
-        <option name="DEPLOY" value="true" />
-      </J2EE_MODULE>
-      <J2EE_MODULE>
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="teamSysWebApp" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="search-watch" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_tree" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="charisma-app" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_depot" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="PubMedDB" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSample_fileUpload" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
       <option name="DEPLOY_TOMCAT_MANAGER" value="false" />
       <option name="BASE_DIRECTORY_NAME" value="tomcat_Unnamed_e7d78b7c2" />
       <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
@@ -1488,57 +1290,7 @@
       <option name="LOCAL" value="true" />
       <option name="OPEN_IN_BROWSER" value="true" />
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
-      <option name="COMMON_VM_ARGUMENTS" value="-Xmx256m" />
-      <J2EE_MODULE>
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE>
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_sandbox" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE>
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="MForum" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE>
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="teamSysWebApp" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE>
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="search-watch" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_tree" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="charisma-app" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE>
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_depot" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="PubMedDB" />
-        <option name="DEPLOY" value="true" />
-      </J2EE_MODULE>
-      <J2EE_MODULE>
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSample_fileUpload" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
+      <option name="COMMON_VM_ARGUMENTS" value="" />
       <option name="DEPLOY_TOMCAT_MANAGER" value="false" />
       <option name="BASE_DIRECTORY_NAME" value="tomcat_Unnamed_e7d78b7c3" />
       <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
@@ -1619,8 +1371,6 @@
     <option name="GENERATE_IIOP_STUBS" value="false" />
     <option name="ADDITIONAL_OPTIONS_STRING" value="" />
   </component>
-  <component name="StarteamVcsAdapter" />
-  <component name="SvnBranchConfigurationManager" />
   <component name="TeamCityRootDirectoryHolder">
     <option name="myRelativeRootDirectory" />
   </component>

@@ -39,8 +39,15 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1183651864870">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1183651864871">
             <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1183975023631">
-              <node role="expression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1183975023632">
-                <link role="classifier" extResolveInfo="1.[Classifier]System" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1183977041043">
+                <link role="baseMethodDeclaration" extResolveInfo="117.method ([Classifier]PrintStream).([InstanceMethodDeclaration]println((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1183975023632">
+                  <link role="classifier" extResolveInfo="1.[Classifier]System" />
+                  <link role="variableDeclaration" extResolveInfo="1.static field ([Classifier]System).([StaticFieldDeclaration]out : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [PrintStream]))" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1183977077483">
+                  <property name="value" value="l-l-l-l-l" />
+                </node>
               </node>
             </node>
           </node>
