@@ -6,15 +6,12 @@
  */
 package jetbrains.mps.generator.template;
 
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.core.structure.BaseConcept;
-import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.generator.GenerationFailedException;
 import jetbrains.mps.generator.GenerationFailueInfo;
-import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.transformation.TLBase.structure.*;
@@ -23,74 +20,11 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.util.QueryMethodGenerated;
 
-import java.util.*;
+import java.util.LinkedList;
+import java.util.List;
 
 public class TemplateGenUtil {
   private static final Logger LOG = Logger.getLogger(TemplateGenUtil.class);
-
-  public static SNode instantiateNodeForTemplate(SNode templateNode, SModel targetModel, IScope scope) {
-    SNode targetNode = SModelUtil_new.instantiateConceptDeclaration(templateNode.getConceptFqName(), targetModel, scope, false);
-    SNodeCopyUtil.copySNodeProperties(templateNode, targetNode);
-    return targetNode;
-  }
-
-  public static boolean buildTargetNodeReferences(SNode templateNode, SNode targetNode, INodeBuilder nodeBuilder) {
-    boolean b = true;
-    for (SReference templateReference : nodeBuilder.getTemplateReferencesToResolve()) {
-      if (!buildTargetNodeReference(nodeBuilder, templateReference, templateNode, targetNode)) {
-        b = false;
-      }
-    }
-    return b;
-  }
-
-  public static boolean buildTargetNodeReference(INodeBuilder nodeBuilder, SReference templateReference, SNode templateNode, SNode targetNode) {
-    ITemplateGenerator generator = nodeBuilder.getGenerator();
-    SNode templateReferentNode = templateReference.getTargetNode();
-    if (templateReferentNode == null) {
-      generator.showErrorMessage(templateNode, "Invalid reference \"" + templateReference.getRole() + "\" in templates model " + templateNode.getModel().getUID());
-      return true;
-    }
-    if (isTemplateLanguageElement(templateReferentNode)) {
-      return true;
-    }
-
-    // the reference MACRO exists?
-    if (ReferenceMacro_AnnotationLink.
-            getReferenceMacro((BaseConcept) templateNode.getAdapter(), templateReference.getRole()) != null) {
-      return true;
-    }
-
-    // external reference (but not to node from source model)?
-    if (templateReferentNode.getModel() != templateNode.getModel() &&
-            templateReferentNode.getModel() != generator.getSourceModel()) {
-      targetNode.setReferent(templateReference.getRole(), templateReferentNode);
-      return true;
-    }
-
-    // try to resolve the reference
-    IReferenceResolver referenceResolver = createReferenceResolver(templateNode);
-    return buildTargetNodeReference(nodeBuilder, templateReference, templateNode, targetNode, referenceResolver);
-  }
-
-  public static boolean buildTargetNodeReference(INodeBuilder nodeBuilder, SReference templateReference, SNode templateNode, SNode targetNode, IReferenceResolver referenceResolver) {
-    ITemplateGenerator generator = nodeBuilder.getGenerator();
-    SNode targetReferentNode = referenceResolver.resolveTarget(templateReference, nodeBuilder);
-    if (targetReferentNode != null) {
-      if (checkResolvedReference(nodeBuilder.getSourceNode(), targetNode,
-              templateNode, templateReference.getRole(), targetReferentNode, generator)) {
-        targetNode.setReferent(templateReference.getRole(), targetReferentNode);
-      } else {
-//        // for debug+
-//        referenceResolver.resolveTarget(templateReference, nodeBuilder);
-//        // for debug-
-      }
-      return true;
-    }
-
-    generator.addUnresolvedReference(nodeBuilder, templateReference);
-    return false;
-  }
 
   private static boolean checkResolvedReference(SNode sourceNode, SNode targetNode, SNode templateNode, String role, SNode targetReferentNode, ITemplateGenerator generator) {
     if (!targetNode.isAcceptableReferent(role, targetReferentNode, generator.getScope())) {
@@ -111,52 +45,6 @@ public class TemplateGenUtil {
       }
     }
     return true;
-  }
-
-  private static IReferenceResolver createReferenceResolver(SNode templateNode) {
-    IReferenceResolver referenceResolver = loadReferenceResolver(templateNode);
-    if (referenceResolver == null) {
-      referenceResolver = new DefaultReferenceResolver();
-    }
-
-    // if template node is inside of "template fragment" then wrap the resolver..
-    SNode mayBeTemplateFragment = templateNode;
-    while (mayBeTemplateFragment != null) {
-      if (TemplateLanguageUtil.isTemplateFragment(mayBeTemplateFragment)) {
-        return new TemplateFragmentReferenceResolver(referenceResolver);
-      }
-      mayBeTemplateFragment = mayBeTemplateFragment.getParent();
-    }
-
-    return referenceResolver;
-  }
-
-  private static IReferenceResolver loadReferenceResolver(SNode templateNode) {
-    ConceptDeclaration conceptDeclaration = (ConceptDeclaration) templateNode.getConceptDeclarationAdapter();
-    while (conceptDeclaration != null) {
-      String modelPackageName = JavaNameUtil.packageNameForModelUID(conceptDeclaration.getModel().getUID());
-      String buildersPackageName = JavaNameUtil.withoutStructure(modelPackageName) + ".builder";
-      String resolverClassName = buildersPackageName + "." + conceptDeclaration.getName() + "_ReferenceResolver";
-      try {
-        Class resolverClass = Class.forName(resolverClassName, true, ClassLoaderManager.getInstance().getClassLoader());
-        return (IReferenceResolver) resolverClass.newInstance();
-      } catch (ClassNotFoundException e) {
-        // ok
-      } catch (IllegalAccessException e) {
-        throw new RuntimeException(e);
-      } catch (InstantiationException e) {
-        throw new RuntimeException(e);
-      }
-
-      conceptDeclaration = conceptDeclaration.getExtends();
-    }
-
-    return null;
-  }
-
-  private static boolean isTemplateLanguageElement(SNode n) {
-    INodeAdapter na = BaseAdapter.fromNode(n);
-    return isTemplateLanguageElement(na);
   }
 
   public static boolean isTemplateLanguageElement(INodeAdapter n) {
@@ -399,11 +287,7 @@ public class TemplateGenUtil {
     }
   }
 
-  public static List<SNode> createSourceNodeListForTemplateNode_ForNewGenerator(SNode parentSourceNode, SNode templateNode, int currentMacroIndex, ITemplateGenerator generator) {
-    return createSourceNodeListForTemplateNode(parentSourceNode, templateNode, currentMacroIndex, generator);
-  }
-
-  private static List<SNode> createSourceNodeListForTemplateNode(SNode parentSourceNode, SNode templateNode, int currentMacroIndex, ITemplateGenerator generator) {
+  public static List<SNode> createSourceNodeListForTemplateNode(SNode parentSourceNode, SNode templateNode, int currentMacroIndex, ITemplateGenerator generator) {
     try {
       List<NodeMacro> nodeMacros = NodeMacro_AnnotationLink.getNodeMacros((BaseConcept) templateNode.getAdapter());
       NodeMacro nodeMacro = null;

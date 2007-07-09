@@ -367,7 +367,7 @@ public class RuleUtil {
       NodeMacro nodeMacro = (NodeMacro) templateChildNode;
       if (nodeMacro instanceof LoopMacro) {
         // $LOOP$
-        List<SNode> newInputNodes = TemplateGenUtil.createSourceNodeListForTemplateNode_ForNewGenerator(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
+        List<SNode> newInputNodes = TemplateGenUtil.createSourceNodeListForTemplateNode(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
         for (SNode newInputNode : newInputNodes) {
           boolean inputChanged = (newInputNode != inputNode);
           List<SNode> _outputNodes = createOutputNodesForTemplateNode(nodeMacro.getMappingId(), templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
@@ -381,7 +381,7 @@ public class RuleUtil {
         return outputNodes;
       } else if (nodeMacro instanceof CopySrcNodeMacro || nodeMacro instanceof CopySrcListMacro) {
         // $COPY-SRC$
-        List<SNode> newInputNodes = TemplateGenUtil.createSourceNodeListForTemplateNode_ForNewGenerator(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
+        List<SNode> newInputNodes = TemplateGenUtil.createSourceNodeListForTemplateNode(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
         for (SNode newInputNode : newInputNodes) {
           List<SNode> _outputNodes = copyNodeFromInputNode(nodeMacro.getMappingId(), templateNode, newInputNode);
           if (_outputNodes.size() == 1) {
@@ -394,7 +394,7 @@ public class RuleUtil {
         return outputNodes;
       } else if (nodeMacro instanceof IfMacro) {
         // $IF$
-        List<SNode> newInputNodes = TemplateGenUtil.createSourceNodeListForTemplateNode_ForNewGenerator(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
+        List<SNode> newInputNodes = TemplateGenUtil.createSourceNodeListForTemplateNode(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
         for (SNode newInputNode : newInputNodes) {
           boolean inputChanged = (newInputNode != inputNode);
           List<SNode> _outputNodes = createOutputNodesForTemplateNode(nodeMacro.getMappingId(), templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
@@ -418,7 +418,7 @@ public class RuleUtil {
           mapperId = ((MapSrcListMacro) nodeMacro).getSourceNodeMapperId();
         }
 
-        List<SNode> newInputNodes = TemplateGenUtil.createSourceNodeListForTemplateNode_ForNewGenerator(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
+        List<SNode> newInputNodes = TemplateGenUtil.createSourceNodeListForTemplateNode(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
         for (SNode newInputNode : newInputNodes) {
           boolean inputChanged = (newInputNode != inputNode);
           if (mapperId != null || macro_mapperFunction != null) {
@@ -444,7 +444,7 @@ public class RuleUtil {
       } else if (nodeMacro instanceof SwitchMacro) {
         // $SWITCH$
         TemplateSwitch templateSwitch = ((SwitchMacro) nodeMacro).getTemplateSwitch();
-        List<SNode> newInputNodes = TemplateGenUtil.createSourceNodeListForTemplateNode_ForNewGenerator(inputNode, templateNode, i - 1, myGenerator);
+        List<SNode> newInputNodes = TemplateGenUtil.createSourceNodeListForTemplateNode(inputNode, templateNode, i - 1, myGenerator);
         for (SNode newInputNode : newInputNodes) {
           boolean inputChanged = (newInputNode != inputNode);
           RuleConsequence consequenceForCase = (RuleConsequence) myGenerator.getConsequenceForSwitchCase(newInputNode, templateSwitch);
@@ -491,7 +491,7 @@ public class RuleUtil {
         return outputNodes;
       } else {
         // use user-defined node builder
-        List<SNode> newInputNodes = TemplateGenUtil.createSourceNodeListForTemplateNode_ForNewGenerator(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
+        List<SNode> newInputNodes = TemplateGenUtil.createSourceNodeListForTemplateNode(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
         for (SNode newInputNode : newInputNodes) {
           boolean inputChanged = (newInputNode != inputNode);
           SNode _outputNode = processTargetBuilderAspectMethod(newInputNode, templateNode, ruleName, nodeMacro);

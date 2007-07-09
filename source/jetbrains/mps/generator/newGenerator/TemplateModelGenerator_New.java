@@ -561,9 +561,9 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     //To change body of implemented methods use File | Settings | File Templates.
   }
 
-  public boolean isNew() {
-    return true;
-  }
+//  public boolean isNew() {
+//    return true;
+//  }
 
   public SNode findOutputNodeByInputNodeWithSameId(SNode inputNode) {
     if (inputNode == null) return null;

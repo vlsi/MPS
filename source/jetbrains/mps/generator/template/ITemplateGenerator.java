@@ -106,5 +106,5 @@ public interface ITemplateGenerator extends ITemplateLanguageConstants {
 
   void addUnresolvedReference(INodeBuilder nodeBuilder, SReference templateReference);
 
-  boolean isNew();
+//  boolean isNew();
 }
