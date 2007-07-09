@@ -106,6 +106,35 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1115766310400">
     <property name="name" value="AClass" />
+    <node role="staticInnerClassifiers" type="jetbrains.mps.baseLanguage.ClassConcept" id="1183987888119">
+      <property name="name" value="ABCDEF" />
+      <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1183987892818">
+        <property name="name" value="int" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1183987892819" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1183987892820" />
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1183987892821">
+          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1183988954414">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1183988954415">
+              <property name="name" value="a" />
+              <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1183988954416" />
+              <node role="initializer" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1183988957214">
+                <property name="value" value="23" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1183987888120" />
+    </node>
+    <node role="staticInnerClassifiers" type="jetbrains.mps.baseLanguage.Classifier" id="1183988603711">
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1183988603712" />
+    </node>
+    <node role="staticInnerClassifiers" type="jetbrains.mps.baseLanguage.Classifier" id="1183988468077">
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1183988468078" />
+    </node>
+    <node role="staticInnerClassifiers" type="jetbrains.mps.baseLanguage.Classifier" id="1183988123838">
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1183988123839" />
+    </node>
     <node role="staticField" type="jetbrains.mps.baseLanguage.StaticFieldDeclaration" id="1141080210673">
       <property name="name" value="iiii" />
       <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1141080214379" />
@@ -117,6 +146,11 @@
       <property name="name" value="myStaticMethod" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1137989388935" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1137989368574">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1183988405068">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1183988405069">
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1183988405070" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1140562454496">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1140562454495">
             <property name="name" value="i" />
