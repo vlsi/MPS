@@ -4,19 +4,172 @@ package jetbrains.mps.bootstrap.constraintsLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorCell_Collection;
-import java.awt.Color;
-import jetbrains.mps.nodeEditor.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
+import java.awt.Color;
+import jetbrains.mps.nodeEditor.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends DefaultNodeEditor {
+
+  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790978197");
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setFontType(MPSFonts.BOLD);
+    editorCell.putUserObject(EditorCell.ATTRACTS_FOCUS_POLICY, EditorCell.ATTRACTS_FOCUS);
+  }
+  private static void setupBasic_BodyCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790978198");
+    editorCell.setDrawBorder(false);
+    editorCell.setDrawBrackets(true);
+  }
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790978196");
+    editorCell.setDrawBorder(false);
+    editorCell.setDrawBrackets(true);
+  }
+  private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989566");
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989567");
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupBasic_ConstantCell3(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989568");
+    editorCell.setDrawBorder(false);
+    editorCell.setFontType(MPSFonts.PLAIN);
+  }
+  private static void setupBasic_ConstantCell4(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989569");
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupBasic_ConstantCell5(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989570");
+    editorCell.setDrawBorder(false);
+    editorCell.setFontType(MPSFonts.PLAIN);
+  }
+  private static void setupBasic_ConstantCell6(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989573");
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupBasic_ConstantCell7(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989574");
+    editorCell.setDrawBorder(false);
+    editorCell.setFontType(MPSFonts.PLAIN);
+  }
+  private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989572");
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupBasic_ConstantCell8(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989576");
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupBasic_ConstantCell9(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989577");
+    editorCell.setDrawBorder(false);
+    editorCell.setFontType(MPSFonts.PLAIN);
+  }
+  private static void setupBasic_RowCell2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989575");
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupBasic_ConstantCell10(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989579");
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupBasic_ConstantCell11(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989581");
+    editorCell.setDrawBorder(false);
+    editorCell.setFontType(MPSFonts.PLAIN);
+  }
+  private static void setupBasic_ConstantCell12(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989582");
+    editorCell.setDrawBorder(false);
+    editorCell.setFontType(MPSFonts.PLAIN);
+  }
+  private static void setupBasic_ColumnCell2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989580");
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupBasic_RowCell3(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989578");
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupBasic_ConstantCell13(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989584");
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupBasic_ConstantCell14(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989585");
+    editorCell.setDrawBorder(false);
+    editorCell.setFontType(MPSFonts.PLAIN);
+  }
+  private static void setupBasic_RowCell4(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989583");
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupBasic_ColumnCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989571");
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989565");
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    editorCell.getTextLine().setTextColor(Color.blue);
+  }
+  private static void setupLabel_BodyCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    editorCell.getTextLine().setTextColor(Color.blue);
+    editorCell.getTextLine().setTextBackgroundColor(Color.lightGray);
+  }
+  private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupLabel_ConstantCell3(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupLabel_ConstantCell4(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupLabel_ConstantCell5(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupLabel_ConstantCell6(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupLabel_ConstantCell7(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupLabel_ConstantCell8(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupLabel_ConstantCell9(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupLabel_ConstantCell10(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupLabel_ConstantCell11(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupLabel_ConstantCell12(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupLabel_ConstantCell13(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+  private static void setupLabel_ConstantCell14(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
@@ -26,118 +179,80 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   }
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(true);
-    editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell(context, node, ">"));
     editorCell.addEditorCell(this.createBodyCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790978196");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createRowCell1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_RowCell1(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell6(context, node, "model"));
     editorCell.addEditorCell(this.createConstantCell7(context, node, "context"));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989572");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createRowCell2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_RowCell2(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell8(context, node, "enclosingNode"));
     editorCell.addEditorCell(this.createConstantCell9(context, node, "context"));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989575");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createColumnCell2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ColumnCell2(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell11(context, node, "source of the reference link"));
     editorCell.addEditorCell(this.createConstantCell12(context, node, "(optional - may not exist yet)"));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989580");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createRowCell3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_RowCell3(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell10(context, node, "referenceNode"));
     editorCell.addEditorCell(this.createColumnCell2(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989578");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createRowCell4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_RowCell4(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell13(context, node, "scope"));
     editorCell.addEditorCell(this.createConstantCell14(context, node, "context (jetbrains.mps.smodel.IScope)"));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989583");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createColumnCell1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ColumnCell1(editorCell, node, context);
     editorCell.setGridLayout(true);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRowCell1(context, node));
     editorCell.addEditorCell(this.createRowCell2(context, node));
     editorCell.addEditorCell(this.createRowCell3(context, node));
     editorCell.addEditorCell(this.createRowCell4(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989571");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createColumnCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ColumnCell(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell1(context, node, "search scope provider"));
@@ -146,217 +261,122 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.addEditorCell(this.createConstantCell4(context, node, ""));
     editorCell.addEditorCell(this.createConstantCell5(context, node, "macros:"));
     editorCell.addEditorCell(this.createColumnCell1(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989565");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ConstantCell(editorCell, node, context);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.setFontType(MPSFonts.BOLD);
-    editorCell.getTextLine().setTextColor(Color.blue);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790978197");
-    editorCell.setLayoutConstraint("");
-    editorCell.putUserObject(EditorCell.ATTRACTS_FOCUS_POLICY, EditorCell.ATTRACTS_FOCUS);
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ConstantCell1(editorCell, node, context);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupLabel_ConstantCell1(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.getTextLine().setTextColor(Color.blue);
-    editorCell.getTextLine().setTextBackgroundColor(Color.lightGray);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989566");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ConstantCell2(editorCell, node, context);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupLabel_ConstantCell2(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989567");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ConstantCell3(editorCell, node, context);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupLabel_ConstantCell3(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.setFontType(MPSFonts.PLAIN);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989568");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell4(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ConstantCell4(editorCell, node, context);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupLabel_ConstantCell4(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989569");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell5(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ConstantCell5(editorCell, node, context);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupLabel_ConstantCell5(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.setFontType(MPSFonts.PLAIN);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989570");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell6(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ConstantCell6(editorCell, node, context);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupLabel_ConstantCell6(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989573");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell7(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ConstantCell7(editorCell, node, context);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupLabel_ConstantCell7(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.setFontType(MPSFonts.PLAIN);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989574");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell8(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ConstantCell8(editorCell, node, context);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupLabel_ConstantCell8(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989576");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell9(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ConstantCell9(editorCell, node, context);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupLabel_ConstantCell9(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.setFontType(MPSFonts.PLAIN);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989577");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell10(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ConstantCell10(editorCell, node, context);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupLabel_ConstantCell10(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989579");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell11(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ConstantCell11(editorCell, node, context);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupLabel_ConstantCell11(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.setFontType(MPSFonts.PLAIN);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989581");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell12(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ConstantCell12(editorCell, node, context);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupLabel_ConstantCell12(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.setFontType(MPSFonts.PLAIN);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989582");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell13(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ConstantCell13(editorCell, node, context);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupLabel_ConstantCell13(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989584");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell14(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ConstantCell14(editorCell, node, context);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupLabel_ConstantCell14(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.setFontType(MPSFonts.PLAIN);
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989585");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createBodyCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setDrawBrackets(true);
-    editorCell.setBracketsColor(Color.black);
+    ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_BodyCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      EditorCell_Label editorCellLabel = (EditorCell_Label)editorCell;
-      editorCellLabel.setEditable(true);
+      ConstraintFunction_ReferentSearchScope_Factory_Editor.setupLabel_BodyCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790978198");
-    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createBodyCell(EditorContext context, SNode node) {
