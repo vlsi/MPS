@@ -60,13 +60,6 @@ public class BehaviorManager {
     return behaviourClass;
   }
 
-  /**
-   * @deprecated
-   */
-  public<T> T invoke(Class<T> returnType, SNode node, String methodName, Object... parameters) {
-    return invoke(returnType, node, methodName, new ArrayList<Class>(), parameters);
-  }
-
   public<T> T invoke(Class<T> returnType, SNode node, String methodName, List<Class> parametersTypes, Object... parameters) {
     AbstractConceptDeclaration concept = node.getConceptDeclarationAdapter();
 
