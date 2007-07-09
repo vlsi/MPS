@@ -1514,13 +1514,13 @@ public class SNode implements Cloneable, Iterable<SNode> {
     return getShortConceptName();
   }
 
-  public boolean isDisposed() {
-    // tmp : don't check nodes in $internal$ models
-    if ("$internal$".equals(myModel.getStereotype())) {
-      return false;
-    }
-    return myModel.isDisposed();
-  }
+//  public boolean isDisposed() {
+//    // tmp : don't check nodes in $internal$ models
+//    if ("$internal$".equals(myModel.getStereotype())) {
+//      return false;
+//    }
+//    return myModel.isDisposed();
+//  }
 
   @NotNull
   public List<SNode> getSubnodes(Condition<SNode> condition) {
