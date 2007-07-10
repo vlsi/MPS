@@ -1,7 +1,6 @@
 package jetbrains.mps.generator.newGenerator;
 
 import jetbrains.mps.bootstrap.sharedConcepts.structure.Options_DefaultTrue;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
@@ -16,7 +15,10 @@ import jetbrains.mps.transformation.TLBase.structure.*;
 import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.util.QueryMethodGenerated;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by: Sergey Dmitriev
@@ -490,21 +492,13 @@ public class RuleUtil {
 
         return outputNodes;
       } else {
-        // use user-defined node builder
+        // $$
         List<SNode> newInputNodes = TemplateGenUtil.createSourceNodeListForTemplateNode(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
         for (SNode newInputNode : newInputNodes) {
           boolean inputChanged = (newInputNode != inputNode);
-          SNode _outputNode = processTargetBuilderAspectMethod(newInputNode, templateNode, ruleName, nodeMacro);
-          if (_outputNode != null) {
-            // todo: the '_outputNode' will be registered as TopOutputNodes for the inputNode,
-            // todo: but it will be replaced later with actual output-node.
-            // todo: the map entry should be updated when this node is replaced by the actual output-node.
-            outputNodes.add(_outputNode);
-          } else {
-            List<SNode> _outputNodes = createOutputNodesForTemplateNode(nodeMacro.getMappingId(), templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
-            if (_outputNodes != null) {
-              outputNodes.addAll(_outputNodes);
-            }
+          List<SNode> outputChildNodes = createOutputNodesForTemplateNode(nodeMacro.getMappingId(), templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
+          if (outputChildNodes != null) {
+            outputNodes.addAll(outputChildNodes);
           }
           if (registerTopOutput && !inputChanged) {
             myGenerator.addTopOutputNodesByInputNode(inputNode, outputNodes);
@@ -570,26 +564,6 @@ public class RuleUtil {
     }
     return outputNodes;
   }
-
-  private SNode processTargetBuilderAspectMethod(SNode inputNode, SNode templateNode, String ruleName, NodeMacro nodeMacro) {
-    String targetBuilderAspectMethodName = nodeMacro.getTargetBuilderAspectMethodName();
-    if (targetBuilderAspectMethodName == null) {
-      return null;
-    }
-    String methodName = "templateTargetBuilder_" + targetBuilderAspectMethodName;
-    Object[] args = new Object[]{inputNode, templateNode, ruleName, myGenerator};
-    HashSet<Class<? extends RuntimeException>> rethrowSet = new HashSet<Class<? extends RuntimeException>>();
-    rethrowSet.add(ReductionNotNeededException.class);
-    INodeBuilder builder = (INodeBuilder) QueryMethod.invoke(methodName, args, nodeMacro.getModel(), rethrowSet);
-    if (builder == null) return null;
-//    SNode childToReplaceLater = SModelUtil_new.instantiateConceptDeclaration(templateNode.getConceptFqName(), myOutputModel, myGenerator.getScope(), false);
-//    myGenerator.getDelayedChanges().addExecuteNodeBuilderChange(builder, childToReplaceLater);
-//    return childToReplaceLater;
-    // test: try don't delay
-    builder.execute(null, null);
-    return builder.getTargetNode();
-  }
-
 
   private List<SNode> copyNodeFromInputNode(String ruleName, SNode templateNode, SNode inputNode) {
     List<SNode> outputNodes = myRuleManager.getReductionRuleManager().tryToReduce(inputNode);
