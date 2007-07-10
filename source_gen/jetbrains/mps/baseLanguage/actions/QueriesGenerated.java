@@ -152,6 +152,16 @@ public class QueriesGenerated {
       SLinkOperations.addChild(SLinkOperations.setNewChild(newNode, "ifTrue", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", sampleNode);
     }
   }
+  public static void nodeFactory_NodeSetup_TryCatchStatement_1183997671101(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
+    if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Statement")) {
+      SLinkOperations.addChild(SLinkOperations.setNewChild(newNode, "body", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", sampleNode);
+    }
+  }
+  public static void nodeFactory_NodeSetup_TryStatement_1183997675652(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
+    if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Statement")) {
+      SLinkOperations.addChild(SLinkOperations.setNewChild(newNode, "body", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", sampleNode);
+    }
+  }
   public static void nodeFactory_NodeSetup_NotExpression_1159218040861(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
     if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Expression")) {
       SLinkOperations.setTarget(newNode, "expression", sampleNode, true);
