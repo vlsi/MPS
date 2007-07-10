@@ -685,7 +685,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
       }
     }
     if (myProperties == null) {
-      myProperties = new HashMap<String, String>(1);
+      myProperties = new LinkedHashMap<String, String>(1);
     }
     final String oldValue = myProperties.get(propertyName);
     if (propertyValue == null) {
