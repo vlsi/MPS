@@ -4,7 +4,10 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.generator.GenerationFailedException;
 import jetbrains.mps.generator.GenerationFailueInfo;
 import jetbrains.mps.generator.GenerationSessionContext;
-import jetbrains.mps.generator.template.*;
+import jetbrains.mps.generator.template.AbstractTemplateGenerator;
+import jetbrains.mps.generator.template.INodeBuilder;
+import jetbrains.mps.generator.template.TemplateGenUtil;
+import jetbrains.mps.generator.template.TemplateSwitchGraph;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.smodel.INodeAdapter;
@@ -12,8 +15,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.transformation.TLBase.structure.*;
-import jetbrains.mps.typesystem.ITypeChecker;
-import jetbrains.mps.typesystem.TypeCheckerAccess;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.QueryMethod;
@@ -489,10 +490,6 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     }
 
     return null;
-  }
-
-  public ITypeChecker getTypeChecker() {
-    return TypeCheckerAccess.getTypeChecker();
   }
 
   public SNode findOutputNodeByInputNodeWithSameId(SNode inputNode) {

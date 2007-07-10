@@ -10,12 +10,14 @@ import jetbrains.mps.generator.GenerationFailedException;
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.transformation.ITemplateLanguageConstants;
 import jetbrains.mps.transformation.TLBase.structure.RuleConsequence;
 import jetbrains.mps.transformation.TLBase.structure.TemplateDeclaration;
 import jetbrains.mps.transformation.TLBase.structure.TemplateSwitch;
-import jetbrains.mps.typesystem.ITypeChecker;
 import jetbrains.mps.util.Condition;
 
 import java.util.List;
@@ -64,11 +66,6 @@ public interface ITemplateGenerator extends ITemplateLanguageConstants {
   void showErrorMessage(SNode sourceNode, SNode templateNode, String message);
 
   void showErrorMessage(SNode sourceNode, SNode templateNode, SNode ruleNode, String message);
-
-  /**
-   * @deprecated
-   */
-  ITypeChecker getTypeChecker();
 
   GenerationSessionContext getGeneratorSessionContext();
 
