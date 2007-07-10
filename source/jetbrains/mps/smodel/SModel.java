@@ -1111,6 +1111,18 @@ public class SModel implements Iterable<SNode> {
     return result;
   }
 
+  public <SN extends INodeAdapter> List<SN> allRootsIncludingImported(IScope scope, final Class<SN> snodeClass) {
+    List<SNode> nodes = allRootsIncludingImported(scope);
+    Iterator<SNode> it = nodes.iterator();
+    while (it.hasNext()) {
+      SNode sn = it.next();
+      if (!snodeClass.isInstance(sn.getAdapter())) {
+        it.remove();
+      }
+    }
+    return BaseAdapter.toAdapters(snodeClass, nodes);
+  }
+   
 
   public <SN extends INodeAdapter> List<SN> allAdaptersIncludingImported(IScope scope, final Class<SN> snodeClass) {
     return BaseAdapter.toAdapters(snodeClass, allNodesIncludingImported(scope, new Condition<SNode>() {

@@ -1637,7 +1637,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
     AbstractConceptDeclaration conceptDeclaration = getConceptDeclarationAdapter();
     SModel structureModel = conceptDeclaration.getModel();
     List<AnnotationLinkDeclaration> annotationLinkDecls =
-            structureModel.allAdaptersIncludingImported(scope, AnnotationLinkDeclaration.class);
+            structureModel.allRootsIncludingImported(scope, AnnotationLinkDeclaration.class);
     for (AnnotationLinkDeclaration annotationLinkDeclaration : annotationLinkDecls) {
       if (declaredRole.equals(annotationLinkDeclaration.getRole())) {
         return annotationLinkDeclaration;
