@@ -16,6 +16,9 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1147467448495">
       <property name="vertical" value="true" />
       <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Error" id="1184108671374">
+        <property name="text" value="Deprecated!!! property constraints are now defined in ConceptBehavior" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1147467448496">
         <property name="drawBorder" value="false" />
         <property name="selectable" value="false" />
@@ -489,6 +492,9 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1148687952917">
       <property name="vertical" value="true" />
       <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Error" id="1184108703940">
+        <property name="text" value="Deprecated!!! referent constraints are now defined in ConceptBehavior" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1148687952918">
         <property name="drawBorder" value="false" />
         <property name="selectable" value="false" />

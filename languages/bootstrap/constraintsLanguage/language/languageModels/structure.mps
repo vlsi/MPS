@@ -54,6 +54,10 @@
       <property name="value" value="property constraints" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1184108355347">
+      <property name="value" value="property constraints are now defined in ConceptBehavior" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1180129508254" />
+    </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1173470546161">
       <link role="intfc" targetNodeId="1.1169194658468" />
     </node>
@@ -136,6 +140,10 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1159284712709">
       <property name="value" value="referent constraints" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1184108592888">
+      <property name="value" value="referent constraints are now defined in ConceptBehavior" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1180129508254" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1148687176410">
