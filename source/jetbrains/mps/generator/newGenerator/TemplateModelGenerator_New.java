@@ -218,7 +218,6 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
       newReferenceInfos = new ArrayList<ReferenceInfo>(referenceInfos.size());
     }
 
-//    myReferenceInfos = newReferenceInfos;
     for (ReferenceInfo unresolvedReferenceInfo : newReferenceInfos) {
       // hack
       unresolvedReferenceInfo.resolveAnyhow(this);
@@ -228,11 +227,9 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     }
   }
 
-
   public SModel getSourceModel() {
     return myInputModel;
   }
-
 
   public SModel getTargetModel() {
     return myOutputModel;
@@ -296,18 +293,6 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   }
 
   public void addOutputNodeByTemplateNode(SNode templateNode, SNode outputNode) {
-//    SNode prevOutputNode = myTemplateNodeToOutputNodeMap.get(templateNode);
-//    // that means that there were more than one output node for given template node
-//    if (prevOutputNode == templateNode) {
-//      return;
-//    }
-//    if (prevOutputNode != null) {
-//      // that means that there are more than one output node for given node, and we cannot resolve reference to it.
-//      myTemplateNodeToOutputNodeMap.put(templateNode, templateNode);
-//    } else {
-//      myTemplateNodeToOutputNodeMap.put(templateNode, outputNode);
-//    }
-
     Pair<SNode, Boolean> pair = myTemplateNodeToOutputNodeMap.get(templateNode);
     if (pair == null) {
       myTemplateNodeToOutputNodeMap.put(templateNode, new Pair<SNode, Boolean>(outputNode, true));
@@ -337,31 +322,6 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
 
   public DelayedChanges getDelayedChanges() {
     return myDelayedChanges;
-  }
-
-  public void setStartState() {
-    //To change body of implemented methods use File | Settings | File Templates.
-  }
-
-  public void advanceState() {
-    //To change body of implemented methods use File | Settings | File Templates.
-  }
-
-  public ITemplateGeneratorState getState() {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
-  }
-
-
-  public void processPropertyMacros(SNode inputNode, SNode templateNode, SNode targetNode) {
-    //To change body of implemented methods use File | Settings | File Templates.
-  }
-
-  public void processReferenceMacros(SNode inputNode, SNode templateNode, SNode targetNode) {
-    //To change body of implemented methods use File | Settings | File Templates.
-  }
-
-  public void executeNodeBuilder(INodeBuilder nodeBuilder, Map<String, Object> parameters) {
-    //To change body of implemented methods use File | Settings | File Templates.
   }
 
   public INodeBuilder findNodeBuilderForSource(SNode inputNode, String mappingName) {
@@ -395,13 +355,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     return null;
   }
 
-
-  public INodeBuilder findFirstNodeBuilderForTemplate(SNode template) {
-    throw new RuntimeException("not implemented");
-  }
-
   public List<INodeBuilder> findTopBuildersForSource(SNode inputNode) {
-//    throw new RuntimeException("not implemented");
     List<INodeBuilder> result = new ArrayList<INodeBuilder>();
     List<SNode> list = myInputeNodeToTopOutputNodesMap.get(inputNode);
     if (list != null) {
@@ -437,14 +391,6 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
       if (condition.met(builder)) return builder;
     }
     return null;
-  }
-
-  public INodeBuilder findNodeBuilder(Condition<INodeBuilder> condition) {
-    throw new RuntimeException("not implemented");
-  }
-
-  public INodeBuilder findNodeBuilder(INodeBuilder fromBuilder, Condition<INodeBuilder> condition) {
-    throw new RuntimeException("not implemented");
   }
 
   //todo remove this after going to new generator
@@ -548,22 +494,6 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   public ITypeChecker getTypeChecker() {
     return TypeCheckerAccess.getTypeChecker();
   }
-
-  public void notifyBuilderCreated(INodeBuilder builder) {
-    //To change body of implemented methods use File | Settings | File Templates.
-  }
-
-//  public Language getTargetLanguage() {
-//    return null;  //To change body of implemented methods use File | Settings | File Templates.
-//  }
-
-  public void addUnresolvedReference(INodeBuilder nodeBuilder, SReference templateReference) {
-    //To change body of implemented methods use File | Settings | File Templates.
-  }
-
-//  public boolean isNew() {
-//    return true;
-//  }
 
   public SNode findOutputNodeByInputNodeWithSameId(SNode inputNode) {
     if (inputNode == null) return null;
