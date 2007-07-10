@@ -9,13 +9,9 @@ import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.generator.template.NodeBuilderStatus;
-import jetbrains.mps.generator.template.ITemplateGeneratorState;
 import jetbrains.mps.generator.GenerationFailedException;
 import jetbrains.mps.generator.GenerationFailueInfo;
 import jetbrains.mps.logging.Logger;
-
-import java.util.Map;
 
 /**
  * Created by: Sergey Dmitriev
