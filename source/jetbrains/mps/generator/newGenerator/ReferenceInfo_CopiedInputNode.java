@@ -67,7 +67,7 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
     // try to resolve using custom referense resolver for source node concept
     IReferenceResolver referenceResolver = loadReferenceResolver(myInputSourceNode);
     if (referenceResolver != null) {
-      SNode outputTargetNode = referenceResolver.resolveTarget_New(myInputReference, new SimpleNodeBuilder(generator, getOutputNode(), myInputSourceNode, getInputNode()));
+      SNode outputTargetNode = referenceResolver.resolve(getOutputNode(), myInputReference);
       if (outputTargetNode != null) {
         getOutputNode().addReferent(myInputReference.getRole(), outputTargetNode);
         setSuccess(true);

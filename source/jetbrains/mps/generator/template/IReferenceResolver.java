@@ -10,5 +10,5 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 
 public interface IReferenceResolver {
-  SNode resolveTarget_New(SReference templateReference, INodeBuilder sourceNodeBuilder);
+  SNode resolve(SNode outputSourceNode, SReference templateReference);
 }
