@@ -3,13 +3,8 @@ package jetbrains.mps.generator.newGenerator;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.generator.template.IReferenceResolver;
-import jetbrains.mps.generator.template.INodeBuilder;
-import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.reloading.ClassLoaderManager;
 
 import java.util.List;
-import java.util.ArrayList;
 
 /**
  * Created by: Sergey Dmitriev
@@ -39,6 +34,7 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
     }
 
     {
+      // if template has been applied exactly once, then we have unique output node for each template node
       SNode outputTargetNode = generator.findOutputNodeByTemplateNode(myTemplateTargetNode, true);
       if (outputTargetNode != null) {
         getOutputNode().addReferent(myTemplateReference.getRole(), outputTargetNode);
@@ -49,16 +45,17 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
 
     {
       // try to resolve if referent node is parent of source node.
-      SNode templateTargetNode = myTemplateSourceNode.getParent();
-      SNode outputTargetNode = getOutputNode().getParent();
-      while (templateTargetNode != null && outputTargetNode != null) {
-        if (templateTargetNode.equals(myTemplateTargetNode)) {
-          getOutputNode().addReferent(myTemplateReference.getRole(), outputTargetNode);
+      // this solves situation when reference node inside 'template fragment' refers to 'context node' (ancestor outside 'template fragment')
+      SNode templateParentNode = myTemplateSourceNode.getParent();
+      SNode outputParentNode = getOutputNode().getParent();
+      while (templateParentNode != null && outputParentNode != null) {
+        if (templateParentNode.equals(myTemplateTargetNode)) {
+          getOutputNode().addReferent(myTemplateReference.getRole(), outputParentNode);
           setSuccess(true);
           return;
         }
-        templateTargetNode = templateTargetNode.getParent();
-        outputTargetNode = outputTargetNode.getParent();
+        templateParentNode = templateParentNode.getParent();
+        outputParentNode = outputParentNode.getParent();
       }
     }
   }
@@ -77,16 +74,16 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
     }
 
     // ok. try more expensive lookup...
-    // find least common parent for the template referent and referring node
+    // find least common parent for the template reference and referent nodes
     SNode leastCommonParent_template = myTemplateSourceNode.findLeastCommonParent(myTemplateTargetNode);
     if (leastCommonParent_template != null) {
-      // find builder for the least common parent
-      SNode leastCommonOutputNode = getOutputNode();
-      while (leastCommonOutputNode != null && generator.findTemplateNodeByOutputNode(leastCommonOutputNode) != leastCommonParent_template) {
-        leastCommonOutputNode = leastCommonOutputNode.getParent();
+      // find output node for the least common parent template node
+      SNode leastCommonParent_output = getOutputNode();
+      while (leastCommonParent_output != null && generator.findTemplateNodeByOutputNode(leastCommonParent_output) != leastCommonParent_template) {
+        leastCommonParent_output = leastCommonParent_output.getParent();
       }
-      if (leastCommonOutputNode != null) {
-        SNode outputTargetNode = findOutputNodeByTemplateTarget(generator, leastCommonOutputNode);
+      if (leastCommonParent_output != null) {
+        SNode outputTargetNode = findOutputSubnodeByTemplateNode(generator, leastCommonParent_output, myTemplateTargetNode);
         if (outputTargetNode != null) {
           getOutputNode().addReferent(myTemplateReference.getRole(), outputTargetNode);
           setSuccess(true);
@@ -103,11 +100,11 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
     }
   }
 
-  private SNode findOutputNodeByTemplateTarget(TemplateModelGenerator_New generator, SNode outputNode) {
-    if (generator.findTemplateNodeByOutputNode(outputNode) == myTemplateTargetNode) return outputNode;
+  private static SNode findOutputSubnodeByTemplateNode(TemplateModelGenerator_New generator, SNode outputNode, SNode templateNode) {
+    if (generator.findTemplateNodeByOutputNode(outputNode) == templateNode) return outputNode;
     List<SNode> children = outputNode.getChildren();
     for (SNode childNode : children) {
-      SNode outputTargetNode = findOutputNodeByTemplateTarget(generator, childNode);
+      SNode outputTargetNode = findOutputSubnodeByTemplateNode(generator, childNode, templateNode);
       if (outputTargetNode != null) {
         return outputTargetNode;
       }
