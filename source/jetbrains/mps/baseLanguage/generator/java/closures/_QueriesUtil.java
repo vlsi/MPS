@@ -161,13 +161,6 @@ public class _QueriesUtil {
       INodeBuilder builder = generator.findNodeBuilderForSource(enclosingClosure, ClosuresMappingId.CLOSURE__ADAPTER_CLASS);
       ClassConcept closureAdapter = (ClassConcept) BaseAdapter.fromNode(builder.getTargetNode());
       FieldDeclaration field = JavaModelUtil_new.findField(closureAdapter, ClosuresMappingId.NAME__CLOSURE_ADAPTER__CLOSURE_CONTEXT_FIELD);
-      if (field == null) {
-        List<INodeBuilder> fieldBuilders = builder.getChildBuildersForRole(ClassConcept.FIELD);
-        for (INodeBuilder fieldBuilder : fieldBuilders) {
-          fieldBuilder.execute(generator.getState(), new HashMap<String, Object>());
-        }
-        field = JavaModelUtil_new.findField(closureAdapter, ClosuresMappingId.NAME__CLOSURE_ADAPTER__CLOSURE_CONTEXT_FIELD);
-      }
       if (field != null) {
         FieldReference fieldRef = FieldReference.newInstance(model);
         fieldRef.setInstance(ThisExpression.newInstance(model));
