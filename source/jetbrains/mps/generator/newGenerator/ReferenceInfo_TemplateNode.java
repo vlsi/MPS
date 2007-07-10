@@ -21,7 +21,7 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
   private SNode myTemplateTargetNode;
 
 
-  public ReferenceInfo_TemplateNode(SNode outputNode, SReference templateReference, SNode templateSourceNode, SNode templateTargetNode, SNode inputNode) {
+  public ReferenceInfo_TemplateNode(SNode outputNode, SReference templateReference, SNode inputNode) {
     super(outputNode, inputNode);
     myTemplateReference = templateReference;
     myTemplateSourceNode = templateReference.getSourceNode();

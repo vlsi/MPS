@@ -536,7 +536,7 @@ public class RuleUtil {
         continue;
       }
       if (templateReferentNode.getModel().equals(templateModel)) {
-        myGenerator.addReferenceInfo(new ReferenceInfo_TemplateNode(outputNode, reference, templateNode, templateReferentNode, inputNode));
+        myGenerator.addReferenceInfo(new ReferenceInfo_TemplateNode(outputNode, reference, inputNode));
       } else {
         outputNode.addReferent(reference.getRole(), templateReferentNode);
       }
