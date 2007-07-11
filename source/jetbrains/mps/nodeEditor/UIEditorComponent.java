@@ -2,13 +2,14 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.navigation.*;
+import jetbrains.mps.nodeEditor.inspector.IInspectorEditorComponent;
+import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeProxy;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.GenericContext;
-import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -79,7 +80,7 @@ public class UIEditorComponent extends AbstractEditorComponent implements IEdito
     return createRootCell(null);
   }
 
-  public InspectorEditorComponent getInspector() {
+  public IInspectorEditorComponent getInspector() {
     return myInspector;
   }
 
