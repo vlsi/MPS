@@ -25,7 +25,7 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
 
   public void executeIndependentResolve(TemplateModelGenerator_New generator) {
     {
-      SNode outputTargetNode = generator.findOutputNodeByTemplateNodeAndInputNode(myTemplateTargetNode, getInputNode());
+      SNode outputTargetNode = generator.findOutputNodeByInputAndTemplateNode(getInputNode(), myTemplateTargetNode);
       if (outputTargetNode != null) {
         getOutputNode().addReferent(myTemplateReference.getRole(), outputTargetNode);
         setSuccess(true);

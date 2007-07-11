@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.transformation.ITemplateLanguageConstants;
 import jetbrains.mps.transformation.TLBase.structure.RuleConsequence;
 import jetbrains.mps.transformation.TLBase.structure.TemplateDeclaration;
 import jetbrains.mps.transformation.TLBase.structure.TemplateSwitch;
@@ -22,7 +21,7 @@ import jetbrains.mps.util.Condition;
 
 import java.util.List;
 
-public interface ITemplateGenerator extends ITemplateLanguageConstants {
+public interface ITemplateGenerator {
 
   IMessageHandler getMessageHandler();
 
@@ -42,7 +41,13 @@ public interface ITemplateGenerator extends ITemplateLanguageConstants {
 
   INodeBuilder findCopyingNodeBuilderForSource(SNode sourceNode);
 
+
+  /**
+   * @deprecated
+   */
   INodeBuilder findNodeBuilderForSourceAndTemplate(SNode source, SNode template);
+  SNode findOutputNodeByInputAndTemplateNode(SNode inputNode, SNode templateNode);
+
 
   List<INodeBuilder> findTopBuildersForSource(SNode sourceNode);
 

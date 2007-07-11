@@ -51,33 +51,36 @@ public class _QueriesUtil {
   /**
    * Finds method parameter (generated) with the same name as the referenced ClosureParameter
    */
-  public static SNode resolve_ClosureParameterReference(SNode closureParmRef, SNode templateReferenceNode, ITemplateGenerator generator) {
-    ClosureParameterReference closureParmRefAdapter = (ClosureParameterReference) closureParmRef.getAdapter();
-    ClosureParameter closureParameter = closureParmRefAdapter.getClosureParameter();
-//    if(closureParameter == null) {
-//      // ok, probably not all references are resolved yet
-//      // try next time
-//      return null;
-//    }
+  public static SNode resolve_ClosureParameterReference(SNode closureParmRef_input, SNode referenceNode_template, ITemplateGenerator generator) {
+    ClosureParameterReference closureParmRef_input_ = (ClosureParameterReference) closureParmRef_input.getAdapter();
+    ClosureParameter closureParameter = closureParmRef_input_.getClosureParameter();
     String parameterName = closureParameter.getName();
     assert parameterName != null;
 
-    // find parent method declaration in target model
-    INodeBuilder closureParmRefBuilder = generator.findNodeBuilderForSourceAndTemplate(closureParmRef, templateReferenceNode);
-    INodeBuilder targetMethodBuilder = closureParmRefBuilder.findParentBuilder(new Condition<INodeBuilder>() {
-      public boolean met(INodeBuilder parentBuilder) {
-        SNode targetNode = parentBuilder.getTargetNode();
-        return targetNode.getAdapter() instanceof BaseMethodDeclaration;
-      }
-    });
+    // find parent method declaration in output model
+//    INodeBuilder closureParmRefBuilder = generator.findNodeBuilderForSourceAndTemplate(closureParmRef_input, referenceNode_template);
+//    INodeBuilder targetMethodBuilder = closureParmRefBuilder.findParentBuilder(new Condition<INodeBuilder>() {
+//      public boolean met(INodeBuilder parentBuilder) {
+//        SNode targetNode = parentBuilder.getTargetNode();
+//        return targetNode.getAdapter() instanceof BaseMethodDeclaration;
+//      }
+//    });
+//
+//    if (targetMethodBuilder == null) {
+//      generator.showErrorMessage(closureParmRef_input, referenceNode_template, "couldn't find method parameter for name \"" + parameterName + "\" : method builder not found");
+//      return null;
+//    }
+//
+//    SNode methodDecl_output = targetMethodBuilder.getTargetNode();
 
-    if (targetMethodBuilder == null) {
-      generator.showErrorMessage(closureParmRef, templateReferenceNode, "couldn't find method parameter for name \"" + parameterName + "\" : method builder not found");
+    SNode closureParmRef_outputNode = generator.findOutputNodeByInputAndTemplateNode(closureParmRef_input, referenceNode_template);
+    BaseMethodDeclaration methodDecl_output_ = closureParmRef_outputNode.getAdapter().getParent(BaseMethodDeclaration.class);
+    if (methodDecl_output_ == null) {
+      generator.showErrorMessage(closureParmRef_input, referenceNode_template, "couldn't find method parameter for name \"" + parameterName + "\" : method not found");
       return null;
     }
 
-    SNode targetMethodDeclaration = targetMethodBuilder.getTargetNode();
-    Iterator<ParameterDeclaration> methodParms = ((BaseMethodDeclaration) targetMethodDeclaration.getAdapter()).parameters();
+    Iterator<ParameterDeclaration> methodParms = ((BaseMethodDeclaration) methodDecl_output_).parameters();
     while (methodParms.hasNext()) {
       ParameterDeclaration methodParm = methodParms.next();
       if (parameterName.equals(methodParm.getName())) {
@@ -85,11 +88,8 @@ public class _QueriesUtil {
       }
     }
 
-    generator.showErrorMessage(closureParmRef, templateReferenceNode, "couldn't find method parameter for name \"" + parameterName + "\"");
-    SNode closureParmRef_outputNode = closureParmRefBuilder.getTargetNode();
-    if (closureParmRef_outputNode != null) {
-      generator.showErrorMessage(closureParmRef_outputNode, "-- was generated node: " + closureParmRef_outputNode.getDebugText());
-    }
+    generator.showErrorMessage(closureParmRef_input, referenceNode_template, "couldn't find method parameter for name \"" + parameterName + "\"");
+    generator.showErrorMessage(closureParmRef_outputNode, "-- was generated node: " + closureParmRef_outputNode.getDebugText());
     return null;
   }
 
@@ -189,13 +189,12 @@ public class _QueriesUtil {
     Class[] classes = new Class[]{BaseMethodDeclaration.class, Closure.class};
     INodeAdapter enclosingNode = nodeInsideClosure.getAdapter().findFirstParent(classes);
     if (enclosingNode instanceof InstanceMethodDeclaration ||
-            enclosingNode instanceof ConstructorDeclaration) 
-    {
+            enclosingNode instanceof ConstructorDeclaration) {
       ThisExpression thisExpr = ThisExpression.newInstance(generator.getTargetModel());
       SNode enclosingClass = SNodeOperations.getAncestor(nodeInsideClosure, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-      if(enclosingClass == null) {
+      if (enclosingClass == null) {
         // closure is not in class
-        ClassConcept adapter = (ClassConcept)SModelUtil_new.findNodeByFQName("java.lang.Object", ClassConcept.class, generator.getScope());
+        ClassConcept adapter = (ClassConcept) SModelUtil_new.findNodeByFQName("java.lang.Object", ClassConcept.class, generator.getScope());
         enclosingClass = adapter.getNode();
       }
       thisExpr.setClassConcept((ClassConcept) enclosingClass.getAdapter());

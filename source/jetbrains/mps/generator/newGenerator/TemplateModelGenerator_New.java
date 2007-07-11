@@ -31,7 +31,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   private ArrayList<SNode> myNewRootNodes = new ArrayList<SNode>();
   private ArrayList<SNode> myRootsNotToCopy = new ArrayList<SNode>();
   private ArrayList<ReferenceInfo> myReferenceInfos = new ArrayList<ReferenceInfo>();
-  private HashMap<Pair<SNode, SNode>, INodeBuilder> myTemplateNodeAndInputNodeToBuilderMap = new HashMap<Pair<SNode, SNode>, INodeBuilder>();
+  private HashMap<Pair<SNode, SNode>, SNode> myTemplateNodeAndInputNodeToOutputNodeMap = new HashMap<Pair<SNode, SNode>, SNode>();
   private HashMap<Pair<String, SNode>, INodeBuilder> myRuleNameAndInputNodeToBuilderMap = new HashMap<Pair<String, SNode>, INodeBuilder>();
   private HashMap<Pair<String, SNode>, SNode> myRuleNameAndOutputNodeToInputNode = new HashMap<Pair<String, SNode>, SNode>();
   private HashMap<SNode, SNode> myOutputNodeToTemplateNodeMap = new HashMap<SNode, SNode>();
@@ -75,7 +75,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     myNewRootNodes.clear();
     myRootsNotToCopy.clear();
     myReferenceInfos.clear();
-    myTemplateNodeAndInputNodeToBuilderMap.clear();
+    myTemplateNodeAndInputNodeToOutputNodeMap.clear();
     myRuleNameAndInputNodeToBuilderMap.clear();
     myRuleNameAndOutputNodeToInputNode.clear();
     myOutputNodeToTemplateNodeMap.clear();
@@ -244,24 +244,6 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     myRootsNotToCopy.add(inputNode);
   }
 
-  public SNode findOutputNodeByTemplateNodeAndInputNode(SNode templateNode, SNode inputNode) {
-    INodeBuilder nodeBuilder = myTemplateNodeAndInputNodeToBuilderMap.get(new Pair(templateNode, inputNode));
-    if (nodeBuilder == null) return null;
-    return nodeBuilder.getTargetNode();
-  }
-
-  public void addOutputNodeByTemplateNodeAndInputNode(SNode templateNode, SNode inputNode, SNode outputNode) {
-    Pair key = new Pair(templateNode, inputNode);
-//    if(myTemplateNodeAndInputNodeToBuilderMap.get(key) != null) {
-//      showErrorMessage(inputNode, templateNode, "The output node already exists, that was build by this template and source node");
-//      showWarningMessage(inputNode, "The output node already exists, that was build by this template and source node");
-//      System.out.println("The output node already exists, that was build by this template and source node");
-//      System.out.println("templateNodeId="+templateNode.getId()+",   inputNodeId="+inputNode.getId());
-//      System.out.println("prevId="+myTemplateNodeAndInputNodeToBuilderMap.get(key).getTargetNode().getId()+",   newId="+outputNode.getId());
-//    }
-    myTemplateNodeAndInputNodeToBuilderMap.put(key, new SimpleNodeBuilder(this, outputNode, templateNode, inputNode));
-  }
-
   private INodeBuilder findOutputNodeByRuleNameAndInputNode(String ruleName, SNode inputNode) {
     return myRuleNameAndInputNodeToBuilderMap.get(new Pair(ruleName, inputNode));
   }
@@ -343,18 +325,45 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     return builder.getTargetNode();
   }
 
-  public INodeBuilder findNodeBuilderForSourceAndTemplate(SNode inputNode, SNode template) {
-    INodeBuilder builder = myTemplateNodeAndInputNodeToBuilderMap.get(new Pair<SNode, SNode>(template, inputNode));
-    if (builder != null) return builder;
-    if (inputNode == template) {
-      SNode outputNode = findOutputNodeByInputNodeWithSameId(inputNode);
-      if (outputNode == null) {
-        return null;
-      }
+  /**
+   * @deprecated
+   */
+  public INodeBuilder findNodeBuilderForSourceAndTemplate(SNode inputNode, SNode templateNode) {
+//    INodeBuilder builder = myTemplateNodeAndInputNodeToOutputNodeMap.get(new Pair<SNode, SNode>(templateNode, inputNode));
+//    if (builder != null) return builder;
+//    if (inputNode == templateNode) {
+//      SNode outputNode = findOutputNodeByInputNodeWithSameId(inputNode);
+//      if (outputNode == null) {
+//        return null;
+//      }
+//      return new SimpleNodeBuilder(this, outputNode, inputNode, inputNode);
+//    }
+//    return null;
+    SNode outputNode = findOutputNodeByInputAndTemplateNode(inputNode, templateNode);
+    if(outputNode != null) {
       return new SimpleNodeBuilder(this, outputNode, inputNode, inputNode);
     }
     return null;
   }
+
+  public SNode findOutputNodeByInputAndTemplateNode(SNode inputNode, SNode templateNode) {
+    SNode outputNode = myTemplateNodeAndInputNodeToOutputNodeMap.get(new Pair(templateNode, inputNode));
+    if(outputNode == null) {
+      // input node has been copied?
+      if (inputNode == templateNode) {
+        outputNode = findOutputNodeByInputNodeWithSameId(inputNode);
+      }
+    }
+    return outputNode;
+  }
+
+  /*package*/ void addOutputNodeByTemplateNodeAndInputNode(SNode templateNode, SNode inputNode, SNode outputNode) {
+    // todo: combination of (templateN, inputN) -> outputN
+    // todo: is not unique
+    // todo: generator should repotr error on attempt to obtain not unique output-node
+    myTemplateNodeAndInputNodeToOutputNodeMap.put(new Pair(templateNode, inputNode), outputNode);
+  }
+
 
   public List<INodeBuilder> findTopBuildersForSource(SNode inputNode) {
     List<INodeBuilder> result = new ArrayList<INodeBuilder>();
