@@ -1,19 +1,17 @@
 package jetbrains.mps.resolve;
 
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.nodeEditor.*;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.WeakSet;
-import jetbrains.mps.ide.command.CommandProcessor;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.util.Set;
-import java.util.List;
-import java.util.HashSet;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -24,7 +22,6 @@ import java.util.ArrayList;
  */
 public class AutoResolver extends GenericEditorUpdater implements IGutterMessageOwner {
 
-  private static final Logger LOG = Logger.getLogger(AutoResolver.class);
   private static final int CHECK_DELAY = 600;
 
   //private WeakSet<SNode> myCheckedRoots = new WeakSet<SNode>();
@@ -81,7 +78,7 @@ public class AutoResolver extends GenericEditorUpdater implements IGutterMessage
     return true;
   }
 
-  private Set<SReference> collectBadReferences(AbstractEditorComponent editor) {
+  private Set<SReference> collectBadReferences(IEditorComponent editor) {
     Set<SReference> result = new HashSet<SReference>();
     for (SNode node : CollectionUtil.iteratorAsIterable(editor.getRootCell().getSNode().depthFirstChildren(true))) {
       for (SReference ref : node.getReferences()) {
