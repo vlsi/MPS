@@ -389,7 +389,7 @@ public class RuleUtil {
           if (_outputNodes.size() == 1) {
             // todo: this is not needed - this is done inside copyNodeFromInputNode()
             // todo: instead 'addTopOutputNodesByInputNode' (if input is changed)
-            myGenerator.addOutputNodeByTemplateNodeAndInputNode(templateNode, inputNode, _outputNodes.get(0));
+            myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, templateNode, _outputNodes.get(0));
           }
           outputNodes.addAll(_outputNodes);
         }
@@ -518,7 +518,7 @@ public class RuleUtil {
     if (registerTopOutput) {
       myGenerator.addTopOutputNodeByInputNode(inputNode, outputNode);
     }
-    myGenerator.addOutputNodeByTemplateNodeAndInputNode(templateNode, inputNode, outputNode);
+    myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, templateNode, outputNode);
     myGenerator.addOutputNodeByRuleNameAndInputNode(templateNode, ruleName, inputNode, outputNode);
     myGenerator.addTemplateNodeByOutputNode(outputNode, templateNode);
     myGenerator.addOutputNodeByTemplateNode(templateNode, outputNode);
@@ -571,10 +571,10 @@ public class RuleUtil {
       if (outputNodes.size() == 1) {
         SNode outputNode = outputNodes.get(0);
         { // register copied node
-          myGenerator.addOutputNodeByTemplateNodeAndInputNode(templateNode, inputNode, outputNode);
+          myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, templateNode, outputNode);
           myGenerator.addOutputNodeByRuleNameAndInputNode(templateNode, ruleName, inputNode, outputNode);
           // here the inputNode plays role of template node
-          myGenerator.addOutputNodeByTemplateNodeAndInputNode(inputNode, inputNode, outputNode);
+          myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, inputNode, outputNode);
 // do we really need this?          myGenerator.addTemplateNodeByOutputNode(outputNode, inputNode);
 // do we really need this?          myGenerator.addOutputNodeByTemplateNode(inputNode, outputNode);
         }
@@ -589,10 +589,10 @@ public class RuleUtil {
     }
 
     { // register copied node
-      myGenerator.addOutputNodeByTemplateNodeAndInputNode(templateNode, inputNode, outputNode);
+      myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, templateNode, outputNode);
       myGenerator.addOutputNodeByRuleNameAndInputNode(templateNode, ruleName, inputNode, outputNode);
       // here the inputNode plays role of template node
-      myGenerator.addOutputNodeByTemplateNodeAndInputNode(inputNode, inputNode, outputNode);
+      myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, inputNode, outputNode);
       myGenerator.addTemplateNodeByOutputNode(outputNode, inputNode);
       myGenerator.addOutputNodeByTemplateNode(inputNode, outputNode);
     }

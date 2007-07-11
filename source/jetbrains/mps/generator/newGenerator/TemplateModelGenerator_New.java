@@ -357,7 +357,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     return outputNode;
   }
 
-  /*package*/ void addOutputNodeByTemplateNodeAndInputNode(SNode templateNode, SNode inputNode, SNode outputNode) {
+  /*package*/ void addOutputNodeByInputAndTemplateNode(SNode inputNode, SNode templateNode, SNode outputNode) {
     // todo: combination of (templateN, inputN) -> outputN
     // todo: is not unique
     // todo: generator should repotr error on attempt to obtain not unique output-node
