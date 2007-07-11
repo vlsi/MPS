@@ -1,7 +1,7 @@
 package jetbrains.mps.vcs.ui;
 
 import jetbrains.mps.nodeEditor.UIEditorComponent;
-import jetbrains.mps.nodeEditor.InspectorEditorComponent;
+import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.nodeEditor.IGutterMessageOwner;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;

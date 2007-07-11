@@ -3,7 +3,7 @@ package jetbrains.mps.ide;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.nodeEditor.InspectorEditorComponent;
+import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.nodeEditor.UIEditorComponent;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;

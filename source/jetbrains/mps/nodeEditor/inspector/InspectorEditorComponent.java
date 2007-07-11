@@ -4,7 +4,7 @@
  * Date: Feb 25, 2004
  * Time: 2:04:52 PM
  */
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.nodeEditor.inspector;
 
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IEditor;
@@ -12,6 +12,10 @@ import jetbrains.mps.ide.navigation.EditorInfo;
 import jetbrains.mps.ide.navigation.HistoryItem;
 import jetbrains.mps.ide.navigation.IHistoryItem;
 import jetbrains.mps.ide.navigation.InspectorHistoryItem;
+import jetbrains.mps.nodeEditor.AbstractEditorComponent;
+import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeProxy;

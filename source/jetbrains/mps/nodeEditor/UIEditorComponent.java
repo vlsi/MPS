@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNodeProxy;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.GenericContext;
+import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
