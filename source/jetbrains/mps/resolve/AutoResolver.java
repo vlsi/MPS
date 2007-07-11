@@ -30,7 +30,7 @@ public class AutoResolver extends GenericEditorUpdater implements IGutterMessage
     return CHECK_DELAY;
   }
 
-  protected boolean updateEditor(final AbstractEditorComponent editor) {
+  protected boolean updateEditor(final IEditorComponent editor) {
     if (editor == null || editor.getRootCell() == null) {
       return false;
     }

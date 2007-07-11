@@ -134,7 +134,7 @@ public abstract class GenericEditorUpdater implements IComponentLifecycle {
     return "LAST_UPDATE_" + getClass().getName();
   }
 
-  protected abstract boolean updateEditor(AbstractEditorComponent editor);
+  protected abstract boolean updateEditor(IEditorComponent editor);
 
   protected abstract int getCheckDelay();
 }
