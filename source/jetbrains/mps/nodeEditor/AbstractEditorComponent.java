@@ -473,7 +473,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   protected AbstractAction registerNodeAction(final MPSAction action, String keyStroke) {
-    AbstractAction result;
     KeyStroke stroke = KeyStroke.getKeyStroke(keyStroke);
     if (stroke != null) {
       if (!myActionProxies.containsKey(stroke)) {
