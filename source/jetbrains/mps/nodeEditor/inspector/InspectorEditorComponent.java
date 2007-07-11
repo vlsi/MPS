@@ -92,11 +92,6 @@ public final class InspectorEditorComponent extends AbstractEditorComponent impl
     return createRootCell(null);
   }
 
-  public SNode getInspectedNode() {
-    return getEditedNode();
-  }
-
-
   public AbstractEditorComponent getCurrentEditorComponent() {
     return this;
   }
