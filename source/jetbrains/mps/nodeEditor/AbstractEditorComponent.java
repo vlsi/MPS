@@ -47,7 +47,7 @@ import java.util.List;
  * Author: Sergey Dmitriev
  * Created Sep 14, 2003
  */
-public abstract class AbstractEditorComponent extends JComponent implements Scrollable, IActionDataProvider {
+public abstract class AbstractEditorComponent extends JComponent implements Scrollable, IActionDataProvider, IEditorComponent {
   private static final Logger LOG = Logger.getLogger(AbstractEditorComponent.class);
   public static final String EDITOR_POPUP_MENU_ACTIONS = "editor-popup-menu-actions";
 
