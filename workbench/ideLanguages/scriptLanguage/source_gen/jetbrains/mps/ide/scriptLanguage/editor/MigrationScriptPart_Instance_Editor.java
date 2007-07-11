@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
 
@@ -287,7 +288,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
   }
   public EditorCell createAffectedInstanceConceptReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new MigrationScriptPart_Instance_Editor_affectedInstanceConcept_InlineComponent());
+    provider.setAuxiliaryCellProvider(new MigrationScriptPart_Instance_Editor.MigrationScriptPart_Instance_Editor_affectedInstanceConcept_InlineComponent());
     EditorCell editorCell = provider.createEditorCell(context);
     MigrationScriptPart_Instance_Editor.setupBasic_AffectedInstanceConceptReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -366,4 +367,52 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+  public static class MigrationScriptPart_Instance_Editor_affectedInstanceConcept_InlineComponent extends AbstractCellProvider {
+
+    public  MigrationScriptPart_Instance_Editor_affectedInstanceConcept_InlineComponent() {
+      super();
+    }
+
+    private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
+      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551438480");
+    }
+    private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+      editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
+    }
+
+    public EditorCell createEditorCell(EditorContext context) {
+      return this.createEditorCell(context, this.getSNode());
+    }
+    public EditorCell createEditorCell(EditorContext context, SNode node) {
+      return this.createNameCell(context, node);
+    }
+    public EditorCell createNameCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+      CellProviderWithRole provider = aProvider;
+      provider.setAuxiliaryCellProvider(null);
+      EditorCell editorCell = provider.createEditorCell(context);
+      MigrationScriptPart_Instance_Editor.MigrationScriptPart_Instance_Editor_affectedInstanceConcept_InlineComponent.setupBasic_NameCell(editorCell, node, context);
+      if(editorCell instanceof EditorCell_Label) {
+        MigrationScriptPart_Instance_Editor.MigrationScriptPart_Instance_Editor_affectedInstanceConcept_InlineComponent.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+      }
+      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+      return editorCell;
+    }
+    public EditorCell createNameCell(EditorContext context, SNode node) {
+      CellProviderWithRole provider = new PropertyCellProvider(node, context);
+      provider.setRole("name");
+      provider.setNoTargetText("");
+      provider.setReadOnly(true);
+      provider.setAllowsEmptyTarget(false);
+      EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
+      SNode attributeConcept = provider.getRoleAttribute();
+      Class attributeKind = provider.getRoleAttributeClass();
+      if(attributeConcept != null) {
+        IOperationContext opContext = context.getOperationContext();
+        EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+        return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      } else
+      return cellWithRole;
+    }
+}
+
 }
