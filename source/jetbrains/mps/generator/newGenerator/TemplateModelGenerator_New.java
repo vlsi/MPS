@@ -10,10 +10,7 @@ import jetbrains.mps.generator.template.TemplateGenUtil;
 import jetbrains.mps.generator.template.TemplateSwitchGraph;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.structure.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Pair;
@@ -244,28 +241,6 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     myRootsNotToCopy.add(inputNode);
   }
 
-  private INodeBuilder findOutputNodeByRuleNameAndInputNode(String ruleName, SNode inputNode) {
-    // todo: combination (mappingName, inputN) -> outputN is not unique (in some rare cases)
-    // todo: generator should report error on attempt to access not unique outputN
-    return myRuleNameAndInputNodeToBuilderMap.get(new Pair(ruleName, inputNode));
-  }
-
-  /*package*/ SNode findInputNodeByRuleNameAndOutputNode(String ruleName, SNode outputNode) {
-    return myRuleNameAndOutputNodeToInputNode.get(new Pair(ruleName, outputNode));
-  }
-
-  public void addOutputNodeByRuleNameAndInputNode(SNode templateNode, String ruleName, SNode inputNode, SNode outputNode) {
-    if (ruleName == null) return;
-    Pair key = new Pair(ruleName, inputNode);
-    if (!myRuleNameAndInputNodeToBuilderMap.containsKey(key)) {
-      myRuleNameAndInputNodeToBuilderMap.put(key, new SimpleNodeBuilder(this, outputNode, templateNode, inputNode));
-      Pair key2 = new Pair(ruleName, outputNode);
-      if (!myRuleNameAndOutputNodeToInputNode.containsKey(key2)) {
-        myRuleNameAndOutputNodeToInputNode.put(key2, inputNode);
-      }
-    }
-  }
-
   public SNode findTemplateNodeByOutputNode(SNode outputNode) {
     return myOutputNodeToTemplateNodeMap.get(outputNode);
   }
@@ -310,8 +285,35 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   }
 
   public INodeBuilder findNodeBuilderForSource(SNode inputNode, String mappingName) {
-    return findOutputNodeByRuleNameAndInputNode(mappingName, inputNode);
+    return findOutputNodeByInputNodeAndMappingName(inputNode, mappingName);
   }
+
+  public INodeBuilder findNodeBuilderForSource(INodeAdapter ba, String mappingName) {
+    return findNodeBuilderForSource(BaseAdapter.fromAdapter(ba), mappingName);
+  }
+
+  private INodeBuilder findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName) {
+    // todo: combination (mappingName, inputN) -> outputN is not unique (in some rare cases)
+    // todo: generator should report error on attempt to access not unique outputN
+    return myRuleNameAndInputNodeToBuilderMap.get(new Pair(mappingName, inputNode));
+  }
+
+  /*package*/ SNode findInputNodeByMappingNameAndOutputNode(String mappingName, SNode outputNode) {
+    return myRuleNameAndOutputNodeToInputNode.get(new Pair(mappingName, outputNode));
+  }
+
+  /*package*/ void addOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName, SNode outputNode) {
+    if (mappingName == null) return;
+    Pair key = new Pair(mappingName, inputNode);
+    if (!myRuleNameAndInputNodeToBuilderMap.containsKey(key)) {
+      myRuleNameAndInputNodeToBuilderMap.put(key, new SimpleNodeBuilder(this, outputNode, inputNode));
+      Pair key2 = new Pair(mappingName, outputNode);
+      if (!myRuleNameAndOutputNodeToInputNode.containsKey(key2)) {
+        myRuleNameAndOutputNodeToInputNode.put(key2, inputNode);
+      }
+    }
+  }
+
 
   /**
    * @deprecated
@@ -319,7 +321,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   public INodeBuilder findCopyingNodeBuilderForSource(SNode inputNode) {
     SNode outputNode = findOutputNodeByInputAndTemplateNode(inputNode, inputNode);
     if (outputNode != null) {
-      return new SimpleNodeBuilder(this, outputNode, inputNode, inputNode);
+      return new SimpleNodeBuilder(this, outputNode, inputNode);
     }
     return null;
   }

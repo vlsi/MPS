@@ -518,7 +518,7 @@ public class RuleUtil {
       myGenerator.addTopOutputNodeByInputNode(inputNode, outputNode);
     }
     myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, templateNode, outputNode);
-    myGenerator.addOutputNodeByRuleNameAndInputNode(templateNode, mappingName, inputNode, outputNode);
+    myGenerator.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
     myGenerator.addTemplateNodeByOutputNode(outputNode, templateNode);
     myGenerator.addOutputNodeByTemplateNode(templateNode, outputNode);
     myOutputModel.addLanguage(templateNode.getLanguage(myGenerator.getScope()));
@@ -571,7 +571,7 @@ public class RuleUtil {
         SNode outputNode = outputNodes.get(0);
         { // register copied node
           myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, templateNode, outputNode);
-          myGenerator.addOutputNodeByRuleNameAndInputNode(templateNode, mappingName, inputNode, outputNode);
+          myGenerator.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
           // here the inputNode plays role of template node
           myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, inputNode, outputNode);
 // do we really need this?          myGenerator.addTemplateNodeByOutputNode(outputNode, inputNode);
@@ -590,7 +590,7 @@ public class RuleUtil {
 
     { // register copied node
       myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, templateNode, outputNode);
-      myGenerator.addOutputNodeByRuleNameAndInputNode(templateNode, mappingName, inputNode, outputNode);
+      myGenerator.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
       // here the inputNode plays role of template node
       myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, inputNode, outputNode);
       myGenerator.addTemplateNodeByOutputNode(outputNode, inputNode);
