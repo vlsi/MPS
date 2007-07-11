@@ -24,10 +24,10 @@ import java.util.List;
  * @author Kostik
  */
 public class UIEditorComponent extends AbstractEditorComponent implements IEditorOpener {
-  private InspectorEditorComponent myInspector;
+  private IInspectorEditorComponent myInspector;
   private EditorsHistory myEditorsHistory;
 
-  public UIEditorComponent(IOperationContext operationContext, InspectorEditorComponent inspector) {
+  public UIEditorComponent(IOperationContext operationContext, IInspectorEditorComponent inspector) {
     super(operationContext);
     unregisterKeyboardAction(KeyStroke.getKeyStroke("ESCAPE"));
     myInspector = inspector;

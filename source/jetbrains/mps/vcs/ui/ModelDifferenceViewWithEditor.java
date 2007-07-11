@@ -1,23 +1,25 @@
 package jetbrains.mps.vcs.ui;
 
-import jetbrains.mps.nodeEditor.UIEditorComponent;
-import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.nodeEditor.IGutterMessageOwner;
+import jetbrains.mps.nodeEditor.UIEditorComponent;
+import jetbrains.mps.nodeEditor.inspector.IInspectorEditorComponent;
+import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.vcs.*;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.vcs.*;
 
 import javax.swing.JPanel;
-import javax.swing.JSplitPane;
 import javax.swing.JScrollPane;
+import javax.swing.JSplitPane;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.HashSet;
 
 /**
  * Created by IntelliJ IDEA.
@@ -29,7 +31,7 @@ import java.util.HashSet;
 public class ModelDifferenceViewWithEditor extends JPanel implements IGutterMessageOwner {
   private IOperationContext myOperationContext;
   private UIEditorComponent myModelEditorComponent;
-  public InspectorEditorComponent myModelInspector;
+  public IInspectorEditorComponent myModelInspector;
   private Set<SNodeId> myChangedNodes = new HashSet<SNodeId>();
   private Set<SNodeId> myAddedNodes = new HashSet<SNodeId>();
   private SNode myNewRoot;
@@ -44,7 +46,7 @@ public class ModelDifferenceViewWithEditor extends JPanel implements IGutterMess
 
     JSplitPane splitter = new JSplitPane(JSplitPane.VERTICAL_SPLIT,
             new JScrollPane(myModelEditorComponent),
-            new JScrollPane(myModelInspector));
+            new JScrollPane((Component) myModelInspector));
     splitter.setDividerLocation(500);
 
     add(splitter, BorderLayout.CENTER);
