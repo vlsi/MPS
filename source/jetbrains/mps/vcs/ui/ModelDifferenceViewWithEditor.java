@@ -3,7 +3,7 @@ package jetbrains.mps.vcs.ui;
 import jetbrains.mps.nodeEditor.IGutterMessageOwner;
 import jetbrains.mps.nodeEditor.UIEditorComponent;
 import jetbrains.mps.nodeEditor.inspector.IInspectorEditorComponent;
-import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
+import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponentFactory;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
@@ -39,7 +39,7 @@ public class ModelDifferenceViewWithEditor extends JPanel implements IGutterMess
 
   public ModelDifferenceViewWithEditor(IOperationContext operationContext) {
     myOperationContext = operationContext;
-    myModelInspector = new InspectorEditorComponent();
+    myModelInspector = InspectorEditorComponentFactory.getInspectorEditorComponent();
     myModelEditorComponent = new UIEditorComponent(operationContext, myModelInspector);
 
     setLayout(new BorderLayout());
