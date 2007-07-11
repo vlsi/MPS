@@ -2591,6 +2591,22 @@
         <property name="text" value="static" />
         <property name="drawBorder" value="false" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1184155927165">
+        <property name="text" value="final" />
+        <property name="textFgColor" value="DARK_BLUE" />
+        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1184155936980">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1184155936981">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1184156033142">
+              <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1184156033791">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1184156037876">
+                  <link role="property" targetNodeId="17.1176718929932" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_node" id="1184156033143" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1084188979614">
         <property name="noTargetText" value="&lt;no type&gt;" />
         <property name="nullRefText" value="&lt;no type&gt;" />
@@ -2632,6 +2648,18 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1084188979619">
         <property name="drawBorder" value="false" />
         <property name="text" value=";" />
+      </node>
+    </node>
+    <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1184156044214">
+      <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1184156044215">
+        <property name="vertical" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1184156045517">
+          <property name="text" value="isFinal" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1184156048574">
+          <link role="relationDeclaration" targetNodeId="17.1176718929932" />
+        </node>
       </node>
     </node>
   </node>
