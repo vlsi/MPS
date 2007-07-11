@@ -52,6 +52,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_DeclarationBox(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075289941063");
     editorCell.setDrawBorder(false);
+    editorCell.addKeyMap(new FieldDeclaration_keyMap());
   }
   private static void setupLabel_TypeCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
