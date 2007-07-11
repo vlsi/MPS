@@ -142,7 +142,7 @@ public class NodeHighlightManager implements IGutterMessageOwner {
     private String myMessage;
     private IGutterMessageOwner myOwner;
 
-    public HighlighterMessage(SNode node, Color color, String message, IGutterMessageOwner owner, AbstractEditorComponent editor) {
+    public HighlighterMessage(SNode node, Color color, String message, IGutterMessageOwner owner, IEditorComponent editor) {
       super(editor, node);
       myColor = color;
       myMessage = message;

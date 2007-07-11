@@ -91,7 +91,7 @@ public class AutoResolver extends GenericEditorUpdater implements IGutterMessage
   }
 
   private static class MyResolverMessage extends NodeHighlightManager.HighlighterMessage {
-    public MyResolverMessage(SNode errorNode, Color color, String string, AbstractEditorComponent editor, AutoResolver autoResolver) {
+    public MyResolverMessage(SNode errorNode, Color color, String string, IEditorComponent editor, AutoResolver autoResolver) {
       super(errorNode, color, string, autoResolver, editor);
     }
 
