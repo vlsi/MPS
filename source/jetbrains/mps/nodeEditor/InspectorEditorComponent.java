@@ -8,10 +8,10 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.ide.navigation.EditorInfo;
 import jetbrains.mps.ide.navigation.HistoryItem;
 import jetbrains.mps.ide.navigation.IHistoryItem;
 import jetbrains.mps.ide.navigation.InspectorHistoryItem;
-import jetbrains.mps.ide.navigation.EditorInfo;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeProxy;
@@ -54,7 +54,7 @@ public final class InspectorEditorComponent extends AbstractEditorComponent impl
 
   @Nullable
   public EditorInfo getEditorInfo() {
-    return null;  
+    return null;
   }
 
   public void editNode(SNode semanticNode, IOperationContext operationContext) {
@@ -103,7 +103,7 @@ public final class InspectorEditorComponent extends AbstractEditorComponent impl
   }
 
   public <T> T get(Class<T> cls) {
-    T result =  super.get(cls);
+    T result = super.get(cls);
     if (result != null) return result;
     if (cls == IEditor.class) {
       return (T) this;
