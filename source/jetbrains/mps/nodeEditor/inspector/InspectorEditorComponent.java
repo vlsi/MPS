@@ -27,9 +27,9 @@ import javax.swing.JComponent;
 import javax.swing.event.ChangeListener;
 import java.util.List;
 
-public final class InspectorEditorComponent extends AbstractEditorComponent implements IInspectorEditorComponent {
+final class InspectorEditorComponent extends AbstractEditorComponent implements IInspectorEditorComponent {
 
-  public InspectorEditorComponent() {
+  InspectorEditorComponent() {
     super(null);
 
     myNodeProxy = new SNodeProxy((SNode) null);
