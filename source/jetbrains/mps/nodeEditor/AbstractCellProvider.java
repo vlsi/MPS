@@ -13,9 +13,6 @@ import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 public abstract class AbstractCellProvider {
   private SNode myNode;
 
-  /**
-   * @deprecated
-   */
   public AbstractCellProvider(SNode node) {
     myNode = node;
   }
