@@ -16,11 +16,11 @@ import javax.swing.event.ChangeListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class InspectorPaneEditorComponent extends AbstractEditorComponent implements IInspectorEditorComponent {
+final class InspectorPaneEditorComponent extends AbstractEditorComponent implements IInspectorEditorComponent {
 
   private final List<IInspectorEditorComponent> myInspectorEditorComponents = new ArrayList<IInspectorEditorComponent>();
 
-  public InspectorPaneEditorComponent() {
+  InspectorPaneEditorComponent() {
     super(null);
     reinitEditor();
   }
