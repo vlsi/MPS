@@ -13,6 +13,12 @@ import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
+import java.util.List;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.constraints.Type_Behavior;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 
 public class VariableDeclaration_NameCellComponent extends AbstractCellProvider {
 
@@ -43,7 +49,7 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
       VariableDeclaration_NameCellComponent.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new VariableDeclaration_name_postfixCellMenu()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new VariableDeclaration_NameCellComponent.VariableDeclaration_name_postfixCellMenu()}));
     return editorCell;
   }
   public EditorCell createNameCell(EditorContext context, SNode node) {
@@ -62,4 +68,22 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
     } else
     return cellWithRole;
   }
+  public static class VariableDeclaration_name_postfixCellMenu extends AbstractCellMenuPart_PropertyPostfixHints {
+
+    public  VariableDeclaration_name_postfixCellMenu() {
+    }
+
+    public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
+      List<String> result;
+      SNode nodeType = SLinkOperations.getTarget(node, "type", true);
+      if(nodeType != null) {
+        result = Type_Behavior.callVirtual_getVariableSuffixes_1182416669983(nodeType);
+      } else
+      {
+        result = ListOperations.createList(new String[]{});
+      }
+      return result;
+    }
+}
+
 }

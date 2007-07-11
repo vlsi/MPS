@@ -15,6 +15,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.ConceptPropertyCellProvider;
+import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class BinaryOperation_Editor extends DefaultNodeEditor {
 
@@ -96,7 +97,7 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
       BinaryOperation_Editor.setupLabel_CellModel_ConceptProperty((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new BinaryOperation_replaceWith_BinaryOperation_cellMenu()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new BinaryOperation_Editor.BinaryOperation_replaceWith_BinaryOperation_cellMenu()}));
     return editorCell;
   }
   public EditorCell createCellModel_ConceptProperty(EditorContext context, SNode node) {
@@ -142,4 +143,14 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+  public static class BinaryOperation_replaceWith_BinaryOperation_cellMenu extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+
+    public  BinaryOperation_replaceWith_BinaryOperation_cellMenu() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.baseLanguage.structure.BinaryOperation";
+    }
+}
+
 }
