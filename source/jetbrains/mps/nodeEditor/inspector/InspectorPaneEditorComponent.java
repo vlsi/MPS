@@ -18,7 +18,7 @@ import java.util.List;
 
 public final class InspectorPaneEditorComponent extends AbstractEditorComponent implements IInspectorEditorComponent {
 
-  private final List<InspectorEditorComponent> myInspectorEditorComponents = new ArrayList<InspectorEditorComponent>();
+  private final List<IInspectorEditorComponent> myInspectorEditorComponents = new ArrayList<IInspectorEditorComponent>();
 
   public InspectorPaneEditorComponent() {
     super(null);
@@ -37,7 +37,7 @@ public final class InspectorPaneEditorComponent extends AbstractEditorComponent 
   public EditorCell createRootCell(List<SModelEvent> events) {
     EditorContext editorContext = getEditorContext();
     EditorCell_Collection editorCell_collection = EditorCell_Collection.createVertical(editorContext, null);
-    for (InspectorEditorComponent inspectorEditorComponent : myInspectorEditorComponents) {
+    for (IInspectorEditorComponent inspectorEditorComponent : myInspectorEditorComponents) {
       editorCell_collection.addEditorCell(inspectorEditorComponent.createRootCell(events));
     }
     return editorCell_collection;
