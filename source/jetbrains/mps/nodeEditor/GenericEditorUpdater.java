@@ -122,7 +122,7 @@ public abstract class GenericEditorUpdater implements IComponentLifecycle {
     return false;
   }
 
-  private long getLastUpdateTime(AbstractEditorComponent component) {
+  private long getLastUpdateTime(IEditorComponent component) {
     Long lastUpdate = (Long) component.getUserData(getLastUpdateKey());
     if (lastUpdate == null) {
       lastUpdate = (long) 0;
