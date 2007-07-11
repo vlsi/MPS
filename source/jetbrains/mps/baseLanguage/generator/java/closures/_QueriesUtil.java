@@ -93,14 +93,13 @@ public class _QueriesUtil {
     return null;
   }
 
-  public static SNode resolve_MethodParm_CopyOfParm(SNode paramDecl, SNode templateNode, ITemplateGenerator generator) {
+  public static SNode resolve_MethodParm_CopyOfParm(SNode paramDecl_input, SNode templateNode, ITemplateGenerator generator) {
     // suppose that parm is simply copied to target model
-    INodeBuilder builder = generator.findNodeBuilderForSourceAndTemplate(paramDecl, paramDecl);
-    if (builder == null) {
-      generator.showErrorMessage(paramDecl, templateNode, "couldn't find builder for method parameter");
-      return null;
+    SNode paramDecl_output = generator.findCopiedOutputNodeForInputNode(paramDecl_input);
+    if (paramDecl_output == null) {
+      generator.showErrorMessage(paramDecl_input, templateNode, "couldn't output method parameter");
     }
-    return builder.getTargetNode();
+    return paramDecl_output;
   }
 
   public static SNode resolve_VariableDeclStmt_Variable_ClosureContext_generatedField(SNode localVarDeclStmt, ITemplateGenerator generator) {

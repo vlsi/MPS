@@ -39,7 +39,11 @@ public interface ITemplateGenerator {
 
   INodeBuilder findNodeBuilderForSource(INodeAdapter sourceNodeAdapter, String mappingName);
 
+  /**
+   * @deprecated
+   */
   INodeBuilder findCopyingNodeBuilderForSource(SNode sourceNode);
+  SNode findCopiedOutputNodeForInputNode(SNode inputNode);
 
 
   /**

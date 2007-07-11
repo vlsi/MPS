@@ -311,44 +311,35 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     return findOutputNodeByRuleNameAndInputNode(mappingName, inputNode);
   }
 
-  //todo this method supposes that inputNode is not changed - it should be deprecated after going to new generator
-  //todo may be better to have always hashtable for copied nodes???
+  /**
+   * @deprecated
+   */
   public INodeBuilder findCopyingNodeBuilderForSource(SNode inputNode) {
-    return findNodeBuilderForSourceAndTemplate(inputNode, inputNode);
+    SNode outputNode = findOutputNodeByInputAndTemplateNode(inputNode, inputNode);
+    if (outputNode != null) {
+      return new SimpleNodeBuilder(this, outputNode, inputNode, inputNode);
+    }
+    return null;
   }
 
-  public SNode findCopyingOutputNodeForInputNode(SNode inputNode) {
-    INodeBuilder builder = findCopyingNodeBuilderForSource(inputNode);
-    if (builder == null) {
-      return null;
-    }
-    return builder.getTargetNode();
+  public SNode findCopiedOutputNodeForInputNode(SNode inputNode) {
+    return findOutputNodeByInputAndTemplateNode(inputNode, inputNode);
   }
 
   /**
    * @deprecated
    */
   public INodeBuilder findNodeBuilderForSourceAndTemplate(SNode inputNode, SNode templateNode) {
-//    INodeBuilder builder = myTemplateNodeAndInputNodeToOutputNodeMap.get(new Pair<SNode, SNode>(templateNode, inputNode));
-//    if (builder != null) return builder;
-//    if (inputNode == templateNode) {
-//      SNode outputNode = findOutputNodeByInputNodeWithSameId(inputNode);
-//      if (outputNode == null) {
-//        return null;
-//      }
-//      return new SimpleNodeBuilder(this, outputNode, inputNode, inputNode);
-//    }
-//    return null;
     SNode outputNode = findOutputNodeByInputAndTemplateNode(inputNode, templateNode);
-    if(outputNode != null) {
-      return new SimpleNodeBuilder(this, outputNode, inputNode, inputNode);
+    if (outputNode != null) {
+      return new SimpleNodeBuilder(this, outputNode, templateNode, inputNode);
     }
     return null;
   }
 
   public SNode findOutputNodeByInputAndTemplateNode(SNode inputNode, SNode templateNode) {
     SNode outputNode = myTemplateNodeAndInputNodeToOutputNodeMap.get(new Pair(templateNode, inputNode));
-    if(outputNode == null) {
+    if (outputNode == null) {
       // input node has been copied?
       if (inputNode == templateNode) {
         outputNode = findOutputNodeByInputNodeWithSameId(inputNode);

@@ -27,7 +27,7 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
   public void executeIndependentResolve(TemplateModelGenerator_New generator) {
     {
       // try to find target node if it was reduced from the copied node
-      SNode outputTargetNode = generator.findCopyingOutputNodeForInputNode(myInputTargetNode);
+      SNode outputTargetNode = generator.findCopiedOutputNodeForInputNode(myInputTargetNode);
       if (outputTargetNode != null) {
         getOutputNode().addReferent(myInputReference.getRole(), outputTargetNode);
         setSuccess(true);
