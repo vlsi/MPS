@@ -332,11 +332,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
    * @deprecated
    */
   public INodeBuilder findNodeBuilderForSourceAndTemplate(SNode inputNode, SNode templateNode) {
-    SNode outputNode = findOutputNodeByInputAndTemplateNode(inputNode, templateNode);
-    if (outputNode != null) {
-      return new SimpleNodeBuilder(this, outputNode, templateNode, inputNode);
-    }
-    return null;
+    throw new RuntimeException("method is not supported. Use method 'findOutputNodeByInputAndTemplateNode'");
   }
 
   public SNode findOutputNodeByInputAndTemplateNode(SNode inputNode, SNode templateNode) {
