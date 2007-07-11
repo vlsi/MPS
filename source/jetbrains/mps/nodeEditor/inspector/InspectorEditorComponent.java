@@ -34,7 +34,6 @@ public final class InspectorEditorComponent extends AbstractEditorComponent impl
 
     myNodeProxy = new SNodeProxy((SNode) null);
     reinitEditor();
-    rebuildEditorContent();
   }
 
   private void reinitEditor() {
@@ -43,6 +42,7 @@ public final class InspectorEditorComponent extends AbstractEditorComponent impl
     } else {
       setEditorContext(new EditorContext(this, getEditedNode().getModel(), getOperationContext()));
     }
+    rebuildEditorContent();
   }
 
   public void addChangeListener(@NotNull ChangeListener listener) {
@@ -78,7 +78,6 @@ public final class InspectorEditorComponent extends AbstractEditorComponent impl
     }
 
     reinitEditor();
-    rebuildEditorContent();
     repaint();
   }
 
