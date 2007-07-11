@@ -43,7 +43,7 @@ public class FastNodeFinder {
     }
 
     if (map.containsKey(concept)) {
-      final List<SNode> result = new LinkedList<SNode>();
+      final List<SNode> result = new ArrayList<SNode>();
       for (WeakReference<SNode> n : map.get(concept)) {
         SNode node = n.get();
         if (node != null) {
