@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class InspectorPaneEditorComponent extends AbstractEditorComponent {
+public final class InspectorPaneEditorComponent extends AbstractEditorComponent implements IInspectorEditorComponent {
 
   private final List<InspectorEditorComponent> myInspectorEditorComponents = new ArrayList<InspectorEditorComponent>();
 
