@@ -245,6 +245,8 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   }
 
   private INodeBuilder findOutputNodeByRuleNameAndInputNode(String ruleName, SNode inputNode) {
+    // todo: combination (mappingName, inputN) -> outputN is not unique (in some rare cases)
+    // todo: generator should report error on attempt to access not unique outputN
     return myRuleNameAndInputNodeToBuilderMap.get(new Pair(ruleName, inputNode));
   }
 
