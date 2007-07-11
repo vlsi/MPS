@@ -4,12 +4,78 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.EditorCellKeyMap;
 import jetbrains.mps.nodeEditor.EditorCellKeyMapAction;
+import java.awt.event.KeyEvent;
+import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
+import javax.swing.JOptionPane;
 
 public class TestCoercion_Keymap extends EditorCellKeyMap {
 
   public  TestCoercion_Keymap() {
     this.setApplicableToEveryModel(true);
     EditorCellKeyMapAction action;
-    this.putAction("ctrl+alt+shift", "VK_T", new TestCoercion_Keymap_Action0());
+    this.putAction("ctrl+alt+shift", "VK_T", new TestCoercion_Keymap.TestCoercion_Keymap_Action0());
   }
+  public static class TestCoercion_Keymap_Action0 extends EditorCellKeyMapAction {
+
+    public  TestCoercion_Keymap_Action0() {
+      this.setShownInPopupMenu(true);
+    }
+
+    public String getDescriptionText() {
+      return "try to coerce type";
+    }
+    public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
+      EditorCell contextCell = editorContext.getContextCell();
+      if((contextCell == null)) {
+        return false;
+      }
+      SNode contextNode = contextCell.getSNode();
+      if(contextNode == null) {
+        return false;
+      }
+      return true;
+    }
+    public void execute(KeyEvent keyEvent, EditorContext editorContext) {
+      EditorCell contextCell = editorContext.getContextCell();
+      this.execute_internal(keyEvent, editorContext, contextCell.getSNode());
+    }
+    public void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node) {
+      SNode type = TypeChecker.getInstance().getTypeOf(node);
+      String text = "type: " + type;
+      {
+        text = text + "\n\ncoerce to SequenceType";
+        SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType"), true);
+        text = text + "\nweak  : " + coercedType;
+        coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType"), false);
+        text = text + "\nstrong: " + coercedType;
+      }
+      {
+        text = text + "\n\ncoerce to ListType";
+        SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType"), true);
+        text = text + "\nweak  : " + coercedType;
+        coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType"), false);
+        text = text + "\nstrong: " + coercedType;
+      }
+      {
+        text = text + "\n\ncoerce to ClassifierType";
+        SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
+        text = text + "\nweak  : " + coercedType;
+        coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
+        text = text + "\nstrong: " + coercedType;
+      }
+      {
+        text = text + "\n\ncoerce to Iterable<..>";
+        SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce(type, new Pattern_(), true);
+        text = text + "\nweak  : " + coercedType;
+        coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce(type, new Pattern_1(), false);
+        text = text + "\nstrong: " + coercedType;
+      }
+      JOptionPane.showMessageDialog(null, text, node.getDebugText(), JOptionPane.INFORMATION_MESSAGE);
+    }
+}
+
 }

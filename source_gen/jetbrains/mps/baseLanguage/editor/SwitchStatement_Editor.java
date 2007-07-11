@@ -16,6 +16,12 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
+import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
+import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
+import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class SwitchStatement_Editor extends DefaultNodeEditor {
 
@@ -288,7 +294,7 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
   }
   public EditorCell createCaseList(EditorContext context, SNode node) {
     if(this.myCaseListHandler_caseList_ == null) {
-      this.myCaseListHandler_caseList_ = new SwitchStatement_Editor_CaseListHandler_caseList_(node, "case", context);
+      this.myCaseListHandler_caseList_ = new SwitchStatement_Editor.SwitchStatement_Editor_CaseListHandler_caseList_(node, "case", context);
     }
     EditorCell_Collection editorCell = this.myCaseListHandler_caseList_.createCells(context, new CellLayout_Vertical(), false);
     SwitchStatement_Editor.setupBasic_CaseList(editorCell, node, context);
@@ -352,4 +358,43 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+  public static class SwitchStatement_Editor_CaseListHandler_caseList_ extends RefNodeListHandler {
+
+    public  SwitchStatement_Editor_CaseListHandler_caseList_(SNode ownerNode, String childRole, EditorContext context) {
+      super(ownerNode, childRole, context, false);
+    }
+
+    public SNode createNodeToInsert(EditorContext context) {
+      SNode listOwner = super.getOwner();
+      return NodeFactoryManager.createNode(listOwner, context, super.getElementRole());
+    }
+    public EditorCell createNodeCell(EditorContext context, SNode elementNode) {
+      EditorCell elementCell = super.createNodeCell(context, elementNode);
+      this.installElementCellActions(this.getOwner(), elementNode, elementCell, context);
+      return elementCell;
+    }
+    public EditorCell createEmptyCell(EditorContext context) {
+      EditorCell emptyCell = null;
+      emptyCell = super.createEmptyCell(context);
+      this.installElementCellActions(super.getOwner(), null, emptyCell, context);
+      return emptyCell;
+    }
+    public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
+      if(elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+        elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
+        SNode substituteInfoNode = listOwner;
+        if(elementNode != null) {
+          substituteInfoNode = elementNode;
+          elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
+        }
+        if(elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
+        }
+      }
+    }
+    public EditorCell createSeparatorCell(EditorContext context) {
+      return super.createSeparatorCell(context);
+    }
+}
+
 }

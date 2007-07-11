@@ -5,10 +5,29 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorCellAction;
 
 public class BinaryOperation_Symbol_Actions {
 
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction("DELETE", new BinaryOperation_Symbol_Actions_DELETE(node));
+    editorCell.setAction("DELETE", new BinaryOperation_Symbol_Actions.BinaryOperation_Symbol_Actions_DELETE(node));
   }
+  public static class BinaryOperation_Symbol_Actions_DELETE extends EditorCellAction {
+
+    /* package */SNode myNode;
+
+    public  BinaryOperation_Symbol_Actions_DELETE(SNode node) {
+      this.myNode = node;
+    }
+
+    public String getDescriptionText() {
+      return "disable delete";
+    }
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+    public void execute_internal(EditorContext editorContext, SNode node) {
+    }
+}
+
 }

@@ -12,6 +12,13 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
+import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandlerElementKeyMap;
+import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
+import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
 
@@ -97,7 +104,7 @@ public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
   }
   public EditorCell createActualArgumentList(EditorContext context, SNode node) {
     if(this.myActualArgumentListHandler_actualArgumentList_ == null) {
-      this.myActualArgumentListHandler_actualArgumentList_ = new ThisConstructorInvocation_Editor_ActualArgumentListHandler_actualArgumentList_(node, "actualArgument", context);
+      this.myActualArgumentListHandler_actualArgumentList_ = new ThisConstructorInvocation_Editor.ThisConstructorInvocation_Editor_ActualArgumentListHandler_actualArgumentList_(node, "actualArgument", context);
     }
     EditorCell_Collection editorCell = this.myActualArgumentListHandler_actualArgumentList_.createCells(context, new CellLayout_Horizontal(), false);
     ThisConstructorInvocation_Editor.setupBasic_ActualArgumentList(editorCell, node, context);
@@ -107,4 +114,69 @@ public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.ROLE, this.myActualArgumentListHandler_actualArgumentList_.getElementRole());
     return editorCell;
   }
+  public static class ThisConstructorInvocation_Editor_ActualArgumentListHandler_actualArgumentList_ extends RefNodeListHandler {
+
+    public  ThisConstructorInvocation_Editor_ActualArgumentListHandler_actualArgumentList_(SNode ownerNode, String childRole, EditorContext context) {
+      super(ownerNode, childRole, context, false);
+    }
+
+    private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
+      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178893550248");
+      editorCell.setSelectable(true);
+      editorCell.setDrawBorder(false);
+    }
+    private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
+      editorCell.setEditable(true);
+    }
+
+    public SNode createNodeToInsert(EditorContext context) {
+      SNode listOwner = super.getOwner();
+      return NodeFactoryManager.createNode(listOwner, context, super.getElementRole());
+    }
+    public EditorCell createNodeCell(EditorContext context, SNode elementNode) {
+      EditorCell elementCell = super.createNodeCell(context, elementNode);
+      this.installElementCellActions(this.getOwner(), elementNode, elementCell, context);
+      return elementCell;
+    }
+    public EditorCell createEmptyCell(EditorContext context) {
+      EditorCell emptyCell = null;
+      emptyCell = this.createEmptyCell_internal(context, this.getOwner());
+      this.installElementCellActions(super.getOwner(), null, emptyCell, context);
+      return emptyCell;
+    }
+    public EditorCell createEmptyCell_internal(EditorContext context, SNode node) {
+      return this.createConstantCell2(context, node, "");
+    }
+    public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
+      if(elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+        elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
+        SNode substituteInfoNode = listOwner;
+        if(elementNode != null) {
+          substituteInfoNode = elementNode;
+          elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.addKeyMap(new RefNodeListHandlerElementKeyMap(this, ","));
+        }
+        if(elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
+        }
+      }
+    }
+    public EditorCell createSeparatorCell(EditorContext context) {
+      {
+        EditorCell_Constant editorCell = EditorCell_Constant.create(context, this.getOwner(), ",", false);
+        editorCell.setSelectable(false);
+        editorCell.setDrawBorder(false);
+        editorCell.setLayoutConstraint("");
+        return editorCell;
+      }
+    }
+    public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+      ThisConstructorInvocation_Editor.ThisConstructorInvocation_Editor_ActualArgumentListHandler_actualArgumentList_.setupBasic_ConstantCell2(editorCell, node, context);
+      ThisConstructorInvocation_Editor.ThisConstructorInvocation_Editor_ActualArgumentListHandler_actualArgumentList_.setupLabel_ConstantCell2(editorCell, node, context);
+      editorCell.setDefaultText("");
+      return editorCell;
+    }
+}
+
 }

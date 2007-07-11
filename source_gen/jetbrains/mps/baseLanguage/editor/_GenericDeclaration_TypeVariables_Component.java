@@ -11,6 +11,13 @@ import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
+import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandlerElementKeyMap;
+import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
+import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class _GenericDeclaration_TypeVariables_Component extends AbstractCellProvider {
 
@@ -79,7 +86,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
   }
   public EditorCell createTypeVariableDeclarationList(EditorContext context, SNode node) {
     if(this.myTypeVariableDeclarationListHandler_typeVariableDeclarationList_ == null) {
-      this.myTypeVariableDeclarationListHandler_typeVariableDeclarationList_ = new _GenericDeclaration_TypeVariables_Component_TypeVariableDeclarationListHandler_typeVariableDeclarationList_(node, "typeVariableDeclaration", context);
+      this.myTypeVariableDeclarationListHandler_typeVariableDeclarationList_ = new _GenericDeclaration_TypeVariables_Component._GenericDeclaration_TypeVariables_Component_TypeVariableDeclarationListHandler_typeVariableDeclarationList_(node, "typeVariableDeclaration", context);
     }
     EditorCell_Collection editorCell = this.myTypeVariableDeclarationListHandler_typeVariableDeclarationList_.createCells(context, new CellLayout_Horizontal(), false);
     _GenericDeclaration_TypeVariables_Component.setupBasic_TypeVariableDeclarationList(editorCell, node, context);
@@ -89,4 +96,50 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     editorCell.putUserObject(EditorCell.ROLE, this.myTypeVariableDeclarationListHandler_typeVariableDeclarationList_.getElementRole());
     return editorCell;
   }
+  public static class _GenericDeclaration_TypeVariables_Component_TypeVariableDeclarationListHandler_typeVariableDeclarationList_ extends RefNodeListHandler {
+
+    public  _GenericDeclaration_TypeVariables_Component_TypeVariableDeclarationListHandler_typeVariableDeclarationList_(SNode ownerNode, String childRole, EditorContext context) {
+      super(ownerNode, childRole, context, false);
+    }
+
+    public SNode createNodeToInsert(EditorContext context) {
+      SNode listOwner = super.getOwner();
+      return NodeFactoryManager.createNode(listOwner, context, super.getElementRole());
+    }
+    public EditorCell createNodeCell(EditorContext context, SNode elementNode) {
+      EditorCell elementCell = super.createNodeCell(context, elementNode);
+      this.installElementCellActions(this.getOwner(), elementNode, elementCell, context);
+      return elementCell;
+    }
+    public EditorCell createEmptyCell(EditorContext context) {
+      EditorCell emptyCell = null;
+      emptyCell = super.createEmptyCell(context);
+      this.installElementCellActions(super.getOwner(), null, emptyCell, context);
+      return emptyCell;
+    }
+    public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
+      if(elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+        elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
+        SNode substituteInfoNode = listOwner;
+        if(elementNode != null) {
+          substituteInfoNode = elementNode;
+          elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.addKeyMap(new RefNodeListHandlerElementKeyMap(this, ","));
+        }
+        if(elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
+        }
+      }
+    }
+    public EditorCell createSeparatorCell(EditorContext context) {
+      {
+        EditorCell_Constant editorCell = EditorCell_Constant.create(context, this.getOwner(), ",", false);
+        editorCell.setSelectable(false);
+        editorCell.setDrawBorder(false);
+        editorCell.setLayoutConstraint("");
+        return editorCell;
+      }
+    }
+}
+
 }

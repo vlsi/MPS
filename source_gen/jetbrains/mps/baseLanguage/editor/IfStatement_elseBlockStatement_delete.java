@@ -5,10 +5,41 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import java.util.List;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 
 public class IfStatement_elseBlockStatement_delete {
 
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction("DELETE", new IfStatement_elseBlockStatement_delete_DELETE(node));
+    editorCell.setAction("DELETE", new IfStatement_elseBlockStatement_delete.IfStatement_elseBlockStatement_delete_DELETE(node));
   }
+  public static class IfStatement_elseBlockStatement_delete_DELETE extends EditorCellAction {
+
+    /* package */SNode myNode;
+
+    public  IfStatement_elseBlockStatement_delete_DELETE(SNode node) {
+      this.myNode = node;
+    }
+
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      SNode statement;
+      SNode ifFalseStatement = SLinkOperations.getTarget(node, "ifFalseStatement", true);
+      List<SNode> statements = SLinkOperations.getTargets(SLinkOperations.getTarget(ifFalseStatement, "statements", true), "statement", true);
+      if(SequenceOperations.isEmpty(statements)) {
+        statement = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.Statement", null);
+      } else
+      {
+        statement = SequenceOperations.getFirst(statements);
+      }
+      SNodeOperations.replaceWithAnother(ifFalseStatement, statement);
+    }
+}
+
 }
