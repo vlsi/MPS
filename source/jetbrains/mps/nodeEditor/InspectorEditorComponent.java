@@ -49,7 +49,7 @@ public final class InspectorEditorComponent extends AbstractEditorComponent impl
 
 
   public boolean removeFromRecentEditorsOnClose() {
-    return false;  //To change body of implemented methods use File | Settings | File Templates.
+    return false;
   }
 
   @Nullable
