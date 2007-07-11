@@ -45,7 +45,7 @@ public final class InspectorPaneEditorComponent extends AbstractEditorComponent 
 
   public void inspectNode(SNode node, IOperationContext context) {
     myInspectorEditorComponents.clear();
-    InspectorEditorComponent inspectorEditorComponent = new InspectorEditorComponent();
+    IInspectorEditorComponent inspectorEditorComponent = new InspectorEditorComponent();
     inspectorEditorComponent.inspectNode(node, context);
     myInspectorEditorComponents.add(inspectorEditorComponent);
     reinitEditor();
