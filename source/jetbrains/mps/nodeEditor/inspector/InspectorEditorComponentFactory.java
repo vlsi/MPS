@@ -6,7 +6,7 @@ public final class InspectorEditorComponentFactory {
   }
 
   public static IInspectorEditorComponent getInspectorEditorComponent() {
-    return new InspectorEditorComponent();
+    return new InspectorPaneEditorComponent();
   }
 
 }
