@@ -1,5 +1,7 @@
 package jetbrains.mps.smodel.event;
 
+import jetbrains.mps.smodel.SModelUtil_new;
+
 import java.util.List;
 
 /**
@@ -54,5 +56,16 @@ public class EventUtil {
   public static boolean isPropertyChange(List<SModelEvent> events) {
     if (events.size() != 1) return false;
     return events.get(0) instanceof SModelPropertyEvent;
+  }
+
+  public static boolean isPropertyAddedOrRemoved(SModelEvent event) {
+    if (event instanceof SModelPropertyEvent) {
+      SModelPropertyEvent propertyEvent = (SModelPropertyEvent) event;
+      boolean oldEmpty = SModelUtil_new.isEmptyPropertyValue(propertyEvent.getOldPropertyValue());
+      boolean newEmpty = SModelUtil_new.isEmptyPropertyValue(propertyEvent.getNewPropertyValue());
+      return oldEmpty != newEmpty;
+    } else {
+      return false;
+    }
   }
 }

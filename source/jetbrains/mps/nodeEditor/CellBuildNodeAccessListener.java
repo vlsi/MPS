@@ -22,6 +22,7 @@ public class CellBuildNodeAccessListener extends AbstractNodeReadAccessOnCellCre
   protected HashSet<SNode> myNodesToDependOn = new HashSet<SNode>();
   protected HashSet<SNodeProxy> myReferentTargetsToDependOn = new HashSet<SNodeProxy>();
   protected HashSet<Pair<SNodeProxy,String>> myDirtilyReadAccessedProperties = new HashSet<Pair<SNodeProxy, String>>();
+  protected HashSet<Pair<SNodeProxy,String>> myExistenceReadAccessProperties = new HashSet<Pair<SNodeProxy, String>>();
   private static final Logger LOG = Logger.getLogger(CellBuildNodeAccessListener.class);
 
   public CellBuildNodeAccessListener(AbstractEditorComponent editor) {
@@ -32,6 +33,9 @@ public class CellBuildNodeAccessListener extends AbstractNodeReadAccessOnCellCre
     myEditor.putCellAndNodesToDependOn(cell, myNodesToDependOn, myReferentTargetsToDependOn);
     for (Pair<SNodeProxy, String> pair : myDirtilyReadAccessedProperties) {
       myEditor.addCellDependentOnNodePropertyWhichWasAccessedDirtily(cell, pair);
+    }
+     for (Pair<SNodeProxy, String> pair : myExistenceReadAccessProperties) {
+      myEditor.addCellDependentOnNodePropertyWhichExistenceWasChecked(cell, pair);
     }
   }
 
@@ -69,4 +73,9 @@ public class CellBuildNodeAccessListener extends AbstractNodeReadAccessOnCellCre
     myReferentTargetsToDependOn.add(new SNodeProxy(reference));
   }
 
+  public void propertyExistenceAccess(SNode node, String propertyName) {
+    NodeReadAccessCaster.switchOffFiringPropertyReadAccessedEvent();
+    myExistenceReadAccessProperties.add(new Pair<SNodeProxy, String>(new SNodeProxy(node), propertyName));
+    NodeReadAccessCaster.switchOnFiringPropertyReadAccessedEvent();
+  }
 }

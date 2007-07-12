@@ -60,6 +60,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private HashMap<EditorCell, Set<SNodeProxy>> myCellsToRefTargetsToDependOnMap = new HashMap<EditorCell, Set<SNodeProxy>>();
   private HashMap<Pair<SNodeProxy, String>, Set<EditorCell_Property>> myNodePropertiesAccessedCleanlyToDependentCellsMap = new HashMap<Pair<SNodeProxy, String>, Set<EditorCell_Property>>();
   private HashMap<Pair<SNodeProxy, String>, Set<EditorCell>> myNodePropertiesAccessedDirtilyToDependentCellsMap = new HashMap<Pair<SNodeProxy, String>, Set<EditorCell>>();
+  private HashMap<Pair<SNodeProxy, String>, Set<EditorCell>> myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap = new HashMap<Pair<SNodeProxy, String>, Set<EditorCell>>();
 
   private IGutterMessageOwner myMessageOwner = new IGutterMessageOwner() { };
 
@@ -623,6 +624,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myRefNodeContextsToBigCellsMap.clear();
     myNodePropertiesAccessedCleanlyToDependentCellsMap.clear();
     myNodePropertiesAccessedDirtilyToDependentCellsMap.clear();
+    myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap.clear();
   }
 
   private void setRootCell(EditorCell rootCell) {
@@ -1660,6 +1662,17 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     dependentCells.add(cell);
   }
 
+
+  public void addCellDependentOnNodePropertyWhichExistenceWasChecked(EditorCell cell, Pair<SNodeProxy, String> pair) {
+    Set<EditorCell> dependentCells = myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap.get(pair);
+    if (dependentCells == null) {
+      dependentCells = new HashSet<EditorCell>();
+      myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap.put(pair, dependentCells);
+    }
+    dependentCells.add(cell);
+  }
+
+
   public void putCellAndNodesToDependOn(EditorCell cell, Set<SNode> nodes, Set<SNodeProxy> refTargets) {
     myCellsToNodesToDependOnMap.put(cell, nodes);
     myCellsToRefTargetsToDependOnMap.put(cell, refTargets);
@@ -1818,6 +1831,25 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           Pair<SNodeProxy, String> pair = new Pair<SNodeProxy, String>(nodeProxy, propertyName);
           Set<EditorCell_Property> editorCell_properties = myNodePropertiesAccessedCleanlyToDependentCellsMap.get(pair);
           Set<EditorCell> editorCells = myNodePropertiesAccessedDirtilyToDependentCellsMap.get(pair);
+          Set<EditorCell> editorCellsDependentOnExistence = myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap.get(pair);
+          if (editorCellsDependentOnExistence != null) {
+            if (EventUtil.isPropertyAddedOrRemoved(events.get(0))) {
+              rebuildEditorContent(events);
+            } else {
+              for (EditorCell cell : editorCellsDependentOnExistence) {
+                cell.synchronizeViewWithModel();
+                fireCellSynchronized(cell);
+              }
+              if (editorCell_properties != null) {
+                for (EditorCell cell : editorCell_properties) {
+                  cell.synchronizeViewWithModel();
+                  fireCellSynchronized(cell);
+                }
+              }
+              relayout();
+            }
+            return;
+          }
           if (editorCells != null) {
             rebuildEditorContent(events);
           } else if (editorCell_properties != null) {

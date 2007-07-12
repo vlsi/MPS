@@ -92,7 +92,7 @@ public class NodeReadAccessCaster {
     ourCanFirePropertyReadAccessedEvent = true;
   }
 
-  public static void firePropertyReadAccessed(SNode node, String propertyName) {
+  public static void firePropertyReadAccessed(SNode node, String propertyName, boolean propertyExistenceCheck) {
     if(!node.isRegistered()) return;
     if (!ourCanFirePropertyReadAccessedEvent) return;
     if (ourPropertyAccessor != null) {
@@ -103,7 +103,11 @@ public class NodeReadAccessCaster {
       }
       return;
     }
-    if (ourReadAccessListener != null) {
+
+    if (propertyExistenceCheck && ourReadAccessListener != null) {
+      ourReadAccessListener.propertyExistenceAccess(node, propertyName);
+      ourReadAccessListener.readAccess(node);
+    } else  if (ourReadAccessListener != null) {
       ourReadAccessListener.propertyDirtyReadAccess(node, propertyName);
       ourReadAccessListener.readAccess(node);
     }
@@ -111,6 +115,7 @@ public class NodeReadAccessCaster {
       ourAbstractReadAccessListener.readAccess(node);
     }
   }
+
 
   public static void fireReferenceTargetReadAccessed(SReference reference) {
     if(!reference.getSourceNode().isRegistered()) return;

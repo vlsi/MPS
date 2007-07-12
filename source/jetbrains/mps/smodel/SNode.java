@@ -628,11 +628,21 @@ public class SNode implements Cloneable, Iterable<SNode> {
     setProperty(propertyName, "" + value);
   }
 
+  public final boolean hasProperty(@NotNull String propertyName) {
+    NodeReadAccessCaster.firePropertyReadAccessed(this,  propertyName, true);
+    String property_internal = getProperty_internal(propertyName);
+    return !SModelUtil_new.isEmptyPropertyValue(property_internal);
+  }
 
   public final String getProperty(@NotNull String propertyName) {
-    NodeReadAccessCaster.firePropertyReadAccessed(this, propertyName);
-    String propertyValue = null;
+    NodeReadAccessCaster.firePropertyReadAccessed(this, propertyName, false);
+    String propertyValue = getProperty_internal(propertyName);
+    NodeReadEventsCaster.fireNodePropertyReadAccess(this, propertyName, propertyValue);
+    return propertyValue;
+  }
 
+  private String getProperty_internal(String propertyName) {
+    String propertyValue = null;
     if (myPropertyGettersInProgress == null || !myPropertyGettersInProgress.contains(propertyName)) {
       INodePropertyGetter getter = ModelConstraintsManager.getInstance().getNodePropertyGetter(this, propertyName);
       if (getter != null) {
@@ -650,17 +660,12 @@ public class SNode implements Cloneable, Iterable<SNode> {
     } else {
       propertyValue = getRawProperty(propertyName);
     }
-    NodeReadEventsCaster.fireNodePropertyReadAccess(this, propertyName, propertyValue);
     return propertyValue;
   }
 
   private String getRawProperty(String propertyName) {
     if (myProperties == null) return null;
     return myProperties.get(propertyName);
-  }
-
-  private boolean isEmptyPropertyValue(String s) {
-    return s == null || s.equals("");
   }
 
   public void setProperty(@NotNull final String propertyName, String propertyValue) {
@@ -714,11 +719,11 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
     boolean addedOrRemoved = false;
     boolean isRemoved = false;
-    if (isEmptyPropertyValue(oldValue)) {
+    if (SModelUtil_new.isEmptyPropertyValue(oldValue)) {
       addedOrRemoved = true;
       isRemoved = false;
     }
-    if (isEmptyPropertyValue(propertyValue)) {
+    if (SModelUtil_new.isEmptyPropertyValue(propertyValue)) {
       addedOrRemoved = true;
       isRemoved = true;
     }
