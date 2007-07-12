@@ -6,16 +6,12 @@
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
-  <language namespace="jetbrains.mps.bootstrap.constraintsLanguage" />
   <maxImportIndex value="39" />
   <import index="1" modelUID="ypath.structure" />
-  <import index="2" modelUID="jetbrains.mps.core.structure" />
   <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" />
-  <import index="5" modelUID="java.util@java_stub" />
   <import index="6" modelUID="jetbrains.mps.smodel@java_stub" />
   <import index="21" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <import index="25" modelUID="java.lang@java_stub" />
-  <import index="27" modelUID="jetbrains.mps.findUsages@java_stub" />
   <import index="30" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" />
   <import index="31" modelUID="ypath.structure@java_stub" />
   <import index="38" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.helgins" />
@@ -378,7 +374,7 @@
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178629828779">
               <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1178629830883">
                 <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1178629832716">
-                  <property name="value" value="(" />
+                  <property name="value" value="[" />
                 </node>
               </node>
             </node>
@@ -1275,7 +1271,7 @@
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1179161932891">
             <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1179161932892">
               <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1179161932893">
-                <property name="value" value="&lt;&lt;" />
+                <property name="value" value="&lt;&lt;-" />
               </node>
             </node>
           </node>
@@ -1283,7 +1279,7 @@
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1179161932901">
               <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1179161932902">
                 <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1179161932903">
-                  <property name="value" value="&gt;" />
+                  <property name="value" value="-&gt;" />
                 </node>
               </node>
             </node>
@@ -1291,7 +1287,7 @@
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1179161932911">
                 <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1179161932912">
                   <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1179161932913">
-                    <property name="value" value="&gt;&gt;" />
+                    <property name="value" value="-&gt;&gt;" />
                   </node>
                 </node>
               </node>
@@ -1299,7 +1295,7 @@
                 <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1179161932921">
                   <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1179161932922">
                     <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1179161932923">
-                      <property name="value" value="&gt;&gt;=" />
+                      <property name="value" value="=&gt;&gt;" />
                     </node>
                   </node>
                 </node>
@@ -1307,7 +1303,7 @@
                   <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1179161932931">
                     <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1179161932932">
                       <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1179161932933">
-                        <property name="value" value="^" />
+                        <property name="value" value="^-" />
                       </node>
                     </node>
                   </node>
@@ -1323,7 +1319,7 @@
                       <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1179161932951">
                         <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1179161932952">
                           <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1179161932953">
-                            <property name="value" value="v" />
+                            <property name="value" value="-v" />
                           </node>
                         </node>
                       </node>
@@ -1331,7 +1327,7 @@
                         <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1179161932961">
                           <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1179161932962">
                             <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1179161932963">
-                              <property name="value" value="v=" />
+                              <property name="value" value="=v" />
                             </node>
                           </node>
                         </node>
@@ -1451,6 +1447,19 @@
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1179161788762" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions" id="1184067764679">
+    <property name="name" value="subs_Feature" />
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1184067774388">
+      <property name="useNewActions" value="true" />
+      <link role="applicableConcept" targetNodeId="1.1184066209434" />
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptSubstitutePart" id="1184067785707">
+        <link role="concept" targetNodeId="1.1183978481785" />
+      </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptSubstitutePart" id="1184067792625">
+        <link role="concept" targetNodeId="1.1184066481897" />
+      </node>
+    </node>
   </node>
 </model>
 

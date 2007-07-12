@@ -2,7 +2,6 @@
 <model name="ypath.scripts">
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
-  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.ide.scriptLanguage" />
   <maxImportIndex value="2" />
   <import index="1" modelUID="ypath.structure" />

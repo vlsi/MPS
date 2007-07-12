@@ -13,7 +13,7 @@ import ypath.util.ITreeTraversal;
 public class FileDemo {
 
   public static void main(String[] args) {
-    zClosureContext _zClosureContext = new zClosureContext();
+    final zClosureContext _zClosureContext = new zClosureContext();
     _zClosureContext.f = new File(Arrays.asList(args).get(0));
     for(File dir : TreeTraversalFactory.Filter(TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new File_TreePath().startTraversal(_zClosureContext.f), TreeTraversalFactory.Axis("DESCENDANTS")), File_TreePath.DIR_NodeKindTrigger.getInstance()), new WhereFilter(null, _zClosureContext))) {
       System.out.println(dir);

@@ -184,6 +184,7 @@
                       </node>
                       <node role="operation" type="ypath.IterateOperation" id="1175882271115">
                         <property name="axis" value="DESCENDANTS" />
+                        <property name="useDefault" value="false" />
                       </node>
                     </node>
                     <node role="operation" type="ypath.MatchDefaultPropertyOperation" id="1175882277200">
@@ -194,6 +195,7 @@
                   </node>
                   <node role="operation" type="ypath.IterateOperation" id="1175882287339">
                     <property name="axis" value="DESCENDANTS" />
+                    <property name="useDefault" value="false" />
                   </node>
                 </node>
                 <node role="operation" type="ypath.MatchDefaultPropertyOperation" id="1175882291219">

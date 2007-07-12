@@ -9,6 +9,9 @@ import sample2.File_TreePath.FILE_name_Property;
 
 public class File_TreePath extends TreePath<File> {
 
+  public  File_TreePath() {
+  }
+
   public File parent(File node) {
     return File_TreePath.Parent.parent(node);
   }
