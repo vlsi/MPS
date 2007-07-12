@@ -2,13 +2,16 @@ package jetbrains.mps.baseLanguage.generator.java.closures;
 
 import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.generator.JavaModelUtil_new;
 import jetbrains.mps.generator.template.INodeBuilder;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.generator.JavaModelUtil_new;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Igor Alshannikov
@@ -58,21 +61,6 @@ public class _QueriesUtil {
     assert parameterName != null;
 
     // find parent method declaration in output model
-//    INodeBuilder closureParmRefBuilder = generator.findNodeBuilderForSourceAndTemplate(closureParmRef_input, referenceNode_template);
-//    INodeBuilder targetMethodBuilder = closureParmRefBuilder.findParentBuilder(new Condition<INodeBuilder>() {
-//      public boolean met(INodeBuilder parentBuilder) {
-//        SNode targetNode = parentBuilder.getTargetNode();
-//        return targetNode.getAdapter() instanceof BaseMethodDeclaration;
-//      }
-//    });
-//
-//    if (targetMethodBuilder == null) {
-//      generator.showErrorMessage(closureParmRef_input, referenceNode_template, "couldn't find method parameter for name \"" + parameterName + "\" : method builder not found");
-//      return null;
-//    }
-//
-//    SNode methodDecl_output = targetMethodBuilder.getTargetNode();
-
     SNode closureParmRef_outputNode = generator.findOutputNodeByInputAndTemplateNode(closureParmRef_input, referenceNode_template);
     BaseMethodDeclaration methodDecl_output_ = closureParmRef_outputNode.getAdapter().getParent(BaseMethodDeclaration.class);
     if (methodDecl_output_ == null) {
@@ -157,9 +145,9 @@ public class _QueriesUtil {
     SModel model = generator.getTargetModel();
     if (enclosingClosureOrContextOwner instanceof Closure) {
       Closure enclosingClosure = (Closure) enclosingClosureOrContextOwner;
-      INodeBuilder builder = generator.findNodeBuilderForSource(enclosingClosure, ClosuresMappingId.CLOSURE__ADAPTER_CLASS);
-      ClassConcept closureAdapter = (ClassConcept) BaseAdapter.fromNode(builder.getTargetNode());
-      FieldDeclaration field = JavaModelUtil_new.findField(closureAdapter, ClosuresMappingId.NAME__CLOSURE_ADAPTER__CLOSURE_CONTEXT_FIELD);
+      SNode closureAdapter_output = generator.findOutputNodeByInputNodeAndMappingName(enclosingClosure.getNode(), ClosuresMappingId.CLOSURE__ADAPTER_CLASS);
+      ClassConcept closureAdapter_output_ = (ClassConcept) closureAdapter_output.getAdapter();
+      FieldDeclaration field = JavaModelUtil_new.findField(closureAdapter_output_, ClosuresMappingId.NAME__CLOSURE_ADAPTER__CLOSURE_CONTEXT_FIELD);
       if (field != null) {
         FieldReference fieldRef = FieldReference.newInstance(model);
         fieldRef.setInstance(ThisExpression.newInstance(model));
@@ -170,10 +158,10 @@ public class _QueriesUtil {
 
     if (enclosingClosureOrContextOwner != null &&
             ClosuresUtil.isClosureContextOwner(BaseAdapter.fromAdapter(enclosingClosureOrContextOwner))) {
-      INodeBuilder builder = generator.findNodeBuilderForSource(enclosingClosureOrContextOwner, ClosuresMappingId.CONTEXT_OWNER__CLOSURE_CONTEXT__VARIABLE_DECL_STMT);
-      if (builder != null) {
-        LocalVariableDeclarationStatement varDeclStmt = (LocalVariableDeclarationStatement) BaseAdapter.fromNode(builder.getTargetNode());
-        LocalVariableDeclaration varible = varDeclStmt.getLocalVariableDeclaration();
+      SNode varDeclStmt_output = generator.findOutputNodeByInputNodeAndMappingName(enclosingClosureOrContextOwner.getNode(), ClosuresMappingId.CONTEXT_OWNER__CLOSURE_CONTEXT__VARIABLE_DECL_STMT);
+      if (varDeclStmt_output != null) {
+        LocalVariableDeclarationStatement varDeclStmt_output_ = (LocalVariableDeclarationStatement) varDeclStmt_output.getAdapter();
+        LocalVariableDeclaration varible = varDeclStmt_output_.getLocalVariableDeclaration();
         LocalVariableReference variableRef = LocalVariableReference.newInstance(model);
         variableRef.setLocalVariableDeclaration(varible);
         return BaseAdapter.fromAdapter(variableRef);
@@ -200,9 +188,9 @@ public class _QueriesUtil {
       return thisExpr.getNode();
     }
     if (enclosingNode instanceof Closure) {
-      INodeBuilder builder = generator.findNodeBuilderForSource(enclosingNode, ClosuresMappingId.CLOSURE__ADAPTER_CLASS);
-      ClassConcept closureAdapterClass = (ClassConcept) BaseAdapter.fromNode(builder.getTargetNode());
-      FieldDeclaration field = JavaModelUtil_new.findField(closureAdapterClass, ClosuresMappingId.NAME__CLOSURE_ADAPTER__ENCLOSING_CLASS_FIELD);
+      SNode closureAdapterClass_output = generator.findOutputNodeByInputNodeAndMappingName(enclosingNode.getNode(), ClosuresMappingId.CLOSURE__ADAPTER_CLASS);
+      ClassConcept closureAdapterClass_output_ = (ClassConcept) closureAdapterClass_output.getAdapter();
+      FieldDeclaration field = JavaModelUtil_new.findField(closureAdapterClass_output_, ClosuresMappingId.NAME__CLOSURE_ADAPTER__ENCLOSING_CLASS_FIELD);
       FieldReference fieldRef = FieldReference.newInstance(generator.getTargetModel());
       fieldRef.setInstance(ThisExpression.newInstance(generator.getTargetModel()));
       fieldRef.setFieldDeclaration(field);
