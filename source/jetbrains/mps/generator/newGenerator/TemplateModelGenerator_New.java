@@ -284,6 +284,9 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     return myDelayedChanges;
   }
 
+  /**
+   * @deprecated
+   */
   public INodeBuilder findNodeBuilderForSource(SNode inputNode, String mappingName) {
     SNode outputNode = findOutputNodeByInputNodeAndMappingName(inputNode, mappingName);
     if(outputNode != null) {
@@ -292,6 +295,9 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     return null;
   }
 
+  /**
+   * @deprecated
+   */
   public INodeBuilder findNodeBuilderForSource(INodeAdapter ba, String mappingName) {
     return findNodeBuilderForSource(BaseAdapter.fromAdapter(ba), mappingName);
   }
