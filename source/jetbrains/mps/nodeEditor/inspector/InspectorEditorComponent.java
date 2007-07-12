@@ -12,10 +12,7 @@ import jetbrains.mps.ide.navigation.EditorInfo;
 import jetbrains.mps.ide.navigation.HistoryItem;
 import jetbrains.mps.ide.navigation.IHistoryItem;
 import jetbrains.mps.ide.navigation.InspectorHistoryItem;
-import jetbrains.mps.nodeEditor.AbstractEditorComponent;
-import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.nodeEditor.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeProxy;
@@ -82,6 +79,10 @@ final class InspectorEditorComponent extends AbstractEditorComponent implements 
   }
 
   public IEditor getEditor() {
+    return this;
+  }
+
+  public IEditorComponent getEditorComponent() {
     return this;
   }
 

@@ -2,10 +2,7 @@ package jetbrains.mps.nodeEditor.inspector;
 
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.navigation.EditorInfo;
-import jetbrains.mps.nodeEditor.AbstractEditorComponent;
-import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.nodeEditor.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -77,8 +74,16 @@ final class InspectorPaneEditorComponent extends AbstractEditorComponent impleme
     return this;
   }
 
-  public IEditor getEditor() {
+  private InspectorEditorComponent getInspectorEditorComponent() {
     return myInspectorEditorComponents.get(0);
+  }
+
+  public IEditor getEditor() {
+    return getInspectorEditorComponent();
+  }
+
+  public IEditorComponent getEditorComponent() {
+    return getInspectorEditorComponent();
   }
 
 }
