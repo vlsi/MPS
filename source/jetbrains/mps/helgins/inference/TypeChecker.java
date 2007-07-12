@@ -11,6 +11,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.CopyUtil;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
@@ -53,10 +54,22 @@ public class TypeChecker {
   private RulesManager myRulesManager;
   private INodeTypesComponent myCurrentTypesComponent = null;
 
+  private MPSProject myProject;
+
   public TypeChecker() {
     mySubtypingManager = new SubtypingManager(this);
     myRuntimeSupport = new RuntimeSupport(this);
     myRulesManager = new RulesManager(this);
+  }
+
+  @Hack
+  @Deprecated
+  public void setProject(MPSProject project) {
+    myProject = project;
+  }
+
+  public MPSProject getProject() {
+    return myProject;
   }
 
   public static TypeChecker getInstance() {

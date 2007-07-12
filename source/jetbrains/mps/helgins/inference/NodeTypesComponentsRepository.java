@@ -2,6 +2,7 @@ package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.ApplicationComponents;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.component.Dependency;
 
 import java.util.Set;

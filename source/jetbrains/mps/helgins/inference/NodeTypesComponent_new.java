@@ -14,9 +14,17 @@ import jetbrains.mps.refactoring.CopyUtil;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.incremental.INodesReadListener;
 import jetbrains.mps.generator.template.Statistics;
+import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.EditorsPane;
+import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.nodeEditor.IGutterMessageOwner;
+import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 
 import java.util.*;
 import java.util.Map.Entry;
+import java.awt.Color;
+
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Created by IntelliJ IDEA.
@@ -25,7 +33,7 @@ import java.util.Map.Entry;
  * Time: 13:50:13
  * To change this template use File | Settings | File Templates.
  */
-public class NodeTypesComponent_new implements INodeTypesComponent {
+public class NodeTypesComponent_new implements INodeTypesComponent, IGutterMessageOwner {
 
   private static final char A_CHAR = 'a';
   private static final char Z_CHAR = 'z';
@@ -50,11 +58,15 @@ public class NodeTypesComponent_new implements INodeTypesComponent {
   private MyModelListener myModelListener = new MyModelListener();
   private MyEventsReadListener myNodesReadListener = new MyEventsReadListener();
 
+  // for diagnostics
+  private Set<SNodeProxy> myNotSkippedNodes = new HashSet<SNodeProxy>();
+
   private static final Logger LOG = Logger.getLogger(NodeTypesComponent_new.class);
 
   public NodeTypesComponent_new(SNode rootNode, TypeChecker typeChecker) {
     myRootNode = rootNode;
     myTypeChecker = typeChecker;
+   // myProject = project;
     myEquationManagersStack.push(new EquationManager(myTypeChecker, this));
   }
 
@@ -117,11 +129,26 @@ public class NodeTypesComponent_new implements INodeTypesComponent {
     return true;
   }
 
+  @Nullable
+  private AbstractEditorComponent getEditorComponent() {
+    EditorsPane editorsPane = myTypeChecker.getProject().getComponent(EditorsPane.class);
+    if (editorsPane == null) return null;
+    IEditor iEditor = editorsPane.getEditorFor(myRootNode);
+    if (iEditor == null) return null;
+    AbstractEditorComponent component = iEditor.getCurrentEditorComponent();
+    return component;
+  }
 
 
   public void computeTypes() {
     try {
       {
+        myNotSkippedNodes.clear();
+        AbstractEditorComponent component = getEditorComponent();
+        if (component != null) {
+          component.getHighlightManager().clearForOwner(this);
+        }
+
         myPartlyCheckedNodes.addAll(myFullyCheckedNodes);
         myFullyCheckedNodes.clear();
         /* myNodesToErrorsMap.clear();
@@ -162,8 +189,19 @@ public class NodeTypesComponent_new implements INodeTypesComponent {
       for (SNode nodeToDependOn : myNodesToDependentNodes.keySet()) {
         addOurListener(nodeToDependOn.getModel().getModelDescriptor());
       }
+      final Set<SNodeProxy> skippedNodes = new HashSet<SNodeProxy>(myNotSkippedNodes);
+      CommandProcessor.instance().invokeLater(new Runnable() {
+        public void run() {
+          AbstractEditorComponent component = getEditorComponent();
+          if (component == null) return;
+          for (SNodeProxy skippedNode : skippedNodes) {
+            component.getHighlightManager().mark(skippedNode.getNode(), new Color(255, 127, 0, 50),"", NodeTypesComponent_new.this);
+          }
+        }
+      });
     } finally{
       myTypeChecker.clearCurrentTypesComponent();
+      myNotSkippedNodes.clear();
     }
   }
 
@@ -178,9 +216,12 @@ public class NodeTypesComponent_new implements INodeTypesComponent {
           LOG.error("your HELGINS rules for this node try to loop infinitely", sNode);
           continue;
         }
-        if (myFullyCheckedNodes.contains(sNode)) continue;
+        if (myFullyCheckedNodes.contains(sNode)) {
+          continue;
+        }
         newFrontier.addAll(sNode.getChildren());
         if (!myPartlyCheckedNodes.contains(sNode)) {
+          myNotSkippedNodes.add(new SNodeProxy(sNode));
           pushNodeBeingChecked(sNode);
           myNodesReadListener.clear();
           NodeReadEventsCaster.setNodesReadListener(myNodesReadListener);
