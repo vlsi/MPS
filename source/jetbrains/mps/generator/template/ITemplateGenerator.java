@@ -39,10 +39,6 @@ public interface ITemplateGenerator {
    * @deprecated
    */
   INodeBuilder findNodeBuilderForSource(SNode sourceNode, String mappingName);
-  /**
-   * @deprecated
-   */
-  INodeBuilder findNodeBuilderForSource(INodeAdapter sourceNodeAdapter, String mappingName);
   SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName);
 
   /**

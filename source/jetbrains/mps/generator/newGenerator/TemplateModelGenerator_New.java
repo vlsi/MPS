@@ -295,13 +295,6 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     return null;
   }
 
-  /**
-   * @deprecated
-   */
-  public INodeBuilder findNodeBuilderForSource(INodeAdapter ba, String mappingName) {
-    return findNodeBuilderForSource(BaseAdapter.fromAdapter(ba), mappingName);
-  }
-
   public SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName) {
     // todo: combination (mappingName, inputN) -> outputN is not unique (in some rare cases)
     // todo: generator should report error on attempt to access not unique outputN
