@@ -7,20 +7,20 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 
 import javax.swing.JComponent;
-import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import java.util.ArrayList;
 import java.util.List;
 
 final class InspectorPaneEditorComponent extends JComponent implements IInspectorEditorComponent {
 
   private final List<InspectorEditorComponent> myInspectorEditorComponents = new ArrayList<InspectorEditorComponent>();
-  private final JComponent myContainer = new JPanel();
+  private final JScrollPane myScrollPane = new JScrollPane();
 
   InspectorPaneEditorComponent() {
   }
 
   public JComponent getExternalComponent() {
-    return myContainer;
+    return myScrollPane;
   }
 
   public EditorCell findNodeCell(SNode currentTargetNode) {
@@ -41,11 +41,10 @@ final class InspectorPaneEditorComponent extends JComponent implements IInspecto
 
   public void inspectNode(SNode node, IOperationContext context) {
     myInspectorEditorComponents.clear();
-    myContainer.removeAll();
     InspectorEditorComponent inspectorEditorComponent = new InspectorEditorComponent();
     inspectorEditorComponent.inspectNode(node, context);
     myInspectorEditorComponents.add(inspectorEditorComponent);
-    myContainer.add(inspectorEditorComponent);
+    myScrollPane.setViewportView(inspectorEditorComponent);
   }
 
   private InspectorEditorComponent getInspectorEditorComponent() {
