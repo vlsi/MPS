@@ -1,19 +1,19 @@
 package jetbrains.mps.smodel.behaviour;
 
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.logging.Logger;
 
-import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
-import java.util.List;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
-public class BehaviorManager {
+public final class BehaviorManager {
   private static final Logger LOG = Logger.getLogger(BehaviorManager.class);
 
   private static BehaviorManager ourInstance = new BehaviorManager();
@@ -29,7 +29,7 @@ public class BehaviorManager {
 
     while (concept != null) {
       String fqName = NameUtil.nodeFQName(concept);
-      String behaviourClass = behaviourClassByConceptFqName(fqName);
+      String behaviourClass = behaviorClassByConceptFqName(fqName);
 
       try {
         Class cls = Class.forName(behaviourClass, true, ClassLoaderManager.getInstance().getClassLoader());
@@ -55,9 +55,9 @@ public class BehaviorManager {
     }
   }
 
-  private String behaviourClassByConceptFqName(String fqName) {
-    String behaviourClass = fqName.replaceAll("(.*)\\.structure\\.(\\w+)$", "$1.constraints.$2_Behavior");
-    return behaviourClass;
+  private String behaviorClassByConceptFqName(String fqName) {
+    String behaviorClass = fqName.replaceAll("(.*)\\.structure\\.(\\w+)$", "$1.constraints.$2_Behavior");
+    return behaviorClass;
   }
 
   public<T> T invoke(Class<T> returnType, SNode node, String methodName, List<Class> parametersTypes, Object... parameters) {
@@ -65,10 +65,10 @@ public class BehaviorManager {
 
     while (concept != null) {
       String fqName = NameUtil.nodeFQName(concept);
-      String behaviourClass = behaviourClassByConceptFqName(fqName);
+      String behaviorClass = behaviorClassByConceptFqName(fqName);
 
       try {
-        Class cls = Class.forName(behaviourClass, true, ClassLoaderManager.getInstance().getClassLoader());
+        Class cls = Class.forName(behaviorClass, true, ClassLoaderManager.getInstance().getClassLoader());
         List<Class> paramTypes = new ArrayList<Class>();
         paramTypes.add(SNode.class);
         paramTypes.addAll(parametersTypes);
