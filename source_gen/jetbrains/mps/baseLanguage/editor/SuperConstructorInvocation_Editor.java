@@ -163,7 +163,7 @@ public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
     }
     public EditorCell createSeparatorCell(EditorContext context) {
       {
-        EditorCell_Constant editorCell = EditorCell_Constant.create(context, this.getOwner(), ",", false);
+        EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), ",");
         editorCell.setSelectable(false);
         editorCell.setDrawBorder(false);
         editorCell.setLayoutConstraint("");
