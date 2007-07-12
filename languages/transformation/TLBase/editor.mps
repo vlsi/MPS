@@ -4130,8 +4130,9 @@
               <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1184216152199">
                 <link role="classifier" extResolveInfo="65.[Classifier]String" />
               </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.StringLiteral" id="1184217026214">
-                <property name="value" value="showInline" />
+              <node role="initializer" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1184244761084">
+                <link role="classifier" targetNodeId="1184217267887" resolveInfo="ShowInlineUtil" />
+                <link role="variableDeclaration" targetNodeId="1184244654999" resolveInfo="SHOW_INLINE" />
               </node>
             </node>
           </node>
@@ -4169,15 +4170,6 @@
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1184216160132">
                 <link role="variableDeclaration" targetNodeId="1184216080950" resolveInfo="value" />
-              </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1184217908721">
-            <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1184217918961">
-              <link role="baseMethodDeclaration" extResolveInfo="9.method ([Classifier]EditorCell).([InstanceMethodDeclaration]synchronizeViewWithModel() : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
-              <node role="instance" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1184217914187">
-                <link role="baseMethodDeclaration" extResolveInfo="9.method ([Classifier]EditorContext).([InstanceMethodDeclaration]getSelectedCell() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EditorCell]))" />
-                <node role="instance" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_editorContext" id="1184217908722" />
               </node>
             </node>
           </node>
@@ -5831,6 +5823,17 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1184217267887">
     <property name="name" value="ShowInlineUtil" />
+    <node role="staticField" type="jetbrains.mps.baseLanguage.StaticFieldDeclaration" id="1184244654999">
+      <property name="name" value="SHOW_INLINE" />
+      <property name="isFinal" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1184244657880" />
+      <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1184244702768">
+        <link role="classifier" extResolveInfo="65.[Classifier]String" />
+      </node>
+      <node role="initializer" type="jetbrains.mps.baseLanguage.StringLiteral" id="1184244714296">
+        <property name="value" value="showInline" />
+      </node>
+    </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1184217274077">
       <property name="name" value="isShowInline" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1184217503667">
@@ -5864,8 +5867,8 @@
               <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1184217524195">
                 <link role="variableDeclaration" targetNodeId="1184217519198" resolveInfo="sNode" />
               </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1184217527988">
-                <property name="value" value="showInline" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalStaticFieldReference" id="1184244732212">
+                <link role="variableDeclaration" targetNodeId="1184244654999" resolveInfo="SHOW_INLINE" />
               </node>
             </node>
           </node>
