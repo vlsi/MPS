@@ -155,7 +155,7 @@ public class Solution extends AbstractModule {
 
   @NotNull
   public String getModuleUID() {
-    return myDescriptorFile.getAbsolutePath();
+    return FileUtil.getCanonicalPath(myDescriptorFile.getAbsolutePath());
   }
 
   public String getGeneratorOutputPath() {
