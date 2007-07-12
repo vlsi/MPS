@@ -28,22 +28,18 @@ final class InspectorPaneEditorComponent extends JComponent implements IInspecto
   }
 
   public EditorCell findNodeCell(SNode currentTargetNode) {
-    System.out.println("InspectorPaneEditorComponent.findNodeCell");
     throw new UnsupportedOperationException();
   }
 
   public EditorCell getRootCell() {
-    System.out.println("InspectorPaneEditorComponent.getRootCell");
     throw new UnsupportedOperationException();
   }
 
   public void rebuildEditorContent() {
-    System.out.println("InspectorPaneEditorComponent.rebuildEditorContent");
     throw new UnsupportedOperationException();
   }
 
   public void changeSelection(EditorCell cellInInspector) {
-    System.out.println("InspectorPaneEditorComponent.changeSelection");
     throw new UnsupportedOperationException();
   }
 
