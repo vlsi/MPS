@@ -27,7 +27,7 @@ import javax.swing.JComponent;
 import javax.swing.event.ChangeListener;
 import java.util.List;
 
-final class InspectorEditorComponent extends AbstractEditorComponent implements IInspectorEditorComponent {
+final class InspectorEditorComponent extends AbstractEditorComponent implements IInspectorEditorComponent, IEditor {
 
   InspectorEditorComponent() {
     super(null);
@@ -79,6 +79,10 @@ final class InspectorEditorComponent extends AbstractEditorComponent implements 
 
     reinitEditor();
     repaint();
+  }
+
+  public IEditor getEditor() {
+    return this;
   }
 
   public EditorCell createRootCell(List<SModelEvent> events) {

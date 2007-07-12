@@ -1,5 +1,6 @@
 package jetbrains.mps.nodeEditor.inspector;
 
+import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.navigation.EditorInfo;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import jetbrains.mps.nodeEditor.EditorCell;
@@ -18,7 +19,7 @@ import java.util.List;
 
 final class InspectorPaneEditorComponent extends AbstractEditorComponent implements IInspectorEditorComponent {
 
-  private final List<IInspectorEditorComponent> myInspectorEditorComponents = new ArrayList<IInspectorEditorComponent>();
+  private final List<InspectorEditorComponent> myInspectorEditorComponents = new ArrayList<InspectorEditorComponent>();
 
   InspectorPaneEditorComponent() {
     super(null);
@@ -45,7 +46,7 @@ final class InspectorPaneEditorComponent extends AbstractEditorComponent impleme
 
   public void inspectNode(SNode node, IOperationContext context) {
     myInspectorEditorComponents.clear();
-    IInspectorEditorComponent inspectorEditorComponent = new InspectorEditorComponent();
+    InspectorEditorComponent inspectorEditorComponent = new InspectorEditorComponent();
     inspectorEditorComponent.inspectNode(node, context);
     myInspectorEditorComponents.add(inspectorEditorComponent);
     reinitEditor();
@@ -74,6 +75,10 @@ final class InspectorPaneEditorComponent extends AbstractEditorComponent impleme
 
   public JComponent getComponent() {
     return this;
+  }
+
+  public IEditor getEditor() {
+    return myInspectorEditorComponents.get(0);
   }
 
 }
