@@ -1,16 +1,11 @@
 package jetbrains.mps.nodeEditor.inspector;
 
 import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.ide.navigation.EditorInfo;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.event.SModelEvent;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
-import javax.swing.JComponent;
-import javax.swing.event.ChangeListener;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,30 +43,6 @@ final class InspectorPaneEditorComponent extends AbstractEditorComponent impleme
     myInspectorEditorComponents.add(inspectorEditorComponent);
     reinitEditor();
     repaint();
-  }
-
-  public void addChangeListener(@NotNull ChangeListener listener) {
-  }
-
-  public void removeChangeListener(@NotNull ChangeListener listener) {
-  }
-
-  public boolean removeFromRecentEditorsOnClose() {
-    return false;
-  }
-
-  @Nullable
-  public EditorInfo getEditorInfo() {
-    return null;
-  }
-
-  @Nullable
-  public AbstractEditorComponent getCurrentEditorComponent() {
-    return this;
-  }
-
-  public JComponent getComponent() {
-    return this;
   }
 
   private InspectorEditorComponent getInspectorEditorComponent() {
